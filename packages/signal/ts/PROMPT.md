@@ -48,17 +48,24 @@ left: 17px;
 
 全レイヤーの寸法、陰影、グラデーションはコード込み形式のstyles.cssに記載しています。
 
+## 配置パスの保持
+
+ソースコードの見出しに記載されたファイル名は、ZIPルートからの相対パスです。
+`src/parts/toggles/signal/` と `src/shared/` を含む階層を維持し、ファイルを同じ階層に平坦化しないでください。
+別のフォルダーへ組み込む場合は、この `src/` の下の構造をまとめて移します。
+読み込み元と読み込み先の相対位置、CSSのパス、通常JS版の `.js` 拡張子を維持してください。
+
 
 ## 使い方
-# Signal / 2.2.0
+# Signal / 2.3.0
 
 ロッカーを倒すと、ドットの波形が目を覚ます。
 
 ## React + TypeScript / JavaScript
-同じパッケージのファイルを1つのディレクトリに置き、`SignalToggle` をimportします。CSSはコンポーネントから読み込まれます。React 18以降を前提とするソースです。JSX版はTSXから型を除去したものです。Next.jsなどではクライアントコンポーネントとして使います。
+ZIPを展開し、`src/parts/` と `src/shared/` の階層を崩さずまとめて配置し、`SignalToggle` をimportします。CSSはコンポーネントから読み込まれます。React 18以降を前提とするソースです。JSX版はTSXから型を除去したものです。Next.jsなどではクライアントコンポーネントとして使います。
 
 ## 通常のHTML / TypeScript
-`markup.html` の要素を配置し、`styles.css` を読み込み、`init(element, options)` を実行します。`init`の返り値の `destroy()` を、画面や部品を取り外すときに必ず呼び出します。TS版は利用先のビルド環境で変換して使います。JS版の `index.html` はローカルサーバーから開きます。ZIP内の `preview/index.html` はダブルクリックでも開ける独立デモです。
+`markup.html` の要素を配置し、`styles.css` を読み込み、`init(element, options)` を実行します。`init`の返り値の `destroy()` を、画面や部品を取り外すときに必ず呼び出します。TS版は利用先のビルド環境で変換して使います。JS版の `src/parts/toggles/signal/vanilla/index.html` はZIPのルートを公開するローカルサーバーから開きます。ZIP内の `preview/index.html` はダブルクリックでも開ける独立デモです。
 
 ## そのまま保たれるもの
 外観のCSS、素材別の動き、マウスとキーボードの操作、動きを減らす設定。音は展示サイト専用の任意機能で、配布パーツには含めません。展示枠やサンプル文言は部品本体から分離しています。
@@ -74,13 +81,30 @@ left: 17px;
 ## コピーと依存関係
 コード画面の「コピー」で表示中ファイルの本文をコピーし、「ファイルを保存」でそのファイルだけをダウンロードできます。関連ファイル一式は「パーツZIP」で取得してください。共通処理を含む全ファイルを同じ構成で配置してください。JavaScript/TypeScript版の実行時外部依存はありません。React版はReactが必要です。
 
+## ディレクトリ構成を保って導入
+
+このパッケージは、元のリポジトリ内の相対パスを保持しています。
+ファイルだけを一か所に集めたり、`src/shared/` を外したりせず、ZIP内の `src/` をフォルダーごとコピーしてください。
+既存プロジェクトとの衝突を避ける場合は、`src/` 全体を `components/state-of-play/signal/` などの専用フォルダーへ入れ、入口へのimportだけを変更します。
+内部の `parts/` と `shared/` の位置関係はそのままにしてください。
+
+- React入口: `src/parts/toggles/signal/react/SignalToggle.tsx`（JSX版は `.jsx`）
+- React使用例: `src/parts/toggles/signal/react/Example.tsx`（JSX版は `.jsx`）
+- 通常サイト入口: `src/parts/toggles/signal/vanilla/init.ts`（JS版は `.js`）
+- スタイル: `src/parts/toggles/signal/styles.css`
+- 共通処理: `src/shared/`
+- 独立デモ: `preview/index.html`、`preview/styles.css`、`preview/app.js`
+
+詳細欄のファイルツリー、コピーしたソース内の相対import、ZIPの保存パスは同じ構成です。
+「ファイルを保存」はブラウザーの仕様上、選択ファイルの名前のみで保存します。ディレクトリごとの導入には「パーツZIP」を使ってください。
+
 
 ## ソースコード
 
-### init.ts
+### src/parts/toggles/signal/vanilla/init.ts
 
 ```typescript
-import { createToggleController, type ToggleOptions } from './toggle-controller';
+import { createToggleController, type ToggleOptions } from '../../../../shared/toggle-controller';
 const config = {
     "id": "signal",
     "name": "Signal",
@@ -99,7 +123,7 @@ export function init(element: HTMLElement, options: ToggleOptions = {}) {
 
 ```
 
-### styles.css
+### src/parts/toggles/signal/styles.css
 
 ```css
 /* signal: isolated component styles, generated from style.css + shared base. */
@@ -356,7 +380,7 @@ export function init(element: HTMLElement, options: ToggleOptions = {}) {
 
 ```
 
-### toggle-controller.ts
+### src/shared/toggle-controller.ts
 
 ```typescript
 import { Spring, isDrag, dragValue } from './motion';
@@ -633,7 +657,7 @@ export function createToggleController(button: HTMLButtonElement, config: Toggle
 
 ```
 
-### motion.ts
+### src/shared/motion.ts
 
 ```typescript
 /* Original spring physics, independent of the gallery and React. */
@@ -687,7 +711,7 @@ export function orbitPosition(value: number) {
 
 ```
 
-### renderer.ts
+### src/shared/renderer.ts
 
 ```typescript
 import { clamp, orbitPosition } from "./motion";
@@ -927,7 +951,7 @@ export class ObjectRenderer {
 
 ```
 
-### main.ts
+### src/parts/toggles/signal/vanilla/main.ts
 
 ```typescript
 import { init } from './init';
@@ -946,14 +970,14 @@ window.addEventListener('pagehide', () => controller.destroy(), { once: true });
 
 ```
 
-### markup.html
+### src/parts/toggles/signal/markup.html
 
 ```markup
 <button aria-checked="false" aria-label="Signal トグル" class="sop-toggle sop-signal" role="switch" type="button"><span aria-hidden="true" class="switch-art"><span class="signal-body"><span class="signal-header mono">SIGNAL GENERATOR <i></i></span><span class="signal-screen"><canvas class="object-canvas" height="112" width="304"></canvas><span class="screen-glare"></span></span><span class="rocker-mount"><span class="signal-rocker"><span>I</span><i></i><span>O</span></span></span><span class="signal-bottom mono"><span>● REC</span><span>48 kHz / 24 bit</span></span></span></span></button>
 
 ```
 
-### index.html
+### src/parts/toggles/signal/vanilla/index.html
 
 ```markup
 <!doctype html>
@@ -962,7 +986,7 @@ window.addEventListener('pagehide', () => controller.destroy(), { once: true });
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Signal</title>
-  <link rel="stylesheet" href="././styles.css">
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 <button aria-checked="false" aria-label="Signal トグル" class="sop-toggle sop-signal" role="switch" type="button"><span aria-hidden="true" class="switch-art"><span class="signal-body"><span class="signal-header mono">SIGNAL GENERATOR <i></i></span><span class="signal-screen"><canvas class="object-canvas" height="112" width="304"></canvas><span class="screen-glare"></span></span><span class="rocker-mount"><span class="signal-rocker"><span>I</span><i></i><span>O</span></span></span><span class="signal-bottom mono"><span>● REC</span><span>48 kHz / 24 bit</span></span></span></span></button>

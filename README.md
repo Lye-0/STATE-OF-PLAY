@@ -9,8 +9,17 @@
 ダウンロードできなかった `app.js` / `catalog.js` / `prism.js` / `jszip.js` も含め、
 表示用のサイト、編集用ソース、生成処理、テスト、各パーツの配布ソースを同梱しています。
 
-v2.2.0の配布済みサイト／パーツ実装を元に、編集できるモジュール構成と再現可能なビルド・テスト一式を整理し直しました。
+v2.3.0ではPlaywrightを1.63.0へ更新し、パーツZIPと全体ZIPが内部のフォルダー階層を維持するように修正しました。
 画面のデザインと既存の機能を保持しています。新しい単一HTMLプレビューは作成しません。
+
+## v2.3.0 の変更
+
+- Playwrightの開発依存を `1.63.0` に固定しました（旧1.55.0から更新）。
+- パーツのソースは `src/parts/<カテゴリ>/<ID>/`、共有処理は `src/shared/` の元の階層で配布します。
+- 詳細欄のファイル表示を開閉できるディレクトリツリーにし、コード欄には現在のパスも表示します。
+- パーツZIPの保存前に、実際に展開されるディレクトリツリーを確認できます。
+- 全体ZIPもフォルダーのエントリーを明示的に記録し、空フォルダーと同名の別階層ファイルを保持します。
+- 個別の「ファイルを保存」は1ファイルのみです。階層ごと取り込むときはZIPを使ってください。
 
 ## 既存のGitリポジトリを置き換える
 
@@ -39,6 +48,22 @@ npm run dev
 
 ブラウザーで `http://127.0.0.1:5173` を開きます。終了はターミナルで Ctrl+C です。
 ポートを変える場合は環境変数 `PORT` を指定します。サーバーはデフォルトで自分のPCだけに公開します。
+
+## 更新後の依存パッケージ
+
+既存の依存パッケージも更新してください。古いnode_modulesだけを使い続けると、古いPlaywrightが残ります。
+
+```powershell
+npm install
+npm audit
+npx playwright install chromium
+npm run verify
+```
+
+`npm install` でローカルの `package-lock.json` も更新または作成されます。差分を確認してGitで管理してください。
+`npm audit fix --force` やWindowsの保護を無効化する操作は、この更新に必要ありません。
+この配布環境ではnpmレジストリへの接続が制限されているため、Playwright 1.63.0の実インストールとオンライン監査は再実行していません。
+実際に使った検証環境は `docs/VERIFICATION.md` に区別して記載しています。
 
 ## ソースを編集・再ビルドする
 
@@ -107,6 +132,32 @@ JSX / JavaScript向け配布ファイルはTypeScriptの正本から生成しま
 `packages/<パーツID>/<形式>/` に必要ファイルがあります。
 Reactは `tsx/` または `jsx/`、通常のサイトは `ts/` または `js/` を使います。
 各フォルダーの `README.md` と使用例、`PROMPT.md` を参照してください。
+配布形式フォルダーの中にも `src/` があり、その下の `parts/` と `shared/` の位置関係を保って導入します。
+例えばChromeのReact TSX版は次の構成です。
+
+```text
+chrome-tsx/
+├─ src/
+│  ├─ parts/toggles/chrome/
+│  │  ├─ react/ChromeToggle.tsx
+│  │  ├─ react/Example.tsx
+│  │  ├─ styles.css
+│  │  └─ markup.html
+│  └─ shared/
+│     ├─ use-toggle.ts
+│     ├─ toggle-controller.ts
+│     ├─ motion.ts
+│     └─ renderer.ts
+├─ preview/
+├─ README.md
+├─ PROMPT.md
+└─ WINDOWS-README.txt
+```
+
+ZIPを通常の「すべて展開」で展開するとこの構成になります。フォルダーの中身だけをすべて1か所に集めないでください。
+既存プロジェクトの `src/` と直接合わせるほか、専用のフォルダーへ `src/` ごとコピーしても使えます。
+後者の場合、外側のアプリからのimportだけを合わせ、パーツ内部の相対位置は保ってください。
+ZIPをブラウザーから既存プロジェクトへ自動的に書き込む機能ではありません。展開してフォルダーごとコピーする方式です。
 
 `packages/<パーツID>/preview/` はギャラリーと独立した **HTML / CSS / JSの分離デモ**です。
 通常のJavaScript版はES Modulesなので、開発用サーバーから開いてください。
@@ -147,7 +198,7 @@ npm run typecheck:react
 npm run package
 ```
 
-`release/STATE-OF-PLAY-v2.2.0-full-repository.zip` を生成します。
+`release/STATE-OF-PLAY-v2.3.0-full-repository.zip` を生成します。
 差分ではなく、再びリポジトリ全体を交換できるZIPです。
 生成後、CRCと全ファイルのSHA-256を確認します。`.git/`、`node_modules/`、秘密情報は除外します。
 これらの検査は整合性の検証であって、Windowsの無警告やマルウェア不在の保証ではありません。

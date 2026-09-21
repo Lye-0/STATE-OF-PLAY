@@ -15,7 +15,7 @@
 | `vanilla/init.ts` | 受け取った要素を初期化し、destroy等を返す通常サイト用の入口 |
 | `vanilla/main.ts` | 通常サイトの使用例 |
 | `vanilla/index.html` | 通常サイト用のHTML使用例 |
-| `exports.json` | 配布するファイル名・正本の場所・表示グループ |
+| `exports.json` | ZIP内の相対パス・正本の場所・表示グループ |
 | `demo/index.html` | 独立デモのHTML。CSSとJSは外部ファイル |
 | `demo/main.ts` | 独立デモの初期化 |
 | `demo/frame.css` | 独立デモの配置用CSS。パーツには含めない |
@@ -34,7 +34,12 @@
 
 `exports.json` では `tsx` と `ts` の2系統を定義します。
 対応する `jsx` / `js` はビルド時に型を取り除いて生成します。
-配布時の相対importは同じパーツのフォルダー内へ変換し、通常JS版には `.js` の拡張子を付けます。
+`exports.json` の `name` がそのまま、コード詳細とZIPで使う相対パスです。
+既定では `name` と `source` を同じパスにし、元の `src/parts/.../` と `src/shared/` の階層を保持します。
+別の配置先を指定するときもディレクトリを含む `name` を設定してください。
+ビルドは `source → name` の対応表で相対importとHTMLのsrc/hrefを計算します。
+JavaScript版では `.ts → .js`、JSX版では `.tsx → .jsx` を変換し、通常JS版の相対importには拡張子も付けます。
+未収録のローカル依存を参照した場合、壊れたZIPを生成せずにビルドをエラーにします。
 パーツ固有の新しい依存ファイルを増やした場合は、そのファイルも `exports.json` に追加してください。
 
 既存の16パーツを固定件数で確認する回帰テストがあります。パーツを追加した場合は、

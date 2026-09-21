@@ -23,6 +23,7 @@ const paths = {
     sound: '<path d="M3 9v6h4l5 4V5L7 9Zm13-1c4 2 4 6 0 8m3-11c6 4 6 10 0 14"/>',
     file: '<path d="M5 3h9l5 5v13H5Zm9 0v5h5"/>', reset: '<path d="M4 4v6h6M4 10a8 8 0 1 1 1 8"/>',
     wrap: '<path d="M3 6h18M3 11h13a4 4 0 0 1 0 8h-4m3-3-3 3 3 3M3 16h5"/>',
+    folder: '<path d="M3 6h7l2 2h9v12H3Zm0 0V4h7l2 2h7v2"/>',
     book: '<path d="M12 5v15M3 4c4-1 7-1 9 1 2-2 5-2 9-1v15c-4-1-7-1-9 1-2-2-5-2-9-1Z"/>'
 };
 function icon(name, cls = '') { return `<svg class="icon ${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths[name] ?? paths.code}</svg>`; }
@@ -175,7 +176,7 @@ function trapDialogFocus(dialog) {
     dialog.addEventListener('keydown', event => {
         if (event.key !== 'Tab')
             return;
-        const candidates = [...dialog.querySelectorAll('button:not([disabled]),a[href],input:not([disabled]),textarea:not([disabled]),select:not([disabled]),[tabindex]:not([tabindex="-1"])')]
+        const candidates = [...dialog.querySelectorAll('button:not([disabled]),a[href],input:not([disabled]),textarea:not([disabled]),select:not([disabled]),summary,[tabindex]:not([tabindex="-1"])')]
             .filter(el => el.tabIndex >= 0 && el.getClientRects().length > 0 && !el.closest('[hidden], [inert]') && getComputedStyle(el).visibility !== 'hidden');
         if (!candidates.length) {
             event.preventDefault();

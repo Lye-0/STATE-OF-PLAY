@@ -171,7 +171,7 @@ document.addEventListener('visibilitychange', () => {
     if (document.hidden)
         stopDemo();
 });
-window.StateOfPlay = Object.freeze({ version: '2.2.0', getStates: () => Object.fromEntries(state), getPartCount: () => parts.length });
+window.StateOfPlay = Object.freeze({ version: '2.3.0', getStates: () => Object.fromEntries(state), getPartCount: () => parts.length });
 setCategory('all');
 readRoute();
 
@@ -202,6 +202,7 @@ const paths = {
     sound: '<path d="M3 9v6h4l5 4V5L7 9Zm13-1c4 2 4 6 0 8m3-11c6 4 6 10 0 14"/>',
     file: '<path d="M5 3h9l5 5v13H5Zm9 0v5h5"/>', reset: '<path d="M4 4v6h6M4 10a8 8 0 1 1 1 8"/>',
     wrap: '<path d="M3 6h18M3 11h13a4 4 0 0 1 0 8h-4m3-3-3 3 3 3M3 16h5"/>',
+    folder: '<path d="M3 6h7l2 2h9v12H3Zm0 0V4h7l2 2h7v2"/>',
     book: '<path d="M12 5v15M3 4c4-1 7-1 9 1 2-2 5-2 9-1v15c-4-1-7-1-9 1-2-2-5-2-9-1Z"/>'
 };
 function icon(name, cls = '') { return `<svg class="icon ${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths[name] ?? paths.code}</svg>`; }
@@ -354,7 +355,7 @@ function trapDialogFocus(dialog) {
     dialog.addEventListener('keydown', event => {
         if (event.key !== 'Tab')
             return;
-        const candidates = [...dialog.querySelectorAll('button:not([disabled]),a[href],input:not([disabled]),textarea:not([disabled]),select:not([disabled]),[tabindex]:not([tabindex="-1"])')]
+        const candidates = [...dialog.querySelectorAll('button:not([disabled]),a[href],input:not([disabled]),textarea:not([disabled]),select:not([disabled]),summary,[tabindex]:not([tabindex="-1"])')]
             .filter(el => el.tabIndex >= 0 && el.getClientRects().length > 0 && !el.closest('[hidden], [inert]') && getComputedStyle(el).visibility !== 'hidden');
         if (!candidates.length) {
             event.preventDefault();
@@ -1325,7 +1326,7 @@ function createDetails(parts, callbacks) {
     });
     function filesText() { return part.files[format].map(f => `\n## ${f.name}\n\n\`\`\`${f.language}\n${f.code}\n\`\`\``).join('\n'); }
     function promptText() {
-        return `# ${part.name} を既存プロジェクトに組み込む\n\n参照パーツ: STATE OF PLAY / ${part.id} / v${part.version}\n出力形式: ${types_1.FORMATS[format].label}\n\n現在のプロジェクト構成を確認し、下記の実装を基準に部品を組み込んでください。元の外観と動作を優先し、統合に必要な接続以外のデザイン変更はしないでください。添付にないファイルが必要な場合は、その内容も省略せず実装してください。\n\n${part.prompt}\n\n## 利用方法\n${part.usage}` + (copiedWithCode ? `\n\n## 正本のソースコード\n以下は現在プレビューしている部品の実装と、同じ元ファイルから生成した${types_1.FORMATS[format].label}版です。共通処理もすべて含まれます。\n${filesText()}` : '\n\n文章のみでの再実装では差異が生じる可能性があります。色・輪郭・寸法・素材感を上の仕様に合わせ、ON/OFFやホバーの途中の状態も確認してください。');
+        return `# ${part.name} を既存プロジェクトに組み込む\n\n参照パーツ: STATE OF PLAY / ${part.id} / v${part.version}\n出力形式: ${types_1.FORMATS[format].label}\n\n現在のプロジェクト構成を確認し、下記の実装を基準に部品を組み込んでください。元の外観と動作を優先し、統合に必要な接続以外のデザイン変更はしないでください。ソースの見出しはZIPルートからの相対パスです。フォルダー階層と相対importを維持して配置してください。添付にないファイルが必要な場合は、その内容も省略せず実装してください。\n\n${part.prompt}\n\n## 利用方法\n${part.usage}` + (copiedWithCode ? `\n\n## 正本のソースコード\n以下は現在プレビューしている部品の実装と、同じ元ファイルから生成した${types_1.FORMATS[format].label}版です。共通処理もすべて含まれます。\n${filesText()}` : '\n\n文章のみでの再実装では差異が生じる可能性があります。色・輪郭・寸法・素材感を上の仕様に合わせ、ON/OFFやホバーの途中の状態も確認してください。');
     }
     function downloadPackage(button) {
         (0, package_download_js_1.showPackageDownload)(part, format, promptText(), button);
@@ -1344,7 +1345,7 @@ function createDetails(parts, callbacks) {
         if (tab === 'code')
             code_viewer_1.mountCodeViewer(pane, part.files[format], { selected: sourceNames[part.id + format], onSelect: name => sourceNames[part.id + format] = name });
         if (tab === 'guide') {
-            const sample = part.files[format].find(f => f.name.startsWith('Example.') || f.name.startsWith('main.'));
+            const sample = part.files[format].find(f => /(?:^|\/)(?:Example|main)\.[jt]sx?$/.test(f.name));
             const react = format === 'tsx' || format === 'jsx';
             const options = react ? part.props : part.category === 'toggles' ? [
                 ['init(element, options)', 'HTMLButtonElement', '対象のボタンを渡して初期化します。'],
@@ -1360,7 +1361,7 @@ function createDetails(parts, callbacks) {
                 ['--sop-padding', 'CSSカスタムプロパティ', '中身の余白を指定します。初期値28px。'],
                 ['controller.destroy()', 'void', '取り外す前にイベントと描画を解除します。']
             ];
-            pane.innerHTML = `<div class="guide-scroll"><div class="section-kicker">FROM GALLERY TO YOUR PROJECT</div><h3>このパーツを、あなたの開発へ。</h3><p class="guide-lead">${react ? 'コンポーネントとCSS、必要な共通処理をまとめて配置します。' : 'HTMLとCSSを配置して、対象の要素を初期化します。'}展示枠やギャラリーのUIは持ち込まれません。</p><div class="guide-step"><span>01</span><div><h4>必要なファイルを配置</h4><p>下の「パーツZIP」で、${types_1.FORMATS[format].label}版の${part.files[format].length}ファイルと独立デモを取得できます。ファイル同士の相対パスを保って配置してください。</p></div></div><div class="guide-step"><span>02</span><div><h4>${react ? 'importして、状態や中身を渡す' : '初期化し、取り外すときは後片付け'}</h4><p>${react ? 'Reactを導入済みのプロジェクトで使います。CSSはコンポーネントから読み込みます。' : 'init(element)の返り値を保存し、部品を取り外すときにdestroy()を呼びます。'}${format === 'ts' ? ' TypeScriptを変換できるビルド環境が必要です。' : ''}</p></div></div>${sample ? `<div class="example-block"><header><span>${utils_1.escapeHTML(sample.name)}</span><button type="button" class="small-button" id="copy-example">${utils_1.icon('copy')}使用例をコピー</button></header><pre><code>${code_viewer_1.highlightedLines(sample.code, sample.language)}</code></pre></div>` : ''}<div class="guide-step"><span>03</span><div><h4>必要な設定だけを変更</h4><p>素材感や動きを保ったまま、アプリの状態、内容、配置を接続します。</p></div></div><div class="props-table"><table><thead><tr><th>設定</th><th>型 / 値</th><th>役割</th></tr></thead><tbody>${options.map(p => `<tr><td><code>${utils_1.escapeHTML(p[0])}</code></td><td>${utils_1.escapeHTML(p[1])}</td><td>${utils_1.escapeHTML(p[2])}</td></tr>`).join('')}</tbody></table></div><div class="guide-note"><b>一緒に確認すること</b><p>複数配置、無効状態、キーボード、動きを減らす設定。Reactでは画面の表示・取り外し時にも動作を確認してください。効果音は展示専用の任意機能で、パーツの必須依存ではありません。</p></div>${part.category === 'toggles' ? `<button type="button" class="related-inline" data-related="original-surface">${utils_1.icon('arrow')}今の背景も使う — Original Surface</button>` : ''}</div>`;
+            pane.innerHTML = `<div class="guide-scroll"><div class="section-kicker">FROM GALLERY TO YOUR PROJECT</div><h3>このパーツを、あなたの開発へ。</h3><p class="guide-lead">${react ? 'コンポーネントとCSS、必要な共通処理をまとめて配置します。' : 'HTMLとCSSを配置して、対象の要素を初期化します。'}展示枠やギャラリーのUIは持ち込まれません。</p><div class="guide-step"><span>01</span><div><h4>必要なファイルを配置</h4><p>下の「パーツZIP」で、${types_1.FORMATS[format].label}版の${part.files[format].length}ファイルと独立デモを取得できます。展開した src/parts/ と src/shared/ をフォルダーごと配置してください。ZIPには詳細欄のツリーと同じ階層が保存されます。</p></div></div><div class="guide-step"><span>02</span><div><h4>${react ? 'importして、状態や中身を渡す' : '初期化し、取り外すときは後片付け'}</h4><p>${react ? 'Reactを導入済みのプロジェクトで使います。CSSはコンポーネントから読み込みます。' : 'init(element)の返り値を保存し、部品を取り外すときにdestroy()を呼びます。'}${format === 'ts' ? ' TypeScriptを変換できるビルド環境が必要です。' : ''}</p></div></div>${sample ? `<div class="example-block"><header><span>${utils_1.escapeHTML(sample.name)}</span><button type="button" class="small-button" id="copy-example">${utils_1.icon('copy')}使用例をコピー</button></header><pre><code>${code_viewer_1.highlightedLines(sample.code, sample.language)}</code></pre></div>` : ''}<div class="guide-step"><span>03</span><div><h4>必要な設定だけを変更</h4><p>素材感や動きを保ったまま、アプリの状態、内容、配置を接続します。</p></div></div><div class="props-table"><table><thead><tr><th>設定</th><th>型 / 値</th><th>役割</th></tr></thead><tbody>${options.map(p => `<tr><td><code>${utils_1.escapeHTML(p[0])}</code></td><td>${utils_1.escapeHTML(p[1])}</td><td>${utils_1.escapeHTML(p[2])}</td></tr>`).join('')}</tbody></table></div><div class="guide-note"><b>一緒に確認すること</b><p>複数配置、無効状態、キーボード、動きを減らす設定。Reactでは画面の表示・取り外し時にも動作を確認してください。効果音は展示専用の任意機能で、パーツの必須依存ではありません。</p></div>${part.category === 'toggles' ? `<button type="button" class="related-inline" data-related="original-surface">${utils_1.icon('arrow')}今の背景も使う — Original Surface</button>` : ''}</div>`;
             pane.querySelector('#copy-example')?.addEventListener('click', event => sample && void utils_1.copyText(sample.code, event.currentTarget, sample.name));
             pane.querySelector('[data-related]')?.addEventListener('click', () => callbacks.onNavigate('original-surface'));
         }
@@ -1471,8 +1472,16 @@ function showPackageDownload(part, format, prompt, trigger) {
     const dialog = document.createElement('dialog');
     dialog.className = 'package-dialog';
     dialog.setAttribute('aria-labelledby', 'package-title');
-    dialog.innerHTML = `<header class="package-heading"><span class="section-kicker">TAKE IT WITH YOU</span><button type="button" class="icon-button package-close" aria-label="ダウンロード設定を閉じる">${(0, utils_js_1.icon)('close')}</button><h2 id="package-title">パーツを持ち出す。</h2><p>${(0, utils_js_1.escapeHTML)(part.name)} <span>· ${format.toUpperCase()} · v${(0, utils_js_1.escapeHTML)(part.version)}</span></p></header><fieldset class="package-formats"><legend>ZIPの保存形式</legend><label class="package-option"><input type="radio" name="package-mode" value="source" checked><span><b>通常のソース ZIP</b><small>元のファイル名・拡張子。そのまま開発へ組み込めます。</small></span><em>標準</em></label><label class="package-option"><input type="radio" name="package-mode" value="text"><span><b>テキスト保管用 ZIP</b><small>全ファイルに .txt を追加。読む・レビューするための形式です。</small></span></label></fieldset><p class="package-mode-note" role="status">コンポーネント、共通処理、使用例、分離構成のデモをまとめます。</p><details class="windows-help"><summary>${(0, utils_js_1.icon)('book')}Windowsで展開をブロックされたとき</summary><div><p>ダウンロード元の情報により、ZIP内のスクリプトがブロックされる場合があります。ZIPの生成側で、この保護を解除することはできません。</p><ol><li>入手元と内容を確認し、Windows セキュリティでスキャン。</li><li>信頼できるZIPだけを右クリック → <b>プロパティ</b>。</li><li>全般の <b>「許可する／ブロックの解除」</b> があれば選んで適用。</li><li>新しいフォルダーへ展開し直す。</li></ol><p class="windows-caution">Defenderなどの保護機能を全体で無効化しないでください。検出名が表示される場合や解除項目がない場合は、保護の履歴や管理者ポリシーを確認してください。</p></div></details><footer class="package-bottom"><span>ローカルで生成 · 外部送信なし</span><button type="button" class="solid-button package-save">${(0, utils_js_1.icon)('down')}ZIPを保存</button></footer>`;
+    dialog.innerHTML = `<header class="package-heading"><span class="section-kicker">TAKE IT WITH YOU</span><button type="button" class="icon-button package-close" aria-label="ダウンロード設定を閉じる">${(0, utils_js_1.icon)('close')}</button><h2 id="package-title">パーツを持ち出す。</h2><p>${(0, utils_js_1.escapeHTML)(part.name)} <span>· ${format.toUpperCase()} · v${(0, utils_js_1.escapeHTML)(part.version)}</span></p></header><fieldset class="package-formats"><legend>ZIPの保存形式</legend><label class="package-option"><input type="radio" name="package-mode" value="source" checked><span><b>通常のソース ZIP</b><small>元のファイル名・拡張子。そのまま開発へ組み込めます。</small></span><em>標準</em></label><label class="package-option"><input type="radio" name="package-mode" value="text"><span><b>テキスト保管用 ZIP</b><small>全ファイルに .txt を追加。読む・レビューするための形式です。</small></span></label></fieldset><p class="package-mode-note" role="status">元のフォルダー階層を保ち、コンポーネント・共通処理・使用例・独立デモをまとめます。</p><details class="package-layout" open><summary>フォルダー構成を保持</summary><p>展開すると以下の階層を再現します。src/ をフォルダーごと配置してください。</p><pre class="package-tree" aria-label="ZIPのフォルダー構成"></pre></details><details class="windows-help"><summary>${(0, utils_js_1.icon)('book')}Windowsで展開をブロックされたとき</summary><div><p>ダウンロード元の情報により、ZIP内のスクリプトがブロックされる場合があります。ZIPの生成側で、この保護を解除することはできません。</p><ol><li>入手元と内容を確認し、Windows セキュリティでスキャン。</li><li>信頼できるZIPだけを右クリック → <b>プロパティ</b>。</li><li>全般の <b>「許可する／ブロックの解除」</b> があれば選んで適用。</li><li>新しいフォルダーへ展開し直す。</li></ol><p class="windows-caution">Defenderなどの保護機能を全体で無効化しないでください。検出名が表示される場合や解除項目がない場合は、保護の履歴や管理者ポリシーを確認してください。</p></div></details><footer class="package-bottom"><span>ローカルで生成 · 外部送信なし</span><button type="button" class="solid-button package-save">${(0, utils_js_1.icon)('down')}ZIPを保存</button></footer>`;
     document.body.append(dialog);
+    function drawTree() {
+        const mode = dialog.querySelector('input:checked').value;
+        const files = [...part.files[format], { name: 'README.md', code: part.usage }, { name: 'PROMPT.md', code: prompt },
+            ...Object.entries(part.preview).map(([name, code]) => ({ name: 'preview/' + name, code }))];
+        const entries = archive_ts_1.prepareArchive(files, mode);
+        dialog.querySelector('.package-tree').textContent = `${part.id}-${format}${mode === 'text' ? '-text' : ''}/\n` + archive_ts_1.archiveTree(entries.map(f => f.name));
+    }
+    drawTree();
     (0, utils_js_1.trapDialogFocus)(dialog);
     dialog.querySelector('.package-close').addEventListener('click', () => dialog.close());
     dialog.addEventListener('close', () => {
@@ -1488,9 +1497,10 @@ function showPackageDownload(part, format, prompt, trigger) {
             dialog.close();
     });
     dialog.querySelectorAll('input').forEach(input => input.addEventListener('change', () => {
+        drawTree();
         dialog.querySelector('.package-mode-note').textContent = input.value === 'text'
             ? '実装内容は同じです。利用前に末尾の .txt を外して元の名前へ戻してください。安全性の保証や保護の解除は行いません。'
-            : 'コンポーネント、共通処理、使用例、分離構成のデモをまとめます。';
+            : '元のフォルダー階層を保ち、コンポーネント・共通処理・使用例・独立デモをまとめます。';
     }));
     dialog.querySelector('.package-save').addEventListener('click', async (event) => {
         const button = event.currentTarget;
@@ -1504,9 +1514,8 @@ function showPackageDownload(part, format, prompt, trigger) {
             const files = [...part.files[format], { name: 'README.md', code: part.usage }, { name: 'PROMPT.md', code: prompt },
                 ...Object.entries(part.preview).map(([name, code]) => ({ name: 'preview/' + name, code }))];
             const entries = (0, archive_ts_1.prepareArchive)(files, mode);
-            const root = `${part.id}-${format}${mode === 'text' ? '-text' : ''}/`;
-            for (const entry of entries)
-                zip.file(root + entry.name, entry.code, { binary: false, createFolders: true });
+            const root = `${part.id}-${format}${mode === 'text' ? '-text' : ''}`;
+            archive_ts_1.addArchiveEntries(zip, root, entries);
             const blob = await zip.generateAsync({ type: 'blob', mimeType: 'application/zip', compression: 'DEFLATE', compressionOptions: { level: 6 }, platform: 'DOS' });
             (0, utils_js_1.downloadBlob)(blob, `${part.id}-${format}-v${part.version}${mode === 'text' ? '-text' : ''}.zip`);
             button.innerHTML = `${(0, utils_js_1.icon)('check')}保存を開始しました`;
@@ -1564,6 +1573,7 @@ function prepareArchive(files, mode) {
             throw new TypeError(`Non-text source: ${name}`);
         return { name, code: file.code };
     });
+    validateArchiveEntries(entries);
     if (mode === 'source')
         return entries;
     const map = entries.map(file => ({ saved: file.name + '.txt', original: file.name }));
@@ -1581,8 +1591,65 @@ function prepareArchive(files, mode) {
             throw new Error(`Duplicate generated archive path: ${file.name}`);
         outputNames.add(key);
     }
+    validateArchiveEntries(result);
     return result;
 }
+/** Validate file/directory conflicts as well as whole-path duplicates. */
+function validateArchiveEntries(entries) {
+    const files = new Set();
+    const directories = new Map();
+    for (const entry of entries) {
+        const name = validateArchivePath(entry.name);
+        const key = name.toLowerCase();
+        if (files.has(key) || directories.has(key))
+            throw new Error(`Conflicting archive path: ${name}`);
+        const pieces = name.split('/');
+        for (let i = 1; i < pieces.length; i++) {
+            const directory = pieces.slice(0, i).join('/');
+            const dirKey = directory.toLowerCase();
+            if (files.has(dirKey))
+                throw new Error(`File used as a directory: ${directory}`);
+            if (directories.has(dirKey) && directories.get(dirKey) !== directory)
+                throw new Error(`Inconsistent directory case: ${directory}`);
+            directories.set(dirKey, directory);
+        }
+        files.add(key);
+    }
+    return entries;
+}
+/** Explicit directory records preserve empty folders and hierarchical ZIP viewers too. */
+function addArchiveEntries(zip, root, entries) {
+    validateArchivePath(root);
+    validateArchiveEntries(entries);
+    zip.folder(root);
+    for (const entry of entries) {
+        zip.file(`${root}/${entry.name}`, entry.code, { binary: false, createFolders: true });
+    }
+    return zip;
+}
+function archiveTree(names) {
+    const tree = new Map();
+    for (const name of names) {
+        let branch = tree;
+        for (const piece of validateArchivePath(name).split('/')) {
+            if (!branch.has(piece))
+                branch.set(piece, new Map());
+            branch = branch.get(piece);
+        }
+    }
+    function draw(branch, prefix = '') {
+        const list = [...branch.entries()].sort(([a, childrenA], [b, childrenB]) => Number(childrenB.size > 0) - Number(childrenA.size > 0) || a.localeCompare(b));
+        return list.flatMap(([name, children], index) => {
+            const last = index === list.length - 1;
+            return [`${prefix}${last ? '└─ ' : '├─ '}${name}${children.size ? '/' : ''}`,
+                ...draw(children, prefix + (last ? '   ' : '│  '))];
+        });
+    }
+    return draw(tree).join('\n');
+}
+exports.validateArchiveEntries = validateArchiveEntries;
+exports.addArchiveEntries = addArchiveEntries;
+exports.archiveTree = archiveTree;
 
 },
 "src/catalog/types.js":function(module,exports,require){
@@ -1628,29 +1695,60 @@ function highlightedLines(code, language) {
         walk(code);
     return lines.map((line, i) => `<span class="code-line"><span class="line-number" aria-hidden="true">${i + 1}</span><span class="line-code">${line || ' '}</span></span>`).join('');
 }
+/** A real directory tree: displayed paths are exactly the paths saved to ZIP. */
+function fileTreeHTML(files) {
+    const root = { directories: new Map(), files: [] };
+    for (const file of files) {
+        const segments = file.name.split('/');
+        let branch = root, prefix = '';
+        for (const folder of segments.slice(0, -1)) {
+            prefix += (prefix ? '/' : '') + folder;
+            if (!branch.directories.has(folder))
+                branch.directories.set(folder, { directories: new Map(), files: [], path: prefix });
+            branch = branch.directories.get(folder);
+        }
+        branch.files.push(file);
+    }
+    function render(branch, level = 0) {
+        return [...branch.directories.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([name, child]) => `<details open class="source-directory" data-directory="${utils_1.escapeHTML(child.path)}"><summary title="${utils_1.escapeHTML(child.path)}" style="--level:${level}"><span class="directory-chevron" aria-hidden="true">›</span>${utils_1.icon('folder')}<span>${utils_1.escapeHTML(name)}</span></summary>${render(child, level + 1)}</details>`).join('') +
+            branch.files.map(file => `<button type="button" class="file-item" style="--level:${level}" data-file="${utils_1.escapeHTML(file.name)}" title="${utils_1.escapeHTML(file.name)}">${utils_1.icon('file')}<span>${utils_1.escapeHTML(file.name.split('/').at(-1))}</span></button>`).join('');
+    }
+    return render(root);
+}
 function mountCodeViewer(host, files, options = {}) {
     if (!files.length) {
         host.textContent = '表示できるファイルがありません。';
         return;
     }
     let current = files.find(f => f.name === options.selected) ?? files[0], wrap = false;
-    const labels = { component: 'COMPONENT', shared: 'SHARED ENGINE', example: 'EXAMPLE / GUIDE' };
-    host.innerHTML = `<div class="source-workbench"><nav class="file-tree" aria-label="ソースファイル"><div class="tree-title">FILES <span>${files.length}</span></div>${Object.entries(labels).map(([group, label]) => { const fs = files.filter(f => f.group === group); return fs.length ? `<div class="file-group-label">${label}</div>${fs.map(f => `<button type="button" class="file-item" data-file="${utils_1.escapeHTML(f.name)}" title="${utils_1.escapeHTML(f.name)}">${utils_1.icon('file')}<span>${utils_1.escapeHTML(f.name)}</span></button>`).join('')}` : ''; }).join('')}</nav><section class="editor" aria-label="コードプレビュー"><header class="editor-bar"><span class="current-file"></span><div class="editor-tools"><button type="button" class="icon-button wrap-code" title="長い行を折り返す" aria-label="長い行を折り返す" aria-pressed="false">${utils_1.icon('wrap')}</button><span class="editor-tool-divider" aria-hidden="true"></span><button type="button" class="download-file small-button">${utils_1.icon('down')}<span>ファイルを保存</span></button><button type="button" class="copy-file small-button">${utils_1.icon('copy')}<span>コピー</span></button></div></header><div class="code-scroll" tabindex="0" aria-label="ソースコード。上下左右にスクロールできます"><pre><code></code></pre></div><footer class="editor-status"><span class="file-info"></span><span>READ ONLY <i></i> UTF-8</span></footer></section></div>`;
+    host.innerHTML = `<div class="source-workbench"><nav class="file-tree" aria-label="ソースファイル"><div class="tree-title">FILES <span>${files.length}</span></div><div class="tree-entries">${fileTreeHTML(files)}</div><label class="mobile-file-picker"><span class="sr-only">表示するソースファイル</span><select aria-label="表示するソースファイル">${files.map(f => `<option value="${utils_1.escapeHTML(f.name)}">${utils_1.escapeHTML(f.name)}</option>`).join('')}</select></label></nav><section class="editor" aria-label="コードプレビュー"><header class="editor-bar"><div class="editor-location"><span class="current-file"></span><span class="current-path"></span></div><div class="editor-tools"><button type="button" class="icon-button wrap-code" title="長い行を折り返す" aria-label="長い行を折り返す" aria-pressed="false">${utils_1.icon('wrap')}</button><span class="editor-tool-divider" aria-hidden="true"></span><button type="button" class="download-file small-button">${utils_1.icon('down')}<span>ファイルを保存</span></button><button type="button" class="copy-file small-button">${utils_1.icon('copy')}<span>コピー</span></button></div></header><div class="code-scroll" tabindex="0" aria-label="ソースコード。上下左右にスクロールできます"><pre><code></code></pre></div><footer class="editor-status"><span class="file-info"></span><span>READ ONLY <i></i> UTF-8</span></footer></section></div>`;
     const code = utils_1.required('code', host), copy = utils_1.required('.copy-file', host), download = utils_1.required('.download-file', host);
     const draw = () => {
         utils_1.resetCopyFeedback(copy);
-        utils_1.required('.current-file', host).textContent = current.name;
+        utils_1.required('.current-file', host).textContent = current.name.split('/').at(-1);
+        const folder = current.name.split('/').slice(0, -1).join('/');
+        utils_1.required('.current-path', host).textContent = folder || '/';
+        utils_1.required('.editor-location', host).title = current.name;
+        utils_1.required('.mobile-file-picker select', host).value = current.name;
         utils_1.required('.file-info', host).textContent = `${current.language.toUpperCase()} · ${current.code.split('\n').length} lines`;
         code.innerHTML = highlightedLines(current.code, current.language);
-        utils_1.required('.code-scroll', host).scrollTo0;
+        utils_1.required('.code-scroll', host).scrollTo({ top: 0, left: 0 });
         host.querySelectorAll('.file-item').forEach(b => { const active = b.dataset.file === current.name; b.classList.toggle('selected', active); b.setAttribute('aria-current', String(active)); });
         copy.setAttribute('aria-label', `${current.name} をコピー`);
         download.setAttribute('aria-label', `${current.name} をダウンロード`);
         download.title = `${current.name} を保存`;
     };
     host.querySelectorAll('.file-item').forEach(button => button.addEventListener('click', () => { current = files.find(f => f.name === button.dataset.file); options.onSelect?.(current.name); draw(); }));
+    utils_1.required('.mobile-file-picker select', host).addEventListener('change', event => {
+        current = files.find(f => f.name === event.target.value);
+        options.onSelect?.(current.name);
+        // Reopen parents in case the viewport is later widened to desktop.
+        host.querySelectorAll('.source-directory').forEach(dir => { if (current.name.startsWith(dir.dataset.directory + '/'))
+            dir.open = true; });
+        draw();
+    });
     copy.addEventListener('click', () => void utils_1.copyText(current.code, copy, current.name));
-    download.addEventListener('click', () => utils_1.saveSource(current.name, current.code));
+    download.addEventListener('click', () => utils_1.saveSource(current.name.split('/').at(-1), current.code));
     const wrapButton = utils_1.required('.wrap-code', host);
     wrapButton.addEventListener('click', () => { wrap = !wrap; utils_1.required('.code-scroll', host).classList.toggle('wrapped', wrap); wrapButton.setAttribute('aria-pressed', String(wrap)); });
     draw();

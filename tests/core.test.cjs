@@ -18,3 +18,21 @@ test('text archives change only filenames, with a restoration map',()=>{const e=
 test('case-insensitive duplicate names are rejected',()=>assert.throws(()=>prepareArchive([{name:'a.js',code:''},{name:'A.js',code:''}],'source')));
 test('generated filenames cannot replace source files',()=>assert.throws(()=>prepareArchive([{name:'FILE-MAP.json',code:''}],'text')));
 test('archive modes are explicit',()=>assert.throws(()=>prepareArchive([],'unknown')));
+
+const {validateArchiveEntries, addArchiveEntries, archiveTree}=require('../src/shared/archive.js');
+const JSZip=require('../vendor/jszip.js');
+test('nested filenames, duplicate basenames and Japanese paths survive ZIP roundtrip',async()=>{
+ const files=[{name:'src/parts/a/index.js',code:'a'},{name:'src/shared/index.js',code:'b'},{name:'docs/使い方/導入.md',code:'説明\n'}];
+ for(const mode of ['source','text']){
+  const entries=prepareArchive(files,mode);const z=addArchiveEntries(new JSZip(),'sample',entries);
+  const data=await z.generateAsync({type:'nodebuffer'});const loaded=await JSZip.loadAsync(data,{checkCRC32:true});
+  for(const f of entries)assert.equal(await loaded.file('sample/'+f.name).async('string'),f.code);
+  for(const d of ['sample/','sample/src/','sample/src/parts/a/','sample/src/shared/','sample/docs/使い方/'])assert.ok(loaded.files[d]?.dir,d);
+ }
+});
+test('ZIP rejects both orders of file-directory collisions',()=>{
+ for(const names of [['src','src/file.js'],['src/file.js','src'],['src/a.js','SRC/b.js']])assert.throws(()=>validateArchiveEntries(names.map(name=>({name}))));
+});
+test('ZIP tree displays actual directories and file names',()=>{
+ const tree=archiveTree(['src/shared/motion.ts','src/parts/chrome/styles.css']);assert.ok(tree.includes('src/'));assert.ok(tree.includes('shared/'));assert.ok(tree.includes('motion.ts'));assert.ok(tree.includes('styles.css'));
+});

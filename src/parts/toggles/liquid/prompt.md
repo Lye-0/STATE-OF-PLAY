@@ -45,3 +45,10 @@ height: 34px;
 色: #d1e6b2, #8b8d8d, #333737, #111313, #5d6162, #060707, #171919, #0009, #b4f3ee30, #1b455126, #13232a, #28404a, #8cbae02b, #aecbda51, #c4edf767, #adcdff55, #000, #aae7d436, #b2e2ff29, #8bdebd88, #5fc6e899, #d7b9eb66, #b5ebf094, #418eca3b, #b2f5dd5e, #c4efed, #bce6f012, #87d8e30b, #d4fbffab, #eefffa80, #54bbd733, #9db4ce55, #042c3b05, #b8ffda66, #ecfff7cc, #a9dff7a6, #afeeff75, #020e2080, #99fcf130, #b7eee450, #dcfcff50, #e3fff5c4, #b7f9fa00, #e6fffaa1, #b9d3ff00
 
 全レイヤーの寸法、陰影、グラデーションはコード込み形式のstyles.cssに記載しています。
+
+## 配置パスの保持
+
+ソースコードの見出しに記載されたファイル名は、ZIPルートからの相対パスです。
+`src/parts/toggles/liquid/` と `src/shared/` を含む階層を維持し、ファイルを同じ階層に平坦化しないでください。
+別のフォルダーへ組み込む場合は、この `src/` の下の構造をまとめて移します。
+読み込み元と読み込み先の相対位置、CSSのパス、通常JS版の `.js` 拡張子を維持してください。

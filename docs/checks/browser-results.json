@@ -1,10 +1,11 @@
 {
   "mode": "offline DOM injection of real files",
-  "passed": 10,
+  "passed": 11,
   "tests": [
     "Gallery: 16 parts, no runtime errors",
     "Toggle interaction does not open details",
     "Detail code workspace, file selector, save left of copy",
+    "File browser uses expandable folders and shows full source path",
     "Copy success UI reports only successful writes",
     "Selected-file download returns exact source",
     "Keyboard focus stays inside details and returns to its trigger",

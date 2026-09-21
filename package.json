@@ -1,6 +1,6 @@
 {
   "name": "state-of-play",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "private": true,
   "description": "STATE OF PLAY — UI & Motion Library: reusable toggles and surfaces.",
   "engines": {
@@ -12,14 +12,14 @@
     "build": "node scripts/build.cjs",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "typecheck:react": "tsc -p tsconfig.react.json --noEmit",
-    "test": "node --test tests/core.test.cjs tests/repository.test.cjs",
+    "test": "node --test tests/core.test.cjs tests/repository.test.cjs tests/packaging.test.cjs",
     "test:browser": "node tests/browser.cjs",
     "verify": "npm run build && npm run typecheck && npm test && npm run test:browser",
     "package": "npm run build && node scripts/package.cjs"
   },
   "devDependencies": {
     "typescript": "5.8.3",
-    "playwright": "1.55.0",
+    "playwright": "1.63.0",
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "@types/react": "19.1.1",

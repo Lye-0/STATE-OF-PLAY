@@ -30,6 +30,7 @@ function prepareArchive(files, mode) {
             throw new TypeError(`Non-text source: ${name}`);
         return { name, code: file.code };
     });
+    validateArchiveEntries(entries);
     if (mode === 'source')
         return entries;
     const map = entries.map(file => ({ saved: file.name + '.txt', original: file.name }));
@@ -47,5 +48,61 @@ function prepareArchive(files, mode) {
             throw new Error(`Duplicate generated archive path: ${file.name}`);
         outputNames.add(key);
     }
+    validateArchiveEntries(result);
     return result;
 }
+
+/** Validate file/directory conflicts as well as whole-path duplicates. */
+function validateArchiveEntries(entries) {
+    const files = new Set();
+    const directories = new Map();
+    for (const entry of entries) {
+        const name = validateArchivePath(entry.name);
+        const key = name.toLowerCase();
+        if (files.has(key) || directories.has(key)) throw new Error(`Conflicting archive path: ${name}`);
+        const pieces = name.split('/');
+        for (let i = 1; i < pieces.length; i++) {
+            const directory = pieces.slice(0, i).join('/');
+            const dirKey = directory.toLowerCase();
+            if (files.has(dirKey)) throw new Error(`File used as a directory: ${directory}`);
+            if (directories.has(dirKey) && directories.get(dirKey) !== directory)
+                throw new Error(`Inconsistent directory case: ${directory}`);
+            directories.set(dirKey, directory);
+        }
+        files.add(key);
+    }
+    return entries;
+}
+/** Explicit directory records preserve empty folders and hierarchical ZIP viewers too. */
+function addArchiveEntries(zip, root, entries) {
+    validateArchivePath(root);
+    validateArchiveEntries(entries);
+    zip.folder(root);
+    for (const entry of entries) {
+        zip.file(`${root}/${entry.name}`, entry.code, {binary: false, createFolders: true});
+    }
+    return zip;
+}
+function archiveTree(names) {
+    const tree = new Map();
+    for (const name of names) {
+        let branch = tree;
+        for (const piece of validateArchivePath(name).split('/')) {
+            if (!branch.has(piece)) branch.set(piece, new Map());
+            branch = branch.get(piece);
+        }
+    }
+    function draw(branch, prefix = '') {
+        const list = [...branch.entries()].sort(([a, childrenA], [b, childrenB]) =>
+            Number(childrenB.size > 0) - Number(childrenA.size > 0) || a.localeCompare(b));
+        return list.flatMap(([name, children], index) => {
+            const last = index === list.length - 1;
+            return [`${prefix}${last ? '└─ ' : '├─ '}${name}${children.size ? '/' : ''}`,
+                ...draw(children, prefix + (last ? '   ' : '│  '))];
+        });
+    }
+    return draw(tree).join('\n');
+}
+exports.validateArchiveEntries = validateArchiveEntries;
+exports.addArchiveEntries = addArchiveEntries;
+exports.archiveTree = archiveTree;

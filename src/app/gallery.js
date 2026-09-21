@@ -168,6 +168,6 @@ document.addEventListener('visibilitychange', () => {
     if (document.hidden)
         stopDemo();
 });
-window.StateOfPlay = Object.freeze({ version: '2.2.0', getStates: () => Object.fromEntries(state), getPartCount: () => parts.length });
+window.StateOfPlay = Object.freeze({ version: '2.3.0', getStates: () => Object.fromEntries(state), getPartCount: () => parts.length });
 setCategory('all');
 readRoute();

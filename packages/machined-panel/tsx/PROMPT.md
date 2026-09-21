@@ -25,17 +25,24 @@
 ## 再現確認
 元のCSSを正本とし、輪郭・面・陰影・色の強さ・動きの順に照合する。中身を空にした場合、文章を増やした場合、狭い幅、同じ部品の複数配置でも崩れないこと。元コードから外観を変更せず、統合先に合わせて子要素と幅・余白のみを調整する。
 
+## 配置パスの保持
+
+ソースコードの見出しに記載されたファイル名は、ZIPルートからの相対パスです。
+`src/parts/blocks/machined-panel/` と `src/shared/` を含む階層を維持し、ファイルを同じ階層に平坦化しないでください。
+別のフォルダーへ組み込む場合は、この `src/` の下の構造をまとめて移します。
+読み込み元と読み込み先の相対位置、CSSのパス、通常JS版の `.js` 拡張子を維持してください。
+
 
 ## 使い方
-# Machined Panel / 2.2.0
+# Machined Panel / 2.3.0
 
 精密な輪郭と、指先を追う金属の反射。
 
 ## React + TypeScript / JavaScript
-同じパッケージのファイルを1つのディレクトリに置き、`MachinedPanel` をimportします。CSSはコンポーネントから読み込まれます。React 18以降を前提とするソースです。JSX版はTSXから型を除去したものです。Next.jsなどではクライアントコンポーネントとして使います。
+ZIPを展開し、`src/parts/` と `src/shared/` の階層を崩さずまとめて配置し、`MachinedPanel` をimportします。CSSはコンポーネントから読み込まれます。React 18以降を前提とするソースです。JSX版はTSXから型を除去したものです。Next.jsなどではクライアントコンポーネントとして使います。
 
 ## 通常のHTML / TypeScript
-`markup.html` の要素を配置し、`styles.css` を読み込み、`init(element, options)` を実行します。`init`の返り値の `destroy()` を、画面や部品を取り外すときに必ず呼び出します。TS版は利用先のビルド環境で変換して使います。JS版の `index.html` はローカルサーバーから開きます。ZIP内の `preview/index.html` はダブルクリックでも開ける独立デモです。
+`markup.html` の要素を配置し、`styles.css` を読み込み、`init(element, options)` を実行します。`init`の返り値の `destroy()` を、画面や部品を取り外すときに必ず呼び出します。TS版は利用先のビルド環境で変換して使います。JS版の `src/parts/blocks/machined-panel/vanilla/index.html` はZIPのルートを公開するローカルサーバーから開きます。ZIP内の `preview/index.html` はダブルクリックでも開ける独立デモです。
 
 ## そのまま保たれるもの
 外観のCSS、素材別の動き、マウスとキーボードの操作、動きを減らす設定。音は展示サイト専用の任意機能で、配布パーツには含めません。展示枠やサンプル文言は部品本体から分離しています。
@@ -49,16 +56,33 @@
 ## コピーと依存関係
 コード画面の「コピー」で表示中ファイルの本文をコピーし、「ファイルを保存」でそのファイルだけをダウンロードできます。関連ファイル一式は「パーツZIP」で取得してください。共通処理を含む全ファイルを同じ構成で配置してください。JavaScript/TypeScript版の実行時外部依存はありません。React版はReactが必要です。
 
+## ディレクトリ構成を保って導入
+
+このパッケージは、元のリポジトリ内の相対パスを保持しています。
+ファイルだけを一か所に集めたり、`src/shared/` を外したりせず、ZIP内の `src/` をフォルダーごとコピーしてください。
+既存プロジェクトとの衝突を避ける場合は、`src/` 全体を `components/state-of-play/machined-panel/` などの専用フォルダーへ入れ、入口へのimportだけを変更します。
+内部の `parts/` と `shared/` の位置関係はそのままにしてください。
+
+- React入口: `src/parts/blocks/machined-panel/react/MachinedPanel.tsx`（JSX版は `.jsx`）
+- React使用例: `src/parts/blocks/machined-panel/react/Example.tsx`（JSX版は `.jsx`）
+- 通常サイト入口: `src/parts/blocks/machined-panel/vanilla/init.ts`（JS版は `.js`）
+- スタイル: `src/parts/blocks/machined-panel/styles.css`
+- 共通処理: `src/shared/`
+- 独立デモ: `preview/index.html`、`preview/styles.css`、`preview/app.js`
+
+詳細欄のファイルツリー、コピーしたソース内の相対import、ZIPの保存パスは同じ構成です。
+「ファイルを保存」はブラウザーの仕様上、選択ファイルの名前のみで保存します。ディレクトリごとの導入には「パーツZIP」を使ってください。
+
 
 ## ソースコード
 
-### MachinedPanel.tsx
+### src/parts/blocks/machined-panel/react/MachinedPanel.tsx
 
 ```tsx
 'use client';
 import React, { useEffect, useRef, type HTMLAttributes } from 'react';
-import { createSurfaceController } from './surface-controller';
-import './styles.css';
+import { createSurfaceController } from '../../../../shared/surface-controller';
+import '../styles.css';
 export interface MachinedPanelProps extends HTMLAttributes<HTMLDivElement> {
 }
 /** 精密な輪郭と、指先を追う金属の反射。 The content is yours. */
@@ -78,7 +102,7 @@ export default function MachinedPanel({ children, className = '', ...props }: Ma
 
 ```
 
-### styles.css
+### src/parts/blocks/machined-panel/styles.css
 
 ```css
 /* machined-panel: isolated component styles, generated from style.css + shared base. */
@@ -197,7 +221,7 @@ export default function MachinedPanel({ children, className = '', ...props }: Ma
 
 ```
 
-### surface-controller.ts
+### src/shared/surface-controller.ts
 
 ```typescript
 export interface SurfaceOptions {
@@ -243,7 +267,7 @@ export function createSurfaceController(element: HTMLElement, { intensity = 1, t
 
 ```
 
-### Example.tsx
+### src/parts/blocks/machined-panel/react/Example.tsx
 
 ```tsx
 import React from 'react';
@@ -259,7 +283,7 @@ export default function Example() {
 
 ```
 
-### markup.html
+### src/parts/blocks/machined-panel/markup.html
 
 ```markup
 <div class="sop-surface sop-machined-panel"><span class="sop-hardware" aria-hidden="true"><i></i><i></i><i></i><i></i></span><div class="sop-surface-content"><!-- slot: freely replace the content --><h3>Your next idea.</h3><p>ここに、あなたのコンテンツを。</p></div></div>

@@ -177,3 +177,43 @@
 .package-bottom{border-top:1px solid #353a44;padding:20px 30px;display:flex;gap:12px;justify-content:space-between;align-items:center;background:#1d2028}.package-bottom>span{font-size:9px;color:#99a3b3}.package-bottom button{font-size:12px;min-width:150px;justify-content:center}
 .package-dialog .toast{bottom:16px}.package-dialog :focus-visible{outline:2px solid #d1e6b2;outline-offset:4px}
 @media(max-width:600px){.package-heading{padding:25px 20px 20px}.package-formats{margin:20px 20px 0}.package-mode-note{padding:0 20px}.windows-help{margin:0 20px 20px}.package-bottom{padding:17px 20px;flex-wrap:wrap}.package-option{padding:15px 12px}.package-option em{display:none}.package-heading h2{font-size:25px}.package-dialog{max-height:calc(100dvh - 24px)}}
+
+/* v2.3 — Path-aware export browser. Files retain their repository directory hierarchy. */
+.part-details .tree-entries{padding:9px 6px 14px;min-width:0}
+.part-details .source-directory{margin:0;min-width:0}
+.part-details .source-directory>summary{display:flex;align-items:center;gap:5px;padding:8px 6px 8px calc(3px + var(--level)*9px);color:#a7aebc;font:10px/1.4 var(--mono);list-style:none;cursor:pointer;user-select:none;min-width:0;border-radius:4px}
+.part-details .source-directory>summary::-webkit-details-marker{display:none}
+.part-details .source-directory>summary:hover{color:#ecedf0;background:#ffffff06}
+.part-details .source-directory>summary>span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.part-details .source-directory>summary>.icon{width:13px;height:13px;flex:none;color:#939fad}
+.directory-chevron{width:9px;flex:none;font:15px/12px sans-serif;text-align:center;transition:transform .16s}
+.source-directory[open]>summary>.directory-chevron{transform:rotate(90deg)}
+.part-details .tree-entries .file-item{padding:9px 5px 9px calc(17px + var(--level)*9px);gap:6px;width:100%;min-width:0}
+.part-details .tree-entries .file-item span{font-size:10px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;min-width:0}
+.part-details .tree-entries .file-item>.icon{width:12px;height:12px;flex:none}
+.part-details .mobile-file-picker{display:none}
+.part-details .editor-bar{min-height:59px}
+.part-details .editor-location{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1}
+.part-details .current-file{font:11px/1.4 var(--mono)}
+.part-details .current-path{font:9px/1.4 var(--mono);color:#9098a7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.part-details .editor-tools{flex:none}
+.package-layout{margin:0 30px 20px;border:1px solid #343a44;border-radius:10px;background:#13151a;overflow:hidden}
+.package-layout>summary{padding:14px 16px;color:#cbdcb9;font-size:12px;cursor:pointer}
+.package-layout>p{font-size:10px;line-height:1.8;color:#a7aebc;margin:0;padding:0 16px 12px}
+.package-tree{font:10px/1.85 var(--mono);max-height:230px;overflow:auto;color:#bdc7d4;padding:0 16px 16px;margin:0;tab-size:2}
+@media(max-width:600px){
+ .part-details .file-tree{display:block;padding:10px 12px;max-height:none;overflow:visible}
+ .part-details .tree-entries,.part-details .tree-title{display:none}
+ .part-details .mobile-file-picker{display:block;width:100%;min-width:0}
+ .part-details .mobile-file-picker select{display:block;width:100%;max-width:100%;min-width:0;appearance:auto;background:#1b1e25;border:1px solid #3b4250;border-radius:5px;padding:10px;color:#d1d9e7;font:10px var(--mono);text-overflow:ellipsis}
+ .part-details .editor-location{flex:1;min-width:70px}
+ .part-details .current-file{font-size:10px}
+ .part-details .current-path{font-size:8px}
+ .package-layout{margin:0 20px 18px}
+ .package-tree{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){.directory-chevron{transition:none}}
+.part-details .editor-location{align-items:flex-start;justify-content:center}
+.part-details .editor-location>span{max-width:100%}
+@media(min-width:1101px){.part-details .source-workbench{grid-template-columns:235px minmax(0,1fr)}}
+@media(min-width:601px) and (max-width:1100px){.part-details .source-workbench{grid-template-columns:210px minmax(0,1fr)}}

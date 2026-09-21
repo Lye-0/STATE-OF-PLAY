@@ -1,152 +1,202 @@
 
-> state-of-play@2.2.0 test
-> node --test tests/core.test.cjs tests/repository.test.cjs
+> state-of-play@2.3.0 test
+> node --test tests/core.test.cjs tests/repository.test.cjs tests/packaging.test.cjs
 
 TAP version 13
 # Subtest: clamp respects bounds
 ok 1 - clamp respects bounds
   ---
-  duration_ms: 0.807422
+  duration_ms: 0.887089
   type: 'test'
   ...
 # Subtest: spring converges to the requested state
 ok 2 - spring converges to the requested state
   ---
-  duration_ms: 3.985763
+  duration_ms: 5.022902
   type: 'test'
   ...
 # Subtest: spring ignores invalid elapsed time
 ok 3 - spring ignores invalid elapsed time
   ---
-  duration_ms: 0.179209
+  duration_ms: 0.192324
   type: 'test'
   ...
 # Subtest: snap cancels spring velocity
 ok 4 - snap cancels spring velocity
   ---
-  duration_ms: 0.115874
+  duration_ms: 0.13592
   type: 'test'
   ...
 # Subtest: horizontal drag does not consume vertical scrolling
 ok 5 - horizontal drag does not consume vertical scrolling
   ---
-  duration_ms: 0.161392
+  duration_ms: 0.253694
   type: 'test'
   ...
 # Subtest: drag value is scaled and clamped
 ok 6 - drag value is scaled and clamped
   ---
-  duration_ms: 0.175624
+  duration_ms: 0.176491
   type: 'test'
   ...
 # Subtest: orbital endpoints match artwork
 ok 7 - orbital endpoints match artwork
   ---
-  duration_ms: 0.191578
+  duration_ms: 0.146086
   type: 'test'
   ...
 # Subtest: ordinary source paths are accepted
 ok 8 - ordinary source paths are accepted
   ---
-  duration_ms: 0.339329
+  duration_ms: 0.313963
   type: 'test'
   ...
 # Subtest: unsafe paths and Windows device names are rejected
 ok 9 - unsafe paths and Windows device names are rejected
   ---
-  duration_ms: 0.512539
+  duration_ms: 0.717008
   type: 'test'
   ...
 # Subtest: source archives keep filenames and code
 ok 10 - source archives keep filenames and code
   ---
-  duration_ms: 1.066491
+  duration_ms: 1.376511
   type: 'test'
   ...
 # Subtest: text archives change only filenames, with a restoration map
 ok 11 - text archives change only filenames, with a restoration map
   ---
-  duration_ms: 0.271628
+  duration_ms: 0.393671
   type: 'test'
   ...
 # Subtest: case-insensitive duplicate names are rejected
 ok 12 - case-insensitive duplicate names are rejected
   ---
-  duration_ms: 0.110235
+  duration_ms: 0.204952
   type: 'test'
   ...
 # Subtest: generated filenames cannot replace source files
 ok 13 - generated filenames cannot replace source files
   ---
-  duration_ms: 0.132569
+  duration_ms: 0.172094
   type: 'test'
   ...
 # Subtest: archive modes are explicit
 ok 14 - archive modes are explicit
   ---
-  duration_ms: 0.080812
+  duration_ms: 0.111845
+  type: 'test'
+  ...
+# Subtest: nested filenames, duplicate basenames and Japanese paths survive ZIP roundtrip
+ok 15 - nested filenames, duplicate basenames and Japanese paths survive ZIP roundtrip
+  ---
+  duration_ms: 16.455402
+  type: 'test'
+  ...
+# Subtest: ZIP rejects both orders of file-directory collisions
+ok 16 - ZIP rejects both orders of file-directory collisions
+  ---
+  duration_ms: 0.255016
+  type: 'test'
+  ...
+# Subtest: ZIP tree displays actual directories and file names
+ok 17 - ZIP tree displays actual directories and file names
+  ---
+  duration_ms: 6.751003
+  type: 'test'
+  ...
+# /tmp/sop-pack-IiRJdq/result.zip
+# 5 files / 7 directories / 1983 bytes / CRC and SHA-256 verified
+# Subtest: whole repository ZIP preserves directories, empty folders and duplicate leaf names
+ok 18 - whole repository ZIP preserves directories, empty folders and duplicate leaf names
+  ---
+  duration_ms: 25.987925
   type: 'test'
   ...
 # Subtest: catalog contains the existing ten toggles and six blocks
-ok 15 - catalog contains the existing ten toggles and six blocks
+ok 19 - catalog contains the existing ten toggles and six blocks
   ---
-  duration_ms: 0.77932
+  duration_ms: 0.826179
   type: 'test'
   ...
 # Subtest: all 452 source previews equal their exported files
-ok 16 - all 452 source previews equal their exported files
+ok 20 - all 452 source previews equal their exported files
   ---
-  duration_ms: 8.331838
+  duration_ms: 9.068191
   type: 'test'
   ...
-# Subtest: all component imports resolve inside each exported package
-ok 17 - all component imports resolve inside each exported package
+# Subtest: all component imports resolve inside hierarchical exported packages
+ok 21 - all component imports resolve inside hierarchical exported packages
   ---
-  duration_ms: 1.711049
+  duration_ms: 2.322367
   type: 'test'
   ...
 # Subtest: styles in catalog, source and generated gallery stay identical
-ok 18 - styles in catalog, source and generated gallery stay identical
+ok 22 - styles in catalog, source and generated gallery stay identical
   ---
-  duration_ms: 1.004978
+  duration_ms: 1.05036
   type: 'test'
   ...
 # Subtest: gallery script and vendor references all exist
-ok 19 - gallery script and vendor references all exist
+ok 23 - gallery script and vendor references all exist
   ---
-  duration_ms: 11.069257
+  duration_ms: 10.467307
   type: 'test'
   ...
 # Subtest: standalone previews use separated and valid HTML/CSS/JS
-ok 20 - standalone previews use separated and valid HTML/CSS/JS
+ok 24 - standalone previews use separated and valid HTML/CSS/JS
   ---
-  duration_ms: 4.76957
+  duration_ms: 5.394159
   type: 'test'
   ...
 # Subtest: download and copy controls keep requested placement
-ok 21 - download and copy controls keep requested placement
+ok 25 - download and copy controls keep requested placement
   ---
-  duration_ms: 0.193741
+  duration_ms: 0.243479
   type: 'test'
   ...
 # Subtest: no single-file gallery preview is distributed
-ok 22 - no single-file gallery preview is distributed
+ok 26 - no single-file gallery preview is distributed
   ---
-  duration_ms: 0.150115
+  duration_ms: 0.133527
   type: 'test'
   ...
 # Subtest: HTTP server provides JS/CSS with correct content types
-ok 23 - HTTP server provides JS/CSS with correct content types
+ok 27 - HTTP server provides JS/CSS with correct content types
   ---
-  duration_ms: 54.481335
+  duration_ms: 71.380053
   type: 'test'
   ...
-1..23
-# tests 23
+# Subtest: exports preserve original folders instead of flattening filenames
+ok 28 - exports preserve original folders instead of flattening filenames
+  ---
+  duration_ms: 1.390471
+  type: 'test'
+  ...
+# Subtest: native HTML imports resolve to actual CSS and main.js
+ok 29 - native HTML imports resolve to actual CSS and main.js
+  ---
+  duration_ms: 0.801943
+  type: 'test'
+  ...
+# Subtest: Playwright is pinned to the requested patched version
+ok 30 - Playwright is pinned to the requested patched version
+  ---
+  duration_ms: 0.215257
+  type: 'test'
+  ...
+# Subtest: every part and format archives its full nested source without flattening
+ok 31 - every part and format archives its full nested source without flattening
+  ---
+  duration_ms: 1055.453043
+  type: 'test'
+  ...
+1..31
+# tests 31
 # suites 0
-# pass 23
+# pass 31
 # fail 0
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 261.380014
+# duration_ms 1225.285799
