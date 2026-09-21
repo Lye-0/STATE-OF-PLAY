@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111213">
+  <meta name="description" content="STATE OF PLAY — 指先で楽しむ、10の動くスイッチ。金属、ガラス、光、花。小さな動きのコレクション。">
+  <title>STATE OF PLAY — A little switch. A lot of feeling.</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/objects.css">
+  <script src="js/motion.js" defer></script>
+  <script src="js/objects.js" defer></script>
+  <script src="js/audio.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#collection">コレクションへ</a>
+  <div class="page-shell">
+    <header class="masthead">
+      <a class="wordmark" href="#" aria-label="STATE OF PLAY トップ"><span class="brand-icon" aria-hidden="true"><i></i><i></i></span>STATE OF PLAY<span class="wordmark-period">®</span></a>
+      <span class="edition mono">AN INTERACTION COLLECTION &nbsp;/&nbsp; VOL. 001</span>
+      <button class="sound-control utility" id="sound" type="button" aria-pressed="false" aria-label="効果音をオンにする"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 10v4h4l5 4V6l-5 4H4Z"/><path class="sound-waves" d="M17 8c3 2 3 6 0 8m2-11c5 4 5 10 0 14"/><path class="sound-slash" d="m17 10 4 4m0-4-4 4"/></svg><span>SOUND OFF</span></button>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-title"><div class="eyebrow mono"><span class="live-dot"></span>SMALL OBJECTS. BIG PERSONALITIES.</div><h1 id="page-title">A little switch.<br>A lot of <em>feeling.</em><span class="hero-asterisk" aria-hidden="true">✳</span></h1></div>
+        <div class="hero-aside"><div class="mini-states" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><p>指先に、10通りの心地よさ。</p><p class="hero-description">押す。光る。ほどける。<br>小さな切り替えを、ちょっとした体験に。</p><a href="#collection" class="explore mono">TOUCH & EXPLORE <span>↙</span></a></div>
+      </section>
+      <section id="collection" aria-label="10種類のアニメーショントグル">
+        <div class="collection-bar"><div class="collection-title"><span class="mono">THE COLLECTION</span><span class="collection-count mono">[ 01 — 10 ]</span></div><div class="controls"><span class="active-counter mono"><i></i><strong id="active-count">05</strong><span>/ 10 ACTIVE</span></span><div class="batch-buttons"><button type="button" class="utility" id="all-on" aria-label="10個すべてをオンにする">ALL ON</button><span>/</span><button type="button" class="utility" id="all-off" aria-label="10個すべてをオフにする">ALL OFF</button></div><button type="button" id="demo" class="demo-control" aria-pressed="false"><span class="play-icon" aria-hidden="true"></span><span class="demo-label">デモ再生</span></button></div></div>
+        <div class="object-grid">
+          <article class="object-card" data-object="chrome" style="--accent: 209,230,178">
+            <div class="card-top"><span class="object-no mono">01 /</span><span class="object-type mono">MACHINED METAL</span><span class="state-readout mono" aria-hidden="true"><i></i><span>ON</span></span></div>
+            <div class="object-stage"><div class="stage-glow"></div>
+              <button type="button" class="toggle chrome" role="switch" aria-checked="true" aria-label="01 CHROME — 金属のスイッチ" aria-describedby="desc-chrome" data-id="chrome" style="--p:1"><span class="switch-art" aria-hidden="true"><span class="chrome-body"><i class="screw s1"></i><i class="screw s2"></i><i class="screw s3"></i><i class="screw s4"></i><span class="chrome-slot"><span class="chrome-power">I</span><span class="chrome-zero">O</span></span><span class="chrome-led"></span><span class="chrome-knob"><span class="chrome-center"><i></i></span></span></span><span class="chrome-ticks"></span></span></button>
+            </div>
+            <div class="card-bottom"><div><h2>Chrome<span>硬質な、余韻。</span></h2><p id="desc-chrome">削り出しの金属と、吸い付くスナップ。</p></div><span class="motion-tag mono">01—SNAP</span></div>
+          </article>
+          <article class="object-card" data-object="liquid" style="--accent: 133,210,231">
+            <div class="card-top"><span class="object-no mono">02 /</span><span class="object-type mono">LIQUID GLASS</span><span class="state-readout mono" aria-hidden="true"><i></i><span>ON</span></span></div>
+            <div class="object-stage"><div class="stage-glow"></div>
+              <button type="button" class="toggle liquid" role="switch" aria-checked="true" aria-label="02 LIQUID — 液体ガラスのスイッチ" aria-describedby="desc-liquid" data-id="liquid" style="--p:1"><span class="switch-art" aria-hidden="true"><span class="liquid-shadow"></span><span class="liquid-track"><span class="liquid-grid"></span><span class="liquid-stream"></span><span class="liquid-mark">FLOW</span><span class="liquid-waterline"></span></span><span class="liquid-bridge"></span><span class="liquid-lens"><span class="lens-inner"></span><span class="lens-glint"></span></span><span class="liquid-droplet drop-one"></span><span class="liquid-droplet drop-two"></span></span></button>
+            </div>
+            <div class="card-bottom"><div><h2>Liquid<span>光を、ひとしずく。</span></h2><p id="desc-liquid">伸びて、揺れて、透明なかたちに戻る。</p></div><span class="motion-tag mono">02—FLOW</span></div>
+          </article>
+          <article class="object-card" data-object="eclipse" style="--accent: 246,191,111">
+            <div class="card-top"><span class="object-no mono">03 /</span><span class="object-type mono">CELESTIAL LIGHT</span><span class="state-readout mono" aria-hidden="true"><i></i><span>OFF</span></span></div>
+            <div class="object-stage"><div class="stage-glow"></div>
+              <button type="button" class="toggle eclipse" role="switch" aria-checked="false" aria-label="03 ECLIPSE — 月と太陽のスイッチ" aria-describedby="desc-eclipse" data-id="eclipse" style="--p:0"><span class="switch-art" aria-hidden="true"><span class="eclipse-sky"><span class="eclipse-dawn"></span><span class="stars"><i style="--x:56%;--y:22%;--s:2px"></i><i style="--x:70%;--y:40%;--s:3px"></i><i style="--x:85%;--y:21%;--s:2px"></i><i style="--x:63%;--y:65%;--s:2px"></i><i style="--x:92%;--y:55%;--s:1px"></i><i style="--x:47%;--y:42%;--s:1px"></i><i style="--x:78%;--y:73%;--s:2px"></i><i style="--x:34%;--y:19%;--s:2px"></i></span><span class="sun-halo"></span><span class="eclipse-cloud c1"></span><span class="eclipse-cloud c2"></span><svg class="eclipse-landscape" viewBox="0 0 260 108"><path d="M0 100 22 85 42 89 69 72 94 86 130 54 160 76 180 62 224 88 240 75 260 88V108H0Z" fill="currentColor" opacity=".5"/><path d="m0 108 45-18 30 7 49-13 30 8 47-13 59 25v4Z" fill="currentColor"/></svg></span><span class="celestial-body"><span class="crater crater1"></span><span class="crater crater2"></span><span class="crater crater3"></span><span class="moon-shade"></span></span></span></button>
+            </div>
+            <div class="card-bottom"><div><h2>Eclipse<span>夜と、朝のあいだ。</span></h2><p id="desc-eclipse">月が滑り、静かな夜に朝焼けが満ちる。</p></div><span class="motion-tag mono">03—RISE</span></div>
+          </article>
+          <article class="object-card" data-object="bloom" style="--accent: 238,153,137">
+            <div class="card-top"><span class="object-no mono">04 /</span><span class="object-type mono">ORGANIC MOTION</span><span class="state-readout mono" aria-hidden="true"><i></i><span>ON</span></span></div>
+            <div class="object-stage"><div class="stage-glow"></div>
+              <button type="button" class="toggle bloom" role="switch" aria-checked="true" aria-label="04 BLOOM — 花が開くスイッチ" aria-describedby="desc-bloom" data-id="bloom" style="--p:1"><span class="switch-art" aria-hidden="true"><span class="bloom-track"><svg viewBox="0 0 248 80" class="bloom-vines"><path d="M25 40h170M72 40q12-18 35-16-8 19-35 16m18 0q16 19 38 16-11-19-38-16m52 0q8-15 29-14-5 15-29 14" fill="none" stroke="currentColor" stroke-width="1"/></svg><span class="bloom-word">GROW</span></span><span class="flower"><span class="petals"><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i><i style="--i:5"></i><i style="--i:6"></i><i style="--i:7"></i><i style="--i:8"></i><i style="--i:9"></i><i style="--i:10"></i><i style="--i:11"></i></span><span class="flower-inner"><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i><i style="--i:5"></i><i style="--i:6"></i><i style="--i:7"></i></span><span class="flower-core"></span></span><canvas class="object-canvas" width="560" height="280"></canvas></span></button>
+            </div>
+            <div class="card-bottom"><div><h2>Bloom<span>咲く、というスイッチ。</span></h2><p id="desc-bloom">つぼみがほどけ、花びらがふわりと広がる。</p></div><span class="motion-tag mono">04—UNFURL</span></div>
+          </article>
+          <article class="object-card" data-object="volt" style="--accent: 132,202,247">
+            <div class="card-top"><span class="object-no mono">05 /</span><span class="object-type mono">CONTAINED ENERGY</span><span class="state-readout mono" aria-hidden="true"><i></i><span>OFF</span></span></div>
+            <div class="object-stage"><div class="stage-glow"></div>
+              <button type="button" class="toggle volt" role="switch" aria-checked="false" aria-label="05 VOLT — 電光のスイッチ" aria-describedby="desc-volt" data-id="volt" style="--p:0"><span class="switch-art" aria-hidden="true"><span class="volt-label mono">01 &nbsp; / &nbsp; HIGH VOLTAGE</span><span class="volt-tube"><span class="volt-filament"></span><canvas class="object-canvas" width="520" height="176"></canvas><span class="volt-gloss"></span><span class="volt-electrode"><i></i></span></span><span class="volt-cap cap-left"></span><span class="volt-cap cap-right"></span><span class="volt-badge">HV — 220</span></span></button>
+            </div>
+            <div class="card-bottom"><div><h2>Volt<span>小さな、覚醒。</span></h2><p id="desc-volt">接点が離れ、ガラス管の中で電光が走る。</p></div><span class="motion-tag mono">05—IGNITE</span></div>
+          </article>
+          <article class="object-card" data-object="orbit" style="--accent: 162,218,185">
+            <div class="card-top"><span class="object-no mono">06 /</span><span class="object-type mono">MAGNETIC FIELD</span><span class="state-readout mono" aria-hidden="true"><i></i><span>ON</span></span></div>
+            <div class="object-stage"><div class="stage-glow"></div>
+              <button type="button" class="toggle orbit" role="switch" aria-checked="true" aria-label="06 ORBIT — 軌道を巡るスイッチ" aria-describedby="desc-orbit" data-id="orbit" style="--p:1;--ox:235px;--oy:73px"><span class="switch-art" aria-hidden="true"><span class="orbit-shadow"></span><svg viewBox="0 0 280 150" class="orbit-rails"><defs><linearGradient id="orbitRail" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#89958b"/><stop offset=".3" stop-color="#303a35"/><stop offset=".6" stop-color="#141c18"/><stop offset="1" stop-color="#768a7e"/></linearGradient></defs><ellipse cx="140" cy="75" rx="118" ry="56" fill="none" stroke="#364339" stroke-width=".8" stroke-dasharray="1 7"/><ellipse cx="140" cy="75" rx="96" ry="36" fill="none" stroke="#080d0a" stroke-width="9"/><ellipse cx="140" cy="73" rx="96" ry="36" fill="none" stroke="url(#orbitRail)" stroke-width="4"/><ellipse cx="140" cy="73" rx="77" ry="24" fill="none" stroke="#37483b" stroke-width=".7"/><path d="M140 7v8m0 121v8M12 75h8m240 0h8" stroke="#82988a" stroke-width="1"/></svg><span class="orbit-center"><span class="orbit-cross"></span><span class="orbit-caption">N &nbsp; / &nbsp; S</span></span><canvas class="object-canvas" width="560" height="300"></canvas><span class="orbit-orb"><span></span></span><span class="orbit-end end-a">0</span><span class="orbit-end end-b">1</span></span></button>
+            </div>
+            <div class="card-bottom"><div><h2>Orbit<span>引き寄せられる、軌道。</span></h2><p id="desc-orbit">磁性の球が弧を描き、もう一つの極へ。</p></div><span class="motion-tag mono">06—REVOLVE</span></div>
+          </article>
+          <article class="object-card" data-object="reel" style="--accent: 215,173,117">
+            <div class="card-top"><span class="object-no mono">07 /</span><span class="object-type mono">ANALOG MECHANISM</span><span class="state-readout mono" aria-hidden="true"><i></i><span>OFF</span></span></div>
+            <div class="object-stage"><div class="stage-glow"></div>
+              <button type="button" class="toggle reel" role="switch" aria-checked="false" aria-label="07 ANALOG — 磁気テープのスイッチ" aria-describedby="desc-reel" data-id="reel" style="--p:0"><span class="switch-art" aria-hidden="true"><span class="cassette-body"><i class="screw s1"></i><i class="screw s2"></i><i class="screw s3"></i><i class="screw s4"></i><span class="cassette-label mono">S / P <span>STEREO · TYPE II</span></span><span class="tape-line"></span><span class="spool spool-a"><i></i></span><span class="spool spool-b"><i></i></span><span class="cassette-window"><i></i><i></i><i></i><i></i><i></i></span><span class="reel-slot"><span>STOP</span><span>PLAY</span><span class="reel-slider"><i></i><i></i><i></i><b>▶</b></span></span></span></span></button>
+            </div>
+            <div class="card-bottom"><div><h2>Analog<span>あの頃の、手応え。</span></h2><p id="desc-reel">カチッと送り出す、リールと慣性のリズム。</p></div><span class="motion-tag mono">07—WIND</span></div>
+          </article>
+          <article class="object-card" data-object="fold" style="--accent: 232,158,115">
+            <div class="card-top"><span class="object-no mono">08 /</span><span class="object-type mono">FOLDED GEOMETRY</span><span class="state-readout mono" aria-hidden="true"><i></i><span>OFF</span></span></div>
+            <div class="object-stage"><div class="stage-glow"></div>
+              <button type="button" class="toggle fold" role="switch" aria-checked="false" aria-label="08 FOLD — 折り紙のスイッチ" aria-describedby="desc-fold" data-id="fold" style="--p:0"><span class="switch-art" aria-hidden="true"><span class="fold-base"><span class="fold-marks">−<span>+</span></span></span><span class="fold-paper"><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i><i style="--i:5"></i><i style="--i:6"></i><i style="--i:7"></i><i style="--i:8"></i><i style="--i:9"></i></span><span class="fold-tab"><span></span><i></i></span><span class="fold-guide"></span></span></button>
+            </div>
+            <div class="card-bottom"><div><h2>Fold<span>余白を、ひらく。</span></h2><p id="desc-fold">一枚の紙が伸び、幾何学の陰影が現れる。</p></div><span class="motion-tag mono">08—EXPAND</span></div>
+          </article>
+          <article class="object-card" data-object="prism" style="--accent: 190,171,250">
+            <div class="card-top"><span class="object-no mono">09 /</span><span class="object-type mono">REFRACTED SPECTRUM</span><span class="state-readout mono" aria-hidden="true"><i></i><span>ON</span></span></div>
+            <div class="object-stage"><div class="stage-glow"></div>
+              <button type="button" class="toggle prism" role="switch" aria-checked="true" aria-label="09 PRISM — 光が分かれるスイッチ" aria-describedby="desc-prism" data-id="prism" style="--p:1"><span class="switch-art" aria-hidden="true"><span class="prism-caustic"></span><span class="prism-base"><span class="prism-spectrum"></span><span class="prism-wire w1"></span><span class="prism-wire w2"></span><span class="prism-wire w3"></span></span><canvas class="object-canvas" width="560" height="280"></canvas><span class="prism-crystal"><span class="crystal-back"></span><span class="crystal-facet"></span><span class="crystal-core"></span></span><span class="prism-spectral-line"></span></span></button>
+            </div>
+            <div class="card-bottom"><div><h2>Prism<span>ひとつの光、無数の色。</span></h2><p id="desc-prism">結晶が回転し、光のスペクトルを解き放つ。</p></div><span class="motion-tag mono">09—REFRACT</span></div>
+          </article>
+          <article class="object-card" data-object="signal" style="--accent: 192,229,135">
+            <div class="card-top"><span class="object-no mono">10 /</span><span class="object-type mono">DIGITAL PULSE</span><span class="state-readout mono" aria-hidden="true"><i></i><span>OFF</span></span></div>
+            <div class="object-stage"><div class="stage-glow"></div>
+              <button type="button" class="toggle signal" role="switch" aria-checked="false" aria-label="10 SIGNAL — ドットマトリクスのスイッチ" aria-describedby="desc-signal" data-id="signal" style="--p:0"><span class="switch-art" aria-hidden="true"><span class="signal-body"><span class="signal-header mono">SIGNAL GENERATOR <i></i></span><span class="signal-screen"><canvas class="object-canvas" width="304" height="112"></canvas><span class="screen-glare"></span></span><span class="rocker-mount"><span class="signal-rocker"><span>I</span><i></i><span>O</span></span></span><span class="signal-bottom mono"><span>● REC</span><span>48 kHz / 24 bit</span></span></span></span></button>
+            </div>
+            <div class="card-bottom"><div><h2>Signal<span>静寂から、律動へ。</span></h2><p id="desc-signal">ロッカーを倒すと、ドットの波形が目を覚ます。</p></div><span class="motion-tag mono">10—PULSE</span></div>
+          </article>
+        </div>
+        <div class="collection-foot"><span><span class="hint-circle" aria-hidden="true">↔</span>クリック、または左右にドラッグ。</span><span class="keyboard-hint"><kbd>Tab</kbd> で選択 &nbsp;·&nbsp; <kbd>Space</kbd> で切り替え</span><span class="mono">BUILT TO BE TOUCHED.</span></div>
+      </section>
+    </main>
+    <footer class="page-footer"><div>Less utility.<br><em>More delight.</em></div><span class="mono">STATE OF PLAY<br>TEN EXPERIMENTS IN EVERYDAY MAGIC.</span><a class="back-top mono" href="#">BACK TO TOP <span>↑</span></a></footer>
+  </div>
+  <div id="announcement" class="sr-only" role="status" aria-live="polite"></div>
+  <noscript><div class="noscript-message">スイッチを操作するには、JavaScriptを有効にしてください。</div></noscript>
+</body>
+</html>
