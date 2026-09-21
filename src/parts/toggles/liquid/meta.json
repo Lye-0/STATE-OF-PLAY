@@ -1,0 +1,65 @@
+{
+  "id": "liquid",
+  "name": "Liquid",
+  "category": "toggles",
+  "order": 2,
+  "version": "2.2.0",
+  "tagline": "光を、ひとしずく。",
+  "description": "伸びて、揺れて、透明なかたちに戻る。",
+  "material": "LIQUID GLASS",
+  "motion": "FLOW",
+  "accent": "133,210,231",
+  "initial": true,
+  "componentName": "LiquidToggle",
+  "tags": [
+    "Liquid",
+    "liquid",
+    "トグル",
+    "LIQUID GLASS",
+    "伸びて、揺れて、透明なかたちに戻る。"
+  ],
+  "config": {
+    "id": "liquid",
+    "name": "Liquid",
+    "initial": true,
+    "stiffness": 195,
+    "damping": 15,
+    "tone": 540,
+    "travel": 153
+  },
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "checked",
+      "boolean",
+      "外部からON/OFFを制御します。"
+    ],
+    [
+      "defaultChecked",
+      "boolean",
+      "外部制御しない場合の初期状態です。"
+    ],
+    [
+      "onCheckedChange",
+      "(checked: boolean) => void",
+      "操作により要求された状態を受け取ります。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にします。"
+    ],
+    [
+      "aria-label",
+      "string",
+      "機能を示す名前。例：通知を有効にする。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "外側の配置やサイズを調整します。"
+    ]
+  ]
+}

@@ -1,14 +1,28 @@
 {
   "name": "state-of-play",
-  "version": "1.0.0",
+  "version": "2.2.0",
   "private": true,
-  "description": "10種類の独立したアニメーショントグルを集めた、インタラクティブなギャラリー。",
-  "scripts": {
-    "dev": "node scripts/server.mjs",
-    "start": "node scripts/server.mjs",
-    "test": "node --test tests/*.test.cjs",
-    "build": "node scripts/build.mjs",
-    "preview:build": "node scripts/build-preview.mjs"
+  "description": "STATE OF PLAY — UI & Motion Library: reusable toggles and surfaces.",
+  "engines": {
+    "node": ">=22"
   },
-  "engines": { "node": ">=20" }
+  "scripts": {
+    "dev": "node scripts/server.cjs",
+    "start": "node scripts/server.cjs",
+    "build": "node scripts/build.cjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "typecheck:react": "tsc -p tsconfig.react.json --noEmit",
+    "test": "node --test tests/core.test.cjs tests/repository.test.cjs",
+    "test:browser": "node tests/browser.cjs",
+    "verify": "npm run build && npm run typecheck && npm test && npm run test:browser",
+    "package": "npm run build && node scripts/package.cjs"
+  },
+  "devDependencies": {
+    "typescript": "5.8.3",
+    "playwright": "1.55.0",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "@types/react": "19.1.1",
+    "@types/react-dom": "19.1.1"
+  }
 }

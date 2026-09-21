@@ -1,0 +1,240 @@
+/* bloom: isolated component styles, generated from style.css + shared base. */
+.sop-toggle.sop-bloom {
+  --sop-mono:  "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  box-sizing: border-box;
+  color: inherit;
+  font: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sop-toggle.sop-bloom[aria-checked="true"] {
+  --p: 1;
+}
+
+.sop-toggle.sop-bloom:disabled {
+  cursor: not-allowed;
+  opacity: .45;
+  filter: saturate(.35);
+}
+
+.sop-toggle.sop-bloom:focus-visible {
+  outline: 2px solid #d1e6b2;
+  outline-offset: 10px;
+}
+
+.sop-toggle.sop-bloom {
+  --p: 0;
+  --v: 0;
+  --energy: 0;
+  --time: 0;
+  position: relative;
+  display: block;
+  flex: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  outline-offset: 10px!important;
+  touch-action: pan-y;
+  user-select: none;
+  border-radius: 60px;
+  cursor: pointer;
+  transform: translateY(0);
+  transition: filter .3s;
+  -webkit-user-select: none;
+}
+
+.sop-toggle.sop-bloom:hover {
+  filter: brightness(1.075);
+}
+
+.sop-toggle.sop-bloom:active {
+  cursor: grabbing;
+}
+
+.sop-toggle.sop-bloom .switch-art {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transform: translateY(calc(var(--press,0)*1.5px));
+  transition: transform .12s;
+}
+
+.sop-toggle.sop-bloom .switch-art * {
+  box-sizing: border-box;
+}
+
+.sop-toggle.sop-bloom .object-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.sop-toggle.sop-bloom .screw {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(125deg,#8b8d8d,#333737 48%,#111313 50%,#5d6162);
+  box-shadow: 0 0 1px 1px #060707;
+}
+
+.sop-toggle.sop-bloom .screw:after {
+  content: "";
+  position: absolute;
+  left: 1px;
+  right: 1px;
+  top: 3px;
+  height: 1px;
+  background: #171919;
+  transform: rotate(-35deg);
+}
+
+.sop-toggle.sop-bloom .s1 {
+  top: 10px;
+  left: 11px;
+}
+
+.sop-toggle.sop-bloom .s2 {
+  top: 10px;
+  right: 11px;
+}
+
+.sop-toggle.sop-bloom .s3 {
+  bottom: 10px;
+  left: 11px;
+}
+
+.sop-toggle.sop-bloom .s4 {
+  bottom: 10px;
+  right: 11px;
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .sop-toggle.sop-bloom,
+  .sop-toggle.sop-bloom * {
+    animation: none!important;
+    transition: none!important;
+  }
+
+}
+
+.sop-toggle.sop-bloom {
+  width: 280px;
+  height: 140px;
+}
+
+.sop-toggle.sop-bloom .bloom-track {
+  position: absolute;
+  left: 16px;
+  top: 32px;
+  width: 248px;
+  height: 80px;
+  border-radius: 50px;
+  background: linear-gradient(165deg,#231b1c,#372528 45%,#231b1d);
+  border: 1px solid #64434478;
+  box-shadow: inset 0 3px 9px #08070999,0 8px 18px #0005,inset 0 -1px 1px #b0747036;
+}
+
+.sop-toggle.sop-bloom .bloom-vines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: #a8766140;
+  opacity: calc(.3 + var(--p)*.7);
+}
+
+.sop-toggle.sop-bloom .bloom-word {
+  position: absolute;
+  top: 34px;
+  left: 45px;
+  font: 8px var(--sop-mono);
+  letter-spacing: 3px;
+  color: #bc8983;
+  opacity: calc(var(--p)*.6);
+}
+
+.sop-toggle.sop-bloom .flower {
+  position: absolute;
+  left: 57px;
+  top: 72px;
+  width: 0;
+  height: 0;
+  transform: translateX(calc(var(--p)*159px)) rotate(calc(var(--p)*85deg));
+  filter: drop-shadow(2px 9px 6px #0007);
+}
+
+.sop-toggle.sop-bloom .petals,
+.sop-toggle.sop-bloom .flower-inner {
+  position: absolute;
+  inset: 0;
+  perspective: 250px;
+}
+
+.sop-toggle.sop-bloom .petals i {
+  position: absolute;
+  left: -16px;
+  bottom: -8px;
+  width: 32px;
+  height: 65px;
+  border-radius: 60% 50% 45% 45%;
+  background: linear-gradient(100deg,#bf625e,#ed9c88 28%,#ffccb0 51%,#e99887 55%,#ba6965);
+  box-shadow: inset 1px 0 2px #fce6c96e,inset -1px 0 2px #7c413757,1px 1px 4px #662e3744;
+  transform-origin: 50% calc(100% - 8px);
+  transform: rotate(calc(var(--i)*30deg)) translateY(calc(var(--p)*-3px)) rotateX(calc((1 - var(--p))*74deg)) scale(calc(.35 + var(--p)*.65));
+  opacity: calc(.1 + var(--p)*.9);
+}
+
+.sop-toggle.sop-bloom .petals i:after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  left: 50%;
+  top: 12%;
+  bottom: 10%;
+  background: linear-gradient(transparent,#ffddc46b,transparent);
+}
+
+.sop-toggle.sop-bloom .petals i:nth-child(even) {
+  background: linear-gradient(95deg,#c9776c,#ffb9a0 48%,#e79b8b 52%,#d17e78);
+}
+
+.sop-toggle.sop-bloom .flower-inner i {
+  position: absolute;
+  left: -12px;
+  bottom: -6px;
+  width: 24px;
+  height: 42px;
+  border-radius: 55% 50% 40% 40%;
+  background: linear-gradient(90deg,#c68368,#ffd7aa 49%,#f3b18f 52%,#ba7961);
+  transform-origin: 50% calc(100% - 6px);
+  transform: rotate(calc(var(--i)*45deg + 15deg)) rotateX(calc((1 - var(--p))*78deg)) scale(calc(.4 + var(--p)*.6));
+  box-shadow: 1px 2px 4px #793c4440;
+}
+
+.sop-toggle.sop-bloom .flower-core {
+  position: absolute;
+  inset: -23px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 33% 26%,#ffdfa7,#eaaa72 30%,#b46e48 72%,#804531);
+  box-shadow: inset 1px 2px 3px #ffe3a860,2px 4px 6px #60362290;
+  transform: scale(calc(1 - var(--p)*.26));
+}
+
+.sop-toggle.sop-bloom .flower-core:after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background-image: radial-gradient(#5136209c .7px,transparent 1.3px);
+  background-size: 4px 4px;
+  opacity: var(--p);
+  mask-image: radial-gradient(circle,#000 35%,transparent 68%);
+}
+

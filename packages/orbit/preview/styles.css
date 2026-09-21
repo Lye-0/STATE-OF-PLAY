@@ -1,0 +1,227 @@
+/* Demo layout only; never required by the component. */
+:root{color-scheme:dark}body{margin:0;min-height:100vh;display:grid;place-items:center;background:#14161a;color:#e8ebef;font:14px/1.7 Arial,'Yu Gothic',sans-serif}main{width:min(420px,calc(100% - 40px));padding:36px 0}h1{font-size:15px;font-weight:400;margin-bottom:55px;color:#b9c7b4}.demo-root{display:flex;justify-content:center;min-width:0}.hint{font-size:11px;color:#9aa3ae;margin-top:48px}button:not(.sop-toggle){color:inherit;background:transparent;border:1px solid #62696e;border-radius:6px;padding:9px 12px}main>.demo-root>.sop-surface{width:100%}
+/* orbit: isolated component styles, generated from style.css + shared base. */
+.sop-toggle.sop-orbit {
+  --sop-mono:  "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  box-sizing: border-box;
+  color: inherit;
+  font: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sop-toggle.sop-orbit[aria-checked="true"] {
+  --p: 1;
+}
+
+.sop-toggle.sop-orbit:disabled {
+  cursor: not-allowed;
+  opacity: .45;
+  filter: saturate(.35);
+}
+
+.sop-toggle.sop-orbit:focus-visible {
+  outline: 2px solid #d1e6b2;
+  outline-offset: 10px;
+}
+
+.sop-toggle.sop-orbit {
+  --p: 0;
+  --v: 0;
+  --energy: 0;
+  --time: 0;
+  position: relative;
+  display: block;
+  flex: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  outline-offset: 10px!important;
+  touch-action: pan-y;
+  user-select: none;
+  border-radius: 60px;
+  cursor: pointer;
+  transform: translateY(0);
+  transition: filter .3s;
+  -webkit-user-select: none;
+}
+
+.sop-toggle.sop-orbit:hover {
+  filter: brightness(1.075);
+}
+
+.sop-toggle.sop-orbit:active {
+  cursor: grabbing;
+}
+
+.sop-toggle.sop-orbit .switch-art {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transform: translateY(calc(var(--press,0)*1.5px));
+  transition: transform .12s;
+}
+
+.sop-toggle.sop-orbit .switch-art * {
+  box-sizing: border-box;
+}
+
+.sop-toggle.sop-orbit .object-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.sop-toggle.sop-orbit .screw {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(125deg,#8b8d8d,#333737 48%,#111313 50%,#5d6162);
+  box-shadow: 0 0 1px 1px #060707;
+}
+
+.sop-toggle.sop-orbit .screw:after {
+  content: "";
+  position: absolute;
+  left: 1px;
+  right: 1px;
+  top: 3px;
+  height: 1px;
+  background: #171919;
+  transform: rotate(-35deg);
+}
+
+.sop-toggle.sop-orbit .s1 {
+  top: 10px;
+  left: 11px;
+}
+
+.sop-toggle.sop-orbit .s2 {
+  top: 10px;
+  right: 11px;
+}
+
+.sop-toggle.sop-orbit .s3 {
+  bottom: 10px;
+  left: 11px;
+}
+
+.sop-toggle.sop-orbit .s4 {
+  bottom: 10px;
+  right: 11px;
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .sop-toggle.sop-orbit,
+  .sop-toggle.sop-orbit * {
+    animation: none!important;
+    transition: none!important;
+  }
+
+}
+
+.sop-toggle.sop-orbit {
+  width: 280px;
+  height: 150px;
+}
+
+.sop-toggle.sop-orbit .orbit-rails {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 4px 3px #000);
+}
+
+.sop-toggle.sop-orbit .orbit-shadow {
+  position: absolute;
+  left: 30px;
+  top: 46px;
+  width: 220px;
+  height: 73px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse,#0a1510e0,#11191255 70%,transparent 75%);
+  box-shadow: 0 12px 18px #0004;
+}
+
+.sop-toggle.sop-orbit .orbit-center {
+  position: absolute;
+  left: 122px;
+  top: 59px;
+  width: 36px;
+  height: 35px;
+  opacity: calc(.3 + var(--p)*.7);
+}
+
+.sop-toggle.sop-orbit .orbit-cross {
+  position: absolute;
+  left: 13px;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(90deg,transparent 4px,#a2d1af70 4px 5px,transparent 5px),linear-gradient(transparent 4px,#a2d1af70 4px 5px,transparent 5px);
+}
+
+.sop-toggle.sop-orbit .orbit-caption {
+  position: absolute;
+  left: 0;
+  top: 21px;
+  width: 36px;
+  text-align: center;
+  font: 6px var(--sop-mono);
+  letter-spacing: 1px;
+  color: #a4c2a6;
+  white-space: nowrap;
+}
+
+.sop-toggle.sop-orbit .orbit-orb {
+  position: absolute;
+  left: var(--ox,44px);
+  top: var(--oy,73px);
+  width: 49px;
+  height: 49px;
+  margin: -24.5px 0 0 -24.5px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 33% 21%,#d5ead6,#92b89c 15%,#3f6f59 36%,#142c21 66%,#081a12 84%);
+  box-shadow: inset -2px -2px 3px #a7dfb652,inset 1px 1px 2px #ecffe98f,2px 8px 7px #000b,0 0 18px #83d49a14;
+}
+
+.sop-toggle.sop-orbit .orbit-orb span {
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  border-top: 1px solid #e9ffe199;
+  transform: rotate(-27deg);
+  filter: blur(.4px);
+}
+
+.sop-toggle.sop-orbit .orbit-orb:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 25% 15%,#d8ffe454,transparent 50%);
+  opacity: var(--p);
+}
+
+.sop-toggle.sop-orbit .orbit-end {
+  position: absolute;
+  top: 108px;
+  font: 7px var(--sop-mono);
+  color: #7b9280;
+}
+
+.sop-toggle.sop-orbit .end-a {
+  left: 42px;
+}
+
+.sop-toggle.sop-orbit .end-b {
+  right: 41px;
+}
+

@@ -1,0 +1,18 @@
+'use client';
+import React, { useEffect, useRef } from 'react';
+import { createSurfaceController } from './surface-controller';
+import './styles.css';
+/** 今のギャラリーを包む、オリジナルの面。 The content is yours. */
+export default function OriginalSurface({ children, className = '', ...props }) {
+    const element = useRef(null);
+    useEffect(() => {
+        if (!element.current)
+            return;
+        const controller = createSurfaceController(element.current, { tilt: false });
+        return () => controller.destroy();
+    }, []);
+    return <div {...props} ref={element} className={`sop-surface sop-original-surface ${className}`}>
+    
+    <div className="sop-surface-content">{children}</div>
+  </div>;
+}

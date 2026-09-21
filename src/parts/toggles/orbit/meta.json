@@ -1,0 +1,65 @@
+{
+  "id": "orbit",
+  "name": "Orbit",
+  "category": "toggles",
+  "order": 6,
+  "version": "2.2.0",
+  "tagline": "引き寄せられる、軌道。",
+  "description": "磁性の球が弧を描き、もう一つの極へ。",
+  "material": "MAGNETIC FIELD",
+  "motion": "REVOLVE",
+  "accent": "162,218,185",
+  "initial": true,
+  "componentName": "OrbitToggle",
+  "tags": [
+    "Orbit",
+    "orbit",
+    "トグル",
+    "MAGNETIC FIELD",
+    "磁性の球が弧を描き、もう一つの極へ。"
+  ],
+  "config": {
+    "id": "orbit",
+    "name": "Orbit",
+    "initial": true,
+    "stiffness": 140,
+    "damping": 18,
+    "tone": 420,
+    "travel": 192
+  },
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "checked",
+      "boolean",
+      "外部からON/OFFを制御します。"
+    ],
+    [
+      "defaultChecked",
+      "boolean",
+      "外部制御しない場合の初期状態です。"
+    ],
+    [
+      "onCheckedChange",
+      "(checked: boolean) => void",
+      "操作により要求された状態を受け取ります。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にします。"
+    ],
+    [
+      "aria-label",
+      "string",
+      "機能を示す名前。例：通知を有効にする。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "外側の配置やサイズを調整します。"
+    ]
+  ]
+}

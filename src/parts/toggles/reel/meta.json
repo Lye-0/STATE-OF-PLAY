@@ -1,0 +1,65 @@
+{
+  "id": "reel",
+  "name": "Analog",
+  "category": "toggles",
+  "order": 7,
+  "version": "2.2.0",
+  "tagline": "あの頃の、手応え。",
+  "description": "カチッと送り出す、リールと慣性のリズム。",
+  "material": "ANALOG MECHANISM",
+  "motion": "WIND",
+  "accent": "215,173,117",
+  "initial": false,
+  "componentName": "AnalogToggle",
+  "tags": [
+    "Analog",
+    "reel",
+    "トグル",
+    "ANALOG MECHANISM",
+    "カチッと送り出す、リールと慣性のリズム。"
+  ],
+  "config": {
+    "id": "reel",
+    "name": "Analog",
+    "initial": false,
+    "stiffness": 430,
+    "damping": 28,
+    "tone": 170,
+    "travel": 134
+  },
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "checked",
+      "boolean",
+      "外部からON/OFFを制御します。"
+    ],
+    [
+      "defaultChecked",
+      "boolean",
+      "外部制御しない場合の初期状態です。"
+    ],
+    [
+      "onCheckedChange",
+      "(checked: boolean) => void",
+      "操作により要求された状態を受け取ります。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にします。"
+    ],
+    [
+      "aria-label",
+      "string",
+      "機能を示す名前。例：通知を有効にする。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "外側の配置やサイズを調整します。"
+    ]
+  ]
+}

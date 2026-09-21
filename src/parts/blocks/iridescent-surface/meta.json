@@ -1,0 +1,57 @@
+{
+  "id": "iridescent-surface",
+  "name": "Iridescent Surface",
+  "category": "blocks",
+  "order": 16,
+  "version": "2.2.0",
+  "tagline": "ひとつではない、色。",
+  "description": "見る位置で揺らぐ、偏光のスペクトル。",
+  "material": "SPECTRUM / OPTICAL",
+  "motion": "SHIFT",
+  "accent": "189,182,230",
+  "initial": false,
+  "componentName": "IridescentSurface",
+  "tags": [
+    "Iridescent Surface",
+    "ブロック",
+    "カード",
+    "背景",
+    "見る位置で揺らぐ、偏光のスペクトル。"
+  ],
+  "config": {
+    "tilt": true
+  },
+  "related": [
+    "original-surface"
+  ],
+  "design": {
+    "radius": "16px",
+    "base": "#1b1b24",
+    "spectralAngle": "110 + normalizedX*70 - normalizedY*25 degrees",
+    "texture": "120deg, 1px at 5px interval",
+    "tilt": "X ±3deg / Y ±4deg",
+    "palette": "muted lavender / sage / rose / blue-grey"
+  },
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "文章、画像、ボタンなど好きな中身を配置できます。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "幅、余白、外側のレイアウトを設定します。"
+    ],
+    [
+      "--sop-padding",
+      "CSSカスタムプロパティ",
+      "内側の余白。初期値は28pxです。"
+    ],
+    [
+      "--sop-accent",
+      "R,G,B",
+      "Original Surfaceの追従光の色を指定できます。"
+    ]
+  ]
+}

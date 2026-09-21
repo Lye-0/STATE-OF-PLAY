@@ -1,0 +1,115 @@
+/* Demo layout only; never required by the component. */
+:root{color-scheme:dark}body{margin:0;min-height:100vh;display:grid;place-items:center;background:#14161a;color:#e8ebef;font:14px/1.7 Arial,'Yu Gothic',sans-serif}main{width:min(420px,calc(100% - 40px));padding:36px 0}h1{font-size:15px;font-weight:400;margin-bottom:55px;color:#b9c7b4}.demo-root{display:flex;justify-content:center;min-width:0}.hint{font-size:11px;color:#9aa3ae;margin-top:48px}button:not(.sop-toggle){color:inherit;background:transparent;border:1px solid #62696e;border-radius:6px;padding:9px 12px}main>.demo-root>.sop-surface{width:100%}
+/* machined-panel: isolated component styles, generated from style.css + shared base. */
+.sop-surface.sop-machined-panel {
+  --sop-x: 50%;
+  --sop-y: 50%;
+  --sop-rx: 0deg;
+  --sop-ry: 0deg;
+  position: relative;
+  box-sizing: border-box;
+  isolation: isolate;
+  overflow: hidden;
+  min-width: 0;
+  width: 100%;
+  color: #eeeee6;
+  transform: perspective(900px) rotateX(var(--sop-rx)) rotateY(var(--sop-ry));
+}
+
+.sop-surface.sop-machined-panel .sop-surface-content {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: var(--sop-padding,28px);
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .sop-surface.sop-machined-panel,
+  .sop-surface.sop-machined-panel:before,
+  .sop-surface.sop-machined-panel:after {
+    animation: none!important;
+    transition: none!important;
+    transform: none!important;
+  }
+
+}
+
+.sop-surface.sop-machined-panel {
+  border-radius: 12px;
+  border: 1px solid #777e7470;
+  background: repeating-linear-gradient(0deg,#e4ecdd04 0 1px,transparent 1px 3px),linear-gradient(142deg,#474c46 0,#242925 30%,#191e1b 65%,#353c34);
+  box-shadow: inset 0 1px 0 #d3dcc666,inset 0 -2px 0 #080d0a,0 3px 0 #0a100b,0 18px 30px #0006;
+  transition: border-color .4s;
+}
+
+.sop-surface.sop-machined-panel:before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid #b7c4ad22;
+  border-radius: 6px;
+  box-shadow: 0 0 0 1px #030a0370;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.sop-surface.sop-machined-panel:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(450px ellipse at var(--sop-x,20%) var(--sop-y,10%),#d6e3c718,transparent 64%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.sop-surface.sop-machined-panel:hover {
+  border-color: #a3ae8b99;
+}
+
+.sop-surface.sop-machined-panel .sop-hardware {
+  position: absolute;
+  inset: 17px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.sop-surface.sop-machined-panel .sop-hardware i {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#abb3a3,#323b2f 40%,#0b100b 45%,#91a180 65%,#475540);
+  box-shadow: 0 0 0 1px #10190e,inset 0 1px 0 #efffdb50;
+}
+
+.sop-surface.sop-machined-panel .sop-hardware i:before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  right: 1px;
+  top: 3px;
+  height: 1px;
+  background: #121a0f;
+  transform: rotate(-30deg);
+}
+
+.sop-surface.sop-machined-panel .sop-hardware i:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+.sop-surface.sop-machined-panel .sop-hardware i:nth-child(2) {
+  top: 0;
+  right: 0;
+}
+
+.sop-surface.sop-machined-panel .sop-hardware i:nth-child(3) {
+  bottom: 0;
+  left: 0;
+}
+
+.sop-surface.sop-machined-panel .sop-hardware i:nth-child(4) {
+  bottom: 0;
+  right: 0;
+}
+

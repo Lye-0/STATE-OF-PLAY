@@ -1,0 +1,65 @@
+{
+  "id": "eclipse",
+  "name": "Eclipse",
+  "category": "toggles",
+  "order": 3,
+  "version": "2.2.0",
+  "tagline": "夜と、朝のあいだ。",
+  "description": "月が滑り、静かな夜に朝焼けが満ちる。",
+  "material": "CELESTIAL LIGHT",
+  "motion": "RISE",
+  "accent": "246,191,111",
+  "initial": false,
+  "componentName": "EclipseToggle",
+  "tags": [
+    "Eclipse",
+    "eclipse",
+    "トグル",
+    "CELESTIAL LIGHT",
+    "月が滑り、静かな夜に朝焼けが満ちる。"
+  ],
+  "config": {
+    "id": "eclipse",
+    "name": "Eclipse",
+    "initial": false,
+    "stiffness": 155,
+    "damping": 23,
+    "tone": 330,
+    "travel": 154
+  },
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "checked",
+      "boolean",
+      "外部からON/OFFを制御します。"
+    ],
+    [
+      "defaultChecked",
+      "boolean",
+      "外部制御しない場合の初期状態です。"
+    ],
+    [
+      "onCheckedChange",
+      "(checked: boolean) => void",
+      "操作により要求された状態を受け取ります。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にします。"
+    ],
+    [
+      "aria-label",
+      "string",
+      "機能を示す名前。例：通知を有効にする。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "外側の配置やサイズを調整します。"
+    ]
+  ]
+}

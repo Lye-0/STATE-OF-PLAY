@@ -1,0 +1,280 @@
+/* liquid: isolated component styles, generated from style.css + shared base. */
+.sop-toggle.sop-liquid {
+  --sop-mono:  "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  box-sizing: border-box;
+  color: inherit;
+  font: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sop-toggle.sop-liquid[aria-checked="true"] {
+  --p: 1;
+}
+
+.sop-toggle.sop-liquid:disabled {
+  cursor: not-allowed;
+  opacity: .45;
+  filter: saturate(.35);
+}
+
+.sop-toggle.sop-liquid:focus-visible {
+  outline: 2px solid #d1e6b2;
+  outline-offset: 10px;
+}
+
+.sop-toggle.sop-liquid {
+  --p: 0;
+  --v: 0;
+  --energy: 0;
+  --time: 0;
+  position: relative;
+  display: block;
+  flex: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  outline-offset: 10px!important;
+  touch-action: pan-y;
+  user-select: none;
+  border-radius: 60px;
+  cursor: pointer;
+  transform: translateY(0);
+  transition: filter .3s;
+  -webkit-user-select: none;
+}
+
+.sop-toggle.sop-liquid:hover {
+  filter: brightness(1.075);
+}
+
+.sop-toggle.sop-liquid:active {
+  cursor: grabbing;
+}
+
+.sop-toggle.sop-liquid .switch-art {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transform: translateY(calc(var(--press,0)*1.5px));
+  transition: transform .12s;
+}
+
+.sop-toggle.sop-liquid .switch-art * {
+  box-sizing: border-box;
+}
+
+.sop-toggle.sop-liquid .object-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.sop-toggle.sop-liquid .screw {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(125deg,#8b8d8d,#333737 48%,#111313 50%,#5d6162);
+  box-shadow: 0 0 1px 1px #060707;
+}
+
+.sop-toggle.sop-liquid .screw:after {
+  content: "";
+  position: absolute;
+  left: 1px;
+  right: 1px;
+  top: 3px;
+  height: 1px;
+  background: #171919;
+  transform: rotate(-35deg);
+}
+
+.sop-toggle.sop-liquid .s1 {
+  top: 10px;
+  left: 11px;
+}
+
+.sop-toggle.sop-liquid .s2 {
+  top: 10px;
+  right: 11px;
+}
+
+.sop-toggle.sop-liquid .s3 {
+  bottom: 10px;
+  left: 11px;
+}
+
+.sop-toggle.sop-liquid .s4 {
+  bottom: 10px;
+  right: 11px;
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .sop-toggle.sop-liquid,
+  .sop-toggle.sop-liquid * {
+    animation: none!important;
+    transition: none!important;
+  }
+
+}
+
+.sop-toggle.sop-liquid {
+  width: 258px;
+  height: 108px;
+}
+
+.sop-toggle.sop-liquid .liquid-shadow {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 76px;
+  height: 34px;
+  border-radius: 50%;
+  background: #0009;
+  filter: blur(13px);
+}
+
+.sop-toggle.sop-liquid .liquid-track {
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 258px;
+  height: 91px;
+  border-radius: 50px;
+  background: linear-gradient(152deg,#b4f3ee30 0,#1b455126 22%,#13232a 45%,#28404a 80%,#8cbae02b);
+  border: 1px solid #aecbda51;
+  box-shadow: inset 0 1px 1px #c4edf767,inset 0 -1px 2px #adcdff55,0 1px 2px #000;
+  overflow: hidden;
+}
+
+.sop-toggle.sop-liquid .liquid-grid {
+  position: absolute;
+  inset: 0;
+  opacity: .4;
+  background-image: linear-gradient(90deg,#aae7d436 1px,transparent 1px),linear-gradient(#b2e2ff29 1px,transparent 1px);
+  background-size: 16px 16px;
+  transform: perspective(200px) rotateY(-14deg) rotateZ(-18deg) scale(1.6);
+  transition: opacity .4s;
+}
+
+.sop-toggle.sop-liquid .liquid-stream {
+  position: absolute;
+  inset: -60px -20px;
+  background: conic-gradient(from 20deg at 32% 44%,transparent,#8bdebd88 7%,#5fc6e899 14%,transparent 27%,#d7b9eb66 40%,#b5ebf094 45%,transparent 53%,#418eca3b 77%,#b2f5dd5e);
+  filter: blur(6px);
+  transform: translateX(calc(var(--p)*24px)) rotate(calc(var(--p)*42deg));
+  opacity: calc(.3 + var(--p)*.65);
+}
+
+.sop-toggle.sop-liquid .liquid-mark {
+  position: absolute;
+  left: 40px;
+  top: 38px;
+  font: 9px var(--sop-mono);
+  letter-spacing: 4px;
+  color: #c4efed;
+  opacity: calc(.15 + var(--p)*.5);
+}
+
+.sop-toggle.sop-liquid .liquid-waterline {
+  position: absolute;
+  inset: 4px;
+  border: 1px solid #bce6f012;
+  border-radius: 50px;
+  box-shadow: inset 0 -12px 14px #87d8e30b;
+}
+
+.sop-toggle.sop-liquid .liquid-lens {
+  position: absolute;
+  left: 9px;
+  top: 12px;
+  width: 85px;
+  height: 85px;
+  transform: translateX(calc(var(--p)*153px)) scaleX(calc(1 + var(--energy)*.22)) scaleY(calc(1 - var(--energy)*.09));
+  border: 1px solid #d4fbffab;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 25% 13%,#eefffa80,transparent 28%),radial-gradient(ellipse at 60% 75%,#54bbd733,transparent 56%),linear-gradient(130deg,#9db4ce55,#042c3b05 40%,#b8ffda66);
+  backdrop-filter: blur(1.7px) saturate(1.9);
+  -webkit-backdrop-filter: blur(1.7px) saturate(1.9);
+  box-shadow: inset 2px 2px 4px #ecfff7cc,inset -2px -3px 4px #a9dff7a6,inset 0 0 10px #afeeff75,2px 7px 12px #020e2080,-3px 0 15px #99fcf130;
+  overflow: hidden;
+}
+
+.sop-toggle.sop-liquid .lens-inner {
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  border: 1px solid #b7eee450;
+  box-shadow: inset 0 0 5px #dcfcff50;
+  transform: rotate(-30deg);
+}
+
+.sop-toggle.sop-liquid .lens-inner:before {
+  content: "";
+  position: absolute;
+  left: 9px;
+  right: 9px;
+  top: 3px;
+  height: 28px;
+  border-top: 2px solid #e3fff5c4;
+  border-radius: 50%;
+  filter: blur(.5px);
+}
+
+.sop-toggle.sop-liquid .lens-glint {
+  position: absolute;
+  right: 4px;
+  top: 29px;
+  width: 14px;
+  height: 43px;
+  border-radius: 50%;
+  transform: rotate(30deg);
+  background: linear-gradient(#b7f9fa00,#e6fffaa1,#b9d3ff00);
+  filter: blur(1px);
+}
+
+.sop-toggle.sop-liquid .liquid-bridge {
+  position: absolute;
+  top: 32px;
+  left: 46px;
+  width: 100px;
+  height: 45px;
+  border-radius: 50%;
+  background: linear-gradient(#c0fbf855,#64c3e260,#d0e8ee77);
+  border: 1px solid #b4f8fd70;
+  filter: blur(3px);
+  transform: translateX(calc(var(--p)*123px - var(--v)*4px)) scaleX(calc(var(--energy)*1.6));
+  transform-origin: 0 50%;
+  opacity: var(--energy);
+}
+
+.sop-toggle.sop-liquid .liquid-droplet {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 25% 20%,#e8fffb,#83e5e04d 24%,#91d9fb20 61%,#bbeffa);
+  box-shadow: inset 0 0 2px #dafbfbb3,0 3px 8px #0003;
+  opacity: calc(var(--energy)*.85);
+}
+
+.sop-toggle.sop-liquid .drop-one {
+  width: 12px;
+  height: 12px;
+  left: calc(32px + var(--p)*164px);
+  top: 3px;
+  transform: translate(calc(var(--v)*-9px),calc(var(--energy)*-10px));
+}
+
+.sop-toggle.sop-liquid .drop-two {
+  width: 7px;
+  height: 7px;
+  left: calc(43px + var(--p)*135px);
+  top: 98px;
+  transform: translate(calc(var(--v)*-13px),calc(var(--energy)*8px));
+}
+

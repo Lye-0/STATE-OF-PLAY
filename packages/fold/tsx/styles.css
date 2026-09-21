@@ -1,0 +1,226 @@
+/* fold: isolated component styles, generated from style.css + shared base. */
+.sop-toggle.sop-fold {
+  --sop-mono:  "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  box-sizing: border-box;
+  color: inherit;
+  font: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sop-toggle.sop-fold[aria-checked="true"] {
+  --p: 1;
+}
+
+.sop-toggle.sop-fold:disabled {
+  cursor: not-allowed;
+  opacity: .45;
+  filter: saturate(.35);
+}
+
+.sop-toggle.sop-fold:focus-visible {
+  outline: 2px solid #d1e6b2;
+  outline-offset: 10px;
+}
+
+.sop-toggle.sop-fold {
+  --p: 0;
+  --v: 0;
+  --energy: 0;
+  --time: 0;
+  position: relative;
+  display: block;
+  flex: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  outline-offset: 10px!important;
+  touch-action: pan-y;
+  user-select: none;
+  border-radius: 60px;
+  cursor: pointer;
+  transform: translateY(0);
+  transition: filter .3s;
+  -webkit-user-select: none;
+}
+
+.sop-toggle.sop-fold:hover {
+  filter: brightness(1.075);
+}
+
+.sop-toggle.sop-fold:active {
+  cursor: grabbing;
+}
+
+.sop-toggle.sop-fold .switch-art {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transform: translateY(calc(var(--press,0)*1.5px));
+  transition: transform .12s;
+}
+
+.sop-toggle.sop-fold .switch-art * {
+  box-sizing: border-box;
+}
+
+.sop-toggle.sop-fold .object-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.sop-toggle.sop-fold .screw {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(125deg,#8b8d8d,#333737 48%,#111313 50%,#5d6162);
+  box-shadow: 0 0 1px 1px #060707;
+}
+
+.sop-toggle.sop-fold .screw:after {
+  content: "";
+  position: absolute;
+  left: 1px;
+  right: 1px;
+  top: 3px;
+  height: 1px;
+  background: #171919;
+  transform: rotate(-35deg);
+}
+
+.sop-toggle.sop-fold .s1 {
+  top: 10px;
+  left: 11px;
+}
+
+.sop-toggle.sop-fold .s2 {
+  top: 10px;
+  right: 11px;
+}
+
+.sop-toggle.sop-fold .s3 {
+  bottom: 10px;
+  left: 11px;
+}
+
+.sop-toggle.sop-fold .s4 {
+  bottom: 10px;
+  right: 11px;
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .sop-toggle.sop-fold,
+  .sop-toggle.sop-fold * {
+    animation: none!important;
+    transition: none!important;
+  }
+
+}
+
+.sop-toggle.sop-fold {
+  width: 268px;
+  height: 118px;
+  border-radius: 10px;
+}
+
+.sop-toggle.sop-fold .fold-base {
+  position: absolute;
+  left: 4px;
+  top: 13px;
+  width: 260px;
+  height: 89px;
+  border-radius: 5px;
+  background: linear-gradient(170deg,#392a24,#231d1a 65%,#3f2e25);
+  border: 1px solid #85624743;
+  box-shadow: inset 0 2px 8px #0907049e,0 12px 16px #0007,0 1px 1px #b1865540;
+}
+
+.sop-toggle.sop-fold .fold-marks {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  top: 29px;
+  color: #ba8a6d;
+  font: 18px var(--sop-mono);
+  opacity: .5;
+}
+
+.sop-toggle.sop-fold .fold-marks>span {
+  float: right;
+}
+
+.sop-toggle.sop-fold .fold-paper {
+  position: absolute;
+  left: 34px;
+  top: 29px;
+  height: 55px;
+  width: calc(18px + var(--p)*163px);
+  display: flex;
+  filter: drop-shadow(0 8px 4px #0008);
+  perspective: 250px;
+  transform: skewY(calc(var(--v)*-.4deg));
+}
+
+.sop-toggle.sop-fold .fold-paper i {
+  display: block;
+  flex: 1;
+  height: 100%;
+  min-width: 0;
+  background: linear-gradient(90deg,#bf7956,#edb487 80%,#ffd1a2);
+  clip-path: polygon(0 4%,100% 0,100% 100%,0 96%);
+  transform: skewY(calc(-7deg - (1 - var(--p))*22deg));
+  border-right: 1px solid #ffd1a459;
+}
+
+.sop-toggle.sop-fold .fold-paper i:nth-child(even) {
+  background: linear-gradient(90deg,#885139,#c4855b 73%,#d9976a);
+  transform: skewY(calc(7deg + (1 - var(--p))*22deg));
+  clip-path: polygon(0 0,100% 4%,100% 96%,0 100%);
+}
+
+.sop-toggle.sop-fold .fold-tab {
+  position: absolute;
+  left: 16px;
+  top: 22px;
+  width: 54px;
+  height: 69px;
+  background: linear-gradient(130deg,#ffd4ad,#e6aa7d 49%,#c48762 50%,#dd9a72 80%);
+  clip-path: polygon(0 6%,82% 0,100% 15%,100% 91%,14% 100%,0 83%);
+  transform: translateX(calc(var(--p)*177px)) rotateY(calc(var(--v)*3deg));
+  filter: drop-shadow(0 8px 5px #0007);
+}
+
+.sop-toggle.sop-fold .fold-tab>span {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(130deg,transparent 49%,#68392055 50%,transparent 51%);
+  box-shadow: inset 1px 1px 1px #ffe2c880;
+}
+
+.sop-toggle.sop-fold .fold-tab>i {
+  position: absolute;
+  left: 13px;
+  top: 29px;
+  width: 27px;
+  height: 1px;
+  background: #a3674d;
+  box-shadow: 0 1px 0 #ffcca499;
+  transform: rotate(-8deg);
+}
+
+.sop-toggle.sop-fold .fold-guide {
+  position: absolute;
+  left: 83px;
+  bottom: -2px;
+  width: 105px;
+  height: 1px;
+  background: repeating-linear-gradient(90deg,#8d685055 0 3px,transparent 3px 7px);
+}
+
