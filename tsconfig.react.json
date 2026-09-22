@@ -2,12 +2,12 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "jsx": "react-jsx",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "esModuleInterop": true
   },
   "include": [
+    "src/parts/**/*.tsx",
     "src/shared/*.ts",
-    "src/parts/*/*/react/*.tsx",
     "src/types/*.d.ts"
-  ]
+  ],
+  "exclude": []
 }

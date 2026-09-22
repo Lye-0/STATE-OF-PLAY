@@ -1,0 +1,58 @@
+{
+  "version": "3.0.0",
+  "dateJST": "2026-09-22",
+  "baseline": "2.3.0",
+  "environment": {
+    "node": "22.16.0",
+    "typescript": "5.8.3",
+    "chromium": "144.0.7559.96",
+    "react": "19.1.1 production",
+    "playwright": "1.57.0-beta-1764944708000 (environment runtime)"
+  },
+  "appStrictTypecheck": "passed",
+  "unitTests": {
+    "passed": 24,
+    "failed": 0
+  },
+  "originalCssAndMarkupByteMatches": 32,
+  "catalog": {
+    "parts": 16,
+    "formatsPerPart": 4,
+    "exportFiles": 452,
+    "packagesDirectoryCreated": false
+  },
+  "archiveVariantsValidated": 128,
+  "batchExportZipsValidatedByPython": 64,
+  "browser": {
+    "mode": "network-restricted adapter; Vite not executed",
+    "react": "real installed browser runtime; production",
+    "passed": 16,
+    "tests": [
+      "Gallery: 16 parts, no runtime errors",
+      "Toggle and drag do not open details",
+      "Detail: code, hierarchical tree, full path, download before copy",
+      "Copy: success only after write, exact string and visible feedback",
+      "Denied clipboard: manual fallback, no false success, focus restored",
+      "Selected source download matches the original file bytes",
+      "Focus trap / Escape / restoration to gallery trigger",
+      "All code previews match generated export sources",
+      "Part source/text ZIPs preserve directories and source contents",
+      "Guide and AI prompt remain copyable in every export format",
+      "Mobile 320/390/768: no overflow, usable code and file picker",
+      "Disabled and reduced-motion states remain functional",
+      "All standalone HTML/CSS/JS previews run without gallery assets",
+      "All native JavaScript exports retain working relative imports",
+      "React TSX: all actual exports, controlled/uncontrolled/disabled, cleanup",
+      "React JSX: all actual exports, controlled/uncontrolled/disabled, cleanup"
+    ],
+    "errors": []
+  },
+  "notExecuted": [
+    "Vite installation/build/HMR/HTTP production path test",
+    "Complete static typecheck with official React and Vite dependencies",
+    "npm audit and lockfile generation",
+    "GitHub Actions execution or deployment",
+    "Windows Explorer/MOTW and Safari real devices"
+  ],
+  "reason": "npm registry DNS EAI_AGAIN; local URL navigation blocked by administrator policy. No policy overrides were used."
+}

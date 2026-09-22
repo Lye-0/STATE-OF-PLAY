@@ -1,0 +1,211 @@
+/** The default run tests real Vite over HTTP. SOP_TEST_MODE=offline is an explicit, reported test adapter. */
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { createRequire } from 'node:module';
+import type { Browser, Page } from 'playwright';
+import { ROOT, buildCatalog, FORMATS } from '../scripts/catalog.ts';
+import { JSZip } from '../scripts/zip.ts';
+import { offlineFiles, testBundle } from './offline-fixture.ts';
+import { resolveLocal } from '../scripts/source-tools.ts';
+const require=createRequire(import.meta.url);
+const {chromium}=require(process.env.PLAYWRIGHT_PATH??'playwright') as typeof import('playwright');
+const offline=process.env.SOP_TEST_MODE==='offline';
+const OUT=path.join(ROOT,'.test-output');fs.mkdirSync(OUT,{recursive:true});
+const catalog=buildCatalog();
+const results: string[]=[];const errors: string[]=[];
+const normalize=(s:string)=>s.split('\n').map(l=>l.trimEnd()).join('\n');
+function write(relative:string,code:string){const name=path.join(ROOT,relative);fs.mkdirSync(path.dirname(name),{recursive:true});fs.writeFileSync(name,code);}
+// Only temporary test fixtures; the normal build never expands a packages/ tree.
+for(const part of catalog.parts){
+ for(const [name,code]of Object.entries(part.preview))write(`.test-output/exports/${part.id}/preview/${name}`,code);
+ for(const format of FORMATS)for(const file of part.files[format])write(`.test-output/exports/${part.id}/${format}/${file.name}`,file.code);
+}
+async function run(name:string,action:()=>Promise<void>){await action();results.push(name);console.log('PASS '+name);}
+let browser: Browser|undefined;let closeServer:(()=>Promise<void>)|undefined;let page:Page;let url='';
+const memory=new Map<string,string>();
+try{
+ if(offline){for(const [key,value]of offlineFiles())memory.set(key,value);}
+ else{const {createServer}=await import('vite');const server=await createServer({root:ROOT,server:{port:0,host:'127.0.0.1'}});await server.listen();url=server.resolvedUrls!.local[0].replace(/\/$/,'');closeServer=()=>server.close();}
+ browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{}),args:['--no-sandbox']});
+ const context=await browser.newContext({viewport:{width:1440,height:960},acceptDownloads:true});
+ await context.addInitScript(()=>{const active=new Set<number>();const request=window.requestAnimationFrame.bind(window);const cancel=window.cancelAnimationFrame.bind(window);window.requestAnimationFrame=callback=>{const id=request(time=>{active.delete(id);callback(time);});active.add(id);return id;};window.cancelAnimationFrame=id=>{active.delete(id);cancel(id);};(window as unknown as {activeRAF:Set<number>}).activeRAF=active;});
+ page=await context.newPage();page.on('pageerror',error=>errors.push(error.message));
+ async function load(route='/') {
+  if(!offline){await page.goto(url+route);await page.waitForLoadState('networkidle');return;}
+  // Directly render test documents when administrator policy forbids local navigation.
+  // No policy changes or alternate hostnames. Relative imports are separately checked by unit tests.
+  await page.close();page=await context.newPage();page.on('pageerror',error=>errors.push(error.message));
+  const name=route==='/'?'/index.html':route;
+  const read=(file:string):string=>memory.get(file)??fs.readFileSync(path.join(ROOT,file.startsWith('/vendor/')?'public'+file:file),'utf8');
+  const html=read(name);const directory=path.posix.dirname(name);
+  const styles=[...html.matchAll(/<link\b[^>]*rel="stylesheet"[^>]*href="([^"]+)"[^>]*>/g)].map(m=>path.posix.resolve(directory,m[1]));
+  const scripts=[...html.matchAll(/<script\b([^>]*?)src="([^"]+)"[^>]*><\/script>/g)].map(m=>({name:path.posix.resolve(directory,m[2]),module:m[1].includes('module')}));
+  await page.setContent(html.replace(/<script\b[^>]*src="[^"]+"[^>]*><\/script>/g,'').replace(/<link\b[^>]*rel="stylesheet"[^>]*>/g,''));
+  for(const file of styles)await page.addStyleTag({content:read(file)});
+  for(const script of scripts){
+   if(!script.module){await page.addScriptTag({content:read(script.name)});continue;}
+   // Execute actual exported JS as native ESM, using blob URLs only for transport in this offline test.
+   const modules:Record<string,{code:string;imports:Record<string,string>}>= {};
+   function visit(file:string){
+    if(modules[file])return;
+    const code=file==='/runtime.js'?fs.readFileSync(process.env.SOP_REACT_BROWSER_BUNDLE!,'utf8'):read(file);
+    const imports:Record<string,string>={};modules[file]={code,imports};
+    if(file==='/runtime.js')return; // optional editor imports in this real runtime are not used by the harness
+    for(const match of code.matchAll(/(?:\bfrom\s*|\bimport\s*)(['"])([^'"\n]+)\1/g)){
+     const request=match[2];const dep=request==='/runtime.js'?request:'/'+resolveLocal(file.slice(1),request,p=>memory.has('/'+p)||fs.existsSync(path.join(ROOT,p)));
+     imports[request]=dep;visit(dep);
+    }
+   }
+   visit(script.name);
+   await page.evaluate(async({modules,entry})=>{
+    const urls=new Map<string,string>();
+    function make(id:string):string {if(urls.has(id))return urls.get(id)!;const item=modules[id];
+     const code=item.code.replace(/(\bfrom\s*|\bimport\s*)(['"])([^'"\n]+)\2/g,(all,prefix:string,quote:string,request:string)=>item.imports[request]?prefix+quote+make(item.imports[request])+quote:all);
+     const result=URL.createObjectURL(new Blob([code],{type:'text/javascript'}));urls.set(id,result);return result;
+    }
+    await import(make(entry));for(const value of urls.values())URL.revokeObjectURL(value);
+   },{modules,entry:script.name});
+  }
+ }
+ await load();
+ await run(`Gallery: ${catalog.parts.length} parts, no runtime errors`,async()=>{assert.equal(await page.locator('[data-part]').count(),catalog.parts.length);assert.deepEqual(errors,[]);});
+ await run('Toggle and drag do not open details',async()=>{
+  const button=page.locator('[data-part="chrome"] [role="switch"]');const before=await button.getAttribute('aria-checked');await button.click();assert.notEqual(await button.getAttribute('aria-checked'),before);
+  await page.waitForTimeout(400);const box=(await button.boundingBox())!;
+  await page.mouse.move(box.x+40,box.y+box.height/2);await page.mouse.down();await page.mouse.move(box.x+box.width-35,box.y+box.height/2,{steps:12});await page.mouse.up();
+  assert.equal(await button.getAttribute('aria-checked'),'true');assert.equal(await page.locator('#part-details').getAttribute('open'),null);
+ });
+ await page.locator('[data-open="luminous-frame"]').click();
+ await run('Detail: code, hierarchical tree, full path, download before copy',async()=>{
+  assert.equal(await page.locator('#detail-title').innerText(),'Luminous Frame');await page.locator('[data-file$="/styles.css"]').click();assert.ok((await page.locator('.editor code').innerText()).includes('sop-luminous-frame'));
+  assert.ok((await page.locator('.download-file').boundingBox())!.x<(await page.locator('.copy-file').boundingBox())!.x);
+  const dir=page.locator('.source-directory[data-directory="src/shared"]');await dir.locator(':scope > summary').click();assert.equal(await dir.getAttribute('open'),null);await dir.locator(':scope > summary').click();
+  await page.locator('[data-file="src/shared/surface-controller.ts"]').click();assert.equal(await page.locator('.current-path').textContent(),'src/shared');await page.locator('[data-file$="/styles.css"]').click();
+ });
+ await page.screenshot({path:path.join(OUT,'detail.png')});
+ await run('Copy: success only after write, exact string and visible feedback',async()=>{
+  await page.evaluate(()=>{const w=window as unknown as {copied:string};w.copied='';Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async(text:string)=>{w.copied=text;}}});});
+  await page.locator('.copy-file').click();assert.match(await page.locator('.copy-file').innerText(),/コピー済み/);
+  const expected=catalog.parts.find(p=>p.id==='luminous-frame')!.files.tsx.find(f=>f.name.endsWith('/styles.css'))!.code;
+  assert.equal(await page.evaluate(()=>(window as unknown as {copied:string}).copied),expected);
+ });
+ await run('Denied clipboard: manual fallback, no false success, focus restored',async()=>{
+  await page.evaluate(()=>{
+   Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async()=>{throw new Error('Denied by test');}}});
+   const doc=document as Document & {originalExecCommand?:typeof document.execCommand};doc.originalExecCommand=document.execCommand;document.execCommand=()=>false;
+  });
+  await page.locator('.copy-file').click();await page.locator('dialog.manual-copy').waitFor();assert.doesNotMatch(await page.locator('.copy-file').innerText(),/コピー済み/);
+  const expected=catalog.parts.find(p=>p.id==='luminous-frame')!.files.tsx.find(f=>f.name.endsWith('/styles.css'))!.code;
+  assert.equal(await page.locator('dialog.manual-copy textarea').inputValue(),expected);await page.locator('dialog.manual-copy button').click();
+  assert.ok(await page.locator('.copy-file').evaluate(b=>b===document.activeElement));
+  await page.evaluate(()=>{
+   const doc=document as Document & {originalExecCommand:typeof document.execCommand};document.execCommand=doc.originalExecCommand;
+   Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async(text:string)=>{(window as unknown as {copied:string}).copied=text;}}});
+  });
+ });
+ await run('Selected source download matches the original file bytes',async()=>{
+  const expected=catalog.parts.find(p=>p.id==='luminous-frame')!.files.tsx.find(f=>f.name.endsWith('/styles.css'))!;
+  const pending=page.waitForEvent('download');await page.locator('.download-file').click();const download=await pending;assert.equal(download.suggestedFilename(),'styles.css');assert.equal(fs.readFileSync((await download.path())!,'utf8'),expected.code);
+ });
+ await run('Focus trap / Escape / restoration to gallery trigger',async()=>{
+  for(let i=0;i<45;i++){await page.keyboard.press(i<25?'Tab':'Shift+Tab');assert.ok(await page.evaluate(()=>document.querySelector('#part-details')!.contains(document.activeElement)));}
+  await page.keyboard.press('Escape');assert.equal(await page.locator('#part-details').getAttribute('open'),null);assert.equal(await page.evaluate(()=>(document.activeElement as HTMLElement).dataset.open),'luminous-frame');
+ });
+ await run('All code previews match generated export sources',async()=>{
+  let count=0;
+  for(const part of catalog.parts){await page.locator(`[data-open="${part.id}"]`).click();
+   for(const format of FORMATS){await page.locator(`[data-format="${format}"]`).click();
+    const rendered=await page.evaluate((names:string[])=>names.map(name=>{const b=[...document.querySelectorAll<HTMLButtonElement>('.file-item')].find(b=>b.dataset.file===name)!;b.click();return [...document.querySelectorAll('.editor .line-code')].map(n=>n.textContent).join('\n');}),part.files[format].map(f=>f.name));
+    for(let i=0;i<rendered.length;i++){assert.equal(normalize(rendered[i]),normalize(part.files[format][i].code),`${part.id}/${format}/${i}`);count++;}
+   }await page.locator('.close-detail').click();
+  }assert.equal(count,catalog.parts.reduce((n,p)=>n+Object.values(p.files).flat().length,0));
+ });
+ await run('Part source/text ZIPs preserve directories and source contents',async()=>{
+  const part=catalog.parts.find(p=>p.id==='chrome')!;
+  await page.locator('[data-open="chrome"]').click();await page.locator('[data-format="js"]').click();await page.locator('#download-part').click();
+  for(const mode of ['source','text']){
+   await page.locator(`input[name="package-mode"][value="${mode}"]`).check();const pending=page.waitForEvent('download');await page.locator('.package-save').click();const d=await pending;
+   const archive=await JSZip.loadAsync(fs.readFileSync((await d.path())!),{checkCRC32:true});const root=`chrome-js${mode==='text'?'-text':''}/`;
+   for(const f of part.files.js)assert.equal(await archive.file(root+f.name+(mode==='text'?'.txt':''))!.async('string'),f.code);
+   for(const dir of ['src/','src/parts/','src/parts/toggles/chrome/vanilla/','src/shared/','preview/'])assert.equal(archive.files[root+dir]?.dir,true);
+   assert.match(await page.locator('.package-tree').innerText(),/shared\//);
+  }
+  await page.keyboard.press('Escape');assert.equal(await page.locator('#part-details').getAttribute('open'),'');await page.keyboard.press('Escape');
+ });
+ await run('Guide and AI prompt remain copyable in every export format',async()=>{
+  await page.locator('[data-open="chrome"]').click();
+  for(const format of FORMATS){await page.locator(`[data-format="${format}"]`).click();await page.locator('[data-detail-tab="guide"]').click();assert.ok(await page.locator('#copy-example').isVisible());await page.locator('#copy-example').click();assert.match(await page.locator('#copy-example').innerText(),/コピー済み/);
+   await page.locator('[data-detail-tab="prompt"]').click();await page.locator('[data-prompt-mode="full"]').click();const full=await page.locator('#prompt-text').inputValue();assert.ok(full.includes('src/shared/'));await page.locator('[data-prompt-mode="spec"]').click();assert.ok((await page.locator('#prompt-text').inputValue()).length<full.length);
+  }await page.locator('[data-detail-tab="code"]').click();await page.locator('.close-detail').click();
+ });
+ await run('Mobile 320/390/768: no overflow, usable code and file picker',async()=>{
+  for(const width of [320,390,768]){await page.setViewportSize({width,height:844});await page.locator('[data-open="chrome"]').click();await page.locator('[data-format="tsx"]').click();assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));assert.ok(await page.locator('.download-file').isVisible());assert.ok((await page.locator('.code-scroll').boundingBox())!.width>190);
+   if(width<600){await page.locator('.mobile-file-picker select').selectOption('src/shared/motion.ts');assert.equal(await page.locator('.current-file').textContent(),'motion.ts');}
+   if(width===390)await page.screenshot({path:path.join(OUT,'mobile-390.png')});await page.locator('.close-detail').click();
+  }
+ });
+ await run('Disabled and reduced-motion states remain functional',async()=>{
+  await page.setViewportSize({width:1200,height:900});await page.locator('[data-open="chrome"]').click();await page.locator('#preview-disabled').check();assert.ok(await page.locator('.preview-stage button').isDisabled());await page.locator('#preview-disabled').uncheck();await page.emulateMedia({reducedMotion:'reduce'});await page.locator('[data-state="off"]').click();assert.equal(await page.locator('.preview-stage button').getAttribute('aria-checked'),'false');await page.locator('[data-state="on"]').click();assert.equal(await page.locator('.preview-stage button').evaluate(b=>b.style.getPropertyValue('--p')),'1.00000');await page.emulateMedia({reducedMotion:'no-preference'});await page.locator('.close-detail').click();
+ });
+ await run('All standalone HTML/CSS/JS previews run without gallery assets',async()=>{
+  for(const part of catalog.parts){await load(`/.test-output/exports/${part.id}/preview/index.html`);assert.equal(await page.locator('.demo-root > *').count(),1);
+   if(part.category==='toggles'){const b=page.locator('[role="switch"]');const before=await b.getAttribute('aria-checked');await b.click();assert.notEqual(await b.getAttribute('aria-checked'),before);}
+  }
+ });
+ await run('All native JavaScript exports retain working relative imports',async()=>{
+  for(const part of catalog.parts){const entry=part.files.js.find(f=>f.name.endsWith('/vanilla/index.html'))!;await load(`/.test-output/exports/${part.id}/js/${entry.name}`);const element=page.locator('.sop-'+part.id).first();await element.waitFor();assert.ok((await element.boundingBox())!.width>0);
+   if(part.category==='toggles'){const before=await element.getAttribute('aria-checked');await element.click();assert.notEqual(await element.getAttribute('aria-checked'),before);}
+  }
+ });
+ // Use real React. In restricted environments the optional browser module must export r=React/e=ReactDOMClient.
+ if(!offline||process.env.SOP_REACT_BROWSER_BUNDLE){
+  for(const format of ['tsx','jsx'] as const){
+   const prefix=`.test-output/react-${format}`;
+   const imports=catalog.parts.map((p,i)=>`import Part${i} from '../exports/${p.id}/${format}/${p.files[format][0].name}';`).join('\n');
+   const source=`import React,{useState} from 'react';import {createRoot} from 'react-dom/client';\n${imports}\nconst parts=[${catalog.parts.map((p,i)=>`{id:${JSON.stringify(p.id)},toggle:${p.category==='toggles'},Component:Part${i}}`).join(',')}];\n`+
+    `function Item({item}){const [checked,setChecked]=useState(false);const C=item.Component;return <section data-react-part={item.id}>{item.toggle?<><C checked={checked} onCheckedChange={setChecked} data-variant="controlled" aria-label="controlled"/><C defaultChecked={false} data-variant="uncontrolled" aria-label="uncontrolled"/><C checked={false} onCheckedChange={()=>{}} data-variant="declined" aria-label="declined"/><C disabled aria-label="disabled" data-variant="disabled"/></>:<C><button>Independent child</button></C>}</section>;}\n`+
+    `function App(){const [visible,setVisible]=useState(true);return <><button id="mount-toggle" onClick={()=>setVisible(!visible)}>Mount/unmount</button>{visible&&parts.map(p=><Item key={p.id} item={p}/>)}</>;}\n`+
+    `createRoot(document.getElementById('root')).render(<React.StrictMode><App/></React.StrictMode>);`;
+   const entry=prefix+'/main.jsx';write(entry,source);
+   if(offline){const extras=new Map<string,string>([[entry,source]]);for(const p of catalog.parts)for(const f of p.files[format])extras.set(`.test-output/exports/${p.id}/${format}/${f.name}`,f.code);
+    memory.set('/'+prefix+'/test.js',testBundle(entry,extras,"import {r as React,e as ReactDOMClient} from '/runtime.js';"));
+   }
+   const styleLinks=catalog.parts.map(p=>`<link rel="stylesheet" href="../exports/${p.id}/${format}/${p.files[format].find(f=>f.name.endsWith('/styles.css'))!.name}">`).join('');
+   write(prefix+'/index.html',`<!doctype html><html><head><meta charset="utf-8">${styleLinks}<style>body{background:#18191a;color:#eee}section{display:flex;gap:40px;margin:30px;min-height:160px}.sop-surface{width:320px;min-height:170px}</style></head><body><div id="root"></div><script type="module" src="./${offline?'test.js':'main.jsx'}"></script></body></html>`);
+   await run(`React ${format.toUpperCase()}: all actual exports, controlled/uncontrolled/disabled, cleanup`,async()=>{
+    
+    await load('/'+prefix+'/index.html');await page.locator('[data-react-part]').first().waitFor();assert.equal(await page.locator('[data-react-part]').count(),catalog.parts.length);
+    for(const part of catalog.parts.filter(p=>p.category==='toggles')){const area=page.locator(`[data-react-part="${part.id}"]`);for(const variant of ['controlled','uncontrolled']){const b=area.locator(`[data-variant="${variant}"]`);assert.equal(await b.getAttribute('aria-checked'),'false');await b.click();assert.equal(await b.getAttribute('aria-checked'),'true');}
+     const declined=area.locator('[data-variant="declined"]');await declined.click();assert.equal(await declined.getAttribute('aria-checked'),'false');assert.ok(await area.locator('[data-variant="disabled"]').isDisabled());
+    }
+    const ids=await page.locator('[id]').evaluateAll(nodes=>nodes.map(n=>n.id));assert.equal(ids.length,new Set(ids).size);
+    for(let i=0;i<3;i++){await page.locator('#mount-toggle').click();await page.waitForTimeout(100);assert.equal(await page.locator('[data-react-part]').count(),0);assert.equal(await page.evaluate(()=>(window as unknown as {activeRAF:Set<number>}).activeRAF.size),0);await page.locator('#mount-toggle').click();await page.locator('[data-react-part]').first().waitFor();}
+   });
+  }
+ }
+ if(!offline){
+  await run('Real Vite watcher regenerates catalogue without author-source copies',async()=>{
+   await load('/');
+   const target=path.join(ROOT,catalog.bases.find(b=>b.endsWith('/chrome'))!,'meta.json');const original=fs.readFileSync(target,'utf8');
+   try{const meta=JSON.parse(original) as {tagline:string};meta.tagline='HMR verification marker';fs.writeFileSync(target,JSON.stringify(meta,null,2)+'\n');
+    await page.waitForFunction(()=>window.SOP_CATALOG.find(p=>p.id==='chrome')?.tagline==='HMR verification marker');
+   }finally{fs.writeFileSync(target,original);}
+   await page.waitForFunction(expected=>window.SOP_CATALOG.find(p=>p.id==='chrome')?.tagline===expected,catalog.parts.find(p=>p.id==='chrome')!.tagline);
+   assert.equal(fs.existsSync(path.join(ROOT,'packages')),false);
+  });
+  await run('Real Vite production build works under /STATE-OF-PLAY/',async()=>{
+   const vite=await import('vite');await vite.build({root:ROOT,logLevel:'warn'});
+   const production=await vite.preview({root:ROOT,base:'/STATE-OF-PLAY/',preview:{port:0,host:'127.0.0.1'}});
+   try{
+    await page.goto(production.resolvedUrls.local[0]);await page.locator('[data-part]').first().waitFor();assert.equal(await page.locator('[data-part]').count(),catalog.parts.length);
+    await page.locator('[data-open="chrome"]').click();assert.match(await page.locator('.editor code').innerText(),/ChromeToggle/);
+   }finally{await new Promise<void>((resolve,reject)=>production.httpServer.close((error?: Error)=>error?reject(error):resolve()));}
+  });
+ }
+ assert.deepEqual(errors,[]);
+ console.log(`Browser checks: ${results.length} passed; mode=${offline?'explicit offline adapter (NOT Vite)':'Vite HTTP'}.`);
+}finally{
+ fs.writeFileSync(path.join(OUT,'browser-results.json'),JSON.stringify({mode:offline?'network-restricted adapter; Vite not executed':'real Vite HTTP',react:offline?(process.env.SOP_REACT_BROWSER_BUNDLE?'real installed browser runtime; production':'not run'):'installed React + development StrictMode',passed:results.length,tests:results,errors},null,2)+'\n');
+ await browser?.close();await closeServer?.();
+}

@@ -1,11 +1,13 @@
 node_modules/
-.build/
-.test-output/
-release/
 dist/
+release/
+.test-output/
+.vite/
+*.tsbuildinfo
 .env
 .env.*
 !.env.example
-*.log
 .DS_Store
-Thumbs.db
+# Legacy generated trees; remove old copies after backing up your changes.
+packages/
+assets/

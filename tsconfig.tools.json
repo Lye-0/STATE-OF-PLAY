@@ -1,0 +1,6 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "types": ["node"], "esModuleInterop": true },
+  "include": ["scripts/**/*.ts", "vite.config.ts", "tests/**/*.ts", "src/env.d.ts"],
+  "exclude": []
+}

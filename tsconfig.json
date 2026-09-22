@@ -10,14 +10,15 @@
     ],
     "strict": true,
     "noEmit": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true
   },
   "include": [
-    "src/shared/motion.ts",
-    "src/shared/renderer.ts",
-    "src/shared/toggle-controller.ts",
-    "src/shared/surface-controller.ts",
-    "src/parts/*/*/vanilla/*.ts",
-    "src/parts/*/*/demo/*.ts"
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "src/shared/use-toggle.ts"
   ]
 }

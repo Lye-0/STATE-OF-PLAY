@@ -1,0 +1,174 @@
+import { fillSample } from './samples';
+import { TactileAudio } from './audio';
+import { createDetails } from './details';
+import { createSurfaceController } from '../shared/surface-controller';
+import { mounts } from '../catalog/mounts';
+import { categories } from '../catalog/categories';
+import { escapeHTML, icon, required, toast, wireTabs } from './utils';
+import type { Part, PartController } from '../catalog/types';
+import parts from 'virtual:sop-catalog';
+window.SOP_CATALOG = parts;
+const state = new Map(parts.filter(p => p.category === 'toggles').map(p => [p.id, p.initial ?? false]));
+let activeCategory = 'all', query = '', demo = 0, demoIndex = 0;
+const sound = new TactileAudio();
+const grid = required('#part-grid');
+const search = required<HTMLInputElement>('#search-parts');
+let rendered: {part: Part; card: HTMLElement; controller: PartController; surface?: PartController}[] = [];
+const details = createDetails(parts, { onActive(active) {
+        stopDemo();
+        for (const r of rendered)
+            r.controller.setPaused?.(active);
+    }, onNavigate: openPart });
+function openPart(id: string, trigger?: HTMLElement) {
+    if (location.hash !== `#part=${id}`)
+        history.pushState(null, '', `#part=${id}`);
+    details.open(id, trigger);
+}
+function readRoute() {
+    let id = '';
+    try {
+        id = location.hash.startsWith('#part=') ? decodeURIComponent(location.hash.slice(6)) : '';
+    }
+    catch {
+        id = '';
+    }
+    if (id && parts.some(p => p.id === id))
+        details.open(id);
+    else if (details.isOpen())
+        details.close();
+}
+window.addEventListener('popstate', readRoute);
+window.addEventListener('hashchange', readRoute);
+function stopDemo() { clearInterval(demo); demo = 0; const b = required('#demo'); b.setAttribute('aria-pressed', 'false'); required('span', b).textContent = 'デモ再生'; }
+function syncCard(id: string, value: boolean) {
+    state.set(id, value);
+    const r = rendered.find(r => r.part.id === id);
+    if (r) {
+        r.card.classList.toggle('is-on', value);
+        required('.state-word', r.card).textContent = value ? 'ON' : 'OFF';
+    }
+    updateControls();
+}
+function updateControls() {
+    const count = rendered.filter(r => r.part.category === 'toggles').length;
+    required('#toggle-controls').hidden = count === 0;
+    const on = rendered.filter(r => r.part.category === 'toggles' && state.get(r.part.id)).length;
+    required('#active-count').textContent = String(on).padStart(2, '0');
+    required('#toggle-total').textContent = String(count).padStart(2, '0');
+    required('#visible-count').textContent = `${String(rendered.length).padStart(2, '0')} OBJECTS`;
+}
+function matchPart(part: Part) {
+    const haystack = [part.name, part.category, part.description, part.material, ...part.tags].join(' ').normalize('NFKC').toLowerCase();
+    return (activeCategory === 'all' || part.category === activeCategory) && query.normalize('NFKC').toLowerCase().split(/\s+/).every(token => haystack.includes(token));
+}
+function renderGallery() {
+    stopDemo();
+    rendered.forEach(r => { r.controller.destroy(); r.surface?.destroy(); });
+    rendered = [];
+    const visible = parts.filter(matchPart);
+    grid.innerHTML = visible.length ? visible.map(part => {
+        const toggle = part.category === 'toggles';
+        return `<article class="object-card ${toggle ? 'sop-surface sop-original-surface toggle-card' : 'block-card'}" data-part="${escapeHTML(part.id)}" style="--sop-accent:${part.accent};--accent:${part.accent}"><header class="card-top"><span class="object-no mono">${String(part.order).padStart(2, '0')} /</span><span class="object-type mono">${escapeHTML(part.material)}</span><span class="state-readout mono" aria-hidden="true"><i></i><span class="state-word">${toggle ? (state.get(part.id) ? 'ON' : 'OFF') : 'SURFACE'}</span></span></header><div class="object-stage" data-stage="${escapeHTML(part.id)}"><div class="stage-glow"></div><div class="stage-mount"></div></div><footer class="card-bottom"><div><h2>${escapeHTML(part.name)}<span>${escapeHTML(part.tagline)}</span></h2><p>${escapeHTML(part.description)}</p></div><button type="button" class="open-part" data-open="${escapeHTML(part.id)}" aria-label="${escapeHTML(part.name)} のコードと詳細を開く">${icon('code')}<span>CODE</span>${icon('arrow')}</button></footer></article>`;
+    }).join('') : `<div class="empty-state"><span class="empty-symbol">∅</span><h2>まだ、そのパーツはありません。</h2><p>検索する言葉やカテゴリを変えてみてください。</p><button type="button" class="small-button" id="clear-empty">すべてのパーツを表示</button></div>`;
+    for (const part of visible) {
+        const card = required(`[data-part="${part.id}"]`, grid);
+        const mount = required('.stage-mount', card);
+        mount.innerHTML = part.markup;
+        const root = mount.firstElementChild;
+        if (!(root instanceof HTMLElement)) throw new Error(`Invalid markup: ${part.id}`);
+        root.dataset.demoRoot = '';
+        fillSample(root, part);
+        const controller = mounts[part.id](root, { checked: state.get(part.id), onCheckedChange: (value: boolean) => { stopDemo(); syncCard(part.id, value); } });
+        const surface = part.category === 'toggles' ? createSurfaceController(card) : undefined;
+        rendered.push({ part, controller, card, surface });
+        if (part.category === 'toggles')
+            syncCard(part.id, !!state.get(part.id));
+        card.addEventListener('click', event => {
+            const target = event.target;
+            if (!(target instanceof Element)) return;
+            if (target.closest('[data-demo-root]'))
+                return;
+            const trigger = required('[data-open]', card);
+            openPart(part.id, trigger);
+        });
+        root.addEventListener('pointerdown', stopDemo);
+    }
+    grid.querySelector('#clear-empty')?.addEventListener('click', () => { query = ''; search.value = ''; setCategory('all'); });
+    updateControls();
+    required('#search-clear').hidden = !query;
+    required('#result-announcement').textContent = `${visible.length}個のパーツを表示しています。`;
+}
+function setCategory(id: string) {
+    activeCategory = id;
+    document.querySelectorAll<HTMLButtonElement>('[data-category]').forEach(b => { const active = b.dataset.category === id; b.setAttribute('aria-selected', String(active)); b.tabIndex = active ? 0 : -1; });
+    renderGallery();
+}
+const categoryList = required('#category-tabs');
+categoryList.innerHTML = categories.map(c => `<button type="button" role="tab" aria-controls="part-grid" data-category="${c.id}" id="category-${c.id}"><span>${c.label}</span><small>${String(c.id === 'all' ? parts.length : parts.filter(p => p.category === c.id).length).padStart(2, '0')}</small></button>`).join('');
+categoryList.querySelectorAll('button').forEach(b => b.addEventListener('click', () => setCategory(b.dataset.category ?? 'all')));
+wireTabs(categoryList, b => setCategory(b.dataset.category ?? 'all'));
+search.addEventListener('input', () => { query = search.value.trim(); renderGallery(); });
+required('#search-clear').addEventListener('click', () => { search.value = ''; query = ''; renderGallery(); search.focus(); });
+search.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+        query = '';
+        search.value = '';
+        renderGallery();
+    }
+});
+document.addEventListener('keydown', event => {
+    if (event.key === '/' && !details.isOpen() && !(event.target instanceof Element && event.target.closest('input,textarea,select,[contenteditable]'))) {
+        event.preventDefault();
+        search.focus();
+    }
+});
+for (const [id, on] of [['all-on', true], ['all-off', false]] as const) {
+    required(`#${id}`).addEventListener('click', () => {
+        stopDemo();
+        for (const r of rendered) {
+            if (!r.controller.setChecked)
+                continue;
+            r.controller.setChecked?.(on);
+            syncCard(r.part.id, on);
+        }
+    });
+}
+required('#demo').addEventListener('click', () => {
+    if (demo) {
+        stopDemo();
+        return;
+    }
+    const toggles = rendered.filter(r => r.part.category === 'toggles');
+    if (!toggles.length)
+        return;
+    demoIndex = 0;
+    const tick = () => { const r = toggles[demoIndex++ % toggles.length]; const value = !state.get(r.part.id); r.controller.setChecked?.(value); syncCard(r.part.id, value); };
+    tick();
+    demo = window.setInterval(tick, 480);
+    required('#demo').setAttribute('aria-pressed', 'true');
+    required('#demo span').textContent = 'デモ停止';
+});
+const soundButton = required<HTMLButtonElement>('#sound');
+soundButton.addEventListener('click', async () => {
+    soundButton.disabled = true;
+    const target = !sound.enabled;
+    const enabled = await sound.setEnabled(target);
+    soundButton.disabled = false;
+    soundButton.setAttribute('aria-pressed', String(enabled));
+    required('span', soundButton).textContent = enabled ? 'SOUND ON' : 'SOUND OFF';
+    if (target && !enabled)
+        toast('この環境では効果音を有効にできませんでした。');
+});
+document.addEventListener('sop:change', event => {
+    const detail = (event as CustomEvent<{id: string; checked: boolean}>).detail;
+    const part = parts.find(p => p.id === detail.id);
+    if (part?.category === 'toggles' && part.config)
+        sound.play(part.config, detail.checked);
+});
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden)
+        stopDemo();
+});
+window.StateOfPlay = Object.freeze({ version: __APP_VERSION__, getStates: () => Object.fromEntries(state), getPartCount: () => parts.length });
+setCategory('all');
+readRoute();

@@ -1,69 +1,80 @@
-# パーツの追加と編集
+# パーツを追加する
 
-## 正本
+## 正本となるファイル
 
-`src/parts/<カテゴリ>/<パーツID>/` が1パーツです。
-`assets/catalog.js` はこのディレクトリ内の実ファイルから生成されます。
-コピーするコードを別の文字列として二重に保守する必要はありません。
+既存の近いパーツを参考にして、次の構成で作成します。
 
-| ファイル | 役割 |
-| --- | --- |
-| `meta.json` | ID、名前、カテゴリ、並び順、タグ、説明、関連パーツ、設定項目 |
-| `styles.css` | ルートに閉じた、そのパーツ自身のスタイル |
-| `markup.html` | 通常サイト用のHTML、ギャラリーの表示構造 |
-| `react/*.tsx` | Reactコンポーネントと使用例の正本 |
-| `vanilla/init.ts` | 受け取った要素を初期化し、destroy等を返す通常サイト用の入口 |
-| `vanilla/main.ts` | 通常サイトの使用例 |
-| `vanilla/index.html` | 通常サイト用のHTML使用例 |
-| `exports.json` | ZIP内の相対パス・正本の場所・表示グループ |
-| `demo/index.html` | 独立デモのHTML。CSSとJSは外部ファイル |
-| `demo/main.ts` | 独立デモの初期化 |
-| `demo/frame.css` | 独立デモの配置用CSS。パーツには含めない |
-| `usage.md` | 組み込み方と制約 |
-| `prompt.md` | 再現仕様と、変更してよい部分／維持する部分 |
+```text
+src/parts/toggles/my-toggle/
+├─ meta.json
+├─ markup.html
+├─ styles.css
+├─ usage.md
+├─ prompt.md
+├─ react/
+│  ├─ MyToggle.tsx
+│  └─ Example.tsx
+└─ vanilla/
+   ├─ init.ts
+   ├─ main.ts
+   └─ index.html
+```
 
-## 既存カテゴリへ新しいパーツを追加
+ブロックは`src/parts/blocks/`です。独立demo用ファイルと`exports.json`は不要です。
+`styles.css`はルートのパーツ固有クラスに閉じて、ギャラリーの`body`や一般のbuttonを変更しないようにします。
+`meta.json`の`id`をフォルダー名に、`componentName`をReactのファイル名に合わせます。
 
-1. 近い種類のパーツを新しいIDのディレクトリへ複製します。
-2. `meta.json` の `id`、`name`、`order`、`componentName`、説明などを更新します。
-3. CSSのルートクラス、HTML、Reactコンポーネント、通常サイトの初期化処理を新しいパーツへ変更します。
-4. `exports.json` のパスと出力ファイル名を更新します。共有ファイルは `src/shared/` を参照できます。
-5. `src/catalog/registry.json` に新しいディレクトリのパスを1行追加します。
-6. `usage.md`、`prompt.md`、デモも新しい実装に合わせます。
-7. `npm run build`、型チェック、テストを実行します。
+## 登録
 
-`exports.json` では `tsx` と `ts` の2系統を定義します。
-対応する `jsx` / `js` はビルド時に型を取り除いて生成します。
-`exports.json` の `name` がそのまま、コード詳細とZIPで使う相対パスです。
-既定では `name` と `source` を同じパスにし、元の `src/parts/.../` と `src/shared/` の階層を保持します。
-別の配置先を指定するときもディレクトリを含む `name` を設定してください。
-ビルドは `source → name` の対応表で相対importとHTMLのsrc/hrefを計算します。
-JavaScript版では `.ts → .js`、JSX版では `.tsx → .jsx` を変換し、通常JS版の相対importには拡張子も付けます。
-未収録のローカル依存を参照した場合、壊れたZIPを生成せずにビルドをエラーにします。
-パーツ固有の新しい依存ファイルを増やした場合は、そのファイルも `exports.json` に追加してください。
+`src/catalog/registry.json`にパーツの相対パスを追加します。
 
-既存の16パーツを固定件数で確認する回帰テストがあります。パーツを追加した場合は、
-件数の期待値と追加したパーツの操作検証を合わせて更新してください。
-テストが失敗するからといって、元の16パーツの確認を削除しないでください。
+```json
+"src/parts/toggles/my-toggle"
+```
 
-## カテゴリを増やす
+Viteプラグインが登録と元実装から、カタログ、マウント定義、CSS読み込み、形式別コードを生成します。
+新しいファイルを追加したときも反映対象です。未完成のファイルが足りない場合は、ビルドを失敗させて不足を表示します。
+元ソースの追加以外にgeneratedファイルを編集する必要はありません。
 
-`src/catalog/categories.js` に項目を追加します。
-現在の表示テンプレートはトグル／背景ブロックを実装しています。
-ボタン、入力欄、タブなど別の操作体系を増やす場合は、`src/app/gallery.js` と
-`src/app/details.js` のプレビュー表示・操作パネルも適切に拡張してください。
-カテゴリ名を追加するだけで、未知の操作UIまで自動実装されるわけではありません。
+## `meta.json`
 
-## 展示用の文言
+近い既存パーツのキーを維持します。名前・ID・category・order・version・tagline・description・material・motion・accent・componentName・tags・related・propsが必要です。
+トグルはinitialとconfigも定義します。configには剛性・減衰・移動距離・音の設定などが入ります。
+新カテゴリを設ける場合は`src/catalog/categories.ts`と`types.ts`、生成側のカテゴリ検証も更新します。
 
-背景ブロックの見本文言は `src/app/samples.js` にあり、部品本体の内容とは分離しています。
-未登録の背景パーツには汎用の見本を表示します。
-登録番号、CODEボタン、検索、コピー通知、ZIP UIはギャラリー側の機能です。
-パーツ自身に埋め込まないでください。
+## 依存ファイルを自動で含める
 
-## 更新の確認
+Reactの本体TSXまたはVanillaのinit.tsから、ローカルimportをたどります。
+`src/shared/`の共有処理を各パーツへ手でコピーしないでください。
+4形式の配布コードとZIPでは、必要なファイルを元の階層で含めます。
 
-同じ部品の複数配置、マウス／タッチ／キーボード、無効状態、動きを減らす設定、
-取り外し後のイベント・RAF解除を確認します。
-外観や動きを変えた場合は、元の仕様・AI用プロンプトも同時に更新します。
-`packages/` と `assets/` は生成物なので、編集内容は `src/` に置いてください。
+Vanillaは実行時の外部依存なし、ReactはReactのみ、という現在の契約を維持しています。
+新しい外部ライブラリや画像素材を必要とする場合は、依存検証と配布対象を`source-tools.ts`／`catalog.ts`へ明示的に追加してください。
+未知の依存を黙って省略しません。
+
+ReactのExample.tsxとVanillaのmain.tsは使用例です。本体以外のローカル補助ファイルを使用例だけに追加すると、未登録参照の検査で失敗します。必要な場合は生成側で対象を追加してください。
+
+## 共通デモ
+
+`scripts/templates/demo.css`と`demo-entry.ts.txt`を使います。
+各パーツ用デモのHTML・CSS・JSは、コード表示用のカタログと同じタイミングでメモリ上に組み立てます。
+デモ用にパーツごとの枠CSSや初期化処理を複製しないでください。
+
+## 動き・状態・後片付け
+
+initの返り値はdestroy()を必須とします。トグルの状態制御と一時的なアニメーション値を分けます。
+Reactでは、effectの取り外し時にイベント・RAF・Observerを解除します。
+同じパーツを複数置いたときのSVG IDや状態を衝突させないようにします。
+動きを減らす設定、無効状態、タッチでの縦スクロールを保持してください。
+
+## 更新時の確認
+
+```powershell
+npm run typecheck
+npm test
+npm run test:browser
+```
+
+元の16種類を残す回帰検証は維持しつつ、コード一致・import解決・ZIP・ブラウザーのループは登録された全パーツを対象にします。
+パーツ追加のたびに全体件数の固定値を手直しする必要はありません。
+プロンプトとusageの仕様は、実装変更と同時に更新してください。
