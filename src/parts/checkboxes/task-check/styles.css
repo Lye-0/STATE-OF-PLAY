@@ -1,0 +1,8 @@
+@import "../../../shared/checkbox-base.css";
+/* Task Check — タスクを終えると文字にも印が残るリスト用UI。 */
+.sop-check.sop-task-check { --cb-bg:#242b29;--cb-ink:#e5eeea;--cb-muted:#9bb1a6;--cb-accent:#a8d9b7;--cb-box:#242b29;--cb-line:#a8d9b766;--cb-size:22px;--cb-pad:13px;--cb-radius:8px;min-height:62px;gap:13px;border-width:0 0 1px;border-radius:0; }
+.sop-check.sop-task-check .sop-check-box {border-radius:50%}
+.sop-check.sop-task-check input:checked~.sop-check-copy .sop-check-label {text-decoration:line-through;text-decoration-thickness:1px;color:#a6b8b0}
+.sop-check.sop-task-check .sop-check-aura,.sop-check.sop-task-check .sop-check-detail {display:none}
+.sop-check.sop-task-check .sop-check-label {font-weight:400}
+.sop-check.sop-task-check .sop-check-tick {stroke-width:3}

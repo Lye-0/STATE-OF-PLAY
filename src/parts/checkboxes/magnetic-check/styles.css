@@ -1,0 +1,11 @@
+@import "../../../shared/checkbox-base.css";
+/* Magnetic Check — 独立した黒いキーが、選択で沈み込む。 */
+.sop-check.sop-magnetic-check { --cb-bg:#232728;--cb-ink:#e8eeec;--cb-muted:#a8b4ad;--cb-accent:#badfa0;--cb-box:#232728;--cb-line:#badfa066;--cb-radius:6px;--cb-size:41px;background:linear-gradient(120deg,#343c3b,#202725);border-color:#74877545;
+ }
+.sop-check.sop-magnetic-check .sop-check-box {border:1px solid #555f57;background:linear-gradient(160deg,#4a564d,#28322b);border-radius:7px;box-shadow:0 5px 0 #0d150e,0 9px 12px #0006;transform:translateY(-2px)}
+
+.sop-check.sop-magnetic-check input:is(:checked,:indeterminate)+.sop-check-box {transform:translateY(2px);box-shadow:0 1px 0 #0d150e,0 3px 4px #0005;background:linear-gradient(145deg,#395537,#243322)}
+
+.sop-check.sop-magnetic-check .sop-check-aura {display:none}
+
+.sop-check.sop-magnetic-check .sop-check-detail {width:12px;height:2px;bottom:3px;right:calc(50% - 6px);border-radius:0}

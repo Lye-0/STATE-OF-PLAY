@@ -1,0 +1,9 @@
+@import "../../../shared/popup-base.css";
+@import "../../../shared/popup-content.css";
+/* Transit Pass — 出発地と到着地を結ぶ、チケット型のポップアップ。 */
+.sop-popup.sop-transit-pass { --pp-bg:#d2d6c8;--pp-ink:#283a32;--pp-muted:#6c7d69;--pp-accent:#47654a;--pp-line:#47654a40;--pp-width:575px;--pp-radius:8px;--pp-wash:#506b4510; }
+.sop-popup.sop-transit-pass > .sop-popup-window .sop-popup-top {border-bottom:1px dashed #56774880;padding-bottom:12px}
+.sop-popup.sop-transit-pass > .sop-popup-window .sop-popup-shell {background:linear-gradient(90deg,transparent calc(100% - 26px),#6279560c calc(100% - 26px)),#e0e3d3}
+.sop-popup.sop-transit-pass > .sop-popup-window .sop-popup-intro h2 {font-size:34px;font-family:Arial,sans-serif;font-weight:500}
+.sop-popup.sop-transit-pass > .sop-popup-window .pp-ticket {border-radius:2px}
+.sop-popup.sop-transit-pass > .sop-popup-window .pp-metrics>div {border:0;border-left:1px solid #6a806246;background:none;border-radius:0}

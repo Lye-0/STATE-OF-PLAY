@@ -1,0 +1,12 @@
+# Nixie Check
+琥珀色のグリッドと、真空管のような発光。
+
+本物のinput[type=checkbox]です。label全体をクリックでき、Space・Tab・FormData・required・fieldsetのdisabledはネイティブのままです。複数の独立したチェックで複数選択を作れます。独自のキーイベントでSpaceを二重処理しません。
+
+Reactはchecked/defaultCheckedとonCheckedChangeに対応し、refや標準入力属性はinputへ渡します。className/styleはラベルルートへ渡します。label/descriptionは差し替え可能です。label内へ別のボタンやリンクを入れず、必要な利用規約リンクなどはラベルの外に置いてください。
+
+一部選択はindeterminate/defaultIndeterminateを使います。これは見た目と支援技術の状態で、フォームへ第三の値を送る属性ではありません。親チェックを混合状態にするときは子の選択から算出してください。クリックするとブラウザーはmixedを解除します。外部制御の場合はonIndeterminateChangeも接続します。
+
+Vanillaはinit(root, options)で初期化し、setChecked/getChecked/setIndeterminate/getIndeterminate/setDisabled/refresh/destroyを使います。setCheckedはmixedを勝手に解除しません。両方変更する場合はsetIndeterminate(false)も呼びます。DOMを直接変えた後はrefresh()を使って展示用状態を同期できます。取り外すときにdestroy()します。
+
+フォームのresetをキャンセルしない場合、初期checkedとmixedへ戻します。通常のフォーム送信ではチェックされたinputだけが送信されます。展示に送信・保存処理はありません。

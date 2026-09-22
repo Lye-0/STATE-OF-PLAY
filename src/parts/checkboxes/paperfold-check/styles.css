@@ -1,0 +1,11 @@
+@import "../../../shared/checkbox-base.css";
+/* Paperfold Check — 折り目と紙の厚みを感じる、温かい選択。 */
+.sop-check.sop-paperfold-check { --cb-bg:#dfc6a3;--cb-ink:#3e2e21;--cb-muted:#74634b;--cb-accent:#563e24;--cb-box:#dfc6a3;--cb-line:#563e2466;--cb-radius:3px;--cb-size:44px;background:linear-gradient(130deg,#ebd9bc,#d5b891);border-color:#a88e6666;box-shadow:0 4px 0 #78634633,0 8px 14px #0003;
+ }
+.sop-check.sop-paperfold-check .sop-check-box {border:1px solid #927756;border-radius:1px;background:linear-gradient(135deg,#f8e7cb 0 48%,#d2af8550 49% 51%,#e2c9a8 52%);transform:rotate(-3deg);box-shadow:3px 4px 0 #6a4d2430;color:#554027}
+
+.sop-check.sop-paperfold-check .sop-check-box:after {content:"";position:absolute;right:-1px;top:-1px;width:13px;height:13px;background:linear-gradient(45deg,#b3956d 49%,#f1dfc1 51%);clip-path:polygon(0 0,100% 100%,0 100%);transform:rotate(180deg)}
+
+.sop-check.sop-paperfold-check .sop-check-label {font:20px Georgia,serif}
+
+.sop-check.sop-paperfold-check .sop-check-aura {display:none}

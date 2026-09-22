@@ -1,0 +1,7 @@
+@import "../../../shared/checkbox-base.css";
+/* Paper Check — 白いフォームや設定画面へ自然に置ける入力。 */
+.sop-check.sop-paper-check { --cb-bg:#f1f0e9;--cb-ink:#323c34;--cb-muted:#67766d;--cb-accent:#375f4e;--cb-box:#f1f0e9;--cb-line:#375f4e66;--cb-size:22px;--cb-pad:13px;--cb-radius:8px;min-height:62px;gap:13px;border-color:#d0d8ce;--cb-line:#899e8f;--cb-box:#fff; }
+.sop-check.sop-paper-check .sop-check-box {border-radius:4px;box-shadow:0 1px 2px #304f3312}
+.sop-check.sop-paper-check .sop-check-aura,.sop-check.sop-paper-check .sop-check-detail {display:none}
+.sop-check.sop-paper-check .sop-check-label {font-weight:400}
+.sop-check.sop-paper-check .sop-check-tick {stroke-width:3}

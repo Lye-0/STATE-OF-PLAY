@@ -183,3 +183,11 @@ loading時の無効化、submit/reset、修飾キー付きリンク操作、長�
 CSSのスキン指定は`.sop-固有ID > .sop-choice-list > ...`など直属要素へ閉じ、別スキンをパネル内に置いても影響させません。CSSやグローバルイベントに3択固定の前提を追加しないでください。
 
 2/3/4/5/7以上、0項目、全無効、選択中の削除、並べ替え、長いラベル、RTL、キーボード、フォームreset、controlledでの拒否、別ZIPを同時に配置したときのIDとradio名、Reactの取り外し、reduced-motion/forced-colorsを確認します。詳細の項目数切替はデモ限定で、コードの例を自動編集する機能ではありません。
+
+## チェックボックス / ポップアップの追加
+
+`src/parts/checkboxes/`または`src/parts/popups/`の近いスキンを参考にします。チェックは`checkbox-controller.ts` / `checkbox-view.tsx`、モーダルは`popup-controller.ts` / `popup-view.tsx`を共有します。本物のinput/labelとdialogを維持し、見た目だけのクリック可能divへ変換しないでください。
+
+ポップアップの本文はmarkupとExampleに作成し、React本体には固定しません。縮小見本はギャラリーが実マークアップから作るため、別の偽プレビューHTMLは不要です。内容にIDやradio名を必要とする場合は、複数配置でも衝突しないことを確認します。HTMLのサンプルpaletteでは`data-popup-radio-group`、React例では`useId()`でグループを分離します。
+
+フォーム/Space、mixed、reset、モーダルのフォーカス/背景/Escape/取り外し、両配布配置と新しい項目が入れ子にある場合を`tests/check-popup.browser.ts`で検証します。

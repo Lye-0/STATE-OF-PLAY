@@ -1,0 +1,10 @@
+@import "../../../shared/popup-base.css";
+@import "../../../shared/popup-content.css";
+/* Archive Drawer — 右から現れる、検索欄付きの静かなファイル棚。 */
+.sop-popup.sop-archive-drawer { --pp-bg:#242b2b;--pp-ink:#e4ebe3;--pp-muted:#acb9ac;--pp-accent:#c4d6a5;--pp-line:#c4d6a540;--pp-width:430px;--pp-radius:18px 0 0 18px;--pp-display:Georgia,serif; }
+.sop-popup.sop-archive-drawer > .sop-popup-window {inset:12px 0 12px auto;margin:0;max-height:calc(100dvh - 24px);height:calc(100dvh - 24px);border-right:0;animation-name:sop-popup-drawer-in}
+.sop-popup.sop-archive-drawer > .sop-popup-window .sop-popup-shell {min-height:100%;display:flex;flex-direction:column;background:linear-gradient(90deg,#35402e11,#242b2b)}
+.sop-popup.sop-archive-drawer > .sop-popup-window .sop-popup-body {flex:1}
+.sop-popup.sop-archive-drawer > .sop-popup-window .pp-lines {margin:12px 0 30px}
+.sop-popup.sop-archive-drawer > .sop-popup-window .pp-lines li {padding:20px 0}
+.sop-popup.sop-archive-drawer > .sop-popup-window .sop-popup-intro h2 {font-size:38px}

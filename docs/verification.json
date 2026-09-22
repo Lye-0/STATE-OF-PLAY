@@ -1,40 +1,40 @@
 {
-  "version": "3.7.0",
-  "baseline": "3.6.0-full-repository.zip",
+  "version": "3.8.0",
+  "baseline": "3.7.0-full-repository.zip",
   "date": "2026-09-22",
-  "parts": 232,
+  "parts": 280,
   "newParts": {
-    "tabs": {
+    "checkboxes": {
       "total": 24,
       "A": 16,
       "B": 8
     },
-    "segments": {
+    "popups": {
       "total": 24,
       "A": 16,
       "B": 8
     }
   },
   "preservedPartFiles": {
-    "total": 1840,
+    "total": 2320,
     "changed": 0
   },
   "unitTests": {
-    "passed": 91,
+    "passed": 100,
     "failed": 0,
     "skipped": 0
   },
   "typecheck": {
-    "app": "PASS TypeScript5.8.3 strict",
-    "tools": "BLOCKED: 10 missing Vite module errors; official pinned dependencies unavailable",
+    "app": "PASS TypeScript 5.8.3 strict",
+    "tools": "BLOCKED: 11 missing Vite module/type errors; no replacement declarations used",
     "react": "NOT RUN with official pinned React declarations"
   },
   "gallery": {
-    "mode": "network-restricted adapter; Vite not executed",
-    "react": "real installed browser runtime; production",
-    "passed": 21,
+    "mode": "network-restricted browser adapter; not Vite HTTP",
+    "totalVerifiedCases": 21,
+    "execution": "17 native/gallery cases completed, then 4 actual React export cases rerun separately after correcting the generic React fixture (checkboxes accept label, not children). The complete browser command was not rerun end-to-end.",
     "tests": [
-      "Gallery: 232 parts, no runtime errors",
+      "Gallery: 280 parts, no runtime errors",
       "A/B and category filters intersect, counts remain correct, and search resets cleanly",
       "Liquid, Fold, Prism have intrinsic opposite state labels and distinct optical treatment",
       "Compact B switches retain real sizes, native keyboard and drag states",
@@ -44,7 +44,7 @@
       "Denied clipboard: manual fallback, no false success, focus restored",
       "Selected source download matches the original file bytes",
       "Focus trap / Escape / restoration to gallery trigger",
-      "Both layouts: all 14144 code previews equal exported sources and selection follows the source identity",
+      "Both layouts: all 16928 code previews equal exported sources and selection follows the source identity",
       "Downloaded ZIP and CLI share exact files, README, prompt, manifest in both layouts and modes",
       "Guide and AI prompt remain copyable in every export format",
       "Mobile 320/390/768: no overflow, usable code and file picker",
@@ -56,40 +56,41 @@
       "React TSX / original: all actual exports, controlled/uncontrolled/disabled, cleanup",
       "React JSX / original: all actual exports, controlled/uncontrolled/disabled, cleanup"
     ],
-    "errors": []
+    "initialFailure": "generic fixture supplied children to native checkbox/input; fixed fixture and reran all four React cases successfully",
+    "reactRerunErrors": []
   },
-  "selection": {
-    "mode": "explicit offline browser adapter; not Vite HTTP",
+  "checkboxesPopups": {
+    "mode": "scoped feature gallery / offline adapter; full catalogue tested separately; not Vite HTTP",
     "react": "real installed browser runtime",
     "tests": [
-      "48 new parts: 24 tabs / 24 selectors, A16 B8 with existing filters",
-      "All 24 tabs: actual panel switching, IDs/ARIA and note state survives hiding",
-      "All 24 segments are native radios; clicking/arrow keys changes exactly one choice",
-      "Inspector: 2/3/4/5/7 choices, direction, disabled and code/layout preserve selection",
-      "320/390/768px: every new part fits, labels readable, inspector reachable",
-      "Manual/automatic tabs: roving focus, Space/Enter, Home/End, disabled skip, vertical and RTL",
-      "Native forms: value submission, distinct groups, reset, disable, no artificial change on setters",
-      "Dynamic native options: add/remove/reorder and refreshed disabled values; marker follows geometry",
-      "Adding tabs after deletion never recycles panel IDs; setters do not emit input events",
-      "Nested selectors retain their own skin and do not change the parent tab",
-      "Reduced motion / forced colours keep an explicit selected state and focus",
-      "React tsx/portable: 48 exports, controlled/uncontrolled/declined, 2/4/7 options and empty",
-      "React tsx/portable: native FormData and controlled/uncontrolled/declined reset",
-      "React tsx/original: 48 exports, controlled/uncontrolled/declined, 2/4/7 options and empty",
-      "React tsx/original: native FormData and controlled/uncontrolled/declined reset",
-      "React jsx/portable: 48 exports, controlled/uncontrolled/declined, 2/4/7 options and empty",
-      "React jsx/portable: native FormData and controlled/uncontrolled/declined reset",
-      "React jsx/original: 48 exports, controlled/uncontrolled/declined, 2/4/7 options and empty",
-      "React jsx/original: native FormData and controlled/uncontrolled/declined reset"
+      "48 new parts: category/search/style filters and exact A/B counts",
+      "All 24 checkboxes: native label/Space, multiple independent selection and no accidental inspector",
+      "Checkbox inspector: mixed state, disabled, code/layout changes retain checked state",
+      "All 24 popups: actual top-layer content, close reasons, restored focus and scroll lock",
+      "Nested inspector: focus stays in popup; Escape closes only the top dialog and preserves typed content",
+      "Popup backdrop click vs disabled dismissal, and dragging out from content does not dismiss",
+      "320/390/768px: all new controls and open popup content fit, long dialog can scroll",
+      "Native FormData, fieldset disabled, mixed is separate from checked, native form reset",
+      "Multiple exported modal instances: shared locks, native dialog form, destructive cleanup",
+      "Closing animation can be reopened without stale close events or released locks",
+      "Reduced motion and forced colours keep native checkbox visible and focus apparent",
+      "React tsx/portable: all 24 checkbox exports, controlled/mixed/internal/disabled/declined",
+      "React tsx/portable: all 24 modal exports, declined requests, retained children and teardown",
+      "React tsx/original: all 24 checkbox exports, controlled/mixed/internal/disabled/declined",
+      "React tsx/original: all 24 modal exports, declined requests, retained children and teardown",
+      "React jsx/portable: all 24 checkbox exports, controlled/mixed/internal/disabled/declined",
+      "React jsx/portable: all 24 modal exports, declined requests, retained children and teardown",
+      "React jsx/original: all 24 checkbox exports, controlled/mixed/internal/disabled/declined",
+      "React jsx/original: all 24 modal exports, declined requests, retained children and teardown"
     ],
     "passed": 19,
     "errors": []
   },
-  "codePreviews": 14144,
-  "zipCases": 3712,
+  "codePreviews": 16928,
+  "zipCases": 4480,
   "relocation": {
     "projects": 6,
-    "instances": 1392,
+    "instances": 1680,
     "errors": []
   },
   "environment": {
@@ -98,21 +99,22 @@
     "chromium": "144.0.7559.96",
     "react": "19.1.1 production (actual installed browser bundle)",
     "playwright": "1.57.0-beta environment runtime",
-    "transport": "explicit offline adapter; not Vite HTTP"
+    "transport": "explicit offline fixture adapter, including native ESM relocation; not Vite HTTP"
   },
   "notRun": [
-    "npm install of pinned dependencies (registry DNS EAI_AGAIN)",
+    "pinned dependencies install (npm registry DNS EAI_AGAIN)",
     "real Vite build / HTTP serving",
     "npm audit",
     "full official React/Vite typecheck",
     "development StrictMode double effects",
-    "Windows/iOS/Safari/screen-reader real devices",
+    "Windows / iOS / Safari / screen-reader real devices",
     "GitHub Actions execution"
   ],
   "archiveValidation": {
-    "crc": "verified",
+    "crc": "PASS",
     "sha256": "all manifest files matched",
     "freshAppTypecheck": "PASS",
-    "freshUnitTests": 91
+    "freshUnitTests": 100,
+    "note": "再展開先でsrc/scripts/tests/configを検証した後、検証記録だけを更新して最終ZIPを生成。実行対象の全ファイルは再展開検証時とバイト単位で同一。"
   }
 }

@@ -1,0 +1,59 @@
+{
+  "id": "paperfold-check",
+  "name": "Paperfold Check",
+  "category": "checkboxes",
+  "order": 238,
+  "version": "1.0.0",
+  "tagline": "ひと折りの、意思。",
+  "description": "折り目と紙の厚みを感じる、温かい選択。",
+  "material": "FOLDED STOCK",
+  "motion": "DRAW / SETTLE",
+  "accent": "86,62,36",
+  "designType": "A",
+  "runtime": "Native checkbox + CSS / event-driven state",
+  "componentName": "PaperfoldCheck",
+  "tags": [
+    "Paperfold Check",
+    "paperfold-check",
+    "チェックボックス",
+    "チェック",
+    "複数選択",
+    "一部選択",
+    "A"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "label / description / badge",
+      "ReactNode",
+      "ラベル・補足・装飾。ラベル内に別の操作要素を置かない。"
+    ],
+    [
+      "checked / defaultChecked",
+      "boolean",
+      "外部制御 / 非制御の初期選択。"
+    ],
+    [
+      "indeterminate / defaultIndeterminate",
+      "boolean",
+      "一部選択。クリックで通常の選択に戻る。"
+    ],
+    [
+      "onCheckedChange / onIndeterminateChange",
+      "(value: boolean) => void",
+      "アプリの状態と接続。"
+    ],
+    [
+      "name / value / form / required / disabled",
+      "native input attributes",
+      "標準フォームの送信・リセット・無効化。"
+    ],
+    [
+      "ref / onChange / aria-*",
+      "input attributes",
+      "実際のinputへ接続。className/styleだけラベルルートへ。"
+    ]
+  ]
+}

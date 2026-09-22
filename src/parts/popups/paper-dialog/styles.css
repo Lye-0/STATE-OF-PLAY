@@ -1,0 +1,6 @@
+@import "../../../shared/popup-base.css";
+@import "../../../shared/popup-content.css";
+/* Paper Dialog — 白い背景で、名前の変更などに使えるシンプルな入力。 */
+.sop-popup.sop-paper-dialog { --pp-bg:#f2f2ec;--pp-ink:#2e3e35;--pp-muted:#687b70;--pp-accent:#416b54;--pp-line:#416b5440;--pp-width:440px;--pp-radius:13px;--pp-line:#7285703b;--pp-wash:#647f530a;--pp-on-accent:#fff; }
+.sop-popup.sop-paper-dialog > .sop-popup-window .sop-popup-intro h2 {font:500 25px var(--pp-font);letter-spacing:0}
+.sop-popup.sop-paper-dialog > .sop-popup-window .sop-popup-shell {background:#f7f7f1}

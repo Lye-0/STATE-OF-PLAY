@@ -1,0 +1,9 @@
+@import "../../../shared/popup-base.css";
+@import "../../../shared/popup-content.css";
+/* Gallery Window — 大きな作品面とエディトリアルな文字を持つ窓。 */
+.sop-popup.sop-gallery-window { --pp-bg:#e1e3dd;--pp-ink:#263832;--pp-muted:#78867a;--pp-accent:#495f4d;--pp-line:#495f4d40;--pp-width:470px;--pp-display:Georgia,serif;--pp-radius:3px;--pp-wash:#667d6120; }
+.sop-popup.sop-gallery-window > .sop-popup-window .sop-popup-top {margin-bottom:20px}
+.sop-popup.sop-gallery-window > .sop-popup-window .sop-popup-intro h2 {font-size:41px}
+.sop-popup.sop-gallery-window > .sop-popup-window .pp-art {height:240px;border:0;border-radius:0;background:#bdc7bd;margin-bottom:23px}
+.sop-popup.sop-gallery-window > .sop-popup-window .pp-art-spectrum i {filter:blur(0);mix-blend-mode:multiply;opacity:.75;height:200px;width:125px;border-radius:70% 30% 60% 40%}
+.sop-popup.sop-gallery-window > .sop-popup-window .pp-tags span {border:0;padding-left:0}

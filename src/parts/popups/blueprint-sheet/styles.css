@@ -1,0 +1,9 @@
+@import "../../../shared/popup-base.css";
+@import "../../../shared/popup-content.css";
+/* Blueprint Sheet — 格子と製図線で構成した、編集可能なシート。 */
+.sop-popup.sop-blueprint-sheet { --pp-bg:#193244;--pp-ink:#e0f0f4;--pp-muted:#abc7d2;--pp-accent:#b0dce1;--pp-line:#b0dce140;--pp-radius:0px;--pp-width:650px;--pp-wash:#b6deea0b; }
+.sop-popup.sop-blueprint-sheet > .sop-popup-window .sop-popup-shell {background-image:linear-gradient(#b7d8e509 1px,transparent 1px),linear-gradient(90deg,#b7d8e509 1px,transparent 1px);background-size:12px 12px}
+.sop-popup.sop-blueprint-sheet > .sop-popup-window .sop-popup-intro h2 {font-family:Arial,sans-serif;font-size:38px}
+.sop-popup.sop-blueprint-sheet > .sop-popup-window {border-color:#a4d8e2a0}
+.sop-popup.sop-blueprint-sheet > .sop-popup-window .pp-art,.sop-popup.sop-blueprint-sheet > .sop-popup-window .sop-popup-footer>button,.sop-popup.sop-blueprint-sheet > .sop-popup-window .pp-fields input {border-radius:0}
+.sop-popup.sop-blueprint-sheet > .sop-popup-window .sop-popup-top {border-bottom:1px dashed #b6dfe255;padding-bottom:15px}

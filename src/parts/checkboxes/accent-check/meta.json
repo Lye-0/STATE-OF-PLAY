@@ -1,0 +1,59 @@
+{
+  "id": "accent-check",
+  "name": "Accent Check",
+  "category": "checkboxes",
+  "order": 254,
+  "version": "1.0.0",
+  "tagline": "必要なところだけ。",
+  "description": "小さなアクセント色で、選択をはっきり示す。",
+  "material": "ESSENTIAL / CHECK",
+  "motion": "CHECK / FADE",
+  "accent": "199,180,228",
+  "designType": "B",
+  "runtime": "Native checkbox + CSS / event-driven state",
+  "componentName": "AccentCheck",
+  "tags": [
+    "Accent Check",
+    "accent-check",
+    "チェックボックス",
+    "チェック",
+    "複数選択",
+    "一部選択",
+    "B"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "label / description / badge",
+      "ReactNode",
+      "ラベル・補足・装飾。ラベル内に別の操作要素を置かない。"
+    ],
+    [
+      "checked / defaultChecked",
+      "boolean",
+      "外部制御 / 非制御の初期選択。"
+    ],
+    [
+      "indeterminate / defaultIndeterminate",
+      "boolean",
+      "一部選択。クリックで通常の選択に戻る。"
+    ],
+    [
+      "onCheckedChange / onIndeterminateChange",
+      "(value: boolean) => void",
+      "アプリの状態と接続。"
+    ],
+    [
+      "name / value / form / required / disabled",
+      "native input attributes",
+      "標準フォームの送信・リセット・無効化。"
+    ],
+    [
+      "ref / onChange / aria-*",
+      "input attributes",
+      "実際のinputへ接続。className/styleだけラベルルートへ。"
+    ]
+  ]
+}

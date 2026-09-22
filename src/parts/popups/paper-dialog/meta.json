@@ -1,0 +1,65 @@
+{
+  "id": "paper-dialog",
+  "name": "Paper Dialog",
+  "category": "popups",
+  "order": 274,
+  "version": "1.0.0",
+  "tagline": "明るい画面の、確認欄。",
+  "description": "白い背景で、名前の変更などに使えるシンプルな入力。",
+  "material": "PAPER / FORM",
+  "motion": "FADE / FOCUS",
+  "accent": "65,107,84",
+  "designType": "B",
+  "runtime": "Native dialog + CSS / event-driven lifecycle",
+  "componentName": "PaperDialog",
+  "tags": [
+    "Paper Dialog",
+    "paper-dialog",
+    "ポップアップ",
+    "モーダル",
+    "ダイアログ",
+    "確認",
+    "開閉",
+    "B"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "title / description / kicker",
+      "string",
+      "見出しと補足。dialogのアクセシブル名はtitleへ関連付け。"
+    ],
+    [
+      "children / footer / triggerLabel",
+      "ReactNode",
+      "本文・操作・開くボタンを用途に合わせて変更。"
+    ],
+    [
+      "open / defaultOpen / onOpenChange",
+      "boolean / callback",
+      "外部制御 / 非制御。閉じる要求を外部で拒否できる。"
+    ],
+    [
+      "onClose",
+      "(reason: string) => void",
+      "閉じ終わった理由を通知。通信・保存処理は含まない。"
+    ],
+    [
+      "closeOnBackdrop / closeOnEscape",
+      "boolean",
+      "背景クリック / Escapeで閉じる。既定true。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "開くボタンを無効化。開いたウィンドウの閉じる操作は残す。"
+    ],
+    [
+      "confirmLabel / cancelLabel",
+      "string",
+      "既定フッターの文言。独自footerも指定可能。"
+    ]
+  ]
+}

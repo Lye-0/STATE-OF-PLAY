@@ -1,0 +1,59 @@
+{
+  "id": "porcelain-check",
+  "name": "Porcelain Check",
+  "category": "checkboxes",
+  "order": 243,
+  "version": "1.0.0",
+  "tagline": "磁器の、やさしさ。",
+  "description": "乳白色のふくらみに、青緑の印が浮かぶ。",
+  "material": "GLAZED PORCELAIN",
+  "motion": "DRAW / SETTLE",
+  "accent": "63,119,108",
+  "designType": "A",
+  "runtime": "Native checkbox + CSS / event-driven state",
+  "componentName": "PorcelainCheck",
+  "tags": [
+    "Porcelain Check",
+    "porcelain-check",
+    "チェックボックス",
+    "チェック",
+    "複数選択",
+    "一部選択",
+    "A"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "label / description / badge",
+      "ReactNode",
+      "ラベル・補足・装飾。ラベル内に別の操作要素を置かない。"
+    ],
+    [
+      "checked / defaultChecked",
+      "boolean",
+      "外部制御 / 非制御の初期選択。"
+    ],
+    [
+      "indeterminate / defaultIndeterminate",
+      "boolean",
+      "一部選択。クリックで通常の選択に戻る。"
+    ],
+    [
+      "onCheckedChange / onIndeterminateChange",
+      "(value: boolean) => void",
+      "アプリの状態と接続。"
+    ],
+    [
+      "name / value / form / required / disabled",
+      "native input attributes",
+      "標準フォームの送信・リセット・無効化。"
+    ],
+    [
+      "ref / onChange / aria-*",
+      "input attributes",
+      "実際のinputへ接続。className/styleだけラベルルートへ。"
+    ]
+  ]
+}

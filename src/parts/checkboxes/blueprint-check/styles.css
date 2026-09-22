@@ -1,0 +1,11 @@
+@import "../../../shared/checkbox-base.css";
+/* Blueprint Check — 細かな製図線と寸法目盛りを持つチェック。 */
+.sop-check.sop-blueprint-check { --cb-bg:#183346;--cb-ink:#ddf1f9;--cb-muted:#9fc0d0;--cb-accent:#c3e9ed;--cb-box:#183346;--cb-line:#c3e9ed66;--cb-radius:0px;--cb-size:41px;background-image:linear-gradient(#b9d9dc0b 1px,transparent 1px),linear-gradient(90deg,#b9d9dc0b 1px,transparent 1px);background-size:10px 10px;border-color:#8cb6c66b;
+ }
+.sop-check.sop-blueprint-check .sop-check-box {border-radius:0;background:#173344aa;border:1px solid #a6d1d999;box-shadow:0 0 0 4px #173344,inset 0 0 0 3px #a6d1d925}
+
+.sop-check.sop-blueprint-check .sop-check-aura {inset:-7px;border:1px dashed #a6d1d97a;transform:none}
+
+.sop-check.sop-blueprint-check .sop-check-tick {stroke-width:1.8}
+
+.sop-check.sop-blueprint-check .sop-check-label {font:12px Consolas,monospace;letter-spacing:.1em}

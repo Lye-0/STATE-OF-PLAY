@@ -1,0 +1,8 @@
+@import "../../../shared/checkbox-base.css";
+/* Outline Check — 塗りを抑えた、輪郭中心のチェックボックス。 */
+.sop-check.sop-outline-check { --cb-bg:transparent;--cb-ink:#e5ebeb;--cb-muted:#a5b2b5;--cb-accent:#bfd3db;--cb-box:#151d21;--cb-line:#bfd3db66;--cb-size:22px;--cb-pad:13px;--cb-radius:8px;min-height:62px;gap:13px;border-color:transparent; }
+.sop-check.sop-outline-check .sop-check-box {background:transparent;border-radius:3px;box-shadow:none}
+.sop-check.sop-outline-check input:is(:checked,:indeterminate)+.sop-check-box {background:transparent;box-shadow:none}
+.sop-check.sop-outline-check .sop-check-aura,.sop-check.sop-outline-check .sop-check-detail {display:none}
+.sop-check.sop-outline-check .sop-check-label {font-weight:400}
+.sop-check.sop-outline-check .sop-check-tick {stroke-width:3}

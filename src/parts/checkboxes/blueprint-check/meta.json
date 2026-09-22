@@ -1,0 +1,59 @@
+{
+  "id": "blueprint-check",
+  "name": "Blueprint Check",
+  "category": "checkboxes",
+  "order": 241,
+  "version": "1.0.0",
+  "tagline": "図面に、印を。",
+  "description": "細かな製図線と寸法目盛りを持つチェック。",
+  "material": "DRAFTING / MARK",
+  "motion": "DRAW / SETTLE",
+  "accent": "195,233,237",
+  "designType": "A",
+  "runtime": "Native checkbox + CSS / event-driven state",
+  "componentName": "BlueprintCheck",
+  "tags": [
+    "Blueprint Check",
+    "blueprint-check",
+    "チェックボックス",
+    "チェック",
+    "複数選択",
+    "一部選択",
+    "A"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "label / description / badge",
+      "ReactNode",
+      "ラベル・補足・装飾。ラベル内に別の操作要素を置かない。"
+    ],
+    [
+      "checked / defaultChecked",
+      "boolean",
+      "外部制御 / 非制御の初期選択。"
+    ],
+    [
+      "indeterminate / defaultIndeterminate",
+      "boolean",
+      "一部選択。クリックで通常の選択に戻る。"
+    ],
+    [
+      "onCheckedChange / onIndeterminateChange",
+      "(value: boolean) => void",
+      "アプリの状態と接続。"
+    ],
+    [
+      "name / value / form / required / disabled",
+      "native input attributes",
+      "標準フォームの送信・リセット・無効化。"
+    ],
+    [
+      "ref / onChange / aria-*",
+      "input attributes",
+      "実際のinputへ接続。className/styleだけラベルルートへ。"
+    ]
+  ]
+}

@@ -1,0 +1,9 @@
+@import "../../../shared/popup-base.css";
+@import "../../../shared/popup-content.css";
+/* Titanium Dialog — 金属プレートと円盤の構造を持つコントロール。 */
+.sop-popup.sop-titanium-dialog { --pp-bg:#272d2d;--pp-ink:#e9eeeb;--pp-muted:#a9b4b0;--pp-accent:#d0dfb4;--pp-line:#d0dfb440;--pp-radius:8px;--pp-width:620px; }
+.sop-popup.sop-titanium-dialog > .sop-popup-window .sop-popup-shell {background:repeating-linear-gradient(90deg,#d9e3d905 0 1px,transparent 1px 3px),linear-gradient(135deg,#363f3e,#252e2c 70%);box-shadow:inset 0 1px 1px #ebffe344}
+.sop-popup.sop-titanium-dialog > .sop-popup-window .sop-popup-intro h2 {font-family:Arial,sans-serif;font-size:35px;letter-spacing:-.045em}
+.sop-popup.sop-titanium-dialog > .sop-popup-window .sop-popup-top {border-bottom:1px solid #8b97804f;padding-bottom:16px}
+.sop-popup.sop-titanium-dialog > .sop-popup-window .pp-art {border-radius:4px;background:#171e1a}
+.sop-popup.sop-titanium-dialog > .sop-popup-window .sop-popup-primary {border-radius:3px;background:linear-gradient(#e0e8c9,#adbb90)}

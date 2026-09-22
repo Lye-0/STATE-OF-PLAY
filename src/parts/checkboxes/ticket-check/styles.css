@@ -1,0 +1,13 @@
+@import "../../../shared/checkbox-base.css";
+/* Ticket Check — ミシン目と小さなパンチ穴を持つチケット。 */
+.sop-check.sop-ticket-check { --cb-bg:#cfcdbd;--cb-ink:#363e36;--cb-muted:#737969;--cb-accent:#435b42;--cb-box:#cfcdbd;--cb-line:#435b4266;--cb-size:39px;--cb-radius:3px;background:#e4e1cf;border:1px dashed #8c967a;box-shadow:0 5px 9px #0003;gap:23px;
+ }
+.sop-check.sop-ticket-check .sop-check-box {border-radius:50%;border:1px solid #8b947d;box-shadow:inset 0 0 0 4px #e4e1cf,inset 0 0 0 5px #8b947d;background:#d3d5bc}
+
+.sop-check.sop-ticket-check .sop-check-copy {border-left:1px dashed #9ba188;padding-left:18px}
+
+.sop-check.sop-ticket-check .sop-check-aura {display:none}
+
+.sop-check.sop-ticket-check .sop-check-label {font:12px Consolas,monospace;letter-spacing:.08em}
+
+.sop-check.sop-ticket-check .sop-check-badge {border:0;font-size:7px;writing-mode:vertical-rl}

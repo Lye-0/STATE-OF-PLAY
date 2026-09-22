@@ -1,0 +1,5 @@
+import {init} from './init';
+const root=document.querySelector<HTMLElement>('.sop-wax-seal-check');
+if(!root)throw new Error('Missing checkbox root');
+const controller=init(root,{onCheckedChange(checked){console.log('checked:',checked);}});
+window.addEventListener('pagehide',()=>controller.destroy(),{once:true});

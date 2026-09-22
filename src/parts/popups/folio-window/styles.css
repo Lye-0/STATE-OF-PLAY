@@ -1,0 +1,10 @@
+@import "../../../shared/popup-base.css";
+@import "../../../shared/popup-content.css";
+/* Folio Window — 紙の余白と活版のような文字組みのポップアップ。 */
+.sop-popup.sop-folio-window { --pp-bg:#e7e0cf;--pp-ink:#3d392d;--pp-muted:#786e5e;--pp-accent:#586146;--pp-line:#58614640;--pp-display:Georgia,serif;--pp-radius:3px;--pp-width:535px;--pp-wash:#61573509; }
+.sop-popup.sop-folio-window > .sop-popup-window .sop-popup-shell {background:linear-gradient(90deg,#a1937330,transparent 4%),#e7e0cf;padding-left:39px}
+.sop-popup.sop-folio-window > .sop-popup-window .sop-popup-intro {border-bottom:3px double #92866c66;padding-bottom:20px}
+.sop-popup.sop-folio-window > .sop-popup-window .pp-note h3 {font-size:35px}
+.sop-popup.sop-folio-window > .sop-popup-window .pp-fields {margin-top:24px}
+.sop-popup.sop-folio-window > .sop-popup-window .pp-fields textarea {border-radius:0;background:repeating-linear-gradient(transparent 0 26px,#8e81682b 26px 27px)}
+.sop-popup.sop-folio-window > .sop-popup-window .sop-popup-footer>button {border-radius:2px}

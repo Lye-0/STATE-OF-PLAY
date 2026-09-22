@@ -1,0 +1,7 @@
+@import "../../../shared/popup-base.css";
+@import "../../../shared/popup-content.css";
+/* Help Dialog — 手順を短く案内する、汎用的なヘルプの窓。 */
+.sop-popup.sop-help-dialog { --pp-bg:#242b31;--pp-ink:#e4edf2;--pp-muted:#a8b7c0;--pp-accent:#bdd3dc;--pp-line:#bdd3dc40;--pp-width:475px;--pp-radius:12px; }
+.sop-popup.sop-help-dialog > .sop-popup-window .sop-popup-intro h2 {font:500 25px/1.4 var(--pp-font);letter-spacing:0}
+.sop-popup.sop-help-dialog > .sop-popup-window .pp-steps li {border-bottom:1px solid var(--pp-line)}
+.sop-popup.sop-help-dialog > .sop-popup-window .pp-steps li:last-child {border:0}

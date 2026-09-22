@@ -164,7 +164,7 @@ export function required(selector: string, root: ParentNode = document): HTMLEle
 }
 export function trapDialogFocus(dialog: HTMLDialogElement) {
     dialog.addEventListener('keydown', event => {
-        if (event.key !== 'Tab')
+        if (event.key !== 'Tab' || (event.target instanceof Element && event.target.closest('dialog') !== dialog))
             return;
         const candidates = [...dialog.querySelectorAll<HTMLElement>('button:not([disabled]),a[href],input:not([disabled]),textarea:not([disabled]),select:not([disabled]),summary,[tabindex]:not([tabindex="-1"])')]
             .filter(el => el.tabIndex >= 0 && el.getClientRects().length > 0 && !el.closest('[hidden], [inert]') && getComputedStyle(el).visibility !== 'hidden');

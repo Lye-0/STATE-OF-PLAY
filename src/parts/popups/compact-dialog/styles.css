@@ -1,0 +1,8 @@
+@import "../../../shared/popup-base.css";
+@import "../../../shared/popup-content.css";
+/* Compact Dialog — 短い選択や通知を伝えるためのコンパクトな窓。 */
+.sop-popup.sop-compact-dialog { --pp-bg:#282a2e;--pp-ink:#e9eaf0;--pp-muted:#afb2c0;--pp-accent:#c9c7df;--pp-line:#c9c7df40;--pp-width:380px;--pp-radius:10px; }
+.sop-popup.sop-compact-dialog > .sop-popup-window .sop-popup-shell {padding:20px}
+.sop-popup.sop-compact-dialog > .sop-popup-window .sop-popup-intro h2 {font:500 22px/1.4 var(--pp-font);letter-spacing:0}
+.sop-popup.sop-compact-dialog > .sop-popup-window .sop-popup-top {margin-bottom:16px}
+.sop-popup.sop-compact-dialog > .sop-popup-window .sop-popup-footer {margin-top:18px;padding-top:16px}

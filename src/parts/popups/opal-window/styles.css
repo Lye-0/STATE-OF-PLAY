@@ -1,0 +1,8 @@
+@import "../../../shared/popup-base.css";
+@import "../../../shared/popup-content.css";
+/* Opal Window — オパールの干渉色と、柔らかな紹介のカード。 */
+.sop-popup.sop-opal-window { --pp-bg:#e1dde9;--pp-ink:#49435e;--pp-muted:#878095;--pp-accent:#806d9d;--pp-line:#806d9d40;--pp-width:620px;--pp-radius:28px;--pp-wash:#9586b11a; }
+.sop-popup.sop-opal-window > .sop-popup-window .sop-popup-shell {background:linear-gradient(130deg,#f3e7e9,#d9e7e0 58%,#d9d7ed)}
+.sop-popup.sop-opal-window > .sop-popup-window {border-color:#fff9;box-shadow:inset 0 1px 1px #fff,0 35px 90px #0006}
+.sop-popup.sop-opal-window > .sop-popup-window .pp-art {background:#f1ecf555;border-color:#fffc;border-radius:60% 60% 20px 20px}
+.sop-popup.sop-opal-window > .sop-popup-window .sop-popup-footer>button {border-radius:30px}

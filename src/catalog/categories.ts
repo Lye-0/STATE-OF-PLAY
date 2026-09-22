@@ -9,5 +9,7 @@ export const categories = [
     { id: 'buttons', label: 'ボタン', english: 'BUTTONS' },
     { id: 'links', label: 'リンク', english: 'LINKS' },
     { id: 'tabs', label: 'タブ', english: 'TABS' },
-    { id: 'segments', label: 'セグメント', english: 'SEGMENTED CONTROLS' }
+    { id: 'segments', label: 'セグメント', english: 'SEGMENTED CONTROLS' },
+    { id: 'checkboxes', label: 'チェックボックス', english: 'CHECKBOXES' },
+    { id: 'popups', label: 'ポップアップ', english: 'POPUPS' }
 ];

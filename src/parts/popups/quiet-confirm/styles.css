@@ -1,0 +1,6 @@
+@import "../../../shared/popup-base.css";
+@import "../../../shared/popup-content.css";
+/* Quiet Confirm — キャンセルを選びやすい、落ち着いた確認画面。 */
+.sop-popup.sop-quiet-confirm { --pp-bg:#2a2526;--pp-ink:#efe7e6;--pp-muted:#c4aca8;--pp-accent:#e4b2a0;--pp-line:#e4b2a040;--pp-width:450px;--pp-radius:10px;--pp-wash:#d1a0940b; }
+.sop-popup.sop-quiet-confirm > .sop-popup-window .sop-popup-intro h2 {font:500 24px/1.45 var(--pp-font);letter-spacing:0}
+.sop-popup.sop-quiet-confirm > .sop-popup-window .sop-popup-primary {background:transparent;color:var(--pp-accent)}

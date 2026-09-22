@@ -1,0 +1,7 @@
+@import "../../../shared/checkbox-base.css";
+/* Soft Check — 淡い選択面と丸い輪郭の、控えめなチェック。 */
+.sop-check.sop-soft-check { --cb-bg:#26302c;--cb-ink:#e5f0e8;--cb-muted:#a5b8ac;--cb-accent:#bed7c0;--cb-box:#26302c;--cb-line:#bed7c066;--cb-size:22px;--cb-pad:13px;--cb-radius:8px;min-height:62px;gap:13px;--cb-radius:16px; }
+.sop-check.sop-soft-check .sop-check-box {border-radius:8px;background:#a5c3ad1c;}
+.sop-check.sop-soft-check .sop-check-aura,.sop-check.sop-soft-check .sop-check-detail {display:none}
+.sop-check.sop-soft-check .sop-check-label {font-weight:400}
+.sop-check.sop-soft-check .sop-check-tick {stroke-width:3}

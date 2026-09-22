@@ -1,0 +1,9 @@
+@import "../../../shared/popup-base.css";
+@import "../../../shared/popup-content.css";
+/* Observatory Window — 軌道と静かな数値で描く、天体観測のパネル。 */
+.sop-popup.sop-observatory-window { --pp-bg:#142321;--pp-ink:#e1eddf;--pp-muted:#a5b7ab;--pp-accent:#c7dfad;--pp-line:#c7dfad40;--pp-width:480px;--pp-radius:15px;--pp-display:Georgia,serif; }
+.sop-popup.sop-observatory-window > .sop-popup-window .sop-popup-intro {text-align:center}
+.sop-popup.sop-observatory-window > .sop-popup-window .sop-popup-kicker {letter-spacing:.25em}
+.sop-popup.sop-observatory-window > .sop-popup-window .pp-art {border:0;height:190px;background:radial-gradient(circle at center,#48764e16,transparent 67%)}
+.sop-popup.sop-observatory-window > .sop-popup-window .pp-art-orbit i {width:170px;height:84px}
+.sop-popup.sop-observatory-window > .sop-popup-window .pp-metrics>div {text-align:center;background:none;border-width:1px 0 0;border-radius:0}

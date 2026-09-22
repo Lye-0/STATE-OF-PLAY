@@ -1,0 +1,13 @@
+@import "../../../shared/checkbox-base.css";
+/* Nixie Check — 琥珀色のグリッドと、真空管のような発光。 */
+.sop-check.sop-nixie-check { --cb-bg:#201b16;--cb-ink:#f3d9ac;--cb-muted:#bda181;--cb-accent:#ffc078;--cb-box:#201b16;--cb-line:#ffc07866;--cb-radius:9px;--cb-size:43px;background:linear-gradient(160deg,#342920,#181714);border-color:#87674577;
+ }
+.sop-check.sop-nixie-check .sop-check-box {border-radius:10px;background:repeating-linear-gradient(0deg,transparent 0 3px,#ae8b5220 3px 4px),#191810;box-shadow:inset 0 0 8px #0008,inset 0 1px 1px #efbf6966;border-color:#987148}
+
+.sop-check.sop-nixie-check .sop-check-tick {filter:drop-shadow(0 0 3px #ffa757) drop-shadow(0 0 8px #ff852daa)}
+
+.sop-check.sop-nixie-check .sop-check-label {font-family:Consolas,monospace;letter-spacing:.09em;font-size:12px}
+
+.sop-check.sop-nixie-check .sop-check-box:after {content:"";position:absolute;inset:3px;border-top:2px solid #ffedbb29;border-radius:8px}
+
+.sop-check.sop-nixie-check .sop-check-aura {border:0;inset:-8px;background:radial-gradient(#ffa43844,transparent 70%)}

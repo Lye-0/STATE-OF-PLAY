@@ -1,0 +1,8 @@
+@import "../../../shared/popup-base.css";
+@import "../../../shared/popup-content.css";
+/* Dock Sheet — 下から浮かび上がる、ゆとりのある設定シート。 */
+.sop-popup.sop-dock-sheet { --pp-bg:#22313a;--pp-ink:#e1edf4;--pp-muted:#a6bdca;--pp-accent:#a7cedf;--pp-line:#a7cedf40;--pp-width:780px;--pp-radius:25px 25px 0 0;--pp-wash:#adc6d30b; }
+.sop-popup.sop-dock-sheet > .sop-popup-window {inset:auto 0 0;margin:0 auto;max-height:calc(100dvh - 25px);border-bottom:0;animation-name:sop-popup-sheet-in}
+.sop-popup.sop-dock-sheet > .sop-popup-window .sop-popup-shell {padding-top:30px;background:linear-gradient(#2b3d48,#20313a)}
+.sop-popup.sop-dock-sheet > .sop-popup-window .sop-popup-shell:before {content:"";position:absolute;left:calc(50% - 22px);top:11px;width:44px;height:3px;background:#718b9c;border-radius:5px}
+.sop-popup.sop-dock-sheet > .sop-popup-window .sop-popup-intro h2 {font-size:36px}

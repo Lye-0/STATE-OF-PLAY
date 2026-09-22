@@ -1,0 +1,5 @@
+@import "../../../shared/popup-base.css";
+@import "../../../shared/popup-content.css";
+/* Notice Dialog — 伝えたい情報を読みやすく整えた通知ダイアログ。 */
+.sop-popup.sop-notice-dialog { --pp-bg:#22303b;--pp-ink:#e7f0f5;--pp-muted:#a9becb;--pp-accent:#aecfe4;--pp-line:#aecfe440;--pp-width:480px;--pp-radius:15px; }
+.sop-popup.sop-notice-dialog > .sop-popup-window .sop-popup-intro h2 {font:500 25px/1.4 var(--pp-font);letter-spacing:0}

@@ -1,0 +1,11 @@
+@import "../../../shared/checkbox-base.css";
+/* Velvet Check — 深い布の陰影に、細い金糸のチェック。 */
+.sop-check.sop-velvet-check { --cb-bg:#2b243c;--cb-ink:#e8ddeb;--cb-muted:#bba6c8;--cb-accent:#e1c393;--cb-box:#2b243c;--cb-line:#e1c39366;--cb-size:44px;--cb-radius:14px;background:repeating-linear-gradient(85deg,#ccb5e805 0 1px,transparent 1px 3px),radial-gradient(ellipse at 25% 15%,#46334e,#282135 75%);border-color:#b492ba36;box-shadow:inset 0 1px 3px #ab78901a,0 8px 18px #0003;
+ }
+.sop-check.sop-velvet-check .sop-check-box {border-radius:13px;background:linear-gradient(130deg,#392b42,#211b2d);border-color:#9e7c655a;box-shadow:inset 2px 2px 5px #130e25,1px 1px 2px #99778942}
+
+.sop-check.sop-velvet-check .sop-check-tick {stroke-width:2;filter:drop-shadow(0 1px 0 #292030)}
+
+.sop-check.sop-velvet-check .sop-check-label {font:19px Georgia,serif}
+
+.sop-check.sop-velvet-check .sop-check-aura {border-radius:16px;border-color:#cfb17c55}

@@ -1,0 +1,120 @@
+/** Native form controls and top-layer dialogs. Full export, focus and lifecycle tests. */
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import {createRequire} from 'node:module';
+import type {Browser} from 'playwright';
+import {ROOT,buildCatalog} from '../scripts/catalog.ts';
+import {offlineFiles,testBundle} from './offline-fixture.ts';
+import {getDelivery,buildPrompt} from '../src/catalog/delivery.ts';
+import {requireLocalServerUrl} from './vite-url.ts';
+const require=createRequire(import.meta.url),{chromium}=require(process.env.PLAYWRIGHT_PATH??'playwright') as typeof import('playwright');
+const data=buildCatalog(), parts=data.parts.filter(p=>p.category==='checkboxes'||p.category==='popups');
+const offline=process.env.SOP_TEST_MODE==='offline',out=path.join(ROOT,'.test-output/check-popup');fs.mkdirSync(out,{recursive:true});
+let browser:Browser|undefined,shutdown:(()=>Promise<void>)|undefined,url='';const results:string[]=[],errors:string[]=[];
+const run=async(name:string,fn:()=>Promise<void>)=>{await fn();results.push(name);console.log('PASS '+name);};
+const write=(name:string,code:string)=>{const f=path.join(ROOT,name);fs.mkdirSync(path.dirname(f),{recursive:true});fs.writeFileSync(f,code);};
+try{
+ if(!offline){const{createServer}=await import('vite');const s=await createServer({root:ROOT,server:{port:0,host:'127.0.0.1'}});await s.listen();url=requireLocalServerUrl(s,'Checkbox/popup tests');shutdown=()=>s.close();}
+ browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
+ const context=await browser.newContext({viewport:{width:1440,height:1000},acceptDownloads:true}),page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));page.setDefaultTimeout(10000);
+ if(offline){
+  // Focus this dedicated synthetic gallery on the 48 new objects. The full library is
+  // checked by tests/browser.ts; avoid injecting its 50MB export inventory twice.
+  const fixture={...data,parts,bases:data.bases.filter(b=>b.includes('/checkboxes/')||b.includes('/popups/'))};
+  const files=offlineFiles(fixture);await page.setContent(files.get('/index.html')!.replace(/<script[^>]*>[\s\S]*?<\/script>/g,'').replace(/<link[^>]*>/g,''));await page.addStyleTag({content:files.get('/test-styles.css')!});for(const v of ['prism','jszip'])await page.addScriptTag({content:fs.readFileSync(path.join(ROOT,'public/vendor',v+'.js'),'utf8')});await page.addScriptTag({content:files.get('/test-app.js')!});}else await page.goto(url);
+ await page.emulateMedia({reducedMotion:'reduce'});
+ await run('48 new parts: category/search/style filters and exact A/B counts',async()=>{
+  assert.equal(await page.locator('[data-part]').count(),offline?parts.length:data.parts.length);
+  for(const category of ['checkboxes','popups']){await page.locator(`[data-category="${category}"]`).click();assert.equal(await page.locator('[data-part]').count(),24);await page.locator('[data-design-filter="A"]').click();assert.equal(await page.locator('[data-part]').count(),16);await page.locator('[data-design-filter="B"]').click();assert.equal(await page.locator('[data-part]').count(),8);await page.locator('[data-design-filter="all"]').click();}
+ });
+ await run('All 24 checkboxes: native label/Space, multiple independent selection and no accidental inspector',async()=>{
+  await page.locator('[data-category="checkboxes"]').click();
+  for(const p of parts.filter(p=>p.category==='checkboxes')){const r=page.locator(`[data-part="${p.id}"] .sop-check`),i=r.locator('input[type=checkbox]');const initial=await i.isChecked();await r.locator('.sop-check-label').click();assert.equal(await i.isChecked(),!initial);await i.focus();await page.keyboard.press('Space');assert.equal(await i.isChecked(),initial);}
+  await page.locator('[data-part="aurora-check"] input').check();await page.locator('[data-part="titanium-check"] input').check();assert.ok(await page.locator('[data-part="aurora-check"] input').isChecked());assert.equal(await page.locator('dialog[open]').count(),0);
+ });
+ await run('Checkbox inspector: mixed state, disabled, code/layout changes retain checked state',async()=>{
+  await page.locator('[data-open="aurora-check"]').click();const d=page.locator('#part-details'),i=d.locator('.sop-check input');
+  await d.locator('[data-check-state="mixed"][type=button]').click();assert.ok(await i.evaluate((el:HTMLInputElement)=>el.indeterminate));await i.click();assert.ok(await i.isChecked());assert.equal(await i.evaluate((el:HTMLInputElement)=>el.indeterminate),false);
+  await d.locator('[data-format="jsx"]').click();await d.locator('#export-layout').selectOption('original');assert.ok(await i.isChecked());
+  await d.locator('[data-check-disabled]').check();assert.ok(await i.isDisabled());await d.locator('[data-check-disabled]').uncheck();
+  await d.locator('[data-format="tsx"]').click();await d.locator('#export-layout').selectOption('portable');await d.locator('[data-detail-tab="prompt"]').click();assert.equal(await d.locator('#prompt-text').inputValue(),buildPrompt(parts.find(p=>p.id==='aurora-check')!,'tsx','portable'));
+  await d.locator('[data-detail-tab="code"]').click();await page.screenshot({path:path.join(out,'checkbox-detail.png')});await d.locator('.close-detail').click();
+ });
+ await run('All 24 popups: actual top-layer content, close reasons, restored focus and scroll lock',async()=>{
+  await page.locator('[data-category="popups"]').click();
+  for(const p of parts.filter(p=>p.category==='popups')){const r=page.locator(`[data-part="${p.id}"] .stage-mount > .sop-popup`),trigger=r.locator(':scope > [data-popup-open]'),d=r.locator(':scope > dialog');await trigger.click();assert.ok(await d.evaluate((el:HTMLDialogElement)=>el.open&&el.matches(':modal')));assert.ok((await d.locator('.sop-popup-body').innerText()).trim().length>0,p.id+' popup body');assert.equal(await page.evaluate(()=>document.documentElement.style.overflow),'hidden');await d.locator('[data-popup-close="cancel"]').click();await d.waitFor({state:'hidden'});assert.ok(await trigger.evaluate(el=>el===document.activeElement));assert.equal(await page.locator('dialog[open]').count(),0);assert.notEqual(await page.evaluate(()=>document.documentElement.style.overflow),'hidden');}
+ });
+ await run('Nested inspector: focus stays in popup; Escape closes only the top dialog and preserves typed content',async()=>{
+  await page.locator('[data-open="folio-window"]').click();const outer=page.locator('#part-details'),r=outer.locator('.preview-stage > .sop-popup'),trigger=r.locator(':scope > [data-popup-open]'),d=r.locator(':scope > dialog');
+  await trigger.click();await d.locator('textarea').fill('保存ではなく、閉じた後も残る下書き。');
+  for(let n=0;n<12;n++){await page.keyboard.press(n%3===0?'Shift+Tab':'Tab');assert.ok(await d.evaluate(el=>el.contains(document.activeElement)));}
+  await page.keyboard.press('Escape');await d.waitFor({state:'hidden'});assert.ok(await outer.evaluate((el:HTMLDialogElement)=>el.open));assert.ok(await trigger.evaluate(el=>el===document.activeElement));
+  await trigger.click();assert.equal(await d.locator('textarea').inputValue(),'保存ではなく、閉じた後も残る下書き。');await d.locator('[data-popup-close="confirm"]').click();await d.waitFor({state:'hidden'});assert.match(await outer.locator('.popup-demo-feedback').innerText(),/保存・送信はしません/);
+  await outer.locator('[data-popup-escape]').uncheck();await trigger.click();await page.keyboard.press('Escape');assert.ok(await d.evaluate((el:HTMLDialogElement)=>el.open));await d.locator('[data-popup-close="close"]').click();await d.waitFor({state:'hidden'});
+  await page.screenshot({path:path.join(out,'popup-detail.png')});await outer.locator('.close-detail').click();
+ });
+ await run('Popup backdrop click vs disabled dismissal, and dragging out from content does not dismiss',async()=>{
+  await page.locator('[data-open="essential-dialog"]').click();const outer=page.locator('#part-details'),trigger=outer.locator('.preview-stage > .sop-popup > [data-popup-open]'),d=outer.locator('.preview-stage > .sop-popup > dialog');
+  await trigger.click();await page.mouse.click(4,4);await d.waitFor({state:'hidden'});
+  await outer.locator('[data-popup-backdrop]').uncheck();await trigger.click();await page.mouse.click(4,4);assert.ok(await d.evaluate((el:HTMLDialogElement)=>el.open));await page.keyboard.press('Escape');await d.waitFor({state:'hidden'});
+  await outer.locator('[data-popup-backdrop]').check();await trigger.click();const rect=(await d.boundingBox())!;await page.mouse.move(rect.x+30,rect.y+50);await page.mouse.down();await page.mouse.move(4,4);await page.mouse.up();assert.ok(await d.evaluate((el:HTMLDialogElement)=>el.open));await page.keyboard.press('Escape');await d.waitFor({state:'hidden'});await outer.locator('.close-detail').click();
+ });
+ await run('320/390/768px: all new controls and open popup content fit, long dialog can scroll',async()=>{
+  for(const width of [320,390,768]){await page.setViewportSize({width,height:900});for(const category of ['checkboxes','popups']){await page.locator(`[data-category="${category}"]`).click();for(const p of parts.filter(p=>p.category===category)){const root=page.locator(`[data-part="${p.id}"] .stage-mount > :first-child`),r=(await root.boundingBox())!;assert.ok(r.x>=-1&&r.x+r.width<=width+1,`${p.id} root ${width}`);if(category==='popups'){await root.locator(':scope > [data-popup-open]').click();const d=root.locator(':scope > dialog'),b=(await d.boundingBox())!;assert.ok(b.x>=-1&&b.x+b.width<=width+1,`${p.id} dialog ${width}`);assert.ok(b.y>=-1&&b.y+b.height<=901,`${p.id} height`);assert.ok(await d.evaluate(el=>el.scrollWidth<=el.clientWidth+1),p.id+' content overflow');await d.locator('[data-popup-close="close"]').click();await d.waitFor({state:'hidden'});}}assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));}
+   if(width===390){await page.locator('[data-open="aurora-window"]').click();await page.screenshot({path:path.join(out,'mobile-390.png')});await page.locator('#part-details .close-detail').click();}
+  }await page.setViewportSize({width:1440,height:1000});
+ });
+ // Consumer fixture has no gallery JS, no gallery CSS and no global IDs in part markup.
+ const native=await context.newPage();native.on('pageerror',e=>errors.push(e.message));await native.emulateMedia({reducedMotion:'reduce'});
+ const cp=parts.find(p=>p.id==='essential-check')!,pp=parts.find(p=>p.id==='essential-dialog')!;
+ await native.setContent(`<style>body{background:#151a1c;color:#eee;padding:30px}section{margin:20px}</style><form id="consumer"><section id="first">${cp.markup}</section><section id="second">${cp.markup}</section><fieldset disabled id="disabled-fieldset">${cp.markup}</fieldset><button type="reset" id="reset">Reset</button></form><section id="p-one">${pp.markup}</section><section id="p-two">${pp.markup}</section>`);await native.addStyleTag({content:data.styles});
+ const nativeEntry='.test-output/check-popup/native.ts', nativeSource=`import{createCheckboxController}from'../../src/shared/checkbox-controller';import{createPopupController}from'../../src/shared/popup-controller';const a=document.querySelector('#first > label'),b=document.querySelector('#second > label');a.querySelector('input').name='features';a.querySelector('input').value='one';b.querySelector('input').name='features';b.querySelector('input').value='two';Object.assign(window,{checks:[createCheckboxController(a,{checked:false,indeterminate:true}),createCheckboxController(b,{checked:true})],modal:[createPopupController(document.querySelector('#p-one > div')),createPopupController(document.querySelector('#p-two > div'))],reasons:[]});document.querySelector('#p-one').addEventListener('sop:popup-close',e=>window.reasons.push(e.detail.reason));`;
+ await native.addScriptTag({content:testBundle(nativeEntry,new Map([[nativeEntry,nativeSource]]))});
+ await run('Native FormData, fieldset disabled, mixed is separate from checked, native form reset',async()=>{
+  const a=native.locator('#first input'),b=native.locator('#second input');assert.ok(await a.evaluate((el:HTMLInputElement)=>el.indeterminate));assert.equal(await a.isChecked(),false);
+  assert.deepEqual(await native.evaluate(()=>new FormData(document.querySelector('#consumer') as HTMLFormElement).getAll('features')),['two']);await a.check();assert.ok(await b.isChecked());assert.deepEqual(await native.evaluate(()=>new FormData(document.querySelector('#consumer') as HTMLFormElement).getAll('features')),['one','two']);assert.ok(await native.locator('#disabled-fieldset input').isDisabled());
+  await native.locator('#reset').click();await native.waitForFunction(()=>(document.querySelector('#first input') as HTMLInputElement).indeterminate);assert.equal(await a.isChecked(),false);assert.equal(await b.isChecked(),true);
+  await a.evaluate((el:HTMLInputElement)=>el.required=true);assert.equal(await a.evaluate((el:HTMLInputElement)=>el.checkValidity()),false);await a.check();assert.ok(await a.evaluate((el:HTMLInputElement)=>el.checkValidity()));
+ });
+ await run('Multiple exported modal instances: shared locks, native dialog form, destructive cleanup',async()=>{
+  await native.evaluate(()=>{document.documentElement.style.overflow='scroll';(window as any).modal[0].setOpen(true);(window as any).modal[1].setOpen(true);});assert.equal(await native.locator('dialog[open]').count(),2);
+  await native.keyboard.press('Escape');await native.locator('#p-two dialog').waitFor({state:'hidden'});assert.equal(await native.evaluate(()=>document.documentElement.style.overflow),'hidden');assert.ok(await native.locator('#p-one dialog').evaluate((el:HTMLDialogElement)=>el.open));
+  await native.evaluate(()=>{const form=document.createElement('form');form.method='dialog';form.innerHTML='<input name="note" value="untouched"><button type="submit" value="native-form">Done</button>';document.querySelector('#p-one .sop-popup-body')!.append(form);});await native.locator('#p-one button[value=native-form]').click();await native.locator('#p-one dialog').waitFor({state:'hidden'});assert.equal(await native.evaluate(()=>document.documentElement.style.overflow),'scroll');assert.equal(await native.evaluate(()=>(window as any).reasons.at(-1)),'native-form');
+  await native.evaluate(()=>{(window as any).modal[0].setOpen(true);(window as any).modal[0].destroy();});assert.equal(await native.locator('dialog[open]').count(),0);assert.equal(await native.evaluate(()=>document.documentElement.style.overflow),'scroll');await native.locator('#p-one [data-popup-open]').click();assert.equal(await native.locator('dialog[open]').count(),0);
+ });
+ await run('Closing animation can be reopened without stale close events or released locks',async()=>{
+  await native.emulateMedia({reducedMotion:'no-preference'});await native.evaluate(()=>{const c=(window as any).modal[1];c.setOpen(true);c.setOpen(false);c.setOpen(true);});await native.waitForTimeout(450);assert.ok(await native.locator('#p-two dialog').evaluate((el:HTMLDialogElement)=>el.open));assert.equal(await native.evaluate(()=>document.documentElement.style.overflow),'hidden');await native.evaluate(()=>(window as any).modal[1].destroy());assert.equal(await native.locator('dialog[open]').count(),0);assert.equal(await native.evaluate(()=>document.documentElement.style.overflow),'scroll');
+ });
+ await run('Reduced motion and forced colours keep native checkbox visible and focus apparent',async()=>{
+  await native.emulateMedia({forcedColors:'active',reducedMotion:'reduce'});await native.keyboard.press('Tab');await native.locator('#first input').focus();assert.equal(await native.locator('#first input').evaluate(el=>getComputedStyle(el).opacity),'1');assert.notEqual(await native.locator('#first input').evaluate(el=>getComputedStyle(el).outlineStyle),'none');await native.evaluate(()=>(window as any).checks.forEach((c:any)=>c.destroy()));
+ });await native.close();
+ if(!offline||process.env.SOP_REACT_BROWSER_BUNDLE){
+  for(const format of ['tsx','jsx'] as const)for(const layout of ['portable','original'] as const){
+   const prefix=`.test-output/check-popup/react-${format}-${layout}`,extra=new Map<string,string>();
+   const imports=parts.map((p,i)=>{const d=getDelivery(p,format,layout);for(const f of d.files){const file=`${prefix}/${p.id}/${f.name}`;extra.set(file,f.code);write(file,f.code);}return `import Part${i} from './${p.id}/${d.entry}';`;}).join('\n');
+   const source=`import React,{useState}from'react';import{createRoot}from'react-dom/client';${imports}
+const parts=[${parts.map((p,i)=>`{id:${JSON.stringify(p.id)},check:${p.category==='checkboxes'},C:Part${i}}`).join(',')}];
+function Check({p}){const[checked,setChecked]=useState(false),[mixed,setMixed]=useState(true);const C=p.C;return <section data-react-part={p.id}><C data-case="controlled" checked={checked} onCheckedChange={setChecked} indeterminate={mixed} onIndeterminateChange={setMixed} label="Controlled"/><C data-case="internal" defaultChecked={false} label="Internal"/><C data-case="declined" checked={false} indeterminate={true} onCheckedChange={()=>{}} label="Declined"/><C data-case="disabled" disabled label="Disabled"/></section>}
+function Pop({p}){const[open,setOpen]=useState(false),[requests,setRequests]=useState(0);const C=p.C;return <section data-react-part={p.id}><C data-case="controlled" title="Retained content" open={open} onOpenChange={setOpen} triggerLabel="Open"><label>Notes<input defaultValue="stay"/></label><button onClick={()=>setRequests(requests+1)}>Inner action {requests}</button></C><C data-case="internal" title="Internal state" triggerLabel="Internal"><p>自由な内容</p></C><C data-case="declined" title="Declined" open={false} onOpenChange={()=>setRequests(requests+1)} triggerLabel="Declined"/></section>}
+function Forms(){const C=parts.find(p=>p.check).C;const[v,set]=useState(false);return <form id="react-form"><C name="internal" value="on" label="Internal" defaultChecked defaultIndeterminate/><C name="controlled" label="Controlled" checked={v} defaultChecked onCheckedChange={set}/><C name="declined" label="Declined" checked defaultChecked={false} onCheckedChange={()=>{}}/><button type="reset">Reset</button></form>}
+function App(){const[show,set]=useState(true);return <><Forms/><button id="mount" onClick={()=>set(!show)}>Mount</button>{show&&parts.map(p=>p.check?<Check key={p.id} p={p}/>:<Pop key={p.id} p={p}/>)}<button id="external-unmount" onClick={()=>set(false)}>Remove</button></>};const root=createRoot(document.getElementById('root'));window.unmountAll=()=>root.unmount();root.render(<React.StrictMode><App/></React.StrictMode>);`;
+   const entry=prefix+'/main.jsx';extra.set(entry,source);write(entry,source);write(prefix+'/index.html','<!doctype html><html><head><meta charset="utf-8"></head><body style="background:#151a1c;color:#eee"><div id="root"></div><script type="module" src="./main.jsx"></script></body></html>');
+   const rp=await context.newPage();rp.on('pageerror',e=>errors.push(e.message));await rp.emulateMedia({reducedMotion:'reduce'});
+   if(offline){await rp.setContent('<div id="root"></div>');await rp.addStyleTag({content:data.styles+'\nbody{background:#151a1c;color:#eee}section{margin:24px;max-width:640px}'});await rp.evaluate(async text=>{const u=URL.createObjectURL(new Blob([text],{type:'text/javascript'}));const m=await import(u);Object.assign(window,{RealReact:m.r,RealDOM:m.e});URL.revokeObjectURL(u);},fs.readFileSync(process.env.SOP_REACT_BROWSER_BUNDLE!,'utf8'));await rp.addScriptTag({content:testBundle(entry,extra,'const React=window.RealReact,ReactDOMClient=window.RealDOM;')});}else await rp.goto(new URL(prefix+'/index.html',url).href);
+   await run(`React ${format}/${layout}: all 24 checkbox exports, controlled/mixed/internal/disabled/declined`,async()=>{
+    await rp.locator('[data-react-part]').first().waitFor();assert.equal(await rp.locator('[data-react-part]').count(),48);
+    for(const p of parts.filter(p=>p.category==='checkboxes')){const r=rp.locator(`[data-react-part="${p.id}"]`),c=r.locator('input[data-case=controlled]');assert.ok(await c.evaluate((el:HTMLInputElement)=>el.indeterminate));await c.check();assert.equal(await c.evaluate((el:HTMLInputElement)=>el.indeterminate),false);assert.ok(await c.isChecked());await r.locator('input[data-case=internal]').check();assert.ok(await r.locator('input[data-case=internal]').isChecked());await r.locator('input[data-case=declined]').click();assert.equal(await r.locator('input[data-case=declined]').isChecked(),false);assert.ok(await r.locator('input[data-case=declined]').evaluate((el:HTMLInputElement)=>el.indeterminate));assert.ok(await r.locator('input[data-case=disabled]').isDisabled());}
+    const form=rp.locator('#react-form');await form.locator('input[name=internal]').uncheck();await form.locator('input[name=controlled]').check();await form.locator('[type=reset]').click();// Native form reset precedes our post-reset task; wait for both native and controlled state.
+    await rp.waitForFunction(()=>{const get=(name:string)=>document.querySelector<HTMLInputElement>(`#react-form input[name=${name}]`);return get('internal')?.checked && get('internal')?.indeterminate && get('controlled')?.checked && get('declined')?.checked;});assert.ok(await form.locator('input[name=controlled]').isChecked());assert.ok(await form.locator('input[name=declined]').isChecked());assert.ok(await form.locator('input[name=internal]').evaluate((el:HTMLInputElement)=>el.indeterminate));
+   });
+   await run(`React ${format}/${layout}: all 24 modal exports, declined requests, retained children and teardown`,async()=>{
+    for(const p of parts.filter(p=>p.category==='popups')){const r=rp.locator(`[data-react-part="${p.id}"]`),c=r.locator('[data-case=controlled]'),d=c.locator('dialog');await c.locator('[data-popup-open]').click();assert.ok(await d.evaluate((el:HTMLDialogElement)=>el.open));await d.locator('input').fill('日本語 '+p.id);await d.locator('button').filter({hasText:'Inner action'}).click();assert.match(await d.innerText(),/Inner action 1/);await rp.keyboard.press('Escape');await d.waitFor({state:'hidden'});await c.locator('[data-popup-open]').click();assert.equal(await d.locator('input').inputValue(),'日本語 '+p.id);await d.locator('[data-popup-close=confirm]').click();await d.waitFor({state:'hidden'});await r.locator('[data-case=internal] [data-popup-open]').click();await r.locator('[data-case=internal] [data-popup-close=close]').click();await r.locator('[data-case=internal] dialog').waitFor({state:'hidden'});await r.locator('[data-case=declined] [data-popup-open]').click();assert.equal(await r.locator('[data-case=declined] dialog').evaluate((el:HTMLDialogElement)=>el.open),false);}
+    const ids=await rp.locator('[id]').evaluateAll(es=>es.map(e=>e.id));assert.equal(new Set(ids).size,ids.length);
+    for(let n=0;n<2;n++){await rp.locator('#mount').click();assert.equal(await rp.locator('[data-react-part]').count(),0);await rp.locator('#mount').click();assert.equal(await rp.locator('[data-react-part]').count(),48);}
+    await rp.locator('[data-react-part="aurora-window"] [data-case=controlled] [data-popup-open]').click();await rp.evaluate(()=>(window as any).unmountAll());assert.equal(await rp.locator('dialog[open]').count(),0);assert.notEqual(await rp.evaluate(()=>document.documentElement.style.overflow),'hidden');
+   });await rp.close();
+  }
+ }
+ assert.deepEqual(errors,[]);console.log(`Checkbox/popup checks: ${results.length} passed.`);
+}finally{fs.writeFileSync(path.join(out,'results.json'),JSON.stringify({mode:offline?'scoped feature gallery / offline adapter; full catalogue tested separately; not Vite HTTP':'real Vite HTTP',react:offline?(process.env.SOP_REACT_BROWSER_BUNDLE?'real installed browser runtime':'not run'):'installed React + StrictMode',tests:results,passed:results.length,errors},null,2));await browser?.close();await shutdown?.();}

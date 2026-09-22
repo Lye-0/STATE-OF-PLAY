@@ -1,0 +1,7 @@
+@import "../../../shared/popup-base.css";
+@import "../../../shared/popup-content.css";
+/* Soft Preferences — 説明とチェック項目を並べた、柔らかな設定パネル。 */
+.sop-popup.sop-soft-preferences { --pp-bg:#26312d;--pp-ink:#e7f0e9;--pp-muted:#a7bcae;--pp-accent:#b8d5be;--pp-line:#b8d5be40;--pp-width:480px;--pp-radius:20px; }
+.sop-popup.sop-soft-preferences > .sop-popup-window .sop-popup-intro h2 {font:500 26px/1.4 var(--pp-font);letter-spacing:0}
+.sop-popup.sop-soft-preferences > .sop-popup-window .pp-preferences {border-radius:12px}
+.sop-popup.sop-soft-preferences > .sop-popup-window .sop-popup-footer>button {border-radius:12px}

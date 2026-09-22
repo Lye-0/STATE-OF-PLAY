@@ -1,0 +1,13 @@
+@import "../../../shared/checkbox-base.css";
+/* Ledger Check — 罫線の上へ、ペンで記したような選択。 */
+.sop-check.sop-ledger-check { --cb-bg:#dad2c2;--cb-ink:#38352d;--cb-muted:#80725e;--cb-accent:#3f4a40;--cb-box:#dad2c2;--cb-line:#3f4a4066;--cb-size:36px;--cb-radius:2px;background:repeating-linear-gradient(0deg,transparent 0 26px,#907a531f 26px 27px),#e7dfcf;border-color:#c9b898;box-shadow:2px 3px 0 #b9a88540;
+ }
+.sop-check.sop-ledger-check .sop-check-box {background:transparent;border:1.5px solid #81725f;border-radius:2px;transform:rotate(-2deg);box-shadow:none}
+
+.sop-check.sop-ledger-check .sop-check-tick {stroke-width:2;transform:rotate(-6deg)}
+
+.sop-check.sop-ledger-check .sop-check-aura {display:none}
+
+.sop-check.sop-ledger-check .sop-check-label {font:italic 21px Georgia,serif}
+
+.sop-check.sop-ledger-check input:is(:checked,:indeterminate)+.sop-check-box {background:#c8c9a12a;box-shadow:none}

@@ -1,0 +1,6 @@
+@import "../../../shared/popup-base.css";
+@import "../../../shared/popup-content.css";
+/* Form Dialog — ラベルと余白を整えた、名前とメールの入力例。 */
+.sop-popup.sop-form-dialog { --pp-bg:#f0efeb;--pp-ink:#333d3b;--pp-muted:#6e7c77;--pp-accent:#4e7269;--pp-line:#4e726940;--pp-width:470px;--pp-radius:12px;--pp-line:#81968d44;--pp-wash:#536d6410;--pp-on-accent:#fff; }
+.sop-popup.sop-form-dialog > .sop-popup-window .sop-popup-intro h2 {font:500 25px/1.4 var(--pp-font);letter-spacing:0}
+.sop-popup.sop-form-dialog > .sop-popup-window .pp-fields input {background:#fff}

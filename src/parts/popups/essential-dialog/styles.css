@@ -1,0 +1,5 @@
+@import "../../../shared/popup-base.css";
+@import "../../../shared/popup-content.css";
+/* Essential Dialog — 汎用的な確認・説明に使えるニュートラルなダイアログ。 */
+.sop-popup.sop-essential-dialog { --pp-bg:#23282d;--pp-ink:#edf1ee;--pp-muted:#adb8bd;--pp-accent:#b7d4c6;--pp-line:#b7d4c640;--pp-width:460px;--pp-radius:12px; }
+.sop-popup.sop-essential-dialog > .sop-popup-window .sop-popup-intro h2 {font:500 24px/1.4 var(--pp-font);letter-spacing:0}

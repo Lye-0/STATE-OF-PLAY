@@ -1,0 +1,10 @@
+@import "../../../shared/popup-base.css";
+@import "../../../shared/popup-content.css";
+/* Velvet Invitation — 深い布の背景と金の縁取りで見せる招待。 */
+.sop-popup.sop-velvet-invitation { --pp-bg:#2b2335;--pp-ink:#f0e3ed;--pp-muted:#bc9eaf;--pp-accent:#dfc295;--pp-line:#dfc29540;--pp-radius:15px;--pp-width:460px;--pp-display:Georgia,serif;--pp-wash:#cfb0870b; }
+.sop-popup.sop-velvet-invitation > .sop-popup-window .sop-popup-shell {background:radial-gradient(ellipse at 30% 10%,#51344799,transparent 70%),repeating-linear-gradient(88deg,#ac81a708 0 1px,transparent 1px 4px),#2b2335;border:5px solid #6e4f5940}
+.sop-popup.sop-velvet-invitation > .sop-popup-window .sop-popup-intro {text-align:center}
+.sop-popup.sop-velvet-invitation > .sop-popup-window .sop-popup-intro h2 {font-style:italic;font-size:40px}
+.sop-popup.sop-velvet-invitation > .sop-popup-window .sop-popup-footer {justify-content:center}
+.sop-popup.sop-velvet-invitation > .sop-popup-window .pp-lines {margin-top:10px}
+.sop-popup.sop-velvet-invitation > .sop-popup-window .pp-stamp {border-style:double;border-width:3px}

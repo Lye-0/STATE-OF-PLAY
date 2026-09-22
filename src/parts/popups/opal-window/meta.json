@@ -1,0 +1,65 @@
+{
+  "id": "opal-window",
+  "name": "Opal Window",
+  "category": "popups",
+  "order": 270,
+  "version": "1.0.0",
+  "tagline": "淡く、知らせる。",
+  "description": "オパールの干渉色と、柔らかな紹介のカード。",
+  "material": "PEARLESCENT / NOTE",
+  "motion": "REVEAL / RETURN",
+  "accent": "128,109,157",
+  "designType": "A",
+  "runtime": "Native dialog + CSS / event-driven lifecycle",
+  "componentName": "OpalWindow",
+  "tags": [
+    "Opal Window",
+    "opal-window",
+    "ポップアップ",
+    "モーダル",
+    "ダイアログ",
+    "確認",
+    "開閉",
+    "A"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "title / description / kicker",
+      "string",
+      "見出しと補足。dialogのアクセシブル名はtitleへ関連付け。"
+    ],
+    [
+      "children / footer / triggerLabel",
+      "ReactNode",
+      "本文・操作・開くボタンを用途に合わせて変更。"
+    ],
+    [
+      "open / defaultOpen / onOpenChange",
+      "boolean / callback",
+      "外部制御 / 非制御。閉じる要求を外部で拒否できる。"
+    ],
+    [
+      "onClose",
+      "(reason: string) => void",
+      "閉じ終わった理由を通知。通信・保存処理は含まない。"
+    ],
+    [
+      "closeOnBackdrop / closeOnEscape",
+      "boolean",
+      "背景クリック / Escapeで閉じる。既定true。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "開くボタンを無効化。開いたウィンドウの閉じる操作は残す。"
+    ],
+    [
+      "confirmLabel / cancelLabel",
+      "string",
+      "既定フッターの文言。独自footerも指定可能。"
+    ]
+  ]
+}

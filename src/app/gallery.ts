@@ -1,3 +1,4 @@
+import {mountPopupSample} from './check-popup-preview';
 import { mountActionDemo } from './action-preview';
 import { fillSample } from './samples';
 import { TactileAudio } from './audio';
@@ -72,8 +73,8 @@ function renderGallery() {
     grid.innerHTML = visible.length ? visible.map(part => {
         const toggle = part.category === 'toggles';
         const scroll = part.category === 'scrollbars';
-        const dropdown = part.category === 'dropdowns', accordion = part.category === 'accordions', textbox = part.category === 'textboxes', action = part.category === 'buttons', link = part.category === 'links', tabs = part.category === 'tabs', segments = part.category === 'segments';
-        return `<article class="object-card ${toggle ? 'sop-surface sop-original-surface toggle-card' : scroll ? 'scroll-card' : dropdown ? 'dropdown-card' : accordion ? 'accordion-card' : textbox ? 'textbox-card' : action ? 'action-card' : link ? 'link-card' : tabs ? 'tabs-card' : segments ? 'segments-card' : 'block-card'}" data-part="${escapeHTML(part.id)}" data-design="${part.designType}" style="--sop-accent:${part.accent};--accent:${part.accent}"><header class="card-top"><span class="object-no mono">${String(part.order).padStart(2, '0')} /</span><span class="design-badge design-${part.designType}" title="${part.designType === 'A' ? '表現重視' : '実用重視'}">${part.designType}</span><span class="object-type mono">${escapeHTML(part.material)}</span><span class="state-readout mono" aria-hidden="true"><i></i><span class="state-word">${toggle ? (state.get(part.id) ? 'ON' : 'OFF') : scroll ? 'SCROLL' : dropdown ? 'SELECT' : accordion ? 'EXPAND' : textbox ? 'WRITE' : action ? 'READY' : link ? 'LINK' : tabs ? 'EXPLORE' : segments ? 'CHOOSE' : 'SURFACE'}</span></span></header><div class="object-stage" data-stage="${escapeHTML(part.id)}"><div class="stage-glow"></div><div class="stage-mount"></div></div><footer class="card-bottom"><div><h2>${escapeHTML(part.name)}<span>${escapeHTML(part.tagline)}</span></h2><p>${escapeHTML(part.description)}</p></div><button type="button" class="open-part" data-open="${escapeHTML(part.id)}" aria-label="${escapeHTML(part.name)} のコードと詳細を開く">${icon('code')}<span>CODE</span>${icon('arrow')}</button></footer></article>`;
+        const dropdown = part.category === 'dropdowns', accordion = part.category === 'accordions', textbox = part.category === 'textboxes', action = part.category === 'buttons', link = part.category === 'links', tabs = part.category === 'tabs', segments = part.category === 'segments', checkbox = part.category === 'checkboxes', popup = part.category === 'popups';
+        return `<article class="object-card ${toggle ? 'sop-surface sop-original-surface toggle-card' : scroll ? 'scroll-card' : dropdown ? 'dropdown-card' : accordion ? 'accordion-card' : textbox ? 'textbox-card' : action ? 'action-card' : link ? 'link-card' : tabs ? 'tabs-card' : segments ? 'segments-card' : checkbox ? 'checkbox-card' : popup ? 'popup-card' : 'block-card'}" data-part="${escapeHTML(part.id)}" data-design="${part.designType}" style="--sop-accent:${part.accent};--accent:${part.accent}"><header class="card-top"><span class="object-no mono">${String(part.order).padStart(2, '0')} /</span><span class="design-badge design-${part.designType}" title="${part.designType === 'A' ? '表現重視' : '実用重視'}">${part.designType}</span><span class="object-type mono">${escapeHTML(part.material)}</span><span class="state-readout mono" aria-hidden="true"><i></i><span class="state-word">${toggle ? (state.get(part.id) ? 'ON' : 'OFF') : scroll ? 'SCROLL' : dropdown ? 'SELECT' : accordion ? 'EXPAND' : textbox ? 'WRITE' : action ? 'READY' : link ? 'LINK' : tabs ? 'EXPLORE' : segments ? 'CHOOSE' : checkbox ? 'CHECK' : popup ? 'OPEN' : 'SURFACE'}</span></span></header><div class="object-stage" data-stage="${escapeHTML(part.id)}"><div class="stage-glow"></div><div class="stage-mount"></div></div><footer class="card-bottom"><div><h2>${escapeHTML(part.name)}<span>${escapeHTML(part.tagline)}</span></h2><p>${escapeHTML(part.description)}</p></div><button type="button" class="open-part" data-open="${escapeHTML(part.id)}" aria-label="${escapeHTML(part.name)} のコードと詳細を開く">${icon('code')}<span>CODE</span>${icon('arrow')}</button></footer></article>`;
     }).join('') : `<div class="empty-state"><span class="empty-symbol">∅</span><h2>まだ、そのパーツはありません。</h2><p>検索する言葉やカテゴリを変えてみてください。</p><button type="button" class="small-button" id="clear-empty">すべてのパーツを表示</button></div>`;
     for (const part of visible) {
         const card = required(`[data-part="${part.id}"]`, grid);
@@ -83,10 +84,14 @@ function renderGallery() {
         if (!(root instanceof HTMLElement)) throw new Error(`Invalid markup: ${part.id}`);
         root.dataset.demoRoot = '';
         fillSample(root, part);
-        const controller = mounts[part.id](root, { onValueChange: value => { if(part.category==='tabs'||part.category==='segments') required('.state-word',card).textContent=value.replace('choice-','0'); }, onOpenChange: open => { required('.state-word', card).textContent = open ? 'OPEN' : 'SELECT'; }, onExpandedChange: values => { required('.state-word', card).textContent = String(values.length) + ' OPEN'; }, onProgressChange: progress => { required('.state-word', card).textContent = Math.round(progress * 100) + '%'; }, checked: state.get(part.id), onCheckedChange: (value: boolean) => { stopDemo(); syncCard(part.id, value); } });
+        const controller = mounts[part.id](root, { onValueChange: value => { if(part.category==='tabs'||part.category==='segments') required('.state-word',card).textContent=value.replace('choice-','0'); }, onOpenChange: open => { required('.state-word', card).textContent = open ? 'OPEN' : part.category === 'popups' ? 'CLOSED' : 'SELECT'; }, onExpandedChange: values => { required('.state-word', card).textContent = String(values.length) + ' OPEN'; }, onProgressChange: progress => { required('.state-word', card).textContent = Math.round(progress * 100) + '%'; }, checked: state.get(part.id), onCheckedChange: (value: boolean) => { stopDemo(); if(part.category==='toggles') syncCard(part.id, value); } });
         const surface = part.category === 'toggles' ? createSurfaceController(card) : undefined;
         const demo = part.category === 'buttons' || part.category === 'links' ? mountActionDemo(root,part,controller,card,text=>required('.state-word',card).textContent=text) : undefined;
-        rendered.push({ part, controller, card, surface, cleanup:demo?.destroy });
+        rendered.push({ part, controller, card, surface, cleanup:part.category==='popups'?mountPopupSample(root,part):demo?.destroy });
+        if (part.category === 'checkboxes') {
+            const sync=()=>{required('.state-word',card).textContent=(controller.getIndeterminate?.()?'mixed':controller.getChecked?.()?'checked':'unchecked').toUpperCase();};
+            root.addEventListener('sop:checkbox-state',sync); sync();
+        }
         if (part.category === 'toggles')
             syncCard(part.id, !!state.get(part.id));
         card.addEventListener('click', event => {
@@ -138,7 +143,7 @@ for (const [id, on] of [['all-on', true], ['all-off', false]] as const) {
     required(`#${id}`).addEventListener('click', () => {
         stopDemo();
         for (const r of rendered) {
-            if (!r.controller.setChecked)
+            if (r.part.category !== 'toggles' || !r.controller.setChecked)
                 continue;
             r.controller.setChecked?.(on);
             syncCard(r.part.id, on);

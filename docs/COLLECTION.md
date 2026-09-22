@@ -1,6 +1,6 @@
-# コレクション — v3.7.0
+# コレクション — v3.8.0
 
-24トグル・24ブロック・24スクロールバー・24プルダウン・24アコーディオン・24テキストボックス、24ボタン・16リンク・24タブ・24セグメントで、計232種類。A/Bは用途と表現の方向であり、品質の優劣ではありません。
+24トグル・24ブロック・24スクロールバー・24プルダウン・24アコーディオン・24テキストボックス、24ボタン・16リンク・24タブ・24セグメント・24チェックボックス・24ポップアップで、計280種類。A/Bは用途と表現の方向であり、品質の優劣ではありません。
 
 ## トグル（24種類）
 
@@ -290,3 +290,61 @@
 | Paper Segments | B | 淡いグレーと白い選択面。色を増やさず読みやすく。 | `paper-segments` |
 | Slate Segments | B | 青灰色の面で、選択した表示を明確にする。 | `slate-segments` |
 | Icon Segments | B | アイコンとラベルを併記。意味を隠さない表示切り替え。 | `icon-segments` |
+
+## チェックボックス（24種類）
+
+| 名前 | タイプ | 特徴 | ID |
+| --- | --- | --- | --- |
+| Aurora Check | A | 淡いオーロラを閉じ込めたガラスのチェック。 | `aurora-check` |
+| Titanium Check | A | 切削痕と刻印を持つ、金属のプッシュプレート。 | `titanium-check` |
+| Prism Check | A | 六角形の結晶に浮かぶ、スペクトルのチェック。 | `prism-check` |
+| Nixie Check | A | 琥珀色のグリッドと、真空管のような発光。 | `nixie-check` |
+| Circuit Check | A | 基板のラインと接点が結ぶ、緑のチェック。 | `circuit-check` |
+| Paperfold Check | A | 折り目と紙の厚みを感じる、温かい選択。 | `paperfold-check` |
+| Wax Seal Check | A | ワックスの縁と、封蝋に押した刻印。 | `wax-seal-check` |
+| Orbit Check | A | 浮かぶ球体と傾いた軌道が、選択を囲む。 | `orbit-check` |
+| Blueprint Check | A | 細かな製図線と寸法目盛りを持つチェック。 | `blueprint-check` |
+| Velvet Check | A | 深い布の陰影に、細い金糸のチェック。 | `velvet-check` |
+| Porcelain Check | A | 乳白色のふくらみに、青緑の印が浮かぶ。 | `porcelain-check` |
+| Magnetic Check | A | 独立した黒いキーが、選択で沈み込む。 | `magnetic-check` |
+| Botanical Check | A | 葉の輪郭と真鍮の縁が、緑の選択を包む。 | `botanical-check` |
+| Ticket Check | A | ミシン目と小さなパンチ穴を持つチケット。 | `ticket-check` |
+| Opal Check | A | 淡い干渉色が現れる、オパールのレンズ。 | `opal-check` |
+| Ledger Check | A | 罫線の上へ、ペンで記したような選択。 | `ledger-check` |
+| Essential Check | B | 日常のフォームになじむ、ニュートラルなチェック。 | `essential-check` |
+| Soft Check | B | 淡い選択面と丸い輪郭の、控えめなチェック。 | `soft-check` |
+| Outline Check | B | 塗りを抑えた、輪郭中心のチェックボックス。 | `outline-check` |
+| Paper Check | B | 白いフォームや設定画面へ自然に置ける入力。 | `paper-check` |
+| Compact Check | B | 密度の高い一覧やフィルター向けのチェック。 | `compact-check` |
+| Accent Check | B | 小さなアクセント色で、選択をはっきり示す。 | `accent-check` |
+| Task Check | B | タスクを終えると文字にも印が残るリスト用UI。 | `task-check` |
+| Consent Check | B | 説明を読みやすく配置した、汎用的な同意の入力。 | `consent-check` |
+
+## ポップアップ（24種類）
+
+| 名前 | タイプ | 特徴 | ID |
+| --- | --- | --- | --- |
+| Aurora Window | A | 透ける光の幕と、軽やかな紹介パネル。 | `aurora-window` |
+| Observatory Window | A | 軌道と静かな数値で描く、天体観測のパネル。 | `observatory-window` |
+| Folio Window | A | 紙の余白と活版のような文字組みのポップアップ。 | `folio-window` |
+| Titanium Dialog | A | 金属プレートと円盤の構造を持つコントロール。 | `titanium-dialog` |
+| Prism Window | A | 結晶の面と光の線が重なる、スペクトルの窓。 | `prism-window` |
+| Nixie Console | A | 琥珀色の読み取り表示と、機器の目盛り。 | `nixie-console` |
+| Blueprint Sheet | A | 格子と製図線で構成した、編集可能なシート。 | `blueprint-sheet` |
+| Gallery Window | A | 大きな作品面とエディトリアルな文字を持つ窓。 | `gallery-window` |
+| Velvet Invitation | A | 深い布の背景と金の縁取りで見せる招待。 | `velvet-invitation` |
+| Copper Receipt | A | 銅の光とレシートの細い罫線で、情報を整理。 | `copper-receipt` |
+| Transit Pass | A | 出発地と到着地を結ぶ、チケット型のポップアップ。 | `transit-pass` |
+| Atelier Palette | A | 絵の具見本のような色面と、実際に選べるパレット。 | `atelier-palette` |
+| Botanical Note | A | 植物の輪郭と、入力できる短いノート。 | `botanical-note` |
+| Opal Window | A | オパールの干渉色と、柔らかな紹介のカード。 | `opal-window` |
+| Archive Drawer | A | 右から現れる、検索欄付きの静かなファイル棚。 | `archive-drawer` |
+| Dock Sheet | A | 下から浮かび上がる、ゆとりのある設定シート。 | `dock-sheet` |
+| Essential Dialog | B | 汎用的な確認・説明に使えるニュートラルなダイアログ。 | `essential-dialog` |
+| Paper Dialog | B | 白い背景で、名前の変更などに使えるシンプルな入力。 | `paper-dialog` |
+| Quiet Confirm | B | キャンセルを選びやすい、落ち着いた確認画面。 | `quiet-confirm` |
+| Soft Preferences | B | 説明とチェック項目を並べた、柔らかな設定パネル。 | `soft-preferences` |
+| Notice Dialog | B | 伝えたい情報を読みやすく整えた通知ダイアログ。 | `notice-dialog` |
+| Compact Dialog | B | 短い選択や通知を伝えるためのコンパクトな窓。 | `compact-dialog` |
+| Form Dialog | B | ラベルと余白を整えた、名前とメールの入力例。 | `form-dialog` |
+| Help Dialog | B | 手順を短く案内する、汎用的なヘルプの窓。 | `help-dialog` |

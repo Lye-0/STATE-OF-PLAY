@@ -1,0 +1,9 @@
+@import "../../../shared/popup-base.css";
+@import "../../../shared/popup-content.css";
+/* Atelier Palette — 絵の具見本のような色面と、実際に選べるパレット。 */
+.sop-popup.sop-atelier-palette { --pp-bg:#e8d9c7;--pp-ink:#4d3d36;--pp-muted:#967e6c;--pp-accent:#986b51;--pp-line:#986b5140;--pp-radius:17px;--pp-width:500px;--pp-display:Georgia,serif;--pp-wash:#8e6d4b09; }
+.sop-popup.sop-atelier-palette > .sop-popup-window .sop-popup-shell {background:radial-gradient(ellipse at 0 0,#fff4e578,transparent 65%),#e8d9c7}
+.sop-popup.sop-atelier-palette > .sop-popup-window .pp-palette {margin-bottom:28px}
+.sop-popup.sop-atelier-palette > .sop-popup-window .sop-popup-intro h2 {font-size:42px}
+.sop-popup.sop-atelier-palette > .sop-popup-window .pp-note h3 {font-style:italic;font-size:24px}
+.sop-popup.sop-atelier-palette > .sop-popup-window .sop-popup-footer>button {border-radius:24px}

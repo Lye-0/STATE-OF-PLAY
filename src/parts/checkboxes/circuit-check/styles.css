@@ -1,0 +1,11 @@
+@import "../../../shared/checkbox-base.css";
+/* Circuit Check — 基板のラインと接点が結ぶ、緑のチェック。 */
+.sop-check.sop-circuit-check { --cb-bg:#13231e;--cb-ink:#dfedda;--cb-muted:#91ac9b;--cb-accent:#b0e38b;--cb-box:#13231e;--cb-line:#b0e38b66;--cb-radius:5px;--cb-size:41px;background:linear-gradient(90deg,transparent 70%,#8ab15b0b 70%),#18271f;border-color:#6e8c484f;
+ }
+.sop-check.sop-circuit-check .sop-check-box {background:#0e1c15;border-color:#507147;border-radius:3px;box-shadow:0 0 0 4px #09100c,inset 0 0 0 2px #abc17120}
+
+.sop-check.sop-circuit-check .sop-check-box:before {content:"";position:absolute;left:-10px;right:-10px;top:7px;bottom:7px;background:repeating-linear-gradient(0deg,transparent 0 5px,#a2ae6c77 5px 7px,transparent 7px 10px);z-index:-1}
+
+.sop-check.sop-circuit-check .sop-check-aura {inset:4px;border:1px dotted #b5e29188;border-radius:1px}
+
+.sop-check.sop-circuit-check .sop-check-label {font:12px Consolas,monospace}

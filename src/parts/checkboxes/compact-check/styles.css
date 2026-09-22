@@ -1,0 +1,8 @@
+@import "../../../shared/checkbox-base.css";
+/* Compact Check — 密度の高い一覧やフィルター向けのチェック。 */
+.sop-check.sop-compact-check { --cb-bg:transparent;--cb-ink:#dee4e7;--cb-muted:#9eaeb5;--cb-accent:#a8c9e4;--cb-box:#151d21;--cb-line:#a8c9e466;--cb-size:22px;--cb-pad:13px;--cb-radius:8px;min-height:62px;gap:13px;--cb-size:18px;--cb-pad:10px;min-height:44px;border-color:transparent;gap:10px; }
+.sop-check.sop-compact-check .sop-check-label {font-size:12px}
+.sop-check.sop-compact-check .sop-check-description {font-size:9px}
+.sop-check.sop-compact-check .sop-check-aura,.sop-check.sop-compact-check .sop-check-detail {display:none}
+.sop-check.sop-compact-check .sop-check-label {font-weight:400}
+.sop-check.sop-compact-check .sop-check-tick {stroke-width:3}

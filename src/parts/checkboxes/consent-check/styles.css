@@ -1,0 +1,9 @@
+@import "../../../shared/checkbox-base.css";
+/* Consent Check — 説明を読みやすく配置した、汎用的な同意の入力。 */
+.sop-check.sop-consent-check { --cb-bg:#21262c;--cb-ink:#e7edf3;--cb-muted:#adb9c5;--cb-accent:#b0c6e2;--cb-box:#21262c;--cb-line:#b0c6e266;--cb-size:22px;--cb-pad:13px;--cb-radius:8px;min-height:62px;gap:13px;align-items:flex-start;--cb-radius:9px; }
+.sop-check.sop-consent-check input[type=checkbox] {top:var(--cb-pad);transform:none}
+.sop-check.sop-consent-check .sop-check-box {margin-top:0}
+.sop-check.sop-consent-check .sop-check-description {font-size:11px;line-height:1.85}
+.sop-check.sop-consent-check .sop-check-aura,.sop-check.sop-consent-check .sop-check-detail {display:none}
+.sop-check.sop-consent-check .sop-check-label {font-weight:400}
+.sop-check.sop-consent-check .sop-check-tick {stroke-width:3}

@@ -1,0 +1,30 @@
+/* Native semantics, expressive surface. Each skin resets its custom properties at the root. */
+.sop-check{--cb-size:42px;--cb-pad:17px;--cb-bg:#202a2e;--cb-ink:#e5eef0;--cb-muted:#97abb4;--cb-accent:#b7e4df;--cb-box:#142124;--cb-line:#668381;--cb-radius:12px;position:relative;box-sizing:border-box;display:inline-flex;align-items:center;gap:18px;min-block-size:80px;max-inline-size:100%;padding:var(--cb-pad);border:1px solid #82959935;border-radius:var(--cb-radius);background:var(--cb-bg);color:var(--cb-ink);font:14px/1.45 Arial,"Yu Gothic",sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none;isolation:isolate;transition:border-color .25s,background .25s,box-shadow .3s;}
+.sop-check *{box-sizing:border-box}
+.sop-check>input[type=checkbox]{position:absolute;inset-inline-start:var(--cb-pad);top:50%;transform:translateY(-50%);width:var(--cb-size);height:var(--cb-size);margin:0;opacity:0;z-index:3;cursor:inherit}
+.sop-check>.sop-check-box{position:relative;width:var(--cb-size);height:var(--cb-size);flex:none;display:grid;place-items:center;border:1px solid var(--cb-line);border-radius:calc(var(--cb-radius)*.65);background:var(--cb-box);box-shadow:inset 0 1px 2px #0003,0 3px 7px #0002;color:var(--cb-accent);transition:background .3s,border-color .25s,box-shadow .3s,transform .38s cubic-bezier(.2,.8,.2,1);}
+.sop-check .sop-check-tick{position:absolute;width:78%;height:78%;z-index:2;overflow:visible;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.7;fill:none;}
+.sop-check .sop-check-tick path{stroke-dasharray:30;stroke-dashoffset:30;opacity:0;transition:stroke-dashoffset .35s cubic-bezier(.16,1,.3,1),opacity .16s}
+.sop-check>.sop-check-copy{display:flex;flex:1;min-width:0;flex-direction:column;gap:4px;position:relative;z-index:2}
+.sop-check .sop-check-label{font-weight:500;letter-spacing:.03em;overflow-wrap:anywhere;line-height:1.4}
+.sop-check .sop-check-description{color:var(--cb-muted);font-size:10px;line-height:1.75;font-weight:400;overflow-wrap:anywhere}
+.sop-check>.sop-check-badge{font:8px/1.5 Consolas,monospace;letter-spacing:.08em;color:var(--cb-muted);padding:3px 5px;border:1px solid var(--cb-line);border-radius:4px;align-self:flex-start;margin-top:2px;}
+.sop-check .sop-check-aura{position:absolute;inset:-5px;border-radius:inherit;border:1px solid var(--cb-accent);opacity:0;transform:scale(.8);transition:opacity .35s,transform .5s;pointer-events:none}
+.sop-check .sop-check-dash{position:absolute;height:2px;width:45%;background:currentColor;z-index:2;opacity:0;transform:scaleX(.4);transition:transform .25s,opacity .2s;box-shadow:0 0 8px currentColor}
+.sop-check .sop-check-detail{position:absolute;width:3px;height:3px;inset-inline-end:4px;bottom:4px;border-radius:50%;background:var(--cb-accent);opacity:.12;transition:opacity .3s,box-shadow .3s}
+.sop-check>input:checked+.sop-check-box,.sop-check>input:indeterminate+.sop-check-box{border-color:var(--cb-accent);background:color-mix(in srgb,var(--cb-accent) 17%,var(--cb-box));box-shadow:inset 0 1px 1px #ffffff22,0 0 18px color-mix(in srgb,var(--cb-accent) 10%,transparent),0 4px 9px #0003;}
+.sop-check>input:checked+.sop-check-box .sop-check-tick path{stroke-dashoffset:0;opacity:1}
+.sop-check>input:indeterminate+.sop-check-box .sop-check-tick path{stroke-dashoffset:30;opacity:0}
+.sop-check>input:indeterminate+.sop-check-box .sop-check-dash{opacity:1;transform:scaleX(1)}
+.sop-check>input:is(:checked,:indeterminate)+.sop-check-box .sop-check-aura{opacity:.3;transform:scale(1)}
+.sop-check>input:is(:checked,:indeterminate)+.sop-check-box .sop-check-detail{opacity:1;box-shadow:0 0 5px currentColor}
+.sop-check:has(>input:focus-visible){outline:1px solid var(--cb-accent);outline-offset:5px}
+.sop-check>input:focus-visible+.sop-check-box{outline:2px solid var(--cb-accent);outline-offset:6px}
+.sop-check:has(>input:not(:disabled)):hover{border-color:var(--cb-line)}
+.sop-check:has(>input:disabled){opacity:.45;cursor:not-allowed}
+.sop-check:has(>input[aria-invalid=true]){border-color:#e19b8e}
+.sop-check>input[aria-invalid=true]+.sop-check-box{outline:1px solid #e19b8e;outline-offset:3px}
+.sop-check:has(>input:not(:disabled)):active>.sop-check-box{transform:scale(.94)}
+@media(max-width:420px){.sop-check{gap:13px}.sop-check>.sop-check-badge{display:none}}
+@media(prefers-reduced-motion:reduce){.sop-check,.sop-check *{transition:none!important;animation:none!important}}
+@media(forced-colors:active){.sop-check{border:1px solid CanvasText;background:Canvas;color:CanvasText}.sop-check .sop-check-description{color:CanvasText}.sop-check>.sop-check-box{visibility:hidden}.sop-check>input[type=checkbox]{appearance:auto;opacity:1;width:24px;height:24px;forced-color-adjust:auto}.sop-check>input:focus-visible{outline:2px solid Highlight;outline-offset:5px}}

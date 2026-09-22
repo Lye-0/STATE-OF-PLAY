@@ -375,3 +375,47 @@
 .selection-option-count button{min-width:31px;justify-content:center;padding:7px}
 .selection-option-count button[aria-pressed=true]{background:#d1e6b2;color:#1a271c;border-color:#d1e6b2}
 @media(max-width:600px){.tabs-card .object-stage{padding:28px 18px;min-height:325px}.segments-card .object-stage{padding:30px 17px;min-height:195px}.tabs-preview .preview-stage,.segments-preview .preview-stage{padding:20px 12px}}
+/* v3.8: native checkboxes & top-layer popups. Thumbnails are inert presentation only. */
+.checkbox-card .object-stage{height:auto;min-height:215px;padding:36px 34px;perspective:none}
+.checkbox-card .stage-mount{width:100%;max-width:365px}
+.checkbox-card .sop-check{width:100%}
+.checkbox-card .card-bottom h2,.popup-card .card-bottom h2{font-size:24px}
+.checkbox-card .card-bottom h2 span,.popup-card .card-bottom h2 span{display:none}
+.popup-card .object-stage{height:auto;min-height:370px;padding:22px 30px 27px;perspective:none}
+.popup-card .stage-mount{width:100%;max-width:405px}
+.popup-card .sop-popup,.popup-preview .sop-popup{width:100%}
+.sop-popup>.sop-popup-thumbnail{width:100%;pointer-events:none;margin-bottom:18px;max-height:246px;overflow:hidden;border:1px solid var(--pp-line);border-radius:12px;mask-image:linear-gradient(#000 0 80%,#0009 95%,transparent);position:relative;}
+.sop-popup.sop-popup-thumbnail>.sop-popup-window{display:block!important;position:relative!important;inset:auto!important;width:100%!important;max-width:100%!important;max-height:none!important;height:auto!important;transform:none!important;animation:none!important;filter:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;margin:0!important;overflow:hidden!important;}
+.sop-popup.sop-popup-thumbnail>.sop-popup-window .sop-popup-shell{padding:20px 22px!important;min-height:0!important}
+.sop-popup.sop-popup-thumbnail>.sop-popup-window .sop-popup-top{margin-bottom:13px!important;padding-bottom:8px!important}
+.sop-popup.sop-popup-thumbnail>.sop-popup-window .sop-popup-intro{margin-bottom:13px!important}
+.sop-popup.sop-popup-thumbnail>.sop-popup-window .sop-popup-intro h2{font-size:27px!important;line-height:1.14!important;margin-bottom:8px!important}
+.sop-popup.sop-popup-thumbnail>.sop-popup-window .sop-popup-intro p{font-size:10px!important;line-height:1.7!important}
+.sop-popup.sop-popup-thumbnail>.sop-popup-window .sop-popup-close{width:24px!important;height:24px!important;font-size:20px!important}
+.sop-popup.sop-popup-thumbnail>.sop-popup-window .sop-popup-kicker{font-size:7px!important;letter-spacing:.12em!important}
+.sop-popup.sop-popup-thumbnail>.sop-popup-window .sop-popup-footer{display:none!important}
+.sop-popup.sop-popup-thumbnail .pp-art{height:110px!important;min-height:0!important;border-radius:7px!important}
+.sop-popup.sop-popup-thumbnail .pp-note h3{font-size:18px!important}
+.sop-popup.sop-popup-thumbnail .pp-note p,.sop-popup.sop-popup-thumbnail .pp-callout{font-size:9px!important}
+.sop-popup.sop-popup-thumbnail .pp-fields{gap:8px!important}
+.sop-popup.sop-popup-thumbnail .pp-fields label{font-size:9px!important}
+.sop-popup.sop-popup-thumbnail .pp-fields input{font-size:10px!important;padding:7px!important}
+.sop-popup.sop-popup-thumbnail .pp-metrics>div{padding:8px!important}
+.sop-popup.sop-popup-thumbnail .pp-metrics b{font-size:23px!important}
+.sop-popup.sop-popup-thumbnail .pp-lines li{padding:9px 0!important;font-size:10px!important}
+.popup-demo-feedback{font:9px/1.8 Arial,"Yu Gothic",sans-serif;color:#98a99f;margin:12px 0 0;min-height:17px}
+.popup-card .sop-popup>.sop-popup-trigger{width:100%}
+.checkbox-preview .preview-stage{height:auto;min-height:235px;padding:30px 16px;perspective:none}
+.checkbox-preview .sop-check{width:100%;--cb-pad:12px;gap:12px}
+.popup-preview .preview-stage{height:auto;min-height:300px;padding:18px 17px;display:block;perspective:none}
+.popup-preview .sop-popup>.sop-popup-thumbnail{max-height:205px}
+.popup-preview .sop-popup>.sop-popup-trigger{width:100%}
+.check-popup-controls{display:flex;flex-direction:column;gap:11px;padding:17px 0;color:#b8c2c1;font-size:11px}
+.check-popup-controls label{display:flex;align-items:center;gap:8px}
+.check-popup-controls input{accent-color:#cbdfb7;margin:0;width:14px;height:14px}
+.check-popup-controls p{font-size:10px;line-height:1.9;color:#94a6a6;margin:0}
+.check-state-options{display:flex;flex-wrap:wrap;gap:7px}
+.check-state-options .small-button{font-size:10px;padding:8px 10px}
+.check-state-options [aria-pressed=true]{background:#cfdfb81a;color:#d4e4c1;border-color:#7c996f}
+@media(max-width:600px){.checkbox-card .object-stage{padding:30px 20px;min-height:200px}.popup-card .object-stage{padding:22px 20px;min-height:348px}.sop-popup>.sop-popup-thumbnail{max-height:222px}.popup-preview .preview-stage{padding:16px 14px}.checkbox-preview .preview-stage{padding-inline:12px}.checkbox-card .card-bottom h2,.popup-card .card-bottom h2{font-size:22px}.sop-popup.sop-popup-thumbnail .pp-split{grid-template-columns:1fr 1fr!important;gap:12px!important}}
+@media(max-width:355px){.checkbox-card .object-stage{padding-inline:15px}.checkbox-card .sop-check{--cb-pad:11px}.popup-card .object-stage{padding-inline:14px}}

@@ -1,0 +1,7 @@
+@import "../../../shared/checkbox-base.css";
+/* Accent Check — 小さなアクセント色で、選択をはっきり示す。 */
+.sop-check.sop-accent-check { --cb-bg:#29262e;--cb-ink:#ece5ee;--cb-muted:#b8aebe;--cb-accent:#c7b4e4;--cb-box:#29262e;--cb-line:#c7b4e466;--cb-size:22px;--cb-pad:13px;--cb-radius:8px;min-height:62px;gap:13px;--cb-radius:8px; }
+.sop-check.sop-accent-check input:is(:checked,:indeterminate)+.sop-check-box {background:#c7b4e4;color:#2c2337;border-color:#c7b4e4}
+.sop-check.sop-accent-check .sop-check-aura,.sop-check.sop-accent-check .sop-check-detail {display:none}
+.sop-check.sop-accent-check .sop-check-label {font-weight:400}
+.sop-check.sop-accent-check .sop-check-tick {stroke-width:3}

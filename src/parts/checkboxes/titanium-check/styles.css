@@ -1,0 +1,11 @@
+@import "../../../shared/checkbox-base.css";
+/* Titanium Check — 切削痕と刻印を持つ、金属のプッシュプレート。 */
+.sop-check.sop-titanium-check { --cb-bg:#202526;--cb-ink:#e2e8e6;--cb-muted:#a6aeab;--cb-accent:#cfe4ac;--cb-box:#202526;--cb-line:#cfe4ac66;--cb-radius:7px;--cb-size:44px;background:repeating-linear-gradient(90deg,#ffffff03 0 1px,transparent 1px 3px),linear-gradient(150deg,#424949,#1d2323 60%,#373f3d);box-shadow:inset 0 1px 1px #f4fff650,0 8px 14px #0004;border-color:#606863;
+ }
+.sop-check.sop-titanium-check .sop-check-box {border-radius:5px;background:linear-gradient(160deg,#77827c,#323b38 42%,#202a24);border:2px solid #101713;box-shadow:inset 0 1px 1px #dce6d077,0 1px 0 #8b988970}
+
+.sop-check.sop-titanium-check .sop-check-box:before {content:"";position:absolute;inset:4px;border:1px solid #b9c6b137;border-radius:2px}
+
+.sop-check.sop-titanium-check .sop-check-aura {border-radius:1px;inset:-6px;border-style:dashed}
+
+.sop-check.sop-titanium-check .sop-check-label {font-family:Consolas,monospace;letter-spacing:.05em;font-size:12px}

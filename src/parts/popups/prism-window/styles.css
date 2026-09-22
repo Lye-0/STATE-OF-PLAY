@@ -1,0 +1,8 @@
+@import "../../../shared/popup-base.css";
+@import "../../../shared/popup-content.css";
+/* Prism Window — 結晶の面と光の線が重なる、スペクトルの窓。 */
+.sop-popup.sop-prism-window { --pp-bg:#292638;--pp-ink:#f0e7fa;--pp-muted:#bcb0ce;--pp-accent:#d1c0f0;--pp-line:#d1c0f040;--pp-radius:10px;--pp-width:670px;--pp-wash:#b79ce518; }
+.sop-popup.sop-prism-window > .sop-popup-window .sop-popup-shell {background:linear-gradient(130deg,#272f3e,#2c293d 53%,#423242)}
+.sop-popup.sop-prism-window > .sop-popup-window {border:1px solid #c1acd275;box-shadow:0 0 0 5px #a190bf0c,0 35px 90px #0008}
+.sop-popup.sop-prism-window > .sop-popup-window .pp-art {border-radius:4px;background:#b3b4df06}
+.sop-popup.sop-prism-window > .sop-popup-window .sop-popup-intro h2 {max-width:10em}

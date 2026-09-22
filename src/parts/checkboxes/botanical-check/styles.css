@@ -1,0 +1,11 @@
+@import "../../../shared/checkbox-base.css";
+/* Botanical Check — 葉の輪郭と真鍮の縁が、緑の選択を包む。 */
+.sop-check.sop-botanical-check { --cb-bg:#263327;--cb-ink:#f0ead3;--cb-muted:#b4b695;--cb-accent:#d4d58b;--cb-box:#263327;--cb-line:#d4d58b66;--cb-radius:8px;--cb-size:44px;background:linear-gradient(135deg,#374936,#242f26);border-color:#a9b28250;
+ }
+.sop-check.sop-botanical-check .sop-check-box {border-radius:4px 22px 4px 22px;background:linear-gradient(145deg,#5c7246,#2d482e);border:1px solid #c0c08f88;transform:rotate(-7deg)}
+
+.sop-check.sop-botanical-check .sop-check-box:before {content:"";position:absolute;inset:5px;border-left:1px solid #d8d29144;transform:rotate(35deg)}
+
+.sop-check.sop-botanical-check .sop-check-aura {border-radius:inherit;inset:-5px}
+
+.sop-check.sop-botanical-check .sop-check-label {font:20px Georgia,serif}

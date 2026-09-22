@@ -1,0 +1,10 @@
+@import "../../../shared/popup-base.css";
+@import "../../../shared/popup-content.css";
+/* Nixie Console — 琥珀色の読み取り表示と、機器の目盛り。 */
+.sop-popup.sop-nixie-console { --pp-bg:#241d17;--pp-ink:#f6dfb7;--pp-muted:#bc9f78;--pp-accent:#efbd76;--pp-line:#efbd7640;--pp-radius:13px;--pp-width:490px;--pp-display:Consolas,monospace;--pp-wash:#d9a34e0c; }
+.sop-popup.sop-nixie-console > .sop-popup-window .sop-popup-shell {background:repeating-linear-gradient(0deg,transparent 0 3px,#a27c4411 3px 4px),linear-gradient(145deg,#32261d,#1d1a15)}
+.sop-popup.sop-nixie-console > .sop-popup-window .sop-popup-intro h2 {font-size:31px;letter-spacing:-.06em}
+.sop-popup.sop-nixie-console > .sop-popup-window .pp-metrics {margin-top:0}
+.sop-popup.sop-nixie-console > .sop-popup-window .pp-metrics b {color:#ffc687;text-shadow:0 0 16px #ff93295a}
+.sop-popup.sop-nixie-console > .sop-popup-window .pp-metrics>div {border-color:#a8824655;background:#12150f;border-radius:5px}
+.sop-popup.sop-nixie-console > .sop-popup-window .sop-popup-primary {background:#dfb77d}

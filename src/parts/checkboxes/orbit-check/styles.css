@@ -1,0 +1,11 @@
+@import "../../../shared/checkbox-base.css";
+/* Orbit Check — 浮かぶ球体と傾いた軌道が、選択を囲む。 */
+.sop-check.sop-orbit-check { --cb-bg:#142523;--cb-ink:#e1f4e6;--cb-muted:#9db9aa;--cb-accent:#b3e9c8;--cb-box:#142523;--cb-line:#b3e9c866;--cb-radius:13px;--cb-size:43px;background:linear-gradient(150deg,#22372f,#182724);border-color:#809e803d;
+ }
+.sop-check.sop-orbit-check .sop-check-box {border-radius:50%;background:radial-gradient(circle at 30% 22%,#5d876d,#1b3528 70%);border-color:#86b99566;box-shadow:inset 1px 1px 2px #dbffe166,0 8px 10px #0006}
+
+.sop-check.sop-orbit-check .sop-check-aura {inset:-6px -12px;border:1px solid #94cca37a;border-radius:50%;transform:rotate(-35deg) scale(.8);opacity:.25}
+
+.sop-check.sop-orbit-check input:is(:checked,:indeterminate)+.sop-check-box .sop-check-aura {opacity:1;transform:rotate(28deg) scale(1)}
+
+.sop-check.sop-orbit-check .sop-check-detail {right:-5px;bottom:1px;width:5px;height:5px}
