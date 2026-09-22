@@ -1,51 +1,61 @@
-# v3.0.0 検証記録
+# v3.1.0 検証記録
 
-検証日: 2026-09-22（日本時間）。基準: 提供済みv2.3.0。
-GitHubのmain上のsrc・scripts・testsのGit tree hashが、基準ZIPの同じディレクトリと一致することを確認して作業しました。
+検証日: 2026-09-22（日本時間）。基準: 提供済みv3.0.0のリポジトリ全体ZIP。
+バージョンと開発構成はGitHub main上のpackage.jsonでも確認して作業しました。GitHubへの書き込みは行っていません。
 
-## 今回実行したもの
+## 実行結果
 
 | 検証 | 結果 |
 | --- | --- |
-| ギャラリー・Vanilla・共有処理のstrict型チェック | `tsconfig.json`、実TypeScript 5.8.3で成功 |
-| カタログ生成 | 16パーツ、4形式、452ソース。srcやpackagesへ生成物を書き込まない |
-| 元パーツのCSS／HTML | 16CSS＋16markup、計32ファイルがv2.3.0とバイト一致 |
-| 単体テスト | 24件成功 |
-| 配布形式 | TS→JS、TSX→JSXを実TypeScriptで変換。全形式のローカル参照を照合 |
-| ZIP | 16×4×2＝128パッケージについて本文・CRC・明示的ディレクトリを検査 |
-| ブラウザー | 実Chromium 144.0.7559.96、16項目成功、pageerrorなし |
-| 詳細画面 | デスクトップ、幅320/390/768、ツリー、コード、全452ソースの表示一致 |
-| コピー | 成功表示・対象文字列の一致、拒否時の手動コピー・フォーカス復帰 |
-| ファイル保存 | 実際のdownloadイベントと出力ファイルを取得し、ソースと一致確認 |
-| ZIPのUI | 通常／テキスト形式を生成して、展開後の内容と階層を検証 |
-| 操作 | トグルクリック・実ドラッグ、詳細を誤開閉しないこと、Tab/Escape/復帰、無効・減少モーション |
-| 独立デモ | 全16種類の分離HTML/CSS/JSをギャラリーなしで表示・操作 |
-| Vanilla JS | 全16種類。実ES moduleのコードをメモリ内URLで実行。相対参照は別途ファイル構造に対して検査 |
-| React TSX／JSX | 実React 19.1.1 productionランタイムで全16種類。外部／内部制御、更新拒否、無効、複数配置、mount/unmount、RAF残留なし |
+| アプリ・Vanilla・共有処理のstrict型チェック | `tsconfig.json`、実TypeScript 5.8.3で成功 |
+| 生成処理のstrict型チェック | catalog/layout/source-tools/export-parts/package/zip、core/delivery/relocationテストを実Node型で確認。Vite依存部分を含む全ツールチェックとは区別 |
+| 単体テスト | **38件成功、失敗0** |
+| 元パーツのCSS・HTML | 16CSS＋16markup、計32ファイルがv3.0.0とバイト一致 |
+| 生成データ | 16パーツ × 4形式 × 2配置、計904ソース。`src/`や`packages/`に生成コピーを書き込まない |
+| 依存と配置 | import/export/type import/dynamic import/URL、CSS/HTML/SVG参照、コメント・文字列の非改変、エスケープ、未解決参照・衝突の拒否 |
+| 本体と参考例 | 本体は使用例に依存しない。例専用の依存はexamples側に分離。各パーツのinternalは独立 |
+| ZIP全組み合わせ | 16 × 4形式 × 2配置 × 2保存形式 = **256パッケージ**。本文・CRC・階層・PROMPT・INTEGRATION.jsonを照合 |
+| CLI実行 | Chrome TSXの2配置とLiquid JSテキスト版、計3ZIPを実出力し、Python zipfileでもCRCを確認 |
+| ブラウザー | 実Chromium、**18項目成功、pageerrorなし** |
+| コード表示 | 両配置の全904ファイルについて画面と配布内容が一致。選択が元ソースIDで引き継がれる |
+| コピー・保存 | 成功UI・拒否時の手動コピー、文字列、保存ファイルの本文・名前、フォーカス復帰を検証 |
+| ZIP UI | 画面・CLI共通関数のソース、README、PROMPT、INTEGRATION.jsonが両配置・保存形式で一致 |
+| 使い方・プロンプト | 各実装形式で表示・コピー。固定階層の強制を除去し、対象アプリ調査・非上書き・未確認の明示を統一 |
+| 表示・操作 | 幅320/390/768、詳細画面、ツリー、保存操作、Tab/Escape、クリック・実ドラッグ、無効・縮小モーション |
+| 独立デモ | 全16種類をギャラリーのCSS/JSに依存せず表示・操作 |
+| 通常JS | 両配置の実配布ソースをネイティブES Modulesで実行 |
+| React TSX / JSX | 両配置、全16パーツ。実React productionで外部制御・内部制御・拒否・無効・複数配置・取り外しを検証 |
+| 配置変更 | **3つの配置先 × 2構成 × 16パーツ = 96個体**。本体ファイルのみをコピーして実行し、既存の共有ヘルパーとアプリ入口を保持。取り外し後のRAF残留なし |
 
-`verification.json`は今回の実行結果をまとめた記録です。
-画面比較は実ブラウザーのスクリーンショットで確認しています。スクリーンショット一式はリポジトリの標準ZIPへ常時同梱しません。
+機械可読な要約は`verification.json`に記録しています。
+スクリーンショットは実ブラウザーで確認し、標準の全体ZIPには同梱しません。
 
-## 実行できなかったものを区別
+## 環境と制約
 
-この環境にはViteと公式React型定義の完全なnpm依存がありません。
-`npm install`を試みましたが、`registry.npmjs.org`の名前解決が`EAI_AGAIN`で失敗しました。
-また、Chromiumの管理ポリシーによりlocalhostへの通常ナビゲーションがブロックされています。
-保護設定の無効化や別ホスト名による回避は行っていません。
+Linux、Node.js 22.16.0、TypeScript 5.8.3、Chromium 144.0.7559.96。
+検証環境に実在するPlaywright 1.57.0-beta-1764944708000とReact 19.1.1 productionランタイムを使用しました。
+プロジェクトの依存バージョンは変更していません。特にPlaywright指定は1.63.0のままです。
 
-そのため、**実Viteのインストール・本番ビルド・HMR・HTTPサブディレクトリ配信、公式React型定義とVite型定義を含む完全な静的型チェック、npm audit、依存ロックの実生成は未実行です。**
-Vite用ソースと通常用検証コードを実装したことと、これらをこの環境で実行済みであることは区別します。
+npmレジストリは名前解決が`EAI_AGAIN`で失敗しました。
+また、配置変更のHTTPテストでlocalhostへの実ナビゲーションを試したところ、`ERR_BLOCKED_BY_ADMINISTRATOR`になりました。
+保護設定・ポリシーを変更したり、別ホスト名で回避したりする操作は行っていません。
 
-今回のブラウザー検証は`SOP_TEST_MODE=offline`の明示的アダプターを使用しました。
-ギャラリーを実TypeScriptで変換し、同じCSSとコードデータをブラウザーのテスト文書に投入しています。
-これはViteビルドの成功を示すテストではなく、UI・部品・コード・配布の回帰検証です。
-Reactは環境に実在する公式ランタイムを利用し、代替Reactやダミーの型定義は作っていません。
-productionランタイムのため、development StrictModeのeffect二重実行までは今回の実行対象ではありません。
-Clipboardの成功と拒否はテスト用API差し替えで再現しました。ユーザーのOSクリップボードを直接操作したわけではありません。
+そのためブラウザー実行は`SOP_TEST_MODE=offline`を明示した合成文書による検証です。
+UIでは同じソースを実TypeScriptで変換し、同じCSS・カタログを投入しています。
+独立JSと配置変更では、実ファイルに対する参照解決を検査したうえで、Blob URLとimport mapでネイティブES Modulesを読み込みます。
+**Viteのビルド成功、実HTTP配信、外部ネットワークからの取得成功を意味するものではありません。**
+Reactは実ランタイムであり、ダミーReactや代用の型定義は使っていません。
+productionランタイムのため、development StrictModeの二重Effectまでは今回実行していません。
+コピーの成功・拒否はテスト用API差し替えで再現しています。ユーザーのOSクリップボードを操作したわけではありません。
 
-Windows Explorer/MOTW/Defender、iOS Safari実機、実際のGitHub Pagesへの配信は未検証です。
+## この環境では未実行
 
-## 通常の環境での完全な検証
+- npm経由の指定バージョンの実インストール、`npm audit`、ロックファイルの生成。
+- 実Viteビルド・HMR・HTTP/subpathの配信確認。
+- 公式React型定義とVite型定義を含む完全な`npm run typecheck`。
+- Windows Explorer/MOTW/Defender、iOS Safari実機、GitHub Actions実行、実際の本番配信。
+
+これらは未確認のまま成功とみなしていません。依存をインストールできる環境では次のコマンドで実行します。
 
 ```powershell
 npm install
@@ -53,15 +63,14 @@ npx playwright install chromium
 npm run verify
 ```
 
-通常のverifyは、アプリ・React・ツールすべてのstrict型チェック、単体テスト、実Viteビルド、ブラウザー検証を行います。
-ブラウザー検証は実ViteのHTTP配信、カタログ編集の反映、`/STATE-OF-PLAY/`配下でのproduction表示も対象にします。
-公式React developmentランタイムのStrictModeで、TSX/JSXの配布ソースから作ったfixtureを検証します。
-型定義やViteがない場合に成功扱いでスキップする仕組みはありません。
-
-GitHub ActionsにもWindowsとUbuntuのverifyを設定しました。設定ファイルをZIPに含めただけで、今回こちらからpushやCI起動は行っていません。
+通常のverifyはアプリ・React・全ツールのstrict型チェック、単体テスト、実Viteビルド、ブラウザー検証、実HTTPの配置変更テストを実行します。
+通常のテストはオフラインアダプターに自動的に切り替わりません。Viteや型定義がないまま成功扱いでスキップする処理もありません。
 
 ## 全体ZIP
 
-通常のDEFLATE、明示的ディレクトリ、元ソースの階層を保持。
-生成後はJSZipによるCRCとSHA-256の照合に加えて、別実装のPython zipfileでも再読込します。
-ZIPの整合性は、安全性判定やWindowsで無警告の保証ではありません。
+全体ZIPは元ソースの構造を完全保持し、導入向けのパーツ構成に変更しません。
+通常のDEFLATE、明示的ディレクトリ、CRCおよびファイルごとのSHA-256を使用します。
+`.git`・`node_modules`・`dist`・`release`・検証用の生成物・秘密情報は含めません。
+生成後に別フォルダーへ展開し、アプリstrict型チェックと38件の単体テストを再実行しました。
+Python zipfileでもCRCとマニフェスト全ファイルのSHA-256を照合しました。
+これらは転送・格納の整合性検証であり、マルウェア判定やWindowsで無警告の保証ではありません。

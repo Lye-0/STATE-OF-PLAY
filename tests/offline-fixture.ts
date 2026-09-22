@@ -16,7 +16,7 @@ export function testBundle(entry: string, extras: Map<string,string> = new Map()
   if(modules.has(id))return id;
   modules.set(id,'');
   const source=virtual.get(id)??extras.get(id)??fs.readFileSync(path.join(ROOT,id),'utf8');
-  const code=transpile(source,id,ts.ModuleKind.CommonJS,ts.JsxEmit.React).replaceAll('__APP_VERSION__',JSON.stringify('3.0.0'))
+  const code=transpile(source,id,ts.ModuleKind.CommonJS,ts.JsxEmit.React).replaceAll('__APP_VERSION__',JSON.stringify(JSON.parse(fs.readFileSync(path.join(ROOT,'package.json'),'utf8')).version))
     .replace(/require\((['"])([^'"\n]+)\1\)/g,(_,_q:string,request:string)=>{
      if(request==='react'||request==='react-dom/client')return `require(${JSON.stringify(request)})`;
      if(request.endsWith('.css'))return '{}';

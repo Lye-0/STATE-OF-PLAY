@@ -27,7 +27,7 @@ export function highlightedLines(code: string, language: string) {
     return lines.map((line, i) => `<span class="code-line"><span class="line-number" aria-hidden="true">${i + 1}</span><span class="line-code">${line || ' '}</span></span>`).join('');
 }
 /** A real directory tree: displayed paths are exactly the paths saved to ZIP. */
-function fileTreeHTML(files: SourceFile[]) {
+function fileTreeHTML(files: readonly SourceFile[]) {
     const root: FileTree = {directories: new Map(), files: []};
     for (const file of files) {
         const segments = file.name.split('/');
@@ -40,24 +40,25 @@ function fileTreeHTML(files: SourceFile[]) {
         branch.files.push(file);
     }
     function render(branch: FileTree, level = 0): string {
-        return [...branch.directories.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([name, child]) =>
+        return [...branch.directories.entries()].sort(([a], [b]) => Number(a === 'examples') - Number(b === 'examples') || a.localeCompare(b)).map(([name, child]) =>
             `<details open class="source-directory" data-directory="${escapeHTML(child.path)}"><summary title="${escapeHTML(child.path)}" style="--level:${level}"><span class="directory-chevron" aria-hidden="true">›</span>${icon('folder')}<span>${escapeHTML(name)}</span></summary>${render(child, level + 1)}</details>`).join('') +
-            branch.files.map(file => `<button type="button" class="file-item" style="--level:${level}" data-file="${escapeHTML(file.name)}" title="${escapeHTML(file.name)}">${icon('file')}<span>${escapeHTML(file.name.split('/').at(-1))}</span></button>`).join('');
+            branch.files.map(file => `<button type="button" class="file-item" style="--level:${level}" data-file="${escapeHTML(file.name)}" data-source="${escapeHTML(file.sourceName)}" data-role="${file.group === 'example' ? 'example' : 'runtime'}" title="${escapeHTML(file.name)}">${icon('file')}<span>${escapeHTML(file.name.split('/').at(-1))}</span></button>`).join('');
     }
     return render(root);
 }
 
-export function mountCodeViewer(host: HTMLElement, files: SourceFile[], options: {selected?: string; onSelect?: (name: string) => void} = {}) {
+export function mountCodeViewer(host: HTMLElement, files: readonly SourceFile[], options: {selected?: string; onSelect?: (name: string) => void} = {}) {
     if (!files.length) {
         host.textContent = '表示できるファイルがありません。';
         return;
     }
     let current = files.find(f => f.name === options.selected) ?? files[0], wrap = false;
-    host.innerHTML = `<div class="source-workbench"><nav class="file-tree" aria-label="ソースファイル"><div class="tree-title">FILES <span>${files.length}</span></div><div class="tree-entries">${fileTreeHTML(files)}</div><label class="mobile-file-picker"><span class="sr-only">表示するソースファイル</span><select aria-label="表示するソースファイル">${files.map(f => `<option value="${escapeHTML(f.name)}">${escapeHTML(f.name)}</option>`).join('')}</select></label></nav><section class="editor" aria-label="コードプレビュー"><header class="editor-bar"><div class="editor-location"><span class="current-file"></span><span class="current-path"></span></div><div class="editor-tools"><button type="button" class="icon-button wrap-code" title="長い行を折り返す" aria-label="長い行を折り返す" aria-pressed="false">${icon('wrap')}</button><span class="editor-tool-divider" aria-hidden="true"></span><button type="button" class="download-file small-button">${icon('down')}<span>ファイルを保存</span></button><button type="button" class="copy-file small-button">${icon('copy')}<span>コピー</span></button></div></header><div class="code-scroll" tabindex="0" aria-label="ソースコード。上下左右にスクロールできます"><pre><code></code></pre></div><footer class="editor-status"><span class="file-info"></span><span>READ ONLY <i></i> UTF-8</span></footer></section></div>`;
+    host.innerHTML = `<div class="source-workbench"><nav class="file-tree" aria-label="ソースファイル"><div class="tree-title">FILES <span>${files.length}</span></div><div class="tree-entries">${fileTreeHTML(files)}</div><label class="mobile-file-picker"><span class="sr-only">表示するソースファイル</span><select aria-label="表示するソースファイル">${files.map(f => `<option value="${escapeHTML(f.name)}">${escapeHTML(f.name)}</option>`).join('')}</select></label></nav><section class="editor" aria-label="コードプレビュー"><header class="editor-bar"><div class="editor-location"><span class="current-file"></span><span class="current-path"></span></div><div class="editor-tools"><button type="button" class="icon-button wrap-code" title="長い行を折り返す" aria-label="長い行を折り返す" aria-pressed="false">${icon('wrap')}</button><span class="editor-tool-divider" aria-hidden="true"></span><button type="button" class="download-file small-button">${icon('down')}<span>ファイルを保存</span></button><button type="button" class="copy-file small-button">${icon('copy')}<span>コピー</span></button></div></header><div class="code-scroll" tabindex="0" aria-label="ソースコード。上下左右にスクロールできます"><pre><code></code></pre></div><footer class="editor-status"><span class="file-info"></span><span><span class="file-purpose"></span><i></i> UTF-8</span></footer></section></div>`;
     const code = required('code', host), copy = required('.copy-file', host), download = required('.download-file', host);
     const draw = () => {
         resetCopyFeedback(copy);
         required('.current-file', host).textContent = current.name.split('/').at(-1)!;
+        required('.file-purpose', host).textContent = current.group === 'example' ? '使用例 · 上書きしない' : current.group === 'shared' ? '本体の補助処理' : 'パーツ本体';
         const folder = current.name.split('/').slice(0, -1).join('/');
         required('.current-path', host).textContent = folder || '/';
         required('.editor-location', host).title = current.name;

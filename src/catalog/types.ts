@@ -3,14 +3,20 @@ import type { SurfaceOptions } from '../shared/surface-controller';
 
 export type Format = 'tsx' | 'jsx' | 'ts' | 'js';
 export type Category = 'toggles' | 'blocks';
+export type Layout = 'portable' | 'original';
+export const LAYOUTS = {
+  portable: {label: '導入向け', note: '本体フォルダーの中で依存を完結。好きな配置先へ移せます。'},
+  original: {label: '元の構成', note: '配布元の相対パスを保持。参照・比較向けの構成です。'}
+} as const;
+export const isLayout = (value: unknown): value is Layout => value === 'portable' || value === 'original';
 export type DetailTab = 'code' | 'guide' | 'prompt';
-export interface SourceFile { name: string; code: string; language: string; group: 'component' | 'shared' | 'example'; }
+export interface SourceFile { name: string; sourceName: string; code: string; language: string; group: 'component' | 'shared' | 'example'; }
 export interface Part {
   id: string; name: string; category: Category; order: number; version: string;
   tagline: string; description: string; material: string; motion: string; accent: string;
   initial?: boolean; componentName: string; tags: string[]; config?: ToggleConfig;
   related: string[]; props: string[][]; markup: string; usage: string; prompt: string;
-  files: Record<Format, SourceFile[]>; preview: Record<string, string>;
+  files: Record<Format, SourceFile[]>; portableFiles: Record<Format, SourceFile[]>; preview: Record<string, string>;
 }
 export interface PartController {
   destroy(): void;

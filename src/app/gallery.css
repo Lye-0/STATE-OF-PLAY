@@ -217,3 +217,20 @@
 .part-details .editor-location>span{max-width:100%}
 @media(min-width:1101px){.part-details .source-workbench{grid-template-columns:235px minmax(0,1fr)}}
 @media(min-width:601px) and (max-width:1100px){.part-details .source-workbench{grid-template-columns:210px minmax(0,1fr)}}
+
+/* Distribution layout: independent from language and source/text archival encoding. */
+.export-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.layout-control{display:flex;align-items:center;gap:9px;font-size:10px;color:#9fa6b4;min-width:0}
+.layout-control select{font:10px var(--sans);color:#e5e9ef;background:#20242b;border:1px solid #3e4552;border-radius:6px;padding:9px 25px 9px 10px;max-width:100%;cursor:pointer;outline-offset:3px}
+.layout-control select:focus-visible{outline:2px solid var(--lime)}
+.format-area p.layout-note{margin-top:5px;color:#c0c9b1;overflow-wrap:anywhere;font-size:10px}
+.delivery-paths{display:grid;grid-template-columns:auto minmax(0,1fr);gap:9px 18px;padding:16px 18px;margin:12px 0 22px;background:#15191f;border:1px solid #303740;border-radius:8px}
+.delivery-paths span{font:8px var(--mono);letter-spacing:.7px;color:#939dab;align-self:center}
+.delivery-paths code{font:11px/1.6 var(--mono);color:#cbd5e4;overflow-wrap:anywhere}
+.file-item[data-role=example]{opacity:.8}
+.package-context{margin:0 24px 20px;padding:15px 17px;border:1px solid #38414c;background:#181d24;border-radius:8px}
+.package-layout-badge{display:inline-flex;padding:3px 8px;border:1px solid #637a4e;border-radius:4px;color:#d1e6b2;font-size:10px}
+.package-context p{font-size:11px;line-height:1.85;color:#b2bbc8;margin:10px 0}
+.package-context code{font:10px/1.6 var(--mono);color:#d9e2ed;overflow-wrap:anywhere}
+@media(max-width:800px){.export-controls{gap:9px}.format-area{padding-top:12px;padding-bottom:10px}.layout-control{margin-left:auto}.format-area p.layout-note{font-size:9px}}
+@media(max-width:600px){.export-controls{display:grid;grid-template-columns:1fr;gap:10px}.layout-control{margin-left:0;justify-content:space-between}.layout-control select{flex:1;max-width:220px}.delivery-paths{grid-template-columns:1fr;gap:5px;padding:12px}.delivery-paths code{margin-bottom:7px}.package-context{margin-left:16px;margin-right:16px}.format-area p#format-note{display:none}}

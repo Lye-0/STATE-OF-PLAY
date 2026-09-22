@@ -5,6 +5,7 @@ import path from 'node:path';
 import { createRequire } from 'node:module';
 import type { Browser, Page } from 'playwright';
 import { ROOT, buildCatalog, FORMATS } from '../scripts/catalog.ts';
+import { getDelivery, buildPrompt, buildUsage, packageRoot, packageContents } from '../src/catalog/delivery.ts';
 import { JSZip } from '../scripts/zip.ts';
 import { offlineFiles, testBundle } from './offline-fixture.ts';
 import { resolveLocal } from '../scripts/source-tools.ts';
@@ -13,13 +14,14 @@ const {chromium}=require(process.env.PLAYWRIGHT_PATH??'playwright') as typeof im
 const offline=process.env.SOP_TEST_MODE==='offline';
 const OUT=path.join(ROOT,'.test-output');fs.mkdirSync(OUT,{recursive:true});
 const catalog=buildCatalog();
+const layouts=['portable','original'] as const;
 const results: string[]=[];const errors: string[]=[];
 const normalize=(s:string)=>s.split('\n').map(l=>l.trimEnd()).join('\n');
 function write(relative:string,code:string){const name=path.join(ROOT,relative);fs.mkdirSync(path.dirname(name),{recursive:true});fs.writeFileSync(name,code);}
 // Only temporary test fixtures; the normal build never expands a packages/ tree.
 for(const part of catalog.parts){
  for(const [name,code]of Object.entries(part.preview))write(`.test-output/exports/${part.id}/preview/${name}`,code);
- for(const format of FORMATS)for(const file of part.files[format])write(`.test-output/exports/${part.id}/${format}/${file.name}`,file.code);
+ for(const layout of layouts)for(const format of FORMATS)for(const file of getDelivery(part,format,layout).files)write(`.test-output/exports/${part.id}/${layout}/${format}/${file.name}`,file.code);
 }
 async function run(name:string,action:()=>Promise<void>){await action();results.push(name);console.log('PASS '+name);}
 let browser: Browser|undefined;let closeServer:(()=>Promise<void>)|undefined;let page:Page;let url='';
@@ -80,14 +82,14 @@ try{
  await run('Detail: code, hierarchical tree, full path, download before copy',async()=>{
   assert.equal(await page.locator('#detail-title').innerText(),'Luminous Frame');await page.locator('[data-file$="/styles.css"]').click();assert.ok((await page.locator('.editor code').innerText()).includes('sop-luminous-frame'));
   assert.ok((await page.locator('.download-file').boundingBox())!.x<(await page.locator('.copy-file').boundingBox())!.x);
-  const dir=page.locator('.source-directory[data-directory="src/shared"]');await dir.locator(':scope > summary').click();assert.equal(await dir.getAttribute('open'),null);await dir.locator(':scope > summary').click();
-  await page.locator('[data-file="src/shared/surface-controller.ts"]').click();assert.equal(await page.locator('.current-path').textContent(),'src/shared');await page.locator('[data-file$="/styles.css"]').click();
+  const dir=page.locator('.source-directory[data-directory="luminous-frame/internal"]');await dir.locator(':scope > summary').click();assert.equal(await dir.getAttribute('open'),null);await dir.locator(':scope > summary').click();
+  await page.locator('[data-file="luminous-frame/internal/surface-controller.ts"]').click();assert.equal(await page.locator('.current-path').textContent(),'luminous-frame/internal');await page.locator('[data-file$="/styles.css"]').click();
  });
  await page.screenshot({path:path.join(OUT,'detail.png')});
  await run('Copy: success only after write, exact string and visible feedback',async()=>{
   await page.evaluate(()=>{const w=window as unknown as {copied:string};w.copied='';Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async(text:string)=>{w.copied=text;}}});});
   await page.locator('.copy-file').click();assert.match(await page.locator('.copy-file').innerText(),/コピー済み/);
-  const expected=catalog.parts.find(p=>p.id==='luminous-frame')!.files.tsx.find(f=>f.name.endsWith('/styles.css'))!.code;
+  const expected=getDelivery(catalog.parts.find(p=>p.id==='luminous-frame')!,'tsx').files.find(f=>f.name.endsWith('/styles.css'))!.code;
   assert.equal(await page.evaluate(()=>(window as unknown as {copied:string}).copied),expected);
  });
  await run('Denied clipboard: manual fallback, no false success, focus restored',async()=>{
@@ -96,7 +98,7 @@ try{
    const doc=document as Document & {originalExecCommand?:typeof document.execCommand};doc.originalExecCommand=document.execCommand;document.execCommand=()=>false;
   });
   await page.locator('.copy-file').click();await page.locator('dialog.manual-copy').waitFor();assert.doesNotMatch(await page.locator('.copy-file').innerText(),/コピー済み/);
-  const expected=catalog.parts.find(p=>p.id==='luminous-frame')!.files.tsx.find(f=>f.name.endsWith('/styles.css'))!.code;
+  const expected=getDelivery(catalog.parts.find(p=>p.id==='luminous-frame')!,'tsx').files.find(f=>f.name.endsWith('/styles.css'))!.code;
   assert.equal(await page.locator('dialog.manual-copy textarea').inputValue(),expected);await page.locator('dialog.manual-copy button').click();
   assert.ok(await page.locator('.copy-file').evaluate(b=>b===document.activeElement));
   await page.evaluate(()=>{
@@ -105,43 +107,54 @@ try{
   });
  });
  await run('Selected source download matches the original file bytes',async()=>{
-  const expected=catalog.parts.find(p=>p.id==='luminous-frame')!.files.tsx.find(f=>f.name.endsWith('/styles.css'))!;
+  const expected=getDelivery(catalog.parts.find(p=>p.id==='luminous-frame')!,'tsx').files.find(f=>f.name.endsWith('/styles.css'))!;
   const pending=page.waitForEvent('download');await page.locator('.download-file').click();const download=await pending;assert.equal(download.suggestedFilename(),'styles.css');assert.equal(fs.readFileSync((await download.path())!,'utf8'),expected.code);
  });
  await run('Focus trap / Escape / restoration to gallery trigger',async()=>{
   for(let i=0;i<45;i++){await page.keyboard.press(i<25?'Tab':'Shift+Tab');assert.ok(await page.evaluate(()=>document.querySelector('#part-details')!.contains(document.activeElement)));}
   await page.keyboard.press('Escape');assert.equal(await page.locator('#part-details').getAttribute('open'),null);assert.equal(await page.evaluate(()=>(document.activeElement as HTMLElement).dataset.open),'luminous-frame');
  });
- await run('All code previews match generated export sources',async()=>{
+ await run('Both layouts: all 904 code previews equal exported sources and selection follows the source identity',async()=>{
   let count=0;
   for(const part of catalog.parts){await page.locator(`[data-open="${part.id}"]`).click();
-   for(const format of FORMATS){await page.locator(`[data-format="${format}"]`).click();
-    const rendered=await page.evaluate((names:string[])=>names.map(name=>{const b=[...document.querySelectorAll<HTMLButtonElement>('.file-item')].find(b=>b.dataset.file===name)!;b.click();return [...document.querySelectorAll('.editor .line-code')].map(n=>n.textContent).join('\n');}),part.files[format].map(f=>f.name));
-    for(let i=0;i<rendered.length;i++){assert.equal(normalize(rendered[i]),normalize(part.files[format][i].code),`${part.id}/${format}/${i}`);count++;}
+   for(const layout of layouts){await page.locator('#export-layout').selectOption(layout);
+    for(const format of FORMATS){await page.locator(`[data-format="${format}"]`).click();const d=getDelivery(part,format,layout);
+     const rendered=await page.evaluate((names:string[])=>names.map(name=>{const b=[...document.querySelectorAll<HTMLButtonElement>('.file-item')].find(b=>b.dataset.file===name)!;b.click();return [...document.querySelectorAll('.editor .line-code')].map(n=>n.textContent).join('\n');}),d.files.map(f=>f.name));
+     for(let i=0;i<rendered.length;i++){assert.equal(normalize(rendered[i]),normalize(d.files[i].code),`${part.id}/${format}/${layout}/${i}`);count++;}
+    }
    }await page.locator('.close-detail').click();
-  }assert.equal(count,catalog.parts.reduce((n,p)=>n+Object.values(p.files).flat().length,0));
+  }assert.equal(count,catalog.parts.reduce((n,p)=>n+Object.values(p.files).flat().length*2,0));
+  await page.locator('[data-open="chrome"]').click();await page.locator('[data-format="tsx"]').click();await page.locator('#export-layout').selectOption('portable');
+  await page.locator('[data-file="chrome-toggle/internal/motion.ts"]').click();await page.locator('#export-layout').selectOption('original');assert.equal(await page.locator('.current-path').textContent(),'src/shared');
+  await page.locator('[data-format="jsx"]').click();assert.equal(await page.locator('.current-file').textContent(),'motion.js');await page.locator('#export-layout').selectOption('portable');assert.equal(await page.locator('.current-path').textContent(),'chrome-toggle/internal');await page.locator('.close-detail').click();
  });
- await run('Part source/text ZIPs preserve directories and source contents',async()=>{
+ await run('Downloaded ZIP and CLI share exact files, README, prompt, manifest in both layouts and modes',async()=>{
   const part=catalog.parts.find(p=>p.id==='chrome')!;
-  await page.locator('[data-open="chrome"]').click();await page.locator('[data-format="js"]').click();await page.locator('#download-part').click();
-  for(const mode of ['source','text']){
-   await page.locator(`input[name="package-mode"][value="${mode}"]`).check();const pending=page.waitForEvent('download');await page.locator('.package-save').click();const d=await pending;
-   const archive=await JSZip.loadAsync(fs.readFileSync((await d.path())!),{checkCRC32:true});const root=`chrome-js${mode==='text'?'-text':''}/`;
-   for(const f of part.files.js)assert.equal(await archive.file(root+f.name+(mode==='text'?'.txt':''))!.async('string'),f.code);
-   for(const dir of ['src/','src/parts/','src/parts/toggles/chrome/vanilla/','src/shared/','preview/'])assert.equal(archive.files[root+dir]?.dir,true);
-   assert.match(await page.locator('.package-tree').innerText(),/shared\//);
+  await page.locator('[data-open="chrome"]').click();await page.locator('[data-format="js"]').click();
+  for(const layout of layouts){
+   await page.locator('#export-layout').selectOption(layout);await page.locator('[data-detail-tab="prompt"]').click();await page.locator('[data-prompt-mode="full"]').click();
+   const prompt=await page.locator('#prompt-text').inputValue();assert.equal(prompt,buildPrompt(part,'js',layout));
+   await page.locator('#download-part').click();
+   for(const mode of ['source','text']){
+    await page.locator(`input[name="package-mode"][value="${mode}"]`).check();const pending=page.waitForEvent('download');await page.locator('.package-save').click();const d=await pending;
+    const archive=await JSZip.loadAsync(fs.readFileSync((await d.path())!),{checkCRC32:true});const root=packageRoot(part,'js',layout)+(mode==='text'?'-text':'')+'/';
+    for(const f of packageContents(part,'js',layout))assert.equal(await archive.file(root+f.name+(mode==='text'?'.txt':''))!.async('string'),f.code);
+    assert.equal(archive.files[root+getDelivery(part,'js',layout).componentRoot+'/']?.dir,true);
+    assert.equal(await archive.file(root+'PROMPT.md'+(mode==='text'?'.txt':''))!.async('string'),prompt);
+   }
+   await page.keyboard.press('Escape');assert.equal(await page.locator('#part-details').getAttribute('open'),'');
   }
-  await page.keyboard.press('Escape');assert.equal(await page.locator('#part-details').getAttribute('open'),'');await page.keyboard.press('Escape');
+  await page.locator('#export-layout').selectOption('portable');await page.keyboard.press('Escape');
  });
  await run('Guide and AI prompt remain copyable in every export format',async()=>{
   await page.locator('[data-open="chrome"]').click();
   for(const format of FORMATS){await page.locator(`[data-format="${format}"]`).click();await page.locator('[data-detail-tab="guide"]').click();assert.ok(await page.locator('#copy-example').isVisible());await page.locator('#copy-example').click();assert.match(await page.locator('#copy-example').innerText(),/コピー済み/);
-   await page.locator('[data-detail-tab="prompt"]').click();await page.locator('[data-prompt-mode="full"]').click();const full=await page.locator('#prompt-text').inputValue();assert.ok(full.includes('src/shared/'));await page.locator('[data-prompt-mode="spec"]').click();assert.ok((await page.locator('#prompt-text').inputValue()).length<full.length);
+   await page.locator('[data-detail-tab="prompt"]').click();await page.locator('[data-prompt-mode="full"]').click();const full=await page.locator('#prompt-text').inputValue();assert.ok(full.includes('chrome-toggle/internal/'));assert.ok(full.includes('既存ファイル'));assert.ok(full.includes('参照できない場合'));assert.equal(full,buildPrompt(catalog.parts.find(p=>p.id==='chrome')!,format,'portable'));await page.locator('[data-prompt-mode="spec"]').click();assert.ok((await page.locator('#prompt-text').inputValue()).length<full.length);
   }await page.locator('[data-detail-tab="code"]').click();await page.locator('.close-detail').click();
  });
  await run('Mobile 320/390/768: no overflow, usable code and file picker',async()=>{
   for(const width of [320,390,768]){await page.setViewportSize({width,height:844});await page.locator('[data-open="chrome"]').click();await page.locator('[data-format="tsx"]').click();assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));assert.ok(await page.locator('.download-file').isVisible());assert.ok((await page.locator('.code-scroll').boundingBox())!.width>190);
-   if(width<600){await page.locator('.mobile-file-picker select').selectOption('src/shared/motion.ts');assert.equal(await page.locator('.current-file').textContent(),'motion.ts');}
+   if(width<600){await page.locator('.mobile-file-picker select').selectOption('chrome-toggle/internal/motion.ts');assert.equal(await page.locator('.current-file').textContent(),'motion.ts');}
    if(width===390)await page.screenshot({path:path.join(OUT,'mobile-390.png')});await page.locator('.close-detail').click();
   }
  });
@@ -153,27 +166,27 @@ try{
    if(part.category==='toggles'){const b=page.locator('[role="switch"]');const before=await b.getAttribute('aria-checked');await b.click();assert.notEqual(await b.getAttribute('aria-checked'),before);}
   }
  });
- await run('All native JavaScript exports retain working relative imports',async()=>{
-  for(const part of catalog.parts){const entry=part.files.js.find(f=>f.name.endsWith('/vanilla/index.html'))!;await load(`/.test-output/exports/${part.id}/js/${entry.name}`);const element=page.locator('.sop-'+part.id).first();await element.waitFor();assert.ok((await element.boundingBox())!.width>0);
+ await run('All native JS exports run with their real imports, in both layouts',async()=>{
+  for(const part of catalog.parts)for(const layout of layouts){const d=getDelivery(part,'js',layout);const entry=d.files.find(f=>f.name.endsWith('/index.html'))!;await load(`/.test-output/exports/${part.id}/${layout}/js/${entry.name}`);const element=page.locator('.sop-'+part.id).first();await element.waitFor();assert.ok((await element.boundingBox())!.width>0);
    if(part.category==='toggles'){const before=await element.getAttribute('aria-checked');await element.click();assert.notEqual(await element.getAttribute('aria-checked'),before);}
   }
  });
  // Use real React. In restricted environments the optional browser module must export r=React/e=ReactDOMClient.
  if(!offline||process.env.SOP_REACT_BROWSER_BUNDLE){
-  for(const format of ['tsx','jsx'] as const){
-   const prefix=`.test-output/react-${format}`;
-   const imports=catalog.parts.map((p,i)=>`import Part${i} from '../exports/${p.id}/${format}/${p.files[format][0].name}';`).join('\n');
+  for(const layout of layouts)for(const format of ['tsx','jsx'] as const){
+   const prefix=`.test-output/react-${format}-${layout}`;
+   const imports=catalog.parts.map((p,i)=>`import Part${i} from '../exports/${p.id}/${layout}/${format}/${getDelivery(p,format,layout).entry}';`).join('\n');
    const source=`import React,{useState} from 'react';import {createRoot} from 'react-dom/client';\n${imports}\nconst parts=[${catalog.parts.map((p,i)=>`{id:${JSON.stringify(p.id)},toggle:${p.category==='toggles'},Component:Part${i}}`).join(',')}];\n`+
     `function Item({item}){const [checked,setChecked]=useState(false);const C=item.Component;return <section data-react-part={item.id}>{item.toggle?<><C checked={checked} onCheckedChange={setChecked} data-variant="controlled" aria-label="controlled"/><C defaultChecked={false} data-variant="uncontrolled" aria-label="uncontrolled"/><C checked={false} onCheckedChange={()=>{}} data-variant="declined" aria-label="declined"/><C disabled aria-label="disabled" data-variant="disabled"/></>:<C><button>Independent child</button></C>}</section>;}\n`+
     `function App(){const [visible,setVisible]=useState(true);return <><button id="mount-toggle" onClick={()=>setVisible(!visible)}>Mount/unmount</button>{visible&&parts.map(p=><Item key={p.id} item={p}/>)}</>;}\n`+
     `createRoot(document.getElementById('root')).render(<React.StrictMode><App/></React.StrictMode>);`;
    const entry=prefix+'/main.jsx';write(entry,source);
-   if(offline){const extras=new Map<string,string>([[entry,source]]);for(const p of catalog.parts)for(const f of p.files[format])extras.set(`.test-output/exports/${p.id}/${format}/${f.name}`,f.code);
+   if(offline){const extras=new Map<string,string>([[entry,source]]);for(const p of catalog.parts)for(const f of getDelivery(p,format,layout).files)extras.set(`.test-output/exports/${p.id}/${layout}/${format}/${f.name}`,f.code);
     memory.set('/'+prefix+'/test.js',testBundle(entry,extras,"import {r as React,e as ReactDOMClient} from '/runtime.js';"));
    }
-   const styleLinks=catalog.parts.map(p=>`<link rel="stylesheet" href="../exports/${p.id}/${format}/${p.files[format].find(f=>f.name.endsWith('/styles.css'))!.name}">`).join('');
+   const styleLinks=catalog.parts.map(p=>`<link rel="stylesheet" href="../exports/${p.id}/${layout}/${format}/${getDelivery(p,format,layout).stylesheet}">`).join('');
    write(prefix+'/index.html',`<!doctype html><html><head><meta charset="utf-8">${styleLinks}<style>body{background:#18191a;color:#eee}section{display:flex;gap:40px;margin:30px;min-height:160px}.sop-surface{width:320px;min-height:170px}</style></head><body><div id="root"></div><script type="module" src="./${offline?'test.js':'main.jsx'}"></script></body></html>`);
-   await run(`React ${format.toUpperCase()}: all actual exports, controlled/uncontrolled/disabled, cleanup`,async()=>{
+   await run(`React ${format.toUpperCase()} / ${layout}: all actual exports, controlled/uncontrolled/disabled, cleanup`,async()=>{
     
     await load('/'+prefix+'/index.html');await page.locator('[data-react-part]').first().waitFor();assert.equal(await page.locator('[data-react-part]').count(),catalog.parts.length);
     for(const part of catalog.parts.filter(p=>p.category==='toggles')){const area=page.locator(`[data-react-part="${part.id}"]`);for(const variant of ['controlled','uncontrolled']){const b=area.locator(`[data-variant="${variant}"]`);assert.equal(await b.getAttribute('aria-checked'),'false');await b.click();assert.equal(await b.getAttribute('aria-checked'),'true');}

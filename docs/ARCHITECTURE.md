@@ -4,7 +4,7 @@
 
 1. **パーツの正本**: `src/parts`と`src/shared`。型付きロジック、CSS、マークアップ、React版、使用例、仕様。
 2. **サイト**: `src/app`。DOMの責務を保ったままTypeScript・ES Modulesへ。Viteが開発と本番ビルドを担当。
-3. **配布生成**: `scripts/catalog.ts`と`source-tools.ts`。元実装から読みやすい配布ソースと完全な依存・配置パスを作る。
+3. **配布生成**: `scripts/catalog.ts`、`layout.ts`、`source-tools.ts`でソースと配置を作り、`src/catalog/delivery.ts`でUI・ZIP・CLI共通の配布内容を構築する。
 
 ## Viteの仮想モジュール
 
@@ -35,3 +35,25 @@
 `dist`は配信用、`release`は配布ZIP、`.test-output`は検証用です。いずれも元実装とは分離します。
 通常の全体ZIPには再生成可能な展開済みコピーを含めません。
 `package-lock.json`を一度実生成できた環境では、ロックファイルも管理して`npm ci`で再現してください。
+
+## 配布を一貫させる境界
+
+```text
+元の実装（TS / TSX / CSS / HTML）
+  ↓ 依存関係・用途の判定、パスマップ、AST参照更新、形式変換
+元構成のfiles / 導入向けportableFiles（メモリ内）
+  ↓ getDelivery(part, format, layout)
+コードツリー・表示・選択ファイルの保存・使い方・AIプロンプト
+  ↓ packageContents(part, format, layout, includeCode)
+サイトのZIP / CLIのZIP
+```
+
+画面側でZIPだけ別の配置へ組み替えません。画面の選択とパッケージは同じ型付きデータを使用します。
+元ファイルの`sourceName`は、出力形式や配置の違いで変化しない識別子です。選択の維持と`INTEGRATION.json`の配置対応に使います。
+
+TypeScriptのコンパイラーやAST解析はNode側だけで使い、ブラウザーには配布ソース文字列と軽量な共通モデルを渡します。
+実際にサイトで動くパーツは元の実装、コピーするコードはそこから参照先だけを変換した配布ソースです。
+この区別を補うため、配布ソースを使うReact・Vanilla・移動後の消費側テストを用意しています。
+
+導入向けでも依存ライブラリ全体を同梱するわけではありません。Reactなどの外部依存は明示し、利用先のアプリが用意します。
+フラット配布、任意の外部依存、バイナリアセット、自動上書きインストーラーは今回の範囲外です。

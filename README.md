@@ -3,7 +3,9 @@
 触って選び、ソースと意図を自分の開発へ持ち出す、UIパーツのコレクションです。
 10種類のトグルと6種類のブロック／カードを収録しています。
 
-**v3.0.0では外観と操作を保ち、開発構成をVite＋TypeScriptへ移行しました。**
+**v3.1.0では、導入向けの独立フォルダーと元の構成を選べるようにしました。**
+配置・コード・使用例・プロンプト・ZIPを同じ生成モデルから作り、移動に合わせて読み込み先も更新します。
+v3.0.0で導入したVite＋TypeScriptの開発構成と、16パーツの外観・動作は維持しています。
 ギャラリー自体はReactへ全面移行していません。持ち出すパーツのReact TSX／JSX対応は継続しています。
 
 ## 起動
@@ -44,7 +46,8 @@ GitHubへの自動コミット・pushは行いません。
 - 整理された詳細画面で、動作、コード、使い方、AI用プロンプトを確認する。
 - TSX／JSX／TS／JSの形式を選ぶ。行番号・構文色分け・折り返し・フォルダーツリーを使う。
 - 選択中のコードをコピー／1ファイルで保存する。コピー成功／手動コピーのUIを使う。
-- パーツZIPで、`src/parts/...`・`src/shared/...`の階層ごと取得する。
+- パーツZIPを「導入向け（推奨）」または「元の構成」で取得する。本体・専用補助処理・参考例を区別する。
+- 配置規約を確認してから組み込むAI用プロンプトと、入口・用途・配置対応を記録した`INTEGRATION.json`を取得する。
 - 必要に応じ、テキスト保管用ZIPを選ぶ。通常のソースZIPとは用途が異なります。
 
 API・ログイン・データベース・ブラウザー上の追加画面はありません。パーツはソースで管理します。
@@ -55,14 +58,15 @@ API・ログイン・データベース・ブラウザー上の追加画面は�
 STATE-OF-PLAY/
 ├─ src/
 │  ├─ app/               # ギャラリー・詳細画面・コピー・ZIP UI（TypeScript）
-│  ├─ catalog/           # 型・カテゴリ・掲載定義
+│  ├─ catalog/           # 型・カテゴリ・掲載定義・UI/ZIP/CLI共通の配布モデル
 │  ├─ parts/             # 16パーツの元実装・仕様・React/Vanilla例
 │  ├─ shared/            # 共有の描画・ばね・入力・アーカイブ処理
 │  └─ main.ts            # Viteの入口
 ├─ scripts/
 │  ├─ catalog.ts         # メモリ上で配布ソースを構築
 │  ├─ vite-catalog.ts    # カタログ・マウント・CSSのVite仮想モジュール
-│  ├─ source-tools.ts    # 依存解決・形式変換・独立デモ生成
+│  ├─ layout.ts          # 元パスと配布パスの対応
+│  ├─ source-tools.ts    # 構文に基づく参照解決・形式変換・独立デモ生成
 │  ├─ templates/         # 全パーツで共有する独立デモの枠と初期化
 │  ├─ export-parts.ts    # 任意の一括パーツZIP出力
 │  └─ package.ts         # リポジトリ全体ZIP
@@ -79,7 +83,8 @@ STATE-OF-PLAY/
 実行用モジュールは元のTypeScriptからViteが処理し、コード欄は元ソースから作った読みやすいコードを表示します。
 **圧縮済みのサイトJavaScriptをコピー用のソースとして見せる方式ではありません。**
 
-元のディレクトリ構造を維持し、共通処理は配布パッケージ内で必要な分を含めます。
+開発用ソースは元の構造で1か所ずつ管理します。配布時に「導入向け」と「元の構成」のパスを作り、必要な共通処理を含めます。
+本体が使用例に依存したり、パーツフォルダーの外へ参照が漏れたりする構成は、生成時にエラーにします。
 JSとJSXはTS／TSXから生成します。ブラウザーへTypeScriptコンパイラーを配信しません。
 独立デモは共通テンプレートから組み立て、個別パーツのHTML・CSS・JSとしてZIPへ保存します。
 
@@ -88,7 +93,7 @@ JSとJSXはTS／TSXから生成します。ブラウザーへTypeScriptコンパ
 | 場所 | 用途 | Git・全体ZIP |
 | --- | --- | --- |
 | `dist/` | サイトの本番ビルド | 対象外 |
-| `release/parts/` | 任意で生成する64種類のパーツZIP | 対象外 |
+| `release/parts/` | 任意で生成するパーツZIP。標準64種類、両配置で128種類 | 対象外 |
 | `release/` | リポジトリ全体ZIP | 対象外 |
 | `.test-output/` | テスト中の配布ファイル・結果・画面 | 対象外 |
 | `node_modules/` | 開発用依存 | 対象外 |
@@ -106,8 +111,9 @@ JSとJSXはTS／TSXから生成します。ブラウザーへTypeScriptコンパ
 | `npm run typecheck` | ギャラリー／Reactパーツ／ツール・テストのstrict型チェック |
 | `npm test` | ソース整合性、配布パス、ZIPの階層・本文、ばねなどのテスト |
 | `npm run test:browser` | Vite＋Chromium、React TSX／JSX、production/subpath/HMRを検証 |
-| `npm run verify` | 型チェック・単体テスト・ビルド・ブラウザー検証 |
-| `npm run export:parts` | 全16パーツ×4形式をZIPとして`release/parts/`へ出力 |
+| `npm run test:relocation` | 本体だけを別フォルダーへ移した独立消費側プロジェクトの検証 |
+| `npm run verify` | 型チェック・単体テスト・ビルド・ブラウザー・配置変更の検証 |
+| `npm run export:parts` | 全16パーツ×4形式を導入向けZIPとして`release/parts/`へ出力 |
 | `npm run package` | 元ソース全体のZIPとSHA-256マニフェストを生成・再読込検証 |
 
 初めてブラウザーテストを実行する前に、次を実行します。
@@ -131,6 +137,28 @@ npm run preview
 `base: './'`にしているため、GitHub Pagesの`/STATE-OF-PLAY/`など、サブディレクトリ配信にも対応する構成です。
 GitHub Pagesをbranchのルートから公開していた場合、Viteのビルドを行って`dist/`を配信する設定へ変更してください。
 同梱のGitHub Actionsは検証のみで、自動デプロイは行いません。
+
+## パーツを持ち出す
+
+詳しい手順と構成の例は [導入ガイド](docs/INTEGRATION.md) を参照してください。
+**全体ZIPは開発用リポジトリの置換、パーツZIPは既存アプリへの組み込み**に使います。
+配置の選択はパーツZIPだけに適用されます。全体ZIPは常にリポジトリの階層を保持します。
+
+サイトを使わず、同じ配布処理をCLIから呼ぶこともできます。
+
+```powershell
+# 指定したパーツ・形式だけを、2つの配置で生成
+npm run export:parts -- --part chrome --format tsx --layout all
+
+# 全パーツ・全形式を元の構成で出力
+npm run export:parts -- --layout original
+
+# 導入向けのテキスト保管用ZIP
+npm run export:parts -- --part chrome --format js --mode text
+```
+
+書き出すのは`release/parts/`のみです。生成ファイルを`src/`や`packages/`へ展開しません。
+このCLIはインストーラーではなく、導入先を読んだり上書きしたりする処理はありません。
 
 ## パーツ追加
 
