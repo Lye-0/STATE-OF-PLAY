@@ -1,0 +1,60 @@
+{
+  "id": "magnetic-scroll",
+  "name": "Magnetic",
+  "category": "scrollbars",
+  "order": 61,
+  "version": "1.0.0",
+  "tagline": "静かな、吸着感。",
+  "description": "二本の細いレールと、重みのある金属のスライダー。",
+  "material": "MAGNETIC / DUAL RAIL",
+  "motion": "SCROLL / DRAG",
+  "accent": "185,212,199",
+  "designType": "A",
+  "runtime": "Native scroll + event-driven DOM",
+  "componentName": "MagneticScrollScrollArea",
+  "tags": [
+    "Magnetic",
+    "magnetic-scroll",
+    "スクロールバー",
+    "スクロール領域",
+    "縦",
+    "横",
+    "scrollbar",
+    "MAGNETIC / DUAL RAIL"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "スクロールする中身。展示用コンテンツは含まれません。"
+    ],
+    [
+      "orientation",
+      "'vertical' | 'horizontal'",
+      "縦または横スクロール。初期値はvertical。"
+    ],
+    [
+      "viewportLabel",
+      "string",
+      "内容の領域に付ける読み上げ用ラベル。"
+    ],
+    [
+      "scrollbarLabel",
+      "string",
+      "スクロールバーの読み上げ用ラベル。"
+    ],
+    [
+      "onProgressChange",
+      "(progress: number) => void",
+      "スクロール位置を0〜1で通知します。"
+    ],
+    [
+      "className / style",
+      "HTMLAttributes",
+      "高さはstyleのheightまたは--sop-scroll-heightで調整。横幅は親に合わせます。"
+    ]
+  ]
+}

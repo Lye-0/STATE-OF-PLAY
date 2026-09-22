@@ -1,0 +1,9 @@
+@import "../../../shared/scrollbar-base.css";
+/* Perforation — FILM / TRANSPORT / A */
+
+.sop-scroll-area.sop-perforation{--sop-scroll-width:28px;--sop-scroll-radius:2px;--sop-scroll-accent:#ffb5a3;--sop-scroll-thumb:#e97f64}
+.sop-scroll-area.sop-perforation > .sop-scroll-rail > .sop-scroll-track{background:repeating-linear-gradient(0deg,#afa2911c 0 24px,#cfc3a739 24px 25px),#232323;border-inline:5px solid #c5b79a4c}
+.sop-scroll-area.sop-perforation > .sop-scroll-rail > .sop-scroll-ticks{background:repeating-linear-gradient(0deg,#0b1014 0 6px,transparent 6px 11px);mask-image:linear-gradient(90deg,#000 0 5px,transparent 5px calc(100% - 5px),#000 calc(100% - 5px));inset-inline:8px}
+.sop-scroll-area.sop-perforation > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:34px;border-radius:3px;background:linear-gradient(90deg,#b96557,#f1a085 40%,#d98269 90%);border:1px solid #ffd4b17a;box-shadow:1px 3px 7px #0009}
+.sop-scroll-area.sop-perforation > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{inset:50% 6px auto;height:2px;background:#392328;box-shadow:0 1px #ffd9b587}
+.sop-scroll-area.sop-perforation > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle:before{content:'';position:absolute;inset:6px;border:1px solid #71352d59;border-radius:2px}

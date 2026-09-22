@@ -1,0 +1,9 @@
+@import "../../../shared/scrollbar-base.css";
+/* Phosphor — PHOSPHOR / MATRIX / A */
+
+.sop-scroll-area.sop-phosphor{--sop-scroll-width:22px;--sop-scroll-radius:3px;--sop-scroll-accent:#c1f794;--sop-scroll-thumb:#a3d580;--sop-scroll-track:#0d160d}
+.sop-scroll-area.sop-phosphor > .sop-scroll-rail > .sop-scroll-track{border:1px solid #456635;box-shadow:inset 0 0 8px #000;background:radial-gradient(#8fbe6133 1.2px,transparent 1.5px) 0 0/5px 5px,#0b1209}
+.sop-scroll-area.sop-phosphor > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{background:repeating-linear-gradient(0deg,#beff91 0 2px,transparent 2px 5px);opacity:.6;box-shadow:0 0 13px #80d854}
+.sop-scroll-area.sop-phosphor > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:18px;border:1px solid #d8ffb2;border-radius:2px;background:linear-gradient(90deg,#728944,#d4fda1,#88c461);box-shadow:0 0 13px #9ff35c65,inset 0 1px 2px #fff8}
+.sop-scroll-area.sop-phosphor > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{inset:7px 4px;background:repeating-linear-gradient(0deg,#173510 0 2px,transparent 2px 5px)}
+.sop-scroll-area.sop-phosphor[data-scrolling=true] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{box-shadow:0 0 22px #a3ff7188}

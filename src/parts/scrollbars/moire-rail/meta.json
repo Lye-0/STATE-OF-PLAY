@@ -1,0 +1,60 @@
+{
+  "id": "moire-rail",
+  "name": "Moiré Rail",
+  "category": "scrollbars",
+  "order": 54,
+  "version": "1.0.0",
+  "tagline": "重なる線に、リズムを。",
+  "description": "繊細な線の干渉が、動きに合わせて表情を変える。",
+  "material": "OPTICAL / INTERFERENCE",
+  "motion": "SCROLL / DRAG",
+  "accent": "203,202,216",
+  "designType": "A",
+  "runtime": "Native scroll + event-driven DOM",
+  "componentName": "MoireRailScrollArea",
+  "tags": [
+    "Moiré Rail",
+    "moire-rail",
+    "スクロールバー",
+    "スクロール領域",
+    "縦",
+    "横",
+    "scrollbar",
+    "OPTICAL / INTERFERENCE"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "スクロールする中身。展示用コンテンツは含まれません。"
+    ],
+    [
+      "orientation",
+      "'vertical' | 'horizontal'",
+      "縦または横スクロール。初期値はvertical。"
+    ],
+    [
+      "viewportLabel",
+      "string",
+      "内容の領域に付ける読み上げ用ラベル。"
+    ],
+    [
+      "scrollbarLabel",
+      "string",
+      "スクロールバーの読み上げ用ラベル。"
+    ],
+    [
+      "onProgressChange",
+      "(progress: number) => void",
+      "スクロール位置を0〜1で通知します。"
+    ],
+    [
+      "className / style",
+      "HTMLAttributes",
+      "高さはstyleのheightまたは--sop-scroll-heightで調整。横幅は親に合わせます。"
+    ]
+  ]
+}

@@ -1,10 +1,11 @@
 import type { ToggleConfig, ToggleOptions, ToggleController } from '../shared/toggle-controller';
+import type { ScrollAreaOptions, ScrollAreaController } from '../shared/scroll-area';
 import type { SurfaceOptions } from '../shared/surface-controller';
 
 export type Format = 'tsx' | 'jsx' | 'ts' | 'js';
 export type DesignType = 'A' | 'B';
 export const DESIGN_TYPES = { A: {label:'A · 表現重視', note:'素材感と動きを楽しむ、主役になるデザイン。'}, B: {label:'B · 実用重視', note:'落ち着きと読みやすさを重視。設定や日常の画面へ。'} } as const;
-export type Category = 'toggles' | 'blocks';
+export type Category = 'toggles' | 'blocks' | 'scrollbars';
 export type Layout = 'portable' | 'original';
 export const LAYOUTS = {
   portable: {label: '導入向け', note: '本体フォルダーの中で依存を完結。好きな配置先へ移せます。'},
@@ -22,6 +23,10 @@ export interface Part {
   files: Record<Format, SourceFile[]>; portableFiles: Record<Format, SourceFile[]>; preview: Record<string, string>;
 }
 export interface PartController {
+  scrollTo?: ScrollAreaController['scrollTo'];
+  getProgress?: ScrollAreaController['getProgress'];
+  setOrientation?: ScrollAreaController['setOrientation'];
+  refresh?: ScrollAreaController['refresh'];
   destroy(): void;
   setChecked?: ToggleController['setChecked'];
   getChecked?: ToggleController['getChecked'];
@@ -29,7 +34,7 @@ export interface PartController {
   setPaused?: ToggleController['setPaused'];
   resize?: ToggleController['resize'];
 }
-export type MountPart = (root: HTMLElement, options?: ToggleOptions & SurfaceOptions) => PartController;
+export type MountPart = (root: HTMLElement, options?: ToggleOptions & SurfaceOptions & ScrollAreaOptions) => PartController;
 export const isFormat = (value: unknown): value is Format =>
   typeof value === 'string' && ['tsx','jsx','ts','js'].includes(value);
 export const isDetailTab = (value: unknown): value is DetailTab =>

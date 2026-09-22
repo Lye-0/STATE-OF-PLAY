@@ -1,0 +1,50 @@
+/* Samples and exhibit layout; never exported as a runtime dependency. */
+.scroll-card{background:#181a1c;border:1px solid #303337;border-radius:10px;transition:border-color .3s}
+.scroll-card:hover{border-color:#525c60}
+.scroll-card .object-stage{height:340px;padding:25px 27px 27px}
+.scroll-card .stage-mount{height:100%}
+.scroll-card .sop-scroll-area{height:100%;max-width:440px;--sop-scroll-gutter:52px}
+.scroll-card .card-bottom h2{font-size:23px}
+.scroll-card .card-bottom h2 span{display:none}
+.scroll-card .state-readout{color:rgb(var(--accent))}
+.scroll-card .state-readout i{background:rgb(var(--accent))}
+.scroll-card .stage-glow{opacity:.5;left:auto;right:1px;width:180px;height:260px;top:20px;background:radial-gradient(ellipse,rgba(var(--accent),.06),transparent 65%)}
+.scroll-sample{color:var(--sop-scroll-ink);font-family:Arial,'Yu Gothic',sans-serif}
+.scroll-chapter{padding:16px 22px 28px 5px;border-bottom:1px solid #a8b9c321;min-height:250px;box-sizing:border-box}
+.scroll-chapter + .scroll-chapter{padding-top:30px}
+.scroll-eyebrow{font:8px/1.6 Consolas,monospace;letter-spacing:1.4px;color:var(--sop-scroll-muted);display:block}
+.scroll-chapter h3{font:400 35px/1.07 Arial,sans-serif;letter-spacing:-1.1px;margin:23px 0 16px;color:var(--sop-scroll-ink)}
+.scroll-chapter h3 em{font-family:Georgia,serif;font-weight:400;color:var(--sop-scroll-accent)}
+.scroll-chapter p{color:var(--sop-scroll-muted);font:10px/2 'Yu Gothic',sans-serif;max-width:265px;margin:0}
+.scroll-chapter-end{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:28px;color:var(--sop-scroll-muted);font:7px Consolas,monospace;letter-spacing:1.5px}
+.scroll-sample-rule{height:28px;display:flex;gap:5px;align-items:center;margin-top:18px}
+.scroll-sample-rule i{flex:1;height:1px;background:var(--sop-scroll-accent);opacity:.18}
+.scroll-sample-rule i:nth-child(2n){height:6px;opacity:.26}
+.scroll-sample-rule i:nth-child(3n){height:14px;opacity:.5}
+.scroll-sample-rule i:nth-child(4n){height:26px;opacity:.75}
+.scroll-sample-essential .scroll-chapter h3{font-size:29px;line-height:1.2;letter-spacing:-.8px}
+.scroll-sample-essential .scroll-chapter h3 em{font-family:Arial,sans-serif;font-style:normal;color:inherit}
+.scroll-sample-essential .scroll-sample-rule{display:none}
+.sop-scroll-area[data-orientation=horizontal] .scroll-sample{display:flex;height:100%;width:max-content;gap:28px}
+.sop-scroll-area[data-orientation=horizontal] .scroll-chapter{width:230px;flex:0 0 230px;min-height:0;height:100%;padding:5px 22px 5px 5px;border-bottom:0;border-inline-end:1px solid #a8b9c326;overflow:hidden}
+.sop-scroll-area[data-orientation=horizontal] .scroll-chapter h3{font-size:25px;margin:14px 0 10px}
+.sop-scroll-area[data-orientation=horizontal] .scroll-chapter-end{margin-top:15px}
+.sop-scroll-area[data-orientation=horizontal] .scroll-sample-rule{display:none}
+.scroll-card:has(.sop-ink-scroll) .stage-mount,.scroll-card:has(.sop-accent-scroll) .stage-mount,.scroll-card:has(.sop-editorial-scroll) .stage-mount{background:#eceee9;padding:15px 12px 15px 20px;border-radius:6px;border:1px solid #eee7df}
+.scroll-card:has(.sop-editorial-scroll) .stage-mount{background:#eee9dd}
+.scroll-preview .preview-stage{height:325px;padding:15px 12px 18px 19px}
+.scroll-preview .sop-scroll-area{height:100%;width:100%;--sop-scroll-gutter:38px}
+.scroll-preview .scroll-chapter{padding-inline-end:10px}
+.scroll-preview .scroll-chapter h3{font-size:30px}
+.scroll-preview:has(.sop-ink-scroll) .preview-stage,.scroll-preview:has(.sop-accent-scroll) .preview-stage,.scroll-preview:has(.sop-editorial-scroll) .preview-stage{background:#edece4}
+.scroll-preview-controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:15px 0;font-size:10px;color:#b1bac4}
+.scroll-preview-controls label{display:flex;gap:7px;align-items:center}
+.scroll-preview-controls select{border:1px solid #3b424c;background:#171d25;color:#d8e3eb;padding:7px;border-radius:5px;font-size:10px}
+.scroll-jumps{display:flex;border:1px solid #3b424c;border-radius:5px;overflow:hidden}
+.scroll-jumps button{padding:8px 9px;background:transparent;color:#bacbd1;font-size:10px;border:0}
+.scroll-jumps button:hover{background:#bacbd11a;color:#e2ebe6}
+.scroll-short-copy{font-size:12px;line-height:1.9;padding:12px;color:var(--sop-scroll-ink)}
+@media(max-width:1100px){.category-tabs{gap:17px}.search-box{width:185px}.scroll-card .object-stage{padding-inline:22px}.scroll-card .scroll-chapter h3{font-size:31px}}
+@media(max-width:760px){.collection-toolbar{flex-wrap:wrap;padding:12px 0;gap:14px}.category-tabs{flex:1 1 100%;gap:22px;min-height:40px;justify-content:space-between}.category-tabs button{font-size:11px;gap:6px}.search-box{width:100%}.scroll-card .object-stage{height:315px;padding:20px 18px}.scroll-card .sop-scroll-area{--sop-scroll-gutter:44px}.scroll-chapter{padding-inline-end:10px}.scroll-chapter h3{font-size:30px}.scroll-card .card-bottom h2{font-size:22px}}
+@media(max-width:355px){.category-tabs{gap:10px}.category-tabs button{font-size:10px}.category-tabs small{font-size:8px}.scroll-card .object-stage{padding-inline:17px}.scroll-chapter h3{font-size:28px}}
+@media(forced-colors:active){.scroll-sample{--sop-scroll-ink:CanvasText;--sop-scroll-muted:CanvasText;--sop-scroll-accent:LinkText}}

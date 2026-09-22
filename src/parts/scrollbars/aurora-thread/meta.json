@@ -1,0 +1,60 @@
+{
+  "id": "aurora-thread",
+  "name": "Aurora Thread",
+  "category": "scrollbars",
+  "order": 62,
+  "version": "1.0.0",
+  "tagline": "余白に、オーロラを。",
+  "description": "二本の繊細な光が、色を重ねて静かに流れる。",
+  "material": "AURORA / THREAD",
+  "motion": "SCROLL / DRAG",
+  "accent": "192,160,236",
+  "designType": "A",
+  "runtime": "Native scroll + event-driven DOM",
+  "componentName": "AuroraThreadScrollArea",
+  "tags": [
+    "Aurora Thread",
+    "aurora-thread",
+    "スクロールバー",
+    "スクロール領域",
+    "縦",
+    "横",
+    "scrollbar",
+    "AURORA / THREAD"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "スクロールする中身。展示用コンテンツは含まれません。"
+    ],
+    [
+      "orientation",
+      "'vertical' | 'horizontal'",
+      "縦または横スクロール。初期値はvertical。"
+    ],
+    [
+      "viewportLabel",
+      "string",
+      "内容の領域に付ける読み上げ用ラベル。"
+    ],
+    [
+      "scrollbarLabel",
+      "string",
+      "スクロールバーの読み上げ用ラベル。"
+    ],
+    [
+      "onProgressChange",
+      "(progress: number) => void",
+      "スクロール位置を0〜1で通知します。"
+    ],
+    [
+      "className / style",
+      "HTMLAttributes",
+      "高さはstyleのheightまたは--sop-scroll-heightで調整。横幅は親に合わせます。"
+    ]
+  ]
+}

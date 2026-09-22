@@ -1,0 +1,105 @@
+/* Native scroll area + a visual rail. Apply a skin to this root only; no global reset. */
+.sop-scroll-area {
+  --sop-scroll-height: 260px;
+  --sop-scroll-gutter: 44px;
+  --sop-scroll-width: 12px;
+  --sop-scroll-radius: 18px;
+  --sop-scroll-track: #252b30;
+  --sop-scroll-thumb: #9baab5;
+  --sop-scroll-ink: #e3e6e5;
+  --sop-scroll-muted: #96a2a9;
+  --sop-scroll-accent: #b6dcdf;
+  --sop-scroll-progress: 0;
+  --sop-scroll-percent: 0%;
+  box-sizing: border-box;
+  position: relative;
+  isolation: isolate;
+  inline-size: 100%;
+  block-size: var(--sop-scroll-height);
+  min-inline-size: 0;
+  color: var(--sop-scroll-ink);
+  font: inherit;
+  padding-inline-end: var(--sop-scroll-gutter);
+}
+.sop-scroll-area > .sop-scroll-viewport {
+  box-sizing: border-box;
+  position: relative;
+  inline-size: 100%;
+  block-size: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: auto;
+  scrollbar-color: var(--sop-scroll-thumb) var(--sop-scroll-track);
+  scroll-behavior: auto;
+  touch-action: auto;
+  outline-offset: -3px;
+}
+.sop-scroll-area > .sop-scroll-viewport > .sop-scroll-content { position: relative; display: flow-root; min-inline-size: 0; }
+.sop-scroll-area[data-enhanced=true] > .sop-scroll-viewport { scrollbar-width: none; }
+.sop-scroll-area[data-enhanced=true] > .sop-scroll-viewport::-webkit-scrollbar { display: none; width: 0; height: 0; }
+.sop-scroll-area > .sop-scroll-rail {
+  position: absolute;
+  box-sizing: border-box;
+  inset-block: 0;
+  inset-inline-end: 0;
+  inline-size: var(--sop-scroll-gutter);
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+  outline-offset: 1px;
+  border-radius: 5px;
+}
+.sop-scroll-area:not([data-enhanced=true]) > .sop-scroll-rail,
+.sop-scroll-area > .sop-scroll-rail[hidden] { display: none; }
+.sop-scroll-area > .sop-scroll-rail > .sop-scroll-track {
+  position: absolute; inset-block: 0; left: 50%;
+  inline-size: var(--sop-scroll-width); transform: translateX(-50%);
+  border-radius: var(--sop-scroll-radius); background: var(--sop-scroll-track);
+  box-sizing: border-box; overflow: hidden; pointer-events: none;
+}
+.sop-scroll-area > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill {
+  display: block; position: absolute; inset: 0;
+  background: var(--sop-scroll-accent); transform: scaleY(var(--sop-scroll-progress)); transform-origin: top;
+  opacity: .3; pointer-events: none;
+}
+.sop-scroll-area > .sop-scroll-rail > .sop-scroll-ticks { position: absolute; inset: 0; pointer-events: none; }
+.sop-scroll-area > .sop-scroll-rail > .sop-scroll-thumb {
+  position: absolute; left: 0; top: 0; inline-size: 100%; block-size: var(--sop-thumb-size, 48px);
+  transform: translateY(var(--sop-thumb-offset, 0px)); cursor: grab;
+}
+.sop-scroll-area[data-dragging=true] > .sop-scroll-rail > .sop-scroll-thumb { cursor: grabbing; }
+.sop-scroll-area > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle {
+  position: absolute; box-sizing: border-box; inset-block: 1px;
+  left: 50%; inline-size: var(--sop-handle-width, var(--sop-scroll-width)); transform: translateX(-50%);
+  border-radius: var(--sop-scroll-radius); background: var(--sop-scroll-thumb); pointer-events: none;
+  transition: filter .22s, box-shadow .22s;
+}
+.sop-scroll-area > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip { position: absolute; inset: 0; pointer-events: none; }
+.sop-scroll-area > .sop-scroll-rail > .sop-scroll-cap { position: absolute; left: 50%; width: 3px; height: 3px; transform: translateX(-50%); border-radius: 50%; pointer-events: none; }
+.sop-scroll-area > .sop-scroll-rail > .sop-scroll-cap:nth-last-child(2) { top: 0; }
+.sop-scroll-area > .sop-scroll-rail > .sop-scroll-cap:last-of-type { bottom: 0; }
+.sop-scroll-area > .sop-scroll-rail:hover .sop-scroll-handle,
+.sop-scroll-area[data-dragging=true] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle { filter: brightness(1.14); }
+.sop-scroll-area > .sop-scroll-rail:focus-visible,
+.sop-scroll-area .sop-scroll-viewport:focus-visible { outline: 2px solid var(--sop-scroll-accent); }
+.sop-scroll-area[data-orientation=horizontal] { padding-inline-end: 0; padding-block-end: var(--sop-scroll-gutter); }
+.sop-scroll-area[data-orientation=horizontal] > .sop-scroll-viewport { overflow-x: auto; overflow-y: hidden; }
+.sop-scroll-area[data-orientation=horizontal] > .sop-scroll-viewport > .sop-scroll-content { min-inline-size: max-content; block-size: 100%; }
+.sop-scroll-area[data-orientation=horizontal] > .sop-scroll-rail { inset-block: auto 0; inset-inline: 0; inline-size: 100%; block-size: var(--sop-scroll-gutter); }
+.sop-scroll-area[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-track { inset-block: 50% auto; inset-inline: 0; left: 0; inline-size: 100%; block-size: var(--sop-scroll-width); transform: translateY(-50%); }
+.sop-scroll-area[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-thumb { width: var(--sop-thumb-size, 48px); height: 100%; transform: translateX(var(--sop-thumb-offset, 0px)); }
+.sop-scroll-area[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle { inset-block: 50% auto; inset-inline: 1px; left: 1px; inline-size: auto; block-size: var(--sop-handle-width, var(--sop-scroll-width)); transform: translateY(-50%); }
+.sop-scroll-area[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill { transform: scaleX(var(--sop-scroll-progress)); transform-origin: left; }
+.sop-scroll-area[data-orientation=horizontal]:dir(rtl) > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill { transform-origin: right; }
+.sop-scroll-area[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-cap { display: none; }
+@media (pointer: coarse) { .sop-scroll-area { --sop-scroll-gutter: 44px; } }
+@media (prefers-reduced-motion: reduce) {
+  .sop-scroll-area *, .sop-scroll-area *::before, .sop-scroll-area *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+@media (forced-colors: active) {
+  .sop-scroll-area { padding: 0; color: CanvasText; }
+  .sop-scroll-area[data-enhanced=true] > .sop-scroll-viewport { scrollbar-width: auto; scrollbar-color: auto; }
+  .sop-scroll-area[data-enhanced=true] > .sop-scroll-viewport::-webkit-scrollbar { display: block; width: auto; height: auto; }
+  .sop-scroll-area > .sop-scroll-rail { display: none; }
+}

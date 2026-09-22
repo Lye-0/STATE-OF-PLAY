@@ -1,0 +1,6 @@
+@import "../../../shared/scrollbar-base.css";
+/* Minimal Scroll — ESSENTIAL / NEUTRAL / B */
+
+.sop-scroll-area.sop-minimal-scroll{--sop-scroll-gutter:32px;--sop-scroll-width:6px;--sop-scroll-track:#84939e26;--sop-scroll-thumb:#abb9c1;--sop-scroll-accent:#c4dae5;--sop-scroll-radius:8px}
+.sop-scroll-area.sop-minimal-scroll > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{display:none}
+.sop-scroll-area.sop-minimal-scroll > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{border:1px solid #d4e0e12b}

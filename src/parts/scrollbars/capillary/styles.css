@@ -1,0 +1,9 @@
+@import "../../../shared/scrollbar-base.css";
+/* Capillary — GLASS / CAPILLARY / A */
+
+.sop-scroll-area.sop-capillary {--sop-scroll-width:20px;--sop-scroll-accent:#a2f2df;--sop-scroll-thumb:#87d6d8;--sop-scroll-track:#112329}
+.sop-scroll-area.sop-capillary > .sop-scroll-rail > .sop-scroll-track{background:linear-gradient(90deg,#d7ffff40,#17465270 22%,#08171c 45%,#85dfe732 80%,#d0ffff66);border:1px solid #9de9ed66;box-shadow:inset 2px 0 3px #cff9ff33,0 4px 12px #0008}
+.sop-scroll-area.sop-capillary > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{opacity:.75;background:linear-gradient(0deg,#d8fff5,#70e1dc 50%,#46aab444);box-shadow:0 0 15px #90ffe8;filter:blur(1px)}
+.sop-scroll-area.sop-capillary > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:26px;border-radius:30px;background:radial-gradient(ellipse at 20% 20%,#fffefea8,transparent 25%),linear-gradient(90deg,#c4ffff99,#579dae55 32%,#9cf7e582 80%,#e2fffaca);border:1px solid #c7ffefd6;box-shadow:inset 2px 0 2px #f0fffc,1px 4px 9px #0009,0 0 16px #97ffe832}
+.sop-scroll-area.sop-capillary > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{inset:8px 5px;border-top:1px solid #e0fffc;border-bottom:1px solid #aaf8e9;border-radius:20px}
+.sop-scroll-area.sop-capillary > .sop-scroll-rail > .sop-scroll-ticks{background:radial-gradient(circle at 50% 28%,#cfffff80 0 1px,transparent 2px),radial-gradient(circle at 50% 76%,#cfffff50 0 2px,transparent 3px)}

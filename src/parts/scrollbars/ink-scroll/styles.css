@@ -1,0 +1,6 @@
+@import "../../../shared/scrollbar-base.css";
+/* Ink Scroll — ESSENTIAL / INK / B */
+
+.sop-scroll-area.sop-ink-scroll{--sop-scroll-gutter:32px;--sop-scroll-width:8px;--sop-scroll-track:#d8d9d5;--sop-scroll-thumb:#343a39;--sop-scroll-accent:#4b5558;--sop-scroll-radius:3px;--sop-scroll-ink:#303836;--sop-scroll-muted:#6b746f}
+.sop-scroll-area.sop-ink-scroll > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{display:none}
+.sop-scroll-area.sop-ink-scroll > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{border:1px solid #1f2524}

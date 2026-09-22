@@ -1,58 +1,95 @@
 {
-  "version": "3.2.0",
+  "version": "3.3.0",
   "date": "2026-09-22",
   "parts": {
     "toggles": 24,
     "blocks": 24,
-    "total": 48,
-    "A": 33,
-    "B": 15
+    "scrollbars": 24,
+    "total": 72
   },
-  "unitTests": {
-    "passed": 46,
+  "new_scrollbars": {
+    "A": 16,
+    "B": 8
+  },
+  "unchanged_existing_component_files": 480,
+  "app_typecheck": "passed",
+  "unit_tests": {
+    "passed": 53,
     "failed": 0
   },
-  "browserTests": {
+  "regression": {
+    "mode": "network-restricted adapter; Vite not executed",
+    "react": "real installed browser runtime; production",
     "passed": 21,
-    "pageErrors": 0,
-    "transport": "explicit offline adapter, actual Chromium, NOT Vite or HTTP"
-  },
-  "sourceDisplays": 2464,
-  "zipCombinations": 768,
-  "relocation": {
-    "projects": 6,
-    "partsPerProject": 48,
-    "mounts": 288,
-    "transport": "native ESM in synthetic documents"
-  },
-  "additionalVisualAudit": {
-    "widths": [
-      320,
-      390,
-      768
+    "tests": [
+      "Gallery: 72 parts, no runtime errors",
+      "A/B and category filters intersect, counts remain correct, and search resets cleanly",
+      "Liquid, Fold, Prism have intrinsic opposite state labels and distinct optical treatment",
+      "Compact B switches retain real sizes, native keyboard and drag states",
+      "Toggle and drag do not open details",
+      "Detail: code, hierarchical tree, full path, download before copy",
+      "Copy: success only after write, exact string and visible feedback",
+      "Denied clipboard: manual fallback, no false success, focus restored",
+      "Selected source download matches the original file bytes",
+      "Focus trap / Escape / restoration to gallery trigger",
+      "Both layouts: all 4000 code previews equal exported sources and selection follows the source identity",
+      "Downloaded ZIP and CLI share exact files, README, prompt, manifest in both layouts and modes",
+      "Guide and AI prompt remain copyable in every export format",
+      "Mobile 320/390/768: no overflow, usable code and file picker",
+      "Disabled and reduced-motion states remain functional",
+      "All standalone HTML/CSS/JS previews run without gallery assets",
+      "All native JS exports run with their real imports, in both layouts",
+      "React TSX / portable: all actual exports, controlled/uncontrolled/disabled, cleanup",
+      "React JSX / portable: all actual exports, controlled/uncontrolled/disabled, cleanup",
+      "React TSX / original: all actual exports, controlled/uncontrolled/disabled, cleanup",
+      "React JSX / original: all actual exports, controlled/uncontrolled/disabled, cleanup"
     ],
-    "all48CardBounds": true,
-    "detailCases": 18,
-    "stateScreenshots": 6
+    "errors": []
   },
-  "typecheck": {
-    "app": "passed",
-    "toolsSubset": "passed",
-    "fullReactAndViteTypes": "not run"
+  "scrollbar_interaction": {
+    "mode": "offline documents, real Chromium; HTTP/Vite not verified",
+    "passed": 12,
+    "tests": [
+      "new category intersects A/B and retains all 48 original parts",
+      "all 24 rails use proportional thumbs, real drag, keyboard and stable content movement",
+      "wheel and viewport keyboard remain native; interactive content retains clicks",
+      "detail has scroll controls instead of ON/OFF; track clicking pages the actual content",
+      "short content hides rail; content mutations and resize update metrics",
+      "horizontal orientation and RTL preserve physical endpoint/ARIA alignment",
+      "touch swipe moves native content without requiring the custom rail",
+      "forced colors uses native scrollbars and returns cleanly to the custom rail",
+      "code, guide, prompt and both directory layouts are wired for new parts",
+      "nested scroll areas retain their own skin and orientation",
+      "all 24 cards and detail controls fit at 320/390/768px without page overflow",
+      "24 static rails stop work at rest and have unique controlled viewport identifiers"
+    ],
+    "errors": []
   },
-  "environment": {
-    "node": "22.16.0",
-    "typescript": "5.8.3",
-    "chromium": "144.0.7559.96",
-    "playwright": "1.57.0-beta-1764944708000",
-    "react": "18.2.0 production (installed JupyterLab distribution; test only)"
+  "scrollbar_react": {
+    "mode": "synthetic document, actual installed React production runtime (not Vite)",
+    "tests": [
+      "tsx: 24 parts, 48 independent instances, progress callbacks, React orientation/content updates, child actions, unique IDs, repeated cleanup",
+      "jsx: 24 parts, 48 independent instances, progress callbacks, React orientation/content updates, child actions, unique IDs, repeated cleanup"
+    ],
+    "errors": []
+  },
+  "relocation": {
+    "transport": "explicit synthetic document + native ESM import map (NOT HTTP)",
+    "results": [
+      "consumer-0-portable",
+      "consumer-0-original",
+      "consumer-1-portable",
+      "consumer-1-original",
+      "consumer-2-portable",
+      "consumer-2-original"
+    ],
+    "errors": []
   },
   "limitations": [
-    "npm registry DNS unavailable; pinned dependencies not freshly installed or audited",
-    "local HTTP navigation blocked by administrator; no policy modifications",
-    "Vite build/HMR/production subpath untested",
-    "full official React/Vite typecheck untested",
-    "Windows Explorer/MOTW/Defender and iOS Safari not tested",
-    "clipboard success and denial simulated for UI/data checks"
-  ]
+    "npm registry unavailable: dependency installation, audit and lockfile generation not verified",
+    "HTTP navigation blocked by administrator policy: browser tests are explicitly offline synthetic documents, not Vite build/HMR/HTTP proof",
+    "Actual React 18.2.0 production used for browser tests; development StrictMode and official React/Vite static types not verified",
+    "Windows security dialogs, macOS/iOS/Safari and real touch hardware not tested"
+  ],
+  "archive_integrity": "RELEASE-MANIFEST.json contains SHA-256 for every packaged author file; package script rereads archive CRC and hashes."
 }

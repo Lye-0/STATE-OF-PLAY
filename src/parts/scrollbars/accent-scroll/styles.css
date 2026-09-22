@@ -1,0 +1,6 @@
+@import "../../../shared/scrollbar-base.css";
+/* Accent Scroll — ESSENTIAL / BLUE / B */
+
+.sop-scroll-area.sop-accent-scroll{--sop-scroll-gutter:32px;--sop-scroll-width:8px;--sop-scroll-track:#dce6f0;--sop-scroll-thumb:#517cc1;--sop-scroll-accent:#486ea4;--sop-scroll-radius:6px;--sop-scroll-ink:#2e3c4a;--sop-scroll-muted:#6b7b8b}
+.sop-scroll-area.sop-accent-scroll > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{background:#91afe0;opacity:.4}
+.sop-scroll-area.sop-accent-scroll > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{border:1px solid #3e6aa5}

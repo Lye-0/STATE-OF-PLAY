@@ -1,0 +1,7 @@
+@import "../../../shared/scrollbar-base.css";
+/* Soft Scroll — ESSENTIAL / SOFT / B */
+
+.sop-scroll-area.sop-soft-scroll{--sop-scroll-gutter:34px;--sop-scroll-width:11px;--sop-scroll-track:#39323d;--sop-scroll-thumb:#c5b2c9;--sop-scroll-accent:#dccde3;--sop-scroll-radius:12px}
+.sop-scroll-area.sop-soft-scroll > .sop-scroll-rail > .sop-scroll-track{box-shadow:inset 0 1px 3px #0006}
+.sop-scroll-area.sop-soft-scroll > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{background:linear-gradient(90deg,#ab96b2,#d1c3d9);box-shadow:0 1px 4px #0004}
+.sop-scroll-area.sop-soft-scroll > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{display:none}

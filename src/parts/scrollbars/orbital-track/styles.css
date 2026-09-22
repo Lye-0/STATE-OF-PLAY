@@ -1,0 +1,9 @@
+@import "../../../shared/scrollbar-base.css";
+/* Orbital Track — ORBITAL / FIELD / A */
+
+.sop-scroll-area.sop-orbital-track{--sop-scroll-width:4px;--sop-scroll-accent:#c5d0ff;--sop-scroll-thumb:#839bc9;--sop-scroll-track:#505c854f}
+.sop-scroll-area.sop-orbital-track > .sop-scroll-rail > .sop-scroll-track{overflow:visible;box-shadow:-9px 0 0 -1px #687da243,9px 0 0 -1px #687da243}
+.sop-scroll-area.sop-orbital-track > .sop-scroll-rail > .sop-scroll-ticks{border:1px solid #8d9bc035;border-radius:50%;inset-inline:5px;box-shadow:inset 0 0 9px #8ba7e50c}
+.sop-scroll-area.sop-orbital-track > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{opacity:.6;background:#a5bde2}
+.sop-scroll-area.sop-orbital-track > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:30px;background:linear-gradient(#24304a,#6984ad 15%,#bfcce1 30%,#48628f 55%,#0b1931);border:1px solid #a6c3e2a3;border-radius:50%;box-shadow:inset 2px 0 3px #dfeeff99,2px 4px 8px #0009}
+.sop-scroll-area.sop-orbital-track > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{inset:50% -7px auto;height:10px;transform:translateY(-50%) rotate(-20deg);border:1px solid #c6cbde;border-radius:50%;box-shadow:0 1px 3px #111827}

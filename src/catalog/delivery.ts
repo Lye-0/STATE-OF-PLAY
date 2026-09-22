@@ -59,7 +59,7 @@ export function buildPrompt(part: Part, format: Format, layout: Layout, includeC
   return `# ${part.name} を既存プロジェクトに組み込む\n\n参照: STATE OF PLAY / ${part.id} / v${part.version}\n出力形式: ${FORMATS[format].label}\n配布構成: ${LAYOUTS[layout].label} (${layout})\nデザイン: ${DESIGN_TYPES[part.designType].label}\n実装: ${part.runtime}\n${DESIGN_TYPES[part.designType].note} 意図した装飾量・実寸・軽さを維持し、Bタイプに不要な常時アニメーションを追加しないでください。\n\n${INTEGRATION_RULES}\n\n## 配置の起点\n${placementText(d)}\n入口: ${d.entry}\n外部依存: ${d.externalDependencies.join(', ')||'なし'}\n\n## 固有の再現仕様\n${part.prompt.trim()}\n\n## 利用方法\n${buildUsage(part,format,layout)}`+
     (includeCode ? '\n\n## 正本のソースコード\n見出しは配布ルートからの相対パスです。共通処理も含みます。参照実装は外観・動作の正本ですが、配置は上記ルールに従って適応させます。\n'+
       d.files.map(f=>`\n### ${f.name}\n用途: ${f.group==='example'?'参考用の使用例（アプリ入口に上書きしない）':f.group==='shared'?'本体が必要とする補助処理':'パーツ本体'}\n${fence(f.code,f.language)}`).join('\n') :
-      '\n\n## 文章のみの再現について\nソース本文はこの形式には含みません。完全一致は保証できません。参照コードを利用可能なら確認し、寸法・素材・ON/OFF・ホバー途中を比較してください。\n');
+      '\n\n## 文章のみの再現について\nソース本文はこの形式には含みません。完全一致は保証できません。参照コードを利用可能なら確認し、寸法・素材・各操作状態と変化の途中を比較してください。\n');
 }
 export function buildManifest(part: Part, format: Format, layout: Layout): string {
   const d=getDelivery(part,format,layout);

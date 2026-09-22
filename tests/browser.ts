@@ -7,7 +7,7 @@ import type { Browser, Page } from 'playwright';
 import { ROOT, buildCatalog, FORMATS } from '../scripts/catalog.ts';
 import { getDelivery, buildPrompt, buildUsage, packageRoot, packageContents } from '../src/catalog/delivery.ts';
 import { JSZip } from '../scripts/zip.ts';
-import { offlineFiles, testBundle } from './offline-fixture.ts';
+import { offlineFiles, testBundle, inlineTestCSS } from './offline-fixture.ts';
 import { resolveLocal } from '../scripts/source-tools.ts';
 const require=createRequire(import.meta.url);
 const {chromium}=require(process.env.PLAYWRIGHT_PATH??'playwright') as typeof import('playwright');
@@ -44,7 +44,7 @@ try{
   const styles=[...html.matchAll(/<link\b[^>]*rel="stylesheet"[^>]*href="([^"]+)"[^>]*>/g)].map(m=>path.posix.resolve(directory,m[1]));
   const scripts=[...html.matchAll(/<script\b([^>]*?)src="([^"]+)"[^>]*><\/script>/g)].map(m=>({name:path.posix.resolve(directory,m[2]),module:m[1].includes('module')}));
   await page.setContent(html.replace(/<script\b[^>]*src="[^"]+"[^>]*><\/script>/g,'').replace(/<link\b[^>]*rel="stylesheet"[^>]*>/g,''));
-  for(const file of styles)await page.addStyleTag({content:read(file)});
+  for(const file of styles)await page.addStyleTag({content:inlineTestCSS(file,read)});
   for(const script of scripts){
    if(!script.module){await page.addScriptTag({content:read(script.name)});continue;}
    // Execute actual exported JS as native ESM, using blob URLs only for transport in this offline test.
@@ -73,7 +73,7 @@ try{
  await load();
  await run(`Gallery: ${catalog.parts.length} parts, no runtime errors`,async()=>{assert.equal(await page.locator('[data-part]').count(),catalog.parts.length);assert.deepEqual(errors,[]);});
  await run('A/B and category filters intersect, counts remain correct, and search resets cleanly',async()=>{
-  for(const category of ['all','toggles','blocks']){
+  for(const category of ['all','toggles','blocks','scrollbars']){
    await page.locator(`[data-category="${category}"]`).click();
    for(const kind of ['A','B','all']){
     await page.locator(`[data-design-filter="${kind}"]`).click();
@@ -167,6 +167,7 @@ try{
      for(let i=0;i<rendered.length;i++){assert.equal(normalize(rendered[i]),normalize(d.files[i].code),`${part.id}/${format}/${layout}/${i}`);count++;}
     }
    }await page.locator('.close-detail').click();
+   console.log('  verified '+part.id+'; '+count+' sources');
   }assert.equal(count,catalog.parts.reduce((n,p)=>n+Object.values(p.files).flat().length*2,0));
   await page.locator('[data-open="chrome"]').click();await page.locator('[data-format="tsx"]').click();await page.locator('#export-layout').selectOption('portable');
   await page.locator('[data-file="chrome-toggle/internal/motion.ts"]').click();await page.locator('#export-layout').selectOption('original');assert.equal(await page.locator('.current-path').textContent(),'src/shared');
@@ -212,6 +213,7 @@ try{
  });
  await run('All native JS exports run with their real imports, in both layouts',async()=>{
   for(const part of catalog.parts)for(const layout of layouts){const d=getDelivery(part,'js',layout);const entry=d.files.find(f=>f.name.endsWith('/index.html'))!;await load(`/.test-output/exports/${part.id}/${layout}/js/${entry.name}`);const element=page.locator('.sop-'+part.id).first();await element.waitFor();assert.ok((await element.boundingBox())!.width>0);
+   if(part.category==='scrollbars'){const rail=element.locator('.sop-scroll-rail');await rail.waitFor({state:'visible'});await rail.focus();await page.keyboard.press('End');await page.waitForFunction(id=>document.querySelector('.sop-'+id+' .sop-scroll-rail')?.getAttribute('aria-valuenow')==='100',part.id);}
    if(part.category==='toggles'){const before=await element.getAttribute('aria-checked');await element.click();assert.notEqual(await element.getAttribute('aria-checked'),before);}
   }
  });

@@ -1,0 +1,8 @@
+@import "../../../shared/scrollbar-base.css";
+/* Lacquer — LACQUER / VERMILION / A */
+
+.sop-scroll-area.sop-lacquer-scroll{--sop-scroll-width:16px;--sop-scroll-radius:20px;--sop-scroll-accent:#e4b68a;--sop-scroll-thumb:#c75945;--sop-scroll-track:#151210}
+.sop-scroll-area.sop-lacquer-scroll > .sop-scroll-rail > .sop-scroll-track{background:linear-gradient(90deg,#54382f,#130f0e 15%,#30201c 80%,#755742);border:1px solid #9a785442;box-shadow:inset 0 2px 9px #000}
+.sop-scroll-area.sop-lacquer-scroll > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{background:#a47a48;opacity:.35}
+.sop-scroll-area.sop-lacquer-scroll > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:25px;border-radius:20px;background:linear-gradient(100deg,#77392e,#d1745c 15%,#e7957a 25%,#b14e3a 54%,#8c302b 80%,#bd6f5d);box-shadow:1px 4px 8px #000b,inset 1px 0 2px #f3be945e;border:1px solid #efb07588}
+.sop-scroll-area.sop-lacquer-scroll > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{inset:45% 0 auto;height:3px;background:linear-gradient(90deg,#8b6b3a,#e3c18a,#806535);box-shadow:0 1px 1px #32190e}

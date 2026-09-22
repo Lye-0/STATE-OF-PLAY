@@ -5,11 +5,13 @@ import ts from 'typescript';
 import { ROOT, buildCatalog, mountModule } from '../scripts/catalog.ts';
 import { resolveLocal, transpile } from '../scripts/source-tools.ts';
 export function testBundle(entry: string, extras: Map<string,string> = new Map(), runtimeImport = ''): string {
- const catalog=buildCatalog();
- const virtual=new Map<string,string>([
-  ['virtual:sop-catalog','export default '+JSON.stringify(catalog.parts)+';'],
-  ['virtual:sop-mounts',mountModule(catalog.bases)], ['virtual:sop-styles','']
- ]);
+ const virtual=new Map<string,string>();
+ if (entry === 'src/main.ts') {
+  const catalog=buildCatalog();
+  virtual.set('virtual:sop-catalog','export default '+JSON.stringify(catalog.parts)+';');
+  virtual.set('virtual:sop-mounts',mountModule(catalog.bases));
+  virtual.set('virtual:sop-styles','');
+ }
  const modules=new Map<string,string>();
  const exists=(file:string)=>extras.has(file)||fs.existsSync(path.join(ROOT,file));
  const visit=(id:string):string=>{
@@ -37,6 +39,14 @@ export function offlineFiles(): Map<string,string> {
  html=html.replace('<script type="module" src="/src/main.ts"></script>','<script src="/test-app.js" defer></script>');
  html=html.replace('</head>','<link rel="stylesheet" href="/test-styles.css"></head>');
  files.set('/index.html',html);files.set('/test-app.js',testBundle('src/main.ts'));
- files.set('/test-styles.css',data.styles+'\n'+fs.readFileSync(path.join(ROOT,'src/app/gallery.css'),'utf8'));
+ files.set('/test-styles.css',data.styles+'\n'+fs.readFileSync(path.join(ROOT,'src/app/gallery.css'),'utf8')+'\n'+fs.readFileSync(path.join(ROOT,'src/app/scroll-samples.css'),'utf8'));
  return files;
+}
+
+/** Resolve only authored local CSS imports for synthetic documents; real HTTP uses the browser. */
+export function inlineTestCSS(file: string, read: (path: string) => string, seen = new Set<string>()): string {
+ if (seen.has(file)) throw new Error(`Circular CSS import in fixture: ${file}`);
+ const next = new Set(seen); next.add(file);
+ return read(file).replace(/@import\s+["']([^"']+)["']\s*;/g, (_, request: string) =>
+   inlineTestCSS(path.posix.resolve(path.posix.dirname(file), request), read, next));
 }

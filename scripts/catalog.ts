@@ -1,4 +1,5 @@
 /** Pure, in-memory catalogue generation. No packages/ tree, no writes under src/. */
+import { scrollSampleHTML } from '../src/catalog/scroll-sample.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -12,17 +13,24 @@ export interface CatalogBuild { parts: Part[]; bases: string[]; styles: string; 
 const html = (value: string) => value.replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]!));
 
 export function buildCatalog(root = ROOT): CatalogBuild {
-  const read = (name: string): string => { validateArchivePath(name); return fs.readFileSync(path.join(root, name), 'utf8'); };
+  const inputCache = new Map<string,string>();
+  const read = (name: string): string => { validateArchivePath(name); if (!inputCache.has(name)) inputCache.set(name,fs.readFileSync(path.join(root, name), 'utf8')); return inputCache.get(name)!; };
   const exists = (name: string) => fs.existsSync(path.join(root, name));
   const bases: unknown = JSON.parse(read('src/catalog/registry.json'));
-  if (!Array.isArray(bases) || !bases.every((base): base is string => typeof base === 'string' && /^src\/parts\/(toggles|blocks)\/[a-z0-9-]+$/.test(base)))
+  if (!Array.isArray(bases) || !bases.every((base): base is string => typeof base === 'string' && /^src\/parts\/(toggles|blocks|scrollbars)\/[a-z0-9-]+$/.test(base)))
     throw new Error('registry.json must contain valid component directories.');
+  function bundledCSS(source: string, visited = new Set<string>()): string {
+    if (visited.has(source)) return '';
+    visited.add(source);
+    return read(source).replace(/@import\s+["']([^"']+)["']\s*;/g, (_, request: string) =>
+      bundledCSS(resolveLocal(source, request, exists), visited));
+  }
   const seen = new Set<string>();
   const parts = bases.map(base => {
     const meta = JSON.parse(read(`${base}/meta.json`)) as Omit<Part,'files'|'portableFiles'|'preview'|'markup'|'usage'|'prompt'>;
     if (!/^[a-z][a-z0-9-]*$/.test(meta.id) || seen.has(meta.id)) throw new Error(`Invalid/duplicate part ID: ${meta.id}`);
     if (!['A','B'].includes(meta.designType) || typeof meta.runtime !== 'string') throw new Error(`Invalid design type/runtime: ${base}`);
-    if (!['toggles','blocks'].includes(meta.category) || !Number.isFinite(meta.order) || !Array.isArray(meta.props) || !Array.isArray(meta.tags))
+    if (!['toggles','blocks','scrollbars'].includes(meta.category) || !Number.isFinite(meta.order) || !Array.isArray(meta.props) || !Array.isArray(meta.tags))
       throw new Error(`Invalid metadata: ${base}`);
     if (meta.category === 'toggles' && (!meta.config || typeof meta.initial !== 'boolean')) throw new Error(`Missing toggle configuration: ${base}`);
     if (base.split('/').at(-1) !== meta.id || !/^[A-Z][A-Za-z0-9]*$/.test(meta.componentName)) throw new Error(`Invalid component identity: ${base}`);
@@ -63,16 +71,18 @@ export function buildCatalog(root = ROOT): CatalogBuild {
     let demoMarkup = markup;
     if (meta.category === 'blocks') demoMarkup = demoMarkup.replace(/<div class="sop-surface-content">[\s\S]*?<\/div>/,
       `<div class="sop-surface-content"><h2>${html(meta.name)}</h2><p>ここに、あなたのコンテンツを。</p><button type="button">サンプルボタン</button></div>`);
-    const hint = meta.category === 'toggles' ? 'クリック・ドラッグ・キーボードで操作できます。' : '中身を自由に入れ替えられる、独立した背景パーツです。';
+    if (meta.category === 'scrollbars') demoMarkup = demoMarkup.replace('<!-- slot: insert your scrollable content -->', scrollSampleHTML(meta));
+    const hint = meta.category === 'toggles' ? 'クリック・ドラッグ・キーボードで操作できます。' : meta.category === 'scrollbars' ? 'ホイール・スワイプ・レールのドラッグで読み進められます。' : '中身を自由に入れ替えられる、独立した背景パーツです。';
     const preview = {
       'index.html': `<!doctype html>\n<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${html(meta.name)} — standalone demo</title><link rel="stylesheet" href="./styles.css"></head><body><main><h1>${html(meta.name)} · ${html(meta.version)}</h1><div class="demo-root">${demoMarkup}</div><p class="hint">${hint}</p></main><script src="./app.js" defer></script></body></html>\n`,
-      'styles.css': read('scripts/templates/demo.css') + read(`${base}/styles.css`),
+      'styles.css': read('scripts/templates/demo.css') + (meta.category === 'scrollbars' ? read('src/app/scroll-samples.css') : '') + bundledCSS(`${base}/styles.css`),
       'app.js': bundleDemo(root, `${base}/demo/main.ts`, read('scripts/templates/demo-entry.ts.txt'))
     };
     return {...meta, markup, usage: read(`${base}/usage.md`), prompt: read(`${base}/prompt.md`), files, portableFiles, preview};
   }).sort((a, b) => a.order - b.order);
   for (const part of parts) for (const id of part.related) if (!seen.has(id)) throw new Error(`Unknown related part: ${id}`);
-  return {parts, bases, styles: bases.map(base => read(`${base}/styles.css`)).join('\n')};
+  const styleSeen = new Set<string>();
+  return {parts, bases, styles: bases.map(base => bundledCSS(`${base}/styles.css`,styleSeen)).join('\n')};
 }
 
 export function mountModule(bases: string[]): string {

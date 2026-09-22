@@ -1,0 +1,60 @@
+{
+  "id": "ember-rail",
+  "name": "Ember Rail",
+  "category": "scrollbars",
+  "order": 56,
+  "version": "1.0.0",
+  "tagline": "指先から、熱を。",
+  "description": "炭のような黒い軌道に、橙色の熱がともる。",
+  "material": "CARBON / HEAT",
+  "motion": "SCROLL / DRAG",
+  "accent": "244,158,94",
+  "designType": "A",
+  "runtime": "Native scroll + event-driven DOM",
+  "componentName": "EmberRailScrollArea",
+  "tags": [
+    "Ember Rail",
+    "ember-rail",
+    "スクロールバー",
+    "スクロール領域",
+    "縦",
+    "横",
+    "scrollbar",
+    "CARBON / HEAT"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "スクロールする中身。展示用コンテンツは含まれません。"
+    ],
+    [
+      "orientation",
+      "'vertical' | 'horizontal'",
+      "縦または横スクロール。初期値はvertical。"
+    ],
+    [
+      "viewportLabel",
+      "string",
+      "内容の領域に付ける読み上げ用ラベル。"
+    ],
+    [
+      "scrollbarLabel",
+      "string",
+      "スクロールバーの読み上げ用ラベル。"
+    ],
+    [
+      "onProgressChange",
+      "(progress: number) => void",
+      "スクロール位置を0〜1で通知します。"
+    ],
+    [
+      "className / style",
+      "HTMLAttributes",
+      "高さはstyleのheightまたは--sop-scroll-heightで調整。横幅は親に合わせます。"
+    ]
+  ]
+}

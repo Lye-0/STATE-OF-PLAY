@@ -1,0 +1,9 @@
+@import "../../../shared/scrollbar-base.css";
+/* Moiré Rail — OPTICAL / INTERFERENCE / A */
+
+.sop-scroll-area.sop-moire-rail{--sop-scroll-width:22px;--sop-scroll-radius:2px;--sop-scroll-accent:#d6d6ea;--sop-scroll-thumb:#d1d5e0}
+.sop-scroll-area.sop-moire-rail > .sop-scroll-rail > .sop-scroll-track{background:repeating-linear-gradient(35deg,#151922 0 3px,#b7b9c83d 3px 4px);border:1px solid #b5bac348}
+.sop-scroll-area.sop-moire-rail > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{opacity:.3;background:#7b80aa}
+.sop-scroll-area.sop-moire-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:28px;background:repeating-linear-gradient(-35deg,#f1edf18c 0 1px,#12151b 1px 4px);border:1px solid #d4d6e4;border-radius:2px;box-shadow:0 3px 9px #0008}
+.sop-scroll-area.sop-moire-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{inset:0;mix-blend-mode:screen;background:repeating-linear-gradient(35deg,transparent 0 4px,#fcf2ff7a 4px 5px);background-position:0 calc(var(--sop-scroll-progress)*60px)}
+.sop-scroll-area.sop-moire-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle:after{content:'';position:absolute;inset:50% 5px auto;height:2px;background:#f9eafb;box-shadow:0 0 4px #ddd9ff}

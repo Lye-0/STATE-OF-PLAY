@@ -47,12 +47,16 @@ test('different components keep dedicated internal folders even when helper name
  assert.ok(paths.some(p=>p==='chrome-toggle/internal/motion.ts'));
  assert.ok(paths.some(p=>p==='liquid-toggle/internal/motion.ts'));
 });
-test('both layouts retain exact original CSS and HTML art and map source identity across formats',()=>{
+test('both layouts retain CSS/art except intentional local-reference relocation',()=>{
+ const normalizeReferences = (code:string,name:string) => {
+   for(const ref of sourceReferences(code,name).sort((a,b)=>b.start-a.start)) code=code.slice(0,ref.start)+'<local-reference>'+code.slice(ref.end);
+   return code;
+ };
  for(const p of parts) for(const format of FORMATS){
   const a=getDelivery(p,format,'original'),b=getDelivery(p,format,'portable');
   for(const original of a.files){
    const portable=b.files.find(f=>f.sourceName===original.sourceName)!;assert.ok(portable);
-   if(/\/(?:styles.css|markup.html)$/.test(original.name))assert.equal(portable.code,fs.readFileSync(path.join(ROOT,original.sourceName),'utf8'));
+   if(/\/(?:styles.css|markup.html)$/.test(original.name))assert.equal(normalizeReferences(portable.code,portable.name),normalizeReferences(fs.readFileSync(path.join(ROOT,original.sourceName),'utf8'),original.sourceName));
   }
  }
 });

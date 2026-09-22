@@ -1,0 +1,60 @@
+{
+  "id": "orbital-track",
+  "name": "Orbital Track",
+  "category": "scrollbars",
+  "order": 59,
+  "version": "1.0.0",
+  "tagline": "重力を、なぞる。",
+  "description": "環に支えられた小さな天体が、軌道を移動する。",
+  "material": "ORBITAL / FIELD",
+  "motion": "SCROLL / DRAG",
+  "accent": "161,181,240",
+  "designType": "A",
+  "runtime": "Native scroll + event-driven DOM",
+  "componentName": "OrbitalTrackScrollArea",
+  "tags": [
+    "Orbital Track",
+    "orbital-track",
+    "スクロールバー",
+    "スクロール領域",
+    "縦",
+    "横",
+    "scrollbar",
+    "ORBITAL / FIELD"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "スクロールする中身。展示用コンテンツは含まれません。"
+    ],
+    [
+      "orientation",
+      "'vertical' | 'horizontal'",
+      "縦または横スクロール。初期値はvertical。"
+    ],
+    [
+      "viewportLabel",
+      "string",
+      "内容の領域に付ける読み上げ用ラベル。"
+    ],
+    [
+      "scrollbarLabel",
+      "string",
+      "スクロールバーの読み上げ用ラベル。"
+    ],
+    [
+      "onProgressChange",
+      "(progress: number) => void",
+      "スクロール位置を0〜1で通知します。"
+    ],
+    [
+      "className / style",
+      "HTMLAttributes",
+      "高さはstyleのheightまたは--sop-scroll-heightで調整。横幅は親に合わせます。"
+    ]
+  ]
+}

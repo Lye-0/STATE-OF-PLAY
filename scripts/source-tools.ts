@@ -5,11 +5,17 @@ import ts from 'typescript';
 import { validateArchivePath } from '../src/shared/archive.ts';
 import type { Format } from '../src/catalog/types.ts';
 
+const transpileCache = new Map<string,string>();
 export function transpile(code: string, filename: string, module = ts.ModuleKind.ESNext, jsx = ts.JsxEmit.Preserve): string {
+  const cacheKey = JSON.stringify([filename,module,jsx,code]);
+  const cached = transpileCache.get(cacheKey); if (cached !== undefined) return cached;
+
   const result = ts.transpileModule(code, { fileName: filename, reportDiagnostics: true,
     compilerOptions: { target: ts.ScriptTarget.ES2022, module, jsx, esModuleInterop: true, newLine: ts.NewLineKind.LineFeed } });
   const errors = result.diagnostics?.filter(d => d.category === ts.DiagnosticCategory.Error) ?? [];
   if (errors.length) throw new Error(errors.map(d => ts.flattenDiagnosticMessageText(d.messageText, '\n')).join('\n'));
+  if (transpileCache.size >= 4096) transpileCache.delete(transpileCache.keys().next().value!);
+  transpileCache.set(cacheKey,result.outputText);
   return result.outputText;
 }
 

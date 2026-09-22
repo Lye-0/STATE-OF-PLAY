@@ -91,3 +91,29 @@ Windowsの入手元判定や保護機能を変更・回避するものではあ�
 
 個別の「ファイルを保存」はブラウザーの通常ダウンロードで1ファイルだけを取得します。
 内部の相対パスを記録したまま複数のファイルを持ち込む場合はZIPを使ってください。
+
+## スクロールバーの導入
+
+スクロールバーは、既存の領域を包むコンポーネントです。サンプルの文章やギャラリーのカードを一緒に本番画面へ貼る必要はありません。
+
+```tsx
+<CapillaryScrollArea
+  orientation="vertical"
+  viewportLabel="通知の一覧"
+  scrollbarLabel="通知のスクロール位置"
+  style={{ height: 320 }}
+  onProgressChange={progress => console.log(progress)}
+>
+  <NotificationList />
+</CapillaryScrollArea>
+```
+
+`onProgressChange`は0〜1です。ブラウザー本来のホイール・タッチ・viewportのキーボード操作を使用します。レールのフォーカスでは矢印／PageUp／PageDown／Space／Home／Endが使えます。レールのドラッグ、余白クリックによるページ移動も行えます。
+
+横向きは`orientation="horizontal"`です。中身の横幅が可視領域を超えるよう、利用先のコンテンツ側で幅や横並びを設定してください。向きを変えると先頭へ戻ります。二軸同時の独自バーや、OS全体のバーの変更は対象外です。
+
+短い内容ではバーを隠します。通常フローでの内容変更やサイズ変更は自動検出します。Vanillaでは`refresh()`も利用できます。取り外すときは必ず`destroy()`を呼びます。React版はEffectのクリーンアップで処理します。
+
+`styles.css`と`internal/scrollbar-base.css`の両方が必要です。通常JS版のデモは相対ESM参照を使うためHTTPサーバーから表示します。パーツZIPの`preview/`は独立したHTML・CSS・JSにまとめた確認用です。
+
+暗い画面向け・明るい画面向けの作品があるので、導入先の背景とのコントラストを確認してください。強制カラーモードではスキンを隠してネイティブバーを使います。縮小モーションを指定した場合は装飾のアニメーションを止めます。

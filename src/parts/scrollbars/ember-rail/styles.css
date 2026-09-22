@@ -1,0 +1,9 @@
+@import "../../../shared/scrollbar-base.css";
+/* Ember Rail — CARBON / HEAT / A */
+
+.sop-scroll-area.sop-ember-rail{--sop-scroll-width:18px;--sop-scroll-radius:6px;--sop-scroll-accent:#ffc682;--sop-scroll-thumb:#9c4d2f;--sop-scroll-track:#1e1b1a}
+.sop-scroll-area.sop-ember-rail > .sop-scroll-rail > .sop-scroll-track{background:repeating-linear-gradient(-30deg,#15191b 0 3px,#333035 3px 4px);border:1px solid #4a3930;box-shadow:inset 1px 0 4px #000}
+.sop-scroll-area.sop-ember-rail > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{opacity:.7;background:linear-gradient(#e6552533,#dc6735 78%,#ffddaa);box-shadow:0 0 10px #ff713b}
+.sop-scroll-area.sop-ember-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:27px;background:linear-gradient(100deg,#65433b,#24282a 40%,#4f4140 75%,#7d4939);border:1px solid #a3765544;box-shadow:0 5px 9px #000b;border-radius:4px}
+.sop-scroll-area.sop-ember-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{inset:7px 5px;background:repeating-linear-gradient(0deg,transparent 0 6px,#fd904c 6px 8px);filter:drop-shadow(0 0 3px #fd6525)}
+.sop-scroll-area.sop-ember-rail[data-scrolling=true] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{box-shadow:0 0 18px #ff723e55,0 4px 6px #0009}

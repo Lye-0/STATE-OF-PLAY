@@ -1,0 +1,60 @@
+{
+  "id": "light-leak",
+  "name": "Light Leak",
+  "category": "scrollbars",
+  "order": 52,
+  "version": "1.0.0",
+  "tagline": "光の、細い抜け道。",
+  "description": "柔らかな桃色の光が、余白に静かな余韻を残す。",
+  "material": "LIGHT / DIFFUSION",
+  "motion": "SCROLL / DRAG",
+  "accent": "246,182,167",
+  "designType": "A",
+  "runtime": "Native scroll + event-driven DOM",
+  "componentName": "LightLeakScrollArea",
+  "tags": [
+    "Light Leak",
+    "light-leak",
+    "スクロールバー",
+    "スクロール領域",
+    "縦",
+    "横",
+    "scrollbar",
+    "LIGHT / DIFFUSION"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "スクロールする中身。展示用コンテンツは含まれません。"
+    ],
+    [
+      "orientation",
+      "'vertical' | 'horizontal'",
+      "縦または横スクロール。初期値はvertical。"
+    ],
+    [
+      "viewportLabel",
+      "string",
+      "内容の領域に付ける読み上げ用ラベル。"
+    ],
+    [
+      "scrollbarLabel",
+      "string",
+      "スクロールバーの読み上げ用ラベル。"
+    ],
+    [
+      "onProgressChange",
+      "(progress: number) => void",
+      "スクロール位置を0〜1で通知します。"
+    ],
+    [
+      "className / style",
+      "HTMLAttributes",
+      "高さはstyleのheightまたは--sop-scroll-heightで調整。横幅は親に合わせます。"
+    ]
+  ]
+}

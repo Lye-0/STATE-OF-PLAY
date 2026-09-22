@@ -57,3 +57,11 @@ TypeScriptのコンパイラーやAST解析はNode側だけで使い、ブラウ
 
 導入向けでも依存ライブラリ全体を同梱するわけではありません。Reactなどの外部依存は明示し、利用先のアプリが用意します。
 フラット配布、任意の外部依存、バイナリアセット、自動上書きインストーラーは今回の範囲外です。
+
+## Scrollbars / native-first
+
+`scroll-area.ts`はnative viewportのscrollTop/scrollLeftを読むだけでスクロールを置き換えません。レール操作のときのみ同じviewportへscrollToし、メトリクスは`scroll-metrics.ts`で計算します。ResizeObserver、内容のMutationObserver、スクロール・画像load・サイズ変更で必要なフレームだけ更新します。orientation／RTLのマッピング、ARIA、ID、イベント・Observer・RAF・タイマーの後片付けも共有します。
+
+`scrollbar-base.css`は構造、個別`styles.css`はスキンです。共有CSSはパーツの依存へ含めます。サイトはViteのCSS import、配布ソースは相対import、独立デモとオフライン検証だけはCSSを依存順に展開します。内容とスタイルの正本を別々に複製するものではありません。
+
+スクロール見本は`src/catalog/scroll-sample.ts`と`src/app/scroll-samples.css`です。サンプル部分は持ち出すコンポーネントの実行時依存に入りません。README・AIプロンプト・ZIPに含める本体には自由な内容スロットが残ります。

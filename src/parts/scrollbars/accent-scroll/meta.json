@@ -1,0 +1,60 @@
+{
+  "id": "accent-scroll",
+  "name": "Accent Scroll",
+  "category": "scrollbars",
+  "order": 70,
+  "version": "1.0.0",
+  "tagline": "控えめな、アクセント。",
+  "description": "読みやすい白い画面に、端正な青いスクロールバー。",
+  "material": "ESSENTIAL / BLUE",
+  "motion": "SCROLL / DRAG",
+  "accent": "134,176,237",
+  "designType": "B",
+  "runtime": "Native scroll + event-driven DOM",
+  "componentName": "AccentScrollScrollArea",
+  "tags": [
+    "Accent Scroll",
+    "accent-scroll",
+    "スクロールバー",
+    "スクロール領域",
+    "縦",
+    "横",
+    "scrollbar",
+    "ESSENTIAL / BLUE"
+  ],
+  "related": [
+    "slate-card"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "スクロールする中身。展示用コンテンツは含まれません。"
+    ],
+    [
+      "orientation",
+      "'vertical' | 'horizontal'",
+      "縦または横スクロール。初期値はvertical。"
+    ],
+    [
+      "viewportLabel",
+      "string",
+      "内容の領域に付ける読み上げ用ラベル。"
+    ],
+    [
+      "scrollbarLabel",
+      "string",
+      "スクロールバーの読み上げ用ラベル。"
+    ],
+    [
+      "onProgressChange",
+      "(progress: number) => void",
+      "スクロール位置を0〜1で通知します。"
+    ],
+    [
+      "className / style",
+      "HTMLAttributes",
+      "高さはstyleのheightまたは--sop-scroll-heightで調整。横幅は親に合わせます。"
+    ]
+  ]
+}

@@ -20,7 +20,7 @@ src/parts/toggles/my-toggle/
    └─ index.html
 ```
 
-ブロックは`src/parts/blocks/`です。独立demo用ファイルと`exports.json`は不要です。
+ブロックは`src/parts/blocks/`、スクロールバーは`src/parts/scrollbars/`です。独立demo用ファイルと`exports.json`は不要です。
 `styles.css`はルートのパーツ固有クラスに閉じて、ギャラリーの`body`や一般のbuttonを変更しないようにします。
 `meta.json`の`id`をフォルダー名に、`componentName`をReactのファイル名に合わせます。
 
@@ -99,7 +99,7 @@ npm run test:browser
 npm run test:relocation
 ```
 
-元の16種類を残す回帰検証を維持しつつ、配布・参照解決・ZIP・配置変更のループは登録されたパーツを対象にします。
+元の48種類を残す回帰検証を維持しつつ、配布・参照解決・ZIP・配置変更のループは登録されたパーツを対象にします。
 新カテゴリや新しい公開APIを追加する場合は、対応する型・マウント・ブラウザー操作のテストも追加してください。
 プロンプトとusageの仕様は、実装変更と同時に更新してください。
 
@@ -118,3 +118,23 @@ Bトグルの参考は `quiet` / `segment`。`useSimpleToggle` / `createSimpleTo
 Aブロックで `createSurfaceController` を使う場合は `data-sop-paused` に連動するCSSで装飾アニメーションを止め、画面外・別タブ・詳細表示中に動かし続けないようにしてください。新規スタイルはパーツ固有ルートに閉じ、縮小モーションとforced-colorsの代替も用意します。
 
 パーツ数・カテゴリ数・関連ID・A/Bの比率、軽量B配布にCanvas/RAF依存が混ざらないこと、Liquid/Fold/Prismの状態テキストは `tests/expansion.test.ts` が確認します。新しいパーツを作っても `packages/` に生成物を追加する必要はありません。
+
+## スクロールバーを追加する（v3.3）
+
+`src/parts/scrollbars/capillary`（A）または`minimal-scroll`（B）を参考にします。24種類の振る舞いを個別にコピーせず、`scroll-area.ts`、`scroll-metrics.ts`、`use-scroll-area.ts`、`scrollbar-base.css`を共有します。CSSの`@import`は依存解析に含まれ、持ち出す形式・配置に合わせて参照先が変わります。
+
+- 本体にはスクロール可能なviewport、自由に差し替えられるcontent、視覚用railだけを持ちます。サンプルの文章を本体へ固定しません。
+- 名前、説明、A/B、props、再現仕様を固有ファイルへ書き、registryに登録します。新しいスキンのために共有controllerにID分岐を追加する必要はありません。
+- CSSはルートから直下のrail/viewportへたどるセレクターを使います。別のスクロール領域を中に置いても外側のスキンが漏れないようにします。
+- 本体の高さは`style`または`--sop-scroll-height`で指定します。ReactのchildrenやVanillaの`.sop-scroll-content`を配置します。`orientation`は縦か横の一方向で、二軸同時表示を約束するものではありません。
+- `overflow:auto`がスクロールの正本です。wheel/touchmoveのpreventDefaultで架空の移動量を計算しません。領域の外へイベントを無条件で伝播停止しません。
+- つまみの長さは可視領域／内容全体の比率。最小長は28px、細いスキンにも独立したレールの操作領域を設けます。
+- 装飾が必要な場合も動作中だけにし、静止中の継続RAFは不要です。forced-colorsでは標準バーに戻り、JS初期化前も標準のoverflowで操作できます。
+- Reactの再描画、向き変更、短い／長い内容の変更、IDの重複、取り外し後の処理まで確認します。
+
+```powershell
+npm run test:scrollbars
+npm run test:scrollbars:react
+```
+
+通常は実Viteとインストール済みのReactで検証します。`SOP_TEST_MODE=offline`はブラウザーのURL制限がある検証環境専用で、通常の開発には不要です。

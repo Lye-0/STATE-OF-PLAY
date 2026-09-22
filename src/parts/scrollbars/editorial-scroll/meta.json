@@ -1,0 +1,60 @@
+{
+  "id": "editorial-scroll",
+  "name": "Editorial Scroll",
+  "category": "scrollbars",
+  "order": 72,
+  "version": "1.0.0",
+  "tagline": "読むことに、寄り添う。",
+  "description": "紙のような余白に、小さな目印を添える。",
+  "material": "ESSENTIAL / EDITORIAL",
+  "motion": "SCROLL / DRAG",
+  "accent": "199,191,164",
+  "designType": "B",
+  "runtime": "Native scroll + event-driven DOM",
+  "componentName": "EditorialScrollScrollArea",
+  "tags": [
+    "Editorial Scroll",
+    "editorial-scroll",
+    "スクロールバー",
+    "スクロール領域",
+    "縦",
+    "横",
+    "scrollbar",
+    "ESSENTIAL / EDITORIAL"
+  ],
+  "related": [
+    "slate-card"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "スクロールする中身。展示用コンテンツは含まれません。"
+    ],
+    [
+      "orientation",
+      "'vertical' | 'horizontal'",
+      "縦または横スクロール。初期値はvertical。"
+    ],
+    [
+      "viewportLabel",
+      "string",
+      "内容の領域に付ける読み上げ用ラベル。"
+    ],
+    [
+      "scrollbarLabel",
+      "string",
+      "スクロールバーの読み上げ用ラベル。"
+    ],
+    [
+      "onProgressChange",
+      "(progress: number) => void",
+      "スクロール位置を0〜1で通知します。"
+    ],
+    [
+      "className / style",
+      "HTMLAttributes",
+      "高さはstyleのheightまたは--sop-scroll-heightで調整。横幅は親に合わせます。"
+    ]
+  ]
+}

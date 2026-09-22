@@ -1,0 +1,60 @@
+{
+  "id": "tideglass",
+  "name": "Tideglass",
+  "category": "scrollbars",
+  "order": 57,
+  "version": "1.0.0",
+  "tagline": "水面のように、ゆっくり。",
+  "description": "深い青の管と、水面を思わせる淡いガラスのレンズ。",
+  "material": "WATER / LEVEL",
+  "motion": "SCROLL / DRAG",
+  "accent": "129,202,231",
+  "designType": "A",
+  "runtime": "Native scroll + event-driven DOM",
+  "componentName": "TideglassScrollArea",
+  "tags": [
+    "Tideglass",
+    "tideglass",
+    "スクロールバー",
+    "スクロール領域",
+    "縦",
+    "横",
+    "scrollbar",
+    "WATER / LEVEL"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "スクロールする中身。展示用コンテンツは含まれません。"
+    ],
+    [
+      "orientation",
+      "'vertical' | 'horizontal'",
+      "縦または横スクロール。初期値はvertical。"
+    ],
+    [
+      "viewportLabel",
+      "string",
+      "内容の領域に付ける読み上げ用ラベル。"
+    ],
+    [
+      "scrollbarLabel",
+      "string",
+      "スクロールバーの読み上げ用ラベル。"
+    ],
+    [
+      "onProgressChange",
+      "(progress: number) => void",
+      "スクロール位置を0〜1で通知します。"
+    ],
+    [
+      "className / style",
+      "HTMLAttributes",
+      "高さはstyleのheightまたは--sop-scroll-heightで調整。横幅は親に合わせます。"
+    ]
+  ]
+}

@@ -1,0 +1,9 @@
+@import "../../../shared/scrollbar-base.css";
+/* Aurora Thread — AURORA / THREAD / A */
+
+.sop-scroll-area.sop-aurora-thread{--sop-scroll-width:6px;--sop-scroll-accent:#cdb7fa;--sop-scroll-thumb:#c3dcf4;--sop-scroll-track:#363044}
+.sop-scroll-area.sop-aurora-thread > .sop-scroll-rail > .sop-scroll-track{overflow:visible;background:linear-gradient(#a590cb33,#73c4c950,#cc83b33d);box-shadow:-7px 0 0 -2px #98d5de65,7px 0 0 -2px #d8b3e03a}
+.sop-scroll-area.sop-aurora-thread > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{opacity:.8;background:linear-gradient(#bca6ea,#7ae6e0,#e3b7e7);filter:drop-shadow(0 0 7px #bdc4ee)}
+.sop-scroll-area.sop-aurora-thread > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:15px;background:linear-gradient(130deg,#a4e7ec,#dcd1ff 30%,#ad86cf 65%,#99e8cf);border:1px solid #e2d7fccc;box-shadow:inset 2px 0 2px #fffffe91,0 0 17px #b4a4e466;border-radius:40%}
+.sop-scroll-area.sop-aurora-thread > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{inset:5px 6px;background:#e8fffa9e;border-radius:50%}
+.sop-scroll-area.sop-aurora-thread[data-scrolling=true] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{filter:hue-rotate(calc(var(--sop-scroll-progress)*60deg)) brightness(1.2)}

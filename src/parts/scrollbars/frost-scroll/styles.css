@@ -1,0 +1,6 @@
+@import "../../../shared/scrollbar-base.css";
+/* Frost Scroll — ESSENTIAL / FROST / B */
+
+.sop-scroll-area.sop-frost-scroll{--sop-scroll-gutter:32px;--sop-scroll-width:9px;--sop-scroll-track:#aacddd1b;--sop-scroll-thumb:#a9cbdf;--sop-scroll-accent:#c1e4f4;--sop-scroll-radius:9px}
+.sop-scroll-area.sop-frost-scroll > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{background:linear-gradient(90deg,#7396ac,#b3d5e7);border:1px solid #daeefa70;box-shadow:inset 1px 0 1px #edfcff55}
+.sop-scroll-area.sop-frost-scroll > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{display:none}

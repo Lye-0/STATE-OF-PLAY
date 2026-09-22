@@ -1,5 +1,5 @@
 {
-  "version": "3.2.0",
+  "version": "3.3.0",
   "files": [
     {
       "path": "src/app/audio.ts",
@@ -13,8 +13,8 @@
     },
     {
       "path": "src/app/details.ts",
-      "bytes": 22451,
-      "sha256": "fc17d10fe1d8fa5c9b6886ca7e606cf44aba487c51ed0efaa2b3586910a2b437"
+      "bytes": 24712,
+      "sha256": "59ca056c72e52dfb0f3fa64a0843f8e17800497f6a27246a9d8e6cc8dd98d1a5"
     },
     {
       "path": "src/app/gallery.css",
@@ -23,8 +23,8 @@
     },
     {
       "path": "src/app/gallery.ts",
-      "bytes": 10981,
-      "sha256": "a59d05e189f952c29204b2ca8f551f8ee6a09545c68b33e1b88e0cd4eca9aece"
+      "bytes": 11194,
+      "sha256": "c8960fd0dc6ea014e71e65c305af408818c6ae7726480bab1492324be1383311"
     },
     {
       "path": "src/app/package-download.ts",
@@ -33,8 +33,13 @@
     },
     {
       "path": "src/app/samples.ts",
-      "bytes": 7049,
-      "sha256": "986ca6ade1cc2c113ce27db327b7f9444ae102bd79543f1a98bbac127c7317a3"
+      "bytes": 7300,
+      "sha256": "0215e19df83ea86e846f9998ec59119baff2d2cfb0cedfa335e5ff74a732ffba"
+    },
+    {
+      "path": "src/app/scroll-samples.css",
+      "bytes": 5287,
+      "sha256": "b154e8da5c591bbd756d83cc467b7724b89777712790b5500731be9a0545baf3"
     },
     {
       "path": "src/app/utils.ts",
@@ -43,13 +48,13 @@
     },
     {
       "path": "src/catalog/categories.ts",
-      "bytes": 220,
-      "sha256": "d46efcf6e7844537b21f3645efc87103b511d337064e7b02f764a3285fd6af1f"
+      "bytes": 301,
+      "sha256": "e7099eb43be8ded0afc9ba1d5ccb37f342ecb14076d640a8fc95dc70de995f85"
     },
     {
       "path": "src/catalog/delivery.ts",
-      "bytes": 12099,
-      "sha256": "99aaaffa5a290b4f55e649d27cb759d7469b415cf24969f5d8720a18f0cd9d34"
+      "bytes": 12108,
+      "sha256": "0beae7eed7cd60ad68ce4c56ec80825a6d942c3bcda88dd9cff099e07f112e8c"
     },
     {
       "path": "src/catalog/mounts.ts",
@@ -58,13 +63,18 @@
     },
     {
       "path": "src/catalog/registry.json",
-      "bytes": 1539,
-      "sha256": "54fa3b82f6203d2d34479516602d92fe19505a7027369ccdabca82a1ed2d86c9"
+      "bytes": 2456,
+      "sha256": "4dcca09dac168cf97291129c9f6bd4fac9b68000208e319ab611c605e545f7df"
+    },
+    {
+      "path": "src/catalog/scroll-sample.ts",
+      "bytes": 1730,
+      "sha256": "8ac73c02cef55f9d37923521c576f6c9a7a2581f98900e3fdeac510ccac09bab"
     },
     {
       "path": "src/catalog/types.ts",
-      "bytes": 3066,
-      "sha256": "e921a61d20844886bbe23afdb55cc365e3cea74d26399a86ba7ca787b39baa4b"
+      "bytes": 3391,
+      "sha256": "cd30db1336eb234f8ec54ccde98fbaab026e6136ac30257c32c1081fe1565f9a"
     },
     {
       "path": "src/env.d.ts",
@@ -73,8 +83,8 @@
     },
     {
       "path": "src/main.ts",
-      "bytes": 81,
-      "sha256": "b58b89d2b2b7a495e6ff5352dc5ea3b9508ed12d708694ca402fc4e15425cba6"
+      "bytes": 116,
+      "sha256": "1d6b0d3a770b81a689d0a3287e76dee316a8cc791eab3a2447190b834ab19d14"
     },
     {
       "path": "src/parts/blocks/accent-card/markup.html",
@@ -1275,6 +1285,1206 @@
       "path": "src/parts/blocks/velvet/vanilla/main.ts",
       "bytes": 276,
       "sha256": "e48229ba4399dd08ddc1e4f14a7f56c0e43b2c1beb4238bf7c224d1d33aad226"
+    },
+    {
+      "path": "src/parts/scrollbars/accent-scroll/markup.html",
+      "bytes": 892,
+      "sha256": "6bf13fcce59ac3676a76f9ad58c83b2ef5da1565058ed10b18b4e56265dd384e"
+    },
+    {
+      "path": "src/parts/scrollbars/accent-scroll/meta.json",
+      "bytes": 1503,
+      "sha256": "92a0de64c8de1c4722b6fe5f372307d784409b898d3b25c09a4f0c63bdeedfbb"
+    },
+    {
+      "path": "src/parts/scrollbars/accent-scroll/prompt.md",
+      "bytes": 2392,
+      "sha256": "5a307b9bf457e4a3a8d87efa0e8cef4efa24d9db4d3310eabac6bf4b3c5cbb50"
+    },
+    {
+      "path": "src/parts/scrollbars/accent-scroll/react/AccentScrollScrollArea.tsx",
+      "bytes": 1688,
+      "sha256": "338ba09b30f31119d58f68d2ae3ca52463efe63b59e2cbfa903ed4cd9a223c4b"
+    },
+    {
+      "path": "src/parts/scrollbars/accent-scroll/react/Example.tsx",
+      "bytes": 642,
+      "sha256": "ccbbb0e68b112b1b7fb66847c28767314eb4bb1e4ff7b690617633fb19fe1de7"
+    },
+    {
+      "path": "src/parts/scrollbars/accent-scroll/styles.css",
+      "bytes": 579,
+      "sha256": "82fac8a8d0252820280f9efc3a6a4e36192c6ec951584944c48b4656da97e087"
+    },
+    {
+      "path": "src/parts/scrollbars/accent-scroll/usage.md",
+      "bytes": 2051,
+      "sha256": "813af40de3fa38f9470f303a3fda42fdf5eb3102fecfb7590ec71ec26a33e55b"
+    },
+    {
+      "path": "src/parts/scrollbars/accent-scroll/vanilla/index.html",
+      "bytes": 2423,
+      "sha256": "232326aedab6fa5d217b7978f677b4a8a637f38940b33d298b4d6f57b15c7667"
+    },
+    {
+      "path": "src/parts/scrollbars/accent-scroll/vanilla/init.ts",
+      "bytes": 216,
+      "sha256": "f78bcd52b0789d5e5e8666325aa5ccac5d2bc16ba45df6cf30840ba68f629bfb"
+    },
+    {
+      "path": "src/parts/scrollbars/accent-scroll/vanilla/main.ts",
+      "bytes": 396,
+      "sha256": "e063ee614445a2c085c73e9f3bc506b7eb9c26302baf466ab3ff7f5e2822cc91"
+    },
+    {
+      "path": "src/parts/scrollbars/aurora-thread/markup.html",
+      "bytes": 892,
+      "sha256": "96a89dcb48d828d2c63aab2322a5ac41ab38a9eb7004ffc2e4799d94bde0207a"
+    },
+    {
+      "path": "src/parts/scrollbars/aurora-thread/meta.json",
+      "bytes": 1495,
+      "sha256": "63246ce74c5409e583fabc3cbae2b2075911e4f364c5d7bfe5c3e2831feb1fb2"
+    },
+    {
+      "path": "src/parts/scrollbars/aurora-thread/prompt.md",
+      "bytes": 3097,
+      "sha256": "f5ba5607d82ab3a1e6c1f517ff59a8d1ccef3b01a50a625c4517df26fbcff48f"
+    },
+    {
+      "path": "src/parts/scrollbars/aurora-thread/react/AuroraThreadScrollArea.tsx",
+      "bytes": 1679,
+      "sha256": "b8cdb823281bad25de7f49ca934d84579c6e72608e4fe25be10a90c293acf5dc"
+    },
+    {
+      "path": "src/parts/scrollbars/aurora-thread/react/Example.tsx",
+      "bytes": 642,
+      "sha256": "1cd64213b55a54722273cd7826c4a1c34ab361aaaaa4d6693a31b6299841d33a"
+    },
+    {
+      "path": "src/parts/scrollbars/aurora-thread/styles.css",
+      "bytes": 1288,
+      "sha256": "ffc00d2595ce253d1d5451a7a8a4c624dba3b7058536cc7a3e8b0b757b7e36fd"
+    },
+    {
+      "path": "src/parts/scrollbars/aurora-thread/usage.md",
+      "bytes": 2042,
+      "sha256": "7e995dd163a92416368c8e99ed9da321dd2d28e63062f868a14ab04f139a2df9"
+    },
+    {
+      "path": "src/parts/scrollbars/aurora-thread/vanilla/index.html",
+      "bytes": 2423,
+      "sha256": "8067484269cfdc04d49cfa8ae32d4338988c3e35c90d35dd34c16039f4bd94e8"
+    },
+    {
+      "path": "src/parts/scrollbars/aurora-thread/vanilla/init.ts",
+      "bytes": 216,
+      "sha256": "f78bcd52b0789d5e5e8666325aa5ccac5d2bc16ba45df6cf30840ba68f629bfb"
+    },
+    {
+      "path": "src/parts/scrollbars/aurora-thread/vanilla/main.ts",
+      "bytes": 396,
+      "sha256": "6dfccc8f222fbb36ca428b080e847d99ecbb1271d54dd9af5203b7fb17509228"
+    },
+    {
+      "path": "src/parts/scrollbars/cable/markup.html",
+      "bytes": 884,
+      "sha256": "9da928f878fc41815a0481ffa04d8c4f0ea528481572374ce4579e293a911d2b"
+    },
+    {
+      "path": "src/parts/scrollbars/cable/meta.json",
+      "bytes": 1458,
+      "sha256": "519da21a99cf0aa42ce9307f999747bdbc4d23f67252344c6e80c9638aa4db7f"
+    },
+    {
+      "path": "src/parts/scrollbars/cable/prompt.md",
+      "bytes": 3152,
+      "sha256": "52e423f88dbeca02e4d127db473000da9fdd3355a3df2dae7adb78af01f6b999"
+    },
+    {
+      "path": "src/parts/scrollbars/cable/react/CableScrollArea.tsx",
+      "bytes": 1670,
+      "sha256": "6222f4f7c87cd722bf887df5628fbf29e45a72eefea5d1df9c2b6027ef5b4453"
+    },
+    {
+      "path": "src/parts/scrollbars/cable/react/Example.tsx",
+      "bytes": 614,
+      "sha256": "10a42456dd44949aa17250bbb62ae315deddaeaffed70036f3bc446c98a3f4c8"
+    },
+    {
+      "path": "src/parts/scrollbars/cable/styles.css",
+      "bytes": 1347,
+      "sha256": "9f3d1f05b00062409aa0c2464302cdfdf765882e164c458e78543c3ab484cdd5"
+    },
+    {
+      "path": "src/parts/scrollbars/cable/usage.md",
+      "bytes": 2040,
+      "sha256": "c2c7ac6d8fc3ad22d96a2c6e937ce91109e010f514aa78da3db766362f400eaf"
+    },
+    {
+      "path": "src/parts/scrollbars/cable/vanilla/index.html",
+      "bytes": 2407,
+      "sha256": "a75f1c6c1f8020af935d8b965aa84742c27510f118b4628db89b3d19e445e2c3"
+    },
+    {
+      "path": "src/parts/scrollbars/cable/vanilla/init.ts",
+      "bytes": 216,
+      "sha256": "f78bcd52b0789d5e5e8666325aa5ccac5d2bc16ba45df6cf30840ba68f629bfb"
+    },
+    {
+      "path": "src/parts/scrollbars/cable/vanilla/main.ts",
+      "bytes": 380,
+      "sha256": "3c1a0073bd50b63a0eab31acc34d96a11f071bd5da28c1a3f30c7da346df11d7"
+    },
+    {
+      "path": "src/parts/scrollbars/capillary/markup.html",
+      "bytes": 888,
+      "sha256": "6e43a07ff95dbc92d54686b1b58cc92b81c312eb25b0afbb285b9d038748a8a6"
+    },
+    {
+      "path": "src/parts/scrollbars/capillary/meta.json",
+      "bytes": 1486,
+      "sha256": "27cf97cf12e0b46783f2872f1c528500e9dc76ced688dbc4db114fe09de9624b"
+    },
+    {
+      "path": "src/parts/scrollbars/capillary/prompt.md",
+      "bytes": 3296,
+      "sha256": "a8a06c08d837207da851462fe0503bb9fcb469fdf70fc5e0403e5b5c9a2de6da"
+    },
+    {
+      "path": "src/parts/scrollbars/capillary/react/CapillaryScrollArea.tsx",
+      "bytes": 1678,
+      "sha256": "b36cee17e8175131874463509f7d49875da889b6a7266ef3a9a5099585ed6ae0"
+    },
+    {
+      "path": "src/parts/scrollbars/capillary/react/Example.tsx",
+      "bytes": 630,
+      "sha256": "5a4c23303a7cea4b489083951c43446398134ea1e83c5113d6976052bc36e523"
+    },
+    {
+      "path": "src/parts/scrollbars/capillary/styles.css",
+      "bytes": 1483,
+      "sha256": "cb388613c2a0a9a32c361ba808c1f79ae666e4af76d1aede94539d7b060809dc"
+    },
+    {
+      "path": "src/parts/scrollbars/capillary/usage.md",
+      "bytes": 2044,
+      "sha256": "3c4831e87cf5e3d1a8f250efec8eadb32191e81a1e8fbea64e5f0773eeb2e97d"
+    },
+    {
+      "path": "src/parts/scrollbars/capillary/vanilla/index.html",
+      "bytes": 2415,
+      "sha256": "b28888bb67302dfbfe3c7b375b257e7e2cf7fba7847f04344dca71a515f05775"
+    },
+    {
+      "path": "src/parts/scrollbars/capillary/vanilla/init.ts",
+      "bytes": 216,
+      "sha256": "f78bcd52b0789d5e5e8666325aa5ccac5d2bc16ba45df6cf30840ba68f629bfb"
+    },
+    {
+      "path": "src/parts/scrollbars/capillary/vanilla/main.ts",
+      "bytes": 388,
+      "sha256": "18dbe760e67709fd5ff94d790604c540d35a015a05e3d4ddc2fb45605932d92a"
+    },
+    {
+      "path": "src/parts/scrollbars/editorial-scroll/markup.html",
+      "bytes": 895,
+      "sha256": "83586a34d9c049c6076b6cacd33ba326ee930160eeff80aa4edae0baf57e2f34"
+    },
+    {
+      "path": "src/parts/scrollbars/editorial-scroll/meta.json",
+      "bytes": 1513,
+      "sha256": "8c3b7c317cb9856477ba128fe5bdcf9590fa919cd8cb5181e708f1e2babb6387"
+    },
+    {
+      "path": "src/parts/scrollbars/editorial-scroll/prompt.md",
+      "bytes": 2436,
+      "sha256": "1ffb3e6229f2137e63b182e21594140479b384202c041f58e8a43e5622632a1a"
+    },
+    {
+      "path": "src/parts/scrollbars/editorial-scroll/react/EditorialScrollScrollArea.tsx",
+      "bytes": 1679,
+      "sha256": "d5a4cc645f2c877984bf53ac2e9da9c574c09ce8c158ad121d0091304e47ef47"
+    },
+    {
+      "path": "src/parts/scrollbars/editorial-scroll/react/Example.tsx",
+      "bytes": 654,
+      "sha256": "1bf9add49a281bdc33b82be598435c5700bcb48d386538b3d6ec99b8a48a0e4a"
+    },
+    {
+      "path": "src/parts/scrollbars/editorial-scroll/styles.css",
+      "bytes": 630,
+      "sha256": "bd2bbf1d7986a7b46a61101079c86ee2b849156c2c09f226d059922f6b02dc07"
+    },
+    {
+      "path": "src/parts/scrollbars/editorial-scroll/usage.md",
+      "bytes": 2039,
+      "sha256": "a50e7d7629a70aaad84331106265576520304f5254fc46a38e86c9a4031ddcb5"
+    },
+    {
+      "path": "src/parts/scrollbars/editorial-scroll/vanilla/index.html",
+      "bytes": 2429,
+      "sha256": "e8793b2929b9811ca0d4344164b20381237768f83bca1c06a6e882bcfc172df0"
+    },
+    {
+      "path": "src/parts/scrollbars/editorial-scroll/vanilla/init.ts",
+      "bytes": 216,
+      "sha256": "f78bcd52b0789d5e5e8666325aa5ccac5d2bc16ba45df6cf30840ba68f629bfb"
+    },
+    {
+      "path": "src/parts/scrollbars/editorial-scroll/vanilla/main.ts",
+      "bytes": 402,
+      "sha256": "84bd39b07dea93d95731aa94e15b51371cf1435c245eabf44ffc0847c7612912"
+    },
+    {
+      "path": "src/parts/scrollbars/ember-rail/markup.html",
+      "bytes": 889,
+      "sha256": "41a7761e9bdc982fc1b0545b57cfff390052b6621c032bdb3787295c1919b478"
+    },
+    {
+      "path": "src/parts/scrollbars/ember-rail/meta.json",
+      "bytes": 1466,
+      "sha256": "cccb5900cb1486ac3b77445afc1a89762b81be593b02e53b02353ad21ec07805"
+    },
+    {
+      "path": "src/parts/scrollbars/ember-rail/prompt.md",
+      "bytes": 3105,
+      "sha256": "abde54d18269054cc2f6f62759a71a131448388f89153f36d804dfe1bea84473"
+    },
+    {
+      "path": "src/parts/scrollbars/ember-rail/react/EmberRailScrollArea.tsx",
+      "bytes": 1670,
+      "sha256": "92a21b1bb6dba0efebb30a5ef295dfb6b16f430841e4bedfb49a29874eb2b104"
+    },
+    {
+      "path": "src/parts/scrollbars/ember-rail/react/Example.tsx",
+      "bytes": 630,
+      "sha256": "16601af515b059f35f96066ea8311151a238f46139b857779573c02e8cb5dedd"
+    },
+    {
+      "path": "src/parts/scrollbars/ember-rail/styles.css",
+      "bytes": 1304,
+      "sha256": "c743e15547f8033148ef7e2c1ed0fb9a0fa7abe6d84faa071e114d367032f107"
+    },
+    {
+      "path": "src/parts/scrollbars/ember-rail/usage.md",
+      "bytes": 2036,
+      "sha256": "a683b1787adc0ea9aca5e4729c06e82f4a51998fd1420fa442bd811ee30dc8bf"
+    },
+    {
+      "path": "src/parts/scrollbars/ember-rail/vanilla/index.html",
+      "bytes": 2417,
+      "sha256": "db36f48fd125691b3aaa31bfda8163f9ab8cd66e82ec4e40bbc0a4379a457d5e"
+    },
+    {
+      "path": "src/parts/scrollbars/ember-rail/vanilla/init.ts",
+      "bytes": 216,
+      "sha256": "f78bcd52b0789d5e5e8666325aa5ccac5d2bc16ba45df6cf30840ba68f629bfb"
+    },
+    {
+      "path": "src/parts/scrollbars/ember-rail/vanilla/main.ts",
+      "bytes": 390,
+      "sha256": "6bb8027fc995df626f366948d6e5686e5a6204b0cd9aca1eca628c8ffe1536ca"
+    },
+    {
+      "path": "src/parts/scrollbars/frost-scroll/markup.html",
+      "bytes": 891,
+      "sha256": "64edec5b56cfdd7dc0dde27862dfbcb4033c61771c7f88660db167520df083d8"
+    },
+    {
+      "path": "src/parts/scrollbars/frost-scroll/meta.json",
+      "bytes": 1470,
+      "sha256": "f7119bc422af4c0a7e680f47f137132604efc4a2f8d42336783e01228e770b60"
+    },
+    {
+      "path": "src/parts/scrollbars/frost-scroll/prompt.md",
+      "bytes": 2390,
+      "sha256": "43833dd96a22fe62be23839963d3f0e4105f74fea71984e20229b60039184f31"
+    },
+    {
+      "path": "src/parts/scrollbars/frost-scroll/react/Example.tsx",
+      "bytes": 638,
+      "sha256": "aa8644a64fa9fecbb7b368914470d6de7769ea8b2d252778a913fdf74361a059"
+    },
+    {
+      "path": "src/parts/scrollbars/frost-scroll/react/FrostScrollScrollArea.tsx",
+      "bytes": 1665,
+      "sha256": "437e3ae283066a5010c01d89345b160ef7958970f594e8c6aee9ff332ee844d4"
+    },
+    {
+      "path": "src/parts/scrollbars/frost-scroll/styles.css",
+      "bytes": 598,
+      "sha256": "c616aee95e4bb89e1f39c2c87d1df4163536acf75851a59856b77839407aeaec"
+    },
+    {
+      "path": "src/parts/scrollbars/frost-scroll/usage.md",
+      "bytes": 2029,
+      "sha256": "0baa9d55a62ffea5b546f88cd00a69fe8d6335764fe54caafaa67cef9c891d8d"
+    },
+    {
+      "path": "src/parts/scrollbars/frost-scroll/vanilla/index.html",
+      "bytes": 2421,
+      "sha256": "384a9d70d08ca0aefed3b2d9fd89115f61eb923329a3ccc434dacf67ae18c6c4"
+    },
+    {
+      "path": "src/parts/scrollbars/frost-scroll/vanilla/init.ts",
+      "bytes": 216,
+      "sha256": "f78bcd52b0789d5e5e8666325aa5ccac5d2bc16ba45df6cf30840ba68f629bfb"
+    },
+    {
+      "path": "src/parts/scrollbars/frost-scroll/vanilla/main.ts",
+      "bytes": 394,
+      "sha256": "4b4e98ffab130829b90e2745edcf22defa6eba6af0fe18b4212cf5f9cedadaf8"
+    },
+    {
+      "path": "src/parts/scrollbars/graphite-scroll/markup.html",
+      "bytes": 894,
+      "sha256": "0969210c9d4f95995153fa24e8a182b1f036b6a6f01241965effe6a21f5025a6"
+    },
+    {
+      "path": "src/parts/scrollbars/graphite-scroll/meta.json",
+      "bytes": 1515,
+      "sha256": "e952eacb7ac537027ee1e4836a4e098443e4713c17cbf547526d682757d74b86"
+    },
+    {
+      "path": "src/parts/scrollbars/graphite-scroll/prompt.md",
+      "bytes": 2722,
+      "sha256": "86974b8c65c1f06931bce061bf679666c66c0f34edcfb08892acca113fb9cbf2"
+    },
+    {
+      "path": "src/parts/scrollbars/graphite-scroll/react/Example.tsx",
+      "bytes": 650,
+      "sha256": "2766890e5971c3e127f99772a53799548827506c68654b01c18e0d33fb85953f"
+    },
+    {
+      "path": "src/parts/scrollbars/graphite-scroll/react/GraphiteScrollScrollArea.tsx",
+      "bytes": 1689,
+      "sha256": "e5198ab62284404e50c610be8d28459e0f8a499d122a2f32e651b618f7bc289f"
+    },
+    {
+      "path": "src/parts/scrollbars/graphite-scroll/styles.css",
+      "bytes": 906,
+      "sha256": "9df9e40e874852a0d4b1aefa3b26d6a50e51c5947a496afafd505dec2b3afd04"
+    },
+    {
+      "path": "src/parts/scrollbars/graphite-scroll/usage.md",
+      "bytes": 2050,
+      "sha256": "6103b485eca0f927a00f34dd4028328ae554ad917782b028d51f2fe58050a819"
+    },
+    {
+      "path": "src/parts/scrollbars/graphite-scroll/vanilla/index.html",
+      "bytes": 2427,
+      "sha256": "4a41965b9ea902b404ee177d7cbab418ede9ccacb57f131bf6c37e116621b9fc"
+    },
+    {
+      "path": "src/parts/scrollbars/graphite-scroll/vanilla/init.ts",
+      "bytes": 216,
+      "sha256": "f78bcd52b0789d5e5e8666325aa5ccac5d2bc16ba45df6cf30840ba68f629bfb"
+    },
+    {
+      "path": "src/parts/scrollbars/graphite-scroll/vanilla/main.ts",
+      "bytes": 400,
+      "sha256": "20b94b3744bc66dd74ec4c6ee97fcaf6061b4d35fc1297032af2079d7e5eea11"
+    },
+    {
+      "path": "src/parts/scrollbars/ink-scroll/markup.html",
+      "bytes": 889,
+      "sha256": "e40c7afaa1b3730f27a0b8f3953a3ed15d3ae97a13a625e4d6657a3ae8b04dbc"
+    },
+    {
+      "path": "src/parts/scrollbars/ink-scroll/meta.json",
+      "bytes": 1474,
+      "sha256": "e61ff6b967bb87d3b79efcca60213bce22509c2857825d9dfdbb72eaf96fd78e"
+    },
+    {
+      "path": "src/parts/scrollbars/ink-scroll/prompt.md",
+      "bytes": 2352,
+      "sha256": "5bf1ab397850a8a5c4383168916a1191f972042a7003da4a088c67422d110652"
+    },
+    {
+      "path": "src/parts/scrollbars/ink-scroll/react/Example.tsx",
+      "bytes": 630,
+      "sha256": "a1e072ea11dda454234bafb1c647d7808ed25c9121df62169f7514d79e4458c7"
+    },
+    {
+      "path": "src/parts/scrollbars/ink-scroll/react/InkScrollScrollArea.tsx",
+      "bytes": 1676,
+      "sha256": "7dafa548062d99dbdaa5154e9addd13c66dd5a5bfe682b054d9075877c02ad03"
+    },
+    {
+      "path": "src/parts/scrollbars/ink-scroll/styles.css",
+      "bytes": 549,
+      "sha256": "6a61652a41629cf40be144cf167a06cf7e51eb06cbc713ff667cd9674dbc6966"
+    },
+    {
+      "path": "src/parts/scrollbars/ink-scroll/usage.md",
+      "bytes": 2042,
+      "sha256": "f5768440cf5283b07f1028045093ce55fdda7e1e0eb0004947874067e2852725"
+    },
+    {
+      "path": "src/parts/scrollbars/ink-scroll/vanilla/index.html",
+      "bytes": 2417,
+      "sha256": "cbebcb92c092e85d6abbcb87349c6481d505dfef63d54a6b93adb50fee70359f"
+    },
+    {
+      "path": "src/parts/scrollbars/ink-scroll/vanilla/init.ts",
+      "bytes": 216,
+      "sha256": "f78bcd52b0789d5e5e8666325aa5ccac5d2bc16ba45df6cf30840ba68f629bfb"
+    },
+    {
+      "path": "src/parts/scrollbars/ink-scroll/vanilla/main.ts",
+      "bytes": 390,
+      "sha256": "52e90295158b291a6d333c8d2f95dde6a583b37406202e3a7396df457d4f34a1"
+    },
+    {
+      "path": "src/parts/scrollbars/lacquer-scroll/markup.html",
+      "bytes": 893,
+      "sha256": "a370f837183d015771301b9dad9bdafb1fad35cd6f42818d5249371de7e4496a"
+    },
+    {
+      "path": "src/parts/scrollbars/lacquer-scroll/meta.json",
+      "bytes": 1494,
+      "sha256": "5c51c9e2bf46e03300fbe22cbbf5b3ea7b7c9669222b0e933f67a3f43ffba05c"
+    },
+    {
+      "path": "src/parts/scrollbars/lacquer-scroll/prompt.md",
+      "bytes": 2960,
+      "sha256": "fb529dd56eb06cfc0223897a9748ce0cab0f904f84d373b195c84656584547cf"
+    },
+    {
+      "path": "src/parts/scrollbars/lacquer-scroll/react/Example.tsx",
+      "bytes": 646,
+      "sha256": "4c4c9a4d2379704af4db5e2cb11cd5b3d536577e1ca5007bb5797756928de42e"
+    },
+    {
+      "path": "src/parts/scrollbars/lacquer-scroll/react/LacquerScrollScrollArea.tsx",
+      "bytes": 1690,
+      "sha256": "613223f0eade3447b77f9ac5a2c746438556b54f82aa779690feae74bee16a8e"
+    },
+    {
+      "path": "src/parts/scrollbars/lacquer-scroll/styles.css",
+      "bytes": 1144,
+      "sha256": "d5b09ae0ce55583fa83b47d59994a470b03f51e1c80426f39d1ee264185e5166"
+    },
+    {
+      "path": "src/parts/scrollbars/lacquer-scroll/usage.md",
+      "bytes": 2045,
+      "sha256": "d02923f700b6b80b937acb88bfc3f768fc42bf57f33920ebe98d9c1714101c5e"
+    },
+    {
+      "path": "src/parts/scrollbars/lacquer-scroll/vanilla/index.html",
+      "bytes": 2418,
+      "sha256": "a418db2e132cc1a9123bafb07bc7668f54a1905fc55c534c90f0cd6648d166d8"
+    },
+    {
+      "path": "src/parts/scrollbars/lacquer-scroll/vanilla/init.ts",
+      "bytes": 216,
+      "sha256": "f78bcd52b0789d5e5e8666325aa5ccac5d2bc16ba45df6cf30840ba68f629bfb"
+    },
+    {
+      "path": "src/parts/scrollbars/lacquer-scroll/vanilla/main.ts",
+      "bytes": 391,
+      "sha256": "2047a228a3f2f7e4fdcc20ff69093acb5f3fe1b9b58c0822db5b5b1525b5444f"
+    },
+    {
+      "path": "src/parts/scrollbars/led-rail/markup.html",
+      "bytes": 887,
+      "sha256": "ad8d945a08657f860aa698fb3b2e6956b5c62618d15fe09a8ff3448613ea8602"
+    },
+    {
+      "path": "src/parts/scrollbars/led-rail/meta.json",
+      "bytes": 1471,
+      "sha256": "8dc9e74b4d1df29c2231352261e8a21d85e44bdfcced451618d69cf361c4731c"
+    },
+    {
+      "path": "src/parts/scrollbars/led-rail/prompt.md",
+      "bytes": 2976,
+      "sha256": "6309cefb56685021a5460e84b4ad63d92432ff32222021052a868eb6a042ff59"
+    },
+    {
+      "path": "src/parts/scrollbars/led-rail/react/Example.tsx",
+      "bytes": 622,
+      "sha256": "76677c775bb49e032d68ea507bdf73f19c53ba38b96f5e89c309e0358ed66390"
+    },
+    {
+      "path": "src/parts/scrollbars/led-rail/react/LedRailScrollArea.tsx",
+      "bytes": 1669,
+      "sha256": "73f283516463903c560fca8f53a07d0419867f9ac9ef71e363ac0e1b0a0c21d5"
+    },
+    {
+      "path": "src/parts/scrollbars/led-rail/styles.css",
+      "bytes": 1170,
+      "sha256": "b900ba3505802c78b0311dc19e294c8322d6a67f132d7f23beec3b4b6cfa37c2"
+    },
+    {
+      "path": "src/parts/scrollbars/led-rail/usage.md",
+      "bytes": 2037,
+      "sha256": "9008b6039b8a3022dbe9a4124fc28ca98ac8180ba0ae8a3cbee7e81a85beb8cb"
+    },
+    {
+      "path": "src/parts/scrollbars/led-rail/vanilla/index.html",
+      "bytes": 2413,
+      "sha256": "cc6ac047789fd2e169cf36a06a6e201910aeb5942accf7f163c9afa1caded272"
+    },
+    {
+      "path": "src/parts/scrollbars/led-rail/vanilla/init.ts",
+      "bytes": 216,
+      "sha256": "f78bcd52b0789d5e5e8666325aa5ccac5d2bc16ba45df6cf30840ba68f629bfb"
+    },
+    {
+      "path": "src/parts/scrollbars/led-rail/vanilla/main.ts",
+      "bytes": 386,
+      "sha256": "62df55a58c87181ad1a914146b15e41b79103bd63cf6c5a51b0de49a8607bb30"
+    },
+    {
+      "path": "src/parts/scrollbars/light-leak/markup.html",
+      "bytes": 889,
+      "sha256": "36b1f4fadd04952852821265d5f44398125a443b022c99ead8d82c42c59cffc9"
+    },
+    {
+      "path": "src/parts/scrollbars/light-leak/meta.json",
+      "bytes": 1484,
+      "sha256": "0795ab2f80574f085b4c07a35de04a70d68da93360bea49ded2697b553a5db19"
+    },
+    {
+      "path": "src/parts/scrollbars/light-leak/prompt.md",
+      "bytes": 3021,
+      "sha256": "aa5bed62a488dc014e219d731e57469cae1123d7581a1eeeb11c9f2bbbc718bb"
+    },
+    {
+      "path": "src/parts/scrollbars/light-leak/react/Example.tsx",
+      "bytes": 630,
+      "sha256": "4bea064a7fb1416a98c096e0bdb761fa9e5a63788b1e8232507a7c1f0dfd1708"
+    },
+    {
+      "path": "src/parts/scrollbars/light-leak/react/LightLeakScrollArea.tsx",
+      "bytes": 1676,
+      "sha256": "c813a18259017f3bfe68151ac8fb4211a8f392b235ba5c1a1b7d954c0547e520"
+    },
+    {
+      "path": "src/parts/scrollbars/light-leak/styles.css",
+      "bytes": 1210,
+      "sha256": "8dec4b19b6f843c2af59ff306c7cdb1df9b46cb0edd8a95fd4173b4311cbc2e4"
+    },
+    {
+      "path": "src/parts/scrollbars/light-leak/usage.md",
+      "bytes": 2042,
+      "sha256": "a46c594f2a42e79669606773cb30b9ebd1a423cb48406b9935985192a5d1a79a"
+    },
+    {
+      "path": "src/parts/scrollbars/light-leak/vanilla/index.html",
+      "bytes": 2417,
+      "sha256": "b50dccfff51f16a55a71a3c70f7c0cd1f35baed199794662dc097bf5058b5d60"
+    },
+    {
+      "path": "src/parts/scrollbars/light-leak/vanilla/init.ts",
+      "bytes": 216,
+      "sha256": "f78bcd52b0789d5e5e8666325aa5ccac5d2bc16ba45df6cf30840ba68f629bfb"
+    },
+    {
+      "path": "src/parts/scrollbars/light-leak/vanilla/main.ts",
+      "bytes": 390,
+      "sha256": "eb81f668c93baa033b691677b84ef6367a08c6f835ad7f081151e468b91eeb07"
+    },
+    {
+      "path": "src/parts/scrollbars/magnetic-scroll/markup.html",
+      "bytes": 894,
+      "sha256": "4d86a760193bed665a8e117648d0382a3742a4a48d0e390aafdcdc7d4d7b22c4"
+    },
+    {
+      "path": "src/parts/scrollbars/magnetic-scroll/meta.json",
+      "bytes": 1504,
+      "sha256": "a7fb79ba858ecc91ff34cb99e591c883c3c01e568b5a312631f8b16e0d2123f4"
+    },
+    {
+      "path": "src/parts/scrollbars/magnetic-scroll/prompt.md",
+      "bytes": 3186,
+      "sha256": "44c7ebd4b7966e35313e6b704d8372c0a46131d50edec2c5d7d5eb3bf582409c"
+    },
+    {
+      "path": "src/parts/scrollbars/magnetic-scroll/react/Example.tsx",
+      "bytes": 650,
+      "sha256": "d4828f0303b49a4265315980751e5941810b3ef489ce5004f98c30f8f2ef5757"
+    },
+    {
+      "path": "src/parts/scrollbars/magnetic-scroll/react/MagneticScrollScrollArea.tsx",
+      "bytes": 1692,
+      "sha256": "e8f9c0c72354bc11cd1b774169c1230adfe4ac84d3fd997c064de48f85049937"
+    },
+    {
+      "path": "src/parts/scrollbars/magnetic-scroll/styles.css",
+      "bytes": 1368,
+      "sha256": "bce53557dff7c91936310413505c7f05dd876780899be2c1812ecc6525fc1121"
+    },
+    {
+      "path": "src/parts/scrollbars/magnetic-scroll/usage.md",
+      "bytes": 2046,
+      "sha256": "1e106eb1d960a8ff49955972ded9829f534d0005ccf03e0e082eeb3fc5e136a5"
+    },
+    {
+      "path": "src/parts/scrollbars/magnetic-scroll/vanilla/index.html",
+      "bytes": 2420,
+      "sha256": "6bb7349873f9c90e1f67709e6876c229339c293a24bc692ac45356337e42122e"
+    },
+    {
+      "path": "src/parts/scrollbars/magnetic-scroll/vanilla/init.ts",
+      "bytes": 216,
+      "sha256": "f78bcd52b0789d5e5e8666325aa5ccac5d2bc16ba45df6cf30840ba68f629bfb"
+    },
+    {
+      "path": "src/parts/scrollbars/magnetic-scroll/vanilla/main.ts",
+      "bytes": 393,
+      "sha256": "7e3d776048c86cf14e3e918549d256bd6630a03f7f106577e3cbcf0f7cbc8bc5"
+    },
+    {
+      "path": "src/parts/scrollbars/minimal-scroll/markup.html",
+      "bytes": 893,
+      "sha256": "6093af051d19d28bb1b703443e3ee4c56962e0a11e00f833e110931442d4d733"
+    },
+    {
+      "path": "src/parts/scrollbars/minimal-scroll/meta.json",
+      "bytes": 1517,
+      "sha256": "c9b5004cbce754577241af96fa58b66f8b0f9badc5e9948df7b1d04d9d69a74c"
+    },
+    {
+      "path": "src/parts/scrollbars/minimal-scroll/prompt.md",
+      "bytes": 2353,
+      "sha256": "80225b703ef9454a55603cfbe5282328cfade801cefb2721ad3f25856e39face"
+    },
+    {
+      "path": "src/parts/scrollbars/minimal-scroll/react/Example.tsx",
+      "bytes": 646,
+      "sha256": "2abdbc4fd4cdb3a3362ecb183c1d3aaa3a277384ed9a369b574aa92bb21b8901"
+    },
+    {
+      "path": "src/parts/scrollbars/minimal-scroll/react/MinimalScrollScrollArea.tsx",
+      "bytes": 1705,
+      "sha256": "585b1c127161b0fb5b653e224b12942c785ab5649e97758a18d622e95cf8e717"
+    },
+    {
+      "path": "src/parts/scrollbars/minimal-scroll/styles.css",
+      "bytes": 521,
+      "sha256": "538f75578f71daf2ed8d26eb023503dfd4deaf6333c3b94b79b100e6a9b0247a"
+    },
+    {
+      "path": "src/parts/scrollbars/minimal-scroll/usage.md",
+      "bytes": 2067,
+      "sha256": "8d39584d797270bae3af80c0b6dcbb8cfc9758836baea13c321cd5dd5c6d2e55"
+    },
+    {
+      "path": "src/parts/scrollbars/minimal-scroll/vanilla/index.html",
+      "bytes": 2425,
+      "sha256": "abd27bfeabd29c93fdb78dfff3961a8e60415402455aaab072983fbc1f4fdbf4"
+    },
+    {
+      "path": "src/parts/scrollbars/minimal-scroll/vanilla/init.ts",
+      "bytes": 216,
+      "sha256": "f78bcd52b0789d5e5e8666325aa5ccac5d2bc16ba45df6cf30840ba68f629bfb"
+    },
+    {
+      "path": "src/parts/scrollbars/minimal-scroll/vanilla/main.ts",
+      "bytes": 398,
+      "sha256": "af966af9d4e0a1c6bf7b6c7901cb7fca34a99ce361681dbeb6949a35e4ab2dee"
+    },
+    {
+      "path": "src/parts/scrollbars/moire-rail/markup.html",
+      "bytes": 889,
+      "sha256": "09c9534e6d6e698e491c4b638ea2d36ea8dd39c8b09eb9852327461f53796d61"
+    },
+    {
+      "path": "src/parts/scrollbars/moire-rail/meta.json",
+      "bytes": 1505,
+      "sha256": "187b6d811108a6a60ffb3cf9eb4b1c2c3add6f16f147dfa7250557e592d5eb38"
+    },
+    {
+      "path": "src/parts/scrollbars/moire-rail/prompt.md",
+      "bytes": 3098,
+      "sha256": "dcfbe4477419fdb6cf2ddd614cf604a07c05ca2fc364840aacc8400d2061b819"
+    },
+    {
+      "path": "src/parts/scrollbars/moire-rail/react/Example.tsx",
+      "bytes": 630,
+      "sha256": "1eac07d702d1f6d02cfa8a5ce5669742eebd630fc94f8784e5a3c8b024077378"
+    },
+    {
+      "path": "src/parts/scrollbars/moire-rail/react/MoireRailScrollArea.tsx",
+      "bytes": 1679,
+      "sha256": "0afe1d380d0d9093e23f964be16dd4d0b67104308fff5b2358fc996ba0f2f484"
+    },
+    {
+      "path": "src/parts/scrollbars/moire-rail/styles.css",
+      "bytes": 1278,
+      "sha256": "7a6662e81a3271bc4aee81657d3df33cb111ed8a5e3bb5f0944289f894cf11e2"
+    },
+    {
+      "path": "src/parts/scrollbars/moire-rail/usage.md",
+      "bytes": 2046,
+      "sha256": "ace55726a0e3067fe112028be34b8b0dd18286ac3922a0eaf673782f25738469"
+    },
+    {
+      "path": "src/parts/scrollbars/moire-rail/vanilla/index.html",
+      "bytes": 2418,
+      "sha256": "01dcd9cfa360adc23cf63c0dd4c4bc0827959c9787c1f0f67802f087825cc558"
+    },
+    {
+      "path": "src/parts/scrollbars/moire-rail/vanilla/init.ts",
+      "bytes": 216,
+      "sha256": "f78bcd52b0789d5e5e8666325aa5ccac5d2bc16ba45df6cf30840ba68f629bfb"
+    },
+    {
+      "path": "src/parts/scrollbars/moire-rail/vanilla/main.ts",
+      "bytes": 391,
+      "sha256": "85deaad04685c9abf60b0dd6e8e889e3193817ff1ce773ab64e6580cae2fe7d8"
+    },
+    {
+      "path": "src/parts/scrollbars/orbital-track/markup.html",
+      "bytes": 892,
+      "sha256": "185b1fcae0d5bb1a35e7f978ea1896d7a57c13760a3618f6cc37c4bed2cd0582"
+    },
+    {
+      "path": "src/parts/scrollbars/orbital-track/meta.json",
+      "bytes": 1492,
+      "sha256": "933d0ae6b2127dea47cb95f03eb31844ac3f4c4fa82dcff8955734ffcdb4df77"
+    },
+    {
+      "path": "src/parts/scrollbars/orbital-track/prompt.md",
+      "bytes": 3053,
+      "sha256": "ff5318dff778d14cbfd41e9cece6a1ca2c31cfbb84667f8763b63ad1049b0ca2"
+    },
+    {
+      "path": "src/parts/scrollbars/orbital-track/react/Example.tsx",
+      "bytes": 642,
+      "sha256": "ff4be653b9a39292433dbed4632e398ed3014c44aaf2f3911e506c14eb21f631"
+    },
+    {
+      "path": "src/parts/scrollbars/orbital-track/react/OrbitalTrackScrollArea.tsx",
+      "bytes": 1682,
+      "sha256": "379d815e02f250cb1cc49e12d9331da6b11ae62442628f374f35673295e95138"
+    },
+    {
+      "path": "src/parts/scrollbars/orbital-track/styles.css",
+      "bytes": 1241,
+      "sha256": "be19c8a7b64d39aeb279b73b1a44fc14981a6f6cd9ce1905930a486ab9501737"
+    },
+    {
+      "path": "src/parts/scrollbars/orbital-track/usage.md",
+      "bytes": 2045,
+      "sha256": "b4517f06f8006cf00009823c51ce1487f5a3290045400464db7d180e44797cd6"
+    },
+    {
+      "path": "src/parts/scrollbars/orbital-track/vanilla/index.html",
+      "bytes": 2423,
+      "sha256": "8321aa56db65a044197a25363ab30b2ee408c50b81acba00e3aeee69749533ec"
+    },
+    {
+      "path": "src/parts/scrollbars/orbital-track/vanilla/init.ts",
+      "bytes": 216,
+      "sha256": "f78bcd52b0789d5e5e8666325aa5ccac5d2bc16ba45df6cf30840ba68f629bfb"
+    },
+    {
+      "path": "src/parts/scrollbars/orbital-track/vanilla/main.ts",
+      "bytes": 396,
+      "sha256": "94c05daaa781c1daf52fec0666b4c685dd59249cec49234ab5bd73ec6cbdd6dc"
+    },
+    {
+      "path": "src/parts/scrollbars/outline-scroll/markup.html",
+      "bytes": 893,
+      "sha256": "a22d5e2fddb0e9cd3949c3becd37d00376626c829f39a6435bc9e7ea5a1b8bac"
+    },
+    {
+      "path": "src/parts/scrollbars/outline-scroll/meta.json",
+      "bytes": 1505,
+      "sha256": "1911761e439198e2422675ac185ebb9bc39a91b7d090eb96c442096bc23c55f6"
+    },
+    {
+      "path": "src/parts/scrollbars/outline-scroll/prompt.md",
+      "bytes": 2458,
+      "sha256": "6c2f903415717dedbec5a297f74558a2f2ea6cd4765b6abd1c6f725193e5ef51"
+    },
+    {
+      "path": "src/parts/scrollbars/outline-scroll/react/Example.tsx",
+      "bytes": 646,
+      "sha256": "a55d3fdbdd63325374f525c84325f046d13844c9b48569c2cd26a4f292acc974"
+    },
+    {
+      "path": "src/parts/scrollbars/outline-scroll/react/OutlineScrollScrollArea.tsx",
+      "bytes": 1681,
+      "sha256": "98e36c3867c24df2d83b806a47b5ac91c5661e39847af15669003fc782f2a617"
+    },
+    {
+      "path": "src/parts/scrollbars/outline-scroll/styles.css",
+      "bytes": 650,
+      "sha256": "d84f993d15b74794f830ef6e5da9a80fd2a83cdf41098f254ee4fcc03ec20bb6"
+    },
+    {
+      "path": "src/parts/scrollbars/outline-scroll/usage.md",
+      "bytes": 2043,
+      "sha256": "07734621be4485b2c55e43cc4ea1848e14199f908019a0b36e1bb8827a3a0803"
+    },
+    {
+      "path": "src/parts/scrollbars/outline-scroll/vanilla/index.html",
+      "bytes": 2425,
+      "sha256": "07466ee4db0c026c7c60aed9d3ee3555a8b7b736524090ece2bb60d9efb254c6"
+    },
+    {
+      "path": "src/parts/scrollbars/outline-scroll/vanilla/init.ts",
+      "bytes": 216,
+      "sha256": "f78bcd52b0789d5e5e8666325aa5ccac5d2bc16ba45df6cf30840ba68f629bfb"
+    },
+    {
+      "path": "src/parts/scrollbars/outline-scroll/vanilla/main.ts",
+      "bytes": 398,
+      "sha256": "3e8b907183e5b2e2e259adc819c7dc67c1b484e5870228a7548a0b8a98c424d0"
+    },
+    {
+      "path": "src/parts/scrollbars/paper-ribbon/markup.html",
+      "bytes": 891,
+      "sha256": "3a301e6b0cc339bee33a7125069eb0113d32caafcaa8dcc58920ea92a63df17d"
+    },
+    {
+      "path": "src/parts/scrollbars/paper-ribbon/meta.json",
+      "bytes": 1495,
+      "sha256": "5c98440630c929b07a2856888fd744de1599d653b484cf734e331e0e129339ac"
+    },
+    {
+      "path": "src/parts/scrollbars/paper-ribbon/prompt.md",
+      "bytes": 3002,
+      "sha256": "df1c6244904b3618e594a1859435e82f37ec909a849dad0228f63f91c3f484b0"
+    },
+    {
+      "path": "src/parts/scrollbars/paper-ribbon/react/Example.tsx",
+      "bytes": 638,
+      "sha256": "599cbfe7b6294ba45d52821e59dcc248a310e9dfb94368684419a97989a86db0"
+    },
+    {
+      "path": "src/parts/scrollbars/paper-ribbon/react/PaperRibbonScrollArea.tsx",
+      "bytes": 1683,
+      "sha256": "52d7428514ec29790e0fb4d30f80ae0ce10aa5f889b39ec5f63514af4557d4ee"
+    },
+    {
+      "path": "src/parts/scrollbars/paper-ribbon/styles.css",
+      "bytes": 1187,
+      "sha256": "fdffb657ebe80dd107395c6384d7442ff65b417b68749971d65f8626d480de82"
+    },
+    {
+      "path": "src/parts/scrollbars/paper-ribbon/usage.md",
+      "bytes": 2047,
+      "sha256": "6a69cc878e0b0e7f290d153537df352d5e6b6b6b57b96a0598d43cd806eedd92"
+    },
+    {
+      "path": "src/parts/scrollbars/paper-ribbon/vanilla/index.html",
+      "bytes": 2421,
+      "sha256": "d34bbcf717145298e8fac0923753ab0c2e5c1b6cc77f214962a4e2f879e414c2"
+    },
+    {
+      "path": "src/parts/scrollbars/paper-ribbon/vanilla/init.ts",
+      "bytes": 216,
+      "sha256": "f78bcd52b0789d5e5e8666325aa5ccac5d2bc16ba45df6cf30840ba68f629bfb"
+    },
+    {
+      "path": "src/parts/scrollbars/paper-ribbon/vanilla/main.ts",
+      "bytes": 394,
+      "sha256": "754771dc973729c8edb15137b378f7942f2f4d66f2beed977c2e06276bfc36ce"
+    },
+    {
+      "path": "src/parts/scrollbars/perforation/markup.html",
+      "bytes": 890,
+      "sha256": "946839a1357684e4220d89102fb6ca80b00a9ebfcfa7f6391cf20927b3cb1bc3"
+    },
+    {
+      "path": "src/parts/scrollbars/perforation/meta.json",
+      "bytes": 1491,
+      "sha256": "c85484c98c0058e91ac38fc828052f040a1f91d996b74a2af26ecf5209024202"
+    },
+    {
+      "path": "src/parts/scrollbars/perforation/prompt.md",
+      "bytes": 3136,
+      "sha256": "94cedbcdbed4fee06f298426efe294fa14f9b167856cb78823565cdd7e2f5fdf"
+    },
+    {
+      "path": "src/parts/scrollbars/perforation/react/Example.tsx",
+      "bytes": 638,
+      "sha256": "2255314548adc38d0f6d7bd41136d780dfe4bb6dc6b41feb11f01835531224f0"
+    },
+    {
+      "path": "src/parts/scrollbars/perforation/react/PerforationScrollArea.tsx",
+      "bytes": 1682,
+      "sha256": "f23ba1a19d410051729b741146510dab0608aaf5c66f532cb8ccea1e6755d5df"
+    },
+    {
+      "path": "src/parts/scrollbars/perforation/styles.css",
+      "bytes": 1322,
+      "sha256": "888459aa50a3ac60f54523148b099fd416f2215b0a714765c5ab2101a9fe1283"
+    },
+    {
+      "path": "src/parts/scrollbars/perforation/usage.md",
+      "bytes": 2046,
+      "sha256": "dd705689ba332cd17b10b44a84ba32803a7008de63c3ba36189b1bc48526b91e"
+    },
+    {
+      "path": "src/parts/scrollbars/perforation/vanilla/index.html",
+      "bytes": 2419,
+      "sha256": "d923737945a1062e54348ec6ded53c890761fb78d4dc7ecff5523759b0266916"
+    },
+    {
+      "path": "src/parts/scrollbars/perforation/vanilla/init.ts",
+      "bytes": 216,
+      "sha256": "f78bcd52b0789d5e5e8666325aa5ccac5d2bc16ba45df6cf30840ba68f629bfb"
+    },
+    {
+      "path": "src/parts/scrollbars/perforation/vanilla/main.ts",
+      "bytes": 392,
+      "sha256": "37f320a8e1c7babfeaf314192f38d17131177598f30051214efc27efe92c9c20"
+    },
+    {
+      "path": "src/parts/scrollbars/phosphor/markup.html",
+      "bytes": 887,
+      "sha256": "543d8bd119b087d6503a4076248f36aa0987d477ee355c2fb4de68c2b7b4fb7c"
+    },
+    {
+      "path": "src/parts/scrollbars/phosphor/meta.json",
+      "bytes": 1490,
+      "sha256": "fea2d8b7048af0f1f67aa37eedc222f8769f0bb572b09f6d2bb33816f7fb89c5"
+    },
+    {
+      "path": "src/parts/scrollbars/phosphor/prompt.md",
+      "bytes": 3090,
+      "sha256": "a6c404e5412d131af724f8bef5f3295515905e279e01ee8ed7068fb4453b47c3"
+    },
+    {
+      "path": "src/parts/scrollbars/phosphor/react/Example.tsx",
+      "bytes": 626,
+      "sha256": "a3bdc9044ff63d88d7e705d10e7f3436e849f5a9a146d0551601ed70d97ded38"
+    },
+    {
+      "path": "src/parts/scrollbars/phosphor/react/PhosphorScrollArea.tsx",
+      "bytes": 1682,
+      "sha256": "9c4d30c02c2ec18a8bdf139167b1d3e7c9aea8fba86fe78be66a3e04b5e84d37"
+    },
+    {
+      "path": "src/parts/scrollbars/phosphor/styles.css",
+      "bytes": 1272,
+      "sha256": "b87d24692c5b6b129e534af19836116574943816b97fe39723c55450f9660dc8"
+    },
+    {
+      "path": "src/parts/scrollbars/phosphor/usage.md",
+      "bytes": 2049,
+      "sha256": "bee5e1cd4f63f7fca1f59624be25eeb07607fa140657057b215454aefdae3dc6"
+    },
+    {
+      "path": "src/parts/scrollbars/phosphor/vanilla/index.html",
+      "bytes": 2413,
+      "sha256": "3fe8d51ff59708cbc335b98da09d207ef0ce14233034524834521755a29409d1"
+    },
+    {
+      "path": "src/parts/scrollbars/phosphor/vanilla/init.ts",
+      "bytes": 216,
+      "sha256": "f78bcd52b0789d5e5e8666325aa5ccac5d2bc16ba45df6cf30840ba68f629bfb"
+    },
+    {
+      "path": "src/parts/scrollbars/phosphor/vanilla/main.ts",
+      "bytes": 386,
+      "sha256": "57f6a66b89e7ed9111e95974e8ef648fbabcf44774c62ff4e5fdc0f20987be9e"
+    },
+    {
+      "path": "src/parts/scrollbars/prism-rail/markup.html",
+      "bytes": 889,
+      "sha256": "9614ff79dd5bef77fac237f63fef9faf30fc5bcea339146166e34dc541c18b50"
+    },
+    {
+      "path": "src/parts/scrollbars/prism-rail/meta.json",
+      "bytes": 1486,
+      "sha256": "2e7e33900fc071b90e47715f450e63444768892bbda6f623d3d6fb713d72f587"
+    },
+    {
+      "path": "src/parts/scrollbars/prism-rail/prompt.md",
+      "bytes": 3115,
+      "sha256": "7824126b1454c33d1cb3a14cd2279a359f04263ea908fb09764ec1e4569e255a"
+    },
+    {
+      "path": "src/parts/scrollbars/prism-rail/react/Example.tsx",
+      "bytes": 630,
+      "sha256": "2d0264d138131638d30cf189866503bd73be701bad29718407c54b0c408fd525"
+    },
+    {
+      "path": "src/parts/scrollbars/prism-rail/react/PrismRailScrollArea.tsx",
+      "bytes": 1682,
+      "sha256": "59bc876978cc76ad9632b1b976fc83edf5960349b7e8aa50ea3b8eb9aecd1d19"
+    },
+    {
+      "path": "src/parts/scrollbars/prism-rail/styles.css",
+      "bytes": 1297,
+      "sha256": "ef8e62a89cbc5f593e4e805fa8269c45e992ad6717b08f3ed9200f83bd483edf"
+    },
+    {
+      "path": "src/parts/scrollbars/prism-rail/usage.md",
+      "bytes": 2048,
+      "sha256": "6e5e4289a9c594be1bbad6c16633ea6fc55ae3965fd09d13de6455cc5dd7f2ff"
+    },
+    {
+      "path": "src/parts/scrollbars/prism-rail/vanilla/index.html",
+      "bytes": 2417,
+      "sha256": "72a49f910f076c551acaa78c44061462060948c00ced50b9728562b2b091540d"
+    },
+    {
+      "path": "src/parts/scrollbars/prism-rail/vanilla/init.ts",
+      "bytes": 216,
+      "sha256": "f78bcd52b0789d5e5e8666325aa5ccac5d2bc16ba45df6cf30840ba68f629bfb"
+    },
+    {
+      "path": "src/parts/scrollbars/prism-rail/vanilla/main.ts",
+      "bytes": 390,
+      "sha256": "91768560f7ab68109dc8ade271968d0b8172c6a54d48ced915c04d051ffedf34"
+    },
+    {
+      "path": "src/parts/scrollbars/soft-scroll/markup.html",
+      "bytes": 890,
+      "sha256": "31d43f9c3765fe230ca735cb5871e379e75a35f6889a11feafea26fd4f37158a"
+    },
+    {
+      "path": "src/parts/scrollbars/soft-scroll/meta.json",
+      "bytes": 1469,
+      "sha256": "7147ff44b6a9395e1baba36552711ea7c884295bf1b9fe9f3dde4ac173208195"
+    },
+    {
+      "path": "src/parts/scrollbars/soft-scroll/prompt.md",
+      "bytes": 2455,
+      "sha256": "0a73ffb2b37d4863469dfef1ec49acfb1923e2d0dd92f2a1994d63f514c0cefe"
+    },
+    {
+      "path": "src/parts/scrollbars/soft-scroll/react/Example.tsx",
+      "bytes": 634,
+      "sha256": "867443080d4a062c593d304de5479220aa9ef3b0da1db1bf7649badc9db3e7c1"
+    },
+    {
+      "path": "src/parts/scrollbars/soft-scroll/react/SoftScrollScrollArea.tsx",
+      "bytes": 1666,
+      "sha256": "bdeab3c3956d44bb2fbbed1170d20b38a4d382cf3351d83db54d8d9b8f1e2d87"
+    },
+    {
+      "path": "src/parts/scrollbars/soft-scroll/styles.css",
+      "bytes": 662,
+      "sha256": "744606a6cbe8ddd876a0963419d50151e08cf3b7b34d266e3818745f4e040963"
+    },
+    {
+      "path": "src/parts/scrollbars/soft-scroll/usage.md",
+      "bytes": 2031,
+      "sha256": "056b7193a25ced945b75022c0f9cf5d9f02400837d4c67c1add802646ef3abba"
+    },
+    {
+      "path": "src/parts/scrollbars/soft-scroll/vanilla/index.html",
+      "bytes": 2419,
+      "sha256": "26e49b74d531c847765cd093b862de63838678cb22edbc0862b57526c074006d"
+    },
+    {
+      "path": "src/parts/scrollbars/soft-scroll/vanilla/init.ts",
+      "bytes": 216,
+      "sha256": "f78bcd52b0789d5e5e8666325aa5ccac5d2bc16ba45df6cf30840ba68f629bfb"
+    },
+    {
+      "path": "src/parts/scrollbars/soft-scroll/vanilla/main.ts",
+      "bytes": 392,
+      "sha256": "7df58d2adfd0701d8549477d88bf1bede287f227552c0ba81e1b2e2bd9cd03d6"
+    },
+    {
+      "path": "src/parts/scrollbars/tideglass/markup.html",
+      "bytes": 888,
+      "sha256": "291ab083d6d6580512e164f192baf00034e407b25b6e57803423eef3111a2ff4"
+    },
+    {
+      "path": "src/parts/scrollbars/tideglass/meta.json",
+      "bytes": 1487,
+      "sha256": "0370f4c52d82d34c42d38b224a9965109e00b28e00f6fd094612f733954856b5"
+    },
+    {
+      "path": "src/parts/scrollbars/tideglass/prompt.md",
+      "bytes": 3197,
+      "sha256": "75d513f3ed8c1aecfe8c40b463af61fa5bd57225ed4c5f5f1a5b1c3f2f95306f"
+    },
+    {
+      "path": "src/parts/scrollbars/tideglass/react/Example.tsx",
+      "bytes": 630,
+      "sha256": "245c697511eb3171cf642105673682313c76eb75a5b6d1bb7f3e532a3fa44c07"
+    },
+    {
+      "path": "src/parts/scrollbars/tideglass/react/TideglassScrollArea.tsx",
+      "bytes": 1681,
+      "sha256": "e9ec933bc908affb190c359b3533e98d8f3d430ce8964be22c089f5751f2983d"
+    },
+    {
+      "path": "src/parts/scrollbars/tideglass/styles.css",
+      "bytes": 1385,
+      "sha256": "659b545182e3e0946e070872ae26cc3eeb1ef7b3e74ddd88dab10bd6ced6dd1f"
+    },
+    {
+      "path": "src/parts/scrollbars/tideglass/usage.md",
+      "bytes": 2047,
+      "sha256": "2068149a551c6e66d1a605f3092d76fa39f2a564e8ea086f70d86dc1c1b6f9ae"
+    },
+    {
+      "path": "src/parts/scrollbars/tideglass/vanilla/index.html",
+      "bytes": 2415,
+      "sha256": "44ea489dee345ae1b0accb311a55e2be47189189796c521d8d4f5b9bc1cb8826"
+    },
+    {
+      "path": "src/parts/scrollbars/tideglass/vanilla/init.ts",
+      "bytes": 216,
+      "sha256": "f78bcd52b0789d5e5e8666325aa5ccac5d2bc16ba45df6cf30840ba68f629bfb"
+    },
+    {
+      "path": "src/parts/scrollbars/tideglass/vanilla/main.ts",
+      "bytes": 388,
+      "sha256": "cc6909969069f802516d9721736dbcf5d0f69a9b9407109a11f65c7475c39ead"
+    },
+    {
+      "path": "src/parts/scrollbars/vernier/markup.html",
+      "bytes": 886,
+      "sha256": "f4c761a2337619e5ae1dcb53cdd8e376eb89b809d6a95e1526cdf1f577e4095b"
+    },
+    {
+      "path": "src/parts/scrollbars/vernier/meta.json",
+      "bytes": 1468,
+      "sha256": "ea9c29fdee063ae3e1a9e0a953b938c254232a358408d9182eded852bba416f0"
+    },
+    {
+      "path": "src/parts/scrollbars/vernier/prompt.md",
+      "bytes": 3243,
+      "sha256": "293c4a869ccc3a0cde451ded09b084646ebb38c68886d942ca09427401ce3689"
+    },
+    {
+      "path": "src/parts/scrollbars/vernier/react/Example.tsx",
+      "bytes": 622,
+      "sha256": "6961682ce140c622cd3bc25237b4224a302c619a5bc9838ef97dd56192f66fdc"
+    },
+    {
+      "path": "src/parts/scrollbars/vernier/react/VernierScrollArea.tsx",
+      "bytes": 1671,
+      "sha256": "cae2a82cb120a6bc6196a42044a5faccd3e3dbe826261be8854ab82064f54b35"
+    },
+    {
+      "path": "src/parts/scrollbars/vernier/styles.css",
+      "bytes": 1436,
+      "sha256": "9da0f75eab0bcc20d011864b3350884a1b0565dddae749f194fe905945c8dc3e"
+    },
+    {
+      "path": "src/parts/scrollbars/vernier/usage.md",
+      "bytes": 2039,
+      "sha256": "bb5b84c6dd93f5976ebc5cef9cf8008c7a81302cdeb07bf6d7a818b32199eb1e"
+    },
+    {
+      "path": "src/parts/scrollbars/vernier/vanilla/index.html",
+      "bytes": 2411,
+      "sha256": "03943f3745f7058f27491981eaa79d7a975fa67fa3ca7034153fca02dfda242e"
+    },
+    {
+      "path": "src/parts/scrollbars/vernier/vanilla/init.ts",
+      "bytes": 216,
+      "sha256": "f78bcd52b0789d5e5e8666325aa5ccac5d2bc16ba45df6cf30840ba68f629bfb"
+    },
+    {
+      "path": "src/parts/scrollbars/vernier/vanilla/main.ts",
+      "bytes": 384,
+      "sha256": "635613b66c5b13d98d93fba07851e53fa1c6868dbeaaa2f0de1c1499279c17f5"
     },
     {
       "path": "src/parts/toggles/aperture/markup.html",
@@ -2492,6 +3702,21 @@
       "sha256": "fa8fc1d38133a68e484b9e7b13f126346d6c9173688672d8090d26e0487dc3ad"
     },
     {
+      "path": "src/shared/scroll-area.ts",
+      "bytes": 10348,
+      "sha256": "05d3c86782172fc823cc9166b132394f101ac4b5a9534736b68dadd463b9c726"
+    },
+    {
+      "path": "src/shared/scroll-metrics.ts",
+      "bytes": 1074,
+      "sha256": "2804de87d179e95954b8b251330fbe0a9d9324dc65000517c2259dfaf923ee2c"
+    },
+    {
+      "path": "src/shared/scrollbar-base.css",
+      "bytes": 6392,
+      "sha256": "f45e07c2e801813de0dedeb98eccc4d40687793b3312e3b4534eac7054c701d3"
+    },
+    {
       "path": "src/shared/simple-toggle.ts",
       "bytes": 4259,
       "sha256": "f1650a40a766834ea85824f5d6dc7ccaf7708ff7e2dc051b3ed95db772273cd7"
@@ -2512,6 +3737,11 @@
       "sha256": "0b9c1d3063509095946f381629df5b31ca58eb7ec4eae66dff162efa90d4a4c6"
     },
     {
+      "path": "src/shared/use-scroll-area.ts",
+      "bytes": 1326,
+      "sha256": "e8cf2be456dd82b465d9b4ef7f0950a9c3f48bbefd7ce036fd3b5b9c9cb47c89"
+    },
+    {
       "path": "src/shared/use-simple-toggle.ts",
       "bytes": 1535,
       "sha256": "88f1f373d7d055e805b11d67700519079174cc25034b5afba8098216f1efbe71"
@@ -2528,8 +3758,8 @@
     },
     {
       "path": "scripts/catalog.ts",
-      "bytes": 6947,
-      "sha256": "7ba5c429c5c169bfa88d7b40abde2a78c5decbe1e37ea257d18dbc773545a49e"
+      "bytes": 7867,
+      "sha256": "aee706f1b15c56021e6438fa4472ede0fe44135e353c8f7ff36a0ed96137cb43"
     },
     {
       "path": "scripts/export-parts.ts",
@@ -2548,8 +3778,8 @@
     },
     {
       "path": "scripts/source-tools.ts",
-      "bytes": 12139,
-      "sha256": "0001658b203fea3936e8ce38abd8cc55ac86ff532c125f41d0b913d6a0d4bd5a"
+      "bytes": 12485,
+      "sha256": "c0b4cee1bee0beee4e436254b38767e840f0ed645943d7832e71d52c067f0701"
     },
     {
       "path": "scripts/templates/demo-entry.ts.txt",
@@ -2573,8 +3803,8 @@
     },
     {
       "path": "tests/browser.ts",
-      "bytes": 28165,
-      "sha256": "3367a9a946376e56b16811a6594f2f1528f57724197d78effa06c21b53589964"
+      "bytes": 28577,
+      "sha256": "8c6b996e0e7a862554a14c75318ba043b72ebeaf06cea799a7f6b1ddd282d189"
     },
     {
       "path": "tests/core.test.ts",
@@ -2583,8 +3813,8 @@
     },
     {
       "path": "tests/delivery.test.ts",
-      "bytes": 11662,
-      "sha256": "7a910473ed477cc2a16626c847f915285edfdd0215ba6987561278a876e1bacb"
+      "bytes": 11949,
+      "sha256": "940c84687782e617e0373dbeb15d094d86d8bf1b346a5a56289b0568bb63f348"
     },
     {
       "path": "tests/expansion.test.ts",
@@ -2593,33 +3823,48 @@
     },
     {
       "path": "tests/offline-fixture.ts",
-      "bytes": 2746,
-      "sha256": "8db6863555360e3ade4768855fc3fdc2b2425a164d4989ce8941bb22e88c8788"
+      "bytes": 3401,
+      "sha256": "0a9978fd9ef2c15c0a52c852bd560415670fa55ac6f731b7c4428e5d4adb5944"
     },
     {
       "path": "tests/relocation.ts",
-      "bytes": 7990,
-      "sha256": "b4920731028e548483e32c62844d3c351ff4db448ac08819b996283c7227959f"
+      "bytes": 8701,
+      "sha256": "5f34cff537fcad59ab2de74b0ed81dfce32cc334ea4de7892d07021ad95381ad"
+    },
+    {
+      "path": "tests/scrollbars.browser.ts",
+      "bytes": 15194,
+      "sha256": "5efc6cc6997680b98d6f6f5bd4097dff74db19686169297226bd22742e2f9795"
+    },
+    {
+      "path": "tests/scrollbars.react.ts",
+      "bytes": 7707,
+      "sha256": "40aac1840f9b7a4c6f8db8a3edb31c5fb47cc69c38032daf037570a2be5cf7d6"
+    },
+    {
+      "path": "tests/scrollbars.test.ts",
+      "bytes": 4545,
+      "sha256": "28233803edfa1320c0dc06488c2ada09384b9477d458c9d9b677cf1d8431dada"
     },
     {
       "path": "docs/ADDING-PARTS.md",
-      "bytes": 8815,
-      "sha256": "24c4c8d7b99963a61f1e16b71625fa32177289b8917ba011efaa803cdf17c396"
+      "bytes": 11080,
+      "sha256": "18cda1d63c749b0db4c8a40cead3144e3557d9c190b9425dd137f089ed36e050"
     },
     {
       "path": "docs/ARCHITECTURE.md",
-      "bytes": 3778,
-      "sha256": "74c6906fe2614c7ad10c877f5f1a17840101c78a826c18caedff6c091b4e9f61"
+      "bytes": 4956,
+      "sha256": "3d42ec5411c85632c5effb211245419bdc3b02dc02497b939f112fc5f4f774fa"
     },
     {
       "path": "docs/COLLECTION.md",
-      "bytes": 5917,
-      "sha256": "3d0ff1a2224ea7e3277a5db785a37aaf6ce413afffc4f9547508a6c06e641024"
+      "bytes": 8336,
+      "sha256": "dc75e2957673dffb0bfaae33d6e8d014bf9142c7eaffee8a103c35feba57c43e"
     },
     {
       "path": "docs/INTEGRATION.md",
-      "bytes": 6494,
-      "sha256": "4b27ad3193ff1ea12d5f057d85c81fc32c95a3cb5fb9614be825b45e1f1b197e"
+      "bytes": 8491,
+      "sha256": "ec70fa8680989336f9f4f9225882d65cbb5607f1b43f3d245fcd325eb624be7d"
     },
     {
       "path": "docs/MIGRATION.md",
@@ -2628,13 +3873,13 @@
     },
     {
       "path": "docs/VERIFICATION.md",
-      "bytes": 6432,
-      "sha256": "a14b71269df1f3fbd95e17752c7207830e07680798aa4b9178ab796fa7ce4e13"
+      "bytes": 6176,
+      "sha256": "b5d4b6cc0d1168c8bf6a29b131c484ad04b9ce7752621b594f6363f8002a261b"
     },
     {
       "path": "docs/verification.json",
-      "bytes": 1472,
-      "sha256": "d780643072fa7dc684caa4367d8b6fcf1e63145c87031ce44d58f2bc452f8ee9"
+      "bytes": 4730,
+      "sha256": "1441eb724f5926a9075bb0c1de2fc0b37b4c290567db8960eee67cf9c9b21d8a"
     },
     {
       "path": "public/.nojekyll",
@@ -2673,8 +3918,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 5703,
-      "sha256": "8fd5d478844723c6c310556965aec7199f04c0e68e3cc3d4a4f9a50a6f7688e4"
+      "bytes": 5732,
+      "sha256": "da262e91d3b3e5e40196c5a9292e3a436a2a40cf5680649075f93c6e3437c1d1"
     },
     {
       "path": "vite.config.ts",
@@ -2683,8 +3928,8 @@
     },
     {
       "path": "tsconfig.json",
-      "bytes": 477,
-      "sha256": "763a7ed6b35e9a48f7c11e201ac8cf9a4bf491bd439361d941dac47138d3a894"
+      "bytes": 514,
+      "sha256": "0c805d9ec16d8d0f60b70853f18f864c67133c4250ceb6a9dd4fbbc0094b79f0"
     },
     {
       "path": "tsconfig.react.json",
@@ -2698,13 +3943,13 @@
     },
     {
       "path": "package.json",
-      "bytes": 1423,
-      "sha256": "1f6906a525e36c280782308a93b06d6dcfe9a4cb8965e816bca1412cf84d239c"
+      "bytes": 1684,
+      "sha256": "bb78965f44148b8156c196e5b72130baa4988a882afc9f188fb4482273174122"
     },
     {
       "path": "README.md",
-      "bytes": 11686,
-      "sha256": "b8227942b96fffe730c3d7029f446ed55a9b4cc1aebda4219a3e393132191d9f"
+      "bytes": 12180,
+      "sha256": "202983b2ec9e7ff4fef75711c5cefd66a3fe8438bb93332ba7d4af97536a974f"
     },
     {
       "path": "THIRD-PARTY-NOTICES.md",

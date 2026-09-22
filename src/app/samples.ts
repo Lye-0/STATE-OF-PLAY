@@ -1,3 +1,4 @@
+import { scrollSampleHTML } from '../catalog/scroll-sample';
 import { escapeHTML } from './utils';
 import type { Part } from '../catalog/types';
 const content: Record<string, {eyebrow: string; title: string; sub: string; bottom: string; badge: string}> = {
@@ -19,6 +20,11 @@ const content: Record<string, {eyebrow: string; title: string; sub: string; bott
 "prismatic-edge": {"eyebrow": "THE BEAUTY OF THE EDGE", "title": "Different<br><em>by nature.</em>", "sub": "ほんの少し、視点を変える。", "bottom": "DICHROIC / SERIES 14", "badge": "16"}
 };
 export function fillSample(root: HTMLElement, part: Part) {
+    if (part.category === 'scrollbars') {
+      const content = root.querySelector('.sop-scroll-content');
+      if (content) content.innerHTML = scrollSampleHTML(part);
+      return;
+    }
     if (part.category !== 'blocks')
         return;
     const c = content[part.id] ?? { eyebrow: 'YOUR COMPONENT', title: 'Your next<br><em>idea.</em>', sub: part.description, bottom: 'STATE OF PLAY', badge: '00' };

@@ -1,0 +1,7 @@
+@import "../../../shared/scrollbar-base.css";
+/* Outline Scroll — ESSENTIAL / OUTLINE / B */
+
+.sop-scroll-area.sop-outline-scroll{--sop-scroll-gutter:32px;--sop-scroll-width:10px;--sop-scroll-track:transparent;--sop-scroll-thumb:transparent;--sop-scroll-accent:#c0d4dc;--sop-scroll-radius:5px}
+.sop-scroll-area.sop-outline-scroll > .sop-scroll-rail > .sop-scroll-track{border:1px solid #65798551}
+.sop-scroll-area.sop-outline-scroll > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{border:1px solid #b2c9ce;background:#8097a024}
+.sop-scroll-area.sop-outline-scroll > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{display:none}

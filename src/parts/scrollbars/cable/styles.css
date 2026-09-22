@@ -1,0 +1,9 @@
+@import "../../../shared/scrollbar-base.css";
+/* Cable — BRAID / BRASS / A */
+
+.sop-scroll-area.sop-cable{--sop-scroll-width:10px;--sop-scroll-radius:4px;--sop-scroll-accent:#e4c88f;--sop-scroll-thumb:#aa895a}
+.sop-scroll-area.sop-cable > .sop-scroll-rail > .sop-scroll-track{background:repeating-linear-gradient(35deg,#33291e 0 2px,#d0ad7566 2px 3px,#645539 3px 5px);border-inline:1px solid #b6a17a;box-shadow:2px 0 3px #000a}
+.sop-scroll-area.sop-cable > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{background:#d2ae63;opacity:.2}
+.sop-scroll-area.sop-cable > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:30px;border-radius:6px;background:linear-gradient(90deg,#4f402c,#c8aa74 17%,#e1c998 37%,#977944 58%,#ccb082 84%,#4f402c);border:1px solid #d7ba895c;box-shadow:inset 0 2px 1px #f9dba9b3,0 5px 8px #000b}
+.sop-scroll-area.sop-cable > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{inset:9px 7px;border:1px solid #554325;border-radius:3px;background:repeating-linear-gradient(0deg,#5e482277 0 2px,transparent 2px 5px)}
+.sop-scroll-area.sop-cable > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle:after{content:'';position:absolute;width:5px;height:5px;left:11px;bottom:3px;border-radius:50%;background:linear-gradient(135deg,#fbdfb1,#352c1e 49%,#b29772 51%)}

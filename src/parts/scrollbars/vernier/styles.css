@@ -1,0 +1,9 @@
+@import "../../../shared/scrollbar-base.css";
+/* Vernier — MACHINED / SCALE / A */
+
+.sop-scroll-area.sop-vernier{--sop-scroll-gutter:50px;--sop-scroll-width:16px;--sop-scroll-radius:3px;--sop-scroll-accent:#d5e9c6}
+.sop-scroll-area.sop-vernier > .sop-scroll-rail > .sop-scroll-track{background:linear-gradient(90deg,#707975,#222a28 12%,#0b1010 45%,#a4aea3 92%,#29302e);border:1px solid #77857d66;box-shadow:0 4px 9px #0009}
+.sop-scroll-area.sop-vernier > .sop-scroll-rail > .sop-scroll-ticks{inset-inline-start:1px;inset-inline-end:0;background:repeating-linear-gradient(0deg,transparent 0 9px,#8f998575 9px 10px);mask-image:linear-gradient(90deg,#000 0 7px,transparent 7px 40px,#000 40px)}
+.sop-scroll-area.sop-vernier > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:32px;border-radius:4px;border:1px solid #b0bdb3;background:linear-gradient(100deg,#252e2c,#cdd5cd 20%,#73827a 44%,#d2ddd1 70%,#45554c);box-shadow:inset 0 1px 1px #fff9,2px 5px 6px #000b}
+.sop-scroll-area.sop-vernier > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{inset:8px 6px;background:repeating-linear-gradient(0deg,#0d1d1855 0 1px,#e8efda44 1px 2px,transparent 2px 5px);border-radius:2px}
+.sop-scroll-area.sop-vernier > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle:after{content:'';position:absolute;left:-6px;top:50%;width:7px;height:2px;background:#d8f6a9;box-shadow:0 0 8px #c7fa89}
