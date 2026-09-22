@@ -23,21 +23,37 @@ jobs:
         shell: bash
         run: |
           if [ -f package-lock.json ]; then npm ci; else npm install; fi
+      # Fail fast on TypeScript/unit/build errors before downloading browsers.
+      - name: Typecheck app, React components and tooling
+        run: npm run typecheck
+      - name: Unit tests
+        run: npm test
+      - name: Vite production build
+        run: npm run build
       - name: Install Chromium and Linux system dependencies
         if: runner.os == 'Linux'
         run: npx playwright install --with-deps chromium
       - name: Install Chromium on Windows
         if: runner.os == 'Windows'
         run: npx playwright install chromium
-      - name: Typecheck, unit tests, Vite build, browser tests
-        run: npm run verify
+      # Same checks as npm run verify, split so the failing stage is visible.
+      - name: Gallery browser tests and production preview
+        run: npm run test:browser
+      - name: Relocated component tests
+        run: npm run test:relocation
+      - name: Scrollbar browser tests
+        run: npm run test:scrollbars
+      - name: React scrollbar tests
+        run: npm run test:scrollbars:react
       - name: Build full source archive
         run: npm run package
       - name: Save reports on failure
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1, Node.js 24
         with:
           name: verification-${{ matrix.os }}
           path: .test-output/
+          # This directory contains only generated test fixtures/reports, not .env files.
+          include-hidden-files: true
           if-no-files-found: ignore
           retention-days: 7

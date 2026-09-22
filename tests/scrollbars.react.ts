@@ -1,5 +1,6 @@
 /** Actual exported React sources, not a replacement implementation. Default uses Vite + installed React. */
 import assert from 'node:assert/strict';
+import { requireLocalServerUrl } from './vite-url.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 import {createRequire} from 'node:module';
@@ -14,9 +15,16 @@ const bars=buildCatalog().parts.filter(p=>p.category==='scrollbars');
 const results:string[]=[],errors:string[]=[];
 const out=path.join(ROOT,'.test-output/scrollbar-react');fs.mkdirSync(out,{recursive:true});
 let shutdown:(()=>Promise<void>)|undefined,url='';
-if(!offline){const {createServer}=await import('vite');const server=await createServer({root:ROOT,server:{port:0,host:'127.0.0.1'}});await server.listen();url=server.resolvedUrls!.local[0].replace(/\/$/,'');shutdown=()=>server.close();}
-const browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
+let browser: Awaited<ReturnType<typeof chromium.launch>> | undefined;
 try {
+ if(!offline){
+  const {createServer}=await import('vite');
+  const server=await createServer({root:ROOT,server:{port:0,host:'127.0.0.1'}});
+  shutdown=()=>server.close();
+  await server.listen();
+  url=requireLocalServerUrl(server, 'Vite React scrollbar test server').replace(/\/$/,'');
+ }
+ browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
  for(const format of ['tsx','jsx'] as const) {
   const prefix=`.test-output/scrollbar-react/${format}`,extra=new Map<string,string>();
   const imports:string[]=[],styles:string[]=[];
@@ -54,4 +62,4 @@ createRoot(document.getElementById('root')).render(<React.StrictMode><App/></Rea
   results.push(`${format}: 24 parts, 48 independent instances, progress callbacks, React orientation/content updates, child actions, unique IDs, repeated cleanup`);console.log('PASS '+results.at(-1));await page.close();
  }
  assert.deepEqual(errors,[]);fs.writeFileSync(path.join(out,'results.json'),JSON.stringify({mode:offline?'synthetic document, actual installed React production runtime (not Vite)':'Vite + installed React development StrictMode',tests:results,errors},null,2)+'\n');
-}finally{await browser.close();await shutdown?.();}
+}finally{try{await browser?.close();}finally{await shutdown?.();}}

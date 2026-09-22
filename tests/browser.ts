@@ -1,5 +1,6 @@
 /** The default run tests real Vite over HTTP. SOP_TEST_MODE=offline is an explicit, reported test adapter. */
 import assert from 'node:assert/strict';
+import { requireLocalServerUrl } from './vite-url.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 import { createRequire } from 'node:module';
@@ -28,7 +29,7 @@ let browser: Browser|undefined;let closeServer:(()=>Promise<void>)|undefined;let
 const memory=new Map<string,string>();
 try{
  if(offline){for(const [key,value]of offlineFiles())memory.set(key,value);}
- else{const {createServer}=await import('vite');const server=await createServer({root:ROOT,server:{port:0,host:'127.0.0.1'}});await server.listen();url=server.resolvedUrls!.local[0].replace(/\/$/,'');closeServer=()=>server.close();}
+ else{const {createServer}=await import('vite');const server=await createServer({root:ROOT,server:{port:0,host:'127.0.0.1'}});closeServer=()=>server.close();await server.listen();url=requireLocalServerUrl(server, 'Vite development server').replace(/\/$/,'');}
  browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{}),args:['--no-sandbox']});
  const context=await browser.newContext({viewport:{width:1440,height:960},acceptDownloads:true});
  await context.addInitScript(()=>{const active=new Set<number>();const request=window.requestAnimationFrame.bind(window);const cancel=window.cancelAnimationFrame.bind(window);window.requestAnimationFrame=callback=>{const id=request(time=>{active.delete(id);callback(time);});active.add(id);return id;};window.cancelAnimationFrame=id=>{active.delete(id);cancel(id);};(window as unknown as {activeRAF:Set<number>}).activeRAF=active;});
@@ -257,7 +258,8 @@ try{
    const vite=await import('vite');await vite.build({root:ROOT,logLevel:'warn'});
    const production=await vite.preview({root:ROOT,base:'/STATE-OF-PLAY/',preview:{port:0,host:'127.0.0.1'}});
    try{
-    await page.goto(production.resolvedUrls.local[0]);await page.locator('[data-part]').first().waitFor();assert.equal(await page.locator('[data-part]').count(),catalog.parts.length);
+    const productionUrl = requireLocalServerUrl(production, 'Vite production preview');
+    await page.goto(productionUrl);await page.locator('[data-part]').first().waitFor();assert.equal(await page.locator('[data-part]').count(),catalog.parts.length);
     await page.locator('[data-open="chrome"]').click();assert.match(await page.locator('.editor code').innerText(),/ChromeToggle/);
    }finally{await new Promise<void>((resolve,reject)=>production.httpServer.close((error?: Error)=>error?reject(error):resolve()));}
   });

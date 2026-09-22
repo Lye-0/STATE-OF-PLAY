@@ -1,5 +1,6 @@
 /** Real browser interaction tests. Set SOP_TEST_MODE=offline only in restricted test runners. */
 import assert from 'node:assert/strict';
+import { requireLocalServerUrl } from './vite-url.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 import {createRequire} from 'node:module';
@@ -17,7 +18,7 @@ let browser:Browser|undefined,closeServer:(()=>Promise<void>)|undefined;
 async function run(name:string,action:()=>Promise<void>){await action();results.push(name);console.log('PASS '+name);}
 try {
  let url='';
- if(!offline){const {createServer}=await import('vite');const server=await createServer({root:ROOT,server:{port:0,host:'127.0.0.1'}});await server.listen();url=server.resolvedUrls!.local[0];closeServer=()=>server.close();}
+ if(!offline){const {createServer}=await import('vite');const server=await createServer({root:ROOT,server:{port:0,host:'127.0.0.1'}});closeServer=()=>server.close();await server.listen();url=requireLocalServerUrl(server, 'Vite scrollbar test server');}
  browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
  const context=await browser.newContext({viewport:{width:1440,height:1000},hasTouch:true});
  await context.addInitScript(()=>{const w=window as unknown as {activeScrollFrames:Set<number>};w.activeScrollFrames=new Set();const request=window.requestAnimationFrame.bind(window),cancel=window.cancelAnimationFrame.bind(window);window.requestAnimationFrame=fn=>{const id=request(t=>{w.activeScrollFrames.delete(id);fn(t);});w.activeScrollFrames.add(id);return id;};window.cancelAnimationFrame=id=>{w.activeScrollFrames.delete(id);cancel(id);};});
