@@ -1,0 +1,5 @@
+@import '../../../shared/selection-base.css';
+/* Compact Segments: 小さめのラベルと余白。ツールバーや小さな設定欄へ。 */
+.sop-compact-segments{--choice-base:#25252d;--choice-line:#4e4b5b;--choice-marker:#5b576e;--choice-on:#efedf5;--choice-accent:#c7c0df;--choice-radius:6px;}
+.sop-compact-segments > .sop-choice-list{padding:3px;gap:2px}.sop-compact-segments > .sop-choice-list > .sop-choice-item{min-height:40px;padding:10px 9px;font-size:11px;flex-basis:60px}.sop-compact-segments > .sop-choice-list > .sop-choice-item .sop-choice-icon{width:14px;height:14px}.sop-compact-segments > .sop-choice-list > .sop-choice-item .sop-choice-dot{display:none}.sop-compact-segments > .sop-choice-panels > .sop-choice-panel{background:#23232b}
+

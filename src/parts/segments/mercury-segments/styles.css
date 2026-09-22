@@ -1,0 +1,5 @@
+@import '../../../shared/selection-base.css';
+/* Mercury Selector: 削り出しの面と溝。選択肢の間を重みのあるキーが滑る。 */
+.sop-mercury-segments{--choice-base:#101515;--choice-line:#353e3c;--choice-marker:linear-gradient(150deg,#495453,#1d2524 50%,#323b38);--choice-on:#f0f5e9;--choice-accent:#c4d2c5;--choice-radius:6px;}
+.sop-mercury-segments > .sop-choice-list{padding:6px;box-shadow:inset 0 3px 8px #000c,0 2px 0 #68706a55,0 15px 22px #0006}.sop-mercury-segments > .sop-choice-list > .sop-choice-marker{border:1px solid #82918a55;box-shadow:inset 0 1px 0 #cbd5c673,0 2px 6px #000a}.sop-mercury-segments > .sop-choice-list > .sop-choice-item{letter-spacing:1.2px;font-size:10px;min-height:57px}.sop-mercury-segments > .sop-choice-panels > .sop-choice-panel{background:linear-gradient(138deg,#36423d22 30%,#0f1312 31%,#0f1312 75%,#a1bba411 76%);box-shadow:inset 0 1px 0 #8c9a8422}
+.sop-mercury-segments{--choice-marker:conic-gradient(from -20deg,#a1afaa,#d9e3da 12%,#697770 29%,#a6b3aa 43%,#d9e1d6 57%,#627169 80%,#a1afaa);--choice-on:#18221b}.sop-mercury-segments > .sop-choice-list > .sop-choice-marker{box-shadow:inset 0 0 0 1px #e7eadc,inset 0 0 0 3px #6d796c,0 3px 6px #0008}

@@ -1,0 +1,5 @@
+@import '../../../shared/selection-base.css';
+/* Slate Segments: 青灰色の面で、選択した表示を明確にする。 */
+.sop-slate-segments{--choice-base:#202b34;--choice-line:#425565;--choice-marker:#d3e4f0;--choice-on:#253745;--choice-accent:#a0c3e0;--choice-radius:9px;}
+.sop-slate-segments > .sop-choice-list{background:#1b2630;gap:4px;padding:4px}.sop-slate-segments > .sop-choice-list > .sop-choice-item{min-height:45px;justify-content:flex-start}.sop-slate-segments > .sop-choice-list > .sop-choice-item .sop-choice-icon{width:15px;height:15px}.sop-slate-segments > .sop-choice-list > .sop-choice-item .sop-choice-dot{display:none}.sop-slate-segments > .sop-choice-panels > .sop-choice-panel{background:#202b34}.sop-slate-segments > .sop-choice-list > .sop-choice-item[data-selected=true] .sop-choice-badge{border-color:#607987}
+

@@ -7,5 +7,7 @@ export const categories = [
     { id: 'accordions', label: 'アコーディオン', english: 'ACCORDIONS' },
     { id: 'textboxes', label: 'テキストボックス', english: 'TEXT FIELDS' },
     { id: 'buttons', label: 'ボタン', english: 'BUTTONS' },
-    { id: 'links', label: 'リンク', english: 'LINKS' }
+    { id: 'links', label: 'リンク', english: 'LINKS' },
+    { id: 'tabs', label: 'タブ', english: 'TABS' },
+    { id: 'segments', label: 'セグメント', english: 'SEGMENTED CONTROLS' }
 ];

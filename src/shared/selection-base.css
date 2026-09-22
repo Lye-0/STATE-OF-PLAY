@@ -1,0 +1,48 @@
+/* Component-scoped geometry; no page resets, no fixed two/three-way fractions. */
+.sop-choice{--choice-ink:#e7e9e3;--choice-muted:#b1b7b0;--choice-accent:#d1e6b2;--choice-base:#151a19;--choice-line:#3d4742;--choice-radius:12px;--choice-marker:#354539;--choice-on:#f5ffee;--choice-ease:cubic-bezier(.2,.85,.2,1);position:relative;box-sizing:border-box;min-width:0;width:100%;max-width:100%;color:var(--choice-ink);font:inherit;text-align:start;isolation:isolate;container:sop-choice / inline-size}
+.sop-choice *, .sop-choice *::before,.sop-choice *::after{box-sizing:border-box}
+.sop-choice>.sop-choice-list{position:relative;display:flex;align-items:stretch;gap:3px;margin:0;padding:5px;min-width:0;max-width:100%;overflow-x:auto;scrollbar-width:thin;background:var(--choice-base);border:1px solid var(--choice-line);border-radius:var(--choice-radius);isolation:isolate}
+.sop-choice-list>.sop-choice-item{position:relative;flex:1 0 max-content;min-width:78px;min-height:48px;margin:0;padding:13px 14px;border:1px solid transparent;border-radius:max(0px,calc(var(--choice-radius) - 5px));background:transparent;color:var(--choice-muted);font:inherit;font-size:12px;font-weight:500;line-height:1.4;letter-spacing:.1px;cursor:pointer;display:flex;justify-content:center;align-items:center;gap:8px;text-align:center;z-index:1;-webkit-tap-highlight-color:transparent;transition:color .25s,background .25s,box-shadow .25s,border-color .25s;user-select:none}
+.sop-choice-list>.sop-choice-item:hover{color:var(--choice-ink);background:color-mix(in srgb,var(--choice-ink) 6%,transparent)}
+.sop-choice-list>.sop-choice-item[data-selected=true]{color:var(--choice-on);font-weight:650}
+.sop-choice-label{overflow-wrap:break-word;min-width:0}
+.sop-tabs>.sop-choice-list>.sop-choice-item .sop-choice-label{white-space:nowrap}
+.sop-tabs[data-orientation=vertical]>.sop-choice-list>.sop-choice-item .sop-choice-label{white-space:normal;overflow-wrap:anywhere}
+.sop-choice-copy{display:flex;flex-direction:column;gap:3px;min-width:0}
+.sop-choice-description{font-size:9px;font-weight:400;opacity:.8;line-height:1.35}
+.sop-choice-index{display:none;font:9px Consolas,monospace;opacity:.65}
+.sop-choice-icon{width:17px;height:17px;flex:none;display:inline-flex;align-items:center;justify-content:center}
+.sop-choice-icon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.sop-choice-badge{font:9px Consolas,monospace;border:1px solid var(--choice-line);padding:1px 5px;border-radius:6px;flex:none}
+.sop-choice-dot{width:4px;height:4px;border:1px solid currentColor;border-radius:50%;flex:none;opacity:.35;transition:background .2s,opacity .2s}
+.sop-choice-item[data-selected=true]>.sop-choice-dot{background:currentColor;opacity:1;box-shadow:0 0 7px color-mix(in srgb,currentColor 35%,transparent)}
+.sop-choice-list>.sop-choice-marker{position:absolute;left:0;top:0;width:var(--sop-choice-w,0px);height:var(--sop-choice-h,0px);transform:translate(var(--sop-choice-x,0px),var(--sop-choice-y,0px));border-radius:max(0px,calc(var(--choice-radius) - 5px));background:var(--choice-marker);box-shadow:inset 0 1px 0 #ffffff15,0 2px 4px #0002;pointer-events:none;z-index:0;transition:transform .38s var(--choice-ease),width .38s var(--choice-ease),height .38s var(--choice-ease)}
+.sop-choice:not([data-indicator-ready=true]) .sop-choice-marker{transition:none}
+.sop-choice-marker[hidden],.sop-choice .sop-choice-panel[hidden]{display:none!important}
+.sop-choice>.sop-choice-panels{margin-top:12px;min-width:0}
+.sop-choice-panel{position:relative;min-width:0;max-width:100%;border:1px solid var(--choice-line);border-radius:var(--choice-radius);background:var(--choice-base);padding:22px;color:var(--choice-ink);animation:sop-choice-enter .3s var(--choice-ease)}
+.sop-choice-panel>*{max-width:100%}
+.sop-choice-empty{padding:20px;font-size:12px;color:var(--choice-muted)}
+.sop-choice-list>.sop-choice-item:focus-visible,.sop-choice-list>.sop-choice-item:has(input:focus-visible),.sop-choice-panel:focus-visible{outline:2px solid var(--choice-accent);outline-offset:-3px}
+.sop-choice-list>.sop-choice-item:disabled,.sop-choice-list>.sop-choice-item[aria-disabled=true],.sop-choice-list>.sop-choice-item[data-disabled=true]{opacity:.4;cursor:not-allowed}
+.sop-choice[data-disabled=true]>.sop-choice-list{opacity:.65}
+.sop-segments>.sop-choice-list{flex-wrap:wrap}
+.sop-segments>.sop-choice-list>.sop-choice-item{flex:1 0 auto;min-width:min(100%,90px);max-width:100%}
+.sop-choice-list>.sop-choice-item>input[type=radio]{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:inherit;z-index:3}
+.sop-choice[data-orientation=vertical]>.sop-choice-list{flex-direction:column;overflow:visible}
+.sop-choice[data-orientation=vertical]>.sop-choice-list>.sop-choice-item{flex-basis:auto;justify-content:flex-start;text-align:start}
+.sop-tabs[data-orientation=vertical]{display:grid;grid-template-columns:minmax(90px,33%) minmax(0,1fr);gap:12px;align-items:start}
+.sop-tabs[data-orientation=vertical]>.sop-choice-panels{margin:0}
+@keyframes sop-choice-enter{from{opacity:.35;transform:translateY(5px)}to{opacity:1;transform:none}}
+@media(max-width:420px){.sop-choice-list>.sop-choice-item{padding:12px 9px;gap:5px;font-size:11px}.sop-choice-panel{padding:16px}.sop-choice-badge{display:none}}
+@media(prefers-reduced-motion:reduce){.sop-choice *,.sop-choice *::before,.sop-choice *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(forced-colors:active){.sop-choice.sop-choice{--choice-base:Canvas;--choice-ink:CanvasText;--choice-muted:CanvasText;--choice-accent:Highlight;--choice-line:ButtonText;--choice-on:HighlightText;--choice-marker:Highlight}.sop-choice.sop-choice>.sop-choice-list>.sop-choice-item[data-selected=true]{background:Highlight;color:HighlightText;forced-color-adjust:none;border:2px solid Highlight}.sop-choice-marker{display:none!important}.sop-choice-list>.sop-choice-item:focus-visible,.sop-choice-list>.sop-choice-item:has(input:focus-visible){outline:2px solid Highlight;outline-offset:2px}}
+
+/* Compact embedding is based on the component width, not the browser width.
+   Long text still scrolls; decorative icons yield space to actual labels. */
+@container sop-choice (max-width:360px){
+ .sop-choice.sop-choice>.sop-choice-list>.sop-choice-item{padding:12px 8px;gap:4px}
+ .sop-choice.sop-choice>.sop-choice-list>.sop-choice-item>.sop-choice-icon,
+ .sop-choice.sop-choice>.sop-choice-list>.sop-choice-item>.sop-choice-badge{display:none}
+ .sop-choice.sop-choice>.sop-choice-list>.sop-choice-item .sop-choice-label{font-size:11px}
+}

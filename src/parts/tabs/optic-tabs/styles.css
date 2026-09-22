@@ -1,0 +1,6 @@
+@import '../../../shared/selection-base.css';
+@import '../../../shared/selection-content.css';
+/* Optic Tabs: レンズの縁の反射と、明るいガラスの指標。 */
+.sop-optic-tabs{--choice-base:#162229;--choice-line:#4d6974;--choice-marker:radial-gradient(ellipse at 30% 0,#d7fcff45,transparent 60%),linear-gradient(145deg,#5b8d9b99,#20434e);--choice-on:#d6f5f5;--choice-accent:#bdebe5;--choice-radius:13px;}
+.sop-optic-tabs > .sop-choice-list{padding:5px;background:linear-gradient(160deg,#718b9822,#15222a);box-shadow:inset 0 1px 0 #d0edf138,0 10px 12px #0004;border:1px solid #759bac55}.sop-optic-tabs > .sop-choice-list > .sop-choice-item{min-height:64px;flex-direction:column;gap:5px;font-size:10px}.sop-optic-tabs > .sop-choice-list > .sop-choice-item .sop-choice-dot{position:absolute;right:6px;top:6px}.sop-optic-tabs > .sop-choice-list > .sop-choice-marker{border:1px solid #c2ebf380;box-shadow:inset 0 2px 2px #daf8ff7d,inset 0 -2px 3px #acdae743}.sop-optic-tabs > .sop-choice-panels > .sop-choice-panel{background:repeating-linear-gradient(110deg,#b1d5d006 0 1px,transparent 1px 22px),#17252c}
+

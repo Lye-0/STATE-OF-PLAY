@@ -17,7 +17,7 @@ export function buildCatalog(root = ROOT): CatalogBuild {
   const read = (name: string): string => { validateArchivePath(name); if (!inputCache.has(name)) inputCache.set(name,fs.readFileSync(path.join(root, name), 'utf8')); return inputCache.get(name)!; };
   const exists = (name: string) => fs.existsSync(path.join(root, name));
   const bases: unknown = JSON.parse(read('src/catalog/registry.json'));
-  if (!Array.isArray(bases) || !bases.every((base): base is string => typeof base === 'string' && /^src\/parts\/(toggles|blocks|scrollbars|dropdowns|accordions|textboxes|buttons|links)\/[a-z0-9-]+$/.test(base)))
+  if (!Array.isArray(bases) || !bases.every((base): base is string => typeof base === 'string' && /^src\/parts\/(toggles|blocks|scrollbars|dropdowns|accordions|textboxes|buttons|links|tabs|segments)\/[a-z0-9-]+$/.test(base)))
     throw new Error('registry.json must contain valid component directories.');
   function bundledCSS(source: string, visited = new Set<string>()): string {
     if (visited.has(source)) return '';
@@ -30,7 +30,7 @@ export function buildCatalog(root = ROOT): CatalogBuild {
     const meta = JSON.parse(read(`${base}/meta.json`)) as Omit<Part,'files'|'portableFiles'|'preview'|'markup'|'usage'|'prompt'>;
     if (!/^[a-z][a-z0-9-]*$/.test(meta.id) || seen.has(meta.id)) throw new Error(`Invalid/duplicate part ID: ${meta.id}`);
     if (!['A','B'].includes(meta.designType) || typeof meta.runtime !== 'string') throw new Error(`Invalid design type/runtime: ${base}`);
-    if (!['toggles','blocks','scrollbars','dropdowns','accordions','textboxes','buttons','links'].includes(meta.category) || !Number.isFinite(meta.order) || !Array.isArray(meta.props) || !Array.isArray(meta.tags))
+    if (!['toggles','blocks','scrollbars','dropdowns','accordions','textboxes','buttons','links','tabs','segments'].includes(meta.category) || !Number.isFinite(meta.order) || !Array.isArray(meta.props) || !Array.isArray(meta.tags))
       throw new Error(`Invalid metadata: ${base}`);
     if (meta.category === 'toggles' && (!meta.config || typeof meta.initial !== 'boolean')) throw new Error(`Missing toggle configuration: ${base}`);
     if (base.split('/').at(-1) !== meta.id || !/^[A-Z][A-Za-z0-9]*$/.test(meta.componentName)) throw new Error(`Invalid component identity: ${base}`);
@@ -72,7 +72,7 @@ export function buildCatalog(root = ROOT): CatalogBuild {
     if (meta.category === 'blocks') demoMarkup = demoMarkup.replace(/<div class="sop-surface-content">[\s\S]*?<\/div>/,
       `<div class="sop-surface-content"><h2>${html(meta.name)}</h2><p>ここに、あなたのコンテンツを。</p><button type="button">サンプルボタン</button></div>`);
     if (meta.category === 'scrollbars') demoMarkup = demoMarkup.replace('<!-- slot: insert your scrollable content -->', scrollSampleHTML(meta));
-    const hint = meta.category === 'buttons' ? 'クリックで操作します。保存・送信などの処理は利用先へ接続してください。' : meta.category === 'links' ? 'hrefで実際の移動先へ。下の移動先へリンクできます。' : meta.category === 'textboxes' ? '実際に入力できます。日本語・貼り付け・キーボード操作もそのまま使えます。入力値は保存・送信しません。' : meta.category === 'dropdowns' ? '開いて選ぶ。選択肢・説明・アイコンも差し替えられます。' : meta.category === 'accordions' ? '見出しで開閉。内側のコンテンツも自由に差し替えられます。' : meta.category === 'toggles' ? 'クリック・ドラッグ・キーボードで操作できます。' : meta.category === 'scrollbars' ? 'ホイール・スワイプ・レールのドラッグで読み進められます。' : '中身を自由に入れ替えられる、独立した背景パーツです。';
+    const hint = meta.category === 'tabs' ? '見出しを選ぶと内容が切り替わります。項目数・本文は自由に変更できます。' : meta.category === 'segments' ? '複数候補から1つを選ぶ設定です。項目数は2・3・4以上に変更できます。' : meta.category === 'buttons' ? 'クリックで操作します。保存・送信などの処理は利用先へ接続してください。' : meta.category === 'links' ? 'hrefで実際の移動先へ。下の移動先へリンクできます。' : meta.category === 'textboxes' ? '実際に入力できます。日本語・貼り付け・キーボード操作もそのまま使えます。入力値は保存・送信しません。' : meta.category === 'dropdowns' ? '開いて選ぶ。選択肢・説明・アイコンも差し替えられます。' : meta.category === 'accordions' ? '見出しで開閉。内側のコンテンツも自由に差し替えられます。' : meta.category === 'toggles' ? 'クリック・ドラッグ・キーボードで操作できます。' : meta.category === 'scrollbars' ? 'ホイール・スワイプ・レールのドラッグで読み進められます。' : '中身を自由に入れ替えられる、独立した背景パーツです。';
     const preview = {
       'index.html': `<!doctype html>\n<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${html(meta.name)} — standalone demo</title><link rel="stylesheet" href="./styles.css"></head><body><main><h1>${html(meta.name)} · ${html(meta.version)}</h1><div class="demo-root">${demoMarkup}</div>${meta.category === 'links' ? '<section id="destination" tabindex="-1" style="margin-top:120px;padding:24px;border:1px solid #727d76"><h2>リンク先</h2><p>hrefを目的のページへ変更して使えます。</p></section>' : ''}<p class="hint">${hint}</p></main><script src="./app.js" defer></script></body></html>\n`,
       'styles.css': read('scripts/templates/demo.css') + (meta.category === 'scrollbars' ? read('src/app/scroll-samples.css') : '') + bundledCSS(`${base}/styles.css`),

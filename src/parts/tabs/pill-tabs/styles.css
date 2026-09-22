@@ -1,0 +1,6 @@
+@import '../../../shared/selection-base.css';
+@import '../../../shared/selection-content.css';
+/* Pill Tabs: 丸い選択面と落ち着いた青灰色。小さな画面にも。 */
+.sop-pill-tabs{--choice-base:#222932;--choice-line:#414c5c;--choice-marker:#536277;--choice-on:#f3f6ff;--choice-accent:#b1c5e3;--choice-radius:30px;}
+.sop-pill-tabs > .sop-choice-list{padding:4px}.sop-pill-tabs > .sop-choice-list > .sop-choice-item{min-height:43px;padding-block:10px}.sop-pill-tabs > .sop-choice-list > .sop-choice-item .sop-choice-icon, .sop-pill-tabs > .sop-choice-list > .sop-choice-item .sop-choice-dot{display:none}.sop-pill-tabs > .sop-choice-list > .sop-choice-marker{box-shadow:0 1px 2px #0003}.sop-pill-tabs > .sop-choice-panels > .sop-choice-panel{border-radius:12px;background:#1e252e}
+

@@ -13,7 +13,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
-    # The complete 184-part / 8-export matrix runs on both hosted OS variants.
+    # The complete 232-part / 8-export matrix runs on both hosted OS variants.
     timeout-minutes: 40
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
@@ -52,6 +52,8 @@ jobs:
         run: npm run test:textfields
       - name: Buttons and navigation links (native behavior and React)
         run: npm run test:actions
+      - name: Tabs and segmented controls (dynamic options, forms and React)
+        run: npm run test:selection
       - name: Build full source archive
         run: npm run package
       - name: Save reports on failure

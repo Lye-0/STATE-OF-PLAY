@@ -1,0 +1,6 @@
+@import '../../../shared/selection-base.css';
+@import '../../../shared/selection-content.css';
+/* Observatory Tabs: 星図の気配と円弧のレール。夜空をたどる切り替え。 */
+.sop-observatory-tabs{--choice-base:#111e2c;--choice-line:#405569;--choice-marker:#24435b;--choice-on:#dbeffa;--choice-accent:#a1c7de;--choice-radius:30px;}
+.sop-observatory-tabs > .sop-choice-list{padding:6px;background:radial-gradient(ellipse at 50% 0,#48758d35,transparent),#101e2a;border-color:#7998aa44}.sop-observatory-tabs > .sop-choice-list > .sop-choice-item{min-height:53px}.sop-observatory-tabs > .sop-choice-list > .sop-choice-marker{border:1px solid #a0cad45c;box-shadow:inset 0 0 14px #98c6ca14,0 0 10px #7598ac18}.sop-observatory-tabs > .sop-choice-panels > .sop-choice-panel{border-radius:14px;background:radial-gradient(circle at 85% 20%,#c5e4f72e 0 1px,transparent 2px),radial-gradient(circle at 70% 35%,#c5e4f72e 0 1px,transparent 2px),#111e2c}.sop-observatory-tabs > .sop-choice-list > .sop-choice-item .sop-choice-index{display:block}.sop-observatory-tabs > .sop-choice-list > .sop-choice-item .sop-choice-icon{display:none}
+

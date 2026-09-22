@@ -1,0 +1,5 @@
+@import '../../../shared/selection-base.css';
+/* Outline Segments: 背景の塗りを抑えて、輪郭と点で選択を伝える。 */
+.sop-outline-segments{--choice-base:transparent;--choice-line:#526368;--choice-marker:transparent;--choice-on:#dfeced;--choice-accent:#b6d9dd;--choice-radius:7px;}
+.sop-outline-segments > .sop-choice-list{padding:0;gap:4px;border:0}.sop-outline-segments > .sop-choice-list > .sop-choice-item{border:1px solid #506065;min-height:44px}.sop-outline-segments > .sop-choice-list > .sop-choice-marker{border:1px solid #b1d2d7;box-shadow:none}.sop-outline-segments > .sop-choice-list > .sop-choice-item[data-selected=true]{background:#42646b25}.sop-outline-segments > .sop-choice-list > .sop-choice-item .sop-choice-icon{display:none}.sop-outline-segments > .sop-choice-panels > .sop-choice-panel{background:#1b2427}
+

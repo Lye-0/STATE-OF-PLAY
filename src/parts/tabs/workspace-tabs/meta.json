@@ -1,0 +1,66 @@
+{
+  "id": "workspace-tabs",
+  "name": "Workspace Tabs",
+  "category": "tabs",
+  "order": 208,
+  "version": "1.0.0",
+  "tagline": "情報の、定位置。",
+  "description": "アイコンと見出しをすっきり整えた実用的なタブ。",
+  "material": "ESSENTIAL / WORKSPACE",
+  "motion": "GLIDE / SELECT",
+  "accent": "184,203,219",
+  "designType": "B",
+  "runtime": "CSS + event-driven geometry / ARIA tabs",
+  "componentName": "WorkspaceTabs",
+  "tags": [
+    "Workspace Tabs",
+    "workspace-tabs",
+    "タブ",
+    "切り替え",
+    "3択",
+    "2択",
+    "4択",
+    "選択",
+    "B"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "items",
+      "readonly TabItem[]",
+      "項目数は自由。value / label / icon / disabled / content"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "外部制御の値 / 非制御の初期値"
+    ],
+    [
+      "onValueChange",
+      "(value: string) => void",
+      "利用先の状態へ接続"
+    ],
+    [
+      "disabled / items[].disabled",
+      "boolean",
+      "全体 / 項目ごとに無効化"
+    ],
+    [
+      "orientation",
+      "horizontal | vertical",
+      "並びの方向。内容に応じて選択指標も再計測"
+    ],
+    [
+      "activation",
+      "automatic | manual",
+      "キー移動時の自動確定 / Enter確定"
+    ],
+    [
+      "className / style / aria-label",
+      "HTML attributes",
+      "外側の配置とグループの目的"
+    ]
+  ]
+}

@@ -1,3 +1,5 @@
+import type {TabsOptions} from '../shared/tabs-controller';
+import type {SegmentOptions} from '../shared/segment-controller';
 import type { ToggleConfig, ToggleOptions, ToggleController } from '../shared/toggle-controller';
 import type { ScrollAreaOptions, ScrollAreaController } from '../shared/scroll-area';
 import type { SelectOptions, SelectController } from '../shared/select-controller';
@@ -9,7 +11,7 @@ import type { SurfaceOptions } from '../shared/surface-controller';
 export type Format = 'tsx' | 'jsx' | 'ts' | 'js';
 export type DesignType = 'A' | 'B';
 export const DESIGN_TYPES = { A: {label:'A · 表現重視', note:'素材感と動きを楽しむ、主役になるデザイン。'}, B: {label:'B · 実用重視', note:'落ち着きと読みやすさを重視。設定や日常の画面へ。'} } as const;
-export type Category = 'toggles' | 'blocks' | 'scrollbars' | 'dropdowns' | 'accordions' | 'textboxes' | 'buttons' | 'links';
+export type Category = 'toggles' | 'blocks' | 'scrollbars' | 'dropdowns' | 'accordions' | 'textboxes' | 'buttons' | 'links' | 'tabs' | 'segments';
 export type Layout = 'portable' | 'original';
 export const LAYOUTS = {
   portable: {label: '導入向け', note: '本体フォルダーの中で依存を完結。好きな配置先へ移せます。'},
@@ -51,7 +53,7 @@ export interface PartController {
   setPaused?: ToggleController['setPaused'];
   resize?: ToggleController['resize'];
 }
-export type MountPart = (root: HTMLElement, options?: ToggleOptions & SurfaceOptions & ScrollAreaOptions & SelectOptions & AccordionOptions & TextFieldOptions & ActionButtonOptions) => PartController;
+export type MountPart = (root: HTMLElement, options?: ToggleOptions & SurfaceOptions & ScrollAreaOptions & SelectOptions & AccordionOptions & TextFieldOptions & ActionButtonOptions & TabsOptions & SegmentOptions) => PartController;
 export const isFormat = (value: unknown): value is Format =>
   typeof value === 'string' && ['tsx','jsx','ts','js'].includes(value);
 export const isDetailTab = (value: unknown): value is DetailTab =>

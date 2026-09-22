@@ -1,0 +1,66 @@
+{
+  "id": "underline-segments",
+  "name": "Underline Segments",
+  "category": "segments",
+  "order": 228,
+  "version": "1.0.0",
+  "tagline": "文字を、主役に。",
+  "description": "細い線が現在値を示す、装飾の少ないスイッチ。",
+  "material": "ESSENTIAL / TYPE",
+  "motion": "GLIDE / SELECT",
+  "accent": "188,221,203",
+  "designType": "B",
+  "runtime": "CSS + event-driven geometry / native radios",
+  "componentName": "UnderlineSegments",
+  "tags": [
+    "Underline Segments",
+    "underline-segments",
+    "セグメント",
+    "切り替え",
+    "3択",
+    "2択",
+    "4択",
+    "選択",
+    "B"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "items",
+      "readonly SegmentItem[]",
+      "項目数は自由。value / label / icon / disabled / description"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "外部制御の値 / 非制御の初期値"
+    ],
+    [
+      "onValueChange",
+      "(value: string) => void",
+      "利用先の状態へ接続"
+    ],
+    [
+      "disabled / items[].disabled",
+      "boolean",
+      "全体 / 項目ごとに無効化"
+    ],
+    [
+      "orientation",
+      "horizontal | vertical",
+      "並びの方向。内容に応じて選択指標も再計測"
+    ],
+    [
+      "name / form / required",
+      "native radio attributes",
+      "実フォームへの送信とリセット"
+    ],
+    [
+      "className / style / aria-label",
+      "HTML attributes",
+      "外側の配置とグループの目的"
+    ]
+  ]
+}

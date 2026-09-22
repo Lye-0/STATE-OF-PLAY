@@ -1,0 +1,66 @@
+{
+  "id": "compact-tabs",
+  "name": "Compact Tabs",
+  "category": "tabs",
+  "order": 206,
+  "version": "1.0.0",
+  "tagline": "小さくても、明確に。",
+  "description": "コンパクトな余白と控えめな色。ツールや設定画面へ。",
+  "material": "ESSENTIAL / COMPACT",
+  "motion": "GLIDE / SELECT",
+  "accent": "195,194,216",
+  "designType": "B",
+  "runtime": "CSS + event-driven geometry / ARIA tabs",
+  "componentName": "CompactTabs",
+  "tags": [
+    "Compact Tabs",
+    "compact-tabs",
+    "タブ",
+    "切り替え",
+    "3択",
+    "2択",
+    "4択",
+    "選択",
+    "B"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "items",
+      "readonly TabItem[]",
+      "項目数は自由。value / label / icon / disabled / content"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "外部制御の値 / 非制御の初期値"
+    ],
+    [
+      "onValueChange",
+      "(value: string) => void",
+      "利用先の状態へ接続"
+    ],
+    [
+      "disabled / items[].disabled",
+      "boolean",
+      "全体 / 項目ごとに無効化"
+    ],
+    [
+      "orientation",
+      "horizontal | vertical",
+      "並びの方向。内容に応じて選択指標も再計測"
+    ],
+    [
+      "activation",
+      "automatic | manual",
+      "キー移動時の自動確定 / Enter確定"
+    ],
+    [
+      "className / style / aria-label",
+      "HTML attributes",
+      "外側の配置とグループの目的"
+    ]
+  ]
+}

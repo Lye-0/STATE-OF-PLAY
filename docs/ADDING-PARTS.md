@@ -170,3 +170,16 @@ buttonの初期typeはbutton。実行処理や状態は外側に接続し、デ�
 loading時の無効化、submit/reset、修飾キー付きリンク操作、長い日本語、キーボードフォーカス、reduced-motion/forced-colorsを確認します。
 既存部品のコピーを増やすのではなく、固有の見た目・仕様を管理し、配布時だけ共通依存を含めます。
 新カテゴリを加える場合は、tests/browser.tsの汎用React検証でもbuttonの入れ子など不正な使用例を作らないようにします。
+
+
+## タブ／セグメントを追加するとき（v3.7.0）
+
+`src/parts/tabs/`と`src/parts/segments/`を参考にします。共有CSSはselection-base.css、タブのサンプル本文にselection-content.css、共有実装はtabs-view / segment-viewと対応controllerです。部品ごとにmeta/styles/markup/React・Vanilla入口/使用例/仕様を作りregistryへ登録します。
+
+見出しの配列は展示だけ3項目。本体に3等分・nth-child(3)までの位置指定・業務上の固定ラベルを埋め込まないでください。マーカーの座標と大きさは実際の項目を計測します。キーには安定したvalueを使い、添字変更による状態の飛び移りを避けます。
+
+タブはtablist/tab/tabpanel、セグメントは実radio。セグメントの一部をボタン+divの見た目だけで代替しないでください。タブのicon/badgeはラベル内の非操作装飾に限定し、操作可能な本文はパネルへ置きます。
+
+CSSのスキン指定は`.sop-固有ID > .sop-choice-list > ...`など直属要素へ閉じ、別スキンをパネル内に置いても影響させません。CSSやグローバルイベントに3択固定の前提を追加しないでください。
+
+2/3/4/5/7以上、0項目、全無効、選択中の削除、並べ替え、長いラベル、RTL、キーボード、フォームreset、controlledでの拒否、別ZIPを同時に配置したときのIDとradio名、Reactの取り外し、reduced-motion/forced-colorsを確認します。詳細の項目数切替はデモ限定で、コードの例を自動編集する機能ではありません。

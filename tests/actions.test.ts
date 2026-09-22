@@ -8,7 +8,7 @@ import {sourceReferences,isLocalReference,resolveLocal} from '../scripts/source-
 const {parts}=buildCatalog(),buttons=parts.filter(p=>p.category==='buttons'),links=parts.filter(p=>p.category==='links');
 const read=(p:string)=>fs.readFileSync(path.join(ROOT,p),'utf8');
 test('24 buttons + 16 navigation links retain the 144 previous parts',()=>{
- assert.equal(buttons.length,24);assert.equal(links.length,16);assert.equal(parts.length,184);
+ assert.equal(buttons.length,24);assert.equal(links.length,16);assert.equal(parts.filter(p=>p.category!=='tabs'&&p.category!=='segments').length,184);
  for(const c of ['toggles','blocks','scrollbars','dropdowns','accordions','textboxes'])assert.equal(parts.filter(p=>p.category===c).length,24);
  assert.equal(buttons.filter(p=>p.designType==='A').length,16);assert.equal(links.filter(p=>p.designType==='A').length,10);
  for(const key of ['name','id','order'] as const)assert.equal(new Set(parts.map(p=>p[key])).size,parts.length);

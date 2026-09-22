@@ -1,0 +1,5 @@
+@import '../../../shared/selection-base.css';
+/* Soft Segments: 丸みと控えめなコントラスト。やさしい切り替え。 */
+.sop-soft-segments{--choice-base:#222932;--choice-line:#414c5c;--choice-marker:#536277;--choice-on:#f3f6ff;--choice-accent:#b1c5e3;--choice-radius:30px;}
+.sop-soft-segments > .sop-choice-list{padding:4px}.sop-soft-segments > .sop-choice-list > .sop-choice-item{min-height:43px;padding-block:10px}.sop-soft-segments > .sop-choice-list > .sop-choice-item .sop-choice-icon, .sop-soft-segments > .sop-choice-list > .sop-choice-item .sop-choice-dot{display:none}.sop-soft-segments > .sop-choice-list > .sop-choice-marker{box-shadow:0 1px 2px #0003}.sop-soft-segments > .sop-choice-panels > .sop-choice-panel{border-radius:12px;background:#1e252e}
+

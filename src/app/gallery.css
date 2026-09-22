@@ -359,3 +359,19 @@
 .action-link-destination a{display:inline-block;margin-top:12px;text-decoration:underline;font-size:12px;}
 .action-preview .sop-action,.link-preview .sop-link{max-width:100%;}
 @media(max-width:600px){.action-card .object-stage,.link-card .object-stage{padding-inline:22px;}.action-card .card-bottom h2,.link-card .card-bottom h2{font-size:22px;}.action-card .card-bottom h2 span,.link-card .card-bottom h2 span{display:none;}.action-preview .preview-stage,.link-preview .preview-stage{padding-inline:10px;}}
+/* Selection collections: retain the gallery chrome, give tab content room to breathe. */
+.tabs-card .object-stage{height:auto;min-height:340px;padding:30px 26px 27px;align-items:flex-start}
+.tabs-card .stage-mount{width:100%;max-width:450px}
+.segments-card .object-stage{height:auto;min-height:210px;padding:38px 25px;align-items:center}
+.segments-card .stage-mount{width:100%;max-width:400px}
+.tabs-preview .preview-stage,.segments-preview .preview-stage{height:auto;min-height:255px;padding:25px 14px;display:block}
+.tabs-preview .preview-stage{min-height:325px}
+.selection-preview-controls{display:flex;flex-direction:column;gap:12px;padding-top:15px;font-size:11px;color:#bbc3c0}
+.selection-preview-controls label{display:flex;align-items:center;gap:8px}
+.selection-preview-controls select{margin-left:auto;background:#20292b;color:#dce7df;border:1px solid #465454;border-radius:6px;font:inherit;padding:7px 9px}
+.selection-preview-controls p{font-size:10px;line-height:1.85;margin:0;color:#a4b1aa}
+.selection-option-count{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.selection-option-count>div{display:flex;gap:5px}
+.selection-option-count button{min-width:31px;justify-content:center;padding:7px}
+.selection-option-count button[aria-pressed=true]{background:#d1e6b2;color:#1a271c;border-color:#d1e6b2}
+@media(max-width:600px){.tabs-card .object-stage{padding:28px 18px;min-height:325px}.segments-card .object-stage{padding:30px 17px;min-height:195px}.tabs-preview .preview-stage,.segments-preview .preview-stage{padding:20px 12px}}

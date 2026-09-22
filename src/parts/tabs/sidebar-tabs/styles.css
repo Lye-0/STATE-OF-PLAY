@@ -1,0 +1,6 @@
+@import '../../../shared/selection-base.css';
+@import '../../../shared/selection-content.css';
+/* Sidebar Tabs: 横に並べるだけではない、縦型ナビゲーションのタブ。 */
+.sop-sidebar-tabs{--choice-base:#1c2925;--choice-line:#3d574c;--choice-marker:#284d3c;--choice-on:#ddf0df;--choice-accent:#bad8c4;--choice-radius:7px;}
+.sop-sidebar-tabs > .sop-choice-list{background:transparent;border:0;padding:0;gap:5px}.sop-sidebar-tabs > .sop-choice-list > .sop-choice-item{justify-content:flex-start;min-height:46px;text-align:start}.sop-sidebar-tabs > .sop-choice-list > .sop-choice-marker{box-shadow:inset 3px 0 var(--choice-accent)}.sop-sidebar-tabs > .sop-choice-panels > .sop-choice-panel{background:#1a2520}.sop-sidebar-tabs > .sop-choice-list > .sop-choice-item .sop-choice-dot{margin-left:auto}
+

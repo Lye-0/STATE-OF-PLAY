@@ -166,15 +166,21 @@ try{
  });
  await run(`Both layouts: all ${catalog.parts.reduce((n,p)=>n+FORMATS.reduce((k,f)=>k+p.files[f].length,0),0)*2} code previews equal exported sources and selection follows the source identity`,async()=>{
   let count=0;
+  // The exhaustive source matrix checks actual rendered DOM, not an export model.
+  // Batch DOM clicks within one browser round-trip per part to keep growing CI affordable.
+  // Mouse/keyboard/format/layout interactions are also checked separately above and below.
+  await page.emulateMedia({reducedMotion:'reduce'});
   for(const part of catalog.parts){await page.locator(`[data-open="${part.id}"]`).click();
-   for(const layout of layouts){await page.locator('#export-layout').selectOption(layout);
-    for(const format of FORMATS){await page.locator(`[data-format="${format}"]`).click();const d=getDelivery(part,format,layout);
-     const rendered=await page.evaluate((names:string[])=>names.map(name=>{const b=[...document.querySelectorAll<HTMLButtonElement>('.file-item')].find(b=>b.dataset.file===name)!;b.click();return [...document.querySelectorAll('.editor .line-code')].map(n=>n.textContent).join('\n');}),d.files.map(f=>f.name));
-     for(let i=0;i<rendered.length;i++){assert.equal(normalize(rendered[i]),normalize(d.files[i].code),`${part.id}/${format}/${layout}/${i}`);count++;}
-    }
-   }await page.locator('.close-detail').click();
-   console.log('  verified '+part.id+'; '+count+' sources');
+   const cases=layouts.flatMap(layout=>FORMATS.map(format=>({layout,format,files:getDelivery(part,format,layout).files})));
+   const rendered=await page.evaluate(cases=>cases.map(item=>{
+    const select=document.querySelector<HTMLSelectElement>('#export-layout')!;select.value=item.layout;select.dispatchEvent(new Event('change',{bubbles:true}));
+    document.querySelector<HTMLButtonElement>(`[data-format="${item.format}"]`)!.click();
+    return item.names.map(name=>{const b=[...document.querySelectorAll<HTMLButtonElement>('.file-item')].find(b=>b.dataset.file===name);if(!b)throw new Error('Missing source button: '+name);b.click();return [...document.querySelectorAll('.editor .line-code')].map(n=>n.textContent).join('\n');});
+   }),cases.map(c=>({layout:c.layout,format:c.format,names:c.files.map(f=>f.name)})));
+   for(let c=0;c<cases.length;c++)for(let i=0;i<cases[c].files.length;i++){assert.equal(normalize(rendered[c][i]),normalize(cases[c].files[i].code),`${part.id}/${cases[c].format}/${cases[c].layout}/${i}`);count++;}
+   await page.locator('.close-detail').click();console.log('  verified '+part.id+'; '+count+' sources');
   }assert.equal(count,catalog.parts.reduce((n,p)=>n+Object.values(p.files).flat().length*2,0));
+  await page.emulateMedia({reducedMotion:'no-preference'});
   await page.locator('[data-open="chrome"]').click();await page.locator('[data-format="tsx"]').click();await page.locator('#export-layout').selectOption('portable');
   await page.locator('[data-file="chrome-toggle/internal/motion.ts"]').click();await page.locator('#export-layout').selectOption('original');assert.equal(await page.locator('.current-path').textContent(),'src/shared');
   await page.locator('[data-format="jsx"]').click();assert.equal(await page.locator('.current-file').textContent(),'motion.js');await page.locator('#export-layout').selectOption('portable');assert.equal(await page.locator('.current-path').textContent(),'chrome-toggle/internal');await page.locator('.close-detail').click();

@@ -1,0 +1,5 @@
+@import '../../../shared/selection-base.css';
+/* Icon Segments: アイコンとラベルを併記。意味を隠さない表示切り替え。 */
+.sop-icon-segments{--choice-base:#1c2925;--choice-line:#3d574c;--choice-marker:#284d3c;--choice-on:#ddf0df;--choice-accent:#bad8c4;--choice-radius:7px;}
+.sop-icon-segments > .sop-choice-list{background:transparent;border:0;padding:0;gap:5px}.sop-icon-segments > .sop-choice-list > .sop-choice-item{justify-content:flex-start;min-height:46px;text-align:start}.sop-icon-segments > .sop-choice-list > .sop-choice-marker{box-shadow:inset 3px 0 var(--choice-accent)}.sop-icon-segments > .sop-choice-panels > .sop-choice-panel{background:#1a2520}.sop-icon-segments > .sop-choice-list > .sop-choice-item .sop-choice-dot{margin-left:auto}
+

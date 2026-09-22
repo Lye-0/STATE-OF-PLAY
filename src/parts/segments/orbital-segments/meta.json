@@ -1,0 +1,66 @@
+{
+  "id": "orbital-segments",
+  "name": "Orbital Selector",
+  "category": "segments",
+  "order": 219,
+  "version": "1.0.0",
+  "tagline": "軌道を、切り替える。",
+  "description": "丸い軌道と小さな光点。選んだ方向が明確に点灯する。",
+  "material": "ORBIT / RANGE",
+  "motion": "GLIDE / SELECT",
+  "accent": "154,191,220",
+  "designType": "A",
+  "runtime": "CSS + event-driven geometry / native radios",
+  "componentName": "OrbitalSegments",
+  "tags": [
+    "Orbital Selector",
+    "orbital-segments",
+    "セグメント",
+    "切り替え",
+    "3択",
+    "2択",
+    "4択",
+    "選択",
+    "A"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "items",
+      "readonly SegmentItem[]",
+      "項目数は自由。value / label / icon / disabled / description"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "外部制御の値 / 非制御の初期値"
+    ],
+    [
+      "onValueChange",
+      "(value: string) => void",
+      "利用先の状態へ接続"
+    ],
+    [
+      "disabled / items[].disabled",
+      "boolean",
+      "全体 / 項目ごとに無効化"
+    ],
+    [
+      "orientation",
+      "horizontal | vertical",
+      "並びの方向。内容に応じて選択指標も再計測"
+    ],
+    [
+      "name / form / required",
+      "native radio attributes",
+      "実フォームへの送信とリセット"
+    ],
+    [
+      "className / style / aria-label",
+      "HTML attributes",
+      "外側の配置とグループの目的"
+    ]
+  ]
+}

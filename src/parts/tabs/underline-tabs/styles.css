@@ -1,0 +1,6 @@
+@import '../../../shared/selection-base.css';
+@import '../../../shared/selection-content.css';
+/* Underline Tabs: 余白と細い下線で、選択と内容の関係を伝える。 */
+.sop-underline-tabs{--choice-base:transparent;--choice-line:#3f4944;--choice-marker:transparent;--choice-on:#d4e9db;--choice-accent:#c0dbb5;--choice-radius:0px;}
+.sop-underline-tabs > .sop-choice-list{border-width:0 0 1px;gap:4px;padding:0;overflow-x:auto}.sop-underline-tabs > .sop-choice-list > .sop-choice-marker{box-shadow:inset 0 -2px var(--choice-accent);border-radius:0}.sop-underline-tabs > .sop-choice-list > .sop-choice-item{min-height:47px;border-radius:0}.sop-underline-tabs > .sop-choice-list > .sop-choice-item .sop-choice-icon, .sop-underline-tabs > .sop-choice-list > .sop-choice-item .sop-choice-dot{display:none}.sop-underline-tabs > .sop-choice-panels > .sop-choice-panel{border:0;border-radius:0;background:transparent;padding-inline:4px}
+

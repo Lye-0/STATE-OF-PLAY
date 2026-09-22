@@ -1,6 +1,6 @@
-# コレクション — v3.6.0
+# コレクション — v3.7.0
 
-24トグル・24ブロック・24スクロールバー・24プルダウン・24アコーディオン・24テキストボックス、24ボタン・16リンクを加え、計184種類。A/Bは用途と表現の方向であり、品質の優劣ではありません。
+24トグル・24ブロック・24スクロールバー・24プルダウン・24アコーディオン・24テキストボックス、24ボタン・16リンク・24タブ・24セグメントで、計232種類。A/Bは用途と表現の方向であり、品質の優劣ではありません。
 
 ## トグル（24種類）
 
@@ -230,3 +230,63 @@
 | Inline Link | B | 本文中でも使える、読みやすい色と下線のリンク。 | `inline-link` |
 | External Link | B | 外部リソースへの移動を示す、コンパクトな記号。 | `external-link` |
 | Back Link | B | 左向き矢印と控えめなラベル。戻り道を自然に示す。 | `back-link` |
+
+
+## タブ（24種類）
+
+| 名前 | タイプ | 特徴 | ID |
+| --- | --- | --- | --- |
+| Atlas Tabs | A | 刻まれた番号と切り欠いた指標。コンテンツを旅する索引。 | `atlas-tabs` |
+| Aurora Tabs | A | ガラスの向こうのオーロラが、次の内容へなめらかに滑る。 | `aurora-tabs` |
+| Nixie Tabs | A | 琥珀色の管と発光数字。選んだチャンネルが目覚める。 | `nixie-tabs` |
+| Folio Tabs | A | 重なる紙と見出しの綴じ目。本文までつながる紙のタブ。 | `folio-tabs` |
+| Blueprint Tabs | A | 製図の方眼と精密な輪郭。図面をめくる感覚のインターフェース。 | `blueprint-tabs` |
+| Prism Tabs | A | 切り欠いた結晶と偏光。選択が移るたび、光の面が変わる。 | `prism-tabs` |
+| Obsidian Tabs | A | 黒い石の研磨面と深い溝。主張しすぎず、存在感のあるタブ。 | `obsidian-tabs` |
+| Copper Tabs | A | 削り出しの銅の指標が、沈んだレールの上を移動する。 | `copper-tabs` |
+| Ribbon Tabs | A | 布の帯のような選択面と、下に伸びた切り込み。 | `ribbon-tabs` |
+| Observatory Tabs | A | 星図の気配と円弧のレール。夜空をたどる切り替え。 | `observatory-tabs` |
+| Studio Tabs | A | 緑のインジケーターと音響機器のキー。物理的な切り替え感。 | `studio-tabs` |
+| Ticket Tabs | A | 切符のミシン目と印字。レトロな乗車票のタブ。 | `ticket-tabs` |
+| Velvet Tabs | A | 深い紫の布と、柔らかく沈む選択面。 | `velvet-tabs` |
+| Optic Tabs | A | レンズの縁の反射と、明るいガラスの指標。 | `optic-tabs` |
+| Signal Tabs | A | 走査線の上に緑の文字が浮かぶ、静かな端末。 | `signal-tabs` |
+| Kinetic Tabs | A | 目盛りの上を跳ねる立体的なキー。わずかな弾みを添える。 | `kinetic-tabs` |
+| Essential Tabs | B | 読みやすいラベルと明確な選択面。日常の画面へ。 | `essential-tabs` |
+| Underline Tabs | B | 余白と細い下線で、選択と内容の関係を伝える。 | `underline-tabs` |
+| Pill Tabs | B | 丸い選択面と落ち着いた青灰色。小さな画面にも。 | `pill-tabs` |
+| Paper Tabs | B | 明るい背景と小さな影。文章と情報を静かに整理する。 | `paper-tabs` |
+| Outline Tabs | B | 塗りを抑えた枠と小さな状態マーク。 | `outline-tabs` |
+| Compact Tabs | B | コンパクトな余白と控えめな色。ツールや設定画面へ。 | `compact-tabs` |
+| Sidebar Tabs | B | 横に並べるだけではない、縦型ナビゲーションのタブ。 | `sidebar-tabs` |
+| Workspace Tabs | B | アイコンと見出しをすっきり整えた実用的なタブ。 | `workspace-tabs` |
+
+
+## セグメントコントロール（24種類）
+
+| 名前 | タイプ | 特徴 | ID |
+| --- | --- | --- | --- |
+| Mercury Selector | A | 削り出しの面と溝。選択肢の間を重みのあるキーが滑る。 | `mercury-segments` |
+| Capillary Selector | A | 淡く屈折する液体ガラス。レンズのような光が移動する。 | `capillary-segments` |
+| Nixie Selector | A | 番号が浮かび上がる三連の真空管。項目数は自在に。 | `nixie-segments` |
+| Prism Selector | A | 六角形を思わせる切り込みと、淡いスペクトル。 | `prism-segments` |
+| Detent Selector | A | 物理的なクリックストップを思わせる立体レール。 | `detent-segments` |
+| Blueprint Selector | A | 寸法線と精密な囲い。青い図面の設定スイッチ。 | `blueprint-segments` |
+| Lens Selector | A | 厚いガラスの縁と反射。レンズの焦点を合わせるように。 | `lens-segments` |
+| Origami Selector | A | 折り紙の切り込みと、面で変化する柔らかな陰影。 | `origami-segments` |
+| Copper Selector | A | 銅の磨き面と刻印。設定にも素材の存在感を。 | `copper-segments` |
+| Studio Selector | A | レベルライトと凹み。音響機器のモードセレクター。 | `studio-segments` |
+| Orbital Selector | A | 丸い軌道と小さな光点。選んだ方向が明確に点灯する。 | `orbital-segments` |
+| Velvet Selector | A | キルティングのような奥行きと、落ち着いた光沢。 | `velvet-segments` |
+| Signal Selector | A | 線と文字の発光で、現在のモードをはっきり示す。 | `signal-segments` |
+| Ceramic Selector | A | 暖かな白とわずかな段差。立体的で優しい選択面。 | `ceramic-segments` |
+| Ticket Selector | A | 紙の切り込みとミシン目。小さな旅のセレクター。 | `ticket-segments` |
+| Atlas Selector | A | タイポグラフィと斜めの切り込み。端正な編集的スイッチ。 | `atlas-segments` |
+| Essential Segments | B | ニュートラルな設定用セグメント。日常の画面に。 | `essential-segments` |
+| Soft Segments | B | 丸みと控えめなコントラスト。やさしい切り替え。 | `soft-segments` |
+| Outline Segments | B | 背景の塗りを抑えて、輪郭と点で選択を伝える。 | `outline-segments` |
+| Underline Segments | B | 細い線が現在値を示す、装飾の少ないスイッチ。 | `underline-segments` |
+| Compact Segments | B | 小さめのラベルと余白。ツールバーや小さな設定欄へ。 | `compact-segments` |
+| Paper Segments | B | 淡いグレーと白い選択面。色を増やさず読みやすく。 | `paper-segments` |
+| Slate Segments | B | 青灰色の面で、選択した表示を明確にする。 | `slate-segments` |
+| Icon Segments | B | アイコンとラベルを併記。意味を隠さない表示切り替え。 | `icon-segments` |
