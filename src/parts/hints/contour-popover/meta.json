@@ -1,0 +1,60 @@
+{
+  "id": "contour-popover",
+  "name": "Contour Popover",
+  "category": "hints",
+  "order": 392,
+  "version": "4.0.0",
+  "tagline": "かたちを、なぞる。",
+  "description": "interactive=falseは説明用tooltip、trueは操作できるpopoverです。",
+  "material": "CONTEXT / DETAILS",
+  "motion": "RESPONSE",
+  "accent": "193,181,151",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "ContourPopover",
+  "tags": [
+    "ツールチップ／ポップオーバー",
+    "hints",
+    "Contour Popover",
+    "Contour",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "contour-popover",
+    "kind": "hints",
+    "variant": "contour",
+    "label": "詳しく見る",
+    "description": "",
+    "defaultValue": null,
+    "interactive": false,
+    "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
+  }
+}

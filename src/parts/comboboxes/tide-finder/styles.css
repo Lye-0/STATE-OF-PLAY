@@ -1,0 +1,5 @@
+@import "../../../shared/foundation/base.css";
+.sop-foundation.sop-tide-finder{--ff-accent:#89d2ee;--ff-accent2:#629bb3;--ff-base:#112a35;--ff-panel:#21434e;--ff-line:color-mix(in srgb,#89d2ee 30%,#112a35);--ff-ink:#eeeede;--ff-muted:#779eae;--ff-radius:13px;}
+.sop-foundation.sop-tide-finder .ff-progress-track{height:40px;border-radius:40px;}
+.sop-foundation.sop-tide-finder .ff-fill,.ff-progress-fill{background:linear-gradient(180deg,#c5eafb 0%,#75cadf 10%,#2877a0 100%);box-shadow:inset 0 2px 0 #e6fbff8a;}
+.sop-foundation.sop-tide-finder .ff-floating{background:radial-gradient(ellipse at 20% 0,#acf5ff14,transparent 70%),var(--ff-panel);border-radius:22px;}

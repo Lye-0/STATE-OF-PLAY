@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+.sop-foundation.sop-transit-loader{--ff-accent:#e8bb91;--ff-accent2:#f0d3b8;--ff-base:#2d2824;--ff-panel:#403730;--ff-line:color-mix(in srgb,#e8bb91 30%,#2d2824);--ff-ink:#eeeede;--ff-muted:#ab9684;--ff-radius:5px;}
+.sop-foundation.sop-transit-loader{padding:22px;background:#403730;border:1px solid color-mix(in srgb,#e8bb91 30%,transparent);border-radius:3px;box-shadow:0 16px 32px #0003,inset 0 1px 0 #ffffff18;}
+.sop-foundation.sop-transit-loader .ff-choice,.ff-dropzone,.ff-notice,.ff-pages{border-style:dashed;border-left-width:3px;border-right-width:3px;}
+.sop-foundation.sop-transit-loader .ff-reading,.ff-page-info{font-family:var(--ff-mono);letter-spacing:2px;}
+.sop-foundation.sop-transit-loader .ff-orbit{border-radius:0;clip-path:polygon(50% 0,95% 25%,95% 75%,50% 100%,5% 75%,5% 25%);background:conic-gradient(from 30deg,var(--ff-accent),var(--ff-panel),var(--ff-accent2),var(--ff-panel),var(--ff-accent));inset:23px;border:0;animation-duration:7s;}
+.sop-foundation.sop-transit-loader .ff-orbit.o2{inset:34px;background:var(--ff-base);animation-direction:normal;animation-duration:7s;}
+.sop-foundation.sop-transit-loader .ff-orbit.o3,.ff-loader-core{display:none;}

@@ -1,0 +1,86 @@
+{
+  "id": "obsidian-tags",
+  "name": "Obsidian Tags",
+  "category": "badges",
+  "order": 530,
+  "version": "4.0.0",
+  "tagline": "黒の中に、輪郭を。",
+  "description": "表示タグ・複数選択・削除操作に対応。",
+  "material": "LABEL / COLLECTION",
+  "motion": "RESPONSE",
+  "accent": "199,205,212",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "ObsidianTags",
+  "tags": [
+    "タグ／チップ",
+    "badges",
+    "Obsidian Tags",
+    "Obsidian",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "obsidian-tags",
+    "kind": "badges",
+    "variant": "obsidian",
+    "label": "小さな情報に、個性を。",
+    "description": "",
+    "defaultValue": [
+      "ready"
+    ],
+    "selectable": false,
+    "removable": true,
+    "items": [
+      {
+        "value": "design",
+        "label": "Design",
+        "badge": "8",
+        "icon": "spark"
+      },
+      {
+        "value": "motion",
+        "label": "Motion",
+        "badge": "4",
+        "icon": "clock"
+      },
+      {
+        "value": "ready",
+        "label": "Ready",
+        "icon": "check"
+      },
+      {
+        "value": "review",
+        "label": "Review",
+        "icon": "info"
+      }
+    ]
+  }
+}

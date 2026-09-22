@@ -1,0 +1,5 @@
+@import "../../../shared/foundation/base.css";
+.sop-foundation.sop-mercury-trail{--ff-accent:#d1dfda;--ff-accent2:#829d9c;--ff-base:#1a2223;--ff-panel:#364345;--ff-line:color-mix(in srgb,#d1dfda 30%,#1a2223);--ff-ink:#eeeede;--ff-muted:#8c9e9e;--ff-radius:13px;}
+.sop-foundation.sop-mercury-trail .ff-choice,.ff-combo-shell,.ff-stepper,.ff-notice{background:linear-gradient(165deg,#fff2,transparent 22%,#0002 63%,#fff1),var(--ff-panel);border-top-color:#d5dfd47a;box-shadow:inset 0 1px 0 #fff3,0 7px 22px #0005;}
+.sop-foundation.sop-mercury-trail .ff-rail{height:10px;top:16px;}
+.sop-foundation.sop-mercury-trail [data-range]::-webkit-slider-thumb{background:repeating-conic-gradient(#ecf3e6 0deg,#50605a 3deg,#a6b4a9 6deg);box-shadow:inset 0 0 0 4px #7c938560,0 5px 10px #0009;}

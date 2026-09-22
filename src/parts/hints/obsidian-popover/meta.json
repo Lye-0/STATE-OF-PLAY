@@ -1,0 +1,60 @@
+{
+  "id": "obsidian-popover",
+  "name": "Obsidian Popover",
+  "category": "hints",
+  "order": 386,
+  "version": "4.0.0",
+  "tagline": "黒の中に、輪郭を。",
+  "description": "interactive=falseは説明用tooltip、trueは操作できるpopoverです。",
+  "material": "CONTEXT / DETAILS",
+  "motion": "RESPONSE",
+  "accent": "199,205,212",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "ObsidianPopover",
+  "tags": [
+    "ツールチップ／ポップオーバー",
+    "hints",
+    "Obsidian Popover",
+    "Obsidian",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "obsidian-popover",
+    "kind": "hints",
+    "variant": "obsidian",
+    "label": "詳しく見る",
+    "description": "",
+    "defaultValue": null,
+    "interactive": false,
+    "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
+  }
+}

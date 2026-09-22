@@ -1,0 +1,86 @@
+{
+  "id": "botanical-tags",
+  "name": "Botanical Tags",
+  "category": "badges",
+  "order": 528,
+  "version": "4.0.0",
+  "tagline": "ゆっくり、芽吹く。",
+  "description": "表示タグ・複数選択・削除操作に対応。",
+  "material": "LABEL / COLLECTION",
+  "motion": "RESPONSE",
+  "accent": "190,208,143",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "BotanicalTags",
+  "tags": [
+    "タグ／チップ",
+    "badges",
+    "Botanical Tags",
+    "Botanical",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "botanical-tags",
+    "kind": "badges",
+    "variant": "botanical",
+    "label": "小さな情報に、個性を。",
+    "description": "",
+    "defaultValue": [
+      "ready"
+    ],
+    "selectable": true,
+    "removable": false,
+    "items": [
+      {
+        "value": "design",
+        "label": "Design",
+        "badge": "8",
+        "icon": "spark"
+      },
+      {
+        "value": "motion",
+        "label": "Motion",
+        "badge": "4",
+        "icon": "clock"
+      },
+      {
+        "value": "ready",
+        "label": "Ready",
+        "icon": "check"
+      },
+      {
+        "value": "review",
+        "label": "Review",
+        "icon": "info"
+      }
+    ]
+  }
+}

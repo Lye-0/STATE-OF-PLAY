@@ -1,0 +1,17 @@
+@import "../../../shared/foundation/base.css";
+.sop-foundation.sop-essential-range{--ff-accent:#bfd3c6;--ff-accent2:#bfd3c6;--ff-base:#1c2022;--ff-panel:#24292b;--ff-line:color-mix(in srgb,#bfd3c6 30%,#1c2022);--ff-ink:#eeeede;--ff-muted:#939e9a;--ff-radius:13px;}
+.sop-foundation.sop-essential-range .ff-choice,.ff-combo-shell,.ff-stepper,.ff-progress-visual,.ff-notice,.ff-pages,.ff-dropzone{box-shadow:none;}
+.sop-foundation.sop-essential-range .ff-eyebrow{display:none;}
+.sop-foundation.sop-essential-range .ff-choice-icon{display:none;}
+.sop-foundation.sop-essential-range .ff-choice{min-height:53px;}
+.sop-foundation.sop-essential-range .ff-choice-copy small{font-size:10px;}
+.sop-foundation.sop-essential-range .ff-ticks{display:none;}
+.sop-foundation.sop-essential-range .ff-rail{height:5px;top:18px;border:0;box-shadow:none;}
+.sop-foundation.sop-essential-range [data-range]::-webkit-slider-thumb{width:21px;height:21px;margin-top:-3px;background:var(--ff-accent);border:3px solid var(--ff-panel);box-shadow:0 0 0 1px var(--ff-accent),0 2px 5px #0003;}
+.sop-foundation.sop-essential-range .ff-reading{font-size:28px;}
+.sop-foundation.sop-essential-range .ff-stepper{min-height:53px;}
+.sop-foundation.sop-essential-range [data-number]{font-size:23px;}
+.sop-foundation.sop-essential-range .ff-choice:hover{transform:none;}
+.sop-foundation.sop-essential-range .ff-progress-track{height:7px;border:0;border-radius:8px;}
+.sop-foundation.sop-essential-range .ff-progress-visual{padding:15px;}
+.sop-foundation.sop-essential-range .ff-progress-fill{box-shadow:none;}

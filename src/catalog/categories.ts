@@ -11,5 +11,18 @@ export const categories = [
     { id: 'tabs', label: 'タブ', english: 'TABS' },
     { id: 'segments', label: 'セグメント', english: 'SEGMENTED CONTROLS' },
     { id: 'checkboxes', label: 'チェックボックス', english: 'CHECKBOXES' },
-    { id: 'popups', label: 'ポップアップ', english: 'POPUPS' }
+    { id: 'popups', label: 'ポップアップ', english: 'POPUPS' },
+    { id: 'sliders', label: 'スライダー', english: 'SLIDERS / RANGE' },
+    { id: 'radios', label: 'ラジオ／選択カード', english: 'RADIO / CHOICE' },
+    { id: 'comboboxes', label: 'コンボボックス', english: 'COMBOBOXES' },
+    { id: 'toasts', label: '通知', english: 'TOASTS' },
+    { id: 'hints', label: 'ツールチップ／ポップオーバー', english: 'TOOLTIP / POPOVER' },
+    { id: 'progress', label: '進捗表示', english: 'PROGRESS' },
+    { id: 'loaders', label: 'ローダー', english: 'LOADERS' },
+    { id: 'uploads', label: 'ファイル選択', english: 'FILE UPLOAD' },
+    { id: 'datepickers', label: '日時選択', english: 'DATE / TIME' },
+    { id: 'pagination', label: 'ページ送り', english: 'PAGINATION' },
+    { id: 'breadcrumbs', label: 'パンくず', english: 'BREADCRUMBS' },
+    { id: 'badges', label: 'タグ／チップ', english: 'BADGE / CHIP' },
+    { id: 'numbers', label: '数値入力', english: 'NUMBER INPUT' }
 ];

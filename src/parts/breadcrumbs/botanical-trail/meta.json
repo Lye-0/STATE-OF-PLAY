@@ -1,0 +1,84 @@
+{
+  "id": "botanical-trail",
+  "name": "Botanical Trail",
+  "category": "breadcrumbs",
+  "order": 512,
+  "version": "4.0.0",
+  "tagline": "ゆっくり、芽吹く。",
+  "description": "itemsのhrefを実際のページへ変更してください。",
+  "material": "WAYFINDING / PATH",
+  "motion": "RESPONSE",
+  "accent": "190,208,143",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "BotanicalTrail",
+  "tags": [
+    "パンくず",
+    "breadcrumbs",
+    "Botanical Trail",
+    "Botanical",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "botanical-trail",
+    "kind": "breadcrumbs",
+    "variant": "botanical",
+    "label": "あなたが、いまいる場所。",
+    "description": "",
+    "defaultValue": null,
+    "items": [
+      {
+        "value": "home",
+        "label": "Home",
+        "href": "#home"
+      },
+      {
+        "value": "library",
+        "label": "Library",
+        "href": "#library"
+      },
+      {
+        "value": "objects",
+        "label": "Objects",
+        "href": "#objects"
+      },
+      {
+        "value": "materials",
+        "label": "Materials",
+        "href": "#materials"
+      },
+      {
+        "value": "paper",
+        "label": "Paper"
+      }
+    ]
+  }
+}

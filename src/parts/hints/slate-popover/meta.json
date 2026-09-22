@@ -1,0 +1,60 @@
+{
+  "id": "slate-popover",
+  "name": "Slate Popover",
+  "category": "hints",
+  "order": 399,
+  "version": "4.0.0",
+  "tagline": "静かな青灰色。",
+  "description": "interactive=falseは説明用tooltip、trueは操作できるpopoverです。",
+  "material": "CONTEXT / DETAILS",
+  "motion": "RESPONSE",
+  "accent": "176,196,210",
+  "designType": "B",
+  "runtime": "Native DOM + CSS",
+  "componentName": "SlatePopover",
+  "tags": [
+    "ツールチップ／ポップオーバー",
+    "hints",
+    "Slate Popover",
+    "Slate",
+    "B"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "slate-popover",
+    "kind": "hints",
+    "variant": "slate",
+    "label": "詳しく見る",
+    "description": "",
+    "defaultValue": null,
+    "interactive": true,
+    "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
+  }
+}

@@ -1,0 +1,17 @@
+@import "../../../shared/foundation/base.css";
+.sop-foundation.sop-slate-tags{--ff-accent:#b0c4d2;--ff-accent2:#95a5c2;--ff-base:#202b35;--ff-panel:#2a3945;--ff-line:color-mix(in srgb,#b0c4d2 30%,#202b35);--ff-ink:#eeeede;--ff-muted:#93a5b1;--ff-radius:13px;}
+.sop-foundation.sop-slate-tags .ff-choice,.ff-combo-shell,.ff-stepper,.ff-progress-visual,.ff-notice,.ff-pages,.ff-dropzone{box-shadow:none;}
+.sop-foundation.sop-slate-tags .ff-eyebrow{display:none;}
+.sop-foundation.sop-slate-tags .ff-choice-icon{display:none;}
+.sop-foundation.sop-slate-tags .ff-choice{min-height:53px;}
+.sop-foundation.sop-slate-tags .ff-choice-copy small{font-size:10px;}
+.sop-foundation.sop-slate-tags .ff-ticks{display:none;}
+.sop-foundation.sop-slate-tags .ff-rail{height:5px;top:18px;border:0;box-shadow:none;}
+.sop-foundation.sop-slate-tags [data-range]::-webkit-slider-thumb{width:21px;height:21px;margin-top:-3px;background:var(--ff-accent);border:3px solid var(--ff-panel);box-shadow:0 0 0 1px var(--ff-accent),0 2px 5px #0003;}
+.sop-foundation.sop-slate-tags .ff-reading{font-size:28px;}
+.sop-foundation.sop-slate-tags .ff-stepper{min-height:53px;}
+.sop-foundation.sop-slate-tags [data-number]{font-size:23px;}
+.sop-foundation.sop-slate-tags .ff-choice:hover{transform:none;}
+.sop-foundation.sop-slate-tags .ff-progress-track{height:7px;border:0;border-radius:8px;}
+.sop-foundation.sop-slate-tags .ff-progress-visual{padding:15px;}
+.sop-foundation.sop-slate-tags .ff-progress-fill{box-shadow:none;}

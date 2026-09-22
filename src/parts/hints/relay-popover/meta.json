@@ -1,0 +1,60 @@
+{
+  "id": "relay-popover",
+  "name": "Relay Popover",
+  "category": "hints",
+  "order": 391,
+  "version": "4.0.0",
+  "tagline": "確かな、手応え。",
+  "description": "interactive=falseは説明用tooltip、trueは操作できるpopoverです。",
+  "material": "CONTEXT / DETAILS",
+  "motion": "RESPONSE",
+  "accent": "180,216,144",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "RelayPopover",
+  "tags": [
+    "ツールチップ／ポップオーバー",
+    "hints",
+    "Relay Popover",
+    "Relay",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "relay-popover",
+    "kind": "hints",
+    "variant": "relay",
+    "label": "詳しく見る",
+    "description": "",
+    "defaultValue": null,
+    "interactive": true,
+    "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
+  }
+}

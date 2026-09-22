@@ -13,8 +13,8 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
-    # The complete 280-part / 8-export matrix runs on both hosted OS variants.
-    timeout-minutes: 60
+    # The complete 564-part / 8-export matrix runs on both hosted OS variants.
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
@@ -56,6 +56,10 @@ jobs:
         run: npm run test:selection
       - name: Checkboxes and modal popups (native, forms, focus and React)
         run: npm run test:check-popup
+      - name: Reconstructed foundation parts (values, forms and exports)
+        run: npm run test:foundations
+      - name: Foundation React components (controlled values and cleanup)
+        run: npm run test:foundations:react
       - name: Build full source archive
         run: npm run package
       - name: Save reports on failure

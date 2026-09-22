@@ -1,0 +1,31 @@
+(node:2976) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS Gallery: 564 parts, no runtime errors
+PASS A/B and category filters intersect, counts remain correct, and search resets cleanly
+PASS Liquid, Fold, Prism have intrinsic opposite state labels and distinct optical treatment
+PASS Compact B switches retain real sizes, native keyboard and drag states
+PASS Toggle and drag do not open details
+PASS Detail: code, hierarchical tree, full path, download before copy
+PASS Copy: success only after write, exact string and visible feedback
+PASS Denied clipboard: manual fallback, no false success, focus restored
+PASS Selected source download matches the original file bytes
+PASS Focus trap / Escape / restoration to gallery trigger
+  verified chrome; 64 sources
+  verified liquid; 128 sources
+  verified eclipse; 192 sources
+  verified bloom; 256 sources
+  verified volt; 320 sources
+  verified orbit; 384 sources
+  verified reel; 448 sources
+  verified fold; 512 sources
+  verified prism; 576 sources
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+page.evaluate: Target page, context or browser has been closed
+    at /mnt/data/sop-recovery/STATE-OF-PLAY/tests/browser.ts:175:30
+    at async run (/mnt/data/sop-recovery/STATE-OF-PLAY/tests/browser.ts:28:58)
+    at async file:///mnt/data/sop-recovery/STATE-OF-PLAY/tests/browser.ts:167:2
+
+Node.js v22.16.0

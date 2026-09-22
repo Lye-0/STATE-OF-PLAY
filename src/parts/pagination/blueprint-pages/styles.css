@@ -1,0 +1,7 @@
+@import "../../../shared/foundation/base.css";
+.sop-foundation.sop-blueprint-pages{--ff-accent:#a9d9ee;--ff-accent2:#6f9cda;--ff-base:#122f46;--ff-panel:#163a55;--ff-line:color-mix(in srgb,#a9d9ee 30%,#122f46);--ff-ink:#eeeede;--ff-muted:#7899b0;--ff-radius:5px;}
+.sop-foundation.sop-blueprint-pages{padding:22px;background:#163a55;border:1px solid color-mix(in srgb,#a9d9ee 30%,transparent);border-radius:7px;box-shadow:0 16px 32px #0003,inset 0 1px 0 #ffffff18;}
+.sop-foundation.sop-blueprint-pages .ff-choices,.ff-pages,.ff-progress-visual,.ff-dropzone,.ff-calendar{background-image:linear-gradient(90deg,#a6d6ed08 1px,transparent 1px),linear-gradient(#a6d6ed08 1px,transparent 1px);background-size:17px 17px;}
+.sop-foundation.sop-blueprint-pages .ff-choice,.ff-stepper,.ff-combo-shell,.ff-pages a,.ff-pages button,.ff-tag{border-radius:0;}
+.sop-foundation.sop-blueprint-pages .ff-choice-icon{background:none;box-shadow:none;border:1px dashed var(--ff-line);}
+.sop-foundation.sop-blueprint-pages .ff-progress-track{border-radius:0;height:18px;}

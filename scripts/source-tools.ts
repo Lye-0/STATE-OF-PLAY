@@ -125,11 +125,19 @@ function htmlReferences(code: string, filename: string): Reference[] {
   return refs;
 }
 
-export function sourceReferences(code: string, filename: string): Reference[] {
+function parseReferences(code: string, filename: string): Reference[] {
   if (/\.[jt]sx?$/.test(filename)) return scriptReferences(code, filename);
   if (/\.css$/.test(filename)) return cssReferences(code);
   if (/\.(?:html|svg)$/.test(filename)) return htmlReferences(code, filename);
   return [];
+}
+const referenceCache = new Map<string,Reference[]>();
+export function sourceReferences(code:string,filename:string):Reference[]{
+  const key=path.posix.extname(filename)+'\0'+code;
+  const found=referenceCache.get(key);if(found)return found;
+  const refs=parseReferences(code,filename);
+  if(referenceCache.size>16384)referenceCache.delete(referenceCache.keys().next().value!);
+  referenceCache.set(key,refs);return refs;
 }
 export function isLocalReference(ref: Reference): boolean {
   if (ref.module) {
@@ -167,7 +175,7 @@ export function exportCode(code: string, format: Format, name: string, source: s
     const found = resolveLocal(source, ref.request, key => mapping.has(key));
     let target = mapping.get(found)!;
     // TypeScript / JSX bundlers accept extensionless module paths; native browser JS does not.
-    if (ref.module && format !== 'js' && !path.posix.extname(splitSuffix(ref.request)[0])) target = target.replace(/\.[jt]sx?$/, '');
+    if (ref.module && format !== 'js' && (!path.posix.extname(splitSuffix(ref.request)[0]) || format === 'ts' || format === 'tsx')) target = target.replace(/\.[jt]sx?$/, '');
     const relative = path.posix.relative(path.posix.dirname(name), target);
     let value = (relative.startsWith('.') ? relative : './' + relative) + splitSuffix(ref.request)[1];
     if (ref.quote) value = value.replaceAll('\\', '\\\\').replaceAll(ref.quote, '\\'+ref.quote).replaceAll('\n', '\\n').replaceAll('\r', '\\r');

@@ -1,0 +1,63 @@
+{
+  "id": "velvet-range",
+  "name": "Velvet Range",
+  "category": "sliders",
+  "order": 289,
+  "version": "4.0.0",
+  "tagline": "静かに、深く、やわらかく。",
+  "description": "スライダーの単位・上下限・刻み幅はpropsから変更できます。",
+  "material": "CONTINUOUS / CONTROL",
+  "motion": "GLIDE",
+  "accent": "223,167,190",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "VelvetRange",
+  "tags": [
+    "スライダー",
+    "sliders",
+    "Velvet Range",
+    "Velvet",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "velvet-range",
+    "kind": "sliders",
+    "variant": "velvet",
+    "label": "値を、ちょうどよく。",
+    "description": "",
+    "defaultValue": 62,
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "unit": "%",
+    "range": false
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "prism-popover",
+  "name": "Prism Popover",
+  "category": "hints",
+  "order": 382,
+  "version": "4.0.0",
+  "tagline": "境界に、色が生まれる。",
+  "description": "interactive=falseは説明用tooltip、trueは操作できるpopoverです。",
+  "material": "CONTEXT / DETAILS",
+  "motion": "RESPONSE",
+  "accent": "209,186,250",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "PrismPopover",
+  "tags": [
+    "ツールチップ／ポップオーバー",
+    "hints",
+    "Prism Popover",
+    "Prism",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "prism-popover",
+    "kind": "hints",
+    "variant": "prism",
+    "label": "詳しく見る",
+    "description": "",
+    "defaultValue": null,
+    "interactive": true,
+    "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
+  }
+}

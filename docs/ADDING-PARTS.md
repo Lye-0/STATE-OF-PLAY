@@ -191,3 +191,11 @@ CSSのスキン指定は`.sop-固有ID > .sop-choice-list > ...`など直属要�
 ポップアップの本文はmarkupとExampleに作成し、React本体には固定しません。縮小見本はギャラリーが実マークアップから作るため、別の偽プレビューHTMLは不要です。内容にIDやradio名を必要とする場合は、複数配置でも衝突しないことを確認します。HTMLのサンプルpaletteでは`data-popup-radio-group`、React例では`useId()`でグループを分離します。
 
 フォーム/Space、mixed、reset、モーダルのフォーカス/背景/Escape/取り外し、両配布配置と新しい項目が入れ子にある場合を`tests/check-popup.browser.ts`で検証します。
+
+## v4.0.0のfoundation系パーツ
+
+新しい13カテゴリは `src/shared/foundation/` のコントローラーと基本CSSを共有します。
+meta.jsonの `foundation` にkind/id/variantと展示初期設定を記述します。
+個別のstyles.css、markup.html、React/Vanillaエントリー、使い方、プロンプトを正本として置き、registry.jsonへ登録してください。
+ギャラリー専用の操作例は `src/app/foundation-preview.ts` に分離しています。保存処理の成功を装うデモを配布本体へ含めないでください。
+読み取り側の型は `src/catalog/types.ts`。新しい種類を増やす場合はカテゴリ定義・カタログ検証・mount型も合わせます。

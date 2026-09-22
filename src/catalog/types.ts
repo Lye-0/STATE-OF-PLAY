@@ -1,3 +1,4 @@
+import type { FoundationConfig, FoundationOptions, FoundationController } from '../shared/foundation/core';
 import type {CheckboxOptions, CheckboxController} from '../shared/checkbox-controller';
 import type {PopupOptions, PopupController} from '../shared/popup-controller';
 import type {TabsOptions} from '../shared/tabs-controller';
@@ -13,7 +14,7 @@ import type { SurfaceOptions } from '../shared/surface-controller';
 export type Format = 'tsx' | 'jsx' | 'ts' | 'js';
 export type DesignType = 'A' | 'B';
 export const DESIGN_TYPES = { A: {label:'A · 表現重視', note:'素材感と動きを楽しむ、主役になるデザイン。'}, B: {label:'B · 実用重視', note:'落ち着きと読みやすさを重視。設定や日常の画面へ。'} } as const;
-export type Category = 'toggles' | 'blocks' | 'scrollbars' | 'dropdowns' | 'accordions' | 'textboxes' | 'buttons' | 'links' | 'tabs' | 'segments' | 'checkboxes' | 'popups';
+export type Category = 'toggles' | 'blocks' | 'scrollbars' | 'dropdowns' | 'accordions' | 'textboxes' | 'buttons' | 'links' | 'tabs' | 'segments' | 'checkboxes' | 'popups' | 'sliders' | 'radios' | 'comboboxes' | 'toasts' | 'hints' | 'progress' | 'loaders' | 'uploads' | 'datepickers' | 'pagination' | 'breadcrumbs' | 'badges' | 'numbers';
 export type Layout = 'portable' | 'original';
 export const LAYOUTS = {
   portable: {label: '導入向け', note: '本体フォルダーの中で依存を完結。好きな配置先へ移せます。'},
@@ -23,6 +24,7 @@ export const isLayout = (value: unknown): value is Layout => value === 'portable
 export type DetailTab = 'code' | 'guide' | 'prompt';
 export interface SourceFile { name: string; sourceName: string; code: string; language: string; group: 'component' | 'shared' | 'example'; }
 export interface Part {
+  foundation?: FoundationConfig;
   id: string; name: string; category: Category; order: number; version: string;
   tagline: string; description: string; material: string; motion: string; accent: string;
   designType: DesignType; runtime: string;
@@ -31,6 +33,13 @@ export interface Part {
   files: Record<Format, SourceFile[]>; portableFiles: Record<Format, SourceFile[]>; preview: Record<string, string>;
 }
 export interface PartController {
+  getData?: FoundationController['getData'];
+  setData?: FoundationController['setData'];
+  updateFoundation?: FoundationController['updateFoundation'];
+  show?: FoundationController['show'];
+  hide?: FoundationController['hide'];
+  notify?: FoundationController['notify'];
+  dismiss?: FoundationController['dismiss'];
   setIndeterminate?: CheckboxController['setIndeterminate'];
   getIndeterminate?: CheckboxController['getIndeterminate'];
   updatePopupOptions?: PopupController['updateOptions'];
@@ -58,7 +67,7 @@ export interface PartController {
   setPaused?: ToggleController['setPaused'];
   resize?: ToggleController['resize'];
 }
-export type MountPart = (root: HTMLElement, options?: ToggleOptions & SurfaceOptions & ScrollAreaOptions & SelectOptions & AccordionOptions & TextFieldOptions & ActionButtonOptions & TabsOptions & SegmentOptions & CheckboxOptions & PopupOptions) => PartController;
+export type MountPart = (root: HTMLElement, options?: ToggleOptions & SurfaceOptions & ScrollAreaOptions & SelectOptions & AccordionOptions & TextFieldOptions & ActionButtonOptions & TabsOptions & SegmentOptions & CheckboxOptions & PopupOptions & FoundationOptions) => PartController;
 export const isFormat = (value: unknown): value is Format =>
   typeof value === 'string' && ['tsx','jsx','ts','js'].includes(value);
 export const isDetailTab = (value: unknown): value is DetailTab =>

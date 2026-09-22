@@ -1,0 +1,86 @@
+{
+  "id": "mono-tags",
+  "name": "Mono Tags",
+  "category": "badges",
+  "order": 544,
+  "version": "4.0.0",
+  "tagline": "色に頼らない、明快さ。",
+  "description": "表示タグ・複数選択・削除操作に対応。",
+  "material": "LABEL / COLLECTION",
+  "motion": "RESPONSE",
+  "accent": "226,225,218",
+  "designType": "B",
+  "runtime": "Native DOM + CSS",
+  "componentName": "MonoTags",
+  "tags": [
+    "タグ／チップ",
+    "badges",
+    "Mono Tags",
+    "Mono",
+    "B"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "mono-tags",
+    "kind": "badges",
+    "variant": "mono",
+    "label": "小さな情報に、個性を。",
+    "description": "",
+    "defaultValue": [
+      "ready"
+    ],
+    "selectable": false,
+    "removable": false,
+    "items": [
+      {
+        "value": "design",
+        "label": "Design",
+        "badge": "8",
+        "icon": "spark"
+      },
+      {
+        "value": "motion",
+        "label": "Motion",
+        "badge": "4",
+        "icon": "clock"
+      },
+      {
+        "value": "ready",
+        "label": "Ready",
+        "icon": "check"
+      },
+      {
+        "value": "review",
+        "label": "Review",
+        "icon": "info"
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+@import "../../../shared/foundation/base.css";
+.sop-foundation.sop-prism-loader{--ff-accent:#d1bafa;--ff-accent2:#9bded1;--ff-base:#222035;--ff-panel:#332d47;--ff-line:color-mix(in srgb,#d1bafa 30%,#222035);--ff-ink:#eeeede;--ff-muted:#a89cc4;--ff-radius:13px;}
+.sop-foundation.sop-prism-loader .ff-progress-track{transform:skewX(-17deg);border:0;border-radius:0;}
+.sop-foundation.sop-prism-loader .ff-progress-fill{background:repeating-linear-gradient(90deg,transparent 0 2px,#bcdcca 2px 4px,#cdb4ec 4px 10px,transparent 10px 13px);}
+.sop-foundation.sop-prism-loader .ff-tag{clip-path:polygon(8px 0,calc(100% - 8px) 0,100% 8px,100% calc(100% - 8px),calc(100% - 8px) 100%,8px 100%,0 calc(100% - 8px),0 8px);border-radius:0;background:linear-gradient(125deg,#d3abda,#a2d8dc,#ccd8b0);color:#403b5e;border:0;}
+.sop-foundation.sop-prism-loader [data-range]::-webkit-slider-thumb{border-radius:0;clip-path:polygon(50% 0,95% 25%,95% 75%,50% 100%,5% 75%,5% 25%);background:conic-gradient(#f5deef,#85cbd1,#cec1ea,#83aab2,#ead6ff);}
+.sop-foundation.sop-prism-loader .ff-floating{background:linear-gradient(130deg,#ce8ddd17,#51a4bc0a,#d5deb617),var(--ff-panel);}
+.sop-foundation.sop-prism-loader .ff-orbit{border-radius:0;clip-path:polygon(50% 0,95% 25%,95% 75%,50% 100%,5% 75%,5% 25%);background:conic-gradient(from 30deg,var(--ff-accent),var(--ff-panel),var(--ff-accent2),var(--ff-panel),var(--ff-accent));inset:23px;border:0;animation-duration:7s;}
+.sop-foundation.sop-prism-loader .ff-orbit.o2{inset:34px;background:var(--ff-base);animation-direction:normal;animation-duration:7s;}
+.sop-foundation.sop-prism-loader .ff-orbit.o3,.ff-loader-core{display:none;}

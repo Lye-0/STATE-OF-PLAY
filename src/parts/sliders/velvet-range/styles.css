@@ -1,0 +1,5 @@
+@import "../../../shared/foundation/base.css";
+.sop-foundation.sop-velvet-range{--ff-accent:#dfa7be;--ff-accent2:#a276a3;--ff-base:#281a27;--ff-panel:#402b3d;--ff-line:color-mix(in srgb,#dfa7be 30%,#281a27);--ff-ink:#eeeede;--ff-muted:#b292a5;--ff-radius:13px;}
+.sop-foundation.sop-velvet-range{padding:22px;background:#402b3d;border:1px solid color-mix(in srgb,#dfa7be 30%,transparent);border-radius:7px;box-shadow:0 16px 32px #0003,inset 0 1px 0 #ffffff18;}
+.sop-foundation.sop-velvet-range .ff-choice,.ff-stepper,.ff-progress-visual,.ff-floating,.ff-dropzone{background:repeating-linear-gradient(100deg,#ffffff05 0 1px,transparent 1px 3px),radial-gradient(ellipse at 30% 0,#df96c52a,transparent 75%),var(--ff-panel);box-shadow:inset 2px 2px 8px #0003,0 10px 20px #0002;}
+.sop-foundation.sop-velvet-range .ff-rail{height:8px;top:17px;background:#140d14;}

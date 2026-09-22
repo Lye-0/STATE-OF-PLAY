@@ -1,0 +1,5 @@
+@import "../../../shared/foundation/base.css";
+.sop-foundation.sop-transit-notice{--ff-accent:#e8bb91;--ff-accent2:#f0d3b8;--ff-base:#2d2824;--ff-panel:#403730;--ff-line:color-mix(in srgb,#e8bb91 30%,#2d2824);--ff-ink:#eeeede;--ff-muted:#ab9684;--ff-radius:5px;}
+.sop-foundation.sop-transit-notice{padding:22px;background:#403730;border:1px solid color-mix(in srgb,#e8bb91 30%,transparent);border-radius:3px;box-shadow:0 16px 32px #0003,inset 0 1px 0 #ffffff18;}
+.sop-foundation.sop-transit-notice .ff-choice,.ff-dropzone,.ff-notice,.ff-pages{border-style:dashed;border-left-width:3px;border-right-width:3px;}
+.sop-foundation.sop-transit-notice .ff-reading,.ff-page-info{font-family:var(--ff-mono);letter-spacing:2px;}

@@ -1,0 +1,82 @@
+{
+  "id": "outline-choice",
+  "name": "Outline Choice",
+  "category": "radios",
+  "order": 324,
+  "version": "4.0.0",
+  "tagline": "輪郭だけで、伝える。",
+  "description": "本物のradioとlabelです。",
+  "material": "SELECT / ONE",
+  "motion": "RESPONSE",
+  "accent": "197,206,206",
+  "designType": "B",
+  "runtime": "Native DOM + CSS",
+  "componentName": "OutlineChoice",
+  "tags": [
+    "ラジオ／選択カード",
+    "radios",
+    "Outline Choice",
+    "Outline",
+    "B"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "outline-choice",
+    "kind": "radios",
+    "variant": "outline",
+    "label": "あなたの制作モード",
+    "description": "",
+    "defaultValue": "cloud",
+    "required": true,
+    "items": [
+      {
+        "value": "local",
+        "label": "Local",
+        "description": "手元の環境で、静かに。",
+        "badge": "01",
+        "icon": "file"
+      },
+      {
+        "value": "cloud",
+        "label": "Cloud",
+        "description": "どこからでも、つながる。",
+        "badge": "02",
+        "icon": "spark"
+      },
+      {
+        "value": "hybrid",
+        "label": "Hybrid",
+        "description": "両方のよさを、ひとつに。",
+        "badge": "03",
+        "icon": "home"
+      }
+    ]
+  }
+}

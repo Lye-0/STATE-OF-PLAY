@@ -1,0 +1,18 @@
+@import "../../../shared/foundation/base.css";
+.sop-foundation.sop-soft-trail{--ff-accent:#567a70;--ff-accent2:#85a99c;--ff-base:#e6ece7;--ff-panel:#f0f4f1;--ff-line:color-mix(in srgb,#567a70 30%,#e6ece7);--ff-ink:#353b35;--ff-muted:#74887f;--ff-radius:19px;color-scheme:light;}
+.sop-foundation.sop-soft-trail{padding:22px;background:#f0f4f1;border:1px solid color-mix(in srgb,#567a70 15%,transparent);border-radius:18px;box-shadow:0 10px 25px #0001;}
+.sop-foundation.sop-soft-trail .ff-choice,.ff-combo-shell,.ff-stepper,.ff-progress-visual,.ff-notice,.ff-pages,.ff-dropzone{box-shadow:none;}
+.sop-foundation.sop-soft-trail .ff-eyebrow{display:none;}
+.sop-foundation.sop-soft-trail .ff-choice-icon{display:none;}
+.sop-foundation.sop-soft-trail .ff-choice{min-height:53px;}
+.sop-foundation.sop-soft-trail .ff-choice-copy small{font-size:10px;}
+.sop-foundation.sop-soft-trail .ff-ticks{display:none;}
+.sop-foundation.sop-soft-trail .ff-rail{height:5px;top:18px;border:0;box-shadow:none;}
+.sop-foundation.sop-soft-trail [data-range]::-webkit-slider-thumb{width:21px;height:21px;margin-top:-3px;background:var(--ff-accent);border:3px solid var(--ff-panel);box-shadow:0 0 0 1px var(--ff-accent),0 2px 5px #0003;}
+.sop-foundation.sop-soft-trail .ff-reading{font-size:28px;}
+.sop-foundation.sop-soft-trail .ff-stepper{min-height:53px;}
+.sop-foundation.sop-soft-trail [data-number]{font-size:23px;}
+.sop-foundation.sop-soft-trail .ff-choice:hover{transform:none;}
+.sop-foundation.sop-soft-trail .ff-progress-track{height:7px;border:0;border-radius:8px;}
+.sop-foundation.sop-soft-trail .ff-progress-visual{padding:15px;}
+.sop-foundation.sop-soft-trail .ff-progress-fill{box-shadow:none;}

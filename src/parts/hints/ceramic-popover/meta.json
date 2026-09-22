@@ -1,0 +1,60 @@
+{
+  "id": "ceramic-popover",
+  "name": "Ceramic Popover",
+  "category": "hints",
+  "order": 387,
+  "version": "4.0.0",
+  "tagline": "ぬくもりのある、精度。",
+  "description": "interactive=falseは説明用tooltip、trueは操作できるpopoverです。",
+  "material": "CONTEXT / DETAILS",
+  "motion": "RESPONSE",
+  "accent": "72,108,101",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "CeramicPopover",
+  "tags": [
+    "ツールチップ／ポップオーバー",
+    "hints",
+    "Ceramic Popover",
+    "Ceramic",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "ceramic-popover",
+    "kind": "hints",
+    "variant": "ceramic",
+    "label": "詳しく見る",
+    "description": "",
+    "defaultValue": null,
+    "interactive": true,
+    "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
+  }
+}

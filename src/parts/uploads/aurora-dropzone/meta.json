@@ -1,0 +1,62 @@
+{
+  "id": "aurora-dropzone",
+  "name": "Aurora Dropzone",
+  "category": "uploads",
+  "order": 449,
+  "version": "4.0.0",
+  "tagline": "光の層を、指先に。",
+  "description": "getData()/onValueChangeでFile[]を取得します。",
+  "material": "FILES / LOCAL",
+  "motion": "RESPONSE",
+  "accent": "136,223,212",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "AuroraDropzone",
+  "tags": [
+    "ファイル選択",
+    "uploads",
+    "Aurora Dropzone",
+    "Aurora",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "aurora-dropzone",
+    "kind": "uploads",
+    "variant": "aurora",
+    "label": "アイデアの素材を、ここに。",
+    "description": "",
+    "defaultValue": [],
+    "multiple": true,
+    "maxFiles": 4,
+    "maxBytes": 10485760,
+    "accept": ".png,.jpg,.webp,.txt,.pdf"
+  }
+}

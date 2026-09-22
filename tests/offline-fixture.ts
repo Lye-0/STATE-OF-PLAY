@@ -1,3 +1,4 @@
+import {packCatalog} from '../src/catalog/transport.ts';
 /** Explicit network-restricted test adapter. This is NOT a Vite build or a distributable preview. */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -8,7 +9,7 @@ export function testBundle(entry: string, extras: Map<string,string> = new Map()
  const virtual=new Map<string,string>();
  if (entry === 'src/main.ts') {
   const catalog=snapshot ?? buildCatalog();
-  virtual.set('virtual:sop-catalog','export default '+JSON.stringify(catalog.parts)+';');
+  virtual.set('virtual:sop-catalog',"import {unpackCatalog} from '/src/catalog/transport.ts';export default unpackCatalog("+JSON.stringify(packCatalog(catalog.parts))+');');
   virtual.set('virtual:sop-mounts',mountModule(catalog.bases));
   virtual.set('virtual:sop-styles','');
  }

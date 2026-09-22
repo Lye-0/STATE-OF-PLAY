@@ -1,0 +1,84 @@
+{
+  "id": "prism-trail",
+  "name": "Prism Trail",
+  "category": "breadcrumbs",
+  "order": 510,
+  "version": "4.0.0",
+  "tagline": "境界に、色が生まれる。",
+  "description": "itemsのhrefを実際のページへ変更してください。",
+  "material": "WAYFINDING / PATH",
+  "motion": "RESPONSE",
+  "accent": "209,186,250",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "PrismTrail",
+  "tags": [
+    "パンくず",
+    "breadcrumbs",
+    "Prism Trail",
+    "Prism",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "prism-trail",
+    "kind": "breadcrumbs",
+    "variant": "prism",
+    "label": "あなたが、いまいる場所。",
+    "description": "",
+    "defaultValue": null,
+    "items": [
+      {
+        "value": "home",
+        "label": "Home",
+        "href": "#home"
+      },
+      {
+        "value": "library",
+        "label": "Library",
+        "href": "#library"
+      },
+      {
+        "value": "objects",
+        "label": "Objects",
+        "href": "#objects"
+      },
+      {
+        "value": "materials",
+        "label": "Materials",
+        "href": "#materials"
+      },
+      {
+        "value": "paper",
+        "label": "Paper"
+      }
+    ]
+  }
+}

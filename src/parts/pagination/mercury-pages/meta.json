@@ -1,0 +1,59 @@
+{
+  "id": "mercury-pages",
+  "name": "Mercury Pages",
+  "category": "pagination",
+  "order": 490,
+  "version": "4.0.0",
+  "tagline": "精密さには、温度がある。",
+  "description": "totalPagesとvalueでページを指定します。",
+  "material": "NAVIGATE / INDEX",
+  "motion": "RESPONSE",
+  "accent": "209,223,218",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "MercuryPages",
+  "tags": [
+    "ページ送り",
+    "pagination",
+    "Mercury Pages",
+    "Mercury",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "mercury-pages",
+    "kind": "pagination",
+    "variant": "mercury",
+    "label": "コレクションをめくる",
+    "description": "",
+    "defaultValue": 4,
+    "totalPages": 12
+  }
+}

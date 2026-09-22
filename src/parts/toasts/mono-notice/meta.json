@@ -1,0 +1,58 @@
+{
+  "id": "mono-notice",
+  "name": "Mono Notice",
+  "category": "toasts",
+  "order": 376,
+  "version": "4.0.0",
+  "tagline": "色に頼らない、明快さ。",
+  "description": "notify({title, description, tone, duration, actionLabel, onAction})から実際の結果を通知します。",
+  "material": "NOTIFICATION / STUDY",
+  "motion": "REVEAL",
+  "accent": "226,225,218",
+  "designType": "B",
+  "runtime": "Native DOM + CSS",
+  "componentName": "MonoNotice",
+  "tags": [
+    "通知",
+    "toasts",
+    "Mono Notice",
+    "Mono",
+    "B"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "mono-notice",
+    "kind": "toasts",
+    "variant": "mono",
+    "label": "知らせも、心地よく。",
+    "description": "",
+    "defaultValue": null
+  }
+}

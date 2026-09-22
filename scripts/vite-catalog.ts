@@ -1,3 +1,4 @@
+import {packCatalog} from '../src/catalog/transport.ts';
 import path from 'node:path';
 import type { Plugin, ViteDevServer, HmrContext } from 'vite';
 import { ROOT, buildCatalog, mountModule, type CatalogBuild } from './catalog.ts';
@@ -16,7 +17,7 @@ export function catalogPlugin(root = ROOT): Plugin {
     load(id: string) {
       if (!names.some(name => id === '\0' + name)) return;
       const data = snapshot();
-      if (id.endsWith('sop-catalog')) return 'export default ' + JSON.stringify(data.parts).replaceAll('<', '\\u003c') + ';';
+      if (id.endsWith('sop-catalog')) return "import {unpackCatalog} from '/src/catalog/transport.ts';export default unpackCatalog(" + JSON.stringify(packCatalog(data.parts)).replaceAll('<', '\\u003c') + ');';
       if (id.endsWith('sop-mounts')) return mountModule(data.bases);
       return data.bases.map(base => `import '/${base}/styles.css';`).join('\n');
     },

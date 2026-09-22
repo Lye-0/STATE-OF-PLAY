@@ -1,0 +1,58 @@
+{
+  "id": "nixie-notice",
+  "name": "Nixie Notice",
+  "category": "toasts",
+  "order": 355,
+  "version": "4.0.0",
+  "tagline": "小さな光が、応える。",
+  "description": "notify({title, description, tone, duration, actionLabel, onAction})から実際の結果を通知します。",
+  "material": "NOTIFICATION / STUDY",
+  "motion": "REVEAL",
+  "accent": "239,187,101",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "NixieNotice",
+  "tags": [
+    "通知",
+    "toasts",
+    "Nixie Notice",
+    "Nixie",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "nixie-notice",
+    "kind": "toasts",
+    "variant": "nixie",
+    "label": "知らせも、心地よく。",
+    "description": "",
+    "defaultValue": null
+  }
+}

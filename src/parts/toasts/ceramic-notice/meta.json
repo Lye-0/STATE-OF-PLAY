@@ -1,0 +1,58 @@
+{
+  "id": "ceramic-notice",
+  "name": "Ceramic Notice",
+  "category": "toasts",
+  "order": 363,
+  "version": "4.0.0",
+  "tagline": "ぬくもりのある、精度。",
+  "description": "notify({title, description, tone, duration, actionLabel, onAction})から実際の結果を通知します。",
+  "material": "NOTIFICATION / STUDY",
+  "motion": "REVEAL",
+  "accent": "72,108,101",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "CeramicNotice",
+  "tags": [
+    "通知",
+    "toasts",
+    "Ceramic Notice",
+    "Ceramic",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "ceramic-notice",
+    "kind": "toasts",
+    "variant": "ceramic",
+    "label": "知らせも、心地よく。",
+    "description": "",
+    "defaultValue": null
+  }
+}

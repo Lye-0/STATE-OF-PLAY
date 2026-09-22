@@ -1,0 +1,62 @@
+{
+  "id": "velvet-dropzone",
+  "name": "Velvet Dropzone",
+  "category": "uploads",
+  "order": 457,
+  "version": "4.0.0",
+  "tagline": "静かに、深く、やわらかく。",
+  "description": "getData()/onValueChangeでFile[]を取得します。",
+  "material": "FILES / LOCAL",
+  "motion": "RESPONSE",
+  "accent": "223,167,190",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "VelvetDropzone",
+  "tags": [
+    "ファイル選択",
+    "uploads",
+    "Velvet Dropzone",
+    "Velvet",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "velvet-dropzone",
+    "kind": "uploads",
+    "variant": "velvet",
+    "label": "アイデアの素材を、ここに。",
+    "description": "",
+    "defaultValue": [],
+    "multiple": true,
+    "maxFiles": 4,
+    "maxBytes": 10485760,
+    "accept": ".png,.jpg,.webp,.txt,.pdf"
+  }
+}

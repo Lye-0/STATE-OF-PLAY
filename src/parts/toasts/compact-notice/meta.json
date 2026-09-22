@@ -1,0 +1,58 @@
+{
+  "id": "compact-notice",
+  "name": "Compact Notice",
+  "category": "toasts",
+  "order": 374,
+  "version": "4.0.0",
+  "tagline": "小さく、整然と。",
+  "description": "notify({title, description, tone, duration, actionLabel, onAction})から実際の結果を通知します。",
+  "material": "NOTIFICATION / STUDY",
+  "motion": "REVEAL",
+  "accent": "200,200,206",
+  "designType": "B",
+  "runtime": "Native DOM + CSS",
+  "componentName": "CompactNotice",
+  "tags": [
+    "通知",
+    "toasts",
+    "Compact Notice",
+    "Compact",
+    "B"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "compact-notice",
+    "kind": "toasts",
+    "variant": "compact",
+    "label": "知らせも、心地よく。",
+    "description": "",
+    "defaultValue": null
+  }
+}

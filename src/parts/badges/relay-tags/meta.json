@@ -1,0 +1,86 @@
+{
+  "id": "relay-tags",
+  "name": "Relay Tags",
+  "category": "badges",
+  "order": 535,
+  "version": "4.0.0",
+  "tagline": "確かな、手応え。",
+  "description": "表示タグ・複数選択・削除操作に対応。",
+  "material": "LABEL / COLLECTION",
+  "motion": "RESPONSE",
+  "accent": "180,216,144",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "RelayTags",
+  "tags": [
+    "タグ／チップ",
+    "badges",
+    "Relay Tags",
+    "Relay",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "relay-tags",
+    "kind": "badges",
+    "variant": "relay",
+    "label": "小さな情報に、個性を。",
+    "description": "",
+    "defaultValue": [
+      "ready"
+    ],
+    "selectable": false,
+    "removable": false,
+    "items": [
+      {
+        "value": "design",
+        "label": "Design",
+        "badge": "8",
+        "icon": "spark"
+      },
+      {
+        "value": "motion",
+        "label": "Motion",
+        "badge": "4",
+        "icon": "clock"
+      },
+      {
+        "value": "ready",
+        "label": "Ready",
+        "icon": "check"
+      },
+      {
+        "value": "review",
+        "label": "Review",
+        "icon": "info"
+      }
+    ]
+  }
+}

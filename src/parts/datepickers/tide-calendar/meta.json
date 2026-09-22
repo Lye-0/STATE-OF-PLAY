@@ -1,0 +1,59 @@
+{
+  "id": "tide-calendar",
+  "name": "Tide Calendar",
+  "category": "datepickers",
+  "order": 480,
+  "version": "4.0.0",
+  "tagline": "水面のように、流れる。",
+  "description": "日付値はYYYY-MM-DD、日時はYYYY-MM-DDTHH:mm、時刻はHH:mmです。",
+  "material": "CALENDAR / LOCAL",
+  "motion": "RESPONSE",
+  "accent": "137,210,238",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "TideCalendar",
+  "tags": [
+    "日時選択",
+    "datepickers",
+    "Tide Calendar",
+    "Tide",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "tide-calendar",
+    "kind": "datepickers",
+    "variant": "tide",
+    "label": "次の時間を、予約する。",
+    "description": "",
+    "defaultValue": "2026-09-23T14:30",
+    "mode": "datetime"
+  }
+}

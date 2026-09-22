@@ -1,0 +1,10 @@
+@import "../../../shared/foundation/base.css";
+.sop-foundation.sop-botanical-loader{--ff-accent:#bed08f;--ff-accent2:#7ea78d;--ff-base:#17281f;--ff-panel:#24362b;--ff-line:color-mix(in srgb,#bed08f 30%,#17281f);--ff-ink:#eeeede;--ff-muted:#91a586;--ff-radius:13px;}
+.sop-foundation.sop-botanical-loader .ff-choice-icon{border-radius:50% 8% 50% 8%;}
+.sop-foundation.sop-botanical-loader .ff-choice,.ff-notice,.ff-dropzone{border-radius:5px 22px 5px 22px;}
+.sop-foundation.sop-botanical-loader .ff-fill{background:linear-gradient(90deg,#789851,#cadd96,#8dc19e);}
+.sop-foundation.sop-botanical-loader .ff-tag{border-radius:4px 19px 4px 19px;}
+.sop-foundation.sop-botanical-loader .ff-orbit{border-radius:0;border:0;border-left:1px solid var(--ff-line);inset:0 50% 25px auto;width:1px;transform-origin:top;animation:sop-ff-pendulum 2s ease-in-out infinite;}
+.sop-foundation.sop-botanical-loader .ff-orbit:before{top:auto;bottom:-12px;left:-10px;width:20px;height:20px;box-shadow:0 4px 10px #0004;}
+.sop-foundation.sop-botanical-loader .ff-orbit.o2{animation-delay:-.18s;opacity:.3;}
+.sop-foundation.sop-botanical-loader .ff-orbit.o3,.ff-loader-core{display:none;}

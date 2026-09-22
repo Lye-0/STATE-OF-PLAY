@@ -1,0 +1,63 @@
+{
+  "id": "obsidian-range",
+  "name": "Obsidian Range",
+  "category": "sliders",
+  "order": 290,
+  "version": "4.0.0",
+  "tagline": "黒の中に、輪郭を。",
+  "description": "スライダーの単位・上下限・刻み幅はpropsから変更できます。",
+  "material": "CONTINUOUS / CONTROL",
+  "motion": "GLIDE",
+  "accent": "199,205,212",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "ObsidianRange",
+  "tags": [
+    "スライダー",
+    "sliders",
+    "Obsidian Range",
+    "Obsidian",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "obsidian-range",
+    "kind": "sliders",
+    "variant": "obsidian",
+    "label": "値を、ちょうどよく。",
+    "description": "",
+    "defaultValue": 62,
+    "min": 0,
+    "max": 100,
+    "step": 5,
+    "unit": "%",
+    "range": false
+  }
+}

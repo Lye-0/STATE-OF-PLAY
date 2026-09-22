@@ -1,0 +1,58 @@
+{
+  "id": "velvet-notice",
+  "name": "Velvet Notice",
+  "category": "toasts",
+  "order": 361,
+  "version": "4.0.0",
+  "tagline": "静かに、深く、やわらかく。",
+  "description": "notify({title, description, tone, duration, actionLabel, onAction})から実際の結果を通知します。",
+  "material": "NOTIFICATION / STUDY",
+  "motion": "REVEAL",
+  "accent": "223,167,190",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "VelvetNotice",
+  "tags": [
+    "通知",
+    "toasts",
+    "Velvet Notice",
+    "Velvet",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "velvet-notice",
+    "kind": "toasts",
+    "variant": "velvet",
+    "label": "知らせも、心地よく。",
+    "description": "",
+    "defaultValue": null
+  }
+}

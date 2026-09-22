@@ -3,3 +3,10 @@ const root = document.querySelector<HTMLElement>('.demo-root > :first-child');
 if (!root) throw new Error('Missing demo root');
 const controller = init(root);
 window.addEventListener('pagehide', () => controller.destroy(), { once: true });
+
+// Notification trigger belongs to this standalone EXAMPLE, not to the portable component.
+if(root.dataset.foundation==='toasts') {
+  const show=document.createElement('button');show.type='button';show.textContent='通知の例を表示';
+  show.style.cssText='padding:12px 18px;margin:12px 0;cursor:pointer';root.after(show);
+  show.addEventListener('click',()=>{const api=controller as {notify?: (notice:{title:string;description:string})=>string};api.notify?.({title:'表示の確認',description:'これはデモです。実際の処理結果に接続してください。'});});
+}

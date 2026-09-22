@@ -1,0 +1,86 @@
+{
+  "id": "prism-tags",
+  "name": "Prism Tags",
+  "category": "badges",
+  "order": 526,
+  "version": "4.0.0",
+  "tagline": "境界に、色が生まれる。",
+  "description": "表示タグ・複数選択・削除操作に対応。",
+  "material": "LABEL / COLLECTION",
+  "motion": "RESPONSE",
+  "accent": "209,186,250",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "PrismTags",
+  "tags": [
+    "タグ／チップ",
+    "badges",
+    "Prism Tags",
+    "Prism",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "prism-tags",
+    "kind": "badges",
+    "variant": "prism",
+    "label": "小さな情報に、個性を。",
+    "description": "",
+    "defaultValue": [
+      "ready"
+    ],
+    "selectable": false,
+    "removable": true,
+    "items": [
+      {
+        "value": "design",
+        "label": "Design",
+        "badge": "8",
+        "icon": "spark"
+      },
+      {
+        "value": "motion",
+        "label": "Motion",
+        "badge": "4",
+        "icon": "clock"
+      },
+      {
+        "value": "ready",
+        "label": "Ready",
+        "icon": "check"
+      },
+      {
+        "value": "review",
+        "label": "Review",
+        "icon": "info"
+      }
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "blueprint-popover",
+  "name": "Blueprint Popover",
+  "category": "hints",
+  "order": 381,
+  "version": "4.0.0",
+  "tagline": "線と余白で、整える。",
+  "description": "interactive=falseは説明用tooltip、trueは操作できるpopoverです。",
+  "material": "CONTEXT / DETAILS",
+  "motion": "RESPONSE",
+  "accent": "169,217,238",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "BlueprintPopover",
+  "tags": [
+    "ツールチップ／ポップオーバー",
+    "hints",
+    "Blueprint Popover",
+    "Blueprint",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "blueprint-popover",
+    "kind": "hints",
+    "variant": "blueprint",
+    "label": "詳しく見る",
+    "description": "",
+    "defaultValue": null,
+    "interactive": true,
+    "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "aperture-range",
+  "name": "Aperture Range",
+  "category": "sliders",
+  "order": 293,
+  "version": "4.0.0",
+  "tagline": "小さな視界を、ひらく。",
+  "description": "スライダーの単位・上下限・刻み幅はpropsから変更できます。",
+  "material": "CONTINUOUS / CONTROL",
+  "motion": "GLIDE",
+  "accent": "185,200,187",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "ApertureRange",
+  "tags": [
+    "スライダー",
+    "sliders",
+    "Aperture Range",
+    "Aperture",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "aperture-range",
+    "kind": "sliders",
+    "variant": "aperture",
+    "label": "値を、ちょうどよく。",
+    "description": "",
+    "defaultValue": 62,
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "unit": "%",
+    "range": false
+  }
+}

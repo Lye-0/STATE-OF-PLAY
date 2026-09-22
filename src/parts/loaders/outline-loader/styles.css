@@ -1,0 +1,22 @@
+@import "../../../shared/foundation/base.css";
+.sop-foundation.sop-outline-loader{--ff-accent:#c5cece;--ff-accent2:#c5cece;--ff-base:#171b1e;--ff-panel:#171b1e;--ff-line:color-mix(in srgb,#c5cece 30%,#171b1e);--ff-ink:#eeeede;--ff-muted:#909b9f;--ff-radius:5px;}
+.sop-foundation.sop-outline-loader .ff-choice,.ff-combo-shell,.ff-stepper,.ff-progress-visual,.ff-notice,.ff-pages,.ff-dropzone{box-shadow:none;}
+.sop-foundation.sop-outline-loader .ff-eyebrow{display:none;}
+.sop-foundation.sop-outline-loader .ff-choice-icon{display:none;}
+.sop-foundation.sop-outline-loader .ff-choice{min-height:53px;}
+.sop-foundation.sop-outline-loader .ff-choice-copy small{font-size:10px;}
+.sop-foundation.sop-outline-loader .ff-ticks{display:none;}
+.sop-foundation.sop-outline-loader .ff-rail{height:5px;top:18px;border:0;box-shadow:none;}
+.sop-foundation.sop-outline-loader [data-range]::-webkit-slider-thumb{width:21px;height:21px;margin-top:-3px;background:var(--ff-accent);border:3px solid var(--ff-panel);box-shadow:0 0 0 1px var(--ff-accent),0 2px 5px #0003;}
+.sop-foundation.sop-outline-loader .ff-reading{font-size:28px;}
+.sop-foundation.sop-outline-loader .ff-stepper{min-height:53px;}
+.sop-foundation.sop-outline-loader [data-number]{font-size:23px;}
+.sop-foundation.sop-outline-loader .ff-choice:hover{transform:none;}
+.sop-foundation.sop-outline-loader .ff-progress-track{height:7px;border:0;border-radius:8px;}
+.sop-foundation.sop-outline-loader .ff-progress-visual{padding:15px;}
+.sop-foundation.sop-outline-loader .ff-progress-fill{box-shadow:none;}
+.sop-foundation.sop-outline-loader .ff-tag,.ff-choice,.ff-combo-shell,.ff-stepper,.ff-pages{background:transparent;}
+.sop-foundation.sop-outline-loader .ff-orbit{border-radius:1px;border:0;border-left:2px solid var(--ff-accent);width:40px;height:62px;inset:20px auto auto 34px;transform-origin:0 50%;animation:sop-ff-pendulum 2.1s ease-in-out infinite;background:linear-gradient(90deg,var(--ff-panel),transparent);}
+.sop-foundation.sop-outline-loader .ff-orbit.o2{animation-delay:-.2s;opacity:.5;}
+.sop-foundation.sop-outline-loader .ff-orbit.o3{animation-delay:-.4s;opacity:.3;}
+.sop-foundation.sop-outline-loader .ff-orbit:before,.ff-loader-core{display:none;}

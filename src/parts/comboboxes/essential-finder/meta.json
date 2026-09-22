@@ -1,0 +1,98 @@
+{
+  "id": "essential-finder",
+  "name": "Essential Finder",
+  "category": "comboboxes",
+  "order": 345,
+  "version": "4.0.0",
+  "tagline": "迷わない、基本形。",
+  "description": "検索して候補を選択します。",
+  "material": "FIND / SELECT",
+  "motion": "RESPONSE",
+  "accent": "191,211,198",
+  "designType": "B",
+  "runtime": "Native DOM + CSS",
+  "componentName": "EssentialFinder",
+  "tags": [
+    "コンボボックス",
+    "comboboxes",
+    "Essential Finder",
+    "Essential",
+    "B"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "essential-finder",
+    "kind": "comboboxes",
+    "variant": "essential",
+    "label": "次の素材を見つける",
+    "description": "",
+    "defaultValue": "",
+    "multiple": false,
+    "placeholder": "名前や素材を入力…",
+    "items": [
+      {
+        "value": "aurora",
+        "label": "Aurora",
+        "description": "光と透明感のコレクション",
+        "badge": "GLASS",
+        "icon": "spark"
+      },
+      {
+        "value": "folio",
+        "label": "Folio",
+        "description": "紙と余白のコレクション",
+        "badge": "PAPER",
+        "icon": "file"
+      },
+      {
+        "value": "mercury",
+        "label": "Mercury",
+        "description": "金属と精密さのコレクション",
+        "badge": "METAL",
+        "icon": "clock"
+      },
+      {
+        "value": "quiet",
+        "label": "Quiet",
+        "description": "落ち着いた日常のデザイン",
+        "badge": "ESSENTIAL",
+        "icon": "info"
+      },
+      {
+        "value": "archive",
+        "label": "Archive",
+        "description": "近日公開",
+        "badge": "SOON",
+        "disabled": true,
+        "icon": "file"
+      }
+    ]
+  }
+}

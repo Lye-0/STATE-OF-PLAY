@@ -1,0 +1,58 @@
+{
+  "id": "copper-notice",
+  "name": "Copper Notice",
+  "category": "toasts",
+  "order": 359,
+  "version": "4.0.0",
+  "tagline": "使うほどに、美しく。",
+  "description": "notify({title, description, tone, duration, actionLabel, onAction})から実際の結果を通知します。",
+  "material": "NOTIFICATION / STUDY",
+  "motion": "REVEAL",
+  "accent": "235,177,140",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "CopperNotice",
+  "tags": [
+    "通知",
+    "toasts",
+    "Copper Notice",
+    "Copper",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "copper-notice",
+    "kind": "toasts",
+    "variant": "copper",
+    "label": "知らせも、心地よく。",
+    "description": "",
+    "defaultValue": null
+  }
+}

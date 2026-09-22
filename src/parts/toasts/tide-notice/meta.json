@@ -1,0 +1,58 @@
+{
+  "id": "tide-notice",
+  "name": "Tide Notice",
+  "category": "toasts",
+  "order": 364,
+  "version": "4.0.0",
+  "tagline": "水面のように、流れる。",
+  "description": "notify({title, description, tone, duration, actionLabel, onAction})から実際の結果を通知します。",
+  "material": "NOTIFICATION / STUDY",
+  "motion": "REVEAL",
+  "accent": "137,210,238",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "TideNotice",
+  "tags": [
+    "通知",
+    "toasts",
+    "Tide Notice",
+    "Tide",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "tide-notice",
+    "kind": "toasts",
+    "variant": "tide",
+    "label": "知らせも、心地よく。",
+    "description": "",
+    "defaultValue": null
+  }
+}

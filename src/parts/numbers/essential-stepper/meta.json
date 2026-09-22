@@ -1,0 +1,62 @@
+{
+  "id": "essential-stepper",
+  "name": "Essential Stepper",
+  "category": "numbers",
+  "order": 558,
+  "version": "4.0.0",
+  "tagline": "迷わない、基本形。",
+  "description": "未確定の入力文字を保ち、blur/Enterで数値を確定します。",
+  "material": "PRECISION / EDIT",
+  "motion": "RESPONSE",
+  "accent": "191,211,198",
+  "designType": "B",
+  "runtime": "Native DOM + CSS",
+  "componentName": "EssentialStepper",
+  "tags": [
+    "数値入力",
+    "numbers",
+    "Essential Stepper",
+    "Essential",
+    "B"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "essential-stepper",
+    "kind": "numbers",
+    "variant": "essential",
+    "label": "必要な量を、ちょうどよく。",
+    "description": "",
+    "defaultValue": 3,
+    "min": 0,
+    "max": 24,
+    "step": 1,
+    "unit": "UNITS"
+  }
+}
