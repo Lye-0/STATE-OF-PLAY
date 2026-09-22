@@ -72,3 +72,5 @@
   transform: translateY(-4px) rotate(-.5deg);
 }
 
+
+.sop-surface.sop-folded-paper[data-sop-paused],.sop-surface.sop-folded-paper[data-sop-paused]:before,.sop-surface.sop-folded-paper[data-sop-paused]:after,.sop-surface.sop-folded-paper[data-sop-paused] * {animation-play-state:paused!important}

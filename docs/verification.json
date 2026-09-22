@@ -1,78 +1,58 @@
 {
-  "version": "3.1.0",
-  "dateJST": "2026-09-22",
-  "baseline": "3.0.0",
+  "version": "3.2.0",
+  "date": "2026-09-22",
+  "parts": {
+    "toggles": 24,
+    "blocks": 24,
+    "total": 48,
+    "A": 33,
+    "B": 15
+  },
+  "unitTests": {
+    "passed": 46,
+    "failed": 0
+  },
+  "browserTests": {
+    "passed": 21,
+    "pageErrors": 0,
+    "transport": "explicit offline adapter, actual Chromium, NOT Vite or HTTP"
+  },
+  "sourceDisplays": 2464,
+  "zipCombinations": 768,
+  "relocation": {
+    "projects": 6,
+    "partsPerProject": 48,
+    "mounts": 288,
+    "transport": "native ESM in synthetic documents"
+  },
+  "additionalVisualAudit": {
+    "widths": [
+      320,
+      390,
+      768
+    ],
+    "all48CardBounds": true,
+    "detailCases": 18,
+    "stateScreenshots": 6
+  },
+  "typecheck": {
+    "app": "passed",
+    "toolsSubset": "passed",
+    "fullReactAndViteTypes": "not run"
+  },
   "environment": {
     "node": "22.16.0",
     "typescript": "5.8.3",
     "chromium": "144.0.7559.96",
-    "react": "19.1.1 production",
-    "playwright": "1.57.0-beta-1764944708000 (test runner, not project dependency)"
+    "playwright": "1.57.0-beta-1764944708000",
+    "react": "18.2.0 production (installed JupyterLab distribution; test only)"
   },
-  "appStrictTypecheck": "passed",
-  "generatorSubsetStrictTypecheck": "passed (catalog/layout/source-tools/export-parts/package/zip and core/delivery/relocation tests; actual @types/node)",
-  "unitTests": {
-    "passed": 38,
-    "failed": 0
-  },
-  "originalCssAndMarkupByteMatches": 32,
-  "catalog": {
-    "parts": 16,
-    "formatsPerPart": 4,
-    "layouts": 2,
-    "sourceFilesPerLayout": 452,
-    "totalSourceFiles": 904,
-    "packagesDirectoryCreated": false
-  },
-  "archiveVariantsValidated": 256,
-  "cliArchivesCheckedWithPython": 3,
-  "browser": {
-    "mode": "network-restricted adapter; Vite not executed",
-    "react": "real installed browser runtime; production",
-    "passed": 18,
-    "tests": [
-      "Gallery: 16 parts, no runtime errors",
-      "Toggle and drag do not open details",
-      "Detail: code, hierarchical tree, full path, download before copy",
-      "Copy: success only after write, exact string and visible feedback",
-      "Denied clipboard: manual fallback, no false success, focus restored",
-      "Selected source download matches the original file bytes",
-      "Focus trap / Escape / restoration to gallery trigger",
-      "Both layouts: all 904 code previews equal exported sources and selection follows the source identity",
-      "Downloaded ZIP and CLI share exact files, README, prompt, manifest in both layouts and modes",
-      "Guide and AI prompt remain copyable in every export format",
-      "Mobile 320/390/768: no overflow, usable code and file picker",
-      "Disabled and reduced-motion states remain functional",
-      "All standalone HTML/CSS/JS previews run without gallery assets",
-      "All native JS exports run with their real imports, in both layouts",
-      "React TSX / portable: all actual exports, controlled/uncontrolled/disabled, cleanup",
-      "React JSX / portable: all actual exports, controlled/uncontrolled/disabled, cleanup",
-      "React TSX / original: all actual exports, controlled/uncontrolled/disabled, cleanup",
-      "React JSX / original: all actual exports, controlled/uncontrolled/disabled, cleanup"
-    ],
-    "errors": []
-  },
-  "relocation": {
-    "consumerProjects": 6,
-    "partsPerProject": 16,
-    "instances": 96,
-    "transport": "explicit synthetic document + native ESM import map (NOT HTTP)",
-    "results": [
-      "consumer-0-portable",
-      "consumer-0-original",
-      "consumer-1-portable",
-      "consumer-1-original",
-      "consumer-2-portable",
-      "consumer-2-original"
-    ],
-    "errors": []
-  },
-  "notExecuted": [
-    "npm registry install/audit/lock generation",
-    "Actual Vite build, HMR, HTTP/subpath serving",
-    "Complete official React/Vite typecheck",
-    "GitHub Actions execution/push/deployment",
-    "Windows Explorer/MOTW/Defender and Safari real devices"
-  ],
-  "reason": "npm DNS EAI_AGAIN; localhost navigation explicitly attempted and ERR_BLOCKED_BY_ADMINISTRATOR. No policy bypass."
+  "limitations": [
+    "npm registry DNS unavailable; pinned dependencies not freshly installed or audited",
+    "local HTTP navigation blocked by administrator; no policy modifications",
+    "Vite build/HMR/production subpath untested",
+    "full official React/Vite typecheck untested",
+    "Windows Explorer/MOTW/Defender and iOS Safari not tested",
+    "clipboard success and denial simulated for UI/data checks"
+  ]
 }

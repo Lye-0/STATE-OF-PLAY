@@ -1,0 +1,14 @@
+/* Content-agnostic container. All selectors are scoped to this surface. */
+.sop-surface.sop-copper-plate {--sop-x:50%;--sop-y:50%;--sop-rx:0deg;--sop-ry:0deg;position:relative;isolation:isolate;box-sizing:border-box;min-width:0;width:100%;overflow:hidden;color:var(--sop-ink,#edf0e8);}
+.sop-surface.sop-copper-plate .sop-surface-content{position:relative;z-index:1;box-sizing:border-box;min-width:0;padding:var(--sop-padding,28px)}
+.sop-surface.sop-copper-plate .sop-surface-content:focus-visible{outline:2px solid currentColor;outline-offset:-4px}
+
+.sop-surface.sop-copper-plate{--sop-accent-ink:#ffe0ae;--sop-muted:#ddc2a3;background:repeating-linear-gradient(0deg,#ffffff03 0 1px,#00000004 1px 3px),linear-gradient(var(--sop-angle,125deg),#835947,#3d302b 33%,#6a4a37 55%,#372f28 88%);border:1px solid #d3aa777d;border-radius:9px;box-shadow:inset 0 1px #f6d6a28c,inset 0 -2px #221f19a8,0 14px 20px #0005}
+.sop-surface.sop-copper-plate:before{content:'';position:absolute;inset:7px;border:1px solid #f4c79633;border-radius:4px;pointer-events:none}
+.sop-surface.sop-copper-plate .cp-pin{position:absolute;width:7px;height:7px;background:linear-gradient(135deg,#fde3b5,#936d47 45%,#231f17 49%,#ad8050 65%);border:1px solid #302821;border-radius:50%;box-shadow:0 1px 2px #0008;pointer-events:none}
+.sop-surface.sop-copper-plate .cp-pin.p1{top:14px;left:14px}.sop-surface.sop-copper-plate .cp-pin.p2{top:14px;right:14px}.sop-surface.sop-copper-plate .cp-pin.p3{bottom:14px;left:14px}.sop-surface.sop-copper-plate .cp-pin.p4{bottom:14px;right:14px}
+.sop-surface.sop-copper-plate .sop-surface-content{padding:var(--sop-padding,32px)}
+
+.sop-surface.sop-copper-plate[data-sop-paused] *,.sop-surface.sop-copper-plate[data-sop-paused]:before,.sop-surface.sop-copper-plate[data-sop-paused]:after{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){.sop-surface.sop-copper-plate,.sop-surface.sop-copper-plate *,.sop-surface.sop-copper-plate:before,.sop-surface.sop-copper-plate:after{animation:none!important;transition:none!important}.sop-surface.sop-copper-plate{transform:none!important}}
+@media(forced-colors:active){.sop-surface.sop-copper-plate{border:1px solid CanvasText;background:Canvas;color:CanvasText;box-shadow:none}.sop-surface.sop-copper-plate:before,.sop-surface.sop-copper-plate:after{display:none}}

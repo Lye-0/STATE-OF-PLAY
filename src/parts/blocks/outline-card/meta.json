@@ -1,0 +1,48 @@
+{
+  "id": "outline-card",
+  "name": "Outline Card",
+  "category": "blocks",
+  "order": 43,
+  "version": "3.2.0",
+  "tagline": "境界を、ひとつ。",
+  "description": "背景に溶け込む透明な面。細い線だけで情報を区切る。",
+  "material": "ESSENTIAL / BORDER",
+  "motion": "TRACE",
+  "accent": "198,211,197",
+  "componentName": "OutlineCard",
+  "designType": "B",
+  "runtime": "CSS only",
+  "tags": [
+    "Outline Card",
+    "outline-card",
+    "ブロック",
+    "カード",
+    "実用重視",
+    "ESSENTIAL / BORDER"
+  ],
+  "related": [
+    "quiet"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "文章、画像、フォームなどの中身。展示サンプルは必須ではありません。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "配置と外側のサイズを指定します。"
+    ],
+    [
+      "--sop-padding",
+      "CSSの長さ",
+      "本文領域の余白を調整します。"
+    ],
+    [
+      "color / --sop-ink",
+      "CSSカラー",
+      "本文色。背景に合わせてコントラストを確認してください。"
+    ]
+  ]
+}

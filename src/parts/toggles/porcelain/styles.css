@@ -1,0 +1,20 @@
+/* Isolated, portable artwork. --p is progress from OFF (0) to ON (1). */
+.sop-toggle.sop-porcelain { --p:0;--v:0;--energy:0;--sop-mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;position:relative;display:block;flex:none;box-sizing:border-box;border:0;padding:0;margin:0;background:none;color:inherit;font:inherit;cursor:pointer;touch-action:pan-y;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent; }
+.sop-toggle.sop-porcelain[aria-checked="true"]{--p:1}
+.sop-toggle.sop-porcelain .switch-art{display:block;position:relative;width:100%;height:100%;pointer-events:none}
+.sop-toggle.sop-porcelain .switch-art *{box-sizing:border-box;pointer-events:none}
+.sop-toggle.sop-porcelain:focus-visible{outline:2px solid var(--sop-focus,#d8e9b9);outline-offset:7px}
+.sop-toggle.sop-porcelain:disabled{opacity:.46;cursor:not-allowed;filter:saturate(.3)}
+.sop-toggle.sop-porcelain[data-dragging] *,.sop-toggle.sop-porcelain[data-sop-paused] *{transition:none!important;animation-play-state:paused!important}
+
+.sop-toggle.sop-porcelain{width:94px;height:48px;border-radius:26px}
+.sop-toggle.sop-porcelain .pc-bed{position:absolute;inset:2px;background:#e4e7e6;border:1px solid #bfc8c8;border-radius:24px;box-shadow:inset 0 2px 4px #94a4a333;transition:background .25s}
+.sop-toggle.sop-porcelain[aria-checked=true] .pc-bed{background:var(--sop-active,#d5e2f1);border-color:#9ab2cf}
+.sop-toggle.sop-porcelain .pc-thumb{position:absolute;top:7px;left:7px;width:34px;height:34px;border-radius:50%;background:linear-gradient(#ffffff,#f0f1ec);box-shadow:0 2px 4px #546d7a3a,inset 0 1px #fff;border:1px solid #fff;transform:translateX(calc(var(--p)*43px));transition:transform .25s cubic-bezier(.2,.8,.2,1)}
+.sop-toggle.sop-porcelain .pc-thumb i{position:absolute;inset:13px;border-radius:50%;background:#aab3ae;transition:background .2s}
+.sop-toggle.sop-porcelain[aria-checked=true] .pc-thumb i{background:#547a9d}
+.sop-toggle.sop-porcelain .pc-word{position:absolute;left:12px;top:16px;font:7px var(--sop-mono);color:#395674;opacity:var(--p)}
+.sop-toggle.sop-porcelain .pc-word.off{left:auto;right:11px;color:#536567;opacity:calc(1 - var(--p))}
+
+@media(prefers-reduced-motion:reduce){.sop-toggle.sop-porcelain,.sop-toggle.sop-porcelain *,.sop-toggle.sop-porcelain:before,.sop-toggle.sop-porcelain:after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-toggle.sop-porcelain{outline:1px solid ButtonText;outline-offset:2px}.sop-toggle.sop-porcelain:after{content:"OFF";position:absolute;right:0;bottom:-19px;font:11px system-ui;color:ButtonText;background:Canvas;padding:1px 3px}.sop-toggle.sop-porcelain[aria-checked=true]:after{content:"ON"}.sop-toggle.sop-porcelain:disabled{opacity:1;color:GrayText}}

@@ -244,3 +244,13 @@
   filter: blur(.5px);
 }
 
+
+/* v3.2: dormant glass / full spectrum, with state text inside the track. */
+.sop-toggle.sop-prism .prism-state{position:absolute;left:19px;top:41px;font:8px var(--sop-mono);letter-spacing:1.2px;color:#e5dffb;opacity:var(--p);z-index:1}
+.sop-toggle.sop-prism .prism-state.off{left:auto;right:18px;opacity:calc(1 - var(--p));color:#b9bcca}
+.sop-toggle.sop-prism .prism-spectrum{opacity:calc(.04 + var(--p)*.96)}
+.sop-toggle.sop-prism .prism-crystal{transition:filter .45s}
+.sop-toggle.sop-prism[aria-checked=false] .prism-crystal{filter:saturate(.08) brightness(.71) drop-shadow(0 5px 3px #000b)}
+.sop-toggle.sop-prism .prism-wire{opacity:calc(.13 + var(--p)*.62)}
+
+@media(prefers-reduced-motion:reduce){.sop-toggle.sop-prism *{transition:none!important}}

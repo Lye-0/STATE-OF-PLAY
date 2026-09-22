@@ -54,7 +54,8 @@ test('all source / review archives retain bytes, CRC and explicit hierarchy',asy
   const z=addArchiveEntries(new JSZip(),'part',entries);
   const bytes=await z.generateAsync({type:'nodebuffer',compression:'DEFLATE'});
   const read=await JSZip.loadAsync(bytes,{checkCRC32:true});
-  assert.ok(read.files['part/src/'].dir);assert.ok(read.files['part/src/shared/'].dir);
+  assert.ok(read.files['part/src/'].dir);
+  if(p.files[f].some(file=>file.name.startsWith('src/shared/'))) assert.ok(read.files['part/src/shared/'].dir);
   for(const e of entries)assert.equal(await read.file('part/'+e.name)!.async('string'),e.code);
  }
 });

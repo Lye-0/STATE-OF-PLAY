@@ -278,3 +278,14 @@
   transform: translate(calc(var(--v)*-13px),calc(var(--energy)*8px));
 }
 
+
+/* v3.2: readable state is part of the glass object, even without a gallery label. */
+.sop-toggle.sop-liquid .liquid-mark{left:29px;top:40px;font-size:9px;letter-spacing:1.5px;opacity:var(--p);color:#d3f9f1}
+.sop-toggle.sop-liquid .liquid-rest{position:absolute;right:22px;top:40px;font:9px var(--sop-mono);letter-spacing:1.3px;color:#b9c9d2;opacity:calc(1 - var(--p))}
+.sop-toggle.sop-liquid .liquid-stream{opacity:calc(.10 + var(--p)*.85)}
+.sop-toggle.sop-liquid .liquid-lens{transition:filter .5s}
+.sop-toggle.sop-liquid[aria-checked=false] .liquid-lens{filter:saturate(.24) brightness(.86)}
+.sop-toggle.sop-liquid .liquid-track{transition:border-color .5s,box-shadow .5s}
+.sop-toggle.sop-liquid[aria-checked=true] .liquid-track{border-color:#b0f7f17c;box-shadow:inset 0 1px 1px #c4edf767,inset 0 -1px 2px #adcdff55,0 1px 2px #000,0 0 12px #88dbe510}
+
+@media(prefers-reduced-motion:reduce){.sop-toggle.sop-liquid *{transition:none!important}}

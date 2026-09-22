@@ -1,0 +1,67 @@
+{
+  "id": "rail",
+  "name": "Rail",
+  "category": "toggles",
+  "order": 21,
+  "version": "3.2.0",
+  "tagline": "一本の、確かな線。",
+  "description": "細いレールを白い円が滑る。軽快で、輪郭のはっきりした切り替え。",
+  "material": "ESSENTIAL / LINE",
+  "motion": "GLIDE",
+  "accent": "172,211,201",
+  "initial": false,
+  "componentName": "RailToggle",
+  "designType": "B",
+  "runtime": "CSS + Events",
+  "tags": [
+    "Rail",
+    "rail",
+    "トグル",
+    "実用重視",
+    "ESSENTIAL / LINE"
+  ],
+  "config": {
+    "id": "rail",
+    "name": "Rail",
+    "initial": false,
+    "stiffness": 270,
+    "damping": 23,
+    "tone": 550,
+    "travel": 60
+  },
+  "related": [
+    "slate-card"
+  ],
+  "props": [
+    [
+      "checked",
+      "boolean",
+      "外部からON/OFFを制御します。"
+    ],
+    [
+      "defaultChecked",
+      "boolean",
+      "外部制御しない場合の初期状態です。"
+    ],
+    [
+      "onCheckedChange",
+      "(checked: boolean) => void",
+      "操作により要求された状態を受け取ります。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にします。"
+    ],
+    [
+      "aria-label",
+      "string",
+      "機能を示す名前。例：通知を有効にする。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "外側の配置やサイズを調整します。"
+    ]
+  ]
+}

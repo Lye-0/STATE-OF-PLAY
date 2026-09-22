@@ -1,0 +1,48 @@
+{
+  "id": "contour",
+  "name": "Contour",
+  "category": "blocks",
+  "order": 32,
+  "version": "3.2.0",
+  "tagline": "余白の、等高線。",
+  "description": "細い線が地形を描く、深い緑の彫刻的なカード。",
+  "material": "TOPOGRAPHIC ENGRAVING",
+  "motion": "PARALLAX",
+  "accent": "182,202,155",
+  "componentName": "Contour",
+  "designType": "A",
+  "runtime": "CSS + Pointer",
+  "tags": [
+    "Contour",
+    "contour",
+    "ブロック",
+    "カード",
+    "表現重視",
+    "TOPOGRAPHIC ENGRAVING"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "文章、画像、フォームなどの中身。展示サンプルは必須ではありません。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "配置と外側のサイズを指定します。"
+    ],
+    [
+      "--sop-padding",
+      "CSSの長さ",
+      "本文領域の余白を調整します。"
+    ],
+    [
+      "color / --sop-ink",
+      "CSSカラー",
+      "本文色。背景に合わせてコントラストを確認してください。"
+    ]
+  ]
+}

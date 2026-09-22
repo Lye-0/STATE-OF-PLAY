@@ -1,0 +1,67 @@
+{
+  "id": "porcelain",
+  "name": "Porcelain",
+  "category": "toggles",
+  "order": 20,
+  "version": "3.2.0",
+  "tagline": "白に、ひと呼吸。",
+  "description": "やわらかな白と、控えめな青。明るい画面にも使いやすい小さな面。",
+  "material": "ESSENTIAL / CERAMIC",
+  "motion": "PRESS",
+  "accent": "174,196,224",
+  "initial": true,
+  "componentName": "PorcelainToggle",
+  "designType": "B",
+  "runtime": "CSS + Events",
+  "tags": [
+    "Porcelain",
+    "porcelain",
+    "トグル",
+    "実用重視",
+    "ESSENTIAL / CERAMIC"
+  ],
+  "config": {
+    "id": "porcelain",
+    "name": "Porcelain",
+    "initial": true,
+    "stiffness": 270,
+    "damping": 23,
+    "tone": 523,
+    "travel": 43
+  },
+  "related": [
+    "slate-card"
+  ],
+  "props": [
+    [
+      "checked",
+      "boolean",
+      "外部からON/OFFを制御します。"
+    ],
+    [
+      "defaultChecked",
+      "boolean",
+      "外部制御しない場合の初期状態です。"
+    ],
+    [
+      "onCheckedChange",
+      "(checked: boolean) => void",
+      "操作により要求された状態を受け取ります。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にします。"
+    ],
+    [
+      "aria-label",
+      "string",
+      "機能を示す名前。例：通知を有効にする。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "外側の配置やサイズを調整します。"
+    ]
+  ]
+}

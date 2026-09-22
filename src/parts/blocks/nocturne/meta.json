@@ -1,0 +1,48 @@
+{
+  "id": "nocturne",
+  "name": "Nocturne",
+  "category": "blocks",
+  "order": 37,
+  "version": "3.2.0",
+  "tagline": "夜の、設計図。",
+  "description": "星図と軌道を細く刻んだ、静かなミッドナイトブルー。",
+  "material": "CELESTIAL CARTOGRAPHY",
+  "motion": "STILL",
+  "accent": "181,196,229",
+  "componentName": "Nocturne",
+  "designType": "A",
+  "runtime": "CSS + Pointer",
+  "tags": [
+    "Nocturne",
+    "nocturne",
+    "ブロック",
+    "カード",
+    "表現重視",
+    "CELESTIAL CARTOGRAPHY"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "文章、画像、フォームなどの中身。展示サンプルは必須ではありません。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "配置と外側のサイズを指定します。"
+    ],
+    [
+      "--sop-padding",
+      "CSSの長さ",
+      "本文領域の余白を調整します。"
+    ],
+    [
+      "color / --sop-ink",
+      "CSSカラー",
+      "本文色。背景に合わせてコントラストを確認してください。"
+    ]
+  ]
+}

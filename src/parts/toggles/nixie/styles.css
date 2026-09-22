@@ -1,0 +1,27 @@
+/* Isolated, portable artwork. --p is progress from OFF (0) to ON (1). */
+.sop-toggle.sop-nixie { --p:0;--v:0;--energy:0;--sop-mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;position:relative;display:block;flex:none;box-sizing:border-box;border:0;padding:0;margin:0;background:none;color:inherit;font:inherit;cursor:pointer;touch-action:pan-y;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent; }
+.sop-toggle.sop-nixie[aria-checked="true"]{--p:1}
+.sop-toggle.sop-nixie .switch-art{display:block;position:relative;width:100%;height:100%;pointer-events:none}
+.sop-toggle.sop-nixie .switch-art *{box-sizing:border-box;pointer-events:none}
+.sop-toggle.sop-nixie:focus-visible{outline:2px solid var(--sop-focus,#d8e9b9);outline-offset:7px}
+.sop-toggle.sop-nixie:disabled{opacity:.46;cursor:not-allowed;filter:saturate(.3)}
+.sop-toggle.sop-nixie[data-dragging] *,.sop-toggle.sop-nixie[data-sop-paused] *{transition:none!important;animation-play-state:paused!important}
+
+.sop-toggle.sop-nixie {width:274px;height:148px;border-radius:16px}
+.sop-toggle.sop-nixie .nx-case {position:absolute;inset:3px 0 11px;border-radius:13px;background:linear-gradient(145deg,#524538,#242320 25%,#161918 68%,#4a3c2f);border:1px solid #746047;box-shadow:0 14px 24px #0009,inset 0 1px #c3a98144}
+.sop-toggle.sop-nixie .nx-glass {position:absolute;inset:10px 31px 39px;border:1px solid #b7b4a440;border-radius:18px;background:radial-gradient(ellipse,#412b1c,#0e1515 72%);box-shadow:inset 0 3px 9px #000,0 1px #99836944;overflow:hidden}
+.sop-toggle.sop-nixie .nx-mesh {position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 3px,#cf9c4a14 3px 4px),repeating-linear-gradient(90deg,transparent 0 4px,#d9b88214 4px 5px)}
+.sop-toggle.sop-nixie .nx-digit {position:absolute;left:40px;top:-7px;font:67px 'Courier New',monospace;font-weight:400;color:#d29961;text-shadow:0 0 2px #e8b483;opacity:calc(1 - var(--p));transform:translateY(calc(var(--p)*-18px));}
+.sop-toggle.sop-nixie .nx-digit.on {left:44px;color:#ffdfac;opacity:var(--p);text-shadow:0 0 3px #fff5e1,0 0 8px #ffa361,0 0 23px #ff7f2777;transform:translateY(calc((1 - var(--p))*18px))}
+.sop-toggle.sop-nixie .nx-state {position:absolute;left:121px;top:34px;width:67px;font:6px var(--sop-mono);letter-spacing:.9px;color:#b09d88;line-height:1.6;opacity:calc(1 - var(--p))}
+.sop-toggle.sop-nixie .nx-state.on {opacity:var(--p);color:#ffd5a5}
+.sop-toggle.sop-nixie .nx-reflection {position:absolute;inset:2px 5px;border-radius:14px;border-top:1px solid #eee6d24f;background:linear-gradient(140deg,#ffecd413,transparent 45%);box-shadow:inset 0 -2px 1px #eecda01c}
+.sop-toggle.sop-nixie .nx-cap {position:absolute;top:20px;width:14px;height:59px;border-radius:4px;background:repeating-linear-gradient(#6a5b49 0 2px,#2b2822 2px 4px);box-shadow:inset 1px 0 #dbbc7c50}
+.sop-toggle.sop-nixie .nx-cap.a {left:11px} .sop-toggle.sop-nixie .nx-cap.b {right:11px}
+.sop-toggle.sop-nixie .nx-rail {position:absolute;left:39px;right:39px;bottom:14px;height:17px;border:1px solid #0b110e;border-radius:4px;background:#101813;box-shadow:0 1px #89714655,inset 0 3px 4px #000}
+.sop-toggle.sop-nixie .nx-key {position:absolute;left:1px;top:0;width:50px;height:15px;border-radius:3px;background:linear-gradient(#ead4a7,#aa8b5c 40%,#d2b381 75%,#665035);transform:translateX(calc(var(--p)*142px));box-shadow:0 3px 4px #0009;display:flex;gap:4px;align-items:center;justify-content:center}
+.sop-toggle.sop-nixie .nx-key i{height:7px;width:1px;background:#64502f;box-shadow:1px 0 #fff2ca70}
+.sop-toggle.sop-nixie .nx-caption{position:absolute;bottom:-15px;left:71px;font:5.5px var(--sop-mono);letter-spacing:1.7px;color:#a3937d}
+
+@media(prefers-reduced-motion:reduce){.sop-toggle.sop-nixie,.sop-toggle.sop-nixie *,.sop-toggle.sop-nixie:before,.sop-toggle.sop-nixie:after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-toggle.sop-nixie{outline:1px solid ButtonText;outline-offset:2px}.sop-toggle.sop-nixie:after{content:"OFF";position:absolute;right:0;bottom:-19px;font:11px system-ui;color:ButtonText;background:Canvas;padding:1px 3px}.sop-toggle.sop-nixie[aria-checked=true]:after{content:"ON"}.sop-toggle.sop-nixie:disabled{opacity:1;color:GrayText}}

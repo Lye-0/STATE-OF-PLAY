@@ -1,0 +1,21 @@
+/* Isolated, portable artwork. --p is progress from OFF (0) to ON (1). */
+.sop-toggle.sop-rocker { --p:0;--v:0;--energy:0;--sop-mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;position:relative;display:block;flex:none;box-sizing:border-box;border:0;padding:0;margin:0;background:none;color:inherit;font:inherit;cursor:pointer;touch-action:pan-y;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent; }
+.sop-toggle.sop-rocker[aria-checked="true"]{--p:1}
+.sop-toggle.sop-rocker .switch-art{display:block;position:relative;width:100%;height:100%;pointer-events:none}
+.sop-toggle.sop-rocker .switch-art *{box-sizing:border-box;pointer-events:none}
+.sop-toggle.sop-rocker:focus-visible{outline:2px solid var(--sop-focus,#d8e9b9);outline-offset:7px}
+.sop-toggle.sop-rocker:disabled{opacity:.46;cursor:not-allowed;filter:saturate(.3)}
+.sop-toggle.sop-rocker[data-dragging] *,.sop-toggle.sop-rocker[data-sop-paused] *{transition:none!important;animation-play-state:paused!important}
+
+.sop-toggle.sop-rocker{width:104px;height:64px;border-radius:7px}
+.sop-toggle.sop-rocker .ro-mount{position:absolute;left:0;right:0;top:1px;height:47px;border-radius:7px;background:#111b22;border:1px solid #536675;box-shadow:inset 0 2px 3px #0006;perspective:170px}
+.sop-toggle.sop-rocker .ro-plate{position:absolute;inset:4px;border-radius:4px;background:linear-gradient(135deg,#657986,#394b58);border:1px solid #8da0aa55;box-shadow:0 2px 3px #0008;transform:rotateY(calc(-12deg + var(--p)*24deg));transition:transform .24s cubic-bezier(.2,.8,.2,1)}
+.sop-toggle.sop-rocker .ro-plate span{position:absolute;top:11px;font:12px Arial;color:#b8c5ce;transition:color .2s}
+.sop-toggle.sop-rocker .ro-off{left:20px}.sop-toggle.sop-rocker .ro-on{right:21px}
+.sop-toggle.sop-rocker[aria-checked=false] .ro-off,.sop-toggle.sop-rocker[aria-checked=true] .ro-on{color:#f4f7f3}
+.sop-toggle.sop-rocker .ro-plate i{position:absolute;left:45px;top:7px;width:1px;height:21px;background:#172e3b88;box-shadow:1px 0 #aec1c32b}
+.sop-toggle.sop-rocker .ro-state{position:absolute;left:0;right:0;bottom:1px;text-align:center;font:6px var(--sop-mono);letter-spacing:1.5px;color:#b8cad6;opacity:calc(1 - var(--p))}
+.sop-toggle.sop-rocker .ro-state.on{opacity:var(--p);color:#e0e8ef}
+
+@media(prefers-reduced-motion:reduce){.sop-toggle.sop-rocker,.sop-toggle.sop-rocker *,.sop-toggle.sop-rocker:before,.sop-toggle.sop-rocker:after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-toggle.sop-rocker{outline:1px solid ButtonText;outline-offset:2px}.sop-toggle.sop-rocker:after{content:"OFF";position:absolute;right:0;bottom:-19px;font:11px system-ui;color:ButtonText;background:Canvas;padding:1px 3px}.sop-toggle.sop-rocker[aria-checked=true]:after{content:"ON"}.sop-toggle.sop-rocker:disabled{opacity:1;color:GrayText}}

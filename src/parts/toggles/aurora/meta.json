@@ -1,0 +1,67 @@
+{
+  "id": "aurora",
+  "name": "Aurora",
+  "category": "toggles",
+  "order": 18,
+  "version": "3.2.0",
+  "tagline": "夜を、ほどく。",
+  "description": "薄い光のカーテンが開き、夜色のレンズに極光が映る。",
+  "material": "POLAR LIGHT",
+  "motion": "DRIFT",
+  "accent": "166,212,232",
+  "initial": false,
+  "componentName": "AuroraToggle",
+  "designType": "A",
+  "runtime": "CSS + Spring",
+  "tags": [
+    "Aurora",
+    "aurora",
+    "トグル",
+    "表現重視",
+    "POLAR LIGHT"
+  ],
+  "config": {
+    "id": "aurora",
+    "name": "Aurora",
+    "initial": false,
+    "stiffness": 205,
+    "damping": 22,
+    "tone": 469,
+    "travel": 151
+  },
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "checked",
+      "boolean",
+      "外部からON/OFFを制御します。"
+    ],
+    [
+      "defaultChecked",
+      "boolean",
+      "外部制御しない場合の初期状態です。"
+    ],
+    [
+      "onCheckedChange",
+      "(checked: boolean) => void",
+      "操作により要求された状態を受け取ります。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にします。"
+    ],
+    [
+      "aria-label",
+      "string",
+      "機能を示す名前。例：通知を有効にする。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "外側の配置やサイズを調整します。"
+    ]
+  ]
+}

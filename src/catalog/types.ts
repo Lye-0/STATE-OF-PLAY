@@ -2,6 +2,8 @@ import type { ToggleConfig, ToggleOptions, ToggleController } from '../shared/to
 import type { SurfaceOptions } from '../shared/surface-controller';
 
 export type Format = 'tsx' | 'jsx' | 'ts' | 'js';
+export type DesignType = 'A' | 'B';
+export const DESIGN_TYPES = { A: {label:'A · 表現重視', note:'素材感と動きを楽しむ、主役になるデザイン。'}, B: {label:'B · 実用重視', note:'落ち着きと読みやすさを重視。設定や日常の画面へ。'} } as const;
 export type Category = 'toggles' | 'blocks';
 export type Layout = 'portable' | 'original';
 export const LAYOUTS = {
@@ -14,6 +16,7 @@ export interface SourceFile { name: string; sourceName: string; code: string; la
 export interface Part {
   id: string; name: string; category: Category; order: number; version: string;
   tagline: string; description: string; material: string; motion: string; accent: string;
+  designType: DesignType; runtime: string;
   initial?: boolean; componentName: string; tags: string[]; config?: ToggleConfig;
   related: string[]; props: string[][]; markup: string; usage: string; prompt: string;
   files: Record<Format, SourceFile[]>; portableFiles: Record<Format, SourceFile[]>; preview: Record<string, string>;

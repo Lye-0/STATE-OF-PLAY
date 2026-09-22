@@ -9,7 +9,7 @@ import type { Part, PartController } from '../catalog/types';
 import parts from 'virtual:sop-catalog';
 window.SOP_CATALOG = parts;
 const state = new Map(parts.filter(p => p.category === 'toggles').map(p => [p.id, p.initial ?? false]));
-let activeCategory = 'all', query = '', demo = 0, demoIndex = 0;
+let activeCategory = 'all', activeDesign = 'all', query = '', demo = 0, demoIndex = 0;
 const sound = new TactileAudio();
 const grid = required('#part-grid');
 const search = required<HTMLInputElement>('#search-parts');
@@ -17,7 +17,7 @@ let rendered: {part: Part; card: HTMLElement; controller: PartController; surfac
 const details = createDetails(parts, { onActive(active) {
         stopDemo();
         for (const r of rendered)
-            r.controller.setPaused?.(active);
+            { r.controller.setPaused?.(active); r.surface?.setPaused?.(active); }
     }, onNavigate: openPart });
 function openPart(id: string, trigger?: HTMLElement) {
     if (location.hash !== `#part=${id}`)
@@ -55,11 +55,12 @@ function updateControls() {
     const on = rendered.filter(r => r.part.category === 'toggles' && state.get(r.part.id)).length;
     required('#active-count').textContent = String(on).padStart(2, '0');
     required('#toggle-total').textContent = String(count).padStart(2, '0');
+    document.querySelectorAll<HTMLElement>('[data-design-count]').forEach(el => { const kind = el.dataset.designCount; el.textContent = String(parts.filter(p => (activeCategory === 'all' || p.category === activeCategory) && (kind === 'all' || p.designType === kind)).length).padStart(2, '0'); });
     required('#visible-count').textContent = `${String(rendered.length).padStart(2, '0')} OBJECTS`;
 }
 function matchPart(part: Part) {
-    const haystack = [part.name, part.category, part.description, part.material, ...part.tags].join(' ').normalize('NFKC').toLowerCase();
-    return (activeCategory === 'all' || part.category === activeCategory) && query.normalize('NFKC').toLowerCase().split(/\s+/).every(token => haystack.includes(token));
+    const haystack = [part.name, part.category, part.description, part.material, part.designType === 'A' ? '表現重視 expressive type a' : '実用重視 essential simple type b', ...part.tags].join(' ').normalize('NFKC').toLowerCase();
+    return (activeCategory === 'all' || part.category === activeCategory) && (activeDesign === 'all' || part.designType === activeDesign) && query.normalize('NFKC').toLowerCase().split(/\s+/).every(token => haystack.includes(token));
 }
 function renderGallery() {
     stopDemo();
@@ -68,7 +69,7 @@ function renderGallery() {
     const visible = parts.filter(matchPart);
     grid.innerHTML = visible.length ? visible.map(part => {
         const toggle = part.category === 'toggles';
-        return `<article class="object-card ${toggle ? 'sop-surface sop-original-surface toggle-card' : 'block-card'}" data-part="${escapeHTML(part.id)}" style="--sop-accent:${part.accent};--accent:${part.accent}"><header class="card-top"><span class="object-no mono">${String(part.order).padStart(2, '0')} /</span><span class="object-type mono">${escapeHTML(part.material)}</span><span class="state-readout mono" aria-hidden="true"><i></i><span class="state-word">${toggle ? (state.get(part.id) ? 'ON' : 'OFF') : 'SURFACE'}</span></span></header><div class="object-stage" data-stage="${escapeHTML(part.id)}"><div class="stage-glow"></div><div class="stage-mount"></div></div><footer class="card-bottom"><div><h2>${escapeHTML(part.name)}<span>${escapeHTML(part.tagline)}</span></h2><p>${escapeHTML(part.description)}</p></div><button type="button" class="open-part" data-open="${escapeHTML(part.id)}" aria-label="${escapeHTML(part.name)} のコードと詳細を開く">${icon('code')}<span>CODE</span>${icon('arrow')}</button></footer></article>`;
+        return `<article class="object-card ${toggle ? 'sop-surface sop-original-surface toggle-card' : 'block-card'}" data-part="${escapeHTML(part.id)}" data-design="${part.designType}" style="--sop-accent:${part.accent};--accent:${part.accent}"><header class="card-top"><span class="object-no mono">${String(part.order).padStart(2, '0')} /</span><span class="design-badge design-${part.designType}" title="${part.designType === 'A' ? '表現重視' : '実用重視'}">${part.designType}</span><span class="object-type mono">${escapeHTML(part.material)}</span><span class="state-readout mono" aria-hidden="true"><i></i><span class="state-word">${toggle ? (state.get(part.id) ? 'ON' : 'OFF') : 'SURFACE'}</span></span></header><div class="object-stage" data-stage="${escapeHTML(part.id)}"><div class="stage-glow"></div><div class="stage-mount"></div></div><footer class="card-bottom"><div><h2>${escapeHTML(part.name)}<span>${escapeHTML(part.tagline)}</span></h2><p>${escapeHTML(part.description)}</p></div><button type="button" class="open-part" data-open="${escapeHTML(part.id)}" aria-label="${escapeHTML(part.name)} のコードと詳細を開く">${icon('code')}<span>CODE</span>${icon('arrow')}</button></footer></article>`;
     }).join('') : `<div class="empty-state"><span class="empty-symbol">∅</span><h2>まだ、そのパーツはありません。</h2><p>検索する言葉やカテゴリを変えてみてください。</p><button type="button" class="small-button" id="clear-empty">すべてのパーツを表示</button></div>`;
     for (const part of visible) {
         const card = required(`[data-part="${part.id}"]`, grid);
@@ -93,7 +94,7 @@ function renderGallery() {
         });
         root.addEventListener('pointerdown', stopDemo);
     }
-    grid.querySelector('#clear-empty')?.addEventListener('click', () => { query = ''; search.value = ''; setCategory('all'); });
+    grid.querySelector('#clear-empty')?.addEventListener('click', () => { query = ''; activeDesign = 'all'; search.value = ''; syncDesignFilter(); setCategory('all'); });
     updateControls();
     required('#search-clear').hidden = !query;
     required('#result-announcement').textContent = `${visible.length}個のパーツを表示しています。`;
@@ -103,6 +104,8 @@ function setCategory(id: string) {
     document.querySelectorAll<HTMLButtonElement>('[data-category]').forEach(b => { const active = b.dataset.category === id; b.setAttribute('aria-selected', String(active)); b.tabIndex = active ? 0 : -1; });
     renderGallery();
 }
+function syncDesignFilter() { document.querySelectorAll<HTMLButtonElement>('[data-design-filter]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.designFilter === activeDesign))); }
+document.querySelectorAll<HTMLButtonElement>('[data-design-filter]').forEach(b => b.addEventListener('click', () => { activeDesign = b.dataset.designFilter ?? 'all'; syncDesignFilter(); renderGallery(); }));
 const categoryList = required('#category-tabs');
 categoryList.innerHTML = categories.map(c => `<button type="button" role="tab" aria-controls="part-grid" data-category="${c.id}" id="category-${c.id}"><span>${c.label}</span><small>${String(c.id === 'all' ? parts.length : parts.filter(p => p.category === c.id).length).padStart(2, '0')}</small></button>`).join('');
 categoryList.querySelectorAll('button').forEach(b => b.addEventListener('click', () => setCategory(b.dataset.category ?? 'all')));
@@ -170,5 +173,7 @@ document.addEventListener('visibilitychange', () => {
         stopDemo();
 });
 window.StateOfPlay = Object.freeze({ version: __APP_VERSION__, getStates: () => Object.fromEntries(state), getPartCount: () => parts.length });
+required('#library-total').textContent = String(parts.length);
+syncDesignFilter();
 setCategory('all');
 readRoute();

@@ -1,0 +1,48 @@
+{
+  "id": "prismatic-edge",
+  "name": "Prismatic Edge",
+  "category": "blocks",
+  "order": 40,
+  "version": "3.2.0",
+  "tagline": "縁だけに、彩り。",
+  "description": "暗い面の四隅に、偏光した光が薄く重なる。",
+  "material": "DICHROIC LAMINATE",
+  "motion": "SPECTRAL",
+  "accent": "205,185,227",
+  "componentName": "PrismaticEdge",
+  "designType": "A",
+  "runtime": "CSS + Pointer",
+  "tags": [
+    "Prismatic Edge",
+    "prismatic-edge",
+    "ブロック",
+    "カード",
+    "表現重視",
+    "DICHROIC LAMINATE"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "文章、画像、フォームなどの中身。展示サンプルは必須ではありません。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "配置と外側のサイズを指定します。"
+    ],
+    [
+      "--sop-padding",
+      "CSSの長さ",
+      "本文領域の余白を調整します。"
+    ],
+    [
+      "color / --sop-ink",
+      "CSSカラー",
+      "本文色。背景に合わせてコントラストを確認してください。"
+    ]
+  ]
+}

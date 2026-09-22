@@ -1,0 +1,67 @@
+{
+  "id": "nixie",
+  "name": "Nixie",
+  "category": "toggles",
+  "order": 11,
+  "version": "3.2.0",
+  "tagline": "数字に、火を灯す。",
+  "description": "ガラス管に浮かぶ0と1。真鍮のキーで、静かな発光を切り替える。",
+  "material": "GAS DISCHARGE",
+  "motion": "IGNITION",
+  "accent": "242,173,104",
+  "initial": true,
+  "componentName": "NixieToggle",
+  "designType": "A",
+  "runtime": "CSS + Spring",
+  "tags": [
+    "Nixie",
+    "nixie",
+    "トグル",
+    "表現重視",
+    "GAS DISCHARGE"
+  ],
+  "config": {
+    "id": "nixie",
+    "name": "Nixie",
+    "initial": true,
+    "stiffness": 270,
+    "damping": 23,
+    "tone": 280,
+    "travel": 142
+  },
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "checked",
+      "boolean",
+      "外部からON/OFFを制御します。"
+    ],
+    [
+      "defaultChecked",
+      "boolean",
+      "外部制御しない場合の初期状態です。"
+    ],
+    [
+      "onCheckedChange",
+      "(checked: boolean) => void",
+      "操作により要求された状態を受け取ります。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にします。"
+    ],
+    [
+      "aria-label",
+      "string",
+      "機能を示す名前。例：通知を有効にする。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "外側の配置やサイズを調整します。"
+    ]
+  ]
+}

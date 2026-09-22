@@ -1,0 +1,48 @@
+{
+  "id": "aurora-veil",
+  "name": "Aurora Veil",
+  "category": "blocks",
+  "order": 31,
+  "version": "3.2.0",
+  "tagline": "光を、まとう。",
+  "description": "極光が遠くを流れる、深い透明感のある展示面。",
+  "material": "POLAR ATMOSPHERE",
+  "motion": "VEIL",
+  "accent": "142,218,195",
+  "componentName": "AuroraVeil",
+  "designType": "A",
+  "runtime": "CSS + Pointer",
+  "tags": [
+    "Aurora Veil",
+    "aurora-veil",
+    "ブロック",
+    "カード",
+    "表現重視",
+    "POLAR ATMOSPHERE"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "文章、画像、フォームなどの中身。展示サンプルは必須ではありません。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "配置と外側のサイズを指定します。"
+    ],
+    [
+      "--sop-padding",
+      "CSSの長さ",
+      "本文領域の余白を調整します。"
+    ],
+    [
+      "color / --sop-ink",
+      "CSSカラー",
+      "本文色。背景に合わせてコントラストを確認してください。"
+    ]
+  ]
+}

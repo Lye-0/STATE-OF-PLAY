@@ -8,3 +8,6 @@
 - `disabled` (boolean): 操作を無効にします。
 - `aria-label` (string): 機能を示す名前。例：通知を有効にする。
 - `className / style` (標準のReact属性): 外側の配置やサイズを調整します。
+
+## ON/OFFの識別
+トラック内部へON / FLOWとOFF / STILLを追加。OFFはレンズの彩度を24%、明るさを86%にし、流れの層も10%へ抑える。ONで彩度・光・流れを戻す。透明な輪郭と液体の伸縮は維持。

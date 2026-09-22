@@ -1,0 +1,67 @@
+{
+  "id": "gyro",
+  "name": "Gyro",
+  "category": "toggles",
+  "order": 16,
+  "version": "3.2.0",
+  "tagline": "均衡が、動き出す。",
+  "description": "重なった金属の環が立ち上がり、中心の球が軌道を渡る。",
+  "material": "GYROSCOPIC STUDY",
+  "motion": "UNFOLD",
+  "accent": "195,202,165",
+  "initial": true,
+  "componentName": "GyroToggle",
+  "designType": "A",
+  "runtime": "CSS + Spring",
+  "tags": [
+    "Gyro",
+    "gyro",
+    "トグル",
+    "表現重視",
+    "GYROSCOPIC STUDY"
+  ],
+  "config": {
+    "id": "gyro",
+    "name": "Gyro",
+    "initial": true,
+    "stiffness": 210,
+    "damping": 22,
+    "tone": 415,
+    "travel": 142
+  },
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "checked",
+      "boolean",
+      "外部からON/OFFを制御します。"
+    ],
+    [
+      "defaultChecked",
+      "boolean",
+      "外部制御しない場合の初期状態です。"
+    ],
+    [
+      "onCheckedChange",
+      "(checked: boolean) => void",
+      "操作により要求された状態を受け取ります。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にします。"
+    ],
+    [
+      "aria-label",
+      "string",
+      "機能を示す名前。例：通知を有効にする。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "外側の配置やサイズを調整します。"
+    ]
+  ]
+}

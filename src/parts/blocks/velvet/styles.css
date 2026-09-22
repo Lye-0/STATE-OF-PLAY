@@ -1,0 +1,13 @@
+/* Content-agnostic container. All selectors are scoped to this surface. */
+.sop-surface.sop-velvet {--sop-x:50%;--sop-y:50%;--sop-rx:0deg;--sop-ry:0deg;position:relative;isolation:isolate;box-sizing:border-box;min-width:0;width:100%;overflow:hidden;color:var(--sop-ink,#edf0e8);}
+.sop-surface.sop-velvet .sop-surface-content{position:relative;z-index:1;box-sizing:border-box;min-width:0;padding:var(--sop-padding,28px)}
+.sop-surface.sop-velvet .sop-surface-content:focus-visible{outline:2px solid currentColor;outline-offset:-4px}
+
+.sop-surface.sop-velvet{--sop-accent-ink:#edc8bd;--sop-muted:#c1a6b2;background:radial-gradient(ellipse at 20% 10%,#70465433,transparent 60%),repeating-linear-gradient(91deg,#ffffff02 0 1px,transparent 1px 3px),linear-gradient(122deg,#51303e,#301e31 38%,#4b2d38 63%,#201823);border:1px solid #b58b9466;border-radius:22px 22px 5px 5px;box-shadow:0 22px 35px #0006,inset 0 1px #e1b4af1f}
+.sop-surface.sop-velvet:before{content:'';position:absolute;inset:12px;border:1px solid #cba39f30;border-radius:13px 13px 2px 2px;pointer-events:none}
+.sop-surface.sop-velvet:after{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(ellipse at var(--sop-x) var(--sop-y),#ffbfdf15,transparent 58%);pointer-events:none}
+.sop-surface.sop-velvet .vv-thread{position:absolute;right:21px;top:20px;width:26px;height:26px;border:1px solid #dcbd994d;border-radius:50%;box-shadow:0 0 0 5px #ebc39b0a;pointer-events:none}
+
+.sop-surface.sop-velvet[data-sop-paused] *,.sop-surface.sop-velvet[data-sop-paused]:before,.sop-surface.sop-velvet[data-sop-paused]:after{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){.sop-surface.sop-velvet,.sop-surface.sop-velvet *,.sop-surface.sop-velvet:before,.sop-surface.sop-velvet:after{animation:none!important;transition:none!important}.sop-surface.sop-velvet{transform:none!important}}
+@media(forced-colors:active){.sop-surface.sop-velvet{border:1px solid CanvasText;background:Canvas;color:CanvasText;box-shadow:none}.sop-surface.sop-velvet:before,.sop-surface.sop-velvet:after{display:none}}

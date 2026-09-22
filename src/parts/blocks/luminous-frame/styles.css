@@ -69,3 +69,5 @@
 to{transform:rotate(360deg)}
 }
 
+
+.sop-surface.sop-luminous-frame[data-sop-paused],.sop-surface.sop-luminous-frame[data-sop-paused]:before,.sop-surface.sop-luminous-frame[data-sop-paused]:after,.sop-surface.sop-luminous-frame[data-sop-paused] * {animation-play-state:paused!important}

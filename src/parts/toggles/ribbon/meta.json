@@ -1,0 +1,67 @@
+{
+  "id": "ribbon",
+  "name": "Ribbon",
+  "category": "toggles",
+  "order": 15,
+  "version": "3.2.0",
+  "tagline": "結ぶ、ほどける。",
+  "description": "サテンがするりと伸び、金色の留め具に吸い付く。",
+  "material": "SATIN / BRASS",
+  "motion": "UNFURL",
+  "accent": "230,165,177",
+  "initial": false,
+  "componentName": "RibbonToggle",
+  "designType": "A",
+  "runtime": "CSS + Spring",
+  "tags": [
+    "Ribbon",
+    "ribbon",
+    "トグル",
+    "表現重視",
+    "SATIN / BRASS"
+  ],
+  "config": {
+    "id": "ribbon",
+    "name": "Ribbon",
+    "initial": false,
+    "stiffness": 210,
+    "damping": 20,
+    "tone": 388,
+    "travel": 151
+  },
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "checked",
+      "boolean",
+      "外部からON/OFFを制御します。"
+    ],
+    [
+      "defaultChecked",
+      "boolean",
+      "外部制御しない場合の初期状態です。"
+    ],
+    [
+      "onCheckedChange",
+      "(checked: boolean) => void",
+      "操作により要求された状態を受け取ります。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にします。"
+    ],
+    [
+      "aria-label",
+      "string",
+      "機能を示す名前。例：通知を有効にする。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "外側の配置やサイズを調整します。"
+    ]
+  ]
+}

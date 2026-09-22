@@ -1,0 +1,48 @@
+{
+  "id": "obsidian",
+  "name": "Obsidian",
+  "category": "blocks",
+  "order": 33,
+  "version": "3.2.0",
+  "tagline": "暗さにも、奥行き。",
+  "description": "黒い石の断面と、隙間にだけ残る銅色の光。",
+  "material": "VOLCANIC STONE",
+  "motion": "FACET",
+  "accent": "202,163,130",
+  "componentName": "Obsidian",
+  "designType": "A",
+  "runtime": "CSS + Pointer",
+  "tags": [
+    "Obsidian",
+    "obsidian",
+    "ブロック",
+    "カード",
+    "表現重視",
+    "VOLCANIC STONE"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "文章、画像、フォームなどの中身。展示サンプルは必須ではありません。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "配置と外側のサイズを指定します。"
+    ],
+    [
+      "--sop-padding",
+      "CSSの長さ",
+      "本文領域の余白を調整します。"
+    ],
+    [
+      "color / --sop-ink",
+      "CSSカラー",
+      "本文色。背景に合わせてコントラストを確認してください。"
+    ]
+  ]
+}

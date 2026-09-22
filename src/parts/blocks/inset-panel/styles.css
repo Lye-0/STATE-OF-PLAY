@@ -1,0 +1,11 @@
+/* Content-agnostic container. All selectors are scoped to this surface. */
+.sop-surface.sop-inset-panel {--sop-x:50%;--sop-y:50%;--sop-rx:0deg;--sop-ry:0deg;position:relative;isolation:isolate;box-sizing:border-box;min-width:0;width:100%;overflow:hidden;color:var(--sop-ink,#edf0e8);}
+.sop-surface.sop-inset-panel .sop-surface-content{position:relative;z-index:1;box-sizing:border-box;min-width:0;padding:var(--sop-padding,28px)}
+.sop-surface.sop-inset-panel .sop-surface-content:focus-visible{outline:2px solid currentColor;outline-offset:-4px}
+
+.sop-surface.sop-inset-panel{--sop-ink:#dce3db;--sop-accent-ink:#c0d3b9;--sop-muted:#9cac9b;color:var(--sop-ink);background:var(--sop-background,#141c18);border:1px solid #37483b;border-radius:9px;box-shadow:inset 0 2px 5px #0005,0 1px #a6bd9315;transition:border-color .2s}
+.sop-surface.sop-inset-panel:focus-within,.sop-surface.sop-inset-panel:hover{border-color:#698569}
+
+.sop-surface.sop-inset-panel[data-sop-paused] *,.sop-surface.sop-inset-panel[data-sop-paused]:before,.sop-surface.sop-inset-panel[data-sop-paused]:after{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){.sop-surface.sop-inset-panel,.sop-surface.sop-inset-panel *,.sop-surface.sop-inset-panel:before,.sop-surface.sop-inset-panel:after{animation:none!important;transition:none!important}.sop-surface.sop-inset-panel{transform:none!important}}
+@media(forced-colors:active){.sop-surface.sop-inset-panel{border:1px solid CanvasText;background:Canvas;color:CanvasText;box-shadow:none}.sop-surface.sop-inset-panel:before,.sop-surface.sop-inset-panel:after{display:none}}

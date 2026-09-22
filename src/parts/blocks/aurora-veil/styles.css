@@ -1,0 +1,15 @@
+/* Content-agnostic container. All selectors are scoped to this surface. */
+.sop-surface.sop-aurora-veil {--sop-x:50%;--sop-y:50%;--sop-rx:0deg;--sop-ry:0deg;position:relative;isolation:isolate;box-sizing:border-box;min-width:0;width:100%;overflow:hidden;color:var(--sop-ink,#edf0e8);}
+.sop-surface.sop-aurora-veil .sop-surface-content{position:relative;z-index:1;box-sizing:border-box;min-width:0;padding:var(--sop-padding,28px)}
+.sop-surface.sop-aurora-veil .sop-surface-content:focus-visible{outline:2px solid currentColor;outline-offset:-4px}
+
+.sop-surface.sop-aurora-veil{--sop-accent-ink:#b7efcf;--sop-muted:#a7c1c3;background:#0b1d24;border:1px solid #83b9ad4d;border-radius:20px;box-shadow:0 18px 32px #0005,inset 0 1px #caf9f430}
+.sop-surface.sop-aurora-veil:before{content:'';position:absolute;inset:-45%;background:conic-gradient(from 160deg at 55% 20%,transparent 0deg 17deg,#9b84d269 30deg,#83ebbf82 43deg,#4eaed347 51deg,transparent 72deg);filter:blur(23px);transform:rotate(calc(var(--sop-ry)*2));opacity:.8;pointer-events:none;transition:transform 1s,opacity .6s}
+.sop-surface.sop-aurora-veil:after{content:'';position:absolute;inset:6px;border:1px solid #b7d5ce16;border-radius:14px;pointer-events:none;background:radial-gradient(circle at var(--sop-x) var(--sop-y),#d4ffe01c,transparent 57%)}
+.sop-surface.sop-aurora-veil:hover:before{opacity:1;transform:rotate(calc(8deg + var(--sop-ry)*2))}
+
+.sop-surface.sop-aurora-veil[data-sop-paused] *,.sop-surface.sop-aurora-veil[data-sop-paused]:before,.sop-surface.sop-aurora-veil[data-sop-paused]:after{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){.sop-surface.sop-aurora-veil,.sop-surface.sop-aurora-veil *,.sop-surface.sop-aurora-veil:before,.sop-surface.sop-aurora-veil:after{animation:none!important;transition:none!important}.sop-surface.sop-aurora-veil{transform:none!important}}
+@media(forced-colors:active){.sop-surface.sop-aurora-veil{border:1px solid CanvasText;background:Canvas;color:CanvasText;box-shadow:none}.sop-surface.sop-aurora-veil:before,.sop-surface.sop-aurora-veil:after{display:none}}
+
+.sop-surface.sop-aurora-veil {transform:perspective(900px) rotateX(var(--sop-rx)) rotateY(var(--sop-ry));transition:transform .4s cubic-bezier(.2,.8,.2,1)}

@@ -1,0 +1,12 @@
+/* Content-agnostic container. All selectors are scoped to this surface. */
+.sop-surface.sop-soft-tile {--sop-x:50%;--sop-y:50%;--sop-rx:0deg;--sop-ry:0deg;position:relative;isolation:isolate;box-sizing:border-box;min-width:0;width:100%;overflow:hidden;color:var(--sop-ink,#edf0e8);}
+.sop-surface.sop-soft-tile .sop-surface-content{position:relative;z-index:1;box-sizing:border-box;min-width:0;padding:var(--sop-padding,28px)}
+.sop-surface.sop-soft-tile .sop-surface-content:focus-visible{outline:2px solid currentColor;outline-offset:-4px}
+
+.sop-surface.sop-soft-tile{--sop-ink:#314338;--sop-accent-ink:#4b7257;--sop-muted:#627866;color:var(--sop-ink);background:var(--sop-background,#dce6d8);border:1px solid #c4d4be;border-radius:26px;box-shadow:none;transition:background .2s,border-color .2s}
+.sop-surface.sop-soft-tile:hover,.sop-surface.sop-soft-tile:focus-within{background:#e2eadd;border-color:#b2c5aa}
+.sop-surface.sop-soft-tile .sop-surface-content{padding:var(--sop-padding,28px)}
+
+.sop-surface.sop-soft-tile[data-sop-paused] *,.sop-surface.sop-soft-tile[data-sop-paused]:before,.sop-surface.sop-soft-tile[data-sop-paused]:after{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){.sop-surface.sop-soft-tile,.sop-surface.sop-soft-tile *,.sop-surface.sop-soft-tile:before,.sop-surface.sop-soft-tile:after{animation:none!important;transition:none!important}.sop-surface.sop-soft-tile{transform:none!important}}
+@media(forced-colors:active){.sop-surface.sop-soft-tile{border:1px solid CanvasText;background:Canvas;color:CanvasText;box-shadow:none}.sop-surface.sop-soft-tile:before,.sop-surface.sop-soft-tile:after{display:none}}

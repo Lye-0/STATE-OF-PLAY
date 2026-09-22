@@ -1,0 +1,24 @@
+/* Isolated, portable artwork. --p is progress from OFF (0) to ON (1). */
+.sop-toggle.sop-gyro { --p:0;--v:0;--energy:0;--sop-mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;position:relative;display:block;flex:none;box-sizing:border-box;border:0;padding:0;margin:0;background:none;color:inherit;font:inherit;cursor:pointer;touch-action:pan-y;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent; }
+.sop-toggle.sop-gyro[aria-checked="true"]{--p:1}
+.sop-toggle.sop-gyro .switch-art{display:block;position:relative;width:100%;height:100%;pointer-events:none}
+.sop-toggle.sop-gyro .switch-art *{box-sizing:border-box;pointer-events:none}
+.sop-toggle.sop-gyro:focus-visible{outline:2px solid var(--sop-focus,#d8e9b9);outline-offset:7px}
+.sop-toggle.sop-gyro:disabled{opacity:.46;cursor:not-allowed;filter:saturate(.3)}
+.sop-toggle.sop-gyro[data-dragging] *,.sop-toggle.sop-gyro[data-sop-paused] *{transition:none!important;animation-play-state:paused!important}
+
+.sop-toggle.sop-gyro{width:278px;height:142px;border-radius:0}
+.sop-toggle.sop-gyro .gy-base{position:absolute;left:20px;right:20px;top:76px;height:37px;border-radius:50%;background:radial-gradient(ellipse,#2e3b2c,#101811 70%);border-bottom:1px solid #62765a66;box-shadow:0 12px 14px #0008}
+.sop-toggle.sop-gyro .gy-base i,.sop-toggle.sop-gyro .gy-base b{position:absolute;top:6px;width:24px;height:10px;border-radius:50%;background:radial-gradient(#a4ac83,#516148 60%,#293b2b);border:1px solid #929f734d}
+.sop-toggle.sop-gyro .gy-base i{left:26px}.sop-toggle.sop-gyro .gy-base b{right:26px}
+.sop-toggle.sop-gyro .gy-link{position:absolute;top:86px;left:45px;width:185px;height:2px;background:linear-gradient(90deg,#869475,#273b29,#829b65);box-shadow:0 3px 2px #000}
+.sop-toggle.sop-gyro .gy-assembly{position:absolute;left:11px;top:11px;width:112px;height:112px;transform:translateX(calc(var(--p)*142px));perspective:380px;transform-style:preserve-3d}
+.sop-toggle.sop-gyro .gy-ring{position:absolute;inset:5px;border:4px solid #a1ac83;border-radius:50%;box-shadow:inset 1px 1px 2px #f9f3ccaa,1px 1px 1px #e3edb778,2px 3px 5px #0008;transform:rotateX(calc(67deg - var(--p)*22deg)) rotateY(calc(var(--p)*45deg));background:transparent}
+.sop-toggle.sop-gyro .gy-ring.middle{inset:17px;border-width:3px;border-color:#697e65;transform:rotateX(calc(67deg + var(--p)*66deg)) rotateY(calc(var(--p)*-22deg))}
+.sop-toggle.sop-gyro .gy-ring.inner{inset:28px;border-width:2px;border-color:#c8cba1;transform:rotateX(calc(67deg - var(--p)*48deg)) rotateY(calc(var(--p)*-47deg))}
+.sop-toggle.sop-gyro .gy-ball{position:absolute;inset:41px;border-radius:50%;background:radial-gradient(circle at 31% 25%,#eff5ca,#9aaf7b 19%,#3e5c3e 55%,#14251a 82%);box-shadow:0 5px 5px #0009,inset -1px -1px #9ec79688}
+.sop-toggle.sop-gyro .gy-label{position:absolute;left:21px;bottom:9px;font:6px var(--sop-mono);letter-spacing:1.7px;color:#bbc89a;opacity:var(--p)}
+.sop-toggle.sop-gyro .gy-label.off{left:auto;right:13px;color:#91a088;opacity:calc(1 - var(--p))}
+
+@media(prefers-reduced-motion:reduce){.sop-toggle.sop-gyro,.sop-toggle.sop-gyro *,.sop-toggle.sop-gyro:before,.sop-toggle.sop-gyro:after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-toggle.sop-gyro{outline:1px solid ButtonText;outline-offset:2px}.sop-toggle.sop-gyro:after{content:"OFF";position:absolute;right:0;bottom:-19px;font:11px system-ui;color:ButtonText;background:Canvas;padding:1px 3px}.sop-toggle.sop-gyro[aria-checked=true]:after{content:"ON"}.sop-toggle.sop-gyro:disabled{opacity:1;color:GrayText}}

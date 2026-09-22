@@ -224,3 +224,17 @@
   background: repeating-linear-gradient(90deg,#8d685055 0 3px,transparent 3px 7px);
 }
 
+
+/* v3.2: a small engraved state strip, independent of pleat position. */
+.sop-toggle.sop-fold .fold-guide{bottom:0;left:25px;right:25px;width:auto;background:#8d68502b}
+.sop-toggle.sop-fold .fold-state{position:absolute;left:65px;right:45px;bottom:3px;height:9px;font:8px var(--sop-mono);letter-spacing:1.15px;color:#c5a78f;text-align:center}
+.sop-toggle.sop-fold .fold-state span{position:absolute;inset:0;white-space:nowrap}
+.sop-toggle.sop-fold .fold-off{opacity:calc(1 - var(--p))}
+.sop-toggle.sop-fold .fold-on{opacity:var(--p);color:#f0c6a2}
+.sop-toggle.sop-fold .fold-state i{position:absolute;left:-9px;top:1px;width:4px;height:4px;border:1px solid #a18069;border-radius:50%;transition:background .3s}
+.sop-toggle.sop-fold[aria-checked=true] .fold-state i{background:#eebc8d;border-color:#eebc8d}
+.sop-toggle.sop-fold .fold-paper,.sop-toggle.sop-fold .fold-tab{transition:filter .4s}
+.sop-toggle.sop-fold[aria-checked=false] .fold-paper,.sop-toggle.sop-fold[aria-checked=false] .fold-tab{filter:saturate(.46) brightness(.87)}
+.sop-toggle.sop-fold .fold-marks{opacity:.25}
+
+@media(prefers-reduced-motion:reduce){.sop-toggle.sop-fold *{transition:none!important}}

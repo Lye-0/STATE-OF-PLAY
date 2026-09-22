@@ -1,0 +1,14 @@
+/* Content-agnostic container. All selectors are scoped to this surface. */
+.sop-surface.sop-contour {--sop-x:50%;--sop-y:50%;--sop-rx:0deg;--sop-ry:0deg;position:relative;isolation:isolate;box-sizing:border-box;min-width:0;width:100%;overflow:hidden;color:var(--sop-ink,#edf0e8);}
+.sop-surface.sop-contour .sop-surface-content{position:relative;z-index:1;box-sizing:border-box;min-width:0;padding:var(--sop-padding,28px)}
+.sop-surface.sop-contour .sop-surface-content:focus-visible{outline:2px solid currentColor;outline-offset:-4px}
+
+.sop-surface.sop-contour{--sop-accent-ink:#d3dcb5;--sop-muted:#a9b8a0;background:linear-gradient(135deg,#263426,#122119 70%);border:1px solid #69856466;border-radius:4px 28px 4px 28px;box-shadow:inset 0 1px #c7d8ad1c,0 12px 20px #0003}
+.sop-surface.sop-contour .ct-map{position:absolute;inset:-12%;width:124%;height:124%;fill:none;stroke:#abc897;stroke-width:.7;opacity:.20;transform:translate(calc((var(--sop-x) - 50%) * .1),calc((var(--sop-y) - 50%) * .1));pointer-events:none}
+.sop-surface.sop-contour:after{content:'';position:absolute;inset:9px;border:1px solid #b4cea52b;border-radius:2px 20px 2px 20px;pointer-events:none;background:radial-gradient(circle at var(--sop-x) var(--sop-y),#d4e9ae12,transparent 60%)}
+
+.sop-surface.sop-contour[data-sop-paused] *,.sop-surface.sop-contour[data-sop-paused]:before,.sop-surface.sop-contour[data-sop-paused]:after{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){.sop-surface.sop-contour,.sop-surface.sop-contour *,.sop-surface.sop-contour:before,.sop-surface.sop-contour:after{animation:none!important;transition:none!important}.sop-surface.sop-contour{transform:none!important}}
+@media(forced-colors:active){.sop-surface.sop-contour{border:1px solid CanvasText;background:Canvas;color:CanvasText;box-shadow:none}.sop-surface.sop-contour:before,.sop-surface.sop-contour:after{display:none}}
+
+.sop-surface.sop-contour {transform:perspective(900px) rotateX(var(--sop-rx)) rotateY(var(--sop-ry));transition:transform .4s cubic-bezier(.2,.8,.2,1)}

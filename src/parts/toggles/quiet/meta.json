@@ -1,0 +1,67 @@
+{
+  "id": "quiet",
+  "name": "Quiet",
+  "category": "toggles",
+  "order": 19,
+  "version": "3.2.0",
+  "tagline": "必要なものだけ。",
+  "description": "44pxの静かなスイッチ。明確な位置とチェックで、設定に馴染む。",
+  "material": "ESSENTIAL / MATTE",
+  "motion": "EASE",
+  "accent": "188,214,173",
+  "initial": true,
+  "componentName": "QuietToggle",
+  "designType": "B",
+  "runtime": "CSS + Events",
+  "tags": [
+    "Quiet",
+    "quiet",
+    "トグル",
+    "実用重視",
+    "ESSENTIAL / MATTE"
+  ],
+  "config": {
+    "id": "quiet",
+    "name": "Quiet",
+    "initial": true,
+    "stiffness": 270,
+    "damping": 23,
+    "tone": 496,
+    "travel": 40
+  },
+  "related": [
+    "slate-card"
+  ],
+  "props": [
+    [
+      "checked",
+      "boolean",
+      "外部からON/OFFを制御します。"
+    ],
+    [
+      "defaultChecked",
+      "boolean",
+      "外部制御しない場合の初期状態です。"
+    ],
+    [
+      "onCheckedChange",
+      "(checked: boolean) => void",
+      "操作により要求された状態を受け取ります。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にします。"
+    ],
+    [
+      "aria-label",
+      "string",
+      "機能を示す名前。例：通知を有効にする。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "外側の配置やサイズを調整します。"
+    ]
+  ]
+}

@@ -45,3 +45,7 @@ height: 34px;
 色: #d1e6b2, #8b8d8d, #333737, #111313, #5d6162, #060707, #171919, #0009, #b4f3ee30, #1b455126, #13232a, #28404a, #8cbae02b, #aecbda51, #c4edf767, #adcdff55, #000, #aae7d436, #b2e2ff29, #8bdebd88, #5fc6e899, #d7b9eb66, #b5ebf094, #418eca3b, #b2f5dd5e, #c4efed, #bce6f012, #87d8e30b, #d4fbffab, #eefffa80, #54bbd733, #9db4ce55, #042c3b05, #b8ffda66, #ecfff7cc, #a9dff7a6, #afeeff75, #020e2080, #99fcf130, #b7eee450, #dcfcff50, #e3fff5c4, #b7f9fa00, #e6fffaa1, #b9d3ff00
 
 全レイヤーの寸法、陰影、グラデーションはコード込み形式のstyles.cssに記載しています。
+
+## v3.2 状態の識別
+トラック内部へON / FLOWとOFF / STILLを追加。OFFはレンズの彩度を24%、明るさを86%にし、流れの層も10%へ抑える。ONで彩度・光・流れを戻す。透明な輪郭と液体の伸縮は維持。
+状態は位置と文字でも伝え、色だけに依存しない。カード外のON/OFF表示を消しても部品単体で読み取れること。

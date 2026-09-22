@@ -1,0 +1,67 @@
+{
+  "id": "tide",
+  "name": "Tide",
+  "category": "toggles",
+  "order": 13,
+  "version": "3.2.0",
+  "tagline": "満ちる、という選択。",
+  "description": "水位が上がり、白い浮標がガラスの水槽を渡る。",
+  "material": "HYDROSTATIC GLASS",
+  "motion": "FILL",
+  "accent": "121,219,208",
+  "initial": true,
+  "componentName": "TideToggle",
+  "designType": "A",
+  "runtime": "CSS + Spring",
+  "tags": [
+    "Tide",
+    "tide",
+    "トグル",
+    "表現重視",
+    "HYDROSTATIC GLASS"
+  ],
+  "config": {
+    "id": "tide",
+    "name": "Tide",
+    "initial": true,
+    "stiffness": 270,
+    "damping": 23,
+    "tone": 334,
+    "travel": 158
+  },
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "checked",
+      "boolean",
+      "外部からON/OFFを制御します。"
+    ],
+    [
+      "defaultChecked",
+      "boolean",
+      "外部制御しない場合の初期状態です。"
+    ],
+    [
+      "onCheckedChange",
+      "(checked: boolean) => void",
+      "操作により要求された状態を受け取ります。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にします。"
+    ],
+    [
+      "aria-label",
+      "string",
+      "機能を示す名前。例：通知を有効にする。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "外側の配置やサイズを調整します。"
+    ]
+  ]
+}

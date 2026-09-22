@@ -1,9 +1,9 @@
 {
   "name": "state-of-play",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "private": true,
   "type": "module",
-  "description": "STATE OF PLAY — UI & Motion Library. Vite + TypeScript, portable React/Vanilla components.",
+  "description": "STATE OF PLAY \u2014 UI & Motion Library. Vite + TypeScript, portable React/Vanilla components.",
   "engines": {
     "node": ">=22.12.0"
   },
@@ -16,7 +16,7 @@
     "typecheck:react": "tsc -p tsconfig.react.json --noEmit",
     "typecheck:tools": "tsc -p tsconfig.tools.json --noEmit",
     "typecheck": "npm run typecheck:app && npm run typecheck:react && npm run typecheck:tools",
-    "test": "node --experimental-strip-types --test tests/core.test.ts tests/delivery.test.ts",
+    "test": "node --experimental-strip-types --test tests/core.test.ts tests/delivery.test.ts tests/expansion.test.ts",
     "test:browser": "node --experimental-strip-types tests/browser.ts",
     "verify": "npm run typecheck && npm test && npm run build && npm run test:browser && npm run test:relocation",
     "export:parts": "node --experimental-strip-types scripts/export-parts.ts",

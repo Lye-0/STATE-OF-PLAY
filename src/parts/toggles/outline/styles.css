@@ -1,0 +1,20 @@
+/* Isolated, portable artwork. --p is progress from OFF (0) to ON (1). */
+.sop-toggle.sop-outline { --p:0;--v:0;--energy:0;--sop-mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;position:relative;display:block;flex:none;box-sizing:border-box;border:0;padding:0;margin:0;background:none;color:inherit;font:inherit;cursor:pointer;touch-action:pan-y;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent; }
+.sop-toggle.sop-outline[aria-checked="true"]{--p:1}
+.sop-toggle.sop-outline .switch-art{display:block;position:relative;width:100%;height:100%;pointer-events:none}
+.sop-toggle.sop-outline .switch-art *{box-sizing:border-box;pointer-events:none}
+.sop-toggle.sop-outline:focus-visible{outline:2px solid var(--sop-focus,#d8e9b9);outline-offset:7px}
+.sop-toggle.sop-outline:disabled{opacity:.46;cursor:not-allowed;filter:saturate(.3)}
+.sop-toggle.sop-outline[data-dragging] *,.sop-toggle.sop-outline[data-sop-paused] *{transition:none!important;animation-play-state:paused!important}
+
+.sop-toggle.sop-outline{width:93px;height:46px;border-radius:24px}
+.sop-toggle.sop-outline .ol-border{position:absolute;inset:2px;border:1.5px solid #86938b;border-radius:23px;background:transparent;transition:border-color .25s,background .25s}
+.sop-toggle.sop-outline[aria-checked=true] .ol-border{border-color:var(--sop-active,#c5ddd0);background:#b6d4c20c}
+.sop-toggle.sop-outline .ol-thumb{position:absolute;left:8px;top:8px;width:30px;height:30px;border:1.5px solid #c0ccc4;border-radius:50%;background:#202925;transform:translateX(calc(var(--p)*43px));transition:transform .26s cubic-bezier(.2,.8,.2,1),background .26s}
+.sop-toggle.sop-outline[aria-checked=true] .ol-thumb{background:#d3e6d9;border-color:#d3e6d9}
+.sop-toggle.sop-outline .ol-thumb i{position:absolute;left:10px;top:7px;width:6px;height:10px;border:solid #385542;border-width:0 1.5px 1.5px 0;transform:rotate(45deg);opacity:var(--p)}
+.sop-toggle.sop-outline .ol-label{position:absolute;left:12px;top:15px;font:7px var(--sop-mono);color:#d3e4d9;opacity:var(--p)}
+.sop-toggle.sop-outline .ol-label.off{left:auto;right:9px;opacity:calc(1 - var(--p));color:#c2ccc5}
+
+@media(prefers-reduced-motion:reduce){.sop-toggle.sop-outline,.sop-toggle.sop-outline *,.sop-toggle.sop-outline:before,.sop-toggle.sop-outline:after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-toggle.sop-outline{outline:1px solid ButtonText;outline-offset:2px}.sop-toggle.sop-outline:after{content:"OFF";position:absolute;right:0;bottom:-19px;font:11px system-ui;color:ButtonText;background:Canvas;padding:1px 3px}.sop-toggle.sop-outline[aria-checked=true]:after{content:"ON"}.sop-toggle.sop-outline:disabled{opacity:1;color:GrayText}}

@@ -12,7 +12,7 @@ import { JSZip } from '../scripts/zip.ts';
 const {parts,bases}=buildCatalog();
 const layouts=['portable','original'] as const;
 
-test('portable is default and all 128 deliveries have one valid entry and stylesheet',()=>{
+test('portable is default and all deliveries have one valid entry and stylesheet',()=>{
  for(const p of parts)for(const format of FORMATS)for(const layout of layouts){
   const d=getDelivery(p,format,layout);assert.ok(d.files.some(f=>f.name===d.entry));
   assert.equal(d.runtimeFiles.length+d.files.filter(f=>f.group==='example').length,d.files.length);
@@ -56,7 +56,7 @@ test('both layouts retain exact original CSS and HTML art and map source identit
   }
  }
 });
-test('all 256 source/review ZIP combinations round-trip with metadata, prompt, dependencies and exact text',async()=>{
+test('all source/review ZIP combinations round-trip with metadata, prompt, dependencies and exact text',async()=>{
  for(const p of parts)for(const format of FORMATS)for(const layout of layouts)for(const mode of ['source','text'] as const){
   const root=packageRoot(p,format,layout),contents=packageContents(p,format,layout),d=getDelivery(p,format,layout);
   const entries=prepareArchive(contents,mode),suffix=mode==='text'?'.txt':'';

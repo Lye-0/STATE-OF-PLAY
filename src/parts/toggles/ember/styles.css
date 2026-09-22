@@ -1,0 +1,24 @@
+/* Isolated, portable artwork. --p is progress from OFF (0) to ON (1). */
+.sop-toggle.sop-ember { --p:0;--v:0;--energy:0;--sop-mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;position:relative;display:block;flex:none;box-sizing:border-box;border:0;padding:0;margin:0;background:none;color:inherit;font:inherit;cursor:pointer;touch-action:pan-y;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent; }
+.sop-toggle.sop-ember[aria-checked="true"]{--p:1}
+.sop-toggle.sop-ember .switch-art{display:block;position:relative;width:100%;height:100%;pointer-events:none}
+.sop-toggle.sop-ember .switch-art *{box-sizing:border-box;pointer-events:none}
+.sop-toggle.sop-ember:focus-visible{outline:2px solid var(--sop-focus,#d8e9b9);outline-offset:7px}
+.sop-toggle.sop-ember:disabled{opacity:.46;cursor:not-allowed;filter:saturate(.3)}
+.sop-toggle.sop-ember[data-dragging] *,.sop-toggle.sop-ember[data-sop-paused] *{transition:none!important;animation-play-state:paused!important}
+
+.sop-toggle.sop-ember{width:272px;height:124px}
+.sop-toggle.sop-ember .em-body{position:absolute;inset:11px 0 8px;border-radius:12px;background:linear-gradient(132deg,#4a423e,#242121 18%,#1a1c1b 68%,#51483c);border:1px solid #73655470;box-shadow:0 14px 20px #000b,inset 0 1px #d0bda72e}
+.sop-toggle.sop-ember .em-well{position:absolute;inset:13px 15px 17px;border-radius:5px;background:#0d1010;box-shadow:inset 0 4px 8px #000;border:1px solid #665a474d;overflow:hidden}
+.sop-toggle.sop-ember .em-heat{position:absolute;inset:0;background:radial-gradient(ellipse at 45% 70%,#ff9a3399,#b234152b 60%,transparent);opacity:var(--p)}
+.sop-toggle.sop-ember .em-coils{position:absolute;left:16px;top:15px;display:flex;gap:9px;align-items:center;height:40px;opacity:calc(.08 + var(--p)*.92)}
+.sop-toggle.sop-ember .em-coil{display:block;width:7px;height:35px;border:1px solid #ffb76e;border-radius:50%;box-shadow:0 0 5px #ff7d42,inset 0 0 3px #ff6b3066;transform:scaleY(calc(.6 + var(--p)*.4))}
+.sop-toggle.sop-ember .em-text{position:absolute;left:27px;bottom:5px;font:5.5px var(--sop-mono);letter-spacing:1.4px;color:#ffdda0;opacity:var(--p)}
+.sop-toggle.sop-ember .em-text.off{left:auto;right:20px;bottom:31px;font-size:7px;color:#a89e90;opacity:calc(1 - var(--p))}
+.sop-toggle.sop-ember .em-knob{position:absolute;left:20px;top:14px;width:84px;height:70px;border-radius:7px;background:linear-gradient(132deg,#cdc1aa,#8b806d 27%,#393b33 75%,#595547);border:1px solid #bca98a6b;transform:translateX(calc(var(--p)*144px));box-shadow:3px 5px 6px #000b,inset 0 1px #f4e6d677}
+.sop-toggle.sop-ember .em-knob span{position:absolute;inset:5px;border-radius:4px;background:repeating-linear-gradient(90deg,#101a110d 0 1px,transparent 1px 4px),linear-gradient(140deg,#888875,#535a4c 57%,#303a31);border:1px solid #121a1333;box-shadow:inset 0 1px #d9cdb334}
+.sop-toggle.sop-ember .em-knob i{position:absolute;width:2px;height:28px;left:41px;top:20px;background:linear-gradient(#f7e6be,#927d53);box-shadow:0 0 calc(var(--p)*9px) #f6af53}
+.sop-toggle.sop-ember .em-dots{position:absolute;left:102px;bottom:4px;width:70px;height:2px;background:repeating-linear-gradient(90deg,#86715466 0 2px,transparent 2px 7px)}
+
+@media(prefers-reduced-motion:reduce){.sop-toggle.sop-ember,.sop-toggle.sop-ember *,.sop-toggle.sop-ember:before,.sop-toggle.sop-ember:after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-toggle.sop-ember{outline:1px solid ButtonText;outline-offset:2px}.sop-toggle.sop-ember:after{content:"OFF";position:absolute;right:0;bottom:-19px;font:11px system-ui;color:ButtonText;background:Canvas;padding:1px 3px}.sop-toggle.sop-ember[aria-checked=true]:after{content:"ON"}.sop-toggle.sop-ember:disabled{opacity:1;color:GrayText}}

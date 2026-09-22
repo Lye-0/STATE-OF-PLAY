@@ -1,0 +1,48 @@
+{
+  "id": "soft-tile",
+  "name": "Soft Tile",
+  "category": "blocks",
+  "order": 46,
+  "version": "3.2.0",
+  "tagline": "角を、やわらげる。",
+  "description": "淡いセージ色と広めの角丸。親しみやすい情報のまとまり。",
+  "material": "ESSENTIAL / SOFT",
+  "motion": "EASE",
+  "accent": "189,207,183",
+  "componentName": "SoftTile",
+  "designType": "B",
+  "runtime": "CSS only",
+  "tags": [
+    "Soft Tile",
+    "soft-tile",
+    "ブロック",
+    "カード",
+    "実用重視",
+    "ESSENTIAL / SOFT"
+  ],
+  "related": [
+    "quiet"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "文章、画像、フォームなどの中身。展示サンプルは必須ではありません。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "配置と外側のサイズを指定します。"
+    ],
+    [
+      "--sop-padding",
+      "CSSの長さ",
+      "本文領域の余白を調整します。"
+    ],
+    [
+      "color / --sop-ink",
+      "CSSカラー",
+      "本文色。背景に合わせてコントラストを確認してください。"
+    ]
+  ]
+}

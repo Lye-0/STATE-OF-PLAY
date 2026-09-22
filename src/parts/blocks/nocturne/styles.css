@@ -1,0 +1,13 @@
+/* Content-agnostic container. All selectors are scoped to this surface. */
+.sop-surface.sop-nocturne {--sop-x:50%;--sop-y:50%;--sop-rx:0deg;--sop-ry:0deg;position:relative;isolation:isolate;box-sizing:border-box;min-width:0;width:100%;overflow:hidden;color:var(--sop-ink,#edf0e8);}
+.sop-surface.sop-nocturne .sop-surface-content{position:relative;z-index:1;box-sizing:border-box;min-width:0;padding:var(--sop-padding,28px)}
+.sop-surface.sop-nocturne .sop-surface-content:focus-visible{outline:2px solid currentColor;outline-offset:-4px}
+
+.sop-surface.sop-nocturne{--sop-accent-ink:#d5d9f3;--sop-muted:#aeb7cd;background:radial-gradient(ellipse at 100% 0,#36425c99,#141b30 68%);border:1px solid #8291b344;border-radius:8px;box-shadow:0 12px 25px #0004,inset 0 1px #b6cbe923}
+.sop-surface.sop-nocturne .nc-map{position:absolute;inset:0;width:100%;height:100%;color:#afb9d6;opacity:.29;pointer-events:none}
+.sop-surface.sop-nocturne:before{content:'';position:absolute;right:32px;top:27px;width:20px;height:20px;border-radius:50%;background:radial-gradient(circle at 27% 25%,#f0e6ce,#aab6cb 70%);box-shadow:inset -4px 0 #2a344c,0 0 18px #c9ccf319;pointer-events:none}
+.sop-surface.sop-nocturne:after{content:'';position:absolute;inset:9px;border:1px solid #9ba9c015;border-radius:3px;pointer-events:none}
+
+.sop-surface.sop-nocturne[data-sop-paused] *,.sop-surface.sop-nocturne[data-sop-paused]:before,.sop-surface.sop-nocturne[data-sop-paused]:after{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){.sop-surface.sop-nocturne,.sop-surface.sop-nocturne *,.sop-surface.sop-nocturne:before,.sop-surface.sop-nocturne:after{animation:none!important;transition:none!important}.sop-surface.sop-nocturne{transform:none!important}}
+@media(forced-colors:active){.sop-surface.sop-nocturne{border:1px solid CanvasText;background:Canvas;color:CanvasText;box-shadow:none}.sop-surface.sop-nocturne:before,.sop-surface.sop-nocturne:after{display:none}}

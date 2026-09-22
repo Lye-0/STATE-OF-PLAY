@@ -38,7 +38,7 @@ Viteプラグインが登録と元実装から、カタログ、マウント定�
 
 ## `meta.json`
 
-近い既存パーツのキーを維持します。名前・ID・category・order・version・tagline・description・material・motion・accent・componentName・tags・related・propsが必要です。
+近い既存パーツのキーを維持します。名前・ID・category・order・version・tagline・description・material・motion・accent・componentName・tags・related・props・designType・runtimeが必要です。
 トグルはinitialとconfigも定義します。configには剛性・減衰・移動距離・音の設定などが入ります。
 新カテゴリを設ける場合は`src/catalog/categories.ts`と`types.ts`、生成側のカテゴリ検証も更新します。
 
@@ -102,3 +102,19 @@ npm run test:relocation
 元の16種類を残す回帰検証を維持しつつ、配布・参照解決・ZIP・配置変更のループは登録されたパーツを対象にします。
 新カテゴリや新しい公開APIを追加する場合は、対応する型・マウント・ブラウザー操作のテストも追加してください。
 プロンプトとusageの仕様は、実装変更と同時に更新してください。
+
+## A/Bの方向性と実装の選び方（v3.2）
+
+`designType` は `"A"`（表現重視）または `"B"`（実用重視）。品質の優劣ではなく、展示・検索の目安です。中間的な作品は主な用途で分類し、説明文で質感を補います。`runtime` は詳細欄・使い方・プロンプト・配置マニフェストに表示する実装方式です。
+
+Aトグルの参考は `aperture` / `tide`。既存の `useToggle` / `createToggleController` で連続進捗・ばねを共通化できます。CSSで形状・発光・折れ方・レイヤーの動きを個別に作ります。共有rendererに新IDごとの必須分岐を増やさなくても構いません。
+
+Bトグルの参考は `quiet` / `segment`。`useSimpleToggle` / `createSimpleToggleController` でクリック・ドラッグ・外部制御を共通化し、遷移はCSSに任せます。Canvas・フレームごとの描画処理は配布依存に入りません。実寸・ヒット領域は44px以上の高さを保ち、見栄えのためだけに展示時の倍率を上げません。
+
+動きのないBブロックの参考は `paper-card` / `slate-card`。Reactはchildrenを包むCSSコンテナとし、useEffectを追加しません。Vanillaの `static-surface` はギャラリーとライフサイクルを合わせる軽量な初期化窓口です。CSSだけでも外観が成立します。ブロックに展示文言・ダッシュボードの数値を固定しません。
+
+ギャラリー用の内容は `src/app/samples.ts`、本体の初期マークアップは `markup.html` に分離します。サンプルボタンはサンプル内だけで反応させ、パーツ詳細を誤って開かないようにします。
+
+Aブロックで `createSurfaceController` を使う場合は `data-sop-paused` に連動するCSSで装飾アニメーションを止め、画面外・別タブ・詳細表示中に動かし続けないようにしてください。新規スタイルはパーツ固有ルートに閉じ、縮小モーションとforced-colorsの代替も用意します。
+
+パーツ数・カテゴリ数・関連ID・A/Bの比率、軽量B配布にCanvas/RAF依存が混ざらないこと、Liquid/Fold/Prismの状態テキストは `tests/expansion.test.ts` が確認します。新しいパーツを作っても `packages/` に生成物を追加する必要はありません。

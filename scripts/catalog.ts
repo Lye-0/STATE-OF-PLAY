@@ -21,6 +21,7 @@ export function buildCatalog(root = ROOT): CatalogBuild {
   const parts = bases.map(base => {
     const meta = JSON.parse(read(`${base}/meta.json`)) as Omit<Part,'files'|'portableFiles'|'preview'|'markup'|'usage'|'prompt'>;
     if (!/^[a-z][a-z0-9-]*$/.test(meta.id) || seen.has(meta.id)) throw new Error(`Invalid/duplicate part ID: ${meta.id}`);
+    if (!['A','B'].includes(meta.designType) || typeof meta.runtime !== 'string') throw new Error(`Invalid design type/runtime: ${base}`);
     if (!['toggles','blocks'].includes(meta.category) || !Number.isFinite(meta.order) || !Array.isArray(meta.props) || !Array.isArray(meta.tags))
       throw new Error(`Invalid metadata: ${base}`);
     if (meta.category === 'toggles' && (!meta.config || typeof meta.initial !== 'boolean')) throw new Error(`Missing toggle configuration: ${base}`);
@@ -60,8 +61,8 @@ export function buildCatalog(root = ROOT): CatalogBuild {
     }
     const markup = read(`${base}/markup.html`);
     let demoMarkup = markup;
-    if (meta.category === 'blocks') demoMarkup = demoMarkup.replace('<div class="sop-surface-content">',
-      `<div class="sop-surface-content"><h2>${html(meta.name)}</h2><p>ここに、あなたのコンテンツを。</p><button type="button">サンプルボタン</button>`);
+    if (meta.category === 'blocks') demoMarkup = demoMarkup.replace(/<div class="sop-surface-content">[\s\S]*?<\/div>/,
+      `<div class="sop-surface-content"><h2>${html(meta.name)}</h2><p>ここに、あなたのコンテンツを。</p><button type="button">サンプルボタン</button></div>`);
     const hint = meta.category === 'toggles' ? 'クリック・ドラッグ・キーボードで操作できます。' : '中身を自由に入れ替えられる、独立した背景パーツです。';
     const preview = {
       'index.html': `<!doctype html>\n<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${html(meta.name)} — standalone demo</title><link rel="stylesheet" href="./styles.css"></head><body><main><h1>${html(meta.name)} · ${html(meta.version)}</h1><div class="demo-root">${demoMarkup}</div><p class="hint">${hint}</p></main><script src="./app.js" defer></script></body></html>\n`,

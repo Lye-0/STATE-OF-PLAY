@@ -1,0 +1,27 @@
+/* Isolated, portable artwork. --p is progress from OFF (0) to ON (1). */
+.sop-toggle.sop-aperture { --p:0;--v:0;--energy:0;--sop-mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;position:relative;display:block;flex:none;box-sizing:border-box;border:0;padding:0;margin:0;background:none;color:inherit;font:inherit;cursor:pointer;touch-action:pan-y;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent; }
+.sop-toggle.sop-aperture[aria-checked="true"]{--p:1}
+.sop-toggle.sop-aperture .switch-art{display:block;position:relative;width:100%;height:100%;pointer-events:none}
+.sop-toggle.sop-aperture .switch-art *{box-sizing:border-box;pointer-events:none}
+.sop-toggle.sop-aperture:focus-visible{outline:2px solid var(--sop-focus,#d8e9b9);outline-offset:7px}
+.sop-toggle.sop-aperture:disabled{opacity:.46;cursor:not-allowed;filter:saturate(.3)}
+.sop-toggle.sop-aperture[data-dragging] *,.sop-toggle.sop-aperture[data-sop-paused] *{transition:none!important;animation-play-state:paused!important}
+
+.sop-toggle.sop-aperture{width:268px;height:124px}
+.sop-toggle.sop-aperture .ap-body{position:absolute;inset:12px 0;border-radius:50px;background:linear-gradient(#43484a,#1c2326 15%,#151c1e 80%,#3d4343);box-shadow:0 14px 22px #0009,inset 0 1px #c4ccd044;border:1px solid #555f6355}
+.sop-toggle.sop-aperture .ap-track{position:absolute;inset:16px 22px;border-radius:36px;background:linear-gradient(#080f13,#16252b);box-shadow:inset 0 4px 10px #000}
+.sop-toggle.sop-aperture .ap-index{position:absolute;top:6px;left:69px;font:5px var(--sop-mono);letter-spacing:1.2px;color:#929c9b}
+.sop-toggle.sop-aperture .ap-index.right{left:auto;right:50px}
+.sop-toggle.sop-aperture .ap-word{position:absolute;top:39px;left:55px;font:10px var(--sop-mono);letter-spacing:2px;line-height:1.35;color:#bde5ef;opacity:var(--p);text-align:center}
+.sop-toggle.sop-aperture .ap-word small{font-size:5px;letter-spacing:1.2px;color:#7f9b9f}
+.sop-toggle.sop-aperture .ap-word.off{left:auto;right:49px;opacity:calc(1 - var(--p));color:#9da9aa}
+.sop-toggle.sop-aperture .ap-lens{position:absolute;top:5px;left:7px;width:91px;height:91px;border-radius:50%;background:#060a0d;box-shadow:2px 5px 7px #000c;transform:translateX(calc(var(--p)*147px)) rotate(calc(var(--p)*42deg));overflow:hidden}
+.sop-toggle.sop-aperture .ap-grooves{position:absolute;inset:0;border-radius:50%;background:repeating-conic-gradient(#677070 0 2deg,#242e31 3deg 5deg);border:1px solid #94a0a280}
+.sop-toggle.sop-aperture .ap-glass{position:absolute;inset:11px;border-radius:50%;background:radial-gradient(circle at 36% 31%,#d7f1dc,#5ba9b4 8%,#145274 34%,#131c32 56%,#05101d 70%);border:1px solid #688595;box-shadow:inset 0 0 12px #000,0 0 0 2px #090d11}
+.sop-toggle.sop-aperture .ap-leaves{position:absolute;inset:12px;border-radius:50%;overflow:hidden;transform:rotate(calc(var(--p)*22deg))}
+.sop-toggle.sop-aperture .ap-leaf{position:absolute;left:50%;top:50%;width:69px;height:66px;transform-origin:0 0;transform:rotate(calc(var(--i)*60deg)) translateX(calc(3px + var(--p)*24px)) rotate(calc(var(--p)*14deg));background:linear-gradient(135deg,#566066,#222c31 25%,#12191e 67%);clip-path:polygon(0 0,100% 0,100% 100%,34% 75%);border-top:1px solid #a0b2bc45}
+.sop-toggle.sop-aperture .ap-rim{position:absolute;inset:9px;border-radius:50%;border:2px solid #090e12;box-shadow:0 0 0 1px #a1b0ad50,inset 0 0 0 1px #abcbd944}
+.sop-toggle.sop-aperture .ap-glint{position:absolute;left:23px;top:13px;width:47px;height:61px;border-radius:50%;border-left:1px solid #d5f2ff70;transform:rotate(35deg)}
+
+@media(prefers-reduced-motion:reduce){.sop-toggle.sop-aperture,.sop-toggle.sop-aperture *,.sop-toggle.sop-aperture:before,.sop-toggle.sop-aperture:after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-toggle.sop-aperture{outline:1px solid ButtonText;outline-offset:2px}.sop-toggle.sop-aperture:after{content:"OFF";position:absolute;right:0;bottom:-19px;font:11px system-ui;color:ButtonText;background:Canvas;padding:1px 3px}.sop-toggle.sop-aperture[aria-checked=true]:after{content:"ON"}.sop-toggle.sop-aperture:disabled{opacity:1;color:GrayText}}

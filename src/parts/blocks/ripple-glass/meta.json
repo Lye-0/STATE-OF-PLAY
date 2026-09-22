@@ -1,0 +1,48 @@
+{
+  "id": "ripple-glass",
+  "name": "Ripple Glass",
+  "category": "blocks",
+  "order": 35,
+  "version": "3.2.0",
+  "tagline": "静寂が、波紋になる。",
+  "description": "水面の輪郭がゆるやかに重なる、青い透明体。",
+  "material": "CONCENTRIC REFRACTION",
+  "motion": "RIPPLE",
+  "accent": "159,207,222",
+  "componentName": "RippleGlass",
+  "designType": "A",
+  "runtime": "CSS + Pointer",
+  "tags": [
+    "Ripple Glass",
+    "ripple-glass",
+    "ブロック",
+    "カード",
+    "表現重視",
+    "CONCENTRIC REFRACTION"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "文章、画像、フォームなどの中身。展示サンプルは必須ではありません。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "配置と外側のサイズを指定します。"
+    ],
+    [
+      "--sop-padding",
+      "CSSの長さ",
+      "本文領域の余白を調整します。"
+    ],
+    [
+      "color / --sop-ink",
+      "CSSカラー",
+      "本文色。背景に合わせてコントラストを確認してください。"
+    ]
+  ]
+}

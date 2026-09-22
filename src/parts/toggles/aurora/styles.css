@@ -1,0 +1,23 @@
+/* Isolated, portable artwork. --p is progress from OFF (0) to ON (1). */
+.sop-toggle.sop-aurora { --p:0;--v:0;--energy:0;--sop-mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;position:relative;display:block;flex:none;box-sizing:border-box;border:0;padding:0;margin:0;background:none;color:inherit;font:inherit;cursor:pointer;touch-action:pan-y;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent; }
+.sop-toggle.sop-aurora[aria-checked="true"]{--p:1}
+.sop-toggle.sop-aurora .switch-art{display:block;position:relative;width:100%;height:100%;pointer-events:none}
+.sop-toggle.sop-aurora .switch-art *{box-sizing:border-box;pointer-events:none}
+.sop-toggle.sop-aurora:focus-visible{outline:2px solid var(--sop-focus,#d8e9b9);outline-offset:7px}
+.sop-toggle.sop-aurora:disabled{opacity:.46;cursor:not-allowed;filter:saturate(.3)}
+.sop-toggle.sop-aurora[data-dragging] *,.sop-toggle.sop-aurora[data-sop-paused] *{transition:none!important;animation-play-state:paused!important}
+
+.sop-toggle.sop-aurora{width:269px;height:129px}
+.sop-toggle.sop-aurora .au-sky{position:absolute;inset:14px 0 12px;border-radius:55px;background:radial-gradient(ellipse at 70% 90%,#253248,#080f24 65%);border:1px solid #727caa4a;box-shadow:0 14px 23px #0009,inset 0 1px #a5b2d93a;overflow:hidden}
+.sop-toggle.sop-aurora .au-curtain{position:absolute;left:0;top:-25px;height:160px;width:180px;border-radius:50%;background:conic-gradient(from 180deg at 50% 15%,transparent 0 15deg,#58d8b277 25deg,#b4f6c091 35deg,#65b4d4a0 41deg,transparent 65deg);filter:blur(5px);transform:translateX(calc(var(--p)*20px)) rotate(calc(-20deg + var(--p)*38deg));opacity:calc(.08 + var(--p)*.92)}
+.sop-toggle.sop-aurora .au-curtain.c2{left:75px;top:-35px;transform:rotate(calc(25deg + var(--p)*-24deg));background:conic-gradient(from 180deg at 50% 15%,transparent 0 15deg,#9d88d955 20deg,#9de8ceaa 25deg,#ad7eb799 32deg,transparent 50deg)}
+.sop-toggle.sop-aurora .au-curtain.c3{left:140px;filter:blur(9px);opacity:calc(var(--p)*.65)}
+.sop-toggle.sop-aurora .au-horizon{position:absolute;left:0;right:0;bottom:0;height:27px;background:linear-gradient(transparent,#050e1ac2);border-radius:50%}
+.sop-toggle.sop-aurora .au-state{position:absolute;left:26px;bottom:28px;font:7px var(--sop-mono);letter-spacing:1.8px;color:#d2f7db;opacity:var(--p)}
+.sop-toggle.sop-aurora .au-state.off{left:auto;right:25px;color:#a5adc2;opacity:calc(1 - var(--p))}
+.sop-toggle.sop-aurora .au-orb{position:absolute;left:10px;top:22px;width:88px;height:88px;transform:translateX(calc(var(--p)*151px));border-radius:50%;background:radial-gradient(ellipse at 35% 17%,#c5e3ee80,#304e683d 22%,#091b35 66%,#171934);border:1px solid #a2d3ea99;box-shadow:2px 6px 9px #030611ab,inset 2px 1px 2px #ccefff82,inset -2px -3px 4px #859eda60}
+.sop-toggle.sop-aurora .au-orb span{position:absolute;inset:7px;border-radius:50%;background:conic-gradient(from 10deg,#a0e6e21f,#d0ea9a99,#6fc7beaa,#858ab6aa,#d8ace482,#a0e6e21f);opacity:var(--p);filter:blur(5px);transform:rotate(calc(var(--p)*65deg))}
+.sop-toggle.sop-aurora .au-orb i{position:absolute;inset:9px;border-radius:50%;border-top:1px solid #d5f3ed88;transform:rotate(-30deg);background:radial-gradient(ellipse at 70% 90%,#71bcb322,transparent 50%)}
+
+@media(prefers-reduced-motion:reduce){.sop-toggle.sop-aurora,.sop-toggle.sop-aurora *,.sop-toggle.sop-aurora:before,.sop-toggle.sop-aurora:after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-toggle.sop-aurora{outline:1px solid ButtonText;outline-offset:2px}.sop-toggle.sop-aurora:after{content:"OFF";position:absolute;right:0;bottom:-19px;font:11px system-ui;color:ButtonText;background:Canvas;padding:1px 3px}.sop-toggle.sop-aurora[aria-checked=true]:after{content:"ON"}.sop-toggle.sop-aurora:disabled{opacity:1;color:GrayText}}

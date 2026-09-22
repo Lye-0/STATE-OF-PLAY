@@ -1,0 +1,48 @@
+{
+  "id": "velvet",
+  "name": "Velvet",
+  "category": "blocks",
+  "order": 36,
+  "version": "3.2.0",
+  "tagline": "やわらかな、深み。",
+  "description": "ワイン色の布に光が落ちる。静かで贅沢な一枚。",
+  "material": "WOVEN VELVET",
+  "motion": "LUSTRE",
+  "accent": "216,171,187",
+  "componentName": "Velvet",
+  "designType": "A",
+  "runtime": "CSS + Pointer",
+  "tags": [
+    "Velvet",
+    "velvet",
+    "ブロック",
+    "カード",
+    "表現重視",
+    "WOVEN VELVET"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "文章、画像、フォームなどの中身。展示サンプルは必須ではありません。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "配置と外側のサイズを指定します。"
+    ],
+    [
+      "--sop-padding",
+      "CSSの長さ",
+      "本文領域の余白を調整します。"
+    ],
+    [
+      "color / --sop-ink",
+      "CSSカラー",
+      "本文色。背景に合わせてコントラストを確認してください。"
+    ]
+  ]
+}

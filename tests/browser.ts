@@ -72,6 +72,50 @@ try{
  }
  await load();
  await run(`Gallery: ${catalog.parts.length} parts, no runtime errors`,async()=>{assert.equal(await page.locator('[data-part]').count(),catalog.parts.length);assert.deepEqual(errors,[]);});
+ await run('A/B and category filters intersect, counts remain correct, and search resets cleanly',async()=>{
+  for(const category of ['all','toggles','blocks']){
+   await page.locator(`[data-category="${category}"]`).click();
+   for(const kind of ['A','B','all']){
+    await page.locator(`[data-design-filter="${kind}"]`).click();
+    const expected=catalog.parts.filter(p=>(category==='all'||p.category===category)&&(kind==='all'||p.designType===kind));
+    assert.equal(await page.locator('[data-part]').count(),expected.length);
+    assert.equal(await page.locator(`[data-design-filter="${kind}"]`).getAttribute('aria-pressed'),'true');
+    for(const part of expected)assert.equal(await page.locator(`[data-part="${part.id}"]`).getAttribute('data-design'),part.designType);
+   }
+  }
+  await page.locator('[data-category="all"]').click();await page.locator('#search-parts').fill('zz-missing-part');
+  assert.equal(await page.locator('[data-part]').count(),0);await page.locator('#clear-empty').click();
+  assert.equal(await page.locator('[data-part]').count(),catalog.parts.length);
+ });
+ await run('Liquid, Fold, Prism have intrinsic opposite state labels and distinct optical treatment',async()=>{
+  await page.emulateMedia({reducedMotion:'reduce'});
+  for(const [id,on,off,material]of [['liquid','.liquid-mark','.liquid-rest','.liquid-lens'],['fold','.fold-on','.fold-off','.fold-tab'],['prism','.prism-state:not(.off)','.prism-state.off','.prism-crystal']]){
+   await page.locator(`[data-open="${id}"]`).click();const root=page.locator('.preview-stage [role="switch"]');
+   await page.locator('[data-state="off"]').click();
+   assert.equal(await root.getAttribute('aria-checked'),'false');
+   assert.equal(await root.locator(off).evaluate(n=>getComputedStyle(n).opacity),'1');assert.equal(await root.locator(on).evaluate(n=>getComputedStyle(n).opacity),'0');
+   const rest=await root.locator(material).evaluate(n=>getComputedStyle(n).filter);
+   await page.locator('[data-state="on"]').click();
+   assert.equal(await root.locator(on).evaluate(n=>getComputedStyle(n).opacity),'1');assert.equal(await root.locator(off).evaluate(n=>getComputedStyle(n).opacity),'0');
+   assert.notEqual(await root.locator(material).evaluate(n=>getComputedStyle(n).filter),rest);
+   await page.locator('.close-detail').click();
+  }
+  await page.emulateMedia({reducedMotion:'no-preference'});
+ });
+ await run('Compact B switches retain real sizes, native keyboard and drag states',async()=>{
+  await page.locator('[data-category="toggles"]').click();await page.locator('[data-design-filter="B"]').click();
+  for(const id of ['quiet','porcelain','rail','segment','outline','rocker']){
+   const b=page.locator(`[data-part="${id}"] [role="switch"]`);await b.scrollIntoViewIfNeeded();const box=(await b.boundingBox())!;
+   assert.ok(box.height>=44&&box.width<=145,id);await b.focus();await page.keyboard.press('ArrowLeft');assert.equal(await b.getAttribute('aria-checked'),'false');
+   await page.keyboard.press('Space');assert.equal(await b.getAttribute('aria-checked'),'true');await page.keyboard.press('Enter');assert.equal(await b.getAttribute('aria-checked'),'false');
+   await b.scrollIntoViewIfNeeded();await page.waitForTimeout(150);const current=(await b.boundingBox())!;await page.mouse.move(current.x+10,current.y+current.height/2);await page.mouse.down();await page.mouse.move(current.x+current.width-4,current.y+current.height/2,{steps:10});await page.mouse.up();assert.equal(await b.getAttribute('aria-checked'),'true',id+' drag');
+   assert.equal(await page.locator('#part-details').getAttribute('open'),null);
+  }
+  await page.locator('[data-category="blocks"]').click();
+  const sample=page.locator('[data-part="paper-card"] [data-sample-action]');await sample.click();assert.match(await sample.innerText(),/確認しました/);
+  assert.equal(await page.locator('#part-details').getAttribute('open'),null);
+  await page.locator('[data-design-filter="all"]').click();await page.locator('[data-category="all"]').click();
+ });
  await run('Toggle and drag do not open details',async()=>{
   const button=page.locator('[data-part="chrome"] [role="switch"]');const before=await button.getAttribute('aria-checked');await button.click();assert.notEqual(await button.getAttribute('aria-checked'),before);
   await page.waitForTimeout(400);const box=(await button.boundingBox())!;
@@ -114,7 +158,7 @@ try{
   for(let i=0;i<45;i++){await page.keyboard.press(i<25?'Tab':'Shift+Tab');assert.ok(await page.evaluate(()=>document.querySelector('#part-details')!.contains(document.activeElement)));}
   await page.keyboard.press('Escape');assert.equal(await page.locator('#part-details').getAttribute('open'),null);assert.equal(await page.evaluate(()=>(document.activeElement as HTMLElement).dataset.open),'luminous-frame');
  });
- await run('Both layouts: all 904 code previews equal exported sources and selection follows the source identity',async()=>{
+ await run(`Both layouts: all ${catalog.parts.reduce((n,p)=>n+FORMATS.reduce((k,f)=>k+p.files[f].length,0),0)*2} code previews equal exported sources and selection follows the source identity`,async()=>{
   let count=0;
   for(const part of catalog.parts){await page.locator(`[data-open="${part.id}"]`).click();
    for(const layout of layouts){await page.locator('#export-layout').selectOption(layout);

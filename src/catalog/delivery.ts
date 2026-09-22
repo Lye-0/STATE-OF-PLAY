@@ -1,5 +1,5 @@
 /** Pure shared export model. The UI, ZIP modal and CLI use these same functions. */
-import { FORMATS, LAYOUTS, type Format, type Layout, type Part, type SourceFile } from './types.ts';
+import { FORMATS, LAYOUTS, DESIGN_TYPES, type Format, type Layout, type Part, type SourceFile } from './types.ts';
 import { archiveTree, validateArchiveEntries, type ArchiveEntry } from '../shared/archive.ts';
 export interface Delivery {
   layout: Layout; format: Format; files: readonly SourceFile[];
@@ -33,10 +33,11 @@ export function placementText(delivery: Delivery): string {
 }
 export function buildUsage(part: Part, format: Format, layout: Layout): string {
   const d=getDelivery(part,format,layout), react=format==='tsx'||format==='jsx';
+  const staticSurface=part.category==='blocks'&&part.runtime==='CSS only';
   const files=d.files.map(f=>f.name);
-  return `# ${part.name} / ${part.version}\n\n${part.description}\n\n`+
+  return `# ${part.name} / ${part.version}\n\n${part.description}\n\nデザイン: ${DESIGN_TYPES[part.designType].label} / ${part.runtime}\n\n`+
     `## 今回の配布\n- 形式: ${FORMATS[format].label}\n- 構成: ${LAYOUTS[layout].label}\n- コピーする本体: \`${d.componentRoot}/\`\n- 入口: \`${d.entry}\`\n- スタイル: \`${d.stylesheet}\`\n- 使用例: \`${d.example}\`\n- 実行時外部依存: ${d.externalDependencies.join(', ')||'なし'}\n\n`+
-    `## 導入手順\n1. 対象アプリの構成・設定・既存の配置規約を確認します。\n2. ${placementText(d)}\n3. ${react ? `既存の画面から ${part.componentName} をimportして使います。CSSはコンポーネント内から読み込みます。JSX/TSXを変換できるReact環境が必要です。` : `\`${d.markup}\` の要素とCSSを配置し、init(element, options)で初期化します。返されたcontrollerは取り外す前にdestroy()します。${format==='ts'?'TypeScriptをビルドする環境が必要です。':'JS版はES Modulesです。HTTPのローカルサーバーから開いてください。'}`}\n4. 使用例は接続例です。既存のApp・main・index・設定ファイルを上書きしないでください。移動した使用例のimportも新しい場所に合わせます。\n5. 型チェック・ビルド・操作確認を行います。Next.js等のSSR環境ではクライアント境界とCSSの読み込み規則も確認します。\n\n`+
+    `## 導入手順\n1. 対象アプリの構成・設定・既存の配置規約を確認します。\n2. ${placementText(d)}\n3. ${react ? `既存の画面から ${part.componentName} をimportして使います。CSSはコンポーネント内から読み込みます。JSX/TSXを変換できるReact環境が必要です。` : staticSurface ? `\`${d.markup}\` とCSSだけで外観が成立します。init(element)は共通ライフサイクルを使うときの任意の窓口です。サンプルをそのまま実行する場合は、${format==='ts'?'TypeScriptを変換できる環境':'ES Modulesを配信するローカルHTTPサーバー'}を使います。` : `\`${d.markup}\` の要素とCSSを配置し、init(element, options)で初期化します。返されたcontrollerは取り外す前にdestroy()します。${format==='ts'?'TypeScriptをビルドする環境が必要です。':'JS版はES Modulesです。HTTPのローカルサーバーから開いてください。'}`}\n4. 使用例は接続例です。既存のApp・main・index・設定ファイルを上書きしないでください。移動した使用例のimportも新しい場所に合わせます。\n5. 型チェック・ビルド・操作確認を行います。Next.js等のSSR環境ではクライアント境界とCSSの読み込み規則も確認します。\n\n`+
     `## 配置について\n配布パスは利用先への固定命令ではありません。\`${d.componentRoot}/\` を別の場所にまとめて移す場合、内部の相対参照は維持されます。内部を分割・改名する場合は、import/export、CSS・素材の参照、使用例をすべて更新してください。\n\n`+
     `## 複数パーツ・更新時\nパーツ専用のinternal/は意図的な分離です。同名だからと共通化・上書きしないでください。既存パーツがある場合はバージョンと差分を確認し、手元の修正を保って更新します。INTEGRATION.jsonは元パスと配布パスの対応・入口・用途・外部依存を記録するもので、自動インストーラーではありません。\n\n`+
     `## ファイル構成\n${fence(archiveTree(files),'text')}\n\n## パーツ固有の補足\n${part.usage.trim()}\n\n`+
@@ -55,14 +56,14 @@ export const INTEGRATION_RULES = `## 既存プロジェクトへの組み込み�
 9. 最後に実際の配置・呼び出し例・必要な依存・変更点を示す。型チェック、ビルド、クリック/ドラッグ/キーボード、縮小モーション、同時配置と取り外しを検証し、実行できない確認は未確認として明示する。`;
 export function buildPrompt(part: Part, format: Format, layout: Layout, includeCode = true): string {
   const d=getDelivery(part,format,layout);
-  return `# ${part.name} を既存プロジェクトに組み込む\n\n参照: STATE OF PLAY / ${part.id} / v${part.version}\n出力形式: ${FORMATS[format].label}\n配布構成: ${LAYOUTS[layout].label} (${layout})\n\n${INTEGRATION_RULES}\n\n## 配置の起点\n${placementText(d)}\n入口: ${d.entry}\n外部依存: ${d.externalDependencies.join(', ')||'なし'}\n\n## 固有の再現仕様\n${part.prompt.trim()}\n\n## 利用方法\n${buildUsage(part,format,layout)}`+
+  return `# ${part.name} を既存プロジェクトに組み込む\n\n参照: STATE OF PLAY / ${part.id} / v${part.version}\n出力形式: ${FORMATS[format].label}\n配布構成: ${LAYOUTS[layout].label} (${layout})\nデザイン: ${DESIGN_TYPES[part.designType].label}\n実装: ${part.runtime}\n${DESIGN_TYPES[part.designType].note} 意図した装飾量・実寸・軽さを維持し、Bタイプに不要な常時アニメーションを追加しないでください。\n\n${INTEGRATION_RULES}\n\n## 配置の起点\n${placementText(d)}\n入口: ${d.entry}\n外部依存: ${d.externalDependencies.join(', ')||'なし'}\n\n## 固有の再現仕様\n${part.prompt.trim()}\n\n## 利用方法\n${buildUsage(part,format,layout)}`+
     (includeCode ? '\n\n## 正本のソースコード\n見出しは配布ルートからの相対パスです。共通処理も含みます。参照実装は外観・動作の正本ですが、配置は上記ルールに従って適応させます。\n'+
       d.files.map(f=>`\n### ${f.name}\n用途: ${f.group==='example'?'参考用の使用例（アプリ入口に上書きしない）':f.group==='shared'?'本体が必要とする補助処理':'パーツ本体'}\n${fence(f.code,f.language)}`).join('\n') :
       '\n\n## 文章のみの再現について\nソース本文はこの形式には含みません。完全一致は保証できません。参照コードを利用可能なら確認し、寸法・素材・ON/OFF・ホバー途中を比較してください。\n');
 }
 export function buildManifest(part: Part, format: Format, layout: Layout): string {
   const d=getDelivery(part,format,layout);
-  return JSON.stringify({schema:'state-of-play.integration.v1',part:{id:part.id,version:part.version},format,layout,
+  return JSON.stringify({schema:'state-of-play.integration.v1',part:{id:part.id,version:part.version,designType:part.designType,runtime:part.runtime},format,layout,
     componentRoot:d.componentRoot,entry:d.entry,stylesheet:d.stylesheet,example:d.example,
     externalDependencies:d.externalDependencies,
     files:d.files.map(f=>({path:f.name,source:f.sourceName,role:f.group==='example'?'example':'runtime'})),

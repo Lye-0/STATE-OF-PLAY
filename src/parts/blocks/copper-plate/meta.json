@@ -1,0 +1,48 @@
+{
+  "id": "copper-plate",
+  "name": "Copper Plate",
+  "category": "blocks",
+  "order": 34,
+  "version": "3.2.0",
+  "tagline": "時間が、磨く面。",
+  "description": "細かな研磨痕と角の留め具。温かい金属の一枚板。",
+  "material": "BRUSHED COPPER",
+  "motion": "SHEEN",
+  "accent": "222,170,130",
+  "componentName": "CopperPlate",
+  "designType": "A",
+  "runtime": "CSS + Pointer",
+  "tags": [
+    "Copper Plate",
+    "copper-plate",
+    "ブロック",
+    "カード",
+    "表現重視",
+    "BRUSHED COPPER"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "文章、画像、フォームなどの中身。展示サンプルは必須ではありません。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "配置と外側のサイズを指定します。"
+    ],
+    [
+      "--sop-padding",
+      "CSSの長さ",
+      "本文領域の余白を調整します。"
+    ],
+    [
+      "color / --sop-ink",
+      "CSSカラー",
+      "本文色。背景に合わせてコントラストを確認してください。"
+    ]
+  ]
+}

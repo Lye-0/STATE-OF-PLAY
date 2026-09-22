@@ -8,3 +8,6 @@
 - `disabled` (boolean): 操作を無効にします。
 - `aria-label` (string): 機能を示す名前。例：通知を有効にする。
 - `className / style` (標準のReact属性): 外側の配置やサイズを調整します。
+
+## ON/OFFの識別
+トラック内にON / REFRACTとOFF / DORMANTを追加。OFFの結晶は彩度8%、明るさ71%、スペクトル層は4%。ONで結晶と屈折光の色を戻す。結晶の面構成と回転は維持。

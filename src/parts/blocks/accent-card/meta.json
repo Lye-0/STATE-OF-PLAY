@@ -1,0 +1,48 @@
+{
+  "id": "accent-card",
+  "name": "Accent Card",
+  "category": "blocks",
+  "order": 45,
+  "version": "3.2.0",
+  "tagline": "ひと筋で、伝える。",
+  "description": "左辺の青いラインが、重要な情報を控えめに示す。",
+  "material": "ESSENTIAL / ACCENT",
+  "motion": "HIGHLIGHT",
+  "accent": "165,199,230",
+  "componentName": "AccentCard",
+  "designType": "B",
+  "runtime": "CSS only",
+  "tags": [
+    "Accent Card",
+    "accent-card",
+    "ブロック",
+    "カード",
+    "実用重視",
+    "ESSENTIAL / ACCENT"
+  ],
+  "related": [
+    "quiet"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "文章、画像、フォームなどの中身。展示サンプルは必須ではありません。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "配置と外側のサイズを指定します。"
+    ],
+    [
+      "--sop-padding",
+      "CSSの長さ",
+      "本文領域の余白を調整します。"
+    ],
+    [
+      "color / --sop-ink",
+      "CSSカラー",
+      "本文色。背景に合わせてコントラストを確認してください。"
+    ]
+  ]
+}

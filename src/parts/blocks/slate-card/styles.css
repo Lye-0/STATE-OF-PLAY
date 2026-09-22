@@ -1,0 +1,12 @@
+/* Content-agnostic container. All selectors are scoped to this surface. */
+.sop-surface.sop-slate-card {--sop-x:50%;--sop-y:50%;--sop-rx:0deg;--sop-ry:0deg;position:relative;isolation:isolate;box-sizing:border-box;min-width:0;width:100%;overflow:hidden;color:var(--sop-ink,#edf0e8);}
+.sop-surface.sop-slate-card .sop-surface-content{position:relative;z-index:1;box-sizing:border-box;min-width:0;padding:var(--sop-padding,28px)}
+.sop-surface.sop-slate-card .sop-surface-content:focus-visible{outline:2px solid currentColor;outline-offset:-4px}
+
+.sop-surface.sop-slate-card{--sop-ink:#e1e8ee;--sop-accent-ink:#b6cde2;--sop-muted:#a0b0bf;color:var(--sop-ink);background:var(--sop-background,#222b34);border:1px solid #475764;border-radius:10px;box-shadow:0 5px 11px #0002;transition:border-color .2s}
+.sop-surface.sop-slate-card:hover,.sop-surface.sop-slate-card:focus-within{border-color:#8199ab}
+.sop-surface.sop-slate-card:before{content:'';position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,#c3d3dc4d,transparent);pointer-events:none}
+
+.sop-surface.sop-slate-card[data-sop-paused] *,.sop-surface.sop-slate-card[data-sop-paused]:before,.sop-surface.sop-slate-card[data-sop-paused]:after{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){.sop-surface.sop-slate-card,.sop-surface.sop-slate-card *,.sop-surface.sop-slate-card:before,.sop-surface.sop-slate-card:after{animation:none!important;transition:none!important}.sop-surface.sop-slate-card{transform:none!important}}
+@media(forced-colors:active){.sop-surface.sop-slate-card{border:1px solid CanvasText;background:Canvas;color:CanvasText;box-shadow:none}.sop-surface.sop-slate-card:before,.sop-surface.sop-slate-card:after{display:none}}

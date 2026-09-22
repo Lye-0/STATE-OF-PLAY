@@ -234,3 +234,60 @@
 .package-context code{font:10px/1.6 var(--mono);color:#d9e2ed;overflow-wrap:anywhere}
 @media(max-width:800px){.export-controls{gap:9px}.format-area{padding-top:12px;padding-bottom:10px}.layout-control{margin-left:auto}.format-area p.layout-note{font-size:9px}}
 @media(max-width:600px){.export-controls{display:grid;grid-template-columns:1fr;gap:10px}.layout-control{margin-left:0;justify-content:space-between}.layout-control select{flex:1;max-width:220px}.delivery-paths{grid-template-columns:1fr;gap:5px;padding:12px}.delivery-paths code{margin-bottom:7px}.package-context{margin-left:16px;margin-right:16px}.format-area p#format-note{display:none}}
+
+/* Volume 003: a design spectrum, not a score. B previews retain their real component size. */
+.design-toolbar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 0 4px}
+.design-toolbar p{font-size:10px;letter-spacing:.2px;color:#969e95;margin:0}
+.design-filters{display:flex;gap:7px;flex-wrap:wrap}
+.design-filters button{display:flex;align-items:center;gap:8px;min-height:34px;padding:8px 12px;border:1px solid #363c35;border-radius:6px;background:transparent;color:#aeb7aa;font-size:10px;transition:background .2s,border-color .2s}
+.design-filters button b{display:grid;place-items:center;border:1px solid #67776070;border-radius:3px;width:16px;height:16px;font:9px var(--mono);color:#c4d6b2}
+.design-filters button small{font:8px var(--mono);opacity:.65;margin-left:3px}
+.design-filters button[aria-pressed=true]{background:#d1e6b214;color:#e2ecd7;border-color:#869d6a}
+.design-filters button:focus-visible{outline-offset:3px}
+.design-badge{display:inline-grid;place-items:center;width:16px;height:16px;flex:none;font:8px var(--mono);border:1px solid #7485685c;border-radius:3px;color:#b9c99f}
+.design-badge.design-B{color:#b7c8d4;border-color:#7387926b}
+.card-top{gap:10px}.card-top .object-type{letter-spacing:1px}
+.detail-design{display:inline-block;margin:13px 0 0;padding:4px 7px;border:1px solid #7a8b6659;border-radius:4px;font:9px var(--mono);color:#c4d5b7}
+.detail-design.design-B{border-color:#7182916b;color:#bbd0dd}
+.preview-heading .detail-design+h2{margin-top:15px}
+.object-card[data-design=B].toggle-card .stage-glow{opacity:.15}
+.object-card[data-design=B] .stage-mount>.sop-toggle,.preview-stage .sop-quiet,.preview-stage .sop-porcelain,.preview-stage .sop-rail,.preview-stage .sop-segment,.preview-stage .sop-outline,.preview-stage .sop-rocker{transform:none!important}
+.sop-surface .surface-sample{color:var(--sop-ink,inherit)}
+.sop-surface .surface-sample h3 em{color:var(--sop-accent-ink,#d1e6b2)}
+.sop-surface .surface-sample>p,.sop-surface .surface-sample .sample-eyebrow,.sop-surface .surface-sample .sample-bottom{color:var(--sop-muted,inherit)}
+.sop-surface .surface-sample .sample-bottom{border-color:currentColor;border-top-color:color-mix(in srgb,currentColor 24%,transparent)}
+.sop-surface .surface-sample .sample-index{color:var(--sop-muted,#a1b28e)}
+/* New surfaces own their visual motifs: do not paint the old orbit sample over them. */
+.sop-aurora-veil .sample-orbit,.sop-contour .sample-orbit,.sop-obsidian .sample-orbit,.sop-copper-plate .sample-orbit,.sop-ripple-glass .sample-orbit,.sop-velvet .sample-orbit,.sop-nocturne .sample-orbit,.sop-blueprint .sample-orbit,.sop-gallery-plinth .sample-orbit,.sop-prismatic-edge .sample-orbit{display:none}
+.surface-sample.essential-sample{min-height:220px;display:flex;flex-direction:column;gap:0}
+.essential-sample .ess-top{display:flex;align-items:center;justify-content:space-between;gap:8px;font:6px var(--mono);letter-spacing:1px;color:var(--sop-muted)}
+.essential-sample .ess-top small{font:8px var(--sans);letter-spacing:0;opacity:.8}
+.sop-surface .essential-sample h3{font-family:var(--sans);font-size:23px;line-height:1.55;letter-spacing:-.4px;margin:20px 0 10px;font-weight:400}
+.sop-surface .essential-sample>p{font-size:10px;line-height:1.9;margin:0;color:var(--sop-muted)}
+.essential-sample .ess-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:16px;margin-top:auto;font-size:8px;color:var(--sop-muted);border-top:1px solid #7e94872f}
+.essential-sample .ess-footer button{padding:6px 9px;min-height:28px;background:transparent;border:1px solid currentColor;border-radius:5px;color:var(--sop-accent-ink);font-size:8px}
+.essential-sample .ess-footer button:hover{background:#899f8417}
+.essential-sample .ess-footer button[aria-pressed=true]{background:#839b7c19}
+.essential-sample .ess-metric{display:flex;align-items:center;gap:25px;margin:0 0 14px}
+.essential-sample .ess-metric strong{font:42px var(--sans);letter-spacing:-2px;font-weight:400;line-height:1.1}
+.essential-sample .ess-metric strong small{font-size:18px;margin-left:3px}
+.essential-sample .ess-metric>span{font-size:9px;color:var(--sop-muted);line-height:1.8}
+.essential-sample .ess-metric b{font-weight:400;color:var(--sop-ink)}
+.essential-sample .ess-progress{height:4px;border-radius:4px;background:#81977b2b;margin-bottom:16px;overflow:hidden}
+.essential-sample .ess-progress i{display:block;width:72%;height:100%;border-radius:inherit;background:var(--sop-accent-ink)}
+.essential-sample .ess-list{padding:0;margin:0 0 13px;list-style:none;font-size:10px}
+.essential-sample .ess-list li{display:flex;align-items:center;gap:9px;margin:0;padding:7px 0}
+.essential-sample .ess-list i{font:8px var(--sans);font-style:normal;width:13px;height:13px;border:1px solid #98ac9850;border-radius:50%;display:grid;place-items:center;color:var(--sop-accent-ink)}
+.essential-sample .ess-list span{margin-left:auto;font-size:8px;color:var(--sop-muted)}
+.essential-sample .ess-rows{font-size:10px;margin-bottom:15px}
+.essential-sample .ess-rows>div{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid #93a18a1b}
+.essential-sample .ess-rows span{color:var(--sop-muted)}
+.essential-sample .ess-rows b{font-size:9px;font-weight:400}
+/* Clearer intrinsic toggle labels also remain legible in forced-colour mode. */
+@media(max-width:1050px){.design-toolbar p{display:none}.design-toolbar{padding-top:13px}.object-type{max-width:65%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.design-badge{width:14px;height:14px;font-size:7px}.sop-surface .essential-sample h3{font-size:20px}.essential-sample .ess-metric strong{font-size:35px}}
+@media(max-width:760px){.card-top{gap:6px}.design-badge{width:12px;height:12px;font-size:6px}.surface-sample.essential-sample{min-height:200px}.sop-surface .essential-sample h3{font-size:17px;margin-top:14px}.essential-sample .ess-list{font-size:8px}.essential-sample .ess-rows{font-size:8px}.essential-sample .ess-metric{gap:12px}.essential-sample .ess-footer{font-size:7px}}
+@media(max-width:600px){.design-toolbar{padding:14px 0 0}.design-filters{gap:5px;width:100%;flex-wrap:nowrap}.design-filters button{padding:7px 8px;font-size:9px;gap:5px;flex:1;justify-content:center;white-space:nowrap}.design-filters button small{font-size:7px;margin-left:0}.design-filters button b{width:13px;height:13px;font-size:7px}.card-top{gap:8px}.design-badge{width:15px;height:15px;font-size:7px}.object-type{max-width:66%}.surface-sample.essential-sample{min-height:220px}.sop-surface .essential-sample h3{font-size:22px;margin-top:17px}.essential-sample .ess-metric strong{font-size:38px}.essential-sample .ess-list{font-size:10px}.essential-sample .ess-rows{font-size:10px}.essential-sample .ess-top small{font-size:7px}.preview-heading .detail-design{order:4;width:max-content;margin:0 0 16px}.preview-heading .detail-design+h2{margin-top:10px}.block-preview .essential-sample .ess-footer{padding-top:9px}.block-preview .essential-sample h3{margin-top:12px;font-size:21px}}
+@media(max-width:355px){.design-filters button{font-size:8px;padding:7px 6px;gap:4px}.design-filters button small{display:none}.card-top .object-type{font-size:6.5px}.object-no{font-size:8px}.state-readout{font-size:7px}}
+
+/* Dark lettering stays readable on the existing warm-paper sample. */
+.sop-surface.sop-folded-paper .surface-sample h3 em{color:#766044}

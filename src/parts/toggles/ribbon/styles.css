@@ -1,0 +1,23 @@
+/* Isolated, portable artwork. --p is progress from OFF (0) to ON (1). */
+.sop-toggle.sop-ribbon { --p:0;--v:0;--energy:0;--sop-mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;position:relative;display:block;flex:none;box-sizing:border-box;border:0;padding:0;margin:0;background:none;color:inherit;font:inherit;cursor:pointer;touch-action:pan-y;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent; }
+.sop-toggle.sop-ribbon[aria-checked="true"]{--p:1}
+.sop-toggle.sop-ribbon .switch-art{display:block;position:relative;width:100%;height:100%;pointer-events:none}
+.sop-toggle.sop-ribbon .switch-art *{box-sizing:border-box;pointer-events:none}
+.sop-toggle.sop-ribbon:focus-visible{outline:2px solid var(--sop-focus,#d8e9b9);outline-offset:7px}
+.sop-toggle.sop-ribbon:disabled{opacity:.46;cursor:not-allowed;filter:saturate(.3)}
+.sop-toggle.sop-ribbon[data-dragging] *,.sop-toggle.sop-ribbon[data-sop-paused] *{transition:none!important;animation-play-state:paused!important}
+
+.sop-toggle.sop-ribbon{width:267px;height:124px;border-radius:14px}
+.sop-toggle.sop-ribbon .rb-shadow{position:absolute;left:9px;right:9px;top:71px;height:28px;background:#0008;filter:blur(10px);border-radius:50%}
+.sop-toggle.sop-ribbon .rb-track{position:absolute;left:1px;top:24px;width:263px;height:72px;border:1px solid #8d666666;border-radius:6px;background:linear-gradient(120deg,#422e38,#241d2a 80%);box-shadow:inset 0 2px 6px #0008;overflow:hidden}
+.sop-toggle.sop-ribbon .rb-cloth{position:absolute;left:8px;top:5px;width:calc(42px + var(--p)*182px);height:61px;background:linear-gradient(0deg,#773e55,#d899a4 16%,#f1c7c5 24%,#d891a2 34%,#a8647d 70%,#e2a5b3 95%,#8f526a);border-radius:2px;box-shadow:0 5px 8px #0006;transform:skewY(calc(var(--v)*.6deg));overflow:hidden}
+.sop-toggle.sop-ribbon .rb-cloth i{position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,#ffe6da66 50%,transparent 68%);transform:translateX(calc(-45px + var(--p)*55px))}
+.sop-toggle.sop-ribbon .rb-cloth b{position:absolute;left:4px;right:4px;top:3px;bottom:3px;border-top:1px dashed #fbddcf88;border-bottom:1px dashed #7e3d59b0}
+.sop-toggle.sop-ribbon .rb-label{position:absolute;left:29px;top:32px;font:6px var(--sop-mono);color:#513044;letter-spacing:1.2px;opacity:var(--p)}
+.sop-toggle.sop-ribbon .rb-label.off{right:24px;left:auto;color:#c6a0b1;opacity:calc(1 - var(--p))}
+.sop-toggle.sop-ribbon .rb-buckle{position:absolute;left:13px;top:15px;width:83px;height:90px;border-radius:6px;background:linear-gradient(115deg,#4b3529,#ebd2a5 16%,#977747 35%,#d3ad73 70%,#644527);border:1px solid #e9c59888;box-shadow:2px 9px 8px #0009;transform:translateX(calc(var(--p)*151px)) rotate(calc(var(--v)*-.4deg))}
+.sop-toggle.sop-ribbon .rb-face{position:absolute;inset:7px 5px;background:linear-gradient(0deg,#9e566b,#d89ba7 22%,#f0c7c2 28%,#c8899d 50%,#a76a83 76%,#e5b3bd);border:1px solid #352e25;border-radius:2px;box-shadow:inset 0 2px 5px #0005}
+.sop-toggle.sop-ribbon .rb-buckle i{position:absolute;left:39px;top:11px;width:5px;height:66px;background:linear-gradient(90deg,#845e35,#f5d9a8,#a67a41);border-radius:2px;box-shadow:2px 1px 2px #0005}
+
+@media(prefers-reduced-motion:reduce){.sop-toggle.sop-ribbon,.sop-toggle.sop-ribbon *,.sop-toggle.sop-ribbon:before,.sop-toggle.sop-ribbon:after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-toggle.sop-ribbon{outline:1px solid ButtonText;outline-offset:2px}.sop-toggle.sop-ribbon:after{content:"OFF";position:absolute;right:0;bottom:-19px;font:11px system-ui;color:ButtonText;background:Canvas;padding:1px 3px}.sop-toggle.sop-ribbon[aria-checked=true]:after{content:"ON"}.sop-toggle.sop-ribbon:disabled{opacity:1;color:GrayText}}

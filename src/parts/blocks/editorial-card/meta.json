@@ -1,0 +1,48 @@
+{
+  "id": "editorial-card",
+  "name": "Editorial Card",
+  "category": "blocks",
+  "order": 47,
+  "version": "3.2.0",
+  "tagline": "読むための、かたち。",
+  "description": "直線と余白を大切にした、編集的な白いカード。",
+  "material": "ESSENTIAL / EDITORIAL",
+  "motion": "READ",
+  "accent": "223,212,193",
+  "componentName": "EditorialCard",
+  "designType": "B",
+  "runtime": "CSS only",
+  "tags": [
+    "Editorial Card",
+    "editorial-card",
+    "ブロック",
+    "カード",
+    "実用重視",
+    "ESSENTIAL / EDITORIAL"
+  ],
+  "related": [
+    "quiet"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "文章、画像、フォームなどの中身。展示サンプルは必須ではありません。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "配置と外側のサイズを指定します。"
+    ],
+    [
+      "--sop-padding",
+      "CSSの長さ",
+      "本文領域の余白を調整します。"
+    ],
+    [
+      "color / --sop-ink",
+      "CSSカラー",
+      "本文色。背景に合わせてコントラストを確認してください。"
+    ]
+  ]
+}

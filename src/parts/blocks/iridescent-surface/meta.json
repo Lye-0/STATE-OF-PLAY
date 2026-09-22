@@ -2,8 +2,8 @@
   "id": "iridescent-surface",
   "name": "Iridescent Surface",
   "category": "blocks",
-  "order": 16,
-  "version": "3.1.0",
+  "order": 30,
+  "version": "3.2.0",
   "tagline": "ひとつではない、色。",
   "description": "見る位置で揺らぐ、偏光のスペクトル。",
   "material": "SPECTRUM / OPTICAL",
@@ -53,5 +53,7 @@
       "R,G,B",
       "Original Surfaceの追従光の色を指定できます。"
     ]
-  ]
+  ],
+  "designType": "A",
+  "runtime": "CSS + Pointer"
 }
