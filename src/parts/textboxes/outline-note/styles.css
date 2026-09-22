@@ -1,0 +1,9 @@
+@import "../../../shared/text-field-base.css";
+/* Outline Note — OUTLINE / MULTILINE */
+
+.sop-textfield.sop-outline-note{--field-bg:#1b2123;--field-ink:#e4e9e8;--field-muted:#a9b4b4;--field-accent:#bfd7d5;--field-edge:#58676a;--field-radius:7px}
+.sop-textfield.sop-outline-note>.sop-field-shell{background:transparent;box-shadow:none;padding:4px 14px!important}
+.sop-textfield.sop-outline-note textarea.sop-field-control{line-height:1.75;min-height:105px}
+.sop-textfield.sop-outline-note .sop-field-label{font-size:13px}
+
+.sop-textfield.sop-outline-note[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}

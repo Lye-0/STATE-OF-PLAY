@@ -1,5 +1,5 @@
 {
-  "version": "3.4.0",
+  "version": "3.5.0",
   "files": [
     {
       "path": "src/app/audio.ts",
@@ -13,8 +13,8 @@
     },
     {
       "path": "src/app/details.ts",
-      "bytes": 25428,
-      "sha256": "a4215a652b23f5336dabbd0688ddfdb6a18666cbfbfe7e95e9374ce771a98b8c"
+      "bytes": 25810,
+      "sha256": "afb0582b09baf596bfc50b78ed495ddc70c1e6b583f634fefae9fb2ca5a57efe"
     },
     {
       "path": "src/app/disclosure-preview.ts",
@@ -23,13 +23,13 @@
     },
     {
       "path": "src/app/gallery.css",
-      "bytes": 71874,
-      "sha256": "d44dbfa20a2d12cf12e5cea926c2fef488c65158af89e0551cf0bd89256234f1"
+      "bytes": 73670,
+      "sha256": "0fbf7cdc90171d16abb842cddba6fb08e25f3345e3b26ec2317411ae737ebf70"
     },
     {
       "path": "src/app/gallery.ts",
-      "bytes": 11788,
-      "sha256": "7e1cfb915ef69e44167b92e53dd72d5e73dabc278e8d18eb0018f82474250319"
+      "bytes": 12238,
+      "sha256": "56da4441cbee1e6053e43caf5c52090ed32329cff580c85899ee4a8a79bd74ae"
     },
     {
       "path": "src/app/package-download.ts",
@@ -47,14 +47,19 @@
       "sha256": "b154e8da5c591bbd756d83cc467b7724b89777712790b5500731be9a0545baf3"
     },
     {
+      "path": "src/app/textfield-preview.ts",
+      "bytes": 4358,
+      "sha256": "ade86dd52d4f96092ff9cb16591981d28526ceb8cd2d0d7d7bfd2510571ada78"
+    },
+    {
       "path": "src/app/utils.ts",
       "bytes": 9450,
       "sha256": "c38b8a26e7f40ab5da8a84b265690b1364965c1e7907d000e685a38703f4797f"
     },
     {
       "path": "src/catalog/categories.ts",
-      "bytes": 455,
-      "sha256": "9e283ccce73f3aa66add4f2c45a4351066b56473eb150627c57362aa90d2f880"
+      "bytes": 539,
+      "sha256": "a0df698a8a37a26a3bf5d8a092eec65255bd4b24f570994302c81fde469ea309"
     },
     {
       "path": "src/catalog/delivery.ts",
@@ -68,8 +73,8 @@
     },
     {
       "path": "src/catalog/registry.json",
-      "bytes": 4513,
-      "sha256": "a826e8faa40e0de6f92a77dc05d4270c29d13d5a1b1df7a85b63b66cc384b55f"
+      "bytes": 5439,
+      "sha256": "7340203a072df1f4444a5e8ae3add185ec8af5199bf21a6309155a75ea555c4b"
     },
     {
       "path": "src/catalog/scroll-sample.ts",
@@ -78,8 +83,8 @@
     },
     {
       "path": "src/catalog/types.ts",
-      "bytes": 4004,
-      "sha256": "7935dc5d3feaa8ac7e9be5fea097d869d93c6afbbeffb4ef3b888d6bb9de0f49"
+      "bytes": 4206,
+      "sha256": "8c1ff89ef683c59fc97c4ddee3e4c8fc51753dfec0d045cfe88e1eb3de5c1177"
     },
     {
       "path": "src/env.d.ts",
@@ -4892,6 +4897,1206 @@
       "sha256": "635613b66c5b13d98d93fba07851e53fa1c6868dbeaaa2f0de1c1499279c17f5"
     },
     {
+      "path": "src/parts/textboxes/aurora-field/markup.html",
+      "bytes": 1271,
+      "sha256": "b14878ae85bed07997584dee9b79bbb0f669f64f384e9ed370aee81a60e2a8d3"
+    },
+    {
+      "path": "src/parts/textboxes/aurora-field/meta.json",
+      "bytes": 1991,
+      "sha256": "429667e65db063d4c68f52704237efa09666b84aac45e3da6c952a041c3a7076"
+    },
+    {
+      "path": "src/parts/textboxes/aurora-field/prompt.md",
+      "bytes": 2571,
+      "sha256": "f7410657e9b394bb042b612c6e1b7e639318c45fed9a1747332363363bc58729"
+    },
+    {
+      "path": "src/parts/textboxes/aurora-field/react/AuroraField.tsx",
+      "bytes": 647,
+      "sha256": "c6c99814748e6b5bf496060d85aa6831289710c5ae3f605b298368238ddbb284"
+    },
+    {
+      "path": "src/parts/textboxes/aurora-field/react/Example.tsx",
+      "bytes": 543,
+      "sha256": "71740597a6fda59c3a9768a084319919604b881538e941aec70099636eb26237"
+    },
+    {
+      "path": "src/parts/textboxes/aurora-field/styles.css",
+      "bytes": 1464,
+      "sha256": "606dbc2f44c6c107c54be4978b0321b6d4f3c117445978df3a260021aaae8176"
+    },
+    {
+      "path": "src/parts/textboxes/aurora-field/usage.md",
+      "bytes": 3332,
+      "sha256": "42b3914192aa9f4a59c1bc8ff4b4c2dace912f34d85cd1bb11b54bf21ef31688"
+    },
+    {
+      "path": "src/parts/textboxes/aurora-field/vanilla/index.html",
+      "bytes": 1652,
+      "sha256": "487e4fab323e394428d37452b7da9fc2845c677a05bd5599d07f823dcf2f37ef"
+    },
+    {
+      "path": "src/parts/textboxes/aurora-field/vanilla/init.ts",
+      "bytes": 191,
+      "sha256": "7f9bd0b28e34d483ac37ddf651d23378b671319d5facbbbce036d8f34fcb0c11"
+    },
+    {
+      "path": "src/parts/textboxes/aurora-field/vanilla/main.ts",
+      "bytes": 383,
+      "sha256": "95b731c305276a5b2f4143d52f95f5fd6a6e057776b0b7a9a0e3dd01fc331a99"
+    },
+    {
+      "path": "src/parts/textboxes/blueprint-note/markup.html",
+      "bytes": 1055,
+      "sha256": "e9fcce01bd0efdd5e588e8663198b0242003c384fc7a1cb9f3b3c528f278647b"
+    },
+    {
+      "path": "src/parts/textboxes/blueprint-note/meta.json",
+      "bytes": 2006,
+      "sha256": "bb830ed2cb48fbfc973600f465746a07165e8a66a6e0b1ca8ef5344bc4ee2fd5"
+    },
+    {
+      "path": "src/parts/textboxes/blueprint-note/prompt.md",
+      "bytes": 2549,
+      "sha256": "2d3109c9ccacd0270699b5123cca5b56246172896fea2b296f421c5a509483b0"
+    },
+    {
+      "path": "src/parts/textboxes/blueprint-note/react/BlueprintNote.tsx",
+      "bytes": 644,
+      "sha256": "40e1b3484705941d1ad0363cf5f97239499a8ba49db298683364e568e992f25b"
+    },
+    {
+      "path": "src/parts/textboxes/blueprint-note/react/Example.tsx",
+      "bytes": 541,
+      "sha256": "12086a257dc3ca616668e9549945950c9ebd8017552a74da17c878d92c0d07c4"
+    },
+    {
+      "path": "src/parts/textboxes/blueprint-note/styles.css",
+      "bytes": 1505,
+      "sha256": "558a9dc2a39e4a13fe4d0e695d3ed728dd3e3205e4506d839b28d75d56630f00"
+    },
+    {
+      "path": "src/parts/textboxes/blueprint-note/usage.md",
+      "bytes": 3331,
+      "sha256": "841338abdaf97e967f9911f1a662926b8d92b5ccf60d548ce4a7df959a89ef9b"
+    },
+    {
+      "path": "src/parts/textboxes/blueprint-note/vanilla/index.html",
+      "bytes": 1438,
+      "sha256": "4ecf0e831cc5f2033ce48898f5c355b394a747a176e5829456618e6aee07f7be"
+    },
+    {
+      "path": "src/parts/textboxes/blueprint-note/vanilla/init.ts",
+      "bytes": 191,
+      "sha256": "7f9bd0b28e34d483ac37ddf651d23378b671319d5facbbbce036d8f34fcb0c11"
+    },
+    {
+      "path": "src/parts/textboxes/blueprint-note/vanilla/main.ts",
+      "bytes": 387,
+      "sha256": "a8f3b1f87fe79fb4d6a1aad62247f8d6db9be09ea00c53d4029d77927ad3a43b"
+    },
+    {
+      "path": "src/parts/textboxes/capillary-field/markup.html",
+      "bytes": 1255,
+      "sha256": "3a5cb1a665b77728bd110ed73f6b59d215d5ada5322ece04de33fac702838dad"
+    },
+    {
+      "path": "src/parts/textboxes/capillary-field/meta.json",
+      "bytes": 2012,
+      "sha256": "122a412a931f00315b0c6a216c6fc65a7392f07e5d192d42a264b0adc7457ac5"
+    },
+    {
+      "path": "src/parts/textboxes/capillary-field/prompt.md",
+      "bytes": 2580,
+      "sha256": "bec25acd1062560d3fba9d4cdc06739f5b5998dcaf861baed5e12fe30a335b34"
+    },
+    {
+      "path": "src/parts/textboxes/capillary-field/react/CapillaryField.tsx",
+      "bytes": 653,
+      "sha256": "a1404c7e9ffcfd12baac142f34ce992467d2055e78900967ad6b10bc6b6a9f2a"
+    },
+    {
+      "path": "src/parts/textboxes/capillary-field/react/Example.tsx",
+      "bytes": 551,
+      "sha256": "c05583a9349a9f73f6781b9f1793540f74936746e4f36c53e62f38688ae15d89"
+    },
+    {
+      "path": "src/parts/textboxes/capillary-field/styles.css",
+      "bytes": 1495,
+      "sha256": "a836a5342b7448c0ff43bca70909c933770181ae23dc52d267d821a0d4e31ce5"
+    },
+    {
+      "path": "src/parts/textboxes/capillary-field/usage.md",
+      "bytes": 3335,
+      "sha256": "575c8e0bc8fd21aadaf8e2c48ec868c5a169e20df223f667e3303183d5fdb782"
+    },
+    {
+      "path": "src/parts/textboxes/capillary-field/vanilla/index.html",
+      "bytes": 1639,
+      "sha256": "3aa5380f1d4dd465fa8c1b47cc60732343208def3ca99072f1eedf5dfd73d9b6"
+    },
+    {
+      "path": "src/parts/textboxes/capillary-field/vanilla/init.ts",
+      "bytes": 191,
+      "sha256": "7f9bd0b28e34d483ac37ddf651d23378b671319d5facbbbce036d8f34fcb0c11"
+    },
+    {
+      "path": "src/parts/textboxes/capillary-field/vanilla/main.ts",
+      "bytes": 389,
+      "sha256": "0991f9e23dc1dbd628e8410ff1f335309d7a19070b2f75cbd367c79d4f0b264b"
+    },
+    {
+      "path": "src/parts/textboxes/capsule-field/markup.html",
+      "bytes": 1411,
+      "sha256": "6ed18baa92e297b3f8f6ddd5810649049dc04a834e6f229867e4a1fda7316f4d"
+    },
+    {
+      "path": "src/parts/textboxes/capsule-field/meta.json",
+      "bytes": 2015,
+      "sha256": "5cd7ab8f5f7936c00ddd6218cde549a63fc4071d27268956f2e8bd0c440257fb"
+    },
+    {
+      "path": "src/parts/textboxes/capsule-field/prompt.md",
+      "bytes": 2621,
+      "sha256": "97ce2c790b0b60e0e9336296c73aa098dc82623459bc7f43aa636b7ad3c6b5a4"
+    },
+    {
+      "path": "src/parts/textboxes/capsule-field/react/CapsuleField.tsx",
+      "bytes": 666,
+      "sha256": "e00866c33e657922cc6beb8eb514bce2345712341429cd09de71201a22f266bf"
+    },
+    {
+      "path": "src/parts/textboxes/capsule-field/react/Example.tsx",
+      "bytes": 580,
+      "sha256": "824d98f542c08e48325efa86e9019145c46f1965d90deaeab80ee97712d036db"
+    },
+    {
+      "path": "src/parts/textboxes/capsule-field/styles.css",
+      "bytes": 1304,
+      "sha256": "eeefa74e939faa3799c2361bc0d2d67116755b9247cc511fdf31fb8226f880b1"
+    },
+    {
+      "path": "src/parts/textboxes/capsule-field/usage.md",
+      "bytes": 3345,
+      "sha256": "51e2b757476a8fab6a11f8c8f1e0a0d791d0a35c88e3be0db48804601a597dc5"
+    },
+    {
+      "path": "src/parts/textboxes/capsule-field/vanilla/index.html",
+      "bytes": 1793,
+      "sha256": "351f19a8b46ac92361bdcc7fc94b413fa32cb1185dfea7118082d6ad64a99e49"
+    },
+    {
+      "path": "src/parts/textboxes/capsule-field/vanilla/init.ts",
+      "bytes": 191,
+      "sha256": "7f9bd0b28e34d483ac37ddf651d23378b671319d5facbbbce036d8f34fcb0c11"
+    },
+    {
+      "path": "src/parts/textboxes/capsule-field/vanilla/main.ts",
+      "bytes": 385,
+      "sha256": "1e27575ded4b571c02d5ac2c4a0f31593fb93a5b66a7136320d92d382b8975b2"
+    },
+    {
+      "path": "src/parts/textboxes/contact-field/markup.html",
+      "bytes": 1157,
+      "sha256": "b763907d8cc5270e053d505ea6a647e5e8ee1ecaf5f62230364b4158a9b430aa"
+    },
+    {
+      "path": "src/parts/textboxes/contact-field/meta.json",
+      "bytes": 1990,
+      "sha256": "a25ebb092ddd560ee1553050eb9e94b429a2c4a9713382508557f7b7ad81ad0b"
+    },
+    {
+      "path": "src/parts/textboxes/contact-field/prompt.md",
+      "bytes": 2581,
+      "sha256": "6027edf929c2801dc2eff4923409e2d54249cd2be9d54f73a3226cd755be84c6"
+    },
+    {
+      "path": "src/parts/textboxes/contact-field/react/ContactField.tsx",
+      "bytes": 636,
+      "sha256": "ec9161975737f624e2a70fd9a57375ad4e1898032e9eb6b37a41d84b7d35a20f"
+    },
+    {
+      "path": "src/parts/textboxes/contact-field/react/Example.tsx",
+      "bytes": 516,
+      "sha256": "8959e21223fa10bc256f218a2973d8d120e9685c0d4e40d32e6cbeeff5561800"
+    },
+    {
+      "path": "src/parts/textboxes/contact-field/styles.css",
+      "bytes": 860,
+      "sha256": "ad8ee501e3b6220d4c49b8ed4a37983f2e313b42084ac8c216443c548bcbf46a"
+    },
+    {
+      "path": "src/parts/textboxes/contact-field/usage.md",
+      "bytes": 3318,
+      "sha256": "a53c8fb520c035586d7aceeee5bc8c0a54168a5d38aaf92531b5ca7cdc7118d5"
+    },
+    {
+      "path": "src/parts/textboxes/contact-field/vanilla/index.html",
+      "bytes": 1539,
+      "sha256": "5bd33cc31ca4d35009a574b81d8cbde011efe60ce3327f9af3872ea57d98e2a0"
+    },
+    {
+      "path": "src/parts/textboxes/contact-field/vanilla/init.ts",
+      "bytes": 191,
+      "sha256": "7f9bd0b28e34d483ac37ddf651d23378b671319d5facbbbce036d8f34fcb0c11"
+    },
+    {
+      "path": "src/parts/textboxes/contact-field/vanilla/main.ts",
+      "bytes": 385,
+      "sha256": "0693713789cce97945bca7547fcb0cd44f66a522166d57c0efd94e323a4f4361"
+    },
+    {
+      "path": "src/parts/textboxes/contour-note/markup.html",
+      "bytes": 1073,
+      "sha256": "991843c2f9b516b169abbd080cd2c73a1db176f9792ac72f389741441e8232cb"
+    },
+    {
+      "path": "src/parts/textboxes/contour-note/meta.json",
+      "bytes": 1990,
+      "sha256": "42acede29c13fe598524aa9da931c2b0b94e06ecf9d36ce5eb1ea44b6f5b852f"
+    },
+    {
+      "path": "src/parts/textboxes/contour-note/prompt.md",
+      "bytes": 2541,
+      "sha256": "413c5aa4abca868058ea828b8afc95f71f3b433196f9236a85e2f333bab6527f"
+    },
+    {
+      "path": "src/parts/textboxes/contour-note/react/ContourNote.tsx",
+      "bytes": 637,
+      "sha256": "0b5821d687dbda3f4c37dab5f0c854e74dfcad006e3cd386fcd356ee9c0aacce"
+    },
+    {
+      "path": "src/parts/textboxes/contour-note/react/Example.tsx",
+      "bytes": 552,
+      "sha256": "1d4fa6705bf2b393c1dbd4d176807cae12b67d432492205fa4e89f770cf3d4af"
+    },
+    {
+      "path": "src/parts/textboxes/contour-note/styles.css",
+      "bytes": 1365,
+      "sha256": "821715dfbf21fb99243c66ae536a341d4ac4a2c1ab43d71e73bc60751f05409e"
+    },
+    {
+      "path": "src/parts/textboxes/contour-note/usage.md",
+      "bytes": 3326,
+      "sha256": "e62232b0c034108ce6a5d60b26a41e003365d35fcb52be31050a7f418d19d41b"
+    },
+    {
+      "path": "src/parts/textboxes/contour-note/vanilla/index.html",
+      "bytes": 1454,
+      "sha256": "90b9d57ea6ed8478766287aff312f4957381f684288c74763bbc26988faaa0bd"
+    },
+    {
+      "path": "src/parts/textboxes/contour-note/vanilla/init.ts",
+      "bytes": 191,
+      "sha256": "7f9bd0b28e34d483ac37ddf651d23378b671319d5facbbbce036d8f34fcb0c11"
+    },
+    {
+      "path": "src/parts/textboxes/contour-note/vanilla/main.ts",
+      "bytes": 383,
+      "sha256": "f57818a7adbccd8170599ca316f6efcae9aa092db602b058e3168d33920740b4"
+    },
+    {
+      "path": "src/parts/textboxes/copper-note/markup.html",
+      "bytes": 1076,
+      "sha256": "5ad248611e8d9514e480f2e44241cdc3f7cb7e2f2fa3850daecb8167262b8d48"
+    },
+    {
+      "path": "src/parts/textboxes/copper-note/meta.json",
+      "bytes": 1983,
+      "sha256": "d1adef9a3543886764eeb3c749bc85599f1ae5c449ab238547ca5ecc714726f4"
+    },
+    {
+      "path": "src/parts/textboxes/copper-note/prompt.md",
+      "bytes": 2538,
+      "sha256": "a3ef9925c29aaadf4e954bb9fe9e233d888175f778e5f17b4fc376b75a9023c6"
+    },
+    {
+      "path": "src/parts/textboxes/copper-note/react/CopperNote.tsx",
+      "bytes": 638,
+      "sha256": "d36b7b40c9959dd02a4ff31842afc62b097ba39a4548ef0c95115b1bfe0b1cc3"
+    },
+    {
+      "path": "src/parts/textboxes/copper-note/react/Example.tsx",
+      "bytes": 550,
+      "sha256": "7a3065ad4c1309dd19b51f3ee0d86dbf227dc390931ffd5e9255e2fcf96852e2"
+    },
+    {
+      "path": "src/parts/textboxes/copper-note/styles.css",
+      "bytes": 1452,
+      "sha256": "f8bb84594cb406ceb2bcf8d71d2dc35d15dfb294a26d668a49bc4b50eace87d9"
+    },
+    {
+      "path": "src/parts/textboxes/copper-note/usage.md",
+      "bytes": 3328,
+      "sha256": "d92412ec9a3ae37b184c73ec91eac2f4e66ec5afd9f4221e8b2a45b75eae1287"
+    },
+    {
+      "path": "src/parts/textboxes/copper-note/vanilla/index.html",
+      "bytes": 1456,
+      "sha256": "e7391d1e3bd5fb4cb4d10cd34b58077d1608b3ceb21f1e5c3902a2fdb8018bed"
+    },
+    {
+      "path": "src/parts/textboxes/copper-note/vanilla/init.ts",
+      "bytes": 191,
+      "sha256": "7f9bd0b28e34d483ac37ddf651d23378b671319d5facbbbce036d8f34fcb0c11"
+    },
+    {
+      "path": "src/parts/textboxes/copper-note/vanilla/main.ts",
+      "bytes": 381,
+      "sha256": "4bcad49b07ec3a0fe6367457dc634a4a995d83376d9b7aeb54a6caa138fdd2a2"
+    },
+    {
+      "path": "src/parts/textboxes/essential-field/markup.html",
+      "bytes": 1126,
+      "sha256": "a95d4e396300a82f66d8e56dfa852dc75eec1d2395faf0264dfa08b5bc5f18ed"
+    },
+    {
+      "path": "src/parts/textboxes/essential-field/meta.json",
+      "bytes": 2013,
+      "sha256": "a2243c6bf728112407137ee947a2939a58fa11dacf5e4ab7e2dc0a654eee2f59"
+    },
+    {
+      "path": "src/parts/textboxes/essential-field/prompt.md",
+      "bytes": 2596,
+      "sha256": "7d6b3e346d26757c1063a471a2dcac8cd9b00f2f273fc4ff975d9d7de000776a"
+    },
+    {
+      "path": "src/parts/textboxes/essential-field/react/EssentialField.tsx",
+      "bytes": 651,
+      "sha256": "307e51f06b74cafb5f88c435cee3cacb1b2bfe775e100e94795d5ba12f788966"
+    },
+    {
+      "path": "src/parts/textboxes/essential-field/react/Example.tsx",
+      "bytes": 497,
+      "sha256": "452635ac14581e9ff837b4b687718c8ac0bb3d0e5c20e65d75f82969206afbae"
+    },
+    {
+      "path": "src/parts/textboxes/essential-field/styles.css",
+      "bytes": 645,
+      "sha256": "46f4050344242e52d67e7b50842502088989c54857bdb3f2606322ea19333672"
+    },
+    {
+      "path": "src/parts/textboxes/essential-field/usage.md",
+      "bytes": 3332,
+      "sha256": "0b8e1fdd768557eef8e1a9b4178263df844f7a1435ee7ce174cc8fe2f325f4ea"
+    },
+    {
+      "path": "src/parts/textboxes/essential-field/vanilla/index.html",
+      "bytes": 1510,
+      "sha256": "06b023a9c303e774ab07531e3680c82087b00fb7a26748f9b7476e64debcd3b4"
+    },
+    {
+      "path": "src/parts/textboxes/essential-field/vanilla/init.ts",
+      "bytes": 191,
+      "sha256": "7f9bd0b28e34d483ac37ddf651d23378b671319d5facbbbce036d8f34fcb0c11"
+    },
+    {
+      "path": "src/parts/textboxes/essential-field/vanilla/main.ts",
+      "bytes": 389,
+      "sha256": "0d511f0d69f5a532c1737042ec0caad5e9d2387b9468dd2e1a4faf0202e767e0"
+    },
+    {
+      "path": "src/parts/textboxes/folio-note/markup.html",
+      "bytes": 1061,
+      "sha256": "6c16ce63ff81fc29818ccb780de42d1305efb837f313b5f22a7b4ec86d0f35e7"
+    },
+    {
+      "path": "src/parts/textboxes/folio-note/meta.json",
+      "bytes": 1998,
+      "sha256": "d1b7421558ad1f28713af8ab3bc6a203c9fb6896ae4293347065ae9e29d1e29f"
+    },
+    {
+      "path": "src/parts/textboxes/folio-note/prompt.md",
+      "bytes": 2557,
+      "sha256": "3d7ef37ad6dfeaf17c98a2aa7cc72b77852130d6420855ff6c67fe1b6b623dd7"
+    },
+    {
+      "path": "src/parts/textboxes/folio-note/react/Example.tsx",
+      "bytes": 536,
+      "sha256": "324ac8db6591dac688f677d9a555bdfe2ccf5365658f747928b96204037d4379"
+    },
+    {
+      "path": "src/parts/textboxes/folio-note/react/FolioNote.tsx",
+      "bytes": 654,
+      "sha256": "5be97785dc85450bbcb9ee46e4f8283f915399fead3cf6c713713ef943a4d60d"
+    },
+    {
+      "path": "src/parts/textboxes/folio-note/styles.css",
+      "bytes": 1289,
+      "sha256": "b0ea72ce781eda1e184e9ee21dd4570636d69c9307082fc4b37f780bf81a14ad"
+    },
+    {
+      "path": "src/parts/textboxes/folio-note/usage.md",
+      "bytes": 3345,
+      "sha256": "d189edcd2fb57f70241da1ce1f3a3a04d94e4127c85552a0ecc07eacc6552cdd"
+    },
+    {
+      "path": "src/parts/textboxes/folio-note/vanilla/index.html",
+      "bytes": 1440,
+      "sha256": "74375194aba3cb77a8d20fa6be2ef61adcd545ddfb38ba4f325369c86a45543b"
+    },
+    {
+      "path": "src/parts/textboxes/folio-note/vanilla/init.ts",
+      "bytes": 191,
+      "sha256": "7f9bd0b28e34d483ac37ddf651d23378b671319d5facbbbce036d8f34fcb0c11"
+    },
+    {
+      "path": "src/parts/textboxes/folio-note/vanilla/main.ts",
+      "bytes": 379,
+      "sha256": "59644a202d16668447681aecdeb56125647fa2ec7665ec3a3c1caed6a9c99761"
+    },
+    {
+      "path": "src/parts/textboxes/letterpress-note/markup.html",
+      "bytes": 1091,
+      "sha256": "058950d6ece58b736c7c9e5f1437353a36b9550a02dfc2ecbe5c98343ee91d47"
+    },
+    {
+      "path": "src/parts/textboxes/letterpress-note/meta.json",
+      "bytes": 2027,
+      "sha256": "95a093242219510254a29603ac91b786c8b9730a75c08d287f531081a664e014"
+    },
+    {
+      "path": "src/parts/textboxes/letterpress-note/prompt.md",
+      "bytes": 2562,
+      "sha256": "cf22a589bbb8f53ab62e52bcef90c71995f74b7c565c0b46170d43915c048bc1"
+    },
+    {
+      "path": "src/parts/textboxes/letterpress-note/react/Example.tsx",
+      "bytes": 573,
+      "sha256": "31fe770680bcdc857b562a0b1ae3c12471ecdbbe0530bab0d189f5f7db6b7598"
+    },
+    {
+      "path": "src/parts/textboxes/letterpress-note/react/LetterpressNote.tsx",
+      "bytes": 654,
+      "sha256": "84c85e180e4a8f87f8124482f3ef17f3ca55e8741fc04e59e4c8636aab90da06"
+    },
+    {
+      "path": "src/parts/textboxes/letterpress-note/styles.css",
+      "bytes": 1467,
+      "sha256": "7fe47a57bfcc981a04273f09dff1b5278b9acb13215e7bf32b2d484bd19b0562"
+    },
+    {
+      "path": "src/parts/textboxes/letterpress-note/usage.md",
+      "bytes": 3339,
+      "sha256": "802dc0754d5885d6908a9ae13ed33d89944481d64f3405e456facc7dd961b5ce"
+    },
+    {
+      "path": "src/parts/textboxes/letterpress-note/vanilla/index.html",
+      "bytes": 1476,
+      "sha256": "bbeca294143d13beb1cc25be98b492fd1ec5723855c69ce0c6569b2eb325ebb5"
+    },
+    {
+      "path": "src/parts/textboxes/letterpress-note/vanilla/init.ts",
+      "bytes": 191,
+      "sha256": "7f9bd0b28e34d483ac37ddf651d23378b671319d5facbbbce036d8f34fcb0c11"
+    },
+    {
+      "path": "src/parts/textboxes/letterpress-note/vanilla/main.ts",
+      "bytes": 391,
+      "sha256": "35a2bc870957c65e6b8467722e1dea990cf91465d1aa8afd7c8d731bd34a112d"
+    },
+    {
+      "path": "src/parts/textboxes/nixie-field/markup.html",
+      "bytes": 1206,
+      "sha256": "f439f9707fd46a959a5ca0eb81722ce918249738c127976207f6ef656dc68398"
+    },
+    {
+      "path": "src/parts/textboxes/nixie-field/meta.json",
+      "bytes": 1984,
+      "sha256": "cc283c382b2218a9b4a554b3e6d302bcfcf4e0e23ac03b4dfb824edd78435157"
+    },
+    {
+      "path": "src/parts/textboxes/nixie-field/prompt.md",
+      "bytes": 2568,
+      "sha256": "476e401e3e011f0340c9faae2f3739cd31574c3ecb512d2a68138abeab2a7099"
+    },
+    {
+      "path": "src/parts/textboxes/nixie-field/react/Example.tsx",
+      "bytes": 500,
+      "sha256": "936524c5c20b63db425b94f64ed14b5465ef2d167ce2c1b16918406ccd15c5d6"
+    },
+    {
+      "path": "src/parts/textboxes/nixie-field/react/NixieField.tsx",
+      "bytes": 642,
+      "sha256": "da40adf03ae935ebf444660e4268d01bc5afe6327aee5a13e6da4a255b640b4d"
+    },
+    {
+      "path": "src/parts/textboxes/nixie-field/styles.css",
+      "bytes": 1396,
+      "sha256": "7b9a759ecf02937ab3862317446e06f575c78366bc8210534ecbc651c19bbbed"
+    },
+    {
+      "path": "src/parts/textboxes/nixie-field/usage.md",
+      "bytes": 3328,
+      "sha256": "6005b6376e0cae43b35588e2e6abdabc6db4276ea8c921b3835b93cdea301bd0"
+    },
+    {
+      "path": "src/parts/textboxes/nixie-field/vanilla/index.html",
+      "bytes": 1586,
+      "sha256": "950c83af98b7f9d6522dfca55599f547b2f12042f874f355606bdde3cc5ccce6"
+    },
+    {
+      "path": "src/parts/textboxes/nixie-field/vanilla/init.ts",
+      "bytes": 191,
+      "sha256": "7f9bd0b28e34d483ac37ddf651d23378b671319d5facbbbce036d8f34fcb0c11"
+    },
+    {
+      "path": "src/parts/textboxes/nixie-field/vanilla/main.ts",
+      "bytes": 381,
+      "sha256": "cf3e558e16c9f900d96e4d4f1023aa299ed353aaf46ed6a42d98e9755f23295a"
+    },
+    {
+      "path": "src/parts/textboxes/obsidian-field/markup.html",
+      "bytes": 1240,
+      "sha256": "414b3e2191ae6fd7082495f41ab13ea8fbe2118133b4776d19d7eb30848e9891"
+    },
+    {
+      "path": "src/parts/textboxes/obsidian-field/meta.json",
+      "bytes": 1998,
+      "sha256": "94478667430ceceda226deae1a336b6269366589dbf1df9c49257f8a341cf893"
+    },
+    {
+      "path": "src/parts/textboxes/obsidian-field/prompt.md",
+      "bytes": 2570,
+      "sha256": "91201a84206d25fc7378d7486c7be3b790c96b617a2991510703bf064005ac9e"
+    },
+    {
+      "path": "src/parts/textboxes/obsidian-field/react/Example.tsx",
+      "bytes": 531,
+      "sha256": "68c1cd685ab1fa7c1c38e47305fa21ecdc40a34e692b03810e20b45fd3f0d671"
+    },
+    {
+      "path": "src/parts/textboxes/obsidian-field/react/ObsidianField.tsx",
+      "bytes": 645,
+      "sha256": "7bcd8d1c5e95cffa565ace1026207f34ab701e852946f15cc8e083c5edd5b00f"
+    },
+    {
+      "path": "src/parts/textboxes/obsidian-field/styles.css",
+      "bytes": 1469,
+      "sha256": "cde8e3467bab48bfe0e735dae96a74b8ce546dab390d9046821d95bf2bd9a291"
+    },
+    {
+      "path": "src/parts/textboxes/obsidian-field/usage.md",
+      "bytes": 3328,
+      "sha256": "13ae960c99c6fb2cdfaab08522d380da5089d31d1c31f7fe5c2b8457492f4595"
+    },
+    {
+      "path": "src/parts/textboxes/obsidian-field/vanilla/index.html",
+      "bytes": 1623,
+      "sha256": "3b24003dc32c69f8affc85befe4f731124cf6ce6d8c30d07c52dfa2851f2101b"
+    },
+    {
+      "path": "src/parts/textboxes/obsidian-field/vanilla/init.ts",
+      "bytes": 191,
+      "sha256": "7f9bd0b28e34d483ac37ddf651d23378b671319d5facbbbce036d8f34fcb0c11"
+    },
+    {
+      "path": "src/parts/textboxes/obsidian-field/vanilla/main.ts",
+      "bytes": 387,
+      "sha256": "2b3e5b05075e23aaddad001440f63ac9d9f137a8df8c254924bd7794133df5b4"
+    },
+    {
+      "path": "src/parts/textboxes/orbit-search/markup.html",
+      "bytes": 1281,
+      "sha256": "4723e01685500016f9eefdfabaadc017dbe092465246f30b1c7c35bfa46a6821"
+    },
+    {
+      "path": "src/parts/textboxes/orbit-search/meta.json",
+      "bytes": 1999,
+      "sha256": "40b08de8d5e4d7543c981c65071527a2a3e9e643ea081769573302ff8c8648b1"
+    },
+    {
+      "path": "src/parts/textboxes/orbit-search/prompt.md",
+      "bytes": 2579,
+      "sha256": "e4eafe5768cd4a7de489ae9da593354ed104afb52f2de8c7046b55df3cedc93c"
+    },
+    {
+      "path": "src/parts/textboxes/orbit-search/react/Example.tsx",
+      "bytes": 551,
+      "sha256": "681a05656ac813d18e260e2336302499f4971e5bd6eadd73bd5d7dd37d9f57e4"
+    },
+    {
+      "path": "src/parts/textboxes/orbit-search/react/OrbitSearch.tsx",
+      "bytes": 652,
+      "sha256": "75be5dc8dca6dc6ca633f99fa1cc52ff536ed8845d1f2492a88fef7c74495a6d"
+    },
+    {
+      "path": "src/parts/textboxes/orbit-search/styles.css",
+      "bytes": 1391,
+      "sha256": "b1cb18e1ed627a9b71da1538b21a503dc9a1b645b1007af80709f7cecc1ce10f"
+    },
+    {
+      "path": "src/parts/textboxes/orbit-search/usage.md",
+      "bytes": 3335,
+      "sha256": "72fcc1a1d8c22d46ed672c56750075d7438cd4317a90788de5a361c003d2e7ea"
+    },
+    {
+      "path": "src/parts/textboxes/orbit-search/vanilla/index.html",
+      "bytes": 1662,
+      "sha256": "34c7d9cf5aaa8867108447164478345e53fb7d4a0c517e5f422cd3dc26bb11f5"
+    },
+    {
+      "path": "src/parts/textboxes/orbit-search/vanilla/init.ts",
+      "bytes": 191,
+      "sha256": "7f9bd0b28e34d483ac37ddf651d23378b671319d5facbbbce036d8f34fcb0c11"
+    },
+    {
+      "path": "src/parts/textboxes/orbit-search/vanilla/main.ts",
+      "bytes": 383,
+      "sha256": "ebe8633d3a7fccd2e19d65578f94101460b5958e6f3c56b230a0954befec4702"
+    },
+    {
+      "path": "src/parts/textboxes/outline-note/markup.html",
+      "bytes": 975,
+      "sha256": "0d8590949f162c6a822df6a82169c102a5f10d5f0cba01485fad27731895fc4c"
+    },
+    {
+      "path": "src/parts/textboxes/outline-note/meta.json",
+      "bytes": 1994,
+      "sha256": "fc48e526d3bf0151dcd7c9d14de01f1003960bd80b210ad6b9d1101e005998b4"
+    },
+    {
+      "path": "src/parts/textboxes/outline-note/prompt.md",
+      "bytes": 2560,
+      "sha256": "d3726d08aaa7dc649d41b59983b1efba7c804951bda03f27386ae55084e4cc44"
+    },
+    {
+      "path": "src/parts/textboxes/outline-note/react/Example.tsx",
+      "bytes": 521,
+      "sha256": "eeb9e1fa918be9fd576f6d45a707e53ce0ef857b8933a645b3e8ac5bc352c3a9"
+    },
+    {
+      "path": "src/parts/textboxes/outline-note/react/OutlineNote.tsx",
+      "bytes": 637,
+      "sha256": "5d1bbc2e60586ac377fa384d57183a0df780deede48a3fd0d85afe70286f9758"
+    },
+    {
+      "path": "src/parts/textboxes/outline-note/styles.css",
+      "bytes": 718,
+      "sha256": "15ce123065facef3b6d741f82ffe3b648e59bd3eeb80ef97587048e1f5400b71"
+    },
+    {
+      "path": "src/parts/textboxes/outline-note/usage.md",
+      "bytes": 3326,
+      "sha256": "6979ef0155908973a4001a8a51859d227554ecda2e68cfc36615c194ec65aec6"
+    },
+    {
+      "path": "src/parts/textboxes/outline-note/vanilla/index.html",
+      "bytes": 1356,
+      "sha256": "064eddc829336d2eee2cc609f5ddbef90db6116ca362ab7707699245c927a041"
+    },
+    {
+      "path": "src/parts/textboxes/outline-note/vanilla/init.ts",
+      "bytes": 191,
+      "sha256": "7f9bd0b28e34d483ac37ddf651d23378b671319d5facbbbce036d8f34fcb0c11"
+    },
+    {
+      "path": "src/parts/textboxes/outline-note/vanilla/main.ts",
+      "bytes": 383,
+      "sha256": "560869623d97980eae563545ae721afb042fa84af4416a9923979863125599a5"
+    },
+    {
+      "path": "src/parts/textboxes/paper-field/markup.html",
+      "bytes": 1181,
+      "sha256": "b67fab56182063a07b7ec15fe6005661203fcb15d9fbdf0a9b656bbd8fb3dedf"
+    },
+    {
+      "path": "src/parts/textboxes/paper-field/meta.json",
+      "bytes": 1986,
+      "sha256": "8e314218df655f0a9a5590f1e92542f4598ddc930a8aa4d333113e1fb0897a98"
+    },
+    {
+      "path": "src/parts/textboxes/paper-field/prompt.md",
+      "bytes": 2585,
+      "sha256": "a1bfb74bacf5b50d94c7fefbd6d06a38b3ca4dde75cb2f3d58c56ebfd1d1e0f1"
+    },
+    {
+      "path": "src/parts/textboxes/paper-field/react/Example.tsx",
+      "bytes": 520,
+      "sha256": "95d5b27f01f3b58c513893cef1650df1a5e5edf878cc8e84e3402730296038a3"
+    },
+    {
+      "path": "src/parts/textboxes/paper-field/react/PaperField.tsx",
+      "bytes": 649,
+      "sha256": "01b7ec6e6d078ae086416aa72253d14aeb15ce59ea1509e026d27d8d4066a6d2"
+    },
+    {
+      "path": "src/parts/textboxes/paper-field/styles.css",
+      "bytes": 799,
+      "sha256": "ac625e828d4d1e22b4b0817cbe3ff0e4f010317816c099fd52111a348439acc6"
+    },
+    {
+      "path": "src/parts/textboxes/paper-field/usage.md",
+      "bytes": 3334,
+      "sha256": "c3a2028caeac6c5b6958eb0b2237820c9838303c7a49d72786918ef65d67ea04"
+    },
+    {
+      "path": "src/parts/textboxes/paper-field/vanilla/index.html",
+      "bytes": 1561,
+      "sha256": "84cc5d471c01c9eea938d177c9d5e8205d2ccf7fc4d0b4e06c8c6dcea895c92c"
+    },
+    {
+      "path": "src/parts/textboxes/paper-field/vanilla/init.ts",
+      "bytes": 191,
+      "sha256": "7f9bd0b28e34d483ac37ddf651d23378b671319d5facbbbce036d8f34fcb0c11"
+    },
+    {
+      "path": "src/parts/textboxes/paper-field/vanilla/main.ts",
+      "bytes": 381,
+      "sha256": "a39e0246330fe62059530c803f3f9563699e67489d7a2de1472ea24dd4782d0b"
+    },
+    {
+      "path": "src/parts/textboxes/password-field/markup.html",
+      "bytes": 1314,
+      "sha256": "a81106df0dac1d3539fc8ca87063eeb0061d7099f836922045694e51590d4372"
+    },
+    {
+      "path": "src/parts/textboxes/password-field/meta.json",
+      "bytes": 2018,
+      "sha256": "f7cf83eda190c01bcaaddbea8e300941b0b6254161ae182e418b969eaec8df65"
+    },
+    {
+      "path": "src/parts/textboxes/password-field/prompt.md",
+      "bytes": 2635,
+      "sha256": "c3fc51b469b5f8b3cd613f61bf7af276b3eebce23741b93c30b1b2c59eab678c"
+    },
+    {
+      "path": "src/parts/textboxes/password-field/react/Example.tsx",
+      "bytes": 551,
+      "sha256": "2fd18320ddd9f285ab1d03f6197ee9eb084d4d33b382a7249fa19eeb2a59dc79"
+    },
+    {
+      "path": "src/parts/textboxes/password-field/react/PasswordField.tsx",
+      "bytes": 666,
+      "sha256": "6f01172b572510fad026335fd0a825062571717dbffc0d68ae1ddfaeda55ee11"
+    },
+    {
+      "path": "src/parts/textboxes/password-field/styles.css",
+      "bytes": 878,
+      "sha256": "c1f5c3d7c257e4c815ebd717fdacdad2c0877569d4fed3cb691a618a1867dc52"
+    },
+    {
+      "path": "src/parts/textboxes/password-field/usage.md",
+      "bytes": 3343,
+      "sha256": "e57641bec5a63358cfa6d8d07d4b66ce6a87e06282eda6a126db15316a4dcff0"
+    },
+    {
+      "path": "src/parts/textboxes/password-field/vanilla/index.html",
+      "bytes": 1697,
+      "sha256": "1b2c8aebdf1fb96d9fdeab14b670906457c2de1741ab889795c63274ab9b4db3"
+    },
+    {
+      "path": "src/parts/textboxes/password-field/vanilla/init.ts",
+      "bytes": 191,
+      "sha256": "7f9bd0b28e34d483ac37ddf651d23378b671319d5facbbbce036d8f34fcb0c11"
+    },
+    {
+      "path": "src/parts/textboxes/password-field/vanilla/main.ts",
+      "bytes": 387,
+      "sha256": "295d4f137e385c74d91abaa86fdf26369e7882ee5da21288d6f0c45cf71e6a33"
+    },
+    {
+      "path": "src/parts/textboxes/prism-field/markup.html",
+      "bytes": 1236,
+      "sha256": "695fdd796db967ee12c4490339faebc535a931b0bb62d33f9d67863ed67d171b"
+    },
+    {
+      "path": "src/parts/textboxes/prism-field/meta.json",
+      "bytes": 1991,
+      "sha256": "909ad72b7e66a2c77ae2d3874baf7148a46cf2496b22d7f2802bfe7cd176d96a"
+    },
+    {
+      "path": "src/parts/textboxes/prism-field/prompt.md",
+      "bytes": 2575,
+      "sha256": "128248643ebf3575e88c497fb325c8a2188e74702135ab5b5f2bc56b4192bbac"
+    },
+    {
+      "path": "src/parts/textboxes/prism-field/react/Example.tsx",
+      "bytes": 518,
+      "sha256": "feda7723d2b705a13b07f7d0e028f388bfc6110315b9820bfed21bcd53d796f9"
+    },
+    {
+      "path": "src/parts/textboxes/prism-field/react/PrismField.tsx",
+      "bytes": 648,
+      "sha256": "9a1211d55f102f04e673aa1a550db06672ffa472773ac358b4b49bcaf51473f4"
+    },
+    {
+      "path": "src/parts/textboxes/prism-field/styles.css",
+      "bytes": 1461,
+      "sha256": "ed9f2abd408eb1f1c7de10e02703f7de69e2e10849d499871fdcb7090a1526c0"
+    },
+    {
+      "path": "src/parts/textboxes/prism-field/usage.md",
+      "bytes": 3334,
+      "sha256": "de0ffbe264011dfd5f2d2798bd7d1fcd776c5a5a1bba5889866258d0fa4c95f1"
+    },
+    {
+      "path": "src/parts/textboxes/prism-field/vanilla/index.html",
+      "bytes": 1616,
+      "sha256": "4fb4ca99dc38c15030449118a506f82eedb9f96b3e00dd84978bb57ca910eab9"
+    },
+    {
+      "path": "src/parts/textboxes/prism-field/vanilla/init.ts",
+      "bytes": 191,
+      "sha256": "7f9bd0b28e34d483ac37ddf651d23378b671319d5facbbbce036d8f34fcb0c11"
+    },
+    {
+      "path": "src/parts/textboxes/prism-field/vanilla/main.ts",
+      "bytes": 381,
+      "sha256": "82f723d6fdb30b58e0a67fd7d7feaecc2a7bb692cfc1ab63dc6db8ac20286e8b"
+    },
+    {
+      "path": "src/parts/textboxes/quiet-note/markup.html",
+      "bytes": 968,
+      "sha256": "5ecc453c449f824e47d13df2cf7b8252316d870e09c238e9a0f0615c066b0288"
+    },
+    {
+      "path": "src/parts/textboxes/quiet-note/meta.json",
+      "bytes": 2002,
+      "sha256": "d4a638216d9cddaa80b36364b06983905c3f6b027dfa2e7e0e649ee000262128"
+    },
+    {
+      "path": "src/parts/textboxes/quiet-note/prompt.md",
+      "bytes": 2576,
+      "sha256": "ce955cff903897f91affec6d32546491a1305d180f313bdf2fd3c77241fbb2e9"
+    },
+    {
+      "path": "src/parts/textboxes/quiet-note/react/Example.tsx",
+      "bytes": 510,
+      "sha256": "45973d901d58295996e44933c5045acc9e65306ea6539892e830ee60936265a0"
+    },
+    {
+      "path": "src/parts/textboxes/quiet-note/react/QuietNote.tsx",
+      "bytes": 654,
+      "sha256": "0e6cdf891a0efee56eca2f803e7409456c63431666d9a9116757e3ad6a9ffc8d"
+    },
+    {
+      "path": "src/parts/textboxes/quiet-note/styles.css",
+      "bytes": 760,
+      "sha256": "3ec056e5d3cb72cf959807024a7da73f0c7f027a865650823a61efd5e0b9d739"
+    },
+    {
+      "path": "src/parts/textboxes/quiet-note/usage.md",
+      "bytes": 3345,
+      "sha256": "072ab931639eb5bf12f7e611bce9dc2334a8e534f0da43fb8d30f73d80f09e72"
+    },
+    {
+      "path": "src/parts/textboxes/quiet-note/vanilla/index.html",
+      "bytes": 1347,
+      "sha256": "cda9ac4a824a576777dae6d523093eb11e3d21e204996a52bba2f8cf1426fa9d"
+    },
+    {
+      "path": "src/parts/textboxes/quiet-note/vanilla/init.ts",
+      "bytes": 191,
+      "sha256": "7f9bd0b28e34d483ac37ddf651d23378b671319d5facbbbce036d8f34fcb0c11"
+    },
+    {
+      "path": "src/parts/textboxes/quiet-note/vanilla/main.ts",
+      "bytes": 379,
+      "sha256": "9166d5f3a132cd6d6a83ab7c2ee13d72edbfab50d0a059ab2b0adfff906d67f1"
+    },
+    {
+      "path": "src/parts/textboxes/ribbon-field/markup.html",
+      "bytes": 1267,
+      "sha256": "ed646465af8641422dcbbbae53d9464a3aab2235f58f1cf3a5c83d4bb903366d"
+    },
+    {
+      "path": "src/parts/textboxes/ribbon-field/meta.json",
+      "bytes": 1999,
+      "sha256": "1db358c841425705752e83ae88ec2318701ce2eaccbd68f7879ba5a2952aa050"
+    },
+    {
+      "path": "src/parts/textboxes/ribbon-field/prompt.md",
+      "bytes": 2579,
+      "sha256": "2e5bdff4c0088903c6b24285151ad44ec81c1907ce5f6bbde555d60a7d79ad72"
+    },
+    {
+      "path": "src/parts/textboxes/ribbon-field/react/Example.tsx",
+      "bytes": 539,
+      "sha256": "fd034115c28c29fc3a72d0edee2fab612986f39c1263aca144327350567da9d3"
+    },
+    {
+      "path": "src/parts/textboxes/ribbon-field/react/RibbonField.tsx",
+      "bytes": 653,
+      "sha256": "ab753373688a922cb79d7dcfd4ff90d994a3c211f67df8be19e86454d2baf0aa"
+    },
+    {
+      "path": "src/parts/textboxes/ribbon-field/styles.css",
+      "bytes": 1331,
+      "sha256": "cece47b83562ef153098eb2c1f62554a194d2fc6ed8efa1ecf2a40a35cafdc4e"
+    },
+    {
+      "path": "src/parts/textboxes/ribbon-field/usage.md",
+      "bytes": 3338,
+      "sha256": "1f4bfaca01592b79ddd974702d290adfae5a6f17f50bc9b8d510f9567d439915"
+    },
+    {
+      "path": "src/parts/textboxes/ribbon-field/vanilla/index.html",
+      "bytes": 1648,
+      "sha256": "ce3a37acb61aa32b1f97a3e67d998e422c7127c9772fb4e318f8cb2477867a0a"
+    },
+    {
+      "path": "src/parts/textboxes/ribbon-field/vanilla/init.ts",
+      "bytes": 191,
+      "sha256": "7f9bd0b28e34d483ac37ddf651d23378b671319d5facbbbce036d8f34fcb0c11"
+    },
+    {
+      "path": "src/parts/textboxes/ribbon-field/vanilla/main.ts",
+      "bytes": 383,
+      "sha256": "536a2bf75592631d8787ef09bbcaee99433539038841f34f0dfc0aef127a426d"
+    },
+    {
+      "path": "src/parts/textboxes/signal-field/markup.html",
+      "bytes": 1228,
+      "sha256": "0ff2f0680fcba4101c5ac9ad889447062b63d22d1346ebce404dfc923a8e7f58"
+    },
+    {
+      "path": "src/parts/textboxes/signal-field/meta.json",
+      "bytes": 2003,
+      "sha256": "8ff2befb42541c255eff972e9af8543d474b999e38a46446a21642031a0b832b"
+    },
+    {
+      "path": "src/parts/textboxes/signal-field/prompt.md",
+      "bytes": 2583,
+      "sha256": "af0f6998c3043dd72997fc3687a47655db9a8024f41aead92c8b9108f19021e0"
+    },
+    {
+      "path": "src/parts/textboxes/signal-field/react/Example.tsx",
+      "bytes": 527,
+      "sha256": "12fc375bac72dabfac1a32a116bb6381a9255137b55c7a8297b63e20bf4fdb37"
+    },
+    {
+      "path": "src/parts/textboxes/signal-field/react/SignalField.tsx",
+      "bytes": 650,
+      "sha256": "23df0d105076d488379862c44f34075a52cf43ea2f2aa0b55a69a2c9c6ca33f7"
+    },
+    {
+      "path": "src/parts/textboxes/signal-field/styles.css",
+      "bytes": 1504,
+      "sha256": "034e585e4115cbab3cbb763e979372eeffcf7e9dcd9fcd663fff8aa4ba9b3eda"
+    },
+    {
+      "path": "src/parts/textboxes/signal-field/usage.md",
+      "bytes": 3335,
+      "sha256": "0a2b72758aa7833b7bb78ffdef90112b646a6b9f2557a519f8557f567d47f536"
+    },
+    {
+      "path": "src/parts/textboxes/signal-field/vanilla/index.html",
+      "bytes": 1609,
+      "sha256": "8bc113fcc00921e8f3667839c902815d7e964c23da52cbe96e64c9671a7b2e40"
+    },
+    {
+      "path": "src/parts/textboxes/signal-field/vanilla/init.ts",
+      "bytes": 191,
+      "sha256": "7f9bd0b28e34d483ac37ddf651d23378b671319d5facbbbce036d8f34fcb0c11"
+    },
+    {
+      "path": "src/parts/textboxes/signal-field/vanilla/main.ts",
+      "bytes": 383,
+      "sha256": "91d6fecd9d2c910f022e645eff05bb0d038bfa4360bea2ca082ff64157e01684"
+    },
+    {
+      "path": "src/parts/textboxes/soft-search/markup.html",
+      "bytes": 1189,
+      "sha256": "70a1ea8cfbf902a546d6fa3a45e39afb2f2cdac7c5ae4783b920d33df420e9e3"
+    },
+    {
+      "path": "src/parts/textboxes/soft-search/meta.json",
+      "bytes": 1994,
+      "sha256": "e24b0fc0714405dd931ad46e7913417cd8bac747b6d05dd946f55a349248fadf"
+    },
+    {
+      "path": "src/parts/textboxes/soft-search/prompt.md",
+      "bytes": 2593,
+      "sha256": "c44f329051686cd3d1f97d32e6c7b45e300cd679cebd4f26f22ec4a6ff87a60b"
+    },
+    {
+      "path": "src/parts/textboxes/soft-search/react/Example.tsx",
+      "bytes": 514,
+      "sha256": "7262bc58f49fea421d4b93e610466d2cedaefcfbc6fbeb39a692be9004ae4569"
+    },
+    {
+      "path": "src/parts/textboxes/soft-search/react/SoftSearch.tsx",
+      "bytes": 645,
+      "sha256": "245f66631c15e737f5c53cef4605b6e9ae9a52f62dbaa5cd1f1b1592b479f0a4"
+    },
+    {
+      "path": "src/parts/textboxes/soft-search/styles.css",
+      "bytes": 1035,
+      "sha256": "c365fdab02c30e30d08f1d1759269a4de703a5647d0577ad6b79c0c4135eaca2"
+    },
+    {
+      "path": "src/parts/textboxes/soft-search/usage.md",
+      "bytes": 3328,
+      "sha256": "99ed1220d6dbacfee10f7824fd200a611b6fe4ea27907412709c62c95d45889f"
+    },
+    {
+      "path": "src/parts/textboxes/soft-search/vanilla/index.html",
+      "bytes": 1569,
+      "sha256": "e3a05a77444e4982a6d1f57559a2151031ea6a0237477063565626d4af8ab766"
+    },
+    {
+      "path": "src/parts/textboxes/soft-search/vanilla/init.ts",
+      "bytes": 191,
+      "sha256": "7f9bd0b28e34d483ac37ddf651d23378b671319d5facbbbce036d8f34fcb0c11"
+    },
+    {
+      "path": "src/parts/textboxes/soft-search/vanilla/main.ts",
+      "bytes": 381,
+      "sha256": "943f4bd7636d99a694f1b72f7734a007a64e94be767839466ff410af800c3654"
+    },
+    {
+      "path": "src/parts/textboxes/terminal-field/markup.html",
+      "bytes": 1255,
+      "sha256": "d5b1bdb62764ab6d0684151d859986b9ab3d8560357b1957823e34097aedbf43"
+    },
+    {
+      "path": "src/parts/textboxes/terminal-field/meta.json",
+      "bytes": 2024,
+      "sha256": "2c5cea1d0c69e72ee0ffdf2849f080c17fc43d3c2e648091fb49c16ecd9f4916"
+    },
+    {
+      "path": "src/parts/textboxes/terminal-field/prompt.md",
+      "bytes": 2596,
+      "sha256": "5dd219e21fb8245d85df7cfd065ee8c370471b98a9435ab3b8cd1ff32c53961a"
+    },
+    {
+      "path": "src/parts/textboxes/terminal-field/react/Example.tsx",
+      "bytes": 543,
+      "sha256": "7be7361aed774a8b9154f3fc40af1c961a188f574264d37c396126d6c0da7895"
+    },
+    {
+      "path": "src/parts/textboxes/terminal-field/react/TerminalField.tsx",
+      "bytes": 672,
+      "sha256": "26570213a494dff6dbe802af68310da61c4f82ba3b4e927c4cf33069fd6a7fb5"
+    },
+    {
+      "path": "src/parts/textboxes/terminal-field/styles.css",
+      "bytes": 1619,
+      "sha256": "88519a489a47197f7b0745e829a02bb15132d3e452f855ddcc3716efba104f20"
+    },
+    {
+      "path": "src/parts/textboxes/terminal-field/usage.md",
+      "bytes": 3355,
+      "sha256": "959f1026acd57cd4e05efc333660a01cf8648d793822361d8042ddf7bdd96690"
+    },
+    {
+      "path": "src/parts/textboxes/terminal-field/vanilla/index.html",
+      "bytes": 1638,
+      "sha256": "06a6cf4005a63834e02422557652b713021a38f787cceea4820bdfbb5ca00bb5"
+    },
+    {
+      "path": "src/parts/textboxes/terminal-field/vanilla/init.ts",
+      "bytes": 191,
+      "sha256": "7f9bd0b28e34d483ac37ddf651d23378b671319d5facbbbce036d8f34fcb0c11"
+    },
+    {
+      "path": "src/parts/textboxes/terminal-field/vanilla/main.ts",
+      "bytes": 387,
+      "sha256": "321a7fc8abc9522d01535353a643b6455e3fd82fa2d50299a6d163c89927da3f"
+    },
+    {
+      "path": "src/parts/textboxes/underline-field/markup.html",
+      "bytes": 1159,
+      "sha256": "ee7e7ca0c25d7ec78db8bf7114b056f8995dac4e900386113c9f113c3f5e025d"
+    },
+    {
+      "path": "src/parts/textboxes/underline-field/meta.json",
+      "bytes": 1999,
+      "sha256": "3481d4949e86e1af65fcad80b1437a4d399d3e85194613bedd070860bb46a72a"
+    },
+    {
+      "path": "src/parts/textboxes/underline-field/prompt.md",
+      "bytes": 2582,
+      "sha256": "15a98c331e60d7153a0464b16a1e10b19ed030b6dbc5369f8975eb418703d0e4"
+    },
+    {
+      "path": "src/parts/textboxes/underline-field/react/Example.tsx",
+      "bytes": 524,
+      "sha256": "8cc85da57aa7a180ae66ca534e55c9a42b361985279fe72a15773c68cc3eeccd"
+    },
+    {
+      "path": "src/parts/textboxes/underline-field/react/UnderlineField.tsx",
+      "bytes": 648,
+      "sha256": "acafcbedf35706f7bbf04e20ea8b4381676d9dc735c9eae1a123bc03e4272ee7"
+    },
+    {
+      "path": "src/parts/textboxes/underline-field/styles.css",
+      "bytes": 878,
+      "sha256": "4cc93a3d1717c55cd60532c0ffe839de92d660ce2a229b5de9561bab31e758df"
+    },
+    {
+      "path": "src/parts/textboxes/underline-field/usage.md",
+      "bytes": 3329,
+      "sha256": "c9759e3d70ad02a674820d2e58c8e7fd07b52b38f91fd2e2bd671d238692837c"
+    },
+    {
+      "path": "src/parts/textboxes/underline-field/vanilla/index.html",
+      "bytes": 1543,
+      "sha256": "771f2883b03724a870df0956e363de53c1a666577192dcb3f504de79c71b2b6b"
+    },
+    {
+      "path": "src/parts/textboxes/underline-field/vanilla/init.ts",
+      "bytes": 191,
+      "sha256": "7f9bd0b28e34d483ac37ddf651d23378b671319d5facbbbce036d8f34fcb0c11"
+    },
+    {
+      "path": "src/parts/textboxes/underline-field/vanilla/main.ts",
+      "bytes": 389,
+      "sha256": "55ad7a8a116269a2fe20b9f90258d64a9a125f0d9af15a00424afd9ee848021e"
+    },
+    {
+      "path": "src/parts/textboxes/velvet-field/markup.html",
+      "bytes": 1250,
+      "sha256": "83540bc024e688f66b2e274fa27e6304470dfeceb70f2c70956f3711ec77eb58"
+    },
+    {
+      "path": "src/parts/textboxes/velvet-field/meta.json",
+      "bytes": 1999,
+      "sha256": "a49747a302611aa2833e64e0b58a9cf65491673cf07a4a765d0745e0ea0fe7c6"
+    },
+    {
+      "path": "src/parts/textboxes/velvet-field/prompt.md",
+      "bytes": 2579,
+      "sha256": "d7d624c714d66e943de918b833b81fc756b90523fe7d801de159289b218f12bb"
+    },
+    {
+      "path": "src/parts/textboxes/velvet-field/react/Example.tsx",
+      "bytes": 534,
+      "sha256": "f9d15e5c09603b4764bbd8c310b09c9d5f9414cdb07b12725ebddd6851e0d1cb"
+    },
+    {
+      "path": "src/parts/textboxes/velvet-field/react/VelvetField.tsx",
+      "bytes": 647,
+      "sha256": "1c2f7c7c343a073261b57af7fa92c1794fa362c802b9926716199cba9ce6ccb0"
+    },
+    {
+      "path": "src/parts/textboxes/velvet-field/styles.css",
+      "bytes": 1273,
+      "sha256": "d431c574ef537404082758a4ebbd2715bad475e96b9c8cb26ce179ac5635a921"
+    },
+    {
+      "path": "src/parts/textboxes/velvet-field/usage.md",
+      "bytes": 3332,
+      "sha256": "2043c38fc79e8f704b5eb2ebe747e4c727cb8dad2674192775247ff717c240e3"
+    },
+    {
+      "path": "src/parts/textboxes/velvet-field/vanilla/index.html",
+      "bytes": 1631,
+      "sha256": "041e55b6219c37851d49a2f8c37e16ac82840c90b48808d9963075f075aae32b"
+    },
+    {
+      "path": "src/parts/textboxes/velvet-field/vanilla/init.ts",
+      "bytes": 191,
+      "sha256": "7f9bd0b28e34d483ac37ddf651d23378b671319d5facbbbce036d8f34fcb0c11"
+    },
+    {
+      "path": "src/parts/textboxes/velvet-field/vanilla/main.ts",
+      "bytes": 383,
+      "sha256": "74bcd6de2ce6c19e75e0db72b738490fb63e7bddbc6bc14cdd3421684ac8e5ec"
+    },
+    {
       "path": "src/parts/toggles/aperture/markup.html",
       "bytes": 835,
       "sha256": "893a04d74ff20b2bdc954b4d9c88fce91f0a35aa648f48f1daff47ac8a3ad8b3"
@@ -6172,6 +7377,21 @@
       "sha256": "67a22ab22021b13441d1ad2aa50cc6c7fb8bf6128f20bf720acae9e6a4258938"
     },
     {
+      "path": "src/shared/text-field-base.css",
+      "bytes": 6964,
+      "sha256": "bf5deb80034122ab3f18c3b48b63abbb92c7c59b42aa929d3e5debe614f4b453"
+    },
+    {
+      "path": "src/shared/text-field-view.tsx",
+      "bytes": 6640,
+      "sha256": "b1b62217662f1f6079cf24257bce12611c30042d6a4d1d378c250183b26b182d"
+    },
+    {
+      "path": "src/shared/text-field.ts",
+      "bytes": 9332,
+      "sha256": "0ce2ed6f5d4808aa5a77978fdba581c2bb450dbfbc96afc4f3e57009f3d77db2"
+    },
+    {
       "path": "src/shared/toggle-controller.ts",
       "bytes": 10053,
       "sha256": "0b9c1d3063509095946f381629df5b31ca58eb7ec4eae66dff162efa90d4a4c6"
@@ -6198,8 +7418,8 @@
     },
     {
       "path": "scripts/catalog.ts",
-      "bytes": 8153,
-      "sha256": "ef54674aeec1b49818a26a82ba3a621b3d2d374a2e972d6391e648071c8603d4"
+      "bytes": 8362,
+      "sha256": "87c7c245286261cbb1fca9d25a83c4cc47f922bd3a86c4278a696a4a755c3af7"
     },
     {
       "path": "scripts/export-parts.ts",
@@ -6243,8 +7463,8 @@
     },
     {
       "path": "tests/browser.ts",
-      "bytes": 29030,
-      "sha256": "84c8b531305fcb7d6701df2c6786c36e8e3b08f4f6a73e0ba51be36094cb5dfb"
+      "bytes": 29109,
+      "sha256": "aa5ee57a00206cc248ba33fd7cba2deb232459c86af5f00e4a9f6c662a3284ac"
     },
     {
       "path": "tests/core.test.ts",
@@ -6263,8 +7483,8 @@
     },
     {
       "path": "tests/disclosures.test.ts",
-      "bytes": 3855,
-      "sha256": "abdc62930df299561dd1296b765cb28e5b60ba7cb8ad929a8935f7a95e632e49"
+      "bytes": 3847,
+      "sha256": "48cd05d3d97f96a836c73024203e6bce1de862086ad13c212898e5164131e0e3"
     },
     {
       "path": "tests/expansion.test.ts",
@@ -6278,8 +7498,8 @@
     },
     {
       "path": "tests/relocation.ts",
-      "bytes": 9154,
-      "sha256": "5393d8585f7cf31d8f69428e31a773eda51757847fc9b8444ea53143e1aa06a0"
+      "bytes": 9397,
+      "sha256": "d7ef903e94806c7937c53c0a5fd8f3eaedc023219799a60a5e7648c22adef42e"
     },
     {
       "path": "tests/scrollbars.browser.ts",
@@ -6297,6 +7517,16 @@
       "sha256": "ff56965e73a648256471faac220f9ee0ec3e53be5d6f0d7d2fbbf0d87e2f86e9"
     },
     {
+      "path": "tests/textfields.browser.ts",
+      "bytes": 19187,
+      "sha256": "2821e56ca6e773bb5460aef0d4067c9c3ffc0fea48c47817a8899c06f8528702"
+    },
+    {
+      "path": "tests/textfields.test.ts",
+      "bytes": 4802,
+      "sha256": "c81c45a15ec6611af235c669426d8c265a6db7185a202d758a56fc42d324085e"
+    },
+    {
       "path": "tests/vite-url.test.ts",
       "bytes": 2776,
       "sha256": "f70ab248785fc877720417cbcc42fa922498a7e6ee331fccadae7627e0eabf5c"
@@ -6308,13 +7538,13 @@
     },
     {
       "path": "docs/ADDING-PARTS.md",
-      "bytes": 12029,
-      "sha256": "bb4da861ebb0e6c6ebf472a892275fc9b61990c3d824bee4152f7fda242ccd8f"
+      "bytes": 13490,
+      "sha256": "4a13f803b1e477115a79c1e57669f8e1ffa86dd8a4da4b5d792a578313404a4c"
     },
     {
       "path": "docs/ARCHITECTURE.md",
-      "bytes": 4956,
-      "sha256": "3d42ec5411c85632c5effb211245419bdc3b02dc02497b939f112fc5f4f774fa"
+      "bytes": 5848,
+      "sha256": "bdd8665f959d631b48c4af760ee34e6094f68dec1c63480f10d9a9c57a3ffd87"
     },
     {
       "path": "docs/CI-FIX.md",
@@ -6323,8 +7553,8 @@
     },
     {
       "path": "docs/COLLECTION.md",
-      "bytes": 14307,
-      "sha256": "6e9e465328eef19803f94166032da77959dd2aff183f307ab352f63185fa51a0"
+      "bytes": 17407,
+      "sha256": "7950d871d8ab766ce4ab76bd105376f3d238d08efd0f0d6574758d5506823dbe"
     },
     {
       "path": "docs/DISCLOSURES.md",
@@ -6342,14 +7572,19 @@
       "sha256": "ebee471937eda6109f3bca536fc90280eb526da91b03760f561e7b2c97c60e58"
     },
     {
+      "path": "docs/TEXT-FIELDS.md",
+      "bytes": 8642,
+      "sha256": "b8c75754df509a915fc83e9b71e2187cd41c79c29cf23757c2a991e9244925b7"
+    },
+    {
       "path": "docs/VERIFICATION.md",
-      "bytes": 4950,
-      "sha256": "5ffd193440b6796d51270382db7d512276a56733bc5545a5b90c0da5f0bc05ed"
+      "bytes": 6039,
+      "sha256": "bf320c1b05a236ab91146487ae7cdd171b7e44b4f75191d6784bbd60e7df88b4"
     },
     {
       "path": "docs/verification.json",
-      "bytes": 4680,
-      "sha256": "b3acc1e9e58a69c0f62d2441fe4bb9c2ca486ee40a2549f7d175d9bf814e291a"
+      "bytes": 5441,
+      "sha256": "45e74f08f4f55f2c4ed5fda99e32ea2780ac000b6873272e1d9da38ddcd11643"
     },
     {
       "path": "public/.nojekyll",
@@ -6383,13 +7618,13 @@
     },
     {
       "path": ".github/workflows/verify.yml",
-      "bytes": 2200,
-      "sha256": "428ef2708ca9fcc242b95fd559f7a530aca4a3e2cbe30300c4ab2edd0530b844"
+      "bytes": 2372,
+      "sha256": "29a382c3c2eac9a704a2caa0df5d525c22b08a666c5ffc7fb12b66509874dd2d"
     },
     {
       "path": "index.html",
-      "bytes": 5786,
-      "sha256": "b4ad196716a15e4a9e39a7e94b7bb8bf1b768f0c7585a112ebb35a9388fe803f"
+      "bytes": 5842,
+      "sha256": "918f3c3a27e3b7609d84b0da6e2db42e9389af7d342754da97a761f468884d38"
     },
     {
       "path": "vite.config.ts",
@@ -6413,13 +7648,13 @@
     },
     {
       "path": "package.json",
-      "bytes": 1846,
-      "sha256": "2eb812d23f56c221b712045958c4310ffc8d2afbac0aef29d09703ea534d1017"
+      "bytes": 1984,
+      "sha256": "a6206a4c896c459ca3bc2a22c747999d8862d6c4371790a239dc6577ff33a9e2"
     },
     {
       "path": "README.md",
-      "bytes": 14491,
-      "sha256": "00f5eb95dc601b624ca94d208922e0fa963731751305da8a08c036dd1da0b8ce"
+      "bytes": 15628,
+      "sha256": "b30fca0ad662126df9584e37ea15d80f58162171189f8aac2a4ba68c9a0ca643"
     },
     {
       "path": "THIRD-PARTY-NOTICES.md",

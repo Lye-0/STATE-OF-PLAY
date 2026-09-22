@@ -1,0 +1,9 @@
+@import "../../../shared/text-field-base.css";
+/* Contact Field — CONTACT / EMAIL */
+
+.sop-textfield.sop-contact-field{--field-bg:#202833;--field-ink:#e7eff8;--field-muted:#a6b6c9;--field-accent:#b6d1ef;--field-edge:#526379;--field-radius:8px}
+.sop-textfield.sop-contact-field>.sop-field-shell{min-height:52px;padding:0 9px 0 14px;box-shadow:none}
+.sop-textfield.sop-contact-field .sop-field-symbol{display:block;width:27px;height:24px;border-right:1px solid #74859855;margin-right:3px}.sop-textfield.sop-contact-field .sop-field-symbol:before{content:'@';font:17px/24px Arial;position:absolute}
+.sop-textfield.sop-contact-field .sop-field-label{font-size:13px}
+
+.sop-textfield.sop-contact-field[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}

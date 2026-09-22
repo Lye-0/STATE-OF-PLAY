@@ -145,3 +145,14 @@ npm run test:scrollbars:react
 プルダウンの項目内容とアコーディオンの本文はmarkup.htmlとreact/Example.tsxに実例を書きます。React本体はitemsを受け取る共有Viewを使い、展示内容をデフォルト固定しません。
 登録・配布ルールは他のカテゴリと同じです。registryに登録後、全体の件数テストも意図した件数へ更新します。
 追加したスキンを単なる色違いだけで終わらせず、輪郭・文字・内部の情報構成・装飾・選択/展開状態まで設計してください。選択肢のHTMLは非インタラクティブな装飾に限り、アコーディオンの内部では入力を使えます。
+
+
+## テキストボックスを追加するとき（v3.5.0）
+
+`src/parts/textboxes/`を参考に、固有のmarkup/styles/meta/usage/promptとReact/Vanillaの入口・使用例を作ります。共通CSSはtext-field-base.css、動作はtext-field.ts、React描画はtext-field-view.tsxです。CSSを単に色違いにせず、入力面・ラベル・輪郭・フォーカスの関係を設計します。
+
+入力は本物のinput/textareaとし、クラス`sop-field-control`を付けます。固定IDのコピー、IME中の文字列加工、onkeydownを使った独自編集、毎フレームのvalue更新は不要です。クリア・表示ボタンはtype=button。パーツ本体に具体的な業務文言・保存先・検索APIを固定しません。
+
+メタデータはcategory=textboxesです。registryと公開propsを更新すると、依存する共有ファイルも配布に含まれます。内部のimportとCSSのurlを正しく書き、getDeliveryで生成されるパスを手作業で複製しません。展示のstatusには値そのものを流さず、filled/focused/composing等だけを使います。
+
+新しいスキンはtests/textfields.test.tsの件数・デザインテストと、tests/textfields.browser.tsの実入力検証へ加えます。ラベル、長文、複数個体、制御/非制御、readOnly/disabled、フォームreset、合成IME、実機IMEでの確認範囲を区別して記録してください。

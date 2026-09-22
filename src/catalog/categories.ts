@@ -4,5 +4,6 @@ export const categories = [
     { id: 'blocks', label: 'ブロック', english: 'SURFACES' },
     { id: 'scrollbars', label: 'スクロールバー', english: 'SCROLLBARS' },
     { id: 'dropdowns', label: 'プルダウン', english: 'DROPDOWNS' },
-    { id: 'accordions', label: 'アコーディオン', english: 'ACCORDIONS' }
+    { id: 'accordions', label: 'アコーディオン', english: 'ACCORDIONS' },
+    { id: 'textboxes', label: 'テキストボックス', english: 'TEXT FIELDS' }
 ];

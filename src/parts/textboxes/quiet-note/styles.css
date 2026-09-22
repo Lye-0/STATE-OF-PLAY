@@ -1,0 +1,9 @@
+@import "../../../shared/text-field-base.css";
+/* Quiet Note — QUIET / NOTES */
+
+.sop-textfield.sop-quiet-note{--field-bg:#242c29;--field-ink:#e7eee8;--field-muted:#a3b2a8;--field-accent:#b5ceba;--field-edge:#48574d;--field-radius:11px}
+.sop-textfield.sop-quiet-note>.sop-field-shell{border-color:#39483e;background:linear-gradient(#27312a,#252e29);box-shadow:inset 0 1px 4px #0002;padding:6px 16px!important}
+.sop-textfield.sop-quiet-note textarea.sop-field-control{line-height:1.85;min-height:118px}
+.sop-textfield.sop-quiet-note .sop-field-label{font-size:13px}
+
+.sop-textfield.sop-quiet-note[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}

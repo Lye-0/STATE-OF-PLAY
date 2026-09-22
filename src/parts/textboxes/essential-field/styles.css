@@ -1,0 +1,8 @@
+@import "../../../shared/text-field-base.css";
+/* Essential Field — ESSENTIAL / INPUT */
+
+.sop-textfield.sop-essential-field{--field-bg:#202527;--field-ink:#edf2ed;--field-muted:#abb8b3;--field-accent:#afd8ca;--field-edge:#4c5d57;--field-radius:9px}
+.sop-textfield.sop-essential-field>.sop-field-shell{min-height:50px;padding-top:0;padding-bottom:0;box-shadow:0 2px 4px #0002}
+.sop-textfield.sop-essential-field .sop-field-label{font-size:13px}
+
+.sop-textfield.sop-essential-field[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}

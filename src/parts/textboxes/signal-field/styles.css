@@ -1,0 +1,12 @@
+@import "../../../shared/text-field-base.css";
+/* Signal Field — INSTRUMENT / SIGNAL */
+
+.sop-textfield.sop-signal-field{--field-bg:#1b211d;--field-ink:#e8ead5;--field-accent:#e1d28c;--field-muted:#a4b19e;--field-edge:#626e5b;--field-radius:6px}
+.sop-textfield.sop-signal-field{padding:17px;border:1px solid #3c483f;border-radius:9px;background:linear-gradient(130deg,#2c352c,#1c251d);box-shadow:inset 0 1px #a9be9333,0 12px 28px #0005}
+.sop-textfield.sop-signal-field>.sop-field-shell{min-height:59px;background:#0f1710;border-color:#070f08;box-shadow:inset 0 3px 8px #0009,0 1px #9ca67a46}
+.sop-textfield.sop-signal-field .sop-field-control{font-family:Consolas,"Yu Gothic",monospace;letter-spacing:.5px}
+.sop-textfield.sop-signal-field .sop-field-symbol{display:block;width:7px;height:7px;border-radius:50%;background:#71894d;box-shadow:0 0 5px #b7d67d30}
+.sop-textfield.sop-signal-field[data-filled="true"] .sop-field-symbol{background:#d7e3a2;box-shadow:0 0 8px #d1ec8790}
+.sop-textfield.sop-signal-field>.sop-field-baseline{display:flex;gap:4px;margin-top:12px;height:3px}.sop-textfield.sop-signal-field>.sop-field-baseline i{width:20px;background:#6b7958}.sop-textfield.sop-signal-field>.sop-field-baseline span{flex:1;background:repeating-linear-gradient(90deg,#6c7c5438 0 4px,transparent 4px 8px)}
+
+.sop-textfield.sop-signal-field[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}

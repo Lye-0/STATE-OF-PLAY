@@ -1,0 +1,12 @@
+@import "../../../shared/text-field-base.css";
+/* Obsidian Field — VOLCANIC / FACET */
+
+.sop-textfield.sop-obsidian-field{--field-bg:#191a20;--field-ink:#e4e9f0;--field-accent:#c0d1ed;--field-edge:#5b6575;--field-muted:#a7b0bd;--field-radius:3px}
+.sop-textfield.sop-obsidian-field>.sop-field-shell{padding-left:23px;min-height:66px;transform:skewX(-5deg);background:linear-gradient(155deg,#3b414d 0,#1c2028 5%,#14171d 55%,#272c36 95%,#535b6c);border-color:#555b66 #333948 #171c25 #555b66;box-shadow:0 10px 20px #0007,inset 0 1px #8996a147}
+.sop-textfield.sop-obsidian-field>.sop-field-shell>:not(.sop-field-fx){transform:skewX(5deg)}
+.sop-textfield.sop-obsidian-field .sop-field-fx{background:linear-gradient(155deg,transparent 57%,#a5b7d815 57.3%,transparent 57.8%)}
+.sop-textfield.sop-obsidian-field:focus-within .sop-field-fx{background:linear-gradient(155deg,transparent 57%,#a5b7d838 57.3%,transparent 57.8%)}
+.sop-textfield.sop-obsidian-field .sop-field-caption{border:1px solid #52607955;padding:2px 7px}
+.sop-textfield.sop-obsidian-field>.sop-field-baseline{display:block;margin:15px 38% 0;height:2px;background:#728394;transition:margin .4s}.sop-textfield.sop-obsidian-field:focus-within>.sop-field-baseline{margin-left:16%;margin-right:16%;background:#d2ddf2}
+
+.sop-textfield.sop-obsidian-field[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}

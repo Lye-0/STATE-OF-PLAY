@@ -1,0 +1,10 @@
+@import "../../../shared/text-field-base.css";
+/* Soft Search — SOFT / SEARCH */
+
+.sop-textfield.sop-soft-search{--field-bg:#e9eff3;--field-ink:#293e50;--field-muted:#697f8e;--field-accent:#4f7b92;--field-edge:#c0d2dd;--field-radius:30px;--field-error:#a12d35}
+.sop-textfield.sop-soft-search .sop-field-label{color:#c9dbe5}
+.sop-textfield.sop-soft-search>.sop-field-shell{min-height:51px;box-shadow:0 3px 9px #0002;padding-top:0;padding-bottom:0}
+.sop-textfield.sop-soft-search .sop-field-symbol{display:block;width:16px;height:16px;border:1.5px solid currentColor;border-radius:50%;margin:0 5px 0 2px}.sop-textfield.sop-soft-search .sop-field-symbol:after{content:'';position:absolute;left:12px;top:12px;height:1.5px;width:6px;background:currentColor;transform:rotate(45deg)}
+.sop-textfield.sop-soft-search>.sop-field-meta{color:#aebecb}
+
+.sop-textfield.sop-soft-search[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}

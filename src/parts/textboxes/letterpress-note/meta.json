@@ -1,0 +1,77 @@
+{
+  "id": "letterpress-note",
+  "name": "Letterpress Note",
+  "category": "textboxes",
+  "order": 123,
+  "version": "1.0.0",
+  "tagline": "書きたくなる、余白。",
+  "description": "柔らかな紙、行間に落ちる影。書き足すほどに静かに広がる。",
+  "material": "COTTON / LETTERPRESS",
+  "motion": "FOCUS / WRITE",
+  "accent": "213,181,130",
+  "designType": "A",
+  "runtime": "Native input + CSS / event-driven",
+  "componentName": "LetterpressNote",
+  "tags": [
+    "Letterpress Note",
+    "letterpress-note",
+    "入力",
+    "テキストボックス",
+    "フォーム",
+    "textarea",
+    "text",
+    "日本語",
+    "textbox",
+    "A"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "label / description / placeholder",
+      "string / ReactNode",
+      "利用先の項目名・補助説明・未入力時の文言。"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "外部制御する値 / 内部制御の初期値。"
+    ],
+    [
+      "onValueChange / onChange",
+      "callback",
+      "そのままの入力値 / 通常のReactイベント。"
+    ],
+    [
+      "name / form / autoComplete",
+      "native attributes",
+      "フォーム送信や入力補完へ接続。"
+    ],
+    [
+      "disabled / readOnly / required",
+      "boolean",
+      "標準入力の無効 / 読取専用 / 必須属性。"
+    ],
+    [
+      "error / success / validateOnBlur",
+      "string / boolean",
+      "エラー文、成功表示、標準形式検証の表示タイミング。"
+    ],
+    [
+      "multiline / rows / autoGrow",
+      "boolean / number",
+      "複数行・自動伸長。文字を切らず上限後はスクロール。"
+    ],
+    [
+      "clearable / showCount / maxLength",
+      "boolean / number",
+      "クリア、UTF-16カウンター、標準入力の上限。"
+    ],
+    [
+      "prefix / suffix / inputRef",
+      "ReactNode / Ref",
+      "飾りの接頭辞・単位、ネイティブ入力のref。"
+    ]
+  ]
+}

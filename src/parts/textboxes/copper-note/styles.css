@@ -1,0 +1,10 @@
+@import "../../../shared/text-field-base.css";
+/* Copper Note — BRUSHED / COPPER */
+
+.sop-textfield.sop-copper-note{--field-bg:#442d25;--field-ink:#f5d4b6;--field-accent:#edc79d;--field-muted:#c6a38b;--field-edge:#aa7352;--field-radius:5px}
+.sop-textfield.sop-copper-note{padding:19px;border:1px solid #9d7355;border-radius:7px;background:repeating-linear-gradient(90deg,#ffd09a06 0 1px,transparent 1px 3px),linear-gradient(110deg,#4a352b,#775542 24%,#4c352a 63%,#765644);box-shadow:inset 0 1px #efc99588,0 17px 27px #0005}
+.sop-textfield.sop-copper-note>.sop-field-shell{background:#231b17c9;border:1px solid #31231b;box-shadow:inset 0 2px 9px #0007,0 1px #ddb58275}
+.sop-textfield.sop-copper-note .sop-field-fx{overflow:visible}.sop-textfield.sop-copper-note .sop-field-fx i{width:5px;height:5px;border-radius:50%;background:linear-gradient(135deg,#cfaa83,#584c3a 47%,#100d0b 49%,#9b7c5f 65%);box-shadow:0 1px 1px #0009}
+.sop-textfield.sop-copper-note .sop-field-fx i:nth-child(1){left:-13px;top:-43px}.sop-textfield.sop-copper-note .sop-field-fx i:nth-child(2){right:-13px;top:-43px}.sop-textfield.sop-copper-note .sop-field-fx i:nth-child(3){left:-13px;bottom:-42px}.sop-textfield.sop-copper-note .sop-field-fx i:nth-child(4){right:-13px;bottom:-42px}
+
+.sop-textfield.sop-copper-note[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}

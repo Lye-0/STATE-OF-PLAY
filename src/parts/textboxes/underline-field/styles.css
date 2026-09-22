@@ -1,0 +1,10 @@
+@import "../../../shared/text-field-base.css";
+/* Underline Field — LINE / INPUT */
+
+.sop-textfield.sop-underline-field{--field-bg:transparent;--field-ink:#e7e8ee;--field-muted:#a6aeb9;--field-accent:#c2d5ec;--field-edge:#697787;--field-radius:0px}
+.sop-textfield.sop-underline-field>.sop-field-heading{margin-bottom:3px}
+.sop-textfield.sop-underline-field>.sop-field-shell{padding:0 1px;min-height:50px;border:0;border-bottom:1px solid var(--field-edge);box-shadow:none}
+.sop-textfield.sop-underline-field>.sop-field-shell:focus-within{box-shadow:0 1px var(--field-accent);border-color:var(--field-accent)}
+.sop-textfield.sop-underline-field .sop-field-control{font-size:18px}
+
+.sop-textfield.sop-underline-field[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}

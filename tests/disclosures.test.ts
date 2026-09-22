@@ -6,14 +6,14 @@ import {buildCatalog,ROOT,FORMATS} from '../scripts/catalog.ts';
 import {getDelivery,buildPrompt,buildUsage,packageContents} from '../src/catalog/delivery.ts';
 const {parts}=buildCatalog();
 const additions=parts.filter(p=>p.category==='dropdowns'||p.category==='accordions');
-test('five complete collections retain the previous 72 parts and add 48 designed disclosures',()=>{
- assert.equal(parts.length,120);assert.equal(additions.length,48);
- for(const category of ['toggles','blocks','scrollbars','dropdowns','accordions'])assert.equal(parts.filter(p=>p.category===category).length,24);
+test('six collections retain 48 designed disclosures and add text fields',()=>{
+ assert.equal(parts.length,144);assert.equal(additions.length,48);
+ for(const category of ['toggles','blocks','scrollbars','dropdowns','accordions','textboxes'])assert.equal(parts.filter(p=>p.category===category).length,24);
  for(const category of ['dropdowns','accordions']){
   assert.equal(additions.filter(p=>p.category===category&&p.designType==='A').length,16);
   assert.equal(additions.filter(p=>p.category===category&&p.designType==='B').length,8);
  }
- assert.equal(new Set(parts.map(p=>p.id)).size,120);assert.equal(new Set(parts.map(p=>p.name)).size,120);
+ assert.equal(new Set(parts.map(p=>p.id)).size,144);assert.equal(new Set(parts.map(p=>p.name)).size,144);
 });
 test('dropdowns have designed choice interiors and selection semantics, never action-menu semantics',()=>{
  for(const p of additions.filter(p=>p.category==='dropdowns')){

@@ -1,0 +1,13 @@
+@import "../../../shared/text-field-base.css";
+/* Letterpress Note — COTTON / LETTERPRESS */
+
+.sop-textfield.sop-letterpress-note{--field-bg:#e8e0cc;--field-ink:#453b2f;--field-muted:#746752;--field-accent:#866440;--field-edge:#bfb397;--field-radius:3px;--field-error:#9e2d31}
+.sop-textfield.sop-letterpress-note{padding:21px 23px 19px;background:linear-gradient(105deg,#eee7d5,#e2d8be);box-shadow:0 14px 26px #0004,inset 0 0 0 1px #fff3;border-radius:3px}
+.sop-textfield.sop-letterpress-note>.sop-field-heading{border-bottom:1px solid #a89b7b6b;padding-bottom:12px;margin-bottom:2px}
+.sop-textfield.sop-letterpress-note .sop-field-label{font-family:Georgia,"Yu Mincho",serif;font-size:17px;font-weight:400}
+.sop-textfield.sop-letterpress-note>.sop-field-shell{background:transparent;border:0;border-radius:0;padding:5px 0!important;box-shadow:none}
+.sop-textfield.sop-letterpress-note textarea.sop-field-control{background:repeating-linear-gradient(transparent 0 29px,#9d8b661f 29px 30px);line-height:30px;padding:0;min-height:91px;font-family:Georgia,"Yu Mincho",serif}
+.sop-textfield.sop-letterpress-note>.sop-field-shell:focus-within{box-shadow:0 1px 0 #8d7356}
+.sop-textfield.sop-letterpress-note .sop-field-meta{border-top:1px solid #a89b7b55;padding-top:8px}
+
+.sop-textfield.sop-letterpress-note[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}

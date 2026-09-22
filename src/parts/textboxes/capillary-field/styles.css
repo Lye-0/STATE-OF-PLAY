@@ -1,0 +1,11 @@
+@import "../../../shared/text-field-base.css";
+/* Capillary Field — LIQUID / REFRACTION */
+
+.sop-textfield.sop-capillary-field{--field-bg:#132a30;--field-accent:#a1e9e7;--field-muted:#99c3c8;--field-edge:#598e98;--field-radius:30px}
+.sop-textfield.sop-capillary-field>.sop-field-shell{min-height:65px;padding-left:18px;background:linear-gradient(#adc9d427,#12313ad9 33%,#112a36ed 74%,#83bcc32f);box-shadow:inset 0 2px 3px #c8faff55,inset 0 -2px 3px #98ddeb60,0 15px 25px #0005}
+.sop-textfield.sop-capillary-field .sop-field-symbol{display:block;width:29px;height:29px;border-radius:50%;border:1px solid #c4ffedb3;background:radial-gradient(circle at 29% 23%,#dafff2b5,#57b9cf60 36%,#133b5830);box-shadow:inset 0 -1px 4px #c8fff68c;transition:transform .5s}
+.sop-textfield.sop-capillary-field:focus-within .sop-field-symbol{transform:scale(.83,1.04)}
+.sop-textfield.sop-capillary-field .sop-field-fx{background:repeating-linear-gradient(90deg,transparent 0 24px,#b7e8f70d 24px 25px);border:5px solid transparent}
+.sop-textfield.sop-capillary-field .sop-field-fx i:first-child{left:4%;right:4%;bottom:1px;height:9px;border-top:1px solid #99e4dc40;border-radius:50%;background:#8decd412;transition:height .7s}.sop-textfield.sop-capillary-field:focus-within .sop-field-fx i:first-child{height:29px}
+
+.sop-textfield.sop-capillary-field[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}

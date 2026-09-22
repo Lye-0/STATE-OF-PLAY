@@ -320,3 +320,20 @@
 .collection-toolbar .search-box{flex:0 0 205px}
 @media(max-width:1050px){.collection-toolbar{flex-wrap:wrap;gap:5px;padding-top:12px}.collection-toolbar .search-box{flex:1 1 230px}.category-tabs{width:100%;order:2;height:49px;gap:26px}.dropdown-card .object-stage{padding:28px 25px}.accordion-card .object-stage{padding:24px 20px}.accordion-card .sop-accordion{--acc-padding:17px}.accordion-card .sop-accordion-trigger{gap:10px}.accordion-card .sop-accordion-title b{font-size:13px}.accordion-card .sop-panel-metrics small{font-size:6px}}
 @media(max-width:600px){.collection-toolbar .search-box{flex-basis:100%}.category-tabs{gap:24px}.dropdown-card .object-stage{height:227px;padding:24px 25px}.dropdown-card .card-bottom h2,.accordion-card .card-bottom h2{font-size:23px}.accordion-card .object-stage{min-height:0;padding:22px 18px}.accordion-preview .preview-stage{padding:12px 15px}.dropdown-preview .preview-stage{height:174px}.accordion-preview .sop-accordion-title b{font-size:14px}.accordion-card .sop-accordion-title b{font-size:14px}.disclosure-controls{margin-top:2px}.accordion-card .card-bottom{padding-top:5px}}
+
+/* Text fields are shown at their real input size, never scaled down to unreadable text. */
+.textbox-card .object-stage{height:auto;min-height:278px;padding:26px 34px 30px;align-items:center}
+.textbox-card .stage-mount{display:flex;justify-content:center;align-items:center;width:100%;min-width:0;max-width:400px;transform:none}
+.textbox-card .sop-textfield{width:100%}
+.textbox-card .card-bottom{pointer-events:auto}
+.textbox-preview .preview-stage{height:auto;min-height:265px;padding:28px 16px;display:flex;align-items:center;justify-content:center;transform:none}
+.textbox-preview .sop-textfield{width:100%;transform:none}
+.textfield-controls{margin:16px 0 22px;border:1px solid #383e41;border-radius:9px;padding:12px;background:#1a1e20}
+.textfield-control-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 10px}
+.textfield-control-row label{display:flex;align-items:center;gap:6px;font-size:11px;color:#bcc5c9}
+.textfield-control-row select{font:11px inherit;color:#e0e7df;border:1px solid #485158;border-radius:5px;background:#242a2e;padding:6px 8px}
+.textfield-control-row input{accent-color:#c9ddb6;margin:0;width:14px;height:14px}
+.textfield-control-row .small-button{padding:7px 9px;font-size:10px}
+.textfield-controls p{font-size:10px;line-height:1.8;color:#9ca8b0;margin:8px 0 0}
+@media(max-width:600px){.textbox-card .object-stage{padding:26px 20px 30px;min-height:256px}.textbox-card .card-bottom h2{font-size:23px}.textbox-card .card-bottom h2 span{font-size:9px}.textbox-preview .preview-stage{padding:24px 12px}.textbox-card .card-bottom p{line-height:1.9}}
+@media(max-width:360px){.textbox-card .object-stage{padding-left:15px;padding-right:15px}.textbox-card .card-bottom h2{display:block}.textbox-card .card-bottom h2 span{display:block;margin-top:3px}}

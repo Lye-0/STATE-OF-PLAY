@@ -1,0 +1,10 @@
+@import "../../../shared/text-field-base.css";
+/* Orbit Search — ORBITAL / FINDER */
+
+.sop-textfield.sop-orbit-search{--field-bg:#182823;--field-accent:#b8e4cf;--field-muted:#9eb8ad;--field-edge:#52776a;--field-radius:99px}
+.sop-textfield.sop-orbit-search>.sop-field-shell{min-height:65px;padding-left:16px;border:1px solid #568071;background:radial-gradient(ellipse at 30% 0,#4c766043,transparent 70%),#18251f;box-shadow:0 0 0 5px #1b2f2545,0 0 0 6px #65917936,0 12px 25px #0005}
+.sop-textfield.sop-orbit-search .sop-field-symbol{display:block;width:30px;height:30px;border:1px solid #8bc0a769;border-radius:50%;transform:rotate(-30deg)}.sop-textfield.sop-orbit-search .sop-field-symbol:before{content:'';position:absolute;inset:7px;border:1px solid currentColor;border-radius:50%}.sop-textfield.sop-orbit-search .sop-field-symbol:after{content:'';position:absolute;left:20px;top:20px;width:7px;height:1px;background:currentColor;transform:rotate(45deg)}
+.sop-textfield.sop-orbit-search:focus-within .sop-field-symbol{transform:rotate(0);transition:transform .55s}
+.sop-textfield.sop-orbit-search .sop-field-heading{padding:0 9px}.sop-textfield.sop-orbit-search .sop-field-meta{padding:0 9px}
+
+.sop-textfield.sop-orbit-search[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}

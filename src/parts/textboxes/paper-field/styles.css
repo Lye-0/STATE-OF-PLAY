@@ -1,0 +1,9 @@
+@import "../../../shared/text-field-base.css";
+/* Paper Field — PAPER / INPUT */
+
+.sop-textfield.sop-paper-field{--field-bg:#fafaf7;--field-ink:#29312f;--field-muted:#757f78;--field-accent:#547869;--field-edge:#c4cec5;--field-radius:8px;--field-error:#a12d35}
+.sop-textfield.sop-paper-field{padding:20px;background:#e9eee7;border:1px solid #f4f5ef;border-radius:13px;box-shadow:0 9px 20px #0002}
+.sop-textfield.sop-paper-field>.sop-field-shell{min-height:50px;padding-top:0;padding-bottom:0;box-shadow:0 2px 3px #26332108}
+.sop-textfield.sop-paper-field .sop-field-label{font-size:13px;font-weight:600}
+
+.sop-textfield.sop-paper-field[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}

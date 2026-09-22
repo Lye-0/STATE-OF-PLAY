@@ -1,28 +1,35 @@
 {
-  "version": "3.4.0",
+  "version": "3.5.0",
+  "baseline": "3.4.0-full-repository.zip",
   "date": "2026-09-22",
-  "parts": 120,
-  "categories": {
-    "toggles": 24,
-    "blocks": 24,
-    "scrollbars": 24,
-    "dropdowns": 24,
-    "accordions": 24
+  "parts": 144,
+  "categories": 6,
+  "newTextFields": {
+    "total": 24,
+    "A": 16,
+    "B": 8,
+    "nativeInput": 17,
+    "nativeTextarea": 7
   },
-  "newParts": 48,
-  "unchangedPreviousPartFiles": 720,
-  "changedPreviousPartFiles": [],
-  "unit": {
-    "passed": 67,
+  "preservedOriginalPartFiles": {
+    "total": 1200,
+    "modified": 0
+  },
+  "typecheckApp": {
+    "typescript": "5.8.3",
+    "strict": true,
+    "passed": true
+  },
+  "unitTests": {
+    "passed": 74,
     "failed": 0
   },
-  "typecheckApp": "passed: TypeScript 5.8.3 strict",
-  "browser": {
+  "galleryBrowser": {
     "mode": "network-restricted adapter; Vite not executed",
     "react": "real installed browser runtime; production",
     "passed": 21,
     "tests": [
-      "Gallery: 120 parts, no runtime errors",
+      "Gallery: 144 parts, no runtime errors",
       "A/B and category filters intersect, counts remain correct, and search resets cleanly",
       "Liquid, Fold, Prism have intrinsic opposite state labels and distinct optical treatment",
       "Compact B switches retain real sizes, native keyboard and drag states",
@@ -32,7 +39,7 @@
       "Denied clipboard: manual fallback, no false success, focus restored",
       "Selected source download matches the original file bytes",
       "Focus trap / Escape / restoration to gallery trigger",
-      "Both layouts: all 6880 code previews equal exported sources and selection follows the source identity",
+      "Both layouts: all 8224 code previews equal exported sources and selection follows the source identity",
       "Downloaded ZIP and CLI share exact files, README, prompt, manifest in both layouts and modes",
       "Guide and AI prompt remain copyable in every export format",
       "Mobile 320/390/768: no overflow, usable code and file picker",
@@ -46,52 +53,60 @@
     ],
     "errors": []
   },
-  "disclosures": {
-    "transport": "explicit synthetic browser document (NOT Vite HTTP)",
-    "react": "actual installed runtime supplied",
+  "textFieldBrowser": {
+    "mode": "explicit synthetic documents (not Vite HTTP)",
+    "react": "actual provided production runtime",
     "passed": [
-      "24 dropdowns: actual options, End/Enter commit, Escape cancellation, no accidental detail dialog",
-      "Dropdown top layer in the detail modal; first Escape closes choices, next closes detail",
-      "24 accordions: real height transitions, single expand, native buttons and keyboard focus",
-      "Accordion designed interiors remain interactive; multiple expand controls work",
-      "Both new categories at 320 / 390 / 768px: no page overflow, viewport-contained popup and detail controls",
-      "Native select: typeahead, form submission/reset, disabled choice, disabled field and external focus",
-      "Controlled native select refuses commits until setValue; empty choices stay safe",
-      "Accordion controlled refusal, dynamic content height, focus recovery and required-open policy",
-      "Nested accordions keep independent state and unique ids; cleanup leaves no RAF",
-      "Reduced-motion: menus and accordion panels use no animated transition",
-      "Actual React tsx/portable: 48 exports, controlled state, item updates, refusal and mount cleanup",
-      "Actual React tsx/original: 48 exports, controlled state, item updates, refusal and mount cleanup",
-      "Actual React jsx/portable: 48 exports, controlled state, item updates, refusal and mount cleanup",
-      "Actual React jsx/original: 48 exports, controlled state, item updates, refusal and mount cleanup"
+      "Gallery: 24 native editable fields, labels focus the input, typing never opens details",
+      "Native editing: caret movement, undo, clear focus and safe text display",
+      "Detail controls: value survives format/layout changes; error, success, readOnly, disabled and reset",
+      "Email validation on blur, explicit error recovery and password visibility without submission",
+      "IME synthetic lifecycle preserves composition values and disables destructive controls",
+      "Multiline fields grow and shrink within a bounded height without dropping text",
+      "24 fields at 320/390/768: no horizontal overflow, 16px native text and usable detail controls",
+      "Without initialization: native input and textarea still accept ordinary text",
+      "Native forms: independent IDs, values, reset cancellation, disabled exclusion and readonly submission",
+      "Native maxlength, no-JS editing fallback and teardown stop enhancement listeners",
+      "Real React tsx/portable: all 24 exports, controlled/uncontrolled editing and value changes",
+      "Real React tsx/portable: native onChange clear, selection, independent IDs and repeated teardown",
+      "Real React tsx/original: all 24 exports, controlled/uncontrolled editing and value changes",
+      "Real React tsx/original: native onChange clear, selection, independent IDs and repeated teardown",
+      "Real React jsx/portable: all 24 exports, controlled/uncontrolled editing and value changes",
+      "Real React jsx/portable: native onChange clear, selection, independent IDs and repeated teardown",
+      "Real React jsx/original: all 24 exports, controlled/uncontrolled editing and value changes",
+      "Real React jsx/original: native onChange clear, selection, independent IDs and repeated teardown",
+      "Reduced motion and forced colours keep native input and focus available"
     ],
-    "errors": []
+    "errors": [],
+    "ime": "Synthetic composition lifecycle; OS IME not automated"
   },
   "relocation": {
-    "consumerTopologies": 6,
-    "partsPerTopology": 120,
-    "mounted": 720,
-    "transport": "explicit offline/native ESM import-map fixtures"
+    "consumerLayouts": 6,
+    "mountedParts": 864,
+    "passed": true,
+    "includesTypedNewFields": true
   },
-  "cleanExtract": {
-    "appTypecheck": "passed",
-    "unitPassed": 67
-  },
+  "codePreviewFiles": 8224,
+  "sourceAndReviewPackages": 2304,
   "environment": {
     "node": "22.16.0",
     "typescript": "5.8.3",
-    "nodeTypesInTestEnvironment": "24.0.4",
     "chromium": "144.0.7559.96",
     "playwright": "1.57.0-beta-1764944708000",
-    "react": "18.2.0; actual installed JupyterLab production runtime, not a replacement"
+    "react": "19.1.1 production (real installed runtime)",
+    "nodeTypes": "24.0.4"
   },
-  "notExecuted": [
-    "real Vite build and HTTP serving",
-    "full typecheck with project-pinned Vite, React and Node declarations",
-    "React19 development StrictMode-specific checks",
-    "npm audit",
-    "Windows Explorer and Safari/iOS actual-device checks",
-    "GitHub Actions remote run"
+  "limitations": [
+    "Actual Vite build and HTTP serving not executed: npm registry unavailable",
+    "Full official React/Vite typecheck and npm audit not executed",
+    "React development StrictMode double-effect cycle not exercised; explicit remount cycles tested",
+    "Native OS IME, Windows Explorer security, Safari and iOS devices not tested",
+    "Clipboard success/denied uses test harness; OS clipboard not accessed"
   ],
-  "dependencyVersionsChanged": false
+  "extractedArchiveRetest": {
+    "appStrictTypecheck": true,
+    "unitTestsPassed": 74,
+    "failed": 0,
+    "sourceFilesIdentical": true
+  }
 }

@@ -1,0 +1,44 @@
+/* All editing remains in the native control. Styles are scoped; no page-wide input reset. */
+.sop-textfield{--field-bg:#202426;--field-ink:#eef0eb;--field-muted:#abb4b1;--field-accent:#c7e5c4;--field-edge:#414c49;--field-radius:12px;--sop-field-max-height:280px;position:relative;isolation:isolate;box-sizing:border-box;width:min(100%,360px);min-width:0;color:var(--field-ink);font-family:Arial,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;font-size:14px;line-height:1.5;text-align:left;transition:opacity .2s}
+.sop-textfield *,.sop-textfield *::before,.sop-textfield *::after{box-sizing:border-box}
+.sop-textfield [hidden]{display:none!important}
+.sop-textfield>.sop-field-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 12px;min-height:20px}
+.sop-textfield .sop-field-label{font:inherit;font-size:12px;font-weight:500;letter-spacing:.02em;cursor:text;line-height:1.6;color:var(--field-ink)}
+.sop-textfield .sop-field-required{color:var(--field-accent)}
+.sop-textfield .sop-field-caption{font:8px/1.6 Consolas,"Liberation Mono",monospace;letter-spacing:1.6px;color:var(--field-muted);white-space:nowrap}
+.sop-textfield>.sop-field-shell{position:relative;isolation:isolate;display:flex;align-items:center;gap:10px;padding:3px 9px 3px 16px;min-width:0;min-height:58px;border:1px solid var(--field-edge);border-radius:var(--field-radius);background:var(--field-bg);box-shadow:inset 0 1px 1px #ffffff05,0 5px 14px #00000016;transition:border-color .24s,box-shadow .3s,background .3s}
+.sop-textfield>.sop-field-shell:focus-within{border-color:var(--field-accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--field-accent) 16%,transparent),0 10px 25px #0000001a}
+.sop-textfield .sop-field-control{position:relative;display:block;flex:1 1 0%;min-width:0;width:0;margin:0;padding:12px 0;font:inherit;font-size:16px;font-weight:400;line-height:1.5;color:var(--field-ink);background:transparent;border:0;border-radius:2px;outline:0;box-shadow:none;caret-color:var(--field-accent);text-overflow:ellipsis;text-align:inherit;opacity:1;transition:none;-webkit-appearance:none;appearance:none}
+.sop-textfield .sop-field-control::placeholder{color:var(--field-muted);opacity:.72}
+.sop-textfield .sop-field-control::selection{background:color-mix(in srgb,var(--field-accent) 35%,transparent);color:var(--field-ink)}
+.sop-textfield .sop-field-control::-webkit-search-cancel-button{display:none}
+.sop-textfield .sop-field-control:autofill{box-shadow:inset 0 0 0 1000px var(--field-bg);-webkit-text-fill-color:var(--field-ink);caret-color:var(--field-accent)}
+.sop-textfield textarea.sop-field-control{min-height:112px;max-height:var(--sop-field-max-height);resize:vertical;white-space:pre-wrap;overflow-wrap:anywhere;text-overflow:clip}
+.sop-textfield[data-auto-grow="true"] textarea.sop-field-control{resize:none}
+.sop-textfield[data-multiline="true"]>.sop-field-shell{align-items:flex-start;padding:8px 17px;}
+.sop-textfield[data-multiline="true"] .sop-field-control{width:100%}
+.sop-textfield .sop-field-prefix,.sop-textfield .sop-field-suffix{flex:none;color:var(--field-muted);font:12px/1.4 Consolas,monospace;pointer-events:none}
+.sop-textfield .sop-field-suffix{padding-right:5px}
+.sop-textfield .sop-field-symbol{display:none;position:relative;flex:none;width:20px;height:20px;color:var(--field-accent);pointer-events:none}
+.sop-textfield .sop-field-clear,.sop-textfield .sop-field-reveal{display:grid;place-items:center;align-self:center;flex:none;width:36px;height:38px;padding:8px;margin:0;background:transparent;border:1px solid transparent;border-radius:8px;color:var(--field-muted);cursor:pointer;touch-action:manipulation;transition:background .2s,color .2s}
+.sop-textfield .sop-field-clear svg,.sop-textfield .sop-field-reveal svg{width:18px;height:18px;stroke:currentColor;stroke-width:1.25}
+.sop-textfield .sop-field-eye-slash{display:none}
+.sop-textfield .sop-field-reveal[aria-pressed="true"] .sop-field-eye-slash{display:block}
+.sop-textfield .sop-field-clear:hover,.sop-textfield .sop-field-reveal:hover{color:var(--field-ink);background:color-mix(in srgb,var(--field-ink) 8%,transparent)}
+.sop-textfield .sop-field-clear:focus-visible,.sop-textfield .sop-field-reveal:focus-visible{outline:2px solid var(--field-accent);outline-offset:1px}
+.sop-textfield>.sop-field-meta{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin:10px 1px 0;color:var(--field-muted);font-size:10px;line-height:1.8;min-width:0}
+.sop-textfield .sop-field-help{min-width:0;overflow-wrap:anywhere}
+.sop-textfield .sop-field-counter{display:none;flex:none;font:9px/1.8 Consolas,monospace;font-variant-numeric:tabular-nums;white-space:nowrap;opacity:.8}
+.sop-textfield[data-show-count="true"] .sop-field-counter{display:inline}
+.sop-textfield>.sop-field-validation{color:var(--field-error,#ffa5a3);margin:8px 0 0;font-size:11px;line-height:1.7;padding-left:0;overflow-wrap:anywhere}
+.sop-textfield[data-invalid="true"]>.sop-field-shell{border-color:#df7479;box-shadow:0 0 0 2px #d5797a20}
+.sop-textfield[data-success="true"]:not([data-invalid="true"])>.sop-field-shell{border-color:#7aba97}
+.sop-textfield[data-readonly="true"]>.sop-field-shell{border-style:dashed}
+.sop-textfield[data-disabled="true"]{opacity:.48}
+.sop-textfield .sop-field-control:disabled,.sop-textfield button:disabled{cursor:not-allowed}
+.sop-textfield .sop-field-fx{position:absolute;inset:0;border-radius:inherit;overflow:hidden;pointer-events:none;z-index:-1}
+.sop-textfield .sop-field-fx i{position:absolute;display:block;pointer-events:none}
+.sop-textfield>.sop-field-baseline{display:none;position:relative;pointer-events:none}
+@media(max-width:400px){.sop-textfield>.sop-field-shell{gap:7px}.sop-textfield .sop-field-caption{letter-spacing:1px;font-size:7px}.sop-textfield .sop-field-prefix,.sop-textfield .sop-field-suffix{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.sop-textfield,.sop-textfield *,.sop-textfield *::before,.sop-textfield *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(forced-colors:active){.sop-textfield{color:CanvasText}.sop-textfield>.sop-field-shell{background:Canvas!important;color:CanvasText!important;border:1px solid ButtonText!important;box-shadow:none!important;clip-path:none!important}.sop-textfield>.sop-field-shell:focus-within{outline:2px solid Highlight;outline-offset:3px}.sop-textfield .sop-field-control{color:CanvasText!important;-webkit-text-fill-color:CanvasText;caret-color:CanvasText}.sop-textfield .sop-field-label,.sop-textfield .sop-field-help,.sop-textfield .sop-field-counter,.sop-textfield>.sop-field-validation{color:CanvasText!important}.sop-textfield .sop-field-fx,.sop-textfield>.sop-field-baseline{display:none!important}.sop-textfield .sop-field-clear,.sop-textfield .sop-field-reveal{color:ButtonText!important}.sop-textfield[data-invalid="true"]>.sop-field-shell{border:2px dashed LinkText!important}}

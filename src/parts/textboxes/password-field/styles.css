@@ -1,0 +1,10 @@
+@import "../../../shared/text-field-base.css";
+/* Password Field — ESSENTIAL / PASSWORD */
+
+.sop-textfield.sop-password-field{--field-bg:#fbfbfc;--field-ink:#323744;--field-muted:#737c8f;--field-accent:#757baa;--field-edge:#bfc4d4;--field-radius:9px;--field-error:#a12d35}
+.sop-textfield.sop-password-field{padding:20px;border-radius:12px;border:1px solid #e6e8ee;background:#e9ebf2}
+.sop-textfield.sop-password-field>.sop-field-shell{min-height:51px;padding-top:0;padding-bottom:0;box-shadow:0 1px 3px #2a274c0a}
+.sop-textfield.sop-password-field .sop-field-label{font-size:13px;font-weight:600}
+.sop-textfield.sop-password-field .sop-field-reveal{width:37px;border-radius:6px}
+
+.sop-textfield.sop-password-field[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}

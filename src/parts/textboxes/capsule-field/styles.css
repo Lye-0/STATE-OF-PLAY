@@ -1,0 +1,10 @@
+@import "../../../shared/text-field-base.css";
+/* Capsule Field — SMOKED / CAPSULE */
+
+.sop-textfield.sop-capsule-field{--field-bg:#252b35;--field-ink:#d8e7f5;--field-accent:#b8d6eb;--field-muted:#a3b8cd;--field-edge:#677c90;--field-radius:32px}
+.sop-textfield.sop-capsule-field>.sop-field-shell{min-height:68px;padding-left:23px;padding-right:13px;background:linear-gradient(180deg,#a9c0cf2b,#16253450 22%,#17222fc9 70%,#658fa233);border:1px solid #8096a9a3;box-shadow:inset 0 1px 3px #dbf2ff60,inset 0 -2px 2px #9accf050,0 16px 23px #0005}
+.sop-textfield.sop-capsule-field .sop-field-symbol{display:block;width:14px;height:14px;border:1px solid #b2cfdd;border-radius:3px;top:2px}.sop-textfield.sop-capsule-field .sop-field-symbol:before{content:'';position:absolute;left:2px;top:-8px;width:8px;height:8px;border:1px solid currentColor;border-radius:8px 8px 0 0}
+.sop-textfield.sop-capsule-field .sop-field-reveal{width:38px;height:38px;border-radius:50%;border:1px solid #89aec555;background:linear-gradient(130deg,#b7d0e821,#151c2622)}
+.sop-textfield.sop-capsule-field .sop-field-heading{padding:0 8px}
+
+.sop-textfield.sop-capsule-field[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}

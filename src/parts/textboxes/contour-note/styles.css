@@ -1,0 +1,11 @@
+@import "../../../shared/text-field-base.css";
+/* Contour Note — TOPOGRAPHY / NOTES */
+
+.sop-textfield.sop-contour-note{--field-bg:#1c2a21;--field-ink:#e4ebd4;--field-accent:#c1d8a2;--field-muted:#aebca0;--field-edge:#617454;--field-radius:12px}
+.sop-textfield.sop-contour-note{padding:20px;background:#1c291f;border:1px solid #536c4580;border-radius:15px;box-shadow:0 13px 25px #0004}
+.sop-textfield.sop-contour-note>.sop-field-shell{background:#142017aa;border-color:#52674688;box-shadow:inset 0 1px 10px #0003}
+.sop-textfield.sop-contour-note .sop-field-fx{background:repeating-radial-gradient(ellipse at 118% 40%,transparent 0 13px,#97b07112 14px 15px,transparent 16px 22px);opacity:.8}
+.sop-textfield.sop-contour-note .sop-field-caption{font-size:7px;letter-spacing:1.5px}
+.sop-textfield.sop-contour-note>.sop-field-baseline{display:block;margin-top:14px;height:1px;background:#72935b66}.sop-textfield.sop-contour-note>.sop-field-baseline span{position:absolute;width:7px;height:7px;border:1px solid #b5cea1;border-radius:50%;top:-3px;left:23%;background:#253326;transition:left .6s}.sop-textfield.sop-contour-note:focus-within>.sop-field-baseline span{left:77%}
+
+.sop-textfield.sop-contour-note[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}

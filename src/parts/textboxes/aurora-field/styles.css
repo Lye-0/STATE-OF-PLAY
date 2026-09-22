@@ -1,0 +1,12 @@
+@import "../../../shared/text-field-base.css";
+/* Aurora Field — AURORAL GLASS */
+
+.sop-textfield.sop-aurora-field{--field-bg:#19292e;--field-edge:#62909b;--field-accent:#a5e4e6;--field-muted:#9bbbc0;--field-radius:18px}
+.sop-textfield.sop-aurora-field>.sop-field-shell{background:linear-gradient(120deg,#293f4655,#1b293ad9 60%,#36403980);box-shadow:inset 0 1px 0 #d4f9ef50,0 12px 30px #0004}
+.sop-textfield.sop-aurora-field .sop-field-fx{background:radial-gradient(ellipse at 12% -35%,#73f2d660,transparent 57%),radial-gradient(ellipse at 86% 105%,#bb96ef50,transparent 60%)}
+.sop-textfield.sop-aurora-field .sop-field-fx i:first-child{inset:-50%;background:conic-gradient(from 45deg,transparent,#9ff2d922,transparent,#aca8f52a,transparent);transform:rotate(-20deg);transition:transform 1.5s}
+.sop-textfield.sop-aurora-field:focus-within .sop-field-fx i:first-child{transform:rotate(65deg)}
+.sop-textfield.sop-aurora-field .sop-field-symbol{display:block;border:1px solid #b2e5e77a;border-radius:50%;width:18px;height:18px;box-shadow:inset 0 1px 4px #ddffff66,0 0 12px #86dbd940}
+.sop-textfield.sop-aurora-field>.sop-field-baseline{display:block;margin:14px 24px 0;height:1px;background:linear-gradient(90deg,transparent,#a7dbd382,#c19dda88,transparent);opacity:.4}
+
+.sop-textfield.sop-aurora-field[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}

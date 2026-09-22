@@ -1,0 +1,12 @@
+@import "../../../shared/text-field-base.css";
+/* Folio Note — PAPER / BINDING */
+
+.sop-textfield.sop-folio-note{--field-bg:#e9e3d4;--field-ink:#3e3b36;--field-muted:#777166;--field-accent:#86634a;--field-edge:#c5bba5;--field-radius:3px;--field-error:#a12c36}
+.sop-textfield.sop-folio-note{background:linear-gradient(90deg,#cbbfa6 0,#e9e3d4 16px,#f0eadd 45px,#ded6c3);padding:20px 22px 18px 34px;border-radius:3px 8px 8px 3px;box-shadow:0 3px #c6bfae,0 5px #e4ddcc,0 7px #b4ac96,0 17px 28px #0006}
+.sop-textfield.sop-folio-note:before{content:'';position:absolute;left:23px;top:12px;bottom:12px;width:1px;background:#b7706077}
+.sop-textfield.sop-folio-note>.sop-field-shell{background:transparent;border:0;box-shadow:none;padding:0!important;border-radius:0}
+.sop-textfield.sop-folio-note textarea.sop-field-control{padding-top:5px;font-family:Georgia,"Yu Mincho",serif;line-height:1.95;min-height:113px}
+.sop-textfield.sop-folio-note>.sop-field-shell:focus-within{box-shadow:0 1px #a99677}
+.sop-textfield.sop-folio-note .sop-field-heading{border-bottom:1px solid #aa9c7e45;padding-bottom:9px}
+
+.sop-textfield.sop-folio-note[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}

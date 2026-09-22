@@ -1,0 +1,14 @@
+@import "../../../shared/text-field-base.css";
+/* Terminal Field — PHOSPHOR / CONSOLE */
+
+.sop-textfield.sop-terminal-field{--field-bg:#111a12;--field-ink:#cdeec0;--field-muted:#8fac85;--field-accent:#b4ed91;--field-edge:#486943;--field-radius:3px}
+.sop-textfield.sop-terminal-field .sop-field-heading{font-family:Consolas,monospace;border-bottom:1px solid #40513a;padding-bottom:8px}
+.sop-textfield.sop-terminal-field>.sop-field-shell{border-left:3px solid #82b768;box-shadow:inset 0 2px 12px #0008,0 8px 20px #0003}
+.sop-textfield.sop-terminal-field .sop-field-control{font-family:Consolas,"Yu Gothic",monospace}
+.sop-textfield.sop-terminal-field .sop-field-symbol{display:block;width:22px;height:22px}.sop-textfield.sop-terminal-field .sop-field-symbol:before{content:'>';font:22px/1 Consolas;position:absolute}
+.sop-textfield.sop-terminal-field .sop-field-fx{background:repeating-linear-gradient(0deg,transparent 0 3px,#93ef7009 3px 4px)}
+.sop-textfield.sop-terminal-field>.sop-field-baseline{display:flex;gap:6px;height:3px;margin-top:14px}
+.sop-textfield.sop-terminal-field>.sop-field-baseline i{width:13px;background:#5a744e}.sop-textfield.sop-terminal-field[data-filled="true"]>.sop-field-baseline i{background:#b4d892;box-shadow:0 0 8px #86d65366}
+.sop-textfield.sop-terminal-field>.sop-field-baseline span{flex:1;margin-left:5px;background:repeating-linear-gradient(90deg,#83977640 0 1px,transparent 1px 7px)}
+
+.sop-textfield.sop-terminal-field[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}

@@ -1,0 +1,11 @@
+@import "../../../shared/text-field-base.css";
+/* Ribbon Field — FOLDED / RIBBON */
+
+.sop-textfield.sop-ribbon-field{--field-bg:#edaf94;--field-ink:#56362d;--field-accent:#82472f;--field-muted:#835445;--field-edge:#c4866c;--field-radius:2px;--field-error:#992e35}
+.sop-textfield.sop-ribbon-field>.sop-field-heading{padding:0 6px}.sop-textfield.sop-ribbon-field .sop-field-label{color:#f1baa0}
+.sop-textfield.sop-ribbon-field>.sop-field-shell{min-height:64px;background:linear-gradient(100deg,#d29174,#f7c4a3 8%,#eab396 60%,#d49575);border:0;border-top:1px solid #ffddbdc4;border-bottom:1px solid #9e614f;box-shadow:0 13px 20px #0005}
+.sop-textfield.sop-ribbon-field>.sop-field-shell:before{content:'';position:absolute;left:-6px;top:8px;bottom:-8px;width:12px;z-index:-2;background:#995f4f;clip-path:polygon(0 0,100% 0,100% 100%,0 86%)}
+.sop-textfield.sop-ribbon-field .sop-field-fx i:first-child{left:30px;top:0;bottom:0;width:1px;background:#935d3645;box-shadow:2px 0 #ffdab370;transform:skewY(15deg)}
+.sop-textfield.sop-ribbon-field>.sop-field-shell{padding-left:46px}.sop-textfield.sop-ribbon-field>.sop-field-meta{color:#c49a83}
+
+.sop-textfield.sop-ribbon-field[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}

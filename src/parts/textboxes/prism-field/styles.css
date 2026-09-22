@@ -1,0 +1,10 @@
+@import "../../../shared/text-field-base.css";
+/* Prism Field — CRYSTAL / SPECTRUM */
+
+.sop-textfield.sop-prism-field{--field-bg:#242735;--field-accent:#dbd0ff;--field-muted:#bcb8d1;--field-edge:#9691b8;--field-radius:3px}
+.sop-textfield.sop-prism-field>.sop-field-shell{min-height:65px;padding-left:20px;border:2px solid transparent;background:linear-gradient(130deg,#2e3543,#1d2233 60%,#342a40) padding-box,conic-gradient(from 30deg,#d9ecdd,#8fafc7,#b8a0cb,#adcccf,#e7cdd7,#d9ecdd) border-box;box-shadow:inset 0 0 0 4px #b9d9db0b,0 13px 22px #0005}
+.sop-textfield.sop-prism-field .sop-field-symbol{display:block;clip-path:polygon(50% 0,94% 25%,94% 75%,50% 100%,6% 75%,6% 25%);background:conic-gradient(from 30deg,#f4e9ff,#65758c,#e6d7cb,#72afac,#bfcdf9,#f4e9ff);width:25px;height:28px;transition:transform .6s}.sop-textfield.sop-prism-field:focus-within .sop-field-symbol{transform:rotate(120deg)}
+.sop-textfield.sop-prism-field .sop-field-fx{background:linear-gradient(160deg,transparent 38%,#d7bdeb12 39%,transparent 60%),linear-gradient(28deg,transparent 45%,#b2e8ef16 46%,transparent 71%)}
+.sop-textfield.sop-prism-field>.sop-field-baseline{display:block;margin:13px 10% 0;height:1px;background:linear-gradient(90deg,#ecaccc33,#b4e7d199,#a6b1ec88,#ecdcb833)}
+
+.sop-textfield.sop-prism-field[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}

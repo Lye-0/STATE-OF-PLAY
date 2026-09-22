@@ -65,3 +65,10 @@ TypeScriptのコンパイラーやAST解析はNode側だけで使い、ブラウ
 `scrollbar-base.css`は構造、個別`styles.css`はスキンです。共有CSSはパーツの依存へ含めます。サイトはViteのCSS import、配布ソースは相対import、独立デモとオフライン検証だけはCSSを依存順に展開します。内容とスタイルの正本を別々に複製するものではありません。
 
 スクロール見本は`src/catalog/scroll-sample.ts`と`src/app/scroll-samples.css`です。サンプル部分は持ち出すコンポーネントの実行時依存に入りません。README・AIプロンプト・ZIPに含める本体には自由な内容スロットが残ります。
+
+
+## 入力パーツの所有範囲
+
+textboxesは6番目のカテゴリです。ネイティブinput/textareaが文字列とブラウザーの編集履歴を所有します。text-field.tsは装飾データ、カウンター、自動高さ、validation、フォームreset、イベントとobserverの寿命だけを管理します。React版は値・ID・追加ボタンの状態をReact側に持ち、ControllerのmanageIds/manageActionsをfalseにして二重操作を避けます。
+
+共有ViewはReactの制御値を勝手に加工しません。非制御モードではdefaultValueを入力に渡すだけにし、文字列の重複stateを作りません。クリアはnative value setterとinputイベントで実際のReact onChangeにも接続します。ギャラリーへはsop:field-stateに真偽値だけを通知し、文字列を保存したり配信したりしません。

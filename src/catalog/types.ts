@@ -2,12 +2,13 @@ import type { ToggleConfig, ToggleOptions, ToggleController } from '../shared/to
 import type { ScrollAreaOptions, ScrollAreaController } from '../shared/scroll-area';
 import type { SelectOptions, SelectController } from '../shared/select-controller';
 import type { AccordionOptions, AccordionController } from '../shared/accordion-controller';
+import type { TextFieldOptions, TextFieldController } from '../shared/text-field';
 import type { SurfaceOptions } from '../shared/surface-controller';
 
 export type Format = 'tsx' | 'jsx' | 'ts' | 'js';
 export type DesignType = 'A' | 'B';
 export const DESIGN_TYPES = { A: {label:'A · 表現重視', note:'素材感と動きを楽しむ、主役になるデザイン。'}, B: {label:'B · 実用重視', note:'落ち着きと読みやすさを重視。設定や日常の画面へ。'} } as const;
-export type Category = 'toggles' | 'blocks' | 'scrollbars' | 'dropdowns' | 'accordions';
+export type Category = 'toggles' | 'blocks' | 'scrollbars' | 'dropdowns' | 'accordions' | 'textboxes';
 export type Layout = 'portable' | 'original';
 export const LAYOUTS = {
   portable: {label: '導入向け', note: '本体フォルダーの中で依存を完結。好きな配置先へ移せます。'},
@@ -25,6 +26,8 @@ export interface Part {
   files: Record<Format, SourceFile[]>; portableFiles: Record<Format, SourceFile[]>; preview: Record<string, string>;
 }
 export interface PartController {
+  setError?: TextFieldController['setError'];
+  focus?: TextFieldController['focus'];
   getValue?: SelectController['getValue'];
   setValue?: SelectController['setValue'];
   getOpen?: SelectController['getOpen'];
@@ -44,7 +47,7 @@ export interface PartController {
   setPaused?: ToggleController['setPaused'];
   resize?: ToggleController['resize'];
 }
-export type MountPart = (root: HTMLElement, options?: ToggleOptions & SurfaceOptions & ScrollAreaOptions & SelectOptions & AccordionOptions) => PartController;
+export type MountPart = (root: HTMLElement, options?: ToggleOptions & SurfaceOptions & ScrollAreaOptions & SelectOptions & AccordionOptions & TextFieldOptions) => PartController;
 export const isFormat = (value: unknown): value is Format =>
   typeof value === 'string' && ['tsx','jsx','ts','js'].includes(value);
 export const isDetailTab = (value: unknown): value is DetailTab =>

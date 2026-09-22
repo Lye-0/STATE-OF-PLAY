@@ -1,0 +1,12 @@
+@import "../../../shared/text-field-base.css";
+/* Blueprint Note — DRAFTING / GRID */
+
+.sop-textfield.sop-blueprint-note{--field-bg:#102b3b;--field-accent:#9cdef0;--field-ink:#d5f2f7;--field-muted:#99bdcd;--field-edge:#45869a;--field-radius:0px}
+.sop-textfield.sop-blueprint-note{border:1px solid #2e4e5b;padding:17px;background:#11232c;}
+.sop-textfield.sop-blueprint-note>.sop-field-heading{border-bottom:1px dashed #3e798c;padding-bottom:9px}
+.sop-textfield.sop-blueprint-note>.sop-field-shell{border-style:dashed;box-shadow:none;background:linear-gradient(#285d722b 1px,transparent 1px),linear-gradient(90deg,#285d722b 1px,transparent 1px),#0e2733;background-size:16px 16px}
+.sop-textfield.sop-blueprint-note .sop-field-control{font-family:Consolas,"Yu Gothic",monospace;font-size:16px;line-height:1.85}
+.sop-textfield.sop-blueprint-note .sop-field-fx{overflow:visible}.sop-textfield.sop-blueprint-note .sop-field-fx i{width:9px;height:9px;border:1px solid #9ed5e1}
+.sop-textfield.sop-blueprint-note .sop-field-fx i:nth-child(1){left:-4px;top:-4px}.sop-textfield.sop-blueprint-note .sop-field-fx i:nth-child(2){right:-4px;top:-4px}.sop-textfield.sop-blueprint-note .sop-field-fx i:nth-child(3){left:-4px;bottom:-4px}.sop-textfield.sop-blueprint-note .sop-field-fx i:nth-child(4){right:-4px;bottom:-4px}
+
+.sop-textfield.sop-blueprint-note[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}

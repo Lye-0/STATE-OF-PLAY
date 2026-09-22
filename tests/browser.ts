@@ -79,7 +79,7 @@ try{
  await load();
  await run(`Gallery: ${catalog.parts.length} parts, no runtime errors`,async()=>{assert.equal(await page.locator('[data-part]').count(),catalog.parts.length);assert.deepEqual(errors,[]);});
  await run('A/B and category filters intersect, counts remain correct, and search resets cleanly',async()=>{
-  for(const category of ['all','toggles','blocks','scrollbars','dropdowns','accordions']){
+  for(const category of ['all','toggles','blocks','scrollbars','dropdowns','accordions','textboxes']){
    await page.locator(`[data-category="${category}"]`).click();
    for(const kind of ['A','B','all']){
     await page.locator(`[data-design-filter="${kind}"]`).click();
@@ -228,8 +228,8 @@ try{
   for(const layout of layouts)for(const format of ['tsx','jsx'] as const){
    const prefix=`.test-output/react-${format}-${layout}`;
    const imports=catalog.parts.map((p,i)=>`import Part${i} from '../exports/${p.id}/${layout}/${format}/${getDelivery(p,format,layout).entry}';`).join('\n');
-   const source=`import React,{useState} from 'react';import {createRoot} from 'react-dom/client';\n${imports}\nconst parts=[${catalog.parts.map((p,i)=>`{id:${JSON.stringify(p.id)},toggle:${p.category==='toggles'},Component:Part${i}}`).join(',')}];\n`+
-    `function Item({item}){const [checked,setChecked]=useState(false);const C=item.Component;return <section data-react-part={item.id}>{item.toggle?<><C checked={checked} onCheckedChange={setChecked} data-variant="controlled" aria-label="controlled"/><C defaultChecked={false} data-variant="uncontrolled" aria-label="uncontrolled"/><C checked={false} onCheckedChange={()=>{}} data-variant="declined" aria-label="declined"/><C disabled aria-label="disabled" data-variant="disabled"/></>:<C><button>Independent child</button></C>}</section>;}\n`+
+   const source=`import React,{useState} from 'react';import {createRoot} from 'react-dom/client';\n${imports}\nconst parts=[${catalog.parts.map((p,i)=>`{id:${JSON.stringify(p.id)},toggle:${p.category==='toggles'},text:${p.category==='textboxes'},Component:Part${i}}`).join(',')}];\n`+
+    `function Item({item}){const [checked,setChecked]=useState(false);const C=item.Component;return <section data-react-part={item.id}>{item.toggle?<><C checked={checked} onCheckedChange={setChecked} data-variant="controlled" aria-label="controlled"/><C defaultChecked={false} data-variant="uncontrolled" aria-label="uncontrolled"/><C checked={false} onCheckedChange={()=>{}} data-variant="declined" aria-label="declined"/><C disabled aria-label="disabled" data-variant="disabled"/></>:item.text?<C label="Text input"/>:<C><button>Independent child</button></C>}</section>;}\n`+
     `function App(){const [visible,setVisible]=useState(true);return <><button id="mount-toggle" onClick={()=>setVisible(!visible)}>Mount/unmount</button>{visible&&parts.map(p=><Item key={p.id} item={p}/>)}</>;}\n`+
     `createRoot(document.getElementById('root')).render(<React.StrictMode><App/></React.StrictMode>);`;
    const entry=prefix+'/main.jsx';write(entry,source);

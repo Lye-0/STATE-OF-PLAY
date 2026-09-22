@@ -1,0 +1,10 @@
+@import "../../../shared/text-field-base.css";
+/* Velvet Field — VELVET / STITCH */
+
+.sop-textfield.sop-velvet-field{--field-bg:#38242e;--field-ink:#f7e1e7;--field-accent:#efbfd1;--field-muted:#c9a6b7;--field-edge:#966378;--field-radius:15px}
+.sop-textfield.sop-velvet-field>.sop-field-shell{padding:9px 14px 9px 23px;background:radial-gradient(ellipse at 22% 0,#77516255,transparent 65%),repeating-linear-gradient(90deg,#f1b3cd04 0 1px,transparent 1px 3px),#35232b;border:1px dashed #ad7e8e;box-shadow:0 0 0 5px #312028,0 0 0 6px #87576a45,inset 0 2px 7px #0005,0 18px 28px #0004}
+.sop-textfield.sop-velvet-field .sop-field-heading{padding-left:5px}.sop-textfield.sop-velvet-field .sop-field-label{font-family:Georgia,"Yu Mincho",serif;font-size:15px}
+.sop-textfield.sop-velvet-field .sop-field-symbol{display:block;width:8px;height:8px;transform:rotate(45deg);background:#d9afbd;box-shadow:0 0 10px #e9bfd044}
+.sop-textfield.sop-velvet-field>.sop-field-baseline{display:block;margin:16px 30% 0;height:1px;background:linear-gradient(90deg,transparent,#c999acaa,transparent)}
+
+.sop-textfield.sop-velvet-field[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}
