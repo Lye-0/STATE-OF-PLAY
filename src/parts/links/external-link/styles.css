@@ -1,0 +1,7 @@
+@import "../../../shared/navigation-link-base.css";
+/* External Link — B. 外部リソースへの移動を示す、コンパクトな記号。 */
+
+.sop-link.sop-external-link{color:#cbdce8;font-size:14px;gap:11px;}
+.sop-link.sop-external-link .sop-link-icon{width:21px;height:21px;padding:2px;border:1px solid #889bad73;border-radius:3px;}
+.sop-link.sop-external-link:hover .sop-link-label{text-decoration:underline;text-underline-offset:4px;}
+.sop-link.sop-external-link:hover .sop-link-icon{background:#b9d4e318;}

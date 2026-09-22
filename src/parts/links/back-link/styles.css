@@ -1,0 +1,7 @@
+@import "../../../shared/navigation-link-base.css";
+/* Back Link — B. 左向き矢印と控えめなラベル。戻り道を自然に示す。 */
+
+.sop-link.sop-back-link{flex-direction:row-reverse;gap:10px;color:#d3d0c2;font-size:14px;}
+.sop-link.sop-back-link .sop-link-icon{width:20px;height:20px;transform:rotate(225deg);}
+.sop-link.sop-back-link:hover .sop-link-icon{transform:translateX(-4px) rotate(225deg);}
+.sop-link.sop-back-link:hover .sop-link-label{text-decoration:underline;text-underline-offset:4px;}

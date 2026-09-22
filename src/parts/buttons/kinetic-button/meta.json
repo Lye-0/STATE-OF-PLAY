@@ -1,0 +1,54 @@
+{
+  "id": "kinetic-button",
+  "name": "Kinetic Button",
+  "category": "buttons",
+  "order": 159,
+  "version": "1.0.0",
+  "tagline": "ずれから、生まれる。",
+  "description": "重なったプレートと、独立した矢印セルが動く。",
+  "material": "OFFSET / KINETIC",
+  "motion": "PRESS / RESPONSE",
+  "accent": "203,215,174",
+  "designType": "A",
+  "runtime": "Native button + CSS / busy guard",
+  "componentName": "KineticButton",
+  "tags": [
+    "Kinetic Button",
+    "kinetic-button",
+    "ボタン",
+    "button",
+    "CTA",
+    "操作",
+    "A"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children / icon",
+      "ReactNode",
+      "ラベルと装飾アイコン。内部にリンク・ボタンなどの操作要素は入れません。"
+    ],
+    [
+      "onClick / onClickCapture",
+      "native event handlers",
+      "アプリの処理へ接続します。処理中は再操作を遮断。"
+    ],
+    [
+      "type / name / value / form",
+      "native button attributes",
+      "typeは初期値button。submit/resetは用途に合わせ明示。"
+    ],
+    [
+      "loading / disabled",
+      "boolean",
+      "処理中はフォーカスを保ちながら操作を遮断。disabledは標準無効。"
+    ],
+    [
+      "ref / className / style",
+      "native ref / attributes",
+      "ボタンへのrefと、配置の調整。"
+    ]
+  ]
+}

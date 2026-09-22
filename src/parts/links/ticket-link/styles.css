@@ -1,0 +1,7 @@
+@import "../../../shared/navigation-link-base.css";
+/* Ticket Link — A. ミシン目と番号帯を持った、細長いチケット。 */
+
+.sop-link.sop-ticket-link{background:#e5dcc5;color:#454336;padding:15px 16px 15px 23px;border-radius:2px;font:11px/1.5 Consolas,monospace;letter-spacing:.08em;gap:20px;box-shadow:0 5px 14px #0003;}
+.sop-link.sop-ticket-link .sop-link-icon{border-left:1px dashed #796e58;padding-left:15px;width:43px;height:35px;}
+.sop-link.sop-ticket-link .sop-link-art{left:5px;width:5px;background:repeating-linear-gradient(0deg,#82735099 0 1px,transparent 1px 3px);inset-block:8px;opacity:.4;}
+.sop-link.sop-ticket-link:hover .sop-link-icon{transform:translateX(3px);}

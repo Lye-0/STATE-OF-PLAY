@@ -2,12 +2,12 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import ts from 'typescript';
-import { ROOT, buildCatalog, mountModule } from '../scripts/catalog.ts';
+import { ROOT, buildCatalog, mountModule, type CatalogBuild } from '../scripts/catalog.ts';
 import { resolveLocal, transpile } from '../scripts/source-tools.ts';
-export function testBundle(entry: string, extras: Map<string,string> = new Map(), runtimeImport = ''): string {
+export function testBundle(entry: string, extras: Map<string,string> = new Map(), runtimeImport = '', snapshot?: CatalogBuild): string {
  const virtual=new Map<string,string>();
  if (entry === 'src/main.ts') {
-  const catalog=buildCatalog();
+  const catalog=snapshot ?? buildCatalog();
   virtual.set('virtual:sop-catalog','export default '+JSON.stringify(catalog.parts)+';');
   virtual.set('virtual:sop-mounts',mountModule(catalog.bases));
   virtual.set('virtual:sop-styles','');
@@ -32,13 +32,12 @@ export function testBundle(entry: string, extras: Map<string,string> = new Map()
  '};const cache={};function require(id){'+(runtimeImport?'if(id==="react")return React;if(id==="react-dom/client")return ReactDOMClient;':'')+
  'if(cache[id])return cache[id].exports;const m=cache[id]={exports:{}};modules[id](m,m.exports,require);return m.exports;}require('+JSON.stringify(entry)+');})();';
 }
-export function offlineFiles(): Map<string,string> {
- const data=buildCatalog();
+export function offlineFiles(data:CatalogBuild=buildCatalog()): Map<string,string> {
  const files=new Map<string,string>();
  let html=fs.readFileSync(path.join(ROOT,'index.html'),'utf8').replaceAll('%BASE_URL%','/');
  html=html.replace('<script type="module" src="/src/main.ts"></script>','<script src="/test-app.js" defer></script>');
  html=html.replace('</head>','<link rel="stylesheet" href="/test-styles.css"></head>');
- files.set('/index.html',html);files.set('/test-app.js',testBundle('src/main.ts'));
+ files.set('/index.html',html);files.set('/test-app.js',testBundle('src/main.ts',new Map(),'',data));
  files.set('/test-styles.css',data.styles+'\n'+fs.readFileSync(path.join(ROOT,'src/app/gallery.css'),'utf8')+'\n'+fs.readFileSync(path.join(ROOT,'src/app/scroll-samples.css'),'utf8'));
  return files;
 }

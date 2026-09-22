@@ -1,0 +1,54 @@
+{
+  "id": "ribbon-link",
+  "name": "Ribbon Link",
+  "category": "links",
+  "order": 173,
+  "version": "1.0.0",
+  "tagline": "折り返す、行き先。",
+  "description": "薄い紙の帯と折り目。矢印の端だけが起き上がる。",
+  "material": "FOLDED / RIBBON",
+  "motion": "HOVER / NAVIGATE",
+  "accent": "230,180,146",
+  "designType": "A",
+  "runtime": "Native anchor + CSS only",
+  "componentName": "RibbonLink",
+  "tags": [
+    "Ribbon Link",
+    "ribbon-link",
+    "リンク",
+    "link",
+    "CTA",
+    "ナビゲーション",
+    "A"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children / eyebrow / icon",
+      "ReactNode",
+      "表示テキスト・補助見出し・装飾アイコン。"
+    ],
+    [
+      "href",
+      "string (required)",
+      "ページ、ページ内アンカー、mailto等の移動先。"
+    ],
+    [
+      "target / rel / download",
+      "native anchor attributes",
+      "新規タブ、関係性、同一オリジン等のダウンロード指定。"
+    ],
+    [
+      "onClick / ref / aria-current",
+      "native attributes",
+      "標準イベント・ref・現在位置。ネイティブ移動を維持。"
+    ],
+    [
+      "className / style",
+      "native attributes",
+      "利用先での配置。コンポーネントはルーター依存を持ちません。"
+    ]
+  ]
+}

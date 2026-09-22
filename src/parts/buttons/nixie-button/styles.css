@@ -1,0 +1,8 @@
+@import "../../../shared/action-button-base.css";
+/* Nixie Button — A. 橙の文字、ガラスの奥の配線、側面の冷却フィン。 */
+
+.sop-action.sop-nixie-button{border-radius:8px;color:#ffbd79;background:linear-gradient(#1c1916,#302016 48%,#1a1613);border:3px solid #4b3d31;box-shadow:0 4px 0 #0c0b09,0 13px 24px #0008,inset 0 1px 0 #d2954950;font:500 14px/1.5 Consolas,monospace;letter-spacing:.18em;text-shadow:0 0 12px #ff850b9e;}
+.sop-action.sop-nixie-button .sop-action-art{inset:5px;border:1px solid #c086432f;background:repeating-linear-gradient(90deg,#e9a25808 0 1px,transparent 1px 5px);}
+.sop-action.sop-nixie-button .sop-action-art i:first-child{left:0;right:0;bottom:0;height:1px;background:#feac5c;box-shadow:0 -2px 18px #ff8000;transition:height .3s;}
+.sop-action.sop-nixie-button:hover .sop-action-art i:first-child{height:4px;}
+.sop-action.sop-nixie-button .sop-action-icon{filter:drop-shadow(0 0 4px #ff8410);}

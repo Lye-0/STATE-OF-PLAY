@@ -33,7 +33,7 @@ export function placementText(delivery: Delivery): string {
 }
 export function buildUsage(part: Part, format: Format, layout: Layout): string {
   const d=getDelivery(part,format,layout), react=format==='tsx'||format==='jsx';
-  const staticSurface=part.category==='blocks'&&part.runtime==='CSS only';
+  const staticSurface=(part.category==='blocks'&&part.runtime==='CSS only')||part.category==='links';
   const files=d.files.map(f=>f.name);
   return `# ${part.name} / ${part.version}\n\n${part.description}\n\nデザイン: ${DESIGN_TYPES[part.designType].label} / ${part.runtime}\n\n`+
     `## 今回の配布\n- 形式: ${FORMATS[format].label}\n- 構成: ${LAYOUTS[layout].label}\n- コピーする本体: \`${d.componentRoot}/\`\n- 入口: \`${d.entry}\`\n- スタイル: \`${d.stylesheet}\`\n- 使用例: \`${d.example}\`\n- 実行時外部依存: ${d.externalDependencies.join(', ')||'なし'}\n\n`+

@@ -6,10 +6,10 @@ import {buildCatalog,ROOT,FORMATS} from '../scripts/catalog.ts';
 import {getDelivery,buildPrompt,buildUsage} from '../src/catalog/delivery.ts';
 const {parts}=buildCatalog(),fields=parts.filter(p=>p.category==='textboxes');
 test('24 actual text fields join the five previous collections, with A16 and B8',()=>{
- assert.equal(parts.length,144);assert.equal(fields.length,24);
+ assert.ok(parts.length>=144);assert.equal(fields.length,24);
  assert.equal(fields.filter(p=>p.designType==='A').length,16);assert.equal(fields.filter(p=>p.designType==='B').length,8);
  for(const c of ['toggles','blocks','scrollbars','dropdowns','accordions'])assert.equal(parts.filter(p=>p.category===c).length,24);
- assert.equal(new Set(parts.map(p=>p.id)).size,144);assert.equal(new Set(parts.map(p=>p.order)).size,144);
+ assert.equal(new Set(parts.map(p=>p.id)).size,parts.length);assert.equal(new Set(parts.map(p=>p.order)).size,parts.length);
  assert.equal(new Set(fields.map(p=>fs.readFileSync(path.join(ROOT,'src/parts/textboxes',p.id,'styles.css'),'utf8'))).size,24);
 });
 test('every text field uses a native input/textarea, a label and empty feedback/counter regions',()=>{

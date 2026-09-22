@@ -1,3 +1,4 @@
+import { mountActionDemo } from './action-preview';
 import { fillSample } from './samples';
 import { TactileAudio } from './audio';
 import { createDetails } from './details';
@@ -13,7 +14,7 @@ let activeCategory = 'all', activeDesign = 'all', query = '', demo = 0, demoInde
 const sound = new TactileAudio();
 const grid = required('#part-grid');
 const search = required<HTMLInputElement>('#search-parts');
-let rendered: {part: Part; card: HTMLElement; controller: PartController; surface?: PartController}[] = [];
+let rendered: {cleanup?:()=>void; part: Part; card: HTMLElement; controller: PartController; surface?: PartController}[] = [];
 const details = createDetails(parts, { onActive(active) {
         stopDemo();
         for (const r of rendered)
@@ -25,6 +26,7 @@ function openPart(id: string, trigger?: HTMLElement) {
     details.open(id, trigger);
 }
 function readRoute() {
+    if(location.hash.startsWith('#sop-demo-')) return;
     let id = '';
     try {
         id = location.hash.startsWith('#part=') ? decodeURIComponent(location.hash.slice(6)) : '';
@@ -64,14 +66,14 @@ function matchPart(part: Part) {
 }
 function renderGallery() {
     stopDemo();
-    rendered.forEach(r => { r.controller.destroy(); r.surface?.destroy(); });
+    rendered.forEach(r => { r.cleanup?.(); r.controller.destroy(); r.surface?.destroy(); });
     rendered = [];
     const visible = parts.filter(matchPart);
     grid.innerHTML = visible.length ? visible.map(part => {
         const toggle = part.category === 'toggles';
         const scroll = part.category === 'scrollbars';
-        const dropdown = part.category === 'dropdowns', accordion = part.category === 'accordions', textbox = part.category === 'textboxes';
-        return `<article class="object-card ${toggle ? 'sop-surface sop-original-surface toggle-card' : scroll ? 'scroll-card' : dropdown ? 'dropdown-card' : accordion ? 'accordion-card' : textbox ? 'textbox-card' : 'block-card'}" data-part="${escapeHTML(part.id)}" data-design="${part.designType}" style="--sop-accent:${part.accent};--accent:${part.accent}"><header class="card-top"><span class="object-no mono">${String(part.order).padStart(2, '0')} /</span><span class="design-badge design-${part.designType}" title="${part.designType === 'A' ? '表現重視' : '実用重視'}">${part.designType}</span><span class="object-type mono">${escapeHTML(part.material)}</span><span class="state-readout mono" aria-hidden="true"><i></i><span class="state-word">${toggle ? (state.get(part.id) ? 'ON' : 'OFF') : scroll ? 'SCROLL' : dropdown ? 'SELECT' : accordion ? 'EXPAND' : textbox ? 'WRITE' : 'SURFACE'}</span></span></header><div class="object-stage" data-stage="${escapeHTML(part.id)}"><div class="stage-glow"></div><div class="stage-mount"></div></div><footer class="card-bottom"><div><h2>${escapeHTML(part.name)}<span>${escapeHTML(part.tagline)}</span></h2><p>${escapeHTML(part.description)}</p></div><button type="button" class="open-part" data-open="${escapeHTML(part.id)}" aria-label="${escapeHTML(part.name)} のコードと詳細を開く">${icon('code')}<span>CODE</span>${icon('arrow')}</button></footer></article>`;
+        const dropdown = part.category === 'dropdowns', accordion = part.category === 'accordions', textbox = part.category === 'textboxes', action = part.category === 'buttons', link = part.category === 'links';
+        return `<article class="object-card ${toggle ? 'sop-surface sop-original-surface toggle-card' : scroll ? 'scroll-card' : dropdown ? 'dropdown-card' : accordion ? 'accordion-card' : textbox ? 'textbox-card' : action ? 'action-card' : link ? 'link-card' : 'block-card'}" data-part="${escapeHTML(part.id)}" data-design="${part.designType}" style="--sop-accent:${part.accent};--accent:${part.accent}"><header class="card-top"><span class="object-no mono">${String(part.order).padStart(2, '0')} /</span><span class="design-badge design-${part.designType}" title="${part.designType === 'A' ? '表現重視' : '実用重視'}">${part.designType}</span><span class="object-type mono">${escapeHTML(part.material)}</span><span class="state-readout mono" aria-hidden="true"><i></i><span class="state-word">${toggle ? (state.get(part.id) ? 'ON' : 'OFF') : scroll ? 'SCROLL' : dropdown ? 'SELECT' : accordion ? 'EXPAND' : textbox ? 'WRITE' : action ? 'READY' : link ? 'LINK' : 'SURFACE'}</span></span></header><div class="object-stage" data-stage="${escapeHTML(part.id)}"><div class="stage-glow"></div><div class="stage-mount"></div></div><footer class="card-bottom"><div><h2>${escapeHTML(part.name)}<span>${escapeHTML(part.tagline)}</span></h2><p>${escapeHTML(part.description)}</p></div><button type="button" class="open-part" data-open="${escapeHTML(part.id)}" aria-label="${escapeHTML(part.name)} のコードと詳細を開く">${icon('code')}<span>CODE</span>${icon('arrow')}</button></footer></article>`;
     }).join('') : `<div class="empty-state"><span class="empty-symbol">∅</span><h2>まだ、そのパーツはありません。</h2><p>検索する言葉やカテゴリを変えてみてください。</p><button type="button" class="small-button" id="clear-empty">すべてのパーツを表示</button></div>`;
     for (const part of visible) {
         const card = required(`[data-part="${part.id}"]`, grid);
@@ -83,7 +85,8 @@ function renderGallery() {
         fillSample(root, part);
         const controller = mounts[part.id](root, { onOpenChange: open => { required('.state-word', card).textContent = open ? 'OPEN' : 'SELECT'; }, onExpandedChange: values => { required('.state-word', card).textContent = String(values.length) + ' OPEN'; }, onProgressChange: progress => { required('.state-word', card).textContent = Math.round(progress * 100) + '%'; }, checked: state.get(part.id), onCheckedChange: (value: boolean) => { stopDemo(); syncCard(part.id, value); } });
         const surface = part.category === 'toggles' ? createSurfaceController(card) : undefined;
-        rendered.push({ part, controller, card, surface });
+        const demo = part.category === 'buttons' || part.category === 'links' ? mountActionDemo(root,part,controller,card,text=>required('.state-word',card).textContent=text) : undefined;
+        rendered.push({ part, controller, card, surface, cleanup:demo?.destroy });
         if (part.category === 'toggles')
             syncCard(part.id, !!state.get(part.id));
         card.addEventListener('click', event => {

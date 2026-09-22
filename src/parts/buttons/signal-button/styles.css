@@ -1,0 +1,8 @@
+@import "../../../shared/action-button-base.css";
+/* Signal Button — A. 細いグリーンの走査線と、順番に立ち上がるピクセル。 */
+
+.sop-action.sop-signal-button{border:1px solid #68794e;border-radius:3px;background:#202a1a;color:#def7bb;font:500 12px/1.5 Consolas,monospace;letter-spacing:.15em;box-shadow:inset 0 0 0 4px #111b10,0 5px 0 #10190e,0 12px 25px #0006;padding-left:43px;}
+.sop-action.sop-signal-button .sop-action-art{background:repeating-linear-gradient(0deg,#d6faaa08 0 1px,transparent 1px 4px);}
+.sop-action.sop-signal-button .sop-action-art i{width:4px;left:17px;background:#d3eeaa;bottom:25px;height:4px;box-shadow:0 0 7px #bee57e40;transition:height .3s;}
+.sop-action.sop-signal-button .sop-action-art i:nth-child(2){left:23px;}.sop-action.sop-signal-button .sop-action-art i:nth-child(3){left:29px;}
+.sop-action.sop-signal-button:hover .sop-action-art i:first-child{height:10px;}.sop-action.sop-signal-button:hover .sop-action-art i:nth-child(2){height:18px;transition-delay:.08s;}.sop-action.sop-signal-button:hover .sop-action-art i:nth-child(3){height:13px;transition-delay:.15s;}

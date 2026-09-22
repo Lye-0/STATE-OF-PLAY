@@ -1,0 +1,9 @@
+@import "../../../shared/action-button-base.css";
+/* Tessera Button — A. 曇りガラスの面が、フォーカスに応じて別々に光る。 */
+
+.sop-action.sop-tessera-button{background:#282639d9;border-color:#acacc28c;border-radius:3px 20px 3px 20px;box-shadow:0 10px 30px #0005,inset 0 0 14px #9ba3ff23;}
+.sop-action.sop-tessera-button .sop-action-art i{inset:0;transition:transform .6s,opacity .6s;}
+.sop-action.sop-tessera-button .sop-action-art i:nth-child(1){background:linear-gradient(145deg,#ceb1f080,#839aee30);clip-path:polygon(0 0,60% 0,22% 100%,0 100%);}
+.sop-action.sop-tessera-button .sop-action-art i:nth-child(2){background:linear-gradient(135deg,#8cdfc92f,#d4b9df60);clip-path:polygon(55% 0,100% 15%,100% 100%,20% 100%);}
+.sop-action.sop-tessera-button .sop-action-art i:nth-child(3){background:#e3e1fa30;clip-path:polygon(60% 0,62% 0,24% 100%,22% 100%);}
+.sop-action.sop-tessera-button:hover .sop-action-art i:nth-child(2){transform:translateX(10px);opacity:.65;}

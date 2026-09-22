@@ -1,0 +1,7 @@
+@import "../../../shared/navigation-link-base.css";
+/* Ribbon Link — A. 薄い紙の帯と折り目。矢印の端だけが起き上がる。 */
+
+.sop-link.sop-ribbon-link{color:#f3c9a4;padding:13px 20px 13px 2px;border-bottom:1px solid #cd9f754f;gap:33px;}
+.sop-link.sop-ribbon-link .sop-link-icon{width:43px;height:43px;padding:10px;background:#daa981;color:#382e23;box-shadow:5px 5px 0 #80634b;transform:rotate(-5deg);}
+.sop-link.sop-ribbon-link:hover .sop-link-icon{transform:rotate(0deg) translateY(-3px);}
+.sop-link.sop-ribbon-link .sop-link-copy{font:italic 21px/1.4 Georgia,serif;}

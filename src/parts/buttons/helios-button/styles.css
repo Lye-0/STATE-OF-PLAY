@@ -1,0 +1,8 @@
+@import "../../../shared/action-button-base.css";
+/* Helios Button — A. 重なった日輪と、琥珀色の縁。押すと光が沈み込む。 */
+
+.sop-action.sop-helios-button{border-radius:60px;color:#2c1d09;background:linear-gradient(115deg,#f9dba0,#edb64e 75%,#bd752a);border-color:#ffe9b9;padding-left:66px;box-shadow:0 6px 0 #5a3c1e,0 16px 28px #0007,inset 0 1px #fff9;}
+.sop-action.sop-helios-button .sop-action-art i:nth-child(1){width:38px;height:38px;left:12px;top:calc(50% - 19px);border:1px solid #8c5d31;border-radius:50%;box-shadow:0 0 0 4px #fcf0c577,0 0 0 8px #7f561220;background:repeating-conic-gradient(#8a5013 0 2deg,transparent 2deg 30deg);}
+.sop-action.sop-helios-button .sop-action-art i:nth-child(2){width:18px;height:18px;left:22px;top:calc(50% - 9px);background:#5e3c13;border:4px solid #f9d79c;border-radius:50%;transition:transform .6s;}
+.sop-action.sop-helios-button:hover .sop-action-art i:nth-child(2){transform:scale(.65);}
+.sop-action.sop-helios-button:active{box-shadow:0 2px 0 #5a3c1e,0 6px 13px #0007;}

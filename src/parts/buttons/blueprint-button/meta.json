@@ -1,0 +1,54 @@
+{
+  "id": "blueprint-button",
+  "name": "Blueprint Button",
+  "category": "buttons",
+  "order": 153,
+  "version": "1.0.0",
+  "tagline": "次の一手を、正確に。",
+  "description": "青い製図面と照準のような四隅。線が反応する。",
+  "material": "BLUEPRINT / EXECUTE",
+  "motion": "PRESS / RESPONSE",
+  "accent": "138,198,232",
+  "designType": "A",
+  "runtime": "Native button + CSS / busy guard",
+  "componentName": "BlueprintButton",
+  "tags": [
+    "Blueprint Button",
+    "blueprint-button",
+    "ボタン",
+    "button",
+    "CTA",
+    "操作",
+    "A"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children / icon",
+      "ReactNode",
+      "ラベルと装飾アイコン。内部にリンク・ボタンなどの操作要素は入れません。"
+    ],
+    [
+      "onClick / onClickCapture",
+      "native event handlers",
+      "アプリの処理へ接続します。処理中は再操作を遮断。"
+    ],
+    [
+      "type / name / value / form",
+      "native button attributes",
+      "typeは初期値button。submit/resetは用途に合わせ明示。"
+    ],
+    [
+      "loading / disabled",
+      "boolean",
+      "処理中はフォーカスを保ちながら操作を遮断。disabledは標準無効。"
+    ],
+    [
+      "ref / className / style",
+      "native ref / attributes",
+      "ボタンへのrefと、配置の調整。"
+    ]
+  ]
+}

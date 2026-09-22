@@ -1,0 +1,54 @@
+{
+  "id": "compass-link",
+  "name": "Compass Link",
+  "category": "links",
+  "order": 169,
+  "version": "1.0.0",
+  "tagline": "行き先を、ひとさじ。",
+  "description": "等幅文字と、大きく余白を取った斜めの矢印。",
+  "material": "DIRECTION / COMPASS",
+  "motion": "HOVER / NAVIGATE",
+  "accent": "207,226,180",
+  "designType": "A",
+  "runtime": "Native anchor + CSS only",
+  "componentName": "CompassLink",
+  "tags": [
+    "Compass Link",
+    "compass-link",
+    "リンク",
+    "link",
+    "CTA",
+    "ナビゲーション",
+    "A"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children / eyebrow / icon",
+      "ReactNode",
+      "表示テキスト・補助見出し・装飾アイコン。"
+    ],
+    [
+      "href",
+      "string (required)",
+      "ページ、ページ内アンカー、mailto等の移動先。"
+    ],
+    [
+      "target / rel / download",
+      "native anchor attributes",
+      "新規タブ、関係性、同一オリジン等のダウンロード指定。"
+    ],
+    [
+      "onClick / ref / aria-current",
+      "native attributes",
+      "標準イベント・ref・現在位置。ネイティブ移動を維持。"
+    ],
+    [
+      "className / style",
+      "native attributes",
+      "利用先での配置。コンポーネントはルーター依存を持ちません。"
+    ]
+  ]
+}

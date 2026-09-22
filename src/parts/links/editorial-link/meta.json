@@ -1,0 +1,54 @@
+{
+  "id": "editorial-link",
+  "name": "Editorial Link",
+  "category": "links",
+  "order": 171,
+  "version": "1.0.0",
+  "tagline": "余白で、誘う。",
+  "description": "セリフ体の大きな文字と、遅れて伸びる細い線。",
+  "material": "EDITORIAL / SERIF",
+  "motion": "HOVER / NAVIGATE",
+  "accent": "219,210,185",
+  "designType": "A",
+  "runtime": "Native anchor + CSS only",
+  "componentName": "EditorialLink",
+  "tags": [
+    "Editorial Link",
+    "editorial-link",
+    "リンク",
+    "link",
+    "CTA",
+    "ナビゲーション",
+    "A"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children / eyebrow / icon",
+      "ReactNode",
+      "表示テキスト・補助見出し・装飾アイコン。"
+    ],
+    [
+      "href",
+      "string (required)",
+      "ページ、ページ内アンカー、mailto等の移動先。"
+    ],
+    [
+      "target / rel / download",
+      "native anchor attributes",
+      "新規タブ、関係性、同一オリジン等のダウンロード指定。"
+    ],
+    [
+      "onClick / ref / aria-current",
+      "native attributes",
+      "標準イベント・ref・現在位置。ネイティブ移動を維持。"
+    ],
+    [
+      "className / style",
+      "native attributes",
+      "利用先での配置。コンポーネントはルーター依存を持ちません。"
+    ]
+  ]
+}

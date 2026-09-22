@@ -1,0 +1,54 @@
+{
+  "id": "underline-link",
+  "name": "Underline Link",
+  "category": "links",
+  "order": 180,
+  "version": "1.0.0",
+  "tagline": "線が、応える。",
+  "description": "ホバーで文字の下に線が伸びる、静かなテキスト。",
+  "material": "UNDERLINE / QUIET",
+  "motion": "HOVER / NAVIGATE",
+  "accent": "207,220,203",
+  "designType": "B",
+  "runtime": "Native anchor + CSS only",
+  "componentName": "UnderlineLink",
+  "tags": [
+    "Underline Link",
+    "underline-link",
+    "リンク",
+    "link",
+    "CTA",
+    "ナビゲーション",
+    "B"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children / eyebrow / icon",
+      "ReactNode",
+      "表示テキスト・補助見出し・装飾アイコン。"
+    ],
+    [
+      "href",
+      "string (required)",
+      "ページ、ページ内アンカー、mailto等の移動先。"
+    ],
+    [
+      "target / rel / download",
+      "native anchor attributes",
+      "新規タブ、関係性、同一オリジン等のダウンロード指定。"
+    ],
+    [
+      "onClick / ref / aria-current",
+      "native attributes",
+      "標準イベント・ref・現在位置。ネイティブ移動を維持。"
+    ],
+    [
+      "className / style",
+      "native attributes",
+      "利用先での配置。コンポーネントはルーター依存を持ちません。"
+    ]
+  ]
+}

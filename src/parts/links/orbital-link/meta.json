@@ -1,0 +1,54 @@
+{
+  "id": "orbital-link",
+  "name": "Orbital Link",
+  "category": "links",
+  "order": 172,
+  "version": "1.0.0",
+  "tagline": "軌道の向こう側。",
+  "description": "丸い軌道と、中心に浮かぶ矢印の静かな回転。",
+  "material": "ORBIT / DESTINATION",
+  "motion": "HOVER / NAVIGATE",
+  "accent": "181,193,228",
+  "designType": "A",
+  "runtime": "Native anchor + CSS only",
+  "componentName": "OrbitalLink",
+  "tags": [
+    "Orbital Link",
+    "orbital-link",
+    "リンク",
+    "link",
+    "CTA",
+    "ナビゲーション",
+    "A"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children / eyebrow / icon",
+      "ReactNode",
+      "表示テキスト・補助見出し・装飾アイコン。"
+    ],
+    [
+      "href",
+      "string (required)",
+      "ページ、ページ内アンカー、mailto等の移動先。"
+    ],
+    [
+      "target / rel / download",
+      "native anchor attributes",
+      "新規タブ、関係性、同一オリジン等のダウンロード指定。"
+    ],
+    [
+      "onClick / ref / aria-current",
+      "native attributes",
+      "標準イベント・ref・現在位置。ネイティブ移動を維持。"
+    ],
+    [
+      "className / style",
+      "native attributes",
+      "利用先での配置。コンポーネントはルーター依存を持ちません。"
+    ]
+  ]
+}

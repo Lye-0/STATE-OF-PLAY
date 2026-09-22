@@ -1,0 +1,54 @@
+{
+  "id": "inline-link",
+  "name": "Inline Link",
+  "category": "links",
+  "order": 182,
+  "version": "1.0.0",
+  "tagline": "文章の流れの中に。",
+  "description": "本文中でも使える、読みやすい色と下線のリンク。",
+  "material": "INLINE / REFERENCE",
+  "motion": "HOVER / NAVIGATE",
+  "accent": "157,190,239",
+  "designType": "B",
+  "runtime": "Native anchor + CSS only",
+  "componentName": "InlineLink",
+  "tags": [
+    "Inline Link",
+    "inline-link",
+    "リンク",
+    "link",
+    "CTA",
+    "ナビゲーション",
+    "B"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children / eyebrow / icon",
+      "ReactNode",
+      "表示テキスト・補助見出し・装飾アイコン。"
+    ],
+    [
+      "href",
+      "string (required)",
+      "ページ、ページ内アンカー、mailto等の移動先。"
+    ],
+    [
+      "target / rel / download",
+      "native anchor attributes",
+      "新規タブ、関係性、同一オリジン等のダウンロード指定。"
+    ],
+    [
+      "onClick / ref / aria-current",
+      "native attributes",
+      "標準イベント・ref・現在位置。ネイティブ移動を維持。"
+    ],
+    [
+      "className / style",
+      "native attributes",
+      "利用先での配置。コンポーネントはルーター依存を持ちません。"
+    ]
+  ]
+}

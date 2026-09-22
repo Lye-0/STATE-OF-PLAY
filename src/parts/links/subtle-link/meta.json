@@ -1,0 +1,54 @@
+{
+  "id": "subtle-link",
+  "name": "Subtle Link",
+  "category": "links",
+  "order": 181,
+  "version": "1.0.0",
+  "tagline": "さりげない、選択肢。",
+  "description": "ニュートラルな文字と、少しだけ動く矢印。",
+  "material": "SECONDARY / SUBTLE",
+  "motion": "HOVER / NAVIGATE",
+  "accent": "194,199,205",
+  "designType": "B",
+  "runtime": "Native anchor + CSS only",
+  "componentName": "SubtleLink",
+  "tags": [
+    "Subtle Link",
+    "subtle-link",
+    "リンク",
+    "link",
+    "CTA",
+    "ナビゲーション",
+    "B"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children / eyebrow / icon",
+      "ReactNode",
+      "表示テキスト・補助見出し・装飾アイコン。"
+    ],
+    [
+      "href",
+      "string (required)",
+      "ページ、ページ内アンカー、mailto等の移動先。"
+    ],
+    [
+      "target / rel / download",
+      "native anchor attributes",
+      "新規タブ、関係性、同一オリジン等のダウンロード指定。"
+    ],
+    [
+      "onClick / ref / aria-current",
+      "native attributes",
+      "標準イベント・ref・現在位置。ネイティブ移動を維持。"
+    ],
+    [
+      "className / style",
+      "native attributes",
+      "利用先での配置。コンポーネントはルーター依存を持ちません。"
+    ]
+  ]
+}

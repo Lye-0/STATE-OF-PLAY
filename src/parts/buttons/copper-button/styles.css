@@ -1,0 +1,8 @@
+@import "../../../shared/action-button-base.css";
+/* Copper Button — A. 磨いた銅と四隅のリベット。厚みのある押下感。 */
+
+.sop-action.sop-copper-button{color:#382319;background:linear-gradient(165deg,#e7b494,#b16a45 14%,#d39875 50%,#e8b697 72%,#9f613f);border-color:#edc7a5;border-radius:5px;padding-inline:35px;box-shadow:0 5px 0 #5e3928,0 12px 25px #0008;font:600 12px/1.5 Consolas,monospace;letter-spacing:.1em;}
+.sop-action.sop-copper-button .sop-action-art{inset:3px;border:1px solid #5f382954;background:repeating-linear-gradient(0deg,transparent 0 2px,#ffe4c613 2px 3px);}
+.sop-action.sop-copper-button .sop-action-art i{width:4px;height:4px;border-radius:50%;background:#593624;box-shadow:0 1px #ffe3ba;}
+.sop-action.sop-copper-button .sop-action-art i:nth-child(1){top:6px;left:6px;}.sop-action.sop-copper-button .sop-action-art i:nth-child(2){top:6px;right:6px;}.sop-action.sop-copper-button .sop-action-art i:nth-child(3){bottom:6px;left:6px;}.sop-action.sop-copper-button .sop-action-art i:nth-child(4){bottom:6px;right:6px;}
+.sop-action.sop-copper-button .sop-action-icon{border-left:1px solid #5e38215a;padding-left:12px;width:28px;}

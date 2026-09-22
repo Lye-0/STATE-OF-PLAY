@@ -1,35 +1,39 @@
 {
-  "version": "3.5.0",
-  "baseline": "3.4.0-full-repository.zip",
+  "version": "3.6.0",
+  "baseline": "3.5.0-full-repository.zip",
   "date": "2026-09-22",
-  "parts": 144,
-  "categories": 6,
-  "newTextFields": {
-    "total": 24,
-    "A": 16,
-    "B": 8,
-    "nativeInput": 17,
-    "nativeTextarea": 7
+  "parts": 184,
+  "newParts": {
+    "buttons": {
+      "total": 24,
+      "A": 16,
+      "B": 8
+    },
+    "links": {
+      "total": 16,
+      "A": 10,
+      "B": 6
+    }
   },
-  "preservedOriginalPartFiles": {
-    "total": 1200,
-    "modified": 0
-  },
-  "typecheckApp": {
-    "typescript": "5.8.3",
-    "strict": true,
-    "passed": true
+  "preservedPartFiles": {
+    "total": 1440,
+    "changed": 0
   },
   "unitTests": {
-    "passed": 74,
-    "failed": 0
+    "passed": 82,
+    "failed": 0,
+    "skipped": 0
   },
-  "galleryBrowser": {
+  "typecheck": {
+    "app": "PASS TypeScript5.8.3 strict",
+    "all": "NOT RUN with official pinned Vite/React dependencies; registry inaccessible"
+  },
+  "browser": {
     "mode": "network-restricted adapter; Vite not executed",
     "react": "real installed browser runtime; production",
     "passed": 21,
     "tests": [
-      "Gallery: 144 parts, no runtime errors",
+      "Gallery: 184 parts, no runtime errors",
       "A/B and category filters intersect, counts remain correct, and search resets cleanly",
       "Liquid, Fold, Prism have intrinsic opposite state labels and distinct optical treatment",
       "Compact B switches retain real sizes, native keyboard and drag states",
@@ -39,7 +43,7 @@
       "Denied clipboard: manual fallback, no false success, focus restored",
       "Selected source download matches the original file bytes",
       "Focus trap / Escape / restoration to gallery trigger",
-      "Both layouts: all 8224 code previews equal exported sources and selection follows the source identity",
+      "Both layouts: all 10304 code previews equal exported sources and selection follows the source identity",
       "Downloaded ZIP and CLI share exact files, README, prompt, manifest in both layouts and modes",
       "Guide and AI prompt remain copyable in every export format",
       "Mobile 320/390/768: no overflow, usable code and file picker",
@@ -53,60 +57,55 @@
     ],
     "errors": []
   },
-  "textFieldBrowser": {
-    "mode": "explicit synthetic documents (not Vite HTTP)",
-    "react": "actual provided production runtime",
+  "actions": {
+    "mode": "explicit synthetic document (not Vite HTTP)",
     "passed": [
-      "Gallery: 24 native editable fields, labels focus the input, typing never opens details",
-      "Native editing: caret movement, undo, clear focus and safe text display",
-      "Detail controls: value survives format/layout changes; error, success, readOnly, disabled and reset",
-      "Email validation on blur, explicit error recovery and password visibility without submission",
-      "IME synthetic lifecycle preserves composition values and disables destructive controls",
-      "Multiline fields grow and shrink within a bounded height without dropping text",
-      "24 fields at 320/390/768: no horizontal overflow, 16px native text and usable detail controls",
-      "Without initialization: native input and textarea still accept ordinary text",
-      "Native forms: independent IDs, values, reset cancellation, disabled exclusion and readonly submission",
-      "Native maxlength, no-JS editing fallback and teardown stop enhancement listeners",
-      "Real React tsx/portable: all 24 exports, controlled/uncontrolled editing and value changes",
-      "Real React tsx/portable: native onChange clear, selection, independent IDs and repeated teardown",
-      "Real React tsx/original: all 24 exports, controlled/uncontrolled editing and value changes",
-      "Real React tsx/original: native onChange clear, selection, independent IDs and repeated teardown",
-      "Real React jsx/portable: all 24 exports, controlled/uncontrolled editing and value changes",
-      "Real React jsx/portable: native onChange clear, selection, independent IDs and repeated teardown",
-      "Real React jsx/original: all 24 exports, controlled/uncontrolled editing and value changes",
-      "Real React jsx/original: native onChange clear, selection, independent IDs and repeated teardown",
-      "Reduced motion and forced colours keep native input and focus available"
+      "Collections: 24 buttons and 16 links with both design intentions",
+      "Button demo: mouse, Space, Enter, visible feedback and busy reentry guard",
+      "Detail: persistent preview, loading/disabled controls and exact code prompt",
+      "Native links navigate to actual targets without opening/closing part details",
+      "Mobile 320/390/768 and long Japanese labels preserve text/icon and usable source controls",
+      "All 24 native buttons: type=button, busy/disabled guards, restore after destroy",
+      "Explicit submit/reset, fieldset disabled, and busy programmatic clicks",
+      "All 16 links retain native href and do not cancel modified click events",
+      "Long labels wrap, forced colours keep focus, teardown keeps native controls",
+      "Actual React tsx/portable: 40 exports, busy state, refs, disabled and anchor semantics",
+      "Actual React tsx/original: 40 exports, busy state, refs, disabled and anchor semantics",
+      "Actual React jsx/portable: 40 exports, busy state, refs, disabled and anchor semantics",
+      "Actual React jsx/original: 40 exports, busy state, refs, disabled and anchor semantics"
     ],
-    "errors": [],
-    "ime": "Synthetic composition lifecycle; OS IME not automated"
+    "errors": []
   },
   "relocation": {
-    "consumerLayouts": 6,
-    "mountedParts": 864,
-    "passed": true,
-    "includesTypedNewFields": true
+    "transport": "explicit synthetic document + native ESM import map (NOT HTTP)",
+    "results": [
+      "consumer-0-portable",
+      "consumer-0-original",
+      "consumer-1-portable",
+      "consumer-1-original",
+      "consumer-2-portable",
+      "consumer-2-original"
+    ],
+    "errors": []
   },
-  "codePreviewFiles": 8224,
-  "sourceAndReviewPackages": 2304,
-  "environment": {
-    "node": "22.16.0",
-    "typescript": "5.8.3",
-    "chromium": "144.0.7559.96",
-    "playwright": "1.57.0-beta-1764944708000",
-    "react": "19.1.1 production (real installed runtime)",
-    "nodeTypes": "24.0.4"
-  },
-  "limitations": [
-    "Actual Vite build and HTTP serving not executed: npm registry unavailable",
-    "Full official React/Vite typecheck and npm audit not executed",
-    "React development StrictMode double-effect cycle not exercised; explicit remount cycles tested",
-    "Native OS IME, Windows Explorer security, Safari and iOS devices not tested",
-    "Clipboard success/denied uses test harness; OS clipboard not accessed"
+  "codeFilesChecked": 10304,
+  "packageCombinations": 2944,
+  "realReact": "19.1.1 production from installed browser-tool runtime",
+  "transport": "explicit offline synthetic document / native ESM, not Vite HTTP",
+  "excludedFromArchive": [
+    "node_modules",
+    "test fixtures",
+    "screenshots",
+    "runtime adapters output",
+    ".git"
   ],
-  "extractedArchiveRetest": {
-    "appStrictTypecheck": true,
-    "unitTestsPassed": 74,
-    "failed": 0,
-    "sourceFilesIdentical": true
-  }
+  "unverified": [
+    "Vite build/HTTP",
+    "npm audit",
+    "complete official React/Vite typecheck",
+    "Windows/macOS modifier-key window behavior",
+    "Safari/iOS",
+    "screen-reader software",
+    "GitHub Actions live run"
+  ]
 }

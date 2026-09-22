@@ -1,6 +1,6 @@
-# コレクション — v3.5.0
+# コレクション — v3.6.0
 
-24トグル・24ブロック・24スクロールバー・24プルダウン・24アコーディオン・24テキストボックス、計144種類。A/Bは用途と表現の方向であり、品質の優劣ではありません。
+24トグル・24ブロック・24スクロールバー・24プルダウン・24アコーディオン・24テキストボックス、24ボタン・16リンクを加え、計184種類。A/Bは用途と表現の方向であり、品質の優劣ではありません。
 
 ## トグル（24種類）
 
@@ -180,3 +180,53 @@
 | 144 | Password Field | B | 入力を隠し、必要なときだけ確認する。シンプルな認証フォームに。 |
 
 実際のinput/textareaで入力・編集できます。展示用のラベルや例文は利用先へ差し替えられます。詳しくはTEXT-FIELDS.mdを参照してください。
+
+## ボタン（24種類、A16/B8）
+
+| 名前 | タイプ | 特徴 | ID |
+| --- | --- | --- | --- |
+| Helios Button | A | 重なった日輪と、琥珀色の縁。押すと光が沈み込む。 | `helios-button` |
+| Mercury Button | A | 冷たい金属の稜線と、面を横切る柔らかな反射。 | `mercury-button` |
+| Tessera Button | A | 曇りガラスの面が、フォーカスに応じて別々に光る。 | `tessera-button` |
+| Nixie Button | A | 橙の文字、ガラスの奥の配線、側面の冷却フィン。 | `nixie-button` |
+| Liquid Button | A | 厚いガラスの縁と、奥を泳ぐ水色の光。 | `liquid-button` |
+| Obsidian Button | A | 黒い面に刻まれた面取り。細い縁だけが白く光る。 | `obsidian-button` |
+| Velvet Button | A | 深いワイン色、縫い目の縁、真鍮の小さな矢印。 | `velvet-button` |
+| Copper Button | A | 磨いた銅と四隅のリベット。厚みのある押下感。 | `copper-button` |
+| Blueprint Button | A | 青い製図面と照準のような四隅。線が反応する。 | `blueprint-button` |
+| Origami Button | A | 一枚の厚い紙を折り返した、柔らかな立体ボタン。 | `origami-button` |
+| Signal Button | A | 細いグリーンの走査線と、順番に立ち上がるピクセル。 | `signal-button` |
+| Capsule Button | A | 黒いカプセルと発光する接点。丸いキーが一段沈む。 | `capsule-button` |
+| Aurora Button | A | 夜の面を泳ぐ緑と紫の光。文字は静止したまま。 | `aurora-button` |
+| Stamp Button | A | 厚い朱色の印面と内側の二重枠。印を押す手触り。 | `stamp-button` |
+| Kinetic Button | A | 重なったプレートと、独立した矢印セルが動く。 | `kinetic-button` |
+| Orbit Button | A | 小さな軌道リングと、夜空のような深い青。 | `orbit-button` |
+| Quiet Button | B | 読みやすい文字と、控えめな奥行きの基本ボタン。 | `quiet-button` |
+| Linen Button | B | 紙の色と、温かいグレーの境界。明るい画面にも。 | `linen-button` |
+| Outline Button | B | 塗りを抑えた、文脈を選ばないセカンダリー操作。 | `outline-button` |
+| Soft Button | B | 淡いラベンダーと、優しい丸みの低強調ボタン。 | `soft-button` |
+| Solid Button | B | 穏やかなインディゴ。画面の主要操作を明確に。 | `solid-button` |
+| Pill Button | B | セージグリーンの柔らかなカプセル。次の操作へ。 | `pill-button` |
+| Mono Button | B | 等幅文字と細い境界の、開発ツール向けボタン。 | `mono-button` |
+| Danger Button | B | 強すぎない赤の面。破壊的操作の意味を伝える。 | `danger-button` |
+
+## リンク（16種類、A10/B6）
+
+| 名前 | タイプ | 特徴 | ID |
+| --- | --- | --- | --- |
+| Compass Link | A | 等幅文字と、大きく余白を取った斜めの矢印。 | `compass-link` |
+| Runway Link | A | 横に伸びるレールと、進行方向を示す小さな矢印。 | `runway-link` |
+| Editorial Link | A | セリフ体の大きな文字と、遅れて伸びる細い線。 | `editorial-link` |
+| Orbital Link | A | 丸い軌道と、中心に浮かぶ矢印の静かな回転。 | `orbital-link` |
+| Ribbon Link | A | 薄い紙の帯と折り目。矢印の端だけが起き上がる。 | `ribbon-link` |
+| Index Link | A | 索引のような整列と、細い縦線に沿って動く光。 | `index-link` |
+| Prismatic Link | A | 虹色の細い下線と、結晶の縁を思わせる矢印。 | `prismatic-link` |
+| Blueprint Link | A | 精密な目盛りと、角の照準。工具のようなリンク。 | `blueprint-link` |
+| Ticket Link | A | ミシン目と番号帯を持った、細長いチケット。 | `ticket-link` |
+| Portal Link | A | 塗りのない文字に、大きな円の矢印を添える。 | `portal-link` |
+| Text Arrow Link | B | 文章に添えやすい、控えめな右矢印付きリンク。 | `text-arrow-link` |
+| Underline Link | B | ホバーで文字の下に線が伸びる、静かなテキスト。 | `underline-link` |
+| Subtle Link | B | ニュートラルな文字と、少しだけ動く矢印。 | `subtle-link` |
+| Inline Link | B | 本文中でも使える、読みやすい色と下線のリンク。 | `inline-link` |
+| External Link | B | 外部リソースへの移動を示す、コンパクトな記号。 | `external-link` |
+| Back Link | B | 左向き矢印と控えめなラベル。戻り道を自然に示す。 | `back-link` |

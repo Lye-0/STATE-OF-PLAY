@@ -1,0 +1,8 @@
+@import "../../../shared/action-button-base.css";
+/* Kinetic Button — A. 重なったプレートと、独立した矢印セルが動く。 */
+
+.sop-action.sop-kinetic-button{color:#17201a;background:#dae1c0;border:1px solid #e7ebd8;border-radius:0;padding-right:13px;box-shadow:5px 5px 0 #708470,10px 10px 0 #334436,0 15px 25px #0006;font:600 12px/1.5 Consolas,monospace;letter-spacing:.08em;}
+.sop-action.sop-kinetic-button .sop-action-icon{width:33px;height:33px;padding:7px;border-left:1px solid #74836b;background:#becba1;}
+.sop-action.sop-kinetic-button:hover{box-shadow:3px 3px 0 #708470,6px 6px 0 #334436,0 12px 22px #0007;}
+.sop-action.sop-kinetic-button:hover .sop-action-icon{transform:translate(3px,-3px);}
+.sop-action.sop-kinetic-button:active{box-shadow:1px 1px 0 #708470,2px 2px 0 #334436;}

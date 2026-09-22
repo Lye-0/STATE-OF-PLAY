@@ -1,0 +1,7 @@
+@import "../../../shared/navigation-link-base.css";
+/* Portal Link — A. 塗りのない文字に、大きな円の矢印を添える。 */
+
+.sop-link.sop-portal-link{gap:25px;flex-direction:row-reverse;}
+.sop-link.sop-portal-link .sop-link-icon{background:#d1e6b2;color:#222e1c;width:67px;height:67px;border-radius:50%;padding:20px;box-shadow:inset 0 0 0 5px #b3cf9652;transition:transform .5s,border-radius .5s;}
+.sop-link.sop-portal-link .sop-link-label{font-size:18px;max-width:160px;display:block;}
+.sop-link.sop-portal-link:hover .sop-link-icon{transform:rotate(45deg);border-radius:22px;}

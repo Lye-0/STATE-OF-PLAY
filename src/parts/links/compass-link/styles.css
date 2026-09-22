@@ -1,0 +1,8 @@
+@import "../../../shared/navigation-link-base.css";
+/* Compass Link — A. 等幅文字と、大きく余白を取った斜めの矢印。 */
+
+.sop-link.sop-compass-link{gap:25px;font:500 12px/1.65 Consolas,monospace;letter-spacing:.15em;}
+.sop-link.sop-compass-link .sop-link-icon{width:36px;height:36px;transform:rotate(180deg);}
+.sop-link.sop-compass-link:hover .sop-link-icon,.sop-link.sop-compass-link:focus-visible .sop-link-icon{transform:translate(-5px,5px) rotate(180deg);}
+.sop-link.sop-compass-link .sop-link-label{background:linear-gradient(currentColor,currentColor) left bottom/0% 1px no-repeat;padding-bottom:4px;transition:background-size .4s;}
+.sop-link.sop-compass-link:hover .sop-link-label,.sop-link.sop-compass-link:focus-visible .sop-link-label{background-size:100% 1px;}

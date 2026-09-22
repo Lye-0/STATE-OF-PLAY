@@ -1,0 +1,7 @@
+@import "../../../shared/navigation-link-base.css";
+/* Underline Link — B. ホバーで文字の下に線が伸びる、静かなテキスト。 */
+
+.sop-link.sop-underline-link{color:#d3dfce;font-size:14px;gap:12px;}
+.sop-link.sop-underline-link .sop-link-label{background:linear-gradient(currentColor,currentColor) left bottom/25% 1px no-repeat;padding-bottom:5px;transition:background-size .3s;}
+.sop-link.sop-underline-link:hover .sop-link-label,.sop-link.sop-underline-link:focus-visible .sop-link-label{background-size:100% 1px;}
+.sop-link.sop-underline-link .sop-link-icon{width:18px;height:18px;}

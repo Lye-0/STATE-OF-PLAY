@@ -1,0 +1,8 @@
+@import "../../../shared/navigation-link-base.css";
+/* Blueprint Link — A. 精密な目盛りと、角の照準。工具のようなリンク。 */
+
+.sop-link.sop-blueprint-link{color:#afd9ee;gap:30px;font:12px/1.6 Consolas,monospace;letter-spacing:.09em;padding:16px 12px;}
+.sop-link.sop-blueprint-link .sop-link-art{border-block:1px solid #6a9fb149;background:repeating-linear-gradient(90deg,#9bdef361 0 1px,transparent 1px 10px) left bottom/100% 4px no-repeat;}
+.sop-link.sop-blueprint-link .sop-link-icon{outline:1px solid #8dc6e37d;outline-offset:3px;padding:7px;}
+.sop-link.sop-blueprint-link:hover .sop-link-icon{transform:rotate(45deg);}
+.sop-link.sop-blueprint-link::before{content:"+";position:absolute;font:11px monospace;left:-2px;top:-3px;color:#afd9ee;}

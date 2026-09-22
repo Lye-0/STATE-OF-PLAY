@@ -1,0 +1,8 @@
+@import "../../../shared/action-button-base.css";
+/* Obsidian Button — A. 黒い面に刻まれた面取り。細い縁だけが白く光る。 */
+
+.sop-action.sop-obsidian-button{border-radius:1px;background:linear-gradient(150deg,#48484a 0%,#1e1f22 8%,#121316 68%,#3b3d3e);border-color:#555b5f;box-shadow:0 9px 20px #0009,inset 0 0 0 4px #111416, inset 0 0 0 5px #55585c40;font-size:12px;letter-spacing:.16em;}
+.sop-action.sop-obsidian-button .sop-action-art i:first-child{inset:0;background:linear-gradient(155deg,transparent 38%,#dde6e21e 39%,transparent 68%);transform:translateX(-35px);transition:transform .6s;}
+.sop-action.sop-obsidian-button:hover .sop-action-art i:first-child{transform:translateX(25px);}
+.sop-action.sop-obsidian-button .sop-action-icon{border:1px solid #8b989d7a;transform:rotate(-45deg);padding:3px;}
+.sop-action.sop-obsidian-button:hover .sop-action-icon{transform:rotate(0deg);}

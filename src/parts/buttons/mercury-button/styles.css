@@ -1,0 +1,8 @@
+@import "../../../shared/action-button-base.css";
+/* Mercury Button — A. 冷たい金属の稜線と、面を横切る柔らかな反射。 */
+
+.sop-action.sop-mercury-button{border-radius:6px;border:1px solid #bcc5c9;background:linear-gradient(170deg,#edf0ed,#89979f 9%,#c7d0d1 43%,#88989e 49%,#dce1db);color:#172127;box-shadow:0 5px 0 #293a41,0 12px 25px #0008,inset 0 0 0 4px #ffffff2b;font:600 12px/1.5 Consolas,monospace;letter-spacing:.17em;}
+.sop-action.sop-mercury-button .sop-action-art{inset:4px;border:1px solid #26343b4f;background:repeating-linear-gradient(0deg,#fff2 0 1px,transparent 1px 3px);}
+.sop-action.sop-mercury-button .sop-action-art i:first-child{inset:-100%;background:linear-gradient(115deg,transparent 43%,#ffffffba 49%,transparent 57%);transform:translateX(-35%);transition:transform .85s;}
+.sop-action.sop-mercury-button:hover .sop-action-art i:first-child{transform:translateX(35%);}
+.sop-action.sop-mercury-button .sop-action-icon{border-left:1px solid #3949536b;padding-left:15px;width:36px;height:24px;}

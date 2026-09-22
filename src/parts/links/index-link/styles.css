@@ -1,0 +1,9 @@
+@import "../../../shared/navigation-link-base.css";
+/* Index Link — A. 索引のような整列と、細い縦線に沿って動く光。 */
+
+.sop-link.sop-index-link{width:240px;justify-content:space-between;border-top:1px solid #71816654;border-bottom:1px solid #71816654;padding:20px 10px 20px 21px;}
+.sop-link.sop-index-link::before{content:"";position:absolute;left:0;top:20%;height:60%;width:2px;background:#d1e6b2;transform:scaleY(.4);transition:transform .4s;}
+.sop-link.sop-index-link:hover::before{transform:scaleY(1);}
+.sop-link.sop-index-link .sop-link-label{font-size:19px;letter-spacing:-.03em;}
+.sop-link.sop-index-link .sop-link-icon{width:25px;height:25px;transform:rotate(45deg);}
+.sop-link.sop-index-link:hover .sop-link-icon{transform:translateX(5px) rotate(45deg);}

@@ -1,0 +1,8 @@
+@import "../../../shared/navigation-link-base.css";
+/* Runway Link — A. 横に伸びるレールと、進行方向を示す小さな矢印。 */
+
+.sop-link.sop-runway-link{border-bottom:1px solid #526368;width:270px;padding-block:16px;justify-content:space-between;}
+.sop-link.sop-runway-link::after{content:"";position:absolute;left:0;bottom:-1px;width:100%;height:2px;background:#bee6e3;transform:scaleX(.12);transform-origin:left;transition:transform .55s;}
+.sop-link.sop-runway-link:hover::after,.sop-link.sop-runway-link:focus-visible::after{transform:scaleX(1);}
+.sop-link.sop-runway-link .sop-link-icon{transform:rotate(45deg);width:25px;height:25px;}
+.sop-link.sop-runway-link:hover .sop-link-icon{transform:translateX(6px) rotate(45deg);}

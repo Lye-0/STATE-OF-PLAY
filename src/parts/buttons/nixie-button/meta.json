@@ -1,0 +1,54 @@
+{
+  "id": "nixie-button",
+  "name": "Nixie Button",
+  "category": "buttons",
+  "order": 148,
+  "version": "1.0.0",
+  "tagline": "小さな、点火。",
+  "description": "橙の文字、ガラスの奥の配線、側面の冷却フィン。",
+  "material": "VACUUM / AMBER",
+  "motion": "PRESS / RESPONSE",
+  "accent": "248,166,77",
+  "designType": "A",
+  "runtime": "Native button + CSS / busy guard",
+  "componentName": "NixieButton",
+  "tags": [
+    "Nixie Button",
+    "nixie-button",
+    "ボタン",
+    "button",
+    "CTA",
+    "操作",
+    "A"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children / icon",
+      "ReactNode",
+      "ラベルと装飾アイコン。内部にリンク・ボタンなどの操作要素は入れません。"
+    ],
+    [
+      "onClick / onClickCapture",
+      "native event handlers",
+      "アプリの処理へ接続します。処理中は再操作を遮断。"
+    ],
+    [
+      "type / name / value / form",
+      "native button attributes",
+      "typeは初期値button。submit/resetは用途に合わせ明示。"
+    ],
+    [
+      "loading / disabled",
+      "boolean",
+      "処理中はフォーカスを保ちながら操作を遮断。disabledは標準無効。"
+    ],
+    [
+      "ref / className / style",
+      "native ref / attributes",
+      "ボタンへのrefと、配置の調整。"
+    ]
+  ]
+}

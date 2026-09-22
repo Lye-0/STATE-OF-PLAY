@@ -1,0 +1,54 @@
+{
+  "id": "stamp-button",
+  "name": "Stamp Button",
+  "category": "buttons",
+  "order": 158,
+  "version": "1.0.0",
+  "tagline": "一押しを、刻む。",
+  "description": "厚い朱色の印面と内側の二重枠。印を押す手触り。",
+  "material": "IMPRESSION / SEAL",
+  "motion": "PRESS / RESPONSE",
+  "accent": "235,154,127",
+  "designType": "A",
+  "runtime": "Native button + CSS / busy guard",
+  "componentName": "StampButton",
+  "tags": [
+    "Stamp Button",
+    "stamp-button",
+    "ボタン",
+    "button",
+    "CTA",
+    "操作",
+    "A"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children / icon",
+      "ReactNode",
+      "ラベルと装飾アイコン。内部にリンク・ボタンなどの操作要素は入れません。"
+    ],
+    [
+      "onClick / onClickCapture",
+      "native event handlers",
+      "アプリの処理へ接続します。処理中は再操作を遮断。"
+    ],
+    [
+      "type / name / value / form",
+      "native button attributes",
+      "typeは初期値button。submit/resetは用途に合わせ明示。"
+    ],
+    [
+      "loading / disabled",
+      "boolean",
+      "処理中はフォーカスを保ちながら操作を遮断。disabledは標準無効。"
+    ],
+    [
+      "ref / className / style",
+      "native ref / attributes",
+      "ボタンへのrefと、配置の調整。"
+    ]
+  ]
+}

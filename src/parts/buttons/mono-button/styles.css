@@ -1,0 +1,6 @@
+@import "../../../shared/action-button-base.css";
+/* Mono Button — B. 等幅文字と細い境界の、開発ツール向けボタン。 */
+
+.sop-action.sop-mono-button{min-width:147px;min-height:44px;padding:12px 18px;background:#23272c;border-color:#4b535d;color:#dce1e5;border-radius:3px;font:500 12px/1.5 Consolas,monospace;letter-spacing:.06em;}
+.sop-action.sop-mono-button:hover{background:#2d333a;border-color:#85909d;}
+.sop-action.sop-mono-button .sop-action-icon{width:16px;height:16px;}

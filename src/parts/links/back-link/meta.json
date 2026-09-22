@@ -1,0 +1,54 @@
+{
+  "id": "back-link",
+  "name": "Back Link",
+  "category": "links",
+  "order": 184,
+  "version": "1.0.0",
+  "tagline": "ひとつ前へ、戻る。",
+  "description": "左向き矢印と控えめなラベル。戻り道を自然に示す。",
+  "material": "BACK / NAVIGATION",
+  "motion": "HOVER / NAVIGATE",
+  "accent": "209,207,195",
+  "designType": "B",
+  "runtime": "Native anchor + CSS only",
+  "componentName": "BackLink",
+  "tags": [
+    "Back Link",
+    "back-link",
+    "リンク",
+    "link",
+    "CTA",
+    "ナビゲーション",
+    "B"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children / eyebrow / icon",
+      "ReactNode",
+      "表示テキスト・補助見出し・装飾アイコン。"
+    ],
+    [
+      "href",
+      "string (required)",
+      "ページ、ページ内アンカー、mailto等の移動先。"
+    ],
+    [
+      "target / rel / download",
+      "native anchor attributes",
+      "新規タブ、関係性、同一オリジン等のダウンロード指定。"
+    ],
+    [
+      "onClick / ref / aria-current",
+      "native attributes",
+      "標準イベント・ref・現在位置。ネイティブ移動を維持。"
+    ],
+    [
+      "className / style",
+      "native attributes",
+      "利用先での配置。コンポーネントはルーター依存を持ちません。"
+    ]
+  ]
+}

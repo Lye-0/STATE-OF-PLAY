@@ -1,0 +1,54 @@
+{
+  "id": "blueprint-link",
+  "name": "Blueprint Link",
+  "category": "links",
+  "order": 176,
+  "version": "1.0.0",
+  "tagline": "設計図の、その先。",
+  "description": "精密な目盛りと、角の照準。工具のようなリンク。",
+  "material": "CALIBRATION / ROUTE",
+  "motion": "HOVER / NAVIGATE",
+  "accent": "149,204,232",
+  "designType": "A",
+  "runtime": "Native anchor + CSS only",
+  "componentName": "BlueprintLink",
+  "tags": [
+    "Blueprint Link",
+    "blueprint-link",
+    "リンク",
+    "link",
+    "CTA",
+    "ナビゲーション",
+    "A"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children / eyebrow / icon",
+      "ReactNode",
+      "表示テキスト・補助見出し・装飾アイコン。"
+    ],
+    [
+      "href",
+      "string (required)",
+      "ページ、ページ内アンカー、mailto等の移動先。"
+    ],
+    [
+      "target / rel / download",
+      "native anchor attributes",
+      "新規タブ、関係性、同一オリジン等のダウンロード指定。"
+    ],
+    [
+      "onClick / ref / aria-current",
+      "native attributes",
+      "標準イベント・ref・現在位置。ネイティブ移動を維持。"
+    ],
+    [
+      "className / style",
+      "native attributes",
+      "利用先での配置。コンポーネントはルーター依存を持ちません。"
+    ]
+  ]
+}

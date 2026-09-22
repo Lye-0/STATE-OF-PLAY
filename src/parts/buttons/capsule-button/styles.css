@@ -1,0 +1,7 @@
+@import "../../../shared/action-button-base.css";
+/* Capsule Button — A. 黒いカプセルと発光する接点。丸いキーが一段沈む。 */
+
+.sop-action.sop-capsule-button{border:1px solid #657b74;border-radius:45px;background:linear-gradient(#394b46,#1b2a25 45%,#172720);padding:17px 21px 17px 32px;box-shadow:inset 0 1px #a7d2bb60,0 5px 0 #0b1611,0 12px 24px #0008;letter-spacing:.12em;font-size:12px;}
+.sop-action.sop-capsule-button .sop-action-icon{border-radius:50%;color:#123527;background:linear-gradient(#b3f2d8,#68b89b);width:32px;height:32px;padding:8px;box-shadow:inset 0 1px #ecfff7,0 2px 8px #0008;}
+.sop-action.sop-capsule-button .sop-action-art i:first-child{top:10px;bottom:10px;left:11px;width:6px;background:repeating-linear-gradient(0deg,#9cb3a13f 0 1px,transparent 1px 4px);}
+.sop-action.sop-capsule-button:hover .sop-action-icon{transform:translateX(3px);box-shadow:0 0 18px #82e5b83e;}

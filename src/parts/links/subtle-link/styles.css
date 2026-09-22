@@ -1,0 +1,6 @@
+@import "../../../shared/navigation-link-base.css";
+/* Subtle Link — B. ニュートラルな文字と、少しだけ動く矢印。 */
+
+.sop-link.sop-subtle-link{color:#c6cdd3;gap:12px;font-size:14px;}
+.sop-link.sop-subtle-link .sop-link-icon{width:18px;height:18px;opacity:.55;transform:rotate(45deg);}
+.sop-link.sop-subtle-link:hover{color:#f1f4f7;}.sop-link.sop-subtle-link:hover .sop-link-icon{opacity:1;transform:translateX(3px) rotate(45deg);}

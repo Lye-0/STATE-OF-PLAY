@@ -1,0 +1,7 @@
+@import "../../../shared/navigation-link-base.css";
+/* Text Arrow Link — B. 文章に添えやすい、控えめな右矢印付きリンク。 */
+
+.sop-link.sop-text-arrow-link{gap:9px;color:#bad3e6;font-size:14px;}
+.sop-link.sop-text-arrow-link .sop-link-icon{width:18px;height:18px;transform:rotate(45deg);}
+.sop-link.sop-text-arrow-link:hover .sop-link-label{text-decoration:underline;text-underline-offset:4px;}
+.sop-link.sop-text-arrow-link:hover .sop-link-icon{transform:translateX(3px) rotate(45deg);}

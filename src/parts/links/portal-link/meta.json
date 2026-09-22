@@ -1,0 +1,54 @@
+{
+  "id": "portal-link",
+  "name": "Portal Link",
+  "category": "links",
+  "order": 178,
+  "version": "1.0.0",
+  "tagline": "丸い入口、広い世界。",
+  "description": "塗りのない文字に、大きな円の矢印を添える。",
+  "material": "PORTAL / OPEN",
+  "motion": "HOVER / NAVIGATE",
+  "accent": "206,228,179",
+  "designType": "A",
+  "runtime": "Native anchor + CSS only",
+  "componentName": "PortalLink",
+  "tags": [
+    "Portal Link",
+    "portal-link",
+    "リンク",
+    "link",
+    "CTA",
+    "ナビゲーション",
+    "A"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children / eyebrow / icon",
+      "ReactNode",
+      "表示テキスト・補助見出し・装飾アイコン。"
+    ],
+    [
+      "href",
+      "string (required)",
+      "ページ、ページ内アンカー、mailto等の移動先。"
+    ],
+    [
+      "target / rel / download",
+      "native anchor attributes",
+      "新規タブ、関係性、同一オリジン等のダウンロード指定。"
+    ],
+    [
+      "onClick / ref / aria-current",
+      "native attributes",
+      "標準イベント・ref・現在位置。ネイティブ移動を維持。"
+    ],
+    [
+      "className / style",
+      "native attributes",
+      "利用先での配置。コンポーネントはルーター依存を持ちません。"
+    ]
+  ]
+}

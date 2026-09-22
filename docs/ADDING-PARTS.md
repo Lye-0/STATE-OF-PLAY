@@ -156,3 +156,17 @@ npm run test:scrollbars:react
 メタデータはcategory=textboxesです。registryと公開propsを更新すると、依存する共有ファイルも配布に含まれます。内部のimportとCSSのurlを正しく書き、getDeliveryで生成されるパスを手作業で複製しません。展示のstatusには値そのものを流さず、filled/focused/composing等だけを使います。
 
 新しいスキンはtests/textfields.test.tsの件数・デザインテストと、tests/textfields.browser.tsの実入力検証へ加えます。ラベル、長文、複数個体、制御/非制御、readOnly/disabled、フォームreset、合成IME、実機IMEでの確認範囲を区別して記録してください。
+
+
+## ボタン／リンクを追加するとき（v3.6.0）
+
+ボタンはbuttons、リンクはlinksカテゴリです。メタデータ・固有CSS・markup・React/Vanilla入口・使用例・仕様を各フォルダーへ置き、registry.jsonへ登録します。
+共通スタイルはaction-button-base.css/navigation-link-base.css、Reactの構造はaction-button-view.tsx/navigation-link-view.tsxを再利用します。
+
+buttonの初期typeはbutton。実行処理や状態は外側に接続し、デモのタイマー・カウンターを本体へ入れません。
+リンクは実際のaとhrefを残します。独立デモの#destinationと使用例の移動先を必ず用意します。
+ラベル・アイコンは利用先で差し替えられるようにし、ref/ネイティブ属性を維持してください。
+
+loading時の無効化、submit/reset、修飾キー付きリンク操作、長い日本語、キーボードフォーカス、reduced-motion/forced-colorsを確認します。
+既存部品のコピーを増やすのではなく、固有の見た目・仕様を管理し、配布時だけ共通依存を含めます。
+新カテゴリを加える場合は、tests/browser.tsの汎用React検証でもbuttonの入れ子など不正な使用例を作らないようにします。

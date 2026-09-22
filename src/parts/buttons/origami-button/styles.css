@@ -1,0 +1,8 @@
+@import "../../../shared/action-button-base.css";
+/* Origami Button — A. 一枚の厚い紙を折り返した、柔らかな立体ボタン。 */
+
+.sop-action.sop-origami-button{border-radius:1px;color:#543221;background:#edbd94;border-color:#fce0bd;box-shadow:5px 6px 0 #a96b4680,0 10px 20px #0004;padding-right:45px;font-weight:600;}
+.sop-action.sop-origami-button::after{content:"";position:absolute;right:0;top:0;width:24px;height:24px;background:linear-gradient(45deg,#c88d67 49%,#ffdcb7 50%);box-shadow:-2px 2px 3px #8040202b;transition:width .4s,height .4s;}
+.sop-action.sop-origami-button:hover::after{width:30px;height:30px;}
+.sop-action.sop-origami-button .sop-action-art{background:linear-gradient(165deg,#fff1d754,transparent 48%,#b9784720 49%,transparent);}
+.sop-action.sop-origami-button:active{box-shadow:2px 2px 0 #a96b4680;}

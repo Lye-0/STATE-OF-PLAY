@@ -1,0 +1,7 @@
+@import "../../../shared/navigation-link-base.css";
+/* Inline Link — B. 本文中でも使える、読みやすい色と下線のリンク。 */
+
+.sop-link.sop-inline-link{min-height:0;display:inline-flex;padding:3px 0;font-size:15px;color:#b2cfff;gap:0;}
+.sop-link.sop-inline-link .sop-link-label{text-decoration:underline;text-decoration-color:#88a8d28a;text-underline-offset:4px;}
+.sop-link.sop-inline-link .sop-link-icon{display:none;}
+.sop-link.sop-inline-link:hover .sop-link-label{text-decoration-color:currentColor;}
