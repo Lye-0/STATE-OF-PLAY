@@ -1,0 +1,8 @@
+@import "../../../shared/select-base.css";
+/* Atelier Select — PIGMENT / PAPER. Type A. */
+.sop-select.sop-atelier-select{--sel-bg:#f1e9db;--sel-panel:#f7f0e4;--sel-ink:#3d3932;--sel-muted:#807a70;--sel-accent:#a76550;--sel-line:#d8ccba;--sel-radius:4px;--sel-shadow:3px 4px 0 #0002;}
+.sop-select.sop-atelier-select .sop-select-icon{border-radius:2px;background:#c87961;color:#fff4df;border:0;box-shadow:2px 2px 0 #c1b49d}
+.sop-select.sop-atelier-select :is(.sop-select-option,.sop-select-value)[data-glyph="1"] .sop-select-icon{background:#91a68a}.sop-select.sop-atelier-select :is(.sop-select-option,.sop-select-value)[data-glyph="2"] .sop-select-icon{background:#546b89}.sop-select.sop-atelier-select :is(.sop-select-option,.sop-select-value)[data-glyph="3"] .sop-select-icon{background:#d8c8aa;color:#65533b}
+.sop-select.sop-atelier-select .sop-select-option{border-radius:0;border-bottom:1px dashed #cfc2ad;padding:15px 12px}
+.sop-select.sop-atelier-select .sop-select-popup{box-shadow:5px 6px 0 #201b1233,0 20px 35px #0004}
+.sop-select.sop-atelier-select .sop-select-option-copy b{font-family:Georgia,serif;font-size:17px}.sop-select.sop-atelier-select .sop-select-badge{font-size:8px}

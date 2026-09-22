@@ -10,6 +10,7 @@ import { getDelivery, buildPrompt, buildUsage, packageRoot, packageContents } fr
 import { JSZip } from '../scripts/zip.ts';
 import { offlineFiles, testBundle, inlineTestCSS } from './offline-fixture.ts';
 import { resolveLocal } from '../scripts/source-tools.ts';
+import ts from 'typescript';
 const require=createRequire(import.meta.url);
 const {chromium}=require(process.env.PLAYWRIGHT_PATH??'playwright') as typeof import('playwright');
 const offline=process.env.SOP_TEST_MODE==='offline';
@@ -49,22 +50,26 @@ try{
   for(const script of scripts){
    if(!script.module){await page.addScriptTag({content:read(script.name)});continue;}
    // Execute actual exported JS as native ESM, using blob URLs only for transport in this offline test.
-   const modules:Record<string,{code:string;imports:Record<string,string>}>= {};
+   const modules:Record<string,{code:string;refs:{start:number;end:number;target:string}[]}>= {};
    function visit(file:string){
     if(modules[file])return;
     const code=file==='/runtime.js'?fs.readFileSync(process.env.SOP_REACT_BROWSER_BUNDLE!,'utf8'):read(file);
-    const imports:Record<string,string>={};modules[file]={code,imports};
-    if(file==='/runtime.js')return; // optional editor imports in this real runtime are not used by the harness
-    for(const match of code.matchAll(/(?:\bfrom\s*|\bimport\s*)(['"])([^'"\n]+)\1/g)){
-     const request=match[2];const dep=request==='/runtime.js'?request:'/'+resolveLocal(file.slice(1),request,p=>memory.has('/'+p)||fs.existsSync(path.join(ROOT,p)));
-     imports[request]=dep;visit(dep);
+    const refs:{start:number;end:number;target:string}[]=[];modules[file]={code,refs};
+    if(file==='/runtime.js')return;
+    // Read syntax nodes: text like `from 'x'` inside strings/comments is not an import.
+    const ast=ts.createSourceFile(file,code,ts.ScriptTarget.Latest,true);
+    for(const node of ast.statements){
+     if(!(ts.isImportDeclaration(node)||ts.isExportDeclaration(node))||!node.moduleSpecifier||!ts.isStringLiteral(node.moduleSpecifier))continue;
+     const spec=node.moduleSpecifier,request=spec.text;
+     const dep=request==='/runtime.js'?request:'/'+resolveLocal(file.slice(1),request,p=>memory.has('/'+p)||fs.existsSync(path.join(ROOT,p)));
+     refs.push({start:spec.getStart(ast)+1,end:spec.getEnd()-1,target:dep});visit(dep);
     }
    }
    visit(script.name);
    await page.evaluate(async({modules,entry})=>{
     const urls=new Map<string,string>();
     function make(id:string):string {if(urls.has(id))return urls.get(id)!;const item=modules[id];
-     const code=item.code.replace(/(\bfrom\s*|\bimport\s*)(['"])([^'"\n]+)\2/g,(all,prefix:string,quote:string,request:string)=>item.imports[request]?prefix+quote+make(item.imports[request])+quote:all);
+     let code=item.code;for(const ref of [...item.refs].sort((a,b)=>b.start-a.start))code=code.slice(0,ref.start)+make(ref.target)+code.slice(ref.end);
      const result=URL.createObjectURL(new Blob([code],{type:'text/javascript'}));urls.set(id,result);return result;
     }
     await import(make(entry));for(const value of urls.values())URL.revokeObjectURL(value);
@@ -74,7 +79,7 @@ try{
  await load();
  await run(`Gallery: ${catalog.parts.length} parts, no runtime errors`,async()=>{assert.equal(await page.locator('[data-part]').count(),catalog.parts.length);assert.deepEqual(errors,[]);});
  await run('A/B and category filters intersect, counts remain correct, and search resets cleanly',async()=>{
-  for(const category of ['all','toggles','blocks','scrollbars']){
+  for(const category of ['all','toggles','blocks','scrollbars','dropdowns','accordions']){
    await page.locator(`[data-category="${category}"]`).click();
    for(const kind of ['A','B','all']){
     await page.locator(`[data-design-filter="${kind}"]`).click();

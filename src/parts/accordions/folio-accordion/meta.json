@@ -1,0 +1,59 @@
+{
+  "id": "folio-accordion",
+  "name": "Folio",
+  "category": "accordions",
+  "order": 97,
+  "version": "1.0.0",
+  "tagline": "ページの、奥へ。",
+  "description": "大きな章番号と、紙の余白。ひらいた内容まで一冊の本のように。",
+  "material": "EDITORIAL / PAPER",
+  "motion": "UNFOLD / CONTENT",
+  "accent": "197,212,177",
+  "designType": "A",
+  "runtime": "CSS grid + disclosure events",
+  "componentName": "FolioAccordion",
+  "tags": [
+    "Folio",
+    "folio-accordion",
+    "アコーディオン",
+    "accordion",
+    "開閉",
+    "A",
+    "EDITORIAL / PAPER"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "items",
+      "AccordionItem[]",
+      "value・title・subtitle・badge・content・disabledを指定。contentはReactNode。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "展開する項目の値。expandedは外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(values: string[]) => void",
+      "開閉の要求を受け取ります。"
+    ],
+    [
+      "multiple",
+      "boolean",
+      "trueなら複数の項目を同時に開けます。"
+    ],
+    [
+      "collapsible",
+      "boolean",
+      "falseなら最後の項目を操作で閉じません。"
+    ],
+    [
+      "disabled / headingLevel",
+      "boolean / 2…6",
+      "操作の無効化と、見出しの深さを指定。"
+    ]
+  ]
+}

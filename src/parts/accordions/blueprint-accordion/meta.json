@@ -1,0 +1,59 @@
+{
+  "id": "blueprint-accordion",
+  "name": "Blueprint Fold",
+  "category": "accordions",
+  "order": 100,
+  "version": "1.0.0",
+  "tagline": "構造を、読む。",
+  "description": "設計図の細線と寸法表記。詳細な仕様を美しく展開する。",
+  "material": "TECHNICAL / GRID",
+  "motion": "UNFOLD / CONTENT",
+  "accent": "197,212,177",
+  "designType": "A",
+  "runtime": "CSS grid + disclosure events",
+  "componentName": "BlueprintAccordion",
+  "tags": [
+    "Blueprint",
+    "blueprint-accordion",
+    "アコーディオン",
+    "accordion",
+    "開閉",
+    "A",
+    "TECHNICAL / GRID"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "items",
+      "AccordionItem[]",
+      "value・title・subtitle・badge・content・disabledを指定。contentはReactNode。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "展開する項目の値。expandedは外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(values: string[]) => void",
+      "開閉の要求を受け取ります。"
+    ],
+    [
+      "multiple",
+      "boolean",
+      "trueなら複数の項目を同時に開けます。"
+    ],
+    [
+      "collapsible",
+      "boolean",
+      "falseなら最後の項目を操作で閉じません。"
+    ],
+    [
+      "disabled / headingLevel",
+      "boolean / 2…6",
+      "操作の無効化と、見出しの深さを指定。"
+    ]
+  ]
+}

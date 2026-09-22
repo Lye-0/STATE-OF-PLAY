@@ -1,0 +1,60 @@
+{
+  "id": "team-select",
+  "name": "Team Select",
+  "category": "dropdowns",
+  "order": 95,
+  "version": "1.0.0",
+  "tagline": "誰と、つくる。",
+  "description": "落ち着いた配色と読みやすい選択肢。日常の設定画面に自然になじむ。",
+  "material": "ESSENTIAL / UTILITY",
+  "motion": "REVEAL / SELECT",
+  "accent": "173,213,204",
+  "designType": "B",
+  "runtime": "CSS + event-driven select",
+  "componentName": "TeamSelect",
+  "tags": [
+    "Team Select",
+    "team-select",
+    "プルダウン",
+    "セレクト",
+    "dropdown",
+    "select",
+    "B",
+    "ESSENTIAL / UTILITY"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "items",
+      "SelectItem[]",
+      "value・label・description・icon・badge・group・disabledを指定。選択肢の内容もデザインします。"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "選択値。valueは外部制御、defaultValueは初期状態。"
+    ],
+    [
+      "onValueChange",
+      "(value: string) => void",
+      "確定した選択値を受け取ります。"
+    ],
+    [
+      "label / placeholder / name",
+      "string",
+      "読み上げ名、未選択の表示、フォーム送信名。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "無効状態。フォーム値も送信対象から外れます。"
+    ],
+    [
+      "renderOption",
+      "(item) => ReactNode",
+      "選択肢内の装飾。ボタンや入力欄をネストしないでください。"
+    ]
+  ]
+}

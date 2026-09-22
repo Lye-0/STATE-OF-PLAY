@@ -1,0 +1,59 @@
+{
+  "id": "gallery-frame-accordion",
+  "name": "Gallery Frame",
+  "category": "accordions",
+  "order": 108,
+  "version": "1.0.0",
+  "tagline": "作品の、その先。",
+  "description": "額縁のような線と展示の余白。アートの背景を読むアコーディオン。",
+  "material": "ART / EXHIBITION",
+  "motion": "UNFOLD / CONTENT",
+  "accent": "197,212,177",
+  "designType": "A",
+  "runtime": "CSS grid + disclosure events",
+  "componentName": "GalleryFrameAccordion",
+  "tags": [
+    "Gallery Frame",
+    "gallery-frame-accordion",
+    "アコーディオン",
+    "accordion",
+    "開閉",
+    "A",
+    "ART / EXHIBITION"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "items",
+      "AccordionItem[]",
+      "value・title・subtitle・badge・content・disabledを指定。contentはReactNode。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "展開する項目の値。expandedは外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(values: string[]) => void",
+      "開閉の要求を受け取ります。"
+    ],
+    [
+      "multiple",
+      "boolean",
+      "trueなら複数の項目を同時に開けます。"
+    ],
+    [
+      "collapsible",
+      "boolean",
+      "falseなら最後の項目を操作で閉じません。"
+    ],
+    [
+      "disabled / headingLevel",
+      "boolean / 2…6",
+      "操作の無効化と、見出しの深さを指定。"
+    ]
+  ]
+}

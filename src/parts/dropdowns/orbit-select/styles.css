@@ -1,0 +1,8 @@
+@import "../../../shared/select-base.css";
+/* Orbit Select — CELESTIAL / NAVIGATION. Type A. */
+.sop-select.sop-orbit-select{--sel-bg:#111e30;--sel-panel:linear-gradient(150deg,#101b2d,#202238);--sel-accent:#a5b8f5;--sel-line:#869bb62b;--sel-radius:14px;}
+.sop-select.sop-orbit-select .sop-select-popup{background-image:radial-gradient(circle at 20% 14%,#d2e2ff 1px,transparent 1.5px),radial-gradient(circle at 85% 32%,#e2d2ff 1px,transparent 1.5px),linear-gradient(145deg,#121d31,#222036);background-size:170px 150px,130px 180px,auto}
+.sop-select.sop-orbit-select .sop-select-icon{border:1px solid #8f9fc87a;border-radius:50%;background:radial-gradient(circle at 25% 22%,#98b1d0,#25445b 42%,#12222f);box-shadow:0 0 0 5px #adc2fb09,0 0 0 6px #adc2fb12}
+.sop-select.sop-orbit-select :is(.sop-select-option,.sop-select-value)[data-glyph="1"] .sop-select-icon{background:radial-gradient(circle at 25% 25%,#dcdbd0,#667180,#202832)}
+.sop-select.sop-orbit-select :is(.sop-select-option,.sop-select-value)[data-glyph="2"] .sop-select-icon{background:radial-gradient(circle at 25% 25%,#ead2a0,#917550,#322132)}
+.sop-select.sop-orbit-select .sop-select-menu-heading{letter-spacing:1.7px}.sop-select.sop-orbit-select .sop-select-option-copy b{letter-spacing:.4px}

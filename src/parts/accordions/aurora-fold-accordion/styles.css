@@ -1,0 +1,5 @@
+@import "../../../shared/accordion-base.css";
+ @import "../../../shared/panel-content.css";
+/* Aurora Fold — LIGHT / ATMOSPHERE. Type A. */
+.sop-accordion.sop-aurora-fold-accordion{--acc-bg:linear-gradient(125deg,#1c302d,#242537);--acc-accent:#a8e8cf;--acc-line:#94bea82b;--acc-radius:16px;}
+.sop-accordion.sop-aurora-fold-accordion > .sop-accordion-item[data-open=true]{box-shadow:0 0 25px #96e7c00b,inset 2px 0 #9bdbc0}.sop-accordion.sop-aurora-fold-accordion > .sop-accordion-item > .sop-accordion-heading > .sop-accordion-trigger > .sop-accordion-index{width:26px;height:26px;display:grid;place-items:center;border-radius:50%;border:1px solid #abebce40}.sop-accordion.sop-aurora-fold-accordion > .sop-accordion-item > .sop-accordion-panel > .sop-accordion-clip > .sop-accordion-content > .sop-panel-art{background:linear-gradient(120deg,#7bccb330,#8163b04a,#314b4d)}.sop-accordion.sop-aurora-fold-accordion > .sop-accordion-item > .sop-accordion-panel > .sop-accordion-clip > .sop-accordion-content > .sop-panel-art:before{width:230px;top:-45px;right:-15px;filter:blur(1px);border-width:15px;border-color:#bcebd91d}

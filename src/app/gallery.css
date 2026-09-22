@@ -291,3 +291,32 @@
 
 /* Dark lettering stays readable on the existing warm-paper sample. */
 .sop-surface.sop-folded-paper .surface-sample h3 em{color:#766044}
+
+/* v3.4 — authored selection & disclosure collections; no component geometry is scaled. */
+.dropdown-card,.accordion-card{background:#17191a;border:1px solid #2c302d;border-radius:10px;transition:border-color .25s}
+.dropdown-card:hover,.accordion-card:hover{border-color:#52614b}
+.dropdown-card .object-stage{height:254px;padding:40px 38px;perspective:none}
+.dropdown-card .stage-mount{max-width:370px}
+.dropdown-card .object-stage:after{content:"CLICK TO EXPLORE THE OPTIONS  ↓";position:absolute;bottom:21px;left:0;right:0;text-align:center;font:7px var(--mono);letter-spacing:1.6px;color:#899a80;pointer-events:none}
+.accordion-card .object-stage{height:auto;min-height:480px;padding:27px 32px;align-items:flex-start;perspective:none}
+.accordion-card .stage-mount{max-width:420px;align-items:flex-start}
+.dropdown-card .card-bottom h2,.accordion-card .card-bottom h2{font-size:22px;display:block}
+.dropdown-card .card-bottom h2 span,.accordion-card .card-bottom h2 span{display:none}
+.dropdown-preview .preview-stage{height:190px;padding:22px 18px;perspective:none}
+.accordion-preview .preview-stage{height:auto;min-height:260px;padding:12px 14px;align-items:flex-start}
+.accordion-preview .sop-accordion{--acc-padding:15px}
+.accordion-preview .sop-accordion-trigger{gap:10px}
+.accordion-preview .sop-accordion-title b{font-size:12px}
+.accordion-preview .sop-panel-metrics{gap:5px}
+.accordion-preview .sop-panel-metrics>div{padding:9px 6px}
+.accordion-preview .sop-panel-metrics b{font-size:17px}
+.accordion-preview .sop-panel-metrics small{font-size:6px;letter-spacing:0}
+.disclosure-controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:13px 0}
+.disclosure-controls .small-button{font-size:10px;padding:8px 10px}
+.disclosure-controls label{font-size:10px;color:#aeb8ae;display:flex;gap:6px;align-items:center}
+.disclosure-controls input{accent-color:#c3dcac}
+.category-tabs{gap:21px;min-width:0;overflow-x:auto;scrollbar-width:thin;scrollbar-color:#55604c transparent}
+.category-tabs button{min-height:47px;flex:none;gap:7px;font-size:11px}
+.collection-toolbar .search-box{flex:0 0 205px}
+@media(max-width:1050px){.collection-toolbar{flex-wrap:wrap;gap:5px;padding-top:12px}.collection-toolbar .search-box{flex:1 1 230px}.category-tabs{width:100%;order:2;height:49px;gap:26px}.dropdown-card .object-stage{padding:28px 25px}.accordion-card .object-stage{padding:24px 20px}.accordion-card .sop-accordion{--acc-padding:17px}.accordion-card .sop-accordion-trigger{gap:10px}.accordion-card .sop-accordion-title b{font-size:13px}.accordion-card .sop-panel-metrics small{font-size:6px}}
+@media(max-width:600px){.collection-toolbar .search-box{flex-basis:100%}.category-tabs{gap:24px}.dropdown-card .object-stage{height:227px;padding:24px 25px}.dropdown-card .card-bottom h2,.accordion-card .card-bottom h2{font-size:23px}.accordion-card .object-stage{min-height:0;padding:22px 18px}.accordion-preview .preview-stage{padding:12px 15px}.dropdown-preview .preview-stage{height:174px}.accordion-preview .sop-accordion-title b{font-size:14px}.accordion-card .sop-accordion-title b{font-size:14px}.disclosure-controls{margin-top:2px}.accordion-card .card-bottom{padding-top:5px}}

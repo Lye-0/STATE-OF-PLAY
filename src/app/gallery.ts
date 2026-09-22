@@ -70,7 +70,8 @@ function renderGallery() {
     grid.innerHTML = visible.length ? visible.map(part => {
         const toggle = part.category === 'toggles';
         const scroll = part.category === 'scrollbars';
-        return `<article class="object-card ${toggle ? 'sop-surface sop-original-surface toggle-card' : scroll ? 'scroll-card' : 'block-card'}" data-part="${escapeHTML(part.id)}" data-design="${part.designType}" style="--sop-accent:${part.accent};--accent:${part.accent}"><header class="card-top"><span class="object-no mono">${String(part.order).padStart(2, '0')} /</span><span class="design-badge design-${part.designType}" title="${part.designType === 'A' ? '表現重視' : '実用重視'}">${part.designType}</span><span class="object-type mono">${escapeHTML(part.material)}</span><span class="state-readout mono" aria-hidden="true"><i></i><span class="state-word">${toggle ? (state.get(part.id) ? 'ON' : 'OFF') : scroll ? 'SCROLL' : 'SURFACE'}</span></span></header><div class="object-stage" data-stage="${escapeHTML(part.id)}"><div class="stage-glow"></div><div class="stage-mount"></div></div><footer class="card-bottom"><div><h2>${escapeHTML(part.name)}<span>${escapeHTML(part.tagline)}</span></h2><p>${escapeHTML(part.description)}</p></div><button type="button" class="open-part" data-open="${escapeHTML(part.id)}" aria-label="${escapeHTML(part.name)} のコードと詳細を開く">${icon('code')}<span>CODE</span>${icon('arrow')}</button></footer></article>`;
+        const dropdown = part.category === 'dropdowns', accordion = part.category === 'accordions';
+        return `<article class="object-card ${toggle ? 'sop-surface sop-original-surface toggle-card' : scroll ? 'scroll-card' : dropdown ? 'dropdown-card' : accordion ? 'accordion-card' : 'block-card'}" data-part="${escapeHTML(part.id)}" data-design="${part.designType}" style="--sop-accent:${part.accent};--accent:${part.accent}"><header class="card-top"><span class="object-no mono">${String(part.order).padStart(2, '0')} /</span><span class="design-badge design-${part.designType}" title="${part.designType === 'A' ? '表現重視' : '実用重視'}">${part.designType}</span><span class="object-type mono">${escapeHTML(part.material)}</span><span class="state-readout mono" aria-hidden="true"><i></i><span class="state-word">${toggle ? (state.get(part.id) ? 'ON' : 'OFF') : scroll ? 'SCROLL' : dropdown ? 'SELECT' : accordion ? 'EXPAND' : 'SURFACE'}</span></span></header><div class="object-stage" data-stage="${escapeHTML(part.id)}"><div class="stage-glow"></div><div class="stage-mount"></div></div><footer class="card-bottom"><div><h2>${escapeHTML(part.name)}<span>${escapeHTML(part.tagline)}</span></h2><p>${escapeHTML(part.description)}</p></div><button type="button" class="open-part" data-open="${escapeHTML(part.id)}" aria-label="${escapeHTML(part.name)} のコードと詳細を開く">${icon('code')}<span>CODE</span>${icon('arrow')}</button></footer></article>`;
     }).join('') : `<div class="empty-state"><span class="empty-symbol">∅</span><h2>まだ、そのパーツはありません。</h2><p>検索する言葉やカテゴリを変えてみてください。</p><button type="button" class="small-button" id="clear-empty">すべてのパーツを表示</button></div>`;
     for (const part of visible) {
         const card = required(`[data-part="${part.id}"]`, grid);
@@ -80,7 +81,7 @@ function renderGallery() {
         if (!(root instanceof HTMLElement)) throw new Error(`Invalid markup: ${part.id}`);
         root.dataset.demoRoot = '';
         fillSample(root, part);
-        const controller = mounts[part.id](root, { onProgressChange: progress => { required('.state-word', card).textContent = Math.round(progress * 100) + '%'; }, checked: state.get(part.id), onCheckedChange: (value: boolean) => { stopDemo(); syncCard(part.id, value); } });
+        const controller = mounts[part.id](root, { onOpenChange: open => { required('.state-word', card).textContent = open ? 'OPEN' : 'SELECT'; }, onExpandedChange: values => { required('.state-word', card).textContent = String(values.length) + ' OPEN'; }, onProgressChange: progress => { required('.state-word', card).textContent = Math.round(progress * 100) + '%'; }, checked: state.get(part.id), onCheckedChange: (value: boolean) => { stopDemo(); syncCard(part.id, value); } });
         const surface = part.category === 'toggles' ? createSurfaceController(card) : undefined;
         rendered.push({ part, controller, card, surface });
         if (part.category === 'toggles')
@@ -88,7 +89,7 @@ function renderGallery() {
         card.addEventListener('click', event => {
             const target = event.target;
             if (!(target instanceof Element)) return;
-            if (target.closest('[data-demo-root]'))
+            if (event.composedPath().some(node => node instanceof HTMLElement && node.hasAttribute('data-demo-root'))) 
                 return;
             const trigger = required('[data-open]', card);
             openPart(part.id, trigger);
@@ -175,6 +176,7 @@ document.addEventListener('visibilitychange', () => {
 });
 window.StateOfPlay = Object.freeze({ version: __APP_VERSION__, getStates: () => Object.fromEntries(state), getPartCount: () => parts.length });
 required('#library-total').textContent = String(parts.length);
+required('#library-collections').textContent = String(categories.filter(c=>c.id!=='all').length).padStart(2,'0');
 syncDesignFilter();
 setCategory('all');
 readRoute();

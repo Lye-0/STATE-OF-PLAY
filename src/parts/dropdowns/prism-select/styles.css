@@ -1,0 +1,7 @@
+@import "../../../shared/select-base.css";
+/* Prism Select — REFRACTION / COLOR. Type A. */
+.sop-select.sop-prism-select{--sel-bg:linear-gradient(110deg,#283344,#302b44,#253b40);--sel-panel:linear-gradient(130deg,#232b39,#352d42 50%,#233b3b);--sel-accent:#cfc5f4;--sel-radius:8px;}
+.sop-select.sop-prism-select .sop-select-icon{clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);border:0;border-radius:0;color:#243548;background:conic-gradient(from 45deg,#eacfe8,#adcbd3,#92bdae,#b0a7d8,#eacfe8)}
+.sop-select.sop-prism-select .sop-select-trigger{border-image:none;border-bottom:2px solid #c4bdde66}
+.sop-select.sop-prism-select .sop-select-menu-heading:after{content:"";height:2px;position:absolute;top:57px;left:22px;right:22px;background:linear-gradient(90deg,#e5adbb,#edd6a0,#a5d7b2,#94bad6,#c2a3da)}
+.sop-select.sop-prism-select .sop-select-option[data-active=true]{background:linear-gradient(100deg,#ecc7e614,#b3edd614)}

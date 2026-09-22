@@ -33,7 +33,7 @@ try {
  await page.emulateMedia({reducedMotion:'reduce'});
  const card=(id:string)=>page.locator(`[data-part="${id}"]`);
  await run('new category intersects A/B and retains all 48 original parts',async()=>{
-  assert.equal(await page.locator('[data-part]').count(),72);await page.locator('[data-category="scrollbars"]').click();assert.equal(await page.locator('[data-part]').count(),24);
+  assert.equal(await page.locator('[data-part]').count(),parts.length);await page.locator('[data-category="scrollbars"]').click();assert.equal(await page.locator('[data-part]').count(),24);
   assert.equal(await page.locator('#toggle-controls').isVisible(),false);
   await page.locator('[data-design-filter="A"]').click();assert.equal(await page.locator('[data-part]').count(),16);
   await page.locator('[data-design-filter="B"]').click();assert.equal(await page.locator('[data-part]').count(),8);await page.locator('[data-design-filter="all"]').click();

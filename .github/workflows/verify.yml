@@ -45,6 +45,8 @@ jobs:
         run: npm run test:scrollbars
       - name: React scrollbar tests
         run: npm run test:scrollbars:react
+      - name: Dropdowns and accordions (including React)
+        run: npm run test:disclosures
       - name: Build full source archive
         run: npm run package
       - name: Save reports on failure

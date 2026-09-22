@@ -138,3 +138,10 @@ npm run test:scrollbars:react
 ```
 
 通常は実Viteとインストール済みのReactで検証します。`SOP_TEST_MODE=offline`はブラウザーのURL制限がある検証環境専用で、通常の開発には不要です。
+
+## プルダウン・アコーディオンを追加する場合
+
+`src/parts/dropdowns/`、`src/parts/accordions/`の既存スキンを参考にします。個別の`styles.css`はselect-base/accordion-baseをimportし、ルート固有クラスへ閉じます。
+プルダウンの項目内容とアコーディオンの本文はmarkup.htmlとreact/Example.tsxに実例を書きます。React本体はitemsを受け取る共有Viewを使い、展示内容をデフォルト固定しません。
+登録・配布ルールは他のカテゴリと同じです。registryに登録後、全体の件数テストも意図した件数へ更新します。
+追加したスキンを単なる色違いだけで終わらせず、輪郭・文字・内部の情報構成・装飾・選択/展開状態まで設計してください。選択肢のHTMLは非インタラクティブな装飾に限り、アコーディオンの内部では入力を使えます。

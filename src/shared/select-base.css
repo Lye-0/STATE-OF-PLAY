@@ -1,0 +1,34 @@
+.sop-select{--sel-bg:#181d20;--sel-panel:#192124;--sel-ink:#e9eee9;--sel-muted:#a4b3b3;--sel-accent:#a9ddce;--sel-line:#ffffff21;--sel-radius:16px;--sel-shadow:0 16px 35px #0005;--sel-hover:#ffffff09;--sel-font:Arial,"Yu Gothic",sans-serif;position:relative;width:100%;max-width:360px;min-width:0;color:var(--sel-ink);font:14px var(--sel-font);isolation:isolate;text-align:left}
+.sop-select,.sop-select *{box-sizing:border-box}
+.sop-select .sop-select-caption{display:flex;justify-content:space-between;gap:12px;color:var(--sel-muted);font-size:10px;letter-spacing:1px;margin:0 3px 12px;line-height:1.5}
+.sop-select .sop-select-caption>span{font:8px Consolas,monospace;letter-spacing:1px;opacity:.65}
+.sop-select .sop-select-trigger{display:flex;align-items:center;gap:15px;width:100%;min-height:74px;margin:0;padding:16px 20px;border:1px solid var(--sel-line);border-radius:var(--sel-radius);background:var(--sel-bg);box-shadow:var(--sel-shadow);color:var(--sel-ink);font:inherit;text-align:left;cursor:pointer;position:relative;isolation:isolate;transition:border-color .25s,box-shadow .25s,transform .25s}
+.sop-select .sop-select-trigger:hover,.sop-select[data-open=true] .sop-select-trigger{border-color:var(--sel-accent)}
+.sop-select .sop-select-trigger:focus-visible{outline:2px solid var(--sel-accent);outline-offset:4px}
+.sop-select .sop-select-trigger:disabled{opacity:.48;cursor:not-allowed;filter:saturate(.25)}
+.sop-select .sop-select-value{flex:1;display:flex;align-items:center;gap:14px;min-width:0}
+.sop-select .sop-select-icon{flex:none;width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:color-mix(in srgb,var(--sel-accent) 13%,transparent);color:var(--sel-accent);border:1px solid color-mix(in srgb,var(--sel-accent) 24%,transparent);font:11px Consolas,monospace;letter-spacing:.5px;position:relative;overflow:hidden}
+.sop-select .sop-select-option-copy{display:block;min-width:0;flex:1}
+.sop-select .sop-select-option-copy b{font-weight:500;font-size:14px;line-height:1.5;display:block;color:var(--sel-ink);overflow-wrap:anywhere}
+.sop-select .sop-select-option-copy small{display:block;color:var(--sel-muted);font-size:10px;line-height:1.6;margin-top:3px;overflow-wrap:anywhere}
+.sop-select .sop-select-chevron{width:8px;height:8px;flex:none;border-right:1.5px solid var(--sel-accent);border-bottom:1.5px solid var(--sel-accent);transform:rotate(45deg) translateY(-2px);transition:transform .3s}
+.sop-select[data-open=true] .sop-select-chevron{transform:rotate(225deg) translate(-2px,-2px)}
+.sop-select .sop-select-popup{position:fixed;padding:8px;max-width:calc(100vw - 24px);border:1px solid var(--sel-line);border-radius:var(--sel-radius);box-shadow:0 24px 70px #0007,inset 0 1px 0 #ffffff0d;background:var(--sel-panel);color:var(--sel-ink);font:14px var(--sel-font);overflow-y:auto;overscroll-behavior:contain;z-index:1500;scrollbar-width:thin;scrollbar-color:var(--sel-accent) transparent;animation:sop-select-enter .22s cubic-bezier(.16,1,.3,1);transform-origin:50% 0}
+.sop-select .sop-select-popup[hidden]{display:none!important}
+.sop-select .sop-select-popup::backdrop{background:transparent}
+.sop-select .sop-select-popup[data-side=top]{transform-origin:50% 100%}
+.sop-select .sop-select-menu-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 13px 16px;margin-bottom:4px;border-bottom:1px solid var(--sel-line);color:var(--sel-muted);font-size:10px;letter-spacing:.5px}
+.sop-select .sop-select-menu-heading small{font:8px Consolas,monospace;white-space:nowrap;color:var(--sel-accent)}
+.sop-select .sop-select-option{display:flex;align-items:center;gap:12px;padding:12px;border-radius:calc(var(--sel-radius) - 6px);position:relative;min-height:60px;cursor:pointer;border:1px solid transparent;transition:background .18s,border-color .18s,transform .18s}
+.sop-select .sop-select-option[data-active=true]{background:var(--sel-hover);border-color:var(--sel-line)}
+.sop-select .sop-select-option[aria-selected=true]{background:color-mix(in srgb,var(--sel-accent) 8%,transparent)}
+.sop-select .sop-select-option[aria-disabled=true]{opacity:.4;cursor:not-allowed;filter:saturate(.2)}
+.sop-select .sop-select-badge{font:8px Consolas,monospace;white-space:nowrap;color:var(--sel-muted)}
+.sop-select .sop-select-check{color:var(--sel-accent);opacity:0;width:12px;flex:none;font-size:13px}
+.sop-select .sop-select-option[aria-selected=true] .sop-select-check{opacity:1}
+.sop-select .sop-select-group{padding:16px 14px 7px;font:8px Consolas,monospace;letter-spacing:1.8px;color:var(--sel-muted)}
+.sop-select .sop-select-menu-footer{margin:8px 4px 0;padding:12px 8px 5px;border-top:1px solid var(--sel-line);display:flex;gap:16px;color:var(--sel-muted);font:8px Consolas,"Yu Gothic",monospace}
+.sop-select .sop-select-empty{padding:24px;color:var(--sel-muted);font-size:12px}
+@keyframes sop-select-enter{from{opacity:0;transform:translateY(-5px) scale(.975)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.sop-select *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(forced-colors:active){.sop-select .sop-select-trigger,.sop-select .sop-select-popup{border:1px solid ButtonText}.sop-select .sop-select-option[data-active=true]{outline:2px solid Highlight}.sop-select .sop-select-check{color:Highlight}}

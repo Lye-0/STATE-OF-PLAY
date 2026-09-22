@@ -1,0 +1,20 @@
+/* Optional content primitives. Real application content is supplied by the consumer. */
+.sop-accordion .sop-panel-art{height:100px;position:relative;overflow:hidden;border-radius:8px;background:radial-gradient(ellipse at 65% 30%,color-mix(in srgb,var(--acc-accent) 24%,transparent),transparent 66%),linear-gradient(140deg,var(--acc-bg),color-mix(in srgb,var(--acc-accent) 9%,var(--acc-bg)));border:1px solid var(--acc-line);margin:0 0 14px;isolation:isolate}
+.sop-accordion .sop-panel-art:before{content:"";position:absolute;width:135px;height:135px;right:22px;top:-23px;border:1px solid var(--acc-accent);border-radius:50%;box-shadow:0 0 0 12px color-mix(in srgb,var(--acc-accent) 4%,transparent),0 0 0 24px color-mix(in srgb,var(--acc-accent) 6%,transparent);opacity:.7}
+.sop-accordion .sop-panel-art:after{content:"";position:absolute;left:30px;right:35px;top:50%;height:1px;background:linear-gradient(90deg,transparent,var(--acc-accent),transparent);transform:rotate(-18deg)}
+.sop-accordion .sop-panel-art span{position:absolute;bottom:14px;left:16px;font:8px Consolas,monospace;letter-spacing:2px;color:var(--acc-accent);z-index:1}
+.sop-accordion .sop-panel-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:13px 0}
+.sop-accordion .sop-panel-metrics>div{padding:11px 10px;border:1px solid var(--acc-line);border-radius:7px;background:var(--acc-surface);min-width:0}
+.sop-accordion .sop-panel-metrics b{display:block;color:var(--acc-ink);font:19px Georgia,serif;line-height:1.4;font-weight:400}
+.sop-accordion .sop-panel-metrics small{display:block;font:7px Consolas,monospace;letter-spacing:.7px;color:var(--acc-muted);margin-top:5px}
+.sop-accordion .sop-panel-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:14px;padding-top:11px;border-top:1px solid var(--acc-line);font:8px Consolas,monospace;color:var(--acc-accent)}
+.sop-accordion .sop-panel-list{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.sop-accordion .sop-panel-list li{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--acc-line);font-size:11px;color:var(--acc-muted)}
+.sop-accordion .sop-panel-list li span:last-child{color:var(--acc-ink)}
+.sop-accordion .sop-panel-tags{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.sop-accordion .sop-panel-tags span{padding:3px 9px;border:1px solid var(--acc-line);border-radius:20px;color:var(--acc-accent);font-size:9px;background:var(--acc-surface)}
+.sop-accordion .sop-panel-label{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0;font-size:11px;border-bottom:1px solid var(--acc-line)}
+.sop-accordion .sop-panel-label input{accent-color:var(--acc-accent);width:16px;height:16px}
+.sop-accordion .sop-panel-code{font:10px/1.8 Consolas,monospace;color:var(--acc-accent);background:#0002;border:1px solid var(--acc-line);border-radius:6px;padding:13px;white-space:pre-wrap;overflow:auto;margin:10px 0}
+.sop-accordion .sop-panel-progress{height:4px;border-radius:9px;background:var(--acc-line);margin:13px 0;overflow:hidden}
+.sop-accordion .sop-panel-progress span{display:block;width:68%;height:100%;background:var(--acc-accent)}

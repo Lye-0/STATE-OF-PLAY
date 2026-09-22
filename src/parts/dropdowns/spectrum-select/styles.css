@@ -1,0 +1,6 @@
+@import "../../../shared/select-base.css";
+/* Spectrum Select — SIGNAL / MODULATION. Type A. */
+.sop-select.sop-spectrum-select{--sel-bg:#142726;--sel-panel:#112321;--sel-accent:#a3e2b1;--sel-muted:#84aa9b;--sel-line:#63a5813b;--sel-radius:6px;}
+.sop-select.sop-spectrum-select .sop-select-popup{background-image:linear-gradient(#7dd19e08 1px,transparent 1px),linear-gradient(90deg,#7dd19e08 1px,transparent 1px);background-size:12px 12px}
+.sop-select.sop-spectrum-select .sop-select-icon{background:#081915;border-radius:4px;box-shadow:inset 0 0 15px #0006,0 0 8px #c4ffa511;color:#c4ed99;font-size:25px;border:1px solid #4d7e583d}
+.sop-select.sop-spectrum-select .sop-select-option-copy b{font-family:Consolas,monospace;font-size:13px}.sop-select.sop-spectrum-select .sop-select-badge{color:#b9e793}.sop-select.sop-spectrum-select .sop-select-option[data-active=true]{box-shadow:inset 3px 0 #a6df83}

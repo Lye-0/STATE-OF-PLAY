@@ -1,0 +1,6 @@
+@import "../../../shared/select-base.css";
+/* Fjord Select — TOPOGRAPHY / ICE. Type A. */
+.sop-select.sop-fjord-select{--sel-bg:linear-gradient(135deg,#25434a,#20343f);--sel-panel:#20383e;--sel-accent:#a0d9df;--sel-muted:#9ab7be;--sel-line:#92c8d336;--sel-radius:12px;}
+.sop-select.sop-fjord-select .sop-select-popup{background-image:repeating-radial-gradient(ellipse at 115% 25%,transparent 0 19px,#a4d5df09 20px 21px,transparent 22px 35px)}
+.sop-select.sop-fjord-select .sop-select-icon{border:1px solid #a6d9df73;background:linear-gradient(145deg,#aed3d766,#35627044);border-radius:6px 18px 6px 18px;box-shadow:inset 0 1px #ffffff66}
+.sop-select.sop-fjord-select .sop-select-option[data-active=true]{background:#b2ecf111;border-color:#aad7dd36}

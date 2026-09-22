@@ -17,7 +17,7 @@ export function buildCatalog(root = ROOT): CatalogBuild {
   const read = (name: string): string => { validateArchivePath(name); if (!inputCache.has(name)) inputCache.set(name,fs.readFileSync(path.join(root, name), 'utf8')); return inputCache.get(name)!; };
   const exists = (name: string) => fs.existsSync(path.join(root, name));
   const bases: unknown = JSON.parse(read('src/catalog/registry.json'));
-  if (!Array.isArray(bases) || !bases.every((base): base is string => typeof base === 'string' && /^src\/parts\/(toggles|blocks|scrollbars)\/[a-z0-9-]+$/.test(base)))
+  if (!Array.isArray(bases) || !bases.every((base): base is string => typeof base === 'string' && /^src\/parts\/(toggles|blocks|scrollbars|dropdowns|accordions)\/[a-z0-9-]+$/.test(base)))
     throw new Error('registry.json must contain valid component directories.');
   function bundledCSS(source: string, visited = new Set<string>()): string {
     if (visited.has(source)) return '';
@@ -30,7 +30,7 @@ export function buildCatalog(root = ROOT): CatalogBuild {
     const meta = JSON.parse(read(`${base}/meta.json`)) as Omit<Part,'files'|'portableFiles'|'preview'|'markup'|'usage'|'prompt'>;
     if (!/^[a-z][a-z0-9-]*$/.test(meta.id) || seen.has(meta.id)) throw new Error(`Invalid/duplicate part ID: ${meta.id}`);
     if (!['A','B'].includes(meta.designType) || typeof meta.runtime !== 'string') throw new Error(`Invalid design type/runtime: ${base}`);
-    if (!['toggles','blocks','scrollbars'].includes(meta.category) || !Number.isFinite(meta.order) || !Array.isArray(meta.props) || !Array.isArray(meta.tags))
+    if (!['toggles','blocks','scrollbars','dropdowns','accordions'].includes(meta.category) || !Number.isFinite(meta.order) || !Array.isArray(meta.props) || !Array.isArray(meta.tags))
       throw new Error(`Invalid metadata: ${base}`);
     if (meta.category === 'toggles' && (!meta.config || typeof meta.initial !== 'boolean')) throw new Error(`Missing toggle configuration: ${base}`);
     if (base.split('/').at(-1) !== meta.id || !/^[A-Z][A-Za-z0-9]*$/.test(meta.componentName)) throw new Error(`Invalid component identity: ${base}`);
@@ -72,7 +72,7 @@ export function buildCatalog(root = ROOT): CatalogBuild {
     if (meta.category === 'blocks') demoMarkup = demoMarkup.replace(/<div class="sop-surface-content">[\s\S]*?<\/div>/,
       `<div class="sop-surface-content"><h2>${html(meta.name)}</h2><p>ここに、あなたのコンテンツを。</p><button type="button">サンプルボタン</button></div>`);
     if (meta.category === 'scrollbars') demoMarkup = demoMarkup.replace('<!-- slot: insert your scrollable content -->', scrollSampleHTML(meta));
-    const hint = meta.category === 'toggles' ? 'クリック・ドラッグ・キーボードで操作できます。' : meta.category === 'scrollbars' ? 'ホイール・スワイプ・レールのドラッグで読み進められます。' : '中身を自由に入れ替えられる、独立した背景パーツです。';
+    const hint = meta.category === 'dropdowns' ? '開いて選ぶ。選択肢・説明・アイコンも差し替えられます。' : meta.category === 'accordions' ? '見出しで開閉。内側のコンテンツも自由に差し替えられます。' : meta.category === 'toggles' ? 'クリック・ドラッグ・キーボードで操作できます。' : meta.category === 'scrollbars' ? 'ホイール・スワイプ・レールのドラッグで読み進められます。' : '中身を自由に入れ替えられる、独立した背景パーツです。';
     const preview = {
       'index.html': `<!doctype html>\n<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${html(meta.name)} — standalone demo</title><link rel="stylesheet" href="./styles.css"></head><body><main><h1>${html(meta.name)} · ${html(meta.version)}</h1><div class="demo-root">${demoMarkup}</div><p class="hint">${hint}</p></main><script src="./app.js" defer></script></body></html>\n`,
       'styles.css': read('scripts/templates/demo.css') + (meta.category === 'scrollbars' ? read('src/app/scroll-samples.css') : '') + bundledCSS(`${base}/styles.css`),

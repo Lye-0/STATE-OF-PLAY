@@ -1,0 +1,7 @@
+@import "../../../shared/select-base.css";
+/* Resonance Select — ANALOG / SOUND. Type A. */
+.sop-select.sop-resonance-select{--sel-bg:linear-gradient(130deg,#43372c,#24211f);--sel-panel:linear-gradient(100deg,#322923,#251f1b);--sel-accent:#e3bf85;--sel-muted:#b6a591;--sel-line:#715d423f;--sel-radius:9px;}
+.sop-select.sop-resonance-select .sop-select-icon{border-radius:50%;background:repeating-radial-gradient(circle,#141917 0 2px,#454a3944 3px 4px);border:3px solid #706349;box-shadow:0 3px 6px #0008;color:#eed6a8}
+.sop-select.sop-resonance-select .sop-select-trigger{border-bottom:3px solid #0e1110}.sop-select.sop-resonance-select .sop-select-option{border-left:2px solid transparent;border-radius:0;margin:4px}
+.sop-select.sop-resonance-select .sop-select-option[data-active=true]{border-left-color:#e6bb70;background:#d7aa5520}
+.sop-select.sop-resonance-select .sop-select-menu-heading{font-family:Consolas,monospace}.sop-select.sop-resonance-select .sop-select-badge{color:#d6b17b;padding:4px;border:1px solid #ad895f35}

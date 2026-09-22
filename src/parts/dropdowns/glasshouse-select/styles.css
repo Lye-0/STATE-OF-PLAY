@@ -1,0 +1,6 @@
+@import "../../../shared/select-base.css";
+/* Glasshouse Select — BOTANICAL / GROWTH. Type A. */
+.sop-select.sop-glasshouse-select{--sel-bg:#e4ede1;--sel-panel:#eff4e9;--sel-ink:#34463a;--sel-muted:#798675;--sel-accent:#60845d;--sel-line:#b6c9ad8f;--sel-radius:22px;}
+.sop-select.sop-glasshouse-select .sop-select-icon{border-radius:50% 0 50% 0;background:linear-gradient(125deg,#a4bd86,#56755b);border:0;color:#f5f8e7;transform:rotate(-6deg)}
+.sop-select.sop-glasshouse-select :is(.sop-select-option,.sop-select-value)[data-glyph="1"] .sop-select-icon{border-radius:50%}.sop-select.sop-glasshouse-select :is(.sop-select-option,.sop-select-value)[data-glyph="2"] .sop-select-icon{border-radius:8px 80% 8px 80%}
+.sop-select.sop-glasshouse-select .sop-select-option{margin:4px 0}.sop-select.sop-glasshouse-select .sop-select-option-copy b{font-family:Georgia,serif;font-size:16px}

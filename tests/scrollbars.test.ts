@@ -8,8 +8,8 @@ import {getDelivery, packageContents, buildPrompt} from '../src/catalog/delivery
 import {sourceReferences, isLocalReference, resolveLocal} from '../scripts/source-tools.ts';
 const catalog=buildCatalog();
 const scrollbars=catalog.parts.filter(part=>part.category==='scrollbars');
-test('72 parts: 24 toggles, 24 surfaces, 24 new scrollbars, A majority and eight B rails',()=>{
- assert.equal(catalog.parts.length,72);
+test('baseline retained: 24 toggles, 24 surfaces, 24 scrollbars, A majority and eight B rails',()=>{
+ assert.ok(catalog.parts.length >= 72);
  for(const category of ['toggles','blocks','scrollbars']) assert.equal(catalog.parts.filter(p=>p.category===category).length,24);
  assert.equal(scrollbars.filter(p=>p.designType==='A').length,16);assert.equal(scrollbars.filter(p=>p.designType==='B').length,8);
 });
