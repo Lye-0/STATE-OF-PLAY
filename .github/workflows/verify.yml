@@ -13,7 +13,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
-    # The complete 564-part / 8-export matrix runs on both hosted OS variants.
+    # The complete 588-part / 8-export matrix runs on both hosted OS variants.
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
@@ -66,6 +66,8 @@ jobs:
         run: npm run test:sculpture
       - name: Refined rail and select motion (dimensions, text, progress, cleanup)
         run: npm run test:refinement
+      - name: Kinetic additions (native scroll, motion, menus and cleanup)
+        run: npm run test:kinetic
       - name: Build full source archive
         run: npm run package
       - name: Save reports on failure

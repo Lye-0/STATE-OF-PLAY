@@ -1,0 +1,64 @@
+{
+  "id": "portal-menu",
+  "name": "Portal",
+  "category": "dropdowns",
+  "order": 588,
+  "version": "1.0.0",
+  "tagline": "候補へ、入り口を開く。",
+  "description": "フィールドの内側が奥行きのある入口へ変形し、何層もの輪郭と候補が手前へ組み上がる。",
+  "material": "SPACE / PORTAL",
+  "motion": "PORTAL / KINETIC",
+  "accent": "190,203,234",
+  "designType": "A",
+  "runtime": "Native selection + spring / WAAPI",
+  "componentName": "PortalMenu",
+  "tags": [
+    "Portal",
+    "portal-menu",
+    "KINETIC",
+    "EXPERIMENTAL",
+    "新作",
+    "A",
+    "SPACE / PORTAL"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "items",
+      "SelectItem[]",
+      "value・label・description・icon・badge・group・disabledを指定。選択肢の内容もデザインします。"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "選択値。valueは外部制御、defaultValueは初期状態。"
+    ],
+    [
+      "onValueChange",
+      "(value: string) => void",
+      "確定した選択値を受け取ります。"
+    ],
+    [
+      "label / placeholder / name",
+      "string",
+      "読み上げ名、未選択の表示、フォーム送信名。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "無効状態。フォーム値も送信対象から外れます。"
+    ],
+    [
+      "renderOption",
+      "(item) => ReactNode",
+      "選択肢内の装飾。ボタンや入力欄をネストしないでください。"
+    ],
+    [
+      "autoIcon / showHeading / showHints",
+      "boolean",
+      "補助表示を任意で設定。Aはアイコンの自動生成なし。見出しと操作ヒントは表示を切り替えられます。"
+    ]
+  ]
+}

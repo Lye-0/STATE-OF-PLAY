@@ -1,0 +1,110 @@
+TAP version 13
+# (node:3927) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: KINETIC adds 12 rails and 12 menus while retaining the 564 baseline IDs
+ok 1 - KINETIC adds 12 rails and 12 menus while retaining the 564 baseline IDs
+  ---
+  duration_ms: 1.300503
+  type: 'test'
+  ...
+# Subtest: each new part has distinct art, a precise prompt, a usage example and a controller
+ok 2 - each new part has distinct art, a precise prompt, a usage example and a controller
+  ---
+  duration_ms: 4.888799
+  type: 'test'
+  ...
+# Subtest: Vanilla and React dependency closures include the actual Kinetic renderer and resolve
+ok 3 - Vanilla and React dependency closures include the actual Kinetic renderer and resolve
+  ---
+  duration_ms: 370.682178
+  type: 'test'
+  ...
+# Subtest: new menus are text-first listboxes with explicit state and no auto-generated initials
+ok 4 - new menus are text-first listboxes with explicit state and no auto-generated initials
+  ---
+  duration_ms: 0.544121
+  type: 'test'
+  ...
+# Subtest: new rails keep native scroll input and use decorative canvases only
+ok 5 - new rails keep native scroll input and use decorative canvases only
+  ---
+  duration_ms: 0.419737
+  type: 'test'
+  ...
+# Subtest: new skins are scoped and do not import old ornate/refined skin styles
+ok 6 - new skins are scoped and do not import old ornate/refined skin styles
+  ---
+  duration_ms: 0.506325
+  type: 'test'
+  ...
+# Subtest: presentation cancellation covers timers, observers and animation resources
+ok 7 - presentation cancellation covers timers, observers and animation resources
+  ---
+  duration_ms: 0.277799
+  type: 'test'
+  ...
+# Subtest: gallery can reveal new additions without losing older entries
+ok 8 - gallery can reveal new additions without losing older entries
+  ---
+  duration_ms: 3.9849
+  type: 'test'
+  ...
+# (node:3928) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Vite URL: a listening server preserves its local URL
+ok 9 - Vite URL: a listening server preserves its local URL
+  ---
+  duration_ms: 4.425879
+  type: 'test'
+  ...
+# Subtest: Vite URL: production base path and URL encoding are preserved
+ok 10 - Vite URL: production base path and URL encoding are preserved
+  ---
+  duration_ms: 0.150732
+  type: 'test'
+  ...
+# Subtest: Vite URL: null fails explicitly instead of bypassing the test
+ok 11 - Vite URL: null fails explicitly instead of bypassing the test
+  ---
+  duration_ms: 0.321383
+  type: 'test'
+  ...
+# Subtest: Vite URL: an empty local array fails even when a network URL exists
+ok 12 - Vite URL: an empty local array fails even when a network URL exists
+  ---
+  duration_ms: 0.142019
+  type: 'test'
+  ...
+# Subtest: Vite URL: empty and whitespace URL values fail explicitly
+ok 13 - Vite URL: empty and whitespace URL values fail explicitly
+  ---
+  duration_ms: 0.144132
+  type: 'test'
+  ...
+# Subtest: Vite URL: the first published local URL is chosen without guessing a port
+ok 14 - Vite URL: the first published local URL is chosen without guessing a port
+  ---
+  duration_ms: 0.087269
+  type: 'test'
+  ...
+# Subtest: Vite URL: browser suites do not dereference nullable URLs or suppress their types
+ok 15 - Vite URL: browser suites do not dereference nullable URLs or suppress their types
+  ---
+  duration_ms: 0.844532
+  type: 'test'
+  ...
+# Subtest: CI runs all verify stages in order and checks types before downloading Chromium
+ok 16 - CI runs all verify stages in order and checks types before downloading Chromium
+  ---
+  duration_ms: 1.873986
+  type: 'test'
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 839.634563

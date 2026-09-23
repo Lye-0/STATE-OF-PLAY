@@ -1,0 +1,59 @@
+{
+  "id": "living-rail",
+  "name": "Living Rail",
+  "category": "scrollbars",
+  "order": 576,
+  "version": "1.0.0",
+  "tagline": "触れると、ひらく。",
+  "description": "レールの両側に並んだ薄い葉脈がつまみの周囲で開閉し、動きを止めると静かに落ち着く。",
+  "material": "ORGANIC / RESPONSE",
+  "motion": "LIVING / KINETIC",
+  "accent": "177,219,169",
+  "designType": "A",
+  "runtime": "Native scroll + bounded Canvas",
+  "componentName": "LivingRailScrollArea",
+  "tags": [
+    "Living Rail",
+    "living-rail",
+    "KINETIC",
+    "EXPERIMENTAL",
+    "新作",
+    "A",
+    "ORGANIC / RESPONSE"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "スクロールする中身。展示用コンテンツは含まれません。"
+    ],
+    [
+      "orientation",
+      "'vertical' | 'horizontal'",
+      "縦または横スクロール。初期値はvertical。"
+    ],
+    [
+      "viewportLabel",
+      "string",
+      "内容の領域に付ける読み上げ用ラベル。"
+    ],
+    [
+      "scrollbarLabel",
+      "string",
+      "スクロールバーの読み上げ用ラベル。"
+    ],
+    [
+      "onProgressChange",
+      "(progress: number) => void",
+      "スクロール位置を0〜1で通知します。"
+    ],
+    [
+      "className / style",
+      "HTMLAttributes",
+      "高さはstyleのheightまたは--sop-scroll-heightで調整。横幅は親に合わせます。"
+    ]
+  ]
+}

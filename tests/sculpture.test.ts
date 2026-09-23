@@ -8,7 +8,8 @@ import { dependencies } from '../scripts/source-tools.ts';
 const read=(file:string)=>fs.readFileSync(path.join(ROOT,file),'utf8');
 const exists=(file:string)=>fs.existsSync(path.join(ROOT,file));
 interface Skin {base:string;id:string;name:string;category:string;designType:string;componentName:string;version:string;description:string;}
-const bases=JSON.parse(read('src/catalog/registry.json')) as string[];
+// Historical v4.3 fixtures: new KINETIC designs have their own geometry/animation tests.
+const bases=(JSON.parse(read('src/catalog/registry.json')) as string[]).filter(b=>!JSON.parse(read(b+'/meta.json')).tags.includes('KINETIC'));
 const skins:Skin[]=bases.filter(b=>/^src\/parts\/(scrollbars|dropdowns)\//.test(b)).map(base=>({base,...JSON.parse(read(base+'/meta.json'))}));
 const expressive=skins.filter(p=>p.designType==='A');
 const marker=(p:Skin)=>p.category==='scrollbars'?'sop-scroll-sculpted':'sop-select-sculpted';

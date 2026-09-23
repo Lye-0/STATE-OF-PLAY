@@ -1,0 +1,59 @@
+{
+  "id": "depth-tunnel",
+  "name": "Depth Tunnel",
+  "category": "scrollbars",
+  "order": 573,
+  "version": "1.0.0",
+  "tagline": "奥行きの中を、滑る。",
+  "description": "つまみを焦点にした階段状の溝。奥へ続くフレームの幅がスクロールに合わせて変わる。",
+  "material": "SPACE / PARALLAX",
+  "motion": "TUNNEL / KINETIC",
+  "accent": "170,193,236",
+  "designType": "A",
+  "runtime": "Native scroll + bounded Canvas",
+  "componentName": "DepthTunnelScrollArea",
+  "tags": [
+    "Depth Tunnel",
+    "depth-tunnel",
+    "KINETIC",
+    "EXPERIMENTAL",
+    "新作",
+    "A",
+    "SPACE / PARALLAX"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "スクロールする中身。展示用コンテンツは含まれません。"
+    ],
+    [
+      "orientation",
+      "'vertical' | 'horizontal'",
+      "縦または横スクロール。初期値はvertical。"
+    ],
+    [
+      "viewportLabel",
+      "string",
+      "内容の領域に付ける読み上げ用ラベル。"
+    ],
+    [
+      "scrollbarLabel",
+      "string",
+      "スクロールバーの読み上げ用ラベル。"
+    ],
+    [
+      "onProgressChange",
+      "(progress: number) => void",
+      "スクロール位置を0〜1で通知します。"
+    ],
+    [
+      "className / style",
+      "HTMLAttributes",
+      "高さはstyleのheightまたは--sop-scroll-heightで調整。横幅は親に合わせます。"
+    ]
+  ]
+}

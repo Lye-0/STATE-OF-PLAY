@@ -1,0 +1,64 @@
+{
+  "id": "spotlight-menu",
+  "name": "Spotlight",
+  "category": "dropdowns",
+  "order": 578,
+  "version": "1.0.0",
+  "tagline": "選ぶ行に、照明が当たる。",
+  "description": "暗い舞台に光源が移動し、照らされた行の背後に細い光の帯と大きな光だまりが生まれる。",
+  "material": "LIGHT / CHOREOGRAPHY",
+  "motion": "SPOTLIGHT / KINETIC",
+  "accent": "234,220,177",
+  "designType": "A",
+  "runtime": "Native selection + spring / WAAPI",
+  "componentName": "SpotlightMenu",
+  "tags": [
+    "Spotlight",
+    "spotlight-menu",
+    "KINETIC",
+    "EXPERIMENTAL",
+    "新作",
+    "A",
+    "LIGHT / CHOREOGRAPHY"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "items",
+      "SelectItem[]",
+      "value・label・description・icon・badge・group・disabledを指定。選択肢の内容もデザインします。"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "選択値。valueは外部制御、defaultValueは初期状態。"
+    ],
+    [
+      "onValueChange",
+      "(value: string) => void",
+      "確定した選択値を受け取ります。"
+    ],
+    [
+      "label / placeholder / name",
+      "string",
+      "読み上げ名、未選択の表示、フォーム送信名。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "無効状態。フォーム値も送信対象から外れます。"
+    ],
+    [
+      "renderOption",
+      "(item) => ReactNode",
+      "選択肢内の装飾。ボタンや入力欄をネストしないでください。"
+    ],
+    [
+      "autoIcon / showHeading / showHints",
+      "boolean",
+      "補助表示を任意で設定。Aはアイコンの自動生成なし。見出しと操作ヒントは表示を切り替えられます。"
+    ]
+  ]
+}

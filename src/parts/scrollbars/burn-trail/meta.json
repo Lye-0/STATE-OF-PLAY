@@ -1,0 +1,59 @@
+{
+  "id": "burn-trail",
+  "name": "Burn Trail",
+  "category": "scrollbars",
+  "order": 566,
+  "version": "1.0.0",
+  "tagline": "通った場所に、温度が残る。",
+  "description": "通過した目盛りだけが琥珀色に熱を持ち、青灰色の酸化膜へ静かに冷える。",
+  "material": "THERMAL / MEMORY",
+  "motion": "BURN / KINETIC",
+  "accent": "232,188,133",
+  "designType": "A",
+  "runtime": "Native scroll + bounded Canvas",
+  "componentName": "BurnTrailScrollArea",
+  "tags": [
+    "Burn Trail",
+    "burn-trail",
+    "KINETIC",
+    "EXPERIMENTAL",
+    "新作",
+    "A",
+    "THERMAL / MEMORY"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "スクロールする中身。展示用コンテンツは含まれません。"
+    ],
+    [
+      "orientation",
+      "'vertical' | 'horizontal'",
+      "縦または横スクロール。初期値はvertical。"
+    ],
+    [
+      "viewportLabel",
+      "string",
+      "内容の領域に付ける読み上げ用ラベル。"
+    ],
+    [
+      "scrollbarLabel",
+      "string",
+      "スクロールバーの読み上げ用ラベル。"
+    ],
+    [
+      "onProgressChange",
+      "(progress: number) => void",
+      "スクロール位置を0〜1で通知します。"
+    ],
+    [
+      "className / style",
+      "HTMLAttributes",
+      "高さはstyleのheightまたは--sop-scroll-heightで調整。横幅は親に合わせます。"
+    ]
+  ]
+}

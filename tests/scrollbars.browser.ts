@@ -33,12 +33,12 @@ try {
  await page.emulateMedia({reducedMotion:'reduce'});
  const card=(id:string)=>page.locator(`[data-part="${id}"]`);
  await run('new category intersects A/B and retains all 48 original parts',async()=>{
-  assert.equal(await page.locator('[data-part]').count(),parts.length);await page.locator('[data-category="scrollbars"]').click();assert.equal(await page.locator('[data-part]').count(),24);
+  assert.equal(await page.locator('[data-part]').count(),parts.length);await page.locator('[data-category="scrollbars"]').click();assert.equal(await page.locator('[data-part]').count(),bars.length);
   assert.equal(await page.locator('#toggle-controls').isVisible(),false);
-  await page.locator('[data-design-filter="A"]').click();assert.equal(await page.locator('[data-part]').count(),16);
-  await page.locator('[data-design-filter="B"]').click();assert.equal(await page.locator('[data-part]').count(),8);await page.locator('[data-design-filter="all"]').click();
+  await page.locator('[data-design-filter="A"]').click();assert.equal(await page.locator('[data-part]').count(),bars.filter(p=>p.designType==='A').length);
+  await page.locator('[data-design-filter="B"]').click();assert.equal(await page.locator('[data-part]').count(),bars.filter(p=>p.designType==='B').length);await page.locator('[data-design-filter="all"]').click();
  });
- await run('all 24 rails use proportional thumbs, real drag, keyboard and stable content movement',async()=>{
+ await run('all rails use proportional thumbs, real drag, keyboard and stable content movement',async()=>{
   for(const part of bars) {
    const rail=card(part.id).locator('.sop-scroll-rail'),thumb=card(part.id).locator('.sop-scroll-thumb'),viewport=card(part.id).locator('.sop-scroll-viewport');
    await rail.scrollIntoViewIfNeeded();await page.waitForTimeout(25);assert.ok(await rail.isVisible(),part.id);
@@ -132,11 +132,11 @@ try {
   }
   await page.setViewportSize({width:1440,height:1000});
  });
- await run('24 static rails stop work at rest and have unique controlled viewport identifiers',async()=>{
-  await page.waitForTimeout(800);const ids=await page.locator('.object-grid .sop-scroll-viewport').evaluateAll(nodes=>nodes.map(n=>n.id));assert.equal(ids.length,new Set(ids).size);assert.ok(ids.every(Boolean));
+ await run('All rails settle after their finite trails and retain unique viewport identifiers',async()=>{
+  await page.waitForTimeout(2200);const ids=await page.locator('.object-grid .sop-scroll-viewport').evaluateAll(nodes=>nodes.map(n=>n.id));assert.equal(ids.length,new Set(ids).size);assert.ok(ids.every(Boolean));
   const frames=await page.evaluate(()=>(window as unknown as {activeScrollFrames:Set<number>}).activeScrollFrames.size);assert.equal(frames,0);
   for(let i=0;i<3;i++){await page.locator('[data-category="blocks"]').click();await page.locator('[data-category="scrollbars"]').click();}
-  await page.waitForTimeout(800);assert.equal(await page.locator('.object-grid .sop-scroll-area').count(),24);
+  await page.waitForTimeout(2200);assert.equal(await page.locator('.object-grid .sop-scroll-area').count(),bars.length);
  });
  await page.locator('#collection').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(out,'gallery.png')});
  assert.deepEqual(errors,[]);

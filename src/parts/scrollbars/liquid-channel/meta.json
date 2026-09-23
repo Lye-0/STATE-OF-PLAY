@@ -1,0 +1,59 @@
+{
+  "id": "liquid-channel",
+  "name": "Liquid Channel",
+  "category": "scrollbars",
+  "order": 565,
+  "version": "1.0.0",
+  "tagline": "液面が、あなたについてくる。",
+  "description": "透明な管の中を液体が満たし、つまみを包む二本のメニスカスが伸びて戻る。",
+  "material": "FLUID / MENISCUS",
+  "motion": "LIQUID / KINETIC",
+  "accent": "133,224,209",
+  "designType": "A",
+  "runtime": "Native scroll + bounded Canvas",
+  "componentName": "LiquidChannelScrollArea",
+  "tags": [
+    "Liquid Channel",
+    "liquid-channel",
+    "KINETIC",
+    "EXPERIMENTAL",
+    "新作",
+    "A",
+    "FLUID / MENISCUS"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "スクロールする中身。展示用コンテンツは含まれません。"
+    ],
+    [
+      "orientation",
+      "'vertical' | 'horizontal'",
+      "縦または横スクロール。初期値はvertical。"
+    ],
+    [
+      "viewportLabel",
+      "string",
+      "内容の領域に付ける読み上げ用ラベル。"
+    ],
+    [
+      "scrollbarLabel",
+      "string",
+      "スクロールバーの読み上げ用ラベル。"
+    ],
+    [
+      "onProgressChange",
+      "(progress: number) => void",
+      "スクロール位置を0〜1で通知します。"
+    ],
+    [
+      "className / style",
+      "HTMLAttributes",
+      "高さはstyleのheightまたは--sop-scroll-heightで調整。横幅は親に合わせます。"
+    ]
+  ]
+}

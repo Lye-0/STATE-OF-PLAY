@@ -1,0 +1,13 @@
+@import './scrollbar-base.css';
+/* Kinetic rails: physical geometry is accurate; decorative paint is contained in the gutter. */
+.sop-scroll-area.sop-kinetic-scroll{--sop-scroll-gutter:44px;--sop-scroll-width:12px;--sop-handle-width:19px;--kin-energy:0;--sop-scroll-accent:#b5e8d8;}
+.sop-scroll-area.sop-kinetic-scroll > .sop-scroll-rail > .sop-kinetic-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+.sop-scroll-area.sop-kinetic-scroll > .sop-scroll-rail > .sop-scroll-track{opacity:.14;}
+.sop-scroll-area.sop-kinetic-scroll > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{inset-block:2px;border:1px solid #dbece569;box-shadow:inset 1px 0 2px #fff5,inset -2px 0 3px #0005,0 4px 7px #0009;background:linear-gradient(100deg,#263b3b,#b3cec4 18%,#567c7c 48%,#1b3a41 76%,#8da69f);border-radius:60% / 12px;}
+.sop-scroll-area.sop-kinetic-scroll > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{content:'';position:absolute;inset:3px;border-radius:inherit;border-inline-start:1px solid #ffffff61;pointer-events:none;}
+.sop-scroll-area.sop-kinetic-scroll > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{inset:calc(50% - 5px) 4px auto;height:10px;background:repeating-linear-gradient(0deg,#f2f8ee44 0 1px,transparent 1px 3px);border-radius:2px;}
+.sop-scroll-area.sop-kinetic-scroll[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{inset-block:50% auto;inset-inline:2px;border-radius:12px / 60%;}
+.sop-scroll-area.sop-kinetic-scroll[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{inset:4px auto 4px calc(50% - 5px);height:auto;width:10px;background:repeating-linear-gradient(90deg,#f2f8ee44 0 1px,transparent 1px 3px);}
+.sop-scroll-area.sop-kinetic-scroll[data-dragging=true] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{filter:brightness(1.16);box-shadow:inset 1px 0 2px #fff7,inset -2px 0 3px #0005,0 4px 9px #0008,0 0 10px #c3f9e530;}
+.sop-scroll-area.sop-kinetic-scroll:dir(rtl) > .sop-scroll-rail{direction:ltr;}
+@media(forced-colors:active){.sop-scroll-area.sop-kinetic-scroll > .sop-scroll-rail > .sop-kinetic-canvas{display:none;}}

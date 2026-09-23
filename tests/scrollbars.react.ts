@@ -49,17 +49,17 @@ createRoot(document.getElementById('root')).render(<React.StrictMode><App/></Rea
    await page.evaluate(async source=>{const u=URL.createObjectURL(new Blob([source],{type:'text/javascript'}));try{Object.assign(window,{testReactRuntime:await import(u)});}finally{URL.revokeObjectURL(u)}},fs.readFileSync(process.env.SOP_REACT_BROWSER_BUNDLE!,'utf8'));
    await page.addScriptTag({content:bundle});
   } else await page.goto(url+'/'+prefix+'/index.html');
-  await page.waitForFunction(()=>document.querySelectorAll('[data-part]').length===24);await page.waitForTimeout(100);
-  assert.equal(await page.locator('.sop-scroll-area').count(),48);
+  await page.waitForFunction(count=>document.querySelectorAll('[data-part]').length===count,bars.length);await page.waitForTimeout(100);
+  assert.equal(await page.locator('.sop-scroll-area').count(),bars.length*2);
   for(const p of bars){const section=page.locator(`[data-part="${p.id}"]`),rail=section.locator('.sop-scroll-rail').first();await rail.waitFor({state:'visible'});await rail.focus();await page.keyboard.press('End');await page.waitForFunction(id=>document.querySelector('[data-part="'+id+'"] output')?.textContent==='100',p.id);assert.equal(await section.locator('.sop-scroll-rail').nth(1).isVisible(),false);}
   await page.locator('#direction').click();await page.waitForFunction(()=>[...document.querySelectorAll('[data-part] .sop-scroll-area:first-of-type .sop-scroll-rail')].every(e=>e.getAttribute('aria-orientation')==='horizontal'));
   for(const p of bars){const rail=page.locator(`[data-part="${p.id}"] .sop-scroll-rail`).first();await rail.focus();await page.keyboard.press('End');await page.waitForFunction(id=>document.querySelector('[data-part="'+id+'"] output')?.textContent==='100',p.id);}
   await page.locator('#short').click();await page.waitForFunction(()=>[...document.querySelectorAll('.sop-scroll-rail')].every(e=>(e as HTMLElement).hidden));
   const child=page.locator('[data-part="capillary"] .sop-scroll-content button');await child.click();assert.equal(await child.innerText(),'child 1');
-  const ids=await page.locator('.sop-scroll-viewport').evaluateAll(e=>e.map(v=>v.id));assert.equal(new Set(ids).size,48);
+  const ids=await page.locator('.sop-scroll-viewport').evaluateAll(e=>e.map(v=>v.id));assert.equal(new Set(ids).size,bars.length*2);
   await page.locator('#short').click();await page.waitForFunction(()=>[...document.querySelectorAll('[data-part]')].every(e=>!(e.querySelector('.sop-scroll-rail') as HTMLElement).hidden));
-  for(let i=0;i<3;i++){await page.locator('#show').click();await page.waitForFunction(()=>document.querySelectorAll('.sop-scroll-area').length===0);assert.equal(await page.evaluate(()=>(window as unknown as {scrollReactFrames:Set<number>}).scrollReactFrames.size),0);await page.locator('#show').click();await page.waitForFunction(()=>document.querySelectorAll('.sop-scroll-area').length===48);}
-  results.push(`${format}: 24 parts, 48 independent instances, progress callbacks, React orientation/content updates, child actions, unique IDs, repeated cleanup`);console.log('PASS '+results.at(-1));await page.close();
+  for(let i=0;i<3;i++){await page.locator('#show').click();await page.waitForFunction(()=>document.querySelectorAll('.sop-scroll-area').length===0);assert.equal(await page.evaluate(()=>(window as unknown as {scrollReactFrames:Set<number>}).scrollReactFrames.size),0);await page.locator('#show').click();await page.waitForFunction(count=>document.querySelectorAll('.sop-scroll-area').length===count,bars.length*2);}
+  results.push(`${format}: ${bars.length} parts, ${bars.length*2} independent instances, progress callbacks, React orientation/content updates, child actions, unique IDs, repeated cleanup`);console.log('PASS '+results.at(-1));await page.close();
  }
  assert.deepEqual(errors,[]);fs.writeFileSync(path.join(out,'results.json'),JSON.stringify({mode:offline?'synthetic document, actual installed React production runtime (not Vite)':'Vite + installed React development StrictMode',tests:results,errors},null,2)+'\n');
 }finally{try{await browser?.close();}finally{await shutdown?.();}}

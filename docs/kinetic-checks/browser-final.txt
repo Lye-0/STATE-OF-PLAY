@@ -1,0 +1,22 @@
+
+> state-of-play@4.4.0 test:kinetic
+> node --experimental-strip-types tests/kinetic.browser.ts
+
+(node:3727) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS 12 canvas topologies render without replacing native viewport or thumb sizing
+PASS mouse dragging, track paging, native wheel and Home/End retain accurate positions
+PASS horizontal and RTL art tracks the measured thumb rather than logical progress alone
+PASS no overflow hides the rail; changed content and viewport resize remeasure
+PASS new menus remain icon-free, editable listboxes with immediate commit and cancel
+PASS moving plate is animated while option text and committed state stay independent
+PASS opening choreography is real animation and fast re-open leaves no inert stale menu
+PASS closing surface cannot be clicked or read as a live list while its animation finishes
+PASS disabled candidates, whole-field disable, reset, and variable option counts remain functional
+PASS many long options scroll inside the popup, align the plane and work near the lower edge
+PASS mobile widths 320 / 390 / 768 have no document overflow and keep keyboard selection
+PASS reduced motion snaps to final shape and has no Web Animations or ongoing RAF
+PASS forced colors uses native scrollbar and preserves option focus
+PASS independent instances have unique control identifiers and do not share values
+PASS after scroll trails settle and on unmount, all presentation RAFs are released
+Kinetic browser checks: 15 passed

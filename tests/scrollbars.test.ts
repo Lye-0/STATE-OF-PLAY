@@ -7,10 +7,10 @@ import {buildCatalog, ROOT, FORMATS} from '../scripts/catalog.ts';
 import {getDelivery, packageContents, buildPrompt} from '../src/catalog/delivery.ts';
 import {sourceReferences, isLocalReference, resolveLocal} from '../scripts/source-tools.ts';
 const catalog=buildCatalog();
-const scrollbars=catalog.parts.filter(part=>part.category==='scrollbars');
+const scrollbars=catalog.parts.filter(part=>part.category==='scrollbars'&&!part.tags.includes('KINETIC'));
 test('baseline retained: 24 toggles, 24 surfaces, 24 scrollbars, A majority and eight B rails',()=>{
  assert.ok(catalog.parts.length >= 72);
- for(const category of ['toggles','blocks','scrollbars']) assert.equal(catalog.parts.filter(p=>p.category===category).length,24);
+ for(const category of ['toggles','blocks','scrollbars']) assert.equal(catalog.parts.filter(p=>p.category===category&&!p.tags.includes('KINETIC')).length,24);
  assert.equal(scrollbars.filter(p=>p.designType==='A').length,16);assert.equal(scrollbars.filter(p=>p.designType==='B').length,8);
 });
 test('thumb is proportional, bounded and reaches both endpoints',()=>{

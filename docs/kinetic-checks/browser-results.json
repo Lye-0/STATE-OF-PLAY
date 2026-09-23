@@ -1,0 +1,22 @@
+{
+  "mode": "offline synthetic DOM; real Chromium, not Vite",
+  "passed": 15,
+  "tests": [
+    "12 canvas topologies render without replacing native viewport or thumb sizing",
+    "mouse dragging, track paging, native wheel and Home/End retain accurate positions",
+    "horizontal and RTL art tracks the measured thumb rather than logical progress alone",
+    "no overflow hides the rail; changed content and viewport resize remeasure",
+    "new menus remain icon-free, editable listboxes with immediate commit and cancel",
+    "moving plate is animated while option text and committed state stay independent",
+    "opening choreography is real animation and fast re-open leaves no inert stale menu",
+    "closing surface cannot be clicked or read as a live list while its animation finishes",
+    "disabled candidates, whole-field disable, reset, and variable option counts remain functional",
+    "many long options scroll inside the popup, align the plane and work near the lower edge",
+    "mobile widths 320 / 390 / 768 have no document overflow and keep keyboard selection",
+    "reduced motion snaps to final shape and has no Web Animations or ongoing RAF",
+    "forced colors uses native scrollbar and preserves option focus",
+    "independent instances have unique control identifiers and do not share values",
+    "after scroll trails settle and on unmount, all presentation RAFs are released"
+  ],
+  "errors": []
+}

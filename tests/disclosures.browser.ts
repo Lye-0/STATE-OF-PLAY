@@ -25,8 +25,8 @@ try{
  const listen=(p:Page)=>p.on('pageerror',e=>errors.push(e.message));
  page=await context.newPage();listen(page);
  if(offline){const files=offlineFiles();await page.setContent(files.get('/index.html')!.replace(/<script[^>]*>[\s\S]*?<\/script>/g,'').replace(/<link[^>]*>/g,''));await page.addStyleTag({content:files.get('/test-styles.css')!});for(const name of ['prism','jszip'])await page.addScriptTag({content:fs.readFileSync(path.join(ROOT,'public/vendor/'+name+'.js'),'utf8')});await page.addScriptTag({content:files.get('/test-app.js')!});}else await page.goto(url);
- await run('24 dropdowns: actual options, End/Enter commit, Escape cancellation, no accidental detail dialog',async()=>{
-  await page.locator('[data-category="dropdowns"]').click();assert.equal(await page.locator('[data-part]').count(),24);
+ await run('Dropdowns: actual options, End/Enter commit, Escape cancellation, no accidental detail dialog',async()=>{
+  await page.locator('[data-category="dropdowns"]').click();assert.equal(await page.locator('[data-part]').count(),dropdowns.length);
   for(const p of dropdowns){const root=page.locator(`[data-part="${p.id}"] .sop-select`),button=root.locator('.sop-select-trigger');await button.click();assert.equal(await button.getAttribute('aria-expanded'),'true');await page.keyboard.press('End');const last=await root.locator('[role="option"]').last().getAttribute('data-value');await page.keyboard.press('Enter');assert.equal(await root.getAttribute('data-value'),last);assert.equal(await button.getAttribute('aria-expanded'),'false');await button.click();await page.keyboard.press('Home');await page.keyboard.press('Escape');assert.equal(await root.getAttribute('data-value'),last);assert.equal(await page.locator('dialog[open]').count(),0);}
  });
  await run('Dropdown top layer in the detail modal; first Escape closes choices, next closes detail',async()=>{

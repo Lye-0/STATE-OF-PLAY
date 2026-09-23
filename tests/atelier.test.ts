@@ -15,7 +15,7 @@ const variants=[...new Set<string>(expressive.map(p=>p.foundation.variant))];
 function splitSelectors(value:string):string[]{let quote='',depth=0,start=0;const result:string[]=[];for(let i=0;i<value.length;i++){const c=value[i];if(quote){if(c===quote&&value[i-1]!=='\\')quote='';continue;}if(c==='"'||c==="'"){quote=c;continue;}if(c==='('||c==='[')depth++;if(c===')'||c===']')depth--;if(c===','&&depth===0){result.push(value.slice(start,i).trim());start=i+1;}}result.push(value.slice(start).trim());return result;}
 
 test('Atelier redesign covers all 171 new expressive parts except the existing loaders',()=>{
- assert.equal(parts.length,564);assert.equal(expressive.length,171);assert.equal(variants.length,16);
+ assert.equal(parts.filter(p=>!p.tags.includes('KINETIC')).length,564);assert.equal(expressive.length,171);assert.equal(variants.length,16);
  assert.equal(new Set(expressive.map(p=>p.category)).size,12);
  for(const p of expressive){assert.equal(p.version,'4.1.0');assert.ok(p.tags.includes('Atelier'));}
 });

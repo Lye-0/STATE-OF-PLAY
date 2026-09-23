@@ -1,0 +1,7 @@
+@import '../../../shared/kinetic-select.css';
+.sop-select.sop-kinetic-select.sop-aurora-field-menu{--sel-bg:#1b3139;--sel-panel:#101f2e;--sel-ink:#eff8ee;--sel-muted:#a1bfbe;--sel-line:#a1d4cd63;--sel-accent:#c2f0e5;--k-plane:linear-gradient(100deg,#89deba20,#bea3e838);--k-plane-border:#b3f8d45e;--k-plane-radius:14px;--k-plate-shadow:inset 0 1px #e2ffe74a,0 7px 15px #07182b4a;--k-panel-art:radial-gradient(ellipse at var(--k-pointer-x) var(--k-pointer-y),#7acbb955,transparent 66%);}
+.sop-select.sop-kinetic-select.sop-aurora-field-menu > .sop-select-trigger{border-radius:15px;background:radial-gradient(ellipse at 75% 0,#aaa2d44a,transparent 65%),linear-gradient(125deg,#245851,#132b3f);border-bottom:2px solid #cfefe247;}
+.sop-select.sop-kinetic-select.sop-aurora-field-menu .sop-select-popup{border-radius:18px;overflow-x:hidden;padding:13px;background:var(--k-panel-art),#101f2e;}
+.sop-select.sop-kinetic-select.sop-aurora-field-menu .sop-select-popup::after{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;background:conic-gradient(from -40deg at var(--k-pointer-x) var(--k-pointer-y),transparent 0deg,#9de1be2b 30deg,transparent 48deg,#93b9e732 65deg,transparent 93deg,#c69dda22 137deg,transparent 167deg,#a0e3bf20 205deg,transparent 238deg);filter:blur(8px);mix-blend-mode:screen;}
+
+.sop-select.sop-kinetic-select.sop-aurora-field-menu .sop-select-popup{--k-panel-art:radial-gradient(ellipse at var(--k-pointer-x) var(--k-pointer-y),#64c9ba4a,transparent 68%);}

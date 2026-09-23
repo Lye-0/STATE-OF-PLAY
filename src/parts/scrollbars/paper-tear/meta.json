@@ -1,0 +1,59 @@
+{
+  "id": "paper-tear",
+  "name": "Paper Tear",
+  "category": "scrollbars",
+  "order": 570,
+  "version": "1.0.0",
+  "tagline": "紙の端を、ほどく。",
+  "description": "繊維のある二枚の紙がしおりの周囲でめくれ、読み進めた側に細い裂け目が残る。",
+  "material": "PAPER / UNFOLD",
+  "motion": "PAPER / KINETIC",
+  "accent": "228,209,174",
+  "designType": "A",
+  "runtime": "Native scroll + bounded Canvas",
+  "componentName": "PaperTearScrollArea",
+  "tags": [
+    "Paper Tear",
+    "paper-tear",
+    "KINETIC",
+    "EXPERIMENTAL",
+    "新作",
+    "A",
+    "PAPER / UNFOLD"
+  ],
+  "related": [
+    "original-surface"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "スクロールする中身。展示用コンテンツは含まれません。"
+    ],
+    [
+      "orientation",
+      "'vertical' | 'horizontal'",
+      "縦または横スクロール。初期値はvertical。"
+    ],
+    [
+      "viewportLabel",
+      "string",
+      "内容の領域に付ける読み上げ用ラベル。"
+    ],
+    [
+      "scrollbarLabel",
+      "string",
+      "スクロールバーの読み上げ用ラベル。"
+    ],
+    [
+      "onProgressChange",
+      "(progress: number) => void",
+      "スクロール位置を0〜1で通知します。"
+    ],
+    [
+      "className / style",
+      "HTMLAttributes",
+      "高さはstyleのheightまたは--sop-scroll-heightで調整。横幅は親に合わせます。"
+    ]
+  ]
+}

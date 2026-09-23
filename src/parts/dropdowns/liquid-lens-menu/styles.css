@@ -1,0 +1,8 @@
+@import '../../../shared/kinetic-select.css';
+.sop-select.sop-kinetic-select.sop-liquid-lens-menu{--sel-panel:#102d35;--sel-bg:linear-gradient(135deg,#a4dfd240,#163a4880 50%,#a6deda22),#182f36;--sel-line:#bcf3e27a;--sel-accent:#d3f5e7;--k-plane:radial-gradient(ellipse at 23% 0,#f1fff680,transparent 35%),linear-gradient(100deg,#a9eee636,#3e8da44a 65%,#b4ecd93b);--k-plane-border:#d6ffee9c;--k-panel-art:radial-gradient(ellipse at var(--k-pointer-x) var(--k-pointer-y),#87c6c151,transparent 65%);--k-plane-radius:24px;}
+.sop-select.sop-kinetic-select.sop-liquid-lens-menu > .sop-select-trigger{border-radius:28px 17px 28px 17px;box-shadow:inset 2px 1px 3px #d4fcf956,inset -1px -2px #ceffff2b,0 10px 18px #0006;}
+.sop-select.sop-kinetic-select.sop-liquid-lens-menu .sop-select-popup{border-radius:20px;box-shadow:inset 2px 0 3px #e0fff53a,inset -2px -2px #c8fbff2e,0 22px 60px #0009;}
+.sop-select.sop-kinetic-select.sop-liquid-lens-menu .sop-select-popup::before{height:calc(var(--kh) + var(--k-speed)*13px);border-radius:calc(15px + var(--k-speed)*22px);box-shadow:inset 2px 1px 3px #e6fff68c,inset -1px -2px 2px #d0ffff74,0 7px 12px #041c2480;backdrop-filter:blur(2px);}
+.sop-select.sop-kinetic-select.sop-liquid-lens-menu .sop-select-popup::after{content:'';position:absolute;inset:6px;z-index:0;border:1px solid #e5fff817;border-radius:16px;pointer-events:none;}
+
+.sop-select.sop-kinetic-select.sop-liquid-lens-menu .sop-select-popup{--k-panel-art:radial-gradient(ellipse at var(--k-pointer-x) var(--k-pointer-y),#77cdc54d,transparent 70%);}

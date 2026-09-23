@@ -1,0 +1,6 @@
+@import '../../../shared/kinetic-select.css';
+.sop-select.sop-kinetic-select.sop-portal-menu{--sel-bg:#242732;--sel-panel:#10141f;--sel-line:#9da9c35c;--sel-accent:#d0daf0;--sel-muted:#a4abc1;--k-plane:linear-gradient(115deg,#96aee331,#596fbb19);--k-plane-border:#b9c2ee73;--k-plane-radius:3px;--k-plate-shadow:inset 0 0 0 3px #c7c8e819,0 7px 14px #0008;}
+.sop-select.sop-kinetic-select.sop-portal-menu > .sop-select-trigger{border-radius:5px;border-inline:4px solid #8496b853;background:linear-gradient(120deg,#323a53,#151c2a 65%,#2d3650);box-shadow:inset 0 0 0 3px #040b1955,inset 0 0 0 5px #b0bade14,0 10px 20px #0007;}
+.sop-select.sop-kinetic-select.sop-portal-menu .sop-select-popup{border-radius:5px;padding:20px 18px;background:radial-gradient(ellipse at 50% 0,#7994c427,transparent 75%),#10141f;border:1px solid #8491b180;box-shadow:inset 0 0 0 4px #030815,inset 0 0 0 5px #a6b9e736,inset 0 0 0 9px #030814,inset 0 0 0 10px #bbcaff20,0 25px 48px #0009;}
+.sop-select.sop-kinetic-select.sop-portal-menu .sop-select-popup::after{content:'';position:absolute;inset:14px;border:1px solid #c3d3ff26;box-shadow:inset 0 0 25px #060c1780;pointer-events:none;}
+.sop-select.sop-kinetic-select.sop-portal-menu .sop-select-option{border-radius:4px;border-bottom:1px solid #a7bcf214;}

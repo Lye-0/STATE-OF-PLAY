@@ -1,0 +1,5 @@
+@import '../../../shared/kinetic-scroll.css';
+.sop-scroll-area.sop-kinetic-scroll.sop-mercury-rail{--sop-handle-width:20px;--sop-scroll-accent:#d0e6db;
+}.sop-scroll-area.sop-kinetic-scroll.sop-mercury-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{border-radius:50% / 20px;background:linear-gradient(110deg,#eef4eaff,#748787 16%,#213b3b 38%,#b8cdc1 49%,#fbf9e4 56%,#3f6769 80%,#bbdcd3);border-color:#cedee28e;box-shadow:inset 1px 1px 2px #fff9,0 5px 7px #000b;transform:translateX(-50%) scaleX(calc(1 + var(--kin-energy)*.12));}.sop-scroll-area.sop-kinetic-scroll.sop-mercury-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{display:none;}
+
+.sop-scroll-area.sop-kinetic-scroll.sop-mercury-rail[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{transform:translateY(-50%) scaleY(calc(1 + var(--kin-energy)*.12));}
