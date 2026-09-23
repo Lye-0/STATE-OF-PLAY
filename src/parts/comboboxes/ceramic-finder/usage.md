@@ -19,3 +19,7 @@ Reactは同梱のCeramicFinderを読み込み、value（外部制御）または
 入力は実際のinputで、キャレット・Undo・選択を保持する。IME確定前のEnterを確定処理に使わない。候補のhoverはactiveのみで選択値ではない。選択済みcheckとactive面は別。元のoptions/group/description/badgeを差し替え可能。複数選択とフォーム連携を維持。スクロールや画面端でも候補と背景面が一致する。
 
 色と寸法は`foundation/resonance/style.css`、変形は`resonance/art.ts`が正本です。表示内容はAPIから変更できます。導入向けのZIPに必要な依存処理は含まれます。背景用SVGは操作を受け取りません。
+
+## 候補一覧のスクロール
+
+候補を開いている間も外枠やページにスクロールバーを出しません。候補が表示領域を超えたときは、候補一覧の内容面だけを縦方向にスクロールさせます。

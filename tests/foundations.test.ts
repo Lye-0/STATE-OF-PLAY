@@ -19,6 +19,10 @@ test('reconstructed collection: 603 authored parts, 25 categories, 299 foundatio
 test('every foundation has real markup, implementation, use example and prompt in every format/layout',()=>{
  for(const p of parts){assert.match(p.markup,/sop-foundation/);assert.equal(p.foundation!.kind,p.category);assert.ok(p.prompt.length>300);for(const format of FORMATS)for(const layout of ['portable','original']as const){const d=getDelivery(p,format,layout);assert.ok(d.files.some(f=>f.name===d.entry));assert.ok(d.runtimeFiles.every(f=>!f.name.includes('src/app/')));assert.ok(packageContents(p,format,layout).some(f=>f.name==='PROMPT.md'));assert.match(buildPrompt(p,format,layout),/既存プロジェクト/);}}
 });
+test('all 24 combobox exports and prompts keep scrolling inside the candidate list',()=>{
+ const base=fs.readFileSync(path.join(ROOT,'src/shared/foundation/base.css'),'utf8'),resonance=fs.readFileSync(path.join(ROOT,'src/shared/foundation/resonance/style.css'),'utf8');assert.match(base,/ff-floating\.ff-combo-list\{overflow:hidden\}/);assert.match(base,/ff-combo-list>\[data-results\].*overflow-y:auto/);assert.match(resonance,/ff-combo-list \{[\s\S]*?overflow:hidden/);assert.match(resonance,/ff-combo-list > \[data-results\] \{[\s\S]*?overflow-y:auto/);
+ for(const part of parts.filter(p=>p.category==='comboboxes')){assert.match(part.prompt,/候補一覧のスクロール/);assert.match(part.usage,/候補一覧のスクロール/);for(const format of FORMATS)for(const layout of ['portable','original']as const){const delivery=getDelivery(part,format,layout);assert.ok(delivery.runtimeFiles.some(file=>file.sourceName.endsWith('/shared/foundation/base.css')));assert.match(buildPrompt(part,format,layout),/候補パネルの外枠はオーバーフローをクリップ/);}}
+});
 test('catalogue transport round-trips every field without minifying exported code',()=>{
  const packed=packCatalog(catalogue.parts),restored=unpackCatalog(packed);assert.deepEqual(restored,catalogue.parts);
  assert.ok(Buffer.byteLength(JSON.stringify(packed))<catalogue.parts.reduce((sum,p)=>sum+Buffer.byteLength(JSON.stringify(p)),0)*.65);

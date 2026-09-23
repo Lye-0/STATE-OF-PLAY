@@ -6,11 +6,12 @@ export function mountCombobox(root:HTMLElement,config:FoundationConfig,options:F
  const uid=uniqueId('sop-combo');input.id=uid;results.id=uid+'-list';input.setAttribute('aria-controls',results.id);results.setAttribute('aria-label',c.options.label??'候補');
  const overlay=makeOverlay(c,panel,shell,'bottom',root);let query='',active='',composing=false,editing=false;
  const filtered=()=>{const token=query.normalize('NFKC').toLocaleLowerCase();return (c.options.items??[]).filter(item=>(item.label+' '+(item.description??'')).normalize('NFKC').toLocaleLowerCase().includes(token));};
- function paintList(){const items=filtered(),values=asStrings(c.data),o=c.options;
+ function paintList(){const items=filtered(),values=asStrings(c.data),o=c.options,previousScrollTop=results.scrollTop;
   results.innerHTML=o.loading?'<div class="ff-list-message">読み込み中…</div>':o.error?`<div class="ff-list-message">${escape(o.error)}</div>`:items.length?items.map(item=>`<div id="${uid}-option-${(o.items??[]).indexOf(item)}" data-option="${escape(item.value)}" role="option" aria-selected="${values.includes(item.value)}" aria-disabled="${!!item.disabled}" data-active="${active===item.value}" class="ff-option"><span class="ff-option-icon">${svg(item.icon??'spark')}</span><span><strong>${escape(item.label)}</strong><small>${escape(item.description)}</small></span><span class="ff-option-badge">${escape(item.badge??'')}</span><span class="ff-option-check">${svg('check')}</span></div>`).join(''):'<div class="ff-list-message">一致する候補がありません。</div>';
+  results.scrollTop=active?previousScrollTop:0;
   results.setAttribute('aria-multiselectable',String(!!o.multiple));q(panel,'[data-result-count]').textContent=o.loading?'PLEASE WAIT':`${items.length} OPTIONS · ↑↓ / ENTER`;
-  const current=[...results.querySelectorAll<HTMLElement>('[data-option]')].find(item=>item.dataset.option===active&&!item.hasAttribute('hidden'));if(current&&overlay.open){input.setAttribute('aria-activedescendant',current.id);current.scrollIntoView({block:'nearest'});}else input.removeAttribute('aria-activedescendant');
   q(root,'[data-combo-live]').textContent=o.loading?'読み込み中':o.error??`${items.length}件の候補`;overlay.position();
+  const current=[...results.querySelectorAll<HTMLElement>('[data-option]')].find(item=>item.dataset.option===active&&!item.hasAttribute('hidden'));if(current&&overlay.open){input.setAttribute('aria-activedescendant',current.id);current.scrollIntoView({block:'nearest'});}else{results.scrollTop=0;input.removeAttribute('aria-activedescendant');}
  }
  const show=()=>{if(c.options.disabled||c.options.readOnly)return;query='';editing=false;active='';paintList();overlay.show();input.setAttribute('aria-expanded','true');paintList();};
  const hide=()=>{overlay.hide();input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');editing=false;query='';c.sync('value');};
