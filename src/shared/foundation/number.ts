@@ -14,7 +14,7 @@ export function mountNumber(root:HTMLElement,config:FoundationConfig,options:Fou
  };
  c.on(input,'input',()=>{dirty=true;input.removeAttribute('aria-invalid');input.setCustomValidity('');});c.on(input,'compositionstart',()=>{composing=true;});c.on(input,'compositionend',()=>{composing=false;dirty=true;});c.on(input,'blur',commit);
  c.on(input,'keydown',event=>{const e=event as KeyboardEvent;if(e.isComposing||composing)return;if(e.key==='Enter'){commit();return;}if(e.key==='Escape'){dirty=false;input.removeAttribute('aria-invalid');input.setCustomValidity('');c.sync('value');return;}if(['ArrowUp','ArrowDown','Home','End'].includes(e.key)&&!c.options.readOnly){e.preventDefault();const [min,max,step]=bounds(c.options);const current=Number(input.value)||min;dirty=false;c.send(e.key==='Home'?min:e.key==='End'?max:current+(e.key==='ArrowUp'?step:-step));}});
- root.querySelectorAll<HTMLButtonElement>('[data-adjust]').forEach(button=>c.on(button,'click',()=>{if(composing)return;const [min,,step]=bounds(c.options);const current=dirty?Number(input.value):Number(c.data??min);dirty=false;c.send((Number.isFinite(current)?current:min)+Number(button.dataset.adjust)*step);input.focus();}));
+ root.querySelectorAll<HTMLButtonElement>('[data-adjust]').forEach(button=>c.on(button,'click',()=>{if(composing)return;const [min,,step]=bounds(c.options);const current=dirty?Number(input.value):Number(c.data??min);dirty=false;c.send((Number.isFinite(current)?current:min)+Number(button.dataset.adjust)*step);}));
  const form=root.closest('form');if(form)c.on(form,'submit',event=>{commit();if(!input.checkValidity()){event.preventDefault();input.reportValidity();}});
  c.sync('initial');return c;
 }
