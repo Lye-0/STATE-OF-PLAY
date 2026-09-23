@@ -1,6 +1,9 @@
 @import '../../../shared/selection-base.css';
 @import '../../../shared/selection-content.css';
+@import "../../../shared/transit-selection.css";
 /* Blueprint Tabs: 製図の方眼と精密な輪郭。図面をめくる感覚のインターフェース。 */
 .sop-blueprint-tabs{--choice-base:#13263c;--choice-line:#4d6d8c;--choice-marker:#204c70;--choice-on:#e4f5ff;--choice-accent:#a2d6ff;--choice-radius:1px;}
 .sop-blueprint-tabs > .sop-choice-list{border:1px dashed #728daf;gap:0;padding:4px;background:linear-gradient(#9abcd20b 1px,transparent 1px),linear-gradient(90deg,#9abcd20b 1px,transparent 1px),#13263c;background-size:12px 12px}.sop-blueprint-tabs > .sop-choice-list > .sop-choice-item{border-right:1px solid #7395b333;justify-content:flex-start;font:10px Consolas,monospace;text-transform:uppercase}.sop-blueprint-tabs > .sop-choice-list > .sop-choice-item .sop-choice-index{display:block;color:#8fc5e1}.sop-blueprint-tabs > .sop-choice-list > .sop-choice-marker{border:1px solid #81bcd2;background:linear-gradient(135deg,#3c76964d,#3c76960f)}.sop-blueprint-tabs > .sop-choice-panels > .sop-choice-panel{background:linear-gradient(#7895ac0d 1px,transparent 1px),linear-gradient(90deg,#7895ac0d 1px,transparent 1px),#13263c;background-size:16px 16px;border-style:dashed}.sop-blueprint-tabs > .sop-choice-list > .sop-choice-item .sop-choice-dot{border-radius:0}
 
+
+/* v4.6: runtime mode also styles pre-hydration standalone markup. */

@@ -1,5 +1,8 @@
 @import '../../../shared/selection-base.css';
+@import "../../../shared/transit-selection.css";
 /* Capillary Selector: 淡く屈折する液体ガラス。レンズのような光が移動する。 */
 .sop-capillary-segments{--choice-base:#152328;--choice-line:#568483;--choice-marker:linear-gradient(130deg,#8bd1bd,#95b8d2 55%,#b9a2c8);--choice-on:#152b30;--choice-accent:#b5e9d6;--choice-radius:18px;}
 .sop-capillary-segments > .sop-choice-list{background:radial-gradient(ellipse at 35% 0,#67b7ba26,transparent 60%),#142126;border-color:#84cebf45;box-shadow:inset 0 1px 0 #e8fff628,0 15px 35px #0003}.sop-capillary-segments > .sop-choice-list > .sop-choice-marker{box-shadow:inset 0 1px 1px #f0fffbd9,0 0 17px #63cfc025}.sop-capillary-segments > .sop-choice-list > .sop-choice-item{min-height:53px}.sop-capillary-segments > .sop-choice-panels > .sop-choice-panel{background:radial-gradient(ellipse at 100% 0,#559fc824,transparent 65%),#122224;border-color:#50787570}
 
+
+/* v4.6: runtime mode also styles pre-hydration standalone markup. */

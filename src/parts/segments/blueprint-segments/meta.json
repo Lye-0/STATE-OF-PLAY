@@ -3,14 +3,14 @@
   "name": "Blueprint Selector",
   "category": "segments",
   "order": 214,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "正確に、選ぶ。",
-  "description": "寸法線と精密な囲い。青い図面の設定スイッチ。",
+  "description": "選択に追従するグリッド窓と伸縮する基準線。",
   "material": "DRAFTING / MODE",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / BLUEPRINT",
   "accent": "146,192,235",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / native radios",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "BlueprintSegments",
   "tags": [
     "Blueprint Selector",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

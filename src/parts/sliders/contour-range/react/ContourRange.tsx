@@ -1,7 +1,7 @@
 'use client';
 import React, {forwardRef} from 'react';
 import {FoundationWidget, type FoundationProps} from '../../../../shared/foundation/react';
-import {renderSlider, mountSlider} from '../../../../shared/foundation/slider';
+import {renderDriveSlider, mountDriveSlider} from '../../../../shared/drive-slider';
 import type {FoundationConfig} from '../../../../shared/foundation/core';
 import '../styles.css';
 const config: FoundationConfig = {
@@ -23,5 +23,5 @@ const config: FoundationConfig = {
 export type ContourRangeProps = FoundationProps;
 /** Contour Range: Aタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
 export default forwardRef<HTMLDivElement, ContourRangeProps>(function ContourRange(props, ref) {
-  return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderSlider} mountContent={mountSlider}/>;
+  return <FoundationWidget {...props} ref={ref} config={config} className={`sop-drive-range ${props.className??''}`} renderContent={renderDriveSlider} mountContent={mountDriveSlider}/>;
 });

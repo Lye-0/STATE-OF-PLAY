@@ -70,6 +70,10 @@ jobs:
         run: npm run test:kinetic
       - name: Unfold accordions and responsive text fields
         run: npm run test:unfold
+      - name: Transform tabs, segments, popups and sliders
+        run: npm run test:transform
+      - name: Transform export and inspector integration
+        run: npm run test:transform:gallery
       - name: Build full source archive
         run: npm run package
       - name: Save reports on failure

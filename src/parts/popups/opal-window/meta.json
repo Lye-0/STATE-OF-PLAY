@@ -3,14 +3,14 @@
   "name": "Opal Window",
   "category": "popups",
   "order": 270,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "淡く、知らせる。",
-  "description": "オパールの干渉色と、柔らかな紹介のカード。",
+  "description": "白い膜が膨らんでほどけ、光を含む磁器ガラスになる。",
   "material": "PEARLESCENT / NOTE",
-  "motion": "REVEAL / RETURN",
+  "motion": "TRANSFORM / OPAL",
   "accent": "128,109,157",
   "designType": "A",
-  "runtime": "Native dialog + CSS / event-driven lifecycle",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "OpalWindow",
   "tags": [
     "Opal Window",
@@ -20,7 +20,10 @@
     "ダイアログ",
     "確認",
     "開閉",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

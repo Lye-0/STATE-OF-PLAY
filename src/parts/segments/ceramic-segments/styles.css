@@ -1,5 +1,8 @@
 @import '../../../shared/selection-base.css';
+@import "../../../shared/transit-selection.css";
 /* Ceramic Selector: 暖かな白とわずかな段差。立体的で優しい選択面。 */
 .sop-ceramic-segments{--choice-base:#e8e0cb;--choice-line:#c9bfa4;--choice-ink:#353729;--choice-muted:#73725f;--choice-marker:#f9f3e3;--choice-on:#393f2a;--choice-accent:#728456;--choice-radius:4px;}
 .sop-ceramic-segments > .sop-choice-list{background:transparent;border:0;padding:8px 0 0;gap:4px}.sop-ceramic-segments > .sop-choice-list > .sop-choice-item{border:1px solid #82765655;border-bottom:0;border-radius:8px 8px 0 0;min-height:53px;font-family:Georgia,serif;background:#d8d1bb}.sop-ceramic-segments > .sop-choice-list > .sop-choice-item[data-selected=true]{background:#f9f3e3;box-shadow:inset 0 3px 0 #829369}.sop-ceramic-segments > .sop-choice-list > .sop-choice-marker{display:none}.sop-ceramic-segments > .sop-choice-panels{margin-top:0}.sop-ceramic-segments > .sop-choice-panels > .sop-choice-panel{border-radius:0 0 4px 4px;box-shadow:0 4px 0 -1px #c5bca8,0 8px 0 -2px #978e7b;background:linear-gradient(90deg,#c1b69a35,transparent 6%),#f9f3e3}.sop-ceramic-segments > .sop-choice-list > .sop-choice-item .sop-choice-dot{display:none}
 .sop-ceramic-segments{--choice-radius:26px;--choice-base:#e4dfcf;--choice-marker:#fff8e8}.sop-ceramic-segments > .sop-choice-list{border:1px solid #b7b199;background:#dad5c6;border-radius:30px;padding:6px;gap:3px}.sop-ceramic-segments > .sop-choice-list > .sop-choice-item{border:0;border-radius:23px;background:transparent;min-height:60px}.sop-ceramic-segments > .sop-choice-list > .sop-choice-item[data-selected=true]{background:#fff9e9;box-shadow:0 3px 5px #8b79584a,inset 0 2px 1px #fff}
+
+/* v4.6: runtime mode also styles pre-hydration standalone markup. */

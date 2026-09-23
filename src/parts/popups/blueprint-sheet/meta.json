@@ -3,14 +3,14 @@
   "name": "Blueprint Sheet",
   "category": "popups",
   "order": 263,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "設計を、ひらく。",
-  "description": "格子と製図線で構成した、編集可能なシート。",
+  "description": "中央の交点から四方向へ設計面が展開する。",
   "material": "DRAFT / TECHNICAL",
-  "motion": "REVEAL / RETURN",
+  "motion": "TRANSFORM / BLUEPRINT",
   "accent": "176,220,225",
   "designType": "A",
-  "runtime": "Native dialog + CSS / event-driven lifecycle",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "BlueprintSheet",
   "tags": [
     "Blueprint Sheet",
@@ -20,7 +20,10 @@
     "ダイアログ",
     "確認",
     "開閉",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

@@ -3,14 +3,14 @@
   "name": "Aurora Range",
   "category": "sliders",
   "order": 281,
-  "version": "4.1.0",
+  "version": "4.6.0",
   "tagline": "光の層を、指先に。",
-  "description": "立体つまみ、実際の値に追従するレール、独立した計器の文字組み。つまみの中心と塗りの始終位置を揃えています。",
+  "description": "引いた量に合わせて光の層が波打ち、指を離すと落ち着く。",
   "material": "REFRACTION · 01",
-  "motion": "GLIDE",
+  "motion": "TRANSFORM / AURORA",
   "accent": "136,223,212",
   "designType": "A",
-  "runtime": "Native DOM + CSS",
+  "runtime": "Native state + event-driven presentation / CSS + SVG",
   "componentName": "AuroraRange",
   "tags": [
     "スライダー",
@@ -20,7 +20,10 @@
     "A",
     "Atelier",
     "素材感",
-    "立体造形"
+    "立体造形",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [],
   "props": [

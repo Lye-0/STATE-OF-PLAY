@@ -3,14 +3,14 @@
   "name": "Studio Selector",
   "category": "segments",
   "order": 218,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "音のモードを、選ぶ。",
-  "description": "レベルライトと凹み。音響機器のモードセレクター。",
+  "description": "小さなルーバーが回り、選んだモードへキーが収まる。",
   "material": "AUDIO / MODE",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / SHUTTER",
   "accent": "200,217,172",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / native radios",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "StudioSegments",
   "tags": [
     "Studio Selector",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

@@ -3,14 +3,14 @@
   "name": "Obsidian Tabs",
   "category": "tabs",
   "order": 191,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "静かな、重厚感。",
-  "description": "黒い石の研磨面と深い溝。主張しすぎず、存在感のあるタブ。",
+  "description": "黒い板が割れ目から滑り、奥の細い光を露出させる。",
   "material": "STONE / INSET",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / FAULT",
   "accent": "191,198,193",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / ARIA tabs",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "ObsidianTabs",
   "tags": [
     "Obsidian Tabs",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

@@ -3,14 +3,14 @@
   "name": "Detent Selector",
   "category": "segments",
   "order": 213,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "目盛りに、吸いつく。",
-  "description": "物理的なクリックストップを思わせる立体レール。",
+  "description": "ばねの溝がキーの前後で開き、定位置へ吸い付く。",
   "material": "DETENT / PRECISION",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / DETENT",
   "accent": "247,181,132",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / native radios",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "DetentSegments",
   "tags": [
     "Detent Selector",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

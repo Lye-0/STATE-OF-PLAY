@@ -1,4 +1,4 @@
-import {mountSlider} from '../../../../shared/foundation/slider';
+import {mountDriveSlider} from '../../../../shared/drive-slider';
 import type {FoundationConfig, FoundationOptions} from '../../../../shared/foundation/core';
 const config: FoundationConfig = {
   "id": "contour-range",
@@ -16,4 +16,4 @@ const config: FoundationConfig = {
   "unit": "%",
   "range": true
 };
-export function init(element: HTMLElement, options: FoundationOptions = {}) { return mountSlider(element, config, options); }
+export function init(element: HTMLElement, options: FoundationOptions = {}) { return mountDriveSlider(element, config, options); }

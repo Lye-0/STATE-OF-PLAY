@@ -3,14 +3,14 @@
   "name": "Aurora Window",
   "category": "popups",
   "order": 257,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "光の向こうへ。",
-  "description": "透ける光の幕と、軽やかな紹介パネル。",
+  "description": "液体の膜が押し広がり、反射する縁を持つ窓になる。",
   "material": "PRISMATIC / WINDOW",
-  "motion": "REVEAL / RETURN",
+  "motion": "TRANSFORM / FLUID",
   "accent": "181,232,224",
   "designType": "A",
-  "runtime": "Native dialog + CSS / event-driven lifecycle",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "AuroraWindow",
   "tags": [
     "Aurora Window",
@@ -20,7 +20,10 @@
     "ダイアログ",
     "確認",
     "開閉",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

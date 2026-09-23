@@ -17,3 +17,8 @@ markup.htmlの子項目と対応するdata-panel-valueのパネルを変更し�
 
 ## 操作・配慮
 矢印キー、Home/End、クリック、キーボードフォーカス。選択は色だけでなく、面・線・点でも伝えます。reduced-motionで移動アニメーションを停止します。取り外し時はdestroy()でイベント/ResizeObserver/保留RAFを解除。常時描画ループやCanvasは不要です。
+
+
+## TRANSFORM edition
+結晶のファセットが切り替え方向へ回り、分光する面を作る。
+公開APIは維持しています。演出は値の変更を妨げず、停止後はJavaScriptの描画を止めます。必要な共有ファイルも同じ配布物に含まれます。

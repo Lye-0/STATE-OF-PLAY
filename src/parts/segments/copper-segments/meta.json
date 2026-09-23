@@ -3,14 +3,14 @@
   "name": "Copper Selector",
   "category": "segments",
   "order": 217,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "温かい、切り替え。",
-  "description": "銅の磨き面と刻印。設定にも素材の存在感を。",
+  "description": "幅を変えながら滑る銅の面と、移動方向に走る細い反射。",
   "material": "BRASS / THREE WAY",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / COPPER",
   "accent": "233,176,127",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / native radios",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "CopperSegments",
   "tags": [
     "Copper Selector",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

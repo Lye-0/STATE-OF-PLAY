@@ -3,14 +3,14 @@
   "name": "Copper Tabs",
   "category": "tabs",
   "order": 192,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "選択にも、温度を。",
-  "description": "削り出しの銅の指標が、沈んだレールの上を移動する。",
+  "description": "押し込まれた銅のキーが滑り、二枚の薄板がひらく。",
   "material": "COPPER / MACHINED",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / COPPER",
   "accent": "233,176,127",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / ARIA tabs",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "CopperTabs",
   "tags": [
     "Copper Tabs",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

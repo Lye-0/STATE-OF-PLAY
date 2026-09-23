@@ -3,14 +3,14 @@
   "name": "Observatory Window",
   "category": "popups",
   "order": 258,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "深い夜の、観測窓。",
-  "description": "軌道と静かな数値で描く、天体観測のパネル。",
+  "description": "回転する開口が広がり、観測窓の内部が現れる。",
   "material": "ORBITAL / OBSERVATORY",
-  "motion": "REVEAL / RETURN",
+  "motion": "TRANSFORM / IRIS",
   "accent": "199,223,173",
   "designType": "A",
-  "runtime": "Native dialog + CSS / event-driven lifecycle",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "ObservatoryWindow",
   "tags": [
     "Observatory Window",
@@ -20,7 +20,10 @@
     "ダイアログ",
     "確認",
     "開閉",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

@@ -3,14 +3,14 @@
   "name": "Atelier Palette",
   "category": "popups",
   "order": 268,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "色を、選ぶ時間。",
-  "description": "絵の具見本のような色面と、実際に選べるパレット。",
+  "description": "重なった紙面がわずかに扇状へひらき、内容の面を支える。",
   "material": "PIGMENT / SELECTION",
-  "motion": "REVEAL / RETURN",
+  "motion": "TRANSFORM / ATELIER",
   "accent": "152,107,81",
   "designType": "A",
-  "runtime": "Native dialog + CSS / event-driven lifecycle",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "AtelierPalette",
   "tags": [
     "Atelier Palette",
@@ -20,7 +20,10 @@
     "ダイアログ",
     "確認",
     "開閉",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

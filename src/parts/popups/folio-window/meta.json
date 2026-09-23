@@ -3,14 +3,14 @@
   "name": "Folio Window",
   "category": "popups",
   "order": 259,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "ページを、めくる。",
-  "description": "紙の余白と活版のような文字組みのポップアップ。",
+  "description": "本の表紙のように面がひらき、重なった紙が見える。",
   "material": "PAPER / EDITORIAL",
-  "motion": "REVEAL / RETURN",
+  "motion": "TRANSFORM / FOLIO",
   "accent": "88,97,70",
   "designType": "A",
-  "runtime": "Native dialog + CSS / event-driven lifecycle",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "FolioWindow",
   "tags": [
     "Folio Window",
@@ -20,7 +20,10 @@
     "ダイアログ",
     "確認",
     "開閉",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

@@ -3,14 +3,14 @@
   "name": "Botanical Note",
   "category": "popups",
   "order": 269,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "ひらめきの、芽。",
-  "description": "植物の輪郭と、入力できる短いノート。",
+  "description": "薄い葉のような紙の層が左右へほどける。",
   "material": "BOTANICAL / NOTE",
-  "motion": "REVEAL / RETURN",
+  "motion": "TRANSFORM / BOTANICAL",
   "accent": "211,221,166",
   "designType": "A",
-  "runtime": "Native dialog + CSS / event-driven lifecycle",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "BotanicalNote",
   "tags": [
     "Botanical Note",
@@ -20,7 +20,10 @@
     "ダイアログ",
     "確認",
     "開閉",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

@@ -3,14 +3,14 @@
   "name": "Velvet Tabs",
   "category": "tabs",
   "order": 197,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "余韻で、切り替える。",
-  "description": "深い紫の布と、柔らかく沈む選択面。",
+  "description": "布の選択面が沈み、重なったひだが本文の両側へ退く。",
   "material": "VELVET / COUTURE",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / CURTAIN",
   "accent": "220,176,201",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / ARIA tabs",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "VelvetTabs",
   "tags": [
     "Velvet Tabs",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

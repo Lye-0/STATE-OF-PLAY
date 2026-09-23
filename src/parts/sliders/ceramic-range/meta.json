@@ -3,14 +3,14 @@
   "name": "Ceramic Range",
   "category": "sliders",
   "order": 291,
-  "version": "4.1.0",
+  "version": "4.6.0",
   "tagline": "ぬくもりのある、精度。",
-  "description": "立体つまみ、実際の値に追従するレール、独立した計器の文字組み。つまみの中心と塗りの始終位置を揃えています。",
+  "description": "磁器の同心線がつまみの移動に反応する。",
   "material": "GLAZE · 11",
-  "motion": "GLIDE",
+  "motion": "TRANSFORM / CERAMIC",
   "accent": "72,108,101",
   "designType": "A",
-  "runtime": "Native DOM + CSS",
+  "runtime": "Native state + event-driven presentation / CSS + SVG",
   "componentName": "CeramicRange",
   "tags": [
     "スライダー",
@@ -20,7 +20,10 @@
     "A",
     "Atelier",
     "素材感",
-    "立体造形"
+    "立体造形",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [],
   "props": [

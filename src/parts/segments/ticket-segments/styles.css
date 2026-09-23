@@ -1,5 +1,8 @@
 @import '../../../shared/selection-base.css';
+@import "../../../shared/transit-selection.css";
 /* Ticket Selector: 紙の切り込みとミシン目。小さな旅のセレクター。 */
 .sop-ticket-segments{--choice-base:#e7ddc1;--choice-line:#a79972;--choice-ink:#3b382a;--choice-muted:#726a51;--choice-marker:#344840;--choice-on:#f4edda;--choice-accent:#657952;--choice-radius:3px;}
 .sop-ticket-segments > .sop-choice-list{padding:4px;gap:0;box-shadow:0 3px 0 #9d9071;border-top:3px solid #8e6340}.sop-ticket-segments > .sop-choice-list > .sop-choice-item{border-right:1px dashed #8f866683;border-radius:0;min-height:58px;text-transform:uppercase;font:10px Consolas,monospace}.sop-ticket-segments > .sop-choice-list > .sop-choice-item .sop-choice-index{display:block}.sop-ticket-segments > .sop-choice-list > .sop-choice-item .sop-choice-icon{display:none}.sop-ticket-segments > .sop-choice-list > .sop-choice-marker{border-radius:0;clip-path:polygon(0 0,100% 0,100% 40%,calc(100% - 4px) 50%,100% 60%,100% 100%,0 100%,0 60%,4px 50%,0 40%)}.sop-ticket-segments > .sop-choice-panels > .sop-choice-panel{border:1px dashed #a39670;background:#eee5cd}
 
+
+/* v4.6: runtime mode also styles pre-hydration standalone markup. */

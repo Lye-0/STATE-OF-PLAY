@@ -3,14 +3,14 @@
   "name": "Atlas Tabs",
   "category": "tabs",
   "order": 185,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "地図を、ひらく。",
-  "description": "刻まれた番号と切り欠いた指標。コンテンツを旅する索引。",
+  "description": "紙の索引が持ち上がり、地図の折り目が選択位置からひらく。",
   "material": "EXPEDITION / INDEX",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / MAP",
   "accent": "214,231,182",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / ARIA tabs",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "AtlasTabs",
   "tags": [
     "Atlas Tabs",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

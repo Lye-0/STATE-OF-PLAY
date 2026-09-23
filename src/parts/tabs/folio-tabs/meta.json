@@ -3,14 +3,14 @@
   "name": "Folio Tabs",
   "category": "tabs",
   "order": 188,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "ページの、手触り。",
-  "description": "重なる紙と見出しの綴じ目。本文までつながる紙のタブ。",
+  "description": "選んだインデックスから紙の束がほどけ、ページにつながる。",
   "material": "PAPER / BINDING",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / PAPER",
   "accent": "226,200,155",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / ARIA tabs",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "FolioTabs",
   "tags": [
     "Folio Tabs",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

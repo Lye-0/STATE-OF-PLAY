@@ -3,14 +3,14 @@
   "name": "Signal Tabs",
   "category": "tabs",
   "order": 199,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "信号を、選び取る。",
-  "description": "走査線の上に緑の文字が浮かぶ、静かな端末。",
+  "description": "走るドットの窓と、切り替え時だけ立ち上がる走査面。",
   "material": "PHOSPHOR / TERMINAL",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / SIGNAL",
   "accent": "183,232,173",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / ARIA tabs",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "SignalTabs",
   "tags": [
     "Signal Tabs",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

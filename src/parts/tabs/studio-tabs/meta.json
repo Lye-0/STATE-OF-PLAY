@@ -3,14 +3,14 @@
   "name": "Studio Tabs",
   "category": "tabs",
   "order": 195,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "チャンネルを、ひらく。",
-  "description": "緑のインジケーターと音響機器のキー。物理的な切り替え感。",
+  "description": "選択キーの移動に合わせて金属ルーバーが一度ひらく。",
   "material": "ANALOG / STUDIO",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / SHUTTER",
   "accent": "200,217,172",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / ARIA tabs",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "StudioTabs",
   "tags": [
     "Studio Tabs",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

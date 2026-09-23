@@ -1,5 +1,8 @@
 @import '../../../shared/selection-base.css';
+@import "../../../shared/transit-selection.css";
 /* Copper Selector: 銅の磨き面と刻印。設定にも素材の存在感を。 */
 .sop-copper-segments{--choice-base:#2c201a;--choice-line:#775438;--choice-marker:linear-gradient(175deg,#e9bc8d,#b37a4c 47%,#d49f6d 50%,#af774d);--choice-on:#362719;--choice-accent:#ebb480;--choice-radius:7px;}
 .sop-copper-segments > .sop-choice-list{padding:7px;border:1px solid #98725375;background:repeating-linear-gradient(0deg,#ffffff04 0 1px,transparent 1px 3px),#271e19;box-shadow:inset 0 1px 1px #000,0 5px 0 #100c0a}.sop-copper-segments > .sop-choice-list > .sop-choice-item{min-height:55px;font:11px Consolas,monospace}.sop-copper-segments > .sop-choice-list > .sop-choice-marker{border:1px solid #fad6af85;box-shadow:inset 0 1px 0 #ffe5c46e,0 3px 3px #0008}.sop-copper-segments > .sop-choice-list > .sop-choice-item .sop-choice-index{display:inline-block;font-size:8px}.sop-copper-segments > .sop-choice-panels > .sop-choice-panel{background:repeating-linear-gradient(90deg,#fff3dd03 0 1px,transparent 1px 3px),linear-gradient(130deg,#38271e,#201a16);border-color:#94694770}
 
+
+/* v4.6: runtime mode also styles pre-hydration standalone markup. */

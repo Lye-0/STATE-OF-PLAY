@@ -17,7 +17,7 @@ function splitSelectors(value:string):string[]{let quote='',depth=0,start=0;cons
 test('Atelier redesign covers all 171 new expressive parts except the existing loaders',()=>{
  assert.equal(parts.filter(p=>!p.tags.includes('KINETIC')).length,564);assert.equal(expressive.length,171);assert.equal(variants.length,16);
  assert.equal(new Set(expressive.map(p=>p.category)).size,12);
- for(const p of expressive){assert.equal(p.version,'4.1.0');assert.ok(p.tags.includes('Atelier'));}
+ for(const p of expressive){assert.equal(p.version,p.category==='sliders'?'4.6.0':'4.1.0');assert.ok(p.tags.includes('Atelier'));if(p.category==='sliders')assert.ok(p.tags.includes('TRANSFORM'));}
 });
 test('every redesigned skin includes exactly its matching material and the shared construction stylesheet',()=>{
  for(const p of expressive){const css=read(p.base+'/styles.css');assert.match(css,/@import "\.\.\/\.\.\/\.\.\/shared\/foundation\/atelier\.css";/);assert.ok(css.includes(`/materials/${p.foundation.variant}.css`));

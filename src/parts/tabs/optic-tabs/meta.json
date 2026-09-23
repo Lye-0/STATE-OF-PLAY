@@ -3,14 +3,14 @@
   "name": "Optic Tabs",
   "category": "tabs",
   "order": 198,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "視点が、変わる。",
-  "description": "レンズの縁の反射と、明るいガラスの指標。",
+  "description": "レンズ状の指標が滑り、薄い絞り羽根がひらく。",
   "material": "OPTICAL / LENS",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / IRIS",
   "accent": "168,213,226",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / ARIA tabs",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "OpticTabs",
   "tags": [
     "Optic Tabs",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

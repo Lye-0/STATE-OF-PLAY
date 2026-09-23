@@ -3,14 +3,14 @@
   "name": "Kinetic Tabs",
   "category": "tabs",
   "order": 200,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "カチッと、次へ。",
-  "description": "目盛りの上を跳ねる立体的なキー。わずかな弾みを添える。",
+  "description": "レールの裂け目が選択位置へ走り、二枚の面が左右に分かれる。",
   "material": "RAIL / TACTILE",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / SPLIT",
   "accent": "247,181,132",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / ARIA tabs",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "KineticTabs",
   "tags": [
     "Kinetic Tabs",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

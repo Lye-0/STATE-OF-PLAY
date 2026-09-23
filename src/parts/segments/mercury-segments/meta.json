@@ -3,14 +3,14 @@
   "name": "Mercury Selector",
   "category": "segments",
   "order": 209,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "金属の、選択。",
-  "description": "削り出しの面と溝。選択肢の間を重みのあるキーが滑る。",
+  "description": "鏡面の選択片が移動中に伸び、止まると金属の面に戻る。",
   "material": "ALLOY / SELECTOR",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / MERCURY",
   "accent": "191,198,193",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / native radios",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "MercurySegments",
   "tags": [
     "Mercury Selector",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

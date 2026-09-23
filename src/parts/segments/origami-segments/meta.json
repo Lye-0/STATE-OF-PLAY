@@ -3,14 +3,14 @@
   "name": "Origami Selector",
   "category": "segments",
   "order": 216,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "折り目で、選ぶ。",
-  "description": "折り紙の切り込みと、面で変化する柔らかな陰影。",
+  "description": "薄い折り返しがひらき、次の候補の下に紙が伸びる。",
   "material": "FOLD / SELECT",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / PAPER",
   "accent": "225,168,169",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / native radios",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "OrigamiSegments",
   "tags": [
     "Origami Selector",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

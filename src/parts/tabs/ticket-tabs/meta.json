@@ -3,14 +3,14 @@
   "name": "Ticket Tabs",
   "category": "tabs",
   "order": 196,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "次の、行き先へ。",
-  "description": "切符のミシン目と印字。レトロな乗車票のタブ。",
+  "description": "切符の端が持ち上がり、ミシン目から次の面がひらく。",
   "material": "TRANSIT / TICKET",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / TICKET",
   "accent": "232,211,162",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / ARIA tabs",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "TicketTabs",
   "tags": [
     "Ticket Tabs",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

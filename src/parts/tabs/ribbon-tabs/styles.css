@@ -1,6 +1,9 @@
 @import '../../../shared/selection-base.css';
 @import '../../../shared/selection-content.css';
+@import "../../../shared/transit-selection.css";
 /* Ribbon Tabs: 布の帯のような選択面と、下に伸びた切り込み。 */
 .sop-ribbon-tabs{--choice-base:#221d22;--choice-line:#654452;--choice-marker:#d3a4a4;--choice-on:#39232b;--choice-accent:#e5b4b1;--choice-radius:0px;}
 .sop-ribbon-tabs > .sop-choice-list{overflow:visible;border:0;padding:0;gap:4px;background:transparent}.sop-ribbon-tabs > .sop-choice-list > .sop-choice-item{border:1px solid #724d5b66;border-radius:0;padding-block:17px;min-width:60px;flex-basis:65px}.sop-ribbon-tabs > .sop-choice-list > .sop-choice-item[data-selected=true]{box-shadow:inset 0 -3px 0 #fae1d7}.sop-ribbon-tabs > .sop-choice-list > .sop-choice-marker{clip-path:polygon(0 0,100% 0,100% 100%,50% calc(100% - 7px),0 100%);height:calc(var(--sop-choice-h,0px) + 6px);border-radius:0;background:linear-gradient(90deg,#ae7e86,#e4b9b2 48%,#ba8a93)}.sop-ribbon-tabs > .sop-choice-panels > .sop-choice-panel{border-style:solid;border-width:1px 0;background:linear-gradient(110deg,#422f3922,#211b20)}
 
+
+/* v4.6: runtime mode also styles pre-hydration standalone markup. */

@@ -3,14 +3,14 @@
   "name": "Transit Pass",
   "category": "popups",
   "order": 267,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "次の場所へ。",
-  "description": "出発地と到着地を結ぶ、チケット型のポップアップ。",
+  "description": "中央の折り目から切符が広がり、ミシン目の面をつなぐ。",
   "material": "TRAVEL / BOARDING",
-  "motion": "REVEAL / RETURN",
+  "motion": "TRANSFORM / TICKET",
   "accent": "71,101,74",
   "designType": "A",
-  "runtime": "Native dialog + CSS / event-driven lifecycle",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "TransitPass",
   "tags": [
     "Transit Pass",
@@ -20,7 +20,10 @@
     "ダイアログ",
     "確認",
     "開閉",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

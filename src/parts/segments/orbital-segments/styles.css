@@ -1,5 +1,8 @@
 @import '../../../shared/selection-base.css';
+@import "../../../shared/transit-selection.css";
 /* Orbital Selector: 丸い軌道と小さな光点。選んだ方向が明確に点灯する。 */
 .sop-orbital-segments{--choice-base:#111e2c;--choice-line:#405569;--choice-marker:#24435b;--choice-on:#dbeffa;--choice-accent:#a1c7de;--choice-radius:30px;}
 .sop-orbital-segments > .sop-choice-list{padding:6px;background:radial-gradient(ellipse at 50% 0,#48758d35,transparent),#101e2a;border-color:#7998aa44}.sop-orbital-segments > .sop-choice-list > .sop-choice-item{min-height:53px}.sop-orbital-segments > .sop-choice-list > .sop-choice-marker{border:1px solid #a0cad45c;box-shadow:inset 0 0 14px #98c6ca14,0 0 10px #7598ac18}.sop-orbital-segments > .sop-choice-panels > .sop-choice-panel{border-radius:14px;background:radial-gradient(circle at 85% 20%,#c5e4f72e 0 1px,transparent 2px),radial-gradient(circle at 70% 35%,#c5e4f72e 0 1px,transparent 2px),#111e2c}.sop-orbital-segments > .sop-choice-list > .sop-choice-item .sop-choice-index{display:block}.sop-orbital-segments > .sop-choice-list > .sop-choice-item .sop-choice-icon{display:none}
 
+
+/* v4.6: runtime mode also styles pre-hydration standalone markup. */

@@ -3,14 +3,14 @@
   "name": "Prism Tabs",
   "category": "tabs",
   "order": 190,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "光の面を、選ぶ。",
-  "description": "切り欠いた結晶と偏光。選択が移るたび、光の面が変わる。",
+  "description": "結晶のファセットが切り替え方向へ回り、分光する面を作る。",
   "material": "DICHROIC / FACETS",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / PRISM",
   "accent": "203,188,239",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / ARIA tabs",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "PrismTabs",
   "tags": [
     "Prism Tabs",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

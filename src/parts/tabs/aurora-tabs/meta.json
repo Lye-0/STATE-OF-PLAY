@@ -3,14 +3,14 @@
   "name": "Aurora Tabs",
   "category": "tabs",
   "order": 186,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "光が、道しるべ。",
-  "description": "ガラスの向こうのオーロラが、次の内容へなめらかに滑る。",
+  "description": "選択面を追う透明な層と、本文の背後へ流れる光の幕。",
   "material": "REFRACTION / GLASS",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / FLUID",
   "accent": "154,222,211",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / ARIA tabs",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "AuroraTabs",
   "tags": [
     "Aurora Tabs",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

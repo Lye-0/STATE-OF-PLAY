@@ -3,14 +3,14 @@
   "name": "Ribbon Tabs",
   "category": "tabs",
   "order": 193,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "しおりを、移す。",
-  "description": "布の帯のような選択面と、下に伸びた切り込み。",
+  "description": "選択中の帯が持ち上がり、折り返しと影が次の位置へ渡る。",
   "material": "TEXTILE / BOOKMARK",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / RIBBON",
   "accent": "225,168,169",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / ARIA tabs",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "RibbonTabs",
   "tags": [
     "Ribbon Tabs",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

@@ -3,14 +3,14 @@
   "name": "Ceramic Selector",
   "category": "segments",
   "order": 222,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "磁器のように、なめらか。",
-  "description": "暖かな白とわずかな段差。立体的で優しい選択面。",
+  "description": "釉薬を帯びた選択片が少し傾き、静かに着地する。",
   "material": "PORCELAIN / MOOD",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / CERAMIC",
   "accent": "226,200,155",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / native radios",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "CeramicSegments",
   "tags": [
     "Ceramic Selector",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

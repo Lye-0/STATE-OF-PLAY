@@ -3,14 +3,14 @@
   "name": "Dock Sheet",
   "category": "popups",
   "order": 272,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "下から、そっと。",
-  "description": "下から浮かび上がる、ゆとりのある設定シート。",
+  "description": "下辺に沿う一枚の板が起き上がり、奥行きのあるシートになる。",
   "material": "DOCK / SHEET",
-  "motion": "REVEAL / RETURN",
+  "motion": "TRANSFORM / DOCK",
   "accent": "167,206,223",
   "designType": "A",
-  "runtime": "Native dialog + CSS / event-driven lifecycle",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "DockSheet",
   "tags": [
     "Dock Sheet",
@@ -20,7 +20,10 @@
     "ダイアログ",
     "確認",
     "開閉",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

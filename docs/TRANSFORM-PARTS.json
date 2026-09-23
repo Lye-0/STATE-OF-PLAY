@@ -1,0 +1,514 @@
+[
+  {
+    "id": "atlas-tabs",
+    "category": "tabs",
+    "mode": "map",
+    "description": "紙の索引が持ち上がり、地図の折り目が選択位置からひらく。",
+    "base": "src/parts/tabs/atlas-tabs",
+    "component": "AtlasTabs"
+  },
+  {
+    "id": "aurora-tabs",
+    "category": "tabs",
+    "mode": "fluid",
+    "description": "選択面を追う透明な層と、本文の背後へ流れる光の幕。",
+    "base": "src/parts/tabs/aurora-tabs",
+    "component": "AuroraTabs"
+  },
+  {
+    "id": "blueprint-tabs",
+    "category": "tabs",
+    "mode": "blueprint",
+    "description": "移動する基準線と、選択時だけ開く製図のグリッド。",
+    "base": "src/parts/tabs/blueprint-tabs",
+    "component": "BlueprintTabs"
+  },
+  {
+    "id": "copper-tabs",
+    "category": "tabs",
+    "mode": "copper",
+    "description": "押し込まれた銅のキーが滑り、二枚の薄板がひらく。",
+    "base": "src/parts/tabs/copper-tabs",
+    "component": "CopperTabs"
+  },
+  {
+    "id": "folio-tabs",
+    "category": "tabs",
+    "mode": "paper",
+    "description": "選んだインデックスから紙の束がほどけ、ページにつながる。",
+    "base": "src/parts/tabs/folio-tabs",
+    "component": "FolioTabs"
+  },
+  {
+    "id": "kinetic-tabs",
+    "category": "tabs",
+    "mode": "split",
+    "description": "レールの裂け目が選択位置へ走り、二枚の面が左右に分かれる。",
+    "base": "src/parts/tabs/kinetic-tabs",
+    "component": "KineticTabs"
+  },
+  {
+    "id": "nixie-tabs",
+    "category": "tabs",
+    "mode": "filament",
+    "description": "スモークガラスの奥でフィラメントが切り替わり、暖かい光が走る。",
+    "base": "src/parts/tabs/nixie-tabs",
+    "component": "NixieTabs"
+  },
+  {
+    "id": "observatory-tabs",
+    "category": "tabs",
+    "mode": "orbit",
+    "description": "軌道を持つ選択窓と、回転して開く観測面。",
+    "base": "src/parts/tabs/observatory-tabs",
+    "component": "ObservatoryTabs"
+  },
+  {
+    "id": "obsidian-tabs",
+    "category": "tabs",
+    "mode": "fault",
+    "description": "黒い板が割れ目から滑り、奥の細い光を露出させる。",
+    "base": "src/parts/tabs/obsidian-tabs",
+    "component": "ObsidianTabs"
+  },
+  {
+    "id": "optic-tabs",
+    "category": "tabs",
+    "mode": "iris",
+    "description": "レンズ状の指標が滑り、薄い絞り羽根がひらく。",
+    "base": "src/parts/tabs/optic-tabs",
+    "component": "OpticTabs"
+  },
+  {
+    "id": "prism-tabs",
+    "category": "tabs",
+    "mode": "prism",
+    "description": "結晶のファセットが切り替え方向へ回り、分光する面を作る。",
+    "base": "src/parts/tabs/prism-tabs",
+    "component": "PrismTabs"
+  },
+  {
+    "id": "ribbon-tabs",
+    "category": "tabs",
+    "mode": "ribbon",
+    "description": "選択中の帯が持ち上がり、折り返しと影が次の位置へ渡る。",
+    "base": "src/parts/tabs/ribbon-tabs",
+    "component": "RibbonTabs"
+  },
+  {
+    "id": "signal-tabs",
+    "category": "tabs",
+    "mode": "signal",
+    "description": "走るドットの窓と、切り替え時だけ立ち上がる走査面。",
+    "base": "src/parts/tabs/signal-tabs",
+    "component": "SignalTabs"
+  },
+  {
+    "id": "studio-tabs",
+    "category": "tabs",
+    "mode": "shutter",
+    "description": "選択キーの移動に合わせて金属ルーバーが一度ひらく。",
+    "base": "src/parts/tabs/studio-tabs",
+    "component": "StudioTabs"
+  },
+  {
+    "id": "ticket-tabs",
+    "category": "tabs",
+    "mode": "ticket",
+    "description": "切符の端が持ち上がり、ミシン目から次の面がひらく。",
+    "base": "src/parts/tabs/ticket-tabs",
+    "component": "TicketTabs"
+  },
+  {
+    "id": "velvet-tabs",
+    "category": "tabs",
+    "mode": "curtain",
+    "description": "布の選択面が沈み、重なったひだが本文の両側へ退く。",
+    "base": "src/parts/tabs/velvet-tabs",
+    "component": "VelvetTabs"
+  },
+  {
+    "id": "atlas-segments",
+    "category": "segments",
+    "mode": "map",
+    "description": "精密な折り目のあるキーが、測った位置へ滑り込む。",
+    "base": "src/parts/segments/atlas-segments",
+    "component": "AtlasSegments"
+  },
+  {
+    "id": "blueprint-segments",
+    "category": "segments",
+    "mode": "blueprint",
+    "description": "選択に追従するグリッド窓と伸縮する基準線。",
+    "base": "src/parts/segments/blueprint-segments",
+    "component": "BlueprintSegments"
+  },
+  {
+    "id": "capillary-segments",
+    "category": "segments",
+    "mode": "fluid",
+    "description": "液体レンズが伸び、次の候補で丸みを取り戻す。",
+    "base": "src/parts/segments/capillary-segments",
+    "component": "CapillarySegments"
+  },
+  {
+    "id": "ceramic-segments",
+    "category": "segments",
+    "mode": "ceramic",
+    "description": "釉薬を帯びた選択片が少し傾き、静かに着地する。",
+    "base": "src/parts/segments/ceramic-segments",
+    "component": "CeramicSegments"
+  },
+  {
+    "id": "copper-segments",
+    "category": "segments",
+    "mode": "copper",
+    "description": "幅を変えながら滑る銅の面と、移動方向に走る細い反射。",
+    "base": "src/parts/segments/copper-segments",
+    "component": "CopperSegments"
+  },
+  {
+    "id": "detent-segments",
+    "category": "segments",
+    "mode": "detent",
+    "description": "ばねの溝がキーの前後で開き、定位置へ吸い付く。",
+    "base": "src/parts/segments/detent-segments",
+    "component": "DetentSegments"
+  },
+  {
+    "id": "lens-segments",
+    "category": "segments",
+    "mode": "lens",
+    "description": "厚い縁のレンズが候補を包み、周囲の反射が曲がる。",
+    "base": "src/parts/segments/lens-segments",
+    "component": "LensSegments"
+  },
+  {
+    "id": "mercury-segments",
+    "category": "segments",
+    "mode": "mercury",
+    "description": "鏡面の選択片が移動中に伸び、止まると金属の面に戻る。",
+    "base": "src/parts/segments/mercury-segments",
+    "component": "MercurySegments"
+  },
+  {
+    "id": "nixie-segments",
+    "category": "segments",
+    "mode": "filament",
+    "description": "真空管の選択窓が移動し、電極が短く点灯する。",
+    "base": "src/parts/segments/nixie-segments",
+    "component": "NixieSegments"
+  },
+  {
+    "id": "orbital-segments",
+    "category": "segments",
+    "mode": "orbit",
+    "description": "選択窓の二つの軌道が回転しながら次の候補へ移る。",
+    "base": "src/parts/segments/orbital-segments",
+    "component": "OrbitalSegments"
+  },
+  {
+    "id": "origami-segments",
+    "category": "segments",
+    "mode": "paper",
+    "description": "薄い折り返しがひらき、次の候補の下に紙が伸びる。",
+    "base": "src/parts/segments/origami-segments",
+    "component": "OrigamiSegments"
+  },
+  {
+    "id": "prism-segments",
+    "category": "segments",
+    "mode": "prism",
+    "description": "六つの結晶面が移動中に展開し、次の選択面を結ぶ。",
+    "base": "src/parts/segments/prism-segments",
+    "component": "PrismSegments"
+  },
+  {
+    "id": "signal-segments",
+    "category": "segments",
+    "mode": "signal",
+    "description": "配列した光点が移動方向へ短く伝わる選択キー。",
+    "base": "src/parts/segments/signal-segments",
+    "component": "SignalSegments"
+  },
+  {
+    "id": "studio-segments",
+    "category": "segments",
+    "mode": "shutter",
+    "description": "小さなルーバーが回り、選んだモードへキーが収まる。",
+    "base": "src/parts/segments/studio-segments",
+    "component": "StudioSegments"
+  },
+  {
+    "id": "ticket-segments",
+    "category": "segments",
+    "mode": "ticket",
+    "description": "紙のキーの端が一度折れ、切り離さずに位置を変える。",
+    "base": "src/parts/segments/ticket-segments",
+    "component": "TicketSegments"
+  },
+  {
+    "id": "velvet-segments",
+    "category": "segments",
+    "mode": "curtain",
+    "description": "布のひだがキーの移動で開き、停止すると柔らかな面に整う。",
+    "base": "src/parts/segments/velvet-segments",
+    "component": "VelvetSegments"
+  },
+  {
+    "id": "archive-drawer",
+    "category": "popups",
+    "mode": "drawer",
+    "description": "薄い資料の層が横にほどけ、その奥から引き出しがひらく。",
+    "base": "src/parts/popups/archive-drawer",
+    "component": "ArchiveDrawer"
+  },
+  {
+    "id": "atelier-palette",
+    "category": "popups",
+    "mode": "atelier",
+    "description": "重なった紙面がわずかに扇状へひらき、内容の面を支える。",
+    "base": "src/parts/popups/atelier-palette",
+    "component": "AtelierPalette"
+  },
+  {
+    "id": "aurora-window",
+    "category": "popups",
+    "mode": "fluid",
+    "description": "液体の膜が押し広がり、反射する縁を持つ窓になる。",
+    "base": "src/parts/popups/aurora-window",
+    "component": "AuroraWindow"
+  },
+  {
+    "id": "blueprint-sheet",
+    "category": "popups",
+    "mode": "blueprint",
+    "description": "中央の交点から四方向へ設計面が展開する。",
+    "base": "src/parts/popups/blueprint-sheet",
+    "component": "BlueprintSheet"
+  },
+  {
+    "id": "botanical-note",
+    "category": "popups",
+    "mode": "botanical",
+    "description": "薄い葉のような紙の層が左右へほどける。",
+    "base": "src/parts/popups/botanical-note",
+    "component": "BotanicalNote"
+  },
+  {
+    "id": "copper-receipt",
+    "category": "popups",
+    "mode": "receipt",
+    "description": "巻かれた薄い銅の面が伸び、平らな受け取り面になる。",
+    "base": "src/parts/popups/copper-receipt",
+    "component": "CopperReceipt"
+  },
+  {
+    "id": "dock-sheet",
+    "category": "popups",
+    "mode": "dock",
+    "description": "下辺に沿う一枚の板が起き上がり、奥行きのあるシートになる。",
+    "base": "src/parts/popups/dock-sheet",
+    "component": "DockSheet"
+  },
+  {
+    "id": "folio-window",
+    "category": "popups",
+    "mode": "folio",
+    "description": "本の表紙のように面がひらき、重なった紙が見える。",
+    "base": "src/parts/popups/folio-window",
+    "component": "FolioWindow"
+  },
+  {
+    "id": "gallery-window",
+    "category": "popups",
+    "mode": "gallery",
+    "description": "額のシャッターが四辺へ退き、中央の内容が現れる。",
+    "base": "src/parts/popups/gallery-window",
+    "component": "GalleryWindow"
+  },
+  {
+    "id": "nixie-console",
+    "category": "popups",
+    "mode": "filament",
+    "description": "縦に走るフィラメントが開口をつくり、琥珀色の窓を点灯する。",
+    "base": "src/parts/popups/nixie-console",
+    "component": "NixieConsole"
+  },
+  {
+    "id": "observatory-window",
+    "category": "popups",
+    "mode": "iris",
+    "description": "回転する開口が広がり、観測窓の内部が現れる。",
+    "base": "src/parts/popups/observatory-window",
+    "component": "ObservatoryWindow"
+  },
+  {
+    "id": "opal-window",
+    "category": "popups",
+    "mode": "opal",
+    "description": "白い膜が膨らんでほどけ、光を含む磁器ガラスになる。",
+    "base": "src/parts/popups/opal-window",
+    "component": "OpalWindow"
+  },
+  {
+    "id": "prism-window",
+    "category": "popups",
+    "mode": "prism",
+    "description": "斜めの結晶板が重なりから分離し、窓の輪郭に収まる。",
+    "base": "src/parts/popups/prism-window",
+    "component": "PrismWindow"
+  },
+  {
+    "id": "titanium-dialog",
+    "category": "popups",
+    "mode": "split",
+    "description": "二枚の金属シェルが逆方向へひらき、内側の操作面を見せる。",
+    "base": "src/parts/popups/titanium-dialog",
+    "component": "TitaniumDialog"
+  },
+  {
+    "id": "transit-pass",
+    "category": "popups",
+    "mode": "ticket",
+    "description": "中央の折り目から切符が広がり、ミシン目の面をつなぐ。",
+    "base": "src/parts/popups/transit-pass",
+    "component": "TransitPass"
+  },
+  {
+    "id": "velvet-invitation",
+    "category": "popups",
+    "mode": "curtain",
+    "description": "ベルベットのひだが左右へ流れ、内容の舞台をひらく。",
+    "base": "src/parts/popups/velvet-invitation",
+    "component": "VelvetInvitation"
+  },
+  {
+    "id": "aurora-range",
+    "category": "sliders",
+    "mode": "aurora",
+    "description": "引いた量に合わせて光の層が波打ち、指を離すと落ち着く。",
+    "base": "src/parts/sliders/aurora-range",
+    "component": "AuroraRange"
+  },
+  {
+    "id": "mercury-range",
+    "category": "sliders",
+    "mode": "mercury",
+    "description": "鏡面のレールがつまみの周囲で膨らみ、金属の液面をつくる。",
+    "base": "src/parts/sliders/mercury-range",
+    "component": "MercuryRange"
+  },
+  {
+    "id": "nixie-range",
+    "category": "sliders",
+    "mode": "nixie",
+    "description": "値に応じて電極が点灯し、操作中だけ熱が走る。",
+    "base": "src/parts/sliders/nixie-range",
+    "component": "NixieRange"
+  },
+  {
+    "id": "folio-range",
+    "category": "sliders",
+    "mode": "folio",
+    "description": "つまみの前後で紙のひだが折り畳まれ、広げた範囲を示す。",
+    "base": "src/parts/sliders/folio-range",
+    "component": "FolioRange"
+  },
+  {
+    "id": "blueprint-range",
+    "category": "sliders",
+    "mode": "blueprint",
+    "description": "基準線がつまみ付近で分かれ、移動先へ製図の線が集まる。",
+    "base": "src/parts/sliders/blueprint-range",
+    "component": "BlueprintRange"
+  },
+  {
+    "id": "prism-range",
+    "category": "sliders",
+    "mode": "prism",
+    "description": "進めた部分でファセットが向きを変え、分光面がひらく。",
+    "base": "src/parts/sliders/prism-range",
+    "component": "PrismRange"
+  },
+  {
+    "id": "copper-range",
+    "category": "sliders",
+    "mode": "copper",
+    "description": "コイルの間隔と反射が値に応じて変化する銅のレール。",
+    "base": "src/parts/sliders/copper-range",
+    "component": "CopperRange"
+  },
+  {
+    "id": "botanical-range",
+    "category": "sliders",
+    "mode": "botanical",
+    "description": "細い葉脈がつまみの周りでひらき、元の形へ戻る。",
+    "base": "src/parts/sliders/botanical-range",
+    "component": "BotanicalRange"
+  },
+  {
+    "id": "velvet-range",
+    "category": "sliders",
+    "mode": "velvet",
+    "description": "柔らかなひだがつまみに押され、布の張りが変わる。",
+    "base": "src/parts/sliders/velvet-range",
+    "component": "VelvetRange"
+  },
+  {
+    "id": "obsidian-range",
+    "category": "sliders",
+    "mode": "obsidian",
+    "description": "黒い板の割れ目がつまみの周囲で開き、奥の光をのぞかせる。",
+    "base": "src/parts/sliders/obsidian-range",
+    "component": "ObsidianRange"
+  },
+  {
+    "id": "ceramic-range",
+    "category": "sliders",
+    "mode": "ceramic",
+    "description": "磁器の同心線がつまみの移動に反応する。",
+    "base": "src/parts/sliders/ceramic-range",
+    "component": "CeramicRange"
+  },
+  {
+    "id": "tide-range",
+    "category": "sliders",
+    "mode": "tide",
+    "description": "透明な水路の波が値と速度に連動して広がり、停止すると静まる。",
+    "base": "src/parts/sliders/tide-range",
+    "component": "TideRange"
+  },
+  {
+    "id": "aperture-range",
+    "category": "sliders",
+    "mode": "aperture",
+    "description": "つまみを囲む絞り羽根が量と操作に合わせて角度を変える。",
+    "base": "src/parts/sliders/aperture-range",
+    "component": "ApertureRange"
+  },
+  {
+    "id": "transit-range",
+    "category": "sliders",
+    "mode": "transit",
+    "description": "進んだ範囲へ送り目が現れ、紙の軌道が切り替わる。",
+    "base": "src/parts/sliders/transit-range",
+    "component": "TransitRange"
+  },
+  {
+    "id": "relay-range",
+    "category": "sliders",
+    "mode": "relay",
+    "description": "レールの金属セグメントがつまみの通過順に反転する。",
+    "base": "src/parts/sliders/relay-range",
+    "component": "RelayRange"
+  },
+  {
+    "id": "contour-range",
+    "category": "sliders",
+    "mode": "contour",
+    "description": "いくつもの等高線がつまみを中心に持ち上がり、地形を作る。",
+    "base": "src/parts/sliders/contour-range",
+    "component": "ContourRange"
+  }
+]

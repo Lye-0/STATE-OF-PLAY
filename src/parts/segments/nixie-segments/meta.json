@@ -3,14 +3,14 @@
   "name": "Nixie Selector",
   "category": "segments",
   "order": 211,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "ひとつだけ、点灯。",
-  "description": "番号が浮かび上がる三連の真空管。項目数は自在に。",
+  "description": "真空管の選択窓が移動し、電極が短く点灯する。",
   "material": "VACUUM / SELECTOR",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / FILAMENT",
   "accent": "248,183,96",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / native radios",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "NixieSegments",
   "tags": [
     "Nixie Selector",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

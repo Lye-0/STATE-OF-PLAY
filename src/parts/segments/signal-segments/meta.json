@@ -3,14 +3,14 @@
   "name": "Signal Selector",
   "category": "segments",
   "order": 221,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "選択中の、信号。",
-  "description": "線と文字の発光で、現在のモードをはっきり示す。",
+  "description": "配列した光点が移動方向へ短く伝わる選択キー。",
   "material": "SIGNAL / MODE",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / SIGNAL",
   "accent": "183,232,173",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / native radios",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "SignalSegments",
   "tags": [
     "Signal Selector",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

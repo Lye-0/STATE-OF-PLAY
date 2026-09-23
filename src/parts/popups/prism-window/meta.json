@@ -3,14 +3,14 @@
   "name": "Prism Window",
   "category": "popups",
   "order": 261,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "色の、入口。",
-  "description": "結晶の面と光の線が重なる、スペクトルの窓。",
+  "description": "斜めの結晶板が重なりから分離し、窓の輪郭に収まる。",
   "material": "SPECTRAL / PORTAL",
-  "motion": "REVEAL / RETURN",
+  "motion": "TRANSFORM / PRISM",
   "accent": "209,192,240",
   "designType": "A",
-  "runtime": "Native dialog + CSS / event-driven lifecycle",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "PrismWindow",
   "tags": [
     "Prism Window",
@@ -20,7 +20,10 @@
     "ダイアログ",
     "確認",
     "開閉",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

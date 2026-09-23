@@ -1,6 +1,9 @@
 @import '../../../shared/selection-base.css';
 @import '../../../shared/selection-content.css';
+@import "../../../shared/transit-selection.css";
 /* Atlas Tabs: 刻まれた番号と切り欠いた指標。コンテンツを旅する索引。 */
 .sop-atlas-tabs{--choice-base:#1d231d;--choice-line:#515b43;--choice-marker:#cddbb4;--choice-on:#20291e;--choice-radius:4px;}
 .sop-atlas-tabs > .sop-choice-list{padding:0;gap:0;border-width:0 0 1px;background:transparent}.sop-atlas-tabs > .sop-choice-list > .sop-choice-item{font-family:Georgia,serif;font-size:15px;padding:18px 10px;justify-content:flex-start;border-radius:0}.sop-atlas-tabs > .sop-choice-list > .sop-choice-item .sop-choice-index{display:inline;font-family:Consolas,monospace}.sop-atlas-tabs > .sop-choice-list > .sop-choice-marker{clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,0 100%);border-radius:0}.sop-atlas-tabs > .sop-choice-panels > .sop-choice-panel{border-width:0 0 1px;background:linear-gradient(90deg,#27301f66,transparent);border-radius:0}.sop-atlas-tabs > .sop-choice-list > .sop-choice-item .sop-choice-dot{display:none}
 
+
+/* v4.6: runtime mode also styles pre-hydration standalone markup. */

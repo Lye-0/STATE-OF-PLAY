@@ -1,5 +1,8 @@
 @import '../../../shared/selection-base.css';
+@import "../../../shared/transit-selection.css";
 /* Detent Selector: 物理的なクリックストップを思わせる立体レール。 */
 .sop-detent-segments{--choice-base:#241e1a;--choice-line:#63503f;--choice-marker:linear-gradient(175deg,#ffd1a0,#c08658);--choice-on:#382416;--choice-accent:#fac594;--choice-radius:8px;}
 .sop-detent-segments > .sop-choice-list{border:0;border-bottom:3px solid #655749;padding:0 0 8px;background:repeating-linear-gradient(90deg,#a5906b55 0 1px,transparent 1px 12px) bottom/100% 5px no-repeat;gap:10px}.sop-detent-segments > .sop-choice-list > .sop-choice-item{min-height:58px;border:1px solid #ac895546;border-radius:5px;font-size:11px}.sop-detent-segments > .sop-choice-list > .sop-choice-marker{border-radius:5px;box-shadow:0 4px 0 #845d3d,0 10px 14px #0008;transition-timing-function:cubic-bezier(.16,1.25,.4,1)}.sop-detent-segments > .sop-choice-panels > .sop-choice-panel{border-color:#5b5140;background:linear-gradient(125deg,#32281d,#211e19)}
 
+
+/* v4.6: runtime mode also styles pre-hydration standalone markup. */

@@ -3,14 +3,14 @@
   "name": "Nixie Tabs",
   "category": "tabs",
   "order": 187,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "番号に、灯が入る。",
-  "description": "琥珀色の管と発光数字。選んだチャンネルが目覚める。",
+  "description": "スモークガラスの奥でフィラメントが切り替わり、暖かい光が走る。",
   "material": "VACUUM / CHANNEL",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / FILAMENT",
   "accent": "248,183,96",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / ARIA tabs",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "NixieTabs",
   "tags": [
     "Nixie Tabs",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

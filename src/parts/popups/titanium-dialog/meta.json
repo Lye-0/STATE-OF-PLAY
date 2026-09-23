@@ -3,14 +3,14 @@
   "name": "Titanium Dialog",
   "category": "popups",
   "order": 260,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "精密な、確認。",
-  "description": "金属プレートと円盤の構造を持つコントロール。",
+  "description": "二枚の金属シェルが逆方向へひらき、内側の操作面を見せる。",
   "material": "MACHINED / CONTROL",
-  "motion": "REVEAL / RETURN",
+  "motion": "TRANSFORM / SPLIT",
   "accent": "208,223,180",
   "designType": "A",
-  "runtime": "Native dialog + CSS / event-driven lifecycle",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "TitaniumDialog",
   "tags": [
     "Titanium Dialog",
@@ -20,7 +20,10 @@
     "ダイアログ",
     "確認",
     "開閉",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

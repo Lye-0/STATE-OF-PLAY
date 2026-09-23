@@ -3,14 +3,14 @@
   "name": "Blueprint Tabs",
   "category": "tabs",
   "order": 189,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "構想を、切り替える。",
-  "description": "製図の方眼と精密な輪郭。図面をめくる感覚のインターフェース。",
+  "description": "移動する基準線と、選択時だけ開く製図のグリッド。",
   "material": "ENGINEERING / GRID",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / BLUEPRINT",
   "accent": "146,192,235",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / ARIA tabs",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "BlueprintTabs",
   "tags": [
     "Blueprint Tabs",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

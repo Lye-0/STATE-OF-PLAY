@@ -3,14 +3,14 @@
   "name": "Ticket Selector",
   "category": "segments",
   "order": 223,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "目的地を、選ぶ。",
-  "description": "紙の切り込みとミシン目。小さな旅のセレクター。",
+  "description": "紙のキーの端が一度折れ、切り離さずに位置を変える。",
   "material": "TICKET / ROUTE",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / TICKET",
   "accent": "232,211,162",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / native radios",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "TicketSegments",
   "tags": [
     "Ticket Selector",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

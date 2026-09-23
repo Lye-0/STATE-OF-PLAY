@@ -3,14 +3,14 @@
   "name": "Orbital Selector",
   "category": "segments",
   "order": 219,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "軌道を、切り替える。",
-  "description": "丸い軌道と小さな光点。選んだ方向が明確に点灯する。",
+  "description": "選択窓の二つの軌道が回転しながら次の候補へ移る。",
   "material": "ORBIT / RANGE",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / ORBIT",
   "accent": "154,191,220",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / native radios",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "OrbitalSegments",
   "tags": [
     "Orbital Selector",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

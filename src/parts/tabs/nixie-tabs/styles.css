@@ -1,6 +1,9 @@
 @import '../../../shared/selection-base.css';
 @import '../../../shared/selection-content.css';
+@import "../../../shared/transit-selection.css";
 /* Nixie Tabs: 琥珀色の管と発光数字。選んだチャンネルが目覚める。 */
 .sop-nixie-tabs{--choice-base:#211b16;--choice-line:#655140;--choice-marker:linear-gradient(#51341b,#302013);--choice-on:#ffcb83;--choice-accent:#ffbf78;--choice-radius:11px;}
 .sop-nixie-tabs > .sop-choice-list{padding:7px;background:repeating-linear-gradient(90deg,#30251b 0 1px,#211b16 1px 4px);gap:7px;box-shadow:inset 0 2px 6px #0009,0 8px 12px #0005}.sop-nixie-tabs > .sop-choice-list > .sop-choice-item{flex-direction:column;min-height:78px;border:1px solid #71563f80;border-radius:5px;font:10px Consolas,monospace;letter-spacing:1px}.sop-nixie-tabs > .sop-choice-list > .sop-choice-item .sop-choice-index{display:block;font:26px Consolas,monospace;opacity:.45}.sop-nixie-tabs > .sop-choice-list > .sop-choice-item[data-selected=true] .sop-choice-index{opacity:1;text-shadow:0 0 5px #ffc15f,0 0 18px #fc9412}.sop-nixie-tabs > .sop-choice-list > .sop-choice-item .sop-choice-dot{position:absolute;right:8px;top:8px}.sop-nixie-tabs > .sop-choice-list > .sop-choice-item .sop-choice-icon{display:none}.sop-nixie-tabs > .sop-choice-panels > .sop-choice-panel{background:repeating-linear-gradient(0deg,transparent 0 3px,#a86d2106 3px 4px),#1e1b17}
 
+
+/* v4.6: runtime mode also styles pre-hydration standalone markup. */

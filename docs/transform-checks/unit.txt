@@ -1,0 +1,1026 @@
+
+> state-of-play@4.6.0 test
+> node --experimental-strip-types --test --test-concurrency=1 tests/core.test.ts tests/delivery.test.ts tests/expansion.test.ts tests/scrollbars.test.ts tests/vite-url.test.ts tests/disclosures.test.ts tests/textfields.test.ts tests/actions.test.ts tests/selection.test.ts tests/check-popup.test.ts tests/foundations.test.ts tests/atelier.test.ts tests/sculpture.test.ts tests/refinement.test.ts tests/kinetic.test.ts tests/unfold.test.ts tests/transform.test.ts
+
+TAP version 13
+# (node:3929) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: 24 buttons + 16 navigation links retain the 144 previous parts
+ok 1 - 24 buttons + 16 navigation links retain the 144 previous parts
+  ---
+  duration_ms: 3.291668
+  type: 'test'
+  ...
+# Subtest: different authored skins, with native semantics instead of clickable divs
+ok 2 - different authored skins, with native semantics instead of clickable divs
+  ---
+  duration_ms: 2.083251
+  type: 'test'
+  ...
+# Subtest: four formats and both layouts retain all dependencies, examples and integration rules
+ok 3 - four formats and both layouts retain all dependencies, examples and integration rules
+  ---
+  duration_ms: 60.067764
+  type: 'test'
+  ...
+# Subtest: navigation adapter does not replace native href activation or attach event loops
+ok 4 - navigation adapter does not replace native href activation or attach event loops
+  ---
+  duration_ms: 0.417847
+  type: 'test'
+  ...
+# Subtest: buttons have opt-in busy guards and do not start application work by themselves
+ok 5 - buttons have opt-in busy guards and do not start application work by themselves
+  ---
+  duration_ms: 0.765612
+  type: 'test'
+  ...
+# Subtest: styles have local scope, motion and forced-colour alternatives, and native focus
+ok 6 - styles have local scope, motion and forced-colour alternatives, and native focus
+  ---
+  duration_ms: 1.37172
+  type: 'test'
+  ...
+# Subtest: gallery-only demos are not exported as native component runtime
+ok 7 - gallery-only demos are not exported as native component runtime
+  ---
+  duration_ms: 0.852112
+  type: 'test'
+  ...
+# Subtest: React wrappers preserve refs/native props and leave content to the consumer
+ok 8 - React wrappers preserve refs/native props and leave content to the consumer
+  ---
+  duration_ms: 1.385804
+  type: 'test'
+  ...
+# (node:4057) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Atelier redesign covers all 171 new expressive parts except the existing loaders
+ok 9 - Atelier redesign covers all 171 new expressive parts except the existing loaders
+  ---
+  duration_ms: 1.527777
+  type: 'test'
+  ...
+# Subtest: every redesigned skin includes exactly its matching material and the shared construction stylesheet
+ok 10 - every redesigned skin includes exactly its matching material and the shared construction stylesheet
+  ---
+  duration_ms: 151.288472
+  type: 'test'
+  ...
+# Subtest: B skins and loaders do not depend on the expressive construction or material sheets
+ok 11 - B skins and loaders do not depend on the expressive construction or material sheets
+  ---
+  duration_ms: 18.548214
+  type: 'test'
+  ...
+# Subtest: comma-separated selectors cannot escape their own foundation instance
+ok 12 - comma-separated selectors cannot escape their own foundation instance
+  ---
+  duration_ms: 8.718391
+  type: 'test'
+  ...
+# Subtest: all material families specify shape, light, relief and motion reduction, not only colors
+ok 13 - all material families specify shape, light, relief and motion reduction, not only colors
+  ---
+  duration_ms: 1.680467
+  type: 'test'
+  ...
+# Subtest: artwork is decorative; the native implementations and their type-specific controllers remain the source of behavior
+ok 14 - artwork is decorative; the native implementations and their type-specific controllers remain the source of behavior
+  ---
+  duration_ms: 4.409653
+  type: 'test'
+  ...
+# Subtest: light-theme detached labels have their own material backing
+ok 15 - light-theme detached labels have their own material backing
+  ---
+  duration_ms: 0.538634
+  type: 'test'
+  ...
+# Subtest: updated reproduction specifications explicitly include the new art-direction dependencies
+ok 16 - updated reproduction specifications explicitly include the new art-direction dependencies
+  ---
+  duration_ms: 4.640913
+  type: 'test'
+  ...
+# (node:4068) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Checkboxes and popups each have 24 unique skins, 16 expressive and 8 practical
+ok 17 - Checkboxes and popups each have 24 unique skins, 16 expressive and 8 practical
+  ---
+  duration_ms: 1.126259
+  type: 'test'
+  ...
+# Subtest: checkboxes are native independently selectable inputs with actual labels, not switches
+ok 18 - checkboxes are native independently selectable inputs with actual labels, not switches
+  ---
+  duration_ms: 0.59185
+  type: 'test'
+  ...
+# Subtest: popups carry real dialog content, close affordances, labelled headings and native example controls
+ok 19 - popups carry real dialog content, close affordances, labelled headings and native example controls
+  ---
+  duration_ms: 0.478971
+  type: 'test'
+  ...
+# Subtest: all 4 formats and 2 layouts carry the new runtime closure and standalone examples
+ok 20 - all 4 formats and 2 layouts carry the new runtime closure and standalone examples
+  ---
+  duration_ms: 72.732061
+  type: 'test'
+  ...
+# Subtest: reusable React defaults do not bake in display examples or simulated save requests
+ok 21 - reusable React defaults do not bake in display examples or simulated save requests
+  ---
+  duration_ms: 2.958447
+  type: 'test'
+  ...
+# Subtest: checkbox interaction does not override Space, forms or use a permanent animation loop
+ok 22 - checkbox interaction does not override Space, forms or use a permanent animation loop
+  ---
+  duration_ms: 0.31514
+  type: 'test'
+  ...
+# Subtest: popup lifecycle maintains top layer, nested focus and shared scroll locking
+ok 23 - popup lifecycle maintains top layer, nested focus and shared scroll locking
+  ---
+  duration_ms: 0.477826
+  type: 'test'
+  ...
+# Subtest: styles accommodate reduced motion, forced colours, disabled and mixed states
+ok 24 - styles accommodate reduced motion, forced colours, disabled and mixed states
+  ---
+  duration_ms: 0.411006
+  type: 'test'
+  ...
+# Subtest: gallery-only thumbnails and status messages are not part of exported popup markup
+ok 25 - gallery-only thumbnails and status messages are not part of exported popup markup
+  ---
+  duration_ms: 5.542221
+  type: 'test'
+  ...
+# (node:4079) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: catalog retains all original parts, four formats, and nonempty sources
+ok 26 - catalog retains all original parts, four formats, and nonempty sources
+  ---
+  duration_ms: 3.931457
+  type: 'test'
+  ...
+# Subtest: generation never writes source files, packages, or a registry.generated file
+ok 27 - generation never writes source files, packages, or a registry.generated file
+  ---
+  duration_ms: 76.176393
+  type: 'test'
+  ...
+# Subtest: all authored stylesheet bytes and portable source bytes match their inputs
+ok 28 - all authored stylesheet bytes and portable source bytes match their inputs
+  ---
+  duration_ms: 7.014135
+  type: 'test'
+  ...
+# Subtest: TS/TSX and JS/JSX lists have matching paths and generated variants
+ok 29 - TS/TSX and JS/JSX lists have matching paths and generated variants
+  ---
+  duration_ms: 3979.309853
+  type: 'test'
+  ...
+# Subtest: all generated native JS / HTML relative imports resolve within their package
+ok 30 - all generated native JS / HTML relative imports resolve within their package
+  ---
+  duration_ms: 194.219895
+  type: 'test'
+  ...
+# Subtest: all source / review archives retain bytes, CRC and explicit hierarchy
+ok 31 - all source / review archives retain bytes, CRC and explicit hierarchy
+  ---
+  duration_ms: 83272.41024
+  type: 'test'
+  ...
+# Subtest: archive rejects "../escape"
+ok 32 - archive rejects "../escape"
+  ---
+  duration_ms: 0.540977
+  type: 'test'
+  ...
+# Subtest: archive rejects "/absolute"
+ok 33 - archive rejects "/absolute"
+  ---
+  duration_ms: 0.129547
+  type: 'test'
+  ...
+# Subtest: archive rejects "C:/bad"
+ok 34 - archive rejects "C:/bad"
+  ---
+  duration_ms: 0.266361
+  type: 'test'
+  ...
+# Subtest: archive rejects "folder\\\\bad"
+ok 35 - archive rejects "folder\\\\bad"
+  ---
+  duration_ms: 0.40305
+  type: 'test'
+  ...
+# Subtest: archive rejects "CON"
+ok 36 - archive rejects "CON"
+  ---
+  duration_ms: 0.42574
+  type: 'test'
+  ...
+# Subtest: archive rejects "a/NUL.txt"
+ok 37 - archive rejects "a/NUL.txt"
+  ---
+  duration_ms: 0.06448
+  type: 'test'
+  ...
+# Subtest: archive rejects "a/aux.js"
+ok 38 - archive rejects "a/aux.js"
+  ---
+  duration_ms: 0.040399
+  type: 'test'
+  ...
+# Subtest: archive rejects "a./b"
+ok 39 - archive rejects "a./b"
+  ---
+  duration_ms: 0.034409
+  type: 'test'
+  ...
+# Subtest: archive rejects "a//b"
+ok 40 - archive rejects "a//b"
+  ---
+  duration_ms: 0.036458
+  type: 'test'
+  ...
+# Subtest: archive rejects "a/../b"
+ok 41 - archive rejects "a/../b"
+  ---
+  duration_ms: 0.034833
+  type: 'test'
+  ...
+# Subtest: archive rejects "a\\u0000.txt"
+ok 42 - archive rejects "a\\u0000.txt"
+  ---
+  duration_ms: 0.030623
+  type: 'test'
+  ...
+# Subtest: archive rejects duplicates and file/directory case conflicts
+ok 43 - archive rejects duplicates and file/directory case conflicts
+  ---
+  duration_ms: 0.278199
+  type: 'test'
+  ...
+# Subtest: tree retains same-named leaves under distinct parents
+ok 44 - tree retains same-named leaves under distinct parents
+  ---
+  duration_ms: 8.425428
+  type: 'test'
+  ...
+# Subtest: export fails instead of silently shipping missing dependencies
+ok 45 - export fails instead of silently shipping missing dependencies
+  ---
+  duration_ms: 1.386254
+  type: 'test'
+  ...
+# Subtest: new mount map points only at real component initializers
+ok 46 - new mount map points only at real component initializers
+  ---
+  duration_ms: 5.589991
+  type: 'test'
+  ...
+# Subtest: spring settles at both endpoints without invalid timesteps
+ok 47 - spring settles at both endpoints without invalid timesteps
+  ---
+  duration_ms: 7.929405
+  type: 'test'
+  ...
+# Subtest: gesture thresholds and orbit endpoints remain stable
+ok 48 - gesture thresholds and orbit endpoints remain stable
+  ---
+  duration_ms: 0.210853
+  type: 'test'
+  ...
+# Subtest: duplicate demo frames and export inventories are no longer author files
+ok 49 - duplicate demo frames and export inventories are no longer author files
+  ---
+  duration_ms: 13.961018
+  type: 'test'
+  ...
+# (node:4264) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: portable is default and all deliveries have one valid entry and stylesheet
+ok 50 - portable is default and all deliveries have one valid entry and stylesheet
+  ---
+  duration_ms: 21.861355
+  type: 'test'
+  ...
+# Subtest: every runtime reference resolves inside the movable component, never examples or a gallery file
+ok 51 - every runtime reference resolves inside the movable component, never examples or a gallery file
+  ---
+  duration_ms: 597.798703
+  type: 'test'
+  ...
+# Subtest: portable runtime survives relocation into component, feature and monorepo folders
+ok 52 - portable runtime survives relocation into component, feature and monorepo folders
+  ---
+  duration_ms: 1098.975484
+  type: 'test'
+  ...
+# Subtest: different components keep dedicated internal folders even when helper names coincide
+ok 53 - different components keep dedicated internal folders even when helper names coincide
+  ---
+  duration_ms: 4.061854
+  type: 'test'
+  ...
+# Subtest: both layouts retain CSS/art except intentional local-reference relocation
+ok 54 - both layouts retain CSS/art except intentional local-reference relocation
+  ---
+  duration_ms: 78.687149
+  type: 'test'
+  ...
+# Subtest: all source/review ZIP combinations round-trip with metadata, prompt, dependencies and exact text
+ok 55 - all source/review ZIP combinations round-trip with metadata, prompt, dependencies and exact text
+  ---
+  duration_ms: 224329.293761
+  type: 'test'
+  ...
+# Subtest: UI/CLI share full and spec prompts without stale hierarchy mandates
+ok 56 - UI/CLI share full and spec prompts without stale hierarchy mandates
+  ---
+  duration_ms: 2667.435005
+  type: 'test'
+  ...
+# Subtest: syntax-aware rewriting preserves string examples/comments but rewrites imports, types, export and URLs
+ok 57 - syntax-aware rewriting preserves string examples/comments but rewrites imports, types, export and URLs
+  ---
+  duration_ms: 1.340165
+  type: 'test'
+  ...
+# Subtest: CSS references, comments, data URLs, quoted text, @import and HTML tags stay correct
+ok 58 - CSS references, comments, data URLs, quoted text, @import and HTML tags stay correct
+  ---
+  duration_ms: 1.118938
+  type: 'test'
+  ...
+# Subtest: closure includes example-only imports and cyclic local dependencies exactly once
+ok 59 - closure includes example-only imports and cyclic local dependencies exactly once
+  ---
+  duration_ms: 0.939172
+  type: 'test'
+  ...
+# Subtest: unresolved imports, aliases, computed imports, unsupported binary assets and invalid layout collisions fail closed
+ok 60 - unresolved imports, aliases, computed imports, unsupported binary assets and invalid layout collisions fail closed
+  ---
+  duration_ms: 1.16936
+  type: 'test'
+  ...
+# Subtest: export CLI selects only requested layouts, format, part and review mode
+ok 61 - export CLI selects only requested layouts, format, part and review mode
+  ---
+  duration_ms: 0.4322
+  type: 'test'
+  ...
+# Subtest: example-only dependency trees stay outside the portable runtime folder
+ok 62 - example-only dependency trees stay outside the portable runtime folder
+  ---
+  duration_ms: 0.308499
+  type: 'test'
+  ...
+# Subtest: escaped filenames and SVG references are rewritten without breaking the source syntax
+ok 63 - escaped filenames and SVG references are rewritten without breaking the source syntax
+  ---
+  duration_ms: 0.670198
+  type: 'test'
+  ...
+# (node:4657) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: six collections retain 48 designed disclosures and add text fields
+ok 64 - six collections retain 48 designed disclosures and add text fields
+  ---
+  duration_ms: 2.246037
+  type: 'test'
+  ...
+# Subtest: dropdowns have designed choice interiors and selection semantics, never action-menu semantics
+ok 65 - dropdowns have designed choice interiors and selection semantics, never action-menu semantics
+  ---
+  duration_ms: 0.673284
+  type: 'test'
+  ...
+# Subtest: accordion interiors include designed actual content, and hidden sections are inert
+ok 66 - accordion interiors include designed actual content, and hidden sections are inert
+  ---
+  duration_ms: 0.673727
+  type: 'test'
+  ...
+# Subtest: new exports carry common behavior/styles, example content, portable refs and integration prompts in all formats
+ok 67 - new exports carry common behavior/styles, example content, portable refs and integration prompts in all formats
+  ---
+  duration_ms: 74.082749
+  type: 'test'
+  ...
+# Subtest: dropdown and accordion motion is event-driven and respects reduced motion
+ok 68 - dropdown and accordion motion is event-driven and respects reduced motion
+  ---
+  duration_ms: 0.446285
+  type: 'test'
+  ...
+# Subtest: native JS examples use HTML stylesheets, not bundler-only CSS module imports
+ok 69 - native JS examples use HTML stylesheets, not bundler-only CSS module imports
+  ---
+  duration_ms: 1.386926
+  type: 'test'
+  ...
+# (node:4679) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: each category includes at least 20 distinct parts, both intentions, with A in the majority
+ok 70 - each category includes at least 20 distinct parts, both intentions, with A in the majority
+  ---
+  duration_ms: 1.60186
+  type: 'test'
+  ...
+# Subtest: each part has independent nonidentical CSS and nonempty reproduction and usage guides
+ok 71 - each part has independent nonidentical CSS and nonempty reproduction and usage guides
+  ---
+  duration_ms: 55.144687
+  type: 'test'
+  ...
+# Subtest: new B toggles export only their light event controller, without the animated engine
+ok 72 - new B toggles export only their light event controller, without the animated engine
+  ---
+  duration_ms: 1.686617
+  type: 'test'
+  ...
+# Subtest: new B surfaces are content-agnostic CSS containers and have no React effects
+ok 73 - new B surfaces are content-agnostic CSS containers and have no React effects
+  ---
+  duration_ms: 0.534021
+  type: 'test'
+  ...
+# Subtest: Liquid, Fold and Prism include intrinsic ON/OFF cues in all three authored representations
+ok 74 - Liquid, Fold and Prism include intrinsic ON/OFF cues in all three authored representations
+  ---
+  duration_ms: 0.424422
+  type: 'test'
+  ...
+# Subtest: expanded catalog exports preserve layout mapping, AI integration rules and entry metadata
+ok 75 - expanded catalog exports preserve layout mapping, AI integration rules and entry metadata
+  ---
+  duration_ms: 246.50669
+  type: 'test'
+  ...
+# Subtest: sample contents belong only to the gallery and never enter container source
+ok 76 - sample contents belong only to the gallery and never enter container source
+  ---
+  duration_ms: 0.477338
+  type: 'test'
+  ...
+# Subtest: all new CSS has fully substituted scoped selectors, no unexpanded author template markers
+ok 77 - all new CSS has fully substituted scoped selectors, no unexpanded author template markers
+  ---
+  duration_ms: 18.153049
+  type: 'test'
+  ...
+# (node:4691) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: reconstructed collection: 564 authored parts, 25 categories, 284 additions
+ok 78 - reconstructed collection: 564 authored parts, 25 categories, 284 additions
+  ---
+  duration_ms: 2.12099
+  type: 'test'
+  ...
+# Subtest: every foundation has real markup, implementation, use example and prompt in every format/layout
+ok 79 - every foundation has real markup, implementation, use example and prompt in every format/layout
+  ---
+  duration_ms: 1447.623643
+  type: 'test'
+  ...
+# Subtest: catalogue transport round-trips every field without minifying exported code
+ok 80 - catalogue transport round-trips every field without minifying exported code
+  ---
+  duration_ms: 2427.648612
+  type: 'test'
+  ...
+# Subtest: transport rejects corrupt schema, negative refs and unknown fragment indices
+ok 81 - transport rejects corrupt schema, negative refs and unknown fragment indices
+  ---
+  duration_ms: 5.699946
+  type: 'test'
+  ...
+# Subtest: transport retains newline, CRLF, trailing spaces, empty strings and Unicode
+ok 82 - transport retains newline, CRLF, trailing spaces, empty strings and Unicode
+  ---
+  duration_ms: 14.637216
+  type: 'test'
+  ...
+# Subtest: sliders and numbers clamp to bounds with decimal steps
+ok 83 - sliders and numbers clamp to bounds with decimal steps
+  ---
+  duration_ms: 0.367278
+  type: 'test'
+  ...
+# Subtest: degenerate ranges and bad steps produce finite, ordered values
+ok 84 - degenerate ranges and bad steps produce finite, ordered values
+  ---
+  duration_ms: 0.187734
+  type: 'test'
+  ...
+# Subtest: choice values filter disabled/missing values and deduplicate multiple selection
+ok 85 - choice values filter disabled/missing values and deduplicate multiple selection
+  ---
+  duration_ms: 0.274079
+  type: 'test'
+  ...
+# Subtest: date-only values handle leap years without UTC conversion
+ok 86 - date-only values handle leap years without UTC conversion
+  ---
+  duration_ms: 0.910417
+  type: 'test'
+  ...
+# Subtest: date constraints enforce boundaries and callback exclusions
+ok 87 - date constraints enforce boundaries and callback exclusions
+  ---
+  duration_ms: 0.453938
+  type: 'test'
+  ...
+# Subtest: pagination keeps first/last/current pages ordered across 1–200 pages
+ok 88 - pagination keeps first/last/current pages ordered across 1–200 pages
+  ---
+  duration_ms: 1.395053
+  type: 'test'
+  ...
+# Subtest: file accept validation supports extension, MIME list and wildcards
+ok 89 - file accept validation supports extension, MIME list and wildcards
+  ---
+  duration_ms: 0.207421
+  type: 'test'
+  ...
+# Subtest: strings inserted in HTML cannot become interactive markup
+ok 90 - strings inserted in HTML cannot become interactive markup
+  ---
+  duration_ms: 0.161625
+  type: 'test'
+  ...
+# Subtest: passive visuals use CSS; uploads never contact a server, overlays and object URLs have teardown
+ok 91 - passive visuals use CSS; uploads never contact a server, overlays and object URLs have teardown
+  ---
+  duration_ms: 0.316784
+  type: 'test'
+  ...
+# Subtest: toast demo triggers stay outside reusable runtime markup
+ok 92 - toast demo triggers stay outside reusable runtime markup
+  ---
+  duration_ms: 0.491479
+  type: 'test'
+  ...
+# Subtest: TypeScript deliveries use bundler-friendly imports without requiring allowImportingTsExtensions
+ok 93 - TypeScript deliveries use bundler-friendly imports without requiring allowImportingTsExtensions
+  ---
+  duration_ms: 8.068198
+  type: 'test'
+  ...
+# (node:4704) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: KINETIC adds 12 rails and 12 menus while retaining the 564 baseline IDs
+ok 94 - KINETIC adds 12 rails and 12 menus while retaining the 564 baseline IDs
+  ---
+  duration_ms: 1.987629
+  type: 'test'
+  ...
+# Subtest: each new part has distinct art, a precise prompt, a usage example and a controller
+ok 95 - each new part has distinct art, a precise prompt, a usage example and a controller
+  ---
+  duration_ms: 5.579678
+  type: 'test'
+  ...
+# Subtest: Vanilla and React dependency closures include the actual Kinetic renderer and resolve
+ok 96 - Vanilla and React dependency closures include the actual Kinetic renderer and resolve
+  ---
+  duration_ms: 476.834263
+  type: 'test'
+  ...
+# Subtest: new menus are text-first listboxes with explicit state and no auto-generated initials
+ok 97 - new menus are text-first listboxes with explicit state and no auto-generated initials
+  ---
+  duration_ms: 1.049489
+  type: 'test'
+  ...
+# Subtest: new rails keep native scroll input and use decorative canvases only
+ok 98 - new rails keep native scroll input and use decorative canvases only
+  ---
+  duration_ms: 0.830159
+  type: 'test'
+  ...
+# Subtest: new skins are scoped and do not import old ornate/refined skin styles
+ok 99 - new skins are scoped and do not import old ornate/refined skin styles
+  ---
+  duration_ms: 0.631277
+  type: 'test'
+  ...
+# Subtest: presentation cancellation covers timers, observers and animation resources
+ok 100 - presentation cancellation covers timers, observers and animation resources
+  ---
+  duration_ms: 0.311263
+  type: 'test'
+  ...
+# Subtest: gallery can reveal new additions without losing older entries
+ok 101 - gallery can reveal new additions without losing older entries
+  ---
+  duration_ms: 0.296776
+  type: 'test'
+  ...
+# (node:4715) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: refinement keeps 564 parts; 16 A rails and 16 A selects; stable IDs
+ok 102 - refinement keeps 564 parts; 16 A rails and 16 A selects; stable IDs
+  ---
+  duration_ms: 1.001936
+  type: 'test'
+  ...
+# Subtest: visible A rails remain 9–12px, handles 15–18px; pointer target is separate
+ok 103 - visible A rails remain 9–12px, handles 15–18px; pointer target is separate
+  ---
+  duration_ms: 0.933461
+  type: 'test'
+  ...
+# Subtest: rail progress is a chosen design mechanism, not imposed on all A rails
+ok 104 - rail progress is a chosen design mechanism, not imposed on all A rails
+  ---
+  duration_ms: 0.884876
+  type: 'test'
+  ...
+# Subtest: A dropdown defaults have no icon or generated initials; consumers may still supply icons
+ok 105 - A dropdown defaults have no icon or generated initials; consumers may still supply icons
+  ---
+  duration_ms: 1.073994
+  type: 'test'
+  ...
+# Subtest: each portable behavior closure includes real motion helper, and every React source transpiles
+ok 106 - each portable behavior closure includes real motion helper, and every React source transpiles
+  ---
+  duration_ms: 276.039198
+  type: 'test'
+  ...
+# Subtest: presentation helper preserves React ownership; scroll coordinates and cleanup are explicit
+ok 107 - presentation helper preserves React ownership; scroll coordinates and cleanup are explicit
+  ---
+  duration_ms: 0.409273
+  type: 'test'
+  ...
+# Subtest: per-skin specificity withstands repeated shared imports without altering B styles
+ok 108 - per-skin specificity withstands repeated shared imports without altering B styles
+  ---
+  duration_ms: 0.616433
+  type: 'test'
+  ...
+# Subtest: text-first, paper-reveal and underline motions are different compositions
+ok 109 - text-first, paper-reveal and underline motions are different compositions
+  ---
+  duration_ms: 0.547071
+  type: 'test'
+  ...
+# (node:4726) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: baseline retained: 24 toggles, 24 surfaces, 24 scrollbars, A majority and eight B rails
+ok 110 - baseline retained: 24 toggles, 24 surfaces, 24 scrollbars, A majority and eight B rails
+  ---
+  duration_ms: 1.047054
+  type: 'test'
+  ...
+# Subtest: thumb is proportional, bounded and reaches both endpoints
+ok 111 - thumb is proportional, bounded and reaches both endpoints
+  ---
+  duration_ms: 0.455762
+  type: 'test'
+  ...
+# Subtest: invalid geometry, negative scrolling, tiny containers and no-overflow remain finite
+ok 112 - invalid geometry, negative scrolling, tiny containers and no-overflow remain finite
+  ---
+  duration_ms: 0.150915
+  type: 'test'
+  ...
+# Subtest: all new parts expose real scroll semantics and content slots, not fake range sliders
+ok 113 - all new parts expose real scroll semantics and content slots, not fake range sliders
+  ---
+  duration_ms: 1.340036
+  type: 'test'
+  ...
+# Subtest: both layouts export every CSS/module dependency and an explicit integration manifest
+ok 114 - both layouts export every CSS/module dependency and an explicit integration manifest
+  ---
+  duration_ms: 119.862836
+  type: 'test'
+  ...
+# Subtest: standalone demos include their common CSS inline, without unresolved relative CSS imports
+ok 115 - standalone demos include their common CSS inline, without unresolved relative CSS imports
+  ---
+  duration_ms: 4.814867
+  type: 'test'
+  ...
+# Subtest: runtime never intercepts the wheel or adds a continuous animation loop; contains native fallback
+ok 116 - runtime never intercepts the wheel or adds a continuous animation loop; contains native fallback
+  ---
+  duration_ms: 0.315558
+  type: 'test'
+  ...
+# (node:4799) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: 32 redesigned A skins retain 48 total scroll/select skins and 564 catalogue entries
+ok 117 - 32 redesigned A skins retain 48 total scroll/select skins and 564 catalogue entries
+  ---
+  duration_ms: 1.698034
+  type: 'test'
+  ...
+# Subtest: shared sculpture is explicitly opted into in both Vanilla and React markup
+ok 118 - shared sculpture is explicitly opted into in both Vanilla and React markup
+  ---
+  duration_ms: 2.610474
+  type: 'test'
+  ...
+# Subtest: all export dependency closures include both the sculpted skin and its original behavioral base
+ok 119 - all export dependency closures include both the sculpted skin and its original behavioral base
+  ---
+  duration_ms: 42.021099
+  type: 'test'
+  ...
+# Subtest: reproduction CSS is current, not a conflicting specification appended to the previous skin
+ok 120 - reproduction CSS is current, not a conflicting specification appended to the previous skin
+  ---
+  duration_ms: 7.104516
+  type: 'test'
+  ...
+# Subtest: every selector branch is scoped to its specific skin, including comma-separated selectors
+ok 121 - every selector branch is scoped to its specific skin, including comma-separated selectors
+  ---
+  duration_ms: 7.981996
+  type: 'test'
+  ...
+# Subtest: decorative geometry has motion reduction, forced-color fallbacks, and no external graphics
+ok 122 - decorative geometry has motion reduction, forced-color fallbacks, and no external graphics
+  ---
+  duration_ms: 2.39764
+  type: 'test'
+  ...
+# Subtest: paper/paint/glass families are distinct structures, not a family of color-only overrides
+ok 123 - paper/paint/glass families are distinct structures, not a family of color-only overrides
+  ---
+  duration_ms: 5.913768
+  type: 'test'
+  ...
+# (node:4941) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: 48 new choice components, 24 each, with expressive and essential designs
+ok 124 - 48 new choice components, 24 each, with expressive and essential designs
+  ---
+  duration_ms: 1.030735
+  type: 'test'
+  ...
+# Subtest: all demonstrations have exactly three choices but authored engines have no fixed thirds
+ok 125 - all demonstrations have exactly three choices but authored engines have no fixed thirds
+  ---
+  duration_ms: 0.794768
+  type: 'test'
+  ...
+# Subtest: 2/3/4/7/12 options support identity, order changes and disabled skip
+ok 126 - 2/3/4/7/12 options support identity, order changes and disabled skip
+  ---
+  duration_ms: 0.537736
+  type: 'test'
+  ...
+# Subtest: empty, all-disabled, removed values and Home/End have defined fallbacks
+ok 127 - empty, all-disabled, removed values and Home/End have defined fallbacks
+  ---
+  duration_ms: 0.182177
+  type: 'test'
+  ...
+# Subtest: duplicate or empty values and missing accessible labels are rejected
+ok 128 - duplicate or empty values and missing accessible labels are rejected
+  ---
+  duration_ms: 0.244286
+  type: 'test'
+  ...
+# Subtest: new components expose data-driven React APIs and both integration layouts
+ok 129 - new components expose data-driven React APIs and both integration layouts
+  ---
+  duration_ms: 50.370787
+  type: 'test'
+  ...
+# Subtest: sample content is outside reusable React component defaults
+ok 130 - sample content is outside reusable React component defaults
+  ---
+  duration_ms: 0.990914
+  type: 'test'
+  ...
+# Subtest: selection UI updates only on interaction/layout; no interval/Canvas; supports reduced motion and forced colours
+ok 131 - selection UI updates only on interaction/layout; no interval/Canvas; supports reduced motion and forced colours
+  ---
+  duration_ms: 0.339294
+  type: 'test'
+  ...
+# Subtest: independently exported groups use collision-resistant DOM-safe identities
+ok 132 - independently exported groups use collision-resistant DOM-safe identities
+  ---
+  duration_ms: 8.29767
+  type: 'test'
+  ...
+# (node:4955) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: 24 actual text fields join the five previous collections, with A16 and B8
+ok 133 - 24 actual text fields join the five previous collections, with A16 and B8
+  ---
+  duration_ms: 6.095225
+  type: 'test'
+  ...
+# Subtest: every text field uses a native input/textarea, a label and empty feedback/counter regions
+ok 134 - every text field uses a native input/textarea, a label and empty feedback/counter regions
+  ---
+  duration_ms: 2.507338
+  type: 'test'
+  ...
+# Subtest: text field exports include portable input handling and styles in all 192 layouts/formats
+ok 135 - text field exports include portable input handling and styles in all 192 layouts/formats
+  ---
+  duration_ms: 82.24439
+  type: 'test'
+  ...
+# Subtest: input enhancement does not intercept editing keys, paste, or composition values
+ok 136 - input enhancement does not intercept editing keys, paste, or composition values
+  ---
+  duration_ms: 0.671998
+  type: 'test'
+  ...
+# Subtest: React input API stays content-agnostic and forwards native attributes/change events
+ok 137 - React input API stays content-agnostic and forwards native attributes/change events
+  ---
+  duration_ms: 0.490994
+  type: 'test'
+  ...
+# Subtest: field styles keep legible native sizes, independent action buttons and accessible motion/colour alternatives
+ok 138 - field styles keep legible native sizes, independent action buttons and accessible motion/colour alternatives
+  ---
+  duration_ms: 1.808642
+  type: 'test'
+  ...
+# Subtest: gallery has a dedicated text field category and state/readonly/disabled controls
+ok 139 - gallery has a dedicated text field category and state/readonly/disabled controls
+  ---
+  duration_ms: 0.333207
+  type: 'test'
+  ...
+# (node:4988) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: TRANSFORM revises exactly 16 A designs in each of four categories
+ok 140 - TRANSFORM revises exactly 16 A designs in each of four categories
+  ---
+  duration_ms: 7.304262
+  type: 'test'
+  ...
+# Subtest: spring settles under varied frame rates, does not change native values
+ok 141 - spring settles under varied frame rates, does not change native values
+  ---
+  duration_ms: 3.202066
+  type: 'test'
+  ...
+# Subtest: all 16 rail geometries are bounded, finite and individually distinct
+ok 142 - all 16 rail geometries are bounded, finite and individually distinct
+  ---
+  duration_ms: 44.711154
+  type: 'test'
+  ...
+# Subtest: every React and Vanilla closure includes its actual engine and transpilable source
+ok 143 - every React and Vanilla closure includes its actual engine and transpilable source
+  ---
+  duration_ms: 1743.461293
+  type: 'test'
+  ...
+# Subtest: presentation is event-driven and disposes observers, events and frames
+ok 144 - presentation is event-driven and disposes observers, events and frames
+  ---
+  duration_ms: 0.664188
+  type: 'test'
+  ...
+# Subtest: selection measures actual items instead of assuming one-third widths
+ok 145 - selection measures actual items instead of assuming one-third widths
+  ---
+  duration_ms: 0.951704
+  type: 'test'
+  ...
+# Subtest: base React views keep decorative extension props out of public DOM attributes
+ok 146 - base React views keep decorative extension props out of public DOM attributes
+  ---
+  duration_ms: 2.506765
+  type: 'test'
+  ...
+# Subtest: styles retain static and forced-color versions, no perpetual animations
+ok 147 - styles retain static and forced-color versions, no perpetual animations
+  ---
+  duration_ms: 0.602846
+  type: 'test'
+  ...
+# (node:4999) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: selective revision: sixteen A accordions and six A text fields, no deleted or new IDs
+ok 148 - selective revision: sixteen A accordions and six A text fields, no deleted or new IDs
+  ---
+  duration_ms: 1.186126
+  type: 'test'
+  ...
+# Subtest: all sixteen accordion materials have distinct local shapes and decorative, noninteractive layers
+ok 149 - all sixteen accordion materials have distinct local shapes and decorative, noninteractive layers
+  ---
+  duration_ms: 1.539554
+  type: 'test'
+  ...
+# Subtest: React and Vanilla closures include the same material engine and keep stable core APIs
+ok 150 - React and Vanilla closures include the same material engine and keep stable core APIs
+  ---
+  duration_ms: 792.967503
+  type: 'test'
+  ...
+# Subtest: field effects neither inspect text nor intercept native editing or send content
+ok 151 - field effects neither inspect text nor intercept native editing or send content
+  ---
+  duration_ms: 0.695514
+  type: 'test'
+  ...
+# Subtest: presentation cleanup covers observers, page visibility, preferences and animation frames
+ok 152 - presentation cleanup covers observers, page visibility, preferences and animation frames
+  ---
+  duration_ms: 0.403376
+  type: 'test'
+  ...
+# Subtest: native cores remain semantic, while optional presentation refs/layers never enter input attributes
+ok 153 - native cores remain semantic, while optional presentation refs/layers never enter input attributes
+  ---
+  duration_ms: 0.387102
+  type: 'test'
+  ...
+# Subtest: new styles retain readable, reduced-motion and forced-colors fallbacks
+ok 154 - new styles retain readable, reduced-motion and forced-colors fallbacks
+  ---
+  duration_ms: 0.487358
+  type: 'test'
+  ...
+# Subtest: shared view adapters retain runtime parameters and do not include showcase samples
+ok 155 - shared view adapters retain runtime parameters and do not include showcase samples
+  ---
+  duration_ms: 0.511044
+  type: 'test'
+  ...
+# (node:5010) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Vite URL: a listening server preserves its local URL
+ok 156 - Vite URL: a listening server preserves its local URL
+  ---
+  duration_ms: 0.820627
+  type: 'test'
+  ...
+# Subtest: Vite URL: production base path and URL encoding are preserved
+ok 157 - Vite URL: production base path and URL encoding are preserved
+  ---
+  duration_ms: 0.168754
+  type: 'test'
+  ...
+# Subtest: Vite URL: null fails explicitly instead of bypassing the test
+ok 158 - Vite URL: null fails explicitly instead of bypassing the test
+  ---
+  duration_ms: 0.348045
+  type: 'test'
+  ...
+# Subtest: Vite URL: an empty local array fails even when a network URL exists
+ok 159 - Vite URL: an empty local array fails even when a network URL exists
+  ---
+  duration_ms: 2.976166
+  type: 'test'
+  ...
+# Subtest: Vite URL: empty and whitespace URL values fail explicitly
+ok 160 - Vite URL: empty and whitespace URL values fail explicitly
+  ---
+  duration_ms: 0.185484
+  type: 'test'
+  ...
+# Subtest: Vite URL: the first published local URL is chosen without guessing a port
+ok 161 - Vite URL: the first published local URL is chosen without guessing a port
+  ---
+  duration_ms: 0.151487
+  type: 'test'
+  ...
+# Subtest: Vite URL: browser suites do not dereference nullable URLs or suppress their types
+ok 162 - Vite URL: browser suites do not dereference nullable URLs or suppress their types
+  ---
+  duration_ms: 1.427507
+  type: 'test'
+  ...
+# Subtest: CI runs all verify stages in order and checks types before downloading Chromium
+ok 163 - CI runs all verify stages in order and checks types before downloading Chromium
+  ---
+  duration_ms: 5.030543
+  type: 'test'
+  ...
+1..163
+# tests 163
+# suites 0
+# pass 163
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 495716.914584

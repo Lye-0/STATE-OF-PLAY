@@ -3,14 +3,14 @@
   "name": "Lens Selector",
   "category": "segments",
   "order": 215,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "選ぶと、澄む。",
-  "description": "厚いガラスの縁と反射。レンズの焦点を合わせるように。",
+  "description": "厚い縁のレンズが候補を包み、周囲の反射が曲がる。",
   "material": "OPTICS / FOCUS",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / LENS",
   "accent": "168,213,226",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / native radios",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "LensSegments",
   "tags": [
     "Lens Selector",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

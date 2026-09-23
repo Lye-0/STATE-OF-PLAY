@@ -3,14 +3,14 @@
   "name": "Gallery Window",
   "category": "popups",
   "order": 264,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "余白に、展示する。",
-  "description": "大きな作品面とエディトリアルな文字を持つ窓。",
+  "description": "額のシャッターが四辺へ退き、中央の内容が現れる。",
   "material": "ART / EXHIBITION",
-  "motion": "REVEAL / RETURN",
+  "motion": "TRANSFORM / GALLERY",
   "accent": "73,95,77",
   "designType": "A",
-  "runtime": "Native dialog + CSS / event-driven lifecycle",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "GalleryWindow",
   "tags": [
     "Gallery Window",
@@ -20,7 +20,10 @@
     "ダイアログ",
     "確認",
     "開閉",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

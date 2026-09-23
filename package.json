@@ -1,6 +1,6 @@
 {
   "name": "state-of-play",
-  "version": "4.5.0",
+  "version": "4.6.0",
   "private": true,
   "type": "module",
   "description": "STATE OF PLAY — UI & Motion Library. Vite + TypeScript, portable React/Vanilla components.",
@@ -16,9 +16,9 @@
     "typecheck:react": "tsc -p tsconfig.react.json --noEmit",
     "typecheck:tools": "tsc -p tsconfig.tools.json --noEmit",
     "typecheck": "npm run typecheck:app && npm run typecheck:react && npm run typecheck:tools",
-    "test": "node --experimental-strip-types --test --test-concurrency=1 tests/core.test.ts tests/delivery.test.ts tests/expansion.test.ts tests/scrollbars.test.ts tests/vite-url.test.ts tests/disclosures.test.ts tests/textfields.test.ts tests/actions.test.ts tests/selection.test.ts tests/check-popup.test.ts tests/foundations.test.ts tests/atelier.test.ts tests/sculpture.test.ts tests/refinement.test.ts tests/kinetic.test.ts tests/unfold.test.ts",
+    "test": "node --experimental-strip-types --test --test-concurrency=1 tests/core.test.ts tests/delivery.test.ts tests/expansion.test.ts tests/scrollbars.test.ts tests/vite-url.test.ts tests/disclosures.test.ts tests/textfields.test.ts tests/actions.test.ts tests/selection.test.ts tests/check-popup.test.ts tests/foundations.test.ts tests/atelier.test.ts tests/sculpture.test.ts tests/refinement.test.ts tests/kinetic.test.ts tests/unfold.test.ts tests/transform.test.ts",
     "test:browser": "node --experimental-strip-types tests/browser.ts",
-    "verify": "npm run typecheck && npm test && npm run build && npm run test:browser && npm run test:relocation && npm run test:scrollbars && npm run test:scrollbars:react && npm run test:disclosures && npm run test:textfields && npm run test:actions && npm run test:selection && npm run test:check-popup && npm run test:foundations && npm run test:foundations:react && npm run test:atelier && npm run test:sculpture && npm run test:refinement && npm run test:kinetic && npm run test:unfold",
+    "verify": "npm run typecheck && npm test && npm run build && npm run test:browser && npm run test:relocation && npm run test:scrollbars && npm run test:scrollbars:react && npm run test:disclosures && npm run test:textfields && npm run test:actions && npm run test:selection && npm run test:check-popup && npm run test:foundations && npm run test:foundations:react && npm run test:atelier && npm run test:sculpture && npm run test:refinement && npm run test:kinetic && npm run test:unfold && npm run test:transform && npm run test:transform:gallery",
     "export:parts": "node --experimental-strip-types scripts/export-parts.ts",
     "package": "node --experimental-strip-types scripts/package.ts",
     "test:relocation": "node --experimental-strip-types tests/relocation.ts",
@@ -35,7 +35,9 @@
     "test:sculpture": "node --experimental-strip-types tests/sculpture.browser.ts",
     "test:refinement": "node --experimental-strip-types tests/refinement.browser.ts",
     "test:kinetic": "node --experimental-strip-types tests/kinetic.browser.ts",
-    "test:unfold": "node --experimental-strip-types tests/unfold.browser.ts"
+    "test:unfold": "node --experimental-strip-types tests/unfold.browser.ts",
+    "test:transform": "node --experimental-strip-types tests/transform.browser.ts",
+    "test:transform:gallery": "node --experimental-strip-types tests/transform-gallery.browser.ts"
   },
   "devDependencies": {
     "vite": "8.3.0",

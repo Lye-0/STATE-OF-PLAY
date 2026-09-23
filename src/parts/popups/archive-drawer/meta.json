@@ -3,14 +3,14 @@
   "name": "Archive Drawer",
   "category": "popups",
   "order": 271,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "引き出しを、開く。",
-  "description": "右から現れる、検索欄付きの静かなファイル棚。",
+  "description": "薄い資料の層が横にほどけ、その奥から引き出しがひらく。",
   "material": "ARCHIVE / DRAWER",
-  "motion": "REVEAL / RETURN",
+  "motion": "TRANSFORM / DRAWER",
   "accent": "196,214,165",
   "designType": "A",
-  "runtime": "Native dialog + CSS / event-driven lifecycle",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "ArchiveDrawer",
   "tags": [
     "Archive Drawer",
@@ -20,7 +20,10 @@
     "ダイアログ",
     "確認",
     "開閉",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

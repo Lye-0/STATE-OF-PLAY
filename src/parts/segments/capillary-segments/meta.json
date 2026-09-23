@@ -3,14 +3,14 @@
   "name": "Capillary Selector",
   "category": "segments",
   "order": 210,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "選択が、流れる。",
-  "description": "淡く屈折する液体ガラス。レンズのような光が移動する。",
+  "description": "液体レンズが伸び、次の候補で丸みを取り戻す。",
   "material": "LIQUID / CHOICE",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / FLUID",
   "accent": "154,222,211",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / native radios",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "CapillarySegments",
   "tags": [
     "Capillary Selector",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

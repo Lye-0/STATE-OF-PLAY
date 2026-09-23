@@ -3,14 +3,14 @@
   "name": "Copper Receipt",
   "category": "popups",
   "order": 266,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "整えた、記録。",
-  "description": "銅の光とレシートの細い罫線で、情報を整理。",
+  "description": "巻かれた薄い銅の面が伸び、平らな受け取り面になる。",
   "material": "COPPER / RECORD",
-  "motion": "REVEAL / RETURN",
+  "motion": "TRANSFORM / RECEIPT",
   "accent": "237,195,153",
   "designType": "A",
-  "runtime": "Native dialog + CSS / event-driven lifecycle",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "CopperReceipt",
   "tags": [
     "Copper Receipt",
@@ -20,7 +20,10 @@
     "ダイアログ",
     "確認",
     "開閉",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

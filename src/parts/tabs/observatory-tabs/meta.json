@@ -3,14 +3,14 @@
   "name": "Observatory Tabs",
   "category": "tabs",
   "order": 194,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "観測の、向こう側へ。",
-  "description": "星図の気配と円弧のレール。夜空をたどる切り替え。",
+  "description": "軌道を持つ選択窓と、回転して開く観測面。",
   "material": "CELESTIAL / OBSERVE",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / ORBIT",
   "accent": "154,191,220",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / ARIA tabs",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "ObservatoryTabs",
   "tags": [
     "Observatory Tabs",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

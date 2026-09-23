@@ -3,14 +3,14 @@
   "name": "Atlas Selector",
   "category": "segments",
   "order": 224,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "余白に、選択を。",
-  "description": "タイポグラフィと斜めの切り込み。端正な編集的スイッチ。",
+  "description": "精密な折り目のあるキーが、測った位置へ滑り込む。",
   "material": "EDITORIAL / CHOICE",
-  "motion": "GLIDE / SELECT",
+  "motion": "TRANSFORM / MAP",
   "accent": "214,231,182",
   "designType": "A",
-  "runtime": "CSS + event-driven geometry / native radios",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "AtlasSegments",
   "tags": [
     "Atlas Selector",
@@ -21,7 +21,10 @@
     "2択",
     "4択",
     "選択",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"

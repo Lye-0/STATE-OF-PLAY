@@ -3,14 +3,14 @@
   "name": "Prism Range",
   "category": "sliders",
   "order": 286,
-  "version": "4.1.0",
+  "version": "4.6.0",
   "tagline": "境界に、色が生まれる。",
-  "description": "立体つまみ、実際の値に追従するレール、独立した計器の文字組み。つまみの中心と塗りの始終位置を揃えています。",
+  "description": "進めた部分でファセットが向きを変え、分光面がひらく。",
   "material": "SPECTRUM · 06",
-  "motion": "GLIDE",
+  "motion": "TRANSFORM / PRISM",
   "accent": "209,186,250",
   "designType": "A",
-  "runtime": "Native DOM + CSS",
+  "runtime": "Native state + event-driven presentation / CSS + SVG",
   "componentName": "PrismRange",
   "tags": [
     "スライダー",
@@ -20,7 +20,10 @@
     "A",
     "Atelier",
     "素材感",
-    "立体造形"
+    "立体造形",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [],
   "props": [

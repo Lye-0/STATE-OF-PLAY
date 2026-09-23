@@ -3,14 +3,14 @@
   "name": "Nixie Console",
   "category": "popups",
   "order": 262,
-  "version": "1.0.0",
+  "version": "4.6.0",
   "tagline": "点灯する、通知。",
-  "description": "琥珀色の読み取り表示と、機器の目盛り。",
+  "description": "縦に走るフィラメントが開口をつくり、琥珀色の窓を点灯する。",
   "material": "AMBER / TERMINAL",
-  "motion": "REVEAL / RETURN",
+  "motion": "TRANSFORM / FILAMENT",
   "accent": "239,189,118",
   "designType": "A",
-  "runtime": "Native dialog + CSS / event-driven lifecycle",
+  "runtime": "Native state + event-driven presentation / CSS",
   "componentName": "NixieConsole",
   "tags": [
     "Nixie Console",
@@ -20,7 +20,10 @@
     "ダイアログ",
     "確認",
     "開閉",
-    "A"
+    "A",
+    "TRANSFORM",
+    "切替に反応",
+    "形状変化"
   ],
   "related": [
     "original-surface"
