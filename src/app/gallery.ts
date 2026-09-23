@@ -8,6 +8,8 @@ import type { createDetails } from './details';
 import { createSurfaceController } from '../shared/surface-controller';
 import { index as parts, loadCategory } from '../catalog/browser';
 import { categories } from '../catalog/categories';
+import {createSelectController} from '../shared/select-controller';
+import type {SelectController} from '../shared/select-controller';
 import { escapeHTML, icon, required, toast, wireTabs } from './utils';
 import type { PartPreview, PartSummary, PartController, MountPart } from '../catalog/types';
 window.SOP_CATALOG = parts;
@@ -17,6 +19,7 @@ const progressDemoValues = [0,20,40,60,80,100,80,60,40,20] as const;
 const sound = new TactileAudio();
 const grid = required('#part-grid');
 const search = required<HTMLInputElement>('#search-parts');
+let categorySelector: SelectController | undefined;
 let rendered: {cleanup?:()=>void; part: PartPreview; card: HTMLElement; controller: PartController; surface?: PartController}[] = [];
 let details: ReturnType<typeof createDetails> | undefined;
 let detailModule: Promise<ReturnType<typeof createDetails>> | undefined;
@@ -174,7 +177,8 @@ async function renderGallery(append = false) {
 }
 function setCategory(id: string) {
     activeCategory = id;
-    const jump=document.querySelector<HTMLSelectElement>('#category-jump');if(jump)jump.value=id;
+    categorySelector?.setOpen(false);
+    categorySelector?.setValue(id);
     document.querySelectorAll<HTMLButtonElement>('[data-category]').forEach(b => { const active = b.dataset.category === id; b.setAttribute('aria-selected', String(active)); b.tabIndex = active ? 0 : -1; });
     return renderGallery();
 }
@@ -263,8 +267,12 @@ document.addEventListener('visibilitychange', () => {
 window.StateOfPlay = Object.freeze({ version: __APP_VERSION__, getStates: () => Object.fromEntries(state), getPartCount: () => parts.length });
 required('#library-total').textContent = String(parts.length);
 required('#library-collections').textContent = String(categories.filter(c=>c.id!=='all').length).padStart(2,'0');
-const categoryJump=document.createElement('label');categoryJump.className='category-jump';categoryJump.innerHTML='<span>COLLECTION</span><select id="category-jump" aria-label="カテゴリへ直接移動">'+categories.map(c=>`<option value="${c.id}">${c.label} · ${c.id==='all'?parts.length:parts.filter(p=>p.category===c.id).length}</option>`).join('')+'</select>';
-required('.collection-toolbar').before(categoryJump);categoryJump.querySelector('select')!.addEventListener('change',event=>setCategory((event.target as HTMLSelectElement).value));
+const categoryJump=document.createElement('div');categoryJump.className='category-jump';
+const categoryOptions=categories.map(c=>{const count=c.id==='all'?parts.length:parts.filter(p=>p.category===c.id).length;return `<div class="sop-select-option" role="option" data-value="${escapeHTML(c.id)}" data-label="${escapeHTML(c.label)}" aria-selected="false"><span class="sop-select-option-copy"><b>${escapeHTML(c.label)}</b><small>${escapeHTML(c.english)} · ${count} PARTS</small></span><span class="sop-select-check" aria-hidden="true">✓</span></div>`;}).join('');
+categoryJump.innerHTML=`<div class="sop-select sop-select-sculpted sop-aurora-select" id="category-jump" data-value="toggles" data-placeholder="カテゴリを選んでください"><span class="sop-select-caption" id="category-jump-caption">COLLECTION / 種類を選ぶ<span aria-hidden="true">${String(categories.length).padStart(2,'0')} TYPES</span></span><button class="sop-select-trigger" type="button" role="combobox" aria-labelledby="category-jump-caption category-jump-current" aria-expanded="false" aria-haspopup="listbox"><span class="sop-select-value" id="category-jump-current"></span><span class="sop-select-chevron" aria-hidden="true"></span></button><input class="sop-select-input" type="hidden" name="category" value="toggles"><div class="sop-select-popup" role="listbox" aria-label="パーツのカテゴリ" hidden>${categoryOptions}</div></div>`;
+required('.collection-toolbar').before(categoryJump);
+categorySelector=createSelectController(required<HTMLElement>('#category-jump'),{value:activeCategory,onValueChange:id=>{void setCategory(id);}});
+window.addEventListener('pagehide',()=>categorySelector?.destroy(),{once:true});
 const restored = new URL(location.href).searchParams;
 activeDesign = ['A','B'].includes(restored.get('design') ?? '') ? restored.get('design')! : 'all';
 query = restored.get('q') ?? ''; search.value = query;

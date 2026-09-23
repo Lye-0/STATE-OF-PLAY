@@ -8,13 +8,14 @@ import {ROOT, buildCatalog} from '../scripts/catalog.ts';
 import {readBrowserIndex} from '../scripts/vite-catalog.ts';
 import {getDelivery, buildPrompt, packageContents, packageRoot} from '../src/catalog/delivery.ts';
 import {unpackCatalog} from '../src/catalog/transport.ts';
+import {selectCategory,selectedCategory} from './gallery-ready.ts';
 import {JSZip} from '../scripts/zip.ts';
 const {index} = readBrowserIndex();
 const output=path.join(ROOT,'.test-output/lazy-loading');fs.mkdirSync(output,{recursive:true});
 const browser=await chromium.launch({headless:true, ...(process.env.SOP_BROWSER_CHANNEL ? {channel:process.env.SOP_BROWSER_CHANNEL} : {})});
 const results: string[]=[];
 async function ready(p:Page) { await p.waitForFunction(()=>document.querySelector('#part-grid')?.getAttribute('aria-busy')==='false'); }
-async function category(p:Page,id:string) { await p.locator('#category-jump').selectOption(id); await ready(p); }
+async function category(p:Page,id:string) { await selectCategory(p,id); await p.mouse.move(0,0); }
 try {
  for (const mode of (process.env.SOP_LAZY_MODE ? [process.env.SOP_LAZY_MODE] : ['development','production'])) {
   const server = mode==='development' ? await createServer({root:ROOT,server:{port:0,host:'127.0.0.1'}}) : await preview({root:ROOT,base:'/STATE-OF-PLAY/',preview:{port:0,host:'127.0.0.1'}});
@@ -27,7 +28,7 @@ try {
    p.on('pageerror',e=>errors.push(e.message));p.on('request',r=>requests.push(r.url()));
    await p.goto(url);await ready(p);
    assert.equal(await p.locator('[data-part]').count(),24);
-   assert.equal(await p.locator('#category-jump').inputValue(),'toggles');
+   assert.equal(await selectedCategory(p),'toggles');
    assert.ok(!requests.some(u=>/\.json(?:\?|$)/.test(u)),'no source payload on entry');
    if(mode==='development') assert.ok(!requests.some(u=>/\/src\/parts\//.test(u)&&!u.includes('/toggles/')&&!u.includes('/blocks/original-surface/')),'no unrelated part implementation on entry');
    assert.ok(!requests.some(u=>u.includes('sop-catalog')||u.includes('sop-mounts')||u.includes('sop-styles')),'no legacy full catalogue');
@@ -100,7 +101,7 @@ try {
    // Fresh deep link must select the category, without initializing toggles first.
    const direct=await browser.newPage();await direct.goto(url+'#part=tide-progress');
    await direct.locator('[data-preview-part="tide-progress"]').waitFor();await ready(direct);
-   assert.equal(await direct.locator('#category-jump').inputValue(),'progress');
+   assert.equal(await selectedCategory(direct),'progress');
    await direct.keyboard.press('Escape');assert.equal(await direct.locator('#part-details').evaluate((e:HTMLDialogElement)=>e.open),false);
    await direct.close();results.push(mode+': mobile layout and cold direct detail link');
    // Delay an actual network response; closing must invalidate its eventual completion.
@@ -120,14 +121,14 @@ try {
    let unblock!:()=>void;const loading=new Promise<void>(r=>unblock=r);
    const categoryPattern=mode==='development'? /sop-category\/numbers/ : /\/numbers-[^/]+\.js/;
    await navigation.route(categoryPattern,async route=>{await loading;await route.continue();});
-   await navigation.locator('#category-jump').selectOption('numbers');
-   await navigation.locator('#category-jump').selectOption('blocks');await ready(navigation);unblock();
-   await navigation.waitForLoadState('networkidle');assert.equal(await navigation.locator('#category-jump').inputValue(),'blocks');
+   await selectCategory(navigation,'numbers',false);
+   await selectCategory(navigation,'blocks',false);await ready(navigation);unblock();
+   await navigation.waitForLoadState('networkidle');assert.equal(await selectedCategory(navigation),'blocks');
    assert.equal(await navigation.locator('[data-part="original-surface"]').count(),1);
    await navigation.close();results.push(mode+': stale category response cannot replace newer selection');
    const categoryFailure=await browser.newPage();await categoryFailure.goto(url);await ready(categoryFailure);
    let rejectCategory=true;await categoryFailure.route(categoryPattern,async route=>{if(rejectCategory){rejectCategory=false;await route.abort();}else await route.continue();});
-   await categoryFailure.locator('#category-jump').selectOption('numbers');
+   await selectCategory(categoryFailure,'numbers',false);
    await Promise.all([categoryFailure.waitForURL(/category=numbers/),categoryFailure.getByRole('button',{name:'再読み込み',exact:true}).click()]);await ready(categoryFailure);
    assert.equal(await categoryFailure.locator('[data-part]').count(),20);await categoryFailure.close();
    results.push(mode+': failed category import reloads with selection retained');

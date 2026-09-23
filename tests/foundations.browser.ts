@@ -8,6 +8,7 @@ import {createRequire} from 'node:module';
 import type {Browser,Page} from 'playwright';
 import {buildCatalog,ROOT} from '../scripts/catalog.ts';
 import {offlineFiles,testBundle} from './offline-fixture.ts';
+import {selectCategory} from './gallery-ready.ts';
 import {getDelivery,buildPrompt} from '../src/catalog/delivery.ts';
 import {requireLocalServerUrl} from './vite-url.ts';
 const require=createRequire(import.meta.url),{chromium}=require(process.env.PLAYWRIGHT_PATH??'playwright') as typeof import('playwright');
@@ -26,10 +27,10 @@ try{
  const context=await browser.newContext({viewport:{width:1440,height:1100},acceptDownloads:true});const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));page.setDefaultTimeout(20000);await page.emulateMedia({reducedMotion:'reduce'});
  if(offline){const scoped={...data,parts,bases:data.bases.filter(b=>parts.some(p=>b.endsWith('/'+p.id)))},fixture=offlineFiles(scoped);await install(page,fixture.get('/index.html')!,fixture.get('/test-app.js')!,fixture.get('/test-styles.css')!,true);}else await page.goto(url);
  await run(`${parts.length} foundation components: categories, exact A/B counts and accessible category jump`,async()=>{
-  for(const category of [...new Set(parts.map(p=>p.category))]){await page.locator('#category-jump').selectOption(category);const group=parts.filter(p=>p.category===category);assert.equal(await page.locator('[data-part]').count(),group.length);await page.locator('[data-design-filter="A"]').click();assert.equal(await page.locator('[data-part]').count(),group.filter(p=>p.designType==='A').length);await page.locator('[data-design-filter="B"]').click();assert.equal(await page.locator('[data-part]').count(),group.filter(p=>p.designType==='B').length);await page.locator('[data-design-filter="all"]').click();}
+  for(const category of [...new Set(parts.map(p=>p.category))]){await selectCategory(page,category);const group=parts.filter(p=>p.category===category);assert.equal(await page.locator('[data-part]').count(),group.length);await page.locator('[data-design-filter="A"]').click();assert.equal(await page.locator('[data-part]').count(),group.filter(p=>p.designType==='A').length);await page.locator('[data-design-filter="B"]').click();assert.equal(await page.locator('[data-part]').count(),group.filter(p=>p.designType==='B').length);await page.locator('[data-design-filter="all"]').click();}
  });
  await run('Slider inspector: bounds/unit/step update, native keyboard, format/layout preserve editing state',async()=>{
-  await page.locator('#category-jump').selectOption('sliders');await page.locator('[data-open="aurora-range"]').click();const d=page.locator('#part-details');
+  await selectCategory(page,'sliders');await page.locator('[data-open="aurora-range"]').click();const d=page.locator('#part-details');
   for(const [key,value]of [['min','10'],['max','50'],['step','5'],['unit','kg']]){await d.locator(`[data-set-${key}]`).fill(value);await d.locator(`[data-set-${key}]`).press('Tab');}
   assert.equal(await d.locator('[data-min]').innerText(),'10kg');assert.equal(await d.locator('[data-max]').innerText(),'50kg');
   const slider=d.locator('[data-range="0"]');await slider.focus();await slider.press('Home');await slider.press('ArrowRight');assert.equal(await slider.inputValue(),'15');
@@ -39,7 +40,7 @@ try{
   await d.locator('[data-detail-tab="code"]').click();await page.screenshot({path:path.join(out,'detail.png')});await d.locator('.close-detail').click();
  });
  await run('Source inspector: representative of each new category, both layouts (full inventory in gallery suite)',async()=>{
-  for(const p of parts.filter((p,i)=>i===parts.findIndex(x=>x.category===p.category))){await page.locator('#category-jump').selectOption(p.category);await page.locator(`[data-open="${p.id}"]`).click();const d=page.locator('#part-details');for(const layout of ['portable','original']as const){await d.locator('#export-layout').selectOption(layout);const delivery=getDelivery(p,'tsx',layout);const expected=delivery.files.find(f=>f.name===delivery.entry)!;assert.equal((await d.locator('.editor code .line-code').allTextContents()).map(line=>line===' '?'':line).join('\n').trimEnd(),expected.code.trimEnd());}await d.locator('.close-detail').click();}
+  for(const p of parts.filter((p,i)=>i===parts.findIndex(x=>x.category===p.category))){await selectCategory(page,p.category);await page.locator(`[data-open="${p.id}"]`).click();const d=page.locator('#part-details');for(const layout of ['portable','original']as const){await d.locator('#export-layout').selectOption(layout);const delivery=getDelivery(p,'tsx',layout);const expected=delivery.files.find(f=>f.name===delivery.entry)!;assert.equal((await d.locator('.editor code .line-code').allTextContents()).map(line=>line===' '?'':line).join('\n').trimEnd(),expected.code.trimEnd());}await d.locator('.close-detail').click();}
  });
  // One host can move or unmount each actual exported implementation without a gallery dependency.
  const imports=parts.map((p,i)=>`import {init as init${i}} from '/src/parts/${p.category}/${p.id}/vanilla/init.ts';`).join('\n');
@@ -116,7 +117,7 @@ try{
  });
  await run('Every part fits 320/390/768px; sample code and modal remain usable on small screens',async()=>{
   for(const width of [320,390,768]){await native.setViewportSize({width,height:900});await native.addStyleTag({content:'body{padding:10px}#test-host,#second-host{margin:0;max-width:100%}'});for(const p of parts){await mount(p.id);assert.ok(await native.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),width+' '+p.id);}}
-  await page.setViewportSize({width:390,height:844});await page.locator('#category-jump').selectOption('comboboxes');await page.locator('[data-open="aurora-finder"]').click();await page.screenshot({path:path.join(out,'mobile-390.png')});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));await page.locator('.close-detail').click();
+  await page.setViewportSize({width:390,height:844});await selectCategory(page,'comboboxes');await page.locator('[data-open="aurora-finder"]').click();await page.screenshot({path:path.join(out,'mobile-390.png')});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));await page.locator('.close-detail').click();
  });
  await run('All native instances unmount cleanly without any observed browser exception',async()=>{await native.evaluate(()=>(window as any).destroyFoundations());assert.equal(await native.locator('[data-foundation-mounted]').count(),0);assert.equal(await native.locator(':popover-open').count(),0);assert.deepEqual(errors,[]);});
  await native.close();

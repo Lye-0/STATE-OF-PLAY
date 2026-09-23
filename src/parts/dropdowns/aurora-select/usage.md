@@ -21,3 +21,5 @@ Popover API対応環境ではtop layerへ表示し、overflow:hiddenの展示カ
 AタイプはautoIcon=falseで、labelから装飾アイコンを自動生成しません。itemsにiconを指定した場合は20pxの小さなアイコンとして表示します。`showHeading` / `showHints` をtrueまたはfalseで指定して、メニューの見出し・操作ヒントを変更できます。候補名だけでも使えます。通常HTML版では対応する装飾要素を任意で配置してください。
 
 `select-motion.ts` はA用の背景面だけを処理します。Bタイプはこの処理を開始しません。hover・キーボードの移動候補と、確定済みの選択マークは別々に表示されます。動的な候補変更後はVanillaの`refresh()`を呼びます。Reactではitems変更に合わせて更新します。表示と操作の定期ループはありません。
+
+スタイルは同梱の styles.css から `shared/aurora-select.css`、select-sculpted.css、select-base.cssへつながります。配布ZIPでは依存ファイルも含めて配置してください。

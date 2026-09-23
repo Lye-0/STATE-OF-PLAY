@@ -6,7 +6,7 @@ import {chromium} from 'playwright';
 import {createServer} from 'vite';
 import {ROOT,buildCatalog,FORMATS} from '../scripts/catalog.ts';
 import {getDelivery,buildPrompt,packageContents} from '../src/catalog/delivery.ts';
-import {galleryReady} from './gallery-ready.ts';
+import {galleryReady,selectCategory} from './gallery-ready.ts';
 
 const data=buildCatalog();
 const targets=data.parts.filter(part=>part.tags.includes('WAYFINDER'));
@@ -20,7 +20,7 @@ try{
  await p.goto(server.resolvedUrls!.local[0]);await galleryReady(p);
  assert.equal(data.parts.length,603);assert.equal(targets.length,23);
  for(const[category,count]of [['breadcrumbs',10],['numbers',13]]as const){
-  await p.locator('#category-jump').selectOption(category);await galleryReady(p);
+  await selectCategory(p,category);
   await p.locator('[data-design-filter="A"]').click();await galleryReady(p);
   assert.equal(await p.locator('[data-part]').count(),count);
   assert.ok(await p.locator('[data-part]').first().locator('.sop-wayfinder').count());
@@ -45,7 +45,7 @@ try{
  let displayed=0;
  for(const id of ['blueprint-trail','folio-trail','aurora-stepper','tide-stepper']){
   const part=targets.find(item=>item.id===id)!;
-  await p.locator('#category-jump').selectOption(part.category);await galleryReady(p);
+  await selectCategory(p,part.category);
   await p.locator(`[data-open="${id}"]`).click();await galleryReady(p);
   const detail=p.locator('#part-details');
   for(const layout of ['portable','original']as const){

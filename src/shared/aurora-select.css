@@ -1,0 +1,10 @@
+@import "./select-sculpted.css";
+/* aurora-select — text-led, material-specific motion. v4.3.0 */
+.sop-select.sop-select-sculpted.sop-aurora-select{--sel-bg:#1c2229;--sel-panel:#1b2128;--sel-accent:#b8ddd9;--sel-muted:#a5b4ba;--sel-line:#b0cdd32a;--sel-plane:radial-gradient(ellipse at var(--sel-light-x) 0,#bbeae72b,transparent 76%),linear-gradient(100deg,#b6dcd910,#b6b5e210);--sel-plane-border:#d5eeed27;--sel-plane-radius:10px;--sel-panel-image:radial-gradient(ellipse at 100% 0,#ada8d910,transparent 65%);--sel-enter:sop-menu-dissolve;}
+.sop-select.sop-select-sculpted.sop-aurora-select > .sop-select-trigger{box-shadow:inset 0 1px #f0fffb15,0 6px 14px #0002;}
+.sop-select.sop-select-sculpted.sop-aurora-select > .sop-select-trigger::before{background:radial-gradient(ellipse at 20% 0,#d3ece620,transparent 65%);}
+.sop-select.sop-select-sculpted.sop-aurora-select .sop-select-popup::after{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(300px 190px at var(--sel-light-x) var(--sel-light-y),#a2dcd40a,transparent 80%);}
+.sop-select.sop-select-sculpted.sop-aurora-select .sop-select-popup::before{box-shadow:inset 0 1px #defff62a,0 3px 6px #07151912;backdrop-filter:blur(4px);}
+
+.sop-select.sop-select-sculpted.sop-aurora-select {--sel-plane:radial-gradient(ellipse at var(--sel-light-x) 0,#c9e9e438,transparent 90%),linear-gradient(115deg,#b2cfd50b,#b1abd31a);}
+.sop-select.sop-select-sculpted.sop-aurora-select .sop-select-popup::before{box-shadow:inset 0 1px #eefff33f,inset 0 -1px #abcce41f,0 3px 8px #10172218;}

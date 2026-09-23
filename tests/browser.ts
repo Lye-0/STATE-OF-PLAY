@@ -1,4 +1,4 @@
-import {galleryReady} from './gallery-ready.ts';
+import {galleryReady,selectCategory} from './gallery-ready.ts';
 /** The default run tests real Vite over HTTP. SOP_TEST_MODE=offline is an explicit, reported test adapter. */
 import assert from 'node:assert/strict';
 import { requireLocalServerUrl } from './vite-url.ts';
@@ -171,7 +171,7 @@ try{
   // Batch DOM clicks within one browser round-trip per part to keep growing CI affordable.
   // Mouse/keyboard/format/layout interactions are also checked separately above and below.
   await page.emulateMedia({reducedMotion:'reduce'});
-  for(const part of catalog.parts){await page.locator('#category-jump').selectOption(part.category);await galleryReady(page);await page.locator(`[data-open="${part.id}"]`).click();await galleryReady(page,true);
+  for(const part of catalog.parts){await selectCategory(page,part.category);await page.locator(`[data-open="${part.id}"]`).click();await galleryReady(page,true);
    const cases=layouts.flatMap(layout=>FORMATS.map(format=>({layout,format,files:getDelivery(part,format,layout).files})));
    const rendered=await page.evaluate(cases=>cases.map(item=>{
     const select=document.querySelector<HTMLSelectElement>('#export-layout')!;select.value=item.layout;select.dispatchEvent(new Event('change',{bubbles:true}));
@@ -182,7 +182,7 @@ try{
    await page.locator('.close-detail').click();console.log('  verified '+part.id+'; '+count+' sources');
   }assert.equal(count,catalog.parts.reduce((n,p)=>n+Object.values(p.files).flat().length*2,0));
   await page.emulateMedia({reducedMotion:'no-preference'});
-  await page.locator('#category-jump').selectOption('toggles');await galleryReady(page);await page.locator('[data-open="chrome"]').click();await galleryReady(page,true);await page.locator('[data-format="tsx"]').click();await page.locator('#export-layout').selectOption('portable');
+  await selectCategory(page,'toggles');await page.locator('[data-open="chrome"]').click();await galleryReady(page,true);await page.locator('[data-format="tsx"]').click();await page.locator('#export-layout').selectOption('portable');
   await page.locator('[data-file="chrome-toggle/internal/motion.ts"]').click();await page.locator('#export-layout').selectOption('original');assert.equal(await page.locator('.current-path').textContent(),'src/shared');
   await page.locator('[data-format="jsx"]').click();assert.equal(await page.locator('.current-file').textContent(),'motion.js');await page.locator('#export-layout').selectOption('portable');assert.equal(await page.locator('.current-path').textContent(),'chrome-toggle/internal');await page.locator('.close-detail').click();
  });

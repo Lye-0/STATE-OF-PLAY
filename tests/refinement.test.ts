@@ -48,7 +48,7 @@ test('presentation helper preserves React ownership; scroll coordinates and clea
  const c=read('src/shared/select-controller.ts');assert.match(c,/classList.contains\('sop-select-sculpted'\)/);assert.match(c,/motion\?\.destroy/);
 });
 test('per-skin specificity withstands repeated shared imports without altering B styles',()=>{
- for(const p of A){const selector=p.category==='scrollbars'?'.sop-scroll-area.sop-scroll-sculpted.sop-':'.sop-select.sop-select-sculpted.sop-';assert.ok(read(p.base+'/styles.css').includes(selector+p.id));}
+ for(const p of A){const selector=p.category==='scrollbars'?'.sop-scroll-area.sop-scroll-sculpted.sop-':'.sop-select.sop-select-sculpted.sop-',closure=dependencies(p.base+'/styles.css',read,exists).filter(f=>f.endsWith('.css')).map(read).join('\n');assert.ok(closure.includes(selector+p.id),p.id);}
 });
 test('text-first, paper-reveal and underline motions are different compositions',()=>{
  const styles=A.filter(p=>p.category==='dropdowns').map(p=>read(p.base+'/styles.css'));
