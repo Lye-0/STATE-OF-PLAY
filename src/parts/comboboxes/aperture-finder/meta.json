@@ -3,14 +3,14 @@
   "name": "Aperture Finder",
   "category": "comboboxes",
   "order": 341,
-  "version": "4.1.0",
+  "version": "4.7.0",
   "tagline": "小さな視界を、ひらく。",
-  "description": "入力面と展開メニューを一体のデザインに。検索アイコン、候補、選択状態、補足文、複数選択チップも素材に合わせています。",
+  "description": "絞り羽根が扇状に開いて、奥にある情報面を露出する。入力すると材料の面が開き、候補の背後の選択面がなめらかに移動します。",
   "material": "OPTICAL · 13",
-  "motion": "RESPONSE",
+  "motion": "RESONANCE",
   "accent": "185,200,187",
   "designType": "A",
-  "runtime": "Native DOM + CSS",
+  "runtime": "Native DOM + SVG / event-driven",
   "componentName": "ApertureFinder",
   "tags": [
     "コンボボックス",
@@ -20,7 +20,10 @@
     "A",
     "Atelier",
     "素材感",
-    "立体造形"
+    "立体造形",
+    "RESONANCE",
+    "操作に反応",
+    "動く面"
   ],
   "related": [],
   "props": [
@@ -64,37 +67,32 @@
         "value": "aurora",
         "label": "Aurora",
         "description": "光と透明感のコレクション",
-        "badge": "GLASS",
-        "icon": "spark"
+        "badge": "GLASS"
       },
       {
         "value": "folio",
         "label": "Folio",
         "description": "紙と余白のコレクション",
-        "badge": "PAPER",
-        "icon": "file"
+        "badge": "PAPER"
       },
       {
         "value": "mercury",
         "label": "Mercury",
         "description": "金属と精密さのコレクション",
-        "badge": "METAL",
-        "icon": "clock"
+        "badge": "METAL"
       },
       {
         "value": "quiet",
         "label": "Quiet",
         "description": "落ち着いた日常のデザイン",
-        "badge": "ESSENTIAL",
-        "icon": "info"
+        "badge": "ESSENTIAL"
       },
       {
         "value": "archive",
         "label": "Archive",
         "description": "近日公開",
         "badge": "SOON",
-        "disabled": true,
-        "icon": "file"
+        "disabled": true
       }
     ]
   }

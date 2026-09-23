@@ -74,6 +74,10 @@ jobs:
         run: npm run test:transform
       - name: Transform export and inspector integration
         run: npm run test:transform:gallery
+      - name: Resonance radios, comboboxes, notifications and hints
+        run: npm run test:resonance
+      - name: Resonance inspector, exports and native overlays
+        run: npm run test:resonance:gallery
       - name: Build full source archive
         run: npm run package
       - name: Save reports on failure

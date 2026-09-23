@@ -1,0 +1,19 @@
+{
+  "version": "4.7.0",
+  "base_version": "4.6.0",
+  "stage": "generated archive extracted to an empty directory",
+  "crc_ok": true,
+  "manifest_sha256_matches": true,
+  "part_count": 588,
+  "checks": [
+    {
+      "command": "tsc -p tsconfig.json --noEmit",
+      "exit_code": 0
+    },
+    {
+      "command": "node --experimental-strip-types --test tests/resonance.test.ts tests/vite-url.test.ts",
+      "exit_code": 0
+    }
+  ],
+  "notes": "The report is added after this preflight. Final archive is separately re-extracted and checked, without embedding its own digest."
+}

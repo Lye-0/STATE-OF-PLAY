@@ -1,8 +1,4 @@
-/* Nixie Popover — Type A / Atelier edition.
-   真空管の暗い内面、縦に並ぶ電極、真鍮のフレーム、琥珀色の発光と物理的なキー。
-   トリガーだけでなく、開いたパネル、見出し、設定値、チェック項目、操作ボタンを同じ素材で設計。 */
+/* Nixie Popover / RESONANCE — スモークガラスの底の電極が順に通電し、琥珀色の輪郭が立ち上がる。 */
 @import "../../../shared/foundation/base.css";
-@import "../../../shared/foundation/atelier.css";
-@import "../../../shared/foundation/materials/nixie.css";
-/* Component identity remains scoped for independent embedding and source mapping. */
-.sop-foundation.sop-nixie-popover { --ad-edition: 1; }
+@import "../../../shared/foundation/resonance/style.css";
+.sop-foundation.sop-nixie-popover { --rs-edition: 470; }

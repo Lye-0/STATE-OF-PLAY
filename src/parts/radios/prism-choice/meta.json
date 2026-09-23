@@ -3,14 +3,14 @@
   "name": "Prism Choice",
   "category": "radios",
   "order": 310,
-  "version": "4.1.0",
+  "version": "4.7.0",
   "tagline": "境界に、色が生まれる。",
-  "description": "各選択肢を物理的なカードとして設計。アイコンの立体感、選択機構、補足文、バッジまで同じ素材で構成。",
+  "description": "周縁の結晶面が分離・再配置され、中央の情報を保ったまま分光する。選択カードの背景面と状態表示が切り替わります。ラベルとネイティブradio自体は動かしません。",
   "material": "SPECTRUM · 06",
-  "motion": "RESPONSE",
+  "motion": "RESONANCE",
   "accent": "209,186,250",
   "designType": "A",
-  "runtime": "Native DOM + CSS",
+  "runtime": "Native DOM + SVG / event-driven",
   "componentName": "PrismChoice",
   "tags": [
     "ラジオ／選択カード",
@@ -20,7 +20,10 @@
     "A",
     "Atelier",
     "素材感",
-    "立体造形"
+    "立体造形",
+    "RESONANCE",
+    "操作に反応",
+    "動く面"
   ],
   "related": [],
   "props": [
@@ -63,22 +66,19 @@
         "value": "local",
         "label": "Local",
         "description": "手元の環境で、静かに。",
-        "badge": "01",
-        "icon": "file"
+        "badge": "01"
       },
       {
         "value": "cloud",
         "label": "Cloud",
         "description": "どこからでも、つながる。",
-        "badge": "02",
-        "icon": "spark"
+        "badge": "02"
       },
       {
         "value": "hybrid",
         "label": "Hybrid",
         "description": "両方のよさを、ひとつに。",
-        "badge": "03",
-        "icon": "home"
+        "badge": "03"
       }
     ]
   }

@@ -3,14 +3,14 @@
   "name": "Mercury Popover",
   "category": "hints",
   "order": 378,
-  "version": "4.1.0",
+  "version": "4.7.0",
   "tagline": "精密さには、温度がある。",
-  "description": "トリガーだけでなく、開いたパネル、見出し、設定値、チェック項目、操作ボタンを同じ素材で設計。",
+  "description": "サテン仕上げの金属の薄板がしなり、反射の帯が走って静まる。トリガーの面から情報がほどけ、本文は静止したまま背景が反応します。",
   "material": "MACHINED · 02",
-  "motion": "RESPONSE",
+  "motion": "RESONANCE",
   "accent": "209,223,218",
   "designType": "A",
-  "runtime": "Native DOM + CSS",
+  "runtime": "Native DOM + SVG / event-driven",
   "componentName": "MercuryPopover",
   "tags": [
     "ツールチップ／ポップオーバー",
@@ -20,7 +20,10 @@
     "A",
     "Atelier",
     "素材感",
-    "立体造形"
+    "立体造形",
+    "RESONANCE",
+    "操作に反応",
+    "動く面"
   ],
   "related": [],
   "props": [

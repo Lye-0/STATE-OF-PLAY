@@ -1,8 +1,4 @@
-/* Relay Finder — Type A / Atelier edition.
-   通信機のスリット、回路線、刻みのある物理キー、短い発光セグメント。
-   入力面と展開メニューを一体のデザインに。検索アイコン、候補、選択状態、補足文、複数選択チップも素材に合わせています。 */
+/* Relay Finder / RESONANCE — 小さな金属板が順に傾き、選択や表示が機械的に接続される。 */
 @import "../../../shared/foundation/base.css";
-@import "../../../shared/foundation/atelier.css";
-@import "../../../shared/foundation/materials/relay.css";
-/* Component identity remains scoped for independent embedding and source mapping. */
-.sop-foundation.sop-relay-finder { --ad-edition: 1; }
+@import "../../../shared/foundation/resonance/style.css";
+.sop-foundation.sop-relay-finder { --rs-edition: 470; }

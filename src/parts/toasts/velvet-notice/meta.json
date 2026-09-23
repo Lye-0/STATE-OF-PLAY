@@ -3,14 +3,14 @@
   "name": "Velvet Notice",
   "category": "toasts",
   "order": 361,
-  "version": "4.1.0",
+  "version": "4.7.0",
   "tagline": "静かに、深く、やわらかく。",
-  "description": "通知本体を小さな素材のプレートとして設計。状態アイコン、タイトル、補足文、アクション、閉じる操作を整理。",
+  "description": "両端の布のひだが左右へほどけ、陰影の幅が変わる。通知の面が素材ごとに開き、閉じると静かに退きます。",
   "material": "ATELIER · 09",
-  "motion": "REVEAL",
+  "motion": "RESONANCE",
   "accent": "223,167,190",
   "designType": "A",
-  "runtime": "Native DOM + CSS",
+  "runtime": "Native DOM + SVG / event-driven",
   "componentName": "VelvetNotice",
   "tags": [
     "通知",
@@ -20,7 +20,10 @@
     "A",
     "Atelier",
     "素材感",
-    "立体造形"
+    "立体造形",
+    "RESONANCE",
+    "操作に反応",
+    "動く面"
   ],
   "related": [],
   "props": [

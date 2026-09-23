@@ -1,4 +1,4 @@
-import {mountHint} from '../../../../shared/foundation/feedback';
+import {mountHint} from '../../../../shared/foundation/resonance/feedback';
 import type {FoundationConfig, FoundationOptions} from '../../../../shared/foundation/core';
 const config: FoundationConfig = {
   "id": "aurora-popover",

@@ -3,14 +3,14 @@
   "name": "Velvet Popover",
   "category": "hints",
   "order": 385,
-  "version": "4.1.0",
+  "version": "4.7.0",
   "tagline": "静かに、深く、やわらかく。",
-  "description": "トリガーだけでなく、開いたパネル、見出し、設定値、チェック項目、操作ボタンを同じ素材で設計。",
+  "description": "両端の布のひだが左右へほどけ、陰影の幅が変わる。トリガーの面から情報がほどけ、本文は静止したまま背景が反応します。",
   "material": "ATELIER · 09",
-  "motion": "RESPONSE",
+  "motion": "RESONANCE",
   "accent": "223,167,190",
   "designType": "A",
-  "runtime": "Native DOM + CSS",
+  "runtime": "Native DOM + SVG / event-driven",
   "componentName": "VelvetPopover",
   "tags": [
     "ツールチップ／ポップオーバー",
@@ -20,7 +20,10 @@
     "A",
     "Atelier",
     "素材感",
-    "立体造形"
+    "立体造形",
+    "RESONANCE",
+    "操作に反応",
+    "動く面"
   ],
   "related": [],
   "props": [

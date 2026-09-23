@@ -1,0 +1,122 @@
+TAP version 13
+# (node:4969) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: RESONANCE updates exactly 16 A designs in each of four categories, no additions or deleted IDs
+ok 1 - RESONANCE updates exactly 16 A designs in each of four categories, no additions or deleted IDs
+  ---
+  duration_ms: 0.945424
+  type: 'test'
+  ...
+# Subtest: material families have distinct motion geometry; invalid family has a safe resting appearance
+ok 2 - material families have distinct motion geometry; invalid family has a safe resting appearance
+  ---
+  duration_ms: 0.453879
+  type: 'test'
+  ...
+# Subtest: authored markup matches the same renderers used by actual React and vanilla controllers
+ok 3 - authored markup matches the same renderers used by actual React and vanilla controllers
+  ---
+  duration_ms: 1.28306
+  type: 'test'
+  ...
+# Subtest: content renderers escape external labels and descriptions, and show no invented icon by default
+ok 4 - content renderers escape external labels and descriptions, and show no invented icon by default
+  ---
+  duration_ms: 0.353311
+  type: 'test'
+  ...
+# Subtest: both framework exports reference the new implementation, not a gallery-only effect
+ok 5 - both framework exports reference the new implementation, not a gallery-only effect
+  ---
+  duration_ms: 114.3621
+  type: 'test'
+  ...
+# Subtest: A stylesheet opts into resonance and does not import legacy material construction
+ok 6 - A stylesheet opts into resonance and does not import legacy material construction
+  ---
+  duration_ms: 44.856952
+  type: 'test'
+  ...
+# Subtest: prompts and usage describe new source-of-truth files and preserve integration rules
+ok 7 - prompts and usage describe new source-of-truth files and preserve integration rules
+  ---
+  duration_ms: 2.364214
+  type: 'test'
+  ...
+# Subtest: animation implementation has lifecycle cleanup, no constant interval or external resources
+ok 8 - animation implementation has lifecycle cleanup, no constant interval or external resources
+  ---
+  duration_ms: 0.988397
+  type: 'test'
+  ...
+# Subtest: source closures have only resolvable local import paths and safe CSS/SVG metadata
+ok 9 - source closures have only resolvable local import paths and safe CSS/SVG metadata
+  ---
+  duration_ms: 48.463593
+  type: 'test'
+  ...
+# Subtest: ordinary choice content remains independent from a material identity
+ok 10 - ordinary choice content remains independent from a material identity
+  ---
+  duration_ms: 0.517252
+  type: 'test'
+  ...
+# (node:4970) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Vite URL: a listening server preserves its local URL
+ok 11 - Vite URL: a listening server preserves its local URL
+  ---
+  duration_ms: 0.968287
+  type: 'test'
+  ...
+# Subtest: Vite URL: production base path and URL encoding are preserved
+ok 12 - Vite URL: production base path and URL encoding are preserved
+  ---
+  duration_ms: 0.137243
+  type: 'test'
+  ...
+# Subtest: Vite URL: null fails explicitly instead of bypassing the test
+ok 13 - Vite URL: null fails explicitly instead of bypassing the test
+  ---
+  duration_ms: 0.453649
+  type: 'test'
+  ...
+# Subtest: Vite URL: an empty local array fails even when a network URL exists
+ok 14 - Vite URL: an empty local array fails even when a network URL exists
+  ---
+  duration_ms: 0.185944
+  type: 'test'
+  ...
+# Subtest: Vite URL: empty and whitespace URL values fail explicitly
+ok 15 - Vite URL: empty and whitespace URL values fail explicitly
+  ---
+  duration_ms: 0.202698
+  type: 'test'
+  ...
+# Subtest: Vite URL: the first published local URL is chosen without guessing a port
+ok 16 - Vite URL: the first published local URL is chosen without guessing a port
+  ---
+  duration_ms: 0.13558
+  type: 'test'
+  ...
+# Subtest: Vite URL: browser suites do not dereference nullable URLs or suppress their types
+ok 17 - Vite URL: browser suites do not dereference nullable URLs or suppress their types
+  ---
+  duration_ms: 1.836516
+  type: 'test'
+  ...
+# Subtest: CI runs all verify stages in order and checks types before downloading Chromium
+ok 18 - CI runs all verify stages in order and checks types before downloading Chromium
+  ---
+  duration_ms: 1.207049
+  type: 'test'
+  ...
+1..18
+# tests 18
+# suites 0
+# pass 18
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 636.08233

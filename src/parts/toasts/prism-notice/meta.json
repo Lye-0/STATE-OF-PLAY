@@ -3,14 +3,14 @@
   "name": "Prism Notice",
   "category": "toasts",
   "order": 358,
-  "version": "4.1.0",
+  "version": "4.7.0",
   "tagline": "境界に、色が生まれる。",
-  "description": "通知本体を小さな素材のプレートとして設計。状態アイコン、タイトル、補足文、アクション、閉じる操作を整理。",
+  "description": "周縁の結晶面が分離・再配置され、中央の情報を保ったまま分光する。通知の面が素材ごとに開き、閉じると静かに退きます。",
   "material": "SPECTRUM · 06",
-  "motion": "REVEAL",
+  "motion": "RESONANCE",
   "accent": "209,186,250",
   "designType": "A",
-  "runtime": "Native DOM + CSS",
+  "runtime": "Native DOM + SVG / event-driven",
   "componentName": "PrismNotice",
   "tags": [
     "通知",
@@ -20,7 +20,10 @@
     "A",
     "Atelier",
     "素材感",
-    "立体造形"
+    "立体造形",
+    "RESONANCE",
+    "操作に反応",
+    "動く面"
   ],
   "related": [],
   "props": [

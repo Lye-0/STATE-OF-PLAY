@@ -17,10 +17,10 @@ function splitSelectors(value:string):string[]{let quote='',depth=0,start=0;cons
 test('Atelier redesign covers all 171 new expressive parts except the existing loaders',()=>{
  assert.equal(parts.filter(p=>!p.tags.includes('KINETIC')).length,564);assert.equal(expressive.length,171);assert.equal(variants.length,16);
  assert.equal(new Set(expressive.map(p=>p.category)).size,12);
- for(const p of expressive){assert.equal(p.version,p.category==='sliders'?'4.6.0':'4.1.0');assert.ok(p.tags.includes('Atelier'));if(p.category==='sliders')assert.ok(p.tags.includes('TRANSFORM'));}
+ for(const p of expressive){assert.equal(p.version,p.tags.includes('RESONANCE')?'4.7.0':p.category==='sliders'?'4.6.0':'4.1.0');assert.ok(p.tags.includes('Atelier'));if(p.category==='sliders')assert.ok(p.tags.includes('TRANSFORM'));}
 });
 test('every redesigned skin includes exactly its matching material and the shared construction stylesheet',()=>{
- for(const p of expressive){const css=read(p.base+'/styles.css');assert.match(css,/@import "\.\.\/\.\.\/\.\.\/shared\/foundation\/atelier\.css";/);assert.ok(css.includes(`/materials/${p.foundation.variant}.css`));
+ for(const p of expressive){const css=read(p.base+'/styles.css');if(p.tags.includes('RESONANCE')){const closure=dependencies(p.base+'/styles.css',read,exists);assert.ok(closure.includes('src/shared/foundation/resonance/style.css'));assert.equal(closure.some(f=>f.includes('/materials/')||f.endsWith('/atelier.css')),false);continue;}assert.match(css,/@import "\.\.\/\.\.\/\.\.\/shared\/foundation\/atelier\.css";/);assert.ok(css.includes(`/materials/${p.foundation.variant}.css`));
   const closure=dependencies(p.base+'/styles.css',read,exists);assert.ok(closure.includes('src/shared/foundation/base.css'));assert.ok(closure.includes('src/shared/foundation/atelier.css'));assert.equal(closure.filter(f=>f.includes('/materials/')).length,1);}
 });
 test('B skins and loaders do not depend on the expressive construction or material sheets',()=>{
@@ -47,5 +47,5 @@ test('light-theme detached labels have their own material backing',()=>{
  for(const variant of ['folio','botanical','ceramic']){const css=read(`src/shared/foundation/materials/${variant}.css`);assert.ok(css.includes('> .ff-heading'));assert.ok(css.includes('.ff-process-steps'));assert.ok(css.includes('.ff-page-info'));}
 });
 test('updated reproduction specifications explicitly include the new art-direction dependencies',()=>{
- for(const p of expressive){const prompt=read(p.base+'/prompt.md');assert.match(prompt,/4\.1/);assert.match(prompt,/atelier\.css/);assert.ok(prompt.includes(p.foundation.variant+'.css'));}
+ for(const p of expressive){const prompt=read(p.base+'/prompt.md');if(p.tags.includes('RESONANCE')){assert.match(prompt,/4\.7/);assert.match(prompt,/resonance\/style\.css/);assert.match(prompt,/resonance\/art\.ts/);assert.doesNotMatch(prompt,/atelier\.css/);continue;}assert.match(prompt,/4\.1/);assert.match(prompt,/atelier\.css/);assert.ok(prompt.includes(p.foundation.variant+'.css'));}
 });

@@ -1,7 +1,7 @@
 /** Framework-neutral values, lifecycle and escaping for portable foundation parts. */
 export type FoundationKind = 'sliders' | 'radios' | 'comboboxes' | 'toasts' | 'hints' | 'progress' | 'loaders' | 'uploads' | 'datepickers' | 'pagination' | 'breadcrumbs' | 'badges' | 'numbers';
 export type FoundationValue = number | string | string[] | number[] | File[] | null;
-export interface Choice { value: string; label: string; description?: string; badge?: string; icon?: string; disabled?: boolean; href?: string; }
+export interface Choice { value: string; label: string; description?: string; badge?: string; icon?: string; group?: string; disabled?: boolean; href?: string; }
 export interface Notice { title: string; description?: string; tone?: 'info' | 'success' | 'warning' | 'error'; duration?: number; actionLabel?: string; onAction?: () => void; }
 export interface FoundationOptions {
   value?: FoundationValue; defaultValue?: FoundationValue; controlled?: boolean;

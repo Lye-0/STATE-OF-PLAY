@@ -1,7 +1,7 @@
 'use client';
 import React, {forwardRef} from 'react';
 import {FoundationWidget, type FoundationProps} from '../../../../shared/foundation/react';
-import {renderCombobox, mountCombobox} from '../../../../shared/foundation/combobox';
+import {renderCombobox, mountCombobox} from '../../../../shared/foundation/resonance/controls';
 import type {FoundationConfig} from '../../../../shared/foundation/core';
 import '../styles.css';
 const config: FoundationConfig = {
@@ -18,42 +18,37 @@ const config: FoundationConfig = {
       "value": "aurora",
       "label": "Aurora",
       "description": "光と透明感のコレクション",
-      "badge": "GLASS",
-      "icon": "spark"
+      "badge": "GLASS"
     },
     {
       "value": "folio",
       "label": "Folio",
       "description": "紙と余白のコレクション",
-      "badge": "PAPER",
-      "icon": "file"
+      "badge": "PAPER"
     },
     {
       "value": "mercury",
       "label": "Mercury",
       "description": "金属と精密さのコレクション",
-      "badge": "METAL",
-      "icon": "clock"
+      "badge": "METAL"
     },
     {
       "value": "quiet",
       "label": "Quiet",
       "description": "落ち着いた日常のデザイン",
-      "badge": "ESSENTIAL",
-      "icon": "info"
+      "badge": "ESSENTIAL"
     },
     {
       "value": "archive",
       "label": "Archive",
       "description": "近日公開",
       "badge": "SOON",
-      "disabled": true,
-      "icon": "file"
+      "disabled": true
     }
   ]
 };
 export type PrismFinderProps = FoundationProps;
-/** Prism Finder: Aタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** RESONANCE: presentation stays below real, editable input and live content. */
 export default forwardRef<HTMLDivElement, PrismFinderProps>(function PrismFinder(props, ref) {
-  return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
+  return <FoundationWidget {...props} className={`sop-resonance ${props.className ?? ''}`} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

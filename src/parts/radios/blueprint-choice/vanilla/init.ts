@@ -1,4 +1,4 @@
-import {mountRadio} from '../../../../shared/foundation/radio';
+import {mountRadio} from '../../../../shared/foundation/resonance/controls';
 import type {FoundationConfig, FoundationOptions} from '../../../../shared/foundation/core';
 const config: FoundationConfig = {
   "id": "blueprint-choice",
@@ -13,22 +13,19 @@ const config: FoundationConfig = {
       "value": "local",
       "label": "Local",
       "description": "手元の環境で、静かに。",
-      "badge": "01",
-      "icon": "file"
+      "badge": "01"
     },
     {
       "value": "cloud",
       "label": "Cloud",
       "description": "どこからでも、つながる。",
-      "badge": "02",
-      "icon": "spark"
+      "badge": "02"
     },
     {
       "value": "hybrid",
       "label": "Hybrid",
       "description": "両方のよさを、ひとつに。",
-      "badge": "03",
-      "icon": "home"
+      "badge": "03"
     }
   ]
 };

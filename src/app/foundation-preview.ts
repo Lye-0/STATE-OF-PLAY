@@ -1,3 +1,4 @@
+import {createMaterialScene} from '../shared/foundation/resonance/art';
 /** Gallery-only examples. None of these controls/canned results are dependencies of an exported part. */
 import {escapeHTML,required} from './utils';
 import {heading,svg,type FoundationController,type FoundationValue} from '../shared/foundation/core';
@@ -7,6 +8,7 @@ export function mountFoundationSample(root:HTMLElement,part:Part,controller:Part
  if(!part.foundation)return ()=>{};const events=new AbortController();const cleanups:(()=>void)[]=[];
  if(part.category==='toasts'){
   const placeholder=root.querySelector<HTMLElement>('[data-toast-example]');if(placeholder){placeholder.hidden=false;placeholder.innerHTML=heading(part.foundation)+`<div class="ff-notice ff-notice-sample" aria-hidden="true"><span class="ff-notice-icon">${svg('info')}</span><div><strong>次の工程を準備しています</strong><p>実際の処理結果を、ここで知らせる。</p></div><span class="ff-notice-meter"></span></div><button type="button" class="ff-action" data-notify>${svg('spark')} 通知を表示</button>`;
+   if(part.tags.includes('RESONANCE')) { const sample=placeholder.querySelector<HTMLElement>('.ff-notice-sample'); if(sample) { const art=createMaterialScene(sample,part.foundation.variant,1); cleanups.push(()=>art.destroy()); } }
    placeholder.querySelector('[data-notify]')!.addEventListener('click',()=>controller.notify?.({title:'表示を確認しました',description:'これは操作例です。保存・送信は行っていません。',tone:'success',actionLabel:'閉じる'}),{signal:events.signal});
   }
  }

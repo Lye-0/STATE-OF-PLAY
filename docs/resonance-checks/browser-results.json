@@ -1,0 +1,25 @@
+{
+  "mode": "explicit offline compiled fixture / real Chromium, NOT Vite",
+  "passed": 18,
+  "tests": [
+    "16 radio materials commit native checked state immediately; each scene deforms and settles",
+    "radio keyboard, name, form reset, readonly and controlled-declined values stay native",
+    "radio dynamic 2/4/7 items and repeated copies remain isolated without duplicate identifiers",
+    "16 editable combo materials open real options, track hover and commit without moving focus",
+    "combo filtering, empty/loading/error/group states, multiple chips and form payloads work",
+    "combo IME preedit Enter does not choose; rerender does not replace input or its caret",
+    "combo active background matches actual row bounds after scrolling, resize and quick reversals",
+    "controlled combobox can decline updates and disabled state does not open a menu",
+    "all 16 notices have actual live content and an actionable dismiss with material entrances",
+    "toast duration pauses on hover and focus, then resumes with one timer and one action",
+    "toast zero-duration, maximum stack and API pause/resume preserve real lifetime",
+    "all 16 hints distinguish a non-focusable tooltip from an interactive dialog",
+    "hint hover crossing and Escape preserve trigger focus; popover updates retain child state",
+    "overlays appear above the gallery dialog without moving or duplicating actual content",
+    "all 64 A parts fit 320/390/768 with long Japanese text and no page overflow",
+    "reduced motion settles immediately; forced colors retain native focus, selection and text",
+    "idle/teardown clear every presentation RAF, timer effect and top-layer panel",
+    "64 material layouts stay identical when every other component stylesheet is loaded"
+  ],
+  "errors": []
+}

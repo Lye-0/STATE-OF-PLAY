@@ -3,14 +3,14 @@
   "name": "Botanical Popover",
   "category": "hints",
   "order": 384,
-  "version": "4.1.0",
+  "version": "4.7.0",
   "tagline": "ゆっくり、芽吹く。",
-  "description": "トリガーだけでなく、開いたパネル、見出し、設定値、チェック項目、操作ボタンを同じ素材で設計。",
+  "description": "余白の葉脈がゆるやかに広がり、中央には文字のための静かな面を残す。トリガーの面から情報がほどけ、本文は静止したまま背景が反応します。",
   "material": "HERBARIUM · 08",
-  "motion": "RESPONSE",
+  "motion": "RESONANCE",
   "accent": "190,208,143",
   "designType": "A",
-  "runtime": "Native DOM + CSS",
+  "runtime": "Native DOM + SVG / event-driven",
   "componentName": "BotanicalPopover",
   "tags": [
     "ツールチップ／ポップオーバー",
@@ -20,7 +20,10 @@
     "A",
     "Atelier",
     "素材感",
-    "立体造形"
+    "立体造形",
+    "RESONANCE",
+    "操作に反応",
+    "動く面"
   ],
   "related": [],
   "props": [

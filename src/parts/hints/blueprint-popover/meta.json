@@ -3,14 +3,14 @@
   "name": "Blueprint Popover",
   "category": "hints",
   "order": 381,
-  "version": "4.1.0",
+  "version": "4.7.0",
   "tagline": "線と余白で、整える。",
-  "description": "トリガーだけでなく、開いたパネル、見出し、設定値、チェック項目、操作ボタンを同じ素材で設計。",
+  "description": "製図の枠が伸び、測定線が操作位置へ走る。トリガーの面から情報がほどけ、本文は静止したまま背景が反応します。",
   "material": "ENGINEERING · 05",
-  "motion": "RESPONSE",
+  "motion": "RESONANCE",
   "accent": "169,217,238",
   "designType": "A",
-  "runtime": "Native DOM + CSS",
+  "runtime": "Native DOM + SVG / event-driven",
   "componentName": "BlueprintPopover",
   "tags": [
     "ツールチップ／ポップオーバー",
@@ -20,7 +20,10 @@
     "A",
     "Atelier",
     "素材感",
-    "立体造形"
+    "立体造形",
+    "RESONANCE",
+    "操作に反応",
+    "動く面"
   ],
   "related": [],
   "props": [

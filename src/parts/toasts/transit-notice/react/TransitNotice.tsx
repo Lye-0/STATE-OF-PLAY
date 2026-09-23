@@ -1,7 +1,7 @@
 'use client';
 import React, {forwardRef} from 'react';
 import {FoundationWidget, type FoundationProps} from '../../../../shared/foundation/react';
-import {renderToast, mountToast} from '../../../../shared/foundation/feedback';
+import {renderToast, mountToast} from '../../../../shared/foundation/resonance/feedback';
 import type {FoundationConfig} from '../../../../shared/foundation/core';
 import '../styles.css';
 const config: FoundationConfig = {
@@ -13,7 +13,7 @@ const config: FoundationConfig = {
   "defaultValue": null
 };
 export type TransitNoticeProps = FoundationProps;
-/** Transit Notice: Aタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** RESONANCE: presentation stays below real, editable input and live content. */
 export default forwardRef<HTMLDivElement, TransitNoticeProps>(function TransitNotice(props, ref) {
-  return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderToast} mountContent={mountToast}/>;
+  return <FoundationWidget {...props} className={`sop-resonance ${props.className ?? ''}`} ref={ref} config={config} renderContent={renderToast} mountContent={mountToast}/>;
 });

@@ -3,14 +3,14 @@
   "name": "Relay Notice",
   "category": "toasts",
   "order": 367,
-  "version": "4.1.0",
+  "version": "4.7.0",
   "tagline": "確かな、手応え。",
-  "description": "通知本体を小さな素材のプレートとして設計。状態アイコン、タイトル、補足文、アクション、閉じる操作を整理。",
+  "description": "小さな金属板が順に傾き、選択や表示が機械的に接続される。通知の面が素材ごとに開き、閉じると静かに退きます。",
   "material": "TRANSMISSION · 15",
-  "motion": "REVEAL",
+  "motion": "RESONANCE",
   "accent": "180,216,144",
   "designType": "A",
-  "runtime": "Native DOM + CSS",
+  "runtime": "Native DOM + SVG / event-driven",
   "componentName": "RelayNotice",
   "tags": [
     "通知",
@@ -20,7 +20,10 @@
     "A",
     "Atelier",
     "素材感",
-    "立体造形"
+    "立体造形",
+    "RESONANCE",
+    "操作に反応",
+    "動く面"
   ],
   "related": [],
   "props": [

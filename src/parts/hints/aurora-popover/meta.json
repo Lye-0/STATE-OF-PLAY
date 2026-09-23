@@ -3,14 +3,14 @@
   "name": "Aurora Popover",
   "category": "hints",
   "order": 377,
-  "version": "4.1.0",
+  "version": "4.7.0",
   "tagline": "光の層を、指先に。",
-  "description": "トリガーだけでなく、開いたパネル、見出し、設定値、チェック項目、操作ボタンを同じ素材で設計。",
+  "description": "透明な膜が弓なりに開き、屈折する縁が操作に追従する。トリガーの面から情報がほどけ、本文は静止したまま背景が反応します。",
   "material": "REFRACTION · 01",
-  "motion": "RESPONSE",
+  "motion": "RESONANCE",
   "accent": "136,223,212",
   "designType": "A",
-  "runtime": "Native DOM + CSS",
+  "runtime": "Native DOM + SVG / event-driven",
   "componentName": "AuroraPopover",
   "tags": [
     "ツールチップ／ポップオーバー",
@@ -20,7 +20,10 @@
     "A",
     "Atelier",
     "素材感",
-    "立体造形"
+    "立体造形",
+    "RESONANCE",
+    "操作に反応",
+    "動く面"
   ],
   "related": [],
   "props": [

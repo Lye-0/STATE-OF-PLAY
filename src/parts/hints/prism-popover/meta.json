@@ -3,14 +3,14 @@
   "name": "Prism Popover",
   "category": "hints",
   "order": 382,
-  "version": "4.1.0",
+  "version": "4.7.0",
   "tagline": "境界に、色が生まれる。",
-  "description": "トリガーだけでなく、開いたパネル、見出し、設定値、チェック項目、操作ボタンを同じ素材で設計。",
+  "description": "周縁の結晶面が分離・再配置され、中央の情報を保ったまま分光する。トリガーの面から情報がほどけ、本文は静止したまま背景が反応します。",
   "material": "SPECTRUM · 06",
-  "motion": "RESPONSE",
+  "motion": "RESONANCE",
   "accent": "209,186,250",
   "designType": "A",
-  "runtime": "Native DOM + CSS",
+  "runtime": "Native DOM + SVG / event-driven",
   "componentName": "PrismPopover",
   "tags": [
     "ツールチップ／ポップオーバー",
@@ -20,7 +20,10 @@
     "A",
     "Atelier",
     "素材感",
-    "立体造形"
+    "立体造形",
+    "RESONANCE",
+    "操作に反応",
+    "動く面"
   ],
   "related": [],
   "props": [

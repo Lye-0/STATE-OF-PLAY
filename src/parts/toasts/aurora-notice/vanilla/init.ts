@@ -1,4 +1,4 @@
-import {mountToast} from '../../../../shared/foundation/feedback';
+import {mountToast} from '../../../../shared/foundation/resonance/feedback';
 import type {FoundationConfig, FoundationOptions} from '../../../../shared/foundation/core';
 const config: FoundationConfig = {
   "id": "aurora-notice",
