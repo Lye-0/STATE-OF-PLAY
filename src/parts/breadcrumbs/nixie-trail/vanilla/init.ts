@@ -1,4 +1,4 @@
-import {mountBreadcrumbs} from '../../../../shared/foundation/navigation';
+import {mountBreadcrumbs} from '../../../../shared/foundation/wayfinding/breadcrumbs';
 import type {FoundationConfig, FoundationOptions} from '../../../../shared/foundation/core';
 const config: FoundationConfig = {
   "id": "nixie-trail",

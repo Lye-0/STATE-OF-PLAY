@@ -64,7 +64,7 @@ try{
   for(const p of parts.filter(p=>p.category==='breadcrumbs')){await mount(p.id);const panel=page.locator('#host [data-crumb-menu]');assert.equal(await panel.isVisible(),false);const more=page.locator('#host [data-crumb-more]');if(await more.count()){await more.click();assert.equal(await panel.isVisible(),true);await update({label:'Changed'});assert.equal(await panel.isVisible(),false);}}
  });
  await run('Light material legends and detached captions keep their own opaque backing',async()=>{
-  for(const id of ['folio-choice','botanical-choice','ceramic-choice','folio-finder','botanical-calendar','ceramic-stepper']){await mount(id);const label=page.locator('#host .ff-heading,#host legend').first();const backed=await label.evaluate(el=>[el,...el.querySelectorAll('[data-ff-label]')].some(node=>{const value=getComputedStyle(node).backgroundColor;return value!=='rgba(0, 0, 0, 0)'&&value!=='transparent';}));assert.equal(backed,true,id);}
+  for(const id of ['folio-choice','botanical-choice','ceramic-choice','folio-finder','botanical-calendar']){await mount(id);const label=page.locator('#host .ff-heading,#host legend').first();const backed=await label.evaluate(el=>[el,...el.querySelectorAll('[data-ff-label]')].some(node=>{const value=getComputedStyle(node).backgroundColor;return value!=='rgba(0, 0, 0, 0)'&&value!=='transparent';}));assert.equal(backed,true,id);}
  });
  await run('Reduced motion disables decorative animations; forced colors retain native focus and selected states',async()=>{
   for(const p of target.filter(p=>['sliders','radios','progress'].includes(p.category))){await mount(p.id);assert.equal(await page.locator('#host').evaluate(root=>root.getAnimations({subtree:true}).some(a=>a.playState==='running')),false,p.id);}

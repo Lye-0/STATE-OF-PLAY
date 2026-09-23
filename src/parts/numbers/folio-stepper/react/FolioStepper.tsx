@@ -1,7 +1,7 @@
 'use client';
 import React, {forwardRef} from 'react';
 import {FoundationWidget, type FoundationProps} from '../../../../shared/foundation/react';
-import {renderNumber, mountNumber} from '../../../../shared/foundation/number';
+import {renderNumber, mountNumber} from '../../../../shared/foundation/wayfinding/number';
 import type {FoundationConfig} from '../../../../shared/foundation/core';
 import '../styles.css';
 const config: FoundationConfig = {

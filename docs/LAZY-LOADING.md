@@ -35,6 +35,8 @@ ChatGPT側は、このカテゴリ別読み込みへの変更を知らない状�
 
 v4.9.1のSEQUENCE差分では、26パーツの正本と共有描画処理、詳細プレビュー操作だけを追加し、このカテゴリ別読み込みを保持しました。統合時の実Vite検証は [SEQUENCE-INTEGRATION-VERIFICATION.md](SEQUENCE-INTEGRATION-VERIFICATION.md) に記録しています。
 
+v4.10.1のWAYFINDER差分ではパンくず10種類・数値入力13種類の正本と共有処理を追加し、このカテゴリ別読み込みとNixie／Orbital Loomの読み込み表示を保持しました。[統合検証](WAYFINDER-INTEGRATION-VERIFICATION.md)に確認結果を記録しています。
+
 ## 検証
 
 `tests/lazy-loading.browser.ts`は実Viteの開発・本番HTTPを使い、初期通信、カテゴリキャッシュ、Allの段階表示、検索、詳細の8形式/配置、プロンプト、直接リンク、履歴、読み込みキャンセル、エラー再試行、全25カテゴリのCSS読み込み順を確認します。

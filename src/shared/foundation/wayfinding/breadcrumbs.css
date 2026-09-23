@@ -1,0 +1,79 @@
+/* WAYFINDER: hierarchies are paths, not copies of numeric-control housings. */
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs]{--wf-ink:#d9e8e3;--wf-soft:#a7bbb6;--wf-line:#91c9be;max-width:none;container-type:inline-size;isolation:isolate;color:var(--wf-ink)}
+.sop-wayfinder[data-wf-kind=breadcrumbs]>.ff-heading{margin-bottom:22px}.sop-wayfinder[data-wf-kind=breadcrumbs]>.ff-heading>.ff-eyebrow{display:none}
+.sop-foundation.sop-wayfinder>.wf-trail{position:relative;isolation:isolate;min-width:0;min-height:94px;padding:20px 8px 33px;border:0;border-radius:0;background:none;box-shadow:none}
+.sop-foundation.sop-wayfinder>.wf-trail>ol{position:relative;z-index:1;display:flex;flex-wrap:wrap;align-items:center;gap:14px 7px;padding:0;margin:0;list-style:none}
+.sop-foundation.sop-wayfinder>.wf-trail>ol>li{position:relative;min-width:0;max-width:100%;display:flex;font-size:13px;line-height:1.55}
+.sop-foundation.sop-wayfinder>.wf-trail>ol>li:after{content:none}
+.sop-foundation.sop-wayfinder>.wf-trail>ol>li>:is(a,button,span){display:block;position:relative;min-width:0;max-width:100%;padding:10px 12px;color:var(--wf-soft);font:inherit;text-decoration:none;border:1px solid transparent;border-radius:0;background:transparent;overflow-wrap:anywhere;transition:color .2s,background .2s,box-shadow .2s}
+.sop-foundation.sop-wayfinder>.wf-trail>ol>li>[aria-current=page]{color:var(--wf-ink);border-bottom:2px solid currentColor}
+.sop-foundation.sop-wayfinder>.wf-trail>ol>li>a:hover{color:var(--wf-ink)}
+.sop-foundation.sop-wayfinder>.wf-trail>ol>li>:focus-visible{outline:2px solid var(--wf-line);outline-offset:4px}
+.sop-foundation.sop-wayfinder>.wf-trail>.wf-route{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:visible;color:var(--wf-line)}
+.sop-wayfinder>.wf-trail>.wf-route path{fill:none;stroke:currentColor;stroke-width:1.15;vector-effect:non-scaling-stroke}
+.sop-wayfinder>.wf-trail>.wf-route .wf-route-base{opacity:.23}.sop-wayfinder>.wf-trail>.wf-route .wf-route-active{stroke-dasharray:100;transition:stroke-dashoffset .42s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 0 4px currentColor)}
+.sop-wayfinder>.wf-trail>.wf-route circle{fill:var(--wf-ink);stroke:#15191b;stroke-width:2;transition:cx .42s cubic-bezier(.2,.8,.2,1),cy .42s cubic-bezier(.2,.8,.2,1)}
+.sop-foundation.sop-wayfinder>.wf-crumb-menu{padding:8px;background:#182328;color:#e1ebe7;border-color:#697c79;border-radius:8px;min-width:140px;max-height:min(360px,70dvh)}
+.sop-wayfinder>.wf-crumb-menu>a{display:block;padding:10px 14px;line-height:1.5;color:inherit;text-decoration:none;overflow-wrap:anywhere;border-radius:4px}.sop-wayfinder>.wf-crumb-menu>a:hover{background:#91c9be22}
+/* Suspended transparent waymarkers, with a flowing line below. */
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=aurora]>.wf-trail>ol>li:before{content:"";position:absolute;inset:0;border:1px solid #c5efe448;border-radius:23px 3px 23px 3px;background:linear-gradient(140deg,#b7eee43a,#a1bed414 70%);box-shadow:inset 0 1px 1px #dfffee55;transform:skewY(-7deg);transition:transform .45s,background .25s;pointer-events:none}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=aurora]>.wf-trail>ol>li:nth-child(even):before{transform:skewY(7deg)}.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=aurora]>.wf-trail>ol>li[data-wf-hover=true]:before{transform:skewY(0deg);background:linear-gradient(130deg,#b7eee455,#a1bed425)}
+/* A surveyor's steel track; navigation is deliberately not enclosed in keys. */
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=mercury]{--wf-ink:#e1e9e1;--wf-soft:#b2c1c2;--wf-line:#bac9bb}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=mercury]>.wf-trail{border-block:1px solid #58696855;background:repeating-linear-gradient(90deg,transparent 0 9px,#74847b16 9px 10px) bottom/100% 7px no-repeat;padding-block:23px 36px}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=mercury]>.wf-trail>ol>li{font-family:var(--ff-mono);font-size:11px;letter-spacing:.5px}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=mercury]>.wf-trail>ol>li:before{content:"";position:absolute;bottom:-9px;left:calc(50% - 4px);width:8px;height:8px;background:linear-gradient(90deg,#4d585b,#b9c4c0,#57696b);pointer-events:none}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=mercury]>.wf-trail>ol>li>[aria-current]{border-radius:3px;background:linear-gradient(#d5ded5,#9badae);color:#26383c;box-shadow:0 3px 0 #627777;border:1px solid #eeeee44f}
+/* Minimal phosphor navigation in a dark observation slit. */
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=nixie]{--wf-ink:#d7e69f;--wf-soft:#a2b395;--wf-line:#c5dca3}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=nixie]>.wf-trail{border:1px solid #5c694644;border-radius:2px;background:radial-gradient(ellipse at 50% 120%,#6c885018,transparent 80%),#0c1510;box-shadow:inset 0 2px 12px #0004}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=nixie]>.wf-trail>ol>li{font:11px var(--ff-mono);letter-spacing:.4px}.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=nixie]>.wf-trail>ol>li[data-wf-hover=true]:before{content:"";position:absolute;inset:6px 0;border-inline:1px solid #c5dca377;pointer-events:none}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=nixie]>.wf-trail>.wf-route .wf-route-base{stroke-dasharray:1 7}
+/* Index tabs: the route feels like paper rather than a row of push buttons. */
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=folio]{--wf-ink:#eadeb8;--wf-soft:#b2ad96;--wf-line:#aaa78d}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=folio]>.wf-trail{border-bottom:1px solid #c5b17e77}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=folio]>.wf-trail>ol{gap:7px;align-items:flex-end}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=folio]>.wf-trail>ol>li{font:italic 19px Georgia,serif;transform:translateY(calc(mod(var(--wf-index),2)*-4px))}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=folio]>.wf-trail>ol>li:before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,#c9b48e1c,#bda98c2f);clip-path:polygon(4% 0,90% 0,100% 22%,100% 100%,0 100%);border-bottom:1px solid #b3a07688;pointer-events:none}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=folio]>.wf-trail>ol>li:last-child:before{background:linear-gradient(130deg,#fff5d5,#cfbd91);box-shadow:inset 0 -3px #a78c5b}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=folio]>.wf-trail>ol>li>[aria-current]{color:#383b30;border:0}.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=folio]>.wf-trail>ol>li[data-wf-hover=true]:before{filter:brightness(1.2)}
+/* Orthogonal hierarchy. As content wraps, measured connectors follow actual items. */
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=blueprint]{--wf-ink:#c7eef3;--wf-soft:#a4bec1;--wf-line:#9ddfe5}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=blueprint]>.wf-trail{border-inline:1px solid #73b4bf5e;background:linear-gradient(#bceaff06 1px,transparent 1px),linear-gradient(90deg,#bceaff06 1px,transparent 1px);background-size:16px 16px;padding:20px 6px 36px}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=blueprint]>.wf-trail>ol{gap:0;align-items:flex-start}.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=blueprint]>.wf-trail>ol>li{margin-top:calc(var(--wf-index)*8px);font:11px var(--ff-mono)}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=blueprint]>.wf-trail>ol>li>:is(a,button,span){border-block:1px solid #92cdd12e;padding:10px 8px}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=blueprint]>.wf-trail>ol>li>[aria-current]{border:1px solid #7ca4aa;background:#15424f33;box-shadow:4px 4px 0 -1px #151c22,4px 4px 0 #7ca4aa55}
+/* Facets carry text without transforming the text plane. */
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=prism]{--wf-ink:#e7dfff;--wf-soft:#bbc1d7;--wf-line:#d2c5ed}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=prism]>.wf-trail>ol{gap:13px}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=prism]>.wf-trail>ol>li:before{content:"";position:absolute;inset:-1px -5px;background:conic-gradient(from 30deg,#baccdd26,#cec3e740,#52617b55,#dbdef617,#baccdd26);clip-path:polygon(0 10%,86% 0,100% 90%,15% 100%);transform:rotate(-5deg);transition:transform .45s;pointer-events:none}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=prism]>.wf-trail>ol>li:nth-child(even):before{transform:rotate(10deg)}.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=prism]>.wf-trail>ol>li[data-wf-hover=true]:before{transform:rotate(0deg);filter:brightness(1.4)}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=prism]>.wf-trail>ol>li>[aria-current]{border:0;border-inline-end:2px solid #d7efe9}
+/* Etched copper routing matrix. */
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=copper]{--wf-ink:#f0cea1;--wf-soft:#b7a588;--wf-line:#dbad70}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=copper]>.wf-trail{border-inline-start:3px solid #8e753a5c;background:radial-gradient(#c9a76d22 .7px,transparent .8px);background-size:8px 8px;padding:17px 9px 31px}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=copper]>.wf-trail>ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=copper]>.wf-trail>ol>li{font:11px var(--ff-mono);display:block;text-align:center;border-block:1px solid #a0803f4d}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=copper]>.wf-trail>ol>li>[aria-current]{border:1px solid #b38b4555;border-bottom:2px solid #dfb16e;background:#4f382014}
+/* A botanical branch: a genuinely vertical reading path. */
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=botanical]{--wf-ink:#c5d5aa;--wf-soft:#a8b494;--wf-line:#acbe8b}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=botanical]>.wf-trail{padding:0 4px 14px 24px}.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=botanical]>.wf-trail>ol{display:flex;flex-direction:column;align-items:flex-start;gap:0}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=botanical]>.wf-trail>ol>li{margin-inline-start:calc(var(--wf-index)*15px);font:italic 20px Georgia,serif}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=botanical]>.wf-trail>ol>li:before{content:"";position:absolute;left:-13px;bottom:9px;width:23px;height:12px;border-radius:90% 0;background:linear-gradient(30deg,#3c534125,#b1c89740);transform:rotate(-25deg);transition:transform .3s;pointer-events:none}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=botanical]>.wf-trail>ol>li[data-wf-hover=true]:before{transform:rotate(-45deg)}.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=botanical]>.wf-trail>ol>li>[aria-current]{border:0}
+/* Threadwork, not a purple metal housing. */
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=velvet]{--wf-ink:#e5cedc;--wf-soft:#b7a1b4;--wf-line:#cbb0c9}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=velvet]>.wf-trail>ol{gap:8px}.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=velvet]>.wf-trail>ol>li{font:17px Georgia,serif}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=velvet]>.wf-trail>ol>li>:is(a,span,button){border-radius:50%;padding:11px 15px}.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=velvet]>.wf-trail>ol>li[data-wf-hover=true]>a{border:1px dashed #ba99b366}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=velvet]>.wf-trail>ol>li>[aria-current]{border:1px solid #ba99b36b;box-shadow:0 0 0 4px #b791b00c,inset 0 0 0 4px #171a1c}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=velvet]>.wf-trail>.wf-route path{stroke-dasharray:1.5 3}
+/* Monolithic title panels. Ancestors and the current place form an editorial grid. */
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=obsidian]{--wf-ink:#efece1;--wf-soft:#aab9bd;--wf-line:#cad8d8}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=obsidian]>.wf-trail>ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 16px}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=obsidian]>.wf-trail>ol>li{font:22px Arial,sans-serif;display:block;text-align:center;padding:5px}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=obsidian]>.wf-trail>ol>li:before{content:"";position:absolute;inset:0;background:linear-gradient(140deg,#34444e,#0a151b 90%);border-top:1px solid #69808842;transform:skewY(-3deg);transition:transform .35s;pointer-events:none}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=obsidian]>.wf-trail>ol>li[data-wf-hover=true]:before{transform:skewY(0deg);filter:brightness(1.2)}
+.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=obsidian]>.wf-trail>ol>li>[aria-current]{border:0;border-bottom:2px solid currentColor}
+@container(max-width:300px){.sop-wayfinder>.wf-trail>ol>li{font-size:11px!important}.sop-wayfinder>.wf-trail>ol>li>:is(a,button,span){padding:9px 7px!important}.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=blueprint]>.wf-trail>ol{gap:7px}.sop-foundation.sop-wayfinder[data-wf-kind=breadcrumbs][data-wf-material=blueprint]>.wf-trail>ol>li{margin-top:0}}
+@media(prefers-reduced-motion:reduce){.sop-wayfinder>.wf-trail *,.sop-wayfinder>.wf-trail *:before{transition:none!important;animation:none!important}}
+@media(forced-colors:active){.sop-wayfinder>.wf-trail>.wf-route,.sop-wayfinder>.wf-trail>ol>li:before{display:none}.sop-wayfinder>.wf-trail>ol>li>:is(a,button,span){background:Canvas!important;color:CanvasText!important;box-shadow:none!important}.sop-wayfinder>.wf-trail>ol>li>[aria-current]{border:2px solid Highlight!important}}

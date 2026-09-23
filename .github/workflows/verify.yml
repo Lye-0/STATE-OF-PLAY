@@ -96,6 +96,10 @@ jobs:
         run: npm run test:sequence
       - name: Sequence gallery, inspector and exports
         run: npm run test:sequence:gallery
+      - name: Wayfinder breadcrumbs and numeric controls
+        run: npm run test:wayfinder
+      - name: Wayfinder gallery, sources and prompts
+        run: npm run test:wayfinder:gallery
       - name: Build full source archive
         run: npm run package
       - name: Save reports on failure

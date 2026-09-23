@@ -1,8 +1,5 @@
-/* Ceramic Stepper — Type A / Atelier edition.
-   白い釉薬、厚い丸縁、凹んだ読み取り面、穏やかな青緑。高光沢の凸部と柔らかい陰影。
-   左右の調整キーと数値の読み取り面を別の材質・陰影で造形。入力値やIMEの動作は装飾のために置換しません。 */
+/* Ceramic Stepper — WAYFINDER / 4.10.0 rebuilt.
+   Public CSS entry: native content stays legible; decorative structure is isolated. */
 @import "../../../shared/foundation/base.css";
-@import "../../../shared/foundation/atelier.css";
-@import "../../../shared/foundation/materials/ceramic.css";
-/* Component identity remains scoped for independent embedding and source mapping. */
-.sop-foundation.sop-ceramic-stepper { --ad-edition: 1; }
+@import "../../../shared/foundation/wayfinding/number.css";
+.sop-foundation.sop-ceramic-stepper { --wf-edition: 1; }

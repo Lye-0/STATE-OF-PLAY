@@ -1,7 +1,7 @@
 'use client';
 import React, {forwardRef} from 'react';
 import {FoundationWidget, type FoundationProps} from '../../../../shared/foundation/react';
-import {renderBreadcrumbs, mountBreadcrumbs} from '../../../../shared/foundation/navigation';
+import {renderBreadcrumbs, mountBreadcrumbs} from '../../../../shared/foundation/wayfinding/breadcrumbs';
 import type {FoundationConfig} from '../../../../shared/foundation/core';
 import '../styles.css';
 const config: FoundationConfig = {

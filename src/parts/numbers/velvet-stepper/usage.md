@@ -9,4 +9,10 @@ Reactは同梱のVelvetStepperを読み込み、value（外部制御）または
 
 ## 運用
 
-入力・選択はローカルの状態です。通信・永続化・処理中表示を実際のアプリに接続してください。デモの日付・ラベル・候補・ページ数は利用先で差し替えてください。React版は外側のdivをReactが、内側の要素をcontrollerが管理する分離構成です。内側へReactのchildrenを挿入せず、公開props/APIから更新します。
+値はネイティブ入力欄で直接編集できます。編集中の文字を保持し、確定した値はmin／max／stepに従って扱います。データ取得・保存や送信は利用先で接続してください。React版は外側のdivをReactが、内側の要素をcontrollerが管理します。内側へReactのchildrenを挿入せず、公開props/APIから更新してください。
+
+## WAYFINDER 4.10.0
+同梱の `wayfinding/number.ts` と `number.css` を必ず一緒に配置します。
+`items` のラベル・URL、または `min` / `max` / `step` / `unit` を利用先のデータに置き換えてください。
+`onDataChange` は通常DOM版、`onValueChange` はReact版の変更通知です。同名素材を別カテゴリと併用する場合も、`data-wf-kind` によるCSS境界を保ってください。使い終わったら `destroy()` を呼び出します。
+前回の未添付ソースは保存されていなかったため、この版はv4.9.0と残っている画像を基に再構築したものです。

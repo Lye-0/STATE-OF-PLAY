@@ -1,0 +1,110 @@
+TAP version 13
+# (node:2192) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Atelier redesign covers all 171 new expressive parts except the existing loaders
+ok 1 - Atelier redesign covers all 171 new expressive parts except the existing loaders
+  ---
+  duration_ms: 1.318946
+  type: 'test'
+  ...
+# Subtest: every redesigned skin includes exactly its matching material and the shared construction stylesheet
+ok 2 - every redesigned skin includes exactly its matching material and the shared construction stylesheet
+  ---
+  duration_ms: 74.639302
+  type: 'test'
+  ...
+# Subtest: B skins and loaders do not depend on the expressive construction or material sheets
+ok 3 - B skins and loaders do not depend on the expressive construction or material sheets
+  ---
+  duration_ms: 12.98766
+  type: 'test'
+  ...
+# Subtest: comma-separated selectors cannot escape their own foundation instance
+ok 4 - comma-separated selectors cannot escape their own foundation instance
+  ---
+  duration_ms: 8.223775
+  type: 'test'
+  ...
+# Subtest: all material families specify shape, light, relief and motion reduction, not only colors
+ok 5 - all material families specify shape, light, relief and motion reduction, not only colors
+  ---
+  duration_ms: 1.278806
+  type: 'test'
+  ...
+# Subtest: artwork is decorative; the native implementations and their type-specific controllers remain the source of behavior
+ok 6 - artwork is decorative; the native implementations and their type-specific controllers remain the source of behavior
+  ---
+  duration_ms: 3.202413
+  type: 'test'
+  ...
+# Subtest: light-theme detached labels have their own material backing
+ok 7 - light-theme detached labels have their own material backing
+  ---
+  duration_ms: 0.320082
+  type: 'test'
+  ...
+# Subtest: updated reproduction specifications explicitly include the new art-direction dependencies
+ok 8 - updated reproduction specifications explicitly include the new art-direction dependencies
+  ---
+  duration_ms: 3.122222
+  type: 'test'
+  ...
+# (node:2193) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: WAYFINDER targets exactly ten A breadcrumbs and thirteen A number inputs
+ok 9 - WAYFINDER targets exactly ten A breadcrumbs and thirteen A number inputs
+  ---
+  duration_ms: 1.031954
+  type: 'test'
+  ...
+# Subtest: rendered titles and units are escaped rather than treated as markup
+ok 10 - rendered titles and units are escaped rather than treated as markup
+  ---
+  duration_ms: 0.628837
+  type: 'test'
+  ...
+# Subtest: native number editing and separate adjust controls remain present
+ok 11 - native number editing and separate adjust controls remain present
+  ---
+  duration_ms: 0.176807
+  type: 'test'
+  ...
+# Subtest: breadcrumb visual trace is separate from the ordered list and hidden from accessibility
+ok 12 - breadcrumb visual trace is separate from the ordered list and hidden from accessibility
+  ---
+  duration_ms: 0.121113
+  type: 'test'
+  ...
+# Subtest: all React and Vanilla entries export their actual controller and local style dependencies
+ok 13 - all React and Vanilla entries export their actual controller and local style dependencies
+  ---
+  duration_ms: 99.464976
+  type: 'test'
+  ...
+# Subtest: motion has lifecycle cleanup, native links, no polling, and no hidden input duplication
+ok 14 - motion has lifecycle cleanup, native links, no polling, and no hidden input duplication
+  ---
+  duration_ms: 0.350438
+  type: 'test'
+  ...
+# Subtest: distinct layouts include vertical hierarchy and stacked numeric keys with reduced-motion fallbacks
+ok 15 - distinct layouts include vertical hierarchy and stacked numeric keys with reduced-motion fallbacks
+  ---
+  duration_ms: 0.336707
+  type: 'test'
+  ...
+# Subtest: copy and integration docs refer to the new source, not the old shared material skin
+ok 16 - copy and integration docs refer to the new source, not the old shared material skin
+  ---
+  duration_ms: 0.829539
+  type: 'test'
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 631.02512

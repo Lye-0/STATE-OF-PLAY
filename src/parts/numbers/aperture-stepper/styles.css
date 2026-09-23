@@ -1,8 +1,5 @@
-/* Aperture Stepper — Type A / Atelier edition.
-   レンズ鏡筒、円周の目盛り、絞り羽根、機械加工の黒い胴体。選択部に光学的な造形。
-   左右の調整キーと数値の読み取り面を別の材質・陰影で造形。入力値やIMEの動作は装飾のために置換しません。 */
+/* Aperture Stepper — WAYFINDER / 4.10.0 rebuilt.
+   Public CSS entry: native content stays legible; decorative structure is isolated. */
 @import "../../../shared/foundation/base.css";
-@import "../../../shared/foundation/atelier.css";
-@import "../../../shared/foundation/materials/aperture.css";
-/* Component identity remains scoped for independent embedding and source mapping. */
-.sop-foundation.sop-aperture-stepper { --ad-edition: 1; }
+@import "../../../shared/foundation/wayfinding/number.css";
+.sop-foundation.sop-aperture-stepper { --wf-edition: 1; }

@@ -1,4 +1,4 @@
-import {mountNumber} from '../../../../shared/foundation/number';
+import {mountNumber} from '../../../../shared/foundation/wayfinding/number';
 import type {FoundationConfig, FoundationOptions} from '../../../../shared/foundation/core';
 const config: FoundationConfig = {
   "id": "nixie-stepper",

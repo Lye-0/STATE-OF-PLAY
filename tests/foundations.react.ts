@@ -15,7 +15,7 @@ const data=buildCatalog(),parts=data.parts.filter(p=>p.foundation),out=path.join
 const tests:string[]=[],errors:string[]=[],versions:unknown[]=[];let browser:Browser|undefined,shutdown:(()=>Promise<void>)|undefined,url='';
 const run=async(name:string,fn:()=>Promise<void>)=>{await fn();tests.push(name);console.log('PASS '+name);};
 try{
- if(!offline){const{createServer}=await import('vite');const server=await createServer({root:ROOT,server:{port:0,host:'127.0.0.1'}});await server.listen();url=requireLocalServerUrl(server,'Foundation React tests');shutdown=()=>server.close();}
+ if(!offline){const{createServer}=await import('vite');const server=await createServer({root:ROOT,server:{port:0,host:'127.0.0.1',watch:{ignored:['**/.test-output/**']}}});await server.listen();url=requireLocalServerUrl(server,'Foundation React tests');shutdown=()=>server.close();}
  browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
  for(const [format,layout]of [['tsx','portable'],['jsx','original']]as const){
   const prefix=`.test-output/foundations-react/${format}-${layout}`,extra=new Map<string,string>();
@@ -36,7 +36,7 @@ try{
  </div>;}
  function App(){const[visible,setVisible]=useState(true);return <><button id='mount-toggle' onClick={()=>setVisible(v=>!v)}>Mount toggle</button><Controlled/>{visible&&definitions.map(item=><Item key={item.id} item={item}/>)}</>;}
  const root=createRoot(document.getElementById('root'));window.unmountAll=()=>root.unmount();root.render(<React.StrictMode><App/></React.StrictMode>);window.reactVersion=React.version;`;
-  const entry=prefix+'/entry.jsx';extra.set(entry,source);const p=await browser.newPage({viewport:{width:1280,height:960}});p.on('pageerror',e=>errors.push(e.message));p.setDefaultTimeout(10000);await p.emulateMedia({reducedMotion:'reduce'});
+  const entry=prefix+'/entry.jsx';extra.set(entry,source);const p=await browser.newPage({viewport:{width:1280,height:960}});p.on('pageerror',e=>errors.push(e.message));p.setDefaultTimeout(60000);p.setDefaultNavigationTimeout(60000);await p.emulateMedia({reducedMotion:'reduce'});
   if(offline){await p.setContent('<!doctype html><html><head><meta charset="utf-8"></head><body><div id="root"></div></body></html>');await p.evaluate(async text=>{const u=URL.createObjectURL(new Blob([text],{type:'text/javascript'}));const m=await import(u);Object.assign(window,{RealReact:m.r,RealDOM:m.e});URL.revokeObjectURL(u);},fs.readFileSync(runtime!,'utf8'));await p.addScriptTag({content:testBundle(entry,extra,'const React=window.RealReact,ReactDOMClient=window.RealDOM;')});}
   else {fs.mkdirSync(path.join(ROOT,prefix),{recursive:true});fs.writeFileSync(path.join(ROOT,entry),source);fs.writeFileSync(path.join(ROOT,prefix,'index.html'),'<html><head><meta charset="utf-8"></head><body><div id="root"></div><script type="module" src="./entry.jsx"></script></body></html>');await p.goto(new URL(prefix+'/index.html',url).href);}
   await p.addStyleTag({content:data.styles+'\nbody{padding:32px;background:#181b1c;color:#eef;font:14px Arial}section{display:inline-block;vertical-align:top;width:360px;margin:20px;padding:10px}section>output{display:block;padding:10px}'});

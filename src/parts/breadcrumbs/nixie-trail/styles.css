@@ -1,8 +1,5 @@
-/* Nixie Trail — Type A / Atelier edition.
-   真空管の暗い内面、縦に並ぶ電極、真鍮のフレーム、琥珀色の発光と物理的なキー。
-   階層、区切り、現在地のプレートを個別に設計。長い階層と折り畳みメニューでも参照先は変えません。 */
+/* Nixie Trail — WAYFINDER / 4.10.0 rebuilt.
+   Public CSS entry: native content stays legible; decorative structure is isolated. */
 @import "../../../shared/foundation/base.css";
-@import "../../../shared/foundation/atelier.css";
-@import "../../../shared/foundation/materials/nixie.css";
-/* Component identity remains scoped for independent embedding and source mapping. */
-.sop-foundation.sop-nixie-trail { --ad-edition: 1; }
+@import "../../../shared/foundation/wayfinding/breadcrumbs.css";
+.sop-foundation.sop-nixie-trail { --wf-edition: 1; }

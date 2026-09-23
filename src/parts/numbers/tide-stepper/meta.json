@@ -3,11 +3,11 @@
   "name": "Tide Stepper",
   "category": "numbers",
   "order": 556,
-  "version": "4.1.0",
+  "version": "4.10.0",
   "tagline": "水面のように、流れる。",
-  "description": "左右の調整キーと数値の読み取り面を別の材質・陰影で造形。入力値やIMEの動作は装飾のために置換しません。",
+  "description": "直接編集できる数値と、素材ごとに異なる調整機構。表示値は即時、目盛りと光は操作に応じて反応します。",
   "material": "PELAGIC · 12",
-  "motion": "RESPONSE",
+  "motion": "CALIBRATE",
   "accent": "137,210,238",
   "designType": "A",
   "runtime": "Native DOM + CSS",
@@ -20,7 +20,8 @@
     "A",
     "Atelier",
     "素材感",
-    "立体造形"
+    "立体造形",
+    "WAYFINDER"
   ],
   "related": [],
   "props": [
