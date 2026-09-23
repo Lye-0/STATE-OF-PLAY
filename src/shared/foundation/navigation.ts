@@ -15,7 +15,7 @@ export function renderBreadcrumbs(o:FoundationOptions):string{return heading(o)+
 export function mountBreadcrumbs(root:HTMLElement,config:FoundationConfig,options:FoundationOptions={}):FoundationController {
  const c=createCore(root,config,options);if(!root.querySelector('[data-breadcrumbs]'))root.innerHTML=renderBreadcrumbs(c.options);const list=q(root,'[data-breadcrumbs]'),panel=q<HTMLElement>(root,'[data-crumb-menu]');panel.id=uniqueId('sop-trail');let overlay:ReturnType<typeof makeOverlay>|undefined;
  function link(index:number){const item=(c.options.items??[])[index],last=index===(c.options.items?.length??0)-1;return last?`<span aria-current="page">${escape(item.label)}</span>`:`<a ${item.disabled||c.options.disabled?'aria-disabled="true" tabindex="-1"':`href="${escape(item.href??'#')}"`}>${escape(item.label)}</a>`;}
- c.sync=()=>{syncHeading(c);overlay?.destroy();overlay=undefined;const items=c.options.items??[],collapse=items.length>4;
+ c.sync=()=>{syncHeading(c);overlay?.destroy();overlay=undefined;panel.hidden=true;const items=c.options.items??[],collapse=items.length>4;
   list.innerHTML=items.map((_,i)=>collapse&&i>0&&i<items.length-2?i===1?`<li><button class="ff-crumb-more" type="button" data-crumb-more aria-controls="${panel.id}" aria-label="途中の階層を表示" aria-expanded="false">…</button></li>`:'':`<li>${i===0?svg('home'):''}${link(i)}</li>`).join('');
   panel.innerHTML=collapse?items.slice(1,-2).map((_,i)=>link(i+1)).join(''):'';
  };

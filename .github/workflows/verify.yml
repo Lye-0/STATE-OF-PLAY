@@ -60,6 +60,8 @@ jobs:
         run: npm run test:foundations
       - name: Foundation React components (controlled values and cleanup)
         run: npm run test:foundations:react
+      - name: Atelier material isolation and visual-control regressions
+        run: npm run test:atelier
       - name: Build full source archive
         run: npm run package
       - name: Save reports on failure

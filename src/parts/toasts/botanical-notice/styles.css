@@ -1,6 +1,8 @@
+/* Botanical Notice — Type A / Atelier edition.
+   淡い標本紙、植物の細密な線、葉の形の操作部、自然な緑とイタリック体。
+   通知本体を小さな素材のプレートとして設計。状態アイコン、タイトル、補足文、アクション、閉じる操作を整理。 */
 @import "../../../shared/foundation/base.css";
-.sop-foundation.sop-botanical-notice{--ff-accent:#bed08f;--ff-accent2:#7ea78d;--ff-base:#17281f;--ff-panel:#24362b;--ff-line:color-mix(in srgb,#bed08f 30%,#17281f);--ff-ink:#eeeede;--ff-muted:#91a586;--ff-radius:13px;}
-.sop-foundation.sop-botanical-notice .ff-choice-icon{border-radius:50% 8% 50% 8%;}
-.sop-foundation.sop-botanical-notice .ff-choice,.ff-notice,.ff-dropzone{border-radius:5px 22px 5px 22px;}
-.sop-foundation.sop-botanical-notice .ff-fill{background:linear-gradient(90deg,#789851,#cadd96,#8dc19e);}
-.sop-foundation.sop-botanical-notice .ff-tag{border-radius:4px 19px 4px 19px;}
+@import "../../../shared/foundation/atelier.css";
+@import "../../../shared/foundation/materials/botanical.css";
+/* Component identity remains scoped for independent embedding and source mapping. */
+.sop-foundation.sop-botanical-notice { --ad-edition: 1; }

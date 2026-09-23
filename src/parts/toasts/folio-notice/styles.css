@@ -1,7 +1,8 @@
+/* Folio Notice — Type A / Atelier edition.
+   ページの厚み、綴じ、罫線、折り返した紙端。暖かな明るい紙とセリフ体を使用。
+   通知本体を小さな素材のプレートとして設計。状態アイコン、タイトル、補足文、アクション、閉じる操作を整理。 */
 @import "../../../shared/foundation/base.css";
-.sop-foundation.sop-folio-notice{--ff-accent:#66634c;--ff-accent2:#b1a98b;--ff-base:#e4ddc8;--ff-panel:#e8e2d2;--ff-line:color-mix(in srgb,#66634c 30%,#e4ddc8);--ff-ink:#353b35;--ff-muted:#8c8871;--ff-radius:5px;color-scheme:light;}
-.sop-foundation.sop-folio-notice{padding:22px;background:#e8e2d2;border:1px solid color-mix(in srgb,#66634c 30%,transparent);border-radius:7px;box-shadow:0 16px 32px #0003,inset 0 1px 0 #ffffff18;}
-.sop-foundation.sop-folio-notice .ff-choice-copy strong,.ff-heading,.ff-choice-set legend{font-family:Georgia,"Yu Mincho",serif;}
-.sop-foundation.sop-folio-notice .ff-choice,.ff-dropzone,.ff-calendar{border-radius:2px;background:repeating-linear-gradient(0deg,transparent 0 24px,#8e80500b 24px 25px),var(--ff-panel);box-shadow:3px 4px 0 #72654416,0 10px 13px #5345270d;}
-.sop-foundation.sop-folio-notice .ff-choice{border-left-width:4px;}
-.sop-foundation.sop-folio-notice .ff-dropzone{outline:1px dashed #7d704822;outline-offset:-7px;}
+@import "../../../shared/foundation/atelier.css";
+@import "../../../shared/foundation/materials/folio.css";
+/* Component identity remains scoped for independent embedding and source mapping. */
+.sop-foundation.sop-folio-notice { --ad-edition: 1; }

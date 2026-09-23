@@ -1,0 +1,70 @@
+/* BOTANICAL — material construction shared only by Type A botanical foundation parts. */
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) {
+  --ff-accent: #63753e;
+  --ff-accent2: #91a469;
+  --ff-base: #e1e5d0;
+  --ff-panel: #f0f2e3;
+  --ff-ink: #33472c;
+  --ff-muted: #728265;
+  --ff-line: #a5b594;
+  --ff-radius: 17px;
+  --ad-radius: 17px 3px 17px 3px;
+  --ad-key-radius: 10px 2px 10px 2px;
+  --ad-font: Georgia,"Yu Mincho",serif;
+  --ad-spec: "HERBARIUM / 08";
+  --ad-face: radial-gradient(ellipse at 95% 100%,#bfcba957,transparent 60%),linear-gradient(125deg,#f5f6e9,#e5ebd7);
+  --ad-selected: linear-gradient(115deg,#d3ddbd,#e9edda 75%);
+  --ad-edge: #a5b594;
+  --ad-relief: inset 0 1px 0 #ffffffe0,0 3px 0 #bbc6a75e,0 14px 24px #0003;
+  --ad-knob: radial-gradient(ellipse at 30% 20%,#f9fff1,transparent 50%),linear-gradient(125deg,#cbd8b0,#9db487 55%,#dbe4c6);
+  --ad-knob-ink: #35492e;
+  --ad-motif: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20180%22%20fill%3D%22none%22%3E%3Cg%20stroke%3D%22%23667b48%22%20stroke-width%3D%221.2%22%3E%3Cpath%20d%3D%22M115%20183Q149%2099%20122%2010%22%2F%3E%3Cpath%20d%3D%22M124%2047Q82%2034%20102%201q28%2010%2022%2046Zm8%2031Q177%2068%20168%2027q-32%208-36%2051Zm1%2016Q93%2091%2084%2059q35-6%2049%2035Zm-2%2036Q169%20126%20177%2091q-33-2-46%2039Zm-8%2023Q90%20157%2078%20124q29-10%2045%2029Z%22%20fill%3D%22%23667b480e%22%2F%3E%3Cpath%20d%3D%22M128%2072q-15-10-28-24m33%2073q21-15%2035-37m-41%2062q-27-9-38-23%22%20opacity%3D%22.6%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  color-scheme: light;
+}
+
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-heading{font:12px Georgia,"Yu Mincho",serif}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-heading::before{width:28px;background:#8a986d;height:1px;box-shadow:none}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-reading{font-style:italic;color:#526d3b}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-rail{height:10px;top:29px;border:1px solid #8f9f7280;background:linear-gradient(#cad5b9,#ebefde);box-shadow:inset 0 2px 3px #80935b4a;border-radius:10px}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-fill{background:linear-gradient(#728a4b,#9db376);box-shadow:inset 0 1px #d8e9b8}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-ticks{background:repeating-linear-gradient(115deg,transparent 0 10px,#4c693d77 11px 12px,transparent 13px 24px);opacity:.4}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) [data-range]::-webkit-slider-thumb{border-radius:50% 2px 50% 50%;background:linear-gradient(135deg,transparent 48%,#7a935582 49% 51%,transparent 52%),radial-gradient(ellipse at 30% 15%,#edf5c8,#9caf6f 85%);border-color:#7a8b5cb8;box-shadow:inset 1px 2px 3px #f9ffe0c9,0 5px 7px #27441b47;transform:rotate(45deg)}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) [data-range]::-moz-range-thumb{border-radius:50% 2px 50% 50%;background:var(--ad-knob);transform:rotate(45deg)}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-choice{padding-right:18px;border-radius:15px 2px 15px 2px;background:var(--ad-face)}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-choice-copy strong{font-size:20px;font-style:italic}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-choice-icon{border-radius:50% 2px 50% 50%;color:#476332}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-choice[data-selected=true]{box-shadow:inset 3px 0 0 #849563,inset 0 1px 0 #fff9,0 10px 18px #273e191a;border-color:#829465}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-choice-check{border-radius:50%;box-shadow:inset 0 2px 3px #8799673b}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-notice-icon{border-radius:50% 2px 50% 50%}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-notice strong{font-family:Georgia,"Yu Mincho",serif;font-size:15px;font-style:italic}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-progress-track{height:12px;border-radius:20px;background:#d4dec2;box-shadow:inset 0 1px 2px #6d844445}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-progress-fill{background:linear-gradient(#a7b77e,#6e884b);box-shadow:inset 0 1px #deebcbb3}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-progress-visual{padding:26px;min-height:173px;background:var(--ad-face)}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-progress-visual::before{background-position:right -30px center;opacity:.6}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-calendar-header strong{font:italic 27px Georgia,serif;color:#536d3d}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-calendar-grid button{font-family:Georgia,serif;font-size:13px;border-radius:50%}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-calendar-grid button[data-selected=true]{background:linear-gradient(145deg,#8e9f6b,#647e44);color:#f3f6e1;border:0;border-radius:50% 2px 50% 50%;box-shadow:0 3px 4px #74894440}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-dropzone strong{font-style:italic;color:#516a35}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-dropzone::after{inset:8px;border:1px solid #98ab7d55;border-radius:inherit}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-upload-symbol{border-radius:50% 3px 50% 50%;background:#dce6c7;box-shadow:inset 1px 1px 2px #fff,0 3px 4px #80945b4d}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-pages{background:var(--ad-face)}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-pages :is(button,a){border-radius:50% 2px 50% 50%;font-family:Georgia,serif;font-size:12px}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-pages [aria-current=page]{background:linear-gradient(135deg,#8b9f68,#547238);color:#faf5dc;border-color:#7f8f5d;box-shadow:inset 0 1px 0 #bbc794,0 4px 8px #3d512347}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-breadcrumb [aria-current=page]{border-radius:12px 2px 12px 2px;background:#d7e0c3;color:#4e6839}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-tag{border-radius:15px 2px 15px 2px;box-shadow:inset 0 1px 0 #fff,0 3px 0 #abb8974a,0 7px 11px #0002}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-tag label>span,.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-tag>span{font-family:Georgia,"Yu Mincho",serif;font-size:13px}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-tag[data-selected=true]{background:linear-gradient(135deg,#a1b280,#68864f);color:#f7f7e6;border-color:#829465}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-number-face{background:linear-gradient(#dee5cf,#f2f4e5);box-shadow:inset 0 2px 3px #82976240}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) [data-number]{font-style:italic}
+
+@media(prefers-reduced-motion:reduce){.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) *,.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) *::before,.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) *::after{transition:none!important;animation:none!important}}
+
+/* Light material labels stay legible on both light and dark host pages. */
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]):not([data-foundation="sliders"]) > .ff-heading {padding:9px 12px;margin-bottom:13px;min-height:36px;border:1px solid var(--ad-edge);border-radius:var(--ad-key-radius);background:var(--ad-face);background-color:var(--ff-panel);color:var(--ff-ink);box-shadow:inset 0 1px 0 #fff9}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]):not([data-foundation="sliders"]) > .ff-heading::before {display:none}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) > :is(.ff-description,.ff-footnote) {padding:8px 12px;border-radius:var(--ad-key-radius);background:var(--ff-panel);color:var(--ff-ink)}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) > .ff-description:empty {display:none}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-process-steps {padding:7px 10px;border:1px solid var(--ad-edge);border-radius:var(--ad-key-radius);background:var(--ad-face)}
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-page-info {padding:10px 13px;border:1px solid var(--ad-edge);border-radius:var(--ad-key-radius);background:var(--ad-face);background-color:var(--ff-panel);color:var(--ff-muted)}
+
+.sop-foundation[data-variant="botanical"]:not([data-foundation="loaders"]) .ff-choice-set>legend{padding:9px 12px;background:var(--ad-face);background-color:var(--ff-panel);border:1px solid var(--ad-edge);border-radius:var(--ad-key-radius);color:var(--ff-ink);box-shadow:inset 0 1px 0 #fff8}

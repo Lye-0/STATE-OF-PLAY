@@ -1,5 +1,8 @@
+/* Transit Tags — Type A / Atelier edition.
+   切符の罫線、ミシン目、分割表示器のキー、紙の札。黄色と暗い青灰色の明確なコントラスト。
+   タグを素材の小さなラベルとして造形。テキスト、件数、選択状態、削除ボタンは装飾と分離。 */
 @import "../../../shared/foundation/base.css";
-.sop-foundation.sop-transit-tags{--ff-accent:#e8bb91;--ff-accent2:#f0d3b8;--ff-base:#2d2824;--ff-panel:#403730;--ff-line:color-mix(in srgb,#e8bb91 30%,#2d2824);--ff-ink:#eeeede;--ff-muted:#ab9684;--ff-radius:5px;}
-.sop-foundation.sop-transit-tags{padding:22px;background:#403730;border:1px solid color-mix(in srgb,#e8bb91 30%,transparent);border-radius:3px;box-shadow:0 16px 32px #0003,inset 0 1px 0 #ffffff18;}
-.sop-foundation.sop-transit-tags .ff-choice,.ff-dropzone,.ff-notice,.ff-pages{border-style:dashed;border-left-width:3px;border-right-width:3px;}
-.sop-foundation.sop-transit-tags .ff-reading,.ff-page-info{font-family:var(--ff-mono);letter-spacing:2px;}
+@import "../../../shared/foundation/atelier.css";
+@import "../../../shared/foundation/materials/transit.css";
+/* Component identity remains scoped for independent embedding and source mapping. */
+.sop-foundation.sop-transit-tags { --ad-edition: 1; }

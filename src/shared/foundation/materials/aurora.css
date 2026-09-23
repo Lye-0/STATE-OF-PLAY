@@ -1,0 +1,45 @@
+/* AURORA — material construction shared only by Type A aurora foundation parts. */
+.sop-foundation[data-variant="aurora"]:not([data-foundation="loaders"]) {
+  --ff-accent: #b2f0df;
+  --ff-accent2: #b8b2f2;
+  --ff-base: #10252d;
+  --ff-panel: #183a43;
+  --ff-ink: #e8fcf6;
+  --ff-muted: #95beba;
+  --ff-line: #8bd4d56b;
+  --ff-radius: 20px;
+  --ad-radius: 20px;
+  --ad-key-radius: 12px;
+  --ad-font: Georgia,"Yu Mincho",serif;
+  --ad-spec: "REFRACTION / 01";
+  --ad-face: radial-gradient(ellipse at 0 0,#83e6d835,transparent 60%),radial-gradient(ellipse at 100% 100%,#ad8de82a,transparent 60%),linear-gradient(145deg,#253f49,#102a34 48%,#173d45);
+  --ad-selected: radial-gradient(ellipse at 100% 0,#c5b5ef40,transparent 75%),linear-gradient(140deg,#305c64,#203c4a);
+  --ad-edge: #8bd4d56b;
+  --ad-relief: inset 0 1px 1px #e2fffba1,inset 0 -1px 1px #81c0ed66,0 16px 26px #0005,0 0 20px #76dec20b;
+  --ad-knob: radial-gradient(ellipse at 26% 12%,#ffffffdd,transparent 32%),radial-gradient(ellipse at 72% 77%,#9abcebb0,transparent 55%),linear-gradient(135deg,#c9faf6b8,#6dbcb799 50%,#c6b9ebc7);
+  --ad-knob-ink: #123139;
+  --ad-motif: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20180%22%20fill%3D%22none%22%3E%3Cg%20stroke%3D%22%23a1eddf%22%20opacity%3D%22.65%22%3E%3Cellipse%20cx%3D%22163%22%20cy%3D%2265%22%20rx%3D%2291%22%20ry%3D%2234%22%20transform%3D%22rotate%28-35%20163%2065%29%22%2F%3E%3Cellipse%20cx%3D%22163%22%20cy%3D%2265%22%20rx%3D%2274%22%20ry%3D%2225%22%20transform%3D%22rotate%28-35%20163%2065%29%22%2F%3E%3Cellipse%20cx%3D%22163%22%20cy%3D%2265%22%20rx%3D%22114%22%20ry%3D%2246%22%20transform%3D%22rotate%28-35%20163%2065%29%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M35%20173Q220%2048%20185-25%22%20stroke%3D%22%23b5b2ed%22%20stroke-width%3D%2222%22%20opacity%3D%22.16%22%2F%3E%3C%2Fsvg%3E");
+}
+
+.sop-foundation[data-variant="aurora"]:not([data-foundation="loaders"]) :is(.ff-floating,.ff-combo-shell,.ff-notice,.ff-hint-trigger){backdrop-filter:blur(15px) saturate(1.4)}
+.sop-foundation[data-variant="aurora"]:not([data-foundation="loaders"]) .ff-choice-icon,.sop-foundation[data-variant="aurora"]:not([data-foundation="loaders"]) .ff-option-icon{border-radius:50%;background:var(--ad-knob);box-shadow:inset 1px 2px 3px #e4ffffad,inset -1px -2px 3px #90cadd88,0 4px 8px #061b2466}
+.sop-foundation[data-variant="aurora"]:not([data-foundation="loaders"]) .ff-choice[data-selected=true]{box-shadow:inset 0 1px 1px #eaffffe0,inset 0 -1px 1px #b4bcf2a3,0 10px 20px #0005,0 0 19px #7fdbc318}
+.sop-foundation[data-variant="aurora"]:not([data-foundation="loaders"]) .ff-slider::after{content:"";position:absolute;inset:14px 4px;border:1px solid #a3e8ed26;border-radius:40px;pointer-events:none;box-shadow:inset 0 0 0 4px #bafaff06}
+.sop-foundation[data-variant="aurora"]:not([data-foundation="loaders"]) .ff-rail{height:27px;top:20px;border-color:#a4eff35c;background:linear-gradient(#8ad1e922,#092e3b 60%,#c3f4f324)}
+.sop-foundation[data-variant="aurora"]:not([data-foundation="loaders"]) .ff-fill{background:radial-gradient(ellipse at 70% 0,#fbfffa87,transparent 75%),linear-gradient(120deg,#398f9b,#8adedb 45%,#b5acdb);opacity:.9}
+.sop-foundation[data-variant="aurora"]:not([data-foundation="loaders"]) .ff-ticks{opacity:.16}
+.sop-foundation[data-variant="aurora"]:not([data-foundation="loaders"]) [data-range]::-webkit-slider-thumb{background:var(--ad-knob);border-color:#deffffac;box-shadow:inset 2px 2px 3px #fff9,inset -2px -2px 3px #b6e6edb8,0 6px 10px #031922a3,0 0 15px #a1fff92b}
+.sop-foundation[data-variant="aurora"]:not([data-foundation="loaders"]) :is(.ff-tag,.ff-chip){border-radius:22px;box-shadow:inset 0 1px 1px #c6f7ef8f,inset 0 -1px 1px #b8cef93d,0 5px 10px #0004}
+.sop-foundation[data-variant="aurora"]:not([data-foundation="loaders"]) .ff-progress-track{height:31px;border-radius:18px;background:linear-gradient(#a5e8e520,#0c2637,#90c7da18);border-color:#92d9e16b}
+.sop-foundation[data-variant="aurora"]:not([data-foundation="loaders"]) .ff-progress-fill{background:radial-gradient(ellipse at 15% 30%,#faffff61,transparent 50%),linear-gradient(100deg,#629ba7,#9ae8d3,#bfb5e2)}
+.sop-foundation[data-variant="aurora"]:not([data-foundation="loaders"]) .ff-stepper{border-radius:48px;padding:9px}
+.sop-foundation[data-variant="aurora"]:not([data-foundation="loaders"]) .ff-stepper>button{border-radius:50%;height:65px;align-self:center;width:49px}
+.sop-foundation[data-variant="aurora"]:not([data-foundation="loaders"]) .ff-number-face{background:radial-gradient(ellipse at 30% 0,#cdfcff1f,transparent 65%),#11313d;border:1px solid #a5ebdd26;border-radius:23px}
+.sop-foundation[data-variant="aurora"]:not([data-foundation="loaders"]) .ff-calendar-header strong{color:#bcf1e0}
+.sop-foundation[data-variant="aurora"]:not([data-foundation="loaders"]) .ff-calendar-grid button[data-selected=true]{border-radius:50%}
+.sop-foundation[data-variant="aurora"]:not([data-foundation="loaders"]) .ff-dropzone::after{inset:8px;border-style:solid;border-color:#ceffef35;box-shadow:inset 0 0 0 4px #a5fff906}
+.sop-foundation[data-variant="aurora"]:not([data-foundation="loaders"]) .ff-pages{border-radius:22px;background:linear-gradient(155deg,#426066,#192d42 60%,#203c47)}
+.sop-foundation[data-variant="aurora"]:not([data-foundation="loaders"]) .ff-pages [aria-current=page]{border-radius:14px;box-shadow:inset 1px 1px 2px #e8fffcd9,inset -1px -1px 2px #aeeafb99,0 3px 9px #0006}
+.sop-foundation[data-variant="aurora"]:not([data-foundation="loaders"]) .ff-breadcrumb [aria-current=page]{border-radius:20px;background:var(--ad-knob);color:#173539}
+
+@media(prefers-reduced-motion:reduce){.sop-foundation[data-variant="aurora"]:not([data-foundation="loaders"]) *,.sop-foundation[data-variant="aurora"]:not([data-foundation="loaders"]) *::before,.sop-foundation[data-variant="aurora"]:not([data-foundation="loaders"]) *::after{transition:none!important;animation:none!important}}

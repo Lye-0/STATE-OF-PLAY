@@ -1,0 +1,25 @@
+{
+  "mode": "explicit offline adapter; actual Chromium, not Vite HTTP",
+  "passed": 18,
+  "tests": [
+    "284 new components: categories, exact A/B counts and accessible category jump",
+    "Slider inspector: bounds/unit/step update, native keyboard, format/layout preserve editing state",
+    "Source inspector: representative of each new category, both layouts (full inventory in gallery suite)",
+    "All 284 genuine initializers: unique instances, independent lifecycle and no page errors",
+    "Range: two native handles, min/max crossing, decimals, readonly and form reset",
+    "Radio cards: native form values, disabled skip, updates and controlled-declined requests",
+    "Combobox: filtering, keyboard, multi values, disabled items and loading/empty/error states",
+    "Combobox IME composition does not intercept Enter or commit partial candidates",
+    "Number editing: decimal drafts, IME, invalid draft reporting, min/max and reset",
+    "Toast: action callback, capacity, expiry, hover pause and destroy removes top-layer stack",
+    "Tooltip/popover: top-layer fit, content update, Escape and safe text",
+    "Progress and loader: determinate/indeterminate, dynamic limits, paused/reduced motion",
+    "Upload: genuine FileList, accept/size checks, remove, native FormData and reset",
+    "Date/time: constraints, direct input, calendar navigation, range, invalid dates",
+    "Pagination and breadcrumbs: native links, page limits, dynamic hierarchy and popup cleanup",
+    "Badges/chips: independent selection, removal callbacks, disabled and updates",
+    "Every part fits 320/390/768px; sample code and modal remain usable on small screens",
+    "All native instances unmount cleanly without any observed browser exception"
+  ],
+  "errors": []
+}

@@ -1,5 +1,8 @@
+/* Transit Popover — Type A / Atelier edition.
+   切符の罫線、ミシン目、分割表示器のキー、紙の札。黄色と暗い青灰色の明確なコントラスト。
+   トリガーだけでなく、開いたパネル、見出し、設定値、チェック項目、操作ボタンを同じ素材で設計。 */
 @import "../../../shared/foundation/base.css";
-.sop-foundation.sop-transit-popover{--ff-accent:#e8bb91;--ff-accent2:#f0d3b8;--ff-base:#2d2824;--ff-panel:#403730;--ff-line:color-mix(in srgb,#e8bb91 30%,#2d2824);--ff-ink:#eeeede;--ff-muted:#ab9684;--ff-radius:5px;}
-.sop-foundation.sop-transit-popover{padding:22px;background:#403730;border:1px solid color-mix(in srgb,#e8bb91 30%,transparent);border-radius:3px;box-shadow:0 16px 32px #0003,inset 0 1px 0 #ffffff18;}
-.sop-foundation.sop-transit-popover .ff-choice,.ff-dropzone,.ff-notice,.ff-pages{border-style:dashed;border-left-width:3px;border-right-width:3px;}
-.sop-foundation.sop-transit-popover .ff-reading,.ff-page-info{font-family:var(--ff-mono);letter-spacing:2px;}
+@import "../../../shared/foundation/atelier.css";
+@import "../../../shared/foundation/materials/transit.css";
+/* Component identity remains scoped for independent embedding and source mapping. */
+.sop-foundation.sop-transit-popover { --ad-edition: 1; }

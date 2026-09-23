@@ -1,6 +1,6 @@
 @import "../../../shared/foundation/base.css";
 .sop-foundation.sop-slate-loader{--ff-accent:#b0c4d2;--ff-accent2:#95a5c2;--ff-base:#202b35;--ff-panel:#2a3945;--ff-line:color-mix(in srgb,#b0c4d2 30%,#202b35);--ff-ink:#eeeede;--ff-muted:#93a5b1;--ff-radius:13px;}
-.sop-foundation.sop-slate-loader .ff-choice,.ff-combo-shell,.ff-stepper,.ff-progress-visual,.ff-notice,.ff-pages,.ff-dropzone{box-shadow:none;}
+.sop-foundation.sop-slate-loader .ff-choice,.sop-foundation.sop-slate-loader .ff-combo-shell,.sop-foundation.sop-slate-loader .ff-stepper,.sop-foundation.sop-slate-loader .ff-progress-visual,.sop-foundation.sop-slate-loader .ff-notice,.sop-foundation.sop-slate-loader .ff-pages,.sop-foundation.sop-slate-loader .ff-dropzone{box-shadow:none;}
 .sop-foundation.sop-slate-loader .ff-eyebrow{display:none;}
 .sop-foundation.sop-slate-loader .ff-choice-icon{display:none;}
 .sop-foundation.sop-slate-loader .ff-choice{min-height:53px;}
@@ -16,4 +16,4 @@
 .sop-foundation.sop-slate-loader .ff-progress-visual{padding:15px;}
 .sop-foundation.sop-slate-loader .ff-progress-fill{box-shadow:none;}
 .sop-foundation.sop-slate-loader .ff-orbit{inset:23px;border:8px dashed var(--ff-accent);animation-duration:8s;box-shadow:inset 0 0 0 3px var(--ff-accent2);}
-.sop-foundation.sop-slate-loader .ff-orbit.o2,.ff-orbit.o3,.ff-orbit:before,.ff-loader-core{display:none;}
+.sop-foundation.sop-slate-loader .ff-orbit.o2,.sop-foundation.sop-slate-loader .ff-orbit.o3,.sop-foundation.sop-slate-loader .ff-orbit:before,.sop-foundation.sop-slate-loader .ff-loader-core{display:none;}

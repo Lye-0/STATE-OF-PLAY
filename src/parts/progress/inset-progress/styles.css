@@ -1,6 +1,6 @@
 @import "../../../shared/foundation/base.css";
 .sop-foundation.sop-inset-progress{--ff-accent:#b0c6d5;--ff-accent2:#8496aa;--ff-base:#151b22;--ff-panel:#1b222b;--ff-line:color-mix(in srgb,#b0c6d5 30%,#151b22);--ff-ink:#eeeede;--ff-muted:#8296a5;--ff-radius:5px;}
-.sop-foundation.sop-inset-progress .ff-choice,.ff-combo-shell,.ff-stepper,.ff-progress-visual,.ff-notice,.ff-pages,.ff-dropzone{box-shadow:none;}
+.sop-foundation.sop-inset-progress .ff-choice,.sop-foundation.sop-inset-progress .ff-combo-shell,.sop-foundation.sop-inset-progress .ff-stepper,.sop-foundation.sop-inset-progress .ff-progress-visual,.sop-foundation.sop-inset-progress .ff-notice,.sop-foundation.sop-inset-progress .ff-pages,.sop-foundation.sop-inset-progress .ff-dropzone{box-shadow:none;}
 .sop-foundation.sop-inset-progress .ff-eyebrow{display:none;}
 .sop-foundation.sop-inset-progress .ff-choice-icon{display:none;}
 .sop-foundation.sop-inset-progress .ff-choice{min-height:53px;}
@@ -15,4 +15,4 @@
 .sop-foundation.sop-inset-progress .ff-progress-track{height:7px;border:0;border-radius:8px;}
 .sop-foundation.sop-inset-progress .ff-progress-visual{padding:15px;}
 .sop-foundation.sop-inset-progress .ff-progress-fill{box-shadow:none;}
-.sop-foundation.sop-inset-progress .ff-combo-shell,.ff-number-face{box-shadow:inset 0 2px 5px #0005;}
+.sop-foundation.sop-inset-progress .ff-combo-shell,.sop-foundation.sop-inset-progress .ff-number-face{box-shadow:inset 0 2px 5px #0005;}

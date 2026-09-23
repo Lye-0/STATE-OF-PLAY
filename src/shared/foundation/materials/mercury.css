@@ -1,0 +1,51 @@
+/* MERCURY — material construction shared only by Type A mercury foundation parts. */
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) {
+  --ff-accent: #d6e6db;
+  --ff-accent2: #8daca8;
+  --ff-base: #0b1416;
+  --ff-panel: #263336;
+  --ff-ink: #e5ece6;
+  --ff-muted: #a0b3ae;
+  --ff-line: #9caaa65e;
+  --ff-radius: 9px;
+  --ad-radius: 9px;
+  --ad-key-radius: 4px;
+  --ad-font: "SFMono-Regular",Consolas,monospace;
+  --ad-spec: "MACHINED / 02";
+  --ad-face: repeating-linear-gradient(90deg,#ffffff04 0 1px,transparent 1px 3px),linear-gradient(160deg,#526163 0,#253337 7%,#142226 43%,#293c3e 87%,#51615e);
+  --ad-selected: repeating-linear-gradient(0deg,#ffffff04 0 1px,transparent 1px 3px),linear-gradient(155deg,#617874,#344c49 42%,#243c3a);
+  --ad-edge: #9caaa65e;
+  --ad-relief: inset 0 1px 0 #dbe5dfad,inset 0 -2px 0 #020809,0 2px 0 #5d706566,0 14px 25px #0008;
+  --ad-knob: radial-gradient(circle,transparent 52%,#263a34 54% 57%,#e4f0e699 59% 62%,transparent 64%),repeating-conic-gradient(from 6deg,#56635b 0deg,#e4eade 2deg,#5e736b 4deg),conic-gradient(#dce5da,#617c73,#e6f0df);
+  --ad-knob-ink: #182b26;
+  --ad-motif: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20180%22%20fill%3D%22none%22%3E%3Cg%20stroke%3D%22%23bed3c8%22%20opacity%3D%22.6%22%3E%3Cpath%20d%3D%22M176%200v156H32m0-20h130V16M152%206v115H16%22%2F%3E%3Ccircle%20cx%3D%22177%22%20cy%3D%22156%22%20r%3D%227%22%2F%3E%3Ccircle%20cx%3D%22177%22%20cy%3D%22156%22%20r%3D%223%22%2F%3E%3Cpath%20d%3D%22m174%20153%206%206%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+}
+
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) :is(.ff-choice,.ff-notice,.ff-dropzone,.ff-progress-visual,.ff-calendar)::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:radial-gradient(circle at 7px 7px,#090f10 0 1px,#b9c5bd 1.5px 2.1px,transparent 2.5px),radial-gradient(circle at calc(100% - 7px) 7px,#090f10 0 1px,#9eafa6 1.5px 2.1px,transparent 2.5px),radial-gradient(circle at 7px calc(100% - 7px),#090f10 0 1px,#94a79e 1.5px 2.1px,transparent 2.5px),radial-gradient(circle at calc(100% - 7px) calc(100% - 7px),#090f10 0 1px,#82948c 1.5px 2.1px,transparent 2.5px);border:0;opacity:1}
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) .ff-heading{font-size:10px;letter-spacing:.07em;text-shadow:0 -1px #071112}
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) .ff-reading{font-size:44px;letter-spacing:-3px;text-shadow:0 -1px 0 #000}
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) .ff-slider::before{content:"";position:absolute;left:20px;right:20px;top:8px;height:5px;background:repeating-linear-gradient(90deg,var(--ff-muted) 0 1px,transparent 1px 7px);opacity:.7;pointer-events:none}
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) .ff-slider::after{content:"";position:absolute;left:20px;right:20px;bottom:7px;height:5px;background:repeating-linear-gradient(90deg,var(--ff-muted) 0 1px,transparent 1px 7px);opacity:.7;pointer-events:none}
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) .ff-rail{height:13px;top:27px;border-radius:4px;border-color:#101917;box-shadow:inset 0 3px 5px #000c,0 1px 0 #bed5c459}
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) .ff-fill{background:linear-gradient(#dfefca,#839d84 40%,#bbd0ac);box-shadow:0 0 5px #bbdf9a30}
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) .ff-ticks{background:repeating-linear-gradient(90deg,transparent 0 calc(10% - 2px),#16252190 calc(10% - 2px) 10%)}
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) .ff-choice-copy strong{font-family:Arial,sans-serif;letter-spacing:.04em;font-size:14px;font-weight:500}
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) .ff-choice-icon{border-radius:50%}
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) .ff-choice-badge{padding:5px;border:1px solid #98af9d26;background:#0003;border-radius:2px}
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) .ff-choice[data-selected=true]{box-shadow:var(--ad-relief),inset 3px 0 #bfd6b4;transform:translateY(-1px)}
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) .ff-notice-icon{border-radius:50%;background:radial-gradient(ellipse at 50% 20%,#a9c7ae,#4c6759 70%);color:#14221c}
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) .ff-combo-list{border:1px solid #99aea18f;box-shadow:inset 0 0 0 3px #152725,0 19px 35px #0008}
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) .ff-option{border-bottom:1px solid #bfd4c11a;border-radius:3px}
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) .ff-progress-track{border-radius:3px;height:22px}
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) .ff-progress-fill{background:repeating-linear-gradient(90deg,transparent 0 14px,#1c2a2796 14px 16px),linear-gradient(#bdcfbc,#7d9a86 60%,#a8c7b1)}
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) .ff-page-info{font:30px var(--ff-mono)}
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) .ff-pages :is(button,a){border:1px solid #9caf9f35;background:linear-gradient(#41524c,#1c2a27);box-shadow:0 2px 3px #0007,inset 0 1px 0 #d5e2ca25;border-radius:3px}
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) .ff-pages [aria-current=page]{background:linear-gradient(135deg,#526b59,#d3dec3 40%,#7b977e 62%,#b4c6a5);color:#213624}
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) .ff-tag{border-radius:4px;border-top-color:#c2d6c98f;box-shadow:inset 0 0 0 2px #1725236b,0 4px 6px #0008}
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) .ff-stepper>button{background:repeating-linear-gradient(90deg,transparent 0 4px,#1528221a 4px 5px),linear-gradient(#c1cfbe,#6c8875 70%,#a2b59c);border-color:#718e7e}
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) .ff-number-face{box-shadow:inset 0 3px 8px #000,0 1px 0 #bcd3b84a;border:1px solid #070d0b}
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) .ff-calendar-header{font-family:var(--ff-mono)}
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) .ff-calendar-header strong{font-size:16px;letter-spacing:1px}
+.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) .ff-calendar-grid button[data-selected=true]{background:linear-gradient(#e0e8d8,#8ba695);color:#193425;border-radius:3px}
+
+@media(prefers-reduced-motion:reduce){.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) *,.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) *::before,.sop-foundation[data-variant="mercury"]:not([data-foundation="loaders"]) *::after{transition:none!important;animation:none!important}}

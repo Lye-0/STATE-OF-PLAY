@@ -1,0 +1,75 @@
+/* CERAMIC — material construction shared only by Type A ceramic foundation parts. */
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) {
+  --ff-accent: #738b8b;
+  --ff-accent2: #c1ccc4;
+  --ff-base: #e3e6df;
+  --ff-panel: #f8f6ea;
+  --ff-ink: #3d4c49;
+  --ff-muted: #778882;
+  --ff-line: #b5c2b9;
+  --ff-radius: 28px;
+  --ad-radius: 28px;
+  --ad-key-radius: 19px;
+  --ad-font: Georgia,"Yu Mincho",serif;
+  --ad-spec: "GLAZE / 11";
+  --ad-face: radial-gradient(ellipse at 20% 0,#ffffff,transparent 75%),linear-gradient(145deg,#efefe4,#dddeda 90%,#adbcb5);
+  --ad-selected: radial-gradient(ellipse at 30% 5%,#ffffffda,transparent 60%),linear-gradient(140deg,#e9eee4,#c8d5ce);
+  --ad-edge: #b5c2b9;
+  --ad-relief: inset 0 3px 3px #fff,inset 0 -3px 5px #96a89b80,0 4px 0 #8b9c9447,0 17px 25px #0004;
+  --ad-knob: radial-gradient(ellipse at 35% 10%,#ffffff,#f7f9ec 36%,#d0e0d2 85%,#b0c3b6);
+  --ad-knob-ink: #58766e;
+  --ad-motif: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20180%22%20fill%3D%22none%22%3E%3Cg%20stroke%3D%22%23778f82%22%20opacity%3D%22.7%22%3E%3Cellipse%20cx%3D%22149%22%20cy%3D%2284%22%20rx%3D%2239%22%20ry%3D%2265%22%20transform%3D%22rotate%28-30%20149%2084%29%22%2F%3E%3Cellipse%20cx%3D%22149%22%20cy%3D%2284%22%20rx%3D%2247%22%20ry%3D%2273%22%20transform%3D%22rotate%28-30%20149%2084%29%22%2F%3E%3Cellipse%20cx%3D%22149%22%20cy%3D%2284%22%20rx%3D%2255%22%20ry%3D%2281%22%20transform%3D%22rotate%28-30%20149%2084%29%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  color-scheme: light;
+}
+
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"])[data-foundation=sliders]{padding:26px;border-radius:28px}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-reading{color:#697f7b;font-size:54px}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-heading::before{height:2px;box-shadow:none;background:#97a99d}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-rail{height:17px;top:26px;background:linear-gradient(#bdc9c0,#edf0e4);border:1px solid #b2c0b5;box-shadow:inset 0 3px 4px #93a59980,0 1px 0 #fff}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-fill{background:linear-gradient(#92a99e,#c4d2c1 70%,#aebfaa);box-shadow:inset 0 1px 1px #dce8d4}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-ticks{display:none}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) [data-range]::-webkit-slider-thumb{background:radial-gradient(ellipse at 32% 15%,#fffef4,#f6f7e7 45%,#ccd9c9 90%);border-color:#bac9ba;box-shadow:inset 0 2px 2px #fff,inset 0 -3px 3px #97afa15e,0 6px 8px #667f6b52}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-choice{border-radius:23px}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-choice-copy strong{font-size:20px;color:#526b63}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-choice-icon{border-radius:50%;background:var(--ad-knob);box-shadow:inset 0 2px 2px #fff,0 3px 6px #92a99561}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-choice[data-selected=true]{border-color:#92a698;box-shadow:inset 0 2px 3px #fff,inset 0 -2px 4px #95aa994d,0 5px 0 #879e902b,0 12px 22px #0003}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-choice-check{background:#d2dcd0;box-shadow:inset 0 2px 3px #8a9f866b;border:1px solid #b3c1ae}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-choice[data-selected=true] .ff-choice-check{background:linear-gradient(#99b3a1,#6b8978);color:#fffbea;box-shadow:inset 0 1px 1px #cbdac2}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-combo-shell{border-radius:35px;padding-left:20px}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-option{border-radius:16px}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-option-icon{border-radius:50%}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-floating{background:radial-gradient(ellipse at 0 0,#fff,#e0e4d9);border-radius:24px}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-notice{border-radius:25px}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-notice-icon{border-radius:50%}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-hint-trigger{border-radius:40px}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-hint-heading{color:#607b6e}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-progress-visual{display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:12px;padding:28px 21px;min-height:188px;border-radius:29px}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-progress-track{display:none}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-progress-ring{display:block;width:125px;height:125px;border-radius:50%;background:linear-gradient(#f4f6e8,#d5e0d2);box-shadow:inset 0 2px 2px #fff,inset 0 -2px 4px #9dad9c99,0 5px 7px #8ba08b4a}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-progress-ring::after{background:linear-gradient(#dce6d7,#f1f4e8);box-shadow:inset 0 2px 4px #8fa38b66;border:1px solid #bccbb7;inset:20px}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-progress-ring::before{display:none}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-progress-ring .ff-ring-value{stroke:#7c9e8d;filter:none}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-progress-visual .ff-reading{font-size:40px}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-dropzone{border-radius:31px;box-shadow:inset 0 2px 3px #fff,inset 0 -3px 5px #9db2a366,0 17px 25px #0004}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-dropzone::after{inset:10px;border:1px solid #b6c5b769;border-radius:23px}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-upload-symbol{border-radius:50%;box-shadow:inset 0 2px 2px #fff,0 3px 5px #90a89366}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-calendar-header strong{font-size:26px;color:#637d70}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-calendar-grid button{border-radius:50%}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-calendar-grid button[data-selected=true]{border-radius:50%;background:linear-gradient(#a9c0ad,#6c927c);color:#fafbea;box-shadow:inset 0 1px 0 #d7e4d5,0 3px 4px #8fa08347}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-tag{border-radius:24px;box-shadow:inset 0 2px 2px #fff,inset 0 -2px 3px #9caf9b57,0 5px 7px #0002;padding:9px 16px}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-tag[data-selected=true]{background:linear-gradient(135deg,#c6d9c7,#83a28f);color:#354d3d;border-color:#91a794}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-stepper{border-radius:48px;padding:8px;background:linear-gradient(145deg,#f6f7eb,#c8d5c9);box-shadow:inset 0 2px 3px #fff,inset 0 -2px 4px #9aae9a,0 12px 22px #0004}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-stepper>button{border-radius:50%;width:50px;height:64px;align-self:center;box-shadow:inset 0 2px 3px #fff,0 4px 6px #8da3895c}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-number-face{border-radius:25px;background:linear-gradient(#ccd9c9,#eff3e5);box-shadow:inset 0 2px 4px #96ad9294,0 1px 0 #fff8}
+
+@media(prefers-reduced-motion:reduce){.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) *,.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) *::before,.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) *::after{transition:none!important;animation:none!important}}
+
+/* Light material labels stay legible on both light and dark host pages. */
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]):not([data-foundation="sliders"]) > .ff-heading {padding:9px 12px;margin-bottom:13px;min-height:36px;border:1px solid var(--ad-edge);border-radius:var(--ad-key-radius);background:var(--ad-face);background-color:var(--ff-panel);color:var(--ff-ink);box-shadow:inset 0 1px 0 #fff9}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]):not([data-foundation="sliders"]) > .ff-heading::before {display:none}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) > :is(.ff-description,.ff-footnote) {padding:8px 12px;border-radius:var(--ad-key-radius);background:var(--ff-panel);color:var(--ff-ink)}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) > .ff-description:empty {display:none}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-process-steps {padding:7px 10px;border:1px solid var(--ad-edge);border-radius:var(--ad-key-radius);background:var(--ad-face)}
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-page-info {padding:10px 13px;border:1px solid var(--ad-edge);border-radius:var(--ad-key-radius);background:var(--ad-face);background-color:var(--ff-panel);color:var(--ff-muted)}
+
+.sop-foundation[data-variant="ceramic"]:not([data-foundation="loaders"]) .ff-choice-set>legend{padding:9px 12px;background:var(--ad-face);background-color:var(--ff-panel);border:1px solid var(--ad-edge);border-radius:var(--ad-key-radius);color:var(--ff-ink);box-shadow:inset 0 1px 0 #fff8}

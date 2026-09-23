@@ -1,5 +1,8 @@
+/* Tide Dropzone — Type A / Atelier edition.
+   深い水面、等間隔の波線、透明な水滴、青い反射。光は形を見せるために使う。
+   ファイルの受け口をイメージした入れ物。受け口本体、立体シンボル、ファイル一覧・削除操作までデザイン。 */
 @import "../../../shared/foundation/base.css";
-.sop-foundation.sop-tide-dropzone{--ff-accent:#89d2ee;--ff-accent2:#629bb3;--ff-base:#112a35;--ff-panel:#21434e;--ff-line:color-mix(in srgb,#89d2ee 30%,#112a35);--ff-ink:#eeeede;--ff-muted:#779eae;--ff-radius:13px;}
-.sop-foundation.sop-tide-dropzone .ff-progress-track{height:40px;border-radius:40px;}
-.sop-foundation.sop-tide-dropzone .ff-fill,.ff-progress-fill{background:linear-gradient(180deg,#c5eafb 0%,#75cadf 10%,#2877a0 100%);box-shadow:inset 0 2px 0 #e6fbff8a;}
-.sop-foundation.sop-tide-dropzone .ff-floating{background:radial-gradient(ellipse at 20% 0,#acf5ff14,transparent 70%),var(--ff-panel);border-radius:22px;}
+@import "../../../shared/foundation/atelier.css";
+@import "../../../shared/foundation/materials/tide.css";
+/* Component identity remains scoped for independent embedding and source mapping. */
+.sop-foundation.sop-tide-dropzone { --ad-edition: 1; }

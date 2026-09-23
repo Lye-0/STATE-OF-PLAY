@@ -1,5 +1,8 @@
+/* Nixie Calendar — Type A / Atelier edition.
+   真空管の暗い内面、縦に並ぶ電極、真鍮のフレーム、琥珀色の発光と物理的なキー。
+   閉じた日付入力だけでなく、カレンダーの月表示、前後移動、曜日、日付選択、期間、フッターもデザイン。 */
 @import "../../../shared/foundation/base.css";
-.sop-foundation.sop-nixie-calendar{--ff-accent:#efbb65;--ff-accent2:#b16b2f;--ff-base:#211810;--ff-panel:#33251a;--ff-line:color-mix(in srgb,#efbb65 30%,#211810);--ff-ink:#eeeede;--ff-muted:#967855;--ff-radius:13px;}
-.sop-foundation.sop-nixie-calendar .ff-reading,[data-number]{font-family:var(--ff-mono);text-shadow:0 0 8px #ffae544f,0 0 20px #ff9e3240;}
-.sop-foundation.sop-nixie-calendar .ff-number-face,.ff-rail,.ff-combo-shell,.ff-progress-visual{background:repeating-linear-gradient(0deg,#ffb43f05 0 1px,transparent 1px 5px),#1c140e;border-color:#a5743c44;box-shadow:inset 0 3px 10px #0008,0 1px 0 #fff1;}
-.sop-foundation.sop-nixie-calendar .ff-option-icon,.ff-choice-icon{border-radius:50%;box-shadow:inset 0 0 10px #ffb6551e,0 0 14px #ffb65512;}
+@import "../../../shared/foundation/atelier.css";
+@import "../../../shared/foundation/materials/nixie.css";
+/* Component identity remains scoped for independent embedding and source mapping. */
+.sop-foundation.sop-nixie-calendar { --ad-edition: 1; }

@@ -1,6 +1,6 @@
 @import "../../../shared/foundation/base.css";
 .sop-foundation.sop-compact-loader{--ff-accent:#c8c8ce;--ff-accent2:#c8c8ce;--ff-base:#222228;--ff-panel:#292930;--ff-line:color-mix(in srgb,#c8c8ce 30%,#222228);--ff-ink:#eeeede;--ff-muted:#94949e;--ff-radius:5px;}
-.sop-foundation.sop-compact-loader .ff-choice,.ff-combo-shell,.ff-stepper,.ff-progress-visual,.ff-notice,.ff-pages,.ff-dropzone{box-shadow:none;}
+.sop-foundation.sop-compact-loader .ff-choice,.sop-foundation.sop-compact-loader .ff-combo-shell,.sop-foundation.sop-compact-loader .ff-stepper,.sop-foundation.sop-compact-loader .ff-progress-visual,.sop-foundation.sop-compact-loader .ff-notice,.sop-foundation.sop-compact-loader .ff-pages,.sop-foundation.sop-compact-loader .ff-dropzone{box-shadow:none;}
 .sop-foundation.sop-compact-loader .ff-eyebrow{display:none;}
 .sop-foundation.sop-compact-loader .ff-choice-icon{display:none;}
 .sop-foundation.sop-compact-loader .ff-choice{min-height:53px;}
@@ -15,10 +15,10 @@
 .sop-foundation.sop-compact-loader .ff-progress-track{height:7px;border:0;border-radius:8px;}
 .sop-foundation.sop-compact-loader .ff-progress-visual{padding:15px;}
 .sop-foundation.sop-compact-loader .ff-progress-fill{box-shadow:none;}
-.sop-foundation.sop-compact-loader .ff-choice,.ff-option{padding:8px;min-height:46px;}
+.sop-foundation.sop-compact-loader .ff-choice,.sop-foundation.sop-compact-loader .ff-option{padding:8px;min-height:46px;}
 .sop-foundation.sop-compact-loader .ff-reading{margin-bottom:12px;}
 .sop-foundation.sop-compact-loader .ff-tags{gap:5px;}
 .sop-foundation.sop-compact-loader .ff-tag{min-height:28px;padding:4px 7px;}
 .sop-foundation.sop-compact-loader .ff-orbit{border-radius:0;clip-path:polygon(50% 0,95% 25%,95% 75%,50% 100%,5% 75%,5% 25%);background:conic-gradient(from 30deg,var(--ff-accent),var(--ff-panel),var(--ff-accent2),var(--ff-panel),var(--ff-accent));inset:23px;border:0;animation-duration:7s;}
 .sop-foundation.sop-compact-loader .ff-orbit.o2{inset:34px;background:var(--ff-base);animation-direction:normal;animation-duration:7s;}
-.sop-foundation.sop-compact-loader .ff-orbit.o3,.ff-loader-core{display:none;}
+.sop-foundation.sop-compact-loader .ff-orbit.o3,.sop-foundation.sop-compact-loader .ff-loader-core{display:none;}

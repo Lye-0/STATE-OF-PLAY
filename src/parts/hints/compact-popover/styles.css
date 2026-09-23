@@ -1,6 +1,6 @@
 @import "../../../shared/foundation/base.css";
 .sop-foundation.sop-compact-popover{--ff-accent:#c8c8ce;--ff-accent2:#c8c8ce;--ff-base:#222228;--ff-panel:#292930;--ff-line:color-mix(in srgb,#c8c8ce 30%,#222228);--ff-ink:#eeeede;--ff-muted:#94949e;--ff-radius:5px;}
-.sop-foundation.sop-compact-popover .ff-choice,.ff-combo-shell,.ff-stepper,.ff-progress-visual,.ff-notice,.ff-pages,.ff-dropzone{box-shadow:none;}
+.sop-foundation.sop-compact-popover .ff-choice,.sop-foundation.sop-compact-popover .ff-combo-shell,.sop-foundation.sop-compact-popover .ff-stepper,.sop-foundation.sop-compact-popover .ff-progress-visual,.sop-foundation.sop-compact-popover .ff-notice,.sop-foundation.sop-compact-popover .ff-pages,.sop-foundation.sop-compact-popover .ff-dropzone{box-shadow:none;}
 .sop-foundation.sop-compact-popover .ff-eyebrow{display:none;}
 .sop-foundation.sop-compact-popover .ff-choice-icon{display:none;}
 .sop-foundation.sop-compact-popover .ff-choice{min-height:53px;}
@@ -15,7 +15,7 @@
 .sop-foundation.sop-compact-popover .ff-progress-track{height:7px;border:0;border-radius:8px;}
 .sop-foundation.sop-compact-popover .ff-progress-visual{padding:15px;}
 .sop-foundation.sop-compact-popover .ff-progress-fill{box-shadow:none;}
-.sop-foundation.sop-compact-popover .ff-choice,.ff-option{padding:8px;min-height:46px;}
+.sop-foundation.sop-compact-popover .ff-choice,.sop-foundation.sop-compact-popover .ff-option{padding:8px;min-height:46px;}
 .sop-foundation.sop-compact-popover .ff-reading{margin-bottom:12px;}
 .sop-foundation.sop-compact-popover .ff-tags{gap:5px;}
 .sop-foundation.sop-compact-popover .ff-tag{min-height:28px;padding:4px 7px;}

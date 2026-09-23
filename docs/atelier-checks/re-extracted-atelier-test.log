@@ -1,0 +1,60 @@
+TAP version 13
+# (node:3892) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Atelier redesign covers all 171 new expressive parts except the existing loaders
+ok 1 - Atelier redesign covers all 171 new expressive parts except the existing loaders
+  ---
+  duration_ms: 1.852788
+  type: 'test'
+  ...
+# Subtest: every redesigned skin includes exactly its matching material and the shared construction stylesheet
+ok 2 - every redesigned skin includes exactly its matching material and the shared construction stylesheet
+  ---
+  duration_ms: 199.178353
+  type: 'test'
+  ...
+# Subtest: B skins and loaders do not depend on the expressive construction or material sheets
+ok 3 - B skins and loaders do not depend on the expressive construction or material sheets
+  ---
+  duration_ms: 19.446314
+  type: 'test'
+  ...
+# Subtest: comma-separated selectors cannot escape their own foundation instance
+ok 4 - comma-separated selectors cannot escape their own foundation instance
+  ---
+  duration_ms: 9.117253
+  type: 'test'
+  ...
+# Subtest: all material families specify shape, light, relief and motion reduction, not only colors
+ok 5 - all material families specify shape, light, relief and motion reduction, not only colors
+  ---
+  duration_ms: 2.247649
+  type: 'test'
+  ...
+# Subtest: artwork is decorative; the native implementations and their type-specific controllers remain the source of behavior
+ok 6 - artwork is decorative; the native implementations and their type-specific controllers remain the source of behavior
+  ---
+  duration_ms: 5.019554
+  type: 'test'
+  ...
+# Subtest: light-theme detached labels have their own material backing
+ok 7 - light-theme detached labels have their own material backing
+  ---
+  duration_ms: 0.458942
+  type: 'test'
+  ...
+# Subtest: updated reproduction specifications explicitly include the new art-direction dependencies
+ok 8 - updated reproduction specifications explicitly include the new art-direction dependencies
+  ---
+  duration_ms: 5.110528
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 970.057254

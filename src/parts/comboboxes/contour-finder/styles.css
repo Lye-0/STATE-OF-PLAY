@@ -1,4 +1,8 @@
+/* Contour Finder — Type A / Atelier edition.
+   地形の等高線、方位計を思わせる目盛り、緑の層と有機的な切り欠き。
+   入力面と展開メニューを一体のデザインに。検索アイコン、候補、選択状態、補足文、複数選択チップも素材に合わせています。 */
 @import "../../../shared/foundation/base.css";
-.sop-foundation.sop-contour-finder{--ff-accent:#c1b597;--ff-accent2:#8c9fa4;--ff-base:#292820;--ff-panel:#3c3b30;--ff-line:color-mix(in srgb,#c1b597 30%,#292820);--ff-ink:#eeeede;--ff-muted:#9d9d8b;--ff-radius:13px;}
-.sop-foundation.sop-contour-finder .ff-choice,.ff-progress-visual,.ff-dropzone,.ff-floating{background:repeating-radial-gradient(ellipse at -20% 0,transparent 0 16px,#d1c0920a 17px 18px),var(--ff-panel);}
-.sop-foundation.sop-contour-finder .ff-rail{height:8px;top:17px;}
+@import "../../../shared/foundation/atelier.css";
+@import "../../../shared/foundation/materials/contour.css";
+/* Component identity remains scoped for independent embedding and source mapping. */
+.sop-foundation.sop-contour-finder { --ad-edition: 1; }

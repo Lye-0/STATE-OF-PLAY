@@ -1,11 +1,11 @@
 @import "../../../shared/foundation/base.css";
 .sop-foundation.sop-folio-loader{--ff-accent:#66634c;--ff-accent2:#b1a98b;--ff-base:#e4ddc8;--ff-panel:#e8e2d2;--ff-line:color-mix(in srgb,#66634c 30%,#e4ddc8);--ff-ink:#353b35;--ff-muted:#8c8871;--ff-radius:5px;color-scheme:light;}
 .sop-foundation.sop-folio-loader{padding:22px;background:#e8e2d2;border:1px solid color-mix(in srgb,#66634c 30%,transparent);border-radius:7px;box-shadow:0 16px 32px #0003,inset 0 1px 0 #ffffff18;}
-.sop-foundation.sop-folio-loader .ff-choice-copy strong,.ff-heading,.ff-choice-set legend{font-family:Georgia,"Yu Mincho",serif;}
-.sop-foundation.sop-folio-loader .ff-choice,.ff-dropzone,.ff-calendar{border-radius:2px;background:repeating-linear-gradient(0deg,transparent 0 24px,#8e80500b 24px 25px),var(--ff-panel);box-shadow:3px 4px 0 #72654416,0 10px 13px #5345270d;}
+.sop-foundation.sop-folio-loader .ff-choice-copy strong,.sop-foundation.sop-folio-loader .ff-heading,.sop-foundation.sop-folio-loader .ff-choice-set legend{font-family:Georgia,"Yu Mincho",serif;}
+.sop-foundation.sop-folio-loader .ff-choice,.sop-foundation.sop-folio-loader .ff-dropzone,.sop-foundation.sop-folio-loader .ff-calendar{border-radius:2px;background:repeating-linear-gradient(0deg,transparent 0 24px,#8e80500b 24px 25px),var(--ff-panel);box-shadow:3px 4px 0 #72654416,0 10px 13px #5345270d;}
 .sop-foundation.sop-folio-loader .ff-choice{border-left-width:4px;}
 .sop-foundation.sop-folio-loader .ff-dropzone{outline:1px dashed #7d704822;outline-offset:-7px;}
 .sop-foundation.sop-folio-loader .ff-orbit{border-radius:1px;border:0;border-left:2px solid var(--ff-accent);width:40px;height:62px;inset:20px auto auto 34px;transform-origin:0 50%;animation:sop-ff-pendulum 2.1s ease-in-out infinite;background:linear-gradient(90deg,var(--ff-panel),transparent);}
 .sop-foundation.sop-folio-loader .ff-orbit.o2{animation-delay:-.2s;opacity:.5;}
 .sop-foundation.sop-folio-loader .ff-orbit.o3{animation-delay:-.4s;opacity:.3;}
-.sop-foundation.sop-folio-loader .ff-orbit:before,.ff-loader-core{display:none;}
+.sop-foundation.sop-folio-loader .ff-orbit:before,.sop-foundation.sop-folio-loader .ff-loader-core{display:none;}

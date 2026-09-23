@@ -1,9 +1,9 @@
 @import "../../../shared/foundation/base.css";
 .sop-foundation.sop-tide-loader{--ff-accent:#89d2ee;--ff-accent2:#629bb3;--ff-base:#112a35;--ff-panel:#21434e;--ff-line:color-mix(in srgb,#89d2ee 30%,#112a35);--ff-ink:#eeeede;--ff-muted:#779eae;--ff-radius:13px;}
 .sop-foundation.sop-tide-loader .ff-progress-track{height:40px;border-radius:40px;}
-.sop-foundation.sop-tide-loader .ff-fill,.ff-progress-fill{background:linear-gradient(180deg,#c5eafb 0%,#75cadf 10%,#2877a0 100%);box-shadow:inset 0 2px 0 #e6fbff8a;}
+.sop-foundation.sop-tide-loader .ff-fill,.sop-foundation.sop-tide-loader .ff-progress-fill{background:linear-gradient(180deg,#c5eafb 0%,#75cadf 10%,#2877a0 100%);box-shadow:inset 0 2px 0 #e6fbff8a;}
 .sop-foundation.sop-tide-loader .ff-floating{background:radial-gradient(ellipse at 20% 0,#acf5ff14,transparent 70%),var(--ff-panel);border-radius:22px;}
 .sop-foundation.sop-tide-loader .ff-orbit{border-radius:1px;border:0;border-left:2px solid var(--ff-accent);width:40px;height:62px;inset:20px auto auto 34px;transform-origin:0 50%;animation:sop-ff-pendulum 2.1s ease-in-out infinite;background:linear-gradient(90deg,var(--ff-panel),transparent);}
 .sop-foundation.sop-tide-loader .ff-orbit.o2{animation-delay:-.2s;opacity:.5;}
 .sop-foundation.sop-tide-loader .ff-orbit.o3{animation-delay:-.4s;opacity:.3;}
-.sop-foundation.sop-tide-loader .ff-orbit:before,.ff-loader-core{display:none;}
+.sop-foundation.sop-tide-loader .ff-orbit:before,.sop-foundation.sop-tide-loader .ff-loader-core{display:none;}

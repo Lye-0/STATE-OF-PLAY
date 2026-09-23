@@ -1,6 +1,6 @@
 @import "../../../shared/foundation/base.css";
 .sop-foundation.sop-outline-loader{--ff-accent:#c5cece;--ff-accent2:#c5cece;--ff-base:#171b1e;--ff-panel:#171b1e;--ff-line:color-mix(in srgb,#c5cece 30%,#171b1e);--ff-ink:#eeeede;--ff-muted:#909b9f;--ff-radius:5px;}
-.sop-foundation.sop-outline-loader .ff-choice,.ff-combo-shell,.ff-stepper,.ff-progress-visual,.ff-notice,.ff-pages,.ff-dropzone{box-shadow:none;}
+.sop-foundation.sop-outline-loader .ff-choice,.sop-foundation.sop-outline-loader .ff-combo-shell,.sop-foundation.sop-outline-loader .ff-stepper,.sop-foundation.sop-outline-loader .ff-progress-visual,.sop-foundation.sop-outline-loader .ff-notice,.sop-foundation.sop-outline-loader .ff-pages,.sop-foundation.sop-outline-loader .ff-dropzone{box-shadow:none;}
 .sop-foundation.sop-outline-loader .ff-eyebrow{display:none;}
 .sop-foundation.sop-outline-loader .ff-choice-icon{display:none;}
 .sop-foundation.sop-outline-loader .ff-choice{min-height:53px;}
@@ -15,8 +15,8 @@
 .sop-foundation.sop-outline-loader .ff-progress-track{height:7px;border:0;border-radius:8px;}
 .sop-foundation.sop-outline-loader .ff-progress-visual{padding:15px;}
 .sop-foundation.sop-outline-loader .ff-progress-fill{box-shadow:none;}
-.sop-foundation.sop-outline-loader .ff-tag,.ff-choice,.ff-combo-shell,.ff-stepper,.ff-pages{background:transparent;}
+.sop-foundation.sop-outline-loader .ff-tag,.sop-foundation.sop-outline-loader .ff-choice,.sop-foundation.sop-outline-loader .ff-combo-shell,.sop-foundation.sop-outline-loader .ff-stepper,.sop-foundation.sop-outline-loader .ff-pages{background:transparent;}
 .sop-foundation.sop-outline-loader .ff-orbit{border-radius:1px;border:0;border-left:2px solid var(--ff-accent);width:40px;height:62px;inset:20px auto auto 34px;transform-origin:0 50%;animation:sop-ff-pendulum 2.1s ease-in-out infinite;background:linear-gradient(90deg,var(--ff-panel),transparent);}
 .sop-foundation.sop-outline-loader .ff-orbit.o2{animation-delay:-.2s;opacity:.5;}
 .sop-foundation.sop-outline-loader .ff-orbit.o3{animation-delay:-.4s;opacity:.3;}
-.sop-foundation.sop-outline-loader .ff-orbit:before,.ff-loader-core{display:none;}
+.sop-foundation.sop-outline-loader .ff-orbit:before,.sop-foundation.sop-outline-loader .ff-loader-core{display:none;}

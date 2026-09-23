@@ -1,9 +1,8 @@
+/* Ceramic Progress — Type A / Atelier edition.
+   白い釉薬、厚い丸縁、凹んだ読み取り面、穏やかな青緑。高光沢の凸部と柔らかい陰影。
+   本物の値を示す計器として設計。素材に応じて直線メーター／円形の目盛りを使い分け、準備・処理・完了の状態も可視化。 */
 @import "../../../shared/foundation/base.css";
-.sop-foundation.sop-ceramic-progress{--ff-accent:#486c65;--ff-accent2:#acb9a7;--ff-base:#dddcd5;--ff-panel:#f0eee5;--ff-line:color-mix(in srgb,#486c65 30%,#dddcd5);--ff-ink:#353b35;--ff-muted:#7f8d82;--ff-radius:19px;color-scheme:light;}
-.sop-foundation.sop-ceramic-progress{padding:22px;background:#f0eee5;border:1px solid color-mix(in srgb,#486c65 30%,transparent);border-radius:20px;box-shadow:0 16px 32px #0003,inset 0 1px 0 #ffffff18;}
-.sop-foundation.sop-ceramic-progress .ff-choice,.ff-stepper,.ff-combo-shell,.ff-calendar{background:linear-gradient(145deg,#fff8,#d7d7c92a),var(--ff-panel);box-shadow:inset 0 1px 2px #fff,5px 7px 11px #47523c1a,-2px -2px 8px #fff3;}
-.sop-foundation.sop-ceramic-progress [data-range]::-webkit-slider-thumb{background:radial-gradient(circle at 25% 20%,white,#eeeeda 60%,#99aca0);border-color:#eef1df;box-shadow:2px 4px 8px #4b634b4d,inset 0 1px 2px white;}
-.sop-foundation.sop-ceramic-progress .ff-progress-visual{display:flex;align-items:center;justify-content:center;min-height:153px;background:transparent;border:0;}
-.sop-foundation.sop-ceramic-progress .ff-progress-ring{display:block;}
-.sop-foundation.sop-ceramic-progress .ff-progress-track{display:none;}
-.sop-foundation.sop-ceramic-progress .ff-progress-visual .ff-reading{position:absolute;left:0;right:0;justify-content:center;font-size:25px;}
+@import "../../../shared/foundation/atelier.css";
+@import "../../../shared/foundation/materials/ceramic.css";
+/* Component identity remains scoped for independent embedding and source mapping. */
+.sop-foundation.sop-ceramic-progress { --ad-edition: 1; }

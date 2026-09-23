@@ -1,4 +1,8 @@
+/* Contour Range — Type A / Atelier edition.
+   地形の等高線、方位計を思わせる目盛り、緑の層と有機的な切り欠き。
+   立体つまみ、実際の値に追従するレール、独立した計器の文字組み。つまみの中心と塗りの始終位置を揃えています。 */
 @import "../../../shared/foundation/base.css";
-.sop-foundation.sop-contour-range{--ff-accent:#c1b597;--ff-accent2:#8c9fa4;--ff-base:#292820;--ff-panel:#3c3b30;--ff-line:color-mix(in srgb,#c1b597 30%,#292820);--ff-ink:#eeeede;--ff-muted:#9d9d8b;--ff-radius:13px;}
-.sop-foundation.sop-contour-range .ff-choice,.ff-progress-visual,.ff-dropzone,.ff-floating{background:repeating-radial-gradient(ellipse at -20% 0,transparent 0 16px,#d1c0920a 17px 18px),var(--ff-panel);}
-.sop-foundation.sop-contour-range .ff-rail{height:8px;top:17px;}
+@import "../../../shared/foundation/atelier.css";
+@import "../../../shared/foundation/materials/contour.css";
+/* Component identity remains scoped for independent embedding and source mapping. */
+.sop-foundation.sop-contour-range { --ad-edition: 1; }

@@ -1,4 +1,8 @@
+/* Copper Calendar — Type A / Atelier edition.
+   研磨銅の赤み、リベット、同心の加工痕と明暗差。ラベルは金属に刻まれた質感。
+   閉じた日付入力だけでなく、カレンダーの月表示、前後移動、曜日、日付選択、期間、フッターもデザイン。 */
 @import "../../../shared/foundation/base.css";
-.sop-foundation.sop-copper-calendar{--ff-accent:#ebb18c;--ff-accent2:#b9734e;--ff-base:#2e201a;--ff-panel:#473128;--ff-line:color-mix(in srgb,#ebb18c 30%,#2e201a);--ff-ink:#eeeede;--ff-muted:#b08c71;--ff-radius:13px;}
-.sop-foundation.sop-copper-calendar .ff-stepper,.ff-choice,.ff-pages,.ff-dropzone,.ff-floating{background:repeating-linear-gradient(90deg,#e8b28405 0 1px,transparent 1px 3px),linear-gradient(145deg,#b9815219,transparent 30%,#e6b58510),var(--ff-panel);box-shadow:inset 0 1px 0 #fbc99e40,0 10px 22px #0003;}
-.sop-foundation.sop-copper-calendar .ff-rail{border-radius:4px;height:11px;top:15px;}
+@import "../../../shared/foundation/atelier.css";
+@import "../../../shared/foundation/materials/copper.css";
+/* Component identity remains scoped for independent embedding and source mapping. */
+.sop-foundation.sop-copper-calendar { --ad-edition: 1; }

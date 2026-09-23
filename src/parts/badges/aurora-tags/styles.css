@@ -1,4 +1,8 @@
+/* Aurora Tags — Type A / Atelier edition.
+   透明な縁、内側の反射、傾いた楕円の屈折線、青緑から藤色へ移るガラスの光。
+   タグを素材の小さなラベルとして造形。テキスト、件数、選択状態、削除ボタンは装飾と分離。 */
 @import "../../../shared/foundation/base.css";
-.sop-foundation.sop-aurora-tags{--ff-accent:#88dfd4;--ff-accent2:#c6b6ed;--ff-base:#152930;--ff-panel:#254047;--ff-line:color-mix(in srgb,#88dfd4 30%,#152930);--ff-ink:#eeeede;--ff-muted:#83aaa9;--ff-radius:13px;}
-.sop-foundation.sop-aurora-tags .ff-combo-shell,.ff-floating,.ff-choice,.ff-progress-visual,.ff-calendar,.ff-stepper{background:linear-gradient(125deg,#7ff9d413,transparent 48%,#caa1fa1f),var(--ff-panel);box-shadow:inset 0 1px 0 #bfffee48,0 9px 25px #0002;backdrop-filter:blur(14px);}
-.sop-foundation.sop-aurora-tags .ff-rail{height:18px;top:12px;border-color:#6cc9d977;background:linear-gradient(110deg,#9adfe616,#163d4b);}
+@import "../../../shared/foundation/atelier.css";
+@import "../../../shared/foundation/materials/aurora.css";
+/* Component identity remains scoped for independent embedding and source mapping. */
+.sop-foundation.sop-aurora-tags { --ad-edition: 1; }

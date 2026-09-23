@@ -1,5 +1,8 @@
+/* Ceramic Tags — Type A / Atelier edition.
+   白い釉薬、厚い丸縁、凹んだ読み取り面、穏やかな青緑。高光沢の凸部と柔らかい陰影。
+   タグを素材の小さなラベルとして造形。テキスト、件数、選択状態、削除ボタンは装飾と分離。 */
 @import "../../../shared/foundation/base.css";
-.sop-foundation.sop-ceramic-tags{--ff-accent:#486c65;--ff-accent2:#acb9a7;--ff-base:#dddcd5;--ff-panel:#f0eee5;--ff-line:color-mix(in srgb,#486c65 30%,#dddcd5);--ff-ink:#353b35;--ff-muted:#7f8d82;--ff-radius:19px;color-scheme:light;}
-.sop-foundation.sop-ceramic-tags{padding:22px;background:#f0eee5;border:1px solid color-mix(in srgb,#486c65 30%,transparent);border-radius:20px;box-shadow:0 16px 32px #0003,inset 0 1px 0 #ffffff18;}
-.sop-foundation.sop-ceramic-tags .ff-choice,.ff-stepper,.ff-combo-shell,.ff-calendar{background:linear-gradient(145deg,#fff8,#d7d7c92a),var(--ff-panel);box-shadow:inset 0 1px 2px #fff,5px 7px 11px #47523c1a,-2px -2px 8px #fff3;}
-.sop-foundation.sop-ceramic-tags [data-range]::-webkit-slider-thumb{background:radial-gradient(circle at 25% 20%,white,#eeeeda 60%,#99aca0);border-color:#eef1df;box-shadow:2px 4px 8px #4b634b4d,inset 0 1px 2px white;}
+@import "../../../shared/foundation/atelier.css";
+@import "../../../shared/foundation/materials/ceramic.css";
+/* Component identity remains scoped for independent embedding and source mapping. */
+.sop-foundation.sop-ceramic-tags { --ad-edition: 1; }

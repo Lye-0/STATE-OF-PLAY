@@ -1,8 +1,8 @@
 @import "../../../shared/foundation/base.css";
 .sop-foundation.sop-contour-loader{--ff-accent:#c1b597;--ff-accent2:#8c9fa4;--ff-base:#292820;--ff-panel:#3c3b30;--ff-line:color-mix(in srgb,#c1b597 30%,#292820);--ff-ink:#eeeede;--ff-muted:#9d9d8b;--ff-radius:13px;}
-.sop-foundation.sop-contour-loader .ff-choice,.ff-progress-visual,.ff-dropzone,.ff-floating{background:repeating-radial-gradient(ellipse at -20% 0,transparent 0 16px,#d1c0920a 17px 18px),var(--ff-panel);}
+.sop-foundation.sop-contour-loader .ff-choice,.sop-foundation.sop-contour-loader .ff-progress-visual,.sop-foundation.sop-contour-loader .ff-dropzone,.sop-foundation.sop-contour-loader .ff-floating{background:repeating-radial-gradient(ellipse at -20% 0,transparent 0 16px,#d1c0920a 17px 18px),var(--ff-panel);}
 .sop-foundation.sop-contour-loader .ff-rail{height:8px;top:17px;}
 .sop-foundation.sop-contour-loader .ff-orbit{border-radius:0;border:0;border-left:1px solid var(--ff-line);inset:0 50% 25px auto;width:1px;transform-origin:top;animation:sop-ff-pendulum 2s ease-in-out infinite;}
 .sop-foundation.sop-contour-loader .ff-orbit:before{top:auto;bottom:-12px;left:-10px;width:20px;height:20px;box-shadow:0 4px 10px #0004;}
 .sop-foundation.sop-contour-loader .ff-orbit.o2{animation-delay:-.18s;opacity:.3;}
-.sop-foundation.sop-contour-loader .ff-orbit.o3,.ff-loader-core{display:none;}
+.sop-foundation.sop-contour-loader .ff-orbit.o3,.sop-foundation.sop-contour-loader .ff-loader-core{display:none;}

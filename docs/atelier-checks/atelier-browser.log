@@ -1,0 +1,13 @@
+(node:3445) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS All 284 skins: mixed catalogue and standalone computed designs match (no sibling CSS leakage)
+PASS All 171 redesigned parts fit 320 / 390 / 768 px without cutting off the input area
+PASS Sixteen material sliders: native keyboard, range bounds, disabled state and thumb alignment
+PASS All A choice cards: native inputs remain reachable above decorative material layers
+PASS All A tag styles: selecting and removing tags preserve independent interactive targets
+PASS Open A menus and calendars stay inside a 320 px viewport; Escape / outside dismissal works
+PASS Breadcrumb menus begin hidden, open on demand, and return to hidden after content updates
+PASS Light material legends and detached captions keep their own opaque backing
+PASS Reduced motion disables decorative animations; forced colors retain native focus and selected states
+PASS Sample notification, loading progress and open popup leave no popovers after unmount
+Atelier browser checks: 10 passed.

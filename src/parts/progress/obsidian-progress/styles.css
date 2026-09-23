@@ -1,4 +1,8 @@
+/* Obsidian Progress — Type A / Atelier edition.
+   暗い鉱物の切り面、亀裂、斜めの縁、低彩度の結晶。光る輪郭を細く配置。
+   本物の値を示す計器として設計。素材に応じて直線メーター／円形の目盛りを使い分け、準備・処理・完了の状態も可視化。 */
 @import "../../../shared/foundation/base.css";
-.sop-foundation.sop-obsidian-progress{--ff-accent:#c7cdd4;--ff-accent2:#727d8b;--ff-base:#111418;--ff-panel:#1c2128;--ff-line:color-mix(in srgb,#c7cdd4 30%,#111418);--ff-ink:#eeeede;--ff-muted:#8b929d;--ff-radius:13px;}
-.sop-foundation.sop-obsidian-progress .ff-choice,.ff-combo-shell,.ff-stepper,.ff-progress-visual,.ff-floating{background:linear-gradient(155deg,#c2cbdb08,transparent 22%,#72899f0f 44%,transparent 46%),var(--ff-base);box-shadow:inset 0 1px 0 #fff1,0 13px 24px #0008;}
-.sop-foundation.sop-obsidian-progress .ff-choice[data-selected=true]{border-color:var(--ff-accent);box-shadow:inset 2px 0 0 var(--ff-accent),0 0 0 1px #8895b712;}
+@import "../../../shared/foundation/atelier.css";
+@import "../../../shared/foundation/materials/obsidian.css";
+/* Component identity remains scoped for independent embedding and source mapping. */
+.sop-foundation.sop-obsidian-progress { --ad-edition: 1; }

@@ -1,5 +1,8 @@
+/* Mercury Tags — Type A / Atelier edition.
+   削り出し金属の厚み、ヘアライン、ねじ、ローレット、深い溝と明るい反射面。
+   タグを素材の小さなラベルとして造形。テキスト、件数、選択状態、削除ボタンは装飾と分離。 */
 @import "../../../shared/foundation/base.css";
-.sop-foundation.sop-mercury-tags{--ff-accent:#d1dfda;--ff-accent2:#829d9c;--ff-base:#1a2223;--ff-panel:#364345;--ff-line:color-mix(in srgb,#d1dfda 30%,#1a2223);--ff-ink:#eeeede;--ff-muted:#8c9e9e;--ff-radius:13px;}
-.sop-foundation.sop-mercury-tags .ff-choice,.ff-combo-shell,.ff-stepper,.ff-notice{background:linear-gradient(165deg,#fff2,transparent 22%,#0002 63%,#fff1),var(--ff-panel);border-top-color:#d5dfd47a;box-shadow:inset 0 1px 0 #fff3,0 7px 22px #0005;}
-.sop-foundation.sop-mercury-tags .ff-rail{height:10px;top:16px;}
-.sop-foundation.sop-mercury-tags [data-range]::-webkit-slider-thumb{background:repeating-conic-gradient(#ecf3e6 0deg,#50605a 3deg,#a6b4a9 6deg);box-shadow:inset 0 0 0 4px #7c938560,0 5px 10px #0009;}
+@import "../../../shared/foundation/atelier.css";
+@import "../../../shared/foundation/materials/mercury.css";
+/* Component identity remains scoped for independent embedding and source mapping. */
+.sop-foundation.sop-mercury-tags { --ad-edition: 1; }

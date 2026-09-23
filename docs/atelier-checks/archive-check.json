@@ -1,0 +1,21 @@
+{
+  "version": "4.1.0",
+  "root": "STATE-OF-PLAY",
+  "parts": 564,
+  "fileCount": 5832,
+  "method": "Python zipfile + SHA-256, independent of the JSZip package generator",
+  "zipCRC": "PASS",
+  "allManifestPayloadHashes": "PASS",
+  "freshExtraction": "PASS",
+  "repoLayoutPreserved": true,
+  "excluded": [
+    ".git",
+    "node_modules",
+    ".test-output",
+    "release",
+    "font binaries"
+  ],
+  "note": "Final archive is re-read after this report is embedded. The archive hash itself is intentionally not stored inside the archive.",
+  "freshExtractionAppTypecheck": "PASS",
+  "freshExtractionNewUnitTests": 8
+}
