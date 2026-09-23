@@ -1,12 +1,16 @@
 # STATE OF PLAY — UI & Motion Library
 
-**v4.8.0 / 25カテゴリ・604パーツ**。触って選び、ソースと意図を自分の開発へ持ち出すUIパーツ集です。
+**v4.8.1 / 25カテゴリ・603パーツ**。触って選び、ソースと意図を自分の開発へ持ち出すUIパーツ集です。
 表現と素材感を重視するAタイプと、落ち着いた実用的なBタイプを収録しています。
 
 > ベースとなるv4.0.0は、未保存だった追加分をv3.8.0から再実装した版です。以前の未保存ソースと同一ではありません。
 > 既存280パーツの本体は維持しています。経緯と照合は [RECOVERY.md](docs/RECOVERY.md) を参照してください。
 
-## v4.8.0の改修 — CONTINUUM
+## v4.8.1の修正 — ローダー
+
+Nixie LoaderとCeramic Loaderの2番目の正方形が周回の継ぎ目で跳ぶ問題を修正しました。見た目と動きがほぼ同じだったPaper Loaderは削除し、Ceramic Loaderを残しました。現在はローダー39種、全603パーツです。詳細のコード・使い方・AI用プロンプト・ZIPも更新しています。[変更と検証](docs/LOADER-ORBIT-FIX.md)を参照してください。
+
+## v4.8.0の改修 — CONTINUUM（履歴）
 
 進捗表示16種、ファイル選択13種、日時選択13種の**Aタイプ42種**を改修しました。
 表示値・入力・フォーカス位置は即時に更新し、素材の面だけが展開・変形します。
@@ -151,5 +155,5 @@ GitHubへのコミット・pushは、このZIPの取得や展開では行われ�
 
 ## ドキュメント
 
-[全564パーツ](docs/COLLECTION.md) / [追加13カテゴリのAPI](docs/FOUNDATIONS.md) / [パーツ追加](docs/ADDING-PARTS.md) /
+[全603パーツ](docs/COLLECTION.md) / [追加13カテゴリのAPI](docs/FOUNDATIONS.md) / [パーツ追加](docs/ADDING-PARTS.md) /
 [既存プロジェクトへの組み込み](docs/INTEGRATION.md) / [移行](docs/MIGRATION.md) / [ライセンス](THIRD-PARTY-NOTICES.md)

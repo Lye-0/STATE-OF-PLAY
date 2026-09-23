@@ -8,7 +8,7 @@ const exists=(file:string)=>fs.existsSync(path.join(ROOT,file));
 const parts=(JSON.parse(read('src/catalog/registry.json')) as string[]).map(base=>({base,...JSON.parse(read(base+'/meta.json'))}));
 const acc=parts.filter(p=>p.tags.includes('UNFOLD')),fields=parts.filter(p=>p.tags.includes('RESPONSIVE'));
 test('selective revision: sixteen A accordions and six A text fields, no deleted or new IDs',()=>{
- assert.equal(parts.length,604);assert.equal(acc.length,16);assert.equal(fields.length,6);
+ assert.equal(parts.length,603);assert.equal(acc.length,16);assert.equal(fields.length,6);
  assert.ok(acc.every(p=>p.category==='accordions'&&p.designType==='A'));
  assert.ok(fields.every(p=>p.category==='textboxes'&&p.designType==='A'));
  assert.equal(parts.filter(p=>p.category==='textboxes'&&!p.tags.includes('RESPONSIVE')).length,18);

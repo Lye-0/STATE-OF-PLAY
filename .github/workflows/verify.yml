@@ -13,7 +13,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
-    # The complete 604-part / 8-export matrix runs on both hosted OS variants.
+    # The complete 603-part / 8-export matrix runs on both hosted OS variants.
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
@@ -88,6 +88,8 @@ jobs:
         run: npm run test:gallery-navigation
       - name: Tabs, prompts and exported source scrolling
         run: npm run test:tab-strip
+      - name: Loader orbit continuity and source packages
+        run: npm run test:loader-orbit
       - name: Build full source archive
         run: npm run package
       - name: Save reports on failure

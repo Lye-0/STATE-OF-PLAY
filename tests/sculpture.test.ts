@@ -16,8 +16,8 @@ const marker=(p:Skin)=>p.category==='scrollbars'?'sop-scroll-sculpted':'sop-sele
 const sheet=(p:Skin)=>p.category==='scrollbars'?'scrollbar-sculpted.css':'select-sculpted.css';
 function selectors(text:string):string[]{let depth=0,quote='',start=0;const values:string[]=[];for(let i=0;i<text.length;i++){const c=text[i];if(quote){if(c===quote&&text[i-1]!=='\\')quote='';continue;}if(c==='"'||c==="'"){quote=c;continue;}if(c==='('||c==='[')depth++;if(c===')'||c===']')depth--;if(c===','&&!depth){values.push(text.slice(start,i).trim());start=i+1;}}values.push(text.slice(start).trim());return values;}
 
-test('32 redesigned A skins retain 48 total scroll/select skins and 564 catalogue entries',()=>{
- assert.equal(bases.length,564);assert.equal(skins.length,48);assert.equal(expressive.length,32);
+test('32 redesigned A skins retain 48 total scroll/select skins and 563 current catalogue entries',()=>{
+ assert.equal(bases.length,563);assert.equal(skins.length,48);assert.equal(expressive.length,32);
  for(const category of ['scrollbars','dropdowns']){assert.equal(expressive.filter(p=>p.category===category).length,16);assert.equal(skins.filter(p=>p.category===category&&p.designType==='B').length,8);}
  for(const p of expressive)assert.equal(p.version,'3.0.0',p.id);
 });

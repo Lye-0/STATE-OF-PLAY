@@ -1,6 +1,6 @@
-# パーツ一覧 — v4.8.0
+# パーツ一覧 — v4.8.1
 
-604パーツ / 25カテゴリ。CONTINUUMは今回改修・追加した58種、MOTION STUDIESは新しい16ローダーです。
+603パーツ / 25カテゴリ。v4.8.1では重複していたPaper Loaderを削除しました。CONTINUUMの改修・追加対象58種、MOTION STUDIESの新しい16ローダーは維持しています。
 
 | カテゴリ | 数 | A | B |
 |---|---:|---:|---:|
@@ -22,7 +22,7 @@
 | toasts | 24 | 16 | 8 |
 | hints | 24 | 16 | 8 |
 | progress | 24 | 16 | 8 |
-| loaders | 40 | 24 | 16 |
+| loaders | 39 | 24 | 15 |
 | uploads | 20 | 13 | 7 |
 | datepickers | 20 | 13 | 7 |
 | pagination | 16 | 10 | 6 |
@@ -590,7 +590,6 @@
 | `contour-loader` | Contour Loader | A | CSSの読み込み表示です。 |
 | `essential-loader` | Essential Loader | B | CSSの読み込み表示です。 |
 | `soft-loader` | Soft Loader | B | CSSの読み込み表示です。 |
-| `paper-loader` | Paper Loader | B | CSSの読み込み表示です。 |
 | `outline-loader` | Outline Loader | B | CSSの読み込み表示です。 |
 | `inset-loader` | Inset Loader | B | CSSの読み込み表示です。 |
 | `compact-loader` | Compact Loader | B | CSSの読み込み表示です。 |
