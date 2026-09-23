@@ -1,6 +1,6 @@
 /* TRANSFORM — the label is stationary; the selected material and the panel architecture move.
    Scoped opt-in. No fixed option count, no global reset, no endless CSS animation. */
-.sop-choice.sop-transit[data-transit-mode]{--tr-energy:0;--tr-progress:1;--tr-velocity:0;--tr-pointer-x:50%;--tr-pointer-y:50%;--tr-sheet:var(--choice-marker);--tr-glint:#e8fff750;--tr-shadow:#0007;--tr-radius:12px}
+.sop-choice.sop-transit[data-transit-mode]{--tr-energy:0;--tr-progress:1;--tr-velocity:0;--tr-pointer-x:50%;--tr-pointer-y:50%;--tr-sheet:var(--choice-marker);--tr-glint:#e8fff750;--tr-shadow:#0007;--tr-radius:12px;--tr-sheen-angle:60deg;--tr-sheen-strength:.8;--tr-metal-sweep:90deg;--tr-metal-stretch:.19;--tr-metal-compression:.10}
 .sop-choice.sop-transit[data-transit-mode]>.sop-choice-list{padding:8px;gap:4px;min-height:70px;background:linear-gradient(160deg,#ffffff07,transparent 60%),var(--choice-base);border:1px solid var(--choice-line);border-radius:var(--choice-radius);box-shadow:inset 0 1px 0 #ffffff0d,0 10px 24px #0002;perspective:700px}
 .sop-choice.sop-transit[data-transit-mode]>.sop-choice-list>.sop-choice-item{padding:15px 16px;min-height:50px;z-index:2;transition:color .18s;isolation:isolate}
 .sop-choice.sop-transit[data-transit-mode]>.sop-choice-list>.sop-choice-item{background:transparent;box-shadow:none;border:0}
@@ -11,7 +11,7 @@
 .sop-choice.sop-transit[data-transit-mode]>.sop-choice-list>.sop-choice-marker{display:block;clip-path:none!important;overflow:visible;background:transparent;border:0;box-shadow:none;transition:none;border-radius:var(--tr-radius);transform:translate(var(--tr-x,var(--sop-choice-x,0px)),var(--tr-y,var(--sop-choice-y,0px)));width:var(--tr-w,var(--sop-choice-w,0px));height:var(--tr-h,var(--sop-choice-h,0px));z-index:1}
 .sop-transit-plate{display:block;position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:var(--tr-sheet);border:1px solid var(--tr-glint);box-shadow:0 5px 9px var(--tr-shadow),inset 0 1px 1px #fff4;transform:perspective(350px) rotateY(calc(var(--tr-velocity)*-10deg)) scaleX(calc(1 + var(--tr-energy)*.08));transform-origin:center;isolation:isolate}
 .sop-transit-plate::before,.sop-transit-plate::after{content:"";position:absolute;inset:2px;border-radius:inherit;pointer-events:none}
-.sop-transit-plate::before{background:linear-gradient(calc(115deg + var(--tr-velocity)*60deg),transparent 15%,#fff3 45%,transparent 60%);opacity:calc(.2 + var(--tr-energy)*.8)}
+.sop-transit-plate::before{background:linear-gradient(calc(115deg + var(--tr-velocity)*var(--tr-sheen-angle)),transparent 15%,#fff3 45%,transparent 60%);opacity:calc(.2 + var(--tr-energy)*var(--tr-sheen-strength))}
 .sop-transit-plate::after{border:1px solid #ffffff1a}
 .sop-transit-plate>i:nth-child(1){--blade:0}.sop-transit-plate>i:nth-child(2){--blade:1}.sop-transit-plate>i:nth-child(3){--blade:2}.sop-transit-plate>i:nth-child(4){--blade:3}.sop-transit-plate>i:nth-child(5){--blade:4}.sop-transit-plate>i:nth-child(6){--blade:5}
 .sop-transit-plate>i{display:none;position:absolute;pointer-events:none}
@@ -38,10 +38,10 @@
 .sop-choice.sop-transit[data-transit-mode=ticket]>.sop-choice-panels>.sop-choice-panel>.sop-transit-panel-art{background:repeating-linear-gradient(90deg,transparent 0 8px,#69785e44 8px 9px) 0 16px / 100% 1px no-repeat}
 /* Mirror / ceramic / copper: a moving volume with broad, clean light; no badge on the grip. */
 .sop-choice.sop-transit:is([data-transit-mode=mercury],[data-transit-mode=copper],[data-transit-mode=ceramic]){--choice-radius:14px;--tr-radius:9px}
-.sop-choice.sop-transit[data-transit-mode=mercury]{--tr-sheet:linear-gradient(calc(117deg + var(--tr-velocity)*90deg),#5d7576,#cfdfd7 22%,#83988d 44%,#eef0d9 62%,#576a65 84%,#a4b6a9);--tr-glint:#e8f6ec;--choice-on:#172721}
+.sop-choice.sop-transit[data-transit-mode=mercury]{--tr-sheet:linear-gradient(calc(117deg + var(--tr-velocity)*var(--tr-metal-sweep)),#5d7576,#cfdfd7 22%,#83988d 44%,#eef0d9 62%,#576a65 84%,#a4b6a9);--tr-glint:#e8f6ec;--choice-on:#172721}
 .sop-choice.sop-transit[data-transit-mode=copper]{--tr-sheet:linear-gradient(calc(123deg + var(--tr-velocity)*40deg),#452b25,#c68e69 20%,#f0cba0 40%,#a5674e 63%,#d8a077 81%,#4b352d);--tr-glint:#f2d6b380;--choice-on:#211e19;--choice-base:#211b18}
 .sop-choice.sop-transit[data-transit-mode=ceramic]{--tr-sheet:linear-gradient(135deg,#fcf9e5,#bfd6cc 58%,#99b9b3);--tr-glint:#fffcebbb;--choice-on:#193b3b;--choice-base:#1b3438;--choice-ink:#dce8df;--choice-muted:#aac4bb;--tr-radius:17px}
-.sop-choice.sop-transit:is([data-transit-mode=mercury],[data-transit-mode=copper])>.sop-choice-list>.sop-choice-marker>.sop-transit-plate{transform:scaleX(calc(1 + var(--tr-energy)*.19)) scaleY(calc(1 - var(--tr-energy)*.10));box-shadow:inset 0 1px 1px #fff8,inset 0 -2px 2px #0008,0 5px 6px #0008}
+.sop-choice.sop-transit:is([data-transit-mode=mercury],[data-transit-mode=copper])>.sop-choice-list>.sop-choice-marker>.sop-transit-plate{transform:scaleX(calc(1 + var(--tr-energy)*var(--tr-metal-stretch))) scaleY(calc(1 - var(--tr-energy)*var(--tr-metal-compression)));box-shadow:inset 0 1px 1px #fff8,inset 0 -2px 2px #0008,0 5px 6px #0008}
 .sop-choice.sop-transit[data-transit-mode=ceramic]>.sop-choice-list>.sop-choice-marker>.sop-transit-plate{transform:perspective(300px) rotateY(calc(var(--tr-velocity)*19deg)) translateY(calc(var(--tr-energy)*-3px));box-shadow:inset 0 2px 3px #fff9,inset 0 -2px 4px #37707166,0 5px 7px #0005}
 .sop-choice.sop-transit[data-transit-mode=copper]>.sop-choice-panels>.sop-choice-panel>.sop-transit-panel-art>i{inset:0 0 0 50%;background:linear-gradient(145deg,#a26c4044,transparent 70%);border-left:1px solid #eac09666;transform:translateX(calc(var(--tr-progress)*92%))}
 .sop-choice.sop-transit[data-transit-mode=copper]>.sop-choice-panels>.sop-choice-panel>.sop-transit-panel-art>i:nth-child(2n){inset:0 50% 0 0;transform:translateX(calc(var(--tr-progress)*-92%))}

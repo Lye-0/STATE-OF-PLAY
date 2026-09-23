@@ -5,4 +5,7 @@
 .sop-mercury-segments > .sop-choice-list{padding:6px;box-shadow:inset 0 3px 8px #000c,0 2px 0 #68706a55,0 15px 22px #0006}.sop-mercury-segments > .sop-choice-list > .sop-choice-marker{border:1px solid #82918a55;box-shadow:inset 0 1px 0 #cbd5c673,0 2px 6px #000a}.sop-mercury-segments > .sop-choice-list > .sop-choice-item{letter-spacing:1.2px;font-size:10px;min-height:57px}.sop-mercury-segments > .sop-choice-panels > .sop-choice-panel{background:linear-gradient(138deg,#36423d22 30%,#0f1312 31%,#0f1312 75%,#a1bba411 76%);box-shadow:inset 0 1px 0 #8c9a8422}
 .sop-mercury-segments{--choice-marker:conic-gradient(from -20deg,#a1afaa,#d9e3da 12%,#697770 29%,#a6b3aa 43%,#d9e1d6 57%,#627169 80%,#a1afaa);--choice-on:#18221b}.sop-mercury-segments > .sop-choice-list > .sop-choice-marker{box-shadow:inset 0 0 0 1px #e7eadc,inset 0 0 0 3px #6d796c,0 3px 6px #0008}
 
+/* Keep the polished-metal reflection attached to the moving selector without a full-face flash. */
+.sop-choice.sop-transit.sop-mercury-segments[data-transit-mode=mercury]{--tr-metal-sweep:16deg;--tr-sheen-angle:14deg;--tr-sheen-strength:.28;--tr-metal-stretch:.035;--tr-metal-compression:.025}
+
 /* v4.6: runtime mode also styles pre-hydration standalone markup. */
