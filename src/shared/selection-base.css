@@ -6,6 +6,9 @@
 .sop-choice-list>.sop-choice-item:hover{color:var(--choice-ink);background:color-mix(in srgb,var(--choice-ink) 6%,transparent)}
 .sop-choice-list>.sop-choice-item[data-selected=true]{color:var(--choice-on);font-weight:650}
 .sop-choice-label{overflow-wrap:break-word;min-width:0}
+/* A moving marker may protrude by a pixel while the horizontal tab strip scrolls.
+   Keep horizontal overflow available without creating a transient vertical scrollbar. */
+.sop-tabs[data-orientation=horizontal]:not(.sop-ribbon-tabs)>.sop-choice-list{overflow-y:hidden}
 .sop-tabs>.sop-choice-list>.sop-choice-item .sop-choice-label{white-space:nowrap}
 .sop-tabs[data-orientation=vertical]>.sop-choice-list>.sop-choice-item .sop-choice-label{white-space:normal;overflow-wrap:anywhere}
 .sop-choice-copy{display:flex;flex-direction:column;gap:3px;min-width:0}

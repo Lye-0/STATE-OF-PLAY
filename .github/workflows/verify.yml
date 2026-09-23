@@ -86,6 +86,8 @@ jobs:
         run: npm run test:lazy-loading
       - name: Category tab scroll stability
         run: npm run test:gallery-navigation
+      - name: Tabs, prompts and exported source scrolling
+        run: npm run test:tab-strip
       - name: Build full source archive
         run: npm run package
       - name: Save reports on failure

@@ -35,10 +35,12 @@ export function buildUsage(part: Part, format: Format, layout: Layout): string {
   const d=getDelivery(part,format,layout), react=format==='tsx'||format==='jsx';
   const staticSurface=(part.category==='blocks'&&part.runtime==='CSS only')||part.category==='links';
   const files=d.files.map(f=>f.name);
+  const tabsScroll = part.category === 'tabs' ? '## タブ列のスクロール\n横向きのタブ列は項目が収まらないとき横へスクロールできます。選択面の移動中も縦スクロールバーを出さず、ラベル・フォーカス位置と本文を安定させます。縦向き配置では内容を縦に並べ、スクロール領域を不必要に作りません。\n\n' : '';
   return `# ${part.name} / ${part.version}\n\n${part.description}\n\nデザイン: ${DESIGN_TYPES[part.designType].label} / ${part.runtime}\n\n`+
     `## 今回の配布\n- 形式: ${FORMATS[format].label}\n- 構成: ${LAYOUTS[layout].label}\n- コピーする本体: \`${d.componentRoot}/\`\n- 入口: \`${d.entry}\`\n- スタイル: \`${d.stylesheet}\`\n- 使用例: \`${d.example}\`\n- 実行時外部依存: ${d.externalDependencies.join(', ')||'なし'}\n\n`+
     `## 導入手順\n1. 対象アプリの構成・設定・既存の配置規約を確認します。\n2. ${placementText(d)}\n3. ${react ? `既存の画面から ${part.componentName} をimportして使います。CSSはコンポーネント内から読み込みます。JSX/TSXを変換できるReact環境が必要です。` : staticSurface ? `\`${d.markup}\` とCSSだけで外観が成立します。init(element)は共通ライフサイクルを使うときの任意の窓口です。サンプルをそのまま実行する場合は、${format==='ts'?'TypeScriptを変換できる環境':'ES Modulesを配信するローカルHTTPサーバー'}を使います。` : `\`${d.markup}\` の要素とCSSを配置し、init(element, options)で初期化します。返されたcontrollerは取り外す前にdestroy()します。${format==='ts'?'TypeScriptをビルドする環境が必要です。':'JS版はES Modulesです。HTTPのローカルサーバーから開いてください。'}`}\n4. 使用例は接続例です。既存のApp・main・index・設定ファイルを上書きしないでください。移動した使用例のimportも新しい場所に合わせます。\n5. 型チェック・ビルド・操作確認を行います。Next.js等のSSR環境ではクライアント境界とCSSの読み込み規則も確認します。\n\n`+
     `## 配置について\n配布パスは利用先への固定命令ではありません。\`${d.componentRoot}/\` を別の場所にまとめて移す場合、内部の相対参照は維持されます。内部を分割・改名する場合は、import/export、CSS・素材の参照、使用例をすべて更新してください。\n\n`+
+    tabsScroll+
     `## 複数パーツ・更新時\nパーツ専用のinternal/は意図的な分離です。同名だからと共通化・上書きしないでください。既存パーツがある場合はバージョンと差分を確認し、手元の修正を保って更新します。INTEGRATION.jsonは元パスと配布パスの対応・入口・用途・外部依存を記録するもので、自動インストーラーではありません。\n\n`+
     `## ファイル構成\n${fence(archiveTree(files),'text')}\n\n## パーツ固有の補足\n${part.usage.trim()}\n\n`+
     `## 確認用デモ\npreview/index.html は独立した確認用です。preview/全体を開けば元のデモを確認できます。配布したパーツ本体は、そのままのソースを使って別途検証してください。\n\n## コピーと保存\n画面のファイルパス・ソース・ZIPは同じ構成です。個別保存はファイル名のみ。フォルダーごと取り込む場合はZIPを使います。テキスト保管版では末尾の.txtを戻すまで動作しません。\n`;
