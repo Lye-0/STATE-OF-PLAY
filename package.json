@@ -18,7 +18,7 @@
     "typecheck": "npm run typecheck:app && npm run typecheck:react && npm run typecheck:tools",
     "test": "node --experimental-strip-types --test --test-concurrency=1 tests/core.test.ts tests/delivery.test.ts tests/expansion.test.ts tests/scrollbars.test.ts tests/vite-url.test.ts tests/disclosures.test.ts tests/textfields.test.ts tests/actions.test.ts tests/selection.test.ts tests/check-popup.test.ts tests/foundations.test.ts tests/atelier.test.ts tests/sculpture.test.ts tests/refinement.test.ts tests/kinetic.test.ts tests/unfold.test.ts tests/transform.test.ts tests/resonance.test.ts tests/continuum.test.ts",
     "test:browser": "node --experimental-strip-types tests/browser.ts",
-    "verify": "npm run typecheck && npm test && npm run build && npm run test:browser && npm run test:relocation && npm run test:scrollbars && npm run test:scrollbars:react && npm run test:disclosures && npm run test:textfields && npm run test:actions && npm run test:selection && npm run test:check-popup && npm run test:foundations && npm run test:foundations:react && npm run test:atelier && npm run test:sculpture && npm run test:refinement && npm run test:kinetic && npm run test:unfold && npm run test:transform && npm run test:transform:gallery && npm run test:resonance && npm run test:resonance:gallery && npm run test:continuum && npm run test:continuum:gallery",
+    "verify": "npm run typecheck && npm test && npm run build && npm run test:browser && npm run test:relocation && npm run test:scrollbars && npm run test:scrollbars:react && npm run test:disclosures && npm run test:textfields && npm run test:actions && npm run test:selection && npm run test:check-popup && npm run test:foundations && npm run test:foundations:react && npm run test:atelier && npm run test:sculpture && npm run test:refinement && npm run test:kinetic && npm run test:unfold && npm run test:transform && npm run test:transform:gallery && npm run test:resonance && npm run test:resonance:gallery && npm run test:continuum && npm run test:continuum:gallery && npm run test:lazy-loading",
     "export:parts": "node --experimental-strip-types scripts/export-parts.ts",
     "package": "node --experimental-strip-types scripts/package.ts",
     "test:relocation": "node --experimental-strip-types tests/relocation.ts",
@@ -41,7 +41,8 @@
     "test:resonance": "node --experimental-strip-types tests/resonance.browser.ts",
     "test:resonance:gallery": "node --experimental-strip-types tests/resonance-gallery.browser.ts",
     "test:continuum": "node --experimental-strip-types tests/continuum.browser.ts",
-    "test:continuum:gallery": "node --experimental-strip-types tests/continuum-gallery.browser.ts"
+    "test:continuum:gallery": "node --experimental-strip-types tests/continuum-gallery.browser.ts",
+    "test:lazy-loading": "node --experimental-strip-types tests/lazy-loading.browser.ts"
   },
   "devDependencies": {
     "vite": "8.3.0",

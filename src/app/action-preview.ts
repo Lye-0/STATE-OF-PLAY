@@ -1,5 +1,5 @@
 /** Gallery-only demonstrations. Exported actions never simulate server work or change navigation. */
-import type {Part, PartController} from '../catalog/types';
+import type {PartPreview, PartController} from '../catalog/types';
 import {required} from './utils';
 export function actionGuide(category: string): string[][] {
   return category === 'buttons' ? [
@@ -15,7 +15,7 @@ export function actionGuide(category: string): string[][] {
     ['.sop-link-copy / .sop-link-icon','content slots','ラベル・装飾の矢印。子に別のリンクを入れません。']
   ];
 }
-export function mountActionDemo(root:HTMLElement, part:Part, controller:PartController, scope:HTMLElement, update?:(text:string)=>void) {
+export function mountActionDemo(root:HTMLElement, part:PartPreview, controller:PartController, scope:HTMLElement, update?:(text:string)=>void) {
   const events=new AbortController();let timer=0,count=0;let destination:HTMLElement|undefined;
   const output=document.createElement('p');output.className='action-demo-feedback';output.setAttribute('role','status');output.dataset.demoRoot='';
   if (part.category==='buttons') {
@@ -40,7 +40,7 @@ export function mountActionDemo(root:HTMLElement, part:Part, controller:PartCont
   }
   return {cancelPending(message?:string){clearTimeout(timer);if(message)output.textContent=message;},destroy(){clearTimeout(timer);events.abort();output.remove();destination?.remove();}};
 }
-export function mountActionControls(dialog:HTMLDialogElement,root:HTMLElement,part:Part,controller:PartController) {
+export function mountActionControls(dialog:HTMLDialogElement,root:HTMLElement,part:PartPreview,controller:PartController) {
   const controls=document.createElement('div');controls.className='action-preview-controls';
   if(part.category==='buttons') {
     controls.innerHTML='<div class="action-state-pills" role="group" aria-label="ボタンの状態"><button type="button" class="small-button" data-action-state="ready" aria-pressed="true">通常</button><button type="button" class="small-button" data-action-state="loading" aria-pressed="false">処理中</button><button type="button" class="small-button" data-action-state="disabled" aria-pressed="false">無効</button></div><p>ボタンを押すと、カウンターと処理中表示を試せます。実際の保存・送信・削除はしません。</p>';

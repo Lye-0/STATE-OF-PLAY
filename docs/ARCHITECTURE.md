@@ -72,3 +72,7 @@ TypeScriptのコンパイラーやAST解析はNode側だけで使い、ブラウ
 textboxesは6番目のカテゴリです。ネイティブinput/textareaが文字列とブラウザーの編集履歴を所有します。text-field.tsは装飾データ、カウンター、自動高さ、validation、フォームreset、イベントとobserverの寿命だけを管理します。React版は値・ID・追加ボタンの状態をReact側に持ち、ControllerのmanageIds/manageActionsをfalseにして二重操作を避けます。
 
 共有ViewはReactの制御値を勝手に加工しません。非制御モードではdefaultValueを入力に渡すだけにし、文字列の重複stateを作りません。クリアはnative value setterとinputイベントで実際のReact onChangeにも接続します。ギャラリーへはsop:field-stateに真偽値だけを通知し、文字列を保存したり配信したりしません。
+
+## カテゴリ別のブラウザー読み込み
+
+サイトは `virtual:sop-browser` の一覧情報と動的カテゴリモジュールを使用し、配布データは詳細を開いたパーツだけJSONで取得します。旧 `virtual:sop-catalog` / `mounts` / `styles` の全件モジュールは互換性・検証用で、サイトの入口からは読み込みません。実装契約と外部差分の取り込み手順は [LAZY-LOADING.md](LAZY-LOADING.md) を参照してください。

@@ -1,3 +1,4 @@
+import {galleryReady} from './gallery-ready.ts';
 /** Real browser interaction tests. Set SOP_TEST_MODE=offline only in restricted test runners. */
 import assert from 'node:assert/strict';
 import { requireLocalServerUrl } from './vite-url.ts';
@@ -33,10 +34,10 @@ try {
  await page.emulateMedia({reducedMotion:'reduce'});
  const card=(id:string)=>page.locator(`[data-part="${id}"]`);
  await run('new category intersects A/B and retains all 48 original parts',async()=>{
-  assert.equal(await page.locator('[data-part]').count(),parts.length);await page.locator('[data-category="scrollbars"]').click();assert.equal(await page.locator('[data-part]').count(),bars.length);
+  await galleryReady(page);assert.equal(await page.locator('[data-part]').count(),parts.filter(p=>p.category==='toggles').length);await page.locator('[data-category="scrollbars"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),bars.length);
   assert.equal(await page.locator('#toggle-controls').isVisible(),false);
-  await page.locator('[data-design-filter="A"]').click();assert.equal(await page.locator('[data-part]').count(),bars.filter(p=>p.designType==='A').length);
-  await page.locator('[data-design-filter="B"]').click();assert.equal(await page.locator('[data-part]').count(),bars.filter(p=>p.designType==='B').length);await page.locator('[data-design-filter="all"]').click();
+  await page.locator('[data-design-filter="A"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),bars.filter(p=>p.designType==='A').length);
+  await page.locator('[data-design-filter="B"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),bars.filter(p=>p.designType==='B').length);await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);
  });
  await run('all rails use proportional thumbs, real drag, keyboard and stable content movement',async()=>{
   for(const part of bars) {
@@ -58,7 +59,7 @@ try {
   await viewport.hover();await page.mouse.wheel(0,220);await page.waitForTimeout(220);assert.ok(await viewport.evaluate(v=>v.scrollTop>0));
   await viewport.focus();await page.keyboard.press('Home');await page.keyboard.press('ArrowDown');await page.waitForTimeout(160);assert.ok(await viewport.evaluate(v=>v.scrollTop>0));
  });
- await page.locator('[data-open="capillary"]').click();
+ await page.locator('[data-open="capillary"]').click();await galleryReady(page,true);
  const detail=page.locator('.preview-stage .sop-scroll-area'), rail=detail.locator('.sop-scroll-rail'),viewport=detail.locator('.sop-scroll-viewport');
  await run('detail has scroll controls instead of ON/OFF; track clicking pages the actual content',async()=>{
   assert.equal(await page.locator('[data-state]').count(),0);assert.ok(await page.locator('#scroll-orientation').isVisible());
@@ -125,7 +126,7 @@ try {
    await page.setViewportSize({width,height:844});
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
    for(const part of bars){const root=card(part.id).locator('.sop-scroll-area');const b=(await root.boundingBox())!,c=(await card(part.id).boundingBox())!;assert.ok(b.x>=c.x&&b.x+b.width<=c.x+c.width+1,part.id+width);}
-   await page.locator('[data-open="capillary"]').click();assert.ok(await page.locator('.download-file').isVisible());assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+   await page.locator('[data-open="capillary"]').click();await galleryReady(page,true);assert.ok(await page.locator('.download-file').isVisible());assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
    await page.locator('#scroll-orientation').selectOption('horizontal');await page.locator('[data-jump="1"]').click();await page.waitForFunction(()=>document.querySelector('.preview-stage .sop-scroll-rail')?.getAttribute('aria-valuenow')==='100');assert.equal(await page.locator('.preview-stage .sop-scroll-rail').getAttribute('aria-valuenow'),'100');
    if(width===390)await page.screenshot({path:path.join(out,'mobile-390.png')});
    await page.locator('.close-detail').click();
@@ -135,7 +136,7 @@ try {
  await run('All rails settle after their finite trails and retain unique viewport identifiers',async()=>{
   await page.waitForTimeout(2200);const ids=await page.locator('.object-grid .sop-scroll-viewport').evaluateAll(nodes=>nodes.map(n=>n.id));assert.equal(ids.length,new Set(ids).size);assert.ok(ids.every(Boolean));
   const frames=await page.evaluate(()=>(window as unknown as {activeScrollFrames:Set<number>}).activeScrollFrames.size);assert.equal(frames,0);
-  for(let i=0;i<3;i++){await page.locator('[data-category="blocks"]').click();await page.locator('[data-category="scrollbars"]').click();}
+  for(let i=0;i<3;i++){await page.locator('[data-category="blocks"]').click();await galleryReady(page,true);await page.locator('[data-category="scrollbars"]').click();await galleryReady(page,true);}
   await page.waitForTimeout(2200);assert.equal(await page.locator('.object-grid .sop-scroll-area').count(),bars.length);
  });
  await page.locator('#collection').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(out,'gallery.png')});

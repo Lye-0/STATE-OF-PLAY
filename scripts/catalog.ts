@@ -12,7 +12,7 @@ export const FORMATS: Format[] = ['tsx','jsx','ts','js'];
 export interface CatalogBuild { parts: Part[]; bases: string[]; styles: string; }
 const html = (value: string) => value.replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]!));
 
-export function buildCatalog(root = ROOT): CatalogBuild {
+export function buildCatalog(root = ROOT, onlyIds?: readonly string[]): CatalogBuild {
   const inputCache = new Map<string,string>();
   const strings = new Map<string,string>();
   const intern = (text:string):string => { const known=strings.get(text); if(known!==undefined)return known; strings.set(text,text); return text; };
@@ -28,7 +28,7 @@ export function buildCatalog(root = ROOT): CatalogBuild {
       bundledCSS(resolveLocal(source, request, exists), visited));
   }
   const seen = new Set<string>();
-  const parts = bases.map(base => {
+  const parts = bases.filter(base => !onlyIds || onlyIds.includes(base.split('/').at(-1)!)).map(base => {
     const meta = JSON.parse(read(`${base}/meta.json`)) as Omit<Part,'files'|'portableFiles'|'preview'|'markup'|'usage'|'prompt'>;
     if (!/^[a-z][a-z0-9-]*$/.test(meta.id) || seen.has(meta.id)) throw new Error(`Invalid/duplicate part ID: ${meta.id}`);
     if (!['A','B'].includes(meta.designType) || typeof meta.runtime !== 'string') throw new Error(`Invalid design type/runtime: ${base}`);
@@ -82,7 +82,7 @@ export function buildCatalog(root = ROOT): CatalogBuild {
     };
     return {...meta, markup, usage: read(`${base}/usage.md`), prompt: read(`${base}/prompt.md`), files, portableFiles, preview};
   }).sort((a, b) => a.order - b.order);
-  for (const part of parts) for (const id of part.related) if (!seen.has(id)) throw new Error(`Unknown related part: ${id}`);
+  for (const part of parts) for (const id of part.related) if (!onlyIds && !seen.has(id)) throw new Error(`Unknown related part: ${id}`);
   const styleSeen = new Set<string>();
   return {parts, bases, styles: bases.map(base => bundledCSS(`${base}/styles.css`,styleSeen)).join('\n')};
 }

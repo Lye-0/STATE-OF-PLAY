@@ -1,5 +1,6 @@
 /** Inspector and gallery demonstrations. These helpers are deliberately not exported with a part. */
-import type {Part, PartController} from '../catalog/types';
+import type {PopupController} from '../shared/popup-controller';
+import type {PartPreview, PartController} from '../catalog/types';
 import {required} from './utils';
 export function checkPopupGuide(category: string): string[][] {
   return category === 'checkboxes' ? [
@@ -17,7 +18,7 @@ export function checkPopupGuide(category: string): string[][] {
     ['destroy', 'void', '閉じる・イベント解除・スクロールロック解放。']
   ];
 }
-export function mountPopupSample(root:HTMLElement, _part:Part) {
+export function mountPopupSample(root:HTMLElement, _part:PartPreview) {
   const window = root.querySelector<HTMLDialogElement>(':scope > dialog')!;
   const sample = document.createElement('div');
   sample.className = root.className+' sop-popup-thumbnail';
@@ -37,7 +38,7 @@ export function mountPopupSample(root:HTMLElement, _part:Part) {
   root.addEventListener('sop:popup-close',changed);
   return ()=>{root.removeEventListener('sop:popup-close',changed);sample.remove();feedback.remove();};
 }
-export function mountCheckPopupControls(dialog:HTMLDialogElement,root:HTMLElement,part:Part,controller:PartController) {
+export function mountCheckPopupControls(dialog:HTMLDialogElement,root:HTMLElement,part:PartPreview,controller:PartController) {
   const controls=document.createElement('div');controls.className='check-popup-controls';
   let cleanupSample:(()=>void)|undefined;
   const events=new AbortController();
@@ -57,7 +58,7 @@ export function mountCheckPopupControls(dialog:HTMLDialogElement,root:HTMLElemen
   }else{
     cleanupSample=mountPopupSample(root,part);
     controls.innerHTML='<label><input type="checkbox" data-popup-backdrop checked>背景クリックで閉じる</label><label><input type="checkbox" data-popup-escape checked>Escapeで閉じる</label><label><input type="checkbox" data-popup-disabled>開くボタンを無効にする</label><p>ボタンから実際のモーダルを開けます。内容の入力や選択も試せます。保存・送信はしません。</p>';
-    const options=()=>controller.updatePopupOptions?.({closeOnBackdrop:required<HTMLInputElement>('[data-popup-backdrop]',controls).checked,closeOnEscape:required<HTMLInputElement>('[data-popup-escape]',controls).checked});
+    const options=()=>(controller.updatePopupOptions ?? (controller as unknown as PopupController).updateOptions)?.({closeOnBackdrop:required<HTMLInputElement>('[data-popup-backdrop]',controls).checked,closeOnEscape:required<HTMLInputElement>('[data-popup-escape]',controls).checked});
     controls.querySelectorAll<HTMLInputElement>('[data-popup-backdrop],[data-popup-escape]').forEach(input=>input.addEventListener('change',options));
     required<HTMLInputElement>('[data-popup-disabled]',controls).addEventListener('change',event=>controller.setDisabled?.((event.currentTarget as HTMLInputElement).checked));
     root.addEventListener('sop:popup-state',event=>{required('#detail-state',dialog).textContent=(event as CustomEvent<{open:boolean}>).detail.open?'OPEN':'CLOSED';},{signal:events.signal});

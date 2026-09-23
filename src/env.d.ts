@@ -4,7 +4,7 @@ declare module 'virtual:sop-mounts' { export const mounts: Record<string, import
 declare module 'virtual:sop-styles';
 interface PrismToken { type: string; alias?: string | string[]; content: string | PrismToken | (string | PrismToken)[]; }
 interface Window {
-  SOP_CATALOG: import('./catalog/types').Part[];
+  SOP_CATALOG: import('./catalog/types').PartSummary[];
   StateOfPlay: Readonly<{ version: string; getStates(): Record<string, boolean>; getPartCount(): number }>;
   Prism?: { languages: Record<string, object>; tokenize(code: string, grammar: object): (string | PrismToken)[] };
   JSZip: new () => {
@@ -12,4 +12,11 @@ interface Window {
     file(name: string, code: string, options?: { binary?: boolean; createFolders?: boolean }): unknown;
     generateAsync(options: { type: 'blob'; mimeType: string; compression: 'DEFLATE'; compressionOptions: {level: number}; platform: 'DOS' }): Promise<Blob>;
   };
+}
+
+declare module 'virtual:sop-browser' {
+ export const index: import('./catalog/types').PartSummary[];
+ export const categoryLoaders: Record<string, () => Promise<import('./catalog/types').CategoryModule>>;
+ export const partUrls: Record<string, string>;
+ export function fetchPartPayload(id: string): Promise<import('./catalog/transport').PackedCatalog>;
 }

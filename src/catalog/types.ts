@@ -32,6 +32,10 @@ export interface Part {
   related: string[]; props: string[][]; markup: string; usage: string; prompt: string;
   files: Record<Format, SourceFile[]>; portableFiles: Record<Format, SourceFile[]>; preview: Record<string, string>;
 }
+/** Browser listing and preview data deliberately exclude downloadable source text. */
+export type PartPreview = Omit<Part, 'files' | 'portableFiles' | 'preview' | 'usage' | 'prompt'>;
+export type PartSummary = Pick<Part, 'id' | 'name' | 'category' | 'order' | 'description' | 'material' | 'designType' | 'tags' | 'initial' | 'config' | 'tagline'>;
+export interface CategoryModule { parts: PartPreview[]; mounts: Record<string, MountPart>; }
 export interface PartController {
   getData?: FoundationController['getData'];
   setData?: FoundationController['setData'];

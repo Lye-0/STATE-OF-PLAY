@@ -3,43 +3,46 @@ import {mountPopupSample} from './check-popup-preview';
 import { mountActionDemo } from './action-preview';
 import { fillSample } from './samples';
 import { TactileAudio } from './audio';
-import { createDetails } from './details';
+import type { createDetails } from './details';
 import { createSurfaceController } from '../shared/surface-controller';
-import { mounts } from '../catalog/mounts';
+import { index as parts, loadCategory } from '../catalog/browser';
 import { categories } from '../catalog/categories';
 import { escapeHTML, icon, required, toast, wireTabs } from './utils';
-import type { Part, PartController } from '../catalog/types';
-import parts from 'virtual:sop-catalog';
+import type { PartPreview, PartSummary, PartController, MountPart } from '../catalog/types';
 window.SOP_CATALOG = parts;
 const state = new Map(parts.filter(p => p.category === 'toggles').map(p => [p.id, p.initial ?? false]));
-let activeCategory = 'all', activeDesign = 'all', query = '', demo = 0, demoIndex = 0;
+let activeCategory = 'toggles', activeDesign = 'all', query = '', demo = 0, demoIndex = 0;
 const sound = new TactileAudio();
 const grid = required('#part-grid');
 const search = required<HTMLInputElement>('#search-parts');
-let rendered: {cleanup?:()=>void; part: Part; card: HTMLElement; controller: PartController; surface?: PartController}[] = [];
-const details = createDetails(parts, { onActive(active) {
-        stopDemo();
-        for (const r of rendered)
-            { r.controller.setPaused?.(active); r.surface?.setPaused?.(active); }
-    }, onNavigate: openPart });
-function openPart(id: string, trigger?: HTMLElement) {
-    if (location.hash !== `#part=${id}`)
-        history.pushState(null, '', `#part=${id}`);
-    details.open(id, trigger);
+let rendered: {cleanup?:()=>void; part: PartPreview; card: HTMLElement; controller: PartController; surface?: PartController}[] = [];
+let details: ReturnType<typeof createDetails> | undefined;
+let detailModule: Promise<ReturnType<typeof createDetails>> | undefined;
+let routeRequest = 0;
+function getDetails() {
+    return detailModule ??= import('./details').then(({createDetails}) => {
+        details = createDetails(parts, {onActive(active) {
+            stopDemo();
+            for (const r of rendered) { r.controller.setPaused?.(active); r.surface?.setPaused?.(active); }
+        }, onNavigate: openPart});
+        return details;
+    }).catch(error => { detailModule = undefined; throw error; });
+}
+async function openPart(id: string, trigger?: HTMLElement) {
+    if (!parts.some(p => p.id === id)) return;
+    const token = ++routeRequest;
+    if (location.hash !== '#part='+id) history.pushState(null, '', '#part='+id);
+    try {
+        const view = await getDetails();
+        if (token === routeRequest) await view.open(id, trigger);
+    } catch { if (token === routeRequest) toast('詳細を読み込めませんでした。CODEから再試行してください。'); }
 }
 function readRoute() {
     if(location.hash.startsWith('#sop-demo-')) return;
     let id = '';
-    try {
-        id = location.hash.startsWith('#part=') ? decodeURIComponent(location.hash.slice(6)) : '';
-    }
-    catch {
-        id = '';
-    }
-    if (id && parts.some(p => p.id === id))
-        details.open(id);
-    else if (details.isOpen())
-        details.close();
+    try { id = location.hash.startsWith('#part=') ? decodeURIComponent(location.hash.slice(6)) : ''; } catch { /* malformed route */ }
+    if (id && parts.some(p => p.id === id)) void openPart(id);
+    else { routeRequest++; details?.close(); }
 }
 window.addEventListener('popstate', readRoute);
 window.addEventListener('hashchange', readRoute);
@@ -62,23 +65,59 @@ function updateControls() {
     document.querySelectorAll<HTMLElement>('[data-design-count]').forEach(el => { const kind = el.dataset.designCount; el.textContent = String(parts.filter(p => (activeCategory === 'all' || p.category === activeCategory) && (kind === 'all' || p.designType === kind)).length).padStart(2, '0'); });
     required('#visible-count').textContent = `${String(rendered.length).padStart(2, '0')} OBJECTS`;
 }
-function matchPart(part: Part) {
+function matchPart(part: PartSummary) {
     const haystack = [part.name, part.category, part.description, part.material, part.designType === 'A' ? '表現重視 expressive type a' : '実用重視 essential simple type b', ...part.tags].join(' ').normalize('NFKC').toLowerCase();
     return (activeCategory === 'all' || part.category === activeCategory) && (activeDesign === 'all' || part.designType === activeDesign) && query.normalize('NFKC').toLowerCase().split(/\s+/).every(token => haystack.includes(token));
 }
-function renderGallery() {
+let galleryRequest = 0;
+let visibleLimit = 24;
+const more = document.createElement('button'); more.type = 'button'; more.id = 'load-more'; more.className = 'small-button load-more'; more.hidden = true;
+grid.after(more);
+more.addEventListener('click', () => { visibleLimit += 24; void renderGallery(true); });
+async function renderGallery(append = false) {
+    const token = ++galleryRequest;
     stopDemo();
-    rendered.forEach(r => { r.cleanup?.(); r.controller.destroy(); r.surface?.destroy(); });
-    rendered = [];
-    const visible = parts.filter(matchPart);
-    if (activeCategory === 'scrollbars' || activeCategory === 'dropdowns') visible.sort((a,b) => Number(b.tags.includes('KINETIC')) - Number(a.tags.includes('KINETIC')) || a.order - b.order);
-    grid.innerHTML = visible.length ? visible.map(part => {
+    if (!append) {
+        visibleLimit = 24;
+        rendered.forEach(r => { r.cleanup?.(); r.controller.destroy(); r.surface?.destroy(); });
+        rendered = [];
+    }
+    const matches = parts.filter(matchPart);
+    if (activeCategory === 'scrollbars' || activeCategory === 'dropdowns') matches.sort((a,b) => Number(b.tags.includes('KINETIC')) - Number(a.tags.includes('KINETIC')) || a.order - b.order);
+    const selected = activeCategory === 'all' ? matches.slice(0, visibleLimit) : matches;
+    const pending = selected.filter(p => !rendered.some(r => r.part.id === p.id));
+    grid.setAttribute('aria-busy', 'true'); more.hidden = true;
+    required('#search-clear').hidden = !query;
+    updateControls();
+    if (!append) grid.innerHTML = '<div class="collection-message" role="status">パーツを読み込んでいます…</div>';
+    let visible: PartPreview[];
+    const mounts: Record<string, MountPart> = {};
+    try {
+        const modules = await Promise.all([...new Set(pending.map(p => p.category))].map(loadCategory));
+        if (token !== galleryRequest) return;
+        const previews = new Map(modules.flatMap(m => m.parts).map(p => [p.id, p]));
+        modules.forEach(m => Object.assign(mounts, m.mounts));
+        visible = pending.map(p => { const preview = previews.get(p.id); if (!preview) throw new Error('Missing preview: '+p.id); return preview; });
+    } catch {
+        if (token !== galleryRequest) return;
+        grid.setAttribute('aria-busy', 'false');
+        const message = document.createElement('div'); message.className = 'collection-message'; message.setAttribute('role', 'status');
+        message.innerHTML = '<p>読み込めませんでした。通信を確認してページを再読み込みしてください。</p><button type="button" class="small-button">再読み込み</button>';
+        message.querySelector('button')!.addEventListener('click', () => {
+            const url = new URL(location.href); url.searchParams.set('category', activeCategory); url.searchParams.set('design', activeDesign); url.searchParams.set('q', query);
+            location.assign(url.href);
+        });
+        if (!append) grid.replaceChildren(message); else grid.append(message);
+        return;
+    }
+    const cardsHTML = visible.length ? visible.map(part => {
         const foundation=!!part.foundation;
         const toggle = part.category === 'toggles';
         const scroll = part.category === 'scrollbars';
         const dropdown = part.category === 'dropdowns', accordion = part.category === 'accordions', textbox = part.category === 'textboxes', action = part.category === 'buttons', link = part.category === 'links', tabs = part.category === 'tabs', segments = part.category === 'segments', checkbox = part.category === 'checkboxes', popup = part.category === 'popups';
         return `<article class="object-card ${foundation ? 'foundation-card foundation-'+part.category : toggle ? 'sop-surface sop-original-surface toggle-card' : scroll ? 'scroll-card' : dropdown ? 'dropdown-card' : accordion ? 'accordion-card' : textbox ? 'textbox-card' : action ? 'action-card' : link ? 'link-card' : tabs ? 'tabs-card' : segments ? 'segments-card' : checkbox ? 'checkbox-card' : popup ? 'popup-card' : 'block-card'}" data-part="${escapeHTML(part.id)}" data-design="${part.designType}" style="--sop-accent:${part.accent};--accent:${part.accent}"><header class="card-top"><span class="object-no mono">${String(part.order).padStart(2, '0')} /</span><span class="design-badge design-${part.designType}" title="${part.designType === 'A' ? '表現重視' : '実用重視'}">${part.designType}</span><span class="object-type mono">${part.tags.includes('KINETIC') ? 'KINETIC / ' : ''}${escapeHTML(part.material)}</span><span class="state-readout mono" aria-hidden="true"><i></i><span class="state-word">${toggle ? (state.get(part.id) ? 'ON' : 'OFF') : scroll ? 'SCROLL' : dropdown ? 'SELECT' : accordion ? 'EXPAND' : textbox ? 'WRITE' : action ? 'READY' : link ? 'LINK' : tabs ? 'EXPLORE' : segments ? 'CHOOSE' : checkbox ? 'CHECK' : popup ? 'OPEN' : foundation ? 'TRY IT' : 'SURFACE'}</span></span></header><div class="object-stage" data-stage="${escapeHTML(part.id)}"><div class="stage-glow"></div><div class="stage-mount"></div></div><footer class="card-bottom"><div><h2>${escapeHTML(part.name)}<span>${escapeHTML(part.tagline)}</span></h2><p>${escapeHTML(part.description)}</p></div><button type="button" class="open-part" data-open="${escapeHTML(part.id)}" aria-label="${escapeHTML(part.name)} のコードと詳細を開く">${icon('code')}<span>CODE</span>${icon('arrow')}</button></footer></article>`;
     }).join('') : `<div class="empty-state"><span class="empty-symbol">∅</span><h2>まだ、そのパーツはありません。</h2><p>検索する言葉やカテゴリを変えてみてください。</p><button type="button" class="small-button" id="clear-empty">すべてのパーツを表示</button></div>`;
+    if (append) grid.insertAdjacentHTML('beforeend', cardsHTML); else grid.innerHTML = cardsHTML;
     for (const part of visible) {
         const card = required(`[data-part="${part.id}"]`, grid);
         const mount = required('.stage-mount', card);
@@ -111,10 +150,15 @@ function renderGallery() {
             required('.state-word',card).textContent = info.composing ? 'COMPOSING' : info.focused ? 'EDITING' : info.filled ? 'FILLED' : 'WRITE';
         });
     }
+    if (details?.isOpen()) for (const r of rendered) { r.controller.setPaused?.(true); r.surface?.setPaused?.(true); }
+    grid.setAttribute('aria-busy', 'false');
+    more.hidden = selected.length >= matches.length;
+    more.textContent = 'さらに表示（'+rendered.length+' / '+matches.length+'）';
+    if (append) rendered.find(r => r.part.id === pending[0]?.id)?.card.querySelector<HTMLElement>('[data-open]')?.focus({preventScroll:true});
     grid.querySelector('#clear-empty')?.addEventListener('click', () => { query = ''; activeDesign = 'all'; search.value = ''; syncDesignFilter(); setCategory('all'); });
     updateControls();
     required('#search-clear').hidden = !query;
-    required('#result-announcement').textContent = `${visible.length}個のパーツを表示しています。`;
+    required('#result-announcement').textContent = `${matches.length}個中${rendered.length}個のパーツを表示しています。`;
 }
 function setCategory(id: string) {
     activeCategory = id;
@@ -138,7 +182,7 @@ search.addEventListener('keydown', event => {
     }
 });
 document.addEventListener('keydown', event => {
-    if (event.key === '/' && !details.isOpen() && !(event.target instanceof Element && event.target.closest('input,textarea,select,[contenteditable]'))) {
+    if (event.key === '/' && !details?.isOpen() && !(event.target instanceof Element && event.target.closest('input,textarea,select,[contenteditable]'))) {
         event.preventDefault();
         search.focus();
     }
@@ -195,6 +239,12 @@ required('#library-total').textContent = String(parts.length);
 required('#library-collections').textContent = String(categories.filter(c=>c.id!=='all').length).padStart(2,'0');
 const categoryJump=document.createElement('label');categoryJump.className='category-jump';categoryJump.innerHTML='<span>COLLECTION</span><select id="category-jump" aria-label="カテゴリへ直接移動">'+categories.map(c=>`<option value="${c.id}">${c.label} · ${c.id==='all'?parts.length:parts.filter(p=>p.category===c.id).length}</option>`).join('')+'</select>';
 required('.collection-toolbar').before(categoryJump);categoryJump.querySelector('select')!.addEventListener('change',event=>setCategory((event.target as HTMLSelectElement).value));
+const restored = new URL(location.href).searchParams;
+activeDesign = ['A','B'].includes(restored.get('design') ?? '') ? restored.get('design')! : 'all';
+query = restored.get('q') ?? ''; search.value = query;
 syncDesignFilter();
-setCategory('all');
+let initialCategory: string = parts.some(p => p.category === 'toggles') ? 'toggles' : parts[0].category;
+if (categories.some(c => c.id === restored.get('category'))) initialCategory = restored.get('category')!;
+try { const id = decodeURIComponent(location.hash.slice(6)); if (location.hash.startsWith('#part=')) initialCategory = parts.find(p => p.id === id)?.category ?? initialCategory; } catch { /* malformed route */ }
+setCategory(initialCategory);
 readRoute();

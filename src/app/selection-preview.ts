@@ -1,5 +1,5 @@
 /** Demo controls are not part of exported components. No three-item limit in either controller. */
-import type {Part,PartController} from '../catalog/types';
+import type {PartPreview,PartController} from '../catalog/types';
 import {required} from './utils';
 export function selectionGuide(category:string):string[][] {
   return [
@@ -11,7 +11,7 @@ export function selectionGuide(category:string):string[][] {
     [category==='tabs'?'activation':'name / form / required',category==='tabs'?'automatic | manual':'native radio',category==='tabs'?'タブのキー操作で自動確定またはEnter/Space確定。':'実際のフォーム送信とリセット。ON/OFFや同時複数選択ではありません。']
   ];
 }
-export function mountSelectionControls(dialog:HTMLDialogElement,root:HTMLElement,part:Part,controller:PartController) {
+export function mountSelectionControls(dialog:HTMLDialogElement,root:HTMLElement,part:PartPreview,controller:PartController) {
   const controls=document.createElement('div');controls.className='selection-preview-controls';
   controls.innerHTML='<div class="selection-option-count"><span>項目数</span><div role="group" aria-label="展示の項目数">'+[2,3,4,5,7].map(n=>`<button type="button" class="small-button" data-selection-count="${n}" aria-pressed="${n===3}">${n}</button>`).join('')+'</div></div><label>方向<select aria-label="選択肢の並び" data-selection-axis><option value="horizontal">横方向</option><option value="vertical">縦方向</option></select></label><label><input type="checkbox" data-selection-disabled>全体を無効にする</label><p>展示は3択。項目データを変えるだけで、2択・4択以上へ。<br>設定数の変更はデモ専用で、取得コードの例は3項目です。</p>';
   required('.live-preview',dialog).after(controls);

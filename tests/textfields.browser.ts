@@ -1,3 +1,4 @@
+import {galleryReady} from './gallery-ready.ts';
 /** Native text editing + real React exports. Offline transport is explicit, never reported as a Vite build. */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -23,9 +24,9 @@ try{
  page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
  if(offline){const files=offlineFiles();await page.setContent(files.get('/index.html')!.replace(/<script[^>]*>[\s\S]*?<\/script>/g,'').replace(/<link[^>]*>/g,''));await page.addStyleTag({content:files.get('/test-styles.css')!});for(const v of ['prism','jszip'])await page.addScriptTag({content:fs.readFileSync(path.join(ROOT,'public/vendor',v+'.js'),'utf8')});await page.addScriptTag({content:files.get('/test-app.js')!});}else await page.goto(url);
  await run('Gallery: 24 native editable fields, labels focus the input, typing never opens details',async()=>{
-  await page.locator('[data-category="textboxes"]').click();assert.equal(await page.locator('[data-part]').count(),24);
+  await page.locator('[data-category="textboxes"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),24);
   for(const p of parts){const r=page.locator(`[data-part="${p.id}"] .sop-textfield`),f=r.locator('.sop-field-control');await r.locator('label').click();assert.ok(await f.evaluate(e=>e===document.activeElement));await f.fill(p.id==='contact-field'?'hello@example.com':'日本語入力 + text');assert.ok((await f.inputValue()).length>0);assert.equal(await r.getAttribute('data-filled'),'true');assert.equal(await page.locator('dialog[open]').count(),0);}
-  await page.locator('[data-design-filter="B"]').click();assert.equal(await page.locator('[data-part]').count(),8);await page.locator('[data-design-filter="A"]').click();assert.equal(await page.locator('[data-part]').count(),16);await page.locator('[data-design-filter="all"]').click();
+  await page.locator('[data-design-filter="B"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),8);await page.locator('[data-design-filter="A"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),16);await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);
  });
  await run('Native editing: caret movement, undo, clear focus and safe text display',async()=>{
   const r=page.locator('[data-part="essential-field"] .sop-textfield'),f=r.locator('.sop-field-control');
@@ -34,7 +35,7 @@ try{
   await f.fill('<img src=x onerror=alert(1)>');assert.equal(await r.locator('img').count(),0);
  });
  await run('Detail controls: value survives format/layout changes; error, success, readOnly, disabled and reset',async()=>{
-  await page.locator('[data-open="aurora-field"]').click();const d=page.locator('#part-details'),f=d.locator('.sop-field-control');await f.fill('Keep this draft');
+  await page.locator('[data-open="aurora-field"]').click();await galleryReady(page,true);const d=page.locator('#part-details'),f=d.locator('.sop-field-control');await f.fill('Keep this draft');
   await d.locator('[data-format="js"]').click();await d.locator('#export-layout').selectOption('original');assert.equal(await f.inputValue(),'Keep this draft');
   await d.locator('[data-field-status]').selectOption('error');assert.equal(await f.getAttribute('aria-invalid'),'true');assert.ok(await d.locator('.sop-field-validation').isVisible());
   await d.locator('[data-field-status]').selectOption('success');assert.equal(await f.getAttribute('aria-invalid'),'false');assert.equal(await d.locator('.sop-textfield').getAttribute('data-success'),'true');
@@ -61,7 +62,7 @@ try{
  await run('24 fields at 320/390/768: no horizontal overflow, 16px native text and usable detail controls',async()=>{
   for(const width of [320,390,768]){await page.setViewportSize({width,height:900});for(const p of parts){const r=page.locator(`[data-part="${p.id}"] .sop-textfield`),f=r.locator('.sop-field-control');const b=(await r.boundingBox())!;assert.ok(b.x>=-1&&b.x+b.width<=width+1,p.id+' '+width);assert.ok(await f.evaluate(e=>parseFloat(getComputedStyle(e).fontSize)>=16));}
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
-   if(width===390){await page.locator('[data-open="letterpress-note"]').click();await page.locator('[data-field-sample]').click();await page.screenshot({path:path.join(out,'mobile-390.png')});assert.ok(await page.locator('.download-file').isVisible());await page.locator('.close-detail').click();}
+   if(width===390){await page.locator('[data-open="letterpress-note"]').click();await galleryReady(page,true);await page.locator('[data-field-sample]').click();await page.screenshot({path:path.join(out,'mobile-390.png')});assert.ok(await page.locator('.download-file').isVisible());await page.locator('.close-detail').click();}
   }await page.setViewportSize({width:1440,height:1000});
  });
  // Isolated native fields with no gallery state or assets. Two copies of every part.

@@ -39,5 +39,5 @@ test('presentation cancellation covers timers, observers and animation resources
  const s=read('src/shared/kinetic-select.ts');assert.match(s,/panel.inert=true/);assert.match(s,/aria-hidden/);assert.match(s,/finishClosing/);assert.match(s,/stopAnimations/);
 });
 test('gallery can reveal new additions without losing older entries',()=>{
- const s=read('src/app/gallery.ts');assert.match(s,/tags.includes\('KINETIC'\)/);assert.match(s,/const visible = parts.filter\(matchPart\)/);
+ const s=read('src/app/gallery.ts');assert.match(s,/tags.includes\('KINETIC'\)/);assert.match(s,/const matches = parts.filter\(matchPart\)/);
 });

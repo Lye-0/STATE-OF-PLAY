@@ -1,3 +1,4 @@
+import {galleryReady} from './gallery-ready.ts';
 /** Native form controls and top-layer dialogs. Full export, focus and lifecycle tests. */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -25,16 +26,16 @@ try{
   const files=offlineFiles(fixture);await page.setContent(files.get('/index.html')!.replace(/<script[^>]*>[\s\S]*?<\/script>/g,'').replace(/<link[^>]*>/g,''));await page.addStyleTag({content:files.get('/test-styles.css')!});for(const v of ['prism','jszip'])await page.addScriptTag({content:fs.readFileSync(path.join(ROOT,'public/vendor',v+'.js'),'utf8')});await page.addScriptTag({content:files.get('/test-app.js')!});}else await page.goto(url);
  await page.emulateMedia({reducedMotion:'reduce'});
  await run('48 new parts: category/search/style filters and exact A/B counts',async()=>{
-  assert.equal(await page.locator('[data-part]').count(),offline?parts.length:data.parts.length);
-  for(const category of ['checkboxes','popups']){await page.locator(`[data-category="${category}"]`).click();assert.equal(await page.locator('[data-part]').count(),24);await page.locator('[data-design-filter="A"]').click();assert.equal(await page.locator('[data-part]').count(),16);await page.locator('[data-design-filter="B"]').click();assert.equal(await page.locator('[data-part]').count(),8);await page.locator('[data-design-filter="all"]').click();}
+  await galleryReady(page);assert.equal(await page.locator('[data-part]').count(),24);
+  for(const category of ['checkboxes','popups']){await page.locator(`[data-category="${category}"]`).click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),24);await page.locator('[data-design-filter="A"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),16);await page.locator('[data-design-filter="B"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),8);await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);}
  });
  await run('All 24 checkboxes: native label/Space, multiple independent selection and no accidental inspector',async()=>{
-  await page.locator('[data-category="checkboxes"]').click();
+  await page.locator('[data-category="checkboxes"]').click();await galleryReady(page,true);
   for(const p of parts.filter(p=>p.category==='checkboxes')){const r=page.locator(`[data-part="${p.id}"] .sop-check`),i=r.locator('input[type=checkbox]');const initial=await i.isChecked();await r.locator('.sop-check-label').click();assert.equal(await i.isChecked(),!initial);await i.focus();await page.keyboard.press('Space');assert.equal(await i.isChecked(),initial);}
   await page.locator('[data-part="aurora-check"] input').check();await page.locator('[data-part="titanium-check"] input').check();assert.ok(await page.locator('[data-part="aurora-check"] input').isChecked());assert.equal(await page.locator('dialog[open]').count(),0);
  });
  await run('Checkbox inspector: mixed state, disabled, code/layout changes retain checked state',async()=>{
-  await page.locator('[data-open="aurora-check"]').click();const d=page.locator('#part-details'),i=d.locator('.sop-check input');
+  await page.locator('[data-open="aurora-check"]').click();await galleryReady(page,true);const d=page.locator('#part-details'),i=d.locator('.sop-check input');
   await d.locator('[data-check-state="mixed"][type=button]').click();assert.ok(await i.evaluate((el:HTMLInputElement)=>el.indeterminate));await i.click();assert.ok(await i.isChecked());assert.equal(await i.evaluate((el:HTMLInputElement)=>el.indeterminate),false);
   await d.locator('[data-format="jsx"]').click();await d.locator('#export-layout').selectOption('original');assert.ok(await i.isChecked());
   await d.locator('[data-check-disabled]').check();assert.ok(await i.isDisabled());await d.locator('[data-check-disabled]').uncheck();
@@ -42,11 +43,11 @@ try{
   await d.locator('[data-detail-tab="code"]').click();await page.screenshot({path:path.join(out,'checkbox-detail.png')});await d.locator('.close-detail').click();
  });
  await run('All 24 popups: actual top-layer content, close reasons, restored focus and scroll lock',async()=>{
-  await page.locator('[data-category="popups"]').click();
+  await page.locator('[data-category="popups"]').click();await galleryReady(page,true);
   for(const p of parts.filter(p=>p.category==='popups')){const r=page.locator(`[data-part="${p.id}"] .stage-mount > .sop-popup`),trigger=r.locator(':scope > [data-popup-open]'),d=r.locator(':scope > dialog');await trigger.click();assert.ok(await d.evaluate((el:HTMLDialogElement)=>el.open&&el.matches(':modal')));assert.ok((await d.locator('.sop-popup-body').innerText()).trim().length>0,p.id+' popup body');assert.equal(await page.evaluate(()=>document.documentElement.style.overflow),'hidden');await d.locator('[data-popup-close="cancel"]').click();await d.waitFor({state:'hidden'});assert.ok(await trigger.evaluate(el=>el===document.activeElement));assert.equal(await page.locator('dialog[open]').count(),0);assert.notEqual(await page.evaluate(()=>document.documentElement.style.overflow),'hidden');}
  });
  await run('Nested inspector: focus stays in popup; Escape closes only the top dialog and preserves typed content',async()=>{
-  await page.locator('[data-open="folio-window"]').click();const outer=page.locator('#part-details'),r=outer.locator('.preview-stage > .sop-popup'),trigger=r.locator(':scope > [data-popup-open]'),d=r.locator(':scope > dialog');
+  await page.locator('[data-open="folio-window"]').click();await galleryReady(page,true);const outer=page.locator('#part-details'),r=outer.locator('.preview-stage > .sop-popup'),trigger=r.locator(':scope > [data-popup-open]'),d=r.locator(':scope > dialog');
   await trigger.click();await d.locator('textarea').fill('保存ではなく、閉じた後も残る下書き。');
   for(let n=0;n<12;n++){await page.keyboard.press(n%3===0?'Shift+Tab':'Tab');assert.ok(await d.evaluate(el=>el.contains(document.activeElement)));}
   await page.keyboard.press('Escape');await d.waitFor({state:'hidden'});assert.ok(await outer.evaluate((el:HTMLDialogElement)=>el.open));assert.ok(await trigger.evaluate(el=>el===document.activeElement));
@@ -55,14 +56,14 @@ try{
   await page.screenshot({path:path.join(out,'popup-detail.png')});await outer.locator('.close-detail').click();
  });
  await run('Popup backdrop click vs disabled dismissal, and dragging out from content does not dismiss',async()=>{
-  await page.locator('[data-open="essential-dialog"]').click();const outer=page.locator('#part-details'),trigger=outer.locator('.preview-stage > .sop-popup > [data-popup-open]'),d=outer.locator('.preview-stage > .sop-popup > dialog');
+  await page.locator('[data-open="essential-dialog"]').click();await galleryReady(page,true);const outer=page.locator('#part-details'),trigger=outer.locator('.preview-stage > .sop-popup > [data-popup-open]'),d=outer.locator('.preview-stage > .sop-popup > dialog');
   await trigger.click();await page.mouse.click(4,4);await d.waitFor({state:'hidden'});
   await outer.locator('[data-popup-backdrop]').uncheck();await trigger.click();await page.mouse.click(4,4);assert.ok(await d.evaluate((el:HTMLDialogElement)=>el.open));await page.keyboard.press('Escape');await d.waitFor({state:'hidden'});
   await outer.locator('[data-popup-backdrop]').check();await trigger.click();const rect=(await d.boundingBox())!;await page.mouse.move(rect.x+30,rect.y+50);await page.mouse.down();await page.mouse.move(4,4);await page.mouse.up();assert.ok(await d.evaluate((el:HTMLDialogElement)=>el.open));await page.keyboard.press('Escape');await d.waitFor({state:'hidden'});await outer.locator('.close-detail').click();
  });
  await run('320/390/768px: all new controls and open popup content fit, long dialog can scroll',async()=>{
-  for(const width of [320,390,768]){await page.setViewportSize({width,height:900});for(const category of ['checkboxes','popups']){await page.locator(`[data-category="${category}"]`).click();for(const p of parts.filter(p=>p.category===category)){const root=page.locator(`[data-part="${p.id}"] .stage-mount > :first-child`),r=(await root.boundingBox())!;assert.ok(r.x>=-1&&r.x+r.width<=width+1,`${p.id} root ${width}`);if(category==='popups'){await root.locator(':scope > [data-popup-open]').click();const d=root.locator(':scope > dialog'),b=(await d.boundingBox())!;assert.ok(b.x>=-1&&b.x+b.width<=width+1,`${p.id} dialog ${width}`);assert.ok(b.y>=-1&&b.y+b.height<=901,`${p.id} height`);assert.ok(await d.evaluate(el=>el.scrollWidth<=el.clientWidth+1),p.id+' content overflow');await d.locator('[data-popup-close="close"]').click();await d.waitFor({state:'hidden'});}}assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));}
-   if(width===390){await page.locator('[data-open="aurora-window"]').click();await page.screenshot({path:path.join(out,'mobile-390.png')});await page.locator('#part-details .close-detail').click();}
+  for(const width of [320,390,768]){await page.setViewportSize({width,height:900});for(const category of ['checkboxes','popups']){await page.locator(`[data-category="${category}"]`).click();await galleryReady(page,true);for(const p of parts.filter(p=>p.category===category)){const root=page.locator(`[data-part="${p.id}"] .stage-mount > :first-child`),r=(await root.boundingBox())!;assert.ok(r.x>=-1&&r.x+r.width<=width+1,`${p.id} root ${width}`);if(category==='popups'){await root.locator(':scope > [data-popup-open]').click();const d=root.locator(':scope > dialog'),b=(await d.boundingBox())!;assert.ok(b.x>=-1&&b.x+b.width<=width+1,`${p.id} dialog ${width}`);assert.ok(b.y>=-1&&b.y+b.height<=901,`${p.id} height`);assert.ok(await d.evaluate(el=>el.scrollWidth<=el.clientWidth+1),p.id+' content overflow');await d.locator('[data-popup-close="close"]').click();await d.waitFor({state:'hidden'});}}assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));}
+   if(width===390){await page.locator('[data-open="aurora-window"]').click();await galleryReady(page,true);await page.screenshot({path:path.join(out,'mobile-390.png')});await page.locator('#part-details .close-detail').click();}
   }await page.setViewportSize({width:1440,height:1000});
  });
  // Consumer fixture has no gallery JS, no gallery CSS and no global IDs in part markup.

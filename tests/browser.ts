@@ -1,3 +1,4 @@
+import {galleryReady} from './gallery-ready.ts';
 /** The default run tests real Vite over HTTP. SOP_TEST_MODE=offline is an explicit, reported test adapter. */
 import assert from 'node:assert/strict';
 import { requireLocalServerUrl } from './vite-url.ts';
@@ -76,27 +77,27 @@ try{
    },{modules,entry:script.name});
   }
  }
- await load();
+ await load();await galleryReady(page);await page.locator('[data-category="all"]').click();await galleryReady(page,true);
  await run(`Gallery: ${catalog.parts.length} parts, no runtime errors`,async()=>{assert.equal(await page.locator('[data-part]').count(),catalog.parts.length);assert.deepEqual(errors,[]);});
  await run('A/B and category filters intersect, counts remain correct, and search resets cleanly',async()=>{
   for(const category of ['all','toggles','blocks','scrollbars','dropdowns','accordions','textboxes']){
-   await page.locator(`[data-category="${category}"]`).click();
+   await page.locator(`[data-category="${category}"]`).click();await galleryReady(page,true);
    for(const kind of ['A','B','all']){
-    await page.locator(`[data-design-filter="${kind}"]`).click();
+    await page.locator(`[data-design-filter="${kind}"]`).click();await galleryReady(page,true);
     const expected=catalog.parts.filter(p=>(category==='all'||p.category===category)&&(kind==='all'||p.designType===kind));
     assert.equal(await page.locator('[data-part]').count(),expected.length);
     assert.equal(await page.locator(`[data-design-filter="${kind}"]`).getAttribute('aria-pressed'),'true');
     for(const part of expected)assert.equal(await page.locator(`[data-part="${part.id}"]`).getAttribute('data-design'),part.designType);
    }
   }
-  await page.locator('[data-category="all"]').click();await page.locator('#search-parts').fill('zz-missing-part');
-  assert.equal(await page.locator('[data-part]').count(),0);await page.locator('#clear-empty').click();
+  await page.locator('[data-category="all"]').click();await galleryReady(page,true);await page.locator('#search-parts').fill('zz-missing-part');await galleryReady(page,true);
+  assert.equal(await page.locator('[data-part]').count(),0);await page.locator('#clear-empty').click();await galleryReady(page,true);
   assert.equal(await page.locator('[data-part]').count(),catalog.parts.length);
  });
  await run('Liquid, Fold, Prism have intrinsic opposite state labels and distinct optical treatment',async()=>{
   await page.emulateMedia({reducedMotion:'reduce'});
   for(const [id,on,off,material]of [['liquid','.liquid-mark','.liquid-rest','.liquid-lens'],['fold','.fold-on','.fold-off','.fold-tab'],['prism','.prism-state:not(.off)','.prism-state.off','.prism-crystal']]){
-   await page.locator(`[data-open="${id}"]`).click();const root=page.locator('.preview-stage [role="switch"]');
+   await page.locator(`[data-open="${id}"]`).click();await galleryReady(page,true);const root=page.locator('.preview-stage [role="switch"]');
    await page.locator('[data-state="off"]').click();
    assert.equal(await root.getAttribute('aria-checked'),'false');
    assert.equal(await root.locator(off).evaluate(n=>getComputedStyle(n).opacity),'1');assert.equal(await root.locator(on).evaluate(n=>getComputedStyle(n).opacity),'0');
@@ -109,7 +110,7 @@ try{
   await page.emulateMedia({reducedMotion:'no-preference'});
  });
  await run('Compact B switches retain real sizes, native keyboard and drag states',async()=>{
-  await page.locator('[data-category="toggles"]').click();await page.locator('[data-design-filter="B"]').click();
+  await page.locator('[data-category="toggles"]').click();await galleryReady(page,true);await page.locator('[data-design-filter="B"]').click();await galleryReady(page,true);
   for(const id of ['quiet','porcelain','rail','segment','outline','rocker']){
    const b=page.locator(`[data-part="${id}"] [role="switch"]`);await b.scrollIntoViewIfNeeded();const box=(await b.boundingBox())!;
    assert.ok(box.height>=44&&box.width<=145,id);await b.focus();await page.keyboard.press('ArrowLeft');assert.equal(await b.getAttribute('aria-checked'),'false');
@@ -117,10 +118,10 @@ try{
    await b.scrollIntoViewIfNeeded();await page.waitForTimeout(150);const current=(await b.boundingBox())!;await page.mouse.move(current.x+10,current.y+current.height/2);await page.mouse.down();await page.mouse.move(current.x+current.width-4,current.y+current.height/2,{steps:10});await page.mouse.up();assert.equal(await b.getAttribute('aria-checked'),'true',id+' drag');
    assert.equal(await page.locator('#part-details').getAttribute('open'),null);
   }
-  await page.locator('[data-category="blocks"]').click();
+  await page.locator('[data-category="blocks"]').click();await galleryReady(page,true);
   const sample=page.locator('[data-part="paper-card"] [data-sample-action]');await sample.click();assert.match(await sample.innerText(),/確認しました/);
   assert.equal(await page.locator('#part-details').getAttribute('open'),null);
-  await page.locator('[data-design-filter="all"]').click();await page.locator('[data-category="all"]').click();
+  await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);await page.locator('[data-category="all"]').click();await galleryReady(page,true);
  });
  await run('Toggle and drag do not open details',async()=>{
   const button=page.locator('[data-part="chrome"] [role="switch"]');const before=await button.getAttribute('aria-checked');await button.click();assert.notEqual(await button.getAttribute('aria-checked'),before);
@@ -128,7 +129,7 @@ try{
   await page.mouse.move(box.x+40,box.y+box.height/2);await page.mouse.down();await page.mouse.move(box.x+box.width-35,box.y+box.height/2,{steps:12});await page.mouse.up();
   assert.equal(await button.getAttribute('aria-checked'),'true');assert.equal(await page.locator('#part-details').getAttribute('open'),null);
  });
- await page.locator('[data-open="luminous-frame"]').click();
+ await page.locator('[data-category="blocks"]').click();await galleryReady(page);await page.locator('[data-open="luminous-frame"]').click();await galleryReady(page,true);
  await run('Detail: code, hierarchical tree, full path, download before copy',async()=>{
   assert.equal(await page.locator('#detail-title').innerText(),'Luminous Frame');await page.locator('[data-file$="/styles.css"]').click();assert.ok((await page.locator('.editor code').innerText()).includes('sop-luminous-frame'));
   assert.ok((await page.locator('.download-file').boundingBox())!.x<(await page.locator('.copy-file').boundingBox())!.x);
@@ -170,7 +171,7 @@ try{
   // Batch DOM clicks within one browser round-trip per part to keep growing CI affordable.
   // Mouse/keyboard/format/layout interactions are also checked separately above and below.
   await page.emulateMedia({reducedMotion:'reduce'});
-  for(const part of catalog.parts){await page.locator(`[data-open="${part.id}"]`).click();
+  for(const part of catalog.parts){await page.locator('#category-jump').selectOption(part.category);await galleryReady(page);await page.locator(`[data-open="${part.id}"]`).click();await galleryReady(page,true);
    const cases=layouts.flatMap(layout=>FORMATS.map(format=>({layout,format,files:getDelivery(part,format,layout).files})));
    const rendered=await page.evaluate(cases=>cases.map(item=>{
     const select=document.querySelector<HTMLSelectElement>('#export-layout')!;select.value=item.layout;select.dispatchEvent(new Event('change',{bubbles:true}));
@@ -181,13 +182,13 @@ try{
    await page.locator('.close-detail').click();console.log('  verified '+part.id+'; '+count+' sources');
   }assert.equal(count,catalog.parts.reduce((n,p)=>n+Object.values(p.files).flat().length*2,0));
   await page.emulateMedia({reducedMotion:'no-preference'});
-  await page.locator('[data-open="chrome"]').click();await page.locator('[data-format="tsx"]').click();await page.locator('#export-layout').selectOption('portable');
+  await page.locator('#category-jump').selectOption('toggles');await galleryReady(page);await page.locator('[data-open="chrome"]').click();await galleryReady(page,true);await page.locator('[data-format="tsx"]').click();await page.locator('#export-layout').selectOption('portable');
   await page.locator('[data-file="chrome-toggle/internal/motion.ts"]').click();await page.locator('#export-layout').selectOption('original');assert.equal(await page.locator('.current-path').textContent(),'src/shared');
   await page.locator('[data-format="jsx"]').click();assert.equal(await page.locator('.current-file').textContent(),'motion.js');await page.locator('#export-layout').selectOption('portable');assert.equal(await page.locator('.current-path').textContent(),'chrome-toggle/internal');await page.locator('.close-detail').click();
  });
  await run('Downloaded ZIP and CLI share exact files, README, prompt, manifest in both layouts and modes',async()=>{
   const part=catalog.parts.find(p=>p.id==='chrome')!;
-  await page.locator('[data-open="chrome"]').click();await page.locator('[data-format="js"]').click();
+  await page.locator('[data-open="chrome"]').click();await galleryReady(page,true);await page.locator('[data-format="js"]').click();
   for(const layout of layouts){
    await page.locator('#export-layout').selectOption(layout);await page.locator('[data-detail-tab="prompt"]').click();await page.locator('[data-prompt-mode="full"]').click();
    const prompt=await page.locator('#prompt-text').inputValue();assert.equal(prompt,buildPrompt(part,'js',layout));
@@ -204,19 +205,19 @@ try{
   await page.locator('#export-layout').selectOption('portable');await page.keyboard.press('Escape');
  });
  await run('Guide and AI prompt remain copyable in every export format',async()=>{
-  await page.locator('[data-open="chrome"]').click();
+  await page.locator('[data-open="chrome"]').click();await galleryReady(page,true);
   for(const format of FORMATS){await page.locator(`[data-format="${format}"]`).click();await page.locator('[data-detail-tab="guide"]').click();assert.ok(await page.locator('#copy-example').isVisible());await page.locator('#copy-example').click();assert.match(await page.locator('#copy-example').innerText(),/コピー済み/);
    await page.locator('[data-detail-tab="prompt"]').click();await page.locator('[data-prompt-mode="full"]').click();const full=await page.locator('#prompt-text').inputValue();assert.ok(full.includes('chrome-toggle/internal/'));assert.ok(full.includes('既存ファイル'));assert.ok(full.includes('参照できない場合'));assert.equal(full,buildPrompt(catalog.parts.find(p=>p.id==='chrome')!,format,'portable'));await page.locator('[data-prompt-mode="spec"]').click();assert.ok((await page.locator('#prompt-text').inputValue()).length<full.length);
   }await page.locator('[data-detail-tab="code"]').click();await page.locator('.close-detail').click();
  });
  await run('Mobile 320/390/768: no overflow, usable code and file picker',async()=>{
-  for(const width of [320,390,768]){await page.setViewportSize({width,height:844});await page.locator('[data-open="chrome"]').click();await page.locator('[data-format="tsx"]').click();assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));assert.ok(await page.locator('.download-file').isVisible());assert.ok((await page.locator('.code-scroll').boundingBox())!.width>190);
+  for(const width of [320,390,768]){await page.setViewportSize({width,height:844});await page.locator('[data-open="chrome"]').click();await galleryReady(page,true);await page.locator('[data-format="tsx"]').click();assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));assert.ok(await page.locator('.download-file').isVisible());assert.ok((await page.locator('.code-scroll').boundingBox())!.width>190);
    if(width<600){await page.locator('.mobile-file-picker select').selectOption('chrome-toggle/internal/motion.ts');assert.equal(await page.locator('.current-file').textContent(),'motion.ts');}
    if(width===390)await page.screenshot({path:path.join(OUT,'mobile-390.png')});await page.locator('.close-detail').click();
   }
  });
  await run('Disabled and reduced-motion states remain functional',async()=>{
-  await page.setViewportSize({width:1200,height:900});await page.locator('[data-open="chrome"]').click();await page.locator('#preview-disabled').check();assert.ok(await page.locator('.preview-stage button').isDisabled());await page.locator('#preview-disabled').uncheck();await page.emulateMedia({reducedMotion:'reduce'});await page.locator('[data-state="off"]').click();assert.equal(await page.locator('.preview-stage button').getAttribute('aria-checked'),'false');await page.locator('[data-state="on"]').click();assert.equal(await page.locator('.preview-stage button').evaluate(b=>b.style.getPropertyValue('--p')),'1.00000');await page.emulateMedia({reducedMotion:'no-preference'});await page.locator('.close-detail').click();
+  await page.setViewportSize({width:1200,height:900});await page.locator('[data-open="chrome"]').click();await galleryReady(page,true);await page.locator('#preview-disabled').check();assert.ok(await page.locator('.preview-stage button').isDisabled());await page.locator('#preview-disabled').uncheck();await page.emulateMedia({reducedMotion:'reduce'});await page.locator('[data-state="off"]').click();assert.equal(await page.locator('.preview-stage button').getAttribute('aria-checked'),'false');await page.locator('[data-state="on"]').click();assert.equal(await page.locator('.preview-stage button').evaluate(b=>b.style.getPropertyValue('--p')),'1.00000');await page.emulateMedia({reducedMotion:'no-preference'});await page.locator('.close-detail').click();
  });
  await run('All standalone HTML/CSS/JS previews run without gallery assets',async()=>{
   for(const part of catalog.parts){await load(`/.test-output/exports/${part.id}/preview/index.html`);assert.equal(await page.locator('.demo-root > *').count(),1);
@@ -270,8 +271,8 @@ try{
    const production=await vite.preview({root:ROOT,base:'/STATE-OF-PLAY/',preview:{port:0,host:'127.0.0.1'}});
    try{
     const productionUrl = requireLocalServerUrl(production, 'Vite production preview');
-    await page.goto(productionUrl);await page.locator('[data-part]').first().waitFor();assert.equal(await page.locator('[data-part]').count(),catalog.parts.length);
-    await page.locator('[data-open="chrome"]').click();assert.match(await page.locator('.editor code').innerText(),/ChromeToggle/);
+    await page.goto(productionUrl);await galleryReady(page);assert.equal(await page.locator('[data-part]').count(),catalog.parts.filter(p=>p.category==='toggles').length);
+    await page.locator('[data-open="chrome"]').click();await galleryReady(page,true);assert.match(await page.locator('.editor code').innerText(),/ChromeToggle/);
    }finally{await new Promise<void>((resolve,reject)=>production.httpServer.close((error?: Error)=>error?reject(error):resolve()));}
   });
  }

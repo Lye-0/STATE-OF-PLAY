@@ -2,9 +2,9 @@ import {createMaterialScene} from '../shared/foundation/resonance/art';
 /** Gallery-only examples. None of these controls/canned results are dependencies of an exported part. */
 import {escapeHTML,required} from './utils';
 import {heading,svg,type FoundationController,type FoundationValue,type FoundationOptions} from '../shared/foundation/core';
-import type {Part,PartController} from '../catalog/types';
+import type {PartPreview,PartController} from '../catalog/types';
 const display=(v:FoundationValue|undefined)=>Array.isArray(v)?v.map(x=>x instanceof File?x.name:String(x)).join(' / '):String(v??'—');
-export function mountFoundationSample(root:HTMLElement,part:Part,controller:PartController):()=>void {
+export function mountFoundationSample(root:HTMLElement,part:PartPreview,controller:PartController):()=>void {
  if(!part.foundation)return ()=>{};const events=new AbortController();const cleanups:(()=>void)[]=[];
  if(part.category==='toasts'){
   const placeholder=root.querySelector<HTMLElement>('[data-toast-example]');if(placeholder){placeholder.hidden=false;placeholder.innerHTML=heading(part.foundation)+`<div class="ff-notice ff-notice-sample" aria-hidden="true"><span class="ff-notice-icon">${svg('info')}</span><div><strong>次の工程を準備しています</strong><p>実際の処理結果を、ここで知らせる。</p></div><span class="ff-notice-meter"></span></div><button type="button" class="ff-action" data-notify>${svg('spark')} 通知を表示</button>`;
@@ -20,7 +20,7 @@ export function mountFoundationSample(root:HTMLElement,part:Part,controller:Part
  }
  return ()=>{events.abort();cleanups.forEach(f=>f());};
 }
-export function mountFoundationControls(dialog:HTMLDialogElement,root:HTMLElement,part:Part,controller:PartController):()=>void {
+export function mountFoundationControls(dialog:HTMLDialogElement,root:HTMLElement,part:PartPreview,controller:PartController):()=>void {
  const cleanupSample=mountFoundationSample(root,part,controller);const controls=document.createElement('div');controls.className='foundation-controls';
  controls.innerHTML=`<div class="foundation-control-heading"><span>PREVIEW SETTINGS</span><button type="button" data-foundation-reset>リセット</button></div><div class="foundation-control-actions">${part.category==='comboboxes'||part.category==='hints'||part.category==='datepickers'?'<button type="button" data-foundation-open>開く</button>':''}${part.category==='progress'?'<button type="button" data-progress-state>割合不明にする</button>':''}${part.category==='radios'||part.category==='comboboxes'?'<button type="button" data-change-items>候補を変更</button>':''}${part.category==='toasts'?'<button type="button" data-notice-test>操作付き通知</button><button type="button" data-notice-clear>通知を閉じる</button>':''}</div>${['sliders','numbers'].includes(part.category)?'<div class="foundation-inputs"><label>MIN<input type="number" data-set-min value="0"></label><label>MAX<input type="number" data-set-max value="100"></label><label>STEP<input type="number" min="0.001" step="any" data-set-step value="1"></label><label>UNIT<input type="text" data-set-unit value="%"></label></div>':''}<label class="disabled-control"><input type="checkbox" data-foundation-disabled><span>無効状態を確認する</span></label><output class="foundation-output" data-foundation-value aria-live="polite"></output>`;
  if(part.tags.includes('CONTINUUM')) {

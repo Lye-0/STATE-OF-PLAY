@@ -12,6 +12,12 @@ export function testBundle(entry: string, extras: Map<string,string> = new Map()
   virtual.set('virtual:sop-catalog',"import {unpackCatalog} from '/src/catalog/transport.ts';export default unpackCatalog("+JSON.stringify(packCatalog(catalog.parts))+');');
   virtual.set('virtual:sop-mounts',mountModule(catalog.bases));
   virtual.set('virtual:sop-styles','');
+  const categories=[...new Set(catalog.parts.map(p=>p.category))];
+  virtual.set('virtual:sop-browser', "import parts from 'virtual:sop-catalog';import {packCatalog} from '/src/catalog/transport.ts';export const index=parts.map(({files,portableFiles,preview,markup,usage,prompt,...meta})=>meta);export const partUrls=Object.fromEntries(parts.map(p=>[p.id,p.id]));export const fetchPartPayload=async id=>packCatalog([parts.find(p=>p.id===id)]);export const categoryLoaders={"+categories.map(c=>JSON.stringify(c)+":()=>import("+JSON.stringify('virtual:sop-category/'+c)+")").join(',')+"};");
+  for(const category of categories) {
+   const selected=catalog.bases.filter(b=>b.split('/')[2]===category);
+   virtual.set('virtual:sop-category/'+category, mountModule(selected)+"\nimport all from 'virtual:sop-catalog';export const parts=all.filter(p=>p.category==="+JSON.stringify(category)+");");
+  }
  }
  const modules=new Map<string,string>();
  const exists=(file:string)=>extras.has(file)||fs.existsSync(path.join(ROOT,file));

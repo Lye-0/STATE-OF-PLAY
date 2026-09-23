@@ -82,6 +82,8 @@ jobs:
         run: npm run test:continuum
       - name: Continuum inspector, code exports and preview settings
         run: npm run test:continuum:gallery
+      - name: Lazy loading over development and production HTTP
+        run: npm run test:lazy-loading
       - name: Build full source archive
         run: npm run package
       - name: Save reports on failure

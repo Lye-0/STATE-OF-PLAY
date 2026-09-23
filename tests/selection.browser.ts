@@ -1,3 +1,4 @@
+import {galleryReady} from './gallery-ready.ts';
 /** Tabs and native radio selectors: real browser/React, variable counts and consumer relocation. */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -21,19 +22,19 @@ try{
  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
  if(offline){const files=offlineFiles(data);await page.setContent(files.get('/index.html')!.replace(/<script[^>]*>[\s\S]*?<\/script>/g,'').replace(/<link[^>]*>/g,''));await page.addStyleTag({content:files.get('/test-styles.css')!});for(const vendor of ['prism','jszip'])await page.addScriptTag({content:fs.readFileSync(path.join(ROOT,'public/vendor',vendor+'.js'),'utf8')});await page.addScriptTag({content:files.get('/test-app.js')!});}else await page.goto(url);
  await run('48 new parts: 24 tabs / 24 selectors, A16 B8 with existing filters',async()=>{
-  for(const category of ['tabs','segments']){await page.locator(`[data-category="${category}"]`).click();assert.equal(await page.locator('[data-part]').count(),24);await page.locator('[data-design-filter="A"]').click();assert.equal(await page.locator('[data-part]').count(),16);await page.locator('[data-design-filter="B"]').click();assert.equal(await page.locator('[data-part]').count(),8);await page.locator('[data-design-filter="all"]').click();}
+  for(const category of ['tabs','segments']){await page.locator(`[data-category="${category}"]`).click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),24);await page.locator('[data-design-filter="A"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),16);await page.locator('[data-design-filter="B"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),8);await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);}
  });
  await run('All 24 tabs: actual panel switching, IDs/ARIA and note state survives hiding',async()=>{
-  await page.locator('[data-category="tabs"]').click();
+  await page.locator('[data-category="tabs"]').click();await galleryReady(page,true);
   for(const p of parts.filter(p=>p.category==='tabs')){const r=page.locator(`[data-part="${p.id}"] .sop-tabs`),tabs=r.locator('[role="tab"]');await tabs.nth(2).click();assert.equal(await r.locator('.sop-choice-panel:visible').count(),1);const input=r.locator('input');await input.fill('日本語 note '+p.id);await tabs.nth(0).click();assert.ok(await input.isHidden());await tabs.nth(2).click();assert.equal(await input.inputValue(),'日本語 note '+p.id);assert.equal(await r.locator('[aria-selected="true"]').count(),1);}
   const ids=await page.locator('[id]').evaluateAll(nodes=>nodes.map(n=>n.id));assert.equal(ids.length,new Set(ids).size);assert.equal(await page.locator('dialog[open]').count(),0);
  });
  await run('All 24 segments are native radios; clicking/arrow keys changes exactly one choice',async()=>{
-  await page.locator('[data-category="segments"]').click();for(const p of parts.filter(p=>p.category==='segments')){const r=page.locator(`[data-part="${p.id}"] .sop-segments`),inputs=r.locator('input[type="radio"]');await inputs.nth(0).check();assert.equal(await inputs.nth(0).isChecked(),true);await inputs.nth(0).focus();await page.keyboard.press('ArrowRight');assert.ok(await inputs.nth(1).isChecked());assert.equal(await r.locator('input:checked').count(),1);assert.equal(await r.getAttribute('data-value'),'choice-2');}assert.equal(await page.locator('dialog[open]').count(),0);
+  await page.locator('[data-category="segments"]').click();await galleryReady(page,true);for(const p of parts.filter(p=>p.category==='segments')){const r=page.locator(`[data-part="${p.id}"] .sop-segments`),inputs=r.locator('input[type="radio"]');await inputs.nth(0).check();assert.equal(await inputs.nth(0).isChecked(),true);await inputs.nth(0).focus();await page.keyboard.press('ArrowRight');assert.ok(await inputs.nth(1).isChecked());assert.equal(await r.locator('input:checked').count(),1);assert.equal(await r.getAttribute('data-value'),'choice-2');}assert.equal(await page.locator('dialog[open]').count(),0);
  });
  await run('Inspector: 2/3/4/5/7 choices, direction, disabled and code/layout preserve selection',async()=>{
   for(const id of ['atlas-tabs','mercury-segments']){
-   await page.locator(`[data-category="${id==='atlas-tabs'?'tabs':'segments'}"]`).click();await page.locator(`[data-open="${id}"]`).click();const d=page.locator('#part-details'),r=d.locator('[data-selection-kind]');
+   await page.locator(`[data-category="${id==='atlas-tabs'?'tabs':'segments'}"]`).click();await galleryReady(page,true);await page.locator(`[data-open="${id}"]`).click();await galleryReady(page,true);const d=page.locator('#part-details'),r=d.locator('[data-selection-kind]');
    for(const n of [2,4,5,7,3]){await d.locator(`[data-selection-count="${n}"]`).click();assert.equal(await d.locator(`[data-selection-count="${n}"]`).getAttribute('aria-pressed'),'true');assert.equal(await d.locator('[data-selection-count][aria-pressed="true"]').count(),1);assert.equal(await r.locator('.sop-choice-item').count(),n);await r.locator('.sop-choice-item').last().click();assert.equal(await r.getAttribute('data-value'),`choice-${n}`);}
    await d.locator('[data-format="jsx"]').click();await d.locator('#export-layout').selectOption('original');assert.equal(await r.getAttribute('data-value'),'choice-3');
    await d.locator('[data-selection-axis]').selectOption('vertical');assert.equal(await r.getAttribute('data-orientation'),'vertical');await d.locator('[data-selection-axis]').selectOption('horizontal');
@@ -43,8 +44,8 @@ try{
   }
  });
  await run('320/390/768px: every new part fits, labels readable, inspector reachable',async()=>{
-  for(const width of [320,390,768]){await page.setViewportSize({width,height:950});for(const category of ['tabs','segments']){await page.locator(`[data-category="${category}"]`).click();for(const p of parts.filter(p=>p.category===category)){const r=page.locator(`[data-part="${p.id}"] [data-selection-kind]`);const b=(await r.boundingBox())!;assert.ok(b.x>=-1&&b.x+b.width<=width+1,p.id+' width '+width);}assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));}
-   await page.locator('[data-open="mercury-segments"]').click();const d=page.locator('#part-details');await d.locator('[data-selection-count="7"]').click();assert.ok(await d.locator('.download-file').isVisible());if(width===390){await page.waitForTimeout(400);}if(width===390)await page.screenshot({path:path.join(out,'mobile-390.png')});await d.locator('.close-detail').click();
+  for(const width of [320,390,768]){await page.setViewportSize({width,height:950});for(const category of ['tabs','segments']){await page.locator(`[data-category="${category}"]`).click();await galleryReady(page,true);for(const p of parts.filter(p=>p.category===category)){const r=page.locator(`[data-part="${p.id}"] [data-selection-kind]`);const b=(await r.boundingBox())!;assert.ok(b.x>=-1&&b.x+b.width<=width+1,p.id+' width '+width);}assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));}
+   await page.locator('[data-open="mercury-segments"]').click();await galleryReady(page,true);const d=page.locator('#part-details');await d.locator('[data-selection-count="7"]').click();assert.ok(await d.locator('.download-file').isVisible());if(width===390){await page.waitForTimeout(400);}if(width===390)await page.screenshot({path:path.join(out,'mobile-390.png')});await d.locator('.close-detail').click();
   }await page.setViewportSize({width:1440,height:1000});
  });
  // Native consumer fixture with no gallery CSS or JavaScript.

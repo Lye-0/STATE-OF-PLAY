@@ -1,6 +1,6 @@
 import { scrollSampleHTML } from '../catalog/scroll-sample';
 import { escapeHTML } from './utils';
-import type { Part } from '../catalog/types';
+import type { PartPreview } from '../catalog/types';
 const content: Record<string, {eyebrow: string; title: string; sub: string; bottom: string; badge: string}> = {
     'original-surface': { eyebrow: 'LESS, BUT BETTER.', title: 'Room for<br><em>possibility.</em>', sub: '余白から、次のアイデアがはじまる。', bottom: 'THE ORIGINAL', badge: '01' },
     'frosted-glass': { eyebrow: 'A DIFFERENT PERSPECTIVE', title: 'Beyond<br><em>the surface.</em>', sub: 'その向こう側まで、美しく。', bottom: 'GLASS STUDY', badge: '02' },
@@ -19,7 +19,7 @@ const content: Record<string, {eyebrow: string; title: string; sub: string; bott
 "gallery-plinth": {"eyebrow": "OBJECTS WORTH KEEPING", "title": "In good<br><em>company.</em>", "sub": "好きなものに、ふさわしい場所を。", "bottom": "GALLERY / PIECE 13", "badge": "15"},
 "prismatic-edge": {"eyebrow": "THE BEAUTY OF THE EDGE", "title": "Different<br><em>by nature.</em>", "sub": "ほんの少し、視点を変える。", "bottom": "DICHROIC / SERIES 14", "badge": "16"}
 };
-export function fillSample(root: HTMLElement, part: Part) {
+export function fillSample(root: HTMLElement, part: PartPreview) {
     if (part.category === 'scrollbars') {
       const content = root.querySelector('.sop-scroll-content');
       if (content) content.innerHTML = scrollSampleHTML(part);

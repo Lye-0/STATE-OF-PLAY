@@ -1,6 +1,6 @@
-import type {Part,PartController} from '../catalog/types';
+import type {PartPreview,PartController} from '../catalog/types';
 import {required} from './utils';
-export function disclosureGuide(category: Part['category']): string[][] {
+export function disclosureGuide(category: PartPreview['category']): string[][] {
   if(category==='dropdowns')return [
     ['data-value / data-label','HTML attributes','選択肢の識別値・検索用のラベル。表示用の説明やアイコンも差し替え可能。'],
     ['init(root, options)','HTMLElement','このselectのルートだけを初期化します。'],
@@ -25,7 +25,7 @@ export function disclosureGuide(category: Part['category']): string[][] {
     ['controller.refresh() / destroy()','void','サイズ再計算と後片付け。']
   ];
 }
-export function mountDisclosureControls(dialog: HTMLDialogElement,root: HTMLElement,part: Part,controller: PartController) {
+export function mountDisclosureControls(dialog: HTMLDialogElement,root: HTMLElement,part: PartPreview,controller: PartController) {
   const view=required('.live-preview',dialog);
   const controls=document.createElement('div');controls.className='disclosure-controls';
   if(part.category==='dropdowns'){

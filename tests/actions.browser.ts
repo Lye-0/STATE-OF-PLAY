@@ -1,3 +1,4 @@
+import {galleryReady} from './gallery-ready.ts';
 /** Native button/link behavior plus real exported React components. No network actions are performed. */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -23,15 +24,15 @@ try {
  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
  if(offline){const files=offlineFiles(data);await page.setContent(files.get('/index.html')!.replace(/<script[^>]*>[\s\S]*?<\/script>/g,'').replace(/<link[^>]*>/g,''));await page.addStyleTag({content:files.get('/test-styles.css')!});for(const v of ['prism','jszip'])await page.addScriptTag({content:fs.readFileSync(path.join(ROOT,'public/vendor',v+'.js'),'utf8')});await page.addScriptTag({content:files.get('/test-app.js')!});}else await page.goto(url);
  await run('Collections: 24 buttons and 16 links with both design intentions',async()=>{
-  for(const [category,total,a]of [['buttons',24,16],['links',16,10]]as const){await page.locator(`[data-category="${category}"]`).click();assert.equal(await page.locator('[data-part]').count(),total);await page.locator('[data-design-filter="A"]').click();assert.equal(await page.locator('[data-part]').count(),a);await page.locator('[data-design-filter="B"]').click();assert.equal(await page.locator('[data-part]').count(),total-a);await page.locator('[data-design-filter="all"]').click();}
+  for(const [category,total,a]of [['buttons',24,16],['links',16,10]]as const){await page.locator(`[data-category="${category}"]`).click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),total);await page.locator('[data-design-filter="A"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),a);await page.locator('[data-design-filter="B"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),total-a);await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);}
  });
  await run('Button demo: mouse, Space, Enter, visible feedback and busy reentry guard',async()=>{
-  await page.locator('[data-category="buttons"]').click();const button=page.locator('[data-part="helios-button"] .sop-action'),card=page.locator('[data-part="helios-button"]');
+  await page.locator('[data-category="buttons"]').click();await galleryReady(page,true);const button=page.locator('[data-part="helios-button"] .sop-action'),card=page.locator('[data-part="helios-button"]');
   await button.click();assert.equal(await button.getAttribute('aria-busy'),'true');await button.evaluate(e=>{(e as HTMLButtonElement).click();(e as HTMLButtonElement).click();});await page.waitForTimeout(920);assert.match(await card.locator('.action-demo-feedback').innerText(),/^1回/);
   await button.focus();await page.keyboard.press('Space');await page.waitForTimeout(920);await page.keyboard.press('Enter');await page.waitForTimeout(920);assert.match(await card.locator('.action-demo-feedback').innerText(),/^3回/);assert.equal(await page.locator('dialog[open]').count(),0);
  });
  await run('Detail: persistent preview, loading/disabled controls and exact code prompt',async()=>{
-  await page.locator('[data-open="mercury-button"]').click();const d=page.locator('#part-details'),b=d.locator('.sop-action');
+  await page.locator('[data-open="mercury-button"]').click();await galleryReady(page,true);const d=page.locator('#part-details'),b=d.locator('.sop-action');
   await d.locator('[data-action-state="loading"]').click();assert.equal(await b.getAttribute('aria-busy'),'true');await d.locator('[data-format="js"]').click();await d.locator('#export-layout').selectOption('original');assert.equal(await b.getAttribute('aria-busy'),'true');
   await d.locator('[data-action-state="disabled"]').click();assert.ok(await b.isDisabled());await d.locator('[data-action-state="ready"]').click();assert.ok(await b.isEnabled());assert.equal(await b.getAttribute('aria-busy'),null);
   await b.click();await d.locator('[data-action-state="loading"]').click();await page.waitForTimeout(950);assert.equal(await b.getAttribute('aria-busy'),'true','manual state must cancel demo timer');
@@ -39,12 +40,12 @@ try {
   await d.locator('[data-detail-tab="code"]').click();await page.screenshot({path:path.join(out,'button-detail.png')});await d.locator('.close-detail').click();
  });
  await run('Native links navigate to actual targets without opening/closing part details',async()=>{
-  await page.locator('[data-category="links"]').click();const link=page.locator('[data-part="compass-link"] .sop-link');await link.click();assert.match(page.url(),/#sop-demo-compass-link-gallery-destination$/);assert.ok(await page.locator('#sop-demo-compass-link-gallery-destination').isVisible());assert.equal(await page.locator('dialog[open]').count(),0);
-  await page.locator('#sop-demo-compass-link-gallery-destination a').click();await page.locator('[data-open="compass-link"]').click();const d=page.locator('#part-details');await d.locator('.sop-link').focus();await page.keyboard.press('Enter');assert.ok(await d.isVisible());assert.ok(await d.locator('.action-link-destination').isVisible());await d.locator('.action-link-destination a').click();await page.screenshot({path:path.join(out,'link-detail.png')});await d.locator('.close-detail').click();
+  await page.locator('[data-category="links"]').click();await galleryReady(page,true);const link=page.locator('[data-part="compass-link"] .sop-link');await link.click();assert.match(page.url(),/#sop-demo-compass-link-gallery-destination$/);assert.ok(await page.locator('#sop-demo-compass-link-gallery-destination').isVisible());assert.equal(await page.locator('dialog[open]').count(),0);
+  await page.locator('#sop-demo-compass-link-gallery-destination a').click();await page.locator('[data-open="compass-link"]').click();await galleryReady(page,true);const d=page.locator('#part-details');await d.locator('.sop-link').focus();await page.keyboard.press('Enter');assert.ok(await d.isVisible());assert.ok(await d.locator('.action-link-destination').isVisible());await d.locator('.action-link-destination a').click();await page.screenshot({path:path.join(out,'link-detail.png')});await d.locator('.close-detail').click();
  });
  await run('Mobile 320/390/768 and long Japanese labels preserve text/icon and usable source controls',async()=>{
-  for(const width of [320,390,768]){await page.setViewportSize({width,height:900});for(const category of ['buttons','links']){await page.locator(`[data-category="${category}"]`).click();for(const p of parts.filter(p=>p.category===category)){const el=page.locator(`[data-part="${p.id}"] .${category==='buttons'?'sop-action':'sop-link'}`);const box=(await el.boundingBox())!;assert.ok(box.x>=-1&&box.x+box.width<=width+1,p.id+' '+width);}assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));}
-   await page.locator('[data-open="compass-link"]').click();const d=page.locator('#part-details');assert.ok(await d.locator('.download-file').isVisible());if(width===390)await page.screenshot({path:path.join(out,'mobile-390.png')});await d.locator('.close-detail').click();
+  for(const width of [320,390,768]){await page.setViewportSize({width,height:900});for(const category of ['buttons','links']){await page.locator(`[data-category="${category}"]`).click();await galleryReady(page,true);for(const p of parts.filter(p=>p.category===category)){const el=page.locator(`[data-part="${p.id}"] .${category==='buttons'?'sop-action':'sop-link'}`);const box=(await el.boundingBox())!;assert.ok(box.x>=-1&&box.x+box.width<=width+1,p.id+' '+width);}assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));}
+   await page.locator('[data-open="compass-link"]').click();await galleryReady(page,true);const d=page.locator('#part-details');assert.ok(await d.locator('.download-file').isVisible());if(width===390)await page.screenshot({path:path.join(out,'mobile-390.png')});await d.locator('.close-detail').click();
   }await page.setViewportSize({width:1440,height:1020});
  });
  const native=await context.newPage();native.on('pageerror',e=>errors.push(e.message));
