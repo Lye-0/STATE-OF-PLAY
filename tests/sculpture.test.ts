@@ -18,7 +18,7 @@ function selectors(text:string):string[]{let depth=0,quote='',start=0;const valu
 test('32 redesigned A skins retain 48 total scroll/select skins and 564 catalogue entries',()=>{
  assert.equal(bases.length,564);assert.equal(skins.length,48);assert.equal(expressive.length,32);
  for(const category of ['scrollbars','dropdowns']){assert.equal(expressive.filter(p=>p.category===category).length,16);assert.equal(skins.filter(p=>p.category===category&&p.designType==='B').length,8);}
- for(const p of expressive)assert.equal(p.version,'2.0.0',p.id);
+ for(const p of expressive)assert.equal(p.version,'3.0.0',p.id);
 });
 test('shared sculpture is explicitly opted into in both Vanilla and React markup',()=>{
  for(const p of skins){for(const file of [p.base+'/markup.html',p.base+'/react/'+p.componentName+'.tsx']){
@@ -33,7 +33,7 @@ test('all export dependency closures include both the sculpted skin and its orig
  for(const p of skins.filter(p=>p.designType==='B')){const closure=dependencies(p.base+'/styles.css',read,exists);assert.equal(closure.some(s=>s.endsWith('-sculpted.css')),false,p.id);}
 });
 test('reproduction CSS is current, not a conflicting specification appended to the previous skin',()=>{
- for(const p of expressive){const prompt=read(p.base+'/prompt.md');const blocks=[...prompt.matchAll(/```css\n([\s\S]*?)\n```/g)];assert.equal(blocks.length,1,p.id);assert.equal(blocks[0][1],read(p.base+'/styles.css').trim(),p.id);assert.ok(prompt.includes(p.description));assert.ok(prompt.includes(sheet(p)));assert.ok(prompt.includes('v4.2.0'));assert.match(prompt,/プロジェクト/);assert.match(prompt,/強制|forced-colors/);assert.match(prompt,/reduced-motion/);}
+ for(const p of expressive){const prompt=read(p.base+'/prompt.md');const blocks=[...prompt.matchAll(/```css\n([\s\S]*?)\n```/g)];assert.equal(blocks.length,1,p.id);assert.equal(blocks[0][1],read(p.base+'/styles.css').trim(),p.id);assert.ok(prompt.includes(p.description));assert.ok(prompt.includes(sheet(p)));assert.ok(prompt.includes('v4.3.0'));assert.match(prompt,/プロジェクト/);assert.match(prompt,/強制|forced-colors/);assert.match(prompt,/reduced-motion/);}
 });
 test('every selector branch is scoped to its specific skin, including comma-separated selectors',()=>{
  for(const p of expressive){const css=read(p.base+'/styles.css').replace(/\/\*[\s\S]*?\*\//g,'').replace(/@import[^;]*;/g,'');for(const m of css.matchAll(/(?:^|[{}])\s*([^{}]+)\{/g)){const rule=m[1].trim();if(rule.startsWith('@')||/^(?:from|to|[\d.%\s,]+)$/.test(rule))continue;for(const branch of selectors(rule))assert.ok(branch.includes('.sop-'+p.id),p.id+': '+branch);}}

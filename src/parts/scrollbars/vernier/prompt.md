@@ -1,43 +1,36 @@
-# Vernier — 造形仕様 v2.0.0（STATE OF PLAY v4.2.0）
+# Vernier — 面・比率・動きの仕様（STATE OF PLAY v4.3.0）
 
-段差のある切削アルミ、細かな目盛り、ローレット加工のキャリッジ。
+幅10pxの刻みのあるレールと16pxのサテン金属面。目盛りは小さく、掴んだ面の反射だけが変わる。
 
-タイプA。素材と形そのものを表現する。既存のトグルなどは完成度の基準であり、別部品の造形をそのまま移植する指示ではない。
+## 面と比率
+幅10pxの刻みのあるレールと16pxのサテン金属面。目盛りは小さく、掴んだ面の反射だけが変わる。
+レールは9〜12px、つまみは15〜18pxを中心とする。触れる領域は通常34px、タッチ用44pxを確保する。見た目の太さとヒット領域は分離する。正確な寸法・反射・色・境界・短い変化は下記の固有CSSを正本とし、共有のscrollbar-sculpted.cssも保持する。
 
-## 形と動きの設計
-装飾レール、比例するつまみ、その内側のハンドル、グリップ、端の口金を分離する。レール・つまみの素材を一組として再現し、色だけの細い丸棒へ置き換えない。光沢と影は静止時にも形が分かる強さに保つ。見た目のハンドルとドラッグ領域を分離し、装飾にはpointer-events:noneを適用する。
+## 動きと意味
+スクロール位置とつまみ位置はブラウザーのネイティブスクロールから即時に決まる。表面の変化はスクロール・ドラッグ中に限り、停止すると短く落ち着く。`--sop-scroll-progress`は現在のスクロール位置を0〜1で表す。進捗面を持つスキンだけ`--rail-wake`が正の値となり、前後のレールの色・質感を分ける。これは実際に読んだ内容の履歴や既読確認を表すものではない。
+つまみは内容量に比例する長さを維持し、ホイール・タッチ・矢印・Home/End・PageUp/PageDown・縦横・RTLの操作を保つ。方向によって面の軸と進捗の起点も合わせる。
 
-レールの占有幅は最低56px。つまみの占有長は表示領域と内容全体の比率から求める。小さなグリップや結晶の寸法と、スクロール位置を示す比例つまみの長さを混同しない。縦・横では光の向きと装飾の軸をCSS変数で切り替える。
-
-## 操作と構造
-ネイティブoverflowとscrollTop/scrollLeftを正本とし、ホイールやタッチのスクロールを横取りしない。ドラッグ、レールのページ移動、矢印、PageUp/PageDown、Space/Shift+Space、Home/Endを維持する。方向はvertical/horizontal、RTLも扱う。スクロール位置を--sop-scroll-progressへ同期するが、装飾用に偽の位置を作らない。
-
-## 導入と後片付け
-ページ全体のバーを変更せず、内容領域をラッパーで包む。children/スロットには利用先の内容を入れ、サンプル文章を固定しない。領域の高さと長い内容を用意し、短い内容ではレールを隠す。サイズと内容の変化へ追従し、aria-controls・aria-valuenowと識別子を個体ごとに維持する。destroy時にイベント、Observer、予約済みRAFを解除する。毎フレームの常時描画処理を追加しない。強制カラー時は標準スクロールバーへ戻す。
+## 移植
+contentを利用先の内容へ差し替え、制約された高さを持つコンテナ内へ置く。Reactではchildren、通常HTMLではコンテンツ領域に配置する。ネイティブ値を変える慣性や装飾の追従遅延は付けない。destroy()でイベントと監視を解除する。
 
 ## 必要なソースと配置
-`styles.css`、`scrollbar-sculpted.css`、そこから参照するベースCSSを揃える。ルートの`sop-scroll-sculpted`と`.sop-vernier`を維持する。配布側のファイル見出しは参照元のパスであり、導入先の同じ階層を強制するものではない。利用先の構成と規約を確認して配置し、移動時には相対importとCSSの参照を更新する。既存コードを無条件に上書きしない。プロジェクトが見えない場合は必要な構成を確認する。
+固有styles.cssとそこからimportする共有CSS・TSをすべて含める。ルートのスキンクラスとA専用のopt-inクラスを保持する。ファイル見出しは配布時のパスであり、導入先の階層を強制するものではない。ユーザーのプロジェクト構成と規約を確認し、相対import・CSS・例の配置を連動して変更する。既存ファイルを無条件に上書きしない。プロジェクトを参照できなければ構成を確認する。
 
 ## 確認基準
-単独の表示と他のスキンを混在させた表示が一致すること。通常・操作中・無効・キーボードフォーカス・320px幅・長い日本語・prefers-reduced-motion・forced-colorsを確認する。外観変更を理由に入力の標準操作、状態管理、外部制御を省略しない。
+実寸の画面で形と余白を確認する。単独・他スキン混在・同じ共有CSSの重複読み込みでも造形が変わらないこと。幅320px、長い日本語、キーボード、タッチ相当、prefers-reduced-motion、forced-colorsを確認する。縮小モーション時は表面の移動を止めても位置と選択状態を維持する。ホバーできない環境でも操作可能にする。
 
 ## 固有スタイル（正本と同期）
-次はこの部品の`styles.css`と同一の内容。共有の寸法と操作状態のスタイルは`scrollbar-sculpted.css`も必要。コード込みの実装プロンプトには必要な全ファイルが含まれる。
+下記はこのパーツのstyles.cssと同じ内容。共有scrollbar-sculpted.cssの寸法・操作状態と併用する。
 
 ```css
 @import "../../../shared/scrollbar-sculpted.css";
-/* vernier — sculpted, component-local rail. v4.2.0 */
-
-.sop-scroll-area.sop-vernier{--sop-scroll-accent:#c5e9d7;--sop-scroll-width:35px;--sop-scroll-radius:3px}
-.sop-scroll-area.sop-vernier > .sop-scroll-rail > .sop-scroll-track{background:linear-gradient(var(--sc-cross),#6c7679,#1c292d 12%,#4a5557 18%,#131c20 23% 76%,#879492 81%,#39464b 89%,#131b1e);border:1px solid #8b95984d;box-shadow:inset 1px 0 #dbe8e069,0 5px 10px #000b}
-.sop-scroll-area.sop-vernier > .sop-scroll-rail > .sop-scroll-track::before{inset:4px 8px;background:repeating-linear-gradient(var(--sc-along),#d7e6d46b 0 1px,transparent 1px 10px);border-inline-start:1px solid #77898357}
-.sop-scroll-area.sop-vernier > .sop-scroll-rail > .sop-scroll-track::after{inset:4px 14px;background:repeating-linear-gradient(var(--sc-along),#101c20 0 9px,#bdccc280 9px 10px)}
-.sop-scroll-area.sop-vernier > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{background:#b5dcc23b;opacity:.55}
-.sop-scroll-area.sop-vernier > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:46px;border-radius:4px;background:linear-gradient(var(--sc-cross),#4b5659,#cfdbd4 9%,#929d97 18%,#4b5858 50%,#a7b4ad 79%,#dce6db 91%,#3a4c53);border:1px solid #9caeaaaa;box-shadow:inset 0 1px #e8f5eab5,inset 0 -2px #122529,1px 6px 9px #000a}
-.sop-scroll-area.sop-vernier > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{inset:5px 6px;border:1px solid #17282b85;box-shadow:inset 0 1px #f0f4e059;background:repeating-linear-gradient(var(--sc-along),#182a2f5e 0 1px,#dfe7d638 1px 2px,transparent 2px 4px)}
-.sop-scroll-area.sop-vernier > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{inset-block:50% auto;inset-inline:0;block-size:1px;background:#b7ffd5;box-shadow:0 0 4px #83fac5;}
-.sop-scroll-area.sop-vernier > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{z-index:1;width:18px;height:18px;margin:-9px;border-radius:50%;background:conic-gradient(#edf3e4,#677976,#bed0bf,#31444b,#e3e7d9,#708480,#edf3e4);border:2px solid #465555;box-shadow:0 1px 2px #000a}
-.sop-scroll-area.sop-vernier > .sop-scroll-rail > .sop-scroll-ticks::before{inset:4px 2px;background:repeating-linear-gradient(var(--sc-along),#8faaa35e 0 1px,transparent 1px 20px)}
-
-.sop-scroll-area.sop-vernier[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-ticks{display:none}
+/* vernier — proportion, surface, response. v4.3.0 */
+.sop-scroll-area.sop-scroll-sculpted.sop-vernier{--sop-scroll-width:10px;--sop-handle-width:16px;--rail-radius:6px;--sop-scroll-accent:#c5cecf;--rail-surface:linear-gradient(var(--rail-cross),#15191c,#4f585d 45%,#22282c);--rail-edge:#78878b40;}
+.sop-scroll-area.sop-scroll-sculpted.sop-vernier > .sop-scroll-rail > .sop-scroll-track{box-shadow:inset 1px 0 2px #0006,inset -1px 0 #dae6e315;}
+.sop-scroll-area.sop-scroll-sculpted.sop-vernier > .sop-scroll-rail > .sop-scroll-track::before{inset:0;background:repeating-linear-gradient(var(--rail-along),transparent 0 7px,#eff7f520 7px 8px);}
+.sop-scroll-area.sop-scroll-sculpted.sop-vernier > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{border:1px solid #d3dada75;background:linear-gradient(var(--rail-cross),#6f7d82,#c9d4d5 18%,#a5b1b5 46%,#c0cacb 82%,#7b888e);box-shadow:inset 0 1px #f4fffd70,inset 0 -1px #35414760,0 2px 4px #0004;}
+.sop-scroll-area.sop-scroll-sculpted.sop-vernier > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{inset:3px;background:repeating-linear-gradient(var(--rail-along),#ffffff0c 0 1px,transparent 1px 3px);border-inline-start:1px solid #f4ffff40;}
+.sop-scroll-area.sop-scroll-sculpted.sop-vernier > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{inset:0;background:linear-gradient(var(--rail-along),transparent 15%,#ffffff60 50%,transparent 85%);}
+.sop-scroll-area.sop-scroll-sculpted.sop-vernier > .sop-scroll-rail > .sop-scroll-ticks{inset-inline:auto 4px;inline-size:3px;background:repeating-linear-gradient(180deg,#b6c4c938 0 1px,transparent 1px 12px);mask-image:linear-gradient(transparent,#000 7% 93%,transparent);}
+.sop-scroll-area.sop-scroll-sculpted.sop-vernier[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-ticks{inset-inline:0;inset-block:auto 4px;inline-size:100%;block-size:3px;background:repeating-linear-gradient(90deg,#b6c4c938 0 1px,transparent 1px 12px);}
 ```

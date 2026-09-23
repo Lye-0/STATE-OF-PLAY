@@ -1,25 +1,8 @@
 @import "../../../shared/select-sculpted.css";
-/* glasshouse-select — field, icon, list and option art direction. v4.2.0 */
-
-.sop-select.sop-glasshouse-select{--sel-bg:linear-gradient(130deg,#53644a61,#1c342d 45%,#334d3770),#172c29;--sel-panel:linear-gradient(120deg,#253e32,#172e2a 60%,#394837);--sel-accent:#d5e5b3;--sel-muted:#b3c6b0;--sel-line:#bdce9c61;--sel-radius:18px;}
-.sop-select.sop-glasshouse-select > .sop-select-trigger{border-radius:40px 10px 40px 10px;padding-left:17px;}
-.sop-select.sop-glasshouse-select > .sop-select-trigger::before{inset:5px;border:1px solid #b6d99537;border-radius:34px 6px 34px 6px;background:repeating-linear-gradient(90deg,#c6d9b712 0 1px,transparent 1px 24px);}
-.sop-select.sop-glasshouse-select > .sop-select-trigger::after{width:100px;height:145px;right:25px;top:-34px;border:1px solid #d4e6aa2b;border-radius:0 80%;transform:rotate(30deg);box-shadow:0 0 0 14px #a7c98107,0 0 0 15px #a7c98121;}
-.sop-select.sop-glasshouse-select .sop-select-value .sop-select-option-copy b{font:italic 23px/1.2 Georgia,serif;}
-.sop-select.sop-glasshouse-select .sop-select-icon{border-radius:50% 0 50% 0;background:linear-gradient(140deg,#c3d393,#74986b 45%,#36584b 70%,#a7bb7c);border:1px solid #c8e2ac70;color:#dff2c7;box-shadow:inset 1px 1px 3px #d5edb278,1px 4px 6px #0007;font-size:8px;align-items:flex-end;padding-bottom:7px;transform:rotate(-8deg);}
-.sop-select.sop-glasshouse-select .sop-select-icon::before{inset:0;background:linear-gradient(135deg,transparent 49%,#e1f4bd96 49.5% 50.5%,transparent 51%),repeating-linear-gradient(36deg,transparent 0 10px,#d9edab53 10px 11px);}
-.sop-select.sop-glasshouse-select .sop-select-icon::after{inset:5px;border:1px solid #e1f4b552;border-radius:50% 0 50% 0;}
-.sop-select.sop-glasshouse-select [data-glyph="1"] .sop-select-icon{filter:hue-rotate(22deg)}
-.sop-select.sop-glasshouse-select [data-glyph="2"] .sop-select-icon{filter:hue-rotate(-30deg)}
-.sop-select.sop-glasshouse-select .sop-select-popup{border-radius:12px 12px 30px 12px;box-shadow:inset 0 1px #d2e9bc36,0 24px 55px #0008;}
-.sop-select.sop-glasshouse-select .sop-select-menu-heading{font-family:Georgia,serif;font-size:14px;border-bottom:1px solid #b9d09a65;}
-.sop-select.sop-glasshouse-select .sop-select-menu-heading::after{right:12px;top:3px;width:64px;height:53px;border:1px solid #bed69d37;border-radius:80% 0 80% 0;rotate:-22deg;z-index:-1;}
-.sop-select.sop-glasshouse-select .sop-select-option{border-radius:24px 6px 24px 6px;}
-.sop-select.sop-glasshouse-select .sop-select-option[aria-selected=true]{background:linear-gradient(100deg,#cedfa228,#89b68620);border-color:#bfd4a267;}
-.sop-select.sop-glasshouse-select .sop-select-option[data-active=true] .sop-select-icon{transform:rotate(4deg);}
-.sop-select.sop-glasshouse-select .sop-select-check{background:#c6d99c;}
-
-@media(prefers-reduced-motion:reduce){.sop-select.sop-glasshouse-select *::before,.sop-select.sop-glasshouse-select *::after{transition:none!important;animation:none!important;}}
-
-.sop-select.sop-glasshouse-select .sop-select-option-copy b{font:italic 17px/1.3 Georgia,serif;}
-.sop-select.sop-glasshouse-select .sop-select-option{min-height:81px;}
+/* glasshouse-select — text-led, material-specific motion. v4.3.0 */
+.sop-select.sop-select-sculpted.sop-glasshouse-select{--sel-radius:17px;--sel-bg:#dfe8e3;--sel-panel:#e9eeea;--sel-ink:#30443b;--sel-muted:#6e8276;--sel-accent:#49725f;--sel-line:#71908334;--sel-plane:radial-gradient(ellipse at var(--sel-light-x) 0,#ffffffe0,#fbfff57a 80%);--sel-plane-border:#ffffffe0;--sel-plane-radius:11px;--sel-enter:sop-menu-dissolve;}
+.sop-select.sop-select-sculpted.sop-glasshouse-select > .sop-select-trigger{box-shadow:inset 0 1px #fbfffacf,0 4px 12px #163c2710;}
+.sop-select.sop-select-sculpted.sop-glasshouse-select > .sop-select-trigger::before{background:radial-gradient(ellipse at 90% 10%,#d3e2cd75,transparent 75%);}
+.sop-select.sop-select-sculpted.sop-glasshouse-select .sop-select-popup::before{box-shadow:0 2px 6px #24432f0c,inset 0 1px #fffefa;}
+.sop-select.sop-select-sculpted.sop-glasshouse-select .sop-select-popup{background-image:radial-gradient(ellipse at 100% 0,#d6e4d980,transparent 60%);}
+.sop-select.sop-select-sculpted.sop-glasshouse-select .sop-select-check{color:#38684f;}

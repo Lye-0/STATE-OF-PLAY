@@ -1,15 +1,8 @@
 @import "../../../shared/scrollbar-sculpted.css";
-/* orbital-track — sculpted, component-local rail. v4.2.0 */
-
-.sop-scroll-area.sop-orbital-track{--sop-scroll-width:24px;--sop-scroll-radius:22px;--sop-scroll-accent:#bbafeb}
-.sop-scroll-area.sop-orbital-track > .sop-scroll-rail > .sop-scroll-track{background:linear-gradient(var(--sc-cross),#544a7694,#111424 27% 74%,#63517796);border:1px solid #7265967a;box-shadow:inset 0 0 7px #0009,0 5px 10px #0009}
-.sop-scroll-area.sop-orbital-track > .sop-scroll-rail > .sop-scroll-track::before{inset:10px 7px;border-inline:1px solid #a0aad347;background:repeating-linear-gradient(var(--sc-along),#d4d8ff8a 0 2px,transparent 2px 36px);border-radius:20px}
-.sop-scroll-area.sop-orbital-track > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{background:linear-gradient(var(--sc-along),#6971b500,#bbb5f365);opacity:1}
-.sop-scroll-area.sop-orbital-track > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:37px;border-radius:30px;background:linear-gradient(var(--sc-cross),#a7a1ce80,#101a3366 20% 70%,#aaa1d879);border:1px solid #beb4ea73;box-shadow:inset 0 0 0 3px #bcb9f00d,0 4px 8px #000b}
-.sop-scroll-area.sop-orbital-track > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{inset:3px;border:1px solid #a3a1d369;border-radius:30px;transform:skewY(-18deg)}
-.sop-scroll-area.sop-orbital-track > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{inset:5px;border:1px solid #bfd8f264;border-radius:50%;transform:skewY(22deg)}
-.sop-scroll-area.sop-orbital-track > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{border-radius:50%;background:radial-gradient(circle at 30% 23%,#ecddff,#8192bd 22%,#293e61 50%,#0a142c 78%);border:1px solid #a8bee982;box-shadow:inset -2px -2px #9cacda45,0 3px 5px #000a;transform:rotate(calc(var(--sop-scroll-progress)*180deg))}
-.sop-scroll-area.sop-orbital-track > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip::after{content:'';position:absolute;inset:5px -8px;border:1px solid #d7cbbdc2;border-radius:50%;transform:rotate(-32deg);box-shadow:0 1px 3px #0004}
-.sop-scroll-area.sop-orbital-track > .sop-scroll-rail > .sop-scroll-ticks::before{inset:4% 3px;border-inline:1px solid #67739840;border-radius:50%}
-
-.sop-scroll-area.sop-orbital-track[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-ticks{display:none}
+/* orbital-track — proportion, surface, response. v4.3.0 */
+.sop-scroll-area.sop-scroll-sculpted.sop-orbital-track{--sop-scroll-width:11px;--sop-handle-width:16px;--sop-scroll-accent:#c6c2dc;--rail-surface:linear-gradient(var(--rail-cross),#46405422,#9da1c518,#46405422);--rail-edge:#d2d1e326;}
+.sop-scroll-area.sop-scroll-sculpted.sop-orbital-track > .sop-scroll-rail > .sop-scroll-track{box-shadow:inset 1px 0 #f1f1fa10;}
+.sop-scroll-area.sop-scroll-sculpted.sop-orbital-track > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{background:linear-gradient(var(--rail-cross),#8a839c,#d2cce1 22%,#a69dbd 58%,#c7c2d7 88%);border:1px solid #e4dfed80;border-radius:50% / 18%;box-shadow:inset 1px 0 #ffffff75,0 2px 4px #0004;}
+.sop-scroll-area.sop-scroll-sculpted.sop-orbital-track > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{inset:3px;border:1px solid #fff9f52b;background:linear-gradient(var(--rail-along),#ffffff28,transparent);}
+.sop-scroll-area.sop-scroll-sculpted.sop-orbital-track > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{inset:-3px;border:1px solid #d7dcf354;background:none;opacity:0;border-radius:50% / 18%;}
+.sop-scroll-area.sop-scroll-sculpted.sop-orbital-track[data-dragging=true] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{opacity:1;}

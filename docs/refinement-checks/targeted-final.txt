@@ -1,0 +1,104 @@
+TAP version 13
+# (node:3033) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: refinement keeps 564 parts; 16 A rails and 16 A selects; stable IDs
+ok 1 - refinement keeps 564 parts; 16 A rails and 16 A selects; stable IDs
+  ---
+  duration_ms: 3.044688
+  type: 'test'
+  ...
+# Subtest: visible A rails remain 9–12px, handles 15–18px; pointer target is separate
+ok 2 - visible A rails remain 9–12px, handles 15–18px; pointer target is separate
+  ---
+  duration_ms: 0.828739
+  type: 'test'
+  ...
+# Subtest: rail progress is a chosen design mechanism, not imposed on all A rails
+ok 3 - rail progress is a chosen design mechanism, not imposed on all A rails
+  ---
+  duration_ms: 1.036316
+  type: 'test'
+  ...
+# Subtest: A dropdown defaults have no icon or generated initials; consumers may still supply icons
+ok 4 - A dropdown defaults have no icon or generated initials; consumers may still supply icons
+  ---
+  duration_ms: 1.138527
+  type: 'test'
+  ...
+# Subtest: each portable behavior closure includes real motion helper, and every React source transpiles
+ok 5 - each portable behavior closure includes real motion helper, and every React source transpiles
+  ---
+  duration_ms: 576.598476
+  type: 'test'
+  ...
+# Subtest: presentation helper preserves React ownership; scroll coordinates and cleanup are explicit
+ok 6 - presentation helper preserves React ownership; scroll coordinates and cleanup are explicit
+  ---
+  duration_ms: 0.382674
+  type: 'test'
+  ...
+# Subtest: per-skin specificity withstands repeated shared imports without altering B styles
+ok 7 - per-skin specificity withstands repeated shared imports without altering B styles
+  ---
+  duration_ms: 0.741229
+  type: 'test'
+  ...
+# Subtest: text-first, paper-reveal and underline motions are different compositions
+ok 8 - text-first, paper-reveal and underline motions are different compositions
+  ---
+  duration_ms: 0.446835
+  type: 'test'
+  ...
+# (node:3034) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: 32 redesigned A skins retain 48 total scroll/select skins and 564 catalogue entries
+ok 9 - 32 redesigned A skins retain 48 total scroll/select skins and 564 catalogue entries
+  ---
+  duration_ms: 1.871311
+  type: 'test'
+  ...
+# Subtest: shared sculpture is explicitly opted into in both Vanilla and React markup
+ok 10 - shared sculpture is explicitly opted into in both Vanilla and React markup
+  ---
+  duration_ms: 2.431565
+  type: 'test'
+  ...
+# Subtest: all export dependency closures include both the sculpted skin and its original behavioral base
+ok 11 - all export dependency closures include both the sculpted skin and its original behavioral base
+  ---
+  duration_ms: 67.874506
+  type: 'test'
+  ...
+# Subtest: reproduction CSS is current, not a conflicting specification appended to the previous skin
+ok 12 - reproduction CSS is current, not a conflicting specification appended to the previous skin
+  ---
+  duration_ms: 2.704015
+  type: 'test'
+  ...
+# Subtest: every selector branch is scoped to its specific skin, including comma-separated selectors
+ok 13 - every selector branch is scoped to its specific skin, including comma-separated selectors
+  ---
+  duration_ms: 3.104661
+  type: 'test'
+  ...
+# Subtest: decorative geometry has motion reduction, forced-color fallbacks, and no external graphics
+ok 14 - decorative geometry has motion reduction, forced-color fallbacks, and no external graphics
+  ---
+  duration_ms: 2.345537
+  type: 'test'
+  ...
+# Subtest: paper/paint/glass families are distinct structures, not a family of color-only overrides
+ok 15 - paper/paint/glass families are distinct structures, not a family of color-only overrides
+  ---
+  duration_ms: 1.557256
+  type: 'test'
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 15
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1752.021493

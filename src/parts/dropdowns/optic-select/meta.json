@@ -3,14 +3,14 @@
   "name": "Optic Select",
   "category": "dropdowns",
   "order": 74,
-  "version": "2.0.0",
-  "tagline": "視点を、変える。",
-  "description": "レンズ鏡筒、細密なフォーカス環、刻み目。光学機器の選択機構として作り直したセレクト。",
+  "version": "3.0.0",
+  "tagline": "選ぶ場所に、薄いレンズ。",
+  "description": "明るい灰白色のフィールドと薄い光学面。候補へ移動する背景面が文字を引き立て、細い側線が現在位置を示す。",
   "material": "PRECISION / OPTICS",
-  "motion": "REVEAL / SELECT",
+  "motion": "LENS / SLIDE",
   "accent": "205,220,205",
   "designType": "A",
-  "runtime": "CSS + event-driven select",
+  "runtime": "CSS + event-driven select / motion plane",
   "componentName": "OpticSelect",
   "tags": [
     "Optic Select",
@@ -55,6 +55,11 @@
       "renderOption",
       "(item) => ReactNode",
       "選択肢内の装飾。ボタンや入力欄をネストしないでください。"
+    ],
+    [
+      "autoIcon / showHeading / showHints",
+      "boolean",
+      "補助表示を任意で設定。Aはアイコンの自動生成なし。見出しと操作ヒントは表示を切り替えられます。"
     ]
   ]
 }

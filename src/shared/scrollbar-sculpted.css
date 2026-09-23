@@ -1,51 +1,51 @@
-/* Sculpted rails: an opt-in presentation layer. Native scroll geometry stays authoritative. */
+/* A scroll areas / v4.3: compact surfaces, native geometry, generous invisible hit target. */
 @import './scrollbar-base.css';
 .sop-scroll-area.sop-scroll-sculpted {
- --sc-cross:90deg; --sc-along:0deg; --sc-metal: #cad9db;
- --sop-scroll-gutter:60px; --sop-scroll-width:26px;
- padding-inline-end:max(var(--sop-scroll-gutter),56px);
+ --sop-scroll-gutter:34px;--sop-scroll-width:10px;--sop-handle-width:15px;--sop-scroll-radius:20px;
+ --rail-cross:90deg;--rail-along:180deg;--rail-wake:0;--rail-radius:20px;
+ --rail-surface:#23272a;--rail-edge:#ffffff16;--rail-grab:linear-gradient(90deg,#829095,#c5d0d2 35%,#89989e);
+ padding-inline-end:var(--sop-scroll-gutter);
 }
-.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail {
- inline-size:max(var(--sop-scroll-gutter),56px);
- isolation:isolate;
-}
+.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail {inline-size:var(--sop-scroll-gutter);isolation:isolate;border-radius:18px;}
 .sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-track {
- inset-block:0; overflow:hidden; box-shadow:inset 0 0 6px #000b,0 8px 16px #0008;
+ background:var(--rail-surface);border:1px solid var(--rail-edge);box-shadow:inset 0 1px 3px #0003;
+ border-radius:var(--rail-radius);overflow:hidden;
+}
+.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill {
+ opacity:var(--rail-wake);background:var(--sop-scroll-accent);border-radius:inherit;
+}
+.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle {
+ background:var(--rail-grab);border:1px solid #dce4e442;inset-block:1px;border-radius:var(--rail-radius);
+ box-shadow:inset 1px 0 1px #ffffff30,0 2px 4px #0003;transform:translateX(-50%);
+ transition:box-shadow .22s ease,filter .22s ease,scale .24s cubic-bezier(.2,.8,.2,1);
 }
 .sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-track::before,
 .sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-track::after,
-.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-ticks::before,
-.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-ticks::after,
 .sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before,
 .sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after {
- content:'';position:absolute;pointer-events:none;box-sizing:border-box;
+ content:'';position:absolute;box-sizing:border-box;pointer-events:none;border-radius:inherit;
 }
-.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle {
- inset-block:2px; --sop-handle-width:34px;
- box-shadow:inset 1px 1px 1px #ffffff80,inset -1px -1px 1px #000b,0 5px 8px #0009;
- transition:box-shadow .3s,filter .25s;
+.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before {
+ inset:1px;background:linear-gradient(var(--rail-cross),#ffffff20,transparent 40% 70%,#ffffff10);
 }
-.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip {
- inset:50% auto auto 50%;width:22px;height:22px;margin:-11px 0 0 -11px;
+.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after {
+ inset:2px;opacity:0;background:linear-gradient(var(--rail-along),transparent,#ffffff55,transparent);
+ transition:opacity .25s;
 }
-.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-cap {
- width:10px;height:4px;border-radius:1px;
- background:linear-gradient(100deg,#32434b,#bec8ca 38%,#526773 72%,#23323c);
- box-shadow:0 1px 2px #0008;z-index:2;
-}
+.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip {display:none;}
+.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-cap {display:none;}
+.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-ticks {opacity:.5;}
+.sop-scroll-area.sop-scroll-sculpted[data-scrolling=true] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after {opacity:.7;}
+.sop-scroll-area.sop-scroll-sculpted[data-dragging=true] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle {scale:1.06 1;filter:brightness(1.07);box-shadow:inset 1px 0 #ffffff60,0 2px 5px #0004;}
+.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail:focus-visible {outline-offset:-3px;outline:2px solid var(--sop-scroll-accent);}
 .sop-scroll-area.sop-scroll-sculpted[data-orientation=horizontal] {
- --sc-cross:0deg;--sc-along:90deg;padding-inline-end:0;
- padding-block-end:max(var(--sop-scroll-gutter),56px);
+ --rail-cross:0deg;--rail-along:90deg;padding-inline-end:0;padding-block-end:var(--sop-scroll-gutter);
 }
-.sop-scroll-area.sop-scroll-sculpted[data-orientation=horizontal] > .sop-scroll-rail {inline-size:100%;block-size:max(var(--sop-scroll-gutter),56px);}
-.sop-scroll-area.sop-scroll-sculpted[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-track {inset-block:50% auto;}
-.sop-scroll-area.sop-scroll-sculpted[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle {inset-block:50% auto;inset-inline:2px;}
-.sop-scroll-area.sop-scroll-sculpted[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip {rotate:90deg;}
-.sop-scroll-area.sop-scroll-sculpted[data-scrolling=true] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle,
-.sop-scroll-area.sop-scroll-sculpted[data-dragging=true] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle {filter:brightness(1.15) saturate(1.16);}
-@media(prefers-reduced-motion:reduce) {
- .sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail *,
- .sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail *::before,
- .sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail *::after {animation:none!important;transition:none!important;}
-}
+.sop-scroll-area.sop-scroll-sculpted[data-orientation=horizontal]:dir(rtl){--rail-along:270deg;}
+.sop-scroll-area.sop-scroll-sculpted[data-orientation=horizontal] > .sop-scroll-rail {inline-size:100%;block-size:var(--sop-scroll-gutter);}
+.sop-scroll-area.sop-scroll-sculpted[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle {inset-block:50% auto;inset-inline:1px;transform:translateY(-50%);}
+.sop-scroll-area.sop-scroll-sculpted[data-orientation=horizontal][data-dragging=true] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{scale:1 1.06;}
+@media(hover:hover){.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail:hover > .sop-scroll-thumb > .sop-scroll-handle{filter:brightness(1.08);box-shadow:inset 1px 0 #ffffff66,0 2px 6px #0004;}}
+@media(pointer:coarse){.sop-scroll-area.sop-scroll-sculpted{--sop-scroll-gutter:44px;}}
+@media(prefers-reduced-motion:reduce){.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail *, .sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail *::before,.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail *::after{animation:none!important;transition:none!important;}.sop-scroll-area.sop-scroll-sculpted[data-dragging=true] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{scale:1;}}
 @media(forced-colors:active){.sop-scroll-area.sop-scroll-sculpted{padding:0}.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail{display:none}}

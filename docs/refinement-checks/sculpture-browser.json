@@ -1,0 +1,19 @@
+{
+  "mode": "real Chromium / explicit offline transport; not Vite",
+  "tests": [
+    "All 48 skins: computed design (including pseudo-elements) matches standalone and full-catalogue CSS",
+    "Sixteen sculpted rails: real pointer dragging reaches both native scroll endpoints",
+    "Sculpted rails keep proportional thumb geometry after resize and content mutation",
+    "All expressive rails retain horizontal and RTL geometry without visible overflow",
+    "All redesigned menus select and reflect the supplied option content, badge and value",
+    "Menu Escape cancels navigation; disabled options are not selectable; form reset restores initial value",
+    "320 / 390 / 768 px: all 32 A skins fit; open menus remain within the viewport",
+    "Long Japanese labels, descriptions and custom badges are neither hidden nor forced outside",
+    "Top/bottom placement: tall popup uses available space and retains scrollable options",
+    "Popover inside a real modal remains above it; native focus stays on the trigger",
+    "Reduced motion has no running decorative animation; forced colors restore native scrollbars",
+    "Unmount/reopen does not leave popovers; independent instance IDs stay unique"
+  ],
+  "passed": 12,
+  "errors": []
+}

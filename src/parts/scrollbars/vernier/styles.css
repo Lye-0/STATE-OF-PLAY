@@ -1,15 +1,10 @@
 @import "../../../shared/scrollbar-sculpted.css";
-/* vernier — sculpted, component-local rail. v4.2.0 */
-
-.sop-scroll-area.sop-vernier{--sop-scroll-accent:#c5e9d7;--sop-scroll-width:35px;--sop-scroll-radius:3px}
-.sop-scroll-area.sop-vernier > .sop-scroll-rail > .sop-scroll-track{background:linear-gradient(var(--sc-cross),#6c7679,#1c292d 12%,#4a5557 18%,#131c20 23% 76%,#879492 81%,#39464b 89%,#131b1e);border:1px solid #8b95984d;box-shadow:inset 1px 0 #dbe8e069,0 5px 10px #000b}
-.sop-scroll-area.sop-vernier > .sop-scroll-rail > .sop-scroll-track::before{inset:4px 8px;background:repeating-linear-gradient(var(--sc-along),#d7e6d46b 0 1px,transparent 1px 10px);border-inline-start:1px solid #77898357}
-.sop-scroll-area.sop-vernier > .sop-scroll-rail > .sop-scroll-track::after{inset:4px 14px;background:repeating-linear-gradient(var(--sc-along),#101c20 0 9px,#bdccc280 9px 10px)}
-.sop-scroll-area.sop-vernier > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{background:#b5dcc23b;opacity:.55}
-.sop-scroll-area.sop-vernier > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:46px;border-radius:4px;background:linear-gradient(var(--sc-cross),#4b5659,#cfdbd4 9%,#929d97 18%,#4b5858 50%,#a7b4ad 79%,#dce6db 91%,#3a4c53);border:1px solid #9caeaaaa;box-shadow:inset 0 1px #e8f5eab5,inset 0 -2px #122529,1px 6px 9px #000a}
-.sop-scroll-area.sop-vernier > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{inset:5px 6px;border:1px solid #17282b85;box-shadow:inset 0 1px #f0f4e059;background:repeating-linear-gradient(var(--sc-along),#182a2f5e 0 1px,#dfe7d638 1px 2px,transparent 2px 4px)}
-.sop-scroll-area.sop-vernier > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{inset-block:50% auto;inset-inline:0;block-size:1px;background:#b7ffd5;box-shadow:0 0 4px #83fac5;}
-.sop-scroll-area.sop-vernier > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{z-index:1;width:18px;height:18px;margin:-9px;border-radius:50%;background:conic-gradient(#edf3e4,#677976,#bed0bf,#31444b,#e3e7d9,#708480,#edf3e4);border:2px solid #465555;box-shadow:0 1px 2px #000a}
-.sop-scroll-area.sop-vernier > .sop-scroll-rail > .sop-scroll-ticks::before{inset:4px 2px;background:repeating-linear-gradient(var(--sc-along),#8faaa35e 0 1px,transparent 1px 20px)}
-
-.sop-scroll-area.sop-vernier[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-ticks{display:none}
+/* vernier — proportion, surface, response. v4.3.0 */
+.sop-scroll-area.sop-scroll-sculpted.sop-vernier{--sop-scroll-width:10px;--sop-handle-width:16px;--rail-radius:6px;--sop-scroll-accent:#c5cecf;--rail-surface:linear-gradient(var(--rail-cross),#15191c,#4f585d 45%,#22282c);--rail-edge:#78878b40;}
+.sop-scroll-area.sop-scroll-sculpted.sop-vernier > .sop-scroll-rail > .sop-scroll-track{box-shadow:inset 1px 0 2px #0006,inset -1px 0 #dae6e315;}
+.sop-scroll-area.sop-scroll-sculpted.sop-vernier > .sop-scroll-rail > .sop-scroll-track::before{inset:0;background:repeating-linear-gradient(var(--rail-along),transparent 0 7px,#eff7f520 7px 8px);}
+.sop-scroll-area.sop-scroll-sculpted.sop-vernier > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{border:1px solid #d3dada75;background:linear-gradient(var(--rail-cross),#6f7d82,#c9d4d5 18%,#a5b1b5 46%,#c0cacb 82%,#7b888e);box-shadow:inset 0 1px #f4fffd70,inset 0 -1px #35414760,0 2px 4px #0004;}
+.sop-scroll-area.sop-scroll-sculpted.sop-vernier > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{inset:3px;background:repeating-linear-gradient(var(--rail-along),#ffffff0c 0 1px,transparent 1px 3px);border-inline-start:1px solid #f4ffff40;}
+.sop-scroll-area.sop-scroll-sculpted.sop-vernier > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{inset:0;background:linear-gradient(var(--rail-along),transparent 15%,#ffffff60 50%,transparent 85%);}
+.sop-scroll-area.sop-scroll-sculpted.sop-vernier > .sop-scroll-rail > .sop-scroll-ticks{inset-inline:auto 4px;inline-size:3px;background:repeating-linear-gradient(180deg,#b6c4c938 0 1px,transparent 1px 12px);mask-image:linear-gradient(transparent,#000 7% 93%,transparent);}
+.sop-scroll-area.sop-scroll-sculpted.sop-vernier[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-ticks{inset-inline:0;inset-block:auto 4px;inline-size:100%;block-size:3px;background:repeating-linear-gradient(90deg,#b6c4c938 0 1px,transparent 1px 12px);}

@@ -3,7 +3,7 @@ import React from 'react';
 import { useScrollArea, type ScrollAreaProps } from '../../../../shared/use-scroll-area';
 import '../styles.css';
 export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
-/** 刻まれた目盛りと、削り出しの金属キャリッジ。 Native scroll content with a skinned, proportional rail. */
+/** 幅10pxの刻みのあるレールと16pxのサテン金属面。目盛りは小さく、掴んだ面の反射だけが変わる。 */
 export default function VernierScrollArea(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);

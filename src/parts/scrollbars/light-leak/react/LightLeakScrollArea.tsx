@@ -3,7 +3,7 @@ import React from 'react';
 import { useScrollArea, type ScrollAreaProps } from '../../../../shared/use-scroll-area';
 import '../styles.css';
 export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
-/** 柔らかな桃色の光が、余白に静かな余韻を残す。 Native scroll content with a skinned, proportional rail. */
+/** 9pxの軌道に淡い分光が残る。15pxのつまみは滑らかな白い面で、操作中だけ縁の光が広がる。 */
 export default function LightLeakScrollArea(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);

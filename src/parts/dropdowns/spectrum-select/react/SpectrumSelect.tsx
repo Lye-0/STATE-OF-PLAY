@@ -3,7 +3,7 @@ import React from 'react';
 import {SelectView,type SelectProps} from '../../../../shared/select-view';
 import '../styles.css';
 export type {SelectProps,SelectItem} from '../../../../shared/select-view';
-/** 方眼と発光する信号色。小さな計測器のような選択インターフェース。 */
+/** 塗りの少ない暗い面。動くのは候補の文字幅に合わせた分光の下線で、行全体を厚い箱にしない。 */
 export default function SpectrumSelect({className='',...props}:SelectProps){
- return <SelectView {...props} className={`sop-select-sculpted sop-spectrum-select ${className}`}/>;
+ return <SelectView autoIcon={false} showHeading={false} showHints={false} {...props} className={`sop-select-sculpted sop-spectrum-select ${className}`}/>;
 }

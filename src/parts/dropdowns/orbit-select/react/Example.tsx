@@ -6,28 +6,24 @@ const items=[
     "value": "terra",
     "label": "Terra station",
     "description": "青い惑星を見下ろす軌道",
-    "icon": "T",
     "badge": "LOW"
   },
   {
     "value": "luna",
     "label": "Lunar archive",
     "description": "月の裏側に眠る記録",
-    "icon": "L",
     "badge": "NEAR"
   },
   {
     "value": "io",
     "label": "Io observatory",
     "description": "火山と木星の巨大な影",
-    "icon": "I",
     "badge": "DEEP"
   },
   {
     "value": "titan",
     "label": "Titan relay",
     "description": "金色の大気、その向こう",
-    "icon": "R",
     "badge": "FAR"
   }
 ];

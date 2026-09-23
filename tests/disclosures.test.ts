@@ -19,7 +19,9 @@ test('dropdowns have designed choice interiors and selection semantics, never ac
  for(const p of additions.filter(p=>p.category==='dropdowns')){
   assert.match(p.markup,/role="combobox"/);assert.match(p.markup,/role="listbox"/);
   assert.ok((p.markup.match(/role="option"/g)||[]).length>=3);
-  for(const token of ['sop-select-icon','sop-select-option-copy','sop-select-badge','sop-select-menu-heading'])assert.ok(p.markup.includes(token),p.id+token);
+  for(const token of ['sop-select-option-copy','sop-select-badge','sop-select-check'])assert.ok(p.markup.includes(token),p.id+token);
+  // A skins are content-first; icons and heading are intentionally optional. B samples retain both.
+  if(p.designType==='B')for(const token of ['sop-select-icon','sop-select-menu-heading'])assert.ok(p.markup.includes(token),p.id+token);
   assert.ok(!p.markup.includes('role="menu"'));
   assert.match(p.prompt,/選択/);
  }

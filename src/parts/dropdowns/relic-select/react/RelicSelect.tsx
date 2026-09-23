@@ -3,7 +3,7 @@ import React from 'react';
 import {SelectView,type SelectProps} from '../../../../shared/select-view';
 import '../styles.css';
 export type {SelectProps,SelectItem} from '../../../../shared/select-view';
-/** 古い真鍮の縁と打刻番号。収蔵品を選ぶ引き出しのようなメニュー。 */
+/** 落ち着いた象牙色の紙と余白。候補に合わせて明るい面と影が移動し、開くと面が縦にほどける。 */
 export default function RelicSelect({className='',...props}:SelectProps){
- return <SelectView {...props} className={`sop-select-sculpted sop-relic-select ${className}`}/>;
+ return <SelectView autoIcon={false} showHeading={true} showHints={false} {...props} className={`sop-select-sculpted sop-relic-select ${className}`}/>;
 }

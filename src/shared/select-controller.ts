@@ -1,3 +1,4 @@
+import {createSelectMotion} from './select-motion';
 /** Select-only combobox. Native focus stays on the trigger; no scroll hijacking or polling. */
 export interface SelectOptions {
   value?: string;
@@ -22,6 +23,7 @@ export function createSelectController(root: HTMLElement, options: SelectOptions
   const field = root.querySelector<HTMLInputElement>('.sop-select-input');
   if (!trigger || !popup) throw new Error('Select requires .sop-select-trigger and .sop-select-popup.');
   const button = trigger, panel = popup;
+  const motion = root.classList.contains('sop-select-sculpted') ? createSelectMotion(root, panel) : null;
   const life = new AbortController();
   let opening: AbortController | null = null;
   let open = false, dead = false, active = -1, buffer = '', lastKey = 0, frame = 0;
@@ -82,6 +84,7 @@ export function createSelectController(root: HTMLElement, options: SelectOptions
     const actual = panel.getBoundingClientRect().height;
     panel.style.top = `${up ? Math.max(oy+padding,r.top-gap-actual) : r.bottom+gap}px`;
     panel.dataset.side = up ? 'top' : 'bottom';
+    motion?.refresh();
     if (r.bottom < oy || r.top > oy+height || !root.isConnected) setOpen(false);
   }
   function schedule() { if (!frame && open) frame = requestAnimationFrame(() => {frame=0;position();}); }
@@ -99,6 +102,7 @@ export function createSelectController(root: HTMLElement, options: SelectOptions
         if (rect.bottom > box.bottom-8) panel.scrollTop += rect.bottom-box.bottom+8;
       }
     } else button.removeAttribute('aria-activedescendant');
+    motion?.highlight(target);
   }
   function setOpen(next: boolean) {
     if (dead || next === open || (next && (button.disabled || available().length===0))) return;
@@ -106,6 +110,7 @@ export function createSelectController(root: HTMLElement, options: SelectOptions
     open = next;
     panel.hidden = !open;
     if (open) {
+      motion?.open();
       if (supportsPopover) {
         try { panel.showPopover(); } catch { /* Fallback is still a real listbox. */ }
       }
@@ -126,6 +131,7 @@ export function createSelectController(root: HTMLElement, options: SelectOptions
       window.visualViewport?.addEventListener('resize',schedule,{passive:true,signal});
       window.visualViewport?.addEventListener('scroll',schedule,{passive:true,signal});
     } else {
+      motion?.close();
       opening?.abort(); opening=null;
       cancelAnimationFrame(frame);frame=0;
       if (supportsPopover) {try {panel.hidePopover();}catch{/* Already hidden by UA. */}}
@@ -141,6 +147,7 @@ export function createSelectController(root: HTMLElement, options: SelectOptions
   function commit(item?: HTMLElement) {
     if (!item || item.getAttribute('aria-disabled')==='true' || button.disabled) return;
     const value = item.dataset.value ?? '';
+    motion?.commit();
     if (!options.controlled) setValue(value);
     options.onValueChange?.(value);
     root.dispatchEvent(new CustomEvent('sop:select',{bubbles:true,detail:{value}}));
@@ -177,6 +184,6 @@ export function createSelectController(root: HTMLElement, options: SelectOptions
   return {getValue:()=>selected,setValue,getOpen:()=>open,setOpen,
     refresh(){if(dead)return;sync();if(open){if(!available().length)setOpen(false);else{position();highlight(active);}}},
     setPaused(paused){if(paused)setOpen(false);},
-    destroy(){if(dead)return;setOpen(false);dead=true;life.abort();opening?.abort();observer.disconnect();cancelAnimationFrame(frame);panel.removeAttribute('popover');panel.hidden=true;button.removeAttribute('aria-activedescendant');if(!originalPanelId)panel.removeAttribute('id');}
+    destroy(){if(dead)return;setOpen(false);dead=true;motion?.destroy();life.abort();opening?.abort();observer.disconnect();cancelAnimationFrame(frame);panel.removeAttribute('popover');panel.hidden=true;button.removeAttribute('aria-activedescendant');if(!originalPanelId)panel.removeAttribute('id');}
   };
 }

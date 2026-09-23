@@ -1,13 +1,7 @@
 @import "../../../shared/scrollbar-sculpted.css";
-/* ember-rail — sculpted, component-local rail. v4.2.0 */
-
-.sop-scroll-area.sop-ember-rail{--sop-scroll-width:29px;--sop-scroll-radius:4px;--sop-scroll-accent:#ffb477}
-.sop-scroll-area.sop-ember-rail > .sop-scroll-rail > .sop-scroll-track{background:repeating-linear-gradient(var(--sc-along),#091015 0 4px,#5c2b1f 4px 5px,#11181d 5px 12px);border:1px solid #6a625260;box-shadow:inset 0 0 0 3px #080d11,0 5px 12px #000b}
-.sop-scroll-area.sop-ember-rail > .sop-scroll-rail > .sop-scroll-track::before{inset:6px 8px;background:repeating-linear-gradient(var(--sc-along),transparent 0 6px,#ff933659 6px 8px);box-shadow:0 0 14px #e8541626}
-.sop-scroll-area.sop-ember-rail > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{background:linear-gradient(var(--sc-along),#4e1e1299,#eb611a 85%,#ffe3a9);opacity:.9;inset:7px;box-shadow:0 0 10px #ff521659}
-.sop-scroll-area.sop-ember-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:41px;border-radius:6px;border:1px solid #7d6f6099;background:linear-gradient(120deg,#59574f,#232c2d 30%,#152126 67%,#514e46);box-shadow:inset 1px 1px #a3917585,inset 0 -2px #000a,0 5px 10px #000b}
-.sop-scroll-area.sop-ember-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{inset:5px;border:1px solid #03090c;border-radius:3px;background:repeating-linear-gradient(var(--sc-along),#283131 0 3px,#070c10 3px 4px);box-shadow:inset 0 0 5px #0009}
-.sop-scroll-area.sop-ember-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{inset-block:3px;inset-inline:7px;border-block:2px solid #ffb368;box-shadow:0 1px 7px #f96d3359}
-.sop-scroll-area.sop-ember-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{z-index:1;clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);background:radial-gradient(circle at 30% 20%,#ffecb7,#dc7135 45%,#2c1c17 79%);box-shadow:inset 0 0 4px #fff5}
-
-.sop-scroll-area.sop-ember-rail[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-ticks{display:none}
+/* ember-rail — proportion, surface, response. v4.3.0 */
+.sop-scroll-area.sop-scroll-sculpted.sop-ember-rail{--sop-scroll-width:10px;--sop-handle-width:16px;--rail-radius:8px;--sop-scroll-accent:#e0b49e;--rail-surface:linear-gradient(var(--rail-cross),#202224,#333132,#222527);--rail-edge:#beb4a820;--rail-wake:.55;}
+.sop-scroll-area.sop-scroll-sculpted.sop-ember-rail > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{background:linear-gradient(var(--rail-along),#bd897350,#e6b09080);}
+.sop-scroll-area.sop-scroll-sculpted.sop-ember-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{background:linear-gradient(var(--rail-cross),#8c6960,#d8b7a2 20%,#b18b7b 62%,#d2aa8f 90%);border-color:#e9c8a16b;box-shadow:inset 1px 0 #ffe5c565,0 2px 4px #0004;}
+.sop-scroll-area.sop-scroll-sculpted.sop-ember-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{inset:2px;background:linear-gradient(var(--rail-along),#fff0d220,transparent 45%,#3f201518);}
+.sop-scroll-area.sop-scroll-sculpted.sop-ember-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{inset:0;background:linear-gradient(var(--rail-along),transparent,#ffe5c055,transparent);opacity:0;}

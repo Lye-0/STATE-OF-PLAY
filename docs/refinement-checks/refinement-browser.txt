@@ -1,0 +1,23 @@
+
+> state-of-play@4.3.0 test:refinement
+> node --experimental-strip-types tests/refinement.browser.ts
+
+(node:3238) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS all 48 A/B skins: independently bundled CSS and duplicate shared imports agree
+PASS A rail/handle visual dimensions are narrow; invisible hit target remains 34px
+PASS eight progress rails change at .25/.75; others intentionally keep one rail surface
+PASS magnetic rail shape follows the actual thumb in both horizontal LTR and RTL
+PASS A defaults contain no leading icons; text-only choices stay compact and selectable
+PASS supplied icons remain optional, small, and do not introduce mandatory whitespace
+PASS keyboard highlight changes the moving plane but does not change the committed check
+PASS long grouped menus scroll only the popup; moving plane stays on its option
+PASS content edits and resize update the active-plane geometry without replacing text
+PASS motion interpolates the plane, never option text or the committed value
+PASS pointer light follows location; fast candidate changes have no delayed commits
+PASS all A menus support long text on 320/390/768px with no page or list overflow
+PASS coarse pointer keeps a 44px rail target without making the visual rail thicker
+PASS reduced motion disables animation; forced colors keep active selection visible
+PASS all redesigned inputs preserve native click/keyboard form reset and disabled behavior
+PASS repeated open/close/dispose leaves zero RAFs, no popovers and no detached-light observers
+Refinement: 16 browser checks passed; offline Chromium (not Vite).

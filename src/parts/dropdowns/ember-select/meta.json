@@ -3,14 +3,14 @@
   "name": "Ember Select",
   "category": "dropdowns",
   "order": 86,
-  "version": "2.0.0",
-  "tagline": "熱を、選ぶ。",
-  "description": "耐熱素材のハウジング、熱を通す格子、琥珀色の六角レンズ。選択に応じて炉の表情が変わる。",
+  "version": "3.0.0",
+  "tagline": "境界に、温かな光。",
+  "description": "暗い面に落ち着いた文字。移動中の行の縁だけに温かな光が集まり、面の余白を引き立てる。",
   "material": "THERMAL / ELEMENT",
-  "motion": "REVEAL / SELECT",
+  "motion": "EDGE / WARMTH",
   "accent": "243,180,128",
   "designType": "A",
-  "runtime": "CSS + event-driven select",
+  "runtime": "CSS + event-driven select / motion plane",
   "componentName": "EmberSelect",
   "tags": [
     "Ember Select",
@@ -55,6 +55,11 @@
       "renderOption",
       "(item) => ReactNode",
       "選択肢内の装飾。ボタンや入力欄をネストしないでください。"
+    ],
+    [
+      "autoIcon / showHeading / showHints",
+      "boolean",
+      "補助表示を任意で設定。Aはアイコンの自動生成なし。見出しと操作ヒントは表示を切り替えられます。"
     ]
   ]
 }

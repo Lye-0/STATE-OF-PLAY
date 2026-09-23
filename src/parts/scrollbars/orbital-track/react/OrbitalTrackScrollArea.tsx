@@ -3,7 +3,7 @@ import React from 'react';
 import { useScrollArea, type ScrollAreaProps } from '../../../../shared/use-scroll-area';
 import '../styles.css';
 export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
-/** 環に支えられた小さな天体が、軌道を移動する。 Native scroll content with a skinned, proportional rail. */
+/** 11pxの静かな軌道と16pxの丸みのある操作面。掴むと輪郭の外側へ細い光が一枚だけ浮かぶ。 */
 export default function OrbitalTrackScrollArea(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);

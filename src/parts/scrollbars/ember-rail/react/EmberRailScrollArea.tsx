@@ -3,7 +3,7 @@ import React from 'react';
 import { useScrollArea, type ScrollAreaProps } from '../../../../shared/use-scroll-area';
 import '../styles.css';
 export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
-/** 炭のような黒い軌道に、橙色の熱がともる。 Native scroll content with a skinned, proportional rail. */
+/** ニュートラルな軌道に淡い銅色が残る。つまみは16pxのサテン面で、操作中だけ光が走る。 */
 export default function EmberRailScrollArea(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);

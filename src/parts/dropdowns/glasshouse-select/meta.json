@@ -3,14 +3,14 @@
   "name": "Glasshouse Select",
   "category": "dropdowns",
   "order": 82,
-  "version": "2.0.0",
-  "tagline": "緑と、暮らす。",
-  "description": "種子の標本票と温室の窓。葉の葉脈、半透明の緑のガラス、柔らかな植物誌の文字組み。",
+  "version": "3.0.0",
+  "tagline": "透明な面に、やわらかな光。",
+  "description": "明るいセージのガラス面。白い反射が候補へ滑り、背景の低彩度の光がポインターに応える。",
   "material": "BOTANICAL / GROWTH",
-  "motion": "REVEAL / SELECT",
+  "motion": "GLASS / LIGHT",
   "accent": "213,229,179",
   "designType": "A",
-  "runtime": "CSS + event-driven select",
+  "runtime": "CSS + event-driven select / motion plane",
   "componentName": "GlasshouseSelect",
   "tags": [
     "Glasshouse Select",
@@ -55,6 +55,11 @@
       "renderOption",
       "(item) => ReactNode",
       "選択肢内の装飾。ボタンや入力欄をネストしないでください。"
+    ],
+    [
+      "autoIcon / showHeading / showHints",
+      "boolean",
+      "補助表示を任意で設定。Aはアイコンの自動生成なし。見出しと操作ヒントは表示を切り替えられます。"
     ]
   ]
 }

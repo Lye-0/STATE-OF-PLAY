@@ -3,14 +3,14 @@
   "name": "Nocturne Select",
   "category": "dropdowns",
   "order": 83,
-  "version": "2.0.0",
-  "tagline": "夜の、選書。",
-  "description": "黒いピアノの艶と象牙の細いエッジ。夜の静けさを、磨かれた黒い選択面で表現。",
+  "version": "3.0.0",
+  "tagline": "文字を読む、光が寄り添う。",
+  "description": "夜色の平たい面と読みやすいセリフ体。候補の背後へ柔らかな明暗が移り、細い線がその行を引き立てる。",
   "material": "EDITORIAL / NIGHT",
-  "motion": "REVEAL / SELECT",
+  "motion": "INK / SPOTLIGHT",
   "accent": "209,196,164",
   "designType": "A",
-  "runtime": "CSS + event-driven select",
+  "runtime": "CSS + event-driven select / motion plane",
   "componentName": "NocturneSelect",
   "tags": [
     "Nocturne Select",
@@ -55,6 +55,11 @@
       "renderOption",
       "(item) => ReactNode",
       "選択肢内の装飾。ボタンや入力欄をネストしないでください。"
+    ],
+    [
+      "autoIcon / showHeading / showHints",
+      "boolean",
+      "補助表示を任意で設定。Aはアイコンの自動生成なし。見出しと操作ヒントは表示を切り替えられます。"
     ]
   ]
 }

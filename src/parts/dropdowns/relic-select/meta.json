@@ -3,14 +3,14 @@
   "name": "Relic Select",
   "category": "dropdowns",
   "order": 78,
-  "version": "2.0.0",
-  "tagline": "記憶を、ひらく。",
-  "description": "博物館の収蔵品ラベルを真鍮の枠へ。打刻された番号、留めねじ、革と金属の余韻。",
+  "version": "3.0.0",
+  "tagline": "薄い紙面を、重ねる。",
+  "description": "落ち着いた象牙色の紙と余白。候補に合わせて明るい面と影が移動し、開くと面が縦にほどける。",
   "material": "BRASS / ARCHIVE",
-  "motion": "REVEAL / SELECT",
+  "motion": "IVORY / UNFOLD",
   "accent": "213,185,129",
   "designType": "A",
-  "runtime": "CSS + event-driven select",
+  "runtime": "CSS + event-driven select / motion plane",
   "componentName": "RelicSelect",
   "tags": [
     "Relic Select",
@@ -55,6 +55,11 @@
       "renderOption",
       "(item) => ReactNode",
       "選択肢内の装飾。ボタンや入力欄をネストしないでください。"
+    ],
+    [
+      "autoIcon / showHeading / showHints",
+      "boolean",
+      "補助表示を任意で設定。Aはアイコンの自動生成なし。見出しと操作ヒントは表示を切り替えられます。"
     ]
   ]
 }

@@ -3,7 +3,7 @@ import React from 'react';
 import { useScrollArea, type ScrollAreaProps } from '../../../../shared/use-scroll-area';
 import '../styles.css';
 export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
-/** 繊細な線の干渉が、動きに合わせて表情を変える。 Native scroll content with a skinned, proportional rail. */
+/** 細い織り目の軌道と16pxの金属面。スクロール位置に合わせてつまみ内の細い線がずれ、干渉が変わる。 */
 export default function MoireRailScrollArea(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);

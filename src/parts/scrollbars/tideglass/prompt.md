@@ -1,41 +1,34 @@
-# Tideglass — 造形仕様 v2.0.0（STATE OF PLAY v4.2.0）
+# Tideglass — 面・比率・動きの仕様（STATE OF PLAY v4.3.0）
 
-海を閉じ込めたフロート。液面の光とレンズの輪が、読み進める距離に追従する。
+12pxの透明な水路と17pxの有機的なレンズ面。スクロールした領域に水色が満ち、つまみの縁が静かに光る。
 
-タイプA。素材と形そのものを表現する。既存のトグルなどは完成度の基準であり、別部品の造形をそのまま移植する指示ではない。
+## 面と比率
+12pxの透明な水路と17pxの有機的なレンズ面。スクロールした領域に水色が満ち、つまみの縁が静かに光る。
+レールは9〜12px、つまみは15〜18pxを中心とする。触れる領域は通常34px、タッチ用44pxを確保する。見た目の太さとヒット領域は分離する。正確な寸法・反射・色・境界・短い変化は下記の固有CSSを正本とし、共有のscrollbar-sculpted.cssも保持する。
 
-## 形と動きの設計
-装飾レール、比例するつまみ、その内側のハンドル、グリップ、端の口金を分離する。レール・つまみの素材を一組として再現し、色だけの細い丸棒へ置き換えない。光沢と影は静止時にも形が分かる強さに保つ。見た目のハンドルとドラッグ領域を分離し、装飾にはpointer-events:noneを適用する。
+## 動きと意味
+スクロール位置とつまみ位置はブラウザーのネイティブスクロールから即時に決まる。表面の変化はスクロール・ドラッグ中に限り、停止すると短く落ち着く。`--sop-scroll-progress`は現在のスクロール位置を0〜1で表す。進捗面を持つスキンだけ`--rail-wake`が正の値となり、前後のレールの色・質感を分ける。これは実際に読んだ内容の履歴や既読確認を表すものではない。
+つまみは内容量に比例する長さを維持し、ホイール・タッチ・矢印・Home/End・PageUp/PageDown・縦横・RTLの操作を保つ。方向によって面の軸と進捗の起点も合わせる。
 
-レールの占有幅は最低56px。つまみの占有長は表示領域と内容全体の比率から求める。小さなグリップや結晶の寸法と、スクロール位置を示す比例つまみの長さを混同しない。縦・横では光の向きと装飾の軸をCSS変数で切り替える。
-
-## 操作と構造
-ネイティブoverflowとscrollTop/scrollLeftを正本とし、ホイールやタッチのスクロールを横取りしない。ドラッグ、レールのページ移動、矢印、PageUp/PageDown、Space/Shift+Space、Home/Endを維持する。方向はvertical/horizontal、RTLも扱う。スクロール位置を--sop-scroll-progressへ同期するが、装飾用に偽の位置を作らない。
-
-## 導入と後片付け
-ページ全体のバーを変更せず、内容領域をラッパーで包む。children/スロットには利用先の内容を入れ、サンプル文章を固定しない。領域の高さと長い内容を用意し、短い内容ではレールを隠す。サイズと内容の変化へ追従し、aria-controls・aria-valuenowと識別子を個体ごとに維持する。destroy時にイベント、Observer、予約済みRAFを解除する。毎フレームの常時描画処理を追加しない。強制カラー時は標準スクロールバーへ戻す。
+## 移植
+contentを利用先の内容へ差し替え、制約された高さを持つコンテナ内へ置く。Reactではchildren、通常HTMLではコンテンツ領域に配置する。ネイティブ値を変える慣性や装飾の追従遅延は付けない。destroy()でイベントと監視を解除する。
 
 ## 必要なソースと配置
-`styles.css`、`scrollbar-sculpted.css`、そこから参照するベースCSSを揃える。ルートの`sop-scroll-sculpted`と`.sop-tideglass`を維持する。配布側のファイル見出しは参照元のパスであり、導入先の同じ階層を強制するものではない。利用先の構成と規約を確認して配置し、移動時には相対importとCSSの参照を更新する。既存コードを無条件に上書きしない。プロジェクトが見えない場合は必要な構成を確認する。
+固有styles.cssとそこからimportする共有CSS・TSをすべて含める。ルートのスキンクラスとA専用のopt-inクラスを保持する。ファイル見出しは配布時のパスであり、導入先の階層を強制するものではない。ユーザーのプロジェクト構成と規約を確認し、相対import・CSS・例の配置を連動して変更する。既存ファイルを無条件に上書きしない。プロジェクトを参照できなければ構成を確認する。
 
 ## 確認基準
-単独の表示と他のスキンを混在させた表示が一致すること。通常・操作中・無効・キーボードフォーカス・320px幅・長い日本語・prefers-reduced-motion・forced-colorsを確認する。外観変更を理由に入力の標準操作、状態管理、外部制御を省略しない。
+実寸の画面で形と余白を確認する。単独・他スキン混在・同じ共有CSSの重複読み込みでも造形が変わらないこと。幅320px、長い日本語、キーボード、タッチ相当、prefers-reduced-motion、forced-colorsを確認する。縮小モーション時は表面の移動を止めても位置と選択状態を維持する。ホバーできない環境でも操作可能にする。
 
 ## 固有スタイル（正本と同期）
-次はこの部品の`styles.css`と同一の内容。共有の寸法と操作状態のスタイルは`scrollbar-sculpted.css`も必要。コード込みの実装プロンプトには必要な全ファイルが含まれる。
+下記はこのパーツのstyles.cssと同じ内容。共有scrollbar-sculpted.cssの寸法・操作状態と併用する。
 
 ```css
 @import "../../../shared/scrollbar-sculpted.css";
-/* tideglass — sculpted, component-local rail. v4.2.0 */
-
-.sop-scroll-area.sop-tideglass{--sop-scroll-width:29px;--sop-scroll-radius:20px;--sop-scroll-accent:#88d9eb}
-.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-track{background:linear-gradient(var(--sc-cross),#82d7dd66,#102b40 25%,#12212f 72%,#b9eaf35c);border:1px solid #a1d3e58a;box-shadow:inset 0 0 0 3px #183b504f,0 8px 14px #0009}
-.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-track::before{inset:5px;border-radius:15px;border-inline:1px solid #d1f9f335;background:repeating-linear-gradient(160deg,transparent 0 27px,#b8dcec3c 27px 28px,transparent 28px 53px)}
-.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{opacity:1;inset:4px;background:linear-gradient(var(--sc-along),#a4e9f24d,#1e7798 75%,#baedf1 99%);border-radius:20px;box-shadow:0 0 13px #8fc7ed36}
-.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:43px;border-radius:23px;background:linear-gradient(var(--sc-cross),#dbf6f59e,#225a7470 18%,#4388a477 65%,#c7f8f0b8);border:1px solid #c3f4f3ab;box-shadow:inset 2px 0 1px #f6fff7,inset -2px -1px 3px #96e7e8,0 6px 10px #0009}
-.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{inset:5px;border-radius:20px;border-block:2px solid #ddfbf59c;background:radial-gradient(ellipse at 50% 95%,#c9faf795,transparent 42%)}
-.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{inset-block:48% auto;inset-inline:5px;block-size:7px;border-radius:50%;border-block-start:1px solid #efffffbd;background:#b1ecde24;transform:rotate(-10deg)}
-.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{border-radius:50%;border:1px solid #d6ffff5e;background:radial-gradient(circle at 32% 22%,#e4ffffd1,transparent 23%),radial-gradient(circle at 40% 35%,#6ee6d166,#3983a36b 55%,#153749);box-shadow:inset 0 0 4px #cbffff9c;transform:scale(.76)}
-
-.sop-scroll-area.sop-tideglass[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-ticks{display:none}
+/* tideglass — proportion, surface, response. v4.3.0 */
+.sop-scroll-area.sop-scroll-sculpted.sop-tideglass{--sop-scroll-width:12px;--sop-handle-width:17px;--sop-scroll-accent:#9ac5d2;--rail-surface:linear-gradient(var(--rail-cross),#99c7d319,#b9d3e80a 70%,#c7dee525);--rail-edge:#b7d0d12b;--rail-wake:.6;}
+.sop-scroll-area.sop-scroll-sculpted.sop-tideglass > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{background:linear-gradient(var(--rail-along),#87acbd35,#94c5db9e);box-shadow:inset 1px 0 #ebffff35;}
+.sop-scroll-area.sop-scroll-sculpted.sop-tideglass > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{background:linear-gradient(var(--rail-cross),#e4f4fc9c,#9bbdcd77 24%,#52798d44 60%,#d5e9efa1);border-color:#e1f1f28a;border-radius:45% 55% 48% 52% / 15% 15% 16% 16%;box-shadow:inset 2px 0 3px #ecffff80,inset -1px 0 2px #ddeefa8a,0 2px 4px #0004;}
+.sop-scroll-area.sop-scroll-sculpted.sop-tideglass > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{inset:3px;border:1px solid #c8e6f350;background:radial-gradient(ellipse at 30% 0,#edffff90,transparent 50%);}
+.sop-scroll-area.sop-scroll-sculpted.sop-tideglass > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{inset:1px;opacity:0;background:linear-gradient(var(--rail-along),transparent 30%,#ffffff80 52%,transparent 70%);}
+.sop-scroll-area.sop-scroll-sculpted.sop-tideglass[data-scrolling=true] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{opacity:.75;}
 ```

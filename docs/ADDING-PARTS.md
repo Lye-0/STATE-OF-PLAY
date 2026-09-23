@@ -199,3 +199,12 @@ meta.jsonの `foundation` にkind/id/variantと展示初期設定を記述しま
 個別のstyles.css、markup.html、React/Vanillaエントリー、使い方、プロンプトを正本として置き、registry.jsonへ登録してください。
 ギャラリー専用の操作例は `src/app/foundation-preview.ts` に分離しています。保存処理の成功を装うデモを配布本体へ含めないでください。
 読み取り側の型は `src/catalog/types.ts`。新しい種類を増やす場合はカテゴリ定義・カタログ検証・mount型も合わせます。
+
+
+## v4.3: 文字中心の選択パーツと動き
+
+Aプルダウンのラベル・アイコン・補足情報は固定装飾として扱わず、内容に応じて省略できるようにします。`autoIcon=false`でも利用者が指定した`icon`は表示されます。共通の`SelectView`自体の既定値は保持しているため、Bタイプの既存表示は変わりません。
+
+`select-motion.ts`はopt-inクラスを持つAだけが起動します。背景面は擬似要素とCSS変数で作り、候補のDOMを置換しません。アイテムの内容変更、popup内部のスクロール、再配置、取り外しまで検証してください。
+
+共有CSSの読み込み順でスキンが消えないよう、固有スタイルは`.sop-select.sop-select-sculpted.sop-パーツID`／`.sop-scroll-area.sop-scroll-sculpted.sop-パーツID`に限定します。`tests/refinement.browser.ts`では単独、共有CSSを一度だけ含む場合、複数回読み込む場合のスタイル一致を検証しています。

@@ -1,14 +1,7 @@
 @import "../../../shared/scrollbar-sculpted.css";
-/* perforation — sculpted, component-local rail. v4.2.0 */
-
-.sop-scroll-area.sop-perforation{--sop-scroll-width:36px;--sop-scroll-radius:2px;--sop-scroll-accent:#edc581}
-.sop-scroll-area.sop-perforation > .sop-scroll-rail > .sop-scroll-track{background:repeating-linear-gradient(var(--sc-along),#201e19 0 39px,#a189584a 39px 40px,#1a211d 40px 79px,#c6a47655 79px 80px);border-inline:1px solid #8076616b;box-shadow:0 3px 7px #000b}
-.sop-scroll-area.sop-perforation > .sop-scroll-rail > .sop-scroll-track::before{inset:3px;background:repeating-linear-gradient(var(--sc-along),#090d106e 0 3px,#bdaa8163 3px 8px,transparent 8px 13px);mask-image:linear-gradient(var(--sc-cross),#000 0 15%,transparent 15% 85%,#000 85%)}
-.sop-scroll-area.sop-perforation > .sop-scroll-rail > .sop-scroll-track::after{inset:10px 10px;border-inline:1px solid #b2a18542;background:repeating-linear-gradient(var(--sc-along),#b7975154 0 37px,#070e11a3 37px 40px)}
-.sop-scroll-area.sop-perforation > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{opacity:.4;background:linear-gradient(var(--sc-along),#f4bd80b0,#e5764199,#829a9f80)}
-.sop-scroll-area.sop-perforation > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:48px;border-radius:3px;border:1px solid #9fa49273;background:linear-gradient(var(--sc-cross),#62685d,#313e3e 17%,#1725266b 30% 70%,#697067 88%,#98a189);box-shadow:inset 0 1px #e7ebcb71,0 3px 8px #000b}
-.sop-scroll-area.sop-perforation > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{inset:4px 9px;border:2px solid #111c1c;border-radius:1px;box-shadow:inset 0 0 0 1px #ece4bb62;background:#e6c77a20}
-.sop-scroll-area.sop-perforation > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{inset:5px 3px;border-block:2px solid #c7c7a477}
-.sop-scroll-area.sop-perforation > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{width:12px;height:12px;margin:-6px; border:1px solid #f4e9bf8c;background:#d8a65219;transform:rotate(45deg);}
-
-.sop-scroll-area.sop-perforation[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-ticks{display:none}
+/* perforation — proportion, surface, response. v4.3.0 */
+.sop-scroll-area.sop-scroll-sculpted.sop-perforation{--sop-scroll-width:12px;--sop-handle-width:17px;--rail-radius:4px;--sop-scroll-accent:#c6c4c0;--rail-surface:#44494b33;--rail-edge:#c3c6c730;}
+.sop-scroll-area.sop-scroll-sculpted.sop-perforation > .sop-scroll-rail > .sop-scroll-track::before{inset:2px;background:repeating-linear-gradient(var(--rail-along),#dce6df25 0 3px,transparent 3px 10px);opacity:.8;}
+.sop-scroll-area.sop-scroll-sculpted.sop-perforation > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{background:linear-gradient(var(--rail-cross),#bec5c674,#d7e2db14 27% 73%,#b9c7c366);border:1px solid #dcebe4a0;box-shadow:inset 0 0 0 2px #1a272930,0 2px 3px #0003;backdrop-filter:brightness(1.4);}
+.sop-scroll-area.sop-scroll-sculpted.sop-perforation > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{inset:3px;border:1px solid #f5fff530;background:linear-gradient(var(--rail-along),#d4e4d71c,transparent);}
+.sop-scroll-area.sop-scroll-sculpted.sop-perforation > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{background:linear-gradient(var(--rail-along),#ffffff38,transparent);}

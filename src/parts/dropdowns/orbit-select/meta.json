@@ -3,14 +3,14 @@
   "name": "Orbit Select",
   "category": "dropdowns",
   "order": 77,
-  "version": "2.0.0",
-  "tagline": "次の、軌道へ。",
-  "description": "天体の軌道を重ねた観測盤。選択した星のハローが、パネルの曲線へつながる。",
+  "version": "3.0.0",
+  "tagline": "ひとつの面が、巡る。",
+  "description": "チャコールの面の中を、輪郭の美しい丸い選択面が滑る。選択済みの小さな円と、移動中の背景を区別する。",
   "material": "CELESTIAL / NAVIGATION",
-  "motion": "REVEAL / SELECT",
+  "motion": "PILL / GLIDE",
   "accent": "194,199,244",
   "designType": "A",
-  "runtime": "CSS + event-driven select",
+  "runtime": "CSS + event-driven select / motion plane",
   "componentName": "OrbitSelect",
   "tags": [
     "Orbit Select",
@@ -55,6 +55,11 @@
       "renderOption",
       "(item) => ReactNode",
       "選択肢内の装飾。ボタンや入力欄をネストしないでください。"
+    ],
+    [
+      "autoIcon / showHeading / showHints",
+      "boolean",
+      "補助表示を任意で設定。Aはアイコンの自動生成なし。見出しと操作ヒントは表示を切り替えられます。"
     ]
   ]
 }

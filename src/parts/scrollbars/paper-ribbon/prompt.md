@@ -1,41 +1,36 @@
-# Paper Ribbon — 造形仕様 v2.0.0（STATE OF PLAY v4.2.0）
+# Paper Ribbon — 面・比率・動きの仕様（STATE OF PLAY v4.3.0）
 
-折り返された紙のしおり。山折りと谷折りの陰影、織り目と切り欠きのリボン。
+幅12pxの平たい帯と18pxの紙のしおり。操作面に沿う折り目の明暗が、掴んだときに変化する。
 
-タイプA。素材と形そのものを表現する。既存のトグルなどは完成度の基準であり、別部品の造形をそのまま移植する指示ではない。
+## 面と比率
+幅12pxの平たい帯と18pxの紙のしおり。操作面に沿う折り目の明暗が、掴んだときに変化する。
+レールは9〜12px、つまみは15〜18pxを中心とする。触れる領域は通常34px、タッチ用44pxを確保する。見た目の太さとヒット領域は分離する。正確な寸法・反射・色・境界・短い変化は下記の固有CSSを正本とし、共有のscrollbar-sculpted.cssも保持する。
 
-## 形と動きの設計
-装飾レール、比例するつまみ、その内側のハンドル、グリップ、端の口金を分離する。レール・つまみの素材を一組として再現し、色だけの細い丸棒へ置き換えない。光沢と影は静止時にも形が分かる強さに保つ。見た目のハンドルとドラッグ領域を分離し、装飾にはpointer-events:noneを適用する。
+## 動きと意味
+スクロール位置とつまみ位置はブラウザーのネイティブスクロールから即時に決まる。表面の変化はスクロール・ドラッグ中に限り、停止すると短く落ち着く。`--sop-scroll-progress`は現在のスクロール位置を0〜1で表す。進捗面を持つスキンだけ`--rail-wake`が正の値となり、前後のレールの色・質感を分ける。これは実際に読んだ内容の履歴や既読確認を表すものではない。
+つまみは内容量に比例する長さを維持し、ホイール・タッチ・矢印・Home/End・PageUp/PageDown・縦横・RTLの操作を保つ。方向によって面の軸と進捗の起点も合わせる。
 
-レールの占有幅は最低56px。つまみの占有長は表示領域と内容全体の比率から求める。小さなグリップや結晶の寸法と、スクロール位置を示す比例つまみの長さを混同しない。縦・横では光の向きと装飾の軸をCSS変数で切り替える。
-
-## 操作と構造
-ネイティブoverflowとscrollTop/scrollLeftを正本とし、ホイールやタッチのスクロールを横取りしない。ドラッグ、レールのページ移動、矢印、PageUp/PageDown、Space/Shift+Space、Home/Endを維持する。方向はvertical/horizontal、RTLも扱う。スクロール位置を--sop-scroll-progressへ同期するが、装飾用に偽の位置を作らない。
-
-## 導入と後片付け
-ページ全体のバーを変更せず、内容領域をラッパーで包む。children/スロットには利用先の内容を入れ、サンプル文章を固定しない。領域の高さと長い内容を用意し、短い内容ではレールを隠す。サイズと内容の変化へ追従し、aria-controls・aria-valuenowと識別子を個体ごとに維持する。destroy時にイベント、Observer、予約済みRAFを解除する。毎フレームの常時描画処理を追加しない。強制カラー時は標準スクロールバーへ戻す。
+## 移植
+contentを利用先の内容へ差し替え、制約された高さを持つコンテナ内へ置く。Reactではchildren、通常HTMLではコンテンツ領域に配置する。ネイティブ値を変える慣性や装飾の追従遅延は付けない。destroy()でイベントと監視を解除する。
 
 ## 必要なソースと配置
-`styles.css`、`scrollbar-sculpted.css`、そこから参照するベースCSSを揃える。ルートの`sop-scroll-sculpted`と`.sop-paper-ribbon`を維持する。配布側のファイル見出しは参照元のパスであり、導入先の同じ階層を強制するものではない。利用先の構成と規約を確認して配置し、移動時には相対importとCSSの参照を更新する。既存コードを無条件に上書きしない。プロジェクトが見えない場合は必要な構成を確認する。
+固有styles.cssとそこからimportする共有CSS・TSをすべて含める。ルートのスキンクラスとA専用のopt-inクラスを保持する。ファイル見出しは配布時のパスであり、導入先の階層を強制するものではない。ユーザーのプロジェクト構成と規約を確認し、相対import・CSS・例の配置を連動して変更する。既存ファイルを無条件に上書きしない。プロジェクトを参照できなければ構成を確認する。
 
 ## 確認基準
-単独の表示と他のスキンを混在させた表示が一致すること。通常・操作中・無効・キーボードフォーカス・320px幅・長い日本語・prefers-reduced-motion・forced-colorsを確認する。外観変更を理由に入力の標準操作、状態管理、外部制御を省略しない。
+実寸の画面で形と余白を確認する。単独・他スキン混在・同じ共有CSSの重複読み込みでも造形が変わらないこと。幅320px、長い日本語、キーボード、タッチ相当、prefers-reduced-motion、forced-colorsを確認する。縮小モーション時は表面の移動を止めても位置と選択状態を維持する。ホバーできない環境でも操作可能にする。
 
 ## 固有スタイル（正本と同期）
-次はこの部品の`styles.css`と同一の内容。共有の寸法と操作状態のスタイルは`scrollbar-sculpted.css`も必要。コード込みの実装プロンプトには必要な全ファイルが含まれる。
+下記はこのパーツのstyles.cssと同じ内容。共有scrollbar-sculpted.cssの寸法・操作状態と併用する。
 
 ```css
 @import "../../../shared/scrollbar-sculpted.css";
-/* paper-ribbon — sculpted, component-local rail. v4.2.0 */
-
-.sop-scroll-area.sop-paper-ribbon{--sop-scroll-width:27px;--sop-scroll-radius:0;--sop-scroll-accent:#edb58b}
-.sop-scroll-area.sop-paper-ribbon > .sop-scroll-rail > .sop-scroll-track{background:repeating-linear-gradient(var(--sc-along),#d59b7250 0 1px,#7d553da1 1px 3px);border-inline:1px solid #cb9d727e;box-shadow:3px 1px 7px #0008}
-.sop-scroll-area.sop-paper-ribbon > .sop-scroll-rail > .sop-scroll-track::before{inset:0;background:linear-gradient(var(--sc-cross),#f6c4905e,#8d573662 42%,#efb58b63 50%,#6745315e);border-inline:3px double #e5b08062}
-.sop-scroll-area.sop-paper-ribbon > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{background:#ffc899;opacity:.22}
-.sop-scroll-area.sop-paper-ribbon > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:44px;border-radius:0;border:0;clip-path:polygon(0 0,83% 0,100% 12%,100% 100%,50% 87%,0 100%);background:linear-gradient(114deg,#eadbc1,#f8e7cb 42%,#c7a88a 43%,#f6dec0 46%,#edd4b2 84%,#a98163 85%);box-shadow:none;filter:drop-shadow(2px 4px 3px #0008)}
-.sop-scroll-area.sop-paper-ribbon > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{inset:6px 6px 12px;border:1px solid #936d4542;}
-.sop-scroll-area.sop-paper-ribbon > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{inset-block:0 auto;inset-inline:auto 0;inline-size:11px;block-size:15px;clip-path:polygon(0 0,100% 100%,0 100%);background:#ba9473;box-shadow:0 3px 3px #0006}
-.sop-scroll-area.sop-paper-ribbon > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{background:repeating-linear-gradient(0deg,transparent 0 4px,#9b6a4b70 4px 5px);width:18px;height:15px;margin:-9px;transform:rotate(-8deg)}
-
-.sop-scroll-area.sop-paper-ribbon[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-ticks{display:none}
+/* paper-ribbon — proportion, surface, response. v4.3.0 */
+.sop-scroll-area.sop-scroll-sculpted.sop-paper-ribbon{--sop-scroll-width:12px;--sop-handle-width:18px;--rail-radius:2px;--sop-scroll-accent:#d9ceb7;--rail-surface:#b6aa911a;--rail-edge:#c5b99c24;}
+.sop-scroll-area.sop-scroll-sculpted.sop-paper-ribbon > .sop-scroll-rail > .sop-scroll-track{box-shadow:inset 1px 0 #e3dcc620;}
+.sop-scroll-area.sop-scroll-sculpted.sop-paper-ribbon > .sop-scroll-rail > .sop-scroll-track::before{inset:0;background:repeating-linear-gradient(var(--rail-along),transparent 0 8px,#d6caba22 8px 9px);}
+.sop-scroll-area.sop-scroll-sculpted.sop-paper-ribbon > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{background:linear-gradient(var(--rail-cross),#d4c8b0,#e7dfcf 49%,#b8ac9690 50%,#dfd3bd);border:0;clip-path:polygon(0 0,100% 0,100% 100%,50% 93%,0 100%);box-shadow:inset 1px 0 #fff2d8aa;}
+.sop-scroll-area.sop-scroll-sculpted.sop-paper-ribbon > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{inset:1px;background:linear-gradient(var(--rail-along),#fff9e65c,transparent 30%);border-inline-start:1px solid #a6927130;}
+.sop-scroll-area.sop-scroll-sculpted.sop-paper-ribbon > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{inset:0;background:linear-gradient(var(--rail-cross),transparent 42%,#fff9e676 49%,transparent 65%);opacity:.4;}
+.sop-scroll-area.sop-scroll-sculpted.sop-paper-ribbon[data-dragging=true] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{opacity:1;}
+.sop-scroll-area.sop-scroll-sculpted.sop-paper-ribbon[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{clip-path:polygon(0 0,100% 0,93% 50%,100% 100%,0 100%);}
 ```

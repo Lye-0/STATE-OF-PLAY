@@ -1,55 +1,35 @@
-# Optic Select — 造形仕様 v2.0.0（STATE OF PLAY v4.2.0）
+# Optic Select — 面・比率・動きの仕様（STATE OF PLAY v4.3.0）
 
-レンズ鏡筒、細密なフォーカス環、刻み目。光学機器の選択機構として作り直したセレクト。
+明るい灰白色のフィールドと薄い光学面。候補へ移動する背景面が文字を引き立て、細い側線が現在位置を示す。
 
-タイプA。素材と形そのものを表現する。既存のトグルなどは完成度の基準であり、別部品の造形をそのまま移植する指示ではない。
+## 文字と背景面
+明るい灰白色のフィールドと薄い光学面。候補へ移動する背景面が文字を引き立て、細い側線が現在位置を示す。
+候補名を最優先に、説明と小さなチェックを添える。アイコンは利用側が指定したときだけ20pxで表示し、アイコンがなくても空白を残さない。標準のフィールドはmin-height 62px、候補はmin-height 46px、説明付きなら自然に広がる。ラベル・description・badgeは折り返し、内容のないバッジは表示しない。showHeading/showHintsで補助見出しとヒントを選べる。
 
-## 閉じたフィールドと開いた候補の設計
-素材の象徴となるアイコン、選択ラベル、補足説明、独立した開閉インジケーターを持つ。閉じたトリガーだけでなく、ヘッダー、各候補の素材面、バッジ、選択チェック、候補移動のフォーカス、操作ヒントまで同じ造形で揃える。選択ラベルと説明を装飾の背景へ焼き込まない。
+## 動く面
+select-motion.tsが現在の候補の位置・寸法をCSS変数へ同期する。背景面はpopupの擬似要素であり、文字は移動させない。hoverとキーボード移動は同じ面に反映するが、確定済みのチェックは別に保持する。面の追従は約230ms、開閉は約240msを基準に固有CSSへ合わせる。アニメーション完了を待たず選択でき、連続操作では現在の候補へ直ちに向きを変える。
+ポインター追従はマウスでのみ使い、タッチではタップ・開閉・選択の演出を使う。scroll・resize・テキスト変更で位置を再計測し、popup内のスクロールで面が行からずれないようにする。キーボードのフォーカスと確定値はselect-controller.tsが管理する。
 
-基本トリガーは102px以上、主アイコンは50px、選択肢のアイコンは44px。狭い画面では寸法と余白を縮める。長い日本語のラベル、description、badgeは折り返し、操作部の外へはみ出させない。各素材固有の上書きは下記のCSSを正本とする。開閉時だけ短い移動・透明度の変化を使い、常時揺れる文字や待機中のJSループを追加しない。
-
-## 選択動作
-これは実際の値を返す単一選択select-only comboboxであり、アクションメニューではない。上下/Home/End/頭文字で候補を移動し、Enter/Space/Tabで確定、Escapeで取消する。選択候補とフォーカス候補を区別する。無効候補・無効フィールド・空リスト・フォームresetを維持する。選択肢の内部に別のボタンや入力欄を入れない。
-
-## 導入と内容
-itemsのvalue/label/description/icon/badge/group/disabledを利用先から受け取る。展示用の内容を事実や固定仕様として扱わず、架空の性能・状態を勝手に補わない。renderOptionは非対話の装飾のみ。nameのhidden input、識別子、キーボードフォーカスを保持する。開いたメニューは対応ブラウザーのtop layerへ出し、画面上下端では向きを反転し、長いリストは内部スクロールする。コンポーネントを取り外す際は開いたポップオーバーとイベントを解除する。
+## 状態と移植
+これは単一値を返すselect-only combobox。上下/Home/End/頭文字で候補を移動し、Enter/Space/Tabで確定、Escapeで取消。無効候補・無効フィールド・空リスト・フォームresetを維持する。選択肢内に操作できるボタンを入れない。itemsとvalue/onValueChangeを利用側のデータに接続する。候補内容に依存するテーマや例文は実装の固定仕様ではない。通常の「並び順」「保存先」でも同じ造形が成立するようにする。
+開く方向は画面端で反転し、Popover API対応時はtop layerを使う。destroy()で背景面の監視、イベント、RAF、タイマーを含め解除する。
 
 ## 必要なソースと配置
-`styles.css`、`select-sculpted.css`、そこから参照するベースCSSを揃える。ルートの`sop-select-sculpted`と`.sop-optic-select`を維持する。配布側のファイル見出しは参照元のパスであり、導入先の同じ階層を強制するものではない。利用先の構成と規約を確認して配置し、移動時には相対importとCSSの参照を更新する。既存コードを無条件に上書きしない。プロジェクトが見えない場合は必要な構成を確認する。
+固有styles.cssとそこからimportする共有CSS・TSをすべて含める。ルートのスキンクラスとA専用のopt-inクラスを保持する。ファイル見出しは配布時のパスであり、導入先の階層を強制するものではない。ユーザーのプロジェクト構成と規約を確認し、相対import・CSS・例の配置を連動して変更する。既存ファイルを無条件に上書きしない。プロジェクトを参照できなければ構成を確認する。
 
 ## 確認基準
-単独の表示と他のスキンを混在させた表示が一致すること。通常・操作中・無効・キーボードフォーカス・320px幅・長い日本語・prefers-reduced-motion・forced-colorsを確認する。外観変更を理由に入力の標準操作、状態管理、外部制御を省略しない。
+実寸の画面で形と余白を確認する。単独・他スキン混在・同じ共有CSSの重複読み込みでも造形が変わらないこと。幅320px、長い日本語、キーボード、タッチ相当、prefers-reduced-motion、forced-colorsを確認する。縮小モーション時は表面の移動を止めても位置と選択状態を維持する。ホバーできない環境でも操作可能にする。
 
 ## 固有スタイル（正本と同期）
-次はこの部品の`styles.css`と同一の内容。共有の寸法と操作状態のスタイルは`select-sculpted.css`も必要。コード込みの実装プロンプトには必要な全ファイルが含まれる。
+下記はこのパーツのstyles.cssと同じ内容。共有select-sculpted.cssの寸法・操作状態と併用する。
 
 ```css
 @import "../../../shared/select-sculpted.css";
-/* optic-select — field, icon, list and option art direction. v4.2.0 */
-
-.sop-select.sop-optic-select{--sel-radius:9px;--sel-bg:linear-gradient(125deg,#343c3f,#131e25 45%,#1d2930);--sel-panel:#172027;--sel-accent:#cddccd;--sel-muted:#a5b5b9;--sel-line:#78888869;}
-.sop-select.sop-optic-select > .sop-select-trigger{min-height:108px;border:1px solid #929b9482;box-shadow:inset 0 0 0 3px #111b208f,inset 0 1px #eeeec96e,0 14px 22px #0009;}
-.sop-select.sop-optic-select > .sop-select-trigger::before{inset:4px;border:1px solid #8697965a;border-radius:4px;background:repeating-linear-gradient(0deg,transparent 0 2px,#cfe3d205 2px 3px);}
-.sop-select.sop-optic-select > .sop-select-trigger::after{inset:7px 5px;background:radial-gradient(circle,#718280 0 1px,#152427 1.6px 2.4px,transparent 2.8px) 0 0/100% 100%;border-inline:2px dotted #1c2428}
-.sop-select.sop-optic-select .sop-select-icon{width:57px;height:57px;border-radius:50%;background:repeating-conic-gradient(#c2cbc3 0 3deg,#263840 3deg 7deg,#748384 7deg 10deg);border:1px solid #8a9b9b;box-shadow:0 0 0 2px #090f15,inset 0 0 0 3px #4b595c,0 4px 7px #000b;color:#cce5e5;font-size:10px;text-shadow:0 0 5px #b9d9b88a;}
-.sop-select.sop-optic-select .sop-select-icon::before{inset:5px;border:2px solid #101a20;border-radius:50%;background:radial-gradient(circle at 32% 25%,#b6e1d781,#223b4a 30%,#142128 62%,#656a8c 87%,#c5f3eb5e);box-shadow:0 0 0 1px #bac1b761,inset 0 0 0 3px #233442,inset 1px 2px 3px #000;}
-.sop-select.sop-optic-select .sop-select-icon::after{inset:12px;border:1px solid #9ebed364;border-radius:50%;background:conic-gradient(from 40deg,transparent,#769b6c2b,transparent 23%,#6787ac38,transparent 74%);}
-.sop-select.sop-optic-select .sop-select-value .sop-select-option-copy b{font-size:18px;letter-spacing:-.5px;}
-.sop-select.sop-optic-select .sop-select-chevron{border:1px solid #788c8a;background:repeating-conic-gradient(#728782 0 10deg,#1c2c34 10deg 20deg);box-shadow:inset 0 0 0 5px #202c32;}
-.sop-select.sop-optic-select .sop-select-popup{border-radius:8px;background:linear-gradient(135deg,#34404760,transparent 55%),#172027;border:1px solid #75858b;box-shadow:inset 0 0 0 3px #0f1920,0 26px 50px #000b;}
-.sop-select.sop-optic-select .sop-select-menu-heading{padding-bottom:21px;border-bottom:1px solid #65727561;}
-.sop-select.sop-optic-select .sop-select-menu-heading::after{inset:auto 12px 2px;height:8px;background:repeating-linear-gradient(90deg,#b2c4bc8c 0 1px,transparent 1px 8px);mask-image:linear-gradient(90deg,#000,transparent 86%);}
-.sop-select.sop-optic-select .sop-select-option{border-radius:5px;border-bottom:1px solid #7887892a;}
-.sop-select.sop-optic-select .sop-select-option[aria-selected=true]{background:linear-gradient(100deg,#b6cbbb1a,#59737614);border-color:#9aad9e71;box-shadow:inset 3px 0 #cee3c6;}
-.sop-select.sop-optic-select .sop-select-option[data-active=true] .sop-select-icon::after{transform:rotate(55deg);transition:transform .7s;}
-.sop-select.sop-optic-select .sop-select-badge{border:1px solid #506260;background:#0e181b;padding:4px 5px;border-radius:2px;}
-
-@media(prefers-reduced-motion:reduce){.sop-select.sop-optic-select *::before,.sop-select.sop-optic-select *::after{transition:none!important;animation:none!important;}}
-
-.sop-select.sop-optic-select .sop-select-chevron::before{content:'';position:absolute;inset:4px;border-radius:50%;background:#15252e;border:1px solid #a0b8a25e;}
-.sop-select.sop-optic-select .sop-select-chevron::after{z-index:1;color:#d9edce;}
-.sop-select.sop-optic-select [data-glyph="1"] .sop-select-icon::before{background:radial-gradient(circle at 32% 25%,#aadecb80,#243946 30%,#131928 55%,#7d8895 87%,#c5f3eb5e);}
-.sop-select.sop-optic-select [data-glyph="2"] .sop-select-icon::before{background:radial-gradient(circle at 32% 25%,#d3b4d09e,#39324c 30%,#151f2c 55%,#8c839b 87%,#cad7d05e);}
-.sop-select.sop-optic-select [data-glyph="3"] .sop-select-icon::before{background:radial-gradient(circle at 32% 25%,#c3d5b973,#36433a 30%,#13242b 55%,#537b87 87%,#c5f3eb5e);}
+/* optic-select — text-led, material-specific motion. v4.3.0 */
+.sop-select.sop-select-sculpted.sop-optic-select{--sel-radius:11px;--sel-bg:#e4e8e7;--sel-panel:#edf0ee;--sel-ink:#283638;--sel-muted:#677776;--sel-accent:#375e60;--sel-line:#3c5d5b2b;--sel-plane:linear-gradient(110deg,#fffefaac,#e2e8e682);--sel-plane-border:#ffffffd0;--sel-panel-image:linear-gradient(110deg,#ffffff3a,transparent 60%);}
+.sop-select.sop-select-sculpted.sop-optic-select > .sop-select-trigger{box-shadow:inset 0 1px #ffffffd9,0 4px 12px #0001;border-bottom-color:#587b7455;}
+.sop-select.sop-select-sculpted.sop-optic-select > .sop-select-trigger::before{background:linear-gradient(100deg,transparent 45%,#ffffff35 50%,transparent 55%);}
+.sop-select.sop-select-sculpted.sop-optic-select .sop-select-popup::before{box-shadow:0 2px 5px #23474412,inset 0 1px #fffffff0;}
+.sop-select.sop-select-sculpted.sop-optic-select .sop-select-popup::after{content:'';position:absolute;z-index:0;pointer-events:none;left:calc(var(--sel-plane-x) + 2px);top:calc(var(--sel-plane-y) + 12px);width:2px;height:calc(var(--sel-plane-h) - 24px);border-radius:4px;background:#61847b70;transition:top .24s,height .24s;}
+.sop-select.sop-select-sculpted.sop-optic-select .sop-select-menu-heading{font-size:9px;letter-spacing:1.1px;}
 ```

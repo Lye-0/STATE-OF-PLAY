@@ -1,44 +1,34 @@
-# Cable — 造形仕様 v2.0.0（STATE OF PLAY v4.2.0）
+# Cable — 面・比率・動きの仕様（STATE OF PLAY v4.3.0）
 
-二本撚りの編組ケーブルと、上下の真鍮フェルール。握るほど確かな機械的なクランプ。
+10pxの柔らかな織り目と、薄い金属のつまみ。通過済みのレールは光を含んだ滑らかな質感に変わる。
 
-タイプA。素材と形そのものを表現する。既存のトグルなどは完成度の基準であり、別部品の造形をそのまま移植する指示ではない。
+## 面と比率
+10pxの柔らかな織り目と、薄い金属のつまみ。通過済みのレールは光を含んだ滑らかな質感に変わる。
+レールは9〜12px、つまみは15〜18pxを中心とする。触れる領域は通常34px、タッチ用44pxを確保する。見た目の太さとヒット領域は分離する。正確な寸法・反射・色・境界・短い変化は下記の固有CSSを正本とし、共有のscrollbar-sculpted.cssも保持する。
 
-## 形と動きの設計
-装飾レール、比例するつまみ、その内側のハンドル、グリップ、端の口金を分離する。レール・つまみの素材を一組として再現し、色だけの細い丸棒へ置き換えない。光沢と影は静止時にも形が分かる強さに保つ。見た目のハンドルとドラッグ領域を分離し、装飾にはpointer-events:noneを適用する。
+## 動きと意味
+スクロール位置とつまみ位置はブラウザーのネイティブスクロールから即時に決まる。表面の変化はスクロール・ドラッグ中に限り、停止すると短く落ち着く。`--sop-scroll-progress`は現在のスクロール位置を0〜1で表す。進捗面を持つスキンだけ`--rail-wake`が正の値となり、前後のレールの色・質感を分ける。これは実際に読んだ内容の履歴や既読確認を表すものではない。
+つまみは内容量に比例する長さを維持し、ホイール・タッチ・矢印・Home/End・PageUp/PageDown・縦横・RTLの操作を保つ。方向によって面の軸と進捗の起点も合わせる。
 
-レールの占有幅は最低56px。つまみの占有長は表示領域と内容全体の比率から求める。小さなグリップや結晶の寸法と、スクロール位置を示す比例つまみの長さを混同しない。縦・横では光の向きと装飾の軸をCSS変数で切り替える。
-
-## 操作と構造
-ネイティブoverflowとscrollTop/scrollLeftを正本とし、ホイールやタッチのスクロールを横取りしない。ドラッグ、レールのページ移動、矢印、PageUp/PageDown、Space/Shift+Space、Home/Endを維持する。方向はvertical/horizontal、RTLも扱う。スクロール位置を--sop-scroll-progressへ同期するが、装飾用に偽の位置を作らない。
-
-## 導入と後片付け
-ページ全体のバーを変更せず、内容領域をラッパーで包む。children/スロットには利用先の内容を入れ、サンプル文章を固定しない。領域の高さと長い内容を用意し、短い内容ではレールを隠す。サイズと内容の変化へ追従し、aria-controls・aria-valuenowと識別子を個体ごとに維持する。destroy時にイベント、Observer、予約済みRAFを解除する。毎フレームの常時描画処理を追加しない。強制カラー時は標準スクロールバーへ戻す。
+## 移植
+contentを利用先の内容へ差し替え、制約された高さを持つコンテナ内へ置く。Reactではchildren、通常HTMLではコンテンツ領域に配置する。ネイティブ値を変える慣性や装飾の追従遅延は付けない。destroy()でイベントと監視を解除する。
 
 ## 必要なソースと配置
-`styles.css`、`scrollbar-sculpted.css`、そこから参照するベースCSSを揃える。ルートの`sop-scroll-sculpted`と`.sop-cable`を維持する。配布側のファイル見出しは参照元のパスであり、導入先の同じ階層を強制するものではない。利用先の構成と規約を確認して配置し、移動時には相対importとCSSの参照を更新する。既存コードを無条件に上書きしない。プロジェクトが見えない場合は必要な構成を確認する。
+固有styles.cssとそこからimportする共有CSS・TSをすべて含める。ルートのスキンクラスとA専用のopt-inクラスを保持する。ファイル見出しは配布時のパスであり、導入先の階層を強制するものではない。ユーザーのプロジェクト構成と規約を確認し、相対import・CSS・例の配置を連動して変更する。既存ファイルを無条件に上書きしない。プロジェクトを参照できなければ構成を確認する。
 
 ## 確認基準
-単独の表示と他のスキンを混在させた表示が一致すること。通常・操作中・無効・キーボードフォーカス・320px幅・長い日本語・prefers-reduced-motion・forced-colorsを確認する。外観変更を理由に入力の標準操作、状態管理、外部制御を省略しない。
+実寸の画面で形と余白を確認する。単独・他スキン混在・同じ共有CSSの重複読み込みでも造形が変わらないこと。幅320px、長い日本語、キーボード、タッチ相当、prefers-reduced-motion、forced-colorsを確認する。縮小モーション時は表面の移動を止めても位置と選択状態を維持する。ホバーできない環境でも操作可能にする。
 
 ## 固有スタイル（正本と同期）
-次はこの部品の`styles.css`と同一の内容。共有の寸法と操作状態のスタイルは`scrollbar-sculpted.css`も必要。コード込みの実装プロンプトには必要な全ファイルが含まれる。
+下記はこのパーツのstyles.cssと同じ内容。共有scrollbar-sculpted.cssの寸法・操作状態と併用する。
 
 ```css
 @import "../../../shared/scrollbar-sculpted.css";
-/* cable — sculpted, component-local rail. v4.2.0 */
-
-.sop-scroll-area.sop-cable{--sop-scroll-width:17px;--sop-scroll-radius:9px;--sop-scroll-accent:#e5c388}
-.sop-scroll-area.sop-cable > .sop-scroll-rail > .sop-scroll-track{background:repeating-linear-gradient(35deg,#9e8d66 0 2px,#454332 2px 4px,#ded0a34d 4px 5px),repeating-linear-gradient(-35deg,#70634a 0 2px,#262d26 2px 4px);border-inline:2px solid #ac986157;box-shadow:inset 2px 0 4px #f5e0a76e,inset -2px 0 4px #0b0e10,2px 3px 5px #000e}
-.sop-scroll-area.sop-cable > .sop-scroll-rail > .sop-scroll-track::after{inset:0;background:linear-gradient(var(--sc-cross),transparent,#141c1680 45% 55%,transparent)}
-.sop-scroll-area.sop-cable > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{background:#ffe7a9;opacity:.18}
-.sop-scroll-area.sop-cable > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:39px;border:1px solid #e0c5928c;border-radius:7px;background:linear-gradient(var(--sc-cross),#6c4b27,#dbc48a 12%,#9f7a49 32%,#cba86b 45%,#ebd4a3 69%,#8c6436 90%,#523e28);box-shadow:inset 0 2px #f8e2b495,inset 0 -2px #4e321e,1px 7px 8px #000b}
-.sop-scroll-area.sop-cable > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{inset-block:5px;inset-inline:4px;border-block:4px double #382a239e;border-radius:4px;background:repeating-linear-gradient(var(--sc-along),#352a213d 0 1px,#e9c98a69 1px 2px,transparent 2px 5px)}
-.sop-scroll-area.sop-cable > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{inset:10px 7px;border:1px solid #493c277d;border-radius:5px;background:#241e243b}
-.sop-scroll-area.sop-cable > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{z-index:1;border-radius:50%;background:conic-gradient(#7e674a,#e9dba8,#6d512e,#d9b774,#867652,#f2dca4,#7e674a);border:2px solid #907045;box-shadow:inset 0 0 0 3px #ccb277,0 2px 3px #0009}
-.sop-scroll-area.sop-cable > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip::after{content:'';position:absolute;inset:9px 3px 8px;background:#4c351e;rotate:-35deg}
-.sop-scroll-area.sop-cable > .sop-scroll-rail > .sop-scroll-ticks::before,.sop-scroll-area.sop-cable > .sop-scroll-rail > .sop-scroll-ticks::after{inset-inline:calc(50% - 12px);inline-size:24px;block-size:18px;background:repeating-linear-gradient(var(--sc-along),#d4b780 0 2px,#664d2c 2px 3px);border:1px solid #e0bd6966;border-radius:4px}
-.sop-scroll-area.sop-cable > .sop-scroll-rail > .sop-scroll-ticks::before{inset-block-start:2px}.sop-scroll-area.sop-cable > .sop-scroll-rail > .sop-scroll-ticks::after{inset-block-end:2px}
-
-.sop-scroll-area.sop-cable[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-ticks{display:none}
+/* cable — proportion, surface, response. v4.3.0 */
+.sop-scroll-area.sop-scroll-sculpted.sop-cable{--sop-scroll-width:10px;--sop-handle-width:15px;--rail-radius:8px;--sop-scroll-accent:#c6c4ba;--rail-surface:#333431;--rail-edge:#959a8724;--rail-wake:.45;}
+.sop-scroll-area.sop-scroll-sculpted.sop-cable > .sop-scroll-rail > .sop-scroll-track{background:repeating-linear-gradient(38deg,#b4b8a335 0 1px,transparent 1px 4px),repeating-linear-gradient(-38deg,#858c7545 0 1px,transparent 1px 4px),#242925;box-shadow:inset 1px 0 2px #0005;}
+.sop-scroll-area.sop-scroll-sculpted.sop-cable > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{background:linear-gradient(var(--rail-cross),#777d67,#c6cbb477,#5e63534f);}
+.sop-scroll-area.sop-scroll-sculpted.sop-cable > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{border-color:#dcddd073;background:linear-gradient(var(--rail-cross),#888d81,#e1e3d5 25%,#b7beae 65%,#d0d4c4 87%,#7c8475);box-shadow:inset 0 1px #ffffff66,0 2px 3px #0004;}
+.sop-scroll-area.sop-scroll-sculpted.sop-cable > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{inset:4px 3px;border-inline:1px solid #60725b50;background:linear-gradient(var(--rail-along),#ffffff15,transparent);border-radius:4px;}
+.sop-scroll-area.sop-scroll-sculpted.sop-cable > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{inset:3px;opacity:0;background:linear-gradient(var(--rail-along),transparent,#eaffd655,transparent);}
 ```

@@ -3,14 +3,14 @@
   "name": "Archive Select",
   "category": "dropdowns",
   "order": 87,
-  "version": "2.0.0",
-  "tagline": "記録を、たどる。",
-  "description": "背表紙、整理番号、余白の多い活版。紙を束ねた索引カードとして、閉じた面も一覧も再構成。",
+  "version": "3.0.0",
+  "tagline": "情報に、ひとつの余白。",
+  "description": "明るい紙、細い区切り、薄い選択面。縦へ展開し、左端の線と背景が選択候補に追従する。",
   "material": "FILE / REFERENCE",
-  "motion": "REVEAL / SELECT",
+  "motion": "PAPER / INDEX",
   "accent": "107,118,88",
   "designType": "A",
-  "runtime": "CSS + event-driven select",
+  "runtime": "CSS + event-driven select / motion plane",
   "componentName": "ArchiveSelect",
   "tags": [
     "Archive Select",
@@ -55,6 +55,11 @@
       "renderOption",
       "(item) => ReactNode",
       "選択肢内の装飾。ボタンや入力欄をネストしないでください。"
+    ],
+    [
+      "autoIcon / showHeading / showHints",
+      "boolean",
+      "補助表示を任意で設定。Aはアイコンの自動生成なし。見出しと操作ヒントは表示を切り替えられます。"
     ]
   ]
 }

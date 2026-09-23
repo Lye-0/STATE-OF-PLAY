@@ -3,7 +3,7 @@ import React from 'react';
 import { useScrollArea, type ScrollAreaProps } from '../../../../shared/use-scroll-area';
 import '../styles.css';
 export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
-/** 二本の繊細な光が、色を重ねて静かに流れる。 Native scroll content with a skinned, proportional rail. */
+/** 細いレールの通過済み部分へ、低彩度の光の層が残る。つまみは白に近い、連続したオパールの面。 */
 export default function AuroraThreadScrollArea(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);

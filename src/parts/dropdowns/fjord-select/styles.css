@@ -1,21 +1,8 @@
 @import "../../../shared/select-sculpted.css";
-/* fjord-select — field, icon, list and option art direction. v4.2.0 */
-
-.sop-select.sop-fjord-select{--sel-bg:linear-gradient(135deg,#55798465,#1c3447 40%,#102331 80%,#52757a57);--sel-panel:linear-gradient(155deg,#557a8161,#183344 40%,#112839);--sel-ink:#ddebee;--sel-muted:#afc8cd;--sel-accent:#bee6e2;--sel-line:#b9d7d75c;--sel-radius:4px;}
-.sop-select.sop-fjord-select > .sop-select-trigger{border-radius:4px 18px 4px 18px;box-shadow:inset 0 1px #d0e7e166,0 14px 26px #0008;}
-.sop-select.sop-fjord-select > .sop-select-trigger::before{right:-7px;top:-9px;width:175px;height:138px;border-radius:44%;border:1px solid #cbebe637;transform:rotate(-24deg) scaleY(.7);box-shadow:0 0 0 10px #c6e8e405,0 0 0 11px #b2d7d627,0 0 0 22px #bdd7d705,0 0 0 23px #c2e7e322,0 0 0 34px #c2e7e306,0 0 0 35px #c2e7e31a;}
-.sop-select.sop-fjord-select > .sop-select-trigger::after{inset:auto 0 4px;height:1px;background:linear-gradient(90deg,transparent,#c9eee280,transparent);}
-.sop-select.sop-fjord-select .sop-select-value .sop-select-option-copy b{font:23px/1.2 Georgia,serif;}
-.sop-select.sop-fjord-select .sop-select-icon{border-radius:3px;background:linear-gradient(#8aa9b3 0 45%,#2c5a70 45% 63%,#16384b 65%);border:1px solid #bfe4e287;box-shadow:inset 0 0 0 3px #a5ccce2b,0 4px 7px #0008;color:#cce9e5;align-items:flex-end;padding-bottom:5px;font-size:8px;}
-.sop-select.sop-fjord-select .sop-select-icon::before{inset:4px 4px 17px;background:linear-gradient(125deg,#e3ebe8 0 48%,#7aafbe 49% 68%,#c5dedb 69%);clip-path:polygon(0 87%,23% 40%,40% 58%,63% 3%,100% 80%,100% 100%,0 100%);}
-.sop-select.sop-fjord-select .sop-select-icon::after{left:4px;right:4px;bottom:10px;height:12px;opacity:.3;background:linear-gradient(120deg,#a6d5df,#e1e9d7);clip-path:polygon(0 0,100% 0,65% 100%,36% 30%,22% 80%);}
-.sop-select.sop-fjord-select [data-glyph="1"] .sop-select-icon::before{transform:scaleX(-1);}
-.sop-select.sop-fjord-select [data-glyph="2"] .sop-select-icon::before{clip-path:polygon(0 95%,39% 5%,60% 41%,77% 17%,100% 83%,100% 100%,0 100%);}
-.sop-select.sop-fjord-select .sop-select-popup{border-radius:5px 19px 5px 19px;}
-.sop-select.sop-fjord-select .sop-select-menu-heading{border:1px solid #b6d1d53a;border-radius:3px 12px 3px 3px;background:linear-gradient(140deg,#93c5c334,transparent 65%);}
-.sop-select.sop-fjord-select .sop-select-menu-heading::after{z-index:-1;inset:auto 0 6px;height:6px;border-block:1px solid #b7d6d63a;}
-.sop-select.sop-fjord-select .sop-select-option{border-radius:3px 10px 3px 10px;border-bottom:1px solid #9fbcc229;}
-.sop-select.sop-fjord-select .sop-select-option[aria-selected=true]{background:linear-gradient(110deg,#91d9d629,#a5bce019);border-color:#c1e5e178;box-shadow:inset 3px 0 #badbd4;}
-.sop-select.sop-fjord-select .sop-select-option[data-active=true] .sop-select-icon{transform:translateY(-2px);}
-
-@media(prefers-reduced-motion:reduce){.sop-select.sop-fjord-select *::before,.sop-select.sop-fjord-select *::after{transition:none!important;animation:none!important;}}
+/* fjord-select — text-led, material-specific motion. v4.3.0 */
+.sop-select.sop-select-sculpted.sop-fjord-select{--sel-radius:12px;--sel-bg:#dce5e9;--sel-panel:#e9eff2;--sel-ink:#2a404d;--sel-muted:#657e8d;--sel-accent:#496f82;--sel-line:#7392a236;--sel-plane:linear-gradient(100deg,#bdcedb5c,#deebf157);--sel-plane-border:#ffffffb0;--sel-plane-radius:7px;--sel-panel-image:linear-gradient(155deg,#ffffff55,transparent 60%);}
+.sop-select.sop-select-sculpted.sop-fjord-select > .sop-select-trigger{box-shadow:inset 0 1px #ffffffed,0 4px 12px #18334412;}
+.sop-select.sop-select-sculpted.sop-fjord-select > .sop-select-trigger::before{background:linear-gradient(100deg,transparent,#ffffff33);}
+.sop-select.sop-select-sculpted.sop-fjord-select .sop-select-popup::before{box-shadow:inset 0 -1px #6f8b9836,inset 0 1px #ffffffbe;}
+.sop-select.sop-select-sculpted.sop-fjord-select .sop-select-popup{border-top:2px solid #98b5c585;}
+.sop-select.sop-select-sculpted.sop-fjord-select .sop-select-option[aria-selected=true] .sop-select-check{font-weight:bold;}

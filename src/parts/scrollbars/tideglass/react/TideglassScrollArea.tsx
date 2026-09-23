@@ -3,7 +3,7 @@ import React from 'react';
 import { useScrollArea, type ScrollAreaProps } from '../../../../shared/use-scroll-area';
 import '../styles.css';
 export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
-/** 深い青の管と、水面を思わせる淡いガラスのレンズ。 Native scroll content with a skinned, proportional rail. */
+/** 12pxの透明な水路と17pxの有機的なレンズ面。スクロールした領域に水色が満ち、つまみの縁が静かに光る。 */
 export default function TideglassScrollArea(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);

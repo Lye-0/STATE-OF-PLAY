@@ -1,20 +1,9 @@
 @import "../../../shared/select-sculpted.css";
-/* orbit-select — field, icon, list and option art direction. v4.2.0 */
-
-.sop-select.sop-orbit-select{--sel-bg:radial-gradient(ellipse at 2% 70%,#3448658c,transparent 65%),#171e2c;--sel-panel:radial-gradient(ellipse at 80% 0,#41416577,transparent 65%),#161f2c;--sel-accent:#c2c7f4;--sel-muted:#acb4cb;--sel-line:#a0acc14d;--sel-radius:24px;}
-.sop-select.sop-orbit-select > .sop-select-trigger{border-radius:50px 16px 16px 50px;padding-left:14px;}
-.sop-select.sop-orbit-select > .sop-select-trigger::before{width:155px;height:155px;border-radius:50%;left:-40px;top:-21px;border:1px solid #bab7d851;box-shadow:0 0 0 20px #a3a8d012,0 0 0 21px #a1b9d929,0 0 0 41px #b3a6c008,0 0 0 42px #adb6d81c;transform:rotate(-24deg) scaleY(.6);}
-.sop-select.sop-orbit-select > .sop-select-trigger::after{inset:8px;background:radial-gradient(circle at 73% 24%,#cdd5ed 0 1px,transparent 1.5px),radial-gradient(circle at 87% 68%,#afaadd 0 1px,transparent 1.4px);}
-.sop-select.sop-orbit-select .sop-select-icon{border-radius:50%;border:1px solid #ada7d38a;background:radial-gradient(circle at 31% 24%,#e0cdeb,#979cba 18%,#465d86 39%,#1e3048 61%,#101e2d 78%,#9eafda78);box-shadow:inset -2px -2px 4px #bbc7e578,0 5px 8px #0008;color:#e1e1f3;overflow:visible;text-shadow:0 1px 4px #050e15;}
-.sop-select.sop-orbit-select .sop-select-icon::before{inset:14px -7px;border:1px solid #d9c5e682;border-radius:50%;transform:rotate(-28deg);}
-.sop-select.sop-orbit-select .sop-select-icon::after{inset:6px;border:1px solid #d4d9f253;border-radius:50%;border-bottom-color:transparent;transform:rotate(18deg);}
-.sop-select.sop-orbit-select [data-glyph="1"] .sop-select-icon{filter:hue-rotate(210deg);}
-.sop-select.sop-orbit-select [data-glyph="2"] .sop-select-icon{filter:hue-rotate(80deg);}
-.sop-select.sop-orbit-select .sop-select-popup{border-radius:17px 17px 27px 27px;}
-.sop-select.sop-orbit-select .sop-select-menu-heading::before{z-index:-1;inset:1px 5px;border:1px solid #b4b6d12c;border-radius:50%;transform:rotate(-9deg);}
-.sop-select.sop-orbit-select .sop-select-menu-heading::after{z-index:-1;inset:9px 30px;border:1px solid #b4b6d12c;border-radius:50%;transform:rotate(6deg);}
-.sop-select.sop-orbit-select .sop-select-option{border-radius:34px 12px 12px 34px;padding-left:11px;}
-.sop-select.sop-orbit-select .sop-select-option[aria-selected=true]{border-color:#ada4df73;background:linear-gradient(100deg,#a3a7dc25,#afb7e212);}
-.sop-select.sop-orbit-select .sop-select-option[data-active=true] .sop-select-icon::before{transform:rotate(15deg);transition:transform .6s;}
-
-@media(prefers-reduced-motion:reduce){.sop-select.sop-orbit-select *::before,.sop-select.sop-orbit-select *::after{transition:none!important;animation:none!important;}}
+/* orbit-select — text-led, material-specific motion. v4.3.0 */
+.sop-select.sop-select-sculpted.sop-orbit-select{--sel-radius:25px;--sel-plane-radius:22px;--sel-bg:#23242a;--sel-panel:#202126;--sel-accent:#d1cde3;--sel-muted:#acaabb;--sel-line:#c5c1d52c;--sel-plane:linear-gradient(110deg,#ffffff12,#bbb7d706);--sel-plane-border:#d7d5e438;}
+.sop-select.sop-select-sculpted.sop-orbit-select > .sop-select-trigger{padding-inline:22px;box-shadow:inset 0 1px #ffffff19,0 4px 12px #0002;}
+.sop-select.sop-select-sculpted.sop-orbit-select > .sop-select-trigger::before{background:linear-gradient(125deg,#ffffff05,transparent 60%);}
+.sop-select.sop-select-sculpted.sop-orbit-select .sop-select-popup{padding:9px;border-radius:25px;box-shadow:0 16px 35px #0003,inset 0 1px #e8e4ff14;}
+.sop-select.sop-select-sculpted.sop-orbit-select .sop-select-popup::before{box-shadow:inset 0 1px #f0edff22;}
+.sop-select.sop-select-sculpted.sop-orbit-select .sop-select-option{padding-inline:18px;}
+.sop-select.sop-select-sculpted.sop-orbit-select .sop-select-check{width:12px;height:12px;font-size:0;border:1px solid #d1cde38c;border-radius:50%;background:radial-gradient(circle,#ded9f3 0 2px,transparent 3px);}

@@ -1,14 +1,8 @@
 @import "../../../shared/scrollbar-sculpted.css";
-/* led-rail — sculpted, component-local rail. v4.2.0 */
-
-.sop-scroll-area.sop-led-rail{--sop-scroll-width:32px;--sop-scroll-radius:5px;--sop-scroll-accent:#ffe0a3}
-.sop-scroll-area.sop-led-rail > .sop-scroll-rail > .sop-scroll-track{background:linear-gradient(var(--sc-cross),#717977,#283539 12%,#0c171b 19% 80%,#738177 88%,#adb3a19e);border:1px solid #66756773;box-shadow:inset 0 1px #d0d4b875,0 4px 9px #000c}
-.sop-scroll-area.sop-led-rail > .sop-scroll-rail > .sop-scroll-track::before{inset:6px 8px;background:repeating-linear-gradient(var(--sc-along),#442f20 0 4px,#090f10 4px 7px);border-inline:1px solid #574d36}
-.sop-scroll-area.sop-led-rail > .sop-scroll-rail > .sop-scroll-track::after{inset:0;background:linear-gradient(var(--sc-cross),#e0ddb41a,transparent 45% 70%,#cdd7b91e)}
-.sop-scroll-area.sop-led-rail > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{inset:6px 8px;background:repeating-linear-gradient(var(--sc-along),#ffca77 0 4px,#201e16 4px 7px);opacity:1;box-shadow:0 0 14px #f5b94c28}
-.sop-scroll-area.sop-led-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:43px;border-radius:6px;border:1px solid #d5d5b379;background:linear-gradient(var(--sc-cross),#a6b5ab88,#1425285e 15% 82%,#d6dcc175);box-shadow:inset 0 1px #ecffe38f,inset 0 -1px #0009,0 4px 9px #000b}
-.sop-scroll-area.sop-led-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{inset:4px 5px;border:1px solid #eeefd564;border-radius:3px;background:#14262630;backdrop-filter:blur(.3px)}
-.sop-scroll-area.sop-led-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{inset-block:3px;inset-inline:3px;border-block:2px solid #677369;box-shadow:0 1px 0 #cbcea457}
-.sop-scroll-area.sop-led-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{border:1px solid #dec48b93;width:14px;height:8px;margin:-4px 0 0 -7px;background:#ffcd84;box-shadow:inset 0 0 0 2px #c58b47,0 0 8px #f4c06c91}
-
-.sop-scroll-area.sop-led-rail[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-ticks{display:none}
+/* led-rail — proportion, surface, response. v4.3.0 */
+.sop-scroll-area.sop-scroll-sculpted.sop-led-rail{--sop-scroll-width:10px;--sop-handle-width:16px;--rail-radius:4px;--sop-scroll-accent:#e0cba8;--rail-edge:#b4a99133;--rail-surface:#262420;--rail-wake:.9;}
+.sop-scroll-area.sop-scroll-sculpted.sop-led-rail > .sop-scroll-rail > .sop-scroll-track{background:repeating-linear-gradient(var(--rail-along),#cbbf9533 0 2px,transparent 2px 7px),#202522;box-shadow:inset 1px 0 #0008;}
+.sop-scroll-area.sop-scroll-sculpted.sop-led-rail > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{background:repeating-linear-gradient(var(--rail-along),#ead7abbe 0 2px,transparent 2px 7px);}
+.sop-scroll-area.sop-scroll-sculpted.sop-led-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{background:linear-gradient(var(--rail-cross),#8b8b79,#d4d2ba 25%,#b5b3a4 65%,#d2c7ab);border:1px solid #e7dfc07a;box-shadow:inset 1px 0 #fff9dc75,0 2px 3px #0004;}
+.sop-scroll-area.sop-scroll-sculpted.sop-led-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{inset:3px;background:linear-gradient(var(--rail-along),#ffffff20,transparent);border-inline-start:1px solid #ffffff20;}
+.sop-scroll-area.sop-scroll-sculpted.sop-led-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{inset:0;background:linear-gradient(var(--rail-along),transparent,#ffefcb77,transparent);}

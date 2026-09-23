@@ -64,6 +64,8 @@ jobs:
         run: npm run test:atelier
       - name: Sculpted scrollbars and dropdowns (materials, layout and native interactions)
         run: npm run test:sculpture
+      - name: Refined rail and select motion (dimensions, text, progress, cleanup)
+        run: npm run test:refinement
       - name: Build full source archive
         run: npm run package
       - name: Save reports on failure

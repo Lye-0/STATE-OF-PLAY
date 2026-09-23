@@ -3,7 +3,7 @@ import React from 'react';
 import { useScrollArea, type ScrollAreaProps } from '../../../../shared/use-scroll-area';
 import '../styles.css';
 export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
-/** 映画フィルムの穴と、鮮やかな赤いプレイヘッド。 Native scroll content with a skinned, proportional rail. */
+/** 小さな孔のある12pxのレールと17pxの透けるフレーム。つまみの内側から、軌道の構造が見える。 */
 export default function PerforationScrollArea(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);

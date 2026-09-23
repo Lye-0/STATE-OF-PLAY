@@ -1,20 +1,10 @@
 @import "../../../shared/select-sculpted.css";
-/* aurora-select — field, icon, list and option art direction. v4.2.0 */
+/* aurora-select — text-led, material-specific motion. v4.3.0 */
+.sop-select.sop-select-sculpted.sop-aurora-select{--sel-bg:#1c2229;--sel-panel:#1b2128;--sel-accent:#b8ddd9;--sel-muted:#a5b4ba;--sel-line:#b0cdd32a;--sel-plane:radial-gradient(ellipse at var(--sel-light-x) 0,#bbeae72b,transparent 76%),linear-gradient(100deg,#b6dcd910,#b6b5e210);--sel-plane-border:#d5eeed27;--sel-plane-radius:10px;--sel-panel-image:radial-gradient(ellipse at 100% 0,#ada8d910,transparent 65%);--sel-enter:sop-menu-dissolve;}
+.sop-select.sop-select-sculpted.sop-aurora-select > .sop-select-trigger{box-shadow:inset 0 1px #f0fffb15,0 6px 14px #0002;}
+.sop-select.sop-select-sculpted.sop-aurora-select > .sop-select-trigger::before{background:radial-gradient(ellipse at 20% 0,#d3ece620,transparent 65%);}
+.sop-select.sop-select-sculpted.sop-aurora-select .sop-select-popup::after{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(300px 190px at var(--sel-light-x) var(--sel-light-y),#a2dcd40a,transparent 80%);}
+.sop-select.sop-select-sculpted.sop-aurora-select .sop-select-popup::before{box-shadow:inset 0 1px #defff62a,0 3px 6px #07151912;backdrop-filter:blur(4px);}
 
-.sop-select.sop-aurora-select{--sel-bg:linear-gradient(115deg,#243e4659,#15242b 43%,#3d325b78),#152128;--sel-panel:linear-gradient(150deg,#213c409c,#202331 45%,#3f305076),#15212a;--sel-accent:#b7f5de;--sel-line:#b5e0e354;--sel-muted:#abc6cb}
-.sop-select.sop-aurora-select > .sop-select-trigger{border-radius:22px 22px 8px 22px;}
-.sop-select.sop-aurora-select > .sop-select-trigger::before{inset:-15% -5%;background:conic-gradient(from 75deg at 64% 15%,transparent,#a6f2d92e,transparent 24%,#b6a6f636,transparent 43%,#82dfed3d,transparent 70%);filter:blur(7px);transform:rotate(-10deg);}
-.sop-select.sop-aurora-select > .sop-select-trigger::after{inset:5px;border:1px solid #c3f9ed25;border-radius:18px 18px 4px 18px;box-shadow:inset 0 1px 1px #defcf321;}
-.sop-select.sop-aurora-select .sop-select-icon{border-radius:50%;color:#18343c;font-size:8px;align-items:flex-end;padding-bottom:8px;background:radial-gradient(circle at 30% 20%,#ecfff8,#83c6c4 22%,#6292ac 38%,#365569 51%,#8baac16e 69%,#efffebbb);border:1px solid #d9fff9b5;box-shadow:inset 2px 2px 5px #f4ffff9e,inset -2px -2px 4px #b2fef98c,0 5px 7px #0007;}
-.sop-select.sop-aurora-select .sop-select-icon::before{inset:6px;border:1px solid #d2ffff82;border-radius:50%;background:conic-gradient(from 38deg,#a2d2fd16,#dc9de559,#79bba562,#f3ffc270,#89a4ee2e);}
-.sop-select.sop-aurora-select .sop-select-icon::after{inset:6px 12px 27px 7px;border-top:2px solid #f0ffffc4;border-radius:50%;transform:rotate(-24deg);}
-.sop-select.sop-aurora-select [data-glyph="1"] .sop-select-icon{filter:hue-rotate(30deg)}
-.sop-select.sop-aurora-select [data-glyph="2"] .sop-select-icon{filter:hue-rotate(220deg)}
-.sop-select.sop-aurora-select [data-glyph="3"] .sop-select-icon{filter:hue-rotate(-40deg)}
-.sop-select.sop-aurora-select .sop-select-popup{border-radius:10px 22px 22px 22px;backdrop-filter:blur(24px);}
-.sop-select.sop-aurora-select .sop-select-menu-heading{border-bottom:1px solid #b7eedd39;background:linear-gradient(120deg,#9ae9cf1c,transparent 48%,#b998e727);border-radius:9px;}
-.sop-select.sop-aurora-select .sop-select-menu-heading::before{inset:6px 8px;border:1px solid #cfece318;border-radius:6px;z-index:-1}
-.sop-select.sop-aurora-select .sop-select-option[aria-selected=true]{background:linear-gradient(110deg,#b1edd724,#a9b9e326);box-shadow:inset 1px 1px #e4fff625,0 3px 7px #0002;border-color:#ceffef47;}
-.sop-select.sop-aurora-select .sop-select-option[data-active=true] .sop-select-icon{transform:translateY(-2px) rotate(-6deg);filter:brightness(1.12);}
-
-@media(prefers-reduced-motion:reduce){.sop-select.sop-aurora-select *::before,.sop-select.sop-aurora-select *::after{transition:none!important;animation:none!important;}}
+.sop-select.sop-select-sculpted.sop-aurora-select {--sel-plane:radial-gradient(ellipse at var(--sel-light-x) 0,#c9e9e438,transparent 90%),linear-gradient(115deg,#b2cfd50b,#b1abd31a);}
+.sop-select.sop-select-sculpted.sop-aurora-select .sop-select-popup::before{box-shadow:inset 0 1px #eefff33f,inset 0 -1px #abcce41f,0 3px 8px #10172218;}

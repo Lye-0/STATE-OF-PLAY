@@ -3,14 +3,14 @@
   "name": "Atelier Select",
   "category": "dropdowns",
   "order": 75,
-  "version": "2.0.0",
-  "tagline": "色を、手に取る。",
-  "description": "顔料の厚みと紙の台紙。色票を一枚ずつ選ぶ、作品のようなパレットメニュー。",
+  "version": "3.0.0",
+  "tagline": "紙の面に、余白を。",
+  "description": "生成りの紙とセリフ体。薄い紙の背景が候補へ移り、開くと一枚の紙面として広がる。",
   "material": "PIGMENT / PAPER",
-  "motion": "REVEAL / SELECT",
+  "motion": "PAPER / REVEAL",
   "accent": "134,108,84",
   "designType": "A",
-  "runtime": "CSS + event-driven select",
+  "runtime": "CSS + event-driven select / motion plane",
   "componentName": "AtelierSelect",
   "tags": [
     "Atelier Select",
@@ -55,6 +55,11 @@
       "renderOption",
       "(item) => ReactNode",
       "選択肢内の装飾。ボタンや入力欄をネストしないでください。"
+    ],
+    [
+      "autoIcon / showHeading / showHints",
+      "boolean",
+      "補助表示を任意で設定。Aはアイコンの自動生成なし。見出しと操作ヒントは表示を切り替えられます。"
     ]
   ]
 }

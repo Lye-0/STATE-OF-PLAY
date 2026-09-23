@@ -3,7 +3,7 @@ import React from 'react';
 import { useScrollArea, type ScrollAreaProps } from '../../../../shared/use-scroll-area';
 import '../styles.css';
 export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
-/** スペクトルの細い道を、宝石のようなつまみが進む。 Native scroll content with a skinned, proportional rail. */
+/** 10pxの淡い分光レールと17pxの縦長の多面体。位置に連動してつまみの反射が変わり、掴むと光が強まる。 */
 export default function PrismRailScrollArea(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);

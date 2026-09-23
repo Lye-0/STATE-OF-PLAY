@@ -3,14 +3,14 @@
   "name": "Transit Select",
   "category": "dropdowns",
   "order": 81,
-  "version": "2.0.0",
-  "tagline": "行き先に、物語。",
-  "description": "切符の切り欠き、ミシン目、運賃スタブ。候補一覧も一枚ずつのチケットとして設計。",
+  "version": "3.0.0",
+  "tagline": "流れを、ひとすじで。",
+  "description": "明るい平面と整った情報の並び。候補を移る薄い帯と下線が、選ぶ位置を簡潔に示す。",
   "material": "TICKET / JOURNEY",
-  "motion": "REVEAL / SELECT",
+  "motion": "LINE / SLIDE",
   "accent": "70,94,85",
   "designType": "A",
-  "runtime": "CSS + event-driven select",
+  "runtime": "CSS + event-driven select / motion plane",
   "componentName": "TransitSelect",
   "tags": [
     "Transit Select",
@@ -55,6 +55,11 @@
       "renderOption",
       "(item) => ReactNode",
       "選択肢内の装飾。ボタンや入力欄をネストしないでください。"
+    ],
+    [
+      "autoIcon / showHeading / showHints",
+      "boolean",
+      "補助表示を任意で設定。Aはアイコンの自動生成なし。見出しと操作ヒントは表示を切り替えられます。"
     ]
   ]
 }

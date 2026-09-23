@@ -1,26 +1,7 @@
 @import "../../../shared/select-sculpted.css";
-/* prism-select — field, icon, list and option art direction. v4.2.0 */
-
-.sop-select.sop-prism-select{--sel-bg:linear-gradient(118deg,#c3e5e529,#7f789d31 36%,#202631 62%,#c4b5d447);--sel-panel:linear-gradient(140deg,#768aa539,#202632 40%,#735a8752),#1a252d;--sel-accent:#e2d8f4;--sel-muted:#bec6d4;--sel-line:#d6d5ed73;--sel-radius:4px;}
-.sop-select.sop-prism-select > .sop-select-trigger{border-radius:4px 19px 4px 19px;box-shadow:inset 1px 1px 0 #e9f8ec91,inset -1px -1px #bab9d147,0 12px 25px #0008;}
-.sop-select.sop-prism-select > .sop-select-trigger::before{inset:5px;border:1px solid #dbebed28;border-radius:1px 14px 1px 14px;background:conic-gradient(from 20deg at 8% 60%,transparent 0deg,#ddecaa35 35deg,#8beaca21 69deg,#cea5eb49 103deg,transparent 128deg);}
-.sop-select.sop-prism-select > .sop-select-trigger::after{inset:1px;background:linear-gradient(16deg,transparent 38%,#e3eddf47 38.3%,transparent 39%),linear-gradient(-18deg,transparent 67%,#d2c1dc47 67.3%,transparent 68%);}
-.sop-select.sop-prism-select .sop-select-icon{border:0;border-radius:0;clip-path:polygon(50% 0,94% 25%,94% 75%,50% 100%,6% 75%,6% 25%);background:conic-gradient(from 30deg,#f7f2e1,#c2e3d7,#7cabc0,#c1b7d8,#d5bfcb,#a2cab7,#f7f2e1);color:#364659;font-size:9px;box-shadow:inset 0 0 8px #fff9;}
-.sop-select.sop-prism-select .sop-select-icon::before{inset:3px;clip-path:inherit;background:conic-gradient(from 30deg,#b7cadc 0 60deg,#63979e 60deg 120deg,#d6c4e2 120deg 180deg,#a4bfdc 180deg 240deg,#f2dfe3 240deg 300deg,#90b6b7 300deg);}
-.sop-select.sop-prism-select .sop-select-icon::after{inset:13px;clip-path:inherit;background:conic-gradient(#fbf4df,#a5d1d9,#f0e1f5,#b1d5c1,#d9e3ef);}
-.sop-select.sop-prism-select [data-glyph="1"] .sop-select-icon{filter:hue-rotate(55deg);}
-.sop-select.sop-prism-select [data-glyph="2"] .sop-select-icon{filter:hue-rotate(110deg);}
-.sop-select.sop-prism-select [data-glyph="3"] .sop-select-icon{filter:hue-rotate(235deg);}
-.sop-select.sop-prism-select .sop-select-popup{border-radius:4px 18px 4px 18px;backdrop-filter:blur(22px);}
-.sop-select.sop-prism-select .sop-select-menu-heading{border-bottom:1px solid #dfd9ef4d;background:conic-gradient(from -80deg at 100% 100%,#d5a4de35,#a2dbd340 70deg,#9fc9e821 110deg,transparent 120deg);}
-.sop-select.sop-prism-select .sop-select-option{border-radius:2px 13px 2px 13px;}
-.sop-select.sop-prism-select .sop-select-option[aria-selected=true]{background:linear-gradient(110deg,#b3efdd28,#e6cadd1b);border-color:#e1d4e866;box-shadow:inset 1px 1px #ecf9ed45;}
-.sop-select.sop-prism-select .sop-select-option[data-active=true] .sop-select-icon{transform:rotate(30deg);}
-.sop-select.sop-prism-select .sop-select-check{clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);border-radius:0;}
-
-@media(prefers-reduced-motion:reduce){.sop-select.sop-prism-select *::before,.sop-select.sop-prism-select *::after{transition:none!important;animation:none!important;}}
-
-.sop-select.sop-prism-select .sop-select-option{padding-block:15px;margin-block:6px;box-shadow:inset 0 -1px #cce2e218;}
-.sop-select.sop-prism-select .sop-select-option .sop-select-icon{width:51px;height:55px;}
-.sop-select.sop-prism-select .sop-select-option-copy b{font-size:15px;}
-.sop-select.sop-prism-select .sop-select-option[aria-selected=true]{box-shadow:inset 1px 1px #eeecf040,inset -1px -1px #addfde3b,0 4px 7px #1019283f;}
+/* prism-select — text-led, material-specific motion. v4.3.0 */
+.sop-select.sop-select-sculpted.sop-prism-select{--sel-radius:8px;--sel-bg:#24252e;--sel-panel:#21232b;--sel-ink:#e6e8ec;--sel-muted:#adb0c1;--sel-accent:#cbc5e4;--sel-line:#bdc3dd32;--sel-plane:linear-gradient(110deg,#a9bfd41a,#d3c2df1c 40%,#c3dbd214);--sel-plane-border:#c9c5e139;--sel-plane-radius:4px;--sel-panel-image:radial-gradient(ellipse at 100% 0,#a5b6c90a,transparent 60%);}
+.sop-select.sop-select-sculpted.sop-prism-select > .sop-select-trigger{border-top-color:#d2dbe154;box-shadow:inset 0 1px #c8d8ee16,0 4px 12px #0002;}
+.sop-select.sop-select-sculpted.sop-prism-select > .sop-select-trigger::before{inset:auto 12px 0;height:1px;background:linear-gradient(90deg,transparent,#b9dfce66,#acb7e391,#d7bfd36b,transparent);}
+.sop-select.sop-select-sculpted.sop-prism-select .sop-select-popup::before{box-shadow:inset 0 1px #c7d3e130;clip-path:polygon(7px 0,100% 0,100% calc(100% - 7px),calc(100% - 7px) 100%,0 100%,0 7px);}
+.sop-select.sop-select-sculpted.sop-prism-select .sop-select-popup::after{content:'';position:absolute;pointer-events:none;z-index:0;left:calc(var(--sel-plane-x) + 8px);top:calc(var(--sel-plane-y) + var(--sel-plane-h) - 1px);width:calc(var(--sel-plane-w) - 16px);height:1px;background:linear-gradient(90deg,#b5e3d670,#d6c3df80,#b4cce680);transition:top .25s;}

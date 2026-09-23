@@ -1,49 +1,36 @@
-# Ceramic Select — 造形仕様 v2.0.0（STATE OF PLAY v4.2.0）
+# Ceramic Select — 面・比率・動きの仕様（STATE OF PLAY v4.3.0）
 
-白い磁器に焼き込まれた選択欄。釉薬の丸みと、押し込まれた印をもつ色付きの石。
+白い磁器の滑らかな面。丸い背景が候補に沿って滑り、浅い影と明るい縁が操作面を示す。
 
-タイプA。素材と形そのものを表現する。既存のトグルなどは完成度の基準であり、別部品の造形をそのまま移植する指示ではない。
+## 文字と背景面
+白い磁器の滑らかな面。丸い背景が候補に沿って滑り、浅い影と明るい縁が操作面を示す。
+候補名を最優先に、説明と小さなチェックを添える。アイコンは利用側が指定したときだけ20pxで表示し、アイコンがなくても空白を残さない。標準のフィールドはmin-height 62px、候補はmin-height 46px、説明付きなら自然に広がる。ラベル・description・badgeは折り返し、内容のないバッジは表示しない。showHeading/showHintsで補助見出しとヒントを選べる。
 
-## 閉じたフィールドと開いた候補の設計
-素材の象徴となるアイコン、選択ラベル、補足説明、独立した開閉インジケーターを持つ。閉じたトリガーだけでなく、ヘッダー、各候補の素材面、バッジ、選択チェック、候補移動のフォーカス、操作ヒントまで同じ造形で揃える。選択ラベルと説明を装飾の背景へ焼き込まない。
+## 動く面
+select-motion.tsが現在の候補の位置・寸法をCSS変数へ同期する。背景面はpopupの擬似要素であり、文字は移動させない。hoverとキーボード移動は同じ面に反映するが、確定済みのチェックは別に保持する。面の追従は約230ms、開閉は約240msを基準に固有CSSへ合わせる。アニメーション完了を待たず選択でき、連続操作では現在の候補へ直ちに向きを変える。
+ポインター追従はマウスでのみ使い、タッチではタップ・開閉・選択の演出を使う。scroll・resize・テキスト変更で位置を再計測し、popup内のスクロールで面が行からずれないようにする。キーボードのフォーカスと確定値はselect-controller.tsが管理する。
 
-基本トリガーは102px以上、主アイコンは50px、選択肢のアイコンは44px。狭い画面では寸法と余白を縮める。長い日本語のラベル、description、badgeは折り返し、操作部の外へはみ出させない。各素材固有の上書きは下記のCSSを正本とする。開閉時だけ短い移動・透明度の変化を使い、常時揺れる文字や待機中のJSループを追加しない。
-
-## 選択動作
-これは実際の値を返す単一選択select-only comboboxであり、アクションメニューではない。上下/Home/End/頭文字で候補を移動し、Enter/Space/Tabで確定、Escapeで取消する。選択候補とフォーカス候補を区別する。無効候補・無効フィールド・空リスト・フォームresetを維持する。選択肢の内部に別のボタンや入力欄を入れない。
-
-## 導入と内容
-itemsのvalue/label/description/icon/badge/group/disabledを利用先から受け取る。展示用の内容を事実や固定仕様として扱わず、架空の性能・状態を勝手に補わない。renderOptionは非対話の装飾のみ。nameのhidden input、識別子、キーボードフォーカスを保持する。開いたメニューは対応ブラウザーのtop layerへ出し、画面上下端では向きを反転し、長いリストは内部スクロールする。コンポーネントを取り外す際は開いたポップオーバーとイベントを解除する。
+## 状態と移植
+これは単一値を返すselect-only combobox。上下/Home/End/頭文字で候補を移動し、Enter/Space/Tabで確定、Escapeで取消。無効候補・無効フィールド・空リスト・フォームresetを維持する。選択肢内に操作できるボタンを入れない。itemsとvalue/onValueChangeを利用側のデータに接続する。候補内容に依存するテーマや例文は実装の固定仕様ではない。通常の「並び順」「保存先」でも同じ造形が成立するようにする。
+開く方向は画面端で反転し、Popover API対応時はtop layerを使う。destroy()で背景面の監視、イベント、RAF、タイマーを含め解除する。
 
 ## 必要なソースと配置
-`styles.css`、`select-sculpted.css`、そこから参照するベースCSSを揃える。ルートの`sop-select-sculpted`と`.sop-ceramic-select`を維持する。配布側のファイル見出しは参照元のパスであり、導入先の同じ階層を強制するものではない。利用先の構成と規約を確認して配置し、移動時には相対importとCSSの参照を更新する。既存コードを無条件に上書きしない。プロジェクトが見えない場合は必要な構成を確認する。
+固有styles.cssとそこからimportする共有CSS・TSをすべて含める。ルートのスキンクラスとA専用のopt-inクラスを保持する。ファイル見出しは配布時のパスであり、導入先の階層を強制するものではない。ユーザーのプロジェクト構成と規約を確認し、相対import・CSS・例の配置を連動して変更する。既存ファイルを無条件に上書きしない。プロジェクトを参照できなければ構成を確認する。
 
 ## 確認基準
-単独の表示と他のスキンを混在させた表示が一致すること。通常・操作中・無効・キーボードフォーカス・320px幅・長い日本語・prefers-reduced-motion・forced-colorsを確認する。外観変更を理由に入力の標準操作、状態管理、外部制御を省略しない。
+実寸の画面で形と余白を確認する。単独・他スキン混在・同じ共有CSSの重複読み込みでも造形が変わらないこと。幅320px、長い日本語、キーボード、タッチ相当、prefers-reduced-motion、forced-colorsを確認する。縮小モーション時は表面の移動を止めても位置と選択状態を維持する。ホバーできない環境でも操作可能にする。
 
 ## 固有スタイル（正本と同期）
-次はこの部品の`styles.css`と同一の内容。共有の寸法と操作状態のスタイルは`select-sculpted.css`も必要。コード込みの実装プロンプトには必要な全ファイルが含まれる。
+下記はこのパーツのstyles.cssと同じ内容。共有select-sculpted.cssの寸法・操作状態と併用する。
 
 ```css
 @import "../../../shared/select-sculpted.css";
-/* ceramic-select — field, icon, list and option art direction. v4.2.0 */
-
-.sop-select.sop-ceramic-select{--sel-bg:linear-gradient(130deg,#f4eee0,#d6dbd2 53%,#e9e9dc);--sel-panel:linear-gradient(140deg,#f4f1e4,#dce1d7 65%,#eeeddf);--sel-ink:#394e4b;--sel-muted:#75847a;--sel-accent:#6c8f86;--sel-line:#9cafa074;--sel-dark:#fff8e7;--sel-radius:23px;}
-.sop-select.sop-ceramic-select > .sop-select-trigger{border:1px solid #ebefe1;border-radius:27px;box-shadow:inset 2px 2px 4px #fffdef,inset -2px -3px 5px #788c8267,0 5px 0 -1px #9ea69c,0 14px 25px #0007;}
-.sop-select.sop-ceramic-select > .sop-select-trigger::before{inset:8px;border:1px solid #b1bca778;border-radius:20px;box-shadow:inset 1px 1px 4px #607e7142,1px 1px #fffff49c;}
-.sop-select.sop-ceramic-select .sop-select-value .sop-select-option-copy b{font:23px/1.15 Georgia,serif;}
-.sop-select.sop-ceramic-select .sop-select-icon{background:radial-gradient(circle at 32% 20%,#eff4dd,#afc9ba 26%,#6f978e 64%,#547a7396);border:1px solid #78938957;border-radius:50%;color:#eaf3df;box-shadow:inset 1px 1px 3px #fffce4d6,inset -1px -2px 3px #38685d8c,0 3px 4px #526e6659;}
-.sop-select.sop-ceramic-select .sop-select-icon::before{inset:8px;border:1px solid #406a6045;border-radius:50%;box-shadow:inset 1px 2px 3px #325b5052,0 1px 1px #eefad769;}
-.sop-select.sop-ceramic-select .sop-select-icon::after{inset:5px 12px 30px 7px;border-top:2px solid #ffffffa8;border-radius:50%;transform:rotate(-22deg);}
-.sop-select.sop-ceramic-select [data-glyph="1"] .sop-select-icon{filter:hue-rotate(110deg);}
-.sop-select.sop-ceramic-select [data-glyph="2"] .sop-select-icon{filter:hue-rotate(225deg);}
-.sop-select.sop-ceramic-select [data-glyph="3"] .sop-select-icon{filter:hue-rotate(35deg);}
-.sop-select.sop-ceramic-select .sop-select-chevron{background:linear-gradient(#dde5d6,#edf0e0);box-shadow:inset 1px 2px 4px #6e8b725c,0 1px #fffcefa6;border-color:#c2cdbd;}
-.sop-select.sop-ceramic-select .sop-select-popup{border-radius:24px;border:1px solid #f2f4e3;box-shadow:inset 2px 1px 2px #fffdef,inset -2px -2px 4px #80978a57,0 23px 43px #0007;}
-.sop-select.sop-ceramic-select .sop-select-menu-heading>span{font:16px/1.35 Georgia,serif;}
-.sop-select.sop-ceramic-select .sop-select-option{border-radius:15px;background:linear-gradient(#f2f3e614,#abbfb129);border:1px solid #a5b8a947;}
-.sop-select.sop-ceramic-select .sop-select-option[aria-selected=true]{background:linear-gradient(120deg,#e9efdf,#d5e3d5);box-shadow:inset 0 1px #ffffedb3,0 3px 4px #819a8847;border-color:#719d8f91;}
-.sop-select.sop-ceramic-select .sop-select-option[data-active=true] .sop-select-icon{transform:translateY(-2px);}
-
-@media(prefers-reduced-motion:reduce){.sop-select.sop-ceramic-select *::before,.sop-select.sop-ceramic-select *::after{transition:none!important;animation:none!important;}}
+/* ceramic-select — text-led, material-specific motion. v4.3.0 */
+.sop-select.sop-select-sculpted.sop-ceramic-select{--sel-radius:20px;--sel-bg:#dfdfd9;--sel-panel:#ebece6;--sel-ink:#364340;--sel-muted:#79847f;--sel-accent:#60816c;--sel-line:#75857c34;--sel-plane:linear-gradient(130deg,#fffffa,#f1f2eacd);--sel-plane-border:#ffffffd4;--sel-plane-radius:15px;--sel-enter:sop-menu-dissolve;}
+.sop-select.sop-select-sculpted.sop-ceramic-select > .sop-select-trigger{padding-inline:20px;border-color:#b2c0b250;box-shadow:inset 1px 1px 1px #fffffce0,inset -1px -2px 3px #8b978b20,0 4px 10px #26362a12;}
+.sop-select.sop-select-sculpted.sop-ceramic-select > .sop-select-trigger::before{background:radial-gradient(ellipse at 30% 0,#fffffa75,transparent 80%);}
+.sop-select.sop-select-sculpted.sop-ceramic-select .sop-select-popup::before{box-shadow:inset 0 1px #fffefb,0 2px 5px #364a3714;}
+.sop-select.sop-select-sculpted.sop-ceramic-select .sop-select-option{padding-inline:15px;}
+.sop-select.sop-select-sculpted.sop-ceramic-select .sop-select-popup{padding:9px;}
+.sop-select.sop-select-sculpted.sop-ceramic-select .sop-select-chevron{border-color:#5c7162;}
 ```

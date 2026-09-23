@@ -1,0 +1,23 @@
+{
+  "mode": "explicit offline Chromium transport; NOT Vite",
+  "tests": [
+    "all 48 A/B skins: independently bundled CSS and duplicate shared imports agree",
+    "A rail/handle visual dimensions are narrow; invisible hit target remains 34px",
+    "eight progress rails change at .25/.75; others intentionally keep one rail surface",
+    "magnetic rail shape follows the actual thumb in both horizontal LTR and RTL",
+    "A defaults contain no leading icons; text-only choices stay compact and selectable",
+    "supplied icons remain optional, small, and do not introduce mandatory whitespace",
+    "keyboard highlight changes the moving plane but does not change the committed check",
+    "long grouped menus scroll only the popup; moving plane stays on its option",
+    "content edits and resize update the active-plane geometry without replacing text",
+    "motion interpolates the plane, never option text or the committed value",
+    "pointer light follows location; fast candidate changes have no delayed commits",
+    "all A menus support long text on 320/390/768px with no page or list overflow",
+    "coarse pointer keeps a 44px rail target without making the visual rail thicker",
+    "reduced motion disables animation; forced colors keep active selection visible",
+    "all redesigned inputs preserve native click/keyboard form reset and disabled behavior",
+    "repeated open/close/dispose leaves zero RAFs, no popovers and no detached-light observers"
+  ],
+  "passed": 16,
+  "errors": []
+}

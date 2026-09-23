@@ -3,7 +3,7 @@ import React from 'react';
 import { useScrollArea, type ScrollAreaProps } from '../../../../shared/use-scroll-area';
 import '../styles.css';
 export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
-/** 緑のドットが道を刻む、小さな端末のスクロールバー。 Native scroll content with a skinned, proportional rail. */
+/** 10pxの暗いレールのドットが通過分だけ淡く灯る。15pxのつまみは落ち着いた磁器のような明るい面。 */
 export default function PhosphorScrollArea(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);

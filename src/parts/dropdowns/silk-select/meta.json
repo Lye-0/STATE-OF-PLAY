@@ -3,14 +3,14 @@
   "name": "Silk Select",
   "category": "dropdowns",
   "order": 80,
-  "version": "2.0.0",
-  "tagline": "触れる、余韻。",
-  "description": "絹の折り返し、布見本の重なり、繊細なステッチ。色ではなく、触感を選ぶようなメニュー。",
+  "version": "3.0.0",
+  "tagline": "布の光が、移り変わる。",
+  "description": "柔らかな灰紫の面。候補を移る一枚の背景に、折れた布の明暗が走る。開くと面がほどける。",
   "material": "TEXTILE / FIBRE",
-  "motion": "REVEAL / SELECT",
+  "motion": "SILK / UNFOLD",
   "accent": "148,102,109",
   "designType": "A",
-  "runtime": "CSS + event-driven select",
+  "runtime": "CSS + event-driven select / motion plane",
   "componentName": "SilkSelect",
   "tags": [
     "Silk Select",
@@ -55,6 +55,11 @@
       "renderOption",
       "(item) => ReactNode",
       "選択肢内の装飾。ボタンや入力欄をネストしないでください。"
+    ],
+    [
+      "autoIcon / showHeading / showHints",
+      "boolean",
+      "補助表示を任意で設定。Aはアイコンの自動生成なし。見出しと操作ヒントは表示を切り替えられます。"
     ]
   ]
 }

@@ -1,23 +1,11 @@
 @import "../../../shared/select-sculpted.css";
-/* spectrum-select — field, icon, list and option art direction. v4.2.0 */
+/* spectrum-select — text-led, material-specific motion. v4.3.0 */
+.sop-select.sop-select-sculpted.sop-spectrum-select{--sel-radius:11px;--sel-bg:#22232a;--sel-panel:#1e2027;--sel-ink:#e4e5ef;--sel-muted:#b2b1c1;--sel-accent:#c2bfdc;--sel-line:#c1bdda26;--sel-plane:linear-gradient(90deg,#b8c0dc0b,#cbc4e70f);--sel-plane-border:transparent;--sel-plane-radius:3px;--sel-enter:sop-menu-dissolve;}
+.sop-select.sop-select-sculpted.sop-spectrum-select > .sop-select-trigger{box-shadow:inset 0 1px #f3e9ff18,0 4px 12px #0002;}
+.sop-select.sop-select-sculpted.sop-spectrum-select > .sop-select-trigger::before{inset:0 17px auto;height:1px;background:linear-gradient(90deg,transparent,#accfc552,#b3b6d27a,#d0b7c650,transparent);}
+.sop-select.sop-select-sculpted.sop-spectrum-select .sop-select-popup::before{box-shadow:inset 0 -1px #c6c4d72b;}
+.sop-select.sop-select-sculpted.sop-spectrum-select .sop-select-popup::after{content:'';position:absolute;pointer-events:none;left:calc(var(--sel-plane-x) + 12px);top:calc(var(--sel-plane-y) + var(--sel-plane-h) - 4px);width:calc(var(--sel-plane-w) - 24px);height:1px;background:linear-gradient(90deg,#afdace80,#b4c7e585,#c8b3df80,#e2bcc855);transition:top .24s,width .24s;}
 
-.sop-select.sop-spectrum-select{--sel-bg:#17292b;--sel-panel:#142528;--sel-accent:#b0e1b1;--sel-ink:#d9e9cf;--sel-muted:#a0c2b2;--sel-line:#789f8187;--sel-radius:5px;}
-.sop-select.sop-spectrum-select > .sop-select-trigger{border:1px solid #799d89;box-shadow:inset 0 0 0 3px #304e43,inset 0 0 0 4px #070f13,0 13px 20px #0009;padding-block:20px;}
-.sop-select.sop-spectrum-select > .sop-select-trigger::before{inset:8px;background:linear-gradient(#5899781a 1px,transparent 1px),linear-gradient(90deg,#5899781a 1px,transparent 1px);background-size:10px 10px;box-shadow:inset 0 0 12px #02080cb3;}
-.sop-select.sop-spectrum-select > .sop-select-trigger::after{inset:0;background:linear-gradient(133deg,#e4f8b310,transparent 36%);}
-.sop-select.sop-spectrum-select .sop-select-value .sop-select-option-copy b{font:17px/1.2 Consolas,monospace;text-shadow:0 0 8px #a1ec9a38;}
-.sop-select.sop-spectrum-select .sop-select-icon{border:1px solid #759d7c75;background:radial-gradient(ellipse,#385942,#071715);box-shadow:inset 0 1px 4px #0009,0 1px #8aab6b7a;border-radius:4px;color:#bfec99;align-items:flex-end;padding-bottom:6px;font-size:8px;}
-.sop-select.sop-spectrum-select .sop-select-icon::before{inset:0;background:linear-gradient(#90b8631e 1px,transparent 1px),linear-gradient(90deg,#90b8631e 1px,transparent 1px);background-size:8px 8px;}
-.sop-select.sop-spectrum-select .sop-select-icon::after{inset:9px 5px 18px;background:#c3ed9a;clip-path:polygon(0 45%,15% 45%,26% 0,39% 89%,50% 45%,64% 45%,74% 8%,85% 84%,93% 45%,100% 45%,100% 52%,90% 52%,84% 98%,74% 27%,66% 52%,52% 52%,39% 100%,26% 19%,17% 52%,0 52%);filter:drop-shadow(0 0 2px #c2f694);}
-.sop-select.sop-spectrum-select [data-glyph="1"] .sop-select-icon::after{clip-path:polygon(0 67%,22% 67%,22% 16%,51% 16%,51% 67%,75% 67%,75% 16%,100% 16%,100% 23%,81% 23%,81% 74%,45% 74%,45% 23%,28% 23%,28% 74%,0 74%);}
-.sop-select.sop-spectrum-select [data-glyph="2"] .sop-select-icon::after{clip-path:polygon(0 65%,25% 14%,50% 66%,75% 14%,100% 65%,100% 75%,75% 24%,50% 76%,25% 24%,0 75%);}
-.sop-select.sop-spectrum-select .sop-select-chevron{border-radius:3px;background:linear-gradient(#acb799,#4c6a5e);border-color:#b1c7a074;box-shadow:inset 0 0 0 4px #b6c49a47;}
-.sop-select.sop-spectrum-select .sop-select-chevron::after{color:#193327;}
-.sop-select.sop-spectrum-select .sop-select-popup{border:1px solid #7f9f83;box-shadow:inset 0 0 0 3px #355042,0 25px 45px #000a;}
-.sop-select.sop-spectrum-select .sop-select-menu-heading{border:1px solid #6b8b586d;border-radius:3px;background:#0b1a1a;box-shadow:inset 0 0 10px #0008;color:#c8d7a3;}
-.sop-select.sop-spectrum-select .sop-select-menu-heading::after{bottom:7px;left:12px;right:12px;height:4px;background:repeating-linear-gradient(90deg,#b2db7273 0 2px,transparent 2px 5px);mask-image:linear-gradient(90deg,#000,transparent 80%);}
-.sop-select.sop-spectrum-select .sop-select-option{border:1px solid #63887742;background:#6383680c;border-radius:4px;}
-.sop-select.sop-spectrum-select .sop-select-option[aria-selected=true]{background:linear-gradient(90deg,#83ac6e23,#1c423625);border-color:#a5bf7880;box-shadow:inset 0 0 0 2px #081b1752;}
-.sop-select.sop-spectrum-select .sop-select-check{border-radius:2px;box-shadow:0 0 9px #b9f79552;}
-
-@media(prefers-reduced-motion:reduce){.sop-select.sop-spectrum-select *::before,.sop-select.sop-spectrum-select *::after{transition:none!important;animation:none!important;}}
+.sop-select.sop-select-sculpted.sop-spectrum-select .sop-select-popup::before{background:none;border-color:transparent;box-shadow:none;}
+.sop-select.sop-select-sculpted.sop-spectrum-select .sop-select-popup::after{left:calc(var(--sel-plane-x) + 13px);width:min(var(--sel-label-w,100px),calc(var(--sel-plane-w) - 32px));top:calc(var(--sel-plane-y) + var(--sel-plane-h) - 6px);height:2px;border-radius:2px;transition:top .23s cubic-bezier(.2,.85,.25,1),width .23s;}
+.sop-select.sop-select-sculpted.sop-spectrum-select .sop-select-option[data-active=true] .sop-select-option-copy b{color:#faf8ff;}

@@ -1,23 +1,8 @@
 @import "../../../shared/select-sculpted.css";
-/* relic-select — field, icon, list and option art direction. v4.2.0 */
-
-.sop-select.sop-relic-select{--sel-bg:linear-gradient(150deg,#4d4432,#242a23 50%,#353528);--sel-panel:linear-gradient(125deg,#55492b35,#1f2824 50%,#453e2b3d),#202620;--sel-accent:#d5b981;--sel-muted:#b8ae92;--sel-ink:#e8dcc0;--sel-line:#b59d616b;--sel-radius:6px;}
-.sop-select.sop-relic-select > .sop-select-trigger{border:1px solid #b6a26f9e;box-shadow:inset 0 0 0 3px #66583b4d,inset 0 1px #e9d09b85,0 8px 0 -5px #29261f,0 14px 25px #0008;}
-.sop-select.sop-relic-select > .sop-select-trigger::before{inset:5px;border:1px solid #baa5735e;border-radius:2px;background:repeating-linear-gradient(35deg,#a5996010 0 1px,transparent 1px 4px);}
-.sop-select.sop-relic-select > .sop-select-trigger::after{inset:6px;background:radial-gradient(circle at 2px 2px,#c5b687 0 1px,#403722 1.4px 2px,transparent 2.5px),radial-gradient(circle at calc(100% - 2px) calc(100% - 2px),#c5b687 0 1px,#403722 1.4px 2px,transparent 2.5px);}
-.sop-select.sop-relic-select .sop-select-value .sop-select-option-copy b{font:20px/1.25 Georgia,serif;}
-.sop-select.sop-relic-select .sop-select-icon{border-radius:4px;background:linear-gradient(130deg,#bdac7d,#7e7654 25%,#c3ae7d 50%,#625d45 80%,#a99a6c);border:1px solid #cab581a6;box-shadow:inset 0 0 0 4px #bfb08240,inset 0 0 0 5px #4846308f,0 3px 5px #0008;color:#313d32;font-weight:bold;text-shadow:0 1px #d8ca92;}
-.sop-select.sop-relic-select .sop-select-icon::after{inset:8px;border:1px solid #f8e2a638;background:repeating-linear-gradient(170deg,#191e1621 0 1px,transparent 1px 5px);}
-.sop-select.sop-relic-select .sop-select-popup{border:1px solid #ae9b6b9c;border-radius:5px;box-shadow:inset 0 0 0 3px #6251365c,0 24px 48px #000b;}
-.sop-select.sop-relic-select .sop-select-menu-heading{border:1px solid #b2a07161;margin:4px 4px 11px;background:#1b251d;color:#e0cda2;box-shadow:inset 0 2px 4px #0009;}
-.sop-select.sop-relic-select .sop-select-menu-heading>span{font:15px/1.4 Georgia,serif;letter-spacing:.4px;}
-.sop-select.sop-relic-select .sop-select-option{border:1px solid #a3935f26;border-radius:2px;background:#af945309;box-shadow:inset 0 1px #aa9a6026;}
-.sop-select.sop-relic-select .sop-select-option[aria-selected=true]{background:linear-gradient(120deg,#b49c5640,#50543929);border-color:#c5af70a1;box-shadow:inset 0 0 0 3px #141f202e;}
-.sop-select.sop-relic-select .sop-select-badge{border:1px solid #a898614d;padding:3px 4px;background:#12201b2f;}
-.sop-select.sop-relic-select .sop-select-check{border-radius:1px;}
-
-@media(prefers-reduced-motion:reduce){.sop-select.sop-relic-select *::before,.sop-select.sop-relic-select *::after{transition:none!important;animation:none!important;}}
-
-.sop-select.sop-relic-select .sop-select-option{margin-block:7px;background:linear-gradient(130deg,#5e56342b,#19302b21);box-shadow:inset 0 0 0 3px #93845112,0 2px 0 #08151240;padding-block:13px;}
-.sop-select.sop-relic-select .sop-select-option-copy b{font:16px/1.35 Georgia,serif;}
-.sop-select.sop-relic-select .sop-select-option .sop-select-icon{width:44px;height:49px;}
+/* relic-select — text-led, material-specific motion. v4.3.0 */
+.sop-select.sop-select-sculpted.sop-relic-select{--sel-radius:9px;--sel-bg:#ded5c6;--sel-panel:#ebe5da;--sel-ink:#403e37;--sel-muted:#7c786a;--sel-accent:#7c7658;--sel-line:#968b6938;--sel-plane:linear-gradient(105deg,#fffdf49a,#e4dbc665);--sel-plane-border:#fffffda8;--sel-plane-radius:5px;--sel-enter:sop-menu-folio;}
+.sop-select.sop-select-sculpted.sop-relic-select > .sop-select-trigger{box-shadow:inset 0 1px #fff8e8e8,0 4px 10px #332b2015;}
+.sop-select.sop-select-sculpted.sop-relic-select > .sop-select-trigger::before{background:linear-gradient(95deg,#baa8800e,transparent);}
+.sop-select.sop-select-sculpted.sop-relic-select .sop-select-popup::before{border-inline-start:2px solid #8e886666;box-shadow:0 2px 4px #55432112,inset 0 1px #fff9e7;}
+.sop-select.sop-select-sculpted.sop-relic-select .sop-select-option .sop-select-option-copy b,.sop-select.sop-select-sculpted.sop-relic-select .sop-select-value .sop-select-option-copy b{font-family:Georgia,'Yu Mincho',serif;font-size:16px;font-weight:400;}
+.sop-select.sop-select-sculpted.sop-relic-select .sop-select-menu-heading{letter-spacing:.6px;}

@@ -3,7 +3,7 @@ import React from 'react';
 import { useScrollArea, type ScrollAreaProps } from '../../../../shared/use-scroll-area';
 import '../styles.css';
 export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
-/** 透明な管に光が満ち、液滴のようなつまみが滑る。 Native scroll content with a skinned, proportional rail. */
+/** 幅11pxのガラス管と16pxの透明なつまみ。スクロール済みの領域には淡い水色が満ち、掴んだ縁にだけ光が集まる。 */
 export default function CapillaryScrollArea(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);

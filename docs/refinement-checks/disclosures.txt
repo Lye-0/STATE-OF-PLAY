@@ -1,0 +1,18 @@
+
+> state-of-play@4.3.0 test:disclosures
+> node --experimental-strip-types tests/disclosures.browser.ts
+
+(node:2213) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS 24 dropdowns: actual options, End/Enter commit, Escape cancellation, no accidental detail dialog
+PASS Dropdown top layer in the detail modal; first Escape closes choices, next closes detail
+PASS 24 accordions: real height transitions, single expand, native buttons and keyboard focus
+PASS Accordion designed interiors remain interactive; multiple expand controls work
+PASS Both new categories at 320 / 390 / 768px: no page overflow, viewport-contained popup and detail controls
+PASS Native select: typeahead, form submission/reset, disabled choice, disabled field and external focus
+PASS Controlled native select refuses commits until setValue; empty choices stay safe
+PASS Accordion controlled refusal, dynamic content height, focus recovery and required-open policy
+PASS Nested accordions keep independent state and unique ids; cleanup leaves no RAF
+PASS Reduced-motion: menus and accordion panels use no animated transition
+React runtime checks NOT RUN: no actual React browser runtime supplied in offline mode.
+Disclosure checks: 10 passed.

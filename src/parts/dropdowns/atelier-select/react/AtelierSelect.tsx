@@ -3,7 +3,7 @@ import React from 'react';
 import {SelectView,type SelectProps} from '../../../../shared/select-view';
 import '../styles.css';
 export type {SelectProps,SelectItem} from '../../../../shared/select-view';
-/** 紙の上に置かれた顔料。色見本と配合番号まで揃えたパレット。 */
+/** 生成りの紙とセリフ体。薄い紙の背景が候補へ移り、開くと一枚の紙面として広がる。 */
 export default function AtelierSelect({className='',...props}:SelectProps){
- return <SelectView {...props} className={`sop-select-sculpted sop-atelier-select ${className}`}/>;
+ return <SelectView autoIcon={false} showHeading={true} showHints={false} {...props} className={`sop-select-sculpted sop-atelier-select ${className}`}/>;
 }

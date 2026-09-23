@@ -3,7 +3,7 @@ import React from 'react';
 import { useScrollArea, type ScrollAreaProps } from '../../../../shared/use-scroll-area';
 import '../styles.css';
 export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
-/** 折られた紙の端を思わせる、暖かい質感のつまみ。 Native scroll content with a skinned, proportional rail. */
+/** 幅12pxの平たい帯と18pxの紙のしおり。操作面に沿う折り目の明暗が、掴んだときに変化する。 */
 export default function PaperRibbonScrollArea(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);
