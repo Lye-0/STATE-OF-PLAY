@@ -150,8 +150,14 @@ export function wireTabs(list: HTMLElement, activate: (tab: HTMLElement) => void
         const i = tabs.indexOf(document.activeElement as HTMLElement);
         const index = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : (i + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
         event.preventDefault();
-        tabs[index].focus();
-        activate(tabs[index]);
+        const next = tabs[index];
+        next.focus({ preventScroll: true });
+        // Keep keyboard navigation visible in the horizontal strip without moving the page.
+        const viewport = list.getBoundingClientRect();
+        const target = next.getBoundingClientRect();
+        if (target.left < viewport.left) list.scrollLeft += target.left - viewport.left;
+        else if (target.right > viewport.right) list.scrollLeft += target.right - viewport.right;
+        activate(next);
     });
 }
 export function required<K extends keyof HTMLElementTagNameMap>(selector: K, root?: ParentNode): HTMLElementTagNameMap[K];

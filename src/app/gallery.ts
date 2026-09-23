@@ -78,6 +78,9 @@ async function renderGallery(append = false) {
     const token = ++galleryRequest;
     stopDemo();
     if (!append) {
+        // The old cards keep the page tall while the next category's module loads.
+        // Without this, the short loading message clamps scrollY toward the top.
+        grid.style.minHeight = Math.ceil(grid.getBoundingClientRect().height) + 'px';
         visibleLimit = 24;
         rendered.forEach(r => { r.cleanup?.(); r.controller.destroy(); r.surface?.destroy(); });
         rendered = [];
@@ -152,6 +155,7 @@ async function renderGallery(append = false) {
     }
     if (details?.isOpen()) for (const r of rendered) { r.controller.setPaused?.(true); r.surface?.setPaused?.(true); }
     grid.setAttribute('aria-busy', 'false');
+    if (!append) grid.style.minHeight = '';
     more.hidden = selected.length >= matches.length;
     more.textContent = 'さらに表示（'+rendered.length+' / '+matches.length+'）';
     if (append) rendered.find(r => r.part.id === pending[0]?.id)?.card.querySelector<HTMLElement>('[data-open]')?.focus({preventScroll:true});

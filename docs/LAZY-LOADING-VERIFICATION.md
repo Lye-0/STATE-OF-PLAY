@@ -49,3 +49,11 @@ npm run test:check-popup
 ```
 
 このWindows環境ではnpmのmise shimが起動できなかったため、実行時は `node node_modules/typescript/bin/tsc`、`node node_modules/vite/bin/vite.js build`、`node --experimental-strip-types tests/...` を直接呼び出しました。設定の修正や依存の入れ替えは行っていません。
+
+## タブ列のスクロール修正 — 2026-09-23
+
+添付画像にあったタブ列の縦スクロールバーは、横スクロール用の `overflow-x:auto` によって縦方向も `auto` となり、実際に1pxだけ縦へはみ出すことが原因でした。明示的に縦方向を隠しました。
+
+カテゴリ切り替え時は、旧カード一覧を短い読み込み表示へ置き換えてページ全体が縮み、ブラウザーがスクロール位置を先頭近くへ補正していました。取得中だけ一覧の以前の高さを保ち、描画後に解除するようにしました。
+
+実Vite / Edgeで幅1440pxと390pxを検証しました。切り替え中・完了後、ページ位置380pxを維持し、Home/Endのキーボード移動でも同じ位置を維持しました。両幅で縦方向のoverflowはhidden、横方向のタブ移動は維持しています。`tests/gallery-navigation.browser.ts`をCIに追加しました。
