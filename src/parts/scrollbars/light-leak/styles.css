@@ -1,9 +1,14 @@
-@import "../../../shared/scrollbar-base.css";
-/* Light Leak — LIGHT / DIFFUSION / A */
+@import "../../../shared/scrollbar-sculpted.css";
+/* light-leak — sculpted, component-local rail. v4.2.0 */
 
-.sop-scroll-area.sop-light-leak{--sop-scroll-width:6px;--sop-scroll-accent:#ffd4b5;--sop-scroll-thumb:#fff1d9;--sop-scroll-track:#322629}
-.sop-scroll-area.sop-light-leak > .sop-scroll-rail > .sop-scroll-track{overflow:visible;background:linear-gradient(#593e52,#292430);box-shadow:0 0 16px #edb5ce21}
-.sop-scroll-area.sop-light-leak > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{opacity:.7;background:linear-gradient(#ef989a,#ffe4bb);filter:blur(4px)}
-.sop-scroll-area.sop-light-leak > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:8px;background:linear-gradient(#fdaac4,#ffefd2 40%,#fff8e5 60%,#f5997c);box-shadow:0 0 5px #fff6e5,0 0 22px #ee9b9b85,0 0 40px #eda8bf38}
-.sop-scroll-area.sop-light-leak > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle:before{content:'';position:absolute;inset:-10px -10px;background:radial-gradient(ellipse,#f0b4c54a,transparent 68%);border-radius:50%;filter:blur(6px)}
-.sop-scroll-area.sop-light-leak > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{inset:3px;border-radius:100px;background:#fff5e96b}
+.sop-scroll-area.sop-light-leak{--sop-scroll-width:30px;--sop-scroll-radius:4px;--sop-scroll-accent:#efb486}
+.sop-scroll-area.sop-light-leak > .sop-scroll-rail > .sop-scroll-track{background:linear-gradient(var(--sc-along),#321427,#d45e454f 25%,#fbc47c85 43%,#d687c658 61%,#223742 83%,#d66a5537);border:1px solid #b6877063;box-shadow:inset 0 0 9px #0009,0 0 18px #dd866523}
+.sop-scroll-area.sop-light-leak > .sop-scroll-rail > .sop-scroll-track::before{inset:0;background:linear-gradient(var(--sc-cross),#ffe5b670,transparent 18% 72%,#f3724859);border-inline:2px solid #2d2428}
+.sop-scroll-area.sop-light-leak > .sop-scroll-rail > .sop-scroll-track::after{inset-block:3px;inset-inline:2px;background:repeating-linear-gradient(var(--sc-along),#090d16b3 0 5px,transparent 5px 14px);mask-image:linear-gradient(var(--sc-cross),#000 0 14%,transparent 14% 86%,#000 86%)}
+.sop-scroll-area.sop-light-leak > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{background:linear-gradient(var(--sc-along),transparent,#ef985624,#ffe7cdcc);opacity:.9}
+.sop-scroll-area.sop-light-leak > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:43px;border:1px solid #ddb9a17b;border-radius:7px;background:linear-gradient(var(--sc-cross),#e2ccc168,#eee0d61c 40%,#64607247 78%,#f3d3ca80);backdrop-filter:blur(1px) saturate(1.6);box-shadow:inset 1px 1px #ffe9dc88,inset -1px -1px #474251,0 7px 13px #0009}
+.sop-scroll-area.sop-light-leak > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{inset:6px;border:1px solid #f9e5d161;border-radius:2px;box-shadow:0 0 0 2px #211b224a}
+.sop-scroll-area.sop-light-leak > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{inset-block:50% auto;inset-inline:3px;block-size:1px;background:linear-gradient(90deg,#f7cd8d,transparent 30% 70%,#f7cd8d)}
+.sop-scroll-area.sop-light-leak > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{border-radius:50%;border:1px solid #fae9d89e;background:radial-gradient(circle,#fdf1d229,transparent 65%);transform:scale(.7)}
+
+.sop-scroll-area.sop-light-leak[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-ticks{display:none}

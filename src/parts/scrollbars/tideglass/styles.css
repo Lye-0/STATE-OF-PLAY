@@ -1,9 +1,13 @@
-@import "../../../shared/scrollbar-base.css";
-/* Tideglass — WATER / LEVEL / A */
+@import "../../../shared/scrollbar-sculpted.css";
+/* tideglass — sculpted, component-local rail. v4.2.0 */
 
-.sop-scroll-area.sop-tideglass{--sop-scroll-width:24px;--sop-scroll-radius:24px;--sop-scroll-accent:#9adcea;--sop-scroll-thumb:#9edbe3;--sop-scroll-track:#182631}
-.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-track{background:linear-gradient(90deg,#18252f,#2b506482 35%,#091923 65%,#7cb3c751);border:1px solid #abd9e254;box-shadow:inset 0 0 8px #619ebc44}
-.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{opacity:.68;background:linear-gradient(#58a6c85e,#7bd4dd);border-radius:30%;filter:blur(2px)}
-.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:32px;background:radial-gradient(ellipse at 35% 18%,#f0ffffbd,transparent 35%),linear-gradient(130deg,#66a7c0a3,#b2eced96 52%,#24637b80);border:1px solid #b6ecedd4;box-shadow:inset 2px 2px 5px #dfffff99,inset -2px -2px 5px #9fd8ed78,1px 4px 9px #0007;border-radius:48% 48% 45% 45%}
-.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{inset:7px 6px;border:1px solid #defdff6b;border-radius:50%}
-.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-ticks{background:repeating-linear-gradient(0deg,transparent 0 23px,#afd7e154 23px 24px);clip-path:inset(0 1px 0 80%)}
+.sop-scroll-area.sop-tideglass{--sop-scroll-width:29px;--sop-scroll-radius:20px;--sop-scroll-accent:#88d9eb}
+.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-track{background:linear-gradient(var(--sc-cross),#82d7dd66,#102b40 25%,#12212f 72%,#b9eaf35c);border:1px solid #a1d3e58a;box-shadow:inset 0 0 0 3px #183b504f,0 8px 14px #0009}
+.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-track::before{inset:5px;border-radius:15px;border-inline:1px solid #d1f9f335;background:repeating-linear-gradient(160deg,transparent 0 27px,#b8dcec3c 27px 28px,transparent 28px 53px)}
+.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{opacity:1;inset:4px;background:linear-gradient(var(--sc-along),#a4e9f24d,#1e7798 75%,#baedf1 99%);border-radius:20px;box-shadow:0 0 13px #8fc7ed36}
+.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:43px;border-radius:23px;background:linear-gradient(var(--sc-cross),#dbf6f59e,#225a7470 18%,#4388a477 65%,#c7f8f0b8);border:1px solid #c3f4f3ab;box-shadow:inset 2px 0 1px #f6fff7,inset -2px -1px 3px #96e7e8,0 6px 10px #0009}
+.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{inset:5px;border-radius:20px;border-block:2px solid #ddfbf59c;background:radial-gradient(ellipse at 50% 95%,#c9faf795,transparent 42%)}
+.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{inset-block:48% auto;inset-inline:5px;block-size:7px;border-radius:50%;border-block-start:1px solid #efffffbd;background:#b1ecde24;transform:rotate(-10deg)}
+.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{border-radius:50%;border:1px solid #d6ffff5e;background:radial-gradient(circle at 32% 22%,#e4ffffd1,transparent 23%),radial-gradient(circle at 40% 35%,#6ee6d166,#3983a36b 55%,#153749);box-shadow:inset 0 0 4px #cbffff9c;transform:scale(.76)}
+
+.sop-scroll-area.sop-tideglass[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-ticks{display:none}

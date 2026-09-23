@@ -1,8 +1,20 @@
-@import "../../../shared/select-base.css";
-/* Orbit Select — CELESTIAL / NAVIGATION. Type A. */
-.sop-select.sop-orbit-select{--sel-bg:#111e30;--sel-panel:linear-gradient(150deg,#101b2d,#202238);--sel-accent:#a5b8f5;--sel-line:#869bb62b;--sel-radius:14px;}
-.sop-select.sop-orbit-select .sop-select-popup{background-image:radial-gradient(circle at 20% 14%,#d2e2ff 1px,transparent 1.5px),radial-gradient(circle at 85% 32%,#e2d2ff 1px,transparent 1.5px),linear-gradient(145deg,#121d31,#222036);background-size:170px 150px,130px 180px,auto}
-.sop-select.sop-orbit-select .sop-select-icon{border:1px solid #8f9fc87a;border-radius:50%;background:radial-gradient(circle at 25% 22%,#98b1d0,#25445b 42%,#12222f);box-shadow:0 0 0 5px #adc2fb09,0 0 0 6px #adc2fb12}
-.sop-select.sop-orbit-select :is(.sop-select-option,.sop-select-value)[data-glyph="1"] .sop-select-icon{background:radial-gradient(circle at 25% 25%,#dcdbd0,#667180,#202832)}
-.sop-select.sop-orbit-select :is(.sop-select-option,.sop-select-value)[data-glyph="2"] .sop-select-icon{background:radial-gradient(circle at 25% 25%,#ead2a0,#917550,#322132)}
-.sop-select.sop-orbit-select .sop-select-menu-heading{letter-spacing:1.7px}.sop-select.sop-orbit-select .sop-select-option-copy b{letter-spacing:.4px}
+@import "../../../shared/select-sculpted.css";
+/* orbit-select — field, icon, list and option art direction. v4.2.0 */
+
+.sop-select.sop-orbit-select{--sel-bg:radial-gradient(ellipse at 2% 70%,#3448658c,transparent 65%),#171e2c;--sel-panel:radial-gradient(ellipse at 80% 0,#41416577,transparent 65%),#161f2c;--sel-accent:#c2c7f4;--sel-muted:#acb4cb;--sel-line:#a0acc14d;--sel-radius:24px;}
+.sop-select.sop-orbit-select > .sop-select-trigger{border-radius:50px 16px 16px 50px;padding-left:14px;}
+.sop-select.sop-orbit-select > .sop-select-trigger::before{width:155px;height:155px;border-radius:50%;left:-40px;top:-21px;border:1px solid #bab7d851;box-shadow:0 0 0 20px #a3a8d012,0 0 0 21px #a1b9d929,0 0 0 41px #b3a6c008,0 0 0 42px #adb6d81c;transform:rotate(-24deg) scaleY(.6);}
+.sop-select.sop-orbit-select > .sop-select-trigger::after{inset:8px;background:radial-gradient(circle at 73% 24%,#cdd5ed 0 1px,transparent 1.5px),radial-gradient(circle at 87% 68%,#afaadd 0 1px,transparent 1.4px);}
+.sop-select.sop-orbit-select .sop-select-icon{border-radius:50%;border:1px solid #ada7d38a;background:radial-gradient(circle at 31% 24%,#e0cdeb,#979cba 18%,#465d86 39%,#1e3048 61%,#101e2d 78%,#9eafda78);box-shadow:inset -2px -2px 4px #bbc7e578,0 5px 8px #0008;color:#e1e1f3;overflow:visible;text-shadow:0 1px 4px #050e15;}
+.sop-select.sop-orbit-select .sop-select-icon::before{inset:14px -7px;border:1px solid #d9c5e682;border-radius:50%;transform:rotate(-28deg);}
+.sop-select.sop-orbit-select .sop-select-icon::after{inset:6px;border:1px solid #d4d9f253;border-radius:50%;border-bottom-color:transparent;transform:rotate(18deg);}
+.sop-select.sop-orbit-select [data-glyph="1"] .sop-select-icon{filter:hue-rotate(210deg);}
+.sop-select.sop-orbit-select [data-glyph="2"] .sop-select-icon{filter:hue-rotate(80deg);}
+.sop-select.sop-orbit-select .sop-select-popup{border-radius:17px 17px 27px 27px;}
+.sop-select.sop-orbit-select .sop-select-menu-heading::before{z-index:-1;inset:1px 5px;border:1px solid #b4b6d12c;border-radius:50%;transform:rotate(-9deg);}
+.sop-select.sop-orbit-select .sop-select-menu-heading::after{z-index:-1;inset:9px 30px;border:1px solid #b4b6d12c;border-radius:50%;transform:rotate(6deg);}
+.sop-select.sop-orbit-select .sop-select-option{border-radius:34px 12px 12px 34px;padding-left:11px;}
+.sop-select.sop-orbit-select .sop-select-option[aria-selected=true]{border-color:#ada4df73;background:linear-gradient(100deg,#a3a7dc25,#afb7e212);}
+.sop-select.sop-orbit-select .sop-select-option[data-active=true] .sop-select-icon::before{transform:rotate(15deg);transition:transform .6s;}
+
+@media(prefers-reduced-motion:reduce){.sop-select.sop-orbit-select *::before,.sop-select.sop-orbit-select *::after{transition:none!important;animation:none!important;}}

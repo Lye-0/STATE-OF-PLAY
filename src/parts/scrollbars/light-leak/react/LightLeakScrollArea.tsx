@@ -7,7 +7,7 @@ export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
 export default function LightLeakScrollArea(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);
-  return <div {...attributes} ref={root} className={`sop-scroll-area sop-light-leak ${className}`} data-orientation={orientation}>
+  return <div {...attributes} ref={root} className={`sop-scroll-area sop-scroll-sculpted sop-light-leak ${className}`} data-orientation={orientation}>
     <div className="sop-scroll-viewport" id={viewportId} tabIndex={0} role="region" aria-label={viewportLabel}>
       <div className="sop-scroll-content">{children}</div>
     </div>

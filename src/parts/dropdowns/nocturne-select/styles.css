@@ -1,6 +1,23 @@
-@import "../../../shared/select-base.css";
-/* Nocturne Select — EDITORIAL / NIGHT. Type A. */
-.sop-select.sop-nocturne-select{--sel-bg:#252336;--sel-panel:#262436;--sel-accent:#c6bde3;--sel-muted:#a29bb5;--sel-line:#b7afd52d;--sel-radius:4px;}
-.sop-select.sop-nocturne-select .sop-select-icon{width:30px;height:43px;border-radius:1px 4px 4px 1px;background:linear-gradient(90deg,#141b26 3px,#786780 4px,#584766);box-shadow:2px 3px 3px #0006;color:#e2cba7;font-family:Georgia,serif;border:0}
-.sop-select.sop-nocturne-select .sop-select-option:nth-child(even) .sop-select-icon{background:linear-gradient(90deg,#142522 3px,#44625b 4px,#344c45)}
-.sop-select.sop-nocturne-select .sop-select-option-copy b{font-family:Georgia,serif;font-size:19px;font-style:italic}.sop-select.sop-nocturne-select .sop-select-option{padding:16px 12px;border-bottom:1px solid #ffffff0d;border-radius:0}
+@import "../../../shared/select-sculpted.css";
+/* nocturne-select — field, icon, list and option art direction. v4.2.0 */
+
+.sop-select.sop-nocturne-select{--sel-bg:linear-gradient(120deg,#3e42499c,#10151f 34%,#121c29 80%,#353b4280);--sel-panel:linear-gradient(155deg,#303641,#101a26 62%,#1e2732);--sel-accent:#d1c4a4;--sel-ink:#ece7db;--sel-muted:#a7afbb;--sel-line:#b2b09a4b;--sel-radius:8px;}
+.sop-select.sop-nocturne-select > .sop-select-trigger{border-radius:8px 8px 18px 8px;box-shadow:inset 0 1px #e9e1c450,inset 0 -4px #060c12,0 14px 24px #000a;}
+.sop-select.sop-nocturne-select > .sop-select-trigger::before{inset:5px;border:1px solid #c5bea038;border-radius:5px 5px 14px 5px;background:linear-gradient(145deg,#e0d7bf0c,transparent 38%);}
+.sop-select.sop-nocturne-select > .sop-select-trigger::after{right:55px;top:6px;bottom:6px;width:2px;background:linear-gradient(#c6c3b87e,#f4ead373,#b3ae976a);box-shadow:2px 0 #090e1799;}
+.sop-select.sop-nocturne-select .sop-select-value .sop-select-option-copy b{font:22px/1.2 Georgia,serif;}
+.sop-select.sop-nocturne-select .sop-select-icon{background:radial-gradient(circle at 29% 20%,#ddd3ba83,#404658 20%,#142132 55%,#090f1b 77%);border:1px solid #b4ad8a78;border-radius:50%;color:#c2ba9e;box-shadow:inset -1px -2px 3px #d9d1b06b,0 4px 7px #0008;}
+.sop-select.sop-nocturne-select .sop-select-icon::before{inset:5px;border:1px solid #c2bba251;border-radius:50%;border-right-color:transparent;transform:rotate(-25deg);}
+.sop-select.sop-nocturne-select .sop-select-icon::after{top:5px;right:7px;width:5px;height:5px;border-radius:50%;background:#daceb587;box-shadow:0 0 8px #fff5ce40;}
+.sop-select.sop-nocturne-select .sop-select-popup{border-radius:8px 8px 20px 8px;}
+.sop-select.sop-nocturne-select .sop-select-menu-heading>span{font:italic 17px/1.3 Georgia,serif;}
+.sop-select.sop-nocturne-select .sop-select-menu-heading::after{inset:3px;border-block:1px solid #c2b8a127;z-index:-1;}
+.sop-select.sop-nocturne-select .sop-select-option{border-radius:4px;background:linear-gradient(#b9bbc10d,#070d161f);border-bottom:1px solid #babaa929;box-shadow:0 2px 0 #0209166e;}
+.sop-select.sop-nocturne-select .sop-select-option[aria-selected=true]{background:linear-gradient(115deg,#dbd0b825,#3b465959);border-color:#b3aa8e76;box-shadow:inset 3px 0 #d6cbae,0 2px 0 #080e175c;}
+.sop-select.sop-nocturne-select .sop-select-badge{font-family:Georgia,serif;font-style:italic;font-size:10px;}
+
+@media(prefers-reduced-motion:reduce){.sop-select.sop-nocturne-select *::before,.sop-select.sop-nocturne-select *::after{transition:none!important;animation:none!important;}}
+
+.sop-select.sop-nocturne-select .sop-select-option-copy b{font:17px/1.3 Georgia,serif;}
+.sop-select.sop-nocturne-select .sop-select-option .sop-select-icon{background:radial-gradient(circle at 30% 23%,#f1e7cd,#c6beae 30%,#7c8198 63%,#515e77 82%);color:#354259;}
+.sop-select.sop-nocturne-select .sop-select-option .sop-select-icon::before{background:radial-gradient(circle at 68% 33%,#78829670 0 3px,transparent 3.5px),radial-gradient(circle at 30% 65%,#5f6c8970 0 4px,transparent 4.7px);border-color:#eee7cc47;}

@@ -1,0 +1,16 @@
+(node:1485) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS All 48 skins: computed design (including pseudo-elements) matches standalone and full-catalogue CSS
+PASS Sixteen sculpted rails: real pointer dragging reaches both native scroll endpoints
+PASS Sculpted rails keep proportional thumb geometry after resize and content mutation
+PASS All expressive rails retain horizontal and RTL geometry without visible overflow
+PASS All redesigned menus select and reflect the supplied option content, badge and value
+PASS Menu Escape cancels navigation; disabled options are not selectable; form reset restores initial value
+PASS 320 / 390 / 768 px: all 32 A skins fit; open menus remain within the viewport
+PASS Long Japanese labels, descriptions and custom badges are neither hidden nor forced outside
+PASS Top/bottom placement: tall popup uses available space and retains scrollable options
+PASS Popover inside a real modal remains above it; native focus stays on the trigger
+PASS Reduced motion has no running decorative animation; forced colors restore native scrollbars
+PASS Unmount/reopen does not leave popovers; independent instance IDs stay unique
+Sculpture checks: 12 passed.
+EXIT_CODE:0

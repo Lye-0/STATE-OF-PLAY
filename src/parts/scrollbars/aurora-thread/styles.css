@@ -1,9 +1,13 @@
-@import "../../../shared/scrollbar-base.css";
-/* Aurora Thread — AURORA / THREAD / A */
+@import "../../../shared/scrollbar-sculpted.css";
+/* aurora-thread — sculpted, component-local rail. v4.2.0 */
 
-.sop-scroll-area.sop-aurora-thread{--sop-scroll-width:6px;--sop-scroll-accent:#cdb7fa;--sop-scroll-thumb:#c3dcf4;--sop-scroll-track:#363044}
-.sop-scroll-area.sop-aurora-thread > .sop-scroll-rail > .sop-scroll-track{overflow:visible;background:linear-gradient(#a590cb33,#73c4c950,#cc83b33d);box-shadow:-7px 0 0 -2px #98d5de65,7px 0 0 -2px #d8b3e03a}
-.sop-scroll-area.sop-aurora-thread > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{opacity:.8;background:linear-gradient(#bca6ea,#7ae6e0,#e3b7e7);filter:drop-shadow(0 0 7px #bdc4ee)}
-.sop-scroll-area.sop-aurora-thread > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:15px;background:linear-gradient(130deg,#a4e7ec,#dcd1ff 30%,#ad86cf 65%,#99e8cf);border:1px solid #e2d7fccc;box-shadow:inset 2px 0 2px #fffffe91,0 0 17px #b4a4e466;border-radius:40%}
-.sop-scroll-area.sop-aurora-thread > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{inset:5px 6px;background:#e8fffa9e;border-radius:50%}
-.sop-scroll-area.sop-aurora-thread[data-scrolling=true] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{filter:hue-rotate(calc(var(--sop-scroll-progress)*60deg)) brightness(1.2)}
+.sop-scroll-area.sop-aurora-thread{--sop-scroll-width:29px;--sop-scroll-radius:20px;--sop-scroll-accent:#d6c1f5}
+.sop-scroll-area.sop-aurora-thread > .sop-scroll-rail > .sop-scroll-track{background:linear-gradient(var(--sc-cross),#889fea47,#a9f4e762 13%,#123d5157 25%,#091624 45%,#d8b5f373 78%,#b3e5dc50);border:1px solid #cbd8ea48;box-shadow:inset 0 0 0 3px #bccdd726,0 0 18px #9274da29,0 4px 10px #0008}
+.sop-scroll-area.sop-aurora-thread > .sop-scroll-rail > .sop-scroll-track::before{inset:4px 5px;border-inline:2px solid #c7f1ee5e;border-radius:20px;transform:skewY(15deg)}
+.sop-scroll-area.sop-aurora-thread > .sop-scroll-rail > .sop-scroll-track::after{inset:8px 8px;border-inline:1px solid #dac8f57a;border-radius:20px;transform:skewY(-16deg)}
+.sop-scroll-area.sop-aurora-thread > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{background:linear-gradient(var(--sc-along),#bda3e066,#8ce3d29e,#f5e8c7);opacity:.65;filter:blur(3px)}
+.sop-scroll-area.sop-aurora-thread > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:41px;border-radius:22px;background:linear-gradient(126deg,#e1e9e79c,#ace4d33b 25%,#676ba452 49%,#e9bfdb8f 70%,#d5eac2b6);border:1px solid #f1e4f199;backdrop-filter:blur(2px);box-shadow:inset 2px 1px 3px #eaf7f599,inset -1px -1px 3px #d9c8f282,0 3px 9px #000a}
+.sop-scroll-area.sop-aurora-thread > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{inset:5px;border:1px solid #fff8;border-radius:inherit;box-shadow:inset 0 2px 11px #e6bcf729}
+.sop-scroll-area.sop-aurora-thread > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{border-radius:50%;background:conic-gradient(from 60deg,#dbebf2,#afd7c8,#e9d5bf,#b8b2e1,#96cbd8,#dbe6f3);border:1px solid #e2fff287;box-shadow:inset 1px 1px 4px #fff9,inset -2px -2px 5px #49767b47,0 3px 4px #0008}
+
+.sop-scroll-area.sop-aurora-thread[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-ticks{display:none}

@@ -1,28 +1,42 @@
-# Prism Rail — 再現仕様
+# Prism Rail — 造形仕様 v2.0.0（STATE OF PLAY v4.2.0）
 
-スペクトルの細い道を、宝石のようなつまみが進む。
+クリスタルの多面体を、分光色の溝へ。研磨された稜線と、屈折するスペクトル。
 
-タイプA: 素材・輪郭・光・つまみの固有形状を保つ。単なる単色の丸棒へ置換しない。
+タイプA。素材と形そのものを表現する。既存のトグルなどは完成度の基準であり、別部品の造形をそのまま移植する指示ではない。
 
-## 固有の外観
-レールの素材は CRYSTAL / SPECTRUM。形状と色、陰影はstyles.cssの値を正本にする。つまみはスクロール量に比例して長さが変わる設計なので固定長へ変更しない。
-## 操作と構造を維持
-ネイティブのoverflowとscrollTop/scrollLeftを状態の正本にする。ホイールやタッチを横取りせず、偽の慣性スクロールを実装しない。内容に対するviewport比率からつまみの長さを決め、scrollと連動する。ドラッグ、トラッククリック、矢印・PageUp/PageDown・Space/Shift+Space・Home/Endを維持する。横方向とRTLにも対応する。
+## 形と動きの設計
+装飾レール、比例するつまみ、その内側のハンドル、グリップ、端の口金を分離する。レール・つまみの素材を一組として再現し、色だけの細い丸棒へ置き換えない。光沢と影は静止時にも形が分かる強さに保つ。見た目のハンドルとドラッグ領域を分離し、装飾にはpointer-events:noneを適用する。
 
-## 導入時の条件
-ページ全体やbodyのスクロールバーを置換しない。選んだ領域をこのコンポーネントで包む。高さに制約が必要。装飾レールは役割scrollbar、aria-controls、aria-valuenowを持ち、viewportにも名前とキーボードフォーカスを提供する。中身はchildren/スロットとして受け取る。デモ文章を本体に固定しない。
+レールの占有幅は最低56px。つまみの占有長は表示領域と内容全体の比率から求める。小さなグリップや結晶の寸法と、スクロール位置を示す比例つまみの長さを混同しない。縦・横では光の向きと装飾の軸をCSS変数で切り替える。
 
-## 後片付けとフォールバック
-イベントとObserver、予約済みRAF、idleタイマーをdestroyで解除する。毎フレームの常時描画はしない。動きを減らす設定を尊重し、強制カラー時は標準スクロールバーへ戻す。JavaScript初期化前も内容は標準のoverflowで読める。内容が短いときは不要なレールを表示しない。リサイズ・動的コンテンツ・画像の読み込みにも長さを追従させる。
+## 操作と構造
+ネイティブoverflowとscrollTop/scrollLeftを正本とし、ホイールやタッチのスクロールを横取りしない。ドラッグ、レールのページ移動、矢印、PageUp/PageDown、Space/Shift+Space、Home/Endを維持する。方向はvertical/horizontal、RTLも扱う。スクロール位置を--sop-scroll-progressへ同期するが、装飾用に偽の位置を作らない。
 
-## 固有スタイル（設計値）
+## 導入と後片付け
+ページ全体のバーを変更せず、内容領域をラッパーで包む。children/スロットには利用先の内容を入れ、サンプル文章を固定しない。領域の高さと長い内容を用意し、短い内容ではレールを隠す。サイズと内容の変化へ追従し、aria-controls・aria-valuenowと識別子を個体ごとに維持する。destroy時にイベント、Observer、予約済みRAFを解除する。毎フレームの常時描画処理を追加しない。強制カラー時は標準スクロールバーへ戻す。
+
+## 必要なソースと配置
+`styles.css`、`scrollbar-sculpted.css`、そこから参照するベースCSSを揃える。ルートの`sop-scroll-sculpted`と`.sop-prism-rail`を維持する。配布側のファイル見出しは参照元のパスであり、導入先の同じ階層を強制するものではない。利用先の構成と規約を確認して配置し、移動時には相対importとCSSの参照を更新する。既存コードを無条件に上書きしない。プロジェクトが見えない場合は必要な構成を確認する。
+
+## 確認基準
+単独の表示と他のスキンを混在させた表示が一致すること。通常・操作中・無効・キーボードフォーカス・320px幅・長い日本語・prefers-reduced-motion・forced-colorsを確認する。外観変更を理由に入力の標準操作、状態管理、外部制御を省略しない。
+
+## 固有スタイル（正本と同期）
+次はこの部品の`styles.css`と同一の内容。共有の寸法と操作状態のスタイルは`scrollbar-sculpted.css`も必要。コード込みの実装プロンプトには必要な全ファイルが含まれる。
+
 ```css
-/* Prism Rail — CRYSTAL / SPECTRUM / A */
+@import "../../../shared/scrollbar-sculpted.css";
+/* prism-rail — sculpted, component-local rail. v4.2.0 */
 
-.sop-scroll-area.sop-prism-rail{--sop-scroll-width:8px;--sop-scroll-radius:1px;--sop-scroll-accent:#c4c2ff;--sop-scroll-thumb:#b5b1de}
-.sop-scroll-area.sop-prism-rail > .sop-scroll-rail > .sop-scroll-track{background:linear-gradient(90deg,#172129,#c7dbdb77 35%,#aa8ea847 70%,#292732);border:1px solid #cbb9e645;box-shadow:0 0 10px #ca9dc82a;overflow:visible}
-.sop-scroll-area.sop-prism-rail > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{background:linear-gradient(#e8bddc,#dfd4a4,#8fd9d1,#b4afff);opacity:.9}
-.sop-scroll-area.sop-prism-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:32px;border-radius:0;clip-path:polygon(50% 0,100% 15%,100% 85%,50% 100%,0 85%,0 15%);background:conic-gradient(from 30deg,#d2cfed,#efc5cb,#97c8bd,#618da1,#cbc0e9,#d2cfed);border:0;box-shadow:inset 0 0 6px #fff}
-.sop-scroll-area.sop-prism-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{inset:8px 9px;clip-path:polygon(50% 0,100% 18%,100% 82%,50% 100%,0 82%,0 18%);background:linear-gradient(135deg,#f9eeff,#91bdd1 50%,#d5efd8)}
-.sop-scroll-area.sop-prism-rail > .sop-scroll-rail > .sop-scroll-thumb{filter:drop-shadow(0 0 7px #bcb5e552)}
+.sop-scroll-area.sop-prism-rail{--sop-scroll-width:24px;--sop-scroll-radius:2px;--sop-scroll-accent:#c1b8fa}
+.sop-scroll-area.sop-prism-rail > .sop-scroll-rail > .sop-scroll-track{background:linear-gradient(var(--sc-cross),#b3e4ff66,#48365b6e 18%,#152336 47%,#baa9ef3d 80%,#f6bdd568);border:1px solid #d5c8f370;box-shadow:inset 0 0 0 4px #17162452,0 0 18px #896ddf16}
+.sop-scroll-area.sop-prism-rail > .sop-scroll-rail > .sop-scroll-track::after{inset:0;background:repeating-linear-gradient(32deg,transparent 0 24px,#ddd9ff2b 24px 25px,transparent 25px 38px);}
+.sop-scroll-area.sop-prism-rail > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{opacity:.75;background:linear-gradient(var(--sc-along),#d9f2dc,#b0e4eb,#c3b9ef,#efd5c6);box-shadow:0 0 11px #d4bdff65}
+.sop-scroll-area.sop-prism-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:43px;border-radius:0;border:0;clip-path:polygon(50% 0,100% 13%,100% 83%,50% 100%,0 83%,0 13%);background:conic-gradient(from 20deg,#e9e9d4,#82b7c7,#cfcff2,#876c9c,#e3c2ce,#a4dcce,#e9e9d4);box-shadow:inset 2px 0 1px #fff9}
+.sop-scroll-area.sop-prism-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{inset:3px;clip-path:polygon(50% 0,100% 13%,100% 83%,50% 100%,0 83%,0 13%);background:linear-gradient(123deg,#f5eff965,transparent 45%,#f3d5e596 46%,#7ca5cf59 68%,#d1f5c66e)}
+.sop-scroll-area.sop-prism-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{inset:7px 10px;clip-path:polygon(50% 0,100% 20%,100% 75%,50% 100%,0 75%,0 20%);background:linear-gradient(var(--sc-cross),#e6f3fbe0,#e7b9e291 48%,#b5f3d2c7 51%,#eaf5dfb3);}
+.sop-scroll-area.sop-prism-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{z-index:1;border:1px solid #e9ffef76;transform:rotate(45deg) scale(.7);background:conic-gradient(#e8e9ff,#86a5c6,#e6d0ed,#9fcbc9,#e8e9ff);box-shadow:0 0 6px #e2d9fb}
+.sop-scroll-area.sop-prism-rail > .sop-scroll-rail > .sop-scroll-ticks::before{inset-block:5%;inset-inline:2px;border-inline:1px solid #bad4f636;transform:skewY(-14deg)}
+
+.sop-scroll-area.sop-prism-rail[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-ticks{display:none}
 ```

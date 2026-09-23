@@ -1,5 +1,21 @@
-@import "../../../shared/select-base.css";
-/* Ceramic Select — PORCELAIN / COBALT. Type A. */
-.sop-select.sop-ceramic-select{--sel-bg:linear-gradient(155deg,#f7f8f5,#dfe6ed);--sel-panel:#f3f6f5;--sel-ink:#2e415b;--sel-muted:#8190a1;--sel-accent:#52799f;--sel-line:#ccd6df;--sel-radius:19px;--sel-shadow:inset 0 2px 1px white,0 9px 17px #0003;}
-.sop-select.sop-ceramic-select .sop-select-icon{border-radius:50%;background:radial-gradient(circle at 30% 25%,#fff,#e3eaf0 55%,#c5d2df);border:3px double #7195b4;box-shadow:0 3px 5px #738ba333;color:#52799f;font-family:Georgia,serif}
-.sop-select.sop-ceramic-select .sop-select-option{padding:15px 12px}.sop-select.sop-ceramic-select .sop-select-popup{box-shadow:inset 0 2px #fff,0 24px 45px #0004}
+@import "../../../shared/select-sculpted.css";
+/* ceramic-select — field, icon, list and option art direction. v4.2.0 */
+
+.sop-select.sop-ceramic-select{--sel-bg:linear-gradient(130deg,#f4eee0,#d6dbd2 53%,#e9e9dc);--sel-panel:linear-gradient(140deg,#f4f1e4,#dce1d7 65%,#eeeddf);--sel-ink:#394e4b;--sel-muted:#75847a;--sel-accent:#6c8f86;--sel-line:#9cafa074;--sel-dark:#fff8e7;--sel-radius:23px;}
+.sop-select.sop-ceramic-select > .sop-select-trigger{border:1px solid #ebefe1;border-radius:27px;box-shadow:inset 2px 2px 4px #fffdef,inset -2px -3px 5px #788c8267,0 5px 0 -1px #9ea69c,0 14px 25px #0007;}
+.sop-select.sop-ceramic-select > .sop-select-trigger::before{inset:8px;border:1px solid #b1bca778;border-radius:20px;box-shadow:inset 1px 1px 4px #607e7142,1px 1px #fffff49c;}
+.sop-select.sop-ceramic-select .sop-select-value .sop-select-option-copy b{font:23px/1.15 Georgia,serif;}
+.sop-select.sop-ceramic-select .sop-select-icon{background:radial-gradient(circle at 32% 20%,#eff4dd,#afc9ba 26%,#6f978e 64%,#547a7396);border:1px solid #78938957;border-radius:50%;color:#eaf3df;box-shadow:inset 1px 1px 3px #fffce4d6,inset -1px -2px 3px #38685d8c,0 3px 4px #526e6659;}
+.sop-select.sop-ceramic-select .sop-select-icon::before{inset:8px;border:1px solid #406a6045;border-radius:50%;box-shadow:inset 1px 2px 3px #325b5052,0 1px 1px #eefad769;}
+.sop-select.sop-ceramic-select .sop-select-icon::after{inset:5px 12px 30px 7px;border-top:2px solid #ffffffa8;border-radius:50%;transform:rotate(-22deg);}
+.sop-select.sop-ceramic-select [data-glyph="1"] .sop-select-icon{filter:hue-rotate(110deg);}
+.sop-select.sop-ceramic-select [data-glyph="2"] .sop-select-icon{filter:hue-rotate(225deg);}
+.sop-select.sop-ceramic-select [data-glyph="3"] .sop-select-icon{filter:hue-rotate(35deg);}
+.sop-select.sop-ceramic-select .sop-select-chevron{background:linear-gradient(#dde5d6,#edf0e0);box-shadow:inset 1px 2px 4px #6e8b725c,0 1px #fffcefa6;border-color:#c2cdbd;}
+.sop-select.sop-ceramic-select .sop-select-popup{border-radius:24px;border:1px solid #f2f4e3;box-shadow:inset 2px 1px 2px #fffdef,inset -2px -2px 4px #80978a57,0 23px 43px #0007;}
+.sop-select.sop-ceramic-select .sop-select-menu-heading>span{font:16px/1.35 Georgia,serif;}
+.sop-select.sop-ceramic-select .sop-select-option{border-radius:15px;background:linear-gradient(#f2f3e614,#abbfb129);border:1px solid #a5b8a947;}
+.sop-select.sop-ceramic-select .sop-select-option[aria-selected=true]{background:linear-gradient(120deg,#e9efdf,#d5e3d5);box-shadow:inset 0 1px #ffffedb3,0 3px 4px #819a8847;border-color:#719d8f91;}
+.sop-select.sop-ceramic-select .sop-select-option[data-active=true] .sop-select-icon{transform:translateY(-2px);}
+
+@media(prefers-reduced-motion:reduce){.sop-select.sop-ceramic-select *::before,.sop-select.sop-ceramic-select *::after{transition:none!important;animation:none!important;}}

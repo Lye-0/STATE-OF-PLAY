@@ -1,9 +1,13 @@
-@import "../../../shared/scrollbar-base.css";
-/* Magnetic — MAGNETIC / DUAL RAIL / A */
+@import "../../../shared/scrollbar-sculpted.css";
+/* magnetic-scroll — sculpted, component-local rail. v4.2.0 */
 
-.sop-scroll-area.sop-magnetic-scroll{--sop-scroll-width:20px;--sop-scroll-radius:5px;--sop-scroll-accent:#c6e6d1;--sop-scroll-thumb:#a6b8b0}
-.sop-scroll-area.sop-magnetic-scroll > .sop-scroll-rail > .sop-scroll-track{background:transparent;border-inline:2px solid #8b9b9466;box-shadow:inset 1px 0 #fff2,1px 0 #000}
-.sop-scroll-area.sop-magnetic-scroll > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{background:linear-gradient(90deg,#aacfb22c,#aadac900,#aacfb22c);opacity:.5}
-.sop-scroll-area.sop-magnetic-scroll > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:32px;background:linear-gradient(105deg,#59665e,#d5e1d4 16%,#8f9d92 36%,#dce6dc 60%,#788b81 83%,#33443d);border:1px solid #bccbc0bb;box-shadow:2px 6px 6px #0009,inset 0 1px 2px #fff8;border-radius:6px}
-.sop-scroll-area.sop-magnetic-scroll > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{inset:10px 7px;background:linear-gradient(90deg,#34473d,#8da398,#203e2e);border-radius:3px;box-shadow:inset 0 0 2px #000}
-.sop-scroll-area.sop-magnetic-scroll > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip:after{content:'';position:absolute;left:4px;right:4px;top:50%;height:2px;background:#ddf7c2;box-shadow:0 0 6px #c9fa93}
+.sop-scroll-area.sop-magnetic-scroll{--sop-scroll-width:32px;--sop-scroll-radius:13px;--sop-scroll-accent:#9acddf}
+.sop-scroll-area.sop-magnetic-scroll > .sop-scroll-rail > .sop-scroll-track{background:linear-gradient(var(--sc-cross),#d0e5e866,#293d469e 9%,#07151d 16% 38%,#35536480 45% 55%,#07151d 62% 84%,#81aabf95 91%,#ccdde273);border:1px solid #687f8872;box-shadow:inset 0 0 8px #0009,0 4px 10px #0009}
+.sop-scroll-area.sop-magnetic-scroll > .sop-scroll-rail > .sop-scroll-track::after{inset:4px 14px;background:repeating-linear-gradient(var(--sc-along),#b4d3da72 0 1px,transparent 1px 14px)}
+.sop-scroll-area.sop-magnetic-scroll > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{opacity:.65;background:linear-gradient(var(--sc-along),#1e485733,#99ebed7d);}
+.sop-scroll-area.sop-magnetic-scroll > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:40px;border-radius:20px;background:linear-gradient(var(--sc-cross),#bcdce959,#1a334354 30% 70%,#c4dfeb6e);border:1px solid #acd4d19c;box-shadow:inset 1px 1px 2px #daedee7d,inset -2px -1px 3px #496b7b96,0 3px 10px #0009}
+.sop-scroll-area.sop-magnetic-scroll > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{inset:5px;border-inline:2px solid #b5dde573;border-radius:15px;}
+.sop-scroll-area.sop-magnetic-scroll > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{inset-block:50% auto;inset-inline:2px;height:26px;margin-top:-13px;border-block:1px solid #abdbee77;border-radius:50%;transform:rotate(-19deg)}
+.sop-scroll-area.sop-magnetic-scroll > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{border-radius:50%;background:radial-gradient(circle at 30% 20%,#e6f6f4,#819fa6 15%,#213d4c 36%,#081c29 68%,#8abed24f 82%);box-shadow:inset -2px -2px 2px #b5efec97,0 4px 5px #000b,0 0 8px #52daed4d;transform:scale(1.14)}
+
+.sop-scroll-area.sop-magnetic-scroll[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-ticks{display:none}

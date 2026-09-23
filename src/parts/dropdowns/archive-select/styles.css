@@ -1,5 +1,25 @@
-@import "../../../shared/select-base.css";
-/* Archive Select — FILE / REFERENCE. Type A. */
-.sop-select.sop-archive-select{--sel-bg:#ded7c7;--sel-panel:#ebe5d7;--sel-ink:#44433a;--sel-muted:#81806e;--sel-accent:#77785a;--sel-line:#bdb69f;--sel-radius:3px;}
-.sop-select.sop-archive-select .sop-select-trigger{border-top:4px solid #99947d}.sop-select.sop-archive-select .sop-select-icon{width:35px;height:29px;border-radius:1px;background:#aaa38b;color:#fff8df;border:0;margin-top:4px;overflow:visible}.sop-select.sop-archive-select .sop-select-icon:before{content:"";position:absolute;left:0;top:-5px;width:17px;height:6px;background:inherit;border-radius:3px 4px 0 0}
-.sop-select.sop-archive-select .sop-select-option{border-radius:0;border-bottom:1px solid #bdb69f55}.sop-select.sop-archive-select .sop-select-option-copy b{font-family:Georgia,serif;font-size:17px}.sop-select.sop-archive-select .sop-select-group{background:#d6cfbb66}
+@import "../../../shared/select-sculpted.css";
+/* archive-select — field, icon, list and option art direction. v4.2.0 */
+
+.sop-select.sop-archive-select{--sel-bg:#e5dec9;--sel-panel:#f0ead9;--sel-ink:#383d36;--sel-muted:#7d806d;--sel-accent:#6b7658;--sel-dark:#f7efd5;--sel-line:#9ca28473;--sel-radius:3px;}
+.sop-select.sop-archive-select > .sop-select-trigger{border-radius:3px;box-shadow:inset 0 1px #fff9e2,0 3px 0 #b9b197,0 6px 0 #797863,0 16px 22px #0007;padding-left:20px;border:1px solid #cdc4a3;}
+.sop-select.sop-archive-select > .sop-select-trigger::before{inset:0 auto 0 0;width:7px;background:linear-gradient(90deg,#526b59,#849276 40%,#506557 76%);box-shadow:1px 0 #fff8d780;}
+.sop-select.sop-archive-select > .sop-select-trigger::after{inset:7px 8px 7px 14px;border:1px solid #adac8a62;background:repeating-linear-gradient(0deg,transparent 0 21px,#9b9e7a13 21px 22px);}
+.sop-select.sop-archive-select .sop-select-value .sop-select-option-copy b{font:23px/1.2 Georgia,serif;letter-spacing:-.8px;}
+.sop-select.sop-archive-select .sop-select-icon{border-radius:1px;background:#e1dcc0;border:1px solid #8d947382;box-shadow:inset 0 0 0 3px #f6efd3,0 3px 2px #6a73532e;color:#68704e;font:bold 12px Consolas,monospace;}
+.sop-select.sop-archive-select .sop-select-icon::before{inset:5px;border:1px solid #8d946e58;}
+.sop-select.sop-archive-select .sop-select-icon::after{inset:8px 7px auto;height:2px;background:repeating-linear-gradient(90deg,#79825e7a 0 1px,transparent 1px 3px);}
+.sop-select.sop-archive-select .sop-select-popup{padding:12px;border-radius:3px;box-shadow:3px 4px 0 #c5baa0,5px 6px 0 #9a9b7e,0 25px 45px #0009;}
+.sop-select.sop-archive-select .sop-select-menu-heading{font-family:Georgia,serif;font-size:16px;color:#56644b;border-bottom:3px double #a3a7879e;}
+.sop-select.sop-archive-select .sop-select-menu-heading small{border:1px solid #93997684;padding:4px;transform:rotate(-3deg);}
+.sop-select.sop-archive-select .sop-select-option{border-radius:1px;border-bottom:1px solid #a4ac863b;}
+.sop-select.sop-archive-select .sop-select-option[aria-selected=true]{background:#ccdbb35e;border:1px solid #839569;box-shadow:inset 3px 0 #6a8054;}
+.sop-select.sop-archive-select .sop-select-check{border-radius:1px;}
+.sop-select.sop-archive-select .sop-select-badge{border-bottom:1px solid #929878;}
+
+@media(prefers-reduced-motion:reduce){.sop-select.sop-archive-select *::before,.sop-select.sop-archive-select *::after{transition:none!important;animation:none!important;}}
+
+.sop-select.sop-archive-select .sop-select-option{padding-block:15px;margin-block:7px;background:linear-gradient(90deg,#d3d9b333,#faf3da5c);box-shadow:0 1px 0 #e6ead97d;}
+.sop-select.sop-archive-select .sop-select-option-copy b{font:17px/1.25 Georgia,serif;}
+.sop-select.sop-archive-select .sop-select-option .sop-select-icon{height:53px;width:39px;}
+.sop-select.sop-archive-select .sop-select-option[aria-selected=true]{box-shadow:inset 4px 0 #667e4b,0 2px 0 #bbc79961;}

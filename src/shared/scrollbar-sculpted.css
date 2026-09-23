@@ -1,0 +1,51 @@
+/* Sculpted rails: an opt-in presentation layer. Native scroll geometry stays authoritative. */
+@import './scrollbar-base.css';
+.sop-scroll-area.sop-scroll-sculpted {
+ --sc-cross:90deg; --sc-along:0deg; --sc-metal: #cad9db;
+ --sop-scroll-gutter:60px; --sop-scroll-width:26px;
+ padding-inline-end:max(var(--sop-scroll-gutter),56px);
+}
+.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail {
+ inline-size:max(var(--sop-scroll-gutter),56px);
+ isolation:isolate;
+}
+.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-track {
+ inset-block:0; overflow:hidden; box-shadow:inset 0 0 6px #000b,0 8px 16px #0008;
+}
+.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-track::before,
+.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-track::after,
+.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-ticks::before,
+.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-ticks::after,
+.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before,
+.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after {
+ content:'';position:absolute;pointer-events:none;box-sizing:border-box;
+}
+.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle {
+ inset-block:2px; --sop-handle-width:34px;
+ box-shadow:inset 1px 1px 1px #ffffff80,inset -1px -1px 1px #000b,0 5px 8px #0009;
+ transition:box-shadow .3s,filter .25s;
+}
+.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip {
+ inset:50% auto auto 50%;width:22px;height:22px;margin:-11px 0 0 -11px;
+}
+.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail > .sop-scroll-cap {
+ width:10px;height:4px;border-radius:1px;
+ background:linear-gradient(100deg,#32434b,#bec8ca 38%,#526773 72%,#23323c);
+ box-shadow:0 1px 2px #0008;z-index:2;
+}
+.sop-scroll-area.sop-scroll-sculpted[data-orientation=horizontal] {
+ --sc-cross:0deg;--sc-along:90deg;padding-inline-end:0;
+ padding-block-end:max(var(--sop-scroll-gutter),56px);
+}
+.sop-scroll-area.sop-scroll-sculpted[data-orientation=horizontal] > .sop-scroll-rail {inline-size:100%;block-size:max(var(--sop-scroll-gutter),56px);}
+.sop-scroll-area.sop-scroll-sculpted[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-track {inset-block:50% auto;}
+.sop-scroll-area.sop-scroll-sculpted[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle {inset-block:50% auto;inset-inline:2px;}
+.sop-scroll-area.sop-scroll-sculpted[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip {rotate:90deg;}
+.sop-scroll-area.sop-scroll-sculpted[data-scrolling=true] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle,
+.sop-scroll-area.sop-scroll-sculpted[data-dragging=true] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle {filter:brightness(1.15) saturate(1.16);}
+@media(prefers-reduced-motion:reduce) {
+ .sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail *,
+ .sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail *::before,
+ .sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail *::after {animation:none!important;transition:none!important;}
+}
+@media(forced-colors:active){.sop-scroll-area.sop-scroll-sculpted{padding:0}.sop-scroll-area.sop-scroll-sculpted > .sop-scroll-rail{display:none}}

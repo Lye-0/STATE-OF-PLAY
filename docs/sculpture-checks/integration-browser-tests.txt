@@ -1,0 +1,38 @@
+
+> state-of-play@4.2.0 test:scrollbars
+> node --experimental-strip-types tests/scrollbars.browser.ts
+
+(node:1870) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS new category intersects A/B and retains all 48 original parts
+PASS all 24 rails use proportional thumbs, real drag, keyboard and stable content movement
+PASS wheel and viewport keyboard remain native; interactive content retains clicks
+PASS detail has scroll controls instead of ON/OFF; track clicking pages the actual content
+PASS short content hides rail; content mutations and resize update metrics
+PASS horizontal orientation and RTL preserve physical endpoint/ARIA alignment
+PASS touch swipe moves native content without requiring the custom rail
+PASS forced colors uses native scrollbars and returns cleanly to the custom rail
+PASS code, guide, prompt and both directory layouts are wired for new parts
+PASS nested scroll areas retain their own skin and orientation
+PASS all 24 cards and detail controls fit at 320/390/768px without page overflow
+PASS 24 static rails stop work at rest and have unique controlled viewport identifiers
+12 scrollbar browser tests passed.
+
+> state-of-play@4.2.0 test:disclosures
+> node --experimental-strip-types tests/disclosures.browser.ts
+
+(node:2319) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS 24 dropdowns: actual options, End/Enter commit, Escape cancellation, no accidental detail dialog
+PASS Dropdown top layer in the detail modal; first Escape closes choices, next closes detail
+PASS 24 accordions: real height transitions, single expand, native buttons and keyboard focus
+PASS Accordion designed interiors remain interactive; multiple expand controls work
+PASS Both new categories at 320 / 390 / 768px: no page overflow, viewport-contained popup and detail controls
+PASS Native select: typeahead, form submission/reset, disabled choice, disabled field and external focus
+PASS Controlled native select refuses commits until setValue; empty choices stay safe
+PASS Accordion controlled refusal, dynamic content height, focus recovery and required-open policy
+PASS Nested accordions keep independent state and unique ids; cleanup leaves no RAF
+PASS Reduced-motion: menus and accordion panels use no animated transition
+React runtime checks NOT RUN: no actual React browser runtime supplied in offline mode.
+Disclosure checks: 10 passed.
+EXIT_CODE:0

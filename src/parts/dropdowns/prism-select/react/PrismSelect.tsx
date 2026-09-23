@@ -5,5 +5,5 @@ import '../styles.css';
 export type {SelectProps,SelectItem} from '../../../../shared/select-view';
 /** 光学フィルターを選ぶ、分光色と透明な切断面のメニュー。 */
 export default function PrismSelect({className='',...props}:SelectProps){
- return <SelectView {...props} className={`sop-prism-select ${className}`}/>;
+ return <SelectView {...props} className={`sop-select-sculpted sop-prism-select ${className}`}/>;
 }

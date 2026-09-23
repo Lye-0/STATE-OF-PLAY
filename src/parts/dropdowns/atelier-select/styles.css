@@ -1,8 +1,36 @@
-@import "../../../shared/select-base.css";
-/* Atelier Select — PIGMENT / PAPER. Type A. */
-.sop-select.sop-atelier-select{--sel-bg:#f1e9db;--sel-panel:#f7f0e4;--sel-ink:#3d3932;--sel-muted:#807a70;--sel-accent:#a76550;--sel-line:#d8ccba;--sel-radius:4px;--sel-shadow:3px 4px 0 #0002;}
-.sop-select.sop-atelier-select .sop-select-icon{border-radius:2px;background:#c87961;color:#fff4df;border:0;box-shadow:2px 2px 0 #c1b49d}
-.sop-select.sop-atelier-select :is(.sop-select-option,.sop-select-value)[data-glyph="1"] .sop-select-icon{background:#91a68a}.sop-select.sop-atelier-select :is(.sop-select-option,.sop-select-value)[data-glyph="2"] .sop-select-icon{background:#546b89}.sop-select.sop-atelier-select :is(.sop-select-option,.sop-select-value)[data-glyph="3"] .sop-select-icon{background:#d8c8aa;color:#65533b}
-.sop-select.sop-atelier-select .sop-select-option{border-radius:0;border-bottom:1px dashed #cfc2ad;padding:15px 12px}
-.sop-select.sop-atelier-select .sop-select-popup{box-shadow:5px 6px 0 #201b1233,0 20px 35px #0004}
-.sop-select.sop-atelier-select .sop-select-option-copy b{font-family:Georgia,serif;font-size:17px}.sop-select.sop-atelier-select .sop-select-badge{font-size:8px}
+@import "../../../shared/select-sculpted.css";
+/* atelier-select — field, icon, list and option art direction. v4.2.0 */
+
+.sop-select.sop-atelier-select{--sel-ink:#3c3632;--sel-muted:#766b60;--sel-accent:#866c54;--sel-dark:#fff4d9;--sel-line:#a3937757;--sel-bg:#e8dfcc;--sel-panel:#eee7d9;--sel-radius:5px;--sel-hover:#d1b89b24;}
+.sop-select.sop-atelier-select > .sop-select-trigger{border-radius:5px;box-shadow:inset 0 1px #fffbe1,inset 0 -4px #bca58b,1px 6px 0 #584b3f,0 17px 25px #0007;}
+.sop-select.sop-atelier-select > .sop-select-trigger::before{inset:5px 5px 8px;border:1px solid #a39a7e55;background:repeating-linear-gradient(0deg,transparent 0 3px,#91795b07 3px 4px);}
+.sop-select.sop-atelier-select > .sop-select-trigger::after{inset:0 0 auto;height:6px;background:linear-gradient(90deg,#568d87 0 25%,#a87d79 25% 50%,#d4ad58 50% 75%,#57778b 75%);}
+.sop-select.sop-atelier-select .sop-select-value .sop-select-option-copy b{font:italic 24px/1.15 Georgia,'Yu Mincho',serif;letter-spacing:-.8px;}
+.sop-select.sop-atelier-select .sop-select-icon{border:none;background:#eee4d2;border-radius:2px;box-shadow:1px 3px 4px #66544448;transform:rotate(-5deg);color:#eee9d1;align-items:flex-end;padding-bottom:7px;font-size:9px;}
+.sop-select.sop-atelier-select .sop-select-icon::before{inset:4px;background:linear-gradient(130deg,#98c0a6,#4a847d 48%,#629c99 54%,#3f7277);clip-path:polygon(5% 3%,28% 7%,50% 0,84% 7%,100% 3%,94% 25%,100% 55%,93% 86%,97% 100%,50% 96%,14% 100%,3% 82%,7% 37%,0 14%);box-shadow:inset 1px 1px #ffffff4d;}
+.sop-select.sop-atelier-select [data-glyph="1"] .sop-select-icon::before{background:linear-gradient(128deg,#cb9b96,#995859 55%,#c57875 58%,#97626d);}
+.sop-select.sop-atelier-select [data-glyph="2"] .sop-select-icon::before{background:linear-gradient(130deg,#e3c87e,#b38a47 46%,#dcc26c 50%,#bea654);}
+.sop-select.sop-atelier-select [data-glyph="3"] .sop-select-icon::before{background:linear-gradient(128deg,#abc1c8,#4b7187 40%,#98b6bd 48%,#526c88);}
+.sop-select.sop-atelier-select .sop-select-icon::after{inset:6px;opacity:.45;background:repeating-linear-gradient(160deg,transparent 0 3px,#f5ffe722 3px 4px);}
+.sop-select.sop-atelier-select .sop-select-popup{border-radius:5px;box-shadow:inset 0 1px #fff8e6,3px 4px 0 #c5b497,5px 6px 0 #ac9a82,0 20px 40px #0008;}
+.sop-select.sop-atelier-select .sop-select-menu-heading{color:#756247;border-bottom:1px solid #aa98735e;padding-inline:12px;}
+.sop-select.sop-atelier-select .sop-select-menu-heading>span{font:italic 16px/1.3 Georgia,serif;}
+.sop-select.sop-atelier-select .sop-select-menu-heading small{padding:4px;border:1px solid #ad9d8378;rotate:4deg;}
+.sop-select.sop-atelier-select .sop-select-option{border-radius:3px;background:#faf4e729;border-bottom:1px solid #beaf9659;}
+.sop-select.sop-atelier-select .sop-select-option[aria-selected=true]{background:#d9cdad38;border-color:#a6936a;box-shadow:inset 0 0 0 2px #fff8e77a,2px 3px 0 #b9a68347;}
+.sop-select.sop-atelier-select .sop-select-option[data-active=true] .sop-select-icon{transform:rotate(3deg) translateY(-1px);}
+.sop-select.sop-atelier-select .sop-select-check{border-radius:2px;transform:rotate(-5deg);}
+.sop-select.sop-atelier-select .sop-select-badge{color:#756851;letter-spacing:.4px;}
+
+@media(prefers-reduced-motion:reduce){.sop-select.sop-atelier-select *::before,.sop-select.sop-atelier-select *::after{transition:none!important;animation:none!important;}}
+
+/* Pigment cards: the supplied palette colours, not arbitrary hue rotations. */
+.sop-select.sop-atelier-select .sop-select-icon::before{background:linear-gradient(137deg,#dfa586,#aa604d 43%,#d68e72 46%,#a86e64);}
+.sop-select.sop-atelier-select [data-glyph="1"] .sop-select-icon::before{background:linear-gradient(134deg,#aac2a3,#708c75 44%,#a3b897 48%,#6b927d);}
+.sop-select.sop-atelier-select [data-glyph="2"] .sop-select-icon::before{background:linear-gradient(134deg,#aac8d6,#4e6f85 44%,#8cafbc 50%,#557986);}
+.sop-select.sop-atelier-select [data-glyph="3"] .sop-select-icon::before{background:linear-gradient(134deg,#e8d9b7,#baa486 44%,#e0ccb2 51%,#bbac8a);}
+.sop-select.sop-atelier-select .sop-select-option{margin-block:7px;background:#fffaea4f;box-shadow:1px 2px 1px #b5a48552;padding-block:14px;}
+.sop-select.sop-atelier-select .sop-select-option .sop-select-icon{width:51px;height:52px;}
+.sop-select.sop-atelier-select .sop-select-option-copy b{font-family:Georgia,serif;font-size:17px;font-style:italic;}
+.sop-select.sop-atelier-select .sop-select-badge{color:#79674d;font-size:7px;}
+.sop-select.sop-atelier-select .sop-select-menu-heading{min-height:72px;border-bottom:3px double #ab947759;}

@@ -5,5 +5,5 @@ import '../styles.css';
 export type {SelectProps,SelectItem} from '../../../../shared/select-view';
 /** 炭色の面に灯る暖色の状態。焙煎の深さを選ぶ火のパネル。 */
 export default function EmberSelect({className='',...props}:SelectProps){
- return <SelectView {...props} className={`sop-ember-select ${className}`}/>;
+ return <SelectView {...props} className={`sop-select-sculpted sop-ember-select ${className}`}/>;
 }

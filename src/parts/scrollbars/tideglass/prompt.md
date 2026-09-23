@@ -1,28 +1,41 @@
-# Tideglass — 再現仕様
+# Tideglass — 造形仕様 v2.0.0（STATE OF PLAY v4.2.0）
 
-深い青の管と、水面を思わせる淡いガラスのレンズ。
+海を閉じ込めたフロート。液面の光とレンズの輪が、読み進める距離に追従する。
 
-タイプA: 素材・輪郭・光・つまみの固有形状を保つ。単なる単色の丸棒へ置換しない。
+タイプA。素材と形そのものを表現する。既存のトグルなどは完成度の基準であり、別部品の造形をそのまま移植する指示ではない。
 
-## 固有の外観
-レールの素材は WATER / LEVEL。形状と色、陰影はstyles.cssの値を正本にする。つまみはスクロール量に比例して長さが変わる設計なので固定長へ変更しない。
-## 操作と構造を維持
-ネイティブのoverflowとscrollTop/scrollLeftを状態の正本にする。ホイールやタッチを横取りせず、偽の慣性スクロールを実装しない。内容に対するviewport比率からつまみの長さを決め、scrollと連動する。ドラッグ、トラッククリック、矢印・PageUp/PageDown・Space/Shift+Space・Home/Endを維持する。横方向とRTLにも対応する。
+## 形と動きの設計
+装飾レール、比例するつまみ、その内側のハンドル、グリップ、端の口金を分離する。レール・つまみの素材を一組として再現し、色だけの細い丸棒へ置き換えない。光沢と影は静止時にも形が分かる強さに保つ。見た目のハンドルとドラッグ領域を分離し、装飾にはpointer-events:noneを適用する。
 
-## 導入時の条件
-ページ全体やbodyのスクロールバーを置換しない。選んだ領域をこのコンポーネントで包む。高さに制約が必要。装飾レールは役割scrollbar、aria-controls、aria-valuenowを持ち、viewportにも名前とキーボードフォーカスを提供する。中身はchildren/スロットとして受け取る。デモ文章を本体に固定しない。
+レールの占有幅は最低56px。つまみの占有長は表示領域と内容全体の比率から求める。小さなグリップや結晶の寸法と、スクロール位置を示す比例つまみの長さを混同しない。縦・横では光の向きと装飾の軸をCSS変数で切り替える。
 
-## 後片付けとフォールバック
-イベントとObserver、予約済みRAF、idleタイマーをdestroyで解除する。毎フレームの常時描画はしない。動きを減らす設定を尊重し、強制カラー時は標準スクロールバーへ戻す。JavaScript初期化前も内容は標準のoverflowで読める。内容が短いときは不要なレールを表示しない。リサイズ・動的コンテンツ・画像の読み込みにも長さを追従させる。
+## 操作と構造
+ネイティブoverflowとscrollTop/scrollLeftを正本とし、ホイールやタッチのスクロールを横取りしない。ドラッグ、レールのページ移動、矢印、PageUp/PageDown、Space/Shift+Space、Home/Endを維持する。方向はvertical/horizontal、RTLも扱う。スクロール位置を--sop-scroll-progressへ同期するが、装飾用に偽の位置を作らない。
 
-## 固有スタイル（設計値）
+## 導入と後片付け
+ページ全体のバーを変更せず、内容領域をラッパーで包む。children/スロットには利用先の内容を入れ、サンプル文章を固定しない。領域の高さと長い内容を用意し、短い内容ではレールを隠す。サイズと内容の変化へ追従し、aria-controls・aria-valuenowと識別子を個体ごとに維持する。destroy時にイベント、Observer、予約済みRAFを解除する。毎フレームの常時描画処理を追加しない。強制カラー時は標準スクロールバーへ戻す。
+
+## 必要なソースと配置
+`styles.css`、`scrollbar-sculpted.css`、そこから参照するベースCSSを揃える。ルートの`sop-scroll-sculpted`と`.sop-tideglass`を維持する。配布側のファイル見出しは参照元のパスであり、導入先の同じ階層を強制するものではない。利用先の構成と規約を確認して配置し、移動時には相対importとCSSの参照を更新する。既存コードを無条件に上書きしない。プロジェクトが見えない場合は必要な構成を確認する。
+
+## 確認基準
+単独の表示と他のスキンを混在させた表示が一致すること。通常・操作中・無効・キーボードフォーカス・320px幅・長い日本語・prefers-reduced-motion・forced-colorsを確認する。外観変更を理由に入力の標準操作、状態管理、外部制御を省略しない。
+
+## 固有スタイル（正本と同期）
+次はこの部品の`styles.css`と同一の内容。共有の寸法と操作状態のスタイルは`scrollbar-sculpted.css`も必要。コード込みの実装プロンプトには必要な全ファイルが含まれる。
+
 ```css
-/* Tideglass — WATER / LEVEL / A */
+@import "../../../shared/scrollbar-sculpted.css";
+/* tideglass — sculpted, component-local rail. v4.2.0 */
 
-.sop-scroll-area.sop-tideglass{--sop-scroll-width:24px;--sop-scroll-radius:24px;--sop-scroll-accent:#9adcea;--sop-scroll-thumb:#9edbe3;--sop-scroll-track:#182631}
-.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-track{background:linear-gradient(90deg,#18252f,#2b506482 35%,#091923 65%,#7cb3c751);border:1px solid #abd9e254;box-shadow:inset 0 0 8px #619ebc44}
-.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{opacity:.68;background:linear-gradient(#58a6c85e,#7bd4dd);border-radius:30%;filter:blur(2px)}
-.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:32px;background:radial-gradient(ellipse at 35% 18%,#f0ffffbd,transparent 35%),linear-gradient(130deg,#66a7c0a3,#b2eced96 52%,#24637b80);border:1px solid #b6ecedd4;box-shadow:inset 2px 2px 5px #dfffff99,inset -2px -2px 5px #9fd8ed78,1px 4px 9px #0007;border-radius:48% 48% 45% 45%}
-.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{inset:7px 6px;border:1px solid #defdff6b;border-radius:50%}
-.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-ticks{background:repeating-linear-gradient(0deg,transparent 0 23px,#afd7e154 23px 24px);clip-path:inset(0 1px 0 80%)}
+.sop-scroll-area.sop-tideglass{--sop-scroll-width:29px;--sop-scroll-radius:20px;--sop-scroll-accent:#88d9eb}
+.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-track{background:linear-gradient(var(--sc-cross),#82d7dd66,#102b40 25%,#12212f 72%,#b9eaf35c);border:1px solid #a1d3e58a;box-shadow:inset 0 0 0 3px #183b504f,0 8px 14px #0009}
+.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-track::before{inset:5px;border-radius:15px;border-inline:1px solid #d1f9f335;background:repeating-linear-gradient(160deg,transparent 0 27px,#b8dcec3c 27px 28px,transparent 28px 53px)}
+.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{opacity:1;inset:4px;background:linear-gradient(var(--sc-along),#a4e9f24d,#1e7798 75%,#baedf1 99%);border-radius:20px;box-shadow:0 0 13px #8fc7ed36}
+.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:43px;border-radius:23px;background:linear-gradient(var(--sc-cross),#dbf6f59e,#225a7470 18%,#4388a477 65%,#c7f8f0b8);border:1px solid #c3f4f3ab;box-shadow:inset 2px 0 1px #f6fff7,inset -2px -1px 3px #96e7e8,0 6px 10px #0009}
+.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{inset:5px;border-radius:20px;border-block:2px solid #ddfbf59c;background:radial-gradient(ellipse at 50% 95%,#c9faf795,transparent 42%)}
+.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{inset-block:48% auto;inset-inline:5px;block-size:7px;border-radius:50%;border-block-start:1px solid #efffffbd;background:#b1ecde24;transform:rotate(-10deg)}
+.sop-scroll-area.sop-tideglass > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{border-radius:50%;border:1px solid #d6ffff5e;background:radial-gradient(circle at 32% 22%,#e4ffffd1,transparent 23%),radial-gradient(circle at 40% 35%,#6ee6d166,#3983a36b 55%,#153749);box-shadow:inset 0 0 4px #cbffff9c;transform:scale(.76)}
+
+.sop-scroll-area.sop-tideglass[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-ticks{display:none}
 ```

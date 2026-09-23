@@ -1,0 +1,84 @@
+/* Opt-in sculpted selects. No changes to the select controller or B skins. */
+@import './select-base.css';
+.sop-select.sop-select-sculpted {
+ --sel-radius:18px;--sel-line:#acbdc345;--sel-muted:#aebdc2;--sel-accent:#cee8df;
+ --ds-angle:145deg;--ds-tilt:0deg;
+}
+.sop-select.sop-select-sculpted > .sop-select-caption {font-size:9px;letter-spacing:1.25px;margin:0 4px 12px;line-height:1.65;}
+.sop-select.sop-select-sculpted > .sop-select-trigger {
+ min-height:102px;gap:12px;padding:16px 17px;border:1px solid var(--sel-line);overflow:hidden;
+ box-shadow:0 15px 24px #0007,inset 0 1px #ffffff29,inset 0 -1px #0008;
+}
+.sop-select.sop-select-sculpted > .sop-select-trigger::before,
+.sop-select.sop-select-sculpted > .sop-select-trigger::after,
+.sop-select.sop-select-sculpted .sop-select-menu-heading::before,
+.sop-select.sop-select-sculpted .sop-select-menu-heading::after,
+.sop-select.sop-select-sculpted .sop-select-icon::before,
+.sop-select.sop-select-sculpted .sop-select-icon::after {content:'';position:absolute;box-sizing:border-box;pointer-events:none;}
+.sop-select.sop-select-sculpted > .sop-select-trigger::before,
+.sop-select.sop-select-sculpted > .sop-select-trigger::after {z-index:-1;}
+.sop-select.sop-select-sculpted .sop-select-value {gap:14px;}
+.sop-select.sop-select-sculpted .sop-select-value .sop-select-option-copy b {font-size:18px;font-weight:400;letter-spacing:-.45px;line-height:1.25;}
+.sop-select.sop-select-sculpted .sop-select-value .sop-select-option-copy small {font-size:10px;line-height:1.6;margin-top:6px;}
+.sop-select.sop-select-sculpted .sop-select-icon {
+ width:50px;height:50px;border-radius:12px;flex:none;isolation:isolate;
+ font:10px/1 Consolas,monospace;letter-spacing:.5px;
+ box-shadow:inset 0 1px #ffffff40,0 3px 6px #0004;
+ transition:box-shadow .35s,filter .35s,transform .45s;
+}
+.sop-select.sop-select-sculpted .sop-select-icon::before {z-index:-1;}
+.sop-select.sop-select-sculpted .sop-select-icon::after {z-index:-1;}
+.sop-select.sop-select-sculpted .sop-select-chevron {
+ width:28px;height:28px;position:relative;border:1px solid var(--sel-line);border-radius:50%;
+ transform:none;background:#ffffff04;box-shadow:inset 0 1px #ffffff14;
+}
+.sop-select.sop-select-sculpted .sop-select-chevron::after {
+ content:'';position:absolute;width:6px;height:6px;top:8px;left:10px;
+ border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);
+ color:var(--sel-accent);transition:transform .4s;
+}
+.sop-select.sop-select-sculpted[data-open=true] .sop-select-chevron{transform:none;}
+.sop-select.sop-select-sculpted[data-open=true] .sop-select-chevron::after {transform:translateY(3px) rotate(225deg);}
+.sop-select.sop-select-sculpted .sop-select-popup {
+ padding:10px;box-shadow:0 26px 65px #0009,inset 0 1px #ffffff21;
+ border-color:var(--sel-line);animation:sop-sculpted-menu .32s cubic-bezier(.2,.8,.2,1);
+}
+.sop-select.sop-select-sculpted .sop-select-menu-heading {
+ position:relative;isolation:isolate;min-height:64px;margin:0 0 8px;padding:12px 12px 17px;
+ font:10px/1.7 Consolas,'Yu Gothic',monospace;letter-spacing:.6px;
+}
+.sop-select.sop-select-sculpted .sop-select-menu-heading>span {max-width:75%;}
+.sop-select.sop-select-sculpted .sop-select-menu-heading small {font-size:8px;letter-spacing:.5px;}
+.sop-select.sop-select-sculpted .sop-select-option {
+ min-height:76px;gap:10px;padding:12px 10px;margin:3px 0;border-radius:12px;
+ transition:background .25s,box-shadow .25s,border-color .25s;
+}
+.sop-select.sop-select-sculpted .sop-select-option-copy b {font-size:14px;letter-spacing:-.2px;}
+.sop-select.sop-select-sculpted .sop-select-option-copy small {font-size:10px;}
+.sop-select.sop-select-sculpted .sop-select-option .sop-select-icon {width:44px;height:44px;}
+.sop-select.sop-select-sculpted .sop-select-badge {font-size:8px;max-width:60px;white-space:normal;overflow-wrap:anywhere;line-height:1.6;}
+.sop-select.sop-select-sculpted .sop-select-check {font-size:10px;width:17px;height:17px;display:grid;place-items:center;border-radius:50%;background:var(--sel-accent);color:var(--sel-dark,#172126);box-shadow:0 1px 3px #0005;}
+.sop-select.sop-select-sculpted .sop-select-option[aria-selected=true] {border-color:var(--sel-line);box-shadow:inset 0 1px #ffffff0d;}
+.sop-select.sop-select-sculpted .sop-select-option[data-active=true] {outline:1px solid var(--sel-accent);outline-offset:-1px;}
+.sop-select.sop-select-sculpted .sop-select-option[aria-disabled=true] {filter:grayscale(.65);opacity:.42;}
+.sop-select.sop-select-sculpted .sop-select-menu-footer {margin-top:12px;padding-bottom:8px;justify-content:space-between;gap:8px;letter-spacing:.2px;}
+.sop-select.sop-select-sculpted .sop-select-group {font-size:9px;padding-top:16px;}
+@keyframes sop-sculpted-menu {from{opacity:0;translate:0 -8px}to{opacity:1;translate:0 0}}
+@media(max-width:420px){
+ .sop-select.sop-select-sculpted > .sop-select-trigger{padding:13px 12px;gap:9px;min-height:94px;}
+ .sop-select.sop-select-sculpted .sop-select-value{gap:10px;}
+ .sop-select.sop-select-sculpted .sop-select-value .sop-select-option-copy b{font-size:16px;}
+ .sop-select.sop-select-sculpted .sop-select-icon{width:44px;height:44px;}
+ .sop-select.sop-select-sculpted .sop-select-popup{padding:8px;}
+ .sop-select.sop-select-sculpted .sop-select-option{gap:8px;padding-inline:8px;}
+ .sop-select.sop-select-sculpted .sop-select-badge{max-width:47px;font-size:7px;}
+}
+@media(prefers-reduced-motion:reduce){
+ .sop-select.sop-select-sculpted *, .sop-select.sop-select-sculpted *::before, .sop-select.sop-select-sculpted *::after{animation:none!important;transition:none!important;}
+}
+@media(forced-colors:active){
+ .sop-select.sop-select-sculpted .sop-select-trigger,.sop-select.sop-select-sculpted .sop-select-popup{background:Canvas;color:CanvasText;border-color:ButtonText;box-shadow:none;}
+ .sop-select.sop-select-sculpted .sop-select-option[aria-selected=true]{outline:2px solid Highlight;outline-offset:-3px;}
+ .sop-select.sop-select-sculpted .sop-select-check{color:HighlightText;background:Highlight;forced-color-adjust:none;}
+ .sop-select.sop-select-sculpted .sop-select-icon::before,.sop-select.sop-select-sculpted .sop-select-icon::after{display:none}
+}

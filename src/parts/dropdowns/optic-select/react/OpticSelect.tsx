@@ -5,5 +5,5 @@ import '../styles.css';
 export type {SelectProps,SelectItem} from '../../../../shared/select-view';
 /** レンズのリングと精密な目盛り。撮影モードを選ぶ光学機器のようなUI。 */
 export default function OpticSelect({className='',...props}:SelectProps){
- return <SelectView {...props} className={`sop-optic-select ${className}`}/>;
+ return <SelectView {...props} className={`sop-select-sculpted sop-optic-select ${className}`}/>;
 }

@@ -1,6 +1,6 @@
 # Ceramic Select
 
-磁器の縁と青い印。器を選ぶような、白くつややかなメニュー。
+白い磁器に焼き込まれた選択欄。釉薬の丸みと、押し込まれた印をもつ色付きの石。
 
 ## 選択肢の差し替え
 Reactではitems配列へvalue/label/description/icon/badgeを渡します。Vanillaではmarkup.html内のdata-valueと表示内容を編集し、init(root)します。動的にDOMの選択肢を変更した後はcontroller.refresh()を呼びます。
@@ -16,3 +16,7 @@ Popover API対応環境ではtop layerへ表示し、overflow:hiddenの展示カ
 
 ## 内容と安全性
 選択肢の文字はReact/DOMテキストとして描画します。アプリのHTMLを信頼せず挿入しないでください。renderOptionは非対話の装飾用です。複数配置では識別子を分離します。取り外し時はdestroy()で監視・イベント・開いたポップアップを解除します。
+
+## Aタイプの造形スタイル（v2.0.0）
+`select-sculpted.css`を共有ベースとして使用します。ZIPとコード込みプロンプトには依存CSSを同梱します。`sop-select-sculpted`はAタイプ専用のクラスです。BタイプのCSSやコントローラーへ直接追加しないでください。
+素材の造形と文字・選択値を分離しているため、ラベルや内容を変更しても同じ外観を利用できます。動きを減らす設定では装飾トランジションを止めます。機能のAPIは以前と同じです。

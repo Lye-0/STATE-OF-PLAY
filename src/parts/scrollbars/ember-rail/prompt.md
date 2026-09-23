@@ -1,28 +1,41 @@
-# Ember Rail — 再現仕様
+# Ember Rail — 造形仕様 v2.0.0（STATE OF PLAY v4.2.0）
 
-炭のような黒い軌道に、橙色の熱がともる。
+鋳鉄の冷たい外殻と、奥で熱を帯びる炉。スリットから漏れる光と耐熱キー。
 
-タイプA: 素材・輪郭・光・つまみの固有形状を保つ。単なる単色の丸棒へ置換しない。
+タイプA。素材と形そのものを表現する。既存のトグルなどは完成度の基準であり、別部品の造形をそのまま移植する指示ではない。
 
-## 固有の外観
-レールの素材は CARBON / HEAT。形状と色、陰影はstyles.cssの値を正本にする。つまみはスクロール量に比例して長さが変わる設計なので固定長へ変更しない。
-## 操作と構造を維持
-ネイティブのoverflowとscrollTop/scrollLeftを状態の正本にする。ホイールやタッチを横取りせず、偽の慣性スクロールを実装しない。内容に対するviewport比率からつまみの長さを決め、scrollと連動する。ドラッグ、トラッククリック、矢印・PageUp/PageDown・Space/Shift+Space・Home/Endを維持する。横方向とRTLにも対応する。
+## 形と動きの設計
+装飾レール、比例するつまみ、その内側のハンドル、グリップ、端の口金を分離する。レール・つまみの素材を一組として再現し、色だけの細い丸棒へ置き換えない。光沢と影は静止時にも形が分かる強さに保つ。見た目のハンドルとドラッグ領域を分離し、装飾にはpointer-events:noneを適用する。
 
-## 導入時の条件
-ページ全体やbodyのスクロールバーを置換しない。選んだ領域をこのコンポーネントで包む。高さに制約が必要。装飾レールは役割scrollbar、aria-controls、aria-valuenowを持ち、viewportにも名前とキーボードフォーカスを提供する。中身はchildren/スロットとして受け取る。デモ文章を本体に固定しない。
+レールの占有幅は最低56px。つまみの占有長は表示領域と内容全体の比率から求める。小さなグリップや結晶の寸法と、スクロール位置を示す比例つまみの長さを混同しない。縦・横では光の向きと装飾の軸をCSS変数で切り替える。
 
-## 後片付けとフォールバック
-イベントとObserver、予約済みRAF、idleタイマーをdestroyで解除する。毎フレームの常時描画はしない。動きを減らす設定を尊重し、強制カラー時は標準スクロールバーへ戻す。JavaScript初期化前も内容は標準のoverflowで読める。内容が短いときは不要なレールを表示しない。リサイズ・動的コンテンツ・画像の読み込みにも長さを追従させる。
+## 操作と構造
+ネイティブoverflowとscrollTop/scrollLeftを正本とし、ホイールやタッチのスクロールを横取りしない。ドラッグ、レールのページ移動、矢印、PageUp/PageDown、Space/Shift+Space、Home/Endを維持する。方向はvertical/horizontal、RTLも扱う。スクロール位置を--sop-scroll-progressへ同期するが、装飾用に偽の位置を作らない。
 
-## 固有スタイル（設計値）
+## 導入と後片付け
+ページ全体のバーを変更せず、内容領域をラッパーで包む。children/スロットには利用先の内容を入れ、サンプル文章を固定しない。領域の高さと長い内容を用意し、短い内容ではレールを隠す。サイズと内容の変化へ追従し、aria-controls・aria-valuenowと識別子を個体ごとに維持する。destroy時にイベント、Observer、予約済みRAFを解除する。毎フレームの常時描画処理を追加しない。強制カラー時は標準スクロールバーへ戻す。
+
+## 必要なソースと配置
+`styles.css`、`scrollbar-sculpted.css`、そこから参照するベースCSSを揃える。ルートの`sop-scroll-sculpted`と`.sop-ember-rail`を維持する。配布側のファイル見出しは参照元のパスであり、導入先の同じ階層を強制するものではない。利用先の構成と規約を確認して配置し、移動時には相対importとCSSの参照を更新する。既存コードを無条件に上書きしない。プロジェクトが見えない場合は必要な構成を確認する。
+
+## 確認基準
+単独の表示と他のスキンを混在させた表示が一致すること。通常・操作中・無効・キーボードフォーカス・320px幅・長い日本語・prefers-reduced-motion・forced-colorsを確認する。外観変更を理由に入力の標準操作、状態管理、外部制御を省略しない。
+
+## 固有スタイル（正本と同期）
+次はこの部品の`styles.css`と同一の内容。共有の寸法と操作状態のスタイルは`scrollbar-sculpted.css`も必要。コード込みの実装プロンプトには必要な全ファイルが含まれる。
+
 ```css
-/* Ember Rail — CARBON / HEAT / A */
+@import "../../../shared/scrollbar-sculpted.css";
+/* ember-rail — sculpted, component-local rail. v4.2.0 */
 
-.sop-scroll-area.sop-ember-rail{--sop-scroll-width:18px;--sop-scroll-radius:6px;--sop-scroll-accent:#ffc682;--sop-scroll-thumb:#9c4d2f;--sop-scroll-track:#1e1b1a}
-.sop-scroll-area.sop-ember-rail > .sop-scroll-rail > .sop-scroll-track{background:repeating-linear-gradient(-30deg,#15191b 0 3px,#333035 3px 4px);border:1px solid #4a3930;box-shadow:inset 1px 0 4px #000}
-.sop-scroll-area.sop-ember-rail > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{opacity:.7;background:linear-gradient(#e6552533,#dc6735 78%,#ffddaa);box-shadow:0 0 10px #ff713b}
-.sop-scroll-area.sop-ember-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:27px;background:linear-gradient(100deg,#65433b,#24282a 40%,#4f4140 75%,#7d4939);border:1px solid #a3765544;box-shadow:0 5px 9px #000b;border-radius:4px}
-.sop-scroll-area.sop-ember-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{inset:7px 5px;background:repeating-linear-gradient(0deg,transparent 0 6px,#fd904c 6px 8px);filter:drop-shadow(0 0 3px #fd6525)}
-.sop-scroll-area.sop-ember-rail[data-scrolling=true] > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{box-shadow:0 0 18px #ff723e55,0 4px 6px #0009}
+.sop-scroll-area.sop-ember-rail{--sop-scroll-width:29px;--sop-scroll-radius:4px;--sop-scroll-accent:#ffb477}
+.sop-scroll-area.sop-ember-rail > .sop-scroll-rail > .sop-scroll-track{background:repeating-linear-gradient(var(--sc-along),#091015 0 4px,#5c2b1f 4px 5px,#11181d 5px 12px);border:1px solid #6a625260;box-shadow:inset 0 0 0 3px #080d11,0 5px 12px #000b}
+.sop-scroll-area.sop-ember-rail > .sop-scroll-rail > .sop-scroll-track::before{inset:6px 8px;background:repeating-linear-gradient(var(--sc-along),transparent 0 6px,#ff933659 6px 8px);box-shadow:0 0 14px #e8541626}
+.sop-scroll-area.sop-ember-rail > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{background:linear-gradient(var(--sc-along),#4e1e1299,#eb611a 85%,#ffe3a9);opacity:.9;inset:7px;box-shadow:0 0 10px #ff521659}
+.sop-scroll-area.sop-ember-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:41px;border-radius:6px;border:1px solid #7d6f6099;background:linear-gradient(120deg,#59574f,#232c2d 30%,#152126 67%,#514e46);box-shadow:inset 1px 1px #a3917585,inset 0 -2px #000a,0 5px 10px #000b}
+.sop-scroll-area.sop-ember-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{inset:5px;border:1px solid #03090c;border-radius:3px;background:repeating-linear-gradient(var(--sc-along),#283131 0 3px,#070c10 3px 4px);box-shadow:inset 0 0 5px #0009}
+.sop-scroll-area.sop-ember-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{inset-block:3px;inset-inline:7px;border-block:2px solid #ffb368;box-shadow:0 1px 7px #f96d3359}
+.sop-scroll-area.sop-ember-rail > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{z-index:1;clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);background:radial-gradient(circle at 30% 20%,#ffecb7,#dc7135 45%,#2c1c17 79%);box-shadow:inset 0 0 4px #fff5}
+
+.sop-scroll-area.sop-ember-rail[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-ticks{display:none}
 ```

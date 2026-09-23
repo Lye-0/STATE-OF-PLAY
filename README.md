@@ -1,10 +1,16 @@
 # STATE OF PLAY — UI & Motion Library
 
-**v4.1.0 / 25カテゴリ・564パーツ**。触って選び、ソースと意図を自分の開発へ持ち出すUIパーツ集です。
+**v4.2.0 / 25カテゴリ・564パーツ**。触って選び、ソースと意図を自分の開発へ持ち出すUIパーツ集です。
 表現と素材感を重視するAタイプと、落ち着いた実用的なBタイプを収録しています。
 
 > ベースとなるv4.0.0は、未保存だった追加分をv3.8.0から再実装した版です。以前の未保存ソースと同一ではありません。
 > 既存280パーツの本体は維持しています。経緯と照合は [RECOVERY.md](docs/RECOVERY.md) を参照してください。
+
+## v4.2.0の変更
+
+スクロールバー16種類・プルダウン16種類の**Aタイプ**を造形から改修しました。ガラス管、切削金属、ケーブル、フィルム、レンズ鏡筒、顔料見本、布、切符など、レールや選択面そのものを素材として表現します。Bタイプと他カテゴリの532パーツは維持しています。
+
+配布ソースとAI用プロンプトも更新しました。詳細は [SCULPTED-SCROLL-SELECT.md](docs/SCULPTED-SCROLL-SELECT.md)、今回の確認範囲は [SCULPTURE-VERIFICATION.md](docs/SCULPTURE-VERIFICATION.md) を参照してください。
 
 ## v4.1.0の変更
 
@@ -36,7 +42,7 @@ npm run package
 
 `verify` は全体の型チェック・単体テスト・実Viteビルド・各ブラウザー検証を実行します。
 `package` はリポジトリ全体を `release/` に出力し、CRC・SHA-256を照合します。
-今回のテスト範囲は [ATELIER-VERIFICATION.md](docs/ATELIER-VERIFICATION.md) を確認してください。従来版の記録は [FINAL-VERIFICATION.md](docs/FINAL-VERIFICATION.md) に残しています。
+今回のテスト範囲は [SCULPTURE-VERIFICATION.md](docs/SCULPTURE-VERIFICATION.md) を確認してください。v4.1の記録は [ATELIER-VERIFICATION.md](docs/ATELIER-VERIFICATION.md) にあります。従来版の記録は [FINAL-VERIFICATION.md](docs/FINAL-VERIFICATION.md) に残しています。
 ネットワーク制約下のオフライン検証は実Vite・指定依存バージョンの検証と区別しています。
 
 ## パーツを持ち出す

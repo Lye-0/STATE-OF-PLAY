@@ -1,9 +1,13 @@
-@import "../../../shared/scrollbar-base.css";
-/* Paper Ribbon — PAPER / BOOKMARK / A */
+@import "../../../shared/scrollbar-sculpted.css";
+/* paper-ribbon — sculpted, component-local rail. v4.2.0 */
 
-.sop-scroll-area.sop-paper-ribbon{--sop-scroll-width:12px;--sop-scroll-radius:0;--sop-scroll-accent:#e8c89f;--sop-scroll-thumb:#e0b78e;--sop-scroll-track:#68584959}
-.sop-scroll-area.sop-paper-ribbon > .sop-scroll-rail > .sop-scroll-track{background:linear-gradient(90deg,#92755b66,#d7ba8f73 40%,#7e69525c);border:1px solid #b69b6955}
-.sop-scroll-area.sop-paper-ribbon > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{background:#d6a574;opacity:.45}
-.sop-scroll-area.sop-paper-ribbon > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:30px;border-radius:0;clip-path:polygon(0 0,82% 0,100% 12%,100% 100%,50% 87%,0 100%);background:linear-gradient(95deg,#bc8c6b,#f4cf9a 46%,#e0b78c 48%,#cca482);box-shadow:inset 2px 0 #fee5b16b}
-.sop-scroll-area.sop-paper-ribbon > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{inset:18% 7px 45%;border-top:1px solid #86624799;border-bottom:1px solid #f9d7aa99;transform:rotate(-8deg)}
-.sop-scroll-area.sop-paper-ribbon > .sop-scroll-rail > .sop-scroll-thumb{filter:drop-shadow(2px 4px 3px #0007)}
+.sop-scroll-area.sop-paper-ribbon{--sop-scroll-width:27px;--sop-scroll-radius:0;--sop-scroll-accent:#edb58b}
+.sop-scroll-area.sop-paper-ribbon > .sop-scroll-rail > .sop-scroll-track{background:repeating-linear-gradient(var(--sc-along),#d59b7250 0 1px,#7d553da1 1px 3px);border-inline:1px solid #cb9d727e;box-shadow:3px 1px 7px #0008}
+.sop-scroll-area.sop-paper-ribbon > .sop-scroll-rail > .sop-scroll-track::before{inset:0;background:linear-gradient(var(--sc-cross),#f6c4905e,#8d573662 42%,#efb58b63 50%,#6745315e);border-inline:3px double #e5b08062}
+.sop-scroll-area.sop-paper-ribbon > .sop-scroll-rail > .sop-scroll-track > .sop-scroll-fill{background:#ffc899;opacity:.22}
+.sop-scroll-area.sop-paper-ribbon > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle{--sop-handle-width:44px;border-radius:0;border:0;clip-path:polygon(0 0,83% 0,100% 12%,100% 100%,50% 87%,0 100%);background:linear-gradient(114deg,#eadbc1,#f8e7cb 42%,#c7a88a 43%,#f6dec0 46%,#edd4b2 84%,#a98163 85%);box-shadow:none;filter:drop-shadow(2px 4px 3px #0008)}
+.sop-scroll-area.sop-paper-ribbon > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::before{inset:6px 6px 12px;border:1px solid #936d4542;}
+.sop-scroll-area.sop-paper-ribbon > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle::after{inset-block:0 auto;inset-inline:auto 0;inline-size:11px;block-size:15px;clip-path:polygon(0 0,100% 100%,0 100%);background:#ba9473;box-shadow:0 3px 3px #0006}
+.sop-scroll-area.sop-paper-ribbon > .sop-scroll-rail > .sop-scroll-thumb > .sop-scroll-handle > .sop-scroll-grip{background:repeating-linear-gradient(0deg,transparent 0 4px,#9b6a4b70 4px 5px);width:18px;height:15px;margin:-9px;transform:rotate(-8deg)}
+
+.sop-scroll-area.sop-paper-ribbon[data-orientation=horizontal] > .sop-scroll-rail > .sop-scroll-ticks{display:none}

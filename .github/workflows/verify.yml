@@ -62,6 +62,8 @@ jobs:
         run: npm run test:foundations:react
       - name: Atelier material isolation and visual-control regressions
         run: npm run test:atelier
+      - name: Sculpted scrollbars and dropdowns (materials, layout and native interactions)
+        run: npm run test:sculpture
       - name: Build full source archive
         run: npm run package
       - name: Save reports on failure
