@@ -1,4 +1,4 @@
-import {mountPagination} from '../../../../shared/foundation/navigation';
+import {mountPagination} from '../../../../shared/foundation/sequence/pagination';
 import type {FoundationConfig, FoundationOptions} from '../../../../shared/foundation/core';
 const config: FoundationConfig = {
   "id": "mercury-pages",

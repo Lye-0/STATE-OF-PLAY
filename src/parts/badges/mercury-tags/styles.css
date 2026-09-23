@@ -1,8 +1,7 @@
-/* Mercury Tags — Type A / Atelier edition.
-   削り出し金属の厚み、ヘアライン、ねじ、ローレット、深い溝と明るい反射面。
-   タグを素材の小さなラベルとして造形。テキスト、件数、選択状態、削除ボタンは装飾と分離。 */
+/* Mercury Tags · SEQUENCE. 研磨面を反射が横切り、選択したタグに金属の奥行きが生まれます。 */
 @import "../../../shared/foundation/base.css";
-@import "../../../shared/foundation/atelier.css";
-@import "../../../shared/foundation/materials/mercury.css";
-/* Component identity remains scoped for independent embedding and source mapping. */
-.sop-foundation.sop-mercury-tags { --ad-edition: 1; }
+@import "../../../shared/foundation/sequence/style.css";
+.sop-foundation.sop-sequence.sop-mercury-tags {
+  --sq-bg: #1e282d; --sq-ink: #e4eeeb; --sq-muted: #b0bdc0;
+  --sq-a: #cedcd9; --sq-b: #9aacb1; --sq-line: color-mix(in srgb,#cedcd9,transparent 66%);
+}

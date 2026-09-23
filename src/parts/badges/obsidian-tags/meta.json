@@ -3,14 +3,14 @@
   "name": "Obsidian Tags",
   "category": "badges",
   "order": 530,
-  "version": "4.1.0",
+  "version": "4.9.0",
   "tagline": "黒の中に、輪郭を。",
-  "description": "タグを素材の小さなラベルとして造形。テキスト、件数、選択状態、削除ボタンは装飾と分離。",
+  "description": "石の面が左右に分かれ、裂け目に淡い光が現れます。",
   "material": "MONOLITH · 10",
-  "motion": "RESPONSE",
+  "motion": "SEQUENCE",
   "accent": "199,205,212",
   "designType": "A",
-  "runtime": "Native DOM + CSS",
+  "runtime": "Native checkbox / button + event-driven SVG",
   "componentName": "ObsidianTags",
   "tags": [
     "タグ／チップ",
@@ -18,36 +18,52 @@
     "Obsidian Tags",
     "Obsidian",
     "A",
-    "Atelier",
     "素材感",
-    "立体造形"
+    "SEQUENCE",
+    "可動面",
+    "interaction"
   ],
   "related": [],
   "props": [
     [
+      "items",
+      "readonly Choice[]",
+      "value・label・任意のbadge/icon/disabledを持つタグの配列。"
+    ],
+    [
       "value / defaultValue",
-      "FoundationValue",
-      "外部制御値／内部制御の初期値。"
+      "string[]",
+      "選択中のタグ。複数選択の値と表示項目を分けて管理。"
     ],
     [
-      "onValueChange",
-      "(value) => void",
-      "React版の値変更通知。通常DOM版はonDataChange。"
-    ],
-    [
-      "disabled",
+      "selectable / removable",
       "boolean",
-      "操作を無効にする。"
+      "チェック式の複数選択／独立した削除ボタン。両方の同時使用も可能。"
+    ],
+    [
+      "onValueChange / onDataChange",
+      "(values) => void",
+      "React／通常DOMでの選択変更要求。"
+    ],
+    [
+      "onAction",
+      "(value?: string) => void",
+      "削除要求。外部制御時は親がitemsを更新したときだけ削除。"
+    ],
+    [
+      "name",
+      "string",
+      "選択可能なタグをフォームへ渡す際の名前。"
+    ],
+    [
+      "disabled / readOnly / paused",
+      "boolean",
+      "無効／読み取り専用／演出の停止。"
     ],
     [
       "label / description",
       "string",
-      "見出しと補足文を変更。"
-    ],
-    [
-      "controllerRef",
-      "Ref<FoundationController>",
-      "setData/updateFoundation/notify/show等の公開API。"
+      "見出し・補足。展示文言を固定しません。"
     ]
   ],
   "foundation": {
@@ -65,24 +81,20 @@
       {
         "value": "design",
         "label": "Design",
-        "badge": "8",
-        "icon": "spark"
+        "badge": "8"
       },
       {
         "value": "motion",
         "label": "Motion",
-        "badge": "4",
-        "icon": "clock"
+        "badge": "4"
       },
       {
         "value": "ready",
-        "label": "Ready",
-        "icon": "check"
+        "label": "Ready"
       },
       {
         "value": "review",
-        "label": "Review",
-        "icon": "info"
+        "label": "Review"
       }
     ]
   }

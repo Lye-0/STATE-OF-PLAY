@@ -1,12 +1,20 @@
-# Prism Pages
+# Prism Pages / SEQUENCE
 
-totalPagesとvalueでページを指定します。hrefForPageを指定すると通常リンクになります。データの取得やルーターは利用先へ接続します。
+重なった結晶面が分かれ、分光する選択面が滑ります。
 
 ## 組み込み
 
-Reactは同梱のPrismPagesを読み込み、value（外部制御）またはdefaultValue（内部制御）を指定します。onValueChangeで値を受け取り、controllerRefから公開APIを呼べます。
-通常HTMLはmarkup.htmlとstyles.cssを配置しinit(element, options)で初期化します。onDataChangeで値を受け取り、destroy()でイベントとオーバーレイを解除します。
+React版は`PrismPages`をimportします。`value`を渡すと外部制御、`defaultValue`だけなら内部制御です。通常HTML版は`markup.html`のルート要素を配置し、`styles.css`を読み込み、`init(element, options)`を実行します。不要になったら`destroy()`を呼びます。
 
-## 運用
+## ページの接続
 
-入力・選択はローカルの状態です。通信・永続化・処理中表示を実際のアプリに接続してください。デモの日付・ラベル・候補・ページ数は利用先で差し替えてください。React版は外側のdivをReactが、内側の要素をcontrollerが管理する分離構成です。内側へReactのchildrenを挿入せず、公開props/APIから更新します。
+`totalPages`と現在のページを与えます。実際のデータ取得、ルーティング、読み込みエラーは利用先で処理してください。このパーツは一覧データを取得しません。`hrefForPage(n)`を指定するとbuttonではなくa要素になり、中クリック・修飾キー・右クリックなどはブラウザー標準です。URLモードの`onValueChange`は通知であり、移動先の成功や新しい現在ページを意味しません。SPAのルーターを接続する場合は、既存ルーターの規約を確認して通常クリックだけを処理し、入れ子のa要素を作らないでください。
+
+選択中の番号は`aria-current="page"`です。矢印ボタンは先頭・末尾で無効になります。Tab・Enter・Space（buttonのみ）を標準どおり使えます。選択面だけが短く追従し、値・文字・操作対象の確定を遅らせません。
+
+## 動きと再配置
+
+ラベル・件数・クリックする位置は安定させ、背後の面だけが反応します。`paused`、ページ非表示、画面外、`prefers-reduced-motion`では余分な描画を停止します。旧ローダーやBタイプの依存を追加しません。導入向けZIPは本体フォルダーをまとめて好きな場所へ移せます。移動する場合はimport・CSS参照も対応させ、既存プロジェクトの規約を優先してください。
+
+## 値の変更を受け取る
+React版は `onValueChange(value)`、通常HTML版の初期化オプションは `onDataChange(value)` を使用します。両者の名前は異なります。外部制御時に更新を受け入れる場合は、親で値を更新してください。

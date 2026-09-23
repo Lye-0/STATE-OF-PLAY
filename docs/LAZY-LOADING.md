@@ -31,6 +31,8 @@ ChatGPT側は、このカテゴリ別読み込みへの変更を知らない状�
 
 部品のID、フォルダー構成、meta.json、registry.json、公開API、各パーツのプロンプト形式は、この構造変更では変更していません。全件の正本カタログと配布生成APIも引き続きCLI・既存テストで利用できます。
 
+v4.9.1のSEQUENCE差分では、26パーツの正本と共有描画処理、詳細プレビュー操作だけを追加し、このカテゴリ別読み込みを保持しました。統合時の実Vite検証は [SEQUENCE-INTEGRATION-VERIFICATION.md](SEQUENCE-INTEGRATION-VERIFICATION.md) に記録しています。
+
 ## 検証
 
 `tests/lazy-loading.browser.ts`は実Viteの開発・本番HTTPを使い、初期通信、カテゴリキャッシュ、Allの段階表示、検索、詳細の8形式/配置、プロンプト、直接リンク、履歴、読み込みキャンセル、エラー再試行、全25カテゴリのCSS読み込み順を確認します。

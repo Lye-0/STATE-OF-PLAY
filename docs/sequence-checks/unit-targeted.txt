@@ -1,0 +1,128 @@
+TAP version 13
+# (node:4096) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Atelier redesign covers all 171 new expressive parts except the existing loaders
+ok 1 - Atelier redesign covers all 171 new expressive parts except the existing loaders
+  ---
+  duration_ms: 1.336177
+  type: 'test'
+  ...
+# Subtest: every redesigned skin includes exactly its matching material and the shared construction stylesheet
+ok 2 - every redesigned skin includes exactly its matching material and the shared construction stylesheet
+  ---
+  duration_ms: 72.207395
+  type: 'test'
+  ...
+# Subtest: B skins and loaders do not depend on the expressive construction or material sheets
+ok 3 - B skins and loaders do not depend on the expressive construction or material sheets
+  ---
+  duration_ms: 14.55252
+  type: 'test'
+  ...
+# Subtest: comma-separated selectors cannot escape their own foundation instance
+ok 4 - comma-separated selectors cannot escape their own foundation instance
+  ---
+  duration_ms: 29.533809
+  type: 'test'
+  ...
+# Subtest: all material families specify shape, light, relief and motion reduction, not only colors
+ok 5 - all material families specify shape, light, relief and motion reduction, not only colors
+  ---
+  duration_ms: 2.049785
+  type: 'test'
+  ...
+# Subtest: artwork is decorative; the native implementations and their type-specific controllers remain the source of behavior
+ok 6 - artwork is decorative; the native implementations and their type-specific controllers remain the source of behavior
+  ---
+  duration_ms: 3.781189
+  type: 'test'
+  ...
+# Subtest: light-theme detached labels have their own material backing
+ok 7 - light-theme detached labels have their own material backing
+  ---
+  duration_ms: 0.509339
+  type: 'test'
+  ...
+# Subtest: updated reproduction specifications explicitly include the new art-direction dependencies
+ok 8 - updated reproduction specifications explicitly include the new art-direction dependencies
+  ---
+  duration_ms: 9.251828
+  type: 'test'
+  ...
+# (node:4097) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: SEQUENCE updates only 10 expressive paginations and 16 expressive tag components
+ok 9 - SEQUENCE updates only 10 expressive paginations and 16 expressive tag components
+  ---
+  duration_ms: 1.054232
+  type: 'test'
+  ...
+# Subtest: pagination normalizes non-finite values, negative bounds, decimals and a single page
+ok 10 - pagination normalizes non-finite values, negative bounds, decimals and a single page
+  ---
+  duration_ms: 0.66197
+  type: 'test'
+  ...
+# Subtest: page keys have a bounded, strictly ordered window at every edge and large totals
+ok 11 - page keys have a bounded, strictly ordered window at every edge and large totals
+  ---
+  duration_ms: 0.612444
+  type: 'test'
+  ...
+# Subtest: tag values are stable unique keys and unknown selections are discarded
+ok 12 - tag values are stable unique keys and unknown selections are discarded
+  ---
+  duration_ms: 0.262627
+  type: 'test'
+  ...
+# Subtest: each material changes its actual geometry on interaction without text or interactive artwork
+ok 13 - each material changes its actual geometry on interaction without text or interactive artwork
+  ---
+  duration_ms: 3.659815
+  type: 'test'
+  ...
+# Subtest: all SVG resources are namespaced and hostile IDs cannot inject attributes
+ok 14 - all SVG resources are namespaced and hostile IDs cannot inject attributes
+  ---
+  duration_ms: 0.53712
+  type: 'test'
+  ...
+# Subtest: renderers escape host labels and do not assume decorative leading icons
+ok 15 - renderers escape host labels and do not assume decorative leading icons
+  ---
+  duration_ms: 0.308887
+  type: 'test'
+  ...
+# Subtest: new React and Vanilla entries carry the full sequence controller and material graph
+ok 16 - new React and Vanilla entries carry the full sequence controller and material graph
+  ---
+  duration_ms: 133.206869
+  type: 'test'
+  ...
+# Subtest: legacy effects exclude new instances without changing other styles
+ok 17 - legacy effects exclude new instances without changing other styles
+  ---
+  duration_ms: 1.775601
+  type: 'test'
+  ...
+# Subtest: copied design specs and integration guides document the real modules and ownership
+ok 18 - copied design specs and integration guides document the real modules and ownership
+  ---
+  duration_ms: 1.259832
+  type: 'test'
+  ...
+# Subtest: presentation uses stable keyed controls and only clones decoration on removal
+ok 19 - presentation uses stable keyed controls and only clones decoration on removal
+  ---
+  duration_ms: 0.29195
+  type: 'test'
+  ...
+1..19
+# tests 19
+# suites 0
+# pass 19
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 628.591623

@@ -1,8 +1,7 @@
-/* Folio Tags — Type A / Atelier edition.
-   ページの厚み、綴じ、罫線、折り返した紙端。暖かな明るい紙とセリフ体を使用。
-   タグを素材の小さなラベルとして造形。テキスト、件数、選択状態、削除ボタンは装飾と分離。 */
+/* Folio Tags · SEQUENCE. 紙の角がほどけ、削除すると薄い紙片がめくれて消えます。 */
 @import "../../../shared/foundation/base.css";
-@import "../../../shared/foundation/atelier.css";
-@import "../../../shared/foundation/materials/folio.css";
-/* Component identity remains scoped for independent embedding and source mapping. */
-.sop-foundation.sop-folio-tags { --ad-edition: 1; }
+@import "../../../shared/foundation/sequence/style.css";
+.sop-foundation.sop-sequence.sop-folio-tags {
+  --sq-bg: #282a27; --sq-ink: #e1ddcf; --sq-muted: #b1b3a8;
+  --sq-a: #c5cfb5; --sq-b: #dfd6b5; --sq-line: color-mix(in srgb,#c5cfb5,transparent 66%);
+}

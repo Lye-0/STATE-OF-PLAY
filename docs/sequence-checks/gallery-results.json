@@ -1,0 +1,13 @@
+{
+  "mode": "real gallery / explicit offline compiled adapter, NOT Vite",
+  "passed": 6,
+  "tests": [
+    "catalog still has 604 parts; category filters preserve 10/6 paginations and 16/8 tags",
+    "all 26 parts include controller, art, usage, prompt and valid integration paths in all eight deliveries",
+    "inspector code matches every exported file for four representative materials in all formats and layouts",
+    "pagination inspector changes total/pages and resets without faking data loads",
+    "tag inspector supports display/select/delete/both, restores removed items and holds value when switching code format",
+    "320/390/768 inspectors keep preview controls and copy/file-save accessible"
+  ],
+  "errors": []
+}

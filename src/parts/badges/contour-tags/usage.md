@@ -1,12 +1,20 @@
-# Contour Tags
+# Contour Tags / SEQUENCE
 
-表示タグ・複数選択・削除操作に対応。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
+地層の輪郭が広がり、ホバーと選択に起伏で応えます。
 
 ## 組み込み
 
-Reactは同梱のContourTagsを読み込み、value（外部制御）またはdefaultValue（内部制御）を指定します。onValueChangeで値を受け取り、controllerRefから公開APIを呼べます。
-通常HTMLはmarkup.htmlとstyles.cssを配置しinit(element, options)で初期化します。onDataChangeで値を受け取り、destroy()でイベントとオーバーレイを解除します。
+React版は`ContourTags`をimportします。`value`を渡すと外部制御、`defaultValue`だけなら内部制御です。通常HTML版は`markup.html`のルート要素を配置し、`styles.css`を読み込み、`init(element, options)`を実行します。不要になったら`destroy()`を呼びます。
 
-## 運用
+## タグと選択値
 
-入力・選択はローカルの状態です。通信・永続化・処理中表示を実際のアプリに接続してください。デモの日付・ラベル・候補・ページ数は利用先で差し替えてください。React版は外側のdivをReactが、内側の要素をcontrollerが管理する分離構成です。内側へReactのchildrenを挿入せず、公開props/APIから更新します。
+`items`のvalueを重複しない識別子としてください。文字のみでも成立し、iconとbadgeは省略可能です。表示のみ、複数選択、削除可能、選択＋削除を切り替えられます。選択は本物のcheckbox、削除はlabelの外にある独立したbuttonです。`name`を渡すと選択値をFormDataで取得できます。削除したタグのinputはその時点で取り除かれます。退出表現には装飾SVGだけを使い、重複したinput・名前・フォーカス対象を作りません。
+
+**外部制御時、選択はvalue、削除はitemsで管理します。** `onAction`で削除対象のvalueを受け取り、親がitemsを更新してください。親が拒否すればタグは残ります。選択値だけを変更してもタグ自体は削除しません。内部制御時はコンポーネントがその場で削除します。元のitemsを新しい配列として渡すかフォームをリセットすると復元できます。削除時は近い有効な操作へフォーカスを戻し、残りがない場合はグループへ戻します。
+
+## 動きと再配置
+
+ラベル・件数・クリックする位置は安定させ、背後の面だけが反応します。`paused`、ページ非表示、画面外、`prefers-reduced-motion`では余分な描画を停止します。旧ローダーやBタイプの依存を追加しません。導入向けZIPは本体フォルダーをまとめて好きな場所へ移せます。移動する場合はimport・CSS参照も対応させ、既存プロジェクトの規約を優先してください。
+
+## 値の変更を受け取る
+React版は `onValueChange(value)`、通常HTML版の初期化オプションは `onDataChange(value)` を使用します。両者の名前は異なります。外部制御時に更新を受け入れる場合は、親で値を更新してください。

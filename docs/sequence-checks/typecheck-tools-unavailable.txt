@@ -1,0 +1,7 @@
+
+> state-of-play@4.9.0 typecheck:tools
+> tsc -p tsconfig.tools.json --noEmit
+
+error TS2688: Cannot find type definition file for 'node'.
+  The file is in the program because:
+    Entry point of type library 'node' specified in compilerOptions

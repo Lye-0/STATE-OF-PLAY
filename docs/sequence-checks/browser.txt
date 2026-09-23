@@ -1,0 +1,20 @@
+(node:3124) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS 10 pagination materials move the selected surface while native keys and committed page update immediately
+PASS pagination keeps focused keys, uses a bounded range, clamps totals and disables boundary navigation
+PASS native pagination anchors retain URLs and modifier behavior; ordinary callbacks do not fake navigation success
+PASS controlled pagination can decline or accept updates with no animated phantom selection
+PASS pagination handles RTL, rapid jumps and resize with the indicator on the real current key
+PASS all 16 tag materials change geometry on hover without default symbols or moving labels
+PASS native tag selection preserves the input instance, form values, read-only state and keyboard operation
+PASS tag removal affects only that tag, removes its form input immediately and transfers focus predictably
+PASS controlled tags separate selection from items and preserve a deletion rejected by the parent
+PASS tag reset, empty state, reordered items, duplicate keys and mode changes work without stale nodes
+PASS optional icon/count remain optional, content is escaped and nested controls are not generated
+PASS all layouts support 320/390/768, long Japanese text, large page totals and long removable tags
+PASS reduced motion and forced colors keep selection and text while motion stops
+PASS frame scheduling settles on its own and teardown cancels all decorative echoes and observers
+PASS all 26 component styles remain identical when mixed with the complete 604-part stylesheet
+PASS native B pagination and tags still operate with the new styles present
+PASS capture real components with their final values
+SEQUENCE 17 browser checks passed (real Chromium / explicit offline fixture, NOT Vite).

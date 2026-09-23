@@ -1,8 +1,7 @@
-/* Velvet Pages — Type A / Atelier edition.
-   深い布の折れ、縫い目、柔らかな沈み、金色の金具。手前と奥の陰影を分ける。
-   実際に触る個々のキーを素材の小さなオブジェクトとして構成。選択中のキーの浮き・陰影とページの文字組みを分離。 */
+/* Velvet Pages · SEQUENCE. 布のひだが広がり、やわらかな選択面が移動します。 */
 @import "../../../shared/foundation/base.css";
-@import "../../../shared/foundation/atelier.css";
-@import "../../../shared/foundation/materials/velvet.css";
-/* Component identity remains scoped for independent embedding and source mapping. */
-.sop-foundation.sop-velvet-pages { --ad-edition: 1; }
+@import "../../../shared/foundation/sequence/style.css";
+.sop-foundation.sop-sequence.sop-velvet-pages {
+  --sq-bg: #2b2933; --sq-ink: #e9dfe9; --sq-muted: #b8aabf;
+  --sq-a: #d7bace; --sq-b: #a7a0c3; --sq-line: color-mix(in srgb,#d7bace,transparent 66%);
+}

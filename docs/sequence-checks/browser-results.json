@@ -1,0 +1,24 @@
+{
+  "mode": "real Chromium / explicit offline fixture; not Vite",
+  "passed": 17,
+  "tests": [
+    "10 pagination materials move the selected surface while native keys and committed page update immediately",
+    "pagination keeps focused keys, uses a bounded range, clamps totals and disables boundary navigation",
+    "native pagination anchors retain URLs and modifier behavior; ordinary callbacks do not fake navigation success",
+    "controlled pagination can decline or accept updates with no animated phantom selection",
+    "pagination handles RTL, rapid jumps and resize with the indicator on the real current key",
+    "all 16 tag materials change geometry on hover without default symbols or moving labels",
+    "native tag selection preserves the input instance, form values, read-only state and keyboard operation",
+    "tag removal affects only that tag, removes its form input immediately and transfers focus predictably",
+    "controlled tags separate selection from items and preserve a deletion rejected by the parent",
+    "tag reset, empty state, reordered items, duplicate keys and mode changes work without stale nodes",
+    "optional icon/count remain optional, content is escaped and nested controls are not generated",
+    "all layouts support 320/390/768, long Japanese text, large page totals and long removable tags",
+    "reduced motion and forced colors keep selection and text while motion stops",
+    "frame scheduling settles on its own and teardown cancels all decorative echoes and observers",
+    "all 26 component styles remain identical when mixed with the complete 604-part stylesheet",
+    "native B pagination and tags still operate with the new styles present",
+    "capture real components with their final values"
+  ],
+  "errors": []
+}

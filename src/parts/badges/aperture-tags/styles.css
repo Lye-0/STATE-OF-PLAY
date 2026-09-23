@@ -1,8 +1,7 @@
-/* Aperture Tags — Type A / Atelier edition.
-   レンズ鏡筒、円周の目盛り、絞り羽根、機械加工の黒い胴体。選択部に光学的な造形。
-   タグを素材の小さなラベルとして造形。テキスト、件数、選択状態、削除ボタンは装飾と分離。 */
+/* Aperture Tags · SEQUENCE. 上下のシャッターが開き、文字を覆わず周囲の面が変形します。 */
 @import "../../../shared/foundation/base.css";
-@import "../../../shared/foundation/atelier.css";
-@import "../../../shared/foundation/materials/aperture.css";
-/* Component identity remains scoped for independent embedding and source mapping. */
-.sop-foundation.sop-aperture-tags { --ad-edition: 1; }
+@import "../../../shared/foundation/sequence/style.css";
+.sop-foundation.sop-sequence.sop-aperture-tags {
+  --sq-bg: #25302b; --sq-ink: #e5e9df; --sq-muted: #aebdac;
+  --sq-a: #d0d7b5; --sq-b: #98afac; --sq-line: color-mix(in srgb,#d0d7b5,transparent 66%);
+}

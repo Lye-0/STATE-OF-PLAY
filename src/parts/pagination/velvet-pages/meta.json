@@ -3,14 +3,14 @@
   "name": "Velvet Pages",
   "category": "pagination",
   "order": 497,
-  "version": "4.1.0",
+  "version": "4.9.0",
   "tagline": "静かに、深く、やわらかく。",
-  "description": "実際に触る個々のキーを素材の小さなオブジェクトとして構成。選択中のキーの浮き・陰影とページの文字組みを分離。",
+  "description": "布のひだが広がり、やわらかな選択面が移動します。",
   "material": "ATELIER · 09",
-  "motion": "RESPONSE",
+  "motion": "SEQUENCE",
   "accent": "223,167,190",
   "designType": "A",
-  "runtime": "Native DOM + CSS",
+  "runtime": "Event-driven DOM / SVG + native navigation",
   "componentName": "VelvetPages",
   "tags": [
     "ページ送り",
@@ -18,36 +18,47 @@
     "Velvet Pages",
     "Velvet",
     "A",
-    "Atelier",
     "素材感",
-    "立体造形"
+    "SEQUENCE",
+    "可動面",
+    "interaction"
   ],
   "related": [],
   "props": [
     [
       "value / defaultValue",
-      "FoundationValue",
-      "外部制御値／内部制御の初期値。"
+      "number",
+      "現在ページ／初期ページ。1からtotalPagesへ正規化します。"
     ],
     [
-      "onValueChange",
-      "(value) => void",
-      "React版の値変更通知。通常DOM版はonDataChange。"
+      "totalPages",
+      "number",
+      "ページ総数。長い列は省略記号と横スクロールで表示。"
     ],
     [
-      "disabled",
+      "onValueChange / onDataChange",
+      "(page) => void",
+      "React／通常DOMのページ変更要求。値は演出完了を待ちません。"
+    ],
+    [
+      "hrefForPage",
+      "(page: number) => string",
+      "指定時は実際のリンク。URL遷移とルーターはアプリ側で管理します。"
+    ],
+    [
+      "disabled / readOnly / paused",
       "boolean",
-      "操作を無効にする。"
+      "操作禁止／読み取り専用／演出の停止。"
     ],
     [
       "label / description",
       "string",
-      "見出しと補足文を変更。"
+      "用途に合わせた見出し・補足。"
     ],
     [
       "controllerRef",
       "Ref<FoundationController>",
-      "setData/updateFoundation/notify/show等の公開API。"
+      "setData / updateFoundation / destroy など。"
     ]
   ],
   "foundation": {

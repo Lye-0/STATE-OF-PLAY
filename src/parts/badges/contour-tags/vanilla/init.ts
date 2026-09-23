@@ -1,4 +1,4 @@
-import {mountBadges} from '../../../../shared/foundation/navigation';
+import {mountBadges} from '../../../../shared/foundation/sequence/badges';
 import type {FoundationConfig, FoundationOptions} from '../../../../shared/foundation/core';
 const config: FoundationConfig = {
   "id": "contour-tags",
@@ -15,24 +15,20 @@ const config: FoundationConfig = {
     {
       "value": "design",
       "label": "Design",
-      "badge": "8",
-      "icon": "spark"
+      "badge": "8"
     },
     {
       "value": "motion",
       "label": "Motion",
-      "badge": "4",
-      "icon": "clock"
+      "badge": "4"
     },
     {
       "value": "ready",
-      "label": "Ready",
-      "icon": "check"
+      "label": "Ready"
     },
     {
       "value": "review",
-      "label": "Review",
-      "icon": "info"
+      "label": "Review"
     }
   ]
 };
