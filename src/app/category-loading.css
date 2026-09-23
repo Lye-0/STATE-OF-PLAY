@@ -1,0 +1,17 @@
+/* Gallery-only adaptation of Orbital Loom. Match the part's markup and continuum/loaders.css. */
+.collection-message.collection-loading{display:grid;place-items:center;align-self:start;min-height:290px;padding:30px 24px 48px;color:#dce5e5}
+.collection-loading .sop-orbital-loom-loader{--ld-size:112px;--ld-accent:#c8e5df;--ld-secondary:#a5b5d7;--ld-track:#87979a32;max-width:360px;width:100%;font:12px/1.5 Arial,"Yu Gothic",sans-serif;text-align:center;isolation:isolate}
+.collection-loading .ff-heading,.collection-loading .ff-description{display:none}
+.collection-loading .ct-loader-stage{display:grid;place-items:center;min-height:164px;overflow:hidden;padding:22px 0;pointer-events:none;isolation:isolate}
+.collection-loading .ct-loader-body{position:relative;display:grid;place-items:center;width:var(--ld-size);height:var(--ld-size);perspective:650px;isolation:isolate}
+.collection-loading .ct-loader-body i{display:block;box-sizing:border-box;font-style:normal}
+.collection-loading .ld-loom{position:absolute;inset:0;transform-style:preserve-3d;animation:ld-loom-turn 8s linear infinite;transform:rotateX(62deg) rotateZ(-24deg)}
+.collection-loading .ld-hoop{position:absolute;inset:8%;border:3px solid #acd3d466;border-left-color:var(--ld-accent);border-bottom-color:var(--ld-secondary);border-radius:50%;box-shadow:inset 0 0 0 1px #ffffff25,0 0 0 1px #233c4240;transform-style:preserve-3d}
+.collection-loading .ld-hoop:nth-child(2){transform:rotateX(68deg) rotateY(30deg)}
+.collection-loading .ld-hoop:nth-child(3){transform:rotateY(74deg) rotateZ(30deg)}
+.collection-loading .ld-pearl{position:absolute;inset:39%;border-radius:50%;background:radial-gradient(circle at 30% 22%,#fff,#c1ded6 26%,#435e6d 70%,#121d2c);box-shadow:0 2px 9px #0004}
+.collection-loading .ct-loader-status{display:block;margin:8px 0 0;color:#dce5e5;font-size:12px;line-height:1.8;letter-spacing:.06em;overflow-wrap:anywhere}
+.collection-loading .sop-motion-loader[data-motion-running=false] .ct-loader-body *,.collection-loading .sop-motion-loader[data-motion-running=false] .ct-loader-body *::before,.collection-loading .sop-motion-loader[data-paused=true] .ct-loader-body *{animation-play-state:paused!important}
+@keyframes ld-loom-turn{from{transform:rotateX(62deg) rotateZ(-24deg) rotateY(0)}to{transform:rotateX(62deg) rotateZ(-24deg) rotateY(360deg)}}
+@media(prefers-reduced-motion:reduce){.collection-loading .ct-loader-body *,.collection-loading .ct-loader-body *::before{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.collection-loading .sop-orbital-loom-loader{--ld-accent:CanvasText;--ld-secondary:Highlight;color:CanvasText}.collection-loading .ld-hoop{border-color:CanvasText}.collection-loading .ld-pearl{background:CanvasText}}

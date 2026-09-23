@@ -2,6 +2,7 @@ import {mountFoundationSample} from './foundation-preview';
 import {mountPopupSample} from './check-popup-preview';
 import { mountActionDemo } from './action-preview';
 import { fillSample } from './samples';
+import {showCategoryLoading} from './category-loading';
 import { TactileAudio } from './audio';
 import type { createDetails } from './details';
 import { createSurfaceController } from '../shared/surface-controller';
@@ -71,11 +72,13 @@ function matchPart(part: PartSummary) {
 }
 let galleryRequest = 0;
 let visibleLimit = 24;
+let clearCategoryLoading:(()=>void)|undefined;
 const more = document.createElement('button'); more.type = 'button'; more.id = 'load-more'; more.className = 'small-button load-more'; more.hidden = true;
 grid.after(more);
 more.addEventListener('click', () => { visibleLimit += 24; void renderGallery(true); });
 async function renderGallery(append = false) {
     const token = ++galleryRequest;
+    clearCategoryLoading?.(); clearCategoryLoading=undefined;
     stopDemo();
     if (!append) {
         // The old cards keep the page tall while the next category's module loads.
@@ -92,7 +95,7 @@ async function renderGallery(append = false) {
     grid.setAttribute('aria-busy', 'true'); more.hidden = true;
     required('#search-clear').hidden = !query;
     updateControls();
-    if (!append) grid.innerHTML = '<div class="collection-message" role="status">パーツを読み込んでいます…</div>';
+    if (!append) clearCategoryLoading=showCategoryLoading(grid);
     let visible: PartPreview[];
     const mounts: Record<string, MountPart> = {};
     try {
@@ -103,6 +106,7 @@ async function renderGallery(append = false) {
         visible = pending.map(p => { const preview = previews.get(p.id); if (!preview) throw new Error('Missing preview: '+p.id); return preview; });
     } catch {
         if (token !== galleryRequest) return;
+        clearCategoryLoading?.(); clearCategoryLoading=undefined;
         grid.setAttribute('aria-busy', 'false');
         const message = document.createElement('div'); message.className = 'collection-message'; message.setAttribute('role', 'status');
         message.innerHTML = '<p>読み込めませんでした。通信を確認してページを再読み込みしてください。</p><button type="button" class="small-button">再読み込み</button>';
@@ -113,6 +117,7 @@ async function renderGallery(append = false) {
         if (!append) grid.replaceChildren(message); else grid.append(message);
         return;
     }
+    clearCategoryLoading?.(); clearCategoryLoading=undefined;
     const cardsHTML = visible.length ? visible.map(part => {
         const foundation=!!part.foundation;
         const toggle = part.category === 'toggles';
