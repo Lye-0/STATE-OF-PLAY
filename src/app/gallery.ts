@@ -12,7 +12,8 @@ import { escapeHTML, icon, required, toast, wireTabs } from './utils';
 import type { PartPreview, PartSummary, PartController, MountPart } from '../catalog/types';
 window.SOP_CATALOG = parts;
 const state = new Map(parts.filter(p => p.category === 'toggles').map(p => [p.id, p.initial ?? false]));
-let activeCategory = 'toggles', activeDesign = 'all', query = '', demo = 0, demoIndex = 0;
+let activeCategory = 'toggles', activeDesign = 'all', query = '', demo = 0, demoIndex = 0, progressDemo = 0, progressDemoPhase = 0;
+const progressDemoValues = [0,20,40,60,80,100,80,60,40,20] as const;
 const sound = new TactileAudio();
 const grid = required('#part-grid');
 const search = required<HTMLInputElement>('#search-parts');
@@ -47,7 +48,7 @@ function readRoute() {
 }
 window.addEventListener('popstate', readRoute);
 window.addEventListener('hashchange', readRoute);
-function stopDemo() { clearInterval(demo); demo = 0; const b = required('#demo'); b.setAttribute('aria-pressed', 'false'); required('span', b).textContent = 'デモ再生'; }
+function stopDemo() { clearInterval(demo); demo = 0; const b = required('#demo'); b.setAttribute('aria-pressed', 'false'); required('span', b).textContent = 'デモ再生'; clearInterval(progressDemo); progressDemo = 0; const p = required('#progress-demo'); p.setAttribute('aria-pressed', 'false'); required('span', p).textContent = 'デモ再生'; }
 function syncCard(id: string, value: boolean) {
     state.set(id, value);
     const r = rendered.find(r => r.part.id === id);
@@ -60,6 +61,8 @@ function syncCard(id: string, value: boolean) {
 function updateControls() {
     const count = rendered.filter(r => r.part.category === 'toggles').length;
     required('#toggle-controls').hidden = count === 0;
+    const progressCount = rendered.filter(r => r.part.category === 'progress').length;
+    required('#progress-controls').hidden = activeCategory !== 'progress' || progressCount === 0;
     const on = rendered.filter(r => r.part.category === 'toggles' && state.get(r.part.id)).length;
     required('#active-count').textContent = String(on).padStart(2, '0');
     required('#toggle-total').textContent = String(count).padStart(2, '0');
@@ -221,6 +224,20 @@ required('#demo').addEventListener('click', () => {
     demo = window.setInterval(tick, 480);
     required('#demo').setAttribute('aria-pressed', 'true');
     required('#demo span').textContent = 'デモ停止';
+});
+required('#progress-demo').addEventListener('click', () => {
+    if (progressDemo) { stopDemo(); return; }
+    const progress = rendered.filter(r => r.part.category === 'progress' && r.controller.setData);
+    if (!progress.length) return;
+    progressDemoPhase = 0;
+    const tick = () => {
+        progress.forEach((r, index) => r.controller.setData?.(progressDemoValues[(index + progressDemoPhase) % progressDemoValues.length]));
+        progressDemoPhase = (progressDemoPhase + 1) % progressDemoValues.length;
+    };
+    tick();
+    progressDemo = window.setInterval(tick, 480);
+    required('#progress-demo').setAttribute('aria-pressed', 'true');
+    required('#progress-demo span').textContent = 'デモ停止';
 });
 const soundButton = required<HTMLButtonElement>('#sound');
 soundButton.addEventListener('click', async () => {
