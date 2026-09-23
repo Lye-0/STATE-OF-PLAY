@@ -68,6 +68,8 @@ jobs:
         run: npm run test:refinement
       - name: Kinetic additions (native scroll, motion, menus and cleanup)
         run: npm run test:kinetic
+      - name: Dropdown close leaves no briefly reopened list
+        run: npm run test:dropdown-close
       - name: Unfold accordions and responsive text fields
         run: npm run test:unfold
       - name: Transform tabs, segments, popups and sliders

@@ -24,7 +24,7 @@ test('Vanilla and React dependency closures include the actual Kinetic renderer 
  }
 });
 test('new menus are text-first listboxes with explicit state and no auto-generated initials',()=>{
- for(const p of added.filter(p=>p.category==='dropdowns')){const s=read(p.base+'/markup.html');assert.match(s,/role="combobox"/);assert.match(s,/role="listbox"/);assert.equal((s.match(/role="option"/g)||[]).length,4);assert.doesNotMatch(s,/sop-select-icon|<canvas|role="menu"/);assert.match(read(p.base+'/react/'+p.componentName+'.tsx'),/autoIcon=\{false\}/);}
+ for(const p of added.filter(p=>p.category==='dropdowns')){assert.match(read(p.base+'/prompt.md'),/閉じる瞬間/);const s=read(p.base+'/markup.html');assert.match(s,/role="combobox"/);assert.match(s,/role="listbox"/);assert.equal((s.match(/role="option"/g)||[]).length,4);assert.doesNotMatch(s,/sop-select-icon|<canvas|role="menu"/);assert.match(read(p.base+'/react/'+p.componentName+'.tsx'),/autoIcon=\{false\}/);}
 });
 test('new rails keep native scroll input and use decorative canvases only',()=>{
  for(const p of added.filter(p=>p.category==='scrollbars')){const s=read(p.base+'/markup.html');assert.match(s,/sop-scroll-viewport/);assert.match(s,/role="scrollbar"/);assert.match(s,/<canvas[^>]*aria-hidden="true"/);assert.doesNotMatch(s,/type="range"/);assert.match(s,/slot: insert your scrollable content/);}
@@ -36,7 +36,7 @@ test('new skins are scoped and do not import old ornate/refined skin styles',()=
 });
 test('presentation cancellation covers timers, observers and animation resources',()=>{
  for(const f of ['kinetic-scroll.ts','kinetic-select.ts']){const s=read('src/shared/'+f);assert.match(s,/cancelAnimationFrame/);assert.match(s,/life.abort/);assert.match(s,/disconnect/);assert.match(s,/prefers-reduced-motion/);assert.match(s,/visibilitychange/);assert.doesNotMatch(s,/setInterval/);}
- const s=read('src/shared/kinetic-select.ts');assert.match(s,/panel.inert=true/);assert.match(s,/aria-hidden/);assert.match(s,/finishClosing/);assert.match(s,/stopAnimations/);
+ const s=read('src/shared/kinetic-select.ts');assert.match(s,/panel.inert=true/);assert.match(s,/aria-hidden/);assert.doesNotMatch(s,/finishClosing|kineticClosing/);assert.match(s,/panel.hidden=true/);assert.doesNotMatch(read('src/shared/kinetic-select.css'),/\[hidden\].*display:block/);assert.match(s,/stopAnimations/);
 });
 test('gallery can reveal new additions without losing older entries',()=>{
  const s=read('src/app/gallery.ts');assert.match(s,/tags.includes\('KINETIC'\)/);assert.match(s,/const matches = parts.filter\(matchPart\)/);

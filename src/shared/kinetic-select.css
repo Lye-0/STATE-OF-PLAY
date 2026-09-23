@@ -22,8 +22,7 @@
 @media(max-width:380px){.sop-select.sop-kinetic-select .sop-select-option{padding:12px 10px;}.sop-select.sop-kinetic-select .sop-select-option-copy b{font-size:13px;}.sop-select.sop-kinetic-select .sop-select-badge{white-space:normal;max-width:4.5em;}}
 @media(forced-colors:active){.sop-select.sop-kinetic-select .sop-select-popup::before,.sop-select.sop-kinetic-select .sop-select-popup::after,.sop-select.sop-kinetic-select .sop-select-option::before,.sop-select.sop-kinetic-select .sop-select-option::after{display:none!important;}.sop-select.sop-kinetic-select .sop-select-option[data-active=true]{outline:2px solid Highlight;outline-offset:-3px;}.sop-select.sop-kinetic-select .sop-select-option-copy b{color:CanvasText;}}
 
-/* Close is semantically immediate; the retiring surface is inert and absent from accessibility. */
-.sop-select.sop-kinetic-select .sop-select-popup[hidden][data-kinetic-closing=true]{display:block!important;pointer-events:none!important;}
+/* The closed list stays hidden; the trigger supplies the short exit response. */
 @media(prefers-reduced-motion:reduce){
  .sop-select.sop-kinetic-select,.sop-select.sop-kinetic-select *,
  .sop-select.sop-kinetic-select *::before,.sop-select.sop-kinetic-select *::after{

@@ -7,10 +7,10 @@ export function createKineticSelect(root:HTMLElement,kind:KineticMenu,options:Se
  const life=new AbortController(),signal=life.signal;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)'),forced=matchMedia('(forced-colors: active)');
  let dead=false,opened=false,raf=0,last=0,ready=false,current=0,targetY=0,velocity=0,height=60,targetH=60;
- let pulse=0,closingTimer=0;
+ let pulse=0;
  const oldAria=panel.getAttribute('aria-hidden'),oldInert=panel.inert;
- function restoreClosing(){clearTimeout(closingTimer);closingTimer=0;delete panel.dataset.kineticClosing;panel.inert=oldInert;if(oldAria===null)panel.removeAttribute('aria-hidden');else panel.setAttribute('aria-hidden',oldAria);}
- function finishClosing(){restoreClosing();if(!base.getOpen()){try{panel.hidePopover?.();}catch{ /* already closed */ }panel.hidden=true;}}const animations=new Set<Animation>();
+ function restoreClosing(){panel.inert=oldInert;if(oldAria===null)panel.removeAttribute('aria-hidden');else panel.setAttribute('aria-hidden',oldAria);}
+ const animations=new Set<Animation>();
  const props=['--kx','--ky','--kw','--kh','--k-speed','--k-pointer-x','--k-pointer-y'];
  const saved=new Map(props.map(p=>[p,panel.style.getPropertyValue(p)]));
  const styles=(k:string,v:string)=>{if(panel.style.getPropertyValue(k)!==v)panel.style.setProperty(k,v);};
@@ -66,12 +66,10 @@ export function createKineticSelect(root:HTMLElement,kind:KineticMenu,options:Se
  }
  function close(){
   opened=false;ready=false;cancelAnimationFrame(raf);raf=0;last=0;stopAnimations();delete panel.dataset.kineticReady;
-  if(!dead&&!reduced.matches&&!forced.matches&&root.isConnected){
-   panel.dataset.kineticClosing='true';panel.setAttribute('aria-hidden','true');panel.inert=true;
-   try{panel.showPopover?.();}catch{ /* fixed-position fallback */ }
-   animate(panel,[{opacity:1,transform:'none'},frames[kind][0]],210);
-   closingTimer=window.setTimeout(finishClosing,215);
-  }
+  // The base controller already closed the popover. Never re-open its full list for exit art.
+  panel.setAttribute('aria-hidden','true');panel.inert=true;
+  try{panel.hidePopover?.();}catch{ /* already closed */ }
+  panel.hidden=true;
   animate(trigger,[{transform:'scale(.986)'},{transform:'scale(1.012)',offset:.6},{transform:'scale(1)'}],260);
  }
  const observer=new MutationObserver(()=>target());observer.observe(panel,{subtree:true,attributes:true,attributeFilter:['data-active'],childList:true,characterData:true});
@@ -80,7 +78,7 @@ export function createKineticSelect(root:HTMLElement,kind:KineticMenu,options:Se
  root.addEventListener('sop:select',e=>{if(e.target!==root)return;clearTimeout(pulse);root.dataset.kineticCommit='true';pulse=window.setTimeout(()=>delete root.dataset.kineticCommit,350);},{signal});
  panel.addEventListener('pointermove',e=>{if(e.pointerType==='touch'||reduced.matches||!opened)return;const r=panel.getBoundingClientRect();styles('--k-pointer-x',`${Math.max(0,Math.min(100,(e.clientX-r.left)/r.width*100))}%`);styles('--k-pointer-y',`${e.clientY-r.top+panel.scrollTop}px`);},{passive:true,signal});
  panel.addEventListener('scroll',target,{passive:true,signal});
- reduced.addEventListener('change',()=>{stopAnimations();if(closingTimer)finishClosing();target();},{signal});forced.addEventListener('change',()=>{stopAnimations();if(closingTimer)finishClosing();target();},{signal});
+ reduced.addEventListener('change',()=>{stopAnimations();target();},{signal});forced.addEventListener('change',()=>{stopAnimations();target();},{signal});
  document.addEventListener('visibilitychange',()=>{if(document.hidden){cancelAnimationFrame(raf);raf=0;last=0;stopAnimations();}else target();},{signal});
  return {...base,refresh(){base.refresh();target();},destroy(){
   if(dead)return;dead=true;life.abort();observer.disconnect();resize?.disconnect();cancelAnimationFrame(raf);clearTimeout(pulse);stopAnimations();
