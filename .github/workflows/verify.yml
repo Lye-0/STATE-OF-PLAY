@@ -13,7 +13,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
-    # The complete 588-part / 8-export matrix runs on both hosted OS variants.
+    # The complete 604-part / 8-export matrix runs on both hosted OS variants.
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
@@ -78,6 +78,10 @@ jobs:
         run: npm run test:resonance
       - name: Resonance inspector, exports and native overlays
         run: npm run test:resonance:gallery
+      - name: Continuum progress, files, dates and new loaders
+        run: npm run test:continuum
+      - name: Continuum inspector, code exports and preview settings
+        run: npm run test:continuum:gallery
       - name: Build full source archive
         run: npm run package
       - name: Save reports on failure

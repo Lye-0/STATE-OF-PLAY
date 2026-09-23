@@ -1,0 +1,55 @@
+{
+  "id": "eclipse-arc-loader",
+  "name": "Eclipse Arc",
+  "category": "loaders",
+  "order": 1804,
+  "version": "4.8.0",
+  "tagline": "光の輪郭を、待つ。",
+  "description": "暗い球が光を遮り、縁に沿って明るい弧が移動する。",
+  "material": "SPATIAL MOTION",
+  "motion": "STUDY",
+  "accent": "234,198,144",
+  "designType": "A",
+  "runtime": "CSS animation + visibility pause",
+  "componentName": "EclipseArcLoader",
+  "tags": [
+    "ローダー",
+    "loaders",
+    "Eclipse Arc",
+    "A",
+    "MOTION STUDIES",
+    "CONTINUUM"
+  ],
+  "related": [],
+  "props": [
+    [
+      "content",
+      "string",
+      "読み上げもされる処理中メッセージ。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "アニメーションのみ停止。完了を意味しません。"
+    ],
+    [
+      "style / className",
+      "React属性",
+      "--ld-size、--ld-accentなどで外観を調整。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setPaused、updateFoundation、destroy。"
+    ]
+  ],
+  "foundation": {
+    "id": "eclipse-arc-loader",
+    "kind": "loaders",
+    "variant": "eclipse-arc",
+    "label": "Eclipse Arc",
+    "description": "",
+    "defaultValue": null,
+    "content": "読み込み中…"
+  }
+}

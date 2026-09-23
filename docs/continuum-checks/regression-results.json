@@ -1,0 +1,17 @@
+{
+  "mode": "real Chromium; explicit offline transport, not Vite",
+  "passed": 10,
+  "tests": [
+    "All 300 skins: mixed catalogue and standalone computed designs match (no sibling CSS leakage)",
+    "All 171 redesigned parts fit 320 / 390 / 768 px without cutting off the input area",
+    "Sixteen material sliders: native keyboard, range bounds, disabled state and thumb alignment",
+    "All A choice cards: native inputs remain reachable above decorative material layers",
+    "All A tag styles: selecting and removing tags preserve independent interactive targets",
+    "Open A menus and calendars stay inside a 320 px viewport; Escape / outside dismissal works",
+    "Breadcrumb menus begin hidden, open on demand, and return to hidden after content updates",
+    "Light material legends and detached captions keep their own opaque backing",
+    "Reduced motion disables decorative animations; forced colors retain native focus and selected states",
+    "Sample notification, loading progress and open popup leave no popovers after unmount"
+  ],
+  "errors": []
+}

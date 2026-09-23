@@ -10,11 +10,11 @@ import {parseDate,dateText,validDate} from '../src/shared/foundation/date.ts';
 import {pageItems} from '../src/shared/foundation/navigation.ts';
 import {accepted} from '../src/shared/foundation/upload.ts';
 const catalogue=buildCatalog(),parts=catalogue.parts.filter(p=>!!p.foundation);
-const expected={sliders:24,radios:24,comboboxes:24,toasts:24,hints:24,progress:24,loaders:24,uploads:20,datepickers:20,pagination:16,breadcrumbs:16,badges:24,numbers:20};
-test('reconstructed collection: 564 authored parts, 25 categories, 284 additions',()=>{
- assert.equal(catalogue.parts.filter(p=>!p.tags.includes('KINETIC')).length,564);assert.equal(new Set(catalogue.parts.map(p=>p.category)).size,25);assert.equal(parts.length,284);
- for(const [category,count] of Object.entries(expected)){const group=parts.filter(p=>p.category===category);assert.equal(group.length,count);assert.equal(group.filter(p=>p.designType==='A').length,count===24?16:count===20?13:10);}
- assert.equal(parts.filter(p=>p.designType==='A').length,187);assert.equal(parts.filter(p=>p.designType==='B').length,97);
+const expected={sliders:24,radios:24,comboboxes:24,toasts:24,hints:24,progress:24,loaders:40,uploads:20,datepickers:20,pagination:16,breadcrumbs:16,badges:24,numbers:20};
+test('reconstructed collection: 604 authored parts, 25 categories, 300 foundations',()=>{
+ assert.equal(catalogue.parts.length,604);assert.equal(new Set(catalogue.parts.map(p=>p.category)).size,25);assert.equal(parts.length,300);
+ for(const [category,count] of Object.entries(expected)){const group=parts.filter(p=>p.category===category);assert.equal(group.length,count);assert.equal(group.filter(p=>p.designType==='A').length,count===40?24:count===24?16:count===20?13:10);}
+ assert.equal(parts.filter(p=>p.designType==='A').length,195);assert.equal(parts.filter(p=>p.designType==='B').length,105);
 });
 test('every foundation has real markup, implementation, use example and prompt in every format/layout',()=>{
  for(const p of parts){assert.match(p.markup,/sop-foundation/);assert.equal(p.foundation!.kind,p.category);assert.ok(p.prompt.length>300);for(const format of FORMATS)for(const layout of ['portable','original']as const){const d=getDelivery(p,format,layout);assert.ok(d.files.some(f=>f.name===d.entry));assert.ok(d.runtimeFiles.every(f=>!f.name.includes('src/app/')));assert.ok(packageContents(p,format,layout).some(f=>f.name==='PROMPT.md'));assert.match(buildPrompt(p,format,layout),/既存プロジェクト/);}}

@@ -1,0 +1,79 @@
+/* Sixteen independent motion studies. B variants use normal compact spinner geometry. */
+.sop-foundation.sop-motion-loader{--ld-size:112px;--ld-accent:#c4dbd9;--ld-secondary:#a5b5d7;--ld-ink:#dce5e5;--ld-track:#87979a32;--ld-duration:2.8s;max-width:360px;color:inherit;font:12px/1.5 Arial,"Yu Gothic",sans-serif;text-align:center;padding:0;border:0;background:transparent;box-shadow:none;isolation:isolate}
+.sop-foundation.sop-motion-loader .ff-heading{display:none}.sop-foundation.sop-motion-loader .ff-description{font-size:11px;text-align:center;color:inherit;opacity:.7}.sop-foundation.sop-motion-loader .ff-eyebrow{display:none}
+.sop-foundation.sop-motion-loader .ct-loader-stage{display:grid;place-items:center;min-height:var(--ld-stage-height,164px);isolation:isolate;overflow:hidden;padding:22px 0;pointer-events:none}
+.sop-foundation.sop-motion-loader .ct-loader-body{position:relative;width:var(--ld-size);height:var(--ld-size);perspective:650px;display:grid;place-items:center;isolation:isolate}
+.sop-foundation.sop-motion-loader .ct-loader-body i{display:block;font-style:normal;box-sizing:border-box}
+.sop-foundation.sop-motion-loader .ct-loader-status{display:block;font-size:11px;line-height:1.8;letter-spacing:.06em;margin:8px 0 0;color:inherit;overflow-wrap:anywhere}
+.sop-foundation.sop-motion-loader .ct-loader-body>svg{width:100%;height:100%;display:block;fill:none}
+.sop-foundation.sop-motion-loader .ct-loader-body *{animation-play-state:running}
+.sop-foundation.sop-motion-loader[data-motion-running=false] .ct-loader-body *,.sop-foundation.sop-motion-loader[data-paused=true] .ct-loader-body *{animation-play-state:paused!important}
+.sop-foundation.sop-motion-loader .ld-ring-base{fill:none;stroke:var(--ld-track);stroke-width:2.5}
+.sop-foundation.sop-motion-loader .ld-ring-active{fill:none;stroke:var(--ld-accent);stroke-width:2.5;stroke-linecap:round}
+/* A / 01: three ribbons keep different spatial planes. */
+.sop-motion-loader .ld-loom{position:absolute;inset:0;transform-style:preserve-3d;animation:ld-loom-turn 8s linear infinite;transform:rotateX(62deg) rotateZ(-24deg)}
+.sop-motion-loader .ld-hoop{position:absolute;inset:8%;border:3px solid #acd3d466;border-left-color:var(--ld-accent);border-bottom-color:var(--ld-secondary);border-radius:50%;box-shadow:inset 0 0 0 1px #ffffff25,0 0 0 1px #233c4240;transform-style:preserve-3d}
+.sop-motion-loader .ld-hoop:nth-child(2){transform:rotateX(68deg) rotateY(30deg)}.sop-motion-loader .ld-hoop:nth-child(3){transform:rotateY(74deg) rotateZ(30deg)}
+.sop-motion-loader .ld-pearl{position:absolute;inset:39%;border-radius:50%;background:radial-gradient(circle at 30% 22%,#fff,#c1ded6 26%,#435e6d 70%,#121d2c);box-shadow:0 2px 9px #0004}
+@keyframes ld-loom-turn{from{transform:rotateX(62deg) rotateZ(-24deg) rotateY(0)}to{transform:rotateX(62deg) rotateZ(-24deg) rotateY(360deg)}}
+/* A / 02: a paper-thin cube unfolds and closes around an empty center. */
+.sop-motion-loader .ld-cube{position:absolute;width:54%;height:54%;top:23%;left:23%;transform-style:preserve-3d;transform:rotateX(-24deg) rotateY(36deg);animation:ld-cube-drift 6s ease-in-out infinite}
+.sop-motion-loader .ld-cube-face{position:absolute;inset:0;border:1px solid #e4d6f4a0;background:linear-gradient(130deg,#d5c4e48c,#96b9c34a);backface-visibility:visible;transform:rotateY(calc(var(--i)*90deg)) translateZ(calc(var(--ld-size)*.27));animation:ld-cube-fold 3s cubic-bezier(.45,0,.25,1) infinite}
+.sop-motion-loader .ld-cube-face:nth-child(5){--i:0;transform:rotateX(90deg) translateZ(calc(var(--ld-size)*.27));animation:ld-cube-top 3s ease-in-out infinite}.sop-motion-loader .ld-cube-face:nth-child(6){--i:0;transform:rotateX(-90deg) translateZ(calc(var(--ld-size)*.27));animation:ld-cube-bottom 3s ease-in-out infinite}
+@keyframes ld-cube-fold{0%,100%{transform:rotateY(calc(var(--i)*90deg)) translateZ(calc(var(--ld-size)*.27))}50%{transform:rotateY(calc(var(--i)*90deg)) translateZ(calc(var(--ld-size)*.36)) rotateX(-23deg)}}
+@keyframes ld-cube-top{0%,100%{transform:rotateX(90deg) translateZ(calc(var(--ld-size)*.27))}50%{transform:rotateX(90deg) translateZ(calc(var(--ld-size)*.4)) rotateY(23deg)}}
+@keyframes ld-cube-bottom{0%,100%{transform:rotateX(-90deg) translateZ(calc(var(--ld-size)*.27))}50%{transform:rotateX(-90deg) translateZ(calc(var(--ld-size)*.4)) rotateY(23deg)}}
+@keyframes ld-cube-drift{0%,100%{transform:rotateX(-24deg) rotateY(36deg)}50%{transform:rotateX(-12deg) rotateY(64deg)}}
+/* A / 03: two lenses coalesce; no SVG filter or expensive full-screen blur. */
+.sop-motion-loader .ld-pool{position:absolute;inset:0;display:grid;place-items:center}
+.sop-motion-loader .ld-droplet{position:absolute;width:44%;height:44%;top:28%;left:28%;border-radius:50%;border:1px solid #bce9ecad;background:radial-gradient(ellipse at 25% 15%,#efffffa8,transparent 43%),linear-gradient(155deg,#9bddcd87,#559db344 50%,#e0daf570);box-shadow:inset 1px 2px 3px #d8ffff92,inset -1px -2px 4px #bdeaff66,0 8px 14px #0003;animation:ld-merge 3.2s cubic-bezier(.4,0,.3,1) infinite;mix-blend-mode:screen}
+.sop-motion-loader .ld-droplet:nth-child(2){animation-delay:-1.6s}
+.sop-motion-loader .ld-pool-line{position:absolute;width:90%;height:6%;bottom:7%;border-radius:50%;background:radial-gradient(ellipse,#87adc252,transparent 70%)}
+@keyframes ld-merge{0%,100%{transform:translateX(-55%) scale(.83,1)}35%{transform:translateX(0) scale(1.1,.89)}50%{transform:translateX(55%) scale(.83,1)}85%{transform:translateX(0) scale(1.1,.89)}}
+/* A / 04: visible folded page edges, not a spinner recolor. */
+.sop-motion-loader .ld-pages{position:absolute;inset:12% 20%;perspective:350px;transform:rotate(-8deg)}
+.sop-motion-loader .ld-page{position:absolute;inset:0;background:linear-gradient(105deg,#9b8974,#eee4cd 15%,#fff9e8 63%,#cdb99d);border:1px solid #b7a88b;border-radius:2px 9px 3px 2px;box-shadow:1px 4px 6px #0002;transform-origin:0 50%;animation:ld-page-turn 4.2s ease-in-out infinite;animation-delay:calc(var(--i)*-.21s)}
+.sop-motion-loader .ld-page::after{content:"";position:absolute;inset:24% 16%;background:repeating-linear-gradient(transparent 0 8px,#826e5040 8px 9px)}
+@keyframes ld-page-turn{0%,100%{transform:rotateY(-16deg) rotateZ(0)}50%{transform:rotateY(-125deg) rotateZ(-5deg)}}
+/* A / 05: a dark moon exposes a moving lit edge. */
+.sop-motion-loader .ld-eclipse{position:absolute;inset:9%;border-radius:50%;isolation:isolate;animation:ld-spin 7s linear infinite}
+.sop-motion-loader .ld-star{position:absolute;inset:8%;border-radius:50%;background:radial-gradient(circle,#fcdfad,#cda770 70%);box-shadow:0 0 14px #e2b88140}
+.sop-motion-loader .ld-darkmoon{position:absolute;inset:5% 1% 11% 15%;border-radius:50%;background:radial-gradient(circle at 70% 30%,#35414b,#11161c 65%);box-shadow:inset -2px -1px 1px #e5bb7655;animation:ld-eclipse 3.6s ease-in-out infinite}
+.sop-motion-loader .ld-satellite{position:absolute;width:5%;height:5%;border-radius:50%;right:0;top:10%;background:#f5e4bc}
+@keyframes ld-eclipse{0%,100%{transform:translateX(-8%)}50%{transform:translateX(8%)}}
+/* A / 06: a quiet, phase-shifted pendulum bank. */
+.sop-motion-loader .ld-pendulum{position:absolute;inset:6% 2% 5%;border-top:2px solid #acbbc3}
+.sop-motion-loader .ld-string{position:absolute;left:calc(10% + var(--i)*20%);top:0;width:1px;height:72%;background:#9fabb46b;transform-origin:50% 0;animation:ld-pendulum 2.5s ease-in-out infinite;animation-delay:calc(var(--i)*-.13s)}
+.sop-motion-loader .ld-string::after{content:"";position:absolute;width:17px;height:17px;left:-8px;bottom:-8px;border:1px solid #c6d7d270;border-radius:50%;background:radial-gradient(circle at 30% 20%,#e3eeea,#71938b 25%,#233d39 70%);box-shadow:1px 4px 6px #0004}
+@keyframes ld-pendulum{0%,100%{transform:rotate(-17deg)}50%{transform:rotate(17deg)}}
+/* A / 07: two opposed strands cross in depth. */
+.sop-motion-loader .ld-helix{position:absolute;inset:4% 18%}
+.sop-motion-loader .ld-pair{position:absolute;left:50%;top:calc(var(--i)*7%);height:4px;width:1px}
+.sop-motion-loader .ld-pair::before,.sop-motion-loader .ld-pair::after{content:"";position:absolute;width:7px;height:7px;left:-3px;border-radius:50%;background:var(--ld-accent);box-shadow:0 0 5px #c8e4e320;animation:ld-helix 2.8s ease-in-out infinite;animation-delay:calc(var(--i)*-.1s)}
+.sop-motion-loader .ld-pair::after{background:var(--ld-secondary);animation-delay:calc(var(--i)*-.1s - 1.4s)}
+@keyframes ld-helix{0%,100%{transform:translateX(-26px) scale(.75);opacity:.4}50%{transform:translateX(26px) scale(1.1);opacity:1}}
+/* A / 08: a ten-leaf iris breathes without rotating the surrounding UI. */
+.sop-motion-loader .ld-bloom{position:absolute;inset:4%;transform:rotate(-12deg)}
+.sop-motion-loader .ld-petal{position:absolute;width:29%;height:56%;bottom:45%;left:36%;transform-origin:50% 94%;border-radius:70% 25% 60% 40%;background:linear-gradient(115deg,#6c868157,#d6e6c489 60%,#83978963);border:1px solid #dae9c152;animation:ld-petal 4s ease-in-out infinite;--angle:calc(var(--i)*36deg)}
+.sop-motion-loader .ld-pollen{position:absolute;inset:44%;border-radius:50%;background:#dae4c6;box-shadow:inset -2px -2px 3px #506157,0 0 0 4px #d1dec222}
+@keyframes ld-petal{0%,100%{transform:rotate(var(--angle)) scale(.5,.8) rotateY(35deg)}50%{transform:rotate(calc(var(--angle) + 12deg)) scale(1) rotateY(0)}}
+/* B: familiar geometry in normal, reusable dimensions. */
+.sop-motion-loader[data-variant=arc-spinner],.sop-motion-loader[data-variant=three-dots],.sop-motion-loader[data-variant=soft-pulse],.sop-motion-loader[data-variant=tick-spinner],.sop-motion-loader[data-variant=mini-bars],.sop-motion-loader[data-variant=orbit-dot],.sop-motion-loader[data-variant=corner-trace]{--ld-size:30px;--ld-accent:#ccd7d5}
+.sop-motion-loader[data-variant=line-sweep]{--ld-size:128px;--ld-accent:#ccd7d5}
+.sop-motion-loader .ld-arc{animation:ld-spin 1s linear infinite}.sop-motion-loader .ld-arc .ld-ring-active{stroke-dasharray:28 76}
+.sop-motion-loader .ld-dots{display:flex;gap:5px;align-items:center;height:24px}.sop-motion-loader .ld-dot{width:6px;height:6px;border-radius:50%;background:var(--ld-accent);animation:ld-dots 1.2s ease-in-out infinite;animation-delay:calc(var(--i)*.13s)}
+.sop-motion-loader .ld-pulse{width:26px;height:26px;position:relative}.sop-motion-loader .ld-pulse i{position:absolute;inset:0;border:1px solid var(--ld-accent);border-radius:50%;animation:ld-pulse 1.8s ease-out infinite}.sop-motion-loader .ld-pulse i:last-child{inset:8px;background:var(--ld-accent);border:0;animation:ld-breathe 1.8s ease-in-out infinite}
+.sop-motion-loader .ld-line{height:3px;width:100%;background:var(--ld-track);position:relative;overflow:hidden;border-radius:3px}.sop-motion-loader .ld-line i{position:absolute;width:36%;height:100%;background:var(--ld-accent);border-radius:3px;animation:ld-sweep 1.4s ease-in-out infinite}
+.sop-motion-loader .ld-ticks{position:absolute;inset:0}.sop-motion-loader .ld-tick{position:absolute;width:2.5px;height:7px;left:calc(50% - 1.25px);top:1px;background:var(--ld-accent);border-radius:2px;transform-origin:1.25px 14px;transform:rotate(calc(var(--i)*36deg));animation:ld-tick 1s linear infinite;animation-delay:calc(var(--i)*.1s)}
+.sop-motion-loader .ld-bars{display:flex;align-items:center;gap:3px;height:24px}.sop-motion-loader .ld-bar{width:3px;height:18px;background:var(--ld-accent);border-radius:3px;animation:ld-bars 1.2s ease-in-out infinite;animation-delay:calc(var(--i)*.12s)}
+.sop-motion-loader .ld-orbit{position:absolute;inset:2px;border:1px solid var(--ld-track);border-radius:50%;animation:ld-spin 1.2s linear infinite}.sop-motion-loader .ld-orbit i{position:absolute;width:5px;height:5px;top:-2px;left:calc(50% - 2px);border-radius:50%;background:var(--ld-accent)}
+.sop-motion-loader .ld-corner .ld-ring-base{stroke-width:1.5}.sop-motion-loader .ld-corner .ld-ring-active{stroke-width:1.8;stroke-dasharray:28 72;animation:ld-trace 1.8s linear infinite}
+@keyframes ld-spin{to{transform:rotate(360deg)}}@keyframes ld-dots{0%,70%,100%{transform:translateY(0);opacity:.38}35%{transform:translateY(-4px);opacity:1}}@keyframes ld-pulse{0%{transform:scale(.35);opacity:.8}100%{transform:scale(1);opacity:0}}@keyframes ld-breathe{0%,100%{opacity:.5;transform:scale(.8)}50%{opacity:1;transform:scale(1)}}@keyframes ld-sweep{0%{transform:translateX(-120%)}100%{transform:translateX(380%)}}@keyframes ld-tick{0%{opacity:1}100%{opacity:.16}}@keyframes ld-bars{0%,80%,100%{transform:scaleY(.4);opacity:.5}40%{transform:scaleY(1);opacity:1}}@keyframes ld-trace{to{stroke-dashoffset:-100}}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-motion-loader .ct-loader-body *,.sop-foundation.sop-motion-loader .ct-loader-body *::before,.sop-foundation.sop-motion-loader .ct-loader-body *::after{animation:none!important;transition:none!important}.sop-motion-loader .ld-petal{transform:rotate(var(--angle)) scale(.9)}.sop-motion-loader .ld-droplet:first-child{transform:translateX(-30%)}.sop-motion-loader .ld-droplet:nth-child(2){transform:translateX(30%)}.sop-motion-loader .ld-pair::before{transform:translateX(-18px)}.sop-motion-loader .ld-pair::after{transform:translateX(18px)}}
+.sop-foundation.sop-motion-loader[data-motion-running=false] .ct-loader-body *::before,.sop-foundation.sop-motion-loader[data-motion-running=false] .ct-loader-body *::after,.sop-foundation.sop-motion-loader[data-paused=true] .ct-loader-body *::before,.sop-foundation.sop-motion-loader[data-paused=true] .ct-loader-body *::after{animation-play-state:paused!important}
+@media(forced-colors:active){.sop-foundation.sop-motion-loader{--ld-accent:CanvasText;--ld-secondary:Highlight;--ld-ink:CanvasText;--ld-track:GrayText}.sop-foundation.sop-motion-loader .ct-loader-body svg{forced-color-adjust:none}.sop-motion-loader .ld-dot,.sop-motion-loader .ld-bar,.sop-motion-loader .ld-tick,.sop-motion-loader .ld-line i{background:CanvasText;forced-color-adjust:none}.sop-motion-loader .ld-hoop,.sop-motion-loader .ld-cube-face,.sop-motion-loader .ld-page,.sop-motion-loader .ld-petal{border-color:CanvasText}.sop-motion-loader .ld-pulse i{border-color:CanvasText}}
+
+.sop-foundation.sop-motion-loader:where([data-variant=arc-spinner],[data-variant=three-dots],[data-variant=soft-pulse],[data-variant=line-sweep],[data-variant=tick-spinner],[data-variant=mini-bars],[data-variant=orbit-dot],[data-variant=corner-trace]){--ld-stage-height:52px;--ld-track:color-mix(in srgb,currentColor 20%,transparent)}
+.sop-foundation.sop-motion-loader:where([data-variant=arc-spinner],[data-variant=three-dots],[data-variant=soft-pulse],[data-variant=line-sweep],[data-variant=tick-spinner],[data-variant=mini-bars],[data-variant=orbit-dot],[data-variant=corner-trace]) .ct-loader-stage{padding:10px 0}
+/* The B sweep is a wide line, not a 128px-square loading panel. */
+.sop-foundation.sop-motion-loader[data-variant=line-sweep] .ct-loader-body{height:30px}

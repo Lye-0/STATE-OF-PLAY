@@ -1,0 +1,55 @@
+{
+  "id": "iris-bloom-loader",
+  "name": "Iris Bloom",
+  "category": "loaders",
+  "order": 1807,
+  "version": "4.8.0",
+  "tagline": "静かに、ひらく。",
+  "description": "十枚の葉形の面が縮み、花のようにひらく。",
+  "material": "SPATIAL MOTION",
+  "motion": "STUDY",
+  "accent": "214,228,191",
+  "designType": "A",
+  "runtime": "CSS animation + visibility pause",
+  "componentName": "IrisBloomLoader",
+  "tags": [
+    "ローダー",
+    "loaders",
+    "Iris Bloom",
+    "A",
+    "MOTION STUDIES",
+    "CONTINUUM"
+  ],
+  "related": [],
+  "props": [
+    [
+      "content",
+      "string",
+      "読み上げもされる処理中メッセージ。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "アニメーションのみ停止。完了を意味しません。"
+    ],
+    [
+      "style / className",
+      "React属性",
+      "--ld-size、--ld-accentなどで外観を調整。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setPaused、updateFoundation、destroy。"
+    ]
+  ],
+  "foundation": {
+    "id": "iris-bloom-loader",
+    "kind": "loaders",
+    "variant": "iris-bloom",
+    "label": "Iris Bloom",
+    "description": "",
+    "defaultValue": null,
+    "content": "読み込み中…"
+  }
+}

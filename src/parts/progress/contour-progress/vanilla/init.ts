@@ -1,4 +1,4 @@
-import {mountProgress} from '../../../../shared/foundation/feedback';
+import {mountProgress} from '../../../../shared/foundation/continuum/progress';
 import type {FoundationConfig, FoundationOptions} from '../../../../shared/foundation/core';
 const config: FoundationConfig = {
   "id": "contour-progress",

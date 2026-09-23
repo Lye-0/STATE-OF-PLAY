@@ -1,8 +1,4 @@
-/* Aperture Dropzone — Type A / Atelier edition.
-   レンズ鏡筒、円周の目盛り、絞り羽根、機械加工の黒い胴体。選択部に光学的な造形。
-   ファイルの受け口をイメージした入れ物。受け口本体、立体シンボル、ファイル一覧・削除操作までデザイン。 */
+/* Aperture Dropzone — CONTINUUM 4.8.0. 重なった絞り羽根の開口が、実際の状態と連動する。 */
 @import "../../../shared/foundation/base.css";
-@import "../../../shared/foundation/atelier.css";
-@import "../../../shared/foundation/materials/aperture.css";
-/* Component identity remains scoped for independent embedding and source mapping. */
-.sop-foundation.sop-aperture-dropzone { --ad-edition: 1; }
+@import "../../../shared/foundation/continuum/style.css";
+.sop-foundation.sop-continuum.sop-aperture-dropzone { --ct-edition: 1; }

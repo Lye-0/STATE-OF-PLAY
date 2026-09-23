@@ -1,0 +1,55 @@
+{
+  "id": "liquid-merge-loader",
+  "name": "Liquid Merge",
+  "category": "loaders",
+  "order": 1802,
+  "version": "4.8.0",
+  "tagline": "出会って、ほどける。",
+  "description": "二つのレンズが近づき、つながるように変形して離れる。",
+  "material": "SPATIAL MOTION",
+  "motion": "STUDY",
+  "accent": "179,229,223",
+  "designType": "A",
+  "runtime": "CSS animation + visibility pause",
+  "componentName": "LiquidMergeLoader",
+  "tags": [
+    "ローダー",
+    "loaders",
+    "Liquid Merge",
+    "A",
+    "MOTION STUDIES",
+    "CONTINUUM"
+  ],
+  "related": [],
+  "props": [
+    [
+      "content",
+      "string",
+      "読み上げもされる処理中メッセージ。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "アニメーションのみ停止。完了を意味しません。"
+    ],
+    [
+      "style / className",
+      "React属性",
+      "--ld-size、--ld-accentなどで外観を調整。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setPaused、updateFoundation、destroy。"
+    ]
+  ],
+  "foundation": {
+    "id": "liquid-merge-loader",
+    "kind": "loaders",
+    "variant": "liquid-merge",
+    "label": "Liquid Merge",
+    "description": "",
+    "defaultValue": null,
+    "content": "読み込み中…"
+  }
+}

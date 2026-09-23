@@ -3,14 +3,14 @@
   "name": "Tide Progress",
   "category": "progress",
   "order": 412,
-  "version": "4.1.0",
+  "version": "4.8.0",
   "tagline": "水面のように、流れる。",
-  "description": "本物の値を示す計器として設計。素材に応じて直線メーター／円形の目盛りを使い分け、準備・処理・完了の状態も可視化。",
+  "description": "透明な水槽の中で水位が変わり、液面が揺れて静まる。 進捗値と読み上げは即時更新し、装飾だけが追従します。",
   "material": "PELAGIC · 12",
-  "motion": "RESPONSE",
+  "motion": "CONTINUUM",
   "accent": "137,210,238",
   "designType": "A",
-  "runtime": "CSS + state",
+  "runtime": "CSS + SVG + event-driven presentation",
   "componentName": "TideProgress",
   "tags": [
     "進捗表示",
@@ -18,36 +18,41 @@
     "Tide Progress",
     "Tide",
     "A",
-    "Atelier",
-    "素材感",
-    "立体造形"
+    "CONTINUUM",
+    "状態に連動",
+    "動く面"
   ],
   "related": [],
   "props": [
     [
       "value / defaultValue",
-      "FoundationValue",
-      "外部制御値／内部制御の初期値。"
-    ],
-    [
-      "onValueChange",
-      "(value) => void",
-      "React版の値変更通知。通常DOM版はonDataChange。"
-    ],
-    [
-      "disabled",
-      "boolean",
-      "操作を無効にする。"
-    ],
-    [
-      "label / description",
-      "string",
-      "見出しと補足文を変更。"
+      "number",
+      "実際の状態を外部制御／内部制御します。"
     ],
     [
       "controllerRef",
       "Ref<FoundationController>",
-      "setData/updateFoundation/notify/show等の公開API。"
+      "setData / updateFoundation / setPaused / destroy。"
+    ],
+    [
+      "label / description",
+      "string",
+      "展示の文章ではなく用途に合わせた名前と説明。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "装飾を停止。値や処理結果を偽装しません。"
+    ],
+    [
+      "min / max",
+      "number",
+      "有限の上下限。max<=minはmin+1に補正。"
+    ],
+    [
+      "indeterminate",
+      "boolean",
+      "割合不明。値を示さない。"
     ]
   ],
   "foundation": {

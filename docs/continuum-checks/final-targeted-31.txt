@@ -1,0 +1,206 @@
+
+> state-of-play@4.8.0 typecheck:app
+> tsc -p tsconfig.json --noEmit
+
+TAP version 13
+# (node:6110) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: CONTINUUM revises 42 A parts, retains old loaders and adds 8 A + 8 B loaders
+ok 1 - CONTINUUM revises 42 A parts, retains old loaders and adds 8 A + 8 B loaders
+  ---
+  duration_ms: 1.274268
+  type: 'test'
+  ...
+# Subtest: ranges normalize negative, decimal, missing and degenerate bounds without non-finite numbers
+ok 2 - ranges normalize negative, decimal, missing and degenerate bounds without non-finite numbers
+  ---
+  duration_ms: 0.713862
+  type: 'test'
+  ...
+# Subtest: 16 progressing geometries differ, evolve with value, and remain finite at bounds and invalid values
+ok 3 - 16 progressing geometries differ, evolve with value, and remain finite at bounds and invalid values
+  ---
+  duration_ms: 9.877145
+  type: 'test'
+  ...
+# Subtest: SVG paint resources can be local to each mounted instance and neither input nor label is drawn in SVG
+ok 4 - SVG paint resources can be local to each mounted instance and neither input nor label is drawn in SVG
+  ---
+  duration_ms: 0.334453
+  type: 'test'
+  ...
+# Subtest: unknown progress uses the native indeterminate state; no made-up percentage or success action
+ok 5 - unknown progress uses the native indeterminate state; no made-up percentage or success action
+  ---
+  duration_ms: 0.452797
+  type: 'test'
+  ...
+# Subtest: uploads open receiving mechanisms only, validate native File objects, and revoke every preview URL
+ok 6 - uploads open receiving mechanisms only, validate native File objects, and revoke every preview URL
+  ---
+  duration_ms: 1.108073
+  type: 'test'
+  ...
+# Subtest: calendar motion has no access to grid contents, value ownership or keyboard hit targets
+ok 7 - calendar motion has no access to grid contents, value ownership or keyboard hit targets
+  ---
+  duration_ms: 0.342775
+  type: 'test'
+  ...
+# Subtest: new loader artwork has 16 distinct definitions, 8 familiar B designs and paused visibility controls
+ok 8 - new loader artwork has 16 distinct definitions, 8 familiar B designs and paused visibility controls
+  ---
+  duration_ms: 0.551062
+  type: 'test'
+  ...
+# Subtest: authored HTML, React runtime and ordinary initialization use the same source renderers
+ok 9 - authored HTML, React runtime and ordinary initialization use the same source renderers
+  ---
+  duration_ms: 6.933577
+  type: 'test'
+  ...
+# Subtest: every changed/new export has dependency-closed runtime and styles, not a gallery-only effect
+ok 10 - every changed/new export has dependency-closed runtime and styles, not a gallery-only effect
+  ---
+  duration_ms: 190.699669
+  type: 'test'
+  ...
+# Subtest: copyable prompts include adaptation, actual state and motion files, not obsolete material dependencies
+ok 11 - copyable prompts include adaptation, actual state and motion files, not obsolete material dependencies
+  ---
+  duration_ms: 1.851979
+  type: 'test'
+  ...
+# Subtest: CSS scopes every active skin and supplies a static reduced/forced-colors presentation
+ok 12 - CSS scopes every active skin and supplies a static reduced/forced-colors presentation
+  ---
+  duration_ms: 0.27824
+  type: 'test'
+  ...
+# Subtest: all external strings in initial renderers are escaped instead of becoming executable HTML
+ok 13 - all external strings in initial renderers are escaped instead of becoming executable HTML
+  ---
+  duration_ms: 0.2714
+  type: 'test'
+  ...
+# (node:6111) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: RESONANCE updates exactly 16 A designs in each of four categories, no additions or deleted IDs
+ok 14 - RESONANCE updates exactly 16 A designs in each of four categories, no additions or deleted IDs
+  ---
+  duration_ms: 1.636181
+  type: 'test'
+  ...
+# Subtest: material families have distinct motion geometry; invalid family has a safe resting appearance
+ok 15 - material families have distinct motion geometry; invalid family has a safe resting appearance
+  ---
+  duration_ms: 0.622527
+  type: 'test'
+  ...
+# Subtest: authored markup matches the same renderers used by actual React and vanilla controllers
+ok 16 - authored markup matches the same renderers used by actual React and vanilla controllers
+  ---
+  duration_ms: 3.569901
+  type: 'test'
+  ...
+# Subtest: content renderers escape external labels and descriptions, and show no invented icon by default
+ok 17 - content renderers escape external labels and descriptions, and show no invented icon by default
+  ---
+  duration_ms: 0.498364
+  type: 'test'
+  ...
+# Subtest: both framework exports reference the new implementation, not a gallery-only effect
+ok 18 - both framework exports reference the new implementation, not a gallery-only effect
+  ---
+  duration_ms: 161.807389
+  type: 'test'
+  ...
+# Subtest: A stylesheet opts into resonance and does not import legacy material construction
+ok 19 - A stylesheet opts into resonance and does not import legacy material construction
+  ---
+  duration_ms: 69.426105
+  type: 'test'
+  ...
+# Subtest: prompts and usage describe new source-of-truth files and preserve integration rules
+ok 20 - prompts and usage describe new source-of-truth files and preserve integration rules
+  ---
+  duration_ms: 2.442699
+  type: 'test'
+  ...
+# Subtest: animation implementation has lifecycle cleanup, no constant interval or external resources
+ok 21 - animation implementation has lifecycle cleanup, no constant interval or external resources
+  ---
+  duration_ms: 0.55658
+  type: 'test'
+  ...
+# Subtest: source closures have only resolvable local import paths and safe CSS/SVG metadata
+ok 22 - source closures have only resolvable local import paths and safe CSS/SVG metadata
+  ---
+  duration_ms: 74.763999
+  type: 'test'
+  ...
+# Subtest: ordinary choice content remains independent from a material identity
+ok 23 - ordinary choice content remains independent from a material identity
+  ---
+  duration_ms: 0.526566
+  type: 'test'
+  ...
+# (node:6112) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: TRANSFORM revises exactly 16 A designs in each of four categories
+ok 24 - TRANSFORM revises exactly 16 A designs in each of four categories
+  ---
+  duration_ms: 3.743506
+  type: 'test'
+  ...
+# Subtest: spring settles under varied frame rates, does not change native values
+ok 25 - spring settles under varied frame rates, does not change native values
+  ---
+  duration_ms: 2.1246
+  type: 'test'
+  ...
+# Subtest: all 16 rail geometries are bounded, finite and individually distinct
+ok 26 - all 16 rail geometries are bounded, finite and individually distinct
+  ---
+  duration_ms: 53.047729
+  type: 'test'
+  ...
+# Subtest: every React and Vanilla closure includes its actual engine and transpilable source
+ok 27 - every React and Vanilla closure includes its actual engine and transpilable source
+  ---
+  duration_ms: 782.495825
+  type: 'test'
+  ...
+# Subtest: presentation is event-driven and disposes observers, events and frames
+ok 28 - presentation is event-driven and disposes observers, events and frames
+  ---
+  duration_ms: 0.426208
+  type: 'test'
+  ...
+# Subtest: selection measures actual items instead of assuming one-third widths
+ok 29 - selection measures actual items instead of assuming one-third widths
+  ---
+  duration_ms: 0.238721
+  type: 'test'
+  ...
+# Subtest: base React views keep decorative extension props out of public DOM attributes
+ok 30 - base React views keep decorative extension props out of public DOM attributes
+  ---
+  duration_ms: 0.770836
+  type: 'test'
+  ...
+# Subtest: styles retain static and forced-color versions, no perpetual animations
+ok 31 - styles retain static and forced-color versions, no perpetual animations
+  ---
+  duration_ms: 0.348774
+  type: 'test'
+  ...
+1..31
+# tests 31
+# suites 0
+# pass 31
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1467.085004

@@ -1,8 +1,4 @@
-/* Nixie Progress — Type A / Atelier edition.
-   真空管の暗い内面、縦に並ぶ電極、真鍮のフレーム、琥珀色の発光と物理的なキー。
-   本物の値を示す計器として設計。素材に応じて直線メーター／円形の目盛りを使い分け、準備・処理・完了の状態も可視化。 */
+/* Nixie Progress — CONTINUUM 4.8.0. 細いガラスセルと電極が、必要な分だけ点灯する。 */
 @import "../../../shared/foundation/base.css";
-@import "../../../shared/foundation/atelier.css";
-@import "../../../shared/foundation/materials/nixie.css";
-/* Component identity remains scoped for independent embedding and source mapping. */
-.sop-foundation.sop-nixie-progress { --ad-edition: 1; }
+@import "../../../shared/foundation/continuum/style.css";
+.sop-foundation.sop-continuum.sop-nixie-progress { --ct-edition: 1; }

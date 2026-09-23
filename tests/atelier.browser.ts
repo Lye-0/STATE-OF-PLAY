@@ -39,7 +39,7 @@ try{
  const mount=(id:string,options:Record<string,unknown>={})=>page.evaluate(({id,options})=>(window as any).mountArt(id,options),{id,options});
  const update=(options:Record<string,unknown>)=>page.evaluate(options=>(window as any).api.updateFoundation(options),options);
  const signature=()=>page.evaluate(()=>{const root=document.querySelector('#host>.sop-foundation')!;const nodes=[root,...root.querySelectorAll('.ff-choice,.ff-choice-icon,.ff-combo-shell,.ff-progress-visual,.ff-loader-core,.ff-loader-bars,.ff-orbit,.ff-reading,.ff-tag,.ff-stepper,.ff-notice,.ff-pages,.ff-breadcrumb,.ff-dropzone,.ff-hint-trigger,.ff-date-fields,.ff-heading')];return nodes.map(el=>{const s=getComputedStyle(el);return [el.className,s.display,s.backgroundImage,s.backgroundColor,s.borderRadius,s.borderWidth,s.boxShadow,s.color,s.fontFamily,s.fontSize,s.clipPath];});});
- await run('All 284 skins: mixed catalogue and standalone computed designs match (no sibling CSS leakage)',async()=>{
+ await run(`All ${parts.length} skins: mixed catalogue and standalone computed designs match (no sibling CSS leakage)`,async()=>{
   for(const p of parts){await setCSS(mixed);await mount(p.id);const together=await signature();await setCSS(css(p.base+'/styles.css'));assert.deepEqual(await signature(),together,p.id);}
  });
  await setCSS(mixed);
@@ -64,7 +64,7 @@ try{
   for(const p of parts.filter(p=>p.category==='breadcrumbs')){await mount(p.id);const panel=page.locator('#host [data-crumb-menu]');assert.equal(await panel.isVisible(),false);const more=page.locator('#host [data-crumb-more]');if(await more.count()){await more.click();assert.equal(await panel.isVisible(),true);await update({label:'Changed'});assert.equal(await panel.isVisible(),false);}}
  });
  await run('Light material legends and detached captions keep their own opaque backing',async()=>{
-  for(const id of ['folio-choice','botanical-choice','ceramic-choice','folio-finder','botanical-calendar','ceramic-stepper']){await mount(id);const label=page.locator('#host .ff-heading,#host legend').first();const bg=await label.evaluate(el=>getComputedStyle(el).backgroundColor);assert.notEqual(bg,'rgba(0, 0, 0, 0)',id);}
+  for(const id of ['folio-choice','botanical-choice','ceramic-choice','folio-finder','botanical-calendar','ceramic-stepper']){await mount(id);const label=page.locator('#host .ff-heading,#host legend').first();const backed=await label.evaluate(el=>[el,...el.querySelectorAll('[data-ff-label]')].some(node=>{const value=getComputedStyle(node).backgroundColor;return value!=='rgba(0, 0, 0, 0)'&&value!=='transparent';}));assert.equal(backed,true,id);}
  });
  await run('Reduced motion disables decorative animations; forced colors retain native focus and selected states',async()=>{
   for(const p of target.filter(p=>['sliders','radios','progress'].includes(p.category))){await mount(p.id);assert.equal(await page.locator('#host').evaluate(root=>root.getAnimations({subtree:true}).some(a=>a.playState==='running')),false,p.id);}

@@ -41,10 +41,10 @@ try{
   else {fs.mkdirSync(path.join(ROOT,prefix),{recursive:true});fs.writeFileSync(path.join(ROOT,entry),source);fs.writeFileSync(path.join(ROOT,prefix,'index.html'),'<html><head><meta charset="utf-8"></head><body><div id="root"></div><script type="module" src="./entry.jsx"></script></body></html>');await p.goto(new URL(prefix+'/index.html',url).href);}
   await p.addStyleTag({content:data.styles+'\nbody{padding:32px;background:#181b1c;color:#eef;font:14px Arial}section{display:inline-block;vertical-align:top;width:360px;margin:20px;padding:10px}section>output{display:block;padding:10px}'});
   await p.waitForSelector('[data-item]');versions.push(await p.evaluate(()=>(window as any).reactVersion));
-  await run(`${format}/${layout}: all 284 generated components mount with usable refs and unique identifiers`,async()=>{
-   assert.equal(await p.locator('[data-item]').count(),284);assert.equal(await p.evaluate(()=>(window as any).controllers.size),284);assert.equal(await p.evaluate(()=>(window as any).refs.size),284);
+  await run(`${format}/${layout}: all ${parts.length} generated components mount with usable refs and unique identifiers`,async()=>{
+   assert.equal(await p.locator('[data-item]').count(),parts.length);assert.equal(await p.evaluate(()=>(window as any).controllers.size),parts.length);assert.equal(await p.evaluate(()=>(window as any).refs.size),parts.length);
    const ids=await p.locator('[id]').evaluateAll(es=>es.map(e=>e.id));assert.equal(ids.length,new Set(ids).size);
-   await p.evaluate(()=>{for(const api of (window as any).controllers.values()){api.setDisabled(true);api.setDisabled(false);}});assert.equal(await p.locator('[data-item] [data-foundation-mounted=true]').count(),284);
+   await p.evaluate(()=>{for(const api of (window as any).controllers.values()){api.setDisabled(true);api.setDisabled(false);}});assert.equal(await p.locator('[data-item] [data-foundation-mounted=true]').count(),parts.length);
   });
   await run(`${format}/${layout}: controlled native range and radio reflect accepted and declined changes`,async()=>{
    const slider=p.locator('[data-case=slider] input[data-range="0"]');await slider.focus();await slider.press('ArrowRight');assert.equal(await p.locator('[data-case=slider] output').last().innerText(),'26');const declined=p.locator('[data-case=slider-declined] input[data-range="0"]');await declined.focus();await declined.press('ArrowRight');assert.equal(await declined.inputValue(),'25');
@@ -60,7 +60,7 @@ try{
    await p.evaluate(()=>{(window as any).oldRange=(window as any).refs.get('mercury-range');(window as any).assignments.get('mercury-range')({min:10,max:40,step:5,unit:'kg'});});await p.waitForFunction(()=>document.querySelector('[data-item="mercury-range"] [data-max]')?.textContent==='40kg');assert.ok(await p.evaluate(()=>(window as any).oldRange===(window as any).refs.get('mercury-range')));
   });
   await run(`${format}/${layout}: notification and open popup clean up during mount/unmount cycles`,async()=>{
-   for(let n=0;n<2;n++){await p.evaluate(()=>{(window as any).controllers.get('aurora-notice').notify({title:'Close on unmount',duration:0});(window as any).controllers.get('aurora-finder').show();});await p.locator('#mount-toggle').click();assert.equal(await p.locator('[data-item]').count(),0);assert.equal(await p.locator('.ff-toast-stack').count(),0);assert.equal(await p.evaluate(()=>(window as any).controllers.size),0);await p.locator('#mount-toggle').click();assert.equal(await p.locator('[data-item]').count(),284);}
+   for(let n=0;n<2;n++){await p.evaluate(()=>{(window as any).controllers.get('aurora-notice').notify({title:'Close on unmount',duration:0});(window as any).controllers.get('aurora-finder').show();});await p.locator('#mount-toggle').click();assert.equal(await p.locator('[data-item]').count(),0);assert.equal(await p.locator('.ff-toast-stack').count(),0);assert.equal(await p.evaluate(()=>(window as any).controllers.size),0);await p.locator('#mount-toggle').click();assert.equal(await p.locator('[data-item]').count(),parts.length);}
    await p.evaluate(()=>(window as any).unmountAll());assert.equal(await p.locator('[data-foundation-mounted]').count(),0);assert.equal(await p.locator(':popover-open').count(),0);assert.deepEqual(errors,[]);
   });await p.close();
  }

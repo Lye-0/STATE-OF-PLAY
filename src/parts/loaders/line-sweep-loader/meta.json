@@ -1,0 +1,55 @@
+{
+  "id": "line-sweep-loader",
+  "name": "Line Sweep",
+  "category": "loaders",
+  "order": 1811,
+  "version": "4.8.0",
+  "tagline": "細い線に、動きを。",
+  "description": "細いトラックをひとつの線が流れる。割合表示ではない。",
+  "material": "EVERYDAY MOTION",
+  "motion": "STUDY",
+  "accent": "205,218,214",
+  "designType": "B",
+  "runtime": "CSS animation + visibility pause",
+  "componentName": "LineSweepLoader",
+  "tags": [
+    "ローダー",
+    "loaders",
+    "Line Sweep",
+    "B",
+    "MOTION STUDIES",
+    "CONTINUUM"
+  ],
+  "related": [],
+  "props": [
+    [
+      "content",
+      "string",
+      "読み上げもされる処理中メッセージ。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "アニメーションのみ停止。完了を意味しません。"
+    ],
+    [
+      "style / className",
+      "React属性",
+      "--ld-size、--ld-accentなどで外観を調整。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setPaused、updateFoundation、destroy。"
+    ]
+  ],
+  "foundation": {
+    "id": "line-sweep-loader",
+    "kind": "loaders",
+    "variant": "line-sweep",
+    "label": "Line Sweep",
+    "description": "",
+    "defaultValue": null,
+    "content": "読み込み中…"
+  }
+}

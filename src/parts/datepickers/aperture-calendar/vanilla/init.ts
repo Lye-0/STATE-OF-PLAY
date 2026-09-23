@@ -1,4 +1,4 @@
-import {mountDate} from '../../../../shared/foundation/date';
+import {mountDate} from '../../../../shared/foundation/continuum/date';
 import type {FoundationConfig, FoundationOptions} from '../../../../shared/foundation/core';
 const config: FoundationConfig = {
   "id": "aperture-calendar",

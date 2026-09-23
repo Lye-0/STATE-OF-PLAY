@@ -1,0 +1,55 @@
+{
+  "id": "helix-thread-loader",
+  "name": "Helix Thread",
+  "category": "loaders",
+  "order": 1806,
+  "version": "4.8.0",
+  "tagline": "二本の流れ。",
+  "description": "二本の点列が前後に交差し、螺旋の奥行きを見せる。",
+  "material": "SPATIAL MOTION",
+  "motion": "STUDY",
+  "accent": "178,221,220",
+  "designType": "A",
+  "runtime": "CSS animation + visibility pause",
+  "componentName": "HelixThreadLoader",
+  "tags": [
+    "ローダー",
+    "loaders",
+    "Helix Thread",
+    "A",
+    "MOTION STUDIES",
+    "CONTINUUM"
+  ],
+  "related": [],
+  "props": [
+    [
+      "content",
+      "string",
+      "読み上げもされる処理中メッセージ。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "アニメーションのみ停止。完了を意味しません。"
+    ],
+    [
+      "style / className",
+      "React属性",
+      "--ld-size、--ld-accentなどで外観を調整。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setPaused、updateFoundation、destroy。"
+    ]
+  ],
+  "foundation": {
+    "id": "helix-thread-loader",
+    "kind": "loaders",
+    "variant": "helix-thread",
+    "label": "Helix Thread",
+    "description": "",
+    "defaultValue": null,
+    "content": "読み込み中…"
+  }
+}

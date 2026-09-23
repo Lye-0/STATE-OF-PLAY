@@ -1,0 +1,55 @@
+{
+  "id": "mini-bars-loader",
+  "name": "Mini Bars",
+  "category": "loaders",
+  "order": 1813,
+  "version": "4.8.0",
+  "tagline": "小さく、リズミカルに。",
+  "description": "四本の小さな棒が順番に伸縮する。",
+  "material": "EVERYDAY MOTION",
+  "motion": "STUDY",
+  "accent": "205,218,214",
+  "designType": "B",
+  "runtime": "CSS animation + visibility pause",
+  "componentName": "MiniBarsLoader",
+  "tags": [
+    "ローダー",
+    "loaders",
+    "Mini Bars",
+    "B",
+    "MOTION STUDIES",
+    "CONTINUUM"
+  ],
+  "related": [],
+  "props": [
+    [
+      "content",
+      "string",
+      "読み上げもされる処理中メッセージ。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "アニメーションのみ停止。完了を意味しません。"
+    ],
+    [
+      "style / className",
+      "React属性",
+      "--ld-size、--ld-accentなどで外観を調整。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setPaused、updateFoundation、destroy。"
+    ]
+  ],
+  "foundation": {
+    "id": "mini-bars-loader",
+    "kind": "loaders",
+    "variant": "mini-bars",
+    "label": "Mini Bars",
+    "description": "",
+    "defaultValue": null,
+    "content": "読み込み中…"
+  }
+}

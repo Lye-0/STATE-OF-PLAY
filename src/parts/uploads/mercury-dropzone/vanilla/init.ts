@@ -1,4 +1,4 @@
-import {mountUpload} from '../../../../shared/foundation/upload';
+import {mountUpload} from '../../../../shared/foundation/continuum/upload';
 import type {FoundationConfig, FoundationOptions} from '../../../../shared/foundation/core';
 const config: FoundationConfig = {
   "id": "mercury-dropzone",

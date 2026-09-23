@@ -1,12 +1,16 @@
-# Prism Progress
+# Prism Progress / 4.8.0
 
-valueを実際の進捗から指定します。indeterminateは割合不明の処理向けです。デモ用の自動進捗はありません。
+複数の結晶面が開き、光の方向が変わる。
 
-## 組み込み
+## 進捗の約束
+value, min, maxから0〜100%を計算する。本当の進捗を渡し、デモのタイマーを本番へ持ち込まない。native progressの値・読み上げ・数値表示は即座に更新し、装飾だけ補間する。indeterminate=trueでは割合とnative valueを省略する。100%表示は受け取った数値の到達であり、処理の成否を自動判定したものではない。
 
-Reactは同梱のPrismProgressを読み込み、value（外部制御）またはdefaultValue（内部制御）を指定します。onValueChangeで値を受け取り、controllerRefから公開APIを呼べます。
-通常HTMLはmarkup.htmlとstyles.cssを配置しinit(element, options)で初期化します。onDataChangeで値を受け取り、destroy()でイベントとオーバーレイを解除します。
+## 導入
+React版は同梱コンポーネントをimportし、value/defaultValueを指定します。onValueChangeで状態変更を受け取り、controllerRefからAPIを呼びます。通常HTML版はmarkup.htmlとstyles.cssを配置し、init(element, options)を呼びます。getData/setData/updateFoundationを使い、取り外し時にdestroy()を呼びます。
 
-## 運用
 
-入力・選択はローカルの状態です。通信・永続化・処理中表示を実際のアプリに接続してください。デモの日付・ラベル・候補・ページ数は利用先で差し替えてください。React版は外側のdivをReactが、内側の要素をcontrollerが管理する分離構成です。内側へReactのchildrenを挿入せず、公開props/APIから更新します。
+## 利用先への組み込み
+配布時のパスを導入先へ強制しない。対象アプリ、既存のコンポーネント配置、package.json、CSSの読み込み方、AGENTS.mdを確認する。移動したファイルはimport/exportとアセット参照を同時に更新する。既存ファイルを無条件に上書きせず、共通ファイルの互換性を確認する。参照できない構成は推測で確定しない。
+
+## 実装の正本
+`continuum/style.css` と、このパーツの `styles.css` を外観の正本とする。`continuum/geometry.ts` は素材ごとの形状、`continuum/art.ts` と `presentation-spring.ts` は操作に追従する装飾。背景の演出だけを簡略化しない。装飾は `aria-hidden`・`pointer-events:none` の層で、文章・ネイティブ入力・フォーカス・値の確定を動かさない。停止時はJavaScript描画ループを停止し、prefers-reduced-motionでは最終状態へ直接移る。使用例だけでなく部品を単独で配置し、入力・フォーム・取り外しを確認する。

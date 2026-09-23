@@ -1,5 +1,5 @@
 /* TIDE — material construction shared only by Type A tide foundation parts. */
-.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) {
+.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) {
   --ff-accent: #9ce3eb;
   --ff-accent2: #528fbd;
   --ff-base: #0a2634;
@@ -21,30 +21,30 @@
   --ad-motif: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20180%22%20fill%3D%22none%22%3E%3Cg%20stroke%3D%22%239fd5e0%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22M-20%2040q45-30%2090%200t90%200t90%200M-20%2054q45-30%2090%200t90%200t90%200M-20%2068q45-30%2090%200t90%200t90%200M-20%2082q45-30%2090%200t90%200t90%200M-20%2096q45-30%2090%200t90%200t90%200M-20%20110q45-30%2090%200t90%200t90%200M-20%20124q45-30%2090%200t90%200t90%200M-20%20138q45-30%2090%200t90%200t90%200%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
 }
 
-.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) .ff-reading{font-style:italic;color:#bef1f3}
-.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) .ff-heading::before{height:2px;background:#b8ecf1;box-shadow:0 0 15px #abdde93d}
-.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) .ff-rail{height:28px;top:20px;background:linear-gradient(#0b1e36,#1c566f 85%);border-color:#83c1d382}
-.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) .ff-fill{background:radial-gradient(ellipse at 50% 0,#ebffff80,transparent 55%),linear-gradient(#4095ad,#74c3d4 70%,#24728b);box-shadow:inset 0 1px 2px #bdf8ff,0 0 17px #84c8d54d}
-.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) .ff-ticks{background:var(--ad-motif) center / 130px;opacity:.4}
-.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) [data-range]::-webkit-slider-thumb{background:var(--ad-knob);border:1px solid #d5faffc7;box-shadow:inset 2px 2px 3px #eafffff0,inset -2px -2px 3px #90c5e299,0 7px 10px #09223780;border-radius:50% 50% 50% 13px}
-.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) [data-range]::-moz-range-thumb{border-radius:50% 50% 50% 13px;background:var(--ad-knob)}
-.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) .ff-choice{border-radius:20px 20px 5px 5px}
-.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) .ff-choice-icon{border-radius:50%;background:var(--ad-knob);color:#174c64}
-.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) .ff-choice[data-selected=true]{box-shadow:inset 0 1px 1px #d3ffffb3,0 10px 20px #0518265c,inset 3px 0 #a2dae2}
-.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) .ff-option-icon{border-radius:50% 50% 50% 9px;background:var(--ad-knob)}
-.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) .ff-notice{border-radius:22px 22px 6px 6px}
-.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) .ff-notice strong{font-family:Georgia,"Yu Mincho",serif;font-size:14px}
-.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) .ff-progress-visual{padding:22px;gap:18px}
-.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) .ff-progress-track{height:60px;border-radius:13px 13px 5px 5px;background:linear-gradient(#082639,#154a5b);border:1px solid #97cbd073;box-shadow:inset 0 3px 8px #071e2f94}
-.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) .ff-progress-track::after{content:"";position:absolute;inset:0;pointer-events:none;background:var(--ad-motif) center / 130px;opacity:.65}
-.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) .ff-progress-fill{background:linear-gradient(#6fb7c88f,#327b97 60%,#a8e1e28f);box-shadow:inset 0 1px 0 #dcfffa,0 0 10px #88c6d8;position:relative;border-right:1px solid #d3fffbc7}
-.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) .ff-progress-visual .ff-reading{font-style:italic}
-.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) .ff-calendar-header strong{font-style:italic;font-size:27px}
-.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) .ff-calendar-grid button[data-selected=true]{background:var(--ad-knob);border-radius:50% 50% 50% 4px;color:#124962}
-.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) .ff-tags .ff-tag{border-radius:21px 21px 21px 5px;background:var(--ad-face);border-color:#81c2d18c;box-shadow:inset 0 1px 1px #ddfffb9c,0 6px 9px #0003}
-.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) .ff-tag[data-selected=true]{background:var(--ad-knob);color:#19475b}
-.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) .ff-number-face{border-radius:15px 15px 5px 5px;background:linear-gradient(#082536,#2c6a7b);box-shadow:inset 0 3px 7px #021b30;border:1px solid #82bccc61}
-.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) .ff-stepper>button{border-radius:15px 15px 7px 7px;background:var(--ad-knob)}
-.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) .ff-dropzone::after{border:1px solid #97e2e23b;border-radius:inherit;inset:7px}
+.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) .ff-reading{font-style:italic;color:#bef1f3}
+.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) .ff-heading::before{height:2px;background:#b8ecf1;box-shadow:0 0 15px #abdde93d}
+.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) .ff-rail{height:28px;top:20px;background:linear-gradient(#0b1e36,#1c566f 85%);border-color:#83c1d382}
+.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) .ff-fill{background:radial-gradient(ellipse at 50% 0,#ebffff80,transparent 55%),linear-gradient(#4095ad,#74c3d4 70%,#24728b);box-shadow:inset 0 1px 2px #bdf8ff,0 0 17px #84c8d54d}
+.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) .ff-ticks{background:var(--ad-motif) center / 130px;opacity:.4}
+.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) [data-range]::-webkit-slider-thumb{background:var(--ad-knob);border:1px solid #d5faffc7;box-shadow:inset 2px 2px 3px #eafffff0,inset -2px -2px 3px #90c5e299,0 7px 10px #09223780;border-radius:50% 50% 50% 13px}
+.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) [data-range]::-moz-range-thumb{border-radius:50% 50% 50% 13px;background:var(--ad-knob)}
+.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) .ff-choice{border-radius:20px 20px 5px 5px}
+.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) .ff-choice-icon{border-radius:50%;background:var(--ad-knob);color:#174c64}
+.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) .ff-choice[data-selected=true]{box-shadow:inset 0 1px 1px #d3ffffb3,0 10px 20px #0518265c,inset 3px 0 #a2dae2}
+.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) .ff-option-icon{border-radius:50% 50% 50% 9px;background:var(--ad-knob)}
+.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) .ff-notice{border-radius:22px 22px 6px 6px}
+.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) .ff-notice strong{font-family:Georgia,"Yu Mincho",serif;font-size:14px}
+.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) .ff-progress-visual{padding:22px;gap:18px}
+.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) .ff-progress-track{height:60px;border-radius:13px 13px 5px 5px;background:linear-gradient(#082639,#154a5b);border:1px solid #97cbd073;box-shadow:inset 0 3px 8px #071e2f94}
+.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) .ff-progress-track::after{content:"";position:absolute;inset:0;pointer-events:none;background:var(--ad-motif) center / 130px;opacity:.65}
+.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) .ff-progress-fill{background:linear-gradient(#6fb7c88f,#327b97 60%,#a8e1e28f);box-shadow:inset 0 1px 0 #dcfffa,0 0 10px #88c6d8;position:relative;border-right:1px solid #d3fffbc7}
+.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) .ff-progress-visual .ff-reading{font-style:italic}
+.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) .ff-calendar-header strong{font-style:italic;font-size:27px}
+.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) .ff-calendar-grid button[data-selected=true]{background:var(--ad-knob);border-radius:50% 50% 50% 4px;color:#124962}
+.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) .ff-tags .ff-tag{border-radius:21px 21px 21px 5px;background:var(--ad-face);border-color:#81c2d18c;box-shadow:inset 0 1px 1px #ddfffb9c,0 6px 9px #0003}
+.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) .ff-tag[data-selected=true]{background:var(--ad-knob);color:#19475b}
+.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) .ff-number-face{border-radius:15px 15px 5px 5px;background:linear-gradient(#082536,#2c6a7b);box-shadow:inset 0 3px 7px #021b30;border:1px solid #82bccc61}
+.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) .ff-stepper>button{border-radius:15px 15px 7px 7px;background:var(--ad-knob)}
+.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) .ff-dropzone::after{border:1px solid #97e2e23b;border-radius:inherit;inset:7px}
 
-@media(prefers-reduced-motion:reduce){.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) *,.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) *::before,.sop-foundation[data-variant="tide"]:not([data-foundation="loaders"]) *::after{transition:none!important;animation:none!important}}
+@media(prefers-reduced-motion:reduce){.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) *,.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) *::before,.sop-foundation:where(:not(.sop-continuum,.sop-resonance))[data-variant="tide"]:not([data-foundation="loaders"]) *::after{transition:none!important;animation:none!important}}

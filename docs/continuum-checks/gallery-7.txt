@@ -1,0 +1,16 @@
+
+> state-of-play@4.8.0 test:continuum:gallery
+> node --experimental-strip-types tests/continuum-gallery.browser.ts
+
+(node:3986) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS gallery contains 604 total parts and the expected A/B category counts, preserving 24 old loaders
+Delivery combinations: 464
+PASS all 58 portable/original source packages have resolvable runtime files and consistent integration instructions
+Displayed source files: 528
+PASS displayed code and prompts exactly match all formats/layouts for six representative A/B components
+PASS progress inspector offers actual value jumps/range and unknown state, with correct reset
+PASS date inspector supports four modes, readOnly and reset without closing its parent dialog
+PASS file selection in the inspector and loader pause use actual controllers, not canned animations
+PASS 320/390/768 inspector keeps new controls and source download reachable
+CONTINUUM gallery 7 checks passed

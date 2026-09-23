@@ -1,0 +1,27 @@
+{
+  "mode": "real Chromium / explicit offline compiled fixture; not Vite",
+  "passed": 20,
+  "tests": [
+    "16 progress surfaces respond to real values while native percentages update synchronously",
+    "progress handles negative/decimal bounds, unknown values, updated labels and pause without false success",
+    "13 dropzones receive actual files, report selected not uploaded, keep native FormData and remove rows",
+    "file validation rejects MIME/size/count and duplicate files without erasing a valid single selection",
+    "uploads preserve rows on option updates, respect readonly/disabled, controlled refusal and native reset",
+    "drop handling opens the receiving surface, cannot bypass validation, and does not send requests",
+    "image object URLs are released on removal, reset and destruction",
+    "13 calendar skins open actual grids, accept dates, and restore trigger focus",
+    "calendar keyboard/month motion and disabled dates preserve focus and real date constraints",
+    "calendar ranges paint committed spans across rows and local months without UTC conversion",
+    "native datetime/time, empty state, reset, runtime mode changes and readOnly remain functional",
+    "nested dialog/top-layer calendar stays interactive; duplicated SVG definitions and values are independent",
+    "16 new loaders animate as CSS scenes, pause including pseudo-elements and expose a readable status",
+    "B loaders fit small inline-sized stages and inherit colors on light as well as dark surfaces",
+    "visibility pauses CSS loaders outside viewport, resuming when they re-enter without timers",
+    "all 58 changed and new layouts fit 320/390/768 and long Japanese text without page overflow",
+    "reduced motion is static yet usable, forced colors retain native progress/file/date controls",
+    "teardown removes all event-driven frames, animations, objects and top-layer panels",
+    "styles are instance-scoped and match when all 604 component skins are present",
+    "last frame captures representative real progress/upload/calendar/new loader views"
+  ],
+  "errors": []
+}

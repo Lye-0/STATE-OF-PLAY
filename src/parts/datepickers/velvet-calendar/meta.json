@@ -3,14 +3,14 @@
   "name": "Velvet Calendar",
   "category": "datepickers",
   "order": 477,
-  "version": "4.1.0",
+  "version": "4.8.0",
   "tagline": "静かに、深く、やわらかく。",
-  "description": "閉じた日付入力だけでなく、カレンダーの月表示、前後移動、曜日、日付選択、期間、フッターもデザイン。",
+  "description": "布のひだが深さを変え、ハイライトが移る。 カレンダーの展開・月移動・期間選択に連動し、日付セルの操作位置は固定します。",
   "material": "ATELIER · 09",
-  "motion": "RESPONSE",
+  "motion": "CONTINUUM",
   "accent": "223,167,190",
   "designType": "A",
-  "runtime": "Native DOM + CSS",
+  "runtime": "CSS + SVG + event-driven presentation",
   "componentName": "VelvetCalendar",
   "tags": [
     "日時選択",
@@ -18,36 +18,46 @@
     "Velvet Calendar",
     "Velvet",
     "A",
-    "Atelier",
-    "素材感",
-    "立体造形"
+    "CONTINUUM",
+    "状態に連動",
+    "動く面"
   ],
   "related": [],
   "props": [
     [
       "value / defaultValue",
-      "FoundationValue",
-      "外部制御値／内部制御の初期値。"
-    ],
-    [
-      "onValueChange",
-      "(value) => void",
-      "React版の値変更通知。通常DOM版はonDataChange。"
-    ],
-    [
-      "disabled",
-      "boolean",
-      "操作を無効にする。"
-    ],
-    [
-      "label / description",
-      "string",
-      "見出しと補足文を変更。"
+      "string | string[]",
+      "実際の状態を外部制御／内部制御します。"
     ],
     [
       "controllerRef",
       "Ref<FoundationController>",
-      "setData/updateFoundation/notify/show等の公開API。"
+      "setData / updateFoundation / setPaused / destroy。"
+    ],
+    [
+      "label / description",
+      "string",
+      "展示の文章ではなく用途に合わせた名前と説明。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "装飾を停止。値や処理結果を偽装しません。"
+    ],
+    [
+      "mode",
+      "date | range | datetime | time",
+      "入力方式を変更します。"
+    ],
+    [
+      "minDate / maxDate",
+      "YYYY-MM-DD",
+      "選択可能な日付の上下限。"
+    ],
+    [
+      "isDateDisabled",
+      "(date: string) => boolean",
+      "選択できない日付を指定します。"
     ]
   ],
   "foundation": {

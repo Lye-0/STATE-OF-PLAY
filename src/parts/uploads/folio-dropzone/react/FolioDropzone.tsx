@@ -1,7 +1,7 @@
 'use client';
 import React, {forwardRef} from 'react';
 import {FoundationWidget, type FoundationProps} from '../../../../shared/foundation/react';
-import {renderUpload, mountUpload} from '../../../../shared/foundation/upload';
+import {renderUpload, mountUpload} from '../../../../shared/foundation/continuum/upload';
 import type {FoundationConfig} from '../../../../shared/foundation/core';
 import '../styles.css';
 const config: FoundationConfig = {
@@ -19,5 +19,5 @@ const config: FoundationConfig = {
 export type FolioDropzoneProps = FoundationProps;
 /** Folio Dropzone: Aタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
 export default forwardRef<HTMLDivElement, FolioDropzoneProps>(function FolioDropzone(props, ref) {
-  return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
+  return <FoundationWidget {...props} className={`sop-continuum ${props.className??''}`} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });

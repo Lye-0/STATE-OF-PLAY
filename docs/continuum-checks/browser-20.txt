@@ -1,0 +1,27 @@
+
+> state-of-play@4.8.0 test:continuum
+> node --experimental-strip-types tests/continuum.browser.ts
+
+(node:5962) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS 16 progress surfaces respond to real values while native percentages update synchronously
+PASS progress handles negative/decimal bounds, unknown values, updated labels and pause without false success
+PASS 13 dropzones receive actual files, report selected not uploaded, keep native FormData and remove rows
+PASS file validation rejects MIME/size/count and duplicate files without erasing a valid single selection
+PASS uploads preserve rows on option updates, respect readonly/disabled, controlled refusal and native reset
+PASS drop handling opens the receiving surface, cannot bypass validation, and does not send requests
+PASS image object URLs are released on removal, reset and destruction
+PASS 13 calendar skins open actual grids, accept dates, and restore trigger focus
+PASS calendar keyboard/month motion and disabled dates preserve focus and real date constraints
+PASS calendar ranges paint committed spans across rows and local months without UTC conversion
+PASS native datetime/time, empty state, reset, runtime mode changes and readOnly remain functional
+PASS nested dialog/top-layer calendar stays interactive; duplicated SVG definitions and values are independent
+PASS 16 new loaders animate as CSS scenes, pause including pseudo-elements and expose a readable status
+PASS B loaders fit small inline-sized stages and inherit colors on light as well as dark surfaces
+PASS visibility pauses CSS loaders outside viewport, resuming when they re-enter without timers
+PASS all 58 changed and new layouts fit 320/390/768 and long Japanese text without page overflow
+PASS reduced motion is static yet usable, forced colors retain native progress/file/date controls
+PASS teardown removes all event-driven frames, animations, objects and top-layer panels
+PASS styles are instance-scoped and match when all 604 component skins are present
+PASS last frame captures representative real progress/upload/calendar/new loader views
+CONTINUUM 20 browser checks passed (explicit offline adapter, NOT Vite).
