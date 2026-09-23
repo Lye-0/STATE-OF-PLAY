@@ -168,7 +168,7 @@ function setCategory(id: string) {
     activeCategory = id;
     const jump=document.querySelector<HTMLSelectElement>('#category-jump');if(jump)jump.value=id;
     document.querySelectorAll<HTMLButtonElement>('[data-category]').forEach(b => { const active = b.dataset.category === id; b.setAttribute('aria-selected', String(active)); b.tabIndex = active ? 0 : -1; });
-    renderGallery();
+    return renderGallery();
 }
 function syncDesignFilter() { document.querySelectorAll<HTMLButtonElement>('[data-design-filter]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.designFilter === activeDesign))); }
 document.querySelectorAll<HTMLButtonElement>('[data-design-filter]').forEach(b => b.addEventListener('click', () => { activeDesign = b.dataset.designFilter ?? 'all'; syncDesignFilter(); renderGallery(); }));
@@ -250,5 +250,16 @@ syncDesignFilter();
 let initialCategory: string = parts.some(p => p.category === 'toggles') ? 'toggles' : parts[0].category;
 if (categories.some(c => c.id === restored.get('category'))) initialCategory = restored.get('category')!;
 try { const id = decodeURIComponent(location.hash.slice(6)); if (location.hash.startsWith('#part=')) initialCategory = parts.find(p => p.id === id)?.category ?? initialCategory; } catch { /* malformed route */ }
-setCategory(initialCategory);
+void setCategory(initialCategory).then(() => {
+    requestAnimationFrame(() => {
+        document.documentElement.classList.add('site-ready');
+        window.setTimeout(() => document.getElementById('site-boot')?.remove(), 250);
+    });
+}, () => {
+    const boot = document.getElementById('site-boot');
+    const status = document.getElementById('site-boot-status');
+    if (status) status.textContent = '読み込めませんでした。';
+    const retry = boot?.querySelector<HTMLAnchorElement>('.site-boot-retry');
+    if (retry) { retry.href = location.href; retry.hidden = false; }
+});
 readRoute();

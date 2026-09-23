@@ -84,6 +84,8 @@ jobs:
         run: npm run test:continuum:gallery
       - name: Lazy loading over development and production HTTP
         run: npm run test:lazy-loading
+      - name: First paint and reload show the Nixie loader
+        run: npm run test:site-boot
       - name: Category tab scroll stability
         run: npm run test:gallery-navigation
       - name: Tabs, prompts and exported source scrolling
