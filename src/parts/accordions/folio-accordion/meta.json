@@ -3,14 +3,14 @@
   "name": "Folio",
   "category": "accordions",
   "order": 97,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "tagline": "ページの、奥へ。",
-  "description": "大きな章番号と、紙の余白。ひらいた内容まで一冊の本のように。",
+  "description": "紙の背から、折り畳まれた面がほどける。",
   "material": "EDITORIAL / PAPER",
-  "motion": "UNFOLD / CONTENT",
+  "motion": "PAGE / HINGE",
   "accent": "197,212,177",
   "designType": "A",
-  "runtime": "CSS grid + disclosure events",
+  "runtime": "Native disclosure + event-driven material motion",
   "componentName": "FolioAccordion",
   "tags": [
     "Folio",
@@ -19,7 +19,10 @@
     "accordion",
     "開閉",
     "A",
-    "EDITORIAL / PAPER"
+    "EDITORIAL / PAPER",
+    "UNFOLD",
+    "動く面",
+    "展開アニメーション"
   ],
   "related": [
     "original-surface"

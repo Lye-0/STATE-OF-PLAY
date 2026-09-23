@@ -22,7 +22,8 @@ test('text field exports include portable input handling and styles in all 192 l
   const d=getDelivery(p,format,layout);assert.ok(d.runtimeFiles.some(f=>/text-field\.(?:ts|js)$/.test(f.name)));assert.ok(d.runtimeFiles.some(f=>f.name.endsWith('text-field-base.css')));
   assert.ok(d.files.some(f=>f.group==='example'));assert.ok(buildUsage(p,format,layout).includes(d.entry));
   const prompt=buildPrompt(p,format,layout);assert.ok(prompt.includes('IME'));assert.ok(prompt.includes('既存プロジェクト'));assert.ok(prompt.includes('readOnly'));
-  assert.doesNotMatch(d.runtimeFiles.map(f=>f.code).join('\n'),/localStorage\.setItem|sessionStorage\.setItem|fetch\(|XMLHttpRequest|requestAnimationFrame\(/);
+  if(!p.tags.includes('RESPONSIVE'))assert.doesNotMatch(d.runtimeFiles.map(f=>f.code).join('\n'),/requestAnimationFrame\(/);
+  assert.doesNotMatch(d.runtimeFiles.map(f=>f.code).join('\n'),/localStorage\.setItem|sessionStorage\.setItem|fetch\(|XMLHttpRequest|setInterval\(/);
  }
 });
 test('input enhancement does not intercept editing keys, paste, or composition values',()=>{

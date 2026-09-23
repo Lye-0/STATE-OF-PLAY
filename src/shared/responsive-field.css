@@ -1,0 +1,13 @@
+/* Transient presentation values. The native editable element never transforms, filters or changes width. */
+.sop-responsive-field{--field-focus:0;--field-energy:0;--field-px:50%;--field-py:50%}
+.sop-responsive-field:focus-within:not([data-disabled=true]):not([data-readonly=true]){--field-focus:1}
+.sop-responsive-field>.sop-field-shell{transition:border-color .3s,box-shadow .4s}
+.sop-responsive-field>.sop-field-shell>.sop-field-control{transform:none!important;filter:none!important;transition:none!important}
+.sop-responsive-field>.sop-field-shell>.sop-field-fx{border:0;pointer-events:none}
+.sop-responsive-field>.sop-field-shell>.sop-field-fx>i{inset:auto;border:0;box-shadow:none;background:none;transform:none;transition:none}
+.sop-responsive-field[data-disabled=true],.sop-responsive-field[data-readonly=true]{--field-energy:0}
+@media(prefers-reduced-motion:reduce){.sop-responsive-field{--field-energy:0!important}.sop-responsive-field *,.sop-responsive-field *:before,.sop-responsive-field *:after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-responsive-field>.sop-field-shell{box-shadow:none!important;transform:none!important;clip-path:none!important}.sop-responsive-field .sop-field-fx,.sop-responsive-field>.sop-field-shell:before,.sop-responsive-field>.sop-field-shell:after{display:none!important}}
+
+/* Reserve the clear action space so the edit line never jumps when the first character is entered. */
+.sop-responsive-field>.sop-field-shell>.sop-field-clear[hidden]{display:grid!important;visibility:hidden;pointer-events:none}

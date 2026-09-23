@@ -1,5 +1,13 @@
 @import "../../../shared/accordion-base.css";
- @import "../../../shared/panel-content.css";
-/* Aurora Fold — LIGHT / ATMOSPHERE. Type A. */
-.sop-accordion.sop-aurora-fold-accordion{--acc-bg:linear-gradient(125deg,#1c302d,#242537);--acc-accent:#a8e8cf;--acc-line:#94bea82b;--acc-radius:16px;}
-.sop-accordion.sop-aurora-fold-accordion > .sop-accordion-item[data-open=true]{box-shadow:0 0 25px #96e7c00b,inset 2px 0 #9bdbc0}.sop-accordion.sop-aurora-fold-accordion > .sop-accordion-item > .sop-accordion-heading > .sop-accordion-trigger > .sop-accordion-index{width:26px;height:26px;display:grid;place-items:center;border-radius:50%;border:1px solid #abebce40}.sop-accordion.sop-aurora-fold-accordion > .sop-accordion-item > .sop-accordion-panel > .sop-accordion-clip > .sop-accordion-content > .sop-panel-art{background:linear-gradient(120deg,#7bccb330,#8163b04a,#314b4d)}.sop-accordion.sop-aurora-fold-accordion > .sop-accordion-item > .sop-accordion-panel > .sop-accordion-clip > .sop-accordion-content > .sop-panel-art:before{width:230px;top:-45px;right:-15px;filter:blur(1px);border-width:15px;border-color:#bcebd91d}
+@import "../../../shared/panel-content.css";
+@import "../../../shared/unfold-accordion.css";
+/* v4.5 — LIGHT / CURTAIN; decorative geometry only. */
+.sop-accordion.sop-aurora-fold-accordion{--acc-bg:#161d2b;--acc-ink:#eef1f4;--acc-muted:#b2bac9;--acc-accent:#a9e2d7;--acc-line:#acbfd145;--acc-radius:19px;--reveal-turn:-6deg}
+.sop-accordion.sop-aurora-fold-accordion>.sop-accordion-item{background:radial-gradient(ellipse at 80% 0,#accdeb22,transparent 55%),#171e2a;box-shadow:inset 0 1px #efffff50,inset 0 -1px #adbafa39,0 16px 32px #0004;border-color:#aabdd149}
+.sop-accordion.sop-aurora-fold-accordion>.sop-accordion-item>.sop-unfold-scene>i{width:29%;height:190%;left:calc(var(--plane)*14% - 29%);top:-32%;background:linear-gradient(90deg,transparent,#78d8db30 37%,#d2b5f134 61%,transparent);border-radius:50%;filter:blur(13px);transform:translateY(calc((1 - var(--unfold))*-54%)) rotate(calc(-30deg + var(--plane)*6deg + var(--unfold)*26deg));opacity:calc(.24 + var(--unfold)*.65)}
+.sop-accordion.sop-aurora-fold-accordion>.sop-accordion-item>.sop-unfold-scene:after{content:'';position:absolute;inset:1px;background:radial-gradient(ellipse at var(--unfold-x) var(--unfold-y),#d1f8ee15,transparent 56%);border-radius:18px;border-top:1px solid #edfdff63}
+.sop-accordion.sop-aurora-fold-accordion>.sop-accordion-item>.sop-accordion-heading>.sop-accordion-trigger>.sop-accordion-title b{letter-spacing:-.04em!important;font-size:20px!important}.sop-accordion.sop-aurora-fold-accordion>.sop-accordion-item>.sop-accordion-panel>.sop-accordion-clip>.sop-accordion-content{border-top:1px solid #c9e8f01f;margin:0 20px;padding:17px 3px 24px!important}
+
+/* Optional example illustration: omitted when the consumer supplies different content. */
+.sop-accordion.sop-aurora-fold-accordion>.sop-accordion-item>.sop-accordion-panel>.sop-accordion-clip>.sop-accordion-content>.sop-panel-art:before{width:200px;height:180px;right:22px;top:-53px;border:0;border-radius:48%;background:conic-gradient(from 30deg,transparent,#9fdaec70,#b0a1db6c,#b6f1d338,transparent);filter:blur(12px);box-shadow:none;transform:rotate(calc(var(--unfold)*45deg));opacity:.8}
+.sop-accordion.sop-aurora-fold-accordion>.sop-accordion-item>.sop-accordion-panel>.sop-accordion-clip>.sop-accordion-content>.sop-panel-art:after{left:10%;right:10%;height:1px;top:70%;background:linear-gradient(90deg,transparent,#c6f2e758,transparent);transform:rotate(-10deg)}

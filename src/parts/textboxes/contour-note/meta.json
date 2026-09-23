@@ -3,14 +3,14 @@
   "name": "Contour Note",
   "category": "textboxes",
   "order": 136,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "tagline": "思考に、等高線。",
-  "description": "地形を描く細い線。深い緑の面へ、思考の輪郭を残す。",
+  "description": "等高線の層がフォーカスで広がり、入力の余韻だけが伝わる。",
   "material": "TOPOGRAPHY / NOTES",
-  "motion": "FOCUS / WRITE",
+  "motion": "TOPOGRAPHY / PRESSURE",
   "accent": "168,205,154",
   "designType": "A",
-  "runtime": "Native input + CSS / event-driven",
+  "runtime": "Native input + event-driven material motion",
   "componentName": "ContourNote",
   "tags": [
     "Contour Note",
@@ -22,7 +22,9 @@
     "text",
     "日本語",
     "textbox",
-    "A"
+    "A",
+    "RESPONSIVE",
+    "入力の余韻"
   ],
   "related": [
     "original-surface"

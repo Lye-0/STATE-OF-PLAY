@@ -1,9 +1,10 @@
 'use client';
 import React from 'react';
-import {AccordionView,type AccordionProps} from '../../../../shared/accordion-view';
+import {UnfoldAccordionView} from '../../../../shared/unfold-accordion-view';
+import type {AccordionProps} from '../../../../shared/accordion-view';
 import '../styles.css';
 export type {AccordionProps,AccordionItem} from '../../../../shared/accordion-view';
-/** 設計図の細線と寸法表記。詳細な仕様を美しく展開する。 */
+/** 格子が立ち上がり、走査線が内容の輪郭を描く。 */
 export default function BlueprintAccordion({className='',...props}:AccordionProps){
- return <AccordionView {...props} className={`sop-blueprint-accordion ${className}`}/>;
+ return <UnfoldAccordionView {...props} mode="blueprint" className={`sop-blueprint-accordion ${className}`}/>;
 }

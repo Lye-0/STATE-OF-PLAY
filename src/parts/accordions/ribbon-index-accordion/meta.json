@@ -3,14 +3,14 @@
   "name": "Ribbon Index",
   "category": "accordions",
   "order": 110,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "tagline": "目印の、先へ。",
-  "description": "折り返されたリボンと暖かい紙。見出し自体がしおりになる。",
+  "description": "折り返した帯がほどけて、ひとつの長い紙面になる。",
   "material": "PAPER / RIBBON",
-  "motion": "UNFOLD / CONTENT",
+  "motion": "RIBBON / UNROLL",
   "accent": "197,212,177",
   "designType": "A",
-  "runtime": "CSS grid + disclosure events",
+  "runtime": "Native disclosure + event-driven material motion",
   "componentName": "RibbonIndexAccordion",
   "tags": [
     "Ribbon Index",
@@ -19,7 +19,10 @@
     "accordion",
     "開閉",
     "A",
-    "PAPER / RIBBON"
+    "PAPER / RIBBON",
+    "UNFOLD",
+    "動く面",
+    "展開アニメーション"
   ],
   "related": [
     "original-surface"

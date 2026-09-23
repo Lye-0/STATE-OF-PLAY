@@ -1,0 +1,17 @@
+{
+  "transport": "explicit synthetic browser document (NOT Vite HTTP)",
+  "react": "not executed",
+  "passed": [
+    "Dropdowns: actual options, End/Enter commit, Escape cancellation, no accidental detail dialog",
+    "Dropdown top layer in the detail modal; first Escape closes choices, next closes detail",
+    "24 accordions: real height transitions, single expand, native buttons and keyboard focus",
+    "Accordion designed interiors remain interactive; multiple expand controls work",
+    "Both new categories at 320 / 390 / 768px: no page overflow, viewport-contained popup and detail controls",
+    "Native select: typeahead, form submission/reset, disabled choice, disabled field and external focus",
+    "Controlled native select refuses commits until setValue; empty choices stay safe",
+    "Accordion controlled refusal, dynamic content height, focus recovery and required-open policy",
+    "Nested accordions keep independent state and unique ids; cleanup leaves no RAF",
+    "Reduced-motion: menus and accordion panels use no animated transition"
+  ],
+  "errors": []
+}

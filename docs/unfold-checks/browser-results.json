@@ -1,0 +1,24 @@
+{
+  "mode": "Explicit offline fixture / real Chromium; not Vite",
+  "passed": 17,
+  "tests": [
+    "all 16 materials preserve native headings, immediate ARIA and animated presentation",
+    "rapid reversal settles to the committed state, not an old animation target",
+    "keyboard, single/multiple policy, collapse policy and disabled headings",
+    "arbitrary native content survives close/reopen, does not toggle parents, and transfers hidden focus",
+    "nested skin instances receive their own material progress and state only",
+    "dynamic accordion items are measured and cleaned without a fixed content height",
+    "six selected fields preserve native value, selection, form payload and reset",
+    "field focus reacts while glyph bounds and caret geometry remain stable",
+    "IME composition does not pulse until commit and does not rewrite text",
+    "clear, errors, disabled and readonly leave native field APIs intact",
+    "auto-growing textareas, long text and native undo remain usable",
+    "independent instances have unique native IDs and isolated values",
+    "all revised parts fit 320 / 390 / 768 widths with long Japanese labels",
+    "RTL keeps the same semantic order and clipped decorations within the component",
+    "reduced motion displays final materials without transient animation or RAF",
+    "forced colors hides decorative layers and retains the actual controls",
+    "settled / unmounted parts release all their animation frames"
+  ],
+  "errors": []
+}

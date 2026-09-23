@@ -3,14 +3,14 @@
   "name": "Silk Chapter",
   "category": "accordions",
   "order": 101,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "tagline": "やわらかな、章。",
-  "description": "絹のような陰影と細い見出し。物語が柔らかく折り重なる。",
+  "description": "畳まれた布のひだが解け、光沢だけがゆっくり移る。",
   "material": "TEXTILE / STORY",
-  "motion": "UNFOLD / CONTENT",
+  "motion": "FABRIC / PLEAT",
   "accent": "197,212,177",
   "designType": "A",
-  "runtime": "CSS grid + disclosure events",
+  "runtime": "Native disclosure + event-driven material motion",
   "componentName": "SilkChapterAccordion",
   "tags": [
     "Silk Chapter",
@@ -19,7 +19,10 @@
     "accordion",
     "開閉",
     "A",
-    "TEXTILE / STORY"
+    "TEXTILE / STORY",
+    "UNFOLD",
+    "動く面",
+    "展開アニメーション"
   ],
   "related": [
     "original-surface"

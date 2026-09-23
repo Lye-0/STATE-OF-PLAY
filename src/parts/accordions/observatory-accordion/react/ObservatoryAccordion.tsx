@@ -1,9 +1,10 @@
 'use client';
 import React from 'react';
-import {AccordionView,type AccordionProps} from '../../../../shared/accordion-view';
+import {UnfoldAccordionView} from '../../../../shared/unfold-accordion-view';
+import type {AccordionProps} from '../../../../shared/accordion-view';
 import '../styles.css';
 export type {AccordionProps,AccordionItem} from '../../../../shared/accordion-view';
-/** 夜空の下で読む観測データ。軌道図と数値が静かに浮かぶ。 */
+/** 開口が円を描いて広がり、夜の奥行きが現れる。 */
 export default function ObservatoryAccordion({className='',...props}:AccordionProps){
- return <AccordionView {...props} className={`sop-observatory-accordion ${className}`}/>;
+ return <UnfoldAccordionView {...props} mode="iris" className={`sop-observatory-accordion ${className}`}/>;
 }

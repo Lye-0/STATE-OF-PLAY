@@ -1,9 +1,10 @@
 'use client';
 import React from 'react';
-import {AccordionView,type AccordionProps} from '../../../../shared/accordion-view';
+import {UnfoldAccordionView} from '../../../../shared/unfold-accordion-view';
+import type {AccordionProps} from '../../../../shared/accordion-view';
 import '../styles.css';
 export type {AccordionProps,AccordionItem} from '../../../../shared/accordion-view';
-/** 葉色の紙と標本ラベル。植物の手入れを静かに整理する。 */
+/** 葉のような紙の重なりが、左右にひらく。 */
 export default function GardenNotesAccordion({className='',...props}:AccordionProps){
- return <AccordionView {...props} className={`sop-garden-notes-accordion ${className}`}/>;
+ return <UnfoldAccordionView {...props} mode="garden" className={`sop-garden-notes-accordion ${className}`}/>;
 }

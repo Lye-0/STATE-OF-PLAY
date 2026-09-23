@@ -3,14 +3,14 @@
   "name": "Gallery Frame",
   "category": "accordions",
   "order": 108,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "tagline": "作品の、その先。",
-  "description": "額縁のような線と展示の余白。アートの背景を読むアコーディオン。",
+  "description": "四隅から額縁が伸び、余白の中に内容を展示する。",
   "material": "ART / EXHIBITION",
-  "motion": "UNFOLD / CONTENT",
+  "motion": "FRAME / DRAW",
   "accent": "197,212,177",
   "designType": "A",
-  "runtime": "CSS grid + disclosure events",
+  "runtime": "Native disclosure + event-driven material motion",
   "componentName": "GalleryFrameAccordion",
   "tags": [
     "Gallery Frame",
@@ -19,7 +19,10 @@
     "accordion",
     "開閉",
     "A",
-    "ART / EXHIBITION"
+    "ART / EXHIBITION",
+    "UNFOLD",
+    "動く面",
+    "展開アニメーション"
   ],
   "related": [
     "original-surface"

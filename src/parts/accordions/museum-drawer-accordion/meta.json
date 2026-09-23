@@ -3,14 +3,14 @@
   "name": "Museum Drawer",
   "category": "accordions",
   "order": 112,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "tagline": "分類の、美しさ。",
-  "description": "整理された標本とラベル。小さな博物館の引き出しをひらく。",
+  "description": "引き出しの側板が伸び、紙の底面が手前へ滑る。",
   "material": "TAXONOMY / COLLECTION",
-  "motion": "UNFOLD / CONTENT",
+  "motion": "ARCHIVE / DRAWER",
   "accent": "197,212,177",
   "designType": "A",
-  "runtime": "CSS grid + disclosure events",
+  "runtime": "Native disclosure + event-driven material motion",
   "componentName": "MuseumDrawerAccordion",
   "tags": [
     "Museum Drawer",
@@ -19,7 +19,10 @@
     "accordion",
     "開閉",
     "A",
-    "TAXONOMY / COLLECTION"
+    "TAXONOMY / COLLECTION",
+    "UNFOLD",
+    "動く面",
+    "展開アニメーション"
   ],
   "related": [
     "original-surface"

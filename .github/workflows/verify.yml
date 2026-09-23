@@ -68,6 +68,8 @@ jobs:
         run: npm run test:refinement
       - name: Kinetic additions (native scroll, motion, menus and cleanup)
         run: npm run test:kinetic
+      - name: Unfold accordions and responsive text fields
+        run: npm run test:unfold
       - name: Build full source archive
         run: npm run package
       - name: Save reports on failure

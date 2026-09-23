@@ -3,14 +3,14 @@
   "name": "Orbit Search",
   "category": "textboxes",
   "order": 130,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "tagline": "探す、という旅。",
-  "description": "楕円の軌道に浮かぶ検索欄。静かなリングがフォーカスを示す。",
+  "description": "検索面は静止したまま、二つの軌道がフォーカスへ整列する。",
   "material": "ORBITAL / FINDER",
-  "motion": "FOCUS / WRITE",
+  "motion": "ORBIT / FOCUS",
   "accent": "164,217,197",
   "designType": "A",
-  "runtime": "Native input + CSS / event-driven",
+  "runtime": "Native input + event-driven material motion",
   "componentName": "OrbitSearch",
   "tags": [
     "Orbit Search",
@@ -22,7 +22,9 @@
     "search",
     "日本語",
     "textbox",
-    "A"
+    "A",
+    "RESPONSIVE",
+    "入力の余韻"
   ],
   "related": [
     "original-surface"

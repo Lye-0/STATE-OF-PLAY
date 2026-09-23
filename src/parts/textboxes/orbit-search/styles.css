@@ -1,10 +1,14 @@
 @import "../../../shared/text-field-base.css";
-/* Orbit Search — ORBITAL / FINDER */
+@import "../../../shared/responsive-field.css";
+/* v4.5 — ORBIT / FOCUS; stable native editing surface. */
+.sop-textfield.sop-orbit-search{--field-bg:#15201f;--field-ink:#e0eee4;--field-accent:#bddbbe;--field-edge:#52776a;--field-muted:#9fbbaa;--field-radius:34px}
+.sop-textfield.sop-orbit-search>.sop-field-shell{min-height:68px;padding-left:24px;border:1px solid #8aa99875;background:radial-gradient(ellipse at 50% 100%,#678c7530,#15201f 75%);box-shadow:inset 0 1px #d1f0d545,0 15px 25px #0004;overflow:visible}
+.sop-textfield.sop-orbit-search>.sop-field-shell>.sop-field-symbol{display:block;width:18px;height:18px;border:1px solid #b7d4bda0;border-radius:50%;background:none;box-shadow:none;transform:none!important}
+.sop-textfield.sop-orbit-search>.sop-field-shell>.sop-field-symbol:after{content:'';position:absolute;right:-4px;bottom:-1px;width:7px;height:1px;background:#bdd3ba;transform:rotate(45deg)}
+.sop-textfield.sop-orbit-search>.sop-field-shell>.sop-field-fx{overflow:visible!important}
+.sop-textfield.sop-orbit-search>.sop-field-shell>.sop-field-fx>i:nth-child(1),.sop-textfield.sop-orbit-search>.sop-field-shell>.sop-field-fx>i:nth-child(2){inset:4px -3px;border:1px solid #c5dfcb63;border-radius:50%;transform:perspective(600px) rotateX(calc(55deg - var(--field-focus)*43deg)) rotateZ(calc(-8deg + var(--field-focus)*8deg));box-shadow:0 0 10px #7dd7bd09;opacity:calc(.2 + var(--field-focus)*.8)}
+.sop-textfield.sop-orbit-search>.sop-field-shell>.sop-field-fx>i:nth-child(2){inset:-2px 8px;border-color:#75aa9756;transform:perspective(600px) rotateX(calc(-48deg + var(--field-focus)*38deg)) rotateZ(calc(8deg - var(--field-focus)*8deg))}
+.sop-textfield.sop-orbit-search>.sop-field-shell>.sop-field-fx>i:nth-child(3){width:6px;height:6px;left:calc(30% + var(--field-focus)*38%);top:calc(-1px + var(--field-focus)*2px);background:#d5edd0;border-radius:50%;box-shadow:0 0 12px #b8f4d57d;opacity:calc(.4 + var(--field-focus)*.6)}
+.sop-textfield.sop-orbit-search>.sop-field-shell>.sop-field-fx>i:nth-child(4){inset:-2px;border:1px solid #c3f4d8;border-radius:inherit;transform:scale(calc(1 + var(--field-energy)*.045),calc(1 + var(--field-energy)*.22));opacity:calc(var(--field-energy)*.5)}
 
-.sop-textfield.sop-orbit-search{--field-bg:#182823;--field-accent:#b8e4cf;--field-muted:#9eb8ad;--field-edge:#52776a;--field-radius:99px}
-.sop-textfield.sop-orbit-search>.sop-field-shell{min-height:65px;padding-left:16px;border:1px solid #568071;background:radial-gradient(ellipse at 30% 0,#4c766043,transparent 70%),#18251f;box-shadow:0 0 0 5px #1b2f2545,0 0 0 6px #65917936,0 12px 25px #0005}
-.sop-textfield.sop-orbit-search .sop-field-symbol{display:block;width:30px;height:30px;border:1px solid #8bc0a769;border-radius:50%;transform:rotate(-30deg)}.sop-textfield.sop-orbit-search .sop-field-symbol:before{content:'';position:absolute;inset:7px;border:1px solid currentColor;border-radius:50%}.sop-textfield.sop-orbit-search .sop-field-symbol:after{content:'';position:absolute;left:20px;top:20px;width:7px;height:1px;background:currentColor;transform:rotate(45deg)}
-.sop-textfield.sop-orbit-search:focus-within .sop-field-symbol{transform:rotate(0);transition:transform .55s}
-.sop-textfield.sop-orbit-search .sop-field-heading{padding:0 9px}.sop-textfield.sop-orbit-search .sop-field-meta{padding:0 9px}
-
-.sop-textfield.sop-orbit-search[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}
+.sop-textfield.sop-orbit-search[data-invalid="true"]>.sop-field-shell{border:1px solid var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}

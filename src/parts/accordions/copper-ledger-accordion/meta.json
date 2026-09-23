@@ -3,14 +3,14 @@
   "name": "Copper Ledger",
   "category": "accordions",
   "order": 103,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "tagline": "記録に、重みを。",
-  "description": "赤銅の縁と打刻番号。素材の履歴が精密な表になって現れる。",
+  "description": "銅の帯が回転して開き、内側の暗い面を見せる。",
   "material": "MACHINED / COPPER",
-  "motion": "UNFOLD / CONTENT",
+  "motion": "ALLOY / ROTATING LEAVES",
   "accent": "197,212,177",
   "designType": "A",
-  "runtime": "CSS grid + disclosure events",
+  "runtime": "Native disclosure + event-driven material motion",
   "componentName": "CopperLedgerAccordion",
   "tags": [
     "Copper Ledger",
@@ -19,7 +19,10 @@
     "accordion",
     "開閉",
     "A",
-    "MACHINED / COPPER"
+    "MACHINED / COPPER",
+    "UNFOLD",
+    "動く面",
+    "展開アニメーション"
   ],
   "related": [
     "original-surface"

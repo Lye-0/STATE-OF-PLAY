@@ -3,14 +3,14 @@
   "name": "Carbon Case",
   "category": "accordions",
   "order": 109,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "tagline": "機能を、収める。",
-  "description": "織り込まれたカーボンと控えめな識別色。道具を納めるケースの質感。",
+  "description": "ケースの蓋が起き、内側のライナーが奥から現れる。",
   "material": "CARBON / EQUIPMENT",
-  "motion": "UNFOLD / CONTENT",
+  "motion": "CASE / CLAMSHELL",
   "accent": "197,212,177",
   "designType": "A",
-  "runtime": "CSS grid + disclosure events",
+  "runtime": "Native disclosure + event-driven material motion",
   "componentName": "CarbonCaseAccordion",
   "tags": [
     "Carbon Case",
@@ -19,7 +19,10 @@
     "accordion",
     "開閉",
     "A",
-    "CARBON / EQUIPMENT"
+    "CARBON / EQUIPMENT",
+    "UNFOLD",
+    "動く面",
+    "展開アニメーション"
   ],
   "related": [
     "original-surface"

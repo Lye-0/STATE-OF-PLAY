@@ -1,9 +1,10 @@
 'use client';
 import React from 'react';
-import {AccordionView,type AccordionProps} from '../../../../shared/accordion-view';
+import {UnfoldAccordionView} from '../../../../shared/unfold-accordion-view';
+import type {AccordionProps} from '../../../../shared/accordion-view';
 import '../styles.css';
 export type {AccordionProps,AccordionItem} from '../../../../shared/accordion-view';
-/** 整理された標本とラベル。小さな博物館の引き出しをひらく。 */
+/** 引き出しの側板が伸び、紙の底面が手前へ滑る。 */
 export default function MuseumDrawerAccordion({className='',...props}:AccordionProps){
- return <AccordionView {...props} className={`sop-museum-drawer-accordion ${className}`}/>;
+ return <UnfoldAccordionView {...props} mode="drawer" className={`sop-museum-drawer-accordion ${className}`}/>;
 }

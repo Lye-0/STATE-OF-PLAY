@@ -1,11 +1,11 @@
 @import "../../../shared/text-field-base.css";
-/* Contour Note — TOPOGRAPHY / NOTES */
+@import "../../../shared/responsive-field.css";
+/* v4.5 — TOPOGRAPHY / PRESSURE; stable native editing surface. */
+.sop-textfield.sop-contour-note{--field-bg:#182c26;--field-ink:#e0e8d8;--field-accent:#c8d1a1;--field-muted:#a0b8a1;--field-edge:#708575;--field-radius:17px}
+.sop-textfield.sop-contour-note>.sop-field-shell{background:radial-gradient(ellipse at 80% 110%,#80996c2a,transparent 70%),#172b25;border-color:#8ca18563;box-shadow:inset 0 1px #e9f2c42e,0 13px 28px #0004}
+.sop-textfield.sop-contour-note>.sop-field-heading{padding:0 3px}.sop-textfield.sop-contour-note .sop-field-label{color:#dbe3be}
+.sop-textfield.sop-contour-note>.sop-field-shell>.sop-field-fx>i{width:calc(92% + var(--n,0)*28%);height:calc(118% + var(--n,0)*25%);left:calc(24% - var(--n,0)*10%);top:calc(21% - var(--n,0)*8%);border:1px solid #c6d8a547;border-radius:43% 57% 64% 36% / 65% 39% 61% 35%;transform:rotate(calc(-20deg + var(--n,0)*7deg + var(--field-focus)*16deg + var(--field-energy)*3deg)) scale(calc(1 + var(--field-focus)*.08 + var(--field-energy)*.024));opacity:calc(.4 + var(--field-focus)*.4);background:linear-gradient(130deg,#8bab6804,#87bba009)}
+.sop-textfield.sop-contour-note>.sop-field-shell>.sop-field-fx>i:nth-child(1){--n:0}.sop-textfield.sop-contour-note>.sop-field-shell>.sop-field-fx>i:nth-child(2){--n:1}.sop-textfield.sop-contour-note>.sop-field-shell>.sop-field-fx>i:nth-child(3){--n:2}.sop-textfield.sop-contour-note>.sop-field-shell>.sop-field-fx>i:nth-child(4){--n:3}
+.sop-textfield.sop-contour-note .sop-field-control{line-height:1.85;font-size:16px}
 
-.sop-textfield.sop-contour-note{--field-bg:#1c2a21;--field-ink:#e4ebd4;--field-accent:#c1d8a2;--field-muted:#aebca0;--field-edge:#617454;--field-radius:12px}
-.sop-textfield.sop-contour-note{padding:20px;background:#1c291f;border:1px solid #536c4580;border-radius:15px;box-shadow:0 13px 25px #0004}
-.sop-textfield.sop-contour-note>.sop-field-shell{background:#142017aa;border-color:#52674688;box-shadow:inset 0 1px 10px #0003}
-.sop-textfield.sop-contour-note .sop-field-fx{background:repeating-radial-gradient(ellipse at 118% 40%,transparent 0 13px,#97b07112 14px 15px,transparent 16px 22px);opacity:.8}
-.sop-textfield.sop-contour-note .sop-field-caption{font-size:7px;letter-spacing:1.5px}
-.sop-textfield.sop-contour-note>.sop-field-baseline{display:block;margin-top:14px;height:1px;background:#72935b66}.sop-textfield.sop-contour-note>.sop-field-baseline span{position:absolute;width:7px;height:7px;border:1px solid #b5cea1;border-radius:50%;top:-3px;left:23%;background:#253326;transition:left .6s}.sop-textfield.sop-contour-note:focus-within>.sop-field-baseline span{left:77%}
-
-.sop-textfield.sop-contour-note[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}
+.sop-textfield.sop-contour-note[data-invalid="true"]>.sop-field-shell{border:1px solid var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}

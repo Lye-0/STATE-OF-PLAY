@@ -3,14 +3,14 @@
   "name": "Garden Notes",
   "category": "accordions",
   "order": 105,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "tagline": "ひらく、葉のように。",
-  "description": "葉色の紙と標本ラベル。植物の手入れを静かに整理する。",
+  "description": "葉のような紙の重なりが、左右にひらく。",
   "material": "BOTANICAL / NOTES",
-  "motion": "UNFOLD / CONTENT",
+  "motion": "PAPER / BLOOM",
   "accent": "197,212,177",
   "designType": "A",
-  "runtime": "CSS grid + disclosure events",
+  "runtime": "Native disclosure + event-driven material motion",
   "componentName": "GardenNotesAccordion",
   "tags": [
     "Garden Notes",
@@ -19,7 +19,10 @@
     "accordion",
     "開閉",
     "A",
-    "BOTANICAL / NOTES"
+    "BOTANICAL / NOTES",
+    "UNFOLD",
+    "動く面",
+    "展開アニメーション"
   ],
   "related": [
     "original-surface"

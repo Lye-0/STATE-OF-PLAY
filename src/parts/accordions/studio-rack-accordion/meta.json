@@ -3,14 +3,14 @@
   "name": "Studio Rack",
   "category": "accordions",
   "order": 99,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "tagline": "音を、ほどく。",
-  "description": "ラックマウント機器の溝と小さなメーター。音の設定が内側に続く。",
+  "description": "シャッターの羽根が起き上がり、ラックの内側が開く。",
   "material": "ANALOG / AUDIO",
-  "motion": "UNFOLD / CONTENT",
+  "motion": "MECHANICAL / SHUTTER",
   "accent": "197,212,177",
   "designType": "A",
-  "runtime": "CSS grid + disclosure events",
+  "runtime": "Native disclosure + event-driven material motion",
   "componentName": "StudioRackAccordion",
   "tags": [
     "Studio Rack",
@@ -19,7 +19,10 @@
     "accordion",
     "開閉",
     "A",
-    "ANALOG / AUDIO"
+    "ANALOG / AUDIO",
+    "UNFOLD",
+    "動く面",
+    "展開アニメーション"
   ],
   "related": [
     "original-surface"

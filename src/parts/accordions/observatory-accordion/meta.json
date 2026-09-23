@@ -3,14 +3,14 @@
   "name": "Observatory",
   "category": "accordions",
   "order": 104,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "tagline": "星の、記録。",
-  "description": "夜空の下で読む観測データ。軌道図と数値が静かに浮かぶ。",
+  "description": "開口が円を描いて広がり、夜の奥行きが現れる。",
   "material": "DEEP SPACE / RECORD",
-  "motion": "UNFOLD / CONTENT",
+  "motion": "SPACE / APERTURE",
   "accent": "197,212,177",
   "designType": "A",
-  "runtime": "CSS grid + disclosure events",
+  "runtime": "Native disclosure + event-driven material motion",
   "componentName": "ObservatoryAccordion",
   "tags": [
     "Observatory",
@@ -19,7 +19,10 @@
     "accordion",
     "開閉",
     "A",
-    "DEEP SPACE / RECORD"
+    "DEEP SPACE / RECORD",
+    "UNFOLD",
+    "動く面",
+    "展開アニメーション"
   ],
   "related": [
     "original-surface"

@@ -3,14 +3,14 @@
   "name": "Blueprint Fold",
   "category": "accordions",
   "order": 100,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "tagline": "構造を、読む。",
-  "description": "設計図の細線と寸法表記。詳細な仕様を美しく展開する。",
+  "description": "格子が立ち上がり、走査線が内容の輪郭を描く。",
   "material": "TECHNICAL / GRID",
-  "motion": "UNFOLD / CONTENT",
+  "motion": "DRAFT / SCAN",
   "accent": "197,212,177",
   "designType": "A",
-  "runtime": "CSS grid + disclosure events",
+  "runtime": "Native disclosure + event-driven material motion",
   "componentName": "BlueprintAccordion",
   "tags": [
     "Blueprint",
@@ -19,7 +19,10 @@
     "accordion",
     "開閉",
     "A",
-    "TECHNICAL / GRID"
+    "TECHNICAL / GRID",
+    "UNFOLD",
+    "動く面",
+    "展開アニメーション"
   ],
   "related": [
     "original-surface"

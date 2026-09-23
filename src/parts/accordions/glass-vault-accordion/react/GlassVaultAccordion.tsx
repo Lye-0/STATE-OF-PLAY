@@ -1,9 +1,10 @@
 'use client';
 import React from 'react';
-import {AccordionView,type AccordionProps} from '../../../../shared/accordion-view';
+import {UnfoldAccordionView} from '../../../../shared/unfold-accordion-view';
+import type {AccordionProps} from '../../../../shared/accordion-view';
 import '../styles.css';
 export type {AccordionProps,AccordionItem} from '../../../../shared/accordion-view';
-/** 曇りガラスの層に情報を収める。内側にも反射と奥行きを。 */
+/** 二枚のガラス扉が左右へ退き、内容が浮かび上がる。 */
 export default function GlassVaultAccordion({className='',...props}:AccordionProps){
- return <AccordionView {...props} className={`sop-glass-vault-accordion ${className}`}/>;
+ return <UnfoldAccordionView {...props} mode="vault" className={`sop-glass-vault-accordion ${className}`}/>;
 }

@@ -3,14 +3,14 @@
   "name": "Prism Stack",
   "category": "accordions",
   "order": 106,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "tagline": "層を、ひらく。",
-  "description": "色を含んだ輪郭と断面。情報にも透明な層をつくる。",
+  "description": "結晶の断面が離れ、虹色の縁が内容を囲む。",
   "material": "FACET / REFRACTION",
-  "motion": "UNFOLD / CONTENT",
+  "motion": "CRYSTAL / SEPARATION",
   "accent": "197,212,177",
   "designType": "A",
-  "runtime": "CSS grid + disclosure events",
+  "runtime": "Native disclosure + event-driven material motion",
   "componentName": "PrismStackAccordion",
   "tags": [
     "Prism Stack",
@@ -19,7 +19,10 @@
     "accordion",
     "開閉",
     "A",
-    "FACET / REFRACTION"
+    "FACET / REFRACTION",
+    "UNFOLD",
+    "動く面",
+    "展開アニメーション"
   ],
   "related": [
     "original-surface"

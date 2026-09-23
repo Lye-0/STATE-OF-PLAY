@@ -1,9 +1,10 @@
 'use client';
 import React from 'react';
-import {AccordionView,type AccordionProps} from '../../../../shared/accordion-view';
+import {UnfoldAccordionView} from '../../../../shared/unfold-accordion-view';
+import type {AccordionProps} from '../../../../shared/accordion-view';
 import '../styles.css';
 export type {AccordionProps,AccordionItem} from '../../../../shared/accordion-view';
-/** 駅の案内板を思わせる見出し。経路や時刻まで一貫した情報設計。 */
+/** 案内板のフラップが開き、次の情報へつながる。 */
 export default function TransitBoardAccordion({className='',...props}:AccordionProps){
- return <AccordionView {...props} className={`sop-transit-board-accordion ${className}`}/>;
+ return <UnfoldAccordionView {...props} mode="flap" className={`sop-transit-board-accordion ${className}`}/>;
 }

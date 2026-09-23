@@ -3,14 +3,14 @@
   "name": "Capillary Field",
   "category": "textboxes",
   "order": 125,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "tagline": "思考を、満たす。",
-  "description": "淡い水位のような光。ガラスの内側に、入力がそっと浮かぶ。",
+  "description": "フォーカスで水の膜が持ち上がり、入力に小さな波が返る。",
   "material": "LIQUID / REFRACTION",
-  "motion": "FOCUS / WRITE",
+  "motion": "LIQUID / TENSION",
   "accent": "139,217,226",
   "designType": "A",
-  "runtime": "Native input + CSS / event-driven",
+  "runtime": "Native input + event-driven material motion",
   "componentName": "CapillaryField",
   "tags": [
     "Capillary Field",
@@ -22,7 +22,9 @@
     "text",
     "日本語",
     "textbox",
-    "A"
+    "A",
+    "RESPONSIVE",
+    "入力の余韻"
   ],
   "related": [
     "original-surface"

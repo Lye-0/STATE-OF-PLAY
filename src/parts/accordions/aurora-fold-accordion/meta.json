@@ -3,14 +3,14 @@
   "name": "Aurora Fold",
   "category": "accordions",
   "order": 98,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "tagline": "静かに、満ちる。",
-  "description": "見出しをひらくと光の層が現れる、空気感のある情報パネル。",
+  "description": "光の幕が引き上がり、透明な面の奥から内容が現れる。",
   "material": "LIGHT / ATMOSPHERE",
-  "motion": "UNFOLD / CONTENT",
+  "motion": "LIGHT / CURTAIN",
   "accent": "197,212,177",
   "designType": "A",
-  "runtime": "CSS grid + disclosure events",
+  "runtime": "Native disclosure + event-driven material motion",
   "componentName": "AuroraFoldAccordion",
   "tags": [
     "Aurora Fold",
@@ -19,7 +19,10 @@
     "accordion",
     "開閉",
     "A",
-    "LIGHT / ATMOSPHERE"
+    "LIGHT / ATMOSPHERE",
+    "UNFOLD",
+    "動く面",
+    "展開アニメーション"
   ],
   "related": [
     "original-surface"

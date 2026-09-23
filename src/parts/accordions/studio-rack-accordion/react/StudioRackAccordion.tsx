@@ -1,9 +1,10 @@
 'use client';
 import React from 'react';
-import {AccordionView,type AccordionProps} from '../../../../shared/accordion-view';
+import {UnfoldAccordionView} from '../../../../shared/unfold-accordion-view';
+import type {AccordionProps} from '../../../../shared/accordion-view';
 import '../styles.css';
 export type {AccordionProps,AccordionItem} from '../../../../shared/accordion-view';
-/** ラックマウント機器の溝と小さなメーター。音の設定が内側に続く。 */
+/** シャッターの羽根が起き上がり、ラックの内側が開く。 */
 export default function StudioRackAccordion({className='',...props}:AccordionProps){
- return <AccordionView {...props} className={`sop-studio-rack-accordion ${className}`}/>;
+ return <UnfoldAccordionView {...props} mode="shutter" className={`sop-studio-rack-accordion ${className}`}/>;
 }

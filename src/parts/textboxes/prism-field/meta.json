@@ -3,14 +3,14 @@
   "name": "Prism Field",
   "category": "textboxes",
   "order": 128,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "tagline": "思考を、屈折。",
-  "description": "結晶の断面を思わせる縁。角度の異なる光が、入力面を縁取る。",
+  "description": "結晶の縁が開き、白い入力面に分光の余韻が走る。",
   "material": "CRYSTAL / SPECTRUM",
-  "motion": "FOCUS / WRITE",
+  "motion": "CRYSTAL / APERTURE",
   "accent": "200,188,239",
   "designType": "A",
-  "runtime": "Native input + CSS / event-driven",
+  "runtime": "Native input + event-driven material motion",
   "componentName": "PrismField",
   "tags": [
     "Prism Field",
@@ -22,7 +22,9 @@
     "text",
     "日本語",
     "textbox",
-    "A"
+    "A",
+    "RESPONSIVE",
+    "入力の余韻"
   ],
   "related": [
     "original-surface"

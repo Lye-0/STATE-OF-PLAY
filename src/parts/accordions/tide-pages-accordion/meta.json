@@ -3,14 +3,14 @@
   "name": "Tide Pages",
   "category": "accordions",
   "order": 111,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "tagline": "深く、読み進む。",
-  "description": "海の層と白い水平線。展開した情報の中にも水の透明感。",
+  "description": "水の膜が引かれ、波紋が内容の縁へ広がる。",
   "material": "WATER / CURRENT",
-  "motion": "UNFOLD / CONTENT",
+  "motion": "WATER / MEMBRANE",
   "accent": "197,212,177",
   "designType": "A",
-  "runtime": "CSS grid + disclosure events",
+  "runtime": "Native disclosure + event-driven material motion",
   "componentName": "TidePagesAccordion",
   "tags": [
     "Tide Pages",
@@ -19,7 +19,10 @@
     "accordion",
     "開閉",
     "A",
-    "WATER / CURRENT"
+    "WATER / CURRENT",
+    "UNFOLD",
+    "動く面",
+    "展開アニメーション"
   ],
   "related": [
     "original-surface"

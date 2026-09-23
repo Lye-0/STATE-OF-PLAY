@@ -1,10 +1,12 @@
 @import "../../../shared/text-field-base.css";
-/* Prism Field — CRYSTAL / SPECTRUM */
+@import "../../../shared/responsive-field.css";
+/* v4.5 — CRYSTAL / APERTURE; stable native editing surface. */
+.sop-textfield.sop-prism-field{--field-bg:#202733;--field-ink:#eef1f6;--field-accent:#cecff2;--field-muted:#b5b7c9;--field-edge:#8f9aac;--field-radius:9px}
+.sop-textfield.sop-prism-field>.sop-field-shell{min-height:68px;padding-left:20px;background:linear-gradient(110deg,#454257,#202c37 37%,#242837 78%,#484352);border-color:#d0c7e782 #aabccc55 #a7d6cd7c;box-shadow:inset 0 1px #effaff45,inset 0 -1px #c9e5f94b,0 14px 28px #0005}
+.sop-textfield.sop-prism-field>.sop-field-shell>.sop-field-symbol{display:none!important}
+.sop-textfield.sop-prism-field>.sop-field-shell>.sop-field-fx>i:nth-child(1){inset:0;clip-path:polygon(0 0,100% 0,78% 21%,18% 16%,0 70%);background:linear-gradient(110deg,#a5d9d581,#cac5ec99,#e2bcd791,#f1d2bd69);transform:translateY(calc(var(--field-focus)*-4px)) rotate(calc(var(--field-energy)*1deg));transform-origin:0 0}
+.sop-textfield.sop-prism-field>.sop-field-shell>.sop-field-fx>i:nth-child(2){inset:0;clip-path:polygon(0 100%,100% 100%,100% 20%,91% 75%,17% 85%);background:linear-gradient(130deg,#abc8fb88,#7dc3cc60,#cfabc96b);transform:translateY(calc(var(--field-focus)*4px))}
+.sop-textfield.sop-prism-field>.sop-field-shell>.sop-field-fx>i:nth-child(3){width:150%;height:160%;left:-30%;top:-30%;background:conic-gradient(from 45deg at 70% 100%,transparent 0 45%,#aad7d91f 49%,#c8b2ee35 51%,#facdda20 54%,transparent 59%);transform:rotate(calc(var(--field-focus)*24deg + var(--field-energy)*14deg));opacity:calc(.25 + var(--field-focus)*.65)}
+.sop-textfield.sop-prism-field>.sop-field-shell>.sop-field-fx>i:nth-child(4){left:10%;right:10%;height:1px;bottom:6px;background:linear-gradient(90deg,transparent,#adc9ed,#d7b4e4,#d2d4aa,#a1e5d7,transparent);opacity:calc(.2 + var(--field-focus)*.7);transform:scaleX(calc(.45 + var(--field-focus)*.55 + var(--field-energy)*.07))}
 
-.sop-textfield.sop-prism-field{--field-bg:#242735;--field-accent:#dbd0ff;--field-muted:#bcb8d1;--field-edge:#9691b8;--field-radius:3px}
-.sop-textfield.sop-prism-field>.sop-field-shell{min-height:65px;padding-left:20px;border:2px solid transparent;background:linear-gradient(130deg,#2e3543,#1d2233 60%,#342a40) padding-box,conic-gradient(from 30deg,#d9ecdd,#8fafc7,#b8a0cb,#adcccf,#e7cdd7,#d9ecdd) border-box;box-shadow:inset 0 0 0 4px #b9d9db0b,0 13px 22px #0005}
-.sop-textfield.sop-prism-field .sop-field-symbol{display:block;clip-path:polygon(50% 0,94% 25%,94% 75%,50% 100%,6% 75%,6% 25%);background:conic-gradient(from 30deg,#f4e9ff,#65758c,#e6d7cb,#72afac,#bfcdf9,#f4e9ff);width:25px;height:28px;transition:transform .6s}.sop-textfield.sop-prism-field:focus-within .sop-field-symbol{transform:rotate(120deg)}
-.sop-textfield.sop-prism-field .sop-field-fx{background:linear-gradient(160deg,transparent 38%,#d7bdeb12 39%,transparent 60%),linear-gradient(28deg,transparent 45%,#b2e8ef16 46%,transparent 71%)}
-.sop-textfield.sop-prism-field>.sop-field-baseline{display:block;margin:13px 10% 0;height:1px;background:linear-gradient(90deg,#ecaccc33,#b4e7d199,#a6b1ec88,#ecdcb833)}
-
-.sop-textfield.sop-prism-field[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}
+.sop-textfield.sop-prism-field[data-invalid="true"]>.sop-field-shell{border:1px solid var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}

@@ -1,9 +1,10 @@
 'use client';
 import React from 'react';
-import {AccordionView,type AccordionProps} from '../../../../shared/accordion-view';
+import {UnfoldAccordionView} from '../../../../shared/unfold-accordion-view';
+import type {AccordionProps} from '../../../../shared/accordion-view';
 import '../styles.css';
 export type {AccordionProps,AccordionItem} from '../../../../shared/accordion-view';
-/** 折り返されたリボンと暖かい紙。見出し自体がしおりになる。 */
+/** 折り返した帯がほどけて、ひとつの長い紙面になる。 */
 export default function RibbonIndexAccordion({className='',...props}:AccordionProps){
- return <AccordionView {...props} className={`sop-ribbon-index-accordion ${className}`}/>;
+ return <UnfoldAccordionView {...props} mode="ribbon" className={`sop-ribbon-index-accordion ${className}`}/>;
 }

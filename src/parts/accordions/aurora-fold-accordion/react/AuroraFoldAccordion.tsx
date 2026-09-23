@@ -1,9 +1,10 @@
 'use client';
 import React from 'react';
-import {AccordionView,type AccordionProps} from '../../../../shared/accordion-view';
+import {UnfoldAccordionView} from '../../../../shared/unfold-accordion-view';
+import type {AccordionProps} from '../../../../shared/accordion-view';
 import '../styles.css';
 export type {AccordionProps,AccordionItem} from '../../../../shared/accordion-view';
-/** 見出しをひらくと光の層が現れる、空気感のある情報パネル。 */
+/** 光の幕が引き上がり、透明な面の奥から内容が現れる。 */
 export default function AuroraFoldAccordion({className='',...props}:AccordionProps){
- return <AccordionView {...props} className={`sop-aurora-fold-accordion ${className}`}/>;
+ return <UnfoldAccordionView {...props} mode="aurora" className={`sop-aurora-fold-accordion ${className}`}/>;
 }

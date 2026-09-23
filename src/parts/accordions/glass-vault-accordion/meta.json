@@ -3,14 +3,14 @@
   "name": "Glass Vault",
   "category": "accordions",
   "order": 102,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "tagline": "透明な、引き出し。",
-  "description": "曇りガラスの層に情報を収める。内側にも反射と奥行きを。",
+  "description": "二枚のガラス扉が左右へ退き、内容が浮かび上がる。",
   "material": "GLASS / STORAGE",
-  "motion": "UNFOLD / CONTENT",
+  "motion": "GLASS / SLIDING DOORS",
   "accent": "197,212,177",
   "designType": "A",
-  "runtime": "CSS grid + disclosure events",
+  "runtime": "Native disclosure + event-driven material motion",
   "componentName": "GlassVaultAccordion",
   "tags": [
     "Glass Vault",
@@ -19,7 +19,10 @@
     "accordion",
     "開閉",
     "A",
-    "GLASS / STORAGE"
+    "GLASS / STORAGE",
+    "UNFOLD",
+    "動く面",
+    "展開アニメーション"
   ],
   "related": [
     "original-surface"

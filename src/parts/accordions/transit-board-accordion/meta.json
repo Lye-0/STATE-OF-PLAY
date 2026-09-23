@@ -3,14 +3,14 @@
   "name": "Transit Board",
   "category": "accordions",
   "order": 107,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "tagline": "次の、停車駅。",
-  "description": "駅の案内板を思わせる見出し。経路や時刻まで一貫した情報設計。",
+  "description": "案内板のフラップが開き、次の情報へつながる。",
   "material": "DEPARTURE / BOARD",
-  "motion": "UNFOLD / CONTENT",
+  "motion": "DISPLAY / SPLIT FLAP",
   "accent": "197,212,177",
   "designType": "A",
-  "runtime": "CSS grid + disclosure events",
+  "runtime": "Native disclosure + event-driven material motion",
   "componentName": "TransitBoardAccordion",
   "tags": [
     "Transit Board",
@@ -19,7 +19,10 @@
     "accordion",
     "開閉",
     "A",
-    "DEPARTURE / BOARD"
+    "DEPARTURE / BOARD",
+    "UNFOLD",
+    "動く面",
+    "展開アニメーション"
   ],
   "related": [
     "original-surface"

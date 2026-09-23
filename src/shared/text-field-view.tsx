@@ -16,16 +16,16 @@ export interface TextFieldProps extends Omit<HTMLAttributes<TextControl>, 'defau
   /** Native input ref for selection, focus and form-library registration. */
   inputRef?: Ref<TextControl>;
 }
-function setRef(ref: Ref<TextControl> | undefined, node: TextControl | null) {
+function setRef<T>(ref: Ref<T> | undefined, node: T | null) {
   if (typeof ref === 'function') ref(node); else if (ref) ref.current = node;
 }
 /** Real controlled/uncontrolled native input. No contenteditable, value formatting or key interception. */
-export function TextFieldView(props: TextFieldProps) {
+export function TextFieldView(props: TextFieldProps & {rootRef?: Ref<HTMLDivElement>}) {
   const {label='入力欄', description, error='', success=false, value, defaultValue, onValueChange, onChange,
     name, form, placeholder, type='text', multiline=false, rows=3, autoGrow=false, required=false,
     disabled=false, readOnly=false, minLength, maxLength, pattern, autoComplete, autoFocus,
     clearable=false, showCount=false, validateOnBlur=false, prefix, suffix, caption,
-    inputRef, className='', style, id: suppliedId, ...attributes} = props;
+    inputRef, rootRef, className='', style, id: suppliedId, ...attributes} = props;
   const uid=useId(), id=suppliedId ?? `sop-${uid.replace(/[^a-zA-Z0-9_-]/g,'')}-input`;
   const root=useRef<HTMLDivElement>(null), field=useRef<TextControl|null>(null), control=useRef<TextFieldController|null>(null);
   const [revealed,setRevealed]=useState(false);
@@ -60,7 +60,7 @@ export function TextFieldView(props: TextFieldProps) {
   const native={...attributes,id,name,form,placeholder,required,disabled,readOnly,minLength,maxLength,autoComplete,autoFocus,
     className:'sop-field-control',onChange:change,'aria-describedby':described,
     ...(value!==undefined?{value}:{defaultValue}),ref};
-  return <div ref={root} className={`sop-textfield ${className}`} style={style}
+  return <div ref={node=>{root.current=node;setRef(rootRef,node);}} className={`sop-textfield ${className}`} style={style}
     data-multiline={multiline} data-clearable={clearable} data-show-count={showCount} data-auto-grow={autoGrow}
     data-validate={validateOnBlur?'blur':'submit'} data-success={success} data-external-invalid={attributes['aria-invalid'] ?? false}>
     <div className="sop-field-heading"><label className="sop-field-label" htmlFor={id}>{label}{required&&<span className="sop-field-required" aria-hidden="true"> *</span>}</label>{caption&&<span className="sop-field-caption" aria-hidden="true">{caption}</span>}</div>

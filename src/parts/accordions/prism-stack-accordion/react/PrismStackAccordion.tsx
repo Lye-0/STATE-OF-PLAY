@@ -1,9 +1,10 @@
 'use client';
 import React from 'react';
-import {AccordionView,type AccordionProps} from '../../../../shared/accordion-view';
+import {UnfoldAccordionView} from '../../../../shared/unfold-accordion-view';
+import type {AccordionProps} from '../../../../shared/accordion-view';
 import '../styles.css';
 export type {AccordionProps,AccordionItem} from '../../../../shared/accordion-view';
-/** 色を含んだ輪郭と断面。情報にも透明な層をつくる。 */
+/** 結晶の断面が離れ、虹色の縁が内容を囲む。 */
 export default function PrismStackAccordion({className='',...props}:AccordionProps){
- return <AccordionView {...props} className={`sop-prism-stack-accordion ${className}`}/>;
+ return <UnfoldAccordionView {...props} mode="prism" className={`sop-prism-stack-accordion ${className}`}/>;
 }

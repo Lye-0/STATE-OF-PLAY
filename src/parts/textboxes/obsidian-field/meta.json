@@ -3,14 +3,14 @@
   "name": "Obsidian Field",
   "category": "textboxes",
   "order": 124,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "tagline": "暗がりを、刻む。",
-  "description": "深い石の面に、鋭い光の切り口。硬質な面を文字が走る。",
+  "description": "黒い二つの面が離れ、入力に合わせて光の切れ目が呼吸する。",
   "material": "VOLCANIC / FACET",
-  "motion": "FOCUS / WRITE",
+  "motion": "OBSIDIAN / FISSURE",
   "accent": "174,191,210",
   "designType": "A",
-  "runtime": "Native input + CSS / event-driven",
+  "runtime": "Native input + event-driven material motion",
   "componentName": "ObsidianField",
   "tags": [
     "Obsidian Field",
@@ -22,7 +22,9 @@
     "text",
     "日本語",
     "textbox",
-    "A"
+    "A",
+    "RESPONSIVE",
+    "入力の余韻"
   ],
   "related": [
     "original-surface"

@@ -208,3 +208,11 @@ Aプルダウンのラベル・アイコン・補足情報は固定装飾とし�
 `select-motion.ts`はopt-inクラスを持つAだけが起動します。背景面は擬似要素とCSS変数で作り、候補のDOMを置換しません。アイテムの内容変更、popup内部のスクロール、再配置、取り外しまで検証してください。
 
 共有CSSの読み込み順でスキンが消えないよう、固有スタイルは`.sop-select.sop-select-sculpted.sop-パーツID`／`.sop-scroll-area.sop-scroll-sculpted.sop-パーツID`に限定します。`tests/refinement.browser.ts`では単独、共有CSSを一度だけ含む場合、複数回読み込む場合のスタイル一致を検証しています。
+
+## 表現を追加するときの参考（v4.5）
+
+`UnfoldAccordionView`と`createUnfoldAccordion`は、既存アコーディオンの意味・状態制御を変えず、表示進捗だけを加える例です。本文を複製せず、pointer-events:noneかつaria-hiddenの装飾レイヤーだけを使います。
+
+`ResponsiveFieldView`と`createResponsiveTextField`は、input/textareaの位置・幅・標準編集を維持して外側の素材だけを反応させる例です。入力文字列に依存した装飾にせず、IME変換中の値を整形しないでください。常時タイマーは追加せず、最後の余韻が収束したらRAFを停止します。
+
+通常のA/Bラベルを品質判定の代わりに使わず、実寸と動作の両方を確認してください。新しい表現ごとに、反復操作・動的内容・複数配置・縮小モーション・取り外しを試験します。

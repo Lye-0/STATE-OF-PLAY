@@ -1,0 +1,19 @@
+{
+  "mode": "explicit synthetic documents (not Vite HTTP)",
+  "react": "not run",
+  "passed": [
+    "Gallery: 24 native editable fields, labels focus the input, typing never opens details",
+    "Native editing: caret movement, undo, clear focus and safe text display",
+    "Detail controls: value survives format/layout changes; error, success, readOnly, disabled and reset",
+    "Email validation on blur, explicit error recovery and password visibility without submission",
+    "IME synthetic lifecycle preserves composition values and disables destructive controls",
+    "Multiline fields grow and shrink within a bounded height without dropping text",
+    "24 fields at 320/390/768: no horizontal overflow, 16px native text and usable detail controls",
+    "Without initialization: native input and textarea still accept ordinary text",
+    "Native forms: independent IDs, values, reset cancellation, disabled exclusion and readonly submission",
+    "Native maxlength, no-JS editing fallback and teardown stop enhancement listeners",
+    "Reduced motion and forced colours keep native input and focus available"
+  ],
+  "errors": [],
+  "ime": "Synthetic composition lifecycle; OS IME not automated"
+}

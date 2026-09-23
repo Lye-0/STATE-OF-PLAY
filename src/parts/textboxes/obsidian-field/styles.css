@@ -1,12 +1,13 @@
 @import "../../../shared/text-field-base.css";
-/* Obsidian Field — VOLCANIC / FACET */
+@import "../../../shared/responsive-field.css";
+/* v4.5 — OBSIDIAN / FISSURE; stable native editing surface. */
+.sop-textfield.sop-obsidian-field{--field-bg:#15191f;--field-ink:#edf0f5;--field-accent:#c1d3e8;--field-edge:#5a646f;--field-muted:#a2aeba;--field-radius:5px}
+.sop-textfield.sop-obsidian-field>.sop-field-shell{min-height:68px;padding-left:23px;transform:none;isolation:isolate;background:linear-gradient(165deg,#3a424c 0,#141a22 12%,#10151b 65%,#242f3b);border-color:#78859185 #414d5e75 #1d2638;box-shadow:inset 0 1px #e4edf137,0 13px 28px #0006}
+.sop-textfield.sop-obsidian-field>.sop-field-shell>.sop-field-fx{background:radial-gradient(ellipse at var(--field-px) 110%,#bddef63f,transparent 43%)}
+.sop-textfield.sop-obsidian-field>.sop-field-shell>.sop-field-fx>i:nth-child(1){inset:0;background:linear-gradient(150deg,#414851,#18212a 14%,#0b1017);clip-path:polygon(0 0,63% 0,43% 100%,0 100%);transform:translateX(calc(var(--field-focus)*-9px - var(--field-energy)*3px))}
+.sop-textfield.sop-obsidian-field>.sop-field-shell>.sop-field-fx>i:nth-child(2){inset:0;background:linear-gradient(160deg,#242c38,#121923 55%,#526579);clip-path:polygon(63% 0,100% 0,100% 100%,43% 100%);transform:translateX(calc(var(--field-focus)*9px + var(--field-energy)*3px))}
+.sop-textfield.sop-obsidian-field>.sop-field-shell>.sop-field-fx>i:nth-child(3){left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,transparent,#e5f8ff,#95b6d8,transparent);transform:scaleX(calc(.08 + var(--field-focus)*.86));box-shadow:0 0 13px #b8e0ff66;opacity:calc(.3 + var(--field-focus)*.7)}
+.sop-textfield.sop-obsidian-field>.sop-field-shell>.sop-field-fx>i:nth-child(4){left:43%;top:-40%;height:180%;width:1px;background:linear-gradient(transparent,#c7e7fa,transparent);transform:rotate(42deg) translateX(calc(var(--field-focus)*-10px));opacity:calc(.15 + var(--field-focus)*.55)}
+.sop-textfield.sop-obsidian-field>.sop-field-baseline{display:none}.sop-textfield.sop-obsidian-field .sop-field-caption{border:0;letter-spacing:.15em}
 
-.sop-textfield.sop-obsidian-field{--field-bg:#191a20;--field-ink:#e4e9f0;--field-accent:#c0d1ed;--field-edge:#5b6575;--field-muted:#a7b0bd;--field-radius:3px}
-.sop-textfield.sop-obsidian-field>.sop-field-shell{padding-left:23px;min-height:66px;transform:skewX(-5deg);background:linear-gradient(155deg,#3b414d 0,#1c2028 5%,#14171d 55%,#272c36 95%,#535b6c);border-color:#555b66 #333948 #171c25 #555b66;box-shadow:0 10px 20px #0007,inset 0 1px #8996a147}
-.sop-textfield.sop-obsidian-field>.sop-field-shell>:not(.sop-field-fx){transform:skewX(5deg)}
-.sop-textfield.sop-obsidian-field .sop-field-fx{background:linear-gradient(155deg,transparent 57%,#a5b7d815 57.3%,transparent 57.8%)}
-.sop-textfield.sop-obsidian-field:focus-within .sop-field-fx{background:linear-gradient(155deg,transparent 57%,#a5b7d838 57.3%,transparent 57.8%)}
-.sop-textfield.sop-obsidian-field .sop-field-caption{border:1px solid #52607955;padding:2px 7px}
-.sop-textfield.sop-obsidian-field>.sop-field-baseline{display:block;margin:15px 38% 0;height:2px;background:#728394;transition:margin .4s}.sop-textfield.sop-obsidian-field:focus-within>.sop-field-baseline{margin-left:16%;margin-right:16%;background:#d2ddf2}
-
-.sop-textfield.sop-obsidian-field[data-invalid="true"]>.sop-field-shell{border-color:var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}
+.sop-textfield.sop-obsidian-field[data-invalid="true"]>.sop-field-shell{border:1px solid var(--field-error,#df7479);box-shadow:0 0 0 2px color-mix(in srgb,var(--field-error,#df7479) 22%,transparent)}

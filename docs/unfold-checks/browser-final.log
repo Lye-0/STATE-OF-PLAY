@@ -1,0 +1,24 @@
+
+> state-of-play@4.5.0 test:unfold
+> node --experimental-strip-types tests/unfold.browser.ts
+
+(node:3345) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS all 16 materials preserve native headings, immediate ARIA and animated presentation
+PASS rapid reversal settles to the committed state, not an old animation target
+PASS keyboard, single/multiple policy, collapse policy and disabled headings
+PASS arbitrary native content survives close/reopen, does not toggle parents, and transfers hidden focus
+PASS nested skin instances receive their own material progress and state only
+PASS dynamic accordion items are measured and cleaned without a fixed content height
+PASS six selected fields preserve native value, selection, form payload and reset
+PASS field focus reacts while glyph bounds and caret geometry remain stable
+PASS IME composition does not pulse until commit and does not rewrite text
+PASS clear, errors, disabled and readonly leave native field APIs intact
+PASS auto-growing textareas, long text and native undo remain usable
+PASS independent instances have unique native IDs and isolated values
+PASS all revised parts fit 320 / 390 / 768 widths with long Japanese labels
+PASS RTL keeps the same semantic order and clipped decorations within the component
+PASS reduced motion displays final materials without transient animation or RAF
+PASS forced colors hides decorative layers and retains the actual controls
+PASS settled / unmounted parts release all their animation frames
+UNFOLD/RESPONSIVE checks: 17 passed

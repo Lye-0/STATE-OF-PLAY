@@ -3,14 +3,14 @@
   "name": "Ribbon Field",
   "category": "textboxes",
   "order": 129,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "tagline": "ことばを、結ぶ。",
-  "description": "折り返した帯と、暖かなコーラルの面。名前を付ける小さな儀式。",
+  "description": "折り込まれた帯の端が、フォーカスに応じて広がる。",
   "material": "FOLDED / RIBBON",
-  "motion": "FOCUS / WRITE",
+  "motion": "PAPER / UNFURL",
   "accent": "241,169,145",
   "designType": "A",
-  "runtime": "Native input + CSS / event-driven",
+  "runtime": "Native input + event-driven material motion",
   "componentName": "RibbonField",
   "tags": [
     "Ribbon Field",
@@ -22,7 +22,9 @@
     "text",
     "日本語",
     "textbox",
-    "A"
+    "A",
+    "RESPONSIVE",
+    "入力の余韻"
   ],
   "related": [
     "original-surface"
