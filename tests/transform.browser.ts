@@ -9,7 +9,7 @@ async function run(name:string,fn:()=>Promise<void>){if(process.env.SOP_TRANSFOR
 try {
  let url='';if(!offline){const{createServer}=await import('vite');const s=await createServer({root:ROOT,server:{host:'127.0.0.1',port:0}});await s.listen();url=requireLocalServerUrl(s,'TRANSFORM fixture');close=()=>s.close();}
  browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
- const p=await browser.newPage({viewport:{width:740,height:1000}});p.on('pageerror',e=>errors.push(e.message));p.setDefaultTimeout(5000);
+ const p=await browser.newPage({viewport:{width:740,height:1000}});p.on('pageerror',e=>errors.push(e.message));p.setDefaultTimeout(5000);p.setDefaultNavigationTimeout(30000);await p.emulateMedia({reducedMotion:'no-preference'});
  if(offline){await p.setContent(f.shell.replace('<link rel="stylesheet" href="./styles.css">',''));await p.addStyleTag({content:f.styles});await p.addScriptTag({content:f.bundle()});}else await p.goto(new URL('.test-output/transform/test.html',url).href);
  await p.waitForFunction(()=>typeof (window as any).mount==='function');
  const mount=async(id:string|string[],options={})=>p.evaluate(({ids,options})=>(window as any).mount(ids,options),{ids:typeof id==='string'?[id]:id,options});

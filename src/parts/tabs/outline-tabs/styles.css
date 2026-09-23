@@ -1,6 +1,6 @@
 @import '../../../shared/selection-base.css';
 @import '../../../shared/selection-content.css';
 /* Outline Tabs: 塗りを抑えた枠と小さな状態マーク。 */
-.sop-outline-tabs{--choice-base:transparent;--choice-line:#526368;--choice-marker:transparent;--choice-on:#dfeced;--choice-accent:#b6d9dd;--choice-radius:7px;}
+.sop-outline-tabs{--tab-scroll-thumb:#b6d9dd;--choice-base:transparent;--choice-line:#526368;--choice-marker:transparent;--choice-on:#dfeced;--choice-accent:#b6d9dd;--choice-radius:7px;}
 .sop-outline-tabs > .sop-choice-list{padding:0;gap:4px;border:0}.sop-outline-tabs > .sop-choice-list > .sop-choice-item{border:1px solid #506065;min-height:44px}.sop-outline-tabs > .sop-choice-list > .sop-choice-marker{border:1px solid #b1d2d7;box-shadow:none}.sop-outline-tabs > .sop-choice-list > .sop-choice-item[data-selected=true]{background:#42646b25}.sop-outline-tabs > .sop-choice-list > .sop-choice-item .sop-choice-icon{display:none}.sop-outline-tabs > .sop-choice-panels > .sop-choice-panel{background:#1b2427}
 

@@ -8,6 +8,13 @@ export function createSelectionIndicator(root: HTMLElement) {
   function measure() {
     frame = 0;
     if (destroyed) return;
+    if (root.classList.contains('sop-tabs')) {
+      // Decorative layers can enlarge scrollWidth even when every actual tab fits.
+      const tabs = [...list!.querySelectorAll<HTMLElement>(':scope > .sop-choice-item')];
+      const overflow = root.dataset.orientation !== 'vertical' && tabs.some(tab => tab.offsetLeft < -1 || tab.offsetLeft + tab.offsetWidth > list!.clientWidth + 1);
+      root.dataset.tabOverflow = String(overflow);
+      if (!overflow && list!.scrollLeft) list!.scrollLeft = 0;
+    }
     const target = list!.querySelector<HTMLElement>(':scope > [data-selected="true"]');
     const marker = list!.querySelector<HTMLElement>(':scope > .sop-choice-marker');
     if (!marker) return;

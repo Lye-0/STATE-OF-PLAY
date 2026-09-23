@@ -9,6 +9,17 @@
 /* A moving marker may protrude by a pixel while the horizontal tab strip scrolls.
    Keep horizontal overflow available without creating a transient vertical scrollbar. */
 .sop-tabs[data-orientation=horizontal]:not(.sop-ribbon-tabs)>.sop-choice-list{overflow-y:hidden}
+
+/* Only real tab items can enable horizontal scrolling; decorative overflow is clipped.
+   Thumb colors and corner shape come from each tab's own material tokens. */
+.sop-tabs[data-orientation=horizontal]>.sop-choice-list{--tab-scroll-track:color-mix(in srgb,var(--tab-scroll-thumb,var(--choice-accent)) 12%,var(--choice-base));scrollbar-color:var(--tab-scroll-thumb,var(--choice-accent)) var(--tab-scroll-track);scrollbar-width:thin}
+.sop-tabs[data-orientation=horizontal]>.sop-choice-list::-webkit-scrollbar{height:8px;background:var(--tab-scroll-track)}
+.sop-tabs[data-orientation=horizontal]>.sop-choice-list::-webkit-scrollbar-track{background:var(--tab-scroll-track);border-radius:var(--choice-radius)}
+.sop-tabs[data-orientation=horizontal]>.sop-choice-list::-webkit-scrollbar-thumb{background:var(--tab-scroll-thumb,var(--choice-accent));border:1px solid var(--choice-line);border-radius:var(--choice-radius)}
+.sop-tabs[data-orientation=horizontal]>.sop-choice-list::-webkit-scrollbar-thumb:hover{background:color-mix(in srgb,var(--tab-scroll-thumb,var(--choice-accent)) 76%,white)}
+.sop-tabs[data-orientation=horizontal]>.sop-choice-list::-webkit-scrollbar-button{display:none;width:0;height:0}
+.sop-tabs[data-orientation=horizontal][data-tab-overflow=false]>.sop-choice-list{overflow-x:hidden;scrollbar-width:none}
+.sop-tabs[data-orientation=horizontal][data-tab-overflow=false]>.sop-choice-list::-webkit-scrollbar{display:none}
 .sop-tabs>.sop-choice-list>.sop-choice-item .sop-choice-label{white-space:nowrap}
 .sop-tabs[data-orientation=vertical]>.sop-choice-list>.sop-choice-item .sop-choice-label{white-space:normal;overflow-wrap:anywhere}
 .sop-choice-copy{display:flex;flex-direction:column;gap:3px;min-width:0}

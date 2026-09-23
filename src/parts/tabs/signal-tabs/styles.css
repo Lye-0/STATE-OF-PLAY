@@ -2,7 +2,7 @@
 @import '../../../shared/selection-content.css';
 @import "../../../shared/transit-selection.css";
 /* Signal Tabs: 走査線の上に緑の文字が浮かぶ、静かな端末。 */
-.sop-signal-tabs{--choice-base:#101d19;--choice-line:#355843;--choice-marker:#224637;--choice-on:#cef9b4;--choice-accent:#b4e795;--choice-radius:2px;}
+.sop-signal-tabs{--tab-scroll-thumb:#b4e795;--choice-base:#101d19;--choice-line:#355843;--choice-marker:#224637;--choice-on:#cef9b4;--choice-accent:#b4e795;--choice-radius:2px;}
 .sop-signal-tabs > .sop-choice-list{gap:0;padding:7px;background:repeating-linear-gradient(0deg,transparent 0 3px,#7baa4911 3px 4px),#101c16}.sop-signal-tabs > .sop-choice-list > .sop-choice-item{font:10px Consolas,monospace;letter-spacing:1px;min-height:57px;text-transform:uppercase}.sop-signal-tabs > .sop-choice-list > .sop-choice-marker{border-top:1px solid #bfe695;border-bottom:1px solid #5a956c;box-shadow:0 0 9px #82cb6040}.sop-signal-tabs > .sop-choice-list > .sop-choice-item[data-selected=true]{text-shadow:0 0 10px #abe99766}.sop-signal-tabs > .sop-choice-panels > .sop-choice-panel{background:repeating-linear-gradient(0deg,transparent 0 3px,#7baa4908 3px 4px),#101d18}.sop-signal-tabs > .sop-choice-list > .sop-choice-item .sop-choice-index{display:block}.sop-signal-tabs > .sop-choice-list > .sop-choice-item .sop-choice-icon{display:none}
 
 
