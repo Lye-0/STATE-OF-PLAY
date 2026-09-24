@@ -24,7 +24,7 @@ export function mountCombobox(root:HTMLElement,config:FoundationConfig,options:F
  root.classList.add('sop-resonance');const c=createCore(root,config,options,choiceValue);if(!root.querySelector('[data-combo]'))root.innerHTML=renderCombobox(c.options);
  const input=q<HTMLInputElement>(root,'[data-combo]'),panel=q<HTMLElement>(root,'[data-combo-panel]'),results=q(root,'[data-results]'),shell=q(root,'.ff-combo-shell'),chips=q(root,'[data-combo-chips]');
  const uid=uniqueId('rs-combo');input.id=uid;results.id=uid+'-list';input.setAttribute('aria-controls',results.id);
- const overlay=resonanceOverlay(c,panel,root),scene=createMaterialScene(panel,config.variant,0),field=createMaterialScene(shell,config.variant,0);
+ const overlay=resonanceOverlay(c,panel,root,()=> 'bottom',hide),scene=createMaterialScene(panel,config.variant,0),field=createMaterialScene(shell,config.variant,0);
  const lens=document.createElement('span');lens.className='rs-active-plane';lens.setAttribute('aria-hidden','true');panel.append(lens);
  let query='',active='',composing=false,editing=false,rowsKey='',chipsKey='',firstMove=true,entrance:Animation|null=null;
  const marker=presentationSpring(panel,{y:8,h:54,w:200,x:8,k:0},v=>{lens.style.transform=`translate(${v.x}px,${v.y}px) scaleY(${1+Math.max(0,v.k)*.045})`;lens.style.width=v.w+'px';lens.style.height=v.h+'px';});

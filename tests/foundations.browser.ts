@@ -77,7 +77,51 @@ try{
   for(const part of parts.filter(p=>p.category==='comboboxes')){await mount(part.id,{defaultValue:''});const input=native.locator('#test-host [data-combo]'),panel=native.locator('#test-host .ff-combo-list'),results=native.locator('#test-host [data-results]');await native.locator('#test-host [data-combo-toggle]').click();const state=await native.evaluate(async()=>{const panel=document.querySelector('#test-host .ff-combo-list')!,results=document.querySelector('#test-host [data-results]')!,frames=[] as Array<{panelX:string;panelY:string;resultsX:string;resultsY:string;pageX:number;pageY:number}>;for(let i=0;i<10;i++){await new Promise<void>(resolve=>requestAnimationFrame(()=>resolve()));const a=getComputedStyle(panel),b=getComputedStyle(results);frames.push({panelX:a.overflowX,panelY:a.overflowY,resultsX:b.overflowX,resultsY:b.overflowY,pageX:document.documentElement.scrollWidth-innerWidth,pageY:document.documentElement.scrollHeight-innerHeight});}return frames;});assert.ok(state.every(s=>s.panelX==='hidden'&&s.panelY==='hidden'&&s.resultsX==='hidden'&&s.resultsY==='auto'&&s.pageX<=1&&s.pageY<=1),part.id+' transient overflow: '+JSON.stringify(state));await input.press('Escape');assert.equal(await input.getAttribute('aria-expanded'),'false',part.id);}
   await mount('aurora-finder',{defaultValue:'',items:Array.from({length:18},(_,i)=>({value:'v'+i,label:`Option ${i+1}`,description:'Long enough to verify list scrolling stays inside its own viewport.'}))});const input=native.locator('#test-host [data-combo]'),panel=native.locator('#test-host .ff-combo-list'),results=native.locator('#test-host [data-results]');await native.locator('#test-host [data-combo-toggle]').click();assert.ok(await results.evaluate(e=>e.scrollHeight>e.clientHeight),'long options should scroll in the results area');assert.equal(await panel.evaluate(e=>getComputedStyle(e).overflowX),'hidden');assert.equal(await panel.evaluate(e=>getComputedStyle(e).overflowY),'hidden');await input.focus();for(let i=0;i<12;i++)await input.press('ArrowDown');assert.equal(await native.locator('#test-host [data-option][data-active=true]').getAttribute('data-option'),'v11');const resultScroll=await results.evaluate(e=>{e.scrollTop=500;return{top:e.scrollTop,client:e.clientHeight,scroll:e.scrollHeight};});assert.ok(resultScroll.top>0,'long results scroll inside their own vertical viewport: '+JSON.stringify(resultScroll));await input.press('Escape');await native.emulateMedia({reducedMotion:'reduce'});
  });
- await run('Combobox IME composition does not intercept Enter or commit partial candidates',async()=>{
+ await run('All 24 combobox panels close on outer scroll but remain open for option-list scroll',async()=>{
+  await native.evaluate(()=>{document.body.style.minHeight='2700px';window.scrollTo(0,0);});
+  for(const part of parts.filter(p=>p.category==='comboboxes')){
+   await mount(part.id,{defaultValue:''});
+   const input=native.locator('#test-host [data-combo]'),panel=native.locator('#test-host [data-combo-panel]');
+   await native.locator('#test-host [data-combo-toggle]').click();
+   assert.ok(await panel.isVisible(),part.id+' opens');
+   await native.evaluate(()=>window.scrollTo(0,320));
+   await native.waitForFunction(()=>document.querySelector('#test-host [data-combo-panel]')?.hasAttribute('hidden'));
+   assert.equal(await input.getAttribute('aria-expanded'),'false',part.id);
+   await native.evaluate(()=>window.scrollTo(0,0));
+  }
+  const longItems=Array.from({length:18},(_,i)=>({value:'item-'+i,label:'Material '+(i+1),description:'A longer explanation to fill the candidate list.'}));
+  for(const id of ['nixie-finder','outline-finder']){
+   await mount(id,{defaultValue:'',items:longItems});
+   const panel=native.locator('#test-host [data-combo-panel]'),results=panel.locator('[data-results]');
+   await native.locator('#test-host [data-combo-toggle]').click();
+   assert.ok(await results.evaluate(el=>el.scrollHeight>el.clientHeight),id+' scrollable options');
+   await results.evaluate(el=>{el.scrollTop=200;});
+   await native.waitForTimeout(30);
+   assert.ok(await panel.isVisible(),id+' stays open while its list scrolls');
+   assert.equal(await native.locator('#test-host [data-combo]').getAttribute('aria-expanded'),'true',id);
+   if(id==='nixie-finder'){
+    assert.equal(await panel.locator('.rs-scene').evaluate(el=>getComputedStyle(el).display),'none');
+    assert.ok(await native.locator('#test-host .ff-combo-shell .rs-scene').isVisible());
+    await panel.screenshot({path:path.join(out,'nixie-combo-options.png')});
+   }
+   await native.locator('#test-host [data-combo]').press('Escape');
+  }
+  await native.evaluate(()=>{document.body.style.minHeight='';window.scrollTo(0,0);});
+ });
+ await run('Gallery Nixie combobox keeps the option text clear and dismisses on page scroll',async()=>{
+  await selectCategory(page,'comboboxes');
+  const card=page.locator('[data-part="nixie-finder"]');
+  await card.scrollIntoViewIfNeeded();
+  await card.locator('[data-combo-toggle]').click();
+  const panel=card.locator('[data-combo-panel]');
+  assert.ok(await panel.isVisible());
+  assert.equal(await panel.locator('.rs-scene').evaluate(el=>getComputedStyle(el).display),'none');
+  await panel.screenshot({path:path.join(out,'nixie-gallery-options.png')});
+  await page.evaluate(()=>window.scrollBy(0,320));
+  await page.waitForFunction(()=>document.querySelector('[data-part="nixie-finder"] [data-combo-panel]')?.hasAttribute('hidden'));
+  assert.equal(await card.locator('[data-combo]').getAttribute('aria-expanded'),'false');
+ });
+await run('Combobox IME composition does not intercept Enter or commit partial candidates',async()=>{
   await mount('aurora-finder',{items:[{value:'jp',label:'日本語'}],defaultValue:''});const input=native.locator('#test-host [data-combo]');await input.focus();await input.dispatchEvent('compositionstart',{data:''});await input.fill('日本');await input.dispatchEvent('keydown',{key:'Enter',isComposing:true});assert.equal(await value(),'');await input.dispatchEvent('compositionend',{data:'日本'});await input.press('ArrowDown');await input.press('Enter');assert.equal(await value(),'jp');
  });
  await run('Number editing: decimal drafts, IME, invalid draft reporting, min/max and reset',async()=>{
