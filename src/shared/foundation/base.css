@@ -55,3 +55,30 @@
 .sop-foundation[data-foundation=datepickers] .ff-time-column button[aria-selected=true]{border-color:var(--ff-accent);background:color-mix(in srgb,var(--ff-accent) 22%,var(--ff-base));font-weight:700}
 .sop-foundation[data-foundation=datepickers][data-date-mode=datetime] .ff-time-picker{border-top:1px solid var(--ff-line);padding-top:12px;margin-top:12px}
 @media(forced-colors:active){.sop-foundation[data-foundation=datepickers] .ff-time-column{border-color:ButtonText;background:Canvas}.sop-foundation[data-foundation=datepickers] .ff-time-column button[aria-selected=true]{background:Highlight;color:HighlightText;border-color:Highlight;forced-color-adjust:none}}
+
+/* Range dates share equal space around one centered separator; the opener keeps its own edge. */
+.sop-foundation[data-foundation=datepickers][data-date-mode=range]{container-type:inline-size}
+.sop-foundation[data-foundation=datepickers][data-date-mode=range] .ff-date-fields{display:grid;grid-template-columns:minmax(0,1fr) 16px minmax(0,1fr) auto;align-items:center;gap:0 6px;flex-wrap:nowrap}
+.sop-foundation[data-foundation=datepickers][data-date-mode=range] .ff-date-fields input{width:100%;min-width:0;max-width:none;flex:none;letter-spacing:-.025em}
+.sop-foundation[data-foundation=datepickers][data-date-mode=range] .ff-date-fields input[data-date="0"]{text-align:right}
+.sop-foundation[data-foundation=datepickers][data-date-mode=range] .ff-date-fields input[data-date="1"]{text-align:left}
+.sop-foundation[data-foundation=datepickers][data-date-mode=range] .ff-date-fields [data-date-separator]{width:16px;text-align:center;justify-self:center;white-space:nowrap;font-size:14px;line-height:1}
+.sop-foundation[data-foundation=datepickers][data-date-mode=range] .ff-date-fields [data-calendar-toggle]{justify-self:end}
+@container(max-width:245px){
+ .sop-foundation[data-foundation=datepickers][data-date-mode=range] .ff-date-fields{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"start action" "divider action" "end action";gap:0 10px;padding-top:7px;padding-bottom:7px}
+ .sop-foundation[data-foundation=datepickers][data-date-mode=range] .ff-date-fields input[data-date="0"]{grid-area:start;text-align:center}
+ .sop-foundation[data-foundation=datepickers][data-date-mode=range] .ff-date-fields [data-date-separator]{grid-area:divider;justify-self:center;font-size:12px}
+ .sop-foundation[data-foundation=datepickers][data-date-mode=range] .ff-date-fields input[data-date="1"]{grid-area:end;text-align:center}
+ .sop-foundation[data-foundation=datepickers][data-date-mode=range] .ff-date-fields [data-calendar-toggle]{grid-area:action;align-self:center}
+}
+@media(max-width:420px){@container(max-width:285px){
+ .sop-foundation[data-foundation=datepickers][data-date-mode=range] .ff-date-fields{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"start action" "divider action" "end action";gap:0 10px;padding-top:7px;padding-bottom:7px}
+ .sop-foundation[data-foundation=datepickers][data-date-mode=range] .ff-date-fields input[data-date="0"]{grid-area:start;text-align:center}
+ .sop-foundation[data-foundation=datepickers][data-date-mode=range] .ff-date-fields [data-date-separator]{grid-area:divider;justify-self:center;font-size:12px}
+ .sop-foundation[data-foundation=datepickers][data-date-mode=range] .ff-date-fields input[data-date="1"]{grid-area:end;text-align:center}
+ .sop-foundation[data-foundation=datepickers][data-date-mode=range] .ff-date-fields [data-calendar-toggle]{grid-area:action;align-self:center}
+}}
+@container(max-width:205px){
+ .sop-foundation[data-foundation=datepickers][data-date-mode=range] .ff-date-fields{grid-template-columns:minmax(0,1fr);grid-template-areas:"start" "divider" "end" "action";row-gap:1px}
+ .sop-foundation[data-foundation=datepickers][data-date-mode=range] .ff-date-fields [data-calendar-toggle]{justify-self:end;margin-top:2px}
+}

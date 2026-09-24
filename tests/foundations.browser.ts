@@ -132,7 +132,32 @@ try{
   }
   await mount('paper-calendar',{mode:'time',value:'14:30',name:'appointment'});const input=native.locator('#test-host [data-date="0"]');await input.fill('28:00');await input.press('Enter');assert.equal(await value(),'14:30');assert.equal(await input.evaluate((field:HTMLInputElement)=>field.checkValidity()),false);await input.fill('0735');await input.press('Enter');assert.equal(await value(),'07:35');assert.equal(await input.evaluate((field:HTMLInputElement)=>field.checkValidity()),true);assert.equal(await native.evaluate(()=>new FormData(document.querySelector('form')!).get('appointment')),'07:35');await native.locator('#test-host [data-calendar-toggle]').click();await native.locator('#test-host [data-time-hour="9"]').click();await native.locator('#test-host [data-time-minute="45"]').click();assert.equal(await value(),'09:45');
   await mount('inset-calendar',{mode:'datetime',value:'2026-09-23T14:30',name:'when'});const datetime=native.locator('#test-host [data-date="0"]');await datetime.fill('202609241615');await datetime.press('Enter');assert.equal(await value(),'2026-09-24T16:15');assert.equal(await native.evaluate(()=>new FormData(document.querySelector('form')!).get('when')),'2026-09-24T16:15');
-  await mount('soft-calendar',{mode:'range',value:['2026-09-23','2026-09-27'],name:'period'});const start=native.locator('#test-host [data-date="0"]');await start.fill('20260922');await start.press('Enter');assert.deepEqual(await value(),['2026-09-22','2026-09-27']);assert.deepEqual(await native.evaluate(()=>[new FormData(document.querySelector('form')!).get('period[0]'),new FormData(document.querySelector('form')!).get('period[1]')]),['2026-09-22','2026-09-27']);
+ await mount('soft-calendar',{mode:'range',value:['2026-09-23','2026-09-27'],name:'period'});const start=native.locator('#test-host [data-date="0"]');await start.fill('20260922');await start.press('Enter');assert.deepEqual(await value(),['2026-09-22','2026-09-27']);assert.deepEqual(await native.evaluate(()=>[new FormData(document.querySelector('form')!).get('period[0]'),new FormData(document.querySelector('form')!).get('period[1]')]),['2026-09-22','2026-09-27']);
+ });
+ await run('All 20 range datepickers balance both dates and the separator at wide and narrow widths',async()=>{
+  for(const width of [320,390,768]){
+   await native.setViewportSize({width,height:900});
+   for(const part of parts.filter(part=>part.category==='datepickers')){
+    await mount(part.id,{mode:'range',value:['2026-09-22','2026-09-27']});
+    const root=native.locator('#test-host .sop-foundation'),field=root.locator('.ff-date-fields');
+    const position=await field.evaluate(element=>{
+     const [start,end]=[element.querySelector<HTMLInputElement>('[data-date="0"]')!,element.querySelector<HTMLInputElement>('[data-date="1"]')!];
+     const separator=element.querySelector<HTMLElement>('[data-date-separator]')!,button=element.querySelector<HTMLElement>('[data-calendar-toggle]')!;
+     const a=start.getBoundingClientRect(),b=end.getBoundingClientRect(),s=separator.getBoundingClientRect(),c=button.getBoundingClientRect(),box=element.getBoundingClientRect();
+     const readable=[start,end].map(input=>{const style=getComputedStyle(input),canvas=document.createElement('canvas'),context=canvas.getContext('2d')!;context.font=`${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;const spacing=parseFloat(style.letterSpacing)||0;return input.clientWidth+2>=context.measureText(input.value).width+spacing*(input.value.length-1);});
+     return{display:getComputedStyle(element).display,areas:getComputedStyle(element).gridTemplateAreas,widths:[a.width,b.width],readable,align:[getComputedStyle(start).textAlign,getComputedStyle(end).textAlign],tops:[a.top,s.top,b.top,c.top],centers:[a.top+a.height/2,s.top+s.height/2,b.top+b.height/2,c.top+c.height/2],gaps:[s.left-a.right,b.left-s.right],buttonRight:c.right,boxRight:box.right,overflow:element.scrollWidth-element.clientWidth};
+    });
+    assert.equal(position.display,'grid',part.id+' '+width);
+    assert.ok(Math.abs(position.widths[0]-position.widths[1])<=2,part.id+' equal date widths '+width);
+    assert.ok(position.readable.every(Boolean),part.id+' both date strings fit '+width+' '+JSON.stringify(position.widths));
+    assert.ok(position.overflow<=1&&position.buttonRight<=position.boxRight+1,part.id+' no overflow '+width);
+    if(position.areas!=='none')assert.ok(position.tops[0]<position.tops[1]&&position.tops[1]<position.tops[2],part.id+' stacked range '+width);
+    else{assert.ok(Math.max(...position.centers)-Math.min(...position.centers)<=4,part.id+' one balanced row '+width);assert.ok(Math.abs(position.gaps[0]-position.gaps[1])<=2,part.id+' symmetric separator '+width);assert.deepEqual(position.align,['right','left'],part.id+' date alignment '+width);}
+    if(part.id==='ceramic-calendar'||part.id==='paper-calendar')await root.screenshot({path:path.join(out,`range-${part.id}-${width}.png`)});
+   }
+   assert.ok(await native.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),width+' page width');
+  }
+  await native.setViewportSize({width:1440,height:1100});
  });
  await run('Pagination and breadcrumbs: native links, page limits, dynamic hierarchy and popup cleanup',async()=>{
   await mount('aurora-pages',{totalPages:30,defaultValue:1});await native.locator('#test-host [aria-label="次のページ"]').click();assert.equal(await value(),2);await update({totalPages:1});assert.equal(await value(),1);assert.ok(await native.locator('#test-host [aria-label="次のページ"]').isDisabled());

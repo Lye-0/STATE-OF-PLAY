@@ -58,7 +58,23 @@ test('date constraints enforce boundaries and callback exclusions',()=>{
 test('authored date and time inputs accept local values without an OS picker',()=>{
  assert.equal(parseTime('0735'),'07:35');assert.equal(parseTime('9:05'),'09:05');assert.equal(parseTime('23:59'),'23:59');assert.equal(parseTime('24:00'),null);assert.equal(parseTime('12:60'),null);
  const calendars=parts.filter(part=>part.category==='datepickers');assert.equal(calendars.length,20);
- for(const part of calendars){assert.doesNotMatch(part.markup,/type="(?:date|time|datetime-local)"/);assert.match(part.markup,/data-time-picker/);assert.match(part.prompt,/独自日時UI/);assert.match(part.usage,/独自日時UI/);for(const format of FORMATS)for(const layout of ['portable','original']as const){const delivery=getDelivery(part,format,layout);assert.ok(delivery.runtimeFiles.some(file=>file.sourceName.endsWith('/shared/foundation/date-ui.ts')));assert.match(buildPrompt(part,format,layout,false),/ブラウザー標準の日時ピッカーを開きません/);}}
+ for(const part of calendars){
+  assert.doesNotMatch(part.markup,/type="(?:date|time|datetime-local)"/);
+  assert.match(part.markup,/data-time-picker/);
+  assert.match(part.prompt,/独自日時UI/);
+  assert.match(part.usage,/独自日時UI/);
+  assert.match(part.prompt,/期間入力の配置（v4\.12\.2）/);
+  assert.match(part.usage,/期間入力の配置（v4\.12\.2）/);
+  for(const format of FORMATS)for(const layout of ['portable','original']as const){
+   const delivery=getDelivery(part,format,layout);
+   assert.ok(delivery.runtimeFiles.some(file=>file.sourceName.endsWith('/shared/foundation/date-ui.ts')));
+   const css=delivery.runtimeFiles.find(file=>file.sourceName.endsWith('/shared/foundation/base.css'));
+   assert.ok(css&&css.code.includes('container-type:inline-size'),part.id+' '+format+' '+layout+' range CSS');
+   const prompt=buildPrompt(part,format,layout,false);
+   assert.match(prompt,/ブラウザー標準の日時ピッカーを開きません/);
+   assert.match(prompt,/期間入力の配置（v4\.12\.2）/);
+  }
+ }
 });
 test('pagination keeps first/last/current pages ordered across 1–200 pages',()=>{
  for(const total of [1,2,7,8,32,200])for(let current=1;current<=total;current++) {const values=pageItems(current,total),numbers=values.filter((v):v is number=>typeof v==='number');assert.equal(numbers[0],1);assert.equal(numbers.at(-1),total);assert.ok(numbers.includes(current));assert.equal(new Set(numbers).size,numbers.length);assert.deepEqual(numbers,[...numbers].sort((a,b)=>a-b));assert.ok(numbers.every(n=>n>=1&&n<=total));}
