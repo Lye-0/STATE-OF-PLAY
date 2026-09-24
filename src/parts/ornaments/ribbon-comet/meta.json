@@ -1,0 +1,40 @@
+{
+  "id": "ribbon-comet",
+  "name": "Ribbon Comet",
+  "category": "ornaments",
+  "order": 791,
+  "version": "4.13.0",
+  "tagline": "余白を横切る、光の尾。",
+  "description": "装飾のために置く、独立したオーナメントです。",
+  "material": "DECOR / ACCENT",
+  "motion": "AMBIENT",
+  "accent": "216,196,150",
+  "designType": "A",
+  "runtime": "CSS + state",
+  "componentName": "RibbonComet",
+  "tags": [
+    "装飾",
+    "ornament",
+    "accent",
+    "Ribbon Comet",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "kinetic-cross",
+  "name": "Kinetic Cross",
+  "category": "ornaments",
+  "order": 800,
+  "version": "4.13.0",
+  "tagline": "交点が、静かに回る。",
+  "description": "装飾のために置く、独立したオーナメントです。",
+  "material": "DECOR / ACCENT",
+  "motion": "AMBIENT",
+  "accent": "181,219,208",
+  "designType": "A",
+  "runtime": "CSS + state",
+  "componentName": "KineticCross",
+  "tags": [
+    "装飾",
+    "ornament",
+    "accent",
+    "Kinetic Cross",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

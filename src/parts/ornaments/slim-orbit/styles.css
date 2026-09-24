@@ -1,0 +1,64 @@
+/* slim-orbit: decorative ornament component styles. */
+.sop-ornament.sop-slim-orbit {
+  --ornament-accent: rgb(187,205,197);
+  --ornament-muted: color-mix(in srgb, var(--ornament-accent) 38%, rgba(255,255,255,.68));
+  --ornament-deep: color-mix(in srgb, var(--ornament-accent) 18%, rgba(6,9,12,.95));
+  --ornament-shadow: color-mix(in srgb, var(--ornament-accent) 22%, rgba(0,0,0,.88));
+  position: relative;
+  box-sizing: border-box;
+  width: min(100%, 320px);
+  min-height: 240px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 28px;
+  color: #eef0e6;
+}
+.sop-ornament.sop-slim-orbit::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 50% 36%, color-mix(in srgb, var(--ornament-accent) 22%, transparent) 0%, transparent 52%),
+    radial-gradient(circle at 50% 70%, rgba(255,255,255,.03) 0%, transparent 62%);
+  opacity: .92;
+  pointer-events: none;
+}
+.sop-ornament.sop-slim-orbit .or-stage {
+  position: relative;
+  z-index: 1;
+  width: min(78%, 260px);
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+}
+.sop-ornament.sop-slim-orbit .or-stage,
+.sop-ornament.sop-slim-orbit .or-stage *,
+.sop-ornament.sop-slim-orbit .or-stage *::before,
+.sop-ornament.sop-slim-orbit .or-stage *::after { box-sizing: border-box; }
+.sop-ornament.sop-slim-orbit [aria-hidden="true"] { pointer-events: none; }
+.sop-ornament.sop-slim-orbit[data-paused="true"] .or-stage *,
+.sop-ornament.sop-slim-orbit[data-paused="true"] .or-stage *::before,
+.sop-ornament.sop-slim-orbit[data-paused="true"] .or-stage *::after { animation-play-state: paused !important; }
+@media (prefers-reduced-motion: reduce) {
+  .sop-ornament.sop-slim-orbit .or-stage *,
+  .sop-ornament.sop-slim-orbit .or-stage *::before,
+  .sop-ornament.sop-slim-orbit .or-stage *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@keyframes or-drift { 0%,100% { transform: translateY(0px);} 50% { transform: translateY(-6px);} }
+@keyframes or-rotate-slow { from { transform: rotate(0deg);} to { transform: rotate(360deg);} }
+@keyframes or-rotate-reverse { from { transform: rotate(360deg);} to { transform: rotate(0deg);} }
+@keyframes or-pulse { 0%,100% { opacity: .45; transform: scale(.95);} 50% { opacity: 1; transform: scale(1.05);} }
+@keyframes or-sheen { 0% { transform: translateX(-130%);} 100% { transform: translateX(130%);} }
+@keyframes or-wave { 0%,100% { transform: translateX(0) translateY(0);} 50% { transform: translateX(6px) translateY(-4px);} }
+
+.sop-ornament.sop-slim-orbit .so-shell { position:relative; width:120px; height:120px; }
+.sop-ornament.sop-slim-orbit .ring { position:absolute; inset:0; border-radius:50%; border:1.25px solid color-mix(in srgb, var(--ornament-accent) 54%, rgba(255,255,255,.48)); }
+.sop-ornament.sop-slim-orbit .dot { position:absolute; left:50%; top:-5px; width:10px; height:10px; margin-left:-5px; border-radius:50%; background:color-mix(in srgb, var(--ornament-accent) 62%, white); animation: or-rotate-slow 8.8s linear infinite; transform-origin:0 65px; }

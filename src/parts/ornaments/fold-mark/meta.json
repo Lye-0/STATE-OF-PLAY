@@ -1,0 +1,40 @@
+{
+  "id": "fold-mark",
+  "name": "Fold Mark",
+  "category": "ornaments",
+  "order": 797,
+  "version": "4.13.0",
+  "tagline": "折れ線の緊張だけを置く。",
+  "description": "装飾のために置く、独立したオーナメントです。",
+  "material": "DECOR / ACCENT",
+  "motion": "AMBIENT",
+  "accent": "226,198,175",
+  "designType": "A",
+  "runtime": "CSS + state",
+  "componentName": "FoldMark",
+  "tags": [
+    "装飾",
+    "ornament",
+    "accent",
+    "Fold Mark",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

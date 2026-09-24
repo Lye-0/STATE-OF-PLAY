@@ -26,7 +26,9 @@ try {
    const context=await browser.newContext({viewport:{width:1440,height:960},reducedMotion:'reduce'});
    const p=await context.newPage();const errors:string[]=[],requests:string[]=[];
    p.on('pageerror',e=>errors.push(e.message));p.on('request',r=>requests.push(r.url()));
-   await p.goto(url);await ready(p);
+   await p.goto(url,{waitUntil:'domcontentloaded',timeout:120000});
+   await p.waitForFunction(()=>document.documentElement.classList.contains('site-ready'),undefined,{timeout:120000});
+   await ready(p);
    assert.equal(await p.locator('[data-part]').count(),24);
    assert.equal(await selectedCategory(p),'toggles');
    assert.ok(!requests.some(u=>/\.json(?:\?|$)/.test(u)),'no source payload on entry');
@@ -93,7 +95,7 @@ try {
    for(const id of ids){await category(p,id);assert.equal(await p.locator('[data-part]').count(),index.filter(x=>x.category===id).length);signatures.set(id,await signature());}
    for(const id of [...ids].reverse()){await category(p,id);assert.deepEqual(await signature(),signatures.get(id),'style order '+id);}
    assert.deepEqual(errors,[]);
-   results.push(mode+': all 36 categories, forward/reverse CSS order, no runtime errors');
+   results.push(mode+': all 37 categories, forward/reverse CSS order, no runtime errors');
    await p.setViewportSize({width:390,height:844});await category(p,'numbers');
    assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
    await p.screenshot({path:path.join(output,mode+'-mobile.png')});

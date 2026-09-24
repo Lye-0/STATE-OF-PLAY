@@ -1,0 +1,66 @@
+/* asterism-burst: decorative ornament component styles. */
+.sop-ornament.sop-asterism-burst {
+  --ornament-accent: rgb(210,224,186);
+  --ornament-muted: color-mix(in srgb, var(--ornament-accent) 38%, rgba(255,255,255,.68));
+  --ornament-deep: color-mix(in srgb, var(--ornament-accent) 18%, rgba(6,9,12,.95));
+  --ornament-shadow: color-mix(in srgb, var(--ornament-accent) 22%, rgba(0,0,0,.88));
+  position: relative;
+  box-sizing: border-box;
+  width: min(100%, 320px);
+  min-height: 240px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 28px;
+  color: #eef0e6;
+}
+.sop-ornament.sop-asterism-burst::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 50% 36%, color-mix(in srgb, var(--ornament-accent) 22%, transparent) 0%, transparent 52%),
+    radial-gradient(circle at 50% 70%, rgba(255,255,255,.03) 0%, transparent 62%);
+  opacity: .92;
+  pointer-events: none;
+}
+.sop-ornament.sop-asterism-burst .or-stage {
+  position: relative;
+  z-index: 1;
+  width: min(78%, 260px);
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+}
+.sop-ornament.sop-asterism-burst .or-stage,
+.sop-ornament.sop-asterism-burst .or-stage *,
+.sop-ornament.sop-asterism-burst .or-stage *::before,
+.sop-ornament.sop-asterism-burst .or-stage *::after { box-sizing: border-box; }
+.sop-ornament.sop-asterism-burst [aria-hidden="true"] { pointer-events: none; }
+.sop-ornament.sop-asterism-burst[data-paused="true"] .or-stage *,
+.sop-ornament.sop-asterism-burst[data-paused="true"] .or-stage *::before,
+.sop-ornament.sop-asterism-burst[data-paused="true"] .or-stage *::after { animation-play-state: paused !important; }
+@media (prefers-reduced-motion: reduce) {
+  .sop-ornament.sop-asterism-burst .or-stage *,
+  .sop-ornament.sop-asterism-burst .or-stage *::before,
+  .sop-ornament.sop-asterism-burst .or-stage *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@keyframes or-drift { 0%,100% { transform: translateY(0px);} 50% { transform: translateY(-6px);} }
+@keyframes or-rotate-slow { from { transform: rotate(0deg);} to { transform: rotate(360deg);} }
+@keyframes or-rotate-reverse { from { transform: rotate(360deg);} to { transform: rotate(0deg);} }
+@keyframes or-pulse { 0%,100% { opacity: .45; transform: scale(.95);} 50% { opacity: 1; transform: scale(1.05);} }
+@keyframes or-sheen { 0% { transform: translateX(-130%);} 100% { transform: translateX(130%);} }
+@keyframes or-wave { 0%,100% { transform: translateX(0) translateY(0);} 50% { transform: translateX(6px) translateY(-4px);} }
+
+.sop-ornament.sop-asterism-burst .or-stage { filter: drop-shadow(0 0 22px rgba(0,0,0,.32)); }
+.sop-ornament.sop-asterism-burst .ob-burst { position: relative; width: 144px; height: 144px; animation: or-rotate-slow 14s linear infinite; }
+.sop-ornament.sop-asterism-burst .ray { position:absolute; left:50%; top:50%; width:4px; height:72px; border-radius:999px; background: linear-gradient(to top, transparent 0%, color-mix(in srgb, var(--ornament-accent) 82%, white) 18%, var(--ornament-accent) 68%, transparent 100%); transform: translate(-50%,-50%) rotate(calc(var(--i) * 45deg)); transform-origin:center; opacity:.95; box-shadow:0 0 14px color-mix(in srgb, var(--ornament-accent) 30%, transparent); }
+.sop-ornament.sop-asterism-burst .ray::after { content:""; position:absolute; left:50%; top:11px; width:4px; height:20px; border-radius:999px; background:rgba(247,248,240,.92); transform:translateX(-50%); }
+.sop-ornament.sop-asterism-burst .ob-center { position:absolute; width:18px; height:18px; border-radius:50%; background: radial-gradient(circle at 35% 35%, #f5f6ee 0%, color-mix(in srgb, var(--ornament-accent) 65%, white) 35%, color-mix(in srgb, var(--ornament-accent) 38%, rgba(255,255,255,.1)) 100%); box-shadow:0 0 26px color-mix(in srgb, var(--ornament-accent) 38%, transparent); animation: or-pulse 3.2s ease-in-out infinite; }

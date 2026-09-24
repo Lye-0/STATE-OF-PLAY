@@ -1,0 +1,40 @@
+{
+  "id": "corner-bracket",
+  "name": "Corner Bracket",
+  "category": "ornaments",
+  "order": 802,
+  "version": "4.13.0",
+  "tagline": "角に置くだけの、軽い印。",
+  "description": "装飾のために置く、独立したオーナメントです。",
+  "material": "DECOR / ACCENT",
+  "motion": "AMBIENT",
+  "accent": "180,189,196",
+  "designType": "B",
+  "runtime": "CSS + state",
+  "componentName": "CornerBracket",
+  "tags": [
+    "装飾",
+    "ornament",
+    "accent",
+    "Corner Bracket",
+    "B"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

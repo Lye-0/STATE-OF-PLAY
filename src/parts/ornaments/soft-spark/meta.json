@@ -1,0 +1,40 @@
+{
+  "id": "soft-spark",
+  "name": "Soft Spark",
+  "category": "ornaments",
+  "order": 806,
+  "version": "4.13.0",
+  "tagline": "控えめな閃き。",
+  "description": "装飾のために置く、独立したオーナメントです。",
+  "material": "DECOR / ACCENT",
+  "motion": "AMBIENT",
+  "accent": "212,208,183",
+  "designType": "B",
+  "runtime": "CSS + state",
+  "componentName": "SoftSpark",
+  "tags": [
+    "装飾",
+    "ornament",
+    "accent",
+    "Soft Spark",
+    "B"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

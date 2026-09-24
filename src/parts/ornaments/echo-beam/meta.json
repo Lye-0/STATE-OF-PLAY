@@ -1,0 +1,40 @@
+{
+  "id": "echo-beam",
+  "name": "Echo Beam",
+  "category": "ornaments",
+  "order": 799,
+  "version": "4.13.0",
+  "tagline": "残響のような細い帯。",
+  "description": "装飾のために置く、独立したオーナメントです。",
+  "material": "DECOR / ACCENT",
+  "motion": "AMBIENT",
+  "accent": "214,221,181",
+  "designType": "A",
+  "runtime": "CSS + state",
+  "componentName": "EchoBeam",
+  "tags": [
+    "装飾",
+    "ornament",
+    "accent",
+    "Echo Beam",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

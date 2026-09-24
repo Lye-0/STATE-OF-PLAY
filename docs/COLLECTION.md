@@ -1,11 +1,12 @@
-# パーツ一覧 — v4.12.0
+# パーツ一覧 — v4.13.0
 
-787パーツ / 36カテゴリ。重複していたPaper Loaderを削除した状態を維持し、SIGNATUREの6カテゴリ・96パーツとNAVIGATORの5カテゴリ・88パーツを追加しました。新作の一覧は [SIGNATURE-COLLECTION.md](SIGNATURE-COLLECTION.md) と [NAVIGATOR.md](NAVIGATOR.md) を参照してください。
+807パーツ / 37カテゴリ。重複していたPaper Loaderを削除した状態を維持し、SIGNATUREの6カテゴリ・96パーツ、NAVIGATORの5カテゴリ・88パーツ、装飾20パーツを収録しています。装飾の詳細は [ORNAMENTS.md](ORNAMENTS.md) を参照してください。
 
 | カテゴリ | 数 | A | B |
 |---|---:|---:|---:|
 | toggles | 24 | 18 | 6 |
 | blocks | 24 | 15 | 9 |
+| ornaments | 20 | 12 | 8 |
 | scrollbars | 36 | 28 | 8 |
 | dropdowns | 36 | 28 | 8 |
 | accordions | 24 | 16 | 8 |
@@ -768,3 +769,28 @@
 | `inset-stepper` | Inset Stepper | B | 未確定の入力文字を保ち、blur/Enterで数値を確定します。 |
 | `compact-stepper` | Compact Stepper | B | 未確定の入力文字を保ち、blur/Enterで数値を確定します。 |
 | `slate-stepper` | Slate Stepper | B | 未確定の入力文字を保ち、blur/Enterで数値を確定します。 |
+
+## ornaments
+
+| ID | 名前 | タイプ | 表現 |
+|---|---|:---:|---|
+| `asterism-burst` | Asterism Burst | A | 散った光を、ひとつに結ぶ。 |
+| `orbit-knot` | Orbit Knot | A | 小さな軌道を、交差させる。 |
+| `ribbon-comet` | Ribbon Comet | A | 余白を横切る、光の尾。 |
+| `prism-spokes` | Prism Spokes | A | 色の気配が、放射する。 |
+| `signal-pins` | Signal Pins | A | 細い印が、リズムを刻む。 |
+| `hinge-fan` | Hinge Fan | A | 開く気配だけを残す。 |
+| `halo-axis` | Halo Axis | A | 中心へ戻る、薄い輪郭。 |
+| `tide-sweep` | Tide Sweep | A | 静かな波を、面に流す。 |
+| `fold-mark` | Fold Mark | A | 折れ線の緊張だけを置く。 |
+| `lattice-star` | Lattice Star | A | 格子の先で、光が交わる。 |
+| `echo-beam` | Echo Beam | A | 残響のような細い帯。 |
+| `kinetic-cross` | Kinetic Cross | A | 交点が、静かに回る。 |
+| `quiet-divider` | Quiet Divider | B | 区切りを、ほのかに示す。 |
+| `corner-bracket` | Corner Bracket | B | 角に置くだけの、軽い印。 |
+| `notation-dots` | Notation Dots | B | 小さな点で、余白を整える。 |
+| `index-ticks` | Index Ticks | B | 細い目盛りで、流れを作る。 |
+| `slim-orbit` | Slim Orbit | B | ひと筆の軌道を残す。 |
+| `soft-spark` | Soft Spark | B | 控えめな閃き。 |
+| `rule-knot` | Rule Knot | B | 交差点に、節をつくる。 |
+| `grid-nick` | Grid Nick | B | 小さな格子の気配。 |

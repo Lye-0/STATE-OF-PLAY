@@ -1,0 +1,40 @@
+{
+  "id": "quiet-divider",
+  "name": "Quiet Divider",
+  "category": "ornaments",
+  "order": 801,
+  "version": "4.13.0",
+  "tagline": "区切りを、ほのかに示す。",
+  "description": "装飾のために置く、独立したオーナメントです。",
+  "material": "DECOR / ACCENT",
+  "motion": "AMBIENT",
+  "accent": "188,194,183",
+  "designType": "B",
+  "runtime": "CSS + state",
+  "componentName": "QuietDivider",
+  "tags": [
+    "装飾",
+    "ornament",
+    "accent",
+    "Quiet Divider",
+    "B"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

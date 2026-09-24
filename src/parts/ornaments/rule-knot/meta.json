@@ -1,0 +1,40 @@
+{
+  "id": "rule-knot",
+  "name": "Rule Knot",
+  "category": "ornaments",
+  "order": 807,
+  "version": "4.13.0",
+  "tagline": "交差点に、節をつくる。",
+  "description": "装飾のために置く、独立したオーナメントです。",
+  "material": "DECOR / ACCENT",
+  "motion": "AMBIENT",
+  "accent": "198,190,183",
+  "designType": "B",
+  "runtime": "CSS + state",
+  "componentName": "RuleKnot",
+  "tags": [
+    "装飾",
+    "ornament",
+    "accent",
+    "Rule Knot",
+    "B"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

@@ -1,0 +1,68 @@
+/* corner-bracket: decorative ornament component styles. */
+.sop-ornament.sop-corner-bracket {
+  --ornament-accent: rgb(180,189,196);
+  --ornament-muted: color-mix(in srgb, var(--ornament-accent) 38%, rgba(255,255,255,.68));
+  --ornament-deep: color-mix(in srgb, var(--ornament-accent) 18%, rgba(6,9,12,.95));
+  --ornament-shadow: color-mix(in srgb, var(--ornament-accent) 22%, rgba(0,0,0,.88));
+  position: relative;
+  box-sizing: border-box;
+  width: min(100%, 320px);
+  min-height: 240px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 28px;
+  color: #eef0e6;
+}
+.sop-ornament.sop-corner-bracket::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 50% 36%, color-mix(in srgb, var(--ornament-accent) 22%, transparent) 0%, transparent 52%),
+    radial-gradient(circle at 50% 70%, rgba(255,255,255,.03) 0%, transparent 62%);
+  opacity: .92;
+  pointer-events: none;
+}
+.sop-ornament.sop-corner-bracket .or-stage {
+  position: relative;
+  z-index: 1;
+  width: min(78%, 260px);
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+}
+.sop-ornament.sop-corner-bracket .or-stage,
+.sop-ornament.sop-corner-bracket .or-stage *,
+.sop-ornament.sop-corner-bracket .or-stage *::before,
+.sop-ornament.sop-corner-bracket .or-stage *::after { box-sizing: border-box; }
+.sop-ornament.sop-corner-bracket [aria-hidden="true"] { pointer-events: none; }
+.sop-ornament.sop-corner-bracket[data-paused="true"] .or-stage *,
+.sop-ornament.sop-corner-bracket[data-paused="true"] .or-stage *::before,
+.sop-ornament.sop-corner-bracket[data-paused="true"] .or-stage *::after { animation-play-state: paused !important; }
+@media (prefers-reduced-motion: reduce) {
+  .sop-ornament.sop-corner-bracket .or-stage *,
+  .sop-ornament.sop-corner-bracket .or-stage *::before,
+  .sop-ornament.sop-corner-bracket .or-stage *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@keyframes or-drift { 0%,100% { transform: translateY(0px);} 50% { transform: translateY(-6px);} }
+@keyframes or-rotate-slow { from { transform: rotate(0deg);} to { transform: rotate(360deg);} }
+@keyframes or-rotate-reverse { from { transform: rotate(360deg);} to { transform: rotate(0deg);} }
+@keyframes or-pulse { 0%,100% { opacity: .45; transform: scale(.95);} 50% { opacity: 1; transform: scale(1.05);} }
+@keyframes or-sheen { 0% { transform: translateX(-130%);} 100% { transform: translateX(130%);} }
+@keyframes or-wave { 0%,100% { transform: translateX(0) translateY(0);} 50% { transform: translateX(6px) translateY(-4px);} }
+
+.sop-ornament.sop-corner-bracket .cb-shell { position:relative; width:170px; height:130px; }
+.sop-ornament.sop-corner-bracket .corner { position:absolute; width:26px; height:26px; border-color: color-mix(in srgb, var(--ornament-accent) 54%, rgba(255,255,255,.52)); border-style: solid; }
+.sop-ornament.sop-corner-bracket .tl { left:0; top:0; border-width:1.5px 0 0 1.5px; border-radius:12px 0 0 0; }
+.sop-ornament.sop-corner-bracket .tr { right:0; top:0; border-width:1.5px 1.5px 0 0; border-radius:0 12px 0 0; }
+.sop-ornament.sop-corner-bracket .bl { left:0; bottom:0; border-width:0 0 1.5px 1.5px; border-radius:0 0 0 12px; }
+.sop-ornament.sop-corner-bracket .br { right:0; bottom:0; border-width:0 1.5px 1.5px 0; border-radius:0 0 12px 0; }
+.sop-ornament.sop-corner-bracket .cb-shell::before { content:""; position:absolute; inset:18px; border-radius:22px; border:1px solid rgba(255,255,255,.06); }

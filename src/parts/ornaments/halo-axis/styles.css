@@ -1,0 +1,69 @@
+/* halo-axis: decorative ornament component styles. */
+.sop-ornament.sop-halo-axis {
+  --ornament-accent: rgb(188,213,199);
+  --ornament-muted: color-mix(in srgb, var(--ornament-accent) 38%, rgba(255,255,255,.68));
+  --ornament-deep: color-mix(in srgb, var(--ornament-accent) 18%, rgba(6,9,12,.95));
+  --ornament-shadow: color-mix(in srgb, var(--ornament-accent) 22%, rgba(0,0,0,.88));
+  position: relative;
+  box-sizing: border-box;
+  width: min(100%, 320px);
+  min-height: 240px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 28px;
+  color: #eef0e6;
+}
+.sop-ornament.sop-halo-axis::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 50% 36%, color-mix(in srgb, var(--ornament-accent) 22%, transparent) 0%, transparent 52%),
+    radial-gradient(circle at 50% 70%, rgba(255,255,255,.03) 0%, transparent 62%);
+  opacity: .92;
+  pointer-events: none;
+}
+.sop-ornament.sop-halo-axis .or-stage {
+  position: relative;
+  z-index: 1;
+  width: min(78%, 260px);
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+}
+.sop-ornament.sop-halo-axis .or-stage,
+.sop-ornament.sop-halo-axis .or-stage *,
+.sop-ornament.sop-halo-axis .or-stage *::before,
+.sop-ornament.sop-halo-axis .or-stage *::after { box-sizing: border-box; }
+.sop-ornament.sop-halo-axis [aria-hidden="true"] { pointer-events: none; }
+.sop-ornament.sop-halo-axis[data-paused="true"] .or-stage *,
+.sop-ornament.sop-halo-axis[data-paused="true"] .or-stage *::before,
+.sop-ornament.sop-halo-axis[data-paused="true"] .or-stage *::after { animation-play-state: paused !important; }
+@media (prefers-reduced-motion: reduce) {
+  .sop-ornament.sop-halo-axis .or-stage *,
+  .sop-ornament.sop-halo-axis .or-stage *::before,
+  .sop-ornament.sop-halo-axis .or-stage *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@keyframes or-drift { 0%,100% { transform: translateY(0px);} 50% { transform: translateY(-6px);} }
+@keyframes or-rotate-slow { from { transform: rotate(0deg);} to { transform: rotate(360deg);} }
+@keyframes or-rotate-reverse { from { transform: rotate(360deg);} to { transform: rotate(0deg);} }
+@keyframes or-pulse { 0%,100% { opacity: .45; transform: scale(.95);} 50% { opacity: 1; transform: scale(1.05);} }
+@keyframes or-sheen { 0% { transform: translateX(-130%);} 100% { transform: translateX(130%);} }
+@keyframes or-wave { 0%,100% { transform: translateX(0) translateY(0);} 50% { transform: translateX(6px) translateY(-4px);} }
+
+.sop-ornament.sop-halo-axis .ha-shell { position:relative; width:174px; height:174px; animation: or-drift 7s ease-in-out infinite; }
+.sop-ornament.sop-halo-axis .axis { position:absolute; left:50%; top:50%; background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--ornament-accent) 76%, rgba(255,255,255,.72)), transparent); opacity:.88; }
+.sop-ornament.sop-halo-axis .horizontal { width:176px; height:1.5px; transform:translate(-50%,-50%); }
+.sop-ornament.sop-halo-axis .vertical { width:1.5px; height:176px; transform:translate(-50%,-50%); background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--ornament-accent) 76%, rgba(255,255,255,.72)), transparent); }
+.sop-ornament.sop-halo-axis .ring { position:absolute; left:50%; top:50%; border:1.25px solid color-mix(in srgb, var(--ornament-accent) 58%, rgba(255,255,255,.32)); border-radius:50%; transform:translate(-50%,-50%); }
+.sop-ornament.sop-halo-axis .r1 { width:56px; height:56px; animation: or-pulse 4.5s ease-in-out infinite; }
+.sop-ornament.sop-halo-axis .r2 { width:102px; height:102px; opacity:.74; animation: or-pulse 5.8s ease-in-out infinite .2s; }
+.sop-ornament.sop-halo-axis .r3 { width:148px; height:148px; opacity:.52; animation: or-pulse 7.2s ease-in-out infinite .4s; }

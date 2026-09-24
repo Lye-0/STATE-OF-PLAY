@@ -1,0 +1,40 @@
+{
+  "id": "tide-sweep",
+  "name": "Tide Sweep",
+  "category": "ornaments",
+  "order": 796,
+  "version": "4.13.0",
+  "tagline": "静かな波を、面に流す。",
+  "description": "装飾のために置く、独立したオーナメントです。",
+  "material": "DECOR / ACCENT",
+  "motion": "AMBIENT",
+  "accent": "163,201,221",
+  "designType": "A",
+  "runtime": "CSS + state",
+  "componentName": "TideSweep",
+  "tags": [
+    "装飾",
+    "ornament",
+    "accent",
+    "Tide Sweep",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "notation-dots",
+  "name": "Notation Dots",
+  "category": "ornaments",
+  "order": 803,
+  "version": "4.13.0",
+  "tagline": "小さな点で、余白を整える。",
+  "description": "装飾のために置く、独立したオーナメントです。",
+  "material": "DECOR / ACCENT",
+  "motion": "AMBIENT",
+  "accent": "199,190,181",
+  "designType": "B",
+  "runtime": "CSS + state",
+  "componentName": "NotationDots",
+  "tags": [
+    "装飾",
+    "ornament",
+    "accent",
+    "Notation Dots",
+    "B"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "grid-nick",
+  "name": "Grid Nick",
+  "category": "ornaments",
+  "order": 808,
+  "version": "4.13.0",
+  "tagline": "小さな格子の気配。",
+  "description": "装飾のために置く、独立したオーナメントです。",
+  "material": "DECOR / ACCENT",
+  "motion": "AMBIENT",
+  "accent": "187,198,186",
+  "designType": "B",
+  "runtime": "CSS + state",
+  "componentName": "GridNick",
+  "tags": [
+    "装飾",
+    "ornament",
+    "accent",
+    "Grid Nick",
+    "B"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "asterism-burst",
+  "name": "Asterism Burst",
+  "category": "ornaments",
+  "order": 789,
+  "version": "4.13.0",
+  "tagline": "散った光を、ひとつに結ぶ。",
+  "description": "装飾のために置く、独立したオーナメントです。",
+  "material": "DECOR / ACCENT",
+  "motion": "AMBIENT",
+  "accent": "210,224,186",
+  "designType": "A",
+  "runtime": "CSS + state",
+  "componentName": "AsterismBurst",
+  "tags": [
+    "装飾",
+    "ornament",
+    "accent",
+    "Asterism Burst",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

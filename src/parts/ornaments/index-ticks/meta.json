@@ -1,0 +1,40 @@
+{
+  "id": "index-ticks",
+  "name": "Index Ticks",
+  "category": "ornaments",
+  "order": 804,
+  "version": "4.13.0",
+  "tagline": "細い目盛りで、流れを作る。",
+  "description": "装飾のために置く、独立したオーナメントです。",
+  "material": "DECOR / ACCENT",
+  "motion": "AMBIENT",
+  "accent": "193,201,208",
+  "designType": "B",
+  "runtime": "CSS + state",
+  "componentName": "IndexTicks",
+  "tags": [
+    "装飾",
+    "ornament",
+    "accent",
+    "Index Ticks",
+    "B"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

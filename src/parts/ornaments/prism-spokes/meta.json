@@ -1,0 +1,40 @@
+{
+  "id": "prism-spokes",
+  "name": "Prism Spokes",
+  "category": "ornaments",
+  "order": 792,
+  "version": "4.13.0",
+  "tagline": "色の気配が、放射する。",
+  "description": "装飾のために置く、独立したオーナメントです。",
+  "material": "DECOR / ACCENT",
+  "motion": "AMBIENT",
+  "accent": "194,181,244",
+  "designType": "A",
+  "runtime": "CSS + state",
+  "componentName": "PrismSpokes",
+  "tags": [
+    "装飾",
+    "ornament",
+    "accent",
+    "Prism Spokes",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

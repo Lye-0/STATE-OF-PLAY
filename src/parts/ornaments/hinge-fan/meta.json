@@ -1,0 +1,40 @@
+{
+  "id": "hinge-fan",
+  "name": "Hinge Fan",
+  "category": "ornaments",
+  "order": 794,
+  "version": "4.13.0",
+  "tagline": "開く気配だけを残す。",
+  "description": "装飾のために置く、独立したオーナメントです。",
+  "material": "DECOR / ACCENT",
+  "motion": "AMBIENT",
+  "accent": "205,189,165",
+  "designType": "A",
+  "runtime": "CSS + state",
+  "componentName": "HingeFan",
+  "tags": [
+    "装飾",
+    "ornament",
+    "accent",
+    "Hinge Fan",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

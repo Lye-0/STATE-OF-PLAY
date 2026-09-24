@@ -38,9 +38,9 @@ try {
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 120000 });
   await galleryReady(page);
 
-  await check('entry keeps the first category lazy while listing 787 parts and 36 categories', async () => {
-    assert.equal(await page.locator('#library-total').innerText(), '787');
-    assert.equal(await page.locator('#library-collections').innerText(), '36');
+  await check('entry keeps the first category lazy while listing 807 parts and 37 categories', async () => {
+    assert.equal(await page.locator('#library-total').innerText(), '807');
+    assert.equal(await page.locator('#library-collections').innerText(), '37');
     assert.equal(await page.locator('#part-grid [data-part]').count(), 24);
     assert.equal(await selectedCategory(page), 'toggles');
     assert.ok(!requests.some(request => request.includes('/src/parts/avatars/')), 'avatar runtime loaded before selection');

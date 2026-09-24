@@ -485,3 +485,10 @@
 .collection-toolbar .category-jump .sop-select.sop-select-sculpted.sop-aurora-select .sop-select-popup::after{background:radial-gradient(300px 190px at var(--sel-light-x) var(--sel-light-y),#d1e6b211,transparent 80%)}
 @media(max-width:1050px){.collection-toolbar .category-jump{flex:1 1 240px;order:1;padding:4px 0 8px}}
 @media(max-width:600px){.collection-toolbar .category-jump{flex-basis:100%;width:100%;padding:0 0 5px}}
+
+/* Ornaments are displayed as decorative objects, without a surface-content frame. */
+.ornament-card{background:#17191a;border:1px solid #2c302b;border-radius:10px}
+.ornament-card .object-stage{height:290px;padding:18px 24px;overflow:hidden}
+.ornament-card .stage-mount{width:100%;max-width:350px;min-width:0}
+.ornament-preview .preview-stage{height:auto;min-height:280px;padding:20px;display:flex;justify-content:center;overflow:hidden}
+@media(max-width:600px){.ornament-card .object-stage{padding-inline:12px}.ornament-preview .preview-stage{padding-inline:12px}}
