@@ -10,6 +10,8 @@
 
 ギャラリーは共有のselect-controller.tsから初期化し、src/shared/aurora-select.cssを起動時に読み込む。Aurora Selectパーツのstyles.cssも同じ共有スキンを参照するため、外観のCSSは一元化される。アプリ側からsrc/parts/dropdowns/aurora-selectをimportせず、初回表示でドロップダウンカテゴリの実装が先読みされないようにする。遅延読み込みの契約は維持する。
 
+v4.12.1では、サイト全体の検索欄を廃止し、その位置（カテゴリタブ列の右端）へセレクターを移した。狭い幅ではタブ列の上に配置する。`src/app/gallery.css`のサイト専用スコープだけで高さ46pxと黄緑系のベースカラーを指定し、配布されるAurora Selectの構造・動き・共有CSSは変更しない。画面上の「COLLECTION / 種類を選ぶ」は取り除き、読み上げ用のラベルとして保持する。旧`q` URLパラメーターは絞り込みに使用しない。検索バーのパーツカテゴリはそのまま残す。
+
 ## 確認
 
-npm run test:category-selectで26候補、件数、Escape取消、タブとの同期、390px幅の配置を確認する。tests/lazy-loading.browser.tsでは初期表示にドロップダウンカテゴリの実装が取得されず、遅延読み込み・競合・直リンク・失敗時復旧が保たれることを確認する。
+npm run test:category-selectで37候補、件数、Escape取消、タブとの同期、デスクトップの右端配置・390px幅の展開を確認する。tests/lazy-loading.browser.tsでは初期表示にドロップダウンカテゴリの実装が取得されず、遅延読み込み・競合・直リンク・失敗時復旧が保たれることを確認する。

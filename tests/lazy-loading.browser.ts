@@ -45,11 +45,11 @@ try {
    await category(p,'all'); assert.equal(await p.locator('[data-part]').count(),24);
    const toggle=p.locator('[data-part="chrome"] [role="switch"]');await toggle.click();const checked=await toggle.getAttribute('aria-checked');
    await p.locator('#load-more').click();await ready(p);assert.equal(await p.locator('[data-part]').count(),48);assert.equal(await toggle.getAttribute('aria-checked'),checked);
-   await p.locator('#search-parts').fill('CONTINUUM');await ready(p);assert.equal(await p.locator('[data-part]').count(),24);
-   assert.match(await p.locator('#load-more').innerText(),/24 \/ 58/);
-   await p.locator('#search-parts').fill('nonexistent-unmatched');await ready(p);assert.equal(await p.locator('[data-part]').count(),0);
-   await p.locator('#clear-empty').click();await ready(p);assert.equal(await p.locator('[data-part]').count(),24);
-   results.push(mode+': category cache, all pagination, retained controls, full-index search and empty state');
+   assert.equal(await p.locator('#search-parts,#search-clear').count(),0);
+   await category(p,'progress');assert.equal(await p.locator('[data-part]').count(),24);
+   await category(p,'datepickers');assert.equal(await p.locator('[data-part]').count(),20);
+   await category(p,'all');assert.equal(await p.locator('[data-part]').count(),24);
+   results.push(mode+': category cache, all pagination, retained controls and category selection');
    // Source download happens on detail open and round-trips exactly to the canonical generator.
    const target='chrome';
    const source=buildCatalog(ROOT,[target]).parts[0];

@@ -79,7 +79,7 @@ try{
  }
  await load();await galleryReady(page);await page.locator('[data-category="all"]').click();await galleryReady(page,true);
  await run(`Gallery: ${catalog.parts.length} parts, no runtime errors`,async()=>{assert.equal(await page.locator('[data-part]').count(),catalog.parts.length);assert.deepEqual(errors,[]);});
- await run('A/B and category filters intersect, counts remain correct, and search resets cleanly',async()=>{
+ await run('A/B and category filters intersect, counts remain correct, and the selector stays in sync',async()=>{
   for(const category of ['all','toggles','blocks','scrollbars','dropdowns','accordions','textboxes']){
    await page.locator(`[data-category="${category}"]`).click();await galleryReady(page,true);
    for(const kind of ['A','B','all']){
@@ -90,8 +90,9 @@ try{
     for(const part of expected)assert.equal(await page.locator(`[data-part="${part.id}"]`).getAttribute('data-design'),part.designType);
    }
   }
-  await page.locator('[data-category="all"]').click();await galleryReady(page,true);await page.locator('#search-parts').fill('zz-missing-part');await galleryReady(page,true);
-  assert.equal(await page.locator('[data-part]').count(),0);await page.locator('#clear-empty').click();await galleryReady(page,true);
+  await selectCategory(page,'numbers');assert.equal(await page.locator('[data-part]').count(),20);
+  assert.equal(await page.locator('[data-category="numbers"]').getAttribute('aria-selected'),'true');
+  await selectCategory(page,'all');await galleryReady(page,true);
   assert.equal(await page.locator('[data-part]').count(),catalog.parts.length);
  });
  await run('Liquid, Fold, Prism have intrinsic opposite state labels and distinct optical treatment',async()=>{
@@ -220,7 +221,7 @@ try{
   await page.setViewportSize({width:1200,height:900});await page.locator('[data-open="chrome"]').click();await galleryReady(page,true);await page.locator('#preview-disabled').check();assert.ok(await page.locator('.preview-stage button').isDisabled());await page.locator('#preview-disabled').uncheck();await page.emulateMedia({reducedMotion:'reduce'});await page.locator('[data-state="off"]').click();assert.equal(await page.locator('.preview-stage button').getAttribute('aria-checked'),'false');await page.locator('[data-state="on"]').click();assert.equal(await page.locator('.preview-stage button').evaluate(b=>b.style.getPropertyValue('--p')),'1.00000');await page.emulateMedia({reducedMotion:'no-preference'});await page.locator('.close-detail').click();
  });
  await run('All standalone HTML/CSS/JS previews run without gallery assets',async()=>{
-  for(const part of catalog.parts){await load(`/.test-output/exports/${part.id}/preview/index.html`);assert.equal(await page.locator('.demo-root > *').count(),1);
+  for(const part of catalog.parts){await load(`/.test-output/exports/${part.id}/preview/index.html`);const hasDemoAction=part.category==='toasts'||part.category==='skeletons';assert.equal(await page.locator('.demo-root > *').count(),hasDemoAction?2:1,part.id);if(hasDemoAction)assert.equal(await page.locator('.demo-root > :last-child').evaluate(el=>el.tagName),'BUTTON',part.id);
    if(part.category==='toggles'){const b=page.locator('[role="switch"]');const before=await b.getAttribute('aria-checked');await b.click();assert.notEqual(await b.getAttribute('aria-checked'),before);}
   }
  });

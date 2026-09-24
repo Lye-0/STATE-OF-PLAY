@@ -16,11 +16,10 @@ import { escapeHTML, icon, required, toast, wireTabs } from './utils';
 import type { PartPreview, PartSummary, PartController, MountPart } from '../catalog/types';
 window.SOP_CATALOG = parts;
 const state = new Map(parts.filter(p => p.category === 'toggles').map(p => [p.id, p.initial ?? false]));
-let activeCategory = 'toggles', activeDesign = 'all', query = '', demo = 0, demoIndex = 0, progressDemo = 0, progressDemoPhase = 0;
+let activeCategory = 'toggles', activeDesign = 'all', demo = 0, demoIndex = 0, progressDemo = 0, progressDemoPhase = 0;
 const progressDemoValues = [0,20,40,60,80,100,80,60,40,20] as const;
 const sound = new TactileAudio();
 const grid = required('#part-grid');
-const search = required<HTMLInputElement>('#search-parts');
 let categorySelector: SelectController | undefined;
 let rendered: {cleanup?:()=>void; part: PartPreview; card: HTMLElement; controller: PartController; surface?: PartController}[] = [];
 let details: ReturnType<typeof createDetails> | undefined;
@@ -75,8 +74,7 @@ function updateControls() {
     required('#visible-count').textContent = `${String(rendered.length).padStart(2, '0')} OBJECTS`;
 }
 function matchPart(part: PartSummary) {
-    const haystack = [part.name, part.category, part.description, part.material, part.designType === 'A' ? '表現重視 expressive type a' : '実用重視 essential simple type b', ...part.tags].join(' ').normalize('NFKC').toLowerCase();
-    return (activeCategory === 'all' || part.category === activeCategory) && (activeDesign === 'all' || part.designType === activeDesign) && query.normalize('NFKC').toLowerCase().split(/\s+/).every(token => haystack.includes(token));
+    return (activeCategory === 'all' || part.category === activeCategory) && (activeDesign === 'all' || part.designType === activeDesign);
 }
 let galleryRequest = 0;
 let visibleLimit = 24;
@@ -101,7 +99,6 @@ async function renderGallery(append = false) {
     const selected = activeCategory === 'all' ? matches.slice(0, visibleLimit) : matches;
     const pending = selected.filter(p => !rendered.some(r => r.part.id === p.id));
     grid.setAttribute('aria-busy', 'true'); more.hidden = true;
-    required('#search-clear').hidden = !query;
     updateControls();
     if (!append) clearCategoryLoading=showCategoryLoading(grid);
     let visible: PartPreview[];
@@ -119,7 +116,7 @@ async function renderGallery(append = false) {
         const message = document.createElement('div'); message.className = 'collection-message'; message.setAttribute('role', 'status');
         message.innerHTML = '<p>読み込めませんでした。通信を確認してページを再読み込みしてください。</p><button type="button" class="small-button">再読み込み</button>';
         message.querySelector('button')!.addEventListener('click', () => {
-            const url = new URL(location.href); url.searchParams.set('category', activeCategory); url.searchParams.set('design', activeDesign); url.searchParams.set('q', query);
+            const url = new URL(location.href); url.searchParams.set('category', activeCategory); url.searchParams.set('design', activeDesign); url.searchParams.delete('q');
             location.assign(url.href);
         });
         if (!append) grid.replaceChildren(message); else grid.append(message);
@@ -132,7 +129,7 @@ async function renderGallery(append = false) {
         const scroll = part.category === 'scrollbars';
         const dropdown = part.category === 'dropdowns', accordion = part.category === 'accordions', textbox = part.category === 'textboxes', action = part.category === 'buttons', link = part.category === 'links', tabs = part.category === 'tabs', segments = part.category === 'segments', checkbox = part.category === 'checkboxes', popup = part.category === 'popups';
         return `<article class="object-card ${workbench ? 'workbench-card workbench-'+part.category : signature ? 'signature-card signature-'+part.category : foundation ? 'foundation-card foundation-'+part.category : toggle ? 'sop-surface sop-original-surface toggle-card' : scroll ? 'scroll-card' : dropdown ? 'dropdown-card' : accordion ? 'accordion-card' : textbox ? 'textbox-card' : action ? 'action-card' : link ? 'link-card' : tabs ? 'tabs-card' : segments ? 'segments-card' : checkbox ? 'checkbox-card' : popup ? 'popup-card' : 'block-card'}" data-part="${escapeHTML(part.id)}" data-design="${part.designType}" style="--sop-accent:${part.accent};--accent:${part.accent}"><header class="card-top"><span class="object-no mono">${String(part.order).padStart(2, '0')} /</span><span class="design-badge design-${part.designType}" title="${part.designType === 'A' ? '表現重視' : '実用重視'}">${part.designType}</span><span class="object-type mono">${part.tags.includes('KINETIC') ? 'KINETIC / ' : ''}${escapeHTML(part.material)}</span><span class="state-readout mono" aria-hidden="true"><i></i><span class="state-word">${toggle ? (state.get(part.id) ? 'ON' : 'OFF') : scroll ? 'SCROLL' : dropdown ? 'SELECT' : accordion ? 'EXPAND' : textbox ? 'WRITE' : action ? 'READY' : link ? 'LINK' : tabs ? 'EXPLORE' : segments ? 'CHOOSE' : checkbox ? 'CHECK' : popup ? 'OPEN' : workbench ? 'TRY IT' : signature ? 'TRY IT' : foundation ? 'TRY IT' : 'SURFACE'}</span></span></header><div class="object-stage" data-stage="${escapeHTML(part.id)}"><div class="stage-glow"></div><div class="stage-mount"></div></div><footer class="card-bottom"><div><h2>${escapeHTML(part.name)}<span>${escapeHTML(part.tagline)}</span></h2><p>${escapeHTML(part.description)}</p></div><button type="button" class="open-part" data-open="${escapeHTML(part.id)}" aria-label="${escapeHTML(part.name)} のコードと詳細を開く">${icon('code')}<span>CODE</span>${icon('arrow')}</button></footer></article>`;
-    }).join('') : `<div class="empty-state"><span class="empty-symbol">∅</span><h2>まだ、そのパーツはありません。</h2><p>検索する言葉やカテゴリを変えてみてください。</p><button type="button" class="small-button" id="clear-empty">すべてのパーツを表示</button></div>`;
+    }).join('') : `<div class="empty-state"><span class="empty-symbol">∅</span><h2>まだ、そのパーツはありません。</h2><p>カテゴリやデザインの方向性を変えてみてください。</p><button type="button" class="small-button" id="clear-empty">すべてのパーツを表示</button></div>`;
     if (append) grid.insertAdjacentHTML('beforeend', cardsHTML); else grid.innerHTML = cardsHTML;
     for (const part of visible) {
         const card = required(`[data-part="${part.id}"]`, grid);
@@ -172,9 +169,8 @@ async function renderGallery(append = false) {
     more.hidden = selected.length >= matches.length;
     more.textContent = 'さらに表示（'+rendered.length+' / '+matches.length+'）';
     if (append) rendered.find(r => r.part.id === pending[0]?.id)?.card.querySelector<HTMLElement>('[data-open]')?.focus({preventScroll:true});
-    grid.querySelector('#clear-empty')?.addEventListener('click', () => { query = ''; activeDesign = 'all'; search.value = ''; syncDesignFilter(); setCategory('all'); });
+    grid.querySelector('#clear-empty')?.addEventListener('click', () => { activeDesign = 'all'; syncDesignFilter(); setCategory('all'); });
     updateControls();
-    required('#search-clear').hidden = !query;
     required('#result-announcement').textContent = `${matches.length}個中${rendered.length}個のパーツを表示しています。`;
 }
 function setCategory(id: string) {
@@ -190,21 +186,6 @@ const categoryList = required('#category-tabs');
 categoryList.innerHTML = categories.map(c => `<button type="button" role="tab" aria-controls="part-grid" data-category="${c.id}" id="category-option-${c.id}"><span>${c.label}</span><small>${String(c.id === 'all' ? parts.length : parts.filter(p => p.category === c.id).length).padStart(2, '0')}</small></button>`).join('');
 categoryList.querySelectorAll('button').forEach(b => b.addEventListener('click', () => setCategory(b.dataset.category ?? 'all')));
 wireTabs(categoryList, b => setCategory(b.dataset.category ?? 'all'));
-search.addEventListener('input', () => { query = search.value.trim(); renderGallery(); });
-required('#search-clear').addEventListener('click', () => { search.value = ''; query = ''; renderGallery(); search.focus(); });
-search.addEventListener('keydown', event => {
-    if (event.key === 'Escape') {
-        query = '';
-        search.value = '';
-        renderGallery();
-    }
-});
-document.addEventListener('keydown', event => {
-    if (event.key === '/' && !details?.isOpen() && !(event.target instanceof Element && event.target.closest('input,textarea,select,[contenteditable]'))) {
-        event.preventDefault();
-        search.focus();
-    }
-});
 for (const [id, on] of [['all-on', true], ['all-off', false]] as const) {
     required(`#${id}`).addEventListener('click', () => {
         stopDemo();
@@ -269,15 +250,13 @@ document.addEventListener('visibilitychange', () => {
 window.StateOfPlay = Object.freeze({ version: __APP_VERSION__, getStates: () => Object.fromEntries(state), getPartCount: () => parts.length });
 required('#library-total').textContent = String(parts.length);
 required('#library-collections').textContent = String(categories.filter(c=>c.id!=='all').length).padStart(2,'0');
-const categoryJump=document.createElement('div');categoryJump.className='category-jump';
+const categoryJump=required<HTMLElement>('.collection-toolbar .category-jump');
 const categoryOptions=categories.map(c=>{const count=c.id==='all'?parts.length:parts.filter(p=>p.category===c.id).length;return `<div class="sop-select-option" role="option" data-value="${escapeHTML(c.id)}" data-label="${escapeHTML(c.label)}" aria-selected="false"><span class="sop-select-option-copy"><b>${escapeHTML(c.label)}</b><small>${escapeHTML(c.english)} · ${count} PARTS</small></span><span class="sop-select-check" aria-hidden="true">✓</span></div>`;}).join('');
-categoryJump.innerHTML=`<div class="sop-select sop-select-sculpted sop-aurora-select" id="category-jump" data-value="toggles" data-placeholder="カテゴリを選んでください"><span class="sop-select-caption" id="category-jump-caption">COLLECTION / 種類を選ぶ<span aria-hidden="true">${String(categories.length).padStart(2,'0')} TYPES</span></span><button class="sop-select-trigger" type="button" role="combobox" aria-labelledby="category-jump-caption category-jump-current" aria-expanded="false" aria-haspopup="listbox"><span class="sop-select-value" id="category-jump-current"></span><span class="sop-select-chevron" aria-hidden="true"></span></button><input class="sop-select-input" type="hidden" name="category" value="toggles"><div class="sop-select-popup" role="listbox" aria-label="パーツのカテゴリ" hidden>${categoryOptions}</div></div>`;
-required('.collection-toolbar').before(categoryJump);
+categoryJump.innerHTML=`<div class="sop-select sop-select-sculpted sop-aurora-select" id="category-jump" data-value="toggles" data-placeholder="カテゴリを選んでください"><span class="sr-only" id="category-jump-caption">カテゴリを選ぶ</span><button class="sop-select-trigger" type="button" role="combobox" aria-labelledby="category-jump-caption category-jump-current" aria-expanded="false" aria-haspopup="listbox"><span class="sop-select-value" id="category-jump-current"></span><span class="sop-select-chevron" aria-hidden="true"></span></button><input class="sop-select-input" type="hidden" name="category" value="toggles"><div class="sop-select-popup" role="listbox" aria-label="パーツのカテゴリ" hidden>${categoryOptions}</div></div>`;
 categorySelector=createSelectController(required<HTMLElement>('#category-jump'),{value:activeCategory,onValueChange:id=>{void setCategory(id);}});
 window.addEventListener('pagehide',()=>categorySelector?.destroy(),{once:true});
 const restored = new URL(location.href).searchParams;
 activeDesign = ['A','B'].includes(restored.get('design') ?? '') ? restored.get('design')! : 'all';
-query = restored.get('q') ?? ''; search.value = query;
 syncDesignFilter();
 let initialCategory: string = parts.some(p => p.category === 'toggles') ? 'toggles' : parts[0].category;
 if (categories.some(c => c.id === restored.get('category'))) initialCategory = restored.get('category')!;
