@@ -17,7 +17,10 @@ test('ORNAMENTS retains 20 originals and adds 10 A designs without restoring ret
  assert.equal(ornaments.filter(part=>part.designType==='B').length,8);
  assert.equal(new Set(ornaments.map(part=>part.id)).size,30);
  assert.equal(new Set(ornaments.map(part=>part.order)).size,30);
- assert.equal(ornaments.filter(part=>part.version==='4.14.0').length,10);
+ assert.equal(ornaments.filter(part=>part.version==='4.14.0').length,9);
+ assert.equal(ornaments.filter(part=>part.version==='4.14.2').length,1);
+ assert.ok(ornaments.some(part=>part.id==='hero-asterisk'));
+ assert.ok(!ornaments.some(part=>part.id==='stitch-comet'));
  assert.ok(!catalogue.parts.some(part=>part.id==='paper-loader'));
 });
 
@@ -53,15 +56,23 @@ test('all Vanilla ornament controllers expose paused state and clean it on destr
  }
 });
 
-test('three revised ornaments distribute continuous hover motion and the new stitched shape',()=>{
- for(const id of ['signal-orbit','tide-knot','stitch-comet']){
+test('two orbiting ornaments distribute continuous hover motion',()=>{
+ for(const id of ['signal-orbit','tide-knot']){
   const part=ornaments.find(item=>item.id===id)!;
   assert.match(part.prompt,/ホバーの連続性（v4\.14\.1）/);
   assert.match(part.usage,/v4\.14\.1 \/ 動き/);
   assert.doesNotMatch(fs.readFileSync(path.join(ROOT,'src/parts/ornaments',id,'styles.css'),'utf8'),/:hover[^\n]*animation-duration/);
  }
- const stitch=ornaments.find(part=>part.id==='stitch-comet')!;
- assert.match(stitch.markup,/class="sc-drawing"/);
- assert.match(fs.readFileSync(path.join(ROOT,'src/parts/ornaments',stitch.id,'react/StitchComet.tsx'),'utf8'),/sc-drawing/);
- assert.match(fs.readFileSync(path.join(ROOT,'src/parts/ornaments',stitch.id,'vanilla/index.html'),'utf8'),/sc-drawing/);
+});
+
+test('Hero Asterisk distributes the same decorative mark and timing as the site hero',()=>{
+ const part=ornaments.find(item=>item.id==='hero-asterisk')!;
+ const site=fs.readFileSync(path.join(ROOT,'index.html'),'utf8');
+ const gallery=fs.readFileSync(path.join(ROOT,'src/app/gallery.css'),'utf8');
+ assert.match(site,/class="hero-asterisk" aria-hidden="true">✳</);
+ assert.match(gallery,/\.hero-title:hover \.hero-asterisk\{transform:rotate\(180deg\)\}/);
+ assert.match(part.markup,/class="hero-asterisk-mark">✳/);
+ assert.match(fs.readFileSync(path.join(ROOT,'src/parts/ornaments/hero-asterisk/styles.css'),'utf8'),/transition:transform 1\.4s cubic-bezier\(\.16,1,\.3,1\)/);
+ assert.match(fs.readFileSync(path.join(ROOT,'src/parts/ornaments/hero-asterisk/react/HeroAsterisk.tsx'),'utf8'),/hero-asterisk-mark/);
+ assert.match(part.prompt,/data-paused/);
 });

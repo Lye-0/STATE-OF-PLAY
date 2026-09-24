@@ -1,4 +1,4 @@
-# パーツ一覧 — v4.14.1
+# パーツ一覧 — v4.14.2
 
 817パーツ / 37カテゴリ。重複していたPaper Loaderを削除した状態を維持し、SIGNATUREの6カテゴリ・96パーツ、NAVIGATORの5カテゴリ・88パーツ、装飾30パーツを収録しています。装飾の詳細は [ORNAMENTS.md](ORNAMENTS.md) を参照してください。
 
@@ -802,5 +802,5 @@
 | `fan-spark` | Fan Spark | A | 羽根が光を散らす。 |
 | `echo-glyph` | Echo Glyph | A | 記号の残響だけが漂う。 |
 | `tide-knot` | Tide Knot | A | 波が結び目になって往復する。 |
-| `stitch-comet` | Stitch Comet | A | 薄い帯の縫い目を光が切れ目なく巡る。 |
+| `hero-asterisk` | Hero Asterisk | A | 見出しの星形がホバーで半回転する。 |
 | `hinge-star` | Hinge Star | A | 星の骨格が開閉する。 |

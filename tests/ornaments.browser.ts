@@ -58,11 +58,10 @@ try{
   }
   await page.emulateMedia({reducedMotion:'no-preference'});
  });
- await check('three animated ornaments keep their phase and duration when hover begins',async()=>{
+ await check('two orbiting ornaments keep their phase and duration when hover begins',async()=>{
   for(const [id,selectors]of [
    ['signal-orbit',['.s1','.s2','.s3']],
-   ['tide-knot',['.l1','.l2','.l3']],
-   ['stitch-comet',['.sc-comet']]
+   ['tide-knot',['.l1','.l2','.l3']]
   ] as const){
    const root=page.locator(`[data-part="${id}"] .sop-ornament`);
    await root.scrollIntoViewIfNeeded();await page.mouse.move(0,0);await page.waitForTimeout(60);
@@ -89,8 +88,29 @@ try{
    await root.evaluate(element=>element.setAttribute('data-paused','false'));
   }
  });
+ await check('Hero Asterisk matches the site mark and rotates only when motion is allowed',async()=>{
+  const root=page.locator('[data-part="hero-asterisk"] .sop-ornament'),mark=root.locator('.hero-asterisk-mark');
+  const site=page.locator('.hero-asterisk');
+  assert.equal(await mark.textContent(),'✳');
+  const siteStyle=await site.evaluate(element=>{const s=getComputedStyle(element);return {fontSize:s.fontSize,color:s.color,duration:s.transitionDuration}});
+  const partStyle=await mark.evaluate(element=>{const s=getComputedStyle(element);return {fontSize:s.fontSize,color:s.color,duration:s.transitionDuration}});
+  assert.deepEqual(partStyle,siteStyle);
+  await root.scrollIntoViewIfNeeded();await page.mouse.move(0,0);
+  await root.evaluate(element=>element.setAttribute('data-paused','true'));
+  await root.hover();
+  assert.equal(await mark.evaluate(element=>getComputedStyle(element).transform),'none');
+  assert.equal(await mark.evaluate(element=>getComputedStyle(element).transitionDuration),'0s');
+  await page.mouse.move(0,0);await root.evaluate(element=>element.setAttribute('data-paused','false'));
+  await root.hover();await page.waitForTimeout(1500);
+  const rotation=await mark.evaluate(element=>new DOMMatrixReadOnly(getComputedStyle(element).transform).a);
+  assert.ok(rotation<-.98,`Hero Asterisk should rotate 180°, got ${rotation}`);
+  await page.emulateMedia({reducedMotion:'reduce'});
+  assert.equal(await mark.evaluate(element=>getComputedStyle(element).transform),'none');
+  assert.equal(await mark.evaluate(element=>getComputedStyle(element).transitionDuration),'0s');
+  await page.emulateMedia({reducedMotion:'no-preference'});
+ });
  await check('detail inspector presents ornament category, source and AI prompt for A and B designs',async()=>{
-  for(const id of ['asterism-burst','magnetic-rift','quiet-divider']){
+  for(const id of ['asterism-burst','magnetic-rift','hero-asterisk','quiet-divider']){
    await page.locator(`[data-open="${id}"]`).click();await galleryReady(page,true);
    const details=page.locator('#part-details');
    assert.ok(await details.isVisible());

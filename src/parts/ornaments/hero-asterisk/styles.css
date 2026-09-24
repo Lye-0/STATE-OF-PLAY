@@ -1,0 +1,38 @@
+/* The standalone counterpart of the site's hero asterisk. */
+.sop-ornament.sop-hero-asterisk {
+  --ornament-accent:#d1e6b2;
+  position:relative;
+  box-sizing:border-box;
+  display:grid;
+  place-items:center;
+  width:min(100%,336px);
+  min-height:250px;
+  margin:0 auto;
+  color:var(--ornament-accent);
+}
+.sop-ornament.sop-hero-asterisk .or-stage {
+  display:grid;
+  place-items:center;
+  width:100%;
+  min-height:250px;
+  pointer-events:none;
+}
+.sop-ornament.sop-hero-asterisk .hero-asterisk-mark {
+  display:inline-block;
+  color:var(--ornament-accent);
+  font-family:Arial,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  font-size:63px;
+  font-weight:200;
+  line-height:1.04;
+  letter-spacing:-4.8px;
+  transform-origin:50% 50%;
+  transition:transform 1.4s cubic-bezier(.16,1,.3,1);
+}
+.sop-ornament.sop-hero-asterisk:hover .hero-asterisk-mark {transform:rotate(180deg)}
+.sop-ornament.sop-hero-asterisk[data-paused="true"] .hero-asterisk-mark {transform:none!important;transition:none!important}
+@media (prefers-reduced-motion:reduce) {
+  .sop-ornament.sop-hero-asterisk .hero-asterisk-mark {transform:none!important;transition:none!important}
+}
+@media (forced-colors:active) {
+  .sop-ornament.sop-hero-asterisk .hero-asterisk-mark {color:CanvasText}
+}

@@ -1,5 +1,5 @@
 {
-  "version": "4.14.1",
+  "version": "4.14.2",
   "files": [
     {
       "path": "src/app/action-preview.ts",
@@ -118,8 +118,8 @@
     },
     {
       "path": "src/catalog/registry.json",
-      "bytes": 31311,
-      "sha256": "031e8f58812aca9428db8d739172b21201877f5e9515d6c4643fa726e00e0721"
+      "bytes": 31312,
+      "sha256": "a61820c4cfa01d94ba68ee61d4507d7d86af260e38110937345c3c40306d13c3"
     },
     {
       "path": "src/catalog/scroll-sample.ts",
@@ -20497,6 +20497,56 @@
       "sha256": "12446ec9df7d61e9ae51f8b7023fbc3c89426b7b2a3883a0d27d597f6e3be86e"
     },
     {
+      "path": "src/parts/ornaments/hero-asterisk/markup.html",
+      "bytes": 171,
+      "sha256": "e0637bbdff71021c279d64932eaef586adac135a58d0bd39ae9b11f2e5d244bd"
+    },
+    {
+      "path": "src/parts/ornaments/hero-asterisk/meta.json",
+      "bytes": 827,
+      "sha256": "02f2eb0b312decf5865cb586d0c44334516d382d2290a22be56947d6a2c17231"
+    },
+    {
+      "path": "src/parts/ornaments/hero-asterisk/prompt.md",
+      "bytes": 1213,
+      "sha256": "3256aa9510caddb34d0db439ee9e992c97d0f069b52ac9d3372dfa6d84532481"
+    },
+    {
+      "path": "src/parts/ornaments/hero-asterisk/react/Example.tsx",
+      "bytes": 151,
+      "sha256": "4ad5ad641ce4dc19003615a18335f466106484aa7c96ae813a4280155d9e31d5"
+    },
+    {
+      "path": "src/parts/ornaments/hero-asterisk/react/HeroAsterisk.tsx",
+      "bytes": 666,
+      "sha256": "56056c78cc96bd93979179f7372459caee15af32802a51a20288ea6af2b70e8c"
+    },
+    {
+      "path": "src/parts/ornaments/hero-asterisk/styles.css",
+      "bytes": 1268,
+      "sha256": "cc4a455dd030647e2d9cc0759bc02fe36c398a593876f19cd6ad72c8f920e5d7"
+    },
+    {
+      "path": "src/parts/ornaments/hero-asterisk/usage.md",
+      "bytes": 955,
+      "sha256": "d37761d6b7685c369c69626bd9bd7d1a2a441afb6db493c92b07deebefff4b09"
+    },
+    {
+      "path": "src/parts/ornaments/hero-asterisk/vanilla/index.html",
+      "bytes": 538,
+      "sha256": "b2d2ccbf14a32a1a0d2cdb3d62b549d0d3163d8301dde507987949dec7f9f929"
+    },
+    {
+      "path": "src/parts/ornaments/hero-asterisk/vanilla/init.ts",
+      "bytes": 484,
+      "sha256": "212e86b6626ebaa9b74308a50103cd495dd84d382b4f192a143520ecfe2ade0e"
+    },
+    {
+      "path": "src/parts/ornaments/hero-asterisk/vanilla/main.ts",
+      "bytes": 315,
+      "sha256": "116b14ee5f297ea11c0cdc26844b4adef80720d6c49e8623b4c6df8e7a00a4ac"
+    },
+    {
       "path": "src/parts/ornaments/hinge-fan/markup.html",
       "bytes": 421,
       "sha256": "9fdb7884e4a70a3224d7aa8c3fc9b6fd1cdf21ae91bf3ae980a07e7157b5c82b"
@@ -21445,56 +21495,6 @@
       "path": "src/parts/ornaments/soft-spark/vanilla/main.ts",
       "bytes": 308,
       "sha256": "f4164fb4eee84533423a748e613411dee7451cc6f71137f2d7e96e530ee3afac"
-    },
-    {
-      "path": "src/parts/ornaments/stitch-comet/markup.html",
-      "bytes": 613,
-      "sha256": "dccf903a2d2669f1fae44c7d6f090e758ed5f61b427e05a401126fad17a795d6"
-    },
-    {
-      "path": "src/parts/ornaments/stitch-comet/meta.json",
-      "bytes": 913,
-      "sha256": "12f1049bdbd3a56f5a192c4bcda1568caf6d1f64c26e4433f25dd3da49092535"
-    },
-    {
-      "path": "src/parts/ornaments/stitch-comet/prompt.md",
-      "bytes": 2544,
-      "sha256": "bba09908165be309eda6051404398e3415eceacc5962da659703e6b90670bf48"
-    },
-    {
-      "path": "src/parts/ornaments/stitch-comet/react/Example.tsx",
-      "bytes": 147,
-      "sha256": "9eaaa6853417b5f25baaea47279fbcab18786e3404fea80d56f8403be0b9101b"
-    },
-    {
-      "path": "src/parts/ornaments/stitch-comet/react/StitchComet.tsx",
-      "bytes": 1119,
-      "sha256": "d1b33f71698e2c4098c9a876025802a9742b31c434b2f37a1d0499d243b573a6"
-    },
-    {
-      "path": "src/parts/ornaments/stitch-comet/styles.css",
-      "bytes": 6722,
-      "sha256": "82f410a0f8c81621494c6594de1b0cf41204463a9d41cbe7e4fd1b5f72f4ba8b"
-    },
-    {
-      "path": "src/parts/ornaments/stitch-comet/usage.md",
-      "bytes": 1432,
-      "sha256": "61eb6b7faa042e3738dcadab423f0a2bacb2736633edee1f6feabb7fd01536e2"
-    },
-    {
-      "path": "src/parts/ornaments/stitch-comet/vanilla/index.html",
-      "bytes": 960,
-      "sha256": "508911d4f03d65763df4e5e4c2d8ae77709f652af61841fa94c654bea1b496a9"
-    },
-    {
-      "path": "src/parts/ornaments/stitch-comet/vanilla/init.ts",
-      "bytes": 484,
-      "sha256": "212e86b6626ebaa9b74308a50103cd495dd84d382b4f192a143520ecfe2ade0e"
-    },
-    {
-      "path": "src/parts/ornaments/stitch-comet/vanilla/main.ts",
-      "bytes": 312,
-      "sha256": "92603918e4dabeed2a7288b6867dc21a14bb1d36867b3d9c9506df37004c8fa7"
     },
     {
       "path": "src/parts/ornaments/tide-knot/markup.html",
@@ -42018,13 +42018,13 @@
     },
     {
       "path": "tests/ornaments.browser.ts",
-      "bytes": 8397,
-      "sha256": "24aef265018647e6374e1ec6f4ce5f7b74aae1d4088ec1af13786f49cd6a54f7"
+      "bytes": 10045,
+      "sha256": "1ea9c4f7a42713640e301a40194f10b54d217875d52c00eb53cc9115006b633e"
     },
     {
       "path": "tests/ornaments.test.ts",
-      "bytes": 3612,
-      "sha256": "875e5adb7561456579aa50b997deb90755e79e51ce1bf883bdbfb82fbf21aab0"
+      "bytes": 4265,
+      "sha256": "701694f34feaca7895dbf9283c224715a6542348e0b8f4f6c47f019beb3c8049"
     },
     {
       "path": "tests/progress-demo.browser.ts",
@@ -42298,8 +42298,8 @@
     },
     {
       "path": "docs/COLLECTION.md",
-      "bytes": 89858,
-      "sha256": "f172507da3e26d4ceb20614d63d04ae29ecbf9d84e2cb8aab58ad923eeb8919f"
+      "bytes": 89857,
+      "sha256": "71932a09fd2a4eea3173754f894fef806df133a1f77da4950c34b7a0e93c7951"
     },
     {
       "path": "docs/COMBOBOX-SCROLL-FIX.md",
@@ -42418,8 +42418,8 @@
     },
     {
       "path": "docs/ORNAMENTS.md",
-      "bytes": 7289,
-      "sha256": "aa3043d83ed80859ef2493d85557cfe071705fd8827f8901eb2620887dfb5570"
+      "bytes": 7518,
+      "sha256": "395467f911a40eb16d8b1e7376046db506e2c477cb1a2294daf21c8a6df3c121"
     },
     {
       "path": "docs/PATCH-v4.10.0.md",
@@ -43369,17 +43369,17 @@
     {
       "path": "package.json",
       "bytes": 6368,
-      "sha256": "e4df37c1090975f536d8fccbb55e210c0c126950aa96965ec8a393b218e776fb"
+      "sha256": "52bcc71b7aba3ef0d022237329d1a44478564de28c3dac1b8c46f7ddcf238426"
     },
     {
       "path": "package-lock.json",
       "bytes": 30805,
-      "sha256": "a32ad71e103b1cee1e67d823b788be4644d2defc08139d6cefac7c4e1513f331"
+      "sha256": "1461b5d8b93cfbb73063760691c68754e872d5edd841a026c7523da8b7a4bdf7"
     },
     {
       "path": "README.md",
-      "bytes": 29811,
-      "sha256": "3beddaa0b0a52182635f7410442e32ed5e614bcd5f52ee6bfc1089d7588a9828"
+      "bytes": 30133,
+      "sha256": "ed767fe4f881c9223cf303a2c607c6ad28e7aff17699527e47a7b62e6f5e1a7f"
     },
     {
       "path": "THIRD-PARTY-NOTICES.md",

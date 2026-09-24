@@ -1,4 +1,4 @@
-# 装飾 / ORNAMENTS — v4.14.1
+# 装飾 / ORNAMENTS — v4.14.2
 
 用途や操作の意味を持たないアクセントとして、30種類（Aタイプ22、Bタイプ8）を収録しています。ヒーロー、区切り、余白などに配置し、重要な状態や通知をこの装飾だけで伝えないでください。v4.14.0の新作10種類はホバー時の変化を重視しています。
 
@@ -34,7 +34,7 @@
 | `fan-spark` | Fan Spark | A | 羽根が光を散らす。 |
 | `echo-glyph` | Echo Glyph | A | 記号の残響だけが漂う。 |
 | `tide-knot` | Tide Knot | A | 波が結び目になって往復する。 |
-| `stitch-comet` | Stitch Comet | A | 薄い帯の縫い目を光が切れ目なく巡る。 |
+| `hero-asterisk` | Hero Asterisk | A | 見出しの星形がホバーで半回転する。 |
 | `hinge-star` | Hinge Star | A | 星の骨格が開閉する。 |
 
 ## 組み込み
@@ -57,7 +57,7 @@ Reactは各 `react/<Component>.tsx` の `paused` を、Vanillaは `vanilla/init.
 
 ## v4.14.0の追加と統合
 
-v4.13.0を基点とする差分から、Magnetic Rift、Liquid Lens、Signal Orbit、Ribbon Fold、Prism Well、Fan Spark、Echo Glyph、Tide Knot、Stitch Comet、Hinge Starの10種類だけを追加しました。既存の装飾20種類とv4.13.4までのサイト修正は維持し、受領した登録一覧に含まれていた削除済みPaper Loaderは戻していません。全体は817パーツ、37カテゴリです。
+現在の追加分はMagnetic Rift、Liquid Lens Ornament、Signal Orbit、Ribbon Fold、Prism Well、Fan Spark、Echo Glyph、Tide Knot、Hero Asterisk、Hinge Starの10種類です。既存の装飾20種類とv4.13.4までのサイト修正は維持し、受領した登録一覧に含まれていた削除済みPaper Loaderは戻していません。全体は817パーツ、37カテゴリです。
 
 受領した新作10種類のVanilla初期化コードにはテンプレートの二重波括弧が残っていたため、実行可能なTypeScriptへ修正しました。各パーツのAI用プロンプトには同梱ファイル、`paused` / `data-paused`、動きを減らす設定、複数配置と幅320pxの確認条件を追記しました。ステージ自体のホバー遷移も、停止中と動きを減らす設定では止めます。
 
@@ -75,6 +75,10 @@ v4.13.0を基点とする差分から、Magnetic Rift、Liquid Lens、Signal Orb
 
 Signal OrbitとTide Knotはホバー時に`animation-duration`を変更していたため、周回中の光点や輪が別の位置へ飛ぶことがありました。周回アニメーションは同じ再生時間と位相を維持し、ホバー時は軌道の半径・縁の明るさなどを別の層で補間します。
 
-Stitch Cometは二本の直線と光点を、薄い帯と曲線の縫い目へ組み替えました。光点は帯と同じ閉曲線を一定速度で巡り、ホバーでは糸・尾・光だけが広がります。React、Vanilla、静止見本、CSS、使い方、AI用プロンプトは同じ構成です。`paused`と動きを減らす設定は維持しています。
+実Chromeの`npm run test:ornaments`では2種類のホバー開始前後で再生時間と位相が連続すること、停止中に位相が進まないことを確認しています。
 
-`npm run typecheck`、`npm run build`、全242件の`npm test`が成功しました。実Chromeの`npm run test:ornaments`では3種類のホバー開始前後で再生時間と位相が連続すること、停止中に位相が進まないこと、全30種類の表示・詳細・狭い画面を確認しています。`npm run test:lazy-loading`でも開発・本番の全37カテゴリ、配布コードと個別ZIPを確認しました。
+## v4.14.2のHero Asterisk
+
+サイト本体の`.hero-asterisk`と同じ文字「✳」、淡い黄緑、63pxの字形、1.4秒の半回転を、独立した装飾として配布します。図形は`aria-hidden`で、クリック操作や状態の意味を持ちません。Reactの`paused`、通常DOM版の`data-paused`、動きを減らす設定で回転を止められます。詳細画面のコード、使い方、AI用プロンプト、各形式のZIPに同じ構成を含みます。
+
+アプリ・React・ツールの型チェック、実Viteビルド、全243件の単体テストが成功しました。Chromeではサイト本体の印と新パーツの字形・色・回転時間を照合し、ホバー、停止、縮小モーション、幅320pxを確認しました。`test:lazy-loading`では開発・本番の両方で37カテゴリと配布ZIPを照合しています。

@@ -1,0 +1,22 @@
+{
+  "id": "hero-asterisk",
+  "name": "Hero Asterisk",
+  "category": "ornaments",
+  "order": 817,
+  "version": "4.14.2",
+  "tagline": "小さな印が、視線に応えて回る。",
+  "description": "サイトの見出しにある星形の印を独立させた装飾。ホバーで静かに半回転します。",
+  "material": "DECOR / SIGNATURE",
+  "motion": "HOVER / ROTATE",
+  "accent": "209,230,178",
+  "designType": "A",
+  "runtime": "CSS + hover state",
+  "componentName": "HeroAsterisk",
+  "tags": ["装飾", "ornament", "accent", "hover", "A", "Hero Asterisk"],
+  "related": [],
+  "props": [
+    ["paused", "boolean", "回転を停止する。"],
+    ["className", "string", "外側のclassを追加する。"],
+    ["style / CSS variables", "CSSProperties", "配置や --ornament-accent を上書きする。"]
+  ]
+}
