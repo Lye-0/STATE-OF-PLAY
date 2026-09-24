@@ -4,9 +4,13 @@ import type {Part,PartPreview,PartController} from '../catalog/types';
 export function mountWorkbenchSample(root:HTMLElement,part:PartPreview,api:PartController){
  // Context menus already show the chosen action in their own result output.
  if(part.category==='contextmenus')return ()=>{};
+ // Navigation already marks the active destination; keep demo clicks local without a second caption.
+ if(part.category==='navigation'){
+  api.updateWorkbench?.({onNavigate:()=>false});
+  return ()=>{};
+ }
  const events=new AbortController();
  const status=document.createElement('output');status.className='wb-demo-feedback';status.setAttribute('aria-live','polite');status.dataset.demoRoot='';root.after(status);
- if(part.category==='navigation')api.updateWorkbench?.({onNavigate:(item:{label:string})=>{status.textContent=`「${item.label}」へ移動する操作例です。`;return false;}});
  if(part.category==='commands')api.updateWorkbench?.({onExecute:(item:{label:string})=>{status.textContent=`「${item.label}」を実行しました（デモ）。`;}});
  if(part.category==='searchbars')api.updateWorkbench?.({onSubmit:(query:string,filter:string)=>{status.textContent=`検索: ${query||'すべて'} / ${filter}`;},onResult:(item:{label:string})=>{status.textContent=`「${item.label}」を選択しました。`;}});
  if(part.category==='tables')api.updateWorkbench?.({onRowAction:(action:{label:string},row:{name?:string})=>{status.textContent=`${row.name??'行'} / ${action.label}（デモ）`;}});
