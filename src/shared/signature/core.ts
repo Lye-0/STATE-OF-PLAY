@@ -24,7 +24,11 @@ export function safeURL(value: string | undefined, image = false): string {
   return /^[\w-]+(?:[./][\w.-]+)*$/.test(value) ? value : '';
 }
 let instance = 0;
-export function identity(prefix = 'sg') { return `${prefix}-${++instance}`; }
+// Portable exports each include their own copy of this module. Keep DOM IDs
+// distinct when different Signature components are mounted on one page.
+const identityNamespace = typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function'
+  ? crypto.randomUUID().slice(0, 8) : Math.random().toString(36).slice(2, 10);
+export function identity(prefix = 'sg') { return `${prefix}-${identityNamespace}-${++instance}`; }
 export function seed<O>(root: HTMLElement, options: O): O {
   let parsed: Partial<O> = {};
   try { const raw = JSON.parse(root.dataset.sgConfig ?? '{}'); if (raw && typeof raw === 'object' && !Array.isArray(raw)) parsed = raw; } catch { /* No demo configuration is required. */ }
