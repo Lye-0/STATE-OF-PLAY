@@ -68,6 +68,8 @@ jobs:
         run: npm run test:sculpture
       - name: Refined rail and select motion (dimensions, text, progress, cleanup)
         run: npm run test:refinement
+      - name: Spotlight list scroll containment
+        run: npm run test:spotlight-scroll
       - name: Kinetic additions (native scroll, motion, menus and cleanup)
         run: npm run test:kinetic
       - name: Dropdown close leaves no briefly reopened list

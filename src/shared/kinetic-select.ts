@@ -11,7 +11,7 @@ export function createKineticSelect(root:HTMLElement,kind:KineticMenu,options:Se
  const oldAria=panel.getAttribute('aria-hidden'),oldInert=panel.inert;
  function restoreClosing(){panel.inert=oldInert;if(oldAria===null)panel.removeAttribute('aria-hidden');else panel.setAttribute('aria-hidden',oldAria);}
  const animations=new Set<Animation>();
- const props=['--kx','--ky','--kw','--kh','--k-speed','--k-pointer-x','--k-pointer-y'];
+ const props=['--kx','--ky','--kw','--kh','--k-speed','--k-pointer-x','--k-pointer-y','--k-scroll-top'];
  const saved=new Map(props.map(p=>[p,panel.style.getPropertyValue(p)]));
  const styles=(k:string,v:string)=>{if(panel.style.getPropertyValue(k)!==v)panel.style.setProperty(k,v);};
  function stopAnimations(){animations.forEach(a=>a.cancel());animations.clear();}
@@ -21,6 +21,7 @@ export function createKineticSelect(root:HTMLElement,kind:KineticMenu,options:Se
  }
  function target(){
   if(dead||!opened)return;
+  if(kind==='spotlight')styles('--k-scroll-top',`${panel.scrollTop}px`);
   const row=panel.querySelector<HTMLElement>('[role="option"][data-active="true"]');
   if(!row)return;
   let y=0,x=0,e:HTMLElement|null=row;while(e&&e!==panel){y+=e.offsetTop;x+=e.offsetLeft;e=e.offsetParent as HTMLElement|null;}

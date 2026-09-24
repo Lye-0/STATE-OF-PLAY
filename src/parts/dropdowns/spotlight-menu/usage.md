@@ -7,6 +7,7 @@
 
 ## 内容と操作
 Reactはitemsのvalue/label/description/disabled/group、通常HTMLはrole=optionの要素を変更します。選択肢が何個でも行寸法を実測して動きます。value/defaultValue/onValueChange、無効状態、フォーム、上下キー・Home/End・Enter/Escapeを利用できます。アイコン、見出し、操作ヒントは必須ではありません。
+候補が一覧に収まる場合、光の装飾だけではスクロールバーを出しません。候補が増えて収まらない場合は一覧内をスクロールできます。
 
 ## 動作
 閉じた候補面は即座に見えなくなり、操作も読み上げもできません。閉じ演出のために一覧を再表示せず、トリガーだけが短く反応します。
