@@ -1,0 +1,53 @@
+{
+  "id": "paper-fan-rating",
+  "name": "Paper Fan",
+  "category": "ratings",
+  "tagline": "積み上がる、余韻。",
+  "description": "紙の小片が扇のように開き、評価の数を形にする。",
+  "designType": "A",
+  "motion": "FAN / OPEN",
+  "order": 1837,
+  "version": "1.0.0",
+  "material": "FAN / OPEN",
+  "accent": "182,210,210",
+  "componentName": "PaperFanRating",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "ratings"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Paper Fan",
+    "ratings",
+    "FAN / OPEN",
+    "評価 スター"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "number",
+      "0は未評価、1〜maxは評価値。valueは外部制御。"
+    ],
+    [
+      "max",
+      "number",
+      "整数2〜10。半点は扱わない。"
+    ],
+    [
+      "name / required",
+      "string / boolean",
+      "フォームに接続する。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "無効または表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(value: number) => void",
+      "確定した評価。ホバーは通知しない。"
+    ]
+  ]
+}

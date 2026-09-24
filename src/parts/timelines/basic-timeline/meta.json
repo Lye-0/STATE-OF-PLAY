@@ -1,0 +1,53 @@
+{
+  "id": "basic-timeline",
+  "name": "Basic Timeline",
+  "category": "timelines",
+  "tagline": "経緯を、たどる。",
+  "description": "現在と過去を、明快な一本の線へ。",
+  "designType": "B",
+  "motion": "READ / EXPAND",
+  "order": 1890,
+  "version": "1.0.0",
+  "material": "READ / EXPAND",
+  "accent": "185,205,194",
+  "componentName": "BasicTimeline",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "timelines"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Basic Timeline",
+    "timelines",
+    "READ / EXPAND",
+    "タイムライン 履歴"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "TimelineItem[]",
+      "id・title・description・date・dateTime・status・hrefなど。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "詳細を開くID。expandedで外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(ids: string[]) => void",
+      "開閉したIDを通知。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "詳細の開閉を無効にする。"
+    ],
+    [
+      "label",
+      "string",
+      "履歴全体の名前。"
+    ]
+  ]
+}

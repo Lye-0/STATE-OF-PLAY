@@ -1,0 +1,53 @@
+{
+  "id": "liquid-orbit-profile",
+  "name": "Liquid Orbit",
+  "category": "avatars",
+  "tagline": "境界が、ほどける。",
+  "description": "丸い肖像を包む透明な膜が、触れると少し流れ出す。",
+  "designType": "A",
+  "motion": "SURFACE TENSION",
+  "order": 1821,
+  "version": "1.0.0",
+  "material": "SURFACE TENSION",
+  "accent": "182,210,210",
+  "componentName": "LiquidOrbitProfile",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "avatars"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Liquid Orbit",
+    "avatars",
+    "SURFACE TENSION",
+    "アバター ユーザーチップ 肖像"
+  ],
+  "related": [],
+  "props": [
+    [
+      "users",
+      "AvatarUser[]",
+      "id・name・任意のsrc、initials、subtitle、status。名前と在席状態は外部の値。"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "選択するユーザーID。valueを渡すと外部制御。"
+    ],
+    [
+      "interactive",
+      "boolean",
+      "falseで表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(id: string) => void",
+      "クリック時の要求値。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ]
+  ]
+}

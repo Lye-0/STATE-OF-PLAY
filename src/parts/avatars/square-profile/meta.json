@@ -1,0 +1,53 @@
+{
+  "id": "square-profile",
+  "name": "Square Profile",
+  "category": "avatars",
+  "tagline": "人が、見える。",
+  "description": "角を柔らかくした正方形のプロフィール。",
+  "designType": "B",
+  "motion": "FOCUS / SELECT",
+  "order": 1827,
+  "version": "1.0.0",
+  "material": "FOCUS / SELECT",
+  "accent": "185,205,194",
+  "componentName": "SquareProfile",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "avatars"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Square Profile",
+    "avatars",
+    "FOCUS / SELECT",
+    "アバター ユーザーチップ 肖像"
+  ],
+  "related": [],
+  "props": [
+    [
+      "users",
+      "AvatarUser[]",
+      "id・name・任意のsrc、initials、subtitle、status。名前と在席状態は外部の値。"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "選択するユーザーID。valueを渡すと外部制御。"
+    ],
+    [
+      "interactive",
+      "boolean",
+      "falseで表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(id: string) => void",
+      "クリック時の要求値。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ]
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "id": "folded-swatch",
+  "name": "Folded Swatch",
+  "category": "colors",
+  "tagline": "一色の、立体。",
+  "description": "同じ色を受ける折り返し面と、影のある紙のサンプル。",
+  "designType": "A",
+  "motion": "FOLD / SHADE",
+  "order": 1856,
+  "version": "1.0.0",
+  "material": "FOLD / SHADE",
+  "accent": "182,210,210",
+  "componentName": "FoldedSwatch",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "colors"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Folded Swatch",
+    "colors",
+    "FOLD / SHADE",
+    "色 カラーピッカー"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "string",
+      "#RGBまたは#RRGGBB。外部へは#RRGGBBの大文字。"
+    ],
+    [
+      "palette",
+      "string[]",
+      "色見本。"
+    ],
+    [
+      "name",
+      "string",
+      "フォームで送信する値の名前。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "入力操作を停止。"
+    ],
+    [
+      "onValueChange",
+      "(hex: string) => void",
+      "有効な色のみ通知。透明度はこの版では扱わない。"
+    ]
+  ]
+}

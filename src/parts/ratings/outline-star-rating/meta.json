@@ -1,0 +1,53 @@
+{
+  "id": "outline-star-rating",
+  "name": "Outline Stars",
+  "category": "ratings",
+  "tagline": "気持ちを、値に。",
+  "description": "選んだ星の輪郭だけを強める。",
+  "designType": "B",
+  "motion": "SELECT",
+  "order": 1847,
+  "version": "1.0.0",
+  "material": "SELECT",
+  "accent": "185,205,194",
+  "componentName": "OutlineStarRating",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "ratings"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Outline Stars",
+    "ratings",
+    "SELECT",
+    "評価 スター"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "number",
+      "0は未評価、1〜maxは評価値。valueは外部制御。"
+    ],
+    [
+      "max",
+      "number",
+      "整数2〜10。半点は扱わない。"
+    ],
+    [
+      "name / required",
+      "string / boolean",
+      "フォームに接続する。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "無効または表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(value: number) => void",
+      "確定した評価。ホバーは通知しない。"
+    ]
+  ]
+}

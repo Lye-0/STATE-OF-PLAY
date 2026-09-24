@@ -1,0 +1,53 @@
+{
+  "id": "shimmer-skeleton",
+  "name": "Shimmer Skeleton",
+  "category": "skeletons",
+  "tagline": "待つ間も、整う。",
+  "description": "汎用的なカードの読み込み表示。",
+  "designType": "B",
+  "motion": "LOAD / PAUSE",
+  "order": 1874,
+  "version": "1.0.0",
+  "material": "LOAD / PAUSE",
+  "accent": "185,205,194",
+  "componentName": "ShimmerSkeleton",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "skeletons"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Shimmer Skeleton",
+    "skeletons",
+    "LOAD / PAUSE",
+    "スケルトン 待機"
+  ],
+  "related": [],
+  "props": [
+    [
+      "loading",
+      "boolean",
+      "実際の読み込み状態。自動で成功にはしない。"
+    ],
+    [
+      "rows",
+      "number",
+      "2〜8行のプレースホルダー。"
+    ],
+    [
+      "label",
+      "string",
+      "読み上げ用の待機ラベル。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "動きを一時停止。"
+    ],
+    [
+      "children",
+      "ReactNode",
+      "読み込み後に表示する実際の内容。"
+    ]
+  ]
+}

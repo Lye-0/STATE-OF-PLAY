@@ -1,0 +1,53 @@
+{
+  "id": "ember-vote",
+  "name": "Ember Vote",
+  "category": "ratings",
+  "tagline": "灯りを、ひとつずつ。",
+  "description": "選んだ段階まで、小さな炎が現れて温かな光を残す。",
+  "designType": "A",
+  "motion": "IGNITE",
+  "order": 1836,
+  "version": "1.0.0",
+  "material": "IGNITE",
+  "accent": "182,210,210",
+  "componentName": "EmberVote",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "ratings"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Ember Vote",
+    "ratings",
+    "IGNITE",
+    "評価 スター"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "number",
+      "0は未評価、1〜maxは評価値。valueは外部制御。"
+    ],
+    [
+      "max",
+      "number",
+      "整数2〜10。半点は扱わない。"
+    ],
+    [
+      "name / required",
+      "string / boolean",
+      "フォームに接続する。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "無効または表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(value: number) => void",
+      "確定した評価。ホバーは通知しない。"
+    ]
+  ]
+}

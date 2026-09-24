@@ -1,0 +1,53 @@
+{
+  "id": "orbital-rating",
+  "name": "Orbital Rating",
+  "category": "ratings",
+  "tagline": "評価を、軌道に。",
+  "description": "透明な球を巡る環が、選択すると平面から立体へ起き上がる。",
+  "designType": "A",
+  "motion": "GYROSCOPE",
+  "order": 1838,
+  "version": "1.0.0",
+  "material": "GYROSCOPE",
+  "accent": "182,210,210",
+  "componentName": "OrbitalRating",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "ratings"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Orbital Rating",
+    "ratings",
+    "GYROSCOPE",
+    "評価 スター"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "number",
+      "0は未評価、1〜maxは評価値。valueは外部制御。"
+    ],
+    [
+      "max",
+      "number",
+      "整数2〜10。半点は扱わない。"
+    ],
+    [
+      "name / required",
+      "string / boolean",
+      "フォームに接続する。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "無効または表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(value: number) => void",
+      "確定した評価。ホバーは通知しない。"
+    ]
+  ]
+}

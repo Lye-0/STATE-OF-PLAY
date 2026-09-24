@@ -434,3 +434,20 @@
 .sequence-demo-controls{display:grid;gap:10px;margin:12px 0 16px;font-size:11px;line-height:1.6}
 .sequence-demo-controls>label{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .sequence-demo-controls select{font:inherit;padding:7px 10px;border:1px solid #464d46;border-radius:5px;background:#171c1e;color:#d4ddcf;max-width:66%}
+
+/* SIGNATURE: six new categories keep their own silhouette rather than a shared demo card. */
+.signature-card .object-stage{height:auto;min-height:288px;padding:26px 30px;overflow:visible}
+.signature-card .stage-mount{display:flex;flex-direction:column;align-items:center;width:min(100%,375px);min-width:0;position:relative}
+.signature-card .sop-sig{width:100%;min-width:0}.signature-card .stage-glow{opacity:.15}
+.signature-card .card-bottom h2{font-size:24px}.signature-card .card-bottom h2>span{font-size:9px}
+.signature-preview .preview-stage{padding:25px 12px;height:auto;min-height:240px;display:block;overflow:visible}
+.signature-preview{overflow:visible}.signature-preview .sop-sig{width:100%;min-width:0}
+.signature-controls{border:1px solid #343e43;border-radius:9px;padding:15px;margin:16px 0;color:#bac7cc;font-size:11px}
+.signature-control-grid{display:grid;gap:12px;padding-top:14px}.signature-controls label{display:flex;align-items:center;gap:8px;font-size:10px}
+.signature-controls select,.signature-controls button,.sg-demo-row button{font:10px Arial;background:#212a2f;border:1px solid #47565d;color:#c8d4d5;border-radius:6px;padding:7px 10px;cursor:pointer;min-height:30px}
+.signature-controls select{margin-left:auto;max-width:120px}.signature-controls p{font-size:10px;color:#9baeb1;line-height:1.8;margin:0}
+.signature-control-foot{display:flex;justify-content:space-between;align-items:center;margin-top:15px;padding-top:12px;border-top:1px solid #344247;gap:10px}
+.signature-output{font:10px Consolas;color:#b6d2c4;display:block;overflow-wrap:anywhere;margin-top:14px}
+.signature-presets{display:flex;gap:7px}.sg-demo-row{display:flex;align-items:center;justify-content:center;gap:10px;padding-top:19px;font:9px Consolas;color:#99a8a7}
+@media(max-width:760px){.signature-card .object-stage{padding:24px 20px}.signature-card .card-bottom h2{display:block}.signature-card .card-bottom h2>span{display:none}}
+@media(max-width:380px){.signature-card .object-stage{padding:22px 15px}.signature-preview .preview-stage{padding:24px 3px}.signature-controls{padding:12px}.signature-card .card-bottom h2{font-size:23px}}

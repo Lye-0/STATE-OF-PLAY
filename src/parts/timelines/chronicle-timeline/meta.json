@@ -1,0 +1,53 @@
+{
+  "id": "chronicle-timeline",
+  "name": "Chronicle",
+  "category": "timelines",
+  "tagline": "余白で、時間を読む。",
+  "description": "大きな日付と細い境界線で、出来事の重さを作り分ける。",
+  "designType": "A",
+  "motion": "CHAPTER / REVEAL",
+  "order": 1880,
+  "version": "1.0.0",
+  "material": "CHAPTER / REVEAL",
+  "accent": "182,210,210",
+  "componentName": "ChronicleTimeline",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "timelines"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Chronicle",
+    "timelines",
+    "CHAPTER / REVEAL",
+    "タイムライン 履歴"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "TimelineItem[]",
+      "id・title・description・date・dateTime・status・hrefなど。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "詳細を開くID。expandedで外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(ids: string[]) => void",
+      "開閉したIDを通知。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "詳細の開閉を無効にする。"
+    ],
+    [
+      "label",
+      "string",
+      "履歴全体の名前。"
+    ]
+  ]
+}

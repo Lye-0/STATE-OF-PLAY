@@ -1,0 +1,108 @@
+TAP version 13
+# (node:3462) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: six categories have sixteen distinct parts, ten expressive and six restrained each
+ok 1 - six categories have sixteen distinct parts, ten expressive and six restrained each
+  ---
+  duration_ms: 6.535581
+  type: 'test'
+  ...
+# Subtest: hex values are normalized, invalid and alpha inputs are explicitly rejected
+ok 2 - hex values are normalized, invalid and alpha inputs are explicitly rejected
+  ---
+  duration_ms: 0.744338
+  type: 'test'
+  ...
+# Subtest: RGB/HSV round trips cover achromatic colors and 216 RGB samples
+ok 3 - RGB/HSV round trips cover achromatic colors and 216 RGB samples
+  ---
+  duration_ms: 5.521017
+  type: 'test'
+  ...
+# Subtest: readable swatch ink responds to dark and light samples
+ok 4 - readable swatch ink responds to dark and light samples
+  ---
+  duration_ms: 0.83584
+  type: 'test'
+  ...
+# Subtest: labels and data are escaped, dangerous URLs are omitted
+ok 5 - labels and data are escaped, dangerous URLs are omitted
+  ---
+  duration_ms: 2.364164
+  type: 'test'
+  ...
+# Subtest: stable nonempty item identifiers reject duplicate or empty values
+ok 6 - stable nonempty item identifiers reject duplicate or empty values
+  ---
+  duration_ms: 0.385865
+  type: 'test'
+  ...
+# Subtest: ratings expose native radios, a proper legend, bounds and integer state
+ok 7 - ratings expose native radios, a proper legend, bounds and integer state
+  ---
+  duration_ms: 0.868759
+  type: 'test'
+  ...
+# Subtest: color markup retains native keyboard sliders and form value
+ok 8 - color markup retains native keyboard sliders and form value
+  ---
+  duration_ms: 0.700781
+  type: 'test'
+  ...
+# Subtest: skeleton content is not duplicated into decorative markup
+ok 9 - skeleton content is not duplicated into decorative markup
+  ---
+  duration_ms: 0.898361
+  type: 'test'
+  ...
+# Subtest: timelines keep real ordered history, supplied timestamps and expandable detail
+ok 10 - timelines keep real ordered history, supplied timestamps and expandable detail
+  ---
+  duration_ms: 1.186033
+  type: 'test'
+  ...
+# Subtest: wizard field attributes are escaped and allowlisted
+ok 11 - wizard field attributes are escaped and allowlisted
+  ---
+  duration_ms: 0.844236
+  type: 'test'
+  ...
+# Subtest: all new source closures contain the category controller without unrelated engines
+ok 12 - all new source closures contain the category controller without unrelated engines
+  ---
+  duration_ms: 303.434245
+  type: 'test'
+  ...
+# Subtest: all React sources parse through the real TypeScript transform
+ok 13 - all React sources parse through the real TypeScript transform
+  ---
+  duration_ms: 1124.949922
+  type: 'test'
+  ...
+# Subtest: lifecycle implements motion preferences, suspension and teardown without polling
+ok 14 - lifecycle implements motion preferences, suspension and teardown without polling
+  ---
+  duration_ms: 0.465482
+  type: 'test'
+  ...
+# Subtest: wizard async checks are guarded against unmount and obsolete completions
+ok 15 - wizard async checks are guarded against unmount and obsolete completions
+  ---
+  duration_ms: 0.483835
+  type: 'test'
+  ...
+# Subtest: prompts and usage specify project adaptation, dependencies and real data
+ok 16 - prompts and usage specify project adaptation, dependencies and real data
+  ---
+  duration_ms: 5.01816
+  type: 'test'
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3161.756638

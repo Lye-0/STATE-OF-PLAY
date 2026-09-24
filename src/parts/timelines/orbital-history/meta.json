@@ -1,0 +1,53 @@
+{
+  "id": "orbital-history",
+  "name": "Orbital History",
+  "category": "timelines",
+  "tagline": "巡る、出来事。",
+  "description": "軌道の縁に沿って並ぶ日付と、開くと広がる観測リング。",
+  "designType": "A",
+  "motion": "OBSERVE",
+  "order": 1883,
+  "version": "1.0.0",
+  "material": "OBSERVE",
+  "accent": "182,210,210",
+  "componentName": "OrbitalHistory",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "timelines"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Orbital History",
+    "timelines",
+    "OBSERVE",
+    "タイムライン 履歴"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "TimelineItem[]",
+      "id・title・description・date・dateTime・status・hrefなど。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "詳細を開くID。expandedで外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(ids: string[]) => void",
+      "開閉したIDを通知。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "詳細の開閉を無効にする。"
+    ],
+    [
+      "label",
+      "string",
+      "履歴全体の名前。"
+    ]
+  ]
+}

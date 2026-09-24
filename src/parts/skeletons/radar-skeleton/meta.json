@@ -1,0 +1,53 @@
+{
+  "id": "radar-skeleton",
+  "name": "Radar Sketch",
+  "category": "skeletons",
+  "tagline": "情報を、待ち受ける。",
+  "description": "円形の走査面と、到着を待つ小さな情報線。",
+  "designType": "A",
+  "motion": "RADAR",
+  "order": 1871,
+  "version": "1.0.0",
+  "material": "RADAR",
+  "accent": "182,210,210",
+  "componentName": "RadarSkeleton",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "skeletons"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Radar Sketch",
+    "skeletons",
+    "RADAR",
+    "スケルトン 待機"
+  ],
+  "related": [],
+  "props": [
+    [
+      "loading",
+      "boolean",
+      "実際の読み込み状態。自動で成功にはしない。"
+    ],
+    [
+      "rows",
+      "number",
+      "2〜8行のプレースホルダー。"
+    ],
+    [
+      "label",
+      "string",
+      "読み上げ用の待機ラベル。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "動きを一時停止。"
+    ],
+    [
+      "children",
+      "ReactNode",
+      "読み込み後に表示する実際の内容。"
+    ]
+  ]
+}

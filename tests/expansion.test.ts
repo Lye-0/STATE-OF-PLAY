@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { buildCatalog, ROOT, FORMATS } from '../scripts/catalog.ts';
+import { dependencies } from '../scripts/source-tools.ts';
 import { getDelivery, buildPrompt, buildManifest } from '../src/catalog/delivery.ts';
 const {parts, bases}=buildCatalog();
 const basicToggles=['quiet','porcelain','rail','segment','outline','rocker'];
@@ -24,7 +25,14 @@ test('each category includes at least 20 distinct parts, both intentions, with A
 test('each part has independent nonidentical CSS and nonempty reproduction and usage guides',()=>{
  const styles=parts.map(p=>source(p.id,'styles.css'));
  assert.equal(new Set(styles).size,parts.length);
- for(const p of parts){assert.ok(source(p.id,'prompt.md').length>250,p.id);assert.ok(source(p.id,'usage.md').length>150,p.id);assert.ok(styles[parts.indexOf(p)].includes('.sop-'+p.id));}
+ for(const p of parts){
+  assert.ok(source(p.id,'prompt.md').length>250,p.id);
+  assert.ok(source(p.id,'usage.md').length>150,p.id);
+  const base=bases.find(b=>b.endsWith('/'+p.id))!;
+  const scope=dependencies(base+'/styles.css',name=>fs.readFileSync(path.join(ROOT,name),'utf8'),name=>fs.existsSync(path.join(ROOT,name)))
+    .some(name=>fs.readFileSync(path.join(ROOT,name),'utf8').includes('.sop-'+p.id));
+  assert.ok(scope,p.id);
+ }
 });
 
 test('new B toggles export only their light event controller, without the animated engine',()=>{

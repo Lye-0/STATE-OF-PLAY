@@ -1,0 +1,53 @@
+{
+  "id": "passport-chip",
+  "name": "Passport Chip",
+  "category": "avatars",
+  "tagline": "一人分の、切符。",
+  "description": "切り欠きのあるパスが開き、肖像と名前が一枚につながる。",
+  "designType": "A",
+  "motion": "ISSUE / SLIDE",
+  "order": 1822,
+  "version": "1.0.0",
+  "material": "ISSUE / SLIDE",
+  "accent": "182,210,210",
+  "componentName": "PassportChip",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "avatars"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Passport Chip",
+    "avatars",
+    "ISSUE / SLIDE",
+    "アバター ユーザーチップ 肖像"
+  ],
+  "related": [],
+  "props": [
+    [
+      "users",
+      "AvatarUser[]",
+      "id・name・任意のsrc、initials、subtitle、status。名前と在席状態は外部の値。"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "選択するユーザーID。valueを渡すと外部制御。"
+    ],
+    [
+      "interactive",
+      "boolean",
+      "falseで表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(id: string) => void",
+      "クリック時の要求値。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ]
+  ]
+}

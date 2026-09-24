@@ -11,8 +11,8 @@ import {pageItems} from '../src/shared/foundation/navigation.ts';
 import {accepted} from '../src/shared/foundation/upload.ts';
 const catalogue=buildCatalog(),parts=catalogue.parts.filter(p=>!!p.foundation);
 const expected={sliders:24,radios:24,comboboxes:24,toasts:24,hints:24,progress:24,loaders:39,uploads:20,datepickers:20,pagination:16,breadcrumbs:16,badges:24,numbers:20};
-test('reconstructed collection: 603 authored parts, 25 categories, 299 foundations',()=>{
- assert.equal(catalogue.parts.length,603);assert.equal(new Set(catalogue.parts.map(p=>p.category)).size,25);assert.equal(parts.length,299);
+test('reconstructed collection: 699 authored parts, 31 categories, 299 foundations',()=>{
+ assert.equal(catalogue.parts.length,699);assert.equal(new Set(catalogue.parts.map(p=>p.category)).size,31);assert.equal(parts.length,299);
  for(const [category,count] of Object.entries(expected)){const group=parts.filter(p=>p.category===category);assert.equal(group.length,count);assert.equal(group.filter(p=>p.designType==='A').length,category==='loaders'?24:count===24?16:count===20?13:10);}
  assert.equal(parts.filter(p=>p.designType==='A').length,195);assert.equal(parts.filter(p=>p.designType==='B').length,104);
 });

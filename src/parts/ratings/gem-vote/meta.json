@@ -1,0 +1,53 @@
+{
+  "id": "gem-vote",
+  "name": "Gem Vote",
+  "category": "ratings",
+  "tagline": "評価を、結晶に。",
+  "description": "傾いた多面体が起き上がり、選択した面だけに色が宿る。",
+  "designType": "A",
+  "motion": "FACETS",
+  "order": 1835,
+  "version": "1.0.0",
+  "material": "FACETS",
+  "accent": "182,210,210",
+  "componentName": "GemVote",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "ratings"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Gem Vote",
+    "ratings",
+    "FACETS",
+    "評価 スター"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "number",
+      "0は未評価、1〜maxは評価値。valueは外部制御。"
+    ],
+    [
+      "max",
+      "number",
+      "整数2〜10。半点は扱わない。"
+    ],
+    [
+      "name / required",
+      "string / boolean",
+      "フォームに接続する。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "無効または表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(value: number) => void",
+      "確定した評価。ホバーは通知しない。"
+    ]
+  ]
+}

@@ -24,5 +24,11 @@ export const categories = [
     { id: 'pagination', label: 'ページ送り', english: 'PAGINATION' },
     { id: 'breadcrumbs', label: 'パンくず', english: 'BREADCRUMBS' },
     { id: 'badges', label: 'タグ／チップ', english: 'BADGE / CHIP' },
-    { id: 'numbers', label: '数値入力', english: 'NUMBER INPUT' }
+    { id: 'numbers', label: '数値入力', english: 'NUMBER INPUT' },
+    { id: 'avatars', label: 'アバター／ユーザーチップ', english: 'AVATARS / IDENTITY' },
+    { id: 'ratings', label: '評価', english: 'RATINGS' },
+    { id: 'colors', label: 'カラーピッカー', english: 'COLOR PICKERS' },
+    { id: 'skeletons', label: 'スケルトン', english: 'SKELETONS' },
+    { id: 'timelines', label: 'タイムライン', english: 'TIMELINES' },
+    { id: 'wizards', label: 'ステップ／ウィザード', english: 'STEPS / WIZARDS' }
 ];

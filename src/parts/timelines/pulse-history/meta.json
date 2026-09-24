@@ -1,0 +1,53 @@
+{
+  "id": "pulse-history",
+  "name": "Pulse History",
+  "category": "timelines",
+  "tagline": "変化を、刻む。",
+  "description": "進行中の出来事にだけ、波形の輪郭が浮かび上がる。",
+  "designType": "A",
+  "motion": "SIGNAL",
+  "order": 1888,
+  "version": "1.0.0",
+  "material": "SIGNAL",
+  "accent": "182,210,210",
+  "componentName": "PulseHistory",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "timelines"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Pulse History",
+    "timelines",
+    "SIGNAL",
+    "タイムライン 履歴"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "TimelineItem[]",
+      "id・title・description・date・dateTime・status・hrefなど。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "詳細を開くID。expandedで外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(ids: string[]) => void",
+      "開閉したIDを通知。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "詳細の開閉を無効にする。"
+    ],
+    [
+      "label",
+      "string",
+      "履歴全体の名前。"
+    ]
+  ]
+}

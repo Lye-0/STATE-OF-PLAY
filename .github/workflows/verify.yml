@@ -13,7 +13,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
-    # The complete 603-part / 8-export matrix runs on both hosted OS variants.
+    # The complete 699-part / 8-export matrix runs on both hosted OS variants.
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
@@ -90,6 +90,10 @@ jobs:
         run: npm run test:site-boot
       - name: Category tab scroll stability
         run: npm run test:gallery-navigation
+      - name: Aurora category selector integration
+        run: npm run test:category-select
+      - name: Progress demo playback
+        run: npm run test:progress-demo
       - name: Tabs, prompts and exported source scrolling
         run: npm run test:tab-strip
       - name: Loader orbit continuity and source packages
@@ -102,6 +106,10 @@ jobs:
         run: npm run test:wayfinder
       - name: Wayfinder gallery, sources and prompts
         run: npm run test:wayfinder:gallery
+      - name: Signature components and interaction states
+        run: npm run test:signature
+      - name: Signature lazy gallery, inspector and delivery
+        run: npm run test:signature:gallery
       - name: Build full source archive
         run: npm run package
       - name: Save reports on failure

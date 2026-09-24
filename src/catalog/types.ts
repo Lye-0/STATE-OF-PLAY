@@ -14,7 +14,7 @@ import type { SurfaceOptions } from '../shared/surface-controller';
 export type Format = 'tsx' | 'jsx' | 'ts' | 'js';
 export type DesignType = 'A' | 'B';
 export const DESIGN_TYPES = { A: {label:'A · 表現重視', note:'素材感と動きを楽しむ、主役になるデザイン。'}, B: {label:'B · 実用重視', note:'落ち着きと読みやすさを重視。設定や日常の画面へ。'} } as const;
-export type Category = 'toggles' | 'blocks' | 'scrollbars' | 'dropdowns' | 'accordions' | 'textboxes' | 'buttons' | 'links' | 'tabs' | 'segments' | 'checkboxes' | 'popups' | 'sliders' | 'radios' | 'comboboxes' | 'toasts' | 'hints' | 'progress' | 'loaders' | 'uploads' | 'datepickers' | 'pagination' | 'breadcrumbs' | 'badges' | 'numbers';
+export type Category = 'toggles' | 'blocks' | 'scrollbars' | 'dropdowns' | 'accordions' | 'textboxes' | 'buttons' | 'links' | 'tabs' | 'segments' | 'checkboxes' | 'popups' | 'sliders' | 'radios' | 'comboboxes' | 'toasts' | 'hints' | 'progress' | 'loaders' | 'uploads' | 'datepickers' | 'pagination' | 'breadcrumbs' | 'badges' | 'numbers' | 'avatars' | 'ratings' | 'colors' | 'skeletons' | 'timelines' | 'wizards';
 export type Layout = 'portable' | 'original';
 export const LAYOUTS = {
   portable: {label: '導入向け', note: '本体フォルダーの中で依存を完結。好きな配置先へ移せます。'},
@@ -24,6 +24,7 @@ export const isLayout = (value: unknown): value is Layout => value === 'portable
 export type DetailTab = 'code' | 'guide' | 'prompt';
 export interface SourceFile { name: string; sourceName: string; code: string; language: string; group: 'component' | 'shared' | 'example'; }
 export interface Part {
+  signature?: {kind: string};
   foundation?: FoundationConfig;
   id: string; name: string; category: Category; order: number; version: string;
   tagline: string; description: string; material: string; motion: string; accent: string;
@@ -37,6 +38,9 @@ export type PartPreview = Omit<Part, 'files' | 'portableFiles' | 'preview' | 'us
 export type PartSummary = Pick<Part, 'id' | 'name' | 'category' | 'order' | 'description' | 'material' | 'designType' | 'tags' | 'initial' | 'config' | 'tagline'>;
 export interface CategoryModule { parts: PartPreview[]; mounts: Record<string, MountPart>; }
 export interface PartController {
+  updateSignature?: (options: Record<string, unknown>) => void;
+  getSignature?: () => Record<string, unknown>;
+  resetSignature?: () => void;
   getData?: FoundationController['getData'];
   setData?: FoundationController['setData'];
   updateFoundation?: FoundationController['updateFoundation'];

@@ -1,0 +1,53 @@
+{
+  "id": "mosaic-skeleton",
+  "name": "Mosaic Placeholders",
+  "category": "skeletons",
+  "tagline": "断片から、全体へ。",
+  "description": "違う比率の四角い面が、順に明るさを変える。",
+  "designType": "A",
+  "motion": "TILES / PULSE",
+  "order": 1872,
+  "version": "1.0.0",
+  "material": "TILES / PULSE",
+  "accent": "182,210,210",
+  "componentName": "MosaicSkeleton",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "skeletons"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Mosaic Placeholders",
+    "skeletons",
+    "TILES / PULSE",
+    "スケルトン 待機"
+  ],
+  "related": [],
+  "props": [
+    [
+      "loading",
+      "boolean",
+      "実際の読み込み状態。自動で成功にはしない。"
+    ],
+    [
+      "rows",
+      "number",
+      "2〜8行のプレースホルダー。"
+    ],
+    [
+      "label",
+      "string",
+      "読み上げ用の待機ラベル。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "動きを一時停止。"
+    ],
+    [
+      "children",
+      "ReactNode",
+      "読み込み後に表示する実際の内容。"
+    ]
+  ]
+}

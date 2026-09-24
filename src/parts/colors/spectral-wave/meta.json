@@ -1,0 +1,53 @@
+{
+  "id": "spectral-wave",
+  "name": "Spectral Wave",
+  "category": "colors",
+  "tagline": "光の、周波数。",
+  "description": "色相に合わせて分光面が広がる、波形のような色の窓。",
+  "designType": "A",
+  "motion": "SPECTRUM / WAVE",
+  "order": 1857,
+  "version": "1.0.0",
+  "material": "SPECTRUM / WAVE",
+  "accent": "182,210,210",
+  "componentName": "SpectralWave",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "colors"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Spectral Wave",
+    "colors",
+    "SPECTRUM / WAVE",
+    "色 カラーピッカー"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "string",
+      "#RGBまたは#RRGGBB。外部へは#RRGGBBの大文字。"
+    ],
+    [
+      "palette",
+      "string[]",
+      "色見本。"
+    ],
+    [
+      "name",
+      "string",
+      "フォームで送信する値の名前。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "入力操作を停止。"
+    ],
+    [
+      "onValueChange",
+      "(hex: string) => void",
+      "有効な色のみ通知。透明度はこの版では扱わない。"
+    ]
+  ]
+}

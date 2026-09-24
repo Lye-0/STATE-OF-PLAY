@@ -1,0 +1,53 @@
+{
+  "id": "thread-skeleton",
+  "name": "Thread Skeleton",
+  "category": "skeletons",
+  "tagline": "糸を、渡す。",
+  "description": "線の束が交差し、コンテンツの幅を織り上げていく。",
+  "designType": "A",
+  "motion": "WEAVE",
+  "order": 1869,
+  "version": "1.0.0",
+  "material": "WEAVE",
+  "accent": "182,210,210",
+  "componentName": "ThreadSkeleton",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "skeletons"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Thread Skeleton",
+    "skeletons",
+    "WEAVE",
+    "スケルトン 待機"
+  ],
+  "related": [],
+  "props": [
+    [
+      "loading",
+      "boolean",
+      "実際の読み込み状態。自動で成功にはしない。"
+    ],
+    [
+      "rows",
+      "number",
+      "2〜8行のプレースホルダー。"
+    ],
+    [
+      "label",
+      "string",
+      "読み上げ用の待機ラベル。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "動きを一時停止。"
+    ],
+    [
+      "children",
+      "ReactNode",
+      "読み込み後に表示する実際の内容。"
+    ]
+  ]
+}

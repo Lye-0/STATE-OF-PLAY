@@ -1,0 +1,53 @@
+{
+  "id": "folding-skeleton",
+  "name": "Folding Placeholder",
+  "category": "skeletons",
+  "tagline": "情報の、折り目。",
+  "description": "折られた紙面がゆっくり傾き、読み込みの時間を形にする。",
+  "designType": "A",
+  "motion": "FOLD / WAIT",
+  "order": 1865,
+  "version": "1.0.0",
+  "material": "FOLD / WAIT",
+  "accent": "182,210,210",
+  "componentName": "FoldingSkeleton",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "skeletons"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Folding Placeholder",
+    "skeletons",
+    "FOLD / WAIT",
+    "スケルトン 待機"
+  ],
+  "related": [],
+  "props": [
+    [
+      "loading",
+      "boolean",
+      "実際の読み込み状態。自動で成功にはしない。"
+    ],
+    [
+      "rows",
+      "number",
+      "2〜8行のプレースホルダー。"
+    ],
+    [
+      "label",
+      "string",
+      "読み上げ用の待機ラベル。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "動きを一時停止。"
+    ],
+    [
+      "children",
+      "ReactNode",
+      "読み込み後に表示する実際の内容。"
+    ]
+  ]
+}

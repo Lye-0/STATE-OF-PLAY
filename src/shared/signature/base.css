@@ -1,0 +1,24 @@
+/* Intentionally scoped: nothing here styles host-page elements outside this component. */
+.sop-sig{--sg-bg:#151a20;--sg-ink:#eef0e9;--sg-muted:#a8b3b9;--sg-line:#56626c;--sg-a:#b8dbc7;--sg-soft:#adcfc326;--sg-play:running;--sg-radius:16px;position:relative;isolation:isolate;width:100%;min-width:0;box-sizing:border-box;color:var(--sg-ink);font:13px/1.6 Arial,"Yu Gothic",Meiryo,sans-serif;-webkit-font-smoothing:antialiased;color-scheme:dark;text-align:start}
+.sop-sig *, .sop-sig *:before,.sop-sig *:after{box-sizing:border-box}
+.sop-sig :where(button,input,textarea,select){font:inherit;color:inherit}
+.sop-sig button{cursor:pointer;-webkit-tap-highlight-color:transparent}
+.sop-sig :where(button,input,a,summary):focus-visible{outline:2px solid var(--sg-a);outline-offset:4px}
+.sop-sig [hidden]{display:none!important}
+.sop-sig :where(button,input):disabled{cursor:not-allowed;opacity:.45}
+.sop-sig [data-sg-owned]{min-width:0}
+.sop-sig [data-sg-slot]:empty{display:none}
+.sop-sig .sg-sr{position:absolute!important;clip:rect(0,0,0,0)!important;clip-path:inset(50%)!important;width:1px!important;height:1px!important;overflow:hidden!important;white-space:nowrap!important}
+.sop-sig .sg-kicker{font:9px/1.6 Consolas,monospace;letter-spacing:1.5px;text-transform:uppercase;color:var(--sg-muted)}
+.sop-sig .sg-sub{font-size:11px;color:var(--sg-muted);margin:4px 0 0;overflow-wrap:anywhere}
+.sop-sig .sg-label{font-size:13px;font-weight:600;letter-spacing:.2px;margin:0;overflow-wrap:anywhere}
+.sop-sig .sg-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;font:10px/1.5 Consolas,monospace;color:var(--sg-muted);margin-top:16px}
+.sop-sig .sg-small{appearance:none;border:1px solid var(--sg-line);border-radius:7px;min-height:32px;padding:5px 10px;background:transparent;color:var(--sg-ink);font-size:11px;transition:background .2s,border-color .2s}
+.sop-sig .sg-small:hover{background:var(--sg-soft);border-color:var(--sg-a)}
+.sop-sig .sg-art{position:absolute;inset:0;pointer-events:none}
+.sop-sig svg{display:block}
+.sop-sig .sg-skin-ornament{pointer-events:none}
+.sop-sig [data-sg-error]{color:#ffd1c5;font-size:11px;min-height:0}
+.sop-sig [data-sg-error]:empty{display:none}
+@media(prefers-reduced-motion:reduce){.sop-sig *, .sop-sig *:before,.sop-sig *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(forced-colors:active){.sop-sig{--sg-ink:CanvasText;--sg-muted:CanvasText;--sg-bg:Canvas;--sg-line:ButtonText;--sg-a:Highlight;--sg-soft:Canvas}.sop-sig .sg-art,.sop-sig .sg-skin-ornament{display:none}.sop-sig button,.sop-sig input{forced-color-adjust:auto}.sop-sig [aria-pressed=true],.sop-sig [aria-current=step]{outline:2px solid Highlight}}

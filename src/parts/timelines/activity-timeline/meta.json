@@ -1,0 +1,53 @@
+{
+  "id": "activity-timeline",
+  "name": "Activity Feed",
+  "category": "timelines",
+  "tagline": "経緯を、たどる。",
+  "description": "時刻を控えめにして、出来事を読みやすく。",
+  "designType": "B",
+  "motion": "READ / EXPAND",
+  "order": 1895,
+  "version": "1.0.0",
+  "material": "READ / EXPAND",
+  "accent": "185,205,194",
+  "componentName": "ActivityTimeline",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "timelines"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Activity Feed",
+    "timelines",
+    "READ / EXPAND",
+    "タイムライン 履歴"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "TimelineItem[]",
+      "id・title・description・date・dateTime・status・hrefなど。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "詳細を開くID。expandedで外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(ids: string[]) => void",
+      "開閉したIDを通知。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "詳細の開閉を無効にする。"
+    ],
+    [
+      "label",
+      "string",
+      "履歴全体の名前。"
+    ]
+  ]
+}

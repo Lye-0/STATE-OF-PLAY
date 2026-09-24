@@ -1,0 +1,53 @@
+{
+  "id": "document-timeline",
+  "name": "Document Trail",
+  "category": "timelines",
+  "tagline": "時間を、重ねる。",
+  "description": "薄い資料が一枚ずつ持ち上がり、経緯を読み進められる。",
+  "designType": "A",
+  "motion": "PAPER / LIFT",
+  "order": 1882,
+  "version": "1.0.0",
+  "material": "PAPER / LIFT",
+  "accent": "182,210,210",
+  "componentName": "DocumentTimeline",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "timelines"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Document Trail",
+    "timelines",
+    "PAPER / LIFT",
+    "タイムライン 履歴"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "TimelineItem[]",
+      "id・title・description・date・dateTime・status・hrefなど。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "詳細を開くID。expandedで外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(ids: string[]) => void",
+      "開閉したIDを通知。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "詳細の開閉を無効にする。"
+    ],
+    [
+      "label",
+      "string",
+      "履歴全体の名前。"
+    ]
+  ]
+}

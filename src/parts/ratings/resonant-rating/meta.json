@@ -1,0 +1,53 @@
+{
+  "id": "resonant-rating",
+  "name": "Resonant Rating",
+  "category": "ratings",
+  "tagline": "手触りのある、評価。",
+  "description": "高さの違う五本の金属キーが、選択に応じて持ち上がる。",
+  "designType": "A",
+  "motion": "STRIKE / RESONANCE",
+  "order": 1834,
+  "version": "1.0.0",
+  "material": "STRIKE / RESONANCE",
+  "accent": "182,210,210",
+  "componentName": "ResonantRating",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "ratings"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Resonant Rating",
+    "ratings",
+    "STRIKE / RESONANCE",
+    "評価 スター"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "number",
+      "0は未評価、1〜maxは評価値。valueは外部制御。"
+    ],
+    [
+      "max",
+      "number",
+      "整数2〜10。半点は扱わない。"
+    ],
+    [
+      "name / required",
+      "string / boolean",
+      "フォームに接続する。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "無効または表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(value: number) => void",
+      "確定した評価。ホバーは通知しない。"
+    ]
+  ]
+}

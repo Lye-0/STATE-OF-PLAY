@@ -1,0 +1,53 @@
+{
+  "id": "blueprint-skeleton",
+  "name": "Blueprint Draw",
+  "category": "skeletons",
+  "tagline": "輪郭から、始まる。",
+  "description": "製図の線が引かれ、まだ届いていないコンテンツの構造を示す。",
+  "designType": "A",
+  "motion": "DRAW",
+  "order": 1864,
+  "version": "1.0.0",
+  "material": "DRAW",
+  "accent": "182,210,210",
+  "componentName": "BlueprintSkeleton",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "skeletons"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Blueprint Draw",
+    "skeletons",
+    "DRAW",
+    "スケルトン 待機"
+  ],
+  "related": [],
+  "props": [
+    [
+      "loading",
+      "boolean",
+      "実際の読み込み状態。自動で成功にはしない。"
+    ],
+    [
+      "rows",
+      "number",
+      "2〜8行のプレースホルダー。"
+    ],
+    [
+      "label",
+      "string",
+      "読み上げ用の待機ラベル。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "動きを一時停止。"
+    ],
+    [
+      "children",
+      "ReactNode",
+      "読み込み後に表示する実際の内容。"
+    ]
+  ]
+}

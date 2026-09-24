@@ -1,0 +1,53 @@
+{
+  "id": "ledger-timeline",
+  "name": "Ledger Notes",
+  "category": "timelines",
+  "tagline": "行間に、記録。",
+  "description": "細い罫線と欄外の日付。紙の帳簿を読み進める感触。",
+  "designType": "A",
+  "motion": "ANNOTATE",
+  "order": 1887,
+  "version": "1.0.0",
+  "material": "ANNOTATE",
+  "accent": "182,210,210",
+  "componentName": "LedgerTimeline",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "timelines"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Ledger Notes",
+    "timelines",
+    "ANNOTATE",
+    "タイムライン 履歴"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "TimelineItem[]",
+      "id・title・description・date・dateTime・status・hrefなど。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "詳細を開くID。expandedで外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(ids: string[]) => void",
+      "開閉したIDを通知。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "詳細の開閉を無効にする。"
+    ],
+    [
+      "label",
+      "string",
+      "履歴全体の名前。"
+    ]
+  ]
+}

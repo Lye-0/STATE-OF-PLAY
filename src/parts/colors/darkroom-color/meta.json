@@ -1,0 +1,53 @@
+{
+  "id": "darkroom-color",
+  "name": "Darkroom Color",
+  "category": "colors",
+  "tagline": "光を、調整する。",
+  "description": "暗室の光源のような色面と、細い電極状のスライダー。",
+  "designType": "A",
+  "motion": "SCAN / EXPOSURE",
+  "order": 1853,
+  "version": "1.0.0",
+  "material": "SCAN / EXPOSURE",
+  "accent": "182,210,210",
+  "componentName": "DarkroomColor",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "colors"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Darkroom Color",
+    "colors",
+    "SCAN / EXPOSURE",
+    "色 カラーピッカー"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "string",
+      "#RGBまたは#RRGGBB。外部へは#RRGGBBの大文字。"
+    ],
+    [
+      "palette",
+      "string[]",
+      "色見本。"
+    ],
+    [
+      "name",
+      "string",
+      "フォームで送信する値の名前。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "入力操作を停止。"
+    ],
+    [
+      "onValueChange",
+      "(hex: string) => void",
+      "有効な色のみ通知。透明度はこの版では扱わない。"
+    ]
+  ]
+}

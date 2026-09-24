@@ -1,0 +1,4 @@
+/* Glass Refraction — 一枚の透明レンズが通り過ぎ、線の輝きが少し変わる。 */
+@import "../../../shared/signature/skeleton.css";
+.sop-sig.sop-glass-skeleton{--sg-bg:#1a2630;--sg-a:#abc7d1;--sg-line:#8098a2}.sop-sig.sop-glass-skeleton > [data-sg-owned] .sg-skeleton-frame{background:linear-gradient(135deg,#a2bfd023,#22324080,#8cb9b116);border:1px solid #c2d2d64d;box-shadow:inset 1px 1px 2px #fff3,inset -1px -1px 2px #d0f9e32a;--sk-tone:#7b98a33b}.sop-sig.sop-glass-skeleton > [data-sg-owned] .sg-sk-beam{inset:0 auto 0 -60px;width:80px;background:linear-gradient(90deg,#cce3ea03,#d9f5f029,#d3dfeb10);border-left:1px solid #e5ffef44;border-right:1px solid #d4f2ff44;border-radius:45%;animation:sg-glass-skeleton-lens 3.6s ease-in-out infinite;animation-play-state:var(--sg-play);box-shadow:inset 3px 0 8px #d6f6fc19}
+@keyframes sg-glass-skeleton-lens{0%,10%{left:-100px;transform:skew(-14deg)}85%,100%{left:110%;transform:skew(14deg)}}

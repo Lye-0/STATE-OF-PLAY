@@ -1,0 +1,53 @@
+{
+  "id": "card-timeline",
+  "name": "Card Timeline",
+  "category": "timelines",
+  "tagline": "経緯を、たどる。",
+  "description": "情報を小さなカードにまとめる。",
+  "designType": "B",
+  "motion": "READ / EXPAND",
+  "order": 1892,
+  "version": "1.0.0",
+  "material": "READ / EXPAND",
+  "accent": "185,205,194",
+  "componentName": "CardTimeline",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "timelines"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Card Timeline",
+    "timelines",
+    "READ / EXPAND",
+    "タイムライン 履歴"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "TimelineItem[]",
+      "id・title・description・date・dateTime・status・hrefなど。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "詳細を開くID。expandedで外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(ids: string[]) => void",
+      "開閉したIDを通知。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "詳細の開閉を無効にする。"
+    ],
+    [
+      "label",
+      "string",
+      "履歴全体の名前。"
+    ]
+  ]
+}

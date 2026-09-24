@@ -1,0 +1,53 @@
+{
+  "id": "film-history",
+  "name": "Contact History",
+  "category": "timelines",
+  "tagline": "記録を、一コマずつ。",
+  "description": "フィルムの送り穴と小さなフレームが、時間を区切る。",
+  "designType": "A",
+  "motion": "FRAME / EXPOSE",
+  "order": 1886,
+  "version": "1.0.0",
+  "material": "FRAME / EXPOSE",
+  "accent": "182,210,210",
+  "componentName": "FilmHistory",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "timelines"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Contact History",
+    "timelines",
+    "FRAME / EXPOSE",
+    "タイムライン 履歴"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "TimelineItem[]",
+      "id・title・description・date・dateTime・status・hrefなど。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "詳細を開くID。expandedで外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(ids: string[]) => void",
+      "開閉したIDを通知。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "詳細の開閉を無効にする。"
+    ],
+    [
+      "label",
+      "string",
+      "履歴全体の名前。"
+    ]
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "id": "porcelain-rating",
+  "name": "Porcelain Rating",
+  "category": "ratings",
+  "tagline": "白い粒に、重みを。",
+  "description": "白い磁器の粒が押し込まれ、評価した分だけ輪郭が染まる。",
+  "designType": "A",
+  "motion": "IMPRESS",
+  "order": 1840,
+  "version": "1.0.0",
+  "material": "IMPRESS",
+  "accent": "182,210,210",
+  "componentName": "PorcelainRating",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "ratings"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Porcelain Rating",
+    "ratings",
+    "IMPRESS",
+    "評価 スター"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "number",
+      "0は未評価、1〜maxは評価値。valueは外部制御。"
+    ],
+    [
+      "max",
+      "number",
+      "整数2〜10。半点は扱わない。"
+    ],
+    [
+      "name / required",
+      "string / boolean",
+      "フォームに接続する。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "無効または表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(value: number) => void",
+      "確定した評価。ホバーは通知しない。"
+    ]
+  ]
+}

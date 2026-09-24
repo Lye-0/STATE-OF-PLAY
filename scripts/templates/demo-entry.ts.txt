@@ -10,3 +10,8 @@ if(root.dataset.foundation==='toasts') {
   show.style.cssText='padding:12px 18px;margin:12px 0;cursor:pointer';root.after(show);
   show.addEventListener('click',()=>{const api=controller as {notify?: (notice:{title:string;description:string})=>string};api.notify?.({title:'表示の確認',description:'これはデモです。実際の処理結果に接続してください。'});});
 }
+
+if(root.dataset.sgKind==='skeletons') {
+ const toggle=document.createElement('button');toggle.type='button';toggle.textContent='読み込み後の表示を確認';root.after(toggle);let loading=true;
+ toggle.addEventListener('click',()=>{loading=!loading;(controller as {updateSignature?:(settings:Record<string,unknown>)=>void}).updateSignature?.({loading});toggle.textContent=loading?'読み込み後の表示を確認':'待機表示へ戻す';});
+}

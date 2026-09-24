@@ -1,0 +1,53 @@
+{
+  "id": "outline-user-chip",
+  "name": "Outline User",
+  "category": "avatars",
+  "tagline": "人が、見える。",
+  "description": "細い枠と、小さな写真だけで構成。",
+  "designType": "B",
+  "motion": "FOCUS / SELECT",
+  "order": 1831,
+  "version": "1.0.0",
+  "material": "FOCUS / SELECT",
+  "accent": "185,205,194",
+  "componentName": "OutlineUserChip",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "avatars"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Outline User",
+    "avatars",
+    "FOCUS / SELECT",
+    "アバター ユーザーチップ 肖像"
+  ],
+  "related": [],
+  "props": [
+    [
+      "users",
+      "AvatarUser[]",
+      "id・name・任意のsrc、initials、subtitle、status。名前と在席状態は外部の値。"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "選択するユーザーID。valueを渡すと外部制御。"
+    ],
+    [
+      "interactive",
+      "boolean",
+      "falseで表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(id: string) => void",
+      "クリック時の要求値。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ]
+  ]
+}

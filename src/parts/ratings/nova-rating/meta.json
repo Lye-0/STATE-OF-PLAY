@@ -1,0 +1,53 @@
+{
+  "id": "nova-rating",
+  "name": "Nova Rating",
+  "category": "ratings",
+  "tagline": "小さな星を、ひらく。",
+  "description": "折られた星が、評価を重ねるたびに面を開く。",
+  "designType": "A",
+  "motion": "UNFOLD / STARS",
+  "order": 1832,
+  "version": "1.0.0",
+  "material": "UNFOLD / STARS",
+  "accent": "182,210,210",
+  "componentName": "NovaRating",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "ratings"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Nova Rating",
+    "ratings",
+    "UNFOLD / STARS",
+    "評価 スター"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "number",
+      "0は未評価、1〜maxは評価値。valueは外部制御。"
+    ],
+    [
+      "max",
+      "number",
+      "整数2〜10。半点は扱わない。"
+    ],
+    [
+      "name / required",
+      "string / boolean",
+      "フォームに接続する。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "無効または表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(value: number) => void",
+      "確定した評価。ホバーは通知しない。"
+    ]
+  ]
+}

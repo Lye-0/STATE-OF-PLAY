@@ -1,0 +1,53 @@
+{
+  "id": "inline-color",
+  "name": "Inline Color",
+  "category": "colors",
+  "tagline": "色を、正確に。",
+  "description": "必要な数値と色相を、小さな領域へ。",
+  "designType": "B",
+  "motion": "PICK / ADJUST",
+  "order": 1861,
+  "version": "1.0.0",
+  "material": "PICK / ADJUST",
+  "accent": "185,205,194",
+  "componentName": "InlineColor",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "colors"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Inline Color",
+    "colors",
+    "PICK / ADJUST",
+    "色 カラーピッカー"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "string",
+      "#RGBまたは#RRGGBB。外部へは#RRGGBBの大文字。"
+    ],
+    [
+      "palette",
+      "string[]",
+      "色見本。"
+    ],
+    [
+      "name",
+      "string",
+      "フォームで送信する値の名前。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "入力操作を停止。"
+    ],
+    [
+      "onValueChange",
+      "(hex: string) => void",
+      "有効な色のみ通知。透明度はこの版では扱わない。"
+    ]
+  ]
+}

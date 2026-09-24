@@ -1,0 +1,53 @@
+{
+  "id": "glass-skeleton",
+  "name": "Glass Refraction",
+  "category": "skeletons",
+  "tagline": "待ち時間に、屈折を。",
+  "description": "一枚の透明レンズが通り過ぎ、線の輝きが少し変わる。",
+  "designType": "A",
+  "motion": "REFRACTION",
+  "order": 1870,
+  "version": "1.0.0",
+  "material": "REFRACTION",
+  "accent": "182,210,210",
+  "componentName": "GlassSkeleton",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "skeletons"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Glass Refraction",
+    "skeletons",
+    "REFRACTION",
+    "スケルトン 待機"
+  ],
+  "related": [],
+  "props": [
+    [
+      "loading",
+      "boolean",
+      "実際の読み込み状態。自動で成功にはしない。"
+    ],
+    [
+      "rows",
+      "number",
+      "2〜8行のプレースホルダー。"
+    ],
+    [
+      "label",
+      "string",
+      "読み上げ用の待機ラベル。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "動きを一時停止。"
+    ],
+    [
+      "children",
+      "ReactNode",
+      "読み込み後に表示する実際の内容。"
+    ]
+  ]
+}

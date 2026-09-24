@@ -1,0 +1,53 @@
+{
+  "id": "scanner-skeleton",
+  "name": "Scanner Skeleton",
+  "category": "skeletons",
+  "tagline": "像を、探す。",
+  "description": "細い走査光が、フィルム状のプレースホルダーを読み取る。",
+  "designType": "A",
+  "motion": "SCAN",
+  "order": 1867,
+  "version": "1.0.0",
+  "material": "SCAN",
+  "accent": "182,210,210",
+  "componentName": "ScannerSkeleton",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "skeletons"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Scanner Skeleton",
+    "skeletons",
+    "SCAN",
+    "スケルトン 待機"
+  ],
+  "related": [],
+  "props": [
+    [
+      "loading",
+      "boolean",
+      "実際の読み込み状態。自動で成功にはしない。"
+    ],
+    [
+      "rows",
+      "number",
+      "2〜8行のプレースホルダー。"
+    ],
+    [
+      "label",
+      "string",
+      "読み上げ用の待機ラベル。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "動きを一時停止。"
+    ],
+    [
+      "children",
+      "ReactNode",
+      "読み込み後に表示する実際の内容。"
+    ]
+  ]
+}

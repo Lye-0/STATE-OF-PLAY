@@ -1,0 +1,53 @@
+{
+  "id": "isometric-skeleton",
+  "name": "Isometric Load",
+  "category": "skeletons",
+  "tagline": "小さな構造が、組み上がる。",
+  "description": "立体タイルが順に浮き沈みし、待機のリズムを作る。",
+  "designType": "A",
+  "motion": "ASSEMBLE",
+  "order": 1868,
+  "version": "1.0.0",
+  "material": "ASSEMBLE",
+  "accent": "182,210,210",
+  "componentName": "IsometricSkeleton",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "skeletons"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Isometric Load",
+    "skeletons",
+    "ASSEMBLE",
+    "スケルトン 待機"
+  ],
+  "related": [],
+  "props": [
+    [
+      "loading",
+      "boolean",
+      "実際の読み込み状態。自動で成功にはしない。"
+    ],
+    [
+      "rows",
+      "number",
+      "2〜8行のプレースホルダー。"
+    ],
+    [
+      "label",
+      "string",
+      "読み上げ用の待機ラベル。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "動きを一時停止。"
+    ],
+    [
+      "children",
+      "ReactNode",
+      "読み込み後に表示する実際の内容。"
+    ]
+  ]
+}

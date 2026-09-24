@@ -1,0 +1,58 @@
+{
+  "id": "expedition-wizard",
+  "name": "Expedition",
+  "category": "wizards",
+  "tagline": "次の地点へ。",
+  "description": "円形の行程計と、縦に並ぶ目的地をたどる。",
+  "designType": "A",
+  "motion": "ORBIT / ARRIVE",
+  "order": 1898,
+  "version": "1.0.0",
+  "material": "ORBIT / ARRIVE",
+  "accent": "182,210,210",
+  "componentName": "ExpeditionWizard",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "wizards"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Expedition",
+    "wizards",
+    "ORBIT / ARRIVE",
+    "ステップ ウィザード 手順"
+  ],
+  "related": [],
+  "props": [
+    [
+      "steps",
+      "WizardStep[]",
+      "id・title・description・任意の入力fields。2〜4以上へ変更可。"
+    ],
+    [
+      "current / defaultCurrent",
+      "string",
+      "現在ステップID。currentは外部制御。"
+    ],
+    [
+      "beforeNext",
+      "(id, values) => boolean | string | Promise",
+      "trueで進む、文字列でエラー。"
+    ],
+    [
+      "onStepChange",
+      "(id: string) => void",
+      "次の工程の要求ID。"
+    ],
+    [
+      "onComplete",
+      "(values) => void",
+      "完了操作。保存・送信は利用先の責務。"
+    ],
+    [
+      "allowJump",
+      "boolean",
+      "先の工程を直接選択することを許可。標準false。"
+    ]
+  ]
+}

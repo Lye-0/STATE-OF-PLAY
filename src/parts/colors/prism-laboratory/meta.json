@@ -1,0 +1,53 @@
+{
+  "id": "prism-laboratory",
+  "name": "Prism Laboratory",
+  "category": "colors",
+  "tagline": "色を、切り出す。",
+  "description": "色面を囲む透明なファセットと、細密な座標線。",
+  "designType": "A",
+  "motion": "REFRACT / SAMPLE",
+  "order": 1848,
+  "version": "1.0.0",
+  "material": "REFRACT / SAMPLE",
+  "accent": "182,210,210",
+  "componentName": "PrismLaboratory",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "colors"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Prism Laboratory",
+    "colors",
+    "REFRACT / SAMPLE",
+    "色 カラーピッカー"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "string",
+      "#RGBまたは#RRGGBB。外部へは#RRGGBBの大文字。"
+    ],
+    [
+      "palette",
+      "string[]",
+      "色見本。"
+    ],
+    [
+      "name",
+      "string",
+      "フォームで送信する値の名前。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "入力操作を停止。"
+    ],
+    [
+      "onValueChange",
+      "(hex: string) => void",
+      "有効な色のみ通知。透明度はこの版では扱わない。"
+    ]
+  ]
+}

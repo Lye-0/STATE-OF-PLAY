@@ -1,0 +1,53 @@
+{
+  "id": "heart-rating",
+  "name": "Heart Rating",
+  "category": "ratings",
+  "tagline": "気持ちを、値に。",
+  "description": "柔らかなハートで伝える評価。",
+  "designType": "B",
+  "motion": "SELECT",
+  "order": 1843,
+  "version": "1.0.0",
+  "material": "SELECT",
+  "accent": "185,205,194",
+  "componentName": "HeartRating",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "ratings"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Heart Rating",
+    "ratings",
+    "SELECT",
+    "評価 スター"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "number",
+      "0は未評価、1〜maxは評価値。valueは外部制御。"
+    ],
+    [
+      "max",
+      "number",
+      "整数2〜10。半点は扱わない。"
+    ],
+    [
+      "name / required",
+      "string / boolean",
+      "フォームに接続する。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "無効または表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(value: number) => void",
+      "確定した評価。ホバーは通知しない。"
+    ]
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "mode": "Chromium offline author-source adapter, NOT Vite",
+  "passed": 16,
+  "tests": [
+    "All 96 actual native components mount and expose independent state",
+    "Avatar selection, passive display, disabled and controlled decline",
+    "Avatar custom data is literal text and image failures leave the portrait fallback",
+    "Ratings preview without committing; native radio selection, clear and form reset",
+    "Rating dynamic maximum, keyboard, controlled value and read-only protect state",
+    "Color HEX accepts shorthand, rejects invalid values and preserves edit drafts",
+    "Color SV drag, hue keyboard and palette all update one value; reset and readonly",
+    "Skeleton shows real retained content without declaring completion or losing input",
+    "Timeline keeps dates/status fixed and supports keyboard, custom data, controlled expansion",
+    "Wizard validates required fields, preserves text going back and completes without network",
+    "Wizard async guard blocks duplicates, permits rejection and ignores stale results",
+    "Wizard arbitrary step counts, forward navigation policy and retained fields on structural updates",
+    "Six components of the same kind have independent native identifiers and state",
+    "All 96 components fit 320 / 390 / 768 px and 10 ratings/long Japanese labels",
+    "Motion reduction stops decorative loops and retains usable controls",
+    "Unmount cancels animations, observers and pending wizard callbacks"
+  ],
+  "errors": []
+}

@@ -1,0 +1,53 @@
+{
+  "id": "blossom-rating",
+  "name": "Blossom Rating",
+  "category": "ratings",
+  "tagline": "五段階の、開花。",
+  "description": "一つずつの蕾がほどけ、評価の分だけ花が咲く。",
+  "designType": "A",
+  "motion": "PETALS",
+  "order": 1833,
+  "version": "1.0.0",
+  "material": "PETALS",
+  "accent": "182,210,210",
+  "componentName": "BlossomRating",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "ratings"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Blossom Rating",
+    "ratings",
+    "PETALS",
+    "評価 スター"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "number",
+      "0は未評価、1〜maxは評価値。valueは外部制御。"
+    ],
+    [
+      "max",
+      "number",
+      "整数2〜10。半点は扱わない。"
+    ],
+    [
+      "name / required",
+      "string / boolean",
+      "フォームに接続する。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "無効または表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(value: number) => void",
+      "確定した評価。ホバーは通知しない。"
+    ]
+  ]
+}

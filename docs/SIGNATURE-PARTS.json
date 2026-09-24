@@ -1,0 +1,866 @@
+[
+  {
+    "category": "avatars",
+    "id": "orbital-portrait",
+    "name": "Orbital Portrait",
+    "tagline": "軌道が、ひとりを選ぶ。",
+    "description": "人に触れると軌道が傾き、選んだ輪郭へ光が集まる。",
+    "designType": "A",
+    "motion": "ORBIT / ATTRACT"
+  },
+  {
+    "category": "avatars",
+    "id": "iris-portrait",
+    "name": "Iris Portrait",
+    "tagline": "輪郭の、開口。",
+    "description": "八枚の絞り羽根が開き、肖像を一段奥から浮かび上がらせる。",
+    "designType": "A",
+    "motion": "APERTURE"
+  },
+  {
+    "category": "avatars",
+    "id": "contact-sheet-portrait",
+    "name": "Contact Sheet",
+    "tagline": "一枚ずつ、余白を。",
+    "description": "重なったプリントが立ち上がり、写真の余白に名前が現れる。",
+    "designType": "A",
+    "motion": "LIFT / FAN"
+  },
+  {
+    "category": "avatars",
+    "id": "ribbon-pass",
+    "name": "Ribbon Pass",
+    "tagline": "ほどける、名札。",
+    "description": "肖像を囲む帯が横にほどけ、名前へつながる。",
+    "designType": "A",
+    "motion": "UNRAVEL"
+  },
+  {
+    "category": "avatars",
+    "id": "tessellated-portrait",
+    "name": "Tessellated",
+    "tagline": "集まる、かけら。",
+    "description": "六角形の肖像の周囲で、薄い多面体が向きを変える。",
+    "designType": "A",
+    "motion": "FACET / REASSEMBLE"
+  },
+  {
+    "category": "avatars",
+    "id": "liquid-orbit-profile",
+    "name": "Liquid Orbit",
+    "tagline": "境界が、ほどける。",
+    "description": "丸い肖像を包む透明な膜が、触れると少し流れ出す。",
+    "designType": "A",
+    "motion": "SURFACE TENSION"
+  },
+  {
+    "category": "avatars",
+    "id": "passport-chip",
+    "name": "Passport Chip",
+    "tagline": "一人分の、切符。",
+    "description": "切り欠きのあるパスが開き、肖像と名前が一枚につながる。",
+    "designType": "A",
+    "motion": "ISSUE / SLIDE"
+  },
+  {
+    "category": "avatars",
+    "id": "deskplate-identity",
+    "name": "Deskplate",
+    "tagline": "触れたくなる、刻印。",
+    "description": "研磨された名札の窓と、押し下がる肖像ボタン。",
+    "designType": "A",
+    "motion": "PRESS / ENGRAVE"
+  },
+  {
+    "category": "avatars",
+    "id": "echo-identity",
+    "name": "Echo Identity",
+    "tagline": "一瞬を、残す。",
+    "description": "薄い輪郭が肖像から広がり、静かな余韻で戻ってくる。",
+    "designType": "A",
+    "motion": "RINGS / ECHO"
+  },
+  {
+    "category": "avatars",
+    "id": "pearl-medallion",
+    "name": "Pearl Medallion",
+    "tagline": "白い、存在感。",
+    "description": "磁器のレリーフのような肖像に、柔らかな光沢が巡る。",
+    "designType": "A",
+    "motion": "GLAZE"
+  },
+  {
+    "category": "avatars",
+    "id": "circle-profile",
+    "name": "Circle Profile",
+    "tagline": "人が、見える。",
+    "description": "輪郭と写真の余白を整えた基本形。",
+    "designType": "B",
+    "motion": "FOCUS / SELECT"
+  },
+  {
+    "category": "avatars",
+    "id": "square-profile",
+    "name": "Square Profile",
+    "tagline": "人が、見える。",
+    "description": "角を柔らかくした正方形のプロフィール。",
+    "designType": "B",
+    "motion": "FOCUS / SELECT"
+  },
+  {
+    "category": "avatars",
+    "id": "presence-profile",
+    "name": "Presence Chip",
+    "tagline": "人が、見える。",
+    "description": "氏名と提供された在席状態を、ひとつの行へ。",
+    "designType": "B",
+    "motion": "FOCUS / SELECT"
+  },
+  {
+    "category": "avatars",
+    "id": "stacked-profiles",
+    "name": "Stacked Profiles",
+    "tagline": "人が、見える。",
+    "description": "重ねた肖像を、触れると少しずつ開く。",
+    "designType": "B",
+    "motion": "FOCUS / SELECT"
+  },
+  {
+    "category": "avatars",
+    "id": "initials-profile",
+    "name": "Initials Profile",
+    "tagline": "人が、見える。",
+    "description": "画像がなくても、名前のイニシャルを美しく。",
+    "designType": "B",
+    "motion": "FOCUS / SELECT"
+  },
+  {
+    "category": "avatars",
+    "id": "outline-user-chip",
+    "name": "Outline User",
+    "tagline": "人が、見える。",
+    "description": "細い枠と、小さな写真だけで構成。",
+    "designType": "B",
+    "motion": "FOCUS / SELECT"
+  },
+  {
+    "category": "ratings",
+    "id": "nova-rating",
+    "name": "Nova Rating",
+    "tagline": "小さな星を、ひらく。",
+    "description": "折られた星が、評価を重ねるたびに面を開く。",
+    "designType": "A",
+    "motion": "UNFOLD / STARS"
+  },
+  {
+    "category": "ratings",
+    "id": "blossom-rating",
+    "name": "Blossom Rating",
+    "tagline": "五段階の、開花。",
+    "description": "一つずつの蕾がほどけ、評価の分だけ花が咲く。",
+    "designType": "A",
+    "motion": "PETALS"
+  },
+  {
+    "category": "ratings",
+    "id": "resonant-rating",
+    "name": "Resonant Rating",
+    "tagline": "手触りのある、評価。",
+    "description": "高さの違う五本の金属キーが、選択に応じて持ち上がる。",
+    "designType": "A",
+    "motion": "STRIKE / RESONANCE"
+  },
+  {
+    "category": "ratings",
+    "id": "gem-vote",
+    "name": "Gem Vote",
+    "tagline": "評価を、結晶に。",
+    "description": "傾いた多面体が起き上がり、選択した面だけに色が宿る。",
+    "designType": "A",
+    "motion": "FACETS"
+  },
+  {
+    "category": "ratings",
+    "id": "ember-vote",
+    "name": "Ember Vote",
+    "tagline": "灯りを、ひとつずつ。",
+    "description": "選んだ段階まで、小さな炎が現れて温かな光を残す。",
+    "designType": "A",
+    "motion": "IGNITE"
+  },
+  {
+    "category": "ratings",
+    "id": "paper-fan-rating",
+    "name": "Paper Fan",
+    "tagline": "積み上がる、余韻。",
+    "description": "紙の小片が扇のように開き、評価の数を形にする。",
+    "designType": "A",
+    "motion": "FAN / OPEN"
+  },
+  {
+    "category": "ratings",
+    "id": "orbital-rating",
+    "name": "Orbital Rating",
+    "tagline": "評価を、軌道に。",
+    "description": "透明な球を巡る環が、選択すると平面から立体へ起き上がる。",
+    "designType": "A",
+    "motion": "GYROSCOPE"
+  },
+  {
+    "category": "ratings",
+    "id": "filament-rating",
+    "name": "Filament Rating",
+    "tagline": "光る、目盛り。",
+    "description": "暗いガラスの下で電極が点灯し、評価を光の高さで示す。",
+    "designType": "A",
+    "motion": "FILAMENT"
+  },
+  {
+    "category": "ratings",
+    "id": "porcelain-rating",
+    "name": "Porcelain Rating",
+    "tagline": "白い粒に、重みを。",
+    "description": "白い磁器の粒が押し込まれ、評価した分だけ輪郭が染まる。",
+    "designType": "A",
+    "motion": "IMPRESS"
+  },
+  {
+    "category": "ratings",
+    "id": "constellation-rating",
+    "name": "Constellation Rating",
+    "tagline": "点をつなぐ、評価。",
+    "description": "星の点と細い経路が連なり、五つの段階を一つの星座にする。",
+    "designType": "A",
+    "motion": "CONNECT / LIGHT"
+  },
+  {
+    "category": "ratings",
+    "id": "simple-star-rating",
+    "name": "Simple Stars",
+    "tagline": "気持ちを、値に。",
+    "description": "読みやすい、定番の五つ星。",
+    "designType": "B",
+    "motion": "SELECT"
+  },
+  {
+    "category": "ratings",
+    "id": "heart-rating",
+    "name": "Heart Rating",
+    "tagline": "気持ちを、値に。",
+    "description": "柔らかなハートで伝える評価。",
+    "designType": "B",
+    "motion": "SELECT"
+  },
+  {
+    "category": "ratings",
+    "id": "dot-rating",
+    "name": "Dot Rating",
+    "tagline": "気持ちを、値に。",
+    "description": "小さな点で、静かに評価する。",
+    "designType": "B",
+    "motion": "SELECT"
+  },
+  {
+    "category": "ratings",
+    "id": "numeric-rating",
+    "name": "Numeric Rating",
+    "tagline": "気持ちを、値に。",
+    "description": "数字をそのまま選べる、明快な評価。",
+    "designType": "B",
+    "motion": "SELECT"
+  },
+  {
+    "category": "ratings",
+    "id": "bar-rating",
+    "name": "Bar Rating",
+    "tagline": "気持ちを、値に。",
+    "description": "細いバーがつながる、軽量な評価。",
+    "designType": "B",
+    "motion": "SELECT"
+  },
+  {
+    "category": "ratings",
+    "id": "outline-star-rating",
+    "name": "Outline Stars",
+    "tagline": "気持ちを、値に。",
+    "description": "選んだ星の輪郭だけを強める。",
+    "designType": "B",
+    "motion": "SELECT"
+  },
+  {
+    "category": "colors",
+    "id": "prism-laboratory",
+    "name": "Prism Laboratory",
+    "tagline": "色を、切り出す。",
+    "description": "色面を囲む透明なファセットと、細密な座標線。",
+    "designType": "A",
+    "motion": "REFRACT / SAMPLE"
+  },
+  {
+    "category": "colors",
+    "id": "chromatic-orbit",
+    "name": "Chromatic Orbit",
+    "tagline": "ひとめぐりの、色。",
+    "description": "輪に触れて色相を変え、内側で彩度と明るさを決める。",
+    "designType": "A",
+    "motion": "HUE / ORBIT"
+  },
+  {
+    "category": "colors",
+    "id": "pigment-reservoir",
+    "name": "Pigment Reservoir",
+    "tagline": "一滴から、色になる。",
+    "description": "大きな色の溜まりと、滴のように切り取られた調整面。",
+    "designType": "A",
+    "motion": "PIGMENT / FLOW"
+  },
+  {
+    "category": "colors",
+    "id": "spectrum-fan",
+    "name": "Spectrum Fan",
+    "tagline": "色の束を、ひらく。",
+    "description": "扇状に並ぶ色面と、選んだ色相につながる小さな調整窓。",
+    "designType": "A",
+    "motion": "FAN OUT"
+  },
+  {
+    "category": "colors",
+    "id": "swatch-desk",
+    "name": "Swatch Desk",
+    "tagline": "並べて、選ぶ。",
+    "description": "重ねた紙の色見本を選び、数値で追い込める小さなデスク。",
+    "designType": "A",
+    "motion": "SAMPLE / LIFT"
+  },
+  {
+    "category": "colors",
+    "id": "darkroom-color",
+    "name": "Darkroom Color",
+    "tagline": "光を、調整する。",
+    "description": "暗室の光源のような色面と、細い電極状のスライダー。",
+    "designType": "A",
+    "motion": "SCAN / EXPOSURE"
+  },
+  {
+    "category": "colors",
+    "id": "glass-rgb-mixer",
+    "name": "Glass Mixer",
+    "tagline": "三つの光を、混ぜる。",
+    "description": "赤・緑・青の三本の光路から、透明な色のレンズを作る。",
+    "designType": "A",
+    "motion": "ADDITIVE LIGHT"
+  },
+  {
+    "category": "colors",
+    "id": "orbital-pigment",
+    "name": "Orbital Pigment",
+    "tagline": "色の重心。",
+    "description": "輪をたどって色相を選び、明るさを下の光路で整える。",
+    "designType": "A",
+    "motion": "HUE / GRAVITY"
+  },
+  {
+    "category": "colors",
+    "id": "folded-swatch",
+    "name": "Folded Swatch",
+    "tagline": "一色の、立体。",
+    "description": "同じ色を受ける折り返し面と、影のある紙のサンプル。",
+    "designType": "A",
+    "motion": "FOLD / SHADE"
+  },
+  {
+    "category": "colors",
+    "id": "spectral-wave",
+    "name": "Spectral Wave",
+    "tagline": "光の、周波数。",
+    "description": "色相に合わせて分光面が広がる、波形のような色の窓。",
+    "designType": "A",
+    "motion": "SPECTRUM / WAVE"
+  },
+  {
+    "category": "colors",
+    "id": "classic-color",
+    "name": "Classic Color",
+    "tagline": "色を、正確に。",
+    "description": "色相・彩度・明度を調整する基本形。",
+    "designType": "B",
+    "motion": "PICK / ADJUST"
+  },
+  {
+    "category": "colors",
+    "id": "palette-color",
+    "name": "Palette Color",
+    "tagline": "色を、正確に。",
+    "description": "よく使う色を、コンパクトな見本から。",
+    "designType": "B",
+    "motion": "PICK / ADJUST"
+  },
+  {
+    "category": "colors",
+    "id": "rgb-color",
+    "name": "RGB Color",
+    "tagline": "色を、正確に。",
+    "description": "赤・緑・青を個別に調整。",
+    "designType": "B",
+    "motion": "PICK / ADJUST"
+  },
+  {
+    "category": "colors",
+    "id": "inline-color",
+    "name": "Inline Color",
+    "tagline": "色を、正確に。",
+    "description": "必要な数値と色相を、小さな領域へ。",
+    "designType": "B",
+    "motion": "PICK / ADJUST"
+  },
+  {
+    "category": "colors",
+    "id": "native-color-field",
+    "name": "Native Color Field",
+    "tagline": "色を、正確に。",
+    "description": "標準カラーピッカーと、直接入力するHEX。",
+    "designType": "B",
+    "motion": "PICK / ADJUST"
+  },
+  {
+    "category": "colors",
+    "id": "paper-color",
+    "name": "Paper Color",
+    "tagline": "色を、正確に。",
+    "description": "明るい画面のための、素直なカラーピッカー。",
+    "designType": "B",
+    "motion": "PICK / ADJUST"
+  },
+  {
+    "category": "skeletons",
+    "id": "blueprint-skeleton",
+    "name": "Blueprint Draw",
+    "tagline": "輪郭から、始まる。",
+    "description": "製図の線が引かれ、まだ届いていないコンテンツの構造を示す。",
+    "designType": "A",
+    "motion": "DRAW"
+  },
+  {
+    "category": "skeletons",
+    "id": "folding-skeleton",
+    "name": "Folding Placeholder",
+    "tagline": "情報の、折り目。",
+    "description": "折られた紙面がゆっくり傾き、読み込みの時間を形にする。",
+    "designType": "A",
+    "motion": "FOLD / WAIT"
+  },
+  {
+    "category": "skeletons",
+    "id": "tide-skeleton",
+    "name": "Tidal Placeholder",
+    "tagline": "満ちて、引いて。",
+    "description": "文字の代わりに、柔らかな光の波が横切る。",
+    "designType": "A",
+    "motion": "TIDAL LIGHT"
+  },
+  {
+    "category": "skeletons",
+    "id": "scanner-skeleton",
+    "name": "Scanner Skeleton",
+    "tagline": "像を、探す。",
+    "description": "細い走査光が、フィルム状のプレースホルダーを読み取る。",
+    "designType": "A",
+    "motion": "SCAN"
+  },
+  {
+    "category": "skeletons",
+    "id": "isometric-skeleton",
+    "name": "Isometric Load",
+    "tagline": "小さな構造が、組み上がる。",
+    "description": "立体タイルが順に浮き沈みし、待機のリズムを作る。",
+    "designType": "A",
+    "motion": "ASSEMBLE"
+  },
+  {
+    "category": "skeletons",
+    "id": "thread-skeleton",
+    "name": "Thread Skeleton",
+    "tagline": "糸を、渡す。",
+    "description": "線の束が交差し、コンテンツの幅を織り上げていく。",
+    "designType": "A",
+    "motion": "WEAVE"
+  },
+  {
+    "category": "skeletons",
+    "id": "glass-skeleton",
+    "name": "Glass Refraction",
+    "tagline": "待ち時間に、屈折を。",
+    "description": "一枚の透明レンズが通り過ぎ、線の輝きが少し変わる。",
+    "designType": "A",
+    "motion": "REFRACTION"
+  },
+  {
+    "category": "skeletons",
+    "id": "radar-skeleton",
+    "name": "Radar Sketch",
+    "tagline": "情報を、待ち受ける。",
+    "description": "円形の走査面と、到着を待つ小さな情報線。",
+    "designType": "A",
+    "motion": "RADAR"
+  },
+  {
+    "category": "skeletons",
+    "id": "mosaic-skeleton",
+    "name": "Mosaic Placeholders",
+    "tagline": "断片から、全体へ。",
+    "description": "違う比率の四角い面が、順に明るさを変える。",
+    "designType": "A",
+    "motion": "TILES / PULSE"
+  },
+  {
+    "category": "skeletons",
+    "id": "wireframe-skeleton",
+    "name": "Wireframe Ghost",
+    "tagline": "まだ見えない、輪郭。",
+    "description": "面を塗らず、細い輪郭だけが息をするように現れる。",
+    "designType": "A",
+    "motion": "OUTLINE / BREATHE"
+  },
+  {
+    "category": "skeletons",
+    "id": "shimmer-skeleton",
+    "name": "Shimmer Skeleton",
+    "tagline": "待つ間も、整う。",
+    "description": "汎用的なカードの読み込み表示。",
+    "designType": "B",
+    "motion": "LOAD / PAUSE"
+  },
+  {
+    "category": "skeletons",
+    "id": "pulse-skeleton",
+    "name": "Pulse Skeleton",
+    "tagline": "待つ間も、整う。",
+    "description": "柔らかな明暗で待機を示す。",
+    "designType": "B",
+    "motion": "LOAD / PAUSE"
+  },
+  {
+    "category": "skeletons",
+    "id": "text-skeleton",
+    "name": "Text Skeleton",
+    "tagline": "待つ間も、整う。",
+    "description": "文章だけに合わせた軽量なプレースホルダー。",
+    "designType": "B",
+    "motion": "LOAD / PAUSE"
+  },
+  {
+    "category": "skeletons",
+    "id": "table-skeleton",
+    "name": "Table Skeleton",
+    "tagline": "待つ間も、整う。",
+    "description": "表の列と行の幅を、読み込み中も維持。",
+    "designType": "B",
+    "motion": "LOAD / PAUSE"
+  },
+  {
+    "category": "skeletons",
+    "id": "profile-skeleton",
+    "name": "Profile Skeleton",
+    "tagline": "待つ間も、整う。",
+    "description": "小さなプロフィール行のためのプレースホルダー。",
+    "designType": "B",
+    "motion": "LOAD / PAUSE"
+  },
+  {
+    "category": "skeletons",
+    "id": "paper-skeleton",
+    "name": "Paper Skeleton",
+    "tagline": "待つ間も、整う。",
+    "description": "明るい画面になじむ、落ち着いたカード。",
+    "designType": "B",
+    "motion": "LOAD / PAUSE"
+  },
+  {
+    "category": "timelines",
+    "id": "chronicle-timeline",
+    "name": "Chronicle",
+    "tagline": "余白で、時間を読む。",
+    "description": "大きな日付と細い境界線で、出来事の重さを作り分ける。",
+    "designType": "A",
+    "motion": "CHAPTER / REVEAL"
+  },
+  {
+    "category": "timelines",
+    "id": "switchyard-timeline",
+    "name": "Switchyard",
+    "tagline": "時間の、路線図。",
+    "description": "レールと駅のような節点をたどり、出来事の詳細を開く。",
+    "designType": "A",
+    "motion": "RAIL / CONNECT"
+  },
+  {
+    "category": "timelines",
+    "id": "document-timeline",
+    "name": "Document Trail",
+    "tagline": "時間を、重ねる。",
+    "description": "薄い資料が一枚ずつ持ち上がり、経緯を読み進められる。",
+    "designType": "A",
+    "motion": "PAPER / LIFT"
+  },
+  {
+    "category": "timelines",
+    "id": "orbital-history",
+    "name": "Orbital History",
+    "tagline": "巡る、出来事。",
+    "description": "軌道の縁に沿って並ぶ日付と、開くと広がる観測リング。",
+    "designType": "A",
+    "motion": "OBSERVE"
+  },
+  {
+    "category": "timelines",
+    "id": "blueprint-history",
+    "name": "Revision Lines",
+    "tagline": "設計の、変遷。",
+    "description": "直角の配線と節点を使って、工程をたどる。",
+    "designType": "A",
+    "motion": "TRACE / REVISE"
+  },
+  {
+    "category": "timelines",
+    "id": "strata-timeline",
+    "name": "Strata",
+    "tagline": "時の、地層。",
+    "description": "断面の重なりが一枚ずつずれ、履歴の層を見せる。",
+    "designType": "A",
+    "motion": "LAYERS / DISPLACE"
+  },
+  {
+    "category": "timelines",
+    "id": "film-history",
+    "name": "Contact History",
+    "tagline": "記録を、一コマずつ。",
+    "description": "フィルムの送り穴と小さなフレームが、時間を区切る。",
+    "designType": "A",
+    "motion": "FRAME / EXPOSE"
+  },
+  {
+    "category": "timelines",
+    "id": "ledger-timeline",
+    "name": "Ledger Notes",
+    "tagline": "行間に、記録。",
+    "description": "細い罫線と欄外の日付。紙の帳簿を読み進める感触。",
+    "designType": "A",
+    "motion": "ANNOTATE"
+  },
+  {
+    "category": "timelines",
+    "id": "pulse-history",
+    "name": "Pulse History",
+    "tagline": "変化を、刻む。",
+    "description": "進行中の出来事にだけ、波形の輪郭が浮かび上がる。",
+    "designType": "A",
+    "motion": "SIGNAL"
+  },
+  {
+    "category": "timelines",
+    "id": "index-history",
+    "name": "Index History",
+    "tagline": "引き出す、記録。",
+    "description": "インデックスのついたカードを開き、奥の説明を読む。",
+    "designType": "A",
+    "motion": "INDEX / DRAWER"
+  },
+  {
+    "category": "timelines",
+    "id": "basic-timeline",
+    "name": "Basic Timeline",
+    "tagline": "経緯を、たどる。",
+    "description": "現在と過去を、明快な一本の線へ。",
+    "designType": "B",
+    "motion": "READ / EXPAND"
+  },
+  {
+    "category": "timelines",
+    "id": "dotted-timeline",
+    "name": "Dotted Timeline",
+    "tagline": "経緯を、たどる。",
+    "description": "点線と、小さな節点だけで見せる履歴。",
+    "designType": "B",
+    "motion": "READ / EXPAND"
+  },
+  {
+    "category": "timelines",
+    "id": "card-timeline",
+    "name": "Card Timeline",
+    "tagline": "経緯を、たどる。",
+    "description": "情報を小さなカードにまとめる。",
+    "designType": "B",
+    "motion": "READ / EXPAND"
+  },
+  {
+    "category": "timelines",
+    "id": "compact-timeline",
+    "name": "Compact Timeline",
+    "tagline": "経緯を、たどる。",
+    "description": "一覧の密度を上げた、短い履歴。",
+    "designType": "B",
+    "motion": "READ / EXPAND"
+  },
+  {
+    "category": "timelines",
+    "id": "paper-timeline",
+    "name": "Paper Timeline",
+    "tagline": "経緯を、たどる。",
+    "description": "明るい画面に置ける、シンプルな履歴。",
+    "designType": "B",
+    "motion": "READ / EXPAND"
+  },
+  {
+    "category": "timelines",
+    "id": "activity-timeline",
+    "name": "Activity Feed",
+    "tagline": "経緯を、たどる。",
+    "description": "時刻を控えめにして、出来事を読みやすく。",
+    "designType": "B",
+    "motion": "READ / EXPAND"
+  },
+  {
+    "category": "wizards",
+    "id": "assembly-wizard",
+    "name": "Assembly Line",
+    "tagline": "一工程ずつ、噛み合う。",
+    "description": "斜めのパネルがつながり、現在の工程が一段浮き上がる。",
+    "designType": "A",
+    "motion": "ASSEMBLE / ADVANCE"
+  },
+  {
+    "category": "wizards",
+    "id": "folio-wizard",
+    "name": "Folio Workflow",
+    "tagline": "次の、ページ。",
+    "description": "見出しタブと折り返しを持つ紙面が、工程と一緒に変わる。",
+    "designType": "A",
+    "motion": "TURN / FOLD"
+  },
+  {
+    "category": "wizards",
+    "id": "expedition-wizard",
+    "name": "Expedition",
+    "tagline": "次の地点へ。",
+    "description": "円形の行程計と、縦に並ぶ目的地をたどる。",
+    "designType": "A",
+    "motion": "ORBIT / ARRIVE"
+  },
+  {
+    "category": "wizards",
+    "id": "shutter-wizard",
+    "name": "Shutter Console",
+    "tagline": "工程を、開く。",
+    "description": "機器のキーが立ち上がり、次のステージの表示窓が開く。",
+    "designType": "A",
+    "motion": "KEY / SHUTTER"
+  },
+  {
+    "category": "wizards",
+    "id": "prism-journey",
+    "name": "Prism Journey",
+    "tagline": "光の道を、進む。",
+    "description": "多面体の節点と分光する接続線が、工程の位置を示す。",
+    "designType": "A",
+    "motion": "FACET / ALIGN"
+  },
+  {
+    "category": "wizards",
+    "id": "blueprint-workflow",
+    "name": "Blueprint Workflow",
+    "tagline": "線がつながる、手順。",
+    "description": "直角の経路を順に結び、作業の流れを可視化する。",
+    "designType": "A",
+    "motion": "TRACE / LINK"
+  },
+  {
+    "category": "wizards",
+    "id": "ribbon-workflow",
+    "name": "Ribbon Workflow",
+    "tagline": "ひと続きの、流れ。",
+    "description": "折り返す一本の帯が、工程をつなぐ。",
+    "designType": "A",
+    "motion": "UNFURL / CONTINUE"
+  },
+  {
+    "category": "wizards",
+    "id": "editorial-chapters",
+    "name": "Editorial Chapters",
+    "tagline": "手順を、読む。",
+    "description": "大きな章番号と小さな目次。文字の階層で迷わず進む。",
+    "designType": "A",
+    "motion": "CHAPTERS"
+  },
+  {
+    "category": "wizards",
+    "id": "ticket-workflow",
+    "name": "Ticket Workflow",
+    "tagline": "次の区間へ。",
+    "description": "ミシン目で分かれる工程と、紙の乗車券のような操作面。",
+    "designType": "A",
+    "motion": "PASS / STAMP"
+  },
+  {
+    "category": "wizards",
+    "id": "stage-workflow",
+    "name": "Stage Light",
+    "tagline": "今の工程を、照らす。",
+    "description": "暗い面に小さなステージが現れ、進行に合わせて光が移る。",
+    "designType": "A",
+    "motion": "SPOT / ADVANCE"
+  },
+  {
+    "category": "wizards",
+    "id": "essential-wizard",
+    "name": "Essential Steps",
+    "tagline": "次へ、迷わず。",
+    "description": "通常の設定画面へ導入しやすい基本形。",
+    "designType": "B",
+    "motion": "NEXT / BACK"
+  },
+  {
+    "category": "wizards",
+    "id": "pill-wizard",
+    "name": "Pill Steps",
+    "tagline": "次へ、迷わず。",
+    "description": "丸い選択面で現在の工程を示す。",
+    "designType": "B",
+    "motion": "NEXT / BACK"
+  },
+  {
+    "category": "wizards",
+    "id": "compact-wizard",
+    "name": "Compact Steps",
+    "tagline": "次へ、迷わず。",
+    "description": "小さな面積でも迷わない、番号中心の手順。",
+    "designType": "B",
+    "motion": "NEXT / BACK"
+  },
+  {
+    "category": "wizards",
+    "id": "vertical-wizard",
+    "name": "Vertical Steps",
+    "tagline": "次へ、迷わず。",
+    "description": "縦の目次で工程を見渡せる。",
+    "designType": "B",
+    "motion": "NEXT / BACK"
+  },
+  {
+    "category": "wizards",
+    "id": "progress-wizard",
+    "name": "Progress Steps",
+    "tagline": "次へ、迷わず。",
+    "description": "工程を割合としても把握できる。",
+    "designType": "B",
+    "motion": "NEXT / BACK"
+  },
+  {
+    "category": "wizards",
+    "id": "paper-wizard",
+    "name": "Paper Steps",
+    "tagline": "次へ、迷わず。",
+    "description": "白いフォームに合わせた、静かな手順UI。",
+    "designType": "B",
+    "motion": "NEXT / BACK"
+  }
+]

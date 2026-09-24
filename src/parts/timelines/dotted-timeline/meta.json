@@ -1,0 +1,53 @@
+{
+  "id": "dotted-timeline",
+  "name": "Dotted Timeline",
+  "category": "timelines",
+  "tagline": "経緯を、たどる。",
+  "description": "点線と、小さな節点だけで見せる履歴。",
+  "designType": "B",
+  "motion": "READ / EXPAND",
+  "order": 1891,
+  "version": "1.0.0",
+  "material": "READ / EXPAND",
+  "accent": "185,205,194",
+  "componentName": "DottedTimeline",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "timelines"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Dotted Timeline",
+    "timelines",
+    "READ / EXPAND",
+    "タイムライン 履歴"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "TimelineItem[]",
+      "id・title・description・date・dateTime・status・hrefなど。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "詳細を開くID。expandedで外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(ids: string[]) => void",
+      "開閉したIDを通知。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "詳細の開閉を無効にする。"
+    ],
+    [
+      "label",
+      "string",
+      "履歴全体の名前。"
+    ]
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "id": "orbital-portrait",
+  "name": "Orbital Portrait",
+  "category": "avatars",
+  "tagline": "軌道が、ひとりを選ぶ。",
+  "description": "人に触れると軌道が傾き、選んだ輪郭へ光が集まる。",
+  "designType": "A",
+  "motion": "ORBIT / ATTRACT",
+  "order": 1816,
+  "version": "1.0.0",
+  "material": "ORBIT / ATTRACT",
+  "accent": "182,210,210",
+  "componentName": "OrbitalPortrait",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "avatars"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Orbital Portrait",
+    "avatars",
+    "ORBIT / ATTRACT",
+    "アバター ユーザーチップ 肖像"
+  ],
+  "related": [],
+  "props": [
+    [
+      "users",
+      "AvatarUser[]",
+      "id・name・任意のsrc、initials、subtitle、status。名前と在席状態は外部の値。"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "選択するユーザーID。valueを渡すと外部制御。"
+    ],
+    [
+      "interactive",
+      "boolean",
+      "falseで表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(id: string) => void",
+      "クリック時の要求値。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ]
+  ]
+}

@@ -1,0 +1,19 @@
+(node:3326) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS All 96 actual native components mount and expose independent state
+PASS Avatar selection, passive display, disabled and controlled decline
+PASS Avatar custom data is literal text and image failures leave the portrait fallback
+PASS Ratings preview without committing; native radio selection, clear and form reset
+PASS Rating dynamic maximum, keyboard, controlled value and read-only protect state
+PASS Color HEX accepts shorthand, rejects invalid values and preserves edit drafts
+PASS Color SV drag, hue keyboard and palette all update one value; reset and readonly
+PASS Skeleton shows real retained content without declaring completion or losing input
+PASS Timeline keeps dates/status fixed and supports keyboard, custom data, controlled expansion
+PASS Wizard validates required fields, preserves text going back and completes without network
+PASS Wizard async guard blocks duplicates, permits rejection and ignores stale results
+PASS Wizard arbitrary step counts, forward navigation policy and retained fields on structural updates
+PASS Six components of the same kind have independent native identifiers and state
+PASS All 96 components fit 320 / 390 / 768 px and 10 ratings/long Japanese labels
+PASS Motion reduction stops decorative loops and retains usable controls
+PASS Unmount cancels animations, observers and pending wizard callbacks
+Signature browser checks: 16 passed (explicit offline source adapter).

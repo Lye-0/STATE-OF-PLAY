@@ -1,0 +1,53 @@
+{
+  "id": "constellation-rating",
+  "name": "Constellation Rating",
+  "category": "ratings",
+  "tagline": "点をつなぐ、評価。",
+  "description": "星の点と細い経路が連なり、五つの段階を一つの星座にする。",
+  "designType": "A",
+  "motion": "CONNECT / LIGHT",
+  "order": 1841,
+  "version": "1.0.0",
+  "material": "CONNECT / LIGHT",
+  "accent": "182,210,210",
+  "componentName": "ConstellationRating",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "ratings"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Constellation Rating",
+    "ratings",
+    "CONNECT / LIGHT",
+    "評価 スター"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "number",
+      "0は未評価、1〜maxは評価値。valueは外部制御。"
+    ],
+    [
+      "max",
+      "number",
+      "整数2〜10。半点は扱わない。"
+    ],
+    [
+      "name / required",
+      "string / boolean",
+      "フォームに接続する。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "無効または表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(value: number) => void",
+      "確定した評価。ホバーは通知しない。"
+    ]
+  ]
+}

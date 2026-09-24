@@ -1,0 +1,32 @@
+{
+  "version": "4.11.0",
+  "base": "4.10.0",
+  "crc": "PASS",
+  "manifestSHA256": "PASS",
+  "patchOverlayExactlyMatchesFull": "PASS",
+  "extractionByteComparison": "PASS",
+  "reExtractedAppTypecheck": {
+    "command": "tsc -p tsconfig.json --noEmit",
+    "exitCode": 0
+  },
+  "reExtractedTargetTests": {
+    "command": "node --experimental-strip-types --test tests/signature.test.ts",
+    "passed": 16,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "parts": 700,
+  "categories": 31,
+  "newParts": 96,
+  "oldPartFilesUnchanged": 6040,
+  "removedPaths": [],
+  "scope": "再展開した元ソースは、最終アーカイブと同じ。検査後に追記した検証文書/ログ/マニフェストはビルド対象の元ソースを変更しない。最終ZIPも改めてCRC/SHA-256/差分完全一致を照合する。ZIP自身のハッシュをZIP内部へ再帰的に格納しない。",
+  "notVerified": [
+    "Real Vite build/HMR/HTTP",
+    "Real React runtime/hydration and StrictMode for the new components",
+    "Full typecheck with pinned React/Node/Vite type packages",
+    "npm audit",
+    "Windows Explorer/Safari/iOS",
+    "GitHub Actions production run"
+  ]
+}

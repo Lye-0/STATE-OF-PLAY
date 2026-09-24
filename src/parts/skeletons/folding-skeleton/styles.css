@@ -1,0 +1,6 @@
+/* Folding Placeholder — 折られた紙面がゆっくり傾き、読み込みの時間を形にする。 */
+@import "../../../shared/signature/skeleton.css";
+.sop-sig.sop-folding-skeleton{--sg-bg:#dad4c8;--sg-ink:#495452;--sg-muted:#6d7770;--sg-a:#939e8d;--sg-line:#9daba0;color-scheme:light}.sop-sig.sop-folding-skeleton > [data-sg-owned] .sg-skeleton-frame{border-radius:1px;background:#e4ddce;--sk-tone:#c7cbbc;box-shadow:3px 4px 0 #b4bbae;perspective:500px;overflow:visible}.sop-sig.sop-folding-skeleton > [data-sg-owned] .sg-sk-hero{background:linear-gradient(135deg,#c5ccc1,#d8dace 49%,#b2bbae 50%,#c2c9b9);height:93px;border-radius:1px;animation:sg-sk-fold 3.5s ease-in-out infinite;animation-play-state:var(--sg-play);transform-origin:0 50%;box-shadow:4px 5px 6px #68726633}.sop-sig.sop-folding-skeleton > [data-sg-owned] .sg-sk-hero>i{display:none}.sop-sig.sop-folding-skeleton > [data-sg-owned] .sg-sk-beam{display:none}.sop-sig.sop-folding-skeleton > [data-sg-owned] .sg-sk-lines>i{border-radius:0}.sop-sig.sop-folding-skeleton > [data-sg-owned] .sg-sk-film{inset:10px auto 10px 13px;width:1px;background:#9ba79955}
+
+.sop-sig.sop-folding-skeleton > [data-sg-owned] .sg-sk-hero{transform-origin:center;animation-name:sg-folding-sheet}
+@keyframes sg-folding-sheet{0%,100%{transform:scale(.96) rotateX(13deg) rotateY(-7deg)}50%{transform:scale(.96) rotateX(-6deg) rotateY(7deg)}}

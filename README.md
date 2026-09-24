@@ -1,10 +1,14 @@
 # STATE OF PLAY — UI & Motion Library
 
-**v4.10.10 / 25カテゴリ・603パーツ**。触って選び、ソースと意図を自分の開発へ持ち出すUIパーツ集です。
+**v4.11.0 / 31カテゴリ・699パーツ**。触って選び、ソースと意図を自分の開発へ持ち出すUIパーツ集です。
 表現と素材感を重視するAタイプと、落ち着いた実用的なBタイプを収録しています。
 
 > ベースとなるv4.0.0は、未保存だった追加分をv3.8.0から再実装した版です。以前の未保存ソースと同一ではありません。
 > 既存280パーツの本体は維持しています。経緯と照合は [RECOVERY.md](docs/RECOVERY.md) を参照してください。
+
+## v4.11.0の追加 — SIGNATURE
+
+アバター、評価、カラーピッカー、スケルトン、タイムライン、ステップ／ウィザードを各16種類、計96種類追加しました。6カテゴリともA10・B6で、値・読み込み状態・履歴・工程は利用先のデータへ接続できます。ギャラリーではカテゴリ別の遅延読み込みと既存の起動表示を維持し、新作のコード・使い方・AI用プロンプト・パーツZIPを提供します。以前に重複のため削除したPaper Loaderは戻していないので、全体は699種類です。[API](docs/SIGNATURE.md)と[このリポジトリへの統合結果](docs/SIGNATURE-INTEGRATION-VERIFICATION.md)を参照してください。
 
 ## v4.10.10の修正 — 日時選択の独自UI
 
@@ -69,7 +73,7 @@ Kinetic系12種類で、閉じた候補一覧を退出演出用に再表示し�
 
 ## v4.8.1の修正 — ローダー
 
-Nixie LoaderとCeramic Loaderの2番目の正方形が周回の継ぎ目で跳ぶ問題を修正しました。見た目と動きがほぼ同じだったPaper Loaderは削除し、Ceramic Loaderを残しました。現在はローダー39種、全603パーツです。詳細のコード・使い方・AI用プロンプト・ZIPも更新しています。[変更と検証](docs/LOADER-ORBIT-FIX.md)を参照してください。
+Nixie LoaderとCeramic Loaderの2番目の正方形が周回の継ぎ目で跳ぶ問題を修正しました。見た目と動きがほぼ同じだったPaper Loaderは削除し、Ceramic Loaderを残しました。この時点ではローダー39種、全603パーツです。詳細のコード・使い方・AI用プロンプト・ZIPも更新しています。[変更と検証](docs/LOADER-ORBIT-FIX.md)を参照してください。
 
 ## v4.8.0の改修 — CONTINUUM（履歴）
 
@@ -216,5 +220,5 @@ GitHubへのコミット・pushは、このZIPの取得や展開では行われ�
 
 ## ドキュメント
 
-[全603パーツ](docs/COLLECTION.md) / [追加13カテゴリのAPI](docs/FOUNDATIONS.md) / [パーツ追加](docs/ADDING-PARTS.md) /
+[全699パーツ](docs/COLLECTION.md) / [追加13カテゴリのAPI](docs/FOUNDATIONS.md) / [パーツ追加](docs/ADDING-PARTS.md) /
 [既存プロジェクトへの組み込み](docs/INTEGRATION.md) / [移行](docs/MIGRATION.md) / [ライセンス](THIRD-PARTY-NOTICES.md)

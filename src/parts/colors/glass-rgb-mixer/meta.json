@@ -1,0 +1,53 @@
+{
+  "id": "glass-rgb-mixer",
+  "name": "Glass Mixer",
+  "category": "colors",
+  "tagline": "三つの光を、混ぜる。",
+  "description": "赤・緑・青の三本の光路から、透明な色のレンズを作る。",
+  "designType": "A",
+  "motion": "ADDITIVE LIGHT",
+  "order": 1854,
+  "version": "1.0.0",
+  "material": "ADDITIVE LIGHT",
+  "accent": "182,210,210",
+  "componentName": "GlassRgbMixer",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "colors"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Glass Mixer",
+    "colors",
+    "ADDITIVE LIGHT",
+    "色 カラーピッカー"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "string",
+      "#RGBまたは#RRGGBB。外部へは#RRGGBBの大文字。"
+    ],
+    [
+      "palette",
+      "string[]",
+      "色見本。"
+    ],
+    [
+      "name",
+      "string",
+      "フォームで送信する値の名前。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "入力操作を停止。"
+    ],
+    [
+      "onValueChange",
+      "(hex: string) => void",
+      "有効な色のみ通知。透明度はこの版では扱わない。"
+    ]
+  ]
+}

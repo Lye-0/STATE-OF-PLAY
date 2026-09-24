@@ -1,0 +1,53 @@
+{
+  "id": "blueprint-history",
+  "name": "Revision Lines",
+  "category": "timelines",
+  "tagline": "設計の、変遷。",
+  "description": "直角の配線と節点を使って、工程をたどる。",
+  "designType": "A",
+  "motion": "TRACE / REVISE",
+  "order": 1884,
+  "version": "1.0.0",
+  "material": "TRACE / REVISE",
+  "accent": "182,210,210",
+  "componentName": "BlueprintHistory",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "timelines"
+  },
+  "tags": [
+    "SIGNATURE",
+    "Revision Lines",
+    "timelines",
+    "TRACE / REVISE",
+    "タイムライン 履歴"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "TimelineItem[]",
+      "id・title・description・date・dateTime・status・hrefなど。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "詳細を開くID。expandedで外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(ids: string[]) => void",
+      "開閉したIDを通知。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "詳細の開閉を無効にする。"
+    ],
+    [
+      "label",
+      "string",
+      "履歴全体の名前。"
+    ]
+  ]
+}

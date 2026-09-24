@@ -1,0 +1,29 @@
+@import './base.css';
+.sop-sig .sg-color-panel{position:relative;border:1px solid var(--sg-line);background:var(--sg-bg);border-radius:var(--sg-radius);padding:20px;overflow:hidden;isolation:isolate}
+.sop-sig .sg-color-heading{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px;position:relative;z-index:2}
+.sop-sig .sg-color-swatch{width:29px;height:29px;border-radius:50%;background:var(--sg-color);border:1px solid #fff6;box-shadow:inset 0 1px 3px #fffa,0 3px 12px #0005;position:relative;display:block;transition:background .15s}
+.sop-sig .sg-color-swatch i{position:absolute;inset:3px;border-radius:inherit;border-top:1px solid #fff9}
+.sop-sig .sg-color-workspace{position:relative;min-height:140px;margin-bottom:16px}
+.sop-sig .sg-color-sv{height:148px;position:relative;background:linear-gradient(to top,#000,transparent),linear-gradient(to right,#fff,transparent),hsl(var(--sg-hue,220) 100% 50%);border-radius:9px;border:1px solid #ffffff38;touch-action:none;cursor:crosshair;box-shadow:inset 0 1px 3px #0005}
+.sop-sig .sg-color-sv-handle{position:absolute;left:var(--sg-s,50%);top:var(--sg-v,30%);width:14px;height:14px;transform:translate(-50%,-50%);border:2px solid #fff;border-radius:50%;box-shadow:0 0 0 1px #0008,0 3px 8px #0005;pointer-events:none}
+.sop-sig .sg-color-sv-grid{position:absolute;inset:0;background-image:linear-gradient(#fff1 1px,transparent 1px),linear-gradient(90deg,#fff1 1px,transparent 1px);background-size:25% 25%;pointer-events:none;border-radius:inherit;opacity:0}
+.sop-sig .sg-hue-disc{position:absolute;inset:0;border-radius:50%;background:conic-gradient(red,#ff0,#0f0,#0ff,#00f,#f0f,red);display:none;touch-action:none;cursor:crosshair}
+.sop-sig .sg-hue-disc i{position:absolute;inset:15px;border-radius:50%;background:var(--sg-bg)}
+.sop-sig .sg-hue-disc b{position:absolute;inset:3px;transform:rotate(calc(var(--sg-hue)*1deg));border-radius:50%;pointer-events:none}.sop-sig .sg-hue-disc b:after{content:'';position:absolute;width:14px;height:14px;border:2px solid #fff;box-shadow:0 0 0 1px #0008;border-radius:50%;left:calc(50% - 7px);top:0}
+.sop-sig .sg-color-spectrum{display:none}
+.sop-sig .sg-color-axis,.sop-sig .sg-rgb-channel{display:grid;grid-template-columns:38px 1fr 29px;gap:9px;align-items:center;font:8px Consolas;color:var(--sg-muted);margin:10px 0;min-width:0}
+.sop-sig .sg-color-axis input,.sop-sig .sg-rgb-channel input{width:100%;min-width:0;margin:0;appearance:none;-webkit-appearance:none;height:7px;border-radius:7px;background:var(--sg-soft);touch-action:pan-y}
+.sop-sig .sg-color-axis input[data-channel=h]{background:linear-gradient(90deg,red,#ff0,#0f0,#0ff,#00f,#f0f,red)}
+.sop-sig .sg-color-axis input[data-channel=s]{background:linear-gradient(90deg,#aaa,hsl(var(--sg-hue) 100% 50%))}.sop-sig .sg-color-axis input[data-channel=v]{background:linear-gradient(90deg,#080a0c,var(--sg-color))}
+.sop-sig :is(.sg-color-axis,.sg-rgb-channel) input::-webkit-slider-thumb{appearance:none;width:15px;height:15px;border:2px solid var(--sg-bg);border-radius:50%;box-shadow:0 0 0 1px var(--sg-line);background:var(--sg-ink);cursor:ew-resize}
+.sop-sig :is(.sg-color-axis,.sg-rgb-channel) input::-moz-range-thumb{width:12px;height:12px;border:2px solid var(--sg-bg);border-radius:50%;background:var(--sg-ink);cursor:ew-resize}
+.sop-sig .sg-color-rgb{display:none}
+.sop-sig .sg-color-entry{display:flex;align-items:center;gap:9px;margin-top:16px;padding:10px 0 0;border-top:1px solid var(--sg-line);min-width:0}
+.sop-sig .sg-color-entry>label{font:8px Consolas;letter-spacing:1px;color:var(--sg-muted)}
+.sop-sig .sg-color-entry input[data-hex]{border:0;background:transparent;border-radius:3px;font:13px Consolas;min-width:0;width:100%;padding:4px;color:var(--sg-ink)}
+.sop-sig .sg-color-entry input[data-native]{width:28px;min-width:28px;height:28px;border:0;padding:0;background:none;cursor:pointer}
+.sop-sig .sg-color-palette{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;min-width:0}
+.sop-sig .sg-color-palette button{width:27px;height:27px;border-radius:50%;background:var(--swatch);border:1px solid #fff4;padding:0;position:relative;transition:transform .25s}
+.sop-sig .sg-color-palette button[aria-pressed=true]{outline:1px solid var(--sg-ink);outline-offset:3px;transform:translateY(-2px)}
+.sop-sig .sg-color-palette button:hover{transform:translateY(-4px)}
+.sop-sig .sg-color-palette button span{position:absolute;inset:3px;border-radius:inherit;border-top:1px solid #fffa;pointer-events:none}

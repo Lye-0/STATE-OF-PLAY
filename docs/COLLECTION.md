@@ -1,6 +1,6 @@
-# パーツ一覧 — v4.8.1
+# パーツ一覧 — v4.11.0
 
-603パーツ / 25カテゴリ。v4.8.1では重複していたPaper Loaderを削除しました。CONTINUUMの改修・追加対象58種、MOTION STUDIESの新しい16ローダーは維持しています。
+699パーツ / 31カテゴリ。v4.8.1で重複していたPaper Loaderを削除した状態を維持し、v4.11.0でSIGNATUREの6カテゴリ・96パーツを追加しました。個別の新作一覧は [SIGNATURE-COLLECTION.md](SIGNATURE-COLLECTION.md) を参照してください。
 
 | カテゴリ | 数 | A | B |
 |---|---:|---:|---:|
@@ -29,6 +29,12 @@
 | breadcrumbs | 16 | 10 | 6 |
 | badges | 24 | 16 | 8 |
 | numbers | 20 | 13 | 7 |
+| avatars | 16 | 10 | 6 |
+| ratings | 16 | 10 | 6 |
+| colors | 16 | 10 | 6 |
+| skeletons | 16 | 10 | 6 |
+| timelines | 16 | 10 | 6 |
+| wizards | 16 | 10 | 6 |
 
 ## toggles
 
