@@ -454,7 +454,7 @@
 
 /* Workbench: demos stay scoped and retain space for actual content. */
 .workbench-card .object-stage{height:auto;min-height:255px;padding:30px 24px;overflow:visible;align-items:center}
-.workbench-card .stage-mount{width:100%;min-width:0;max-width:470px}
+.workbench-card .stage-mount{width:100%;min-width:0;max-width:470px;flex-direction:column;align-items:stretch}
 .workbench-card .card-bottom{padding-top:0}
 .workbench-card.workbench-tables .stage-mount{max-width:none}
 .workbench-card.workbench-tables .object-stage{padding-inline:20px}

@@ -6,7 +6,7 @@ async function run(name:string,fn:()=>Promise<void>){await fn();tests.push(name)
 try{
  let url='';if(!offline){const{createServer}=await import('vite'),s=await createServer({root:ROOT,server:{host:'127.0.0.1',port:0}});await s.listen();url=requireLocalServerUrl(s,'Workbench');close=()=>s.close();}
  browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});const p=await browser.newPage({viewport:{width:1440,height:1040}});p.setDefaultTimeout(20000);p.on('pageerror',e=>errors.push(e.message));
- if(offline){const f=offlineFiles(data);console.log('Compiled source fixture');await p.setContent(f.get('/index.html')!.replace(/<script[^>]*>[\s\S]*?<\/script>/g,'').replace(/<link[^>]*>/g,''));await p.addStyleTag({content:f.get('/test-styles.css')!});for(const vendor of['prism','jszip'])await p.addScriptTag({content:fs.readFileSync(path.join(ROOT,'public/vendor/'+vendor+'.js'),'utf8')});await p.addScriptTag({content:f.get('/test-app.js')!});}else await p.goto(url,{waitUntil:'domcontentloaded',timeout:120000});await galleryReady(p);
+ if(offline){const f=offlineFiles(data);console.log('Compiled source fixture');await p.setContent(f.get('/index.html')!.replace(/<script[^>]*>[\s\S]*?<\/script>/g,'').replace(/<link[^>]*>/g,''));await p.addStyleTag({content:f.get('/test-styles.css')!});for(const vendor of['prism','jszip'])await p.addScriptTag({content:fs.readFileSync(path.join(ROOT,'public/vendor/'+vendor+'.js'),'utf8')});await p.addScriptTag({content:f.get('/test-app.js')!});}else{await p.goto(url,{waitUntil:'domcontentloaded',timeout:120000});await p.waitForFunction(()=>document.documentElement.classList.contains('site-ready'),undefined,{timeout:120000});}await galleryReady(p);
  const d=p.locator('#part-details');
  const open=async(id:string)=>{const part=data.parts.find(x=>x.id===id)!;await selectCategory(p,part.category);await p.locator(`[data-open="${id}"]`).click();await galleryReady(p);return part;};
  const shut=async()=>{await d.locator('.close-detail').evaluate(e=>(e as HTMLButtonElement).click());await d.waitFor({state:'hidden'});};
@@ -22,6 +22,41 @@ try{
    assert.equal(await p.locator('#part-grid [data-part]').count(),total-expressive);
    await p.locator('[data-design-filter=all]').click();await galleryReady(p);
   }
+ });
+ await run('All 16 context menu cards keep their width and show one result after an action',async()=>{
+  await selectCategory(p,'contextmenus');
+  for(const part of data.parts.filter(x=>x.category==='contextmenus')){
+   const card=p.locator(`[data-part="${part.id}"]`),target=card.locator('.wb-context-target');
+   await card.scrollIntoViewIfNeeded();
+   const before=(await target.boundingBox())!;
+   await card.locator('.wb-context-open').click();
+   assert.ok(await card.locator('.wb-context-panel').isVisible(),part.id);
+   const action=card.locator('.wb-context-panel button[role="menuitem"]:not([aria-haspopup]):not([aria-disabled="true"])').first();
+   const label=(await action.locator('strong').textContent())?.trim();assert.ok(label,part.id);
+   await action.evaluate(e=>(e as HTMLButtonElement).click());
+   assert.ok((await card.locator('.wb-context-result').innerText()).includes(`${label} を選択しました。`),part.id);
+   assert.equal(await card.locator('.wb-demo-feedback').count(),0,part.id);
+   const after=(await target.boundingBox())!;
+   assert.ok(Math.abs(after.width-before.width)<1,`${part.id}: ${before.width} → ${after.width}`);
+   if(part.id==='hinge-context'||part.id==='plain-context')await card.screenshot({path:path.join(out,`context-${part.id}-after.png`)});
+  }
+  await open('hinge-context');
+  const detailTarget=d.locator('.wb-context-target'),before=(await detailTarget.boundingBox())!;
+  await d.locator('.wb-context-open').click();await d.locator('[data-menu-action="open"]').click();
+  assert.match(await d.locator('.wb-context-result').innerText(),/開く を選択しました/);
+  assert.equal(await d.locator('.wb-demo-feedback').count(),0);
+  assert.ok(Math.abs((await detailTarget.boundingBox())!.width-before.width)<1);
+  await d.locator('.live-preview').screenshot({path:path.join(out,'context-detail-after.png')});
+  await shut();
+ });
+ await run('Other workbench demo feedback appears below the card without narrowing it',async()=>{
+  await selectCategory(p,'navigation');
+  const card=p.locator('[data-part="paper-index-nav"]'),root=card.locator('.sop-wb');
+  await card.scrollIntoViewIfNeeded();
+  const before=(await root.boundingBox())!;
+  await card.locator('.wb-nav-desktop [data-nav="projects"]').click();
+  assert.match(await card.locator('.wb-demo-feedback').innerText(),/プロジェクト/);
+  assert.ok(Math.abs((await root.boundingBox())!.width-before.width)<1);
  });
  await run('88 parts and eight exports have entry, internal dependencies, source-backed prompt and integration manifest',async()=>{let count=0;for(const part of data.parts.filter(p=>p.workbench))for(const l of['portable','original']as const)for(const f of FORMATS){const delivery=getDelivery(part,f,l),files=packageContents(part,f,l);assert.ok(delivery.files.some(x=>x.name===delivery.entry));assert.ok(delivery.runtimeFiles.every(x=>!x.name.includes('src/app/')));assert.equal(files.find(x=>x.name==='PROMPT.md')?.code,buildPrompt(part,f,l));assert.ok(files.some(x=>x.name==='INTEGRATION.json'));assert.ok(files.some(x=>/workbench\/(core|base)/.test(x.name)));count++;}assert.equal(count,704);});
  await run('Five inspectors show byte-matching source text and prompts in all formats and layouts',async()=>{let count=0;for(const id of['parallax-search','aperture-command','hinge-context','arc-dock','ledger-table']){const part=await open(id);for(const layout of['portable','original']as const){await d.locator('#export-layout').selectOption(layout);for(const format of FORMATS){await d.locator(`[data-format="${format}"]`).evaluate(e=>(e as HTMLButtonElement).click());for(const file of getDelivery(part,format,layout).files){await d.locator(`[data-file="${file.name}"]`).evaluate(e=>(e as HTMLButtonElement).click());assert.deepEqual(await d.locator('.editor .line-code').allTextContents(),file.code.split('\n').map(x=>x||' '),file.name);count++;}await d.locator('[data-detail-tab=prompt]').evaluate(e=>(e as HTMLButtonElement).click());assert.equal(await d.locator('#prompt-text').inputValue(),buildPrompt(part,format,layout));await d.locator('[data-detail-tab=code]').evaluate(e=>(e as HTMLButtonElement).click());}}await shut();}console.log('Displayed source files:',count);});
