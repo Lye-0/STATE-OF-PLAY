@@ -1,0 +1,58 @@
+{
+  "id": "ink-context",
+  "name": "Ink Menu",
+  "category": "contextmenus",
+  "description": "太い活字と細い下線。選んだ行を、インクの一本線が追いかける。",
+  "designType": "A",
+  "tagline": "手元の操作を、美しく。",
+  "motion": "NAVIGATOR",
+  "order": 1952,
+  "version": "1.0.0",
+  "material": "CONTEXT / REVEAL",
+  "accent": "123,120,96",
+  "componentName": "InkContext",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "contextmenus"
+  },
+  "tags": [
+    "NAVIGATOR",
+    "Ink Menu",
+    "contextmenus",
+    "右クリックメニュー",
+    "workbench"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "ContextAction[]",
+      "操作、子階層、区切り、チェック、無効状態を指定。"
+    ],
+    [
+      "onAction",
+      "(item, signal) => void | false | Promise",
+      "実行先の接続。勝手な保存や削除はしません。"
+    ],
+    [
+      "checked / onCheckedChange",
+      "Record<string, boolean> / callback",
+      "メニュー内チェック項目の状態を制御。"
+    ],
+    [
+      "targetLabel / targetDescription",
+      "string",
+      "操作対象の見出しと説明。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "コンポーネントの操作を無効にする。"
+    ],
+    [
+      "targetElement",
+      "HTMLElement | null",
+      "既存のカード・行などに接続します。中身は変更せず、その要素だけで右クリックを扱います。"
+    ]
+  ]
+}

@@ -1,0 +1,7 @@
+@import "../../../shared/workbench/base.css";
+/* Soft Search Bar: 日常の検索に合わせやすい、読みやすい入力とフィルター。 */
+.sop-wb.sop-soft-searchbar {--wb-bg:#f3f6f3;--wb-surface:#e3e9e4;--wb-ink:#2e413b;--wb-muted:#5e756b;--wb-accent:#537967;--wb-line:#8aa09366;color-scheme:light;}
+.sop-wb.sop-soft-searchbar .wb-search-shell {border:0;background:#e9edf0;box-shadow:none}
+.sop-wb.sop-soft-searchbar .wb-search-field {background:#fff;border-color:#c6d0d8}
+.sop-wb.sop-soft-searchbar .wb-search-submit {background:#243b4e;color:#fff}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-soft-searchbar *,.sop-wb.sop-soft-searchbar *::before,.sop-wb.sop-soft-searchbar *::after{animation:none!important;transition:none!important;}}

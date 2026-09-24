@@ -1,0 +1,11 @@
+@import "../../../shared/workbench/base.css";
+/* Compact Command: 検索、グループ、ショートカットを静かに整理したコマンド一覧。 */
+.sop-wb.sop-compact-command {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+.sop-wb.sop-compact-command .wb-command-launcher {padding:20px;min-height:0}
+.sop-wb.sop-compact-command .wb-command-symbol {display:none}
+.sop-wb.sop-compact-command .wb-command-dialog {width:min(470px,calc(100vw - 24px))}
+.sop-wb.sop-compact-command .wb-command-option {min-height:40px;padding-block:7px}
+.sop-wb.sop-compact-command .wb-command-copy small {display:none}
+.sop-wb.sop-compact-command .wb-command-icon {border:0;width:20px}
+.sop-wb.sop-compact-command .wb-command-entry {padding-bottom:14px}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-compact-command *,.sop-wb.sop-compact-command *::before,.sop-wb.sop-compact-command *::after{animation:none!important;transition:none!important;}}

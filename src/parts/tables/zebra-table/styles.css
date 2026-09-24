@@ -1,0 +1,9 @@
+@import "../../../shared/workbench/base.css";
+/* Zebra Table: ソート、選択、固定列を読みやすくまとめた汎用のデータテーブル。 */
+.sop-wb.sop-zebra-table {--wb-bg:#f3f6f3;--wb-surface:#e3e9e4;--wb-ink:#2e413b;--wb-muted:#5e756b;--wb-accent:#537967;--wb-line:#8aa09366;color-scheme:light;}
+.sop-wb.sop-zebra-table .wb-data-frame {background:#f4f6f5;box-shadow:none;border-radius:8px}
+.sop-wb.sop-zebra-table .wb-data-frame td {background:#fafcfa}
+.sop-wb.sop-zebra-table .wb-data-frame tr:nth-child(even) td {background:#ecf1ed}
+.sop-wb.sop-zebra-table .wb-data-frame th {background:#e3e9e4}
+.sop-wb.sop-zebra-table .wb-data-frame tr[data-selected=true] td {background:#d4e2d8}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-zebra-table *,.sop-wb.sop-zebra-table *::before,.sop-wb.sop-zebra-table *::after{animation:none!important;transition:none!important;}}

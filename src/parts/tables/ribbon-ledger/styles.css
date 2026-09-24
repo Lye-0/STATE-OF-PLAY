@@ -1,0 +1,14 @@
+@import "../../../shared/workbench/base.css";
+/* Ribbon Ledger: 列のタブと選択行の折り返しを持つ、紙のリボンを使った一覧。 */
+.sop-wb.sop-ribbon-ledger {--wb-bg:#e9dfca;--wb-surface:#dfd2b8;--wb-ink:#3c3d31;--wb-muted:#6e7260;--wb-accent:#7b7860;--wb-line:#8e8a6d66;color-scheme:light;}
+.sop-wb.sop-ribbon-ledger .wb-data-frame {background:#ede3cf;border:0;border-radius:5px 25px 5px 5px;box-shadow:6px 5px #96846822,0 18px 25px #0003;}
+.sop-wb.sop-ribbon-ledger .wb-data-heading h3 {font:27px Georgia,serif;color:#5e5544;}
+.sop-wb.sop-ribbon-ledger .wb-data-frame th {background:#c5b99f;color:#474938;border-right:1px solid #b0a180;}
+.sop-wb.sop-ribbon-ledger .wb-data-frame th[aria-sort] {background:#829c91;color:#f2efdc;}
+.sop-wb.sop-ribbon-ledger .wb-data-frame th[aria-sort]::after {height:3px;background:#556f63;box-shadow:0 2px #51625944;}
+.sop-wb.sop-ribbon-ledger .wb-data-frame td {background:#ede3cf;border-bottom:1px solid #b6a58355;}
+.sop-wb.sop-ribbon-ledger .wb-data-frame tbody tr[data-selected=true] td {background:#d9dfcc;}
+.sop-wb.sop-ribbon-ledger .wb-data-frame tbody tr[data-selected=true] td:first-child {box-shadow:inset 6px 0 #6a887a;}
+.sop-wb.sop-ribbon-ledger .wb-table-search {border-radius:0;background:none;border-width:0 0 1px;}
+.sop-wb.sop-ribbon-ledger .wb-cell-badge {border-radius:1px;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-ribbon-ledger *,.sop-wb.sop-ribbon-ledger *::before,.sop-wb.sop-ribbon-ledger *::after{animation:none!important;transition:none!important;}}

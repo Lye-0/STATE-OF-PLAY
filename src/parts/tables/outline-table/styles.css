@@ -1,0 +1,9 @@
+@import "../../../shared/workbench/base.css";
+/* Outline Table: ソート、選択、固定列を読みやすくまとめた汎用のデータテーブル。 */
+.sop-wb.sop-outline-table {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+.sop-wb.sop-outline-table .wb-data-frame {border-radius:2px;box-shadow:none}
+.sop-wb.sop-outline-table .wb-data-frame th {background:transparent}
+.sop-wb.sop-outline-table .wb-data-frame td {border-right:1px solid var(--wb-line)}
+.sop-wb.sop-outline-table .wb-data-heading h3 {font:22px Arial,sans-serif}
+.sop-wb.sop-outline-table .wb-table-search, .sop-wb.sop-outline-table .wb-data-footer nav button {border-radius:2px}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-outline-table *,.sop-wb.sop-outline-table *::before,.sop-wb.sop-outline-table *::after{animation:none!important;transition:none!important;}}

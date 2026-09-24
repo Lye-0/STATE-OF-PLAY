@@ -1,0 +1,8 @@
+@import "../../../shared/workbench/base.css";
+/* Filter Search: 日常の検索に合わせやすい、読みやすい入力とフィルター。 */
+.sop-wb.sop-filter-searchbar {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+.sop-wb.sop-filter-searchbar .wb-search-shell {border-radius:10px}
+.sop-wb.sop-filter-searchbar .wb-search-field {border-radius:6px}
+.sop-wb.sop-filter-searchbar .wb-search-filters {border-top:1px solid var(--wb-line);padding-top:12px}
+.sop-wb.sop-filter-searchbar .wb-search-filters button {border-radius:5px}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-filter-searchbar *,.sop-wb.sop-filter-searchbar *::before,.sop-wb.sop-filter-searchbar *::after{animation:none!important;transition:none!important;}}

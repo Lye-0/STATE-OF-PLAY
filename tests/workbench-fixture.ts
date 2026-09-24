@@ -1,0 +1,19 @@
+/** Explicit source fixture, without a Vite substitute. Can run through Vite or as an offline document. */
+import fs from 'node:fs';import path from 'node:path';import {ROOT} from '../scripts/catalog.ts';import {testBundle} from './offline-fixture.ts';
+export function workbenchFixture(){
+ const read=(n:string)=>fs.readFileSync(path.join(ROOT,n),'utf8');
+ const records=(JSON.parse(read('src/catalog/registry.json')) as string[]).filter(b=>/^src\/parts\/(searchbars|commands|contextmenus|navigation|tables)\//.test(b)).map(base=>({...JSON.parse(read(base+'/meta.json')),base,markup:read(base+'/markup.html')}));
+ const seen=new Set<string>();function css(file:string):string{if(seen.has(file))return '';seen.add(file);return read(file).replace(/@import\s+["']([^"']+)["']\s*;/g,(_,ref:string)=>css(path.posix.normalize(path.posix.join(path.posix.dirname(file),ref))));}
+ const styles=records.map(p=>css(p.base+'/styles.css')).join('\n');
+ const source=records.map((p,i)=>`import {init as init${i}} from '/${p.base}/vanilla/init.ts';`).join('\n')+`
+ const records=${JSON.stringify(records)},mounts=[${records.map((_,i)=>'init'+i).join(',')}];
+ window.records=records;let controllers=[];document.querySelector('form').addEventListener('submit',event=>event.preventDefault());
+ window.unmount=()=>{controllers.forEach(c=>c.destroy());controllers=[];document.querySelector('#host').replaceChildren();};
+ window.mount=(ids,options={})=>{window.unmount();for(const id of ids){const i=records.findIndex(p=>p.id===id),p=records[i];if(!p)throw Error('Unknown '+id);const section=document.createElement('section');section.dataset.sample=id;section.innerHTML='<header class="specimen-label"><b>'+p.name+'</b><small>'+p.category.toUpperCase()+' / '+p.designType+'</small></header>'+p.markup;document.getElementById('host').append(section);controllers.push(mounts[i](section.children[1],options));}window.apis=controllers;window.api=controllers[0];};
+ window.initAt=(id,node,options={})=>{const i=records.findIndex(p=>p.id===id),c=mounts[i](node,options);controllers.push(c);return c;};
+ window.mount(['parallax-search']);`;
+ const frame=`*{box-sizing:border-box}html{color-scheme:dark}body{margin:0;background:#121619;color:#e7ebe5;font:13px Arial,sans-serif;padding:24px}#host{width:min(100%,620px);margin:24px auto;min-height:200px}#host>section{min-width:0;margin-bottom:32px}.specimen-label{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:22px}.specimen-label b{font:23px Georgia,serif}.specimen-label small{font:8px Consolas,monospace;letter-spacing:1px;color:#92a8a5}#outside,#reset{font:12px Arial;background:#20292c;color:#e0e5db;border:1px solid #566563;border-radius:5px;padding:9px 15px}body[data-capture=true] #reset,body[data-capture=true]>#outside{display:none}body[data-capture=true] #host{margin:0 auto;min-height:0}body[data-grid=true] #host{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}body[data-capture=true] #host>section{margin-bottom:0}`;
+ const shell='<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>WORKBENCH / source fixture</title><link rel="stylesheet" href="./styles.css"></head><body><form><main id="host"></main><button id="reset" type="reset">Reset</button></form><button id="outside" type="button">Outside</button><section id="destination" hidden></section></body></html>';
+ const out=path.join(ROOT,'.test-output/workbench');fs.mkdirSync(out,{recursive:true});const entry='.test-output/workbench/fixture.ts';fs.writeFileSync(path.join(ROOT,entry),source);fs.writeFileSync(out+'/styles.css',styles+'\n'+frame);fs.writeFileSync(out+'/test.html',shell.replace('</body>','<script type="module" src="./fixture.ts"></script></body>'));
+ return{out,records,source,styles:styles+'\n'+frame,shell,bundle:()=>testBundle(entry,new Map([[entry,source]]))};
+}

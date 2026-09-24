@@ -1,0 +1,15 @@
+@import "../../../shared/workbench/base.css";
+/* Ribbon Header: 細い帯が選択した行き先の下を走り、端で柔らかく折り返す。 */
+.sop-wb.sop-ribbon-header {--wb-bg:#e9dfca;--wb-surface:#dfd2b8;--wb-ink:#3c3d31;--wb-muted:#6e7260;--wb-accent:#7b7860;--wb-line:#8e8a6d66;color-scheme:light;}
+.sop-wb.sop-ribbon-header .wb-navigation-frame {background:#eee3d1;border:0;border-radius:4px;box-shadow:0 5px 0 #b3a48a,0 17px 28px #0003;}
+.sop-wb.sop-ribbon-header .wb-nav-brand {padding:23px 22px 16px;}
+.sop-wb.sop-ribbon-header .wb-nav-brand strong {font:23px Georgia,serif;}
+.sop-wb.sop-ribbon-header .wb-brand-glyph {display:none;}
+.sop-wb.sop-ribbon-header .wb-nav-desktop {padding-bottom:20px;}
+.sop-wb.sop-ribbon-header .wb-nav-link, .sop-wb.sop-ribbon-header .wb-nav-disclosure {border-radius:0;}
+.sop-wb.sop-ribbon-header .wb-nav-link-icon {display:none;}
+.sop-wb.sop-ribbon-header .wb-nav-marker {height:3px!important;border:0;border-radius:0;background:#a88163;margin-top:39px;box-shadow:0 3px #c2a98c55;}
+.sop-wb.sop-ribbon-header .wb-nav-marker::after {content:"";position:absolute;right:-4px;top:0;border-top:9px solid #795a44;border-right:4px solid transparent;}
+.sop-wb.sop-ribbon-header .wb-nav-foot {border-top:1px dashed #a58b6966;}
+.sop-wb.sop-ribbon-header .wb-nav-flyout {background:#efe4d3;border-radius:3px;box-shadow:5px 6px #8f7c601a,0 18px 30px #0003;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-ribbon-header *,.sop-wb.sop-ribbon-header *::before,.sop-wb.sop-ribbon-header *::after{animation:none!important;transition:none!important;}}

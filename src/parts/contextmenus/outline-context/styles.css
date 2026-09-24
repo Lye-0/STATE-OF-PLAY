@@ -1,0 +1,8 @@
+@import "../../../shared/workbench/base.css";
+/* Outline Menu: 対象だけに反応する、キーボードでも使える操作メニュー。 */
+.sop-wb.sop-outline-context {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+.sop-wb.sop-outline-context .wb-context-target {background:transparent;box-shadow:none}
+.sop-wb.sop-outline-context .wb-context-panel {border-radius:6px}
+.sop-wb.sop-outline-context .wb-context-items button::before {background:transparent}
+.sop-wb.sop-outline-context .wb-context-items button:focus {border-color:var(--wb-accent)}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-outline-context *,.sop-wb.sop-outline-context *::before,.sop-wb.sop-outline-context *::after{animation:none!important;transition:none!important;}}

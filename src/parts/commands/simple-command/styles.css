@@ -1,0 +1,8 @@
+@import "../../../shared/workbench/base.css";
+/* Simple Command: 検索、グループ、ショートカットを静かに整理したコマンド一覧。 */
+.sop-wb.sop-simple-command {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+.sop-wb.sop-simple-command .wb-command-launcher, .sop-wb.sop-simple-command .wb-command-dialog {border-radius:5px}
+.sop-wb.sop-simple-command .wb-command-option {border-radius:3px}
+.sop-wb.sop-simple-command .wb-command-option::before {border-radius:3px}
+.sop-wb.sop-simple-command .wb-command-copy strong {font-size:12px}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-simple-command *,.sop-wb.sop-simple-command *::before,.sop-wb.sop-simple-command *::after{animation:none!important;transition:none!important;}}

@@ -1,0 +1,13 @@
+@import "../../../shared/workbench/base.css";
+/* Orbital Dock: 選択したアイコンの周囲に軌道が集まり、次の行き先へ運ぶ。 */
+.sop-wb.sop-orbital-dock {--wb-bg:#172538;--wb-surface:#2b3c50;--wb-ink:#e5ebee;--wb-muted:#adbfcf;--wb-accent:#bad2e2;--wb-line:#879fb86e;}
+.sop-wb.sop-orbital-dock .wb-navigation-frame {background:#171b2d;border:1px solid #9eadc64c;}
+.sop-wb.sop-orbital-dock .wb-nav-brand strong {font-size:10px;letter-spacing:.18em;text-transform:uppercase;}
+.sop-wb.sop-orbital-dock .wb-brand-glyph {display:none;}
+.sop-wb.sop-orbital-dock .wb-nav-marker {background:radial-gradient(circle at 50% 35%,#a4bad82f,transparent 64%);border:0;}
+.sop-wb.sop-orbital-dock .wb-nav-marker::after {content:"";position:absolute;left:calc(50% - 18px);top:6px;width:36px;height:36px;border:1px solid #bed0e175;border-radius:50%;transform:rotate(-25deg) scaleX(1.28);box-shadow:0 0 0 4px #a7bcdd08;}
+.sop-wb.sop-orbital-dock .wb-nav-link-icon {transition:color .3s,transform .4s;}
+.sop-wb.sop-orbital-dock .wb-nav-link[aria-current=page] .wb-nav-link-icon {color:#e3eadd;transform:rotate(-6deg);}
+.sop-wb.sop-orbital-dock .wb-nav-link:hover {background:none;}
+.sop-wb.sop-orbital-dock .wb-nav-link-icon svg {width:18px!important;height:18px!important;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-orbital-dock *,.sop-wb.sop-orbital-dock *::before,.sop-wb.sop-orbital-dock *::after{animation:none!important;transition:none!important;}}

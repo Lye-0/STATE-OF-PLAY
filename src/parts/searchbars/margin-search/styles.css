@@ -1,0 +1,14 @@
+@import "../../../shared/workbench/base.css";
+/* Margin Search: 書き込み用の余白を残した縦の背。候補を選ぶと細いしおりが現れる。 */
+.sop-wb.sop-margin-search {--wb-bg:#e9dfca;--wb-surface:#dfd2b8;--wb-ink:#3c3d31;--wb-muted:#6e7260;--wb-accent:#7b7860;--wb-line:#8e8a6d66;color-scheme:light;}
+.sop-wb.sop-margin-search .wb-search-shell {background:#e7e1d5;padding:28px 22px 24px 35px;border-radius:0 8px 8px 0;border:0;border-left:12px solid #435e59;box-shadow:-2px 0 #a4b6a3,0 18px 25px #0003;}
+.sop-wb.sop-margin-search .wb-label {font:italic 24px Georgia,serif;color:#53635a;}
+.sop-wb.sop-margin-search .wb-search-field {border:0;border-bottom:1px solid #9caa9b;background:transparent;border-radius:0;padding-inline:0;box-shadow:none!important;}
+.sop-wb.sop-margin-search .wb-search-emblem {display:none;}
+.sop-wb.sop-margin-search .wb-search-submit {background:#435e59;color:#e3e9d3;border-radius:0 12px 0 0;}
+.sop-wb.sop-margin-search .wb-search-submit span {display:none;}
+.sop-wb.sop-margin-search .wb-results-list [role=option] {position:relative;border-radius:0;border:0;padding:12px 4px 12px 12px;border-bottom:1px solid #80948222;}
+.sop-wb.sop-margin-search .wb-results-list [role=option]::before {content:"";position:absolute;left:0;top:12px;bottom:12px;width:3px;transform:scaleY(0);background:#6d8370;transition:transform .25s;}
+.sop-wb.sop-margin-search .wb-results-list [aria-selected=true]::before {transform:scaleY(1);}
+.sop-wb.sop-margin-search .wb-result-copy strong {font:16px Georgia,serif;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-margin-search *,.sop-wb.sop-margin-search *::before,.sop-wb.sop-margin-search *::after{animation:none!important;transition:none!important;}}

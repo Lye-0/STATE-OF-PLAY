@@ -1,0 +1,9 @@
+@import "../../../shared/workbench/base.css";
+/* Glass Slip: 厚みのあるガラスが滑り込み、項目間の透明な選択面が移る。 */
+.sop-wb.sop-slip-context {--wb-bg:#132c34;--wb-surface:#28464e;--wb-ink:#deeee5;--wb-muted:#a7c7c5;--wb-accent:#b2ded1;--wb-line:#8dc3c166;}
+.sop-wb.sop-slip-context .wb-context-target {background:radial-gradient(ellipse at 0 0,#8bbbbb28,transparent 70%),#11252b;border-radius:18px;border-color:#a4e0d36b;box-shadow:inset 0 1px #edfff247,inset 0 -1px #b5eee833;}
+.sop-wb.sop-slip-context .wb-context-panel {background:linear-gradient(140deg,#2f5058ed,#142a36f5);backdrop-filter:blur(18px);border-color:#b7e5df80;border-radius:17px;box-shadow:inset 0 1px #defbef77,inset 0 -1px #a7dfd14a,0 20px 50px #0006;}
+.sop-wb.sop-slip-context .wb-context-panel:popover-open {animation:wb-slide-open .35s cubic-bezier(.16,1,.3,1);}
+.sop-wb.sop-slip-context .wb-context-items button::before {background:linear-gradient(135deg,#c1eee533,#b9d8e114);border:1px solid #a9e4dc36;box-shadow:inset 0 1px #e4fff426;border-radius:12px;}
+.sop-wb.sop-slip-context .wb-context-items button:focus {border-color:transparent;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-slip-context *,.sop-wb.sop-slip-context *::before,.sop-wb.sop-slip-context *::after{animation:none!important;transition:none!important;}}

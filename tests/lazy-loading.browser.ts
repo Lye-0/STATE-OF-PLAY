@@ -93,7 +93,7 @@ try {
    for(const id of ids){await category(p,id);assert.equal(await p.locator('[data-part]').count(),index.filter(x=>x.category===id).length);signatures.set(id,await signature());}
    for(const id of [...ids].reverse()){await category(p,id);assert.deepEqual(await signature(),signatures.get(id),'style order '+id);}
    assert.deepEqual(errors,[]);
-   results.push(mode+': all 31 categories, forward/reverse CSS order, no runtime errors');
+   results.push(mode+': all 36 categories, forward/reverse CSS order, no runtime errors');
    await p.setViewportSize({width:390,height:844});await category(p,'numbers');
    assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
    await p.screenshot({path:path.join(output,mode+'-mobile.png')});

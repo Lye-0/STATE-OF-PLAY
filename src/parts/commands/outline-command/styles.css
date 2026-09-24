@@ -1,0 +1,8 @@
+@import "../../../shared/workbench/base.css";
+/* Outline Command: 検索、グループ、ショートカットを静かに整理したコマンド一覧。 */
+.sop-wb.sop-outline-command {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+.sop-wb.sop-outline-command .wb-command-launcher {background:transparent;box-shadow:none}
+.sop-wb.sop-outline-command .wb-command-dialog {border-radius:8px}
+.sop-wb.sop-outline-command .wb-command-option {border-radius:5px}
+.sop-wb.sop-outline-command .wb-command-option[aria-selected=true]::before {background:transparent}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-outline-command *,.sop-wb.sop-outline-command *::before,.sop-wb.sop-outline-command *::after{animation:none!important;transition:none!important;}}

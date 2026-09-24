@@ -1,0 +1,15 @@
+@import "../../../shared/workbench/base.css";
+/* Portal Header: 閉じたヘッダーの内部から、大きな余白を持つ行き先の窓が開く。 */
+.sop-wb.sop-portal-header {--wb-bg:#172538;--wb-surface:#2b3c50;--wb-ink:#e5ebee;--wb-muted:#adbfcf;--wb-accent:#bad2e2;--wb-line:#879fb86e;}
+.sop-wb.sop-portal-header .wb-navigation-frame {background:#111c29;border-color:#a3b7c961;border-radius:22px;overflow:hidden;}
+.sop-wb.sop-portal-header .wb-nav-brand {padding:22px 26px;}
+.sop-wb.sop-portal-header .wb-nav-brand strong {font:27px Georgia,serif;}
+.sop-wb.sop-portal-header .wb-brand-glyph {display:none;}
+.sop-wb.sop-portal-header .wb-nav-mobile-open {border-radius:50%;width:43px;height:43px;flex-basis:43px;border-color:#b6c9d372;background:radial-gradient(circle at 30% 20%,#dbe9e31f,transparent);}
+.sop-wb.sop-portal-header .wb-nav-dialog {border-radius:30px;background:radial-gradient(ellipse at 90% 0,#6389b037,transparent 60%),#131f30;border-color:#afc4d46b;}
+.sop-wb.sop-portal-header .wb-nav-dialog[open] {animation:wb-aperture-open .5s cubic-bezier(.16,1,.3,1);}
+.sop-wb.sop-portal-header .wb-nav-dialog .wb-nav-link strong {font:30px Georgia,serif;}
+.sop-wb.sop-portal-header .wb-nav-dialog .wb-nav-link-icon {display:none;}
+.sop-wb.sop-portal-header .wb-nav-dialog .wb-nav-link {border-radius:18px;padding:18px;}
+.sop-wb.sop-portal-header .wb-nav-dialog [aria-current=page] {background:linear-gradient(100deg,#a1bbd925,transparent);}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-portal-header *,.sop-wb.sop-portal-header *::before,.sop-wb.sop-portal-header *::after{animation:none!important;transition:none!important;}}

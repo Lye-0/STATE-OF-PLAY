@@ -1,0 +1,7 @@
+@import "../../../shared/workbench/base.css";
+/* Mobile Navigation: 行き先が分かる、整理されたナビゲーション。リンクの標準操作を維持。 */
+.sop-wb.sop-mobile-navigation {--wb-bg:#f3f6f3;--wb-surface:#e3e9e4;--wb-ink:#2e413b;--wb-muted:#5e756b;--wb-accent:#537967;--wb-line:#8aa09366;color-scheme:light;}
+.sop-wb.sop-mobile-navigation .wb-navigation-frame {background:#f7f8f5;box-shadow:none}
+.sop-wb.sop-mobile-navigation .wb-nav-dialog {border-radius:12px}
+.sop-wb.sop-mobile-navigation .wb-nav-dialog .wb-nav-link strong {font:17px Arial,sans-serif}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-mobile-navigation *,.sop-wb.sop-mobile-navigation *::before,.sop-wb.sop-mobile-navigation *::after{animation:none!important;transition:none!important;}}

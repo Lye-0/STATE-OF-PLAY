@@ -1,0 +1,21 @@
+(node:6102) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS 88 actual skins mount independently with public API and without page errors
+PASS Search query, filter, keyboard, submit, clear and native form reset
+PASS Search async aborts older requests and ignores stale success and failure
+PASS Search composition does not execute, unsafe URLs do not navigate, custom content stays literal
+PASS Command palette drill-down, query, keyboard execute, Escape and focus return
+PASS Command async execution blocks duplicates, surfaces failures and cancels stale work
+PASS Ctrl+K is opt-in globally; multiple palettes dispatch only one, controlled open may decline
+PASS Context menu is scoped; keyboard and explicit trigger; submenu and checkbox actions
+PASS Context disabled actions and controlled check state do not trigger side effects
+PASS Navigation has real hrefs, preserves modified clicks and supports SPA callbacks
+PASS Navigation groups and mobile modal preserve semantics, focus and current location
+PASS Data table numeric three-state sorting, paging and query do not mutate source rows
+PASS Row selection is keyed by identity, select-all affects current page only and row actions are callbacks
+PASS Table manual/server mode returns requests without re-sorting or slicing the supplied page
+PASS Column resizing supports keyboard and pointer; sticky columns remain aligned
+PASS All skins keep page width at 320/390/768; native table overflows only inside its scroll area
+PASS Popovers and modal frames stay within a small viewport; Escape closes only the active layer
+PASS Reduced motion keeps input and actions working; unmount aborts work and releases modal locks
+Workbench browser checks: 18 passed.

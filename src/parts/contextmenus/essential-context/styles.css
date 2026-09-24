@@ -1,0 +1,5 @@
+@import "../../../shared/workbench/base.css";
+/* Essential Menu: 対象だけに反応する、キーボードでも使える操作メニュー。 */
+.sop-wb.sop-essential-context {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-essential-context *,.sop-wb.sop-essential-context *::before,.sop-wb.sop-essential-context *::after{animation:none!important;transition:none!important;}}

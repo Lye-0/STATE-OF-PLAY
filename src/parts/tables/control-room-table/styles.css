@@ -1,0 +1,13 @@
+@import "../../../shared/workbench/base.css";
+/* Control Room: 操作卓の細かな格子と状態灯。行を選ぶと一本のラインが点灯する。 */
+.sop-wb.sop-control-room-table {--wb-bg:#142724;--wb-surface:#263d32;--wb-ink:#dce8d4;--wb-muted:#a5b99e;--wb-accent:#b6d5a3;--wb-line:#87a68766;}
+.sop-wb.sop-control-room-table .wb-data-frame {background:#0e1b1d;border-radius:7px;border-color:#6e9d8870;box-shadow:inset 0 2px #9fceaf16,0 17px 30px #0005;}
+.sop-wb.sop-control-room-table .wb-data-heading h3 {font:24px Consolas,monospace;letter-spacing:-1px;color:#c2d9b9;}
+.sop-wb.sop-control-room-table .wb-data-frame th {background:#162d28;font:9px Consolas,monospace;letter-spacing:.03em;}
+.sop-wb.sop-control-room-table .wb-data-frame td {background:#0e1b1d;border-right:1px solid #54776325;font-family:Consolas,'Yu Gothic',monospace;font-size:11px;}
+.sop-wb.sop-control-room-table .wb-data-total {border:1px solid #688c7066;border-radius:3px;background:#071711;padding:7px;color:#bcdbab;box-shadow:inset 0 2px 4px #0007;}
+.sop-wb.sop-control-room-table .wb-cell-badge {border-radius:2px;border:0;background:#93c78b16;}
+.sop-wb.sop-control-room-table .wb-cell-progress>span {border-radius:0;height:7px;background:repeating-linear-gradient(90deg,#5c78564d 0 5px,transparent 5px 7px);}
+.sop-wb.sop-control-room-table .wb-cell-progress i {border-radius:0;background:repeating-linear-gradient(90deg,#b4d59c 0 5px,transparent 5px 7px);}
+.sop-wb.sop-control-room-table .wb-data-frame tbody tr[data-selected=true] td {background:#1d352d;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-control-room-table *,.sop-wb.sop-control-room-table *::before,.sop-wb.sop-control-room-table *::after{animation:none!important;transition:none!important;}}

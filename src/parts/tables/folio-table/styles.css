@@ -1,0 +1,14 @@
+@import "../../../shared/workbench/base.css";
+/* Folio Table: 綴じた資料を並べるテーブル。選択した行の背にしおりが差し込まれる。 */
+.sop-wb.sop-folio-table {--wb-bg:#e9dfca;--wb-surface:#dfd2b8;--wb-ink:#3c3d31;--wb-muted:#6e7260;--wb-accent:#7b7860;--wb-line:#8e8a6d66;color-scheme:light;}
+.sop-wb.sop-folio-table .wb-data-frame {background:linear-gradient(90deg,#c1aa8933 0 18px,transparent 18px),#e9dfcd;border-radius:4px 16px 16px 4px;border:0;border-inline-start:8px solid #8f7760;box-shadow:-2px 0 #e3cbaa,0 18px 30px #0003;}
+.sop-wb.sop-folio-table .wb-data-heading {padding-top:31px;}
+.sop-wb.sop-folio-table .wb-data-heading h3 {font-size:31px;}
+.sop-wb.sop-folio-table .wb-data-frame th {background:#d9ccb6;}
+.sop-wb.sop-folio-table .wb-data-frame td {background:#e9dfcd;border-bottom:1px dashed #ad977850;}
+.sop-wb.sop-folio-table .wb-cell-badge {border-radius:1px;background:#baa17a26;border-color:#9e84554b;}
+.sop-wb.sop-folio-table .wb-table-search {border-radius:2px;background:#faf5e536;}
+.sop-wb.sop-folio-table .wb-data-frame tbody tr[data-selected=true] td {background:#dfcfb3;}
+.sop-wb.sop-folio-table .wb-data-frame tbody tr[data-selected=true] td:first-child {box-shadow:inset 5px 0 #9a6f51;}
+.sop-wb.sop-folio-table .wb-data-footer nav button {border-radius:2px;background:#d5c3a822;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-folio-table *,.sop-wb.sop-folio-table *::before,.sop-wb.sop-folio-table *::after{animation:none!important;transition:none!important;}}

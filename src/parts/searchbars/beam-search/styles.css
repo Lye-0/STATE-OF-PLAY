@@ -1,0 +1,17 @@
+@import "../../../shared/workbench/base.css";
+/* Beam Search: 入力面の両端が開き、一本の光が検索結果へ通り抜ける。 */
+.sop-wb.sop-beam-search {--wb-bg:#172538;--wb-surface:#2b3c50;--wb-ink:#e5ebee;--wb-muted:#adbfcf;--wb-accent:#bad2e2;--wb-line:#879fb86e;}
+.sop-wb.sop-beam-search .wb-search-shell {background:#131922;border:1px solid #64839866;border-radius:12px;padding:24px;overflow:hidden;}
+.sop-wb.sop-beam-search .wb-search-field {border:0;background:#0b111b;border-radius:2px;min-height:65px;box-shadow:inset 0 -2px #52718d;}
+.sop-wb.sop-beam-search .wb-art-search::before {content:"";position:absolute;left:-30%;top:79px;height:1px;width:70%;background:linear-gradient(90deg,transparent,#bde0ec,transparent);transform:translateX(0);transition:transform .9s cubic-bezier(.15,1,.3,1);box-shadow:0 0 13px #8db7dc80;}
+.sop-wb.sop-beam-search[data-wb-focused=true] .wb-art-search::before {transform:translateX(100%);}
+.sop-wb.sop-beam-search .wb-search-emblem {width:31px;}
+.sop-wb.sop-beam-search .wb-search-emblem::before, .sop-wb.sop-beam-search .wb-search-emblem::after {content:"";position:absolute;top:-8px;bottom:-8px;width:3px;background:#9bbbd180;transition:transform .5s;}
+.sop-wb.sop-beam-search .wb-search-emblem::before {left:-9px;}
+.sop-wb.sop-beam-search .wb-search-emblem::after {right:-4px;}
+.sop-wb.sop-beam-search[data-wb-focused=true] .wb-search-emblem::before {transform:translateX(-4px);}
+.sop-wb.sop-beam-search[data-wb-focused=true] .wb-search-emblem::after {transform:translateX(4px);}
+.sop-wb.sop-beam-search .wb-search-submit {background:#9bbcd0;color:#172735;border-radius:2px;}
+.sop-wb.sop-beam-search .wb-search-submit span {display:none;}
+.sop-wb.sop-beam-search .wb-results-list [aria-selected=true] {border-radius:2px;background:linear-gradient(90deg,#82b9d326,transparent);border-color:transparent;box-shadow:inset 2px 0 #b4d5e7;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-beam-search *,.sop-wb.sop-beam-search *::before,.sop-wb.sop-beam-search *::after{animation:none!important;transition:none!important;}}

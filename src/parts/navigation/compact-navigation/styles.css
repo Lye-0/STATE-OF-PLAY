@@ -1,0 +1,8 @@
+@import "../../../shared/workbench/base.css";
+/* Compact Navigation: 行き先が分かる、整理されたナビゲーション。リンクの標準操作を維持。 */
+.sop-wb.sop-compact-navigation {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+.sop-wb.sop-compact-navigation .wb-navigation-frame {border-radius:7px}
+.sop-wb.sop-compact-navigation .wb-nav-brand {padding:12px 16px}
+.sop-wb.sop-compact-navigation .wb-nav-link, .sop-wb.sop-compact-navigation .wb-nav-disclosure {padding:7px 8px;min-height:34px}
+.sop-wb.sop-compact-navigation .wb-nav-foot {font-size:8px}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-compact-navigation *,.sop-wb.sop-compact-navigation *::before,.sop-wb.sop-compact-navigation *::after{animation:none!important;transition:none!important;}}

@@ -1,0 +1,11 @@
+@import "../../../shared/workbench/base.css";
+/* Orbit Menu: 選択した操作を細い軌道が囲む、丸い端と連続した経路。 */
+.sop-wb.sop-orbit-context {--wb-bg:#172538;--wb-surface:#2b3c50;--wb-ink:#e5ebee;--wb-muted:#adbfcf;--wb-accent:#bad2e2;--wb-line:#879fb86e;}
+.sop-wb.sop-orbit-context .wb-context-target {border-radius:25px;background:#1b2432;border-color:#a0b5ce52;}
+.sop-wb.sop-orbit-context .wb-context-object {border-radius:50%;height:44px;box-shadow:0 0 0 7px #b2c0d812,0 0 0 14px #bac3d209;}
+.sop-wb.sop-orbit-context .wb-context-panel {background:#172334;border-radius:20px;border-color:#a0b8cf77;}
+.sop-wb.sop-orbit-context .wb-context-items button {border-radius:25px;}
+.sop-wb.sop-orbit-context .wb-context-items button::before {background:radial-gradient(ellipse at 35% 50%,#9cb5d242,transparent);}
+.sop-wb.sop-orbit-context .wb-context-items button:focus {border:1px solid #9db8cf6b;box-shadow:inset 0 0 0 3px #b2cae408;}
+.sop-wb.sop-orbit-context .wb-context-heading {border:0;letter-spacing:.15em;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-orbit-context *,.sop-wb.sop-orbit-context *::before,.sop-wb.sop-orbit-context *::after{animation:none!important;transition:none!important;}}

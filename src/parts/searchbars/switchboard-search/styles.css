@@ -1,0 +1,14 @@
+@import "../../../shared/workbench/base.css";
+/* Switchboard Search: 押し込むキーと切替タブを持つ、精密機器の検索モジュール。 */
+.sop-wb.sop-switchboard-search {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+.sop-wb.sop-switchboard-search .wb-search-shell {background:linear-gradient(160deg,#353b3e,#171b1e 68%);border-radius:10px;border:1px solid #67716f;box-shadow:inset 0 2px 0 #c0c6ba22,0 7px 0 #090e11,0 16px 30px #0006;padding:22px;}
+.sop-wb.sop-switchboard-search .wb-search-field {border-radius:5px;background:#0b1114;border:1px solid #090c0c;box-shadow:inset 0 3px 7px #000,0 1px #c1cec155;}
+.sop-wb.sop-switchboard-search .wb-search-input {font-family:Consolas,monospace;}
+.sop-wb.sop-switchboard-search .wb-search-emblem {color:#b5d5b7;}
+.sop-wb.sop-switchboard-search .wb-search-submit {background:linear-gradient(#e3daca,#bfb298);color:#252a29;border:1px solid #ece0bd55;box-shadow:0 3px 0 #756854,0 5px 5px #0008;}
+.sop-wb.sop-switchboard-search .wb-search-submit:active {transform:translateY(3px);box-shadow:0 1px 0 #756854;}
+.sop-wb.sop-switchboard-search .wb-search-filters {gap:5px;}
+.sop-wb.sop-switchboard-search .wb-search-filters button {border-radius:3px;background:#171d1f;border:1px solid #68766c66;box-shadow:0 2px #0006;}
+.sop-wb.sop-switchboard-search .wb-search-filters button[aria-pressed=true] {background:#b9c6ad;color:#20271e;box-shadow:inset 0 1px 4px #1c331144;transform:translateY(1px);}
+.sop-wb.sop-switchboard-search .wb-results-list [role=option] {border-radius:3px;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-switchboard-search *,.sop-wb.sop-switchboard-search *::before,.sop-wb.sop-switchboard-search *::after{animation:none!important;transition:none!important;}}

@@ -1,0 +1,11 @@
+@import "../../../shared/workbench/base.css";
+/* Glass Ledger: 一枚の透明な台帳。選択する行に薄いガラスの層が現れる。 */
+.sop-wb.sop-glass-ledger {--wb-bg:#132c34;--wb-surface:#28464e;--wb-ink:#deeee5;--wb-muted:#a7c7c5;--wb-accent:#b2ded1;--wb-line:#8dc3c166;}
+.sop-wb.sop-glass-ledger .wb-data-frame {background:radial-gradient(ellipse at 0 0,#86c7c137,transparent 65%),#132e35;border:1px solid #b1ded377;border-radius:22px;box-shadow:inset 0 1px #def5ec4a,0 18px 30px #0005;}
+.sop-wb.sop-glass-ledger .wb-data-frame th {background:linear-gradient(160deg,#365459,#203e48);border-color:#a1d0ca4a;box-shadow:inset 0 1px #d5efe01a;}
+.sop-wb.sop-glass-ledger .wb-data-frame td {background:#162f39;border-color:#aacdc329;}
+.sop-wb.sop-glass-ledger .wb-data-frame tbody tr[data-selected=true] td {background:linear-gradient(140deg,#2e5560,#254c53);box-shadow:inset 0 1px #dbfbed2d,inset 0 -1px #acd1d81e;}
+.sop-wb.sop-glass-ledger .wb-cell-badge {background:#b6e0cb13;border-color:#a1d7c153;color:#c0e8d0;}
+.sop-wb.sop-glass-ledger .wb-table-search {border-radius:18px;box-shadow:inset 0 1px #d9fff018;background:#071f2b50;}
+.sop-wb.sop-glass-ledger .wb-data-footer nav button {border-radius:50%;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-glass-ledger *,.sop-wb.sop-glass-ledger *::before,.sop-wb.sop-glass-ledger *::after{animation:none!important;transition:none!important;}}

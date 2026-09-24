@@ -1,0 +1,7 @@
+@import "../../../shared/workbench/base.css";
+/* Capsule Search: 日常の検索に合わせやすい、読みやすい入力とフィルター。 */
+.sop-wb.sop-capsule-searchbar {--wb-bg:#f3f6f3;--wb-surface:#e3e9e4;--wb-ink:#2e413b;--wb-muted:#5e756b;--wb-accent:#537967;--wb-line:#8aa09366;color-scheme:light;}
+.sop-wb.sop-capsule-searchbar .wb-search-shell {border:0;box-shadow:none;background:none;padding:0}
+.sop-wb.sop-capsule-searchbar .wb-search-field {border-radius:40px;background:#f3f4f1}
+.sop-wb.sop-capsule-searchbar .wb-search-submit {border-radius:30px;background:#354842;color:#fff}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-capsule-searchbar *,.sop-wb.sop-capsule-searchbar *::before,.sop-wb.sop-capsule-searchbar *::after{animation:none!important;transition:none!important;}}

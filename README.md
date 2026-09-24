@@ -1,10 +1,14 @@
 # STATE OF PLAY — UI & Motion Library
 
-**v4.11.0 / 31カテゴリ・699パーツ**。触って選び、ソースと意図を自分の開発へ持ち出すUIパーツ集です。
+**v4.12.0 / 36カテゴリ・787パーツ**。触って選び、ソースと意図を自分の開発へ持ち出すUIパーツ集です。
 表現と素材感を重視するAタイプと、落ち着いた実用的なBタイプを収録しています。
 
 > ベースとなるv4.0.0は、未保存だった追加分をv3.8.0から再実装した版です。以前の未保存ソースと同一ではありません。
 > 既存280パーツの本体は維持しています。経緯と照合は [RECOVERY.md](docs/RECOVERY.md) を参照してください。
+
+## v4.12.0の追加 — NAVIGATOR
+
+検索バー20、コマンドパレット16、右クリックメニュー16、ナビゲーション20、テーブル16の計88パーツを追加しました。検索の非同期結果、コマンド実行、対象要素へのメニュー接続、実リンク、表の並べ替え・選択は利用先のデータや処理へ接続できます。5カテゴリともカテゴリ別の遅延読み込みを維持し、コード・使い方・AI用プロンプト・個別ZIPを提供します。以前削除した重複ローダーを戻していないため、全体は787種類です。[API](docs/NAVIGATOR.md)と[統合結果](docs/NAVIGATOR-INTEGRATION-VERIFICATION.md)を参照してください。
 
 ## v4.11.0の追加 — SIGNATURE
 
@@ -220,5 +224,5 @@ GitHubへのコミット・pushは、このZIPの取得や展開では行われ�
 
 ## ドキュメント
 
-[全699パーツ](docs/COLLECTION.md) / [追加13カテゴリのAPI](docs/FOUNDATIONS.md) / [パーツ追加](docs/ADDING-PARTS.md) /
+[全787パーツ](docs/COLLECTION.md) / [追加13カテゴリのAPI](docs/FOUNDATIONS.md) / [パーツ追加](docs/ADDING-PARTS.md) /
 [既存プロジェクトへの組み込み](docs/INTEGRATION.md) / [移行](docs/MIGRATION.md) / [ライセンス](THIRD-PARTY-NOTICES.md)

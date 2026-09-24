@@ -1,0 +1,20 @@
+@import "../../../shared/workbench/base.css";
+/* Split Gate: 右端のキーを開くと、二つの面が分かれてナビゲーションになる。 */
+.sop-wb.sop-split-gate-nav {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+.sop-wb.sop-split-gate-nav .wb-navigation-frame {background:#20292e;border-radius:5px;border:1px solid #8c9e9270;box-shadow:inset 0 1px #dae8cb33,0 4px #10181a,0 18px 25px #0003;}
+.sop-wb.sop-split-gate-nav .wb-nav-brand {padding:25px;}
+.sop-wb.sop-split-gate-nav .wb-nav-brand strong {font:23px Georgia,serif;}
+.sop-wb.sop-split-gate-nav .wb-nav-mobile-open {border-radius:4px;background:#a2b19e;color:#1b2c28;width:45px;height:45px;flex-basis:45px;box-shadow:0 3px #566354;}
+.sop-wb.sop-split-gate-nav .wb-nav-dialog {border-radius:5px;margin-inline-end:18px;background:linear-gradient(90deg,#25322a 0 7px,#101e22 8px);border-color:#a2b8a780;box-shadow:-20px 0 60px #0007;}
+.sop-wb.sop-split-gate-nav .wb-nav-dialog[open] {animation:wb-slide-open .45s cubic-bezier(.16,1,.3,1);}
+.sop-wb.sop-split-gate-nav .wb-nav-dialog .wb-nav-link {border-bottom:1px solid #73897a38;border-radius:2px;}
+.sop-wb.sop-split-gate-nav .wb-nav-dialog .wb-nav-link strong {font:23px Georgia,serif;}
+.sop-wb.sop-split-gate-nav .wb-nav-dialog .wb-nav-link-icon {display:none;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-split-gate-nav *,.sop-wb.sop-split-gate-nav *::before,.sop-wb.sop-split-gate-nav *::after{animation:none!important;transition:none!important;}}
+.sop-wb.sop-split-gate-nav .wb-nav-dialog{overflow:hidden;}
+.sop-wb.sop-split-gate-nav .wb-nav-dialog nav{max-height:calc(100dvh - 190px);overflow:auto;}
+.sop-wb.sop-split-gate-nav .wb-nav-dialog::before,.sop-wb.sop-split-gate-nav .wb-nav-dialog::after{content:"";position:absolute;inset:0 50% 0 0;background:linear-gradient(110deg,#304039,#152825);border-right:1px solid #a6bfa166;pointer-events:none;z-index:5;opacity:0;}
+.sop-wb.sop-split-gate-nav .wb-nav-dialog::after{inset:0 0 0 50%;background:linear-gradient(250deg,#304039,#152825);border-right:0;border-left:1px solid #a6bfa166;}
+.sop-wb.sop-split-gate-nav .wb-nav-dialog[open]::before{animation:wb-gate-left .65s cubic-bezier(.16,1,.3,1) both;}
+.sop-wb.sop-split-gate-nav .wb-nav-dialog[open]::after{animation:wb-gate-right .65s cubic-bezier(.16,1,.3,1) both;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-split-gate-nav .wb-nav-dialog::before,.sop-wb.sop-split-gate-nav .wb-nav-dialog::after{display:none;}}

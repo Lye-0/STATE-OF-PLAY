@@ -1,0 +1,11 @@
+@import "../../../shared/workbench/base.css";
+/* Contour Map: 等高線のような接続線を背景に、経路の節点が現在地へ集まる。 */
+.sop-wb.sop-contour-navigation {--wb-bg:#142724;--wb-surface:#263d32;--wb-ink:#dce8d4;--wb-muted:#a5b99e;--wb-accent:#b6d5a3;--wb-line:#87a68766;}
+.sop-wb.sop-contour-navigation .wb-navigation-frame {background:#152a27;border-radius:23px;border-color:#a8c0ab60;}
+.sop-wb.sop-contour-navigation .wb-art-navigation {background:repeating-radial-gradient(ellipse at 110% 0,transparent 0 22px,#a5c19d0e 23px 24px,transparent 25px 40px);}
+.sop-wb.sop-contour-navigation .wb-nav-marker {border-radius:25px;background:linear-gradient(90deg,#a4c8ab2d,transparent);border-color:#8aaf9766;}
+.sop-wb.sop-contour-navigation .wb-nav-link {border-radius:25px;}
+.sop-wb.sop-contour-navigation .wb-nav-link-icon {color:#adcaa5;}
+.sop-wb.sop-contour-navigation .wb-nav-foot {border-color:#9cb39729;}
+.sop-wb.sop-contour-navigation .wb-nav-brand strong {font:23px Georgia,serif;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-contour-navigation *,.sop-wb.sop-contour-navigation *::before,.sop-wb.sop-contour-navigation *::after{animation:none!important;transition:none!important;}}

@@ -1,0 +1,16 @@
+@import "../../../shared/workbench/base.css";
+/* Ledger Table: 罫線と活版の文字を使い、並べ替えた列に細いインク線が伸びる帳簿。 */
+.sop-wb.sop-ledger-table {--wb-bg:#e9dfca;--wb-surface:#dfd2b8;--wb-ink:#3c3d31;--wb-muted:#6e7260;--wb-accent:#7b7860;--wb-line:#8e8a6d66;color-scheme:light;}
+.sop-wb.sop-ledger-table .wb-data-frame {background:#eee7da;border-radius:2px;border:0;border-block:2px solid #77705d;box-shadow:0 5px 0 #b6a88e,0 18px 30px #0003;}
+.sop-wb.sop-ledger-table .wb-data-heading {padding:28px 26px 18px;}
+.sop-wb.sop-ledger-table .wb-data-heading h3 {font:italic 30px Georgia,serif;}
+.sop-wb.sop-ledger-table .wb-table-search {border-radius:0;border-width:0 0 1px;padding-inline:0;}
+.sop-wb.sop-ledger-table .wb-table-scroll {border-color:#9b8b6c88;}
+.sop-wb.sop-ledger-table .wb-data-frame th {background:#ded3bf;border-right:1px solid #ae9d7b44;}
+.sop-wb.sop-ledger-table .wb-data-frame td {background:#eee7da;border-right:1px solid #b4a17d40;font-family:Georgia,'Yu Mincho',serif;font-size:13px;}
+.sop-wb.sop-ledger-table .wb-data-frame td[data-first-column] {font-weight:bold;}
+.sop-wb.sop-ledger-table .wb-cell-badge {border-radius:2px;}
+.sop-wb.sop-ledger-table .wb-data-footer {padding-top:14px;}
+.sop-wb.sop-ledger-table .wb-data-footer nav button {border-radius:0;}
+.sop-wb.sop-ledger-table .wb-data-frame tbody tr[data-selected=true] td {background:#e0d5bf;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-ledger-table *,.sop-wb.sop-ledger-table *::before,.sop-wb.sop-ledger-table *::after{animation:none!important;transition:none!important;}}

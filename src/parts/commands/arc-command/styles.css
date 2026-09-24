@@ -1,0 +1,14 @@
+@import "../../../shared/workbench/base.css";
+/* Arc Command: 深いアーチの内側から候補が現れる、建築的なコマンド空間。 */
+.sop-wb.sop-arc-command {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+.sop-wb.sop-arc-command .wb-command-launcher {border-radius:110px 110px 16px 16px;background:linear-gradient(180deg,#303840,#141b24);padding-top:40px;text-align:center;border-color:#a5b1ba44;}
+.sop-wb.sop-arc-command .wb-command-symbol {margin-inline:auto;border-radius:50%;background:#869ba41c;}
+.sop-wb.sop-arc-command .wb-command-launch {border-radius:30px;}
+.sop-wb.sop-arc-command .wb-command-dialog {border-radius:50px 50px 15px 15px;background:linear-gradient(160deg,#263039,#0e1924);padding-top:10px;}
+.sop-wb.sop-arc-command .wb-command-dialog[open] {animation:wb-curtain-open .42s cubic-bezier(.16,1,.3,1);}
+.sop-wb.sop-arc-command .wb-command-top {padding-inline:28px;}
+.sop-wb.sop-arc-command .wb-command-group {text-align:center;letter-spacing:.23em;}
+.sop-wb.sop-arc-command .wb-command-option {border-radius:25px;}
+.sop-wb.sop-arc-command .wb-command-option[aria-selected=true] {border-color:#b6c5c26b;}
+.sop-wb.sop-arc-command .wb-art-command {background:radial-gradient(ellipse at 50% 0,#a6bfb922,transparent 60%);}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-arc-command *,.sop-wb.sop-arc-command *::before,.sop-wb.sop-arc-command *::after{animation:none!important;transition:none!important;}}

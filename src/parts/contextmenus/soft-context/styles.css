@@ -1,0 +1,8 @@
+@import "../../../shared/workbench/base.css";
+/* Soft Menu: 対象だけに反応する、キーボードでも使える操作メニュー。 */
+.sop-wb.sop-soft-context {--wb-bg:#f3f6f3;--wb-surface:#e3e9e4;--wb-ink:#2e413b;--wb-muted:#5e756b;--wb-accent:#537967;--wb-line:#8aa09366;color-scheme:light;}
+.sop-wb.sop-soft-context .wb-context-target {background:#e7eeeb;border:0}
+.sop-wb.sop-soft-context .wb-context-panel {background:#f1f5f3;border:0;border-radius:16px}
+.sop-wb.sop-soft-context .wb-context-items button {border-radius:9px}
+.sop-wb.sop-soft-context .wb-context-items button::before {background:#d8e5df}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-soft-context *,.sop-wb.sop-soft-context *::before,.sop-wb.sop-soft-context *::after{animation:none!important;transition:none!important;}}

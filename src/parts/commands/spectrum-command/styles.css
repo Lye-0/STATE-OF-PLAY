@@ -1,0 +1,11 @@
+@import "../../../shared/workbench/base.css";
+/* Spectrum Command: 透明な切断面が左右から合わさり、候補の背後で分光する。 */
+.sop-wb.sop-spectrum-command {--wb-bg:#222438;--wb-surface:#36364c;--wb-ink:#e7e6f0;--wb-muted:#b9b6cc;--wb-accent:#c8c3e0;--wb-line:#b2a6c370;}
+.sop-wb.sop-spectrum-command .wb-command-launcher {border-radius:4px 30px 4px 30px;background:linear-gradient(130deg,#3540504f,#201927);border:1px solid #c4b9cf66;}
+.sop-wb.sop-spectrum-command .wb-command-symbol {clip-path:polygon(25% 0,75% 0,100% 25%,100% 75%,75% 100%,25% 100%,0 75%,0 25%);background:conic-gradient(from 25deg,#b0dae64f,#c7a9de50,#ddbea740,#9ac7bb4d,#b0dae64f);border-radius:0;}
+.sop-wb.sop-spectrum-command .wb-command-dialog {background:linear-gradient(130deg,#222b37,#221a2b);border-radius:5px 26px 5px 26px;border-color:#b7c0da6a;}
+.sop-wb.sop-spectrum-command .wb-command-dialog[open] {animation:wb-curtain-open .45s cubic-bezier(.16,1,.3,1);}
+.sop-wb.sop-spectrum-command .wb-command-option::before {background:linear-gradient(110deg,#96d5ce28,#a5b9e640,#d2b4d122);transform:skewX(-5deg) scaleX(.7);}
+.sop-wb.sop-spectrum-command .wb-command-option[aria-selected=true]::before {transform:none;}
+.sop-wb.sop-spectrum-command .wb-command-entry {border-image:linear-gradient(90deg,#dbacd0,#a6bcdf,#a7d7c5) 1;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-spectrum-command *,.sop-wb.sop-spectrum-command *::before,.sop-wb.sop-spectrum-command *::after{animation:none!important;transition:none!important;}}

@@ -1,0 +1,12 @@
+@import "../../../shared/workbench/base.css";
+/* Mosaic Navigation: 行き先を小さな面として並べ、選択したタイルに光が流れ込む。 */
+.sop-wb.sop-mosaic-navigation {--wb-bg:#222438;--wb-surface:#36364c;--wb-ink:#e7e6f0;--wb-muted:#b9b6cc;--wb-accent:#c8c3e0;--wb-line:#b2a6c370;}
+.sop-wb.sop-mosaic-navigation .wb-navigation-frame {background:#222332;border-radius:14px;border-color:#aaa9c666;}
+.sop-wb.sop-mosaic-navigation .wb-nav-desktop>.wb-nav-list {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+.sop-wb.sop-mosaic-navigation .wb-nav-link, .sop-wb.sop-mosaic-navigation .wb-nav-disclosure {min-height:66px;flex-direction:column;align-items:flex-start;justify-content:center;gap:6px;border:1px solid #7d84a047;border-radius:7px;background:#181e2c;width:100%;padding:12px!important;}
+.sop-wb.sop-mosaic-navigation .wb-nav-link:hover {background:#2c3144;}
+.sop-wb.sop-mosaic-navigation .wb-nav-marker {background:linear-gradient(130deg,#b4b4d735,#9cc6c625);border-color:#c8c7dd99;border-radius:8px;box-shadow:inset 0 1px #ebe7ff22;}
+.sop-wb.sop-mosaic-navigation .wb-nav-link[aria-current=page] {background:transparent;}
+.sop-wb.sop-mosaic-navigation .wb-nav-disclosure>svg:last-child {position:absolute;right:10px;bottom:12px;}
+.sop-wb.sop-mosaic-navigation .wb-nav-foot {margin-top:10px;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-mosaic-navigation *,.sop-wb.sop-mosaic-navigation *::before,.sop-wb.sop-mosaic-navigation *::after{animation:none!important;transition:none!important;}}

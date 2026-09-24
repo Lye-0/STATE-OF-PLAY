@@ -1,0 +1,12 @@
+@import "../../../shared/workbench/base.css";
+/* Observatory Command: 夜の観測室。軌道の輪郭の内側で、光が選択した候補に集まる。 */
+.sop-wb.sop-observatory-command {--wb-bg:#172538;--wb-surface:#2b3c50;--wb-ink:#e5ebee;--wb-muted:#adbfcf;--wb-accent:#bad2e2;--wb-line:#879fb86e;}
+.sop-wb.sop-observatory-command .wb-command-launcher {background:radial-gradient(ellipse at 85% 15%,#42618c30,transparent 55%),#101c2c;border-color:#859cb946;}
+.sop-wb.sop-observatory-command .wb-command-symbol {border-radius:50%;box-shadow:0 0 0 7px #97b4ce0d,0 0 0 15px #abc8e509;}
+.sop-wb.sop-observatory-command .wb-command-dialog {background:#101b2c;}
+.sop-wb.sop-observatory-command .wb-art-command::before {content:"";position:absolute;left:calc(50% - 210px);top:-250px;width:420px;height:420px;border:1px solid #b0cde229;border-radius:50%;box-shadow:0 0 0 25px #9cbed00a,0 0 0 55px #93b7d105;}
+.sop-wb.sop-observatory-command .wb-command-option::before {background:radial-gradient(ellipse at 30% 50%,#9cbcd035,transparent 90%);}
+.sop-wb.sop-observatory-command .wb-command-option[aria-selected=true] {border-color:#90a7bc55;}
+.sop-wb.sop-observatory-command .wb-command-icon {border-radius:50%;}
+.sop-wb.sop-observatory-command .wb-command-dialog[open] {animation:wb-aperture-open .5s cubic-bezier(.16,1,.3,1);}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-observatory-command *,.sop-wb.sop-observatory-command *::before,.sop-wb.sop-observatory-command *::after{animation:none!important;transition:none!important;}}

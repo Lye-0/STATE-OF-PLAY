@@ -1,0 +1,9 @@
+@import "../../../shared/workbench/base.css";
+/* Hinge Menu: 薄い背表紙が起点になり、操作の一覧が一枚の扉として開く。 */
+.sop-wb.sop-hinge-context {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+.sop-wb.sop-hinge-context .wb-context-target {background:linear-gradient(135deg,#262c30,#151c20);border-inline-start:5px solid #82938b;border-radius:4px 14px 14px 4px;}
+.sop-wb.sop-hinge-context .wb-context-panel {background:linear-gradient(90deg,#88999044 0 5px,#1b252a 5px);border-radius:3px 12px 12px 3px;padding-inline-start:11px;transform-origin:left top;border-color:#87979077;}
+.sop-wb.sop-hinge-context .wb-context-panel:popover-open {animation:wb-fold-open .4s cubic-bezier(.16,1,.3,1);}
+.sop-wb.sop-hinge-context .wb-context-items button:focus {box-shadow:inset 2px 0 #c2d6c8;border-color:transparent;}
+.sop-wb.sop-hinge-context .wb-context-items button::before {background:linear-gradient(90deg,#a8c4b422,transparent);border-radius:2px;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-hinge-context *,.sop-wb.sop-hinge-context *::before,.sop-wb.sop-hinge-context *::after{animation:none!important;transition:none!important;}}

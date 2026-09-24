@@ -1,0 +1,12 @@
+@import "../../../shared/workbench/base.css";
+/* Obsidian Grid: 黒い石の面を整列し、選択された行の継ぎ目だけが開く。 */
+.sop-wb.sop-obsidian-grid {--wb-bg:#172538;--wb-surface:#2b3c50;--wb-ink:#e5ebee;--wb-muted:#adbfcf;--wb-accent:#bad2e2;--wb-line:#879fb86e;}
+.sop-wb.sop-obsidian-grid .wb-data-frame {background:#161a20;border:1px solid #72798266;border-radius:3px 22px 3px 22px;box-shadow:5px 5px #070e1666,0 20px 35px #0006;}
+.sop-wb.sop-obsidian-grid .wb-data-heading h3 {font:30px Georgia,serif;}
+.sop-wb.sop-obsidian-grid .wb-data-frame th {background:linear-gradient(130deg,#353a44,#232a34);color:#bfc7d0;}
+.sop-wb.sop-obsidian-grid .wb-data-frame td {background:#181e26;border-color:#8b969027;border-right:1px solid #86929b14;}
+.sop-wb.sop-obsidian-grid .wb-data-frame tbody tr[data-selected=true] td {background:linear-gradient(120deg,#293b49,#1e2b37);box-shadow:inset 0 1px #b0d1df22;}
+.sop-wb.sop-obsidian-grid .wb-data-frame th[aria-sort]::after {background:#c0d4e0;height:1px;box-shadow:0 2px 11px #adced5b3;}
+.sop-wb.sop-obsidian-grid .wb-table-search {border-radius:1px;background:#0e161e;}
+.sop-wb.sop-obsidian-grid .wb-cell-badge {border-radius:3px;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-obsidian-grid *,.sop-wb.sop-obsidian-grid *::before,.sop-wb.sop-obsidian-grid *::after{animation:none!important;transition:none!important;}}

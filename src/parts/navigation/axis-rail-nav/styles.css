@@ -1,0 +1,13 @@
+@import "../../../shared/workbench/base.css";
+/* Axis Rail: 一本の軸と小さな節点が、選択した場所へ伸び縮みする。 */
+.sop-wb.sop-axis-rail-nav {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+.sop-wb.sop-axis-rail-nav .wb-navigation-frame {border:0;border-inline-start:1px solid #839b9b;border-radius:0;background:linear-gradient(90deg,#22303866,transparent);box-shadow:none;}
+.sop-wb.sop-axis-rail-nav .wb-nav-brand {padding-inline-start:29px;}
+.sop-wb.sop-axis-rail-nav .wb-nav-desktop {margin-inline-start:15px!important;}
+.sop-wb.sop-axis-rail-nav .wb-nav-link, .sop-wb.sop-axis-rail-nav .wb-nav-disclosure {padding-inline-start:23px!important;border-radius:0;}
+.sop-wb.sop-axis-rail-nav .wb-nav-link-icon {display:none;}
+.sop-wb.sop-axis-rail-nav .wb-nav-marker {border:0;border-inline-start:3px solid #bedbcf;border-radius:0;background:linear-gradient(90deg,#a4d2c722,transparent);}
+.sop-wb.sop-axis-rail-nav .wb-nav-marker::before {content:"";position:absolute;left:-5px;top:calc(50% - 4px);width:7px;height:7px;background:#c7e2d6;border-radius:50%;box-shadow:0 0 0 4px #9dcebf16;}
+.sop-wb.sop-axis-rail-nav .wb-nav-foot {border:0;padding-inline-start:29px;}
+.sop-wb.sop-axis-rail-nav .wb-nav-link[aria-current=page] strong {letter-spacing:.04em;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-axis-rail-nav *,.sop-wb.sop-axis-rail-nav *::before,.sop-wb.sop-axis-rail-nav *::after{animation:none!important;transition:none!important;}}

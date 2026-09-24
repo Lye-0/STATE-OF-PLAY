@@ -1,0 +1,18 @@
+@import "../../../shared/workbench/base.css";
+/* Index Command: 紙の目録を開くように、罫線と編集された文字組みでコマンドを探す。 */
+.sop-wb.sop-index-command {--wb-bg:#e9dfca;--wb-surface:#dfd2b8;--wb-ink:#3c3d31;--wb-muted:#6e7260;--wb-accent:#7b7860;--wb-line:#8e8a6d66;color-scheme:light;}
+.sop-wb.sop-index-command .wb-command-launcher {background:#e9e0d1;border-radius:2px;padding:28px;border-inline-start:8px solid #8e7562;}
+.sop-wb.sop-index-command .wb-command-symbol {border:0;border-radius:0;background:none;color:#806953;}
+.sop-wb.sop-index-command .wb-command-symbol svg {width:36px;height:36px;}
+.sop-wb.sop-index-command .wb-launch-copy strong {font:italic 31px Georgia,serif;}
+.sop-wb.sop-index-command .wb-command-launch {border-radius:0;border-width:0 0 1px;background:none;padding-inline:0;}
+.sop-wb.sop-index-command .wb-command-dialog {background:#ede6da;border-radius:2px;border-inline-start:8px solid #806c59;}
+.sop-wb.sop-index-command .wb-command-entry {border-bottom:2px solid #74695b;}
+.sop-wb.sop-index-command .wb-command-input {font-family:Georgia,serif;}
+.sop-wb.sop-index-command .wb-command-list {padding:8px 24px;}
+.sop-wb.sop-index-command .wb-command-group {font-size:9px;padding:15px 0 8px;letter-spacing:.2em;border-bottom:1px solid #77634850;}
+.sop-wb.sop-index-command .wb-command-option {border-radius:0;border-width:0 0 1px;border-color:#95847033;padding:12px 4px;}
+.sop-wb.sop-index-command .wb-command-icon {border:0;color:#8a7664;}
+.sop-wb.sop-index-command .wb-command-copy strong {font:18px Georgia,serif;}
+.sop-wb.sop-index-command .wb-command-option::before {background:linear-gradient(90deg,#b4a1822b,transparent);border-radius:0;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-index-command *,.sop-wb.sop-index-command *::before,.sop-wb.sop-index-command *::after{animation:none!important;transition:none!important;}}

@@ -1,0 +1,16 @@
+@import "../../../shared/workbench/base.css";
+/* Terminal Command: プロンプトと結果が一つの端末になる、細い走査線とタイピングの焦点。 */
+.sop-wb.sop-terminal-command {--wb-bg:#142724;--wb-surface:#263d32;--wb-ink:#dce8d4;--wb-muted:#a5b99e;--wb-accent:#b6d5a3;--wb-line:#87a68766;}
+.sop-wb.sop-terminal-command .wb-command-launcher, .sop-wb.sop-terminal-command .wb-command-dialog {background:#081b18;border:1px solid #4b8e755e;border-radius:7px;box-shadow:inset 0 0 40px #09251d,0 18px 35px #0005;}
+.sop-wb.sop-terminal-command .wb-command-symbol {border-radius:3px;color:#c1e0ac;border-color:#a2bb7977;}
+.sop-wb.sop-terminal-command .wb-launch-copy strong {font:24px Consolas,monospace;}
+.sop-wb.sop-terminal-command .wb-command-launch {border-radius:3px;background:#0c261d;}
+.sop-wb.sop-terminal-command .wb-command-entry::before {content:">";font:24px Consolas,monospace;color:#b6d89c;}
+.sop-wb.sop-terminal-command .wb-command-entry > svg {display:none;}
+.sop-wb.sop-terminal-command .wb-command-input, .sop-wb.sop-terminal-command .wb-command-copy strong {font-family:Consolas,monospace;}
+.sop-wb.sop-terminal-command .wb-command-option {border-radius:2px;padding-block:10px;}
+.sop-wb.sop-terminal-command .wb-command-icon {border:0;width:20px;color:#93b298;}
+.sop-wb.sop-terminal-command .wb-command-option[aria-selected=true] {border-color:transparent;box-shadow:inset 2px 0 #b3d49f;}
+.sop-wb.sop-terminal-command .wb-command-option::before {background:linear-gradient(90deg,#bdd7a21e,transparent);}
+.sop-wb.sop-terminal-command .wb-art-command {background:repeating-linear-gradient(0deg,#cffaca02 0 1px,transparent 1px 4px);}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-terminal-command *,.sop-wb.sop-terminal-command *::before,.sop-wb.sop-terminal-command *::after{animation:none!important;transition:none!important;}}

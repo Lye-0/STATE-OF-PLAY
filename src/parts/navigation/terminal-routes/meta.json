@@ -1,0 +1,53 @@
+{
+  "id": "terminal-routes",
+  "name": "Terminal Routes",
+  "category": "navigation",
+  "description": "階層のインデントと走査線で行き先を示す、落ち着いた端末。",
+  "designType": "A",
+  "tagline": "行き先に、かたちを。",
+  "motion": "NAVIGATOR",
+  "order": 1974,
+  "version": "1.0.0",
+  "material": "ROUTE / FLOW",
+  "accent": "182,213,163",
+  "componentName": "TerminalRoutes",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "navigation"
+  },
+  "tags": [
+    "NAVIGATOR",
+    "Terminal Routes",
+    "navigation",
+    "ナビゲーション",
+    "workbench"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "NavigationItem[]",
+      "ラベル・href・子リンク・アイコン・バッジ。"
+    ],
+    [
+      "layout",
+      "header | sidebar | dock | mobile",
+      "置き場所に合うレイアウトを指定。"
+    ],
+    [
+      "active / onActiveChange",
+      "string / callback",
+      "現在地のID。リンクを移動して外部状態から反映可能。"
+    ],
+    [
+      "onNavigate",
+      "(item, event) => void | false",
+      "通常はネイティブリンク。falseで既定移動を止めルーターへ接続。"
+    ],
+    [
+      "open / onOpenChange",
+      "boolean / callback",
+      "モバイルナビゲーションの表示を制御。"
+    ]
+  ]
+}

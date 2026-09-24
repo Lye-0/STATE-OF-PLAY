@@ -1,0 +1,12 @@
+@import "../../../shared/workbench/base.css";
+/* Deck Command: 重なったカードが開き、奥から一枚のコマンドデッキがせり上がる。 */
+.sop-wb.sop-deck-command {--wb-bg:#222438;--wb-surface:#36364c;--wb-ink:#e7e6f0;--wb-muted:#b9b6cc;--wb-accent:#c8c3e0;--wb-line:#b2a6c370;}
+.sop-wb.sop-deck-command .wb-command-launcher {border-radius:12px;background:#282631;box-shadow:4px 5px 0 #141820,5px 6px 0 #8d819a44,9px 10px 0 #141820,10px 11px 0 #8d819a25,0 20px 30px #0005;overflow:visible;}
+.sop-wb.sop-deck-command .wb-command-launch {background:#b8accd22;border-color:#bcb4cf55;}
+.sop-wb.sop-deck-command .wb-command-symbol {transform:rotate(-7deg);background:#93829f1f;}
+.sop-wb.sop-deck-command .wb-command-dialog {border-radius:12px;box-shadow:5px 6px #101722,6px 7px #a5a0bd66,11px 12px #101722,12px 13px #a5a0bd33,0 30px 80px #0009;background:#201f2c;}
+.sop-wb.sop-deck-command .wb-command-dialog[open] {animation:wb-fold-open .4s cubic-bezier(.16,1,.3,1);transform-origin:center bottom;}
+.sop-wb.sop-deck-command .wb-command-option {margin-bottom:4px;}
+.sop-wb.sop-deck-command .wb-command-option[aria-selected=true] {box-shadow:0 4px 0 #070d16;}
+.sop-wb.sop-deck-command .wb-command-option::before {background:linear-gradient(130deg,#b5abc944,#9aadc21f);}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-deck-command *,.sop-wb.sop-deck-command *::before,.sop-wb.sop-deck-command *::after{animation:none!important;transition:none!important;}}

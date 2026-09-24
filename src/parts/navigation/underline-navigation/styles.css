@@ -1,0 +1,7 @@
+@import "../../../shared/workbench/base.css";
+/* Underline Navigation: 行き先が分かる、整理されたナビゲーション。リンクの標準操作を維持。 */
+.sop-wb.sop-underline-navigation {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+.sop-wb.sop-underline-navigation .wb-navigation-frame {border:0;border-radius:0;background:none;box-shadow:none}
+.sop-wb.sop-underline-navigation .wb-nav-marker {background:none;border:0;border-bottom:2px solid var(--wb-accent);border-radius:0}
+.sop-wb.sop-underline-navigation .wb-nav-link-icon {display:none}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-underline-navigation *,.sop-wb.sop-underline-navigation *::before,.sop-wb.sop-underline-navigation *::after{animation:none!important;transition:none!important;}}

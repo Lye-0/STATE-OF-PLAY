@@ -1,0 +1,25 @@
+{
+  "mode": "actual Chromium / offline source fixture; Vite not executed",
+  "passed": 18,
+  "tests": [
+    "88 actual skins mount independently with public API and without page errors",
+    "Search query, filter, keyboard, submit, clear and native form reset",
+    "Search async aborts older requests and ignores stale success and failure",
+    "Search composition does not execute, unsafe URLs do not navigate, custom content stays literal",
+    "Command palette drill-down, query, keyboard execute, Escape and focus return",
+    "Command async execution blocks duplicates, surfaces failures and cancels stale work",
+    "Ctrl+K is opt-in globally; multiple palettes dispatch only one, controlled open may decline",
+    "Context menu is scoped; keyboard and explicit trigger; submenu and checkbox actions",
+    "Context disabled actions and controlled check state do not trigger side effects",
+    "Navigation has real hrefs, preserves modified clicks and supports SPA callbacks",
+    "Navigation groups and mobile modal preserve semantics, focus and current location",
+    "Data table numeric three-state sorting, paging and query do not mutate source rows",
+    "Row selection is keyed by identity, select-all affects current page only and row actions are callbacks",
+    "Table manual/server mode returns requests without re-sorting or slicing the supplied page",
+    "Column resizing supports keyboard and pointer; sticky columns remain aligned",
+    "All skins keep page width at 320/390/768; native table overflows only inside its scroll area",
+    "Popovers and modal frames stay within a small viewport; Escape closes only the active layer",
+    "Reduced motion keeps input and actions working; unmount aborts work and releases modal locks"
+  ],
+  "errors": []
+}

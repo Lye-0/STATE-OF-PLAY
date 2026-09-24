@@ -1,0 +1,7 @@
+@import "../../../shared/workbench/base.css";
+/* Product Dock: 行き先が分かる、整理されたナビゲーション。リンクの標準操作を維持。 */
+.sop-wb.sop-product-dock {--wb-bg:#f3f6f3;--wb-surface:#e3e9e4;--wb-ink:#2e413b;--wb-muted:#5e756b;--wb-accent:#537967;--wb-line:#8aa09366;color-scheme:light;}
+.sop-wb.sop-product-dock .wb-navigation-frame {border-radius:18px;background:#f2f4f1;box-shadow:0 5px 18px #0001}
+.sop-wb.sop-product-dock .wb-nav-marker {border-radius:9px;background:#dce6df;border:0}
+.sop-wb.sop-product-dock .wb-nav-brand {padding-top:14px}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-product-dock *,.sop-wb.sop-product-dock *::before,.sop-wb.sop-product-dock *::after{animation:none!important;transition:none!important;}}

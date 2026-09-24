@@ -1,0 +1,8 @@
+@import "../../../shared/workbench/base.css";
+/* Plain Menu: 対象だけに反応する、キーボードでも使える操作メニュー。 */
+.sop-wb.sop-plain-context {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+.sop-wb.sop-plain-context .wb-context-target, .sop-wb.sop-plain-context .wb-context-panel {border-radius:4px}
+.sop-wb.sop-plain-context .wb-menu-glyph {display:none}
+.sop-wb.sop-plain-context .wb-context-heading {padding-inline:11px}
+.sop-wb.sop-plain-context .wb-context-items button {border-radius:3px}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-plain-context *,.sop-wb.sop-plain-context *::before,.sop-wb.sop-plain-context *::after{animation:none!important;transition:none!important;}}

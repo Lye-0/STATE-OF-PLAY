@@ -1,0 +1,16 @@
+@import "../../../shared/workbench/base.css";
+/* Constellation Command: 細い経路と節点でグループをつなぐ、星図のような選択経路。 */
+.sop-wb.sop-constellation-command {--wb-bg:#172538;--wb-surface:#2b3c50;--wb-ink:#e5ebee;--wb-muted:#adbfcf;--wb-accent:#bad2e2;--wb-line:#879fb86e;}
+.sop-wb.sop-constellation-command .wb-command-launcher {background:linear-gradient(145deg,#263045,#161b26);border-color:#9babc24a;}
+.sop-wb.sop-constellation-command .wb-command-symbol {border-radius:50%;border-style:dashed;transform:rotate(-12deg);}
+.sop-wb.sop-constellation-command .wb-command-symbol svg {transform:rotate(12deg);}
+.sop-wb.sop-constellation-command .wb-command-dialog {background:#182031;}
+.sop-wb.sop-constellation-command .wb-command-list {padding-inline:24px;position:relative;}
+.sop-wb.sop-constellation-command .wb-command-group {border-inline-start:1px solid #8c9eb448;margin-inline-start:14px;padding-inline-start:26px;}
+.sop-wb.sop-constellation-command .wb-command-option {border-inline-start:1px solid #8c9eb448;border-radius:0;margin-inline-start:14px;padding-inline-start:26px;}
+.sop-wb.sop-constellation-command .wb-command-icon {position:absolute;left:-5px;width:9px;height:9px;border-radius:50%;border:1px solid #a3b8cc;background:#182031;}
+.sop-wb.sop-constellation-command .wb-command-icon svg {display:none;}
+.sop-wb.sop-constellation-command .wb-command-option[aria-selected=true] .wb-command-icon {background:#c4d3df;box-shadow:0 0 0 4px #97b5d225,0 0 14px #b6d0ed55;}
+.sop-wb.sop-constellation-command .wb-command-option::before {background:linear-gradient(90deg,#9cbcd620,transparent);}
+.sop-wb.sop-constellation-command .wb-command-option[aria-selected=true] {border-color:transparent;border-inline-start-color:#a5c0dc;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-constellation-command *,.sop-wb.sop-constellation-command *::before,.sop-wb.sop-constellation-command *::after{animation:none!important;transition:none!important;}}

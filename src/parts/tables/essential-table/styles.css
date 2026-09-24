@@ -1,0 +1,5 @@
+@import "../../../shared/workbench/base.css";
+/* Essential Table: ソート、選択、固定列を読みやすくまとめた汎用のデータテーブル。 */
+.sop-wb.sop-essential-table {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-essential-table *,.sop-wb.sop-essential-table *::before,.sop-wb.sop-essential-table *::after{animation:none!important;transition:none!important;}}

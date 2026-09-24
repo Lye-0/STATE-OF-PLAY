@@ -1,0 +1,8 @@
+@import "../../../shared/workbench/base.css";
+/* Quiet Command: 検索、グループ、ショートカットを静かに整理したコマンド一覧。 */
+.sop-wb.sop-quiet-command {--wb-bg:#f3f6f3;--wb-surface:#e3e9e4;--wb-ink:#2e413b;--wb-muted:#5e756b;--wb-accent:#537967;--wb-line:#8aa09366;color-scheme:light;}
+.sop-wb.sop-quiet-command .wb-command-launcher {background:#eef0ef;border:0}
+.sop-wb.sop-quiet-command .wb-command-symbol {border:0;background:#dce4df}
+.sop-wb.sop-quiet-command .wb-command-dialog {border-radius:14px}
+.sop-wb.sop-quiet-command .wb-command-icon {display:none}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-quiet-command *,.sop-wb.sop-quiet-command *::before,.sop-wb.sop-quiet-command *::after{animation:none!important;transition:none!important;}}

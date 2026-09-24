@@ -1,0 +1,9 @@
+@import "../../../shared/workbench/base.css";
+/* Paper Data: ソート、選択、固定列を読みやすくまとめた汎用のデータテーブル。 */
+.sop-wb.sop-paper-data-table {--wb-bg:#e9dfca;--wb-surface:#dfd2b8;--wb-ink:#3c3d31;--wb-muted:#6e7260;--wb-accent:#7b7860;--wb-line:#8e8a6d66;color-scheme:light;}
+.sop-wb.sop-paper-data-table .wb-data-frame {background:#f7f4ec;border-radius:5px;box-shadow:0 5px 18px #0001}
+.sop-wb.sop-paper-data-table .wb-data-frame th {background:#ece6da}
+.sop-wb.sop-paper-data-table .wb-data-frame td {background:#faf7ef}
+.sop-wb.sop-paper-data-table .wb-data-heading h3 {font:24px Georgia,serif}
+.sop-wb.sop-paper-data-table .wb-cell-badge {border-radius:4px}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-paper-data-table *,.sop-wb.sop-paper-data-table *::before,.sop-wb.sop-paper-data-table *::after{animation:none!important;transition:none!important;}}

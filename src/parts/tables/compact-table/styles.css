@@ -1,0 +1,10 @@
+@import "../../../shared/workbench/base.css";
+/* Compact Table: ソート、選択、固定列を読みやすくまとめた汎用のデータテーブル。 */
+.sop-wb.sop-compact-table {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+.sop-wb.sop-compact-table .wb-data-frame {border-radius:6px;box-shadow:none}
+.sop-wb.sop-compact-table .wb-data-heading {padding:17px}
+.sop-wb.sop-compact-table .wb-data-heading h3 {font:20px Arial,sans-serif}
+.sop-wb.sop-compact-table .wb-data-toolbar {padding:0 17px 14px}
+.sop-wb.sop-compact-table .wb-data-frame th {font-size:9px}
+.sop-wb.sop-compact-table .wb-cell-badge {padding:2px 6px}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-compact-table *,.sop-wb.sop-compact-table *::before,.sop-wb.sop-compact-table *::after{animation:none!important;transition:none!important;}}

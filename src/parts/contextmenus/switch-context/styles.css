@@ -1,0 +1,12 @@
+@import "../../../shared/workbench/base.css";
+/* Switch Menu: 区切られたキーが一段沈む、小さな操作卓としてのメニュー。 */
+.sop-wb.sop-switch-context {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+.sop-wb.sop-switch-context .wb-context-target {background:#262b2e;border-radius:8px;border-color:#6d7b765c;}
+.sop-wb.sop-switch-context .wb-context-open {border-radius:3px;background:linear-gradient(#cbc4b1,#a49a86);color:#242c28;box-shadow:0 3px 0 #625948;}
+.sop-wb.sop-switch-context .wb-context-panel {background:#20282a;border:1px solid #829187;border-radius:7px;padding:9px;}
+.sop-wb.sop-switch-context .wb-context-items button {border-radius:3px;background:linear-gradient(#3e4746,#2b3837);box-shadow:0 3px #0c1415;margin-bottom:5px;border:1px solid #82918825;}
+.sop-wb.sop-switch-context .wb-context-items button:focus {transform:translateY(1px);box-shadow:0 1px #0c1415;border-color:#a8b39b88;}
+.sop-wb.sop-switch-context .wb-context-items button::before {background:#c2d0aa14;}
+.sop-wb.sop-switch-context .wb-context-separator {margin-block:12px;}
+.sop-wb.sop-switch-context .wb-context-heading {border:0;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-switch-context *,.sop-wb.sop-switch-context *::before,.sop-wb.sop-switch-context *::after{animation:none!important;transition:none!important;}}

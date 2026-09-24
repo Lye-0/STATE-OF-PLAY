@@ -1,0 +1,14 @@
+@import "../../../shared/workbench/base.css";
+/* Magnetic Query: 二本の細いレールが焦点位置で離れ、金属の入力面を浮かせる。 */
+.sop-wb.sop-magnetic-query {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+.sop-wb.sop-magnetic-query .wb-search-shell {border-radius:8px;background:linear-gradient(140deg,#252c31,#12181b);padding:28px 20px;}
+.sop-wb.sop-magnetic-query .wb-search-field {border-radius:3px;border:0;background:#0d1518;min-height:64px;position:relative;box-shadow:0 5px 12px #0004;}
+.sop-wb.sop-magnetic-query .wb-search-field::before, .sop-wb.sop-magnetic-query .wb-search-field::after {content:"";position:absolute;inset:-5px 0 auto;height:1px;background:linear-gradient(90deg,#56686a,#d5e2d8,#586c6d);transition:transform .6s;}
+.sop-wb.sop-magnetic-query .wb-search-field::after {top:auto;bottom:-5px;}
+.sop-wb.sop-magnetic-query[data-wb-focused=true] .wb-search-field::before {transform:translateY(-6px);}
+.sop-wb.sop-magnetic-query[data-wb-focused=true] .wb-search-field::after {transform:translateY(6px);}
+.sop-wb.sop-magnetic-query .wb-search-submit {background:linear-gradient(125deg,#b9c7c0,#627674 60%,#a7bfac);color:#102124;border-radius:4px;box-shadow:inset 0 1px #fff6,0 3px 7px #0007;}
+.sop-wb.sop-magnetic-query .wb-search-submit span {display:none;}
+.sop-wb.sop-magnetic-query .wb-search-filters {padding-top:7px;}
+.sop-wb.sop-magnetic-query .wb-results-list [aria-selected=true] {background:#90aba11a;box-shadow:inset 2px 0 #bbd0c1;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-magnetic-query *,.sop-wb.sop-magnetic-query *::before,.sop-wb.sop-magnetic-query *::after{animation:none!important;transition:none!important;}}

@@ -1,0 +1,13 @@
+@import "../../../shared/workbench/base.css";
+/* Aperture Command: 開口が広がってコマンド空間が現れ、選択した行へ焦点が移る。 */
+.sop-wb.sop-aperture-command {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+.sop-wb.sop-aperture-command .wb-command-launcher {background:radial-gradient(ellipse at 90% 0,#88b9c632,transparent 70%),#121d25;border-color:#a6c6c15b;border-radius:23px;}
+.sop-wb.sop-aperture-command .wb-command-symbol {border-radius:50%;width:58px;height:58px;box-shadow:inset 0 0 0 6px #86b4b916,0 0 0 4px #bdd1ce09;}
+.sop-wb.sop-aperture-command .wb-command-symbol i {position:absolute;inset:-6px;border-radius:50%;border:1px solid #8ea9a966;border-top-color:#cce8e0;transform:rotate(15deg);transition:transform .6s;}
+.sop-wb.sop-aperture-command .wb-command-launcher:hover .wb-command-symbol i {transform:rotate(180deg);}
+.sop-wb.sop-aperture-command .wb-command-dialog[open] {animation:wb-aperture-open .48s cubic-bezier(.16,1,.3,1);}
+.sop-wb.sop-aperture-command .wb-command-dialog {border-radius:22px;background:linear-gradient(150deg,#1f3039,#101821);}
+.sop-wb.sop-aperture-command .wb-command-entry {border-bottom:1px solid #abc9c859;}
+.sop-wb.sop-aperture-command .wb-command-option[aria-selected=true] {border-color:#94bbbd77;box-shadow:0 7px 15px #0004;}
+.sop-wb.sop-aperture-command .wb-command-option::before {background:linear-gradient(135deg,#87b9c52f,#c7e0c510);border-radius:20px 6px 6px 20px;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-aperture-command *,.sop-wb.sop-aperture-command *::before,.sop-wb.sop-aperture-command *::after{animation:none!important;transition:none!important;}}

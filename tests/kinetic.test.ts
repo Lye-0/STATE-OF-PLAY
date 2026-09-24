@@ -7,10 +7,10 @@ const read=(f:string)=>fs.readFileSync(path.join(ROOT,f),'utf8');
 const exists=(f:string)=>fs.existsSync(path.join(ROOT,f));
 const all=(JSON.parse(read('src/catalog/registry.json')) as string[]).map(base=>({base,...JSON.parse(read(base+'/meta.json'))}));
 const added=all.filter(p=>p.tags.includes('KINETIC'));
-test('KINETIC adds 12 rails and 12 menus while retaining the 659 current baseline IDs',()=>{
- assert.equal(all.length,699);assert.equal(added.length,24);assert.equal(all.filter(p=>!p.tags.includes('KINETIC')&&!p.tags.includes('MOTION STUDIES')).length,659);
+test('KINETIC adds 12 rails and 12 menus while retaining the 747 current baseline IDs',()=>{
+ assert.equal(all.length,787);assert.equal(added.length,24);assert.equal(all.filter(p=>!p.tags.includes('KINETIC')&&!p.tags.includes('MOTION STUDIES')).length,747);
  for(const c of ['scrollbars','dropdowns']){assert.equal(added.filter(p=>p.category===c).length,12);assert.equal(all.filter(p=>p.category===c).length,36);}
- assert.equal(new Set(all.map(p=>p.id)).size,699);assert.ok(added.every(p=>p.designType==='A'));
+ assert.equal(new Set(all.map(p=>p.id)).size,787);assert.ok(added.every(p=>p.designType==='A'));
 });
 test('each new part has distinct art, a precise prompt, a usage example and a controller',()=>{
  assert.equal(new Set(added.map(p=>read(p.base+'/styles.css'))).size,24);

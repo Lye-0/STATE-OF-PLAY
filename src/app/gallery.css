@@ -451,3 +451,25 @@
 .signature-presets{display:flex;gap:7px}.sg-demo-row{display:flex;align-items:center;justify-content:center;gap:10px;padding-top:19px;font:9px Consolas;color:#99a8a7}
 @media(max-width:760px){.signature-card .object-stage{padding:24px 20px}.signature-card .card-bottom h2{display:block}.signature-card .card-bottom h2>span{display:none}}
 @media(max-width:380px){.signature-card .object-stage{padding:22px 15px}.signature-preview .preview-stage{padding:24px 3px}.signature-controls{padding:12px}.signature-card .card-bottom h2{font-size:23px}}
+
+/* Workbench: demos stay scoped and retain space for actual content. */
+.workbench-card .object-stage{height:auto;min-height:255px;padding:30px 24px;overflow:visible;align-items:center}
+.workbench-card .stage-mount{width:100%;min-width:0;max-width:470px}
+.workbench-card .card-bottom{padding-top:0}
+.workbench-card.workbench-tables .stage-mount{max-width:none}
+.workbench-card.workbench-tables .object-stage{padding-inline:20px}
+.workbench-card.workbench-navigation .object-stage{min-height:320px}
+.workbench-preview .preview-stage{height:auto;min-height:205px;padding:32px 0;display:block;overflow:visible}
+.workbench-preview{overflow:visible}
+.workbench-preview .sop-wb{width:100%}
+.wb-demo-feedback{display:block;min-height:0;font-size:10px;color:#acb9b1;line-height:1.65;margin-top:10px;overflow-wrap:anywhere}
+.wb-demo-feedback:empty{display:none}
+.workbench-controls{margin:0 0 26px;padding:18px;border:1px solid #3c4547;border-radius:10px;background:#171d21}
+.wb-demo-controls{display:flex;flex-wrap:wrap;gap:12px;margin-top:15px}
+.wb-demo-controls>label{display:flex;gap:8px;align-items:center;font-size:11px;color:#b8c4c4}
+.wb-demo-controls select,.wb-demo-controls button,.wb-demo-foot button{font:10px var(--sans);color:#d9e2df;background:#222c31;border:1px solid #47565c;border-radius:5px;padding:8px 10px;min-height:34px}
+.wb-demo-controls p{font-size:10px;color:#a1b0b4;line-height:1.8;margin:0}
+.wb-demo-buttons{display:flex;gap:8px}
+.wb-demo-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;padding-top:13px;border-top:1px solid #333e42;font-size:11px}
+.workbench-controls>output{display:block;color:#bad9c7;font:9px var(--mono);letter-spacing:.5px;margin-top:14px}
+@media(max-width:600px){.workbench-card .object-stage{padding:24px 16px}.workbench-card.workbench-tables .object-stage{padding-inline:14px}.workbench-card .card-bottom h2{font-size:23px}}

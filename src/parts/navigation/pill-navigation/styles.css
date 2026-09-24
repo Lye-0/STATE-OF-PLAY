@@ -1,0 +1,8 @@
+@import "../../../shared/workbench/base.css";
+/* Pill Navigation: 行き先が分かる、整理されたナビゲーション。リンクの標準操作を維持。 */
+.sop-wb.sop-pill-navigation {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+.sop-wb.sop-pill-navigation .wb-navigation-frame {border:0;background:transparent;box-shadow:none}
+.sop-wb.sop-pill-navigation .wb-nav-marker {border-radius:30px;background:#bfd8c7;color:#152d24}
+.sop-wb.sop-pill-navigation .wb-nav-link[aria-current=page] {color:#16291f}
+.sop-wb.sop-pill-navigation .wb-nav-foot {border:0}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-pill-navigation *,.sop-wb.sop-pill-navigation *::before,.sop-wb.sop-pill-navigation *::after{animation:none!important;transition:none!important;}}

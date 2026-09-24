@@ -30,5 +30,10 @@ export const categories = [
     { id: 'colors', label: 'カラーピッカー', english: 'COLOR PICKERS' },
     { id: 'skeletons', label: 'スケルトン', english: 'SKELETONS' },
     { id: 'timelines', label: 'タイムライン', english: 'TIMELINES' },
-    { id: 'wizards', label: 'ステップ／ウィザード', english: 'STEPS / WIZARDS' }
+    { id: 'wizards', label: 'ステップ／ウィザード', english: 'STEPS / WIZARDS' },
+    { id: 'searchbars', label: '検索バー', english: 'SEARCH BARS' },
+    { id: 'commands', label: 'コマンドパレット', english: 'COMMAND PALETTES' },
+    { id: 'contextmenus', label: '右クリックメニュー', english: 'CONTEXT MENUS' },
+    { id: 'navigation', label: 'ナビゲーション', english: 'NAVIGATION' },
+    { id: 'tables', label: 'テーブル／データグリッド', english: 'DATA TABLES' }
 ];

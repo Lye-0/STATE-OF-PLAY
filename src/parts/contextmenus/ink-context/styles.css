@@ -1,0 +1,15 @@
+@import "../../../shared/workbench/base.css";
+/* Ink Menu: 太い活字と細い下線。選んだ行を、インクの一本線が追いかける。 */
+.sop-wb.sop-ink-context {--wb-bg:#e9dfca;--wb-surface:#dfd2b8;--wb-ink:#3c3d31;--wb-muted:#6e7260;--wb-accent:#7b7860;--wb-line:#8e8a6d66;color-scheme:light;}
+.sop-wb.sop-ink-context .wb-context-target {background:#e9e6df;border:0;border-radius:0;border-block:2px solid #262b2b;}
+.sop-wb.sop-ink-context .wb-context-object {border:0;border-radius:0;box-shadow:none;background:none;}
+.sop-wb.sop-ink-context .wb-context-target-copy strong {font:24px Georgia,serif;}
+.sop-wb.sop-ink-context .wb-context-panel {background:#eeebe3;border-radius:0;border:0;border-top:3px solid #323633;padding:10px 16px;}
+.sop-wb.sop-ink-context .wb-context-heading {font-size:9px;letter-spacing:.2em;padding-inline:2px;}
+.sop-wb.sop-ink-context .wb-context-items button {padding:11px 2px;border:0;border-radius:0;border-bottom:1px solid #9d978b30;}
+.sop-wb.sop-ink-context .wb-menu-copy strong {font:17px Georgia,serif;}
+.sop-wb.sop-ink-context .wb-menu-glyph {display:none;}
+.sop-wb.sop-ink-context .wb-context-items button::before {inset:auto 0 0;height:2px;background:#675d48;transform:scaleX(0);}
+.sop-wb.sop-ink-context .wb-context-items button:focus::before {transform:scaleX(1);}
+.sop-wb.sop-ink-context .wb-context-items button:focus {border-color:#9d978b30;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-ink-context *,.sop-wb.sop-ink-context *::before,.sop-wb.sop-ink-context *::after{animation:none!important;transition:none!important;}}

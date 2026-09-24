@@ -1,0 +1,7 @@
+@import "../../../shared/workbench/base.css";
+/* Paper Search: 日常の検索に合わせやすい、読みやすい入力とフィルター。 */
+.sop-wb.sop-paper-searchbar {--wb-bg:#e9dfca;--wb-surface:#dfd2b8;--wb-ink:#3c3d31;--wb-muted:#6e7260;--wb-accent:#7b7860;--wb-line:#8e8a6d66;color-scheme:light;}
+.sop-wb.sop-paper-searchbar .wb-search-shell {background:#f5f1e9;border-radius:6px;box-shadow:0 3px 8px #0001}
+.sop-wb.sop-paper-searchbar .wb-search-field {background:#fffdf8;border-radius:4px}
+.sop-wb.sop-paper-searchbar .wb-search-submit {border-radius:3px;background:#796952;color:#fff}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-paper-searchbar *,.sop-wb.sop-paper-searchbar *::before,.sop-wb.sop-paper-searchbar *::after{animation:none!important;transition:none!important;}}

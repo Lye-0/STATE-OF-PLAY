@@ -1,0 +1,13 @@
+@import "../../../shared/workbench/base.css";
+/* Blueprint Table: 製図の寸法線と座標のリズムで、数値と状態を整然と読む。 */
+.sop-wb.sop-blueprint-table {--wb-bg:#172538;--wb-surface:#2b3c50;--wb-ink:#e5ebee;--wb-muted:#adbfcf;--wb-accent:#bad2e2;--wb-line:#879fb86e;}
+.sop-wb.sop-blueprint-table .wb-data-frame {background:#102b40;border-radius:3px;border:1px solid #8eb8c888;box-shadow:inset 0 0 0 5px #102b40,inset 0 0 0 6px #9bced230;}
+.sop-wb.sop-blueprint-table .wb-art-table {background-image:linear-gradient(#c8e6e508 1px,transparent 1px),linear-gradient(90deg,#c8e6e508 1px,transparent 1px);background-size:20px 20px;}
+.sop-wb.sop-blueprint-table .wb-data-heading h3 {font:22px Consolas,monospace;letter-spacing:-.5px;}
+.sop-wb.sop-blueprint-table .wb-data-frame th {background:#17384a;font:9px Consolas,monospace;border-right:1px solid #8bbcc744;}
+.sop-wb.sop-blueprint-table .wb-data-frame td {background:#102b40;border-right:1px dashed #8bbcc72c;font-size:11px;}
+.sop-wb.sop-blueprint-table .wb-table-search {border-radius:0;border-style:dashed;}
+.sop-wb.sop-blueprint-table .wb-cell-badge {border-radius:0;background:none;}
+.sop-wb.sop-blueprint-table .wb-data-footer nav button {border-radius:0;}
+.sop-wb.sop-blueprint-table .wb-data-frame th[aria-sort]::after {left:0;right:0;height:1px;background:#d4eadd;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-blueprint-table *,.sop-wb.sop-blueprint-table *::before,.sop-wb.sop-blueprint-table *::after{animation:none!important;transition:none!important;}}

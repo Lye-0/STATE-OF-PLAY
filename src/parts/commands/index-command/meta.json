@@ -1,0 +1,53 @@
+{
+  "id": "index-command",
+  "name": "Index Command",
+  "category": "commands",
+  "description": "紙の目録を開くように、罫線と編集された文字組みでコマンドを探す。",
+  "designType": "A",
+  "tagline": "次の操作へ。",
+  "motion": "NAVIGATOR",
+  "order": 1935,
+  "version": "1.0.0",
+  "material": "LAUNCH / ACTION",
+  "accent": "123,120,96",
+  "componentName": "IndexCommand",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "commands"
+  },
+  "tags": [
+    "NAVIGATOR",
+    "Index Command",
+    "commands",
+    "コマンドパレット",
+    "workbench"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "CommandItem[]",
+      "コマンド、グループ、ショートカット、子階層を指定。"
+    ],
+    [
+      "open / onOpenChange",
+      "boolean / callback",
+      "表示を外部制御。"
+    ],
+    [
+      "onExecute",
+      "(item, signal) => void | false | Promise",
+      "処理中の重複を抑止。falseなら開いたまま。例外はエラー表示。"
+    ],
+    [
+      "hotkey",
+      "boolean",
+      "trueでCtrl/Cmd+Kを登録。ギャラリーではfalse。"
+    ],
+    [
+      "apiRef",
+      "Ref<WorkbenchAPI>",
+      "Reactからopen()/close()を呼べる参照。"
+    ]
+  ]
+}

@@ -1,0 +1,11 @@
+@import "../../../shared/workbench/base.css";
+/* Glass Horizon: 透明な選択面が水平線を滑り、ガラスの縁に光が集まる。 */
+.sop-wb.sop-glass-horizon-nav {--wb-bg:#132c34;--wb-surface:#28464e;--wb-ink:#deeee5;--wb-muted:#a7c7c5;--wb-accent:#b2ded1;--wb-line:#8dc3c166;}
+.sop-wb.sop-glass-horizon-nav .wb-navigation-frame {background:radial-gradient(ellipse at 70% 0,#7dbfc130,transparent 70%),#11262c;border-radius:20px;border-color:#a9dfd566;box-shadow:inset 0 1px #c7efe845,0 15px 30px #0004;}
+.sop-wb.sop-glass-horizon-nav .wb-nav-brand {padding-bottom:17px;}
+.sop-wb.sop-glass-horizon-nav .wb-nav-marker {background:linear-gradient(135deg,#b6e7dc40,#96bfd11a);border-radius:25px;border-color:#bae9e07d;box-shadow:inset 0 1px #e2fff056,inset 0 -1px #b5e1e533,0 4px 7px #0003;}
+.sop-wb.sop-glass-horizon-nav .wb-nav-link, .sop-wb.sop-glass-horizon-nav .wb-nav-disclosure {border-radius:25px;}
+.sop-wb.sop-glass-horizon-nav .wb-nav-link:hover {background:transparent;}
+.sop-wb.sop-glass-horizon-nav .wb-nav-link-icon {display:none;}
+.sop-wb.sop-glass-horizon-nav .wb-nav-foot {border-top:1px solid #90c2c334;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-glass-horizon-nav *,.sop-wb.sop-glass-horizon-nav *::before,.sop-wb.sop-glass-horizon-nav *::after{animation:none!important;transition:none!important;}}

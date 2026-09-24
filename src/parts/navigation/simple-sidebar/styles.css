@@ -1,0 +1,6 @@
+@import "../../../shared/workbench/base.css";
+/* Simple Sidebar: 行き先が分かる、整理されたナビゲーション。リンクの標準操作を維持。 */
+.sop-wb.sop-simple-sidebar {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+.sop-wb.sop-simple-sidebar .wb-navigation-frame {border-radius:8px;box-shadow:none}
+.sop-wb.sop-simple-sidebar .wb-nav-marker {border-radius:5px}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-simple-sidebar *,.sop-wb.sop-simple-sidebar *::before,.sop-wb.sop-simple-sidebar *::after{animation:none!important;transition:none!important;}}

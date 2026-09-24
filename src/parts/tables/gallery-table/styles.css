@@ -1,0 +1,16 @@
+@import "../../../shared/workbench/base.css";
+/* Gallery Table: 大きな余白と浮いた行。作品の目録のようにデータを展示する。 */
+.sop-wb.sop-gallery-table {--wb-bg:#f3f6f3;--wb-surface:#e3e9e4;--wb-ink:#2e413b;--wb-muted:#5e756b;--wb-accent:#537967;--wb-line:#8aa09366;color-scheme:light;}
+.sop-wb.sop-gallery-table .wb-data-frame {background:#e9edeb;border-radius:21px;border:0;box-shadow:0 14px 30px #0002;}
+.sop-wb.sop-gallery-table .wb-data-heading {padding:29px 27px 20px;}
+.sop-wb.sop-gallery-table .wb-data-heading h3 {font:36px Georgia,serif;letter-spacing:-1px;}
+.sop-wb.sop-gallery-table .wb-data-frame table {border-spacing:0 7px;background:#e9edeb;}
+.sop-wb.sop-gallery-table .wb-data-frame th {background:#e9edeb;border:0;}
+.sop-wb.sop-gallery-table .wb-data-frame td {background:#f8faf7;border:0;padding-block:20px;box-shadow:0 2px #b4c1ba44;}
+.sop-wb.sop-gallery-table .wb-data-frame td:first-child {border-radius:12px 0 0 12px;}
+.sop-wb.sop-gallery-table .wb-data-frame td:last-child {border-radius:0 12px 12px 0;}
+.sop-wb.sop-gallery-table .wb-table-scroll {border:0;padding:0 12px;}
+.sop-wb.sop-gallery-table .wb-data-frame tbody tr[data-selected=true] td {background:#d8e5dc;}
+.sop-wb.sop-gallery-table .wb-cell-badge {border:0;background:#e0e9e1;}
+.sop-wb.sop-gallery-table .wb-table-search {background:#f7faf5;border:0;border-radius:25px;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-gallery-table *,.sop-wb.sop-gallery-table *::before,.sop-wb.sop-gallery-table *::after{animation:none!important;transition:none!important;}}

@@ -1,0 +1,14 @@
+@import "../../../shared/workbench/base.css";
+/* Spine Navigation: 縦の背と折り返した章見出し。選択した場所が紙の一段として浮く。 */
+.sop-wb.sop-spine-navigation {--wb-bg:#e9dfca;--wb-surface:#dfd2b8;--wb-ink:#3c3d31;--wb-muted:#6e7260;--wb-accent:#7b7860;--wb-line:#8e8a6d66;color-scheme:light;}
+.sop-wb.sop-spine-navigation .wb-navigation-frame {background:linear-gradient(90deg,#9b8367 0 7px,#d9cbb1 8px 20px,#e6dcc8 23px);border:0;border-radius:5px 14px 14px 5px;padding-inline-start:19px;box-shadow:0 18px 30px #0003;}
+.sop-wb.sop-spine-navigation .wb-nav-brand strong {font:italic 24px Georgia,serif;}
+.sop-wb.sop-spine-navigation .wb-brand-glyph {display:none;}
+.sop-wb.sop-spine-navigation .wb-nav-desktop {margin-inline:0 10px!important;}
+.sop-wb.sop-spine-navigation .wb-nav-list {gap:6px;}
+.sop-wb.sop-spine-navigation .wb-nav-link {border-radius:0 8px 8px 0;border-bottom:1px solid #a9957455;}
+.sop-wb.sop-spine-navigation .wb-nav-link strong {font-family:Georgia,serif;font-size:17px;}
+.sop-wb.sop-spine-navigation .wb-nav-marker {background:#d4c2a4;border-radius:0 8px 8px 0;border-color:#99836255;box-shadow:2px 4px #a68e6727;}
+.sop-wb.sop-spine-navigation .wb-nav-link-icon {display:none;}
+.sop-wb.sop-spine-navigation .wb-nav-foot {border:0;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-spine-navigation *,.sop-wb.sop-spine-navigation *::before,.sop-wb.sop-spine-navigation *::after{animation:none!important;transition:none!important;}}

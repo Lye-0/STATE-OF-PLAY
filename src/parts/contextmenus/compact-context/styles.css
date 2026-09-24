@@ -1,0 +1,8 @@
+@import "../../../shared/workbench/base.css";
+/* Compact Menu: 対象だけに反応する、キーボードでも使える操作メニュー。 */
+.sop-wb.sop-compact-context {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+.sop-wb.sop-compact-context .wb-context-target {min-height:120px;padding:20px}
+.sop-wb.sop-compact-context .wb-context-panel {width:238px;border-radius:8px}
+.sop-wb.sop-compact-context .wb-context-items button {min-height:32px;padding:6px 8px}
+.sop-wb.sop-compact-context .wb-menu-copy small {display:none}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-compact-context *,.sop-wb.sop-compact-context *::before,.sop-wb.sop-compact-context *::after{animation:none!important;transition:none!important;}}

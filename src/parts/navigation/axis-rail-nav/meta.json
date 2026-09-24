@@ -1,0 +1,53 @@
+{
+  "id": "axis-rail-nav",
+  "name": "Axis Rail",
+  "category": "navigation",
+  "description": "一本の軸と小さな節点が、選択した場所へ伸び縮みする。",
+  "designType": "A",
+  "tagline": "行き先に、かたちを。",
+  "motion": "NAVIGATOR",
+  "order": 1966,
+  "version": "1.0.0",
+  "material": "ROUTE / FLOW",
+  "accent": "192,216,201",
+  "componentName": "AxisRailNav",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "navigation"
+  },
+  "tags": [
+    "NAVIGATOR",
+    "Axis Rail",
+    "navigation",
+    "ナビゲーション",
+    "workbench"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "NavigationItem[]",
+      "ラベル・href・子リンク・アイコン・バッジ。"
+    ],
+    [
+      "layout",
+      "header | sidebar | dock | mobile",
+      "置き場所に合うレイアウトを指定。"
+    ],
+    [
+      "active / onActiveChange",
+      "string / callback",
+      "現在地のID。リンクを移動して外部状態から反映可能。"
+    ],
+    [
+      "onNavigate",
+      "(item, event) => void | false",
+      "通常はネイティブリンク。falseで既定移動を止めルーターへ接続。"
+    ],
+    [
+      "open / onOpenChange",
+      "boolean / callback",
+      "モバイルナビゲーションの表示を制御。"
+    ]
+  ]
+}

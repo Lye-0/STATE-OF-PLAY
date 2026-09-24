@@ -1,0 +1,16 @@
+@import "../../../shared/workbench/base.css";
+/* Radar Query: 検索のたびに小さな走査面が開く、緑の細線と計測目盛り。 */
+.sop-wb.sop-radar-query {--wb-bg:#142724;--wb-surface:#263d32;--wb-ink:#dce8d4;--wb-muted:#a5b99e;--wb-accent:#b6d5a3;--wb-line:#87a68766;}
+.sop-wb.sop-radar-query .wb-search-shell {background:radial-gradient(circle at 0 50%,#4a907612,transparent 60%),#0b1819;border-radius:8px;border-color:#63927b55;padding:24px;}
+.sop-wb.sop-radar-query .wb-search-field {background:#071111;border-color:#547462;border-radius:6px;min-height:64px;}
+.sop-wb.sop-radar-query .wb-search-emblem {width:38px;height:38px;border:1px solid #8abfa666;border-radius:50%;box-shadow:inset 0 0 0 5px #274c4144;}
+.sop-wb.sop-radar-query .wb-search-emblem::before {content:"";position:absolute;inset:-7px;border:1px dashed #7eb29244;border-radius:50%;transition:transform .8s;}
+.sop-wb.sop-radar-query[data-wb-focused=true] .wb-search-emblem::before {transform:rotate(100deg);}
+.sop-wb.sop-radar-query .wb-search-emblem i {position:absolute;inset:2px;border-radius:50%;background:conic-gradient(from -40deg,transparent 75%,#78b89866);opacity:0;transition:opacity .4s,transform .8s;}
+.sop-wb.sop-radar-query[data-wb-focused=true] .wb-search-emblem i {opacity:1;transform:rotate(200deg);}
+.sop-wb.sop-radar-query .wb-search-input {font-family:Consolas,monospace;}
+.sop-wb.sop-radar-query .wb-search-submit {border-radius:3px;background:#accbb744;color:#c1dfc7;}
+.sop-wb.sop-radar-query .wb-search-submit span {display:none;}
+.sop-wb.sop-radar-query .wb-results-list [role=option] {border-radius:2px;border-bottom:1px dashed #5d7c6744;}
+.sop-wb.sop-radar-query .wb-results-list [aria-selected=true] {box-shadow:inset 2px 0 #b3daba;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-radar-query *,.sop-wb.sop-radar-query *::before,.sop-wb.sop-radar-query *::after{animation:none!important;transition:none!important;}}

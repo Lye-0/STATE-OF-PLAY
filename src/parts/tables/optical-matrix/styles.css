@@ -1,0 +1,13 @@
+@import "../../../shared/workbench/base.css";
+/* Optical Matrix: 列見出しのスリットを光が横切る、奥行きのある精密な表。 */
+.sop-wb.sop-optical-matrix {--wb-bg:#172538;--wb-surface:#2b3c50;--wb-ink:#e5ebee;--wb-muted:#adbfcf;--wb-accent:#bad2e2;--wb-line:#879fb86e;}
+.sop-wb.sop-optical-matrix .wb-data-frame {background:linear-gradient(150deg,#222c35,#0c1722);border-color:#9bb6cb61;border-radius:16px;box-shadow:inset 0 1px #d2e4e926,0 20px 30px #0006;}
+.sop-wb.sop-optical-matrix .wb-data-heading h3 {font-size:28px;}
+.sop-wb.sop-optical-matrix .wb-data-heading {padding-bottom:22px;}
+.sop-wb.sop-optical-matrix .wb-data-frame th {background:linear-gradient(#2a3a43,#172b33);box-shadow:inset 0 1px #c3dee720;}
+.sop-wb.sop-optical-matrix .wb-data-frame td {background:#111e2a;}
+.sop-wb.sop-optical-matrix .wb-data-frame th[aria-sort]::after {height:3px;background:linear-gradient(90deg,#aab9da,#b3decf,#d1bbc9);box-shadow:0 0 11px #91c5c88a;}
+.sop-wb.sop-optical-matrix .wb-cell-badge {border-color:#accbd54d;background:#7ab7bf13;}
+.sop-wb.sop-optical-matrix .wb-data-frame tbody tr[data-selected=true] td {background:#233b49;}
+.sop-wb.sop-optical-matrix .wb-table-search {border-radius:25px;background:#0a1621;box-shadow:inset 0 3px 4px #0004;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-optical-matrix *,.sop-wb.sop-optical-matrix *::before,.sop-wb.sop-optical-matrix *::after{animation:none!important;transition:none!important;}}

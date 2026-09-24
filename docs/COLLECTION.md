@@ -1,6 +1,6 @@
-# パーツ一覧 — v4.11.0
+# パーツ一覧 — v4.12.0
 
-699パーツ / 31カテゴリ。v4.8.1で重複していたPaper Loaderを削除した状態を維持し、v4.11.0でSIGNATUREの6カテゴリ・96パーツを追加しました。個別の新作一覧は [SIGNATURE-COLLECTION.md](SIGNATURE-COLLECTION.md) を参照してください。
+787パーツ / 36カテゴリ。重複していたPaper Loaderを削除した状態を維持し、SIGNATUREの6カテゴリ・96パーツとNAVIGATORの5カテゴリ・88パーツを追加しました。新作の一覧は [SIGNATURE-COLLECTION.md](SIGNATURE-COLLECTION.md) と [NAVIGATOR.md](NAVIGATOR.md) を参照してください。
 
 | カテゴリ | 数 | A | B |
 |---|---:|---:|---:|
@@ -35,6 +35,11 @@
 | skeletons | 16 | 10 | 6 |
 | timelines | 16 | 10 | 6 |
 | wizards | 16 | 10 | 6 |
+| searchbars | 20 | 12 | 8 |
+| commands | 16 | 10 | 6 |
+| contextmenus | 16 | 10 | 6 |
+| navigation | 20 | 12 | 8 |
+| tables | 16 | 10 | 6 |
 
 ## toggles
 

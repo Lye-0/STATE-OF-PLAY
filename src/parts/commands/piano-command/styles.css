@@ -1,0 +1,14 @@
+@import "../../../shared/workbench/base.css";
+/* Piano Command: 押せるキーを思わせる候補列。選択した一段だけが沈み、縁が光る。 */
+.sop-wb.sop-piano-command {--wb-bg:#142724;--wb-surface:#263d32;--wb-ink:#dce8d4;--wb-muted:#a5b99e;--wb-accent:#b6d5a3;--wb-line:#87a68766;}
+.sop-wb.sop-piano-command .wb-command-launcher {border-radius:12px;background:linear-gradient(#333637,#11181c);border-color:#65746c77;box-shadow:inset 0 2px #becdc233,0 6px #050b10,0 18px 30px #0006;}
+.sop-wb.sop-piano-command .wb-command-launch {background:linear-gradient(#e3d7bf,#b8ab92);color:#333831;border-radius:4px;box-shadow:0 3px 0 #7a6c53;border-color:#dfdbc180;}
+.sop-wb.sop-piano-command .wb-command-launch kbd {color:#5a5f53;border-color:#827b6466;}
+.sop-wb.sop-piano-command .wb-command-dialog {background:#111a1c;border-radius:9px;border-color:#74837a;}
+.sop-wb.sop-piano-command .wb-command-option {margin:4px 5px 6px;background:linear-gradient(#dfd8c9,#c8bfad);color:#25302e;border:1px solid #eee3c744;border-radius:3px;box-shadow:0 4px 0 #696255;}
+.sop-wb.sop-piano-command .wb-command-option:nth-of-type(2n) {background:linear-gradient(#343d3d,#202b2b);color:#dce3d1;box-shadow:0 4px 0 #080f11;}
+.sop-wb.sop-piano-command .wb-command-option[aria-selected=true] {box-shadow:0 1px #776c56,inset 0 0 0 1px #d4d8b277;transform:translateY(2px);}
+.sop-wb.sop-piano-command .wb-command-option .wb-command-icon {color:inherit;border-color:currentColor;opacity:.65;}
+.sop-wb.sop-piano-command .wb-command-option small, .sop-wb.sop-piano-command .wb-command-option kbd {color:inherit;opacity:.6;}
+.sop-wb.sop-piano-command .wb-command-option::before {background:#a6c29115;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-piano-command *,.sop-wb.sop-piano-command *::before,.sop-wb.sop-piano-command *::after{animation:none!important;transition:none!important;}}

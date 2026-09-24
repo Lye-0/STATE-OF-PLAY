@@ -1,0 +1,12 @@
+@import "../../../shared/workbench/base.css";
+/* Ribbon Query: 折り返した帯がフォーカスでほどけ、候補と入力を一枚の紙につなぐ。 */
+.sop-wb.sop-ribbon-query {--wb-bg:#e9dfca;--wb-surface:#dfd2b8;--wb-ink:#3c3d31;--wb-muted:#6e7260;--wb-accent:#7b7860;--wb-line:#8e8a6d66;color-scheme:light;}
+.sop-wb.sop-ribbon-query .wb-search-shell {background:#e8dcc8;color:#312d29;border-radius:3px 18px 18px 3px;padding:24px 20px 22px 32px;border:1px solid #fff5;box-shadow:-6px 4px 0 #ac9a80,0 18px 28px #0005;}
+.sop-wb.sop-ribbon-query .wb-search-shell::before {content:"";position:absolute;inset:0 auto 0 13px;width:1px;background:#aa7f6b66;}
+.sop-wb.sop-ribbon-query .wb-search-field {background:#eee6d9;border:0;border-radius:0;border-bottom:2px solid #c49074;box-shadow:0 4px 5px #4f38200b;}
+.sop-wb.sop-ribbon-query .wb-search-submit {background:#bd8060;color:#fff0d4;border:0;border-radius:2px 12px 2px 2px;transform:rotate(-3deg);}
+.sop-wb.sop-ribbon-query .wb-search-submit span {display:none;}
+.sop-wb.sop-ribbon-query .wb-art-search i:first-child {right:0;top:0;width:50px;height:50px;background:linear-gradient(135deg,#fff3 48%,#bb9d79 50%,#e8d7bc 72%);clip-path:polygon(0 0,100% 0,100% 100%);transform-origin:top right;transition:transform .6s;}
+.sop-wb.sop-ribbon-query[data-wb-focused=true] .wb-art-search i:first-child {transform:rotateY(-130deg);}
+.sop-wb.sop-ribbon-query .wb-results-list [aria-selected=true] {background:#c2916c22;border-color:#bd957666;border-radius:1px;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-ribbon-query *,.sop-wb.sop-ribbon-query *::before,.sop-wb.sop-ribbon-query *::after{animation:none!important;transition:none!important;}}

@@ -1,0 +1,7 @@
+@import "../../../shared/workbench/base.css";
+/* Filled Search: 日常の検索に合わせやすい、読みやすい入力とフィルター。 */
+.sop-wb.sop-filled-searchbar {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+.sop-wb.sop-filled-searchbar .wb-search-shell {border:0;box-shadow:none}
+.sop-wb.sop-filled-searchbar .wb-search-field {background:#303b45;border:0}
+.sop-wb.sop-filled-searchbar .wb-search-submit {background:#a7c9bd;color:#162b25}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-filled-searchbar *,.sop-wb.sop-filled-searchbar *::before,.sop-wb.sop-filled-searchbar *::after{animation:none!important;transition:none!important;}}

@@ -1,0 +1,10 @@
+@import "../../../shared/workbench/base.css";
+/* Rail Menu: 金属キャリッジのような選択面が、精密なガイドに沿って収まる。 */
+.sop-wb.sop-rail-context {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+.sop-wb.sop-rail-context .wb-context-target {background:linear-gradient(155deg,#354041,#172225);border-radius:9px;box-shadow:inset 0 2px #d1e1cd27,0 4px #081314,0 15px 25px #0004;}
+.sop-wb.sop-rail-context .wb-context-panel {background:linear-gradient(90deg,#697973 0 2px,#131f23 3px 12px,#263438 13px);border-radius:7px;padding-inline-start:16px;border-color:#92a39977;}
+.sop-wb.sop-rail-context .wb-context-items button {border-radius:3px;}
+.sop-wb.sop-rail-context .wb-context-items button::before {background:linear-gradient(160deg,#8fa39944,#b7c6bc13);box-shadow:inset 0 1px #cfdbcb33,0 2px #0005;}
+.sop-wb.sop-rail-context .wb-context-items button:focus {border-color:#a6b4a766;}
+.sop-wb.sop-rail-context .wb-menu-glyph {color:#c5d6bd;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-rail-context *,.sop-wb.sop-rail-context *::before,.sop-wb.sop-rail-context *::after{animation:none!important;transition:none!important;}}

@@ -1,0 +1,53 @@
+{
+  "id": "terminal-command",
+  "name": "Terminal Command",
+  "category": "commands",
+  "description": "プロンプトと結果が一つの端末になる、細い走査線とタイピングの焦点。",
+  "designType": "A",
+  "tagline": "次の操作へ。",
+  "motion": "NAVIGATOR",
+  "order": 1934,
+  "version": "1.0.0",
+  "material": "LAUNCH / ACTION",
+  "accent": "182,213,163",
+  "componentName": "TerminalCommand",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "commands"
+  },
+  "tags": [
+    "NAVIGATOR",
+    "Terminal Command",
+    "commands",
+    "コマンドパレット",
+    "workbench"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "CommandItem[]",
+      "コマンド、グループ、ショートカット、子階層を指定。"
+    ],
+    [
+      "open / onOpenChange",
+      "boolean / callback",
+      "表示を外部制御。"
+    ],
+    [
+      "onExecute",
+      "(item, signal) => void | false | Promise",
+      "処理中の重複を抑止。falseなら開いたまま。例外はエラー表示。"
+    ],
+    [
+      "hotkey",
+      "boolean",
+      "trueでCtrl/Cmd+Kを登録。ギャラリーではfalse。"
+    ],
+    [
+      "apiRef",
+      "Ref<WorkbenchAPI>",
+      "Reactからopen()/close()を呼べる参照。"
+    ]
+  ]
+}

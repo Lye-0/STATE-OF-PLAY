@@ -1,0 +1,53 @@
+{
+  "id": "parallax-search",
+  "name": "Parallax Search",
+  "category": "searchbars",
+  "description": "焦点が合うように二重のレンズが開き、入力面へ光が集まる。",
+  "designType": "A",
+  "tagline": "探す、という体験。",
+  "motion": "NAVIGATOR",
+  "order": 1912,
+  "version": "1.0.0",
+  "material": "QUERY / FOCUS",
+  "accent": "192,216,201",
+  "componentName": "ParallaxSearch",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "searchbars"
+  },
+  "tags": [
+    "NAVIGATOR",
+    "Parallax Search",
+    "searchbars",
+    "検索バー",
+    "workbench"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items / search",
+      "SearchResult[] / async callback",
+      "ローカル候補か、AbortSignal付きの非同期検索を指定。"
+    ],
+    [
+      "query / defaultQuery",
+      "string",
+      "入力値。queryを渡すと外部制御。"
+    ],
+    [
+      "filters / filter",
+      "SearchFilter[] / string",
+      "検索対象の切り替え。"
+    ],
+    [
+      "onSubmit / onResult",
+      "callback",
+      "実際の検索実行と候補選択の接続先。"
+    ],
+    [
+      "loading / error / disabled",
+      "boolean / string",
+      "読込・失敗・無効の状態。"
+    ]
+  ]
+}

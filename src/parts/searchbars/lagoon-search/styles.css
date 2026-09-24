@@ -1,0 +1,11 @@
+@import "../../../shared/workbench/base.css";
+/* Lagoon Search: 水面の縁が入力に反応し、クリアな検索面から候補へ広がる。 */
+.sop-wb.sop-lagoon-search {--wb-bg:#132c34;--wb-surface:#28464e;--wb-ink:#deeee5;--wb-muted:#a7c7c5;--wb-accent:#b2ded1;--wb-line:#8dc3c166;}
+.sop-wb.sop-lagoon-search .wb-search-shell {border-radius:27px;background:radial-gradient(ellipse at 80% 0,#458f9838,transparent 60%),#10242c;padding:26px;border-color:#90d9d34d;}
+.sop-wb.sop-lagoon-search .wb-search-field {border-radius:32px;background:linear-gradient(160deg,#8acac31b,#10242c);border-color:#aee4dc6e;box-shadow:inset 0 2px #c2fff72d,inset 0 -2px #72bfd127;min-height:63px;}
+.sop-wb.sop-lagoon-search .wb-search-submit {border-radius:50%;background:radial-gradient(circle at 30% 20%,#f0fffabf,transparent 45%),linear-gradient(130deg,#9cdddca0,#3e738a);box-shadow:inset 0 1px 3px #e6ffecaa,0 3px 5px #0003;border-color:#a4dfd9;color:#e1f5ed;width:42px;}
+.sop-wb.sop-lagoon-search .wb-search-submit span {display:none;}
+.sop-wb.sop-lagoon-search .wb-art-search i:first-child {width:290px;height:180px;border:1px solid #77cdc825;border-radius:50%;right:-100px;top:-70px;box-shadow:0 0 0 20px #94dac410,0 0 0 45px #9addcd08;transition:transform .8s cubic-bezier(.18,1.4,.4,1);}
+.sop-wb.sop-lagoon-search[data-wb-focused=true] .wb-art-search i:first-child {transform:scale(1.4) translate(-20px,20px);}
+.sop-wb.sop-lagoon-search .wb-results-list [aria-selected=true] {border-radius:12px 25px 25px 12px;background:linear-gradient(90deg,#8bd3c526,#d1f4e012);}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-lagoon-search *,.sop-wb.sop-lagoon-search *::before,.sop-wb.sop-lagoon-search *::after{animation:none!important;transition:none!important;}}

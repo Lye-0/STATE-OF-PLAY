@@ -1,0 +1,53 @@
+{
+  "id": "split-gate-nav",
+  "name": "Split Gate",
+  "category": "navigation",
+  "description": "右端のキーを開くと、二つの面が分かれてナビゲーションになる。",
+  "designType": "A",
+  "tagline": "行き先に、かたちを。",
+  "motion": "NAVIGATOR",
+  "order": 1971,
+  "version": "1.0.0",
+  "material": "ROUTE / FLOW",
+  "accent": "192,216,201",
+  "componentName": "SplitGateNav",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "navigation"
+  },
+  "tags": [
+    "NAVIGATOR",
+    "Split Gate",
+    "navigation",
+    "ナビゲーション",
+    "workbench"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "NavigationItem[]",
+      "ラベル・href・子リンク・アイコン・バッジ。"
+    ],
+    [
+      "layout",
+      "header | sidebar | dock | mobile",
+      "置き場所に合うレイアウトを指定。"
+    ],
+    [
+      "active / onActiveChange",
+      "string / callback",
+      "現在地のID。リンクを移動して外部状態から反映可能。"
+    ],
+    [
+      "onNavigate",
+      "(item, event) => void | false",
+      "通常はネイティブリンク。falseで既定移動を止めルーターへ接続。"
+    ],
+    [
+      "open / onOpenChange",
+      "boolean / callback",
+      "モバイルナビゲーションの表示を制御。"
+    ]
+  ]
+}

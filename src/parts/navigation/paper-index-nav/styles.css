@@ -1,0 +1,14 @@
+@import "../../../shared/workbench/base.css";
+/* Paper Index: 紙のインデックスをめくりながら、章と場所を選ぶサイドナビ。 */
+.sop-wb.sop-paper-index-nav {--wb-bg:#e9dfca;--wb-surface:#dfd2b8;--wb-ink:#3c3d31;--wb-muted:#6e7260;--wb-accent:#7b7860;--wb-line:#8e8a6d66;color-scheme:light;}
+.sop-wb.sop-paper-index-nav .wb-navigation-frame {background:#e9ddc8;border:0;border-radius:0 15px 15px 0;border-inline-start:10px solid #7f6652;box-shadow:-2px 0 #bc997b,0 17px 30px #0004;}
+.sop-wb.sop-paper-index-nav .wb-nav-brand {padding:26px 23px 21px;border-bottom:1px solid #af977733;}
+.sop-wb.sop-paper-index-nav .wb-nav-brand strong {font:25px Georgia,serif;}
+.sop-wb.sop-paper-index-nav .wb-brand-glyph {display:none;}
+.sop-wb.sop-paper-index-nav .wb-nav-list {gap:4px;}
+.sop-wb.sop-paper-index-nav .wb-nav-link, .sop-wb.sop-paper-index-nav .wb-nav-disclosure {border-radius:2px 14px 2px 2px;border-bottom:1px solid #9b83592c;}
+.sop-wb.sop-paper-index-nav .wb-nav-link strong {font:16px Georgia,serif;}
+.sop-wb.sop-paper-index-nav .wb-nav-marker {border-radius:0 12px 0 0;background:linear-gradient(120deg,#d6c29f,#e6d2b2);border-color:#9c7e5052;box-shadow:3px 3px #9475482c;}
+.sop-wb.sop-paper-index-nav .wb-nav-link-icon {display:none;}
+.sop-wb.sop-paper-index-nav .wb-nav-foot {padding-block:15px;border-top:1px dashed #9b805b66;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-paper-index-nav *,.sop-wb.sop-paper-index-nav *::before,.sop-wb.sop-paper-index-nav *::after{animation:none!important;transition:none!important;}}

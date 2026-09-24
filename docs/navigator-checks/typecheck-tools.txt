@@ -1,0 +1,33 @@
+
+> state-of-play@4.12.0 typecheck:tools
+> tsc -p tsconfig.tools.json --noEmit
+
+scripts/vite-catalog.ts(3,56): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/actions.browser.ts(20,49): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/atelier.browser.ts(33,63): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/browser.ts(33,41): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/browser.ts(269,28): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/check-popup.browser.ts(18,48): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/continuum-gallery.browser.ts(8,59): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/continuum.browser.ts(8,50): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/disclosures.browser.ts(21,49): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/foundations.browser.ts(24,48): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/foundations.react.ts(18,48): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/kinetic.browser.ts(12,60): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/refinement.browser.ts(49,60): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/resonance-gallery.browser.ts(7,59): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/resonance.browser.ts(7,60): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/scrollbars.browser.ts(21,49): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/scrollbars.react.ts(21,37): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/sculpture.browser.ts(40,60): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/selection.browser.ts(18,48): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/sequence-gallery.browser.ts(8,59): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/sequence.browser.ts(9,50): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/signature.browser.ts(8,60): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/textfields.browser.ts(20,49): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/transform-gallery.browser.ts(7,59): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/transform.browser.ts(10,59): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/unfold.browser.ts(11,60): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/workbench-gallery.browser.ts(7,59): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+tests/workbench.browser.ts(8,60): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+vite.config.ts(1,30): error TS2307: Cannot find module 'vite' or its corresponding type declarations.

@@ -1,0 +1,9 @@
+@import "../../../shared/workbench/base.css";
+/* Compact Search: 日常の検索に合わせやすい、読みやすい入力とフィルター。 */
+.sop-wb.sop-compact-searchbar {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+.sop-wb.sop-compact-searchbar .wb-search-shell {padding:14px}
+.sop-wb.sop-compact-searchbar .wb-search-field {min-height:42px;padding:3px 4px 3px 10px}
+.sop-wb.sop-compact-searchbar .wb-search-submit {height:32px;min-width:32px;padding:6px}
+.sop-wb.sop-compact-searchbar .wb-search-submit span {display:none}
+.sop-wb.sop-compact-searchbar .wb-label {font-size:10px;margin-bottom:8px}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-compact-searchbar *,.sop-wb.sop-compact-searchbar *::before,.sop-wb.sop-compact-searchbar *::after{animation:none!important;transition:none!important;}}

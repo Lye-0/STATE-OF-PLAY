@@ -1,0 +1,14 @@
+@import "../../../shared/workbench/base.css";
+/* Orbit Query: 楕円の軌道が回転して検索レンズを囲み、見つけた候補へ焦点を結ぶ。 */
+.sop-wb.sop-orbit-query {--wb-bg:#172538;--wb-surface:#2b3c50;--wb-ink:#e5ebee;--wb-muted:#adbfcf;--wb-accent:#bad2e2;--wb-line:#879fb86e;}
+.sop-wb.sop-orbit-query .wb-search-shell {border-radius:24px;background:#171b29;padding:25px;border-color:#9cabc348;}
+.sop-wb.sop-orbit-query .wb-search-field {border:0;background:#242b3c;border-radius:13px;min-height:68px;padding-inline-start:75px;position:relative;}
+.sop-wb.sop-orbit-query .wb-search-emblem {position:absolute;left:20px;width:35px;height:35px;border:1px solid #b9c6e0;border-radius:50%;box-shadow:inset 0 0 20px #a4b9d91f;}
+.sop-wb.sop-orbit-query .wb-search-emblem i {position:absolute;inset:-8px;border:1px solid #a8bddd80;border-radius:50%;transform:rotate(-25deg) scaleX(.55);transition:transform .7s cubic-bezier(.18,1.4,.4,1);}
+.sop-wb.sop-orbit-query .wb-search-emblem i:last-child {transform:rotate(60deg) scaleX(.6);border-color:#d4bea344;}
+.sop-wb.sop-orbit-query[data-wb-focused=true] .wb-search-emblem i {transform:rotate(100deg) scaleX(.45);}
+.sop-wb.sop-orbit-query[data-wb-focused=true] .wb-search-emblem i:last-child {transform:rotate(-50deg) scaleX(.6);}
+.sop-wb.sop-orbit-query .wb-search-submit {border-radius:25px;background:#c2cee0;color:#242c3a;}
+.sop-wb.sop-orbit-query .wb-search-submit span {display:none;}
+.sop-wb.sop-orbit-query .wb-results-list [aria-selected=true] {border-radius:20px;box-shadow:inset 3px 0 #c6cce3;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-orbit-query *,.sop-wb.sop-orbit-query *::before,.sop-wb.sop-orbit-query *::after{animation:none!important;transition:none!important;}}

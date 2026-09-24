@@ -1,0 +1,96 @@
+TAP version 13
+# (node:6706) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Workbench contains 88 parts in five categories, with more A than B and no duplicate identifiers
+ok 1 - Workbench contains 88 parts in five categories, with more A than B and no duplicate identifiers
+  ---
+  duration_ms: 0.917645
+  type: 'test'
+  ...
+# Subtest: Every component has real editable sources, examples and project-aware prompts
+ok 2 - Every component has real editable sources, examples and project-aware prompts
+  ---
+  duration_ms: 18.120414
+  type: 'test'
+  ...
+# Subtest: All runtime and example local references resolve, without a gallery dependency
+ok 3 - All runtime and example local references resolve, without a gallery dependency
+  ---
+  duration_ms: 283.854896
+  type: 'test'
+  ...
+# Subtest: React, TypeScript and their exported JS syntax transpile without parse errors
+ok 4 - React, TypeScript and their exported JS syntax transpile without parse errors
+  ---
+  duration_ms: 708.971171
+  type: 'test'
+  ...
+# Subtest: Styles are rooted in individual skins and contain motion-reduced variants
+ok 5 - Styles are rooted in individual skins and contain motion-reduced variants
+  ---
+  duration_ms: 1.7564
+  type: 'test'
+  ...
+# Subtest: Text escaping does not create executable markup
+ok 6 - Text escaping does not create executable markup
+  ---
+  duration_ms: 0.380645
+  type: 'test'
+  ...
+# Subtest: URL handling rejects executable schemes, controls and slash escapes
+ok 7 - URL handling rejects executable schemes, controls and slash escapes
+  ---
+  duration_ms: 0.359522
+  type: 'test'
+  ...
+# Subtest: Item identities must be unique and nonempty
+ok 8 - Item identities must be unique and nonempty
+  ---
+  duration_ms: 0.340704
+  type: 'test'
+  ...
+# Subtest: Search normalizes fullwidth text and supports multiple search tokens
+ok 9 - Search normalizes fullwidth text and supports multiple search tokens
+  ---
+  duration_ms: 0.662079
+  type: 'test'
+  ...
+# Subtest: Search ranks labels but preserves order for equal scores
+ok 10 - Search ranks labels but preserves order for equal scores
+  ---
+  duration_ms: 0.524802
+  type: 'test'
+  ...
+# Subtest: Table sorts numerically and stably, without modifying caller rows
+ok 11 - Table sorts numerically and stably, without modifying caller rows
+  ---
+  duration_ms: 0.354615
+  type: 'test'
+  ...
+# Subtest: Table text filtering uses data rather than preformatted HTML
+ok 12 - Table text filtering uses data rather than preformatted HTML
+  ---
+  duration_ms: 0.175665
+  type: 'test'
+  ...
+# Subtest: Navigation wrappers retain the skin default layout and real markup semantics
+ok 13 - Navigation wrappers retain the skin default layout and real markup semantics
+  ---
+  duration_ms: 0.450159
+  type: 'test'
+  ...
+# Subtest: Table keeps native table semantics; commands are opt-in global and menus stay scoped
+ok 14 - Table keeps native table semantics; commands are opt-in global and menus stay scoped
+  ---
+  duration_ms: 0.240433
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1546.497083

@@ -1,0 +1,14 @@
+@import "../../../shared/workbench/base.css";
+/* Parallax Search: 焦点が合うように二重のレンズが開き、入力面へ光が集まる。 */
+.sop-wb.sop-parallax-search {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+.sop-wb.sop-parallax-search .wb-search-shell {padding:26px;background:linear-gradient(155deg,#18272c,#0b1119);border-radius:22px;box-shadow:inset 0 1px #b4e1dd44,0 18px 30px #0005;}
+.sop-wb.sop-parallax-search .wb-search-field {padding-inline-start:70px;min-height:72px;background:radial-gradient(ellipse at 20% 10%,#9ed9e726,transparent 70%),#08191f;border-radius:40px;border:1px solid #73b1bf80;box-shadow:inset 0 2px 8px #0008,0 1px #91c7c63a;position:relative;}
+.sop-wb.sop-parallax-search .wb-search-emblem {position:absolute;left:9px;top:9px;width:51px;height:51px;border-radius:50%;border:1px solid #c3f1e4a0;background:radial-gradient(circle at 30% 20%,#bfe8df99,transparent 36%),linear-gradient(135deg,#77a8c344,#0c304950,#99d7bf66);box-shadow:inset 0 0 0 5px #d7f0ed18,inset 1px 2px 3px #eefff977,0 5px 10px #0007;transition:transform .55s cubic-bezier(.18,1.5,.4,1),box-shadow .4s;}
+.sop-wb.sop-parallax-search .wb-search-emblem i {position:absolute;inset:6px;border:1px solid #bfe4e840;border-radius:50%;transform:rotate(-25deg);}
+.sop-wb.sop-parallax-search .wb-search-emblem i:last-child {inset:-5px;border-color:#b0eaf12b;border-top-color:#b0eaf1aa;transition:transform .7s;}
+.sop-wb.sop-parallax-search[data-wb-focused=true] .wb-search-emblem {transform:scale(1.06);box-shadow:inset 0 0 0 5px #d7f0ed18,inset 2px 3px 4px #eefff9aa,0 0 22px #8ec8d744;}
+.sop-wb.sop-parallax-search[data-wb-focused=true] .wb-search-emblem i:last-child {transform:rotate(150deg);}
+.sop-wb.sop-parallax-search .wb-search-submit {border-radius:50%;width:42px;padding:8px;background:#c5e4d3;color:#153439;box-shadow:inset 0 1px #fff9,0 3px 6px #0004;}
+.sop-wb.sop-parallax-search .wb-search-submit span {display:none;}
+.sop-wb.sop-parallax-search .wb-art-search {background:conic-gradient(from 35deg at 20% 10%,transparent,#6bbdc510,transparent 40%,#b4ddd812,transparent 80%);transition:filter .5s;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-parallax-search *,.sop-wb.sop-parallax-search *::before,.sop-wb.sop-parallax-search *::after{animation:none!important;transition:none!important;}}

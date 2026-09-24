@@ -1,0 +1,20 @@
+@import "../../../shared/workbench/base.css";
+/* Typesetter Search: 大きな余白と活版の文字。入力すると二本の罫線が左右からつながる。 */
+.sop-wb.sop-typesetter-search {--wb-bg:#e9dfca;--wb-surface:#dfd2b8;--wb-ink:#3c3d31;--wb-muted:#6e7260;--wb-accent:#7b7860;--wb-line:#8e8a6d66;color-scheme:light;}
+.sop-wb.sop-typesetter-search .wb-search-shell {background:#ece7df;border-radius:0;border:0;padding:30px 25px 22px;box-shadow:0 3px 0 #a99c8999,0 16px 27px #0002;}
+.sop-wb.sop-typesetter-search .wb-label {font:italic 24px Georgia,serif;color:#534e49;margin-bottom:20px;}
+.sop-wb.sop-typesetter-search .wb-search-field {border:0;background:none;border-radius:0;border-bottom:1px solid #393b3b;padding:0 0 10px;position:relative;box-shadow:none!important;}
+.sop-wb.sop-typesetter-search .wb-search-field::after {content:"";position:absolute;bottom:-5px;left:50%;width:0;height:2px;background:#89745c;transition:left .5s,width .5s;}
+.sop-wb.sop-typesetter-search[data-wb-focused=true] .wb-search-field::after {left:0;width:100%;}
+.sop-wb.sop-typesetter-search .wb-search-emblem {display:none;}
+.sop-wb.sop-typesetter-search .wb-search-input {font:19px Georgia,serif;}
+.sop-wb.sop-typesetter-search .wb-search-submit {background:none;border:0;padding:5px;}
+.sop-wb.sop-typesetter-search .wb-search-submit span {display:none;}
+.sop-wb.sop-typesetter-search .wb-search-submit svg {width:29px;height:29px;}
+.sop-wb.sop-typesetter-search .wb-search-filters {margin-top:20px;}
+.sop-wb.sop-typesetter-search .wb-search-filters button {border-radius:0;}
+.sop-wb.sop-typesetter-search .wb-search-filters [aria-pressed=true] {border:0;border-bottom:1px solid #70614d;background:none;}
+.sop-wb.sop-typesetter-search .wb-results-list [role=option] {border-radius:0;padding-inline:0;}
+.sop-wb.sop-typesetter-search .wb-result-copy strong {font:17px Georgia,serif;}
+.sop-wb.sop-typesetter-search .wb-results-list [aria-selected=true] {background:none;border-color:transparent;box-shadow:0 1px #988572;}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-typesetter-search *,.sop-wb.sop-typesetter-search *::before,.sop-wb.sop-typesetter-search *::after{animation:none!important;transition:none!important;}}

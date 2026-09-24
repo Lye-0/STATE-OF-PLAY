@@ -1,0 +1,5 @@
+@import "../../../shared/workbench/base.css";
+/* Essential Header: 行き先が分かる、整理されたナビゲーション。リンクの標準操作を維持。 */
+.sop-wb.sop-essential-header {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
+
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-essential-header *,.sop-wb.sop-essential-header *::before,.sop-wb.sop-essential-header *::after{animation:none!important;transition:none!important;}}
