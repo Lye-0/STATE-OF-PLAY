@@ -1,4 +1,4 @@
-# 装飾 / ORNAMENTS — v4.14.0
+# 装飾 / ORNAMENTS — v4.14.1
 
 用途や操作の意味を持たないアクセントとして、30種類（Aタイプ22、Bタイプ8）を収録しています。ヒーロー、区切り、余白などに配置し、重要な状態や通知をこの装飾だけで伝えないでください。v4.14.0の新作10種類はホバー時の変化を重視しています。
 
@@ -34,7 +34,7 @@
 | `fan-spark` | Fan Spark | A | 羽根が光を散らす。 |
 | `echo-glyph` | Echo Glyph | A | 記号の残響だけが漂う。 |
 | `tide-knot` | Tide Knot | A | 波が結び目になって往復する。 |
-| `stitch-comet` | Stitch Comet | A | 縫い目の上を光が跳ぶ。 |
+| `stitch-comet` | Stitch Comet | A | 薄い帯の縫い目を光が切れ目なく巡る。 |
 | `hinge-star` | Hinge Star | A | 星の骨格が開閉する。 |
 
 ## 組み込み
@@ -70,3 +70,11 @@ v4.13.0を基点とする差分から、Magnetic Rift、Liquid Lens、Signal Orb
 - `npm run test:ornaments`：30種類の表示、10種類のホバー変化と停止、縮小モーション、詳細画面、320px幅を実Chromeで確認。
 - `npm run build`：実Viteの本番ビルド成功。
 - `npm run test:lazy-loading`：開発・本番HTTPの両方で全37カテゴリ、ソースと個別ZIP、キャッシュと再試行を確認。
+
+## v4.14.1のホバー修正
+
+Signal OrbitとTide Knotはホバー時に`animation-duration`を変更していたため、周回中の光点や輪が別の位置へ飛ぶことがありました。周回アニメーションは同じ再生時間と位相を維持し、ホバー時は軌道の半径・縁の明るさなどを別の層で補間します。
+
+Stitch Cometは二本の直線と光点を、薄い帯と曲線の縫い目へ組み替えました。光点は帯と同じ閉曲線を一定速度で巡り、ホバーでは糸・尾・光だけが広がります。React、Vanilla、静止見本、CSS、使い方、AI用プロンプトは同じ構成です。`paused`と動きを減らす設定は維持しています。
+
+`npm run typecheck`、`npm run build`、全242件の`npm test`が成功しました。実Chromeの`npm run test:ornaments`では3種類のホバー開始前後で再生時間と位相が連続すること、停止中に位相が進まないこと、全30種類の表示・詳細・狭い画面を確認しています。`npm run test:lazy-loading`でも開発・本番の全37カテゴリ、配布コードと個別ZIPを確認しました。

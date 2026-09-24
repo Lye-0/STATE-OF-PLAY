@@ -52,3 +52,16 @@ test('all Vanilla ornament controllers expose paused state and clean it on destr
   assert.equal(element.dataset.paused,undefined,part.id);
  }
 });
+
+test('three revised ornaments distribute continuous hover motion and the new stitched shape',()=>{
+ for(const id of ['signal-orbit','tide-knot','stitch-comet']){
+  const part=ornaments.find(item=>item.id===id)!;
+  assert.match(part.prompt,/ホバーの連続性（v4\.14\.1）/);
+  assert.match(part.usage,/v4\.14\.1 \/ 動き/);
+  assert.doesNotMatch(fs.readFileSync(path.join(ROOT,'src/parts/ornaments',id,'styles.css'),'utf8'),/:hover[^\n]*animation-duration/);
+ }
+ const stitch=ornaments.find(part=>part.id==='stitch-comet')!;
+ assert.match(stitch.markup,/class="sc-drawing"/);
+ assert.match(fs.readFileSync(path.join(ROOT,'src/parts/ornaments',stitch.id,'react/StitchComet.tsx'),'utf8'),/sc-drawing/);
+ assert.match(fs.readFileSync(path.join(ROOT,'src/parts/ornaments',stitch.id,'vanilla/index.html'),'utf8'),/sc-drawing/);
+});

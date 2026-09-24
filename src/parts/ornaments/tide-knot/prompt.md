@@ -17,3 +17,8 @@
 
 同梱のmarkup.html、styles.css、react/<Component>.tsx、vanilla/init.tsを正本とし、選んだ形式に必要なファイルを省かないでください。図形はaria-hiddenで装飾専用です。ホバーで構造が動きますが、選択値や状態の意味を追加しません。
 Reactのpausedと通常DOM版のdata-pausedでアニメーションを停止できるようにし、prefers-reduced-motionでは静止表示にします。通常DOM版はsetPaused()とdestroy()を維持してください。複数配置、ホバー前後、停止、動きを減らす設定、幅320pxの表示を確認してください。
+
+## ホバーの連続性（v4.14.1）
+
+輪の回転位相と再生時間を維持し、ホバーでは輪郭の大きさ・明るさを別の層で補間します。animation-durationをホバーで切り替えず、入った瞬間のワープを防ぎます。
+paused / data-pausedとprefers-reduced-motionで動きを止め、複数配置やホバーの出入りを繰り返しても位置が飛ばないことを確認してください。

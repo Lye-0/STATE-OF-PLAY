@@ -65,13 +65,14 @@
 
 .sop-ornament.sop-tide-knot .tk-shell { position:relative; width:190px; height:156px; }
 .sop-ornament.sop-tide-knot .loop { position:absolute; inset:0; border-radius:50%; border:2px solid transparent; }
-.sop-ornament.sop-tide-knot .loop::before { content:""; position:absolute; inset:0; border-radius:inherit; border-top:2px solid color-mix(in srgb, var(--ornament-accent) 76%, rgba(255,255,255,.84)); border-left:2px solid rgba(255,255,255,.12); }
+.sop-ornament.sop-tide-knot .loop::before { content:""; position:absolute; inset:0; border-radius:inherit; border-top:2px solid color-mix(in srgb, var(--ornament-accent) 76%, rgba(255,255,255,.84)); border-left:2px solid rgba(255,255,255,.12); transition:transform .8s cubic-bezier(.2,.7,.2,1),border-color .8s; }
 .sop-ornament.sop-tide-knot .l1 { transform: rotate(24deg) scaleX(.82) scaleY(.58); animation: or-spin 14s linear infinite; }
 .sop-ornament.sop-tide-knot .l2 { transform: rotate(-24deg) scaleX(.82) scaleY(.58); animation: or-spin-reverse 11s linear infinite; }
-.sop-ornament.sop-tide-knot .l3 { transform: rotate(90deg) scaleX(.56) scaleY(.76); opacity:.7; animation: or-spin 9s linear infinite; }
-.sop-ornament.sop-tide-knot:hover .l1 { animation-duration: 7s; }
-.sop-ornament.sop-tide-knot:hover .l2 { animation-duration: 5.5s; }
-.sop-ornament.sop-tide-knot:hover .l3 { animation-duration: 4.6s; }
+.sop-ornament.sop-tide-knot .l3 { transform: rotate(90deg) scaleX(.56) scaleY(.76); opacity:.7; animation: or-spin 9s linear infinite; transition:opacity .8s; }
+.sop-ornament.sop-tide-knot:hover .l1::before { transform:scale(1.1) rotate(7deg); border-top-color:#deeff6; }
+.sop-ornament.sop-tide-knot:hover .l2::before { transform:scale(.92) rotate(-9deg); border-top-color:#c3deed; }
+.sop-ornament.sop-tide-knot:hover .l3 { opacity:1; }
+.sop-ornament.sop-tide-knot:hover .l3::before { transform:scale(1.14); }
 
 /* Paused and reduced-motion stage stability. */
 .sop-ornament.sop-ornament.sop-tide-knot[data-paused="true"] .or-stage,.sop-ornament.sop-ornament.sop-tide-knot[data-paused="true"] .or-stage *{transition:none!important;animation-play-state:paused!important}

@@ -58,6 +58,37 @@ try{
   }
   await page.emulateMedia({reducedMotion:'no-preference'});
  });
+ await check('three animated ornaments keep their phase and duration when hover begins',async()=>{
+  for(const [id,selectors]of [
+   ['signal-orbit',['.s1','.s2','.s3']],
+   ['tide-knot',['.l1','.l2','.l3']],
+   ['stitch-comet',['.sc-comet']]
+  ] as const){
+   const root=page.locator(`[data-part="${id}"] .sop-ornament`);
+   await root.scrollIntoViewIfNeeded();await page.mouse.move(0,0);await page.waitForTimeout(60);
+   const before=await root.evaluate((element,classes)=>classes.map(selector=>{
+    const animation=element.querySelector(selector)?.getAnimations().find(item=>item instanceof CSSAnimation);
+    return {duration:animation?.effect?.getComputedTiming().duration,time:Number(animation?.currentTime)};
+   }),selectors);
+   await root.hover();await page.waitForTimeout(120);
+   const after=await root.evaluate((element,classes)=>classes.map(selector=>{
+    const animation=element.querySelector(selector)?.getAnimations().find(item=>item instanceof CSSAnimation);
+    return {duration:animation?.effect?.getComputedTiming().duration,time:Number(animation?.currentTime)};
+   }),selectors);
+   for(let i=0;i<selectors.length;i++){
+    assert.equal(after[i].duration,before[i].duration,`${id} ${selectors[i]} duration`);
+    assert.ok(after[i].time>before[i].time&&after[i].time-before[i].time<600,`${id} ${selectors[i]} phase`);
+   }
+   await root.evaluate(element=>element.setAttribute('data-paused','true'));
+   await page.evaluate(()=>new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve()))));
+   assert.equal(await root.locator(selectors[0]).evaluate(element=>getComputedStyle(element).animationPlayState),'paused',`${id} computed pause`);
+   const frozen=await root.locator(selectors[0]).evaluate(element=>Number(element.getAnimations().find(item=>item instanceof CSSAnimation)?.currentTime));
+   await page.waitForTimeout(120);
+   const still=await root.locator(selectors[0]).evaluate(element=>Number(element.getAnimations().find(item=>item instanceof CSSAnimation)?.currentTime));
+   assert.ok(Math.abs(still-frozen)<2,`${id} paused phase ${frozen} → ${still}`);
+   await root.evaluate(element=>element.setAttribute('data-paused','false'));
+  }
+ });
  await check('detail inspector presents ornament category, source and AI prompt for A and B designs',async()=>{
   for(const id of ['asterism-burst','magnetic-rift','quiet-divider']){
    await page.locator(`[data-open="${id}"]`).click();await galleryReady(page,true);
