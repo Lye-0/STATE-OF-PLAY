@@ -22,7 +22,46 @@ try{
  await run('Context disabled actions and controlled check state do not trigger side effects',async()=>{await mount('ticket-context',{checked:{pin:true}});await p.evaluate(()=>{(window as any).actions=[];(window as any).api.update({onAction:(item:any)=>(window as any).actions.push(item.id)});(window as any).api.open();});await p.locator('[data-menu-action=share]').click({force:true});assert.deepEqual(await p.evaluate(()=>(window as any).actions),[]);await p.locator('[data-menu-action=pin]').click();assert.equal((await state()).checked.pin,true);await p.keyboard.press('Home');assert.equal(await p.locator('[data-menu-action=open]').evaluate(e=>e===document.activeElement),true);await p.keyboard.press('End');assert.equal(await p.locator('[data-menu-action=share]').evaluate(e=>e===document.activeElement),true);});
  await run('Navigation has real hrefs, preserves modified clicks and supports SPA callbacks',async()=>{await mount('paper-index-nav');await p.evaluate(()=>{(window as any).navigations=[];(window as any).api.update({onNavigate:(item:any)=>{(window as any).navigations.push(item.id);return false;}});});const project=p.locator('.wb-nav-desktop [data-nav=projects]');assert.equal(await project.getAttribute('href'),'#destination');await project.click();assert.equal((await state()).active,'projects');assert.deepEqual(await p.evaluate(()=>(window as any).navigations),['projects']);assert.equal(await project.evaluate(e=>e.dispatchEvent(new MouseEvent('click',{ctrlKey:true,bubbles:true,cancelable:true}))),true);await p.evaluate(()=>(window as any).api.update({active:'overview'}));await project.click();assert.equal((await state()).active,'overview');for(const other of p.context().pages())if(other!==p)await other.close();await p.bringToFront();});
  await run('Navigation groups and mobile modal preserve semantics, focus and current location',async()=>{await mount('ribbon-header');await p.locator('[data-nav-group=more]').click();assert.equal((await state()).group,'more');assert.ok(await p.locator('.wb-nav-flyout').isVisible());await p.keyboard.press('Escape');assert.equal((await state()).group,null);await p.evaluate(()=>(window as any).api.update({layout:'mobile'}));await p.locator('.wb-nav-mobile-open').click();assert.equal((await state()).open,true);assert.equal(await p.locator('dialog nav').count(),1);for(let i=0;i<12;i++)await p.keyboard.press('Tab');assert.equal(await p.locator('dialog').evaluate(e=>e.contains(document.activeElement)),true);await p.keyboard.press('Escape');assert.equal((await state()).open,false);});
- await run('Data table numeric three-state sorting, paging and query do not mutate source rows',async()=>{await mount('ledger-table');await p.locator('[data-sort=size]').click();assert.deepEqual((await state()).sort,{key:'size',direction:'ascending'});let text=await p.locator('tbody [data-column=size]').allTextContents();assert.equal(Number(text[0]),32);await p.locator('[data-sort=size]').click();text=await p.locator('tbody [data-column=size]').allTextContents();assert.equal(Number(text[0]),256);await p.locator('[data-sort=size]').click();assert.equal((await state()).sort,null);await p.locator('[data-table-page=next]').click();assert.equal((await state()).page,2);await p.locator('.wb-table-search input').fill('design');assert.equal((await state()).total,1);assert.equal((await state()).page,1);});
+ await run('All navigation groups expose the selected child and close on page scroll',async()=>{
+  await p.evaluate(()=>{document.body.style.minHeight='2500px';});
+  let tested=0;
+  for(const part of f.records.filter(r=>r.category==='navigation')){
+   await mount(part.id,{layout:'sidebar'});
+   await p.evaluate(()=>window.scrollTo(0,0));
+   const trigger=p.locator('.wb-nav-desktop [data-nav-group]').first();
+   if(!await trigger.isVisible())continue;
+   tested++;
+   await trigger.click();
+   const leaf=p.locator('.wb-nav-flyout [data-nav]:not([aria-disabled="true"])').first();
+   const id=await leaf.getAttribute('data-nav'),label=(await leaf.locator('strong').innerText()).trim();
+   await leaf.click();
+   assert.equal((await state()).active,id,part.id);
+   assert.equal((await p.locator('.wb-nav-location').innerText()).trim(),label,part.id);
+   assert.equal(await trigger.getAttribute('data-current'),'',part.id);
+   assert.ok((await trigger.getAttribute('aria-label'))?.includes(label),part.id);
+   await trigger.click();
+   assert.equal((await state()).group,await trigger.getAttribute('data-nav-group'),part.id);
+   if(part.id==='axis-rail-nav'){
+    await p.locator('.wb-nav-flyout').evaluate(el=>{(el as HTMLElement).style.maxHeight='70px';el.scrollTop=30;});
+    await p.waitForTimeout(30);
+    assert.ok((await state()).group,part.id+' internal list scroll');
+   }
+   await p.evaluate(()=>window.scrollTo(0,320));
+   await p.waitForFunction(()=>(window as any).api.getState().group===null);
+   assert.equal(await p.locator('.wb-nav-flyout').isVisible(),false,part.id);
+  }
+  assert.ok(tested>=15,`Tested ${tested} visible navigation groups`);
+  await mount('axis-rail-nav',{layout:'sidebar'});
+  const keyboardTrigger=p.locator('.wb-nav-desktop [data-nav-group]').first();
+  await keyboardTrigger.focus();await p.keyboard.press('ArrowDown');
+  assert.equal((await state()).group,'more');
+  const keyboardLeaf=p.locator('.wb-nav-flyout [data-nav]').first();
+  assert.ok(await keyboardLeaf.evaluate(element=>element===document.activeElement));
+  await keyboardLeaf.press('Enter');
+  assert.equal((await state()).active,await keyboardLeaf.getAttribute('data-nav'));
+  await p.evaluate(()=>{document.body.style.minHeight='';window.scrollTo(0,0);});
+ });
+await run('Data table numeric three-state sorting, paging and query do not mutate source rows',async()=>{await mount('ledger-table');await p.locator('[data-sort=size]').click();assert.deepEqual((await state()).sort,{key:'size',direction:'ascending'});let text=await p.locator('tbody [data-column=size]').allTextContents();assert.equal(Number(text[0]),32);await p.locator('[data-sort=size]').click();text=await p.locator('tbody [data-column=size]').allTextContents();assert.equal(Number(text[0]),256);await p.locator('[data-sort=size]').click();assert.equal((await state()).sort,null);await p.locator('[data-table-page=next]').click();assert.equal((await state()).page,2);await p.locator('.wb-table-search input').fill('design');assert.equal((await state()).total,1);assert.equal((await state()).page,1);});
  await run('Row selection is keyed by identity, select-all affects current page only and row actions are callbacks',async()=>{await mount('control-room-table');const first=await p.locator('[data-row-check]').first().getAttribute('data-row-check');await p.locator('[data-row-check]').first().check();await p.locator('[data-sort=size]').click();assert.ok((await state()).selected.includes(first));await p.locator('[data-table-all]').check();assert.ok((await state()).selected.length>=4);await p.locator('[data-table-page=next]').click();const before=(await state()).selected.length;await p.locator('[data-table-all]').check();assert.ok((await state()).selected.length>before);await p.evaluate(()=>{(window as any).rowAction=null;(window as any).api.update({onRowAction:(a:any,r:any)=>(window as any).rowAction={a:a.id,id:r.id}})});await p.locator('[data-action]').first().click();assert.ok(await p.evaluate(()=>(window as any).rowAction.id));await p.locator('[data-table-clear]').click();assert.deepEqual((await state()).selected,[]);});
  await run('Table manual/server mode returns requests without re-sorting or slicing the supplied page',async()=>{await mount('essential-table',{manual:true,rowCount:80,page:3,pageSize:10,sort:null});await p.evaluate(()=>{(window as any).requested={};(window as any).api.update({onPageChange:(page:number)=>(window as any).requested.page=page,onSortChange:(sort:any)=>(window as any).requested.sort=sort});});await p.locator('[data-table-page=next]').click();assert.equal((await state()).page,3);assert.equal(await p.evaluate(()=>(window as any).requested.page),4);await p.locator('[data-sort=size]').click();assert.equal((await state()).sort,null);assert.equal(await p.evaluate(()=>(window as any).requested.sort.key),'size');assert.equal(await p.locator('tbody [data-row]').count(),8);});
  await run('Column resizing supports keyboard and pointer; sticky columns remain aligned',async()=>{await mount('optical-matrix');const grip=p.locator('[data-resize=name]');await grip.focus();const initial=Number(await grip.getAttribute('aria-valuenow'));await p.keyboard.press('ArrowRight');assert.equal(Number(await grip.getAttribute('aria-valuenow')),initial+12);await p.keyboard.press('Home');assert.equal(Number(await grip.getAttribute('aria-valuenow')),88);const r=(await grip.boundingBox())!;await p.mouse.move(r.x+r.width/2,r.y+r.height/2);await p.mouse.down();await p.mouse.move(r.x+85,r.y+4);await p.mouse.up();assert.ok(Number(await grip.getAttribute('aria-valuenow'))>100);assert.equal(await p.locator('tbody [data-first-column]').first().evaluate(e=>getComputedStyle(e).position),'sticky');});

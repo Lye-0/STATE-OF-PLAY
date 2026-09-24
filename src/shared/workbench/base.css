@@ -155,6 +155,7 @@
 .sop-wb .wb-nav-current-dot {width:4px;height:4px;flex:none;border-radius:50%;background:var(--wb-accent);}
 .sop-wb .wb-nav-foot-arrow {margin-inline-start:auto;color:var(--wb-accent);}
 .sop-wb .wb-nav-foot-arrow svg {width:16px;height:16px;}
+.sop-wb .wb-nav-disclosure[data-current] {color:var(--wb-accent);background:color-mix(in srgb,var(--wb-accent) 12%,transparent);}
 .sop-wb[data-wb-layout=sidebar] .wb-navigation-frame {max-width:330px;margin:auto;}
 .sop-wb[data-wb-layout=sidebar] .wb-nav-list {display:flex;flex-direction:column;}
 .sop-wb[data-wb-layout=sidebar] .wb-nav-desktop {margin:10px 13px 15px;}

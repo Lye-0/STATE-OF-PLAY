@@ -20,3 +20,7 @@
 - `active / onActiveChange` (string / callback): 現在地のID。リンクを移動して外部状態から反映可能。
 - `onNavigate` ((item, event) => void | false): 通常はネイティブリンク。falseで既定移動を止めルーターへ接続。
 - `open / onOpenChange` (boolean / callback): モバイルナビゲーションの表示を制御。
+
+## 子階層の選択と展開（v4.12.5）
+
+「もっと見る」の子リンクを選ぶと、非制御時は現在地の名前・`aria-current`・親の展開ボタンの選択状態が更新されます。`active` を指定して制御する場合は、`onActiveChange` を受けて親から新しい値を渡してください。子一覧の内部だけをスクロールしている間は開いたままです。ページや周囲の領域をスクロールすると閉じます。リンク先URLと中クリック・修飾キー操作は導入先の通常のリンクとして維持します。

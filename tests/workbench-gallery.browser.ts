@@ -82,7 +82,33 @@ try{
   assert.match(await card.locator('.wb-demo-feedback').innerText(),/検索/);
   assert.ok(Math.abs((await root.boundingBox())!.width-before.width)<1);
  });
- await run('88 parts and eight exports have entry, internal dependencies, source-backed prompt and integration manifest',async()=>{let count=0;for(const part of data.parts.filter(p=>p.workbench))for(const l of['portable','original']as const)for(const f of FORMATS){const delivery=getDelivery(part,f,l),files=packageContents(part,f,l);assert.ok(delivery.files.some(x=>x.name===delivery.entry));assert.ok(delivery.runtimeFiles.every(x=>!x.name.includes('src/app/')));assert.equal(files.find(x=>x.name==='PROMPT.md')?.code,buildPrompt(part,f,l));assert.ok(files.some(x=>x.name==='INTEGRATION.json'));assert.ok(files.some(x=>/workbench\/(core|base)/.test(x.name)));count++;}assert.equal(count,704);});
+ await run('Expanded navigation choices update the current section and close on page scroll',async()=>{
+  await selectCategory(p,'navigation');
+  for(const id of ['axis-rail-nav','paper-index-nav','ribbon-header']){
+   const card=p.locator(`[data-part="${id}"]`),more=card.locator('.wb-nav-desktop [data-nav-group="more"]');
+   await card.scrollIntoViewIfNeeded();
+   const url=p.url();
+   await more.click();
+   await card.locator('.wb-nav-flyout [data-nav="settings"]').click();
+   assert.equal(await card.locator('.wb-nav-location').innerText(),'設定',id);
+   assert.equal(await more.getAttribute('data-current'),'',id);
+   assert.match(await more.getAttribute('aria-label')??'',/設定/,id);
+   assert.equal(await card.locator('.wb-demo-feedback').count(),0,id);
+   assert.equal(p.url(),url,id);
+   if(id==='axis-rail-nav'){
+    await p.waitForTimeout(550);
+    const marker=(await card.locator('.wb-nav-marker').boundingBox())!,button=(await more.boundingBox())!;
+    assert.ok(Math.abs(marker.y+marker.height/2-button.y-button.height/2)<4,'selected group marker');
+    await card.screenshot({path:path.join(out,'navigation-axis-rail-child-selected.png')});
+   }
+   await more.click();
+   assert.ok(await card.locator('.wb-nav-flyout').isVisible(),id);
+   await p.evaluate(()=>window.scrollBy(0,240));
+   await p.waitForFunction(identifier=>document.querySelector(`[data-part="${identifier}"] .wb-nav-flyout`)?.getAttribute('hidden')!==null,id);
+   assert.equal(await more.getAttribute('aria-expanded'),'false',id);
+  }
+ });
+await run('88 parts and eight exports have entry, internal dependencies, source-backed prompt and integration manifest',async()=>{let count=0;for(const part of data.parts.filter(p=>p.workbench))for(const l of['portable','original']as const)for(const f of FORMATS){const delivery=getDelivery(part,f,l),files=packageContents(part,f,l);assert.ok(delivery.files.some(x=>x.name===delivery.entry));assert.ok(delivery.runtimeFiles.every(x=>!x.name.includes('src/app/')));assert.equal(files.find(x=>x.name==='PROMPT.md')?.code,buildPrompt(part,f,l));assert.ok(files.some(x=>x.name==='INTEGRATION.json'));assert.ok(files.some(x=>/workbench\/(core|base)/.test(x.name)));count++;}assert.equal(count,704);});
  await run('Five inspectors show byte-matching source text and prompts in all formats and layouts',async()=>{let count=0;for(const id of['parallax-search','aperture-command','hinge-context','arc-dock','ledger-table']){const part=await open(id);for(const layout of['portable','original']as const){await d.locator('#export-layout').selectOption(layout);for(const format of FORMATS){await d.locator(`[data-format="${format}"]`).evaluate(e=>(e as HTMLButtonElement).click());for(const file of getDelivery(part,format,layout).files){await d.locator(`[data-file="${file.name}"]`).evaluate(e=>(e as HTMLButtonElement).click());assert.deepEqual(await d.locator('.editor .line-code').allTextContents(),file.code.split('\n').map(x=>x||' '),file.name);count++;}await d.locator('[data-detail-tab=prompt]').evaluate(e=>(e as HTMLButtonElement).click());assert.equal(await d.locator('#prompt-text').inputValue(),buildPrompt(part,format,layout));await d.locator('[data-detail-tab=code]').evaluate(e=>(e as HTMLButtonElement).click());}}await shut();}console.log('Displayed source files:',count);});
  await run('Format changes preserve query; nested palette retains focus and Escape leaves inspector open',async()=>{await open('parallax-search');await d.locator('.wb-search-input').fill('design');await d.locator('[data-format=js]').click();assert.equal(await d.locator('.wb-search-input').inputValue(),'design');await shut();await open('aperture-command');await d.locator('.wb-command-launch').click();await p.keyboard.press('Escape');assert.ok(await d.isVisible());await d.locator('[data-wb-demo=open]').click();for(let i=0;i<12;i++)await p.keyboard.press('Tab');assert.equal(await d.locator('.wb-command-dialog').evaluate(e=>e.contains(document.activeElement)),true);await p.keyboard.press('Escape');await p.screenshot({path:out+'/commands-detail.png'});await shut();});
  await run('Navigation preview keeps the selected destination in the gallery; table preview handles empty, loading and reset',async()=>{await open('paper-index-nav');await d.locator('.wb-nav-desktop [data-nav=projects]').click();assert.ok(await d.isVisible());assert.equal(await d.locator('.wb-nav-desktop [data-nav=projects]').getAttribute('aria-current'),'page');assert.equal(await d.locator('.wb-demo-feedback').count(),0);await shut();await open('ledger-table');await d.locator('[data-wb-state]').selectOption('empty');assert.match(await d.locator('.wb-data-empty').innerText(),/該当/);await d.locator('[data-wb-state]').selectOption('loading');assert.equal(await d.locator('table').getAttribute('aria-busy'),'true');await d.locator('[data-wb-demo=reset]').click();assert.equal(await d.locator('tbody tr').count(),4);await p.screenshot({path:out+'/table-detail.png'});await shut();});
