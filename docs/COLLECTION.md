@@ -190,13 +190,13 @@
 | `aurora-fold-accordion` | Aurora Fold | A | 光の幕が引き上がり、透明な面の奥から内容が現れる。 |
 | `studio-rack-accordion` | Studio Rack | A | シャッターの羽根が起き上がり、ラックの内側が開く。 |
 | `blueprint-accordion` | Blueprint Fold | A | 格子が立ち上がり、走査線が内容の輪郭を描く。 |
-| `silk-chapter-accordion` | Silk Chapter | A | 畳まれた布のひだが解け、光沢だけがゆっくり移る。 |
+| `silk-chapter-accordion` | Silk Chapter | A | 一続きの布見本帳を開くと、淡い裏地と細い経糸が現れる。 |
 | `glass-vault-accordion` | Glass Vault | A | 二枚のガラス扉が左右へ退き、内容が浮かび上がる。 |
-| `copper-ledger-accordion` | Copper Ledger | A | 銅の帯が回転して開き、内側の暗い面を見せる。 |
+| `copper-ledger-accordion` | Copper Ledger | A | 細い銅の背表紙に沿って、刻印のある記録面が開く。 |
 | `observatory-accordion` | Observatory | A | 開口が円を描いて広がり、夜の奥行きが現れる。 |
 | `garden-notes-accordion` | Garden Notes | A | 葉のような紙の重なりが、左右にひらく。 |
 | `prism-stack-accordion` | Prism Stack | A | 結晶の断面が離れ、虹色の縁が内容を囲む。 |
-| `transit-board-accordion` | Transit Board | A | 案内板のフラップが開き、次の情報へつながる。 |
+| `transit-board-accordion` | Transit Board | A | 停車点を結ぶ細い路線から、選んだ旅程の情報が開く。 |
 | `gallery-frame-accordion` | Gallery Frame | A | 四隅から額縁が伸び、余白の中に内容を展示する。 |
 | `carbon-case-accordion` | Carbon Case | A | ケースの蓋が起き、内側のライナーが奥から現れる。 |
 | `ribbon-index-accordion` | Ribbon Index | A | 折り返した帯がほどけて、ひとつの長い紙面になる。 |

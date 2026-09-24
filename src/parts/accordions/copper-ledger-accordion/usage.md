@@ -1,6 +1,6 @@
 # Copper Ledger
 
-赤銅の縁と打刻番号。素材の履歴が精密な表になって現れる。
+細い銅の背表紙、刻印、罫線で素材の記録を並べます。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。
@@ -17,5 +17,5 @@ CSS gridで内容の実際の高さへ展開するため固定のmax-heightを�
 ## コンテンツデザイン
 panel-content.cssは内側の図版・数値カード・タグ・チェック項目などの任意のスタイルです。Example.tsx/markup.html内の展示文章・数値はサンプルであり、実データと差し替えて利用してください。
 
-## v2.0: UNFOLD presentation
+## v2.1: ALLOY / ETCHED LEDGER
 見た目の補助処理だけを追加しています。公開APIは従来と同じです。配布物の`unfold-accordion`関連ファイルを省略しないでください。素材の動きは開閉に追従し、入力や選択値はアニメーション終了を待ちません。

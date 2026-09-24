@@ -1,13 +1,89 @@
 @import "../../../shared/accordion-base.css";
 @import "../../../shared/panel-content.css";
 @import "../../../shared/unfold-accordion.css";
-/* v4.5 — FABRIC / PLEAT; decorative geometry only. */
-.sop-accordion.sop-silk-chapter-accordion{--acc-bg:#322c39;--acc-ink:#eee6ed;--acc-muted:#bcaebd;--acc-accent:#e4c5d7;--acc-line:#b89cb649;--acc-radius:14px;--acc-padding:26px;--reveal-turn:-8deg}
-.sop-accordion.sop-silk-chapter-accordion>.sop-accordion-item{background:linear-gradient(120deg,#51404b,#2c2634 40%,#3a3040);box-shadow:inset 0 1px #f6dce73d,0 12px 28px #0005}
-.sop-accordion.sop-silk-chapter-accordion>.sop-accordion-item>.sop-accordion-heading>.sop-accordion-trigger>.sop-accordion-title b{font:italic 23px/1.3 Georgia,serif!important}.sop-accordion.sop-silk-chapter-accordion>.sop-accordion-item>.sop-accordion-heading>.sop-accordion-trigger>.sop-accordion-index{font-style:italic!important}.sop-accordion.sop-silk-chapter-accordion>.sop-accordion-item>.sop-accordion-heading>.sop-accordion-trigger{background:linear-gradient(100deg,#e4afc30a,transparent)!important}
-.sop-accordion.sop-silk-chapter-accordion>.sop-accordion-item>.sop-unfold-scene>i{left:calc(var(--plane)*15% - 9%);top:60px;bottom:-60%;width:24%;border-radius:50%;background:linear-gradient(90deg,transparent,#170d2015 16%,#eed4dc24 49%,#170e2140 61%,transparent);transform-origin:50% 0;transform:rotate(calc((var(--plane) - 3)* (1 - var(--unfold))*14deg)) scaleX(calc(.45 + var(--unfold)*.65));opacity:calc(.7 - var(--unfold)*.35)}
-.sop-accordion.sop-silk-chapter-accordion>.sop-accordion-item>.sop-accordion-panel>.sop-accordion-clip>.sop-accordion-content{padding-top:12px!important}.sop-accordion.sop-silk-chapter-accordion>.sop-accordion-item>.sop-accordion-panel>.sop-accordion-clip>.sop-accordion-content > .sop-panel-art{background:linear-gradient(115deg,#92708c48,#3b304841)!important}
 
-/* Optional example illustration: omitted when the consumer supplies different content. */
-.sop-accordion.sop-silk-chapter-accordion>.sop-accordion-item>.sop-accordion-panel>.sop-accordion-clip>.sop-accordion-content>.sop-panel-art:before{width:200px;height:140px;right:-12px;top:-20px;border:0;border-radius:42%;background:repeating-linear-gradient(115deg,#8b567b24 0 24px,#e1b1cd6b 28px,#33253d26 46px);box-shadow:none;transform:skewX(calc(25deg - var(--unfold)*14deg)) rotate(-14deg)}
-.sop-accordion.sop-silk-chapter-accordion>.sop-accordion-item>.sop-accordion-panel>.sop-accordion-clip>.sop-accordion-content>.sop-panel-art:after{width:170px;height:1px;left:auto;right:20px;top:52px;background:linear-gradient(90deg,transparent,#efc5df61,transparent);transform:rotate(-15deg)}
+/* Silk Chapter — a continuous swatch book whose lining appears on opening. */
+.sop-accordion.sop-silk-chapter-accordion{
+  --acc-bg:#29252f;--acc-ink:#f1e8ed;--acc-muted:#c3b2bd;--acc-accent:#edcbd5;
+  --acc-line:#dec3d146;--acc-padding:26px;--reveal-turn:-6deg;
+  --acc-duration:720ms;--acc-ease:cubic-bezier(.16,.9,.28,1);
+  padding:7px;border:1px solid #bc9ead66;border-radius:20px;
+  background:linear-gradient(115deg,#5c4855 0%,#2a2630 29%,#342b39 71%,#4e3d4a 100%);
+  box-shadow:0 22px 45px #0006,inset 0 1px #fff5;
+}
+.sop-accordion.sop-silk-chapter-accordion>.sop-accordion-item{
+  margin:0;border:0;border-radius:0;box-shadow:none;
+  background:linear-gradient(110deg,#51404e33,#18152019 44%,#b398ae10);
+}
+.sop-accordion.sop-silk-chapter-accordion>.sop-accordion-item:first-child{border-radius:14px 14px 0 0}
+.sop-accordion.sop-silk-chapter-accordion>.sop-accordion-item:last-child{border-radius:0 0 14px 14px}
+.sop-accordion.sop-silk-chapter-accordion>.sop-accordion-item+ .sop-accordion-item{border-top:1px solid #dfc5d238}
+.sop-accordion.sop-silk-chapter-accordion>.sop-accordion-item[data-open=true]{
+  background:linear-gradient(112deg,#745a6c48,#2b2531 52%,#886d8340);
+}
+.sop-accordion.sop-silk-chapter-accordion>.sop-accordion-item>.sop-accordion-heading>.sop-accordion-trigger{
+  min-height:89px;padding:18px 20px;gap:16px;background:transparent!important;
+}
+.sop-accordion.sop-silk-chapter-accordion>.sop-accordion-item>.sop-accordion-heading>.sop-accordion-trigger:hover{
+  background:linear-gradient(90deg,#f0ced51a,transparent 63%)!important;
+}
+.sop-accordion.sop-silk-chapter-accordion .sop-accordion-index{
+  display:grid;place-items:center;width:36px;height:36px;min-width:36px;
+  border:1px solid #d4b8c773;border-radius:50%;color:#e7cbd4;
+  font:italic 11px Georgia,serif!important;
+}
+.sop-accordion.sop-silk-chapter-accordion .sop-accordion-title b{
+  font:italic 22px/1.16 Georgia,serif!important;letter-spacing:-.035em!important;
+}
+.sop-accordion.sop-silk-chapter-accordion .sop-accordion-title small{
+  color:#d2c1cb;font-size:10px;letter-spacing:.02em;
+}
+.sop-accordion.sop-silk-chapter-accordion .sop-accordion-badge{
+  border:0;border-bottom:1px solid #debccc80;border-radius:0;padding:0 0 3px;
+  color:#e0c4d0;letter-spacing:.16em;
+}
+.sop-accordion.sop-silk-chapter-accordion .sop-accordion-sign{
+  width:12px;height:12px;border-right:1px solid #f0d5df;border-bottom:1px solid #f0d5df;
+  transform:rotate(calc(45deg + var(--unfold)*180deg))!important;
+}
+.sop-accordion.sop-silk-chapter-accordion .sop-accordion-sign:before,
+.sop-accordion.sop-silk-chapter-accordion .sop-accordion-sign:after{display:none}
+.sop-accordion.sop-silk-chapter-accordion>.sop-accordion-item>.sop-unfold-scene>i{
+  top:0;bottom:0;left:calc(8% + var(--plane)*12%);width:1px;
+  background:linear-gradient(transparent,#f7d9e631 32%,#e6bed024 70%,transparent);
+  transform:skewX(calc((1 - var(--unfold))*9deg));opacity:.55;
+}
+.sop-accordion.sop-silk-chapter-accordion>.sop-accordion-item>.sop-accordion-panel{
+  border-top:1px solid #5b455b;background:linear-gradient(125deg,#eadce1,#d9c7d1 55%,#e3d4d8);
+}
+.sop-accordion.sop-silk-chapter-accordion .sop-accordion-content{
+  padding:20px 26px 25px!important;color:#493944!important;
+}
+.sop-accordion.sop-silk-chapter-accordion .sop-accordion-content p{color:#493944}
+.sop-accordion.sop-silk-chapter-accordion .sop-panel-art{
+  height:76px;border:1px solid #76586959;border-radius:2px;
+  background:repeating-linear-gradient(91deg,#70536612 0 1px,transparent 1px 5px),linear-gradient(110deg,#bca2b1,#eadbe0 44%,#a8899e);
+}
+.sop-accordion.sop-silk-chapter-accordion .sop-panel-art:before{
+  inset:0;width:auto;height:auto;border:0;border-radius:0;box-shadow:none;
+  background:repeating-linear-gradient(110deg,transparent 0 18px,#fff6 20px,#63465819 27px,transparent 31px);
+  transform:translateX(calc((1 - var(--unfold))*-18px));
+}
+.sop-accordion.sop-silk-chapter-accordion .sop-panel-art:after{display:none}
+.sop-accordion.sop-silk-chapter-accordion .sop-panel-art span{color:#3a2b38}
+.sop-accordion.sop-silk-chapter-accordion .sop-panel-metrics>div{
+  border:0;border-left:1px solid #6d4d615c;border-radius:0;background:transparent;padding:7px 12px;
+}
+.sop-accordion.sop-silk-chapter-accordion .sop-panel-metrics b{color:#493446}
+.sop-accordion.sop-silk-chapter-accordion .sop-panel-metrics small,
+.sop-accordion.sop-silk-chapter-accordion .sop-panel-foot{color:#654e60}
+.sop-accordion.sop-silk-chapter-accordion .sop-panel-tags span{
+  border:0;border-bottom:1px solid #73566880;border-radius:0;background:transparent;
+  padding:3px 2px;color:#493446;font:9px Georgia,serif;letter-spacing:.07em;
+}
+@media(max-width:390px){
+  .sop-accordion.sop-silk-chapter-accordion{padding:5px}
+  .sop-accordion.sop-silk-chapter-accordion .sop-accordion-title b{font-size:19px!important}
+  .sop-accordion.sop-silk-chapter-accordion .sop-accordion-index{width:30px;height:30px;min-width:30px}
+}
+@media(forced-colors:active){.sop-accordion.sop-silk-chapter-accordion{background:Canvas;border-color:CanvasText;box-shadow:none}}

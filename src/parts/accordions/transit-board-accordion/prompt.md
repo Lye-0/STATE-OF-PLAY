@@ -1,9 +1,9 @@
-# Transit Board — UNFOLD / v2.0.0
+# Transit Board — UNFOLD / v2.1.0
 
-案内板のフラップが開き、次の情報へつながる。
+停車点を結ぶ細い路線から、選んだ旅程の情報が開く。
 
 ## 固定するデザインと動き
-`styles.css` と `unfold-accordion.css` の形・色・陰影・余白を正本とする。特徴は `DISPLAY / SPLIT FLAP`。装飾的な紋章や大きな先頭アイコンではなく、面・輪郭の変形と展開動作で見せる。`sop-unfold-scene` は読み上げ対象外の装飾専用レイヤーであり、本文の複製を含めない。`--unfold` は連続した表示進捗。実際の開閉状態は `data-open` と `aria-expanded` で即座に確定し、表示アニメーション終了を待たない。
+`styles.css` と `unfold-accordion.css` の形・色・陰影・余白を正本とする。特徴は `DISPLAY / ROUTE SIGNAL`。三つの行を停車点の細い縦線で結び、現在開いている行の点と旅程だけを明るくする。厚い案内板を積み重ねたり、大きな先頭アイコンを足したりしない。`sop-unfold-scene` は読み上げ対象外の装飾専用レイヤーであり、本文の複製を含めない。`--unfold` は連続した表示進捗。実際の開閉状態は `data-open` と `aria-expanded` で即座に確定し、表示アニメーション終了を待たない。
 
 ## 組み込み
 見出しはbutton、本文は任意のHTML / ReactNode。既存のprops・multiple・collapsible・disabled・値コールバックを維持する。装飾ではなく実際のフォームやリンクを子要素にできる。閉じた本文はinert。開閉しても本文を作り直さず、入力内容を保持する。利用先のディレクトリへ移動するときは読み込み先を更新する。展示文言やsample図版の追加は必須ではない。

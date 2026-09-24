@@ -1,9 +1,9 @@
-# Copper Ledger — UNFOLD / v2.0.0
+# Copper Ledger — UNFOLD / v2.1.0
 
-銅の帯が回転して開き、内側の暗い面を見せる。
+細い銅の背表紙に沿って、刻印のある記録面が開く。
 
 ## 固定するデザインと動き
-`styles.css` と `unfold-accordion.css` の形・色・陰影・余白を正本とする。特徴は `ALLOY / ROTATING LEAVES`。装飾的な紋章や大きな先頭アイコンではなく、面・輪郭の変形と展開動作で見せる。`sop-unfold-scene` は読み上げ対象外の装飾専用レイヤーであり、本文の複製を含めない。`--unfold` は連続した表示進捗。実際の開閉状態は `data-open` と `aria-expanded` で即座に確定し、表示アニメーション終了を待たない。
+`styles.css` と `unfold-accordion.css` の形・色・陰影・余白を正本とする。特徴は `ALLOY / ETCHED LEDGER`。太い金属板を重ねず、刻印・細い罫線・銅の背表紙で記録帳を構成する。装飾的な紋章や大きな先頭アイコンは足さない。`sop-unfold-scene` は読み上げ対象外の装飾専用レイヤーであり、本文の複製を含めない。`--unfold` は連続した表示進捗。実際の開閉状態は `data-open` と `aria-expanded` で即座に確定し、表示アニメーション終了を待たない。
 
 ## 組み込み
 見出しはbutton、本文は任意のHTML / ReactNode。既存のprops・multiple・collapsible・disabled・値コールバックを維持する。装飾ではなく実際のフォームやリンクを子要素にできる。閉じた本文はinert。開閉しても本文を作り直さず、入力内容を保持する。利用先のディレクトリへ移動するときは読み込み先を更新する。展示文言やsample図版の追加は必須ではない。

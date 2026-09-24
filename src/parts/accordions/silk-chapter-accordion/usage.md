@@ -1,6 +1,6 @@
 # Silk Chapter
 
-絹のような陰影と細い見出し。物語が柔らかく折り重なる。
+一続きの布見本帳として章を並べ、開くと淡い裏地と細い経糸が現れます。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。
@@ -17,5 +17,5 @@ CSS gridで内容の実際の高さへ展開するため固定のmax-heightを�
 ## コンテンツデザイン
 panel-content.cssは内側の図版・数値カード・タグ・チェック項目などの任意のスタイルです。Example.tsx/markup.html内の展示文章・数値はサンプルであり、実データと差し替えて利用してください。
 
-## v2.0: UNFOLD presentation
+## v2.1: FABRIC / LINING
 見た目の補助処理だけを追加しています。公開APIは従来と同じです。配布物の`unfold-accordion`関連ファイルを省略しないでください。素材の動きは開閉に追従し、入力や選択値はアニメーション終了を待ちません。

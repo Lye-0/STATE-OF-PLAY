@@ -1,13 +1,99 @@
 @import "../../../shared/accordion-base.css";
 @import "../../../shared/panel-content.css";
 @import "../../../shared/unfold-accordion.css";
-/* v4.5 — ALLOY / ROTATING LEAVES; decorative geometry only. */
-.sop-accordion.sop-copper-ledger-accordion{--acc-bg:#251f1c;--acc-ink:#f0dbbf;--acc-muted:#b9a08c;--acc-accent:#e3ae88;--acc-line:#a57a565e;--acc-radius:4px;--acc-padding:28px;--reveal-turn:12deg}
-.sop-accordion.sop-copper-ledger-accordion>.sop-accordion-item{border-top-color:#d7ad778c;background:linear-gradient(100deg,#a9774b 0,#563a25 3px,#2a221c 10px,#241e1b 91%,#4f3827 100%);box-shadow:inset 0 1px #f3d4a23a,0 12px 27px #0005}
-.sop-accordion.sop-copper-ledger-accordion>.sop-accordion-item>.sop-accordion-heading>.sop-accordion-trigger{background:linear-gradient(115deg,#d9ac7240,#503a2622 40%,#f2c58414)!important;border-bottom:1px solid #a77d4638}.sop-accordion.sop-copper-ledger-accordion>.sop-accordion-item>.sop-accordion-heading>.sop-accordion-trigger>.sop-accordion-title b{font:21px/1.3 Georgia,serif!important}
-.sop-accordion.sop-copper-ledger-accordion>.sop-accordion-item>.sop-unfold-scene>i{left:calc(var(--plane)*12.5%);top:70px;bottom:0;width:12.5%;background:linear-gradient(90deg,#130e0b5c,#ac855024,#e3c0910d 60%,#41291725);transform:perspective(400px) rotateY(calc((1 - var(--unfold))*76deg));transform-origin:0 50%;border-left:1px solid #d1ab7123}
-.sop-accordion.sop-copper-ledger-accordion>.sop-accordion-item>.sop-accordion-panel>.sop-accordion-clip>.sop-accordion-content{padding-top:17px!important}.sop-accordion.sop-copper-ledger-accordion>.sop-accordion-item>.sop-accordion-panel>.sop-accordion-clip>.sop-accordion-content > .sop-panel-art{background:linear-gradient(120deg,#d2a4711e,#2f241c)!important}
 
-/* Optional example illustration: omitted when the consumer supplies different content. */
-.sop-accordion.sop-copper-ledger-accordion>.sop-accordion-item>.sop-accordion-panel>.sop-accordion-clip>.sop-accordion-content>.sop-panel-art:before{width:170px;height:80px;right:9px;top:15px;border-radius:3px;border:1px solid #e6b38982;background:repeating-linear-gradient(0deg,transparent 0 2px,#0000000c 2px 3px),linear-gradient(115deg,#653923,#dda86d,#8c6140 70%,#eac393);box-shadow:3px 7px 9px #0004;transform:rotate(calc(-13deg + var(--unfold)*5deg))}
-.sop-accordion.sop-copper-ledger-accordion>.sop-accordion-item>.sop-accordion-panel>.sop-accordion-clip>.sop-accordion-content>.sop-panel-art:after{top:8px;height:4px;left:14px;right:18px;background:repeating-linear-gradient(90deg,#c293714b 0 1px,transparent 1px 7px);transform:none}
+/* Copper Ledger — etched entries on a single narrow metal spine. */
+.sop-accordion.sop-copper-ledger-accordion{
+  --acc-bg:#201d1a;--acc-ink:#f0e1cd;--acc-muted:#bca895;--acc-accent:#d5a574;
+  --acc-line:#a8794e75;--acc-padding:24px;--reveal-turn:5deg;
+  --acc-duration:470ms;--acc-ease:cubic-bezier(.23,.73,.19,1);
+  padding-left:17px;
+}
+.sop-accordion.sop-copper-ledger-accordion:before{
+  content:"";position:absolute;left:7px;top:8px;bottom:8px;width:1px;
+  background:linear-gradient(transparent,#d6a5749c 16%,#7c5038aa 86%,transparent);
+  pointer-events:none;
+}
+.sop-accordion.sop-copper-ledger-accordion>.sop-accordion-item{
+  margin:0 0 7px;border:1px solid #936b4b65;border-radius:2px;
+  background:linear-gradient(90deg,#9a6e4524,#28221e 14%,#211d1a 72%,#33261d);
+  box-shadow:inset 2px 0 #d0a06c50,inset 0 1px #f6d3a228,0 9px 17px #0004;
+}
+.sop-accordion.sop-copper-ledger-accordion>.sop-accordion-item:before{
+  content:"";position:absolute;left:7px;top:12px;width:4px;height:4px;border-radius:50%;
+  background:#e4b985;box-shadow:0 0 0 2px #493224,0 0 8px #edc29466;pointer-events:none;z-index:3;
+}
+.sop-accordion.sop-copper-ledger-accordion>.sop-accordion-item[data-open=true]{
+  border-color:#d6a6749e;box-shadow:inset 3px 0 #e2b080,inset 0 1px #ffe0b04d,0 15px 23px #0005;
+}
+.sop-accordion.sop-copper-ledger-accordion>.sop-accordion-item>.sop-accordion-heading>.sop-accordion-trigger{
+  display:grid;grid-template-columns:32px minmax(0,1fr) auto 27px;
+  min-height:84px;padding:15px 18px;gap:13px;
+  background:linear-gradient(90deg,#f6c89412,transparent 36%)!important;
+}
+.sop-accordion.sop-copper-ledger-accordion>.sop-accordion-item>.sop-accordion-heading>.sop-accordion-trigger:hover{
+  background:linear-gradient(90deg,#efbd8740,#a2734c0a 35%,transparent 80%)!important;
+}
+.sop-accordion.sop-copper-ledger-accordion .sop-accordion-index{
+  min-width:0;color:#dcb185;font:11px Consolas,monospace!important;
+  border-right:1px solid #bf8f606b;padding-right:10px;
+}
+.sop-accordion.sop-copper-ledger-accordion .sop-accordion-title b{
+  color:#f2dfc8;font:21px/1.18 Georgia,serif!important;letter-spacing:-.025em!important;
+}
+.sop-accordion.sop-copper-ledger-accordion .sop-accordion-title small{
+  color:#b8a18d;font-size:10px;letter-spacing:.035em;
+}
+.sop-accordion.sop-copper-ledger-accordion .sop-accordion-badge{
+  padding:2px 0;border:0;border-radius:0;color:#d9ab7e;
+  font:9px Consolas,monospace;letter-spacing:.12em;
+}
+.sop-accordion.sop-copper-ledger-accordion .sop-accordion-sign{
+  width:24px;height:24px;border:1px solid #af80558c;border-radius:50%;color:#eac092;
+}
+.sop-accordion.sop-copper-ledger-accordion .sop-accordion-sign:before,
+.sop-accordion.sop-copper-ledger-accordion .sop-accordion-sign:after{
+  left:6px;right:6px;top:11px;
+}
+.sop-accordion.sop-copper-ledger-accordion>.sop-accordion-item>.sop-unfold-scene>i{
+  left:calc(11% + var(--plane)*12%);top:0;bottom:0;width:1px;
+  background:linear-gradient(transparent,#e7b98a2d 28%,#c6936536 75%,transparent);
+  transform:translateX(calc((1 - var(--unfold))*8px));opacity:.55;
+}
+.sop-accordion.sop-copper-ledger-accordion>.sop-accordion-item>.sop-accordion-panel{
+  border-top:1px solid #a5764c54;
+  background:repeating-linear-gradient(0deg,transparent 0 35px,#d0a2760b 35px 36px),linear-gradient(120deg,#1c1a18,#29211b);
+}
+.sop-accordion.sop-copper-ledger-accordion .sop-accordion-content{
+  padding:21px 24px 26px!important;color:#ccb9a6!important;
+}
+.sop-accordion.sop-copper-ledger-accordion .sop-panel-art{
+  height:76px;border-radius:1px;border:1px solid #c18c5b91;
+  background:repeating-linear-gradient(1deg,#fff2 0 1px,transparent 1px 3px),linear-gradient(100deg,#603a25,#b47d4f 42%,#402a20 68%,#d2a275);
+}
+.sop-accordion.sop-copper-ledger-accordion .sop-panel-art:before{
+  width:102px;height:102px;right:29px;top:-15px;border:1px solid #efd0a35c;border-radius:50%;
+  box-shadow:0 0 0 11px #d7a77717,0 0 0 23px #f6d8a30b;
+  transform:rotate(calc((1 - var(--unfold))*-30deg));
+}
+.sop-accordion.sop-copper-ledger-accordion .sop-panel-art:after{display:none}
+.sop-accordion.sop-copper-ledger-accordion .sop-panel-art span{color:#f5dcc0}
+.sop-accordion.sop-copper-ledger-accordion .sop-panel-metrics>div{
+  padding:8px 5px;border:0;border-top:1px solid #b4865c71;border-radius:0;background:transparent;
+}
+.sop-accordion.sop-copper-ledger-accordion .sop-panel-metrics b{color:#eac59a;font:18px Consolas,monospace}
+.sop-accordion.sop-copper-ledger-accordion .sop-panel-tags span{
+  border-radius:1px;border:1px solid #ae784e70;background:#b2783920;
+  color:#e6bb91;font:8px Consolas,monospace;letter-spacing:.08em;
+}
+.sop-accordion.sop-copper-ledger-accordion:dir(rtl){padding-left:0;padding-right:17px}
+.sop-accordion.sop-copper-ledger-accordion:dir(rtl):before{left:auto;right:7px}
+.sop-accordion.sop-copper-ledger-accordion:dir(rtl)>.sop-accordion-item:before{left:auto;right:7px}
+@media(max-width:390px){
+  .sop-accordion.sop-copper-ledger-accordion{padding-left:13px}
+  .sop-accordion.sop-copper-ledger-accordion .sop-accordion-title b{font-size:18px!important}
+  .sop-accordion.sop-copper-ledger-accordion>.sop-accordion-item>.sop-accordion-heading>.sop-accordion-trigger{grid-template-columns:25px minmax(0,1fr) 24px;gap:10px;padding:14px 12px}
+  .sop-accordion.sop-copper-ledger-accordion .sop-accordion-badge{display:none}
+  .sop-accordion.sop-copper-ledger-accordion:dir(rtl){padding-left:0;padding-right:13px}
+}
+@media(forced-colors:active){.sop-accordion.sop-copper-ledger-accordion:before,.sop-accordion.sop-copper-ledger-accordion>.sop-accordion-item:before{display:none}}

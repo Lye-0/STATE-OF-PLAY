@@ -1,13 +1,114 @@
 @import "../../../shared/accordion-base.css";
 @import "../../../shared/panel-content.css";
 @import "../../../shared/unfold-accordion.css";
-/* v4.5 — DISPLAY / SPLIT FLAP; decorative geometry only. */
-.sop-accordion.sop-transit-board-accordion{--acc-bg:#1d2323;--acc-ink:#eee9d6;--acc-muted:#a9af9c;--acc-accent:#e4cf8b;--acc-line:#78786a60;--acc-radius:3px;--reveal-turn:-22deg;--reveal-y:20px}
-.sop-accordion.sop-transit-board-accordion>.sop-accordion-item{background:linear-gradient(#29302c,#181e1e);box-shadow:inset 0 1px #c1c3ab27,0 4px 0 #0a1010,0 14px 22px #0004}
-.sop-accordion.sop-transit-board-accordion>.sop-accordion-item>.sop-accordion-heading>.sop-accordion-trigger{background:linear-gradient(#464a3838,#10171650)!important;border-bottom:2px solid #080e0e}.sop-accordion.sop-transit-board-accordion>.sop-accordion-item>.sop-accordion-heading>.sop-accordion-trigger>.sop-accordion-title b{font:16px/1.5 Consolas,monospace!important;letter-spacing:.02em!important}.sop-accordion.sop-transit-board-accordion>.sop-accordion-item>.sop-accordion-heading>.sop-accordion-trigger>.sop-accordion-index{color:#1b2922;background:#e5d2a5;padding:4px;border-radius:2px}
-.sop-accordion.sop-transit-board-accordion>.sop-accordion-item>.sop-unfold-scene>i{left:0;right:0;top:calc(78px + var(--plane)*13%);height:13%;background:linear-gradient(#93967626,#121a1520);border-bottom:1px solid #0007;transform:perspective(500px) rotateX(calc((1 - var(--unfold))*-80deg));transform-origin:50% 0}
-.sop-accordion.sop-transit-board-accordion>.sop-accordion-item>.sop-unfold-scene:after{content:'';position:absolute;top:0;left:0;width:5px;bottom:0;background:#e3c77b;transform:scaleY(calc(.23 + var(--unfold)*.77));transform-origin:50% 0}.sop-accordion.sop-transit-board-accordion>.sop-accordion-item>.sop-accordion-panel>.sop-accordion-clip>.sop-accordion-content{padding-top:18px!important}
 
-/* Optional example illustration: omitted when the consumer supplies different content. */
-.sop-accordion.sop-transit-board-accordion>.sop-accordion-item>.sop-accordion-panel>.sop-accordion-clip>.sop-accordion-content>.sop-panel-art:before{width:166px;height:50px;right:20px;top:20px;border-radius:2px;border:1px solid #e0d7ad35;background:repeating-linear-gradient(90deg,#0e18189e 0 25px,#bdc4a141 26px 27px);box-shadow:0 2px 0 #090e0e;transform:perspective(300px) rotateX(calc((1 - var(--unfold))*-65deg))}
-.sop-accordion.sop-transit-board-accordion>.sop-accordion-item>.sop-accordion-panel>.sop-accordion-clip>.sop-accordion-content>.sop-panel-art:after{left:auto;right:29px;top:45px;width:142px;height:1px;background:#b7bfa747;transform:none}
+/* Transit Board — connected stops and a route revealed below the active departure. */
+.sop-accordion.sop-transit-board-accordion{
+  --acc-bg:#18211f;--acc-ink:#ebeadc;--acc-muted:#aab9aa;--acc-accent:#d9d19d;
+  --acc-line:#8294874b;--acc-padding:24px;--reveal-turn:-4deg;--reveal-y:10px;
+  --acc-duration:520ms;--acc-ease:cubic-bezier(.24,.72,.18,1);
+  padding-left:22px;
+}
+.sop-accordion.sop-transit-board-accordion:before{
+  content:"";position:absolute;left:8px;top:30px;bottom:30px;width:1px;
+  background:linear-gradient(#b6ba8d42,#d7d19c9e 45%,#b6ba8d42);pointer-events:none;
+}
+.sop-accordion.sop-transit-board-accordion>.sop-accordion-item{
+  overflow:visible;margin:0 0 5px;border:0;border-bottom:1px solid #97aa924a;
+  border-radius:0;background:linear-gradient(90deg,#29353059,#192320 55%,#222a23);
+  box-shadow:none;
+}
+.sop-accordion.sop-transit-board-accordion>.sop-accordion-item:before{
+  content:"";position:absolute;left:-19px;top:39px;width:9px;height:9px;
+  border:1px solid #d6d1a0;border-radius:50%;background:#1a2420;
+  box-shadow:0 0 0 4px #1c2723;pointer-events:none;
+}
+.sop-accordion.sop-transit-board-accordion>.sop-accordion-item[data-open=true]{
+  background:linear-gradient(90deg,#4352498c,#1d2925 45%,#27332a);
+  border-bottom-color:#c8c99b8c;
+}
+.sop-accordion.sop-transit-board-accordion>.sop-accordion-item[data-open=true]:before{
+  background:#e6d9a4;box-shadow:0 0 0 4px #1c2723,0 0 13px #d9d19d88;
+}
+.sop-accordion.sop-transit-board-accordion>.sop-accordion-item>.sop-accordion-heading>.sop-accordion-trigger{
+  display:grid;grid-template-columns:27px minmax(0,1fr) auto 17px;
+  min-height:84px;padding:16px 17px;gap:13px;background:transparent!important;
+}
+.sop-accordion.sop-transit-board-accordion>.sop-accordion-item>.sop-accordion-heading>.sop-accordion-trigger:hover{
+  background:linear-gradient(90deg,#d3d3a31c,transparent 70%)!important;
+}
+.sop-accordion.sop-transit-board-accordion .sop-accordion-index{
+  min-width:0;color:#d8d3ad;font:11px Consolas,monospace!important;letter-spacing:.05em;
+}
+.sop-accordion.sop-transit-board-accordion .sop-accordion-title b{
+  color:#f1eddb;font:17px/1.28 Consolas,monospace!important;letter-spacing:-.025em!important;
+}
+.sop-accordion.sop-transit-board-accordion .sop-accordion-title small{
+  color:#afc0ad;font-size:10px;letter-spacing:.04em;
+}
+.sop-accordion.sop-transit-board-accordion .sop-accordion-badge{
+  border:0;border-radius:0;border-bottom:1px solid #b8bd927d;
+  padding:0 0 3px;color:#d5d4ad;font:8px Consolas,monospace;letter-spacing:.12em;
+}
+.sop-accordion.sop-transit-board-accordion .sop-accordion-sign{
+  width:11px;height:11px;border-top:1px solid #e6dba9;border-right:1px solid #e6dba9;
+  transform:rotate(calc(45deg + var(--unfold)*90deg))!important;
+}
+.sop-accordion.sop-transit-board-accordion .sop-accordion-sign:before,
+.sop-accordion.sop-transit-board-accordion .sop-accordion-sign:after{display:none}
+.sop-accordion.sop-transit-board-accordion>.sop-accordion-item>.sop-unfold-scene{border-radius:0}
+.sop-accordion.sop-transit-board-accordion>.sop-accordion-item>.sop-unfold-scene>i{
+  left:0;right:0;top:calc(12% + var(--plane)*12%);height:1px;
+  background:linear-gradient(90deg,#d8d6aa25,transparent 76%);
+  transform:translateY(calc((1 - var(--unfold))*-7px));opacity:.6;
+}
+.sop-accordion.sop-transit-board-accordion>.sop-accordion-item>.sop-accordion-panel{
+  border-top:1px solid #99ad9461;background:linear-gradient(110deg,#131d1a,#1f2923);
+}
+.sop-accordion.sop-transit-board-accordion .sop-accordion-content{
+  padding:19px 20px 24px 58px!important;color:#bdc8b8!important;
+}
+.sop-accordion.sop-transit-board-accordion .sop-panel-art{
+  height:68px;border:1px solid #b8bd8f52;border-radius:0;
+  background:repeating-linear-gradient(0deg,transparent 0 14px,#d5d6b109 14px 15px),linear-gradient(90deg,#26382f,#141f1c);
+}
+.sop-accordion.sop-transit-board-accordion .sop-panel-art:before{
+  width:70%;height:1px;left:18px;right:auto;top:32px;border:0;border-radius:0;
+  background:#d4d2a69c;box-shadow:none;opacity:1;
+  transform:scaleX(calc(.25 + var(--unfold)*.75));transform-origin:left;
+}
+.sop-accordion.sop-transit-board-accordion .sop-panel-art:after{
+  left:20px;right:auto;top:28px;width:8px;height:8px;border-radius:50%;
+  background:#e4d8a4;box-shadow:64px 0 #e4d8a4,128px 0 #e4d8a4;transform:none;
+}
+.sop-accordion.sop-transit-board-accordion .sop-panel-art span{color:#cbd1ad}
+.sop-accordion.sop-transit-board-accordion .sop-panel-metrics>div{
+  border:0;border-left:1px solid #adb99475;border-radius:0;background:transparent;
+}
+.sop-accordion.sop-transit-board-accordion .sop-panel-metrics b{
+  color:#e8dfb9;font:17px Consolas,monospace;
+}
+.sop-accordion.sop-transit-board-accordion .sop-panel-tags span{
+  padding:2px 4px 2px 10px;border:0;border-left:2px solid #c8c99b;
+  border-radius:0;background:transparent;color:#d9d9ad;
+  font:9px Consolas,monospace;letter-spacing:.08em;
+}
+.sop-accordion.sop-transit-board-accordion:dir(rtl){padding-left:0;padding-right:22px}
+.sop-accordion.sop-transit-board-accordion:dir(rtl):before{left:auto;right:8px}
+.sop-accordion.sop-transit-board-accordion:dir(rtl)>.sop-accordion-item:before{left:auto;right:-19px}
+.sop-accordion.sop-transit-board-accordion:dir(rtl) .sop-accordion-content{padding-left:20px!important;padding-right:58px!important}
+.sop-accordion.sop-transit-board-accordion:dir(rtl) .sop-panel-tags span{padding:2px 10px 2px 4px;border-left:0;border-right:2px solid #c8c99b}
+@media(max-width:390px){
+  .sop-accordion.sop-transit-board-accordion{padding-left:17px}
+  .sop-accordion.sop-transit-board-accordion:before{left:6px}
+  .sop-accordion.sop-transit-board-accordion>.sop-accordion-item:before{left:-15px}
+  .sop-accordion.sop-transit-board-accordion>.sop-accordion-item>.sop-accordion-heading>.sop-accordion-trigger{grid-template-columns:22px minmax(0,1fr) 13px;gap:9px;padding:14px 10px}
+  .sop-accordion.sop-transit-board-accordion .sop-accordion-title b{font-size:15px!important}
+  .sop-accordion.sop-transit-board-accordion .sop-accordion-badge{display:none}
+  .sop-accordion.sop-transit-board-accordion .sop-accordion-content{padding-left:22px!important}
+  .sop-accordion.sop-transit-board-accordion:dir(rtl){padding-left:0;padding-right:17px}
+  .sop-accordion.sop-transit-board-accordion:dir(rtl):before{right:6px}
+  .sop-accordion.sop-transit-board-accordion:dir(rtl)>.sop-accordion-item:before{right:-15px}
+  .sop-accordion.sop-transit-board-accordion:dir(rtl) .sop-accordion-content{padding-left:22px!important;padding-right:22px!important}
+}
+@media(forced-colors:active){.sop-accordion.sop-transit-board-accordion:before,.sop-accordion.sop-transit-board-accordion>.sop-accordion-item:before{display:none}}
