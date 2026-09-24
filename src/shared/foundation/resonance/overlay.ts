@@ -7,7 +7,9 @@ export function resonanceOverlay(c:Core,panel:HTMLElement,anchor:HTMLElement,pre
   const width=Math.min(Math.max(Number.isFinite(preferred)?preferred:r.width,264),vw-24);panel.style.width=width+'px';
   const below=oy+vh-r.bottom-12,above=r.top-oy-12,natural=Math.min(panel.scrollHeight||280,360),top=preference()==='top'?above>=Math.min(natural,180)||above>below:below<Math.min(natural,180)&&above>below;
   const available=Math.max(40,top?above:below);panel.style.maxHeight=Math.min(420,available)+'px';panel.style.setProperty('--rs-panel-max',Math.min(420,available)+'px');panel.style.setProperty('--ff-overlay-max-height',panel.style.maxHeight);
-  const h=panel.getBoundingClientRect().height,left=Math.max(ox+12,Math.min(r.left,ox+vw-width-12));panel.style.left=left+'px';panel.style.top=Math.max(oy+12,Math.min(top?r.top-h-8:r.bottom+8,oy+vh-h-12))+'px';panel.dataset.side=top?'top':'bottom';
+  // The reveal animation scales the panel's visual rectangle. Position against its
+  // untransformed layout height so it never grows back across the anchor.
+  const h=panel.offsetHeight,left=Math.max(ox+12,Math.min(r.left,ox+vw-width-12));panel.style.left=left+'px';panel.style.top=Math.max(oy+12,Math.min(top?r.top-h-8:r.bottom+8,oy+vh-h-12))+'px';panel.dataset.side=top?'top':'bottom';
   panel.style.setProperty('--rs-anchor',Math.max(18,Math.min(width-18,r.left+r.width*.5-left))+'px');
  }
  function show(){if(c.dead||c.options.disabled)return;panel.hidden=false;opened=true;try{panel.showPopover();}catch{/* Native popover unavailable: use positioned fallback. */}position();}

@@ -27,7 +27,9 @@
 
 /* FOLIO — the opening edge, fold and paper stack carry the expression. */
 .sop-foundation.sop-resonance[data-foundation="hints"][data-variant="folio"]{--rs-overlay-width:354px;--rs-hint-origin:100% 0}
-.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="folio"] > .ff-hint-trigger{border-radius:3px 18px 3px 3px;border-inline-start:5px solid #987654;background:linear-gradient(110deg,#fff8eb,#d9cbb4)}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="folio"] > .ff-hint-trigger{border-radius:3px 18px 3px 3px;border-inline-start:5px solid #b99d78;background:linear-gradient(110deg,#4a4137,#302b27),#302b27;color:#f7ead4}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="folio"] > .ff-hint-trigger:is(:hover,:focus-visible,[data-expanded=true]){background:linear-gradient(110deg,#574938,#302b27),#302b27;color:#fff1db}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="folio"] > .ff-hint-trigger > .rs-trigger-dot{background:#3d362e;color:#f7ead4;border-color:#b99d7899}
 .sop-foundation.sop-resonance[data-foundation="hints"][data-variant="folio"] > .ff-hint-panel{border-radius:2px 21px 3px 2px;background:linear-gradient(112deg,#fff9ee,#e9dfca);border-inline-start:5px solid #957758;box-shadow:5px 5px 0 #6a52363b,10px 10px 0 #6a52361f,0 22px 42px #0004}
 .sop-foundation.sop-resonance[data-foundation="hints"][data-variant="folio"] > .ff-hint-panel > .rs-hint-art > i:first-child{top:0;right:0;width:62px;height:62px;clip-path:polygon(0 0,100% 100%,100% 0);background:linear-gradient(145deg,#fffdf3,#c9b69b);box-shadow:-3px 3px 9px #59472b3d}
 .sop-foundation.sop-resonance[data-foundation="hints"][data-variant="folio"] > .ff-hint-panel > .rs-hint-art > i:nth-child(2){inset:11px 16px 11px auto;width:1px;background:#9d886b52}
@@ -41,7 +43,9 @@
 
 /* BOTANICAL — a restrained leaf contour, away from the copy. */
 .sop-foundation.sop-resonance[data-foundation="hints"][data-variant="botanical"]{--rs-overlay-width:364px;--rs-hint-origin:100% 100%}
-.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="botanical"] > .ff-hint-trigger{border-radius:28px 4px 27px 4px;background:linear-gradient(120deg,#fffcef,#dce8d4)}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="botanical"] > .ff-hint-trigger{border-radius:28px 4px 27px 4px;background:linear-gradient(120deg,#354b3d,#23342b),#23342b;color:#ebf2df;border-color:#a7c29b99}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="botanical"] > .ff-hint-trigger:is(:hover,:focus-visible,[data-expanded=true]){background:linear-gradient(120deg,#416048,#23342b),#23342b;color:#f4f7e8}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="botanical"] > .ff-hint-trigger > .rs-trigger-dot{background:#2d4233;color:#ebf2df;border-color:#a7c29b99}
 .sop-foundation.sop-resonance[data-foundation="hints"][data-variant="botanical"] > .ff-hint-panel{border-radius:37px 4px 37px 5px;background:radial-gradient(ellipse at 95% 95%,#7d9c7333,transparent 58%),var(--rs-face)}
 .sop-foundation.sop-resonance[data-foundation="hints"][data-variant="botanical"] > .ff-hint-panel > .rs-hint-art > i:first-child{right:-54px;bottom:-71px;width:180px;height:250px;border:1px solid #668b6780;border-radius:95% 3% 95% 3%;transform:rotate(-28deg)}
 .sop-foundation.sop-resonance[data-foundation="hints"][data-variant="botanical"] > .ff-hint-panel > .rs-hint-art > i:nth-child(2){right:36px;bottom:-28px;width:1px;height:170px;background:#6b976e87;transform:rotate(32deg)}
@@ -62,7 +66,9 @@
 
 /* CERAMIC — one embossed ring catches light without becoming an icon. */
 .sop-foundation.sop-resonance[data-foundation="hints"][data-variant="ceramic"]{--rs-overlay-width:360px}
-.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="ceramic"] > .ff-hint-trigger{border-radius:999px;background:linear-gradient(145deg,#fbfcf7,#d9e2df);box-shadow:inset 0 1px #fff,0 9px 18px #0002}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="ceramic"] > .ff-hint-trigger{border-radius:999px;background:linear-gradient(145deg,#3e5050,#283638),#283638;color:#edf3ed;box-shadow:inset 0 1px #b5c9c34d,0 9px 18px #0003;border-color:#a6beb677}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="ceramic"] > .ff-hint-trigger:is(:hover,:focus-visible,[data-expanded=true]){background:linear-gradient(145deg,#506464,#283638),#283638;color:#f4f8f2}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="ceramic"] > .ff-hint-trigger > .rs-trigger-dot{background:#344648;color:#edf3ed;border-color:#a6beb677}
 .sop-foundation.sop-resonance[data-foundation="hints"][data-variant="ceramic"] > .ff-hint-panel{border-radius:31px;background:radial-gradient(ellipse at 100% 0,#fffef8bd,transparent 50%),var(--rs-face);box-shadow:inset 1px 1px 0 #fff,0 20px 45px #0003}
 .sop-foundation.sop-resonance[data-foundation="hints"][data-variant="ceramic"] > .ff-hint-panel > .rs-hint-art > i:first-child{right:-64px;top:-82px;width:210px;height:210px;border-radius:50%;border:2px solid #a3b7bf73;box-shadow:inset 0 0 0 11px #f9fdfc8c,0 0 0 13px #8faab345}
 

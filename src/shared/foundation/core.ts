@@ -76,7 +76,8 @@ export function makeOverlay(c:Core, panel:HTMLElement, trigger:HTMLElement, plac
   function position(){if(!opened)return; const r=anchor.getBoundingClientRect(),v=window.visualViewport;
     const vw=v?.width??window.innerWidth, vh=v?.height??window.innerHeight,offsetX=v?.offsetLeft??0,offsetY=v?.offsetTop??0;
     panel.style.width=Math.min(Math.max(r.width,240),vw-24)+'px';panel.style.maxHeight=Math.max(96,vh-32)+'px';panel.style.setProperty('--ff-overlay-max-height',panel.style.maxHeight);
-    const h=panel.getBoundingClientRect().height, spaceBelow=offsetY+vh-r.bottom-12;
+    // Read the layout height; the opening animation may temporarily scale its visual rect.
+    const h=panel.offsetHeight, spaceBelow=offsetY+vh-r.bottom-12;
     const above=placement==='top'?r.top-offsetY>=h+10:spaceBelow<h&&r.top-offsetY>spaceBelow;
     const left=Math.max(offsetX+12,Math.min(r.left,offsetX+vw-panel.offsetWidth-12));
     panel.style.left=left+'px';panel.style.top=(above?Math.max(offsetY+12,r.top-h-8):Math.max(offsetY+12,Math.min(r.bottom+8,offsetY+vh-h-12)))+'px';panel.dataset.side=above?'top':'bottom';

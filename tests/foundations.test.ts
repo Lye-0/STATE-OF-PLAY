@@ -31,6 +31,7 @@ test('all 24 hints export the clipped panel and 16 A designs carry hint-specific
  assert.match(expressive,/data-variant="relay"/);
  for(const part of parts.filter(p=>p.category==='hints')){
   assert.match(part.prompt,/v4\.13\.2/);assert.match(part.usage,/v4\.13\.2/);
+  assert.match(part.prompt,/パネルの配置（v4\.13\.4）/);assert.match(part.usage,/v4\.13\.4 \/ 配置とトリガー/);
   for(const format of ['tsx','ts'] as const){const delivery=getDelivery(part,format,'portable');
    assert.ok(delivery.runtimeFiles.some(file=>file.sourceName.endsWith('/shared/foundation/base.css')),part.id);
    if(part.designType==='A'){
@@ -38,6 +39,7 @@ test('all 24 hints export the clipped panel and 16 A designs carry hint-specific
     assert.ok(delivery.runtimeFiles.some(file=>file.sourceName.endsWith('/resonance/hint-art.ts')),part.id);
    }
    assert.match(buildPrompt(part,format,'portable'),/ff-hint-content/);
+   assert.match(buildPrompt(part,format,'portable'),/アニメーションに影響されないレイアウト上の高さ/);
   }
  }
 });

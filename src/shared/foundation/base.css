@@ -36,7 +36,8 @@
 .sop-foundation .ff-combo-list>[data-results]{min-height:0;max-height:var(--ff-combo-results-max);overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain}
 
 /* Hint artwork never scrolls the frame; only genuinely tall content uses an inner scroller. */
-.sop-foundation .ff-floating.ff-hint-panel{overflow:hidden}
+.sop-foundation .ff-floating.ff-hint-panel{overflow:hidden;animation:sop-ff-hint-reveal .2s ease-out}
+@keyframes sop-ff-hint-reveal{from{opacity:0}to{opacity:1}}
 .sop-foundation .ff-hint-panel>.ff-hint-content{position:relative;z-index:1;min-width:0;max-height:max(0px,calc(var(--ff-overlay-max-height,420px) - 34px));overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--ff-accent) transparent}
 
 /* Date and time share one authored control surface; text inputs cannot open an OS picker. */
