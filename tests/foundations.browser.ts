@@ -143,7 +143,43 @@ await run('Combobox IME composition does not intercept Enter or commit partial c
   await mount('aurora-popover',{interactive:true,content:'First'});await native.locator('#test-host [data-hint-trigger]').click();assert.ok(await native.locator('#test-host [data-hint-panel]').isVisible());await update({content:'<script>not executable</script>'});assert.equal(await native.locator('#test-host [data-hint-content]').innerText(),'<script>not executable</script>');await native.keyboard.press('Escape');assert.ok(await native.locator('#test-host [data-hint-panel]').isHidden());
   await mount('mercury-popover',{interactive:false});await native.locator('#test-host [data-hint-trigger]').focus();assert.equal(await native.locator('#test-host [data-hint-panel]').getAttribute('role'),'tooltip');await native.keyboard.press('Escape');assert.ok(await native.locator('#test-host [data-hint-panel]').isHidden());
  });
- await run('Progress and loader: determinate/indeterminate, dynamic limits, paused/reduced motion',async()=>{
+ await run('All 24 hint panels clip reveal overflow while genuinely long content scrolls inside',async()=>{
+  await native.emulateMedia({reducedMotion:'no-preference'});
+  await native.evaluate(()=>{document.body.style.minHeight='2600px';window.scrollTo(0,0);});
+  for(const part of parts.filter(part=>part.category==='hints')){
+   await native.evaluate(async()=>{window.scrollTo(0,0);await new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve())));});
+   await mount(part.id,{interactive:true});
+   await native.evaluate(()=>(window as any).api.show());
+   const panel=native.locator('#test-host [data-hint-panel]');
+   assert.ok(await panel.isVisible(),part.id);
+   const frames=await panel.evaluate(async element=>{
+    const states=[] as Array<{outerX:string;outerY:string;innerY:string;horizontal:number;vertical:number}>;
+    for(let frame=0;frame<12;frame++){
+     await new Promise<void>(resolve=>requestAnimationFrame(()=>resolve()));
+     const panel=element as HTMLElement,style=getComputedStyle(panel),content=panel.querySelector<HTMLElement>('.ff-hint-content')!,inner=getComputedStyle(content);
+     states.push({outerX:style.overflowX,outerY:style.overflowY,innerY:inner.overflowY,horizontal:panel.offsetWidth-panel.clientWidth-parseFloat(style.borderLeftWidth)-parseFloat(style.borderRightWidth),vertical:panel.offsetHeight-panel.clientHeight-parseFloat(style.borderTopWidth)-parseFloat(style.borderBottomWidth)});
+    }
+    return states;
+   });
+   assert.ok(frames.every(frame=>frame.outerX==='hidden'&&frame.outerY==='hidden'&&frame.innerY==='auto'&&frame.horizontal<=1&&frame.vertical<=1),part.id+' reveal scrollbars '+JSON.stringify(frames));
+   await native.evaluate(()=>window.scrollTo(0,190));
+   await native.waitForFunction(()=>document.querySelector('#test-host [data-hint-panel]')?.hasAttribute('hidden'));
+   assert.equal(await native.locator('#test-host [data-hint-trigger]').getAttribute('aria-expanded'),'false',part.id);
+  }
+  for(const id of ['aurora-popover','essential-popover']){
+   await native.evaluate(async()=>{window.scrollTo(0,0);await new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve())));});
+   await mount(id,{interactive:true,content:'Long descriptive content. '.repeat(100)});
+   await native.evaluate(()=>(window as any).api.show());
+   const panel=native.locator('#test-host [data-hint-panel]'),content=panel.locator('.ff-hint-content');
+   assert.ok(await content.evaluate(element=>element.scrollHeight>element.clientHeight),id+' needs inner scroll');
+   await content.evaluate(element=>{element.scrollTop=120;});
+   assert.ok(await panel.isVisible(),id+' stays open during inner scroll');
+   await native.keyboard.press('Escape');
+  }
+  await native.evaluate(()=>{document.body.style.minHeight='';window.scrollTo(0,0);});
+  await native.emulateMedia({reducedMotion:'reduce'});
+ });
+await run('Progress and loader: determinate/indeterminate, dynamic limits, paused/reduced motion',async()=>{
   await mount('aurora-progress',{min:20,max:80,value:50});assert.equal((await native.locator('#test-host [data-progress-reading]').textContent())?.replace(/\s/g,''),'50%');await update({indeterminate:true});assert.equal(await native.locator('#test-host progress').getAttribute('value'),null);await update({indeterminate:false,max:100});await native.evaluate(()=>(window as any).api.setData(100));assert.equal((await native.locator('#test-host [data-progress-reading]').textContent())?.replace(/\s/g,''),'100%');
   await mount('aurora-loader');await native.evaluate(()=>(window as any).api.setPaused(true));assert.equal(await native.locator('#test-host .sop-foundation').getAttribute('aria-busy'),'false');await update({content:'Custom loading'});assert.equal(await native.locator('#test-host [role=status]').innerText(),'Custom loading');
  });

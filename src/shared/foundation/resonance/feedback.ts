@@ -1,5 +1,6 @@
-import {createCore,heading,syncHeading,q,escape,svg,uniqueId,type FoundationConfig,type FoundationOptions,type FoundationController,type Notice} from '../core.ts';
+import {createCore,heading,syncHeading,q,escape,svg,uniqueId,prepareHintPanel,type FoundationConfig,type FoundationOptions,type FoundationController,type Notice} from '../core.ts';
 import {createMaterialScene,revealSurface} from './art.ts';
+import {createHintArtwork,revealHintArtwork} from './hint-art.ts';
 import {resonanceOverlay} from './overlay.ts';
 export function renderToast(_o:FoundationOptions):string {return '<div data-toast-example hidden></div><div class="ff-toast-stack" data-toast-stack></div>';}
 /** Timing is real notification lifetime, not fake task progress. No polling or permanent RAF. */
@@ -42,27 +43,28 @@ export function renderHint(o:FoundationOptions):string {return heading(o)+`<butt
 /** Noninteractive tooltip and interactive popover have distinct focus/ARIA behavior. */
 export function mountHint(root:HTMLElement,config:FoundationConfig,options:FoundationOptions={}):FoundationController {
  root.classList.add('sop-resonance');const c=createCore(root,config,options);if(!root.querySelector('[data-hint-trigger]'))root.innerHTML=renderHint(c.options);
- const trigger=q<HTMLButtonElement>(root,'[data-hint-trigger]'),panel=q<HTMLElement>(root,'[data-hint-panel]'),uid=uniqueId('rs-hint'),descriptionBefore=trigger.getAttribute('aria-describedby'),media=matchMedia('(prefers-reduced-motion: reduce)');panel.id=uid;
- const overlay=resonanceOverlay(c,panel,trigger,()=>c.options.placement??'top'),scene=createMaterialScene(panel,config.variant,0),face=createMaterialScene(trigger,config.variant,.1);
- let closeTimer=0,entrance:Animation|null=null,ignoreFocus=false;
- function show(){if(c.dead||c.options.disabled)return;clearTimeout(closeTimer);const was=overlay.open;overlay.show();trigger.dataset.expanded='true';panel.dataset.interactive=String(!!c.options.interactive);face.set(1);scene.set(1);
+ const trigger=q<HTMLButtonElement>(root,'[data-hint-trigger]'),panel=q<HTMLElement>(root,'[data-hint-panel]'),uid=uniqueId('rs-hint'),descriptionBefore=trigger.getAttribute('aria-describedby'),media=matchMedia('(prefers-reduced-motion: reduce)');panel.id=uid;prepareHintPanel(panel);
+ const retainedScene=config.variant==='aperture'||config.variant==='prism',art=createHintArtwork(panel,config.variant);
+ const overlay=resonanceOverlay(c,panel,trigger,()=>c.options.placement??'top',hide),scene=retainedScene?createMaterialScene(panel,config.variant,0):null,face=retainedScene?createMaterialScene(trigger,config.variant,.1):null;
+ let closeTimer=0,entrance:Animation[]=[],ignoreFocus=false,escapeDismissed=false;
+ function show(){if(c.dead||c.options.disabled)return;clearTimeout(closeTimer);const was=overlay.open;overlay.show();trigger.dataset.expanded='true';panel.dataset.interactive=String(!!c.options.interactive);face?.set(1);scene?.set(1);
   if(c.options.interactive){trigger.setAttribute('aria-expanded','true');}else{trigger.setAttribute('aria-describedby',[descriptionBefore,uid].filter(Boolean).join(' '));trigger.removeAttribute('aria-expanded');}
-  if(!was){entrance?.cancel();entrance=revealSurface(panel,config.variant,media.matches);}
+  if(!was){entrance.forEach(animation=>animation.cancel());entrance=revealHintArtwork(panel,config.variant,media.matches);if(scene){const reveal=revealSurface(panel,config.variant,media.matches);if(reveal)entrance.push(reveal);}}
  }
- function hide(){clearTimeout(closeTimer);overlay.hide();entrance?.cancel();scene.set(0,true);face.set(.1);trigger.dataset.expanded='false';if(c.options.interactive)trigger.setAttribute('aria-expanded','false');else trigger.removeAttribute('aria-expanded');if(descriptionBefore)trigger.setAttribute('aria-describedby',descriptionBefore);else trigger.removeAttribute('aria-describedby');}
+ function hide(){clearTimeout(closeTimer);overlay.hide();entrance.forEach(animation=>animation.cancel());entrance=[];scene?.set(0,true);face?.set(.1);trigger.dataset.expanded='false';if(c.options.interactive)trigger.setAttribute('aria-expanded','false');else trigger.removeAttribute('aria-expanded');if(descriptionBefore)trigger.setAttribute('aria-describedby',descriptionBefore);else trigger.removeAttribute('aria-describedby');}
  const restoreFocus=()=>{ignoreFocus=true;trigger.focus();ignoreFocus=false;};
  const later=()=>{clearTimeout(closeTimer);closeTimer=window.setTimeout(()=>{if(c.dead)return;if(!root.contains(document.activeElement))hide();},180);};
- c.on(trigger,'pointerenter',()=>{if(!c.options.interactive)show();});c.on(trigger,'pointerleave',()=>{if(!c.options.interactive)later();});c.on(trigger,'focus',()=>{if(!ignoreFocus&&!c.options.interactive)show();});
+ c.on(trigger,'pointerenter',()=>{if(!c.options.interactive&&!escapeDismissed)show();});c.on(trigger,'pointerleave',()=>{escapeDismissed=false;if(!c.options.interactive)later();});c.on(trigger,'focus',()=>{if(!ignoreFocus&&!c.options.interactive&&!escapeDismissed)show();});
  c.on(trigger,'click',()=>{if(c.options.interactive){if(overlay.open)hide();else show();}else show();});c.on(panel,'pointerenter',()=>clearTimeout(closeTimer));c.on(panel,'pointerleave',()=>{if(!c.options.interactive)later();});
- c.on(root,'focusout',()=>queueMicrotask(()=>{if(!c.dead&&!root.contains(document.activeElement)&&!panel.matches(':hover')&&!trigger.matches(':hover'))hide();}));
+ c.on(root,'focusout',()=>queueMicrotask(()=>{if(!c.dead&&!root.contains(document.activeElement)&&!panel.matches(':hover')&&!trigger.matches(':hover')){escapeDismissed=false;hide();}}));
  c.on(document,'pointerdown',event=>{if(overlay.open&&!root.contains(event.target as Node))hide();},{capture:true});
- c.on(document,'keydown',event=>{const e=event as KeyboardEvent;if(e.key==='Escape'&&overlay.open){e.preventDefault();e.stopPropagation();const inside=panel.contains(document.activeElement);hide();if(inside)restoreFocus();}},{capture:true});
+ c.on(document,'keydown',event=>{const e=event as KeyboardEvent;if(e.key==='Escape'&&overlay.open){e.preventDefault();e.stopPropagation();const inside=panel.contains(document.activeElement);escapeDismissed=true;hide();if(inside)restoreFocus();}},{capture:true});
  const action=panel.querySelector('[data-hint-action]');if(action)c.on(action,'click',()=>{c.options.onAction?.();hide();restoreFocus();});
- c.on(media,'change',()=>{if(media.matches)entrance?.cancel();});
+ c.on(media,'change',()=>{if(media.matches)entrance.forEach(animation=>animation.cancel());});
  c.sync=()=>{syncHeading(c);trigger.disabled=!!c.options.disabled;const interactive=!!c.options.interactive;panel.setAttribute('role',interactive?'dialog':'tooltip');panel.setAttribute('aria-label',c.options.label??'補足');panel.dataset.interactive=String(interactive);q(panel,'.ff-hint-heading strong').textContent=c.options.label??'補足情報';q(trigger,':scope > span:not(.rs-scene):not(.rs-trigger-dot)').textContent=interactive?'詳しく見る':'詳細を確認する';
   if(interactive){trigger.setAttribute('aria-controls',uid);trigger.setAttribute('aria-haspopup','dialog');trigger.setAttribute('aria-expanded',String(overlay.open));if(descriptionBefore)trigger.setAttribute('aria-describedby',descriptionBefore);else trigger.removeAttribute('aria-describedby');}
   else{trigger.removeAttribute('aria-controls');trigger.removeAttribute('aria-haspopup');trigger.removeAttribute('aria-expanded');if(overlay.open)trigger.setAttribute('aria-describedby',[descriptionBefore,uid].filter(Boolean).join(' '));}
   const actions=panel.querySelector<HTMLElement>('.rs-hint-actions');if(actions){if(!interactive&&actions.contains(document.activeElement))restoreFocus();actions.hidden=!interactive;}q(panel,'[data-hint-content]').textContent=c.options.content??'必要な情報を、必要な場所に。';if(c.options.disabled)hide();else if(overlay.open)overlay.position();
  };
- c.show=show;c.hide=hide;c.cleanup(()=>{clearTimeout(closeTimer);entrance?.cancel();scene.destroy();face.destroy();trigger.removeAttribute('data-expanded');if(descriptionBefore)trigger.setAttribute('aria-describedby',descriptionBefore);else trigger.removeAttribute('aria-describedby');});c.sync('initial');return c;
+ c.show=show;c.hide=hide;c.cleanup(()=>{clearTimeout(closeTimer);entrance.forEach(animation=>animation.cancel());scene?.destroy();face?.destroy();art?.remove();trigger.removeAttribute('data-expanded');if(descriptionBefore)trigger.setAttribute('aria-describedby',descriptionBefore);else trigger.removeAttribute('aria-describedby');});c.sync('initial');return c;
 }

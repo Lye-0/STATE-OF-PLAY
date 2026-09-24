@@ -18,4 +18,10 @@ Reactは同梱のCopperPopoverを読み込み、value（外部制御）または
 
 interactive:falseはrole=tooltipで、フォーカスはトリガーから動かさない。ホバー領域を通っても消えずEscapeで閉じる。interactive:trueだけがrole=dialogの非モーダルpopoverで内部操作を持つ。切り替え時にARIAと内部tab順を同期する。内容/ラベルを外部設定し、既存のaria-describedbyを破棄しない。
 
-色と寸法は`foundation/resonance/style.css`、変形は`resonance/art.ts`が正本です。表示内容はAPIから変更できます。導入向けのZIPに必要な依存処理は含まれます。背景用SVGは操作を受け取りません。
+色と寸法は`foundation/resonance/style.css`と`hint-style.css`、出現の動きは`hint-art.ts`が正本です。ApertureとPrismの既存の幾何学的な場面には`art.ts`も使います。表示内容はAPIから変更でき、導入向けZIPに必要な依存処理を含めます。
+
+## 展開面と長い内容（v4.13.2）
+
+パネルの外枠は装飾のはみ出しをクリップし、表示した瞬間に余分なスクロールバーを出しません。長い本文・操作面は内側だけを縦にスクロールできます。ページや周囲の領域をスクロールしたらパネルは閉じます。
+
+留め具付きの金属板が左右へ開き、縦組みの見出しから説明へ導く。 動きを減らす設定では出現演出を停止します。

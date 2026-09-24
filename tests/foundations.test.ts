@@ -23,6 +23,24 @@ test('all 24 combobox exports and prompts keep scrolling inside the candidate li
  const base=fs.readFileSync(path.join(ROOT,'src/shared/foundation/base.css'),'utf8'),resonance=fs.readFileSync(path.join(ROOT,'src/shared/foundation/resonance/style.css'),'utf8');assert.match(base,/ff-floating\.ff-combo-list\{overflow:hidden\}/);assert.match(base,/ff-combo-list>\[data-results\].*overflow-y:auto/);assert.match(resonance,/ff-combo-list \{[\s\S]*?overflow:hidden/);assert.match(resonance,/ff-combo-list > \[data-results\] \{[\s\S]*?overflow-y:auto/);
  for(const part of parts.filter(p=>p.category==='comboboxes')){assert.match(part.prompt,/候補一覧のスクロール/);assert.match(part.usage,/候補一覧のスクロール/);for(const format of FORMATS)for(const layout of ['portable','original']as const){const delivery=getDelivery(part,format,layout);assert.ok(delivery.runtimeFiles.some(file=>file.sourceName.endsWith('/shared/foundation/base.css')));assert.match(buildPrompt(part,format,layout),/候補パネルの外枠はオーバーフローをクリップ/);}}
 });
+test('all 24 hints export the clipped panel and 16 A designs carry hint-specific motion',()=>{
+ const base=fs.readFileSync(path.join(ROOT,'src/shared/foundation/base.css'),'utf8');
+ const expressive=fs.readFileSync(path.join(ROOT,'src/shared/foundation/resonance/hint-style.css'),'utf8');
+ assert.match(base,/ff-hint-panel>\.ff-hint-content/);
+ assert.match(expressive,/data-variant="aurora"/);
+ assert.match(expressive,/data-variant="relay"/);
+ for(const part of parts.filter(p=>p.category==='hints')){
+  assert.match(part.prompt,/v4\.13\.2/);assert.match(part.usage,/v4\.13\.2/);
+  for(const format of ['tsx','ts'] as const){const delivery=getDelivery(part,format,'portable');
+   assert.ok(delivery.runtimeFiles.some(file=>file.sourceName.endsWith('/shared/foundation/base.css')),part.id);
+   if(part.designType==='A'){
+    assert.ok(delivery.runtimeFiles.some(file=>file.sourceName.endsWith('/resonance/hint-style.css')),part.id);
+    assert.ok(delivery.runtimeFiles.some(file=>file.sourceName.endsWith('/resonance/hint-art.ts')),part.id);
+   }
+   assert.match(buildPrompt(part,format,'portable'),/ff-hint-content/);
+  }
+ }
+});
 test('catalogue transport round-trips every field without minifying exported code',()=>{
  const packed=packCatalog(catalogue.parts),restored=unpackCatalog(packed);assert.deepEqual(restored,catalogue.parts);
  assert.ok(Buffer.byteLength(JSON.stringify(packed))<catalogue.parts.reduce((sum,p)=>sum+Buffer.byteLength(JSON.stringify(p)),0)*.65);

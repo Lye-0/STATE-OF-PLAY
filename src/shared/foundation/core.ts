@@ -75,7 +75,7 @@ export function makeOverlay(c:Core, panel:HTMLElement, trigger:HTMLElement, plac
   const listeners=new AbortController();let opened=false;panel.setAttribute('popover','manual');panel.hidden=true;
   function position(){if(!opened)return; const r=anchor.getBoundingClientRect(),v=window.visualViewport;
     const vw=v?.width??window.innerWidth, vh=v?.height??window.innerHeight,offsetX=v?.offsetLeft??0,offsetY=v?.offsetTop??0;
-    panel.style.width=Math.min(Math.max(r.width,240),vw-24)+'px';panel.style.maxHeight=Math.max(96,vh-32)+'px';
+    panel.style.width=Math.min(Math.max(r.width,240),vw-24)+'px';panel.style.maxHeight=Math.max(96,vh-32)+'px';panel.style.setProperty('--ff-overlay-max-height',panel.style.maxHeight);
     const h=panel.getBoundingClientRect().height, spaceBelow=offsetY+vh-r.bottom-12;
     const above=placement==='top'?r.top-offsetY>=h+10:spaceBelow<h&&r.top-offsetY>spaceBelow;
     const left=Math.max(offsetX+12,Math.min(r.left,offsetX+vw-panel.offsetWidth-12));
@@ -87,4 +87,11 @@ export function makeOverlay(c:Core, panel:HTMLElement, trigger:HTMLElement, plac
   document.addEventListener('scroll',event=>{if(!opened)return;if(onOutsideScroll){if(!(event.target instanceof Node&&panel.contains(event.target)))onOutsideScroll();}else position();},{passive:true,capture:true,signal:listeners.signal});
   if(window.visualViewport){window.visualViewport.addEventListener('resize',position,{passive:true,signal:listeners.signal});window.visualViewport.addEventListener('scroll',position,{passive:true,signal:listeners.signal});}
   const destroy=()=>{hide();listeners.abort();};c.cleanup(destroy);return {show,hide,position,destroy,get open(){return opened;}};
+}
+/** Keep animated hint artwork outside the only genuinely scrollable content region. */
+export function prepareHintPanel(panel:HTMLElement):HTMLElement {
+ let content=panel.querySelector<HTMLElement>(':scope > .ff-hint-content');if(content)return content;
+ content=document.createElement('div');content.className='ff-hint-content';
+ for(const child of [...panel.children])if(!child.matches('.rs-hint-pointer,.rs-scene,.rs-hint-art'))content.append(child);
+ panel.append(content);return content;
 }

@@ -50,7 +50,28 @@ try {
  await run('all 16 hints distinguish a non-focusable tooltip from an interactive dialog',async()=>{
   for(const part of revised.filter(p=>p.category==='hints')){await mount(part.id,{interactive:false});const trigger=p.locator('[data-hint-trigger]');await trigger.focus();assert.equal(await p.locator('[data-hint-panel]').getAttribute('role'),'tooltip');assert.ok(await trigger.evaluate(e=>e===document.activeElement));assert.ok(await trigger.getAttribute('aria-describedby'));assert.equal(await p.locator('[data-hint-panel] input:visible').count(),0);await p.keyboard.press('Escape');assert.ok(await p.locator('[data-hint-panel]').isHidden());assert.equal(await trigger.getAttribute('aria-expanded'),null);}
  });
- await run('hint hover crossing and Escape preserve trigger focus; popover updates retain child state',async()=>{
+ await run('16 A hints use distinct information artwork and reveal motion',async()=>{
+  const motions=new Set<string>();
+  for(const part of revised.filter(part=>part.category==='hints')){
+   await mount(part.id,{interactive:true});
+   await p.evaluate(()=>(window as any).api.show());
+   const panel=p.locator('[data-hint-panel]'),art=panel.locator(':scope > .rs-hint-art');
+   assert.ok(await panel.isVisible(),part.id);
+   if(['aperture','prism'].includes(part.foundation?.variant??'')){
+    assert.equal(await panel.locator(':scope > .rs-scene').count(),1,part.id);
+    assert.equal(await art.count(),0,part.id);
+   }else{
+    assert.equal(await art.count(),1,part.id);
+    assert.equal(await panel.locator(':scope > .rs-scene').count(),0,part.id);
+    const frame=await art.evaluate(element=>(element.getAnimations()[0]?.effect as KeyframeEffect|null)?.getKeyframes()[0]);
+    assert.ok(frame,part.id+' has entrance motion');
+    motions.add(JSON.stringify(frame));
+   }
+   await p.keyboard.press('Escape');
+  }
+  assert.ok(motions.size>=12,'distinct hint motions: '+motions.size);
+ });
+await run('hint hover crossing and Escape preserve trigger focus; popover updates retain child state',async()=>{
   await mount('aurora-popover',{interactive:false});const trigger=p.locator('[data-hint-trigger]'),panel=p.locator('[data-hint-panel]');await p.locator('#outside').focus();await trigger.hover();await panel.hover();await p.waitForTimeout(240);assert.ok(await panel.isVisible());await p.mouse.move(1,1);await p.waitForTimeout(250);assert.ok(await panel.isHidden());
   await p.evaluate(()=>(window as any).api.updateFoundation({interactive:true}));await trigger.click();assert.equal(await panel.getAttribute('role'),'dialog');assert.equal(await trigger.getAttribute('aria-expanded'),'true');await panel.locator('input').check();await p.evaluate(()=>(window as any).api.updateFoundation({content:'内容だけ変更します。'}));assert.ok(await panel.locator('input').isChecked());await panel.locator('[data-hint-action]').focus();await p.keyboard.press('Escape');assert.ok(await panel.isHidden());assert.ok(await trigger.evaluate(e=>e===document.activeElement));await trigger.click();assert.ok(await panel.locator('input').isChecked());await p.evaluate(()=>(window as any).api.updateFoundation({interactive:false}));assert.equal(await panel.getAttribute('role'),'tooltip');assert.equal(await panel.locator('input:visible').count(),0);assert.equal(await trigger.getAttribute('aria-expanded'),null);
  });

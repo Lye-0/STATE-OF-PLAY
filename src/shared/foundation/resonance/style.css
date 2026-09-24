@@ -640,22 +640,26 @@
 }
 
 .sop-foundation.sop-resonance[data-foundation][data-variant] > .ff-hint-panel {
-  position:fixed;inset:auto;margin:0;isolation:isolate;overflow:auto;padding:25px 24px 27px;border:1px solid var(--rs-edge);border-radius:var(--rs-radius);background:var(--rs-face);color:var(--rs-ink);box-shadow:0 20px 45px #0005,inset 0 1px 0 #fff2;animation:none;scrollbar-width:thin;scrollbar-color:var(--rs-accent) transparent;
+  position:fixed;inset:auto;margin:0;isolation:isolate;overflow:hidden;padding:25px 24px 27px;border:1px solid var(--rs-edge);border-radius:var(--rs-radius);background:var(--rs-face);color:var(--rs-ink);box-shadow:0 20px 45px #0005,inset 0 1px 0 #fff2;animation:none;
 }
 
-.sop-foundation.sop-resonance[data-foundation][data-variant] > .ff-hint-panel > .ff-hint-heading {
+.sop-foundation.sop-resonance[data-foundation][data-variant] > .ff-hint-panel > .ff-hint-content {
+  max-height:max(0px,calc(var(--ff-overlay-max-height,420px) - 54px));scrollbar-color:var(--rs-accent) transparent;
+}
+
+.sop-foundation.sop-resonance[data-foundation][data-variant] > .ff-hint-panel > .ff-hint-content > .ff-hint-heading {
   position:relative;z-index:1;font:500 20px/1.4 var(--rs-title);color:var(--rs-ink);margin:0;padding:0;border:0;display:block;
 }
 
-.sop-foundation.sop-resonance[data-foundation][data-variant] > .ff-hint-panel > .ff-hint-heading > strong {
+.sop-foundation.sop-resonance[data-foundation][data-variant] > .ff-hint-panel > .ff-hint-content > .ff-hint-heading > strong {
   font:inherit;overflow-wrap:anywhere;
 }
 
-.sop-foundation.sop-resonance[data-foundation][data-variant] > .ff-hint-panel > p {
+.sop-foundation.sop-resonance[data-foundation][data-variant] > .ff-hint-panel > .ff-hint-content > p {
   position:relative;z-index:1;font:11px/1.95 var(--rs-font);color:var(--rs-muted);margin:11px 0 0;overflow-wrap:anywhere;
 }
 
-.sop-foundation.sop-resonance[data-foundation][data-variant] > .ff-hint-panel > .rs-hint-actions {
+.sop-foundation.sop-resonance[data-foundation][data-variant] > .ff-hint-panel > .ff-hint-content > .rs-hint-actions {
   position:relative;z-index:1;
 }
 
@@ -667,19 +671,19 @@
   top:auto;bottom:2px;
 }
 
-.sop-foundation.sop-resonance[data-foundation][data-variant] > .ff-hint-panel > .rs-hint-actions > .ff-hint-facts {
+.sop-foundation.sop-resonance[data-foundation][data-variant] > .ff-hint-panel > .ff-hint-content > .rs-hint-actions > .ff-hint-facts {
   display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:16px 0 0;margin:15px 0 12px;border:0;border-top:1px solid var(--rs-edge);font:10px var(--rs-font);color:var(--rs-muted);background:transparent;border-radius:0;
 }
 
-.sop-foundation.sop-resonance[data-foundation][data-variant] > .ff-hint-panel > .rs-hint-actions > .ff-hint-facts strong {
+.sop-foundation.sop-resonance[data-foundation][data-variant] > .ff-hint-panel > .ff-hint-content > .rs-hint-actions > .ff-hint-facts strong {
   font:inherit;color:var(--rs-ink);text-align:end;
 }
 
-.sop-foundation.sop-resonance[data-foundation][data-variant] > .ff-hint-panel > .rs-hint-actions > .ff-hint-checkbox {
+.sop-foundation.sop-resonance[data-foundation][data-variant] > .ff-hint-panel > .ff-hint-content > .rs-hint-actions > .ff-hint-checkbox {
   display:flex;align-items:center;gap:8px;font:11px/1.5 var(--rs-font);margin:14px 0;padding:0;border:0;
 }
 
-.sop-foundation.sop-resonance[data-foundation][data-variant] > .ff-hint-panel > .rs-hint-actions > .ff-action {
+.sop-foundation.sop-resonance[data-foundation][data-variant] > .ff-hint-panel > .ff-hint-content > .rs-hint-actions > .ff-action {
   display:flex;align-items:center;justify-content:space-between;min-height:40px;font:11px/1.5 var(--rs-font);padding:10px 15px;background:color-mix(in srgb,var(--rs-base) 80%,transparent);color:var(--rs-ink);border:1px solid var(--rs-edge);border-radius:8px;box-shadow:inset 0 1px 0 #fff1;width:100%;
 }
 
@@ -733,4 +737,4 @@
 .sop-foundation.sop-resonance[data-foundation][data-variant] > .ff-toast-stack{inset:auto 4px 8px auto;}
 }
 
-.sop-foundation.sop-resonance[data-foundation][data-variant] > .ff-hint-panel > .rs-hint-actions > .ff-hint-checkbox > input { appearance:auto; width:15px; height:15px; min-width:15px; margin:0; padding:0; accent-color:var(--rs-accent); }
+.sop-foundation.sop-resonance[data-foundation][data-variant] > .ff-hint-panel > .ff-hint-content > .rs-hint-actions > .ff-hint-checkbox > input { appearance:auto; width:15px; height:15px; min-width:15px; margin:0; padding:0; accent-color:var(--rs-accent); }

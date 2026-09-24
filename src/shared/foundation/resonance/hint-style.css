@@ -1,0 +1,121 @@
+/* Hint-only spatial language. Actual text and controls stay above every decorative layer. */
+.sop-foundation.sop-resonance[data-foundation="hints"] > .ff-hint-panel > .rs-hint-art{position:absolute;inset:0;z-index:0;overflow:hidden;border-radius:inherit;pointer-events:none;transform-origin:var(--rs-hint-origin,50% 50%)}
+.sop-foundation.sop-resonance[data-foundation="hints"] > .ff-hint-panel > .rs-hint-art > i{position:absolute;display:block;box-sizing:border-box;pointer-events:none}
+.sop-foundation.sop-resonance[data-foundation="hints"] > .ff-hint-panel{transform-origin:var(--rs-hint-origin,50% 50%)}
+.sop-foundation.sop-resonance[data-foundation="hints"] > .ff-hint-panel > .ff-hint-content{isolation:isolate}
+
+/* AURORA — a thin atmospheric membrane opens around the information. */
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="aurora"]{--rs-overlay-width:366px;--rs-hint-origin:50% 100%}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="aurora"] > .ff-hint-trigger{border-radius:28px 6px 28px 6px;background:linear-gradient(110deg,#6cb3b428,transparent 62%),var(--rs-face)}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="aurora"] > .ff-hint-panel{border-radius:39px 12px 37px 10px;background:radial-gradient(ellipse at 94% 7%,#b3f4d825,transparent 57%),var(--rs-face)}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="aurora"] > .ff-hint-panel > .rs-hint-art > i:first-child{width:210px;height:210px;right:-95px;top:-120px;border:1px solid #d7ffff91;border-radius:50%;box-shadow:0 0 0 13px #9cead713,0 0 0 30px #a5b8eb0d}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="aurora"] > .ff-hint-panel > .rs-hint-art > i:nth-child(2){inset:auto 0 0;height:19px;background:linear-gradient(90deg,transparent,#b8f7e15c,#b3b5e35c,transparent);filter:blur(9px)}
+
+/* MERCURY — a carriage and a single travelling reflection, not a glass card. */
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="mercury"]{--rs-overlay-width:384px;--rs-hint-origin:0 50%}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="mercury"] > .ff-hint-trigger{border-radius:5px 20px 5px 20px;border-inline-start:4px solid var(--rs-accent);background:linear-gradient(100deg,#e4ffff21,transparent 45%),var(--rs-face)}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="mercury"] > .ff-hint-panel{border-radius:4px 18px 4px 18px;border-inline-start:5px solid var(--rs-accent);background:linear-gradient(102deg,#ffffff22,transparent 27%,#ffffff0a 70%,transparent),var(--rs-face)}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="mercury"] > .ff-hint-panel > .rs-hint-art > i:first-child{width:31%;height:150%;right:7%;top:-25%;transform:skewX(-21deg);background:linear-gradient(90deg,transparent,#e9ffff16,transparent)}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="mercury"] > .ff-hint-panel > .rs-hint-art > i:nth-child(2){inset:10px 12px auto auto;width:45px;height:2px;background:var(--rs-light);opacity:.55}
+
+/* OBSIDIAN — staggered slate plates reveal a quiet central reading field. */
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="obsidian"]{--rs-overlay-width:348px}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="obsidian"] > .ff-hint-trigger{border-radius:2px 15px 2px 15px;border-color:#a8bcdb77;background:linear-gradient(145deg,#4552697b,#111722 65%)}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="obsidian"] > .ff-hint-panel{clip-path:polygon(0 0,94% 0,100% 16px,100% 100%,6% 100%,0 calc(100% - 16px));background:linear-gradient(150deg,#364050,#151b25 62%);box-shadow:0 22px 50px #0008}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="obsidian"] > .ff-hint-panel > .rs-hint-art > i:first-child{right:-26px;top:-17px;width:132px;height:56px;transform:rotate(-15deg);background:#a9bfd51d;border-block:1px solid #d8e7fa4f}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="obsidian"] > .ff-hint-panel > .rs-hint-art > i:nth-child(2){right:-21px;bottom:7px;width:146px;height:34px;transform:rotate(-15deg);background:#c7d8ee12;border-top:1px solid #b1c5e445}
+
+/* FOLIO — the opening edge, fold and paper stack carry the expression. */
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="folio"]{--rs-overlay-width:354px;--rs-hint-origin:100% 0}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="folio"] > .ff-hint-trigger{border-radius:3px 18px 3px 3px;border-inline-start:5px solid #987654;background:linear-gradient(110deg,#fff8eb,#d9cbb4)}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="folio"] > .ff-hint-panel{border-radius:2px 21px 3px 2px;background:linear-gradient(112deg,#fff9ee,#e9dfca);border-inline-start:5px solid #957758;box-shadow:5px 5px 0 #6a52363b,10px 10px 0 #6a52361f,0 22px 42px #0004}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="folio"] > .ff-hint-panel > .rs-hint-art > i:first-child{top:0;right:0;width:62px;height:62px;clip-path:polygon(0 0,100% 100%,100% 0);background:linear-gradient(145deg,#fffdf3,#c9b69b);box-shadow:-3px 3px 9px #59472b3d}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="folio"] > .ff-hint-panel > .rs-hint-art > i:nth-child(2){inset:11px 16px 11px auto;width:1px;background:#9d886b52}
+
+/* BLUEPRINT — the plotted relationship grows from a registration corner. */
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="blueprint"]{--rs-overlay-width:392px;--rs-hint-origin:0 0}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="blueprint"] > .ff-hint-trigger{border-radius:2px;border-style:dashed;background:linear-gradient(90deg,#8dcde913 1px,transparent 1px) 0 0/19px 19px,var(--rs-face)}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="blueprint"] > .ff-hint-panel{border-radius:1px;background:linear-gradient(90deg,#9dd7ef0d 1px,transparent 1px) 0 0/22px 22px,linear-gradient(#9dd7ef0d 1px,transparent 1px) 0 0/22px 22px,var(--rs-face);border-style:dashed}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="blueprint"] > .ff-hint-panel > .rs-hint-art > i:first-child{inset:12px auto auto 12px;width:50px;height:50px;border-top:2px solid var(--rs-accent);border-left:2px solid var(--rs-accent)}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="blueprint"] > .ff-hint-panel > .rs-hint-art > i:nth-child(2){inset:auto 12px 12px auto;width:54px;height:54px;border-right:2px solid var(--rs-accent);border-bottom:2px solid var(--rs-accent)}
+
+/* BOTANICAL — a restrained leaf contour, away from the copy. */
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="botanical"]{--rs-overlay-width:364px;--rs-hint-origin:100% 100%}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="botanical"] > .ff-hint-trigger{border-radius:28px 4px 27px 4px;background:linear-gradient(120deg,#fffcef,#dce8d4)}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="botanical"] > .ff-hint-panel{border-radius:37px 4px 37px 5px;background:radial-gradient(ellipse at 95% 95%,#7d9c7333,transparent 58%),var(--rs-face)}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="botanical"] > .ff-hint-panel > .rs-hint-art > i:first-child{right:-54px;bottom:-71px;width:180px;height:250px;border:1px solid #668b6780;border-radius:95% 3% 95% 3%;transform:rotate(-28deg)}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="botanical"] > .ff-hint-panel > .rs-hint-art > i:nth-child(2){right:36px;bottom:-28px;width:1px;height:170px;background:#6b976e87;transform:rotate(32deg)}
+
+/* COPPER — two joined plates and three small fasteners. */
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="copper"]{--rs-overlay-width:352px;--rs-hint-origin:0 50%}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="copper"] > .ff-hint-trigger{border-radius:9px 2px 9px 2px;border-inline-start:4px solid var(--rs-accent);background:linear-gradient(100deg,#e0a6762e,#4b332b 42%,#281f1c)}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="copper"] > .ff-hint-panel{border-radius:9px 2px 15px 2px;border-inline-start:5px solid var(--rs-accent);background:linear-gradient(90deg,#98654745 0 21%,transparent 21%),var(--rs-face)}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="copper"] > .ff-hint-panel > .rs-hint-art > i:first-child{right:20px;top:10px;width:6px;height:6px;border-radius:50%;background:#ffdda8;box-shadow:0 18px #d8a978,0 36px #b67a56}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="copper"] > .ff-hint-panel > .rs-hint-art > i:nth-child(2){right:44px;top:0;width:1px;height:100%;background:#d7a87965}
+
+/* NIXIE — display electrodes light the edge, not the message. */
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="nixie"]{--rs-overlay-width:350px}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="nixie"] > .ff-hint-trigger{border-radius:15px;background:linear-gradient(180deg,#332923,#171716);border-color:#d8a76b88;letter-spacing:.05em}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="nixie"] > .ff-hint-panel{border-radius:16px;background:radial-gradient(ellipse at 95% 5%,#ce823824,transparent 42%),#231e1b;border-color:#bf905c7d}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="nixie"] > .ff-hint-panel > .rs-hint-art > i{bottom:9px;width:7px;height:22px;border:1px solid #f2b978a8;border-radius:7px 7px 2px 2px;box-shadow:0 0 13px #f2b97847}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="nixie"] > .ff-hint-panel > .rs-hint-art > i:first-child{right:15px}.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="nixie"] > .ff-hint-panel > .rs-hint-art > i:nth-child(2){right:30px;height:16px;opacity:.42}.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="nixie"] > .ff-hint-panel > .rs-hint-art > i:nth-child(3){right:45px;height:27px;opacity:.7}
+
+/* CERAMIC — one embossed ring catches light without becoming an icon. */
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="ceramic"]{--rs-overlay-width:360px}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="ceramic"] > .ff-hint-trigger{border-radius:999px;background:linear-gradient(145deg,#fbfcf7,#d9e2df);box-shadow:inset 0 1px #fff,0 9px 18px #0002}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="ceramic"] > .ff-hint-panel{border-radius:31px;background:radial-gradient(ellipse at 100% 0,#fffef8bd,transparent 50%),var(--rs-face);box-shadow:inset 1px 1px 0 #fff,0 20px 45px #0003}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="ceramic"] > .ff-hint-panel > .rs-hint-art > i:first-child{right:-64px;top:-82px;width:210px;height:210px;border-radius:50%;border:2px solid #a3b7bf73;box-shadow:inset 0 0 0 11px #f9fdfc8c,0 0 0 13px #8faab345}
+
+/* VELVET — a lowered hem and fine vertical pleats. */
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="velvet"]{--rs-overlay-width:374px}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="velvet"] > .ff-hint-trigger{border-radius:25px 25px 5px 5px;background:linear-gradient(100deg,#d8a6bc24,#3c2939 55%,#241c27);border-bottom:2px solid var(--rs-accent)}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="velvet"] > .ff-hint-panel{border-radius:26px 26px 8px 8px;background:linear-gradient(90deg,#855e7521,#241c27 27%,#473140 72%,#241c27);border-bottom:4px solid #ddb6bf}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="velvet"] > .ff-hint-panel > .rs-hint-art > i:first-child{inset:auto 0 0;height:35px;background:repeating-linear-gradient(90deg,#e5b8c018 0 16px,#301e2b4f 16px 35px);mask-image:linear-gradient(transparent,#000)}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="velvet"] > .ff-hint-panel > .rs-hint-art > i:nth-child(2){left:0;top:0;width:100%;height:1px;background:linear-gradient(90deg,transparent,#f8dce277,transparent)}
+
+/* TIDE — a rising waterline stays at the lower edge. */
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="tide"]{--rs-overlay-width:392px;--rs-hint-origin:50% 100%}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="tide"] > .ff-hint-trigger{border-radius:28px 10px 26px 10px;background:linear-gradient(180deg,#224b55,#122d37);border-bottom:2px solid #a7e4df}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="tide"] > .ff-hint-panel{border-radius:30px 9px 31px 9px;background:linear-gradient(180deg,#1b4550,#122f3a);border-bottom:3px solid #b5e9e0}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="tide"] > .ff-hint-panel > .rs-hint-art > i:first-child{left:-6%;bottom:-70px;width:112%;height:130px;border:1px solid #b5eae069;border-radius:50%;background:#89d2cb19}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="tide"] > .ff-hint-panel > .rs-hint-art > i:nth-child(2){left:-9%;bottom:-84px;width:116%;height:130px;border:1px solid #a8d9d46d;border-radius:50%}
+
+/* TRANSIT — a perforated route slips from a station index. */
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="transit"]{--rs-overlay-width:370px;--rs-hint-origin:0 50%}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="transit"] > .ff-hint-trigger{border-radius:4px;background:linear-gradient(90deg,#d6926536 0 11px,transparent 11px),var(--rs-face);border-inline-start:4px solid var(--rs-accent)}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="transit"] > .ff-hint-panel{border-radius:5px;background:linear-gradient(90deg,#d692652b 0 15px,transparent 15px),var(--rs-face);border-inline-start:4px solid var(--rs-accent)}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="transit"] > .ff-hint-panel > .rs-hint-art > i:first-child{right:32px;top:0;height:100%;border-right:1px dashed #e5b58d8a}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="transit"] > .ff-hint-panel > .rs-hint-art > i:nth-child(2){right:26px;top:16px;width:14px;height:14px;border-radius:50%;background:#e5b58d;box-shadow:0 36px 0 #a3b4aa,0 72px 0 #a3b4aa}
+
+/* CONTOUR — thin topographic lines expand from the information edge. */
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="contour"]{--rs-overlay-width:354px}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="contour"] > .ff-hint-trigger{border-radius:14px 3px 14px 3px;background:transparent;border:1px solid #b7d1ab89;box-shadow:inset 0 0 0 1px #efffe010}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="contour"] > .ff-hint-panel{border-radius:20px 4px 20px 4px;background:radial-gradient(ellipse at 98% 4%,#88b89b24,transparent 60%),var(--rs-face)}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="contour"] > .ff-hint-panel > .rs-hint-art > i:first-child{right:-55px;top:-82px;width:215px;height:215px;border:1px solid #d1e7ba5e;border-radius:44% 56% 62% 38%;box-shadow:0 0 0 14px #d1e7ba16,0 0 0 30px #d1e7ba0d;transform:rotate(-23deg)}
+
+/* RELAY — a measured signal advances along a short instrument rail. */
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="relay"]{--rs-overlay-width:342px}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="relay"] > .ff-hint-trigger{border-radius:5px;background:linear-gradient(90deg,#b7c7ba1a 0 23%,transparent 23%),var(--rs-face);font-family:var(--ff-mono)}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="relay"] > .ff-hint-panel{border-radius:6px;background:linear-gradient(90deg,#b7c7ba0e 0 24%,transparent 24%),var(--rs-face)}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="relay"] > .ff-hint-panel > .rs-hint-art > i:first-child{left:20px;top:10px;width:calc(100% - 40px);height:2px;background:linear-gradient(90deg,var(--rs-accent),#a8caba3a);box-shadow:0 5px 0 #9fb8a724}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="relay"] > .ff-hint-panel > .rs-hint-art > i:nth-child(2){right:20px;top:5px;width:11px;height:11px;border-radius:50%;background:var(--rs-accent);box-shadow:0 0 12px #d7ead055}
+
+/* The two liked directions retain their iris and facet scenes, with room for the content. */
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="aperture"]{--rs-overlay-width:394px}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="aperture"] > .ff-hint-trigger{border-radius:22px 22px 8px 8px}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="aperture"] > .ff-hint-panel{border-radius:32px 32px 11px 11px}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="prism"]{--rs-overlay-width:392px}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="prism"] > .ff-hint-trigger{border-radius:4px 17px 4px 17px}
+
+/* The shorter tooltips use distinct editorial compositions rather than a smaller copy of the popover. */
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="aurora"] > .ff-hint-panel[data-interactive="false"] > .ff-hint-content{display:grid;grid-template-columns:103px minmax(0,1fr);column-gap:14px;align-items:start}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="aurora"] > .ff-hint-panel[data-interactive="false"] > .ff-hint-content > p{margin-top:0;padding-top:2px}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="copper"] > .ff-hint-panel[data-interactive="false"] > .ff-hint-content{display:grid;grid-template-columns:48px minmax(0,1fr);column-gap:17px;align-items:center}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="copper"] > .ff-hint-panel[data-interactive="false"] > .ff-hint-content > .ff-hint-heading{writing-mode:vertical-rl;letter-spacing:.12em}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="copper"] > .ff-hint-panel[data-interactive="false"] > .ff-hint-content > p{margin-top:0;border-inline-start:1px solid #d0a07a88;padding-inline-start:14px}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="folio"] > .ff-hint-panel[data-interactive="false"] > .ff-hint-content > p{margin-top:25px;padding-top:12px;border-top:1px solid #ac977b60;font-style:italic}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="obsidian"] > .ff-hint-panel[data-interactive="false"] > .ff-hint-content > p{padding:10px 12px;margin:16px 0 0;background:#0e131b8c;border-inline-start:2px solid #b2c3dd87}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="contour"] > .ff-hint-panel[data-interactive="false"] > .ff-hint-content > .ff-hint-heading{padding-bottom:8px;border-bottom:1px solid #d2e4c451}
+.sop-foundation.sop-resonance[data-foundation="hints"][data-variant="contour"] > .ff-hint-panel[data-interactive="false"] > .ff-hint-content > p{margin-top:18px;max-width:27ch}
+
+@media(forced-colors:active){.sop-foundation.sop-resonance[data-foundation="hints"] > .ff-hint-panel > .rs-hint-art{display:none}}
