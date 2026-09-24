@@ -10,6 +10,7 @@ name/form/requiredで実フォームへ接続します。nameを省略すると�
 
 ## 項目数とラベル
 CSSに3等分・3番目までの固定計算はありません。実際の要素サイズから選択マーカーを計測します。タブは多い場合に横スクロール、セグメントは幅に応じて折り返します。長い日本語ラベルも表示できます。ラベルに別のボタン・リンクを入れません。
+横向きの帯では、軌道の装飾だけを理由に縦スクロールバーが出ることはありません。
 
 ## Vanilla
 markup.htmlの子項目を変更し、init(root, options)で初期化。`setValue/getValue/refresh/setDisabled/setOrientation/destroy`を利用できます。DOMの項目増減後はrefresh()を呼びます。Reactの項目追加では不要です。

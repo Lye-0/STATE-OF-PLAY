@@ -18,6 +18,24 @@ try {
  await run('32 selection designs commit immediately and move a visible, measured material plate',async()=>{
   for(const part of selections){await mount(part.id);const buttons=p.locator('.sop-choice-item');await buttons.last().click();assert.equal(await buttons.last().getAttribute('data-selected'),'true');assert.ok(await p.locator('.sop-choice-marker').isVisible(),part.id);await p.waitForTimeout(80);assert.ok(await p.locator('.sop-choice').evaluate(e=>parseFloat((e as HTMLElement).style.getPropertyValue('--tr-energy')))>0,part.id);await aligned();}
  });
+ await run('horizontal Prism and Orbital segments do not show a decorative vertical scrollbar',async()=>{
+  for(const id of ['prism-segments','orbital-segments']){
+   await mount(id);const list=p.locator('.sop-choice-list');
+   for(const index of [0,2]){
+    await list.locator('.sop-choice-item').nth(index).click();await p.waitForTimeout(700);
+    const state=await list.evaluate(el=>{const node=el as HTMLElement,css=getComputedStyle(node);return{overflowY:css.overflowY,gutter:node.offsetWidth-node.clientWidth-parseFloat(css.borderLeftWidth)-parseFloat(css.borderRightWidth)};});
+    assert.equal(state.overflowY,'hidden',id);assert.ok(state.gutter<=1,`${id}: ${JSON.stringify(state)}`);
+    assert.equal(await list.locator('.sop-choice-item').nth(index).getAttribute('data-selected'),'true');
+   }
+   const originalHeight=await list.evaluate(el=>el.clientHeight);
+   await list.evaluate(el=>{const original=el.querySelector('.sop-choice-item')!;for(let i=0;i<4;i++){const copy=original.cloneNode(true) as HTMLElement;copy.dataset.choiceValue='extra-'+i;copy.dataset.selected='false';copy.querySelectorAll('[id]').forEach(node=>node.removeAttribute('id'));const input=copy.querySelector('input')!;input.value='extra-'+i;input.checked=false;copy.querySelector('.sop-choice-label')!.textContent='追加候補 '+i;el.append(copy);}});
+   await p.evaluate(()=>(window as any).api.refresh());
+   const wrapped=await list.evaluate(el=>({height:el.clientHeight,bottom:el.getBoundingClientRect().bottom,last:el.querySelector('.sop-choice-item:last-child')!.getBoundingClientRect().bottom}));
+   assert.ok(wrapped.height>originalHeight&&wrapped.last<=wrapped.bottom+1,`${id}: ${JSON.stringify(wrapped)}`);
+   await p.evaluate(()=>(window as any).api.setOrientation('vertical'));
+   assert.equal(await list.evaluate(el=>getComputedStyle(el).overflowY),'visible',id+' vertical mode');
+  }
+ });
  await run('two, four and seven uneven options, wrapping, vertical and RTL use actual element bounds',async()=>{
   for(const id of ['aurora-tabs','prism-segments'])for(const count of [2,4,7]){await mount(id);await p.locator('.sop-choice').evaluate((e,count)=>{const w=window as any,list=e.querySelector(':scope > .sop-choice-list')!,items=[...list.querySelectorAll(':scope > .sop-choice-item')],panels=e.querySelector(':scope > .sop-choice-panels'),tmpl=items[0],pt=panels?.firstElementChild;for(const item of items)item.remove();panels?.replaceChildren();for(let i=0;i<count;i++){const t=tmpl.cloneNode(true) as HTMLElement;t.dataset.choiceValue='item-'+i;t.dataset.selected='false';t.querySelectorAll('[id]').forEach(n=>n.removeAttribute('id'));t.removeAttribute('id');t.querySelector('.sop-choice-label')!.textContent=i%2?'長い項目の名前 '+i:'Item '+i;const input=t.querySelector('input');if(input){input.value='item-'+i;input.checked=false;}list.append(t);if(panels&&pt){const panel=pt.cloneNode(true) as HTMLElement;panel.removeAttribute('id');panel.dataset.panelValue='item-'+i;panels.append(panel);}}w.api.refresh();},count);await p.locator('.sop-choice-item').last().click();await aligned();await p.evaluate(()=>(window as any).api.setOrientation('vertical'));await aligned();await p.locator('.sop-choice').evaluate(e=>e.setAttribute('dir','rtl'));await p.evaluate(()=>(window as any).api.setOrientation('horizontal'));await aligned();}
  });
