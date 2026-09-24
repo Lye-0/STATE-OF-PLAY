@@ -100,6 +100,14 @@
 .sop-foundation.sop-continuum[data-variant=folio] .ff-calendar{border-radius:3px 12px 3px 3px;box-shadow:3px 4px 0 var(--ct-bg),4px 5px 0 var(--ct-edge),0 18px 45px #0005}.sop-foundation.sop-continuum[data-variant=folio] .ct-calendar-mast{border-bottom-style:double}
 .sop-foundation.sop-continuum[data-variant=blueprint] .ff-calendar{background:linear-gradient(90deg,#afd2df06 1px,transparent 1px),linear-gradient(#afd2df06 1px,transparent 1px),var(--ct-bg);background-size:18px 18px}
 .sop-foundation.sop-continuum[data-variant=prism] .ff-calendar-grid button{border-radius:4px 13px 4px 13px}.sop-foundation.sop-continuum[data-variant=nixie] .ff-calendar-grid button[data-selected=true]{box-shadow:inset 0 1px 0 #fff3,0 0 12px #cb934129}
+.sop-foundation.sop-continuum[data-foundation=datepickers] .ff-time-picker{color:var(--ct-ink)}
+.sop-foundation.sop-continuum[data-foundation=datepickers] .ff-time-heading{color:var(--ct-muted)}
+.sop-foundation.sop-continuum[data-foundation=datepickers] .ff-time-heading strong{color:var(--ct-ink)}
+.sop-foundation.sop-continuum[data-foundation=datepickers] .ff-time-column{border-color:var(--ct-edge);background:linear-gradient(150deg,var(--ct-bg),var(--ct-panel));scrollbar-color:var(--ct-a) transparent}
+.sop-foundation.sop-continuum[data-foundation=datepickers] .ff-time-column button{color:var(--ct-ink);border-radius:calc(var(--ct-radius) / 2)}
+.sop-foundation.sop-continuum[data-foundation=datepickers] .ff-time-column button:hover{background:color-mix(in srgb,var(--ct-a) 18%,transparent)}
+.sop-foundation.sop-continuum[data-foundation=datepickers] .ff-time-column button[aria-selected=true]{border-color:var(--ct-a);background:linear-gradient(125deg,color-mix(in srgb,var(--ct-a) 30%,var(--ct-bg)),color-mix(in srgb,var(--ct-b) 16%,var(--ct-bg)));box-shadow:inset 0 1px 0 #ffffff29,0 2px 7px #0003}
+.sop-foundation.sop-continuum[data-foundation=datepickers][data-date-mode=datetime] .ff-time-picker{border-top-color:var(--ct-edge)}
 @keyframes ct-file-receive{from{opacity:0;clip-path:inset(0 0 100% 0);transform:translateY(-8px)}to{opacity:1;clip-path:inset(0);transform:none}}
 @media(max-width:420px){.sop-foundation.sop-continuum[data-foundation=progress]{padding:17px 15px 12px}.sop-foundation.sop-continuum .ct-meter-scene{height:96px}.sop-foundation.sop-continuum .ff-date-fields input{font-size:16px}.sop-foundation.sop-continuum .ct-intake-copy strong{font-size:17px}.sop-foundation.sop-continuum .ct-intake{padding-inline:12px}.sop-foundation.sop-continuum .ct-calendar-identity>strong{font-size:31px}}
 @media(prefers-reduced-motion:reduce){.sop-foundation.sop-continuum *,.sop-foundation.sop-continuum *::before,.sop-foundation.sop-continuum *::after{animation:none!important;transition:none!important}.sop-foundation.sop-continuum .ct-calendar-scene{transform:none}.sop-foundation.sop-continuum .ct-file-row{clip-path:none;transform:none}}

@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "mode": "date"
 };
 export type FolioCalendarProps = FoundationProps;
-/** Folio Calendar: Aタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** Folio Calendar: Aタイプ。元の外観と、独自の日時選択を備えた独立したDOM領域。 */
 export default forwardRef<HTMLDivElement, FolioCalendarProps>(function FolioCalendar(props, ref) {
   return <FoundationWidget {...props} className={`sop-continuum ${props.className??''}`} ref={ref} config={config} renderContent={renderDate} mountContent={mountDate}/>;
 });

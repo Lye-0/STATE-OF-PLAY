@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "mode": "time"
 };
 export type PaperCalendarProps = FoundationProps;
-/** Paper Calendar: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** Paper Calendar: Bタイプ。元の外観と、独自の日時選択を備えた独立したDOM領域。 */
 export default forwardRef<HTMLDivElement, PaperCalendarProps>(function PaperCalendar(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderDate} mountContent={mountDate}/>;
 });

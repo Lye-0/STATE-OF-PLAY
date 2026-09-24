@@ -112,6 +112,28 @@ try{
   await update({mode:'range',value:[]});await native.locator('#test-host [data-calendar-toggle]').click();await native.locator('#test-host [data-day="2026-09-20"]').click();await native.locator('#test-host [data-day="2026-09-15"]').click();assert.deepEqual(await value(),['2026-09-15','2026-09-20']);
   await update({mode:'datetime',value:'2026-09-15T25:99'});assert.equal(await value(),'');await update({mode:'time',value:'18:42'});assert.equal(await input.inputValue(),'18:42');await update({value:'28:00'});assert.equal(await value(),'');
  });
+ await run('All 20 datepickers use one authored panel in date, range, datetime and time modes',async()=>{
+  const values:Record<string,string|string[]>={date:'2026-09-23',range:['2026-09-23','2026-09-27'],datetime:'2026-09-23T14:30',time:'14:30'};
+  for(const part of parts.filter(part=>part.category==='datepickers'))for(const mode of ['date','range','datetime','time']){
+   await mount(part.id,{mode,value:values[mode]});const root=native.locator('#test-host .sop-foundation'),toggle=root.locator('[data-calendar-toggle]'),panel=root.locator('[data-calendar]');
+   assert.equal(await root.locator('input[type="date"],input[type="time"],input[type="datetime-local"]').count(),0,part.id+' '+mode+' has no OS picker');
+   assert.equal(await root.locator('[data-date="0"]').getAttribute('type'),'text',part.id+' '+mode);
+   assert.ok(await toggle.isVisible(),part.id+' '+mode+' has an authored opener');
+   assert.equal(await root.locator('[data-date="1"]').isVisible(),mode==='range',part.id+' '+mode+' endpoint visibility');
+   await toggle.click();assert.ok(await panel.isVisible(),part.id+' '+mode+' opens');
+   assert.equal(await panel.locator('[data-calendar-date]').isVisible(),mode!=='time',part.id+' '+mode+' calendar face');
+   assert.equal(await panel.locator('[data-time-picker]').isVisible(),mode==='time'||mode==='datetime',part.id+' '+mode+' time face');
+   if(mode==='time'){assert.equal(await panel.locator('[data-time-hour]').count(),24);assert.equal(await panel.locator('[data-time-minute]').count(),60);const selected=await panel.evaluate(root=>[...root.querySelectorAll<HTMLElement>('[data-time-hours],[data-time-minutes]')].map(list=>{const box=list.getBoundingClientRect(),item=list.querySelector<HTMLElement>('[aria-selected="true"]')!.getBoundingClientRect();return item.top>=box.top-1&&item.bottom<=box.bottom+1;}));assert.ok(selected.every(Boolean),part.id+' selected time is visible when opened');}
+   if(part.id==='paper-calendar'&&mode==='time')await native.screenshot({path:path.join(out,'paper-time-custom.png')});
+   if(part.id==='botanical-calendar'&&mode==='time')await native.screenshot({path:path.join(out,'botanical-time-custom.png')});
+   if(part.id==='blueprint-calendar'&&mode==='range')await native.screenshot({path:path.join(out,'blueprint-range-custom.png')});
+   await native.keyboard.press('Escape');assert.ok(await panel.isHidden(),part.id+' '+mode+' closes');
+   if(mode==='range')for(const endpoint of [0,1]){await root.locator(`[data-date="${endpoint}"]`).click();assert.ok(await panel.isVisible(),part.id+' opens from endpoint '+endpoint);await native.keyboard.press('Escape');}
+  }
+  await mount('paper-calendar',{mode:'time',value:'14:30',name:'appointment'});const input=native.locator('#test-host [data-date="0"]');await input.fill('28:00');await input.press('Enter');assert.equal(await value(),'14:30');assert.equal(await input.evaluate((field:HTMLInputElement)=>field.checkValidity()),false);await input.fill('0735');await input.press('Enter');assert.equal(await value(),'07:35');assert.equal(await input.evaluate((field:HTMLInputElement)=>field.checkValidity()),true);assert.equal(await native.evaluate(()=>new FormData(document.querySelector('form')!).get('appointment')),'07:35');await native.locator('#test-host [data-calendar-toggle]').click();await native.locator('#test-host [data-time-hour="9"]').click();await native.locator('#test-host [data-time-minute="45"]').click();assert.equal(await value(),'09:45');
+  await mount('inset-calendar',{mode:'datetime',value:'2026-09-23T14:30',name:'when'});const datetime=native.locator('#test-host [data-date="0"]');await datetime.fill('202609241615');await datetime.press('Enter');assert.equal(await value(),'2026-09-24T16:15');assert.equal(await native.evaluate(()=>new FormData(document.querySelector('form')!).get('when')),'2026-09-24T16:15');
+  await mount('soft-calendar',{mode:'range',value:['2026-09-23','2026-09-27'],name:'period'});const start=native.locator('#test-host [data-date="0"]');await start.fill('20260922');await start.press('Enter');assert.deepEqual(await value(),['2026-09-22','2026-09-27']);assert.deepEqual(await native.evaluate(()=>[new FormData(document.querySelector('form')!).get('period[0]'),new FormData(document.querySelector('form')!).get('period[1]')]),['2026-09-22','2026-09-27']);
+ });
  await run('Pagination and breadcrumbs: native links, page limits, dynamic hierarchy and popup cleanup',async()=>{
   await mount('aurora-pages',{totalPages:30,defaultValue:1});await native.locator('#test-host [aria-label="次のページ"]').click();assert.equal(await value(),2);await update({totalPages:1});assert.equal(await value(),1);assert.ok(await native.locator('#test-host [aria-label="次のページ"]').isDisabled());
   await native.evaluate(()=>(window as any).api.updateFoundation({totalPages:12,hrefForPage:(n:number)=>'/project/page/'+n}));assert.equal(await native.locator('#test-host [data-page="2"]').first().getAttribute('href'),'/project/page/2');

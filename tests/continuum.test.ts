@@ -42,7 +42,7 @@ test('uploads open receiving mechanisms only, validate native File objects, and 
 });
 test('calendar motion has no access to grid contents, value ownership or keyboard hit targets',()=>{
  const code=read('src/shared/foundation/continuum/calendar-motion.ts');assert.match(code,/\.ct-calendar-sheet/);assert.match(code,/ResizeObserver/);assert.match(code,/\.disconnect\(/);assert.doesNotMatch(code,/grid\.innerHTML\s*=|c\.data\s*=/);
- const html=renderDate({mode:'range',label:'期間'});assert.match(html,/type="date"/);assert.match(html,/role="grid"/);assert.match(html,/ct-calendar-envelope" aria-hidden="true"/);
+ const html=renderDate({mode:'range',label:'期間'});assert.match(html,/type="text"/);assert.doesNotMatch(html,/type="(?:date|time|datetime-local)"/);assert.match(html,/role="grid"/);assert.match(html,/ct-calendar-envelope" aria-hidden="true"/);assert.match(renderDate({mode:'time',label:'時刻'}),/data-time-picker/);
 });
 test('new loader artwork has 16 distinct definitions, 8 familiar B designs and paused visibility controls',()=>{
  assert.equal(LOADER_VARIANTS.length,16);assert.equal(new Set(LOADER_VARIANTS.map(v=>loaderArtwork(v))).size,16);

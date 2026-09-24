@@ -50,6 +50,11 @@ export function attachCalendarMotion(root:HTMLElement,panel:HTMLElement,c:Core) 
       paused=!!o.paused;art.pause(paused);if(paused){stop();spring.snap();}
       const dates=values.filter(Boolean);
       const number=q(panel,'[data-ct-date-number]'),caption=q(panel,'[data-ct-date-caption]');
+      if(o.mode==='time'){
+        number.textContent=dates[0]||'—';caption.textContent=dates[0]?'選択時刻':'時刻を選択';
+        const hour=Number(dates[0]?.slice(0,2));art.move(opened&&Number.isFinite(hour)?Math.max(.05,Math.min(1,hour/23)):.08,!opened);
+        root.dataset.readonly=String(!!o.readOnly);panel.dataset.ctMaterial=root.dataset.variant;return;
+      }
       number.textContent=dates.length>1?dates.map(d=>d.slice(8,10)).join(' — '):dates[0]?.slice(8,10)||'—';
       caption.textContent=dates.length>1?'選択期間':dates.length?'選択日':'日付を選択';
       const value=dates[0]?Math.max(.05,Math.min(1,Number(dates[0].slice(8,10))/31)):.3;

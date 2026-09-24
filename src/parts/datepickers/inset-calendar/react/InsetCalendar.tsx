@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "mode": "datetime"
 };
 export type InsetCalendarProps = FoundationProps;
-/** Inset Calendar: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** Inset Calendar: Bタイプ。元の外観と、独自の日時選択を備えた独立したDOM領域。 */
 export default forwardRef<HTMLDivElement, InsetCalendarProps>(function InsetCalendar(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderDate} mountContent={mountDate}/>;
 });

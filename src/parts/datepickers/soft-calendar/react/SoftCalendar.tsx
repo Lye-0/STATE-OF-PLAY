@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "mode": "range"
 };
 export type SoftCalendarProps = FoundationProps;
-/** Soft Calendar: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** Soft Calendar: Bタイプ。元の外観と、独自の日時選択を備えた独立したDOM領域。 */
 export default forwardRef<HTMLDivElement, SoftCalendarProps>(function SoftCalendar(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderDate} mountContent={mountDate}/>;
 });
