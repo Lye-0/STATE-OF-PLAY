@@ -1,0 +1,115 @@
+/* Messages arrive as dispatches, signals and receipts, not as selectable material cards. */
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice {
+  position:relative;isolation:isolate;min-height:118px;padding:24px 21px 29px;border-radius:4px;
+  animation:none;transform-origin:90% 50%;overflow:hidden;
+}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice > .rs-notice-art {
+  position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;border-radius:inherit;
+}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice > .rs-notice-art > i {
+  position:absolute;display:block;box-sizing:border-box;pointer-events:none;
+}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice > :is(.ff-notice-copy,.ff-notice-icon,.ff-icon-button,div:not(.rs-notice-art)) {position:relative;z-index:1}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant] > .ff-toast-stack > .ff-notice > .ff-notice-icon {display:none}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant] > .ff-toast-stack > .ff-notice > .rs-notice-line {display:none}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant] > .ff-toast-stack > .ff-notice > .ff-notice-copy {padding-right:8px}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice strong {letter-spacing:.025em}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant] > .ff-toast-stack > .ff-notice > .rs-lifetime {left:21px;right:21px;bottom:11px}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant] > [data-toast-example] > .ff-notice-sample {margin-bottom:15px}
+
+/* Aurora: a luminous arrival band, like a message passing through a window. */
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="aurora"] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice {border:1px solid #8ed2d080;border-radius:21px 5px 21px 5px;background:linear-gradient(118deg,#173339,#203136 56%,#12242a);padding-top:38px}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="aurora"] .rs-notice-art > i:first-child {inset:0 0 auto;height:24px;background:linear-gradient(90deg,#80efe600,#80efe653 28%,#a4d6e5ad 62%,#80efe600);border-bottom:1px solid #bbf5eb8c}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="aurora"] .rs-notice-art > i:nth-child(2) {right:-50px;top:-72px;width:210px;height:190px;border:1px solid #d4fff782;border-radius:50%;transform:rotate(-18deg)}
+
+/* Mercury: a narrow dispatch strip under a polished rail. */
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="mercury"] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice {border-radius:2px 16px 2px 16px;background:linear-gradient(132deg,#d6e2dc,#8faaa3 39%,#e4ebe2 61%,#6c8882);color:#172323;padding:34px 22px 25px;box-shadow:0 6px 0 #273b3c,0 17px 26px #0005}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="mercury"] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice :is(strong,p){color:#1b2929}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="mercury"] > .ff-toast-stack > .ff-notice > .ff-notice-copy > :is(strong,p,.ff-inline-action),
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="mercury"] > [data-toast-example] > .ff-notice-sample > div > :is(strong,p){color:#1b2929}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="mercury"] > .ff-toast-stack > .ff-notice > .ff-notice-copy > .ff-inline-action{border-color:#526b68}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="mercury"] .rs-notice-art > i:first-child {inset:0 0 auto;height:13px;background:linear-gradient(90deg,#effff6,#506a6a 23%,#e6f2e9 51%,#344949 83%,#d9ebe5);box-shadow:0 2px 0 #405857}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="mercury"] .rs-notice-art > i:nth-child(2) {right:25px;top:23px;width:39px;height:2px;background:#2c4d4d;box-shadow:0 6px #2c4d4d80}
+
+/* Obsidian: information emerges from a deliberate vertical split. */
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="obsidian"] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice {clip-path:none;border:1px solid #849ba178;border-radius:2px;background:linear-gradient(90deg,#0e151b 0 30px,#29313a 30px 32px,#171f28 32px);padding-left:52px;box-shadow:9px 9px 0 #0a1014,0 20px 30px #0007}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="obsidian"] .rs-notice-art > i:first-child {left:13px;top:15px;bottom:15px;width:5px;background:linear-gradient(transparent,#b5d6d9,#e8f8ef,transparent);box-shadow:0 0 20px #b6eeeea6}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="obsidian"] .rs-notice-art > i:nth-child(2) {right:0;bottom:0;border-width:0 0 25px 25px;border-style:solid;border-color:transparent transparent #adc2c34f transparent}
+
+/* Prism: a split beam marks the message edge. */
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="prism"] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice {clip-path:none;border-radius:4px 23px 4px 4px;border:1px solid #c7d3f08c;background:linear-gradient(121deg,#25334b,#292f46 58%,#3c3a52);padding-left:55px}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="prism"] .rs-notice-art > i:first-child {inset:0 auto 0 0;width:40px;background:linear-gradient(145deg,#e6fcffb0 0 24%,#919fea91 24% 49%,#daa7bf80 49% 68%,#8bb9e880 68%);clip-path:polygon(0 0,100% 0,67% 100%,0 100%)}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="prism"] .rs-notice-art > i:nth-child(2) {right:-40px;top:-42px;width:120px;height:120px;border:1px solid #d7dbf277;transform:rotate(45deg)}
+
+/* Folio: a folded dispatch with a visible paper margin. */
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="folio"] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice {border:1px solid #bdb39b;border-radius:2px;background:linear-gradient(90deg,#dfd9c8 0 32px,#f3eedf 32px);color:#313b36;padding-left:53px;box-shadow:5px 5px 0 #beb7a5,0 14px 25px #0004}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="folio"] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice :is(strong,p){color:#313b36}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="folio"] .rs-notice-art > i:first-child {right:0;top:0;border-width:0 31px 31px 0;border-style:solid;border-color:transparent #c5b9a0 transparent transparent;filter:drop-shadow(-2px 2px 2px #514d4444)}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="folio"] .rs-notice-art > i:nth-child(2) {left:18px;top:14px;bottom:14px;border-left:1px solid #a59d8a}
+
+/* Blueprint: an annotation, with open corners rather than a filled card. */
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="blueprint"] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice {border:1px solid #9cb8c5a4;border-radius:0;background:repeating-linear-gradient(0deg,#183241,#183241 19px,#345066 20px),#19313e;padding:28px 20px 31px;box-shadow:inset 0 0 0 6px #142934,0 17px 25px #0005}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="blueprint"] .rs-notice-art > i:first-child {inset:10px;border:1px dashed #a4c3ca8c;clip-path:polygon(0 0,38px 0,38px 100%,0 100%)}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="blueprint"] .rs-notice-art > i:nth-child(2) {right:12px;top:12px;width:35px;height:35px;border-top:2px solid #b4d8dc;border-right:2px solid #b4d8dc}
+
+/* Botanical: a small pressed specimen beside a quiet note. */
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="botanical"] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice {border:1px solid #aac09c;border-radius:28px 3px 28px 3px;background:#e9eddc;color:#30463a;padding-left:62px;box-shadow:0 12px 23px #0003}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="botanical"] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice :is(strong,p){color:#30463a}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="botanical"] .rs-notice-art > i:first-child {left:17px;top:19px;width:30px;height:70px;border:1px solid #658b69;border-radius:90% 2% 90% 2%;transform:rotate(-18deg);background:linear-gradient(130deg,#a6c8a88a,#577e6833)}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="botanical"] .rs-notice-art > i:nth-child(2) {left:26px;top:24px;width:1px;height:72px;background:#53745a;transform:rotate(-18deg)}
+
+/* Copper: a riveted bulletin, visibly installed on a surface. */
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="copper"] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice {border:1px solid #c5966f;border-radius:4px;background:linear-gradient(90deg,#523a30 0 14px,#322825 14px);padding-left:30px;box-shadow:0 5px 0 #1a1715,0 18px 27px #0005}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="copper"] .rs-notice-art > i:first-child {left:4px;top:18px;width:5px;height:5px;border-radius:50%;background:#f4cf9b;box-shadow:0 77px #f4cf9b}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="copper"] .rs-notice-art > i:nth-child(2) {inset:0 0 auto;height:2px;background:linear-gradient(90deg,#ffe7b5,#704932,#dca976,#462820)}
+
+/* Nixie: a brief electric readout with a row of electrodes. */
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="nixie"] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice {border:1px solid #d49f63a8;border-radius:11px;background:#241e1b;padding-bottom:35px;box-shadow:inset 0 0 22px #e29f3326,0 16px 26px #0006}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="nixie"] .rs-notice-art > i:first-child {left:22px;right:22px;bottom:21px;height:9px;background:repeating-linear-gradient(90deg,#f3be73 0 3px,transparent 3px 14px);filter:drop-shadow(0 0 5px #ebb563)}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="nixie"] .rs-notice-art > i:nth-child(2) {right:47px;top:10px;width:32px;height:2px;background:#f8c58387;box-shadow:0 5px #f8c58345}
+
+/* Ceramic: an embossed seal, not a conventional notification icon. */
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="ceramic"] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice {border:1px solid #aec2bd;border-radius:3px 26px 26px 3px;background:linear-gradient(145deg,#fdfcf4,#e7ede6);color:#344b49;padding-left:71px;box-shadow:inset 1px 1px #fff,0 17px 25px #0003}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="ceramic"] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice :is(strong,p){color:#344b49}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="ceramic"] .rs-notice-art > i:first-child {left:15px;top:26px;width:42px;height:42px;border:1px solid #7f9d9a;border-radius:50%;box-shadow:inset 0 0 0 5px #fbfff7,0 0 0 3px #bed0c8}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="ceramic"] .rs-notice-art > i:nth-child(2) {left:32px;top:43px;width:8px;height:8px;border-radius:50%;background:#668780}
+
+/* Velvet: a draped dispatch rather than a framed card. */
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="velvet"] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice {border:0;border-radius:17px 17px 8px 8px;background:linear-gradient(90deg,#201b26,#4b3447 27%,#302633 65%,#1b1b26);padding-top:36px;box-shadow:0 14px 24px #0006}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="velvet"] .rs-notice-art > i:first-child {inset:0 0 auto;height:20px;background:repeating-linear-gradient(90deg,#e1acc126 0 28px,#331d304f 28px 45px);border-bottom:1px solid #d6adb789}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="velvet"] .rs-notice-art > i:nth-child(2) {inset:auto 0 0;height:12px;background:linear-gradient(90deg,transparent,#d6a5b95e,transparent)}
+
+/* Tide: an incoming waterline marks time at the lower edge. */
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="tide"] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice {border:1px solid #9ac9c8;border-radius:19px 19px 4px 4px;background:linear-gradient(#1c434c,#1a343d);padding-bottom:37px}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="tide"] .rs-notice-art > i:first-child {left:-8%;right:-8%;bottom:-65px;height:104px;border:1px solid #c6f5ee8c;border-radius:50%;background:#9ce3d626}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="tide"] .rs-notice-art > i:nth-child(2) {left:-8%;right:-8%;bottom:-72px;height:104px;border:1px solid #c6f5ee66;border-radius:50%}
+
+/* Aperture: a small signal iris opens beside the message, never behind the words. */
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="aperture"] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice {border:1px solid #c9c2a98f;border-radius:3px 24px 3px 24px;background:#253131;padding-right:74px}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="aperture"] .rs-notice-art > i:first-child {right:23px;top:20px;width:37px;height:37px;border:1px solid #e6dcbc;border-radius:50%;box-shadow:0 0 0 5px #d5cfb62e}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="aperture"] .rs-notice-art > i:nth-child(2) {right:33px;top:30px;width:17px;height:17px;background:#d3d8bd;clip-path:polygon(50% 0,100% 36%,81% 100%,21% 100%,0 36%)}
+
+/* Transit: a station ticker with perforation and a directional edge. */
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="transit"] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice {border:1px solid #bfa786;border-radius:2px;background:linear-gradient(90deg,#3d3e39 0 26px,#242b2b 26px);padding-left:46px;box-shadow:4px 4px 0 #34302b,0 16px 25px #0005}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="transit"] .rs-notice-art > i:first-child {left:12px;top:15px;bottom:15px;border-left:1px dashed #eac9a2}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="transit"] .rs-notice-art > i:nth-child(2) {right:15px;top:15px;width:34px;height:2px;background:#eac9a2;box-shadow:0 6px #eac9a280}
+
+/* Contour: offset topographic contours pull the eye toward the message. */
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="contour"] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice {border:1px solid #bac8a2;border-radius:29px 3px 3px 29px;background:#28332d;padding-left:66px}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="contour"] .rs-notice-art > i:first-child {left:-55px;top:-35px;width:150px;height:150px;border:1px solid #dbe7b39e;border-radius:47% 53% 58% 42%;box-shadow:0 0 0 10px #b8d0a52d,0 0 0 22px #b8d0a523,0 0 0 33px #b8d0a51c;transform:rotate(-28deg)}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="contour"] .rs-notice-art > i:nth-child(2) {left:38px;top:26px;bottom:26px;width:1px;background:#cfdfb693}
+
+/* Relay: a row of discrete contacts arrives in steps. */
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="relay"] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice {border:1px solid #a9c7bb;border-radius:3px;background:#263631;padding-top:37px;box-shadow:0 5px 0 #14221e,0 17px 25px #0005}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="relay"] .rs-notice-art > i:first-child {left:21px;right:21px;top:16px;height:8px;background:repeating-linear-gradient(90deg,#c7e5ce 0 8px,transparent 8px 22px);border-bottom:1px solid #7ba88b}
+.sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="relay"] .rs-notice-art > i:nth-child(2) {right:25px;bottom:22px;width:12px;height:12px;border:1px solid #d1e9d1;transform:rotate(45deg)}
+
+@media (max-width:390px){
+ .sop-foundation.sop-resonance[data-foundation="toasts"][data-variant] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice {padding-right:16px}
+ .sop-foundation.sop-resonance[data-foundation="toasts"][data-variant="aperture"] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice {padding-right:55px}
+}
+@media (forced-colors:active){
+ .sop-foundation.sop-resonance[data-foundation="toasts"][data-variant] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice {clip-path:none;background:Canvas;color:CanvasText;border:1px solid CanvasText;box-shadow:none}
+ .sop-foundation.sop-resonance[data-foundation="toasts"][data-variant] > :is(.ff-toast-stack,[data-toast-example]) > .ff-notice :is(strong,p){color:CanvasText}
+ .sop-foundation.sop-resonance[data-foundation="toasts"][data-variant] .rs-notice-art {display:none}
+}

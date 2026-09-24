@@ -1,21 +1,16 @@
 # Blueprint Notice
 
-notify({title, description, tone, duration, actionLabel, onAction})から実際の結果を通知します。架空の保存処理はありません。
+実際の処理結果をnotify({ title, description, tone, duration, actionLabel, onAction })で知らせます。デモの文言や架空の保存処理は配布コンポーネントへ持ち込みません。
 
 ## 組み込み
 
-Reactは同梱のBlueprintNoticeを読み込み、value（外部制御）またはdefaultValue（内部制御）を指定します。onValueChangeで値を受け取り、controllerRefから公開APIを呼べます。
-通常HTMLはmarkup.htmlとstyles.cssを配置しinit(element, options)で初期化します。onDataChangeで値を受け取り、destroy()でイベントとオーバーレイを解除します。
+Reactは同梱のBlueprintNoticeを読み込み、controllerRefからnotify()・dismiss()・setPaused()を呼びます。通常DOM版はmarkup.htmlとstyles.cssを配置し、init(element, options)から得たコントローラーで同じ操作を行い、不要になったらdestroy()します。
+通知の発行元となる通信・保存・検証は利用先で接続してください。Reactが管理する外側とコントローラーが管理する内側のDOMを分けます。
 
-## 運用
+## 通知専用の表現 — v4.13.3
 
-入力・選択はローカルの状態です。通信・永続化・処理中表示を実際のアプリに接続してください。デモの日付・ラベル・候補・ページ数は利用先で差し替えてください。React版は外側のdivをReactが、内側の要素をcontrollerが管理する分離構成です。内側へReactのchildrenを挿入せず、公開props/APIから更新します。
+開いた製図枠に位置を記すように知らせが現れる。通知の見出し・説明・アクションはnotify()へ渡した値だけを表示します。
 
+配布するstyles.cssにはfoundation/resonance/notice-style.css、コントローラーにはnotice-art.tsを含みます。静止見本と実通知は同じ外観です。動きを減らす設定では到着と退出の演出を省きます。
 
-## v4.7.0 / RESONANCE
-
-通知の面が素材ごとに開き、閉じると静かに退きます。
-
-通知本文は実際のnotify()引数のみ。見せかけの成功や擬似保存を持ち込まない。durationは表示時間であり処理進捗ではない。hover/focus/非表示タブ/pausedで残り時間を保持して停止する。duration:0は自動消去しない。dismiss後は退出中でも操作/読み上げ対象から外す。上限、action、取り外し時のtimer/animation解除を維持。
-
-色と寸法は`foundation/resonance/style.css`、変形は`resonance/art.ts`が正本です。表示内容はAPIから変更できます。導入向けのZIPに必要な依存処理は含まれます。背景用SVGは操作を受け取りません。
+durationは表示の残り時間であり処理の進捗ではありません。hover・focus・非表示タブ・pausedの間は停止し、duration: 0は自動で消えません。閉じた通知は退出演出中も読み上げと操作の対象から外します。

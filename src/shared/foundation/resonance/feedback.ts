@@ -1,23 +1,24 @@
 import {createCore,heading,syncHeading,q,escape,svg,uniqueId,prepareHintPanel,type FoundationConfig,type FoundationOptions,type FoundationController,type Notice} from '../core.ts';
 import {createMaterialScene,revealSurface} from './art.ts';
 import {createHintArtwork,revealHintArtwork} from './hint-art.ts';
+import {createNoticeArtwork,revealNotice,retireNotice} from './notice-art.ts';
 import {resonanceOverlay} from './overlay.ts';
 export function renderToast(_o:FoundationOptions):string {return '<div data-toast-example hidden></div><div class="ff-toast-stack" data-toast-stack></div>';}
 /** Timing is real notification lifetime, not fake task progress. No polling or permanent RAF. */
 export function mountToast(root:HTMLElement,config:FoundationConfig,options:FoundationOptions={}):FoundationController {
  root.classList.add('sop-resonance');const c=createCore(root,config,options);if(!root.querySelector('[data-toast-stack]'))root.innerHTML=renderToast(c.options);
  const stack=q<HTMLElement>(root,'[data-toast-stack]'),media=matchMedia('(prefers-reduced-motion: reduce)');stack.setAttribute('popover','manual');stack.hidden=true;
- type Entry={id:string;el:HTMLElement;timer:number;removeTimer:number;remaining:number;started:number;hover:boolean;focus:boolean;closing:boolean;duration:number;life:AbortController;meter:Animation|null;entrance:Animation|null;exit:Animation|null;scene:ReturnType<typeof createMaterialScene>;origin:HTMLElement|null};
+ type Entry={id:string;el:HTMLElement;timer:number;removeTimer:number;remaining:number;started:number;hover:boolean;focus:boolean;closing:boolean;duration:number;life:AbortController;meter:Animation|null;entrance:Animation[];exit:Animation|null;origin:HTMLElement|null};
  const entries:Entry[]=[];
  const paused=(e:Entry)=>e.hover||e.focus||document.hidden||!!c.options.paused;
  function stop(e:Entry){if(e.timer){clearTimeout(e.timer);e.timer=0;e.remaining=Math.max(0,e.remaining-(performance.now()-e.started));}e.meter?.pause();e.el.dataset.paused='true';}
  function start(e:Entry){if(c.dead||e.closing||paused(e)||!e.duration||e.timer)return;if(e.remaining<=0){dismiss(e.id);return;}e.started=performance.now();e.timer=window.setTimeout(()=>dismiss(e.id),e.remaining);e.meter?.play();e.el.dataset.paused='false';}
- function finalize(e:Entry){clearTimeout(e.timer);clearTimeout(e.removeTimer);e.entrance?.cancel();e.exit?.cancel();e.meter?.cancel();e.scene.destroy();e.life.abort();e.el.remove();const i=entries.indexOf(e);if(i>=0)entries.splice(i,1);if(!entries.length){try{stack.hidePopover();}catch{}stack.hidden=true;}}
- function dismiss(id?:string,immediate=false){for(const e of [...entries]){if(id&&e.id!==id)continue;if(e.closing){if(immediate)finalize(e);continue;}e.closing=true;stop(e);e.entrance?.cancel();
+ function finalize(e:Entry){clearTimeout(e.timer);clearTimeout(e.removeTimer);e.entrance.forEach(animation=>animation.cancel());e.exit?.cancel();e.meter?.cancel();e.life.abort();e.el.remove();const i=entries.indexOf(e);if(i>=0)entries.splice(i,1);if(!entries.length){try{stack.hidePopover();}catch{}stack.hidden=true;}}
+ function dismiss(id?:string,immediate=false){for(const e of [...entries]){if(id&&e.id!==id)continue;if(e.closing){if(immediate)finalize(e);continue;}e.closing=true;stop(e);e.entrance.forEach(animation=>animation.cancel());
    const hadFocus=e.el.contains(document.activeElement);e.el.removeAttribute('role');e.el.setAttribute('aria-hidden','true');e.el.inert=true;e.el.dataset.closing='true';
    if(hadFocus){const next=entries.find(n=>n!==e&&!n.closing);if(next)next.el.querySelector<HTMLButtonElement>('[data-notice-close]')?.focus();else if(e.origin?.isConnected&&!e.origin.closest('[inert]'))e.origin.focus();else root.querySelector<HTMLElement>('[data-notify]')?.focus();}
    if(immediate||media.matches||document.hidden){finalize(e);continue;}
-   e.scene.set(0);e.exit=e.el.animate([{opacity:1,transform:'none'},{opacity:0,transform:'translateY(10px) scale(.975)'}],{duration:170,easing:'ease-in',fill:'forwards'});e.removeTimer=window.setTimeout(()=>finalize(e),175);
+   e.exit=retireNotice(e.el,config.variant,media.matches);e.removeTimer=window.setTimeout(()=>finalize(e),175);
   }}
  function notify(notice:Notice):string {if(c.dead||c.options.disabled)return '';const id=uniqueId('rs-notice'),el=document.createElement('div');el.className='ff-notice';el.dataset.tone=notice.tone??'info';el.dataset.notice=id;
   // The only live node is this actual notice; there is no visually-hidden duplicate announcement.
@@ -25,8 +26,8 @@ export function mountToast(root:HTMLElement,config:FoundationConfig,options:Foun
   const icon=notice.tone==='success'?'check':'info';
   el.innerHTML=`<span class="rs-notice-line" aria-hidden="true"></span><span class="ff-notice-icon" aria-hidden="true">${svg(icon)}</span><div class="ff-notice-copy"><strong>${escape(notice.title)}</strong><p>${escape(notice.description)}</p>${notice.actionLabel?`<button type="button" class="ff-inline-action" data-notice-action>${escape(notice.actionLabel)} <span aria-hidden="true">↗</span></button>`:''}</div><button type="button" data-notice-close class="ff-icon-button" aria-label="通知を閉じる">${svg('close')}</button><span class="rs-lifetime" aria-hidden="true"><i></i></span>`;
   const requested=notice.duration??c.options.duration??5500,duration=Number.isFinite(requested)?Math.max(0,requested):5500;
-  const entry:Entry={id,el,timer:0,removeTimer:0,remaining:duration,started:0,hover:false,focus:false,closing:false,duration,life:new AbortController(),meter:null,entrance:null,exit:null,scene:createMaterialScene(el,config.variant,0),origin:document.activeElement instanceof HTMLElement?document.activeElement:null};entries.push(entry);stack.append(el);stack.hidden=false;try{stack.showPopover();}catch{}
-  entry.scene.set(1);entry.entrance=revealSurface(el,config.variant,media.matches);
+  createNoticeArtwork(el);const entry:Entry={id,el,timer:0,removeTimer:0,remaining:duration,started:0,hover:false,focus:false,closing:false,duration,life:new AbortController(),meter:null,entrance:[],exit:null,origin:document.activeElement instanceof HTMLElement?document.activeElement:null};entries.push(entry);stack.append(el);stack.hidden=false;try{stack.showPopover();}catch{}
+  entry.entrance=revealNotice(el,config.variant,media.matches);
   const meter=q<HTMLElement>(el,'.rs-lifetime');meter.hidden=!duration;
   if(duration&&!media.matches){entry.meter=q<HTMLElement>(meter,'i').animate([{transform:'scaleX(1)'},{transform:'scaleX(0)'}],{duration,easing:'linear',fill:'forwards'});entry.meter.pause();}
   const on=(target:EventTarget,type:string,handler:EventListener)=>target.addEventListener(type,handler,{signal:entry.life.signal});
@@ -35,7 +36,7 @@ export function mountToast(root:HTMLElement,config:FoundationConfig,options:Foun
   while(entries.filter(e=>!e.closing).length>Math.max(1,c.options.maxNotices??3)){const first=entries.find(e=>!e.closing);if(!first)break;dismiss(first.id,true);}start(entry);return id;
  }
  c.on(document,'visibilitychange',()=>entries.forEach(e=>document.hidden?stop(e):start(e)));
- c.on(media,'change',()=>{for(const e of [...entries]){e.entrance?.cancel();if(media.matches){e.meter?.cancel();e.meter=null;if(e.closing)finalize(e);}}});
+ c.on(media,'change',()=>{for(const e of [...entries]){e.entrance.forEach(animation=>animation.cancel());if(media.matches){e.meter?.cancel();e.meter=null;if(e.closing)finalize(e);}}});
  c.sync=()=>{syncHeading(c);const b=root.querySelector<HTMLButtonElement>('[data-notify]');if(b)b.disabled=!!c.options.disabled;for(const e of entries){if(paused(e))stop(e);else start(e);}};
  c.notify=notify;c.dismiss=id=>dismiss(id);c.cleanup(()=>{for(const e of [...entries])finalize(e);});c.sync('initial');return c;
 }
