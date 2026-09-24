@@ -40,6 +40,8 @@ jobs:
       # Same checks as npm run verify, split so the failing stage is visible.
       - name: Gallery browser tests and production preview
         run: npm run test:browser
+      - name: Block surface hover motion and containment
+        run: npm run test:surface-motion
       - name: Relocated component tests
         run: npm run test:relocation
       - name: Scrollbar browser tests
