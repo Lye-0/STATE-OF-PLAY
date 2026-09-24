@@ -18,7 +18,7 @@ try{
  const p=await browser.newPage({viewport:{width:1440,height:1000}});
  const errors:string[]=[];p.on('pageerror',error=>errors.push(error.message));
  await p.goto(server.resolvedUrls!.local[0]);await galleryReady(p);
- assert.equal(data.parts.length,807);assert.equal(targets.length,23);
+ assert.equal(data.parts.length,817);assert.equal(targets.length,23);
  for(const[category,count]of [['breadcrumbs',10],['numbers',13]]as const){
   await selectCategory(p,category);
   await p.locator('[data-design-filter="A"]').click();await galleryReady(p);

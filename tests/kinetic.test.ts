@@ -8,9 +8,9 @@ const exists=(f:string)=>fs.existsSync(path.join(ROOT,f));
 const all=(JSON.parse(read('src/catalog/registry.json')) as string[]).map(base=>({base,...JSON.parse(read(base+'/meta.json'))}));
 const added=all.filter(p=>p.tags.includes('KINETIC'));
 test('KINETIC adds 12 rails and 12 menus while retaining all non-KINETIC parts',()=>{
- assert.equal(all.length,807);assert.equal(added.length,24);assert.equal(all.filter(p=>!p.tags.includes('KINETIC')&&!p.tags.includes('MOTION STUDIES')).length,767);
+ assert.equal(all.length,817);assert.equal(added.length,24);assert.equal(all.filter(p=>!p.tags.includes('KINETIC')&&!p.tags.includes('MOTION STUDIES')).length,777);
  for(const c of ['scrollbars','dropdowns']){assert.equal(added.filter(p=>p.category===c).length,12);assert.equal(all.filter(p=>p.category===c).length,36);}
- assert.equal(new Set(all.map(p=>p.id)).size,807);assert.ok(added.every(p=>p.designType==='A'));
+ assert.equal(new Set(all.map(p=>p.id)).size,817);assert.ok(added.every(p=>p.designType==='A'));
 });
 test('each new part has distinct art, a precise prompt, a usage example and a controller',()=>{
  assert.equal(new Set(added.map(p=>read(p.base+'/styles.css'))).size,24);

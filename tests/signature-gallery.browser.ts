@@ -38,8 +38,8 @@ try {
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 120000 });
   await galleryReady(page);
 
-  await check('entry keeps the first category lazy while listing 807 parts and 37 categories', async () => {
-    assert.equal(await page.locator('#library-total').innerText(), '807');
+  await check('entry keeps the first category lazy while listing 817 parts and 37 categories', async () => {
+    assert.equal(await page.locator('#library-total').innerText(), '817');
     assert.equal(await page.locator('#library-collections').innerText(), '37');
     assert.equal(await page.locator('#part-grid [data-part]').count(), 24);
     assert.equal(await selectedCategory(page), 'toggles');

@@ -1,0 +1,87 @@
+/* signal-orbit: expressive ornament component styles. */
+.sop-ornament.sop-ornament.sop-signal-orbit {
+  --ornament-accent: rgb(193,206,165);
+  --ornament-glow: color-mix(in srgb, var(--ornament-accent) 68%, rgba(255,255,255,.78));
+  --ornament-soft: color-mix(in srgb, var(--ornament-accent) 42%, rgba(255,255,255,.22));
+  --ornament-ink: color-mix(in srgb, var(--ornament-accent) 14%, rgba(3,6,10,.96));
+  position: relative;
+  box-sizing: border-box;
+  width: min(100%, 336px);
+  min-height: 250px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 30px;
+  color: #eef0e6;
+}
+.sop-ornament.sop-ornament.sop-signal-orbit::before,
+.sop-ornament.sop-ornament.sop-signal-orbit::after { content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; }
+.sop-ornament.sop-ornament.sop-signal-orbit::before {
+  background:
+    radial-gradient(circle at 50% 36%, color-mix(in srgb, var(--ornament-accent) 22%, transparent) 0%, transparent 52%),
+    radial-gradient(circle at 50% 74%, rgba(255,255,255,.028) 0%, transparent 60%);
+  opacity: .96;
+}
+.sop-ornament.sop-ornament.sop-signal-orbit::after {
+  inset: 1px;
+  border: 1px solid rgba(255,255,255,.06);
+  mix-blend-mode: screen;
+}
+.sop-ornament.sop-ornament.sop-signal-orbit .or-stage {
+  position: relative;
+  z-index: 1;
+  width: min(82%, 264px);
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  filter: drop-shadow(0 24px 28px rgba(0,0,0,.2));
+  transition: transform .7s cubic-bezier(.2,.7,.2,1), filter .7s cubic-bezier(.2,.7,.2,1);
+}
+.sop-ornament.sop-ornament.sop-signal-orbit:hover .or-stage { transform: translateY(-3px) scale(1.02); filter: drop-shadow(0 28px 34px rgba(0,0,0,.26)); }
+.sop-ornament.sop-ornament.sop-signal-orbit .or-stage,
+.sop-ornament.sop-ornament.sop-signal-orbit .or-stage *,
+.sop-ornament.sop-ornament.sop-signal-orbit .or-stage *::before,
+.sop-ornament.sop-ornament.sop-signal-orbit .or-stage *::after { box-sizing: border-box; }
+.sop-ornament.sop-ornament.sop-signal-orbit [aria-hidden="true"] { pointer-events:none; }
+.sop-ornament.sop-ornament.sop-signal-orbit[data-paused="true"] .or-stage *,
+.sop-ornament.sop-ornament.sop-signal-orbit[data-paused="true"] .or-stage *::before,
+.sop-ornament.sop-ornament.sop-signal-orbit[data-paused="true"] .or-stage *::after { animation-play-state: paused !important; }
+@media (prefers-reduced-motion: reduce) {
+  .sop-ornament.sop-ornament.sop-signal-orbit .or-stage *,
+  .sop-ornament.sop-ornament.sop-signal-orbit .or-stage *::before,
+  .sop-ornament.sop-ornament.sop-signal-orbit .or-stage *::after { animation: none !important; transition: none !important; }
+}
+
+@keyframes or-float { 0%,100% { transform: translateY(0px);} 50% { transform: translateY(-6px);} }
+@keyframes or-spin { from { transform: rotate(0deg);} to { transform: rotate(360deg);} }
+@keyframes or-spin-reverse { from { transform: rotate(360deg);} to { transform: rotate(0deg);} }
+@keyframes or-pulse { 0%,100% { opacity:.55; transform: scale(.95);} 50% { opacity:1; transform: scale(1.04);} }
+@keyframes or-sweep { 0% { transform: translateX(-135%);} 100% { transform: translateX(135%);} }
+@keyframes or-breathe { 0%,100% { letter-spacing: normal; opacity:.56; } 50% { opacity:.9; } }
+@keyframes or-dash { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -180; } }
+@keyframes or-orbit { from { transform: rotate(0deg) translateX(0);} to { transform: rotate(360deg) translateX(0);} }
+
+.sop-ornament.sop-signal-orbit .so-shell { position:relative; width:184px; height:184px; }
+.sop-ornament.sop-signal-orbit .ring { position:absolute; left:50%; top:50%; border-radius:50%; border:1.5px solid rgba(255,255,255,.16); transform:translate(-50%,-50%); }
+.sop-ornament.sop-signal-orbit .r1 { width:152px; height:152px; }
+.sop-ornament.sop-signal-orbit .r2 { width:108px; height:108px; opacity:.78; }
+.sop-ornament.sop-signal-orbit .r3 { width:64px; height:64px; opacity:.64; }
+.sop-ornament.sop-signal-orbit .sat { position:absolute; left:50%; top:50%; width:12px; height:12px; border-radius:50%; background: radial-gradient(circle at 30% 30%, #fff7eb, var(--ornament-glow)); box-shadow:0 0 14px color-mix(in srgb, var(--ornament-accent) 30%, transparent); }
+.sop-ornament.sop-signal-orbit .s1 { transform: translate(-50%,-50%) rotate(0deg); }
+.sop-ornament.sop-signal-orbit .s1::before, .sop-ornament.sop-signal-orbit .s2::before, .sop-ornament.sop-signal-orbit .s3::before { content:""; position:absolute; width:12px; height:12px; border-radius:50%; background: inherit; left:76px; top:0; }
+.sop-ornament.sop-signal-orbit .s2 { transform: translate(-50%,-50%) rotate(120deg); }
+.sop-ornament.sop-signal-orbit .s2::before { left:54px; }
+.sop-ornament.sop-signal-orbit .s3 { transform: translate(-50%,-50%) rotate(240deg); }
+.sop-ornament.sop-signal-orbit .s3::before { left:32px; }
+.sop-ornament.sop-signal-orbit .s1, .sop-ornament.sop-signal-orbit .s2, .sop-ornament.sop-signal-orbit .s3 { animation: or-spin 9s linear infinite; }
+.sop-ornament.sop-signal-orbit .s2 { animation-duration: 6.4s; animation-direction: reverse; }
+.sop-ornament.sop-signal-orbit .s3 { animation-duration: 4.6s; }
+.sop-ornament.sop-signal-orbit:hover .s1 { animation-duration: 4.5s; }
+.sop-ornament.sop-signal-orbit:hover .s2 { animation-duration: 3.4s; }
+.sop-ornament.sop-signal-orbit:hover .s3 { animation-duration: 2.8s; }
+
+/* Paused and reduced-motion stage stability. */
+.sop-ornament.sop-ornament.sop-signal-orbit[data-paused="true"] .or-stage,.sop-ornament.sop-ornament.sop-signal-orbit[data-paused="true"] .or-stage *{transition:none!important;animation-play-state:paused!important}
+@media (prefers-reduced-motion:reduce){.sop-ornament.sop-ornament.sop-signal-orbit .or-stage{transition:none!important;animation:none!important}}

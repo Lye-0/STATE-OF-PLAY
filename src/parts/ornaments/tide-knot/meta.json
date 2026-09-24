@@ -1,0 +1,40 @@
+{
+  "id": "tide-knot",
+  "name": "Tide Knot",
+  "category": "ornaments",
+  "order": 816,
+  "version": "4.14.0",
+  "tagline": "波が結び目になって往復する。",
+  "description": "波が結び目になって往復する。 ホバーで構造と光の位置が変わる装飾です。",
+  "material": "DECOR / HOVER",
+  "motion": "EXPRESSIVE",
+  "accent": "158,195,222",
+  "designType": "A",
+  "runtime": "CSS + hover state",
+  "componentName": "TideKnot",
+  "tags": [
+    "装飾",
+    "ornament",
+    "accent",
+    "hover",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

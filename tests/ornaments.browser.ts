@@ -21,13 +21,13 @@ try{
  for(const vendor of ['prism','jszip'])await page.addScriptTag({content:fs.readFileSync(path.join(ROOT,'public/vendor/'+vendor+'.js'),'utf8')});
  await page.addScriptTag({content:files.get('/test-app.js')!});
  await galleryReady(page);
- await check('ornament category shows 20 original parts with 12 A and 8 B designs',async()=>{
+ await check('ornament category shows 20 originals and 10 new A designs',async()=>{
   await selectCategory(page,'ornaments');await galleryReady(page,true);
   assert.equal(await page.locator('#category-jump [data-value="ornaments"]').count(),1);
-  assert.equal(await page.locator('#part-grid [data-part]').count(),20);
-  assert.equal(await page.locator('#library-total').innerText(),'807');
+  assert.equal(await page.locator('#part-grid [data-part]').count(),30);
+  assert.equal(await page.locator('#library-total').innerText(),'817');
   assert.equal(await page.locator('#library-collections').innerText(),'37');
-  for(const [filter,count]of [['A',12],['B',8],['all',20]] as const){await page.locator(`[data-design-filter="${filter}"]`).click();await galleryReady(page,true);assert.equal(await page.locator('#part-grid [data-part]').count(),count);}
+  for(const [filter,count]of [['A',22],['B',8],['all',30]] as const){await page.locator(`[data-design-filter="${filter}"]`).click();await galleryReady(page,true);assert.equal(await page.locator('#part-grid [data-part]').count(),count);}
  });
  await check('all ornaments render as decorative objects and support paused/reduced motion',async()=>{
   for(const part of data.parts.filter(part=>part.category==='ornaments')){
@@ -40,15 +40,26 @@ try{
   await burst.evaluate(element=>element.setAttribute('data-paused','true'));
   assert.equal(await burst.locator('.ob-burst').evaluate(element=>getComputedStyle(element).animationPlayState),'paused');
   await burst.evaluate(element=>element.setAttribute('data-paused','false'));
+  for(const part of data.parts.filter(part=>part.category==='ornaments'&&part.version==='4.14.0')){
+   const root=page.locator(`[data-part="${part.id}"] .sop-ornament`),stage=root.locator('.or-stage');
+   await root.scrollIntoViewIfNeeded();await page.mouse.move(0,0);
+   const before=await stage.evaluate(element=>getComputedStyle(element).transform);
+   await root.hover();await page.waitForTimeout(750);
+   assert.notEqual(await stage.evaluate(element=>getComputedStyle(element).transform),before,part.id+' hover motion');
+   await root.evaluate(element=>element.setAttribute('data-paused','true'));
+   assert.equal(await stage.evaluate(element=>getComputedStyle(element).transitionDuration),'0s',part.id+' paused stage');
+   await root.evaluate(element=>element.setAttribute('data-paused','false'));
+  }
   await page.emulateMedia({reducedMotion:'reduce'});
   for(const part of data.parts.filter(part=>part.category==='ornaments')){
    const active=await page.locator(`[data-part="${part.id}"] .sop-ornament`).evaluate(element=>[...element.querySelectorAll('.or-stage, .or-stage *')].filter(node=>getComputedStyle(node).animationName!=='none').length);
    assert.equal(active,0,part.id+' reduced motion');
+   if(part.version==='4.14.0')assert.equal(await page.locator(`[data-part="${part.id}"] .or-stage`).evaluate(element=>getComputedStyle(element).transitionDuration),'0s',part.id+' reduced stage');
   }
   await page.emulateMedia({reducedMotion:'no-preference'});
  });
  await check('detail inspector presents ornament category, source and AI prompt for A and B designs',async()=>{
-  for(const id of ['asterism-burst','quiet-divider']){
+  for(const id of ['asterism-burst','magnetic-rift','quiet-divider']){
    await page.locator(`[data-open="${id}"]`).click();await galleryReady(page,true);
    const details=page.locator('#part-details');
    assert.ok(await details.isVisible());

@@ -1,12 +1,12 @@
-# パーツ一覧 — v4.13.4
+# パーツ一覧 — v4.14.0
 
-807パーツ / 37カテゴリ。重複していたPaper Loaderを削除した状態を維持し、SIGNATUREの6カテゴリ・96パーツ、NAVIGATORの5カテゴリ・88パーツ、装飾20パーツを収録しています。装飾の詳細は [ORNAMENTS.md](ORNAMENTS.md) を参照してください。
+817パーツ / 37カテゴリ。重複していたPaper Loaderを削除した状態を維持し、SIGNATUREの6カテゴリ・96パーツ、NAVIGATORの5カテゴリ・88パーツ、装飾30パーツを収録しています。装飾の詳細は [ORNAMENTS.md](ORNAMENTS.md) を参照してください。
 
 | カテゴリ | 数 | A | B |
 |---|---:|---:|---:|
 | toggles | 24 | 18 | 6 |
 | blocks | 24 | 15 | 9 |
-| ornaments | 20 | 12 | 8 |
+| ornaments | 30 | 22 | 8 |
 | scrollbars | 36 | 28 | 8 |
 | dropdowns | 36 | 28 | 8 |
 | accordions | 24 | 16 | 8 |
@@ -169,7 +169,7 @@
 | `compact-select` | Compact Select | B | 落ち着いた配色と読みやすい選択肢。日常の設定画面に自然になじむ。 |
 | `team-select` | Team Select | B | 落ち着いた配色と読みやすい選択肢。日常の設定画面に自然になじむ。 |
 | `locale-select` | Locale Select | B | 落ち着いた配色と読みやすい選択肢。日常の設定画面に自然になじむ。 |
-| `liquid-lens-menu` | Liquid Lens | A | 押すとガラスの膜が縦に伸びる。候補の背後では、厚い透明レンズがたわみながら滑る。 |
+| `liquid-lens-menu` | Liquid Lens Ornament | A | 押すとガラスの膜が縦に伸びる。候補の背後では、厚い透明レンズがたわみながら滑る。 |
 | `spotlight-menu` | Spotlight | A | 暗い舞台に光源が移動し、照らされた行の背後に細い光の帯と大きな光だまりが生まれる。 |
 | `elastic-menu` | Elastic Highlight | A | 太い柔らかな選択面が候補間で伸び、弾性を伴って新しい行の形へ戻る。 |
 | `foldout-menu` | Fold Out | A | 折り畳まれた紙が一行ずつ前後にほどけて候補になる。選ぶ行の折り目が平らに開く。 |
@@ -794,3 +794,13 @@
 | `soft-spark` | Soft Spark | B | 控えめな閃き。 |
 | `rule-knot` | Rule Knot | B | 交差点に、節をつくる。 |
 | `grid-nick` | Grid Nick | B | 小さな格子の気配。 |
+| `magnetic-rift` | Magnetic Rift | A | 反発と吸引の境目。 |
+| `liquid-lens` | Liquid Lens Ornament | A | 液体の焦点が揺れる。 |
+| `signal-orbit` | Signal Orbit | A | 軌道の上を合図が走る。 |
+| `ribbon-fold` | Ribbon Fold | A | 帯が折れ、ほどける。 |
+| `prism-well` | Prism Well | A | 色を吸い込む浅い井戸。 |
+| `fan-spark` | Fan Spark | A | 羽根が光を散らす。 |
+| `echo-glyph` | Echo Glyph | A | 記号の残響だけが漂う。 |
+| `tide-knot` | Tide Knot | A | 波が結び目になって往復する。 |
+| `stitch-comet` | Stitch Comet | A | 縫い目の上を光が跳ぶ。 |
+| `hinge-star` | Hinge Star | A | 星の骨格が開閉する。 |

@@ -1,0 +1,40 @@
+{
+  "id": "liquid-lens",
+  "name": "Liquid Lens Ornament",
+  "category": "ornaments",
+  "order": 810,
+  "version": "4.14.0",
+  "tagline": "液体の焦点が揺れる。",
+  "description": "液体の焦点が揺れる。 ホバーで構造と光の位置が変わる装飾です。",
+  "material": "DECOR / HOVER",
+  "motion": "EXPRESSIVE",
+  "accent": "160,211,233",
+  "designType": "A",
+  "runtime": "CSS + hover state",
+  "componentName": "LiquidLens",
+  "tags": [
+    "装飾",
+    "ornament",
+    "accent",
+    "hover",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

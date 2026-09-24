@@ -1,0 +1,73 @@
+/* fan-spark: expressive ornament component styles. */
+.sop-ornament.sop-ornament.sop-fan-spark {
+  --ornament-accent: rgb(232,215,174);
+  --ornament-glow: color-mix(in srgb, var(--ornament-accent) 68%, rgba(255,255,255,.78));
+  --ornament-soft: color-mix(in srgb, var(--ornament-accent) 42%, rgba(255,255,255,.22));
+  --ornament-ink: color-mix(in srgb, var(--ornament-accent) 14%, rgba(3,6,10,.96));
+  position: relative;
+  box-sizing: border-box;
+  width: min(100%, 336px);
+  min-height: 250px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 30px;
+  color: #eef0e6;
+}
+.sop-ornament.sop-ornament.sop-fan-spark::before,
+.sop-ornament.sop-ornament.sop-fan-spark::after { content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; }
+.sop-ornament.sop-ornament.sop-fan-spark::before {
+  background:
+    radial-gradient(circle at 50% 36%, color-mix(in srgb, var(--ornament-accent) 22%, transparent) 0%, transparent 52%),
+    radial-gradient(circle at 50% 74%, rgba(255,255,255,.028) 0%, transparent 60%);
+  opacity: .96;
+}
+.sop-ornament.sop-ornament.sop-fan-spark::after {
+  inset: 1px;
+  border: 1px solid rgba(255,255,255,.06);
+  mix-blend-mode: screen;
+}
+.sop-ornament.sop-ornament.sop-fan-spark .or-stage {
+  position: relative;
+  z-index: 1;
+  width: min(82%, 264px);
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  filter: drop-shadow(0 24px 28px rgba(0,0,0,.2));
+  transition: transform .7s cubic-bezier(.2,.7,.2,1), filter .7s cubic-bezier(.2,.7,.2,1);
+}
+.sop-ornament.sop-ornament.sop-fan-spark:hover .or-stage { transform: translateY(-3px) scale(1.02); filter: drop-shadow(0 28px 34px rgba(0,0,0,.26)); }
+.sop-ornament.sop-ornament.sop-fan-spark .or-stage,
+.sop-ornament.sop-ornament.sop-fan-spark .or-stage *,
+.sop-ornament.sop-ornament.sop-fan-spark .or-stage *::before,
+.sop-ornament.sop-ornament.sop-fan-spark .or-stage *::after { box-sizing: border-box; }
+.sop-ornament.sop-ornament.sop-fan-spark [aria-hidden="true"] { pointer-events:none; }
+.sop-ornament.sop-ornament.sop-fan-spark[data-paused="true"] .or-stage *,
+.sop-ornament.sop-ornament.sop-fan-spark[data-paused="true"] .or-stage *::before,
+.sop-ornament.sop-ornament.sop-fan-spark[data-paused="true"] .or-stage *::after { animation-play-state: paused !important; }
+@media (prefers-reduced-motion: reduce) {
+  .sop-ornament.sop-ornament.sop-fan-spark .or-stage *,
+  .sop-ornament.sop-ornament.sop-fan-spark .or-stage *::before,
+  .sop-ornament.sop-ornament.sop-fan-spark .or-stage *::after { animation: none !important; transition: none !important; }
+}
+
+@keyframes or-float { 0%,100% { transform: translateY(0px);} 50% { transform: translateY(-6px);} }
+@keyframes or-spin { from { transform: rotate(0deg);} to { transform: rotate(360deg);} }
+@keyframes or-spin-reverse { from { transform: rotate(360deg);} to { transform: rotate(0deg);} }
+@keyframes or-pulse { 0%,100% { opacity:.55; transform: scale(.95);} 50% { opacity:1; transform: scale(1.04);} }
+@keyframes or-sweep { 0% { transform: translateX(-135%);} 100% { transform: translateX(135%);} }
+@keyframes or-breathe { 0%,100% { letter-spacing: normal; opacity:.56; } 50% { opacity:.9; } }
+@keyframes or-dash { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -180; } }
+@keyframes or-orbit { from { transform: rotate(0deg) translateX(0);} to { transform: rotate(360deg) translateX(0);} }
+
+.sop-ornament.sop-fan-spark .fs-shell { position:relative; width:182px; height:182px; }
+.sop-ornament.sop-fan-spark .blade { position:absolute; left:50%; top:50%; width:88px; height:14px; border-radius:999px 12px 12px 999px; transform-origin:10px center; transform: translate(-10px,-50%) rotate(calc(-52deg + var(--i) * 17deg)); background: linear-gradient(90deg, color-mix(in srgb, var(--ornament-accent) 84%, rgba(255,255,255,.78)), rgba(255,255,255,.08)); border:1px solid rgba(255,255,255,.16); box-shadow:0 8px 18px rgba(0,0,0,.16); transition: transform .75s cubic-bezier(.22,.78,.18,1); }
+.sop-ornament.sop-fan-spark:hover .blade { transform: translate(-10px,-50%) rotate(calc(-70deg + var(--i) * 24deg)); }
+.sop-ornament.sop-fan-spark .core { position:absolute; left:50%; top:50%; width:20px; height:20px; transform:translate(-50%,-50%); border-radius:50%; background: radial-gradient(circle at 35% 35%, #fffdf1, var(--ornament-glow)); box-shadow:0 0 24px color-mix(in srgb, var(--ornament-accent) 28%, transparent); animation: or-pulse 3s ease-in-out infinite; }
+
+/* Paused and reduced-motion stage stability. */
+.sop-ornament.sop-ornament.sop-fan-spark[data-paused="true"] .or-stage,.sop-ornament.sop-ornament.sop-fan-spark[data-paused="true"] .or-stage *{transition:none!important;animation-play-state:paused!important}
+@media (prefers-reduced-motion:reduce){.sop-ornament.sop-ornament.sop-fan-spark .or-stage{transition:none!important;animation:none!important}}

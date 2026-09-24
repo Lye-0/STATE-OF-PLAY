@@ -1,0 +1,79 @@
+/* ribbon-fold: expressive ornament component styles. */
+.sop-ornament.sop-ornament.sop-ribbon-fold {
+  --ornament-accent: rgb(221,185,166);
+  --ornament-glow: color-mix(in srgb, var(--ornament-accent) 68%, rgba(255,255,255,.78));
+  --ornament-soft: color-mix(in srgb, var(--ornament-accent) 42%, rgba(255,255,255,.22));
+  --ornament-ink: color-mix(in srgb, var(--ornament-accent) 14%, rgba(3,6,10,.96));
+  position: relative;
+  box-sizing: border-box;
+  width: min(100%, 336px);
+  min-height: 250px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 30px;
+  color: #eef0e6;
+}
+.sop-ornament.sop-ornament.sop-ribbon-fold::before,
+.sop-ornament.sop-ornament.sop-ribbon-fold::after { content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; }
+.sop-ornament.sop-ornament.sop-ribbon-fold::before {
+  background:
+    radial-gradient(circle at 50% 36%, color-mix(in srgb, var(--ornament-accent) 22%, transparent) 0%, transparent 52%),
+    radial-gradient(circle at 50% 74%, rgba(255,255,255,.028) 0%, transparent 60%);
+  opacity: .96;
+}
+.sop-ornament.sop-ornament.sop-ribbon-fold::after {
+  inset: 1px;
+  border: 1px solid rgba(255,255,255,.06);
+  mix-blend-mode: screen;
+}
+.sop-ornament.sop-ornament.sop-ribbon-fold .or-stage {
+  position: relative;
+  z-index: 1;
+  width: min(82%, 264px);
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  filter: drop-shadow(0 24px 28px rgba(0,0,0,.2));
+  transition: transform .7s cubic-bezier(.2,.7,.2,1), filter .7s cubic-bezier(.2,.7,.2,1);
+}
+.sop-ornament.sop-ornament.sop-ribbon-fold:hover .or-stage { transform: translateY(-3px) scale(1.02); filter: drop-shadow(0 28px 34px rgba(0,0,0,.26)); }
+.sop-ornament.sop-ornament.sop-ribbon-fold .or-stage,
+.sop-ornament.sop-ornament.sop-ribbon-fold .or-stage *,
+.sop-ornament.sop-ornament.sop-ribbon-fold .or-stage *::before,
+.sop-ornament.sop-ornament.sop-ribbon-fold .or-stage *::after { box-sizing: border-box; }
+.sop-ornament.sop-ornament.sop-ribbon-fold [aria-hidden="true"] { pointer-events:none; }
+.sop-ornament.sop-ornament.sop-ribbon-fold[data-paused="true"] .or-stage *,
+.sop-ornament.sop-ornament.sop-ribbon-fold[data-paused="true"] .or-stage *::before,
+.sop-ornament.sop-ornament.sop-ribbon-fold[data-paused="true"] .or-stage *::after { animation-play-state: paused !important; }
+@media (prefers-reduced-motion: reduce) {
+  .sop-ornament.sop-ornament.sop-ribbon-fold .or-stage *,
+  .sop-ornament.sop-ornament.sop-ribbon-fold .or-stage *::before,
+  .sop-ornament.sop-ornament.sop-ribbon-fold .or-stage *::after { animation: none !important; transition: none !important; }
+}
+
+@keyframes or-float { 0%,100% { transform: translateY(0px);} 50% { transform: translateY(-6px);} }
+@keyframes or-spin { from { transform: rotate(0deg);} to { transform: rotate(360deg);} }
+@keyframes or-spin-reverse { from { transform: rotate(360deg);} to { transform: rotate(0deg);} }
+@keyframes or-pulse { 0%,100% { opacity:.55; transform: scale(.95);} 50% { opacity:1; transform: scale(1.04);} }
+@keyframes or-sweep { 0% { transform: translateX(-135%);} 100% { transform: translateX(135%);} }
+@keyframes or-breathe { 0%,100% { letter-spacing: normal; opacity:.56; } 50% { opacity:.9; } }
+@keyframes or-dash { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -180; } }
+@keyframes or-orbit { from { transform: rotate(0deg) translateX(0);} to { transform: rotate(360deg) translateX(0);} }
+
+.sop-ornament.sop-ribbon-fold .rf-shell { position:relative; width:190px; height:150px; display:grid; place-items:center; }
+.sop-ornament.sop-ribbon-fold .strip { position:absolute; width:122px; height:24px; border-radius:10px; background: linear-gradient(90deg, color-mix(in srgb, var(--ornament-accent) 82%, rgba(255,255,255,.8)), rgba(255,255,255,.14)); border:1px solid rgba(255,255,255,.16); box-shadow:0 10px 18px rgba(0,0,0,.18); transition: transform .85s cubic-bezier(.18,.82,.18,1), opacity .85s; }
+.sop-ornament.sop-ribbon-fold .s1 { transform: rotate(-16deg) translate(-26px,-22px); }
+.sop-ornament.sop-ribbon-fold .s2 { transform: rotate(18deg) translate(28px,-8px); }
+.sop-ornament.sop-ribbon-fold .s3 { transform: rotate(8deg) translate(-18px,18px); }
+.sop-ornament.sop-ribbon-fold .s4 { transform: rotate(-22deg) translate(24px,30px); }
+.sop-ornament.sop-ribbon-fold:hover .s1 { transform: rotate(-36deg) translate(-54px,-36px); }
+.sop-ornament.sop-ribbon-fold:hover .s2 { transform: rotate(42deg) translate(52px,-22px); }
+.sop-ornament.sop-ribbon-fold:hover .s3 { transform: rotate(24deg) translate(-44px,34px); }
+.sop-ornament.sop-ribbon-fold:hover .s4 { transform: rotate(-46deg) translate(48px,42px); }
+
+/* Paused and reduced-motion stage stability. */
+.sop-ornament.sop-ornament.sop-ribbon-fold[data-paused="true"] .or-stage,.sop-ornament.sop-ornament.sop-ribbon-fold[data-paused="true"] .or-stage *{transition:none!important;animation-play-state:paused!important}
+@media (prefers-reduced-motion:reduce){.sop-ornament.sop-ornament.sop-ribbon-fold .or-stage{transition:none!important;animation:none!important}}

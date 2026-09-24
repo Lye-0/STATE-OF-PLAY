@@ -1,0 +1,40 @@
+{
+  "id": "magnetic-rift",
+  "name": "Magnetic Rift",
+  "category": "ornaments",
+  "order": 809,
+  "version": "4.14.0",
+  "tagline": "反発と吸引の境目。",
+  "description": "反発と吸引の境目。 ホバーで構造と光の位置が変わる装飾です。",
+  "material": "DECOR / HOVER",
+  "motion": "EXPRESSIVE",
+  "accent": "230,191,148",
+  "designType": "A",
+  "runtime": "CSS + hover state",
+  "componentName": "MagneticRift",
+  "tags": [
+    "装飾",
+    "ornament",
+    "accent",
+    "hover",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

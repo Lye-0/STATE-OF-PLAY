@@ -9,14 +9,15 @@ import {buildPrompt,getDelivery,packageContents} from '../src/catalog/delivery.t
 const catalogue=buildCatalog();
 const ornaments=catalogue.parts.filter(part=>part.category==='ornaments');
 
-test('ORNAMENTS adds 20 distinct decorative parts without restoring retired parts',()=>{
- assert.equal(catalogue.parts.length,807);
+test('ORNAMENTS retains 20 originals and adds 10 A designs without restoring retired parts',()=>{
+ assert.equal(catalogue.parts.length,817);
  assert.equal(new Set(catalogue.parts.map(part=>part.category)).size,37);
- assert.equal(ornaments.length,20);
- assert.equal(ornaments.filter(part=>part.designType==='A').length,12);
+ assert.equal(ornaments.length,30);
+ assert.equal(ornaments.filter(part=>part.designType==='A').length,22);
  assert.equal(ornaments.filter(part=>part.designType==='B').length,8);
- assert.equal(new Set(ornaments.map(part=>part.id)).size,20);
- assert.equal(new Set(ornaments.map(part=>part.order)).size,20);
+ assert.equal(new Set(ornaments.map(part=>part.id)).size,30);
+ assert.equal(new Set(ornaments.map(part=>part.order)).size,30);
+ assert.equal(ornaments.filter(part=>part.version==='4.14.0').length,10);
  assert.ok(!catalogue.parts.some(part=>part.id==='paper-loader'));
 });
 

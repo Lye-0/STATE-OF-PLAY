@@ -1,0 +1,40 @@
+{
+  "id": "prism-well",
+  "name": "Prism Well",
+  "category": "ornaments",
+  "order": 813,
+  "version": "4.14.0",
+  "tagline": "色を吸い込む浅い井戸。",
+  "description": "色を吸い込む浅い井戸。 ホバーで構造と光の位置が変わる装飾です。",
+  "material": "DECOR / HOVER",
+  "motion": "EXPRESSIVE",
+  "accent": "198,181,241",
+  "designType": "A",
+  "runtime": "CSS + hover state",
+  "componentName": "PrismWell",
+  "tags": [
+    "装飾",
+    "ornament",
+    "accent",
+    "hover",
+    "A"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

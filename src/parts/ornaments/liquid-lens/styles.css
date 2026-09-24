@@ -1,0 +1,81 @@
+/* liquid-lens: expressive ornament component styles. */
+.sop-ornament.sop-ornament.sop-liquid-lens {
+  --ornament-accent: rgb(160,211,233);
+  --ornament-glow: color-mix(in srgb, var(--ornament-accent) 68%, rgba(255,255,255,.78));
+  --ornament-soft: color-mix(in srgb, var(--ornament-accent) 42%, rgba(255,255,255,.22));
+  --ornament-ink: color-mix(in srgb, var(--ornament-accent) 14%, rgba(3,6,10,.96));
+  position: relative;
+  box-sizing: border-box;
+  width: min(100%, 336px);
+  min-height: 250px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 30px;
+  color: #eef0e6;
+}
+.sop-ornament.sop-ornament.sop-liquid-lens::before,
+.sop-ornament.sop-ornament.sop-liquid-lens::after { content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; }
+.sop-ornament.sop-ornament.sop-liquid-lens::before {
+  background:
+    radial-gradient(circle at 50% 36%, color-mix(in srgb, var(--ornament-accent) 22%, transparent) 0%, transparent 52%),
+    radial-gradient(circle at 50% 74%, rgba(255,255,255,.028) 0%, transparent 60%);
+  opacity: .96;
+}
+.sop-ornament.sop-ornament.sop-liquid-lens::after {
+  inset: 1px;
+  border: 1px solid rgba(255,255,255,.06);
+  mix-blend-mode: screen;
+}
+.sop-ornament.sop-ornament.sop-liquid-lens .or-stage {
+  position: relative;
+  z-index: 1;
+  width: min(82%, 264px);
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  filter: drop-shadow(0 24px 28px rgba(0,0,0,.2));
+  transition: transform .7s cubic-bezier(.2,.7,.2,1), filter .7s cubic-bezier(.2,.7,.2,1);
+}
+.sop-ornament.sop-ornament.sop-liquid-lens:hover .or-stage { transform: translateY(-3px) scale(1.02); filter: drop-shadow(0 28px 34px rgba(0,0,0,.26)); }
+.sop-ornament.sop-ornament.sop-liquid-lens .or-stage,
+.sop-ornament.sop-ornament.sop-liquid-lens .or-stage *,
+.sop-ornament.sop-ornament.sop-liquid-lens .or-stage *::before,
+.sop-ornament.sop-ornament.sop-liquid-lens .or-stage *::after { box-sizing: border-box; }
+.sop-ornament.sop-ornament.sop-liquid-lens [aria-hidden="true"] { pointer-events:none; }
+.sop-ornament.sop-ornament.sop-liquid-lens[data-paused="true"] .or-stage *,
+.sop-ornament.sop-ornament.sop-liquid-lens[data-paused="true"] .or-stage *::before,
+.sop-ornament.sop-ornament.sop-liquid-lens[data-paused="true"] .or-stage *::after { animation-play-state: paused !important; }
+@media (prefers-reduced-motion: reduce) {
+  .sop-ornament.sop-ornament.sop-liquid-lens .or-stage *,
+  .sop-ornament.sop-ornament.sop-liquid-lens .or-stage *::before,
+  .sop-ornament.sop-ornament.sop-liquid-lens .or-stage *::after { animation: none !important; transition: none !important; }
+}
+
+@keyframes or-float { 0%,100% { transform: translateY(0px);} 50% { transform: translateY(-6px);} }
+@keyframes or-spin { from { transform: rotate(0deg);} to { transform: rotate(360deg);} }
+@keyframes or-spin-reverse { from { transform: rotate(360deg);} to { transform: rotate(0deg);} }
+@keyframes or-pulse { 0%,100% { opacity:.55; transform: scale(.95);} 50% { opacity:1; transform: scale(1.04);} }
+@keyframes or-sweep { 0% { transform: translateX(-135%);} 100% { transform: translateX(135%);} }
+@keyframes or-breathe { 0%,100% { letter-spacing: normal; opacity:.56; } 50% { opacity:.9; } }
+@keyframes or-dash { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -180; } }
+@keyframes or-orbit { from { transform: rotate(0deg) translateX(0);} to { transform: rotate(360deg) translateX(0);} }
+
+.sop-ornament.sop-liquid-lens .ll-shell { position:relative; width:182px; height:182px; }
+.sop-ornament.sop-liquid-lens .ring { position:absolute; left:50%; top:50%; border-radius:50%; transform:translate(-50%,-50%); background: radial-gradient(circle at 34% 28%, rgba(255,255,255,.24), transparent 38%), linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.12); box-shadow: inset 0 0 24px rgba(255,255,255,.08); transition: transform .8s cubic-bezier(.2,.8,.2,1), border-color .8s, filter .8s; }
+.sop-ornament.sop-liquid-lens .r1 { width:152px; height:152px; animation: or-float 7s ease-in-out infinite; }
+.sop-ornament.sop-liquid-lens .r2 { width:106px; height:106px; animation: or-float 5.4s ease-in-out infinite reverse; }
+.sop-ornament.sop-liquid-lens .r3 { width:58px; height:58px; background: radial-gradient(circle at 35% 28%, rgba(255,255,255,.7), color-mix(in srgb, var(--ornament-accent) 60%, rgba(255,255,255,.18))); }
+.sop-ornament.sop-liquid-lens:hover .r1 { transform:translate(-50%,-50%) scale(1.04); border-color: color-mix(in srgb, var(--ornament-accent) 45%, rgba(255,255,255,.25)); }
+.sop-ornament.sop-liquid-lens:hover .r2 { transform:translate(-50%,-50%) scale(.92); filter: blur(.2px); }
+.sop-ornament.sop-liquid-lens:hover .r3 { transform:translate(-50%,-50%) scale(1.28); }
+.sop-ornament.sop-liquid-lens .glint { position:absolute; inset:0; overflow:hidden; border-radius:50%; }
+.sop-ornament.sop-liquid-lens .glint::before { content:""; position:absolute; inset:-20%; background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,.62) 46%, transparent 60%); animation: or-sweep 5.8s linear infinite; }
+.sop-ornament.sop-liquid-lens .drop { position:absolute; right:22px; top:18px; width:16px; height:16px; border-radius:50%; background: radial-gradient(circle at 34% 30%, rgba(255,255,255,.9), var(--ornament-glow)); box-shadow:0 0 12px color-mix(in srgb, var(--ornament-accent) 28%, transparent); transition: transform .7s; }
+.sop-ornament.sop-liquid-lens:hover .drop { transform: translate(-8px, 10px) scale(1.18); }
+
+/* Paused and reduced-motion stage stability. */
+.sop-ornament.sop-ornament.sop-liquid-lens[data-paused="true"] .or-stage,.sop-ornament.sop-ornament.sop-liquid-lens[data-paused="true"] .or-stage *{transition:none!important;animation-play-state:paused!important}
+@media (prefers-reduced-motion:reduce){.sop-ornament.sop-ornament.sop-liquid-lens .or-stage{transition:none!important;animation:none!important}}

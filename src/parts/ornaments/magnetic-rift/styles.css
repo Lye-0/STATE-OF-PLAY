@@ -1,0 +1,82 @@
+/* magnetic-rift: expressive ornament component styles. */
+.sop-ornament.sop-ornament.sop-magnetic-rift {
+  --ornament-accent: rgb(230,191,148);
+  --ornament-glow: color-mix(in srgb, var(--ornament-accent) 68%, rgba(255,255,255,.78));
+  --ornament-soft: color-mix(in srgb, var(--ornament-accent) 42%, rgba(255,255,255,.22));
+  --ornament-ink: color-mix(in srgb, var(--ornament-accent) 14%, rgba(3,6,10,.96));
+  position: relative;
+  box-sizing: border-box;
+  width: min(100%, 336px);
+  min-height: 250px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 30px;
+  color: #eef0e6;
+}
+.sop-ornament.sop-ornament.sop-magnetic-rift::before,
+.sop-ornament.sop-ornament.sop-magnetic-rift::after { content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; }
+.sop-ornament.sop-ornament.sop-magnetic-rift::before {
+  background:
+    radial-gradient(circle at 50% 36%, color-mix(in srgb, var(--ornament-accent) 22%, transparent) 0%, transparent 52%),
+    radial-gradient(circle at 50% 74%, rgba(255,255,255,.028) 0%, transparent 60%);
+  opacity: .96;
+}
+.sop-ornament.sop-ornament.sop-magnetic-rift::after {
+  inset: 1px;
+  border: 1px solid rgba(255,255,255,.06);
+  mix-blend-mode: screen;
+}
+.sop-ornament.sop-ornament.sop-magnetic-rift .or-stage {
+  position: relative;
+  z-index: 1;
+  width: min(82%, 264px);
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  filter: drop-shadow(0 24px 28px rgba(0,0,0,.2));
+  transition: transform .7s cubic-bezier(.2,.7,.2,1), filter .7s cubic-bezier(.2,.7,.2,1);
+}
+.sop-ornament.sop-ornament.sop-magnetic-rift:hover .or-stage { transform: translateY(-3px) scale(1.02); filter: drop-shadow(0 28px 34px rgba(0,0,0,.26)); }
+.sop-ornament.sop-ornament.sop-magnetic-rift .or-stage,
+.sop-ornament.sop-ornament.sop-magnetic-rift .or-stage *,
+.sop-ornament.sop-ornament.sop-magnetic-rift .or-stage *::before,
+.sop-ornament.sop-ornament.sop-magnetic-rift .or-stage *::after { box-sizing: border-box; }
+.sop-ornament.sop-ornament.sop-magnetic-rift [aria-hidden="true"] { pointer-events:none; }
+.sop-ornament.sop-ornament.sop-magnetic-rift[data-paused="true"] .or-stage *,
+.sop-ornament.sop-ornament.sop-magnetic-rift[data-paused="true"] .or-stage *::before,
+.sop-ornament.sop-ornament.sop-magnetic-rift[data-paused="true"] .or-stage *::after { animation-play-state: paused !important; }
+@media (prefers-reduced-motion: reduce) {
+  .sop-ornament.sop-ornament.sop-magnetic-rift .or-stage *,
+  .sop-ornament.sop-ornament.sop-magnetic-rift .or-stage *::before,
+  .sop-ornament.sop-ornament.sop-magnetic-rift .or-stage *::after { animation: none !important; transition: none !important; }
+}
+
+@keyframes or-float { 0%,100% { transform: translateY(0px);} 50% { transform: translateY(-6px);} }
+@keyframes or-spin { from { transform: rotate(0deg);} to { transform: rotate(360deg);} }
+@keyframes or-spin-reverse { from { transform: rotate(360deg);} to { transform: rotate(0deg);} }
+@keyframes or-pulse { 0%,100% { opacity:.55; transform: scale(.95);} 50% { opacity:1; transform: scale(1.04);} }
+@keyframes or-sweep { 0% { transform: translateX(-135%);} 100% { transform: translateX(135%);} }
+@keyframes or-breathe { 0%,100% { letter-spacing: normal; opacity:.56; } 50% { opacity:.9; } }
+@keyframes or-dash { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -180; } }
+@keyframes or-orbit { from { transform: rotate(0deg) translateX(0);} to { transform: rotate(360deg) translateX(0);} }
+
+.sop-ornament.sop-magnetic-rift .mr-shell { position:relative; width:186px; height:186px; }
+.sop-ornament.sop-magnetic-rift .plate { position:absolute; top:28px; width:70px; height:130px; border-radius:30px; background: linear-gradient(180deg, rgba(255,255,255,.12), color-mix(in srgb, var(--ornament-accent) 32%, rgba(255,255,255,.08))); border:1px solid rgba(255,255,255,.1); box-shadow: inset 0 0 18px rgba(255,255,255,.06); transition: transform .8s cubic-bezier(.18,.8,.2,1), box-shadow .8s; }
+.sop-ornament.sop-magnetic-rift .left { left:18px; transform: rotate(-10deg); }
+.sop-ornament.sop-magnetic-rift .right { right:18px; transform: rotate(10deg); }
+.sop-ornament.sop-magnetic-rift:hover .left { transform: translateX(-12px) rotate(-18deg); box-shadow: inset 0 0 22px rgba(255,255,255,.09), 0 0 24px color-mix(in srgb, var(--ornament-accent) 14%, transparent); }
+.sop-ornament.sop-magnetic-rift:hover .right { transform: translateX(12px) rotate(18deg); box-shadow: inset 0 0 22px rgba(255,255,255,.09), 0 0 24px color-mix(in srgb, var(--ornament-accent) 14%, transparent); }
+.sop-ornament.sop-magnetic-rift .spark { position:absolute; left:50%; top:50%; width:96px; height:2px; margin-left:-48px; margin-top:-1px; border-radius:999px; background: linear-gradient(90deg, transparent, rgba(255,255,255,.88), transparent); opacity:.68; }
+.sop-ornament.sop-magnetic-rift .s1 { transform: rotate(0deg); animation: or-pulse 2.8s ease-in-out infinite; }
+.sop-ornament.sop-magnetic-rift .s2 { transform: rotate(60deg); animation: or-pulse 3.4s ease-in-out infinite .25s; }
+.sop-ornament.sop-magnetic-rift .s3 { transform: rotate(-60deg); animation: or-pulse 3.1s ease-in-out infinite .4s; }
+.sop-ornament.sop-magnetic-rift:hover .spark { opacity:1; }
+.sop-ornament.sop-magnetic-rift .core { position:absolute; left:50%; top:50%; width:24px; height:24px; border-radius:50%; transform:translate(-50%,-50%); background: radial-gradient(circle at 35% 35%, #fffaf0 0%, var(--ornament-glow) 38%, color-mix(in srgb, var(--ornament-accent) 62%, rgba(255,255,255,.14)) 100%); box-shadow: 0 0 22px color-mix(in srgb, var(--ornament-accent) 28%, transparent); transition: transform .7s; }
+.sop-ornament.sop-magnetic-rift:hover .core { transform: translate(-50%,-50%) scale(1.24) rotate(18deg); }
+
+/* Paused and reduced-motion stage stability. */
+.sop-ornament.sop-ornament.sop-magnetic-rift[data-paused="true"] .or-stage,.sop-ornament.sop-ornament.sop-magnetic-rift[data-paused="true"] .or-stage *{transition:none!important;animation-play-state:paused!important}
+@media (prefers-reduced-motion:reduce){.sop-ornament.sop-ornament.sop-magnetic-rift .or-stage{transition:none!important;animation:none!important}}

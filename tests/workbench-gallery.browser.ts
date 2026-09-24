@@ -10,8 +10,8 @@ try{
  const d=p.locator('#part-details');
  const open=async(id:string)=>{const part=data.parts.find(x=>x.id===id)!;await selectCategory(p,part.category);await p.locator(`[data-open="${id}"]`).click();await galleryReady(p);return part;};
  const shut=async()=>{await d.locator('.close-detail').evaluate(e=>(e as HTMLButtonElement).click());await d.waitFor({state:'hidden'});};
- await run('807 components and 37 categories retain correct A/B filters for the 88 additions',async()=>{
-  assert.equal(data.parts.length,807);
+ await run('817 components and 37 categories retain correct A/B filters for the 88 additions',async()=>{
+  assert.equal(data.parts.length,817);
   assert.equal(new Set(data.parts.map(part=>part.category)).size,37);
   for(const [category,total,expressive] of [['searchbars',20,12],['commands',16,10],['contextmenus',16,10],['navigation',20,12],['tables',16,10]] as const){
    await selectCategory(p,category);
