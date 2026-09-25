@@ -2,12 +2,12 @@
 
 ## 現行リポジトリへの統合
 
-このリポジトリのv4.15.0を基準に66種類を追加しました。既存のカテゴリ別読み込み、過去の装飾とローダーの削除・置換履歴、ロックファイルの依存指定を維持しています。通常の一覧・詳細・背景切り替えに接続しています。
+このリポジトリのv4.15.0を基準にLiquid Glassシリーズを拡張しました。既存のカテゴリ別読み込み、ロックファイルの依存指定を維持し、通常の一覧・詳細・背景切り替えに接続しています。
 
 ## 構成
 
-追加66種は `lgc-` で始まる独立IDを持ち、普通のカテゴリへ登録します。先行8種は `lg-` のまま維持します。
-825個の既存パーツの本体を維持し、全37カテゴリにガラスA/B各1種（計74種）、総数891種です。
+追加64種は `lgc-` で始まる独立IDを持ち、普通のカテゴリへ登録します。先行8種は `lg-` のまま維持します。
+825個の既存パーツの本体を維持し、36カテゴリにガラスA/B各1種（計72種）、総数889種です。カテゴリの総数は37です。
 各カテゴリの通常のA/Bフィルターで選べます。タグ `liquid-glass` は配布用メタデータに残しています。
 
 | Category | A | B |
@@ -26,7 +26,6 @@
 | toasts | Floating Notice | Mist Notice |
 | hints | Lens Hint | Mist Hint |
 | progress | Meniscus Progress | Mist Progress |
-| loaders | Glass Droplets | Frost Spinner |
 | uploads | Glass Inbox | Mist Dropzone |
 | datepickers | Lens Calendar | Mist Calendar |
 | pagination | Lens Pages | Mist Pages |

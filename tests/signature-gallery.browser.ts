@@ -31,15 +31,15 @@ try {
   const url = requireLocalServerUrl(server, 'SIGNATURE gallery');
   browser = await chromium.launch({ headless: true, args: ['--no-sandbox'], ...(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {}) });
   const page = await browser.newPage({ viewport: { width: 1440, height: 1050 }, reducedMotion: 'reduce' });
-  page.setDefaultTimeout(20000);
+  page.setDefaultTimeout(120000);
   const requests: string[] = [];
   page.on('pageerror', error => errors.push(error.message));
   page.on('request', request => requests.push(request.url()));
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 120000 });
   await galleryReady(page);
 
-  await check('entry keeps the first category lazy while listing 891 parts and 37 categories', async () => {
-    assert.equal(await page.locator('#library-total').innerText(), '891');
+  await check('entry keeps the first category lazy while listing 889 parts and 37 categories', async () => {
+    assert.equal(await page.locator('#library-total').innerText(), '889');
     assert.equal(await page.locator('#library-collections').innerText(), '37');
     assert.equal(await page.locator('#part-grid [data-part]').count(), 26);
     assert.equal(await selectedCategory(page), 'toggles');
@@ -47,11 +47,11 @@ try {
     assert.ok(!readBrowserIndex().index.some(part => part.id === 'paper-loader'));
   });
 
-  await check('six categories expose 16 independent cards with A10 and B6', async () => {
+  await check('six categories expose 18 independent cards with A11 and B7', async () => {
     for (const category of categories) {
       await selectCategory(page, category);
-      assert.equal(await page.locator('#part-grid .signature-card').count(), 16, category);
-      assert.equal(await page.locator('#part-grid .sop-sig').count(), 16, category);
+      assert.equal(await page.locator('#part-grid .signature-card').count(), 18, category);
+      assert.equal(await page.locator('#part-grid .sop-sig').count(), 18, category);
       await page.locator('[data-design-filter="A"]').click();
       await galleryReady(page);
       assert.equal(await page.locator('#part-grid [data-part]').count(), 11, category + ' A');

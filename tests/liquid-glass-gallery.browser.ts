@@ -23,13 +23,13 @@ try{
  const detail=page.locator('#part-details');
  const open=async(id:string)=>{const part=glass.find(p=>p.id===id)!;await selectCategory(page,part.category);await page.locator(`[data-open="${id}"]`).click();await galleryReady(page,true);return part;};
  const closeDetail=async()=>{await detail.locator('.close-detail').click();};
- await run('All 37 ordinary categories contain their glass A and B in the normal filter order',async()=>{
-  assert.equal(all.parts.length,891);assert.equal(glass.length,74);assert.equal(await page.locator('.liquid-glass-shortcut,.lg-preview-controls').count(),0);
+ await run('Glass A and B appear in their 36 ordinary categories',async()=>{
+  assert.equal(all.parts.length,889);assert.equal(glass.length,72);assert.equal(await page.locator('.liquid-glass-shortcut,.lg-preview-controls').count(),0);
   for(const category of [...new Set(all.parts.map(p=>p.category))]){
-   await selectCategory(page,category);const pair=glass.filter(p=>p.category===category);assert.equal(pair.length,2);
-   assert.equal(await page.locator('.glass-series').count(),2);
-   assert.equal(await page.locator('.glass-series .lg-demo-host').count(),2);
-   for(const type of ['A','B']as const){const expected=pair.find(p=>p.designType===type)!;assert.equal(await page.locator(`[data-part][data-design="${type}"]`).last().getAttribute('data-part'),expected.id);}
+   await selectCategory(page,category);const pair=glass.filter(p=>p.category===category),expectedCount=category==='loaders'?0:2;assert.equal(pair.length,expectedCount);
+   assert.equal(await page.locator('.glass-series').count(),expectedCount);
+   assert.equal(await page.locator('.glass-series .lg-demo-host').count(),expectedCount);
+   if(expectedCount)for(const type of ['A','B']as const){const expected=pair.find(p=>p.designType===type)!;assert.equal(await page.locator(`[data-part][data-design="${type}"]`).last().getAttribute('data-part'),expected.id);}
    const widths=await page.locator('.object-card').evaluateAll(cards=>cards.map(card=>{
     const mount=card.querySelector('.stage-mount')!;
     const root=mount.querySelector(':scope > :not(.lg-demo-scene)')!;
