@@ -6,10 +6,7 @@ const config: FoundationConfig = {
   "variant": "soft",
   "label": "次の時間を、予約する。",
   "description": "",
-  "defaultValue": [
-    "2026-09-23",
-    "2026-09-27"
-  ],
-  "mode": "range"
+  "defaultValue": "2026-09-23",
+  "mode": "date"
 };
 export function init(element: HTMLElement, options: FoundationOptions = {}) { return mountDate(element, config, options); }

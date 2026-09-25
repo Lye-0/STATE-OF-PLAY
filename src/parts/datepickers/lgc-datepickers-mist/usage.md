@@ -13,6 +13,7 @@ v4.15.0の動作部品から派生した、独立したガラススキンです�
 ## 基礎コンポーネントの使い方
 # Mist Calendar
 
+初期設定は一日だけを選ぶ `date` モードです。値と変更通知は `YYYY-MM-DD` 形式の文字列になります。
 日付値はYYYY-MM-DD、日時はYYYY-MM-DDTHH:mm、時刻はHH:mmです。日付をUTCへ変換しません。isDateDisabledで休日等を指定できます。
 
 ## 組み込み

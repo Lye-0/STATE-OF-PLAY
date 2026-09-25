@@ -110,6 +110,31 @@ try{
   }
   await page.setViewportSize({width:1440,height:960});
  });
+ await run('Glass calendars align with neighboring cards and Mist selects one day',async()=>{
+  await selectCategory(page,'datepickers');
+  for(const [glassId,ordinaryId]of [['lgc-datepickers-lens','aperture-calendar'],['lgc-datepickers-mist','slate-calendar']]as const){
+   const glassCard=page.locator(`[data-part="${glassId}"]`),ordinaryCard=page.locator(`[data-part="${ordinaryId}"]`);
+   const [glassHeight,ordinaryHeight]=await Promise.all([glassCard.locator('.object-stage').evaluate(el=>el.getBoundingClientRect().height),ordinaryCard.locator('.object-stage').evaluate(el=>el.getBoundingClientRect().height)]);
+   assert.ok(Math.abs(glassHeight-ordinaryHeight)<2,`${glassId}: card title is out of line`);
+  }
+  const lens=page.locator('[data-part="lgc-datepickers-lens"]');
+  await lens.locator('[data-calendar-toggle]').click();
+  const lensPanel=lens.locator('.ff-calendar');await lensPanel.waitFor({state:'visible'});
+  const material=await lensPanel.evaluate(el=>{const style=getComputedStyle(el);return {background:style.backgroundColor,blur:style.backdropFilter};});
+  const alpha=Number(material.background.match(/\/\s*([\d.]+)\)/)?.[1]??1);
+  assert.ok(alpha>.3&&alpha<.65&&material.blur.includes('blur('),'Lens calendar panel lost its transparent material');
+  await page.keyboard.press('Escape');
+  const mist=page.locator('[data-part="lgc-datepickers-mist"]');
+  assert.equal(await mist.locator('.lgc-root').getAttribute('data-date-mode'),'date');
+  assert.equal(await mist.locator('[data-date="0"]').inputValue(),'2026-09-23');
+  assert.equal(await mist.locator('[data-date="1"]').isVisible(),false);
+  await mist.locator('[data-calendar-toggle]').click();
+  const mistPanel=mist.locator('.ff-calendar');await mistPanel.waitFor({state:'visible'});
+  await mistPanel.locator('[data-day="2026-09-25"]').click();
+  assert.equal(await mist.locator('[data-date="0"]').inputValue(),'2026-09-25');
+  assert.equal(await mist.locator('[data-date="1"]').isVisible(),false);
+  await mistPanel.waitFor({state:'hidden'});
+ });
  await run('Glass popup thumbnails and native dialogs show readable translucent material',async()=>{
   await selectCategory(page,'popups');
   for(const id of ['lgc-popups-lens','lgc-popups-mist']){

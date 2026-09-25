@@ -34,6 +34,13 @@ try{
  assert.equal(await page.locator('#root .lgc-root').count(),64);
  await page.locator('[data-react-part="lgc-textboxes-lens"] .sop-field-control').fill('ガラスの入力');
  assert.equal(await page.locator('[data-react-part="lgc-textboxes-lens"] .sop-field-control').inputValue(),'ガラスの入力');
+ const mistCalendar=page.locator('[data-react-part="lgc-datepickers-mist"]');
+ assert.equal(await mistCalendar.locator('.lgc-root').getAttribute('data-date-mode'),'date');
+ assert.equal(await mistCalendar.locator('[data-date="1"]').isVisible(),false);
+ await mistCalendar.locator('[data-calendar-toggle]').click();
+ await mistCalendar.locator('[data-day="2026-09-25"]').click();
+ assert.equal(await mistCalendar.locator('[data-date="0"]').inputValue(),'2026-09-25');
+ assert.equal(await mistCalendar.locator('[data-date="1"]').isVisible(),false);
  const accordion=page.locator('[data-react-part="lgc-accordions-lens"] .sop-accordion-trigger').first(),before=await accordion.getAttribute('aria-expanded');
  await accordion.click();assert.notEqual(await accordion.getAttribute('aria-expanded'),before);
  await page.evaluate(()=>(window as any).unmountCollection());
