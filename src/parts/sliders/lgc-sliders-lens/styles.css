@@ -30,4 +30,12 @@
 .lgc-root.sop-lgc-sliders-lens .ff-rail{background:radial-gradient(ellipse at 18% 0%,#e9f8ff30,transparent 60%),var(--lgc-fill);border:1px solid var(--lgc-line);box-shadow:inset 0 1px 1px #fff8,inset 0 -1px 1px #b6d9ef24,0 7px 22px #06182929;backdrop-filter:blur(var(--lgc-blur)) saturate(1.24);-webkit-backdrop-filter:blur(var(--lgc-blur)) saturate(1.24);color:var(--lgc-ink);border-radius:var(--lgc-radius);transition:background .24s,border-color .24s,box-shadow .24s;}
 .lgc-root.sop-lgc-sliders-lens .ff-rail:hover{border-color:#effbffb3;box-shadow:inset 0 1px 2px #fffc,inset 0 -1px 2px #d5f4ff54,0 7px 26px #082b432e;}
 .lgc-root.sop-lgc-sliders-lens .ff-rail{height:8px;border-radius:999px;}.lgc-root.sop-lgc-sliders-lens .ff-fill{background:linear-gradient(90deg,#a4cedd65,#d8f4ffe0);}.lgc-root.sop-lgc-sliders-lens input[type=range]::-webkit-slider-thumb{background:linear-gradient(135deg,#fff9,#acdeed80);border:1px solid #f5ffffc0;box-shadow:inset 0 1px 3px #fff,0 2px 8px #0b29394d;}
+.lgc-root.sop-lgc-sliders-lens .ff-fill{-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 40px),transparent calc(100% - 18px));mask-image:linear-gradient(to right,#000 calc(100% - 40px),transparent calc(100% - 18px));}
+.lgc-root.sop-lgc-sliders-lens[data-range="true"] .ff-fill{-webkit-mask-image:linear-gradient(to right,transparent 0,#000 20px,#000 calc(100% - 40px),transparent calc(100% - 18px));mask-image:linear-gradient(to right,transparent 0,#000 20px,#000 calc(100% - 40px),transparent calc(100% - 18px));}
+@supports (clip-path:inset(0 calc(21px * (50% / 100%)) 0 0)){
+ .lgc-root.sop-lgc-sliders-lens .ff-fill{-webkit-mask-image:none;mask-image:none;clip-path:inset(0 calc(21px * (var(--ff-end) / 100%)) 0 0);}
+ .lgc-root.sop-lgc-sliders-lens[data-range="true"] .ff-fill{clip-path:inset(0 calc(21px * (var(--ff-end) / 100%)) 0 calc(21px * (1 - var(--ff-start) / 100%)));}
+}
+.lgc-root.sop-lgc-sliders-lens input[type=range]::-moz-range-thumb{width:21px;height:21px;background:linear-gradient(135deg,#fff9,#acdeed80);border:1px solid #f5ffffc0;box-shadow:inset 0 1px 3px #fff,0 2px 8px #0b29394d;}
+@media(forced-colors:active){.lgc-root.sop-lgc-sliders-lens .ff-fill{-webkit-mask-image:none;mask-image:none;clip-path:none;}}
 @media(forced-colors:active){.lgc-root.sop-lgc-sliders-lens .ff-rail{background:Canvas;color:CanvasText;border:1px solid CanvasText;box-shadow:none;backdrop-filter:none;}}
