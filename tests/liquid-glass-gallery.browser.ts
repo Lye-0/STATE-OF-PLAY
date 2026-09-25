@@ -381,6 +381,30 @@ try{
    }
   }
  });
+ await run('Both glass timelines keep expanded text within their lenses and scenes',async()=>{
+  for(const width of [1440,390,320]){
+   await page.setViewportSize({width,height:960});await selectCategory(page,'timelines');
+   for(const id of ['lgc-timelines-lens','lgc-timelines-mist']){
+    const card=page.locator(`[data-part="${id}"]`);await card.scrollIntoViewIfNeeded();
+    for(const details of await card.locator('.sg-event details').all())if(await details.getAttribute('open')===null)await details.locator('summary').click();
+    const fits=await card.evaluate(el=>{
+     const scene=el.querySelector('.lg-demo-scene')!.getBoundingClientRect();
+     const mains=[...el.querySelectorAll('.sg-event-main')].map(node=>node.getBoundingClientRect());
+     const text=[...el.querySelectorAll('.sg-event-heading,.sg-event-body p,.sg-event-meta')].every(node=>{
+      const range=document.createRange();range.selectNodeContents(node);
+      const box=node.closest('.sg-event-main')!.getBoundingClientRect(),ink=range.getBoundingClientRect();
+      return ink.left>=box.left+8&&ink.right<=box.right-8&&ink.top>=box.top+7&&ink.bottom<=box.bottom-7;
+     });
+     return {text,scene:mains.every(box=>box.left>=scene.left&&box.right<=scene.right&&box.bottom<=scene.bottom-16),page:document.documentElement.scrollWidth<=innerWidth+2};
+    });
+    assert.ok(fits.text,`${id} ${width}: text crossed the glass border`);
+    assert.ok(fits.scene,`${id} ${width}: event crossed the scene`);
+    assert.ok(fits.page,`${id} ${width}: page overflows`);
+    if(width===1440)await card.screenshot({path:path.join(out,`${id}-expanded.png`)});
+   }
+  }
+  await page.setViewportSize({width:1440,height:960});
+ });
  await run('Both glass blocks also remain inside their cards',async()=>{
   await page.setViewportSize({width:1440,height:960});
   await selectCategory(page,'blocks');
