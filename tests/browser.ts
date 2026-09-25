@@ -22,7 +22,7 @@ const layouts=['portable','original'] as const;
 // first A/B design, all toggle interactions, and the current signature ornament.
 const seenBrowserGroups=new Set<string>();
 const browserParts=catalog.parts.filter(part=>{
- if(part.category==='toggles'||part.id==='hero-asterisk')return true;
+ if((part.category==='toggles'&&!part.tags.includes('GLASS LAB'))||part.id==='hero-asterisk')return true;
  const group=part.category+':'+part.designType;
  if(seenBrowserGroups.has(group))return false;
  seenBrowserGroups.add(group);return true;
@@ -102,7 +102,7 @@ try{
   await selectCategory(page,'numbers');assert.equal(await page.locator('[data-part]').count(),20);
   assert.equal(await page.locator('[data-category="numbers"]').getAttribute('aria-selected'),'true');
   // Full-list counts were checked above. Keep the ordinary first page mounted
-  // for interaction checks; unpausing 817 previews on every dialog close is not representative.
+  // for interaction checks; unpausing 825 previews on every dialog close is not representative.
   await selectCategory(page,'all');await galleryReady(page);
   assert.equal(await page.locator('[data-part]').count(),24);
  });
@@ -263,7 +263,7 @@ try{
    await run(`React ${format.toUpperCase()} / ${layout}: representative exports, controlled/uncontrolled/disabled, cleanup`,async()=>{
     
     await load('/'+prefix+'/index.html');await page.locator('[data-react-part]').first().waitFor();assert.equal(await page.locator('[data-react-part]').count(),browserParts.length);
-    for(const part of catalog.parts.filter(p=>p.category==='toggles')){const area=page.locator(`[data-react-part="${part.id}"]`);for(const variant of ['controlled','uncontrolled']){const b=area.locator(`[data-variant="${variant}"]`);assert.equal(await b.getAttribute('aria-checked'),'false');await b.click();assert.equal(await b.getAttribute('aria-checked'),'true');}
+    for(const part of browserParts.filter(p=>p.category==='toggles')){const area=page.locator(`[data-react-part="${part.id}"]`);for(const variant of ['controlled','uncontrolled']){const b=area.locator(`[data-variant="${variant}"]`);assert.equal(await b.getAttribute('aria-checked'),'false');await b.click();assert.equal(await b.getAttribute('aria-checked'),'true');}
      const declined=area.locator('[data-variant="declined"]');await declined.click();assert.equal(await declined.getAttribute('aria-checked'),'false');assert.ok(await area.locator('[data-variant="disabled"]').isDisabled());
     }
     const ids=await page.locator('[id]').evaluateAll(nodes=>nodes.map(n=>n.id));assert.equal(ids.length,new Set(ids).size);

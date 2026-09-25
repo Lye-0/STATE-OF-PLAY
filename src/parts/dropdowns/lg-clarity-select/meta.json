@@ -1,0 +1,65 @@
+{
+  "id": "lg-clarity-select",
+  "name": "Clarity Select",
+  "category": "dropdowns",
+  "order": 2007,
+  "version": "4.15.0",
+  "tagline": "透けても、迷わない。",
+  "description": "項目名と補足を読みやすく保つガラス。大きなアイコンや装飾なしでも成立。",
+  "material": "LIQUID GLASS / REGULAR",
+  "motion": "SOFT / LIGHT",
+  "accent": "177,214,234",
+  "designType": "B",
+  "runtime": "CSS backdrop + scoped events",
+  "componentName": "ClaritySelect",
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "GLASS LAB",
+    "ガラス",
+    "半透明",
+    "レンズ",
+    "dropdowns",
+    "B"
+  ],
+  "related": [
+    "lg-bloom-select"
+  ],
+  "props": [
+    [
+      "material",
+      "'clear' | 'regular' | 'solid'",
+      "透明・すりガラス・不透明。背後が複雑な場合はregular/solid。"
+    ],
+    [
+      "appearance",
+      "'auto' | 'dark' | 'light'",
+      "文字・濃淡。autoはOSの配色であり背後の画像を解析しません。"
+    ],
+    [
+      "optics",
+      "'standard' | 'refractive'",
+      "標準CSS / 対応Chromium向けの実験的な縁の屈折。標準が初期値。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "装飾の追従や動きを停止。操作自体は継続。"
+    ],
+    [
+      "items",
+      "readonly SelectItem[]",
+      "value/label/description。アイコンは必要な場合だけ明示。"
+    ],
+    [
+      "value / defaultValue / onValueChange",
+      "string / callback",
+      "選択値の外部制御 / 内部制御"
+    ],
+    [
+      "label / name / disabled",
+      "string / string / boolean",
+      "アクセシブル名、フォーム名、無効状態"
+    ]
+  ]
+}

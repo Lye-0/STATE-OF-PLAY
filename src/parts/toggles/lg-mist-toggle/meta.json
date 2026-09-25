@@ -1,0 +1,75 @@
+{
+  "id": "lg-mist-toggle",
+  "name": "Mist Toggle",
+  "category": "toggles",
+  "order": 2001,
+  "version": "4.15.0",
+  "tagline": "静かに、切り替える。",
+  "description": "小さな乳白のつまみと、やわらかな半透明の軌道。設定画面になじむガラス。",
+  "material": "LIQUID GLASS / REGULAR",
+  "motion": "SOFT / LIGHT",
+  "accent": "177,214,234",
+  "designType": "B",
+  "runtime": "CSS backdrop + scoped events",
+  "componentName": "MistToggle",
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "GLASS LAB",
+    "ガラス",
+    "半透明",
+    "レンズ",
+    "toggles",
+    "B"
+  ],
+  "related": [
+    "lg-lens-toggle"
+  ],
+  "props": [
+    [
+      "material",
+      "'clear' | 'regular' | 'solid'",
+      "透明・すりガラス・不透明。背後が複雑な場合はregular/solid。"
+    ],
+    [
+      "appearance",
+      "'auto' | 'dark' | 'light'",
+      "文字・濃淡。autoはOSの配色であり背後の画像を解析しません。"
+    ],
+    [
+      "optics",
+      "'standard' | 'refractive'",
+      "標準CSS / 対応Chromium向けの実験的な縁の屈折。標準が初期値。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "装飾の追従や動きを停止。操作自体は継続。"
+    ],
+    [
+      "checked / defaultChecked",
+      "boolean",
+      "外部制御値 / 初期値"
+    ],
+    [
+      "onCheckedChange",
+      "(next:boolean)=>void",
+      "状態の変更をアプリへ接続"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効化"
+    ]
+  ],
+  "initial": false,
+  "config": {
+    "id": "lg-mist-toggle",
+    "name": "Mist Toggle",
+    "initial": false,
+    "travel": 32,
+    "stiffness": 300,
+    "damping": 26,
+    "tone": 500
+  }
+}

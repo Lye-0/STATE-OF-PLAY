@@ -1,0 +1,65 @@
+{
+  "id": "lg-pressure-button",
+  "name": "Pressure Button",
+  "category": "buttons",
+  "order": 2002,
+  "version": "4.15.0",
+  "tagline": "触れた光が、広がる。",
+  "description": "光源が指先を追い、押すとガラス面だけが押し広がる。文字は静止したまま。",
+  "material": "LIQUID GLASS / CLEAR",
+  "motion": "FLUID / POINTER LIGHT",
+  "accent": "177,214,234",
+  "designType": "A",
+  "runtime": "CSS backdrop + scoped events",
+  "componentName": "PressureButton",
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "GLASS LAB",
+    "ガラス",
+    "半透明",
+    "レンズ",
+    "buttons",
+    "A"
+  ],
+  "related": [
+    "lg-frost-button"
+  ],
+  "props": [
+    [
+      "material",
+      "'clear' | 'regular' | 'solid'",
+      "透明・すりガラス・不透明。背後が複雑な場合はregular/solid。"
+    ],
+    [
+      "appearance",
+      "'auto' | 'dark' | 'light'",
+      "文字・濃淡。autoはOSの配色であり背後の画像を解析しません。"
+    ],
+    [
+      "optics",
+      "'standard' | 'refractive'",
+      "標準CSS / 対応Chromium向けの実験的な縁の屈折。標準が初期値。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "装飾の追従や動きを停止。操作自体は継続。"
+    ],
+    [
+      "children / icon",
+      "ReactNode",
+      "表示するラベルと任意の小さな装飾"
+    ],
+    [
+      "onClick / type",
+      "native button props",
+      "実際の処理へ接続。typeの初期値はbutton。"
+    ],
+    [
+      "loading / disabled",
+      "boolean",
+      "処理中の再操作を防ぐ / 無効化"
+    ]
+  ]
+}

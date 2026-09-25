@@ -38,10 +38,10 @@ try {
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 120000 });
   await galleryReady(page);
 
-  await check('entry keeps the first category lazy while listing 817 parts and 37 categories', async () => {
-    assert.equal(await page.locator('#library-total').innerText(), '817');
+  await check('entry keeps the first category lazy while listing 825 parts and 37 categories', async () => {
+    assert.equal(await page.locator('#library-total').innerText(), '825');
     assert.equal(await page.locator('#library-collections').innerText(), '37');
-    assert.equal(await page.locator('#part-grid [data-part]').count(), 24);
+    assert.equal(await page.locator('#part-grid [data-part]').count(), 26);
     assert.equal(await selectedCategory(page), 'toggles');
     assert.ok(!requests.some(request => request.includes('/src/parts/avatars/')), 'avatar runtime loaded before selection');
     assert.ok(!readBrowserIndex().index.some(part => part.id === 'paper-loader'));

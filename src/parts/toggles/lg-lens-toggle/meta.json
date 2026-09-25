@@ -1,0 +1,75 @@
+{
+  "id": "lg-lens-toggle",
+  "name": "Lens Toggle",
+  "category": "toggles",
+  "order": 2000,
+  "version": "4.15.0",
+  "tagline": "光を、ひとしずく動かす。",
+  "description": "厚い透明レンズが伸びながら移動。位置・文字・淡い色でONとOFFを伝えます。",
+  "material": "LIQUID GLASS / CLEAR",
+  "motion": "FLUID / POINTER LIGHT",
+  "accent": "177,214,234",
+  "designType": "A",
+  "runtime": "CSS backdrop + scoped events",
+  "componentName": "LensToggle",
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "GLASS LAB",
+    "ガラス",
+    "半透明",
+    "レンズ",
+    "toggles",
+    "A"
+  ],
+  "related": [
+    "lg-mist-toggle"
+  ],
+  "props": [
+    [
+      "material",
+      "'clear' | 'regular' | 'solid'",
+      "透明・すりガラス・不透明。背後が複雑な場合はregular/solid。"
+    ],
+    [
+      "appearance",
+      "'auto' | 'dark' | 'light'",
+      "文字・濃淡。autoはOSの配色であり背後の画像を解析しません。"
+    ],
+    [
+      "optics",
+      "'standard' | 'refractive'",
+      "標準CSS / 対応Chromium向けの実験的な縁の屈折。標準が初期値。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "装飾の追従や動きを停止。操作自体は継続。"
+    ],
+    [
+      "checked / defaultChecked",
+      "boolean",
+      "外部制御値 / 初期値"
+    ],
+    [
+      "onCheckedChange",
+      "(next:boolean)=>void",
+      "状態の変更をアプリへ接続"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効化"
+    ]
+  ],
+  "initial": false,
+  "config": {
+    "id": "lg-lens-toggle",
+    "name": "Lens Toggle",
+    "initial": false,
+    "travel": 66,
+    "stiffness": 300,
+    "damping": 26,
+    "tone": 500
+  }
+}

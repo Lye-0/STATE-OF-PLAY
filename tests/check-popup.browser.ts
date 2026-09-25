@@ -26,7 +26,7 @@ try{
   const files=offlineFiles(fixture);await page.setContent(files.get('/index.html')!.replace(/<script[^>]*>[\s\S]*?<\/script>/g,'').replace(/<link[^>]*>/g,''));await page.addStyleTag({content:files.get('/test-styles.css')!});for(const v of ['prism','jszip'])await page.addScriptTag({content:fs.readFileSync(path.join(ROOT,'public/vendor',v+'.js'),'utf8')});await page.addScriptTag({content:files.get('/test-app.js')!});}else await page.goto(url);
  await page.emulateMedia({reducedMotion:'reduce'});
  await run('48 new parts: category/search/style filters and exact A/B counts',async()=>{
-  await galleryReady(page);assert.equal(await page.locator('[data-part]').count(),24);
+  await galleryReady(page);assert.equal(await page.locator('[data-part]').count(),26);
   for(const category of ['checkboxes','popups']){await page.locator(`[data-category="${category}"]`).click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),24);await page.locator('[data-design-filter="A"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),16);await page.locator('[data-design-filter="B"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),8);await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);}
  });
  await run('All 24 checkboxes: native label/Space, multiple independent selection and no accidental inspector',async()=>{

@@ -6,7 +6,7 @@ import path from 'node:path';
 import {buildCatalog,ROOT,FORMATS} from '../scripts/catalog.ts';
 import {selectionValue,nextSelection,validateSelectionItems} from '../src/shared/selection-model.ts';
 import {getDelivery,buildPrompt} from '../src/catalog/delivery.ts';
-const catalog=buildCatalog(),parts=catalog.parts.filter(p=>p.category==='tabs'||p.category==='segments');
+const catalog=buildCatalog(),parts=catalog.parts.filter(p=>(p.category==='tabs'||p.category==='segments')&&!p.tags.includes('GLASS LAB'));
 test('48 new choice components, 24 each, with expressive and essential designs',()=>{
  assert.equal(parts.length,48);
  for(const c of ['tabs','segments']){const group=parts.filter(p=>p.category===c);assert.equal(group.length,24);assert.equal(group.filter(p=>p.designType==='A').length,16);assert.equal(group.filter(p=>p.designType==='B').length,8);}

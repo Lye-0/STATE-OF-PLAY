@@ -1,0 +1,65 @@
+{
+  "id": "lg-bloom-select",
+  "name": "Bloom Select",
+  "category": "dropdowns",
+  "order": 2006,
+  "version": "4.15.0",
+  "tagline": "選択肢へ、面がひらく。",
+  "description": "フィールドの近くからガラスの面が広がり、光を含んだ選択面が候補へ移ります。",
+  "material": "LIQUID GLASS / CLEAR",
+  "motion": "FLUID / POINTER LIGHT",
+  "accent": "177,214,234",
+  "designType": "A",
+  "runtime": "CSS backdrop + scoped events",
+  "componentName": "BloomSelect",
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "GLASS LAB",
+    "ガラス",
+    "半透明",
+    "レンズ",
+    "dropdowns",
+    "A"
+  ],
+  "related": [
+    "lg-clarity-select"
+  ],
+  "props": [
+    [
+      "material",
+      "'clear' | 'regular' | 'solid'",
+      "透明・すりガラス・不透明。背後が複雑な場合はregular/solid。"
+    ],
+    [
+      "appearance",
+      "'auto' | 'dark' | 'light'",
+      "文字・濃淡。autoはOSの配色であり背後の画像を解析しません。"
+    ],
+    [
+      "optics",
+      "'standard' | 'refractive'",
+      "標準CSS / 対応Chromium向けの実験的な縁の屈折。標準が初期値。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "装飾の追従や動きを停止。操作自体は継続。"
+    ],
+    [
+      "items",
+      "readonly SelectItem[]",
+      "value/label/description。アイコンは必要な場合だけ明示。"
+    ],
+    [
+      "value / defaultValue / onValueChange",
+      "string / callback",
+      "選択値の外部制御 / 内部制御"
+    ],
+    [
+      "label / name / disabled",
+      "string / string / boolean",
+      "アクセシブル名、フォーム名、無効状態"
+    ]
+  ]
+}

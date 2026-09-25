@@ -7,7 +7,7 @@ import {getDelivery,buildPrompt,packageContents} from '../src/catalog/delivery.t
 import {readBrowserIndex} from '../scripts/vite-catalog.ts';
 
 const index=readBrowserIndex().index;
-assert.equal(index.length,817);
+assert.equal(index.length,825);
 assert.equal(index.filter(p=>p.category==='loaders').length,39);
 assert.ok(!index.some(p=>p.id==='paper-loader'));
 const {parts}=buildCatalog(ROOT,['nixie-loader','ceramic-loader']);
@@ -39,7 +39,7 @@ try {
  await page.waitForFunction(()=>document.querySelector('#part-grid')?.getAttribute('aria-busy')==='false');
  assert.equal(await page.locator('[data-part]').count(),39);
  assert.equal(await page.locator('[data-part="paper-loader"]').count(),0);
- assert.equal(await page.locator('#library-total').innerText(),'817');
+ assert.equal(await page.locator('#library-total').innerText(),'825');
  for(const id of ['nixie-loader','ceramic-loader']){
   const result=await page.locator(`[data-part="${id}"] .ff-orbit.o2`).evaluate(el=>{
    const animation=el.getAnimations().find(a=>(a as CSSAnimation).animationName==='sop-ff-offset-square-spin');

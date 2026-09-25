@@ -1,0 +1,65 @@
+{
+  "id": "lg-flow-tabs",
+  "name": "Flow Tabs",
+  "category": "tabs",
+  "order": 2004,
+  "version": "4.15.0",
+  "tagline": "次の景色へ、滑らかに。",
+  "description": "一枚のレンズが項目の実寸に合わせて滑ります。本文は通常のコンテンツ面に。",
+  "material": "LIQUID GLASS / CLEAR",
+  "motion": "FLUID / POINTER LIGHT",
+  "accent": "177,214,234",
+  "designType": "A",
+  "runtime": "CSS backdrop + scoped events",
+  "componentName": "FlowTabs",
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "GLASS LAB",
+    "ガラス",
+    "半透明",
+    "レンズ",
+    "tabs",
+    "A"
+  ],
+  "related": [
+    "lg-index-tabs"
+  ],
+  "props": [
+    [
+      "material",
+      "'clear' | 'regular' | 'solid'",
+      "透明・すりガラス・不透明。背後が複雑な場合はregular/solid。"
+    ],
+    [
+      "appearance",
+      "'auto' | 'dark' | 'light'",
+      "文字・濃淡。autoはOSの配色であり背後の画像を解析しません。"
+    ],
+    [
+      "optics",
+      "'standard' | 'refractive'",
+      "標準CSS / 対応Chromium向けの実験的な縁の屈折。標準が初期値。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "装飾の追従や動きを停止。操作自体は継続。"
+    ],
+    [
+      "items",
+      "readonly TabItem[]",
+      "value/label/content。2項目から多数まで実寸で計測。"
+    ],
+    [
+      "value / defaultValue / onValueChange",
+      "string / callback",
+      "選択値をアプリへ接続。"
+    ],
+    [
+      "activation / orientation",
+      "automatic|manual / horizontal|vertical",
+      "キーボード確定方式 / 配置の方向"
+    ]
+  ]
+}

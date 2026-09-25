@@ -1,3 +1,4 @@
+import type {GlassController} from '../shared/liquid-glass/core';
 import type { FoundationConfig, FoundationOptions, FoundationController } from '../shared/foundation/core';
 import type {CheckboxOptions, CheckboxController} from '../shared/checkbox-controller';
 import type {PopupOptions, PopupController} from '../shared/popup-controller';
@@ -39,6 +40,9 @@ export type PartPreview = Omit<Part, 'files' | 'portableFiles' | 'preview' | 'us
 export type PartSummary = Pick<Part, 'id' | 'name' | 'category' | 'order' | 'description' | 'material' | 'designType' | 'tags' | 'initial' | 'config' | 'tagline'>;
 export interface CategoryModule { parts: PartPreview[]; mounts: Record<string, MountPart>; }
 export interface PartController {
+  updateGlass?: GlassController['updateGlass'];
+  getGlass?: GlassController['getGlass'];
+  refreshGlass?: GlassController['refreshGlass'];
   updateWorkbench?: (options: Record<string, unknown>) => void;
   getWorkbench?: () => Record<string, unknown>;
   resetWorkbench?: () => void;

@@ -25,7 +25,7 @@ try{
   await selectCategory(page,'ornaments');await galleryReady(page,true);
   assert.equal(await page.locator('#category-jump [data-value="ornaments"]').count(),1);
   assert.equal(await page.locator('#part-grid [data-part]').count(),30);
-  assert.equal(await page.locator('#library-total').innerText(),'817');
+  assert.equal(await page.locator('#library-total').innerText(),'825');
   assert.equal(await page.locator('#library-collections').innerText(),'37');
   for(const [filter,count]of [['A',22],['B',8],['all',30]] as const){await page.locator(`[data-design-filter="${filter}"]`).click();await galleryReady(page,true);assert.equal(await page.locator('#part-grid [data-part]').count(),count);}
  });

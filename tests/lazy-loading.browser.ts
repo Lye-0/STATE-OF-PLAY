@@ -29,7 +29,7 @@ try {
    await p.goto(url,{waitUntil:'domcontentloaded',timeout:120000});
    await p.waitForFunction(()=>document.documentElement.classList.contains('site-ready'),undefined,{timeout:120000});
    await ready(p);
-   assert.equal(await p.locator('[data-part]').count(),24);
+   assert.equal(await p.locator('[data-part]').count(),26);
    assert.equal(await selectedCategory(p),'toggles');
    assert.ok(!requests.some(u=>/\.json(?:\?|$)/.test(u)),'no source payload on entry');
    if(mode==='development') assert.ok(!requests.some(u=>/\/src\/parts\//.test(u)&&!u.includes('/toggles/')&&!u.includes('/blocks/original-surface/')),'no unrelated part implementation on entry');
@@ -38,7 +38,7 @@ try {
     if(cat==='toggles') continue;
     assert.ok(!requests.some(u=>new RegExp('/'+cat+'-[^/]+\\.js(?:\\?|$)').test(u)), 'no unrelated category chunk: '+cat);
    }
-   results.push(mode+': initial 24 toggles only; no delivery payload or full catalogue');
+   results.push(mode+': initial 26 toggles only; no delivery payload or full catalogue');
    for (const id of ['loaders','numbers','datepickers','dropdowns']) {
     await category(p,id);assert.equal(await p.locator('[data-part]').count(),index.filter(x=>x.category===id).length);
    }

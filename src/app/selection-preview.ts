@@ -29,11 +29,11 @@ export function mountSelectionControls(dialog:HTMLDialogElement,root:HTMLElement
     for(let i=0;i<n;i++){
       const key=`choice-${i+1}`,item=templates[i%templates.length].cloneNode(true) as HTMLElement;
       item.removeAttribute('id');item.removeAttribute('aria-controls');item.dataset.choiceValue=key;
-      item.querySelector('.sop-choice-index')!.textContent=String(i+1).padStart(2,'0');
+      const indexLabel=item.querySelector('.sop-choice-index');if(indexLabel)indexLabel.textContent=String(i+1).padStart(2,'0');
       if(i>=3)item.querySelector('.sop-choice-label')!.textContent=`Option ${i+1}`;
       const radio=item.querySelector<HTMLInputElement>('input');if(radio){radio.value=key;radio.checked=false;radio.defaultChecked=i===1;radio.removeAttribute('name');radio.setAttribute('aria-label',item.querySelector('.sop-choice-label')!.textContent!);}
       list.append(item);
-      if(panels){const panel=panelTemplates[i%panelTemplates.length].cloneNode(true) as HTMLElement;panel.removeAttribute('id');panel.removeAttribute('aria-labelledby');panel.dataset.panelValue=key;const total=panel.querySelector('.sop-choice-demo-footer b');if(total)total.textContent=`01 — ${String(n).padStart(2,'0')}`;if(i>=3){panel.querySelector('.sop-choice-demo-kicker')!.textContent=`ADDITIONAL PANEL / ${i+1}`;}panel.querySelectorAll<HTMLInputElement>('input').forEach(input=>input.value=values.get(key)??'');panels.append(panel);}
+      if(panels){const panel=panelTemplates[i%panelTemplates.length].cloneNode(true) as HTMLElement;panel.removeAttribute('id');panel.removeAttribute('aria-labelledby');panel.dataset.panelValue=key;const total=panel.querySelector('.sop-choice-demo-footer b');if(total)total.textContent=`01 — ${String(n).padStart(2,'0')}`;if(i>=3){const kicker=panel.querySelector('.sop-choice-demo-kicker');if(kicker)kicker.textContent=`ADDITIONAL PANEL / ${i+1}`;}panel.querySelectorAll<HTMLInputElement>('input').forEach(input=>input.value=values.get(key)??'');panels.append(panel);}
     }
     controller.refresh?.();controller.setValue?.(current);showState();
     controls.querySelectorAll('[data-selection-count]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));

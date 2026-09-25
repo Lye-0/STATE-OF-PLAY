@@ -10,7 +10,7 @@ import {offlineFiles,testBundle}from'./offline-fixture.ts';
 import {getDelivery,buildPrompt}from'../src/catalog/delivery.ts';
 import {requireLocalServerUrl}from'./vite-url.ts';
 const require=createRequire(import.meta.url),{chromium}=require(process.env.PLAYWRIGHT_PATH??'playwright')as typeof import('playwright');
-const data=buildCatalog(),parts=data.parts.filter(p=>p.category==='tabs'||p.category==='segments');
+const data=buildCatalog(),parts=data.parts.filter(p=>(p.category==='tabs'||p.category==='segments')&&!p.tags.includes('GLASS LAB'));
 const offline=process.env.SOP_TEST_MODE==='offline',out=path.join(ROOT,'.test-output/selection');fs.mkdirSync(out,{recursive:true});
 let browser:Browser|undefined,shutdown:(()=>Promise<void>)|undefined,url='';const results:string[]=[],errors:string[]=[];
 const run=async(name:string,fn:()=>Promise<void>)=>{await fn();results.push(name);console.log('PASS '+name);};
@@ -22,7 +22,7 @@ try{
  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
  if(offline){const files=offlineFiles(data);await page.setContent(files.get('/index.html')!.replace(/<script[^>]*>[\s\S]*?<\/script>/g,'').replace(/<link[^>]*>/g,''));await page.addStyleTag({content:files.get('/test-styles.css')!});for(const vendor of ['prism','jszip'])await page.addScriptTag({content:fs.readFileSync(path.join(ROOT,'public/vendor',vendor+'.js'),'utf8')});await page.addScriptTag({content:files.get('/test-app.js')!});}else await page.goto(url);
  await run('48 new parts: 24 tabs / 24 selectors, A16 B8 with existing filters',async()=>{
-  for(const category of ['tabs','segments']){await page.locator(`[data-category="${category}"]`).click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),24);await page.locator('[data-design-filter="A"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),16);await page.locator('[data-design-filter="B"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),8);await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);}
+  for(const category of ['tabs','segments']){const extra=category==='tabs'?1:0;await page.locator(`[data-category="${category}"]`).click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),24+extra*2);await page.locator('[data-design-filter="A"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),16+extra);await page.locator('[data-design-filter="B"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),8+extra);await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);}
  });
  await run('All 24 tabs: actual panel switching, IDs/ARIA and note state survives hiding',async()=>{
   await page.locator('[data-category="tabs"]').click();await galleryReady(page,true);

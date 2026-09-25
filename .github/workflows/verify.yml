@@ -120,6 +120,14 @@ jobs:
         run: npm run test:workbench:gallery
       - name: Ornament gallery, motion and delivery
         run: npm run test:ornaments
+      - name: Liquid Glass components and interaction states
+        run: npm run test:liquid-glass
+      - name: Liquid Glass gallery and code delivery
+        run: npm run test:liquid-glass:gallery
+      - name: Liquid Glass portable JavaScript exports
+        run: npm run test:liquid-glass:exports
+      - name: Liquid Glass React StrictMode and hydration
+        run: npm run test:liquid-glass:react
       - name: Build full source archive
         run: npm run package
       - name: Save reports on failure

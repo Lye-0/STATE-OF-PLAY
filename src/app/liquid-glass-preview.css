@@ -1,0 +1,46 @@
+/* Museum scene, not included in reusable parts. The glass really samples this background. */
+.lg-demo-host {position:relative!important;isolation:isolate;min-height:220px;padding:32px 24px;overflow:visible;}
+.lg-demo-scene {position:absolute;inset:0;z-index:0;overflow:hidden;border-radius:18px;background:#284f62;pointer-events:none;}
+.lg-demo-scene .lg-demo-wave{position:absolute;display:block;border-radius:49%;width:170%;height:230%;left:-40%;top:40%;transform:rotate(-32deg);}
+.lg-demo-scene .wave-one{background:linear-gradient(115deg,#c7d8d1,#6d9b9c 32%,#598691 53%,#57748a);top:-138%;left:-60%;}
+.lg-demo-scene .wave-two{background:linear-gradient(100deg,#deb487,#ca9a72 35%,#899c9b 68%,#457080);height:110%;top:68%;left:-16%;transform:rotate(-31deg);box-shadow:-5px -5px 20px #d4e8e82b;}
+.lg-demo-scene .wave-three{background:linear-gradient(120deg,#163c50,#37687c);height:130%;width:180%;top:95%;left:-70%;transform:rotate(18deg);}
+.lg-demo-scene .lg-scene-type {position:absolute;left:18px;top:17px;font:500 22px/.94 Georgia,serif;letter-spacing:-.8px;color:#eff8f23d;transform:rotate(-9deg);}
+.lg-demo-host[data-lg-scene="paper"] .lg-demo-scene{background:#edf1ed;}
+.lg-demo-host[data-lg-scene="paper"] .wave-one{background:linear-gradient(140deg,#fcf5eb,#b9d6e4 58%,#c3d6d7);}
+.lg-demo-host[data-lg-scene="paper"] .wave-two{background:linear-gradient(120deg,#f0d1b6,#e6d8db 42%,#dadbe8);}
+.lg-demo-host[data-lg-scene="paper"] .wave-three{background:#d8e7e3;}
+.lg-demo-host[data-lg-scene="paper"] .lg-scene-type{color:#42627c3b;}
+.lg-demo-host[data-lg-scene="ink"] .lg-demo-scene{background:#102330;}
+.lg-demo-host[data-lg-scene="ink"] .wave-one{background:#193946;}
+.lg-demo-host[data-lg-scene="ink"] .wave-two{background:linear-gradient(120deg,#296170,#357786 30%,#304b5a);}
+.lg-demo-host[data-lg-scene="ink"] .wave-three{background:#172b38;}
+.lg-demo-host[data-lg-scene="grid"] .lg-demo-scene{background-color:#204453;background-image:repeating-linear-gradient(0deg,#ecf8ff5a 0 1px,transparent 1px 13px),repeating-linear-gradient(90deg,#ecf8ff5a 0 1px,transparent 1px 13px);}
+.lg-demo-host[data-lg-scene="grid"] .lg-demo-wave{display:none;}
+.lg-demo-host[data-lg-drift="true"] .lg-demo-scene .lg-demo-wave{animation:sop-lg-background-drift 8s ease-in-out infinite alternate;}
+.lg-demo-host[data-lg-drift="true"] .lg-demo-scene .wave-two{animation-direction:alternate-reverse;}
+@keyframes sop-lg-background-drift{to{translate:22% -9%;rotate:12deg;}}
+.object-card.glass-series .object-stage{height:auto;min-height:240px;padding:20px 22px 28px;perspective:none;}
+.object-card.glass-series .stage-mount{min-height:216px;max-width:100%;border-radius:18px;}
+.object-card.glass-series .stage-glow{display:none;}
+.object-card.glass-series .object-type{color:#b1d4df;}
+.object-card.glass-series .object-stage::after{display:none;}
+.object-card.glass-series .card-bottom h2 span{white-space:normal;}
+.object-card.glass-series .stage-mount>.lg-toggle{transform:none!important;}
+.object-card.glass-series .stage-mount>.lg-select{max-width:350px;}
+.object-card.glass-series .stage-mount:has(.lg-tabs){padding:29px 24px;min-height:275px;}
+.object-card.glass-series .action-demo-feedback{position:absolute;bottom:10px;color:#f0f4f2;z-index:3;margin:0;font-size:9px;background:#152936b8;padding:4px 10px;border-radius:10px;}
+.part-details .lg-demo-host{height:auto!important;min-height:228px!important;padding:32px 16px!important;}
+.part-details .lg-demo-host>.lg-toggle{transform:none!important;}
+.part-details .lg-demo-host .lg-tabs{min-width:0;}
+.part-details .lg-demo-host .action-demo-feedback{position:relative;z-index:2;color:#e8f1f1;font-size:9px;background:#172f458c;border-radius:8px;padding:5px;margin:15px 0 -10px;}
+.part-details .lg-demo-host:has(.lg-button){flex-direction:column;}
+.lg-preview-controls{margin:14px 0 18px;border:1px solid #39404a;border-radius:12px;padding:14px;background:#111820;display:grid;gap:11px;color:#d5e0e5;}
+.lg-preview-controls header{display:flex;justify-content:space-between;gap:10px;align-items:center;}
+.lg-preview-controls header b{font:10px Consolas,monospace;letter-spacing:1px;color:#b8d9e4}.lg-preview-controls header span{font-size:9px;color:#9daebb;}
+.lg-preview-controls label{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:10px;}
+.lg-preview-controls select{color:#dceaf0;background:#1d2934;border:1px solid #44515d;border-radius:6px;padding:6px;font:10px system-ui;max-width:180px;min-width:0;}
+.lg-preview-controls .lg-check{justify-content:flex-start;}.lg-preview-controls .lg-check input{accent-color:#b3d8e6;margin:0;}
+.lg-preview-controls p{font-size:9px;line-height:1.8;color:#9bafbb;margin:0;}
+@media(max-width:480px){.object-card.glass-series .object-stage{padding:16px 15px 24px}.object-card.glass-series .stage-mount{padding:25px 15px}.object-card.glass-series .card-bottom h2{flex-wrap:wrap;row-gap:3px;}}
+@media(prefers-reduced-motion:reduce){.lg-demo-host .lg-demo-scene .lg-demo-wave{animation:none!important;}}

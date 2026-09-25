@@ -10,7 +10,7 @@ const catalogue=buildCatalog();
 const ornaments=catalogue.parts.filter(part=>part.category==='ornaments');
 
 test('ORNAMENTS retains 20 originals and adds 10 A designs without restoring retired parts',()=>{
- assert.equal(catalogue.parts.length,817);
+ assert.equal(catalogue.parts.length,825);
  assert.equal(new Set(catalogue.parts.map(part=>part.category)).size,37);
  assert.equal(ornaments.length,30);
  assert.equal(ornaments.filter(part=>part.designType==='A').length,22);

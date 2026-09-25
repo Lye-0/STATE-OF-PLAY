@@ -5,10 +5,10 @@ import path from 'node:path';
 import {buildCatalog,ROOT,FORMATS} from '../scripts/catalog.ts';
 import {getDelivery,buildPrompt,buildUsage,packageContents} from '../src/catalog/delivery.ts';
 const {parts}=buildCatalog();
-const additions=parts.filter(p=>(p.category==='dropdowns'||p.category==='accordions')&&!p.tags.includes('KINETIC'));
+const additions=parts.filter(p=>(p.category==='dropdowns'||p.category==='accordions')&&!p.tags.includes('KINETIC')&&!p.tags.includes('GLASS LAB'));
 test('six collections retain 48 designed disclosures and add text fields',()=>{
  assert.ok(parts.length>=144);assert.equal(additions.length,48);
- for(const category of ['toggles','blocks','scrollbars','dropdowns','accordions','textboxes'])assert.equal(parts.filter(p=>p.category===category&&!p.tags.includes('KINETIC')).length,24);
+ for(const category of ['toggles','blocks','scrollbars','dropdowns','accordions','textboxes'])assert.equal(parts.filter(p=>p.category===category&&!p.tags.includes('KINETIC')&&!p.tags.includes('GLASS LAB')).length,24);
  for(const category of ['dropdowns','accordions']){
   assert.equal(additions.filter(p=>p.category===category&&p.designType==='A').length,16);
   assert.equal(additions.filter(p=>p.category===category&&p.designType==='B').length,8);

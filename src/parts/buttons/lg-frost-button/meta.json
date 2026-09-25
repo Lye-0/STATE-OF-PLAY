@@ -1,0 +1,65 @@
+{
+  "id": "lg-frost-button",
+  "name": "Frost Button",
+  "category": "buttons",
+  "order": 2003,
+  "version": "4.15.0",
+  "tagline": "一押しに、透明な余白。",
+  "description": "可読性を保つすりガラスと控えめな縁。フォームや通常の操作へ。",
+  "material": "LIQUID GLASS / REGULAR",
+  "motion": "SOFT / LIGHT",
+  "accent": "177,214,234",
+  "designType": "B",
+  "runtime": "CSS backdrop + scoped events",
+  "componentName": "FrostButton",
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "GLASS LAB",
+    "ガラス",
+    "半透明",
+    "レンズ",
+    "buttons",
+    "B"
+  ],
+  "related": [
+    "lg-pressure-button"
+  ],
+  "props": [
+    [
+      "material",
+      "'clear' | 'regular' | 'solid'",
+      "透明・すりガラス・不透明。背後が複雑な場合はregular/solid。"
+    ],
+    [
+      "appearance",
+      "'auto' | 'dark' | 'light'",
+      "文字・濃淡。autoはOSの配色であり背後の画像を解析しません。"
+    ],
+    [
+      "optics",
+      "'standard' | 'refractive'",
+      "標準CSS / 対応Chromium向けの実験的な縁の屈折。標準が初期値。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "装飾の追従や動きを停止。操作自体は継続。"
+    ],
+    [
+      "children / icon",
+      "ReactNode",
+      "表示するラベルと任意の小さな装飾"
+    ],
+    [
+      "onClick / type",
+      "native button props",
+      "実際の処理へ接続。typeの初期値はbutton。"
+    ],
+    [
+      "loading / disabled",
+      "boolean",
+      "処理中の再操作を防ぐ / 無効化"
+    ]
+  ]
+}

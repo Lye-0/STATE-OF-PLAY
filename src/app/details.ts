@@ -1,3 +1,4 @@
+import {mountGlassControls} from './liquid-glass-preview';
 import {mountWorkbenchControls} from './workbench-preview';
 import {mountSignatureControls} from './signature-preview';
 import {mountFoundationControls} from './foundation-preview';
@@ -94,7 +95,7 @@ export function createDetails(parts: PartSummary[], callbacks: {onActive: (activ
         if (tab === 'guide') {
             const sample = exported.files.find(f => f.name === exported.example);
             const react = format === 'tsx' || format === 'jsx';
-            const options = react || part.foundation || part.signature || part.workbench ? part.props : (part.category==='checkboxes'||part.category==='popups') ? checkPopupGuide(part.category) : (part.category === 'buttons' || part.category === 'links') ? actionGuide(part.category) : part.category === 'textboxes' ? textFieldGuide() : (part.category === 'dropdowns' || part.category === 'accordions' || part.category === 'scrollbars' || part.category === 'tabs' || part.category === 'segments') ? (part.category==='tabs'||part.category==='segments' ? selectionGuide(part.category) : disclosureGuide(part.category)) : part.category === 'toggles' ? [
+            const options = react || part.tags.includes('GLASS LAB') || part.foundation || part.signature || part.workbench ? part.props : (part.category==='checkboxes'||part.category==='popups') ? checkPopupGuide(part.category) : (part.category === 'buttons' || part.category === 'links') ? actionGuide(part.category) : part.category === 'textboxes' ? textFieldGuide() : (part.category === 'dropdowns' || part.category === 'accordions' || part.category === 'scrollbars' || part.category === 'tabs' || part.category === 'segments') ? (part.category==='tabs'||part.category==='segments' ? selectionGuide(part.category) : disclosureGuide(part.category)) : part.category === 'toggles' ? [
                 ['init(element, options)', 'HTMLButtonElement', '対象のボタンを渡して初期化します。'],
                 ['options.checked', 'boolean', '初期のON/OFF状態。'],
                 ['options.onCheckedChange', '(checked: boolean) => void', '操作による状態変更を受け取ります。'],
@@ -240,14 +241,23 @@ export function createDetails(parts: PartSummary[], callbacks: {onActive: (activ
                 dialog.querySelectorAll<HTMLButtonElement>('[data-state],#preview-loop,#reset-preview').forEach(b => b.disabled = disabled);
             });
         }
-        const setBackground = () => {
+        const setBackground = (selectedScene?: string) => {
+            if(selectedScene) background=selectedScene==='paper'?'light':selectedScene==='ink'?'dark':'studio';
+            const scene=selectedScene??(background==='light'?'paper':background==='dark'?'ink':'coast');
             const view = required('.live-preview', dialog);
             view.classList.remove('bg-studio', 'bg-dark', 'bg-light');
-            view.classList.add('bg-' + background);
-            dialog.querySelectorAll<HTMLButtonElement>('[data-bg]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.bg === background)));
+            view.classList.add('bg-' + (part.tags.includes('GLASS LAB') ? 'studio' : background));
+            dialog.querySelectorAll<HTMLButtonElement>('[data-bg]').forEach(b => b.setAttribute('aria-pressed', String(scene!=='grid'&&b.dataset.bg === background)));
+            if(part.tags.includes('GLASS LAB')){
+                root.parentElement!.dataset.lgScene=scene;
+                const sceneSelect=dialog.querySelector<HTMLSelectElement>('[data-glass-scene]');if(sceneSelect)sceneSelect.value=scene;
+                const appearance=scene==='paper'?'light':'dark';controller?.updateGlass?.({appearance});
+                const appearanceSelect=dialog.querySelector<HTMLSelectElement>('[data-glass-setting="appearance"]');if(appearanceSelect)appearanceSelect.value=appearance;
+            }
         };
         dialog.querySelectorAll<HTMLButtonElement>('[data-bg]').forEach(b => b.addEventListener('click', () => { background = b.dataset.bg ?? 'studio'; setBackground(); }));
         setBackground();
+        if(part.tags.includes('GLASS LAB') && controller){const prior=cleanupAction,cleanup=mountGlassControls(dialog,root,controller,setBackground);cleanupAction=()=>{prior?.();cleanup();};}
         drawMain();
         required('.close-detail', dialog).focus({ preventScroll: true });
     }

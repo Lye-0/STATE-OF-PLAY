@@ -5,7 +5,7 @@ import path from 'node:path';
 import {buildCatalog,ROOT,FORMATS} from '../scripts/catalog.ts';
 import {getDelivery,buildPrompt,buildManifest} from '../src/catalog/delivery.ts';
 import {sourceReferences,isLocalReference,resolveLocal} from '../scripts/source-tools.ts';
-const {parts}=buildCatalog(),buttons=parts.filter(p=>p.category==='buttons'),links=parts.filter(p=>p.category==='links');
+const {parts:allParts}=buildCatalog(),parts=allParts.filter(p=>!p.tags.includes('GLASS LAB')),buttons=parts.filter(p=>p.category==='buttons'),links=parts.filter(p=>p.category==='links');
 const read=(p:string)=>fs.readFileSync(path.join(ROOT,p),'utf8');
 test('24 buttons + 16 navigation links retain the 144 previous parts',()=>{
  assert.equal(buttons.length,24);assert.equal(links.length,16);assert.equal(parts.filter(p=>!p.tags.includes('KINETIC')&&['toggles','blocks','scrollbars','dropdowns','accordions','textboxes','buttons','links'].includes(p.category)).length,184);

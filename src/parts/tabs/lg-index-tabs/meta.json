@@ -1,0 +1,65 @@
+{
+  "id": "lg-index-tabs",
+  "name": "Index Tabs",
+  "category": "tabs",
+  "order": 2005,
+  "version": "4.15.0",
+  "tagline": "読み進める、薄い層。",
+  "description": "角のやわらかなガラスの帯と確かな選択面。多い項目にも対応。",
+  "material": "LIQUID GLASS / REGULAR",
+  "motion": "SOFT / LIGHT",
+  "accent": "177,214,234",
+  "designType": "B",
+  "runtime": "CSS backdrop + scoped events",
+  "componentName": "IndexTabs",
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "GLASS LAB",
+    "ガラス",
+    "半透明",
+    "レンズ",
+    "tabs",
+    "B"
+  ],
+  "related": [
+    "lg-flow-tabs"
+  ],
+  "props": [
+    [
+      "material",
+      "'clear' | 'regular' | 'solid'",
+      "透明・すりガラス・不透明。背後が複雑な場合はregular/solid。"
+    ],
+    [
+      "appearance",
+      "'auto' | 'dark' | 'light'",
+      "文字・濃淡。autoはOSの配色であり背後の画像を解析しません。"
+    ],
+    [
+      "optics",
+      "'standard' | 'refractive'",
+      "標準CSS / 対応Chromium向けの実験的な縁の屈折。標準が初期値。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "装飾の追従や動きを停止。操作自体は継続。"
+    ],
+    [
+      "items",
+      "readonly TabItem[]",
+      "value/label/content。2項目から多数まで実寸で計測。"
+    ],
+    [
+      "value / defaultValue / onValueChange",
+      "string / callback",
+      "選択値をアプリへ接続。"
+    ],
+    [
+      "activation / orientation",
+      "automatic|manual / horizontal|vertical",
+      "キーボード確定方式 / 配置の方向"
+    ]
+  ]
+}

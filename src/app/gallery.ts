@@ -89,7 +89,8 @@ async function renderGallery(append = false) {
         rendered = [];
     }
     const matches = parts.filter(matchPart);
-    if (activeCategory === 'scrollbars' || activeCategory === 'dropdowns') matches.sort((a,b) => Number(b.tags.includes('KINETIC')) - Number(a.tags.includes('KINETIC')) || a.order - b.order);
+    if (['toggles','buttons','tabs','dropdowns'].includes(activeCategory)) matches.sort((a,b) => a.designType.localeCompare(b.designType) || Number(b.tags.includes('KINETIC')) - Number(a.tags.includes('KINETIC')) || a.order - b.order);
+    else if (activeCategory === 'scrollbars') matches.sort((a,b) => Number(b.tags.includes('KINETIC')) - Number(a.tags.includes('KINETIC')) || a.order - b.order);
     const selected = activeCategory === 'all' ? matches.slice(0, visibleLimit) : matches;
     const pending = selected.filter(p => !rendered.some(r => r.part.id === p.id));
     grid.setAttribute('aria-busy', 'true'); more.hidden = true;
@@ -103,23 +104,26 @@ async function renderGallery(append = false) {
     let popupHelper: typeof import('./check-popup-preview') | null = null;
     let actionHelper: typeof import('./action-preview') | null = null;
     let sampleHelper: typeof import('./samples') | null = null;
+    let glassHelper: typeof import('./liquid-glass-preview') | null = null;
     try {
         const modules = await Promise.all([...new Set(pending.map(p => p.category))].map(loadCategory));
         if (token !== galleryRequest) return;
         const previews = new Map(modules.flatMap(m => m.parts).map(p => [p.id, p]));
         modules.forEach(m => Object.assign(mounts, m.mounts));
         visible = pending.map(p => { const preview = previews.get(p.id); if (!preview) throw new Error('Missing preview: '+p.id); return preview; });
-        const [workbench,signature,foundation,popup,action,sample] = await Promise.all([
+        const [workbench,signature,foundation,popup,action,sample,glass] = await Promise.all([
             visible.some(p => !!p.workbench) ? import('./workbench-preview') : Promise.resolve(null),
             visible.some(p => !!p.signature) ? import('./signature-preview') : Promise.resolve(null),
             visible.some(p => !!p.foundation) ? import('./foundation-preview') : Promise.resolve(null),
             visible.some(p => p.category === 'popups') ? import('./check-popup-preview') : Promise.resolve(null),
             visible.some(p => p.category === 'buttons' || p.category === 'links') ? import('./action-preview') : Promise.resolve(null),
-            visible.some(p => p.category === 'blocks' || p.category === 'scrollbars') ? import('./samples') : Promise.resolve(null)
+            visible.some(p => p.category === 'blocks' || p.category === 'scrollbars') ? import('./samples') : Promise.resolve(null),
+            visible.some(p => p.tags.includes('GLASS LAB')) ? import('./liquid-glass-preview') : Promise.resolve(null)
         ]);
         if (token !== galleryRequest) return;
         workbenchHelper=workbench;signatureHelper=signature;foundationHelper=foundation;
         popupHelper=popup;actionHelper=action;sampleHelper=sample;
+        glassHelper=glass;
     } catch {
         if (token !== galleryRequest) return;
         clearCategoryLoading?.(); clearCategoryLoading=undefined;
@@ -139,7 +143,7 @@ async function renderGallery(append = false) {
         const toggle = part.category === 'toggles', ornament = part.category === 'ornaments';
         const scroll = part.category === 'scrollbars';
         const dropdown = part.category === 'dropdowns', accordion = part.category === 'accordions', textbox = part.category === 'textboxes', action = part.category === 'buttons', link = part.category === 'links', tabs = part.category === 'tabs', segments = part.category === 'segments', checkbox = part.category === 'checkboxes', popup = part.category === 'popups';
-        return `<article class="object-card ${workbench ? 'workbench-card workbench-'+part.category : signature ? 'signature-card signature-'+part.category : foundation ? 'foundation-card foundation-'+part.category : toggle ? 'sop-surface sop-original-surface toggle-card' : scroll ? 'scroll-card' : dropdown ? 'dropdown-card' : accordion ? 'accordion-card' : textbox ? 'textbox-card' : action ? 'action-card' : link ? 'link-card' : tabs ? 'tabs-card' : segments ? 'segments-card' : checkbox ? 'checkbox-card' : popup ? 'popup-card' : ornament ? 'ornament-card' : 'block-card'}" data-part="${escapeHTML(part.id)}" data-design="${part.designType}" style="--sop-accent:${part.accent};--accent:${part.accent}"><header class="card-top"><span class="object-no mono">${String(part.order).padStart(2, '0')} /</span><span class="design-badge design-${part.designType}" title="${part.designType === 'A' ? '表現重視' : '実用重視'}">${part.designType}</span><span class="object-type mono">${part.tags.includes('KINETIC') ? 'KINETIC / ' : ''}${escapeHTML(part.material)}</span><span class="state-readout mono" aria-hidden="true"><i></i><span class="state-word">${toggle ? (state.get(part.id) ? 'ON' : 'OFF') : scroll ? 'SCROLL' : dropdown ? 'SELECT' : accordion ? 'EXPAND' : textbox ? 'WRITE' : action ? 'READY' : link ? 'LINK' : tabs ? 'EXPLORE' : segments ? 'CHOOSE' : checkbox ? 'CHECK' : popup ? 'OPEN' : workbench ? 'TRY IT' : signature ? 'TRY IT' : foundation ? 'TRY IT' : ornament ? 'AMBIENT' : 'SURFACE'}</span></span></header><div class="object-stage" data-stage="${escapeHTML(part.id)}"><div class="stage-glow"></div><div class="stage-mount"></div></div><footer class="card-bottom"><div><h2>${escapeHTML(part.name)}<span>${escapeHTML(part.tagline)}</span></h2><p>${escapeHTML(part.description)}</p></div><button type="button" class="open-part" data-open="${escapeHTML(part.id)}" aria-label="${escapeHTML(part.name)} のコードと詳細を開く">${icon('code')}<span>CODE</span>${icon('arrow')}</button></footer></article>`;
+        return `<article class="object-card ${part.tags.includes('GLASS LAB') ? 'glass-series ' : ''}${workbench ? 'workbench-card workbench-'+part.category : signature ? 'signature-card signature-'+part.category : foundation ? 'foundation-card foundation-'+part.category : toggle ? 'sop-surface sop-original-surface toggle-card' : scroll ? 'scroll-card' : dropdown ? 'dropdown-card' : accordion ? 'accordion-card' : textbox ? 'textbox-card' : action ? 'action-card' : link ? 'link-card' : tabs ? 'tabs-card' : segments ? 'segments-card' : checkbox ? 'checkbox-card' : popup ? 'popup-card' : ornament ? 'ornament-card' : 'block-card'}" data-part="${escapeHTML(part.id)}" data-design="${part.designType}" style="--sop-accent:${part.accent};--accent:${part.accent}"><header class="card-top"><span class="object-no mono">${String(part.order).padStart(2, '0')} /</span><span class="design-badge design-${part.designType}" title="${part.designType === 'A' ? '表現重視' : '実用重視'}">${part.designType}</span><span class="object-type mono">${part.tags.includes('KINETIC') ? 'KINETIC / ' : ''}${escapeHTML(part.material)}</span><span class="state-readout mono" aria-hidden="true"><i></i><span class="state-word">${toggle ? (state.get(part.id) ? 'ON' : 'OFF') : scroll ? 'SCROLL' : dropdown ? 'SELECT' : accordion ? 'EXPAND' : textbox ? 'WRITE' : action ? 'READY' : link ? 'LINK' : tabs ? 'EXPLORE' : segments ? 'CHOOSE' : checkbox ? 'CHECK' : popup ? 'OPEN' : workbench ? 'TRY IT' : signature ? 'TRY IT' : foundation ? 'TRY IT' : ornament ? 'AMBIENT' : 'SURFACE'}</span></span></header><div class="object-stage" data-stage="${escapeHTML(part.id)}"><div class="stage-glow"></div><div class="stage-mount"></div></div><footer class="card-bottom"><div><h2>${escapeHTML(part.name)}<span>${escapeHTML(part.tagline)}</span></h2><p>${escapeHTML(part.description)}</p></div><button type="button" class="open-part" data-open="${escapeHTML(part.id)}" aria-label="${escapeHTML(part.name)} のコードと詳細を開く">${icon('code')}<span>CODE</span>${icon('arrow')}</button></footer></article>`;
     }).join('') : `<div class="empty-state"><span class="empty-symbol">∅</span><h2>まだ、そのパーツはありません。</h2><p>カテゴリやデザインの方向性を変えてみてください。</p><button type="button" class="small-button" id="clear-empty">すべてのパーツを表示</button></div>`;
     if (append) grid.insertAdjacentHTML('beforeend', cardsHTML); else grid.innerHTML = cardsHTML;
     for (const part of visible) {
@@ -154,6 +158,7 @@ async function renderGallery(append = false) {
         const surface = part.category === 'toggles' ? createSurfaceController(card) : undefined;
         const demo = part.category === 'buttons' || part.category === 'links' ? actionHelper!.mountActionDemo(root,part,controller,card,text=>required('.state-word',card).textContent=text) : undefined;
         rendered.push({ part, controller, card, surface, cleanup:part.workbench ? workbenchHelper!.mountWorkbenchSample(root,part,controller) : part.signature ? signatureHelper!.mountSignatureSample(root,part,controller) : part.foundation ? foundationHelper!.mountFoundationSample(root,part,controller) : part.category==='popups'?popupHelper!.mountPopupSample(root,part):demo?.destroy });
+        if (part.tags.includes('GLASS LAB')) { const entry=rendered[rendered.length-1], prior=entry.cleanup, clean=glassHelper!.glassScene(mount,root); entry.cleanup=()=>{prior?.();clean();}; }
         if (part.category === 'checkboxes') {
             const sync=()=>{required('.state-word',card).textContent=(controller.getIndeterminate?.()?'mixed':controller.getChecked?.()?'checked':'unchecked').toUpperCase();};
             root.addEventListener('sop:checkbox-state',sync); sync();

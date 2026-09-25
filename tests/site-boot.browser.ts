@@ -41,9 +41,9 @@ try {
     await page.unroute('**/src/main.ts', route);
     await page.locator('#site-boot').waitFor({state: 'detached'});
     assert.equal(await page.locator('.page-shell').evaluate(el => getComputedStyle(el).visibility), 'visible');
-    assert.equal(await page.locator('[data-part]').count(), 24);
+    assert.equal(await page.locator('[data-part]').count(), 26);
     if (kind === 'open') await page.screenshot({path: path.join(captures, 'ready.png')});
-    console.log(`PASS ${kind}: Nixie appears before application CSS, then 24 styled cards replace it`);
+    console.log(`PASS ${kind}: Nixie appears before application CSS, then 26 styled cards replace it`);
   }
   await checkCycle('open');
   await checkCycle('reload');

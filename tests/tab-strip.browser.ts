@@ -5,7 +5,7 @@ import {createServer} from 'vite';
 import {ROOT,buildCatalog,FORMATS} from '../scripts/catalog.ts';
 import {getDelivery,buildPrompt,buildUsage,packageContents} from '../src/catalog/delivery.ts';
 import {readBrowserIndex} from '../scripts/vite-catalog.ts';
-const ids=readBrowserIndex().index.filter(p=>p.category==='tabs').map(p=>p.id);
+const ids=readBrowserIndex().index.filter(p=>p.category==='tabs'&&!p.tags.includes('GLASS LAB')).map(p=>p.id);
 const {parts}=buildCatalog(ROOT,ids);
 assert.equal(parts.length,24);
 const rule='overflow-y:hidden';
@@ -42,7 +42,7 @@ try {
     await page.goto(server.resolvedUrls!.local[0]);
     await page.locator('[data-category="tabs"]').click();
     await page.waitForFunction(()=>document.querySelector('#part-grid')?.getAttribute('aria-busy')==='false');
-    assert.equal(await page.locator('[data-part]').count(),24);
+    assert.equal(await page.locator('[data-part]').count(),26);
     for(const part of parts){
       const card=page.locator(`[data-part="${part.id}"]`),list=card.locator('.sop-choice-list');
       const vertical=(await card.locator('.sop-tabs').getAttribute('data-orientation'))==='vertical';

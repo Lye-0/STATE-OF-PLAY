@@ -14,7 +14,7 @@ const parts=(JSON.parse(read('src/catalog/registry.json')) as string[]).map(base
 const targets=parts.filter(p=>p.tags.includes('SEQUENCE'));
 
 test('SEQUENCE updates only 10 expressive paginations and 16 expressive tag components',()=>{
- assert.equal(parts.length,817);assert.equal(targets.length,26);
+ assert.equal(parts.filter(p=>!p.tags.includes('GLASS LAB')).length,817);assert.equal(targets.length,26);
  assert.equal(targets.filter(p=>p.category==='pagination').length,10);
  assert.equal(targets.filter(p=>p.category==='badges').length,16);
  for(const p of targets){assert.equal(p.designType,'A');assert.equal(p.version,'4.9.0');assert.ok(SEQUENCE_MATERIALS.includes(p.foundation.variant));}
