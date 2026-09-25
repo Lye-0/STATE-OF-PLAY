@@ -38,8 +38,8 @@ try {
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 120000 });
   await galleryReady(page);
 
-  await check('entry keeps the first category lazy while listing 825 parts and 37 categories', async () => {
-    assert.equal(await page.locator('#library-total').innerText(), '825');
+  await check('entry keeps the first category lazy while listing 891 parts and 37 categories', async () => {
+    assert.equal(await page.locator('#library-total').innerText(), '891');
     assert.equal(await page.locator('#library-collections').innerText(), '37');
     assert.equal(await page.locator('#part-grid [data-part]').count(), 26);
     assert.equal(await selectedCategory(page), 'toggles');
@@ -54,10 +54,10 @@ try {
       assert.equal(await page.locator('#part-grid .sop-sig').count(), 16, category);
       await page.locator('[data-design-filter="A"]').click();
       await galleryReady(page);
-      assert.equal(await page.locator('#part-grid [data-part]').count(), 10, category + ' A');
+      assert.equal(await page.locator('#part-grid [data-part]').count(), 11, category + ' A');
       await page.locator('[data-design-filter="B"]').click();
       await galleryReady(page);
-      assert.equal(await page.locator('#part-grid [data-part]').count(), 6, category + ' B');
+      assert.equal(await page.locator('#part-grid [data-part]').count(), 7, category + ' B');
       await page.locator('[data-design-filter="all"]').click();
       await galleryReady(page);
     }

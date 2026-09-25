@@ -1,0 +1,62 @@
+{
+  "id": "lgc-loaders-mist",
+  "name": "Frost Spinner",
+  "category": "loaders",
+  "order": 2037,
+  "version": "4.16.0",
+  "tagline": "読みやすく、静かな透明感。",
+  "description": "Liquid Glass風の透過面。通常のloadersとして配置・操作できます。",
+  "material": "LIQUID GLASS / MIST",
+  "motion": "STUDY",
+  "accent": "166,209,235",
+  "designType": "B",
+  "runtime": "CSS animation + visibility pause",
+  "componentName": "LgcLoadersMist",
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "ガラス",
+    "半透明",
+    "loaders",
+    "B"
+  ],
+  "related": [
+    "arc-spinner-loader"
+  ],
+  "props": [
+    [
+      "content",
+      "string",
+      "読み上げもされる処理中メッセージ。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "アニメーションのみ停止。完了を意味しません。"
+    ],
+    [
+      "style / className",
+      "React属性",
+      "--ld-size、--ld-accentなどで外観を調整。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setPaused、updateFoundation、destroy。"
+    ]
+  ],
+  "foundation": {
+    "id": "lgc-loaders-mist",
+    "kind": "loaders",
+    "variant": "arc-spinner",
+    "label": "Frost Spinner",
+    "description": "",
+    "defaultValue": null,
+    "content": "読み込み中…"
+  },
+  "glassSource": {
+    "part": "arc-spinner-loader",
+    "base": "4.15.0",
+    "material": "regular"
+  }
+}

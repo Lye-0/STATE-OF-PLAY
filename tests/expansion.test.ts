@@ -3,7 +3,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import { buildCatalog, ROOT, FORMATS } from '../scripts/catalog.ts';
+import { buildCatalog, ROOT, FORMATS } from './historical-catalog.ts';
 import { dependencies } from '../scripts/source-tools.ts';
 import { getDelivery, buildPrompt, buildManifest } from '../src/catalog/delivery.ts';
 const {parts, bases}=buildCatalog();

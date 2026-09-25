@@ -1,0 +1,61 @@
+{
+  "id": "lgc-colors-mist",
+  "name": "Frost Palette",
+  "category": "colors",
+  "tagline": "読みやすく、静かな透明感。",
+  "description": "Liquid Glass風の透過面。通常のcolorsとして配置・操作できます。",
+  "designType": "B",
+  "motion": "PICK / ADJUST",
+  "order": 2055,
+  "version": "4.16.0",
+  "material": "LIQUID GLASS / MIST",
+  "accent": "166,209,235",
+  "componentName": "LgcColorsMist",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "colors"
+  },
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "ガラス",
+    "半透明",
+    "colors",
+    "B"
+  ],
+  "related": [
+    "paper-color"
+  ],
+  "props": [
+    [
+      "value / defaultValue",
+      "string",
+      "#RGBまたは#RRGGBB。外部へは#RRGGBBの大文字。"
+    ],
+    [
+      "palette",
+      "string[]",
+      "色見本。"
+    ],
+    [
+      "name",
+      "string",
+      "フォームで送信する値の名前。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "入力操作を停止。"
+    ],
+    [
+      "onValueChange",
+      "(hex: string) => void",
+      "有効な色のみ通知。透明度はこの版では扱わない。"
+    ]
+  ],
+  "glassSource": {
+    "part": "paper-color",
+    "base": "4.15.0",
+    "material": "regular"
+  }
+}

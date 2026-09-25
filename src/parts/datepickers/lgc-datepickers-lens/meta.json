@@ -1,0 +1,67 @@
+{
+  "id": "lgc-datepickers-lens",
+  "name": "Lens Calendar",
+  "category": "datepickers",
+  "order": 2040,
+  "version": "4.16.0",
+  "tagline": "光をまとい、いつもの操作へ。",
+  "description": "Liquid Glass風の透過面。通常のdatepickersとして配置・操作できます。",
+  "material": "LIQUID GLASS / LENS",
+  "motion": "RESPONSE",
+  "accent": "166,209,235",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "LgcDatepickersLens",
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "ガラス",
+    "半透明",
+    "datepickers",
+    "A"
+  ],
+  "related": [
+    "essential-calendar"
+  ],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "lgc-datepickers-lens",
+    "kind": "datepickers",
+    "variant": "essential",
+    "label": "次の時間を、予約する。",
+    "description": "",
+    "defaultValue": "2026-09-23",
+    "mode": "date"
+  },
+  "glassSource": {
+    "part": "essential-calendar",
+    "base": "4.15.0",
+    "material": "clear"
+  }
+}

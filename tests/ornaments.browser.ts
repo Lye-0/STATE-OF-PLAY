@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';
-import {ROOT,buildCatalog} from '../scripts/catalog.ts';
+import {ROOT,buildCatalog} from './historical-catalog.ts';
 import {offlineFiles} from './offline-fixture.ts';
 import {galleryReady,selectCategory} from './gallery-ready.ts';
 

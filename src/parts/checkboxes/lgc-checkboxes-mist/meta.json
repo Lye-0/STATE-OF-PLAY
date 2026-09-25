@@ -1,0 +1,63 @@
+{
+  "id": "lgc-checkboxes-mist",
+  "name": "Mist Check",
+  "category": "checkboxes",
+  "order": 2021,
+  "version": "4.16.0",
+  "tagline": "読みやすく、静かな透明感。",
+  "description": "Liquid Glass風の透過面。通常のcheckboxesとして配置・操作できます。",
+  "material": "LIQUID GLASS / MIST",
+  "motion": "CHECK / FADE",
+  "accent": "166,209,235",
+  "designType": "B",
+  "runtime": "Native checkbox + CSS / event-driven state",
+  "componentName": "LgcCheckboxesMist",
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "ガラス",
+    "半透明",
+    "checkboxes",
+    "B"
+  ],
+  "related": [
+    "soft-check"
+  ],
+  "props": [
+    [
+      "label / description / badge",
+      "ReactNode",
+      "ラベル・補足・装飾。ラベル内に別の操作要素を置かない。"
+    ],
+    [
+      "checked / defaultChecked",
+      "boolean",
+      "外部制御 / 非制御の初期選択。"
+    ],
+    [
+      "indeterminate / defaultIndeterminate",
+      "boolean",
+      "一部選択。クリックで通常の選択に戻る。"
+    ],
+    [
+      "onCheckedChange / onIndeterminateChange",
+      "(value: boolean) => void",
+      "アプリの状態と接続。"
+    ],
+    [
+      "name / value / form / required / disabled",
+      "native input attributes",
+      "標準フォームの送信・リセット・無効化。"
+    ],
+    [
+      "ref / onChange / aria-*",
+      "input attributes",
+      "実際のinputへ接続。className/styleだけラベルルートへ。"
+    ]
+  ],
+  "glassSource": {
+    "part": "soft-check",
+    "base": "4.15.0",
+    "material": "regular"
+  }
+}

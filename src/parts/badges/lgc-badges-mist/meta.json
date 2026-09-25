@@ -1,0 +1,94 @@
+{
+  "id": "lgc-badges-mist",
+  "name": "Mist Chips",
+  "category": "badges",
+  "order": 2047,
+  "version": "4.16.0",
+  "tagline": "読みやすく、静かな透明感。",
+  "description": "Liquid Glass風の透過面。通常のbadgesとして配置・操作できます。",
+  "material": "LIQUID GLASS / MIST",
+  "motion": "RESPONSE",
+  "accent": "166,209,235",
+  "designType": "B",
+  "runtime": "Native DOM + CSS",
+  "componentName": "LgcBadgesMist",
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "ガラス",
+    "半透明",
+    "badges",
+    "B"
+  ],
+  "related": [
+    "soft-tags"
+  ],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "lgc-badges-mist",
+    "kind": "badges",
+    "variant": "soft",
+    "label": "小さな情報に、個性を。",
+    "description": "",
+    "defaultValue": [
+      "ready"
+    ],
+    "selectable": false,
+    "removable": false,
+    "items": [
+      {
+        "value": "design",
+        "label": "Design",
+        "badge": "8",
+        "icon": "spark"
+      },
+      {
+        "value": "motion",
+        "label": "Motion",
+        "badge": "4",
+        "icon": "clock"
+      },
+      {
+        "value": "ready",
+        "label": "Ready",
+        "icon": "check"
+      },
+      {
+        "value": "review",
+        "label": "Review",
+        "icon": "info"
+      }
+    ]
+  },
+  "glassSource": {
+    "part": "soft-tags",
+    "base": "4.15.0",
+    "material": "regular"
+  }
+}

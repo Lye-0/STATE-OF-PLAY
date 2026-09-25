@@ -1,5 +1,6 @@
+import {historicalBases} from './historical-catalog.ts';
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';
-import {ROOT,buildCatalog} from '../scripts/catalog.ts';
+import {ROOT,buildCatalog} from './historical-catalog.ts';
 import {dependencies,transpile} from '../scripts/source-tools.ts';
 import {normalizeHex,hexToRGB,rgbToHex,rgbToHSV,hsvToRGB,readableInk} from '../src/shared/signature/color-model.ts';
 import {uniqueItems,safeURL,escape,integer} from '../src/shared/signature/core.ts';
@@ -10,7 +11,7 @@ import {skeletonMarkup} from '../src/shared/signature/skeleton.ts';
 import {timelineMarkup} from '../src/shared/signature/timeline.ts';
 import {wizardMarkup} from '../src/shared/signature/wizard.ts';
 const read=(p:string)=>fs.readFileSync(path.join(ROOT,p),'utf8'),exists=(p:string)=>fs.existsSync(path.join(ROOT,p));
-const bases=(JSON.parse(read('src/catalog/registry.json')) as string[]).filter(p=>/\/(avatars|ratings|colors|skeletons|timelines|wizards)\//.test(p));
+const bases=historicalBases().filter(p=>/\/(avatars|ratings|colors|skeletons|timelines|wizards)\//.test(p));
 const parts=bases.map(base=>({base,...JSON.parse(read(base+'/meta.json'))}));
 test('six categories have sixteen distinct parts, ten expressive and six restrained each',()=>{assert.equal(parts.length,96);for(const category of ['avatars','ratings','colors','skeletons','timelines','wizards']){const group=parts.filter(p=>p.category===category);assert.equal(group.length,16);assert.equal(group.filter(p=>p.designType==='A').length,10);assert.equal(new Set(group.map(p=>read(p.base+'/styles.css'))).size,16);}});
 test('hex values are normalized, invalid and alpha inputs are explicitly rejected',()=>{assert.equal(normalizeHex(' #aBc '),'#AABBCC');assert.equal(normalizeHex('ff0055'),'#FF0055');for(const v of ['red','#12345','#12345678','<script>',''])assert.equal(normalizeHex(v),null);});

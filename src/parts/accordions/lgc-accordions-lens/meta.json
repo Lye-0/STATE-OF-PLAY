@@ -1,0 +1,63 @@
+{
+  "id": "lgc-accordions-lens",
+  "name": "Laminated Accordion",
+  "category": "accordions",
+  "order": 2012,
+  "version": "4.16.0",
+  "tagline": "光をまとい、いつもの操作へ。",
+  "description": "Liquid Glass風の透過面。通常のaccordionsとして配置・操作できます。",
+  "material": "LIQUID GLASS / LENS",
+  "motion": "UNFOLD / CONTENT",
+  "accent": "166,209,235",
+  "designType": "A",
+  "runtime": "CSS grid + disclosure events",
+  "componentName": "LgcAccordionsLens",
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "ガラス",
+    "半透明",
+    "accordions",
+    "A"
+  ],
+  "related": [
+    "faq-accordion"
+  ],
+  "props": [
+    [
+      "items",
+      "AccordionItem[]",
+      "value・title・subtitle・badge・content・disabledを指定。contentはReactNode。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "展開する項目の値。expandedは外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(values: string[]) => void",
+      "開閉の要求を受け取ります。"
+    ],
+    [
+      "multiple",
+      "boolean",
+      "trueなら複数の項目を同時に開けます。"
+    ],
+    [
+      "collapsible",
+      "boolean",
+      "falseなら最後の項目を操作で閉じません。"
+    ],
+    [
+      "disabled / headingLevel",
+      "boolean / 2…6",
+      "操作の無効化と、見出しの深さを指定。"
+    ]
+  ],
+  "glassSource": {
+    "part": "faq-accordion",
+    "base": "4.15.0",
+    "material": "clear"
+  }
+}

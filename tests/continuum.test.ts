@@ -1,12 +1,13 @@
+import {historicalBases} from './historical-catalog.ts';
 /** Author-source, native semantics and delivery contracts for v4.8.0. */
 import fs from 'node:fs';import path from 'node:path';import test from 'node:test';import assert from 'node:assert/strict';
-import {ROOT} from '../scripts/catalog.ts';import {dependencies} from '../scripts/source-tools.ts';
+import {ROOT} from './historical-catalog.ts';import {dependencies} from '../scripts/source-tools.ts';
 import {progressGeometry,intakeGeometry,MATERIALS,materialOf} from '../src/shared/foundation/continuum/geometry.ts';
 import {renderProgress,progressFraction,progressRange} from '../src/shared/foundation/continuum/progress.ts';
 import {renderUpload} from '../src/shared/foundation/continuum/upload.ts';import {renderDate} from '../src/shared/foundation/continuum/date.ts';
 import {renderLoader,loaderArtwork,LOADER_VARIANTS} from '../src/shared/foundation/continuum/loader.ts';
 const read=(p:string)=>fs.readFileSync(path.join(ROOT,p),'utf8'),exists=(p:string)=>fs.existsSync(path.join(ROOT,p));
-const parts=(JSON.parse(read('src/catalog/registry.json')) as string[]).map(base=>({...JSON.parse(read(base+'/meta.json')),base}));
+const parts=historicalBases().map(base=>({...JSON.parse(read(base+'/meta.json')),base}));
 const edited=parts.filter(p=>p.tags.includes('CONTINUUM')&&p.category!=='loaders'),added=parts.filter(p=>p.tags.includes('MOTION STUDIES'));
 test('CONTINUUM revises 42 A parts, retains old loaders and adds 8 A + 8 B loaders',()=>{
  assert.equal(parts.filter(p=>!p.tags.includes('GLASS LAB')).length,817);assert.equal(new Set(parts.map(p=>p.id)).size,parts.length);assert.equal(new Set(parts.map(p=>p.category)).size,37);

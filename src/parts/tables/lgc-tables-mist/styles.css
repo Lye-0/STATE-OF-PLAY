@@ -1,0 +1,28 @@
+@import "../../../shared/liquid-glass/collection.css";
+@import "../../../shared/workbench/base.css";
+/* Mist Table: ソート、選択、固定列を読みやすくまとめた汎用のデータテーブル。 */
+.sop-wb.sop-lgc-tables-mist {--wb-bg:#f3f6f3;--wb-surface:#e3e9e4;--wb-ink:#2e413b;--wb-muted:#5e756b;--wb-accent:#537967;--wb-line:#8aa09366;color-scheme:light;}
+.sop-wb.sop-lgc-tables-mist .wb-data-frame {border:0;box-shadow:none;background:#fafaf7}
+.sop-wb.sop-lgc-tables-mist .wb-data-heading h3 {font:23px Arial,sans-serif}
+.sop-wb.sop-lgc-tables-mist .wb-data-frame th {background:#f2f3ee}
+.sop-wb.sop-lgc-tables-mist .wb-data-frame td {background:#fafaf7;padding-block:18px}
+.sop-wb.sop-lgc-tables-mist .wb-table-search {border-radius:5px}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-lgc-tables-mist *,.sop-wb.sop-lgc-tables-mist *::before,.sop-wb.sop-lgc-tables-mist *::after{animation:none!important;transition:none!important;}}
+
+/* Liquid Glass material, independent of gallery presentation. */
+.lgc-root.sop-lgc-tables-mist{
+ --ff-base:transparent;--ff-panel:var(--lgc-fill);--ff-line:var(--lgc-line);--ff-ink:var(--lgc-ink);--ff-muted:var(--lgc-muted);--ff-accent:var(--lgc-accent);--ff-accent2:var(--lgc-accent);--ff-radius:var(--lgc-radius);
+ --field-bg:var(--lgc-fill);--field-ink:var(--lgc-ink);--field-muted:var(--lgc-muted);--field-accent:var(--lgc-accent);--field-edge:var(--lgc-line);--field-radius:var(--lgc-radius);
+ --choice-ink:var(--lgc-ink);--choice-muted:var(--lgc-muted);--choice-accent:var(--lgc-accent);--choice-base:var(--lgc-fill);--choice-line:var(--lgc-line);--choice-radius:var(--lgc-radius);--choice-marker:var(--lgc-selection);--choice-on:var(--lgc-ink);
+ --cb-bg:transparent;--cb-box:var(--lgc-fill);--cb-ink:var(--lgc-ink);--cb-muted:var(--lgc-muted);--cb-accent:var(--lgc-accent);--cb-line:var(--lgc-line);
+ --pp-bg:var(--lgc-panel);--pp-ink:var(--lgc-ink);--pp-muted:var(--lgc-muted);--pp-accent:var(--lgc-accent);--pp-line:var(--lgc-line);--pp-wash:#c9e5ef14;--pp-radius:var(--lgc-radius);
+ --sg-bg:var(--lgc-fill);--sg-ink:var(--lgc-ink);--sg-muted:var(--lgc-muted);--sg-line:var(--lgc-line);--sg-a:var(--lgc-accent);--sg-soft:var(--lgc-selection);--sg-radius:var(--lgc-radius);
+ --wb-bg:var(--lgc-fill);--wb-surface:var(--lgc-panel);--wb-ink:var(--lgc-ink);--wb-muted:var(--lgc-muted);--wb-accent:var(--lgc-accent);--wb-line:var(--lgc-line);--wb-radius:var(--lgc-radius);
+ --lgc-fill:rgba(29,48,65,.65);--lgc-panel:rgba(22,42,58,.94);--lgc-radius:13px;color:var(--lgc-ink);background:transparent;max-width:100%;}
+.lgc-root.sop-lgc-tables-mist .wb-data-heading,
+.lgc-root.sop-lgc-tables-mist .wb-data-toolbar,
+.lgc-root.sop-lgc-tables-mist .wb-data-footer{background:radial-gradient(ellipse at 18% 0%,#e9f8ff30,transparent 60%),var(--lgc-fill);border:1px solid var(--lgc-line);box-shadow:inset 0 1px 1px #fff8,inset 0 -1px 1px #b6d9ef24,0 7px 22px #06182929;backdrop-filter:blur(var(--lgc-blur)) saturate(1.24);-webkit-backdrop-filter:blur(var(--lgc-blur)) saturate(1.24);color:var(--lgc-ink);border-radius:var(--lgc-radius);transition:background .24s,border-color .24s,box-shadow .24s;}
+.lgc-root.sop-lgc-tables-mist .wb-data-frame{background:rgba(24,42,58,.92);border:1px solid var(--lgc-line);border-radius:var(--lgc-radius);overflow:hidden;}.lgc-root.sop-lgc-tables-mist[data-lg-appearance="light"] .wb-data-frame{background:rgba(244,249,255,.96);}
+@media(forced-colors:active){.lgc-root.sop-lgc-tables-mist .wb-data-heading,
+.lgc-root.sop-lgc-tables-mist .wb-data-toolbar,
+.lgc-root.sop-lgc-tables-mist .wb-data-footer{background:Canvas;color:CanvasText;border:1px solid CanvasText;box-shadow:none;backdrop-filter:none;}}

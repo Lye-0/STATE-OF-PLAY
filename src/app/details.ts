@@ -1,4 +1,4 @@
-import {mountGlassControls} from './liquid-glass-preview';
+import {glassScene,isGlassPart} from './liquid-glass-preview';
 import {mountWorkbenchControls} from './workbench-preview';
 import {mountSignatureControls} from './signature-preview';
 import {mountFoundationControls} from './foundation-preview';
@@ -241,23 +241,21 @@ export function createDetails(parts: PartSummary[], callbacks: {onActive: (activ
                 dialog.querySelectorAll<HTMLButtonElement>('[data-state],#preview-loop,#reset-preview').forEach(b => b.disabled = disabled);
             });
         }
-        const setBackground = (selectedScene?: string) => {
-            if(selectedScene) background=selectedScene==='paper'?'light':selectedScene==='ink'?'dark':'studio';
-            const scene=selectedScene??(background==='light'?'paper':background==='dark'?'ink':'coast');
+        const setBackground = () => {
+            const scene=background==='light'?'paper':background==='dark'?'ink':'coast';
             const view = required('.live-preview', dialog);
             view.classList.remove('bg-studio', 'bg-dark', 'bg-light');
-            view.classList.add('bg-' + (part.tags.includes('GLASS LAB') ? 'studio' : background));
-            dialog.querySelectorAll<HTMLButtonElement>('[data-bg]').forEach(b => b.setAttribute('aria-pressed', String(scene!=='grid'&&b.dataset.bg === background)));
-            if(part.tags.includes('GLASS LAB')){
-                root.parentElement!.dataset.lgScene=scene;
-                const sceneSelect=dialog.querySelector<HTMLSelectElement>('[data-glass-scene]');if(sceneSelect)sceneSelect.value=scene;
+            view.classList.add('bg-' + (isGlassPart(part) ? 'studio' : background));
+            dialog.querySelectorAll<HTMLButtonElement>('[data-bg]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.bg === background)));
+            if(isGlassPart(part)){
+                stage.dataset.lgScene=scene;
                 const appearance=scene==='paper'?'light':'dark';controller?.updateGlass?.({appearance});
-                const appearanceSelect=dialog.querySelector<HTMLSelectElement>('[data-glass-setting="appearance"]');if(appearanceSelect)appearanceSelect.value=appearance;
+                root.dataset.lgAppearance=appearance;
             }
         };
         dialog.querySelectorAll<HTMLButtonElement>('[data-bg]').forEach(b => b.addEventListener('click', () => { background = b.dataset.bg ?? 'studio'; setBackground(); }));
         setBackground();
-        if(part.tags.includes('GLASS LAB') && controller){const prior=cleanupAction,cleanup=mountGlassControls(dialog,root,controller,setBackground);cleanupAction=()=>{prior?.();cleanup();};}
+        if(isGlassPart(part)){const prior=cleanupAction,cleanup=glassScene(stage,root);cleanupAction=()=>{prior?.();cleanup();};}
         drawMain();
         required('.close-detail', dialog).focus({ preventScroll: true });
     }

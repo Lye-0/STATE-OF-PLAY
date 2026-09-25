@@ -1,0 +1,63 @@
+{
+  "id": "lgc-scrollbars-mist",
+  "name": "Mist Rail",
+  "category": "scrollbars",
+  "order": 2011,
+  "version": "4.16.0",
+  "tagline": "読みやすく、静かな透明感。",
+  "description": "Liquid Glass風の透過面。通常のscrollbarsとして配置・操作できます。",
+  "material": "LIQUID GLASS / MIST",
+  "motion": "SCROLL / DRAG",
+  "accent": "166,209,235",
+  "designType": "B",
+  "runtime": "Native scroll + event-driven DOM",
+  "componentName": "LgcScrollbarsMist",
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "ガラス",
+    "半透明",
+    "scrollbars",
+    "B"
+  ],
+  "related": [
+    "soft-scroll"
+  ],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "スクロールする中身。展示用コンテンツは含まれません。"
+    ],
+    [
+      "orientation",
+      "'vertical' | 'horizontal'",
+      "縦または横スクロール。初期値はvertical。"
+    ],
+    [
+      "viewportLabel",
+      "string",
+      "内容の領域に付ける読み上げ用ラベル。"
+    ],
+    [
+      "scrollbarLabel",
+      "string",
+      "スクロールバーの読み上げ用ラベル。"
+    ],
+    [
+      "onProgressChange",
+      "(progress: number) => void",
+      "スクロール位置を0〜1で通知します。"
+    ],
+    [
+      "className / style",
+      "HTMLAttributes",
+      "高さはstyleのheightまたは--sop-scroll-heightで調整。横幅は親に合わせます。"
+    ]
+  ],
+  "glassSource": {
+    "part": "soft-scroll",
+    "base": "4.15.0",
+    "material": "regular"
+  }
+}

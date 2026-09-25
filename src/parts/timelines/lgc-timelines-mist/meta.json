@@ -1,0 +1,61 @@
+{
+  "id": "lgc-timelines-mist",
+  "name": "Mist Timeline",
+  "category": "timelines",
+  "tagline": "読みやすく、静かな透明感。",
+  "description": "Liquid Glass風の透過面。通常のtimelinesとして配置・操作できます。",
+  "designType": "B",
+  "motion": "READ / EXPAND",
+  "order": 2059,
+  "version": "4.16.0",
+  "material": "LIQUID GLASS / MIST",
+  "accent": "166,209,235",
+  "componentName": "LgcTimelinesMist",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "timelines"
+  },
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "ガラス",
+    "半透明",
+    "timelines",
+    "B"
+  ],
+  "related": [
+    "card-timeline"
+  ],
+  "props": [
+    [
+      "items",
+      "TimelineItem[]",
+      "id・title・description・date・dateTime・status・hrefなど。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "詳細を開くID。expandedで外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(ids: string[]) => void",
+      "開閉したIDを通知。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "詳細の開閉を無効にする。"
+    ],
+    [
+      "label",
+      "string",
+      "履歴全体の名前。"
+    ]
+  ],
+  "glassSource": {
+    "part": "card-timeline",
+    "base": "4.15.0",
+    "material": "regular"
+  }
+}

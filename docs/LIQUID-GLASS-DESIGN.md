@@ -1,5 +1,7 @@
 # LIQUID GLASS — 設計書
 
+この文書はv4.15.0で追加した最初の8作品の設計記録です。v4.16.0の全37カテゴリへの展開は [GLASS-COLLECTION.md](GLASS-COLLECTION.md) を参照してください。
+
 対象: STATE OF PLAY v4.15.0 / 最初の4カテゴリ、8コンポーネント。
 
 ## 1. 目標と境界

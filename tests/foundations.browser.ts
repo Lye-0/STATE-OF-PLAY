@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {createRequire} from 'node:module';
 import type {Browser,Page} from 'playwright';
-import {buildCatalog,ROOT} from '../scripts/catalog.ts';
+import {buildCatalog,ROOT} from './historical-catalog.ts';
 import {offlineFiles,testBundle} from './offline-fixture.ts';
 import {selectCategory} from './gallery-ready.ts';
 import {getDelivery,buildPrompt} from '../src/catalog/delivery.ts';
@@ -27,7 +27,7 @@ try{
  const context=await browser.newContext({viewport:{width:1440,height:1100},acceptDownloads:true});const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));page.setDefaultTimeout(20000);await page.emulateMedia({reducedMotion:'reduce'});
  if(offline){const scoped={...data,parts,bases:data.bases.filter(b=>parts.some(p=>b.endsWith('/'+p.id)))},fixture=offlineFiles(scoped);await install(page,fixture.get('/index.html')!,fixture.get('/test-app.js')!,fixture.get('/test-styles.css')!,true);}else await page.goto(url);
  await run(`${parts.length} foundation components: categories, exact A/B counts and accessible category jump`,async()=>{
-  for(const category of [...new Set(parts.map(p=>p.category))]){await selectCategory(page,category);const group=parts.filter(p=>p.category===category);assert.equal(await page.locator('[data-part]').count(),group.length);await page.locator('[data-design-filter="A"]').click();assert.equal(await page.locator('[data-part]').count(),group.filter(p=>p.designType==='A').length);await page.locator('[data-design-filter="B"]').click();assert.equal(await page.locator('[data-part]').count(),group.filter(p=>p.designType==='B').length);await page.locator('[data-design-filter="all"]').click();}
+  for(const category of [...new Set(parts.map(p=>p.category))]){await selectCategory(page,category);const group=parts.filter(p=>p.category===category),extra=offline?0:1;assert.equal(await page.locator('[data-part]').count(),group.length+extra*2);await page.locator('[data-design-filter="A"]').click();assert.equal(await page.locator('[data-part]').count(),group.filter(p=>p.designType==='A').length+extra);await page.locator('[data-design-filter="B"]').click();assert.equal(await page.locator('[data-part]').count(),group.filter(p=>p.designType==='B').length+extra);await page.locator('[data-design-filter="all"]').click();}
  });
  await run('Slider inspector: bounds/unit/step update, native keyboard, format/layout preserve editing state',async()=>{
   await selectCategory(page,'sliders');await page.locator('[data-open="aurora-range"]').click();const d=page.locator('#part-details');

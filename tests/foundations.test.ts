@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import {buildCatalog,ROOT,FORMATS} from '../scripts/catalog.ts';
+import {buildCatalog,ROOT,FORMATS} from './historical-catalog.ts';
 import {getDelivery,buildPrompt,packageContents} from '../src/catalog/delivery.ts';
 import {packCatalog,unpackCatalog} from '../src/catalog/transport.ts';
 import {clampStep,numericValue,choiceValue,escape} from '../src/shared/foundation/core.ts';

@@ -1,0 +1,61 @@
+{
+  "id": "lgc-colors-lens",
+  "name": "Spectrum Glass",
+  "category": "colors",
+  "tagline": "光をまとい、いつもの操作へ。",
+  "description": "Liquid Glass風の透過面。通常のcolorsとして配置・操作できます。",
+  "designType": "A",
+  "motion": "PICK / ADJUST",
+  "order": 2054,
+  "version": "4.16.0",
+  "material": "LIQUID GLASS / LENS",
+  "accent": "166,209,235",
+  "componentName": "LgcColorsLens",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "colors"
+  },
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "ガラス",
+    "半透明",
+    "colors",
+    "A"
+  ],
+  "related": [
+    "classic-color"
+  ],
+  "props": [
+    [
+      "value / defaultValue",
+      "string",
+      "#RGBまたは#RRGGBB。外部へは#RRGGBBの大文字。"
+    ],
+    [
+      "palette",
+      "string[]",
+      "色見本。"
+    ],
+    [
+      "name",
+      "string",
+      "フォームで送信する値の名前。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "入力操作を停止。"
+    ],
+    [
+      "onValueChange",
+      "(hex: string) => void",
+      "有効な色のみ通知。透明度はこの版では扱わない。"
+    ]
+  ],
+  "glassSource": {
+    "part": "classic-color",
+    "base": "4.15.0",
+    "material": "clear"
+  }
+}

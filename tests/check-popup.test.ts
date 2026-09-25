@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import {buildCatalog,ROOT,FORMATS} from '../scripts/catalog.ts';
+import {buildCatalog,ROOT,FORMATS} from './historical-catalog.ts';
 import {getDelivery,buildPrompt} from '../src/catalog/delivery.ts';
 const catalog=buildCatalog(), parts=catalog.parts.filter(p=>p.category==='checkboxes'||p.category==='popups');
 const source=(file:string)=>fs.readFileSync(path.join(ROOT,file),'utf8');

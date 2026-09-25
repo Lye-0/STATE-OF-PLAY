@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import {scrollMetrics} from '../src/shared/scroll-metrics.ts';
-import {buildCatalog, ROOT, FORMATS} from '../scripts/catalog.ts';
+import {buildCatalog, ROOT, FORMATS} from './historical-catalog.ts';
 import {getDelivery, packageContents, buildPrompt} from '../src/catalog/delivery.ts';
 import {sourceReferences, isLocalReference, resolveLocal} from '../scripts/source-tools.ts';
 const catalog=buildCatalog();

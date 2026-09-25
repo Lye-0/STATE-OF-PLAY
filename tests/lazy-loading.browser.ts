@@ -48,8 +48,8 @@ try {
    const toggle=p.locator('[data-part="chrome"] [role="switch"]');await toggle.click();const checked=await toggle.getAttribute('aria-checked');
    await p.locator('#load-more').click();await ready(p);assert.equal(await p.locator('[data-part]').count(),48);assert.equal(await toggle.getAttribute('aria-checked'),checked);
    assert.equal(await p.locator('#search-parts,#search-clear').count(),0);
-   await category(p,'progress');assert.equal(await p.locator('[data-part]').count(),24);
-   await category(p,'datepickers');assert.equal(await p.locator('[data-part]').count(),20);
+   await category(p,'progress');assert.equal(await p.locator('[data-part]').count(),index.filter(x=>x.category==='progress').length);
+   await category(p,'datepickers');assert.equal(await p.locator('[data-part]').count(),index.filter(x=>x.category==='datepickers').length);
    await category(p,'all');assert.equal(await p.locator('[data-part]').count(),24);
    results.push(mode+': category cache, all pagination, retained controls and category selection');
    // Source download happens on detail open and round-trips exactly to the canonical generator.
@@ -132,7 +132,7 @@ try {
    let rejectCategory=true;await categoryFailure.route(categoryPattern,async route=>{if(rejectCategory){rejectCategory=false;await route.abort();}else await route.continue();});
    await selectCategory(categoryFailure,'numbers',false);
    await Promise.all([categoryFailure.waitForURL(/category=numbers/),categoryFailure.getByRole('button',{name:'再読み込み',exact:true}).click()]);await ready(categoryFailure);
-   assert.equal(await categoryFailure.locator('[data-part]').count(),20);await categoryFailure.close();
+   assert.equal(await categoryFailure.locator('[data-part]').count(),index.filter(x=>x.category==='numbers').length);await categoryFailure.close();
    results.push(mode+': failed category import reloads with selection retained');
   } finally {await close();}
  }

@@ -1,0 +1,61 @@
+{
+  "id": "lgc-skeletons-mist",
+  "name": "Mist Skeleton",
+  "category": "skeletons",
+  "tagline": "読みやすく、静かな透明感。",
+  "description": "Liquid Glass風の透過面。通常のskeletonsとして配置・操作できます。",
+  "designType": "B",
+  "motion": "LOAD / PAUSE",
+  "order": 2057,
+  "version": "4.16.0",
+  "material": "LIQUID GLASS / MIST",
+  "accent": "166,209,235",
+  "componentName": "LgcSkeletonsMist",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "skeletons"
+  },
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "ガラス",
+    "半透明",
+    "skeletons",
+    "B"
+  ],
+  "related": [
+    "pulse-skeleton"
+  ],
+  "props": [
+    [
+      "loading",
+      "boolean",
+      "実際の読み込み状態。自動で成功にはしない。"
+    ],
+    [
+      "rows",
+      "number",
+      "2〜8行のプレースホルダー。"
+    ],
+    [
+      "label",
+      "string",
+      "読み上げ用の待機ラベル。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "動きを一時停止。"
+    ],
+    [
+      "children",
+      "ReactNode",
+      "読み込み後に表示する実際の内容。"
+    ]
+  ],
+  "glassSource": {
+    "part": "pulse-skeleton",
+    "base": "4.15.0",
+    "material": "regular"
+  }
+}

@@ -123,11 +123,13 @@ jobs:
       - name: Liquid Glass components and interaction states
         run: npm run test:liquid-glass
       - name: Liquid Glass gallery and code delivery
-        run: npm run test:liquid-glass:gallery
+        run: npm run test:glass-collection:gallery
       - name: Liquid Glass portable JavaScript exports
         run: npm run test:liquid-glass:exports
       - name: Liquid Glass React StrictMode and hydration
         run: npm run test:liquid-glass:react
+      - name: Glass collection React StrictMode and hydration
+        run: npm run test:glass-collection:react
       - name: Build full source archive
         run: npm run package
       - name: Save reports on failure

@@ -1,11 +1,12 @@
+import {historicalBases} from './historical-catalog.ts';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';import path from 'node:path';
-import {ROOT} from '../scripts/catalog.ts';
+import {ROOT} from './historical-catalog.ts';
 import {dependencies,transpile} from '../scripts/source-tools.ts';
 const read=(file:string)=>fs.readFileSync(path.join(ROOT,file),'utf8');
 const exists=(file:string)=>fs.existsSync(path.join(ROOT,file));
-const parts=(JSON.parse(read('src/catalog/registry.json')) as string[]).map(base=>({base,...JSON.parse(read(base+'/meta.json'))}));
+const parts=historicalBases().map(base=>({base,...JSON.parse(read(base+'/meta.json'))}));
 const acc=parts.filter(p=>p.tags.includes('UNFOLD')),fields=parts.filter(p=>p.tags.includes('RESPONSIVE'));
 test('selective revision: sixteen A accordions and six A text fields, no deleted or new IDs',()=>{
  assert.equal(parts.filter(p=>!p.tags.includes('GLASS LAB')).length,817);assert.equal(acc.length,16);assert.equal(fields.length,6);

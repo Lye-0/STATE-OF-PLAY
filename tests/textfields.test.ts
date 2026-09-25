@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import {buildCatalog,ROOT,FORMATS} from '../scripts/catalog.ts';
+import {buildCatalog,ROOT,FORMATS} from './historical-catalog.ts';
 import {getDelivery,buildPrompt,buildUsage} from '../src/catalog/delivery.ts';
 const {parts}=buildCatalog(),fields=parts.filter(p=>p.category==='textboxes');
 test('24 actual text fields join the five previous collections, with A16 and B8',()=>{

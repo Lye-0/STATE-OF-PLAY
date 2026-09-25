@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import {buildCatalog,ROOT,FORMATS} from '../scripts/catalog.ts';
+import {buildCatalog,ROOT,FORMATS} from './historical-catalog.ts';
 import {getDelivery,buildPrompt,buildUsage,packageContents} from '../src/catalog/delivery.ts';
 const {parts}=buildCatalog();
 const additions=parts.filter(p=>(p.category==='dropdowns'||p.category==='accordions')&&!p.tags.includes('KINETIC')&&!p.tags.includes('GLASS LAB'));

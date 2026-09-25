@@ -1,5 +1,7 @@
 # v4.15.0 — Liquid Glass 統合検証
 
+これはv4.15.0の検証記録です。v4.16.0の結果は [GLASS-COLLECTION-VERIFICATION.md](GLASS-COLLECTION-VERIFICATION.md) を参照してください。
+
 ## 統合範囲
 
 トグル、ボタン、タブ、プルダウンにA/B各1種、計8種を追加した。現行リポジトリの817種を維持し、全825種・37カテゴリ。提供差分の基準版には、現在は削除済みのStitch CometとPaper Loaderが含まれ、Hero Asteriskが含まれていなかった。レジストリは置換せず、新作8種だけを追加した。

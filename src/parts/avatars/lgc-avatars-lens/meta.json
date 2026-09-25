@@ -1,0 +1,61 @@
+{
+  "id": "lgc-avatars-lens",
+  "name": "Lens Portraits",
+  "category": "avatars",
+  "tagline": "光をまとい、いつもの操作へ。",
+  "description": "Liquid Glass風の透過面。通常のavatarsとして配置・操作できます。",
+  "designType": "A",
+  "motion": "FOCUS / SELECT",
+  "order": 2050,
+  "version": "4.16.0",
+  "material": "LIQUID GLASS / LENS",
+  "accent": "166,209,235",
+  "componentName": "LgcAvatarsLens",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "avatars"
+  },
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "ガラス",
+    "半透明",
+    "avatars",
+    "A"
+  ],
+  "related": [
+    "circle-profile"
+  ],
+  "props": [
+    [
+      "users",
+      "AvatarUser[]",
+      "id・name・任意のsrc、initials、subtitle、status。名前と在席状態は外部の値。"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "選択するユーザーID。valueを渡すと外部制御。"
+    ],
+    [
+      "interactive",
+      "boolean",
+      "falseで表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(id: string) => void",
+      "クリック時の要求値。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ]
+  ],
+  "glassSource": {
+    "part": "circle-profile",
+    "base": "4.15.0",
+    "material": "clear"
+  }
+}

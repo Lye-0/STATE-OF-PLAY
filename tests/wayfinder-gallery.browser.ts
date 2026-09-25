@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {chromium} from 'playwright';
 import {createServer} from 'vite';
-import {ROOT,buildCatalog,FORMATS} from '../scripts/catalog.ts';
+import {ROOT,buildCatalog,FORMATS} from './historical-catalog.ts';
 import {getDelivery,buildPrompt,packageContents} from '../src/catalog/delivery.ts';
 import {galleryReady,selectCategory} from './gallery-ready.ts';
 
@@ -22,7 +22,7 @@ try{
  for(const[category,count]of [['breadcrumbs',10],['numbers',13]]as const){
   await selectCategory(p,category);
   await p.locator('[data-design-filter="A"]').click();await galleryReady(p);
-  assert.equal(await p.locator('[data-part]').count(),count);
+  assert.equal(await p.locator('[data-part]').count(),count+1);
   assert.ok(await p.locator('[data-part]').first().locator('.sop-wayfinder').count());
   await p.locator('[data-design-filter="all"]').click();await galleryReady(p);
  }

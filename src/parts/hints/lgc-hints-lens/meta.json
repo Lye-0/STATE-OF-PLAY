@@ -1,0 +1,68 @@
+{
+  "id": "lgc-hints-lens",
+  "name": "Lens Hint",
+  "category": "hints",
+  "order": 2032,
+  "version": "4.16.0",
+  "tagline": "光をまとい、いつもの操作へ。",
+  "description": "Liquid Glass風の透過面。通常のhintsとして配置・操作できます。",
+  "material": "LIQUID GLASS / LENS",
+  "motion": "RESPONSE",
+  "accent": "166,209,235",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "LgcHintsLens",
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "ガラス",
+    "半透明",
+    "hints",
+    "A"
+  ],
+  "related": [
+    "essential-popover"
+  ],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "lgc-hints-lens",
+    "kind": "hints",
+    "variant": "essential",
+    "label": "詳しく見る",
+    "description": "",
+    "defaultValue": null,
+    "interactive": true,
+    "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
+  },
+  "glassSource": {
+    "part": "essential-popover",
+    "base": "4.15.0",
+    "material": "clear"
+  }
+}

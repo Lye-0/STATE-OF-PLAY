@@ -1,0 +1,58 @@
+{
+  "id": "lgc-links-mist",
+  "name": "Mist Link",
+  "category": "links",
+  "order": 2017,
+  "version": "4.16.0",
+  "tagline": "読みやすく、静かな透明感。",
+  "description": "Liquid Glass風の透過面。通常のlinksとして配置・操作できます。",
+  "material": "LIQUID GLASS / MIST",
+  "motion": "HOVER / NAVIGATE",
+  "accent": "166,209,235",
+  "designType": "B",
+  "runtime": "Native anchor + CSS only",
+  "componentName": "LgcLinksMist",
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "ガラス",
+    "半透明",
+    "links",
+    "B"
+  ],
+  "related": [
+    "underline-link"
+  ],
+  "props": [
+    [
+      "children / eyebrow / icon",
+      "ReactNode",
+      "表示テキスト・補助見出し・装飾アイコン。"
+    ],
+    [
+      "href",
+      "string (required)",
+      "ページ、ページ内アンカー、mailto等の移動先。"
+    ],
+    [
+      "target / rel / download",
+      "native anchor attributes",
+      "新規タブ、関係性、同一オリジン等のダウンロード指定。"
+    ],
+    [
+      "onClick / ref / aria-current",
+      "native attributes",
+      "標準イベント・ref・現在位置。ネイティブ移動を維持。"
+    ],
+    [
+      "className / style",
+      "native attributes",
+      "利用先での配置。コンポーネントはルーター依存を持ちません。"
+    ]
+  ],
+  "glassSource": {
+    "part": "underline-link",
+    "base": "4.15.0",
+    "material": "regular"
+  }
+}

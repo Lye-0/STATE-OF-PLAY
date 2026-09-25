@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {createRequire} from 'node:module';
 import type {Browser, Page} from 'playwright';
-import {ROOT, buildCatalog} from '../scripts/catalog.ts';
+import {ROOT, buildCatalog} from './historical-catalog.ts';
 import {offlineFiles, testBundle} from './offline-fixture.ts';
 import {scrollSampleHTML} from '../src/catalog/scroll-sample.ts';
 const require=createRequire(import.meta.url);
@@ -34,10 +34,10 @@ try {
  await page.emulateMedia({reducedMotion:'reduce'});
  const card=(id:string)=>page.locator(`[data-part="${id}"]`);
  await run('new category intersects A/B and retains all 48 original parts',async()=>{
-  await galleryReady(page);assert.equal(await page.locator('[data-part]').count(),parts.filter(p=>p.category==='toggles').length);await page.locator('[data-category="scrollbars"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),bars.length);
+  await galleryReady(page);assert.equal(await page.locator('[data-part]').count(),parts.filter(p=>p.category==='toggles').length);await page.locator('[data-category="scrollbars"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),bars.length+2);
   assert.equal(await page.locator('#toggle-controls').isVisible(),false);
-  await page.locator('[data-design-filter="A"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),bars.filter(p=>p.designType==='A').length);
-  await page.locator('[data-design-filter="B"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),bars.filter(p=>p.designType==='B').length);await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);
+  await page.locator('[data-design-filter="A"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),bars.filter(p=>p.designType==='A').length+1);
+  await page.locator('[data-design-filter="B"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),bars.filter(p=>p.designType==='B').length+1);await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);
  });
  await run('all rails use proportional thumbs, real drag, keyboard and stable content movement',async()=>{
   for(const part of bars) {
@@ -137,7 +137,7 @@ try {
   await page.waitForTimeout(2200);const ids=await page.locator('.object-grid .sop-scroll-viewport').evaluateAll(nodes=>nodes.map(n=>n.id));assert.equal(ids.length,new Set(ids).size);assert.ok(ids.every(Boolean));
   const frames=await page.evaluate(()=>(window as unknown as {activeScrollFrames:Set<number>}).activeScrollFrames.size);assert.equal(frames,0);
   for(let i=0;i<3;i++){await page.locator('[data-category="blocks"]').click();await galleryReady(page,true);await page.locator('[data-category="scrollbars"]').click();await galleryReady(page,true);}
-  await page.waitForTimeout(2200);assert.equal(await page.locator('.object-grid .sop-scroll-area').count(),bars.length);
+  await page.waitForTimeout(2200);assert.equal(await page.locator('.object-grid .sop-scroll-area').count(),bars.length+2);
  });
  await page.locator('#collection').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(out,'gallery.png')});
  assert.deepEqual(errors,[]);

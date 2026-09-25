@@ -1,0 +1,61 @@
+{
+  "id": "lgc-navigation-lens",
+  "name": "Floating Navigation",
+  "category": "navigation",
+  "description": "Liquid Glass風の透過面。通常のnavigationとして配置・操作できます。",
+  "designType": "A",
+  "tagline": "光をまとい、いつもの操作へ。",
+  "motion": "ESSENTIAL",
+  "order": 2068,
+  "version": "4.16.0",
+  "material": "LIQUID GLASS / LENS",
+  "accent": "166,209,235",
+  "componentName": "LgcNavigationLens",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "navigation"
+  },
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "ガラス",
+    "半透明",
+    "navigation",
+    "A"
+  ],
+  "related": [
+    "essential-header"
+  ],
+  "props": [
+    [
+      "items",
+      "NavigationItem[]",
+      "ラベル・href・子リンク・アイコン・バッジ。"
+    ],
+    [
+      "layout",
+      "header | sidebar | dock | mobile",
+      "置き場所に合うレイアウトを指定。"
+    ],
+    [
+      "active / onActiveChange",
+      "string / callback",
+      "現在地のID。リンクを移動して外部状態から反映可能。"
+    ],
+    [
+      "onNavigate",
+      "(item, event) => void | false",
+      "通常はネイティブリンク。falseで既定移動を止めルーターへ接続。"
+    ],
+    [
+      "open / onOpenChange",
+      "boolean / callback",
+      "モバイルナビゲーションの表示を制御。"
+    ]
+  ],
+  "glassSource": {
+    "part": "essential-header",
+    "base": "4.15.0",
+    "material": "clear"
+  }
+}

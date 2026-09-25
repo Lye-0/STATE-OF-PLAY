@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {createRequire} from 'node:module';
 import type {Browser,Page} from 'playwright';
-import {ROOT,buildCatalog} from '../scripts/catalog.ts';
+import {ROOT,buildCatalog} from './historical-catalog.ts';
 import {offlineFiles,testBundle} from './offline-fixture.ts';
 import {getDelivery,buildPrompt} from '../src/catalog/delivery.ts';
 import {requireLocalServerUrl} from './vite-url.ts';
@@ -24,7 +24,7 @@ try {
  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
  if(offline){const files=offlineFiles(data);await page.setContent(files.get('/index.html')!.replace(/<script[^>]*>[\s\S]*?<\/script>/g,'').replace(/<link[^>]*>/g,''));await page.addStyleTag({content:files.get('/test-styles.css')!});for(const v of ['prism','jszip'])await page.addScriptTag({content:fs.readFileSync(path.join(ROOT,'public/vendor',v+'.js'),'utf8')});await page.addScriptTag({content:files.get('/test-app.js')!});}else await page.goto(url);
  await run('Collections: 24 buttons and 16 links with both design intentions',async()=>{
-  for(const [category,total,a]of [['buttons',26,17],['links',16,10]]as const){await page.locator(`[data-category="${category}"]`).click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),total);await page.locator('[data-design-filter="A"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),a);await page.locator('[data-design-filter="B"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),total-a);await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);}
+  for(const [category,total,a]of [['buttons',26,17],['links',16,10]]as const){const extra=category==='links'&&!offline?1:0;await page.locator(`[data-category="${category}"]`).click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),total+2*extra);await page.locator('[data-design-filter="A"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),a+extra);await page.locator('[data-design-filter="B"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),total-a+extra);await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);}
  });
  await run('Button demo: mouse, Space, Enter, visible feedback and busy reentry guard',async()=>{
   await page.locator('[data-category="buttons"]').click();await galleryReady(page,true);const button=page.locator('[data-part="helios-button"] .sop-action'),card=page.locator('[data-part="helios-button"]');

@@ -1,0 +1,68 @@
+{
+  "id": "lgc-popups-mist",
+  "name": "Mist Dialog",
+  "category": "popups",
+  "order": 2023,
+  "version": "4.16.0",
+  "tagline": "読みやすく、静かな透明感。",
+  "description": "Liquid Glass風の透過面。通常のpopupsとして配置・操作できます。",
+  "material": "LIQUID GLASS / MIST",
+  "motion": "FADE / FOCUS",
+  "accent": "166,209,235",
+  "designType": "B",
+  "runtime": "Native dialog + CSS / event-driven lifecycle",
+  "componentName": "LgcPopupsMist",
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "ガラス",
+    "半透明",
+    "popups",
+    "B"
+  ],
+  "related": [
+    "paper-dialog"
+  ],
+  "props": [
+    [
+      "title / description / kicker",
+      "string",
+      "見出しと補足。dialogのアクセシブル名はtitleへ関連付け。"
+    ],
+    [
+      "children / footer / triggerLabel",
+      "ReactNode",
+      "本文・操作・開くボタンを用途に合わせて変更。"
+    ],
+    [
+      "open / defaultOpen / onOpenChange",
+      "boolean / callback",
+      "外部制御 / 非制御。閉じる要求を外部で拒否できる。"
+    ],
+    [
+      "onClose",
+      "(reason: string) => void",
+      "閉じ終わった理由を通知。通信・保存処理は含まない。"
+    ],
+    [
+      "closeOnBackdrop / closeOnEscape",
+      "boolean",
+      "背景クリック / Escapeで閉じる。既定true。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "開くボタンを無効化。開いたウィンドウの閉じる操作は残す。"
+    ],
+    [
+      "confirmLabel / cancelLabel",
+      "string",
+      "既定フッターの文言。独自footerも指定可能。"
+    ]
+  ],
+  "glassSource": {
+    "part": "paper-dialog",
+    "base": "4.15.0",
+    "material": "regular"
+  }
+}

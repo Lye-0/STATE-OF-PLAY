@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';
-import {ROOT,buildCatalog} from '../scripts/catalog.ts';import {dependencies,transpile} from '../scripts/source-tools.ts';
+import {ROOT,buildCatalog} from './historical-catalog.ts';import {dependencies,transpile} from '../scripts/source-tools.ts';
 import {advancePresentation} from '../src/shared/presentation-spring.ts';import {rangeGeometry} from '../src/shared/drive-range-art.ts';
 const read=(p:string)=>fs.readFileSync(path.join(ROOT,p),'utf8'),exists=(p:string)=>fs.existsSync(path.join(ROOT,p));
 const parts=JSON.parse(read('docs/TRANSFORM-PARTS.json')) as {id:string;category:string;base:string;component:string;mode:string}[];

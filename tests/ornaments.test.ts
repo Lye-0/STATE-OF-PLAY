@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
-import {ROOT,FORMATS,buildCatalog} from '../scripts/catalog.ts';
+import {ROOT,FORMATS,buildCatalog} from './historical-catalog.ts';
 import {buildPrompt,getDelivery,packageContents} from '../src/catalog/delivery.ts';
 
 const catalogue=buildCatalog();

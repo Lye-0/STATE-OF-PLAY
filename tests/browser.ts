@@ -22,6 +22,7 @@ const layouts=['portable','original'] as const;
 // first A/B design, all toggle interactions, and the current signature ornament.
 const seenBrowserGroups=new Set<string>();
 const browserParts=catalog.parts.filter(part=>{
+ if(part.id.startsWith('lgc-'))return false;
  if((part.category==='toggles'&&!part.tags.includes('GLASS LAB'))||part.id==='hero-asterisk')return true;
  const group=part.category+':'+part.designType;
  if(seenBrowserGroups.has(group))return false;
@@ -99,7 +100,7 @@ try{
     for(const part of expected)assert.equal(await page.locator(`[data-part="${part.id}"]`).getAttribute('data-design'),part.designType);
    }
   }
-  await selectCategory(page,'numbers');assert.equal(await page.locator('[data-part]').count(),20);
+  await selectCategory(page,'numbers');assert.equal(await page.locator('[data-part]').count(),catalog.parts.filter(part=>part.category==='numbers').length);
   assert.equal(await page.locator('[data-category="numbers"]').getAttribute('aria-selected'),'true');
   // Full-list counts were checked above. Keep the ordinary first page mounted
   // for interaction checks; unpausing 825 previews on every dialog close is not representative.

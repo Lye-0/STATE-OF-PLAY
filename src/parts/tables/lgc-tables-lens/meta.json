@@ -1,0 +1,71 @@
+{
+  "id": "lgc-tables-lens",
+  "name": "Glass Ledger Collection",
+  "category": "tables",
+  "description": "Liquid Glass風の透過面。通常のtablesとして配置・操作できます。",
+  "designType": "A",
+  "tagline": "光をまとい、いつもの操作へ。",
+  "motion": "ESSENTIAL",
+  "order": 2070,
+  "version": "4.16.0",
+  "material": "LIQUID GLASS / LENS",
+  "accent": "166,209,235",
+  "componentName": "LgcTablesLens",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "tables"
+  },
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "ガラス",
+    "半透明",
+    "tables",
+    "A"
+  ],
+  "related": [
+    "essential-table"
+  ],
+  "props": [
+    [
+      "rows / columns",
+      "DataRow[] / DataColumn[]",
+      "一意な行IDと列定義。文字・数値・状態・進捗表示。"
+    ],
+    [
+      "sort / onSortChange",
+      "TableSort | null / callback",
+      "列の昇順・降順・元順を切り替え。"
+    ],
+    [
+      "selected / onSelectionChange",
+      "string[] / callback",
+      "選択は行IDで保持。全選択は表示ページの対象行。"
+    ],
+    [
+      "page / pageSize / query",
+      "number / number / string",
+      "ページ送りと検索。manualでサーバー側へ委譲可能。"
+    ],
+    [
+      "resizable / stickyFirst",
+      "boolean",
+      "列幅調整と先頭列固定。列幅は矢印キーでも操作。"
+    ],
+    [
+      "onRowAction",
+      "(action, row) => void",
+      "各行の操作を利用先へ接続。"
+    ],
+    [
+      "loading / error",
+      "boolean / string",
+      "読込中・失敗表示。仮想スクロールやセル編集は含みません。"
+    ]
+  ],
+  "glassSource": {
+    "part": "essential-table",
+    "base": "4.15.0",
+    "material": "clear"
+  }
+}

@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {createRequire} from 'node:module';
 import type {Page,Browser} from 'playwright';
-import {ROOT,buildCatalog} from '../scripts/catalog.ts';
+import {ROOT,buildCatalog} from './historical-catalog.ts';
 import {offlineFiles,testBundle} from './offline-fixture.ts';
 import {getDelivery} from '../src/catalog/delivery.ts';
 import {requireLocalServerUrl} from './vite-url.ts';

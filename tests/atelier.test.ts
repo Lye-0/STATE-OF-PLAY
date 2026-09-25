@@ -1,13 +1,14 @@
+import {historicalBases} from './historical-catalog.ts';
 /** Art-direction regression checks. No test-only dependencies or visual replacements. */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import test from 'node:test';
-import {ROOT} from '../scripts/catalog.ts';
+import {ROOT} from './historical-catalog.ts';
 import {dependencies} from '../scripts/source-tools.ts';
 const read=(p:string)=>fs.readFileSync(path.join(ROOT,p),'utf8');
 const exists=(p:string)=>fs.existsSync(path.join(ROOT,p));
-const parts=(JSON.parse(read('src/catalog/registry.json')) as string[]).map(base=>({base,...JSON.parse(read(base+'/meta.json'))}));
+const parts=historicalBases().map(base=>({base,...JSON.parse(read(base+'/meta.json'))}));
 const expressive=parts.filter(p=>p.foundation&&p.designType==='A'&&p.category!=='loaders');
 const variants=[...new Set<string>(expressive.map(p=>p.foundation.variant))];
 

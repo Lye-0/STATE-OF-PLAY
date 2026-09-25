@@ -1,11 +1,12 @@
+import {historicalBases} from './historical-catalog.ts';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';import path from 'node:path';
-import {ROOT} from '../scripts/catalog.ts';
+import {ROOT} from './historical-catalog.ts';
 import {dependencies,transpile} from '../scripts/source-tools.ts';
 const read=(f:string)=>fs.readFileSync(path.join(ROOT,f),'utf8');
 const exists=(f:string)=>fs.existsSync(path.join(ROOT,f));
-const all=(JSON.parse(read('src/catalog/registry.json')) as string[]).map(base=>({base,...JSON.parse(read(base+'/meta.json'))}));
+const all=historicalBases().map(base=>({base,...JSON.parse(read(base+'/meta.json'))}));
 const added=all.filter(p=>p.tags.includes('KINETIC'));
 test('KINETIC adds 12 rails and 12 menus while retaining all non-KINETIC parts',()=>{
  assert.equal(all.length,825);assert.equal(added.length,24);assert.equal(all.filter(p=>!p.tags.includes('KINETIC')&&!p.tags.includes('MOTION STUDIES')&&!p.tags.includes('GLASS LAB')).length,777);

@@ -1,0 +1,61 @@
+{
+  "id": "lgc-ratings-lens",
+  "name": "Prismatic Rating",
+  "category": "ratings",
+  "tagline": "光をまとい、いつもの操作へ。",
+  "description": "Liquid Glass風の透過面。通常のratingsとして配置・操作できます。",
+  "designType": "A",
+  "motion": "SELECT",
+  "order": 2052,
+  "version": "4.16.0",
+  "material": "LIQUID GLASS / LENS",
+  "accent": "166,209,235",
+  "componentName": "LgcRatingsLens",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "ratings"
+  },
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "ガラス",
+    "半透明",
+    "ratings",
+    "A"
+  ],
+  "related": [
+    "simple-star-rating"
+  ],
+  "props": [
+    [
+      "value / defaultValue",
+      "number",
+      "0は未評価、1〜maxは評価値。valueは外部制御。"
+    ],
+    [
+      "max",
+      "number",
+      "整数2〜10。半点は扱わない。"
+    ],
+    [
+      "name / required",
+      "string / boolean",
+      "フォームに接続する。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "無効または表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(value: number) => void",
+      "確定した評価。ホバーは通知しない。"
+    ]
+  ],
+  "glassSource": {
+    "part": "simple-star-rating",
+    "base": "4.15.0",
+    "material": "clear"
+  }
+}

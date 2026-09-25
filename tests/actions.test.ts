@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import {buildCatalog,ROOT,FORMATS} from '../scripts/catalog.ts';
+import {buildCatalog,ROOT,FORMATS} from './historical-catalog.ts';
 import {getDelivery,buildPrompt,buildManifest} from '../src/catalog/delivery.ts';
 import {sourceReferences,isLocalReference,resolveLocal} from '../scripts/source-tools.ts';
 const {parts:allParts}=buildCatalog(),parts=allParts.filter(p=>!p.tags.includes('GLASS LAB')),buttons=parts.filter(p=>p.category==='buttons'),links=parts.filter(p=>p.category==='links');

@@ -1,0 +1,66 @@
+{
+  "id": "lgc-toasts-lens",
+  "name": "Floating Notice",
+  "category": "toasts",
+  "order": 2030,
+  "version": "4.16.0",
+  "tagline": "光をまとい、いつもの操作へ。",
+  "description": "Liquid Glass風の透過面。通常のtoastsとして配置・操作できます。",
+  "material": "LIQUID GLASS / LENS",
+  "motion": "REVEAL",
+  "accent": "166,209,235",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "LgcToastsLens",
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "ガラス",
+    "半透明",
+    "toasts",
+    "A"
+  ],
+  "related": [
+    "essential-notice"
+  ],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "lgc-toasts-lens",
+    "kind": "toasts",
+    "variant": "essential",
+    "label": "知らせも、心地よく。",
+    "description": "",
+    "defaultValue": null
+  },
+  "glassSource": {
+    "part": "essential-notice",
+    "base": "4.15.0",
+    "material": "clear"
+  }
+}

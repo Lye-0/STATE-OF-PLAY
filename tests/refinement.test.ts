@@ -1,13 +1,14 @@
+import {historicalBases} from './historical-catalog.ts';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import {ROOT} from '../scripts/catalog.ts';
+import {ROOT} from './historical-catalog.ts';
 import {dependencies,transpile} from '../scripts/source-tools.ts';
 const read=(f:string)=>fs.readFileSync(path.join(ROOT,f),'utf8');
 const exists=(f:string)=>fs.existsSync(path.join(ROOT,f));
 // Historical v4.3 fixtures: new KINETIC designs have their own geometry/animation tests.
-const bases=(JSON.parse(read('src/catalog/registry.json')) as string[]).filter(b=>!JSON.parse(read(b+'/meta.json')).tags.some((t:string)=>['KINETIC','MOTION STUDIES','GLASS LAB'].includes(t)));
+const bases=historicalBases().filter(b=>!JSON.parse(read(b+'/meta.json')).tags.some((t:string)=>['KINETIC','MOTION STUDIES','GLASS LAB'].includes(t)));
 const targets=bases.filter(b=>/src\/parts\/(scrollbars|dropdowns)\//.test(b)).map(base=>({base,...JSON.parse(read(base+'/meta.json'))}));
 const A=targets.filter(p=>p.designType==='A');
 test('refinement keeps 777 current parts; 16 A rails and 16 A selects; stable IDs',()=>{

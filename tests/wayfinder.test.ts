@@ -1,14 +1,15 @@
+import {historicalBases} from './historical-catalog.ts';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import test from 'node:test';
-import {ROOT} from '../scripts/catalog.ts';
+import {ROOT} from './historical-catalog.ts';
 import {dependencies} from '../scripts/source-tools.ts';
 import {renderBreadcrumbs} from '../src/shared/foundation/wayfinding/breadcrumbs.ts';
 import {renderNumber} from '../src/shared/foundation/wayfinding/number.ts';
 const read=(f:string)=>fs.readFileSync(path.join(ROOT,f),'utf8');
 const exists=(f:string)=>fs.existsSync(path.join(ROOT,f));
-const parts=(JSON.parse(read('src/catalog/registry.json')) as string[]).map(base=>({base,...JSON.parse(read(base+'/meta.json'))}));
+const parts=historicalBases().map(base=>({base,...JSON.parse(read(base+'/meta.json'))}));
 const targets=parts.filter(p=>p.tags.includes('WAYFINDER'));
 test('WAYFINDER targets exactly ten A breadcrumbs and thirteen A number inputs',()=>{assert.equal(parts.filter(p=>!p.tags.includes('GLASS LAB')).length,817);assert.equal(targets.length,23);assert.equal(targets.filter(p=>p.category==='breadcrumbs').length,10);assert.equal(targets.filter(p=>p.category==='numbers').length,13);for(const p of targets){assert.equal(p.designType,'A');assert.equal(p.version,'4.10.0');}assert.equal(parts.filter(p=>p.category==='loaders').length,39);});
 test('rendered titles and units are escaped rather than treated as markup',()=>{for(const fn of [renderNumber,renderBreadcrumbs]){const html=fn({label:'<img src=x onerror=x>',description:'<&>',unit:'<kg>'});assert.doesNotMatch(html,/<img/);assert.match(html,/&lt;img/);}});

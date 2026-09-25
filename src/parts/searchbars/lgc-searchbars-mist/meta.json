@@ -1,0 +1,61 @@
+{
+  "id": "lgc-searchbars-mist",
+  "name": "Mist Search",
+  "category": "searchbars",
+  "description": "Liquid Glass風の透過面。通常のsearchbarsとして配置・操作できます。",
+  "designType": "B",
+  "tagline": "読みやすく、静かな透明感。",
+  "motion": "ESSENTIAL",
+  "order": 2063,
+  "version": "4.16.0",
+  "material": "LIQUID GLASS / MIST",
+  "accent": "166,209,235",
+  "componentName": "LgcSearchbarsMist",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "searchbars"
+  },
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "ガラス",
+    "半透明",
+    "searchbars",
+    "B"
+  ],
+  "related": [
+    "capsule-searchbar"
+  ],
+  "props": [
+    [
+      "items / search",
+      "SearchResult[] / async callback",
+      "ローカル候補か、AbortSignal付きの非同期検索を指定。"
+    ],
+    [
+      "query / defaultQuery",
+      "string",
+      "入力値。queryを渡すと外部制御。"
+    ],
+    [
+      "filters / filter",
+      "SearchFilter[] / string",
+      "検索対象の切り替え。"
+    ],
+    [
+      "onSubmit / onResult",
+      "callback",
+      "実際の検索実行と候補選択の接続先。"
+    ],
+    [
+      "loading / error / disabled",
+      "boolean / string",
+      "読込・失敗・無効の状態。"
+    ]
+  ],
+  "glassSource": {
+    "part": "capsule-searchbar",
+    "base": "4.15.0",
+    "material": "regular"
+  }
+}

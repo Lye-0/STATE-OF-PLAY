@@ -1,0 +1,66 @@
+{
+  "id": "lgc-blocks-lens",
+  "name": "Glass Shelf",
+  "category": "blocks",
+  "order": 2008,
+  "version": "4.16.0",
+  "tagline": "光をまとい、いつもの操作へ。",
+  "description": "Liquid Glass風の透過面。通常のblocksとして配置・操作できます。",
+  "material": "LIQUID GLASS / LENS",
+  "motion": "FOLLOW",
+  "accent": "166,209,235",
+  "initial": false,
+  "componentName": "LgcBlocksLens",
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "ガラス",
+    "半透明",
+    "blocks",
+    "A"
+  ],
+  "config": {
+    "tilt": false
+  },
+  "related": [
+    "original-surface"
+  ],
+  "design": {
+    "background": "#18191a",
+    "border": "1px solid #2c2d2c",
+    "radius": "10px",
+    "hoverBackground": "#1a1b1c",
+    "hoverBorder": "#484b44",
+    "pointerLight": "400px radial gradient / accent alpha .045 / transparent 60%",
+    "transition": "400ms background + border, 300ms pointer opacity"
+  },
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "文章、画像、ボタンなど好きな中身を配置できます。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "幅、余白、外側のレイアウトを設定します。"
+    ],
+    [
+      "--sop-padding",
+      "CSSカスタムプロパティ",
+      "内側の余白。初期値は28pxです。"
+    ],
+    [
+      "--sop-accent",
+      "R,G,B",
+      "Glass Shelfの追従光の色を指定できます。"
+    ]
+  ],
+  "designType": "A",
+  "runtime": "CSS + Pointer",
+  "glassSource": {
+    "part": "original-surface",
+    "base": "4.15.0",
+    "material": "clear"
+  }
+}

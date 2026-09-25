@@ -1,0 +1,530 @@
+[
+  {
+    "id": "lgc-blocks-lens",
+    "base": "src/parts/blocks/lgc-blocks-lens",
+    "category": "blocks",
+    "name": "Glass Shelf",
+    "designType": "A",
+    "source": "original-surface"
+  },
+  {
+    "id": "lgc-blocks-mist",
+    "base": "src/parts/blocks/lgc-blocks-mist",
+    "category": "blocks",
+    "name": "Mist Surface",
+    "designType": "B",
+    "source": "original-surface"
+  },
+  {
+    "id": "lgc-scrollbars-lens",
+    "base": "src/parts/scrollbars/lgc-scrollbars-lens",
+    "category": "scrollbars",
+    "name": "Lens Rail",
+    "designType": "A",
+    "source": "minimal-scroll"
+  },
+  {
+    "id": "lgc-scrollbars-mist",
+    "base": "src/parts/scrollbars/lgc-scrollbars-mist",
+    "category": "scrollbars",
+    "name": "Mist Rail",
+    "designType": "B",
+    "source": "soft-scroll"
+  },
+  {
+    "id": "lgc-accordions-lens",
+    "base": "src/parts/accordions/lgc-accordions-lens",
+    "category": "accordions",
+    "name": "Laminated Accordion",
+    "designType": "A",
+    "source": "faq-accordion"
+  },
+  {
+    "id": "lgc-accordions-mist",
+    "base": "src/parts/accordions/lgc-accordions-mist",
+    "category": "accordions",
+    "name": "Mist Accordion",
+    "designType": "B",
+    "source": "soft-accordion"
+  },
+  {
+    "id": "lgc-textboxes-lens",
+    "base": "src/parts/textboxes/lgc-textboxes-lens",
+    "category": "textboxes",
+    "name": "Refraction Field",
+    "designType": "A",
+    "source": "essential-field"
+  },
+  {
+    "id": "lgc-textboxes-mist",
+    "base": "src/parts/textboxes/lgc-textboxes-mist",
+    "category": "textboxes",
+    "name": "Frost Field",
+    "designType": "B",
+    "source": "essential-field"
+  },
+  {
+    "id": "lgc-links-lens",
+    "base": "src/parts/links/lgc-links-lens",
+    "category": "links",
+    "name": "Lucent Arrow",
+    "designType": "A",
+    "source": "text-arrow-link"
+  },
+  {
+    "id": "lgc-links-mist",
+    "base": "src/parts/links/lgc-links-mist",
+    "category": "links",
+    "name": "Mist Link",
+    "designType": "B",
+    "source": "underline-link"
+  },
+  {
+    "id": "lgc-segments-lens",
+    "base": "src/parts/segments/lgc-segments-lens",
+    "category": "segments",
+    "name": "Lens Segments",
+    "designType": "A",
+    "source": "essential-segments"
+  },
+  {
+    "id": "lgc-segments-mist",
+    "base": "src/parts/segments/lgc-segments-mist",
+    "category": "segments",
+    "name": "Mist Segments",
+    "designType": "B",
+    "source": "soft-segments"
+  },
+  {
+    "id": "lgc-checkboxes-lens",
+    "base": "src/parts/checkboxes/lgc-checkboxes-lens",
+    "category": "checkboxes",
+    "name": "Glint Check",
+    "designType": "A",
+    "source": "essential-check"
+  },
+  {
+    "id": "lgc-checkboxes-mist",
+    "base": "src/parts/checkboxes/lgc-checkboxes-mist",
+    "category": "checkboxes",
+    "name": "Mist Check",
+    "designType": "B",
+    "source": "soft-check"
+  },
+  {
+    "id": "lgc-popups-lens",
+    "base": "src/parts/popups/lgc-popups-lens",
+    "category": "popups",
+    "name": "Floating Window",
+    "designType": "A",
+    "source": "essential-dialog"
+  },
+  {
+    "id": "lgc-popups-mist",
+    "base": "src/parts/popups/lgc-popups-mist",
+    "category": "popups",
+    "name": "Mist Dialog",
+    "designType": "B",
+    "source": "paper-dialog"
+  },
+  {
+    "id": "lgc-sliders-lens",
+    "base": "src/parts/sliders/lgc-sliders-lens",
+    "category": "sliders",
+    "name": "Meniscus Range",
+    "designType": "A",
+    "source": "essential-range"
+  },
+  {
+    "id": "lgc-sliders-mist",
+    "base": "src/parts/sliders/lgc-sliders-mist",
+    "category": "sliders",
+    "name": "Mist Range",
+    "designType": "B",
+    "source": "soft-range"
+  },
+  {
+    "id": "lgc-radios-lens",
+    "base": "src/parts/radios/lgc-radios-lens",
+    "category": "radios",
+    "name": "Lucent Choice",
+    "designType": "A",
+    "source": "essential-choice"
+  },
+  {
+    "id": "lgc-radios-mist",
+    "base": "src/parts/radios/lgc-radios-mist",
+    "category": "radios",
+    "name": "Mist Choice",
+    "designType": "B",
+    "source": "soft-choice"
+  },
+  {
+    "id": "lgc-comboboxes-lens",
+    "base": "src/parts/comboboxes/lgc-comboboxes-lens",
+    "category": "comboboxes",
+    "name": "Lens Finder",
+    "designType": "A",
+    "source": "essential-finder"
+  },
+  {
+    "id": "lgc-comboboxes-mist",
+    "base": "src/parts/comboboxes/lgc-comboboxes-mist",
+    "category": "comboboxes",
+    "name": "Mist Finder",
+    "designType": "B",
+    "source": "soft-finder"
+  },
+  {
+    "id": "lgc-toasts-lens",
+    "base": "src/parts/toasts/lgc-toasts-lens",
+    "category": "toasts",
+    "name": "Floating Notice",
+    "designType": "A",
+    "source": "essential-notice"
+  },
+  {
+    "id": "lgc-toasts-mist",
+    "base": "src/parts/toasts/lgc-toasts-mist",
+    "category": "toasts",
+    "name": "Mist Notice",
+    "designType": "B",
+    "source": "soft-notice"
+  },
+  {
+    "id": "lgc-hints-lens",
+    "base": "src/parts/hints/lgc-hints-lens",
+    "category": "hints",
+    "name": "Lens Hint",
+    "designType": "A",
+    "source": "essential-popover"
+  },
+  {
+    "id": "lgc-hints-mist",
+    "base": "src/parts/hints/lgc-hints-mist",
+    "category": "hints",
+    "name": "Mist Hint",
+    "designType": "B",
+    "source": "soft-popover"
+  },
+  {
+    "id": "lgc-progress-lens",
+    "base": "src/parts/progress/lgc-progress-lens",
+    "category": "progress",
+    "name": "Meniscus Progress",
+    "designType": "A",
+    "source": "essential-progress"
+  },
+  {
+    "id": "lgc-progress-mist",
+    "base": "src/parts/progress/lgc-progress-mist",
+    "category": "progress",
+    "name": "Mist Progress",
+    "designType": "B",
+    "source": "soft-progress"
+  },
+  {
+    "id": "lgc-loaders-lens",
+    "base": "src/parts/loaders/lgc-loaders-lens",
+    "category": "loaders",
+    "name": "Glass Droplets",
+    "designType": "A",
+    "source": "liquid-merge-loader"
+  },
+  {
+    "id": "lgc-loaders-mist",
+    "base": "src/parts/loaders/lgc-loaders-mist",
+    "category": "loaders",
+    "name": "Frost Spinner",
+    "designType": "B",
+    "source": "arc-spinner-loader"
+  },
+  {
+    "id": "lgc-uploads-lens",
+    "base": "src/parts/uploads/lgc-uploads-lens",
+    "category": "uploads",
+    "name": "Glass Inbox",
+    "designType": "A",
+    "source": "essential-dropzone"
+  },
+  {
+    "id": "lgc-uploads-mist",
+    "base": "src/parts/uploads/lgc-uploads-mist",
+    "category": "uploads",
+    "name": "Mist Dropzone",
+    "designType": "B",
+    "source": "soft-dropzone"
+  },
+  {
+    "id": "lgc-datepickers-lens",
+    "base": "src/parts/datepickers/lgc-datepickers-lens",
+    "category": "datepickers",
+    "name": "Lens Calendar",
+    "designType": "A",
+    "source": "essential-calendar"
+  },
+  {
+    "id": "lgc-datepickers-mist",
+    "base": "src/parts/datepickers/lgc-datepickers-mist",
+    "category": "datepickers",
+    "name": "Mist Calendar",
+    "designType": "B",
+    "source": "soft-calendar"
+  },
+  {
+    "id": "lgc-pagination-lens",
+    "base": "src/parts/pagination/lgc-pagination-lens",
+    "category": "pagination",
+    "name": "Lens Pages",
+    "designType": "A",
+    "source": "essential-pages"
+  },
+  {
+    "id": "lgc-pagination-mist",
+    "base": "src/parts/pagination/lgc-pagination-mist",
+    "category": "pagination",
+    "name": "Mist Pages",
+    "designType": "B",
+    "source": "soft-pages"
+  },
+  {
+    "id": "lgc-breadcrumbs-lens",
+    "base": "src/parts/breadcrumbs/lgc-breadcrumbs-lens",
+    "category": "breadcrumbs",
+    "name": "Lucent Trail",
+    "designType": "A",
+    "source": "essential-trail"
+  },
+  {
+    "id": "lgc-breadcrumbs-mist",
+    "base": "src/parts/breadcrumbs/lgc-breadcrumbs-mist",
+    "category": "breadcrumbs",
+    "name": "Mist Trail",
+    "designType": "B",
+    "source": "soft-trail"
+  },
+  {
+    "id": "lgc-badges-lens",
+    "base": "src/parts/badges/lgc-badges-lens",
+    "category": "badges",
+    "name": "Glass Tokens",
+    "designType": "A",
+    "source": "essential-tags"
+  },
+  {
+    "id": "lgc-badges-mist",
+    "base": "src/parts/badges/lgc-badges-mist",
+    "category": "badges",
+    "name": "Mist Chips",
+    "designType": "B",
+    "source": "soft-tags"
+  },
+  {
+    "id": "lgc-numbers-lens",
+    "base": "src/parts/numbers/lgc-numbers-lens",
+    "category": "numbers",
+    "name": "Lens Stepper",
+    "designType": "A",
+    "source": "essential-stepper"
+  },
+  {
+    "id": "lgc-numbers-mist",
+    "base": "src/parts/numbers/lgc-numbers-mist",
+    "category": "numbers",
+    "name": "Mist Stepper",
+    "designType": "B",
+    "source": "soft-stepper"
+  },
+  {
+    "id": "lgc-avatars-lens",
+    "base": "src/parts/avatars/lgc-avatars-lens",
+    "category": "avatars",
+    "name": "Lens Portraits",
+    "designType": "A",
+    "source": "circle-profile"
+  },
+  {
+    "id": "lgc-avatars-mist",
+    "base": "src/parts/avatars/lgc-avatars-mist",
+    "category": "avatars",
+    "name": "Mist Profiles",
+    "designType": "B",
+    "source": "presence-profile"
+  },
+  {
+    "id": "lgc-ratings-lens",
+    "base": "src/parts/ratings/lgc-ratings-lens",
+    "category": "ratings",
+    "name": "Prismatic Rating",
+    "designType": "A",
+    "source": "simple-star-rating"
+  },
+  {
+    "id": "lgc-ratings-mist",
+    "base": "src/parts/ratings/lgc-ratings-mist",
+    "category": "ratings",
+    "name": "Mist Rating",
+    "designType": "B",
+    "source": "outline-star-rating"
+  },
+  {
+    "id": "lgc-colors-lens",
+    "base": "src/parts/colors/lgc-colors-lens",
+    "category": "colors",
+    "name": "Spectrum Glass",
+    "designType": "A",
+    "source": "classic-color"
+  },
+  {
+    "id": "lgc-colors-mist",
+    "base": "src/parts/colors/lgc-colors-mist",
+    "category": "colors",
+    "name": "Frost Palette",
+    "designType": "B",
+    "source": "paper-color"
+  },
+  {
+    "id": "lgc-skeletons-lens",
+    "base": "src/parts/skeletons/lgc-skeletons-lens",
+    "category": "skeletons",
+    "name": "Glass Placeholder",
+    "designType": "A",
+    "source": "shimmer-skeleton"
+  },
+  {
+    "id": "lgc-skeletons-mist",
+    "base": "src/parts/skeletons/lgc-skeletons-mist",
+    "category": "skeletons",
+    "name": "Mist Skeleton",
+    "designType": "B",
+    "source": "pulse-skeleton"
+  },
+  {
+    "id": "lgc-timelines-lens",
+    "base": "src/parts/timelines/lgc-timelines-lens",
+    "category": "timelines",
+    "name": "Lens Timeline",
+    "designType": "A",
+    "source": "basic-timeline"
+  },
+  {
+    "id": "lgc-timelines-mist",
+    "base": "src/parts/timelines/lgc-timelines-mist",
+    "category": "timelines",
+    "name": "Mist Timeline",
+    "designType": "B",
+    "source": "card-timeline"
+  },
+  {
+    "id": "lgc-wizards-lens",
+    "base": "src/parts/wizards/lgc-wizards-lens",
+    "category": "wizards",
+    "name": "Glass Journey",
+    "designType": "A",
+    "source": "essential-wizard"
+  },
+  {
+    "id": "lgc-wizards-mist",
+    "base": "src/parts/wizards/lgc-wizards-mist",
+    "category": "wizards",
+    "name": "Mist Wizard",
+    "designType": "B",
+    "source": "pill-wizard"
+  },
+  {
+    "id": "lgc-searchbars-lens",
+    "base": "src/parts/searchbars/lgc-searchbars-lens",
+    "category": "searchbars",
+    "name": "Lens Search",
+    "designType": "A",
+    "source": "essential-searchbar"
+  },
+  {
+    "id": "lgc-searchbars-mist",
+    "base": "src/parts/searchbars/lgc-searchbars-mist",
+    "category": "searchbars",
+    "name": "Mist Search",
+    "designType": "B",
+    "source": "capsule-searchbar"
+  },
+  {
+    "id": "lgc-commands-lens",
+    "base": "src/parts/commands/lgc-commands-lens",
+    "category": "commands",
+    "name": "Glass Commands",
+    "designType": "A",
+    "source": "essential-command"
+  },
+  {
+    "id": "lgc-commands-mist",
+    "base": "src/parts/commands/lgc-commands-mist",
+    "category": "commands",
+    "name": "Mist Commands",
+    "designType": "B",
+    "source": "quiet-command"
+  },
+  {
+    "id": "lgc-contextmenus-lens",
+    "base": "src/parts/contextmenus/lgc-contextmenus-lens",
+    "category": "contextmenus",
+    "name": "Lens Context",
+    "designType": "A",
+    "source": "essential-context"
+  },
+  {
+    "id": "lgc-contextmenus-mist",
+    "base": "src/parts/contextmenus/lgc-contextmenus-mist",
+    "category": "contextmenus",
+    "name": "Mist Context",
+    "designType": "B",
+    "source": "soft-context"
+  },
+  {
+    "id": "lgc-navigation-lens",
+    "base": "src/parts/navigation/lgc-navigation-lens",
+    "category": "navigation",
+    "name": "Floating Navigation",
+    "designType": "A",
+    "source": "essential-header"
+  },
+  {
+    "id": "lgc-navigation-mist",
+    "base": "src/parts/navigation/lgc-navigation-mist",
+    "category": "navigation",
+    "name": "Mist Navigation",
+    "designType": "B",
+    "source": "pill-navigation"
+  },
+  {
+    "id": "lgc-tables-lens",
+    "base": "src/parts/tables/lgc-tables-lens",
+    "category": "tables",
+    "name": "Glass Ledger Collection",
+    "designType": "A",
+    "source": "essential-table"
+  },
+  {
+    "id": "lgc-tables-mist",
+    "base": "src/parts/tables/lgc-tables-mist",
+    "category": "tables",
+    "name": "Mist Table",
+    "designType": "B",
+    "source": "air-table"
+  },
+  {
+    "id": "lgc-ornaments-lens",
+    "base": "src/parts/ornaments/lgc-ornaments-lens",
+    "category": "ornaments",
+    "name": "Liquid Halo",
+    "designType": "A",
+    "source": "orbit-knot"
+  },
+  {
+    "id": "lgc-ornaments-mist",
+    "base": "src/parts/ornaments/lgc-ornaments-mist",
+    "category": "ornaments",
+    "name": "Frost Asterisk",
+    "designType": "B",
+    "source": "soft-spark"
+  }
+]

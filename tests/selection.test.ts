@@ -3,7 +3,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import {buildCatalog,ROOT,FORMATS} from '../scripts/catalog.ts';
+import {buildCatalog,ROOT,FORMATS} from './historical-catalog.ts';
 import {selectionValue,nextSelection,validateSelectionItems} from '../src/shared/selection-model.ts';
 import {getDelivery,buildPrompt} from '../src/catalog/delivery.ts';
 const catalog=buildCatalog(),parts=catalog.parts.filter(p=>(p.category==='tabs'||p.category==='segments')&&!p.tags.includes('GLASS LAB'));

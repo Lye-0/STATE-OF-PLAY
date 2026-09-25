@@ -1,9 +1,10 @@
+import {historicalBases} from './historical-catalog.ts';
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';import ts from 'typescript';
-import {ROOT} from '../scripts/catalog.ts';import {dependencies,exportCode} from '../scripts/source-tools.ts';
+import {ROOT} from './historical-catalog.ts';import {dependencies,exportCode} from '../scripts/source-tools.ts';
 import {escape,safeHref,unique} from '../src/shared/workbench/core.ts';import {matchItems,tableRows} from '../src/shared/workbench/model.ts';
 const expected={searchbars:20,commands:16,contextmenus:16,navigation:20,tables:16};
 const read=(n:string)=>fs.readFileSync(path.join(ROOT,n),'utf8'),exists=(n:string)=>fs.existsSync(path.join(ROOT,n));
-const bases=(JSON.parse(read('src/catalog/registry.json')) as string[]).filter(b=>Object.keys(expected).includes(b.split('/')[2]));const records=bases.map(base=>({...JSON.parse(read(base+'/meta.json')),base}));
+const bases=historicalBases().filter(b=>Object.keys(expected).includes(b.split('/')[2]));const records=bases.map(base=>({...JSON.parse(read(base+'/meta.json')),base}));
 test('Workbench contains 88 parts in five categories, with more A than B and no duplicate identifiers',()=>{assert.equal(records.length,88);assert.equal(records.filter(r=>r.designType==='A').length,54);for(const [c,n]of Object.entries(expected))assert.equal(records.filter(r=>r.category===c).length,n);assert.equal(new Set(records.map(r=>r.id)).size,88);});
 test('Every component has real editable sources, examples and project-aware prompts',()=>{for(const r of records){for(const file of ['markup.html','styles.css','meta.json','usage.md','prompt.md','react/Example.tsx',`react/${r.componentName}.tsx`,'vanilla/init.ts','vanilla/main.ts','vanilla/index.html'])assert.ok(read(r.base+'/'+file).trim(),r.id+'/'+file);assert.match(read(r.base+'/prompt.md'),/プロジェクト/);assert.match(read(r.base+'/markup.html'),/data-wb-owned/);}});
 test('All runtime and example local references resolve, without a gallery dependency',()=>{for(const r of records){for(const file of ['vanilla/init.ts','vanilla/index.html','react/Example.tsx',`react/${r.componentName}.tsx`]){const closure=dependencies(r.base+'/'+file,read,exists);for(const p of closure)assert.ok(!p.startsWith('src/app/')&&!p.startsWith('src/catalog/'),r.id+' -> '+p);}}});

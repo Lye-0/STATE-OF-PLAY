@@ -1,0 +1,91 @@
+@import "../../../shared/liquid-glass/collection.css";
+/* lgc-blocks-mist: isolated component styles, generated from style.css + shared base. */
+.sop-surface.sop-lgc-blocks-mist {
+  --sop-x: 50%;
+  --sop-y: 50%;
+  --sop-rx: 0deg;
+  --sop-ry: 0deg;
+  position: relative;
+  box-sizing: border-box;
+  isolation: isolate;
+  overflow: hidden;
+  min-width: 0;
+  width: 100%;
+  color: #eeeee6;
+  transform: perspective(900px) rotateX(var(--sop-rx)) rotateY(var(--sop-ry));
+}
+
+.sop-surface.sop-lgc-blocks-mist .sop-surface-content {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: var(--sop-padding,28px);
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .sop-surface.sop-lgc-blocks-mist,
+  .sop-surface.sop-lgc-blocks-mist:before,
+  .sop-surface.sop-lgc-blocks-mist:after {
+    animation: none!important;
+    transition: none!important;
+    transform: none!important;
+  }
+
+}
+
+.sop-surface.sop-lgc-blocks-mist {
+  border: 1px solid #2c2d2c;
+  border-radius: 10px;
+  background: #18191a;
+  transition: border-color .4s,background .4s;
+}
+
+.sop-surface.sop-lgc-blocks-mist:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 48%,rgba(var(--sop-accent,209,230,178),.025),transparent 67%);
+}
+
+.sop-surface.sop-lgc-blocks-mist:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(400px circle at var(--sop-x,50%) var(--sop-y,50%),rgba(var(--sop-accent,209,230,178),.045),transparent 60%);
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.sop-surface.sop-lgc-blocks-mist:hover {
+  border-color: #484b44;
+  background: #1a1b1c;
+}
+
+.sop-surface.sop-lgc-blocks-mist:hover:after {
+  opacity: 1;
+}
+
+.sop-surface.sop-lgc-blocks-mist:focus-within {
+  border-color: #69725f;
+}
+
+
+.sop-surface.sop-lgc-blocks-mist[data-sop-paused],.sop-surface.sop-lgc-blocks-mist[data-sop-paused]:before,.sop-surface.sop-lgc-blocks-mist[data-sop-paused]:after,.sop-surface.sop-lgc-blocks-mist[data-sop-paused] * {animation-play-state:paused!important}
+
+/* Liquid Glass material, independent of gallery presentation. */
+.lgc-root.sop-lgc-blocks-mist{
+ --ff-base:transparent;--ff-panel:var(--lgc-fill);--ff-line:var(--lgc-line);--ff-ink:var(--lgc-ink);--ff-muted:var(--lgc-muted);--ff-accent:var(--lgc-accent);--ff-accent2:var(--lgc-accent);--ff-radius:var(--lgc-radius);
+ --field-bg:var(--lgc-fill);--field-ink:var(--lgc-ink);--field-muted:var(--lgc-muted);--field-accent:var(--lgc-accent);--field-edge:var(--lgc-line);--field-radius:var(--lgc-radius);
+ --choice-ink:var(--lgc-ink);--choice-muted:var(--lgc-muted);--choice-accent:var(--lgc-accent);--choice-base:var(--lgc-fill);--choice-line:var(--lgc-line);--choice-radius:var(--lgc-radius);--choice-marker:var(--lgc-selection);--choice-on:var(--lgc-ink);
+ --cb-bg:transparent;--cb-box:var(--lgc-fill);--cb-ink:var(--lgc-ink);--cb-muted:var(--lgc-muted);--cb-accent:var(--lgc-accent);--cb-line:var(--lgc-line);
+ --pp-bg:var(--lgc-panel);--pp-ink:var(--lgc-ink);--pp-muted:var(--lgc-muted);--pp-accent:var(--lgc-accent);--pp-line:var(--lgc-line);--pp-wash:#c9e5ef14;--pp-radius:var(--lgc-radius);
+ --sg-bg:var(--lgc-fill);--sg-ink:var(--lgc-ink);--sg-muted:var(--lgc-muted);--sg-line:var(--lgc-line);--sg-a:var(--lgc-accent);--sg-soft:var(--lgc-selection);--sg-radius:var(--lgc-radius);
+ --wb-bg:var(--lgc-fill);--wb-surface:var(--lgc-panel);--wb-ink:var(--lgc-ink);--wb-muted:var(--lgc-muted);--wb-accent:var(--lgc-accent);--wb-line:var(--lgc-line);--wb-radius:var(--lgc-radius);
+ --lgc-fill:rgba(29,48,65,.65);--lgc-panel:rgba(22,42,58,.94);--lgc-radius:13px;color:var(--lgc-ink);background:transparent;max-width:100%;}
+.lgc-root.sop-lgc-blocks-mist{background:radial-gradient(ellipse at 18% 0%,#e9f8ff30,transparent 60%),var(--lgc-fill);border:1px solid var(--lgc-line);box-shadow:inset 0 1px 1px #fff8,inset 0 -1px 1px #b6d9ef24,0 7px 22px #06182929;backdrop-filter:blur(var(--lgc-blur)) saturate(1.24);-webkit-backdrop-filter:blur(var(--lgc-blur)) saturate(1.24);color:var(--lgc-ink);border-radius:var(--lgc-radius);transition:background .24s,border-color .24s,box-shadow .24s;}
+.lgc-root.sop-lgc-blocks-mist{min-height:140px;}.lgc-root.sop-lgc-blocks-mist::before{background:radial-gradient(ellipse at var(--sop-x,30%) var(--sop-y,20%),#effcff2b,transparent 58%);}
+@media(forced-colors:active){.lgc-root.sop-lgc-blocks-mist{background:Canvas;color:CanvasText;border:1px solid CanvasText;box-shadow:none;backdrop-filter:none;}}

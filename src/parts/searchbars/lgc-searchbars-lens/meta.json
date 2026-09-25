@@ -1,0 +1,61 @@
+{
+  "id": "lgc-searchbars-lens",
+  "name": "Lens Search",
+  "category": "searchbars",
+  "description": "Liquid Glass風の透過面。通常のsearchbarsとして配置・操作できます。",
+  "designType": "A",
+  "tagline": "光をまとい、いつもの操作へ。",
+  "motion": "ESSENTIAL",
+  "order": 2062,
+  "version": "4.16.0",
+  "material": "LIQUID GLASS / LENS",
+  "accent": "166,209,235",
+  "componentName": "LgcSearchbarsLens",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "searchbars"
+  },
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "ガラス",
+    "半透明",
+    "searchbars",
+    "A"
+  ],
+  "related": [
+    "essential-searchbar"
+  ],
+  "props": [
+    [
+      "items / search",
+      "SearchResult[] / async callback",
+      "ローカル候補か、AbortSignal付きの非同期検索を指定。"
+    ],
+    [
+      "query / defaultQuery",
+      "string",
+      "入力値。queryを渡すと外部制御。"
+    ],
+    [
+      "filters / filter",
+      "SearchFilter[] / string",
+      "検索対象の切り替え。"
+    ],
+    [
+      "onSubmit / onResult",
+      "callback",
+      "実際の検索実行と候補選択の接続先。"
+    ],
+    [
+      "loading / error / disabled",
+      "boolean / string",
+      "読込・失敗・無効の状態。"
+    ]
+  ],
+  "glassSource": {
+    "part": "essential-searchbar",
+    "base": "4.15.0",
+    "material": "clear"
+  }
+}

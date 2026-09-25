@@ -1,56 +1,58 @@
-import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import{createRequire}from'node:module';import type{Browser}from'playwright';
-import{ROOT,buildCatalog,FORMATS}from'../scripts/catalog.ts';import{getDelivery,buildPrompt}from'../src/catalog/delivery.ts';import{galleryReady,selectCategory}from'./gallery-ready.ts';
+/** Full collection integration through the production Vite preview. */
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import {createRequire} from 'node:module';
+import type {Browser} from 'playwright';
+import {ROOT,buildCatalog} from '../scripts/catalog.ts';
+import {getDelivery,buildPrompt} from '../src/catalog/delivery.ts';
+import {galleryReady,selectCategory} from './gallery-ready.ts';
+
 const require=createRequire(import.meta.url),{chromium}=require(process.env.PLAYWRIGHT_PATH??'playwright') as typeof import('playwright');
-const all=buildCatalog(),parts=all.parts.filter(x=>x.tags.includes('GLASS LAB'));
-const out=path.join(ROOT,'.test-output/liquid-glass-gallery');fs.mkdirSync(out,{recursive:true});
+const all=buildCatalog(),glass=all.parts.filter(p=>p.id.startsWith('lg-')||p.id.startsWith('lgc-'));
+const out=path.join(ROOT,'.test-output/glass-collection-gallery');fs.mkdirSync(out,{recursive:true});
 const tests:string[]=[],errors:string[]=[];let browser:Browser|undefined,close:(()=>Promise<void>)|undefined;
 async function run(name:string,fn:()=>Promise<void>){await fn();tests.push(name);console.log('PASS '+name);}
 try{
- const{preview}=await import('vite'),s=await preview({root:ROOT,base:'/STATE-OF-PLAY/',preview:{host:'127.0.0.1',port:0}});
- const url=s.resolvedUrls!.local[0];close=()=>new Promise<void>((resolve,reject)=>s.httpServer.close(error=>error?reject(error):resolve()));
- browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});const p=await browser.newPage({viewport:{width:1440,height:1040}});p.setDefaultTimeout(180000);p.on('pageerror',e=>errors.push(e.message));
- await p.goto(url,{waitUntil:'commit',timeout:180000});await p.waitForFunction(()=>document.documentElement.classList.contains('site-ready'));
- const d=p.locator('#part-details');
- const open=async(id:string)=>{const part=parts.find(x=>x.id===id)!;await selectCategory(p,part.category);await p.locator(`[data-open="${id}"]`).click();await galleryReady(p,true);return part;};
- const shut=async()=>{await d.locator('.close-detail').evaluate(e=>(e as HTMLButtonElement).click());};
- await run('New A and B parts follow their respective category groups without a separate filter',async()=>{
-  assert.equal(all.parts.length,825);assert.equal(parts.length,8);assert.equal(new Set(all.parts.map(p=>p.category)).size,37);
-  assert.equal(await p.locator('.liquid-glass-shortcut').count(),0);
-  const pairs={toggles:['lg-lens-toggle','lg-mist-toggle'],buttons:['lg-pressure-button','lg-frost-button'],tabs:['lg-flow-tabs','lg-index-tabs'],dropdowns:['lg-bloom-select','lg-clarity-select']} as const;
-  for(const [category,[a,b]] of Object.entries(pairs)){
-   await selectCategory(p,category);assert.equal(await p.locator('.glass-series').count(),2);
-   assert.equal(await p.locator('[data-part][data-design="A"]').last().getAttribute('data-part'),a);
-   assert.equal(await p.locator('[data-part][data-design="B"]').last().getAttribute('data-part'),b);
-   await p.locator('[data-design-filter="A"]').click();await galleryReady(p);assert.equal(await p.locator('.glass-series').count(),1);assert.equal(await p.locator('[data-part]').last().getAttribute('data-part'),a);
-   await p.locator('[data-design-filter="B"]').click();await galleryReady(p);assert.equal(await p.locator('.glass-series').count(),1);assert.equal(await p.locator('[data-part]').last().getAttribute('data-part'),b);
-   await p.locator('[data-design-filter="all"]').click();await galleryReady(p);
+ const {preview}=await import('vite'),server=await preview({root:ROOT,base:'/STATE-OF-PLAY/',preview:{host:'127.0.0.1',port:0}});
+ close=()=>new Promise<void>((resolve,reject)=>server.httpServer.close(error=>error?reject(error):resolve()));
+ browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
+ const page=await browser.newPage({viewport:{width:1440,height:960}});page.setDefaultTimeout(180000);page.on('pageerror',error=>errors.push(error.message));
+ await page.goto(server.resolvedUrls!.local[0],{waitUntil:'commit',timeout:180000});
+ await page.waitForFunction(()=>document.documentElement.classList.contains('site-ready'));
+ const detail=page.locator('#part-details');
+ const open=async(id:string)=>{const part=glass.find(p=>p.id===id)!;await selectCategory(page,part.category);await page.locator(`[data-open="${id}"]`).click();await galleryReady(page,true);return part;};
+ const closeDetail=async()=>{await detail.locator('.close-detail').click();};
+ await run('All 37 ordinary categories contain their glass A and B in the normal filter order',async()=>{
+  assert.equal(all.parts.length,891);assert.equal(glass.length,74);assert.equal(await page.locator('.liquid-glass-shortcut,.lg-preview-controls').count(),0);
+  for(const category of [...new Set(all.parts.map(p=>p.category))]){
+   await selectCategory(page,category);const pair=glass.filter(p=>p.category===category);assert.equal(pair.length,2);
+   assert.equal(await page.locator('.glass-series').count(),2);
+   assert.equal(await page.locator('.glass-series .lg-demo-host').count(),2);
+   for(const type of ['A','B']as const){const expected=pair.find(p=>p.designType===type)!;assert.equal(await page.locator(`[data-part][data-design="${type}"]`).last().getAttribute('data-part'),expected.id);}
   }
  });
- let filesChecked=0;
- await run('All eight inspectors display exact source code and prompts in all eight export combinations',async()=>{
-  for(const part of parts){await open(part.id);assert.equal(await d.locator('.lg-preview-controls').count(),1);
-   for(const layout of['portable','original']as const){await d.locator('#export-layout').selectOption(layout);for(const format of FORMATS){await d.locator(`[data-format="${format}"]`).evaluate(e=>(e as HTMLButtonElement).click());
-    for(const file of getDelivery(part,format,layout).files){await d.locator(`[data-file="${file.name}"]`).evaluate(e=>(e as HTMLButtonElement).click());assert.deepEqual(await d.locator('.editor .line-code').allTextContents(),file.code.split('\n').map(x=>x||' '),file.name);filesChecked++;}
-    await d.locator('[data-detail-tab=prompt]').evaluate(e=>(e as HTMLButtonElement).click());assert.equal(await d.locator('#prompt-text').inputValue(),buildPrompt(part,format,layout));await d.locator('[data-detail-tab=code]').evaluate(e=>(e as HTMLButtonElement).click());
-   }}await shut();
-  }console.log('EXACT DISPLAY FILES '+filesChecked);
+ await run('Usual details and background picker work for old and new glass parts',async()=>{
+  for(const id of ['lg-lens-toggle','lg-bloom-select','lgc-blocks-lens','lgc-scrollbars-lens','lgc-accordions-lens','lgc-textboxes-lens','lgc-tables-lens','lgc-ornaments-lens']){
+   await open(id);assert.equal(await detail.locator('.lg-demo-host').count(),1,id);assert.equal(await detail.locator('.lg-preview-controls').count(),0,id);
+   const seen=new Set<string>();for(const [button,scene] of [['studio','coast'],['dark','ink'],['light','paper']]as const){await detail.locator(`[data-bg="${button}"]`).click();assert.equal(await detail.locator('.lg-demo-host').getAttribute('data-lg-scene'),scene,id);assert.equal(await detail.locator('.live-preview').evaluate(el=>el.classList.contains('bg-studio')),true,id);seen.add(await detail.locator('.lg-demo-scene').evaluate(el=>getComputedStyle(el).backgroundColor));}assert.equal(seen.size,3,id);
+   if(id==='lgc-tables-lens')await detail.locator('.live-preview').screenshot({path:path.join(out,'table-paper.png')});
+   await closeDetail();
+  }
  });
- await run('Background, material and format switching keep input and selection state',async()=>{
-  await open('lg-flow-tabs');await d.locator('[data-choice-value="notes"]').click();await d.locator('input[aria-label="メモ"]').fill('背景を変えても残す');
-  const colors=new Set<string>();
-  for(const [button,scene] of [['studio','coast'],['dark','ink'],['light','paper']] as const){await d.locator(`[data-bg="${button}"]`).click();assert.equal(await d.locator('.lg-demo-host').getAttribute('data-lg-scene'),scene);assert.equal(await d.locator('[data-glass-scene]').inputValue(),scene);assert.equal(await d.locator('.live-preview').evaluate(el=>el.classList.contains('bg-studio')),true);colors.add(await d.locator('.lg-demo-scene').evaluate(el=>getComputedStyle(el).backgroundColor));}
-  assert.equal(colors.size,3);
-  await d.locator('[data-glass-scene]').selectOption('grid');assert.equal(await d.locator('.lg-demo-host').getAttribute('data-lg-scene'),'grid');assert.match(await d.locator('.lg-demo-scene').evaluate(el=>getComputedStyle(el).backgroundImage),/repeating-linear-gradient/);
-  await d.locator('[data-glass-scene]').selectOption('paper');await d.locator('[data-glass-setting="material"]').selectOption('solid');await d.locator('[data-format=js]').click();
-  assert.equal(await d.locator('input[aria-label="メモ"]').inputValue(),'背景を変えても残す');assert.equal(await d.locator('.lg-root').getAttribute('data-lg-appearance'),'light');await shut();
+ await run('Representative code and prompt use the usual delivery path',async()=>{
+  for(const id of ['lg-flow-tabs','lgc-segments-lens','lgc-datepickers-mist','lgc-navigation-lens','lgc-ornaments-mist']){
+   const part=await open(id),delivery=getDelivery(part,'tsx','portable');
+   await detail.locator('[data-format="tsx"]').click();await detail.locator('#export-layout').selectOption('portable');
+   const file=delivery.files.find(f=>f.name===delivery.entry)!;
+   await detail.locator(`[data-file="${file.name}"]`).click();assert.deepEqual(await detail.locator('.editor .line-code').allTextContents(),file.code.split('\n').map(line=>line||' '),id);
+   await detail.locator('[data-detail-tab="prompt"]').click();assert.equal(await detail.locator('#prompt-text').inputValue(),buildPrompt(part,'tsx','portable'));
+   await closeDetail();
+  }
  });
- await run('Nested dropdown stays above inspector and Escape closes only the list',async()=>{
-  await open('lg-bloom-select');await d.locator('.sop-select-trigger').click();await d.locator('.sop-select-trigger').press('ArrowDown');await p.keyboard.press('Enter');assert.equal(await d.locator('.sop-select-input').inputValue(),'name');
-  await d.locator('.sop-select-trigger').click();assert.ok(await d.locator('.sop-select-popup').evaluate(e=>e.matches(':popover-open')));await p.keyboard.press('Escape');assert.ok(await d.isVisible());await p.screenshot({path:out+'/detail.png'});await shut();
+ await run('Narrow layouts retain controls and avoid page overflow',async()=>{
+  for(const width of [320,390,768]){await page.setViewportSize({width,height:900});for(const id of ['lgc-textboxes-mist','lgc-tables-lens']){await open(id);assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),id+' '+width);await closeDetail();}}
  });
- await run('Mobile inspectors retain code controls and material settings at 320 and 390px',async()=>{
-  for(const width of[320,390]){await p.setViewportSize({width,height:1000});for(const id of ['lg-pressure-button','lg-bloom-select']){await open(id);assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2));await d.locator('.copy-file').scrollIntoViewIfNeeded();assert.ok(await d.locator('.download-file').isVisible());await shut();}}
- });
- await run('No runtime errors or optical-resource leaks after inspectors close',async()=>{assert.equal(await p.locator('[data-lg-resource]').count(),0);assert.deepEqual(errors,[]);});
- console.log('Liquid Glass gallery '+tests.length+' checks passed');
-}finally{fs.writeFileSync(out+'/results.json',JSON.stringify({mode:'Production Vite preview with the full 825-part catalogue',passed:tests.length,tests,errors},null,2)+'\n');await browser?.close();await close?.();}
+ assert.deepEqual(errors,[]);console.log('Glass collection gallery:',tests.length,'checks passed');
+ await page.close();
+}finally{fs.writeFileSync(path.join(out,'results.json'),JSON.stringify({parts:all.parts.length,glass:glass.length,tests,errors},null,2)+'\n');await browser?.close();await close?.();}

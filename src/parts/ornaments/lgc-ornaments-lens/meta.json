@@ -1,0 +1,48 @@
+{
+  "id": "lgc-ornaments-lens",
+  "name": "Liquid Halo",
+  "category": "ornaments",
+  "order": 2072,
+  "version": "4.16.0",
+  "tagline": "光をまとい、いつもの操作へ。",
+  "description": "Liquid Glass風の透過面。通常のornamentsとして配置・操作できます。",
+  "material": "LIQUID GLASS / LENS",
+  "motion": "AMBIENT",
+  "accent": "166,209,235",
+  "designType": "A",
+  "runtime": "CSS + state",
+  "componentName": "LgcOrnamentsLens",
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "ガラス",
+    "半透明",
+    "ornaments",
+    "A"
+  ],
+  "related": [
+    "orbit-knot"
+  ],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ],
+  "glassSource": {
+    "part": "orbit-knot",
+    "base": "4.15.0",
+    "material": "clear"
+  }
+}

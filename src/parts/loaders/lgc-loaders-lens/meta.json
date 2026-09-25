@@ -1,0 +1,62 @@
+{
+  "id": "lgc-loaders-lens",
+  "name": "Glass Droplets",
+  "category": "loaders",
+  "order": 2036,
+  "version": "4.16.0",
+  "tagline": "光をまとい、いつもの操作へ。",
+  "description": "Liquid Glass風の透過面。通常のloadersとして配置・操作できます。",
+  "material": "LIQUID GLASS / LENS",
+  "motion": "STUDY",
+  "accent": "166,209,235",
+  "designType": "A",
+  "runtime": "CSS animation + visibility pause",
+  "componentName": "LgcLoadersLens",
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "ガラス",
+    "半透明",
+    "loaders",
+    "A"
+  ],
+  "related": [
+    "liquid-merge-loader"
+  ],
+  "props": [
+    [
+      "content",
+      "string",
+      "読み上げもされる処理中メッセージ。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "アニメーションのみ停止。完了を意味しません。"
+    ],
+    [
+      "style / className",
+      "React属性",
+      "--ld-size、--ld-accentなどで外観を調整。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setPaused、updateFoundation、destroy。"
+    ]
+  ],
+  "foundation": {
+    "id": "lgc-loaders-lens",
+    "kind": "loaders",
+    "variant": "liquid-merge",
+    "label": "Glass Droplets",
+    "description": "",
+    "defaultValue": null,
+    "content": "読み込み中…"
+  },
+  "glassSource": {
+    "part": "liquid-merge-loader",
+    "base": "4.15.0",
+    "material": "clear"
+  }
+}

@@ -6,6 +6,7 @@ import {createRequire} from 'node:module';
 import type {Browser, Page} from 'playwright';
 import type {Part} from '../src/catalog/types.ts';
 import {ROOT} from '../scripts/catalog.ts';
+import {historicalBases} from './historical-catalog.ts';
 import {testBundle} from './offline-fixture.ts';
 import {requireLocalServerUrl} from './vite-url.ts';
 import {scrollSampleHTML} from '../src/catalog/scroll-sample.ts';
@@ -14,7 +15,7 @@ const {chromium}=require(process.env.PLAYWRIGHT_PATH??'playwright') as typeof im
 const offline=process.env.SOP_TEST_MODE==='offline';
 const read=(f:string)=>fs.readFileSync(path.join(ROOT,f),'utf8');
 // Historical v4.3 fixtures: new KINETIC designs have their own geometry/animation tests.
-const bases=(JSON.parse(read('src/catalog/registry.json')) as string[]).filter(b=>!JSON.parse(read(b+'/meta.json')).tags.includes('KINETIC'));
+const bases=historicalBases().filter(b=>!JSON.parse(read(b+'/meta.json')).tags.some((tag:string)=>['KINETIC','GLASS LAB'].includes(tag)));
 const parts=bases.filter(b=>/src\/parts\/(scrollbars|dropdowns)\//.test(b)).map(base=>{
  const part=JSON.parse(read(base+'/meta.json')) as Part;
  return {...part,base,markup:read(base+'/markup.html').replace('<!-- slot: insert your scrollable content -->',scrollSampleHTML(part))};

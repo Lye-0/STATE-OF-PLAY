@@ -1,0 +1,106 @@
+{
+  "id": "lgc-comboboxes-mist",
+  "name": "Mist Finder",
+  "category": "comboboxes",
+  "order": 2029,
+  "version": "4.16.0",
+  "tagline": "読みやすく、静かな透明感。",
+  "description": "Liquid Glass風の透過面。通常のcomboboxesとして配置・操作できます。",
+  "material": "LIQUID GLASS / MIST",
+  "motion": "RESPONSE",
+  "accent": "166,209,235",
+  "designType": "B",
+  "runtime": "Native DOM + CSS",
+  "componentName": "LgcComboboxesMist",
+  "tags": [
+    "LIQUID GLASS",
+    "liquid-glass",
+    "ガラス",
+    "半透明",
+    "comboboxes",
+    "B"
+  ],
+  "related": [
+    "soft-finder"
+  ],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "lgc-comboboxes-mist",
+    "kind": "comboboxes",
+    "variant": "soft",
+    "label": "次の素材を見つける",
+    "description": "",
+    "defaultValue": "",
+    "multiple": false,
+    "placeholder": "名前や素材を入力…",
+    "items": [
+      {
+        "value": "aurora",
+        "label": "Aurora",
+        "description": "光と透明感のコレクション",
+        "badge": "GLASS",
+        "icon": "spark"
+      },
+      {
+        "value": "folio",
+        "label": "Folio",
+        "description": "紙と余白のコレクション",
+        "badge": "PAPER",
+        "icon": "file"
+      },
+      {
+        "value": "mercury",
+        "label": "Mercury",
+        "description": "金属と精密さのコレクション",
+        "badge": "METAL",
+        "icon": "clock"
+      },
+      {
+        "value": "quiet",
+        "label": "Quiet",
+        "description": "落ち着いた日常のデザイン",
+        "badge": "ESSENTIAL",
+        "icon": "info"
+      },
+      {
+        "value": "archive",
+        "label": "Archive",
+        "description": "近日公開",
+        "badge": "SOON",
+        "disabled": true,
+        "icon": "file"
+      }
+    ]
+  },
+  "glassSource": {
+    "part": "soft-finder",
+    "base": "4.15.0",
+    "material": "regular"
+  }
+}

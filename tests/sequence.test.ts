@@ -1,8 +1,9 @@
+import {historicalBases} from './historical-catalog.ts';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import test from 'node:test';
-import {ROOT} from '../scripts/catalog.ts';
+import {ROOT} from './historical-catalog.ts';
 import {dependencies} from '../scripts/source-tools.ts';
 import {pageState,renderPagination} from '../src/shared/foundation/sequence/pagination.ts';
 import {tagChoices,tagValue,renderBadges} from '../src/shared/foundation/sequence/badges.ts';
@@ -10,7 +11,7 @@ import {pageItems} from '../src/shared/foundation/navigation.ts';
 import {SEQUENCE_MATERIALS,sequenceSkin,materialOf} from '../src/shared/foundation/sequence/skin.ts';
 const read=(file:string)=>fs.readFileSync(path.join(ROOT,file),'utf8');
 const exists=(file:string)=>fs.existsSync(path.join(ROOT,file));
-const parts=(JSON.parse(read('src/catalog/registry.json')) as string[]).map(base=>({base,...JSON.parse(read(base+'/meta.json'))}));
+const parts=historicalBases().map(base=>({base,...JSON.parse(read(base+'/meta.json'))}));
 const targets=parts.filter(p=>p.tags.includes('SEQUENCE'));
 
 test('SEQUENCE updates only 10 expressive paginations and 16 expressive tag components',()=>{

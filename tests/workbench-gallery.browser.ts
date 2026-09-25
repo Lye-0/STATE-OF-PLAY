@@ -1,5 +1,5 @@
 import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import{createRequire}from'node:module';import type{Browser}from'playwright';
-import{ROOT,buildCatalog,FORMATS}from'../scripts/catalog.ts';import{offlineFiles}from'./offline-fixture.ts';import{getDelivery,buildPrompt,packageContents}from'../src/catalog/delivery.ts';import{requireLocalServerUrl}from'./vite-url.ts';import{galleryReady,selectCategory}from'./gallery-ready.ts';
+import{ROOT,buildCatalog,FORMATS}from'./historical-catalog.ts';import{offlineFiles}from'./offline-fixture.ts';import{getDelivery,buildPrompt,packageContents}from'../src/catalog/delivery.ts';import{requireLocalServerUrl}from'./vite-url.ts';import{galleryReady,selectCategory}from'./gallery-ready.ts';
 const require=createRequire(import.meta.url),{chromium}=require(process.env.PLAYWRIGHT_PATH??'playwright') as typeof import('playwright');
 console.log('Building NAVIGATOR gallery');const data=buildCatalog(),offline=process.env.SOP_TEST_MODE==='offline',out=path.join(ROOT,'.test-output/workbench-gallery');fs.mkdirSync(out,{recursive:true});const tests:string[]=[],errors:string[]=[];let browser:Browser|undefined,close:(()=>Promise<void>)|undefined;
 async function run(name:string,fn:()=>Promise<void>){await fn();tests.push(name);console.log('PASS '+name);}
@@ -13,13 +13,13 @@ try{
  await run('825 components and 37 categories retain correct A/B filters for the 88 additions',async()=>{
   assert.equal(data.parts.length,825);
   assert.equal(new Set(data.parts.map(part=>part.category)).size,37);
-  for(const [category,total,expressive] of [['searchbars',20,12],['commands',16,10],['contextmenus',16,10],['navigation',20,12],['tables',16,10]] as const){
+  for(const [category,total,expressive] of [['searchbars',20,12],['commands',16,10],['contextmenus',16,10],['navigation',20,12],['tables',16,10]] as const){const extra=offline?0:1;
    await selectCategory(p,category);
-   assert.equal(await p.locator('#part-grid [data-part]').count(),total);
+   assert.equal(await p.locator('#part-grid [data-part]').count(),total+extra*2);
    await p.locator('[data-design-filter=A]').click();await galleryReady(p);
-   assert.equal(await p.locator('#part-grid [data-part]').count(),expressive);
+   assert.equal(await p.locator('#part-grid [data-part]').count(),expressive+extra);
    await p.locator('[data-design-filter=B]').click();await galleryReady(p);
-   assert.equal(await p.locator('#part-grid [data-part]').count(),total-expressive);
+   assert.equal(await p.locator('#part-grid [data-part]').count(),total-expressive+extra);
    await p.locator('[data-design-filter=all]').click();await galleryReady(p);
   }
  });

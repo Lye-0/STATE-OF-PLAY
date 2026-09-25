@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {createRequire} from 'node:module';
 import type {Page,Browser} from 'playwright';
-import {ROOT,buildCatalog} from '../scripts/catalog.ts';
+import {ROOT,buildCatalog} from './historical-catalog.ts';
 import {offlineFiles,testBundle,inlineTestCSS} from './offline-fixture.ts';
 import {getDelivery,buildPrompt} from '../src/catalog/delivery.ts';
 import {requireLocalServerUrl} from './vite-url.ts';
@@ -24,9 +24,9 @@ try{
  page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
  if(offline){const files=offlineFiles();await page.setContent(files.get('/index.html')!.replace(/<script[^>]*>[\s\S]*?<\/script>/g,'').replace(/<link[^>]*>/g,''));await page.addStyleTag({content:files.get('/test-styles.css')!});for(const v of ['prism','jszip'])await page.addScriptTag({content:fs.readFileSync(path.join(ROOT,'public/vendor',v+'.js'),'utf8')});await page.addScriptTag({content:files.get('/test-app.js')!});}else await page.goto(url);
  await run('Gallery: 24 native editable fields, labels focus the input, typing never opens details',async()=>{
-  await page.locator('[data-category="textboxes"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),24);
+ await page.locator('[data-category="textboxes"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),offline?24:26);
   for(const p of parts){const r=page.locator(`[data-part="${p.id}"] .sop-textfield`),f=r.locator('.sop-field-control');await r.locator('label').click();assert.ok(await f.evaluate(e=>e===document.activeElement));await f.fill(p.id==='contact-field'?'hello@example.com':'日本語入力 + text');assert.ok((await f.inputValue()).length>0);assert.equal(await r.getAttribute('data-filled'),'true');assert.equal(await page.locator('dialog[open]').count(),0);}
-  await page.locator('[data-design-filter="B"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),8);await page.locator('[data-design-filter="A"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),16);await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);
+  await page.locator('[data-design-filter="B"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),offline?8:9);await page.locator('[data-design-filter="A"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),offline?16:17);await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);
  });
  await run('Native editing: caret movement, undo, clear focus and safe text display',async()=>{
   const r=page.locator('[data-part="essential-field"] .sop-textfield'),f=r.locator('.sop-field-control');

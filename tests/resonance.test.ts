@@ -1,9 +1,10 @@
+import {historicalBases} from './historical-catalog.ts';
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';
-import {ROOT} from '../scripts/catalog.ts';import {dependencies,sourceReferences} from '../scripts/source-tools.ts';
+import {ROOT} from './historical-catalog.ts';import {dependencies,sourceReferences} from '../scripts/source-tools.ts';
 import {renderRadio,renderCombobox} from '../src/shared/foundation/resonance/controls.ts';import {renderToast,renderHint} from '../src/shared/foundation/resonance/feedback.ts';
 import {MATERIALS,materialOf} from '../src/shared/foundation/resonance/art.ts';
 const read=(p:string)=>fs.readFileSync(path.join(ROOT,p),'utf8'),exists=(p:string)=>fs.existsSync(path.join(ROOT,p));
-const parts=(JSON.parse(read('src/catalog/registry.json')) as string[]).map(base=>({...JSON.parse(read(base+'/meta.json')),base}));
+const parts=historicalBases().map(base=>({...JSON.parse(read(base+'/meta.json')),base}));
 const revised=parts.filter(p=>p.tags.includes('RESONANCE'));
 test('RESONANCE updates exactly 16 A designs in each of four categories, no additions or deleted IDs',()=>{assert.equal(parts.filter(p=>!p.tags.includes('GLASS LAB')).length,817);assert.equal(revised.length,64);for(const cat of ['radios','comboboxes','toasts','hints']){assert.equal(revised.filter(p=>p.category===cat).length,16);assert.equal(parts.filter(p=>p.category===cat&&p.designType==='B').length,8);}assert.ok(revised.every(p=>p.designType==='A'&&p.version==='4.7.0'));});
 test('material families have distinct motion geometry; invalid family has a safe resting appearance',()=>{assert.equal(MATERIALS.length,16);for(const m of MATERIALS){assert.equal(materialOf(m),m);assert.ok(read('src/shared/foundation/resonance/art.ts').includes(`case '${m}'`));}assert.equal(materialOf('<script>'),'aurora');});

@@ -7,12 +7,13 @@ import {createRequire} from 'node:module';
 import type {Browser,Page} from 'playwright';
 import type {Part} from '../src/catalog/types.ts';
 import {ROOT} from '../scripts/catalog.ts';
+import {historicalBases} from './historical-catalog.ts';
 import {testBundle} from './offline-fixture.ts';
 import {requireLocalServerUrl} from './vite-url.ts';
 const req=createRequire(import.meta.url), {chromium}=req(process.env.PLAYWRIGHT_PATH??'playwright') as typeof import('playwright');
 const offline=process.env.SOP_TEST_MODE==='offline';
 const read=(name:string)=>fs.readFileSync(path.join(ROOT,name),'utf8');
-const bases=JSON.parse(read('src/catalog/registry.json')) as string[];
+const bases=historicalBases();
 const all=bases.map(base=>({...JSON.parse(read(base+'/meta.json')),base,markup:read(base+'/markup.html')})) as (Part&{base:string})[];
 const parts=all.filter(p=>p.foundation),target=parts.filter(p=>p.designType==='A'&&p.category!=='loaders');
 function css(file:string,seen=new Set<string>()):string{if(seen.has(file))return '';seen.add(file);return read(file).replace(/@import\s+["']([^"']+)["']\s*;/g,(_,name:string)=>css(path.posix.normalize(path.posix.join(path.posix.dirname(file),name)),seen));}
