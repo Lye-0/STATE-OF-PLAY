@@ -110,6 +110,53 @@ try{
   }
   await page.setViewportSize({width:1440,height:960});
  });
+ await run('Glass popup thumbnails and native dialogs show readable translucent material',async()=>{
+  await selectCategory(page,'popups');
+  for(const id of ['lgc-popups-lens','lgc-popups-mist']){
+   const card=page.locator(`[data-part="${id}"]`);
+   const thumbnail=card.locator('.sop-popup-thumbnail > .sop-popup-window');
+   assert.ok(await thumbnail.evaluate(el=>getComputedStyle(el).backdropFilter.includes('blur(')),`${id}: thumbnail has no glass blur`);
+   await card.screenshot({path:path.join(out,`${id}-thumbnail.png`)});
+   await card.locator('.sop-popup-trigger').click();
+   const popup=card.locator('dialog.sop-popup-window');
+   await popup.waitFor({state:'visible'});
+   await page.waitForTimeout(400);
+   const material=await popup.evaluate(el=>{
+    const windowStyle=getComputedStyle(el),shellStyle=getComputedStyle(el.querySelector('.sop-popup-shell')!);
+    const alpha=Number(windowStyle.backgroundColor.match(/[\d.]+/g)?.at(-1)??1);
+    const titleColor=getComputedStyle(el.querySelector('h2')!).color.match(/\d+/g)!.map(Number);
+    return {modal:el.matches(':modal'),blur:windowStyle.backdropFilter,alpha,shell:shellStyle.backgroundColor,titleColor};
+   });
+   assert.ok(material.modal&&material.blur.includes('blur('),`${id}: open dialog lacks top-layer glass`);
+   assert.ok(material.alpha>0&&material.alpha<.9,`${id}: dialog is opaque`);
+   assert.equal(material.shell,'rgba(0, 0, 0, 0)',`${id}: shell covers the glass`);
+   assert.ok(material.titleColor.every(channel=>channel>180),`${id}: title is unreadable`);
+   if(id==='lgc-popups-mist'){const input=popup.locator('.pp-fields input');await input.fill('新しい名前');assert.equal(await input.inputValue(),'新しい名前');}
+   await page.screenshot({path:path.join(out,`${id}-open.png`)});
+   await page.keyboard.press('Escape');
+   await popup.waitFor({state:'hidden'});
+   const root=card.locator('.stage-mount > .sop-popup');
+   await root.evaluate(el=>el.setAttribute('data-lg-appearance','light'));
+   await card.locator('.sop-popup-trigger').click();
+   const light=await popup.evaluate(el=>({color:getComputedStyle(el.querySelector('h2')!).color.match(/\d+/g)!.map(Number),background:getComputedStyle(el).backgroundColor}));
+   assert.ok(light.color.every(channel=>channel<100)&&light.background.startsWith('rgba('),`${id}: light glass is unreadable`);
+   await page.keyboard.press('Escape');await popup.waitFor({state:'hidden'});
+   await root.evaluate(el=>el.setAttribute('data-lg-material','solid'));
+   await card.locator('.sop-popup-trigger').click();
+   const solid=await popup.evaluate(el=>({background:getComputedStyle(el).backgroundColor,blur:getComputedStyle(el).backdropFilter}));
+   assert.ok(solid.background.startsWith('rgb(')&&solid.blur==='none',`${id}: solid fallback remains translucent`);
+   await page.keyboard.press('Escape');await popup.waitFor({state:'hidden'});
+   await root.evaluate(el=>{el.removeAttribute('data-lg-material');el.removeAttribute('data-lg-appearance');});
+   await open(id);
+   await detail.locator('.sop-popup-trigger').click();
+   const nested=detail.locator('dialog.sop-popup-window');
+   assert.ok(await nested.evaluate(el=>el.matches(':modal')),`${id}: popup does not open above details`);
+   await page.keyboard.press('Escape');
+   await nested.waitFor({state:'hidden'});
+   assert.ok(await detail.isVisible(),`${id}: closing popup also closed details`);
+   await closeDetail();
+  }
+ });
  await run('Representative code and prompt use the usual delivery path',async()=>{
   for(const id of ['lg-flow-tabs','lgc-segments-lens','lgc-datepickers-mist','lgc-navigation-lens','lgc-ornaments-mist']){
    const part=await open(id),delivery=getDelivery(part,'tsx','portable');
