@@ -64,6 +64,32 @@ export function createGlass(root:HTMLElement, initial:GlassOptions = {}):GlassCo
     activeLens=document.createElement('span');activeLens.className='lg-active-lens';activeLens.setAttribute('aria-hidden','true');
     popup.prepend(activeLens);
   }
+  const restingLight={x:28,y:12};
+  const lights=[root,...(popup?[popup]:[])].map(element=>({element,x:restingLight.x,y:restingLight.y,targetX:restingLight.x,targetY:restingLight.y}));
+  let lightFrame=0,lastLightTime=0;
+  function paintLight(){for(const light of lights){light.element.style.setProperty('--lg-light-x',`${light.x.toFixed(2)}%`);light.element.style.setProperty('--lg-light-y',`${light.y.toFixed(2)}%`);}}
+  function tickLight(time:number){
+    lightFrame=0;if(dead||options.paused||reduced.matches||!visible||document.hidden)return;
+    const elapsed=lastLightTime?Math.min(time-lastLightTime,64):16;lastLightTime=time;
+    const ease=1-Math.exp(-elapsed/(pointer?90:260));let moving=false;
+    for(const light of lights){
+      light.x+=(light.targetX-light.x)*ease;light.y+=(light.targetY-light.y)*ease;
+      if(Math.abs(light.targetX-light.x)<.1&&Math.abs(light.targetY-light.y)<.1){light.x=light.targetX;light.y=light.targetY;}else moving=true;
+    }
+    paintLight();if(moving)lightFrame=requestAnimationFrame(tickLight);else lastLightTime=0;
+  }
+  function scheduleLight(){if(!lightFrame&&!dead&&!options.paused&&!reduced.matches&&visible&&!document.hidden)lightFrame=requestAnimationFrame(tickLight);}
+  function targetLight(surface:HTMLElement,x:number,y:number){
+    for(const light of lights){light.targetX=light.element===surface?x:restingLight.x;light.targetY=light.element===surface?y:restingLight.y;}
+    scheduleLight();
+  }
+  function resetLight(immediate=false){
+    for(const light of lights){light.targetX=restingLight.x;light.targetY=restingLight.y;}
+    if(immediate||options.paused||reduced.matches||!visible||document.hidden){
+      cancelAnimationFrame(lightFrame);lightFrame=0;lastLightTime=0;
+      for(const light of lights){light.x=restingLight.x;light.y=restingLight.y;}paintLight();
+    }else scheduleLight();
+  }
   function selectedGeometry(){
     if(!popup||popup.hidden||!activeLens)return;
     const option=popup.querySelector<HTMLElement>('[role="option"][data-active="true"]');
@@ -116,12 +142,6 @@ export function createGlass(root:HTMLElement, initial:GlassOptions = {}):GlassCo
   }
   function render(){
     frame=0;if(dead)return;selectedGeometry();refreshLenses();
-    if(pointer&&visible&&!document.hidden&&!options.paused&&!reduced.matches){
-      const surface=popup&&!popup.hidden&&pointer.y>=popup.getBoundingClientRect().top?popup:root;
-      const rect=surface.getBoundingClientRect();
-      const x=Math.max(0,Math.min(100,100*(pointer.x-rect.left)/Math.max(1,rect.width))), y=Math.max(0,Math.min(100,100*(pointer.y-rect.top)/Math.max(1,rect.height)));
-      surface.style.setProperty('--lg-light-x',`${x.toFixed(2)}%`);surface.style.setProperty('--lg-light-y',`${y.toFixed(2)}%`);
-    }
   }
   function schedule(){if(!dead&&!frame&&visible&&!document.hidden)frame=requestAnimationFrame(render);}
   function cancelPulses(){for(const a of pulses)a.cancel();pulses.clear();}
@@ -132,7 +152,7 @@ export function createGlass(root:HTMLElement, initial:GlassOptions = {}):GlassCo
   function sync(){
     root.dataset.lgMaterial=options.material;root.dataset.lgAppearance=options.appearance;
     root.dataset.lgOptics=options.optics;root.dataset.lgPaused=String(options.paused);root.dataset.lgReduced=String(reduced.matches);
-    if(options.paused||reduced.matches){cancelPulses();root.dataset.lgPressed='false';root.dataset.lgMoving='false';clearTimeout(settleTimer);}
+    if(options.paused||reduced.matches){cancelPulses();root.dataset.lgPressed='false';root.dataset.lgMoving='false';clearTimeout(settleTimer);resetLight(true);}
     selectedGeometry();refreshLenses();
   }
   const observer=typeof ResizeObserver==='undefined'?null:new ResizeObserver(schedule);observer?.observe(root);if(popup)observer?.observe(popup);
@@ -146,8 +166,15 @@ export function createGlass(root:HTMLElement, initial:GlassOptions = {}):GlassCo
   });
   changes.observe(root,{attributes:true,attributeFilter:['data-value','data-open','aria-checked']});
   if(trigger)changes.observe(trigger,{attributes:true,attributeFilter:['aria-activedescendant']});
-  root.addEventListener('pointermove',event=>{if(event.pointerType==='touch'||event.isPrimary===false)return;pointer={x:event.clientX,y:event.clientY};schedule();},{passive:true,signal:abort.signal});
-  root.addEventListener('pointerleave',()=>{pointer=null;root.style.setProperty('--lg-light-x','28%');root.style.setProperty('--lg-light-y','12%');},{signal:abort.signal});
+  root.addEventListener('pointermove',event=>{
+    if(event.pointerType==='touch'||event.isPrimary===false||options.paused||reduced.matches||!visible||document.hidden)return;
+    pointer={x:event.clientX,y:event.clientY};
+    const surface=popup&&!popup.hidden&&pointer.y>=popup.getBoundingClientRect().top?popup:root;
+    const rect=surface.getBoundingClientRect();
+    targetLight(surface,Math.max(0,Math.min(100,100*(pointer.x-rect.left)/Math.max(1,rect.width))),Math.max(0,Math.min(100,100*(pointer.y-rect.top)/Math.max(1,rect.height))));
+    schedule();
+  },{passive:true,signal:abort.signal});
+  root.addEventListener('pointerleave',()=>{pointer=null;resetLight();},{signal:abort.signal});
   const release=()=>{root.dataset.lgPressed='false';};
   root.addEventListener('pointerdown',event=>{
     const target=event.target instanceof Element?event.target:null;
@@ -155,13 +182,14 @@ export function createGlass(root:HTMLElement, initial:GlassOptions = {}):GlassCo
     root.dataset.lgPressed='true';
   },{passive:true,signal:abort.signal});
   window.addEventListener('pointerup',release,{passive:true,signal:abort.signal});window.addEventListener('pointercancel',release,{passive:true,signal:abort.signal});
-  root.addEventListener('focusin',()=>{if(!options.paused&&!reduced.matches){root.style.setProperty('--lg-light-x','50%');root.style.setProperty('--lg-light-y','0%');}},{signal:abort.signal});
+  root.addEventListener('focusin',()=>{if(!options.paused&&!reduced.matches)targetLight(root,50,0);},{signal:abort.signal});
+  root.addEventListener('focusout',()=>queueMicrotask(()=>{if(!dead&&!pointer&&!root.contains(document.activeElement))resetLight();}),{signal:abort.signal});
   reduced.addEventListener('change',sync,{signal:abort.signal});transparency.addEventListener('change',sync,{signal:abort.signal});contrast.addEventListener('change',sync,{signal:abort.signal});
-  document.addEventListener('visibilitychange',()=>{if(document.hidden){cancelAnimationFrame(frame);frame=0;cancelPulses();release();}else schedule();},{signal:abort.signal});
-  const intersection=typeof IntersectionObserver==='undefined'?null:new IntersectionObserver(entries=>{visible=entries[0]?.isIntersecting??true;if(!visible){cancelAnimationFrame(frame);frame=0;cancelPulses();}else schedule();});intersection?.observe(root);
+  document.addEventListener('visibilitychange',()=>{if(document.hidden){pointer=null;cancelAnimationFrame(frame);frame=0;cancelPulses();release();resetLight(true);}else schedule();},{signal:abort.signal});
+  const intersection=typeof IntersectionObserver==='undefined'?null:new IntersectionObserver(entries=>{visible=entries[0]?.isIntersecting??true;if(!visible){pointer=null;cancelAnimationFrame(frame);frame=0;cancelPulses();resetLight(true);}else schedule();});intersection?.observe(root);
   sync();
   return {updateGlass(next){if(dead)return;options=normalizeGlass(next,options);sync();},getGlass:()=>({...options}),setPaused(paused){if(dead)return;options={...options,paused};sync();},refreshGlass:schedule,
-    destroy(){if(dead)return;dead=true;abort.abort();changes.disconnect();observer?.disconnect();intersection?.disconnect();cancelAnimationFrame(frame);clearTimeout(settleTimer);cancelPulses();removeLenses();activeLens?.remove();
+    destroy(){if(dead)return;resetLight(true);dead=true;abort.abort();changes.disconnect();observer?.disconnect();intersection?.disconnect();cancelAnimationFrame(frame);cancelAnimationFrame(lightFrame);clearTimeout(settleTimer);cancelPulses();removeLenses();activeLens?.remove();
       for(const [k,v]of oldData){if(v===undefined)delete root.dataset[k];else root.dataset[k]=v;}
       for(const [k,v]of previousStyles){if(v)root.style.setProperty(k,v);else root.style.removeProperty(k);}
       if(popup)for(const k of ['--lg-choice-x','--lg-choice-y','--lg-choice-h','--lg-choice-w','--lg-light-x','--lg-light-y'])popup.style.removeProperty(k);

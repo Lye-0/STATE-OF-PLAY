@@ -6,6 +6,8 @@
 .lgc-root[data-lg-material="solid"][data-lg-appearance="light"]{--lgc-fill:#edf5fa;--lgc-panel:#edf5fa;}
 .lgc-root :where(input,textarea,button,select){color:inherit;}
 .lgc-root :where(a,button,input,textarea,select,[tabindex]):focus-visible{outline:2px solid var(--lgc-accent);outline-offset:3px;}
+.lgc-root :where(.ff-icon-button,.ff-calendar-grid button,.ff-crumb-menu a,.ff-time-column button){transition:background-color .24s ease,color .24s ease,border-color .24s ease,box-shadow .24s ease;}
+.lgc-root :where(.ff-tag button){transition:opacity .22s ease;}
 .lgc-root:where([data-lgc-paused="true"]) :where(*, *::before,*::after){animation-play-state:paused!important;}
 @media(prefers-reduced-transparency:reduce),(prefers-contrast:more){.lgc-root{--lgc-fill:#203949;--lgc-panel:#203949;--lgc-blur:0px;}.lgc-root[data-lg-appearance="light"]{--lgc-fill:#edf5fa;--lgc-panel:#edf5fa;}}
 @supports not (backdrop-filter:blur(1px)){.lgc-root{--lgc-fill:#203949;--lgc-panel:#203949;}.lgc-root[data-lg-appearance="light"]{--lgc-fill:#edf5fa;--lgc-panel:#edf5fa;}}
