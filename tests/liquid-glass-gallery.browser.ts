@@ -135,6 +135,27 @@ try{
   assert.equal(await mist.locator('[data-date="1"]').isVisible(),false);
   await mistPanel.waitFor({state:'hidden'});
  });
+ await run('Both glass pagers keep the selected number readable on a transparent lens',async()=>{
+  await selectCategory(page,'pagination');
+  const opacity=(color:string)=>color.startsWith('rgba(')?Number(color.match(/,\s*([\d.]+)\)/)?.[1]??1):color.startsWith('color(')?Number(color.match(/\/\s*([\d.]+)\)/)?.[1]??1):1;
+  for(const [id,target]of [['lgc-pagination-lens','12'],['lgc-pagination-mist','5']]as const){
+   const card=page.locator(`[data-part="${id}"]`),root=card.locator('.lgc-root'),rail=root.locator('.ff-pages');
+   const style=()=>rail.evaluate(el=>{const rail=getComputedStyle(el),current=getComputedStyle(el.querySelector('[aria-current="page"]')!);return {rail:rail.backgroundColor,blur:rail.backdropFilter,number:current.color,lens:current.backgroundColor,reflection:current.boxShadow};});
+   const initial=await style();
+   assert.ok(opacity(initial.rail)<.6,`${id}: rail remains too opaque`);
+   assert.ok(opacity(initial.lens)<.65,`${id}: selected page is painted solid`);
+   assert.notEqual(initial.number,'rgba(0, 0, 0, 0)',`${id}: selected page number is transparent`);
+   assert.ok(initial.blur.includes('blur(')&&initial.reflection!=='none',`${id}: selected page lost its glass material`);
+   await rail.locator(`[aria-label="ページ ${target}"]`).click();
+   const selected=rail.locator('[aria-current="page"]');
+   assert.equal((await selected.innerText()).trim(),target.padStart(2,'0'));
+   assert.notEqual(await selected.evaluate(el=>getComputedStyle(el).color),'rgba(0, 0, 0, 0)');
+   await root.evaluate(el=>el.setAttribute('data-lg-material','solid'));
+   await page.waitForTimeout(300);
+   assert.equal(opacity((await style()).rail),1,`${id}: solid mode still shows through`);
+   await root.evaluate(el=>el.removeAttribute('data-lg-material'));
+  }
+ });
  await run('Glass popup thumbnails and native dialogs show readable translucent material',async()=>{
   await selectCategory(page,'popups');
   for(const id of ['lgc-popups-lens','lgc-popups-mist']){
