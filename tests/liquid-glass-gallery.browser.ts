@@ -156,6 +156,36 @@ try{
    await root.evaluate(el=>el.removeAttribute('data-lg-material'));
   }
  });
+ await run('Both glass avatar layouts keep names and roles inside their controls',async()=>{
+  for(const width of [1440,390,320]){
+   await page.setViewportSize({width,height:960});await selectCategory(page,'avatars');
+   for(const id of ['lgc-avatars-lens','lgc-avatars-mist']){
+    const card=page.locator(`[data-part="${id}"]`);await card.scrollIntoViewIfNeeded();
+    const contained=()=>card.evaluate(el=>[...el.querySelectorAll<HTMLElement>('.sg-person')].every(person=>{
+     const bounds=person.getBoundingClientRect();
+     return [...person.querySelectorAll<HTMLElement>('.sg-person-name,.sg-person-sub')].every(node=>{
+      const range=document.createRange();range.selectNodeContents(node);const text=range.getBoundingClientRect();
+      return text.left>=bounds.left-1&&text.right<=bounds.right+1&&text.top>=bounds.top-1&&text.bottom<=bounds.bottom+1;
+     });
+    }));
+    assert.ok(await contained(),`${id} ${width}: label leaves its glass control`);
+    const name=card.locator('.sg-person-name').first(),role=card.locator('.sg-person-sub').first();
+    const originalName=await name.textContent(),originalRole=await role.textContent();
+    await name.evaluate(el=>el.textContent='Alexandria Montgomery');await role.evaluate(el=>el.textContent='Senior Engineering Platform');
+    assert.ok(await contained(),`${id} ${width}: long label leaves its glass control`);
+    await name.evaluate((el,value)=>el.textContent=value,originalName);await role.evaluate((el,value)=>el.textContent=value,originalRole);
+    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),`${id} ${width}: page overflows`);
+    if(width===1440){
+     const glass=await card.evaluate(el=>getComputedStyle(el.querySelector(el.classList.contains('glass-series')&&el.dataset.part==='lgc-avatars-lens'?'.sg-person':'.sg-avatar-stage')!).backdropFilter);
+     assert.ok(glass.includes('blur('),`${id}: material lost its backdrop blur`);
+     await card.locator('[data-user="rin"]').click();
+     assert.equal(await card.locator('[data-user="rin"]').getAttribute('aria-pressed'),'true');
+     await card.screenshot({path:path.join(out,`${id}-identity.png`)});
+    }
+   }
+  }
+  await page.setViewportSize({width:1440,height:960});
+ });
  await run('Glass popup thumbnails and native dialogs show readable translucent material',async()=>{
   await selectCategory(page,'popups');
   for(const id of ['lgc-popups-lens','lgc-popups-mist']){
