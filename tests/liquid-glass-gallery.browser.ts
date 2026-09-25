@@ -50,6 +50,52 @@ try{
    await closeDetail();
   }
  });
+ await run('Both glass scrollbars stay inside their gallery and detail previews',async()=>{
+  for(const width of [1440,390]){
+   await page.setViewportSize({width,height:960});
+   await selectCategory(page,'scrollbars');
+   for(const id of ['lgc-scrollbars-lens','lgc-scrollbars-mist']){
+    const card=page.locator(`[data-part="${id}"]`);
+    const layout=await card.evaluate(el=>{
+     const stage=el.querySelector('.object-stage')!.getBoundingClientRect();
+     const root=el.querySelector('.sop-scroll-area')!.getBoundingClientRect();
+     const footer=el.querySelector('.card-bottom')!.getBoundingClientRect();
+     const viewport=el.querySelector('.sop-scroll-viewport')!;
+     return {stageHeight:stage.height,rootBottom:root.bottom,stageBottom:stage.bottom,footerTop:footer.top,scrollable:viewport.scrollHeight>viewport.clientHeight};
+    });
+    assert.ok(layout.stageHeight<450,`${id} ${width}: stage ${layout.stageHeight}`);
+    assert.ok(layout.rootBottom<=layout.stageBottom+2,`${id} ${width}: root escaped stage`);
+    assert.ok(layout.stageBottom<=layout.footerTop+2,`${id} ${width}: footer displaced`);
+    assert.ok(layout.scrollable,`${id} ${width}: sample cannot scroll`);
+    if(id==='lgc-scrollbars-lens'&&width===1440)await card.screenshot({path:path.join(out,'scrollbar-lens-card.png')});
+    await open(id);
+    const detailLayout=await detail.locator('.preview-stage').evaluate(el=>{
+     const stage=el.getBoundingClientRect();
+     const root=el.querySelector('.sop-scroll-area')!.getBoundingClientRect();
+     const viewport=el.querySelector('.sop-scroll-viewport')!;
+     return {stageHeight:stage.height,rootBottom:root.bottom,stageBottom:stage.bottom,scrollable:viewport.scrollHeight>viewport.clientHeight};
+    });
+    assert.ok(detailLayout.stageHeight<390,`${id} ${width}: detail stage ${detailLayout.stageHeight}`);
+    assert.ok(detailLayout.rootBottom<=detailLayout.stageBottom+2,`${id} ${width}: detail root escaped`);
+    assert.ok(detailLayout.scrollable,`${id} ${width}: detail cannot scroll`);
+    await closeDetail();
+   }
+  }
+ });
+ await run('Both glass blocks also remain inside their cards',async()=>{
+  await page.setViewportSize({width:1440,height:960});
+  await selectCategory(page,'blocks');
+  for(const id of ['lgc-blocks-lens','lgc-blocks-mist']){
+   const card=page.locator(`[data-part="${id}"]`);
+   const fits=await card.evaluate(el=>{
+    const stage=el.querySelector('.object-stage')!.getBoundingClientRect();
+    const surface=el.querySelector('.sop-surface')!.getBoundingClientRect();
+    const footer=el.querySelector('.card-bottom')!.getBoundingClientRect();
+    return surface.top>=stage.top-2&&surface.bottom<=stage.bottom+2&&stage.bottom<=footer.top+2;
+   });
+   assert.ok(fits,id);
+  }
+ });
  await run('Narrow layouts retain controls and avoid page overflow',async()=>{
   for(const width of [320,390,768]){await page.setViewportSize({width,height:900});for(const id of ['lgc-textboxes-mist','lgc-tables-lens']){await open(id);assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),id+' '+width);await closeDetail();}}
  });
