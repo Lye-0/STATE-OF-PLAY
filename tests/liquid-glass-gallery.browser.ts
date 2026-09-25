@@ -183,6 +183,25 @@ try{
   }
   await page.setViewportSize({width:1440,height:960});
  });
+ await run('Frost Palette keeps its dark glass pane and readable controls',async()=>{
+  for(const width of [1440,390,320]){
+   await page.setViewportSize({width,height:960});await selectCategory(page,'colors');
+   const card=page.locator('[data-part="lgc-colors-mist"]');await card.scrollIntoViewIfNeeded();
+   const appearance=await card.evaluate(el=>{
+    const panel=getComputedStyle(el.querySelector('.sg-color-panel')!);
+    const heading=getComputedStyle(el.querySelector('.sg-color-heading .sg-label')!);
+    const hex=getComputedStyle(el.querySelector('[data-hex]')!);
+    return {panel:panel.backgroundColor,blur:panel.backdropFilter,heading:heading.color,hex:hex.color,overflow:document.documentElement.scrollWidth>innerWidth+2};
+   });
+   const rgb=appearance.panel.match(/[\d.]+/g)?.map(Number)??[];
+   assert.ok(rgb[0]<80&&rgb[1]<100&&rgb[2]<120&&rgb[3]<.85,`Frost Palette ${width}: opaque light panel returned`);
+   assert.ok(appearance.blur.includes('blur('),`Frost Palette ${width}: glass blur is missing`);
+   assert.equal(appearance.heading,appearance.hex,`Frost Palette ${width}: heading and HEX ink diverge`);
+   assert.equal(appearance.overflow,false,`Frost Palette ${width}: page overflows`);
+   if(width===1440)await card.screenshot({path:path.join(out,'frost-palette-dark.png')});
+  }
+  await page.setViewportSize({width:1440,height:960});
+ });
  await run('Both glass avatar layouts keep names and roles inside their controls',async()=>{
   for(const width of [1440,390,320]){
    await page.setViewportSize({width,height:960});await selectCategory(page,'avatars');
