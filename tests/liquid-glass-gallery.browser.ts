@@ -180,6 +180,43 @@ try{
    await closeDetail();
   }
  });
+ await run('Floating notices remain clearer than Mist in the actual top layer',async()=>{
+  const measured:Record<string,Record<string,{alpha:number;blur:string}>>={studio:{},light:{}};
+  for(const id of ['lgc-toasts-lens','lgc-toasts-mist']){
+   await open(id);
+   const preview=detail.locator(`[data-preview-part="${id}"]`);
+   const sample=preview.locator('.ff-notice-sample');
+   assert.ok(await sample.evaluate(el=>getComputedStyle(el).backdropFilter.includes('blur(')),`${id}: showcase lost glass blur`);
+   const notice=preview.locator('.ff-toast-stack .ff-notice');
+   for(const scene of ['studio','light']){
+    await detail.locator(`[data-bg="${scene}"]`).click();
+    await page.waitForTimeout(360);
+    const sampleAlpha=await sample.evaluate(el=>Number(getComputedStyle(el).backgroundColor.match(/[\d.]+/g)?.at(-1)??1));
+    await preview.locator('[data-notify]').click();
+    await notice.waitFor({state:'visible'});
+    await page.waitForTimeout(300);
+    const material=await notice.evaluate(el=>{
+     const style=getComputedStyle(el),alpha=Number(style.backgroundColor.match(/[\d.]+/g)?.at(-1)??1);
+     return {alpha,blur:style.backdropFilter};
+    });
+    assert.ok(material.blur.includes('blur('),`${id} ${scene}: live notice lost backdrop blur`);
+    assert.ok(Math.abs(material.alpha-sampleAlpha)<0.02,`${id} ${scene}: showcase and live notice differ`);
+    measured[scene][id]=material;
+    await page.screenshot({path:path.join(out,`${id}-${scene}-live.png`)});
+    await notice.locator('[data-notice-close]').click();
+    await notice.waitFor({state:'hidden'});
+   }
+   await preview.locator('.sop-foundation').evaluate(el=>el.setAttribute('data-lg-material','solid'));
+   await preview.locator('[data-notify]').click();
+   await notice.waitFor({state:'visible'});
+   const solid=await notice.evaluate(el=>({background:getComputedStyle(el).backgroundColor,blur:getComputedStyle(el).backdropFilter}));
+   assert.ok(solid.background.startsWith('rgb(')&&solid.blur==='none',`${id}: solid notice still transmits the background`);
+   await notice.locator('[data-notice-close]').click();
+   await notice.waitFor({state:'hidden'});
+   await closeDetail();
+  }
+  for(const scene of ['studio','light'])assert.ok(measured[scene]['lgc-toasts-lens'].alpha+0.35<measured[scene]['lgc-toasts-mist'].alpha,`${scene}: Floating and Mist have nearly the same opacity: ${JSON.stringify(measured[scene])}`);
+ });
  await run('Representative code and prompt use the usual delivery path',async()=>{
   for(const id of ['lg-flow-tabs','lgc-segments-lens','lgc-datepickers-mist','lgc-navigation-lens','lgc-ornaments-mist']){
    const part=await open(id),delivery=getDelivery(part,'tsx','portable');

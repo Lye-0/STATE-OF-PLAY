@@ -19,6 +19,7 @@
 .sop-foundation.sop-lgc-toasts-mist .ff-progress-fill{box-shadow:none;}
 
 /* Liquid Glass material, independent of gallery presentation. */
+/* Keep the prefixed blur first so the production CSS retains the standard Chrome declaration. */
 .lgc-root.sop-lgc-toasts-mist{
  --ff-base:transparent;--ff-panel:var(--lgc-fill);--ff-line:var(--lgc-line);--ff-ink:var(--lgc-ink);--ff-muted:var(--lgc-muted);--ff-accent:var(--lgc-accent);--ff-accent2:var(--lgc-accent);--ff-radius:var(--lgc-radius);
  --field-bg:var(--lgc-fill);--field-ink:var(--lgc-ink);--field-muted:var(--lgc-muted);--field-accent:var(--lgc-accent);--field-edge:var(--lgc-line);--field-radius:var(--lgc-radius);
@@ -27,7 +28,13 @@
  --pp-bg:var(--lgc-panel);--pp-ink:var(--lgc-ink);--pp-muted:var(--lgc-muted);--pp-accent:var(--lgc-accent);--pp-line:var(--lgc-line);--pp-wash:#c9e5ef14;--pp-radius:var(--lgc-radius);
  --sg-bg:var(--lgc-fill);--sg-ink:var(--lgc-ink);--sg-muted:var(--lgc-muted);--sg-line:var(--lgc-line);--sg-a:var(--lgc-accent);--sg-soft:var(--lgc-selection);--sg-radius:var(--lgc-radius);
  --wb-bg:var(--lgc-fill);--wb-surface:var(--lgc-panel);--wb-ink:var(--lgc-ink);--wb-muted:var(--lgc-muted);--wb-accent:var(--lgc-accent);--wb-line:var(--lgc-line);--wb-radius:var(--lgc-radius);
- --lgc-fill:rgba(29,48,65,.65);--lgc-panel:rgba(22,42,58,.94);--lgc-radius:13px;color:var(--lgc-ink);background:transparent;max-width:100%;}
-.lgc-root.sop-lgc-toasts-mist .ff-notice{background:radial-gradient(ellipse at 18% 0%,#e9f8ff30,transparent 60%),var(--lgc-fill);border:1px solid var(--lgc-line);box-shadow:inset 0 1px 1px #fff8,inset 0 -1px 1px #b6d9ef24,0 7px 22px #06182929;backdrop-filter:blur(var(--lgc-blur)) saturate(1.24);-webkit-backdrop-filter:blur(var(--lgc-blur)) saturate(1.24);color:var(--lgc-ink);border-radius:var(--lgc-radius);transition:background .24s,border-color .24s,box-shadow .24s;}
+ --lgc-fill:rgba(29,48,65,.76);--lgc-panel:rgba(22,42,58,.94);--lgc-radius:13px;color:var(--lgc-ink);background:transparent;max-width:100%;}
+.lgc-root.sop-lgc-toasts-mist .ff-notice{background:radial-gradient(ellipse at 10% 0%,#e4f3fb19,transparent 60%),var(--lgc-fill);border:1px solid #dceff752;box-shadow:inset 0 1px 0 #ffffff4f,0 10px 24px #06182942;-webkit-backdrop-filter:blur(12px) saturate(1.1);backdrop-filter:blur(12px) saturate(1.1);color:var(--lgc-ink);border-radius:var(--lgc-radius);transition:background .24s,border-color .24s,box-shadow .24s;}
+.lgc-root.sop-lgc-toasts-mist[data-lg-appearance="light"]{--lgc-fill:rgba(247,251,255,.90);--lgc-panel:rgba(249,252,255,.95);}
+.lgc-root.sop-lgc-toasts-mist[data-lg-appearance="light"] .ff-notice{background:radial-gradient(ellipse at 10% 0%,#ffffff7a,transparent 60%),var(--lgc-fill);border-color:#ffffffd9;box-shadow:inset 0 1px 0 #fff,0 10px 24px #1939492e;}
+.lgc-root.sop-lgc-toasts-mist[data-lg-appearance="light"][data-lg-material="solid"]{--lgc-fill:#edf5fa;--lgc-panel:#edf5fa;}
+.lgc-root.sop-lgc-toasts-mist[data-lg-material="solid"]{--lgc-panel:#203949;}
+.lgc-root.sop-lgc-toasts-mist[data-lg-material="solid"] .ff-notice{background:var(--lgc-panel);-webkit-backdrop-filter:none;backdrop-filter:none;}
+@media(prefers-reduced-transparency:reduce),(prefers-contrast:more){.lgc-root.sop-lgc-toasts-mist{--lgc-panel:#203949;}.lgc-root.sop-lgc-toasts-mist[data-lg-appearance="light"]{--lgc-panel:#edf5fa;}.lgc-root.sop-lgc-toasts-mist .ff-notice,.lgc-root.sop-lgc-toasts-mist[data-lg-appearance="light"] .ff-notice{background:var(--lgc-panel);-webkit-backdrop-filter:none;backdrop-filter:none;}}
 
-@media(forced-colors:active){.lgc-root.sop-lgc-toasts-mist .ff-notice{background:Canvas;color:CanvasText;border:1px solid CanvasText;box-shadow:none;backdrop-filter:none;}}
+@media(forced-colors:active){.lgc-root.sop-lgc-toasts-mist .ff-notice,.lgc-root.sop-lgc-toasts-mist[data-lg-appearance="light"] .ff-notice{background:Canvas;color:CanvasText;border:1px solid CanvasText;box-shadow:none;backdrop-filter:none;}}
