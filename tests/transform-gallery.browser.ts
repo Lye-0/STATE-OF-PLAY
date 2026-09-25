@@ -17,6 +17,22 @@ try{
  await run('selection inspector dynamic option counts retain transformed markers and keyboard state',async()=>{
   await p.locator('[data-category="tabs"]').click();await galleryReady(p,true);await p.locator('[data-open="aurora-tabs"]').click();await galleryReady(p,true);const d=p.locator('#part-details');for(const n of [2,4,7,3]){await d.locator(`[data-selection-count="${n}"]`).click();assert.equal(await d.locator('.sop-choice-item').count(),n);await d.locator('.sop-choice-item').last().click();assert.equal(await d.locator('[data-selection-kind]').getAttribute('data-value'),`choice-${n}`);assert.ok(await d.locator('.sop-choice-marker').isVisible());}await p.screenshot({path:path.join(out,'detail.png')});await d.locator('.close-detail').click();
  });
+ await run('Capillary Selector keeps the fluid lens inside a wrapping strip in gallery and inspector',async()=>{
+  const noHorizontalScroll=async(list:import('playwright').Locator)=>{
+   const state=await list.evaluate(el=>{(el as HTMLElement).scrollLeft=20;const style=getComputedStyle(el);return{overflowX:style.overflowX,scrollLeft:el.scrollLeft,items:[...el.querySelectorAll<HTMLElement>(':scope > .sop-choice-item')].map(item=>({left:item.offsetLeft,right:item.offsetLeft+item.offsetWidth})),width:el.clientWidth};});
+   assert.equal(state.overflowX,'clip');assert.equal(state.scrollLeft,0);assert.ok(state.items.every(item=>item.left>=0&&item.right<=state.width+1));
+  };
+  await p.locator('[data-category="segments"]').click();await galleryReady(p,true);
+  const card=p.locator('[data-part="capillary-segments"]'),list=card.locator('.sop-choice-list');
+  for(const index of [0,2]){await list.locator('.sop-choice-item').nth(index).click();await p.waitForTimeout(450);await noHorizontalScroll(list);}
+  await card.locator('[data-open]').click();await galleryReady(p,true);
+  const d=p.locator('#part-details'),detailList=d.locator('.sop-choice-list');
+  await d.locator('[data-selection-count="7"]').click();
+  for(const index of [0,6]){await detailList.locator('.sop-choice-item').nth(index).click();await p.waitForTimeout(450);await noHorizontalScroll(detailList);}
+  await d.locator('[data-selection-axis]').selectOption('vertical');
+  assert.equal(await detailList.evaluate(el=>getComputedStyle(el).overflowX),'visible');
+  await d.locator('.close-detail').click();
+ });
  await run('popup opens above the inspector, closes only itself and restores inspector focus',async()=>{
   await p.locator('[data-category="popups"]').click();await galleryReady(p,true);await p.locator('[data-open="folio-window"]').click();await galleryReady(p,true);const d=p.locator('#part-details');await d.locator('.sop-popup-trigger').click();assert.equal(await p.locator('dialog[open]').count(),2);await p.keyboard.press('Escape');await p.waitForTimeout(230);assert.equal(await p.locator('dialog[open]').count(),1);assert.ok(await d.locator('.sop-popup-trigger').evaluate(e=>e===document.activeElement));await d.locator('.close-detail').click();
  });
