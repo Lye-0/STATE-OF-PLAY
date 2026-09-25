@@ -156,6 +156,33 @@ try{
    await root.evaluate(el=>el.removeAttribute('data-lg-material'));
   }
  });
+ await run('Glass ratings use distinct translucent surfaces and keep selection readable',async()=>{
+  for(const width of [1440,390,320]){
+   await page.setViewportSize({width,height:960});await selectCategory(page,'ratings');
+   for(const id of ['lgc-ratings-lens','lgc-ratings-mist']){
+    const card=page.locator(`[data-part="${id}"]`);await card.scrollIntoViewIfNeeded();
+    await card.locator('input[value="3"]').click();
+    const surface=await card.evaluate(el=>{
+     const field=getComputedStyle(el.querySelector('.sg-rating-field')!);
+     const selected=getComputedStyle(el.querySelector('.sg-rating-unit:has(input:checked)')!);
+     const material=el.dataset.part==='lgc-ratings-lens'
+      ?getComputedStyle(el.querySelector('.sg-rating-unit')!,'::before')
+      :field;
+     return {field:field.backgroundColor,selected:selected.backgroundColor,blur:material.backdropFilter,overflow:document.documentElement.scrollWidth>innerWidth+2};
+    });
+    assert.equal(surface.overflow,false,`${id} ${width}: page overflows`);
+    assert.equal(surface.selected,'rgba(0, 0, 0, 0)',`${id}: checked tile obscures the design`);
+    if(id==='lgc-ratings-lens'){assert.equal(surface.field,'rgba(0, 0, 0, 0)',`${id}: field background covers the scene`);assert.ok(surface.blur.includes('blur('),`${id}: lenses lost their blur`);}
+    else {assert.ok(surface.field.startsWith('rgba('),`${id}: solid panel returned`);assert.ok(surface.blur.includes('blur('),`${id}: frosted pane is missing`);}
+    if(width===1440){
+     await card.screenshot({path:path.join(out,`${id}-reframed.png`)});
+     await card.locator('input[value="5"]').click();assert.equal(await card.locator('.sg-rating-output').textContent(),'5 / 5');
+     await card.locator('.sg-rating-clear').click();assert.equal(await card.locator('.sg-rating-output').textContent(),'未評価');
+    }
+   }
+  }
+  await page.setViewportSize({width:1440,height:960});
+ });
  await run('Both glass avatar layouts keep names and roles inside their controls',async()=>{
   for(const width of [1440,390,320]){
    await page.setViewportSize({width,height:960});await selectCategory(page,'avatars');

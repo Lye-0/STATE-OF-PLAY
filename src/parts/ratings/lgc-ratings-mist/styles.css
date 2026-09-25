@@ -1,9 +1,7 @@
 @import "../../../shared/liquid-glass/collection.css";
-/* Mist Rating — 選んだ星の輪郭だけを強める。 */
 @import "../../../shared/signature/rating.css";
-.sop-sig.sop-lgc-ratings-mist{--sg-ink:#3c4b54;--sg-muted:#6a777d;--sg-bg:#eef0eb;--sg-a:#617c8f;--sg-line:#b6c4c8;color-scheme:light}.sop-sig.sop-lgc-ratings-mist > [data-sg-owned] .sg-rating-field{background:#edf0ea;border:1px solid #c7cfcb}.sop-sig.sop-lgc-ratings-mist > [data-sg-owned] .sg-rating-star{fill:none!important}.sop-sig.sop-lgc-ratings-mist > [data-sg-owned] .sg-rating-unit[data-filled=true] .sg-rating-star{stroke-width:3;stroke:#55758c}.sop-sig.sop-lgc-ratings-mist > [data-sg-owned] .sg-rating-unit{width:35px}
 
-/* Liquid Glass material, independent of gallery presentation. */
+
 .lgc-root.sop-lgc-ratings-mist{
  --ff-base:transparent;--ff-panel:var(--lgc-fill);--ff-line:var(--lgc-line);--ff-ink:var(--lgc-ink);--ff-muted:var(--lgc-muted);--ff-accent:var(--lgc-accent);--ff-accent2:var(--lgc-accent);--ff-radius:var(--lgc-radius);
  --field-bg:var(--lgc-fill);--field-ink:var(--lgc-ink);--field-muted:var(--lgc-muted);--field-accent:var(--lgc-accent);--field-edge:var(--lgc-line);--field-radius:var(--lgc-radius);
@@ -13,8 +11,56 @@
  --sg-bg:var(--lgc-fill);--sg-ink:var(--lgc-ink);--sg-muted:var(--lgc-muted);--sg-line:var(--lgc-line);--sg-a:var(--lgc-accent);--sg-soft:var(--lgc-selection);--sg-radius:var(--lgc-radius);
  --wb-bg:var(--lgc-fill);--wb-surface:var(--lgc-panel);--wb-ink:var(--lgc-ink);--wb-muted:var(--lgc-muted);--wb-accent:var(--lgc-accent);--wb-line:var(--lgc-line);--wb-radius:var(--lgc-radius);
  --lgc-fill:rgba(29,48,65,.65);--lgc-panel:rgba(22,42,58,.94);--lgc-radius:13px;color:var(--lgc-ink);background:transparent;max-width:100%;}
-.lgc-root.sop-lgc-ratings-mist .sg-rating-unit{background:radial-gradient(ellipse at 18% 0%,#e9f8ff30,transparent 60%),var(--lgc-fill);border:1px solid var(--lgc-line);box-shadow:inset 0 1px 1px #fff8,inset 0 -1px 1px #b6d9ef24,0 7px 22px #06182929;backdrop-filter:blur(var(--lgc-blur)) saturate(1.24);-webkit-backdrop-filter:blur(var(--lgc-blur)) saturate(1.24);color:var(--lgc-ink);border-radius:var(--lgc-radius);transition:background .24s,border-color .24s,box-shadow .24s;}
-.lgc-root.sop-lgc-ratings-mist .sg-rating-star{transition:fill .4s,stroke .4s,transform .55s,filter .4s;}
-.lgc-root.sop-lgc-ratings-mist .sg-rating-unit:has(input:checked){background:linear-gradient(155deg,#effcff50,#8ec0e22a),var(--lgc-selection);color:var(--lgc-ink);box-shadow:inset 0 1px 1px #fff9,0 2px 6px #08243829;border-color:var(--lgc-line);}
 
-@media(forced-colors:active){.lgc-root.sop-lgc-ratings-mist .sg-rating-unit{background:Canvas;color:CanvasText;border:1px solid CanvasText;box-shadow:none;backdrop-filter:none;}}
+
+
+/* Mist: stars etched into one continuous translucent pane. */
+.sop-sig.sop-lgc-ratings-mist { --sg-ink:var(--lgc-ink); --sg-muted:var(--lgc-muted); --sg-line:var(--lgc-line); --sg-a:var(--lgc-accent); color-scheme:dark; }
+.sop-sig.sop-lgc-ratings-mist > [data-sg-owned] .sg-rating-field { padding:19px 14px 12px; border:1px solid #e1f5ff87; border-radius:22px; background:linear-gradient(145deg,#d9f4ff21,transparent 48%,#0b2a3e26),rgba(18,46,63,.41); box-shadow:inset 0 1px 2px #fff8,inset 0 -1px 2px #a4cddd5c,0 11px 27px #102b3e38; -webkit-backdrop-filter:blur(16px) saturate(1.16); backdrop-filter:blur(16px) saturate(1.16); }
+.sop-sig.sop-lgc-ratings-mist > [data-sg-owned] .sg-rating-field legend { color:var(--lgc-ink); margin-bottom:20px; font-weight:600; }
+.sop-sig.sop-lgc-ratings-mist > [data-sg-owned] .sg-rating-scale { gap:clamp(4px,1vw,8px); align-items:start; }
+.sop-sig.sop-lgc-ratings-mist > [data-sg-owned] .sg-rating-unit { width:clamp(31px,10vw,42px); height:60px; flex:none; background:transparent; border:0; border-radius:10px; box-shadow:none; -webkit-backdrop-filter:none; backdrop-filter:none; transition:transform .35s cubic-bezier(.2,.8,.2,1),background .35s,box-shadow .35s; }
+.sop-sig.sop-lgc-ratings-mist > [data-sg-owned] .sg-rating-unit::before { content:""; position:absolute; inset:0 0 10px; border-radius:11px; border:1px solid transparent; background:transparent; pointer-events:none; transition:background .35s,border-color .35s,box-shadow .35s; }
+.sop-sig.sop-lgc-ratings-mist > [data-sg-owned] .sg-rating-unit:hover { transform:translateY(-3px); }
+.sop-sig.sop-lgc-ratings-mist > [data-sg-owned] .sg-rating-form { inset:8px 5px 18px; }
+.sop-sig.sop-lgc-ratings-mist > [data-sg-owned] .sg-rating-star { width:100%; height:100%; fill:transparent; stroke:#e4f2fbad; stroke-width:1.7; filter:none; transition:fill .4s,stroke .4s,transform .55s,filter .4s; }
+.sop-sig.sop-lgc-ratings-mist > [data-sg-owned] .sg-rating-unit[data-filled="true"] .sg-rating-star { fill:#ccecf58c; stroke:#eaf9ffde; filter:drop-shadow(0 1px 5px #def7ff52); }
+.sop-sig.sop-lgc-ratings-mist > [data-sg-owned] .sg-rating-unit[data-exact="true"] .sg-rating-star { fill:#e8faff; stroke:#fff; }
+.sop-sig.sop-lgc-ratings-mist > [data-sg-owned] .sg-rating-tick { bottom:1px; width:15px; height:1px; left:calc(50% - 7.5px); border-radius:2px; background:#bedbe783; }
+.sop-sig.sop-lgc-ratings-mist > [data-sg-owned] .sg-rating-unit[data-exact="true"] .sg-rating-tick { background:#ecffff; transform:scaleX(1.45); }
+.sop-sig.sop-lgc-ratings-mist > [data-sg-owned] .sg-rating-info { margin-top:12px; border-top:1px solid #eafaff4d; color:var(--lgc-muted); }
+.sop-sig.sop-lgc-ratings-mist > [data-sg-owned] .sg-rating-clear { color:var(--lgc-muted); }
+
+.sop-sig.sop-lgc-ratings-mist > [data-sg-owned] .sg-rating-unit:has(input:checked) { background:transparent; border:0; box-shadow:none; }
+
+/* The selected Mist star is a caustic in the pane, not another capsule. */
+
+.sop-sig.sop-lgc-ratings-mist > [data-sg-owned] .sg-rating-unit[data-exact="true"]::before { inset:-12px -14px 2px; border:0; border-radius:50%; background:radial-gradient(ellipse,#d6f6ff7a 0%,#85bfd34a 38%,transparent 72%); box-shadow:none; }
+
+.sop-sig.sop-lgc-ratings-mist[data-lg-appearance="light"] { color-scheme:light; }
+
+.sop-sig.sop-lgc-ratings-mist[data-lg-appearance="light"] > [data-sg-owned] .sg-rating-field { background:linear-gradient(145deg,#fff8,#d1e8f077),rgba(248,252,255,.51); border-color:#5482969c; }
+.sop-sig.sop-lgc-ratings-mist[data-lg-appearance="light"] > [data-sg-owned] .sg-rating-star { stroke:#4d7082; }
+.sop-sig.sop-lgc-ratings-mist[data-lg-appearance="light"] > [data-sg-owned] .sg-rating-unit[data-filled="true"] .sg-rating-star { fill:#648fa2b8; stroke:#31596c; }
+.sop-sig.sop-lgc-ratings-mist[data-lg-appearance="light"] > [data-sg-owned] .sg-rating-unit[data-exact="true"] .sg-rating-star { fill:#31596c; }
+
+.sop-sig.sop-lgc-ratings-mist[data-lg-appearance="light"] > [data-sg-owned] .sg-rating-unit[data-exact="true"]::before { background:radial-gradient(ellipse,#68afc36e 0%,#cce8f45e 42%,transparent 72%); }
+
+@media(prefers-reduced-transparency:reduce),(prefers-contrast:more){
+ .sop-sig.sop-lgc-ratings-mist > [data-sg-owned] .sg-rating-field { background:#203949; -webkit-backdrop-filter:none; backdrop-filter:none; }
+ .sop-sig.sop-lgc-ratings-mist[data-lg-appearance="light"] > [data-sg-owned] .sg-rating-field { background:#edf5fa; }
+}
+@supports not (backdrop-filter:blur(1px)){
+ .sop-sig.sop-lgc-ratings-mist > [data-sg-owned] .sg-rating-field { background:#203949; -webkit-backdrop-filter:none; backdrop-filter:none; }
+ .sop-sig.sop-lgc-ratings-mist[data-lg-appearance="light"] > [data-sg-owned] .sg-rating-field { background:#edf5fa; }
+}
+
+.sop-sig.sop-lgc-ratings-mist[data-lg-material="solid"] > [data-sg-owned] .sg-rating-field { background:#203949; -webkit-backdrop-filter:none; backdrop-filter:none; }
+.sop-sig.sop-lgc-ratings-mist[data-lg-material="solid"][data-lg-appearance="light"] > [data-sg-owned] .sg-rating-field { background:#edf5fa; }
+
+@media(forced-colors:active){
+ .sop-sig.sop-lgc-ratings-mist > [data-sg-owned] .sg-rating-field { background:Canvas; border:1px solid CanvasText; box-shadow:none; -webkit-backdrop-filter:none; backdrop-filter:none; }
+ .sop-sig.sop-lgc-ratings-mist > [data-sg-owned] .sg-rating-unit[data-exact="true"]::before { background:Canvas; border:1px solid Highlight; }
+ .sop-sig.sop-lgc-ratings-mist > [data-sg-owned] .sg-rating-star { stroke:CanvasText; fill:none; }
+ .sop-sig.sop-lgc-ratings-mist > [data-sg-owned] .sg-rating-unit[data-filled="true"] .sg-rating-star { fill:Highlight; stroke:Highlight; }
+}
