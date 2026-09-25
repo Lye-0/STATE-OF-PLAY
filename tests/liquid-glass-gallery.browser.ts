@@ -52,6 +52,30 @@ try{
    await closeDetail();
   }
  });
+ await run('Both glass segment markers glide between choices and respect reduced motion',async()=>{
+  await page.emulateMedia({reducedMotion:'no-preference'});
+  await selectCategory(page,'segments');
+  for(const id of ['lgc-segments-lens','lgc-segments-mist']){
+   const motion=await page.locator(`[data-part="${id}"] .sop-segments`).evaluate(async root=>{
+    const marker=root.querySelector<HTMLElement>('.sop-choice-marker')!;
+    const items=[...root.querySelectorAll<HTMLElement>('.sop-choice-item')];
+    const before=marker.getBoundingClientRect().left;
+    const target=items[2].getBoundingClientRect().left;
+    items[2].querySelector<HTMLInputElement>('input')!.click();
+    await new Promise(resolve=>setTimeout(resolve,80));
+    const during=marker.getBoundingClientRect().left;
+    await new Promise(resolve=>setTimeout(resolve,400));
+    return {before,target,during,end:marker.getBoundingClientRect().left,property:getComputedStyle(marker).transitionProperty,value:root.dataset.value};
+   });
+   assert.ok(motion.property.split(',').map(s=>s.trim()).includes('transform'),`${id}: marker has no transform transition`);
+   assert.ok(motion.during>motion.before+3&&motion.during<motion.target-3,`${id}: marker jumped instead of gliding`);
+   assert.ok(Math.abs(motion.end-motion.target)<2,`${id}: marker missed target`);
+   assert.equal(motion.value,'choice-3');
+  }
+  await page.emulateMedia({reducedMotion:'reduce'});
+  for(const id of ['lgc-segments-lens','lgc-segments-mist'])assert.equal(await page.locator(`[data-part="${id}"] .sop-choice-marker`).evaluate(el=>getComputedStyle(el).transitionDuration),'0s');
+  await page.emulateMedia({reducedMotion:'no-preference'});
+ });
  await run('Representative code and prompt use the usual delivery path',async()=>{
   for(const id of ['lg-flow-tabs','lgc-segments-lens','lgc-datepickers-mist','lgc-navigation-lens','lgc-ornaments-mist']){
    const part=await open(id),delivery=getDelivery(part,'tsx','portable');
