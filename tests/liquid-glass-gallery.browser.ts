@@ -405,6 +405,36 @@ try{
   }
   await page.setViewportSize({width:1440,height:960});
  });
+ await run('Both glass wizards keep every step within their material and scene',async()=>{
+  for(const width of [1440,390,320]){
+   await page.setViewportSize({width,height:960});await selectCategory(page,'wizards');
+   for(const id of ['lgc-wizards-lens','lgc-wizards-mist']){
+    const card=page.locator(`[data-part="${id}"]`);await card.scrollIntoViewIfNeeded();
+    const first=card.locator('[data-step-target="name"]');if(await first.getAttribute('aria-current')!=='step')await first.click();
+    const fits=()=>card.evaluate(el=>{
+     const wizard=el.querySelector('.sg-wizard')!.getBoundingClientRect(),scene=el.querySelector('.lg-demo-scene')!.getBoundingClientRect();
+     const panel=el.querySelector('.sg-wizard-panel:not([hidden])')!,surface=el.dataset.part==='lgc-wizards-lens'?panel.getBoundingClientRect():wizard;
+     const text=[...panel.querySelectorAll('h3,p,.sg-wizard-fields label>span')].every(node=>{
+      const range=document.createRange();range.selectNodeContents(node);const box=range.getBoundingClientRect();
+      return box.left>=surface.left+12&&box.right<=surface.right-12&&box.top>=surface.top&&box.bottom<=surface.bottom;
+     });
+     const fields=[...panel.querySelectorAll('input,textarea')].every(node=>{const box=node.getBoundingClientRect();return box.left>=surface.left+12&&box.right<=surface.right-12;});
+     const footer=el.querySelector('.sg-wizard-footer')!.getBoundingClientRect();
+     return {text,fields,footer:footer.left>=wizard.left&&footer.right<=wizard.right&&footer.bottom<=wizard.bottom,scene:wizard.bottom<=scene.bottom-14,page:document.documentElement.scrollWidth<=innerWidth+2};
+    });
+    assert.ok(Object.values(await fits()).every(Boolean),`${id} ${width}: first step overflows`);
+    await card.locator('[data-step-panel="name"] [data-field="workspace"]').fill('Studio workspace');
+    await card.locator('[data-wizard-next]').click();await card.locator('[data-step-panel="note"]:not([hidden])').waitFor();
+    await card.locator('[data-step-panel="note"] [data-field="note"]').fill('いくつもの画面と操作を確かめ、使う人に届くまで丁寧に整えます。');
+    assert.ok(Object.values(await fits()).every(Boolean),`${id} ${width}: note step overflows`);
+    await card.locator('[data-wizard-next]').click();await card.locator('[data-step-panel="review"]:not([hidden])').waitFor();
+    assert.ok(Object.values(await fits()).every(Boolean),`${id} ${width}: review step overflows`);
+    if(width===1440)await card.screenshot({path:path.join(out,`${id}-review.png`)});
+    await card.locator('[data-wizard-prev]').click();await card.locator('[data-step-panel="note"]:not([hidden])').waitFor();
+   }
+  }
+  await page.setViewportSize({width:1440,height:960});
+ });
  await run('Both glass blocks also remain inside their cards',async()=>{
   await page.setViewportSize({width:1440,height:960});
   await selectCategory(page,'blocks');
