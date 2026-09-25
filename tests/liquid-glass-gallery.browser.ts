@@ -279,6 +279,36 @@ try{
    await closeDetail();
   }
  });
+ await run('Glass searches keep distinct materials, readable input and complete result rows',async()=>{
+  for(const width of [1440,390,320]){
+   await page.setViewportSize({width,height:960});await selectCategory(page,'searchbars');
+   for(const id of ['lgc-searchbars-lens','lgc-searchbars-mist']){
+    const card=page.locator(`[data-part="${id}"]`);await card.scrollIntoViewIfNeeded();await card.locator('.wb-search-input').focus();
+    const view=await card.evaluate(el=>{
+     const shell=el.querySelector('.wb-search-shell')!,field=el.querySelector('.wb-search-field')!,list=el.querySelector<HTMLElement>('.wb-results-list')!;
+     const scene=el.querySelector('.lg-demo-scene')!.getBoundingClientRect(),box=shell.getBoundingClientRect();
+     return {shell:getComputedStyle(shell).backgroundColor,field:getComputedStyle(field).backgroundColor,blur:getComputedStyle(field).backdropFilter,
+      rows:list.querySelectorAll('[role=option]').length,allVisible:list.scrollHeight<=list.clientHeight+1,
+      scene:box.left>=scene.left&&box.right<=scene.right&&box.bottom<=scene.bottom-15,page:document.documentElement.scrollWidth<=innerWidth+2,
+      font:getComputedStyle(el.querySelector('.wb-search-input')!).fontSize,emblem:getComputedStyle(el.querySelector('.wb-search-emblem')!).display};
+    });
+    assert.ok(view.blur.includes('blur('),`${id} ${width}: search lens lost its material`);
+    assert.equal(view.rows,5,`${id} ${width}: sample results are incomplete`);
+    assert.ok(view.allVisible&&view.scene&&view.page,`${id} ${width}: results or page overflow`);
+    if(id==='lgc-searchbars-lens')assert.equal(view.shell,'rgba(0, 0, 0, 0)',`${id}: outer box returned`);
+    else assert.match(view.field,/rgba\(8, 30, 46, 0\.39\)/,`${id}: pale input returned`);
+    if(width===320){assert.equal(view.font,'13px',`${id}: placeholder is clipped`);if(id==='lgc-searchbars-mist')assert.equal(view.emblem,'none');}
+    if(width===1440)await card.screenshot({path:path.join(out,`${id}-search.png`)});
+    if(width===320){
+     await card.locator('[data-filter="docs"]').click();assert.equal(await card.locator('[role=option]').count(),3);
+     const input=card.locator('.wb-search-input');await input.fill('Research');assert.equal(await card.locator('[role=option]').count(),1);
+     await input.press('ArrowDown');assert.equal(await card.locator('[role=option][aria-selected="true"]').count(),1);
+     await input.press('Enter');assert.equal(await input.getAttribute('aria-expanded'),'false');
+    }
+   }
+  }
+  await page.setViewportSize({width:1440,height:960});
+ });
  await run('Glass combobox result lists use styled scrollbars and remain scrollable',async()=>{
   for(const id of ['lgc-comboboxes-lens','lgc-comboboxes-mist']){
    await open(id);

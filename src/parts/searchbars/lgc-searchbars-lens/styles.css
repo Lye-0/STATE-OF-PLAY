@@ -1,11 +1,6 @@
 @import "../../../shared/liquid-glass/collection.css";
 @import "../../../shared/workbench/base.css";
-/* Lens Search: 日常の検索に合わせやすい、読みやすい入力とフィルター。 */
-.sop-wb.sop-lgc-searchbars-lens {--wb-bg:#172128;--wb-surface:#26353e;--wb-ink:#e9eee8;--wb-muted:#aab9bb;--wb-accent:#c0d8c9;--wb-line:#718c8c66;}
 
-@media(prefers-reduced-motion:reduce){.sop-wb.sop-lgc-searchbars-lens *,.sop-wb.sop-lgc-searchbars-lens *::before,.sop-wb.sop-lgc-searchbars-lens *::after{animation:none!important;transition:none!important;}}
-
-/* Liquid Glass material, independent of gallery presentation. */
 .lgc-root.sop-lgc-searchbars-lens{
  --ff-base:transparent;--ff-panel:var(--lgc-fill);--ff-line:var(--lgc-line);--ff-ink:var(--lgc-ink);--ff-muted:var(--lgc-muted);--ff-accent:var(--lgc-accent);--ff-accent2:var(--lgc-accent);--ff-radius:var(--lgc-radius);
  --field-bg:var(--lgc-fill);--field-ink:var(--lgc-ink);--field-muted:var(--lgc-muted);--field-accent:var(--lgc-accent);--field-edge:var(--lgc-line);--field-radius:var(--lgc-radius);
@@ -15,11 +10,63 @@
  --sg-bg:var(--lgc-fill);--sg-ink:var(--lgc-ink);--sg-muted:var(--lgc-muted);--sg-line:var(--lgc-line);--sg-a:var(--lgc-accent);--sg-soft:var(--lgc-selection);--sg-radius:var(--lgc-radius);
  --wb-bg:var(--lgc-fill);--wb-surface:var(--lgc-panel);--wb-ink:var(--lgc-ink);--wb-muted:var(--lgc-muted);--wb-accent:var(--lgc-accent);--wb-line:var(--lgc-line);--wb-radius:var(--lgc-radius);
  --lgc-fill:rgba(23,51,71,.27);--lgc-radius:22px;color:var(--lgc-ink);background:transparent;max-width:100%;}
-.lgc-root.sop-lgc-searchbars-lens .wb-search-shell,
-.lgc-root.sop-lgc-searchbars-lens .wb-search-results{background:radial-gradient(ellipse at 18% 0%,#e9f8ff30,transparent 60%),var(--lgc-fill);border:1px solid var(--lgc-line);box-shadow:inset 0 1px 1px #fff8,inset 0 -1px 1px #b6d9ef24,0 7px 22px #06182929;backdrop-filter:blur(var(--lgc-blur)) saturate(1.24);-webkit-backdrop-filter:blur(var(--lgc-blur)) saturate(1.24);color:var(--lgc-ink);border-radius:var(--lgc-radius);transition:background .24s,border-color .24s,box-shadow .24s;}
-.lgc-root.sop-lgc-searchbars-lens .wb-search-shell:hover,
-.lgc-root.sop-lgc-searchbars-lens .wb-search-results:hover{border-color:#effbffb3;box-shadow:inset 0 1px 2px #fffc,inset 0 -1px 2px #d5f4ff54,0 7px 26px #082b432e;}
-.lgc-root.sop-lgc-searchbars-lens .wb-search-filters [aria-pressed="true"]{background:linear-gradient(155deg,#effcff50,#8ec0e22a),var(--lgc-selection);color:var(--lgc-ink);box-shadow:inset 0 1px 1px #fff9,0 2px 6px #08243829;border-color:var(--lgc-line);}
 
-@media(forced-colors:active){.lgc-root.sop-lgc-searchbars-lens .wb-search-shell,
-.lgc-root.sop-lgc-searchbars-lens .wb-search-results{background:Canvas;color:CanvasText;border:1px solid CanvasText;box-shadow:none;backdrop-filter:none;}}
+/* Lens Search: an open optical search path, with individual floating result lenses. */
+.sop-wb.sop-lgc-searchbars-lens{--wb-ink:var(--lgc-ink);--wb-muted:var(--lgc-muted);--wb-accent:var(--lgc-accent);--wb-line:var(--lgc-line);color-scheme:dark;}
+.sop-wb.sop-lgc-searchbars-lens .wb-search-shell{padding:4px 0 0;background:transparent;border:0;border-radius:0;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;overflow:visible;color:var(--lgc-ink);}
+.sop-wb.sop-lgc-searchbars-lens .wb-label{padding-left:3px;margin-bottom:13px;font-size:11px;font-weight:600;letter-spacing:.07em;color:var(--lgc-ink);}
+.sop-wb.sop-lgc-searchbars-lens .wb-search-field{min-height:62px;padding:7px 7px 7px 14px;gap:10px;border:1px solid #e8faffab;border-radius:20px;background:radial-gradient(ellipse at 23% 0%,#e4f8ff4d,transparent 48%),linear-gradient(125deg,#d6f3ff1f,#17394d24 72%),rgba(21,54,72,.28);box-shadow:inset 0 1px 2px #fffb,inset 0 -2px 3px #b9e3f278,0 9px 19px #0a2e4349;-webkit-backdrop-filter:blur(15px) saturate(1.26);backdrop-filter:blur(15px) saturate(1.26);transition:border-color .3s,box-shadow .35s,background .35s;}
+.sop-wb.sop-lgc-searchbars-lens[data-wb-focused="true"] .wb-search-field{border-color:#f5ffffe6;box-shadow:inset 0 1px 2px #ffff,0 0 0 3px #d2f1ff69,0 11px 23px #0b31475b;}
+.sop-wb.sop-lgc-searchbars-lens .wb-search-emblem{color:#e6f7ff;}
+.sop-wb.sop-lgc-searchbars-lens .wb-search-input{color:var(--lgc-ink);font-size:15px;}
+.sop-wb.sop-lgc-searchbars-lens .wb-search-input::placeholder{color:#d6e5efab;opacity:1;}
+.sop-wb.sop-lgc-searchbars-lens .wb-search-submit{height:44px;min-width:44px;padding:8px 12px;border:1px solid #e0f7ff9c;border-radius:13px;background:linear-gradient(155deg,#e6faff4f,#93c7dc2b),rgba(20,60,81,.31);color:var(--lgc-ink);box-shadow:inset 0 1px 2px #fff9;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:background .3s,border-color .3s,box-shadow .3s,transform .2s;}
+.sop-wb.sop-lgc-searchbars-lens .wb-search-submit:hover{background:linear-gradient(155deg,#f6ffff7a,#a1d5e656),rgba(30,70,89,.35);color:var(--lgc-ink);border-color:#f5ffff;box-shadow:inset 0 1px 2px #fffd,0 4px 11px #0b31484d;}
+.sop-wb.sop-lgc-searchbars-lens .wb-search-filters{gap:15px;margin:16px 0 0;padding:0 2px;}
+.sop-wb.sop-lgc-searchbars-lens .wb-search-filters button,.sop-wb.sop-lgc-searchbars-lens .wb-search-filters button[aria-pressed="true"]{padding:4px 2px 7px;border:0;border-bottom:2px solid transparent;border-radius:0;background:transparent;box-shadow:none;color:var(--lgc-muted);}
+.sop-wb.sop-lgc-searchbars-lens .wb-search-filters button[aria-pressed="true"]{border-bottom-color:#e6f9ff;color:var(--lgc-ink);}
+.sop-wb.sop-lgc-searchbars-lens .wb-search-results{margin-top:17px;padding:11px 0 0;border:0;border-top:1px solid #def5ff83;border-radius:0;background:transparent;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;color:var(--lgc-ink);}
+.sop-wb.sop-lgc-searchbars-lens .wb-results-caption{margin:0 2px 9px;color:var(--lgc-muted);}
+.sop-wb.sop-lgc-searchbars-lens .wb-results-list{display:grid;gap:7px;max-height:365px;padding:1px 3px 3px;scrollbar-color:#c4e5f2a6 transparent;}
+.sop-wb.sop-lgc-searchbars-lens .wb-results-list [role=option]{min-height:56px;padding:9px 12px;border:1px solid #e5f7ff75;border-radius:13px;background:linear-gradient(150deg,#e5f8ff22,#183e5426),rgba(18,51,69,.4);box-shadow:inset 0 1px 1px #fff6,0 5px 12px #08283a33;-webkit-backdrop-filter:blur(10px) saturate(1.2);backdrop-filter:blur(10px) saturate(1.2);color:var(--lgc-ink);}
+.sop-wb.sop-lgc-searchbars-lens .wb-results-list [role=option][aria-selected="true"]{background:linear-gradient(150deg,#dff8ff55,#71a9c03c),rgba(37,82,101,.28);border-color:#f4ffffd6;box-shadow:inset 0 1px 2px #fffc,0 7px 15px #0a2b3d52;}
+.sop-wb.sop-lgc-searchbars-lens .wb-result-copy small,.sop-wb.sop-lgc-searchbars-lens .wb-result-meta{color:var(--lgc-muted);}
+
+.sop-wb.sop-lgc-searchbars-lens .wb-results-list::-webkit-scrollbar{width:8px;}
+.sop-wb.sop-lgc-searchbars-lens .wb-results-list::-webkit-scrollbar-track{background:#092b3e40;border-radius:8px;}
+.sop-wb.sop-lgc-searchbars-lens .wb-results-list::-webkit-scrollbar-thumb{background:linear-gradient(#dff7ffb8,#79b4d194);border:2px solid transparent;background-clip:padding-box;border-radius:8px;}
+
+.sop-wb.sop-lgc-searchbars-lens[data-lg-appearance="light"] .wb-search-field{background:linear-gradient(140deg,#fff9,#c7e7f28a),rgba(232,249,255,.55);border-color:#5e899caa;box-shadow:inset 0 1px 2px #fff,0 8px 17px #183b4d31;}
+
+.sop-wb.sop-lgc-searchbars-lens[data-lg-appearance="light"] .wb-search-input::placeholder{color:#607c8f;}
+
+.sop-wb.sop-lgc-searchbars-lens[data-lg-appearance="light"] .wb-search-emblem{color:#315a71;}
+
+.sop-wb.sop-lgc-searchbars-lens[data-lg-appearance="light"] .wb-search-submit{background:linear-gradient(145deg,#fff,#a8d2e5a9);border-color:#6b91a3a3;}
+.sop-wb.sop-lgc-searchbars-lens[data-lg-appearance="light"] .wb-results-list [role=option]{background:linear-gradient(145deg,#fff9,#d2eaf389),rgba(249,253,255,.48);border-color:#7397a99c;box-shadow:inset 0 1px 1px #fff,0 4px 11px #1d425234;}
+
+@container(max-width:250px){
+ .sop-wb.sop-lgc-searchbars-lens .wb-search-field{gap:6px;}
+ .sop-wb.sop-lgc-searchbars-lens .wb-search-emblem{width:22px;}
+ .sop-wb.sop-lgc-searchbars-lens .wb-search-input{font-size:13px;}
+}
+
+@media(prefers-reduced-transparency:reduce),(prefers-contrast:more){
+ .sop-wb.sop-lgc-searchbars-lens :is(.wb-search-field,.wb-search-submit),.sop-wb.sop-lgc-searchbars-lens .wb-results-list [role=option]{background:#203949;-webkit-backdrop-filter:none;backdrop-filter:none;}
+ .sop-wb.sop-lgc-searchbars-lens .wb-results-list [role=option][aria-selected="true"]{background:#31556a;}
+ .sop-wb.sop-lgc-searchbars-lens[data-lg-appearance="light"] :is(.wb-search-field,.wb-search-submit),.sop-wb.sop-lgc-searchbars-lens[data-lg-appearance="light"] .wb-results-list [role=option]{background:#edf5fa;}
+ .sop-wb.sop-lgc-searchbars-lens[data-lg-appearance="light"] .wb-results-list [role=option][aria-selected="true"]{background:#d1e8f2;}
+}
+
+.sop-wb.sop-lgc-searchbars-lens[data-lg-material="solid"] :is(.wb-search-field,.wb-search-submit),.sop-wb.sop-lgc-searchbars-lens[data-lg-material="solid"] .wb-results-list [role=option]{background:#203949;-webkit-backdrop-filter:none;backdrop-filter:none;}
+.sop-wb.sop-lgc-searchbars-lens[data-lg-material="solid"][data-lg-appearance="light"] :is(.wb-search-field,.wb-search-submit),.sop-wb.sop-lgc-searchbars-lens[data-lg-material="solid"][data-lg-appearance="light"] .wb-results-list [role=option]{background:#edf5fa;}
+
+@supports not (backdrop-filter:blur(1px)){
+ .sop-wb.sop-lgc-searchbars-lens :is(.wb-search-field,.wb-search-submit),.sop-wb.sop-lgc-searchbars-lens .wb-results-list [role=option]{background:#203949;}
+ .sop-wb.sop-lgc-searchbars-lens[data-lg-appearance="light"] :is(.wb-search-field,.wb-search-submit),.sop-wb.sop-lgc-searchbars-lens[data-lg-appearance="light"] .wb-results-list [role=option]{background:#edf5fa;}
+}
+
+@media(forced-colors:active){
+ .sop-wb.sop-lgc-searchbars-lens .wb-search-field,.sop-wb.sop-lgc-searchbars-lens .wb-results-list [role=option]{background:Canvas;color:CanvasText;border:1px solid CanvasText;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;}
+ .sop-wb.sop-lgc-searchbars-lens .wb-search-submit{background:ButtonFace;color:ButtonText;border:1px solid ButtonText;}
+}
