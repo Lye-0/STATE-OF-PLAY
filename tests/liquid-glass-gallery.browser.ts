@@ -279,6 +279,35 @@ try{
    await closeDetail();
   }
  });
+ await run('Both glass context panels stay translucent with readable focused actions',async()=>{
+  for(const width of [1440,390,320]){
+   await page.setViewportSize({width,height:960});await selectCategory(page,'contextmenus');
+   for(const id of ['lgc-contextmenus-lens','lgc-contextmenus-mist']){
+    const card=page.locator(`[data-part="${id}"]`);await card.scrollIntoViewIfNeeded();await card.locator('.wb-context-open').click();
+    const panel=card.locator('.wb-context-panel');await panel.waitFor({state:'visible'});await page.waitForTimeout(300);
+    const surface=await card.evaluate(el=>{
+     const panel=el.querySelector('.wb-context-panel')!,item=panel.querySelector('[data-menu-action="open"]')!;
+     const pane=getComputedStyle(panel),focused=getComputedStyle(item),bounds=panel.getBoundingClientRect();
+     return {fill:pane.backgroundColor,blur:pane.backdropFilter,item:focused.color,itemFill:focused.backgroundColor,
+      inside:bounds.left>=9&&bounds.right<=innerWidth-9&&bounds.top>=9&&bounds.bottom<=innerHeight-9,page:document.documentElement.scrollWidth<=innerWidth+2};
+    });
+    const fill=surface.fill.match(/[\d.]+/g)?.map(Number)??[],ink=surface.item.match(/[\d.]+/g)?.map(Number)??[];
+    assert.ok(fill[3]<.65&&surface.blur.includes('blur('),`${id} ${width}: popover is opaque or unblurred`);
+    assert.ok(ink[0]>220&&ink[1]>220&&ink[2]>220,`${id} ${width}: focused label is unreadable`);
+    assert.ok(surface.inside&&surface.page,`${id} ${width}: popover crosses the viewport`);
+    if(id==='lgc-contextmenus-mist')assert.ok((surface.itemFill.match(/[\d.]+/g)?.map(Number)??[])[3]<.5,`${id}: pale selection returned`);
+    if(width===1440){
+     await panel.screenshot({path:path.join(out,`${id}-popover.png`)});
+     await page.keyboard.press('ArrowDown');assert.equal(await card.locator('[data-menu-action="copy"]').evaluate(el=>document.activeElement===el),true);
+     await card.locator('[data-menu-action="pin"]').click();assert.equal(await card.locator('[data-menu-action="pin"]').getAttribute('aria-checked'),'false');
+     await card.locator('[data-menu-action="move"]').click();assert.equal(await card.locator('[data-menu-action="folder-work"]').count(),1);
+     await page.keyboard.press('Escape');assert.equal(await card.locator('[data-menu-action="move"]').count(),1);
+    }
+    await page.keyboard.press('Escape');assert.equal(await panel.isVisible(),false);
+   }
+  }
+  await page.setViewportSize({width:1440,height:960});
+ });
  await run('Glass searches keep distinct materials, readable input and complete result rows',async()=>{
   for(const width of [1440,390,320]){
    await page.setViewportSize({width,height:960});await selectCategory(page,'searchbars');
