@@ -157,6 +157,29 @@ try{
    await closeDetail();
   }
  });
+ await run('Glass combobox result lists use styled scrollbars and remain scrollable',async()=>{
+  for(const id of ['lgc-comboboxes-lens','lgc-comboboxes-mist']){
+   await open(id);
+   const preview=detail.locator(`[data-preview-part="${id}"]`);
+   const input=preview.locator('[data-combo]');
+   await input.press('ArrowDown');
+   const results=preview.locator('[data-results]');
+   await page.waitForFunction(id=>{const el=document.querySelector(`#part-details [data-preview-part="${id}"] [data-results]`);return !!el&&el.clientHeight>0&&el.scrollHeight>el.clientHeight;},id);
+   const initial=await results.evaluate(el=>({width:getComputedStyle(el).scrollbarWidth,color:getComputedStyle(el).scrollbarColor,scrollable:el.scrollHeight>el.clientHeight,button:getComputedStyle(el,'::-webkit-scrollbar-button').display,blur:getComputedStyle(el.closest('.ff-combo-list')!).backdropFilter}));
+   assert.equal(initial.width,'thin',`${id}: browser default scrollbar width`);
+   assert.notEqual(initial.color,'auto',`${id}: browser default scrollbar color`);
+   assert.equal(initial.button,'none',`${id}: native scrollbar arrows remain`);
+   assert.ok(initial.scrollable,`${id}: results cannot scroll`);
+   assert.ok(initial.blur.includes('blur('),`${id}: glass panel lost its backdrop blur`);
+   await results.evaluate(el=>el.scrollTop=el.scrollHeight);
+   const end=await results.evaluate(el=>({top:el.scrollTop,max:el.scrollHeight-el.clientHeight,last:el.lastElementChild?.getBoundingClientRect().bottom??0,bottom:el.getBoundingClientRect().bottom}));
+   assert.ok(end.top>0&&Math.abs(end.max-end.top)<2&&end.last<=end.bottom+2,`${id}: last option is unreachable`);
+   await page.screenshot({path:path.join(out,`${id}-scrollbar.png`)});
+   await input.press('Escape');
+   assert.equal(await input.getAttribute('aria-expanded'),'false');
+   await closeDetail();
+  }
+ });
  await run('Representative code and prompt use the usual delivery path',async()=>{
   for(const id of ['lg-flow-tabs','lgc-segments-lens','lgc-datepickers-mist','lgc-navigation-lens','lgc-ornaments-mist']){
    const part=await open(id),delivery=getDelivery(part,'tsx','portable');
