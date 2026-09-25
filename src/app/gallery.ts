@@ -1,9 +1,3 @@
-import {mountWorkbenchSample} from './workbench-preview';
-import {mountSignatureSample} from './signature-preview';
-import {mountFoundationSample} from './foundation-preview';
-import {mountPopupSample} from './check-popup-preview';
-import { mountActionDemo } from './action-preview';
-import { fillSample } from './samples';
 import {showCategoryLoading} from './category-loading';
 import { TactileAudio } from './audio';
 import type { createDetails } from './details';
@@ -103,12 +97,29 @@ async function renderGallery(append = false) {
     if (!append) clearCategoryLoading=showCategoryLoading(grid);
     let visible: PartPreview[];
     const mounts: Record<string, MountPart> = {};
+    let workbenchHelper: typeof import('./workbench-preview') | null = null;
+    let signatureHelper: typeof import('./signature-preview') | null = null;
+    let foundationHelper: typeof import('./foundation-preview') | null = null;
+    let popupHelper: typeof import('./check-popup-preview') | null = null;
+    let actionHelper: typeof import('./action-preview') | null = null;
+    let sampleHelper: typeof import('./samples') | null = null;
     try {
         const modules = await Promise.all([...new Set(pending.map(p => p.category))].map(loadCategory));
         if (token !== galleryRequest) return;
         const previews = new Map(modules.flatMap(m => m.parts).map(p => [p.id, p]));
         modules.forEach(m => Object.assign(mounts, m.mounts));
         visible = pending.map(p => { const preview = previews.get(p.id); if (!preview) throw new Error('Missing preview: '+p.id); return preview; });
+        const [workbench,signature,foundation,popup,action,sample] = await Promise.all([
+            visible.some(p => !!p.workbench) ? import('./workbench-preview') : Promise.resolve(null),
+            visible.some(p => !!p.signature) ? import('./signature-preview') : Promise.resolve(null),
+            visible.some(p => !!p.foundation) ? import('./foundation-preview') : Promise.resolve(null),
+            visible.some(p => p.category === 'popups') ? import('./check-popup-preview') : Promise.resolve(null),
+            visible.some(p => p.category === 'buttons' || p.category === 'links') ? import('./action-preview') : Promise.resolve(null),
+            visible.some(p => p.category === 'blocks' || p.category === 'scrollbars') ? import('./samples') : Promise.resolve(null)
+        ]);
+        if (token !== galleryRequest) return;
+        workbenchHelper=workbench;signatureHelper=signature;foundationHelper=foundation;
+        popupHelper=popup;actionHelper=action;sampleHelper=sample;
     } catch {
         if (token !== galleryRequest) return;
         clearCategoryLoading?.(); clearCategoryLoading=undefined;
@@ -138,11 +149,11 @@ async function renderGallery(append = false) {
         const root = mount.firstElementChild;
         if (!(root instanceof HTMLElement)) throw new Error(`Invalid markup: ${part.id}`);
         root.dataset.demoRoot = '';
-        fillSample(root, part);
+        if (part.category === 'blocks' || part.category === 'scrollbars') sampleHelper!.fillSample(root, part);
         const controller = mounts[part.id](root, { onValueChange: value => { if(part.category==='tabs'||part.category==='segments') required('.state-word',card).textContent=value.replace('choice-','0'); }, onOpenChange: open => { required('.state-word', card).textContent = open ? 'OPEN' : part.category === 'popups' ? 'CLOSED' : 'SELECT'; }, onExpandedChange: values => { required('.state-word', card).textContent = String(values.length) + ' OPEN'; }, onProgressChange: progress => { required('.state-word', card).textContent = Math.round(progress * 100) + '%'; }, checked: state.get(part.id), onCheckedChange: (value: boolean) => { stopDemo(); if(part.category==='toggles') syncCard(part.id, value); } });
         const surface = part.category === 'toggles' ? createSurfaceController(card) : undefined;
-        const demo = part.category === 'buttons' || part.category === 'links' ? mountActionDemo(root,part,controller,card,text=>required('.state-word',card).textContent=text) : undefined;
-        rendered.push({ part, controller, card, surface, cleanup:part.workbench ? mountWorkbenchSample(root,part,controller) : part.signature ? mountSignatureSample(root,part,controller) : part.foundation ? mountFoundationSample(root,part,controller) : part.category==='popups'?mountPopupSample(root,part):demo?.destroy });
+        const demo = part.category === 'buttons' || part.category === 'links' ? actionHelper!.mountActionDemo(root,part,controller,card,text=>required('.state-word',card).textContent=text) : undefined;
+        rendered.push({ part, controller, card, surface, cleanup:part.workbench ? workbenchHelper!.mountWorkbenchSample(root,part,controller) : part.signature ? signatureHelper!.mountSignatureSample(root,part,controller) : part.foundation ? foundationHelper!.mountFoundationSample(root,part,controller) : part.category==='popups'?popupHelper!.mountPopupSample(root,part):demo?.destroy });
         if (part.category === 'checkboxes') {
             const sync=()=>{required('.state-word',card).textContent=(controller.getIndeterminate?.()?'mixed':controller.getChecked?.()?'checked':'unchecked').toUpperCase();};
             root.addEventListener('sop:checkbox-state',sync); sync();

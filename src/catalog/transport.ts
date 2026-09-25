@@ -1,5 +1,5 @@
 /** Lossless transport of source TEXT. The displayed/exported author code is not minified. */
-import type {Part,SourceFile,Format} from './types';
+import type {Part,SourceFile,Format} from './types.ts';
 type PackedFile=Omit<SourceFile,'code'> & {code:number};
 type PackedPart=Omit<Part,'files'|'portableFiles'|'preview'|'markup'|'usage'|'prompt'> & {
  files:Record<Format,PackedFile[]>;portableFiles:Record<Format,PackedFile[]>;preview:Record<string,number>;markup:number;usage:number;prompt:number;

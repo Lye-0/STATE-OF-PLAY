@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import { readFileSync } from 'node:fs';
-import { catalogPlugin } from './scripts/vite-catalog';
+import { catalogPlugin } from './scripts/vite-catalog.ts';
 const { version } = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8')) as { version: string };
 export default defineConfig({
   base: './',

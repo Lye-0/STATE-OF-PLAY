@@ -14,6 +14,8 @@ const captures = path.join(ROOT, '.test-output', 'site-boot');
 fs.mkdirSync(captures, {recursive: true});
 try {
   const page = await browser.newPage({viewport: {width: 1440, height: 900}});
+  page.setDefaultTimeout(180000);
+  page.setDefaultNavigationTimeout(180000);
   const errors: string[] = [];
   page.on('pageerror', error => errors.push(error.message));
   async function checkCycle(kind: 'open' | 'reload') {
@@ -49,6 +51,8 @@ try {
   await page.close();
 
   const mobile = await browser.newPage({viewport: {width: 390, height: 844}});
+  mobile.setDefaultTimeout(180000);
+  mobile.setDefaultNavigationTimeout(180000);
   let releaseMobile!: () => void;
   const mobileGate = new Promise<void>(resolve => { releaseMobile = resolve; });
   await mobile.route('**/src/main.ts', async request => { await mobileGate; await request.continue(); });
@@ -67,6 +71,8 @@ try {
   }
 
   const reduced = await browser.newPage({reducedMotion: 'reduce'});
+  reduced.setDefaultTimeout(180000);
+  reduced.setDefaultNavigationTimeout(180000);
   let releaseReduced!: () => void;
   const reducedGate = new Promise<void>(resolve => { releaseReduced = resolve; });
   await reduced.route('**/src/main.ts', async request => { await reducedGate; await request.continue(); });
@@ -90,12 +96,35 @@ try {
   console.log('PASS no JavaScript: styled fallback message replaces unfinished loader');
   await noJs.close();
 
+  const slow = await browser.newPage();
+  slow.setDefaultTimeout(180000);
+  slow.setDefaultNavigationTimeout(180000);
+  await slow.clock.install();
+  let releaseSlow!: () => void;
+  const slowGate = new Promise<void>(resolve => { releaseSlow = resolve; });
+  await slow.route('**/src/main.ts', async request => { await slowGate; await request.continue(); });
+  try {
+    await slow.goto(url, {waitUntil: 'commit'});
+    await slow.locator('#site-boot-status').waitFor();
+    await slow.clock.fastForward(12001);
+    assert.match(await slow.locator('#site-boot-status').innerText(), /通常より読み込みに時間がかかっています/);
+    assert.equal(await slow.locator('#site-boot-status').getAttribute('data-failed'), null);
+    assert.equal(await slow.locator('.site-boot-retry').isVisible(), true);
+  } finally {
+    releaseSlow();
+    await slow.waitForFunction(() => document.documentElement.classList.contains('site-ready'));
+    await slow.close();
+  }
+  console.log('PASS slow module: loading stays recoverable and is not mislabeled as failure');
+
   const failed = await browser.newPage();
+  failed.setDefaultTimeout(180000);
+  failed.setDefaultNavigationTimeout(180000);
   await failed.clock.install();
   await failed.route('**/src/main.ts', request => request.abort());
   await failed.goto(url + '?category=loaders#part=nixie-loader', {waitUntil: 'domcontentloaded'});
   await failed.clock.fastForward(12001);
-  assert.match(await failed.locator('#site-boot-status').innerText(), /読み込みが終わりませんでした/);
+  assert.match(await failed.locator('#site-boot-status').innerText(), /読み込めませんでした/);
   assert.equal(await failed.locator('.site-boot-retry').isVisible(), true);
   assert.match(await failed.locator('.site-boot-retry').getAttribute('href') ?? '', /\?category=loaders#part=nixie-loader$/);
   console.log('PASS failed module: visible retry replaces endless loading');

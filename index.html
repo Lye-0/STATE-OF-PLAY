@@ -75,15 +75,25 @@ body{margin:0}
 
 
 <script>
-window.setTimeout(function(){
-  if(document.documentElement.classList.contains('site-ready'))return;
-  var boot=document.getElementById('site-boot');
-  if(!boot)return;
-  document.getElementById('site-boot-status').textContent='読み込みが終わりませんでした。';
-  var retry=boot.querySelector('.site-boot-retry');
-  retry.href=location.href;
-  retry.hidden=false;
-},12000);
+(function(){
+  function updateBoot(message,failed){
+    if(document.documentElement.classList.contains('site-ready'))return;
+    var boot=document.getElementById('site-boot');
+    if(!boot)return;
+    var status=document.getElementById('site-boot-status');
+    if(!status||(!failed&&status.dataset.failed==='true'))return;
+    status.textContent=message;
+    if(failed)status.dataset.failed='true';
+    var retry=boot.querySelector('.site-boot-retry');
+    retry.href=location.href;
+    retry.hidden=false;
+  }
+  document.addEventListener('error',function(event){
+    var target=event.target;
+    if(target&&target.tagName==='SCRIPT'&&target.type==='module')updateBoot('読み込めませんでした。',true);
+  },true);
+  window.setTimeout(function(){updateBoot('通常より読み込みに時間がかかっています…',false);},12000);
+})();
 </script>
 <script type="module" src="/src/main.ts"></script>
 </body></html>
