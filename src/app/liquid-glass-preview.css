@@ -22,6 +22,19 @@
 .object-card.glass-series .stage-mount>.lg-toggle{transform:none!important;}
 .object-card.glass-series .stage-mount>.lg-select{max-width:350px;}
 .object-card.glass-series .stage-mount:has(.lg-tabs){padding:29px 24px;min-height:275px;}
+/* The scene keeps its width; each exhibit uses the same component scale as its category. */
+:is(.object-card[data-part^="lgc-blocks-"],.live-preview[data-preview-part^="lgc-blocks-"]){--glass-component-max:420px;}
+:is(.object-card[data-part^="lgc-accordions-"],.live-preview[data-preview-part^="lgc-accordions-"]){--glass-component-max:410px;}
+:is(.object-card[data-part^="lgc-textboxes-"],.live-preview[data-preview-part^="lgc-textboxes-"],.object-card[data-part^="lgc-segments-"],.live-preview[data-preview-part^="lgc-segments-"],.object-card[data-part^="lgc-popups-"],.live-preview[data-preview-part^="lgc-popups-"],.object-card[data-part^="lgc-pagination-"],.live-preview[data-preview-part^="lgc-pagination-"],.object-card[data-part^="lgc-badges-"],.live-preview[data-preview-part^="lgc-badges-"]){--glass-component-max:400px;}
+:is(.object-card[data-part="lg-flow-tabs"],.live-preview[data-preview-part="lg-flow-tabs"],.object-card[data-part="lg-index-tabs"],.live-preview[data-preview-part="lg-index-tabs"]){--glass-component-max:450px;}
+:is(.object-card[data-part^="lgc-checkboxes-"],.live-preview[data-preview-part^="lgc-checkboxes-"]){--glass-component-max:365px;}
+:is(.object-card[data-part^="lgc-sliders-"],.live-preview[data-preview-part^="lgc-sliders-"],.object-card[data-part^="lgc-radios-"],.live-preview[data-preview-part^="lgc-radios-"],.object-card[data-part^="lgc-comboboxes-"],.live-preview[data-preview-part^="lgc-comboboxes-"],.object-card[data-part^="lgc-toasts-"],.live-preview[data-preview-part^="lgc-toasts-"],.object-card[data-part^="lgc-hints-"],.live-preview[data-preview-part^="lgc-hints-"],.object-card[data-part^="lgc-loaders-"],.live-preview[data-preview-part^="lgc-loaders-"],.object-card[data-part^="lgc-numbers-"],.live-preview[data-preview-part^="lgc-numbers-"]){--glass-component-max:360px;}
+:is(.object-card[data-part^="lgc-progress-"],.live-preview[data-preview-part^="lgc-progress-"],.object-card[data-part^="lgc-uploads-"],.live-preview[data-preview-part^="lgc-uploads-"],.object-card[data-part^="lgc-datepickers-"],.live-preview[data-preview-part^="lgc-datepickers-"]){--glass-component-max:380px;}
+:is(.object-card[data-part^="lgc-searchbars-"],.live-preview[data-preview-part^="lgc-searchbars-"],.object-card[data-part^="lgc-commands-"],.live-preview[data-preview-part^="lgc-commands-"],.object-card[data-part^="lgc-contextmenus-"],.live-preview[data-preview-part^="lgc-contextmenus-"],.object-card[data-part^="lgc-navigation-"],.live-preview[data-preview-part^="lgc-navigation-"]){--glass-component-max:470px;}
+.object-card.glass-series .stage-mount>.lgc-root:not(.sop-scroll-area,.sop-ornament),
+.part-details .live-preview .preview-stage>.lgc-root:not(.sop-scroll-area,.sop-ornament),
+.object-card.glass-series .stage-mount>.lg-tabs,
+.part-details .live-preview .preview-stage>.lg-tabs{max-width:var(--glass-component-max,100%);}
 .object-card.glass-series.scroll-card .object-stage{height:340px;min-height:0;padding:25px 27px 27px;}
 .object-card.glass-series.scroll-card .stage-mount{height:100%;min-height:0;box-sizing:border-box;padding:14px;overflow:hidden;}
 .object-card.glass-series.scroll-card .sop-scroll-area{height:100%;max-width:440px;}

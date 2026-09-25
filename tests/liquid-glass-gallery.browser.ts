@@ -30,6 +30,18 @@ try{
    assert.equal(await page.locator('.glass-series').count(),2);
    assert.equal(await page.locator('.glass-series .lg-demo-host').count(),2);
    for(const type of ['A','B']as const){const expected=pair.find(p=>p.designType===type)!;assert.equal(await page.locator(`[data-part][data-design="${type}"]`).last().getAttribute('data-part'),expected.id);}
+   const widths=await page.locator('.object-card').evaluateAll(cards=>cards.map(card=>{
+    const mount=card.querySelector('.stage-mount')!;
+    const root=mount.querySelector(':scope > :not(.lg-demo-scene)')!;
+    return {glass:card.classList.contains('glass-series'),width:root.getBoundingClientRect().width};
+   }));
+   const ordinary=widths.filter(item=>!item.glass).map(item=>item.width).sort((a,b)=>a-b);
+   const ordinaryMedian=ordinary[Math.floor(ordinary.length/2)];
+   assert.ok(widths.filter(item=>item.glass).every(item=>item.width<=ordinaryMedian+24),`${category}: glass component wider than ordinary parts`);
+   if(category==='accordions'||category==='tabs'||category==='segments'){
+    await page.locator('.glass-series').first().screenshot({path:path.join(out,`${category}-width.png`)});
+    await page.locator('.glass-series').last().screenshot({path:path.join(out,`${category}-width-b.png`)});
+   }
   }
  });
  await run('Usual details and background picker work for old and new glass parts',async()=>{
@@ -97,7 +109,7 @@ try{
   }
  });
  await run('Narrow layouts retain controls and avoid page overflow',async()=>{
-  for(const width of [320,390,768]){await page.setViewportSize({width,height:900});for(const id of ['lgc-textboxes-mist','lgc-tables-lens']){await open(id);assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),id+' '+width);await closeDetail();}}
+  for(const width of [320,390,768]){await page.setViewportSize({width,height:900});for(const id of ['lgc-accordions-lens','lgc-accordions-mist','lg-flow-tabs','lg-index-tabs','lgc-segments-lens','lgc-segments-mist','lgc-textboxes-mist','lgc-tables-lens']){await open(id);assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),id+' '+width);await closeDetail();}}
  });
  assert.deepEqual(errors,[]);console.log('Glass collection gallery:',tests.length,'checks passed');
  await page.close();
