@@ -76,6 +76,40 @@ try{
   for(const id of ['lgc-segments-lens','lgc-segments-mist'])assert.equal(await page.locator(`[data-part="${id}"] .sop-choice-marker`).evaluate(el=>getComputedStyle(el).transitionDuration),'0s');
   await page.emulateMedia({reducedMotion:'no-preference'});
  });
+ await run('Both glass checkbox groups stay visually centered and clickable',async()=>{
+  for(const width of [1440,390,320]){
+   await page.setViewportSize({width,height:960});
+   await selectCategory(page,'checkboxes');
+   for(const id of ['lgc-checkboxes-lens','lgc-checkboxes-mist']){
+    const card=page.locator(`[data-part="${id}"]`);
+    const alignment=await card.evaluate(el=>{
+     const scene=el.querySelector('.lg-demo-scene')!.getBoundingClientRect();
+     const box=el.querySelector('.sop-check-box')!.getBoundingClientRect();
+     const input=el.querySelector('input')!.getBoundingClientRect();
+     const label=el.querySelector('.sop-check-label')!,description=el.querySelector('.sop-check-description')!;
+     const a=document.createRange(),b=document.createRange();a.selectNodeContents(label);b.selectNodeContents(description);
+     const visibleRight=Math.max(a.getBoundingClientRect().right,b.getBoundingClientRect().right);
+     return {offset:(box.left+visibleRight)/2-(scene.left+scene.width/2),hitOffset:input.left-box.left};
+    });
+    assert.ok(Math.abs(alignment.offset)<8,`${id} ${width}: visible group is off center`);
+    assert.ok(Math.abs(alignment.hitOffset)<2,`${id} ${width}: input hit area moved away from the box`);
+    if(width===1440)await card.screenshot({path:path.join(out,`${id}-center.png`)});
+    await open(id);
+    const detailOffset=await detail.locator('.preview-stage').evaluate(el=>{
+     const host=el.getBoundingClientRect(),box=el.querySelector('.sop-check-box')!.getBoundingClientRect();
+     const label=el.querySelector('.sop-check-label')!,description=el.querySelector('.sop-check-description')!;
+     const a=document.createRange(),b=document.createRange();a.selectNodeContents(label);b.selectNodeContents(description);
+     return (box.left+Math.max(a.getBoundingClientRect().right,b.getBoundingClientRect().right))/2-(host.left+host.width/2);
+    });
+    assert.ok(Math.abs(detailOffset)<8,`${id} ${width}: detail group is off center`);
+    const input=detail.locator('.sop-check input');
+    await input.click();
+    assert.equal(await input.isChecked(),id==='lgc-checkboxes-lens');
+    await closeDetail();
+   }
+  }
+  await page.setViewportSize({width:1440,height:960});
+ });
  await run('Representative code and prompt use the usual delivery path',async()=>{
   for(const id of ['lg-flow-tabs','lgc-segments-lens','lgc-datepickers-mist','lgc-navigation-lens','lgc-ornaments-mist']){
    const part=await open(id),delivery=getDelivery(part,'tsx','portable');

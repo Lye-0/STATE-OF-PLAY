@@ -35,6 +35,11 @@
 .part-details .live-preview .preview-stage>.lgc-root:not(.sop-scroll-area,.sop-ornament),
 .object-card.glass-series .stage-mount>.lg-tabs,
 .part-details .live-preview .preview-stage>.lg-tabs{max-width:var(--glass-component-max,100%);}
+/* Keep the visible checkbox, label and description centered as one group. */
+.object-card.glass-series[data-part^="lgc-checkboxes-"] .stage-mount>.sop-check,
+.part-details .checkbox-preview[data-preview-part^="lgc-checkboxes-"] .preview-stage>.sop-check{width:max-content;max-width:min(100%,var(--glass-component-max,365px));}
+.object-card.glass-series[data-part^="lgc-checkboxes-"] .sop-check-copy,
+.part-details .checkbox-preview[data-preview-part^="lgc-checkboxes-"] .sop-check-copy{flex:0 1 auto;}
 .object-card.glass-series.scroll-card .object-stage{height:340px;min-height:0;padding:25px 27px 27px;}
 .object-card.glass-series.scroll-card .stage-mount{height:100%;min-height:0;box-sizing:border-box;padding:14px;overflow:hidden;}
 .object-card.glass-series.scroll-card .sop-scroll-area{height:100%;max-width:440px;}
