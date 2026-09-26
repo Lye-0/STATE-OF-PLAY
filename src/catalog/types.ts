@@ -26,6 +26,7 @@ export type DetailTab = 'code' | 'guide' | 'prompt';
 export interface SourceFile { name: string; sourceName: string; code: string; language: string; group: 'component' | 'shared' | 'example'; }
 export interface Part {
   glassTransparency?: number;
+  glassBlur?: number;
   workbench?: {kind: string};
   signature?: {kind: string};
   foundation?: FoundationConfig;

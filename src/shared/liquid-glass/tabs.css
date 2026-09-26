@@ -22,5 +22,5 @@
 @media(max-width:380px){.lg-tabs > .sop-choice-list > .sop-choice-item{padding-inline:12px;font-size:12px;min-height:44px}}
 @media(forced-colors:active){.lg-tabs > .sop-choice-list > .sop-choice-item[data-selected="true"]{color:Highlight;border-bottom:2px solid Highlight}.lg-tabs > .sop-choice-list > .sop-choice-marker{background:Canvas!important;}}
 
-.lg-tabs > .sop-choice-panels > .sop-choice-panel{background:rgb(var(--lg-base)/calc(.24 * var(--lg-density,1)));border:1px solid rgb(var(--lg-edge)/.28);border-radius:16px;padding:20px;backdrop-filter:blur(10px);}
+.lg-tabs > .sop-choice-panels > .sop-choice-panel{background:rgb(var(--lg-base)/calc(.24 * var(--lg-density,1)));border:1px solid rgb(var(--lg-edge)/.28);border-radius:16px;padding:20px;backdrop-filter:blur(calc(10px * var(--lg-blur-scale, 1)));}
 .lg-tabs[data-lg-material=solid] > .sop-choice-panels > .sop-choice-panel{background:rgb(var(--lg-base));backdrop-filter:none}@media(prefers-reduced-transparency:reduce),(prefers-contrast:more){.lg-tabs > .sop-choice-panels > .sop-choice-panel{background:rgb(var(--lg-base));backdrop-filter:none}}@media(forced-colors:active){.lg-tabs > .sop-choice-panels > .sop-choice-panel{background:Canvas;color:CanvasText;border-color:CanvasText;backdrop-filter:none}}

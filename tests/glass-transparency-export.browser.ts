@@ -6,14 +6,16 @@ try{
  await page.goto(server.resolvedUrls!.local[0],{waitUntil:'commit'});await page.waitForFunction(()=>document.documentElement.classList.contains('site-ready'));
  for(const [id,category,density] of [['lg-lens-toggle','toggles',.492],['lgc-contextmenus-mist','contextmenus',.6]] as const){
   await selectCategory(page,category);await galleryReady(page,true);await page.locator(`[data-open="${id}"]`).click();await galleryReady(page,true);
-  const detail=page.locator('#part-details');await detail.locator('#glass-transparency').fill('70');await detail.locator('[data-format="js"]').click();await detail.locator('#download-part').click();
+  const detail=page.locator('#part-details');await detail.locator('#glass-transparency').fill('70');await detail.locator('#glass-blur').fill('0');await detail.locator('[data-format="js"]').click();await detail.locator('#download-part').click();
   const download=page.waitForEvent('download');await page.locator('.package-save').click();const file=await download;const target=path.join(ROOT,'.test-output',id+'-adjusted.zip');await file.saveAs(target);
   const zip=await JSZip.loadAsync(fs.readFileSync(target),{checkCRC32:true}),names=Object.keys(zip.files);
   const content=async(suffix:string)=>zip.file(names.find(name=>name.endsWith(suffix))!)!.async('string');
   assert.equal(JSON.parse(await content('/INTEGRATION.json')).glassTransparency,70);assert.match(await content('/PROMPT.md'),/透明度: 70 \/ 100/);
+  assert.equal(JSON.parse(await content('/INTEGRATION.json')).glassBlur,0);assert.match(await content('/PROMPT.md'),/背景のぼかし: 0 \/ 100/);
   const css=await content('/preview/styles.css');assert.ok(css.includes('--lg-density:'+density));
   const demo=await browser.newPage();await demo.setContent(await content('/preview/index.html'));await demo.addStyleTag({content:css});await demo.addScriptTag({content:await content('/preview/app.js')});
   assert.equal(await demo.locator('.sop-'+id).evaluate(el=>Number(getComputedStyle(el).getPropertyValue('--lg-density'))),density);
+  assert.equal(await demo.locator('.sop-'+id).evaluate(el=>getComputedStyle(el).getPropertyValue('--lg-blur-scale').trim()),'0');
   await demo.close();await page.locator('.package-close').click();await detail.locator('.close-detail').click();
  }
  console.log('PASS configured ZIP downloads and standalone previews (A/B)');

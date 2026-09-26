@@ -62,7 +62,7 @@
 .sop-wb .wb-command-launch > span {flex:1;font-size:11px;}
 .sop-wb .wb-command-launch svg {color:var(--wb-accent);width:17px;height:17px;}
 .sop-wb .wb-command-dialog {position:fixed;width:min(560px,calc(100vw - 28px));max-width:none;max-height:calc(100dvh - 44px);margin:auto;padding:0;border:1px solid var(--wb-line);border-radius:var(--wb-radius);background:var(--wb-bg);color:var(--wb-ink);box-shadow:0 30px 100px #0009;overflow:auto;}
-.sop-wb .wb-command-dialog::backdrop,.sop-wb .wb-nav-dialog::backdrop {background:#040910b3;backdrop-filter:blur(6px);}
+.sop-wb .wb-command-dialog::backdrop,.sop-wb .wb-nav-dialog::backdrop {background:#040910b3;backdrop-filter:blur(calc(6px * var(--lg-blur-scale, 1)));}
 .sop-wb .wb-command-dialog[open] {animation:wb-command-in .35s cubic-bezier(.16,1,.3,1);}
 .sop-wb .wb-command-frame {position:relative;min-width:0;}
 .sop-wb .wb-command-frame > :not(.wb-art) {position:relative;z-index:1;}
