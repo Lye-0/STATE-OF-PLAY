@@ -75,7 +75,12 @@ export function createSearch(root:HTMLElement,provided:SearchOptions={}):Workben
  document.addEventListener('pointerdown',e=>{pointerOutside=!root.contains(e.target as Node);},{signal:life.signal});
  document.addEventListener('click',e=>{if(!root.contains(e.target as Node))close();pointerOutside=false;},{signal:life.signal});
  document.addEventListener('pointercancel',()=>{pointerOutside=false;},{signal:life.signal});
- root.addEventListener('focusout',()=>queueMicrotask(()=>{if(!life.dead&&!pointerOutside&&!root.contains(document.activeElement))close();}),{signal:life.signal});
+ root.addEventListener('focusout',event=>{
+  // Native blur can checkpoint microtasks before focusin. Keep internal controls
+  // in place through pointerup instead of collapsing the list under the pointer.
+  if(event.relatedTarget instanceof Node&&root.contains(event.relatedTarget))return;
+  queueMicrotask(()=>{if(!life.dead&&!pointerOutside&&!root.contains(document.activeElement))close();});
+ },{signal:life.signal});
  function reset(){if(options.query===undefined)query=options.defaultQuery??'';if(options.filter===undefined)filter=options.defaultFilter??filters[0]?.id??'';active=-1;close();schedule();}
  listenReset(root,life.signal,reset);life.cleanup(()=>{request++;pending?.abort();clearTimeout(timer);});paint();
  return {getState:state,reset,open:show,close,setPaused:life.setPaused,destroy:life.destroy,

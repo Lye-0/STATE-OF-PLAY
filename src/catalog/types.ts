@@ -25,6 +25,7 @@ export const isLayout = (value: unknown): value is Layout => value === 'portable
 export type DetailTab = 'code' | 'guide' | 'prompt';
 export interface SourceFile { name: string; sourceName: string; code: string; language: string; group: 'component' | 'shared' | 'example'; }
 export interface Part {
+  glassTransparency?: number;
   workbench?: {kind: string};
   signature?: {kind: string};
   foundation?: FoundationConfig;

@@ -1,4 +1,5 @@
 import {glassScene,isGlassPart} from './liquid-glass-preview';
+import {glassDensity,templateGlassDensity,withGlassTransparency} from '../catalog/glass-transparency';
 import {mountWorkbenchControls} from './workbench-preview';
 import {mountSignatureControls} from './signature-preview';
 import {mountFoundationControls} from './foundation-preview';
@@ -255,7 +256,20 @@ export function createDetails(parts: PartSummary[], callbacks: {onActive: (activ
         };
         dialog.querySelectorAll<HTMLButtonElement>('[data-bg]').forEach(b => b.addEventListener('click', () => { background = b.dataset.bg ?? 'studio'; setBackground(); }));
         setBackground();
-        if(isGlassPart(part)){const prior=cleanupAction,cleanup=glassScene(stage,root);cleanupAction=()=>{prior?.();cleanup();};}
+        if(isGlassPart(part)){
+            const prior=cleanupAction,cleanup=glassScene(stage,root),template=part;
+            const controls=document.createElement('fieldset');controls.className='glass-material-controls';
+            controls.innerHTML='<legend>素材を調整</legend><div class="glass-transparency-label"><label for="glass-transparency">透明度</label><output for="glass-transparency">50 / 100</output><button type="button" class="small-button" data-glass-reset>展示の設定に戻す</button></div><input id="glass-transparency" type="range" min="0" max="100" step="1" value="50" aria-describedby="glass-transparency-note"><div class="glass-transparency-scale"><span>濃い</span><span>透ける</span></div><p id="glass-transparency-note">50が展示の設定です。面と持ち手の濃度差、文字と縁の見やすさを保ち、コード・プロンプト・ZIPにも反映します。</p>';
+            required('.live-preview',dialog).after(controls);
+            const input=required<HTMLInputElement>('#glass-transparency',controls),output=required('output',controls);
+            let paint=0;
+            const render=()=>{clearTimeout(paint);paint=0;drawMain();};
+            const update=()=>{const amount=Number(input.value);output.textContent=`${amount} / 100`;input.setAttribute('aria-valuetext',`${amount}${amount===50?'、展示の設定':''}`);root.style.setProperty('--lg-density',String(Number((glassDensity(amount)*templateGlassDensity(template)).toFixed(4))));part=withGlassTransparency(template,amount);clearTimeout(paint);paint=window.setTimeout(render,100);};
+            input.addEventListener('input',update);
+            input.addEventListener('change',render);
+            required('[data-glass-reset]',controls).addEventListener('click',()=>{input.value='50';update();render();});
+            cleanupAction=()=>{clearTimeout(paint);controls.remove();prior?.();cleanup();};
+        }
         drawMain();
         required('.close-detail', dialog).focus({ preventScroll: true });
     }

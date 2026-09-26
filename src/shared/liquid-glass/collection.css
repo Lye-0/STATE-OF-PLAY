@@ -1,7 +1,7 @@
 /* Portable material tokens. No gallery geometry or page resets. */
-.lgc-root{--lgc-ink:#f1f7fb;--lgc-muted:#cfdae4;--lgc-accent:#d0efff;--lgc-fill:rgba(29,57,78,.24);--lgc-panel:rgba(24,42,60,.86);--lgc-selection:rgba(173,218,244,.28);--lgc-line:rgba(231,247,255,.37);--lgc-blur:18px;--lgc-radius:22px;color:var(--lgc-ink);color-scheme:dark;}
-.lgc-root[data-lgc-grade="B"]{--lgc-fill:rgba(25,43,57,.62);--lgc-panel:rgba(24,42,55,.94);--lgc-line:rgba(229,242,253,.27);--lgc-blur:12px;--lgc-radius:13px;}
-.lgc-root[data-lg-appearance="light"]{--lgc-ink:#172d3d;--lgc-muted:#40586a;--lgc-accent:#31566d;--lgc-fill:rgba(252,253,255,.55);--lgc-panel:rgba(247,251,255,.94);--lgc-selection:rgba(113,171,203,.24);--lgc-line:rgba(255,255,255,.72);color-scheme:light;}
+.lgc-root{--lgc-ink:#f1f7fb;--lgc-muted:#cfdae4;--lgc-accent:#d0efff;--lgc-fill:rgba(29,57,78,clamp(0, calc(.24 * var(--lg-density, 1)), 1));--lgc-panel:rgba(24,42,60,clamp(0, calc(.86 * var(--lg-density, 1)), 1));--lgc-selection:rgba(173,218,244,clamp(0, calc(.28 * var(--lg-density, 1)), 1));--lgc-line:rgba(231,247,255,.37);--lgc-blur:18px;--lgc-radius:22px;color:var(--lgc-ink);color-scheme:dark;}
+.lgc-root[data-lgc-grade="B"]{--lgc-fill:rgba(25,43,57,clamp(0, calc(.62 * var(--lg-density, 1)), 1));--lgc-panel:rgba(24,42,55,clamp(0, calc(.94 * var(--lg-density, 1)), 1));--lgc-line:rgba(229,242,253,.27);--lgc-blur:12px;--lgc-radius:13px;}
+.lgc-root[data-lg-appearance="light"]{--lgc-ink:#172d3d;--lgc-muted:#40586a;--lgc-accent:#31566d;--lgc-fill:rgba(252,253,255,clamp(0, calc(.55 * var(--lg-density, 1)), 1));--lgc-panel:rgba(247,251,255,clamp(0, calc(.94 * var(--lg-density, 1)), 1));--lgc-selection:rgba(113,171,203,clamp(0, calc(.24 * var(--lg-density, 1)), 1));--lgc-line:rgba(255,255,255,.72);color-scheme:light;}
 .lgc-root[data-lg-material="solid"]{--lgc-fill:#203949;--lgc-panel:#203949;--lgc-blur:0px;}
 .lgc-root[data-lg-material="solid"][data-lg-appearance="light"]{--lgc-fill:#edf5fa;--lgc-panel:#edf5fa;}
 .lgc-root :where(input,textarea,button,select){color:inherit;}
@@ -13,3 +13,15 @@
 @supports not (backdrop-filter:blur(1px)){.lgc-root{--lgc-fill:#203949;--lgc-panel:#203949;}.lgc-root[data-lg-appearance="light"]{--lgc-fill:#edf5fa;--lgc-panel:#edf5fa;}}
 @media(prefers-reduced-motion:reduce){.lgc-root,.lgc-root *,.lgc-root *::before,.lgc-root *::after{animation:none!important;transition:none!important;}}
 @media(forced-colors:active){.lgc-root{--lgc-ink:CanvasText;--lgc-muted:CanvasText;--lgc-fill:Canvas;--lgc-panel:Canvas;--lgc-selection:Highlight;--lgc-line:CanvasText;--lgc-accent:Highlight;--lgc-blur:0px;}}
+
+/* User transparency/contrast preferences take precedence over custom material density. */
+.lgc-root[data-lg-appearance="light"]{--lgc-fill:rgba(242,250,255,calc(.55 * var(--lg-density,1)));--lgc-panel:rgba(242,250,255,calc(.88 * var(--lg-density,1)));}
+.lgc-root[data-lg-material="solid"]{--lg-density:1!important;}
+@media(prefers-reduced-transparency:reduce),(prefers-contrast:more),(forced-colors:active){.lgc-root{--lg-density:1!important;}}
+@supports not (backdrop-filter:blur(1px)){.lgc-root{--lg-density:1!important;}}
+.lgc-root[data-lg-material="solid"][class]{--lgc-fill:#203949;--lgc-panel:#203949}.lgc-root[data-lg-material="solid"][data-lg-appearance="light"][class]{--lgc-fill:#edf5fa;--lgc-panel:#edf5fa}@media(prefers-reduced-transparency:reduce),(prefers-contrast:more){.lgc-root{--lgc-fill:#203949!important;--lgc-panel:#203949!important}.lgc-root[data-lg-appearance="light"]{--lgc-fill:#edf5fa!important;--lgc-panel:#edf5fa!important}}@media(forced-colors:active){.lgc-root{--lgc-fill:Canvas!important;--lgc-panel:Canvas!important;--lgc-selection:Highlight!important}}
+
+.lgc-root{--lg-control-density:clamp(.55,calc(.55 + var(--lg-density,1)*.45),1.5);}
+
+.lgc-root[data-lg-appearance="light"]:where([class*="-mist"]){--lgc-fill:rgba(242,250,255,calc(.82 * var(--lg-density,1)));--lgc-panel:rgba(242,250,255,calc(.94 * var(--lg-density,1)));}
+.lgc-root[data-lg-material="solid"][class]{--lgc-fill:#203949!important;--lgc-panel:#203949!important}.lgc-root[data-lg-material="solid"][data-lg-appearance="light"][class]{--lgc-fill:#edf5fa!important;--lgc-panel:#edf5fa!important}

@@ -158,7 +158,7 @@ async function renderGallery(append = false) {
         const surface = part.category === 'toggles' ? createSurfaceController(card) : undefined;
         const demo = part.category === 'buttons' || part.category === 'links' ? actionHelper!.mountActionDemo(root,part,controller,card,text=>required('.state-word',card).textContent=text) : undefined;
         rendered.push({ part, controller, card, surface, cleanup:part.workbench ? workbenchHelper!.mountWorkbenchSample(root,part,controller) : part.signature ? signatureHelper!.mountSignatureSample(root,part,controller) : part.foundation ? foundationHelper!.mountFoundationSample(root,part,controller) : part.category==='popups'?popupHelper!.mountPopupSample(root,part):demo?.destroy });
-        if (isGlassPart(part)) { const entry=rendered[rendered.length-1], prior=entry.cleanup, clean=glassHelper!.glassScene(mount,root); entry.cleanup=()=>{prior?.();clean();}; }
+        if (isGlassPart(part)) { const entry=rendered[rendered.length-1], prior=entry.cleanup, clean=glassHelper!.glassScene(required('.object-stage',card),root); entry.cleanup=()=>{prior?.();clean();}; }
         if (part.category === 'checkboxes') {
             const sync=()=>{required('.state-word',card).textContent=(controller.getIndeterminate?.()?'mixed':controller.getChecked?.()?'checked':'unchecked').toUpperCase();};
             root.addEventListener('sop:checkbox-state',sync); sync();

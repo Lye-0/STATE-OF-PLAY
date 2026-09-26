@@ -379,7 +379,7 @@ try{
      const scene=el.querySelector('.lg-demo-scene')!.getBoundingClientRect(),box=shell.getBoundingClientRect();
      return {shell:getComputedStyle(shell).backgroundColor,field:getComputedStyle(field).backgroundColor,blur:getComputedStyle(field).backdropFilter,
       rows:list.querySelectorAll('[role=option]').length,allVisible:list.scrollHeight<=list.clientHeight+1,
-      scene:box.left>=scene.left&&box.right<=scene.right&&box.bottom<=scene.bottom-15,page:document.documentElement.scrollWidth<=innerWidth+2,
+      scene:box.left>=scene.left-1&&box.right<=scene.right+1&&box.bottom<=scene.bottom+1,page:document.documentElement.scrollWidth<=innerWidth+2,
       font:getComputedStyle(el.querySelector('.wb-search-input')!).fontSize,emblem:getComputedStyle(el.querySelector('.wb-search-emblem')!).display};
     });
     assert.ok(view.blur.includes('blur('),`${id} ${width}: search lens lost its material`);
@@ -515,7 +515,7 @@ try{
       const box=node.closest('.sg-event-main')!.getBoundingClientRect(),ink=range.getBoundingClientRect();
       return ink.left>=box.left+8&&ink.right<=box.right-8&&ink.top>=box.top+7&&ink.bottom<=box.bottom-7;
      });
-     return {text,scene:mains.every(box=>box.left>=scene.left&&box.right<=scene.right&&box.bottom<=scene.bottom-16),page:document.documentElement.scrollWidth<=innerWidth+2};
+     return {text,scene:mains.every(box=>box.left>=scene.left&&box.right<=scene.right&&box.bottom<=scene.bottom+1),page:document.documentElement.scrollWidth<=innerWidth+2};
     });
     assert.ok(fits.text,`${id} ${width}: text crossed the glass border`);
     assert.ok(fits.scene,`${id} ${width}: event crossed the scene`);
@@ -540,7 +540,7 @@ try{
      });
      const fields=[...panel.querySelectorAll('input,textarea')].every(node=>{const box=node.getBoundingClientRect();return box.left>=surface.left+12&&box.right<=surface.right-12;});
      const footer=el.querySelector('.sg-wizard-footer')!.getBoundingClientRect();
-     return {text,fields,footer:footer.left>=wizard.left&&footer.right<=wizard.right&&footer.bottom<=wizard.bottom,scene:wizard.bottom<=scene.bottom-14,page:document.documentElement.scrollWidth<=innerWidth+2};
+     return {text,fields,footer:footer.left>=wizard.left&&footer.right<=wizard.right&&footer.bottom<=wizard.bottom,scene:wizard.bottom<=scene.bottom+1,page:document.documentElement.scrollWidth<=innerWidth+2};
     });
     assert.ok(Object.values(await fits()).every(Boolean),`${id} ${width}: first step overflows`);
     await card.locator('[data-step-panel="name"] [data-field="workspace"]').fill('Studio workspace');

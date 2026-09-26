@@ -2,7 +2,7 @@
 .lg-button {position:relative;display:inline-flex;align-items:center;justify-content:center;gap:22px;padding:0 25px;min-height:56px;min-width:160px;max-width:100%;border:0;background:transparent;border-radius:999px;color:var(--lg-ink);font-size:15px;line-height:1.4;font-weight:500;cursor:pointer;vertical-align:middle;}
 .lg-button .lg-button-plane {position:absolute;inset:0;border-radius:inherit;transition:scale .36s var(--lg-ease),box-shadow .3s;}
 .lg-button .lg-button-plane .lg-ripple {position:absolute;inset:2px;border-radius:inherit;overflow:hidden;}
-.lg-button .lg-button-plane .lg-ripple::after{content:"";position:absolute;inset:-25%;background:conic-gradient(from 90deg at var(--lg-light-x) var(--lg-light-y),transparent 0 30%,#d0f2ff2b 42%,#fff7 48%,transparent 53% 100%);opacity:0;transition:opacity .25s;}
+.lg-button .lg-button-plane .lg-ripple::after{content:"";position:absolute;inset:-25%;background:conic-gradient(from 90deg at var(--lg-light-x) var(--lg-light-y),transparent 0 30%,rgba(208,242,255,clamp(0, calc(0.16863 * var(--lg-density, 1)), 1)) 42%,rgba(255,255,255,clamp(0, calc(0.46667 * var(--lg-density, 1)), 1)) 48%,transparent 53% 100%);opacity:0;transition:opacity .25s;}
 .lg-button:hover:not(:disabled) .lg-ripple::after{opacity:.55;}
 .lg-button .sop-action-label{position:relative;z-index:1;overflow-wrap:anywhere;font:500 15px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:-.02em;}
 .lg-button .sop-action-icon{width:18px;height:18px;position:relative;display:grid;place-items:center;z-index:1;}

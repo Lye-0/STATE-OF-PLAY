@@ -492,3 +492,7 @@
 .ornament-card .stage-mount{width:100%;max-width:350px;min-width:0}
 .ornament-preview .preview-stage{height:auto;min-height:280px;padding:20px;display:flex;justify-content:center;overflow:hidden}
 @media(max-width:600px){.ornament-card .object-stage{padding-inline:12px}.ornament-preview .preview-stage{padding-inline:12px}}
+
+/* Every paired exhibit shares header, stage and caption rows, regardless of material. */
+.object-card{display:grid;grid-template-rows:subgrid;grid-row:span 3;row-gap:0;}
+.object-card .card-bottom{align-self:start;}

@@ -1,5 +1,5 @@
 /* Museum scene, not included in reusable parts. The glass really samples this background. */
-.lg-demo-host {position:relative!important;isolation:isolate;min-height:220px;padding:32px 24px;overflow:visible;}
+.lg-demo-host {position:relative!important;isolation:isolate;overflow:visible;}
 .lg-demo-scene {position:absolute;inset:0;z-index:0;overflow:hidden;border-radius:18px;background:#284f62;pointer-events:none;}
 .lg-demo-scene .lg-demo-wave{position:absolute;display:block;border-radius:49%;width:170%;height:230%;left:-40%;top:40%;transform:rotate(-32deg);}
 .lg-demo-scene .wave-one{background:linear-gradient(115deg,#c7d8d1,#6d9b9c 32%,#598691 53%,#57748a);top:-138%;left:-60%;}
@@ -13,17 +13,11 @@
 .lg-demo-host[data-lg-scene="ink"] .wave-one{background:#193946;}
 .lg-demo-host[data-lg-scene="ink"] .wave-two{background:linear-gradient(120deg,#296170,#357786 30%,#304b5a);}
 .lg-demo-host[data-lg-scene="ink"] .wave-three{background:#172b38;}
-.object-card.glass-series .object-stage{height:auto;min-height:240px;padding:20px 22px 28px;perspective:none;}
-.object-card.glass-series .stage-mount{min-height:216px;max-width:100%;border-radius:18px;}
-.object-card.glass-series.foundation-datepickers .object-stage{min-height:326px;}
-.object-card.glass-series.foundation-datepickers .stage-mount{min-height:278px;}
 .object-card.glass-series .stage-glow{display:none;}
 .object-card.glass-series .object-type{color:inherit;}
-.object-card.glass-series .object-stage::after{display:none;}
 .object-card.glass-series .card-bottom h2 span{white-space:normal;}
 .object-card.glass-series .stage-mount>.lg-toggle{transform:none!important;}
 .object-card.glass-series .stage-mount>.lg-select{max-width:350px;}
-.object-card.glass-series .stage-mount:has(.lg-tabs){padding:29px 24px;min-height:275px;}
 /* The scene keeps its width; each exhibit uses the same component scale as its category. */
 :is(.object-card[data-part^="lgc-blocks-"],.live-preview[data-preview-part^="lgc-blocks-"]){--glass-component-max:420px;}
 :is(.object-card[data-part^="lgc-accordions-"],.live-preview[data-preview-part^="lgc-accordions-"]){--glass-component-max:410px;}
@@ -42,8 +36,6 @@
 .part-details .checkbox-preview[data-preview-part^="lgc-checkboxes-"] .preview-stage>.sop-check{width:max-content;max-width:min(100%,var(--glass-component-max,365px));}
 .object-card.glass-series[data-part^="lgc-checkboxes-"] .sop-check-copy,
 .part-details .checkbox-preview[data-preview-part^="lgc-checkboxes-"] .sop-check-copy{flex:0 1 auto;}
-.object-card.glass-series.scroll-card .object-stage{height:340px;min-height:0;padding:25px 27px 27px;}
-.object-card.glass-series.scroll-card .stage-mount{height:100%;min-height:0;box-sizing:border-box;padding:14px;overflow:hidden;}
 .object-card.glass-series.scroll-card .sop-scroll-area{height:100%;max-width:440px;}
 .object-card.glass-series .action-demo-feedback{position:absolute;bottom:10px;color:#f0f4f2;z-index:3;margin:0;font-size:9px;background:#152936b8;padding:4px 10px;border-radius:10px;}
 .part-details .lg-demo-host{height:auto!important;min-height:228px!important;padding:32px 16px!important;}
@@ -52,11 +44,33 @@
 .part-details .lg-demo-host .action-demo-feedback{position:relative;z-index:2;color:#e8f1f1;font-size:9px;background:#172f458c;border-radius:8px;padding:5px;margin:15px 0 -10px;}
 .part-details .lg-demo-host:has(.lg-button){flex-direction:column;}
 .part-details .scroll-preview .lg-demo-host{height:325px!important;min-height:0!important;padding:15px 12px 18px 19px!important;}
-@media(max-width:760px){.object-card.glass-series.scroll-card .object-stage{height:315px;padding:20px 18px;}}
-@media(max-width:355px){.object-card.glass-series.scroll-card .object-stage{padding-inline:17px;}}
-@media(max-width:480px){.object-card.glass-series .object-stage{padding:16px 15px 24px}.object-card.glass-series .stage-mount{padding:25px 15px}.object-card.glass-series .card-bottom h2{flex-wrap:wrap;row-gap:3px;}}
 .object-card.glass-series .stage-mount>.lgc-root,.part-details .lg-demo-host>.lgc-root{position:relative;z-index:2;}
-.object-card.glass-series .stage-mount:has(.sop-scroll-area){width:100%;}
-.object-card.glass-series .stage-mount:has(.sop-ornament){min-height:240px;}
 .lg-demo-host{max-width:100%;}
 .lg-demo-host .lg-demo-scene{border-radius:inherit;}
+
+/* The scenery occupies existing stage space; it never determines card height. */
+.object-card .object-stage.lg-demo-host{perspective:none;}
+.object-card .object-stage>.lg-demo-scene{inset:14px 22px 20px;border-radius:16px;}
+.object-card .stage-mount>.lgc-root,.object-card .stage-mount>.lg-root{position:relative;z-index:2;}
+.lg-demo-scene::before,.lg-demo-scene::after{content:"";position:absolute;pointer-events:none;}
+.lg-demo-scene::before{inset:0;z-index:1;background:repeating-linear-gradient(115deg,transparent 0 34px,#e9fbff40 35px 36px,transparent 37px 70px),repeating-linear-gradient(25deg,transparent 0 79px,#102f4933 80px 81px,transparent 82px 150px);}
+.lg-demo-scene::after{z-index:1;width:180px;height:180px;border:18px solid #e9f6f194;border-radius:50%;right:-36px;top:-54px;box-shadow:-190px 190px 0 -28px #163e576b, -45px 300px 0 -48px #ecc09a9c;}
+.lg-demo-host[data-lg-scene="paper"] .lg-demo-scene::before{background:repeating-linear-gradient(115deg,transparent 0 34px,#537a9540 35px 36px,transparent 37px 70px),repeating-linear-gradient(25deg,transparent 0 79px,#fff9 80px 81px,transparent 82px 150px);}
+.lg-demo-host[data-lg-scene="ink"] .lg-demo-scene::after{border-color:#7eb5c45c;}
+/* Material controls belong to details; exhibit templates always retain density 1. */
+.glass-material-controls{min-width:0;margin:18px 0;padding:14px;border:1px solid #52645d;border-radius:9px;background:#1b2424;color:#dde8e6;}
+.glass-material-controls legend{padding:0 6px;font-size:10px;letter-spacing:.1em;color:#b3c8c3;}
+.glass-transparency-label{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:12px;}
+.glass-transparency-label output{font:11px Consolas,monospace;color:#c4e9f4;}
+.glass-transparency-label button{margin-left:auto;font-size:9px;}
+.glass-material-controls input[type="range"]{display:block;width:100%;margin:15px 0 6px;accent-color:#b2dceb;cursor:pointer;}
+.glass-transparency-scale{display:flex;justify-content:space-between;font-size:9px;color:#a5bcb7;}
+.glass-material-controls p{font-size:10px;line-height:1.7;color:#a9bbb8;margin:10px 0 0;}
+@media(max-width:600px){.object-card .object-stage>.lg-demo-scene{inset-inline:14px;}}
+
+.object-card.glass-series .action-demo-feedback{position:static;margin:16px 0 0;padding:0;background:none;color:#edf6fa;text-align:center;}
+.lg-demo-scene .lg-demo-wave{filter:brightness(.88);}
+.lg-demo-scene::before{opacity:.65;}
+.lg-demo-scene::after{opacity:.55;}
+
+.lg-demo-host[data-lg-scene="paper"] .surface-sample h3 em{color:#31566d}.lg-demo-host[data-lg-scene="paper"] :is(.wb-demo-feedback,.popup-demo-feedback){color:#354f61;}

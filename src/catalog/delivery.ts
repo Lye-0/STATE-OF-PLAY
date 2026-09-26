@@ -66,6 +66,7 @@ export function buildPrompt(part: Part, format: Format, layout: Layout, includeC
 export function buildManifest(part: Part, format: Format, layout: Layout): string {
   const d=getDelivery(part,format,layout);
   return JSON.stringify({schema:'state-of-play.integration.v1',part:{id:part.id,version:part.version,designType:part.designType,runtime:part.runtime},format,layout,
+    ...(part.glassTransparency===undefined?{}:{glassTransparency:part.glassTransparency}),
     componentRoot:d.componentRoot,entry:d.entry,stylesheet:d.stylesheet,example:d.example,
     externalDependencies:d.externalDependencies,
     files:d.files.map(f=>({path:f.name,source:f.sourceName,role:f.group==='example'?'example':'runtime'})),

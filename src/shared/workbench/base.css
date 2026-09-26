@@ -291,3 +291,4 @@
 /* Independent gate leaves reveal the live navigation, rather than turning it into a picture. */
 @keyframes wb-gate-left{0%{transform:translateX(0);opacity:1}90%{opacity:1}100%{transform:translateX(-102%);opacity:0}}
 @keyframes wb-gate-right{0%{transform:translateX(0);opacity:1}90%{opacity:1}100%{transform:translateX(102%);opacity:0}}
+@container(max-width:380px){.sop-wb[data-wb-sticky=true] td[data-first-column]{position:static;inset-inline-start:auto}.sop-wb[data-wb-sticky=true] th[data-first-column]{position:sticky;inset-inline-start:auto;z-index:3}}
