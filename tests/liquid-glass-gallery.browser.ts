@@ -556,18 +556,22 @@ try{
   await page.setViewportSize({width:1440,height:960});
  });
  await run('Both glass blocks also remain inside their cards',async()=>{
-  await page.setViewportSize({width:1440,height:960});
+  for(const width of [1920,1440,1024,768,390,320]){
+  await page.setViewportSize({width,height:960});
   await selectCategory(page,'blocks');
   for(const id of ['lgc-blocks-lens','lgc-blocks-mist']){
    const card=page.locator(`[data-part="${id}"]`);
    const fits=await card.evaluate(el=>{
     const stage=el.querySelector('.object-stage')!.getBoundingClientRect();
+    const scene=el.querySelector('.lg-demo-scene')!.getBoundingClientRect();
     const surface=el.querySelector('.sop-surface')!.getBoundingClientRect();
     const footer=el.querySelector('.card-bottom')!.getBoundingClientRect();
-    return surface.top>=stage.top-2&&surface.bottom<=stage.bottom+2&&stage.bottom<=footer.top+2;
+    return surface.top>=scene.top+4&&surface.bottom<=scene.bottom-4&&surface.left>=scene.left&&surface.right<=scene.right&&stage.bottom<=footer.top+2;
    });
-   assert.ok(fits,id);
+   assert.ok(fits,`${id} ${width}: surface crosses its visible scenery`);
   }
+  }
+  await page.setViewportSize({width:1440,height:960});
  });
  await run('Narrow layouts retain controls and avoid page overflow',async()=>{
   for(const width of [320,390,768]){await page.setViewportSize({width,height:900});for(const id of ['lgc-accordions-lens','lgc-accordions-mist','lg-flow-tabs','lg-index-tabs','lgc-segments-lens','lgc-segments-mist','lgc-textboxes-mist','lgc-tables-lens']){await open(id);assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),id+' '+width);await closeDetail();}}
