@@ -52,6 +52,40 @@ try{
    await closeDetail();
   }
  });
+ await run('Both glass ledgers remain readable and operable at narrow widths',async()=>{
+  await selectCategory(page,'tables');
+  for(const id of ['lgc-tables-lens','lgc-tables-mist']){
+   const card=page.locator(`[data-part="${id}"]`);await card.scrollIntoViewIfNeeded();
+   const surface=await card.evaluate(el=>{
+    const css=(selector:string)=>getComputedStyle(el.querySelector(selector)!);
+    const frame=css('.wb-data-frame'),cell=css('tbody td[data-column="status"]'),heading=css('.wb-data-heading');
+    const scroll=el.querySelector<HTMLElement>('.wb-table-scroll')!;
+    return {frameBackground:frame.backgroundColor,frameBlur:frame.backdropFilter,headingBlur:heading.backdropFilter,cellBackground:cell.backgroundColor,cellColor:cell.color,scrollWidth:scroll.scrollWidth,clientWidth:scroll.clientWidth};
+   });
+   assert.ok(surface.scrollWidth>surface.clientWidth,`${id}: wide columns must remain scrollable`);
+   assert.notEqual(surface.cellBackground,'rgb(250, 250, 247)',`${id}: copied white cells obscure text`);
+   assert.equal(surface.cellColor,'rgb(241, 247, 251)',`${id}: cell text lost its readable ink`);
+   if(id.endsWith('lens')){assert.equal(surface.frameBackground,'rgba(0, 0, 0, 0)');assert.match(surface.headingBlur,/blur/);}
+   else {assert.match(surface.frameBackground,/rgba\(/);assert.match(surface.frameBlur,/blur/);}
+   await card.locator('[data-sort="size"]').click();assert.equal(await card.locator('th[data-column="size"]').getAttribute('aria-sort'),'ascending');
+   await card.locator('.wb-table-search input').fill('Design');assert.equal(await card.locator('tbody tr[data-row]').count(),1);
+   await card.locator('[data-row-check]').check();assert.equal(await card.locator('.wb-data-selection').isVisible(),true);
+   await card.locator('.wb-table-search input').fill('');await card.locator('[data-table-page="next"]').click();assert.equal(await card.locator('.wb-data-footer output').textContent(),'2 / 2');
+   await card.locator('[data-table-page="prev"]').click();
+   await card.locator('.wb-data-selection [data-table-clear]').click();
+   await card.screenshot({path:path.join(out,`${id}-redesign.png`)});
+  }
+  for(const width of [320,390]){await page.setViewportSize({width,height:900});await selectCategory(page,'tables');for(const id of ['lgc-tables-lens','lgc-tables-mist']){
+   const card=page.locator(`[data-part="${id}"]`);await card.scrollIntoViewIfNeeded();
+   assert.ok(await card.evaluate(el=>{const scroll=el.querySelector<HTMLElement>('.wb-table-scroll')!;return scroll.scrollWidth>scroll.clientWidth&&scroll.getBoundingClientRect().right<=innerWidth+2;}),`${id}: horizontal table scroll missing at ${width}px`);
+   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),`${id}: page overflow at ${width}px`);
+  }}
+  await page.setViewportSize({width:1440,height:960});
+  await open('lgc-tables-mist');await detail.locator('[data-bg="light"]').click();
+  const lightCell=await detail.locator('td[data-column="status"]').first().evaluate(el=>{const style=getComputedStyle(el);return {background:style.backgroundColor,color:style.color};});
+  assert.equal(lightCell.background,'rgba(246, 251, 254, 0.38)');assert.equal(lightCell.color,'rgb(23, 45, 61)');
+  await closeDetail();
+ });
  await run('Both glass segment markers glide between choices and respect reduced motion',async()=>{
   await page.emulateMedia({reducedMotion:'no-preference'});
   await selectCategory(page,'segments');
