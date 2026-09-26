@@ -1,4 +1,4 @@
-import fs from 'node:fs';import assert from 'node:assert/strict';import {chromium} from 'playwright';import {preview} from 'vite';import {ROOT} from '../scripts/catalog.ts';import {selectCategory,galleryReady} from './gallery-ready.ts';
+import {glassAlpha} from '../src/catalog/glass-transparency.ts';import fs from 'node:fs';import assert from 'node:assert/strict';import {chromium} from 'playwright';import {preview} from 'vite';import {ROOT} from '../scripts/catalog.ts';import {selectCategory,galleryReady} from './gallery-ready.ts';
 const parts=JSON.parse(fs.readFileSync('src/catalog/registry.json','utf8')).filter((p:string)=>/\/(lg-|lgc-)/.test(p)).map((p:string)=>JSON.parse(fs.readFileSync(p+'/meta.json','utf8')));
 const server=await preview({root:ROOT,base:'/STATE-OF-PLAY/',preview:{host:'127.0.0.1',port:0}}),browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
 const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
@@ -12,6 +12,12 @@ try{
   await detail.locator('#glass-blur').fill('0');const clear=await read();assert.ok(clear.every(s=>s.blur===0),part.id+' retains background blur at zero');assert.deepEqual(clear.map(({blur,...s})=>s),original.map(({blur,...s})=>s),part.id+' blur changes transparency or text');
   await detail.locator('#glass-blur').fill('100');const strong=await read();assert.ok(strong.every((s,i)=>Math.abs(s.blur-original[i].blur*2)<.05),part.id+' blur ratio differs');
   await detail.locator('#glass-transparency').fill('80');assert.deepEqual((await read()).map(s=>s.blur),strong.map(s=>s.blur),part.id+' transparency changes blur');
+  // Compare individual background layers, including gradients and pseudo-elements.
+  const alphas=(s:string)=>[...s.matchAll(/rgba?\(([^)]+)\)/g)].map(m=>{const n=m[1].split(',').map(Number);return n.length===4?n[3]:1;});
+  for(const amount of [0,100]){await detail.locator('#glass-transparency').fill(String(amount));const changed=await read(),{scale,lift}=glassAlpha(amount);let surfaces=0;
+   changed.forEach((style,index)=>{assert.equal(style.color,original[index].color,part.id+' text changed');assert.equal(style.opacity,original[index].opacity,part.id+' element opacity changed');const a=alphas(original[index].background),b=alphas(style.background);assert.equal(a.length,b.length);a.forEach((alpha,i)=>{if(Math.abs(alpha-b[i])>.007){surfaces++;assert.ok(Math.abs(b[i]-(alpha*scale+lift))<.009,part.id+' inconsistent material mapping '+alpha+' -> '+b[i]);}});});assert.ok(surfaces>0,part.id+' has no adjustable surfaces');
+  }
+  if(part.id==='lgc-tables-mist'){for(const amount of [0,50,85,100]){await detail.locator('#glass-transparency').fill(String(amount));await detail.locator('#glass-blur').fill('0');await detail.locator('.live-preview').screenshot({path:'.test-output/glass-hierarchy-'+amount+'.png'});}}
   assert.equal(await card.locator('.lg-root,.lgc-root').first().evaluate(el=>(el as HTMLElement).style.getPropertyValue('--lg-blur-scale')),'');
   await detail.locator('#glass-blur').fill('0');
   const trigger=root.locator('.sop-select-trigger,[data-combo-toggle],[data-popup-open],[data-hint-trigger],[data-calendar-toggle],[data-notify],.wb-command-launch,.wb-context-open,.wb-nav-mobile-open').filter({visible:true}).first();

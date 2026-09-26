@@ -40,8 +40,8 @@ try{
     await page.waitForTimeout(80);await page.screenshot({path:path.join(out,part.id+'-state-'+shot+++'.png')});
     await detail.locator('#glass-transparency').evaluate((el:HTMLInputElement)=>{el.value='80';el.dispatchEvent(new Event('input',{bubbles:true}));});
     await page.waitForTimeout(30);
-    const floating=await root.locator('dialog[open],[popover]:popover-open').evaluateAll(nodes=>nodes.map(node=>getComputedStyle(node).getPropertyValue('--lg-density').trim()));
-    assert.ok(floating.every(value=>Math.abs(Number(value)-(part.designType==='A'?.328:.4))<.001),part.id+' floating material lost transparency');
+    const floating=await root.locator('dialog[open],[popover]:popover-open').evaluateAll(nodes=>nodes.map(node=>getComputedStyle(node).getPropertyValue('--lg-alpha-scale').trim()));
+    assert.ok(floating.every(value=>Math.abs(Number(value)-.472)<.001),part.id+' floating material lost transparency');
     await detail.locator('#glass-transparency').evaluate((el:HTMLInputElement)=>{el.value='50';el.dispatchEvent(new Event('input',{bubbles:true}));});
    });
    const metrics=await root.evaluate(el=>{const r=el.getBoundingClientRect();return {width:r.width,height:r.height,white:[...el.querySelectorAll('*')].filter(node=>{const s=getComputedStyle(node),r=node.getBoundingClientRect();return r.width>80&&r.height>30&&/^rgb\(2[34]\d, 2[34]\d, 2[34]\d\)$/.test(s.backgroundColor)&&/^rgb\(2[34]\d, 2[34]\d, 2[34]\d\)$/.test(s.color)}).map(node=>node.className)};});
