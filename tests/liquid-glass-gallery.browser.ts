@@ -76,6 +76,33 @@ try{
   for(const id of ['lgc-segments-lens','lgc-segments-mist'])assert.equal(await page.locator(`[data-part="${id}"] .sop-choice-marker`).evaluate(el=>getComputedStyle(el).transitionDuration),'0s');
   await page.emulateMedia({reducedMotion:'no-preference'});
  });
+ await run('Both glass navigation markers reach each destination without overshoot',async()=>{
+  await page.setViewportSize({width:1440,height:960});await page.emulateMedia({reducedMotion:'no-preference'});
+  await selectCategory(page,'navigation');
+  for(const id of ['lgc-navigation-lens','lgc-navigation-mist']){
+   const card=page.locator(`[data-part="${id}"]`);await card.scrollIntoViewIfNeeded();
+   const motion=await card.evaluate(async el=>{
+    const nav=el.querySelector<HTMLElement>('.wb-nav-desktop')!,marker=nav.querySelector<HTMLElement>('.wb-nav-marker')!;
+    const left=()=>marker.getBoundingClientRect().left-nav.getBoundingClientRect().left;
+    const move=async(id:string)=>{
+     const target=nav.querySelector<HTMLElement>(`[data-nav="${id}"]`)!,start=left(),destination=target.getBoundingClientRect().left-nav.getBoundingClientRect().left;
+     target.addEventListener('click',event=>event.preventDefault(),{capture:true,once:true});target.click();
+     const positions:number[]=[];for(let frame=0;frame<40;frame++){await new Promise<void>(resolve=>requestAnimationFrame(()=>resolve()));positions.push(left());}
+     return {start,destination,minimum:Math.min(...positions),maximum:Math.max(...positions),end:positions.at(-1)!,radius:getComputedStyle(marker).borderRadius,linkRadius:getComputedStyle(target).borderRadius};
+    };
+    return [await move('projects'),await move('library'),await move('overview')];
+   });
+   for(const step of motion){
+    assert.ok(step.minimum>=Math.min(step.start,step.destination)-.8&&step.maximum<=Math.max(step.start,step.destination)+.8,`${id}: marker passed its destination`);
+    assert.ok(Math.abs(step.end-step.destination)<.8,`${id}: marker missed its destination`);
+    assert.equal(step.radius,step.linkRadius,`${id}: marker and selection use different corners`);
+   }
+   if(id==='lgc-navigation-mist')await card.screenshot({path:path.join(out,'navigation-mist-corners.png')});
+  }
+  await page.emulateMedia({reducedMotion:'reduce'});
+  for(const id of ['lgc-navigation-lens','lgc-navigation-mist'])assert.equal(await page.locator(`[data-part="${id}"] .wb-nav-marker`).evaluate(el=>getComputedStyle(el).transitionDuration),'0s');
+  await page.emulateMedia({reducedMotion:'no-preference'});
+ });
  await run('Both glass checkbox groups stay visually centered and clickable',async()=>{
   for(const width of [1440,390,320]){
    await page.setViewportSize({width,height:960});
