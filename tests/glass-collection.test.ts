@@ -12,14 +12,14 @@ const bases=JSON.parse(read('src/catalog/registry.json')) as string[];
 const metas=bases.map(base=>({...JSON.parse(read(base+'/meta.json')),base}));
 const added=metas.filter(m=>m.id.startsWith('lgc-'));
 const glass=metas.filter(m=>m.id.startsWith('lg-')||m.id.startsWith('lgc-'));
-test('glass collection contains 64 independently named additions and 889 registered parts',()=>{
- assert.equal(bases.length,889);assert.equal(added.length,64);assert.equal(glass.length,72);
+test('glass collection contains 62 independently named additions and 887 registered parts',()=>{
+ assert.equal(bases.length,887);assert.equal(added.length,62);assert.equal(glass.length,70);
  assert.equal(new Set(metas.map(m=>m.id)).size,metas.length);
  assert.equal(new Set(metas.map(m=>m.order)).size,metas.length);
 });
-test('36 ordinary categories have one glass A and one glass B',()=>{
+test('35 ordinary categories have one glass A and one glass B',()=>{
  const categories=[...new Set(metas.map(m=>m.category))];assert.equal(categories.length,37);
- for(const category of categories){const group=glass.filter(m=>m.category===category);assert.deepEqual(group.map(m=>m.designType).sort(),category==='loaders'?[]:['A','B'],category);}
+ for(const category of categories){const group=glass.filter(m=>m.category===category);assert.deepEqual(group.map(m=>m.designType).sort(),['loaders','ornaments'].includes(category)?[]:['A','B'],category);}
 });
 test('all new runtime / React / example dependencies exist and are independent of gallery modules',()=>{
  const checked=new Set<string>();

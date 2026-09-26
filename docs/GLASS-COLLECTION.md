@@ -6,8 +6,8 @@
 
 ## 構成
 
-追加64種は `lgc-` で始まる独立IDを持ち、普通のカテゴリへ登録します。先行8種は `lg-` のまま維持します。
-825個の既存パーツの本体を維持し、36カテゴリにガラスA/B各1種（計72種）、総数889種です。カテゴリの総数は37です。
+追加62種は `lgc-` で始まる独立IDを持ち、普通のカテゴリへ登録します。先行8種は `lg-` のまま維持します。
+825個の既存パーツの本体を維持し、35カテゴリにガラスA/B各1種（計70種）、総数887種です。カテゴリの総数は37です。
 各カテゴリの通常のA/Bフィルターで選べます。タグ `liquid-glass` は配布用メタデータに残しています。
 
 | Category | A | B |
@@ -43,7 +43,6 @@
 | contextmenus | Lens Context | Mist Context |
 | navigation | Floating Navigation | Mist Navigation |
 | tables | Glass Ledger Collection | Mist Table |
-| ornaments | Liquid Halo | Frost Asterisk |
 
 各スキンは基礎となる同カテゴリの実装を継承し、入力・フォーム・イベント・状態処理はそのまま使います。
 `GLASS-COLLECTION-INDEX.json` の `source` が元パーツです。全カテゴリの動作を新しい共通コントローラーへ置き換えたわけではありません。

@@ -23,10 +23,10 @@ try{
  const detail=page.locator('#part-details');
  const open=async(id:string)=>{const part=glass.find(p=>p.id===id)!;await selectCategory(page,part.category);await page.locator(`[data-open="${id}"]`).click();await galleryReady(page,true);return part;};
  const closeDetail=async()=>{await detail.locator('.close-detail').click();};
- await run('Glass A and B appear in their 36 ordinary categories',async()=>{
-  assert.equal(all.parts.length,889);assert.equal(glass.length,72);assert.equal(await page.locator('.liquid-glass-shortcut,.lg-preview-controls').count(),0);
+ await run('Glass A and B appear in their 35 ordinary categories',async()=>{
+  assert.equal(all.parts.length,887);assert.equal(glass.length,70);assert.equal(await page.locator('.liquid-glass-shortcut,.lg-preview-controls').count(),0);
   for(const category of [...new Set(all.parts.map(p=>p.category))]){
-   await selectCategory(page,category);const pair=glass.filter(p=>p.category===category),expectedCount=category==='loaders'?0:2;assert.equal(pair.length,expectedCount);
+   await selectCategory(page,category);const pair=glass.filter(p=>p.category===category),expectedCount=['loaders','ornaments'].includes(category)?0:2;assert.equal(pair.length,expectedCount);
    assert.equal(await page.locator('.glass-series').count(),expectedCount);
    assert.equal(await page.locator('.glass-series .lg-demo-host').count(),expectedCount);
    if(expectedCount)for(const type of ['A','B']as const){const expected=pair.find(p=>p.designType===type)!;assert.equal(await page.locator(`[data-part][data-design="${type}"]`).last().getAttribute('data-part'),expected.id);}
@@ -45,7 +45,7 @@ try{
   }
  });
  await run('Usual details and background picker work for old and new glass parts',async()=>{
-  for(const id of ['lg-lens-toggle','lg-bloom-select','lgc-blocks-lens','lgc-scrollbars-lens','lgc-accordions-lens','lgc-textboxes-lens','lgc-tables-lens','lgc-ornaments-lens']){
+  for(const id of ['lg-lens-toggle','lg-bloom-select','lgc-blocks-lens','lgc-scrollbars-lens','lgc-accordions-lens','lgc-textboxes-lens','lgc-tables-lens','lgc-badges-lens']){
    await open(id);assert.equal(await detail.locator('.lg-demo-host').count(),1,id);assert.equal(await detail.locator('.lg-preview-controls').count(),0,id);
    const seen=new Set<string>();for(const [button,scene] of [['studio','coast'],['dark','ink'],['light','paper']]as const){await detail.locator(`[data-bg="${button}"]`).click();assert.equal(await detail.locator('.lg-demo-host').getAttribute('data-lg-scene'),scene,id);assert.equal(await detail.locator('.live-preview').evaluate(el=>el.classList.contains('bg-studio')),true,id);seen.add(await detail.locator('.lg-demo-scene').evaluate(el=>getComputedStyle(el).backgroundColor));}assert.equal(seen.size,3,id);
    if(id==='lgc-tables-lens')await detail.locator('.live-preview').screenshot({path:path.join(out,'table-paper.png')});
@@ -460,12 +460,12 @@ try{
   for(const scene of ['studio','light'])assert.ok(measured[scene]['lgc-toasts-lens'].alpha+0.35<measured[scene]['lgc-toasts-mist'].alpha,`${scene}: Floating and Mist have nearly the same opacity: ${JSON.stringify(measured[scene])}`);
  });
  await run('Representative code and prompt use the usual delivery path',async()=>{
-  for(const id of ['lg-flow-tabs','lgc-segments-lens','lgc-datepickers-mist','lgc-navigation-lens','lgc-ornaments-mist']){
+  for(const id of ['lg-flow-tabs','lgc-segments-lens','lgc-datepickers-mist','lgc-navigation-lens','lgc-tables-mist']){
    const part=await open(id),delivery=getDelivery(part,'tsx','portable');
    await detail.locator('[data-format="tsx"]').click();await detail.locator('#export-layout').selectOption('portable');
    const file=delivery.files.find(f=>f.name===delivery.entry)!;
    await detail.locator(`[data-file="${file.name}"]`).click();assert.deepEqual(await detail.locator('.editor .line-code').allTextContents(),file.code.split('\n').map(line=>line||' '),id);
-   await detail.locator('[data-detail-tab="prompt"]').click();assert.equal(await detail.locator('#prompt-text').inputValue(),buildPrompt(part,'tsx','portable'));
+   await detail.locator('[data-detail-tab="prompt"]').click();assert.equal((await detail.locator('#prompt-text').inputValue()).replace(/\r\n/g,'\n'),buildPrompt(part,'tsx','portable').replace(/\r\n/g,'\n'));
    await closeDetail();
   }
  });
