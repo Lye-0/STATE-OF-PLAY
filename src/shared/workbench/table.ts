@@ -21,6 +21,29 @@ export function createDataTable(root:HTMLElement,provided:TableOptions={}):Workb
  let selected=new Set(options.selected??options.defaultSelected??[]),page=options.page??options.defaultPage??1,widths:Record<string,number>={},visible:DataRow[]=[],total=rows.length,pages=1,composing=false;
  const life=lifecycle(root),host=owned(root),uid=identity('wb-table');host.innerHTML=tableMarkup(options,uid);
  const table=host.querySelector<HTMLTableElement>('table')!,thead=table.tHead!,tbody=table.tBodies[0],colgroup=table.querySelector('colgroup')!,input=host.querySelector<HTMLInputElement>('input[type=search]')!;
+ const scroll=host.querySelector<HTMLElement>('.wb-table-scroll')!;
+ const translucent=getComputedStyle(root).getPropertyValue('--wb-translucent-cells').trim()==='1';
+ let clipFrame=0;
+ function updateClipping(){
+  clipFrame=0;if(!translucent||life.dead)return;
+  const heads=[...(thead.rows[0]?.cells??[])],first=heads.find(cell=>cell.hasAttribute('data-first-column'));
+  const selection=heads.find(cell=>cell.classList.contains('wb-select-cell'));
+  // Leave enough room to operate a scrolling column, even after column resizing.
+  root.dataset.glassPinFirst=String(!!first&&first.getBoundingClientRect().width+(selection?.getBoundingClientRect().width??0)<=scroll.clientWidth-144);
+  const rtl=getComputedStyle(root).direction==='rtl';
+  const pinned=heads.filter(cell=>{const s=getComputedStyle(cell);return s.position==='sticky'&&s.insetInlineStart!=='auto';});
+  const edge=pinned.length?(rtl?Math.min(...pinned.map(c=>c.getBoundingClientRect().left)):Math.max(...pinned.map(c=>c.getBoundingClientRect().right))):null;
+  const cuts=heads.map(cell=>{const box=cell.getBoundingClientRect();return edge===null||pinned.includes(cell)?0:Math.max(0,Math.min(box.width,rtl?box.right-edge:edge-box.left));});
+  const headerBottom=thead.getBoundingClientRect().bottom;
+  for(const row of table.rows){const box=row.getBoundingClientRect(),top=row.parentElement===tbody?Math.max(0,Math.min(box.height,headerBottom-box.top)):0;
+   [...row.cells].forEach((cell,index)=>{const cut=cuts[index]??0,value=top||cut?`inset(${top}px ${rtl?cut:0}px 0 ${rtl?0:cut}px)`:'none';if(cell.style.clipPath!==value)cell.style.clipPath=value;});
+  }
+ }
+ const scheduleClipping=()=>{if(translucent&&!clipFrame)clipFrame=requestAnimationFrame(updateClipping);};
+ scroll.addEventListener('scroll',scheduleClipping,{passive:true,signal:life.signal});
+ const resize=translucent&&typeof ResizeObserver!=='undefined'?new ResizeObserver(scheduleClipping):undefined;resize?.observe(scroll);resize?.observe(table);
+ window.addEventListener('resize',scheduleClipping,{signal:life.signal});
+ life.cleanup(()=>{cancelAnimationFrame(clipFrame);resize?.disconnect();delete root.dataset.glassPinFirst;});
  const state=():TableState=>({query,sort,selected:[...selected],page,pageSize:Math.round(clamp(options.pageSize??5,1,500)),total,pages,widths:{...widths}});
  const selectable=(row:DataRow)=>!options.disabled&&(options.isRowSelectable?.(row)??true);
  function cell(column:DataColumn,row:DataRow){const value=row[column.id];if(column.format)return h(column.format(value,row));
@@ -28,7 +51,7 @@ export function createDataTable(root:HTMLElement,provided:TableOptions={}):Workb
   if(column.kind==='progress'){const n=clamp(Number(value),0,100);return `<span class="wb-cell-progress"><span style="--wb-cell-progress:${n}%"><i></i></span><b>${Math.round(n)}%</b></span>`;}
   return `<span class="wb-cell-text">${h(value??'—')}</span>`;
  }
- function applyWidths(){table.querySelectorAll<HTMLElement>('col[data-col]').forEach(col=>{const id=col.dataset.col!,column=columns.find(c=>c.id===id)!;const width=widths[id]??clamp(column.width??(column.kind==='number'?110:160),88,520);col.style.width=width+'px';});table.querySelectorAll<HTMLElement>('[data-resize]').forEach(el=>el.setAttribute('aria-valuenow',String(widths[el.dataset.resize!]??columns.find(c=>c.id===el.dataset.resize)?.width??160)));}
+ function applyWidths(){table.querySelectorAll<HTMLElement>('col[data-col]').forEach(col=>{const id=col.dataset.col!,column=columns.find(c=>c.id===id)!;const width=widths[id]??clamp(column.width??(column.kind==='number'?110:160),88,520);col.style.width=width+'px';});table.querySelectorAll<HTMLElement>('[data-resize]').forEach(el=>el.setAttribute('aria-valuenow',String(widths[el.dataset.resize!]??columns.find(c=>c.id===el.dataset.resize)?.width??160)));scheduleClipping();}
  function paint(){
   host.querySelector<HTMLElement>('.wb-data-heading h3')!.textContent=options.label??'データ一覧';table.caption!.textContent=(options.label??'データ一覧')+'。列見出しのボタンで並べ替えできます。';
   const oldFocus=host.contains(document.activeElement)?(document.activeElement as HTMLElement).dataset.focusKey:undefined;

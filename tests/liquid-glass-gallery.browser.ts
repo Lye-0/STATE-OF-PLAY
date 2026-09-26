@@ -83,7 +83,7 @@ try{
   await page.setViewportSize({width:1440,height:960});
   await open('lgc-tables-mist');await detail.locator('[data-bg="light"]').click();
   const lightCell=await detail.locator('td[data-column="status"]').first().evaluate(el=>{const style=getComputedStyle(el);return {background:style.backgroundColor,color:style.color};});
-  assert.equal(lightCell.background,'rgba(246, 251, 254, 0.38)');assert.equal(lightCell.color,'rgb(23, 45, 61)');
+  assert.equal(lightCell.background,'rgba(0, 0, 0, 0)');assert.equal(lightCell.color,'rgb(23, 45, 61)');
   await closeDetail();
  });
  await run('Both glass segment markers glide between choices and respect reduced motion',async()=>{

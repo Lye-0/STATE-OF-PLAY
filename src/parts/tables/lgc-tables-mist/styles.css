@@ -1,3 +1,4 @@
+@import "../../../shared/liquid-glass/table-material.css";
 @import "../../../shared/liquid-glass/collection.css";
 @import "../../../shared/workbench/base.css";
 /* A single dark frosted ledger with integrated controls and readable translucent cells. */
@@ -23,12 +24,6 @@
 .sop-wb.sop-lgc-tables-mist .wb-table-search input{color:var(--lgc-ink);}
 .sop-wb.sop-lgc-tables-mist .wb-table-search input::placeholder{color:#cbdce6ae;opacity:1;}
 .sop-wb.sop-lgc-tables-mist .wb-table-scroll{max-height:365px;background:rgba(9,31,47,clamp(0, calc(.22 * var(--lg-density, 1)), 1));border:0;border-top:1px solid #d8efff6b;border-bottom:1px solid #d8efff6b;border-radius:0;scrollbar-color:#bbdce9a3 transparent;}
-.sop-wb.sop-lgc-tables-mist .wb-data-frame th{background:rgba(15,39,55,clamp(0, calc(.89 * var(--lg-density, 1)), 1));color:#dbeaf4;border-bottom:1px solid #d9efff62;}
-.sop-wb.sop-lgc-tables-mist .wb-data-frame tbody td{background:rgba(15,42,59,clamp(0, calc(.08 * var(--lg-density, 1)), 1));color:var(--lgc-ink);border-bottom:1px solid #d9efff36;padding-block:15px;}
-.sop-wb.sop-lgc-tables-mist tbody tr:hover td{background:rgba(75,125,147,clamp(0, calc(.22 * var(--lg-density, 1)), 1));}
-.sop-wb.sop-lgc-tables-mist tbody tr[data-selected="true"] td{background:rgba(102,156,178,clamp(0, calc(.3 * var(--lg-density, 1)), 1));}
-.sop-wb.sop-lgc-tables-mist :is(th,td)[data-first-column],.sop-wb.sop-lgc-tables-mist :is(th,td).wb-select-cell{background:rgba(18,43,59,.91);}
-.sop-wb.sop-lgc-tables-mist tbody tr[data-selected="true"] :is(td[data-first-column],td.wb-select-cell){background:rgba(52,94,113,.95);}
 .sop-wb.sop-lgc-tables-mist .wb-cell-badge{background:rgba(11,38,55,clamp(0, calc(.28 * var(--lg-density, 1)), 1));border-color:#d7efff73;}
 .sop-wb.sop-lgc-tables-mist .wb-data-status{padding:9px 17px;color:var(--lgc-muted);font-size:10px;}
 .sop-wb.sop-lgc-tables-mist .wb-data-footer{padding:11px 17px 15px;gap:8px;background:transparent;border:0;border-top:1px solid #d5ecf664;border-radius:0;box-shadow:none;color:var(--lgc-muted);font-size:11px;-webkit-backdrop-filter:none;backdrop-filter:none;}
@@ -37,16 +32,12 @@
 
 .sop-wb.sop-lgc-tables-mist .wb-table-scroll::-webkit-scrollbar{width:8px;height:8px;}
 .sop-wb.sop-lgc-tables-mist .wb-table-scroll::-webkit-scrollbar-track{background:rgba(9,41,59,clamp(0, calc(0.34118 * var(--lg-density, 1)), 1));border-radius:8px;}
-.sop-wb.sop-lgc-tables-mist .wb-table-scroll::-webkit-scrollbar-thumb{background:linear-gradient(90deg,rgba(224,247,255,clamp(0, calc(0.78824 * var(--lg-density, 1)), 1)),rgba(126,185,210,clamp(0, calc(0.61176 * var(--lg-density, 1)), 1)));border:2px solid transparent;background-clip:padding-box;border-radius:8px;}
+.sop-wb.sop-lgc-tables-mist .wb-table-scroll::-webkit-scrollbar-thumb{background:linear-gradient(90deg,rgba(224,247,255,clamp(0, calc(0.78824 * var(--lg-control-density, 1)), 1)),rgba(126,185,210,clamp(0, calc(0.61176 * var(--lg-control-density, 1)), 1)));border:2px solid transparent;background-clip:padding-box;border-radius:8px;}
 .sop-wb.sop-lgc-tables-mist .wb-table-scroll::-webkit-scrollbar-corner{background:transparent;}
 
 .sop-wb.sop-lgc-tables-lens[data-lg-appearance="light"] .wb-table-search input::placeholder,.sop-wb.sop-lgc-tables-mist[data-lg-appearance="light"] .wb-table-search input::placeholder{color:#5e7a8d;}
 .sop-wb.sop-lgc-tables-mist[data-lg-appearance="light"] .wb-data-frame{background:linear-gradient(150deg,rgba(255,255,255,clamp(0, calc(0.6 * var(--lg-density, 1)), 1)),rgba(209,232,239,clamp(0, calc(0.62353 * var(--lg-density, 1)), 1))),rgba(242,250,254,clamp(0, calc(.73 * var(--lg-density, 1)), 1));border-color:#648a9ca8;}
 .sop-wb.sop-lgc-tables-mist[data-lg-appearance="light"] .wb-table-search{background:rgba(237,247,251,clamp(0, calc(0.87451 * var(--lg-density, 1)), 1));border-color:#6d91a3a2;}
-.sop-wb.sop-lgc-tables-mist[data-lg-appearance="light"] .wb-data-frame th{background:rgba(216,234,242,clamp(0, calc(0.9098 * var(--lg-density, 1)), 1));color:#315669;border-color:#789dac8c;}
-.sop-wb.sop-lgc-tables-mist[data-lg-appearance="light"] .wb-data-frame tbody td{background:rgba(246,251,254,clamp(0, calc(.38 * var(--lg-density, 1)), 1));color:var(--lgc-ink);border-color:#789dac63;}
-.sop-wb.sop-lgc-tables-mist[data-lg-appearance="light"] :is(th,td)[data-first-column],.sop-wb.sop-lgc-tables-mist[data-lg-appearance="light"] :is(th,td).wb-select-cell{background:#e4f1f6ed;}
-.sop-wb.sop-lgc-tables-mist[data-lg-appearance="light"] tbody tr[data-selected="true"] td{background:rgba(185,220,232,clamp(0, calc(0.74118 * var(--lg-density, 1)), 1));}
 
 /* Keep native checkbox semantics while giving the visible control a glass edge. */
 .sop-wb.sop-lgc-tables-mist .wb-select-cell input[type="checkbox"]{appearance:none;width:15px;height:15px;margin:0;vertical-align:middle;border:1px solid #d5eefbb3;border-radius:4px;background:#a9d6e433;box-shadow:inset 0 1px 1px #fff7;cursor:pointer;}
@@ -69,7 +60,6 @@
 }
 @media(forced-colors:active){
  .sop-wb.sop-lgc-tables-mist .wb-data-frame{background:Canvas;color:CanvasText;border:1px solid CanvasText;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;}
- .sop-wb.sop-lgc-tables-mist tbody td,.sop-wb.sop-lgc-tables-mist th{background:Canvas;color:CanvasText;border-color:CanvasText;}
  .sop-wb.sop-lgc-tables-mist .wb-select-cell input[type="checkbox"]{appearance:auto;forced-color-adjust:auto;}
 }
 @media(prefers-reduced-motion:reduce){.sop-wb.sop-lgc-tables-mist *,.sop-wb.sop-lgc-tables-mist *::before,.sop-wb.sop-lgc-tables-mist *::after{animation:none!important;transition:none!important;}}

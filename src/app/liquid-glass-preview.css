@@ -52,6 +52,7 @@
 .object-card .object-stage.lg-demo-host{perspective:none;}
 .object-card .object-stage>.lg-demo-scene{inset:14px 22px 20px;border-radius:16px;}
 .object-card.block-card .object-stage>.lg-demo-scene{inset-block:8px;}
+.object-card.workbench-tables .object-stage>.lg-demo-scene{inset-inline:8px;}
 .object-card .stage-mount>.lgc-root,.object-card .stage-mount>.lg-root{position:relative;z-index:2;}
 .lg-demo-scene::before,.lg-demo-scene::after{content:"";position:absolute;pointer-events:none;}
 .lg-demo-scene::before{inset:0;z-index:1;background:repeating-linear-gradient(115deg,transparent 0 34px,#e9fbff40 35px 36px,transparent 37px 70px),repeating-linear-gradient(25deg,transparent 0 79px,#102f4933 80px 81px,transparent 82px 150px);}
