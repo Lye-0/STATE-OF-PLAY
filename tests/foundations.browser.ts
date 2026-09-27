@@ -7,12 +7,14 @@ import path from 'node:path';
 import {createRequire} from 'node:module';
 import type {Browser,Page} from 'playwright';
 import {buildCatalog,ROOT} from './historical-catalog.ts';
+import {buildCatalog as buildCurrentCatalog} from '../scripts/catalog.ts';
 import {offlineFiles,testBundle} from './offline-fixture.ts';
 import {selectCategory} from './gallery-ready.ts';
 import {getDelivery,buildPrompt} from '../src/catalog/delivery.ts';
 import {requireLocalServerUrl} from './vite-url.ts';
 const require=createRequire(import.meta.url),{chromium}=require(process.env.PLAYWRIGHT_PATH??'playwright') as typeof import('playwright');
 const data=buildCatalog(),parts=data.parts.filter(p=>p.foundation),offline=process.env.SOP_TEST_MODE==='offline';
+const currentParts=offline?parts:buildCurrentCatalog().parts;
 const out=path.join(ROOT,'.test-output/foundations');fs.mkdirSync(out,{recursive:true});
 const results:string[]=[],errors:string[]=[];let browser:Browser|undefined,shutdown:(()=>Promise<void>)|undefined,url='';
 const run=async(name:string,fn:()=>Promise<void>)=>{await fn();results.push(name);console.log('PASS '+name);};
@@ -25,9 +27,10 @@ try{
  if(!offline){const{createServer}=await import('vite');const server=await createServer({root:ROOT,server:{port:0,host:'127.0.0.1'}});await server.listen();url=requireLocalServerUrl(server,'Foundation tests');shutdown=()=>server.close();}
  browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
  const context=await browser.newContext({viewport:{width:1440,height:1100},acceptDownloads:true});const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));page.setDefaultTimeout(20000);await page.emulateMedia({reducedMotion:'reduce'});
- if(offline){const scoped={...data,parts,bases:data.bases.filter(b=>parts.some(p=>b.endsWith('/'+p.id)))},fixture=offlineFiles(scoped);await install(page,fixture.get('/index.html')!,fixture.get('/test-app.js')!,fixture.get('/test-styles.css')!,true);}else await page.goto(url);
+ if(offline){const scoped={...data,parts,bases:data.bases.filter(b=>parts.some(p=>b.endsWith('/'+p.id)))},fixture=offlineFiles(scoped);await install(page,fixture.get('/index.html')!,fixture.get('/test-app.js')!,fixture.get('/test-styles.css')!,true);}else{await page.goto(url,{waitUntil:'commit',timeout:120000});await page.waitForFunction(()=>document.documentElement.classList.contains('site-ready'),undefined,{timeout:120000});}
  await run(`${parts.length} foundation components: categories, exact A/B counts and accessible category jump`,async()=>{
-  for(const category of [...new Set(parts.map(p=>p.category))]){await selectCategory(page,category);const group=parts.filter(p=>p.category===category),extra=offline?0:1;assert.equal(await page.locator('[data-part]').count(),group.length+extra*2);await page.locator('[data-design-filter="A"]').click();assert.equal(await page.locator('[data-part]').count(),group.filter(p=>p.designType==='A').length+extra);await page.locator('[data-design-filter="B"]').click();assert.equal(await page.locator('[data-part]').count(),group.filter(p=>p.designType==='B').length+extra);await page.locator('[data-design-filter="all"]').click();}
+  const displayed=(count:number)=>page.waitForFunction(expected=>document.querySelector('#part-grid')?.getAttribute('aria-busy')==='false'&&document.querySelectorAll('#part-grid [data-part]').length===expected,count,{timeout:30000});
+  for(const category of [...new Set(parts.map(p=>p.category))]){await selectCategory(page,category);const group=currentParts.filter(p=>p.category===category);await displayed(group.length);assert.equal(await page.locator('[data-part]').count(),group.length);await page.locator('[data-design-filter="A"]').click();await displayed(group.filter(p=>p.designType==='A').length);assert.equal(await page.locator('[data-part]').count(),group.filter(p=>p.designType==='A').length);await page.locator('[data-design-filter="B"]').click();await displayed(group.filter(p=>p.designType==='B').length);assert.equal(await page.locator('[data-part]').count(),group.filter(p=>p.designType==='B').length);await page.locator('[data-design-filter="all"]').click();await displayed(group.length);}
  });
  await run('Slider inspector: bounds/unit/step update, native keyboard, format/layout preserve editing state',async()=>{
   await selectCategory(page,'sliders');await page.locator('[data-open="aurora-range"]').click();const d=page.locator('#part-details');

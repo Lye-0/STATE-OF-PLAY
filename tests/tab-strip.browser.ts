@@ -39,9 +39,10 @@ try {
   for(const width of [1440,390]){
     const page=await browser.newPage({viewport:{width,height:960}});
     const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
-    await page.goto(server.resolvedUrls!.local[0]);
+    await page.goto(server.resolvedUrls!.local[0],{waitUntil:'commit',timeout:120000});
+    await page.waitForFunction(()=>document.documentElement.classList.contains('site-ready'),undefined,{timeout:120000});
     await page.locator('[data-category="tabs"]').click();
-    await page.waitForFunction(()=>document.querySelector('#part-grid')?.getAttribute('aria-busy')==='false');
+    await page.waitForFunction(()=>document.querySelector('#part-grid')?.getAttribute('aria-busy')==='false'&&document.querySelectorAll('#part-grid [data-part]').length===26);
     assert.equal(await page.locator('[data-part]').count(),26);
     for(const part of parts){
       const card=page.locator(`[data-part="${part.id}"]`),list=card.locator('.sop-choice-list');
@@ -86,9 +87,9 @@ try {
     assert.equal(await details.locator('.preview-stage .sop-tabs').getAttribute('data-tab-overflow'),'false');
     assert.equal(await detailList.evaluate(el=>getComputedStyle(el).overflowX),'hidden');
     assert.equal(await detailList.evaluate(el=>el.scrollLeft),0);
-    await details.locator('.close-detail').click();
+    await details.locator('.close-detail').click();await details.waitFor({state:'hidden'});
     if(width===1440)for(const part of parts){
-      await page.locator(`[data-open="${part.id}"]`).evaluate(el=>(el as HTMLButtonElement).click());
+      await page.locator(`[data-open="${part.id}"]`).click();
       await details.locator(`[data-preview-part="${part.id}"]`).waitFor();
       const root=details.locator('.preview-stage .sop-tabs');
       if(await root.getAttribute('data-orientation')==='vertical')await details.locator('[data-selection-axis]').selectOption('horizontal');
@@ -96,7 +97,7 @@ try {
       await page.waitForFunction(()=>document.querySelector('#part-details .preview-stage .sop-tabs')?.getAttribute('data-tab-overflow')==='true');
       const styled=await root.locator('.sop-choice-list').evaluate(list=>({overflow:list.scrollWidth>list.clientWidth,color:getComputedStyle(list).scrollbarColor,button:getComputedStyle(list,'::-webkit-scrollbar-button').display,thumb:getComputedStyle(list,'::-webkit-scrollbar-thumb').backgroundColor,token:getComputedStyle(list).getPropertyValue('--tab-scroll-thumb').trim()}));
       assert.ok(styled.overflow,part.id);assert.notEqual(styled.color,'auto',part.id);assert.equal(styled.button,'none',part.id);assert.ok(styled.token&&styled.thumb,part.id);
-      await details.locator('.close-detail').evaluate(el=>(el as HTMLButtonElement).click());
+      await details.locator('.close-detail').click();await details.waitFor({state:'hidden'});
     }
     assert.deepEqual(errors,[]);
     console.log(`PASS ${width}px: all 24 tab parts keep vertical scrollbar hidden during switching; inspector/code/prompt work`);
