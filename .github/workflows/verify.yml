@@ -122,6 +122,8 @@ jobs:
         run: npm run test:ornaments
       - name: Liquid Glass components and interaction states
         run: npm run test:liquid-glass
+      - name: Liquid Glass hover and focus states
+        run: npm run test:liquid-glass:hover
       - name: Liquid Glass gallery and code delivery
         run: npm run test:glass-collection:gallery
       - name: Liquid Glass portable JavaScript exports
