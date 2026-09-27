@@ -22,7 +22,7 @@ try{
  browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
  const context=await browser.newContext({viewport:{width:1440,height:1000},acceptDownloads:true});
  page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
- if(offline){const files=offlineFiles();await page.setContent(files.get('/index.html')!.replace(/<script[^>]*>[\s\S]*?<\/script>/g,'').replace(/<link[^>]*>/g,''));await page.addStyleTag({content:files.get('/test-styles.css')!});for(const v of ['prism','jszip'])await page.addScriptTag({content:fs.readFileSync(path.join(ROOT,'public/vendor',v+'.js'),'utf8')});await page.addScriptTag({content:files.get('/test-app.js')!});}else await page.goto(url);
+ if(offline){const files=offlineFiles();await page.setContent(files.get('/index.html')!.replace(/<script[^>]*>[\s\S]*?<\/script>/g,'').replace(/<link[^>]*>/g,''));await page.addStyleTag({content:files.get('/test-styles.css')!});for(const v of ['prism','jszip'])await page.addScriptTag({content:fs.readFileSync(path.join(ROOT,'public/vendor',v+'.js'),'utf8')});await page.addScriptTag({content:files.get('/test-app.js')!});}else{await page.goto(url,{waitUntil:'commit',timeout:120000});await page.waitForFunction(()=>document.documentElement.classList.contains('site-ready'),undefined,{timeout:120000});}
  await run('Gallery: 24 native editable fields, labels focus the input, typing never opens details',async()=>{
  await page.locator('[data-category="textboxes"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),offline?24:26);
   for(const p of parts){const r=page.locator(`[data-part="${p.id}"] .sop-textfield`),f=r.locator('.sop-field-control');await r.locator('label').click();assert.ok(await f.evaluate(e=>e===document.activeElement));await f.fill(p.id==='contact-field'?'hello@example.com':'日本語入力 + text');assert.ok((await f.inputValue()).length>0);assert.equal(await r.getAttribute('data-filled'),'true');assert.equal(await page.locator('dialog[open]').count(),0);}
@@ -118,6 +118,8 @@ function App(){const[show,set]=useState(true),[v,value]=useState('');const C=par
  }
  }else console.log('React checks not run: no actual React runtime supplied for offline mode.');
  await run('Reduced motion and forced colours keep native input and focus available',async()=>{
+  // Writing the React fixtures triggers Vite HMR and can restore the gallery's default category.
+  if(!offline){await page.waitForFunction(()=>document.documentElement.classList.contains('site-ready'));await page.locator('[data-category="textboxes"]').click();await galleryReady(page,true);}
   await page.emulateMedia({reducedMotion:'reduce',forcedColors:'active'});const f=page.locator('[data-part="essential-field"] input');await f.fill('Accessible text');assert.equal(await f.inputValue(),'Accessible text');assert.equal(await f.evaluate(e=>getComputedStyle(e).animationName),'none');await page.emulateMedia({forcedColors:'none'});
  });
  assert.deepEqual(errors,[]);

@@ -30,9 +30,17 @@ try{
   await page.waitForTimeout(850);assert.ok(Math.abs(await light()-rest)<2,'light should settle at rest');
   await page.mouse.move(rect.x+rect.width*.8,rect.y+rect.height*.65);
   await page.waitForTimeout(100);assert.ok(await light()>rest+3,'re-entry should resume from the current position');
-  await page.emulateMedia({reducedMotion:'reduce'});
-  assert.ok(Math.abs(await light()-rest)<.1,'reduced motion should reset immediately');
-  await page.emulateMedia({reducedMotion:'no-preference'});
+  const reducedPage=await browser.newPage({viewport:{width:1440,height:960},reducedMotion:'reduce'});
+  await reducedPage.goto(server.resolvedUrls!.local[0],{waitUntil:'commit'});
+  await reducedPage.waitForFunction(()=>document.documentElement.classList.contains('site-ready'));
+  await selectCategory(reducedPage,'toggles');
+  const reducedLens=reducedPage.locator('[data-part="lg-lens-toggle"] .lg-root').first();
+  await reducedLens.scrollIntoViewIfNeeded();const reducedBox=await reducedLens.boundingBox();assert.ok(reducedBox);
+  assert.equal(await reducedLens.getAttribute('data-lg-reduced'),'true');
+  await reducedPage.mouse.move(reducedBox.x+reducedBox.width*.8,reducedBox.y+reducedBox.height*.65);
+  await reducedPage.waitForTimeout(150);
+  assert.ok(Math.abs(await reducedLens.evaluate(el=>parseFloat(el.style.getPropertyValue('--lg-light-x')))-rest)<.1,'reduced motion should keep the light at rest');
+  await reducedPage.close();
   console.log('PASS old glass light follows, returns, re-enters, and respects reduced motion');
 
   const cases=[
