@@ -21,6 +21,7 @@ export function createContextMenu(root:HTMLElement,provided:ContextOptions={}):W
  const life=lifecycle(root),host=owned(root),uid=identity('wb-context');host.innerHTML=contextMarkup(options,uid);
  const defaultTarget=host.querySelector<HTMLElement>('.wb-context-target')!;let target=options.targetElement??defaultTarget;
  const opener=host.querySelector<HTMLButtonElement>('.wb-context-open')!,panel=host.querySelector<HTMLElement>('.wb-context-panel')!,menu=host.querySelector<HTMLElement>('[role=menu]')!;
+ let anchor:{left:number;top:number}|undefined;
  let origin:HTMLElement|null=null,point={left:0,top:0,bottom:0,width:0},pending:AbortController|undefined,token=0;
  const state=():ContextState=>({open:isOpen,path:trail.map(t=>t.id),checked:{...checked},busy,lastAction,error});
  const current=()=>trail.at(-1)?.children??items;
@@ -39,7 +40,7 @@ export function createContextMenu(root:HTMLElement,provided:ContextOptions={}):W
   if(isOpen){position();const choices=controls();(choices.find(b=>b.dataset.menuAction===focusID)??choices[0])?.focus({preventScroll:true});}
  }
  function close(restore=true){if(!isOpen)return;isOpen=false;pending?.abort();token++;busy=false;hidePanel(panel);opener.setAttribute('aria-expanded','false');root.dataset.wbOpen='false';if(restore&&origin?.isConnected)origin.focus({preventScroll:true});options.onOpenChange?.(false);emit(root,state());}
- function openAt(x?:number,y?:number){if(options.disabled||life.dead)return;origin=document.activeElement instanceof HTMLElement?document.activeElement:target;const r=target.getBoundingClientRect();point={left:x??r.left+12,top:y??r.bottom+6,bottom:y??r.bottom+6,width:r.width};trail=[];error='';isOpen=true;render();showPanel(panel);position();controls()[0]?.focus({preventScroll:true});opener.setAttribute('aria-expanded','true');root.dataset.wbOpen='true';options.onOpenChange?.(true);life.pulse('open');emit(root,state());}
+ function openAt(x?:number,y?:number){if(options.disabled||life.dead)return;origin=document.activeElement instanceof HTMLElement?document.activeElement:target;const r=target.getBoundingClientRect();anchor={left:r.left,top:r.top};point={left:x??r.left+12,top:y??r.bottom+6,bottom:y??r.bottom+6,width:r.width};trail=[];error='';isOpen=true;render();showPanel(panel);position();controls()[0]?.focus({preventScroll:true});opener.setAttribute('aria-expanded','true');root.dataset.wbOpen='true';options.onOpenChange?.(true);life.pulse('open');emit(root,state());}
  function back(){if(!trail.length||busy)return;const parent=trail.pop()!;render(parent.id);life.pulse('back');}
  async function activate(id:string){const item=current().find(i=>i.id===id);if(!item||item.disabled||options.disabled||busy)return;
   if(item.children?.length){trail.push(item);render();life.pulse('submenu');return;}
@@ -72,7 +73,8 @@ export function createContextMenu(root:HTMLElement,provided:ContextOptions={}):W
  },{signal:life.signal});
  document.addEventListener('pointerdown',e=>{if(isOpen&&!panel.contains(e.target as Node)&&!opener.contains(e.target as Node))close(false);},{signal:life.signal});
  window.addEventListener('resize',()=>{if(isOpen)position();},{signal:life.signal});
- document.addEventListener('scroll',e=>{if(isOpen&&!panel.contains(e.target as Node))close(false);},{signal:life.signal,capture:true});
+ // A queued scroll from revealing the opener can arrive after openAt. Only dismiss if its anchor actually moved.
+ document.addEventListener('scroll',e=>{if(!isOpen||!anchor||panel.contains(e.target as Node))return;const r=target.getBoundingClientRect();if(Math.abs(r.left-anchor.left)>.5||Math.abs(r.top-anchor.top)>.5)close(false);},{signal:life.signal,capture:true});
  life.cleanup(()=>close(false));render();
  return {getState:state,open:()=>openAt(),close:()=>close(),reset(){close();checked={};seedChecked(items);lastAction=null;error='';render();},setPaused:life.setPaused,destroy:life.destroy,
  update(next){if(life.dead)return;const rebuild=next.items!==undefined&&next.items!==options.items;const targetChanged='targetElement' in next&&next.targetElement!==options.targetElement;options={...options,...next};if(targetChanged){close(false);bindTarget();}if(rebuild){items=unique(next.items!);trail=[];seedChecked(items);}if(next.checked)checked={...next.checked};if(options.disabled)close();render();}};

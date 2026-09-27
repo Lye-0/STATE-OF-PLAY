@@ -44,7 +44,7 @@ try{
   const detailTarget=d.locator('.wb-context-target'),before=(await detailTarget.boundingBox())!;
   await d.locator('.wb-context-open').click();
   const detailMenu=d.locator('.wb-context-panel');await detailMenu.waitFor({state:'visible'});
-  await detailMenu.locator('[data-menu-action="open"]').evaluate(e=>(e as HTMLButtonElement).click());
+  await detailMenu.locator('[data-menu-action="open"]').click();
   assert.match(await d.locator('.wb-context-result').innerText(),/開く を選択しました/);
   assert.equal(await d.locator('.wb-demo-feedback').count(),0);
   assert.ok(Math.abs((await detailTarget.boundingBox())!.width-before.width)<1);
