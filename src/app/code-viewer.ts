@@ -2,6 +2,7 @@ import { copyText, escapeHTML, icon, required, resetCopyFeedback, saveSource } f
 import type { SourceFile } from '../catalog/types';
 interface FileTree { directories: Map<string, FileTree>; files: SourceFile[]; path?: string; }
 export function highlightedLines(code: string, language: string) {
+    const displayCode = code.replace(/\r\n?/g, '\n');
     const lines = [''];
     const walk = (token: string | PrismToken | (string | PrismToken)[], classes: string[] = []): void => {
         if (Array.isArray(token)) {
@@ -21,9 +22,9 @@ export function highlightedLines(code: string, language: string) {
     };
     const grammar = window.Prism?.languages[language];
     if (grammar)
-        walk(window.Prism!.tokenize(code, grammar));
+        walk(window.Prism!.tokenize(displayCode, grammar));
     else
-        walk(code);
+        walk(displayCode);
     return lines.map((line, i) => `<span class="code-line"><span class="line-number" aria-hidden="true">${i + 1}</span><span class="line-code">${line || ' '}</span></span>`).join('');
 }
 /** A real directory tree: displayed paths are exactly the paths saved to ZIP. */

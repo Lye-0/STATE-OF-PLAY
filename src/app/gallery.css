@@ -381,8 +381,8 @@
 .checkbox-card .sop-check{width:100%}
 .checkbox-card .card-bottom h2,.popup-card .card-bottom h2{font-size:24px}
 .checkbox-card .card-bottom h2 span,.popup-card .card-bottom h2 span{display:none}
-.popup-card .object-stage{height:auto;min-height:370px;padding:22px 30px 27px;perspective:none}
-.popup-card .stage-mount{width:100%;max-width:405px}
+.popup-card .object-stage{height:auto;min-height:370px;min-width:0;padding:22px 30px 27px;perspective:none}
+.popup-card .stage-mount{width:100%;max-width:405px;min-width:0}
 .popup-card .sop-popup,.popup-preview .sop-popup{width:100%}
 .sop-popup>.sop-popup-thumbnail{width:100%;pointer-events:none;margin-bottom:18px;max-height:246px;overflow:hidden;border:1px solid var(--pp-line);border-radius:12px;mask-image:linear-gradient(#000 0 80%,#0009 95%,transparent);position:relative;}
 .sop-popup.sop-popup-thumbnail>.sop-popup-window{display:block!important;position:relative!important;inset:auto!important;width:100%!important;max-width:100%!important;max-height:none!important;height:auto!important;transform:none!important;animation:none!important;filter:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;margin:0!important;overflow:hidden!important;}
