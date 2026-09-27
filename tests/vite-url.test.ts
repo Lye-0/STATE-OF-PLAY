@@ -43,11 +43,18 @@ test('Vite URL: browser suites do not dereference nullable URLs or suppress thei
   }
 });
 
-test('CI runs all verify stages in order and checks types before downloading Chromium', () => {
+test('CI assigns every verify stage once across bounded OS shards', () => {
   const manifest = JSON.parse(fs.readFileSync(new URL('../package.json', import.meta.url), 'utf8')) as { scripts: { verify: string } };
   const workflow = fs.readFileSync(new URL('../.github/workflows/verify.yml', import.meta.url), 'utf8');
   const expected = manifest.scripts.verify.split(' && ');
   const commands = [...workflow.matchAll(/^\s+run: (.+)$/gm)].map(match => match[1]);
   assert.deepEqual(commands.filter(command => expected.includes(command)), expected);
-  assert.ok(workflow.indexOf('run: npm run typecheck') < workflow.indexOf('run: npx playwright install'));
+  const suites = ['preflight', 'gallery', 'relocation', 'controls', 'features', 'glass'];
+  assert.match(workflow, /suite: \[preflight, gallery, relocation, controls, features, glass\]/);
+  const assigned = [...workflow.matchAll(/^\s+if: matrix\.suite == '([^']+)'\r?\n\s+run: (npm run \S+|npm test)$/gm)];
+  assert.deepEqual(assigned.map(match => match[2]), [...expected.filter(command => command !== 'npm run build'), 'npm run package']);
+  for (const match of assigned) assert.ok(suites.includes(match[1]), match[1]);
+  assert.match(workflow, /if: matrix\.suite != 'preflight' && runner\.os == 'Linux'/);
+  assert.match(workflow, /if: matrix\.suite != 'preflight' && runner\.os == 'Windows'/);
+  assert.match(workflow, /name: verification-\$\{\{ matrix\.os \}\}-\$\{\{ matrix\.suite \}\}/);
 });

@@ -12,8 +12,9 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest]
+        suite: [preflight, gallery, relocation, controls, features, glass]
     runs-on: ${{ matrix.os }}
-    # Unit tests cover the full part/export matrix; browser tests exercise A/B examples per category.
+    # Each OS verifies every suite in parallel so the complete library fits the job limit.
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
@@ -24,121 +25,171 @@ jobs:
         shell: bash
         run: |
           if [ -f package-lock.json ]; then npm ci; else npm install; fi
-      # Fail fast on TypeScript/unit/build errors before downloading browsers.
+      # Preflight checks types and units; every browser shard builds its own preview.
       - name: Typecheck app, React components and tooling
+        if: matrix.suite == 'preflight'
         run: npm run typecheck
       - name: Unit tests
+        if: matrix.suite == 'preflight'
         run: npm test
       - name: Vite production build
         run: npm run build
       - name: Install Chromium and Linux system dependencies
-        if: runner.os == 'Linux'
+        if: matrix.suite != 'preflight' && runner.os == 'Linux'
         run: npx playwright install --with-deps chromium
       - name: Install Chromium on Windows
-        if: runner.os == 'Windows'
+        if: matrix.suite != 'preflight' && runner.os == 'Windows'
         run: npx playwright install chromium
-      # Same checks as npm run verify, split so the failing stage is visible.
+      # Same checks as npm run verify, divided into independent time-bounded shards.
       - name: Gallery browser tests and production preview
+        if: matrix.suite == 'gallery'
         run: npm run test:browser
       - name: Block surface hover motion and containment
+        if: matrix.suite == 'gallery'
         run: npm run test:surface-motion
       - name: Relocated component tests
+        if: matrix.suite == 'relocation'
         run: npm run test:relocation
       - name: Scrollbar browser tests
+        if: matrix.suite == 'controls'
         run: npm run test:scrollbars
       - name: React scrollbar tests
+        if: matrix.suite == 'controls'
         run: npm run test:scrollbars:react
       - name: Dropdowns and accordions (including React)
+        if: matrix.suite == 'controls'
         run: npm run test:disclosures
       - name: Text fields (input, IME, forms and React)
+        if: matrix.suite == 'controls'
         run: npm run test:textfields
       - name: Buttons and navigation links (native behavior and React)
+        if: matrix.suite == 'controls'
         run: npm run test:actions
       - name: Tabs and segmented controls (dynamic options, forms and React)
+        if: matrix.suite == 'controls'
         run: npm run test:selection
       - name: Checkboxes and modal popups (native, forms, focus and React)
+        if: matrix.suite == 'controls'
         run: npm run test:check-popup
       - name: Reconstructed foundation parts (values, forms and exports)
+        if: matrix.suite == 'controls'
         run: npm run test:foundations
       - name: Foundation React components (controlled values and cleanup)
+        if: matrix.suite == 'controls'
         run: npm run test:foundations:react
       - name: Atelier material isolation and visual-control regressions
+        if: matrix.suite == 'controls'
         run: npm run test:atelier
       - name: Sculpted scrollbars and dropdowns (materials, layout and native interactions)
+        if: matrix.suite == 'controls'
         run: npm run test:sculpture
       - name: Refined rail and select motion (dimensions, text, progress, cleanup)
+        if: matrix.suite == 'controls'
         run: npm run test:refinement
       - name: Spotlight list scroll containment
+        if: matrix.suite == 'controls'
         run: npm run test:spotlight-scroll
       - name: Kinetic additions (native scroll, motion, menus and cleanup)
+        if: matrix.suite == 'controls'
         run: npm run test:kinetic
       - name: Dropdown close leaves no briefly reopened list
+        if: matrix.suite == 'controls'
         run: npm run test:dropdown-close
       - name: Unfold accordions and responsive text fields
+        if: matrix.suite == 'controls'
         run: npm run test:unfold
       - name: Transform tabs, segments, popups and sliders
+        if: matrix.suite == 'controls'
         run: npm run test:transform
       - name: Transform export and inspector integration
+        if: matrix.suite == 'controls'
         run: npm run test:transform:gallery
       - name: Resonance radios, comboboxes, notifications and hints
+        if: matrix.suite == 'controls'
         run: npm run test:resonance
       - name: Resonance inspector, exports and native overlays
+        if: matrix.suite == 'controls'
         run: npm run test:resonance:gallery
       - name: Continuum progress, files, dates and new loaders
+        if: matrix.suite == 'controls'
         run: npm run test:continuum
       - name: Continuum inspector, code exports and preview settings
+        if: matrix.suite == 'controls'
         run: npm run test:continuum:gallery
       - name: Lazy loading over development and production HTTP
+        if: matrix.suite == 'features'
         run: npm run test:lazy-loading
       - name: First paint and reload show the Nixie loader
+        if: matrix.suite == 'features'
         run: npm run test:site-boot
       - name: Category tab scroll stability
+        if: matrix.suite == 'features'
         run: npm run test:gallery-navigation
       - name: Aurora category selector integration
+        if: matrix.suite == 'features'
         run: npm run test:category-select
       - name: Progress demo playback
+        if: matrix.suite == 'features'
         run: npm run test:progress-demo
       - name: Tabs, prompts and exported source scrolling
+        if: matrix.suite == 'features'
         run: npm run test:tab-strip
       - name: Loader orbit continuity and source packages
+        if: matrix.suite == 'features'
         run: npm run test:loader-orbit
       - name: Sequence pagination and tag behavior
+        if: matrix.suite == 'features'
         run: npm run test:sequence
       - name: Sequence gallery, inspector and exports
+        if: matrix.suite == 'features'
         run: npm run test:sequence:gallery
       - name: Wayfinder breadcrumbs and numeric controls
+        if: matrix.suite == 'features'
         run: npm run test:wayfinder
       - name: Wayfinder gallery, sources and prompts
+        if: matrix.suite == 'features'
         run: npm run test:wayfinder:gallery
       - name: Signature components and interaction states
+        if: matrix.suite == 'features'
         run: npm run test:signature
       - name: Signature lazy gallery, inspector and delivery
+        if: matrix.suite == 'features'
         run: npm run test:signature:gallery
       - name: Navigator search, commands, contextual actions, navigation and tables
+        if: matrix.suite == 'features'
         run: npm run test:workbench
       - name: Navigator lazy gallery, inspector and delivery
+        if: matrix.suite == 'features'
         run: npm run test:workbench:gallery
       - name: Ornament gallery, motion and delivery
+        if: matrix.suite == 'features'
         run: npm run test:ornaments
       - name: Liquid Glass components and interaction states
+        if: matrix.suite == 'glass'
         run: npm run test:liquid-glass
       - name: Liquid Glass hover and focus states
+        if: matrix.suite == 'glass'
         run: npm run test:liquid-glass:hover
       - name: Liquid Glass gallery and code delivery
+        if: matrix.suite == 'glass'
         run: npm run test:glass-collection:gallery
       - name: Liquid Glass portable JavaScript exports
+        if: matrix.suite == 'glass'
         run: npm run test:liquid-glass:exports
       - name: Liquid Glass React StrictMode and hydration
+        if: matrix.suite == 'glass'
         run: npm run test:liquid-glass:react
       - name: Glass collection React StrictMode and hydration
+        if: matrix.suite == 'glass'
         run: npm run test:glass-collection:react
       - name: Build full source archive
+        if: matrix.suite == 'preflight'
         run: npm run package
       - name: Save reports on failure
         if: failure()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1, Node.js 24
         with:
-          name: verification-${{ matrix.os }}
+          name: verification-${{ matrix.os }}-${{ matrix.suite }}
           path: .test-output/
           # This directory contains only generated test fixtures/reports, not .env files.
           include-hidden-files: true
