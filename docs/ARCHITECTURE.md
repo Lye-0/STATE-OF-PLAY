@@ -1,78 +1,49 @@
-# 開発構成
+# 内部構成
 
-## 3つの責務
+## 正本と責務
 
-1. **パーツの正本**: `src/parts`と`src/shared`。型付きロジック、CSS、マークアップ、React版、使用例、仕様。
-2. **サイト**: `src/app`。DOMの責務を保ったままTypeScript・ES Modulesへ。Viteが開発と本番ビルドを担当。
-3. **配布生成**: `scripts/catalog.ts`、`layout.ts`、`source-tools.ts`でソースと配置を作り、`src/catalog/delivery.ts`でUI・ZIP・CLI共通の配布内容を構築する。
+| 場所 | 責務 |
+| --- | --- |
+| `src/parts/`・`src/shared/` | 実際に動く部品、共有処理、CSS、使用例、仕様 |
+| `src/catalog/registry.json`・`categories.ts` | 登録パスとカテゴリ表示 |
+| `src/app/` | 展示、詳細、プレビューの状態 |
+| `scripts/catalog.ts` | 登録と依存から配布ソースを生成 |
+| `scripts/source-tools.ts`・`layout.ts` | 参照解析、配置、パス更新、形式変換 |
+| `src/catalog/delivery.ts` | コード・導入ガイド・プロンプト・ZIPの共通配布モデル |
+| `scripts/vite-catalog.ts` | 元実装とブラウザー用カタログをViteへ接続 |
 
-## Viteの仮想モジュール
+TS / TSXが正本で、JS / JSXは生成時に型を除去します。元ファイルの `sourceName` は形式・配置を跨ぐ識別子です。ファイル選択の維持と `INTEGRATION.json` の対応表に使います。生成済みコピーを正本として編集しません。
 
-- `virtual:sop-catalog`: 詳細画面のコード・ガイド・プロンプト・独立デモ。
-- `virtual:sop-mounts`: 登録されたinit.tsの静的importとマップ。
-- `virtual:sop-styles`: 元パーツCSSへのimport。
+## ブラウザーの読み込み
 
-カタログはプロセス内のキャッシュです。編集・追加・削除で無効化し、必要な仮想モジュールを再読込します。
-元ソースに`*.generated.*`を書き込む仕組みはありません。
+サイト入口は `virtual:sop-browser` の一覧情報を読み、選択したカテゴリの `virtual:sop-category/<category>` を動的に取得します。カテゴリの実装・CSSと、詳細で使う配布ソースJSONを分け、配布ソースは詳細を開いたパーツだけ取得します。
 
-## 型チェック
+初期カテゴリはトグル。「すべて」は24件ずつ表示します。起動表示はNixie Loader、カテゴリ取得中はOrbital Loomを使います。カテゴリ選択はAurora Selectをサイトへ接続しています。旧 `virtual:sop-catalog` / `mounts` / `styles` は互換・検証用で、通常のサイト入口から全件読み込みしません。
 
-- `tsconfig.json`: ギャラリーとDOM処理、カタログ型、Vanilla、共有処理。
-- `tsconfig.react.json`: 公式React型定義でTSX・使用例・フックを検証。
-- `tsconfig.tools.json`: Nodeの生成ツール、Vite設定、テスト。
+追加や差分の統合では、部品の正本と登録を更新し、この読み込み境界を保ってください。旧版のサイト入口・全件import・生成済みカタログで置き換えると、起動時の負荷が増えます。
 
-通常の`npm run typecheck`／`verify`にはすべてを含みます。型がないまま成功させるダミーのReact／Vite定義は置きません。
-
-## バンドルの区別
-
-サイトのbundlerと開発サーバーはViteです。
-持ち出し用の独立デモだけは、小さなCommonJSラッパーを使った単体のapp.jsを生成し、分離HTML/CSSとともにZIPに入れます。
-テストの`offline-fixture.ts`は制約環境用の検証アダプターで、Viteの代替実装や配信ファイルではありません。
-標準の開発・ビルド・verifyでは使用しません。
-
-## 公開とGit管理
-
-`dist`は配信用、`release`は配布ZIP、`.test-output`は検証用です。いずれも元実装とは分離します。
-通常の全体ZIPには再生成可能な展開済みコピーを含めません。
-`package-lock.json`を一度実生成できた環境では、ロックファイルも管理して`npm ci`で再現してください。
-
-## 配布を一貫させる境界
+## 配布生成
 
 ```text
-元の実装（TS / TSX / CSS / HTML）
-  ↓ 依存関係・用途の判定、パスマップ、AST参照更新、形式変換
-元構成のfiles / 導入向けportableFiles（メモリ内）
-  ↓ getDelivery(part, format, layout)
-コードツリー・表示・選択ファイルの保存・使い方・AIプロンプト
-  ↓ packageContents(part, format, layout, includeCode)
-サイトのZIP / CLIのZIP
+元ソース → 依存の判定 → 配置と参照の更新 → TSX / JSX / TS / JS
+                                                    ↓
+                             コード・使い方・プロンプト・ZIP
 ```
 
-画面側でZIPだけ別の配置へ組み替えません。画面の選択とパッケージは同じ型付きデータを使用します。
-元ファイルの`sourceName`は、出力形式や配置の違いで変化しない識別子です。選択の維持と`INTEGRATION.json`の配置対応に使います。
+portable / originalは同じ元実装を異なる配置へ写します。本体・使用例の依存を区別し、外部依存を明示します。独立デモは生成した配布ソースから作り、実アプリに持ち込む本体とは分けます。TypeScriptコンパイラー・AST解析はNode側だけで使用します。
 
-TypeScriptのコンパイラーやAST解析はNode側だけで使い、ブラウザーには配布ソース文字列と軽量な共通モデルを渡します。
-実際にサイトで動くパーツは元の実装、コピーするコードはそこから参照先だけを変換した配布ソースです。
-この区別を補うため、配布ソースを使うReact・Vanilla・移動後の消費側テストを用意しています。
+Liquid Glassの詳細調整は、元カタログを変更せず配布データへ適用します。各面の背景アルファを `基準アルファ × scale + lift` で変換し、濃淡の順序と差の比率を保ちます。透明度50は1 / 0、100は0.12 / 0、0は0.75 / 0.25で中間は線形補間。ぼかしは各面の基準に倍率を掛けます。展示用背景は本体の依存へ含めません。
 
-導入向けでも依存ライブラリ全体を同梱するわけではありません。Reactなどの外部依存は明示し、利用先のアプリが用意します。
-フラット配布、任意の外部依存、バイナリアセット、自動上書きインストーラーは今回の範囲外です。
+## 状態と後片付け
 
-## Scrollbars / native-first
+ネイティブの入力・スクロール・リンクなどが実際の値と操作を所有し、装飾の動きはその状態に追従します。ReactとDOMコントローラーで同じ値やIDを二重管理しません。イベント、Observer、RAF、タイマーは `destroy()` やeffectの解除で停止します。
 
-`scroll-area.ts`はnative viewportのscrollTop/scrollLeftを読むだけでスクロールを置き換えません。レール操作のときのみ同じviewportへscrollToし、メトリクスは`scroll-metrics.ts`で計算します。ResizeObserver、内容のMutationObserver、スクロール・画像load・サイズ変更で必要なフレームだけ更新します。orientation／RTLのマッピング、ARIA、ID、イベント・Observer・RAF・タイマーの後片付けも共有します。
+CSSは部品ルートに閉じ、隣接する別スキンへ漏らしません。縮小モーション、無効状態、強制配色、狭い幅と長い内容を扱います。部品固有の契約は各 `usage.md` と型定義が正本です。
 
-`scrollbar-base.css`は構造、個別`styles.css`はスキンです。共有CSSはパーツの依存へ含めます。サイトはViteのCSS import、配布ソースは相対import、独立デモとオフライン検証だけはCSSを依存順に展開します。内容とスタイルの正本を別々に複製するものではありません。
+## 検証と生成物
 
-スクロール見本は`src/catalog/scroll-sample.ts`と`src/app/scroll-samples.css`です。サンプル部分は持ち出すコンポーネントの実行時依存に入りません。README・AIプロンプト・ZIPに含める本体には自由な内容スロットが残ります。
+`tsconfig.json` はアプリとVanilla、`tsconfig.react.json` はReact、`tsconfig.tools.json` はツールとテストを検査します。単体テストは登録・生成・配布契約を、ブラウザーテストは操作・レイアウト・React・持ち出し後の動作を確認します。
 
+GitHub ActionsはUbuntu / Windows × 6グループで `npm run verify` の工程を分担します。ブラウザーを使う各グループは独自の本番ビルドを作ります。フィクスチャーは `tests/`、実行時の生成物は `.test-output/` に置きます。Viteは `.test-output/` の変更を監視対象から外し、別テストの生成によるページ再読み込みを防ぎます。
 
-## 入力パーツの所有範囲
-
-textboxesは6番目のカテゴリです。ネイティブinput/textareaが文字列とブラウザーの編集履歴を所有します。text-field.tsは装飾データ、カウンター、自動高さ、validation、フォームreset、イベントとobserverの寿命だけを管理します。React版は値・ID・追加ボタンの状態をReact側に持ち、ControllerのmanageIds/manageActionsをfalseにして二重操作を避けます。
-
-共有ViewはReactの制御値を勝手に加工しません。非制御モードではdefaultValueを入力に渡すだけにし、文字列の重複stateを作りません。クリアはnative value setterとinputイベントで実際のReact onChangeにも接続します。ギャラリーへはsop:field-stateに真偽値だけを通知し、文字列を保存したり配信したりしません。
-
-## カテゴリ別のブラウザー読み込み
-
-サイトは `virtual:sop-browser` の一覧情報と動的カテゴリモジュールを使用し、配布データは詳細を開いたパーツだけJSONで取得します。旧 `virtual:sop-catalog` / `mounts` / `styles` の全件モジュールは互換性・検証用で、サイトの入口からは読み込みません。実装契約と外部差分の取り込み手順は [LAZY-LOADING.md](LAZY-LOADING.md) を参照してください。
+`dist/` は配信用、`release/` はZIP、`.test-output/` は検証用で、いずれもGit管理対象外です。`npm run package` は正本と設定を収録し、ZIP内の `RELEASE-MANIFEST.json` とCRC・SHA-256を検証します。
