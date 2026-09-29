@@ -1,7 +1,9 @@
 name: Deploy GitHub Pages
 
-# Publishing is opt-in. Run this workflow on main after enabling Pages in Settings.
+# Deploy main updates after enabling Pages in Settings; manual redeploys are also available.
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:

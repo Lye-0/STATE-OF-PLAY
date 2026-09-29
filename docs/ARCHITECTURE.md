@@ -54,6 +54,6 @@ GitHub ActionsはUbuntu / Windows × 6グループで `npm run verify` の工程
 
 ## GitHub Pages
 
-`.github/workflows/pages.yml` をmainから手動実行して公開します。`configure-pages` の `base_path` をViteの `--base` へ渡し、型チェック・ビルド・`test:pages` の成功後に `dist/` をPages用アーティファクトとしてデプロイします。初回はSettingsでPagesのSourceをGitHub Actionsへ設定します。
+`.github/workflows/pages.yml` はmainへのpushで起動し、手動実行による再公開にも対応します。`configure-pages` の `base_path` をViteの `--base` へ渡し、型チェック・ビルド・`test:pages` の成功後に `dist/` をPages用アーティファクトとしてデプロイします。初回はSettingsでPagesのSourceをGitHub Actionsへ設定します。
 
 `tests/pages.browser.ts` は本番成果物をサブパスに限定した静的HTTPサーバーで検証します。Viteの開発処理やSPAフォールバックを使わず、カテゴリの遅延読み込み、詳細JSON、クエリ・ハッシュによる再読み込み、ローカルのファイル・ZIP生成を確認します。公開先でサーバー側のAPIやリライトは不要です。

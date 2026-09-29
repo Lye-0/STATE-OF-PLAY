@@ -87,10 +87,10 @@ npm run preview
 ## GitHub Pagesで公開する
 
 1. リポジトリの **Settings → Pages → Build and deployment → Source** を **GitHub Actions** に設定します。
-2. **Actions → Deploy GitHub Pages → Run workflow** から **main** を選び、実行します。
+2. **mainへpush**すると、公開ワークフローが自動で起動します。
 3. 完了後、デプロイジョブに表示されるURLを開きます。通常の公開先は `https://lye-0.github.io/STATE-OF-PLAY/` です。
 
-[公開ワークフロー](.github/workflows/pages.yml) は手動実行式です。型チェック・本番ビルド・静的配信のブラウザー検証が成功した場合に、`dist/` を公開します。Pages設定から配信パスを取得するため、プロジェクト用のサブパスと独自ドメインの両方に対応します。初回のPages有効化は上記の設定画面で行ってください。
+[公開ワークフロー](.github/workflows/pages.yml) はmainへのpushで起動します。型チェック・本番ビルド・静的配信のブラウザー検証が成功した場合に、`dist/` を公開します。手動で再公開する場合は **Actions → Deploy GitHub Pages → Run workflow → main** を選んで実行できます。Pages設定から配信パスを取得するため、プロジェクト用のサブパスと独自ドメインの両方に対応します。初回のPages有効化は上記の設定画面で行ってください。
 
 公開用と同じサブパスでローカル確認する場合は、次を実行します。
 
