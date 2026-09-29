@@ -11,7 +11,7 @@ async function run(name:string,fn:()=>Promise<void>){await fn();passed.push(name
 try{
  let url='';if(!offline){const {createServer}=await import('vite');const s=await createServer({root:ROOT,server:{host:'127.0.0.1',port:0}});await s.listen();url=requireLocalServerUrl(s,'Kinetic tests');closeServer=()=>s.close();}
  browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
- const p=await browser.newPage({viewport:{width:840,height:950}});p.setDefaultTimeout(6000);p.on('pageerror',e=>errors.push(e.message));
+ const p=await browser.newPage({viewport:{width:840,height:950}});p.setDefaultTimeout(6000);p.setDefaultNavigationTimeout(120000);p.on('pageerror',e=>errors.push(e.message));
  const bundle=offline?fixture.bundle():'';
  async function prepare(page:Page){if(offline){await page.setContent(fixture.shell);await page.addScriptTag({content:bundle});}else await page.goto(new URL('.test-output/kinetic/test.html',url).href);await page.addStyleTag({content:fixture.styles});await page.waitForFunction(()=>typeof (window as any).mount==='function');}
  await prepare(p);

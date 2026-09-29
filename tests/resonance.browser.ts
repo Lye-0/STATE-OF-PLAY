@@ -5,7 +5,7 @@ const fixture=resonanceFixture(),revised=fixture.records.filter(p=>p.tags.includ
 async function run(name:string,fn:()=>Promise<void>){if(process.env.SOP_RESONANCE_FILTER&&!new RegExp(process.env.SOP_RESONANCE_FILTER).test(name))return;await fn();tests.push(name);console.log('PASS '+name);}
 try {
  let url='';if(!offline){const {createServer}=await import('vite'),s=await createServer({root:ROOT,server:{host:'127.0.0.1',port:0}});await s.listen();url=requireLocalServerUrl(s,'RESONANCE');close=()=>s.close();}
- browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});const p=await browser.newPage({viewport:{width:740,height:1000}});p.setDefaultTimeout(7000);p.on('pageerror',e=>errors.push(e.message));
+ browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});const p=await browser.newPage({viewport:{width:740,height:1000}});p.setDefaultTimeout(7000);p.setDefaultNavigationTimeout(120000);p.on('pageerror',e=>errors.push(e.message));
  if(offline){await p.setContent(fixture.shell.replace(/<link[^>]*>/,''));await p.addStyleTag({content:fixture.styles});await p.addScriptTag({content:fixture.bundle()});}else await p.goto(new URL('.test-output/resonance/test.html',url).href);
  await p.waitForFunction(()=>typeof(window as any).mount==='function');
  const mount=async(id:string|string[],options={})=>p.evaluate(({ids,options})=>(window as any).mount(ids,options),{ids:typeof id==='string'?[id]:id,options});const val=()=>p.evaluate(()=>(window as any).api.getData());
@@ -51,6 +51,15 @@ try {
  });
  await run('all 16 hints distinguish a non-focusable tooltip from an interactive dialog',async()=>{
   for(const part of revised.filter(p=>p.category==='hints')){await mount(part.id,{interactive:false});const trigger=p.locator('[data-hint-trigger]');await trigger.focus();assert.equal(await p.locator('[data-hint-panel]').getAttribute('role'),'tooltip');assert.ok(await trigger.evaluate(e=>e===document.activeElement));assert.ok(await trigger.getAttribute('aria-describedby'));assert.equal(await p.locator('[data-hint-panel] input:visible').count(),0);await p.keyboard.press('Escape');assert.ok(await p.locator('[data-hint-panel]').isHidden());assert.equal(await trigger.getAttribute('aria-expanded'),null);}
+ });
+ await run('interactive hint API opening survives queued focus and scroll events, but moving its anchor closes it',async()=>{
+  await mount('velvet-popover',{interactive:true});const panel=p.locator('[data-hint-panel]');
+  const oldHeight=await p.evaluate(()=>{const old=document.body.style.minHeight;document.body.style.minHeight='2400px';window.scrollTo(0,0);return old;});
+  await p.evaluate(()=>{document.querySelector<HTMLElement>('[data-hint-trigger]')!.focus();document.querySelector<HTMLElement>('#outside')!.focus();(window as any).api.show();});
+  assert.ok(await panel.isVisible());await p.evaluate(()=>document.dispatchEvent(new Event('scroll')));assert.ok(await panel.isVisible());
+  await panel.locator('input').check();assert.ok(await panel.locator('input').isChecked());
+  await p.evaluate(()=>window.scrollTo(0,200));await panel.waitFor({state:'hidden'});
+  await p.evaluate(old=>{document.body.style.minHeight=old;window.scrollTo(0,0);},oldHeight);
  });
  await run('16 A hints use distinct information artwork and reveal motion',async()=>{
   const motions=new Set<string>();

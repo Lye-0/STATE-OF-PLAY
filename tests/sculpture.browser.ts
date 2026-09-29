@@ -40,7 +40,7 @@ async function run(name:string,fn:()=>Promise<void>){await fn();tests.push(name)
 try{
  let url='';if(!offline){const {createServer}=await import('vite');const server=await createServer({root:ROOT,server:{port:0,host:'127.0.0.1'}});await server.listen();url=requireLocalServerUrl(server,'sculpted parts');shutdown=()=>server.close();}
  browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
- const page=await browser.newPage({viewport:{width:800,height:900}});page.on('pageerror',e=>errors.push(e.message));page.setDefaultTimeout(6000);
+ const page=await browser.newPage({viewport:{width:800,height:900}});page.on('pageerror',e=>errors.push(e.message));page.setDefaultTimeout(6000);page.setDefaultNavigationTimeout(120000);
  if(offline){await page.setContent(html.replace(/<script[\s\S]*?<\/script>/g,''));await page.addScriptTag({content:testBundle(entry,new Map([[entry,source]]))});}
  else await page.goto(new URL('.test-output/sculpture/index.html',url).href);
  await page.addStyleTag({content:hostCSS});await page.addStyleTag({content:allCSS});await page.evaluate(()=>document.head.lastElementChild!.id='skins');

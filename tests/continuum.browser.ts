@@ -7,7 +7,7 @@ async function run(name:string,test:()=>Promise<void>){if(process.env.SOP_CONTIN
 try{
  let url='';if(!offline){const vite=await import('vite'),server=await vite.createServer({root:ROOT,server:{host:'127.0.0.1',port:0}});await server.listen();url=requireLocalServerUrl(server,'CONTINUUM');close=()=>server.close();}
  browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
- const p=await browser.newPage({viewport:{width:740,height:1000}});p.setDefaultTimeout(8000);p.on('pageerror',e=>errors.push(e.message));
+ const p=await browser.newPage({viewport:{width:740,height:1000}});p.setDefaultTimeout(8000);p.setDefaultNavigationTimeout(120000);p.on('pageerror',e=>errors.push(e.message));
  if(offline){await p.setContent(f.shell.replace(/<link[^>]*>/,''));await p.addStyleTag({content:f.styles});await p.addScriptTag({content:f.bundle()});}else await p.goto(new URL('.test-output/continuum/test.html',url).href);
  await p.waitForFunction(()=>typeof(window as any).mount==='function');
  const mount=async(ids:string|string[],options={})=>p.evaluate(({ids,options})=>(window as any).mount(ids,options),{ids:typeof ids==='string'?[ids]:ids,options});

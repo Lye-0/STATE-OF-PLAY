@@ -72,7 +72,7 @@ export function syncHeading(c:Core):void {const title=c.root.querySelector('[dat
 export function setName(input:HTMLInputElement,o:FoundationOptions,index?:number):void { if(o.name)input.name=index===undefined?o.name:`${o.name}[${index}]`;else input.removeAttribute('name'); input.disabled=!!o.disabled;input.required=!!o.required; }
 /** Top-layer panel with a fallback. It stays a descendant of the part for style and lifecycle isolation. */
 export function makeOverlay(c:Core, panel:HTMLElement, trigger:HTMLElement, placement:'top'|'bottom'='bottom', anchor:HTMLElement=trigger, onOutsideScroll?:()=>void) {
-  const listeners=new AbortController();let opened=false;panel.setAttribute('popover','manual');panel.hidden=true;
+  const listeners=new AbortController();let opened=false,openingAnchor:{left:number;top:number}|undefined;panel.setAttribute('popover','manual');panel.hidden=true;
   function position(){if(!opened)return; const r=anchor.getBoundingClientRect(),v=window.visualViewport;
     const vw=v?.width??window.innerWidth, vh=v?.height??window.innerHeight,offsetX=v?.offsetLeft??0,offsetY=v?.offsetTop??0;
     panel.style.width=Math.min(Math.max(r.width,240),vw-24)+'px';panel.style.maxHeight=Math.max(96,vh-32)+'px';panel.style.setProperty('--ff-overlay-max-height',panel.style.maxHeight);
@@ -82,10 +82,10 @@ export function makeOverlay(c:Core, panel:HTMLElement, trigger:HTMLElement, plac
     const left=Math.max(offsetX+12,Math.min(r.left,offsetX+vw-panel.offsetWidth-12));
     panel.style.left=left+'px';panel.style.top=(above?Math.max(offsetY+12,r.top-h-8):Math.max(offsetY+12,Math.min(r.bottom+8,offsetY+vh-h-12)))+'px';panel.dataset.side=above?'top':'bottom';
   }
-  const show=()=>{if(c.dead||c.options.disabled)return;panel.hidden=false;opened=true;try{panel.showPopover();}catch{/* Older browsers render the same positioned panel. */}position();trigger.setAttribute('aria-expanded','true');};
+  const show=()=>{if(c.dead||c.options.disabled)return;panel.hidden=false;opened=true;const a=anchor.getBoundingClientRect();openingAnchor={left:a.left,top:a.top};try{panel.showPopover();}catch{/* Older browsers render the same positioned panel. */}position();trigger.setAttribute('aria-expanded','true');};
   const hide=()=>{if(!opened)return;try{panel.hidePopover();}catch{}opened=false;panel.hidden=true;trigger.setAttribute('aria-expanded','false');};
   window.addEventListener('resize',position,{passive:true,signal:listeners.signal});
-  document.addEventListener('scroll',event=>{if(!opened)return;if(onOutsideScroll){if(!(event.target instanceof Node&&panel.contains(event.target)))onOutsideScroll();}else position();},{passive:true,capture:true,signal:listeners.signal});
+  document.addEventListener('scroll',event=>{if(!opened)return;if(onOutsideScroll){if(!(event.target instanceof Node&&panel.contains(event.target))&&openingAnchor){const a=anchor.getBoundingClientRect();if(Math.abs(a.left-openingAnchor.left)>.5||Math.abs(a.top-openingAnchor.top)>.5)onOutsideScroll();}}else position();},{passive:true,capture:true,signal:listeners.signal});
   if(window.visualViewport){window.visualViewport.addEventListener('resize',position,{passive:true,signal:listeners.signal});window.visualViewport.addEventListener('scroll',position,{passive:true,signal:listeners.signal});}
   const destroy=()=>{hide();listeners.abort();};c.cleanup(destroy);return {show,hide,position,destroy,get open(){return opened;}};
 }

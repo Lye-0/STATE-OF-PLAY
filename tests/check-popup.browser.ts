@@ -18,7 +18,7 @@ const write=(name:string,code:string)=>{const f=path.join(ROOT,name);fs.mkdirSyn
 try{
  if(!offline){const{createServer}=await import('vite');const s=await createServer({root:ROOT,server:{port:0,host:'127.0.0.1'}});await s.listen();url=requireLocalServerUrl(s,'Checkbox/popup tests');shutdown=()=>s.close();}
  browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
- const context=await browser.newContext({viewport:{width:1440,height:1000},acceptDownloads:true}),page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));page.setDefaultTimeout(10000);
+ const context=await browser.newContext({viewport:{width:1440,height:1000},acceptDownloads:true}),page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));page.setDefaultTimeout(10000);page.setDefaultNavigationTimeout(120000);
  if(offline){
   // Focus this dedicated synthetic gallery on the 48 new objects. The full library is
   // checked by tests/browser.ts; avoid injecting its 50MB export inventory twice.

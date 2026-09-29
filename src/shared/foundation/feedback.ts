@@ -23,7 +23,7 @@ export function mountHint(root:HTMLElement,config:FoundationConfig,options:Found
  const c=createCore(root,config,options);if(!root.querySelector('[data-hint-trigger]'))root.innerHTML=renderHint(c.options);
  const trigger=q<HTMLButtonElement>(root,'[data-hint-trigger]'),panel=q<HTMLElement>(root,'[data-hint-panel]'),uid=uniqueId('sop-hint');panel.id=uid;prepareHintPanel(panel);
  const overlay=makeOverlay(c,panel,trigger,c.options.placement??'top',trigger,()=>hide());let closeTimer=0,escapeDismissed=false;
- function show(){clearTimeout(closeTimer);overlay.show();if(c.options.interactive){trigger.setAttribute('aria-expanded','true');}else{trigger.setAttribute('aria-describedby',uid);trigger.removeAttribute('aria-expanded');}}
+ function show(){clearTimeout(closeTimer);overlay.show();if(c.options.interactive){if(!root.contains(document.activeElement))trigger.focus({preventScroll:true});trigger.setAttribute('aria-expanded','true');}else{trigger.setAttribute('aria-describedby',uid);trigger.removeAttribute('aria-expanded');}}
  function hide(){clearTimeout(closeTimer);overlay.hide();if(c.options.interactive)trigger.setAttribute('aria-expanded','false');else{trigger.removeAttribute('aria-describedby');trigger.removeAttribute('aria-expanded');}}
  const later=()=>{clearTimeout(closeTimer);closeTimer=window.setTimeout(()=>{if(!root.contains(document.activeElement))hide();},160);};
  c.on(trigger,'pointerenter',()=>{if(!c.options.interactive&&!escapeDismissed)show();});c.on(trigger,'pointerleave',()=>{escapeDismissed=false;if(!c.options.interactive)later();});c.on(trigger,'focus',()=>{if(!c.options.interactive&&!escapeDismissed)show();});

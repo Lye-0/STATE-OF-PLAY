@@ -49,7 +49,7 @@ async function run(name:string,fn:()=>Promise<void>){await fn();tests.push(name)
 try{
  let url='';if(!offline){const {createServer}=await import('vite');const server=await createServer({root:ROOT,server:{host:'127.0.0.1',port:0}});await server.listen();url=requireLocalServerUrl(server,'refinement tests');shutdown=()=>server.close();}
  browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
- const page=await browser.newPage({viewport:{width:850,height:850}});page.setDefaultTimeout(6000);page.on('pageerror',e=>errors.push(e.message));
+ const page=await browser.newPage({viewport:{width:850,height:850}});page.setDefaultTimeout(6000);page.setDefaultNavigationTimeout(120000);page.on('pageerror',e=>errors.push(e.message));
  const prepare=async(p:Page)=>{if(offline){await p.setContent(shell.replace(/<script[\s\S]*?<\/script>/g,''));await p.addScriptTag({content:testBundle(entry,new Map([[entry,source]]))});}else await p.goto(new URL('.test-output/refinement/index.html',url).href);await p.addStyleTag({content:hostCSS});await p.addStyleTag({content:allCSS});await p.evaluate(()=>document.head.lastElementChild!.id='skins');};
  await prepare(page);
  const mount=async(id:string,mode='demo')=>{await page.evaluate(([id,mode])=>(window as any).mount(id,mode),[id,mode]);await page.waitForTimeout(40);};

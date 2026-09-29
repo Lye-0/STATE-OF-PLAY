@@ -33,7 +33,7 @@ async function run(name:string,fn:()=>Promise<void>){await fn();results.push(nam
 try{
  let origin='';if(!offline){const {createServer}=await import('vite');const server=await createServer({root:ROOT,server:{port:0,host:'127.0.0.1'}});await server.listen();origin=requireLocalServerUrl(server,'Atelier tests');shutdown=()=>server.close();}
  browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
- const page=await browser.newPage({viewport:{width:1024,height:900}});page.on('pageerror',e=>errors.push(e.message));page.setDefaultTimeout(6000);await page.emulateMedia({reducedMotion:'reduce'});
+ const page=await browser.newPage({viewport:{width:1024,height:900}});page.on('pageerror',e=>errors.push(e.message));page.setDefaultTimeout(6000);page.setDefaultNavigationTimeout(120000);await page.emulateMedia({reducedMotion:'reduce'});
  if(offline){await page.setContent(html.replace(/<script[^>]*>[\s\S]*?<\/script>/g,''));await page.addScriptTag({content:testBundle(entry,new Map([[entry,source]]))});}else{await page.goto(new URL('.test-output/atelier/index.html',origin).href,{waitUntil:'commit',timeout:120000});await page.waitForFunction(()=>typeof (window as any).mountArt==='function',undefined,{timeout:120000});}
  await page.addStyleTag({content:hostCSS});await page.evaluate(()=>{const style=document.createElement('style');style.id='skins';document.head.append(style);});
  const setCSS=(text:string)=>page.evaluate(text=>{document.getElementById('skins')!.textContent=text;},text);
