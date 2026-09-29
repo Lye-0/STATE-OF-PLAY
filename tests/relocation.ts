@@ -20,6 +20,9 @@ const topologies=['src/components/ui','apps/frontend/src/features/settings/ui','
 const requestedFixture=process.argv.find(arg=>arg.startsWith('--fixture='))?.slice('--fixture='.length);
 if(requestedFixture&&!topologies.flatMap((_,i)=>['portable','original'].map(layout=>`consumer-${i}-${layout}`)).includes(requestedFixture))throw new Error('Unknown relocation fixture: '+requestedFixture);
 const fixtures:string[]=[];
+// Keep every export and stylesheet together, but bound the live DOM/animation workload.
+const batchSize=32;
+const batches=Array.from({length:Math.ceil(parts.length/batchSize)},(_,i)=>parts.slice(i*batchSize,(i+1)*batchSize));
 for(const [index,parent]of topologies.entries())for(const layout of ['portable','original']as const){
  const prefix=`consumer-${index}-${layout}`;if(requestedFixture&&prefix!==requestedFixture)continue;fixtures.push(prefix);
  const styles:string[]=[],imports:string[]=[],mounts:string[]=[],markup:string[]=[];
@@ -33,12 +36,27 @@ for(const [index,parent]of topologies.entries())for(const layout of ['portable',
   styles.push(`<link rel="stylesheet" href="./${css}">`);
   const art=part.category==='blocks'?part.markup.replace('<div class="sop-surface-content">','<div class="sop-surface-content"><button>Independent content</button>'):part.category==='scrollbars'?part.markup.replace('<div class="sop-scroll-content">','<div class="sop-scroll-content"><div style="height:1400px;width:1800px">'+scrollSampleHTML(part)+'</div>'):part.markup;
   markup.push(`<section data-part="${part.id}">${art}</section>`);
-  mounts.push(`init${i}(document.querySelector('[data-part="${part.id}"] > *'))`);
+  mounts.push(`init${i}`);
  }
  write(prefix+'/src/shared/motion.ts','// existing user-owned shared helper — must not be overwritten\n');
  write(prefix+'/app-main.ts','// existing application entry — must not be overwritten\n');
- write(prefix+'/index.html',`<!doctype html><html lang="ja"><head><meta charset="utf-8">${styles.join('')}<style>body{background:#191b20;color:#eee}body>section{padding:20px;min-height:180px}.sop-surface{width:330px}</style></head><body><button id="unmount">取り外す</button>${markup.join('')}<script type="module" src="./harness.js"></script></body></html>`);
- write(prefix+'/harness.js',imports.join('\n')+`\nconst controls=[${mounts.join(',')}];window.ready=true;document.querySelector('#unmount').onclick=()=>{controls.forEach(c=>c.destroy());document.querySelectorAll('section[data-part]').forEach(s=>s.remove());window.removed=true;};`);
+ write(prefix+'/index.html',`<!doctype html><html lang="ja"><head><meta charset="utf-8">${styles.join('')}<style>body{background:#191b20;color:#eee}#parts>section{padding:20px;min-height:180px}.sop-surface{width:330px}</style></head><body><button id="unmount">取り外す</button><main id="parts"></main><script type="module" src="./harness.js"></script></body></html>`);
+ write(prefix+'/harness.js',imports.join('\n')+`
+const factories=[${mounts.join(',')}],markup=${JSON.stringify(markup)};
+let controls=[];
+window.mountBatch=index=>{
+ if(controls.length)throw new Error('Unmount the preceding batch first.');
+ const start=index*${batchSize},end=Math.min(start+${batchSize},factories.length);
+ if(start<0||start>=factories.length)throw new Error('Invalid relocation batch.');
+ document.querySelector('#parts').innerHTML=markup.slice(start,end).join('');
+ controls=factories.slice(start,end).map((mount,i)=>mount(document.querySelector('#parts').children[i].firstElementChild));
+};
+document.querySelector('#unmount').onclick=()=>{
+ controls.forEach(c=>c.destroy());controls=[];
+ document.querySelector('#parts').replaceChildren();window.removed=true;
+};
+window.ready=true;
+`);
 }
 const server=http.createServer((req,res)=>{
  try{
@@ -53,9 +71,19 @@ if(!offline) await new Promise<void>(resolve=>server.listen(0,'127.0.0.1',resolv
 const address=server.address();
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{}),args:['--no-sandbox']});
 const errors:string[]=[],results:string[]=[];
+const measurements:{fixture:string;parts:number;batches:number;maxLiveParts:number;seconds:number}[]=[];
 try{
  for(const fixture of fixtures){
-  const page=await browser.newPage();page.on('pageerror',e=>errors.push(e.message));
+  const page=await browser.newPage();page.setDefaultTimeout(30000);page.setDefaultNavigationTimeout(120000);page.on('pageerror',e=>errors.push(e.message));
+  const started=Date.now();let phase='navigation';
+  // A stalled renderer must fail with useful progress, not consume the 90-minute job.
+  const deadline=setTimeout(()=>{
+   const failure={fixture,phase,seconds:Math.round((Date.now()-started)/1000)};
+   fs.writeFileSync(path.join(out,'timeout.json'),JSON.stringify(failure,null,2));
+   console.error('FAIL relocation exceeded 10 minutes: '+JSON.stringify(failure));
+   process.exit(1);
+  },600000);
+  try {
   const failed:string[]=[];page.on('response',r=>{if(r.status()>=400)failed.push(r.url());});
   const trackAnimationFrames=()=>{const set=new Set<number>(),request=requestAnimationFrame.bind(window),cancel=cancelAnimationFrame.bind(window);window.requestAnimationFrame=callback=>{const id=request(time=>{set.delete(id);callback(time);});set.add(id);return id;};window.cancelAnimationFrame=id=>{set.delete(id);cancel(id);};Object.assign(window,{pendingRAF:set});};
   await page.addInitScript(trackAnimationFrames);
@@ -88,22 +116,39 @@ try{
    },{modules,entry:fixture+'/harness.js'});
   }
   await page.waitForFunction(()=>Boolean((window as unknown as {ready:boolean}).ready),undefined,{timeout:120000});
-  assert.equal(await page.locator('section[data-part]').count(),parts.length);assert.deepEqual(failed,[]);
-  for(const part of parts){const root=page.locator(`[data-part="${part.id}"] > *`);assert.ok((await root.boundingBox())!.width>0);if(part.category==='scrollbars'){const rail=root.locator('.sop-scroll-rail');await rail.waitFor({state:'visible'});await rail.focus();await page.keyboard.press('End');await page.waitForFunction(id=>document.querySelector('[data-part="'+id+'"] .sop-scroll-rail')?.getAttribute('aria-valuenow')==='100',part.id);}if(part.category==='dropdowns'){const b=root.locator('.sop-select-trigger');await b.click();await page.keyboard.press('End');await page.keyboard.press('Enter');assert.equal(await b.getAttribute('aria-expanded'),'false');assert.equal(await root.locator('[aria-selected="true"]').count(),1);}if(part.category==='accordions'){const b=root.locator('.sop-accordion-trigger').nth(1);await b.click();assert.equal(await b.getAttribute('aria-expanded'),'true');}if(part.category==='textboxes'){const field=root.locator('.sop-field-control');await field.fill('日本語 relocation');assert.equal(await field.inputValue(),'日本語 relocation');assert.equal(await root.getAttribute('data-filled'),'true');}if(part.category==='tabs'){
+  const tested=new Set<string>(),choiceIds:string[]=[],radioNames:string[]=[];let maxLiveParts=0;
+  for(const [batchIndex,batch] of batches.entries()){
+   phase=`batch ${batchIndex+1}/${batches.length}: mount`;
+   await page.evaluate(index=>{window.scrollTo(0,0);(window as unknown as {mountBatch(index:number):void}).mountBatch(index);},batchIndex);
+   const liveParts=await page.locator('section[data-part]').count();assert.equal(liveParts,batch.length);maxLiveParts=Math.max(maxLiveParts,liveParts);
+   const geometry=await page.locator('section[data-part] > *').evaluateAll(roots=>roots.map(root=>({id:(root.parentElement as HTMLElement).dataset.part,width:root.getBoundingClientRect().width})));
+   assert.equal(geometry.length,batch.length);
+   for(const part of batch)assert.ok(geometry.some(item=>item.id===part.id&&item.width>0),fixture+': '+part.id+' has no layout');
+   assert.deepEqual(failed,[]);
+  for(const part of batch){phase=`batch ${batchIndex+1}/${batches.length}: ${part.id}`;assert.ok(!tested.has(part.id));tested.add(part.id);const root=page.locator(`[data-part="${part.id}"] > *`);if(part.category==='scrollbars'){const rail=root.locator('.sop-scroll-rail');await rail.waitFor({state:'visible'});await rail.focus();await page.keyboard.press('End');await page.waitForFunction(id=>document.querySelector('[data-part="'+id+'"] .sop-scroll-rail')?.getAttribute('aria-valuenow')==='100',part.id);}if(part.category==='dropdowns'){const b=root.locator('.sop-select-trigger');await b.click();await page.keyboard.press('End');await page.keyboard.press('Enter');assert.equal(await b.getAttribute('aria-expanded'),'false');assert.equal(await root.locator('[aria-selected="true"]').count(),1);}if(part.category==='accordions'){const b=root.locator('.sop-accordion-trigger').nth(1);await b.click();assert.equal(await b.getAttribute('aria-expanded'),'true');}if(part.category==='textboxes'){const field=root.locator('.sop-field-control');await field.fill('日本語 relocation');assert.equal(await field.inputValue(),'日本語 relocation');assert.equal(await root.getAttribute('data-filled'),'true');}if(part.category==='tabs'){
    const tab=root.locator('[role=tab]').last(),value=await tab.getAttribute('data-choice-value');assert.ok(value,part.id);
    await tab.click();assert.equal(await root.getAttribute('data-value'),value,part.id);assert.equal(await tab.getAttribute('aria-selected'),'true',part.id);
    const panels=root.locator('.sop-choice-panel:visible');assert.equal(await panels.count(),1,part.id);assert.equal(await panels.getAttribute('data-panel-value'),value,part.id);
   }if(part.category==='segments'){const radio=root.locator('input[type=radio]').last(),value=await radio.inputValue();await radio.check();assert.equal(await root.getAttribute('data-value'),value,part.id);assert.equal(await root.locator('input:checked').count(),1);}if(part.category==='checkboxes'){const input=root.locator('input[type=checkbox]');const before=await input.isChecked();await root.locator('.sop-check-label').click();assert.equal(await input.isChecked(),!before);}if(part.category==='popups'){await root.locator(':scope > [data-popup-open]').click();const dialog=root.locator(':scope > dialog');assert.ok(await dialog.evaluate((d:HTMLDialogElement)=>d.open));await page.keyboard.press('Escape');await dialog.waitFor({state:'hidden'});}if(part.category==='toggles'){const before=await root.getAttribute('aria-checked');await root.click();assert.notEqual(await root.getAttribute('aria-checked'),before);}}
-  const choiceIds=await page.locator('.sop-tabs [id]').evaluateAll(es=>es.map(e=>e.id));assert.equal(choiceIds.length,new Set(choiceIds).size);
-  const radioNames=await page.locator('.sop-segments').evaluateAll(es=>es.map(e=>(e.querySelector('input') as HTMLInputElement).name));assert.equal(radioNames.length,new Set(radioNames).size);
+  choiceIds.push(...await page.locator('.sop-tabs [id]').evaluateAll(es=>es.map(e=>e.id)));assert.equal(choiceIds.length,new Set(choiceIds).size);
+  radioNames.push(...await page.locator('.sop-segments').evaluateAll(es=>es.map(e=>(e.querySelector('input') as HTMLInputElement).name)));assert.equal(radioNames.length,new Set(radioNames).size);
+  phase=`batch ${batchIndex+1}/${batches.length}: unmount`;
   await page.locator('#unmount').click();await page.waitForTimeout(100);
   assert.equal(await page.locator('section[data-part]').count(),0);
   assert.equal(await page.evaluate(()=>(window as unknown as {pendingRAF:Set<number>}).pendingRAF.size),0);
+  console.log(`  ${fixture}: batch ${batchIndex+1}/${batches.length}, ${tested.size}/${parts.length} parts, ${Math.round((Date.now()-started)/1000)}s`);
+  }
+  assert.deepEqual([...tested].sort(),parts.map(part=>part.id).sort());assert.deepEqual(failed,[]);assert.deepEqual(errors,[]);
+  measurements.push({fixture,parts:tested.size,batches:batches.length,maxLiveParts,seconds:Math.round((Date.now()-started)/1000)});
   assert.match(fs.readFileSync(path.join(out,fixture,'src/shared/motion.ts'),'utf8'),/existing user-owned/);
   assert.match(fs.readFileSync(path.join(out,fixture,'app-main.ts'),'utf8'),/existing application entry/);
-  results.push(fixture);console.log('PASS '+(offline?'explicit offline fixture':'real HTTP')+' relocation: '+fixture);await page.close();
+  results.push(fixture);console.log('PASS '+(offline?'explicit offline fixture':'real HTTP')+' relocation: '+fixture);
+  } catch(error) {
+   console.error('FAIL relocation '+fixture+' at '+phase);
+   throw error;
+  } finally {await page.close();clearTimeout(deadline);}
  }
  assert.deepEqual(errors,[]);
- fs.writeFileSync(path.join(ROOT,'.test-output/relocation-results.json'),JSON.stringify({transport:offline?'explicit synthetic document + native ESM import map (NOT HTTP)':'HTTP/native ESM (no URL/module rewriting)',results,errors},null,2));
+ fs.writeFileSync(path.join(ROOT,'.test-output/relocation-results.json'),JSON.stringify({transport:offline?'explicit synthetic document + native ESM import map (NOT HTTP)':'HTTP/native ESM (no URL/module rewriting)',results,errors,measurements},null,2));
  console.log(`Relocation: ${results.length} consumer projects × ${parts.length} parts = ${results.length*parts.length} mounted parts.`);
 }finally{await browser.close();if(server.listening)await new Promise<void>(resolve=>server.close(()=>resolve()));}

@@ -48,6 +48,8 @@ CSSは部品ルートに閉じ、隣接する別スキンへ漏らしません�
 
 `tsconfig.json` はアプリとVanilla、`tsconfig.react.json` はReact、`tsconfig.tools.json` はツールとテストを検査します。単体テストは登録・生成・配布契約を、ブラウザーテストは操作・レイアウト・React・持ち出し後の動作を確認します。
 
+移設テストは3種類の移設先 × portable / originalの6ケースで全パーツを検証します。すべての実モジュールとCSSを同じ消費側ページへ読み込み、DOMへの配置は32件ずつに分けます。各回の操作・取り外し・RAF解除を確認し、IDの重複と全パーツの確認漏れも検査します。通常の要素操作の待機上限は30秒、各消費側ケースの実行上限は10分です。失敗時は移設先・確認中のパーツを出力し、待機が続く場合もCIの90分制限まで放置しません。
+
 GitHub ActionsはUbuntu / Windows × 6グループで `npm run verify` の工程を分担します。ブラウザーを使う各グループは独自の本番ビルドを作ります。フィクスチャーは `tests/`、実行時の生成物は `.test-output/` に置きます。Viteは `.test-output/` の変更を監視対象から外し、別テストの生成によるページ再読み込みを防ぎます。
 
 `dist/` は配信用、`release/` はZIP、`.test-output/` は検証用で、いずれもGit管理対象外です。`npm run package` は正本と設定を収録し、ZIP内の `RELEASE-MANIFEST.json` とCRC・SHA-256を検証します。
