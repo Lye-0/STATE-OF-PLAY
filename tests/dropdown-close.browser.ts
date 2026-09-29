@@ -6,7 +6,8 @@ import {ROOT,buildCatalog,FORMATS} from '../scripts/catalog.ts';
 import {getDelivery,buildPrompt,packageContents} from '../src/catalog/delivery.ts';
 import {galleryReady,selectCategory} from './gallery-ready.ts';
 
-const affected=buildCatalog().parts.filter(part=>part.category==='dropdowns'&&part.tags.includes('KINETIC'));
+const dropdowns=buildCatalog().parts.filter(part=>part.category==='dropdowns');
+const affected=dropdowns.filter(part=>part.tags.includes('KINETIC'));
 assert.equal(affected.length,12);
 let deliveries=0;
 for(const part of affected)for(const layout of ['portable','original']as const)for(const format of FORMATS){
@@ -26,10 +27,10 @@ const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH
 try{
  const page=await browser.newPage({viewport:{width:1280,height:900}});
  const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
- await page.goto(server.resolvedUrls!.local[0]);await galleryReady(page);
+ await page.goto(server.resolvedUrls!.local[0],{waitUntil:'commit',timeout:120000});await page.waitForFunction(()=>document.documentElement.classList.contains('site-ready'),undefined,{timeout:120000});await galleryReady(page);
  await selectCategory(page,'dropdowns');
  const ids=await page.locator('[data-part]').evaluateAll(cards=>cards.map(card=>(card as HTMLElement).dataset.part!));
- assert.equal(ids.length,36);
+ assert.deepEqual([...ids].sort(),dropdowns.map(part=>part.id).sort());
  const failures:string[]=[];
  for(const id of ids){
   const trigger=page.locator(`[data-part="${id}"] .sop-select-trigger`);

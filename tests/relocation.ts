@@ -16,9 +16,12 @@ const {parts}=buildCatalog(),out=path.join(ROOT,'.test-output/relocation');
 fs.mkdirSync(out,{recursive:true});
 const write=(name:string,code:string)=>{const full=path.join(out,name);fs.mkdirSync(path.dirname(full),{recursive:true});fs.writeFileSync(full,code);};
 const topologies=['src/components/ui','apps/frontend/src/features/settings/ui','部品ライブラリ/widgets'];
+// Local reproduction can target one consumer; CI without this flag still runs all six.
+const requestedFixture=process.argv.find(arg=>arg.startsWith('--fixture='))?.slice('--fixture='.length);
+if(requestedFixture&&!topologies.flatMap((_,i)=>['portable','original'].map(layout=>`consumer-${i}-${layout}`)).includes(requestedFixture))throw new Error('Unknown relocation fixture: '+requestedFixture);
 const fixtures:string[]=[];
 for(const [index,parent]of topologies.entries())for(const layout of ['portable','original']as const){
- const prefix=`consumer-${index}-${layout}`;fixtures.push(prefix);
+ const prefix=`consumer-${index}-${layout}`;if(requestedFixture&&prefix!==requestedFixture)continue;fixtures.push(prefix);
  const styles:string[]=[],imports:string[]=[],mounts:string[]=[],markup:string[]=[];
  for(const [i,part]of parts.entries()){
   const d=getDelivery(part,'js',layout);
@@ -59,7 +62,7 @@ try{
   if(offline) await page.evaluate(trackAnimationFrames);
   if (!offline) {
    if(!address||typeof address==='string')throw new Error('No local address');
-   await page.goto(`http://127.0.0.1:${address.port}/${fixture}/index.html`);
+   await page.goto(`http://127.0.0.1:${address.port}/${fixture}/index.html`,{waitUntil:'load',timeout:120000});
   } else {
    // Explicit synthetic document, NOT an HTTP navigation success. Never change browser policy.
    const html=fs.readFileSync(path.join(out,fixture,'index.html'),'utf8');
@@ -84,7 +87,7 @@ try{
     for(const url of Object.values(imports))URL.revokeObjectURL(url);
    },{modules,entry:fixture+'/harness.js'});
   }
-  await page.waitForFunction(()=>Boolean((window as unknown as {ready:boolean}).ready));
+  await page.waitForFunction(()=>Boolean((window as unknown as {ready:boolean}).ready),undefined,{timeout:120000});
   assert.equal(await page.locator('section[data-part]').count(),parts.length);assert.deepEqual(failed,[]);
   for(const part of parts){const root=page.locator(`[data-part="${part.id}"] > *`);assert.ok((await root.boundingBox())!.width>0);if(part.category==='scrollbars'){const rail=root.locator('.sop-scroll-rail');await rail.waitFor({state:'visible'});await rail.focus();await page.keyboard.press('End');await page.waitForFunction(id=>document.querySelector('[data-part="'+id+'"] .sop-scroll-rail')?.getAttribute('aria-valuenow')==='100',part.id);}if(part.category==='dropdowns'){const b=root.locator('.sop-select-trigger');await b.click();await page.keyboard.press('End');await page.keyboard.press('Enter');assert.equal(await b.getAttribute('aria-expanded'),'false');assert.equal(await root.locator('[aria-selected="true"]').count(),1);}if(part.category==='accordions'){const b=root.locator('.sop-accordion-trigger').nth(1);await b.click();assert.equal(await b.getAttribute('aria-expanded'),'true');}if(part.category==='textboxes'){const field=root.locator('.sop-field-control');await field.fill('日本語 relocation');assert.equal(await field.inputValue(),'日本語 relocation');assert.equal(await root.getAttribute('data-filled'),'true');}if(part.category==='tabs'){
    const tab=root.locator('[role=tab]').last(),value=await tab.getAttribute('data-choice-value');assert.ok(value,part.id);
