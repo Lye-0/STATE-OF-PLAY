@@ -34,7 +34,7 @@ export function catalogPlugin(root = ROOT): Plugin {
     if (!result) { result = JSON.stringify(packCatalog(buildCatalog(root, [id]).parts)); details.set(id,result); }
     return result;
   };
-  const relevant = (file: string) => /^(src\/(parts|shared|catalog)\/|scripts\/)/.test(path.relative(root,file).split(path.sep).join('/'));
+  const relevant = (file: string) => /^(src\/(parts|shared|catalog)\/|scripts\/|PARTS-LICENSE\.txt$)/.test(path.relative(root,file).split(path.sep).join('/'));
   const invalidate = () => { listing = undefined; legacy = undefined; details.clear(); };
   const reload = (server: ViteDevServer, file: string) => {
     if (!relevant(file)) return;
@@ -87,7 +87,7 @@ export function catalogPlugin(root = ROOT): Plugin {
         try { const json=payload(name.slice(0,-5)); res.setHeader('Content-Type','application/json; charset=utf-8'); res.setHeader('Cache-Control','no-cache'); res.end(json); }
         catch(error) { res.statusCode=500; res.end(JSON.stringify({error:'Unable to build part'})); server.config.logger.error(String(error)); }
       });
-      server.watcher.add(['src/parts','src/shared','src/catalog','scripts'].map(p=>path.join(root,p)));
+      server.watcher.add(['src/parts','src/shared','src/catalog','scripts','PARTS-LICENSE.txt'].map(p=>path.join(root,p)));
       const change = (file:string) => reload(server,file);
       server.watcher.on('add',change).on('unlink',change);
       server.httpServer?.once('close',()=>{server.watcher.off('add',change).off('unlink',change);});

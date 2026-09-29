@@ -93,6 +93,9 @@ try {
   const zip = await JSZip.loadAsync(fs.readFileSync((await zipDownload.path())!), {checkCRC32: true});
   assert.ok(Object.keys(zip.files).some(name => name.endsWith('/INTEGRATION.json')));
   assert.ok(Object.keys(zip.files).some(name => name.endsWith('/styles.css')));
+  const licenseFile = Object.keys(zip.files).find(name => name.endsWith('/PARTS-LICENSE.txt'));
+  assert.ok(licenseFile, 'Browser ZIP includes the parts license');
+  assert.equal(await zip.file(licenseFile)!.async('string'), fs.readFileSync(path.join(ROOT, 'PARTS-LICENSE.txt'), 'utf8').replaceAll('\r\n', '\n'));
   await page.locator('.package-dialog .package-close').click();
   await page.screenshot({path: path.join(output, 'details.png')});
   await details.locator('.close-detail').click();

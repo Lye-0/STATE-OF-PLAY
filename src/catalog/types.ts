@@ -25,6 +25,7 @@ export const isLayout = (value: unknown): value is Layout => value === 'portable
 export type DetailTab = 'code' | 'guide' | 'prompt';
 export interface SourceFile { name: string; sourceName: string; code: string; language: string; group: 'component' | 'shared' | 'example'; }
 export interface Part {
+  partsLicense: string;
   glassTransparency?: number;
   glassBlur?: number;
   workbench?: {kind: string};
@@ -38,7 +39,7 @@ export interface Part {
   files: Record<Format, SourceFile[]>; portableFiles: Record<Format, SourceFile[]>; preview: Record<string, string>;
 }
 /** Browser listing and preview data deliberately exclude downloadable source text. */
-export type PartPreview = Omit<Part, 'files' | 'portableFiles' | 'preview' | 'usage' | 'prompt'>;
+export type PartPreview = Omit<Part, 'files' | 'portableFiles' | 'preview' | 'usage' | 'prompt' | 'partsLicense'>;
 export type PartSummary = Pick<Part, 'id' | 'name' | 'category' | 'order' | 'description' | 'material' | 'designType' | 'tags' | 'initial' | 'config' | 'tagline'>;
 export interface CategoryModule { parts: PartPreview[]; mounts: Record<string, MountPart>; }
 export interface PartController {

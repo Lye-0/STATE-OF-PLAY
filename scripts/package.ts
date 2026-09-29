@@ -7,7 +7,7 @@ import { JSZip } from './zip.ts';
 // Only author sources and configuration. Never include .git, dependencies, caches or secret files.
 const paths = ['src','scripts','tests','docs','public','licenses','.github',
   'index.html','vite.config.ts','tsconfig.json','tsconfig.react.json','tsconfig.tools.json',
-  'package.json','package-lock.json','README.md','THIRD-PARTY-NOTICES.md','.gitignore','.gitattributes'];
+  'package.json','package-lock.json','README.md','PARTS-LICENSE.txt','THIRD-PARTY-NOTICES.md','.gitignore','.gitattributes'];
 const {version} = JSON.parse(fs.readFileSync(path.join(ROOT,'package.json'),'utf8')) as {version:string};
 const zip = new JSZip();
 const root = 'STATE-OF-PLAY';

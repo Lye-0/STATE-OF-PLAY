@@ -1,6 +1,8 @@
 /** Pure shared export model. The UI, ZIP modal and CLI use these same functions. */
 import { FORMATS, LAYOUTS, DESIGN_TYPES, type Format, type Layout, type Part, type SourceFile } from './types.ts';
 import { archiveTree, validateArchiveEntries, type ArchiveEntry } from '../shared/archive.ts';
+export const PARTS_LICENSE_ID = 'LicenseRef-STATE-OF-PLAY-Parts-1.0';
+const licenseUsage = '## パーツのライセンス\nSTATE OF PLAY Parts License 1.0（独自ライセンス）です。商用利用・改変は自由です。完成したサイト・アプリへの組み込みでは、作者名・リンク・ライセンス文の掲載も保持も不要です。パーツや改変版をUIライブラリ・素材集・再利用用テンプレートなどとして再配布する場合は、著作権表示・STATE OF PLAYの名称・入手元URLとライセンス全文を残してください。ZIP内の PARTS-LICENSE.txt が正式な条件です。プロジェクト全体と第三者の素材・依存はこの許諾の対象外です。\n\n';
 export interface Delivery {
   layout: Layout; format: Format; files: readonly SourceFile[];
   componentRoot: string; entry: string; stylesheet: string; markup: string; example: string;
@@ -40,7 +42,7 @@ export function buildUsage(part: Part, format: Format, layout: Layout): string {
     `## 今回の配布\n- 形式: ${FORMATS[format].label}\n- 構成: ${LAYOUTS[layout].label}\n- コピーする本体: \`${d.componentRoot}/\`\n- 入口: \`${d.entry}\`\n- スタイル: \`${d.stylesheet}\`\n- 使用例: \`${d.example}\`\n- 実行時外部依存: ${d.externalDependencies.join(', ')||'なし'}\n\n`+
     `## 導入手順\n1. 対象アプリの構成・設定・既存の配置規約を確認します。\n2. ${placementText(d)}\n3. ${react ? `既存の画面から ${part.componentName} をimportして使います。CSSはコンポーネント内から読み込みます。JSX/TSXを変換できるReact環境が必要です。` : staticSurface ? `\`${d.markup}\` とCSSだけで外観が成立します。init(element)は共通ライフサイクルを使うときの任意の窓口です。サンプルをそのまま実行する場合は、${format==='ts'?'TypeScriptを変換できる環境':'ES Modulesを配信するローカルHTTPサーバー'}を使います。` : `\`${d.markup}\` の要素とCSSを配置し、init(element, options)で初期化します。返されたcontrollerは取り外す前にdestroy()します。${format==='ts'?'TypeScriptをビルドする環境が必要です。':'JS版はES Modulesです。HTTPのローカルサーバーから開いてください。'}`}\n4. 使用例は接続例です。既存のApp・main・index・設定ファイルを上書きしないでください。移動した使用例のimportも新しい場所に合わせます。\n5. 型チェック・ビルド・操作確認を行います。Next.js等のSSR環境ではクライアント境界とCSSの読み込み規則も確認します。\n\n`+
     `## 配置について\n配布パスは利用先への固定命令ではありません。\`${d.componentRoot}/\` を別の場所にまとめて移す場合、内部の相対参照は維持されます。内部を分割・改名する場合は、import/export、CSS・素材の参照、使用例をすべて更新してください。\n\n`+
-    tabsScroll+
+    tabsScroll+licenseUsage+fence(part.partsLicense,'text')+'\n\n'+
     `## 複数パーツ・更新時\nパーツ専用のinternal/は意図的な分離です。同名だからと共通化・上書きしないでください。既存パーツがある場合はバージョンと差分を確認し、手元の修正を保って更新します。INTEGRATION.jsonは元パスと配布パスの対応・入口・用途・外部依存を記録するもので、自動インストーラーではありません。\n\n`+
     `## ファイル構成\n${fence(archiveTree(files),'text')}\n\n## パーツ固有の補足\n${part.usage.trim()}\n\n`+
     `## 確認用デモ\npreview/index.html は独立した確認用です。preview/全体を開けば元のデモを確認できます。配布したパーツ本体は、そのままのソースを使って別途検証してください。\n\n## コピーと保存\n画面のファイルパス・ソース・ZIPは同じ構成です。個別保存はファイル名のみ。フォルダーごと取り込む場合はZIPを使います。テキスト保管版では末尾の.txtを戻すまで動作しません。\n`;
@@ -70,6 +72,7 @@ export function buildManifest(part: Part, format: Format, layout: Layout): strin
     ...(part.glassBlur===undefined?{}:{glassBlur:part.glassBlur}),
     componentRoot:d.componentRoot,entry:d.entry,stylesheet:d.stylesheet,example:d.example,
     externalDependencies:d.externalDependencies,
+    license:{id:PARTS_LICENSE_ID,file:'PARTS-LICENSE.txt'},
     files:d.files.map(f=>({path:f.name,source:f.sourceName,role:f.group==='example'?'example':'runtime'})),
     note:'Paths are export-relative, not mandatory locations in your project. Review existing files before copying.'},null,2)+'\n';
 }
@@ -77,5 +80,6 @@ export function packageContents(part: Part, format: Format, layout: Layout, incl
   const d=getDelivery(part,format,layout);
   return validateArchiveEntries([...d.files, {name:'README.md',code:buildUsage(part,format,layout)},
     {name:'PROMPT.md',code:buildPrompt(part,format,layout,includeCode)}, {name:'INTEGRATION.json',code:buildManifest(part,format,layout)},
+    {name:'PARTS-LICENSE.txt',code:part.partsLicense},
     ...Object.entries(part.preview).map(([name,code])=>({name:'preview/'+name,code}))]);
 }

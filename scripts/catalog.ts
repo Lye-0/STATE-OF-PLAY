@@ -29,7 +29,7 @@ export function buildCatalog(root = ROOT, onlyIds?: readonly string[]): CatalogB
   }
   const seen = new Set<string>();
   const parts = bases.filter(base => !onlyIds || onlyIds.includes(base.split('/').at(-1)!)).map(base => {
-    const meta = JSON.parse(read(`${base}/meta.json`)) as Omit<Part,'files'|'portableFiles'|'preview'|'markup'|'usage'|'prompt'>;
+    const meta = JSON.parse(read(`${base}/meta.json`)) as Omit<Part,'files'|'portableFiles'|'preview'|'markup'|'usage'|'prompt'|'partsLicense'>;
     if (!/^[a-z][a-z0-9-]*$/.test(meta.id) || seen.has(meta.id)) throw new Error(`Invalid/duplicate part ID: ${meta.id}`);
     if (!['A','B'].includes(meta.designType) || typeof meta.runtime !== 'string') throw new Error(`Invalid design type/runtime: ${base}`);
     if (!['toggles','blocks','ornaments','scrollbars','dropdowns','accordions','textboxes','buttons','links','tabs','segments','checkboxes','popups','sliders','radios','comboboxes','toasts','hints','progress','loaders','uploads','datepickers','pagination','breadcrumbs','badges','numbers','avatars','ratings','colors','skeletons','timelines','wizards','searchbars','commands','contextmenus','navigation','tables'].includes(meta.category) || !Number.isFinite(meta.order) || !Array.isArray(meta.props) || !Array.isArray(meta.tags))
@@ -80,7 +80,7 @@ export function buildCatalog(root = ROOT, onlyIds?: readonly string[]): CatalogB
       'styles.css': read('scripts/templates/demo.css') + (meta.category === 'scrollbars' ? read('src/app/scroll-samples.css') : '') + bundledCSS(`${base}/styles.css`),
       'app.js': bundleDemo(root, `${base}/demo/main.ts`, read('scripts/templates/demo-entry.ts.txt'))
     };
-    return {...meta, markup, usage: read(`${base}/usage.md`), prompt: read(`${base}/prompt.md`), files, portableFiles, preview};
+    return {...meta, partsLicense: intern(read('PARTS-LICENSE.txt').replaceAll('\r\n','\n')), markup, usage: read(`${base}/usage.md`), prompt: read(`${base}/prompt.md`), files, portableFiles, preview};
   }).sort((a, b) => a.order - b.order);
   for (const part of parts) for (const id of part.related) if (!onlyIds && !seen.has(id)) throw new Error(`Unknown related part: ${id}`);
   const styleSeen = new Set<string>();
