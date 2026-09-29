@@ -79,6 +79,23 @@ npm run preview
 
 `dist/` に本番用の静的サイトを生成します。相対パスで配信できる構成です。
 
+## GitHub Pagesで公開する
+
+1. リポジトリの **Settings → Pages → Build and deployment → Source** を **GitHub Actions** に設定します。
+2. **Actions → Deploy GitHub Pages → Run workflow** から **main** を選び、実行します。
+3. 完了後、デプロイジョブに表示されるURLを開きます。通常の公開先は `https://lye-0.github.io/STATE-OF-PLAY/` です。
+
+[公開ワークフロー](.github/workflows/pages.yml) は手動実行式です。型チェック・本番ビルド・静的配信のブラウザー検証が成功した場合に、`dist/` を公開します。Pages設定から配信パスを取得するため、プロジェクト用のサブパスと独自ドメインの両方に対応します。初回のPages有効化は上記の設定画面で行ってください。
+
+公開用と同じサブパスでローカル確認する場合は、次を実行します。
+
+```sh
+npm run build -- --base /STATE-OF-PLAY/
+npm run test:pages
+```
+
+ブラウザー検証には、検証手順にあるChromiumのインストールが必要です。リポジトリ名や独自ドメインを変更した場合、`test:pages` の `PAGES_BASE_PATH` 環境変数を配信パスに合わせます（独自ドメイン直下は空文字）。この検証はSPAのフォールバックを使わず、37カテゴリ、詳細への直接リンクと再読み込み、コードとプロンプト、ファイルとZIP保存を確認します。
+
 ## パーツを持ち出す
 
 | 形式 | 内容 |

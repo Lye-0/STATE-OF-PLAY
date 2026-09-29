@@ -47,3 +47,9 @@ CSSは部品ルートに閉じ、隣接する別スキンへ漏らしません�
 GitHub ActionsはUbuntu / Windows × 6グループで `npm run verify` の工程を分担します。ブラウザーを使う各グループは独自の本番ビルドを作ります。フィクスチャーは `tests/`、実行時の生成物は `.test-output/` に置きます。Viteは `.test-output/` の変更を監視対象から外し、別テストの生成によるページ再読み込みを防ぎます。
 
 `dist/` は配信用、`release/` はZIP、`.test-output/` は検証用で、いずれもGit管理対象外です。`npm run package` は正本と設定を収録し、ZIP内の `RELEASE-MANIFEST.json` とCRC・SHA-256を検証します。
+
+## GitHub Pages
+
+`.github/workflows/pages.yml` をmainから手動実行して公開します。`configure-pages` の `base_path` をViteの `--base` へ渡し、型チェック・ビルド・`test:pages` の成功後に `dist/` をPages用アーティファクトとしてデプロイします。初回はSettingsでPagesのSourceをGitHub Actionsへ設定します。
+
+`tests/pages.browser.ts` は本番成果物をサブパスに限定した静的HTTPサーバーで検証します。Viteの開発処理やSPAフォールバックを使わず、カテゴリの遅延読み込み、詳細JSON、クエリ・ハッシュによる再読み込み、ローカルのファイル・ZIP生成を確認します。公開先でサーバー側のAPIやリライトは不要です。
