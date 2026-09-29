@@ -1,5 +1,5 @@
 
-/* Prism 1.30.0 — MIT; see licenses/Prism.txt. */
+/* Prism 1.30.0 — MIT; see ../THIRD-PARTY-NOTICES.md. */
 window.Prism = { manual: true };
 
 /* **********************************************

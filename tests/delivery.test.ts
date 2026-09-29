@@ -15,15 +15,15 @@ const {parts,bases}=buildCatalog();
 const layouts=['portable','original'] as const;
 
 test('parts license reaches every part, delivery layout and prompt without entering the listing',()=>{
- const license=fs.readFileSync(path.join(ROOT,'PARTS-LICENSE.txt'),'utf8').replaceAll('\r\n','\n');
+ const license=fs.readFileSync(path.join(ROOT,'PARTS-LICENSE'),'utf8').replaceAll('\r\n','\n');
  assert.ok(license.length>100);
  for(const part of parts){
   assert.equal(part.partsLicense,license,part.id);
   for(const format of FORMATS)for(const layout of layouts){
    const entries=packageContents(part,format,layout);
-   assert.equal(entries.filter(file=>file.name==='PARTS-LICENSE.txt').length,1);
-   assert.equal(entries.find(file=>file.name==='PARTS-LICENSE.txt')!.code,license);
-   assert.deepEqual(JSON.parse(buildManifest(part,format,layout)).license,{id:PARTS_LICENSE_ID,file:'PARTS-LICENSE.txt'});
+   assert.equal(entries.filter(file=>file.name==='PARTS-LICENSE').length,1);
+   assert.equal(entries.find(file=>file.name==='PARTS-LICENSE')!.code,license);
+   assert.deepEqual(JSON.parse(buildManifest(part,format,layout)).license,{id:PARTS_LICENSE_ID,file:'PARTS-LICENSE'});
    assert.ok(buildUsage(part,format,layout).includes(license.trimEnd()),part.id);
    for(const includeCode of [true,false])assert.ok(buildPrompt(part,format,layout,includeCode).includes(license.trimEnd()),part.id);
   }
@@ -41,7 +41,7 @@ test('parts license survives actual source and review ZIPs in four formats and b
   const bytes=await addArchiveEntries(new JSZip(),root,entries).generateAsync({type:'nodebuffer',compression:'DEFLATE'});
   const zip=await JSZip.loadAsync(bytes,{checkCRC32:true});
   const suffix=mode==='text'?'.txt':'';
-  assert.equal(await zip.file(`${root}/PARTS-LICENSE.txt${suffix}`)!.async('string'),part.partsLicense);
+  assert.equal(await zip.file(`${root}/PARTS-LICENSE${suffix}`)!.async('string'),part.partsLicense);
   assert.ok((await zip.file(`${root}/README.md${suffix}`)!.async('string')).includes(part.partsLicense.trimEnd()));
  }
 });

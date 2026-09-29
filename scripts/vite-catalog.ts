@@ -34,7 +34,7 @@ export function catalogPlugin(root = ROOT): Plugin {
     if (!result) { result = JSON.stringify(packCatalog(buildCatalog(root, [id]).parts)); details.set(id,result); }
     return result;
   };
-  const relevant = (file: string) => /^(src\/(parts|shared|catalog)\/|scripts\/|PARTS-LICENSE\.txt$)/.test(path.relative(root,file).split(path.sep).join('/'));
+  const relevant = (file: string) => /^(src\/(parts|shared|catalog)\/|scripts\/|PARTS-LICENSE$|THIRD-PARTY-NOTICES\.md$)/.test(path.relative(root,file).split(path.sep).join('/'));
   const invalidate = () => { listing = undefined; legacy = undefined; details.clear(); };
   const reload = (server: ViteDevServer, file: string) => {
     if (!relevant(file)) return;
@@ -45,7 +45,12 @@ export function catalogPlugin(root = ROOT): Plugin {
   return {
     name:'state-of-play-catalog', enforce:'pre',
     configResolved(config) { production = config.command === 'build'; baseUrl = config.base; },
-    buildStart() { invalidate(); },
+    buildStart() {
+      invalidate();
+      if (production) for (const name of ['PARTS-LICENSE', 'THIRD-PARTY-NOTICES.md']) {
+        this.emitFile({type:'asset',fileName:name,source:fs.readFileSync(path.join(root,name),'utf8')});
+      }
+    },
     resolveId(id) { if (/^virtual:sop-(browser|category\/[a-z]+|catalog|mounts|styles)$/.test(id)) return '\0'+id; },
     load(id) {
       if (!id.startsWith('\0virtual:sop-')) return;
@@ -87,7 +92,7 @@ export function catalogPlugin(root = ROOT): Plugin {
         try { const json=payload(name.slice(0,-5)); res.setHeader('Content-Type','application/json; charset=utf-8'); res.setHeader('Cache-Control','no-cache'); res.end(json); }
         catch(error) { res.statusCode=500; res.end(JSON.stringify({error:'Unable to build part'})); server.config.logger.error(String(error)); }
       });
-      server.watcher.add(['src/parts','src/shared','src/catalog','scripts','PARTS-LICENSE.txt'].map(p=>path.join(root,p)));
+      server.watcher.add(['src/parts','src/shared','src/catalog','scripts','PARTS-LICENSE','THIRD-PARTY-NOTICES.md'].map(p=>path.join(root,p)));
       const change = (file:string) => reload(server,file);
       server.watcher.on('add',change).on('unlink',change);
       server.httpServer?.once('close',()=>{server.watcher.off('add',change).off('unlink',change);});

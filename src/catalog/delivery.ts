@@ -2,7 +2,7 @@
 import { FORMATS, LAYOUTS, DESIGN_TYPES, type Format, type Layout, type Part, type SourceFile } from './types.ts';
 import { archiveTree, validateArchiveEntries, type ArchiveEntry } from '../shared/archive.ts';
 export const PARTS_LICENSE_ID = 'LicenseRef-STATE-OF-PLAY-Parts-1.0';
-const licenseUsage = '## パーツのライセンス\nSTATE OF PLAY Parts License 1.0（独自ライセンス）です。商用利用・改変は自由です。完成したサイト・アプリへの組み込みでは、作者名・リンク・ライセンス文の掲載も保持も不要です。パーツや改変版をUIライブラリ・素材集・再利用用テンプレートなどとして再配布する場合は、著作権表示・STATE OF PLAYの名称・入手元URLとライセンス全文を残してください。ZIP内の PARTS-LICENSE.txt が正式な条件です。プロジェクト全体と第三者の素材・依存はこの許諾の対象外です。\n\n';
+const licenseUsage = '## パーツのライセンス\nSTATE OF PLAY Parts License 1.0（独自ライセンス）です。商用利用・改変は自由です。完成したサイト・アプリへの組み込みでは、作者名・リンク・ライセンス文の掲載も保持も不要です。パーツや改変版をUIライブラリ・素材集・再利用用テンプレートなどとして再配布する場合は、著作権表示・STATE OF PLAYの名称・入手元URLとライセンス全文を残してください。ZIP内の PARTS-LICENSE が正式な条件です。プロジェクト全体と第三者の素材・依存はこの許諾の対象外です。\n\n';
 export interface Delivery {
   layout: Layout; format: Format; files: readonly SourceFile[];
   componentRoot: string; entry: string; stylesheet: string; markup: string; example: string;
@@ -72,7 +72,7 @@ export function buildManifest(part: Part, format: Format, layout: Layout): strin
     ...(part.glassBlur===undefined?{}:{glassBlur:part.glassBlur}),
     componentRoot:d.componentRoot,entry:d.entry,stylesheet:d.stylesheet,example:d.example,
     externalDependencies:d.externalDependencies,
-    license:{id:PARTS_LICENSE_ID,file:'PARTS-LICENSE.txt'},
+    license:{id:PARTS_LICENSE_ID,file:'PARTS-LICENSE'},
     files:d.files.map(f=>({path:f.name,source:f.sourceName,role:f.group==='example'?'example':'runtime'})),
     note:'Paths are export-relative, not mandatory locations in your project. Review existing files before copying.'},null,2)+'\n';
 }
@@ -80,6 +80,6 @@ export function packageContents(part: Part, format: Format, layout: Layout, incl
   const d=getDelivery(part,format,layout);
   return validateArchiveEntries([...d.files, {name:'README.md',code:buildUsage(part,format,layout)},
     {name:'PROMPT.md',code:buildPrompt(part,format,layout,includeCode)}, {name:'INTEGRATION.json',code:buildManifest(part,format,layout)},
-    {name:'PARTS-LICENSE.txt',code:part.partsLicense},
+    {name:'PARTS-LICENSE',code:part.partsLicense},
     ...Object.entries(part.preview).map(([name,code])=>({name:'preview/'+name,code}))]);
 }

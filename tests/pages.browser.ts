@@ -54,6 +54,11 @@ try {
   await page.goto(url, {waitUntil: 'domcontentloaded'});
   await page.waitForFunction(() => document.documentElement.classList.contains('site-ready'));
   await galleryReady(page);
+  for (const name of ['PARTS-LICENSE', 'THIRD-PARTY-NOTICES.md']) {
+    const response = await page.request.get(url + name);
+    assert.equal(response.status(), 200, name + ' is shipped with the static site');
+    assert.equal(await response.text(), fs.readFileSync(path.join(ROOT, name), 'utf8'));
+  }
   assert.equal(await page.locator('[data-part]').count(), records.filter(p => p.split('/')[2] === 'toggles').length);
   const toggle = page.locator('[data-part="chrome"] [role="switch"]');
   const before = await toggle.getAttribute('aria-checked');
@@ -93,9 +98,9 @@ try {
   const zip = await JSZip.loadAsync(fs.readFileSync((await zipDownload.path())!), {checkCRC32: true});
   assert.ok(Object.keys(zip.files).some(name => name.endsWith('/INTEGRATION.json')));
   assert.ok(Object.keys(zip.files).some(name => name.endsWith('/styles.css')));
-  const licenseFile = Object.keys(zip.files).find(name => name.endsWith('/PARTS-LICENSE.txt'));
+  const licenseFile = Object.keys(zip.files).find(name => name.endsWith('/PARTS-LICENSE'));
   assert.ok(licenseFile, 'Browser ZIP includes the parts license');
-  assert.equal(await zip.file(licenseFile)!.async('string'), fs.readFileSync(path.join(ROOT, 'PARTS-LICENSE.txt'), 'utf8').replaceAll('\r\n', '\n'));
+  assert.equal(await zip.file(licenseFile)!.async('string'), fs.readFileSync(path.join(ROOT, 'PARTS-LICENSE'), 'utf8').replaceAll('\r\n', '\n'));
   await page.locator('.package-dialog .package-close').click();
   await page.screenshot({path: path.join(output, 'details.png')});
   await details.locator('.close-detail').click();
