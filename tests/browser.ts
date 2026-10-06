@@ -184,12 +184,17 @@ try{
   await page.keyboard.press('Escape');assert.equal(await page.locator('#part-details').getAttribute('open'),null);assert.equal(await page.evaluate(()=>(document.activeElement as HTMLElement).dataset.open),'luminous-frame');
  });
  await run(`Both layouts: ${browserParts.reduce((n,p)=>n+FORMATS.reduce((k,f)=>k+p.files[f].length,0),0)*2} representative code previews equal exported sources and selection follows the source identity`,async()=>{
-  let count=0;
+  let count=0,sourceCategory='';
   // The exhaustive source matrix is checked by unit tests; this checks rendered DOM.
   // Batch DOM clicks within one browser round-trip per part to keep growing CI affordable.
   // Pointer/focus behavior is checked separately above and below; this loop checks source bytes.
   await page.emulateMedia({reducedMotion:'reduce'});
-  for(const part of browserParts){await selectCategory(page,part.category);await page.locator(`[data-open="${part.id}"]`).evaluate(element=>(element as HTMLButtonElement).click());await galleryReady(page,true);
+  for(const part of browserParts){
+   // Isolate source rendering from the thousands of component selectors loaded by
+   // the earlier full-gallery checks. Cross-category CSS order is tested in
+   // lazy-loading.browser.ts; every source/format/layout is still compared here.
+   if(!offline&&sourceCategory!==part.category){await load('/?category='+encodeURIComponent(part.category));await galleryReady(page);sourceCategory=part.category;}
+   await selectCategory(page,part.category);await page.locator(`[data-open="${part.id}"]`).evaluate(element=>(element as HTMLButtonElement).click());await galleryReady(page,true);
    const cases=layouts.flatMap(layout=>FORMATS.map(format=>({layout,format,files:getDelivery(part,format,layout).files})));
    const rendered=await page.evaluate(cases=>cases.map(item=>{
     const select=document.querySelector<HTMLSelectElement>('#export-layout')!;select.value=item.layout;select.dispatchEvent(new Event('change',{bubbles:true}));
