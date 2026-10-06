@@ -1,0 +1,52 @@
+{
+  "id": "hinged-record-history",
+  "name": "Hinged Record History",
+  "category": "timelines",
+  "tagline": "時刻の小窓を支点に、記録の内容が右へ開く。",
+  "description": "時刻の小窓を支点に、記録の内容が右へ開く。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3248,
+  "version": "1.0.0",
+  "material": "HINGED RECORD HISTORY",
+  "accent": "185,205,194",
+  "componentName": "HingedRecordHistory",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "timelines"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Hinged Record History",
+    "時刻の小窓を支点に、記録の内容が右へ開く。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "TimelineItem[]",
+      "id・title・description・date・dateTime・status・hrefなど。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "詳細を開くID。expandedで外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(ids: string[]) => void",
+      "開閉したIDを通知。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "詳細の開閉を無効にする。"
+    ],
+    [
+      "label",
+      "string",
+      "履歴全体の名前。"
+    ]
+  ]
+}

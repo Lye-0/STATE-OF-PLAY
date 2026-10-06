@@ -10,11 +10,11 @@ import {parseDate,dateText,parseTime,validDate} from '../src/shared/foundation/d
 import {pageItems} from '../src/shared/foundation/navigation.ts';
 import {accepted} from '../src/shared/foundation/upload.ts';
 const catalogue=buildCatalog(),parts=catalogue.parts.filter(p=>!!p.foundation);
-const expected={sliders:24,radios:24,comboboxes:24,toasts:24,hints:24,progress:24,loaders:39,uploads:20,datepickers:20,pagination:16,breadcrumbs:16,badges:24,numbers:20};
-test('reconstructed collection: 825 authored parts, 37 categories, 299 foundations',()=>{
- assert.equal(catalogue.parts.length,825);assert.equal(new Set(catalogue.parts.map(p=>p.category)).size,37);assert.equal(parts.length,299);
- for(const [category,count] of Object.entries(expected)){const group=parts.filter(p=>p.category===category);assert.equal(group.length,count);assert.equal(group.filter(p=>p.designType==='A').length,category==='loaders'?24:count===24?16:count===20?13:10);}
- assert.equal(parts.filter(p=>p.designType==='A').length,195);assert.equal(parts.filter(p=>p.designType==='B').length,104);
+const expected={sliders:20,radios:21,comboboxes:20,toasts:19,hints:21,progress:20,loaders:25,uploads:16,datepickers:18,pagination:13,breadcrumbs:12,badges:21,numbers:17};
+test('curated historical collection: 733 authored parts, 37 categories, 243 foundations',()=>{
+ assert.equal(catalogue.parts.length,733);assert.equal(new Set(catalogue.parts.map(p=>p.category)).size,37);assert.equal(parts.length,243);
+ for(const [category,count] of Object.entries(expected)){const group=parts.filter(p=>p.category===category);assert.equal(group.length,count);assert.equal(group.filter(p=>p.designType==='A').length,({sliders:16,radios:16,comboboxes:16,toasts:16,hints:16,progress:16,loaders:14,uploads:13,datepickers:13,pagination:10,breadcrumbs:10,badges:16,numbers:13} as Record<string,number>)[category]);}
+ assert.equal(parts.filter(p=>p.designType==='A').length,185);assert.equal(parts.filter(p=>p.designType==='B').length,58);
 });
 test('every foundation has real markup, implementation, use example and prompt in every format/layout',()=>{
  for(const p of parts){assert.match(p.markup,/sop-foundation/);assert.equal(p.foundation!.kind,p.category);assert.ok(p.prompt.length>300);for(const format of FORMATS)for(const layout of ['portable','original']as const){const d=getDelivery(p,format,layout);assert.ok(d.files.some(f=>f.name===d.entry));assert.ok(d.runtimeFiles.every(f=>!f.name.includes('src/app/')));assert.ok(packageContents(p,format,layout).some(f=>f.name==='PROMPT.md'));assert.match(buildPrompt(p,format,layout),/既存プロジェクト/);}}
@@ -77,7 +77,7 @@ test('date constraints enforce boundaries and callback exclusions',()=>{
 });
 test('authored date and time inputs accept local values without an OS picker',()=>{
  assert.equal(parseTime('0735'),'07:35');assert.equal(parseTime('9:05'),'09:05');assert.equal(parseTime('23:59'),'23:59');assert.equal(parseTime('24:00'),null);assert.equal(parseTime('12:60'),null);
- const calendars=parts.filter(part=>part.category==='datepickers');assert.equal(calendars.length,20);
+ const calendars=parts.filter(part=>part.category==='datepickers');assert.equal(calendars.length,18);
  for(const part of calendars){
   assert.doesNotMatch(part.markup,/type="(?:date|time|datetime-local)"/);
   assert.match(part.markup,/data-time-picker/);

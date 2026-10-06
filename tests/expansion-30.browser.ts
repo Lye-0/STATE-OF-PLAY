@@ -1,0 +1,56 @@
+import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';
+import {chromium} from 'playwright';import {createServer} from 'vite';
+import {ROOT} from '../scripts/catalog.ts';import {currentParts} from './gallery-counts.ts';import {galleryReady,selectCategory} from './gallery-ready.ts';
+const out=path.join(ROOT,'docs/expansion-30-2026-10-06');
+const designs=currentParts().filter(part=>part.tags.includes('EXPANSION-30'));
+const captureOnly=!!process.env.SOP_EXPANSION_CAPTURE_ONLY;const chosen=process.env.SOP_EXPANSION_IDS?.split(',');const specs=designs.filter(d=>!chosen||chosen.includes(d.id));
+const server=await createServer({root:ROOT,server:{host:'127.0.0.1',port:0,watch:{ignored:['**/docs/**','**/.test-output/**']}}});await server.listen();
+const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
+const page=await browser.newPage({viewport:{width:1500,height:1000}});const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));fs.mkdirSync(path.join(out,'photos'),{recursive:true});const results:object[]=[];
+try{
+ await page.goto(server.resolvedUrls!.local[0]);await page.waitForFunction(()=>document.documentElement.classList.contains('site-ready'));
+ for(const d of specs){
+  await selectCategory(page,d.category);await galleryReady(page);
+  const card=page.locator(`[data-part="${d.id}"]`);while(!await card.count()&&await page.locator('#load-more').isVisible()){await page.locator('#load-more').click();await galleryReady(page);}
+  assert.ok(await card.count(),d.id+' in gallery');await card.scrollIntoViewIfNeeded();await card.screenshot({path:path.join(out,'photos',d.id+'.png'),animations:'disabled'});
+  const stage=card.locator('.object-stage');await page.mouse.move(1,1);await stage.screenshot({path:path.join(out,'photos',d.id+'-stage.png'),animations:'disabled'});if(captureOnly){console.log('CAPTURE '+d.id);continue;}
+  if(d.category==='toggles'){const sw=card.locator('[role=switch]');const old=await sw.getAttribute('aria-checked');await sw.click();assert.notEqual(await sw.getAttribute('aria-checked'),old,d.id+' state');}
+  else if(d.category==='textboxes'){const input=card.locator('input:not([type=hidden]),textarea').first();await input.fill('使いやすいデザイン');assert.equal(await input.inputValue(),'使いやすいデザイン');}
+  else if(d.category==='accordions'){await card.locator('.sop-accordion-trigger').last().click();assert.equal(await card.locator('.sop-accordion-trigger').last().getAttribute('aria-expanded'),'true');}
+  else if(d.category==='buttons'){await card.locator('.sop-action').click();await page.waitForTimeout(100);}
+  else if(['tabs','segments'].includes(d.category)){await card.locator('.sop-choice-item').last().click();assert.equal(await card.locator('.sop-choice-item').last().getAttribute('data-selected'),'true');}
+  else if(d.category==='checkboxes'){await card.locator('input[type=checkbox]').check();assert.ok(await card.locator('input[type=checkbox]').isChecked());}
+  else if(d.category==='sliders'){await card.locator('input[data-range]').first().fill('73');assert.match(await card.locator('[data-reading]').innerText(),/73/);}
+  else if(d.category==='numbers'){const number=card.locator('[data-number]'),before=Number(await number.inputValue());await card.locator('[data-adjust="1"]').click();assert.ok(Number(await number.inputValue())>before);}
+  else if(d.category==='radios'){await card.locator('input[type=radio]').last().check();assert.ok(await card.locator('input[type=radio]').last().isChecked());}
+  else if(d.category==='comboboxes'){await card.locator('[data-combo-toggle]').click();assert.equal(await card.locator('[data-combo]').getAttribute('aria-expanded'),'true');await card.locator('[data-combo-panel]').screenshot({path:path.join(out,'photos',d.id+'-expanded.png'),animations:'disabled'});await card.locator('[data-combo]').press('ArrowDown');await card.locator('[data-combo]').press('Enter');assert.ok(await card.locator('[data-combo]').inputValue());}
+  else if(d.category==='hints'){await card.locator('[data-hint-trigger]').click();assert.ok(await card.locator('[data-hint-panel]').isVisible());await card.locator('[data-hint-panel]').screenshot({path:path.join(out,'photos',d.id+'-expanded.png'),animations:'disabled'});await card.locator('[data-hint-trigger]').press('Escape');}
+  else if(d.category==='popups'){await card.locator('[data-popup-open]').click();assert.ok(await card.locator('dialog').isVisible());await card.locator('dialog').screenshot({path:path.join(out,'photos',d.id+'-expanded.png'),animations:'disabled'});await page.keyboard.press('Escape');}
+  else if(d.category==='avatars'){await card.locator('[data-user]').nth(1).click();assert.equal(await card.locator('[data-user]').nth(1).getAttribute('data-selected'),'true');}
+  else if(d.category==='ratings'){await card.locator('input[type=radio]').nth(3).check();assert.match(await card.locator('output').innerText(),/4 \/ 5/);}
+  else if(d.category==='colors'){const input=card.locator('[data-hex]');await input.fill('#AC6499');await input.press('Enter');assert.equal((await input.inputValue()).toUpperCase(),'#AC6499');}
+  else if(d.category==='badges'){const box=card.locator('[data-tag-select]').first();const before=await box.isChecked();await card.locator('.ff-tag label').first().click();assert.notEqual(await box.isChecked(),before,d.id+' tag selection');}
+  else if(d.category==='breadcrumbs'){const more=card.locator('[data-crumb-more]');if(await more.count()){await more.click();assert.equal(await more.getAttribute('aria-expanded'),'true');assert.ok(await card.locator('[data-crumb-menu]').isVisible());await card.locator('[data-crumb-menu]').screenshot({path:path.join(out,'photos',d.id+'-expanded.png'),animations:'disabled'});await page.keyboard.press('Escape');assert.equal(await more.getAttribute('aria-expanded'),'false');}}
+  else if(d.category==='pagination'){const current=await card.locator('[aria-current=page]').getAttribute('data-page');await card.locator('[aria-label="次のページ"]').click();assert.notEqual(await card.locator('[aria-current=page]').getAttribute('data-page'),current);}
+  else if(d.category==='uploads'){await card.locator('input[type=file]').setInputFiles({name:'design.txt',mimeType:'text/plain',buffer:Buffer.from('STATE OF PLAY')});assert.match(await card.locator('[data-upload-files]').innerText(),/design.txt/);}
+  else if(d.category==='datepickers'){await card.locator('[data-calendar-toggle]').click();assert.ok(await card.locator('[data-calendar]').isVisible());await card.locator('[data-calendar]').screenshot({path:path.join(out,'photos',d.id+'-expanded.png'),animations:'disabled'});await page.keyboard.press('Escape');}
+  else if(d.category==='timelines'){await card.locator('.sg-event summary').last().click();assert.ok(await card.locator('.sg-event details').last().getAttribute('open')!==null);}
+  else if(d.category==='wizards'){const before=await card.locator('[aria-current=step]').innerText();await card.locator('.sg-wizard-fields input').first().fill('Design studio');await card.locator('[data-wizard-next]').click();assert.notEqual(await card.locator('[aria-current=step]').innerText(),before);}
+  else if(d.category==='searchbars'){await card.locator('.wb-search-input').fill('design');await page.waitForTimeout(280);assert.ok(await card.locator('.wb-search-results').isVisible());assert.ok(await card.locator('.wb-results-list [role=option]').count()>0);}
+  else if(d.category==='navigation'){const link=card.locator('.wb-nav-desktop .wb-nav-link').nth(1);await link.click();assert.equal(await link.getAttribute('aria-current'),'page');}
+  else if(d.category==='tables'){await card.locator('.wb-table-search input').fill('Interaction');assert.equal(await card.locator('tbody tr').count(),1);await card.locator('tbody input[type=checkbox]').check();await card.locator('[data-sort=name]').click();assert.equal(await card.locator('th[data-column=name]').getAttribute('aria-sort'),'ascending');}
+  else if(d.category==='commands'){await card.locator('.wb-command-launch').click();assert.ok(await card.locator('.wb-command-dialog').isVisible());await card.locator('.wb-command-frame').screenshot({path:path.join(out,'photos',d.id+'-expanded.png'),animations:'disabled'});const query=await card.locator('.wb-command-copy strong').first().innerText();await card.locator('.wb-command-input').fill(query);assert.equal(await card.locator('.wb-command-option').count(),1);await card.locator('.wb-command-close').click();await card.locator('.wb-command-dialog').waitFor({state:'hidden'});}
+  else if(d.category==='contextmenus'){await card.locator('.wb-context-open').click();assert.ok(await card.locator('.wb-context-panel').isVisible());await card.locator('.wb-context-panel').screenshot({path:path.join(out,'photos',d.id+'-expanded.png'),animations:'disabled'});await page.keyboard.press('Escape');}
+  else if(d.category==='progress'){const before=await card.locator('[data-progress-reading]').innerText();await card.locator('[data-demo-progress="15"]').click();assert.notEqual(await card.locator('[data-progress-reading]').innerText(),before);}
+  else if(d.category==='loaders'){await card.locator('[data-demo-loader]').click();assert.equal(await card.locator('[data-demo-loader]').getAttribute('aria-pressed'),'true');}
+  else if(d.category==='toasts'){await card.locator('[data-notify]').click();assert.ok(await card.locator('[data-toast-stack] .ff-notice').count()>0);}
+  else if(d.category==='skeletons'){await card.locator('.sg-demo-row button').click();assert.equal(await card.locator('[data-sg-kind=skeletons]').getAttribute('aria-busy'),'false');}
+  else if(d.category==='blocks'||d.category==='ornaments'){await card.hover();}
+  await card.screenshot({path:path.join(out,'photos',d.id+'-state.png'),animations:'disabled'});
+  if(['popups','datepickers'].includes(d.category)){await page.setViewportSize({width:320,height:844});await card.scrollIntoViewIfNeeded();const trigger=card.locator(d.category==='popups'?'[data-popup-open]':'[data-calendar-toggle]');await trigger.click();const surface=card.locator(d.category==='popups'?'dialog':'[data-calendar]');await surface.waitFor({state:'visible'});const bounds=await surface.boundingBox();assert.ok(bounds&&bounds.x>=-1&&bounds.x+bounds.width<=321,d.id+' open panel fits 320px');await surface.screenshot({path:path.join(out,'photos',d.id+'-mobile.png'),animations:'disabled'});if(d.category==='popups'){await surface.locator('[data-popup-close=close]').click();await surface.waitFor({state:'hidden'});}else await page.keyboard.press('Escape');await page.setViewportSize({width:1500,height:1000});}
+  results.push({id:d.id,category:d.category,gallery:true,states:true});console.log('PASS '+d.id);
+ }
+ assert.deepEqual(errors,[]);if(!captureOnly)fs.writeFileSync(path.join(out,'browser-results.json'),JSON.stringify(results,null,2)+'\n');
+}finally{await browser.close();await server.close();}
+
+

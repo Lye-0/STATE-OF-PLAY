@@ -1,0 +1,52 @@
+{
+  "id": "folio-column-navigation",
+  "name": "Folio Column Navigation",
+  "category": "navigation",
+  "description": "行き先を章の列として置き、大きな現在地の文字を読みやすく保つ。",
+  "designType": "A",
+  "tagline": "行き先を章の列として置き、大きな現在地の文字を読みやすく保つ。",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3279,
+  "version": "1.0.0",
+  "material": "FOLIO COLUMN NAVIGATION",
+  "accent": "192,216,201",
+  "componentName": "FolioColumnNavigation",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "navigation"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Folio Column Navigation",
+    "行き先を章の列として置き、大きな現在地の文字を読みやすく保つ。",
+    "NAVIGATOR"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "NavigationItem[]",
+      "ラベル・href・子リンク・アイコン・バッジ。"
+    ],
+    [
+      "layout",
+      "header | sidebar | dock | mobile",
+      "置き場所に合うレイアウトを指定。"
+    ],
+    [
+      "active / onActiveChange",
+      "string / callback",
+      "現在地のID。リンクを移動して外部状態から反映可能。"
+    ],
+    [
+      "onNavigate",
+      "(item, event) => void | false",
+      "通常はネイティブリンク。falseで既定移動を止めルーターへ接続。"
+    ],
+    [
+      "open / onOpenChange",
+      "boolean / callback",
+      "モバイルナビゲーションの表示を制御。"
+    ]
+  ]
+}

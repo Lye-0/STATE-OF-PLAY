@@ -1,0 +1,16 @@
+@import "../../../shared/foundation/base.css";
+/* Braced Note Popover — 二本の細いブレースが説明面を支え、情報の範囲を括る。 */
+.sop-foundation.sop-braced-note-popover{--ff-accent:#a9c4d9;--ff-panel:#223c54;--ff-base:#1b2d43;--ff-line:#6e93b0}.sop-foundation.sop-braced-note-popover .ff-hint-trigger{border-top:1px solid #8eb3ce;border-bottom:1px solid #8eb3ce;border-left:0;border-right:0;border-radius:0;background:#365675;padding:14px}.sop-foundation.sop-braced-note-popover .ff-hint-panel{border:0;border-left:3px solid #a1bcd6;border-right:3px solid #a1bcd6;border-radius:0;background:#233b54;box-shadow:8px 8px 0 #40658455;padding:22px}.sop-foundation.sop-braced-note-popover .ff-hint-heading{letter-spacing:1px}.sop-foundation.sop-braced-note-popover .ff-hint-facts{border-top:1px solid #93adc488}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-braced-note-popover,.sop-foundation.sop-braced-note-popover *,.sop-foundation.sop-braced-note-popover::before,.sop-foundation.sop-braced-note-popover::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-braced-note-popover{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-braced-note-popover :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-braced-note-popover:focus-visible,.sop-foundation.sop-braced-note-popover :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-braced-note-popover[data-sop-paused] *,.sop-foundation.sop-braced-note-popover[data-paused=true] *,.sop-foundation.sop-braced-note-popover[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+
+
+/* Visual review: composition and state separation. */
+.sop-foundation.sop-braced-note-popover .ff-hint-trigger{background:transparent;gap:16px;box-shadow:inset 3px 0 var(--ff-accent),inset -3px 0 var(--ff-accent);min-width:142px}.sop-foundation.sop-braced-note-popover .ff-hint-heading{border-bottom:1px solid var(--ff-line);padding-bottom:12px}.sop-foundation.sop-braced-note-popover .ff-hint-facts{grid-template-columns:1fr 1fr;gap:8px 20px;padding:16px 0}.sop-foundation.sop-braced-note-popover .ff-hint-facts span{font:9px Consolas;letter-spacing:1px}.sop-foundation.sop-braced-note-popover .ff-hint-facts strong{font:22px Georgia;grid-row:2}.sop-foundation.sop-braced-note-popover .ff-hint-checkbox{padding-top:12px;border-top:1px solid var(--ff-line)}
+
+/* Final visual review: readable surface and distinct composition. */
+.sop-foundation.sop-braced-note-popover .ff-hint-facts{grid-template-columns:repeat(2,minmax(0,1fr))}.sop-foundation.sop-braced-note-popover .ff-hint-facts strong{font-size:18px;text-align:left;white-space:nowrap}

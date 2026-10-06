@@ -1,0 +1,43 @@
+{
+  "id": "kiln-surface",
+  "name": "Kiln Surface",
+  "category": "blocks",
+  "order": 3005,
+  "version": "1.0.0",
+  "tagline": "焼き物の厚い口縁と釉薬の溜まりが、内容を囲む浅い器になる。",
+  "description": "焼き物の厚い口縁と釉薬の溜まりが、内容を囲む浅い器になる。",
+  "material": "KILN SURFACE",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "212,216,211",
+  "componentName": "KilnSurface",
+  "designType": "A",
+  "runtime": "CSS only",
+  "tags": [
+    "EXPANSION-30",
+    "Kiln Surface",
+    "焼き物の厚い口縁と釉薬の溜まりが、内容を囲む浅い器になる。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "文章、画像、フォームなどの中身。展示サンプルは必須ではありません。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "配置と外側のサイズを指定します。"
+    ],
+    [
+      "--sop-padding",
+      "CSSの長さ",
+      "本文領域の余白を調整します。"
+    ],
+    [
+      "color / --sop-ink",
+      "CSSカラー",
+      "本文色。背景に合わせてコントラストを確認してください。"
+    ]
+  ]
+}

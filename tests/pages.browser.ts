@@ -1,3 +1,5 @@
+import {galleryCount} from './gallery-counts.ts';
+import {selectSetting} from './detail-settings.ts';
 /** Serve the built artifact exactly as static Pages files, without Vite's SPA fallback. */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -59,7 +61,7 @@ try {
     assert.equal(response.status(), 200, name + ' is shipped with the static site');
     assert.equal(await response.text(), fs.readFileSync(path.join(ROOT, name), 'utf8'));
   }
-  assert.equal(await page.locator('[data-part]').count(), records.filter(p => p.split('/')[2] === 'toggles').length);
+  assert.equal(await page.locator('[data-part]').count(), await galleryCount(page));
   const toggle = page.locator('[data-part="chrome"] [role="switch"]');
   const before = await toggle.getAttribute('aria-checked');
   await toggle.click();
@@ -68,7 +70,7 @@ try {
 
   for (const category of categories.filter(c => c.id !== 'all')) {
     await selectCategory(page, category.id);
-    assert.equal(await page.locator('[data-part]').count(), records.filter(p => p.split('/')[2] === category.id).length, category.id);
+    assert.equal(await page.locator('[data-part]').count(), await galleryCount(page), category.id);
   }
   console.log('PASS all 37 lazy category modules and their styles under the Pages base path');
 
@@ -80,7 +82,7 @@ try {
   await galleryReady(page);
   await details.locator('[data-preview-part="lgc-tables-mist"]').waitFor();
   await details.locator('[data-format="js"]').click();
-  await details.locator('#export-layout').selectOption('portable');
+  await selectSetting(details.locator('#export-layout'),'portable');
   assert.ok((await details.locator('.editor code').innerText()).length > 100);
   await details.locator('#tab-prompt').click();
   assert.ok((await details.locator('#prompt-text').inputValue()).includes('Mist Table'));

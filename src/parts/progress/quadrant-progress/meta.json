@@ -1,0 +1,58 @@
+{
+  "id": "quadrant-progress",
+  "name": "Quadrant Progress",
+  "category": "progress",
+  "order": 3096,
+  "version": "1.0.0",
+  "tagline": "数値を大きな象限の中央に置き、外周と下辺を分担して読む。",
+  "description": "数値を大きな象限の中央に置き、外周と下辺を分担して読む。",
+  "material": "QUADRANT PROGRESS",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "CSS + state",
+  "componentName": "QuadrantProgress",
+  "tags": [
+    "EXPANSION-30",
+    "Quadrant Progress",
+    "数値を大きな象限の中央に置き、外周と下辺を分担して読む。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "quadrant-progress",
+    "kind": "progress",
+    "variant": "essential",
+    "label": "ここまでの歩みを。",
+    "description": "",
+    "defaultValue": 72,
+    "min": 0,
+    "max": 100
+  }
+}

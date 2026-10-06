@@ -1,0 +1,58 @@
+{
+  "id": "pillbox-popover",
+  "name": "Pillbox Popover",
+  "category": "hints",
+  "order": 3112,
+  "version": "1.0.0",
+  "tagline": "小さな錠剤ケースの口縁を使い、補足情報と操作を仕切る。",
+  "description": "小さな錠剤ケースの口縁を使い、補足情報と操作を仕切る。",
+  "material": "PILLBOX POPOVER",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "PillboxPopover",
+  "tags": [
+    "EXPANSION-30",
+    "Pillbox Popover",
+    "小さな錠剤ケースの口縁を使い、補足情報と操作を仕切る。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "pillbox-popover",
+    "kind": "hints",
+    "variant": "essential",
+    "label": "詳しく見る",
+    "description": "",
+    "defaultValue": null,
+    "interactive": true,
+    "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
+  }
+}

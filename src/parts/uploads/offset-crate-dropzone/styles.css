@@ -1,0 +1,12 @@
+@import "../../../shared/foundation/base.css";
+/* Offset Crate Dropzone — 角をずらした外箱と内箱が、ファイルの受取場所に奥行きを作る。 */
+.sop-foundation.sop-offset-crate-dropzone{--ff-accent:#d3baa1;--ff-panel:#554235;--ff-base:#3a2f2a;--ff-line:#a78a6d}.sop-foundation.sop-offset-crate-dropzone .ff-dropzone{border:1px solid #ad9478;border-radius:1px;background:#4f4031;box-shadow:7px 7px 0 #8d755644,-5px -5px 0 #c6a98422;min-height:154px;padding:28px}.sop-foundation.sop-offset-crate-dropzone .ff-upload-symbol{border:1px solid #c1a27f;border-radius:2px;background:#755d43;transform:rotate(8deg)}.sop-foundation.sop-offset-crate-dropzone .ff-dropzone[data-dragging=true]{box-shadow:9px 9px 0 #c1a07c44,-7px -7px 0 #d7bd9222}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-offset-crate-dropzone,.sop-foundation.sop-offset-crate-dropzone *,.sop-foundation.sop-offset-crate-dropzone::before,.sop-foundation.sop-offset-crate-dropzone::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-offset-crate-dropzone{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-offset-crate-dropzone :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-offset-crate-dropzone:focus-visible,.sop-foundation.sop-offset-crate-dropzone :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-offset-crate-dropzone[data-sop-paused] *,.sop-foundation.sop-offset-crate-dropzone[data-paused=true] *,.sop-foundation.sop-offset-crate-dropzone[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+
+/* Visual review: composition and state separation. */
+.sop-foundation.sop-offset-crate-dropzone .ff-dropzone{display:grid;grid-template-columns:minmax(0,1fr) 45px;gap:12px;min-height:140px;box-shadow:8px 8px var(--ff-base),9px 9px var(--ff-line);border:1px solid var(--ff-line);padding:22px;background:transparent}.sop-foundation.sop-offset-crate-dropzone .ff-dropzone strong{font:25px Georgia;grid-column:1;grid-row:1}.sop-foundation.sop-offset-crate-dropzone .ff-upload-symbol{position:relative;inset:auto;grid-column:2;grid-row:1 / 3;transform:none;height:60px;width:40px}.sop-foundation.sop-offset-crate-dropzone .ff-dropzone>span:not(.ff-upload-symbol){grid-column:1;grid-row:2}.sop-foundation.sop-offset-crate-dropzone [data-upload-limits]{grid-column:1 / -1;border-top:1px dashed var(--ff-line);padding-top:10px}

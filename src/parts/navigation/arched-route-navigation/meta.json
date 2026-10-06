@@ -1,0 +1,52 @@
+{
+  "id": "arched-route-navigation",
+  "name": "Arched Route Navigation",
+  "category": "navigation",
+  "description": "上端の丸い行き先窓を、低い水平線でつなげる。",
+  "designType": "A",
+  "tagline": "上端の丸い行き先窓を、低い水平線でつなげる。",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3275,
+  "version": "1.0.0",
+  "material": "ARCHED ROUTE NAVIGATION",
+  "accent": "192,216,201",
+  "componentName": "ArchedRouteNavigation",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "navigation"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Arched Route Navigation",
+    "上端の丸い行き先窓を、低い水平線でつなげる。",
+    "NAVIGATOR"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "NavigationItem[]",
+      "ラベル・href・子リンク・アイコン・バッジ。"
+    ],
+    [
+      "layout",
+      "header | sidebar | dock | mobile",
+      "置き場所に合うレイアウトを指定。"
+    ],
+    [
+      "active / onActiveChange",
+      "string / callback",
+      "現在地のID。リンクを移動して外部状態から反映可能。"
+    ],
+    [
+      "onNavigate",
+      "(item, event) => void | false",
+      "通常はネイティブリンク。falseで既定移動を止めルーターへ接続。"
+    ],
+    [
+      "open / onOpenChange",
+      "boolean / callback",
+      "モバイルナビゲーションの表示を制御。"
+    ]
+  ]
+}

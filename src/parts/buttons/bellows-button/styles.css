@@ -1,0 +1,8 @@
+@import "../../../shared/action-button-base.css";
+/* Bellows Button — 折り畳んだ金属の側面が、押下に合わせて縮む。 */
+.sop-action.sop-bellows-button{--sop-action-ink:#f4edd9;--sop-action-accent:#c9b78f;background:#534a45;border:1px solid #a6957e;border-radius:3px;padding:16px 27px;box-shadow:0 5px 0 #362c29,0 7px 0 #78645a,0 11px 0 #292223;transform:translateY(-4px);transition:transform .35s,box-shadow .35s}.sop-action.sop-bellows-button .sop-action-art{display:none}.sop-action.sop-bellows-button:hover{transform:translateY(-2px);box-shadow:0 4px 0 #362c29,0 6px 0 #78645a,0 8px 0 #292223}.sop-action.sop-bellows-button:active{transform:translateY(3px);box-shadow:0 1px 0 #362c29}
+@media(prefers-reduced-motion:reduce){.sop-action.sop-bellows-button,.sop-action.sop-bellows-button *,.sop-action.sop-bellows-button::before,.sop-action.sop-bellows-button::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-action.sop-bellows-button{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-action.sop-bellows-button :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-action.sop-bellows-button:focus-visible,.sop-action.sop-bellows-button :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-action.sop-bellows-button[data-sop-paused] *,.sop-action.sop-bellows-button[data-paused=true] *,.sop-action.sop-bellows-button[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

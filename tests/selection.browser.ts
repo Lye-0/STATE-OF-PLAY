@@ -1,3 +1,5 @@
+import {galleryCount} from './gallery-counts.ts';
+import {selectSetting} from './detail-settings.ts';
 import {galleryReady} from './gallery-ready.ts';
 /** Tabs and native radio selectors: real browser/React, variable counts and consumer relocation. */
 import assert from 'node:assert/strict';
@@ -22,7 +24,7 @@ try{
  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
  if(offline){const files=offlineFiles(data);await page.setContent(files.get('/index.html')!.replace(/<script[^>]*>[\s\S]*?<\/script>/g,'').replace(/<link[^>]*>/g,''));await page.addStyleTag({content:files.get('/test-styles.css')!});for(const vendor of ['prism','jszip'])await page.addScriptTag({content:fs.readFileSync(path.join(ROOT,'public/vendor',vendor+'.js'),'utf8')});await page.addScriptTag({content:files.get('/test-app.js')!});}else await page.goto(url);
  await run('48 new parts: 24 tabs / 24 selectors, A16 B8 with existing filters',async()=>{
-  for(const category of ['tabs','segments']){const extra=category==='tabs'||!offline?1:0;await page.locator(`[data-category="${category}"]`).click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),24+extra*2);await page.locator('[data-design-filter="A"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),16+extra);await page.locator('[data-design-filter="B"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),8+extra);await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);}
+  for(const category of ['tabs','segments']){const extra=category==='tabs'||!offline?1:0;await page.locator(`[data-category="${category}"]`).click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?data.parts:undefined));await page.locator('[data-design-filter="A"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?data.parts:undefined));await page.locator('[data-design-filter="B"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?data.parts:undefined));await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);}
  });
  await run('All 24 tabs: actual panel switching, IDs/ARIA and note state survives hiding',async()=>{
   await page.locator('[data-category="tabs"]').click();await galleryReady(page,true);
@@ -38,13 +40,13 @@ try{
   assert.equal(motion.sweep,'16deg');assert.equal(motion.sheenAngle,'14deg');assert.equal(motion.sheenStrength,'.28');assert.equal(motion.stretch,'.035');assert.equal(motion.compression,'.025');assert.ok(motion.angles.length>0,'metal gradient is rendered');assert.ok(motion.angles.every(angle=>Math.abs(angle-117)<=16.1),`metal sweep exceeded 16 degrees: ${motion.angles.join(', ')}`);
  });
  await run('Inspector: 2/3/4/5/7 choices, direction, disabled and code/layout preserve selection',async()=>{
-  for(const id of ['atlas-tabs','mercury-segments']){
-   await page.locator(`[data-category="${id==='atlas-tabs'?'tabs':'segments'}"]`).click();await galleryReady(page,true);await page.locator(`[data-open="${id}"]`).click();await galleryReady(page,true);const d=page.locator('#part-details'),r=d.locator('[data-selection-kind]');
+  for(const id of ['folio-tabs','mercury-segments']){
+   await page.locator(`[data-category="${id==='folio-tabs'?'tabs':'segments'}"]`).click();await galleryReady(page,true);await page.locator(`[data-open="${id}"]`).click();await galleryReady(page,true);const d=page.locator('#part-details'),r=d.locator('[data-selection-kind]');
    for(const n of [2,4,5,7,3]){await d.locator(`[data-selection-count="${n}"]`).click();assert.equal(await d.locator(`[data-selection-count="${n}"]`).getAttribute('aria-pressed'),'true');assert.equal(await d.locator('[data-selection-count][aria-pressed="true"]').count(),1);assert.equal(await r.locator('.sop-choice-item').count(),n);await r.locator('.sop-choice-item').last().click();assert.equal(await r.getAttribute('data-value'),`choice-${n}`);}
-   await d.locator('[data-format="jsx"]').click();await d.locator('#export-layout').selectOption('original');assert.equal(await r.getAttribute('data-value'),'choice-3');
-   await d.locator('[data-selection-axis]').selectOption('vertical');assert.equal(await r.getAttribute('data-orientation'),'vertical');await d.locator('[data-selection-axis]').selectOption('horizontal');
+   await d.locator('[data-format="jsx"]').click();await selectSetting(d.locator('#export-layout'),'original');assert.equal(await r.getAttribute('data-value'),'choice-3');
+   await selectSetting(d.locator('[data-selection-axis]'),'vertical');assert.equal(await r.getAttribute('data-orientation'),'vertical');await selectSetting(d.locator('[data-selection-axis]'),'horizontal');
    await d.locator('[data-selection-disabled]').check();await r.locator('.sop-choice-item').first().click({force:true});assert.equal(await r.getAttribute('data-value'),'choice-3');await d.locator('[data-selection-disabled]').uncheck();
-   await d.locator('[data-format="tsx"]').click();await d.locator('#export-layout').selectOption('portable');await d.locator('[data-detail-tab="prompt"]').click();assert.equal(await d.locator('#prompt-text').inputValue(),buildPrompt(parts.find(p=>p.id===id)!,'tsx','portable'));await d.locator('[data-detail-tab="code"]').click();
+   await d.locator('[data-format="tsx"]').click();await selectSetting(d.locator('#export-layout'),'portable');await d.locator('[data-detail-tab="prompt"]').click();assert.equal(await d.locator('#prompt-text').inputValue(),buildPrompt(parts.find(p=>p.id===id)!,'tsx','portable'));await d.locator('[data-detail-tab="code"]').click();
    await page.screenshot({path:path.join(out,id+'-detail.png')});await d.locator('.close-detail').click();
   }
  });

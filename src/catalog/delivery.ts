@@ -70,6 +70,7 @@ export function buildManifest(part: Part, format: Format, layout: Layout): strin
   return JSON.stringify({schema:'state-of-play.integration.v1',part:{id:part.id,version:part.version,designType:part.designType,runtime:part.runtime},format,layout,
     ...(part.glassTransparency===undefined?{}:{glassTransparency:part.glassTransparency}),
     ...(part.glassBlur===undefined?{}:{glassBlur:part.glassBlur}),
+    ...(part.appearanceColors===undefined?{}:{appearanceColors:part.appearanceColors}),
     componentRoot:d.componentRoot,entry:d.entry,stylesheet:d.stylesheet,example:d.example,
     externalDependencies:d.externalDependencies,
     license:{id:PARTS_LICENSE_ID,file:'PARTS-LICENSE'},

@@ -1,5 +1,8 @@
+import {detailSelects} from './detail-selects';
 import {glassScene,isGlassPart} from './liquid-glass-preview';
 import {glassAlpha,glassBlurScale,withGlassTransparency} from '../catalog/glass-transparency';
+import {withAppearance,type AppearanceColors} from '../catalog/appearance';
+import {mountAppearanceControls} from './appearance-controls';
 import {mountWorkbenchControls} from './workbench-preview';
 import {mountSignatureControls} from './signature-preview';
 import {mountFoundationControls} from './foundation-preview';
@@ -29,6 +32,7 @@ export function createDetails(parts: PartSummary[], callbacks: {onActive: (activ
     let origin: HTMLElement | null = null;
     let loop = 0, copiedWithCode = true;
     let cleanupAction: (()=>void)|undefined;
+    let selects:ReturnType<typeof detailSelects>|undefined;
     const sourceNames: Record<string, string> = {};
     let background = 'studio';
     try {
@@ -40,13 +44,13 @@ export function createDetails(parts: PartSummary[], callbacks: {onActive: (activ
     }
     catch { }
     const stopLoop = () => { clearInterval(loop); loop = 0; dialog.querySelector('#preview-loop')?.setAttribute('aria-pressed', 'false'); };
-    function destroyPreview() { stopLoop(); cleanupAction?.(); cleanupAction=undefined; controller?.destroy(); controller = null; }
+    function destroyPreview() { selects?.destroy();selects=undefined;stopLoop(); cleanupAction?.(); cleanupAction=undefined; controller?.destroy(); controller = null; }
     function close() {
         request++;
         if (dialog.open)
             dialog.close();
     }
-    dialog.addEventListener('cancel', event => { event.preventDefault(); close(); });
+    dialog.addEventListener('cancel', event => { event.preventDefault();const picker=dialog.querySelector<HTMLElement>('.appearance-color[open]');if(picker){picker.querySelector<HTMLButtonElement>('.appearance-trigger')?.click();picker.querySelector<HTMLElement>('.appearance-trigger')?.focus();return;}close(); });
     dialog.addEventListener('click', event => {
         if (event.target !== dialog)
             return;
@@ -122,6 +126,7 @@ export function createDetails(parts: PartSummary[], callbacks: {onActive: (activ
             required('#copy-prompt', pane).addEventListener('click', event => void copyText(promptText(), event.currentTarget as HTMLElement, 'AI用プロンプト'));
             pane.querySelectorAll<HTMLButtonElement>('[data-prompt-mode]').forEach(button => button.addEventListener('click', () => { copiedWithCode = button.dataset.promptMode === 'full'; drawMain(); pane.querySelector<HTMLElement>(`[data-prompt-mode="${copiedWithCode ? 'full' : 'spec'}"]`)?.focus(); }));
         }
+        selects?.refresh();
         required('#package-label', dialog).textContent = `${exported.files.length} FILES · ${format.toUpperCase()} · ${LAYOUTS[layout].label}`;
     }
     function updatePreviewState() {
@@ -256,8 +261,20 @@ export function createDetails(parts: PartSummary[], callbacks: {onActive: (activ
         };
         dialog.querySelectorAll<HTMLButtonElement>('[data-bg]').forEach(b => b.addEventListener('click', () => { background = b.dataset.bg ?? 'studio'; setBackground(); }));
         setBackground();
+        const exportTemplate=part;
+        let appearanceColors:AppearanceColors={};
+        const styledTemplate=()=>withAppearance(exportTemplate,appearanceColors);
+        let appearancePaint=0;
+        const priorAppearance=cleanupAction;
+        const cleanupAppearance=mountAppearanceControls(required('.live-preview',dialog),exportTemplate,colors=>{
+            appearanceColors=colors;
+            const transparency=Number(dialog.querySelector<HTMLInputElement>('#glass-transparency')?.value??50),blur=Number(dialog.querySelector<HTMLInputElement>('#glass-blur')?.value??50);
+            part=withGlassTransparency(styledTemplate(),transparency,blur);
+            clearTimeout(appearancePaint);appearancePaint=window.setTimeout(()=>{appearancePaint=0;drawMain();},90);
+        });
+        cleanupAction=()=>{clearTimeout(appearancePaint);cleanupAppearance();priorAppearance?.();};
         if(isGlassPart(part)){
-            const prior=cleanupAction,cleanup=glassScene(stage,root),template=part;
+            const prior=cleanupAction,cleanup=glassScene(stage,root);
             const controls=document.createElement('fieldset');controls.className='glass-material-controls';
             controls.innerHTML='<legend>素材を調整</legend><div class="glass-transparency-label"><label for="glass-transparency">透明度</label><output for="glass-transparency">50 / 100</output></div><input id="glass-transparency" type="range" min="0" max="100" step="1" value="50" aria-describedby="glass-transparency-note"><div class="glass-transparency-scale"><span>濃い</span><span>透ける</span></div><div class="glass-transparency-label glass-blur-label"><label for="glass-blur">背景のぼかし</label><output for="glass-blur">50 / 100</output></div><input id="glass-blur" type="range" min="0" max="100" step="1" value="50" aria-describedby="glass-transparency-note"><div class="glass-transparency-scale"><span>ぼかしなし</span><span>強くぼかす</span></div><p id="glass-transparency-note">それぞれ50が展示の設定です。展示時の濃淡を保って透明度を変えます。背景のぼかしは独立して調整でき、コード・プロンプト・ZIPにも反映します。</p><button type="button" class="small-button glass-material-reset" data-glass-reset>展示の設定に戻す</button>';
             required('.live-preview',dialog).after(controls);
@@ -265,11 +282,12 @@ export function createDetails(parts: PartSummary[], callbacks: {onActive: (activ
             const blurInput=required<HTMLInputElement>('#glass-blur',controls),blurOutput=required('output[for="glass-blur"]',controls);
             let paint=0;
             const render=()=>{clearTimeout(paint);paint=0;drawMain();};
-            const update=()=>{const amount=Number(input.value),blur=Number(blurInput.value);output.textContent=`${amount} / 100`;blurOutput.textContent=`${blur} / 100`;input.setAttribute('aria-valuetext',`${amount}${amount===50?'、展示の設定':''}`);blurInput.setAttribute('aria-valuetext',`${blur}${blur===0?'、ぼかしなし':blur===50?'、展示の設定':''}`);const alpha=glassAlpha(amount);root.style.setProperty('--lg-alpha-scale',String(alpha.scale));root.style.setProperty('--lg-alpha-lift',String(alpha.lift));root.style.setProperty('--lg-blur-scale',String(glassBlurScale(blur)));part=withGlassTransparency(template,amount,blur);clearTimeout(paint);paint=window.setTimeout(render,100);};
+            const update=()=>{const amount=Number(input.value),blur=Number(blurInput.value);output.textContent=`${amount} / 100`;blurOutput.textContent=`${blur} / 100`;input.setAttribute('aria-valuetext',`${amount}${amount===50?'、展示の設定':''}`);blurInput.setAttribute('aria-valuetext',`${blur}${blur===0?'、ぼかしなし':blur===50?'、展示の設定':''}`);const alpha=glassAlpha(amount);root.style.setProperty('--lg-alpha-scale',String(alpha.scale));root.style.setProperty('--lg-alpha-lift',String(alpha.lift));root.style.setProperty('--lg-blur-scale',String(glassBlurScale(blur)));part=withGlassTransparency(styledTemplate(),amount,blur);clearTimeout(paint);paint=window.setTimeout(render,100);};
             for(const slider of [input,blurInput]){slider.addEventListener('input',update);slider.addEventListener('change',render);}
             required('[data-glass-reset]',controls).addEventListener('click',()=>{input.value='50';blurInput.value='50';update();render();});
             cleanupAction=()=>{clearTimeout(paint);controls.remove();prior?.();cleanup();};
         }
+        selects=detailSelects(dialog);
         drawMain();
         required('.close-detail', dialog).focus({ preventScroll: true });
     }

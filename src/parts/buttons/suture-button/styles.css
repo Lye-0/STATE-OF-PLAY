@@ -1,0 +1,8 @@
+@import "../../../shared/action-button-base.css";
+/* Suture Button — 細い縫い目で包んだ布の面が、触れると柔らかく張る。 */
+.sop-action.sop-suture-button{--sop-action-ink:#eaded2;--sop-action-accent:#caad9d;background:repeating-linear-gradient(0deg,#5d3d4c 0 1px,#533444 1px 3px);border:1px solid #a28593;border-radius:30% 12% 30% 12%;padding:17px 32px;box-shadow:inset 0 0 0 4px #533444,0 6px 14px #0004;outline:1px dashed #c6a5b4;outline-offset:-6px;transition:border-radius .6s,transform .6s}.sop-action.sop-suture-button .sop-action-art{display:none}.sop-action.sop-suture-button:hover{border-radius:18px;transform:translateY(-2px)}
+@media(prefers-reduced-motion:reduce){.sop-action.sop-suture-button,.sop-action.sop-suture-button *,.sop-action.sop-suture-button::before,.sop-action.sop-suture-button::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-action.sop-suture-button{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-action.sop-suture-button :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-action.sop-suture-button:focus-visible,.sop-action.sop-suture-button :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-action.sop-suture-button[data-sop-paused] *,.sop-action.sop-suture-button[data-paused=true] *,.sop-action.sop-suture-button[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

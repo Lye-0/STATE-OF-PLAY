@@ -1,0 +1,8 @@
+@import "../../../shared/action-button-base.css";
+/* Shortcut Button — 実行ラベルと小さなキーキャップを一つの操作としてまとめる。 */
+.sop-action.sop-shortcut-button{--sop-action-ink:#e4e8e5;--sop-action-accent:#b4c9b9;background:#25312d;border:1px solid #52685c;border-radius:8px;padding:12px 15px;gap:18px}.sop-action.sop-shortcut-button .sop-action-art{display:none}.sop-action.sop-shortcut-button .sop-action-icon{width:25px;height:25px;border:1px solid #718675;border-bottom-width:3px;border-radius:4px;padding:4px;background:#1c2823}.sop-action.sop-shortcut-button:hover{background:#34473b}
+@media(prefers-reduced-motion:reduce){.sop-action.sop-shortcut-button,.sop-action.sop-shortcut-button *,.sop-action.sop-shortcut-button::before,.sop-action.sop-shortcut-button::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-action.sop-shortcut-button{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-action.sop-shortcut-button :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-action.sop-shortcut-button:focus-visible,.sop-action.sop-shortcut-button :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-action.sop-shortcut-button[data-sop-paused] *,.sop-action.sop-shortcut-button[data-paused=true] *,.sop-action.sop-shortcut-button[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

@@ -1,0 +1,57 @@
+{
+  "id": "ledger-spur-context",
+  "name": "Ledger Spur Context",
+  "category": "contextmenus",
+  "description": "短い番号の余白を持つ対象札から、細い操作の台帳を開く。",
+  "designType": "A",
+  "tagline": "短い番号の余白を持つ対象札から、細い操作の台帳を開く。",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3301,
+  "version": "1.0.0",
+  "material": "LEDGER SPUR CONTEXT",
+  "accent": "192,216,201",
+  "componentName": "LedgerSpurContext",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "contextmenus"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Ledger Spur Context",
+    "短い番号の余白を持つ対象札から、細い操作の台帳を開く。",
+    "NAVIGATOR"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "ContextAction[]",
+      "操作、子階層、区切り、チェック、無効状態を指定。"
+    ],
+    [
+      "onAction",
+      "(item, signal) => void | false | Promise",
+      "実行先の接続。勝手な保存や削除はしません。"
+    ],
+    [
+      "checked / onCheckedChange",
+      "Record<string, boolean> / callback",
+      "メニュー内チェック項目の状態を制御。"
+    ],
+    [
+      "targetLabel / targetDescription",
+      "string",
+      "操作対象の見出しと説明。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "コンポーネントの操作を無効にする。"
+    ],
+    [
+      "targetElement",
+      "HTMLElement | null",
+      "既存のカード・行などに接続します。中身は変更せず、その要素だけで右クリックを扱います。"
+    ]
+  ]
+}

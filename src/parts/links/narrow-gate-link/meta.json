@@ -1,0 +1,48 @@
+{
+  "id": "narrow-gate-link",
+  "name": "Narrow Gate Link",
+  "category": "links",
+  "order": 3057,
+  "version": "1.0.0",
+  "tagline": "狭い縦の門の間から、ラベルと矢印が移動方向を示す。",
+  "description": "狭い縦の門の間から、ラベルと矢印が移動方向を示す。",
+  "material": "NARROW GATE LINK",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "179,205,226",
+  "designType": "A",
+  "runtime": "Native anchor + CSS only",
+  "componentName": "NarrowGateLink",
+  "tags": [
+    "EXPANSION-30",
+    "Narrow Gate Link",
+    "狭い縦の門の間から、ラベルと矢印が移動方向を示す。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "children / eyebrow / icon",
+      "ReactNode",
+      "表示テキスト・補助見出し・装飾アイコン。"
+    ],
+    [
+      "href",
+      "string (required)",
+      "ページ、ページ内アンカー、mailto等の移動先。"
+    ],
+    [
+      "target / rel / download",
+      "native anchor attributes",
+      "新規タブ、関係性、同一オリジン等のダウンロード指定。"
+    ],
+    [
+      "onClick / ref / aria-current",
+      "native attributes",
+      "標準イベント・ref・現在位置。ネイティブ移動を維持。"
+    ],
+    [
+      "className / style",
+      "native attributes",
+      "利用先での配置。コンポーネントはルーター依存を持ちません。"
+    ]
+  ]
+}

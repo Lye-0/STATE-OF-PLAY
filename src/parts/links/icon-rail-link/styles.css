@@ -1,0 +1,8 @@
+@import "../../../shared/navigation-link-base.css";
+/* Icon Rail Link — 小さなアイコン専用の帯と本文を分けた、一覧用の移動操作。 */
+.sop-link.sop-icon-rail-link{--sop-link-ink:#354b4e;background:#e4efeb;border:1px solid #aac0bd;border-radius:5px;gap:15px;padding:12px 14px;color-scheme:light}.sop-link.sop-icon-rail-link .sop-link-icon{order:-1;width:22px;height:22px;padding-right:7px;border-right:1px solid #93afae;transform:none}.sop-link.sop-icon-rail-link .sop-link-art{display:none}.sop-link.sop-icon-rail-link:hover{background:#f6fcf4}
+@media(prefers-reduced-motion:reduce){.sop-link.sop-icon-rail-link,.sop-link.sop-icon-rail-link *,.sop-link.sop-icon-rail-link::before,.sop-link.sop-icon-rail-link::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-link.sop-icon-rail-link{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-link.sop-icon-rail-link :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-link.sop-icon-rail-link:focus-visible,.sop-link.sop-icon-rail-link :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-link.sop-icon-rail-link[data-sop-paused] *,.sop-link.sop-icon-rail-link[data-paused=true] *,.sop-link.sop-icon-rail-link[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

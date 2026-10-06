@@ -1,0 +1,10 @@
+@import "../../../shared/foundation/base.css";
+/* Pressed Number — 大きな紙の数字と、押印のような小さな増減面を持つ。 */
+.sop-foundation.sop-pressed-number{--ff-accent:#4f7058;--ff-ink:#324e3d;--ff-muted:#6a8070;--ff-base:#e2e5d5;--ff-line:#9fb49b;color-scheme:light}.sop-foundation.sop-pressed-number .ff-stepper{border:0;border-bottom:2px solid #92a78b;border-radius:0;background:#e2e5d5;gap:13px;padding:10px}.sop-foundation.sop-pressed-number .ff-stepper>button{border:1px solid #829b79;outline:1px dashed #a1b18d;outline-offset:-4px;border-radius:1px;background:#cad6bc;color:#36573e;min-height:42px;width:38px}.sop-foundation.sop-pressed-number .ff-number-face{padding:14px 6px;border:0}.sop-foundation.sop-pressed-number [data-number]{font:40px Georgia;text-shadow:1px 1px #fff8}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-pressed-number,.sop-foundation.sop-pressed-number *,.sop-foundation.sop-pressed-number::before,.sop-foundation.sop-pressed-number::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-pressed-number{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-pressed-number :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-pressed-number:focus-visible,.sop-foundation.sop-pressed-number :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-pressed-number{background:var(--ff-panel);padding:15px;border-radius:4px}
+
+.sop-foundation.sop-pressed-number[data-sop-paused] *,.sop-foundation.sop-pressed-number[data-paused=true] *,.sop-foundation.sop-pressed-number[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

@@ -1,0 +1,13 @@
+@import "../../../shared/workbench/base.css";
+/* Chamfer Tool Context — 低い金属の斜面を持つ対象面と、操作を置く小区画を組み合わせる。 */
+.sop-wb.sop-chamfer-tool-context{--wb-bg:#2b3d52;--wb-accent:#bed0db;--wb-line:#8097ad;--wb-muted:#acc0d2}.sop-wb.sop-chamfer-tool-context .wb-context-target{background:linear-gradient(#45627b33,#2a4057);border:4px solid #8097aa;border-top-color:#b1c3cd;border-radius:4px;padding:19px;box-shadow:inset 0 3px #17334966}.sop-wb.sop-chamfer-tool-context .wb-context-object{border:2px solid #adc2ca;border-radius:1px;background:#66809a;box-shadow:inset 0 3px #374d6677}.sop-wb.sop-chamfer-tool-context .wb-context-panel{background:#2c455c;border:4px solid #819eaf;border-top-color:#c1d1d7;border-radius:3px;padding:7px}.sop-wb.sop-chamfer-tool-context .wb-context-items button{border:1px solid #849fb366;border-radius:1px;background:#385972;margin:3px 0;padding:12px 10px}.sop-wb.sop-chamfer-tool-context .wb-menu-glyph{background:#627e94;padding:3px;border-radius:1px;width:24px}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-chamfer-tool-context,.sop-wb.sop-chamfer-tool-context *,.sop-wb.sop-chamfer-tool-context::before,.sop-wb.sop-chamfer-tool-context::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-wb.sop-chamfer-tool-context{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-chamfer-tool-context :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-wb.sop-chamfer-tool-context:focus-visible,.sop-wb.sop-chamfer-tool-context :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-wb.sop-chamfer-tool-context[data-sop-paused] *,.sop-wb.sop-chamfer-tool-context[data-paused=true] *,.sop-wb.sop-chamfer-tool-context[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+
+
+/* Visual review: composition and state separation. */
+.sop-wb.sop-chamfer-tool-context .wb-context-target{min-height:100px;border:0;border-right:6px solid var(--wb-line);background:transparent}.sop-wb.sop-chamfer-tool-context .wb-context-panel{border:4px solid var(--wb-line);padding:10px 8px;border-radius:3px}.sop-wb.sop-chamfer-tool-context .wb-context-items button{min-height:52px;border:1px solid var(--wb-line);border-radius:3px;margin-bottom:7px;box-shadow:inset 0 2px #d8e0e422,0 3px #091b28;gap:14px}.sop-wb.sop-chamfer-tool-context .wb-menu-glyph{border:0;border-radius:2px;background:#64819733;width:31px;height:31px}

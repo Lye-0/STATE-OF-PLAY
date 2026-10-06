@@ -1,0 +1,8 @@
+@import "../../../shared/navigation-link-base.css";
+/* Muted Reference Link — 参照先を細い縦括弧で囲み、本文の中でも移動を識別できる。 */
+.sop-link.sop-muted-reference-link{--sop-link-ink:#c5d5e1;border-left:2px solid #829aae;padding:8px 12px;gap:12px;font-size:13px;background:#22344a33}.sop-link.sop-muted-reference-link .sop-link-icon{width:15px;height:15px;transform:rotate(45deg)}.sop-link.sop-muted-reference-link:hover .sop-link-label{text-decoration:underline;text-underline-offset:4px}
+@media(prefers-reduced-motion:reduce){.sop-link.sop-muted-reference-link,.sop-link.sop-muted-reference-link *,.sop-link.sop-muted-reference-link::before,.sop-link.sop-muted-reference-link::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-link.sop-muted-reference-link{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-link.sop-muted-reference-link :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-link.sop-muted-reference-link:focus-visible,.sop-link.sop-muted-reference-link :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-link.sop-muted-reference-link[data-sop-paused] *,.sop-link.sop-muted-reference-link[data-paused=true] *,.sop-link.sop-muted-reference-link[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

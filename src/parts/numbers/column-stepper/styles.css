@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Column Stepper — 左右の操作を細い柱として扱い、数値を広い中央面へ置く。 */
+.sop-foundation.sop-column-stepper{--ff-accent:#aad0ce;--ff-base:#17383e;--ff-line:#6b9fa2}.sop-foundation.sop-column-stepper .ff-stepper{background:#234c52;border:0;border-radius:0;gap:9px;padding:0}.sop-foundation.sop-column-stepper .ff-stepper>button{width:26px;min-height:74px;border:1px solid #80abad;background:linear-gradient(90deg,#7cb0af,#4b7e80);border-radius:2px;color:#123338}.sop-foundation.sop-column-stepper .ff-number-face{padding:18px 6px;box-shadow:inset 0 7px #132f3655,inset 0 -2px #8ab8b766}.sop-foundation.sop-column-stepper [data-number]{font:29px Arial;letter-spacing:3px}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-column-stepper,.sop-foundation.sop-column-stepper *,.sop-foundation.sop-column-stepper::before,.sop-foundation.sop-column-stepper::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-column-stepper{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-column-stepper :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-column-stepper:focus-visible,.sop-foundation.sop-column-stepper :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-column-stepper[data-sop-paused] *,.sop-foundation.sop-column-stepper[data-paused=true] *,.sop-foundation.sop-column-stepper[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

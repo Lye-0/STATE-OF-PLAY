@@ -1,0 +1,52 @@
+{
+  "id": "chime-rating",
+  "name": "Chime Rating",
+  "category": "ratings",
+  "tagline": "長さの違う細い鈴を並べ、評価の高さを選んだ鈴で読む。",
+  "description": "長さの違う細い鈴を並べ、評価の高さを選んだ鈴で読む。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3203,
+  "version": "1.0.0",
+  "material": "CHIME RATING",
+  "accent": "185,205,194",
+  "componentName": "ChimeRating",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "ratings"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Chime Rating",
+    "長さの違う細い鈴を並べ、評価の高さを選んだ鈴で読む。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "number",
+      "0は未評価、1〜maxは評価値。valueは外部制御。"
+    ],
+    [
+      "max",
+      "number",
+      "整数2〜10。半点は扱わない。"
+    ],
+    [
+      "name / required",
+      "string / boolean",
+      "フォームに接続する。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "無効または表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(value: number) => void",
+      "確定した評価。ホバーは通知しない。"
+    ]
+  ]
+}

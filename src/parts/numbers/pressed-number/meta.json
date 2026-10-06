@@ -1,0 +1,60 @@
+{
+  "id": "pressed-number",
+  "name": "Pressed Number",
+  "category": "numbers",
+  "order": 3077,
+  "version": "1.0.0",
+  "tagline": "大きな紙の数字と、押印のような小さな増減面を持つ。",
+  "description": "大きな紙の数字と、押印のような小さな増減面を持つ。",
+  "material": "PRESSED NUMBER",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "PressedNumber",
+  "tags": [
+    "EXPANSION-30",
+    "Pressed Number",
+    "大きな紙の数字と、押印のような小さな増減面を持つ。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "pressed-number",
+    "kind": "numbers",
+    "variant": "essential",
+    "label": "必要な量を、ちょうどよく。",
+    "description": "",
+    "defaultValue": 3,
+    "min": 0,
+    "max": 24,
+    "step": 1,
+    "unit": "UNITS"
+  }
+}

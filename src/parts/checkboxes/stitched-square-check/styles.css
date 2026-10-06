@@ -1,0 +1,8 @@
+@import "../../../shared/checkbox-base.css";
+/* Stitched Square Check — 小さな布の四隅を縫い留め、チェックが縫い目の内側に収まる。 */
+.sop-check.sop-stitched-square-check{--cb-bg:#38403b;--cb-ink:#e8e9d8;--cb-accent:#c8d59d;--cb-size:30px;--cb-radius:2px;padding:17px;background:none;border:0}.sop-check.sop-stitched-square-check .sop-check-box{border:1px dashed #c5c49e;background:repeating-linear-gradient(90deg,#495b46 0 1px,#41553e 1px 3px);border-radius:2px;outline:1px solid #79906b;outline-offset:3px}.sop-check.sop-stitched-square-check input:checked~.sop-check-box{background:#90a97a;transform:rotate(-2deg)}.sop-check.sop-stitched-square-check .sop-check-aura{display:none}
+@media(prefers-reduced-motion:reduce){.sop-check.sop-stitched-square-check,.sop-check.sop-stitched-square-check *,.sop-check.sop-stitched-square-check::before,.sop-check.sop-stitched-square-check::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-check.sop-stitched-square-check{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-check.sop-stitched-square-check :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-check.sop-stitched-square-check:focus-visible,.sop-check.sop-stitched-square-check :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-check.sop-stitched-square-check[data-sop-paused] *,.sop-check.sop-stitched-square-check[data-paused=true] *,.sop-check.sop-stitched-square-check[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

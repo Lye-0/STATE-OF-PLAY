@@ -1,0 +1,52 @@
+{
+  "id": "pressboard-command",
+  "name": "Pressboard Command",
+  "category": "commands",
+  "description": "押印用の資料面を思わせる太い上縁で、検索と実行の場所を区切る。",
+  "designType": "A",
+  "tagline": "押印用の資料面を思わせる太い上縁で、検索と実行の場所を区切る。",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3285,
+  "version": "1.0.0",
+  "material": "PRESSBOARD COMMAND",
+  "accent": "192,216,201",
+  "componentName": "PressboardCommand",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "commands"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Pressboard Command",
+    "押印用の資料面を思わせる太い上縁で、検索と実行の場所を区切る。",
+    "NAVIGATOR"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "CommandItem[]",
+      "コマンド、グループ、ショートカット、子階層を指定。"
+    ],
+    [
+      "open / onOpenChange",
+      "boolean / callback",
+      "表示を外部制御。"
+    ],
+    [
+      "onExecute",
+      "(item, signal) => void | false | Promise",
+      "処理中の重複を抑止。falseなら開いたまま。例外はエラー表示。"
+    ],
+    [
+      "hotkey",
+      "boolean",
+      "trueでCtrl/Cmd+Kを登録。ギャラリーではfalse。"
+    ],
+    [
+      "apiRef",
+      "Ref<WorkbenchAPI>",
+      "Reactからopen()/close()を呼べる参照。"
+    ]
+  ]
+}

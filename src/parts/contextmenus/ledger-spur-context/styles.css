@@ -1,0 +1,15 @@
+@import "../../../shared/workbench/base.css";
+/* Ledger Spur Context — 短い番号の余白を持つ対象札から、細い操作の台帳を開く。 */
+.sop-wb.sop-ledger-spur-context{--wb-bg:#e1e4cb;--wb-ink:#364f31;--wb-accent:#668652;--wb-line:#95ad79;--wb-muted:#586348;color-scheme:light}.sop-wb.sop-ledger-spur-context .wb-context-target{background:#e5e8cd;border:0;border-left:8px solid #9bb080;border-radius:0;padding:24px}.sop-wb.sop-ledger-spur-context .wb-context-object{background:#bccfa1;border:1px solid #85a264;border-radius:1px;box-shadow:3px 3px #647d4b55}.sop-wb.sop-ledger-spur-context .wb-context-panel{background:#e4e8c8;border:1px solid #98ad73;border-left:9px solid #aabd8b;border-radius:0;padding:10px}.sop-wb.sop-ledger-spur-context .wb-context-items button{border:0;border-bottom:1px solid #a2b580;border-radius:0;padding:13px 9px;min-height:44px}.sop-wb.sop-ledger-spur-context .wb-menu-glyph{background:#c0d1a0;border:1px solid #9bb77b;border-radius:1px;padding:4px;width:25px}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-ledger-spur-context,.sop-wb.sop-ledger-spur-context *,.sop-wb.sop-ledger-spur-context::before,.sop-wb.sop-ledger-spur-context::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-wb.sop-ledger-spur-context{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-ledger-spur-context :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-wb.sop-ledger-spur-context:focus-visible,.sop-wb.sop-ledger-spur-context :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-wb.sop-ledger-spur-context :is([data-sg-error],[data-upload-error],.sg-wizard-error,[data-danger=true]){color:#8a3f46}
+
+.sop-wb.sop-ledger-spur-context[data-sop-paused] *,.sop-wb.sop-ledger-spur-context[data-paused=true] *,.sop-wb.sop-ledger-spur-context[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+
+
+/* Visual review: composition and state separation. */
+.sop-wb.sop-ledger-spur-context .wb-context-target{min-height:116px;border-left-width:18px;background:repeating-linear-gradient(0deg,transparent 0 23px,#5d794522 24px 25px),var(--wb-bg)}.sop-wb.sop-ledger-spur-context .wb-context-panel{border-left:20px solid var(--wb-line);padding:12px;background:repeating-linear-gradient(0deg,transparent 0 43px,#536d4122 44px 45px),var(--wb-bg)}.sop-wb.sop-ledger-spur-context .wb-context-items button{border-radius:0;border:0;border-bottom:1px dashed var(--wb-line);min-height:45px}.sop-wb.sop-ledger-spur-context .wb-menu-copy strong{font-family:Georgia}

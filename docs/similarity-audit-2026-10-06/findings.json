@@ -1,0 +1,1167 @@
+{
+  "scope": 817,
+  "excluded": 70,
+  "groups": [
+    {
+      "id": "G01",
+      "category": "loaders",
+      "ids": [
+        "aurora-loader",
+        "velvet-loader",
+        "essential-loader"
+      ],
+      "keep": [
+        "aurora-loader"
+      ],
+      "remove": [
+        "velvet-loader",
+        "essential-loader"
+      ],
+      "similar": "三重の同心円、円周上の点、中央の脈動が同じ。",
+      "different": "Auroraは青緑、Velvetは紫の外枠、Essentialは控えめな配色。",
+      "reason": "形と回転・脈動の仕組みが重複。背景や色は残す代表の設定で扱える。",
+      "priority": "高"
+    },
+    {
+      "id": "G02",
+      "category": "loaders",
+      "ids": [
+        "mercury-loader",
+        "obsidian-loader",
+        "soft-loader"
+      ],
+      "keep": [
+        "mercury-loader"
+      ],
+      "remove": [
+        "obsidian-loader",
+        "soft-loader"
+      ],
+      "similar": "12本の縦棒を時間差で伸縮させる同じローダー。",
+      "different": "Mercuryは金属色、Obsidianは暗色、Softは白い外枠。",
+      "reason": "色と外枠を除くと同じ波形。同じ棒型を3件残す必要性が低い。",
+      "priority": "高"
+    },
+    {
+      "id": "G03",
+      "category": "loaders",
+      "ids": [
+        "folio-loader",
+        "tide-loader",
+        "outline-loader"
+      ],
+      "keep": [
+        "outline-loader"
+      ],
+      "remove": [
+        "folio-loader",
+        "tide-loader"
+      ],
+      "similar": "3枚の細い板がずれて揺れる振り子型。",
+      "different": "Folioは紙の背景、Tideは青い面、Outlineは背景を省く。",
+      "reason": "同じ揺れを素材色で増やした系列。背景を要求しないOutlineを代表にする。",
+      "priority": "高"
+    },
+    {
+      "id": "G04",
+      "category": "loaders",
+      "ids": [
+        "blueprint-loader",
+        "aperture-loader",
+        "inset-loader"
+      ],
+      "keep": [
+        "inset-loader"
+      ],
+      "remove": [
+        "blueprint-loader",
+        "aperture-loader"
+      ],
+      "similar": "破線の三重円と中心の点が回転する構成。",
+      "different": "Blueprintは青い外枠、Apertureは灰色、Insetは青灰色。",
+      "reason": "名称から期待される製図・開口の違いが、現在の形と回転にはほぼ出ていない。",
+      "priority": "高"
+    },
+    {
+      "id": "G05",
+      "category": "loaders",
+      "ids": [
+        "prism-loader",
+        "transit-loader",
+        "compact-loader"
+      ],
+      "keep": [
+        "prism-loader"
+      ],
+      "remove": [
+        "transit-loader",
+        "compact-loader"
+      ],
+      "similar": "立体的な中空六角形を回す構成。",
+      "different": "紫・茶・灰の配色と外枠、わずかな大きさが違う。",
+      "reason": "プリズムの代表1件へ集約し、色違いだけのTransit/Compactを外す。",
+      "priority": "高"
+    },
+    {
+      "id": "G06",
+      "category": "loaders",
+      "ids": [
+        "copper-loader",
+        "relay-loader",
+        "slate-loader"
+      ],
+      "keep": [
+        "copper-loader"
+      ],
+      "remove": [
+        "relay-loader",
+        "slate-loader"
+      ],
+      "similar": "8分割された円環の同じ回転。",
+      "different": "銅色・緑・青灰色。",
+      "reason": "円環の分割数と回転方式が同じ。Copperの素材色が最も名前と対応する。",
+      "priority": "高"
+    },
+    {
+      "id": "G07",
+      "category": "loaders",
+      "ids": [
+        "botanical-loader",
+        "contour-loader",
+        "mono-loader"
+      ],
+      "keep": [
+        "mono-loader"
+      ],
+      "remove": [
+        "botanical-loader",
+        "contour-loader"
+      ],
+      "similar": "2本の糸と球を左右へ振る構成。",
+      "different": "球の色と糸の色が違う。",
+      "reason": "植物や等高線という独自表現になっておらず、Monoが素直な代表になる。",
+      "priority": "高"
+    },
+    {
+      "id": "G08",
+      "category": "blocks",
+      "ids": [
+        "paper-card",
+        "accent-card"
+      ],
+      "keep": [
+        "paper-card"
+      ],
+      "remove": [
+        "accent-card"
+      ],
+      "similar": "見出し・本文・区切り線・右下ボタンを置く同じ角丸カード。",
+      "different": "Paperは暖かい白、Accentは青白い面と青い境界。",
+      "reason": "情報構成・反応は同じで、Accentの独立した形の違いが弱い。",
+      "priority": "高"
+    },
+    {
+      "id": "G09",
+      "category": "blocks",
+      "ids": [
+        "outline-card",
+        "status-card"
+      ],
+      "keep": [
+        "outline-card"
+      ],
+      "remove": [
+        "status-card"
+      ],
+      "similar": "同じ3行チェックリストと下部の完了表示。",
+      "different": "Statusは青緑の塗り面と上辺のアクセント、Outlineは薄い輪郭。",
+      "reason": "状態表示を色以外で作り分けていないため、輪郭版を代表にする。",
+      "priority": "中"
+    },
+    {
+      "id": "G10",
+      "category": "scrollbars",
+      "ids": [
+        "minimal-scroll",
+        "frost-scroll"
+      ],
+      "keep": [
+        "minimal-scroll"
+      ],
+      "remove": [
+        "frost-scroll"
+      ],
+      "similar": "細い直線レールと角丸の明るいつまみ。",
+      "different": "Frostは青い反射と軽い影、Minimalは単純な明色。",
+      "reason": "スクロール時も同じ移動。Frostの差は小さな光沢に留まる。",
+      "priority": "中"
+    },
+    {
+      "id": "G11",
+      "category": "scrollbars",
+      "ids": [
+        "ink-scroll",
+        "accent-scroll",
+        "editorial-scroll"
+      ],
+      "keep": [
+        "ink-scroll"
+      ],
+      "remove": [
+        "accent-scroll",
+        "editorial-scroll"
+      ],
+      "similar": "白い背景の細い直線レールと単色のつまみ。",
+      "different": "黒・青・茶のつまみと背景の色温度が違う。",
+      "reason": "形とスクロールの反応が同じ。配色を独立パーツ数に数えない方針なら集約できる。",
+      "priority": "中"
+    },
+    {
+      "id": "G12",
+      "category": "buttons",
+      "ids": [
+        "quiet-button",
+        "soft-button",
+        "linen-button"
+      ],
+      "keep": [
+        "quiet-button"
+      ],
+      "remove": [
+        "soft-button",
+        "linen-button"
+      ],
+      "similar": "短い文字と右側の小アイコンを置く、塗り面の小ボタン。",
+      "different": "色、角丸、Linenの弱い影と字体が違う。",
+      "reason": "押下の構造と用途が重なる。Quietを基準に色・字体の設定として扱う。",
+      "priority": "中"
+    },
+    {
+      "id": "G13",
+      "category": "links",
+      "ids": [
+        "text-arrow-link",
+        "subtle-link"
+      ],
+      "keep": [
+        "text-arrow-link"
+      ],
+      "remove": [
+        "subtle-link"
+      ],
+      "similar": "文字の右に矢印を置き、ホバーで右へずらすリンク。",
+      "different": "色、矢印の大きさ、初期の不透明度が違う。",
+      "reason": "同じ構成とホバー。Text Arrowの分かりやすい表示を残す。",
+      "priority": "高"
+    },
+    {
+      "id": "G14",
+      "category": "tabs",
+      "ids": [
+        "atlas-tabs",
+        "folio-tabs"
+      ],
+      "keep": [
+        "folio-tabs"
+      ],
+      "remove": [
+        "atlas-tabs"
+      ],
+      "similar": "紙色の3タブ、折れた選択片、紙の層を持つ本文。",
+      "different": "ラベル、端の切り欠き、個別CSSの設定値に差がある。",
+      "reason": "実表示の共通paper/map演出が強く、地図と綴じ本の違いが弱い。紙という名前が明確なFolioを残す。",
+      "priority": "中"
+    },
+    {
+      "id": "G15",
+      "category": "tabs",
+      "ids": [
+        "essential-tabs",
+        "pill-tabs"
+      ],
+      "keep": [
+        "essential-tabs"
+      ],
+      "remove": [
+        "pill-tabs"
+      ],
+      "similar": "角丸レール上を選択面が滑り、同じ構成の本文を切り替える。",
+      "different": "本文面の色と角丸の程度が違う。",
+      "reason": "Pillという名前ほど選択部の輪郭が違わず、独立した用途も重なる。",
+      "priority": "高"
+    },
+    {
+      "id": "G16",
+      "category": "segments",
+      "ids": [
+        "origami-segments",
+        "atlas-segments"
+      ],
+      "keep": [
+        "origami-segments"
+      ],
+      "remove": [
+        "atlas-segments"
+      ],
+      "similar": "紙色の横並び3択と、角の折れた選択面。",
+      "different": "初期の文字と、個別CSSで指定する切り欠きが違う。",
+      "reason": "実表示では同じ紙の折れと移動が中心。折り紙という表現を明示するOrigamiを残す。",
+      "priority": "高"
+    },
+    {
+      "id": "G17",
+      "category": "segments",
+      "ids": [
+        "detent-segments",
+        "studio-segments"
+      ],
+      "keep": [
+        "studio-segments"
+      ],
+      "remove": [
+        "detent-segments"
+      ],
+      "similar": "暗いレールと分割された金属の選択面。",
+      "different": "Detentは少数の太い縦面、Studioは細い縦面が多い。",
+      "reason": "同じ板の回転と移動。刻みの密度だけでは2件分の個性が弱い。",
+      "priority": "中"
+    },
+    {
+      "id": "G18",
+      "category": "segments",
+      "ids": [
+        "essential-segments",
+        "soft-segments",
+        "paper-segments"
+      ],
+      "keep": [
+        "essential-segments"
+      ],
+      "remove": [
+        "soft-segments",
+        "paper-segments"
+      ],
+      "similar": "暗い角丸レールと緑の選択面が同じ3択。",
+      "different": "初期ラベル、余白と角丸の微差。Paperも現行表示は紙色にならない。",
+      "reason": "見た目と切り替えが非常に近い。想定CSSではなく現行実表示を基準に集約する。",
+      "priority": "高"
+    },
+    {
+      "id": "G19",
+      "category": "segments",
+      "ids": [
+        "compact-segments",
+        "slate-segments",
+        "icon-segments"
+      ],
+      "keep": [
+        "compact-segments"
+      ],
+      "remove": [
+        "slate-segments",
+        "icon-segments"
+      ],
+      "similar": "アイコン付きの暗い3択レール。",
+      "different": "Iconは輪郭・点、ラベルと細かな余白が違う。",
+      "reason": "同じ配置と選択面の移動。アイコン対応をCompactのオプションとして残せる。",
+      "priority": "高"
+    },
+    {
+      "id": "G20",
+      "category": "checkboxes",
+      "ids": [
+        "essential-check",
+        "consent-check",
+        "accent-check"
+      ],
+      "keep": [
+        "essential-check"
+      ],
+      "remove": [
+        "consent-check",
+        "accent-check"
+      ],
+      "similar": "四角いチェックと2行の説明を同じ角丸の帯に配置。",
+      "different": "文言、配色、選択済み状態が違う。",
+      "reason": "同じチェック操作と形。Consent/Accentの違いは接続先や配色で表せる。",
+      "priority": "高"
+    },
+    {
+      "id": "G21",
+      "category": "popups",
+      "ids": [
+        "essential-dialog",
+        "quiet-confirm"
+      ],
+      "keep": [
+        "essential-dialog"
+      ],
+      "remove": [
+        "quiet-confirm"
+      ],
+      "similar": "閉じるボタン・見出し・説明・確認内容・下部操作の確認ダイアログ。",
+      "different": "初期内容と面の色が違う。",
+      "reason": "確認対象を変えたデモに近く、Quiet専用のレイアウトが弱い。",
+      "priority": "中"
+    },
+    {
+      "id": "G22",
+      "category": "popups",
+      "ids": [
+        "paper-dialog",
+        "form-dialog"
+      ],
+      "keep": [
+        "form-dialog"
+      ],
+      "remove": [
+        "paper-dialog"
+      ],
+      "similar": "白い編集ダイアログに入力欄と下部の操作を配置。",
+      "different": "項目数、余白、見出しの字体と初期ラベルが違う。",
+      "reason": "名前変更とプロフィール編集は本体に渡す内容の違い。Formが汎用的な代表。",
+      "priority": "中"
+    },
+    {
+      "id": "G23",
+      "category": "sliders",
+      "ids": [
+        "essential-range",
+        "inset-range",
+        "slate-range"
+      ],
+      "keep": [
+        "essential-range"
+      ],
+      "remove": [
+        "inset-range",
+        "slate-range"
+      ],
+      "similar": "値・一本の線・丸いつまみの単値スライダー。",
+      "different": "青灰色の色調と輪郭の微差。",
+      "reason": "値の操作とレールの構造が同じ。Inset/Slateの固有機構がない。",
+      "priority": "高"
+    },
+    {
+      "id": "G24",
+      "category": "sliders",
+      "ids": [
+        "soft-range",
+        "paper-range"
+      ],
+      "keep": [
+        "soft-range"
+      ],
+      "remove": [
+        "paper-range"
+      ],
+      "similar": "明るい外枠の中に同じ単値スライダー。",
+      "different": "緑白と生成り、角丸と字体。",
+      "reason": "明色の基本形は1件にまとめ、紙色はテーマ設定として残せる。",
+      "priority": "高"
+    },
+    {
+      "id": "G25",
+      "category": "sliders",
+      "ids": [
+        "outline-range",
+        "mono-range"
+      ],
+      "keep": [
+        "outline-range"
+      ],
+      "remove": [
+        "mono-range"
+      ],
+      "similar": "2つの丸いつまみで範囲を指定する細いレール。",
+      "different": "初期値と配色が違う。",
+      "reason": "共通APIで範囲値を設定でき、形も操作もほぼ同じ。",
+      "priority": "高"
+    },
+    {
+      "id": "G26",
+      "category": "radios",
+      "ids": [
+        "essential-choice",
+        "slate-choice",
+        "mono-choice"
+      ],
+      "keep": [
+        "essential-choice"
+      ],
+      "remove": [
+        "slate-choice",
+        "mono-choice"
+      ],
+      "similar": "3枚の選択カード、右端の丸い指標と選択枠。",
+      "different": "青灰色・茶色の配色、角丸の微差。",
+      "reason": "同じレイアウトと選択操作。色違いの独立登録を減らす。",
+      "priority": "高"
+    },
+    {
+      "id": "G27",
+      "category": "radios",
+      "ids": [
+        "soft-choice",
+        "paper-choice"
+      ],
+      "keep": [
+        "soft-choice"
+      ],
+      "remove": [
+        "paper-choice"
+      ],
+      "similar": "明るい外枠と3枚の選択カード。",
+      "different": "生成りの色と字体、角丸。",
+      "reason": "構成も選択の見せ方も同じ。Softを明色の代表にする。",
+      "priority": "高"
+    },
+    {
+      "id": "G28",
+      "category": "comboboxes",
+      "ids": [
+        "essential-finder",
+        "compact-finder",
+        "mono-finder"
+      ],
+      "keep": [
+        "essential-finder"
+      ],
+      "remove": [
+        "compact-finder",
+        "mono-finder"
+      ],
+      "similar": "左の検索記号、入力、右の展開ボタンを持つ横長フィールド。",
+      "different": "配色と小さな角丸・文字サイズ。",
+      "reason": "候補一覧も同じ構成。Compactは独立したコンパクトレイアウトの差が弱い。",
+      "priority": "高"
+    },
+    {
+      "id": "G29",
+      "category": "comboboxes",
+      "ids": [
+        "soft-finder",
+        "paper-finder"
+      ],
+      "keep": [
+        "soft-finder"
+      ],
+      "remove": [
+        "paper-finder"
+      ],
+      "similar": "明るい外枠と同じ検索・候補欄。",
+      "different": "生成りの色と字体、角丸。",
+      "reason": "入力と候補表示が重なり、Paperの差はテーマ相当。",
+      "priority": "高"
+    },
+    {
+      "id": "G30",
+      "category": "comboboxes",
+      "ids": [
+        "inset-finder",
+        "slate-finder"
+      ],
+      "keep": [
+        "slate-finder"
+      ],
+      "remove": [
+        "inset-finder"
+      ],
+      "similar": "青いフィールドに検索と展開操作を置く。",
+      "different": "Insetは角ばった枠、Slateは少し丸い塗り面。",
+      "reason": "展開後も構成は同じ。Insetの沈み込みが独立した特徴になりにくい。",
+      "priority": "中"
+    },
+    {
+      "id": "G31",
+      "category": "toasts",
+      "ids": [
+        "essential-notice",
+        "inset-notice",
+        "compact-notice",
+        "slate-notice",
+        "mono-notice"
+      ],
+      "keep": [
+        "essential-notice"
+      ],
+      "remove": [
+        "inset-notice",
+        "compact-notice",
+        "slate-notice",
+        "mono-notice"
+      ],
+      "similar": "同じ説明記号、2行の文章、下端の時間表示を持つ通知。",
+      "different": "色、角丸、数pxの文字・余白の差。",
+      "reason": "表示・退出・操作の構造が同じで、5件分の選択肢としては過密。",
+      "priority": "高"
+    },
+    {
+      "id": "G32",
+      "category": "toasts",
+      "ids": [
+        "soft-notice",
+        "paper-notice"
+      ],
+      "keep": [
+        "soft-notice"
+      ],
+      "remove": [
+        "paper-notice"
+      ],
+      "similar": "明るい外枠に同じ通知と表示ボタン。",
+      "different": "生成りと緑白、角丸と字体。",
+      "reason": "同じ通知をテーマ変更した系列としてまとめられる。",
+      "priority": "高"
+    },
+    {
+      "id": "G33",
+      "category": "hints",
+      "ids": [
+        "essential-popover",
+        "inset-popover",
+        "slate-popover",
+        "mono-popover"
+      ],
+      "keep": [
+        "essential-popover"
+      ],
+      "remove": [
+        "inset-popover",
+        "slate-popover",
+        "mono-popover"
+      ],
+      "similar": "同じ小さなトリガーと説明パネル。",
+      "different": "トリガー・面の配色と角丸。",
+      "reason": "説明表示の構造が重なる。透明なOutlineや密度を変えるCompactは別途残す。",
+      "priority": "高"
+    },
+    {
+      "id": "G34",
+      "category": "progress",
+      "ids": [
+        "essential-progress",
+        "inset-progress",
+        "slate-progress",
+        "mono-progress"
+      ],
+      "keep": [
+        "essential-progress"
+      ],
+      "remove": [
+        "inset-progress",
+        "slate-progress",
+        "mono-progress"
+      ],
+      "similar": "横棒と数値を持つ進捗表示。",
+      "different": "色と外枠の角丸、細い輪郭。",
+      "reason": "進捗を更新したときの構造が同じ。円形のOutlineは別の表現なので残す。",
+      "priority": "高"
+    },
+    {
+      "id": "G35",
+      "category": "progress",
+      "ids": [
+        "soft-progress",
+        "paper-progress"
+      ],
+      "keep": [
+        "soft-progress"
+      ],
+      "remove": [
+        "paper-progress"
+      ],
+      "similar": "明るい外枠の横棒・数値表示。",
+      "different": "生成りの色と字体、角丸。",
+      "reason": "同じ進捗表示の明色版を1件に集約できる。",
+      "priority": "高"
+    },
+    {
+      "id": "G36",
+      "category": "uploads",
+      "ids": [
+        "essential-dropzone",
+        "inset-dropzone",
+        "compact-dropzone",
+        "slate-dropzone"
+      ],
+      "keep": [
+        "essential-dropzone"
+      ],
+      "remove": [
+        "inset-dropzone",
+        "compact-dropzone",
+        "slate-dropzone"
+      ],
+      "similar": "点線のドロップ領域、説明、右端の選択ボタン。",
+      "different": "色、角丸、微細な余白。",
+      "reason": "ファイル選択後も同じ一覧。独自の投入機構や配置の違いがない。",
+      "priority": "高"
+    },
+    {
+      "id": "G37",
+      "category": "uploads",
+      "ids": [
+        "soft-dropzone",
+        "paper-dropzone"
+      ],
+      "keep": [
+        "soft-dropzone"
+      ],
+      "remove": [
+        "paper-dropzone"
+      ],
+      "similar": "明るい外枠と同じ点線の投入領域。",
+      "different": "生成りの色、角丸、字体。",
+      "reason": "同じ投入・選択処理と配置で、テーマ差の域。",
+      "priority": "高"
+    },
+    {
+      "id": "G38",
+      "category": "datepickers",
+      "ids": [
+        "essential-calendar",
+        "outline-calendar",
+        "compact-calendar"
+      ],
+      "keep": [
+        "essential-calendar"
+      ],
+      "remove": [
+        "outline-calendar",
+        "compact-calendar"
+      ],
+      "similar": "日付欄と右のカレンダーボタン。",
+      "different": "角丸、境界と配色、初期の値。",
+      "reason": "単日カレンダーを開いた後も構成が近く、3件の差が弱い。期間・日時・時刻の代表は残す。",
+      "priority": "中"
+    },
+    {
+      "id": "G39",
+      "category": "pagination",
+      "ids": [
+        "soft-pages",
+        "paper-pages"
+      ],
+      "keep": [
+        "soft-pages"
+      ],
+      "remove": [
+        "paper-pages"
+      ],
+      "similar": "明るい外枠、番号列、現在ページの数値。",
+      "different": "色温度・角丸・字体。",
+      "reason": "同じページ送りと同じ移動面。明色の代表にまとめる。",
+      "priority": "高"
+    },
+    {
+      "id": "G40",
+      "category": "pagination",
+      "ids": [
+        "outline-pages",
+        "inset-pages",
+        "compact-pages"
+      ],
+      "keep": [
+        "outline-pages"
+      ],
+      "remove": [
+        "inset-pages",
+        "compact-pages"
+      ],
+      "similar": "暗い横長の番号列と、その下の現在ページ表示。",
+      "different": "枠内の塗り色、微細なサイズと字体。",
+      "reason": "番号配置とページ変更が同じ。塗り面を抑えたOutlineを残す。",
+      "priority": "高"
+    },
+    {
+      "id": "G41",
+      "category": "breadcrumbs",
+      "ids": [
+        "essential-trail",
+        "outline-trail",
+        "inset-trail",
+        "compact-trail"
+      ],
+      "keep": [
+        "essential-trail"
+      ],
+      "remove": [
+        "outline-trail",
+        "inset-trail",
+        "compact-trail"
+      ],
+      "similar": "Home・省略・階層・現在地を横一列に置くパンくず。",
+      "different": "色、角丸、微細な枠と文字サイズ。",
+      "reason": "同じ経路と省略メニューを表示する。種類を分けるほどの配置差が弱い。",
+      "priority": "高"
+    },
+    {
+      "id": "G42",
+      "category": "breadcrumbs",
+      "ids": [
+        "soft-trail",
+        "paper-trail"
+      ],
+      "keep": [
+        "soft-trail"
+      ],
+      "remove": [
+        "paper-trail"
+      ],
+      "similar": "明るい外枠の同じ横並びパンくず。",
+      "different": "色温度・角丸・字体。",
+      "reason": "明色テーマ違いとしてまとめられる。",
+      "priority": "高"
+    },
+    {
+      "id": "G43",
+      "category": "badges",
+      "ids": [
+        "essential-tags",
+        "inset-tags",
+        "slate-tags",
+        "mono-tags"
+      ],
+      "keep": [
+        "essential-tags"
+      ],
+      "remove": [
+        "inset-tags",
+        "slate-tags",
+        "mono-tags"
+      ],
+      "similar": "小さな長方形チップを並べ、選択面を反転する。",
+      "different": "配色と角丸。初期の表示専用・選択設定も違う。",
+      "reason": "表示専用・選択・削除は共通オプションで変更可能。独立パーツの差は小さい。",
+      "priority": "高"
+    },
+    {
+      "id": "G44",
+      "category": "numbers",
+      "ids": [
+        "essential-stepper",
+        "inset-stepper",
+        "compact-stepper"
+      ],
+      "keep": [
+        "essential-stepper"
+      ],
+      "remove": [
+        "inset-stepper",
+        "compact-stepper"
+      ],
+      "similar": "左に減算、中央に直接入力、右に加算。",
+      "different": "色と数pxの字体・境界の差。",
+      "reason": "同じ数値編集の構造。独立した調整機構や配置差がない。",
+      "priority": "高"
+    },
+    {
+      "id": "G45",
+      "category": "numbers",
+      "ids": [
+        "soft-stepper",
+        "paper-stepper"
+      ],
+      "keep": [
+        "soft-stepper"
+      ],
+      "remove": [
+        "paper-stepper"
+      ],
+      "similar": "明るい外枠の三分割数値入力。",
+      "different": "初期の単位・刻み、色温度・角丸・字体。",
+      "reason": "小数や刻みは共通APIの設定で変更できる。明色版を代表1件にする。",
+      "priority": "高"
+    },
+    {
+      "id": "G46",
+      "category": "colors",
+      "ids": [
+        "classic-color",
+        "paper-color"
+      ],
+      "keep": [
+        "classic-color"
+      ],
+      "remove": [
+        "paper-color"
+      ],
+      "similar": "矩形の色面、HSV調整、色見本、HEX欄。",
+      "different": "白い外枠と字体、スライダーの色。",
+      "reason": "色選択の操作と構成が同じ。Paperは明色テーマとして扱える。",
+      "priority": "中"
+    },
+    {
+      "id": "G47",
+      "category": "skeletons",
+      "ids": [
+        "shimmer-skeleton",
+        "paper-skeleton"
+      ],
+      "keep": [
+        "shimmer-skeleton"
+      ],
+      "remove": [
+        "paper-skeleton"
+      ],
+      "similar": "画像・プロフィール・文章・操作を同じ場所で仮表示する。",
+      "different": "紙色の背景と仮表示面の色。",
+      "reason": "同じ骨格と読み込み表示。文章・表・プロフィール専用の骨格は残す。",
+      "priority": "中"
+    },
+    {
+      "id": "G48",
+      "category": "timelines",
+      "ids": [
+        "basic-timeline",
+        "dotted-timeline"
+      ],
+      "keep": [
+        "basic-timeline"
+      ],
+      "remove": [
+        "dotted-timeline"
+      ],
+      "similar": "日付、縦線、点、開閉できる履歴を縦に配置。",
+      "different": "線の点線化とステータス表示の微差。",
+      "reason": "履歴の配置と開閉は同じ。線種はBasicの設定として扱える。",
+      "priority": "中"
+    },
+    {
+      "id": "G49",
+      "category": "searchbars",
+      "ids": [
+        "essential-searchbar",
+        "filter-searchbar"
+      ],
+      "keep": [
+        "essential-searchbar"
+      ],
+      "remove": [
+        "filter-searchbar"
+      ],
+      "similar": "検索欄と送信ボタン、その下に3つのフィルター。",
+      "different": "Filterはフィルター上に区切り線を加える。",
+      "reason": "Essentialにもフィルターがあり、Filter固有の機能・構成差がほぼない。",
+      "priority": "高"
+    },
+    {
+      "id": "G50",
+      "category": "searchbars",
+      "ids": [
+        "soft-searchbar",
+        "paper-searchbar"
+      ],
+      "keep": [
+        "soft-searchbar"
+      ],
+      "remove": [
+        "paper-searchbar"
+      ],
+      "similar": "明るい外枠、検索欄、送信、フィルター。",
+      "different": "色温度・角丸・字体。",
+      "reason": "検索結果の構成も同じ。明色の代表に集約できる。",
+      "priority": "高"
+    },
+    {
+      "id": "G51",
+      "category": "commands",
+      "ids": [
+        "essential-command",
+        "simple-command"
+      ],
+      "keep": [
+        "essential-command"
+      ],
+      "remove": [
+        "simple-command"
+      ],
+      "similar": "コマンド記号・見出し・検索欄を同じ順で配置。",
+      "different": "Simpleは枠の角を少し鋭くする。",
+      "reason": "開いたコマンド一覧も同じ構造。Simpleの独立した用途が弱い。",
+      "priority": "高"
+    },
+    {
+      "id": "G52",
+      "category": "commands",
+      "ids": [
+        "light-command",
+        "quiet-command"
+      ],
+      "keep": [
+        "light-command"
+      ],
+      "remove": [
+        "quiet-command"
+      ],
+      "similar": "白い外枠と同じコマンド検索・一覧。",
+      "different": "Quietは一覧のアイコンを省く。Lightはアイコン付き。外枠の色温度・角丸も違う。",
+      "reason": "検索・グループ・候補行の構成は重なる。アイコン省略を独立したデザインとして残す方針なら保留。整理するなら情報の識別がしやすいLightを残す。",
+      "priority": "中"
+    },
+    {
+      "id": "G53",
+      "category": "contextmenus",
+      "ids": [
+        "essential-context",
+        "plain-context"
+      ],
+      "keep": [
+        "essential-context"
+      ],
+      "remove": [
+        "plain-context"
+      ],
+      "similar": "ファイル記号・2行の説明・右端のメニューボタン。",
+      "different": "Plainはメニューのアイコンを省き、角丸を小さくする。Essentialはアイコン付き。",
+      "reason": "同じ操作一覧を簡略化した形。文字だけのメニューに独立した価値を置くなら保留。整理するなら項目の識別がしやすいEssentialを残す。",
+      "priority": "中"
+    },
+    {
+      "id": "G54",
+      "category": "contextmenus",
+      "ids": [
+        "paper-context",
+        "soft-context"
+      ],
+      "keep": [
+        "paper-context"
+      ],
+      "remove": [
+        "soft-context"
+      ],
+      "similar": "明るい面と同じファイル操作メニュー。",
+      "different": "色温度・角丸・記号の背景。",
+      "reason": "展開時にも配置が重なる。Paperを明色の基本形にする。",
+      "priority": "高"
+    },
+    {
+      "id": "G55",
+      "category": "navigation",
+      "ids": [
+        "paper-index-nav",
+        "spine-navigation"
+      ],
+      "keep": [
+        "paper-index-nav"
+      ],
+      "remove": [
+        "spine-navigation"
+      ],
+      "similar": "本のような紙色の縦ナビと左の綴じ目。",
+      "different": "Spineは角が丸く、本文の字体と背の陰影が違う。",
+      "reason": "選択・展開時も紙の縦索引として重なる。Paper Indexの明確な綴じ目を残す。",
+      "priority": "中"
+    },
+    {
+      "id": "G56",
+      "category": "tables",
+      "ids": [
+        "zebra-table",
+        "paper-data-table"
+      ],
+      "keep": [
+        "zebra-table"
+      ],
+      "remove": [
+        "paper-data-table"
+      ],
+      "similar": "明るい表、検索、選択、ソート、交互の行背景。",
+      "different": "白と生成り、見出しの字体と枠の微差。",
+      "reason": "同じ表構成・操作で、色を変えた表としてまとめられる。",
+      "priority": "中"
+    },
+    {
+      "id": "G57",
+      "category": "tables",
+      "ids": [
+        "folio-table",
+        "ribbon-ledger"
+      ],
+      "keep": [
+        "folio-table"
+      ],
+      "remove": [
+        "ribbon-ledger"
+      ],
+      "similar": "紙色の角丸表と左端の綴じ目、同じ行構成。",
+      "different": "Ribbonの左端の濃い帯と見出しの字体、Folioの重なりの影。",
+      "reason": "表の見せ方が近く、リボンが操作機構になるわけでもない。Folioの紙層を代表にする。",
+      "priority": "中"
+    },
+    {
+      "id": "G58",
+      "category": "ornaments",
+      "ids": [
+        "hinge-fan",
+        "fan-spark"
+      ],
+      "keep": [
+        "fan-spark"
+      ],
+      "remove": [
+        "hinge-fan"
+      ],
+      "similar": "一点を軸に、金色の細い羽根を扇状に展開する装飾。",
+      "different": "Hingeはゆっくり漂う。Fan Sparkはホバーで扇を大きく開く。",
+      "reason": "差はあるが、同じ扇の枠が重なる。Aの操作反応を重視してFan Sparkを残す。",
+      "priority": "中"
+    },
+    {
+      "id": "G59",
+      "category": "dropdowns",
+      "ids": [
+        "essential-select",
+        "outline-select"
+      ],
+      "keep": [
+        "essential-select"
+      ],
+      "remove": [
+        "outline-select"
+      ],
+      "similar": "明るいメニューに、項目名・説明・右端チェック・上下の区切りを並べる。",
+      "different": "Outlineは角を鋭くし、項目ごとの下線を強める。Essentialは角丸と弱い影。",
+      "reason": "展開後の情報構成と選択動作がほぼ同じ。輪郭の強さを別パーツとして残す価値より、基本形を集約する方針ならOutlineを外す。",
+      "priority": "中"
+    },
+    {
+      "id": "G60",
+      "category": "dropdowns",
+      "ids": [
+        "soft-select",
+        "team-select"
+      ],
+      "keep": [
+        "team-select"
+      ],
+      "remove": [
+        "soft-select"
+      ],
+      "similar": "丸いイニシャル表示、項目名・説明・右端情報を持つ明るいメニュー。",
+      "different": "Softは紫と大きい角丸。Teamは生成りと項目別のイニシャル色。",
+      "reason": "用途名は違うが、表示構造は同じ。イニシャルの識別が明確なTeamを残し、紫色は配色展開としてまとめる案。",
+      "priority": "中"
+    },
+    {
+      "id": "G61",
+      "category": "dropdowns",
+      "ids": [
+        "slate-select",
+        "locale-select"
+      ],
+      "keep": [
+        "slate-select"
+      ],
+      "remove": [
+        "locale-select"
+      ],
+      "similar": "暗いメニューに、角型の短い記号、項目名・説明・右端情報を置く。",
+      "different": "Slateは青灰と四角い記号。Localeは緑黒と横長の言語コード。",
+      "reason": "専用機能の差より項目データと配色の差が大きい。Localeのコード表示を設定として引き継ぐ前提でSlateへまとめる。",
+      "priority": "中"
+    }
+  ],
+  "recommendedRemovalCount": 92
+}

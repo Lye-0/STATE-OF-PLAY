@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Bead Track Pages — 小さな頁の玉を直線の軌道に置き、選んだ玉だけを大きく読む。 */
+.sop-foundation.sop-bead-track-pages{--ff-accent:#b3d5d0;--ff-panel:#315c5e;--ff-base:#1f4148;--ff-line:#7ca4a5}.sop-foundation.sop-bead-track-pages .ff-pages{border:0;border-radius:0;background:linear-gradient(transparent 47%,#679b9a 47% 50%,transparent 50%);padding:14px 0;gap:7px;flex-wrap:wrap}.sop-foundation.sop-bead-track-pages .ff-pages button,.sop-foundation.sop-bead-track-pages .ff-pages a{border:1px solid #a0c0b7;background:#305d61;border-radius:50%;min-height:35px;min-width:35px;padding:7px;font:10px Georgia}.sop-foundation.sop-bead-track-pages .ff-pages [aria-current]{background:#9cbdac;color:#1b3d3f;border-width:3px;box-shadow:0 5px 9px #00182455}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-bead-track-pages,.sop-foundation.sop-bead-track-pages *,.sop-foundation.sop-bead-track-pages::before,.sop-foundation.sop-bead-track-pages::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-bead-track-pages{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-bead-track-pages :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-bead-track-pages:focus-visible,.sop-foundation.sop-bead-track-pages :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-bead-track-pages[data-sop-paused] *,.sop-foundation.sop-bead-track-pages[data-paused=true] *,.sop-foundation.sop-bead-track-pages[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

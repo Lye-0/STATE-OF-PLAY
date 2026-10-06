@@ -1,0 +1,9 @@
+@import "../../../shared/signature/timeline.css";
+/* Dialmark History — 大きな時刻の印と小さな状態文字を分離し、日付を軸に記録を読む。 */
+.sop-sig.sop-dialmark-history{--sg-a:#bacba6;--sg-line:#8ba170;--sg-bg:#2b402b;--sg-muted:#adbe99}.sop-sig.sop-dialmark-history .sg-timeline{padding:21px 10px;background:#294127;border-top:1px solid #98af7c}.sop-sig.sop-dialmark-history .sg-event{grid-template-columns:61px 1fr;gap:17px;padding-left:0;padding-bottom:28px}.sop-sig.sop-dialmark-history .sg-event-route{display:none}.sop-sig.sop-dialmark-history .sg-event-time{font:18px Georgia;border:1px solid #8ca56a;border-radius:50%;width:59px;height:59px;display:grid;place-items:center;padding:0;background:#3c5835}.sop-sig.sop-dialmark-history .sg-event-main{border-left:1px solid #7d9a66;padding-left:13px}.sop-sig.sop-dialmark-history .sg-event[data-status=active] .sg-event-time{background:#8fa573;color:#233b23;border-color:#c2d39d}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-dialmark-history,.sop-sig.sop-dialmark-history *,.sop-sig.sop-dialmark-history::before,.sop-sig.sop-dialmark-history::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-sig.sop-dialmark-history{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-dialmark-history :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-sig.sop-dialmark-history:focus-visible,.sop-sig.sop-dialmark-history :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-sig.sop-dialmark-history[data-sop-paused] *,.sop-sig.sop-dialmark-history[data-paused=true] *,.sop-sig.sop-dialmark-history[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+.sop-sig.sop-dialmark-history *{animation-play-state:var(--sg-play,running)!important}

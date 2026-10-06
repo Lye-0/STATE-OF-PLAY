@@ -1,13 +1,5 @@
 [
   {
-    "id": "atlas-tabs",
-    "category": "tabs",
-    "mode": "map",
-    "description": "紙の索引が持ち上がり、地図の折り目が選択位置からひらく。",
-    "base": "src/parts/tabs/atlas-tabs",
-    "component": "AtlasTabs"
-  },
-  {
     "id": "aurora-tabs",
     "category": "tabs",
     "mode": "fluid",
@@ -128,14 +120,6 @@
     "component": "VelvetTabs"
   },
   {
-    "id": "atlas-segments",
-    "category": "segments",
-    "mode": "map",
-    "description": "精密な折り目のあるキーが、測った位置へ滑り込む。",
-    "base": "src/parts/segments/atlas-segments",
-    "component": "AtlasSegments"
-  },
-  {
     "id": "blueprint-segments",
     "category": "segments",
     "mode": "blueprint",
@@ -166,14 +150,6 @@
     "description": "幅を変えながら滑る銅の面と、移動方向に走る細い反射。",
     "base": "src/parts/segments/copper-segments",
     "component": "CopperSegments"
-  },
-  {
-    "id": "detent-segments",
-    "category": "segments",
-    "mode": "detent",
-    "description": "ばねの溝がキーの前後で開き、定位置へ吸い付く。",
-    "base": "src/parts/segments/detent-segments",
-    "component": "DetentSegments"
   },
   {
     "id": "lens-segments",

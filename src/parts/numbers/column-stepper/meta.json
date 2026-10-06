@@ -1,0 +1,60 @@
+{
+  "id": "column-stepper",
+  "name": "Column Stepper",
+  "category": "numbers",
+  "order": 3079,
+  "version": "1.0.0",
+  "tagline": "左右の操作を細い柱として扱い、数値を広い中央面へ置く。",
+  "description": "左右の操作を細い柱として扱い、数値を広い中央面へ置く。",
+  "material": "COLUMN STEPPER",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "ColumnStepper",
+  "tags": [
+    "EXPANSION-30",
+    "Column Stepper",
+    "左右の操作を細い柱として扱い、数値を広い中央面へ置く。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "column-stepper",
+    "kind": "numbers",
+    "variant": "essential",
+    "label": "必要な量を、ちょうどよく。",
+    "description": "",
+    "defaultValue": 3,
+    "min": 0,
+    "max": 24,
+    "step": 1,
+    "unit": "UNITS"
+  }
+}

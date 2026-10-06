@@ -1,0 +1,52 @@
+{
+  "id": "filter-shelf-search",
+  "name": "Filter Shelf Search",
+  "category": "searchbars",
+  "description": "入力面の下に小さな検索対象の札を載せ、現在の範囲を識別する。",
+  "designType": "A",
+  "tagline": "入力面の下に小さな検索対象の札を載せ、現在の範囲を識別する。",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3271,
+  "version": "1.0.0",
+  "material": "FILTER SHELF SEARCH",
+  "accent": "192,216,201",
+  "componentName": "FilterShelfSearch",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "searchbars"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Filter Shelf Search",
+    "入力面の下に小さな検索対象の札を載せ、現在の範囲を識別する。",
+    "NAVIGATOR"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items / search",
+      "SearchResult[] / async callback",
+      "ローカル候補か、AbortSignal付きの非同期検索を指定。"
+    ],
+    [
+      "query / defaultQuery",
+      "string",
+      "入力値。queryを渡すと外部制御。"
+    ],
+    [
+      "filters / filter",
+      "SearchFilter[] / string",
+      "検索対象の切り替え。"
+    ],
+    [
+      "onSubmit / onResult",
+      "callback",
+      "実際の検索実行と候補選択の接続先。"
+    ],
+    [
+      "loading / error / disabled",
+      "boolean / string",
+      "読込・失敗・無効の状態。"
+    ]
+  ]
+}

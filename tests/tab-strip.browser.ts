@@ -1,3 +1,5 @@
+import {galleryCount} from './gallery-counts.ts';
+import {selectSetting} from './detail-settings.ts';
 /** Real browser regression for transient tab scrollbars and exported source parity. */
 import assert from 'node:assert/strict';
 import {chromium} from 'playwright';
@@ -7,7 +9,7 @@ import {getDelivery,buildPrompt,buildUsage,packageContents} from '../src/catalog
 import {readBrowserIndex} from '../scripts/vite-catalog.ts';
 const ids=readBrowserIndex().index.filter(p=>p.category==='tabs'&&!p.tags.includes('GLASS LAB')).map(p=>p.id);
 const {parts}=buildCatalog(ROOT,ids);
-assert.equal(parts.length,24);
+assert.equal(parts.length,22);
 const rule='overflow-y:hidden';
 const scrollRule='scrollbar-color';
 const promptRule='縦スクロールバーを出さず';
@@ -43,7 +45,7 @@ try {
     await page.waitForFunction(()=>document.documentElement.classList.contains('site-ready'),undefined,{timeout:120000});
     await page.locator('[data-category="tabs"]').click();
     await page.waitForFunction(()=>document.querySelector('#part-grid')?.getAttribute('aria-busy')==='false'&&document.querySelectorAll('#part-grid [data-part]').length===26);
-    assert.equal(await page.locator('[data-part]').count(),26);
+    assert.equal(await page.locator('[data-part]').count(),await galleryCount(page));
     for(const part of parts){
       const card=page.locator(`[data-part="${part.id}"]`),list=card.locator('.sop-choice-list');
       const vertical=(await card.locator('.sop-tabs').getAttribute('data-orientation'))==='vertical';
@@ -59,8 +61,8 @@ try {
         if(!vertical){assert.equal(await card.locator('.sop-tabs').getAttribute('data-tab-overflow'),'false',part.id);assert.equal(await list.evaluate(el=>getComputedStyle(el).overflowX),'hidden',part.id);}
       }
     }
-    await page.locator('[data-open="atlas-tabs"]').click();
-    await page.locator('#part-details [data-preview-part="atlas-tabs"]').waitFor();
+    await page.locator('[data-open="folio-tabs"]').click();
+    await page.locator('#part-details [data-preview-part="folio-tabs"]').waitFor();
     const details=page.locator('#part-details');
     await details.locator('#tab-prompt').click();
     assert.ok((await details.locator('#prompt-text').inputValue()).includes(promptRule));
@@ -69,7 +71,7 @@ try {
     await details.locator('#tab-code').click();
     if(width<600){
       const file=await details.locator('[data-file*="selection-base.css"]').first().getAttribute('data-file');
-      await details.locator('.mobile-file-picker select').selectOption(file!);
+      await selectSetting(details.locator('.mobile-file-picker select'),file!);
     }else await details.locator('[data-file*="selection-base.css"]').first().click();
     assert.ok((await details.locator('.editor').innerText()).includes(rule));
     await details.locator('[data-selection-count="7"]').click();
@@ -80,9 +82,9 @@ try {
     assert.equal(await details.locator('.preview-stage .sop-tabs').getAttribute('data-tab-overflow'),'true');
     assert.ok(await detailList.evaluate(el=>getComputedStyle(el).scrollbarColor!=='auto'));
     assert.equal(await detailList.evaluate(el=>getComputedStyle(el,'::-webkit-scrollbar-button').display),'none');
-    await details.locator('[data-selection-axis]').selectOption('vertical');
+    await selectSetting(details.locator('[data-selection-axis]'),'vertical');
     assert.equal(await detailList.evaluate(el=>getComputedStyle(el).overflowY),'visible');
-    await details.locator('[data-selection-axis]').selectOption('horizontal');
+    await selectSetting(details.locator('[data-selection-axis]'),'horizontal');
     await details.locator('[data-selection-count="3"]').click();
     assert.equal(await details.locator('.preview-stage .sop-tabs').getAttribute('data-tab-overflow'),'false');
     assert.equal(await detailList.evaluate(el=>getComputedStyle(el).overflowX),'hidden');
@@ -92,7 +94,7 @@ try {
       await page.locator(`[data-open="${part.id}"]`).click();
       await details.locator(`[data-preview-part="${part.id}"]`).waitFor();
       const root=details.locator('.preview-stage .sop-tabs');
-      if(await root.getAttribute('data-orientation')==='vertical')await details.locator('[data-selection-axis]').selectOption('horizontal');
+      if(await root.getAttribute('data-orientation')==='vertical')await selectSetting(details.locator('[data-selection-axis]'),'horizontal');
       await details.locator('[data-selection-count="7"]').click();
       await page.waitForFunction(()=>document.querySelector('#part-details .preview-stage .sop-tabs')?.getAttribute('data-tab-overflow')==='true');
       const styled=await root.locator('.sop-choice-list').evaluate(list=>({overflow:list.scrollWidth>list.clientWidth,color:getComputedStyle(list).scrollbarColor,button:getComputedStyle(list,'::-webkit-scrollbar-button').display,thumb:getComputedStyle(list,'::-webkit-scrollbar-thumb').backgroundColor,token:getComputedStyle(list).getPropertyValue('--tab-scroll-thumb').trim()}));

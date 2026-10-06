@@ -1,0 +1,13 @@
+@import "../../../shared/workbench/base.css";
+/* Double Sill Context — 二段の薄い台で対象の面を支え、操作の一覧をその上へ開く。 */
+.sop-wb.sop-double-sill-context{--wb-bg:#293e53;--wb-accent:#bdcee0;--wb-line:#839ab4;--wb-muted:#a8bdcf}.sop-wb.sop-double-sill-context .wb-context-target{background:#2e465e;border:1px solid #8aa3ba;border-bottom:7px solid #647d9d;border-radius:2px;padding:23px;box-shadow:0 4px #172e4577}.sop-wb.sop-double-sill-context .wb-context-object{background:linear-gradient(#7795b0,#456681);border-radius:3px;border:1px solid #b4c8d2;box-shadow:0 4px #152c4477}.sop-wb.sop-double-sill-context .wb-context-panel{background:#293f58;border:1px solid #8da6bc;border-bottom:7px solid #657f9c;border-radius:2px;padding:9px}.sop-wb.sop-double-sill-context .wb-context-items button{background:#375571;border:1px solid #82a0b744;border-bottom:3px solid #718ea755;border-radius:1px;margin-bottom:5px;padding:12px 10px}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-double-sill-context,.sop-wb.sop-double-sill-context *,.sop-wb.sop-double-sill-context::before,.sop-wb.sop-double-sill-context::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-wb.sop-double-sill-context{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-double-sill-context :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-wb.sop-double-sill-context:focus-visible,.sop-wb.sop-double-sill-context :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-wb.sop-double-sill-context[data-sop-paused] *,.sop-wb.sop-double-sill-context[data-paused=true] *,.sop-wb.sop-double-sill-context[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+
+
+/* Visual review: composition and state separation. */
+.sop-wb.sop-double-sill-context .wb-context-target{min-height:90px;border:0;border-top:1px solid var(--wb-line);border-bottom:7px double var(--wb-line);background:transparent}.sop-wb.sop-double-sill-context .wb-context-panel{border-top:8px double var(--wb-line);border-bottom:8px double var(--wb-line);border-radius:0;padding:12px 8px}.sop-wb.sop-double-sill-context .wb-context-items button{border-top:1px solid var(--wb-line);border-bottom:5px double var(--wb-line);border-radius:0;margin:8px 0;min-height:42px}.sop-wb.sop-double-sill-context .wb-menu-glyph{border:0}

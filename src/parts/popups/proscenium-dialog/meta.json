@@ -1,0 +1,58 @@
+{
+  "id": "proscenium-dialog",
+  "name": "Proscenium Dialog",
+  "category": "popups",
+  "order": 3046,
+  "version": "1.0.0",
+  "tagline": "薄い舞台枠の奥で内容を見せ、上端の庇が開閉の奥行きを作る。",
+  "description": "薄い舞台枠の奥で内容を見せ、上端の庇が開閉の奥行きを作る。",
+  "material": "PROSCENIUM DIALOG",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "183,212,198",
+  "designType": "A",
+  "runtime": "Native dialog + CSS / event-driven lifecycle",
+  "componentName": "ProsceniumDialog",
+  "tags": [
+    "EXPANSION-30",
+    "Proscenium Dialog",
+    "薄い舞台枠の奥で内容を見せ、上端の庇が開閉の奥行きを作る。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "title / description / kicker",
+      "string",
+      "見出しと補足。dialogのアクセシブル名はtitleへ関連付け。"
+    ],
+    [
+      "children / footer / triggerLabel",
+      "ReactNode",
+      "本文・操作・開くボタンを用途に合わせて変更。"
+    ],
+    [
+      "open / defaultOpen / onOpenChange",
+      "boolean / callback",
+      "外部制御 / 非制御。閉じる要求を外部で拒否できる。"
+    ],
+    [
+      "onClose",
+      "(reason: string) => void",
+      "閉じ終わった理由を通知。通信・保存処理は含まない。"
+    ],
+    [
+      "closeOnBackdrop / closeOnEscape",
+      "boolean",
+      "背景クリック / Escapeで閉じる。既定true。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "開くボタンを無効化。開いたウィンドウの閉じる操作は残す。"
+    ],
+    [
+      "confirmLabel / cancelLabel",
+      "string",
+      "既定フッターの文言。独自footerも指定可能。"
+    ]
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "ruler-edge-search",
+  "name": "Ruler Edge Search",
+  "category": "searchbars",
+  "description": "入力の上辺に細い目盛りを置き、検索結果をその下の資料面へ続ける。",
+  "designType": "A",
+  "tagline": "入力の上辺に細い目盛りを置き、検索結果をその下の資料面へ続ける。",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3268,
+  "version": "1.0.0",
+  "material": "RULER EDGE SEARCH",
+  "accent": "192,216,201",
+  "componentName": "RulerEdgeSearch",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "searchbars"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Ruler Edge Search",
+    "入力の上辺に細い目盛りを置き、検索結果をその下の資料面へ続ける。",
+    "NAVIGATOR"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items / search",
+      "SearchResult[] / async callback",
+      "ローカル候補か、AbortSignal付きの非同期検索を指定。"
+    ],
+    [
+      "query / defaultQuery",
+      "string",
+      "入力値。queryを渡すと外部制御。"
+    ],
+    [
+      "filters / filter",
+      "SearchFilter[] / string",
+      "検索対象の切り替え。"
+    ],
+    [
+      "onSubmit / onResult",
+      "callback",
+      "実際の検索実行と候補選択の接続先。"
+    ],
+    [
+      "loading / error / disabled",
+      "boolean / string",
+      "読込・失敗・無効の状態。"
+    ]
+  ]
+}

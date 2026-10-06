@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Condensed Pages — 前へ・現在頁・次へを短い帯にまとめ、残りの総数を別に表示する。 */
+.sop-foundation.sop-condensed-pages{--ff-accent:#b5c7d8;--ff-panel:#31455d;--ff-base:#23384d;--ff-line:#748fa8}.sop-foundation.sop-condensed-pages .ff-pages{background:#2a4057;border:1px solid #7d98b0;border-radius:5px;padding:4px;gap:6px}.sop-foundation.sop-condensed-pages .ff-pages [aria-label^="ページ"]:not([aria-current]),.sop-foundation.sop-condensed-pages .ff-ellipsis{display:none}.sop-foundation.sop-condensed-pages .ff-pages button,.sop-foundation.sop-condensed-pages .ff-pages a{border:0;border-radius:3px;min-height:38px;flex:1;padding:8px;background:#354e68}.sop-foundation.sop-condensed-pages .ff-pages [aria-current]{background:#8ba9bd;color:#223e50;font:14px Consolas}.sop-foundation.sop-condensed-pages .ff-page-info{font-size:11px}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-condensed-pages,.sop-foundation.sop-condensed-pages *,.sop-foundation.sop-condensed-pages::before,.sop-foundation.sop-condensed-pages::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-condensed-pages{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-condensed-pages :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-condensed-pages:focus-visible,.sop-foundation.sop-condensed-pages :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-condensed-pages[data-sop-paused] *,.sop-foundation.sop-condensed-pages[data-paused=true] *,.sop-foundation.sop-condensed-pages[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

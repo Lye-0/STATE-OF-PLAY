@@ -1,0 +1,12 @@
+@import "../../../shared/foundation/base.css";
+/* Folded Corner Notice — 角の折り返しが、通知を固定した付箋の奥行きを作る。 */
+.sop-foundation.sop-folded-corner-notice{--ff-accent:#7d7150;--ff-ink:#453e2e;--ff-muted:#635d47;--ff-panel:#e7dfbf;--ff-base:#dad2ab;--ff-line:#a8a07a;color-scheme:light}.sop-foundation.sop-folded-corner-notice .ff-notice{border:0;border-radius:1px;background:linear-gradient(135deg,#faf1cd,#dfd4a4);padding:23px 22px;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,0 100%);box-shadow:inset -3px 0 #b5a97c66}.sop-foundation.sop-folded-corner-notice .ff-notice:after{content:"";position:absolute;right:0;top:0;width:20px;height:20px;background:#c2b180;clip-path:polygon(0 0,100% 100%,0 100%)}.sop-foundation.sop-folded-corner-notice .ff-notice-icon{border:0;border-radius:0;border-bottom:1px solid #8f8259}.sop-foundation.sop-folded-corner-notice .ff-notice-meter{background:#8c865c;height:2px}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-folded-corner-notice,.sop-foundation.sop-folded-corner-notice *,.sop-foundation.sop-folded-corner-notice::before,.sop-foundation.sop-folded-corner-notice::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-folded-corner-notice{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-folded-corner-notice :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-folded-corner-notice:focus-visible,.sop-foundation.sop-folded-corner-notice :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-folded-corner-notice{background:var(--ff-panel);padding:15px;border-radius:4px}
+
+.sop-foundation.sop-folded-corner-notice :is([data-sg-error],[data-upload-error],.sg-wizard-error,[data-danger=true]){color:#8a3f46}
+
+.sop-foundation.sop-folded-corner-notice[data-sop-paused] *,.sop-foundation.sop-folded-corner-notice[data-paused=true] *,.sop-foundation.sop-folded-corner-notice[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

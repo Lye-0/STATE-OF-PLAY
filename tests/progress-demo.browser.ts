@@ -1,3 +1,4 @@
+import {galleryCount} from './gallery-counts.ts';
 /** Gallery demo playback for every progress design. */
 import assert from 'node:assert/strict';
 import {chromium} from 'playwright';
@@ -11,8 +12,8 @@ try{
  await page.goto(server.resolvedUrls!.local[0],{waitUntil:'domcontentloaded',timeout:60000});
  const ready=()=>page.waitForFunction(()=>document.querySelector('#part-grid')?.getAttribute('aria-busy')==='false');await ready();
  await page.locator('[data-category="progress"]').click();await ready();
- assert.equal(await page.locator('[data-part]').count(),26);assert.equal(await page.locator('#toggle-controls').isVisible(),false);assert.equal(await page.locator('#progress-controls').isVisible(),true);
- const button=page.locator('#progress-demo'),items=page.locator('[data-part] [data-progress]');assert.equal(await items.count(),26);assert.equal(await button.innerText(),'デモ再生');assert.equal(await button.getAttribute('aria-pressed'),'false');
+ assert.equal(await page.locator('[data-part]').count(),await galleryCount(page));assert.equal(await page.locator('#toggle-controls').isVisible(),false);assert.equal(await page.locator('#progress-controls').isVisible(),true);
+ const button=page.locator('#progress-demo'),items=page.locator('[data-part] [data-progress]');assert.equal(await items.count(),22);assert.equal(await button.innerText(),'デモ再生');assert.equal(await button.getAttribute('aria-pressed'),'false');
  const readValues=()=>items.evaluateAll(es=>es.map(el=>(el as HTMLProgressElement).value));const phases=[0,20,40,60,80,100,80,60,40,20];
  await button.click();assert.equal(await button.getAttribute('aria-pressed'),'true');assert.equal(await button.innerText(),'デモ停止');
  const first=await readValues();assert.deepEqual(first,Array.from({length:26},(_,i)=>phases[i%phases.length]));

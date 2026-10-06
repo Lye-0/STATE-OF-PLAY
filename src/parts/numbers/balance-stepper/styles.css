@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Balance Stepper — 中央の数値皿と両端の分銅を分けた、秤のような調整器。 */
+.sop-foundation.sop-balance-stepper{--ff-accent:#cebea6;--ff-base:#343130;--ff-line:#9d8d79}.sop-foundation.sop-balance-stepper .ff-stepper{border:0;border-bottom:3px solid #aa9477;border-radius:0;background:none;gap:15px;padding:0 0 11px}.sop-foundation.sop-balance-stepper .ff-stepper>button{background:#67584a;border:1px solid #b29d80;border-radius:50% 50% 7px 7px;min-height:53px;width:45px;box-shadow:0 5px 0 #2a2927}.sop-foundation.sop-balance-stepper .ff-number-face{border-bottom:1px solid #c5b69c;background:#373b35;padding:14px 5px;border-radius:0 0 35% 35%}.sop-foundation.sop-balance-stepper [data-number]{font:31px Georgia}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-balance-stepper,.sop-foundation.sop-balance-stepper *,.sop-foundation.sop-balance-stepper::before,.sop-foundation.sop-balance-stepper::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-balance-stepper{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-balance-stepper :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-balance-stepper:focus-visible,.sop-foundation.sop-balance-stepper :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-balance-stepper[data-sop-paused] *,.sop-foundation.sop-balance-stepper[data-paused=true] *,.sop-foundation.sop-balance-stepper[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

@@ -1,0 +1,24 @@
+SKIP Gallery: 1120 parts, no runtime errors
+SKIP A/B and category filters intersect, counts remain correct, and the selector stays in sync
+SKIP Liquid, Fold, Prism have intrinsic opposite state labels and distinct optical treatment
+SKIP Compact B switches retain real sizes, native keyboard and drag states
+SKIP Toggle and drag do not open details
+SKIP Detail: code, hierarchical tree, full path, download before copy
+SKIP Copy: success only after write, exact string and visible feedback
+SKIP Denied clipboard: manual fallback, no false success, focus restored
+SKIP Selected source download matches the original file bytes
+SKIP Focus trap / Escape / restoration to gallery trigger
+SKIP Both layouts: 7196 representative code previews equal exported sources and selection follows the source identity
+PASS Downloaded ZIP and CLI share exact files, README, prompt, manifest in both layouts and modes
+SKIP Guide and AI prompt remain copyable in every export format
+PASS Mobile 320/390/768: no overflow, usable code and file picker
+SKIP Disabled and reduced-motion states remain functional
+SKIP Representative standalone HTML/CSS/JS previews run without gallery assets
+SKIP Representative native JS exports run with their real imports, in both layouts
+SKIP React TSX / portable: representative exports, controlled/uncontrolled/disabled, cleanup
+SKIP React JSX / portable: representative exports, controlled/uncontrolled/disabled, cleanup
+SKIP React TSX / original: representative exports, controlled/uncontrolled/disabled, cleanup
+SKIP React JSX / original: representative exports, controlled/uncontrolled/disabled, cleanup
+SKIP Real Vite watcher regenerates catalogue without author-source copies
+SKIP Real Vite production build works under /STATE-OF-PLAY/
+Browser checks: 2 passed; mode=Vite HTTP.

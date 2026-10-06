@@ -1,0 +1,52 @@
+{
+  "id": "portrait-column-skeleton",
+  "name": "Portrait Column Skeleton",
+  "category": "skeletons",
+  "tagline": "人物の大きな縦窓と署名の二行を、プロフィールの待機面として置く。",
+  "description": "人物の大きな縦窓と署名の二行を、プロフィールの待機面として置く。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3234,
+  "version": "1.0.0",
+  "material": "PORTRAIT COLUMN SKELETON",
+  "accent": "185,205,194",
+  "componentName": "PortraitColumnSkeleton",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "skeletons"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Portrait Column Skeleton",
+    "人物の大きな縦窓と署名の二行を、プロフィールの待機面として置く。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "loading",
+      "boolean",
+      "実際の読み込み状態。自動で成功にはしない。"
+    ],
+    [
+      "rows",
+      "number",
+      "2〜8行のプレースホルダー。"
+    ],
+    [
+      "label",
+      "string",
+      "読み上げ用の待機ラベル。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "動きを一時停止。"
+    ],
+    [
+      "children",
+      "ReactNode",
+      "読み込み後に表示する実際の内容。"
+    ]
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "id": "fold-line-tag",
+  "name": "Fold Line Tag",
+  "category": "badges",
+  "order": 3126,
+  "version": "1.0.0",
+  "tagline": "一方の角を折り、削除操作とラベル本文の境界を示す。",
+  "description": "一方の角を折り、削除操作とラベル本文の境界を示す。",
+  "material": "FOLD LINE TAG",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "FoldLineTag",
+  "tags": [
+    "EXPANSION-30",
+    "Fold Line Tag",
+    "一方の角を折り、削除操作とラベル本文の境界を示す。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "fold-line-tag",
+    "kind": "badges",
+    "variant": "essential",
+    "label": "小さな情報に、個性を。",
+    "description": "",
+    "defaultValue": [
+      "ready"
+    ],
+    "selectable": true,
+    "removable": false,
+    "items": [
+      {
+        "value": "design",
+        "label": "Design",
+        "badge": "8",
+        "icon": "spark"
+      },
+      {
+        "value": "motion",
+        "label": "Motion",
+        "badge": "4",
+        "icon": "clock"
+      },
+      {
+        "value": "ready",
+        "label": "Ready",
+        "icon": "check"
+      },
+      {
+        "value": "review",
+        "label": "Review",
+        "icon": "info"
+      }
+    ]
+  }
+}

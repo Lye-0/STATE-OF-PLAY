@@ -1,3 +1,5 @@
+import {galleryCount} from './gallery-counts.ts';
+import {selectSetting} from './detail-settings.ts';
 import {galleryReady} from './gallery-ready.ts';
 /** Real browser interaction tests. Set SOP_TEST_MODE=offline only in restricted test runners. */
 import assert from 'node:assert/strict';
@@ -34,10 +36,10 @@ try {
  await page.emulateMedia({reducedMotion:'reduce'});
  const card=(id:string)=>page.locator(`[data-part="${id}"]`);
  await run('new category intersects A/B and retains all 48 original parts',async()=>{
-  await galleryReady(page);assert.equal(await page.locator('[data-part]').count(),parts.filter(p=>p.category==='toggles').length);await page.locator('[data-category="scrollbars"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),bars.length+2);
+  await galleryReady(page);assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?{parts}.parts:undefined));await page.locator('[data-category="scrollbars"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?{parts}.parts:undefined));
   assert.equal(await page.locator('#toggle-controls').isVisible(),false);
-  await page.locator('[data-design-filter="A"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),bars.filter(p=>p.designType==='A').length+1);
-  await page.locator('[data-design-filter="B"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),bars.filter(p=>p.designType==='B').length+1);await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);
+  await page.locator('[data-design-filter="A"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?{parts}.parts:undefined));
+  await page.locator('[data-design-filter="B"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?{parts}.parts:undefined));await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);
  });
  await run('all rails use proportional thumbs, real drag, keyboard and stable content movement',async()=>{
   for(const part of bars) {
@@ -78,7 +80,7 @@ try {
  await run('horizontal orientation and RTL preserve physical endpoint/ARIA alignment',async()=>{
   for(const direction of ['ltr','rtl']) {
    await detail.evaluate((e,dir)=>(e as HTMLElement).dir=dir,direction);
-   await page.locator('#scroll-orientation').selectOption('vertical');await page.locator('#scroll-orientation').selectOption('horizontal');await page.waitForTimeout(80);
+   await selectSetting(page.locator('#scroll-orientation'),'vertical');await selectSetting(page.locator('#scroll-orientation'),'horizontal');await page.waitForTimeout(80);
    assert.equal(await rail.getAttribute('aria-orientation'),'horizontal');
    await rail.focus();await page.keyboard.press('End');await page.waitForFunction(()=>document.querySelector('.preview-stage .sop-scroll-rail')?.getAttribute('aria-valuenow')==='100');assert.equal(await rail.getAttribute('aria-valuenow'),'100');
    const box=(await rail.boundingBox())!,thumb=(await detail.locator('.sop-scroll-thumb').boundingBox())!;
@@ -86,7 +88,7 @@ try {
    assert.ok(await viewport.evaluate(v=>Math.abs(v.scrollLeft)>0));await page.keyboard.press('Home');await page.waitForFunction(()=>document.querySelector('.preview-stage .sop-scroll-rail')?.getAttribute('aria-valuenow')==='0');assert.equal(await rail.getAttribute('aria-valuenow'),'0');
    const handle=(await detail.locator('.sop-scroll-handle').boundingBox())!;assert.ok(handle.width>0&&handle.height>0);
   }
-  await detail.evaluate(e=>(e as HTMLElement).dir='ltr');await page.locator('#scroll-orientation').selectOption('vertical');
+  await detail.evaluate(e=>(e as HTMLElement).dir='ltr');await selectSetting(page.locator('#scroll-orientation'),'vertical');
  });
  await run('touch swipe moves native content without requiring the custom rail',async()=>{
   await page.locator('[data-jump="0"]').click();await viewport.scrollIntoViewIfNeeded();const b=(await viewport.boundingBox())!;
@@ -101,11 +103,11 @@ try {
  });
  await run('code, guide, prompt and both directory layouts are wired for new parts',async()=>{
   for(const format of ['tsx','jsx','ts','js'])for(const layout of ['portable','original']){
-   await page.locator('[data-detail-tab="code"]').click();await page.locator(`[data-format="${format}"]`).click();await page.locator('#export-layout').selectOption(layout);
+   await page.locator('[data-detail-tab="code"]').click();await page.locator(`[data-format="${format}"]`).click();await selectSetting(page.locator('#export-layout'),layout);
    assert.ok((await page.locator('.editor code').textContent())!.includes('Scroll')||(await page.locator('.editor code').textContent())!.includes('scroll'));
    await page.locator('[data-detail-tab="prompt"]').click();assert.ok((await page.locator('#prompt-text').inputValue()).includes('ネイティブ'));
   }
-  await page.locator('[data-detail-tab="code"]').click();await page.locator('[data-format="tsx"]').click();await page.locator('#export-layout').selectOption('portable');
+  await page.locator('[data-detail-tab="code"]').click();await page.locator('[data-format="tsx"]').click();await selectSetting(page.locator('#export-layout'),'portable');
  });
  await page.locator('[data-jump="0.5"]').click();await page.screenshot({path:path.join(out,'detail.png')});
  await page.locator('.close-detail').click();
@@ -127,7 +129,7 @@ try {
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
    for(const part of bars){const root=card(part.id).locator('.sop-scroll-area');const b=(await root.boundingBox())!,c=(await card(part.id).boundingBox())!;assert.ok(b.x>=c.x&&b.x+b.width<=c.x+c.width+1,part.id+width);}
    await page.locator('[data-open="capillary"]').click();await galleryReady(page,true);assert.ok(await page.locator('.download-file').isVisible());assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
-   await page.locator('#scroll-orientation').selectOption('horizontal');await page.locator('[data-jump="1"]').click();await page.waitForFunction(()=>document.querySelector('.preview-stage .sop-scroll-rail')?.getAttribute('aria-valuenow')==='100');assert.equal(await page.locator('.preview-stage .sop-scroll-rail').getAttribute('aria-valuenow'),'100');
+   await selectSetting(page.locator('#scroll-orientation'),'horizontal');await page.locator('[data-jump="1"]').click();await page.waitForFunction(()=>document.querySelector('.preview-stage .sop-scroll-rail')?.getAttribute('aria-valuenow')==='100');assert.equal(await page.locator('.preview-stage .sop-scroll-rail').getAttribute('aria-valuenow'),'100');
    if(width===390)await page.screenshot({path:path.join(out,'mobile-390.png')});
    await page.locator('.close-detail').click();
   }

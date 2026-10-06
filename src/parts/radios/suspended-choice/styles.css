@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Suspended Choice — 選択した候補だけが吊り線から離れ、余白の中で前へ出る。 */
+.sop-foundation.sop-suspended-choice{--ff-accent:#ceb4d4;--ff-base:#302535;--ff-panel:#44344c;--ff-line:#9a7fa2;padding-left:14px;border-left:1px solid #967898}.sop-foundation.sop-suspended-choice .ff-choices{gap:16px}.sop-foundation.sop-suspended-choice .ff-choice{border:1px solid #866b8a;border-radius:4px;background:#382a3d;padding:19px;position:relative;overflow:visible}.sop-foundation.sop-suspended-choice .ff-choice:before{content:"";position:absolute;width:14px;height:1px;left:-15px;top:50%;background:#9d84a8}.sop-foundation.sop-suspended-choice .ff-choice[data-selected=true]{transform:translateX(5px);background:#5b4263;box-shadow:0 5px 13px #0004}.sop-foundation.sop-suspended-choice .ff-choice-badge{font:15px Georgia;border:0}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-suspended-choice,.sop-foundation.sop-suspended-choice *,.sop-foundation.sop-suspended-choice::before,.sop-foundation.sop-suspended-choice::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-suspended-choice{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-suspended-choice :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-suspended-choice:focus-visible,.sop-foundation.sop-suspended-choice :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-suspended-choice[data-sop-paused] *,.sop-foundation.sop-suspended-choice[data-paused=true] *,.sop-foundation.sop-suspended-choice[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

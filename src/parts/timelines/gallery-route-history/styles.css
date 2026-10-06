@@ -1,0 +1,9 @@
+@import "../../../shared/signature/timeline.css";
+/* Gallery Route History — 年代の札を額縁に添え、各出来事を独立した展示面として並べる。 */
+.sop-sig.sop-gallery-route-history{--sg-a:#c6b797;--sg-line:#9f8c68;--sg-bg:#3c352b;--sg-muted:#b9aa87}.sop-sig.sop-gallery-route-history .sg-timeline{padding:20px 8px}.sop-sig.sop-gallery-route-history .sg-event{grid-template-columns:1fr;gap:6px;padding:12px 13px 15px;border:1px solid #9e8d6f;margin-bottom:16px;background:#4c412e;box-shadow:4px 4px 0 #232c2177}.sop-sig.sop-gallery-route-history .sg-event-route{display:none}.sop-sig.sop-gallery-route-history .sg-event-time{font:11px Georgia;letter-spacing:1px;border-bottom:1px solid #a3906c66;padding-bottom:7px}.sop-sig.sop-gallery-route-history .sg-event-heading{font:15px Georgia}.sop-sig.sop-gallery-route-history .sg-event[data-status=active]{border-left:6px solid #d2bd8d;padding-left:8px}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-gallery-route-history,.sop-sig.sop-gallery-route-history *,.sop-sig.sop-gallery-route-history::before,.sop-sig.sop-gallery-route-history::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-sig.sop-gallery-route-history{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-gallery-route-history :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-sig.sop-gallery-route-history:focus-visible,.sop-sig.sop-gallery-route-history :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-sig.sop-gallery-route-history[data-sop-paused] *,.sop-sig.sop-gallery-route-history[data-paused=true] *,.sop-sig.sop-gallery-route-history[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+.sop-sig.sop-gallery-route-history *{animation-play-state:var(--sg-play,running)!important}

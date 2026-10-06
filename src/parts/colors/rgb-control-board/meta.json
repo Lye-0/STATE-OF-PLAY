@@ -1,0 +1,52 @@
+{
+  "id": "rgb-control-board",
+  "name": "Rgb Control Board",
+  "category": "colors",
+  "tagline": "三つのRGBチャンネルを大きな操作行に分け、混色の値を明確に読む。",
+  "description": "三つのRGBチャンネルを大きな操作行に分け、混色の値を明確に読む。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3221,
+  "version": "1.0.0",
+  "material": "RGB CONTROL BOARD",
+  "accent": "185,205,194",
+  "componentName": "RgbControlBoard",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "colors"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Rgb Control Board",
+    "三つのRGBチャンネルを大きな操作行に分け、混色の値を明確に読む。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "string",
+      "#RGBまたは#RRGGBB。外部へは#RRGGBBの大文字。"
+    ],
+    [
+      "palette",
+      "string[]",
+      "色見本。"
+    ],
+    [
+      "name",
+      "string",
+      "フォームで送信する値の名前。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "入力操作を停止。"
+    ],
+    [
+      "onValueChange",
+      "(hex: string) => void",
+      "有効な色のみ通知。透明度はこの版では扱わない。"
+    ]
+  ]
+}

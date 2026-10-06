@@ -1,0 +1,8 @@
+@import "../../../shared/navigation-link-base.css";
+/* Narrow Gate Link — 狭い縦の門の間から、ラベルと矢印が移動方向を示す。 */
+.sop-link.sop-narrow-gate-link{--sop-link-ink:#d2dcec;padding:14px 26px;border-left:3px solid #7590b0;border-right:3px solid #7590b0;border-radius:0;background:#20334c;gap:15px;transition:padding .55s,border-color .55s}.sop-link.sop-narrow-gate-link .sop-link-icon{transform:rotate(45deg)}.sop-link.sop-narrow-gate-link:hover{padding-left:33px;padding-right:19px;border-color:#b8cee6}
+@media(prefers-reduced-motion:reduce){.sop-link.sop-narrow-gate-link,.sop-link.sop-narrow-gate-link *,.sop-link.sop-narrow-gate-link::before,.sop-link.sop-narrow-gate-link::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-link.sop-narrow-gate-link{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-link.sop-narrow-gate-link :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-link.sop-narrow-gate-link:focus-visible,.sop-link.sop-narrow-gate-link :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-link.sop-narrow-gate-link[data-sop-paused] *,.sop-link.sop-narrow-gate-link[data-paused=true] *,.sop-link.sop-narrow-gate-link[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

@@ -1,0 +1,9 @@
+@import "../../../shared/signature/skeleton.css";
+/* List Cell Skeleton — 小さな図版と本文を左右に揃えた、一覧の行用の待機表示。 */
+.sop-sig.sop-list-cell-skeleton{--sg-bg:#24374a;--sg-a:#b0c4d8;--sg-line:#7b91a8}.sop-sig.sop-list-cell-skeleton .sg-skeleton-frame{display:grid;grid-template-columns:47px minmax(0,1fr);gap:15px;min-height:149px;padding:17px;background:#2b4057;border:1px solid #788fa9;border-radius:5px}.sop-sig.sop-list-cell-skeleton .sg-sk-hero{grid-column:1;grid-row:1/3;height:53px;margin:0;border-radius:4px}.sop-sig.sop-list-cell-skeleton .sg-sk-hero i,.sop-sig.sop-list-cell-skeleton .sg-sk-profile,.sop-sig.sop-list-cell-skeleton .sg-sk-tiles{display:none}.sop-sig.sop-list-cell-skeleton .sg-sk-lines{grid-column:2;gap:12px;align-self:center}.sop-sig.sop-list-cell-skeleton .sg-sk-lines>i{height:6px;border-radius:2px}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-list-cell-skeleton,.sop-sig.sop-list-cell-skeleton *,.sop-sig.sop-list-cell-skeleton::before,.sop-sig.sop-list-cell-skeleton::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-sig.sop-list-cell-skeleton{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-list-cell-skeleton :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-sig.sop-list-cell-skeleton:focus-visible,.sop-sig.sop-list-cell-skeleton :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-sig.sop-list-cell-skeleton[data-sop-paused] *,.sop-sig.sop-list-cell-skeleton[data-paused=true] *,.sop-sig.sop-list-cell-skeleton[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+.sop-sig.sop-list-cell-skeleton *{animation-play-state:var(--sg-play,running)!important}

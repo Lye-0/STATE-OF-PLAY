@@ -1,0 +1,9 @@
+@import "../../../shared/signature/skeleton.css";
+/* Schedule Grid Skeleton — 曜日の帯と七つの列を、予定表の読込み中の区画として示す。 */
+.sop-sig.sop-schedule-grid-skeleton{--sg-bg:#302c43;--sg-a:#c1b4d2;--sg-line:#84759c}.sop-sig.sop-schedule-grid-skeleton .sg-skeleton-frame{background:#332844;border:2px solid #8d7aa0;border-radius:3px;padding:18px;min-height:254px}.sop-sig.sop-schedule-grid-skeleton .sg-sk-hero{height:25px;border-radius:0;margin-bottom:16px;background:repeating-linear-gradient(90deg,#9e85b244 0 12%,transparent 12% 14.285%)}.sop-sig.sop-schedule-grid-skeleton .sg-sk-hero i,.sop-sig.sop-schedule-grid-skeleton .sg-sk-profile,.sop-sig.sop-schedule-grid-skeleton .sg-sk-tiles{display:none}.sop-sig.sop-schedule-grid-skeleton .sg-sk-lines{gap:7px}.sop-sig.sop-schedule-grid-skeleton .sg-sk-lines>i{height:31px;border-radius:0;width:100%;background:repeating-linear-gradient(90deg,#957aaa33 0 12%,transparent 12% 14.285%)}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-schedule-grid-skeleton,.sop-sig.sop-schedule-grid-skeleton *,.sop-sig.sop-schedule-grid-skeleton::before,.sop-sig.sop-schedule-grid-skeleton::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-sig.sop-schedule-grid-skeleton{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-schedule-grid-skeleton :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-sig.sop-schedule-grid-skeleton:focus-visible,.sop-sig.sop-schedule-grid-skeleton :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-sig.sop-schedule-grid-skeleton[data-sop-paused] *,.sop-sig.sop-schedule-grid-skeleton[data-paused=true] *,.sop-sig.sop-schedule-grid-skeleton[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+.sop-sig.sop-schedule-grid-skeleton *{animation-play-state:var(--sg-play,running)!important}

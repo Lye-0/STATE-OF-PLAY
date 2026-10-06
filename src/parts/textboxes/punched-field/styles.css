@@ -1,0 +1,12 @@
+@import "../../../shared/text-field-base.css";
+/* Punched Field — 角のパンチ穴と印字の余白をもつ、チケット状の入力欄。 */
+.sop-textfield.sop-punched-field{--field-bg:#eee1c6;--field-ink:#4a4036;--field-accent:#9a6a48;--field-radius:0;color-scheme:light}.sop-textfield.sop-punched-field .sop-field-shell{border:1px solid #a28763;border-left:8px dotted #423b32;background:#eee1c6;box-shadow:4px 4px 0 #ad916d44}.sop-textfield.sop-punched-field .sop-field-shell:focus-within{box-shadow:5px 5px 0 #a67d5344;border-bottom-width:3px}.sop-textfield.sop-punched-field .sop-field-label{letter-spacing:2px;font-family:Consolas}
+@media(prefers-reduced-motion:reduce){.sop-textfield.sop-punched-field,.sop-textfield.sop-punched-field *,.sop-textfield.sop-punched-field::before,.sop-textfield.sop-punched-field::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-textfield.sop-punched-field{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-textfield.sop-punched-field :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-textfield.sop-punched-field:focus-visible,.sop-textfield.sop-punched-field :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-textfield.sop-punched-field{--field-muted:#685f4a;background:#eee1c6;padding:15px;border:1px solid #ac9878}
+
+.sop-textfield.sop-punched-field :is([data-sg-error],[data-upload-error],.sg-wizard-error,[data-danger=true]){color:#8a3f46}
+
+.sop-textfield.sop-punched-field[data-sop-paused] *,.sop-textfield.sop-punched-field[data-paused=true] *,.sop-textfield.sop-punched-field[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

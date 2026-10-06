@@ -1,0 +1,52 @@
+{
+  "id": "etched-ledger-history",
+  "name": "Etched Ledger History",
+  "category": "timelines",
+  "tagline": "細い縦彫りと水平の刻みで、時刻と記録の対応を明確にする。",
+  "description": "細い縦彫りと水平の刻みで、時刻と記録の対応を明確にする。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3245,
+  "version": "1.0.0",
+  "material": "ETCHED LEDGER HISTORY",
+  "accent": "185,205,194",
+  "componentName": "EtchedLedgerHistory",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "timelines"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Etched Ledger History",
+    "細い縦彫りと水平の刻みで、時刻と記録の対応を明確にする。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "TimelineItem[]",
+      "id・title・description・date・dateTime・status・hrefなど。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "詳細を開くID。expandedで外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(ids: string[]) => void",
+      "開閉したIDを通知。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "詳細の開閉を無効にする。"
+    ],
+    [
+      "label",
+      "string",
+      "履歴全体の名前。"
+    ]
+  ]
+}

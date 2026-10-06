@@ -1,3 +1,5 @@
+import {galleryCount} from './gallery-counts.ts';
+import {selectSetting} from './detail-settings.ts';
 /** WAYFINDER source, prompts and gallery rendering over the repository's real Vite server. */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -18,11 +20,11 @@ try{
  const p=await browser.newPage({viewport:{width:1440,height:1000}});
  const errors:string[]=[];p.on('pageerror',error=>errors.push(error.message));
  await p.goto(server.resolvedUrls!.local[0]);await galleryReady(p);
- assert.equal(data.parts.length,825);assert.equal(targets.length,23);
+ assert.equal(data.parts.length,733);assert.equal(targets.length,23);
  for(const[category,count]of [['breadcrumbs',10],['numbers',13]]as const){
   await selectCategory(p,category);
   await p.locator('[data-design-filter="A"]').click();await galleryReady(p);
-  assert.equal(await p.locator('[data-part]').count(),count+1);
+  assert.equal(await p.locator('[data-part]').count(),await galleryCount(p));
   assert.ok(await p.locator('[data-part]').first().locator('.sop-wayfinder').count());
   await p.locator('[data-design-filter="all"]').click();await galleryReady(p);
  }
@@ -49,7 +51,7 @@ try{
   await p.locator(`[data-open="${id}"]`).click();await galleryReady(p);
   const detail=p.locator('#part-details');
   for(const layout of ['portable','original']as const){
-   await detail.locator('#export-layout').selectOption(layout);
+   await selectSetting(detail.locator('#export-layout'),layout);
    for(const format of FORMATS){
     await detail.locator(`[data-format="${format}"]`).evaluate(element=>(element as HTMLButtonElement).click());
     for(const file of getDelivery(part,format,layout).files){

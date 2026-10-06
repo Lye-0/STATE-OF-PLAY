@@ -1,0 +1,8 @@
+@import '../../../shared/selection-base.css';
+/* Toolbar Segments — 同じ操作群を小さな道具列として整理し、現在値を下辺で示す。 */
+.sop-choice.sop-toolbar-segments{--choice-base:#232b35;--choice-muted:#aebbc4;--choice-on:#e5f0f0;--choice-accent:#97c4cb;--choice-radius:4px}.sop-choice.sop-toolbar-segments>.sop-choice-list{padding:0;background:none;border:1px solid #5e6f7b;gap:0}.sop-choice.sop-toolbar-segments .sop-choice-marker{display:none}.sop-choice.sop-toolbar-segments .sop-choice-item{min-height:44px;border-radius:0;border-right:1px solid #4b616e;padding:11px 8px}.sop-choice.sop-toolbar-segments .sop-choice-item[data-selected=true]{background:#354954;box-shadow:inset 0 -3px #a1cfd3}.sop-choice.sop-toolbar-segments .sop-choice-item:last-child{border-right:0}
+@media(prefers-reduced-motion:reduce){.sop-choice.sop-toolbar-segments,.sop-choice.sop-toolbar-segments *,.sop-choice.sop-toolbar-segments::before,.sop-choice.sop-toolbar-segments::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-choice.sop-toolbar-segments{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-choice.sop-toolbar-segments :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-choice.sop-toolbar-segments:focus-visible,.sop-choice.sop-toolbar-segments :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-choice.sop-toolbar-segments[data-sop-paused] *,.sop-choice.sop-toolbar-segments[data-paused=true] *,.sop-choice.sop-toolbar-segments[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

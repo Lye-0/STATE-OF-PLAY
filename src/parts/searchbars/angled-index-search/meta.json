@@ -1,0 +1,52 @@
+{
+  "id": "angled-index-search",
+  "name": "Angled Index Search",
+  "category": "searchbars",
+  "description": "斜めの縁で検索の入口を区切り、内容と候補は水平に保つ。",
+  "designType": "A",
+  "tagline": "斜めの縁で検索の入口を区切り、内容と候補は水平に保つ。",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3272,
+  "version": "1.0.0",
+  "material": "ANGLED INDEX SEARCH",
+  "accent": "192,216,201",
+  "componentName": "AngledIndexSearch",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "searchbars"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Angled Index Search",
+    "斜めの縁で検索の入口を区切り、内容と候補は水平に保つ。",
+    "NAVIGATOR"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items / search",
+      "SearchResult[] / async callback",
+      "ローカル候補か、AbortSignal付きの非同期検索を指定。"
+    ],
+    [
+      "query / defaultQuery",
+      "string",
+      "入力値。queryを渡すと外部制御。"
+    ],
+    [
+      "filters / filter",
+      "SearchFilter[] / string",
+      "検索対象の切り替え。"
+    ],
+    [
+      "onSubmit / onResult",
+      "callback",
+      "実際の検索実行と候補選択の接続先。"
+    ],
+    [
+      "loading / error / disabled",
+      "boolean / string",
+      "読込・失敗・無効の状態。"
+    ]
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "grommet-notice",
+  "name": "Grommet Notice",
+  "category": "toasts",
+  "order": 3118,
+  "version": "1.0.0",
+  "tagline": "小さなハトメと薄い縁が、情報を吊るした短い札にする。",
+  "description": "小さなハトメと薄い縁が、情報を吊るした短い札にする。",
+  "material": "GROMMET NOTICE",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "GrommetNotice",
+  "tags": [
+    "EXPANSION-30",
+    "Grommet Notice",
+    "小さなハトメと薄い縁が、情報を吊るした短い札にする。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "grommet-notice",
+    "kind": "toasts",
+    "variant": "essential",
+    "label": "知らせも、心地よく。",
+    "description": "",
+    "defaultValue": null
+  }
+}

@@ -1,3 +1,4 @@
+import {selectSetting} from './detail-settings.ts';
 /** Full collection integration through the production Vite preview. */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -24,7 +25,7 @@ try{
  const open=async(id:string)=>{const part=glass.find(p=>p.id===id)!;await selectCategory(page,part.category);await page.locator(`[data-open="${id}"]`).click();await galleryReady(page,true);return part;};
  const closeDetail=async()=>{await detail.locator('.close-detail').click();};
  await run('Glass A and B appear in their 35 ordinary categories',async()=>{
-  assert.equal(all.parts.length,887);assert.equal(glass.length,70);assert.equal(await page.locator('.liquid-glass-shortcut,.lg-preview-controls').count(),0);
+  assert.equal(all.parts.length,795);assert.equal(glass.length,70);assert.equal(await page.locator('.liquid-glass-shortcut,.lg-preview-controls').count(),0);
   for(const category of [...new Set(all.parts.map(p=>p.category))]){
    await selectCategory(page,category);const pair=glass.filter(p=>p.category===category),expectedCount=['loaders','ornaments'].includes(category)?0:2;assert.equal(pair.length,expectedCount);
    assert.equal(await page.locator('.glass-series').count(),expectedCount);
@@ -462,7 +463,7 @@ try{
  await run('Representative code and prompt use the usual delivery path',async()=>{
   for(const id of ['lg-flow-tabs','lgc-segments-lens','lgc-datepickers-mist','lgc-navigation-lens','lgc-tables-mist']){
    const part=await open(id),delivery=getDelivery(part,'tsx','portable');
-   await detail.locator('[data-format="tsx"]').click();await detail.locator('#export-layout').selectOption('portable');
+   await detail.locator('[data-format="tsx"]').click();await selectSetting(detail.locator('#export-layout'),'portable');
    const file=delivery.files.find(f=>f.name===delivery.entry)!;
    await detail.locator(`[data-file="${file.name}"]`).click();assert.deepEqual(await detail.locator('.editor .line-code').allTextContents(),file.code.split('\n').map(line=>line||' '),id);
    await detail.locator('[data-detail-tab="prompt"]').click();assert.equal((await detail.locator('#prompt-text').inputValue()).replace(/\r\n/g,'\n'),buildPrompt(part,'tsx','portable').replace(/\r\n/g,'\n'));

@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Stepped Finder — 段差をもつ入力面から、候補の番号札が下へ続く。 */
+.sop-foundation.sop-stepped-finder{--ff-accent:#c5bed5;--ff-panel:#3c354e;--ff-base:#252136;--ff-line:#8d80a2}.sop-foundation.sop-stepped-finder .ff-combo-shell{border:1px solid #9e90b2;border-right:8px solid #6b5c82;border-radius:3px;background:#443652;box-shadow:4px 5px 0 #211e3099}.sop-foundation.sop-stepped-finder .ff-combo-list{border-radius:0;background:#2d273d;border:1px solid #7f6b9c;padding:11px}.sop-foundation.sop-stepped-finder .ff-option{background:#45384f;border:0;border-right:3px solid #8b73a1;border-radius:0;margin:0 0 7px;padding:15px 12px}.sop-foundation.sop-stepped-finder .ff-option[data-active=true]{transform:translateX(3px);background:#675574;border-right-color:#c9b4dd}.sop-foundation.sop-stepped-finder .ff-menu-foot{border-top:2px solid #856c9e}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-stepped-finder,.sop-foundation.sop-stepped-finder *,.sop-foundation.sop-stepped-finder::before,.sop-foundation.sop-stepped-finder::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-stepped-finder{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-stepped-finder :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-stepped-finder:focus-visible,.sop-foundation.sop-stepped-finder :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-stepped-finder[data-sop-paused] *,.sop-foundation.sop-stepped-finder[data-paused=true] *,.sop-foundation.sop-stepped-finder[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

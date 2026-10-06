@@ -1,0 +1,8 @@
+@import "../../../shared/action-button-base.css";
+/* Spinneret Button — 小さな糸巻きの軸がラベルの脇で回り、押下の手応えを伝える。 */
+.sop-action.sop-spinneret-button{--sop-action-ink:#e6e2ed;--sop-action-accent:#b1a5da;background:#292733;border:1px solid #706784;border-radius:4px;padding:14px 20px;gap:22px}.sop-action.sop-spinneret-button .sop-action-art{inset:7px auto 7px 8px;width:14px;border:2px solid #a8a0b6;border-radius:50%;opacity:.6;background:repeating-linear-gradient(0deg,transparent 0 3px,#a69bbf 3px 4px);transform:rotate(-10deg);transition:transform .6s}.sop-action.sop-spinneret-button .sop-action-label{padding-left:15px}.sop-action.sop-spinneret-button:hover .sop-action-art{transform:rotate(10deg)}
+@media(prefers-reduced-motion:reduce){.sop-action.sop-spinneret-button,.sop-action.sop-spinneret-button *,.sop-action.sop-spinneret-button::before,.sop-action.sop-spinneret-button::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-action.sop-spinneret-button{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-action.sop-spinneret-button :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-action.sop-spinneret-button:focus-visible,.sop-action.sop-spinneret-button :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-action.sop-spinneret-button[data-sop-paused] *,.sop-action.sop-spinneret-button[data-paused=true] *,.sop-action.sop-spinneret-button[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

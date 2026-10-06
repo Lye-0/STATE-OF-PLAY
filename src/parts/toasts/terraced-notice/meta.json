@@ -1,0 +1,56 @@
+{
+  "id": "terraced-notice",
+  "name": "Terraced Notice",
+  "category": "toasts",
+  "order": 3120,
+  "version": "1.0.0",
+  "tagline": "二枚の浅い段を重ね、通知面を暗い背景から浮かせる。",
+  "description": "二枚の浅い段を重ね、通知面を暗い背景から浮かせる。",
+  "material": "TERRACED NOTICE",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "TerracedNotice",
+  "tags": [
+    "EXPANSION-30",
+    "Terraced Notice",
+    "二枚の浅い段を重ね、通知面を暗い背景から浮かせる。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "terraced-notice",
+    "kind": "toasts",
+    "variant": "essential",
+    "label": "知らせも、心地よく。",
+    "description": "",
+    "defaultValue": null
+  }
+}

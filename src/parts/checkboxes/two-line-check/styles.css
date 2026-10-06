@@ -1,0 +1,8 @@
+@import "../../../shared/checkbox-base.css";
+/* Two Line Check — チェック・タイトル・補足を揃え、長い説明でも読めるフォーム項目。 */
+.sop-check.sop-two-line-check{--cb-bg:#252b2e;--cb-ink:#e0e7e3;--cb-muted:#b2bebb;--cb-accent:#bdd1c4;--cb-size:22px;--cb-radius:4px;padding:14px 12px;background:#252b2e;border:1px solid #53645d;align-items:flex-start}.sop-check.sop-two-line-check .sop-check-box{margin-top:2px;border-radius:4px;flex:none}.sop-check.sop-two-line-check .sop-check-description{font-size:11px;line-height:1.7;margin-top:5px}.sop-check.sop-two-line-check .sop-check-aura{display:none}
+@media(prefers-reduced-motion:reduce){.sop-check.sop-two-line-check,.sop-check.sop-two-line-check *,.sop-check.sop-two-line-check::before,.sop-check.sop-two-line-check::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-check.sop-two-line-check{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-check.sop-two-line-check :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-check.sop-two-line-check:focus-visible,.sop-check.sop-two-line-check :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-check.sop-two-line-check[data-sop-paused] *,.sop-check.sop-two-line-check[data-paused=true] *,.sop-check.sop-two-line-check[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

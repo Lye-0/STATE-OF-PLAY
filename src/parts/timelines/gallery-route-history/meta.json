@@ -1,0 +1,52 @@
+{
+  "id": "gallery-route-history",
+  "name": "Gallery Route History",
+  "category": "timelines",
+  "tagline": "年代の札を額縁に添え、各出来事を独立した展示面として並べる。",
+  "description": "年代の札を額縁に添え、各出来事を独立した展示面として並べる。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3240,
+  "version": "1.0.0",
+  "material": "GALLERY ROUTE HISTORY",
+  "accent": "185,205,194",
+  "componentName": "GalleryRouteHistory",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "timelines"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Gallery Route History",
+    "年代の札を額縁に添え、各出来事を独立した展示面として並べる。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "TimelineItem[]",
+      "id・title・description・date・dateTime・status・hrefなど。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "詳細を開くID。expandedで外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(ids: string[]) => void",
+      "開閉したIDを通知。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "詳細の開閉を無効にする。"
+    ],
+    [
+      "label",
+      "string",
+      "履歴全体の名前。"
+    ]
+  ]
+}

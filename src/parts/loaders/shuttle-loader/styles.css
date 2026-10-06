@@ -1,0 +1,9 @@
+@import "../../../shared/foundation/base.css";
+@import "../../../shared/foundation/continuum/loaders.css";
+/* Shuttle Loader — 三つの細い杼が、交差する軌道を滑らかに往復する。 */
+.sop-foundation.sop-shuttle-loader{--ld-size:132px;--ld-accent:#a5ccc3;--ld-secondary:#658f87}.sop-foundation.sop-shuttle-loader .ld-dots{position:absolute;inset:0;display:block;width:100%;height:100%}.sop-foundation.sop-shuttle-loader .ld-dot{position:absolute;left:10%;top:calc(20% + var(--i)*24%);width:65%;height:5px;border-radius:50%;background:linear-gradient(90deg,#476b62,#c7ded0,#739f8b);box-shadow:0 3px 5px #001d2655;animation:shuttle-loader-shift 2.6s ease-in-out infinite;animation-delay:calc(var(--i)*-.75s)}@keyframes shuttle-loader-shift{0%,100%{transform:translateX(0) rotate(-13deg)}50%{transform:translateX(28%) rotate(13deg)}}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-shuttle-loader,.sop-foundation.sop-shuttle-loader *,.sop-foundation.sop-shuttle-loader::before,.sop-foundation.sop-shuttle-loader::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-shuttle-loader{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-shuttle-loader :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-shuttle-loader:focus-visible,.sop-foundation.sop-shuttle-loader :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-shuttle-loader[data-sop-paused] *,.sop-foundation.sop-shuttle-loader[data-paused=true] *,.sop-foundation.sop-shuttle-loader[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

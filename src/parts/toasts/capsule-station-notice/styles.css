@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Capsule Station Notice — 円い印をもつ駅名札のように、通知を一行の案内として見せる。 */
+.sop-foundation.sop-capsule-station-notice{--ff-accent:#b6d4db;--ff-panel:#2d4e5c;--ff-base:#213844;--ff-line:#7ca2b0}.sop-foundation.sop-capsule-station-notice .ff-notice{border:2px solid #87b2bd;border-radius:34px 6px 6px 34px;background:#234758;padding:20px 18px;box-shadow:inset 0 1px #d5e8dc44}.sop-foundation.sop-capsule-station-notice .ff-notice-icon{border:1px solid #9ec6c9;background:#658f9d;border-radius:50%;padding:8px;width:33px;height:33px}.sop-foundation.sop-capsule-station-notice .ff-notice-meter{left:43px;bottom:7px;height:1px;background:#bddcda}.sop-foundation.sop-capsule-station-notice .ff-notice p{font-size:11px}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-capsule-station-notice,.sop-foundation.sop-capsule-station-notice *,.sop-foundation.sop-capsule-station-notice::before,.sop-foundation.sop-capsule-station-notice::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-capsule-station-notice{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-capsule-station-notice :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-capsule-station-notice:focus-visible,.sop-foundation.sop-capsule-station-notice :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-capsule-station-notice[data-sop-paused] *,.sop-foundation.sop-capsule-station-notice[data-paused=true] *,.sop-foundation.sop-capsule-station-notice[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

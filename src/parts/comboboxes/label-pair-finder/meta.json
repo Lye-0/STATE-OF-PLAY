@@ -1,0 +1,96 @@
+{
+  "id": "label-pair-finder",
+  "name": "Label Pair Finder",
+  "category": "comboboxes",
+  "order": 3105,
+  "version": "1.0.0",
+  "tagline": "候補の名前と補足を横に揃え、密度の高い検索でも読み分ける。",
+  "description": "候補の名前と補足を横に揃え、密度の高い検索でも読み分ける。",
+  "material": "LABEL PAIR FINDER",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "B",
+  "runtime": "Native DOM + CSS",
+  "componentName": "LabelPairFinder",
+  "tags": [
+    "EXPANSION-30",
+    "Label Pair Finder",
+    "候補の名前と補足を横に揃え、密度の高い検索でも読み分ける。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "label-pair-finder",
+    "kind": "comboboxes",
+    "variant": "essential",
+    "label": "次の素材を見つける",
+    "description": "",
+    "defaultValue": "",
+    "multiple": false,
+    "placeholder": "名前や素材を入力…",
+    "items": [
+      {
+        "value": "aurora",
+        "label": "Aurora",
+        "description": "光と透明感のコレクション",
+        "badge": "GLASS",
+        "icon": "spark"
+      },
+      {
+        "value": "folio",
+        "label": "Folio",
+        "description": "紙と余白のコレクション",
+        "badge": "PAPER",
+        "icon": "file"
+      },
+      {
+        "value": "mercury",
+        "label": "Mercury",
+        "description": "金属と精密さのコレクション",
+        "badge": "METAL",
+        "icon": "clock"
+      },
+      {
+        "value": "quiet",
+        "label": "Quiet",
+        "description": "落ち着いた日常のデザイン",
+        "badge": "ESSENTIAL",
+        "icon": "info"
+      },
+      {
+        "value": "archive",
+        "label": "Archive",
+        "description": "近日公開",
+        "badge": "SOON",
+        "disabled": true,
+        "icon": "file"
+      }
+    ]
+  }
+}

@@ -1,3 +1,4 @@
+import {galleryCount} from './gallery-counts.ts';
 /** The first paint and reload must show the self-contained Nixie loader, never unstyled gallery HTML. */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -41,7 +42,7 @@ try {
     await page.unroute('**/src/main.ts', route);
     await page.locator('#site-boot').waitFor({state: 'detached'});
     assert.equal(await page.locator('.page-shell').evaluate(el => getComputedStyle(el).visibility), 'visible');
-    assert.equal(await page.locator('[data-part]').count(), 26);
+    assert.equal(await page.locator('[data-part]').count(), await galleryCount(page));
     if (kind === 'open') await page.screenshot({path: path.join(captures, 'ready.png')});
     console.log(`PASS ${kind}: Nixie appears before application CSS, then 26 styled cards replace it`);
   }

@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Teletype Notice — 細い見出し帯と等幅の本文が、短い電文の受信を示す。 */
+.sop-foundation.sop-teletype-notice{--ff-accent:#c4b7cc;--ff-panel:#3d314b;--ff-base:#271e38;--ff-line:#8c799f}.sop-foundation.sop-teletype-notice .ff-notice{border:1px solid #a28eb7;border-top:9px solid #796288;border-radius:0;background:#33263f;padding:18px 17px;font-family:Consolas}.sop-foundation.sop-teletype-notice .ff-notice-icon{border-radius:1px;background:#6d557d;border:1px solid #b49ac5}.sop-foundation.sop-teletype-notice .ff-notice strong{font:13px Consolas;letter-spacing:.7px}.sop-foundation.sop-teletype-notice .ff-notice-meter{height:4px;background:repeating-linear-gradient(90deg,#a494b9 0 8px,transparent 8px 11px)}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-teletype-notice,.sop-foundation.sop-teletype-notice *,.sop-foundation.sop-teletype-notice::before,.sop-foundation.sop-teletype-notice::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-teletype-notice{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-teletype-notice :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-teletype-notice:focus-visible,.sop-foundation.sop-teletype-notice :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-teletype-notice[data-sop-paused] *,.sop-foundation.sop-teletype-notice[data-paused=true] *,.sop-foundation.sop-teletype-notice[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

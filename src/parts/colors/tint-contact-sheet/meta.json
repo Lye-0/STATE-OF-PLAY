@@ -1,0 +1,52 @@
+{
+  "id": "tint-contact-sheet",
+  "name": "Tint Contact Sheet",
+  "category": "colors",
+  "tagline": "広い色見本の列と、精密な色面を資料のように二段に分ける。",
+  "description": "広い色見本の列と、精密な色面を資料のように二段に分ける。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3219,
+  "version": "1.0.0",
+  "material": "TINT CONTACT SHEET",
+  "accent": "185,205,194",
+  "componentName": "TintContactSheet",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "colors"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Tint Contact Sheet",
+    "広い色見本の列と、精密な色面を資料のように二段に分ける。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "string",
+      "#RGBまたは#RRGGBB。外部へは#RRGGBBの大文字。"
+    ],
+    [
+      "palette",
+      "string[]",
+      "色見本。"
+    ],
+    [
+      "name",
+      "string",
+      "フォームで送信する値の名前。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "入力操作を停止。"
+    ],
+    [
+      "onValueChange",
+      "(hex: string) => void",
+      "有効な色のみ通知。透明度はこの版では扱わない。"
+    ]
+  ]
+}

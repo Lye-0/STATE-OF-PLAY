@@ -1,0 +1,53 @@
+{
+  "id": "suspension-accordion",
+  "name": "Suspension Accordion",
+  "category": "accordions",
+  "order": 3011,
+  "version": "1.0.0",
+  "tagline": "細い吊り線で支えた見出しが、開いた本文と静かに離れる。",
+  "description": "細い吊り線で支えた見出しが、開いた本文と静かに離れる。",
+  "material": "SUSPENSION ACCORDION",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "197,212,177",
+  "designType": "A",
+  "runtime": "CSS grid + disclosure events",
+  "componentName": "SuspensionAccordion",
+  "tags": [
+    "EXPANSION-30",
+    "Suspension Accordion",
+    "細い吊り線で支えた見出しが、開いた本文と静かに離れる。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "AccordionItem[]",
+      "value・title・subtitle・badge・content・disabledを指定。contentはReactNode。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "展開する項目の値。expandedは外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(values: string[]) => void",
+      "開閉の要求を受け取ります。"
+    ],
+    [
+      "multiple",
+      "boolean",
+      "trueなら複数の項目を同時に開けます。"
+    ],
+    [
+      "collapsible",
+      "boolean",
+      "falseなら最後の項目を操作で閉じません。"
+    ],
+    [
+      "disabled / headingLevel",
+      "boolean / 2…6",
+      "操作の無効化と、見出しの深さを指定。"
+    ]
+  ]
+}

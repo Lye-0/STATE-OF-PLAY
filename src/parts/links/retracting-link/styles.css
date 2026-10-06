@@ -1,0 +1,8 @@
+@import "../../../shared/navigation-link-base.css";
+/* Retracting Link — 細い導線が矢印の根元に巻き取られ、リンク先への方向を残す。 */
+.sop-link.sop-retracting-link{--sop-link-ink:#cadbdc;gap:20px;padding:14px 18px;border-left:1px solid #6f989f;background:#28444b66}.sop-link.sop-retracting-link .sop-link-art{display:block;position:absolute;bottom:8px;left:18px;right:43px;height:2px;background:#8bb9be;transform-origin:right;transition:transform .65s}.sop-link.sop-retracting-link:hover .sop-link-art{transform:scaleX(.2)}.sop-link.sop-retracting-link .sop-link-icon{transform:rotate(45deg);transition:transform .65s}.sop-link.sop-retracting-link:hover .sop-link-icon{transform:rotate(45deg) translateX(4px)}
+@media(prefers-reduced-motion:reduce){.sop-link.sop-retracting-link,.sop-link.sop-retracting-link *,.sop-link.sop-retracting-link::before,.sop-link.sop-retracting-link::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-link.sop-retracting-link{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-link.sop-retracting-link :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-link.sop-retracting-link:focus-visible,.sop-link.sop-retracting-link :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-link.sop-retracting-link[data-sop-paused] *,.sop-link.sop-retracting-link[data-paused=true] *,.sop-link.sop-retracting-link[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

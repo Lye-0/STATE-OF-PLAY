@@ -12,3 +12,5 @@
 .sop-surface.sop-copper-plate[data-sop-paused] *,.sop-surface.sop-copper-plate[data-sop-paused]:before,.sop-surface.sop-copper-plate[data-sop-paused]:after{animation-play-state:paused!important}
 @media(prefers-reduced-motion:reduce){.sop-surface.sop-copper-plate,.sop-surface.sop-copper-plate *,.sop-surface.sop-copper-plate:before,.sop-surface.sop-copper-plate:after{animation:none!important;transition:none!important}.sop-surface.sop-copper-plate{transform:none!important}}
 @media(forced-colors:active){.sop-surface.sop-copper-plate{border:1px solid CanvasText;background:Canvas;color:CanvasText;box-shadow:none}.sop-surface.sop-copper-plate:before,.sop-surface.sop-copper-plate:after{display:none}}
+
+.sop-surface.sop-copper-plate{--sop-angle:125deg}

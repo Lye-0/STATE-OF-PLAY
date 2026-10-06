@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Tunnel Trail — 角丸の入口をくぐるように、各階層の名前を広い窓へ並べる。 */
+.sop-foundation.sop-tunnel-trail{--ff-accent:#c4d0ae;--ff-panel:#3f583e;--ff-base:#293d2a;--ff-line:#8b9f76}.sop-foundation.sop-tunnel-trail .ff-breadcrumb ol{gap:7px;padding:9px 0;flex-wrap:wrap}.sop-foundation.sop-tunnel-trail .ff-breadcrumb li{border:1px solid #90a07b;border-radius:20px 20px 3px 3px;background:#3c5538;padding:14px 10px 8px;gap:5px;box-shadow:inset 0 2px #cbdbab22}.sop-foundation.sop-tunnel-trail .ff-breadcrumb li+li:before{content:"›";font-size:15px;color:#a8ba8f}.sop-foundation.sop-tunnel-trail .ff-breadcrumb li:last-child{border-top:4px solid #becd9d;background:#688159;padding-top:11px}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-tunnel-trail,.sop-foundation.sop-tunnel-trail *,.sop-foundation.sop-tunnel-trail::before,.sop-foundation.sop-tunnel-trail::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-tunnel-trail{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-tunnel-trail :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-tunnel-trail:focus-visible,.sop-foundation.sop-tunnel-trail :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-tunnel-trail[data-sop-paused] *,.sop-foundation.sop-tunnel-trail[data-paused=true] *,.sop-foundation.sop-tunnel-trail[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

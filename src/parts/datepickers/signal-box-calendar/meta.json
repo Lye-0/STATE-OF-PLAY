@@ -1,0 +1,57 @@
+{
+  "id": "signal-box-calendar",
+  "name": "Signal Box Calendar",
+  "category": "datepickers",
+  "order": 3179,
+  "version": "1.0.0",
+  "tagline": "日付と時刻を信号箱の二つの区画へ分けて確認する。",
+  "description": "日付と時刻を信号箱の二つの区画へ分けて確認する。",
+  "material": "SIGNAL BOX CALENDAR",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "SignalBoxCalendar",
+  "tags": [
+    "EXPANSION-30",
+    "Signal Box Calendar",
+    "日付と時刻を信号箱の二つの区画へ分けて確認する。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "signal-box-calendar",
+    "kind": "datepickers",
+    "variant": "essential",
+    "label": "次の時間を、予約する。",
+    "description": "",
+    "defaultValue": "2026-10-06T09:00",
+    "mode": "datetime"
+  }
+}

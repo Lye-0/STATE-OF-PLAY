@@ -1,0 +1,52 @@
+{
+  "id": "navigation-bar-skeleton",
+  "name": "Navigation Bar Skeleton",
+  "category": "skeletons",
+  "tagline": "横の操作帯と下の左右の区画を、画面の準備段階から揃える。",
+  "description": "横の操作帯と下の左右の区画を、画面の準備段階から揃える。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3235,
+  "version": "1.0.0",
+  "material": "NAVIGATION BAR SKELETON",
+  "accent": "185,205,194",
+  "componentName": "NavigationBarSkeleton",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "skeletons"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Navigation Bar Skeleton",
+    "横の操作帯と下の左右の区画を、画面の準備段階から揃える。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "loading",
+      "boolean",
+      "実際の読み込み状態。自動で成功にはしない。"
+    ],
+    [
+      "rows",
+      "number",
+      "2〜8行のプレースホルダー。"
+    ],
+    [
+      "label",
+      "string",
+      "読み上げ用の待機ラベル。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "動きを一時停止。"
+    ],
+    [
+      "children",
+      "ReactNode",
+      "読み込み後に表示する実際の内容。"
+    ]
+  ]
+}

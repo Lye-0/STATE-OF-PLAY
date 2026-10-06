@@ -1,0 +1,60 @@
+{
+  "id": "offset-crate-dropzone",
+  "name": "Offset Crate Dropzone",
+  "category": "uploads",
+  "order": 3169,
+  "version": "1.0.0",
+  "tagline": "角をずらした外箱と内箱が、ファイルの受取場所に奥行きを作る。",
+  "description": "角をずらした外箱と内箱が、ファイルの受取場所に奥行きを作る。",
+  "material": "OFFSET CRATE DROPZONE",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "OffsetCrateDropzone",
+  "tags": [
+    "EXPANSION-30",
+    "Offset Crate Dropzone",
+    "角をずらした外箱と内箱が、ファイルの受取場所に奥行きを作る。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "offset-crate-dropzone",
+    "kind": "uploads",
+    "variant": "essential",
+    "label": "アイデアの素材を、ここに。",
+    "description": "",
+    "defaultValue": [],
+    "multiple": true,
+    "maxFiles": 4,
+    "maxBytes": 10485760,
+    "accept": ".png,.jpg,.webp,.txt,.pdf"
+  }
+}

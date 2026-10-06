@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Corner Ribbon Trail — リンクごとに折れた短い角が、経路を軽くつなぐ。 */
+.sop-foundation.sop-corner-ribbon-trail{--ff-accent:#d5c096;--ff-panel:#54462e;--ff-base:#383122;--ff-line:#ad965e}.sop-foundation.sop-corner-ribbon-trail .ff-breadcrumb ol{gap:6px;padding:8px 0;flex-wrap:wrap}.sop-foundation.sop-corner-ribbon-trail .ff-breadcrumb li{position:relative;background:#665334;padding:10px 14px;clip-path:polygon(0 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%)}.sop-foundation.sop-corner-ribbon-trail .ff-breadcrumb li+li:before{content:none}.sop-foundation.sop-corner-ribbon-trail .ff-breadcrumb li:last-child{background:#b8a175;color:#2b2e22;box-shadow:inset 0 2px #dfca9e55}.sop-foundation.sop-corner-ribbon-trail .ff-breadcrumb svg{width:11px;height:11px}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-corner-ribbon-trail,.sop-foundation.sop-corner-ribbon-trail *,.sop-foundation.sop-corner-ribbon-trail::before,.sop-foundation.sop-corner-ribbon-trail::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-corner-ribbon-trail{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-corner-ribbon-trail :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-corner-ribbon-trail:focus-visible,.sop-foundation.sop-corner-ribbon-trail :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-corner-ribbon-trail[data-sop-paused] *,.sop-foundation.sop-corner-ribbon-trail[data-paused=true] *,.sop-foundation.sop-corner-ribbon-trail[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

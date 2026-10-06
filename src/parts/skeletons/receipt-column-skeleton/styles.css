@@ -1,0 +1,11 @@
+@import "../../../shared/signature/skeleton.css";
+/* Receipt Column Skeleton — 短い見出しと明細行を、細長い受取票の形で保つ。 */
+.sop-sig.sop-receipt-column-skeleton{--sg-bg:#e5d5d8;--sg-a:#a881a0;--sg-line:#b292a9;--sg-ink:#503749;--sg-muted:#645260}.sop-sig.sop-receipt-column-skeleton .sg-skeleton-frame{max-width:248px;margin:auto;background:#e9dade;border:0;border-left:6px solid #c4a0b7;border-radius:0;min-height:272px;padding:23px;--sk-tone:#bba0b366;clip-path:polygon(0 0,100% 0,100% 96%,90% 100%,80% 96%,70% 100%,60% 96%,50% 100%,40% 96%,30% 100%,20% 96%,10% 100%,0 96%)}.sop-sig.sop-receipt-column-skeleton .sg-sk-hero{height:21px;width:66%;margin:auto auto 26px;border-radius:0}.sop-sig.sop-receipt-column-skeleton .sg-sk-hero i,.sop-sig.sop-receipt-column-skeleton .sg-sk-profile{display:none}.sop-sig.sop-receipt-column-skeleton .sg-sk-lines{gap:16px}.sop-sig.sop-receipt-column-skeleton .sg-sk-lines>i{height:4px;border-radius:0;background:linear-gradient(90deg,#bfa2b866 0 65%,transparent 65% 80%,#bfa2b866 80%)}.sop-sig.sop-receipt-column-skeleton .sg-sk-tiles{border-top:1px dashed #b392a8;padding-top:16px;gap:5px}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-receipt-column-skeleton,.sop-sig.sop-receipt-column-skeleton *,.sop-sig.sop-receipt-column-skeleton::before,.sop-sig.sop-receipt-column-skeleton::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-sig.sop-receipt-column-skeleton{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-receipt-column-skeleton :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-sig.sop-receipt-column-skeleton:focus-visible,.sop-sig.sop-receipt-column-skeleton :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-sig.sop-receipt-column-skeleton :is([data-sg-error],[data-upload-error],.sg-wizard-error,[data-danger=true]){color:#8a3f46}
+
+.sop-sig.sop-receipt-column-skeleton[data-sop-paused] *,.sop-sig.sop-receipt-column-skeleton[data-paused=true] *,.sop-sig.sop-receipt-column-skeleton[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+.sop-sig.sop-receipt-column-skeleton *{animation-play-state:var(--sg-play,running)!important}

@@ -1,0 +1,8 @@
+@import "../../../shared/text-field-base.css";
+/* Carbon Ribbon Field — 暗いリボンの中央に文字を置き、左右の端で入力の活性を示す。 */
+.sop-textfield.sop-carbon-ribbon-field{--field-bg:#182024;--field-ink:#e4e7db;--field-accent:#bfd485;--field-radius:0}.sop-textfield.sop-carbon-ribbon-field .sop-field-shell{border:0;border-top:1px solid #91a263;border-bottom:1px solid #91a263;border-left:10px solid #6c7948;border-right:10px solid #6c7948;transform:skewX(-3deg);background:linear-gradient(90deg,#b4c97022,transparent 12%,transparent 88%,#b4c97022)}.sop-textfield.sop-carbon-ribbon-field input{transform:skewX(3deg)}.sop-textfield.sop-carbon-ribbon-field .sop-field-shell:focus-within{border-left-color:#d0e39d;border-right-color:#d0e39d;box-shadow:0 3px 0 #73874755}
+@media(prefers-reduced-motion:reduce){.sop-textfield.sop-carbon-ribbon-field,.sop-textfield.sop-carbon-ribbon-field *,.sop-textfield.sop-carbon-ribbon-field::before,.sop-textfield.sop-carbon-ribbon-field::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-textfield.sop-carbon-ribbon-field{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-textfield.sop-carbon-ribbon-field :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-textfield.sop-carbon-ribbon-field:focus-visible,.sop-textfield.sop-carbon-ribbon-field :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-textfield.sop-carbon-ribbon-field[data-sop-paused] *,.sop-textfield.sop-carbon-ribbon-field[data-paused=true] *,.sop-textfield.sop-carbon-ribbon-field[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

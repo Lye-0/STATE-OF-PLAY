@@ -1,0 +1,8 @@
+@import "../../../shared/navigation-link-base.css";
+/* Atlas Spur Link — 番号札から伸びる細い道が、ラベルとその先の矢印を結ぶ。 */
+.sop-link.sop-atlas-spur-link{--sop-link-ink:#e1dac3;border:0;border-bottom:1px solid #7d7659;padding:18px 8px 18px 42px;background:#383b2966}.sop-link.sop-atlas-spur-link:before{content:"01";position:absolute;left:0;top:10px;width:28px;height:28px;border:1px solid #b0a77a;font:9px Consolas;display:grid;place-items:center;transform:rotate(-6deg);transition:transform .5s}.sop-link.sop-atlas-spur-link:hover:before{transform:rotate(0)}.sop-link.sop-atlas-spur-link .sop-link-icon{border-bottom:1px solid #adab80;transform:rotate(45deg)}
+@media(prefers-reduced-motion:reduce){.sop-link.sop-atlas-spur-link,.sop-link.sop-atlas-spur-link *,.sop-link.sop-atlas-spur-link::before,.sop-link.sop-atlas-spur-link::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-link.sop-atlas-spur-link{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-link.sop-atlas-spur-link :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-link.sop-atlas-spur-link:focus-visible,.sop-link.sop-atlas-spur-link :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-link.sop-atlas-spur-link[data-sop-paused] *,.sop-link.sop-atlas-spur-link[data-paused=true] *,.sop-link.sop-atlas-spur-link[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

@@ -1,0 +1,8 @@
+@import "../../../shared/checkbox-base.css";
+/* Oblique Check — 斜めの小さな窓と直線の本文を分離し、選択の輪郭を強く出す。 */
+.sop-check.sop-oblique-check{--cb-bg:#1c343d;--cb-ink:#e3eeea;--cb-accent:#91ccd0;--cb-line:#6c9ba6;--cb-size:27px;--cb-radius:0;border:0;border-bottom:1px solid #547482;padding:18px 10px;background:none}.sop-check.sop-oblique-check .sop-check-box{transform:skewX(-13deg);border-width:2px;border-radius:0;box-shadow:3px 3px 0 #486e75}.sop-check.sop-oblique-check .sop-check-tick{transform:skewX(13deg)}.sop-check.sop-oblique-check input:checked~.sop-check-box{background:#83b8bd;box-shadow:1px 1px 0 #486e75}.sop-check.sop-oblique-check .sop-check-aura{display:none}
+@media(prefers-reduced-motion:reduce){.sop-check.sop-oblique-check,.sop-check.sop-oblique-check *,.sop-check.sop-oblique-check::before,.sop-check.sop-oblique-check::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-check.sop-oblique-check{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-check.sop-oblique-check :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-check.sop-oblique-check:focus-visible,.sop-check.sop-oblique-check :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-check.sop-oblique-check[data-sop-paused] *,.sop-check.sop-oblique-check[data-paused=true] *,.sop-check.sop-oblique-check[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

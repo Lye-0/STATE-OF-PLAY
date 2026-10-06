@@ -1,0 +1,6543 @@
+{
+  "rows": [
+    {
+      "id": "paper-card",
+      "category": "blocks",
+      "action": "hover",
+      "photo": "photos/paper-card--state.png",
+      "animations": []
+    },
+    {
+      "id": "outline-card",
+      "category": "blocks",
+      "action": "hover",
+      "photo": "photos/outline-card--state.png",
+      "animations": []
+    },
+    {
+      "id": "accent-card",
+      "category": "blocks",
+      "action": "hover",
+      "photo": "photos/accent-card--state.png",
+      "animations": []
+    },
+    {
+      "id": "status-card",
+      "category": "blocks",
+      "action": "hover",
+      "photo": "photos/status-card--state.png",
+      "animations": []
+    },
+    {
+      "id": "minimal-scroll",
+      "category": "scrollbars",
+      "action": "scroll",
+      "photo": "photos/minimal-scroll--state.png",
+      "animations": []
+    },
+    {
+      "id": "ink-scroll",
+      "category": "scrollbars",
+      "action": "scroll",
+      "photo": "photos/ink-scroll--state.png",
+      "animations": []
+    },
+    {
+      "id": "frost-scroll",
+      "category": "scrollbars",
+      "action": "scroll",
+      "photo": "photos/frost-scroll--state.png",
+      "animations": []
+    },
+    {
+      "id": "accent-scroll",
+      "category": "scrollbars",
+      "action": "scroll",
+      "photo": "photos/accent-scroll--state.png",
+      "animations": []
+    },
+    {
+      "id": "editorial-scroll",
+      "category": "scrollbars",
+      "action": "scroll",
+      "photo": "photos/editorial-scroll--state.png",
+      "animations": []
+    },
+    {
+      "id": "aurora-select",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/aurora-select--state.png",
+      "animations": [
+        {
+          "element": "DIV.sop-select-popup",
+          "name": "sop-menu-dissolve",
+          "duration": "0.24s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "optic-select",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/optic-select--state.png",
+      "animations": [
+        {
+          "element": "DIV.sop-select-popup",
+          "name": "sop-menu-reveal",
+          "duration": "0.24s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "atelier-select",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/atelier-select--state.png",
+      "animations": [
+        {
+          "element": "DIV.sop-select-popup",
+          "name": "sop-menu-folio",
+          "duration": "0.24s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "resonance-select",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/resonance-select--state.png",
+      "animations": [
+        {
+          "element": "DIV.sop-select-popup",
+          "name": "sop-menu-reveal",
+          "duration": "0.24s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "orbit-select",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/orbit-select--state.png",
+      "animations": [
+        {
+          "element": "DIV.sop-select-popup",
+          "name": "sop-menu-reveal",
+          "duration": "0.24s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "relic-select",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/relic-select--state.png",
+      "animations": [
+        {
+          "element": "DIV.sop-select-popup",
+          "name": "sop-menu-folio",
+          "duration": "0.24s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "prism-select",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/prism-select--state.png",
+      "animations": [
+        {
+          "element": "DIV.sop-select-popup",
+          "name": "sop-menu-reveal",
+          "duration": "0.24s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "silk-select",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/silk-select--state.png",
+      "animations": [
+        {
+          "element": "DIV.sop-select-popup",
+          "name": "sop-menu-folio",
+          "duration": "0.24s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "transit-select",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/transit-select--state.png",
+      "animations": [
+        {
+          "element": "DIV.sop-select-popup",
+          "name": "sop-menu-folio",
+          "duration": "0.24s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "glasshouse-select",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/glasshouse-select--state.png",
+      "animations": [
+        {
+          "element": "DIV.sop-select-popup",
+          "name": "sop-menu-dissolve",
+          "duration": "0.24s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "nocturne-select",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/nocturne-select--state.png",
+      "animations": [
+        {
+          "element": "DIV.sop-select-popup",
+          "name": "sop-menu-dissolve",
+          "duration": "0.24s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "spectrum-select",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/spectrum-select--state.png",
+      "animations": [
+        {
+          "element": "DIV.sop-select-popup",
+          "name": "sop-menu-dissolve",
+          "duration": "0.24s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "ceramic-select",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/ceramic-select--state.png",
+      "animations": [
+        {
+          "element": "DIV.sop-select-popup",
+          "name": "sop-menu-dissolve",
+          "duration": "0.24s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "ember-select",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/ember-select--state.png",
+      "animations": [
+        {
+          "element": "DIV.sop-select-popup",
+          "name": "sop-menu-reveal",
+          "duration": "0.24s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "archive-select",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/archive-select--state.png",
+      "animations": [
+        {
+          "element": "DIV.sop-select-popup",
+          "name": "sop-menu-folio",
+          "duration": "0.24s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "fjord-select",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/fjord-select--state.png",
+      "animations": [
+        {
+          "element": "DIV.sop-select-popup",
+          "name": "sop-menu-reveal",
+          "duration": "0.24s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "essential-select",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/essential-select--state.png",
+      "animations": [
+        {
+          "element": "DIV.sop-select-popup",
+          "name": "sop-select-enter",
+          "duration": "0.22s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "slate-select",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/slate-select--state.png",
+      "animations": [
+        {
+          "element": "DIV.sop-select-popup",
+          "name": "sop-select-enter",
+          "duration": "0.22s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "outline-select",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/outline-select--state.png",
+      "animations": [
+        {
+          "element": "DIV.sop-select-popup",
+          "name": "sop-select-enter",
+          "duration": "0.22s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "soft-select",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/soft-select--state.png",
+      "animations": [
+        {
+          "element": "DIV.sop-select-popup",
+          "name": "sop-select-enter",
+          "duration": "0.22s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "mono-select",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/mono-select--state.png",
+      "animations": [
+        {
+          "element": "DIV.sop-select-popup",
+          "name": "sop-select-enter",
+          "duration": "0.22s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "compact-select",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/compact-select--state.png",
+      "animations": [
+        {
+          "element": "DIV.sop-select-popup",
+          "name": "sop-select-enter",
+          "duration": "0.22s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "team-select",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/team-select--state.png",
+      "animations": [
+        {
+          "element": "DIV.sop-select-popup",
+          "name": "sop-select-enter",
+          "duration": "0.22s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "locale-select",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/locale-select--state.png",
+      "animations": [
+        {
+          "element": "DIV.sop-select-popup",
+          "name": "sop-select-enter",
+          "duration": "0.22s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "liquid-lens-menu",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/liquid-lens-menu--state.png",
+      "animations": []
+    },
+    {
+      "id": "spotlight-menu",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/spotlight-menu--state.png",
+      "animations": []
+    },
+    {
+      "id": "elastic-menu",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/elastic-menu--state.png",
+      "animations": []
+    },
+    {
+      "id": "foldout-menu",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/foldout-menu--state.png",
+      "animations": []
+    },
+    {
+      "id": "iris-menu",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/iris-menu--state.png",
+      "animations": []
+    },
+    {
+      "id": "layered-glass-menu",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/layered-glass-menu--state.png",
+      "animations": []
+    },
+    {
+      "id": "magnetic-menu",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/magnetic-menu--state.png",
+      "animations": []
+    },
+    {
+      "id": "curtain-menu",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/curtain-menu--state.png",
+      "animations": []
+    },
+    {
+      "id": "depth-stack-menu",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/depth-stack-menu--state.png",
+      "animations": []
+    },
+    {
+      "id": "typographic-menu",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/typographic-menu--state.png",
+      "animations": []
+    },
+    {
+      "id": "aurora-field-menu",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/aurora-field-menu--state.png",
+      "animations": []
+    },
+    {
+      "id": "portal-menu",
+      "category": "dropdowns",
+      "action": "open",
+      "photo": "photos/portal-menu--state.png",
+      "animations": []
+    },
+    {
+      "id": "quiet-button",
+      "category": "buttons",
+      "action": "hover",
+      "photo": "photos/quiet-button--state.png",
+      "animations": []
+    },
+    {
+      "id": "linen-button",
+      "category": "buttons",
+      "action": "hover",
+      "photo": "photos/linen-button--state.png",
+      "animations": []
+    },
+    {
+      "id": "soft-button",
+      "category": "buttons",
+      "action": "hover",
+      "photo": "photos/soft-button--state.png",
+      "animations": []
+    },
+    {
+      "id": "text-arrow-link",
+      "category": "links",
+      "action": "hover",
+      "photo": "photos/text-arrow-link--state.png",
+      "animations": []
+    },
+    {
+      "id": "subtle-link",
+      "category": "links",
+      "action": "hover",
+      "photo": "photos/subtle-link--state.png",
+      "animations": []
+    },
+    {
+      "id": "atlas-tabs",
+      "category": "tabs",
+      "action": "select-second",
+      "photo": "photos/atlas-tabs--state.png",
+      "animations": []
+    },
+    {
+      "id": "folio-tabs",
+      "category": "tabs",
+      "action": "select-second",
+      "photo": "photos/folio-tabs--state.png",
+      "animations": []
+    },
+    {
+      "id": "essential-tabs",
+      "category": "tabs",
+      "action": "select-second",
+      "photo": "photos/essential-tabs--state.png",
+      "animations": [
+        {
+          "element": "SECTION.sop-choice-panel",
+          "name": "sop-choice-enter",
+          "duration": "0.3s",
+          "timing": "cubic-bezier(0.2, 0.85, 0.2, 1)"
+        },
+        {
+          "element": "SECTION.sop-choice-panel",
+          "name": "sop-choice-enter",
+          "duration": "0.3s",
+          "timing": "cubic-bezier(0.2, 0.85, 0.2, 1)"
+        },
+        {
+          "element": "SECTION.sop-choice-panel",
+          "name": "sop-choice-enter",
+          "duration": "0.3s",
+          "timing": "cubic-bezier(0.2, 0.85, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "pill-tabs",
+      "category": "tabs",
+      "action": "select-second",
+      "photo": "photos/pill-tabs--state.png",
+      "animations": [
+        {
+          "element": "SECTION.sop-choice-panel",
+          "name": "sop-choice-enter",
+          "duration": "0.3s",
+          "timing": "cubic-bezier(0.2, 0.85, 0.2, 1)"
+        },
+        {
+          "element": "SECTION.sop-choice-panel",
+          "name": "sop-choice-enter",
+          "duration": "0.3s",
+          "timing": "cubic-bezier(0.2, 0.85, 0.2, 1)"
+        },
+        {
+          "element": "SECTION.sop-choice-panel",
+          "name": "sop-choice-enter",
+          "duration": "0.3s",
+          "timing": "cubic-bezier(0.2, 0.85, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "detent-segments",
+      "category": "segments",
+      "action": "select-first",
+      "photo": "photos/detent-segments--state.png",
+      "animations": []
+    },
+    {
+      "id": "origami-segments",
+      "category": "segments",
+      "action": "select-first",
+      "photo": "photos/origami-segments--state.png",
+      "animations": []
+    },
+    {
+      "id": "studio-segments",
+      "category": "segments",
+      "action": "select-first",
+      "photo": "photos/studio-segments--state.png",
+      "animations": []
+    },
+    {
+      "id": "atlas-segments",
+      "category": "segments",
+      "action": "select-first",
+      "photo": "photos/atlas-segments--state.png",
+      "animations": []
+    },
+    {
+      "id": "essential-segments",
+      "category": "segments",
+      "action": "select-first",
+      "photo": "photos/essential-segments--state.png",
+      "animations": []
+    },
+    {
+      "id": "soft-segments",
+      "category": "segments",
+      "action": "select-first",
+      "photo": "photos/soft-segments--state.png",
+      "animations": []
+    },
+    {
+      "id": "compact-segments",
+      "category": "segments",
+      "action": "select-first",
+      "photo": "photos/compact-segments--state.png",
+      "animations": []
+    },
+    {
+      "id": "paper-segments",
+      "category": "segments",
+      "action": "select-first",
+      "photo": "photos/paper-segments--state.png",
+      "animations": []
+    },
+    {
+      "id": "slate-segments",
+      "category": "segments",
+      "action": "select-first",
+      "photo": "photos/slate-segments--state.png",
+      "animations": []
+    },
+    {
+      "id": "icon-segments",
+      "category": "segments",
+      "action": "select-first",
+      "photo": "photos/icon-segments--state.png",
+      "animations": []
+    },
+    {
+      "id": "essential-check",
+      "category": "checkboxes",
+      "action": "select",
+      "photo": "photos/essential-check--state.png",
+      "animations": []
+    },
+    {
+      "id": "accent-check",
+      "category": "checkboxes",
+      "action": "select",
+      "photo": "photos/accent-check--state.png",
+      "animations": []
+    },
+    {
+      "id": "consent-check",
+      "category": "checkboxes",
+      "action": "select",
+      "photo": "photos/consent-check--state.png",
+      "animations": []
+    },
+    {
+      "id": "aurora-window",
+      "category": "popups",
+      "action": "open",
+      "photo": "photos/aurora-window--state.png",
+      "animations": [
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "DIALOG.sop-popup-window",
+          "name": "tr-membrane",
+          "duration": "0.74s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-fluid-plane",
+          "duration": "1s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-fluid-plane",
+          "duration": "1s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-fluid-plane",
+          "duration": "1s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-fluid-plane",
+          "duration": "1s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-fluid-plane",
+          "duration": "1s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-fluid-plane",
+          "duration": "1s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-fluid-plane",
+          "duration": "1s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-fluid-plane",
+          "duration": "1s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "observatory-window",
+      "category": "popups",
+      "action": "open",
+      "photo": "photos/observatory-window--state.png",
+      "animations": [
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "DIALOG.sop-popup-window",
+          "name": "tr-iris-open",
+          "duration": "0.66s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-iris-plane",
+          "duration": "0.95s",
+          "timing": "cubic-bezier(0.14, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-iris-plane",
+          "duration": "0.95s",
+          "timing": "cubic-bezier(0.14, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-iris-plane",
+          "duration": "0.95s",
+          "timing": "cubic-bezier(0.14, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-iris-plane",
+          "duration": "0.95s",
+          "timing": "cubic-bezier(0.14, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-iris-plane",
+          "duration": "0.95s",
+          "timing": "cubic-bezier(0.14, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-iris-plane",
+          "duration": "0.95s",
+          "timing": "cubic-bezier(0.14, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-iris-plane",
+          "duration": "0.95s",
+          "timing": "cubic-bezier(0.14, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-iris-plane",
+          "duration": "0.95s",
+          "timing": "cubic-bezier(0.14, 0.9, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "folio-window",
+      "category": "popups",
+      "action": "open",
+      "photo": "photos/folio-window--state.png",
+      "animations": [
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "DIALOG.sop-popup-window",
+          "name": "tr-book-open",
+          "duration": "0.72s",
+          "timing": "cubic-bezier(0.14, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-page-open",
+          "duration": "0.85s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-page-open",
+          "duration": "0.85s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-page-open",
+          "duration": "0.85s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-page-open",
+          "duration": "0.85s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-page-open",
+          "duration": "0.85s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-page-open",
+          "duration": "0.85s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-page-open",
+          "duration": "0.85s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-page-open",
+          "duration": "0.85s",
+          "timing": "ease"
+        }
+      ]
+    },
+    {
+      "id": "titanium-dialog",
+      "category": "popups",
+      "action": "open",
+      "photo": "photos/titanium-dialog--state.png",
+      "animations": [
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "DIALOG.sop-popup-window",
+          "name": "tr-split-open",
+          "duration": "0.65s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-shell-part",
+          "duration": "0.85s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-shell-part-right",
+          "duration": "0.85s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-shell-part",
+          "duration": "0.85s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-shell-part-right",
+          "duration": "0.85s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-shell-part",
+          "duration": "0.85s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-shell-part-right",
+          "duration": "0.85s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-shell-part",
+          "duration": "0.85s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-shell-part-right",
+          "duration": "0.85s",
+          "timing": "ease"
+        }
+      ]
+    },
+    {
+      "id": "prism-window",
+      "category": "popups",
+      "action": "open",
+      "photo": "photos/prism-window--state.png",
+      "animations": [
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "DIALOG.sop-popup-window",
+          "name": "tr-prism-open",
+          "duration": "0.68s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-prism-plane",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-prism-plane",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-prism-plane",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-prism-plane",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-prism-plane",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-prism-plane",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-prism-plane",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-prism-plane",
+          "duration": "0.9s",
+          "timing": "ease"
+        }
+      ]
+    },
+    {
+      "id": "nixie-console",
+      "category": "popups",
+      "action": "open",
+      "photo": "photos/nixie-console--state.png",
+      "animations": [
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "DIALOG.sop-popup-window",
+          "name": "tr-split-open",
+          "duration": "0.6s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-filament-open",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-filament-open",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-filament-open",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-filament-open",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-filament-open",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-filament-open",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-filament-open",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-filament-open",
+          "duration": "0.9s",
+          "timing": "ease"
+        }
+      ]
+    },
+    {
+      "id": "blueprint-sheet",
+      "category": "popups",
+      "action": "open",
+      "photo": "photos/blueprint-sheet--state.png",
+      "animations": [
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "DIALOG.sop-popup-window",
+          "name": "tr-grid-open",
+          "duration": "0.65s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-grid-plane",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-grid-plane",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-grid-plane",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-grid-plane",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-grid-plane",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-grid-plane",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-grid-plane",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-grid-plane",
+          "duration": "0.9s",
+          "timing": "ease"
+        }
+      ]
+    },
+    {
+      "id": "gallery-window",
+      "category": "popups",
+      "action": "open",
+      "photo": "photos/gallery-window--state.png",
+      "animations": [
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "DIALOG.sop-popup-window",
+          "name": "tr-split-open",
+          "duration": "0.65s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-gallery-frame",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-gallery-frame",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-gallery-frame",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-gallery-frame",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-gallery-frame",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-gallery-frame",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-gallery-frame",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-gallery-frame",
+          "duration": "0.8s",
+          "timing": "ease"
+        }
+      ]
+    },
+    {
+      "id": "velvet-invitation",
+      "category": "popups",
+      "action": "open",
+      "photo": "photos/velvet-invitation--state.png",
+      "animations": [
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "DIALOG.sop-popup-window",
+          "name": "tr-curtain-open",
+          "duration": "0.68s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-curtain-plane",
+          "duration": "0.95s",
+          "timing": "cubic-bezier(0.14, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-curtain-plane",
+          "duration": "0.95s",
+          "timing": "cubic-bezier(0.14, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-curtain-plane",
+          "duration": "0.95s",
+          "timing": "cubic-bezier(0.14, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-curtain-plane",
+          "duration": "0.95s",
+          "timing": "cubic-bezier(0.14, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-curtain-plane",
+          "duration": "0.95s",
+          "timing": "cubic-bezier(0.14, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-curtain-plane",
+          "duration": "0.95s",
+          "timing": "cubic-bezier(0.14, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-curtain-plane",
+          "duration": "0.95s",
+          "timing": "cubic-bezier(0.14, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-curtain-plane",
+          "duration": "0.95s",
+          "timing": "cubic-bezier(0.14, 0.9, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "copper-receipt",
+      "category": "popups",
+      "action": "open",
+      "photo": "photos/copper-receipt--state.png",
+      "animations": [
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "DIALOG.sop-popup-window",
+          "name": "tr-roll-down",
+          "duration": "0.68s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-receipt-plane",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-receipt-plane",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-receipt-plane",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-receipt-plane",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-receipt-plane",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-receipt-plane",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-receipt-plane",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-receipt-plane",
+          "duration": "0.8s",
+          "timing": "ease"
+        }
+      ]
+    },
+    {
+      "id": "transit-pass",
+      "category": "popups",
+      "action": "open",
+      "photo": "photos/transit-pass--state.png",
+      "animations": [
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "DIALOG.sop-popup-window",
+          "name": "tr-roll-down",
+          "duration": "0.68s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-ticket-plane",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-ticket-plane",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-ticket-plane",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-ticket-plane",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-ticket-plane",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-ticket-plane",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-ticket-plane",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-ticket-plane",
+          "duration": "0.8s",
+          "timing": "ease"
+        }
+      ]
+    },
+    {
+      "id": "atelier-palette",
+      "category": "popups",
+      "action": "open",
+      "photo": "photos/atelier-palette--state.png",
+      "animations": [
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "DIALOG.sop-popup-window",
+          "name": "tr-atelier-open",
+          "duration": "0.65s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-fan-paper",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-fan-paper",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-fan-paper",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-fan-paper",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-fan-paper",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-fan-paper",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-fan-paper",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-fan-paper",
+          "duration": "0.8s",
+          "timing": "ease"
+        }
+      ]
+    },
+    {
+      "id": "botanical-note",
+      "category": "popups",
+      "action": "open",
+      "photo": "photos/botanical-note--state.png",
+      "animations": [
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "DIALOG.sop-popup-window",
+          "name": "tr-book-open",
+          "duration": "0.76s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-leaf-open",
+          "duration": "0.95s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-leaf-open",
+          "duration": "0.95s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-leaf-open",
+          "duration": "0.95s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-leaf-open",
+          "duration": "0.95s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-leaf-open",
+          "duration": "0.95s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-leaf-open",
+          "duration": "0.95s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-leaf-open",
+          "duration": "0.95s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-leaf-open",
+          "duration": "0.95s",
+          "timing": "ease"
+        }
+      ]
+    },
+    {
+      "id": "opal-window",
+      "category": "popups",
+      "action": "open",
+      "photo": "photos/opal-window--state.png",
+      "animations": [
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "DIALOG.sop-popup-window",
+          "name": "tr-membrane",
+          "duration": "0.74s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-opal-plane",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-opal-plane",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-opal-plane",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-opal-plane",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-opal-plane",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-opal-plane",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-opal-plane",
+          "duration": "0.9s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-opal-plane",
+          "duration": "0.9s",
+          "timing": "ease"
+        }
+      ]
+    },
+    {
+      "id": "archive-drawer",
+      "category": "popups",
+      "action": "open",
+      "photo": "photos/archive-drawer--state.png",
+      "animations": [
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "DIALOG.sop-popup-window",
+          "name": "tr-drawer-open",
+          "duration": "0.65s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-drawer-plane",
+          "duration": "0.85s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-drawer-plane",
+          "duration": "0.85s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-drawer-plane",
+          "duration": "0.85s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-drawer-plane",
+          "duration": "0.85s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-drawer-plane",
+          "duration": "0.85s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-drawer-plane",
+          "duration": "0.85s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-drawer-plane",
+          "duration": "0.85s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-drawer-plane",
+          "duration": "0.85s",
+          "timing": "ease"
+        }
+      ]
+    },
+    {
+      "id": "dock-sheet",
+      "category": "popups",
+      "action": "open",
+      "photo": "photos/dock-sheet--state.png",
+      "animations": [
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-plane-settle",
+          "duration": "0.85s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "DIALOG.sop-popup-window",
+          "name": "tr-dock-open",
+          "duration": "0.65s",
+          "timing": "cubic-bezier(0.16, 0.9, 0.2, 1)"
+        },
+        {
+          "element": "I.",
+          "name": "tr-dock-plane",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-dock-plane",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-dock-plane",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-dock-plane",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-dock-plane",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-dock-plane",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-dock-plane",
+          "duration": "0.8s",
+          "timing": "ease"
+        },
+        {
+          "element": "I.",
+          "name": "tr-dock-plane",
+          "duration": "0.8s",
+          "timing": "ease"
+        }
+      ]
+    },
+    {
+      "id": "essential-dialog",
+      "category": "popups",
+      "action": "open",
+      "photo": "photos/essential-dialog--state.png",
+      "animations": [
+        {
+          "element": "DIALOG.sop-popup-window",
+          "name": "sop-popup-appear",
+          "duration": "0.38s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "paper-dialog",
+      "category": "popups",
+      "action": "open",
+      "photo": "photos/paper-dialog--state.png",
+      "animations": [
+        {
+          "element": "DIALOG.sop-popup-window",
+          "name": "sop-popup-appear",
+          "duration": "0.38s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "quiet-confirm",
+      "category": "popups",
+      "action": "open",
+      "photo": "photos/quiet-confirm--state.png",
+      "animations": [
+        {
+          "element": "DIALOG.sop-popup-window",
+          "name": "sop-popup-appear",
+          "duration": "0.38s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "soft-preferences",
+      "category": "popups",
+      "action": "open",
+      "photo": "photos/soft-preferences--state.png",
+      "animations": [
+        {
+          "element": "DIALOG.sop-popup-window",
+          "name": "sop-popup-appear",
+          "duration": "0.38s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "notice-dialog",
+      "category": "popups",
+      "action": "open",
+      "photo": "photos/notice-dialog--state.png",
+      "animations": [
+        {
+          "element": "DIALOG.sop-popup-window",
+          "name": "sop-popup-appear",
+          "duration": "0.38s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "compact-dialog",
+      "category": "popups",
+      "action": "open",
+      "photo": "photos/compact-dialog--state.png",
+      "animations": [
+        {
+          "element": "DIALOG.sop-popup-window",
+          "name": "sop-popup-appear",
+          "duration": "0.38s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "form-dialog",
+      "category": "popups",
+      "action": "open",
+      "photo": "photos/form-dialog--state.png",
+      "animations": [
+        {
+          "element": "DIALOG.sop-popup-window",
+          "name": "sop-popup-appear",
+          "duration": "0.38s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "help-dialog",
+      "category": "popups",
+      "action": "open",
+      "photo": "photos/help-dialog--state.png",
+      "animations": [
+        {
+          "element": "DIALOG.sop-popup-window",
+          "name": "sop-popup-appear",
+          "duration": "0.38s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "essential-range",
+      "category": "sliders",
+      "action": "hover",
+      "photo": "photos/essential-range--state.png",
+      "animations": []
+    },
+    {
+      "id": "soft-range",
+      "category": "sliders",
+      "action": "hover",
+      "photo": "photos/soft-range--state.png",
+      "animations": []
+    },
+    {
+      "id": "paper-range",
+      "category": "sliders",
+      "action": "hover",
+      "photo": "photos/paper-range--state.png",
+      "animations": []
+    },
+    {
+      "id": "outline-range",
+      "category": "sliders",
+      "action": "hover",
+      "photo": "photos/outline-range--state.png",
+      "animations": []
+    },
+    {
+      "id": "inset-range",
+      "category": "sliders",
+      "action": "hover",
+      "photo": "photos/inset-range--state.png",
+      "animations": []
+    },
+    {
+      "id": "slate-range",
+      "category": "sliders",
+      "action": "hover",
+      "photo": "photos/slate-range--state.png",
+      "animations": []
+    },
+    {
+      "id": "mono-range",
+      "category": "sliders",
+      "action": "hover",
+      "photo": "photos/mono-range--state.png",
+      "animations": []
+    },
+    {
+      "id": "essential-choice",
+      "category": "radios",
+      "action": "select",
+      "photo": "photos/essential-choice--state.png",
+      "animations": []
+    },
+    {
+      "id": "soft-choice",
+      "category": "radios",
+      "action": "select",
+      "photo": "photos/soft-choice--state.png",
+      "animations": []
+    },
+    {
+      "id": "paper-choice",
+      "category": "radios",
+      "action": "select",
+      "photo": "photos/paper-choice--state.png",
+      "animations": []
+    },
+    {
+      "id": "slate-choice",
+      "category": "radios",
+      "action": "select",
+      "photo": "photos/slate-choice--state.png",
+      "animations": []
+    },
+    {
+      "id": "mono-choice",
+      "category": "radios",
+      "action": "select",
+      "photo": "photos/mono-choice--state.png",
+      "animations": []
+    },
+    {
+      "id": "aurora-finder",
+      "category": "comboboxes",
+      "action": "open-options",
+      "photo": "photos/aurora-finder--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "mercury-finder",
+      "category": "comboboxes",
+      "action": "open-options",
+      "photo": "photos/mercury-finder--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "nixie-finder",
+      "category": "comboboxes",
+      "action": "open-options",
+      "photo": "photos/nixie-finder--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "folio-finder",
+      "category": "comboboxes",
+      "action": "open-options",
+      "photo": "photos/folio-finder--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "blueprint-finder",
+      "category": "comboboxes",
+      "action": "open-options",
+      "photo": "photos/blueprint-finder--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "prism-finder",
+      "category": "comboboxes",
+      "action": "open-options",
+      "photo": "photos/prism-finder--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "copper-finder",
+      "category": "comboboxes",
+      "action": "open-options",
+      "photo": "photos/copper-finder--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "botanical-finder",
+      "category": "comboboxes",
+      "action": "open-options",
+      "photo": "photos/botanical-finder--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "velvet-finder",
+      "category": "comboboxes",
+      "action": "open-options",
+      "photo": "photos/velvet-finder--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "obsidian-finder",
+      "category": "comboboxes",
+      "action": "open-options",
+      "photo": "photos/obsidian-finder--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "ceramic-finder",
+      "category": "comboboxes",
+      "action": "open-options",
+      "photo": "photos/ceramic-finder--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "tide-finder",
+      "category": "comboboxes",
+      "action": "open-options",
+      "photo": "photos/tide-finder--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "aperture-finder",
+      "category": "comboboxes",
+      "action": "open-options",
+      "photo": "photos/aperture-finder--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "transit-finder",
+      "category": "comboboxes",
+      "action": "open-options",
+      "photo": "photos/transit-finder--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "relay-finder",
+      "category": "comboboxes",
+      "action": "open-options",
+      "photo": "photos/relay-finder--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "contour-finder",
+      "category": "comboboxes",
+      "action": "open-options",
+      "photo": "photos/contour-finder--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "essential-finder",
+      "category": "comboboxes",
+      "action": "open-options",
+      "photo": "photos/essential-finder--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-combo-list",
+          "name": "sop-ff-reveal",
+          "duration": "0.2s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ],
+      "expanded": true
+    },
+    {
+      "id": "soft-finder",
+      "category": "comboboxes",
+      "action": "open-options",
+      "photo": "photos/soft-finder--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-combo-list",
+          "name": "sop-ff-reveal",
+          "duration": "0.2s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ],
+      "expanded": true
+    },
+    {
+      "id": "paper-finder",
+      "category": "comboboxes",
+      "action": "open-options",
+      "photo": "photos/paper-finder--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-combo-list",
+          "name": "sop-ff-reveal",
+          "duration": "0.2s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ],
+      "expanded": true
+    },
+    {
+      "id": "outline-finder",
+      "category": "comboboxes",
+      "action": "open-options",
+      "photo": "photos/outline-finder--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-combo-list",
+          "name": "sop-ff-reveal",
+          "duration": "0.2s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ],
+      "expanded": true
+    },
+    {
+      "id": "inset-finder",
+      "category": "comboboxes",
+      "action": "open-options",
+      "photo": "photos/inset-finder--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-combo-list",
+          "name": "sop-ff-reveal",
+          "duration": "0.2s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ],
+      "expanded": true
+    },
+    {
+      "id": "compact-finder",
+      "category": "comboboxes",
+      "action": "open-options",
+      "photo": "photos/compact-finder--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-combo-list",
+          "name": "sop-ff-reveal",
+          "duration": "0.2s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ],
+      "expanded": true
+    },
+    {
+      "id": "slate-finder",
+      "category": "comboboxes",
+      "action": "open-options",
+      "photo": "photos/slate-finder--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-combo-list",
+          "name": "sop-ff-reveal",
+          "duration": "0.2s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ],
+      "expanded": true
+    },
+    {
+      "id": "mono-finder",
+      "category": "comboboxes",
+      "action": "open-options",
+      "photo": "photos/mono-finder--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-combo-list",
+          "name": "sop-ff-reveal",
+          "duration": "0.2s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ],
+      "expanded": true
+    },
+    {
+      "id": "essential-notice",
+      "category": "toasts",
+      "action": "hover",
+      "photo": "photos/essential-notice--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-notice ff-notice-sample",
+          "name": "sop-ff-reveal",
+          "duration": "0.24s",
+          "timing": "ease-out"
+        }
+      ]
+    },
+    {
+      "id": "soft-notice",
+      "category": "toasts",
+      "action": "hover",
+      "photo": "photos/soft-notice--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-notice ff-notice-sample",
+          "name": "sop-ff-reveal",
+          "duration": "0.24s",
+          "timing": "ease-out"
+        }
+      ]
+    },
+    {
+      "id": "paper-notice",
+      "category": "toasts",
+      "action": "hover",
+      "photo": "photos/paper-notice--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-notice ff-notice-sample",
+          "name": "sop-ff-reveal",
+          "duration": "0.24s",
+          "timing": "ease-out"
+        }
+      ]
+    },
+    {
+      "id": "inset-notice",
+      "category": "toasts",
+      "action": "hover",
+      "photo": "photos/inset-notice--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-notice ff-notice-sample",
+          "name": "sop-ff-reveal",
+          "duration": "0.24s",
+          "timing": "ease-out"
+        }
+      ]
+    },
+    {
+      "id": "compact-notice",
+      "category": "toasts",
+      "action": "hover",
+      "photo": "photos/compact-notice--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-notice ff-notice-sample",
+          "name": "sop-ff-reveal",
+          "duration": "0.24s",
+          "timing": "ease-out"
+        }
+      ]
+    },
+    {
+      "id": "slate-notice",
+      "category": "toasts",
+      "action": "hover",
+      "photo": "photos/slate-notice--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-notice ff-notice-sample",
+          "name": "sop-ff-reveal",
+          "duration": "0.24s",
+          "timing": "ease-out"
+        }
+      ]
+    },
+    {
+      "id": "mono-notice",
+      "category": "toasts",
+      "action": "hover",
+      "photo": "photos/mono-notice--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-notice ff-notice-sample",
+          "name": "sop-ff-reveal",
+          "duration": "0.24s",
+          "timing": "ease-out"
+        }
+      ]
+    },
+    {
+      "id": "aurora-popover",
+      "category": "hints",
+      "action": "open / hover-trigger",
+      "photo": "photos/aurora-popover--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "mercury-popover",
+      "category": "hints",
+      "action": "open / hover-trigger",
+      "photo": "photos/mercury-popover--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "nixie-popover",
+      "category": "hints",
+      "action": "open / hover-trigger",
+      "photo": "photos/nixie-popover--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "folio-popover",
+      "category": "hints",
+      "action": "open / hover-trigger",
+      "photo": "photos/folio-popover--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "blueprint-popover",
+      "category": "hints",
+      "action": "open / hover-trigger",
+      "photo": "photos/blueprint-popover--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "prism-popover",
+      "category": "hints",
+      "action": "open / hover-trigger",
+      "photo": "photos/prism-popover--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "copper-popover",
+      "category": "hints",
+      "action": "open / hover-trigger",
+      "photo": "photos/copper-popover--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "botanical-popover",
+      "category": "hints",
+      "action": "open / hover-trigger",
+      "photo": "photos/botanical-popover--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "velvet-popover",
+      "category": "hints",
+      "action": "open / hover-trigger",
+      "photo": "photos/velvet-popover--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "obsidian-popover",
+      "category": "hints",
+      "action": "open / hover-trigger",
+      "photo": "photos/obsidian-popover--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "ceramic-popover",
+      "category": "hints",
+      "action": "open / hover-trigger",
+      "photo": "photos/ceramic-popover--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "tide-popover",
+      "category": "hints",
+      "action": "open / hover-trigger",
+      "photo": "photos/tide-popover--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "aperture-popover",
+      "category": "hints",
+      "action": "open / hover-trigger",
+      "photo": "photos/aperture-popover--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "transit-popover",
+      "category": "hints",
+      "action": "open / hover-trigger",
+      "photo": "photos/transit-popover--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "relay-popover",
+      "category": "hints",
+      "action": "open / hover-trigger",
+      "photo": "photos/relay-popover--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "contour-popover",
+      "category": "hints",
+      "action": "open / hover-trigger",
+      "photo": "photos/contour-popover--state.png",
+      "animations": [],
+      "expanded": true
+    },
+    {
+      "id": "essential-popover",
+      "category": "hints",
+      "action": "open / hover-trigger",
+      "photo": "photos/essential-popover--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-hint-panel",
+          "name": "sop-ff-hint-reveal",
+          "duration": "0.2s",
+          "timing": "ease-out"
+        }
+      ],
+      "expanded": true
+    },
+    {
+      "id": "soft-popover",
+      "category": "hints",
+      "action": "open / hover-trigger",
+      "photo": "photos/soft-popover--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-hint-panel",
+          "name": "sop-ff-hint-reveal",
+          "duration": "0.2s",
+          "timing": "ease-out"
+        }
+      ],
+      "expanded": true
+    },
+    {
+      "id": "paper-popover",
+      "category": "hints",
+      "action": "open / hover-trigger",
+      "photo": "photos/paper-popover--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-hint-panel",
+          "name": "sop-ff-hint-reveal",
+          "duration": "0.2s",
+          "timing": "ease-out"
+        }
+      ],
+      "expanded": true
+    },
+    {
+      "id": "outline-popover",
+      "category": "hints",
+      "action": "open / hover-trigger",
+      "photo": "photos/outline-popover--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-hint-panel",
+          "name": "sop-ff-hint-reveal",
+          "duration": "0.2s",
+          "timing": "ease-out"
+        }
+      ],
+      "expanded": true
+    },
+    {
+      "id": "inset-popover",
+      "category": "hints",
+      "action": "open / hover-trigger",
+      "photo": "photos/inset-popover--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-hint-panel",
+          "name": "sop-ff-hint-reveal",
+          "duration": "0.2s",
+          "timing": "ease-out"
+        }
+      ],
+      "expanded": true
+    },
+    {
+      "id": "compact-popover",
+      "category": "hints",
+      "action": "open / hover-trigger",
+      "photo": "photos/compact-popover--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-hint-panel",
+          "name": "sop-ff-hint-reveal",
+          "duration": "0.2s",
+          "timing": "ease-out"
+        }
+      ],
+      "expanded": true
+    },
+    {
+      "id": "slate-popover",
+      "category": "hints",
+      "action": "open / hover-trigger",
+      "photo": "photos/slate-popover--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-hint-panel",
+          "name": "sop-ff-hint-reveal",
+          "duration": "0.2s",
+          "timing": "ease-out"
+        }
+      ],
+      "expanded": true
+    },
+    {
+      "id": "mono-popover",
+      "category": "hints",
+      "action": "open / hover-trigger",
+      "photo": "photos/mono-popover--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-hint-panel",
+          "name": "sop-ff-hint-reveal",
+          "duration": "0.2s",
+          "timing": "ease-out"
+        }
+      ],
+      "expanded": true
+    },
+    {
+      "id": "essential-progress",
+      "category": "progress",
+      "action": "hover",
+      "photo": "photos/essential-progress--state.png",
+      "animations": []
+    },
+    {
+      "id": "soft-progress",
+      "category": "progress",
+      "action": "hover",
+      "photo": "photos/soft-progress--state.png",
+      "animations": []
+    },
+    {
+      "id": "paper-progress",
+      "category": "progress",
+      "action": "hover",
+      "photo": "photos/paper-progress--state.png",
+      "animations": []
+    },
+    {
+      "id": "inset-progress",
+      "category": "progress",
+      "action": "hover",
+      "photo": "photos/inset-progress--state.png",
+      "animations": []
+    },
+    {
+      "id": "slate-progress",
+      "category": "progress",
+      "action": "hover",
+      "photo": "photos/slate-progress--state.png",
+      "animations": []
+    },
+    {
+      "id": "mono-progress",
+      "category": "progress",
+      "action": "hover",
+      "photo": "photos/mono-progress--state.png",
+      "animations": []
+    },
+    {
+      "id": "aurora-loader",
+      "category": "loaders",
+      "action": "hover",
+      "photo": "photos/aurora-loader--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-orbit o1",
+          "name": "sop-ff-spin",
+          "duration": "3.6s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o2",
+          "name": "sop-ff-spin",
+          "duration": "2.3s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o3",
+          "name": "sop-ff-spin",
+          "duration": "1.6s",
+          "timing": "linear"
+        },
+        {
+          "element": "SPAN.ff-loader-core",
+          "name": "sop-ff-pulse",
+          "duration": "2s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        }
+      ]
+    },
+    {
+      "id": "mercury-loader",
+      "category": "loaders",
+      "action": "hover",
+      "photo": "photos/mercury-loader--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-orbit o1",
+          "name": "sop-ff-spin",
+          "duration": "3.6s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o2",
+          "name": "sop-ff-spin",
+          "duration": "2.3s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o3",
+          "name": "sop-ff-spin",
+          "duration": "1.6s",
+          "timing": "linear"
+        },
+        {
+          "element": "SPAN.ff-loader-core",
+          "name": "sop-ff-pulse",
+          "duration": "2s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        }
+      ]
+    },
+    {
+      "id": "folio-loader",
+      "category": "loaders",
+      "action": "hover",
+      "photo": "photos/folio-loader--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-orbit o1",
+          "name": "sop-ff-pendulum",
+          "duration": "2.1s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "DIV.ff-orbit o2",
+          "name": "sop-ff-pendulum",
+          "duration": "2.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "DIV.ff-orbit o3",
+          "name": "sop-ff-pendulum",
+          "duration": "1.6s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "SPAN.ff-loader-core",
+          "name": "sop-ff-pulse",
+          "duration": "2s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        }
+      ]
+    },
+    {
+      "id": "blueprint-loader",
+      "category": "loaders",
+      "action": "hover",
+      "photo": "photos/blueprint-loader--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-orbit o1",
+          "name": "sop-ff-spin",
+          "duration": "3.6s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o2",
+          "name": "sop-ff-spin",
+          "duration": "2.3s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o3",
+          "name": "sop-ff-spin",
+          "duration": "1.6s",
+          "timing": "linear"
+        },
+        {
+          "element": "SPAN.ff-loader-core",
+          "name": "sop-ff-pulse",
+          "duration": "2s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        }
+      ]
+    },
+    {
+      "id": "prism-loader",
+      "category": "loaders",
+      "action": "hover",
+      "photo": "photos/prism-loader--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-orbit o1",
+          "name": "sop-ff-spin",
+          "duration": "7s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o2",
+          "name": "sop-ff-spin",
+          "duration": "7s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o3",
+          "name": "sop-ff-spin",
+          "duration": "1.6s",
+          "timing": "linear"
+        },
+        {
+          "element": "SPAN.ff-loader-core",
+          "name": "sop-ff-pulse",
+          "duration": "2s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        }
+      ]
+    },
+    {
+      "id": "copper-loader",
+      "category": "loaders",
+      "action": "hover",
+      "photo": "photos/copper-loader--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-orbit o1",
+          "name": "sop-ff-spin",
+          "duration": "8s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o2",
+          "name": "sop-ff-spin",
+          "duration": "2.3s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o3",
+          "name": "sop-ff-spin",
+          "duration": "1.6s",
+          "timing": "linear"
+        },
+        {
+          "element": "SPAN.ff-loader-core",
+          "name": "sop-ff-pulse",
+          "duration": "2s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        }
+      ]
+    },
+    {
+      "id": "botanical-loader",
+      "category": "loaders",
+      "action": "hover",
+      "photo": "photos/botanical-loader--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-orbit o1",
+          "name": "sop-ff-pendulum",
+          "duration": "2s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "DIV.ff-orbit o2",
+          "name": "sop-ff-pendulum",
+          "duration": "2.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "DIV.ff-orbit o3",
+          "name": "sop-ff-pendulum",
+          "duration": "1.6s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "SPAN.ff-loader-core",
+          "name": "sop-ff-pulse",
+          "duration": "2s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        }
+      ]
+    },
+    {
+      "id": "velvet-loader",
+      "category": "loaders",
+      "action": "hover",
+      "photo": "photos/velvet-loader--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-orbit o1",
+          "name": "sop-ff-spin",
+          "duration": "3.6s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o2",
+          "name": "sop-ff-spin",
+          "duration": "2.3s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o3",
+          "name": "sop-ff-spin",
+          "duration": "1.6s",
+          "timing": "linear"
+        },
+        {
+          "element": "SPAN.ff-loader-core",
+          "name": "sop-ff-pulse",
+          "duration": "2s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        }
+      ]
+    },
+    {
+      "id": "obsidian-loader",
+      "category": "loaders",
+      "action": "hover",
+      "photo": "photos/obsidian-loader--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-orbit o1",
+          "name": "sop-ff-spin",
+          "duration": "3.6s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o2",
+          "name": "sop-ff-spin",
+          "duration": "2.3s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o3",
+          "name": "sop-ff-spin",
+          "duration": "1.6s",
+          "timing": "linear"
+        },
+        {
+          "element": "SPAN.ff-loader-core",
+          "name": "sop-ff-pulse",
+          "duration": "2s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        }
+      ]
+    },
+    {
+      "id": "tide-loader",
+      "category": "loaders",
+      "action": "hover",
+      "photo": "photos/tide-loader--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-orbit o1",
+          "name": "sop-ff-pendulum",
+          "duration": "2.1s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "DIV.ff-orbit o2",
+          "name": "sop-ff-pendulum",
+          "duration": "2.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "DIV.ff-orbit o3",
+          "name": "sop-ff-pendulum",
+          "duration": "1.6s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "SPAN.ff-loader-core",
+          "name": "sop-ff-pulse",
+          "duration": "2s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        }
+      ]
+    },
+    {
+      "id": "aperture-loader",
+      "category": "loaders",
+      "action": "hover",
+      "photo": "photos/aperture-loader--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-orbit o1",
+          "name": "sop-ff-spin",
+          "duration": "3.6s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o2",
+          "name": "sop-ff-spin",
+          "duration": "2.3s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o3",
+          "name": "sop-ff-spin",
+          "duration": "1.6s",
+          "timing": "linear"
+        },
+        {
+          "element": "SPAN.ff-loader-core",
+          "name": "sop-ff-pulse",
+          "duration": "2s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        }
+      ]
+    },
+    {
+      "id": "transit-loader",
+      "category": "loaders",
+      "action": "hover",
+      "photo": "photos/transit-loader--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-orbit o1",
+          "name": "sop-ff-spin",
+          "duration": "7s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o2",
+          "name": "sop-ff-spin",
+          "duration": "7s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o3",
+          "name": "sop-ff-spin",
+          "duration": "1.6s",
+          "timing": "linear"
+        },
+        {
+          "element": "SPAN.ff-loader-core",
+          "name": "sop-ff-pulse",
+          "duration": "2s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        }
+      ]
+    },
+    {
+      "id": "relay-loader",
+      "category": "loaders",
+      "action": "hover",
+      "photo": "photos/relay-loader--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-orbit o1",
+          "name": "sop-ff-spin",
+          "duration": "8s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o2",
+          "name": "sop-ff-spin",
+          "duration": "2.3s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o3",
+          "name": "sop-ff-spin",
+          "duration": "1.6s",
+          "timing": "linear"
+        },
+        {
+          "element": "SPAN.ff-loader-core",
+          "name": "sop-ff-pulse",
+          "duration": "2s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        }
+      ]
+    },
+    {
+      "id": "contour-loader",
+      "category": "loaders",
+      "action": "hover",
+      "photo": "photos/contour-loader--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-orbit o1",
+          "name": "sop-ff-pendulum",
+          "duration": "2s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "DIV.ff-orbit o2",
+          "name": "sop-ff-pendulum",
+          "duration": "2.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "DIV.ff-orbit o3",
+          "name": "sop-ff-pendulum",
+          "duration": "1.6s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "SPAN.ff-loader-core",
+          "name": "sop-ff-pulse",
+          "duration": "2s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        }
+      ]
+    },
+    {
+      "id": "essential-loader",
+      "category": "loaders",
+      "action": "hover",
+      "photo": "photos/essential-loader--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-orbit o1",
+          "name": "sop-ff-spin",
+          "duration": "3.6s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o2",
+          "name": "sop-ff-spin",
+          "duration": "2.3s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o3",
+          "name": "sop-ff-spin",
+          "duration": "1.6s",
+          "timing": "linear"
+        },
+        {
+          "element": "SPAN.ff-loader-core",
+          "name": "sop-ff-pulse",
+          "duration": "2s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        }
+      ]
+    },
+    {
+      "id": "soft-loader",
+      "category": "loaders",
+      "action": "hover",
+      "photo": "photos/soft-loader--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-orbit o1",
+          "name": "sop-ff-spin",
+          "duration": "3.6s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o2",
+          "name": "sop-ff-spin",
+          "duration": "2.3s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o3",
+          "name": "sop-ff-spin",
+          "duration": "1.6s",
+          "timing": "linear"
+        },
+        {
+          "element": "SPAN.ff-loader-core",
+          "name": "sop-ff-pulse",
+          "duration": "2s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        }
+      ]
+    },
+    {
+      "id": "outline-loader",
+      "category": "loaders",
+      "action": "hover",
+      "photo": "photos/outline-loader--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-orbit o1",
+          "name": "sop-ff-pendulum",
+          "duration": "2.1s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "DIV.ff-orbit o2",
+          "name": "sop-ff-pendulum",
+          "duration": "2.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "DIV.ff-orbit o3",
+          "name": "sop-ff-pendulum",
+          "duration": "1.6s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "SPAN.ff-loader-core",
+          "name": "sop-ff-pulse",
+          "duration": "2s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        }
+      ]
+    },
+    {
+      "id": "inset-loader",
+      "category": "loaders",
+      "action": "hover",
+      "photo": "photos/inset-loader--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-orbit o1",
+          "name": "sop-ff-spin",
+          "duration": "3.6s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o2",
+          "name": "sop-ff-spin",
+          "duration": "2.3s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o3",
+          "name": "sop-ff-spin",
+          "duration": "1.6s",
+          "timing": "linear"
+        },
+        {
+          "element": "SPAN.ff-loader-core",
+          "name": "sop-ff-pulse",
+          "duration": "2s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        }
+      ]
+    },
+    {
+      "id": "compact-loader",
+      "category": "loaders",
+      "action": "hover",
+      "photo": "photos/compact-loader--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-orbit o1",
+          "name": "sop-ff-spin",
+          "duration": "7s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o2",
+          "name": "sop-ff-spin",
+          "duration": "7s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o3",
+          "name": "sop-ff-spin",
+          "duration": "1.6s",
+          "timing": "linear"
+        },
+        {
+          "element": "SPAN.ff-loader-core",
+          "name": "sop-ff-pulse",
+          "duration": "2s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        }
+      ]
+    },
+    {
+      "id": "slate-loader",
+      "category": "loaders",
+      "action": "hover",
+      "photo": "photos/slate-loader--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-orbit o1",
+          "name": "sop-ff-spin",
+          "duration": "8s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o2",
+          "name": "sop-ff-spin",
+          "duration": "2.3s",
+          "timing": "linear"
+        },
+        {
+          "element": "DIV.ff-orbit o3",
+          "name": "sop-ff-spin",
+          "duration": "1.6s",
+          "timing": "linear"
+        },
+        {
+          "element": "SPAN.ff-loader-core",
+          "name": "sop-ff-pulse",
+          "duration": "2s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        }
+      ]
+    },
+    {
+      "id": "mono-loader",
+      "category": "loaders",
+      "action": "hover",
+      "photo": "photos/mono-loader--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-orbit o1",
+          "name": "sop-ff-pendulum",
+          "duration": "2s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "DIV.ff-orbit o2",
+          "name": "sop-ff-pendulum",
+          "duration": "2.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "DIV.ff-orbit o3",
+          "name": "sop-ff-pendulum",
+          "duration": "1.6s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "SPAN.ff-loader-core",
+          "name": "sop-ff-pulse",
+          "duration": "2s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "I.",
+          "name": "sop-ff-bars",
+          "duration": "1.3s",
+          "timing": "ease-in-out"
+        }
+      ]
+    },
+    {
+      "id": "essential-dropzone",
+      "category": "uploads",
+      "action": "hover",
+      "photo": "photos/essential-dropzone--state.png",
+      "animations": []
+    },
+    {
+      "id": "soft-dropzone",
+      "category": "uploads",
+      "action": "hover",
+      "photo": "photos/soft-dropzone--state.png",
+      "animations": []
+    },
+    {
+      "id": "paper-dropzone",
+      "category": "uploads",
+      "action": "hover",
+      "photo": "photos/paper-dropzone--state.png",
+      "animations": []
+    },
+    {
+      "id": "inset-dropzone",
+      "category": "uploads",
+      "action": "hover",
+      "photo": "photos/inset-dropzone--state.png",
+      "animations": []
+    },
+    {
+      "id": "compact-dropzone",
+      "category": "uploads",
+      "action": "hover",
+      "photo": "photos/compact-dropzone--state.png",
+      "animations": []
+    },
+    {
+      "id": "slate-dropzone",
+      "category": "uploads",
+      "action": "hover",
+      "photo": "photos/slate-dropzone--state.png",
+      "animations": []
+    },
+    {
+      "id": "aurora-calendar",
+      "category": "datepickers",
+      "action": "open",
+      "photo": "photos/aurora-calendar--state.png",
+      "animations": []
+    },
+    {
+      "id": "mercury-calendar",
+      "category": "datepickers",
+      "action": "open",
+      "photo": "photos/mercury-calendar--state.png",
+      "animations": []
+    },
+    {
+      "id": "nixie-calendar",
+      "category": "datepickers",
+      "action": "open",
+      "photo": "photos/nixie-calendar--state.png",
+      "animations": []
+    },
+    {
+      "id": "folio-calendar",
+      "category": "datepickers",
+      "action": "open",
+      "photo": "photos/folio-calendar--state.png",
+      "animations": []
+    },
+    {
+      "id": "blueprint-calendar",
+      "category": "datepickers",
+      "action": "open",
+      "photo": "photos/blueprint-calendar--state.png",
+      "animations": []
+    },
+    {
+      "id": "prism-calendar",
+      "category": "datepickers",
+      "action": "open",
+      "photo": "photos/prism-calendar--state.png",
+      "animations": []
+    },
+    {
+      "id": "copper-calendar",
+      "category": "datepickers",
+      "action": "open",
+      "photo": "photos/copper-calendar--state.png",
+      "animations": []
+    },
+    {
+      "id": "botanical-calendar",
+      "category": "datepickers",
+      "action": "open",
+      "photo": "photos/botanical-calendar--state.png",
+      "animations": []
+    },
+    {
+      "id": "velvet-calendar",
+      "category": "datepickers",
+      "action": "open",
+      "photo": "photos/velvet-calendar--state.png",
+      "animations": []
+    },
+    {
+      "id": "obsidian-calendar",
+      "category": "datepickers",
+      "action": "open",
+      "photo": "photos/obsidian-calendar--state.png",
+      "animations": []
+    },
+    {
+      "id": "ceramic-calendar",
+      "category": "datepickers",
+      "action": "open",
+      "photo": "photos/ceramic-calendar--state.png",
+      "animations": []
+    },
+    {
+      "id": "tide-calendar",
+      "category": "datepickers",
+      "action": "open",
+      "photo": "photos/tide-calendar--state.png",
+      "animations": []
+    },
+    {
+      "id": "aperture-calendar",
+      "category": "datepickers",
+      "action": "open",
+      "photo": "photos/aperture-calendar--state.png",
+      "animations": []
+    },
+    {
+      "id": "essential-calendar",
+      "category": "datepickers",
+      "action": "open",
+      "photo": "photos/essential-calendar--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-calendar",
+          "name": "sop-ff-reveal",
+          "duration": "0.2s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "soft-calendar",
+      "category": "datepickers",
+      "action": "open",
+      "photo": "photos/soft-calendar--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-calendar",
+          "name": "sop-ff-reveal",
+          "duration": "0.2s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "paper-calendar",
+      "category": "datepickers",
+      "action": "open",
+      "photo": "photos/paper-calendar--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-calendar",
+          "name": "sop-ff-reveal",
+          "duration": "0.2s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "outline-calendar",
+      "category": "datepickers",
+      "action": "open",
+      "photo": "photos/outline-calendar--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-calendar",
+          "name": "sop-ff-reveal",
+          "duration": "0.2s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "inset-calendar",
+      "category": "datepickers",
+      "action": "open",
+      "photo": "photos/inset-calendar--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-calendar",
+          "name": "sop-ff-reveal",
+          "duration": "0.2s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "compact-calendar",
+      "category": "datepickers",
+      "action": "open",
+      "photo": "photos/compact-calendar--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-calendar",
+          "name": "sop-ff-reveal",
+          "duration": "0.2s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "slate-calendar",
+      "category": "datepickers",
+      "action": "open",
+      "photo": "photos/slate-calendar--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-calendar",
+          "name": "sop-ff-reveal",
+          "duration": "0.2s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "soft-pages",
+      "category": "pagination",
+      "action": "hover",
+      "photo": "photos/soft-pages--state.png",
+      "animations": []
+    },
+    {
+      "id": "paper-pages",
+      "category": "pagination",
+      "action": "hover",
+      "photo": "photos/paper-pages--state.png",
+      "animations": []
+    },
+    {
+      "id": "outline-pages",
+      "category": "pagination",
+      "action": "hover",
+      "photo": "photos/outline-pages--state.png",
+      "animations": []
+    },
+    {
+      "id": "inset-pages",
+      "category": "pagination",
+      "action": "hover",
+      "photo": "photos/inset-pages--state.png",
+      "animations": []
+    },
+    {
+      "id": "compact-pages",
+      "category": "pagination",
+      "action": "hover",
+      "photo": "photos/compact-pages--state.png",
+      "animations": []
+    },
+    {
+      "id": "essential-trail",
+      "category": "breadcrumbs",
+      "action": "hover",
+      "photo": "photos/essential-trail--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-crumb-menu",
+          "name": "sop-ff-reveal",
+          "duration": "0.2s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "soft-trail",
+      "category": "breadcrumbs",
+      "action": "hover",
+      "photo": "photos/soft-trail--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-crumb-menu",
+          "name": "sop-ff-reveal",
+          "duration": "0.2s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "paper-trail",
+      "category": "breadcrumbs",
+      "action": "hover",
+      "photo": "photos/paper-trail--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-crumb-menu",
+          "name": "sop-ff-reveal",
+          "duration": "0.2s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "outline-trail",
+      "category": "breadcrumbs",
+      "action": "hover",
+      "photo": "photos/outline-trail--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-crumb-menu",
+          "name": "sop-ff-reveal",
+          "duration": "0.2s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "inset-trail",
+      "category": "breadcrumbs",
+      "action": "hover",
+      "photo": "photos/inset-trail--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-crumb-menu",
+          "name": "sop-ff-reveal",
+          "duration": "0.2s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "compact-trail",
+      "category": "breadcrumbs",
+      "action": "hover",
+      "photo": "photos/compact-trail--state.png",
+      "animations": [
+        {
+          "element": "DIV.ff-floating ff-crumb-menu",
+          "name": "sop-ff-reveal",
+          "duration": "0.2s",
+          "timing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+        }
+      ]
+    },
+    {
+      "id": "essential-tags",
+      "category": "badges",
+      "action": "hover",
+      "photo": "photos/essential-tags--state.png",
+      "animations": []
+    },
+    {
+      "id": "inset-tags",
+      "category": "badges",
+      "action": "hover",
+      "photo": "photos/inset-tags--state.png",
+      "animations": []
+    },
+    {
+      "id": "slate-tags",
+      "category": "badges",
+      "action": "hover",
+      "photo": "photos/slate-tags--state.png",
+      "animations": []
+    },
+    {
+      "id": "mono-tags",
+      "category": "badges",
+      "action": "hover",
+      "photo": "photos/mono-tags--state.png",
+      "animations": []
+    },
+    {
+      "id": "essential-stepper",
+      "category": "numbers",
+      "action": "hover",
+      "photo": "photos/essential-stepper--state.png",
+      "animations": []
+    },
+    {
+      "id": "soft-stepper",
+      "category": "numbers",
+      "action": "hover",
+      "photo": "photos/soft-stepper--state.png",
+      "animations": []
+    },
+    {
+      "id": "paper-stepper",
+      "category": "numbers",
+      "action": "hover",
+      "photo": "photos/paper-stepper--state.png",
+      "animations": []
+    },
+    {
+      "id": "inset-stepper",
+      "category": "numbers",
+      "action": "hover",
+      "photo": "photos/inset-stepper--state.png",
+      "animations": []
+    },
+    {
+      "id": "compact-stepper",
+      "category": "numbers",
+      "action": "hover",
+      "photo": "photos/compact-stepper--state.png",
+      "animations": []
+    },
+    {
+      "id": "classic-color",
+      "category": "colors",
+      "action": "hover",
+      "photo": "photos/classic-color--state.png",
+      "animations": []
+    },
+    {
+      "id": "paper-color",
+      "category": "colors",
+      "action": "hover",
+      "photo": "photos/paper-color--state.png",
+      "animations": []
+    },
+    {
+      "id": "shimmer-skeleton",
+      "category": "skeletons",
+      "action": "hover",
+      "photo": "photos/shimmer-skeleton--state.png",
+      "animations": [
+        {
+          "element": "DIV.sg-sk-beam",
+          "name": "sg-sk-sweep",
+          "duration": "2.5s",
+          "timing": "ease-in-out"
+        }
+      ]
+    },
+    {
+      "id": "paper-skeleton",
+      "category": "skeletons",
+      "action": "hover",
+      "photo": "photos/paper-skeleton--state.png",
+      "animations": [
+        {
+          "element": "DIV.sg-sk-beam",
+          "name": "sg-sk-sweep",
+          "duration": "2.5s",
+          "timing": "ease-in-out"
+        }
+      ]
+    },
+    {
+      "id": "basic-timeline",
+      "category": "timelines",
+      "action": "hover",
+      "photo": "photos/basic-timeline--state.png",
+      "animations": [
+        {
+          "element": "DIV.sg-event-body",
+          "name": "sg-once-event",
+          "duration": "0.38s",
+          "timing": "ease"
+        }
+      ]
+    },
+    {
+      "id": "dotted-timeline",
+      "category": "timelines",
+      "action": "hover",
+      "photo": "photos/dotted-timeline--state.png",
+      "animations": [
+        {
+          "element": "DIV.sg-event-body",
+          "name": "sg-once-event",
+          "duration": "0.38s",
+          "timing": "ease"
+        }
+      ]
+    },
+    {
+      "id": "essential-searchbar",
+      "category": "searchbars",
+      "action": "hover",
+      "photo": "photos/essential-searchbar--state.png",
+      "animations": [
+        {
+          "element": "DIV.wb-search-results",
+          "name": "wb-panel-in",
+          "duration": "0.28s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "soft-searchbar",
+      "category": "searchbars",
+      "action": "hover",
+      "photo": "photos/soft-searchbar--state.png",
+      "animations": [
+        {
+          "element": "DIV.wb-search-results",
+          "name": "wb-panel-in",
+          "duration": "0.28s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "paper-searchbar",
+      "category": "searchbars",
+      "action": "hover",
+      "photo": "photos/paper-searchbar--state.png",
+      "animations": [
+        {
+          "element": "DIV.wb-search-results",
+          "name": "wb-panel-in",
+          "duration": "0.28s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "filter-searchbar",
+      "category": "searchbars",
+      "action": "hover",
+      "photo": "photos/filter-searchbar--state.png",
+      "animations": [
+        {
+          "element": "DIV.wb-search-results",
+          "name": "wb-panel-in",
+          "duration": "0.28s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "aperture-command",
+      "category": "commands",
+      "action": "open",
+      "photo": "photos/aperture-command--state.png",
+      "animations": [
+        {
+          "element": "DIALOG.wb-command-dialog",
+          "name": "wb-aperture-open",
+          "duration": "0.48s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "deck-command",
+      "category": "commands",
+      "action": "open",
+      "photo": "photos/deck-command--state.png",
+      "animations": [
+        {
+          "element": "DIALOG.wb-command-dialog",
+          "name": "wb-fold-open",
+          "duration": "0.4s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "terminal-command",
+      "category": "commands",
+      "action": "open",
+      "photo": "photos/terminal-command--state.png",
+      "animations": [
+        {
+          "element": "DIALOG.wb-command-dialog",
+          "name": "wb-command-in",
+          "duration": "0.35s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "index-command",
+      "category": "commands",
+      "action": "open",
+      "photo": "photos/index-command--state.png",
+      "animations": [
+        {
+          "element": "DIALOG.wb-command-dialog",
+          "name": "wb-command-in",
+          "duration": "0.35s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "arc-command",
+      "category": "commands",
+      "action": "open",
+      "photo": "photos/arc-command--state.png",
+      "animations": [
+        {
+          "element": "DIALOG.wb-command-dialog",
+          "name": "wb-curtain-open",
+          "duration": "0.42s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "spectrum-command",
+      "category": "commands",
+      "action": "open",
+      "photo": "photos/spectrum-command--state.png",
+      "animations": [
+        {
+          "element": "DIALOG.wb-command-dialog",
+          "name": "wb-curtain-open",
+          "duration": "0.45s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "observatory-command",
+      "category": "commands",
+      "action": "open",
+      "photo": "photos/observatory-command--state.png",
+      "animations": [
+        {
+          "element": "DIALOG.wb-command-dialog",
+          "name": "wb-aperture-open",
+          "duration": "0.5s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "scroll-command",
+      "category": "commands",
+      "action": "open",
+      "photo": "photos/scroll-command--state.png",
+      "animations": [
+        {
+          "element": "DIALOG.wb-command-dialog",
+          "name": "wb-fold-open",
+          "duration": "0.5s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "piano-command",
+      "category": "commands",
+      "action": "open",
+      "photo": "photos/piano-command--state.png",
+      "animations": [
+        {
+          "element": "DIALOG.wb-command-dialog",
+          "name": "wb-command-in",
+          "duration": "0.35s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "constellation-command",
+      "category": "commands",
+      "action": "open",
+      "photo": "photos/constellation-command--state.png",
+      "animations": [
+        {
+          "element": "DIALOG.wb-command-dialog",
+          "name": "wb-command-in",
+          "duration": "0.35s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "essential-command",
+      "category": "commands",
+      "action": "open",
+      "photo": "photos/essential-command--state.png",
+      "animations": [
+        {
+          "element": "DIALOG.wb-command-dialog",
+          "name": "wb-command-in",
+          "duration": "0.35s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "light-command",
+      "category": "commands",
+      "action": "open",
+      "photo": "photos/light-command--state.png",
+      "animations": [
+        {
+          "element": "DIALOG.wb-command-dialog",
+          "name": "wb-command-in",
+          "duration": "0.35s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "compact-command",
+      "category": "commands",
+      "action": "open",
+      "photo": "photos/compact-command--state.png",
+      "animations": [
+        {
+          "element": "DIALOG.wb-command-dialog",
+          "name": "wb-command-in",
+          "duration": "0.35s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "outline-command",
+      "category": "commands",
+      "action": "open",
+      "photo": "photos/outline-command--state.png",
+      "animations": [
+        {
+          "element": "DIALOG.wb-command-dialog",
+          "name": "wb-command-in",
+          "duration": "0.35s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "quiet-command",
+      "category": "commands",
+      "action": "open",
+      "photo": "photos/quiet-command--state.png",
+      "animations": [
+        {
+          "element": "DIALOG.wb-command-dialog",
+          "name": "wb-command-in",
+          "duration": "0.35s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "simple-command",
+      "category": "commands",
+      "action": "open",
+      "photo": "photos/simple-command--state.png",
+      "animations": [
+        {
+          "element": "DIALOG.wb-command-dialog",
+          "name": "wb-command-in",
+          "duration": "0.35s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "hinge-context",
+      "category": "contextmenus",
+      "action": "open",
+      "photo": "photos/hinge-context--state.png",
+      "animations": [
+        {
+          "element": "DIV.wb-context-panel",
+          "name": "wb-fold-open",
+          "duration": "0.4s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "orbit-context",
+      "category": "contextmenus",
+      "action": "open",
+      "photo": "photos/orbit-context--state.png",
+      "animations": [
+        {
+          "element": "DIV.wb-context-panel",
+          "name": "wb-menu-in",
+          "duration": "0.26s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "slip-context",
+      "category": "contextmenus",
+      "action": "open",
+      "photo": "photos/slip-context--state.png",
+      "animations": [
+        {
+          "element": "DIV.wb-context-panel",
+          "name": "wb-slide-open",
+          "duration": "0.35s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "ticket-context",
+      "category": "contextmenus",
+      "action": "open",
+      "photo": "photos/ticket-context--state.png",
+      "animations": [
+        {
+          "element": "DIV.wb-context-panel",
+          "name": "wb-fold-open",
+          "duration": "0.38s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "ink-context",
+      "category": "contextmenus",
+      "action": "open",
+      "photo": "photos/ink-context--state.png",
+      "animations": [
+        {
+          "element": "DIV.wb-context-panel",
+          "name": "wb-menu-in",
+          "duration": "0.26s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "rail-context",
+      "category": "contextmenus",
+      "action": "open",
+      "photo": "photos/rail-context--state.png",
+      "animations": [
+        {
+          "element": "DIV.wb-context-panel",
+          "name": "wb-menu-in",
+          "duration": "0.26s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "fold-context",
+      "category": "contextmenus",
+      "action": "open",
+      "photo": "photos/fold-context--state.png",
+      "animations": [
+        {
+          "element": "DIV.wb-context-panel",
+          "name": "wb-fold-open",
+          "duration": "0.42s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "petal-context",
+      "category": "contextmenus",
+      "action": "open",
+      "photo": "photos/petal-context--state.png",
+      "animations": [
+        {
+          "element": "DIV.wb-context-panel",
+          "name": "wb-aperture-open",
+          "duration": "0.4s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "switch-context",
+      "category": "contextmenus",
+      "action": "open",
+      "photo": "photos/switch-context--state.png",
+      "animations": [
+        {
+          "element": "DIV.wb-context-panel",
+          "name": "wb-menu-in",
+          "duration": "0.26s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "facet-context",
+      "category": "contextmenus",
+      "action": "open",
+      "photo": "photos/facet-context--state.png",
+      "animations": [
+        {
+          "element": "DIV.wb-context-panel",
+          "name": "wb-curtain-open",
+          "duration": "0.4s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "essential-context",
+      "category": "contextmenus",
+      "action": "open",
+      "photo": "photos/essential-context--state.png",
+      "animations": [
+        {
+          "element": "DIV.wb-context-panel",
+          "name": "wb-menu-in",
+          "duration": "0.26s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "paper-context",
+      "category": "contextmenus",
+      "action": "open",
+      "photo": "photos/paper-context--state.png",
+      "animations": [
+        {
+          "element": "DIV.wb-context-panel",
+          "name": "wb-menu-in",
+          "duration": "0.26s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "compact-context",
+      "category": "contextmenus",
+      "action": "open",
+      "photo": "photos/compact-context--state.png",
+      "animations": [
+        {
+          "element": "DIV.wb-context-panel",
+          "name": "wb-menu-in",
+          "duration": "0.26s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "outline-context",
+      "category": "contextmenus",
+      "action": "open",
+      "photo": "photos/outline-context--state.png",
+      "animations": [
+        {
+          "element": "DIV.wb-context-panel",
+          "name": "wb-menu-in",
+          "duration": "0.26s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "soft-context",
+      "category": "contextmenus",
+      "action": "open",
+      "photo": "photos/soft-context--state.png",
+      "animations": [
+        {
+          "element": "DIV.wb-context-panel",
+          "name": "wb-menu-in",
+          "duration": "0.26s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "plain-context",
+      "category": "contextmenus",
+      "action": "open",
+      "photo": "photos/plain-context--state.png",
+      "animations": [
+        {
+          "element": "DIV.wb-context-panel",
+          "name": "wb-menu-in",
+          "duration": "0.26s",
+          "timing": "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "paper-index-nav",
+      "category": "navigation",
+      "action": "hover",
+      "photo": "photos/paper-index-nav--state.png",
+      "animations": []
+    },
+    {
+      "id": "spine-navigation",
+      "category": "navigation",
+      "action": "hover",
+      "photo": "photos/spine-navigation--state.png",
+      "animations": []
+    },
+    {
+      "id": "folio-table",
+      "category": "tables",
+      "action": "hover",
+      "photo": "photos/folio-table--state.png",
+      "animations": []
+    },
+    {
+      "id": "ribbon-ledger",
+      "category": "tables",
+      "action": "hover",
+      "photo": "photos/ribbon-ledger--state.png",
+      "animations": []
+    },
+    {
+      "id": "zebra-table",
+      "category": "tables",
+      "action": "hover",
+      "photo": "photos/zebra-table--state.png",
+      "animations": []
+    },
+    {
+      "id": "paper-data-table",
+      "category": "tables",
+      "action": "hover",
+      "photo": "photos/paper-data-table--state.png",
+      "animations": []
+    },
+    {
+      "id": "hinge-fan",
+      "category": "ornaments",
+      "action": "hover",
+      "photo": "photos/hinge-fan--state.png",
+      "animations": [
+        {
+          "element": "SPAN.blade",
+          "name": "or-wave",
+          "duration": "7s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "SPAN.blade",
+          "name": "or-wave",
+          "duration": "7.3s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "SPAN.blade",
+          "name": "or-wave",
+          "duration": "7.6s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "SPAN.blade",
+          "name": "or-wave",
+          "duration": "7.9s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "SPAN.blade",
+          "name": "or-wave",
+          "duration": "8.2s",
+          "timing": "ease-in-out"
+        },
+        {
+          "element": "SPAN.blade",
+          "name": "or-wave",
+          "duration": "8.5s",
+          "timing": "ease-in-out"
+        }
+      ]
+    },
+    {
+      "id": "fan-spark",
+      "category": "ornaments",
+      "action": "hover",
+      "photo": "photos/fan-spark--state.png",
+      "animations": [
+        {
+          "element": "SPAN.core",
+          "name": "or-pulse",
+          "duration": "3s",
+          "timing": "ease-in-out"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

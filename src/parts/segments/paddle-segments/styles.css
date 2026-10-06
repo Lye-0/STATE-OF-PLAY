@@ -1,0 +1,8 @@
+@import '../../../shared/selection-base.css';
+/* Paddle Segments — 長い柄をもつ選択面が、選択状態で水平に揃う。 */
+.sop-choice.sop-paddle-segments{--choice-base:#233b37;--choice-accent:#b9d4b1;--choice-radius:0}.sop-choice.sop-paddle-segments>.sop-choice-list{background:none;border:0;padding:0 0 16px;gap:10px}.sop-choice.sop-paddle-segments .sop-choice-marker{display:none}.sop-choice.sop-paddle-segments .sop-choice-item{background:#5a7866;border:1px solid #99b18f;border-radius:35% 35% 4px 4px;min-height:54px;transform:rotate(-3deg)}.sop-choice.sop-paddle-segments .sop-choice-item:after{content:"";position:absolute;width:7px;height:16px;bottom:-15px;left:calc(50% - 3px);background:#759b7c;border-radius:0 0 3px 3px}.sop-choice.sop-paddle-segments .sop-choice-item[data-selected=true]{background:#b6cca6;color:#253f35;transform:rotate(0)}
+@media(prefers-reduced-motion:reduce){.sop-choice.sop-paddle-segments,.sop-choice.sop-paddle-segments *,.sop-choice.sop-paddle-segments::before,.sop-choice.sop-paddle-segments::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-choice.sop-paddle-segments{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-choice.sop-paddle-segments :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-choice.sop-paddle-segments:focus-visible,.sop-choice.sop-paddle-segments :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-choice.sop-paddle-segments[data-sop-paused] *,.sop-choice.sop-paddle-segments[data-paused=true] *,.sop-choice.sop-paddle-segments[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

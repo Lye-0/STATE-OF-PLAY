@@ -1,0 +1,84 @@
+{
+  "id": "disc-tab-tag",
+  "name": "Disc Tab Tag",
+  "category": "badges",
+  "order": 3124,
+  "version": "1.0.0",
+  "tagline": "円い小印と平たい帯を接続し、ラベルを短い識別札にする。",
+  "description": "円い小印と平たい帯を接続し、ラベルを短い識別札にする。",
+  "material": "DISC TAB TAG",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "DiscTabTag",
+  "tags": [
+    "EXPANSION-30",
+    "Disc Tab Tag",
+    "円い小印と平たい帯を接続し、ラベルを短い識別札にする。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "disc-tab-tag",
+    "kind": "badges",
+    "variant": "essential",
+    "label": "小さな情報に、個性を。",
+    "description": "",
+    "defaultValue": [
+      "ready"
+    ],
+    "selectable": true,
+    "removable": false,
+    "items": [
+      {
+        "value": "design",
+        "label": "Design",
+        "badge": "8",
+        "icon": "spark"
+      },
+      {
+        "value": "motion",
+        "label": "Motion",
+        "badge": "4",
+        "icon": "clock"
+      },
+      {
+        "value": "ready",
+        "label": "Ready",
+        "icon": "check"
+      },
+      {
+        "value": "review",
+        "label": "Review",
+        "icon": "info"
+      }
+    ]
+  }
+}

@@ -1,3 +1,5 @@
+import {galleryCount} from './gallery-counts.ts';
+import {selectSetting} from './detail-settings.ts';
 import {galleryReady} from './gallery-ready.ts';
 /** Native form controls and top-layer dialogs. Full export, focus and lifecycle tests. */
 import assert from 'node:assert/strict';
@@ -26,8 +28,8 @@ try{
   const files=offlineFiles(fixture);await page.setContent(files.get('/index.html')!.replace(/<script[^>]*>[\s\S]*?<\/script>/g,'').replace(/<link[^>]*>/g,''));await page.addStyleTag({content:files.get('/test-styles.css')!});for(const v of ['prism','jszip'])await page.addScriptTag({content:fs.readFileSync(path.join(ROOT,'public/vendor',v+'.js'),'utf8')});await page.addScriptTag({content:files.get('/test-app.js')!});}else{await page.goto(url,{waitUntil:'commit',timeout:120000});await page.waitForFunction(()=>document.documentElement.classList.contains('site-ready'),undefined,{timeout:120000});}
  await page.emulateMedia({reducedMotion:'reduce'});
  await run('48 new parts: category/search/style filters and exact A/B counts',async()=>{
-  await galleryReady(page);assert.equal(await page.locator('[data-part]').count(),26);
-  for(const category of ['checkboxes','popups']){const extra=offline?0:1;await page.locator(`[data-category="${category}"]`).click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),24+extra*2);await page.locator('[data-design-filter="A"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),16+extra);await page.locator('[data-design-filter="B"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),8+extra);await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);}
+  await galleryReady(page);assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?data.parts:undefined));
+  for(const category of ['checkboxes','popups']){const extra=offline?0:1;await page.locator(`[data-category="${category}"]`).click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?data.parts:undefined));await page.locator('[data-design-filter="A"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?data.parts:undefined));await page.locator('[data-design-filter="B"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?data.parts:undefined));await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);}
  });
  await run('All 24 checkboxes: native label/Space, multiple independent selection and no accidental inspector',async()=>{
   await page.locator('[data-category="checkboxes"]').click();await galleryReady(page,true);
@@ -37,9 +39,9 @@ try{
  await run('Checkbox inspector: mixed state, disabled, code/layout changes retain checked state',async()=>{
   await page.locator('[data-open="aurora-check"]').click();await galleryReady(page,true);const d=page.locator('#part-details'),i=d.locator('.sop-check input');
   await d.locator('[data-check-state="mixed"][type=button]').click();assert.ok(await i.evaluate((el:HTMLInputElement)=>el.indeterminate));await i.click();assert.ok(await i.isChecked());assert.equal(await i.evaluate((el:HTMLInputElement)=>el.indeterminate),false);
-  await d.locator('[data-format="jsx"]').click();await d.locator('#export-layout').selectOption('original');assert.ok(await i.isChecked());
+  await d.locator('[data-format="jsx"]').click();await selectSetting(d.locator('#export-layout'),'original');assert.ok(await i.isChecked());
   await d.locator('[data-check-disabled]').check();assert.ok(await i.isDisabled());await d.locator('[data-check-disabled]').uncheck();
-  await d.locator('[data-format="tsx"]').click();await d.locator('#export-layout').selectOption('portable');await d.locator('[data-detail-tab="prompt"]').click();assert.equal(await d.locator('#prompt-text').inputValue(),buildPrompt(parts.find(p=>p.id==='aurora-check')!,'tsx','portable'));
+  await d.locator('[data-format="tsx"]').click();await selectSetting(d.locator('#export-layout'),'portable');await d.locator('[data-detail-tab="prompt"]').click();assert.equal(await d.locator('#prompt-text').inputValue(),buildPrompt(parts.find(p=>p.id==='aurora-check')!,'tsx','portable'));
   await d.locator('[data-detail-tab="code"]').click();await page.screenshot({path:path.join(out,'checkbox-detail.png')});await d.locator('.close-detail').click();
  });
  await run('All 24 popups: actual top-layer content, close reasons, restored focus and scroll lock',async()=>{

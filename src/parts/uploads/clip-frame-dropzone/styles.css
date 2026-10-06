@@ -1,0 +1,12 @@
+@import "../../../shared/foundation/base.css";
+/* Clip Frame Dropzone — 四隅のクリップが受取面を支え、選んだファイルを下へ綴じる。 */
+.sop-foundation.sop-clip-frame-dropzone{--ff-accent:#d0becf;--ff-panel:#433347;--ff-base:#2c2234;--ff-line:#97829b}.sop-foundation.sop-clip-frame-dropzone .ff-dropzone{border:0;outline:1px solid #a995b0;outline-offset:-7px;border-radius:1px;background:#4b3551;padding:30px 23px;box-shadow:inset 6px 0 #6a5572,inset -6px 0 #6a5572;min-height:158px}.sop-foundation.sop-clip-frame-dropzone .ff-upload-symbol{border:2px solid #b59ec0;border-radius:1px;background:#684773;transform:rotate(5deg)}.sop-foundation.sop-clip-frame-dropzone .ff-upload-files li{border-radius:1px;box-shadow:3px 3px #1c192788}.sop-foundation.sop-clip-frame-dropzone .ff-dropzone[data-dragging=true]{outline-color:#dcc1e8;outline-offset:-4px}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-clip-frame-dropzone,.sop-foundation.sop-clip-frame-dropzone *,.sop-foundation.sop-clip-frame-dropzone::before,.sop-foundation.sop-clip-frame-dropzone::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-clip-frame-dropzone{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-clip-frame-dropzone :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-clip-frame-dropzone:focus-visible,.sop-foundation.sop-clip-frame-dropzone :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-clip-frame-dropzone[data-sop-paused] *,.sop-foundation.sop-clip-frame-dropzone[data-paused=true] *,.sop-foundation.sop-clip-frame-dropzone[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+
+/* Visual review: composition and state separation. */
+.sop-foundation.sop-clip-frame-dropzone .ff-dropzone{padding:28px 25px 22px 66px;min-height:155px;background:transparent;border:0;border-left:8px double var(--ff-line);border-right:8px double var(--ff-line);border-top:1px solid var(--ff-line);border-bottom:1px solid var(--ff-line)}.sop-foundation.sop-clip-frame-dropzone .ff-upload-symbol{left:15px;right:auto;top:35px;width:32px;height:45px;transform:rotate(-8deg)}.sop-foundation.sop-clip-frame-dropzone .ff-dropzone strong{font:22px Georgia}.sop-foundation.sop-clip-frame-dropzone [data-upload-limits]{margin-top:22px;padding-top:8px;border-top:1px solid var(--ff-line)}

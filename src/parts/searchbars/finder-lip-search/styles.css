@@ -1,0 +1,8 @@
+@import "../../../shared/workbench/base.css";
+/* Finder Lip Search — 上の薄い庇と下の広い入力面を分け、検索の入口を読みやすくする。 */
+.sop-wb.sop-finder-lip-search{--wb-bg:#273f50;--wb-accent:#b5d0d5;--wb-line:#789dae;--wb-muted:#a4beca}.sop-wb.sop-finder-lip-search .wb-search-shell{background:#28495a;border-top:10px solid #7797a3;border-radius:2px;padding:19px}.sop-wb.sop-finder-lip-search .wb-search-field{border:0;border-bottom:3px solid #89b0b9;border-radius:0;background:#18384b;min-height:62px;padding:10px 8px 10px 14px}.sop-wb.sop-finder-lip-search .wb-search-emblem{border-right:1px solid #93b2ba;padding-right:9px;width:32px}.sop-wb.sop-finder-lip-search .wb-search-submit{border-radius:1px;background:#547f91;border:1px solid #9bbbc1}.sop-wb.sop-finder-lip-search .wb-search-filters{border-bottom:1px solid #7098a9;padding-bottom:13px}.sop-wb.sop-finder-lip-search .wb-results-list [role=option]{border-left:2px solid #8bb4b9;border-radius:0}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-finder-lip-search,.sop-wb.sop-finder-lip-search *,.sop-wb.sop-finder-lip-search::before,.sop-wb.sop-finder-lip-search::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-wb.sop-finder-lip-search{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-finder-lip-search :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-wb.sop-finder-lip-search:focus-visible,.sop-wb.sop-finder-lip-search :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-wb.sop-finder-lip-search[data-sop-paused] *,.sop-wb.sop-finder-lip-search[data-paused=true] *,.sop-wb.sop-finder-lip-search[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

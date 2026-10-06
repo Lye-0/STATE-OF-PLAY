@@ -1,0 +1,8 @@
+@import '../../../shared/selection-base.css';
+/* Float Key Segments — 互いに離れた小さな浮標のように、選択面を水平方向へ並べる。 */
+.sop-choice.sop-float-key-segments{--choice-base:#1c3440;--choice-accent:#9edbd6;--choice-radius:0}.sop-choice.sop-float-key-segments>.sop-choice-list{border:0;background:none;gap:12px;padding:9px 0}.sop-choice.sop-float-key-segments .sop-choice-marker{display:none}.sop-choice.sop-float-key-segments .sop-choice-item{border:1px solid #759799;border-radius:50% 50% 6px 6px;background:radial-gradient(at 30% 15%,#5b8d91,#193e4b);padding-top:21px;min-height:63px;box-shadow:0 6px 0 #142d38}.sop-choice.sop-float-key-segments .sop-choice-item[data-selected=true]{transform:translateY(-5px);box-shadow:0 11px 0 #142d38,0 0 18px #aadace22;border-color:#c4e3d4}
+@media(prefers-reduced-motion:reduce){.sop-choice.sop-float-key-segments,.sop-choice.sop-float-key-segments *,.sop-choice.sop-float-key-segments::before,.sop-choice.sop-float-key-segments::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-choice.sop-float-key-segments{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-choice.sop-float-key-segments :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-choice.sop-float-key-segments:focus-visible,.sop-choice.sop-float-key-segments :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-choice.sop-float-key-segments[data-sop-paused] *,.sop-choice.sop-float-key-segments[data-paused=true] *,.sop-choice.sop-float-key-segments[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

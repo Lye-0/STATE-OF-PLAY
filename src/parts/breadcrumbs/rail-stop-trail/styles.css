@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Rail Stop Trail — 小さな停車点の列を、現在地の幅広いホームへつなげる。 */
+.sop-foundation.sop-rail-stop-trail{--ff-accent:#b6cdc5;--ff-panel:#2e4b45;--ff-base:#193a34;--ff-line:#78a193}.sop-foundation.sop-rail-stop-trail .ff-breadcrumb ol{padding:15px 0 0;gap:12px;border-top:1px solid #8eb09d;flex-wrap:wrap}.sop-foundation.sop-rail-stop-trail .ff-breadcrumb li{position:relative;border-left:1px solid #719589;padding:5px 8px}.sop-foundation.sop-rail-stop-trail .ff-breadcrumb li:after{content:"";position:absolute;width:5px;height:5px;border-radius:50%;top:-18px;left:-3px;background:#a8c7b1}.sop-foundation.sop-rail-stop-trail .ff-breadcrumb li+li:before{content:none}.sop-foundation.sop-rail-stop-trail .ff-breadcrumb li:last-child{background:#537960;border-bottom:4px solid #bbd8ae;color:#eef6df}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-rail-stop-trail,.sop-foundation.sop-rail-stop-trail *,.sop-foundation.sop-rail-stop-trail::before,.sop-foundation.sop-rail-stop-trail::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-rail-stop-trail{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-rail-stop-trail :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-rail-stop-trail:focus-visible,.sop-foundation.sop-rail-stop-trail :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-rail-stop-trail[data-sop-paused] *,.sop-foundation.sop-rail-stop-trail[data-paused=true] *,.sop-foundation.sop-rail-stop-trail[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

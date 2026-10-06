@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Form Date Calendar — 読みやすい入力欄と、余白の揃った日付候補を持つフォーム用の日付選択。 */
+.sop-foundation.sop-form-date-calendar{--ff-accent:#c0c9de;--ff-panel:#36455e;--ff-base:#29364d;--ff-line:#8197b1}.sop-foundation.sop-form-date-calendar .ff-date-fields{border:1px solid #8ca1b9;border-radius:6px;background:#253a51;padding:11px 10px}.sop-foundation.sop-form-date-calendar .ff-calendar{background:#293f58;border:1px solid #88a0b8;border-radius:7px;padding:18px;box-shadow:0 12px 30px #13223166}.sop-foundation.sop-form-date-calendar .ff-calendar-grid{gap:4px}.sop-foundation.sop-form-date-calendar .ff-calendar-grid button{border-radius:4px;min-height:33px}.sop-foundation.sop-form-date-calendar .ff-calendar-header{border-bottom:1px solid #718da7;padding-bottom:10px}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-form-date-calendar,.sop-foundation.sop-form-date-calendar *,.sop-foundation.sop-form-date-calendar::before,.sop-foundation.sop-form-date-calendar::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-form-date-calendar{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-form-date-calendar :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-form-date-calendar:focus-visible,.sop-foundation.sop-form-date-calendar :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-form-date-calendar[data-sop-paused] *,.sop-foundation.sop-form-date-calendar[data-paused=true] *,.sop-foundation.sop-form-date-calendar[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

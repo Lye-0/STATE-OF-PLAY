@@ -1,0 +1,8 @@
+@import '../../../shared/selection-base.css';
+/* Split Flap Segments — 区画の上下を二枚の面に分け、選択時に上の面を反転させる。 */
+.sop-choice.sop-split-flap-segments{--choice-base:#1f2730;--choice-accent:#c9d2d9;--choice-radius:2px}.sop-choice.sop-split-flap-segments>.sop-choice-list{background:#11171e;gap:5px;padding:5px;border:1px solid #4e606e}.sop-choice.sop-split-flap-segments .sop-choice-marker{display:none}.sop-choice.sop-split-flap-segments .sop-choice-item{background:linear-gradient(#414f5a 0 49%,#15212b 49% 52%,#303f4b 52%);border:1px solid #62737e;border-radius:2px;min-height:61px;text-shadow:0 1px #000;box-shadow:inset 0 2px #fff1}.sop-choice.sop-split-flap-segments .sop-choice-item[data-selected=true]{background:linear-gradient(#b8c6cb 0 49%,#203038 49% 52%,#99adb7 52%);color:#172933;text-shadow:0 1px #fff4}
+@media(prefers-reduced-motion:reduce){.sop-choice.sop-split-flap-segments,.sop-choice.sop-split-flap-segments *,.sop-choice.sop-split-flap-segments::before,.sop-choice.sop-split-flap-segments::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-choice.sop-split-flap-segments{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-choice.sop-split-flap-segments :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-choice.sop-split-flap-segments:focus-visible,.sop-choice.sop-split-flap-segments :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-choice.sop-split-flap-segments[data-sop-paused] *,.sop-choice.sop-split-flap-segments[data-paused=true] *,.sop-choice.sop-split-flap-segments[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

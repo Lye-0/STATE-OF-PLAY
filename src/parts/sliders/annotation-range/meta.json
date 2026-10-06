@@ -1,0 +1,61 @@
+{
+  "id": "annotation-range",
+  "name": "Annotation Range",
+  "category": "sliders",
+  "order": 3071,
+  "version": "1.0.0",
+  "tagline": "縦の小見出しを左に置き、範囲と現在値を同じ資料欄にまとめる。",
+  "description": "縦の小見出しを左に置き、範囲と現在値を同じ資料欄にまとめる。",
+  "material": "ANNOTATION RANGE",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "B",
+  "runtime": "Native DOM + CSS",
+  "componentName": "AnnotationRange",
+  "tags": [
+    "EXPANSION-30",
+    "Annotation Range",
+    "縦の小見出しを左に置き、範囲と現在値を同じ資料欄にまとめる。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "annotation-range",
+    "kind": "sliders",
+    "variant": "essential",
+    "label": "値を、ちょうどよく。",
+    "description": "",
+    "defaultValue": 62,
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "unit": "%",
+    "range": false
+  }
+}

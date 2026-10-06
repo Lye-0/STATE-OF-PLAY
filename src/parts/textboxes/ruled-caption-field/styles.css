@@ -1,0 +1,8 @@
+@import "../../../shared/text-field-base.css";
+/* Ruled Caption Field — ラベルを罫線上に置き、入力と補足を整然と二段に分ける。 */
+.sop-textfield.sop-ruled-caption-field{--field-bg:#1f292a;--field-ink:#e6eddf;--field-accent:#c1d0ae;--field-radius:0}.sop-textfield.sop-ruled-caption-field .sop-field-label{padding-bottom:7px;border-bottom:1px solid #576d62}.sop-textfield.sop-ruled-caption-field .sop-field-shell{margin-top:0;border:0;background:none;border-bottom:2px solid #718773;box-shadow:none}.sop-textfield.sop-ruled-caption-field .sop-field-shell:focus-within{border-color:#d0e0bb;background:#3d594022}.sop-textfield.sop-ruled-caption-field .sop-field-hint{padding-top:6px}
+@media(prefers-reduced-motion:reduce){.sop-textfield.sop-ruled-caption-field,.sop-textfield.sop-ruled-caption-field *,.sop-textfield.sop-ruled-caption-field::before,.sop-textfield.sop-ruled-caption-field::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-textfield.sop-ruled-caption-field{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-textfield.sop-ruled-caption-field :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-textfield.sop-ruled-caption-field:focus-visible,.sop-textfield.sop-ruled-caption-field :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-textfield.sop-ruled-caption-field[data-sop-paused] *,.sop-textfield.sop-ruled-caption-field[data-paused=true] *,.sop-textfield.sop-ruled-caption-field[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

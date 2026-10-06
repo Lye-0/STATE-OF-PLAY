@@ -1,0 +1,52 @@
+{
+  "id": "dialmark-history",
+  "name": "Dialmark History",
+  "category": "timelines",
+  "tagline": "大きな時刻の印と小さな状態文字を分離し、日付を軸に記録を読む。",
+  "description": "大きな時刻の印と小さな状態文字を分離し、日付を軸に記録を読む。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3243,
+  "version": "1.0.0",
+  "material": "DIALMARK HISTORY",
+  "accent": "185,205,194",
+  "componentName": "DialmarkHistory",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "timelines"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Dialmark History",
+    "大きな時刻の印と小さな状態文字を分離し、日付を軸に記録を読む。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "TimelineItem[]",
+      "id・title・description・date・dateTime・status・hrefなど。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "詳細を開くID。expandedで外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(ids: string[]) => void",
+      "開閉したIDを通知。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "詳細の開閉を無効にする。"
+    ],
+    [
+      "label",
+      "string",
+      "履歴全体の名前。"
+    ]
+  ]
+}

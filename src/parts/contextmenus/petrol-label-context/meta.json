@@ -1,0 +1,57 @@
+{
+  "id": "petrol-label-context",
+  "name": "Petrol Label Context",
+  "category": "contextmenus",
+  "description": "操作の印を大きく取り、項目の文字と余白を独立させる。",
+  "designType": "A",
+  "tagline": "操作の印を大きく取り、項目の文字と余白を独立させる。",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3299,
+  "version": "1.0.0",
+  "material": "PETROL LABEL CONTEXT",
+  "accent": "192,216,201",
+  "componentName": "PetrolLabelContext",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "contextmenus"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Petrol Label Context",
+    "操作の印を大きく取り、項目の文字と余白を独立させる。",
+    "NAVIGATOR"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "ContextAction[]",
+      "操作、子階層、区切り、チェック、無効状態を指定。"
+    ],
+    [
+      "onAction",
+      "(item, signal) => void | false | Promise",
+      "実行先の接続。勝手な保存や削除はしません。"
+    ],
+    [
+      "checked / onCheckedChange",
+      "Record<string, boolean> / callback",
+      "メニュー内チェック項目の状態を制御。"
+    ],
+    [
+      "targetLabel / targetDescription",
+      "string",
+      "操作対象の見出しと説明。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "コンポーネントの操作を無効にする。"
+    ],
+    [
+      "targetElement",
+      "HTMLElement | null",
+      "既存のカード・行などに接続します。中身は変更せず、その要素だけで右クリックを扱います。"
+    ]
+  ]
+}

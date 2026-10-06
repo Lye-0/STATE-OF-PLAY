@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Count Chip Tag — タグ名と件数を細い仕切りで分けた、検索や絞込み向けのチップ。 */
+.sop-foundation.sop-count-chip-tag{--ff-accent:#b8cadd;--ff-panel:#2d4157;--ff-base:#24344a;--ff-line:#728ba3}.sop-foundation.sop-count-chip-tag .ff-tag{border:1px solid #7391aa;border-radius:5px;background:#2a4059;padding:8px 10px;gap:10px}.sop-foundation.sop-count-chip-tag .ff-tag small{border-left:1px solid #829db6;padding-left:8px;font:9px Consolas;color:#c6d8e1}.sop-foundation.sop-count-chip-tag .ff-tag[data-selected=true]{background:#49637d;border-color:#abc7d8}.sop-foundation.sop-count-chip-tag .ff-tag svg{width:12px;height:12px}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-count-chip-tag,.sop-foundation.sop-count-chip-tag *,.sop-foundation.sop-count-chip-tag::before,.sop-foundation.sop-count-chip-tag::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-count-chip-tag{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-count-chip-tag :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-count-chip-tag:focus-visible,.sop-foundation.sop-count-chip-tag :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-count-chip-tag[data-sop-paused] *,.sop-foundation.sop-count-chip-tag[data-paused=true] *,.sop-foundation.sop-count-chip-tag[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

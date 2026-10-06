@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Caption Choice — 上部の小さな番号帯で候補を区別し、本文を広く保つ。 */
+.sop-foundation.sop-caption-choice{--ff-accent:#b8ccca;--ff-base:#293d42;--ff-panel:#36545a;--ff-line:#86a4a7}.sop-foundation.sop-caption-choice .ff-choice{border:0;border-top:9px solid #668f8c;border-radius:0;background:#284449;padding:18px 13px;align-items:flex-start}.sop-foundation.sop-caption-choice .ff-choice[data-selected=true]{border-top-color:#c4d7b8;background:#3f6060}.sop-foundation.sop-caption-choice .ff-choice-badge{writing-mode:vertical-rl;padding:4px;border:0;font:11px Consolas}.sop-foundation.sop-caption-choice .ff-choice-icon{display:none}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-caption-choice,.sop-foundation.sop-caption-choice *,.sop-foundation.sop-caption-choice::before,.sop-foundation.sop-caption-choice::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-caption-choice{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-caption-choice :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-caption-choice:focus-visible,.sop-foundation.sop-caption-choice :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-caption-choice[data-sop-paused] *,.sop-foundation.sop-caption-choice[data-paused=true] *,.sop-foundation.sop-caption-choice[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

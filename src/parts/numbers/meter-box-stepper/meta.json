@@ -1,0 +1,60 @@
+{
+  "id": "meter-box-stepper",
+  "name": "Meter Box Stepper",
+  "category": "numbers",
+  "order": 3081,
+  "version": "1.0.0",
+  "tagline": "薄い単位窓を数値面の脇に添え、設備の小さな調整器にする。",
+  "description": "薄い単位窓を数値面の脇に添え、設備の小さな調整器にする。",
+  "material": "METER BOX STEPPER",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "MeterBoxStepper",
+  "tags": [
+    "EXPANSION-30",
+    "Meter Box Stepper",
+    "薄い単位窓を数値面の脇に添え、設備の小さな調整器にする。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "meter-box-stepper",
+    "kind": "numbers",
+    "variant": "essential",
+    "label": "必要な量を、ちょうどよく。",
+    "description": "",
+    "defaultValue": 3,
+    "min": 0,
+    "max": 24,
+    "step": 1,
+    "unit": "UNITS"
+  }
+}

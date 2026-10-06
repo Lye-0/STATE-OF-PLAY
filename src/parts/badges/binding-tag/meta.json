@@ -1,0 +1,84 @@
+{
+  "id": "binding-tag",
+  "name": "Binding Tag",
+  "category": "badges",
+  "order": 3123,
+  "version": "1.0.0",
+  "tagline": "細い綴じ帯と本文を分け、選択されたタグを一枚のラベルとして示す。",
+  "description": "細い綴じ帯と本文を分け、選択されたタグを一枚のラベルとして示す。",
+  "material": "BINDING TAG",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "BindingTag",
+  "tags": [
+    "EXPANSION-30",
+    "Binding Tag",
+    "細い綴じ帯と本文を分け、選択されたタグを一枚のラベルとして示す。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "binding-tag",
+    "kind": "badges",
+    "variant": "essential",
+    "label": "小さな情報に、個性を。",
+    "description": "",
+    "defaultValue": [
+      "ready"
+    ],
+    "selectable": true,
+    "removable": false,
+    "items": [
+      {
+        "value": "design",
+        "label": "Design",
+        "badge": "8",
+        "icon": "spark"
+      },
+      {
+        "value": "motion",
+        "label": "Motion",
+        "badge": "4",
+        "icon": "clock"
+      },
+      {
+        "value": "ready",
+        "label": "Ready",
+        "icon": "check"
+      },
+      {
+        "value": "review",
+        "label": "Review",
+        "icon": "info"
+      }
+    ]
+  }
+}

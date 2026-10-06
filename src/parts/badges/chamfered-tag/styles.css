@@ -1,0 +1,12 @@
+@import "../../../shared/foundation/base.css";
+/* Chamfered Tag — 角を落とした細いラベルが、一覧の中で軽く光を受ける。 */
+.sop-foundation.sop-chamfered-tag{--ff-accent:#b8d9d4;--ff-panel:#2c4a50;--ff-base:#20373f;--ff-line:#7ba5a4}.sop-foundation.sop-chamfered-tag .ff-tag{border:1px solid #97bcb5;border-radius:0;background:linear-gradient(130deg,#527e81,#244b54);padding:11px 16px;clip-path:polygon(7px 0,calc(100% - 7px) 0,100% 7px,100% calc(100% - 7px),calc(100% - 7px) 100%,7px 100%,0 calc(100% - 7px),0 7px)}.sop-foundation.sop-chamfered-tag .ff-tag[data-selected=true]{background:linear-gradient(130deg,#8ab5aa,#507b7e);color:#f1f5df}.sop-foundation.sop-chamfered-tag .ff-tag small{font:11px Georgia}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-chamfered-tag,.sop-foundation.sop-chamfered-tag *,.sop-foundation.sop-chamfered-tag::before,.sop-foundation.sop-chamfered-tag::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-chamfered-tag{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-chamfered-tag :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-chamfered-tag:focus-visible,.sop-foundation.sop-chamfered-tag :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-chamfered-tag[data-sop-paused] *,.sop-foundation.sop-chamfered-tag[data-paused=true] *,.sop-foundation.sop-chamfered-tag[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+
+/* Visual review: composition and state separation. */
+.sop-foundation.sop-chamfered-tag .ff-tag{background:transparent;border:1px solid var(--ff-line);border-radius:0;clip-path:none;padding:8px 13px;border-left:8px solid var(--ff-line);position:relative}.sop-foundation.sop-chamfered-tag .ff-tag:before{content:"";position:absolute;right:0;top:0;width:8px;height:8px;background:var(--ff-line);clip-path:polygon(0 0,100% 0,100% 100%)}.sop-foundation.sop-chamfered-tag .ff-tag small{border-left:1px solid var(--ff-line);padding-left:8px}.sop-foundation.sop-chamfered-tag .ff-tag[data-selected=true]{background:#6b9494;border-left-color:var(--ff-accent)}

@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Labeled Quantity — 数値と単位の読取欄を大きくし、操作ボタンを外側に離す。 */
+.sop-foundation.sop-labeled-quantity{--ff-accent:#b8d0ba;--ff-base:#25382d;--ff-line:#6d8770}.sop-foundation.sop-labeled-quantity .ff-stepper{border:0;border-radius:0;background:none;padding:0;gap:12px}.sop-foundation.sop-labeled-quantity .ff-number-face{border:1px solid #698669;border-radius:7px;background:#1c2d22;padding:14px 5px}.sop-foundation.sop-labeled-quantity .ff-stepper>button{border:1px solid #6f8f72;border-radius:50%;width:35px;min-height:35px;background:#3c5740;align-self:center}.sop-foundation.sop-labeled-quantity [data-number]{font:27px Arial}.sop-foundation.sop-labeled-quantity .ff-unit{font-size:8px;letter-spacing:1px}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-labeled-quantity,.sop-foundation.sop-labeled-quantity *,.sop-foundation.sop-labeled-quantity::before,.sop-foundation.sop-labeled-quantity::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-labeled-quantity{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-labeled-quantity :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-labeled-quantity:focus-visible,.sop-foundation.sop-labeled-quantity :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-labeled-quantity[data-sop-paused] *,.sop-foundation.sop-labeled-quantity[data-paused=true] *,.sop-foundation.sop-labeled-quantity[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

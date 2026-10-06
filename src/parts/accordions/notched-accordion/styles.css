@@ -1,0 +1,9 @@
+@import "../../../shared/accordion-base.css";
+@import "../../../shared/panel-content.css";
+/* Notched Accordion — 片側の切欠きが、選んだ段の見出しと内容を一枚に結ぶ。 */
+.sop-accordion.sop-notched-accordion{--acc-bg:#273439;--acc-accent:#d0bdaa;--acc-radius:0}.sop-accordion.sop-notched-accordion .sop-accordion-item{border:0;border-right:5px solid #766653;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%);margin-bottom:10px}.sop-accordion.sop-notched-accordion .sop-accordion-index{font:24px Georgia;color:#b39773;min-width:26px}.sop-accordion.sop-notched-accordion .sop-accordion-badge{display:none}.sop-accordion.sop-notched-accordion .sop-accordion-item[data-open=true]{border-right-color:#e0c9aa;background:#31444b}
+@media(prefers-reduced-motion:reduce){.sop-accordion.sop-notched-accordion,.sop-accordion.sop-notched-accordion *,.sop-accordion.sop-notched-accordion::before,.sop-accordion.sop-notched-accordion::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-accordion.sop-notched-accordion{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-accordion.sop-notched-accordion :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-accordion.sop-notched-accordion:focus-visible,.sop-accordion.sop-notched-accordion :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-accordion.sop-notched-accordion[data-sop-paused] *,.sop-accordion.sop-notched-accordion[data-paused=true] *,.sop-accordion.sop-notched-accordion[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

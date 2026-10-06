@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Etched Level Trail — 階層を浅い彫りのある面に置き、現在の段だけを深く印す。 */
+.sop-foundation.sop-etched-level-trail{--ff-accent:#b5d2cf;--ff-panel:#325c60;--ff-base:#1f4148;--ff-line:#6b9fa1}.sop-foundation.sop-etched-level-trail .ff-breadcrumb ol{background:linear-gradient(#547d7b,#25494f);border:1px solid #95b6b0;border-radius:6px;padding:9px;gap:10px;flex-wrap:wrap;box-shadow:inset 0 1px #cce5d633}.sop-foundation.sop-etched-level-trail .ff-breadcrumb li{padding:8px 5px;text-shadow:0 1px #183c47}.sop-foundation.sop-etched-level-trail .ff-breadcrumb li+li:before{content:"│";color:#90b8ad}.sop-foundation.sop-etched-level-trail .ff-breadcrumb li:last-child{background:#193e46;border-radius:3px;box-shadow:inset 0 3px 5px #03202d77;padding:8px 12px}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-etched-level-trail,.sop-foundation.sop-etched-level-trail *,.sop-foundation.sop-etched-level-trail::before,.sop-foundation.sop-etched-level-trail::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-etched-level-trail{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-etched-level-trail :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-etched-level-trail:focus-visible,.sop-foundation.sop-etched-level-trail :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-etched-level-trail[data-sop-paused] *,.sop-foundation.sop-etched-level-trail[data-paused=true] *,.sop-foundation.sop-etched-level-trail[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

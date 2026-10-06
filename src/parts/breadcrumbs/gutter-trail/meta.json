@@ -1,0 +1,82 @@
+{
+  "id": "gutter-trail",
+  "name": "Gutter Trail",
+  "category": "breadcrumbs",
+  "order": 3132,
+  "version": "1.0.0",
+  "tagline": "細い溝の中にリンクを並べ、現在地だけを縁の外へ浮かせる。",
+  "description": "細い溝の中にリンクを並べ、現在地だけを縁の外へ浮かせる。",
+  "material": "GUTTER TRAIL",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "GutterTrail",
+  "tags": [
+    "EXPANSION-30",
+    "Gutter Trail",
+    "細い溝の中にリンクを並べ、現在地だけを縁の外へ浮かせる。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "gutter-trail",
+    "kind": "breadcrumbs",
+    "variant": "essential",
+    "label": "あなたが、いまいる場所。",
+    "description": "",
+    "defaultValue": null,
+    "items": [
+      {
+        "value": "home",
+        "label": "Home",
+        "href": "#home"
+      },
+      {
+        "value": "library",
+        "label": "Library",
+        "href": "#library"
+      },
+      {
+        "value": "objects",
+        "label": "Objects",
+        "href": "#objects"
+      },
+      {
+        "value": "materials",
+        "label": "Materials",
+        "href": "#materials"
+      },
+      {
+        "value": "paper",
+        "label": "Paper"
+      }
+    ]
+  }
+}

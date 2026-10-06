@@ -1,0 +1,8 @@
+@import '../../../shared/selection-base.css';
+/* Slide Rule Segments — 共通の目盛りの上で、現在の区画を細い窓として切り取る。 */
+.sop-choice.sop-slide-rule-segments{--choice-base:#ddd5b8;--choice-muted:#66634e;--choice-on:#333c2e;--choice-accent:#4b6144;--choice-radius:0}.sop-choice.sop-slide-rule-segments>.sop-choice-list{padding:13px 4px 4px;border:1px solid #b0a784;background:repeating-linear-gradient(90deg,#8d8b7244 0 1px,transparent 1px 8px),#d8d2b5}.sop-choice.sop-slide-rule-segments .sop-choice-marker{border:2px solid #58654d;background:#f5f1d544;box-shadow:none;border-radius:0}.sop-choice.sop-slide-rule-segments .sop-choice-item{min-height:39px;padding:9px;letter-spacing:1px}
+@media(prefers-reduced-motion:reduce){.sop-choice.sop-slide-rule-segments,.sop-choice.sop-slide-rule-segments *,.sop-choice.sop-slide-rule-segments::before,.sop-choice.sop-slide-rule-segments::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-choice.sop-slide-rule-segments{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-choice.sop-slide-rule-segments :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-choice.sop-slide-rule-segments:focus-visible,.sop-choice.sop-slide-rule-segments :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-choice.sop-slide-rule-segments[data-sop-paused] *,.sop-choice.sop-slide-rule-segments[data-paused=true] *,.sop-choice.sop-slide-rule-segments[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

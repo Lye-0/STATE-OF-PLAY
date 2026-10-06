@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Inline Quantity — 短い増減ボタンと直接入力を一列にまとめ、狭い設定欄でも使える。 */
+.sop-foundation.sop-inline-quantity{--ff-accent:#b9c9d2;--ff-base:#26313d;--ff-line:#657f90}.sop-foundation.sop-inline-quantity .ff-stepper{padding:0;border:1px solid #718a9c;border-radius:5px;background:#1e2d38;gap:0}.sop-foundation.sop-inline-quantity .ff-stepper>button{border:0;border-radius:0;width:34px;min-height:42px;background:#354857}.sop-foundation.sop-inline-quantity .ff-number-face{padding:7px 8px;border-left:1px solid #688090;border-right:1px solid #688090}.sop-foundation.sop-inline-quantity [data-number]{font:22px Arial}.sop-foundation.sop-inline-quantity .ff-unit{margin-top:1px;font-size:7px;letter-spacing:1px}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-inline-quantity,.sop-foundation.sop-inline-quantity *,.sop-foundation.sop-inline-quantity::before,.sop-foundation.sop-inline-quantity::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-inline-quantity{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-inline-quantity :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-inline-quantity:focus-visible,.sop-foundation.sop-inline-quantity :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-inline-quantity[data-sop-paused] *,.sop-foundation.sop-inline-quantity[data-paused=true] *,.sop-foundation.sop-inline-quantity[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

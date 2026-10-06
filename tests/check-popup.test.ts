@@ -6,9 +6,9 @@ import {buildCatalog,ROOT,FORMATS} from './historical-catalog.ts';
 import {getDelivery,buildPrompt} from '../src/catalog/delivery.ts';
 const catalog=buildCatalog(), parts=catalog.parts.filter(p=>p.category==='checkboxes'||p.category==='popups');
 const source=(file:string)=>fs.readFileSync(path.join(ROOT,file),'utf8');
-test('Checkboxes and popups each have 24 unique skins, 16 expressive and 8 practical',()=>{
- assert.equal(parts.length,48);
- for(const category of ['checkboxes','popups']){const ps=parts.filter(p=>p.category===category);assert.equal(ps.length,24);assert.equal(ps.filter(p=>p.designType==='A').length,16);assert.equal(ps.filter(p=>p.designType==='B').length,8);}
+test('curated checkboxes and popups retain 22 skins per category with both intentions',()=>{
+ assert.equal(parts.length,44);
+ for(const category of ['checkboxes','popups']){const ps=parts.filter(p=>p.category===category);assert.equal(ps.length,22);assert.equal(ps.filter(p=>p.designType==='A').length,16);assert.equal(ps.filter(p=>p.designType==='B').length,6);}
  assert.equal(new Set(catalog.parts.map(p=>p.id)).size,catalog.parts.length);
 });
 test('checkboxes are native independently selectable inputs with actual labels, not switches',()=>{

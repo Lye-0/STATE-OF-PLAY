@@ -1,0 +1,52 @@
+{
+  "id": "receipt-column-skeleton",
+  "name": "Receipt Column Skeleton",
+  "category": "skeletons",
+  "tagline": "短い見出しと明細行を、細長い受取票の形で保つ。",
+  "description": "短い見出しと明細行を、細長い受取票の形で保つ。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3236,
+  "version": "1.0.0",
+  "material": "RECEIPT COLUMN SKELETON",
+  "accent": "185,205,194",
+  "componentName": "ReceiptColumnSkeleton",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "skeletons"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Receipt Column Skeleton",
+    "短い見出しと明細行を、細長い受取票の形で保つ。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "loading",
+      "boolean",
+      "実際の読み込み状態。自動で成功にはしない。"
+    ],
+    [
+      "rows",
+      "number",
+      "2〜8行のプレースホルダー。"
+    ],
+    [
+      "label",
+      "string",
+      "読み上げ用の待機ラベル。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "動きを一時停止。"
+    ],
+    [
+      "children",
+      "ReactNode",
+      "読み込み後に表示する実際の内容。"
+    ]
+  ]
+}

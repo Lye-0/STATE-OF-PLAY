@@ -1,0 +1,52 @@
+{
+  "id": "column-copy-skeleton",
+  "name": "Column Copy Skeleton",
+  "category": "skeletons",
+  "tagline": "左の細いメディア帯と、右の本文行を先に確保する読み物の待機面。",
+  "description": "左の細いメディア帯と、右の本文行を先に確保する読み物の待機面。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3226,
+  "version": "1.0.0",
+  "material": "COLUMN COPY SKELETON",
+  "accent": "185,205,194",
+  "componentName": "ColumnCopySkeleton",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "skeletons"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Column Copy Skeleton",
+    "左の細いメディア帯と、右の本文行を先に確保する読み物の待機面。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "loading",
+      "boolean",
+      "実際の読み込み状態。自動で成功にはしない。"
+    ],
+    [
+      "rows",
+      "number",
+      "2〜8行のプレースホルダー。"
+    ],
+    [
+      "label",
+      "string",
+      "読み上げ用の待機ラベル。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "動きを一時停止。"
+    ],
+    [
+      "children",
+      "ReactNode",
+      "読み込み後に表示する実際の内容。"
+    ]
+  ]
+}

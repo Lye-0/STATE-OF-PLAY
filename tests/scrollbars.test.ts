@@ -8,10 +8,10 @@ import {getDelivery, packageContents, buildPrompt} from '../src/catalog/delivery
 import {sourceReferences, isLocalReference, resolveLocal} from '../scripts/source-tools.ts';
 const catalog=buildCatalog();
 const scrollbars=catalog.parts.filter(part=>part.category==='scrollbars'&&!part.tags.includes('KINETIC'));
-test('baseline retained: 24 toggles, 24 surfaces, 24 scrollbars, A majority and eight B rails',()=>{
+test('curated baseline retains toggles, surfaces and scrollbars with both intentions',()=>{
  assert.ok(catalog.parts.length >= 72);
- for(const category of ['toggles','blocks','scrollbars']) assert.equal(catalog.parts.filter(p=>p.category===category&&!p.tags.includes('KINETIC')&&!p.tags.includes('GLASS LAB')).length,24);
- assert.equal(scrollbars.filter(p=>p.designType==='A').length,16);assert.equal(scrollbars.filter(p=>p.designType==='B').length,8);
+ for(const category of ['toggles','blocks','scrollbars']) assert.equal(catalog.parts.filter(p=>p.category===category&&!p.tags.includes('KINETIC')&&!p.tags.includes('GLASS LAB')).length,({toggles:24,blocks:22,scrollbars:21,dropdowns:21,accordions:24} as Record<string,number>)[category]);
+ assert.equal(scrollbars.filter(p=>p.designType==='A').length,16);assert.equal(scrollbars.filter(p=>p.designType==='B').length,5);
 });
 test('thumb is proportional, bounded and reaches both endpoints',()=>{
  for(const viewport of [80,240,800])for(const content of [0,100,300,1000,8000])for(const rail of [0,20,240]) {

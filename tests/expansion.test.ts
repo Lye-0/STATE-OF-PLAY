@@ -8,7 +8,7 @@ import { dependencies } from '../scripts/source-tools.ts';
 import { getDelivery, buildPrompt, buildManifest } from '../src/catalog/delivery.ts';
 const {parts, bases}=buildCatalog();
 const basicToggles=['quiet','porcelain','rail','segment','outline','rocker'];
-const basicBlocks=['paper-card','slate-card','outline-card','inset-panel','accent-card','soft-tile','editorial-card','status-card'];
+const basicBlocks=['paper-card','slate-card','outline-card','inset-panel','soft-tile','editorial-card'];
 const source=(id:string,name:string)=>fs.readFileSync(path.join(ROOT,bases.find(b=>b.endsWith('/'+id))!,name),'utf8');
 
 test('each category includes at least 20 distinct parts, both intentions, with A in the majority',()=>{

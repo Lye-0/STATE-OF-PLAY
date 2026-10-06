@@ -1,0 +1,9 @@
+@import "../../../shared/signature/timeline.css";
+/* Promenade History — 横へ辿れる年代の面を並べ、出来事の内容を足元へ開く。 */
+.sop-sig.sop-promenade-history{--sg-a:#b5cbdc;--sg-line:#7f9ab0;--sg-bg:#253d51;--sg-muted:#a8bdd1}.sop-sig.sop-promenade-history .sg-timeline{padding:19px;background:#213b4f;border:1px solid #83a1b9;border-radius:3px}.sop-sig.sop-promenade-history .sg-timeline-list{display:flex;gap:17px;overflow-x:auto;padding:7px 0 14px;scrollbar-width:thin;scrollbar-color:#a8c0cd #1c3146;align-items:flex-start}.sop-sig.sop-promenade-history .sg-event{display:flex;flex-direction:column;flex:0 0 204px;padding:11px 14px;border-top:3px solid #7796b1;background:#2c4b62;gap:10px}.sop-sig.sop-promenade-history .sg-event-route{display:none}.sop-sig.sop-promenade-history .sg-event-time{font:16px Georgia;border-bottom:1px solid #88a6b955;padding-bottom:8px}.sop-sig.sop-promenade-history .sg-event[data-status=active]{border-top-color:#b7d4d8;background:#436579}.sop-sig.sop-promenade-history .sg-event-status{white-space:normal}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-promenade-history,.sop-sig.sop-promenade-history *,.sop-sig.sop-promenade-history::before,.sop-sig.sop-promenade-history::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-sig.sop-promenade-history{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-promenade-history :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-sig.sop-promenade-history:focus-visible,.sop-sig.sop-promenade-history :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-sig.sop-promenade-history[data-sop-paused] *,.sop-sig.sop-promenade-history[data-paused=true] *,.sop-sig.sop-promenade-history[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+.sop-sig.sop-promenade-history *{animation-play-state:var(--sg-play,running)!important}

@@ -6,13 +6,16 @@ export interface SurfaceOptions {
 export function createSurfaceController(element: HTMLElement, { intensity = 1, tilt = false }: SurfaceOptions = {}) {
     const abort = new AbortController();
     const media = window.matchMedia('(prefers-reduced-motion: reduce)');
+    // The first pointer event must start from the authored material's resting angle.
+    const authoredAngle = Number.parseFloat(getComputedStyle(element).getPropertyValue('--sop-angle'));
+    const restingAngle = Number.isFinite(authoredAngle) ? authoredAngle : 132.5;
     let raf = 0, disposed = false, x = .5, y = .5, targetX = .5, targetY = .5, lastTime = 0;
     let visible = true, paused = false;
     const updateAnimation = () => { element.toggleAttribute('data-sop-paused', paused || !visible || document.hidden); };
     function paint() {
         element.style.setProperty('--sop-x', `${x * 100}%`);
         element.style.setProperty('--sop-y', `${y * 100}%`);
-        element.style.setProperty('--sop-angle', `${110 + x * 70 - y * 25}deg`);
+        element.style.setProperty('--sop-angle', `${restingAngle + (x - .5) * 70 - (y - .5) * 25}deg`);
         element.style.setProperty('--sop-rx', `${tilt && !media.matches ? (y - .5) * -6 * intensity : 0}deg`);
         element.style.setProperty('--sop-ry', `${tilt && !media.matches ? (x - .5) * 8 * intensity : 0}deg`);
     }
@@ -67,5 +70,6 @@ export function createSurfaceController(element: HTMLElement, { intensity = 1, t
     intersection?.observe(element);
     document.addEventListener('visibilitychange', () => { updateAnimation(); if (document.hidden) reset(true); }, {signal: abort.signal});
     updateAnimation();
+    paint();
     return { setPaused(value: boolean) { paused = value; updateAnimation(); if (paused) reset(true); }, destroy() { reset(true); disposed = true; abort.abort(); intersection?.disconnect(); element.removeAttribute('data-sop-paused'); } };
 }

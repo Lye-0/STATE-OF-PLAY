@@ -1,0 +1,57 @@
+{
+  "id": "explained-action-context",
+  "name": "Explained Action Context",
+  "category": "contextmenus",
+  "description": "操作名の下に説明を読み、対象と結果を確認しながら選べるメニュー。",
+  "designType": "B",
+  "tagline": "操作名の下に説明を読み、対象と結果を確認しながら選べるメニュー。",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3310,
+  "version": "1.0.0",
+  "material": "EXPLAINED ACTION CONTEXT",
+  "accent": "192,216,201",
+  "componentName": "ExplainedActionContext",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "contextmenus"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Explained Action Context",
+    "操作名の下に説明を読み、対象と結果を確認しながら選べるメニュー。",
+    "NAVIGATOR"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "ContextAction[]",
+      "操作、子階層、区切り、チェック、無効状態を指定。"
+    ],
+    [
+      "onAction",
+      "(item, signal) => void | false | Promise",
+      "実行先の接続。勝手な保存や削除はしません。"
+    ],
+    [
+      "checked / onCheckedChange",
+      "Record<string, boolean> / callback",
+      "メニュー内チェック項目の状態を制御。"
+    ],
+    [
+      "targetLabel / targetDescription",
+      "string",
+      "操作対象の見出しと説明。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "コンポーネントの操作を無効にする。"
+    ],
+    [
+      "targetElement",
+      "HTMLElement | null",
+      "既存のカード・行などに接続します。中身は変更せず、その要素だけで右クリックを扱います。"
+    ]
+  ]
+}

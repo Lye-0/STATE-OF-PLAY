@@ -1,0 +1,82 @@
+{
+  "id": "branch-trail",
+  "name": "Branch Trail",
+  "category": "breadcrumbs",
+  "order": 3130,
+  "version": "1.0.0",
+  "tagline": "階層を左の幹と横枝で示し、現在地を末端の明るい札にする。",
+  "description": "階層を左の幹と横枝で示し、現在地を末端の明るい札にする。",
+  "material": "BRANCH TRAIL",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "BranchTrail",
+  "tags": [
+    "EXPANSION-30",
+    "Branch Trail",
+    "階層を左の幹と横枝で示し、現在地を末端の明るい札にする。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "branch-trail",
+    "kind": "breadcrumbs",
+    "variant": "essential",
+    "label": "あなたが、いまいる場所。",
+    "description": "",
+    "defaultValue": null,
+    "items": [
+      {
+        "value": "home",
+        "label": "Home",
+        "href": "#home"
+      },
+      {
+        "value": "library",
+        "label": "Library",
+        "href": "#library"
+      },
+      {
+        "value": "objects",
+        "label": "Objects",
+        "href": "#objects"
+      },
+      {
+        "value": "materials",
+        "label": "Materials",
+        "href": "#materials"
+      },
+      {
+        "value": "paper",
+        "label": "Paper"
+      }
+    ]
+  }
+}

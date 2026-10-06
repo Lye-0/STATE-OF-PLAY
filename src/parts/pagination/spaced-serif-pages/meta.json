@@ -1,0 +1,57 @@
+{
+  "id": "spaced-serif-pages",
+  "name": "Spaced Serif Pages",
+  "category": "pagination",
+  "order": 3157,
+  "version": "1.0.0",
+  "tagline": "大きな頁番号を余白に置き、現在の番号だけを横線で結ぶ。",
+  "description": "大きな頁番号を余白に置き、現在の番号だけを横線で結ぶ。",
+  "material": "SPACED SERIF PAGES",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "SpacedSerifPages",
+  "tags": [
+    "EXPANSION-30",
+    "Spaced Serif Pages",
+    "大きな頁番号を余白に置き、現在の番号だけを横線で結ぶ。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "spaced-serif-pages",
+    "kind": "pagination",
+    "variant": "essential",
+    "label": "コレクションをめくる",
+    "description": "",
+    "defaultValue": 4,
+    "totalPages": 12
+  }
+}

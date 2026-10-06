@@ -1,0 +1,8 @@
+@import '../../../shared/selection-base.css';
+/* Enamel Cell Segments — 厚いエナメルの縁を共有し、選んだセルの面だけを明るくする。 */
+.sop-choice.sop-enamel-cell-segments{--choice-base:#47352f;--choice-accent:#ddbea0;--choice-radius:15px}.sop-choice.sop-enamel-cell-segments>.sop-choice-list{background:linear-gradient(#806049,#3c2a24);border:3px solid #9d8066;padding:3px;gap:2px}.sop-choice.sop-enamel-cell-segments .sop-choice-marker{display:none}.sop-choice.sop-enamel-cell-segments .sop-choice-item{min-height:55px;background:#664b3a;border-radius:10px 10px 18px 18px;box-shadow:inset 0 3px 4px #0005,inset 0 -1px #e6caa255}.sop-choice.sop-enamel-cell-segments .sop-choice-item[data-selected=true]{background:radial-gradient(at 25% 15%,#f1dcc3,#b9a485 80%);color:#493c2b;box-shadow:inset 0 1px 2px #fff9,0 2px 4px #0005}
+@media(prefers-reduced-motion:reduce){.sop-choice.sop-enamel-cell-segments,.sop-choice.sop-enamel-cell-segments *,.sop-choice.sop-enamel-cell-segments::before,.sop-choice.sop-enamel-cell-segments::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-choice.sop-enamel-cell-segments{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-choice.sop-enamel-cell-segments :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-choice.sop-enamel-cell-segments:focus-visible,.sop-choice.sop-enamel-cell-segments :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-choice.sop-enamel-cell-segments[data-sop-paused] *,.sop-choice.sop-enamel-cell-segments[data-paused=true] *,.sop-choice.sop-enamel-cell-segments[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

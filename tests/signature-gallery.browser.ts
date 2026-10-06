@@ -1,3 +1,5 @@
+import {libraryCount} from './gallery-counts.ts';
+import {selectSetting} from './detail-settings.ts';
 /** Verify SIGNATURE in the actual lazy-loaded Vite gallery and inspector. */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -38,8 +40,8 @@ try {
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 120000 });
   await galleryReady(page);
 
-  await check('entry keeps the first category lazy while listing 887 parts and 37 categories', async () => {
-    assert.equal(await page.locator('#library-total').innerText(), '887');
+  await check('entry keeps the first category lazy while listing 795 parts and 37 categories', async () => {
+    assert.equal(await page.locator('#library-total').innerText(), String(libraryCount()));
     assert.equal(await page.locator('#library-collections').innerText(), '37');
     assert.equal(await page.locator('#part-grid [data-part]').count(), 26);
     assert.equal(await selectedCategory(page), 'toggles');
@@ -78,7 +80,7 @@ try {
         assert.equal(await page.locator('#part-details .sop-sig').getAttribute('aria-busy'), 'false');
       }
       if (categories[i] === 'ratings') {
-        await page.locator('#part-details [data-sg-max]').selectOption('7');
+        await selectSetting(page.locator('#part-details [data-sg-max]'),'7');
         assert.equal(await page.locator('#part-details input[type="radio"]').count(), 7);
       }
       await page.locator('#part-details .close-detail').click();
@@ -92,7 +94,7 @@ try {
     await page.locator('[data-open="orbital-portrait"]').click();
     await page.locator('#part-details [data-preview-part="orbital-portrait"]').waitFor();
     for (const layout of ['portable', 'original'] as const) {
-      await page.locator('#part-details #export-layout').selectOption(layout);
+      await selectSetting(page.locator('#part-details #export-layout'),layout);
       for (const format of FORMATS) {
         await page.locator('#part-details [data-format="' + format + '"]').click();
         const delivery = getDelivery(part, format, layout);

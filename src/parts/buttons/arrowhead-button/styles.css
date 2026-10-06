@@ -1,0 +1,8 @@
+@import "../../../shared/action-button-base.css";
+/* Arrowhead Button — 広いラベル面と矢尻形の先端が、実行の向きを明確にする。 */
+.sop-action.sop-arrowhead-button{--sop-action-ink:#edf3de;--sop-action-accent:#d4e7ae;background:#32473d;border:0;border-left:4px solid #a3bf85;border-radius:0;padding:17px 30px 17px 21px;clip-path:polygon(0 0,calc(100% - 17px) 0,100% 50%,calc(100% - 17px) 100%,0 100%)}.sop-action.sop-arrowhead-button .sop-action-art{display:none}.sop-action.sop-arrowhead-button .sop-action-icon{transition:transform .45s}.sop-action.sop-arrowhead-button:hover .sop-action-icon{transform:translateX(6px)}.sop-action.sop-arrowhead-button[aria-busy=true]{background:#475d4d}
+@media(prefers-reduced-motion:reduce){.sop-action.sop-arrowhead-button,.sop-action.sop-arrowhead-button *,.sop-action.sop-arrowhead-button::before,.sop-action.sop-arrowhead-button::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-action.sop-arrowhead-button{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-action.sop-arrowhead-button :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-action.sop-arrowhead-button:focus-visible,.sop-action.sop-arrowhead-button :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-action.sop-arrowhead-button[data-sop-paused] *,.sop-action.sop-arrowhead-button[data-paused=true] *,.sop-action.sop-arrowhead-button[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

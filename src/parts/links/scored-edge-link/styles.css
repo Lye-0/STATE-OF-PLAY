@@ -1,0 +1,11 @@
+@import "../../../shared/navigation-link-base.css";
+/* Scored Edge Link — 薄い切り込みのある縁が、先端のスコア位置で光る。 */
+.sop-link.sop-scored-edge-link{--sop-link-ink:#e3e8dd;gap:19px;padding:14px 20px;border-top:2px solid #87a1a0;border-bottom:6px double #728b88;background:#263c3a;border-radius:0}.sop-link.sop-scored-edge-link .sop-link-icon{border-right:1px solid #c8d8c3;padding-right:5px;width:26px;transform:rotate(45deg)}.sop-link.sop-scored-edge-link:hover{border-bottom-color:#cbdcbd}
+@media(prefers-reduced-motion:reduce){.sop-link.sop-scored-edge-link,.sop-link.sop-scored-edge-link *,.sop-link.sop-scored-edge-link::before,.sop-link.sop-scored-edge-link::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-link.sop-scored-edge-link{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-link.sop-scored-edge-link :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-link.sop-scored-edge-link:focus-visible,.sop-link.sop-scored-edge-link :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-link.sop-scored-edge-link[data-sop-paused] *,.sop-link.sop-scored-edge-link[data-paused=true] *,.sop-link.sop-scored-edge-link[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+/* Preserve interpolation on hover exit and reversal as well as entry. */
+.sop-link.sop-scored-edge-link{transition:border-color .45s}

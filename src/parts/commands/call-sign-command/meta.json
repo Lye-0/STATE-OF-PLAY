@@ -1,0 +1,52 @@
+{
+  "id": "call-sign-command",
+  "name": "Call Sign Command",
+  "category": "commands",
+  "description": "操作の名前を小さな呼出札に揃え、ショートカットを番号帯に分ける。",
+  "designType": "A",
+  "tagline": "操作の名前を小さな呼出札に揃え、ショートカットを番号帯に分ける。",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3287,
+  "version": "1.0.0",
+  "material": "CALL SIGN COMMAND",
+  "accent": "192,216,201",
+  "componentName": "CallSignCommand",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "commands"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Call Sign Command",
+    "操作の名前を小さな呼出札に揃え、ショートカットを番号帯に分ける。",
+    "NAVIGATOR"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "CommandItem[]",
+      "コマンド、グループ、ショートカット、子階層を指定。"
+    ],
+    [
+      "open / onOpenChange",
+      "boolean / callback",
+      "表示を外部制御。"
+    ],
+    [
+      "onExecute",
+      "(item, signal) => void | false | Promise",
+      "処理中の重複を抑止。falseなら開いたまま。例外はエラー表示。"
+    ],
+    [
+      "hotkey",
+      "boolean",
+      "trueでCtrl/Cmd+Kを登録。ギャラリーではfalse。"
+    ],
+    [
+      "apiRef",
+      "Ref<WorkbenchAPI>",
+      "Reactからopen()/close()を呼べる参照。"
+    ]
+  ]
+}

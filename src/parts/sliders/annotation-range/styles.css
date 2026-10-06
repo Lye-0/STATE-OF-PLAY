@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Annotation Range — 縦の小見出しを左に置き、範囲と現在値を同じ資料欄にまとめる。 */
+.sop-foundation.sop-annotation-range{--ff-accent:#b5c3d4;--ff-accent2:#b5c3d4;--ff-base:#27313f;--ff-panel:#3b4858;--ff-line:#6f859a;border-left:2px solid #859db2;padding-left:17px}.sop-foundation.sop-annotation-range .ff-reading{font:24px Consolas;letter-spacing:1px}.sop-foundation.sop-annotation-range .ff-rail{height:7px;top:17px;border-radius:0;background:#132438;border:0}.sop-foundation.sop-annotation-range [data-range]::-webkit-slider-thumb{width:18px;height:22px;border-radius:3px;background:#adbfcb;border:1px solid #cad9d4;margin-top:-4px;box-shadow:none}.sop-foundation.sop-annotation-range .ff-ticks{display:none}.sop-foundation.sop-annotation-range .ff-scale{padding-top:7px;border-top:1px solid #577081}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-annotation-range,.sop-foundation.sop-annotation-range *,.sop-foundation.sop-annotation-range::before,.sop-foundation.sop-annotation-range::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-annotation-range{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-annotation-range :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-annotation-range:focus-visible,.sop-foundation.sop-annotation-range :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-annotation-range[data-sop-paused] *,.sop-foundation.sop-annotation-range[data-paused=true] *,.sop-foundation.sop-annotation-range[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

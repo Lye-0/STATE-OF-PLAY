@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Tally Stepper — 縦の数え線と現在値を組み合わせ、増減を記録のように見せる。 */
+.sop-foundation.sop-tally-stepper{--ff-accent:#d9c699;--ff-base:#38322a;--ff-line:#9f8c64}.sop-foundation.sop-tally-stepper .ff-stepper{border:0;border-radius:0;background:repeating-linear-gradient(90deg,#bfaa7c66 0 1px,transparent 1px 11px);border-bottom:1px solid #ad9667;padding:8px 0;gap:7px}.sop-foundation.sop-tally-stepper .ff-stepper>button{background:#7f6d4b;border-radius:0;border:1px solid #c5af7b;width:40px;min-height:43px}.sop-foundation.sop-tally-stepper .ff-number-face{background:#3d3426;padding:9px 11px;border:1px solid #8b7754}.sop-foundation.sop-tally-stepper [data-number]{font:31px Georgia;text-align:left}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-tally-stepper,.sop-foundation.sop-tally-stepper *,.sop-foundation.sop-tally-stepper::before,.sop-foundation.sop-tally-stepper::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-tally-stepper{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-tally-stepper :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-tally-stepper:focus-visible,.sop-foundation.sop-tally-stepper :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-tally-stepper[data-sop-paused] *,.sop-foundation.sop-tally-stepper[data-paused=true] *,.sop-foundation.sop-tally-stepper[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

@@ -1,0 +1,13 @@
+@import "../../../shared/foundation/base.css";
+/* Wide Label Finder — 長い名前を優先し、候補の余白と選択印を離して配置する。 */
+.sop-foundation.sop-wide-label-finder{--ff-accent:#aebfce;--ff-ink:#e0e7ed;--ff-muted:#a9bbcb;--ff-panel:#2c3c50;--ff-base:#1e2d3c;--ff-line:#6f849a}.sop-foundation.sop-wide-label-finder .ff-combo-shell{border-radius:0;border:1px solid #7b91a5;padding:11px;background:#243347}.sop-foundation.sop-wide-label-finder .ff-combo-list{border:1px solid #7f95aa;border-radius:0;background:#203246;padding:7px}.sop-foundation.sop-wide-label-finder .ff-option{border:0;border-left:2px solid transparent;border-radius:0;padding:15px 11px;white-space:normal;overflow-wrap:anywhere}.sop-foundation.sop-wide-label-finder .ff-option[data-active=true]{border-left-color:#c0d1da;background:#3a5269}.sop-foundation.sop-wide-label-finder .ff-option svg{width:14px;height:14px;flex:none}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-wide-label-finder,.sop-foundation.sop-wide-label-finder *,.sop-foundation.sop-wide-label-finder::before,.sop-foundation.sop-wide-label-finder::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-wide-label-finder{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-wide-label-finder :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-wide-label-finder:focus-visible,.sop-foundation.sop-wide-label-finder :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-wide-label-finder[data-sop-paused] *,.sop-foundation.sop-wide-label-finder[data-paused=true] *,.sop-foundation.sop-wide-label-finder[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+
+
+/* Visual review: composition and state separation. */
+.sop-foundation.sop-wide-label-finder .ff-combo-shell{min-height:64px;padding-left:52px;position:relative}.sop-foundation.sop-wide-label-finder .ff-combo-icon{position:absolute;inset:0 auto 0 0;width:40px;display:grid;place-items:center;border-right:1px solid var(--ff-line)}.sop-foundation.sop-wide-label-finder .ff-option{padding:17px 12px}.sop-foundation.sop-wide-label-finder .ff-option>span:nth-child(2) strong{font-size:14px}

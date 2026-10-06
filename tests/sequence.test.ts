@@ -15,11 +15,11 @@ const parts=historicalBases().map(base=>({base,...JSON.parse(read(base+'/meta.js
 const targets=parts.filter(p=>p.tags.includes('SEQUENCE'));
 
 test('SEQUENCE updates only 10 expressive paginations and 16 expressive tag components',()=>{
- assert.equal(parts.filter(p=>!p.tags.includes('GLASS LAB')).length,817);assert.equal(targets.length,26);
+ assert.equal(parts.filter(p=>!p.tags.includes('GLASS LAB')).length,725);assert.equal(targets.length,26);
  assert.equal(targets.filter(p=>p.category==='pagination').length,10);
  assert.equal(targets.filter(p=>p.category==='badges').length,16);
  for(const p of targets){assert.equal(p.designType,'A');assert.equal(p.version,'4.9.0');assert.ok(SEQUENCE_MATERIALS.includes(p.foundation.variant));}
- assert.equal(parts.filter(p=>p.category==='loaders').length,39);
+ assert.equal(parts.filter(p=>p.category==='loaders').length,25);
 });
 test('pagination normalizes non-finite values, negative bounds, decimals and a single page',()=>{
  assert.deepEqual(pageState(Infinity,20),{page:1,total:20});assert.deepEqual(pageState(5,NaN),{page:1,total:1});assert.deepEqual(pageState(-5,-10),{page:1,total:1});assert.deepEqual(pageState(5.7,9.9),{page:5,total:9});assert.deepEqual(pageState(3000,12),{page:12,total:12});assert.deepEqual(pageState(null,1),{page:1,total:1});assert.deepEqual(pageState(10,Infinity),{page:1,total:1});

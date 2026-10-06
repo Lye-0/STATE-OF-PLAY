@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-06",
+  "total": 1120,
+  "added": 325,
+  "A": 845,
+  "B": 275,
+  "categories": 37,
+  "category_floor": 30,
+  "minimum_each_type": 5,
+  "refined_after_comparison": 91,
+  "unit_tests": {
+    "passed": 270,
+    "failed": 0,
+    "log": "evidence/expansion-30-unit-all-final.log"
+  },
+  "react": {
+    "mounted_and_cleaned_up_each_layout": 325,
+    "layouts": [
+      "tsx-portable",
+      "jsx-original"
+    ],
+    "mobile_widths": [
+      320,
+      390
+    ],
+    "selected_flat_light_surface_contrast": "passed",
+    "log": "evidence/expansion-30-react-verified.log"
+  },
+  "native": {
+    "tested": 325,
+    "normal_photos": 325,
+    "post_operation_photos": 325,
+    "supplementary_cases": 58,
+    "source_hashes": "browser-results.json"
+  },
+  "production_build": "passed",
+  "production_static_pages": "passed",
+  "appearance_and_detail_controls": "passed",
+  "zip_and_mobile_regression": "passed",
+  "full_npm_verify": "not run as one command",
+  "production_static_pages_log": "evidence/expansion-30-pages-final.log"
+}

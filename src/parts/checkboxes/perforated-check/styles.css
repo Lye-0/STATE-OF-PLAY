@@ -1,0 +1,8 @@
+@import "../../../shared/checkbox-base.css";
+/* Perforated Check — 切り取り線の内側にチェックを置き、選んだ項目を半券として示す。 */
+.sop-check.sop-perforated-check{--cb-bg:#e3dcca;--cb-ink:#42483c;--cb-accent:#596b4a;--cb-box:#f4efdd;--cb-line:#7d886c;--cb-radius:0;--cb-size:25px;color-scheme:light;background:#e3dcca;border:1px solid #97a083;border-right:10px dotted #232926;padding:15px}.sop-check.sop-perforated-check .sop-check-box{border:1px dashed #758366;border-radius:0}.sop-check.sop-perforated-check input:checked~.sop-check-copy{border-bottom:2px solid #6d7d51;padding-bottom:3px}.sop-check.sop-perforated-check .sop-check-aura{display:none}
+@media(prefers-reduced-motion:reduce){.sop-check.sop-perforated-check,.sop-check.sop-perforated-check *,.sop-check.sop-perforated-check::before,.sop-check.sop-perforated-check::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-check.sop-perforated-check{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-check.sop-perforated-check :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-check.sop-perforated-check:focus-visible,.sop-check.sop-perforated-check :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-check.sop-perforated-check[data-sop-paused] *,.sop-check.sop-perforated-check[data-paused=true] *,.sop-check.sop-perforated-check[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

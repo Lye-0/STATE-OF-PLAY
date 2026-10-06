@@ -1,0 +1,8 @@
+@import "../../../shared/navigation-link-base.css";
+/* Corner Turn Link — ラベルの下辺を進んだ線が、右端で上へ折れて矢印になる。 */
+.sop-link.sop-corner-turn-link{--sop-link-ink:#d9d2ed;padding:12px 20px 14px 0;gap:15px;border-bottom:1px solid #a291c5;border-right:1px solid #a291c5}.sop-link.sop-corner-turn-link .sop-link-icon{width:21px;height:21px;transform:translateY(-8px);transition:transform .55s}.sop-link.sop-corner-turn-link:hover .sop-link-icon{transform:translate(3px,-13px)}.sop-link.sop-corner-turn-link .sop-link-art{display:none}
+@media(prefers-reduced-motion:reduce){.sop-link.sop-corner-turn-link,.sop-link.sop-corner-turn-link *,.sop-link.sop-corner-turn-link::before,.sop-link.sop-corner-turn-link::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-link.sop-corner-turn-link{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-link.sop-corner-turn-link :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-link.sop-corner-turn-link:focus-visible,.sop-link.sop-corner-turn-link :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-link.sop-corner-turn-link[data-sop-paused] *,.sop-link.sop-corner-turn-link[data-paused=true] *,.sop-link.sop-corner-turn-link[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

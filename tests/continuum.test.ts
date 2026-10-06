@@ -10,11 +10,11 @@ const read=(p:string)=>fs.readFileSync(path.join(ROOT,p),'utf8'),exists=(p:strin
 const parts=historicalBases().map(base=>({...JSON.parse(read(base+'/meta.json')),base}));
 const edited=parts.filter(p=>p.tags.includes('CONTINUUM')&&p.category!=='loaders'),added=parts.filter(p=>p.tags.includes('MOTION STUDIES'));
 test('CONTINUUM revises 42 A parts, retains old loaders and adds 8 A + 8 B loaders',()=>{
- assert.equal(parts.filter(p=>!p.tags.includes('GLASS LAB')).length,817);assert.equal(new Set(parts.map(p=>p.id)).size,parts.length);assert.equal(new Set(parts.map(p=>p.category)).size,37);
+ assert.equal(parts.filter(p=>!p.tags.includes('GLASS LAB')).length,725);assert.equal(new Set(parts.map(p=>p.id)).size,parts.length);assert.equal(new Set(parts.map(p=>p.category)).size,37);
  for(const [cat,count]of Object.entries({progress:16,uploads:13,datepickers:13}))assert.equal(edited.filter(p=>p.category===cat).length,count);
  assert.equal(edited.length,42);assert.ok(edited.every(p=>p.designType==='A'&&p.version==='4.8.0'));
- assert.equal(added.length,16);assert.equal(added.filter(p=>p.designType==='B').length,8);assert.equal(parts.filter(p=>p.category==='loaders').length,39);
- assert.equal(parts.filter(p=>p.category==='loaders'&&!p.tags.includes('MOTION STUDIES')).length,23);
+ assert.equal(added.length,16);assert.equal(added.filter(p=>p.designType==='B').length,8);assert.equal(parts.filter(p=>p.category==='loaders').length,25);
+ assert.equal(parts.filter(p=>p.category==='loaders'&&!p.tags.includes('MOTION STUDIES')).length,9);
 });
 test('ranges normalize negative, decimal, missing and degenerate bounds without non-finite numbers',()=>{
  assert.equal(progressFraction(-5,{min:-10,max:10}),.25);assert.equal(progressFraction(.75,{min:0,max:1}),.75);

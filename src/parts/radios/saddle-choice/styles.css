@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Saddle Choice — 柔らかな革の端を折り返し、選択の丸印と内容を留める。 */
+.sop-foundation.sop-saddle-choice{--ff-accent:#d7b49b;--ff-base:#3d2c2c;--ff-panel:#5a3b34;--ff-line:#a27964}.sop-foundation.sop-saddle-choice .ff-choice{border:1px dashed #b9997c;border-radius:12% 3px 12% 3px;background:#654538;padding:19px 22px;outline:1px solid #8d6a50;outline-offset:-5px}.sop-foundation.sop-saddle-choice .ff-choice[data-selected=true]{background:#8b6046;box-shadow:inset 10px 0 #674c3855}.sop-foundation.sop-saddle-choice .ff-choice-check{border:2px solid #d2b68c;background:#3b2b23;box-shadow:0 1px #e6c79944}.sop-foundation.sop-saddle-choice .ff-choice-badge{display:none}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-saddle-choice,.sop-foundation.sop-saddle-choice *,.sop-foundation.sop-saddle-choice::before,.sop-foundation.sop-saddle-choice::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-saddle-choice{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-saddle-choice :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-saddle-choice:focus-visible,.sop-foundation.sop-saddle-choice :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-saddle-choice[data-sop-paused] *,.sop-foundation.sop-saddle-choice[data-paused=true] *,.sop-foundation.sop-saddle-choice[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

@@ -1,0 +1,8 @@
+@import '../../../shared/selection-base.css';
+/* Counted Segments — ラベルと数値を上下に分け、選択の有無を境界で明確にする。 */
+.sop-choice.sop-counted-segments{--choice-base:#f0f2ed;--choice-ink:#293a32;--choice-muted:#5c6e61;--choice-on:#203b2c;--choice-accent:#526d59;--choice-radius:6px}.sop-choice.sop-counted-segments>.sop-choice-list{gap:1px;padding:3px;background:#e3e9df;border:1px solid #99ada0}.sop-choice.sop-counted-segments .sop-choice-marker{display:none}.sop-choice.sop-counted-segments .sop-choice-item{min-height:57px;flex-direction:column;gap:5px;border-radius:3px}.sop-choice.sop-counted-segments .sop-choice-index{display:block;font:11px Consolas;opacity:.8}.sop-choice.sop-counted-segments .sop-choice-item[data-selected=true]{background:#fff;border:1px solid #819f87;box-shadow:0 2px 3px #405a4822}
+@media(prefers-reduced-motion:reduce){.sop-choice.sop-counted-segments,.sop-choice.sop-counted-segments *,.sop-choice.sop-counted-segments::before,.sop-choice.sop-counted-segments::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-choice.sop-counted-segments{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-choice.sop-counted-segments :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-choice.sop-counted-segments:focus-visible,.sop-choice.sop-counted-segments :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-choice.sop-counted-segments[data-sop-paused] *,.sop-choice.sop-counted-segments[data-paused=true] *,.sop-choice.sop-counted-segments[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

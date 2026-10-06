@@ -1,0 +1,9 @@
+@import "../../../shared/signature/avatar.css";
+/* Edge Light Portrait — 暗い写真窓の一辺を光らせ、名前を光の延長として揃える。 */
+.sop-sig.sop-edge-light-portrait{--sg-a:#bed2dc;--sg-line:#8099aa;--sg-muted:#a6bbc7}.sop-sig.sop-edge-light-portrait .sg-portrait{width:75px;height:85px}.sop-sig.sop-edge-light-portrait .sg-portrait-picture{inset:0 5px 0 3px;border-radius:1px;background:linear-gradient(130deg,#738f9b,#152e49);border-right:4px solid #6e9eac}.sop-sig.sop-edge-light-portrait .sg-portrait-ring{border:0;border-left:1px solid #8bb0bf;border-radius:0;transform:translateX(-4px)}.sop-sig.sop-edge-light-portrait .sg-person-copy{padding-left:11px;border-left:1px solid #7f9bb0;align-items:flex-start;text-align:left}.sop-sig.sop-edge-light-portrait .sg-person[data-selected=true] .sg-portrait-picture{border-right-color:#c3e0dc;box-shadow:5px 0 16px #9ad1d933}.sop-sig.sop-edge-light-portrait .sg-person-name{font-weight:400;letter-spacing:.5px}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-edge-light-portrait,.sop-sig.sop-edge-light-portrait *,.sop-sig.sop-edge-light-portrait::before,.sop-sig.sop-edge-light-portrait::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-sig.sop-edge-light-portrait{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-edge-light-portrait :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-sig.sop-edge-light-portrait:focus-visible,.sop-sig.sop-edge-light-portrait :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-sig.sop-edge-light-portrait[data-sop-paused] *,.sop-sig.sop-edge-light-portrait[data-paused=true] *,.sop-sig.sop-edge-light-portrait[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+.sop-sig.sop-edge-light-portrait *{animation-play-state:var(--sg-play,running)!important}

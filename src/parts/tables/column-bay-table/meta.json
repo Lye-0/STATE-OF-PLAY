@@ -1,0 +1,62 @@
+{
+  "id": "column-bay-table",
+  "name": "Column Bay Table",
+  "category": "tables",
+  "description": "細い縦の仕切りで項目を区画し、行の順序を保ったまま比較する。",
+  "designType": "A",
+  "tagline": "細い縦の仕切りで項目を区画し、行の順序を保ったまま比較する。",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3314,
+  "version": "1.0.0",
+  "material": "COLUMN BAY TABLE",
+  "accent": "192,216,201",
+  "componentName": "ColumnBayTable",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "tables"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Column Bay Table",
+    "細い縦の仕切りで項目を区画し、行の順序を保ったまま比較する。",
+    "NAVIGATOR"
+  ],
+  "related": [],
+  "props": [
+    [
+      "rows / columns",
+      "DataRow[] / DataColumn[]",
+      "一意な行IDと列定義。文字・数値・状態・進捗表示。"
+    ],
+    [
+      "sort / onSortChange",
+      "TableSort | null / callback",
+      "列の昇順・降順・元順を切り替え。"
+    ],
+    [
+      "selected / onSelectionChange",
+      "string[] / callback",
+      "選択は行IDで保持。全選択は表示ページの対象行。"
+    ],
+    [
+      "page / pageSize / query",
+      "number / number / string",
+      "ページ送りと検索。manualでサーバー側へ委譲可能。"
+    ],
+    [
+      "resizable / stickyFirst",
+      "boolean",
+      "列幅調整と先頭列固定。列幅は矢印キーでも操作。"
+    ],
+    [
+      "onRowAction",
+      "(action, row) => void",
+      "各行の操作を利用先へ接続。"
+    ],
+    [
+      "loading / error",
+      "boolean / string",
+      "読込中・失敗表示。仮想スクロールやセル編集は含みません。"
+    ]
+  ]
+}

@@ -1,0 +1,9 @@
+@import "../../../shared/signature/avatar.css";
+/* Dossier Identity — 広い人物行に、写真・名前・在席の印を資料のように揃える。 */
+.sop-sig.sop-dossier-identity{--sg-a:#d0b6ca;--sg-line:#a083a0;--sg-muted:#bba5bc}.sop-sig.sop-dossier-identity .sg-avatar-list{display:grid;gap:9px}.sop-sig.sop-dossier-identity .sg-person{max-width:none;width:100%;flex-direction:row;gap:17px;text-align:left;background:#3e2e49;border-left:7px solid #806186;padding:10px 15px}.sop-sig.sop-dossier-identity .sg-portrait{width:45px;height:54px}.sop-sig.sop-dossier-identity .sg-portrait-picture{inset:1px;border-radius:1px;background:linear-gradient(145deg,#ae8fbd,#44385e)}.sop-sig.sop-dossier-identity .sg-portrait-ring{display:none}.sop-sig.sop-dossier-identity .sg-person-copy{border-top:1px solid #a287b166;padding-top:7px;align-items:flex-start;flex:1}.sop-sig.sop-dossier-identity .sg-person[data-selected=true]{background:#675072;border-left-color:#dabce0}.sop-sig.sop-dossier-identity .sg-person-name{letter-spacing:1px;font:14px Georgia}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-dossier-identity,.sop-sig.sop-dossier-identity *,.sop-sig.sop-dossier-identity::before,.sop-sig.sop-dossier-identity::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-sig.sop-dossier-identity{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-dossier-identity :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-sig.sop-dossier-identity:focus-visible,.sop-sig.sop-dossier-identity :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-sig.sop-dossier-identity[data-sop-paused] *,.sop-sig.sop-dossier-identity[data-paused=true] *,.sop-sig.sop-dossier-identity[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+.sop-sig.sop-dossier-identity *{animation-play-state:var(--sg-play,running)!important}

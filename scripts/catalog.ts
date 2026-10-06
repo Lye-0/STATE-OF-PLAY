@@ -7,12 +7,13 @@ import { validateArchivePath, validateArchiveEntries } from '../src/shared/archi
 import { layoutMap } from './layout.ts';
 import { dependencies, exportCode, bundleDemo, sourceReferences, isLocalReference, resolveLocal } from './source-tools.ts';
 import type { Part, SourceFile, Format } from '../src/catalog/types.ts';
+import {appearanceProfile} from './appearance-profile.ts';
 export const ROOT = fileURLToPath(new URL('../', import.meta.url));
 export const FORMATS: Format[] = ['tsx','jsx','ts','js'];
 export interface CatalogBuild { parts: Part[]; bases: string[]; styles: string; }
 const html = (value: string) => value.replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]!));
 
-export function buildCatalog(root = ROOT, onlyIds?: readonly string[]): CatalogBuild {
+export function buildCatalog(root = ROOT, onlyIds?: readonly string[],options={appearance:true}): CatalogBuild {
   const inputCache = new Map<string,string>();
   const strings = new Map<string,string>();
   const intern = (text:string):string => { const known=strings.get(text); if(known!==undefined)return known; strings.set(text,text); return text; };
@@ -28,6 +29,7 @@ export function buildCatalog(root = ROOT, onlyIds?: readonly string[]): CatalogB
       bundledCSS(resolveLocal(source, request, exists), visited));
   }
   const seen = new Set<string>();
+  const allIds=new Set(bases.map(base=>base.split('/').at(-1)!));
   const parts = bases.filter(base => !onlyIds || onlyIds.includes(base.split('/').at(-1)!)).map(base => {
     const meta = JSON.parse(read(`${base}/meta.json`)) as Omit<Part,'files'|'portableFiles'|'preview'|'markup'|'usage'|'prompt'|'partsLicense'>;
     if (!/^[a-z][a-z0-9-]*$/.test(meta.id) || seen.has(meta.id)) throw new Error(`Invalid/duplicate part ID: ${meta.id}`);
@@ -80,7 +82,8 @@ export function buildCatalog(root = ROOT, onlyIds?: readonly string[]): CatalogB
       'styles.css': read('scripts/templates/demo.css') + (meta.category === 'scrollbars' ? read('src/app/scroll-samples.css') : '') + bundledCSS(`${base}/styles.css`),
       'app.js': bundleDemo(root, `${base}/demo/main.ts`, read('scripts/templates/demo-entry.ts.txt'))
     };
-    return {...meta, partsLicense: intern(read('PARTS-LICENSE').replaceAll('\r\n','\n')), markup, usage: read(`${base}/usage.md`), prompt: read(`${base}/prompt.md`), files, portableFiles, preview};
+    const appearance=options.appearance?appearanceProfile(meta,bundledCSS(`${base}/styles.css`),read(`${base}/styles.css`),allIds):undefined;
+    return {...meta, appearance, partsLicense: intern(read('PARTS-LICENSE').replaceAll('\r\n','\n')), markup, usage: read(`${base}/usage.md`), prompt: read(`${base}/prompt.md`), files, portableFiles, preview};
   }).sort((a, b) => a.order - b.order);
   for (const part of parts) for (const id of part.related) if (!onlyIds && !seen.has(id)) throw new Error(`Unknown related part: ${id}`);
   const styleSeen = new Set<string>();

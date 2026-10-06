@@ -7,14 +7,14 @@ import {getDelivery,buildPrompt,buildManifest} from '../src/catalog/delivery.ts'
 import {sourceReferences,isLocalReference,resolveLocal} from '../scripts/source-tools.ts';
 const {parts:allParts}=buildCatalog(),parts=allParts.filter(p=>!p.tags.includes('GLASS LAB')),buttons=parts.filter(p=>p.category==='buttons'),links=parts.filter(p=>p.category==='links');
 const read=(p:string)=>fs.readFileSync(path.join(ROOT,p),'utf8');
-test('24 buttons + 16 navigation links retain the 144 previous parts',()=>{
- assert.equal(buttons.length,24);assert.equal(links.length,16);assert.equal(parts.filter(p=>!p.tags.includes('KINETIC')&&['toggles','blocks','scrollbars','dropdowns','accordions','textboxes','buttons','links'].includes(p.category)).length,184);
- for(const c of ['toggles','blocks','scrollbars','dropdowns','accordions','textboxes'])assert.equal(parts.filter(p=>p.category===c&&!p.tags.includes('KINETIC')).length,24);
+test('curated buttons and links retain both intentions and the preceding collections',()=>{
+ assert.equal(buttons.length,22);assert.equal(links.length,15);assert.equal(parts.filter(p=>!p.tags.includes('KINETIC')&&['toggles','blocks','scrollbars','dropdowns','accordions','textboxes','buttons','links'].includes(p.category)).length,173);
+ for(const c of ['toggles','blocks','scrollbars','dropdowns','accordions','textboxes'])assert.equal(parts.filter(p=>p.category===c&&!p.tags.includes('KINETIC')).length,({toggles:24,blocks:22,scrollbars:21,dropdowns:21,accordions:24,textboxes:24} as Record<string,number>)[c]);
  assert.equal(buttons.filter(p=>p.designType==='A').length,16);assert.equal(links.filter(p=>p.designType==='A').length,10);
  for(const key of ['name','id','order'] as const)assert.equal(new Set(parts.map(p=>p[key])).size,parts.length);
 });
 test('different authored skins, with native semantics instead of clickable divs',()=>{
- const styles=[...buttons,...links].map(p=>read(`src/parts/${p.category}/${p.id}/styles.css`));assert.equal(new Set(styles).size,40);
+ const styles=[...buttons,...links].map(p=>read(`src/parts/${p.category}/${p.id}/styles.css`));assert.equal(new Set(styles).size,37);
  for(const p of buttons){assert.match(p.markup,/^<button type="button"/);assert.match(p.markup,/sop-action-label/);assert.doesNotMatch(p.markup,/role="switch"|href=/);}
  for(const p of links){assert.match(p.markup,/^<a class=/);assert.match(p.markup,/href="#destination"/);assert.doesNotMatch(p.markup,/role="button"|onclick=/);assert.match(p.preview['index.html'],/id="destination"/);}
 });

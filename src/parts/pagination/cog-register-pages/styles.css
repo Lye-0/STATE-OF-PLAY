@@ -1,0 +1,12 @@
+@import "../../../shared/foundation/base.css";
+/* Cog Register Pages — 歯のような上辺を持つ番号列が、現在頁で深くかみ合う。 */
+.sop-foundation.sop-cog-register-pages{--ff-accent:#d3c0a0;--ff-panel:#504435;--ff-base:#343028;--ff-line:#a18e70}.sop-foundation.sop-cog-register-pages .ff-pages{background:#332f26;border:2px solid #9d8a69;border-radius:1px;padding:8px 4px;gap:5px;flex-wrap:wrap}.sop-foundation.sop-cog-register-pages .ff-pages button,.sop-foundation.sop-cog-register-pages .ff-pages a{background:linear-gradient(#998262 0 7px,#5d4f3c 7px);border:1px solid #baa684;border-radius:0;min-height:46px;padding:15px 7px 7px}.sop-foundation.sop-cog-register-pages .ff-pages [aria-current]{background:linear-gradient(#ded0ad 0 7px,#a8926e 7px);color:#302d23;transform:translateY(3px)}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-cog-register-pages,.sop-foundation.sop-cog-register-pages *,.sop-foundation.sop-cog-register-pages::before,.sop-foundation.sop-cog-register-pages::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-cog-register-pages{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-cog-register-pages :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-cog-register-pages:focus-visible,.sop-foundation.sop-cog-register-pages :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-cog-register-pages[data-sop-paused] *,.sop-foundation.sop-cog-register-pages[data-paused=true] *,.sop-foundation.sop-cog-register-pages[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+
+/* Visual review: composition and state separation. */
+.sop-foundation.sop-cog-register-pages .ff-pages{border:0;background:transparent;border-top:6px double var(--ff-line);border-bottom:6px double var(--ff-line);padding-block:11px;gap:0}.sop-foundation.sop-cog-register-pages .ff-pages a,.sop-foundation.sop-cog-register-pages .ff-pages button{border-right:5px solid var(--ff-base);border-left:1px solid var(--ff-line);border-top:0;border-bottom:0;border-radius:0;min-height:51px;box-shadow:inset 0 9px #ae986c,inset 0 12px #332b21;background:#51482e;font:13px Consolas}.sop-foundation.sop-cog-register-pages .ff-pages [aria-current]{box-shadow:inset 0 9px #e3cca0,inset 0 12px #332b21;background:#a99167;color:#222819}.sop-foundation.sop-cog-register-pages .ff-page-info{font-family:Consolas}

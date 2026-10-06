@@ -1,0 +1,9 @@
+@import "../../../shared/popup-base.css";
+@import "../../../shared/popup-content.css";
+/* Summary Confirm Dialog — 要約を左の縦線でまとめ、確認とキャンセルを明快に分ける。 */
+.sop-popup.sop-summary-confirm-dialog{--pp-bg:#f0f3ee;--pp-ink:#2d3e35;--pp-muted:#64766a;--pp-accent:#526f5a;--pp-line:#bdcbbb;--pp-radius:9px;color-scheme:light}.sop-popup.sop-summary-confirm-dialog .sop-popup-window{border:1px solid #a1b49f;border-radius:9px;box-shadow:0 18px 60px #0005}.sop-popup.sop-summary-confirm-dialog .sop-popup-intro{border-left:4px solid #77997b;padding-left:19px}.sop-popup.sop-summary-confirm-dialog .sop-popup-body{background:#e2ebdc;border-radius:6px;padding:18px}.sop-popup.sop-summary-confirm-dialog .sop-popup-footer{border-top:1px solid #b9ccb9}.sop-popup.sop-summary-confirm-dialog .sop-popup-trigger{background:#e9f0e4;color:#324c38;border-radius:6px}
+@media(prefers-reduced-motion:reduce){.sop-popup.sop-summary-confirm-dialog,.sop-popup.sop-summary-confirm-dialog *,.sop-popup.sop-summary-confirm-dialog::before,.sop-popup.sop-summary-confirm-dialog::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-popup.sop-summary-confirm-dialog{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-popup.sop-summary-confirm-dialog :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-popup.sop-summary-confirm-dialog:focus-visible,.sop-popup.sop-summary-confirm-dialog :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-popup.sop-summary-confirm-dialog[data-sop-paused] *,.sop-popup.sop-summary-confirm-dialog[data-paused=true] *,.sop-popup.sop-summary-confirm-dialog[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

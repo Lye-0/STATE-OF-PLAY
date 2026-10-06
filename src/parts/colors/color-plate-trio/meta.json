@@ -1,0 +1,52 @@
+{
+  "id": "color-plate-trio",
+  "name": "Color Plate Trio",
+  "category": "colors",
+  "tagline": "色面・スライダー・見本の三つの区画を、低い縁で仕切る。",
+  "description": "色面・スライダー・見本の三つの区画を、低い縁で仕切る。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3224,
+  "version": "1.0.0",
+  "material": "COLOR PLATE TRIO",
+  "accent": "185,205,194",
+  "componentName": "ColorPlateTrio",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "colors"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Color Plate Trio",
+    "色面・スライダー・見本の三つの区画を、低い縁で仕切る。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "string",
+      "#RGBまたは#RRGGBB。外部へは#RRGGBBの大文字。"
+    ],
+    [
+      "palette",
+      "string[]",
+      "色見本。"
+    ],
+    [
+      "name",
+      "string",
+      "フォームで送信する値の名前。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "入力操作を停止。"
+    ],
+    [
+      "onValueChange",
+      "(hex: string) => void",
+      "有効な色のみ通知。透明度はこの版では扱わない。"
+    ]
+  ]
+}

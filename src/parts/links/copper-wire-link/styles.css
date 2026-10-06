@@ -1,0 +1,8 @@
+@import "../../../shared/navigation-link-base.css";
+/* Copper Wire Link — 一本の曲がった線が文字の左から先端を支え、移動方向で伸びる。 */
+.sop-link.sop-copper-wire-link{--sop-link-ink:#e1bfa0;border-bottom:1px solid #b2886866;padding-left:20px;gap:22px}.sop-link.sop-copper-wire-link:before{content:"";position:absolute;left:0;top:12px;bottom:12px;width:8px;border:1px solid #bd926c;border-right:0;border-radius:20px 0 0 20px}.sop-link.sop-copper-wire-link .sop-link-icon{color:#d09d75;transform:rotate(45deg);transition:transform .7s}.sop-link.sop-copper-wire-link:hover .sop-link-icon{transform:rotate(45deg) translate(5px,-5px)}
+@media(prefers-reduced-motion:reduce){.sop-link.sop-copper-wire-link,.sop-link.sop-copper-wire-link *,.sop-link.sop-copper-wire-link::before,.sop-link.sop-copper-wire-link::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-link.sop-copper-wire-link{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-link.sop-copper-wire-link :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-link.sop-copper-wire-link:focus-visible,.sop-link.sop-copper-wire-link :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-link.sop-copper-wire-link[data-sop-paused] *,.sop-link.sop-copper-wire-link[data-paused=true] *,.sop-link.sop-copper-wire-link[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

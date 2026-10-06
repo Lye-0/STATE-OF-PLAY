@@ -1,0 +1,13 @@
+@import "../../../shared/workbench/base.css";
+/* Groove Action Context — 深い溝のある対象面から、細い罫線で整理した操作を取り出す。 */
+.sop-wb.sop-groove-action-context{--wb-bg:#233b4d;--wb-accent:#adcbd7;--wb-line:#7a9ead;--wb-muted:#a3bdcc}.sop-wb.sop-groove-action-context .wb-context-target{background:#294758;border:3px solid #7d9fae;border-radius:3px;box-shadow:inset 0 4px #14344388;padding:23px}.sop-wb.sop-groove-action-context .wb-context-object{border:1px solid #a3c0c4;border-radius:1px;background:#476f7a;box-shadow:3px 3px #102b3e77}.sop-wb.sop-groove-action-context .wb-context-panel{border:2px solid #8aafbc;border-radius:2px;background:#254857;padding:8px}.sop-wb.sop-groove-action-context .wb-context-items button{border-radius:0;border-bottom:1px solid #709ba644;padding:12px;min-height:45px}.sop-wb.sop-groove-action-context .wb-menu-glyph{border-right:1px solid #93b4bc;padding-right:10px;width:27px}.sop-wb.sop-groove-action-context .wb-context-heading{border-bottom:3px double #85abb3}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-groove-action-context,.sop-wb.sop-groove-action-context *,.sop-wb.sop-groove-action-context::before,.sop-wb.sop-groove-action-context::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-wb.sop-groove-action-context{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-groove-action-context :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-wb.sop-groove-action-context:focus-visible,.sop-wb.sop-groove-action-context :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-wb.sop-groove-action-context[data-sop-paused] *,.sop-wb.sop-groove-action-context[data-paused=true] *,.sop-wb.sop-groove-action-context[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+
+
+/* Visual review: composition and state separation. */
+.sop-wb.sop-groove-action-context .wb-context-target{background:transparent;border:0;border-bottom:4px solid var(--wb-line);min-height:100px}.sop-wb.sop-groove-action-context .wb-context-panel{padding:6px 6px 6px 40px;background:linear-gradient(90deg,#152e3b 0 33px,#305564 33px);border-left:3px solid var(--wb-line)}.sop-wb.sop-groove-action-context .wb-menu-glyph{margin-left:-33px;color:var(--wb-accent)}.sop-wb.sop-groove-action-context .wb-context-items button{border-radius:0;padding:12px 8px;min-height:47px}.sop-wb.sop-groove-action-context .wb-menu-glyph:after{display:none}

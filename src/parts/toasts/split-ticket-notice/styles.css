@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Split Ticket Notice — アイコンの半券と説明の本体を縦の切取り線で分ける。 */
+.sop-foundation.sop-split-ticket-notice{--ff-accent:#a8c8c9;--ff-panel:#2a4751;--ff-base:#1b333f;--ff-line:#709baa}.sop-foundation.sop-split-ticket-notice .ff-notice{border:1px solid #7da8ad;border-radius:0;background:#24444e;padding:18px 15px;gap:18px}.sop-foundation.sop-split-ticket-notice .ff-notice-icon{border:0;border-right:1px dashed #a0bec1;border-radius:0;width:34px;padding:4px 12px 4px 0;align-self:stretch;display:grid;place-items:center}.sop-foundation.sop-split-ticket-notice .ff-notice-meter{height:2px;left:49px;bottom:5px;background:#a9cdca}.sop-foundation.sop-split-ticket-notice .ff-notice strong{font-size:13px;letter-spacing:.5px}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-split-ticket-notice,.sop-foundation.sop-split-ticket-notice *,.sop-foundation.sop-split-ticket-notice::before,.sop-foundation.sop-split-ticket-notice::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-split-ticket-notice{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-split-ticket-notice :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-split-ticket-notice:focus-visible,.sop-foundation.sop-split-ticket-notice :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-split-ticket-notice[data-sop-paused] *,.sop-foundation.sop-split-ticket-notice[data-paused=true] *,.sop-foundation.sop-split-ticket-notice[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

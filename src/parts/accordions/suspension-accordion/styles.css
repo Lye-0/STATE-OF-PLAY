@@ -1,0 +1,9 @@
+@import "../../../shared/accordion-base.css";
+@import "../../../shared/panel-content.css";
+/* Suspension Accordion — 細い吊り線で支えた見出しが、開いた本文と静かに離れる。 */
+.sop-accordion.sop-suspension-accordion{--acc-bg:#202a34;--acc-accent:#a8c5d6;--acc-radius:4px;padding-left:17px;border-left:1px solid #768da366}.sop-accordion.sop-suspension-accordion .sop-accordion-item{overflow:visible;border:0;margin-bottom:18px;box-shadow:0 7px 15px #0003}.sop-accordion.sop-suspension-accordion .sop-accordion-item:before{content:"";position:absolute;width:18px;height:1px;background:#889eae;left:-18px;top:32px}.sop-accordion.sop-suspension-accordion .sop-accordion-index{font-size:18px;font-weight:200}.sop-accordion.sop-suspension-accordion .sop-accordion-badge{display:none}.sop-accordion.sop-suspension-accordion .sop-accordion-item[data-open=true]{border-bottom:2px solid #9fc0d2}
+@media(prefers-reduced-motion:reduce){.sop-accordion.sop-suspension-accordion,.sop-accordion.sop-suspension-accordion *,.sop-accordion.sop-suspension-accordion::before,.sop-accordion.sop-suspension-accordion::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-accordion.sop-suspension-accordion{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-accordion.sop-suspension-accordion :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-accordion.sop-suspension-accordion:focus-visible,.sop-accordion.sop-suspension-accordion :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-accordion.sop-suspension-accordion[data-sop-paused] *,.sop-accordion.sop-suspension-accordion[data-paused=true] *,.sop-accordion.sop-suspension-accordion[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

@@ -1,0 +1,48 @@
+{
+  "id": "swing-tag-link",
+  "name": "Swing Tag Link",
+  "category": "links",
+  "order": 3054,
+  "version": "1.0.0",
+  "tagline": "紐でつないだ小さな先端タグが、触れると外向きに揺れる。",
+  "description": "紐でつないだ小さな先端タグが、触れると外向きに揺れる。",
+  "material": "SWING TAG LINK",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "179,205,226",
+  "designType": "A",
+  "runtime": "Native anchor + CSS only",
+  "componentName": "SwingTagLink",
+  "tags": [
+    "EXPANSION-30",
+    "Swing Tag Link",
+    "紐でつないだ小さな先端タグが、触れると外向きに揺れる。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "children / eyebrow / icon",
+      "ReactNode",
+      "表示テキスト・補助見出し・装飾アイコン。"
+    ],
+    [
+      "href",
+      "string (required)",
+      "ページ、ページ内アンカー、mailto等の移動先。"
+    ],
+    [
+      "target / rel / download",
+      "native anchor attributes",
+      "新規タブ、関係性、同一オリジン等のダウンロード指定。"
+    ],
+    [
+      "onClick / ref / aria-current",
+      "native attributes",
+      "標準イベント・ref・現在位置。ネイティブ移動を維持。"
+    ],
+    [
+      "className / style",
+      "native attributes",
+      "利用先での配置。コンポーネントはルーター依存を持ちません。"
+    ]
+  ]
+}

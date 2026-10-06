@@ -1,0 +1,13 @@
+@import "../../../shared/workbench/base.css";
+/* Thin Step Context — 対象の端に小さな段を作り、操作の行ごとに浅い縁を置く。 */
+.sop-wb.sop-thin-step-context{--wb-bg:#294530;--wb-accent:#c1d6b7;--wb-line:#88a87b;--wb-muted:#b0c69f}.sop-wb.sop-thin-step-context .wb-context-target{background:#304e31;border:1px solid #93b07d;border-right:9px solid #6e8e5b;border-radius:2px;padding:24px}.sop-wb.sop-thin-step-context .wb-context-object{background:#608446;border:1px solid #b5cb92;border-radius:2px;box-shadow:4px 4px #17392277}.sop-wb.sop-thin-step-context .wb-context-panel{background:#2b4427;border:1px solid #93af78;border-right:7px solid #739457;border-radius:1px;padding:10px}.sop-wb.sop-thin-step-context .wb-context-items button{background:#3e5f2d;border:1px solid #89a668;border-right:3px solid #a2bb7b;border-radius:0;margin-bottom:6px;padding:12px}.sop-wb.sop-thin-step-context .wb-context-heading{border-bottom:1px solid #a2be7e}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-thin-step-context,.sop-wb.sop-thin-step-context *,.sop-wb.sop-thin-step-context::before,.sop-wb.sop-thin-step-context::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-wb.sop-thin-step-context{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-thin-step-context :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-wb.sop-thin-step-context:focus-visible,.sop-wb.sop-thin-step-context :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-wb.sop-thin-step-context[data-sop-paused] *,.sop-wb.sop-thin-step-context[data-paused=true] *,.sop-wb.sop-thin-step-context[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+
+
+/* Visual review: composition and state separation. */
+.sop-wb.sop-thin-step-context .wb-context-target{min-height:95px;background:transparent;border:0;border-left:5px solid var(--wb-line);padding:13px 17px}.sop-wb.sop-thin-step-context .wb-context-panel{padding:13px;border:0;border-right:8px solid var(--wb-line)}.sop-wb.sop-thin-step-context .wb-context-items button{margin:8px 0;border:0;border-bottom:2px solid var(--wb-line);border-radius:0;padding:13px 7px;background:transparent}.sop-wb.sop-thin-step-context .wb-context-items button:nth-child(2){margin-left:7px;width:calc(100% - 7px)}.sop-wb.sop-thin-step-context .wb-context-items button:nth-child(3){margin-left:14px;width:calc(100% - 14px)}.sop-wb.sop-thin-step-context .wb-menu-glyph{border:0;border-bottom:2px solid var(--wb-line);width:24px;height:25px}

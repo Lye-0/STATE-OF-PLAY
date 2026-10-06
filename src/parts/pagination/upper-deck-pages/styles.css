@@ -1,0 +1,12 @@
+@import "../../../shared/foundation/base.css";
+/* Upper Deck Pages — 上の小さなデッキに番号を並べ、現在値の札を下へ接続する。 */
+.sop-foundation.sop-upper-deck-pages{--ff-accent:#c7b3d8;--ff-panel:#443155;--ff-base:#2c213c;--ff-line:#9275aa}.sop-foundation.sop-upper-deck-pages .ff-pages{background:#372646;border:1px solid #8f74a1;border-bottom:6px solid #705680;border-radius:2px;padding:6px;gap:4px;flex-wrap:wrap}.sop-foundation.sop-upper-deck-pages .ff-pages button,.sop-foundation.sop-upper-deck-pages .ff-pages a{background:#644871;border:0;border-radius:1px;min-height:34px;padding:8px}.sop-foundation.sop-upper-deck-pages .ff-pages [aria-current]{background:#ae91be;color:#282036;transform:translateY(7px);box-shadow:0 5px 0 #26162f77}.sop-foundation.sop-upper-deck-pages .ff-page-info{border-left:3px solid #9473a5;padding-left:11px}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-upper-deck-pages,.sop-foundation.sop-upper-deck-pages *,.sop-foundation.sop-upper-deck-pages::before,.sop-foundation.sop-upper-deck-pages::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-upper-deck-pages{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-upper-deck-pages :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-upper-deck-pages:focus-visible,.sop-foundation.sop-upper-deck-pages :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-upper-deck-pages[data-sop-paused] *,.sop-foundation.sop-upper-deck-pages[data-paused=true] *,.sop-foundation.sop-upper-deck-pages[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+
+/* Visual review: composition and state separation. */
+.sop-foundation.sop-upper-deck-pages .ff-pages{padding:0;background:transparent;border:0;border-top:1px solid var(--ff-line);border-bottom:5px double var(--ff-line);gap:6px;padding-block:15px 20px}.sop-foundation.sop-upper-deck-pages .ff-pages a,.sop-foundation.sop-upper-deck-pages .ff-pages button{border-radius:0 0 10px 10px;min-height:44px;border:1px solid var(--ff-line);background:transparent}.sop-foundation.sop-upper-deck-pages .ff-pages [aria-current]{transform:translateY(15px);min-height:52px;border-radius:0;background:#b79acd}.sop-foundation.sop-upper-deck-pages .ff-page-info{border:0;padding-top:25px;font-size:13px}

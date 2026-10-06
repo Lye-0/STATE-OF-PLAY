@@ -1,0 +1,56 @@
+{
+  "id": "split-ticket-notice",
+  "name": "Split Ticket Notice",
+  "category": "toasts",
+  "order": 3119,
+  "version": "1.0.0",
+  "tagline": "アイコンの半券と説明の本体を縦の切取り線で分ける。",
+  "description": "アイコンの半券と説明の本体を縦の切取り線で分ける。",
+  "material": "SPLIT TICKET NOTICE",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "SplitTicketNotice",
+  "tags": [
+    "EXPANSION-30",
+    "Split Ticket Notice",
+    "アイコンの半券と説明の本体を縦の切取り線で分ける。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "split-ticket-notice",
+    "kind": "toasts",
+    "variant": "essential",
+    "label": "知らせも、心地よく。",
+    "description": "",
+    "defaultValue": null
+  }
+}

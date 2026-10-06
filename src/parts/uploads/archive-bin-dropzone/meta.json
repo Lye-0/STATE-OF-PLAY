@@ -1,0 +1,60 @@
+{
+  "id": "archive-bin-dropzone",
+  "name": "Archive Bin Dropzone",
+  "category": "uploads",
+  "order": 3162,
+  "version": "1.0.0",
+  "tagline": "深い箱の口縁と、取り出せるファイル札を組み合わせる。",
+  "description": "深い箱の口縁と、取り出せるファイル札を組み合わせる。",
+  "material": "ARCHIVE BIN DROPZONE",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "ArchiveBinDropzone",
+  "tags": [
+    "EXPANSION-30",
+    "Archive Bin Dropzone",
+    "深い箱の口縁と、取り出せるファイル札を組み合わせる。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "archive-bin-dropzone",
+    "kind": "uploads",
+    "variant": "essential",
+    "label": "アイデアの素材を、ここに。",
+    "description": "",
+    "defaultValue": [],
+    "multiple": true,
+    "maxFiles": 4,
+    "maxBytes": 10485760,
+    "accept": ".png,.jpg,.webp,.txt,.pdf"
+  }
+}

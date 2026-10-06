@@ -7,9 +7,9 @@ import {buildCatalog,ROOT,FORMATS} from './historical-catalog.ts';
 import {selectionValue,nextSelection,validateSelectionItems} from '../src/shared/selection-model.ts';
 import {getDelivery,buildPrompt} from '../src/catalog/delivery.ts';
 const catalog=buildCatalog(),parts=catalog.parts.filter(p=>(p.category==='tabs'||p.category==='segments')&&!p.tags.includes('GLASS LAB'));
-test('48 new choice components, 24 each, with expressive and essential designs',()=>{
- assert.equal(parts.length,48);
- for(const c of ['tabs','segments']){const group=parts.filter(p=>p.category===c);assert.equal(group.length,24);assert.equal(group.filter(p=>p.designType==='A').length,16);assert.equal(group.filter(p=>p.designType==='B').length,8);}
+test('40 curated choice components retain expressive and essential designs',()=>{
+ assert.equal(parts.length,40);
+ for(const c of ['tabs','segments']){const group=parts.filter(p=>p.category===c);assert.equal(group.length,c==='tabs'?22:18);assert.equal(group.filter(p=>p.designType==='A').length,c==='tabs'?15:14);assert.equal(group.filter(p=>p.designType==='B').length,c==='tabs'?7:4);}
 });
 test('all demonstrations have exactly three choices but authored engines have no fixed thirds',()=>{
  for(const p of parts){assert.equal([...p.markup.matchAll(/class="sop-choice-item"/g)].length,3);assert.match(p.markup,p.category==='tabs'?/role="tablist"/:/role="radiogroup"/);assert.doesNotMatch(p.markup,/role="switch"/);}

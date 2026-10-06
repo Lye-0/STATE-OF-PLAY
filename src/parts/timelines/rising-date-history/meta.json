@@ -1,0 +1,52 @@
+{
+  "id": "rising-date-history",
+  "name": "Rising Date History",
+  "category": "timelines",
+  "tagline": "現在の出来事の番号面が一段上がり、時刻と説明の読み順を保つ。",
+  "description": "現在の出来事の番号面が一段上がり、時刻と説明の読み順を保つ。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3246,
+  "version": "1.0.0",
+  "material": "RISING DATE HISTORY",
+  "accent": "185,205,194",
+  "componentName": "RisingDateHistory",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "timelines"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Rising Date History",
+    "現在の出来事の番号面が一段上がり、時刻と説明の読み順を保つ。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "TimelineItem[]",
+      "id・title・description・date・dateTime・status・hrefなど。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "詳細を開くID。expandedで外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(ids: string[]) => void",
+      "開閉したIDを通知。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "詳細の開閉を無効にする。"
+    ],
+    [
+      "label",
+      "string",
+      "履歴全体の名前。"
+    ]
+  ]
+}

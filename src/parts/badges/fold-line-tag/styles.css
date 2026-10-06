@@ -1,0 +1,12 @@
+@import "../../../shared/foundation/base.css";
+/* Fold Line Tag — 一方の角を折り、削除操作とラベル本文の境界を示す。 */
+.sop-foundation.sop-fold-line-tag{--ff-accent:#e0bcc4;--ff-panel:#543849;--ff-base:#322535;--ff-line:#a27b99}.sop-foundation.sop-fold-line-tag .ff-tag{border:0;border-radius:0;background:#6c475b;padding:12px 17px 12px 11px;clip-path:polygon(0 0,calc(100% - 9px) 0,100% 9px,100% 100%,0 100%)}.sop-foundation.sop-fold-line-tag .ff-tag[data-selected=true]{background:#9e7087;box-shadow:inset 3px 0 #d5a9ba}.sop-foundation.sop-fold-line-tag .ff-tag button{border-left:1px dotted #cda2b666;border-radius:0;padding-left:7px}.sop-foundation.sop-fold-line-tag .ff-tag svg{width:12px;height:12px}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-fold-line-tag,.sop-foundation.sop-fold-line-tag *,.sop-foundation.sop-fold-line-tag::before,.sop-foundation.sop-fold-line-tag::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-fold-line-tag{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-fold-line-tag :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-fold-line-tag:focus-visible,.sop-foundation.sop-fold-line-tag :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-fold-line-tag[data-sop-paused] *,.sop-foundation.sop-fold-line-tag[data-paused=true] *,.sop-foundation.sop-fold-line-tag[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+
+/* Visual review: composition and state separation. */
+.sop-foundation.sop-fold-line-tag .ff-tag{border:0;border-bottom:5px solid #985a77;border-radius:0;padding:10px 12px 14px;transform:skewY(-4deg);background:linear-gradient(transparent 65%,#9f658555 65%),#5d3c52}.sop-foundation.sop-fold-line-tag .ff-tag:nth-child(2){transform:skewY(4deg)}.sop-foundation.sop-fold-line-tag .ff-tag>*{transform:skewY(4deg)}.sop-foundation.sop-fold-line-tag .ff-tag svg{display:none}.sop-foundation.sop-fold-line-tag .ff-tag[data-selected=true]{border-bottom-color:var(--ff-accent)}

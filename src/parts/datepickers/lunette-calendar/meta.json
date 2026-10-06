@@ -1,0 +1,57 @@
+{
+  "id": "lunette-calendar",
+  "name": "Lunette Calendar",
+  "category": "datepickers",
+  "order": 3175,
+  "version": "1.0.0",
+  "tagline": "上端を丸く開いた窓で、日付と月のまとまりを見せる。",
+  "description": "上端を丸く開いた窓で、日付と月のまとまりを見せる。",
+  "material": "LUNETTE CALENDAR",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "LunetteCalendar",
+  "tags": [
+    "EXPANSION-30",
+    "Lunette Calendar",
+    "上端を丸く開いた窓で、日付と月のまとまりを見せる。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "lunette-calendar",
+    "kind": "datepickers",
+    "variant": "essential",
+    "label": "次の時間を、予約する。",
+    "description": "",
+    "defaultValue": "2026-09-23",
+    "mode": "date"
+  }
+}

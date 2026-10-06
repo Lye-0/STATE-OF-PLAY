@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Slope Trail — 道の深さを段差で示し、階層をひとつずつ下へ辿る。 */
+.sop-foundation.sop-slope-trail{--ff-accent:#cbbddc;--ff-panel:#4a385a;--ff-base:#2c203f;--ff-line:#967bab}.sop-foundation.sop-slope-trail .ff-breadcrumb ol{display:block;counter-reset:depth}.sop-foundation.sop-slope-trail .ff-breadcrumb li{counter-increment:depth;border-left:2px solid #8a6ba0;border-bottom:1px solid #85679a;background:#372347;padding:9px 13px;gap:9px}.sop-foundation.sop-slope-trail .ff-breadcrumb li:nth-child(2){margin-left:15px}.sop-foundation.sop-slope-trail .ff-breadcrumb li:nth-child(3){margin-left:30px}.sop-foundation.sop-slope-trail .ff-breadcrumb li:nth-child(n+4){margin-left:45px}.sop-foundation.sop-slope-trail .ff-breadcrumb li+li:before{content:none}.sop-foundation.sop-slope-trail .ff-breadcrumb li:last-child{border-left-color:#d1b6e1;background:#705080}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-slope-trail,.sop-foundation.sop-slope-trail *,.sop-foundation.sop-slope-trail::before,.sop-foundation.sop-slope-trail::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-slope-trail{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-slope-trail :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-slope-trail:focus-visible,.sop-foundation.sop-slope-trail :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-slope-trail[data-sop-paused] *,.sop-foundation.sop-slope-trail[data-paused=true] *,.sop-foundation.sop-slope-trail[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

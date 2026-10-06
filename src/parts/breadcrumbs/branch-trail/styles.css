@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Branch Trail — 階層を左の幹と横枝で示し、現在地を末端の明るい札にする。 */
+.sop-foundation.sop-branch-trail{--ff-accent:#b9c8a7;--ff-panel:#344b35;--ff-base:#233826;--ff-line:#829d71}.sop-foundation.sop-branch-trail .ff-breadcrumb ol{display:block;border-left:2px solid #719764;padding:0 0 0 18px;margin-left:8px}.sop-foundation.sop-branch-trail .ff-breadcrumb li{display:flex;position:relative;padding:9px 0;gap:9px}.sop-foundation.sop-branch-trail .ff-breadcrumb li:before{content:"";position:absolute;left:-20px;top:50%;width:14px;border-top:1px solid #97b07b}.sop-foundation.sop-branch-trail .ff-breadcrumb li+li:before{content:""}.sop-foundation.sop-branch-trail .ff-breadcrumb li:last-child{background:#466441;padding-left:11px;border-right:3px solid #bdd39e}.sop-foundation.sop-branch-trail .ff-breadcrumb svg{width:12px;height:12px}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-branch-trail,.sop-foundation.sop-branch-trail *,.sop-foundation.sop-branch-trail::before,.sop-foundation.sop-branch-trail::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-branch-trail{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-branch-trail :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-branch-trail:focus-visible,.sop-foundation.sop-branch-trail :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-branch-trail[data-sop-paused] *,.sop-foundation.sop-branch-trail[data-paused=true] *,.sop-foundation.sop-branch-trail[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

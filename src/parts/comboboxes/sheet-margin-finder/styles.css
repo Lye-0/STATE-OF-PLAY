@@ -1,0 +1,12 @@
+@import "../../../shared/foundation/base.css";
+/* Sheet Margin Finder — 検索語を紙の余白へ記し、候補を罫線付きの本文列に並べる。 */
+.sop-foundation.sop-sheet-margin-finder{--ff-accent:#4f705e;--ff-ink:#3c4e41;--ff-muted:#566254;--ff-panel:#e2e7d5;--ff-base:#d2dcc7;--ff-line:#91a78a;color-scheme:light}.sop-foundation.sop-sheet-margin-finder .ff-combo-shell{border:0;border-bottom:2px solid #6f8c6d;border-left:12px solid #9cac86;border-radius:0;background:#e2e7d5;padding-left:11px}.sop-foundation.sop-sheet-margin-finder .ff-combo-list{background:#edf0df;border:1px solid #96ae8e;border-left:12px solid #adbb99;border-radius:0;padding:7px}.sop-foundation.sop-sheet-margin-finder .ff-option{border-radius:0;border-bottom:1px solid #8caa8055;padding:15px 8px;background:none}.sop-foundation.sop-sheet-margin-finder .ff-option[data-active=true]{background:#c7d6b7;border-left:3px solid #5f7d57}.sop-foundation.sop-sheet-margin-finder .ff-menu-foot{font:9px Consolas;letter-spacing:1px}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-sheet-margin-finder,.sop-foundation.sop-sheet-margin-finder *,.sop-foundation.sop-sheet-margin-finder::before,.sop-foundation.sop-sheet-margin-finder::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-sheet-margin-finder{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-sheet-margin-finder :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-sheet-margin-finder:focus-visible,.sop-foundation.sop-sheet-margin-finder :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-sheet-margin-finder{background:var(--ff-panel);padding:15px;border-radius:4px}
+
+.sop-foundation.sop-sheet-margin-finder :is([data-sg-error],[data-upload-error],.sg-wizard-error,[data-danger=true]){color:#8a3f46}
+
+.sop-foundation.sop-sheet-margin-finder[data-sop-paused] *,.sop-foundation.sop-sheet-margin-finder[data-paused=true] *,.sop-foundation.sop-sheet-margin-finder[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

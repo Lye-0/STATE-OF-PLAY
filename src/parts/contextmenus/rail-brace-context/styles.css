@@ -1,0 +1,13 @@
+@import "../../../shared/workbench/base.css";
+/* Rail Brace Context — 細い左の支持線から対象と操作を結び、選ぶ行を広く示す。 */
+.sop-wb.sop-rail-brace-context{--wb-bg:#3a2c43;--wb-accent:#d3b8da;--wb-line:#a381ae;--wb-muted:#bfa8cd}.sop-wb.sop-rail-brace-context .wb-context-target{background:#422e4e;border:0;border-left:3px solid #b093bb;border-radius:0;padding:25px;box-shadow:inset 0 -1px #a588b0}.sop-wb.sop-rail-brace-context .wb-context-object{background:#74517c;border:1px solid #c6a6c9;border-radius:2px;box-shadow:5px 0 #271a3566,6px 0 #9f7fae}.sop-wb.sop-rail-brace-context .wb-context-panel{background:#3b244a;border:0;border-left:5px solid #aa89b7;border-right:1px solid #a589b2;border-radius:0;padding:10px}.sop-wb.sop-rail-brace-context .wb-context-items button{border:0;border-bottom:1px solid #9977a7;border-radius:0;padding:13px 10px;gap:15px}.sop-wb.sop-rail-brace-context .wb-context-heading{border-bottom:3px double #ac8bb8}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-rail-brace-context,.sop-wb.sop-rail-brace-context *,.sop-wb.sop-rail-brace-context::before,.sop-wb.sop-rail-brace-context::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-wb.sop-rail-brace-context{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-rail-brace-context :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-wb.sop-rail-brace-context:focus-visible,.sop-wb.sop-rail-brace-context :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-wb.sop-rail-brace-context[data-sop-paused] *,.sop-wb.sop-rail-brace-context[data-paused=true] *,.sop-wb.sop-rail-brace-context[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+
+
+/* Visual review: composition and state separation. */
+.sop-wb.sop-rail-brace-context .wb-context-target{min-height:100px;border:0;border-left:2px solid var(--wb-line);padding-left:30px;background:transparent}.sop-wb.sop-rail-brace-context .wb-context-panel{border:0;border-left:3px solid var(--wb-line);border-right:3px solid var(--wb-line);padding:6px 15px;border-radius:0}.sop-wb.sop-rail-brace-context .wb-context-items button{border:0;border-top:1px solid var(--wb-line);border-bottom:1px solid var(--wb-line);margin:8px 0;border-radius:0;padding:13px 8px}.sop-wb.sop-rail-brace-context .wb-menu-glyph{border:0;border-right:1px solid var(--wb-line);padding-right:7px;width:26px}

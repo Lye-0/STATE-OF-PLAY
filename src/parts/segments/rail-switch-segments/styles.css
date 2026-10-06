@@ -1,0 +1,8 @@
+@import '../../../shared/selection-base.css';
+/* Rail Switch Segments — 選択肢の番号を上端に並べ、下の案内線が現在の位置で折れる。 */
+.sop-choice.sop-rail-switch-segments{--choice-base:#25323c;--choice-accent:#b5cde0;--choice-radius:0}.sop-choice.sop-rail-switch-segments>.sop-choice-list{background:none;border:0;border-bottom:2px solid #6c899e;padding:0 0 6px;gap:6px}.sop-choice.sop-rail-switch-segments .sop-choice-marker{display:none}.sop-choice.sop-rail-switch-segments .sop-choice-item{flex-direction:column;min-height:64px;border-radius:0;background:#2b4051;border-left:1px solid #8096a555}.sop-choice.sop-rail-switch-segments .sop-choice-index{display:block;font:16px Georgia}.sop-choice.sop-rail-switch-segments .sop-choice-item[data-selected=true]{background:#4c687d;box-shadow:0 7px 0 #b5cde0}
+@media(prefers-reduced-motion:reduce){.sop-choice.sop-rail-switch-segments,.sop-choice.sop-rail-switch-segments *,.sop-choice.sop-rail-switch-segments::before,.sop-choice.sop-rail-switch-segments::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-choice.sop-rail-switch-segments{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-choice.sop-rail-switch-segments :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-choice.sop-rail-switch-segments:focus-visible,.sop-choice.sop-rail-switch-segments :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-choice.sop-rail-switch-segments[data-sop-paused] *,.sop-choice.sop-rail-switch-segments[data-paused=true] *,.sop-choice.sop-rail-switch-segments[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

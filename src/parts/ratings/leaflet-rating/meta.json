@@ -1,0 +1,52 @@
+{
+  "id": "leaflet-rating",
+  "name": "Leaflet Rating",
+  "category": "ratings",
+  "tagline": "二枚の葉のような評価面が、選択時に軽く開く。",
+  "description": "二枚の葉のような評価面が、選択時に軽く開く。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3202,
+  "version": "1.0.0",
+  "material": "LEAFLET RATING",
+  "accent": "185,205,194",
+  "componentName": "LeafletRating",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "ratings"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Leaflet Rating",
+    "二枚の葉のような評価面が、選択時に軽く開く。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "number",
+      "0は未評価、1〜maxは評価値。valueは外部制御。"
+    ],
+    [
+      "max",
+      "number",
+      "整数2〜10。半点は扱わない。"
+    ],
+    [
+      "name / required",
+      "string / boolean",
+      "フォームに接続する。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "無効または表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(value: number) => void",
+      "確定した評価。ホバーは通知しない。"
+    ]
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "chapter-ribbon-history",
+  "name": "Chapter Ribbon History",
+  "category": "timelines",
+  "tagline": "時刻を細い下線の章札として置き、本文を長い余白へ続ける。",
+  "description": "時刻を細い下線の章札として置き、本文を長い余白へ続ける。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3247,
+  "version": "1.0.0",
+  "material": "CHAPTER RIBBON HISTORY",
+  "accent": "185,205,194",
+  "componentName": "ChapterRibbonHistory",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "timelines"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Chapter Ribbon History",
+    "時刻を細い下線の章札として置き、本文を長い余白へ続ける。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "TimelineItem[]",
+      "id・title・description・date・dateTime・status・hrefなど。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "詳細を開くID。expandedで外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(ids: string[]) => void",
+      "開閉したIDを通知。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "詳細の開閉を無効にする。"
+    ],
+    [
+      "label",
+      "string",
+      "履歴全体の名前。"
+    ]
+  ]
+}

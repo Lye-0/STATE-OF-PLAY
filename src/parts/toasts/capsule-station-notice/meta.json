@@ -1,0 +1,56 @@
+{
+  "id": "capsule-station-notice",
+  "name": "Capsule Station Notice",
+  "category": "toasts",
+  "order": 3115,
+  "version": "1.0.0",
+  "tagline": "円い印をもつ駅名札のように、通知を一行の案内として見せる。",
+  "description": "円い印をもつ駅名札のように、通知を一行の案内として見せる。",
+  "material": "CAPSULE STATION NOTICE",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "CapsuleStationNotice",
+  "tags": [
+    "EXPANSION-30",
+    "Capsule Station Notice",
+    "円い印をもつ駅名札のように、通知を一行の案内として見せる。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "capsule-station-notice",
+    "kind": "toasts",
+    "variant": "essential",
+    "label": "知らせも、心地よく。",
+    "description": "",
+    "defaultValue": null
+  }
+}

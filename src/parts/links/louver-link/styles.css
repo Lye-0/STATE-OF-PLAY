@@ -1,0 +1,8 @@
+@import "../../../shared/navigation-link-base.css";
+/* Louver Link — 文字の下の細いルーバーが、先端へ向かって順に傾く。 */
+.sop-link.sop-louver-link{--sop-link-ink:#d9e4d0;padding:18px 15px;background:#253829;gap:14px;border:1px solid #75926c}.sop-link.sop-louver-link .sop-link-art{position:absolute;left:12px;right:12px;bottom:4px;height:7px;display:flex;gap:8px}.sop-link.sop-louver-link .sop-link-art i{height:5px;flex:1;background:#8bb07c;transform:skewX(-25deg);transition:transform .5s}.sop-link.sop-louver-link:hover .sop-link-art i{transform:skewX(25deg)}.sop-link.sop-louver-link .sop-link-icon{transform:rotate(45deg)}
+@media(prefers-reduced-motion:reduce){.sop-link.sop-louver-link,.sop-link.sop-louver-link *,.sop-link.sop-louver-link::before,.sop-link.sop-louver-link::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-link.sop-louver-link{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-link.sop-louver-link :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-link.sop-louver-link:focus-visible,.sop-link.sop-louver-link :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-link.sop-louver-link[data-sop-paused] *,.sop-link.sop-louver-link[data-paused=true] *,.sop-link.sop-louver-link[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

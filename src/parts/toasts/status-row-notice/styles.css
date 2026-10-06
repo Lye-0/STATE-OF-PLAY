@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Status Row Notice — 状態・本文・操作を横に揃え、忙しい画面で通知を読み取りやすくする。 */
+.sop-foundation.sop-status-row-notice{--ff-accent:#bad0c7;--ff-panel:#2b443c;--ff-base:#23382f;--ff-line:#709285}.sop-foundation.sop-status-row-notice .ff-notice{border:1px solid #75998a;border-radius:6px;background:#253e33;padding:16px 15px;gap:12px;box-shadow:0 7px 17px #10231a55}.sop-foundation.sop-status-row-notice .ff-notice-icon{border:0;border-radius:4px;background:#41664c;padding:6px;flex:none}.sop-foundation.sop-status-row-notice .ff-notice strong{font-size:13px}.sop-foundation.sop-status-row-notice .ff-notice p{font-size:11px;line-height:1.7}.sop-foundation.sop-status-row-notice .ff-notice-meter{height:2px;background:#b8d2bc}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-status-row-notice,.sop-foundation.sop-status-row-notice *,.sop-foundation.sop-status-row-notice::before,.sop-foundation.sop-status-row-notice::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-status-row-notice{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-status-row-notice :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-status-row-notice:focus-visible,.sop-foundation.sop-status-row-notice :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-status-row-notice[data-sop-paused] *,.sop-foundation.sop-status-row-notice[data-paused=true] *,.sop-foundation.sop-status-row-notice[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

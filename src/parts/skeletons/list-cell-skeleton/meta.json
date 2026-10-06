@@ -1,0 +1,52 @@
+{
+  "id": "list-cell-skeleton",
+  "name": "List Cell Skeleton",
+  "category": "skeletons",
+  "tagline": "小さな図版と本文を左右に揃えた、一覧の行用の待機表示。",
+  "description": "小さな図版と本文を左右に揃えた、一覧の行用の待機表示。",
+  "designType": "B",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3238,
+  "version": "1.0.0",
+  "material": "LIST CELL SKELETON",
+  "accent": "185,205,194",
+  "componentName": "ListCellSkeleton",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "skeletons"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "List Cell Skeleton",
+    "小さな図版と本文を左右に揃えた、一覧の行用の待機表示。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "loading",
+      "boolean",
+      "実際の読み込み状態。自動で成功にはしない。"
+    ],
+    [
+      "rows",
+      "number",
+      "2〜8行のプレースホルダー。"
+    ],
+    [
+      "label",
+      "string",
+      "読み上げ用の待機ラベル。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "動きを一時停止。"
+    ],
+    [
+      "children",
+      "ReactNode",
+      "読み込み後に表示する実際の内容。"
+    ]
+  ]
+}

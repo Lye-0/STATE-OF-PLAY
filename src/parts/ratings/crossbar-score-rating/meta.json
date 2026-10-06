@@ -1,0 +1,52 @@
+{
+  "id": "crossbar-score-rating",
+  "name": "Crossbar Score Rating",
+  "category": "ratings",
+  "tagline": "小さな横桟を選び、幅広い番号の上で評価を固定する。",
+  "description": "小さな横桟を選び、幅広い番号の上で評価を固定する。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3210,
+  "version": "1.0.0",
+  "material": "CROSSBAR SCORE RATING",
+  "accent": "185,205,194",
+  "componentName": "CrossbarScoreRating",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "ratings"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Crossbar Score Rating",
+    "小さな横桟を選び、幅広い番号の上で評価を固定する。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "number",
+      "0は未評価、1〜maxは評価値。valueは外部制御。"
+    ],
+    [
+      "max",
+      "number",
+      "整数2〜10。半点は扱わない。"
+    ],
+    [
+      "name / required",
+      "string / boolean",
+      "フォームに接続する。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "無効または表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(value: number) => void",
+      "確定した評価。ホバーは通知しない。"
+    ]
+  ]
+}

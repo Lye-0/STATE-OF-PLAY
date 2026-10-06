@@ -1,0 +1,48 @@
+{
+  "id": "destination-link",
+  "name": "Destination Link",
+  "category": "links",
+  "order": 3062,
+  "version": "1.0.0",
+  "tagline": "ラベルと移動方向を離し、行全体を読みやすいリンクとして使う。",
+  "description": "ラベルと移動方向を離し、行全体を読みやすいリンクとして使う。",
+  "material": "DESTINATION LINK",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "179,205,226",
+  "designType": "B",
+  "runtime": "Native anchor + CSS only",
+  "componentName": "DestinationLink",
+  "tags": [
+    "EXPANSION-30",
+    "Destination Link",
+    "ラベルと移動方向を離し、行全体を読みやすいリンクとして使う。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "children / eyebrow / icon",
+      "ReactNode",
+      "表示テキスト・補助見出し・装飾アイコン。"
+    ],
+    [
+      "href",
+      "string (required)",
+      "ページ、ページ内アンカー、mailto等の移動先。"
+    ],
+    [
+      "target / rel / download",
+      "native anchor attributes",
+      "新規タブ、関係性、同一オリジン等のダウンロード指定。"
+    ],
+    [
+      "onClick / ref / aria-current",
+      "native attributes",
+      "標準イベント・ref・現在位置。ネイティブ移動を維持。"
+    ],
+    [
+      "className / style",
+      "native attributes",
+      "利用先での配置。コンポーネントはルーター依存を持ちません。"
+    ]
+  ]
+}

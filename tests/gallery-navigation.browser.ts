@@ -1,3 +1,4 @@
+import {galleryCount} from './gallery-counts.ts';
 /** Category navigation must keep the visible tab strip and page position stable. */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -53,7 +54,7 @@ try {
   assert.equal(await page.locator('.collection-loading').count(),0);
   const after=await page.evaluate(()=>scrollY);
   assert.ok(Math.abs(after-before)<=2,`finished switch jumped from ${before} to ${after} at ${width}px`);
-  assert.equal(await page.locator('[data-part]').count(),numberParts);
+  assert.equal(await page.locator('[data-part]').count(),await galleryCount(page));
   await page.locator('[data-category="numbers"]').focus();
   await page.keyboard.press('Home');await selected('all');
   assert.equal(await page.locator('[data-category="all"]').getAttribute('aria-selected'),'true');

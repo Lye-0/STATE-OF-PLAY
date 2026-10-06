@@ -1,0 +1,62 @@
+{
+  "id": "ledger-spine-table",
+  "name": "Ledger Spine Table",
+  "category": "tables",
+  "description": "太い綴じ帯と細い本文罫で、記録の行と項目を正確に結ぶ。",
+  "designType": "A",
+  "tagline": "太い綴じ帯と細い本文罫で、記録の行と項目を正確に結ぶ。",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3311,
+  "version": "1.0.0",
+  "material": "LEDGER SPINE TABLE",
+  "accent": "192,216,201",
+  "componentName": "LedgerSpineTable",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "tables"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Ledger Spine Table",
+    "太い綴じ帯と細い本文罫で、記録の行と項目を正確に結ぶ。",
+    "NAVIGATOR"
+  ],
+  "related": [],
+  "props": [
+    [
+      "rows / columns",
+      "DataRow[] / DataColumn[]",
+      "一意な行IDと列定義。文字・数値・状態・進捗表示。"
+    ],
+    [
+      "sort / onSortChange",
+      "TableSort | null / callback",
+      "列の昇順・降順・元順を切り替え。"
+    ],
+    [
+      "selected / onSelectionChange",
+      "string[] / callback",
+      "選択は行IDで保持。全選択は表示ページの対象行。"
+    ],
+    [
+      "page / pageSize / query",
+      "number / number / string",
+      "ページ送りと検索。manualでサーバー側へ委譲可能。"
+    ],
+    [
+      "resizable / stickyFirst",
+      "boolean",
+      "列幅調整と先頭列固定。列幅は矢印キーでも操作。"
+    ],
+    [
+      "onRowAction",
+      "(action, row) => void",
+      "各行の操作を利用先へ接続。"
+    ],
+    [
+      "loading / error",
+      "boolean / string",
+      "読込中・失敗表示。仮想スクロールやセル編集は含みません。"
+    ]
+  ]
+}

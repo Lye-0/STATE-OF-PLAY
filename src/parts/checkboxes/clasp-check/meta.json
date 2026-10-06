@@ -1,0 +1,53 @@
+{
+  "id": "clasp-check",
+  "name": "Clasp Check",
+  "category": "checkboxes",
+  "order": 3040,
+  "version": "1.0.0",
+  "tagline": "四角い留め具が押さえ込まれ、確認した項目を固定する。",
+  "description": "四角い留め具が押さえ込まれ、確認した項目を固定する。",
+  "material": "CLASP CHECK",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "185,214,195",
+  "designType": "A",
+  "runtime": "Native checkbox + CSS / event-driven state",
+  "componentName": "ClaspCheck",
+  "tags": [
+    "EXPANSION-30",
+    "Clasp Check",
+    "四角い留め具が押さえ込まれ、確認した項目を固定する。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "label / description / badge",
+      "ReactNode",
+      "ラベル・補足・装飾。ラベル内に別の操作要素を置かない。"
+    ],
+    [
+      "checked / defaultChecked",
+      "boolean",
+      "外部制御 / 非制御の初期選択。"
+    ],
+    [
+      "indeterminate / defaultIndeterminate",
+      "boolean",
+      "一部選択。クリックで通常の選択に戻る。"
+    ],
+    [
+      "onCheckedChange / onIndeterminateChange",
+      "(value: boolean) => void",
+      "アプリの状態と接続。"
+    ],
+    [
+      "name / value / form / required / disabled",
+      "native input attributes",
+      "標準フォームの送信・リセット・無効化。"
+    ],
+    [
+      "ref / onChange / aria-*",
+      "input attributes",
+      "実際のinputへ接続。className/styleだけラベルルートへ。"
+    ]
+  ]
+}

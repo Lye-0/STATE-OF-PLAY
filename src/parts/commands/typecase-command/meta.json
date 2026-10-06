@@ -1,0 +1,52 @@
+{
+  "id": "typecase-command",
+  "name": "Typecase Command",
+  "category": "commands",
+  "description": "項目の短い見出しと小さなキーを、活字の区画のように整理する。",
+  "designType": "A",
+  "tagline": "項目の短い見出しと小さなキーを、活字の区画のように整理する。",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3291,
+  "version": "1.0.0",
+  "material": "TYPECASE COMMAND",
+  "accent": "192,216,201",
+  "componentName": "TypecaseCommand",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "commands"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Typecase Command",
+    "項目の短い見出しと小さなキーを、活字の区画のように整理する。",
+    "NAVIGATOR"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "CommandItem[]",
+      "コマンド、グループ、ショートカット、子階層を指定。"
+    ],
+    [
+      "open / onOpenChange",
+      "boolean / callback",
+      "表示を外部制御。"
+    ],
+    [
+      "onExecute",
+      "(item, signal) => void | false | Promise",
+      "処理中の重複を抑止。falseなら開いたまま。例外はエラー表示。"
+    ],
+    [
+      "hotkey",
+      "boolean",
+      "trueでCtrl/Cmd+Kを登録。ギャラリーではfalse。"
+    ],
+    [
+      "apiRef",
+      "Ref<WorkbenchAPI>",
+      "Reactからopen()/close()を呼べる参照。"
+    ]
+  ]
+}

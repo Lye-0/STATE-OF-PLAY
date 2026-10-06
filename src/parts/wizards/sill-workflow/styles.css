@@ -1,0 +1,9 @@
+@import "../../../shared/signature/wizard.css";
+/* Sill Workflow — 工程の札を低い窓台に置き、現在の工程だけを前へ引き出す。 */
+.sop-sig.sop-sill-workflow{--sg-bg:#213d4c;--sg-a:#bad2d0;--sg-line:#7a9ba9;--sg-muted:#a3b9c5}.sop-sig.sop-sill-workflow .sg-wizard{background:#2a4655;border:1px solid #8ba7b2;border-top:9px solid #688e99;border-radius:2px;padding:20px}.sop-sig.sop-sill-workflow .sg-wizard-nav{gap:7px;border-bottom:4px solid #618590;padding-bottom:8px}.sop-sig.sop-sill-workflow .sg-wizard-nav button{background:#365966;border:1px solid #8aaaae;border-radius:1px;padding:10px 4px}.sop-sig.sop-sill-workflow .sg-step-index{border:0;border-radius:1px;width:23px;height:23px;background:#203d4d}.sop-sig.sop-sill-workflow [data-step-state=current] button{transform:translateY(7px);background:#6c959b;box-shadow:0 4px #132f3e77}.sop-sig.sop-sill-workflow .sg-wizard-panels{border-left:2px solid #6b969a;padding-left:15px}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-sill-workflow,.sop-sig.sop-sill-workflow *,.sop-sig.sop-sill-workflow::before,.sop-sig.sop-sill-workflow::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-sig.sop-sill-workflow{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-sill-workflow :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-sig.sop-sill-workflow:focus-visible,.sop-sig.sop-sill-workflow :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-sig.sop-sill-workflow[data-sop-paused] *,.sop-sig.sop-sill-workflow[data-paused=true] *,.sop-sig.sop-sill-workflow[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+.sop-sig.sop-sill-workflow *{animation-play-state:var(--sg-play,running)!important}

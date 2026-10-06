@@ -1,0 +1,8 @@
+@import "../../../shared/navigation-link-base.css";
+/* Destination Link — ラベルと移動方向を離し、行全体を読みやすいリンクとして使う。 */
+.sop-link.sop-destination-link{--sop-link-ink:#dbe5df;display:flex;width:100%;justify-content:space-between;gap:20px;border-bottom:1px solid #597467;padding:14px 5px;font-size:14px}.sop-link.sop-destination-link .sop-link-icon{width:18px;height:18px;transform:rotate(45deg)}.sop-link.sop-destination-link:hover{background:#45604922}
+@media(prefers-reduced-motion:reduce){.sop-link.sop-destination-link,.sop-link.sop-destination-link *,.sop-link.sop-destination-link::before,.sop-link.sop-destination-link::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-link.sop-destination-link{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-link.sop-destination-link :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-link.sop-destination-link:focus-visible,.sop-link.sop-destination-link :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-link.sop-destination-link[data-sop-paused] *,.sop-link.sop-destination-link[data-paused=true] *,.sop-link.sop-destination-link[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

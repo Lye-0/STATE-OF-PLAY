@@ -10,13 +10,13 @@ const catalogue=buildCatalog();
 const ornaments=catalogue.parts.filter(part=>part.category==='ornaments');
 
 test('ORNAMENTS retains 20 originals and adds 10 A designs without restoring retired parts',()=>{
- assert.equal(catalogue.parts.length,825);
+ assert.equal(catalogue.parts.length,733);
  assert.equal(new Set(catalogue.parts.map(part=>part.category)).size,37);
- assert.equal(ornaments.length,30);
- assert.equal(ornaments.filter(part=>part.designType==='A').length,22);
+ assert.equal(ornaments.length,29);
+ assert.equal(ornaments.filter(part=>part.designType==='A').length,21);
  assert.equal(ornaments.filter(part=>part.designType==='B').length,8);
- assert.equal(new Set(ornaments.map(part=>part.id)).size,30);
- assert.equal(new Set(ornaments.map(part=>part.order)).size,30);
+ assert.equal(new Set(ornaments.map(part=>part.id)).size,29);
+ assert.equal(new Set(ornaments.map(part=>part.order)).size,29);
  assert.equal(ornaments.filter(part=>part.version==='4.14.0').length,9);
  assert.equal(ornaments.filter(part=>part.version==='4.14.2').length,1);
  assert.ok(ornaments.some(part=>part.id==='hero-asterisk'));

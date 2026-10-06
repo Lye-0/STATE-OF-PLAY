@@ -1,0 +1,52 @@
+{
+  "id": "shoreline-history",
+  "name": "Shoreline History",
+  "category": "timelines",
+  "tagline": "時刻を細い岸線へ置き、出来事を広い右側の面へつなげる。",
+  "description": "時刻を細い岸線へ置き、出来事を広い右側の面へつなげる。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3239,
+  "version": "1.0.0",
+  "material": "SHORELINE HISTORY",
+  "accent": "185,205,194",
+  "componentName": "ShorelineHistory",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "timelines"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Shoreline History",
+    "時刻を細い岸線へ置き、出来事を広い右側の面へつなげる。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "TimelineItem[]",
+      "id・title・description・date・dateTime・status・hrefなど。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "詳細を開くID。expandedで外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(ids: string[]) => void",
+      "開閉したIDを通知。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "詳細の開閉を無効にする。"
+    ],
+    [
+      "label",
+      "string",
+      "履歴全体の名前。"
+    ]
+  ]
+}

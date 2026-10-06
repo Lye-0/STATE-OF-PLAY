@@ -1,0 +1,52 @@
+{
+  "id": "plume-score-rating",
+  "name": "Plume Score Rating",
+  "category": "ratings",
+  "tagline": "細い羽根の軸と枝が、選択した段まで順に立ち上がる。",
+  "description": "細い羽根の軸と枝が、選択した段まで順に立ち上がる。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3211,
+  "version": "1.0.0",
+  "material": "PLUME SCORE RATING",
+  "accent": "185,205,194",
+  "componentName": "PlumeScoreRating",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "ratings"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Plume Score Rating",
+    "細い羽根の軸と枝が、選択した段まで順に立ち上がる。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "number",
+      "0は未評価、1〜maxは評価値。valueは外部制御。"
+    ],
+    [
+      "max",
+      "number",
+      "整数2〜10。半点は扱わない。"
+    ],
+    [
+      "name / required",
+      "string / boolean",
+      "フォームに接続する。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "無効または表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(value: number) => void",
+      "確定した評価。ホバーは通知しない。"
+    ]
+  ]
+}

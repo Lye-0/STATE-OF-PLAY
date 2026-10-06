@@ -1,3 +1,5 @@
+import {galleryCount} from './gallery-counts.ts';
+import {selectSetting} from './detail-settings.ts';
 /** Real HTTP checks: development AND production, not the offline adapter. */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -29,7 +31,7 @@ try {
    await p.goto(url,{waitUntil:'domcontentloaded',timeout:120000});
    await p.waitForFunction(()=>document.documentElement.classList.contains('site-ready'),undefined,{timeout:120000});
    await ready(p);
-   assert.equal(await p.locator('[data-part]').count(),26);
+   assert.equal(await p.locator('[data-part]').count(),await galleryCount(p));
    assert.equal(await selectedCategory(p),'toggles');
    assert.ok(!requests.some(u=>/\.json(?:\?|$)/.test(u)),'no source payload on entry');
    if(mode==='development') assert.ok(!requests.some(u=>/\/src\/parts\//.test(u)&&!u.includes('/toggles/')&&!u.includes('/blocks/original-surface/')),'no unrelated part implementation on entry');
@@ -40,7 +42,7 @@ try {
    }
    results.push(mode+': initial 26 toggles only; no delivery payload or full catalogue');
    for (const id of ['loaders','numbers','datepickers','dropdowns']) {
-    await category(p,id);assert.equal(await p.locator('[data-part]').count(),index.filter(x=>x.category===id).length);
+    await category(p,id);assert.equal(await p.locator('[data-part]').count(),await galleryCount(p));
    }
    const before=requests.length; await category(p,'toggles');await category(p,'loaders');
    assert.equal(requests.length,before,'loaded categories reuse modules');
@@ -48,8 +50,8 @@ try {
    const toggle=p.locator('[data-part="chrome"] [role="switch"]');await toggle.click();const checked=await toggle.getAttribute('aria-checked');
    await p.locator('#load-more').click();await ready(p);assert.equal(await p.locator('[data-part]').count(),48);assert.equal(await toggle.getAttribute('aria-checked'),checked);
    assert.equal(await p.locator('#search-parts,#search-clear').count(),0);
-   await category(p,'progress');assert.equal(await p.locator('[data-part]').count(),index.filter(x=>x.category==='progress').length);
-   await category(p,'datepickers');assert.equal(await p.locator('[data-part]').count(),index.filter(x=>x.category==='datepickers').length);
+   await category(p,'progress');assert.equal(await p.locator('[data-part]').count(),await galleryCount(p));
+   await category(p,'datepickers');assert.equal(await p.locator('[data-part]').count(),await galleryCount(p));
    await category(p,'all');assert.equal(await p.locator('[data-part]').count(),24);
    results.push(mode+': category cache, all pagination, retained controls and category selection');
    // Source download happens on detail open and round-trips exactly to the canonical generator.
@@ -61,7 +63,7 @@ try {
    assert.deepEqual(unpackCatalog(await response.json()),[source]);
    await p.locator('#detail-pane pre code').first().waitFor();
    for(const layout of ['portable','original'] as const)for(const format of ['tsx','jsx','ts','js'] as const){
-    await p.locator('#export-layout').selectOption(layout);await p.locator('[data-format="'+format+'"]').click();
+    await selectSetting(p.locator('#export-layout'),layout);await p.locator('[data-format="'+format+'"]').click();
     const delivery=getDelivery(source,format,layout);
     assert.ok((await p.locator('#detail-pane').innerText()).includes(delivery.files[0].name.split('/').at(-1)!));
     await p.locator('#tab-prompt').click();assert.equal(await p.locator('#prompt-text').inputValue(),buildPrompt(source,format,layout,true));
@@ -69,7 +71,7 @@ try {
    }
    await p.locator('[data-format="js"]').click();
    for (const layout of ['portable','original'] as const) {
-    await p.locator('#export-layout').selectOption(layout);await p.locator('#download-part').click();
+    await selectSetting(p.locator('#export-layout'),layout);await p.locator('#download-part').click();
     for (const archiveMode of ['source','text']) {
      await p.locator('input[name="package-mode"][value="'+archiveMode+'"]').check();
      const pending=p.waitForEvent('download');await p.locator('.package-save').click();const download=await pending;
@@ -92,7 +94,7 @@ try {
    // Repeated category entry in both orders detects late CSS causing different styles.
    const ids=[...new Set(index.map(x=>x.category))];const signatures=new Map<string,unknown>();
    const signature=()=>p.locator('.stage-mount').first().evaluate(el=>[el.firstElementChild,...Array.from(el.firstElementChild?.children??[]).slice(0,3)].filter(Boolean).map(node=>{const s=getComputedStyle(node!);return {display:s.display,color:s.color,background:s.backgroundColor,border:s.borderTopWidth,borderColor:s.borderTopColor,font:s.fontFamily};}));
-   for(const id of ids){await category(p,id);assert.equal(await p.locator('[data-part]').count(),index.filter(x=>x.category===id).length);signatures.set(id,await signature());}
+   for(const id of ids){await category(p,id);assert.equal(await p.locator('[data-part]').count(),await galleryCount(p));signatures.set(id,await signature());}
    for(const id of [...ids].reverse()){await category(p,id);assert.deepEqual(await signature(),signatures.get(id),'style order '+id);}
    assert.deepEqual(errors,[]);
    results.push(mode+': all 37 categories, forward/reverse CSS order, no runtime errors');
@@ -132,7 +134,7 @@ try {
    let rejectCategory=true;await categoryFailure.route(categoryPattern,async route=>{if(rejectCategory){rejectCategory=false;await route.abort();}else await route.continue();});
    await selectCategory(categoryFailure,'numbers',false);
    await Promise.all([categoryFailure.waitForURL(/category=numbers/),categoryFailure.getByRole('button',{name:'再読み込み',exact:true}).click()]);await ready(categoryFailure);
-   assert.equal(await categoryFailure.locator('[data-part]').count(),index.filter(x=>x.category==='numbers').length);await categoryFailure.close();
+   assert.equal(await categoryFailure.locator('[data-part]').count(),await galleryCount(categoryFailure));await categoryFailure.close();
    results.push(mode+': failed category import reloads with selection retained');
   } finally {await close();}
  }

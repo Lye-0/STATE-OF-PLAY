@@ -1,0 +1,13 @@
+@import "../../../shared/workbench/base.css";
+/* Cut Corner Context — 対象と操作の面に異なる切欠きを持たせ、どこから開いたかを示す。 */
+.sop-wb.sop-cut-corner-context{--wb-bg:#372a42;--wb-accent:#cfb7dd;--wb-line:#997cab;--wb-muted:#baa3cd}.sop-wb.sop-cut-corner-context .wb-context-target{background:#402b4c;border:1px solid #a385b0;border-right:7px solid #866195;border-radius:0;padding:24px}.sop-wb.sop-cut-corner-context .wb-context-object{border-radius:1px;background:#6f4d81;border:1px solid #b296c2;box-shadow:4px 3px #21172f88}.sop-wb.sop-cut-corner-context .wb-context-panel{border:1px solid #b296c5;border-top:9px solid #866398;border-radius:0;background:#3b254b;padding:11px;clip-path:polygon(0 0,100% 0,100% calc(100% - 11px),calc(100% - 11px) 100%,0 100%)}.sop-wb.sop-cut-corner-context .wb-context-items button{border-left:1px solid #a67fc0;border-radius:0;padding:12px 11px;border-bottom:1px solid #8f6f9c44}.sop-wb.sop-cut-corner-context .wb-menu-glyph{background:#715484;border-radius:0;padding:3px;width:24px}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-cut-corner-context,.sop-wb.sop-cut-corner-context *,.sop-wb.sop-cut-corner-context::before,.sop-wb.sop-cut-corner-context::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-wb.sop-cut-corner-context{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-cut-corner-context :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-wb.sop-cut-corner-context:focus-visible,.sop-wb.sop-cut-corner-context :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-wb.sop-cut-corner-context[data-sop-paused] *,.sop-wb.sop-cut-corner-context[data-paused=true] *,.sop-wb.sop-cut-corner-context[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+
+
+/* Visual review: composition and state separation. */
+.sop-wb.sop-cut-corner-context .wb-context-target{min-height:100px;background:transparent;border-left:0;border-top:0;border-bottom:2px solid var(--wb-line);border-radius:0}.sop-wb.sop-cut-corner-context .wb-context-panel{border:0;border-top:3px solid var(--wb-line);border-right:12px solid var(--wb-line);border-radius:0;padding:10px}.sop-wb.sop-cut-corner-context .wb-context-items button{padding:14px;border:0;border-left:2px solid var(--wb-line);border-bottom:1px solid var(--wb-line);border-radius:0;margin-bottom:6px}.sop-wb.sop-cut-corner-context .wb-menu-glyph{border:0}

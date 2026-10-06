@@ -1,0 +1,9 @@
+@import "../../../shared/foundation/base.css";
+@import "../../../shared/foundation/continuum/loaders.css";
+/* Bimetal Loader — 三つの薄い金属帯が、異なる向きの開いた弧を作って回る。 */
+.sop-foundation.sop-bimetal-loader{--ld-size:116px;--ld-accent:#d2bb98;--ld-secondary:#95846d}.sop-foundation.sop-bimetal-loader .ld-dots{position:absolute;inset:0;display:block;width:100%;height:100%;perspective:400px}.sop-foundation.sop-bimetal-loader .ld-dot{position:absolute;inset:calc(8% + var(--i)*9%);width:auto;height:auto;border:3px solid #b7a37d;border-left-color:transparent;border-bottom-color:#526154;border-radius:50%;background:none;box-shadow:inset 0 0 0 1px #d7c8a833;animation:bimetal-loader-spin 4.8s linear infinite;animation-delay:calc(var(--i)*-1.2s)}@keyframes bimetal-loader-spin{from{transform:rotateX(55deg) rotateY(25deg) rotateZ(0)}to{transform:rotateX(55deg) rotateY(25deg) rotateZ(360deg)}}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-bimetal-loader,.sop-foundation.sop-bimetal-loader *,.sop-foundation.sop-bimetal-loader::before,.sop-foundation.sop-bimetal-loader::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-bimetal-loader{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-bimetal-loader :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-bimetal-loader:focus-visible,.sop-foundation.sop-bimetal-loader :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-bimetal-loader[data-sop-paused] *,.sop-foundation.sop-bimetal-loader[data-paused=true] *,.sop-foundation.sop-bimetal-loader[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

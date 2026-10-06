@@ -11,8 +11,8 @@ const exists=(f:string)=>fs.existsSync(path.join(ROOT,f));
 const bases=historicalBases().filter(b=>!JSON.parse(read(b+'/meta.json')).tags.some((t:string)=>['KINETIC','MOTION STUDIES','GLASS LAB'].includes(t)));
 const targets=bases.filter(b=>/src\/parts\/(scrollbars|dropdowns)\//.test(b)).map(base=>({base,...JSON.parse(read(base+'/meta.json'))}));
 const A=targets.filter(p=>p.designType==='A');
-test('refinement keeps 777 current parts; 16 A rails and 16 A selects; stable IDs',()=>{
- assert.equal(bases.length,777);assert.equal(A.length,32);assert.equal(new Set(bases).size,777);
+test('refinement keeps 685 current parts; 16 A rails and 16 A selects; stable IDs',()=>{
+ assert.equal(bases.length,685);assert.equal(A.length,32);assert.equal(new Set(bases).size,685);
  for(const cat of ['scrollbars','dropdowns'])assert.equal(A.filter(p=>p.category===cat).length,16);
 });
 test('visible A rails remain 9–12px, handles 15–18px; pointer target is separate',()=>{

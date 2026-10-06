@@ -1,0 +1,9 @@
+@import "../../../shared/signature/skeleton.css";
+/* Column Copy Skeleton — 左の細いメディア帯と、右の本文行を先に確保する読み物の待機面。 */
+.sop-sig.sop-column-copy-skeleton{--sg-bg:#263c4e;--sg-a:#acc1d7;--sg-line:#66889e}.sop-sig.sop-column-copy-skeleton .sg-skeleton-frame{display:grid;grid-template-columns:54px 1fr;gap:15px;background:#20384c;border:1px solid #7a9cb2;border-radius:2px;padding:18px;min-height:223px}.sop-sig.sop-column-copy-skeleton .sg-sk-hero{grid-column:1;grid-row:1/4;height:100%;margin:0;border-radius:0}.sop-sig.sop-column-copy-skeleton .sg-sk-profile{grid-column:2;margin-bottom:4px}.sop-sig.sop-column-copy-skeleton .sg-sk-profile>span{display:none}.sop-sig.sop-column-copy-skeleton .sg-sk-lines{grid-column:2;gap:13px;align-self:start}.sop-sig.sop-column-copy-skeleton .sg-sk-tiles{grid-column:2;margin:0}.sop-sig.sop-column-copy-skeleton .sg-sk-tiles>i{height:15px}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-column-copy-skeleton,.sop-sig.sop-column-copy-skeleton *,.sop-sig.sop-column-copy-skeleton::before,.sop-sig.sop-column-copy-skeleton::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-sig.sop-column-copy-skeleton{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-column-copy-skeleton :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-sig.sop-column-copy-skeleton:focus-visible,.sop-sig.sop-column-copy-skeleton :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-sig.sop-column-copy-skeleton[data-sop-paused] *,.sop-sig.sop-column-copy-skeleton[data-paused=true] *,.sop-sig.sop-column-copy-skeleton[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+.sop-sig.sop-column-copy-skeleton *{animation-play-state:var(--sg-play,running)!important}

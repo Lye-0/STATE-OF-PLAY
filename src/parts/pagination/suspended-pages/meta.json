@@ -1,0 +1,57 @@
+{
+  "id": "suspended-pages",
+  "name": "Suspended Pages",
+  "category": "pagination",
+  "order": 3155,
+  "version": "1.0.0",
+  "tagline": "頁の札を一本の線から吊り、現在値の揺れを止めて読む。",
+  "description": "頁の札を一本の線から吊り、現在値の揺れを止めて読む。",
+  "material": "SUSPENDED PAGES",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "SuspendedPages",
+  "tags": [
+    "EXPANSION-30",
+    "Suspended Pages",
+    "頁の札を一本の線から吊り、現在値の揺れを止めて読む。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "suspended-pages",
+    "kind": "pagination",
+    "variant": "essential",
+    "label": "コレクションをめくる",
+    "description": "",
+    "defaultValue": 4,
+    "totalPages": 12
+  }
+}

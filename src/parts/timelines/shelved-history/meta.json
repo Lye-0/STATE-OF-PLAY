@@ -1,0 +1,52 @@
+{
+  "id": "shelved-history",
+  "name": "Shelved History",
+  "category": "timelines",
+  "tagline": "出来事を時刻札付きの小さな棚に載せ、開いた内容の下に段を残す。",
+  "description": "出来事を時刻札付きの小さな棚に載せ、開いた内容の下に段を残す。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3244,
+  "version": "1.0.0",
+  "material": "SHELVED HISTORY",
+  "accent": "185,205,194",
+  "componentName": "ShelvedHistory",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "timelines"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Shelved History",
+    "出来事を時刻札付きの小さな棚に載せ、開いた内容の下に段を残す。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "TimelineItem[]",
+      "id・title・description・date・dateTime・status・hrefなど。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "詳細を開くID。expandedで外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(ids: string[]) => void",
+      "開閉したIDを通知。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "詳細の開閉を無効にする。"
+    ],
+    [
+      "label",
+      "string",
+      "履歴全体の名前。"
+    ]
+  ]
+}

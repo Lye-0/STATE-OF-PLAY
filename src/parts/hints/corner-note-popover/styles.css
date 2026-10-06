@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Corner Note Popover — 角を残した小さな注釈面が、説明と関連する値を結ぶ。 */
+.sop-foundation.sop-corner-note-popover{--ff-accent:#bfcdaf;--ff-panel:#344837;--ff-base:#233a2a;--ff-line:#89a27a}.sop-foundation.sop-corner-note-popover .ff-hint-trigger{border:0;border-left:3px solid #afc399;background:#3b5941;border-radius:0;padding:13px 18px}.sop-foundation.sop-corner-note-popover .ff-hint-panel{border:1px solid #abc09a;border-radius:0;background:#2b4330;border-right:9px solid #66825d;padding:23px}.sop-foundation.sop-corner-note-popover .ff-hint-heading{border-bottom:1px solid #8eaa7966;padding-bottom:11px}.sop-foundation.sop-corner-note-popover .ff-hint-facts{border:0;border-left:1px solid #91ae7d;padding-left:12px}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-corner-note-popover,.sop-foundation.sop-corner-note-popover *,.sop-foundation.sop-corner-note-popover::before,.sop-foundation.sop-corner-note-popover::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-corner-note-popover{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-corner-note-popover :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-corner-note-popover:focus-visible,.sop-foundation.sop-corner-note-popover :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-corner-note-popover[data-sop-paused] *,.sop-foundation.sop-corner-note-popover[data-paused=true] *,.sop-foundation.sop-corner-note-popover[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

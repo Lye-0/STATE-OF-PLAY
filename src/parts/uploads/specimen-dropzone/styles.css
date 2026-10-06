@@ -1,0 +1,11 @@
+@import "../../../shared/foundation/base.css";
+/* Specimen Dropzone — 小さな資料の受皿を想起させる薄い縁と、番号帯を備える。 */
+.sop-foundation.sop-specimen-dropzone{--ff-accent:#54745c;--ff-ink:#344c38;--ff-muted:#58654f;--ff-panel:#e4e6cc;--ff-base:#d3dab6;--ff-line:#95a77a;color-scheme:light}.sop-foundation.sop-specimen-dropzone .ff-dropzone{border:3px solid #9dac7c;border-radius:3px;background:#dbe2c1;padding:28px 19px;min-height:160px;box-shadow:inset 0 0 0 1px #edf1d9}.sop-foundation.sop-specimen-dropzone .ff-upload-symbol{background:#bac99e;border:1px solid #7c9666;border-radius:1px;box-shadow:none}.sop-foundation.sop-specimen-dropzone .ff-dropzone small{border-top:1px solid #91a474;padding-top:8px;letter-spacing:.6px}.sop-foundation.sop-specimen-dropzone .ff-upload-files li{background:#d7e2bc;border-radius:0;border-left:6px solid #859e65}
+.sop-foundation.sop-specimen-dropzone{background:var(--ff-panel);padding:15px;border-radius:4px}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-specimen-dropzone,.sop-foundation.sop-specimen-dropzone *,.sop-foundation.sop-specimen-dropzone::before,.sop-foundation.sop-specimen-dropzone::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-specimen-dropzone{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-specimen-dropzone :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-specimen-dropzone:focus-visible,.sop-foundation.sop-specimen-dropzone :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-specimen-dropzone :is([data-sg-error],[data-upload-error],.sg-wizard-error,[data-danger=true]){color:#8a3f46}
+
+.sop-foundation.sop-specimen-dropzone[data-sop-paused] *,.sop-foundation.sop-specimen-dropzone[data-paused=true] *,.sop-foundation.sop-specimen-dropzone[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

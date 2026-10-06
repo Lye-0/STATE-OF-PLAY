@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Wide Touch Pages — 番号の操作面を広く取り、狭い画面では自然に折り返す。 */
+.sop-foundation.sop-wide-touch-pages{--ff-accent:#bfd4c0;--ff-panel:#2f4d37;--ff-base:#263d2b;--ff-line:#79987a}.sop-foundation.sop-wide-touch-pages .ff-pages{background:none;border:0;border-radius:0;padding:6px 0;gap:7px;flex-wrap:wrap}.sop-foundation.sop-wide-touch-pages .ff-pages button,.sop-foundation.sop-wide-touch-pages .ff-pages a{border:1px solid #7d9e7b;background:#35593b;border-radius:5px;min-width:38px;min-height:43px;padding:9px}.sop-foundation.sop-wide-touch-pages .ff-pages [aria-current]{background:#b0c7a2;color:#203d26;border-color:#d5e6c4}.sop-foundation.sop-wide-touch-pages .ff-page-info{padding-top:10px;border-top:1px solid #637f60}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-wide-touch-pages,.sop-foundation.sop-wide-touch-pages *,.sop-foundation.sop-wide-touch-pages::before,.sop-foundation.sop-wide-touch-pages::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-wide-touch-pages{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-wide-touch-pages :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-wide-touch-pages:focus-visible,.sop-foundation.sop-wide-touch-pages :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-wide-touch-pages[data-sop-paused] *,.sop-foundation.sop-wide-touch-pages[data-paused=true] *,.sop-foundation.sop-wide-touch-pages[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

@@ -1,0 +1,38 @@
+{
+  "id": "tension-mobile",
+  "name": "Tension Mobile",
+  "category": "ornaments",
+  "order": 3188,
+  "version": "1.0.0",
+  "tagline": "細い糸に吊られた四つの輪が、ホバーで静かに広がる。",
+  "description": "細い糸に吊られた四つの輪が、ホバーで静かに広がる。",
+  "material": "TENSION MOBILE",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "232,215,174",
+  "designType": "A",
+  "runtime": "CSS + hover state",
+  "componentName": "TensionMobile",
+  "tags": [
+    "EXPANSION-30",
+    "Tension Mobile",
+    "細い糸に吊られた四つの輪が、ホバーで静かに広がる。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

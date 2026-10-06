@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Pinwheel Pages — 小さな傾いた頁札が、現在の番号でだけまっすぐに揃う。 */
+.sop-foundation.sop-pinwheel-pages{--ff-accent:#bdcde0;--ff-panel:#32435c;--ff-base:#243247;--ff-line:#819ab4}.sop-foundation.sop-pinwheel-pages .ff-pages{border:0;background:none;padding:12px 0;gap:8px;flex-wrap:wrap}.sop-foundation.sop-pinwheel-pages .ff-pages button,.sop-foundation.sop-pinwheel-pages .ff-pages a{border:1px solid #8ba4bd;background:#3c526f;border-radius:2px;min-height:37px;padding:8px;transform:rotate(-5deg)}.sop-foundation.sop-pinwheel-pages .ff-pages button:nth-child(even),.sop-foundation.sop-pinwheel-pages .ff-pages a:nth-child(even){transform:rotate(5deg)}.sop-foundation.sop-pinwheel-pages .ff-pages [aria-current]{transform:rotate(0) translateY(-4px)!important;background:#9bb6c9;color:#1d384c;box-shadow:0 5px 0 #162d3e77}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-pinwheel-pages,.sop-foundation.sop-pinwheel-pages *,.sop-foundation.sop-pinwheel-pages::before,.sop-foundation.sop-pinwheel-pages::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-pinwheel-pages{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-pinwheel-pages :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-pinwheel-pages:focus-visible,.sop-foundation.sop-pinwheel-pages :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-pinwheel-pages[data-sop-paused] *,.sop-foundation.sop-pinwheel-pages[data-paused=true] *,.sop-foundation.sop-pinwheel-pages[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

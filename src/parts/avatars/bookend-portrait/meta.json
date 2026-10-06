@@ -1,0 +1,52 @@
+{
+  "id": "bookend-portrait",
+  "name": "Bookend Portrait",
+  "category": "avatars",
+  "tagline": "人物の写真を二つの厚い支柱で支え、名前を下の細い空間へ置く。",
+  "description": "人物の写真を二つの厚い支柱で支え、名前を下の細い空間へ置く。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3194,
+  "version": "1.0.0",
+  "material": "BOOKEND PORTRAIT",
+  "accent": "185,205,194",
+  "componentName": "BookendPortrait",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "avatars"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Bookend Portrait",
+    "人物の写真を二つの厚い支柱で支え、名前を下の細い空間へ置く。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "users",
+      "AvatarUser[]",
+      "id・name・任意のsrc、initials、subtitle、status。名前と在席状態は外部の値。"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "選択するユーザーID。valueを渡すと外部制御。"
+    ],
+    [
+      "interactive",
+      "boolean",
+      "falseで表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(id: string) => void",
+      "クリック時の要求値。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ]
+  ]
+}

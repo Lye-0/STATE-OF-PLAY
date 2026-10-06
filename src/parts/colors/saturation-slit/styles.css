@@ -1,0 +1,9 @@
+@import "../../../shared/signature/color.css";
+/* Saturation Slit — 横に長い色の細窓と、大きなHEXの読取欄を持つ色調整器。 */
+.sop-sig.sop-saturation-slit{--sg-bg:#1c3943;--sg-line:#719eaa;--sg-ink:#d8ece6;--sg-muted:#a0c0c1}.sop-sig.sop-saturation-slit .sg-color-panel{background:#264d55;border:0;border-top:3px solid #8bb0b7;border-bottom:1px solid #82acae;border-radius:0;padding:21px}.sop-sig.sop-saturation-slit .sg-color-workspace{min-height:66px;border-top:1px solid #7a9fa9;border-bottom:1px solid #7a9fa9;padding:5px 0}.sop-sig.sop-saturation-slit .sg-color-sv{height:56px;border-radius:0}.sop-sig.sop-saturation-slit .sg-color-axis{grid-template-columns:32px 1fr 31px;gap:13px;margin:16px 0}.sop-sig.sop-saturation-slit .sg-color-axis input{height:3px;border-radius:0}.sop-sig.sop-saturation-slit .sg-color-entry input[data-hex]{font:24px Consolas;letter-spacing:2px}.sop-sig.sop-saturation-slit .sg-color-palette button{width:22px;height:22px;border-radius:3px}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-saturation-slit,.sop-sig.sop-saturation-slit *,.sop-sig.sop-saturation-slit::before,.sop-sig.sop-saturation-slit::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-sig.sop-saturation-slit{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-saturation-slit :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-sig.sop-saturation-slit:focus-visible,.sop-sig.sop-saturation-slit :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-sig.sop-saturation-slit[data-sop-paused] *,.sop-sig.sop-saturation-slit[data-paused=true] *,.sop-sig.sop-saturation-slit[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+.sop-sig.sop-saturation-slit *{animation-play-state:var(--sg-play,running)!important}

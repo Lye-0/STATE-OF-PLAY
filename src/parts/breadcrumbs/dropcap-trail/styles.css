@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Dropcap Trail — 大きな起点の印から、小さな文字の階層へ進む。 */
+.sop-foundation.sop-dropcap-trail{--ff-accent:#d7b5c5;--ff-panel:#53374a;--ff-base:#362538;--ff-line:#a67b9c}.sop-foundation.sop-dropcap-trail .ff-breadcrumb ol{gap:10px;padding:10px 0;align-items:center;flex-wrap:wrap}.sop-foundation.sop-dropcap-trail .ff-breadcrumb li:first-child{font:italic 20px Georgia;background:#6a455b;padding:15px 12px;border-left:2px solid #cf9bae}.sop-foundation.sop-dropcap-trail .ff-breadcrumb li+li:before{content:"/";font:23px Georgia;color:#9a738c}.sop-foundation.sop-dropcap-trail .ff-breadcrumb li:last-child{border-bottom:1px solid #c29eae;padding-bottom:7px;font-weight:600}.sop-foundation.sop-dropcap-trail .ff-breadcrumb svg{display:none}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-dropcap-trail,.sop-foundation.sop-dropcap-trail *,.sop-foundation.sop-dropcap-trail::before,.sop-foundation.sop-dropcap-trail::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-dropcap-trail{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-dropcap-trail :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-dropcap-trail:focus-visible,.sop-foundation.sop-dropcap-trail :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-dropcap-trail[data-sop-paused] *,.sop-foundation.sop-dropcap-trail[data-paused=true] *,.sop-foundation.sop-dropcap-trail[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

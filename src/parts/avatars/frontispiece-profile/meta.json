@@ -1,0 +1,52 @@
+{
+  "id": "frontispiece-profile",
+  "name": "Frontispiece Profile",
+  "category": "avatars",
+  "tagline": "大きな上の写真窓と、見出しのような署名を二段に組む。",
+  "description": "大きな上の写真窓と、見出しのような署名を二段に組む。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3200,
+  "version": "1.0.0",
+  "material": "FRONTISPIECE PROFILE",
+  "accent": "185,205,194",
+  "componentName": "FrontispieceProfile",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "avatars"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Frontispiece Profile",
+    "大きな上の写真窓と、見出しのような署名を二段に組む。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "users",
+      "AvatarUser[]",
+      "id・name・任意のsrc、initials、subtitle、status。名前と在席状態は外部の値。"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "選択するユーザーID。valueを渡すと外部制御。"
+    ],
+    [
+      "interactive",
+      "boolean",
+      "falseで表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(id: string) => void",
+      "クリック時の要求値。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ]
+  ]
+}

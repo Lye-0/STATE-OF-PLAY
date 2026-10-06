@@ -1,0 +1,12 @@
+.sop-toggle.sop-shoji-toggle{--p:0;position:relative;display:block;flex:none;border:0;padding:0;background:none;color:#e8ede7;cursor:pointer;touch-action:pan-y;border-radius:12px}.sop-toggle.sop-shoji-toggle[aria-checked=true]{--p:1}.sop-toggle.sop-shoji-toggle .switch-art{display:block;position:relative;width:100%;height:100%;pointer-events:none}.sop-toggle.sop-shoji-toggle *{box-sizing:border-box;pointer-events:none}
+/* Shoji Toggle — 木の桟をもつ障子が滑り、奥の灯りを開く。 */
+.sop-toggle.sop-shoji-toggle{width:144px;height:82px}.sop-toggle.sop-shoji-toggle .sj-frame{position:absolute;inset:7px;border:5px solid #6c5240;background:radial-gradient(at 75% 30%,#f2d799,#a17e53);border-radius:3px;box-shadow:0 5px 14px #0005,inset 0 0 12px #0007;overflow:hidden}.sop-toggle.sop-shoji-toggle .sj-leaf{position:absolute;inset:1px 50% 1px 1px;background:#d9d6c6;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:3px;border:3px solid #84694e;transform:translateX(calc(var(--p)*58px));box-shadow:3px 0 4px #0005}.sop-toggle.sop-shoji-toggle .sj-leaf i{background:radial-gradient(#efede3,#c5c5b9);border:1px solid #a39983}.sop-toggle.sop-shoji-toggle .sj-grip{position:absolute;left:48px;top:26px;width:4px;height:11px;border-radius:2px;background:#493b30;transform:translateX(calc(var(--p)*58px))}
+@media(prefers-reduced-motion:reduce){.sop-toggle.sop-shoji-toggle,.sop-toggle.sop-shoji-toggle *,.sop-toggle.sop-shoji-toggle::before,.sop-toggle.sop-shoji-toggle::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-toggle.sop-shoji-toggle{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-toggle.sop-shoji-toggle :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-toggle.sop-shoji-toggle:focus-visible,.sop-toggle.sop-shoji-toggle :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-toggle.sop-shoji-toggle .switch-art *{transition:transform .55s cubic-bezier(.2,.85,.2,1),box-shadow .55s,opacity .55s}
+
+@media(forced-colors:active){.sop-toggle.sop-shoji-toggle::after{content:"OFF";position:absolute;bottom:-20px;left:0;right:0;text-align:center;color:ButtonText;background:Canvas;font:12px system-ui}.sop-toggle.sop-shoji-toggle[aria-checked=true]::after{content:"ON"}}
+
+.sop-toggle.sop-shoji-toggle[data-sop-paused] *,.sop-toggle.sop-shoji-toggle[data-paused=true] *,.sop-toggle.sop-shoji-toggle[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

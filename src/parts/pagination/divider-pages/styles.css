@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Divider Pages — 頁番号と前後の操作を、細い縦線で整理した資料用のページ送り。 */
+.sop-foundation.sop-divider-pages{--ff-accent:#c4bed0;--ff-panel:#403b50;--ff-base:#2d2d3d;--ff-line:#8c849f}.sop-foundation.sop-divider-pages .ff-pages{background:none;border:1px solid #8d859e;border-radius:0;padding:0;gap:0;flex-wrap:wrap}.sop-foundation.sop-divider-pages .ff-pages button,.sop-foundation.sop-divider-pages .ff-pages a{border:0;border-right:1px solid #746d88;background:none;border-radius:0;padding:12px 9px;min-height:43px}.sop-foundation.sop-divider-pages .ff-pages [aria-current]{background:#5d5874;box-shadow:inset 0 -3px #c4b8d3}.sop-foundation.sop-divider-pages .ff-pages button:last-child,.sop-foundation.sop-divider-pages .ff-pages a:last-child{border-right:0}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-divider-pages,.sop-foundation.sop-divider-pages *,.sop-foundation.sop-divider-pages::before,.sop-foundation.sop-divider-pages::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-divider-pages{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-divider-pages :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-divider-pages:focus-visible,.sop-foundation.sop-divider-pages :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-divider-pages[data-sop-paused] *,.sop-foundation.sop-divider-pages[data-paused=true] *,.sop-foundation.sop-divider-pages[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

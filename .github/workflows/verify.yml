@@ -182,6 +182,12 @@ jobs:
       - name: Glass collection React StrictMode and hydration
         if: matrix.suite == 'glass'
         run: npm run test:glass-collection:react
+      - name: Detail appearance and configured exports
+        if: matrix.suite == 'glass'
+        run: npm run test:appearance
+      - name: Independently designed expansion and real React exports
+        if: matrix.suite == 'features'
+        run: npm run test:expansion-30
       - name: Build full source archive
         if: matrix.suite == 'preflight'
         run: npm run package

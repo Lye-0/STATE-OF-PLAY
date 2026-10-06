@@ -1,0 +1,8 @@
+@import "../../../shared/action-button-base.css";
+/* Porcelain Key Button — 小さな磁器のキーが、文字を囲む縁と押し込みの影を持つ。 */
+.sop-action.sop-porcelain-key-button{--sop-action-ink:#475355;--sop-action-accent:#68978e;background:linear-gradient(140deg,#f6f4eb,#becdcb);border:1px solid #d8ece4;border-radius:9px 9px 23px 23px;padding:16px 29px;box-shadow:inset 0 2px #fff8,0 7px 0 #738d89,0 12px 14px #0004;transition:transform .4s,box-shadow .4s}.sop-action.sop-porcelain-key-button .sop-action-art{display:none}.sop-action.sop-porcelain-key-button .sop-action-icon{border-left:1px solid #728a7c66;padding-left:8px;width:26px}.sop-action.sop-porcelain-key-button:active{transform:translateY(5px);box-shadow:inset 0 2px #fff8,0 2px 0 #738d89,0 5px 6px #0004}
+@media(prefers-reduced-motion:reduce){.sop-action.sop-porcelain-key-button,.sop-action.sop-porcelain-key-button *,.sop-action.sop-porcelain-key-button::before,.sop-action.sop-porcelain-key-button::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-action.sop-porcelain-key-button{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-action.sop-porcelain-key-button :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-action.sop-porcelain-key-button:focus-visible,.sop-action.sop-porcelain-key-button :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-action.sop-porcelain-key-button[data-sop-paused] *,.sop-action.sop-porcelain-key-button[data-paused=true] *,.sop-action.sop-porcelain-key-button[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

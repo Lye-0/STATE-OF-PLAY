@@ -1,0 +1,12 @@
+@import "../../../shared/foundation/base.css";
+/* Apron Dropzone — 広い襟元と、下に縫い分けた資料の列を持つ作業台。 */
+.sop-foundation.sop-apron-dropzone{--ff-accent:#d7b7c5;--ff-panel:#543b4e;--ff-base:#37263a;--ff-line:#a07b98}.sop-foundation.sop-apron-dropzone .ff-dropzone{border:1px solid #ae91b1;border-top:15px solid #806487;border-radius:22px 22px 1px 1px;background:#463149;min-height:166px;padding:25px}.sop-foundation.sop-apron-dropzone .ff-upload-symbol{background:#6a4770;border:1px solid #c0a0c4;border-radius:30%;box-shadow:inset 0 2px #e5c4df22}.sop-foundation.sop-apron-dropzone .ff-upload-files li{border:0;border-bottom:1px dashed #ae82a7;border-radius:0;background:none;padding:14px 6px}.sop-foundation.sop-apron-dropzone .ff-dropzone[data-dragging=true]{background:#65496b}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-apron-dropzone,.sop-foundation.sop-apron-dropzone *,.sop-foundation.sop-apron-dropzone::before,.sop-foundation.sop-apron-dropzone::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-apron-dropzone{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-apron-dropzone :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-apron-dropzone:focus-visible,.sop-foundation.sop-apron-dropzone :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-apron-dropzone[data-sop-paused] *,.sop-foundation.sop-apron-dropzone[data-paused=true] *,.sop-foundation.sop-apron-dropzone[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+
+/* Visual review: composition and state separation. */
+.sop-foundation.sop-apron-dropzone .ff-dropzone{padding:21px;min-height:155px;border:0;border-top:8px double var(--ff-line);border-bottom:14px solid var(--ff-line);background:transparent;border-radius:0}.sop-foundation.sop-apron-dropzone .ff-dropzone strong{font:22px Georgia;max-width:150px;line-height:1.2}.sop-foundation.sop-apron-dropzone .ff-upload-symbol{width:44px;height:44px;border-radius:50%;border:3px double var(--ff-line);top:24px;right:20px}.sop-foundation.sop-apron-dropzone [data-upload-limits]{border-top:1px solid var(--ff-line);padding-top:11px;margin-top:26px}

@@ -1,0 +1,52 @@
+{
+  "id": "monogram-command",
+  "name": "Monogram Command",
+  "category": "commands",
+  "description": "大きな検索印と静かな入力面を分け、操作を本文の列で探す。",
+  "designType": "A",
+  "tagline": "大きな検索印と静かな入力面を分け、操作を本文の列で探す。",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3288,
+  "version": "1.0.0",
+  "material": "MONOGRAM COMMAND",
+  "accent": "192,216,201",
+  "componentName": "MonogramCommand",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "commands"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Monogram Command",
+    "大きな検索印と静かな入力面を分け、操作を本文の列で探す。",
+    "NAVIGATOR"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "CommandItem[]",
+      "コマンド、グループ、ショートカット、子階層を指定。"
+    ],
+    [
+      "open / onOpenChange",
+      "boolean / callback",
+      "表示を外部制御。"
+    ],
+    [
+      "onExecute",
+      "(item, signal) => void | false | Promise",
+      "処理中の重複を抑止。falseなら開いたまま。例外はエラー表示。"
+    ],
+    [
+      "hotkey",
+      "boolean",
+      "trueでCtrl/Cmd+Kを登録。ギャラリーではfalse。"
+    ],
+    [
+      "apiRef",
+      "Ref<WorkbenchAPI>",
+      "Reactからopen()/close()を呼べる参照。"
+    ]
+  ]
+}

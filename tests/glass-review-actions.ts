@@ -1,3 +1,4 @@
+import {selectSetting} from './detail-settings.ts';
 import type {Locator,Page} from 'playwright';
 /** Exercise the actual native controls, including surfaces created after expansion. */
 export async function exerciseGlass(page:Page,root:Locator,detail:Locator,category:string,capture:()=>Promise<void>):Promise<string[]> {
@@ -9,7 +10,7 @@ export async function exerciseGlass(page:Page,root:Locator,detail:Locator,catego
  switch(category){
   case 'toggles': case 'buttons': case 'links':await root.click();actions.push('root click');await page.waitForTimeout(category==='buttons'?900:100);await capture();if(category==='toggles'){await root.press('Space');actions.push('Space');}break;
   case 'blocks':await clickAll('button');await capture();break;
-  case 'scrollbars':await root.locator('.sop-scroll-viewport').evaluate(el=>el.scrollTop=el.scrollHeight/2);actions.push('scroll');await detail.locator('#scroll-orientation').selectOption('horizontal');actions.push('horizontal');await capture();await detail.locator('#scroll-orientation').selectOption('vertical');break;
+  case 'scrollbars':await root.locator('.sop-scroll-viewport').evaluate(el=>el.scrollTop=el.scrollHeight/2);actions.push('scroll');await selectSetting(detail.locator('#scroll-orientation'),'horizontal');actions.push('horizontal');await capture();await selectSetting(detail.locator('#scroll-orientation'),'vertical');break;
   case 'textboxes':await fill('input:not([type=hidden]),textarea','日本語の入力を確認');await capture();await fill('input:not([type=hidden]),textarea','');break;
   case 'accordions':await clickAll('.sop-accordion-trigger');await capture();await clickAll('.sop-accordion-trigger');break;
   case 'dropdowns': case 'comboboxes':{

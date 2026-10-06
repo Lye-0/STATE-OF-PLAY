@@ -1,0 +1,58 @@
+{
+  "id": "hinged-case-dialog",
+  "name": "Hinged Case Dialog",
+  "category": "popups",
+  "order": 3049,
+  "version": "1.0.0",
+  "tagline": "蓋の蝶番と内部の仕切りが、確認内容を小さなケースに収める。",
+  "description": "蓋の蝶番と内部の仕切りが、確認内容を小さなケースに収める。",
+  "material": "HINGED CASE DIALOG",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "183,212,198",
+  "designType": "A",
+  "runtime": "Native dialog + CSS / event-driven lifecycle",
+  "componentName": "HingedCaseDialog",
+  "tags": [
+    "EXPANSION-30",
+    "Hinged Case Dialog",
+    "蓋の蝶番と内部の仕切りが、確認内容を小さなケースに収める。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "title / description / kicker",
+      "string",
+      "見出しと補足。dialogのアクセシブル名はtitleへ関連付け。"
+    ],
+    [
+      "children / footer / triggerLabel",
+      "ReactNode",
+      "本文・操作・開くボタンを用途に合わせて変更。"
+    ],
+    [
+      "open / defaultOpen / onOpenChange",
+      "boolean / callback",
+      "外部制御 / 非制御。閉じる要求を外部で拒否できる。"
+    ],
+    [
+      "onClose",
+      "(reason: string) => void",
+      "閉じ終わった理由を通知。通信・保存処理は含まない。"
+    ],
+    [
+      "closeOnBackdrop / closeOnEscape",
+      "boolean",
+      "背景クリック / Escapeで閉じる。既定true。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "開くボタンを無効化。開いたウィンドウの閉じる操作は残す。"
+    ],
+    [
+      "confirmLabel / cancelLabel",
+      "string",
+      "既定フッターの文言。独自footerも指定可能。"
+    ]
+  ]
+}

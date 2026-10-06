@@ -1,0 +1,82 @@
+{
+  "id": "bypass-trail",
+  "name": "Bypass Trail",
+  "category": "breadcrumbs",
+  "order": 3138,
+  "version": "1.0.0",
+  "tagline": "細い迂回線で上位階層を結び、現在地の四角い面へ辿り着く。",
+  "description": "細い迂回線で上位階層を結び、現在地の四角い面へ辿り着く。",
+  "material": "BYPASS TRAIL",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "BypassTrail",
+  "tags": [
+    "EXPANSION-30",
+    "Bypass Trail",
+    "細い迂回線で上位階層を結び、現在地の四角い面へ辿り着く。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "bypass-trail",
+    "kind": "breadcrumbs",
+    "variant": "essential",
+    "label": "あなたが、いまいる場所。",
+    "description": "",
+    "defaultValue": null,
+    "items": [
+      {
+        "value": "home",
+        "label": "Home",
+        "href": "#home"
+      },
+      {
+        "value": "library",
+        "label": "Library",
+        "href": "#library"
+      },
+      {
+        "value": "objects",
+        "label": "Objects",
+        "href": "#objects"
+      },
+      {
+        "value": "materials",
+        "label": "Materials",
+        "href": "#materials"
+      },
+      {
+        "value": "paper",
+        "label": "Paper"
+      }
+    ]
+  }
+}

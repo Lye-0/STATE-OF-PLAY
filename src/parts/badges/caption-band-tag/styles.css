@@ -1,0 +1,15 @@
+@import "../../../shared/foundation/base.css";
+/* Caption Band Tag — ラベルの下辺に細い番号帯を載せ、情報を二段で読む。 */
+.sop-foundation.sop-caption-band-tag{--ff-accent:#4f7468;--ff-ink:#354d42;--ff-muted:#556457;--ff-panel:#e0e7d4;--ff-base:#d5e0c7;--ff-line:#98b087;color-scheme:light}.sop-foundation.sop-caption-band-tag .ff-tag{background:#e0e7d4;border:1px solid #97b084;border-radius:1px;padding:10px 12px 16px;position:relative;gap:12px}.sop-foundation.sop-caption-band-tag .ff-tag small{position:absolute;right:4px;bottom:2px;background:#a8be99;color:#334c38;padding:1px 7px;font:7px Consolas;letter-spacing:1px}.sop-foundation.sop-caption-band-tag .ff-tag[data-selected=true]{background:#c2d6b2;border-bottom:3px solid #608657}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-caption-band-tag,.sop-foundation.sop-caption-band-tag *,.sop-foundation.sop-caption-band-tag::before,.sop-foundation.sop-caption-band-tag::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-caption-band-tag{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-caption-band-tag :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-caption-band-tag:focus-visible,.sop-foundation.sop-caption-band-tag :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-caption-band-tag{background:var(--ff-panel);padding:15px;border-radius:4px}
+
+.sop-foundation.sop-caption-band-tag :is([data-sg-error],[data-upload-error],.sg-wizard-error,[data-danger=true]){color:#8a3f46}
+
+.sop-foundation.sop-caption-band-tag[data-sop-paused] *,.sop-foundation.sop-caption-band-tag[data-paused=true] *,.sop-foundation.sop-caption-band-tag[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+/* Readable selected labels on the light surface. */
+.sop-foundation.sop-caption-band-tag .ff-tag[data-selected=true]{color:var(--ff-ink)}

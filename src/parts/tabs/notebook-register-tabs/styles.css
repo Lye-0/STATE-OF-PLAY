@@ -1,0 +1,9 @@
+@import '../../../shared/selection-base.css';
+@import '../../../shared/selection-content.css';
+/* Notebook Register Tabs — 縦の登録番号と横の見出しをずらし、現在の資料を示す。 */
+.sop-choice.sop-notebook-register-tabs{--choice-base:#e7e4db;--choice-muted:#565e61;--choice-on:#203740;--choice-accent:#415d69;--choice-radius:0}.sop-choice.sop-notebook-register-tabs>.sop-choice-list{background:#e7e4db;border:1px solid #88969b;padding:4px;gap:1px}.sop-choice.sop-notebook-register-tabs .sop-choice-marker{display:none}.sop-choice.sop-notebook-register-tabs .sop-choice-item{border-right:1px solid #929d9e;gap:8px;align-items:baseline;padding:12px 9px}.sop-choice.sop-notebook-register-tabs .sop-choice-index{display:block;writing-mode:vertical-rl;font:9px Consolas}.sop-choice.sop-notebook-register-tabs .sop-choice-item[data-selected=true]{background:#c8d2d2;border-bottom:4px solid #577983}.sop-choice.sop-notebook-register-tabs .sop-choice-panel{background:#25343c;border-radius:0;border-top:0}
+@media(prefers-reduced-motion:reduce){.sop-choice.sop-notebook-register-tabs,.sop-choice.sop-notebook-register-tabs *,.sop-choice.sop-notebook-register-tabs::before,.sop-choice.sop-notebook-register-tabs::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-choice.sop-notebook-register-tabs{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-choice.sop-notebook-register-tabs :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-choice.sop-notebook-register-tabs:focus-visible,.sop-choice.sop-notebook-register-tabs :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-choice.sop-notebook-register-tabs[data-sop-paused] *,.sop-choice.sop-notebook-register-tabs[data-paused=true] *,.sop-choice.sop-notebook-register-tabs[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

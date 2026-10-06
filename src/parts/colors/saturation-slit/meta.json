@@ -1,0 +1,52 @@
+{
+  "id": "saturation-slit",
+  "name": "Saturation Slit",
+  "category": "colors",
+  "tagline": "横に長い色の細窓と、大きなHEXの読取欄を持つ色調整器。",
+  "description": "横に長い色の細窓と、大きなHEXの読取欄を持つ色調整器。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3220,
+  "version": "1.0.0",
+  "material": "SATURATION SLIT",
+  "accent": "185,205,194",
+  "componentName": "SaturationSlit",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "colors"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Saturation Slit",
+    "横に長い色の細窓と、大きなHEXの読取欄を持つ色調整器。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "string",
+      "#RGBまたは#RRGGBB。外部へは#RRGGBBの大文字。"
+    ],
+    [
+      "palette",
+      "string[]",
+      "色見本。"
+    ],
+    [
+      "name",
+      "string",
+      "フォームで送信する値の名前。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "入力操作を停止。"
+    ],
+    [
+      "onValueChange",
+      "(hex: string) => void",
+      "有効な色のみ通知。透明度はこの版では扱わない。"
+    ]
+  ]
+}

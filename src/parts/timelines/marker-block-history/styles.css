@@ -1,0 +1,9 @@
+@import "../../../shared/signature/timeline.css";
+/* Marker Block History — 現在の記録だけに厚い標識を置き、その他の出来事を細い行に保つ。 */
+.sop-sig.sop-marker-block-history{--sg-a:#c5cfa9;--sg-line:#8d9e73;--sg-bg:#35472d;--sg-muted:#b3c09a}.sop-sig.sop-marker-block-history .sg-timeline{padding:23px 11px;background:#304229;border:1px solid #8b9f71;border-radius:0}.sop-sig.sop-marker-block-history .sg-event{grid-template-columns:44px 1fr;padding:10px 0 16px 0;gap:14px;border-top:1px solid #8ba36d66}.sop-sig.sop-marker-block-history .sg-event-route{display:none}.sop-sig.sop-marker-block-history .sg-event-time{font:12px Georgia;letter-spacing:.5px}.sop-sig.sop-marker-block-history .sg-event[data-status=active]{border-left:10px solid #b4c78c;padding-left:13px;background:#4f6740;border-top:0}.sop-sig.sop-marker-block-history .sg-event[data-status=active] .sg-event-status{background:#8ea867;color:#213920;padding:4px 6px}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-marker-block-history,.sop-sig.sop-marker-block-history *,.sop-sig.sop-marker-block-history::before,.sop-sig.sop-marker-block-history::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-sig.sop-marker-block-history{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-marker-block-history :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-sig.sop-marker-block-history:focus-visible,.sop-sig.sop-marker-block-history :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-sig.sop-marker-block-history[data-sop-paused] *,.sop-sig.sop-marker-block-history[data-paused=true] *,.sop-sig.sop-marker-block-history[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+.sop-sig.sop-marker-block-history *{animation-play-state:var(--sg-play,running)!important}

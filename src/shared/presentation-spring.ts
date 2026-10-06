@@ -22,7 +22,11 @@ export function presentationSpring<T extends Record<string,number>>(root:HTMLEle
   media.addEventListener('change',snap,{signal:life.signal});document.addEventListener('visibilitychange',()=>{if(document.hidden)snap();},{signal:life.signal});
   return {
     values, get reduced(){return media.matches;},
-    to(next:Partial<T>,immediate=false){if(dead)return;let changed=false;for(const k of keys)if(typeof next[k]==='number'&&Number.isFinite(next[k])&&targets[k]!==next[k]){targets[k]=next[k] as T[keyof T];changed=true;}if(immediate||media.matches||document.hidden||!visible)snap();else if(changed)schedule();},
+    to(next:Partial<T>,immediate=false){if(dead)return;
+      // A popup can become visible before IntersectionObserver delivers its next entry.
+      // A real first pointer event must ease, rather than use the stale hidden-state snap.
+      if(!visible&&root.isConnected){const rect=root.getBoundingClientRect();visible=rect.width>0&&rect.height>0&&rect.bottom>0&&rect.top<innerHeight&&rect.right>0&&rect.left<innerWidth&&getComputedStyle(root).visibility==='visible';}
+      let changed=false;for(const k of keys)if(typeof next[k]==='number'&&Number.isFinite(next[k])&&targets[k]!==next[k]){targets[k]=next[k] as T[keyof T];changed=true;}if(immediate||media.matches||document.hidden||!visible)snap();else if(changed)schedule();},
     pulse(key:keyof T,amount=1){if(dead||media.matches||document.hidden||!visible)return;values[key]=amount as T[keyof T];targets[key]=0 as T[keyof T];velocities[key]=0 as T[keyof T];draw();schedule();},
     snap,destroy(){dead=true;cancelAnimationFrame(frame);frame=0;observer?.disconnect();life.abort();}
   };

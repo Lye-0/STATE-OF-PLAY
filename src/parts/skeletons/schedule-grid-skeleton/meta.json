@@ -1,0 +1,52 @@
+{
+  "id": "schedule-grid-skeleton",
+  "name": "Schedule Grid Skeleton",
+  "category": "skeletons",
+  "tagline": "曜日の帯と七つの列を、予定表の読込み中の区画として示す。",
+  "description": "曜日の帯と七つの列を、予定表の読込み中の区画として示す。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3228,
+  "version": "1.0.0",
+  "material": "SCHEDULE GRID SKELETON",
+  "accent": "185,205,194",
+  "componentName": "ScheduleGridSkeleton",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "skeletons"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Schedule Grid Skeleton",
+    "曜日の帯と七つの列を、予定表の読込み中の区画として示す。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "loading",
+      "boolean",
+      "実際の読み込み状態。自動で成功にはしない。"
+    ],
+    [
+      "rows",
+      "number",
+      "2〜8行のプレースホルダー。"
+    ],
+    [
+      "label",
+      "string",
+      "読み上げ用の待機ラベル。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "動きを一時停止。"
+    ],
+    [
+      "children",
+      "ReactNode",
+      "読み込み後に表示する実際の内容。"
+    ]
+  ]
+}

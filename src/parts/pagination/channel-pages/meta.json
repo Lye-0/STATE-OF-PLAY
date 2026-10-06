@@ -1,0 +1,57 @@
+{
+  "id": "channel-pages",
+  "name": "Channel Pages",
+  "category": "pagination",
+  "order": 3148,
+  "version": "1.0.0",
+  "tagline": "刻まれた連続溝の中で、現在の頁を金属の小窓として読む。",
+  "description": "刻まれた連続溝の中で、現在の頁を金属の小窓として読む。",
+  "material": "CHANNEL PAGES",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "ChannelPages",
+  "tags": [
+    "EXPANSION-30",
+    "Channel Pages",
+    "刻まれた連続溝の中で、現在の頁を金属の小窓として読む。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "channel-pages",
+    "kind": "pagination",
+    "variant": "essential",
+    "label": "コレクションをめくる",
+    "description": "",
+    "defaultValue": 4,
+    "totalPages": 12
+  }
+}

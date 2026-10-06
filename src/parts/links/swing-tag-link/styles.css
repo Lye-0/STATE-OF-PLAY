@@ -1,0 +1,8 @@
+@import "../../../shared/navigation-link-base.css";
+/* Swing Tag Link — 紐でつないだ小さな先端タグが、触れると外向きに揺れる。 */
+.sop-link.sop-swing-tag-link{--sop-link-ink:#e9d2c7;padding:11px 0;gap:30px}.sop-link.sop-swing-tag-link .sop-link-icon{border:1px solid #b58f7c;background:#604638;border-radius:1px;width:35px;height:35px;padding:9px;transform-origin:0 50%;transform:rotate(12deg);transition:transform .6s}.sop-link.sop-swing-tag-link .sop-link-label{border-bottom:1px dotted #ac7f6e;padding-bottom:7px}.sop-link.sop-swing-tag-link:hover .sop-link-icon{transform:rotate(-6deg)}
+@media(prefers-reduced-motion:reduce){.sop-link.sop-swing-tag-link,.sop-link.sop-swing-tag-link *,.sop-link.sop-swing-tag-link::before,.sop-link.sop-swing-tag-link::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-link.sop-swing-tag-link{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-link.sop-swing-tag-link :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-link.sop-swing-tag-link:focus-visible,.sop-link.sop-swing-tag-link :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-link.sop-swing-tag-link[data-sop-paused] *,.sop-link.sop-swing-tag-link[data-paused=true] *,.sop-link.sop-swing-tag-link[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

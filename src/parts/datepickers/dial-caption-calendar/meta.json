@@ -1,0 +1,57 @@
+{
+  "id": "dial-caption-calendar",
+  "name": "Dial Caption Calendar",
+  "category": "datepickers",
+  "order": 3181,
+  "version": "1.0.0",
+  "tagline": "時刻の読取りを円い小窓へ置き、候補の列をその下に揃える。",
+  "description": "時刻の読取りを円い小窓へ置き、候補の列をその下に揃える。",
+  "material": "DIAL CAPTION CALENDAR",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "DialCaptionCalendar",
+  "tags": [
+    "EXPANSION-30",
+    "Dial Caption Calendar",
+    "時刻の読取りを円い小窓へ置き、候補の列をその下に揃える。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "dial-caption-calendar",
+    "kind": "datepickers",
+    "variant": "essential",
+    "label": "次の時間を、予約する。",
+    "description": "",
+    "defaultValue": "10:15",
+    "mode": "time"
+  }
+}

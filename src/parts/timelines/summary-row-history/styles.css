@@ -1,0 +1,9 @@
+@import "../../../shared/signature/timeline.css";
+/* Summary Row History — 時刻・見出し・状態を三列に揃え、必要な記録だけを開いて読む。 */
+.sop-sig.sop-summary-row-history{--sg-a:#b8cddc;--sg-line:#7f9db4;--sg-bg:#283f55;--sg-muted:#afc0d2}.sop-sig.sop-summary-row-history .sg-timeline{padding:19px 11px;background:#2a425b;border:1px solid #7895af;border-radius:5px}.sop-sig.sop-summary-row-history .sg-event{grid-template-columns:43px 1fr;padding:12px 0 14px;gap:11px;border-bottom:1px solid #708ca388}.sop-sig.sop-summary-row-history .sg-event-route{display:none}.sop-sig.sop-summary-row-history .sg-event-time{font:10px Consolas;padding-top:8px}.sop-sig.sop-summary-row-history .sg-event summary{min-height:38px}.sop-sig.sop-summary-row-history .sg-event-body{border-left:2px solid #6f91ac;padding-left:12px;margin-top:5px}.sop-sig.sop-summary-row-history .sg-event[data-status=active]{background:#415f76;padding-left:8px;padding-right:8px;border-radius:3px}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-summary-row-history,.sop-sig.sop-summary-row-history *,.sop-sig.sop-summary-row-history::before,.sop-sig.sop-summary-row-history::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-sig.sop-summary-row-history{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-summary-row-history :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-sig.sop-summary-row-history:focus-visible,.sop-sig.sop-summary-row-history :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-sig.sop-summary-row-history[data-sop-paused] *,.sop-sig.sop-summary-row-history[data-paused=true] *,.sop-sig.sop-summary-row-history[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+.sop-sig.sop-summary-row-history *{animation-play-state:var(--sg-play,running)!important}

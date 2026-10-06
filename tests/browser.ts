@@ -1,3 +1,5 @@
+import {galleryCount} from './gallery-counts.ts';
+import {selectSetting} from './detail-settings.ts';
 import {galleryReady,selectCategory} from './gallery-ready.ts';
 /** The default run tests real Vite over HTTP. SOP_TEST_MODE=offline is an explicit, reported test adapter. */
 import assert from 'node:assert/strict';
@@ -36,7 +38,7 @@ for(const part of browserParts){
  for(const [name,code]of Object.entries(part.preview))write(`.test-output/exports/${part.id}/preview/${name}`,code);
  for(const layout of layouts)for(const format of FORMATS)for(const file of getDelivery(part,format,layout).files)write(`.test-output/exports/${part.id}/${layout}/${format}/${file.name}`,file.code);
 }
-async function run(name:string,action:()=>Promise<void>){await action();results.push(name);console.log('PASS '+name);}
+async function run(name:string,action:()=>Promise<void>){if(process.env.SOP_BROWSER_ONLY&&!new RegExp(process.env.SOP_BROWSER_ONLY).test(name)){console.log('SKIP '+name);return;}await action();results.push(name);console.log('PASS '+name);}
 let browser: Browser|undefined;let closeServer:(()=>Promise<void>)|undefined;let page:Page;let url='';
 const memory=new Map<string,string>();
 try{
@@ -87,23 +89,23 @@ try{
    },{modules,entry:script.name});
   }
  }
- await load();await galleryReady(page);await page.locator('[data-category="all"]').click();await galleryReady(page,true);
- await run(`Gallery: ${catalog.parts.length} parts, no runtime errors`,async()=>{assert.equal(await page.locator('[data-part]').count(),catalog.parts.length);assert.deepEqual(errors,[]);});
+ await load();await galleryReady(page);await page.locator('[data-category="all"]').click();await galleryReady(page,!process.env.SOP_BROWSER_ONLY||new RegExp(process.env.SOP_BROWSER_ONLY).test('Gallery')||new RegExp(process.env.SOP_BROWSER_ONLY).test('A/B and category filters'));
+ await run(`Gallery: ${catalog.parts.length} parts, no runtime errors`,async()=>{assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?catalog.parts:undefined));assert.deepEqual(errors,[]);});
  await run('A/B and category filters intersect, counts remain correct, and the selector stays in sync',async()=>{
   for(const category of ['all','toggles','blocks','scrollbars','dropdowns','accordions','textboxes']){
    await page.locator(`[data-category="${category}"]`).click();await galleryReady(page,true);
    for(const kind of ['A','B','all']){
     await page.locator(`[data-design-filter="${kind}"]`).click();await galleryReady(page,true);
     const expected=catalog.parts.filter(p=>(category==='all'||p.category===category)&&(kind==='all'||p.designType===kind));
-    assert.equal(await page.locator('[data-part]').count(),expected.length);
+    assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?catalog.parts:undefined));
     assert.equal(await page.locator(`[data-design-filter="${kind}"]`).getAttribute('aria-pressed'),'true');
-    for(const part of expected)assert.equal(await page.locator(`[data-part="${part.id}"]`).getAttribute('data-design'),part.designType);
+    const visible=await page.locator('[data-part]').evaluateAll(nodes=>Object.fromEntries(nodes.map(node=>[(node as HTMLElement).dataset.part,(node as HTMLElement).dataset.design])));for(const part of expected)assert.equal(visible[part.id],part.designType);console.log('  verified filter '+category+' / '+kind+' = '+expected.length);
    }
   }
-  await selectCategory(page,'numbers');assert.equal(await page.locator('[data-part]').count(),catalog.parts.filter(part=>part.category==='numbers').length);
+  await selectCategory(page,'numbers');assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?catalog.parts:undefined));
   assert.equal(await page.locator('[data-category="numbers"]').getAttribute('aria-selected'),'true');
   // Full-list counts were checked above. Keep the ordinary first page mounted
-  // for interaction checks; unpausing 825 previews on every dialog close is not representative.
+  // for interaction checks; unpausing 733 previews on every dialog close is not representative.
   await selectCategory(page,'all');await galleryReady(page);
   assert.equal(await page.locator('[data-part]').count(),24);
  });
@@ -195,15 +197,17 @@ try{
    await page.locator('.close-detail').evaluate(element=>(element as HTMLButtonElement).click());await page.locator('#part-details[open]').waitFor({state:'hidden'});console.log('  verified '+part.id+'; '+count+' sources');
   }assert.equal(count,browserParts.reduce((n,p)=>n+Object.values(p.files).flat().length*2,0));
   await page.emulateMedia({reducedMotion:'no-preference'});
-  await selectCategory(page,'toggles');await page.locator('[data-open="chrome"]').click();await galleryReady(page,true);await page.locator('[data-format="tsx"]').click();await page.locator('#export-layout').selectOption('portable');
-  await page.locator('[data-file="chrome-toggle/internal/motion.ts"]').click();await page.locator('#export-layout').selectOption('original');assert.equal(await page.locator('.current-path').textContent(),'src/shared');
-  await page.locator('[data-format="jsx"]').click();assert.equal(await page.locator('.current-file').textContent(),'motion.js');await page.locator('#export-layout').selectOption('portable');assert.equal(await page.locator('.current-path').textContent(),'chrome-toggle/internal');await page.locator('.close-detail').click();
+  await selectCategory(page,'toggles');await page.locator('[data-open="chrome"]').click();await galleryReady(page,true);await page.locator('[data-format="tsx"]').click();await selectSetting(page.locator('#export-layout'),'portable');
+  await page.locator('[data-file="chrome-toggle/internal/motion.ts"]').click();await selectSetting(page.locator('#export-layout'),'original');assert.equal(await page.locator('.current-path').textContent(),'src/shared');
+  await page.locator('[data-format="jsx"]').click();assert.equal(await page.locator('.current-file').textContent(),'motion.js');await selectSetting(page.locator('#export-layout'),'portable');assert.equal(await page.locator('.current-path').textContent(),'chrome-toggle/internal');await page.locator('.close-detail').click();
  });
  await run('Downloaded ZIP and CLI share exact files, README, prompt, manifest in both layouts and modes',async()=>{
+   if(await page.locator('#part-details[open]').count())await page.locator('.close-detail').click();
+   await selectCategory(page,'toggles');await page.locator('[data-design-filter=all]').click();await galleryReady(page);
   const part=catalog.parts.find(p=>p.id==='chrome')!;
   await page.locator('[data-open="chrome"]').click();await galleryReady(page,true);await page.locator('[data-format="js"]').click();
   for(const layout of layouts){
-   await page.locator('#export-layout').selectOption(layout);await page.locator('[data-detail-tab="prompt"]').click();await page.locator('[data-prompt-mode="full"]').click();
+   await selectSetting(page.locator('#export-layout'),layout);await page.locator('[data-detail-tab="prompt"]').click();await page.locator('[data-prompt-mode="full"]').click();
    const prompt=await page.locator('#prompt-text').inputValue();assert.equal(prompt,buildPrompt(part,'js',layout));
    await page.locator('#download-part').click();
    for(const mode of ['source','text']){
@@ -215,17 +219,22 @@ try{
    }
    await page.keyboard.press('Escape');assert.equal(await page.locator('#part-details').getAttribute('open'),'');
   }
-  await page.locator('#export-layout').selectOption('portable');await page.keyboard.press('Escape');
+  await selectSetting(page.locator('#export-layout'),'portable');await page.keyboard.press('Escape');
  });
  await run('Guide and AI prompt remain copyable in every export format',async()=>{
+  await page.context().grantPermissions(['clipboard-read','clipboard-write']);
+  if(await page.locator('#part-details[open]').count())await page.locator('.close-detail').click();
+  await selectCategory(page,'toggles');
   await page.locator('[data-open="chrome"]').click();await galleryReady(page,true);
-  for(const format of FORMATS){await page.locator(`[data-format="${format}"]`).click();await page.locator('[data-detail-tab="guide"]').click();assert.ok(await page.locator('#copy-example').isVisible());await page.locator('#copy-example').click();assert.match(await page.locator('#copy-example').innerText(),/コピー済み/);
+  for(const format of FORMATS){await page.locator(`[data-format="${format}"]`).click();await page.locator('[data-detail-tab="guide"]').click();assert.ok(await page.locator('#copy-example').isVisible());await page.locator('#copy-example').click();await page.waitForFunction(()=>document.querySelector('#copy-example')?.textContent?.includes('コピー済み'));assert.match(await page.locator('#copy-example').innerText(),/コピー済み/);
    await page.locator('[data-detail-tab="prompt"]').click();await page.locator('[data-prompt-mode="full"]').click();const full=await page.locator('#prompt-text').inputValue();assert.ok(full.includes('chrome-toggle/internal/'));assert.ok(full.includes('既存ファイル'));assert.ok(full.includes('参照できない場合'));assert.equal(full,buildPrompt(catalog.parts.find(p=>p.id==='chrome')!,format,'portable'));await page.locator('[data-prompt-mode="spec"]').click();assert.ok((await page.locator('#prompt-text').inputValue()).length<full.length);
   }await page.locator('[data-detail-tab="code"]').click();await page.locator('.close-detail').click();
  });
  await run('Mobile 320/390/768: no overflow, usable code and file picker',async()=>{
+  if(await page.locator('#part-details[open]').count())await page.locator('.close-detail').click();
+  await selectCategory(page,'toggles');await page.locator('[data-design-filter=all]').click();await galleryReady(page);
   for(const width of [320,390,768]){await page.setViewportSize({width,height:844});await page.locator('[data-open="chrome"]').click();await galleryReady(page,true);await page.locator('[data-format="tsx"]').click();assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));assert.ok(await page.locator('.download-file').isVisible());assert.ok((await page.locator('.code-scroll').boundingBox())!.width>190);
-   if(width<600){await page.locator('.mobile-file-picker select').selectOption('chrome-toggle/internal/motion.ts');assert.equal(await page.locator('.current-file').textContent(),'motion.ts');}
+   if(width<600){await selectSetting(page.locator('.mobile-file-picker select'),'chrome-toggle/internal/motion.ts');assert.equal(await page.locator('.current-file').textContent(),'motion.ts');}
    if(width===390)await page.screenshot({path:path.join(OUT,'mobile-390.png')});await page.locator('.close-detail').click();
   }
  });
@@ -287,7 +296,7 @@ try{
    const production=await vite.preview({root:ROOT,base:'/STATE-OF-PLAY/',preview:{port:0,host:'127.0.0.1'}});
    try{
     const productionUrl = requireLocalServerUrl(production, 'Vite production preview');
-    await page.goto(productionUrl,{waitUntil:'domcontentloaded',timeout:180000});await galleryReady(page);assert.equal(await page.locator('[data-part]').count(),catalog.parts.filter(p=>p.category==='toggles').length);
+    await page.goto(productionUrl,{waitUntil:'domcontentloaded',timeout:180000});await galleryReady(page);assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?catalog.parts:undefined));
     await page.locator('[data-open="chrome"]').click();await galleryReady(page,true);assert.match(await page.locator('.editor code').innerText(),/ChromeToggle/);
    }finally{await new Promise<void>((resolve,reject)=>production.httpServer.close((error?: Error)=>error?reject(error):resolve()));}
   });

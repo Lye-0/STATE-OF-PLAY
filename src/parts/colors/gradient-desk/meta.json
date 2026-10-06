@@ -1,0 +1,52 @@
+{
+  "id": "gradient-desk",
+  "name": "Gradient Desk",
+  "category": "colors",
+  "tagline": "大きな彩度面と、二本の独立した読取り帯を持つ横長の色机。",
+  "description": "大きな彩度面と、二本の独立した読取り帯を持つ横長の色机。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3223,
+  "version": "1.0.0",
+  "material": "GRADIENT DESK",
+  "accent": "185,205,194",
+  "componentName": "GradientDesk",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "colors"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Gradient Desk",
+    "大きな彩度面と、二本の独立した読取り帯を持つ横長の色机。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "string",
+      "#RGBまたは#RRGGBB。外部へは#RRGGBBの大文字。"
+    ],
+    [
+      "palette",
+      "string[]",
+      "色見本。"
+    ],
+    [
+      "name",
+      "string",
+      "フォームで送信する値の名前。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "入力操作を停止。"
+    ],
+    [
+      "onValueChange",
+      "(hex: string) => void",
+      "有効な色のみ通知。透明度はこの版では扱わない。"
+    ]
+  ]
+}

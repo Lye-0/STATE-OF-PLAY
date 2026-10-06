@@ -1,0 +1,11 @@
+@import "../../../shared/signature/color.css";
+/* Tint Contact Sheet — 広い色見本の列と、精密な色面を資料のように二段に分ける。 */
+.sop-sig.sop-tint-contact-sheet{--sg-bg:#e0e4c8;--sg-ink:#3d5136;--sg-muted:#586248;--sg-a:#789669;--sg-line:#9bac81;color-scheme:light}.sop-sig.sop-tint-contact-sheet .sg-color-panel{display:flex;flex-direction:column;background:#e4e8d0;border:1px solid #a5b88b;border-radius:0;padding:20px}.sop-sig.sop-tint-contact-sheet .sg-color-heading{order:0}.sop-sig.sop-tint-contact-sheet .sg-color-workspace{order:1;min-height:87px;margin-bottom:12px}.sop-sig.sop-tint-contact-sheet .sg-color-sv{height:87px;border-radius:0;border:3px solid #aabc89}.sop-sig.sop-tint-contact-sheet .sg-color-palette{order:2;display:flex;gap:3px;margin:5px 0 16px}.sop-sig.sop-tint-contact-sheet .sg-color-palette button{flex:1;height:43px;border-radius:0;border:3px solid #eef0d9;border-bottom-width:10px}.sop-sig.sop-tint-contact-sheet .sg-color-controls{order:3}.sop-sig.sop-tint-contact-sheet .sg-color-entry{order:4}.sop-sig.sop-tint-contact-sheet [data-sg-error]{order:5}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-tint-contact-sheet,.sop-sig.sop-tint-contact-sheet *,.sop-sig.sop-tint-contact-sheet::before,.sop-sig.sop-tint-contact-sheet::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-sig.sop-tint-contact-sheet{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-tint-contact-sheet :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-sig.sop-tint-contact-sheet:focus-visible,.sop-sig.sop-tint-contact-sheet :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-sig.sop-tint-contact-sheet :is([data-sg-error],[data-upload-error],.sg-wizard-error,[data-danger=true]){color:#8a3f46}
+
+.sop-sig.sop-tint-contact-sheet[data-sop-paused] *,.sop-sig.sop-tint-contact-sheet[data-paused=true] *,.sop-sig.sop-tint-contact-sheet[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+.sop-sig.sop-tint-contact-sheet *{animation-play-state:var(--sg-play,running)!important}

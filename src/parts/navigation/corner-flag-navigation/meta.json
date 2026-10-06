@@ -1,0 +1,52 @@
+{
+  "id": "corner-flag-navigation",
+  "name": "Corner Flag Navigation",
+  "category": "navigation",
+  "description": "小さな角旗をもつ行き先面が、現在の選択を右端で示す。",
+  "designType": "A",
+  "tagline": "小さな角旗をもつ行き先面が、現在の選択を右端で示す。",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3281,
+  "version": "1.0.0",
+  "material": "CORNER FLAG NAVIGATION",
+  "accent": "192,216,201",
+  "componentName": "CornerFlagNavigation",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "navigation"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Corner Flag Navigation",
+    "小さな角旗をもつ行き先面が、現在の選択を右端で示す。",
+    "NAVIGATOR"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "NavigationItem[]",
+      "ラベル・href・子リンク・アイコン・バッジ。"
+    ],
+    [
+      "layout",
+      "header | sidebar | dock | mobile",
+      "置き場所に合うレイアウトを指定。"
+    ],
+    [
+      "active / onActiveChange",
+      "string / callback",
+      "現在地のID。リンクを移動して外部状態から反映可能。"
+    ],
+    [
+      "onNavigate",
+      "(item, event) => void | false",
+      "通常はネイティブリンク。falseで既定移動を止めルーターへ接続。"
+    ],
+    [
+      "open / onOpenChange",
+      "boolean / callback",
+      "モバイルナビゲーションの表示を制御。"
+    ]
+  ]
+}

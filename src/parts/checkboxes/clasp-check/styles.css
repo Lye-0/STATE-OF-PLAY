@@ -1,0 +1,8 @@
+@import "../../../shared/checkbox-base.css";
+/* Clasp Check — 四角い留め具が押さえ込まれ、確認した項目を固定する。 */
+.sop-check.sop-clasp-check{--cb-bg:#302c28;--cb-ink:#e9dcc9;--cb-accent:#d9bb89;--cb-box:#534639;--cb-line:#a78c6a;--cb-radius:3px;--cb-size:28px;border-left:5px solid #84715b;padding:17px;background:#302c28}.sop-check.sop-clasp-check .sop-check-box{border:3px solid #ac9578;border-radius:3px;box-shadow:0 4px 0 #1b1917,inset 0 1px #ead1a844;transform:rotate(-3deg)}.sop-check.sop-clasp-check input:checked~.sop-check-box{transform:rotate(0) translateY(3px);box-shadow:0 1px 0 #1b1917}.sop-check.sop-clasp-check .sop-check-aura{display:none}
+@media(prefers-reduced-motion:reduce){.sop-check.sop-clasp-check,.sop-check.sop-clasp-check *,.sop-check.sop-clasp-check::before,.sop-check.sop-clasp-check::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-check.sop-clasp-check{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-check.sop-clasp-check :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-check.sop-clasp-check:focus-visible,.sop-check.sop-clasp-check :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-check.sop-clasp-check[data-sop-paused] *,.sop-check.sop-clasp-check[data-paused=true] *,.sop-check.sop-clasp-check[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

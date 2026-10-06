@@ -1,0 +1,52 @@
+{
+  "id": "folding-map-history",
+  "name": "Folding Map History",
+  "category": "timelines",
+  "tagline": "時刻を左端の折り目へ沿わせ、内容を段のある地図面へ置く。",
+  "description": "時刻を左端の折り目へ沿わせ、内容を段のある地図面へ置く。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3241,
+  "version": "1.0.0",
+  "material": "FOLDING MAP HISTORY",
+  "accent": "185,205,194",
+  "componentName": "FoldingMapHistory",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "timelines"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Folding Map History",
+    "時刻を左端の折り目へ沿わせ、内容を段のある地図面へ置く。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "TimelineItem[]",
+      "id・title・description・date・dateTime・status・hrefなど。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "詳細を開くID。expandedで外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(ids: string[]) => void",
+      "開閉したIDを通知。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "詳細の開閉を無効にする。"
+    ],
+    [
+      "label",
+      "string",
+      "履歴全体の名前。"
+    ]
+  ]
+}

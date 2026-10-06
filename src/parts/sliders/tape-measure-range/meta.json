@@ -1,0 +1,61 @@
+{
+  "id": "tape-measure-range",
+  "name": "Tape Measure Range",
+  "category": "sliders",
+  "order": 3065,
+  "version": "1.0.0",
+  "tagline": "伸びる巻尺の目盛りを、平たい黄色のつまみで読める。",
+  "description": "伸びる巻尺の目盛りを、平たい黄色のつまみで読める。",
+  "material": "TAPE MEASURE RANGE",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "TapeMeasureRange",
+  "tags": [
+    "EXPANSION-30",
+    "Tape Measure Range",
+    "伸びる巻尺の目盛りを、平たい黄色のつまみで読める。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "tape-measure-range",
+    "kind": "sliders",
+    "variant": "essential",
+    "label": "値を、ちょうどよく。",
+    "description": "",
+    "defaultValue": 62,
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "unit": "%",
+    "range": false
+  }
+}

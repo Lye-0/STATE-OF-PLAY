@@ -1,0 +1,43 @@
+{
+  "id": "caption-surface",
+  "name": "Caption Surface",
+  "category": "blocks",
+  "order": 3009,
+  "version": "1.0.0",
+  "tagline": "狭いキャプション帯と広い本文を分けた、資料用のカード。",
+  "description": "狭いキャプション帯と広い本文を分けた、資料用のカード。",
+  "material": "CAPTION SURFACE",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "212,216,211",
+  "componentName": "CaptionSurface",
+  "designType": "B",
+  "runtime": "CSS only",
+  "tags": [
+    "EXPANSION-30",
+    "Caption Surface",
+    "狭いキャプション帯と広い本文を分けた、資料用のカード。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "文章、画像、フォームなどの中身。展示サンプルは必須ではありません。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "配置と外側のサイズを指定します。"
+    ],
+    [
+      "--sop-padding",
+      "CSSの長さ",
+      "本文領域の余白を調整します。"
+    ],
+    [
+      "color / --sop-ink",
+      "CSSカラー",
+      "本文色。背景に合わせてコントラストを確認してください。"
+    ]
+  ]
+}

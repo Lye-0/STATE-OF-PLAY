@@ -2,6 +2,7 @@
  * The moving plane is a CSS pseudo-element: no DOM nodes are inserted into a React-owned list.
  * It is positioned in the popup's scroll-content coordinates, not viewport coordinates.
  */
+import {presentationSpring} from './presentation-spring';
 export function createSelectMotion(root: HTMLElement, panel: HTMLElement) {
   const life = new AbortController();
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
@@ -10,6 +11,7 @@ export function createSelectMotion(root: HTMLElement, panel: HTMLElement) {
   let pointer: {x: number; y: number} | null = null;
   const properties = ['--sel-plane-x','--sel-plane-y','--sel-plane-w','--sel-plane-h','--sel-light-x','--sel-light-y','--sel-label-w'];
   const saved = new Map(properties.map(key => [key, panel.style.getPropertyValue(key)]));
+  const light = presentationSpring(panel,{x:50,y:80},value=>{set('--sel-light-x',`${value.x}%`);set('--sel-light-y',`${value.y}px`);});
   const set = (key: string, value: string) => {
     if (panel.style.getPropertyValue(key) !== value) panel.style.setProperty(key, value);
   };
@@ -42,11 +44,10 @@ export function createSelectMotion(root: HTMLElement, panel: HTMLElement) {
     panel.dataset.motionActive = 'true';
     if (pointer) {
       const rect = panel.getBoundingClientRect();
-      set('--sel-light-x', `${Math.max(0, Math.min(100, (pointer.x - rect.left) / Math.max(1,rect.width) * 100))}%`);
-      set('--sel-light-y', `${pointer.y - rect.top + panel.scrollTop}px`);
+      light.to({x:Math.max(0, Math.min(100, (pointer.x - rect.left) / Math.max(1,rect.width) * 100)),y:pointer.y - rect.top + panel.scrollTop});
       pointer = null;
     } else if (!panel.matches(':hover')) {
-      set('--sel-light-x','50%'); set('--sel-light-y',`${y + target.offsetHeight / 2}px`);
+      light.to({x:50,y:y + target.offsetHeight / 2},panel.dataset.motionReady==='false');
     }
   }
   function schedule() { if (opened && !dead && !frame) frame = requestAnimationFrame(measure); }
@@ -60,11 +61,11 @@ export function createSelectMotion(root: HTMLElement, panel: HTMLElement) {
   const mutation = new MutationObserver(() => { if (opened) { observeOptions(); schedule(); } });
   mutation.observe(panel, {childList:true,subtree:true,characterData:true});
   panel.addEventListener('pointermove', event => {
-    if (event.pointerType !== 'mouse') return;
+    if (!opened || reduced.matches || event.pointerType !== 'mouse') return;
     pointer = {x:event.clientX,y:event.clientY}; schedule();
   }, {passive:true,signal:life.signal});
   panel.addEventListener('scroll', schedule, {passive:true,signal:life.signal});
-  panel.addEventListener('pointerleave', () => { pointer = null; set('--sel-light-x','50%'); }, {signal:life.signal});
+  panel.addEventListener('pointerleave', () => { pointer = null;if(opened)light.to({x:50,y:(Number.parseFloat(panel.style.getPropertyValue('--sel-plane-y'))||0)+(Number.parseFloat(panel.style.getPropertyValue('--sel-plane-h'))||160)/2}); }, {signal:life.signal});
   reduced.addEventListener('change', schedule, {signal:life.signal});
   return {
     open() {
@@ -82,11 +83,14 @@ export function createSelectMotion(root: HTMLElement, panel: HTMLElement) {
     },
     close() {
       opened = false; target = null; pointer = null;
+      // A closing panel may still be fading out; stop at the painted position.
+      light.to({...light.values},true);
       cancelAnimationFrame(frame); cancelAnimationFrame(readyFrame); frame = readyFrame = 0;
       delete panel.dataset.motionReady; delete panel.dataset.motionActive;
     },
     destroy() {
       dead = true; opened = false; life.abort(); observer?.disconnect(); mutation.disconnect();
+      light.destroy();
       cancelAnimationFrame(frame); cancelAnimationFrame(readyFrame); clearTimeout(pickedTimer);
       delete root.dataset.selectCommit; delete panel.dataset.motionReady; delete panel.dataset.motionActive;
       saved.forEach((value,key) => { if(value)panel.style.setProperty(key,value);else panel.style.removeProperty(key); });

@@ -1,0 +1,9 @@
+@import "../../../shared/foundation/base.css";
+@import "../../../shared/foundation/continuum/loaders.css";
+/* Lozenge Transfer Loader — 厚い菱形の三枚の面が、受け渡すように順に反転する。 */
+.sop-foundation.sop-lozenge-transfer-loader{--ld-size:120px;--ld-accent:#c4add4;--ld-secondary:#8769a3}.sop-foundation.sop-lozenge-transfer-loader .ld-dots{position:absolute;inset:0;display:block;width:100%;height:100%;perspective:330px}.sop-foundation.sop-lozenge-transfer-loader .ld-dot{position:absolute;left:calc(5% + var(--i)*31%);top:32%;width:31px;height:41px;border-radius:2px;background:linear-gradient(130deg,#ccb9d7,#634e7c);border:1px solid #b89aca;box-shadow:4px 4px #231e3599;animation:lozenge-transfer-loader-flip 2.9s ease-in-out infinite;animation-delay:calc(var(--i)*-.65s)}@keyframes lozenge-transfer-loader-flip{0%,100%{transform:skewY(-15deg) rotateY(0)}45%{transform:skewY(15deg) rotateY(180deg)}80%{transform:skewY(-15deg) rotateY(360deg)}}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-lozenge-transfer-loader,.sop-foundation.sop-lozenge-transfer-loader *,.sop-foundation.sop-lozenge-transfer-loader::before,.sop-foundation.sop-lozenge-transfer-loader::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-lozenge-transfer-loader{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-lozenge-transfer-loader :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-lozenge-transfer-loader:focus-visible,.sop-foundation.sop-lozenge-transfer-loader :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-lozenge-transfer-loader[data-sop-paused] *,.sop-foundation.sop-lozenge-transfer-loader[data-paused=true] *,.sop-foundation.sop-lozenge-transfer-loader[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

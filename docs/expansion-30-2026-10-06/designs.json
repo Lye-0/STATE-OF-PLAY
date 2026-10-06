@@ -1,0 +1,2951 @@
+[
+  {
+    "category": "toggles",
+    "id": "cantilever-toggle",
+    "name": "Cantilever Toggle",
+    "description": "支点をもつ長いレバーが、二つの停止位置へしなやかに傾く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "toggles",
+    "id": "shoji-toggle",
+    "name": "Shoji Toggle",
+    "description": "木の桟をもつ障子が滑り、奥の灯りを開く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "toggles",
+    "id": "pneumatic-toggle",
+    "name": "Pneumatic Toggle",
+    "description": "透明な空気室の中で、弾性膜が凹凸を反転する。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "toggles",
+    "id": "braided-toggle",
+    "name": "Braided Toggle",
+    "description": "二本の革紐が編み目を変えて、留め具を反対側へ運ぶ。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "blocks",
+    "id": "scalloped-folio",
+    "name": "Scalloped Folio",
+    "description": "波打つ紙端と縦の綴じ穴が、読み物を一枚の台紙に収める。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "blocks",
+    "id": "kiln-surface",
+    "name": "Kiln Surface",
+    "description": "焼き物の厚い口縁と釉薬の溜まりが、内容を囲む浅い器になる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "blocks",
+    "id": "plotted-surface",
+    "name": "Plotted Surface",
+    "description": "横の余白から伸びる括弧が、情報の位置を正確に示す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "blocks",
+    "id": "inlaid-surface",
+    "name": "Inlaid Surface",
+    "description": "寄木の細い帯が角を折れ、中心の内容と分離して縁を走る。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "blocks",
+    "id": "vellum-pocket",
+    "name": "Vellum Pocket",
+    "description": "半透明の封筒の口が上辺に重なり、内容を安全に見せる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "blocks",
+    "id": "caption-surface",
+    "name": "Caption Surface",
+    "description": "狭いキャプション帯と広い本文を分けた、資料用のカード。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "accordions",
+    "id": "book-spine-accordion",
+    "name": "Book Spine Accordion",
+    "description": "冊子の背に並ぶ丸い番号から、章の内容を開く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "accordions",
+    "id": "suspension-accordion",
+    "name": "Suspension Accordion",
+    "description": "細い吊り線で支えた見出しが、開いた本文と静かに離れる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "accordions",
+    "id": "concertina-accordion",
+    "name": "Concertina Accordion",
+    "description": "斜めの折り目をもつ厚い紙が、章ごとに奥行きを変える。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "accordions",
+    "id": "notched-accordion",
+    "name": "Notched Accordion",
+    "description": "片側の切欠きが、選んだ段の見出しと内容を一枚に結ぶ。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "textboxes",
+    "id": "carbon-ribbon-field",
+    "name": "Carbon Ribbon Field",
+    "description": "暗いリボンの中央に文字を置き、左右の端で入力の活性を示す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "textboxes",
+    "id": "punched-field",
+    "name": "Punched Field",
+    "description": "角のパンチ穴と印字の余白をもつ、チケット状の入力欄。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "textboxes",
+    "id": "banked-field",
+    "name": "Banked Field",
+    "description": "入力面の左端をせり上げ、文字を横長の浅い溝に載せる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "textboxes",
+    "id": "ruled-caption-field",
+    "name": "Ruled Caption Field",
+    "description": "ラベルを罫線上に置き、入力と補足を整然と二段に分ける。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "buttons",
+    "id": "bellows-button",
+    "name": "Bellows Button",
+    "description": "折り畳んだ金属の側面が、押下に合わせて縮む。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "buttons",
+    "id": "porcelain-key-button",
+    "name": "Porcelain Key Button",
+    "description": "小さな磁器のキーが、文字を囲む縁と押し込みの影を持つ。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "buttons",
+    "id": "suture-button",
+    "name": "Suture Button",
+    "description": "細い縫い目で包んだ布の面が、触れると柔らかく張る。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "buttons",
+    "id": "arrowhead-button",
+    "name": "Arrowhead Button",
+    "description": "広いラベル面と矢尻形の先端が、実行の向きを明確にする。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "buttons",
+    "id": "spinneret-button",
+    "name": "Spinneret Button",
+    "description": "小さな糸巻きの軸がラベルの脇で回り、押下の手応えを伝える。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "buttons",
+    "id": "shortcut-button",
+    "name": "Shortcut Button",
+    "description": "実行ラベルと小さなキーキャップを一つの操作としてまとめる。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "tabs",
+    "id": "folded-index-tabs",
+    "name": "Folded Index Tabs",
+    "description": "横から差し込む厚紙の索引が、選んだページの端を形成する。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "tabs",
+    "id": "split-ledge-tabs",
+    "name": "Split Ledge Tabs",
+    "description": "見出しを細い棚の上下に配置し、選択面だけが手前へ張り出す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "tabs",
+    "id": "fanlight-tabs",
+    "name": "Fanlight Tabs",
+    "description": "縦の透過帯が見出しの後ろで開き、選択した内容へ光を導く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "tabs",
+    "id": "threaded-tabs",
+    "name": "Threaded Tabs",
+    "description": "糸のような二本の線で章を結び、選んだラベルだけを縫い留める。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "tabs",
+    "id": "wingtip-tabs",
+    "name": "Wingtip Tabs",
+    "description": "左右の翼端をもつ見出しが、開いているページに折り返す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "tabs",
+    "id": "notebook-register-tabs",
+    "name": "Notebook Register Tabs",
+    "description": "縦の登録番号と横の見出しをずらし、現在の資料を示す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "segments",
+    "id": "detent-crown-segments",
+    "name": "Detent Crown Segments",
+    "description": "歯付きの円弧を思わせる区画が、現在の設定位置を固定する。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "segments",
+    "id": "weft-segments",
+    "name": "Weft Segments",
+    "description": "織り込んだ短い帯が、選択時だけ一段浮き上がる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "segments",
+    "id": "float-key-segments",
+    "name": "Float Key Segments",
+    "description": "互いに離れた小さな浮標のように、選択面を水平方向へ並べる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "segments",
+    "id": "slide-rule-segments",
+    "name": "Slide Rule Segments",
+    "description": "共通の目盛りの上で、現在の区画を細い窓として切り取る。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "segments",
+    "id": "split-flap-segments",
+    "name": "Split Flap Segments",
+    "description": "区画の上下を二枚の面に分け、選択時に上の面を反転させる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "segments",
+    "id": "paddle-segments",
+    "name": "Paddle Segments",
+    "description": "長い柄をもつ選択面が、選択状態で水平に揃う。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "segments",
+    "id": "enamel-cell-segments",
+    "name": "Enamel Cell Segments",
+    "description": "厚いエナメルの縁を共有し、選んだセルの面だけを明るくする。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "segments",
+    "id": "rail-switch-segments",
+    "name": "Rail Switch Segments",
+    "description": "選択肢の番号を上端に並べ、下の案内線が現在の位置で折れる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "segments",
+    "id": "counted-segments",
+    "name": "Counted Segments",
+    "description": "ラベルと数値を上下に分け、選択の有無を境界で明確にする。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "segments",
+    "id": "toolbar-segments",
+    "name": "Toolbar Segments",
+    "description": "同じ操作群を小さな道具列として整理し、現在値を下辺で示す。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "checkboxes",
+    "id": "clasp-check",
+    "name": "Clasp Check",
+    "description": "四角い留め具が押さえ込まれ、確認した項目を固定する。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "checkboxes",
+    "id": "perforated-check",
+    "name": "Perforated Check",
+    "description": "切り取り線の内側にチェックを置き、選んだ項目を半券として示す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "checkboxes",
+    "id": "cushion-check",
+    "name": "Cushion Check",
+    "description": "柔らかな正方形のクッションが、確認に合わせて押し込まれる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "checkboxes",
+    "id": "oblique-check",
+    "name": "Oblique Check",
+    "description": "斜めの小さな窓と直線の本文を分離し、選択の輪郭を強く出す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "checkboxes",
+    "id": "stitched-square-check",
+    "name": "Stitched Square Check",
+    "description": "小さな布の四隅を縫い留め、チェックが縫い目の内側に収まる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "checkboxes",
+    "id": "two-line-check",
+    "name": "Two Line Check",
+    "description": "チェック・タイトル・補足を揃え、長い説明でも読めるフォーム項目。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "popups",
+    "id": "proscenium-dialog",
+    "name": "Proscenium Dialog",
+    "description": "薄い舞台枠の奥で内容を見せ、上端の庇が開閉の奥行きを作る。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "popups",
+    "id": "bifold-dialog",
+    "name": "Bifold Dialog",
+    "description": "中央の縦綴じをもつ二つ折りの紙に、説明と操作を載せる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "popups",
+    "id": "oculus-dialog",
+    "name": "Oculus Dialog",
+    "description": "円形の採光面に内容を集め、丸い操作面から次の確認へ進む。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "popups",
+    "id": "hinged-case-dialog",
+    "name": "Hinged Case Dialog",
+    "description": "蓋の蝶番と内部の仕切りが、確認内容を小さなケースに収める。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "popups",
+    "id": "tension-sheet-dialog",
+    "name": "Tension Sheet Dialog",
+    "description": "四隅の張力で支えた薄い面が、内容を水平に保つ。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "popups",
+    "id": "summary-confirm-dialog",
+    "name": "Summary Confirm Dialog",
+    "description": "要約を左の縦線でまとめ、確認とキャンセルを明快に分ける。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "links",
+    "id": "retracting-link",
+    "name": "Retracting Link",
+    "description": "細い導線が矢印の根元に巻き取られ、リンク先への方向を残す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "links",
+    "id": "atlas-spur-link",
+    "name": "Atlas Spur Link",
+    "description": "番号札から伸びる細い道が、ラベルとその先の矢印を結ぶ。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "links",
+    "id": "swing-tag-link",
+    "name": "Swing Tag Link",
+    "description": "紐でつないだ小さな先端タグが、触れると外向きに揺れる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "links",
+    "id": "louver-link",
+    "name": "Louver Link",
+    "description": "文字の下の細いルーバーが、先端へ向かって順に傾く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "links",
+    "id": "copper-wire-link",
+    "name": "Copper Wire Link",
+    "description": "一本の曲がった線が文字の左から先端を支え、移動方向で伸びる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "links",
+    "id": "narrow-gate-link",
+    "name": "Narrow Gate Link",
+    "description": "狭い縦の門の間から、ラベルと矢印が移動方向を示す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "links",
+    "id": "corner-turn-link",
+    "name": "Corner Turn Link",
+    "description": "ラベルの下辺を進んだ線が、右端で上へ折れて矢印になる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "links",
+    "id": "dipped-label-link",
+    "name": "Dipped Label Link",
+    "description": "丸い浸し跡のような面が、ラベルの端に重なる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "links",
+    "id": "scored-edge-link",
+    "name": "Scored Edge Link",
+    "description": "薄い切り込みのある縁が、先端のスコア位置で光る。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "links",
+    "id": "offset-title-link",
+    "name": "Offset Title Link",
+    "description": "太い見出しと小さな矢印をずらして、次の章への移動を示す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "links",
+    "id": "destination-link",
+    "name": "Destination Link",
+    "description": "ラベルと移動方向を離し、行全体を読みやすいリンクとして使う。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "links",
+    "id": "icon-rail-link",
+    "name": "Icon Rail Link",
+    "description": "小さなアイコン専用の帯と本文を分けた、一覧用の移動操作。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "links",
+    "id": "muted-reference-link",
+    "name": "Muted Reference Link",
+    "description": "参照先を細い縦括弧で囲み、本文の中でも移動を識別できる。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "sliders",
+    "id": "tape-measure-range",
+    "name": "Tape Measure Range",
+    "description": "伸びる巻尺の目盛りを、平たい黄色のつまみで読める。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "sliders",
+    "id": "suspension-range",
+    "name": "Suspension Range",
+    "description": "細い吊り橋の線の上を、吊り下がる分銅が移動する。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "sliders",
+    "id": "fader-strip-range",
+    "name": "Fader Strip Range",
+    "description": "広い溝に細いフェーダーを置き、読み取り値を右上へ分離する。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "sliders",
+    "id": "gutter-light-range",
+    "name": "Gutter Light Range",
+    "description": "深い溝の端から光が満ち、薄い円板が現在位置を区切る。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "sliders",
+    "id": "sail-range",
+    "name": "Sail Range",
+    "description": "帆のような三角形のつまみが、下辺の水平線に沿って進む。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "sliders",
+    "id": "porcelain-channel-range",
+    "name": "Porcelain Channel Range",
+    "description": "釉薬の溝に浅い角丸のつまみを載せ、数字を縁に添える。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "sliders",
+    "id": "annotation-range",
+    "name": "Annotation Range",
+    "description": "縦の小見出しを左に置き、範囲と現在値を同じ資料欄にまとめる。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "sliders",
+    "id": "labeled-track-range",
+    "name": "Labeled Track Range",
+    "description": "読みやすい現在値と、間隔の広い目盛りを持つ設定用トラック。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "numbers",
+    "id": "roller-counter",
+    "name": "Roller Counter",
+    "description": "大きな数値窓と巻取り軸を持ち、直接入力にも適したローラーカウンター。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "numbers",
+    "id": "balance-stepper",
+    "name": "Balance Stepper",
+    "description": "中央の数値皿と両端の分銅を分けた、秤のような調整器。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "numbers",
+    "id": "knurled-stepper",
+    "name": "Knurled Stepper",
+    "description": "数値の左右に細かな刻みを持つ金属の操作部を置く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "numbers",
+    "id": "tally-stepper",
+    "name": "Tally Stepper",
+    "description": "縦の数え線と現在値を組み合わせ、増減を記録のように見せる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "numbers",
+    "id": "pressed-number",
+    "name": "Pressed Number",
+    "description": "大きな紙の数字と、押印のような小さな増減面を持つ。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "numbers",
+    "id": "split-digit-stepper",
+    "name": "Split Digit Stepper",
+    "description": "数字の面と単位の帯を水平に分け、押下部を下へ寄せる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "numbers",
+    "id": "column-stepper",
+    "name": "Column Stepper",
+    "description": "左右の操作を細い柱として扱い、数値を広い中央面へ置く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "numbers",
+    "id": "wedged-stepper",
+    "name": "Wedged Stepper",
+    "description": "両端の楔が数値面を挟み、方向のある増減を作る。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "numbers",
+    "id": "meter-box-stepper",
+    "name": "Meter Box Stepper",
+    "description": "薄い単位窓を数値面の脇に添え、設備の小さな調整器にする。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "numbers",
+    "id": "inline-quantity",
+    "name": "Inline Quantity",
+    "description": "短い増減ボタンと直接入力を一列にまとめ、狭い設定欄でも使える。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "numbers",
+    "id": "labeled-quantity",
+    "name": "Labeled Quantity",
+    "description": "数値と単位の読取欄を大きくし、操作ボタンを外側に離す。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "radios",
+    "id": "tabbed-choice",
+    "name": "Tabbed Choice",
+    "description": "選択した札の端が横へ張り出し、本文と番号を一枚の紙にまとめる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "radios",
+    "id": "pebble-choice",
+    "name": "Pebble Choice",
+    "description": "滑らかな丸石の面に、選択の点と安定した本文を置く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "radios",
+    "id": "windowed-choice",
+    "name": "Windowed Choice",
+    "description": "候補の文字を小さな窓の後ろへ置き、選んだ窓だけを明るくする。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "radios",
+    "id": "saddle-choice",
+    "name": "Saddle Choice",
+    "description": "柔らかな革の端を折り返し、選択の丸印と内容を留める。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "radios",
+    "id": "suspended-choice",
+    "name": "Suspended Choice",
+    "description": "選択した候補だけが吊り線から離れ、余白の中で前へ出る。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "radios",
+    "id": "caption-choice",
+    "name": "Caption Choice",
+    "description": "上部の小さな番号帯で候補を区別し、本文を広く保つ。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "radios",
+    "id": "comparison-choice",
+    "name": "Comparison Choice",
+    "description": "選択印・説明・番号を三列で揃え、条件を読み比べやすくする。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "progress",
+    "id": "reservoir-progress",
+    "name": "Reservoir Progress",
+    "description": "横長の透明槽へ進捗が満ち、数値を槽の下へ分離する。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "progress",
+    "id": "ladder-progress",
+    "name": "Ladder Progress",
+    "description": "小さな横桟の連なりを、進捗の面が順番に通過する。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "progress",
+    "id": "crescent-meter",
+    "name": "Crescent Meter",
+    "description": "開いた円の弧に沿って進捗を示し、中央の値を安定して読む。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "progress",
+    "id": "folding-ruler-progress",
+    "name": "Folding Ruler Progress",
+    "description": "進捗を折り畳み定規の節として見せ、区切りと数値を共有する。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "progress",
+    "id": "tension-progress",
+    "name": "Tension Progress",
+    "description": "細い二本の張力線の間を、進捗面が広がる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "progress",
+    "id": "quadrant-progress",
+    "name": "Quadrant Progress",
+    "description": "数値を大きな象限の中央に置き、外周と下辺を分担して読む。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "progress",
+    "id": "split-summary-progress",
+    "name": "Split Summary Progress",
+    "description": "数値と進捗バーを横に分け、短い状態確認でも意味を読み取れる。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "progress",
+    "id": "quiet-step-progress",
+    "name": "Quiet Step Progress",
+    "description": "進捗の数値を小さく添え、完了区分を控えめな切れ目で示す。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "comboboxes",
+    "id": "divider-finder",
+    "name": "Divider Finder",
+    "description": "入力と候補を縦の区画線で整理し、検索した文字を一つの帯に保つ。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "comboboxes",
+    "id": "circular-grip-finder",
+    "name": "Circular Grip Finder",
+    "description": "円形の検索グリップと直線の候補列を組み合わせた、小さな素材引出し。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "comboboxes",
+    "id": "sheet-margin-finder",
+    "name": "Sheet Margin Finder",
+    "description": "検索語を紙の余白へ記し、候補を罫線付きの本文列に並べる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "comboboxes",
+    "id": "stepped-finder",
+    "name": "Stepped Finder",
+    "description": "段差をもつ入力面から、候補の番号札が下へ続く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "comboboxes",
+    "id": "bezel-finder",
+    "name": "Bezel Finder",
+    "description": "入力窓の細い斜面と候補の広い平面を分けた、光学器具の検索欄。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "comboboxes",
+    "id": "stitched-catalog-finder",
+    "name": "Stitched Catalog Finder",
+    "description": "候補一覧を布の仕切りのように区切り、検索語を小さなラベルへ置く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "comboboxes",
+    "id": "label-pair-finder",
+    "name": "Label Pair Finder",
+    "description": "候補の名前と補足を横に揃え、密度の高い検索でも読み分ける。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "comboboxes",
+    "id": "wide-label-finder",
+    "name": "Wide Label Finder",
+    "description": "長い名前を優先し、候補の余白と選択印を離して配置する。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "hints",
+    "id": "corner-note-popover",
+    "name": "Corner Note Popover",
+    "description": "角を残した小さな注釈面が、説明と関連する値を結ぶ。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "hints",
+    "id": "pocket-note-popover",
+    "name": "Pocket Note Popover",
+    "description": "丸い上縁と平らな底をもつ小さなポケットから、説明を取り出す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "hints",
+    "id": "braced-note-popover",
+    "name": "Braced Note Popover",
+    "description": "二本の細いブレースが説明面を支え、情報の範囲を括る。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "hints",
+    "id": "raised-caption-popover",
+    "name": "Raised Caption Popover",
+    "description": "説明面の上端に小さなキャプションを載せ、本文を一段低く置く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "hints",
+    "id": "index-leaf-popover",
+    "name": "Index Leaf Popover",
+    "description": "縦の索引帯を添え、詳細を一枚の薄いリーフとして開く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "hints",
+    "id": "pillbox-popover",
+    "name": "Pillbox Popover",
+    "description": "小さな錠剤ケースの口縁を使い、補足情報と操作を仕切る。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "hints",
+    "id": "fact-note-popover",
+    "name": "Fact Note Popover",
+    "description": "見出し・補足・値・操作を明確に分け、判断に必要な情報を短く読む。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "toasts",
+    "id": "bookmark-notice",
+    "name": "Bookmark Notice",
+    "description": "左端の細いしおりが、短い通知とその寿命を一枚に留める。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "toasts",
+    "id": "capsule-station-notice",
+    "name": "Capsule Station Notice",
+    "description": "円い印をもつ駅名札のように、通知を一行の案内として見せる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "toasts",
+    "id": "folded-corner-notice",
+    "name": "Folded Corner Notice",
+    "description": "角の折り返しが、通知を固定した付箋の奥行きを作る。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "toasts",
+    "id": "teletype-notice",
+    "name": "Teletype Notice",
+    "description": "細い見出し帯と等幅の本文が、短い電文の受信を示す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "toasts",
+    "id": "grommet-notice",
+    "name": "Grommet Notice",
+    "description": "小さなハトメと薄い縁が、情報を吊るした短い札にする。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "toasts",
+    "id": "split-ticket-notice",
+    "name": "Split Ticket Notice",
+    "description": "アイコンの半券と説明の本体を縦の切取り線で分ける。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "toasts",
+    "id": "terraced-notice",
+    "name": "Terraced Notice",
+    "description": "二枚の浅い段を重ね、通知面を暗い背景から浮かせる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "toasts",
+    "id": "sailboard-notice",
+    "name": "Sailboard Notice",
+    "description": "右端の斜めの縁が通知の先端を示し、本文は直線の領域へ置く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "toasts",
+    "id": "status-row-notice",
+    "name": "Status Row Notice",
+    "description": "状態・本文・操作を横に揃え、忙しい画面で通知を読み取りやすくする。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "badges",
+    "id": "binding-tag",
+    "name": "Binding Tag",
+    "description": "細い綴じ帯と本文を分け、選択されたタグを一枚のラベルとして示す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "badges",
+    "id": "disc-tab-tag",
+    "name": "Disc Tab Tag",
+    "description": "円い小印と平たい帯を接続し、ラベルを短い識別札にする。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "badges",
+    "id": "riveted-tag",
+    "name": "Riveted Tag",
+    "description": "端の小さな留め具が、硬い識別ラベルを固定する。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "badges",
+    "id": "fold-line-tag",
+    "name": "Fold Line Tag",
+    "description": "一方の角を折り、削除操作とラベル本文の境界を示す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "badges",
+    "id": "caption-band-tag",
+    "name": "Caption Band Tag",
+    "description": "ラベルの下辺に細い番号帯を載せ、情報を二段で読む。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "badges",
+    "id": "chamfered-tag",
+    "name": "Chamfered Tag",
+    "description": "角を落とした細いラベルが、一覧の中で軽く光を受ける。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "badges",
+    "id": "count-chip-tag",
+    "name": "Count Chip Tag",
+    "description": "タグ名と件数を細い仕切りで分けた、検索や絞込み向けのチップ。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "breadcrumbs",
+    "id": "branch-trail",
+    "name": "Branch Trail",
+    "description": "階層を左の幹と横枝で示し、現在地を末端の明るい札にする。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "breadcrumbs",
+    "id": "slope-trail",
+    "name": "Slope Trail",
+    "description": "道の深さを段差で示し、階層をひとつずつ下へ辿る。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "breadcrumbs",
+    "id": "gutter-trail",
+    "name": "Gutter Trail",
+    "description": "細い溝の中にリンクを並べ、現在地だけを縁の外へ浮かせる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "breadcrumbs",
+    "id": "border-route-trail",
+    "name": "Border Route Trail",
+    "description": "現在地への経路を、上辺の折れた案内線と番号で整理する。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "breadcrumbs",
+    "id": "dropcap-trail",
+    "name": "Dropcap Trail",
+    "description": "大きな起点の印から、小さな文字の階層へ進む。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "breadcrumbs",
+    "id": "rail-stop-trail",
+    "name": "Rail Stop Trail",
+    "description": "小さな停車点の列を、現在地の幅広いホームへつなげる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "breadcrumbs",
+    "id": "label-stack-trail",
+    "name": "Label Stack Trail",
+    "description": "上から順に重なった薄い札が、階層の連なりを示す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "breadcrumbs",
+    "id": "corner-ribbon-trail",
+    "name": "Corner Ribbon Trail",
+    "description": "リンクごとに折れた短い角が、経路を軽くつなぐ。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "breadcrumbs",
+    "id": "bypass-trail",
+    "name": "Bypass Trail",
+    "description": "細い迂回線で上位階層を結び、現在地の四角い面へ辿り着く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "breadcrumbs",
+    "id": "etched-level-trail",
+    "name": "Etched Level Trail",
+    "description": "階層を浅い彫りのある面に置き、現在の段だけを深く印す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "breadcrumbs",
+    "id": "tunnel-trail",
+    "name": "Tunnel Trail",
+    "description": "角丸の入口をくぐるように、各階層の名前を広い窓へ並べる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "breadcrumbs",
+    "id": "range-mark-trail",
+    "name": "Range Mark Trail",
+    "description": "経路の始点と終点を括る二つの印で、現在の深さを見せる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "breadcrumbs",
+    "id": "vertical-location-trail",
+    "name": "Vertical Location Trail",
+    "description": "上位から現在地までを縦に揃え、長い名称を省略せずに読む。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "breadcrumbs",
+    "id": "current-location-trail",
+    "name": "Current Location Trail",
+    "description": "現在地を一つの面に分け、経路と到着地点を読み分ける。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "breadcrumbs",
+    "id": "separator-location-trail",
+    "name": "Separator Location Trail",
+    "description": "リンクを細い縦線で区切り、管理画面でも読みやすい経路にする。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "breadcrumbs",
+    "id": "compact-home-trail",
+    "name": "Compact Home Trail",
+    "description": "起点のホームだけを小さな面に分け、残りの経路を控えめに続ける。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "pagination",
+    "id": "folio-spread-pages",
+    "name": "Folio Spread Pages",
+    "description": "開いた冊子の頁端を、ページ番号の札として横に並べる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "pagination",
+    "id": "pinwheel-pages",
+    "name": "Pinwheel Pages",
+    "description": "小さな傾いた頁札が、現在の番号でだけまっすぐに揃う。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "pagination",
+    "id": "channel-pages",
+    "name": "Channel Pages",
+    "description": "刻まれた連続溝の中で、現在の頁を金属の小窓として読む。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "pagination",
+    "id": "ticket-roll-pages",
+    "name": "Ticket Roll Pages",
+    "description": "半券の丸い切れ目と番号を連続させ、現在の頁でロールを止める。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "pagination",
+    "id": "bead-track-pages",
+    "name": "Bead Track Pages",
+    "description": "小さな頁の玉を直線の軌道に置き、選んだ玉だけを大きく読む。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "pagination",
+    "id": "upper-deck-pages",
+    "name": "Upper Deck Pages",
+    "description": "上の小さなデッキに番号を並べ、現在値の札を下へ接続する。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "pagination",
+    "id": "bracket-pages",
+    "name": "Bracket Pages",
+    "description": "頁ごとの細い括弧が、現在の読み位置だけを広く括る。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "pagination",
+    "id": "imprint-pages",
+    "name": "Imprint Pages",
+    "description": "紙の頁番号を浅い押印として置き、現在値の面だけを濃く印す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "pagination",
+    "id": "cog-register-pages",
+    "name": "Cog Register Pages",
+    "description": "歯のような上辺を持つ番号列が、現在頁で深くかみ合う。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "pagination",
+    "id": "suspended-pages",
+    "name": "Suspended Pages",
+    "description": "頁の札を一本の線から吊り、現在値の揺れを止めて読む。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "pagination",
+    "id": "split-level-pages",
+    "name": "Split Level Pages",
+    "description": "現在の頁だけを前の段へ出し、近くの頁を奥の帯へ置く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "pagination",
+    "id": "spaced-serif-pages",
+    "name": "Spaced Serif Pages",
+    "description": "大きな頁番号を余白に置き、現在の番号だけを横線で結ぶ。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "pagination",
+    "id": "condensed-pages",
+    "name": "Condensed Pages",
+    "description": "前へ・現在頁・次へを短い帯にまとめ、残りの総数を別に表示する。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "pagination",
+    "id": "wide-touch-pages",
+    "name": "Wide Touch Pages",
+    "description": "番号の操作面を広く取り、狭い画面では自然に折り返す。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "pagination",
+    "id": "divider-pages",
+    "name": "Divider Pages",
+    "description": "頁番号と前後の操作を、細い縦線で整理した資料用のページ送り。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "uploads",
+    "id": "mail-slot-dropzone",
+    "name": "Mail Slot Dropzone",
+    "description": "広い投函口と薄い上蓋が、ファイルを受け取る場所を示す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "uploads",
+    "id": "archive-bin-dropzone",
+    "name": "Archive Bin Dropzone",
+    "description": "深い箱の口縁と、取り出せるファイル札を組み合わせる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "uploads",
+    "id": "clip-frame-dropzone",
+    "name": "Clip Frame Dropzone",
+    "description": "四隅のクリップが受取面を支え、選んだファイルを下へ綴じる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "uploads",
+    "id": "seam-pocket-dropzone",
+    "name": "Seam Pocket Dropzone",
+    "description": "布の深いポケットの口と、縫い付けた小印がファイルを預かる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "uploads",
+    "id": "landing-mat-dropzone",
+    "name": "Landing Mat Dropzone",
+    "description": "着地地点を示す四つの角印と、広い空白の受取面を用意する。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "uploads",
+    "id": "specimen-dropzone",
+    "name": "Specimen Dropzone",
+    "description": "小さな資料の受皿を想起させる薄い縁と、番号帯を備える。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "uploads",
+    "id": "file-berth-dropzone",
+    "name": "File Berth Dropzone",
+    "description": "ファイルの停泊位置を、低い柵と奥へ向かう床の線で示す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "uploads",
+    "id": "apron-dropzone",
+    "name": "Apron Dropzone",
+    "description": "広い襟元と、下に縫い分けた資料の列を持つ作業台。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "uploads",
+    "id": "offset-crate-dropzone",
+    "name": "Offset Crate Dropzone",
+    "description": "角をずらした外箱と内箱が、ファイルの受取場所に奥行きを作る。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "uploads",
+    "id": "horizontal-file-dropzone",
+    "name": "Horizontal File Dropzone",
+    "description": "ファイル選択の説明とアイコンを左右に分けた、横長の受取欄。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "uploads",
+    "id": "file-list-dropzone",
+    "name": "File List Dropzone",
+    "description": "小さな選択面と、読みやすいファイル一覧を主役にした受取部品。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "uploads",
+    "id": "bordered-receive-dropzone",
+    "name": "Bordered Receive Dropzone",
+    "description": "ファイルを選ぶ場所と注意書きを、一つの明確な枠の中へ置く。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "datepickers",
+    "id": "calendar-placket",
+    "name": "Calendar Placket",
+    "description": "見出しの短い襟と縦の目盛りが、日付の選択面を整える。",
+    "designType": "A",
+    "base": null,
+    "options": {}
+  },
+  {
+    "category": "datepickers",
+    "id": "two-leaf-calendar",
+    "name": "Two Leaf Calendar",
+    "description": "期間の両端を二枚の札として扱い、カレンダーを綴じた面へ開く。",
+    "designType": "A",
+    "base": null,
+    "options": {
+      "mode": "range",
+      "defaultValue": [
+        "2026-10-06",
+        "2026-10-09"
+      ]
+    }
+  },
+  {
+    "category": "datepickers",
+    "id": "lunette-calendar",
+    "name": "Lunette Calendar",
+    "description": "上端を丸く開いた窓で、日付と月のまとまりを見せる。",
+    "designType": "A",
+    "base": null,
+    "options": {}
+  },
+  {
+    "category": "datepickers",
+    "id": "appointment-card-calendar",
+    "name": "Appointment Card Calendar",
+    "description": "日時を大きな予約札へ記し、日と時刻を別の読取帯へ置く。",
+    "designType": "A",
+    "base": null,
+    "options": {
+      "mode": "datetime",
+      "defaultValue": "2026-10-06T14:30"
+    }
+  },
+  {
+    "category": "datepickers",
+    "id": "slotted-time-calendar",
+    "name": "Slotted Time Calendar",
+    "description": "時刻の列を二つの浅い溝に置き、選択位置を細い面で示す。",
+    "designType": "A",
+    "base": null,
+    "options": {
+      "mode": "time",
+      "defaultValue": "14:30"
+    }
+  },
+  {
+    "category": "datepickers",
+    "id": "stamp-grid-calendar",
+    "name": "Stamp Grid Calendar",
+    "description": "小さな日付の印を紙の格子へ置き、選んだ一日を押印で示す。",
+    "designType": "A",
+    "base": null,
+    "options": {}
+  },
+  {
+    "category": "datepickers",
+    "id": "signal-box-calendar",
+    "name": "Signal Box Calendar",
+    "description": "日付と時刻を信号箱の二つの区画へ分けて確認する。",
+    "designType": "A",
+    "base": null,
+    "options": {
+      "mode": "datetime",
+      "defaultValue": "2026-10-06T09:00"
+    }
+  },
+  {
+    "category": "datepickers",
+    "id": "stepped-date-calendar",
+    "name": "Stepped Date Calendar",
+    "description": "日付の段を二つに分け、開始と終了の関係を小さな段差で示す。",
+    "designType": "A",
+    "base": null,
+    "options": {
+      "mode": "range",
+      "defaultValue": [
+        "2026-10-06",
+        "2026-10-12"
+      ]
+    }
+  },
+  {
+    "category": "datepickers",
+    "id": "dial-caption-calendar",
+    "name": "Dial Caption Calendar",
+    "description": "時刻の読取りを円い小窓へ置き、候補の列をその下に揃える。",
+    "designType": "A",
+    "base": null,
+    "options": {
+      "mode": "time",
+      "defaultValue": "10:15"
+    }
+  },
+  {
+    "category": "datepickers",
+    "id": "form-date-calendar",
+    "name": "Form Date Calendar",
+    "description": "読みやすい入力欄と、余白の揃った日付候補を持つフォーム用の日付選択。",
+    "designType": "B",
+    "base": null,
+    "options": {}
+  },
+  {
+    "category": "loaders",
+    "id": "shuttle-loader",
+    "name": "Shuttle Loader",
+    "description": "三つの細い杼が、交差する軌道を滑らかに往復する。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "loaders",
+    "id": "bimetal-loader",
+    "name": "Bimetal Loader",
+    "description": "三つの薄い金属帯が、異なる向きの開いた弧を作って回る。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "loaders",
+    "id": "kinetic-abacus-loader",
+    "name": "Kinetic Abacus Loader",
+    "description": "三つの玉が別々の縦棒を滑り、処理の継続を立体的に示す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "loaders",
+    "id": "lozenge-transfer-loader",
+    "name": "Lozenge Transfer Loader",
+    "description": "厚い菱形の三枚の面が、受け渡すように順に反転する。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "loaders",
+    "id": "semaphore-loader",
+    "name": "Semaphore Loader",
+    "description": "三本の小さな旗が、一つずつ向きを変えながら処理を知らせる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "ornaments",
+    "id": "tension-mobile",
+    "name": "Tension Mobile",
+    "description": "細い糸に吊られた四つの輪が、ホバーで静かに広がる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "avatars",
+    "id": "cutout-portrait",
+    "name": "Cutout Portrait",
+    "description": "紙の切抜きのような輪郭と、横に添えた短い署名で人物を示す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "avatars",
+    "id": "lattice-portrait",
+    "name": "Lattice Portrait",
+    "description": "角い写真を細い格子の後ろへ置き、選択した人物の枠を開く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "avatars",
+    "id": "keyhole-portrait",
+    "name": "Keyhole Portrait",
+    "description": "丸い上辺と細い下辺を持つ人物窓が、短い名札へ続く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "avatars",
+    "id": "postmark-portrait",
+    "name": "Postmark Portrait",
+    "description": "消印のような外周と短い水平線が、人物の識別印を作る。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "avatars",
+    "id": "dossier-identity",
+    "name": "Dossier Identity",
+    "description": "広い人物行に、写真・名前・在席の印を資料のように揃える。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "avatars",
+    "id": "bookend-portrait",
+    "name": "Bookend Portrait",
+    "description": "人物の写真を二つの厚い支柱で支え、名前を下の細い空間へ置く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "avatars",
+    "id": "staggered-portrait",
+    "name": "Staggered Portrait",
+    "description": "写真と署名の高さを交互にずらし、人物の列に穏やかなリズムを作る。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "avatars",
+    "id": "edge-light-portrait",
+    "name": "Edge Light Portrait",
+    "description": "暗い写真窓の一辺を光らせ、名前を光の延長として揃える。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "avatars",
+    "id": "medallion-sash-profile",
+    "name": "Medallion Sash Profile",
+    "description": "縦長の人物印と、下に折り返した名前の帯を一つにする。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "avatars",
+    "id": "aperture-ticket-profile",
+    "name": "Aperture Ticket Profile",
+    "description": "写真の脇の小さな切欠きと、横向きの署名が個人を区別する。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "avatars",
+    "id": "crossmount-profile",
+    "name": "Crossmount Profile",
+    "description": "四つの小さな角台で写真を留め、選択時に角の間隔を広げる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "avatars",
+    "id": "frontispiece-profile",
+    "name": "Frontispiece Profile",
+    "description": "大きな上の写真窓と、見出しのような署名を二段に組む。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "ratings",
+    "id": "domino-rating",
+    "name": "Domino Rating",
+    "description": "小さなドミノの目と番号を、触れやすい五つの評価面にする。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "ratings",
+    "id": "leaflet-rating",
+    "name": "Leaflet Rating",
+    "description": "二枚の葉のような評価面が、選択時に軽く開く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "ratings",
+    "id": "chime-rating",
+    "name": "Chime Rating",
+    "description": "長さの違う細い鈴を並べ、評価の高さを選んだ鈴で読む。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "ratings",
+    "id": "pinned-award-rating",
+    "name": "Pinned Award Rating",
+    "description": "四角い評価章と細い足を組み合わせ、選んだ章を明るく留める。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "ratings",
+    "id": "wedge-scale-rating",
+    "name": "Wedge Scale Rating",
+    "description": "傾きの違う小さな楔が、選択された段まで明るくつながる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "ratings",
+    "id": "seedpod-rating",
+    "name": "Seedpod Rating",
+    "description": "細い種の房を、軽い五段階の評価として並べる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "ratings",
+    "id": "keycap-rating",
+    "name": "Keycap Rating",
+    "description": "五つの低いキーを押し込み、選んだ評価を手元の操作として示す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "ratings",
+    "id": "perforated-score-rating",
+    "name": "Perforated Score Rating",
+    "description": "一枚ずつ区切った小さな評価札を、選んだ段まで濃く残す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "ratings",
+    "id": "crescent-score-rating",
+    "name": "Crescent Score Rating",
+    "description": "開いた月の形が、評価の段を軽やかに重ねる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "ratings",
+    "id": "crossbar-score-rating",
+    "name": "Crossbar Score Rating",
+    "description": "小さな横桟を選び、幅広い番号の上で評価を固定する。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "ratings",
+    "id": "plume-score-rating",
+    "name": "Plume Score Rating",
+    "description": "細い羽根の軸と枝が、選択した段まで順に立ち上がる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "ratings",
+    "id": "segmented-seal-rating",
+    "name": "Segmented Seal Rating",
+    "description": "区切りのある円形シールが、評価の値をひとつずつ押し留める。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "colors",
+    "id": "chroma-scaffold",
+    "name": "Chroma Scaffold",
+    "description": "大きな色の面を左に、読取り軸を右に分けた小さな色の作業台。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "colors",
+    "id": "rgb-pipe-studio",
+    "name": "Rgb Pipe Studio",
+    "description": "赤・緑・青の縦の管を調整し、混ざった色を上端の印で見る。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "colors",
+    "id": "spectral-register",
+    "name": "Spectral Register",
+    "description": "色相の横帯と縦の数値表を、記録用の色面にまとめる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "colors",
+    "id": "pigment-pipes",
+    "name": "Pigment Pipes",
+    "description": "色相・彩度・明度を三本の立てた調整軸として並べる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "colors",
+    "id": "chromatic-windowpane",
+    "name": "Chromatic Windowpane",
+    "description": "細い桟で分けた色面と、下の二段の読取り軸を持つ窓。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "colors",
+    "id": "inkwell-mixer",
+    "name": "Inkwell Mixer",
+    "description": "丸いインク壺の色印と、横の大きな色面を組み合わせる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "colors",
+    "id": "tint-contact-sheet",
+    "name": "Tint Contact Sheet",
+    "description": "広い色見本の列と、精密な色面を資料のように二段に分ける。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "colors",
+    "id": "saturation-slit",
+    "name": "Saturation Slit",
+    "description": "横に長い色の細窓と、大きなHEXの読取欄を持つ色調整器。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "colors",
+    "id": "rgb-control-board",
+    "name": "Rgb Control Board",
+    "description": "三つのRGBチャンネルを大きな操作行に分け、混色の値を明確に読む。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "colors",
+    "id": "color-swatch-binder",
+    "name": "Color Swatch Binder",
+    "description": "色見本を綴じた帯と、小さな調色面を一つの台紙へ収める。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "colors",
+    "id": "gradient-desk",
+    "name": "Gradient Desk",
+    "description": "大きな彩度面と、二本の独立した読取り帯を持つ横長の色机。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "colors",
+    "id": "color-plate-trio",
+    "name": "Color Plate Trio",
+    "description": "色面・スライダー・見本の三つの区画を、低い縁で仕切る。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "colors",
+    "id": "compact-split-color",
+    "name": "Compact Split Color",
+    "description": "小さな色面と調整軸を左右に分け、設定欄で少ない高さに収める。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "skeletons",
+    "id": "column-copy-skeleton",
+    "name": "Column Copy Skeleton",
+    "description": "左の細いメディア帯と、右の本文行を先に確保する読み物の待機面。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "skeletons",
+    "id": "gallery-grid-skeleton",
+    "name": "Gallery Grid Skeleton",
+    "description": "三つの展示枠と下の短い説明欄を、動かさずに先に描く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "skeletons",
+    "id": "schedule-grid-skeleton",
+    "name": "Schedule Grid Skeleton",
+    "description": "曜日の帯と七つの列を、予定表の読込み中の区画として示す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "skeletons",
+    "id": "file-tree-skeleton",
+    "name": "File Tree Skeleton",
+    "description": "階層の幹と短いファイル名の線を保ち、一覧の読込みを知らせる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "skeletons",
+    "id": "editorial-type-skeleton",
+    "name": "Editorial Type Skeleton",
+    "description": "大きな見出しの塊と細い本文行を、印刷面のように組み立てる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "skeletons",
+    "id": "checkout-row-skeleton",
+    "name": "Checkout Row Skeleton",
+    "description": "商品の小窓と明細の行を分け、下に合計欄の場所を確保する。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "skeletons",
+    "id": "conversation-skeleton",
+    "name": "Conversation Skeleton",
+    "description": "左右に分かれた短い会話の面を、安定した位置で待機表示する。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "skeletons",
+    "id": "dashboard-slot-skeleton",
+    "name": "Dashboard Slot Skeleton",
+    "description": "独立した三つの数値枠と細い読取帯を、先に確保する待機面。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "skeletons",
+    "id": "portrait-column-skeleton",
+    "name": "Portrait Column Skeleton",
+    "description": "人物の大きな縦窓と署名の二行を、プロフィールの待機面として置く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "skeletons",
+    "id": "navigation-bar-skeleton",
+    "name": "Navigation Bar Skeleton",
+    "description": "横の操作帯と下の左右の区画を、画面の準備段階から揃える。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "skeletons",
+    "id": "receipt-column-skeleton",
+    "name": "Receipt Column Skeleton",
+    "description": "短い見出しと明細行を、細長い受取票の形で保つ。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "skeletons",
+    "id": "feature-grid-skeleton",
+    "name": "Feature Grid Skeleton",
+    "description": "大きな説明枠を置かず、対等な情報の小面を格子に揃える。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "skeletons",
+    "id": "list-cell-skeleton",
+    "name": "List Cell Skeleton",
+    "description": "小さな図版と本文を左右に揃えた、一覧の行用の待機表示。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "timelines",
+    "id": "shoreline-history",
+    "name": "Shoreline History",
+    "description": "時刻を細い岸線へ置き、出来事を広い右側の面へつなげる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "timelines",
+    "id": "gallery-route-history",
+    "name": "Gallery Route History",
+    "description": "年代の札を額縁に添え、各出来事を独立した展示面として並べる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "timelines",
+    "id": "folding-map-history",
+    "name": "Folding Map History",
+    "description": "時刻を左端の折り目へ沿わせ、内容を段のある地図面へ置く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "timelines",
+    "id": "promenade-history",
+    "name": "Promenade History",
+    "description": "横へ辿れる年代の面を並べ、出来事の内容を足元へ開く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "timelines",
+    "id": "dialmark-history",
+    "name": "Dialmark History",
+    "description": "大きな時刻の印と小さな状態文字を分離し、日付を軸に記録を読む。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "timelines",
+    "id": "shelved-history",
+    "name": "Shelved History",
+    "description": "出来事を時刻札付きの小さな棚に載せ、開いた内容の下に段を残す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "timelines",
+    "id": "etched-ledger-history",
+    "name": "Etched Ledger History",
+    "description": "細い縦彫りと水平の刻みで、時刻と記録の対応を明確にする。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "timelines",
+    "id": "rising-date-history",
+    "name": "Rising Date History",
+    "description": "現在の出来事の番号面が一段上がり、時刻と説明の読み順を保つ。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "timelines",
+    "id": "chapter-ribbon-history",
+    "name": "Chapter Ribbon History",
+    "description": "時刻を細い下線の章札として置き、本文を長い余白へ続ける。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "timelines",
+    "id": "hinged-record-history",
+    "name": "Hinged Record History",
+    "description": "時刻の小窓を支点に、記録の内容が右へ開く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "timelines",
+    "id": "margin-index-history",
+    "name": "Margin Index History",
+    "description": "広い余白の小番号と、直線の記録面を資料のように並べる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "timelines",
+    "id": "marker-block-history",
+    "name": "Marker Block History",
+    "description": "現在の記録だけに厚い標識を置き、その他の出来事を細い行に保つ。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "timelines",
+    "id": "summary-row-history",
+    "name": "Summary Row History",
+    "description": "時刻・見出し・状態を三列に揃え、必要な記録だけを開いて読む。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "wizards",
+    "id": "sill-workflow",
+    "name": "Sill Workflow",
+    "description": "工程の札を低い窓台に置き、現在の工程だけを前へ引き出す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "wizards",
+    "id": "railhead-workflow",
+    "name": "Railhead Workflow",
+    "description": "現在の工程を大きな先頭印で示し、残りの工程を小さな案内列へ置く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "wizards",
+    "id": "fabrication-workflow",
+    "name": "Fabrication Workflow",
+    "description": "現在の作業面と工程の小区画を、鋳型のような厚い縁で囲む。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "wizards",
+    "id": "path-column-workflow",
+    "name": "Path Column Workflow",
+    "description": "縦の工程柱と横の入力面を分け、現在の行で二つを結ぶ。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "wizards",
+    "id": "caption-stage-workflow",
+    "name": "Caption Stage Workflow",
+    "description": "大きな工程番号の下に短い章題を置き、現在の入力内容を区切る。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "wizards",
+    "id": "notched-module-workflow",
+    "name": "Notched Module Workflow",
+    "description": "切欠きのある工程面が、現在の作業区画へかみ合う。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "wizards",
+    "id": "outline-room-workflow",
+    "name": "Outline Room Workflow",
+    "description": "工程の枠と入力の余白を分離し、現在の枠だけを二重線で示す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "wizards",
+    "id": "corner-anchor-workflow",
+    "name": "Corner Anchor Workflow",
+    "description": "工程の札を角の固定具で支え、選んだ札が前へ浮く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "wizards",
+    "id": "paper-console-workflow",
+    "name": "Paper Console Workflow",
+    "description": "横の細い工程帯と下の大きな入力面を、紙の操作盤として組む。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "wizards",
+    "id": "swing-board-workflow",
+    "name": "Swing Board Workflow",
+    "description": "工程の面を上の軸から吊り、現在の面だけをまっすぐに読む。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "wizards",
+    "id": "swept-chapter-workflow",
+    "name": "Swept Chapter Workflow",
+    "description": "工程の番号を下へ揃え、章題の上を薄い選択面が移る。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "wizards",
+    "id": "hinge-rail-workflow",
+    "name": "Hinge Rail Workflow",
+    "description": "左の支点列と右の作業面を結び、工程の切替を小さなレールで示す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "searchbars",
+    "id": "finder-lip-search",
+    "name": "Finder Lip Search",
+    "description": "上の薄い庇と下の広い入力面を分け、検索の入口を読みやすくする。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "searchbars",
+    "id": "query-counterweight",
+    "name": "Query Counterweight",
+    "description": "片側の重い検索印と、軽い文字の領域で入力と実行を釣り合わせる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "searchbars",
+    "id": "index-gutter-search",
+    "name": "Index Gutter Search",
+    "description": "検索語を大きな横溝に置き、対象の切替を左の小さな索引へまとめる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "searchbars",
+    "id": "pane-handle-search",
+    "name": "Pane Handle Search",
+    "description": "引き出せる窓の取手を右端へ置き、検索の入力面を広く保つ。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "searchbars",
+    "id": "ruler-edge-search",
+    "name": "Ruler Edge Search",
+    "description": "入力の上辺に細い目盛りを置き、検索結果をその下の資料面へ続ける。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "searchbars",
+    "id": "bookplate-search",
+    "name": "Bookplate Search",
+    "description": "大きな文字の検索を、一枚の蔵書票のような面に載せる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "searchbars",
+    "id": "capped-rail-search",
+    "name": "Capped Rail Search",
+    "description": "検索語を横のレールへ載せ、左右の端で範囲を明確にする。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "searchbars",
+    "id": "filter-shelf-search",
+    "name": "Filter Shelf Search",
+    "description": "入力面の下に小さな検索対象の札を載せ、現在の範囲を識別する。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "searchbars",
+    "id": "angled-index-search",
+    "name": "Angled Index Search",
+    "description": "斜めの縁で検索の入口を区切り、内容と候補は水平に保つ。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "searchbars",
+    "id": "switch-register-search",
+    "name": "Switch Register Search",
+    "description": "検索語と実行ボタンを分け、対象の選択を短い登録列にまとめる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "navigation",
+    "id": "compartment-navigation",
+    "name": "Compartment Navigation",
+    "description": "行き先を対等な小区画へ並べ、現在地の面だけを前に出す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "navigation",
+    "id": "arched-route-navigation",
+    "name": "Arched Route Navigation",
+    "description": "上端の丸い行き先窓を、低い水平線でつなげる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "navigation",
+    "id": "vertical-register-navigation",
+    "name": "Vertical Register Navigation",
+    "description": "細い登録帯の右に行き先を並べ、現在地を番号札のように示す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "navigation",
+    "id": "cantoned-navigation",
+    "name": "Cantoned Navigation",
+    "description": "行き先の面を四角い角台で支え、選択した面の縁を揃える。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "navigation",
+    "id": "sill-dock-navigation",
+    "name": "Sill Dock Navigation",
+    "description": "細い台の上に行き先の札を置き、現在地だけを下へ接続する。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "navigation",
+    "id": "folio-column-navigation",
+    "name": "Folio Column Navigation",
+    "description": "行き先を章の列として置き、大きな現在地の文字を読みやすく保つ。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "navigation",
+    "id": "scored-route-navigation",
+    "name": "Scored Route Navigation",
+    "description": "太い外縁を使わず、行き先の区画を細い切込みと下線で分ける。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "navigation",
+    "id": "corner-flag-navigation",
+    "name": "Corner Flag Navigation",
+    "description": "小さな角旗をもつ行き先面が、現在の選択を右端で示す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "navigation",
+    "id": "switchplate-navigation",
+    "name": "Switchplate Navigation",
+    "description": "低い切替板のような行き先面と、離れた現在地欄を持つ。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "commands",
+    "id": "docket-command",
+    "name": "Docket Command",
+    "description": "検索の小見出しを縦の背に置き、操作の一覧を資料面として開く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "commands",
+    "id": "shelf-command",
+    "name": "Shelf Command",
+    "description": "操作の札を独立した小棚に載せ、現在の操作だけを前へ選ぶ。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "commands",
+    "id": "pressboard-command",
+    "name": "Pressboard Command",
+    "description": "押印用の資料面を思わせる太い上縁で、検索と実行の場所を区切る。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "commands",
+    "id": "corner-gate-command",
+    "name": "Corner Gate Command",
+    "description": "四隅の固定具を持つ検索窓から、操作の候補へ入る。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "commands",
+    "id": "call-sign-command",
+    "name": "Call Sign Command",
+    "description": "操作の名前を小さな呼出札に揃え、ショートカットを番号帯に分ける。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "commands",
+    "id": "monogram-command",
+    "name": "Monogram Command",
+    "description": "大きな検索印と静かな入力面を分け、操作を本文の列で探す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "commands",
+    "id": "stepped-list-command",
+    "name": "Stepped List Command",
+    "description": "段差のある候補面が、現在の操作へ軽く張り出す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "commands",
+    "id": "cradle-command",
+    "name": "Cradle Command",
+    "description": "丸い上の印と平たい下の検索面を組み、小さな操作の受皿にする。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "commands",
+    "id": "typecase-command",
+    "name": "Typecase Command",
+    "description": "項目の短い見出しと小さなキーを、活字の区画のように整理する。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "commands",
+    "id": "bay-window-command",
+    "name": "Bay Window Command",
+    "description": "検索の入力を浅い窓へ置き、候補は厚い縁の内側へ収める。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "commands",
+    "id": "oblique-action-command",
+    "name": "Oblique Action Command",
+    "description": "候補の左端を斜めの小面で示し、文字の行は水平に保つ。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "commands",
+    "id": "cabled-command",
+    "name": "Cabled Command",
+    "description": "検索の短い導線を左に置き、操作群をその導線から呼び出す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "commands",
+    "id": "shortcut-column-command",
+    "name": "Shortcut Column Command",
+    "description": "操作名を広く読み、ショートカットを独立した右の列へ揃える。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "commands",
+    "id": "description-first-command",
+    "name": "Description First Command",
+    "description": "補足を二行まで読みやすく取り、操作を名前だけで判断しない候補列。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "contextmenus",
+    "id": "groove-action-context",
+    "name": "Groove Action Context",
+    "description": "深い溝のある対象面から、細い罫線で整理した操作を取り出す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "contextmenus",
+    "id": "hanger-action-context",
+    "name": "Hanger Action Context",
+    "description": "対象を小さな吊り札として見せ、操作を短いタグ列へ開く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "contextmenus",
+    "id": "petrol-label-context",
+    "name": "Petrol Label Context",
+    "description": "操作の印を大きく取り、項目の文字と余白を独立させる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "contextmenus",
+    "id": "cut-corner-context",
+    "name": "Cut Corner Context",
+    "description": "対象と操作の面に異なる切欠きを持たせ、どこから開いたかを示す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "contextmenus",
+    "id": "ledger-spur-context",
+    "name": "Ledger Spur Context",
+    "description": "短い番号の余白を持つ対象札から、細い操作の台帳を開く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "contextmenus",
+    "id": "double-sill-context",
+    "name": "Double Sill Context",
+    "description": "二段の薄い台で対象の面を支え、操作の一覧をその上へ開く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "contextmenus",
+    "id": "crosshair-action-context",
+    "name": "Crosshair Action Context",
+    "description": "四つの角で対象を識別し、操作の一覧を一列の精密な枠へ置く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "contextmenus",
+    "id": "arc-label-context",
+    "name": "Arc Label Context",
+    "description": "上端の丸い対象窓と、細い下の操作面を分けて見せる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "contextmenus",
+    "id": "rail-brace-context",
+    "name": "Rail Brace Context",
+    "description": "細い左の支持線から対象と操作を結び、選ぶ行を広く示す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "contextmenus",
+    "id": "folded-label-context",
+    "name": "Folded Label Context",
+    "description": "対象の角を折り返し、操作を印刷面のような余白へ広げる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "contextmenus",
+    "id": "chamfer-tool-context",
+    "name": "Chamfer Tool Context",
+    "description": "低い金属の斜面を持つ対象面と、操作を置く小区画を組み合わせる。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "contextmenus",
+    "id": "thin-step-context",
+    "name": "Thin Step Context",
+    "description": "対象の端に小さな段を作り、操作の行ごとに浅い縁を置く。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "contextmenus",
+    "id": "shortcut-rail-context",
+    "name": "Shortcut Rail Context",
+    "description": "項目の文字とキー操作を二つの明確な列に揃えた操作メニュー。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "contextmenus",
+    "id": "explained-action-context",
+    "name": "Explained Action Context",
+    "description": "操作名の下に説明を読み、対象と結果を確認しながら選べるメニュー。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "tables",
+    "id": "ledger-spine-table",
+    "name": "Ledger Spine Table",
+    "description": "太い綴じ帯と細い本文罫で、記録の行と項目を正確に結ぶ。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "tables",
+    "id": "floating-row-table",
+    "name": "Floating Row Table",
+    "description": "各行を低い独立面へ分け、選択した行の縁で読み位置を保つ。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "tables",
+    "id": "numeric-deck-table",
+    "name": "Numeric Deck Table",
+    "description": "数値と進捗を大きく読み、文字の列を静かな記録帯へ分ける。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "tables",
+    "id": "column-bay-table",
+    "name": "Column Bay Table",
+    "description": "細い縦の仕切りで項目を区画し、行の順序を保ったまま比較する。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "tables",
+    "id": "tension-grid-table",
+    "name": "Tension Grid Table",
+    "description": "四方に張った薄い格子の上で、選んだ行を一本の線で示す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "tables",
+    "id": "dated-card-table",
+    "name": "Dated Card Table",
+    "description": "列見出しの小さな札と、下の明細行を紙の層として組む。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "tables",
+    "id": "slotted-record-table",
+    "name": "Slotted Record Table",
+    "description": "列の読取りを浅い溝へ入れ、見出しを低い装置の面として揃える。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "tables",
+    "id": "stepped-header-table",
+    "name": "Stepped Header Table",
+    "description": "見出しの段とデータの面を分け、記録を安定した線で読む。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "tables",
+    "id": "margin-ledger-table",
+    "name": "Margin Ledger Table",
+    "description": "行の左側に広い読取余白を置き、列の境界を細い垂線で示す。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "tables",
+    "id": "progress-tube-table",
+    "name": "Progress Tube Table",
+    "description": "数値の横に小さな縦の進捗槽を置き、値と状態をまとめて読む。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "tables",
+    "id": "row-marker-table",
+    "name": "Row Marker Table",
+    "description": "選択行に短い位置印を置き、長いデータ表でも読取位置を失わない。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "tables",
+    "id": "folio-drawer-table",
+    "name": "Folio Drawer Table",
+    "description": "広い見出しと細い引出し状の行で、明細と読取情報を分離する。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "tables",
+    "id": "border-weave-table",
+    "name": "Border Weave Table",
+    "description": "行と列で異なる細さの線を使い、情報を一枚の織目として整える。",
+    "designType": "A",
+    "base": null,
+    "options": null
+  },
+  {
+    "category": "tables",
+    "id": "readable-record-table",
+    "name": "Readable Record Table",
+    "description": "長い名称と数値の列を落ち着いて読み、必要な行だけを選べる実用的な表。",
+    "designType": "B",
+    "base": null,
+    "options": null
+  }
+]

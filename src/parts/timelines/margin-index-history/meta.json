@@ -1,0 +1,52 @@
+{
+  "id": "margin-index-history",
+  "name": "Margin Index History",
+  "category": "timelines",
+  "tagline": "広い余白の小番号と、直線の記録面を資料のように並べる。",
+  "description": "広い余白の小番号と、直線の記録面を資料のように並べる。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3249,
+  "version": "1.0.0",
+  "material": "MARGIN INDEX HISTORY",
+  "accent": "185,205,194",
+  "componentName": "MarginIndexHistory",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "timelines"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Margin Index History",
+    "広い余白の小番号と、直線の記録面を資料のように並べる。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "TimelineItem[]",
+      "id・title・description・date・dateTime・status・hrefなど。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "詳細を開くID。expandedで外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(ids: string[]) => void",
+      "開閉したIDを通知。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "詳細の開閉を無効にする。"
+    ],
+    [
+      "label",
+      "string",
+      "履歴全体の名前。"
+    ]
+  ]
+}

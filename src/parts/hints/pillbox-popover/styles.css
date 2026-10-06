@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Pillbox Popover — 小さな錠剤ケースの口縁を使い、補足情報と操作を仕切る。 */
+.sop-foundation.sop-pillbox-popover{--ff-accent:#bfd1ca;--ff-panel:#2c4b4e;--ff-base:#1c363e;--ff-line:#759fa2}.sop-foundation.sop-pillbox-popover .ff-hint-trigger{border:1px solid #96bcb9;border-radius:28px;background:linear-gradient(#709795,#3e6869);box-shadow:inset 0 1px #ecf5dd55;padding:13px 23px}.sop-foundation.sop-pillbox-popover .ff-hint-panel{border:4px solid #6b9696;border-radius:25px 25px 12px 12px;background:#29484c;padding:21px;box-shadow:inset 0 2px 4px #14343c88,0 18px 35px #0007}.sop-foundation.sop-pillbox-popover .ff-hint-heading{border-bottom:3px double #8db9b5;padding-bottom:12px}.sop-foundation.sop-pillbox-popover .ff-hint-panel .ff-action{border-radius:15px;background:#5e8581}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-pillbox-popover,.sop-foundation.sop-pillbox-popover *,.sop-foundation.sop-pillbox-popover::before,.sop-foundation.sop-pillbox-popover::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-pillbox-popover{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-pillbox-popover :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-pillbox-popover:focus-visible,.sop-foundation.sop-pillbox-popover :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-pillbox-popover[data-sop-paused] *,.sop-foundation.sop-pillbox-popover[data-paused=true] *,.sop-foundation.sop-pillbox-popover[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

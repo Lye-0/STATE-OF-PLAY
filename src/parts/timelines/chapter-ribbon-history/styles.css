@@ -1,0 +1,9 @@
+@import "../../../shared/signature/timeline.css";
+/* Chapter Ribbon History — 時刻を細い下線の章札として置き、本文を長い余白へ続ける。 */
+.sop-sig.sop-chapter-ribbon-history{--sg-a:#d8c49d;--sg-line:#ad9870;--sg-bg:#423b2b;--sg-muted:#c0ad85}.sop-sig.sop-chapter-ribbon-history .sg-timeline{padding:23px 12px;border-left:3px solid #a38e61}.sop-sig.sop-chapter-ribbon-history .sg-event{grid-template-columns:1fr;gap:9px;padding:7px 10px 24px 12px;margin-bottom:8px;border-bottom:1px dashed #a78f67}.sop-sig.sop-chapter-ribbon-history .sg-event-route{display:none}.sop-sig.sop-chapter-ribbon-history .sg-event-time{font:italic 19px Georgia;width:max-content;padding:4px 15px 5px 0;border-bottom:2px solid #ad9664}.sop-sig.sop-chapter-ribbon-history .sg-event-heading{font:15px Georgia;letter-spacing:.3px}.sop-sig.sop-chapter-ribbon-history .sg-event[data-status=active]{background:#594830;border-left:3px solid #d5ba88;padding-left:9px}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-chapter-ribbon-history,.sop-sig.sop-chapter-ribbon-history *,.sop-sig.sop-chapter-ribbon-history::before,.sop-sig.sop-chapter-ribbon-history::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-sig.sop-chapter-ribbon-history{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-chapter-ribbon-history :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-sig.sop-chapter-ribbon-history:focus-visible,.sop-sig.sop-chapter-ribbon-history :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-sig.sop-chapter-ribbon-history[data-sop-paused] *,.sop-sig.sop-chapter-ribbon-history[data-paused=true] *,.sop-sig.sop-chapter-ribbon-history[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+.sop-sig.sop-chapter-ribbon-history *{animation-play-state:var(--sg-play,running)!important}

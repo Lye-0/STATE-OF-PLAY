@@ -1,0 +1,57 @@
+{
+  "id": "groove-action-context",
+  "name": "Groove Action Context",
+  "category": "contextmenus",
+  "description": "深い溝のある対象面から、細い罫線で整理した操作を取り出す。",
+  "designType": "A",
+  "tagline": "深い溝のある対象面から、細い罫線で整理した操作を取り出す。",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3297,
+  "version": "1.0.0",
+  "material": "GROOVE ACTION CONTEXT",
+  "accent": "192,216,201",
+  "componentName": "GrooveActionContext",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "contextmenus"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Groove Action Context",
+    "深い溝のある対象面から、細い罫線で整理した操作を取り出す。",
+    "NAVIGATOR"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "ContextAction[]",
+      "操作、子階層、区切り、チェック、無効状態を指定。"
+    ],
+    [
+      "onAction",
+      "(item, signal) => void | false | Promise",
+      "実行先の接続。勝手な保存や削除はしません。"
+    ],
+    [
+      "checked / onCheckedChange",
+      "Record<string, boolean> / callback",
+      "メニュー内チェック項目の状態を制御。"
+    ],
+    [
+      "targetLabel / targetDescription",
+      "string",
+      "操作対象の見出しと説明。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "コンポーネントの操作を無効にする。"
+    ],
+    [
+      "targetElement",
+      "HTMLElement | null",
+      "既存のカード・行などに接続します。中身は変更せず、その要素だけで右クリックを扱います。"
+    ]
+  ]
+}

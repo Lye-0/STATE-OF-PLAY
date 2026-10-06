@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Channel Pages — 刻まれた連続溝の中で、現在の頁を金属の小窓として読む。 */
+.sop-foundation.sop-channel-pages{--ff-accent:#bfc7bd;--ff-panel:#394a3f;--ff-base:#213628;--ff-line:#81957c}.sop-foundation.sop-channel-pages .ff-pages{padding:5px;border:3px solid #8d9f86;border-radius:3px;background:#203627;gap:2px;box-shadow:inset 0 3px 7px #051b0d88;flex-wrap:wrap}.sop-foundation.sop-channel-pages .ff-pages button,.sop-foundation.sop-channel-pages .ff-pages a{border:1px solid #61785c;background:#344b35;border-radius:1px;min-height:44px;box-shadow:inset 0 2px #aebea222}.sop-foundation.sop-channel-pages .ff-pages [aria-current]{background:linear-gradient(#c5d1b6,#80936d);color:#22341f;border-color:#d3dcc4}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-channel-pages,.sop-foundation.sop-channel-pages *,.sop-foundation.sop-channel-pages::before,.sop-foundation.sop-channel-pages::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-channel-pages{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-channel-pages :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-channel-pages:focus-visible,.sop-foundation.sop-channel-pages :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-channel-pages[data-sop-paused] *,.sop-foundation.sop-channel-pages[data-paused=true] *,.sop-foundation.sop-channel-pages[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

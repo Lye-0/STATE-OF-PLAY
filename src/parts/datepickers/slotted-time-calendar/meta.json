@@ -1,0 +1,57 @@
+{
+  "id": "slotted-time-calendar",
+  "name": "Slotted Time Calendar",
+  "category": "datepickers",
+  "order": 3177,
+  "version": "1.0.0",
+  "tagline": "時刻の列を二つの浅い溝に置き、選択位置を細い面で示す。",
+  "description": "時刻の列を二つの浅い溝に置き、選択位置を細い面で示す。",
+  "material": "SLOTTED TIME CALENDAR",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "SlottedTimeCalendar",
+  "tags": [
+    "EXPANSION-30",
+    "Slotted Time Calendar",
+    "時刻の列を二つの浅い溝に置き、選択位置を細い面で示す。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "slotted-time-calendar",
+    "kind": "datepickers",
+    "variant": "essential",
+    "label": "次の時間を、予約する。",
+    "description": "",
+    "defaultValue": "14:30",
+    "mode": "time"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "vertical-register-navigation",
+  "name": "Vertical Register Navigation",
+  "category": "navigation",
+  "description": "細い登録帯の右に行き先を並べ、現在地を番号札のように示す。",
+  "designType": "A",
+  "tagline": "細い登録帯の右に行き先を並べ、現在地を番号札のように示す。",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3276,
+  "version": "1.0.0",
+  "material": "VERTICAL REGISTER NAVIGATION",
+  "accent": "192,216,201",
+  "componentName": "VerticalRegisterNavigation",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "navigation"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Vertical Register Navigation",
+    "細い登録帯の右に行き先を並べ、現在地を番号札のように示す。",
+    "NAVIGATOR"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "NavigationItem[]",
+      "ラベル・href・子リンク・アイコン・バッジ。"
+    ],
+    [
+      "layout",
+      "header | sidebar | dock | mobile",
+      "置き場所に合うレイアウトを指定。"
+    ],
+    [
+      "active / onActiveChange",
+      "string / callback",
+      "現在地のID。リンクを移動して外部状態から反映可能。"
+    ],
+    [
+      "onNavigate",
+      "(item, event) => void | false",
+      "通常はネイティブリンク。falseで既定移動を止めルーターへ接続。"
+    ],
+    [
+      "open / onOpenChange",
+      "boolean / callback",
+      "モバイルナビゲーションの表示を制御。"
+    ]
+  ]
+}

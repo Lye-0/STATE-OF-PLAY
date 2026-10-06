@@ -1,0 +1,11 @@
+@import "../../../shared/navigation-link-base.css";
+/* Dipped Label Link — 丸い浸し跡のような面が、ラベルの端に重なる。 */
+.sop-link.sop-dipped-label-link{--sop-link-ink:#e2d7c8;padding:14px 22px;gap:24px;border:0;background:radial-gradient(circle at 100% 50%,#7c5f43 0 30%,#372f28 31%);border-radius:3px 40% 40% 3px}.sop-link.sop-dipped-label-link .sop-link-icon{color:#f4d9b4;transform:rotate(45deg)}.sop-link.sop-dipped-label-link:hover{background-position:5px 0}
+@media(prefers-reduced-motion:reduce){.sop-link.sop-dipped-label-link,.sop-link.sop-dipped-label-link *,.sop-link.sop-dipped-label-link::before,.sop-link.sop-dipped-label-link::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-link.sop-dipped-label-link{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-link.sop-dipped-label-link :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-link.sop-dipped-label-link:focus-visible,.sop-link.sop-dipped-label-link :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-link.sop-dipped-label-link[data-sop-paused] *,.sop-link.sop-dipped-label-link[data-paused=true] *,.sop-link.sop-dipped-label-link[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+/* Preserve interpolation on hover exit and reversal as well as entry. */
+.sop-link.sop-dipped-label-link{background-position:0px 0px;transition:background-position .6s}

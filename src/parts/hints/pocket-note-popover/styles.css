@@ -1,0 +1,16 @@
+@import "../../../shared/foundation/base.css";
+/* Pocket Note Popover — 丸い上縁と平らな底をもつ小さなポケットから、説明を取り出す。 */
+.sop-foundation.sop-pocket-note-popover{--ff-accent:#d4b89c;--ff-panel:#4a3a2e;--ff-base:#342a23;--ff-line:#a38669}.sop-foundation.sop-pocket-note-popover .ff-hint-trigger{border:2px solid #a38a6b;border-radius:24px 24px 5px 5px;background:#675139;padding:14px 19px}.sop-foundation.sop-pocket-note-popover .ff-hint-panel{border:3px solid #9e8462;border-radius:23px 23px 3px 3px;background:linear-gradient(#76604733,#3e3127);box-shadow:inset 0 1px #ecd5aa55,0 18px 40px #0007;padding:24px}.sop-foundation.sop-pocket-note-popover .ff-hint-facts{border-top:1px dashed #b2956d}.sop-foundation.sop-pocket-note-popover .ff-hint-heading svg{border:1px solid #b29b73;border-radius:50%;padding:2px}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-pocket-note-popover,.sop-foundation.sop-pocket-note-popover *,.sop-foundation.sop-pocket-note-popover::before,.sop-foundation.sop-pocket-note-popover::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-pocket-note-popover{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-pocket-note-popover :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-pocket-note-popover:focus-visible,.sop-foundation.sop-pocket-note-popover :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-pocket-note-popover[data-sop-paused] *,.sop-foundation.sop-pocket-note-popover[data-paused=true] *,.sop-foundation.sop-pocket-note-popover[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+
+
+/* Visual review: composition and state separation. */
+.sop-foundation.sop-pocket-note-popover .ff-hint-trigger{border-radius:0 0 22px 22px;box-shadow:0 5px 0 var(--ff-base);padding:16px 20px}.sop-foundation.sop-pocket-note-popover .ff-hint-panel{border-radius:0 0 36px 36px;border-top:10px solid var(--ff-accent)}.sop-foundation.sop-pocket-note-popover .ff-hint-heading{justify-content:center}.sop-foundation.sop-pocket-note-popover .ff-hint-facts{background:var(--ff-base);padding:15px;border-radius:0 0 20px 20px}
+
+/* Final visual review: readable surface and distinct composition. */
+.sop-foundation.sop-pocket-note-popover .ff-hint-panel{background:linear-gradient(#4e4034,#3e3127)}

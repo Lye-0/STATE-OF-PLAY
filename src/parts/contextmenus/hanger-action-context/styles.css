@@ -1,0 +1,13 @@
+@import "../../../shared/workbench/base.css";
+/* Hanger Action Context — 対象を小さな吊り札として見せ、操作を短いタグ列へ開く。 */
+.sop-wb.sop-hanger-action-context{--wb-bg:#463a2c;--wb-accent:#d3be9c;--wb-line:#aa936d;--wb-muted:#c0ad88}.sop-wb.sop-hanger-action-context .wb-context-target{background:#4c402f;border:1px solid #b49b74;border-top:5px solid #a38d64;border-radius:2px;padding:25px}.sop-wb.sop-hanger-action-context .wb-context-object{border-radius:0;border:1px solid #ccb080;background:#77603f;transform:rotate(-5deg);box-shadow:3px 3px #2c302377}.sop-wb.sop-hanger-action-context .wb-context-panel{background:#493b26;border:1px solid #b29a6e;border-left:9px solid #9b8357;border-radius:0;padding:11px}.sop-wb.sop-hanger-action-context .wb-context-items button{border:1px solid #a68d6555;border-radius:1px;background:#66512f;margin-bottom:5px;padding:12px}.sop-wb.sop-hanger-action-context .wb-menu-glyph{border-radius:2px;background:#958154;width:24px;height:24px;padding:4px}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-hanger-action-context,.sop-wb.sop-hanger-action-context *,.sop-wb.sop-hanger-action-context::before,.sop-wb.sop-hanger-action-context::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-wb.sop-hanger-action-context{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-hanger-action-context :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-wb.sop-hanger-action-context:focus-visible,.sop-wb.sop-hanger-action-context :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-wb.sop-hanger-action-context[data-sop-paused] *,.sop-wb.sop-hanger-action-context[data-paused=true] *,.sop-wb.sop-hanger-action-context[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+
+
+/* Visual review: composition and state separation. */
+.sop-wb.sop-hanger-action-context .wb-context-target{min-height:115px;align-items:start;padding-top:25px;border-top-width:12px}.sop-wb.sop-hanger-action-context .wb-context-object{border-radius:2px;transform:rotate(-7deg);margin-top:-14px}.sop-wb.sop-hanger-action-context .wb-context-panel{padding:22px 10px 10px;border-top:12px solid var(--wb-line)}.sop-wb.sop-hanger-action-context .wb-context-items button{border:1px solid var(--wb-line);border-bottom-width:4px;border-radius:0;margin-bottom:9px;padding:13px}.sop-wb.sop-hanger-action-context .wb-menu-glyph{border:1px solid var(--wb-line);width:28px;height:28px;border-radius:0}

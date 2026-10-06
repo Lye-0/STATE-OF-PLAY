@@ -1,0 +1,11 @@
+@import "../../../shared/accordion-base.css";
+@import "../../../shared/panel-content.css";
+/* Book Spine Accordion — 冊子の背に並ぶ丸い番号から、章の内容を開く。 */
+.sop-accordion.sop-book-spine-accordion{--acc-bg:#e7d5b8;--acc-ink:#433a35;--acc-accent:#774943;--acc-line:#8b6d5644;--acc-radius:0;border-left:12px solid #74534a;padding-left:6px}.sop-accordion.sop-book-spine-accordion .sop-accordion-item{margin:0;border:0;border-bottom:1px solid #977b65}.sop-accordion.sop-book-spine-accordion .sop-accordion-index{border:1px solid #987a5e;border-radius:50%;width:30px;height:30px;display:grid;place-items:center}.sop-accordion.sop-book-spine-accordion .sop-accordion-sign{border-radius:50%;background:#a6876755;padding:12px}.sop-accordion.sop-book-spine-accordion .sop-accordion-item[data-open=true]{background:#f1e1c8;box-shadow:inset 3px 0 #985849}
+@media(prefers-reduced-motion:reduce){.sop-accordion.sop-book-spine-accordion,.sop-accordion.sop-book-spine-accordion *,.sop-accordion.sop-book-spine-accordion::before,.sop-accordion.sop-book-spine-accordion::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-accordion.sop-book-spine-accordion{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-accordion.sop-book-spine-accordion :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-accordion.sop-book-spine-accordion:focus-visible,.sop-accordion.sop-book-spine-accordion :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-accordion.sop-book-spine-accordion{--acc-muted:#707563}
+
+.sop-accordion.sop-book-spine-accordion[data-sop-paused] *,.sop-accordion.sop-book-spine-accordion[data-paused=true] *,.sop-accordion.sop-book-spine-accordion[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

@@ -1,0 +1,52 @@
+{
+  "id": "dashboard-slot-skeleton",
+  "name": "Dashboard Slot Skeleton",
+  "category": "skeletons",
+  "tagline": "独立した三つの数値枠と細い読取帯を、先に確保する待機面。",
+  "description": "独立した三つの数値枠と細い読取帯を、先に確保する待機面。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3233,
+  "version": "1.0.0",
+  "material": "DASHBOARD SLOT SKELETON",
+  "accent": "185,205,194",
+  "componentName": "DashboardSlotSkeleton",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "skeletons"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Dashboard Slot Skeleton",
+    "独立した三つの数値枠と細い読取帯を、先に確保する待機面。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "loading",
+      "boolean",
+      "実際の読み込み状態。自動で成功にはしない。"
+    ],
+    [
+      "rows",
+      "number",
+      "2〜8行のプレースホルダー。"
+    ],
+    [
+      "label",
+      "string",
+      "読み上げ用の待機ラベル。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "動きを一時停止。"
+    ],
+    [
+      "children",
+      "ReactNode",
+      "読み込み後に表示する実際の内容。"
+    ]
+  ]
+}

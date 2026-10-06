@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Gutter Trail — 細い溝の中にリンクを並べ、現在地だけを縁の外へ浮かせる。 */
+.sop-foundation.sop-gutter-trail{--ff-accent:#afd1dc;--ff-panel:#2e4c60;--ff-base:#193445;--ff-line:#7f9caa}.sop-foundation.sop-gutter-trail .ff-breadcrumb ol{background:#17374b;border:2px solid #789daf;border-radius:3px;box-shadow:inset 0 5px 9px #071e32aa;padding:8px;gap:6px;flex-wrap:wrap}.sop-foundation.sop-gutter-trail .ff-breadcrumb li{padding:7px 3px}.sop-foundation.sop-gutter-trail .ff-breadcrumb li+li:before{content:"•";color:#748fa5}.sop-foundation.sop-gutter-trail .ff-breadcrumb li:last-child{background:linear-gradient(#a8c1c9,#617f91);border:1px solid #bbd2d6;color:#173346;border-radius:3px;padding:7px 10px;box-shadow:0 3px 4px #081e2d88;transform:translateY(-3px)}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-gutter-trail,.sop-foundation.sop-gutter-trail *,.sop-foundation.sop-gutter-trail::before,.sop-foundation.sop-gutter-trail::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-gutter-trail{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-gutter-trail :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-gutter-trail:focus-visible,.sop-foundation.sop-gutter-trail :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-gutter-trail[data-sop-paused] *,.sop-foundation.sop-gutter-trail[data-paused=true] *,.sop-foundation.sop-gutter-trail[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

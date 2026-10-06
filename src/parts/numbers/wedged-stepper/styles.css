@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Wedged Stepper — 両端の楔が数値面を挟み、方向のある増減を作る。 */
+.sop-foundation.sop-wedged-stepper{--ff-accent:#d6aead;--ff-base:#3f2934;--ff-line:#a17389}.sop-foundation.sop-wedged-stepper .ff-stepper{background:none;border:0;gap:9px;padding:3px}.sop-foundation.sop-wedged-stepper .ff-stepper>button{width:41px;min-height:58px;border:0;border-radius:0;background:#805067;clip-path:polygon(0 0,100% 20%,100% 80%,0 100%)}.sop-foundation.sop-wedged-stepper .ff-stepper>button:last-child{clip-path:polygon(0 20%,100% 0,100% 100%,0 80%)}.sop-foundation.sop-wedged-stepper .ff-number-face{border-top:1px solid #bf92a2;border-bottom:1px solid #bf92a2;padding:10px 3px;background:#2c2431}.sop-foundation.sop-wedged-stepper [data-number]{font:31px Georgia}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-wedged-stepper,.sop-foundation.sop-wedged-stepper *,.sop-foundation.sop-wedged-stepper::before,.sop-foundation.sop-wedged-stepper::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-wedged-stepper{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-wedged-stepper :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-wedged-stepper:focus-visible,.sop-foundation.sop-wedged-stepper :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-wedged-stepper[data-sop-paused] *,.sop-foundation.sop-wedged-stepper[data-paused=true] *,.sop-foundation.sop-wedged-stepper[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

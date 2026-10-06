@@ -1,0 +1,13 @@
+@import "../../../shared/foundation/base.css";
+/* Fact Note Popover — 見出し・補足・値・操作を明確に分け、判断に必要な情報を短く読む。 */
+.sop-foundation.sop-fact-note-popover{--ff-accent:#b6c8db;--ff-panel:#2e435c;--ff-base:#25364e;--ff-line:#728ca8}.sop-foundation.sop-fact-note-popover .ff-hint-trigger{border:1px solid #7e9bb7;background:#2b4664;border-radius:5px;padding:12px 16px}.sop-foundation.sop-fact-note-popover .ff-hint-panel{border:1px solid #7f97ae;background:#263e57;border-radius:7px;padding:20px;box-shadow:0 12px 32px #00152a77}.sop-foundation.sop-fact-note-popover .ff-hint-heading{font-size:13px}.sop-foundation.sop-fact-note-popover .ff-hint-panel p{font-size:11px;line-height:1.8}.sop-foundation.sop-fact-note-popover .ff-hint-facts{background:#1c334c;padding:13px;border-radius:4px;font-size:10px}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-fact-note-popover,.sop-foundation.sop-fact-note-popover *,.sop-foundation.sop-fact-note-popover::before,.sop-foundation.sop-fact-note-popover::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-fact-note-popover{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-fact-note-popover :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-fact-note-popover:focus-visible,.sop-foundation.sop-fact-note-popover :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-fact-note-popover[data-sop-paused] *,.sop-foundation.sop-fact-note-popover[data-paused=true] *,.sop-foundation.sop-fact-note-popover[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+
+
+/* Visual review: composition and state separation. */
+.sop-foundation.sop-fact-note-popover .ff-hint-trigger{padding:8px 12px;border-radius:4px;min-height:36px}.sop-foundation.sop-fact-note-popover .ff-hint-facts{display:grid;grid-template-columns:64px minmax(0,1fr);gap:12px;border-top:1px solid var(--ff-line);border-bottom:1px solid var(--ff-line);padding:13px 0}.sop-foundation.sop-fact-note-popover .ff-hint-facts strong{font:12px Arial;text-align:left}

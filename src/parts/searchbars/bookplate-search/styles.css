@@ -1,0 +1,10 @@
+@import "../../../shared/workbench/base.css";
+/* Bookplate Search — 大きな文字の検索を、一枚の蔵書票のような面に載せる。 */
+.sop-wb.sop-bookplate-search{--wb-bg:#e0e4cc;--wb-ink:#3b4e32;--wb-accent:#617f4e;--wb-line:#94aa74;--wb-muted:#566345;color-scheme:light}.sop-wb.sop-bookplate-search .wb-search-shell{background:#e5e9d1;border:2px solid #91a978;border-radius:0;padding:24px;outline:1px solid #b7c699;outline-offset:-7px}.sop-wb.sop-bookplate-search .wb-search-field{background:#d4dfbb;border:0;border-bottom:2px solid #809b63;border-radius:0;min-height:64px;padding-left:9px}.sop-wb.sop-bookplate-search .wb-search-input{font:20px Georgia;color:#3e5834}.sop-wb.sop-bookplate-search .wb-search-submit{background:#a7be89;color:#334d2c;border:1px solid #799460;border-radius:0}.sop-wb.sop-bookplate-search .wb-search-filters button{border-radius:0;border:1px solid #a4b587;padding:7px 11px}.sop-wb.sop-bookplate-search .wb-search-results{border-color:#99ae7c}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-bookplate-search,.sop-wb.sop-bookplate-search *,.sop-wb.sop-bookplate-search::before,.sop-wb.sop-bookplate-search::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-wb.sop-bookplate-search{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-bookplate-search :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-wb.sop-bookplate-search:focus-visible,.sop-wb.sop-bookplate-search :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-wb.sop-bookplate-search :is([data-sg-error],[data-upload-error],.sg-wizard-error,[data-danger=true]){color:#8a3f46}
+
+.sop-wb.sop-bookplate-search[data-sop-paused] *,.sop-wb.sop-bookplate-search[data-paused=true] *,.sop-wb.sop-bookplate-search[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

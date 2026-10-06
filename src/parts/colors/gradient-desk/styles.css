@@ -1,0 +1,15 @@
+@import "../../../shared/signature/color.css";
+/* Gradient Desk — 大きな彩度面と、二本の独立した読取り帯を持つ横長の色机。 */
+.sop-sig.sop-gradient-desk{--sg-bg:#2d2840;--sg-line:#897da8;--sg-ink:#e8e2f1;--sg-muted:#b1a3cd}.sop-sig.sop-gradient-desk .sg-color-panel{background:#352b4e;border:1px solid #9e8bbc;border-bottom:8px solid #65577f;border-radius:1px;padding:22px}.sop-sig.sop-gradient-desk .sg-color-workspace{min-height:175px}.sop-sig.sop-gradient-desk .sg-color-sv{height:175px;border-radius:4px 4px 0 0;box-shadow:inset 0 1px #eee2f533,0 5px #1e173577}.sop-sig.sop-gradient-desk .sg-color-controls{background:#211a39;padding:10px 9px;border:1px solid #80719b}.sop-sig.sop-gradient-desk .sg-color-axis{font-size:9px;margin:12px 0}.sop-sig.sop-gradient-desk .sg-color-palette{justify-content:space-between}.sop-sig.sop-gradient-desk .sg-color-palette button{border-radius:2px;width:25px;height:25px}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-gradient-desk,.sop-sig.sop-gradient-desk *,.sop-sig.sop-gradient-desk::before,.sop-sig.sop-gradient-desk::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-sig.sop-gradient-desk{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-gradient-desk :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-sig.sop-gradient-desk:focus-visible,.sop-sig.sop-gradient-desk :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-sig.sop-gradient-desk[data-sop-paused] *,.sop-sig.sop-gradient-desk[data-paused=true] *,.sop-sig.sop-gradient-desk[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+.sop-sig.sop-gradient-desk *{animation-play-state:var(--sg-play,running)!important}
+
+
+/* Visual review: composition and state separation. */
+.sop-sig.sop-gradient-desk .sg-color-panel{display:grid;grid-template-columns:44px minmax(0,1fr);gap:17px;padding:22px;border:0;background:transparent;border-bottom:7px double var(--sg-line)}.sop-sig.sop-gradient-desk .sg-color-heading{grid-column:1 / -1}.sop-sig.sop-gradient-desk .sg-color-workspace{grid-column:2;height:160px;margin:0}.sop-sig.sop-gradient-desk .sg-color-controls{grid-column:2;padding:0;border:0}.sop-sig.sop-gradient-desk .sg-color-palette{grid-column:1;grid-row:2 / 4;display:flex;flex-direction:column;justify-content:space-between;padding:0;border:0;gap:8px}.sop-sig.sop-gradient-desk .sg-color-palette button{width:27px;height:27px;border-radius:2px;box-shadow:3px 3px #7b63944d}.sop-sig.sop-gradient-desk .sg-color-entry{grid-column:1 / -1}
+
+.sop-sig.sop-gradient-desk .sg-color-workspace .sg-color-sv{height:100%;min-height:0}

@@ -1,0 +1,60 @@
+{
+  "id": "specimen-dropzone",
+  "name": "Specimen Dropzone",
+  "category": "uploads",
+  "order": 3166,
+  "version": "1.0.0",
+  "tagline": "小さな資料の受皿を想起させる薄い縁と、番号帯を備える。",
+  "description": "小さな資料の受皿を想起させる薄い縁と、番号帯を備える。",
+  "material": "SPECIMEN DROPZONE",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "SpecimenDropzone",
+  "tags": [
+    "EXPANSION-30",
+    "Specimen Dropzone",
+    "小さな資料の受皿を想起させる薄い縁と、番号帯を備える。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "specimen-dropzone",
+    "kind": "uploads",
+    "variant": "essential",
+    "label": "アイデアの素材を、ここに。",
+    "description": "",
+    "defaultValue": [],
+    "multiple": true,
+    "maxFiles": 4,
+    "maxBytes": 10485760,
+    "accept": ".png,.jpg,.webp,.txt,.pdf"
+  }
+}

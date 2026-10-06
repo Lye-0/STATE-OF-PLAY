@@ -1,0 +1,9 @@
+@import "../../../shared/signature/timeline.css";
+/* Rising Date History — 現在の出来事の番号面が一段上がり、時刻と説明の読み順を保つ。 */
+.sop-sig.sop-rising-date-history{--sg-a:#c3c8df;--sg-line:#868fab;--sg-bg:#2e344c;--sg-muted:#b1b9d2}.sop-sig.sop-rising-date-history .sg-timeline{padding:20px 12px;background:#303b53;border:1px solid #8291af;border-radius:4px}.sop-sig.sop-rising-date-history .sg-event{grid-template-columns:45px 1fr;gap:14px;padding:13px 0 22px}.sop-sig.sop-rising-date-history .sg-event-route{display:none}.sop-sig.sop-rising-date-history .sg-event-time{font:12px Consolas;background:#4b5b78;border:1px solid #899db9;border-radius:2px;padding:9px 4px;text-align:center;align-self:start;box-shadow:0 3px #1a2b4277}.sop-sig.sop-rising-date-history .sg-event-main{border-bottom:1px solid #8a9cb966;padding-bottom:12px}.sop-sig.sop-rising-date-history .sg-event[data-status=active] .sg-event-time{transform:translateY(-4px);background:#90a6bf;color:#223b51;box-shadow:0 7px #1a2b4277}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-rising-date-history,.sop-sig.sop-rising-date-history *,.sop-sig.sop-rising-date-history::before,.sop-sig.sop-rising-date-history::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-sig.sop-rising-date-history{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-rising-date-history :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-sig.sop-rising-date-history:focus-visible,.sop-sig.sop-rising-date-history :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-sig.sop-rising-date-history[data-sop-paused] *,.sop-sig.sop-rising-date-history[data-paused=true] *,.sop-sig.sop-rising-date-history[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+.sop-sig.sop-rising-date-history *{animation-play-state:var(--sg-play,running)!important}

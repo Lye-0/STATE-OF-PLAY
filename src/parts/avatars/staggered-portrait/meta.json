@@ -1,0 +1,52 @@
+{
+  "id": "staggered-portrait",
+  "name": "Staggered Portrait",
+  "category": "avatars",
+  "tagline": "写真と署名の高さを交互にずらし、人物の列に穏やかなリズムを作る。",
+  "description": "写真と署名の高さを交互にずらし、人物の列に穏やかなリズムを作る。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3195,
+  "version": "1.0.0",
+  "material": "STAGGERED PORTRAIT",
+  "accent": "185,205,194",
+  "componentName": "StaggeredPortrait",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "avatars"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Staggered Portrait",
+    "写真と署名の高さを交互にずらし、人物の列に穏やかなリズムを作る。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "users",
+      "AvatarUser[]",
+      "id・name・任意のsrc、initials、subtitle、status。名前と在席状態は外部の値。"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "選択するユーザーID。valueを渡すと外部制御。"
+    ],
+    [
+      "interactive",
+      "boolean",
+      "falseで表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(id: string) => void",
+      "クリック時の要求値。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ]
+  ]
+}

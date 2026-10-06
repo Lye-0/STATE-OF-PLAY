@@ -1,0 +1,11 @@
+@import "../../../shared/signature/skeleton.css";
+/* Editorial Type Skeleton — 大きな見出しの塊と細い本文行を、印刷面のように組み立てる。 */
+.sop-sig.sop-editorial-type-skeleton{--sg-bg:#e1ddc8;--sg-a:#7b936c;--sg-line:#a2b48b;--sg-ink:#3b5037;--sg-muted:#545f48}.sop-sig.sop-editorial-type-skeleton .sg-skeleton-frame{background:#e6e4ce;border:0;border-top:7px solid #8aa072;border-radius:0;padding:24px;min-height:245px;--sk-tone:#a8b79866}.sop-sig.sop-editorial-type-skeleton .sg-sk-hero{height:46px;width:76%;border-radius:0;border-bottom:7px solid #e6e4ce;margin-bottom:25px}.sop-sig.sop-editorial-type-skeleton .sg-sk-hero i,.sop-sig.sop-editorial-type-skeleton .sg-sk-profile{display:none}.sop-sig.sop-editorial-type-skeleton .sg-sk-lines{gap:13px}.sop-sig.sop-editorial-type-skeleton .sg-sk-lines>i{height:5px;border-radius:0}.sop-sig.sop-editorial-type-skeleton .sg-sk-tiles{gap:14px;margin-top:21px}.sop-sig.sop-editorial-type-skeleton .sg-sk-tiles>i{height:7px;border-radius:0}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-editorial-type-skeleton,.sop-sig.sop-editorial-type-skeleton *,.sop-sig.sop-editorial-type-skeleton::before,.sop-sig.sop-editorial-type-skeleton::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-sig.sop-editorial-type-skeleton{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-editorial-type-skeleton :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-sig.sop-editorial-type-skeleton:focus-visible,.sop-sig.sop-editorial-type-skeleton :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-sig.sop-editorial-type-skeleton :is([data-sg-error],[data-upload-error],.sg-wizard-error,[data-danger=true]){color:#8a3f46}
+
+.sop-sig.sop-editorial-type-skeleton[data-sop-paused] *,.sop-sig.sop-editorial-type-skeleton[data-paused=true] *,.sop-sig.sop-editorial-type-skeleton[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+.sop-sig.sop-editorial-type-skeleton *{animation-play-state:var(--sg-play,running)!important}

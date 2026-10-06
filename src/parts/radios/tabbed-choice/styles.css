@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Tabbed Choice — 選択した札の端が横へ張り出し、本文と番号を一枚の紙にまとめる。 */
+.sop-foundation.sop-tabbed-choice{--ff-accent:#cfbf94;--ff-ink:#eae2ce;--ff-base:#38312a;--ff-panel:#4c4335;--ff-line:#9d8b69}.sop-foundation.sop-tabbed-choice .ff-choices{gap:11px}.sop-foundation.sop-tabbed-choice .ff-choice{border:0;border-left:5px solid #9c8967;border-radius:0;background:#41392e;box-shadow:4px 4px 0 #272b2566;padding:18px}.sop-foundation.sop-tabbed-choice .ff-choice[data-selected=true]{background:#6a5a40;border-left-color:#e2c896;box-shadow:8px 4px 0 #bba57555}.sop-foundation.sop-tabbed-choice .ff-choice-check{border-radius:2px;border-color:#baa575}.sop-foundation.sop-tabbed-choice .ff-choice-badge{font-size:14px;font-family:Georgia;border:0}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-tabbed-choice,.sop-foundation.sop-tabbed-choice *,.sop-foundation.sop-tabbed-choice::before,.sop-foundation.sop-tabbed-choice::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-tabbed-choice{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-tabbed-choice :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-tabbed-choice:focus-visible,.sop-foundation.sop-tabbed-choice :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-tabbed-choice[data-sop-paused] *,.sop-foundation.sop-tabbed-choice[data-paused=true] *,.sop-foundation.sop-tabbed-choice[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

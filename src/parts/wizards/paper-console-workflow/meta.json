@@ -1,0 +1,57 @@
+{
+  "id": "paper-console-workflow",
+  "name": "Paper Console Workflow",
+  "category": "wizards",
+  "tagline": "横の細い工程帯と下の大きな入力面を、紙の操作盤として組む。",
+  "description": "横の細い工程帯と下の大きな入力面を、紙の操作盤として組む。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3260,
+  "version": "1.0.0",
+  "material": "PAPER CONSOLE WORKFLOW",
+  "accent": "185,205,194",
+  "componentName": "PaperConsoleWorkflow",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "wizards"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Paper Console Workflow",
+    "横の細い工程帯と下の大きな入力面を、紙の操作盤として組む。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "steps",
+      "WizardStep[]",
+      "id・title・description・任意の入力fields。2〜4以上へ変更可。"
+    ],
+    [
+      "current / defaultCurrent",
+      "string",
+      "現在ステップID。currentは外部制御。"
+    ],
+    [
+      "beforeNext",
+      "(id, values) => boolean | string | Promise",
+      "trueで進む、文字列でエラー。"
+    ],
+    [
+      "onStepChange",
+      "(id: string) => void",
+      "次の工程の要求ID。"
+    ],
+    [
+      "onComplete",
+      "(values) => void",
+      "完了操作。保存・送信は利用先の責務。"
+    ],
+    [
+      "allowJump",
+      "boolean",
+      "先の工程を直接選択することを許可。標準false。"
+    ]
+  ]
+}

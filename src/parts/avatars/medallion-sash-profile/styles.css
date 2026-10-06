@@ -1,0 +1,9 @@
+@import "../../../shared/signature/avatar.css";
+/* Medallion Sash Profile — 縦長の人物印と、下に折り返した名前の帯を一つにする。 */
+.sop-sig.sop-medallion-sash-profile{--sg-a:#dec3a7;--sg-line:#a28b6b;--sg-muted:#baa78d}.sop-sig.sop-medallion-sash-profile .sg-portrait{width:71px;height:91px}.sop-sig.sop-medallion-sash-profile .sg-portrait-picture{inset:4px;border-radius:35% 35% 50% 50%;background:radial-gradient(at 25% 20%,#d4c9ac,#506c64);border:2px solid #b69b70}.sop-sig.sop-medallion-sash-profile .sg-portrait-ring{border:1px solid #b8a078;border-radius:37% 37% 52% 52%;box-shadow:0 6px #313c2f55}.sop-sig.sop-medallion-sash-profile .sg-person-copy{background:#7a6046;padding:7px 10px;clip-path:polygon(0 0,100% 0,92% 100%,8% 100%);color:#f0dfbb}.sop-sig.sop-medallion-sash-profile .sg-person-sub{color:#d6c4a5}.sop-sig.sop-medallion-sash-profile .sg-person[data-selected=true] .sg-person-copy{background:#a4825c}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-medallion-sash-profile,.sop-sig.sop-medallion-sash-profile *,.sop-sig.sop-medallion-sash-profile::before,.sop-sig.sop-medallion-sash-profile::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-sig.sop-medallion-sash-profile{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-medallion-sash-profile :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-sig.sop-medallion-sash-profile:focus-visible,.sop-sig.sop-medallion-sash-profile :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-sig.sop-medallion-sash-profile[data-sop-paused] *,.sop-sig.sop-medallion-sash-profile[data-paused=true] *,.sop-sig.sop-medallion-sash-profile[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+.sop-sig.sop-medallion-sash-profile *{animation-play-state:var(--sg-play,running)!important}

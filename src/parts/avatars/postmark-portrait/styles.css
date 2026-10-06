@@ -1,0 +1,9 @@
+@import "../../../shared/signature/avatar.css";
+/* Postmark Portrait — 消印のような外周と短い水平線が、人物の識別印を作る。 */
+.sop-sig.sop-postmark-portrait{--sg-a:#c3cfa9;--sg-line:#8f9e73;--sg-muted:#abb791}.sop-sig.sop-postmark-portrait .sg-portrait{width:81px;height:81px}.sop-sig.sop-postmark-portrait .sg-portrait-picture{inset:10px;border-radius:50%;background:radial-gradient(at 25% 15%,#d0d5ac,#47694c)}.sop-sig.sop-postmark-portrait .sg-portrait-ring{border:3px dotted #9dac7c;border-radius:50%;transform:rotate(-10deg)}.sop-sig.sop-postmark-portrait .sg-portrait-ring:after{content:"";position:absolute;left:70%;right:-23px;top:28px;height:7px;border-top:1px solid #9bab7b;border-bottom:1px solid #9bab7b}.sop-sig.sop-postmark-portrait .sg-person[data-selected=true] .sg-portrait-ring{border-color:#d3dfac;transform:rotate(12deg)}.sop-sig.sop-postmark-portrait .sg-person-name{font:13px Georgia;text-decoration:underline;text-underline-offset:5px}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-postmark-portrait,.sop-sig.sop-postmark-portrait *,.sop-sig.sop-postmark-portrait::before,.sop-sig.sop-postmark-portrait::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-sig.sop-postmark-portrait{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-postmark-portrait :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-sig.sop-postmark-portrait:focus-visible,.sop-sig.sop-postmark-portrait :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-sig.sop-postmark-portrait[data-sop-paused] *,.sop-sig.sop-postmark-portrait[data-paused=true] *,.sop-sig.sop-postmark-portrait[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+.sop-sig.sop-postmark-portrait *{animation-play-state:var(--sg-play,running)!important}

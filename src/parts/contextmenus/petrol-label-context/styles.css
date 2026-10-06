@@ -1,0 +1,13 @@
+@import "../../../shared/workbench/base.css";
+/* Petrol Label Context — 操作の印を大きく取り、項目の文字と余白を独立させる。 */
+.sop-wb.sop-petrol-label-context{--wb-bg:#243e43;--wb-accent:#bad4c7;--wb-line:#86a7a0;--wb-muted:#acc5ba}.sop-wb.sop-petrol-label-context .wb-context-target{background:#2a4b48;border:2px solid #7c9e8d;border-radius:24px 4px 4px 24px;padding:23px}.sop-wb.sop-petrol-label-context .wb-context-object{border-radius:50% 50% 3px 3px;background:#51776b;border:1px solid #b1c9b2;box-shadow:none}.sop-wb.sop-petrol-label-context .wb-context-panel{border:2px solid #82a99a;border-radius:18px 3px 3px 3px;background:#284d43;padding:10px}.sop-wb.sop-petrol-label-context .wb-context-items button{border:0;border-bottom:1px solid #83a68d77;border-radius:0;padding:13px 9px;gap:15px;min-height:46px}.sop-wb.sop-petrol-label-context .wb-menu-glyph{width:25px;height:25px;background:#5b8063;border-radius:50%;padding:5px;color:#dbe8bf}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-petrol-label-context,.sop-wb.sop-petrol-label-context *,.sop-wb.sop-petrol-label-context::before,.sop-wb.sop-petrol-label-context::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-wb.sop-petrol-label-context{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-petrol-label-context :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-wb.sop-petrol-label-context:focus-visible,.sop-wb.sop-petrol-label-context :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-wb.sop-petrol-label-context[data-sop-paused] *,.sop-wb.sop-petrol-label-context[data-paused=true] *,.sop-wb.sop-petrol-label-context[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+
+
+/* Visual review: composition and state separation. */
+.sop-wb.sop-petrol-label-context .wb-context-target{min-height:115px;border-radius:50px 4px 4px 50px;padding-left:15px}.sop-wb.sop-petrol-label-context .wb-context-object{border-radius:50%;width:54px;height:54px;box-shadow:none}.sop-wb.sop-petrol-label-context .wb-context-panel{border-radius:35px 4px 4px 35px;padding:12px 7px 12px 18px}.sop-wb.sop-petrol-label-context .wb-context-items button{border-bottom:1px dotted var(--wb-line);border-radius:24px 3px 3px 24px;padding:12px 10px}.sop-wb.sop-petrol-label-context .wb-menu-glyph{width:29px;height:29px;border:1px solid var(--wb-line);border-radius:50%}

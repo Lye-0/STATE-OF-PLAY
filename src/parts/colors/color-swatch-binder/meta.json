@@ -1,0 +1,52 @@
+{
+  "id": "color-swatch-binder",
+  "name": "Color Swatch Binder",
+  "category": "colors",
+  "tagline": "色見本を綴じた帯と、小さな調色面を一つの台紙へ収める。",
+  "description": "色見本を綴じた帯と、小さな調色面を一つの台紙へ収める。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3222,
+  "version": "1.0.0",
+  "material": "COLOR SWATCH BINDER",
+  "accent": "185,205,194",
+  "componentName": "ColorSwatchBinder",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "colors"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Color Swatch Binder",
+    "色見本を綴じた帯と、小さな調色面を一つの台紙へ収める。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "string",
+      "#RGBまたは#RRGGBB。外部へは#RRGGBBの大文字。"
+    ],
+    [
+      "palette",
+      "string[]",
+      "色見本。"
+    ],
+    [
+      "name",
+      "string",
+      "フォームで送信する値の名前。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "入力操作を停止。"
+    ],
+    [
+      "onValueChange",
+      "(hex: string) => void",
+      "有効な色のみ通知。透明度はこの版では扱わない。"
+    ]
+  ]
+}

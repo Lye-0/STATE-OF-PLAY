@@ -1,0 +1,58 @@
+{
+  "id": "pocket-note-popover",
+  "name": "Pocket Note Popover",
+  "category": "hints",
+  "order": 3108,
+  "version": "1.0.0",
+  "tagline": "丸い上縁と平らな底をもつ小さなポケットから、説明を取り出す。",
+  "description": "丸い上縁と平らな底をもつ小さなポケットから、説明を取り出す。",
+  "material": "POCKET NOTE POPOVER",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "PocketNotePopover",
+  "tags": [
+    "EXPANSION-30",
+    "Pocket Note Popover",
+    "丸い上縁と平らな底をもつ小さなポケットから、説明を取り出す。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "pocket-note-popover",
+    "kind": "hints",
+    "variant": "essential",
+    "label": "詳しく見る",
+    "description": "",
+    "defaultValue": null,
+    "interactive": true,
+    "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
+  }
+}

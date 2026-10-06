@@ -1,0 +1,61 @@
+{
+  "id": "labeled-track-range",
+  "name": "Labeled Track Range",
+  "category": "sliders",
+  "order": 3072,
+  "version": "1.0.0",
+  "tagline": "読みやすい現在値と、間隔の広い目盛りを持つ設定用トラック。",
+  "description": "読みやすい現在値と、間隔の広い目盛りを持つ設定用トラック。",
+  "material": "LABELED TRACK RANGE",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "B",
+  "runtime": "Native DOM + CSS",
+  "componentName": "LabeledTrackRange",
+  "tags": [
+    "EXPANSION-30",
+    "Labeled Track Range",
+    "読みやすい現在値と、間隔の広い目盛りを持つ設定用トラック。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "labeled-track-range",
+    "kind": "sliders",
+    "variant": "essential",
+    "label": "値を、ちょうどよく。",
+    "description": "",
+    "defaultValue": 62,
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "unit": "%",
+    "range": false
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "id": "caption-band-tag",
+  "name": "Caption Band Tag",
+  "category": "badges",
+  "order": 3127,
+  "version": "1.0.0",
+  "tagline": "ラベルの下辺に細い番号帯を載せ、情報を二段で読む。",
+  "description": "ラベルの下辺に細い番号帯を載せ、情報を二段で読む。",
+  "material": "CAPTION BAND TAG",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "CaptionBandTag",
+  "tags": [
+    "EXPANSION-30",
+    "Caption Band Tag",
+    "ラベルの下辺に細い番号帯を載せ、情報を二段で読む。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "caption-band-tag",
+    "kind": "badges",
+    "variant": "essential",
+    "label": "小さな情報に、個性を。",
+    "description": "",
+    "defaultValue": [
+      "ready"
+    ],
+    "selectable": true,
+    "removable": false,
+    "items": [
+      {
+        "value": "design",
+        "label": "Design",
+        "badge": "8",
+        "icon": "spark"
+      },
+      {
+        "value": "motion",
+        "label": "Motion",
+        "badge": "4",
+        "icon": "clock"
+      },
+      {
+        "value": "ready",
+        "label": "Ready",
+        "icon": "check"
+      },
+      {
+        "value": "review",
+        "label": "Review",
+        "icon": "info"
+      }
+    ]
+  }
+}

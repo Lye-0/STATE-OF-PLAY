@@ -1,0 +1,52 @@
+{
+  "id": "file-tree-skeleton",
+  "name": "File Tree Skeleton",
+  "category": "skeletons",
+  "tagline": "階層の幹と短いファイル名の線を保ち、一覧の読込みを知らせる。",
+  "description": "階層の幹と短いファイル名の線を保ち、一覧の読込みを知らせる。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3229,
+  "version": "1.0.0",
+  "material": "FILE TREE SKELETON",
+  "accent": "185,205,194",
+  "componentName": "FileTreeSkeleton",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "skeletons"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "File Tree Skeleton",
+    "階層の幹と短いファイル名の線を保ち、一覧の読込みを知らせる。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "loading",
+      "boolean",
+      "実際の読み込み状態。自動で成功にはしない。"
+    ],
+    [
+      "rows",
+      "number",
+      "2〜8行のプレースホルダー。"
+    ],
+    [
+      "label",
+      "string",
+      "読み上げ用の待機ラベル。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "動きを一時停止。"
+    ],
+    [
+      "children",
+      "ReactNode",
+      "読み込み後に表示する実際の内容。"
+    ]
+  ]
+}

@@ -1,0 +1,25 @@
+Passed filter and toggle-state cases from the targeted regression run. ZIP/mobile were verified separately.
+SKIP Gallery: 1120 parts, no runtime errors
+  verified filter all / A = 845
+  verified filter all / B = 275
+  verified filter all / all = 1120
+  verified filter toggles / A = 23
+  verified filter toggles / B = 7
+  verified filter toggles / all = 30
+  verified filter blocks / A = 21
+  verified filter blocks / B = 9
+  verified filter blocks / all = 30
+  verified filter scrollbars / A = 29
+  verified filter scrollbars / B = 6
+  verified filter scrollbars / all = 35
+  verified filter dropdowns / A = 29
+  verified filter dropdowns / B = 6
+  verified filter dropdowns / all = 35
+  verified filter accordions / A = 21
+  verified filter accordions / B = 9
+  verified filter accordions / all = 30
+  verified filter textboxes / A = 20
+  verified filter textboxes / B = 10
+  verified filter textboxes / all = 30
+PASS A/B and category filters intersect, counts remain correct, and the selector stays in sync
+PASS Liquid, Fold, Prism have intrinsic opposite state labels and distinct optical treatment

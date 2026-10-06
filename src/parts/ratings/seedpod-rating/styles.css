@@ -1,0 +1,9 @@
+@import "../../../shared/signature/rating.css";
+/* Seedpod Rating — 細い種の房を、軽い五段階の評価として並べる。 */
+.sop-sig.sop-seedpod-rating .sg-rating-star{display:none}.sop-sig.sop-seedpod-rating .sg-rating-form{inset:2px 0 17px}.sop-sig.sop-seedpod-rating .sg-rating-number{opacity:1;position:absolute;bottom:-15px;font:8px Consolas}.sop-sig.sop-seedpod-rating .sg-rating-core{opacity:1;transition:transform .5s,background .4s,box-shadow .4s}.sop-sig.sop-seedpod-rating{--sg-a:#cbd4a8;--sg-line:#91a173}.sop-sig.sop-seedpod-rating .sg-rating-core{inset:2px 10px;background:linear-gradient(90deg,#5e714a,#9cb173,#526944);border:1px solid #b1c38f;border-radius:50%;box-shadow:inset 0 1px #d8e5b733}.sop-sig.sop-seedpod-rating .sg-rating-core:after{content:"";position:absolute;top:4px;bottom:4px;left:50%;border-left:1px solid #ccd8a288;border-radius:50%}.sop-sig.sop-seedpod-rating .sg-rating-unit[data-filled=true] .sg-rating-core{background:linear-gradient(90deg,#96ad6d,#d7dfa8,#8fa46c);transform:scale(1.1)}.sop-sig.sop-seedpod-rating .sg-rating-scale{gap:17px}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-seedpod-rating,.sop-sig.sop-seedpod-rating *,.sop-sig.sop-seedpod-rating::before,.sop-sig.sop-seedpod-rating::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-sig.sop-seedpod-rating{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-seedpod-rating :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-sig.sop-seedpod-rating:focus-visible,.sop-sig.sop-seedpod-rating :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-sig.sop-seedpod-rating[data-sop-paused] *,.sop-sig.sop-seedpod-rating[data-paused=true] *,.sop-sig.sop-seedpod-rating[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+.sop-sig.sop-seedpod-rating *{animation-play-state:var(--sg-play,running)!important}

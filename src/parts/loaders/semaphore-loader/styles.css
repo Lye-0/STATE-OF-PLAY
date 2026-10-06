@@ -1,0 +1,9 @@
+@import "../../../shared/foundation/base.css";
+@import "../../../shared/foundation/continuum/loaders.css";
+/* Semaphore Loader — 三本の小さな旗が、一つずつ向きを変えながら処理を知らせる。 */
+.sop-foundation.sop-semaphore-loader{--ld-size:119px;--ld-accent:#dcc0b1;--ld-secondary:#9d746b}.sop-foundation.sop-semaphore-loader .ld-dots{position:absolute;inset:0;display:block;width:100%;height:100%;border-bottom:2px solid #a08873}.sop-foundation.sop-semaphore-loader .ld-dot{position:absolute;left:calc(12% + var(--i)*30%);top:20%;width:24px;height:46px;background:linear-gradient(90deg,#99745e 0 4px,transparent 4px);border-radius:0;animation:semaphore-loader-wave 3.6s ease-in-out infinite;animation-delay:calc(var(--i)*-.9s);transform-origin:2px 95%}.sop-foundation.sop-semaphore-loader .ld-dot:before{content:"";position:absolute;width:25px;height:22px;left:3px;top:0;background:linear-gradient(130deg,#d1b193,#9f795a);clip-path:polygon(0 0,100% 15%,80% 100%,0 80%)}@keyframes semaphore-loader-wave{0%,100%{transform:rotate(-20deg)}50%{transform:rotate(25deg)}}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-semaphore-loader,.sop-foundation.sop-semaphore-loader *,.sop-foundation.sop-semaphore-loader::before,.sop-foundation.sop-semaphore-loader::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-semaphore-loader{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-semaphore-loader :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-semaphore-loader:focus-visible,.sop-foundation.sop-semaphore-loader :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-semaphore-loader[data-sop-paused] *,.sop-foundation.sop-semaphore-loader[data-paused=true] *,.sop-foundation.sop-semaphore-loader[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

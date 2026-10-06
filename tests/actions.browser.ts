@@ -1,3 +1,5 @@
+import {galleryCount} from './gallery-counts.ts';
+import {selectSetting} from './detail-settings.ts';
 import {galleryReady} from './gallery-ready.ts';
 /** Native button/link behavior plus real exported React components. No network actions are performed. */
 import assert from 'node:assert/strict';
@@ -25,7 +27,7 @@ try {
  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
  if(offline){const files=offlineFiles(data);await page.setContent(files.get('/index.html')!.replace(/<script[^>]*>[\s\S]*?<\/script>/g,'').replace(/<link[^>]*>/g,''));await page.addStyleTag({content:files.get('/test-styles.css')!});for(const v of ['prism','jszip'])await page.addScriptTag({content:fs.readFileSync(path.join(ROOT,'public/vendor',v+'.js'),'utf8')});await page.addScriptTag({content:files.get('/test-app.js')!});}else{await page.goto(url,{waitUntil:'commit',timeout:120000});await page.waitForFunction(()=>document.documentElement.classList.contains('site-ready'),undefined,{timeout:120000});}
  await run('Collections: 24 buttons and 16 links with both design intentions',async()=>{
-  for(const [category,total,a]of [['buttons',26,17],['links',16,10]]as const){const extra=category==='links'&&!offline?1:0;await page.locator(`[data-category="${category}"]`).click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),total+2*extra);await page.locator('[data-design-filter="A"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),a+extra);await page.locator('[data-design-filter="B"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),total-a+extra);await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);}
+  for(const [category,total,a]of [['buttons',26,17],['links',15,10]]as const){const extra=category==='links'&&!offline?1:0;await page.locator(`[data-category="${category}"]`).click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?data.parts:undefined));await page.locator('[data-design-filter="A"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?data.parts:undefined));await page.locator('[data-design-filter="B"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?data.parts:undefined));await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);}
  });
  await run('Button demo: mouse, Space, Enter, visible feedback and busy reentry guard',async()=>{
   await page.locator('[data-category="buttons"]').click();await galleryReady(page,true);const button=page.locator('[data-part="helios-button"] .sop-action'),card=page.locator('[data-part="helios-button"]');
@@ -34,10 +36,10 @@ try {
  });
  await run('Detail: persistent preview, loading/disabled controls and exact code prompt',async()=>{
   await page.locator('[data-open="mercury-button"]').click();await galleryReady(page,true);const d=page.locator('#part-details'),b=d.locator('.sop-action');
-  await d.locator('[data-action-state="loading"]').click();assert.equal(await b.getAttribute('aria-busy'),'true');await d.locator('[data-format="js"]').click();await d.locator('#export-layout').selectOption('original');assert.equal(await b.getAttribute('aria-busy'),'true');
+  await d.locator('[data-action-state="loading"]').click();assert.equal(await b.getAttribute('aria-busy'),'true');await d.locator('[data-format="js"]').click();await selectSetting(d.locator('#export-layout'),'original');assert.equal(await b.getAttribute('aria-busy'),'true');
   await d.locator('[data-action-state="disabled"]').click();assert.ok(await b.isDisabled());await d.locator('[data-action-state="ready"]').click();assert.ok(await b.isEnabled());assert.equal(await b.getAttribute('aria-busy'),null);
   await b.click();await d.locator('[data-action-state="loading"]').click();await page.waitForTimeout(950);assert.equal(await b.getAttribute('aria-busy'),'true','manual state must cancel demo timer');
-  await d.locator('[data-action-state="ready"]').click();assert.match(await d.locator('.action-demo-feedback').innerText(),/クリックして/);await d.locator('[data-format="tsx"]').click();await d.locator('#export-layout').selectOption('portable');await d.locator('[data-detail-tab="prompt"]').click();assert.equal(await d.locator('#prompt-text').inputValue(),buildPrompt(parts.find(p=>p.id==='mercury-button')!,'tsx','portable'));
+  await d.locator('[data-action-state="ready"]').click();assert.match(await d.locator('.action-demo-feedback').innerText(),/クリックして/);await d.locator('[data-format="tsx"]').click();await selectSetting(d.locator('#export-layout'),'portable');await d.locator('[data-detail-tab="prompt"]').click();assert.equal(await d.locator('#prompt-text').inputValue(),buildPrompt(parts.find(p=>p.id==='mercury-button')!,'tsx','portable'));
   await d.locator('[data-detail-tab="code"]').click();await page.screenshot({path:path.join(out,'button-detail.png')});await d.locator('.close-detail').click();
  });
  await run('Native links navigate to actual targets without opening/closing part details',async()=>{

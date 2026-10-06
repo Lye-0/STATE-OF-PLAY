@@ -1,0 +1,57 @@
+{
+  "id": "ticket-roll-pages",
+  "name": "Ticket Roll Pages",
+  "category": "pagination",
+  "order": 3149,
+  "version": "1.0.0",
+  "tagline": "半券の丸い切れ目と番号を連続させ、現在の頁でロールを止める。",
+  "description": "半券の丸い切れ目と番号を連続させ、現在の頁でロールを止める。",
+  "material": "TICKET ROLL PAGES",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "TicketRollPages",
+  "tags": [
+    "EXPANSION-30",
+    "Ticket Roll Pages",
+    "半券の丸い切れ目と番号を連続させ、現在の頁でロールを止める。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "ticket-roll-pages",
+    "kind": "pagination",
+    "variant": "essential",
+    "label": "コレクションをめくる",
+    "description": "",
+    "defaultValue": 4,
+    "totalPages": 12
+  }
+}

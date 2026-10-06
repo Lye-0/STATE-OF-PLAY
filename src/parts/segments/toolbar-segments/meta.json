@@ -1,0 +1,58 @@
+{
+  "id": "toolbar-segments",
+  "name": "Toolbar Segments",
+  "category": "segments",
+  "order": 3039,
+  "version": "1.0.0",
+  "tagline": "同じ操作群を小さな道具列として整理し、現在値を下辺で示す。",
+  "description": "同じ操作群を小さな道具列として整理し、現在値を下辺で示す。",
+  "material": "TOOLBAR SEGMENTS",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "186,204,195",
+  "designType": "B",
+  "runtime": "CSS + event-driven geometry / native radios",
+  "componentName": "ToolbarSegments",
+  "tags": [
+    "EXPANSION-30",
+    "Toolbar Segments",
+    "同じ操作群を小さな道具列として整理し、現在値を下辺で示す。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "readonly SegmentItem[]",
+      "項目数は自由。value / label / icon / disabled / description"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "外部制御の値 / 非制御の初期値"
+    ],
+    [
+      "onValueChange",
+      "(value: string) => void",
+      "利用先の状態へ接続"
+    ],
+    [
+      "disabled / items[].disabled",
+      "boolean",
+      "全体 / 項目ごとに無効化"
+    ],
+    [
+      "orientation",
+      "horizontal | vertical",
+      "並びの方向。内容に応じて選択指標も再計測"
+    ],
+    [
+      "name / form / required",
+      "native radio attributes",
+      "実フォームへの送信とリセット"
+    ],
+    [
+      "className / style / aria-label",
+      "HTML attributes",
+      "外側の配置とグループの目的"
+    ]
+  ]
+}

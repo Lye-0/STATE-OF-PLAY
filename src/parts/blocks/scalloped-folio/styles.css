@@ -1,0 +1,11 @@
+.sop-surface.sop-scalloped-folio{position:relative;isolation:isolate;box-sizing:border-box;min-width:0;width:100%;color:var(--sop-ink,#edf0e8)}.sop-surface.sop-scalloped-folio *{box-sizing:border-box}.sop-surface.sop-scalloped-folio .sop-surface-content{position:relative;z-index:1;padding:var(--sop-padding,28px);min-width:0}
+/* Scalloped Folio — 波打つ紙端と縦の綴じ穴が、読み物を一枚の台紙に収める。 */
+.sop-surface.sop-scalloped-folio{--sop-ink:#3e3433;--sop-accent-ink:#92665e;background:#e8dbc9;border-radius:2px 22px 22px 2px;border-left:14px solid #584044;box-shadow:5px 8px 0 #312a30,0 14px 25px #0004}.sop-surface.sop-scalloped-folio:before{content:"";position:absolute;top:10px;bottom:10px;left:5px;width:8px;background:radial-gradient(circle,#211c21 2px,transparent 3px) 0 0/8px 25px}.sop-surface.sop-scalloped-folio .sop-surface-content{padding-left:34px}.sop-surface.sop-scalloped-folio:hover{box-shadow:7px 10px 0 #312a30,0 16px 30px #0005}
+@media(prefers-reduced-motion:reduce){.sop-surface.sop-scalloped-folio,.sop-surface.sop-scalloped-folio *,.sop-surface.sop-scalloped-folio::before,.sop-surface.sop-scalloped-folio::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-surface.sop-scalloped-folio{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-surface.sop-scalloped-folio :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-surface.sop-scalloped-folio:focus-visible,.sop-surface.sop-scalloped-folio :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-surface.sop-scalloped-folio[data-sop-paused] *,.sop-surface.sop-scalloped-folio[data-paused=true] *,.sop-surface.sop-scalloped-folio[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+/* Keep the same interpolation when hover is entered, left, or interrupted. */
+.sop-surface.sop-scalloped-folio{transition:box-shadow .4s}

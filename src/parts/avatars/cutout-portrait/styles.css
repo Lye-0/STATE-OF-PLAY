@@ -1,0 +1,9 @@
+@import "../../../shared/signature/avatar.css";
+/* Cutout Portrait — 紙の切抜きのような輪郭と、横に添えた短い署名で人物を示す。 */
+.sop-sig.sop-cutout-portrait{--sg-a:#cab795;--sg-muted:#b9aa90;--sg-line:#9d8666}.sop-sig.sop-cutout-portrait .sg-avatar-list{gap:16px}.sop-sig.sop-cutout-portrait .sg-person{gap:9px;padding:8px 5px 12px;border-bottom:2px solid #957855;max-width:90px}.sop-sig.sop-cutout-portrait .sg-portrait{width:74px;height:88px;transform:rotate(-3deg)}.sop-sig.sop-cutout-portrait .sg-portrait-picture{inset:0;border-radius:0;clip-path:polygon(6% 0,100% 3%,97% 95%,84% 100%,3% 96%,0 5%);background:linear-gradient(145deg,#b3b793,#566c61);border:4px solid #e0cfa8}.sop-sig.sop-cutout-portrait .sg-portrait-ring{display:none}.sop-sig.sop-cutout-portrait .sg-person[data-selected=true]{border-bottom-color:#e4cba1}.sop-sig.sop-cutout-portrait .sg-person[data-selected=true] .sg-portrait{transform:rotate(2deg)}.sop-sig.sop-cutout-portrait .sg-person-name{font:italic 13px Georgia}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-cutout-portrait,.sop-sig.sop-cutout-portrait *,.sop-sig.sop-cutout-portrait::before,.sop-sig.sop-cutout-portrait::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-sig.sop-cutout-portrait{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-cutout-portrait :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-sig.sop-cutout-portrait:focus-visible,.sop-sig.sop-cutout-portrait :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-sig.sop-cutout-portrait[data-sop-paused] *,.sop-sig.sop-cutout-portrait[data-paused=true] *,.sop-sig.sop-cutout-portrait[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+.sop-sig.sop-cutout-portrait *{animation-play-state:var(--sg-play,running)!important}

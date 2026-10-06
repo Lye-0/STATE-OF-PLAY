@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Spaced Serif Pages — 大きな頁番号を余白に置き、現在の番号だけを横線で結ぶ。 */
+.sop-foundation.sop-spaced-serif-pages{--ff-accent:#d2bbc6;--ff-panel:#513d4b;--ff-base:#382737;--ff-line:#947b92}.sop-foundation.sop-spaced-serif-pages .ff-pages{background:none;border:0;border-radius:0;gap:11px;padding:12px 0;flex-wrap:wrap}.sop-foundation.sop-spaced-serif-pages .ff-pages button,.sop-foundation.sop-spaced-serif-pages .ff-pages a{font:17px Georgia;background:none;border:0;border-radius:0;min-height:43px;padding:7px 6px}.sop-foundation.sop-spaced-serif-pages .ff-pages [aria-current]{border-bottom:3px solid #c9a7bb;border-top:1px solid #b697ad;color:#f1ddea}.sop-foundation.sop-spaced-serif-pages .ff-page-info{font-family:Georgia;letter-spacing:1px}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-spaced-serif-pages,.sop-foundation.sop-spaced-serif-pages *,.sop-foundation.sop-spaced-serif-pages::before,.sop-foundation.sop-spaced-serif-pages::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-spaced-serif-pages{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-spaced-serif-pages :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-spaced-serif-pages:focus-visible,.sop-foundation.sop-spaced-serif-pages :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-spaced-serif-pages[data-sop-paused] *,.sop-foundation.sop-spaced-serif-pages[data-paused=true] *,.sop-foundation.sop-spaced-serif-pages[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

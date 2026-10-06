@@ -1,0 +1,57 @@
+{
+  "id": "sill-workflow",
+  "name": "Sill Workflow",
+  "category": "wizards",
+  "tagline": "工程の札を低い窓台に置き、現在の工程だけを前へ引き出す。",
+  "description": "工程の札を低い窓台に置き、現在の工程だけを前へ引き出す。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3252,
+  "version": "1.0.0",
+  "material": "SILL WORKFLOW",
+  "accent": "185,205,194",
+  "componentName": "SillWorkflow",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "wizards"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Sill Workflow",
+    "工程の札を低い窓台に置き、現在の工程だけを前へ引き出す。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "steps",
+      "WizardStep[]",
+      "id・title・description・任意の入力fields。2〜4以上へ変更可。"
+    ],
+    [
+      "current / defaultCurrent",
+      "string",
+      "現在ステップID。currentは外部制御。"
+    ],
+    [
+      "beforeNext",
+      "(id, values) => boolean | string | Promise",
+      "trueで進む、文字列でエラー。"
+    ],
+    [
+      "onStepChange",
+      "(id: string) => void",
+      "次の工程の要求ID。"
+    ],
+    [
+      "onComplete",
+      "(values) => void",
+      "完了操作。保存・送信は利用先の責務。"
+    ],
+    [
+      "allowJump",
+      "boolean",
+      "先の工程を直接選択することを許可。標準false。"
+    ]
+  ]
+}

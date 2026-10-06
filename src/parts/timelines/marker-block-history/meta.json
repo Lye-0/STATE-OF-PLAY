@@ -1,0 +1,52 @@
+{
+  "id": "marker-block-history",
+  "name": "Marker Block History",
+  "category": "timelines",
+  "tagline": "現在の記録だけに厚い標識を置き、その他の出来事を細い行に保つ。",
+  "description": "現在の記録だけに厚い標識を置き、その他の出来事を細い行に保つ。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3250,
+  "version": "1.0.0",
+  "material": "MARKER BLOCK HISTORY",
+  "accent": "185,205,194",
+  "componentName": "MarkerBlockHistory",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "timelines"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Marker Block History",
+    "現在の記録だけに厚い標識を置き、その他の出来事を細い行に保つ。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "TimelineItem[]",
+      "id・title・description・date・dateTime・status・hrefなど。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "詳細を開くID。expandedで外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(ids: string[]) => void",
+      "開閉したIDを通知。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "詳細の開閉を無効にする。"
+    ],
+    [
+      "label",
+      "string",
+      "履歴全体の名前。"
+    ]
+  ]
+}

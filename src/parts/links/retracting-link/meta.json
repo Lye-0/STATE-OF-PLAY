@@ -1,0 +1,48 @@
+{
+  "id": "retracting-link",
+  "name": "Retracting Link",
+  "category": "links",
+  "order": 3052,
+  "version": "1.0.0",
+  "tagline": "細い導線が矢印の根元に巻き取られ、リンク先への方向を残す。",
+  "description": "細い導線が矢印の根元に巻き取られ、リンク先への方向を残す。",
+  "material": "RETRACTING LINK",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "179,205,226",
+  "designType": "A",
+  "runtime": "Native anchor + CSS only",
+  "componentName": "RetractingLink",
+  "tags": [
+    "EXPANSION-30",
+    "Retracting Link",
+    "細い導線が矢印の根元に巻き取られ、リンク先への方向を残す。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "children / eyebrow / icon",
+      "ReactNode",
+      "表示テキスト・補助見出し・装飾アイコン。"
+    ],
+    [
+      "href",
+      "string (required)",
+      "ページ、ページ内アンカー、mailto等の移動先。"
+    ],
+    [
+      "target / rel / download",
+      "native anchor attributes",
+      "新規タブ、関係性、同一オリジン等のダウンロード指定。"
+    ],
+    [
+      "onClick / ref / aria-current",
+      "native attributes",
+      "標準イベント・ref・現在位置。ネイティブ移動を維持。"
+    ],
+    [
+      "className / style",
+      "native attributes",
+      "利用先での配置。コンポーネントはルーター依存を持ちません。"
+    ]
+  ]
+}

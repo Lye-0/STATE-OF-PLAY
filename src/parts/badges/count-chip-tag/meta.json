@@ -1,0 +1,84 @@
+{
+  "id": "count-chip-tag",
+  "name": "Count Chip Tag",
+  "category": "badges",
+  "order": 3129,
+  "version": "1.0.0",
+  "tagline": "タグ名と件数を細い仕切りで分けた、検索や絞込み向けのチップ。",
+  "description": "タグ名と件数を細い仕切りで分けた、検索や絞込み向けのチップ。",
+  "material": "COUNT CHIP TAG",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "B",
+  "runtime": "Native DOM + CSS",
+  "componentName": "CountChipTag",
+  "tags": [
+    "EXPANSION-30",
+    "Count Chip Tag",
+    "タグ名と件数を細い仕切りで分けた、検索や絞込み向けのチップ。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "count-chip-tag",
+    "kind": "badges",
+    "variant": "essential",
+    "label": "小さな情報に、個性を。",
+    "description": "",
+    "defaultValue": [
+      "ready"
+    ],
+    "selectable": true,
+    "removable": false,
+    "items": [
+      {
+        "value": "design",
+        "label": "Design",
+        "badge": "8",
+        "icon": "spark"
+      },
+      {
+        "value": "motion",
+        "label": "Motion",
+        "badge": "4",
+        "icon": "clock"
+      },
+      {
+        "value": "ready",
+        "label": "Ready",
+        "icon": "check"
+      },
+      {
+        "value": "review",
+        "label": "Review",
+        "icon": "info"
+      }
+    ]
+  }
+}

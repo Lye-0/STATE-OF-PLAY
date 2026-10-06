@@ -1,0 +1,9 @@
+@import "../../../shared/signature/skeleton.css";
+/* Conversation Skeleton — 左右に分かれた短い会話の面を、安定した位置で待機表示する。 */
+.sop-sig.sop-conversation-skeleton{--sg-bg:#352c42;--sg-a:#bba3cf;--sg-line:#8a74a0}.sop-sig.sop-conversation-skeleton .sg-skeleton-frame{background:#3a2a47;border:1px solid #927a9f;border-radius:17px;padding:23px;min-height:278px}.sop-sig.sop-conversation-skeleton .sg-sk-hero,.sop-sig.sop-conversation-skeleton .sg-sk-profile,.sop-sig.sop-conversation-skeleton .sg-sk-tiles{display:none}.sop-sig.sop-conversation-skeleton .sg-sk-lines{gap:18px}.sop-sig.sop-conversation-skeleton .sg-sk-lines>i{height:35px;width:82%;border-radius:12px 12px 12px 2px;background:#9c81b133}.sop-sig.sop-conversation-skeleton .sg-sk-lines>i:nth-child(even){margin-left:auto;width:69%;border-radius:12px 12px 2px 12px;background:#b29aba44}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-conversation-skeleton,.sop-sig.sop-conversation-skeleton *,.sop-sig.sop-conversation-skeleton::before,.sop-sig.sop-conversation-skeleton::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-sig.sop-conversation-skeleton{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-conversation-skeleton :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-sig.sop-conversation-skeleton:focus-visible,.sop-sig.sop-conversation-skeleton :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-sig.sop-conversation-skeleton[data-sop-paused] *,.sop-sig.sop-conversation-skeleton[data-paused=true] *,.sop-sig.sop-conversation-skeleton[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+.sop-sig.sop-conversation-skeleton *{animation-play-state:var(--sg-play,running)!important}

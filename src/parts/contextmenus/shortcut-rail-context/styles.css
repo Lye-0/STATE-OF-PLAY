@@ -1,0 +1,12 @@
+@import "../../../shared/workbench/base.css";
+/* Shortcut Rail Context — 項目の文字とキー操作を二つの明確な列に揃えた操作メニュー。 */
+.sop-wb.sop-shortcut-rail-context{--wb-bg:#273d52;--wb-accent:#bed0df;--wb-line:#819db4;--wb-muted:#aabed1}.sop-wb.sop-shortcut-rail-context .wb-context-target{background:#2c445d;border:1px solid #88a0b9;border-radius:6px;padding:23px}.sop-wb.sop-shortcut-rail-context .wb-context-object{background:#4d6c86;border:1px solid #a1b9cc;border-radius:3px;box-shadow:none}.sop-wb.sop-shortcut-rail-context .wb-context-panel{background:#273f58;border:1px solid #8ba2ba;border-radius:6px;padding:7px}.sop-wb.sop-shortcut-rail-context .wb-context-items button{border-radius:3px;padding:11px 10px;min-height:43px;border-bottom:1px solid #7a97af44}.sop-wb.sop-shortcut-rail-context .wb-context-items kbd{border-left:1px solid #809db6;padding:5px 0 5px 9px;min-width:40px;text-align:right}.sop-wb.sop-shortcut-rail-context .wb-menu-copy strong{font-size:12px}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-shortcut-rail-context,.sop-wb.sop-shortcut-rail-context *,.sop-wb.sop-shortcut-rail-context::before,.sop-wb.sop-shortcut-rail-context::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-wb.sop-shortcut-rail-context{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-shortcut-rail-context :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-wb.sop-shortcut-rail-context:focus-visible,.sop-wb.sop-shortcut-rail-context :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-wb.sop-shortcut-rail-context[data-sop-paused] *,.sop-wb.sop-shortcut-rail-context[data-paused=true] *,.sop-wb.sop-shortcut-rail-context[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+
+/* Visual review: composition and state separation. */
+.sop-wb.sop-shortcut-rail-context .wb-context-target{min-height:85px;padding:14px;border-radius:4px}.sop-wb.sop-shortcut-rail-context .wb-context-panel{padding:5px;border-radius:4px}.sop-wb.sop-shortcut-rail-context .wb-context-items button{min-height:40px;border-radius:2px;border:0;border-left:2px solid transparent}.sop-wb.sop-shortcut-rail-context .wb-context-items button:focus{border-left-color:var(--wb-accent);background:#a1b6d018}.sop-wb.sop-shortcut-rail-context .wb-menu-glyph{border:0;width:22px}

@@ -1,0 +1,13 @@
+@import "../../../shared/workbench/base.css";
+/* Folded Label Context — 対象の角を折り返し、操作を印刷面のような余白へ広げる。 */
+.sop-wb.sop-folded-label-context{--wb-bg:#473a2a;--wb-accent:#d8bf96;--wb-line:#ac9469;--wb-muted:#c2b087}.sop-wb.sop-folded-label-context .wb-context-target{background:#51442d;border:1px solid #b6a071;border-radius:0;padding:24px;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,0 100%)}.sop-wb.sop-folded-label-context .wb-context-object{background:#927c51;border:1px solid #d4bd87;border-radius:1px;box-shadow:3px 4px #32321f77}.sop-wb.sop-folded-label-context .wb-context-panel{background:#493d25;border:1px solid #bda878;border-left:7px solid #a89460;border-radius:0;padding:11px}.sop-wb.sop-folded-label-context .wb-context-items button{border:0;border-bottom:1px dashed #baa171;border-radius:0;padding:14px 10px}.sop-wb.sop-folded-label-context .wb-menu-copy strong{font-family:Georgia;letter-spacing:.3px}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-folded-label-context,.sop-wb.sop-folded-label-context *,.sop-wb.sop-folded-label-context::before,.sop-wb.sop-folded-label-context::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-wb.sop-folded-label-context{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-folded-label-context :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-wb.sop-folded-label-context:focus-visible,.sop-wb.sop-folded-label-context :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-wb.sop-folded-label-context[data-sop-paused] *,.sop-wb.sop-folded-label-context[data-paused=true] *,.sop-wb.sop-folded-label-context[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+
+
+/* Visual review: composition and state separation. */
+.sop-wb.sop-folded-label-context .wb-context-target{min-height:100px;background:transparent;border:0;border-bottom:12px solid var(--wb-line);padding:18px 12px}.sop-wb.sop-folded-label-context .wb-context-panel{border-left:14px solid var(--wb-line);border-radius:0;padding:10px 8px}.sop-wb.sop-folded-label-context .wb-context-items button{border:0;border-bottom:1px dashed var(--wb-line);border-right:5px solid var(--wb-line);border-radius:0;padding:12px;margin-bottom:8px}.sop-wb.sop-folded-label-context .wb-context-items button:focus{border-right-width:12px;padding-right:5px}

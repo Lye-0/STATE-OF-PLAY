@@ -1,0 +1,8 @@
+.sop-surface.sop-vellum-pocket{position:relative;isolation:isolate;box-sizing:border-box;min-width:0;width:100%;color:var(--sop-ink,#edf0e8)}.sop-surface.sop-vellum-pocket *{box-sizing:border-box}.sop-surface.sop-vellum-pocket .sop-surface-content{position:relative;z-index:1;padding:var(--sop-padding,28px);min-width:0}
+/* Vellum Pocket — 半透明の封筒の口が上辺に重なり、内容を安全に見せる。 */
+.sop-surface.sop-vellum-pocket{--sop-ink:#384752;--sop-accent-ink:#496f80;background:#cad9dd;border-radius:5px 5px 28px 28px;box-shadow:0 1px 0 #fff9,inset 0 -8px 18px #89a2ab55;overflow:hidden}.sop-surface.sop-vellum-pocket:before{content:"";position:absolute;left:0;right:0;top:0;height:42px;background:linear-gradient(120deg,#f1f5f0aa,#87a5b166);clip-path:polygon(0 0,100% 0,50% 100%);border-top:2px solid #f3f8f3}.sop-surface.sop-vellum-pocket .sop-surface-content{padding-top:55px}
+@media(prefers-reduced-motion:reduce){.sop-surface.sop-vellum-pocket,.sop-surface.sop-vellum-pocket *,.sop-surface.sop-vellum-pocket::before,.sop-surface.sop-vellum-pocket::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-surface.sop-vellum-pocket{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-surface.sop-vellum-pocket :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-surface.sop-vellum-pocket:focus-visible,.sop-surface.sop-vellum-pocket :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-surface.sop-vellum-pocket[data-sop-paused] *,.sop-surface.sop-vellum-pocket[data-paused=true] *,.sop-surface.sop-vellum-pocket[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

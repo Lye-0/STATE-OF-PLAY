@@ -1,0 +1,8 @@
+@import "../../../shared/navigation-link-base.css";
+/* Offset Title Link — 太い見出しと小さな矢印をずらして、次の章への移動を示す。 */
+.sop-link.sop-offset-title-link{--sop-link-ink:#e4e3da;gap:18px;padding:15px 0;font:italic 22px Georgia;align-items:flex-end;border-bottom:1px solid #9eaa9066}.sop-link.sop-offset-title-link .sop-link-icon{width:18px;height:18px;transform:translateY(-12px);transition:transform .5s}.sop-link.sop-offset-title-link:hover .sop-link-icon{transform:translate(5px,-17px)}
+@media(prefers-reduced-motion:reduce){.sop-link.sop-offset-title-link,.sop-link.sop-offset-title-link *,.sop-link.sop-offset-title-link::before,.sop-link.sop-offset-title-link::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-link.sop-offset-title-link{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-link.sop-offset-title-link :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-link.sop-offset-title-link:focus-visible,.sop-link.sop-offset-title-link :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-link.sop-offset-title-link[data-sop-paused] *,.sop-link.sop-offset-title-link[data-paused=true] *,.sop-link.sop-offset-title-link[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

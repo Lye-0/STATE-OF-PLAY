@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Folio Spread Pages — 開いた冊子の頁端を、ページ番号の札として横に並べる。 */
+.sop-foundation.sop-folio-spread-pages{--ff-accent:#d2bf96;--ff-panel:#54452e;--ff-base:#342d23;--ff-line:#a79269}.sop-foundation.sop-folio-spread-pages .ff-pages{border:0;border-bottom:4px solid #a3906a;border-radius:0;background:none;padding:9px 0;gap:6px;flex-wrap:wrap}.sop-foundation.sop-folio-spread-pages .ff-pages button,.sop-foundation.sop-folio-spread-pages .ff-pages a{background:#574730;border:1px solid #a98d63;border-radius:1px 8px 0 0;min-height:46px;padding:8px 10px;box-shadow:2px 2px 0 #1f231c77}.sop-foundation.sop-folio-spread-pages .ff-pages [aria-current]{background:#c4ac7b;color:#302e23;transform:translateY(6px)}.sop-foundation.sop-folio-spread-pages .ff-page-info{font:14px Georgia}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-folio-spread-pages,.sop-foundation.sop-folio-spread-pages *,.sop-foundation.sop-folio-spread-pages::before,.sop-foundation.sop-folio-spread-pages::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-folio-spread-pages{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-folio-spread-pages :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-folio-spread-pages:focus-visible,.sop-foundation.sop-folio-spread-pages :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-folio-spread-pages[data-sop-paused] *,.sop-foundation.sop-folio-spread-pages[data-paused=true] *,.sop-foundation.sop-folio-spread-pages[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

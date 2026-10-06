@@ -12,8 +12,8 @@ const bases=JSON.parse(read('src/catalog/registry.json')) as string[];
 const metas=bases.map(base=>({...JSON.parse(read(base+'/meta.json')),base}));
 const added=metas.filter(m=>m.id.startsWith('lgc-'));
 const glass=metas.filter(m=>m.id.startsWith('lg-')||m.id.startsWith('lgc-'));
-test('glass collection contains 62 independently named additions and 887 registered parts',()=>{
- assert.equal(bases.length,887);assert.equal(added.length,62);assert.equal(glass.length,70);
+test('glass collection contains 62 independently named additions and 1120 registered parts',()=>{
+ assert.equal(bases.length,1120);assert.equal(added.length,62);assert.equal(glass.length,70);
  assert.equal(new Set(metas.map(m=>m.id)).size,metas.length);
  assert.equal(new Set(metas.map(m=>m.order)).size,metas.length);
 });

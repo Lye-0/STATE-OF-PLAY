@@ -1,0 +1,9 @@
+@import "../../../shared/signature/avatar.css";
+/* Keyhole Portrait — 丸い上辺と細い下辺を持つ人物窓が、短い名札へ続く。 */
+.sop-sig.sop-keyhole-portrait{--sg-a:#b8c5df;--sg-line:#7f8ead;--sg-muted:#a6b3cf}.sop-sig.sop-keyhole-portrait .sg-portrait{width:73px;height:91px}.sop-sig.sop-keyhole-portrait .sg-portrait-picture{inset:3px;border-radius:45% 45% 12px 12px;background:radial-gradient(at 30% 15%,#b4c4d9,#344966)}.sop-sig.sop-keyhole-portrait .sg-portrait-ring{border-radius:48% 48% 15px 15px;border:2px solid #8d9db4;box-shadow:0 4px 0 #172a3b88}.sop-sig.sop-keyhole-portrait .sg-person-copy{background:#304359;border:1px solid #758eaa;padding:7px 10px;border-radius:2px;width:100%}.sop-sig.sop-keyhole-portrait .sg-person[data-selected=true] .sg-person-copy{background:#576f8e;border-color:#c4d0dd}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-keyhole-portrait,.sop-sig.sop-keyhole-portrait *,.sop-sig.sop-keyhole-portrait::before,.sop-sig.sop-keyhole-portrait::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-sig.sop-keyhole-portrait{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-keyhole-portrait :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-sig.sop-keyhole-portrait:focus-visible,.sop-sig.sop-keyhole-portrait :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-sig.sop-keyhole-portrait[data-sop-paused] *,.sop-sig.sop-keyhole-portrait[data-paused=true] *,.sop-sig.sop-keyhole-portrait[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+.sop-sig.sop-keyhole-portrait *{animation-play-state:var(--sg-play,running)!important}

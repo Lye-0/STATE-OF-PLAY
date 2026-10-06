@@ -1,0 +1,52 @@
+{
+  "id": "feature-grid-skeleton",
+  "name": "Feature Grid Skeleton",
+  "category": "skeletons",
+  "tagline": "大きな説明枠を置かず、対等な情報の小面を格子に揃える。",
+  "description": "大きな説明枠を置かず、対等な情報の小面を格子に揃える。",
+  "designType": "A",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3237,
+  "version": "1.0.0",
+  "material": "FEATURE GRID SKELETON",
+  "accent": "185,205,194",
+  "componentName": "FeatureGridSkeleton",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "skeletons"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Feature Grid Skeleton",
+    "大きな説明枠を置かず、対等な情報の小面を格子に揃える。",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "loading",
+      "boolean",
+      "実際の読み込み状態。自動で成功にはしない。"
+    ],
+    [
+      "rows",
+      "number",
+      "2〜8行のプレースホルダー。"
+    ],
+    [
+      "label",
+      "string",
+      "読み上げ用の待機ラベル。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "動きを一時停止。"
+    ],
+    [
+      "children",
+      "ReactNode",
+      "読み込み後に表示する実際の内容。"
+    ]
+  ]
+}

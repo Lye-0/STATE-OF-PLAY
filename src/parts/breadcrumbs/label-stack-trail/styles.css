@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Label Stack Trail — 上から順に重なった薄い札が、階層の連なりを示す。 */
+.sop-foundation.sop-label-stack-trail{--ff-accent:#a7c2dd;--ff-panel:#30465f;--ff-base:#243447;--ff-line:#7191ad}.sop-foundation.sop-label-stack-trail .ff-breadcrumb ol{display:flex;flex-direction:column;align-items:stretch;gap:4px;padding:3px 8px}.sop-foundation.sop-label-stack-trail .ff-breadcrumb li{background:#263e58;border:1px solid #6a8bad;border-radius:1px;box-shadow:3px 3px 0 #0d213366;padding:9px 14px;gap:9px}.sop-foundation.sop-label-stack-trail .ff-breadcrumb li+li:before{content:"↓";font-size:10px;color:#90b0c6}.sop-foundation.sop-label-stack-trail .ff-breadcrumb li:last-child{background:#526e8b;border-left:7px solid #bdceda}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-label-stack-trail,.sop-foundation.sop-label-stack-trail *,.sop-foundation.sop-label-stack-trail::before,.sop-foundation.sop-label-stack-trail::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-label-stack-trail{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-label-stack-trail :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-label-stack-trail:focus-visible,.sop-foundation.sop-label-stack-trail :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-label-stack-trail[data-sop-paused] *,.sop-foundation.sop-label-stack-trail[data-paused=true] *,.sop-foundation.sop-label-stack-trail[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

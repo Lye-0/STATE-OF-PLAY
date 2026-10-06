@@ -1,3 +1,5 @@
+import {galleryCount} from './gallery-counts.ts';
+import {selectSetting} from './detail-settings.ts';
 import {galleryReady} from './gallery-ready.ts';
 /** Native text editing + real React exports. Offline transport is explicit, never reported as a Vite build. */
 import assert from 'node:assert/strict';
@@ -24,9 +26,9 @@ try{
  page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
  if(offline){const files=offlineFiles();await page.setContent(files.get('/index.html')!.replace(/<script[^>]*>[\s\S]*?<\/script>/g,'').replace(/<link[^>]*>/g,''));await page.addStyleTag({content:files.get('/test-styles.css')!});for(const v of ['prism','jszip'])await page.addScriptTag({content:fs.readFileSync(path.join(ROOT,'public/vendor',v+'.js'),'utf8')});await page.addScriptTag({content:files.get('/test-app.js')!});}else{await page.goto(url,{waitUntil:'commit',timeout:120000});await page.waitForFunction(()=>document.documentElement.classList.contains('site-ready'),undefined,{timeout:120000});}
  await run('Gallery: 24 native editable fields, labels focus the input, typing never opens details',async()=>{
- await page.locator('[data-category="textboxes"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),offline?24:26);
+ await page.locator('[data-category="textboxes"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?data.parts:undefined));
   for(const p of parts){const r=page.locator(`[data-part="${p.id}"] .sop-textfield`),f=r.locator('.sop-field-control');await r.locator('label').click();assert.ok(await f.evaluate(e=>e===document.activeElement));await f.fill(p.id==='contact-field'?'hello@example.com':'日本語入力 + text');assert.ok((await f.inputValue()).length>0);assert.equal(await r.getAttribute('data-filled'),'true');assert.equal(await page.locator('dialog[open]').count(),0);}
-  await page.locator('[data-design-filter="B"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),offline?8:9);await page.locator('[data-design-filter="A"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),offline?16:17);await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);
+  await page.locator('[data-design-filter="B"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?data.parts:undefined));await page.locator('[data-design-filter="A"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?data.parts:undefined));await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);
  });
  await run('Native editing: caret movement, undo, clear focus and safe text display',async()=>{
   const r=page.locator('[data-part="essential-field"] .sop-textfield'),f=r.locator('.sop-field-control');
@@ -36,12 +38,12 @@ try{
  });
  await run('Detail controls: value survives format/layout changes; error, success, readOnly, disabled and reset',async()=>{
   await page.locator('[data-open="aurora-field"]').click();await galleryReady(page,true);const d=page.locator('#part-details'),f=d.locator('.sop-field-control');await f.fill('Keep this draft');
-  await d.locator('[data-format="js"]').click();await d.locator('#export-layout').selectOption('original');assert.equal(await f.inputValue(),'Keep this draft');
-  await d.locator('[data-field-status]').selectOption('error');assert.equal(await f.getAttribute('aria-invalid'),'true');assert.ok(await d.locator('.sop-field-validation').isVisible());
-  await d.locator('[data-field-status]').selectOption('success');assert.equal(await f.getAttribute('aria-invalid'),'false');assert.equal(await d.locator('.sop-textfield').getAttribute('data-success'),'true');
+  await d.locator('[data-format="js"]').click();await selectSetting(d.locator('#export-layout'),'original');assert.equal(await f.inputValue(),'Keep this draft');
+  await selectSetting(d.locator('[data-field-status]'),'error');assert.equal(await f.getAttribute('aria-invalid'),'true');assert.ok(await d.locator('.sop-field-validation').isVisible());
+  await selectSetting(d.locator('[data-field-status]'),'success');assert.equal(await f.getAttribute('aria-invalid'),'false');assert.equal(await d.locator('.sop-textfield').getAttribute('data-success'),'true');
   await d.locator('[data-field-readonly]').check();assert.equal(await f.evaluate(e=>(e as HTMLInputElement).readOnly),true);assert.ok(await d.locator('.sop-field-clear').isDisabled());
   await d.locator('[data-field-disabled]').check();assert.ok(await f.isDisabled());await d.locator('[data-field-reset]').click();assert.ok(await f.isEnabled());assert.equal(await f.inputValue(),'');
-  await d.locator('[data-format="tsx"]').click();await d.locator('#export-layout').selectOption('portable');await d.locator('[data-field-sample]').click();await page.screenshot({path:path.join(out,'detail.png')});
+  await d.locator('[data-format="tsx"]').click();await selectSetting(d.locator('#export-layout'),'portable');await d.locator('[data-field-sample]').click();await page.screenshot({path:path.join(out,'detail.png')});
   await d.locator('[data-detail-tab="prompt"]').click();assert.equal(await d.locator('#prompt-text').inputValue(),buildPrompt(parts[0],'tsx','portable'));
   await d.locator('.close-detail').click();
  });

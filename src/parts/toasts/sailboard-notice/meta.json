@@ -1,0 +1,56 @@
+{
+  "id": "sailboard-notice",
+  "name": "Sailboard Notice",
+  "category": "toasts",
+  "order": 3121,
+  "version": "1.0.0",
+  "tagline": "右端の斜めの縁が通知の先端を示し、本文は直線の領域へ置く。",
+  "description": "右端の斜めの縁が通知の先端を示し、本文は直線の領域へ置く。",
+  "material": "SAILBOARD NOTICE",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "SailboardNotice",
+  "tags": [
+    "EXPANSION-30",
+    "Sailboard Notice",
+    "右端の斜めの縁が通知の先端を示し、本文は直線の領域へ置く。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "sailboard-notice",
+    "kind": "toasts",
+    "variant": "essential",
+    "label": "知らせも、心地よく。",
+    "description": "",
+    "defaultValue": null
+  }
+}

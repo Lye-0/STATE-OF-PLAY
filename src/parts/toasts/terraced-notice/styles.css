@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Terraced Notice — 二枚の浅い段を重ね、通知面を暗い背景から浮かせる。 */
+.sop-foundation.sop-terraced-notice{--ff-accent:#deb7c3;--ff-panel:#503747;--ff-base:#332335;--ff-line:#a57894}.sop-foundation.sop-terraced-notice .ff-notice{border:1px solid #b3849f;border-radius:4px;background:#4b3040;padding:23px 20px;box-shadow:5px 5px 0 #76485f,9px 9px 0 #231d2d88}.sop-foundation.sop-terraced-notice .ff-notice-icon{border:1px solid #bd93a5;border-radius:3px;background:#785365}.sop-foundation.sop-terraced-notice .ff-notice-meter{height:3px;bottom:2px;background:#c99bad}.sop-foundation.sop-terraced-notice .ff-notice strong{font-weight:500}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-terraced-notice,.sop-foundation.sop-terraced-notice *,.sop-foundation.sop-terraced-notice::before,.sop-foundation.sop-terraced-notice::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-terraced-notice{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-terraced-notice :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-terraced-notice:focus-visible,.sop-foundation.sop-terraced-notice :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-terraced-notice[data-sop-paused] *,.sop-foundation.sop-terraced-notice[data-paused=true] *,.sop-foundation.sop-terraced-notice[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

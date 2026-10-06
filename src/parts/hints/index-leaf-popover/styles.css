@@ -1,0 +1,12 @@
+@import "../../../shared/foundation/base.css";
+/* Index Leaf Popover — 縦の索引帯を添え、詳細を一枚の薄いリーフとして開く。 */
+.sop-foundation.sop-index-leaf-popover{--ff-accent:#3a6b5c;--ff-ink:#365442;--ff-muted:#526755;--ff-panel:#e2ecd4;--ff-base:#cfdfbf;--ff-line:#8fac85;color-scheme:light}.sop-foundation.sop-index-leaf-popover .ff-hint-trigger{background:#d4e2c4;border:1px solid #8baa7d;border-radius:0;box-shadow:3px 3px 0 #60876566;color:#3a5640}.sop-foundation.sop-index-leaf-popover .ff-hint-panel{background:#e2ecd4;border:1px solid #90ad82;border-left:12px solid #9bb188;border-radius:0;padding:23px 20px;box-shadow:6px 6px 0 #365c4755}.sop-foundation.sop-index-leaf-popover .ff-hint-heading{font:15px Georgia;color:#4f6c4c}.sop-foundation.sop-index-leaf-popover .ff-hint-facts{border-top:1px solid #86a47b}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-index-leaf-popover,.sop-foundation.sop-index-leaf-popover *,.sop-foundation.sop-index-leaf-popover::before,.sop-foundation.sop-index-leaf-popover::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-index-leaf-popover{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-index-leaf-popover :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-index-leaf-popover:focus-visible,.sop-foundation.sop-index-leaf-popover :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-index-leaf-popover{background:var(--ff-panel);padding:15px;border-radius:4px}
+
+.sop-foundation.sop-index-leaf-popover :is([data-sg-error],[data-upload-error],.sg-wizard-error,[data-danger=true]){color:#8a3f46}
+
+.sop-foundation.sop-index-leaf-popover[data-sop-paused] *,.sop-foundation.sop-index-leaf-popover[data-paused=true] *,.sop-foundation.sop-index-leaf-popover[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

@@ -1,0 +1,60 @@
+{
+  "id": "inline-quantity",
+  "name": "Inline Quantity",
+  "category": "numbers",
+  "order": 3082,
+  "version": "1.0.0",
+  "tagline": "短い増減ボタンと直接入力を一列にまとめ、狭い設定欄でも使える。",
+  "description": "短い増減ボタンと直接入力を一列にまとめ、狭い設定欄でも使える。",
+  "material": "INLINE QUANTITY",
+  "motion": "RESPONSIVE DETAIL",
+  "accent": "191,211,198",
+  "designType": "B",
+  "runtime": "Native DOM + CSS",
+  "componentName": "InlineQuantity",
+  "tags": [
+    "EXPANSION-30",
+    "Inline Quantity",
+    "短い増減ボタンと直接入力を一列にまとめ、狭い設定欄でも使える。"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "inline-quantity",
+    "kind": "numbers",
+    "variant": "essential",
+    "label": "必要な量を、ちょうどよく。",
+    "description": "",
+    "defaultValue": 3,
+    "min": 0,
+    "max": 24,
+    "step": 1,
+    "unit": "UNITS"
+  }
+}

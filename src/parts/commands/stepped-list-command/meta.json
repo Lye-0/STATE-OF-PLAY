@@ -1,0 +1,52 @@
+{
+  "id": "stepped-list-command",
+  "name": "Stepped List Command",
+  "category": "commands",
+  "description": "段差のある候補面が、現在の操作へ軽く張り出す。",
+  "designType": "A",
+  "tagline": "段差のある候補面が、現在の操作へ軽く張り出す。",
+  "motion": "RESPONSIVE DETAIL",
+  "order": 3289,
+  "version": "1.0.0",
+  "material": "STEPPED LIST COMMAND",
+  "accent": "192,216,201",
+  "componentName": "SteppedListCommand",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "commands"
+  },
+  "tags": [
+    "EXPANSION-30",
+    "Stepped List Command",
+    "段差のある候補面が、現在の操作へ軽く張り出す。",
+    "NAVIGATOR"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "CommandItem[]",
+      "コマンド、グループ、ショートカット、子階層を指定。"
+    ],
+    [
+      "open / onOpenChange",
+      "boolean / callback",
+      "表示を外部制御。"
+    ],
+    [
+      "onExecute",
+      "(item, signal) => void | false | Promise",
+      "処理中の重複を抑止。falseなら開いたまま。例外はエラー表示。"
+    ],
+    [
+      "hotkey",
+      "boolean",
+      "trueでCtrl/Cmd+Kを登録。ギャラリーではfalse。"
+    ],
+    [
+      "apiRef",
+      "Ref<WorkbenchAPI>",
+      "Reactからopen()/close()を呼べる参照。"
+    ]
+  ]
+}

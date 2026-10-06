@@ -1,0 +1,12 @@
+@import "../../../shared/foundation/base.css";
+/* Seam Pocket Dropzone — 布の深いポケットの口と、縫い付けた小印がファイルを預かる。 */
+.sop-foundation.sop-seam-pocket-dropzone{--ff-accent:#d8c199;--ff-panel:#514536;--ff-base:#352e27;--ff-line:#ac9677}.sop-foundation.sop-seam-pocket-dropzone .ff-dropzone{border:1px dashed #c0a982;border-top:8px solid #8e795a;border-radius:7px 7px 25% 25%;outline:1px solid #776347;outline-offset:4px;background:repeating-linear-gradient(0deg,#514335 0 1px,#4c3d30 1px 3px);min-height:174px;padding:27px 20px}.sop-foundation.sop-seam-pocket-dropzone .ff-upload-symbol{background:#8a7053;border-radius:2px;border:1px dashed #c8ae87;box-shadow:none;transform:rotate(-5deg)}.sop-foundation.sop-seam-pocket-dropzone .ff-dropzone[data-dragging=true]{border-color:#e2cba0;border-top-color:#bda078}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-seam-pocket-dropzone,.sop-foundation.sop-seam-pocket-dropzone *,.sop-foundation.sop-seam-pocket-dropzone::before,.sop-foundation.sop-seam-pocket-dropzone::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-seam-pocket-dropzone{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-seam-pocket-dropzone :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-seam-pocket-dropzone:focus-visible,.sop-foundation.sop-seam-pocket-dropzone :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-seam-pocket-dropzone[data-sop-paused] *,.sop-foundation.sop-seam-pocket-dropzone[data-paused=true] *,.sop-foundation.sop-seam-pocket-dropzone[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+
+/* Visual review: composition and state separation. */
+.sop-foundation.sop-seam-pocket-dropzone .ff-dropzone{min-height:172px;padding:32px 23px 42px;border-radius:5px 5px 52px 52px;border:1px dashed var(--ff-line);border-top:12px solid var(--ff-line);background:radial-gradient(ellipse at bottom,#8b745b55,transparent 80%),#493d31}.sop-foundation.sop-seam-pocket-dropzone .ff-upload-symbol{right:18px;top:22px;transform:rotate(7deg)}.sop-foundation.sop-seam-pocket-dropzone .ff-dropzone strong{font:20px Georgia}.sop-foundation.sop-seam-pocket-dropzone [data-upload-limits]{border-bottom:1px dashed var(--ff-line);padding-bottom:12px}

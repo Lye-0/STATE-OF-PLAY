@@ -1,0 +1,13 @@
+@import "../../../shared/workbench/base.css";
+/* Cradle Command — 丸い上の印と平たい下の検索面を組み、小さな操作の受皿にする。 */
+.sop-wb.sop-cradle-command{--wb-bg:#243c4a;--wb-accent:#b6cdd8;--wb-line:#7a9bab;--wb-muted:#a4bfcd}.sop-wb.sop-cradle-command .wb-command-launcher{background:#294654;border:2px solid #84a2b1;border-radius:35px 35px 4px 4px;padding:27px 23px}.sop-wb.sop-cradle-command .wb-command-symbol{border-radius:50%;background:radial-gradient(at 20% 15%,#8bb1b7,#2d5c6d);border:2px solid #b7cfcd;box-shadow:inset 0 1px #e7f3df55}.sop-wb.sop-cradle-command .wb-command-launch{border-radius:25px 25px 3px 3px;background:#527f8e;border:1px solid #a6c4c8}.sop-wb.sop-cradle-command .wb-command-dialog{border-radius:24px 24px 4px 4px;border:2px solid #8bafba}.sop-wb.sop-cradle-command .wb-command-frame{background:#26485a}.sop-wb.sop-cradle-command .wb-command-option{padding:16px 14px;border-radius:1px;border-bottom:1px solid #8baeb944}.sop-wb.sop-cradle-command .wb-command-icon{border-radius:50% 50% 2px 2px;background:#4e7c8b;border:1px solid #9dbbc0}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-cradle-command,.sop-wb.sop-cradle-command *,.sop-wb.sop-cradle-command::before,.sop-wb.sop-cradle-command::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-wb.sop-cradle-command{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-cradle-command :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-wb.sop-cradle-command:focus-visible,.sop-wb.sop-cradle-command :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-wb.sop-cradle-command[data-sop-paused] *,.sop-wb.sop-cradle-command[data-paused=true] *,.sop-wb.sop-cradle-command[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+
+
+/* Visual review: composition and state separation. */
+.sop-wb.sop-cradle-command .wb-command-launcher{min-height:0;border-radius:85px 85px 8px 8px;padding:24px 16px 12px;text-align:center}.sop-wb.sop-cradle-command .wb-command-symbol{margin:0 auto 12px;width:52px;height:52px;border-radius:50%}.sop-wb.sop-cradle-command .wb-launch-copy strong{font:26px Georgia}.sop-wb.sop-cradle-command .wb-command-launch{border-radius:35px 35px 4px 4px;margin-top:14px;min-height:53px}.sop-wb.sop-cradle-command .wb-command-option{border-radius:27px 27px 3px 3px;padding:18px 15px;background:var(--wb-bg);border-bottom:4px solid var(--wb-line);margin-bottom:10px}.sop-wb.sop-cradle-command .wb-command-copy strong{font:16px Georgia}.sop-wb.sop-cradle-command .wb-command-group{text-align:center;border-bottom:1px solid var(--wb-line);margin-bottom:9px}

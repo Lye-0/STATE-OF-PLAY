@@ -1,0 +1,8 @@
+@import "../../../shared/foundation/base.css";
+/* Windowed Choice — 候補の文字を小さな窓の後ろへ置き、選んだ窓だけを明るくする。 */
+.sop-foundation.sop-windowed-choice{--ff-accent:#b6d3df;--ff-base:#193441;--ff-panel:#294b5b;--ff-line:#6e9bb0}.sop-foundation.sop-windowed-choice .ff-choice{border:3px solid #7894a2;border-radius:3px;padding:16px;background:#173444;box-shadow:inset 0 5px 6px #081e2e99}.sop-foundation.sop-windowed-choice .ff-choice-copy{border-left:1px solid #8bacb266;padding-left:12px}.sop-foundation.sop-windowed-choice .ff-choice-check{border-radius:1px;border-width:2px;width:11px;height:29px;background:#315263}.sop-foundation.sop-windowed-choice .ff-choice[data-selected=true]{background:#34576a;border-color:#bed3d5;box-shadow:inset 0 1px 3px #bedddd44}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-windowed-choice,.sop-foundation.sop-windowed-choice *,.sop-foundation.sop-windowed-choice::before,.sop-foundation.sop-windowed-choice::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-foundation.sop-windowed-choice{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-windowed-choice :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-foundation.sop-windowed-choice:focus-visible,.sop-foundation.sop-windowed-choice :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-foundation.sop-windowed-choice[data-sop-paused] *,.sop-foundation.sop-windowed-choice[data-paused=true] *,.sop-foundation.sop-windowed-choice[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}

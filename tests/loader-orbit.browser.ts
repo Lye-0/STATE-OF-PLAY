@@ -1,3 +1,4 @@
+import {galleryCount,libraryCount} from './gallery-counts.ts';
 /** Real Vite and browser check for a seamless square orbit and truthful exports. */
 import assert from 'node:assert/strict';
 import {chromium} from 'playwright';
@@ -7,7 +8,7 @@ import {getDelivery,buildPrompt,packageContents} from '../src/catalog/delivery.t
 import {readBrowserIndex} from '../scripts/vite-catalog.ts';
 
 const index=readBrowserIndex().index;
-assert.equal(index.length,887);
+assert.equal(index.length,795);
 assert.equal(index.filter(p=>p.category==='loaders').length,39);
 assert.ok(!index.some(p=>p.id==='paper-loader'));
 const {parts}=buildCatalog(ROOT,['nixie-loader','ceramic-loader']);
@@ -38,9 +39,9 @@ try {
  await page.waitForFunction(()=>document.documentElement.classList.contains('site-ready'),undefined,{timeout:180000});
  await page.locator('[data-category="loaders"]').click();
  await page.waitForFunction(()=>document.querySelector('#part-grid')?.getAttribute('aria-busy')==='false');
- assert.equal(await page.locator('[data-part]').count(),39);
+ assert.equal(await page.locator('[data-part]').count(),await galleryCount(page));
  assert.equal(await page.locator('[data-part="paper-loader"]').count(),0);
- assert.equal(await page.locator('#library-total').innerText(),'887');
+ assert.equal(await page.locator('#library-total').innerText(),String(libraryCount()));
  for(const id of ['nixie-loader','ceramic-loader']){
   const result=await page.locator(`[data-part="${id}"] .ff-orbit.o2`).evaluate(el=>{
    const animation=el.getAnimations().find(a=>(a as CSSAnimation).animationName==='sop-ff-offset-square-spin');

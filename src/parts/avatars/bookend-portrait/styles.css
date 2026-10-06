@@ -1,0 +1,9 @@
+@import "../../../shared/signature/avatar.css";
+/* Bookend Portrait — 人物の写真を二つの厚い支柱で支え、名前を下の細い空間へ置く。 */
+.sop-sig.sop-bookend-portrait{--sg-a:#cbb9a3;--sg-line:#a18b6f;--sg-muted:#b8a98f}.sop-sig.sop-bookend-portrait .sg-portrait{width:74px;height:77px}.sop-sig.sop-bookend-portrait .sg-portrait-picture{inset:5px 10px;border-radius:0;background:linear-gradient(120deg,#b8bd9e,#4e665f)}.sop-sig.sop-bookend-portrait .sg-portrait-ring{border-top:0;border-bottom:0;border-left:5px solid #9b8567;border-right:5px solid #9b8567;border-radius:0;box-shadow:2px 4px #242b2577}.sop-sig.sop-bookend-portrait .sg-person-copy{border-top:1px solid #9f8e7355;padding-top:9px}.sop-sig.sop-bookend-portrait .sg-person[data-selected=true] .sg-portrait-ring{border-left-color:#e0c49b;border-right-color:#e0c49b;transform:scaleX(1.08)}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-bookend-portrait,.sop-sig.sop-bookend-portrait *,.sop-sig.sop-bookend-portrait::before,.sop-sig.sop-bookend-portrait::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-sig.sop-bookend-portrait{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-bookend-portrait :is(button,input,a):focus-visible{outline:2px solid Highlight}}
+.sop-sig.sop-bookend-portrait:focus-visible,.sop-sig.sop-bookend-portrait :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+
+.sop-sig.sop-bookend-portrait[data-sop-paused] *,.sop-sig.sop-bookend-portrait[data-paused=true] *,.sop-sig.sop-bookend-portrait[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+.sop-sig.sop-bookend-portrait *{animation-play-state:var(--sg-play,running)!important}
