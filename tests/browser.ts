@@ -45,7 +45,8 @@ try{
  if(offline){for(const [key,value]of offlineFiles())memory.set(key,value);}
  else{const {createServer}=await import('vite');const server=await createServer({root:ROOT,server:{port:0,host:'127.0.0.1'}});closeServer=()=>server.close();await server.listen();url=requireLocalServerUrl(server, 'Vite development server').replace(/\/$/,'');}
  browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{}),args:['--no-sandbox']});
- const context=await browser.newContext({viewport:{width:1440,height:960},acceptDownloads:true});
+ // Count/filter checks mount the full collection; motion is exercised separately.
+ const context=await browser.newContext({viewport:{width:1440,height:960},acceptDownloads:true,reducedMotion:'reduce'});
  await context.addInitScript(()=>{const active=new Set<number>();const request=window.requestAnimationFrame.bind(window);const cancel=window.cancelAnimationFrame.bind(window);window.requestAnimationFrame=callback=>{const id=request(time=>{active.delete(id);callback(time);});active.add(id);return id;};window.cancelAnimationFrame=id=>{active.delete(id);cancel(id);};(window as unknown as {activeRAF:Set<number>}).activeRAF=active;});
  page=await context.newPage();page.setDefaultTimeout(60000);page.on('pageerror',error=>errors.push(error.message));
  async function load(route='/') {
@@ -105,10 +106,11 @@ try{
   await selectCategory(page,'numbers');assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?catalog.parts:undefined));
   assert.equal(await page.locator('[data-category="numbers"]').getAttribute('aria-selected'),'true');
   // Full-list counts were checked above. Keep the ordinary first page mounted
-  // for interaction checks; unpausing 733 previews on every dialog close is not representative.
+  // for interaction checks; unpausing the full library on every dialog close is not representative.
   await selectCategory(page,'all');await galleryReady(page);
   assert.equal(await page.locator('[data-part]').count(),24);
  });
+ await page.emulateMedia({reducedMotion:'no-preference'});
  await run('Liquid, Fold, Prism have intrinsic opposite state labels and distinct optical treatment',async()=>{
   await page.emulateMedia({reducedMotion:'reduce'});
   for(const [id,on,off,material]of [['liquid','.liquid-mark','.liquid-rest','.liquid-lens'],['fold','.fold-on','.fold-off','.fold-tab'],['prism','.prism-state:not(.off)','.prism-state.off','.prism-crystal']]){
@@ -136,7 +138,8 @@ try{
   await page.locator('[data-category="blocks"]').click();await galleryReady(page,true);
   const sample=page.locator('[data-part="paper-card"] [data-sample-action]');await sample.click();assert.match(await sample.innerText(),/確認しました/);
   assert.equal(await page.locator('#part-details').getAttribute('open'),null);
-  await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);await page.locator('[data-category="all"]').click();await galleryReady(page,true);
+  await page.locator('[data-design-filter="all"]').click();await galleryReady(page,true);await page.locator('[data-category="all"]').click();await galleryReady(page);
+  assert.equal(await page.locator('[data-part]').count(),24);
  });
  await run('Toggle and drag do not open details',async()=>{
   const button=page.locator('[data-part="chrome"] [role="switch"]');const before=await button.getAttribute('aria-checked');await button.click();assert.notEqual(await button.getAttribute('aria-checked'),before);

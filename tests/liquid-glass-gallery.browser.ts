@@ -1,3 +1,4 @@
+import {libraryCount} from './gallery-counts.ts';
 import {selectSetting} from './detail-settings.ts';
 /** Full collection integration through the production Vite preview. */
 import assert from 'node:assert/strict';
@@ -25,12 +26,12 @@ try{
  const open=async(id:string)=>{const part=glass.find(p=>p.id===id)!;await selectCategory(page,part.category);await page.locator(`[data-open="${id}"]`).click();await galleryReady(page,true);return part;};
  const closeDetail=async()=>{await detail.locator('.close-detail').click();};
  await run('Glass A and B appear in their 35 ordinary categories',async()=>{
-  assert.equal(all.parts.length,795);assert.equal(glass.length,70);assert.equal(await page.locator('.liquid-glass-shortcut,.lg-preview-controls').count(),0);
+  assert.equal(all.parts.length,libraryCount());assert.equal(glass.length,70);assert.equal(await page.locator('.liquid-glass-shortcut,.lg-preview-controls').count(),0);
   for(const category of [...new Set(all.parts.map(p=>p.category))]){
    await selectCategory(page,category);const pair=glass.filter(p=>p.category===category),expectedCount=['loaders','ornaments'].includes(category)?0:2;assert.equal(pair.length,expectedCount);
    assert.equal(await page.locator('.glass-series').count(),expectedCount);
    assert.equal(await page.locator('.glass-series .lg-demo-host').count(),expectedCount);
-   if(expectedCount)for(const type of ['A','B']as const){const expected=pair.find(p=>p.designType===type)!;assert.equal(await page.locator(`[data-part][data-design="${type}"]`).last().getAttribute('data-part'),expected.id);}
+   if(expectedCount)for(const type of ['A','B']as const){const expected=pair.find(p=>p.designType===type)!;assert.equal(await page.locator(`[data-part="${expected.id}"]`).getAttribute('data-design'),type);}
    const widths=await page.locator('.object-card').evaluateAll(cards=>cards.map(card=>{
     const mount=card.querySelector('.stage-mount')!;
     const root=mount.querySelector(':scope > :not(.lg-demo-scene)')!;

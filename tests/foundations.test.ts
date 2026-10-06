@@ -44,7 +44,7 @@ test('all 24 hints export the clipped panel and 16 A designs carry hint-specific
  }
 });
 test('catalogue transport round-trips every field without minifying exported code',()=>{
- const packed=packCatalog(catalogue.parts),restored=unpackCatalog(packed);assert.deepEqual(restored,catalogue.parts);
+ const packed=packCatalog(catalogue.parts),restored=unpackCatalog(JSON.parse(JSON.stringify(packed)));assert.deepEqual(restored,catalogue.parts);
  assert.ok(Buffer.byteLength(JSON.stringify(packed))<catalogue.parts.reduce((sum,p)=>sum+Buffer.byteLength(JSON.stringify(p)),0)*.65);
 });
 test('transport rejects corrupt schema, negative refs and unknown fragment indices',()=>{

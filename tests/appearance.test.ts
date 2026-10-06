@@ -3,8 +3,14 @@ import {buildCatalog} from '../scripts/catalog.ts';
 import {appearanceCSS,withAppearance} from '../src/catalog/appearance.ts';
 import {withGlassTransparency} from '../src/catalog/glass-transparency.ts';
 import {getDelivery,buildPrompt,packageContents} from '../src/catalog/delivery.ts';
+import {packCatalog,unpackCatalog} from '../src/catalog/transport.ts';
 import type {Part} from '../src/catalog/types.ts';
 const parts=buildCatalog().parts;
+test('JSON delivery preserves parts with and without appearance controls',()=>{
+ const plain=parts.find(p=>!p.appearance)!,adjustable=parts.find(p=>p.appearance)!;
+ assert.ok(plain);assert.ok(adjustable);
+ assert.deepEqual(unpackCatalog(JSON.parse(JSON.stringify(packCatalog([plain,adjustable])))),[plain,adjustable]);
+});
 test('hex-looking SVG paint references are preserved while actual paint colors change',()=>{
  const source:Part={...parts[0],id:'sample',appearance:{fields:[{key:'accent',label:'装飾の色',value:'#ffffff'}],rules:[{selector:'.sop-sample',conditions:[],declarations:[['fill','url(#fff)',false],['color','#fff',false]]}]}};
  const css=appearanceCSS(source,{accent:'#c65eaa'});assert.ok(!css.includes('fill:'));assert.ok(css.includes('color:#c65eaa'));

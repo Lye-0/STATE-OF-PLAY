@@ -7,10 +7,20 @@ const cases=[
  {id:'aurora-window',owner:'dialog',target:'dialog',property:'--pop-x',rest:65},
  {id:'aurora-select',owner:'.sop-select-popup',target:'.sop-select-popup',property:'--sel-light-x',rest:50},
 ];
-const parts=buildCatalog(ROOT,cases.map(c=>c.id),{appearance:false}).parts;const fixtures=path.join(ROOT,'.test-output/pointer-continuity'),out=path.join(ROOT,'docs/hover-motion-fix');fs.mkdirSync(out,{recursive:true});
+const parts=buildCatalog(ROOT,cases.map(c=>c.id),{appearance:false}).parts;const fixtures=path.join(ROOT,'.test-output/pointer-continuity'),out=path.join(fixtures,'screenshots');fs.mkdirSync(out,{recursive:true});
 for(const part of parts){const dir=path.join(fixtures,part.id);fs.mkdirSync(dir,{recursive:true});for(const [name,code]of Object.entries(part.preview))fs.writeFileSync(path.join(dir,name),code);}
 const server=await createServer({root:ROOT,server:{host:'127.0.0.1',port:0,watch:{ignored:['**/.test-output/**','**/docs/**']}}});await server.listen();const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
 const page=await browser.newPage({viewport:{width:1100,height:850}});const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+// Sample the first rendered return step in the browser, before IPC latency can
+// consume the animation. A jump straight to rest must still fail the assertion.
+async function firstReturn(c:typeof cases[number],held:number){
+ const sample=await page.waitForFunction(({selector,property,held})=>{
+  const value=Number.parseFloat(getComputedStyle(document.querySelector(selector)!).getPropertyValue(property));
+  return value<held-.1?{value}:false;
+ },{selector:c.owner,property:c.property,held});
+ const result=await sample.jsonValue();await sample.dispose();assert.ok(result);return result.value;
+}
+
 try{
  for(const c of cases){
   await page.goto(server.resolvedUrls!.local[0]+'.test-output/pointer-continuity/'+c.id+'/index.html');await page.emulateMedia({reducedMotion:'no-preference'});
@@ -21,14 +31,14 @@ try{
   const beforeInput=c.id==='capillary-field'?await page.locator('.sop-field-control').inputValue():c.id==='aurora-select'?await page.locator('.sop-select-input').inputValue():null;
   const immediate=await target.evaluate((el,{selector,property,x,y})=>{const owner=document.querySelector(selector)!;const read=()=>Number.parseFloat(getComputedStyle(owner).getPropertyValue(property));const before=read();el.dispatchEvent(new PointerEvent('pointermove',{bubbles:true,pointerType:'mouse',clientX:x,clientY:y}));return{before,after:read()};},{selector:c.owner,property:c.property,x:rect.x+rect.width*.82,y:rect.y+rect.height*.3});
   assert.ok(Math.abs(immediate.after-immediate.before)<.01,c.id+' does not teleport on pointer entry');
-  await page.mouse.move(rect.x+rect.width*.82,rect.y+rect.height*.3);await page.waitForTimeout(700);const held=await read();assert.ok(held>75,c.id+' follows the pointer');
+  await page.mouse.move(rect.x+rect.width*.82,rect.y+rect.height*.3);await page.waitForFunction(({selector,property})=>Number.parseFloat(getComputedStyle(document.querySelector(selector)!).getPropertyValue(property))>80,{selector:c.owner,property:c.property});const held=await read();assert.ok(held>75,c.id+' follows the pointer');
   await owner.screenshot({path:path.join(out,c.id+'-hover.png'),animations:'disabled'});
-  await page.mouse.move(Math.max(1,rect.x-25),Math.max(1,rect.y-25));await page.waitForTimeout(90);const returning=await read();assert.ok(returning>c.rest+.1&&returning<held-.1,c.id+' smooth return '+[held,returning]);
+  await page.mouse.move(Math.max(1,rect.x-25),Math.max(1,rect.y-25));const returning=await firstReturn(c,held);assert.ok(returning>c.rest+.1&&returning<held-.1,c.id+' smooth return '+[held,returning]);
   // Re-entry while returning must continue from the rendered position.
   const reentry=await target.evaluate((el,{selector,property,x,y})=>{const owner=document.querySelector(selector)!;const read=()=>Number.parseFloat(getComputedStyle(owner).getPropertyValue(property));const before=read();el.dispatchEvent(new PointerEvent('pointermove',{bubbles:true,pointerType:'mouse',clientX:x,clientY:y}));return{before,after:read()};},{selector:c.owner,property:c.property,x:rect.x+rect.width*.2,y:rect.y+rect.height*.3});
   assert.ok(Math.abs(reentry.after-reentry.before)<.01,c.id+' no snap on interrupted return');
-  await target.dispatchEvent('pointerleave');await page.waitForTimeout(1000);assert.ok(Math.abs(await read()-c.rest)<.2,c.id+' settles');
-  await page.emulateMedia({reducedMotion:'reduce'});const reduced=await read();await target.dispatchEvent('pointermove',{pointerType:'mouse',clientX:rect.x+rect.width*.85,clientY:rect.y+rect.height*.3});await page.waitForTimeout(120);assert.equal(await read(),reduced,c.id+' reduced motion');
+  await target.dispatchEvent('pointerleave');await page.waitForFunction(({selector,property,rest})=>Math.abs(Number.parseFloat(getComputedStyle(document.querySelector(selector)!).getPropertyValue(property))-rest)<.2,{selector:c.owner,property:c.property,rest:c.rest});assert.ok(Math.abs(await read()-c.rest)<.2,c.id+' settles');
+  await page.emulateMedia({reducedMotion:'reduce'});await page.waitForFunction(({selector,property,rest})=>Number.parseFloat(getComputedStyle(document.querySelector(selector)!).getPropertyValue(property))===rest,{selector:c.owner,property:c.property,rest:c.rest});const reduced=await read();await target.dispatchEvent('pointermove',{pointerType:'mouse',clientX:rect.x+rect.width*.85,clientY:rect.y+rect.height*.3});await page.waitForTimeout(120);assert.equal(await read(),reduced,c.id+' reduced motion');
   if(c.id==='capillary-field')assert.equal(await page.locator('.sop-field-control').inputValue(),beforeInput);if(c.id==='aurora-select')assert.equal(await page.locator('.sop-select-input').inputValue(),beforeInput);
   console.log('PASS '+c.id+': entry, return, interrupted return, reduced motion and unchanged values');
  }
@@ -53,8 +63,8 @@ try{
    if(c.id==='aurora-window')await page.locator('[data-popup-open]').click();if(c.id==='aurora-select')await page.locator('.sop-select-trigger').click();
    const owner=page.locator(c.owner),target=page.locator(c.target);await target.scrollIntoViewIfNeeded();await page.mouse.move(1,1);await page.waitForTimeout(500);
    const read=()=>owner.evaluate((el,p)=>Number.parseFloat(getComputedStyle(el).getPropertyValue(p)),c.property),rect=await target.boundingBox();assert.ok(rect);assert.ok(Math.abs(await read()-c.rest)<.2,c.id+' React rest');
-   await page.mouse.move(rect.x+rect.width*.82,rect.y+rect.height*.3);await page.waitForTimeout(700);const held=await read();assert.ok(held>75,c.id+' React follows pointer');
-   await page.mouse.move(Math.max(1,rect.x-25),Math.max(1,rect.y-25));await page.waitForTimeout(90);const returning=await read();assert.ok(returning>c.rest+.1&&returning<held-.1,c.id+' React gradual return');await page.waitForTimeout(900);assert.ok(Math.abs(await read()-c.rest)<.2,c.id+' React settles');
+   await page.mouse.move(rect.x+rect.width*.82,rect.y+rect.height*.3);await page.waitForFunction(({selector,property})=>Number.parseFloat(getComputedStyle(document.querySelector(selector)!).getPropertyValue(property))>80,{selector:c.owner,property:c.property});const held=await read();assert.ok(held>75,c.id+' React follows pointer');
+   await page.mouse.move(Math.max(1,rect.x-25),Math.max(1,rect.y-25));const returning=await firstReturn(c,held);assert.ok(returning>c.rest+.1&&returning<held-.1,c.id+' React gradual return');await page.waitForFunction(({selector,property,rest})=>Math.abs(Number.parseFloat(getComputedStyle(document.querySelector(selector)!).getPropertyValue(property))-rest)<.2,{selector:c.owner,property:c.property,rest:c.rest});assert.ok(Math.abs(await read()-c.rest)<.2,c.id+' React settles');
    if(c.id==='aurora-window')await page.keyboard.press('Escape');if(c.id==='aurora-select')await page.locator('.sop-select-trigger').press('Escape');
   }
   await page.evaluate(()=>(window as any).teardown());assert.equal(await page.locator('[data-part]').count(),0);console.log('PASS real React StrictMode entry/return and unmount: '+format+' '+layout);

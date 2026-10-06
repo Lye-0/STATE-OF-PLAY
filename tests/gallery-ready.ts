@@ -17,6 +17,12 @@ export async function galleryReady(page: Page, expandAll = false): Promise<void>
   return [...document.querySelectorAll('#part-details[open] [data-preview-part]')].some(e => (e as HTMLElement).dataset.previewPart === id);
  });
  if (expandAll && !await page.evaluate(() => location.hash.startsWith('#part=')) && !await page.locator('#part-details[open]').count() && await page.locator('#category-jump').count() && await selectedCategory(page) === 'all') {
-  while (await page.locator('#load-more').isVisible()) { await page.locator('#load-more').click(); await galleryReady(page); }
+  // This helper verifies the complete collection. Real pointer pagination and
+  // retained control state are covered by lazy-loading.browser.ts. Avoid scrolling
+  // through every animated preview merely to prepare a count/source assertion.
+  while (await page.locator('#load-more').isVisible()) {
+   await page.locator('#load-more').evaluate(button=>(button as HTMLButtonElement).click());
+   await galleryReady(page);
+  }
  }
 }

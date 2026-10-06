@@ -1,4 +1,4 @@
-import {galleryCount,libraryCount} from './gallery-counts.ts';
+import {galleryCount,libraryCount,currentParts} from './gallery-counts.ts';
 /** Real Vite and browser check for a seamless square orbit and truthful exports. */
 import assert from 'node:assert/strict';
 import {chromium} from 'playwright';
@@ -8,8 +8,8 @@ import {getDelivery,buildPrompt,packageContents} from '../src/catalog/delivery.t
 import {readBrowserIndex} from '../scripts/vite-catalog.ts';
 
 const index=readBrowserIndex().index;
-assert.equal(index.length,795);
-assert.equal(index.filter(p=>p.category==='loaders').length,39);
+assert.equal(index.length,libraryCount());
+assert.deepEqual(index.filter(p=>p.category==='loaders').map(p=>p.id).sort(),currentParts().filter(p=>p.category==='loaders').map(p=>p.id).sort());
 assert.ok(!index.some(p=>p.id==='paper-loader'));
 const {parts}=buildCatalog(ROOT,['nixie-loader','ceramic-loader']);
 const orbitRule='sop-ff-offset-square-spin';

@@ -83,7 +83,7 @@ export function buildCatalog(root = ROOT, onlyIds?: readonly string[],options={a
       'app.js': bundleDemo(root, `${base}/demo/main.ts`, read('scripts/templates/demo-entry.ts.txt'))
     };
     const appearance=options.appearance?appearanceProfile(meta,bundledCSS(`${base}/styles.css`),read(`${base}/styles.css`),allIds):undefined;
-    return {...meta, appearance, partsLicense: intern(read('PARTS-LICENSE').replaceAll('\r\n','\n')), markup, usage: read(`${base}/usage.md`), prompt: read(`${base}/prompt.md`), files, portableFiles, preview};
+    return {...meta, ...(appearance?{appearance}:{}), partsLicense: intern(read('PARTS-LICENSE').replaceAll('\r\n','\n')), markup, usage: read(`${base}/usage.md`), prompt: read(`${base}/prompt.md`), files, portableFiles, preview};
   }).sort((a, b) => a.order - b.order);
   for (const part of parts) for (const id of part.related) if (!onlyIds && !seen.has(id)) throw new Error(`Unknown related part: ${id}`);
   const styleSeen = new Set<string>();

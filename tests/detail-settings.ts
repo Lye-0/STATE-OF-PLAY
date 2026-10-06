@@ -8,3 +8,8 @@ export async function selectSetting(select:Locator,value:string){
  if(await trigger.getAttribute('aria-expanded')!=='true')await trigger.click();
  await root.locator(`[role=option][data-value="${value}"]`).click();
 }
+
+/** Resolve the actual visible control instead of its hidden native backing select. */
+export async function settingControl(select:Locator):Promise<Locator>{
+ return await select.isVisible()?select:select.locator('xpath=following-sibling::*[1]').locator('[role=combobox]');
+}

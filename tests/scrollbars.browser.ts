@@ -1,5 +1,5 @@
 import {galleryCount} from './gallery-counts.ts';
-import {selectSetting} from './detail-settings.ts';
+import {selectSetting,settingControl} from './detail-settings.ts';
 import {galleryReady} from './gallery-ready.ts';
 /** Real browser interaction tests. Set SOP_TEST_MODE=offline only in restricted test runners. */
 import assert from 'node:assert/strict';
@@ -35,7 +35,7 @@ try {
  } else await page.goto(url);
  await page.emulateMedia({reducedMotion:'reduce'});
  const card=(id:string)=>page.locator(`[data-part="${id}"]`);
- await run('new category intersects A/B and retains all 48 original parts',async()=>{
+ await run('category and A/B filters match the authored catalogue',async()=>{
   await galleryReady(page);assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?{parts}.parts:undefined));await page.locator('[data-category="scrollbars"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?{parts}.parts:undefined));
   assert.equal(await page.locator('#toggle-controls').isVisible(),false);
   await page.locator('[data-design-filter="A"]').click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?{parts}.parts:undefined));
@@ -64,7 +64,7 @@ try {
  await page.locator('[data-open="capillary"]').click();await galleryReady(page,true);
  const detail=page.locator('.preview-stage .sop-scroll-area'), rail=detail.locator('.sop-scroll-rail'),viewport=detail.locator('.sop-scroll-viewport');
  await run('detail has scroll controls instead of ON/OFF; track clicking pages the actual content',async()=>{
-  assert.equal(await page.locator('[data-state]').count(),0);assert.ok(await page.locator('#scroll-orientation').isVisible());
+  assert.equal(await page.locator('[data-state]').count(),0);assert.ok(await (await settingControl(page.locator('#scroll-orientation'))).isVisible());
   await page.locator('[data-jump="0"]').click();await page.waitForFunction(()=>document.querySelector('.preview-stage .sop-scroll-rail')?.getAttribute('aria-valuenow')==='0');await rail.scrollIntoViewIfNeeded();const b=(await rail.boundingBox())!;await page.mouse.click(b.x+b.width/2,b.y+b.height-8);await page.waitForTimeout(80);
   await page.waitForFunction(()=>Number(document.querySelector('.preview-stage .sop-scroll-rail')?.getAttribute('aria-valuenow'))>0);await page.locator('[data-jump="1"]').click();await page.waitForFunction(()=>document.querySelector('.preview-stage .sop-scroll-rail')?.getAttribute('aria-valuenow')==='100');assert.equal(await rail.getAttribute('aria-valuenow'),'100');
  });
@@ -123,7 +123,7 @@ try {
    return before===after;
   });assert.equal(isolated,true);
  });
- await run('all 24 cards and detail controls fit at 320/390/768px without page overflow',async()=>{
+ await run('scrollbar cards and detail controls fit at 320/390/768px without page overflow',async()=>{
   for(const width of [320,390,768]) {
    await page.setViewportSize({width,height:844});
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
@@ -139,7 +139,7 @@ try {
   await page.waitForTimeout(2200);const ids=await page.locator('.object-grid .sop-scroll-viewport').evaluateAll(nodes=>nodes.map(n=>n.id));assert.equal(ids.length,new Set(ids).size);assert.ok(ids.every(Boolean));
   const frames=await page.evaluate(()=>(window as unknown as {activeScrollFrames:Set<number>}).activeScrollFrames.size);assert.equal(frames,0);
   for(let i=0;i<3;i++){await page.locator('[data-category="blocks"]').click();await galleryReady(page,true);await page.locator('[data-category="scrollbars"]').click();await galleryReady(page,true);}
-  await page.waitForTimeout(2200);assert.equal(await page.locator('.object-grid .sop-scroll-area').count(),bars.length+2);
+  await page.waitForTimeout(2200);assert.equal(await page.locator('.object-grid .sop-scroll-area').count(),await galleryCount(page,offline?parts:undefined));
  });
  await page.locator('#collection').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(out,'gallery.png')});
  assert.deepEqual(errors,[]);

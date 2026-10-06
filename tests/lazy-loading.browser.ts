@@ -14,7 +14,7 @@ import {selectCategory,selectedCategory} from './gallery-ready.ts';
 import {JSZip} from '../scripts/zip.ts';
 const {index} = readBrowserIndex();
 const output=path.join(ROOT,'.test-output/lazy-loading');fs.mkdirSync(output,{recursive:true});
-const browser=await chromium.launch({headless:true, ...(process.env.SOP_BROWSER_CHANNEL ? {channel:process.env.SOP_BROWSER_CHANNEL} : {})});
+const browser=await chromium.launch({headless:true, ...(process.env.CHROMIUM_PATH ? {executablePath:process.env.CHROMIUM_PATH} : process.env.SOP_BROWSER_CHANNEL ? {channel:process.env.SOP_BROWSER_CHANNEL} : {})});
 const results: string[]=[];
 async function ready(p:Page) { await p.waitForFunction(()=>document.querySelector('#part-grid')?.getAttribute('aria-busy')==='false'); }
 async function category(p:Page,id:string) { await selectCategory(p,id); await p.mouse.move(0,0); }
@@ -40,7 +40,7 @@ try {
     if(cat==='toggles') continue;
     assert.ok(!requests.some(u=>new RegExp('/'+cat+'-[^/]+\\.js(?:\\?|$)').test(u)), 'no unrelated category chunk: '+cat);
    }
-   results.push(mode+': initial 26 toggles only; no delivery payload or full catalogue');
+   results.push(mode+': initial toggle category only; no delivery payload or full catalogue');
    for (const id of ['loaders','numbers','datepickers','dropdowns']) {
     await category(p,id);assert.equal(await p.locator('[data-part]').count(),await galleryCount(p));
    }
