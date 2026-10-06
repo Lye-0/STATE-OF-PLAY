@@ -1,3 +1,4 @@
+import {galleryCount} from './gallery-counts.ts';
 import {selectSetting} from './detail-settings.ts';
 import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import{createRequire}from'node:module';import type{Browser}from'playwright';
 import{ROOT,buildCatalog,FORMATS}from'./historical-catalog.ts';import{offlineFiles}from'./offline-fixture.ts';import{getDelivery,buildPrompt,packageContents}from'../src/catalog/delivery.ts';import{requireLocalServerUrl}from'./vite-url.ts';import{galleryReady,selectCategory}from'./gallery-ready.ts';
@@ -11,20 +12,20 @@ try{
  const d=p.locator('#part-details');
  const open=async(id:string)=>{const part=data.parts.find(x=>x.id===id)!;await selectCategory(p,part.category);await p.locator(`[data-open="${id}"]`).click();await galleryReady(p);return part;};
  const shut=async()=>{await d.locator('.close-detail').evaluate(e=>(e as HTMLButtonElement).click());await d.waitFor({state:'hidden'});};
- await run('733 components and 37 categories retain correct A/B filters for the 88 additions',async()=>{
+ await run('historical exports and current gallery retain correct A/B filters for all workbench categories',async()=>{
   assert.equal(data.parts.length,733);
   assert.equal(new Set(data.parts.map(part=>part.category)).size,37);
-  for(const [category,total,expressive] of [['searchbars',18,12],['commands',14,10],['contextmenus',14,10],['navigation',19,11],['tables',14,9]] as const){const extra=offline?0:1;
+  for(const category of ['searchbars','commands','contextmenus','navigation','tables']){
    await selectCategory(p,category);
-   assert.equal(await p.locator('#part-grid [data-part]').count(),total+extra*2);
+   assert.equal(await p.locator('#part-grid [data-part]').count(),await galleryCount(p,offline?data.parts:undefined));
    await p.locator('[data-design-filter=A]').click();await galleryReady(p);
-   assert.equal(await p.locator('#part-grid [data-part]').count(),expressive+extra);
+   assert.equal(await p.locator('#part-grid [data-part]').count(),await galleryCount(p,offline?data.parts:undefined));
    await p.locator('[data-design-filter=B]').click();await galleryReady(p);
-   assert.equal(await p.locator('#part-grid [data-part]').count(),total-expressive+extra);
+   assert.equal(await p.locator('#part-grid [data-part]').count(),await galleryCount(p,offline?data.parts:undefined));
    await p.locator('[data-design-filter=all]').click();await galleryReady(p);
   }
  });
- await run('All 16 context menu cards keep their width and show one result after an action',async()=>{
+ await run('All retained context menu cards keep their width and show one result after an action',async()=>{
   await selectCategory(p,'contextmenus');
   for(const part of data.parts.filter(x=>x.category==='contextmenus')){
    const card=p.locator(`[data-part="${part.id}"]`),target=card.locator('.wb-context-target');
@@ -52,7 +53,7 @@ try{
   await d.locator('.live-preview').screenshot({path:path.join(out,'context-detail-after.png')});
   await shut();
  });
- await run('All 20 navigation cards retain their width and active state without extra demo feedback',async()=>{
+ await run('All retained navigation cards retain their width and active state without extra demo feedback',async()=>{
   await selectCategory(p,'navigation');
   let activated=0;
   for(const part of data.parts.filter(x=>x.category==='navigation')){
@@ -111,7 +112,7 @@ try{
    assert.equal(await more.getAttribute('aria-expanded'),'false',id);
   }
  });
-await run('88 parts and eight exports have entry, internal dependencies, source-backed prompt and integration manifest',async()=>{let count=0;for(const part of data.parts.filter(p=>p.workbench))for(const l of['portable','original']as const)for(const f of FORMATS){const delivery=getDelivery(part,f,l),files=packageContents(part,f,l);assert.ok(delivery.files.some(x=>x.name===delivery.entry));assert.ok(delivery.runtimeFiles.every(x=>!x.name.includes('src/app/')));assert.equal(files.find(x=>x.name==='PROMPT.md')?.code,buildPrompt(part,f,l));assert.ok(files.some(x=>x.name==='INTEGRATION.json'));assert.ok(files.some(x=>/workbench\/(core|base)/.test(x.name)));count++;}assert.equal(count,704);});
+await run('all retained workbench parts and eight exports have entry, internal dependencies, source-backed prompt and integration manifest',async()=>{let count=0;for(const part of data.parts.filter(p=>p.workbench))for(const l of['portable','original']as const)for(const f of FORMATS){const delivery=getDelivery(part,f,l),files=packageContents(part,f,l);assert.ok(delivery.files.some(x=>x.name===delivery.entry));assert.ok(delivery.runtimeFiles.every(x=>!x.name.includes('src/app/')));assert.equal(files.find(x=>x.name==='PROMPT.md')?.code,buildPrompt(part,f,l));assert.ok(files.some(x=>x.name==='INTEGRATION.json'));assert.ok(files.some(x=>/workbench\/(core|base)/.test(x.name)));count++;}assert.equal(count,data.parts.filter(part=>part.workbench).length*FORMATS.length*2);});
   await run('Five inspectors show byte-matching source text and prompts in all formats and layouts',async()=>{let count=0;for(const id of['parallax-search','aperture-command','hinge-context','arc-dock','ledger-table']){const part=await open(id);for(const layout of['portable','original']as const){await selectSetting(d.locator('#export-layout'),layout);for(const format of FORMATS){await d.locator(`[data-format="${format}"]`).evaluate(e=>(e as HTMLButtonElement).click());for(const file of getDelivery(part,format,layout).files){await d.locator(`[data-file="${file.name}"]`).evaluate(e=>(e as HTMLButtonElement).click());assert.deepEqual(await d.locator('.editor .line-code').allTextContents(),file.code.replace(/\r\n/g,'\n').split('\n').map(x=>x||' '),file.name);count++;}await d.locator('[data-detail-tab=prompt]').evaluate(e=>(e as HTMLButtonElement).click());assert.equal(await d.locator('#prompt-text').inputValue(),buildPrompt(part,format,layout));await d.locator('[data-detail-tab=code]').evaluate(e=>(e as HTMLButtonElement).click());}}await shut();}console.log('Displayed source files:',count);});
  await run('Format changes preserve query; nested palette retains focus and Escape leaves inspector open',async()=>{await open('parallax-search');await d.locator('.wb-search-input').fill('design');await d.locator('[data-format=js]').click();assert.equal(await d.locator('.wb-search-input').inputValue(),'design');await shut();await open('aperture-command');await d.locator('.wb-command-launch').click();await p.keyboard.press('Escape');assert.ok(await d.isVisible());await d.locator('[data-wb-demo=open]').click();for(let i=0;i<12;i++)await p.keyboard.press('Tab');assert.equal(await d.locator('.wb-command-dialog').evaluate(e=>e.contains(document.activeElement)),true);await p.keyboard.press('Escape');await p.screenshot({path:out+'/commands-detail.png'});await shut();});
  await run('Navigation preview keeps the selected destination in the gallery; table preview handles empty, loading and reset',async()=>{await open('paper-index-nav');await d.locator('.wb-nav-desktop [data-nav=projects]').click();assert.ok(await d.isVisible());assert.equal(await d.locator('.wb-nav-desktop [data-nav=projects]').getAttribute('aria-current'),'page');assert.equal(await d.locator('.wb-demo-feedback').count(),0);await shut();await open('ledger-table');await selectSetting(d.locator('[data-wb-state]'),'empty');assert.match(await d.locator('.wb-data-empty').innerText(),/該当/);await selectSetting(d.locator('[data-wb-state]'),'loading');assert.equal(await d.locator('table').getAttribute('aria-busy'),'true');await d.locator('[data-wb-demo=reset]').click();assert.equal(await d.locator('tbody tr').count(),4);await p.screenshot({path:out+'/table-detail.png'});await shut();});

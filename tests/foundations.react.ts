@@ -5,13 +5,14 @@ import path from 'node:path';
 import {createRequire} from 'node:module';
 import type {Browser} from 'playwright';
 import {buildCatalog,ROOT} from '../scripts/catalog.ts';
+import {currentParts} from './gallery-counts.ts';
 import {getDelivery} from '../src/catalog/delivery.ts';
 import {testBundle} from './offline-fixture.ts';
 import {requireLocalServerUrl} from './vite-url.ts';
 const require=createRequire(import.meta.url),{chromium}=require(process.env.PLAYWRIGHT_PATH??'playwright') as typeof import('playwright');
 const offline=process.env.SOP_TEST_MODE==='offline',runtime=process.env.SOP_REACT_BROWSER_BUNDLE;
 if(offline&&!runtime)throw new Error('Offline React verification requires a real React+ReactDOM browser bundle in SOP_REACT_BROWSER_BUNDLE. No runtime is substituted.');
-const data=buildCatalog(),parts=data.parts.filter(p=>p.foundation),out=path.join(ROOT,'.test-output/foundations-react');fs.mkdirSync(out,{recursive:true});
+const data=buildCatalog(ROOT,currentParts().filter(part=>part.foundation).map(part=>part.id)),parts=data.parts,out=path.join(ROOT,'.test-output/foundations-react');fs.mkdirSync(out,{recursive:true});
 const tests:string[]=[],errors:string[]=[],versions:unknown[]=[];let browser:Browser|undefined,shutdown:(()=>Promise<void>)|undefined,url='';
 const run=async(name:string,fn:()=>Promise<void>)=>{await fn();tests.push(name);console.log('PASS '+name);};
 try{
@@ -39,7 +40,8 @@ try{
   const entry=prefix+'/entry.jsx';extra.set(entry,source);const p=await browser.newPage({viewport:{width:1280,height:960}});p.on('pageerror',e=>errors.push(e.message));p.setDefaultTimeout(60000);p.setDefaultNavigationTimeout(120000);await p.emulateMedia({reducedMotion:'reduce'});
   if(offline){await p.setContent('<!doctype html><html><head><meta charset="utf-8"></head><body><div id="root"></div></body></html>');await p.evaluate(async text=>{const u=URL.createObjectURL(new Blob([text],{type:'text/javascript'}));const m=await import(u);Object.assign(window,{RealReact:m.r,RealDOM:m.e});URL.revokeObjectURL(u);},fs.readFileSync(runtime!,'utf8'));await p.addScriptTag({content:testBundle(entry,extra,'const React=window.RealReact,ReactDOMClient=window.RealDOM;')});}
   else {fs.mkdirSync(path.join(ROOT,prefix),{recursive:true});fs.writeFileSync(path.join(ROOT,entry),source);fs.writeFileSync(path.join(ROOT,prefix,'index.html'),'<html><head><meta charset="utf-8"></head><body><div id="root"></div><script type="module" src="./entry.jsx"></script></body></html>');await p.goto(new URL(prefix+'/index.html',url).href);}
-  await p.addStyleTag({content:data.styles+'\nbody{padding:32px;background:#181b1c;color:#eef;font:14px Arial}section{display:inline-block;vertical-align:top;width:360px;margin:20px;padding:10px}section>output{display:block;padding:10px}'});
+  // Real exports import their own CSS. Do not add the entire library stylesheet again.
+  await p.addStyleTag({content:(offline?data.styles:'')+'\nbody{padding:32px;background:#181b1c;color:#eef;font:14px Arial}section{display:inline-block;vertical-align:top;width:360px;margin:20px;padding:10px}section>output{display:block;padding:10px}'});
   await p.waitForSelector('[data-item]');versions.push(await p.evaluate(()=>(window as any).reactVersion));
   await run(`${format}/${layout}: all ${parts.length} generated components mount with usable refs and unique identifiers`,async()=>{
    assert.equal(await p.locator('[data-item]').count(),parts.length);assert.equal(await p.evaluate(()=>(window as any).controllers.size),parts.length);assert.equal(await p.evaluate(()=>(window as any).refs.size),parts.length);
@@ -60,7 +62,7 @@ try{
    await p.evaluate(()=>{(window as any).oldRange=(window as any).refs.get('mercury-range');(window as any).assignments.get('mercury-range')({min:10,max:40,step:5,unit:'kg'});});await p.waitForFunction(()=>document.querySelector('[data-item="mercury-range"] [data-max]')?.textContent==='40kg');assert.ok(await p.evaluate(()=>(window as any).oldRange===(window as any).refs.get('mercury-range')));
   });
   await run(`${format}/${layout}: notification and open popup clean up during mount/unmount cycles`,async()=>{
-   for(let n=0;n<2;n++){await p.evaluate(()=>{(window as any).controllers.get('aurora-notice').notify({title:'Close on unmount',duration:0});(window as any).controllers.get('aurora-finder').show();});await p.locator('#mount-toggle').click();assert.equal(await p.locator('[data-item]').count(),0);assert.equal(await p.locator('.ff-toast-stack').count(),0);assert.equal(await p.evaluate(()=>(window as any).controllers.size),0);await p.locator('#mount-toggle').click();assert.equal(await p.locator('[data-item]').count(),parts.length);}
+   for(let n=0;n<2;n++){await p.evaluate(()=>{(window as any).controllers.get('aurora-notice').notify({title:'Close on unmount',duration:0});(window as any).controllers.get('aurora-finder').show();});await p.locator('#mount-toggle').evaluate(button=>(button as HTMLButtonElement).click());await p.waitForFunction(()=>document.querySelectorAll('[data-item]').length===0);assert.equal(await p.locator('[data-item]').count(),0);assert.equal(await p.locator('.ff-toast-stack').count(),0);assert.equal(await p.evaluate(()=>(window as any).controllers.size),0);await p.locator('#mount-toggle').evaluate(button=>(button as HTMLButtonElement).click());await p.waitForFunction(count=>document.querySelectorAll('[data-item]').length===count,parts.length);assert.equal(await p.locator('[data-item]').count(),parts.length);}
    await p.evaluate(()=>(window as any).unmountAll());assert.equal(await p.locator('[data-foundation-mounted]').count(),0);assert.equal(await p.locator(':popover-open').count(),0);assert.deepEqual(errors,[]);
   });await p.close();
  }

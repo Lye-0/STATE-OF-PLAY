@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';
 import {chromium} from 'playwright';import {createServer} from 'vite';
 import {ROOT} from '../scripts/catalog.ts';import {currentParts} from './gallery-counts.ts';import {galleryReady,selectCategory} from './gallery-ready.ts';
-const out=path.join(ROOT,'docs/expansion-30-2026-10-06');
+const out=path.join(ROOT,'.test-output/expansion-30');
 const designs=currentParts().filter(part=>part.tags.includes('EXPANSION-30'));
 const captureOnly=!!process.env.SOP_EXPANSION_CAPTURE_ONLY;const chosen=process.env.SOP_EXPANSION_IDS?.split(',');const specs=designs.filter(d=>!chosen||chosen.includes(d.id));
 const server=await createServer({root:ROOT,server:{host:'127.0.0.1',port:0,watch:{ignored:['**/docs/**','**/.test-output/**']}}});await server.listen();

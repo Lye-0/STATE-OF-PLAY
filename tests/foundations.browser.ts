@@ -1,4 +1,4 @@
-import {galleryCount} from './gallery-counts.ts';
+import {currentParts as registryParts,galleryCount} from './gallery-counts.ts';
 import {selectSetting} from './detail-settings.ts';
 /** Actual browser execution of reconstructed foundation sources, not a mock DOM.
  * Normal mode uses Vite. SOP_TEST_MODE=offline uses the explicitly documented local adapter.
@@ -9,14 +9,13 @@ import path from 'node:path';
 import {createRequire} from 'node:module';
 import type {Browser,Page} from 'playwright';
 import {buildCatalog,ROOT} from './historical-catalog.ts';
-import {buildCatalog as buildCurrentCatalog} from '../scripts/catalog.ts';
 import {offlineFiles,testBundle} from './offline-fixture.ts';
-import {selectCategory} from './gallery-ready.ts';
+import {galleryReady,selectCategory} from './gallery-ready.ts';
 import {getDelivery,buildPrompt} from '../src/catalog/delivery.ts';
 import {requireLocalServerUrl} from './vite-url.ts';
 const require=createRequire(import.meta.url),{chromium}=require(process.env.PLAYWRIGHT_PATH??'playwright') as typeof import('playwright');
 const data=buildCatalog(),parts=data.parts.filter(p=>p.foundation),offline=process.env.SOP_TEST_MODE==='offline';
-const currentParts=offline?parts:buildCurrentCatalog().parts;
+const currentParts=offline?parts:registryParts();
 const out=path.join(ROOT,'.test-output/foundations');fs.mkdirSync(out,{recursive:true});
 const results:string[]=[],errors:string[]=[];let browser:Browser|undefined,shutdown:(()=>Promise<void>)|undefined,url='';
 const run=async(name:string,fn:()=>Promise<void>)=>{await fn();results.push(name);console.log('PASS '+name);};
@@ -45,7 +44,10 @@ try{
   await d.locator('[data-detail-tab="code"]').click();await page.screenshot({path:path.join(out,'detail.png')});await d.locator('.close-detail').click();
  });
  await run('Source inspector: representative of each new category, both layouts (full inventory in gallery suite)',async()=>{
-  for(const p of parts.filter((p,i)=>i===parts.findIndex(x=>x.category===p.category))){await selectCategory(page,p.category);await page.locator(`[data-open="${p.id}"]`).click();const d=page.locator('#part-details');for(const layout of ['portable','original']as const){await selectSetting(d.locator('#export-layout'),layout);const delivery=getDelivery(p,'tsx',layout);const expected=delivery.files.find(f=>f.name===delivery.entry)!;assert.equal((await d.locator('.editor code .line-code').allTextContents()).map(line=>line===' '?'':line).join('\n').trimEnd(),expected.code.trimEnd());}await d.locator('.close-detail').click();}
+  for(const p of parts.filter((p,i)=>i===parts.findIndex(x=>x.category===p.category))){
+   // Source checks need this category, not the accumulated CSS of every earlier category.
+   if(!offline){await page.goto(new URL('?category='+p.category,url).href,{waitUntil:'domcontentloaded'});await galleryReady(page);}else await selectCategory(page,p.category);
+   await page.locator(`[data-open="${p.id}"]`).click();const d=page.locator('#part-details');for(const layout of ['portable','original']as const){await selectSetting(d.locator('#export-layout'),layout);const delivery=getDelivery(p,'tsx',layout);const expected=delivery.files.find(f=>f.name===delivery.entry)!;assert.equal((await d.locator('.editor code .line-code').allTextContents()).map(line=>line===' '?'':line).join('\n').trimEnd(),expected.code.trimEnd());}await d.locator('.close-detail').click();}
  });
  // One host can move or unmount each actual exported implementation without a gallery dependency.
  const imports=parts.map((p,i)=>`import {init as init${i}} from '/src/parts/${p.category}/${p.id}/vanilla/init.ts';`).join('\n');
@@ -134,8 +136,8 @@ await run('Combobox IME composition does not intercept Enter or commit partial c
   await input.fill('abc');await input.press('Tab');assert.equal(await input.getAttribute('aria-invalid'),'true');assert.equal(await input.evaluate((el:HTMLInputElement)=>el.checkValidity()),false);await native.locator('#reset').click();await native.waitForFunction(()=>(document.querySelector('[data-number]') as HTMLInputElement)?.value==='0.5');assert.equal(await input.inputValue(),'0.5');assert.equal(await input.evaluate((el:HTMLInputElement)=>el.checkValidity()),true);
   await input.dispatchEvent('compositionstart');await input.fill('1');await input.dispatchEvent('keydown',{key:'Enter',isComposing:true});assert.equal(await value(),.5);await input.dispatchEvent('compositionend');await input.press('Enter');assert.equal(await value(),1);
  });
- await run('All 20 number designs keep focus on the clicked adjust control',async()=>{
-  const numberParts=parts.filter(p=>p.category==='numbers');assert.equal(numberParts.length,20);
+ await run('All retained number designs keep focus on the clicked adjust control',async()=>{
+  const numberParts=parts.filter(p=>p.category==='numbers');assert.ok(numberParts.length>0);
   for(const part of numberParts){await mount(part.id,{defaultValue:3,min:0,max:10,step:1});const input=native.locator('#test-host [data-number]'),plus=native.locator('#test-host [data-adjust="1"]'),minus=native.locator('#test-host [data-adjust="-1"]');await plus.click();assert.equal(await value(),4,part.id+' increment');assert.ok(await plus.evaluate(e=>e===document.activeElement),part.id+' plus retains focus');assert.notEqual(await input.evaluate(e=>e===document.activeElement),true,part.id+' input is not refocused');await minus.click();assert.equal(await value(),3,part.id+' decrement');assert.ok(await minus.evaluate(e=>e===document.activeElement),part.id+' minus retains focus');assert.notEqual(await input.evaluate(e=>e===document.activeElement),true,part.id+' input is not refocused after decrement');await input.focus();assert.ok(await input.evaluate(e=>e===document.activeElement),part.id+' input remains directly focusable');}
  });
  await run('Toast: action callback, capacity, expiry, hover pause and destroy removes top-layer stack',async()=>{

@@ -1,4 +1,4 @@
-import {libraryCount} from './gallery-counts.ts';
+import {currentParts,galleryCount,libraryCount} from './gallery-counts.ts';
 import {selectSetting} from './detail-settings.ts';
 /** Verify SIGNATURE in the actual lazy-loaded Vite gallery and inspector. */
 import assert from 'node:assert/strict';
@@ -40,26 +40,27 @@ try {
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 120000 });
   await galleryReady(page);
 
-  await check('entry keeps the first category lazy while listing 795 parts and 37 categories', async () => {
+  await check('entry keeps the first category lazy while listing the current library and categories', async () => {
     assert.equal(await page.locator('#library-total').innerText(), String(libraryCount()));
     assert.equal(await page.locator('#library-collections').innerText(), '37');
-    assert.equal(await page.locator('#part-grid [data-part]').count(), 26);
+    assert.equal(await page.locator('#part-grid [data-part]').count(), await galleryCount(page));
     assert.equal(await selectedCategory(page), 'toggles');
     assert.ok(!requests.some(request => request.includes('/src/parts/avatars/')), 'avatar runtime loaded before selection');
     assert.ok(!readBrowserIndex().index.some(part => part.id === 'paper-loader'));
   });
 
-  await check('six categories expose 18 independent cards with A11 and B7', async () => {
+  await check('six categories expose every current signature design with matching A/B filters', async () => {
     for (const category of categories) {
       await selectCategory(page, category);
-      assert.equal(await page.locator('#part-grid .signature-card').count(), 18, category);
-      assert.equal(await page.locator('#part-grid .sop-sig').count(), 18, category);
+      const expected = currentParts().filter(part => part.category === category);
+      assert.equal(await page.locator('#part-grid .signature-card').count(), expected.length, category);
+      assert.equal(await page.locator('#part-grid .sop-sig').count(), expected.length, category);
       await page.locator('[data-design-filter="A"]').click();
       await galleryReady(page);
-      assert.equal(await page.locator('#part-grid [data-part]').count(), 11, category + ' A');
+      assert.equal(await page.locator('#part-grid [data-part]').count(), expected.filter(part => part.designType === 'A').length, category + ' A');
       await page.locator('[data-design-filter="B"]').click();
       await galleryReady(page);
-      assert.equal(await page.locator('#part-grid [data-part]').count(), 7, category + ' B');
+      assert.equal(await page.locator('#part-grid [data-part]').count(), expected.filter(part => part.designType === 'B').length, category + ' B');
       await page.locator('[data-design-filter="all"]').click();
       await galleryReady(page);
     }
@@ -73,15 +74,15 @@ try {
       await selectCategory(page, categories[i]);
       await page.locator('[data-open="' + representative[i] + '"]').click();
       await page.locator('#part-details [data-preview-part="' + representative[i] + '"]').waitFor();
-      assert.equal(await page.locator('#part-details .signature-preview .sop-sig').count(), 1);
+      assert.equal(await page.locator('#part-details [data-preview-part] .sop-sig').count(), 1);
       assert.ok(await page.locator('#part-details .signature-controls').isVisible());
       if (categories[i] === 'skeletons') {
         await page.locator('#part-details input[data-sg-loading]').uncheck();
-        assert.equal(await page.locator('#part-details .sop-sig').getAttribute('aria-busy'), 'false');
+        assert.equal(await page.locator('#part-details [data-preview-part] .sop-sig').getAttribute('aria-busy'), 'false');
       }
       if (categories[i] === 'ratings') {
         await selectSetting(page.locator('#part-details [data-sg-max]'),'7');
-        assert.equal(await page.locator('#part-details input[type="radio"]').count(), 7);
+        assert.equal(await page.locator('#part-details [data-preview-part] input[type="radio"]').count(), 7);
       }
       await page.locator('#part-details .close-detail').click();
       await galleryReady(page);

@@ -1,4 +1,4 @@
-import {libraryCount} from './gallery-counts.ts';
+import {galleryCount,libraryCount} from './gallery-counts.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
@@ -22,13 +22,13 @@ try{
  for(const vendor of ['prism','jszip'])await page.addScriptTag({content:fs.readFileSync(path.join(ROOT,'public/vendor/'+vendor+'.js'),'utf8')});
  await page.addScriptTag({content:files.get('/test-app.js')!});
  await galleryReady(page);
- await check('ornament category shows 20 originals and 10 new A designs',async()=>{
+ await check('ornament category shows every retained fixture design with matching A/B counts',async()=>{
   await selectCategory(page,'ornaments');await galleryReady(page,true);
   assert.equal(await page.locator('#category-jump [data-value="ornaments"]').count(),1);
-  assert.equal(await page.locator('#part-grid [data-part]').count(),30);
-  assert.equal(await page.locator('#library-total').innerText(),String(libraryCount()));
+  assert.equal(await page.locator('#part-grid [data-part]').count(),await galleryCount(page,data.parts));
+  assert.equal(await page.locator('#library-total').innerText(),String(libraryCount(data.parts)));
   assert.equal(await page.locator('#library-collections').innerText(),'37');
-  for(const [filter,count]of [['A',22],['B',8],['all',30]] as const){await page.locator(`[data-design-filter="${filter}"]`).click();await galleryReady(page,true);assert.equal(await page.locator('#part-grid [data-part]').count(),count);}
+  for(const filter of ['A','B','all']){await page.locator(`[data-design-filter="${filter}"]`).click();await galleryReady(page,true);assert.equal(await page.locator('#part-grid [data-part]').count(),await galleryCount(page,data.parts));}
  });
  await check('all ornaments render as decorative objects and support paused/reduced motion',async()=>{
   for(const part of data.parts.filter(part=>part.category==='ornaments')){
@@ -65,19 +65,24 @@ try{
    ['tide-knot',['.l1','.l2','.l3']]
   ] as const){
    const root=page.locator(`[data-part="${id}"] .sop-ornament`);
-   await root.scrollIntoViewIfNeeded();await page.mouse.move(0,0);await page.waitForTimeout(60);
+   await root.scrollIntoViewIfNeeded();await page.mouse.move(0,0);
+   await page.waitForFunction(({id,selectors})=>selectors.every(selector=>
+    document.querySelector(`[data-part="${id}"] .sop-ornament`)?.querySelector(selector)?.getAnimations().some(animation=>animation instanceof CSSAnimation&&animation.playState==='running'&&animation.startTime!==null)
+   ),{id,selectors:[...selectors]});
    const before=await root.evaluate((element,classes)=>classes.map(selector=>{
     const animation=element.querySelector(selector)?.getAnimations().find(item=>item instanceof CSSAnimation);
-    return {duration:animation?.effect?.getComputedTiming().duration,time:Number(animation?.currentTime)};
+    return {duration:animation?.effect?.getComputedTiming().duration,time:Number(animation?.currentTime),start:animation?.startTime,timeline:Number(document.timeline.currentTime)};
    }),selectors);
    await root.hover();await page.waitForTimeout(120);
    const after=await root.evaluate((element,classes)=>classes.map(selector=>{
     const animation=element.querySelector(selector)?.getAnimations().find(item=>item instanceof CSSAnimation);
-    return {duration:animation?.effect?.getComputedTiming().duration,time:Number(animation?.currentTime)};
+    return {duration:animation?.effect?.getComputedTiming().duration,time:Number(animation?.currentTime),start:animation?.startTime,timeline:Number(document.timeline.currentTime)};
    }),selectors);
    for(let i=0;i<selectors.length;i++){
     assert.equal(after[i].duration,before[i].duration,`${id} ${selectors[i]} duration`);
-    assert.ok(after[i].time>before[i].time&&after[i].time-before[i].time<600,`${id} ${selectors[i]} phase`);
+    assert.equal(after[i].start,before[i].start,`${id} ${selectors[i]} animation was restarted by hover`);
+    const elapsed=after[i].timeline-before[i].timeline,advanced=after[i].time-before[i].time;
+    assert.ok(advanced>0&&Math.abs(advanced-elapsed)<50,`${id} ${selectors[i]} phase advanced ${advanced}ms over ${elapsed}ms`);
    }
    await root.evaluate(element=>element.setAttribute('data-paused','true'));
    await page.evaluate(()=>new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve()))));

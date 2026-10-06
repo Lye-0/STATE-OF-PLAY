@@ -1,4 +1,4 @@
-import {galleryCount} from './gallery-counts.ts';
+import {currentParts,galleryCount} from './gallery-counts.ts';
 import {selectSetting} from './detail-settings.ts';
 import {galleryReady,selectCategory} from './gallery-ready.ts';
 /** The default run tests real Vite over HTTP. SOP_TEST_MODE=offline is an explicit, reported test adapter. */
@@ -18,19 +18,25 @@ const require=createRequire(import.meta.url);
 const {chromium}=require(process.env.PLAYWRIGHT_PATH??'playwright') as typeof import('playwright');
 const offline=process.env.SOP_TEST_MODE==='offline';
 const OUT=path.join(ROOT,'.test-output');fs.mkdirSync(OUT,{recursive:true});
-const catalog=buildCatalog();
+const summaries=[...currentParts()].sort((a,b)=>a.order-b.order);
 const layouts=['portable','original'] as const;
 // Unit tests cover every part/file/layout. Browser checks retain each category's
 // first A/B design, all toggle interactions, and the current signature ornament.
 const seenBrowserGroups=new Set<string>();
-const browserParts=catalog.parts.filter(part=>{
+const browserIds=summaries.filter(part=>{
  if(part.id.startsWith('lgc-'))return false;
  if((part.category==='toggles'&&!part.tags.includes('GLASS LAB'))||part.id==='hero-asterisk')return true;
  const group=part.category+':'+part.designType;
  if(seenBrowserGroups.has(group))return false;
  seenBrowserGroups.add(group);return true;
-});
+}).map(part=>part.id);
+// Keep full-library gallery checks, but generate source fixtures only for the
+// representative exports actually exercised below (including all toggle designs).
+const catalog=buildCatalog(ROOT,[...browserIds,'luminous-frame']);
+const browserParts=catalog.parts.filter(part=>browserIds.includes(part.id));
 const results: string[]=[];const errors: string[]=[];
+let activeCheck='setup';let failure:string|undefined;
+const requestFailures:string[]=[];
 const normalize=(s:string)=>s.split('\n').map(l=>l.trimEnd()).join('\n');
 function write(relative:string,code:string){const name=path.join(ROOT,relative);fs.mkdirSync(path.dirname(name),{recursive:true});fs.writeFileSync(name,code);}
 // Only temporary test fixtures; the normal build never expands a packages/ tree.
@@ -38,7 +44,7 @@ for(const part of browserParts){
  for(const [name,code]of Object.entries(part.preview))write(`.test-output/exports/${part.id}/preview/${name}`,code);
  for(const layout of layouts)for(const format of FORMATS)for(const file of getDelivery(part,format,layout).files)write(`.test-output/exports/${part.id}/${layout}/${format}/${file.name}`,file.code);
 }
-async function run(name:string,action:()=>Promise<void>){if(process.env.SOP_BROWSER_ONLY&&!new RegExp(process.env.SOP_BROWSER_ONLY).test(name)){console.log('SKIP '+name);return;}await action();results.push(name);console.log('PASS '+name);}
+async function run(name:string,action:()=>Promise<void>){if(process.env.SOP_BROWSER_ONLY&&!new RegExp(process.env.SOP_BROWSER_ONLY).test(name)){console.log('SKIP '+name);return;}activeCheck=name;console.log('RUN '+name);await action();results.push(name);console.log('PASS '+name);}
 let browser: Browser|undefined;let closeServer:(()=>Promise<void>)|undefined;let page:Page;let url='';
 const memory=new Map<string,string>();
 try{
@@ -48,7 +54,13 @@ try{
  // Count/filter checks mount the full collection; motion is exercised separately.
  const context=await browser.newContext({viewport:{width:1440,height:960},acceptDownloads:true,reducedMotion:'reduce'});
  await context.addInitScript(()=>{const active=new Set<number>();const request=window.requestAnimationFrame.bind(window);const cancel=window.cancelAnimationFrame.bind(window);window.requestAnimationFrame=callback=>{const id=request(time=>{active.delete(id);callback(time);});active.add(id);return id;};window.cancelAnimationFrame=id=>{active.delete(id);cancel(id);};(window as unknown as {activeRAF:Set<number>}).activeRAF=active;});
- page=await context.newPage();page.setDefaultTimeout(60000);page.on('pageerror',error=>errors.push(error.message));
+ page=await context.newPage();page.setDefaultTimeout(60000);page.on('pageerror',error=>errors.push(error.message));page.on('requestfailed',request=>requestFailures.push(`${request.method()} ${request.url()}: ${request.failure()?.errorText}`));
+ async function setMotion(reducedMotion:'reduce'|'no-preference') {
+  await page.emulateMedia({reducedMotion});
+  // Chromium delivers matchMedia change events on a rendering turn. Wait for
+  // controllers to receive them before asserting an immediate reduced-motion snap.
+  await page.evaluate(()=>new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve()))));
+ }
  async function load(route='/') {
   if(!offline){await page.goto(url+route,{waitUntil:'domcontentloaded',timeout:180000});await page.waitForLoadState('networkidle',{timeout:180000});return;}
   // Directly render test documents when administrator policy forbids local navigation.
@@ -91,28 +103,28 @@ try{
   }
  }
  await load();await galleryReady(page);await page.locator('[data-category="all"]').click();await galleryReady(page,!process.env.SOP_BROWSER_ONLY||new RegExp(process.env.SOP_BROWSER_ONLY).test('Gallery')||new RegExp(process.env.SOP_BROWSER_ONLY).test('A/B and category filters'));
- await run(`Gallery: ${catalog.parts.length} parts, no runtime errors`,async()=>{assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?catalog.parts:undefined));assert.deepEqual(errors,[]);});
+ await run(`Gallery: ${summaries.length} parts, no runtime errors`,async()=>{assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?summaries:undefined));assert.deepEqual(errors,[]);});
  await run('A/B and category filters intersect, counts remain correct, and the selector stays in sync',async()=>{
   for(const category of ['all','toggles','blocks','scrollbars','dropdowns','accordions','textboxes']){
-   await page.locator(`[data-category="${category}"]`).click();await galleryReady(page,true);
+   await selectCategory(page,category);await galleryReady(page,true);
    for(const kind of ['A','B','all']){
     await page.locator(`[data-design-filter="${kind}"]`).click();await galleryReady(page,true);
-    const expected=catalog.parts.filter(p=>(category==='all'||p.category===category)&&(kind==='all'||p.designType===kind));
-    assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?catalog.parts:undefined));
+    const expected=summaries.filter(p=>(category==='all'||p.category===category)&&(kind==='all'||p.designType===kind));
+    assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?summaries:undefined));
     assert.equal(await page.locator(`[data-design-filter="${kind}"]`).getAttribute('aria-pressed'),'true');
     const visible=await page.locator('[data-part]').evaluateAll(nodes=>Object.fromEntries(nodes.map(node=>[(node as HTMLElement).dataset.part,(node as HTMLElement).dataset.design])));for(const part of expected)assert.equal(visible[part.id],part.designType);console.log('  verified filter '+category+' / '+kind+' = '+expected.length);
    }
   }
-  await selectCategory(page,'numbers');assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?catalog.parts:undefined));
+  await selectCategory(page,'numbers');assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?summaries:undefined));
   assert.equal(await page.locator('[data-category="numbers"]').getAttribute('aria-selected'),'true');
   // Full-list counts were checked above. Keep the ordinary first page mounted
   // for interaction checks; unpausing the full library on every dialog close is not representative.
   await selectCategory(page,'all');await galleryReady(page);
   assert.equal(await page.locator('[data-part]').count(),24);
  });
- await page.emulateMedia({reducedMotion:'no-preference'});
+ await setMotion('no-preference');
  await run('Liquid, Fold, Prism have intrinsic opposite state labels and distinct optical treatment',async()=>{
-  await page.emulateMedia({reducedMotion:'reduce'});
+  await setMotion('reduce');
   for(const [id,on,off,material]of [['liquid','.liquid-mark','.liquid-rest','.liquid-lens'],['fold','.fold-on','.fold-off','.fold-tab'],['prism','.prism-state:not(.off)','.prism-state.off','.prism-crystal']]){
    await page.locator(`[data-open="${id}"]`).click();await galleryReady(page,true);assert.equal(await page.locator('[data-part]').count(),24);const root=page.locator('.preview-stage [role="switch"]');
    await page.locator('[data-state="off"]').click();
@@ -124,7 +136,7 @@ try{
    assert.notEqual(await root.locator(material).evaluate(n=>getComputedStyle(n).filter),rest);
    await page.locator('.close-detail').click();
   }
-  await page.emulateMedia({reducedMotion:'no-preference'});
+  await setMotion('no-preference');
  });
  await run('Compact B switches retain real sizes, native keyboard and drag states',async()=>{
   await page.locator('[data-category="toggles"]').click();await galleryReady(page,true);await page.locator('[data-design-filter="B"]').click();await galleryReady(page,true);
@@ -188,7 +200,7 @@ try{
   // The exhaustive source matrix is checked by unit tests; this checks rendered DOM.
   // Batch DOM clicks within one browser round-trip per part to keep growing CI affordable.
   // Pointer/focus behavior is checked separately above and below; this loop checks source bytes.
-  await page.emulateMedia({reducedMotion:'reduce'});
+  await setMotion('reduce');
   for(const part of browserParts){
    // Isolate source rendering from the thousands of component selectors loaded by
    // the earlier full-gallery checks. Cross-category CSS order is tested in
@@ -204,7 +216,7 @@ try{
    for(let c=0;c<cases.length;c++)for(let i=0;i<cases[c].files.length;i++){assert.equal(normalize(rendered[c][i]),normalize(cases[c].files[i].code),`${part.id}/${cases[c].format}/${cases[c].layout}/${i}`);count++;}
    await page.locator('.close-detail').evaluate(element=>(element as HTMLButtonElement).click());await page.locator('#part-details[open]').waitFor({state:'hidden'});console.log('  verified '+part.id+'; '+count+' sources');
   }assert.equal(count,browserParts.reduce((n,p)=>n+Object.values(p.files).flat().length*2,0));
-  await page.emulateMedia({reducedMotion:'no-preference'});
+  await setMotion('no-preference');
   await selectCategory(page,'toggles');await page.locator('[data-open="chrome"]').click();await galleryReady(page,true);await page.locator('[data-format="tsx"]').click();await selectSetting(page.locator('#export-layout'),'portable');
   await page.locator('[data-file="chrome-toggle/internal/motion.ts"]').click();await selectSetting(page.locator('#export-layout'),'original');assert.equal(await page.locator('.current-path').textContent(),'src/shared');
   await page.locator('[data-format="jsx"]').click();assert.equal(await page.locator('.current-file').textContent(),'motion.js');await selectSetting(page.locator('#export-layout'),'portable');assert.equal(await page.locator('.current-path').textContent(),'chrome-toggle/internal');await page.locator('.close-detail').click();
@@ -247,7 +259,7 @@ try{
   }
  });
  await run('Disabled and reduced-motion states remain functional',async()=>{
-  await page.setViewportSize({width:1200,height:900});await page.locator('[data-open="chrome"]').click();await galleryReady(page,true);await page.locator('#preview-disabled').check();assert.ok(await page.locator('.preview-stage button').isDisabled());await page.locator('#preview-disabled').uncheck();await page.emulateMedia({reducedMotion:'reduce'});await page.locator('[data-state="off"]').click();assert.equal(await page.locator('.preview-stage button').getAttribute('aria-checked'),'false');await page.locator('[data-state="on"]').click();assert.equal(await page.locator('.preview-stage button').evaluate(b=>b.style.getPropertyValue('--p')),'1.00000');await page.emulateMedia({reducedMotion:'no-preference'});await page.locator('.close-detail').click();
+  await page.setViewportSize({width:1200,height:900});await page.locator('[data-open="chrome"]').click();await galleryReady(page,true);await page.locator('#preview-disabled').check();assert.ok(await page.locator('.preview-stage button').isDisabled());await page.locator('#preview-disabled').uncheck();await setMotion('reduce');await page.locator('[data-state="off"]').click();assert.equal(await page.locator('.preview-stage button').getAttribute('aria-checked'),'false');await page.locator('[data-state="on"]').click();assert.equal(await page.locator('.preview-stage button').evaluate(b=>b.style.getPropertyValue('--p')),'1.00000');await setMotion('no-preference');await page.locator('.close-detail').click();
  });
  await run('Representative standalone HTML/CSS/JS previews run without gallery assets',async()=>{
   for(const part of browserParts){await load(`/.test-output/exports/${part.id}/preview/index.html`);const hasDemoAction=part.category==='toasts'||part.category==='skeletons';assert.equal(await page.locator('.demo-root > *').count(),hasDemoAction?2:1,part.id);if(hasDemoAction)assert.equal(await page.locator('.demo-root > :last-child').evaluate(el=>el.tagName),'BUTTON',part.id);
@@ -304,14 +316,21 @@ try{
    const production=await vite.preview({root:ROOT,base:'/STATE-OF-PLAY/',preview:{port:0,host:'127.0.0.1'}});
    try{
     const productionUrl = requireLocalServerUrl(production, 'Vite production preview');
-    await page.goto(productionUrl,{waitUntil:'domcontentloaded',timeout:180000});await galleryReady(page);assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?catalog.parts:undefined));
+    await page.goto(productionUrl,{waitUntil:'domcontentloaded',timeout:180000});await galleryReady(page);assert.equal(await page.locator('[data-part]').count(),await galleryCount(page,offline?summaries:undefined));
     await page.locator('[data-open="chrome"]').click();await galleryReady(page,true);assert.match(await page.locator('.editor code').innerText(),/ChromeToggle/);
    }finally{await new Promise<void>((resolve,reject)=>production.httpServer.close((error?: Error)=>error?reject(error):resolve()));}
   });
  }
  assert.deepEqual(errors,[]);
  console.log(`Browser checks: ${results.length} passed; mode=${offline?'explicit offline adapter (NOT Vite)':'Vite HTTP'}.`);
+}catch(error){
+ failure=error instanceof Error?error.stack??error.message:String(error);
+ if(page!&&!page.isClosed()){
+  await page.screenshot({path:path.join(OUT,'browser-failure.png')}).catch(()=>{});
+  fs.writeFileSync(path.join(OUT,'browser-failure.html'),await page.content().catch(()=>''));
+ }
+ throw error;
 }finally{
- fs.writeFileSync(path.join(OUT,'browser-results.json'),JSON.stringify({mode:offline?'network-restricted adapter; Vite not executed':'real Vite HTTP',react:offline?(process.env.SOP_REACT_BROWSER_BUNDLE?'real installed browser runtime; production':'not run'):'installed React + development StrictMode',passed:results.length,tests:results,errors},null,2)+'\n');
+ fs.writeFileSync(path.join(OUT,'browser-results.json'),JSON.stringify({mode:offline?'network-restricted adapter; Vite not executed':'real Vite HTTP',react:offline?(process.env.SOP_REACT_BROWSER_BUNDLE?'real installed browser runtime; production':'not run'):'installed React + development StrictMode',passed:results.length,tests:results,activeCheck,failure,errors,requestFailures},null,2)+'\n');
  await browser?.close();await closeServer?.();
 }

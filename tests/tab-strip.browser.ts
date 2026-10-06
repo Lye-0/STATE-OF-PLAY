@@ -1,4 +1,4 @@
-import {galleryCount} from './gallery-counts.ts';
+import {currentParts,galleryCount} from './gallery-counts.ts';
 import {selectSetting} from './detail-settings.ts';
 /** Real browser regression for transient tab scrollbars and exported source parity. */
 import assert from 'node:assert/strict';
@@ -9,7 +9,8 @@ import {getDelivery,buildPrompt,buildUsage,packageContents} from '../src/catalog
 import {readBrowserIndex} from '../scripts/vite-catalog.ts';
 const ids=readBrowserIndex().index.filter(p=>p.category==='tabs'&&!p.tags.includes('GLASS LAB')).map(p=>p.id);
 const {parts}=buildCatalog(ROOT,ids);
-assert.equal(parts.length,22);
+assert.equal(parts.length,ids.length);
+assert.ok(parts.length>0);
 const rule='overflow-y:hidden';
 const scrollRule='scrollbar-color';
 const promptRule='縦スクロールバーを出さず';
@@ -44,7 +45,7 @@ try {
     await page.goto(server.resolvedUrls!.local[0],{waitUntil:'commit',timeout:120000});
     await page.waitForFunction(()=>document.documentElement.classList.contains('site-ready'),undefined,{timeout:120000});
     await page.locator('[data-category="tabs"]').click();
-    await page.waitForFunction(()=>document.querySelector('#part-grid')?.getAttribute('aria-busy')==='false'&&document.querySelectorAll('#part-grid [data-part]').length===26);
+    await page.waitForFunction(expected=>document.querySelector('#part-grid')?.getAttribute('aria-busy')==='false'&&document.querySelectorAll('#part-grid [data-part]').length===expected,currentParts().filter(part=>part.category==='tabs').length);
     assert.equal(await page.locator('[data-part]').count(),await galleryCount(page));
     for(const part of parts){
       const card=page.locator(`[data-part="${part.id}"]`),list=card.locator('.sop-choice-list');
@@ -102,7 +103,7 @@ try {
       await details.locator('.close-detail').click();await details.waitFor({state:'hidden'});
     }
     assert.deepEqual(errors,[]);
-    console.log(`PASS ${width}px: all 24 tab parts keep vertical scrollbar hidden during switching; inspector/code/prompt work`);
+    console.log(`PASS ${width}px: all ${parts.length} tab parts keep vertical scrollbar hidden during switching; inspector/code/prompt work`);
     await page.close();
   }
 }finally{await browser.close();await server.close();}

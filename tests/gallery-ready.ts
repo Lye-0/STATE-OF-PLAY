@@ -8,8 +8,9 @@ export async function selectCategory(page:Page,id:string,waitForReady=true):Prom
 }
 export async function galleryReady(page: Page, expandAll = false): Promise<void> {
  await page.waitForFunction(() => {
+  // A navigation can briefly remove the grid; absence is not a ready gallery.
   const grid=document.querySelector('#part-grid');
-  return !grid || grid.getAttribute('aria-busy') === 'false';
+  return grid?.getAttribute('aria-busy') === 'false';
  });
  await page.waitForFunction(() => {
   if (!location.hash.startsWith('#part=')) return true;
