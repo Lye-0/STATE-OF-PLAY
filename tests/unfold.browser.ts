@@ -69,8 +69,27 @@ try{
  await run('forced colors hides decorative layers and retains the actual controls',async()=>{
   await p.emulateMedia({forcedColors:'active',reducedMotion:'reduce'});await mount('glass-vault-accordion');assert.ok(await p.locator('.sop-unfold-scene').first().isHidden());await p.locator('.sop-accordion-trigger').first().click();await mount('prism-field');assert.ok(await p.locator('.sop-field-fx').isHidden());await p.locator('.sop-field-control').fill('Accessible');assert.equal(await p.locator('.sop-field-control').inputValue(),'Accessible');await p.emulateMedia({forcedColors:'none',reducedMotion:'no-preference'});
  });
+ await run('field decay catches up after a delayed animation frame',async()=>{
+  const result=await p.evaluate(()=>{
+   const w=window as any;w.unmount();
+   const request=window.requestAnimationFrame,cancel=window.cancelAnimationFrame;
+   const pending=new Map<number,FrameRequestCallback>();let next=0;
+   window.requestAnimationFrame=fn=>{pending.set(++next,fn);return next;};
+   window.cancelAnimationFrame=id=>{pending.delete(id);};
+   try{
+    w.mount(['capillary-field']);
+    const field=document.querySelector<HTMLInputElement>('.sop-field-control')!;
+    field.focus();field.dispatchEvent(new InputEvent('input',{bubbles:true,data:'a'}));
+    const step=(time:number)=>{const callbacks=[...pending.values()];pending.clear();callbacks.forEach(fn=>fn(time));};
+    step(100);const active=pending.size;step(1600);
+    const root=document.querySelector<HTMLElement>('.sop-responsive-field')!;
+    return{active,remaining:pending.size,energy:root.style.getPropertyValue('--field-energy'),focus:root.style.getPropertyValue('--field-focus')};
+   }finally{w.unmount();window.requestAnimationFrame=request;window.cancelAnimationFrame=cancel;}
+  });
+  assert.ok(result.active>0);assert.equal(result.energy,'0.0000');assert.equal(result.focus,'1.0000');assert.equal(result.remaining,0);
+ });
  await run('settled / unmounted parts release all their animation frames',async()=>{
-  for(const part of [...acc,...fields]){await mount(part.id);if(part.category==='accordions')await p.locator('.sop-accordion-trigger').nth(1).click();else await p.locator('.sop-field-control').fill('hello');await p.waitForTimeout(1900);assert.equal(await p.evaluate(()=>(window as any).activeFrames.size),0,part.id);await p.evaluate(()=>(window as any).unmount());assert.equal(await p.evaluate(()=>(window as any).activeFrames.size),0,part.id);}
+  for(const part of [...acc,...fields]){await mount(part.id);if(part.category==='accordions')await p.locator('.sop-accordion-trigger').nth(1).click();else await p.locator('.sop-field-control').fill('hello');await p.waitForFunction(()=>(window as any).activeFrames.size===0,null,{timeout:8000});assert.equal(await p.evaluate(()=>(window as any).activeFrames.size),0,part.id);await p.evaluate(()=>(window as any).unmount());assert.equal(await p.evaluate(()=>(window as any).activeFrames.size),0,part.id);}
  });
  assert.deepEqual(errors,[]);console.log('UNFOLD/RESPONSIVE checks:',tests.length,'passed');
 }finally{fs.writeFileSync(path.join(f.out,'browser-results.json'),JSON.stringify({mode:offline?'Explicit offline fixture / real Chromium; not Vite':'real Vite HTTP',passed:tests.length,tests,errors},null,2)+'\n');await browser?.close();await close?.();}

@@ -51,9 +51,16 @@ test('CI assigns every verify stage once across bounded OS shards', () => {
   assert.deepEqual(commands.filter(command => expected.includes(command)), expected);
   const suites = ['preflight', 'gallery', 'relocation', 'controls', 'features', 'glass'];
   assert.match(workflow, /suite: \[preflight, gallery, relocation, controls, features, glass\]/);
-  const assigned = [...workflow.matchAll(/^\s+if: matrix\.suite == '([^']+)'\r?\n\s+run: (npm run \S+|npm test)$/gm)];
-  assert.deepEqual(assigned.map(match => match[2]), [...expected.filter(command => command !== 'npm run build'), 'npm run package']);
-  for (const match of assigned) assert.ok(suites.includes(match[1]), match[1]);
+  // Browser checks also require successful setup and continue collecting failures.
+  // Read the complete condition so the gate cannot hide a real stage from this inventory.
+  const assigned = [...workflow.matchAll(/^\s+if: ([^\r\n]+)\r?\n\s+run: (npm run \S+|npm test)$/gm)]
+    .flatMap(([, condition, command]) => {
+      const normalized = condition.trim().replace(/^\$\{\{\s*(.*?)\s*\}\}$/, '$1');
+      const suite = normalized.match(/^(?:!cancelled\(\) && steps\.browser-ready\.outcome == 'success' && )?matrix\.suite == '([^']+)'$/)?.[1];
+      return suite ? [{suite, command}] : [];
+    });
+  assert.deepEqual(assigned.map(({command}) => command), [...expected.filter(command => command !== 'npm run build'), 'npm run package']);
+  for (const {suite} of assigned) assert.ok(suites.includes(suite), suite);
   assert.match(workflow, /if: matrix\.suite != 'preflight' && runner\.os == 'Linux'/);
   assert.match(workflow, /if: matrix\.suite != 'preflight' && runner\.os == 'Windows'/);
   assert.match(workflow, /name: verification-\$\{\{ matrix\.os \}\}-\$\{\{ matrix\.suite \}\}/);

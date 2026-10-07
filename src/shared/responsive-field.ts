@@ -16,7 +16,9 @@ export function attachFieldMotion(root:HTMLElement):()=>void {
   function halt(snap=false){cancelAnimationFrame(raf);raf=0;last=0;if(snap){focus=target;energy=0;paint();}}
   function request(){if(!dead&&!raf&&!media.matches&&!document.hidden)raf=requestAnimationFrame(tick);}
   function tick(t:number){raf=0;if(dead||!root.isConnected||document.hidden||media.matches){halt(true);return;}
-    const dt=last?Math.min((t-last)/1000,.045):1/60;last=t;
+    // Exponential easing is stable for any elapsed time. A frame cap would
+    // stretch the decay on busy renderers and keep idle RAF work alive.
+    const dt=last?Math.max(0,(t-last)/1000):1/60;last=t;
     focus+=(target-focus)*(1-Math.exp(-10*dt));energy*=Math.exp(-5.6*dt);
     if(Math.abs(target-focus)<.0008)focus=target;if(energy<.0008)energy=0;paint();
     if(focus!==target||energy>0)request();else last=0;
