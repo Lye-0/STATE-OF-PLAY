@@ -6,3 +6,7 @@
 .sop-foundation.sop-count-chip-tag:focus-visible,.sop-foundation.sop-count-chip-tag :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
 
 .sop-foundation.sop-count-chip-tag[data-sop-paused] *,.sop-foundation.sop-count-chip-tag[data-paused=true] *,.sop-foundation.sop-count-chip-tag[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+/* UI review: preserve readable content and stable interaction geometry. */
+.sop-foundation.sop-count-chip-tag .ff-tag[data-selected=true]{color:#f2f7fa}
+.sop-foundation.sop-count-chip-tag .ff-tag small{opacity:1}

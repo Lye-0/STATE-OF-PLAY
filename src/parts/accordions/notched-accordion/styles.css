@@ -7,3 +7,12 @@
 .sop-accordion.sop-notched-accordion:focus-visible,.sop-accordion.sop-notched-accordion :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
 
 .sop-accordion.sop-notched-accordion[data-sop-paused] *,.sop-accordion.sop-notched-accordion[data-paused=true] *,.sop-accordion.sop-notched-accordion[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+/* UI review: preserve readable content and stable interaction geometry. */
+.sop-accordion.sop-notched-accordion .sop-accordion-item{border:0;clip-path:none;overflow:visible;background:linear-gradient(90deg,#bda384 0 56px,#263b41 56px);margin-bottom:14px;border-radius:3px 20px 3px 3px;box-shadow:0 4px 0 #13282d}
+.sop-accordion.sop-notched-accordion .sop-accordion-item[data-open=true]{background:linear-gradient(90deg,#d3b995 0 56px,#304b52 56px)}
+.sop-accordion.sop-notched-accordion .sop-accordion-trigger{padding-left:10px;gap:20px;padding-right:22px}
+.sop-accordion.sop-notched-accordion .sop-accordion-index{width:36px;min-width:36px;text-align:center;color:#2b3432;opacity:1;font:25px Georgia}
+.sop-accordion.sop-notched-accordion .sop-accordion-item:before,.sop-accordion.sop-notched-accordion .sop-accordion-item:after{content:"";position:absolute;left:47px;width:18px;height:9px;background:#111918;pointer-events:none}
+.sop-accordion.sop-notched-accordion .sop-accordion-item:before{top:0;border-radius:0 0 12px 12px}.sop-accordion.sop-notched-accordion .sop-accordion-item:after{bottom:0;border-radius:12px 12px 0 0}
+.sop-accordion.sop-notched-accordion .sop-accordion-content{margin-left:56px;padding-left:20px}

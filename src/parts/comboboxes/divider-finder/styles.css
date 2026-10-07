@@ -6,3 +6,14 @@
 .sop-foundation.sop-divider-finder:focus-visible,.sop-foundation.sop-divider-finder :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
 
 .sop-foundation.sop-divider-finder[data-sop-paused] *,.sop-foundation.sop-divider-finder[data-paused=true] *,.sop-foundation.sop-divider-finder[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+/* UI review: preserve readable content and stable interaction geometry. */
+.sop-foundation.sop-divider-finder .ff-combo-shell{min-height:62px;background:#263f49;border-radius:18px 2px 2px 2px;border:1px solid #87aeb2;border-left:9px solid #b4cbbd}
+.sop-foundation.sop-divider-finder .ff-combo-list{padding:12px 10px 10px 30px;background:repeating-linear-gradient(0deg,#142d35 0 15px,#40636c 15px 16px);border:1px solid #7c9f9f;border-radius:2px;max-height:340px}
+.sop-foundation.sop-divider-finder .ff-option{position:relative;overflow:visible;margin:9px 0;background:#294751;border:1px solid #75979c;border-left:0;padding:15px 12px;border-radius:0 10px 2px 0;box-shadow:0 4px 0 #0c2630}
+.sop-foundation.sop-divider-finder .ff-option:before{content:"";position:absolute;left:-20px;top:-1px;bottom:-1px;width:20px;background:#698f91;border:1px solid #9ab5af;clip-path:polygon(6px 0,100% 0,100% 100%,0 100%,0 8px);pointer-events:none}
+.sop-foundation.sop-divider-finder .ff-option:nth-child(even):before{background:#acbda5}
+.sop-foundation.sop-divider-finder .ff-option[data-active=true]{background:#3b5b62;box-shadow:0 4px 0 #0c2630,inset 0 0 0 1px #cee1ca}
+/* Keep the file tabs inside the scrolling results viewport. */
+.sop-foundation.sop-divider-finder .ff-combo-list{padding:10px}
+.sop-foundation.sop-divider-finder .ff-combo-list>[data-results]{padding-left:22px;padding-right:2px}

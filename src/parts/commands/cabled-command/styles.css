@@ -11,3 +11,7 @@
 
 /* Visual review: composition and state separation. */
 .sop-wb.sop-cabled-command .wb-command-launcher{min-height:0;padding:14px 14px 14px 28px;border:0;background:transparent;border-left:1px solid var(--wb-accent)}.sop-wb.sop-cabled-command .wb-command-symbol{position:absolute;left:-10px;top:18px;width:20px;height:20px;background:var(--wb-bg);border:2px solid var(--wb-accent);border-radius:50%;margin:0}.sop-wb.sop-cabled-command .wb-command-symbol svg{width:12px;height:12px}.sop-wb.sop-cabled-command .wb-launch-copy strong{font:21px Arial}.sop-wb.sop-cabled-command .wb-command-launch{margin-top:13px;background:var(--wb-bg);border:1px solid var(--wb-line);border-radius:25px}.sop-wb.sop-cabled-command .wb-command-list{padding-left:34px;position:relative;border-left:1px solid var(--wb-accent);margin:0 18px}.sop-wb.sop-cabled-command .wb-command-option{overflow:visible;border:0;border-bottom:1px solid var(--wb-line);border-radius:0;padding:14px 8px}.sop-wb.sop-cabled-command .wb-command-option:after{content:"";position:absolute;width:22px;height:1px;left:-34px;top:50%;background:var(--wb-line)}.sop-wb.sop-cabled-command .wb-command-icon{border-radius:50%;width:24px;height:24px}
+
+/* UI review: preserve readable content and stable interaction geometry. */
+.sop-wb.sop-cabled-command .wb-command-launcher{padding-left:40px}
+.sop-wb.sop-cabled-command .wb-command-launcher>.wb-command-symbol{position:absolute;left:8px;top:17px}

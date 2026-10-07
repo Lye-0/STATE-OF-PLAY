@@ -9,3 +9,12 @@
 
 /* Keep the same interpolation when hover is entered, left, or interrupted. */
 .sop-surface.sop-plotted-surface:before{transition:width .5s}
+
+/* UI review: preserve readable content and stable interaction geometry. */
+.sop-surface.sop-plotted-surface{padding:22px 14px 16px 32px;background:repeating-linear-gradient(0deg,transparent 0 19px,#729fa322 19px 20px),repeating-linear-gradient(90deg,#102934 0 19px,#729fa322 19px 20px);border:1px solid #537e88;box-shadow:6px 7px 0 #0c202a,7px 8px 0 #66818a}
+.sop-surface.sop-plotted-surface .sop-surface-content{padding:24px;background:#183945;border:1px solid #7ea4ae;box-shadow:inset 5px 0 #294d58,0 8px 16px #061e2a99}
+.sop-surface.sop-plotted-surface:before{left:7px;top:22px;bottom:16px;height:auto;width:15px;border:0;border-left:1px solid #9fcbd0;background:repeating-linear-gradient(0deg,transparent 0 9px,#9fcbd0 9px 10px);transition:opacity .4s;opacity:.65}
+.sop-surface.sop-plotted-surface:after{left:32px;top:7px;bottom:auto;right:14px;width:auto;height:8px;border:0;border-top:1px solid #9fcbd0;background:repeating-linear-gradient(90deg,transparent 0 19px,#9fcbd0 19px 20px)}
+.sop-surface.sop-plotted-surface:hover:before{width:15px;opacity:1}
+
+@media(prefers-reduced-motion:reduce){.sop-plotted-surface *,.sop-plotted-surface::before,.sop-plotted-surface::after,.sop-plotted-surface *::before,.sop-plotted-surface *::after{transition:none!important;animation:none!important}}

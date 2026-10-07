@@ -3,3 +3,6 @@
 @import "../../../shared/foundation/resonance/style.css";
 @import "../../../shared/foundation/resonance/hint-style.css";
 .sop-foundation.sop-velvet-popover { --rs-edition: 470; }
+
+/* UI review: preserve readable content and stable interaction geometry. */
+.sop-foundation.sop-resonance.sop-velvet-popover[data-foundation="hints"][data-variant="velvet"]>.ff-hint-panel{background:linear-gradient(90deg,#44303e,#241c27 27%,#473140 72%,#241c27)}

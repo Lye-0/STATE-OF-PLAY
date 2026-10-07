@@ -7,3 +7,11 @@
 .sop-accordion.sop-suspension-accordion:focus-visible,.sop-accordion.sop-suspension-accordion :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
 
 .sop-accordion.sop-suspension-accordion[data-sop-paused] *,.sop-accordion.sop-suspension-accordion[data-paused=true] *,.sop-accordion.sop-suspension-accordion[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+/* UI review: preserve readable content and stable interaction geometry. */
+.sop-accordion.sop-suspension-accordion{padding:24px 8px 0;border:0;border-top:3px solid #94adb6}
+.sop-accordion.sop-suspension-accordion .sop-accordion-item{margin:0 0 30px;border:1px solid #688792;border-radius:18px 18px 7px 7px;background:#23333e;box-shadow:0 5px 0 #101d27,0 14px 18px #0005}
+.sop-accordion.sop-suspension-accordion .sop-accordion-item:before,.sop-accordion.sop-suspension-accordion .sop-accordion-item:after{content:"";position:absolute;top:-26px;height:32px;width:6px;border:1px solid #90a9b2;border-radius:5px;background:linear-gradient(90deg,#243f4c,#b1c8cc,#294654);pointer-events:none}
+.sop-accordion.sop-suspension-accordion .sop-accordion-item:before{left:24px}.sop-accordion.sop-suspension-accordion .sop-accordion-item:after{right:24px}
+.sop-accordion.sop-suspension-accordion .sop-accordion-trigger{padding-top:22px}
+.sop-accordion.sop-suspension-accordion .sop-accordion-index{border:1px solid #729aa8;border-radius:50%;width:32px;height:32px;display:grid;place-items:center;font-size:14px}

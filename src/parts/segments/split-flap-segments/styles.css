@@ -6,3 +6,8 @@
 .sop-choice.sop-split-flap-segments:focus-visible,.sop-choice.sop-split-flap-segments :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
 
 .sop-choice.sop-split-flap-segments[data-sop-paused] *,.sop-choice.sop-split-flap-segments[data-paused=true] *,.sop-choice.sop-split-flap-segments[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+/* UI review: preserve readable content and stable interaction geometry. */
+.sop-choice.sop-split-flap-segments .sop-choice-label{background:#354551;color:#e8f0f2;padding:5px 10px;border-radius:3px;box-shadow:0 0 0 2px #354551;text-shadow:none}
+.sop-choice.sop-split-flap-segments .sop-choice-item[data-selected=true] .sop-choice-label{background:#b5c7ce;color:#162c36;box-shadow:0 0 0 2px #b5c7ce}
+.sop-choice.sop-split-flap-segments .sop-choice-dot{display:none}

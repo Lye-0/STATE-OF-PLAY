@@ -494,7 +494,7 @@
 @media(max-width:600px){.ornament-card .object-stage{padding-inline:12px}.ornament-preview .preview-stage{padding-inline:12px}}
 
 /* Every paired exhibit shares header, stage and caption rows, regardless of material. */
-.object-card{display:grid;grid-template-rows:subgrid;grid-row:span 3;row-gap:0;}
+.object-card{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:subgrid;grid-row:span 3;row-gap:0;}
 .object-card .card-bottom{align-self:start;}
 
 /* Detail-only appearance controls, including expanded picker state. */
@@ -549,3 +549,6 @@
 #part-details .appearance-picker{position:fixed;inset:auto;margin:0;padding:12px;border:1px solid #626f76;border-radius:20px;background:#1b232b;box-shadow:0 20px 70px #0009;overflow:auto;overscroll-behavior:contain;box-sizing:border-box;z-index:1000}
 #part-details .appearance-picker[hidden]{display:none!important}
 #part-details .appearance-picker::backdrop{background:transparent}
+
+/* These framed surfaces grow with wrapped content on narrow gallery cards. */
+.block-card:is([data-part="plotted-surface"],[data-part="inlaid-surface"]) .object-stage{height:auto;min-height:298px}

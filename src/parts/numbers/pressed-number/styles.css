@@ -8,3 +8,7 @@
 .sop-foundation.sop-pressed-number{background:var(--ff-panel);padding:15px;border-radius:4px}
 
 .sop-foundation.sop-pressed-number[data-sop-paused] *,.sop-foundation.sop-pressed-number[data-paused=true] *,.sop-foundation.sop-pressed-number[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+/* UI review: preserve readable content and stable interaction geometry. */
+.sop-foundation.sop-pressed-number{--ff-panel:#e2e5d5;--ff-muted:#506555}
+.sop-foundation.sop-pressed-number .ff-stepper>button:hover{background:#b7cba6;color:#203c29}

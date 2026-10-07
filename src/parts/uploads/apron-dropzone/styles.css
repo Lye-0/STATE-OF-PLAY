@@ -10,3 +10,8 @@
 
 /* Visual review: composition and state separation. */
 .sop-foundation.sop-apron-dropzone .ff-dropzone{padding:21px;min-height:155px;border:0;border-top:8px double var(--ff-line);border-bottom:14px solid var(--ff-line);background:transparent;border-radius:0}.sop-foundation.sop-apron-dropzone .ff-dropzone strong{font:22px Georgia;max-width:150px;line-height:1.2}.sop-foundation.sop-apron-dropzone .ff-upload-symbol{width:44px;height:44px;border-radius:50%;border:3px double var(--ff-line);top:24px;right:20px}.sop-foundation.sop-apron-dropzone [data-upload-limits]{border-top:1px solid var(--ff-line);padding-top:11px;margin-top:26px}
+
+/* UI review: preserve readable content and stable interaction geometry. */
+.sop-foundation.sop-apron-dropzone .ff-dropzone{padding-top:76px}
+.sop-foundation.sop-apron-dropzone .ff-dropzone strong{max-width:100%;font-size:clamp(18px,5vw,22px);word-break:keep-all;overflow-wrap:anywhere}
+.sop-foundation.sop-apron-dropzone .ff-upload-symbol{left:21px;right:auto;top:16px}

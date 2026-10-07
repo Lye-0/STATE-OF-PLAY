@@ -2,3 +2,8 @@
 @import "../../../shared/foundation/base.css";
 @import "../../../shared/foundation/resonance/style.css";
 .sop-foundation.sop-ceramic-choice { --rs-edition: 470; }
+
+/* UI review: preserve readable content and stable interaction geometry. */
+.sop-foundation.sop-resonance.sop-ceramic-choice[data-foundation][data-variant][data-variant="ceramic"]>.ff-choice-set>.ff-choices>.ff-choice>.ff-choice-check{background:#f2f4ef;border:2px solid #526d78}
+.sop-foundation.sop-resonance.sop-ceramic-choice[data-foundation][data-variant][data-variant="ceramic"]>.ff-choice-set>.ff-choices>.ff-choice>.ff-choice-check>i{background:#284a59;box-shadow:none;opacity:0}
+.sop-foundation.sop-resonance.sop-ceramic-choice[data-foundation][data-variant][data-variant="ceramic"]>.ff-choice-set>.ff-choices>.ff-choice[data-selected=true]>.ff-choice-check>i{opacity:1;transform:scale(1);box-shadow:none}

@@ -9,3 +9,8 @@
 
 /* Keep the same interpolation when hover is entered, left, or interrupted. */
 .sop-surface.sop-inlaid-surface .sop-surface-content{background-position:0px 0px;transition:background-position .7s}
+
+/* UI review: preserve readable content and stable interaction geometry. */
+.sop-surface.sop-inlaid-surface{padding:10px;background:#282326}
+.sop-surface.sop-inlaid-surface .sop-surface-content{background:linear-gradient(135deg,#342b2c,#282326 65%);border-color:#9b805b;box-shadow:inset 0 0 0 3px #211d20;padding:24px}
+.sop-surface.sop-inlaid-surface:before{background:repeating-linear-gradient(45deg,#826442 0 7px,#382d28 7px 14px,#b59b6c 14px 15px)}

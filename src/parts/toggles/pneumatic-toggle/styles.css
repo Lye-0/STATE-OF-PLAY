@@ -10,3 +10,10 @@
 @media(forced-colors:active){.sop-toggle.sop-pneumatic-toggle::after{content:"OFF";position:absolute;bottom:-20px;left:0;right:0;text-align:center;color:ButtonText;background:Canvas;font:12px system-ui}.sop-toggle.sop-pneumatic-toggle[aria-checked=true]::after{content:"ON"}}
 
 .sop-toggle.sop-pneumatic-toggle[data-sop-paused] *,.sop-toggle.sop-pneumatic-toggle[data-paused=true] *,.sop-toggle.sop-pneumatic-toggle[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+/* UI review: preserve readable content and stable interaction geometry. */
+.sop-toggle.sop-pneumatic-toggle{height:128px}
+.sop-toggle.sop-pneumatic-toggle .switch-art{height:100px}
+.sop-toggle.sop-pneumatic-toggle::after{content:"OFF";position:absolute;bottom:0;left:29px;right:29px;text-align:center;font:600 12px/24px system-ui;letter-spacing:2px;color:#d0dcd7;background:#233c36;border:1px solid #829e91;border-radius:4px}
+.sop-toggle.sop-pneumatic-toggle[aria-checked=true]::after{content:"ON";color:#163c2f;background:#d0edda}
+@media(forced-colors:active){.sop-toggle.sop-pneumatic-toggle::after{color:ButtonText;background:Canvas}}

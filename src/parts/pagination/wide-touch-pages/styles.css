@@ -6,3 +6,8 @@
 .sop-foundation.sop-wide-touch-pages:focus-visible,.sop-foundation.sop-wide-touch-pages :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
 
 .sop-foundation.sop-wide-touch-pages[data-sop-paused] *,.sop-foundation.sop-wide-touch-pages[data-paused=true] *,.sop-foundation.sop-wide-touch-pages[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+/* UI review: preserve readable content and stable interaction geometry. */
+.sop-foundation.sop-wide-touch-pages .ff-pages{display:flex;flex-wrap:nowrap;gap:3px;padding:6px 0}
+.sop-foundation.sop-wide-touch-pages .ff-pages button,.sop-foundation.sop-wide-touch-pages .ff-pages a{flex:1 1 0;min-width:0;min-height:44px;padding:8px 2px}
+.sop-foundation.sop-wide-touch-pages .ff-ellipsis{flex:0 0 8px;text-align:center}

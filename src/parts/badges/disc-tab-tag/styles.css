@@ -10,3 +10,7 @@
 
 /* Visual review: composition and state separation. */
 .sop-foundation.sop-disc-tab-tag .ff-tag{background:transparent;border:0;border-bottom:1px solid var(--ff-line);border-radius:0;padding-left:0;gap:9px;min-height:38px}.sop-foundation.sop-disc-tab-tag .ff-tag svg{width:25px;height:25px;background:#345d71;border:2px solid var(--ff-line);border-radius:50%;padding:4px}.sop-foundation.sop-disc-tab-tag .ff-tag small{background:#345d71;border:0;border-radius:50%;padding:4px;min-width:22px;min-height:22px;display:grid;place-items:center}.sop-foundation.sop-disc-tab-tag .ff-tag[data-selected=true]{background:transparent;border-bottom:3px solid var(--ff-accent)}
+
+/* UI review: preserve readable content and stable interaction geometry. */
+.sop-foundation.sop-disc-tab-tag .ff-tag[data-selected=true]{color:#f2f7fa}
+.sop-foundation.sop-disc-tab-tag .ff-tag small{opacity:1}

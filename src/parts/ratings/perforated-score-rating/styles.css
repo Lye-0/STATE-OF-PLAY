@@ -7,3 +7,10 @@
 
 .sop-sig.sop-perforated-score-rating[data-sop-paused] *,.sop-sig.sop-perforated-score-rating[data-paused=true] *,.sop-sig.sop-perforated-score-rating[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
 .sop-sig.sop-perforated-score-rating *{animation-play-state:var(--sg-play,running)!important}
+
+/* UI review: preserve readable content and stable interaction geometry. */
+.sop-sig.sop-perforated-score-rating .sg-rating-unit{height:80px}
+.sop-sig.sop-perforated-score-rating .sg-rating-form{inset:2px 0 32px}
+.sop-sig.sop-perforated-score-rating .sg-rating-number{bottom:-18px;font-size:10px}
+.sop-sig.sop-perforated-score-rating .sg-rating-tick{bottom:0}
+.sop-sig.sop-perforated-score-rating .sg-rating-info{color:#665160}

@@ -5,3 +5,6 @@
 .sop-wb.sop-capsule-searchbar .wb-search-field {border-radius:40px;background:#f3f4f1}
 .sop-wb.sop-capsule-searchbar .wb-search-submit {border-radius:30px;background:#354842;color:#fff}
 @media(prefers-reduced-motion:reduce){.sop-wb.sop-capsule-searchbar *,.sop-wb.sop-capsule-searchbar *::before,.sop-wb.sop-capsule-searchbar *::after{animation:none!important;transition:none!important;}}
+
+/* UI review: preserve readable content and stable interaction geometry. */
+.sop-wb.sop-capsule-searchbar .wb-search-shell{background:var(--wb-bg);padding:22px;border-radius:24px;border:1px solid #b8c8bb}

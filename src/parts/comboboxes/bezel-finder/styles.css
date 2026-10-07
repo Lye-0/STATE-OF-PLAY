@@ -6,3 +6,10 @@
 .sop-foundation.sop-bezel-finder:focus-visible,.sop-foundation.sop-bezel-finder :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
 
 .sop-foundation.sop-bezel-finder[data-sop-paused] *,.sop-foundation.sop-bezel-finder[data-paused=true] *,.sop-foundation.sop-bezel-finder[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+/* UI review: preserve readable content and stable interaction geometry. */
+.sop-foundation.sop-bezel-finder .ff-combo-shell{border:8px solid #70848d;border-color:#a2b7bb #4d626e #364d5a #849ba2;border-radius:32px;background:#102936;min-height:68px;box-shadow:0 0 0 1px #b4c8c9,inset 0 3px 8px #061823}
+.sop-foundation.sop-bezel-finder .ff-combo-list{background:#122b38;border:10px solid #506d7b;border-color:#9bb0b6 #405d6a #304854 #758e98;border-radius:28px;padding:12px;box-shadow:inset 0 0 0 1px #a4bec5,0 14px 25px #0005;max-height:340px}
+.sop-foundation.sop-bezel-finder .ff-option{border:0;border-bottom:1px solid #587986;border-radius:0;margin:0;padding:16px 4px;background:transparent}
+.sop-foundation.sop-bezel-finder .ff-option[data-active=true]{background:#2b4c5b;box-shadow:inset 0 0 0 1px #a5c9d2;border-radius:12px}
+.sop-foundation.sop-bezel-finder .ff-option-icon{border-radius:50%;background:#395c6e;box-shadow:inset 0 2px 3px #a9c9d855}
