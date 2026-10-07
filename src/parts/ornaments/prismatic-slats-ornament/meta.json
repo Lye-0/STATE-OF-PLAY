@@ -1,0 +1,37 @@
+{
+  "id": "prismatic-slats-ornament",
+  "name": "Prismatic Slats Ornament",
+  "category": "ornaments",
+  "order": 5712,
+  "version": "1.0.0",
+  "tagline": "金属の薄板が順番に光を返す。",
+  "description": "金属の薄板が順番に光を返す。",
+  "material": "PRISMATIC SLATS ORNAMENT",
+  "motion": "STATE / MATERIAL",
+  "accent": "232,215,174",
+  "designType": "A",
+  "runtime": "CSS + hover state",
+  "componentName": "PrismaticSlatsOrnament",
+  "tags": [
+    "EXPANSION-50",
+    "Prismatic Slats Ornament"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "wheel-guide-range",
+  "name": "Wheel Guide Range",
+  "category": "sliders",
+  "order": 5236,
+  "version": "1.0.0",
+  "tagline": "薄い車輪が二本の線を進む。",
+  "description": "薄い車輪が二本の線を進む。",
+  "material": "WHEEL GUIDE RANGE",
+  "motion": "STATE / MATERIAL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "WheelGuideRange",
+  "tags": [
+    "EXPANSION-50",
+    "Wheel Guide Range"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "wheel-guide-range",
+    "kind": "sliders",
+    "variant": "essential",
+    "label": "値を、ちょうどよく。",
+    "description": "",
+    "defaultValue": 62,
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "unit": "%",
+    "range": false
+  }
+}

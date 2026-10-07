@@ -1,0 +1,81 @@
+{
+  "id": "open-marker-trail",
+  "name": "Open Marker Trail",
+  "category": "breadcrumbs",
+  "order": 5418,
+  "version": "1.0.0",
+  "tagline": "現在位置にだけ小さな括弧を置く。",
+  "description": "現在位置にだけ小さな括弧を置く。",
+  "material": "OPEN MARKER TRAIL",
+  "motion": "STATE / MATERIAL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "OpenMarkerTrail",
+  "tags": [
+    "EXPANSION-50",
+    "Open Marker Trail"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "open-marker-trail",
+    "kind": "breadcrumbs",
+    "variant": "essential",
+    "label": "あなたが、いまいる場所。",
+    "description": "",
+    "defaultValue": null,
+    "items": [
+      {
+        "value": "home",
+        "label": "Home",
+        "href": "#home"
+      },
+      {
+        "value": "library",
+        "label": "Library",
+        "href": "#library"
+      },
+      {
+        "value": "objects",
+        "label": "Objects",
+        "href": "#objects"
+      },
+      {
+        "value": "materials",
+        "label": "Materials",
+        "href": "#materials"
+      },
+      {
+        "value": "paper",
+        "label": "Paper"
+      }
+    ]
+  }
+}

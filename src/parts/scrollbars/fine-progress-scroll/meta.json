@@ -1,0 +1,52 @@
+{
+  "id": "fine-progress-scroll",
+  "name": "Fine Progress Scroll",
+  "category": "scrollbars",
+  "order": 5074,
+  "version": "1.0.0",
+  "tagline": "現在位置までを控えめに塗り、閲覧の進み具合も把握できる。",
+  "description": "現在位置までを控えめに塗り、閲覧の進み具合も把握できる。",
+  "material": "FINE PROGRESS SCROLL",
+  "motion": "STATE / MATERIAL",
+  "accent": "184,198,204",
+  "designType": "B",
+  "runtime": "Native scroll + event-driven DOM",
+  "componentName": "FineProgressScroll",
+  "tags": [
+    "EXPANSION-50",
+    "Fine Progress Scroll"
+  ],
+  "related": [],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "スクロールする中身。展示用コンテンツは含まれません。"
+    ],
+    [
+      "orientation",
+      "'vertical' | 'horizontal'",
+      "縦または横スクロール。初期値はvertical。"
+    ],
+    [
+      "viewportLabel",
+      "string",
+      "内容の領域に付ける読み上げ用ラベル。"
+    ],
+    [
+      "scrollbarLabel",
+      "string",
+      "スクロールバーの読み上げ用ラベル。"
+    ],
+    [
+      "onProgressChange",
+      "(progress: number) => void",
+      "スクロール位置を0〜1で通知します。"
+    ],
+    [
+      "className / style",
+      "HTMLAttributes",
+      "高さはstyleのheightまたは--sop-scroll-heightで調整。横幅は親に合わせます。"
+    ]
+  ]
+}

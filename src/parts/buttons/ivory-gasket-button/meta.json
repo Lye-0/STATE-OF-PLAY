@@ -1,0 +1,47 @@
+{
+  "id": "ivory-gasket-button",
+  "name": "Ivory Gasket Button",
+  "category": "buttons",
+  "order": 5048,
+  "version": "1.0.0",
+  "tagline": "細い弾性の縁が広がる、アイボリーの浮いた操作面。",
+  "description": "細い弾性の縁が広がる、アイボリーの浮いた操作面。",
+  "material": "IVORY GASKET BUTTON",
+  "motion": "STATE / MATERIAL",
+  "accent": "178,215,202",
+  "designType": "A",
+  "runtime": "Native button + CSS / busy guard",
+  "componentName": "IvoryGasketButton",
+  "tags": [
+    "EXPANSION-50",
+    "Ivory Gasket Button"
+  ],
+  "related": [],
+  "props": [
+    [
+      "children / icon",
+      "ReactNode",
+      "ラベルと装飾アイコン。内部にリンク・ボタンなどの操作要素は入れません。"
+    ],
+    [
+      "onClick / onClickCapture",
+      "native event handlers",
+      "アプリの処理へ接続します。処理中は再操作を遮断。"
+    ],
+    [
+      "type / name / value / form",
+      "native button attributes",
+      "typeは初期値button。submit/resetは用途に合わせ明示。"
+    ],
+    [
+      "loading / disabled",
+      "boolean",
+      "処理中はフォーカスを保ちながら操作を遮断。disabledは標準無効。"
+    ],
+    [
+      "ref / className / style",
+      "native ref / attributes",
+      "ボタンへのrefと、配置の調整。"
+    ]
+  ]
+}

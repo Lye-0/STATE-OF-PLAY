@@ -1,0 +1,59 @@
+{
+  "id": "spool-count-number",
+  "name": "Spool Count Number",
+  "category": "numbers",
+  "order": 5455,
+  "version": "1.0.0",
+  "tagline": "糸巻きの両端で数量を増減。",
+  "description": "糸巻きの両端で数量を増減。",
+  "material": "SPOOL COUNT NUMBER",
+  "motion": "STATE / MATERIAL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "SpoolCountNumber",
+  "tags": [
+    "EXPANSION-50",
+    "Spool Count Number"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "spool-count-number",
+    "kind": "numbers",
+    "variant": "essential",
+    "label": "必要な量を、ちょうどよく。",
+    "description": "",
+    "defaultValue": 3,
+    "min": 0,
+    "max": 24,
+    "step": 1,
+    "unit": "UNITS"
+  }
+}

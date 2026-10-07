@@ -1,0 +1,51 @@
+{
+  "id": "editorial-spread-skeleton",
+  "name": "Editorial Spread Skeleton",
+  "category": "skeletons",
+  "tagline": "大きな余白と段組みの読込表示。",
+  "description": "大きな余白と段組みの読込表示。",
+  "designType": "A",
+  "motion": "STATE / MATERIAL",
+  "order": 5530,
+  "version": "1.0.0",
+  "material": "EDITORIAL SPREAD SKELETON",
+  "accent": "185,205,194",
+  "componentName": "EditorialSpreadSkeleton",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "skeletons"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Editorial Spread Skeleton",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "loading",
+      "boolean",
+      "実際の読み込み状態。自動で成功にはしない。"
+    ],
+    [
+      "rows",
+      "number",
+      "2〜8行のプレースホルダー。"
+    ],
+    [
+      "label",
+      "string",
+      "読み上げ用の待機ラベル。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "動きを一時停止。"
+    ],
+    [
+      "children",
+      "ReactNode",
+      "読み込み後に表示する実際の内容。"
+    ]
+  ]
+}

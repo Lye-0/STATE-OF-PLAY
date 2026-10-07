@@ -1,0 +1,51 @@
+{
+  "id": "plain-palette-color",
+  "name": "Plain Palette Color",
+  "category": "colors",
+  "tagline": "汎用的な色面と色コード入力。",
+  "description": "汎用的な色面と色コード入力。",
+  "designType": "B",
+  "motion": "STATE / MATERIAL",
+  "order": 5525,
+  "version": "1.0.0",
+  "material": "PLAIN PALETTE COLOR",
+  "accent": "185,205,194",
+  "componentName": "PlainPaletteColor",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "colors"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Plain Palette Color",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "string",
+      "#RGBまたは#RRGGBB。外部へは#RRGGBBの大文字。"
+    ],
+    [
+      "palette",
+      "string[]",
+      "色見本。"
+    ],
+    [
+      "name",
+      "string",
+      "フォームで送信する値の名前。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "入力操作を停止。"
+    ],
+    [
+      "onValueChange",
+      "(hex: string) => void",
+      "有効な色のみ通知。透明度はこの版では扱わない。"
+    ]
+  ]
+}

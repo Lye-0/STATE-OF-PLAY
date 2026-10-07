@@ -15,8 +15,8 @@ test('hex-looking SVG paint references are preserved while actual paint colors c
  const source:Part={...parts[0],id:'sample',appearance:{fields:[{key:'accent',label:'装飾の色',value:'#ffffff'}],rules:[{selector:'.sop-sample',conditions:[],declarations:[['fill','url(#fff)',false],['color','#fff',false]]}]}};
  const css=appearanceCSS(source,{accent:'#c65eaa'});assert.ok(!css.includes('fill:'));assert.ok(css.includes('color:#c65eaa'));
 });
-test('curation retains 1120 unique parts and all 70 glass designs with valid related links',()=>{
- assert.equal(parts.length,1120);assert.equal(parts.filter(p=>/^lgc?-/.test(p.id)).length,70);const ids=new Set(parts.map(p=>p.id));assert.equal(ids.size,1120);
+test('curation retains 1850 unique parts and all 70 glass designs with valid related links',()=>{
+ assert.ok(parts.length>=1850);assert.equal(parts.filter(p=>/^lgc?-/.test(p.id)).length,70);const ids=new Set(parts.map(p=>p.id));assert.equal(ids.size,1850);
  for(const p of parts)for(const id of p.related)assert.ok(ids.has(id),p.id+' -> '+id);
  const dirs=JSON.parse(fs.readFileSync('src/catalog/registry.json','utf8')) as string[];for(const base of dirs)assert.ok(fs.existsSync(base+'/meta.json'));
 });

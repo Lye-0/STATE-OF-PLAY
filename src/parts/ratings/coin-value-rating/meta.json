@@ -1,0 +1,51 @@
+{
+  "id": "coin-value-rating",
+  "name": "Coin Value Rating",
+  "category": "ratings",
+  "tagline": "コインを重ねるように評価する。",
+  "description": "コインを重ねるように評価する。",
+  "designType": "A",
+  "motion": "STATE / MATERIAL",
+  "order": 5499,
+  "version": "1.0.0",
+  "material": "COIN VALUE RATING",
+  "accent": "185,205,194",
+  "componentName": "CoinValueRating",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "ratings"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Coin Value Rating",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "number",
+      "0は未評価、1〜maxは評価値。valueは外部制御。"
+    ],
+    [
+      "max",
+      "number",
+      "整数2〜10。半点は扱わない。"
+    ],
+    [
+      "name / required",
+      "string / boolean",
+      "フォームに接続する。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "無効または表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(value: number) => void",
+      "確定した評価。ホバーは通知しない。"
+    ]
+  ]
+}

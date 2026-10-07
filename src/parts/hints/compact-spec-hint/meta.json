@@ -1,0 +1,57 @@
+{
+  "id": "compact-spec-hint",
+  "name": "Compact Spec Hint",
+  "category": "hints",
+  "order": 5326,
+  "version": "1.0.0",
+  "tagline": "短い補足を密度よく収める。",
+  "description": "短い補足を密度よく収める。",
+  "material": "COMPACT SPEC HINT",
+  "motion": "STATE / MATERIAL",
+  "accent": "191,211,198",
+  "designType": "B",
+  "runtime": "Native DOM + CSS",
+  "componentName": "CompactSpecHint",
+  "tags": [
+    "EXPANSION-50",
+    "Compact Spec Hint"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "compact-spec-hint",
+    "kind": "hints",
+    "variant": "essential",
+    "label": "詳しく見る",
+    "description": "",
+    "defaultValue": null,
+    "interactive": true,
+    "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
+  }
+}

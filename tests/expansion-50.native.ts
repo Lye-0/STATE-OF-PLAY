@@ -1,0 +1,25 @@
+import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';import {chromium} from 'playwright';import {createServer} from 'vite';import {buildCatalog,ROOT} from '../scripts/catalog.ts';import {getDelivery} from '../src/catalog/delivery.ts';import {currentParts} from './gallery-counts.ts';
+const specs=currentParts().filter(p=>p.tags.includes('EXPANSION-50'));const categories=[...new Set(specs.map(p=>p.category))];const chosen=process.env.SOP_EXPANSION_CATEGORIES?.split(',');
+const server=await createServer({root:ROOT,server:{host:'127.0.0.1',port:0,watch:{ignored:['**/.test-output/**','**/docs/**']}}});await server.listen();const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});const errors:string[]=[];
+try{for(const category of categories.filter(c=>!chosen||chosen.includes(c))){const parts=buildCatalog(ROOT,specs.filter(p=>p.category===category).map(p=>p.id),{appearance:false}).parts;
+ for(const layout of ['portable','original'] as const){const directory=path.join(ROOT,`.test-output/expansion-50-native/${category}/${layout}`);fs.mkdirSync(directory,{recursive:true});
+ const imports=parts.map((p,i)=>{const d=getDelivery(p,'js',layout);for(const f of d.files){const target=path.join(directory,p.id,f.name);fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,f.code);}return `import {init as init${i}} from './${p.id}/${d.entry}';\nimport './${p.id}/${d.stylesheet}';`;}).join('\n');
+ fs.writeFileSync(path.join(directory,'entry.js'),imports+`\nconst entries=[${parts.map((p,i)=>`{id:${JSON.stringify(p.id)},markup:${JSON.stringify(p.markup)},init:init${i}}`).join(',')}];window.controllers=[];for(const p of entries){const host=document.createElement('section');host.dataset.part=p.id;host.innerHTML=p.markup;document.querySelector('#root').append(host);window.controllers.push(p.init(host.firstElementChild));}window.teardown=()=>{for(const c of window.controllers)c?.destroy?.();document.querySelector('#root').replaceChildren()};window.ready=true;`);
+ fs.writeFileSync(path.join(directory,'index.html'),'<html><head><meta charset="utf-8"><link rel="icon" href="data:,"><style>body{margin:0;padding:12px;background:#242b36;color:#eee}section{width:100%;max-width:340px;margin:15px 0;padding:10px;box-sizing:border-box}</style></head><body><div id="root"></div><script type="module" src="./entry.js"></script></body></html>');
+ const page=await browser.newPage({viewport:{width:390,height:844},reducedMotion:'reduce'});page.on('pageerror',e=>errors.push(e.message));await page.goto(server.resolvedUrls!.local[0]+path.relative(ROOT,path.join(directory,'index.html')).replaceAll('\\','/'),{timeout:120000});await page.waitForFunction(()=>(window as any).ready,undefined,{timeout:120000});
+ for(const p of parts){const host=page.locator(`[data-part="${p.id}"]`);assert.ok(await host.locator(`.sop-${p.id}`).count(),p.id+' native root');if(['ornaments','loaders'].includes(category))assert.equal(await host.locator('.x-composition i').count(),6,p.id+' native artwork');if(category==='toggles'){const sw=host.locator('[role=switch]');const before=await sw.getAttribute('aria-checked');await sw.click();assert.notEqual(await sw.getAttribute('aria-checked'),before);}if(category==='tabs'){await host.locator('[role=tab]').last().click();assert.equal(await host.locator('[role=tab]').last().getAttribute('aria-selected'),'true');}}
+ if(['ornaments','loaders'].includes(category)){
+  await page.emulateMedia({reducedMotion:'no-preference'});
+  for(let i=0;i<parts.length;i++){
+   const root=page.locator(`[data-part="${parts[i].id}"]`).locator(`.sop-${parts[i].id}`);await root.scrollIntoViewIfNeeded();
+   await page.waitForFunction(id=>{const root=document.querySelector(`[data-part="${id}"]`)!;return root.getAnimations({subtree:true}).some(a=>a.playState==='running');},parts[i].id);
+   await page.evaluate(i=>(window as any).controllers[i].setPaused(true),i);
+   assert.ok(await root.evaluate(e=>e.getAnimations({subtree:true}).every(a=>a.playState==='paused')),parts[i].id+' pauses actual animation');
+   await page.evaluate(i=>(window as any).controllers[i].setPaused(false),i);
+  }
+  await page.emulateMedia({reducedMotion:'reduce'});
+  for(const p of parts)assert.equal(await page.locator(`[data-part="${p.id}"] .x-composition`).evaluate(e=>e.getAnimations({subtree:true}).length),0,p.id+' reduced motion');
+ }
+ for(const width of [320,390,768]){await page.setViewportSize({width,height:844});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),category+' native '+layout+' fits '+width);}
+ await page.evaluate(()=>(window as any).teardown());assert.equal(await page.locator('[data-part]').count(),0);await page.close();console.log('PASS '+category+' '+parts.length+' native JavaScript '+layout+' real imports, narrow widths, cleanup');}
+}assert.deepEqual(errors,[]);}finally{await browser.close();await server.close();}

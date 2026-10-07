@@ -1,0 +1,51 @@
+{
+  "id": "ceramic-dock-navigation",
+  "name": "Ceramic Dock Navigation",
+  "category": "navigation",
+  "description": "丸みのある器に案内を収める。",
+  "designType": "A",
+  "tagline": "丸みのある器に案内を収める。",
+  "motion": "STATE / MATERIAL",
+  "order": 5663,
+  "version": "1.0.0",
+  "material": "CERAMIC DOCK NAVIGATION",
+  "accent": "192,216,201",
+  "componentName": "CeramicDockNavigation",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "navigation"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Ceramic Dock Navigation",
+    "NAVIGATOR"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "NavigationItem[]",
+      "ラベル・href・子リンク・アイコン・バッジ。"
+    ],
+    [
+      "layout",
+      "header | sidebar | dock | mobile",
+      "置き場所に合うレイアウトを指定。"
+    ],
+    [
+      "active / onActiveChange",
+      "string / callback",
+      "現在地のID。リンクを移動して外部状態から反映可能。"
+    ],
+    [
+      "onNavigate",
+      "(item, event) => void | false",
+      "通常はネイティブリンク。falseで既定移動を止めルーターへ接続。"
+    ],
+    [
+      "open / onOpenChange",
+      "boolean / callback",
+      "モバイルナビゲーションの表示を制御。"
+    ]
+  ]
+}

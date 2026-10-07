@@ -1,0 +1,51 @@
+{
+  "id": "clear-line-search",
+  "name": "Clear Line Search",
+  "category": "searchbars",
+  "description": "輪郭と余白で検索位置を示す。",
+  "designType": "B",
+  "tagline": "輪郭と余白で検索位置を示す。",
+  "motion": "STATE / MATERIAL",
+  "order": 5608,
+  "version": "1.0.0",
+  "material": "CLEAR LINE SEARCH",
+  "accent": "192,216,201",
+  "componentName": "ClearLineSearch",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "searchbars"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Clear Line Search",
+    "NAVIGATOR"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items / search",
+      "SearchResult[] / async callback",
+      "ローカル候補か、AbortSignal付きの非同期検索を指定。"
+    ],
+    [
+      "query / defaultQuery",
+      "string",
+      "入力値。queryを渡すと外部制御。"
+    ],
+    [
+      "filters / filter",
+      "SearchFilter[] / string",
+      "検索対象の切り替え。"
+    ],
+    [
+      "onSubmit / onResult",
+      "callback",
+      "実際の検索実行と候補選択の接続先。"
+    ],
+    [
+      "loading / error / disabled",
+      "boolean / string",
+      "読込・失敗・無効の状態。"
+    ]
+  ]
+}

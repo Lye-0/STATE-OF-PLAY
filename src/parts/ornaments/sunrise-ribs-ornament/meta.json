@@ -1,0 +1,37 @@
+{
+  "id": "sunrise-ribs-ornament",
+  "name": "Sunrise Ribs Ornament",
+  "category": "ornaments",
+  "order": 5718,
+  "version": "1.0.0",
+  "tagline": "扇状の肋骨が中心から開く。",
+  "description": "扇状の肋骨が中心から開く。",
+  "material": "SUNRISE RIBS ORNAMENT",
+  "motion": "STATE / MATERIAL",
+  "accent": "232,215,174",
+  "designType": "A",
+  "runtime": "CSS + hover state",
+  "componentName": "SunriseRibsOrnament",
+  "tags": [
+    "EXPANSION-50",
+    "Sunrise Ribs Ornament"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

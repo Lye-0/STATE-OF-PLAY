@@ -1,0 +1,51 @@
+{
+  "id": "open-palette-color",
+  "name": "Open Palette Color",
+  "category": "colors",
+  "tagline": "操作面を余白と線で分ける。",
+  "description": "操作面を余白と線で分ける。",
+  "designType": "A",
+  "motion": "STATE / MATERIAL",
+  "order": 5518,
+  "version": "1.0.0",
+  "material": "OPEN PALETTE COLOR",
+  "accent": "185,205,194",
+  "componentName": "OpenPaletteColor",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "colors"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Open Palette Color",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "string",
+      "#RGBまたは#RRGGBB。外部へは#RRGGBBの大文字。"
+    ],
+    [
+      "palette",
+      "string[]",
+      "色見本。"
+    ],
+    [
+      "name",
+      "string",
+      "フォームで送信する値の名前。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "入力操作を停止。"
+    ],
+    [
+      "onValueChange",
+      "(hex: string) => void",
+      "有効な色のみ通知。透明度はこの版では扱わない。"
+    ]
+  ]
+}

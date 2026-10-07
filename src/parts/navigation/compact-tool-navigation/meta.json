@@ -1,0 +1,51 @@
+{
+  "id": "compact-tool-navigation",
+  "name": "Compact Tool Navigation",
+  "category": "navigation",
+  "description": "ツール画面向けの小さな案内。",
+  "designType": "B",
+  "tagline": "ツール画面向けの小さな案内。",
+  "motion": "STATE / MATERIAL",
+  "order": 5666,
+  "version": "1.0.0",
+  "material": "COMPACT TOOL NAVIGATION",
+  "accent": "192,216,201",
+  "componentName": "CompactToolNavigation",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "navigation"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Compact Tool Navigation",
+    "NAVIGATOR"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "NavigationItem[]",
+      "ラベル・href・子リンク・アイコン・バッジ。"
+    ],
+    [
+      "layout",
+      "header | sidebar | dock | mobile",
+      "置き場所に合うレイアウトを指定。"
+    ],
+    [
+      "active / onActiveChange",
+      "string / callback",
+      "現在地のID。リンクを移動して外部状態から反映可能。"
+    ],
+    [
+      "onNavigate",
+      "(item, event) => void | false",
+      "通常はネイティブリンク。falseで既定移動を止めルーターへ接続。"
+    ],
+    [
+      "open / onOpenChange",
+      "boolean / callback",
+      "モバイルナビゲーションの表示を制御。"
+    ]
+  ]
+}

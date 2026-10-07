@@ -1,0 +1,42 @@
+{
+  "id": "canal-bridge-panel",
+  "name": "Canal Bridge Panel",
+  "category": "blocks",
+  "order": 5028,
+  "version": "1.0.0",
+  "tagline": "左右の小さな橋脚から薄い板を渡し、中央を浮かせる。",
+  "description": "左右の小さな橋脚から薄い板を渡し、中央を浮かせる。",
+  "material": "CANAL BRIDGE PANEL",
+  "motion": "STATE / MATERIAL",
+  "accent": "212,216,211",
+  "componentName": "CanalBridgePanel",
+  "designType": "A",
+  "runtime": "CSS only",
+  "tags": [
+    "EXPANSION-50",
+    "Canal Bridge Panel"
+  ],
+  "related": [],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "文章、画像、フォームなどの中身。展示サンプルは必須ではありません。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "配置と外側のサイズを指定します。"
+    ],
+    [
+      "--sop-padding",
+      "CSSの長さ",
+      "本文領域の余白を調整します。"
+    ],
+    [
+      "color / --sop-ink",
+      "CSSカラー",
+      "本文色。背景に合わせてコントラストを確認してください。"
+    ]
+  ]
+}

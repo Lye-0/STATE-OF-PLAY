@@ -1,0 +1,51 @@
+{
+  "id": "soft-preview-skeleton",
+  "name": "Soft Preview Skeleton",
+  "category": "skeletons",
+  "tagline": "柔らかいカードの待機状態。",
+  "description": "柔らかいカードの待機状態。",
+  "designType": "B",
+  "motion": "STATE / MATERIAL",
+  "order": 5547,
+  "version": "1.0.0",
+  "material": "SOFT PREVIEW SKELETON",
+  "accent": "185,205,194",
+  "componentName": "SoftPreviewSkeleton",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "skeletons"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Soft Preview Skeleton",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "loading",
+      "boolean",
+      "実際の読み込み状態。自動で成功にはしない。"
+    ],
+    [
+      "rows",
+      "number",
+      "2〜8行のプレースホルダー。"
+    ],
+    [
+      "label",
+      "string",
+      "読み上げ用の待機ラベル。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "動きを一時停止。"
+    ],
+    [
+      "children",
+      "ReactNode",
+      "読み込み後に表示する実際の内容。"
+    ]
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "folding-checkpoints-loader",
+  "name": "Folding Checkpoints Loader",
+  "category": "loaders",
+  "order": 5719,
+  "version": "1.0.0",
+  "tagline": "短い折れ線が順に起き上がる。処理中の状態を文字と動きで示す。",
+  "description": "短い折れ線が順に起き上がる。処理中の状態を文字と動きで示す。",
+  "material": "FOLDING CHECKPOINTS LOADER",
+  "motion": "STATE / MATERIAL",
+  "accent": "205,218,214",
+  "designType": "A",
+  "runtime": "CSS animation + visibility pause",
+  "componentName": "FoldingCheckpointsLoader",
+  "tags": [
+    "EXPANSION-50",
+    "Folding Checkpoints Loader",
+    "CONTINUUM"
+  ],
+  "related": [],
+  "props": [
+    [
+      "content",
+      "string",
+      "読み上げもされる処理中メッセージ。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "アニメーションのみ停止。完了を意味しません。"
+    ],
+    [
+      "style / className",
+      "React属性",
+      "--ld-size、--ld-accentなどで外観を調整。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setPaused、updateFoundation、destroy。"
+    ]
+  ],
+  "foundation": {
+    "id": "folding-checkpoints-loader",
+    "kind": "loaders",
+    "variant": "three-dots",
+    "label": "Three Dots",
+    "description": "",
+    "defaultValue": null,
+    "content": "読み込み中…"
+  }
+}

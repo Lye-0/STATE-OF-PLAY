@@ -1,0 +1,52 @@
+{
+  "id": "spline-seat-scroll",
+  "name": "Spline Seat Scroll",
+  "category": "scrollbars",
+  "order": 5069,
+  "version": "1.0.0",
+  "tagline": "柔らかな溝の中央を、角のない縦長の金具が進む。",
+  "description": "柔らかな溝の中央を、角のない縦長の金具が進む。",
+  "material": "SPLINE SEAT SCROLL",
+  "motion": "STATE / MATERIAL",
+  "accent": "184,198,204",
+  "designType": "A",
+  "runtime": "Native scroll + event-driven DOM",
+  "componentName": "SplineSeatScroll",
+  "tags": [
+    "EXPANSION-50",
+    "Spline Seat Scroll"
+  ],
+  "related": [],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "スクロールする中身。展示用コンテンツは含まれません。"
+    ],
+    [
+      "orientation",
+      "'vertical' | 'horizontal'",
+      "縦または横スクロール。初期値はvertical。"
+    ],
+    [
+      "viewportLabel",
+      "string",
+      "内容の領域に付ける読み上げ用ラベル。"
+    ],
+    [
+      "scrollbarLabel",
+      "string",
+      "スクロールバーの読み上げ用ラベル。"
+    ],
+    [
+      "onProgressChange",
+      "(progress: number) => void",
+      "スクロール位置を0〜1で通知します。"
+    ],
+    [
+      "className / style",
+      "HTMLAttributes",
+      "高さはstyleのheightまたは--sop-scroll-heightで調整。横幅は親に合わせます。"
+    ]
+  ]
+}

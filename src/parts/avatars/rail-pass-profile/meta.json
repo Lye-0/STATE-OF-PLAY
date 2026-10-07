@@ -1,0 +1,51 @@
+{
+  "id": "rail-pass-profile",
+  "name": "Rail Pass Profile",
+  "category": "avatars",
+  "tagline": "通行証の写真窓と下の名札。",
+  "description": "通行証の写真窓と下の名札。",
+  "designType": "A",
+  "motion": "STATE / MATERIAL",
+  "order": 5471,
+  "version": "1.0.0",
+  "material": "RAIL PASS PROFILE",
+  "accent": "185,205,194",
+  "componentName": "RailPassProfile",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "avatars"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Rail Pass Profile",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "users",
+      "AvatarUser[]",
+      "id・name・任意のsrc、initials、subtitle、status。名前と在席状態は外部の値。"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "選択するユーザーID。valueを渡すと外部制御。"
+    ],
+    [
+      "interactive",
+      "boolean",
+      "falseで表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(id: string) => void",
+      "クリック時の要求値。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ]
+  ]
+}

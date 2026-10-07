@@ -1,0 +1,51 @@
+{
+  "id": "compact-score-rating",
+  "name": "Compact Score Rating",
+  "category": "ratings",
+  "tagline": "小さな一覧向けの採点欄。",
+  "description": "小さな一覧向けの採点欄。",
+  "designType": "B",
+  "motion": "STATE / MATERIAL",
+  "order": 5506,
+  "version": "1.0.0",
+  "material": "COMPACT SCORE RATING",
+  "accent": "185,205,194",
+  "componentName": "CompactScoreRating",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "ratings"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Compact Score Rating",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "number",
+      "0は未評価、1〜maxは評価値。valueは外部制御。"
+    ],
+    [
+      "max",
+      "number",
+      "整数2〜10。半点は扱わない。"
+    ],
+    [
+      "name / required",
+      "string / boolean",
+      "フォームに接続する。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "無効または表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(value: number) => void",
+      "確定した評価。ホバーは通知しない。"
+    ]
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "compact-person-profile",
+  "name": "Compact Person Profile",
+  "category": "avatars",
+  "tagline": "密度の高い一覧向けの人物表示。",
+  "description": "密度の高い一覧向けの人物表示。",
+  "designType": "B",
+  "motion": "STATE / MATERIAL",
+  "order": 5486,
+  "version": "1.0.0",
+  "material": "COMPACT PERSON PROFILE",
+  "accent": "185,205,194",
+  "componentName": "CompactPersonProfile",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "avatars"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Compact Person Profile",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "users",
+      "AvatarUser[]",
+      "id・name・任意のsrc、initials、subtitle、status。名前と在席状態は外部の値。"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "選択するユーザーID。valueを渡すと外部制御。"
+    ],
+    [
+      "interactive",
+      "boolean",
+      "falseで表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(id: string) => void",
+      "クリック時の要求値。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ]
+  ]
+}

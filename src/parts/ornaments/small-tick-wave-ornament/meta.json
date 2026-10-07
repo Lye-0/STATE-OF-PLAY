@@ -1,0 +1,37 @@
+{
+  "id": "small-tick-wave-ornament",
+  "name": "Small Tick Wave Ornament",
+  "category": "ornaments",
+  "order": 5722,
+  "version": "1.0.0",
+  "tagline": "細い目盛りが小さく波打つ。",
+  "description": "細い目盛りが小さく波打つ。",
+  "material": "SMALL TICK WAVE ORNAMENT",
+  "motion": "STATE / MATERIAL",
+  "accent": "232,215,174",
+  "designType": "B",
+  "runtime": "CSS + hover state",
+  "componentName": "SmallTickWaveOrnament",
+  "tags": [
+    "EXPANSION-50",
+    "Small Tick Wave Ornament"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

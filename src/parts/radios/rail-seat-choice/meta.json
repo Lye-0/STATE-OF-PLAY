@@ -1,0 +1,79 @@
+{
+  "id": "rail-seat-choice",
+  "name": "Rail Seat Choice",
+  "category": "radios",
+  "order": 5255,
+  "version": "1.0.0",
+  "tagline": "選んだ席に横桟を通す。",
+  "description": "選んだ席に横桟を通す。",
+  "material": "RAIL SEAT CHOICE",
+  "motion": "STATE / MATERIAL",
+  "accent": "86,122,112",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "RailSeatChoice",
+  "tags": [
+    "EXPANSION-50",
+    "Rail Seat Choice"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "rail-seat-choice",
+    "kind": "radios",
+    "variant": "soft",
+    "label": "あなたの制作モード",
+    "description": "",
+    "defaultValue": "cloud",
+    "required": true,
+    "items": [
+      {
+        "value": "local",
+        "label": "Local",
+        "description": "手元の環境で、静かに。",
+        "badge": "01",
+        "icon": "file"
+      },
+      {
+        "value": "cloud",
+        "label": "Cloud",
+        "description": "どこからでも、つながる。",
+        "badge": "02",
+        "icon": "spark"
+      },
+      {
+        "value": "hybrid",
+        "label": "Hybrid",
+        "description": "両方のよさを、ひとつに。",
+        "badge": "03",
+        "icon": "home"
+      }
+    ]
+  }
+}

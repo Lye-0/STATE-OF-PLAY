@@ -1,0 +1,52 @@
+{
+  "id": "sliding-windows-loader",
+  "name": "Sliding Windows Loader",
+  "category": "loaders",
+  "order": 5713,
+  "version": "1.0.0",
+  "tagline": "重なった窓の開口が左右に動く。処理中の状態を文字と動きで示す。",
+  "description": "重なった窓の開口が左右に動く。処理中の状態を文字と動きで示す。",
+  "material": "SLIDING WINDOWS LOADER",
+  "motion": "STATE / MATERIAL",
+  "accent": "205,218,214",
+  "designType": "A",
+  "runtime": "CSS animation + visibility pause",
+  "componentName": "SlidingWindowsLoader",
+  "tags": [
+    "EXPANSION-50",
+    "Sliding Windows Loader",
+    "CONTINUUM"
+  ],
+  "related": [],
+  "props": [
+    [
+      "content",
+      "string",
+      "読み上げもされる処理中メッセージ。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "アニメーションのみ停止。完了を意味しません。"
+    ],
+    [
+      "style / className",
+      "React属性",
+      "--ld-size、--ld-accentなどで外観を調整。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setPaused、updateFoundation、destroy。"
+    ]
+  ],
+  "foundation": {
+    "id": "sliding-windows-loader",
+    "kind": "loaders",
+    "variant": "three-dots",
+    "label": "Three Dots",
+    "description": "",
+    "defaultValue": null,
+    "content": "読み込み中…"
+  }
+}

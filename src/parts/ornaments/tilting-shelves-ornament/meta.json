@@ -1,0 +1,37 @@
+{
+  "id": "tilting-shelves-ornament",
+  "name": "Tilting Shelves Ornament",
+  "category": "ornaments",
+  "order": 5692,
+  "version": "1.0.0",
+  "tagline": "棚板が順に傾いて奥行きを変える。",
+  "description": "棚板が順に傾いて奥行きを変える。",
+  "material": "TILTING SHELVES ORNAMENT",
+  "motion": "STATE / MATERIAL",
+  "accent": "232,215,174",
+  "designType": "A",
+  "runtime": "CSS + hover state",
+  "componentName": "TiltingShelvesOrnament",
+  "tags": [
+    "EXPANSION-50",
+    "Tilting Shelves Ornament"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

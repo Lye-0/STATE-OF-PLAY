@@ -1,0 +1,56 @@
+{
+  "id": "plain-result-pages",
+  "name": "Plain Result Pages",
+  "category": "pagination",
+  "order": 5405,
+  "version": "1.0.0",
+  "tagline": "検索結果向けの標準ページ送り。",
+  "description": "検索結果向けの標準ページ送り。",
+  "material": "PLAIN RESULT PAGES",
+  "motion": "STATE / MATERIAL",
+  "accent": "191,211,198",
+  "designType": "B",
+  "runtime": "Native DOM + CSS",
+  "componentName": "PlainResultPages",
+  "tags": [
+    "EXPANSION-50",
+    "Plain Result Pages"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "plain-result-pages",
+    "kind": "pagination",
+    "variant": "essential",
+    "label": "コレクションをめくる",
+    "description": "",
+    "defaultValue": 4,
+    "totalPages": 12
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "warm-material-upload",
+  "name": "Warm Material Upload",
+  "category": "uploads",
+  "order": 5369,
+  "version": "1.0.0",
+  "tagline": "素材の追加を穏やかな紙色で示す。",
+  "description": "素材の追加を穏やかな紙色で示す。",
+  "material": "WARM MATERIAL UPLOAD",
+  "motion": "STATE / MATERIAL",
+  "accent": "191,211,198",
+  "designType": "B",
+  "runtime": "Native DOM + CSS",
+  "componentName": "WarmMaterialUpload",
+  "tags": [
+    "EXPANSION-50",
+    "Warm Material Upload"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "warm-material-upload",
+    "kind": "uploads",
+    "variant": "essential",
+    "label": "アイデアの素材を、ここに。",
+    "description": "",
+    "defaultValue": [],
+    "multiple": true,
+    "maxFiles": 4,
+    "maxBytes": 10485760,
+    "accept": ".png,.jpg,.webp,.txt,.pdf"
+  }
+}

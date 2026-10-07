@@ -1,0 +1,51 @@
+{
+  "id": "list-column-skeleton",
+  "name": "List Column Skeleton",
+  "category": "skeletons",
+  "tagline": "縦に並ぶリストの待機表示。",
+  "description": "縦に並ぶリストの待機表示。",
+  "designType": "A",
+  "motion": "STATE / MATERIAL",
+  "order": 5540,
+  "version": "1.0.0",
+  "material": "LIST COLUMN SKELETON",
+  "accent": "185,205,194",
+  "componentName": "ListColumnSkeleton",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "skeletons"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "List Column Skeleton",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "loading",
+      "boolean",
+      "実際の読み込み状態。自動で成功にはしない。"
+    ],
+    [
+      "rows",
+      "number",
+      "2〜8行のプレースホルダー。"
+    ],
+    [
+      "label",
+      "string",
+      "読み上げ用の待機ラベル。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "動きを一時停止。"
+    ],
+    [
+      "children",
+      "ReactNode",
+      "読み込み後に表示する実際の内容。"
+    ]
+  ]
+}

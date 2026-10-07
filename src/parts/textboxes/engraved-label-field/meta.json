@@ -1,0 +1,67 @@
+{
+  "id": "engraved-label-field",
+  "name": "Engraved Label Field",
+  "category": "textboxes",
+  "order": 5116,
+  "version": "1.0.0",
+  "tagline": "ラベルを金属の小さな銘板へ置き、入力部は無地の平面に分ける。",
+  "description": "ラベルを金属の小さな銘板へ置き、入力部は無地の平面に分ける。",
+  "material": "ENGRAVED LABEL FIELD",
+  "motion": "STATE / MATERIAL",
+  "accent": "172,214,204",
+  "designType": "A",
+  "runtime": "Native input + CSS / event-driven",
+  "componentName": "EngravedLabelField",
+  "tags": [
+    "EXPANSION-50",
+    "Engraved Label Field"
+  ],
+  "related": [],
+  "props": [
+    [
+      "label / description / placeholder",
+      "string / ReactNode",
+      "利用先の項目名・補助説明・未入力時の文言。"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "外部制御する値 / 内部制御の初期値。"
+    ],
+    [
+      "onValueChange / onChange",
+      "callback",
+      "そのままの入力値 / 通常のReactイベント。"
+    ],
+    [
+      "name / form / autoComplete",
+      "native attributes",
+      "フォーム送信や入力補完へ接続。"
+    ],
+    [
+      "disabled / readOnly / required",
+      "boolean",
+      "標準入力の無効 / 読取専用 / 必須属性。"
+    ],
+    [
+      "error / success / validateOnBlur",
+      "string / boolean",
+      "エラー文、成功表示、標準形式検証の表示タイミング。"
+    ],
+    [
+      "multiline / rows / autoGrow",
+      "boolean / number",
+      "複数行・自動伸長。文字を切らず上限後はスクロール。"
+    ],
+    [
+      "clearable / showCount / maxLength",
+      "boolean / number",
+      "クリア、UTF-16カウンター、標準入力の上限。"
+    ],
+    [
+      "prefix / suffix / inputRef",
+      "ReactNode / Ref",
+      "飾りの接頭辞・単位、ネイティブ入力のref。"
+    ]
+  ]
+}

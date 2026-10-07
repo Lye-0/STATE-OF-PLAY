@@ -1,0 +1,51 @@
+{
+  "id": "plain-workspace-command",
+  "name": "Plain Workspace Command",
+  "category": "commands",
+  "description": "作業画面の標準コマンド一覧。",
+  "designType": "B",
+  "tagline": "作業画面の標準コマンド一覧。",
+  "motion": "STATE / MATERIAL",
+  "order": 5625,
+  "version": "1.0.0",
+  "material": "PLAIN WORKSPACE COMMAND",
+  "accent": "192,216,201",
+  "componentName": "PlainWorkspaceCommand",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "commands"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Plain Workspace Command",
+    "NAVIGATOR"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "CommandItem[]",
+      "コマンド、グループ、ショートカット、子階層を指定。"
+    ],
+    [
+      "open / onOpenChange",
+      "boolean / callback",
+      "表示を外部制御。"
+    ],
+    [
+      "onExecute",
+      "(item, signal) => void | false | Promise",
+      "処理中の重複を抑止。falseなら開いたまま。例外はエラー表示。"
+    ],
+    [
+      "hotkey",
+      "boolean",
+      "trueでCtrl/Cmd+Kを登録。ギャラリーではfalse。"
+    ],
+    [
+      "apiRef",
+      "Ref<WorkbenchAPI>",
+      "Reactからopen()/close()を呼べる参照。"
+    ]
+  ]
+}

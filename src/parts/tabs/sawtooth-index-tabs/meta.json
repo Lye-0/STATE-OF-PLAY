@@ -1,0 +1,57 @@
+{
+  "id": "sawtooth-index-tabs",
+  "name": "Sawtooth Index Tabs",
+  "category": "tabs",
+  "order": 5151,
+  "version": "1.0.0",
+  "tagline": "山形の端で選択した索引を示す。",
+  "description": "山形の端で選択した索引を示す。",
+  "material": "SAWTOOTH INDEX TABS",
+  "motion": "STATE / MATERIAL",
+  "accent": "186,204,195",
+  "designType": "A",
+  "runtime": "CSS + event-driven geometry / ARIA tabs",
+  "componentName": "SawtoothIndexTabs",
+  "tags": [
+    "EXPANSION-50",
+    "Sawtooth Index Tabs"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "readonly TabItem[]",
+      "項目数は自由。value / label / icon / disabled / content"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "外部制御の値 / 非制御の初期値"
+    ],
+    [
+      "onValueChange",
+      "(value: string) => void",
+      "利用先の状態へ接続"
+    ],
+    [
+      "disabled / items[].disabled",
+      "boolean",
+      "全体 / 項目ごとに無効化"
+    ],
+    [
+      "orientation",
+      "horizontal | vertical",
+      "並びの方向。内容に応じて選択指標も再計測"
+    ],
+    [
+      "activation",
+      "automatic | manual",
+      "キー移動時の自動確定 / Enter確定"
+    ],
+    [
+      "className / style / aria-label",
+      "HTML attributes",
+      "外側の配置とグループの目的"
+    ]
+  ]
+}

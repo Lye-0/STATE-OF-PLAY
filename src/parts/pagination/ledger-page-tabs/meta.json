@@ -1,0 +1,56 @@
+{
+  "id": "ledger-page-tabs",
+  "name": "Ledger Page Tabs",
+  "category": "pagination",
+  "order": 5394,
+  "version": "1.0.0",
+  "tagline": "台帳の見出しをめくる。",
+  "description": "台帳の見出しをめくる。",
+  "material": "LEDGER PAGE TABS",
+  "motion": "STATE / MATERIAL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "LedgerPageTabs",
+  "tags": [
+    "EXPANSION-50",
+    "Ledger Page Tabs"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "ledger-page-tabs",
+    "kind": "pagination",
+    "variant": "essential",
+    "label": "コレクションをめくる",
+    "description": "",
+    "defaultValue": 4,
+    "totalPages": 12
+  }
+}

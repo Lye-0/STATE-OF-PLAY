@@ -1,0 +1,51 @@
+{
+  "id": "warm-editorial-navigation",
+  "name": "Warm Editorial Navigation",
+  "category": "navigation",
+  "description": "文章中心のサイト向けの案内。",
+  "designType": "B",
+  "tagline": "文章中心のサイト向けの案内。",
+  "motion": "STATE / MATERIAL",
+  "order": 5669,
+  "version": "1.0.0",
+  "material": "WARM EDITORIAL NAVIGATION",
+  "accent": "192,216,201",
+  "componentName": "WarmEditorialNavigation",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "navigation"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Warm Editorial Navigation",
+    "NAVIGATOR"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "NavigationItem[]",
+      "ラベル・href・子リンク・アイコン・バッジ。"
+    ],
+    [
+      "layout",
+      "header | sidebar | dock | mobile",
+      "置き場所に合うレイアウトを指定。"
+    ],
+    [
+      "active / onActiveChange",
+      "string / callback",
+      "現在地のID。リンクを移動して外部状態から反映可能。"
+    ],
+    [
+      "onNavigate",
+      "(item, event) => void | false",
+      "通常はネイティブリンク。falseで既定移動を止めルーターへ接続。"
+    ],
+    [
+      "open / onOpenChange",
+      "boolean / callback",
+      "モバイルナビゲーションの表示を制御。"
+    ]
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "ribbon-badge-profile",
+  "name": "Ribbon Badge Profile",
+  "category": "avatars",
+  "tagline": "リボンのように下へ伸びる名前欄。",
+  "description": "リボンのように下へ伸びる名前欄。",
+  "designType": "A",
+  "motion": "STATE / MATERIAL",
+  "order": 5482,
+  "version": "1.0.0",
+  "material": "RIBBON BADGE PROFILE",
+  "accent": "185,205,194",
+  "componentName": "RibbonBadgeProfile",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "avatars"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Ribbon Badge Profile",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "users",
+      "AvatarUser[]",
+      "id・name・任意のsrc、initials、subtitle、status。名前と在席状態は外部の値。"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "選択するユーザーID。valueを渡すと外部制御。"
+    ],
+    [
+      "interactive",
+      "boolean",
+      "falseで表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(id: string) => void",
+      "クリック時の要求値。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ]
+  ]
+}

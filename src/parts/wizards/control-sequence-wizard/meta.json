@@ -1,0 +1,56 @@
+{
+  "id": "control-sequence-wizard",
+  "name": "Control Sequence Wizard",
+  "category": "wizards",
+  "tagline": "操作盤の工程窓を順に選ぶ。",
+  "description": "操作盤の工程窓を順に選ぶ。",
+  "designType": "A",
+  "motion": "STATE / MATERIAL",
+  "order": 5576,
+  "version": "1.0.0",
+  "material": "CONTROL SEQUENCE WIZARD",
+  "accent": "185,205,194",
+  "componentName": "ControlSequenceWizard",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "wizards"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Control Sequence Wizard",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "steps",
+      "WizardStep[]",
+      "id・title・description・任意の入力fields。2〜4以上へ変更可。"
+    ],
+    [
+      "current / defaultCurrent",
+      "string",
+      "現在ステップID。currentは外部制御。"
+    ],
+    [
+      "beforeNext",
+      "(id, values) => boolean | string | Promise",
+      "trueで進む、文字列でエラー。"
+    ],
+    [
+      "onStepChange",
+      "(id: string) => void",
+      "次の工程の要求ID。"
+    ],
+    [
+      "onComplete",
+      "(values) => void",
+      "完了操作。保存・送信は利用先の責務。"
+    ],
+    [
+      "allowJump",
+      "boolean",
+      "先の工程を直接選択することを許可。標準false。"
+    ]
+  ]
+}

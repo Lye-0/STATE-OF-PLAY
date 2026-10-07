@@ -1,0 +1,37 @@
+{
+  "id": "nested-saddles-ornament",
+  "name": "Nested Saddles Ornament",
+  "category": "ornaments",
+  "order": 5710,
+  "version": "1.0.0",
+  "tagline": "鞍形の曲線が呼吸するように開く。",
+  "description": "鞍形の曲線が呼吸するように開く。",
+  "material": "NESTED SADDLES ORNAMENT",
+  "motion": "STATE / MATERIAL",
+  "accent": "232,215,174",
+  "designType": "A",
+  "runtime": "CSS + hover state",
+  "componentName": "NestedSaddlesOrnament",
+  "tags": [
+    "EXPANSION-50",
+    "Nested Saddles Ornament"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

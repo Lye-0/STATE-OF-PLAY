@@ -1,0 +1,57 @@
+{
+  "id": "stitched-folio-tabs",
+  "name": "Stitched Folio Tabs",
+  "category": "tabs",
+  "order": 5156,
+  "version": "1.0.0",
+  "tagline": "布貼りの縫い目で見出しをつなぐ。",
+  "description": "布貼りの縫い目で見出しをつなぐ。",
+  "material": "STITCHED FOLIO TABS",
+  "motion": "STATE / MATERIAL",
+  "accent": "186,204,195",
+  "designType": "A",
+  "runtime": "CSS + event-driven geometry / ARIA tabs",
+  "componentName": "StitchedFolioTabs",
+  "tags": [
+    "EXPANSION-50",
+    "Stitched Folio Tabs"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "readonly TabItem[]",
+      "項目数は自由。value / label / icon / disabled / content"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "外部制御の値 / 非制御の初期値"
+    ],
+    [
+      "onValueChange",
+      "(value: string) => void",
+      "利用先の状態へ接続"
+    ],
+    [
+      "disabled / items[].disabled",
+      "boolean",
+      "全体 / 項目ごとに無効化"
+    ],
+    [
+      "orientation",
+      "horizontal | vertical",
+      "並びの方向。内容に応じて選択指標も再計測"
+    ],
+    [
+      "activation",
+      "automatic | manual",
+      "キー移動時の自動確定 / Enter確定"
+    ],
+    [
+      "className / style / aria-label",
+      "HTML attributes",
+      "外側の配置とグループの目的"
+    ]
+  ]
+}

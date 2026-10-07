@@ -1,0 +1,10 @@
+@import "../../../shared/workbench/base.css";
+/* Clear Line Search — 輪郭と余白で検索位置を示す。 */
+.sop-wb.sop-clear-line-search {--wb-bg:#f4f5ef;--wb-surface:#e1e4df;--wb-ink:#343e3d;--wb-muted:#455b4f;--wb-accent:#496559;--wb-line:#adbab2;--wb-radius:6px;color-scheme:light}.sop-wb.sop-clear-line-search .wb-art{pointer-events:none}.sop-wb.sop-clear-line-search :is(.wb-search-results,.wb-command-dialog,.wb-context-panel,.wb-nav-flyout,.wb-nav-dialog){color:var(--wb-ink);background:var(--wb-bg)}.sop-wb.sop-clear-line-search .wb-search-shell{border:0;border-bottom:1px solid #9fb8a8;border-radius:0;background:transparent}.sop-wb.sop-clear-line-search .wb-search-results{border-radius:4px;border-color:#aac2b2}
+.sop-wb.sop-clear-line-search{max-width:100%}.sop-wb.sop-clear-line-search,.sop-wb.sop-clear-line-search *{box-sizing:border-box}.sop-wb.sop-clear-line-search :is(button,input,textarea,a){min-width:0}
+.sop-wb.sop-clear-line-search .wb-search-field,.sop-wb.sop-clear-line-search .wb-command-entry{background:var(--wb-surface);color:var(--wb-ink)}.sop-wb.sop-clear-line-search:focus-visible,.sop-wb.sop-clear-line-search :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-clear-line-search,.sop-wb.sop-clear-line-search *,.sop-wb.sop-clear-line-search::before,.sop-wb.sop-clear-line-search::after,.sop-wb.sop-clear-line-search *::before,.sop-wb.sop-clear-line-search *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.sop-wb.sop-clear-line-search[data-sop-paused] *,.sop-wb.sop-clear-line-search[data-paused=true] *,.sop-wb.sop-clear-line-search[data-motion-running=false] *,.sop-wb.sop-clear-line-search[data-wb-paused=true] *{animation-play-state:paused!important}
+@media(forced-colors:active){.sop-wb.sop-clear-line-search{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-clear-line-search :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+.sop-wb.sop-clear-line-search .wb-search-shell{background:var(--wb-bg)}

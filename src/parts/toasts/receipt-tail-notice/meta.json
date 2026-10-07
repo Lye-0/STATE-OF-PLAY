@@ -1,0 +1,55 @@
+{
+  "id": "receipt-tail-notice",
+  "name": "Receipt Tail Notice",
+  "category": "toasts",
+  "order": 5304,
+  "version": "1.0.0",
+  "tagline": "短いレシートの罫線で通知をまとめる。",
+  "description": "短いレシートの罫線で通知をまとめる。",
+  "material": "RECEIPT TAIL NOTICE",
+  "motion": "STATE / MATERIAL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "ReceiptTailNotice",
+  "tags": [
+    "EXPANSION-50",
+    "Receipt Tail Notice"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "receipt-tail-notice",
+    "kind": "toasts",
+    "variant": "essential",
+    "label": "知らせも、心地よく。",
+    "description": "",
+    "defaultValue": null
+  }
+}

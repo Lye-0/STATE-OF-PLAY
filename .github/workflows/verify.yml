@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest]
-        suite: [preflight, gallery, relocation, controls, features, glass]
+        suite: [preflight, gallery, relocation, controls, features, glass, expansion]
     runs-on: ${{ matrix.os }}
     # Each OS verifies every suite in parallel so the complete library fits the job limit.
     timeout-minutes: 90
@@ -46,6 +46,9 @@ jobs:
         run: node --version
       # Keep collecting failures after a test fails, but only after setup/build/browser installation succeeds.
       # Same checks as npm run verify, divided into independent time-bounded shards.
+      - name: Fifty designs per category, native states and React delivery formats
+        if: ${{ !cancelled() && steps.browser-ready.outcome == 'success' && matrix.suite == 'expansion' }}
+        run: npm run test:expansion-50
       - name: Gallery browser tests and production preview
         if: ${{ !cancelled() && steps.browser-ready.outcome == 'success' && matrix.suite == 'gallery' }}
         run: npm run test:browser

@@ -1,0 +1,61 @@
+{
+  "id": "caption-register-table",
+  "name": "Caption Register Table",
+  "category": "tables",
+  "description": "表の見出しを独立した標題にする。",
+  "designType": "A",
+  "tagline": "表の見出しを独立した標題にする。",
+  "motion": "STATE / MATERIAL",
+  "order": 5680,
+  "version": "1.0.0",
+  "material": "CAPTION REGISTER TABLE",
+  "accent": "192,216,201",
+  "componentName": "CaptionRegisterTable",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "tables"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Caption Register Table",
+    "NAVIGATOR"
+  ],
+  "related": [],
+  "props": [
+    [
+      "rows / columns",
+      "DataRow[] / DataColumn[]",
+      "一意な行IDと列定義。文字・数値・状態・進捗表示。"
+    ],
+    [
+      "sort / onSortChange",
+      "TableSort | null / callback",
+      "列の昇順・降順・元順を切り替え。"
+    ],
+    [
+      "selected / onSelectionChange",
+      "string[] / callback",
+      "選択は行IDで保持。全選択は表示ページの対象行。"
+    ],
+    [
+      "page / pageSize / query",
+      "number / number / string",
+      "ページ送りと検索。manualでサーバー側へ委譲可能。"
+    ],
+    [
+      "resizable / stickyFirst",
+      "boolean",
+      "列幅調整と先頭列固定。列幅は矢印キーでも操作。"
+    ],
+    [
+      "onRowAction",
+      "(action, row) => void",
+      "各行の操作を利用先へ接続。"
+    ],
+    [
+      "loading / error",
+      "boolean / string",
+      "読込中・失敗表示。仮想スクロールやセル編集は含みません。"
+    ]
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "suspended-pennants-ornament",
+  "name": "Suspended Pennants Ornament",
+  "category": "ornaments",
+  "order": 5708,
+  "version": "1.0.0",
+  "tagline": "吊るした小さな旗が順に揺れる。",
+  "description": "吊るした小さな旗が順に揺れる。",
+  "material": "SUSPENDED PENNANTS ORNAMENT",
+  "motion": "STATE / MATERIAL",
+  "accent": "232,215,174",
+  "designType": "A",
+  "runtime": "CSS + hover state",
+  "componentName": "SuspendedPennantsOrnament",
+  "tags": [
+    "EXPANSION-50",
+    "Suspended Pennants Ornament"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

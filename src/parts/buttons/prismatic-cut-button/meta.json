@@ -1,0 +1,47 @@
+{
+  "id": "prismatic-cut-button",
+  "name": "Prismatic Cut Button",
+  "category": "buttons",
+  "order": 5045,
+  "version": "1.0.0",
+  "tagline": "片側の斜面にだけ光が寄り、切削した塊の厚みを見せる。",
+  "description": "片側の斜面にだけ光が寄り、切削した塊の厚みを見せる。",
+  "material": "PRISMATIC CUT BUTTON",
+  "motion": "STATE / MATERIAL",
+  "accent": "178,215,202",
+  "designType": "A",
+  "runtime": "Native button + CSS / busy guard",
+  "componentName": "PrismaticCutButton",
+  "tags": [
+    "EXPANSION-50",
+    "Prismatic Cut Button"
+  ],
+  "related": [],
+  "props": [
+    [
+      "children / icon",
+      "ReactNode",
+      "ラベルと装飾アイコン。内部にリンク・ボタンなどの操作要素は入れません。"
+    ],
+    [
+      "onClick / onClickCapture",
+      "native event handlers",
+      "アプリの処理へ接続します。処理中は再操作を遮断。"
+    ],
+    [
+      "type / name / value / form",
+      "native button attributes",
+      "typeは初期値button。submit/resetは用途に合わせ明示。"
+    ],
+    [
+      "loading / disabled",
+      "boolean",
+      "処理中はフォーカスを保ちながら操作を遮断。disabledは標準無効。"
+    ],
+    [
+      "ref / className / style",
+      "native ref / attributes",
+      "ボタンへのrefと、配置の調整。"
+    ]
+  ]
+}

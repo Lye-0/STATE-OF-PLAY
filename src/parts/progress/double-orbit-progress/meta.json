@@ -1,0 +1,57 @@
+{
+  "id": "double-orbit-progress",
+  "name": "Double Orbit Progress",
+  "category": "progress",
+  "order": 5336,
+  "version": "1.0.0",
+  "tagline": "二本の円を重ねた薄い計器。",
+  "description": "二本の円を重ねた薄い計器。",
+  "material": "DOUBLE ORBIT PROGRESS",
+  "motion": "STATE / MATERIAL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "CSS + state",
+  "componentName": "DoubleOrbitProgress",
+  "tags": [
+    "EXPANSION-50",
+    "Double Orbit Progress"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "double-orbit-progress",
+    "kind": "progress",
+    "variant": "essential",
+    "label": "ここまでの歩みを。",
+    "description": "",
+    "defaultValue": 72,
+    "min": 0,
+    "max": 100
+  }
+}

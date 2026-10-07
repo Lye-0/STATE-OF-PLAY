@@ -1,0 +1,37 @@
+{
+  "id": "ribbon-lattice-ornament",
+  "name": "Ribbon Lattice Ornament",
+  "category": "ornaments",
+  "order": 5704,
+  "version": "1.0.0",
+  "tagline": "細い帯が格子のように交差する。",
+  "description": "細い帯が格子のように交差する。",
+  "material": "RIBBON LATTICE ORNAMENT",
+  "motion": "STATE / MATERIAL",
+  "accent": "232,215,174",
+  "designType": "A",
+  "runtime": "CSS + hover state",
+  "componentName": "RibbonLatticeOrnament",
+  "tags": [
+    "EXPANSION-50",
+    "Ribbon Lattice Ornament"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "blueprint-file-context",
+  "name": "Blueprint File Context",
+  "category": "contextmenus",
+  "description": "設計資料の注記から操作を開く。",
+  "designType": "A",
+  "tagline": "設計資料の注記から操作を開く。",
+  "motion": "STATE / MATERIAL",
+  "order": 5641,
+  "version": "1.0.0",
+  "material": "BLUEPRINT FILE CONTEXT",
+  "accent": "192,216,201",
+  "componentName": "BlueprintFileContext",
+  "runtime": "CSS + native DOM",
+  "workbench": {
+    "kind": "contextmenus"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Blueprint File Context",
+    "NAVIGATOR"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "ContextAction[]",
+      "操作、子階層、区切り、チェック、無効状態を指定。"
+    ],
+    [
+      "onAction",
+      "(item, signal) => void | false | Promise",
+      "実行先の接続。勝手な保存や削除はしません。"
+    ],
+    [
+      "checked / onCheckedChange",
+      "Record<string, boolean> / callback",
+      "メニュー内チェック項目の状態を制御。"
+    ],
+    [
+      "targetLabel / targetDescription",
+      "string",
+      "操作対象の見出しと説明。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "コンポーネントの操作を無効にする。"
+    ],
+    [
+      "targetElement",
+      "HTMLElement | null",
+      "既存のカード・行などに接続します。中身は変更せず、その要素だけで右クリックを扱います。"
+    ]
+  ]
+}

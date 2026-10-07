@@ -1,0 +1,52 @@
+{
+  "id": "clean-answer-accordion",
+  "name": "Clean Answer Accordion",
+  "category": "accordions",
+  "order": 5105,
+  "version": "1.0.0",
+  "tagline": "質問と本文を余白で区切る、説明ページ向けの基本アコーディオン。",
+  "description": "質問と本文を余白で区切る、説明ページ向けの基本アコーディオン。",
+  "material": "CLEAN ANSWER ACCORDION",
+  "motion": "STATE / MATERIAL",
+  "accent": "197,212,177",
+  "designType": "B",
+  "runtime": "CSS grid + disclosure events",
+  "componentName": "CleanAnswerAccordion",
+  "tags": [
+    "EXPANSION-50",
+    "Clean Answer Accordion"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "AccordionItem[]",
+      "value・title・subtitle・badge・content・disabledを指定。contentはReactNode。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "展開する項目の値。expandedは外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(values: string[]) => void",
+      "開閉の要求を受け取ります。"
+    ],
+    [
+      "multiple",
+      "boolean",
+      "trueなら複数の項目を同時に開けます。"
+    ],
+    [
+      "collapsible",
+      "boolean",
+      "falseなら最後の項目を操作で閉じません。"
+    ],
+    [
+      "disabled / headingLevel",
+      "boolean / 2…6",
+      "操作の無効化と、見出しの深さを指定。"
+    ]
+  ]
+}

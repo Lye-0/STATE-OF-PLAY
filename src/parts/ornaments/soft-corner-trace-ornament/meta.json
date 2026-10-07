@@ -1,0 +1,37 @@
+{
+  "id": "soft-corner-trace-ornament",
+  "name": "Soft Corner Trace Ornament",
+  "category": "ornaments",
+  "order": 5724,
+  "version": "1.0.0",
+  "tagline": "小さな角を順に明るくする。",
+  "description": "小さな角を順に明るくする。",
+  "material": "SOFT CORNER TRACE ORNAMENT",
+  "motion": "STATE / MATERIAL",
+  "accent": "232,215,174",
+  "designType": "B",
+  "runtime": "CSS + hover state",
+  "componentName": "SoftCornerTraceOrnament",
+  "tags": [
+    "EXPANSION-50",
+    "Soft Corner Trace Ornament"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

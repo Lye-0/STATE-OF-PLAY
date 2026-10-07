@@ -1,0 +1,51 @@
+{
+  "id": "pebble-frame-profile",
+  "name": "Pebble Frame Profile",
+  "category": "avatars",
+  "tagline": "丸い小石の輪郭に写真を置く。",
+  "description": "丸い小石の輪郭に写真を置く。",
+  "designType": "A",
+  "motion": "STATE / MATERIAL",
+  "order": 5478,
+  "version": "1.0.0",
+  "material": "PEBBLE FRAME PROFILE",
+  "accent": "185,205,194",
+  "componentName": "PebbleFrameProfile",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "avatars"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Pebble Frame Profile",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "users",
+      "AvatarUser[]",
+      "id・name・任意のsrc、initials、subtitle、status。名前と在席状態は外部の値。"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "選択するユーザーID。valueを渡すと外部制御。"
+    ],
+    [
+      "interactive",
+      "boolean",
+      "falseで表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(id: string) => void",
+      "クリック時の要求値。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ]
+  ]
+}

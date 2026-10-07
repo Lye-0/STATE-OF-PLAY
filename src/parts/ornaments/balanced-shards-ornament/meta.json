@@ -1,0 +1,37 @@
+{
+  "id": "balanced-shards-ornament",
+  "name": "Balanced Shards Ornament",
+  "category": "ornaments",
+  "order": 5696,
+  "version": "1.0.0",
+  "tagline": "非対称の破片が釣り合いながら動く。",
+  "description": "非対称の破片が釣り合いながら動く。",
+  "material": "BALANCED SHARDS ORNAMENT",
+  "motion": "STATE / MATERIAL",
+  "accent": "232,215,174",
+  "designType": "A",
+  "runtime": "CSS + hover state",
+  "componentName": "BalancedShardsOrnament",
+  "tags": [
+    "EXPANSION-50",
+    "Balanced Shards Ornament"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

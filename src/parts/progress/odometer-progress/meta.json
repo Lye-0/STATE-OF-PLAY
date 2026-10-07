@@ -1,0 +1,57 @@
+{
+  "id": "odometer-progress",
+  "name": "Odometer Progress",
+  "category": "progress",
+  "order": 5330,
+  "version": "1.0.0",
+  "tagline": "数値を読み取り窓に置く細い計測器。",
+  "description": "数値を読み取り窓に置く細い計測器。",
+  "material": "ODOMETER PROGRESS",
+  "motion": "STATE / MATERIAL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "CSS + state",
+  "componentName": "OdometerProgress",
+  "tags": [
+    "EXPANSION-50",
+    "Odometer Progress"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "odometer-progress",
+    "kind": "progress",
+    "variant": "essential",
+    "label": "ここまでの歩みを。",
+    "description": "",
+    "defaultValue": 72,
+    "min": 0,
+    "max": 100
+  }
+}

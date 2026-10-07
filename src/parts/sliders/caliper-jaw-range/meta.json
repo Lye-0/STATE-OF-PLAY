@@ -1,0 +1,60 @@
+{
+  "id": "caliper-jaw-range",
+  "name": "Caliper Jaw Range",
+  "category": "sliders",
+  "order": 5243,
+  "version": "1.0.0",
+  "tagline": "ノギスの顎が測定点を挟む。",
+  "description": "ノギスの顎が測定点を挟む。",
+  "material": "CALIPER JAW RANGE",
+  "motion": "STATE / MATERIAL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "CaliperJawRange",
+  "tags": [
+    "EXPANSION-50",
+    "Caliper Jaw Range"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "caliper-jaw-range",
+    "kind": "sliders",
+    "variant": "essential",
+    "label": "値を、ちょうどよく。",
+    "description": "",
+    "defaultValue": 62,
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "unit": "%",
+    "range": false
+  }
+}

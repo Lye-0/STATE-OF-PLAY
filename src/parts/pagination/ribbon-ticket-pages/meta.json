@@ -1,0 +1,56 @@
+{
+  "id": "ribbon-ticket-pages",
+  "name": "Ribbon Ticket Pages",
+  "category": "pagination",
+  "order": 5392,
+  "version": "1.0.0",
+  "tagline": "切符の形のページ札。",
+  "description": "切符の形のページ札。",
+  "material": "RIBBON TICKET PAGES",
+  "motion": "STATE / MATERIAL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "RibbonTicketPages",
+  "tags": [
+    "EXPANSION-50",
+    "Ribbon Ticket Pages"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "ribbon-ticket-pages",
+    "kind": "pagination",
+    "variant": "essential",
+    "label": "コレクションをめくる",
+    "description": "",
+    "defaultValue": 4,
+    "totalPages": 12
+  }
+}

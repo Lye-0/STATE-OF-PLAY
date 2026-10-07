@@ -1,0 +1,52 @@
+{
+  "id": "parallel-pencil-scroll",
+  "name": "Parallel Pencil Scroll",
+  "category": "scrollbars",
+  "order": 5070,
+  "version": "1.0.0",
+  "tagline": "二本の薄い線の間に短い黒鉛の跡を置く、製図のようなレール。",
+  "description": "二本の薄い線の間に短い黒鉛の跡を置く、製図のようなレール。",
+  "material": "PARALLEL PENCIL SCROLL",
+  "motion": "STATE / MATERIAL",
+  "accent": "184,198,204",
+  "designType": "A",
+  "runtime": "Native scroll + event-driven DOM",
+  "componentName": "ParallelPencilScroll",
+  "tags": [
+    "EXPANSION-50",
+    "Parallel Pencil Scroll"
+  ],
+  "related": [],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "スクロールする中身。展示用コンテンツは含まれません。"
+    ],
+    [
+      "orientation",
+      "'vertical' | 'horizontal'",
+      "縦または横スクロール。初期値はvertical。"
+    ],
+    [
+      "viewportLabel",
+      "string",
+      "内容の領域に付ける読み上げ用ラベル。"
+    ],
+    [
+      "scrollbarLabel",
+      "string",
+      "スクロールバーの読み上げ用ラベル。"
+    ],
+    [
+      "onProgressChange",
+      "(progress: number) => void",
+      "スクロール位置を0〜1で通知します。"
+    ],
+    [
+      "className / style",
+      "HTMLAttributes",
+      "高さはstyleのheightまたは--sop-scroll-heightで調整。横幅は親に合わせます。"
+    ]
+  ]
+}

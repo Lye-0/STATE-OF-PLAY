@@ -1,0 +1,57 @@
+{
+  "id": "warm-reading-hint",
+  "name": "Warm Reading Hint",
+  "category": "hints",
+  "order": 5329,
+  "version": "1.0.0",
+  "tagline": "文章のそばに置ける穏やかな注釈。",
+  "description": "文章のそばに置ける穏やかな注釈。",
+  "material": "WARM READING HINT",
+  "motion": "STATE / MATERIAL",
+  "accent": "191,211,198",
+  "designType": "B",
+  "runtime": "Native DOM + CSS",
+  "componentName": "WarmReadingHint",
+  "tags": [
+    "EXPANSION-50",
+    "Warm Reading Hint"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "warm-reading-hint",
+    "kind": "hints",
+    "variant": "essential",
+    "label": "詳しく見る",
+    "description": "",
+    "defaultValue": null,
+    "interactive": true,
+    "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
+  }
+}

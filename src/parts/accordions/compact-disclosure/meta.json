@@ -1,0 +1,52 @@
+{
+  "id": "compact-disclosure",
+  "name": "Compact Disclosure",
+  "category": "accordions",
+  "order": 5106,
+  "version": "1.0.0",
+  "tagline": "短い見出しを連続させる、設定画面向けの小型開閉欄。",
+  "description": "短い見出しを連続させる、設定画面向けの小型開閉欄。",
+  "material": "COMPACT DISCLOSURE",
+  "motion": "STATE / MATERIAL",
+  "accent": "197,212,177",
+  "designType": "B",
+  "runtime": "CSS grid + disclosure events",
+  "componentName": "CompactDisclosure",
+  "tags": [
+    "EXPANSION-50",
+    "Compact Disclosure"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "AccordionItem[]",
+      "value・title・subtitle・badge・content・disabledを指定。contentはReactNode。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "展開する項目の値。expandedは外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(values: string[]) => void",
+      "開閉の要求を受け取ります。"
+    ],
+    [
+      "multiple",
+      "boolean",
+      "trueなら複数の項目を同時に開けます。"
+    ],
+    [
+      "collapsible",
+      "boolean",
+      "falseなら最後の項目を操作で閉じません。"
+    ],
+    [
+      "disabled / headingLevel",
+      "boolean / 2…6",
+      "操作の無効化と、見出しの深さを指定。"
+    ]
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "stone-pip-rating",
+  "name": "Stone Pip Rating",
+  "category": "ratings",
+  "tagline": "小さな石の点で段階を示す。",
+  "description": "小さな石の点で段階を示す。",
+  "designType": "A",
+  "motion": "STATE / MATERIAL",
+  "order": 5493,
+  "version": "1.0.0",
+  "material": "STONE PIP RATING",
+  "accent": "185,205,194",
+  "componentName": "StonePipRating",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "ratings"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Stone Pip Rating",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "number",
+      "0は未評価、1〜maxは評価値。valueは外部制御。"
+    ],
+    [
+      "max",
+      "number",
+      "整数2〜10。半点は扱わない。"
+    ],
+    [
+      "name / required",
+      "string / boolean",
+      "フォームに接続する。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "無効または表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(value: number) => void",
+      "確定した評価。ホバーは通知しない。"
+    ]
+  ]
+}

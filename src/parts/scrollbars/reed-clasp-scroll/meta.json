@@ -1,0 +1,52 @@
+{
+  "id": "reed-clasp-scroll",
+  "name": "Reed Clasp Scroll",
+  "category": "scrollbars",
+  "order": 5063,
+  "version": "1.0.0",
+  "tagline": "細い束を留める小さな金具として、スクロールの位置を表す。",
+  "description": "細い束を留める小さな金具として、スクロールの位置を表す。",
+  "material": "REED CLASP SCROLL",
+  "motion": "STATE / MATERIAL",
+  "accent": "184,198,204",
+  "designType": "A",
+  "runtime": "Native scroll + event-driven DOM",
+  "componentName": "ReedClaspScroll",
+  "tags": [
+    "EXPANSION-50",
+    "Reed Clasp Scroll"
+  ],
+  "related": [],
+  "props": [
+    [
+      "children",
+      "ReactNode",
+      "スクロールする中身。展示用コンテンツは含まれません。"
+    ],
+    [
+      "orientation",
+      "'vertical' | 'horizontal'",
+      "縦または横スクロール。初期値はvertical。"
+    ],
+    [
+      "viewportLabel",
+      "string",
+      "内容の領域に付ける読み上げ用ラベル。"
+    ],
+    [
+      "scrollbarLabel",
+      "string",
+      "スクロールバーの読み上げ用ラベル。"
+    ],
+    [
+      "onProgressChange",
+      "(progress: number) => void",
+      "スクロール位置を0〜1で通知します。"
+    ],
+    [
+      "className / style",
+      "HTMLAttributes",
+      "高さはstyleのheightまたは--sop-scroll-heightで調整。横幅は親に合わせます。"
+    ]
+  ]
+}

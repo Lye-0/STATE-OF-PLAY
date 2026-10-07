@@ -1,0 +1,62 @@
+{
+  "id": "recessed-line-toggle",
+  "name": "Recessed Line Toggle",
+  "category": "toggles",
+  "order": 5019,
+  "version": "1.0.0",
+  "tagline": "浅い凹面の中を短い線が移動する、邪魔にならない切替。",
+  "description": "浅い凹面の中を短い線が移動する、邪魔にならない切替。",
+  "material": "RECESSED LINE TOGGLE",
+  "motion": "STATE / MATERIAL",
+  "accent": "188,208,224",
+  "initial": false,
+  "componentName": "RecessedLineToggle",
+  "designType": "B",
+  "runtime": "CSS + Events",
+  "tags": [
+    "EXPANSION-50",
+    "Recessed Line Toggle"
+  ],
+  "config": {
+    "id": "recessed-line-toggle",
+    "name": "Recessed Line Toggle",
+    "initial": false,
+    "stiffness": 270,
+    "damping": 23,
+    "tone": 631,
+    "travel": 44
+  },
+  "related": [],
+  "props": [
+    [
+      "checked",
+      "boolean",
+      "外部からON/OFFを制御します。"
+    ],
+    [
+      "defaultChecked",
+      "boolean",
+      "外部制御しない場合の初期状態です。"
+    ],
+    [
+      "onCheckedChange",
+      "(checked: boolean) => void",
+      "操作により要求された状態を受け取ります。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にします。"
+    ],
+    [
+      "aria-label",
+      "string",
+      "機能を示す名前。例：通知を有効にする。"
+    ],
+    [
+      "className / style",
+      "標準のReact属性",
+      "外側の配置やサイズを調整します。"
+    ]
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "id": "terraced-progress",
+  "name": "Terraced Progress",
+  "category": "progress",
+  "order": 5338,
+  "version": "1.0.0",
+  "tagline": "段丘の水平線を登る進行面。",
+  "description": "段丘の水平線を登る進行面。",
+  "material": "TERRACED PROGRESS",
+  "motion": "STATE / MATERIAL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "CSS + state",
+  "componentName": "TerracedProgress",
+  "tags": [
+    "EXPANSION-50",
+    "Terraced Progress"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "terraced-progress",
+    "kind": "progress",
+    "variant": "essential",
+    "label": "ここまでの歩みを。",
+    "description": "",
+    "defaultValue": 72,
+    "min": 0,
+    "max": 100
+  }
+}

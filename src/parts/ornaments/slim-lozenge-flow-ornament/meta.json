@@ -1,0 +1,37 @@
+{
+  "id": "slim-lozenge-flow-ornament",
+  "name": "Slim Lozenge Flow Ornament",
+  "category": "ornaments",
+  "order": 5726,
+  "version": "1.0.0",
+  "tagline": "小さな菱形を順に点灯する。",
+  "description": "小さな菱形を順に点灯する。",
+  "material": "SLIM LOZENGE FLOW ORNAMENT",
+  "motion": "STATE / MATERIAL",
+  "accent": "232,215,174",
+  "designType": "B",
+  "runtime": "CSS + hover state",
+  "componentName": "SlimLozengeFlowOrnament",
+  "tags": [
+    "EXPANSION-50",
+    "Slim Lozenge Flow Ornament"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

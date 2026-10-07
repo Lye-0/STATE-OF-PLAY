@@ -1,0 +1,51 @@
+{
+  "id": "slotted-card-profile",
+  "name": "Slotted Card Profile",
+  "category": "avatars",
+  "tagline": "スロット付きのカードを縦に並べる。",
+  "description": "スロット付きのカードを縦に並べる。",
+  "designType": "A",
+  "motion": "STATE / MATERIAL",
+  "order": 5483,
+  "version": "1.0.0",
+  "material": "SLOTTED CARD PROFILE",
+  "accent": "185,205,194",
+  "componentName": "SlottedCardProfile",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "avatars"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Slotted Card Profile",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "users",
+      "AvatarUser[]",
+      "id・name・任意のsrc、initials、subtitle、status。名前と在席状態は外部の値。"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "選択するユーザーID。valueを渡すと外部制御。"
+    ],
+    [
+      "interactive",
+      "boolean",
+      "falseで表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(id: string) => void",
+      "クリック時の要求値。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ]
+  ]
+}

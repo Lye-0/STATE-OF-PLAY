@@ -1,0 +1,52 @@
+{
+  "id": "marginalia-select",
+  "name": "Marginalia Select",
+  "category": "dropdowns",
+  "order": 5081,
+  "version": "1.0.0",
+  "tagline": "説明を主役にして、見出しと小さな注記を左右の余白へ整理する。",
+  "description": "説明を主役にして、見出しと小さな注記を左右の余白へ整理する。",
+  "material": "MARGINALIA SELECT",
+  "motion": "STATE / MATERIAL",
+  "accent": "173,213,204",
+  "designType": "A",
+  "runtime": "CSS + event-driven select",
+  "componentName": "MarginaliaSelect",
+  "tags": [
+    "EXPANSION-50",
+    "Marginalia Select"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "SelectItem[]",
+      "value・label・description・icon・badge・group・disabledを指定。選択肢の内容もデザインします。"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "選択値。valueは外部制御、defaultValueは初期状態。"
+    ],
+    [
+      "onValueChange",
+      "(value: string) => void",
+      "確定した選択値を受け取ります。"
+    ],
+    [
+      "label / placeholder / name",
+      "string",
+      "読み上げ名、未選択の表示、フォーム送信名。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "無効状態。フォーム値も送信対象から外れます。"
+    ],
+    [
+      "renderOption",
+      "(item) => ReactNode",
+      "選択肢内の装飾。ボタンや入力欄をネストしないでください。"
+    ]
+  ]
+}

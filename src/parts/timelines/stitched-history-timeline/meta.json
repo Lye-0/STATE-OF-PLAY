@@ -1,0 +1,51 @@
+{
+  "id": "stitched-history-timeline",
+  "name": "Stitched History Timeline",
+  "category": "timelines",
+  "tagline": "縫い糸に出来事を留める。",
+  "description": "縫い糸に出来事を留める。",
+  "designType": "A",
+  "motion": "STATE / MATERIAL",
+  "order": 5557,
+  "version": "1.0.0",
+  "material": "STITCHED HISTORY TIMELINE",
+  "accent": "185,205,194",
+  "componentName": "StitchedHistoryTimeline",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "timelines"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Stitched History Timeline",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "TimelineItem[]",
+      "id・title・description・date・dateTime・status・hrefなど。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "詳細を開くID。expandedで外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(ids: string[]) => void",
+      "開閉したIDを通知。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "詳細の開閉を無効にする。"
+    ],
+    [
+      "label",
+      "string",
+      "履歴全体の名前。"
+    ]
+  ]
+}

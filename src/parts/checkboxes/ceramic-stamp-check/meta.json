@@ -1,0 +1,52 @@
+{
+  "id": "ceramic-stamp-check",
+  "name": "Ceramic Stamp Check",
+  "category": "checkboxes",
+  "order": 5194,
+  "version": "1.0.0",
+  "tagline": "陶印の柔らかな面と深い縁。",
+  "description": "陶印の柔らかな面と深い縁。",
+  "material": "CERAMIC STAMP CHECK",
+  "motion": "STATE / MATERIAL",
+  "accent": "185,214,195",
+  "designType": "A",
+  "runtime": "Native checkbox + CSS / event-driven state",
+  "componentName": "CeramicStampCheck",
+  "tags": [
+    "EXPANSION-50",
+    "Ceramic Stamp Check"
+  ],
+  "related": [],
+  "props": [
+    [
+      "label / description / badge",
+      "ReactNode",
+      "ラベル・補足・装飾。ラベル内に別の操作要素を置かない。"
+    ],
+    [
+      "checked / defaultChecked",
+      "boolean",
+      "外部制御 / 非制御の初期選択。"
+    ],
+    [
+      "indeterminate / defaultIndeterminate",
+      "boolean",
+      "一部選択。クリックで通常の選択に戻る。"
+    ],
+    [
+      "onCheckedChange / onIndeterminateChange",
+      "(value: boolean) => void",
+      "アプリの状態と接続。"
+    ],
+    [
+      "name / value / form / required / disabled",
+      "native input attributes",
+      "標準フォームの送信・リセット・無効化。"
+    ],
+    [
+      "ref / onChange / aria-*",
+      "input attributes",
+      "実際のinputへ接続。className/styleだけラベルルートへ。"
+    ]
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "compact-list-skeleton",
+  "name": "Compact List Skeleton",
+  "category": "skeletons",
+  "tagline": "密度の高い一覧の読み込み表示。",
+  "description": "密度の高い一覧の読み込み表示。",
+  "designType": "B",
+  "motion": "STATE / MATERIAL",
+  "order": 5546,
+  "version": "1.0.0",
+  "material": "COMPACT LIST SKELETON",
+  "accent": "185,205,194",
+  "componentName": "CompactListSkeleton",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "skeletons"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Compact List Skeleton",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "loading",
+      "boolean",
+      "実際の読み込み状態。自動で成功にはしない。"
+    ],
+    [
+      "rows",
+      "number",
+      "2〜8行のプレースホルダー。"
+    ],
+    [
+      "label",
+      "string",
+      "読み上げ用の待機ラベル。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "動きを一時停止。"
+    ],
+    [
+      "children",
+      "ReactNode",
+      "読み込み後に表示する実際の内容。"
+    ]
+  ]
+}

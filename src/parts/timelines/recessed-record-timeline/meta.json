@@ -1,0 +1,51 @@
+{
+  "id": "recessed-record-timeline",
+  "name": "Recessed Record Timeline",
+  "category": "timelines",
+  "tagline": "浅い溝の中に日時を置く。",
+  "description": "浅い溝の中に日時を置く。",
+  "designType": "A",
+  "motion": "STATE / MATERIAL",
+  "order": 5563,
+  "version": "1.0.0",
+  "material": "RECESSED RECORD TIMELINE",
+  "accent": "185,205,194",
+  "componentName": "RecessedRecordTimeline",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "timelines"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Recessed Record Timeline",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "TimelineItem[]",
+      "id・title・description・date・dateTime・status・hrefなど。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "詳細を開くID。expandedで外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(ids: string[]) => void",
+      "開閉したIDを通知。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "詳細の開閉を無効にする。"
+    ],
+    [
+      "label",
+      "string",
+      "履歴全体の名前。"
+    ]
+  ]
+}

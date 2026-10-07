@@ -1,0 +1,57 @@
+{
+  "id": "warm-message-dialog",
+  "name": "Warm Message Dialog",
+  "category": "popups",
+  "order": 5227,
+  "version": "1.0.0",
+  "tagline": "穏やかな通知に適した紙の面。",
+  "description": "穏やかな通知に適した紙の面。",
+  "material": "WARM MESSAGE DIALOG",
+  "motion": "STATE / MATERIAL",
+  "accent": "183,212,198",
+  "designType": "B",
+  "runtime": "Native dialog + CSS / event-driven lifecycle",
+  "componentName": "WarmMessageDialog",
+  "tags": [
+    "EXPANSION-50",
+    "Warm Message Dialog"
+  ],
+  "related": [],
+  "props": [
+    [
+      "title / description / kicker",
+      "string",
+      "見出しと補足。dialogのアクセシブル名はtitleへ関連付け。"
+    ],
+    [
+      "children / footer / triggerLabel",
+      "ReactNode",
+      "本文・操作・開くボタンを用途に合わせて変更。"
+    ],
+    [
+      "open / defaultOpen / onOpenChange",
+      "boolean / callback",
+      "外部制御 / 非制御。閉じる要求を外部で拒否できる。"
+    ],
+    [
+      "onClose",
+      "(reason: string) => void",
+      "閉じ終わった理由を通知。通信・保存処理は含まない。"
+    ],
+    [
+      "closeOnBackdrop / closeOnEscape",
+      "boolean",
+      "背景クリック / Escapeで閉じる。既定true。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "開くボタンを無効化。開いたウィンドウの閉じる操作は残す。"
+    ],
+    [
+      "confirmLabel / cancelLabel",
+      "string",
+      "既定フッターの文言。独自footerも指定可能。"
+    ]
+  ]
+}

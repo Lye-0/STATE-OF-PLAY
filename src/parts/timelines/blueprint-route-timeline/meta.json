@@ -1,0 +1,51 @@
+{
+  "id": "blueprint-route-timeline",
+  "name": "Blueprint Route Timeline",
+  "category": "timelines",
+  "tagline": "図面の注記線で工程を示す。",
+  "description": "図面の注記線で工程を示す。",
+  "designType": "A",
+  "motion": "STATE / MATERIAL",
+  "order": 5561,
+  "version": "1.0.0",
+  "material": "BLUEPRINT ROUTE TIMELINE",
+  "accent": "185,205,194",
+  "componentName": "BlueprintRouteTimeline",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "timelines"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Blueprint Route Timeline",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "TimelineItem[]",
+      "id・title・description・date・dateTime・status・hrefなど。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "詳細を開くID。expandedで外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(ids: string[]) => void",
+      "開閉したIDを通知。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "詳細の開閉を無効にする。"
+    ],
+    [
+      "label",
+      "string",
+      "履歴全体の名前。"
+    ]
+  ]
+}

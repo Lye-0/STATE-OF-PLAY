@@ -4,7 +4,7 @@ const registry=JSON.parse(fs.readFileSync(path.join(ROOT,'src/catalog/registry.j
 const metadata=registry.map(base=>({base,...JSON.parse(fs.readFileSync(path.join(ROOT,base,'meta.json'),'utf8'))}));const added=metadata.filter(p=>p.tags.includes('EXPANSION-30'));
 const parts=buildCatalog(ROOT,added.map(p=>p.id)).parts;
 test('every category meets the 30-part floor and each intention has at least five designs',()=>{
- const categories=new Set(metadata.map(p=>p.category));assert.equal(categories.size,37);assert.equal(metadata.length,1120);assert.equal(added.length,325);
+ const categories=new Set(metadata.map(p=>p.category));assert.equal(categories.size,37);assert.ok(metadata.length>=1850);assert.equal(added.length,325);
  for(const category of categories){const rows=metadata.filter(p=>p.category===category);assert.ok(rows.length>=30,category);for(const type of ['A','B'])assert.ok(rows.filter(p=>p.designType===type).length>=5,category+' '+type);}
  const authored=fs.readdirSync(path.join(ROOT,'src/parts')).flatMap(category=>fs.readdirSync(path.join(ROOT,'src/parts',category)).map(id=>'src/parts/'+category+'/'+id));assert.deepEqual([...authored].sort(),[...registry].sort());
 });

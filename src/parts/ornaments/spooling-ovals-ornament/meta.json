@@ -1,0 +1,37 @@
+{
+  "id": "spooling-ovals-ornament",
+  "name": "Spooling Ovals Ornament",
+  "category": "ornaments",
+  "order": 5694,
+  "version": "1.0.0",
+  "tagline": "細い楕円が糸巻きのように重なる。",
+  "description": "細い楕円が糸巻きのように重なる。",
+  "material": "SPOOLING OVALS ORNAMENT",
+  "motion": "STATE / MATERIAL",
+  "accent": "232,215,174",
+  "designType": "A",
+  "runtime": "CSS + hover state",
+  "componentName": "SpoolingOvalsOrnament",
+  "tags": [
+    "EXPANSION-50",
+    "Spooling Ovals Ornament"
+  ],
+  "related": [],
+  "props": [
+    [
+      "paused",
+      "boolean",
+      "アニメーションを停止する。"
+    ],
+    [
+      "className",
+      "string",
+      "外側のclassを追加する。"
+    ],
+    [
+      "style / CSS variables",
+      "CSSProperties",
+      "配置や --ornament-accent を上書きする。"
+    ]
+  ]
+}

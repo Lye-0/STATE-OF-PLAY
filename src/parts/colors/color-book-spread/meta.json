@@ -1,0 +1,51 @@
+{
+  "id": "color-book-spread",
+  "name": "Color Book Spread",
+  "category": "colors",
+  "tagline": "色見本帳の綴じ目と大きな面。",
+  "description": "色見本帳の綴じ目と大きな面。",
+  "designType": "A",
+  "motion": "STATE / MATERIAL",
+  "order": 5515,
+  "version": "1.0.0",
+  "material": "COLOR BOOK SPREAD",
+  "accent": "185,205,194",
+  "componentName": "ColorBookSpread",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "colors"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Color Book Spread",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "string",
+      "#RGBまたは#RRGGBB。外部へは#RRGGBBの大文字。"
+    ],
+    [
+      "palette",
+      "string[]",
+      "色見本。"
+    ],
+    [
+      "name",
+      "string",
+      "フォームで送信する値の名前。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "入力操作を停止。"
+    ],
+    [
+      "onValueChange",
+      "(hex: string) => void",
+      "有効な色のみ通知。透明度はこの版では扱わない。"
+    ]
+  ]
+}

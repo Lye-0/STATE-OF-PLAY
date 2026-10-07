@@ -1,0 +1,51 @@
+{
+  "id": "stone-relief-profile",
+  "name": "Stone Relief Profile",
+  "category": "avatars",
+  "tagline": "石の浮彫のような浅い額。",
+  "description": "石の浮彫のような浅い額。",
+  "designType": "A",
+  "motion": "STATE / MATERIAL",
+  "order": 5473,
+  "version": "1.0.0",
+  "material": "STONE RELIEF PROFILE",
+  "accent": "185,205,194",
+  "componentName": "StoneReliefProfile",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "avatars"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Stone Relief Profile",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "users",
+      "AvatarUser[]",
+      "id・name・任意のsrc、initials、subtitle、status。名前と在席状態は外部の値。"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "選択するユーザーID。valueを渡すと外部制御。"
+    ],
+    [
+      "interactive",
+      "boolean",
+      "falseで表示専用。"
+    ],
+    [
+      "onValueChange",
+      "(id: string) => void",
+      "クリック時の要求値。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ]
+  ]
+}

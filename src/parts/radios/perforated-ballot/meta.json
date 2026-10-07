@@ -1,0 +1,79 @@
+{
+  "id": "perforated-ballot",
+  "name": "Perforated Ballot",
+  "category": "radios",
+  "order": 5251,
+  "version": "1.0.0",
+  "tagline": "投票用紙の切り離し線。",
+  "description": "投票用紙の切り離し線。",
+  "material": "PERFORATED BALLOT",
+  "motion": "STATE / MATERIAL",
+  "accent": "86,122,112",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "PerforatedBallot",
+  "tags": [
+    "EXPANSION-50",
+    "Perforated Ballot"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "perforated-ballot",
+    "kind": "radios",
+    "variant": "soft",
+    "label": "あなたの制作モード",
+    "description": "",
+    "defaultValue": "cloud",
+    "required": true,
+    "items": [
+      {
+        "value": "local",
+        "label": "Local",
+        "description": "手元の環境で、静かに。",
+        "badge": "01",
+        "icon": "file"
+      },
+      {
+        "value": "cloud",
+        "label": "Cloud",
+        "description": "どこからでも、つながる。",
+        "badge": "02",
+        "icon": "spark"
+      },
+      {
+        "value": "hybrid",
+        "label": "Hybrid",
+        "description": "両方のよさを、ひとつに。",
+        "badge": "03",
+        "icon": "home"
+      }
+    ]
+  }
+}

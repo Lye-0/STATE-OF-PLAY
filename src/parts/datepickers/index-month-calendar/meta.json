@@ -1,0 +1,56 @@
+{
+  "id": "index-month-calendar",
+  "name": "Index Month Calendar",
+  "category": "datepickers",
+  "order": 5380,
+  "version": "1.0.0",
+  "tagline": "月の見出しを索引の帯に載せる。",
+  "description": "月の見出しを索引の帯に載せる。",
+  "material": "INDEX MONTH CALENDAR",
+  "motion": "STATE / MATERIAL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "IndexMonthCalendar",
+  "tags": [
+    "EXPANSION-50",
+    "Index Month Calendar"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "index-month-calendar",
+    "kind": "datepickers",
+    "variant": "essential",
+    "label": "次の時間を、予約する。",
+    "description": "",
+    "defaultValue": "2026-09-23",
+    "mode": "date"
+  }
+}

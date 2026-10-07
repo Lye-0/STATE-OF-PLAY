@@ -7,7 +7,7 @@ export async function lightSelectedContrast(page:Page,ids:string[]){return page.
  const failures:{id:string;text:string;ratio:number}[]=[];let checked=0;
  for(const id of ids){const host=document.querySelector(`[data-part="${id}"]`)!;const walker=document.createTreeWalker(host,NodeFilter.SHOW_TEXT);let node:Node|null;
   while(node=walker.nextNode()){const text=node.textContent?.trim(),el=node.parentElement;if(!text||!el||!el.closest('[data-selected=true],[aria-current=page],[aria-current=step],[aria-pressed=true]')||el.getBoundingClientRect().width<1||el.closest('[aria-hidden=true]'))continue;
-   const style=getComputedStyle(el),fg=rgba(style.color);let bg:number[]|undefined,parent:Element|null=el,gradient=false;
+   const style=getComputedStyle(el);if(style.clip==='rect(0px, 0px, 0px, 0px)'||style.clipPath==='inset(50%)'||style.visibility==='hidden'||style.display==='none')continue;const fg=rgba(style.color);let bg:number[]|undefined,parent:Element|null=el,gradient=false;
    while(parent){const s=getComputedStyle(parent);if(s.backgroundImage!=='none'){gradient=true;break;}const c=rgba(s.backgroundColor);if(c[3]===255){bg=c;break;}parent=parent.parentElement;}
    if(!bg||gradient)continue;const a=lum(fg),b=lum(bg),ratio=(Math.max(a,b)+.05)/(Math.min(a,b)+.05);checked++;
    const large=Number.parseFloat(style.fontSize)>=24||(Number.parseFloat(style.fontSize)>=18.66&&Number.parseInt(style.fontWeight)>=700);if(ratio<(large?3:4.5))failures.push({id,text,ratio});

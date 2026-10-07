@@ -1,0 +1,52 @@
+{
+  "id": "gallery-slip-accordion",
+  "name": "Gallery Slip Accordion",
+  "category": "accordions",
+  "order": 5093,
+  "version": "1.0.0",
+  "tagline": "短い見出し札と広い本文の余白を分け、作品札のように開く。",
+  "description": "短い見出し札と広い本文の余白を分け、作品札のように開く。",
+  "material": "GALLERY SLIP ACCORDION",
+  "motion": "STATE / MATERIAL",
+  "accent": "197,212,177",
+  "designType": "A",
+  "runtime": "CSS grid + disclosure events",
+  "componentName": "GallerySlipAccordion",
+  "tags": [
+    "EXPANSION-50",
+    "Gallery Slip Accordion"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "AccordionItem[]",
+      "value・title・subtitle・badge・content・disabledを指定。contentはReactNode。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "展開する項目の値。expandedは外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(values: string[]) => void",
+      "開閉の要求を受け取ります。"
+    ],
+    [
+      "multiple",
+      "boolean",
+      "trueなら複数の項目を同時に開けます。"
+    ],
+    [
+      "collapsible",
+      "boolean",
+      "falseなら最後の項目を操作で閉じません。"
+    ],
+    [
+      "disabled / headingLevel",
+      "boolean / 2…6",
+      "操作の無効化と、見出しの深さを指定。"
+    ]
+  ]
+}

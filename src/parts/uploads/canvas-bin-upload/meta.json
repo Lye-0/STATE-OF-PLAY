@@ -1,0 +1,59 @@
+{
+  "id": "canvas-bin-upload",
+  "name": "Canvas Bin Upload",
+  "category": "uploads",
+  "order": 5364,
+  "version": "1.0.0",
+  "tagline": "帆布の箱に収める投入口。",
+  "description": "帆布の箱に収める投入口。",
+  "material": "CANVAS BIN UPLOAD",
+  "motion": "STATE / MATERIAL",
+  "accent": "191,211,198",
+  "designType": "A",
+  "runtime": "Native DOM + CSS",
+  "componentName": "CanvasBinUpload",
+  "tags": [
+    "EXPANSION-50",
+    "Canvas Bin Upload"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "FoundationValue",
+      "外部制御値／内部制御の初期値。"
+    ],
+    [
+      "onValueChange",
+      "(value) => void",
+      "React版の値変更通知。通常DOM版はonDataChange。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "操作を無効にする。"
+    ],
+    [
+      "label / description",
+      "string",
+      "見出しと補足文を変更。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setData/updateFoundation/notify/show等の公開API。"
+    ]
+  ],
+  "foundation": {
+    "id": "canvas-bin-upload",
+    "kind": "uploads",
+    "variant": "essential",
+    "label": "アイデアの素材を、ここに。",
+    "description": "",
+    "defaultValue": [],
+    "multiple": true,
+    "maxFiles": 4,
+    "maxBytes": 10485760,
+    "accept": ".png,.jpg,.webp,.txt,.pdf"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "textile-dye-color",
+  "name": "Textile Dye Color",
+  "category": "colors",
+  "tagline": "染色用の布端を思わせる枠。",
+  "description": "染色用の布端を思わせる枠。",
+  "designType": "A",
+  "motion": "STATE / MATERIAL",
+  "order": 5517,
+  "version": "1.0.0",
+  "material": "TEXTILE DYE COLOR",
+  "accent": "185,205,194",
+  "componentName": "TextileDyeColor",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "colors"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Textile Dye Color",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "value / defaultValue",
+      "string",
+      "#RGBまたは#RRGGBB。外部へは#RRGGBBの大文字。"
+    ],
+    [
+      "palette",
+      "string[]",
+      "色見本。"
+    ],
+    [
+      "name",
+      "string",
+      "フォームで送信する値の名前。"
+    ],
+    [
+      "disabled / readOnly",
+      "boolean",
+      "入力操作を停止。"
+    ],
+    [
+      "onValueChange",
+      "(hex: string) => void",
+      "有効な色のみ通知。透明度はこの版では扱わない。"
+    ]
+  ]
+}

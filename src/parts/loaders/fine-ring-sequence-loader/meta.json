@@ -1,0 +1,52 @@
+{
+  "id": "fine-ring-sequence-loader",
+  "name": "Fine Ring Sequence Loader",
+  "category": "loaders",
+  "order": 5723,
+  "version": "1.0.0",
+  "tagline": "細い輪を順に明るくする。処理中の状態を文字と動きで示す。",
+  "description": "細い輪を順に明るくする。処理中の状態を文字と動きで示す。",
+  "material": "FINE RING SEQUENCE LOADER",
+  "motion": "STATE / MATERIAL",
+  "accent": "205,218,214",
+  "designType": "B",
+  "runtime": "CSS animation + visibility pause",
+  "componentName": "FineRingSequenceLoader",
+  "tags": [
+    "EXPANSION-50",
+    "Fine Ring Sequence Loader",
+    "CONTINUUM"
+  ],
+  "related": [],
+  "props": [
+    [
+      "content",
+      "string",
+      "読み上げもされる処理中メッセージ。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "アニメーションのみ停止。完了を意味しません。"
+    ],
+    [
+      "style / className",
+      "React属性",
+      "--ld-size、--ld-accentなどで外観を調整。"
+    ],
+    [
+      "controllerRef",
+      "Ref<FoundationController>",
+      "setPaused、updateFoundation、destroy。"
+    ]
+  ],
+  "foundation": {
+    "id": "fine-ring-sequence-loader",
+    "kind": "loaders",
+    "variant": "three-dots",
+    "label": "Three Dots",
+    "description": "",
+    "defaultValue": null,
+    "content": "読み込み中…"
+  }
+}

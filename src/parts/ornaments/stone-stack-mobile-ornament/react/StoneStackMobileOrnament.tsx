@@ -1,0 +1,15 @@
+'use client';
+import React, { type HTMLAttributes } from 'react';
+import '../styles.css';
+
+export interface StoneStackMobileOrnamentProps extends HTMLAttributes<HTMLDivElement> {
+  paused?: boolean;
+}
+
+const markup = "<div class=\"or-stage\" aria-hidden=\"true\"><div class=\"x-composition\"><i style=\"--i:0\"></i><i style=\"--i:1\"></i><i style=\"--i:2\"></i><i style=\"--i:3\"></i><i style=\"--i:4\"></i><i style=\"--i:5\"></i></div></div>";
+
+/** 羽根が光を散らす。 */
+export default function StoneStackMobileOrnament({ paused = false, className = '', ...props }: StoneStackMobileOrnamentProps) {
+  const merged = `sop-ornament sop-stone-stack-mobile-ornament ${className}`.trim();
+  return <div {...props} className={merged} data-paused={paused ? 'true' : 'false'} dangerouslySetInnerHTML={{ __html: markup }} />;
+}

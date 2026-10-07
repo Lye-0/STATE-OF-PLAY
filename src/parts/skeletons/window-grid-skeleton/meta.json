@@ -1,0 +1,51 @@
+{
+  "id": "window-grid-skeleton",
+  "name": "Window Grid Skeleton",
+  "category": "skeletons",
+  "tagline": "窓のような三分割のカード。",
+  "description": "窓のような三分割のカード。",
+  "designType": "A",
+  "motion": "STATE / MATERIAL",
+  "order": 5541,
+  "version": "1.0.0",
+  "material": "WINDOW GRID SKELETON",
+  "accent": "185,205,194",
+  "componentName": "WindowGridSkeleton",
+  "runtime": "CSS + native DOM",
+  "signature": {
+    "kind": "skeletons"
+  },
+  "tags": [
+    "EXPANSION-50",
+    "Window Grid Skeleton",
+    "SIGNATURE"
+  ],
+  "related": [],
+  "props": [
+    [
+      "loading",
+      "boolean",
+      "実際の読み込み状態。自動で成功にはしない。"
+    ],
+    [
+      "rows",
+      "number",
+      "2〜8行のプレースホルダー。"
+    ],
+    [
+      "label",
+      "string",
+      "読み上げ用の待機ラベル。"
+    ],
+    [
+      "paused",
+      "boolean",
+      "動きを一時停止。"
+    ],
+    [
+      "children",
+      "ReactNode",
+      "読み込み後に表示する実際の内容。"
+    ]
+  ]
+}

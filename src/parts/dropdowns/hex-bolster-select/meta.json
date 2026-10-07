@@ -1,0 +1,52 @@
+{
+  "id": "hex-bolster-select",
+  "name": "Hex Bolster Select",
+  "category": "dropdowns",
+  "order": 5082,
+  "version": "1.0.0",
+  "tagline": "切り落とした端と厚みのある留め具で、精密な道具の選択欄にする。",
+  "description": "切り落とした端と厚みのある留め具で、精密な道具の選択欄にする。",
+  "material": "HEX BOLSTER SELECT",
+  "motion": "STATE / MATERIAL",
+  "accent": "173,213,204",
+  "designType": "A",
+  "runtime": "CSS + event-driven select",
+  "componentName": "HexBolsterSelect",
+  "tags": [
+    "EXPANSION-50",
+    "Hex Bolster Select"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "SelectItem[]",
+      "value・label・description・icon・badge・group・disabledを指定。選択肢の内容もデザインします。"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "選択値。valueは外部制御、defaultValueは初期状態。"
+    ],
+    [
+      "onValueChange",
+      "(value: string) => void",
+      "確定した選択値を受け取ります。"
+    ],
+    [
+      "label / placeholder / name",
+      "string",
+      "読み上げ名、未選択の表示、フォーム送信名。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "無効状態。フォーム値も送信対象から外れます。"
+    ],
+    [
+      "renderOption",
+      "(item) => ReactNode",
+      "選択肢内の装飾。ボタンや入力欄をネストしないでください。"
+    ]
+  ]
+}

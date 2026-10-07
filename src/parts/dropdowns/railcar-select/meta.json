@@ -1,0 +1,52 @@
+{
+  "id": "railcar-select",
+  "name": "Railcar Select",
+  "category": "dropdowns",
+  "order": 5076,
+  "version": "1.0.0",
+  "tagline": "小さな車窓のような値表示と、連結した角形の候補一覧。",
+  "description": "小さな車窓のような値表示と、連結した角形の候補一覧。",
+  "material": "RAILCAR SELECT",
+  "motion": "STATE / MATERIAL",
+  "accent": "173,213,204",
+  "designType": "A",
+  "runtime": "CSS + event-driven select",
+  "componentName": "RailcarSelect",
+  "tags": [
+    "EXPANSION-50",
+    "Railcar Select"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "SelectItem[]",
+      "value・label・description・icon・badge・group・disabledを指定。選択肢の内容もデザインします。"
+    ],
+    [
+      "value / defaultValue",
+      "string",
+      "選択値。valueは外部制御、defaultValueは初期状態。"
+    ],
+    [
+      "onValueChange",
+      "(value: string) => void",
+      "確定した選択値を受け取ります。"
+    ],
+    [
+      "label / placeholder / name",
+      "string",
+      "読み上げ名、未選択の表示、フォーム送信名。"
+    ],
+    [
+      "disabled",
+      "boolean",
+      "無効状態。フォーム値も送信対象から外れます。"
+    ],
+    [
+      "renderOption",
+      "(item) => ReactNode",
+      "選択肢内の装飾。ボタンや入力欄をネストしないでください。"
+    ]
+  ]
+}

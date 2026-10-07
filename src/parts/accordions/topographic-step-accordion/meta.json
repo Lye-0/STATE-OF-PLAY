@@ -1,0 +1,52 @@
+{
+  "id": "topographic-step-accordion",
+  "name": "Topographic Step Accordion",
+  "category": "accordions",
+  "order": 5096,
+  "version": "1.0.0",
+  "tagline": "段差のある細い外縁で、開いた面を一段高く見せる。",
+  "description": "段差のある細い外縁で、開いた面を一段高く見せる。",
+  "material": "TOPOGRAPHIC STEP ACCORDION",
+  "motion": "STATE / MATERIAL",
+  "accent": "197,212,177",
+  "designType": "A",
+  "runtime": "CSS grid + disclosure events",
+  "componentName": "TopographicStepAccordion",
+  "tags": [
+    "EXPANSION-50",
+    "Topographic Step Accordion"
+  ],
+  "related": [],
+  "props": [
+    [
+      "items",
+      "AccordionItem[]",
+      "value・title・subtitle・badge・content・disabledを指定。contentはReactNode。"
+    ],
+    [
+      "expanded / defaultExpanded",
+      "string[]",
+      "展開する項目の値。expandedは外部制御。"
+    ],
+    [
+      "onExpandedChange",
+      "(values: string[]) => void",
+      "開閉の要求を受け取ります。"
+    ],
+    [
+      "multiple",
+      "boolean",
+      "trueなら複数の項目を同時に開けます。"
+    ],
+    [
+      "collapsible",
+      "boolean",
+      "falseなら最後の項目を操作で閉じません。"
+    ],
+    [
+      "disabled / headingLevel",
+      "boolean / 2…6",
+      "操作の無効化と、見出しの深さを指定。"
+    ]
+  ]
+}
