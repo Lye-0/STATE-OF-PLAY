@@ -5,7 +5,7 @@
 .sop-foundation.sop-clip-frame-dropzone .ff-dropzone{position:relative;border:1px solid #89799366;outline:0;border-radius:4px;background:#302b35;padding:40px 22px 26px;min-height:175px;box-shadow:0 5px 10px #0002;text-align:left}
 .sop-foundation.sop-clip-frame-dropzone .ff-dropzone::before,.sop-foundation.sop-clip-frame-dropzone .ff-dropzone::after{content:"";position:absolute;top:-7px;width:29px;height:18px;border-radius:3px;background:linear-gradient(#d1c5cf,#8e8093 55%,#baacba);border:1px solid #b9aaba;box-shadow:0 3px 4px #0004;pointer-events:none;transition:transform .25s}
 .sop-foundation.sop-clip-frame-dropzone .ff-dropzone::before{left:22px}.sop-foundation.sop-clip-frame-dropzone .ff-dropzone::after{right:22px}
-.sop-foundation.sop-clip-frame-dropzone .ff-upload-symbol{position:relative;inset:auto;margin:0 0 12px;width:30px;height:30px;background:none;border:0;transform:none;color:#d8c6dd}
+.sop-foundation.sop-clip-frame-dropzone .ff-upload-symbol{position:relative;inset:auto;margin:0 0 12px;width:24px;height:24px;padding:0;display:grid;place-items:center;background:none;border:0;border-radius:0;box-shadow:none;transform:none;color:#d8c6dd}
 .sop-foundation.sop-clip-frame-dropzone .ff-dropzone strong{font:600 16px/1.6 system-ui}
 .sop-foundation.sop-clip-frame-dropzone [data-upload-limits]{margin-top:14px;border:0;padding:0}
 .sop-foundation.sop-clip-frame-dropzone .ff-dropzone[data-dragging=true]{background:#403749;border-color:#d4c0de}
@@ -16,3 +16,5 @@
 @media(prefers-reduced-motion:reduce){.sop-foundation.sop-clip-frame-dropzone,.sop-foundation.sop-clip-frame-dropzone *,.sop-foundation.sop-clip-frame-dropzone::before,.sop-foundation.sop-clip-frame-dropzone::after,.sop-foundation.sop-clip-frame-dropzone *::before,.sop-foundation.sop-clip-frame-dropzone *::after{transition:none!important;animation:none!important}}
 .sop-foundation.sop-clip-frame-dropzone[data-sop-paused] *,.sop-foundation.sop-clip-frame-dropzone[data-paused=true] *,.sop-foundation.sop-clip-frame-dropzone[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
 @media(forced-colors:active){.sop-foundation.sop-clip-frame-dropzone{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-clip-frame-dropzone :is(button,input,a):focus-visible{outline:2px solid Highlight}.sop-foundation.sop-clip-frame-dropzone::before,.sop-foundation.sop-clip-frame-dropzone::after{forced-color-adjust:auto}}
+
+.sop-foundation.sop-clip-frame-dropzone .ff-upload-symbol>svg{width:24px;height:24px}

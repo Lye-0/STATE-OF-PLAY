@@ -25,14 +25,16 @@ try{
   assert.ok(Math.abs(await angle()-expected)<.15,id+' first central hover must not replace the resting gradient angle');
   await page.mouse.move(1,1);await page.waitForTimeout(100);
  }
- for(const [id,selector,read]of [
-  ['inlaid-surface','.sop-surface-content','position'],
-  ['plotted-surface','.sop-surface','pseudo'],
+ for(const [id,read]of [
+  ['inlaid-surface','::after'],
+  ['plotted-surface','::before'],
  ]as const){
   const surface=page.locator(`[data-part="${id}"] .sop-surface`);await page.mouse.move(1,1);await surface.scrollIntoViewIfNeeded();
-  const reading=()=>read==='pseudo'?surface.evaluate(el=>Number.parseFloat(getComputedStyle(el,'::before').width)):surface.locator(selector).evaluate(el=>Number.parseFloat(getComputedStyle(el).backgroundPositionX));
+  // The inlay now reflects at the frame; the content surface must stay still.
+  const content=surface.locator('.sop-surface-content');const beforeContent=await content.boundingBox();
+  const reading=()=>surface.evaluate((el,pseudo)=>Number.parseFloat(getComputedStyle(el,pseudo).opacity)*100,read);
   const resting=await reading(),box=await surface.boundingBox();assert.ok(box);await page.mouse.move(box.x+box.width/2,box.y+box.height/2);await page.waitForTimeout(800);const held=await reading();
-  assert.ok(held>resting+1,id+' decoration moves on hover');await page.mouse.move(box.x-25,box.y-25);await page.waitForTimeout(90);const intermediate=await reading();
+  assert.ok(held>resting+1,id+' decoration responds on hover');assert.deepEqual(await content.boundingBox(),beforeContent,id+' content remains stable');await page.mouse.move(box.x-25,box.y-25);await page.waitForTimeout(90);const intermediate=await reading();
   assert.ok(intermediate>resting+.1&&intermediate<held-.1,id+' decoration returns gradually: '+[resting,held,intermediate]);await page.waitForTimeout(800);assert.ok(Math.abs(await reading()-resting)<.1,id+' returns to authored position');
  }
  for(const id of ids){
