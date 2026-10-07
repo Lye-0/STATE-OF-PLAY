@@ -49,8 +49,8 @@ test('CI assigns every verify stage once across bounded OS shards', () => {
   const expected = manifest.scripts.verify.split(' && ');
   const commands = [...workflow.matchAll(/^\s+run: (.+)$/gm)].map(match => match[1]);
   assert.deepEqual(commands.filter(command => expected.includes(command)), expected);
-  const suites = ['preflight', 'gallery', 'relocation', 'controls', 'features', 'glass'];
-  assert.match(workflow, /suite: \[preflight, gallery, relocation, controls, features, glass\]/);
+  const suites = ['preflight', 'gallery', 'relocation', 'controls', 'features', 'glass', 'expansion'];
+  assert.match(workflow, /suite: \[preflight, gallery, relocation, controls, features, glass, expansion\]/);
   // Browser checks also require successful setup and continue collecting failures.
   // Read the complete condition so the gate cannot hide a real stage from this inventory.
   const assigned = [...workflow.matchAll(/^\s+if: ([^\r\n]+)\r?\n\s+run: (npm run \S+|npm test)$/gm)]
