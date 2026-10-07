@@ -303,12 +303,15 @@ try{
  }
  if(!offline){
   await run('Real Vite watcher regenerates catalogue without author-source copies',async()=>{
-   await load('/');
+   await load('/');await galleryReady(page);
    const target=path.join(ROOT,catalog.bases.find(b=>b.endsWith('/chrome'))!,'meta.json');const original=fs.readFileSync(target,'utf8');
+   // Full reload creates a new window before gallery.ts publishes SOP_CATALOG.
+   // Keep polling through that interval, on both the edit and the restoration;
+   // readiness still requires the expected tagline, not merely a loaded document.
    try{const meta=JSON.parse(original) as {tagline:string};meta.tagline='HMR verification marker';fs.writeFileSync(target,JSON.stringify(meta,null,2)+'\n');
-    await page.waitForFunction(()=>window.SOP_CATALOG.find(p=>p.id==='chrome')?.tagline==='HMR verification marker');
+    await page.waitForFunction(()=>window.SOP_CATALOG?.find(p=>p.id==='chrome')?.tagline==='HMR verification marker');
    }finally{fs.writeFileSync(target,original);}
-   await page.waitForFunction(expected=>window.SOP_CATALOG.find(p=>p.id==='chrome')?.tagline===expected,catalog.parts.find(p=>p.id==='chrome')!.tagline);
+   await page.waitForFunction(expected=>window.SOP_CATALOG?.find(p=>p.id==='chrome')?.tagline===expected,catalog.parts.find(p=>p.id==='chrome')!.tagline);
    assert.equal(fs.existsSync(path.join(ROOT,'packages')),false);
   });
   await run('Real Vite production build works under /STATE-OF-PLAY/',async()=>{
