@@ -3,7 +3,7 @@ import React from 'react';
 import { useScrollArea, type ScrollAreaProps } from '../../../../shared/use-scroll-area';
 import '../styles.css';
 export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
-/** つまみの両端を小さな珠で留め、間の線を軽く見せる。 Native scroll content with a skinned, proportional rail. */
+/** 細いワイヤー上の数珠が既読区間を示す。 Native scroll content with a skinned, proportional rail. */
 export default function BeadedWireScroll(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);

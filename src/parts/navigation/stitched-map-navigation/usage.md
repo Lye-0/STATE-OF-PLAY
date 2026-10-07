@@ -1,9 +1,9 @@
 # Stitched Map Navigation
 
-地図の縫い目に沿う案内。
+縫い目の経路をたどって行先を読む。
 
 
-地図の縫い目に沿う案内。
+縫い目の経路をたどって行先を読む。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`StitchedMapNavigation`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

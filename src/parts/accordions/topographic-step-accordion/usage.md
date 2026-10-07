@@ -1,9 +1,9 @@
 # Topographic Step Accordion
 
-段差のある細い外縁で、開いた面を一段高く見せる。
+等高線の段が開いたページの下に現れる。
 
 
-段差のある細い外縁で、開いた面を一段高く見せる。
+等高線の段が開いたページの下に現れる。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

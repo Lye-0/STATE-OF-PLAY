@@ -1,9 +1,9 @@
 # Sail Pocket Accordion
 
-斜めに張った縁とまっすぐな内容面で、帆のポケットを表す。
+帆の下に内容面を吊るす。
 
 
-斜めに張った縁とまっすぐな内容面で、帆のポケットを表す。
+帆の下に内容面を吊るす。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

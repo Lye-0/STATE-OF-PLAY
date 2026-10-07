@@ -1,9 +1,9 @@
 # Index Flag Tags
 
-栞の先を残した分類札。
+索引の旗の切欠きが選択を示す。
 
 
-栞の先を残した分類札。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
+索引の旗の切欠きが選択を示す。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
 
 ## 組み込み
 

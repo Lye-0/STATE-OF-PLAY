@@ -1,8 +1,8 @@
 # Saddle Loop Check
 
-革のループを思わせる湾曲した枠。
+鞍の左右がチェックの下へ巻き込む。
 
-革のループを思わせる湾曲した枠。
+鞍の左右がチェックの下へ巻き込む。
 
 本物のinput[type=checkbox]です。label全体をクリックでき、Space・Tab・FormData・required・fieldsetのdisabledはネイティブのままです。複数の独立したチェックで複数選択を作れます。独自のキーイベントでSpaceを二重処理しません。
 

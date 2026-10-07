@@ -1,9 +1,9 @@
 # Bracket Tags
 
-分類名を括弧だけで囲む。
+開いた括弧が選択時に閉じる。
 
 
-分類名を括弧だけで囲む。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
+開いた括弧が選択時に閉じる。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
 
 ## 組み込み
 

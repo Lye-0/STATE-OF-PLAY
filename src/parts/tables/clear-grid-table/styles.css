@@ -1,8 +1,11 @@
 @import "../../../shared/workbench/base.css";
-/* Clear Grid Table — 列と行の境界が明快な表。 */
+/* Clear Grid Table — Reviewラベルを明暗で判別できる配色に変更。 */
 .sop-wb.sop-clear-grid-table {--wb-bg:#f4f5ef;--wb-surface:#e1e4df;--wb-ink:#343e3d;--wb-muted:#455b4f;--wb-accent:#496559;--wb-line:#adbab2;--wb-radius:6px;color-scheme:light}.sop-wb.sop-clear-grid-table .wb-art{pointer-events:none}.sop-wb.sop-clear-grid-table :is(.wb-search-results,.wb-command-dialog,.wb-context-panel,.wb-nav-flyout,.wb-nav-dialog){color:var(--wb-ink);background:var(--wb-bg)}.sop-wb.sop-clear-grid-table .wb-data-frame{border-radius:3px;border-color:#a9c2b2}.sop-wb.sop-clear-grid-table th{border-bottom:2px solid #b6cebe}.sop-wb.sop-clear-grid-table td{border-right:1px solid #d3e3d8}.sop-wb.sop-clear-grid-table .wb-cell-badge{border-radius:3px}
 .sop-wb.sop-clear-grid-table{max-width:100%}.sop-wb.sop-clear-grid-table,.sop-wb.sop-clear-grid-table *{box-sizing:border-box}.sop-wb.sop-clear-grid-table :is(button,input,textarea,a){min-width:0}
 .sop-wb.sop-clear-grid-table:focus-visible,.sop-wb.sop-clear-grid-table :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-wb.sop-clear-grid-table,.sop-wb.sop-clear-grid-table *,.sop-wb.sop-clear-grid-table::before,.sop-wb.sop-clear-grid-table::after,.sop-wb.sop-clear-grid-table *::before,.sop-wb.sop-clear-grid-table *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-wb.sop-clear-grid-table[data-sop-paused] *,.sop-wb.sop-clear-grid-table[data-paused=true] *,.sop-wb.sop-clear-grid-table[data-motion-running=false] *,.sop-wb.sop-clear-grid-table[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-wb.sop-clear-grid-table{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-clear-grid-table :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+/* Review: Reviewラベルを明暗で判別できる配色に変更 */
+.sop-wb.sop-clear-grid-table .wb-cell-badge[data-value=review]{color:#76511c;background:#f8edce}

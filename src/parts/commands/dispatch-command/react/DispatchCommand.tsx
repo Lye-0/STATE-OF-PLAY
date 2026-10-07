@@ -3,7 +3,7 @@ import React from 'react';
 import {CommandView,type CommandProps} from '../../../../shared/workbench/command-view';
 import '../styles.css';
 export type { CommandProps as DispatchCommandProps };
-/** 発送伝票の区画を持つコマンド窓。 */
+/** 指令の欄外番号と作業項目を分離。 */
 export default function DispatchCommand(props:CommandProps) {
  return <CommandView {...props} skin="dispatch-command" />;
 }

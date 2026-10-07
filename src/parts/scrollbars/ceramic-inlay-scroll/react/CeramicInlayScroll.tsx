@@ -3,7 +3,7 @@ import React from 'react';
 import { useScrollArea, type ScrollAreaProps } from '../../../../shared/use-scroll-area';
 import '../styles.css';
 export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
-/** 細い陶器の溝の中を、端だけ艶のあるつまみが進む。 Native scroll content with a skinned, proportional rail. */
+/** 陶器の目地に沿って小さな反射が進行量を追う。 Native scroll content with a skinned, proportional rail. */
 export default function CeramicInlayScroll(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);

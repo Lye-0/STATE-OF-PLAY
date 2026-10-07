@@ -1,9 +1,9 @@
 # Plain Document Context
 
-書類の基本的な操作メニュー。
+削除操作と起動面の文字を明るい背景に適合。
 
 
-書類の基本的な操作メニュー。
+削除操作と起動面の文字を明るい背景に適合。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`PlainDocumentContext`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

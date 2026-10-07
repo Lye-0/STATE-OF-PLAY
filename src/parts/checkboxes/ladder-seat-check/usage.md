@@ -1,8 +1,8 @@
 # Ladder Seat Check
 
-両側の梯子に選択面を掛ける。
+梯子の桟が選択済みの面を支える。
 
-両側の梯子に選択面を掛ける。
+梯子の桟が選択済みの面を支える。
 
 本物のinput[type=checkbox]です。label全体をクリックでき、Space・Tab・FormData・required・fieldsetのdisabledはネイティブのままです。複数の独立したチェックで複数選択を作れます。独自のキーイベントでSpaceを二重処理しません。
 

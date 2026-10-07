@@ -1,8 +1,8 @@
 # Folded Ticket Check
 
-切符の片隅を折り返す。
+切符の折返しが角に収まる。
 
-切符の片隅を折り返す。
+切符の折返しが角に収まる。
 
 本物のinput[type=checkbox]です。label全体をクリックでき、Space・Tab・FormData・required・fieldsetのdisabledはネイティブのままです。複数の独立したチェックで複数選択を作れます。独自のキーイベントでSpaceを二重処理しません。
 

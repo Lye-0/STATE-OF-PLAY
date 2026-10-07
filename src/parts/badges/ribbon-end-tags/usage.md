@@ -1,9 +1,9 @@
 # Ribbon End Tags
 
-切り返したテープのタグ。
+帯の終端を選択面から伸ばす。
 
 
-切り返したテープのタグ。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
+帯の終端を選択面から伸ばす。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
 
 ## 組み込み
 

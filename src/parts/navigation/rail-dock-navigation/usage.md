@@ -1,9 +1,9 @@
 # Rail Dock Navigation
 
-レールに載せた行き先のキー。
+ドックの二つの乗場で移動先を選ぶ。
 
 
-レールに載せた行き先のキー。
+ドックの二つの乗場で移動先を選ぶ。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`RailDockNavigation`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

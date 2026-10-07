@@ -1,9 +1,9 @@
 # Recessed Date Calendar
 
-彫り込んだ日付面の浅い縁。
+奥まった月面に日付を刻む。
 
 
-彫り込んだ日付面の浅い縁。日付をUTCへ変換しません。isDateDisabledで休日等を指定できます。
+奥まった月面に日付を刻む。日付をUTCへ変換しません。isDateDisabledで休日等を指定できます。
 
 ## 組み込み
 

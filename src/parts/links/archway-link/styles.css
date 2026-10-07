@@ -1,8 +1,18 @@
 @import "../../../shared/navigation-link-base.css";
-/* Archway Link — アーチの入口に収めた行き先。 */
+/* Archway Link — アーチの入口から奥へ進む方向を足元に示す。 */
 .sop-link.sop-archway-link {position:relative;isolation:isolate;min-height:40px;text-decoration:none;transform:none;color:var(--link-ink,#e9edf2)}.sop-link.sop-archway-link .sop-link-copy,.sop-link.sop-archway-link .sop-link-icon{position:relative;z-index:1}.sop-link.sop-archway-link .sop-link-art{display:none}.sop-link.sop-archway-link:hover,.sop-link.sop-archway-link:active{transform:none}.sop-link.sop-archway-link {padding:30px 22px 18px;border-radius:80px 80px 8px 8px;background:#e1ddd6;color:#383c43;border:1px solid #a8a49e}.sop-link.sop-archway-link .sop-link-icon{background:#424954;color:#fff;border-radius:50%;padding:7px;width:34px;height:34px}.sop-link.sop-archway-link .sop-link-label{line-height:1.5}.sop-link.sop-archway-link .sop-link-icon{flex:none;transition:transform .35s}.sop-link.sop-archway-link:hover .sop-link-icon{translate:2px -2px}
 .sop-link.sop-archway-link{max-width:100%}.sop-link.sop-archway-link,.sop-link.sop-archway-link *{box-sizing:border-box}.sop-link.sop-archway-link :is(button,input,textarea,a){min-width:0}
 .sop-link.sop-archway-link:focus-visible,.sop-link.sop-archway-link :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-link.sop-archway-link,.sop-link.sop-archway-link *,.sop-link.sop-archway-link::before,.sop-link.sop-archway-link::after,.sop-link.sop-archway-link *::before,.sop-link.sop-archway-link *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-link.sop-archway-link[data-sop-paused] *,.sop-link.sop-archway-link[data-paused=true] *,.sop-link.sop-archway-link[data-motion-running=false] *,.sop-link.sop-archway-link[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-link.sop-archway-link{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-link.sop-archway-link :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+/* Composition revision. アーチの入口から奥へ進む方向を足元に示す */
+/* The new material owns the complete pseudo-element geometry. */
+.sop-link.sop-archway-link::before,.sop-link.sop-archway-link::after{width:auto;height:auto;inset:auto;border:0;border-radius:0;background:none;box-shadow:none;opacity:1;z-index:0;transform:none;clip-path:none}
+
+.sop-link.sop-archway-link{min-width:210px;display:flex;justify-content:space-between;gap:20px;min-height:76px}.sop-link.sop-archway-link .sop-link-copy{max-width:calc(100% - 52px)}.sop-link.sop-archway-link .sop-link-icon{transform:none!important;width:30px;height:30px}.sop-link.sop-archway-link .sop-link-icon svg{transition:translate .45s}.sop-link.sop-archway-link:is(:hover,:focus-visible) .sop-link-icon svg{translate:4px 0}.sop-link.sop-archway-link{padding:34px 24px 20px;border-radius:70px 70px 2px 2px;background:#edf2e8;color:#394936;border:0}.sop-link.sop-archway-link::before{inset:9px;border:1px solid #91a18b;border-radius:60px 60px 0 0;background:none;transform:scale(.9);transform-origin:left;transition:transform .6s cubic-bezier(.2,.8,.2,1)}.sop-link.sop-archway-link:is(:hover,:focus-visible)::before{transform:scale(1)}.sop-link.sop-archway-link::after{display:none}
+@media(prefers-reduced-motion:reduce){.sop-link.sop-archway-link,.sop-link.sop-archway-link *,.sop-link.sop-archway-link::before,.sop-link.sop-archway-link::after,.sop-link.sop-archway-link *::before,.sop-link.sop-archway-link *::after{animation:none!important;transition:none!important}}
+
+/* Final visual review: layout and material separation. */
+.sop-link.sop-archway-link::before,.sop-link.sop-archway-link::after{content:"";position:absolute;pointer-events:none}

@@ -1,4 +1,4 @@
-import {mountNumber} from '../../../../shared/foundation/number';
+import {mountSculptedNumber as mountNumber} from '../../../../shared/foundation/sculpted-number';
 import type {FoundationConfig, FoundationOptions} from '../../../../shared/foundation/core';
 const config: FoundationConfig = {
   "id": "rail-stop-number",

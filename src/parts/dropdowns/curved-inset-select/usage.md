@@ -1,9 +1,9 @@
 # Curved Inset Select
 
-外枠と浅い内側のカーブで、陶器の器を選ぶような感触をつくる。
+弧の背骨に候補を沿わせる、内側に文字を置いた窓。
 
 
-外枠と浅い内側のカーブで、陶器の器を選ぶような感触をつくる。
+弧の背骨に候補を沿わせる、内側に文字を置いた窓。
 
 ## 選択肢の差し替え
 Reactではitems配列へvalue/label/description/icon/badgeを渡します。Vanillaではmarkup.html内のdata-valueと表示内容を編集し、init(root)します。動的にDOMの選択肢を変更した後はcontroller.refresh()を呼びます。

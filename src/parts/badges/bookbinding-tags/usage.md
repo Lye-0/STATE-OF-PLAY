@@ -1,9 +1,9 @@
 # Bookbinding Tags
 
-綴じ目のある小さな分類札。
+綴じ糸が選択した札を束ねる。
 
 
-綴じ目のある小さな分類札。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
+綴じ糸が選択した札を束ねる。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
 
 ## 組み込み
 

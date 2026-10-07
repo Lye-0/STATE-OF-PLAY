@@ -1,8 +1,8 @@
 # Gimbal Check
 
-円環の中の角形チェック。
+四角いジンバルがチェックの周りで整列。
 
-円環の中の角形チェック。
+四角いジンバルがチェックの周りで整列。
 
 本物のinput[type=checkbox]です。label全体をクリックでき、Space・Tab・FormData・required・fieldsetのdisabledはネイティブのままです。複数の独立したチェックで複数選択を作れます。独自のキーイベントでSpaceを二重処理しません。
 

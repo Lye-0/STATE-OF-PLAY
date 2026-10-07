@@ -1,9 +1,9 @@
 # Metal Slot Accordion
 
-見出しの薄い差し込み口から、淡い本文シートを引き出す構成。
+金属のスロットから内容用の床が引き出される。
 
 
-見出しの薄い差し込み口から、淡い本文シートを引き出す構成。
+金属のスロットから内容用の床が引き出される。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

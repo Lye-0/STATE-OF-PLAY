@@ -3,7 +3,7 @@ import React from 'react';
 import {SelectView,type SelectProps} from '../../../../shared/select-view';
 import '../styles.css';
 export type {SelectProps,SelectItem} from '../../../../shared/select-view';
-/** 切符の控えと本文を分けるように、番号の小室と候補を区切る。 */
+/** 切符の半券と本文を分けた、一列の選択票。 */
 export default function SplitTicketSelect({className='',...props}:SelectProps){
  return <SelectView {...props} className={`sop-split-ticket-select ${className}`}/>;
 }

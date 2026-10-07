@@ -1,8 +1,14 @@
 @import "../../../shared/select-base.css";
-/* Warm Form Select — 温かい白と穏やかな枠で、説明文のあるフォームへ馴染ませる。 */
+/* Warm Form Select — 説明と補助ラベルのコントラストを確保。 */
 .sop-select.sop-warm-form-select{--sel-bg:#e8edf2;--sel-panel:#f2f5f8;--sel-ink:#293e54;--sel-muted:#65788c;--sel-accent:#486d96;--sel-line:#a6b6c7;--sel-radius:6px;--sel-shadow:0 5px 12px #0003;--sel-hover:#dce6ef;max-width:390px}.sop-select.sop-warm-form-select .sop-select-trigger{min-height:58px;padding:13px 17px}.sop-select.sop-warm-form-select .sop-select-icon{width:28px;height:28px;border-radius:5px;font-size:10px}.sop-select.sop-warm-form-select .sop-select-option{min-height:50px;border-radius:3px}.sop-select.sop-warm-form-select .sop-select-option[aria-selected=true]{background:color-mix(in srgb,var(--sel-accent) 13%,var(--sel-panel))}.sop-select.sop-warm-form-select .sop-select-popup{border-color:var(--sel-line);scrollbar-width:thin} .sop-select.sop-warm-form-select{--sel-bg:#f0ece5;--sel-panel:#f5f1ea;--sel-ink:#4e4338;--sel-muted:#83786b;--sel-accent:#816d51;--sel-line:#c0b3a1;--sel-shadow:0 2px 4px #44311e11;--sel-radius:10px}.sop-select.sop-warm-form-select .sop-select-icon{background:#d9cdbb44;border:0;border-radius:50%}
 .sop-select.sop-warm-form-select{max-width:100%}.sop-select.sop-warm-form-select,.sop-select.sop-warm-form-select *{box-sizing:border-box}.sop-select.sop-warm-form-select :is(button,input,textarea,a){min-width:0}
 .sop-select.sop-warm-form-select:focus-visible,.sop-select.sop-warm-form-select :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-select.sop-warm-form-select,.sop-select.sop-warm-form-select *,.sop-select.sop-warm-form-select::before,.sop-select.sop-warm-form-select::after,.sop-select.sop-warm-form-select *::before,.sop-select.sop-warm-form-select *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-select.sop-warm-form-select[data-sop-paused] *,.sop-select.sop-warm-form-select[data-paused=true] *,.sop-select.sop-warm-form-select[data-motion-running=false] *,.sop-select.sop-warm-form-select[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-select.sop-warm-form-select{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-select.sop-warm-form-select :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+/* Review: 説明と補助ラベルのコントラストを確保 */
+.sop-select.sop-warm-form-select{--sel-muted:#4e5057}.sop-select.sop-warm-form-select .sop-select-option-copy small,.sop-select.sop-warm-form-select .sop-select-menu-heading small,.sop-select.sop-warm-form-select .sop-select-menu-footer{color:var(--sel-muted)}
+
+/* Final foreground/backplane pairing. */
+.sop-select.sop-warm-form-select{--sel-muted:color-mix(in srgb,var(--sel-ink) 84%,var(--sel-bg))}.sop-select.sop-warm-form-select .sop-select-caption{background:var(--sel-bg);color:var(--sel-ink);padding:7px 10px;border-radius:2px;line-height:1.6}

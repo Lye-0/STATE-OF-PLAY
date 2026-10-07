@@ -1,9 +1,9 @@
 # Index Pocket Context
 
-対象名と操作を二つの区画に分ける。
+索引ポケットから取り出す操作札。
 
 
-対象名と操作を二つの区画に分ける。
+索引ポケットから取り出す操作札。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`IndexPocketContext`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

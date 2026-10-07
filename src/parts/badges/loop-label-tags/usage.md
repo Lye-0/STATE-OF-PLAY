@@ -1,9 +1,9 @@
 # Loop Label Tags
 
-丸い肩のラベルに分類を書く。
+輪を通したラベルを選択で張る。
 
 
-丸い肩のラベルに分類を書く。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
+輪を通したラベルを選択で張る。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
 
 ## 組み込み
 

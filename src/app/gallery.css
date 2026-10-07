@@ -552,3 +552,6 @@
 
 /* These framed surfaces grow with wrapped content on narrow gallery cards. */
 .block-card:is([data-part="plotted-surface"],[data-part="inlaid-surface"]) .object-stage{height:auto;min-height:298px}
+
+/* Expanded material compositions retain their full frame at narrow widths. */
+.block-card:has(:is(.sop-bookcloth-case,.sop-suspension-sheet,.sop-coved-ceramic-panel,.sop-vellum-accordion-case,.sop-basalt-cutout,.sop-archival-channel,.sop-seamless-saddle,.sop-print-registration-board,.sop-canal-bridge-panel,.sop-offset-diecut,.sop-woven-mat-panel,.sop-pivot-corner-case,.sop-contoured-cork-panel,.sop-terminal-foil,.sop-terraced-paper-panel)) .object-stage,.block-preview:has(:is(.sop-bookcloth-case,.sop-suspension-sheet,.sop-coved-ceramic-panel,.sop-vellum-accordion-case,.sop-basalt-cutout,.sop-archival-channel,.sop-seamless-saddle,.sop-print-registration-board,.sop-canal-bridge-panel,.sop-offset-diecut,.sop-woven-mat-panel,.sop-pivot-corner-case,.sop-contoured-cork-panel,.sop-terminal-foil,.sop-terraced-paper-panel)) .preview-stage{height:auto;min-height:300px;padding-block:30px}

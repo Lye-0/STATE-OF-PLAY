@@ -3,7 +3,7 @@ import React from 'react';
 import {SelectView,type SelectProps} from '../../../../shared/select-view';
 import '../styles.css';
 export type {SelectProps,SelectItem} from '../../../../shared/select-view';
-/** 温かい白と穏やかな枠で、説明文のあるフォームへ馴染ませる。 */
+/** 説明と補助ラベルのコントラストを確保。 */
 export default function WarmFormSelect({className='',...props}:SelectProps){
  return <SelectView {...props} className={`sop-warm-form-select ${className}`}/>;
 }

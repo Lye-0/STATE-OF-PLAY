@@ -1,9 +1,9 @@
 # Caption Rail Navigation
 
-短い見出しと細い現在地線。
+字幕の見出しから行先を水平罫へつなぐ。
 
 
-短い見出しと細い現在地線。
+字幕の見出しから行先を水平罫へつなぐ。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`CaptionRailNavigation`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

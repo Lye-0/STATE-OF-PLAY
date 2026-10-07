@@ -1,8 +1,8 @@
 # Switchyard Check
 
-レールの先に置く選択灯。
+分岐点の二本のレールがつながる。
 
-レールの先に置く選択灯。
+分岐点の二本のレールがつながる。
 
 本物のinput[type=checkbox]です。label全体をクリックでき、Space・Tab・FormData・required・fieldsetのdisabledはネイティブのままです。複数の独立したチェックで複数選択を作れます。独自のキーイベントでSpaceを二重処理しません。
 

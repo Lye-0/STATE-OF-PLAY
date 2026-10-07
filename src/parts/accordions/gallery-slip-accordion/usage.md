@@ -1,9 +1,9 @@
 # Gallery Slip Accordion
 
-短い見出し札と広い本文の余白を分け、作品札のように開く。
+展示札と解説面の間に大きな呼吸を置く。
 
 
-短い見出し札と広い本文の余白を分け、作品札のように開く。
+展示札と解説面の間に大きな呼吸を置く。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

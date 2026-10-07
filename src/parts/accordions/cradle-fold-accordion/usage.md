@@ -1,9 +1,9 @@
 # Cradle Fold Accordion
 
-丸みのある受け皿の中に、直線的な本文面を置く。
+揺りかごの底に独立した本文面を収める。
 
 
-丸みのある受け皿の中に、直線的な本文面を置く。
+揺りかごの底に独立した本文面を収める。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

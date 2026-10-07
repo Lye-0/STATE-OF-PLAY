@@ -1,9 +1,9 @@
 # Embossed Label Tags
 
-エンボスの浅い輪郭を持つ。
+浮彫りの札が選択時に沈む。
 
 
-エンボスの浅い輪郭を持つ。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
+浮彫りの札が選択時に沈む。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
 
 ## 組み込み
 

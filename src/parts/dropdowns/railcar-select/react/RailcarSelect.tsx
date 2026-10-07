@@ -3,7 +3,7 @@ import React from 'react';
 import {SelectView,type SelectProps} from '../../../../shared/select-view';
 import '../styles.css';
 export type {SelectProps,SelectItem} from '../../../../shared/select-view';
-/** 小さな車窓のような値表示と、連結した角形の候補一覧。 */
+/** 客車の窓を縦に接続し、選んだ駅に梁が合う。 */
 export default function RailcarSelect({className='',...props}:SelectProps){
  return <SelectView {...props} className={`sop-railcar-select ${className}`}/>;
 }

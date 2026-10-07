@@ -1,9 +1,9 @@
 # Stone Chip Tags
 
-石の薄片を思わせる分類。
+石の一片を選択面として沈める。
 
 
-石の薄片を思わせる分類。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
+石の一片を選択面として沈める。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
 
 ## 組み込み
 

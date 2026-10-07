@@ -1,9 +1,9 @@
 # Split Ticket Select
 
-切符の控えと本文を分けるように、番号の小室と候補を区切る。
+切符の半券と本文を分けた、一列の選択票。
 
 
-切符の控えと本文を分けるように、番号の小室と候補を区切る。
+切符の半券と本文を分けた、一列の選択票。
 
 ## 選択肢の差し替え
 Reactではitems配列へvalue/label/description/icon/badgeを渡します。Vanillaではmarkup.html内のdata-valueと表示内容を編集し、init(root)します。動的にDOMの選択肢を変更した後はcontroller.refresh()を呼びます。

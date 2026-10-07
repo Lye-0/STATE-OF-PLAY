@@ -1,9 +1,9 @@
 # Inspection Grid Table
 
-計測結果を方眼の区画に並べる。
+検査票の列罫と進行計を明瞭にする。
 
 
-計測結果を方眼の区画に並べる。
+検査票の列罫と進行計を明瞭にする。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`InspectionGridTable`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

@@ -3,7 +3,7 @@ import React from 'react';
 import {WizardView,type WizardProps} from '../../../../shared/signature/wizard-view';
 import '../styles.css';
 export type { WizardProps as LedgerProcedureWizardProps };
-/** 台帳の項目を一つずつ埋める。 */
+/** 台帳の手続きと記入欄を別の段へ。 */
 export default function LedgerProcedureWizard(props: WizardProps) {
   return <WizardView {...props} skin="ledger-procedure-wizard" />;
 }

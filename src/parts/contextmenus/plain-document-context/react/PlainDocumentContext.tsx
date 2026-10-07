@@ -3,7 +3,7 @@ import React from 'react';
 import {ContextView,type ContextProps} from '../../../../shared/workbench/context-view';
 import '../styles.css';
 export type { ContextProps as PlainDocumentContextProps };
-/** 書類の基本的な操作メニュー。 */
+/** 削除操作と起動面の文字を明るい背景に適合。 */
 export default function PlainDocumentContext(props:ContextProps) {
  return <ContextView {...props} skin="plain-document-context" />;
 }

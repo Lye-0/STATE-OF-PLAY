@@ -1,9 +1,9 @@
 # Vellum Ruler Accordion
 
-印刷した短い目盛りと半透明の縁で、開いた高さを感じさせる。
+透明な定規を欄外に残し、読む面を無地にする。
 
 
-印刷した短い目盛りと半透明の縁で、開いた高さを感じさせる。
+透明な定規を欄外に残し、読む面を無地にする。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

@@ -3,7 +3,7 @@ import React from 'react';
 import {TableView,type TableProps} from '../../../../shared/workbench/table-view';
 import '../styles.css';
 export type { TableProps as RibbonRegisterTableProps };
-/** 上部の帯に表の操作を集める。 */
+/** 帯の表題と選択した記録行を接続。 */
 export default function RibbonRegisterTable(props:TableProps) {
  return <TableView {...props} skin="ribbon-register-table" />;
 }

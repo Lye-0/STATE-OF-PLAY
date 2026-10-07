@@ -1,9 +1,9 @@
 # Clear Grid Table
 
-列と行の境界が明快な表。
+Reviewラベルを明暗で判別できる配色に変更。
 
 
-列と行の境界が明快な表。
+Reviewラベルを明暗で判別できる配色に変更。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`ClearGridTable`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

@@ -1,8 +1,23 @@
 .sop-surface.sop-offset-diecut{position:relative;isolation:isolate;box-sizing:border-box;min-width:0;width:100%}.sop-surface.sop-offset-diecut .sop-surface-content{position:relative;z-index:1;padding:var(--sop-padding,28px);min-width:0}
-/* Offset Diecut — ずれた二枚の抜き型が、角の隙間から異なる紙の厚みを見せる。 */
+/* Offset Diecut — 抜き型の紙と位置のずれた下紙を動かし、角から違う面を露出する。 */
 .sop-surface.sop-offset-diecut{color:#263744;--sop-padding:28px;transition:box-shadow .4s,border-color .4s}.sop-surface.sop-offset-diecut::before,.sop-surface.sop-offset-diecut::after{content:"";position:absolute;pointer-events:none;transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .4s,background .4s}.sop-surface.sop-offset-diecut .sop-surface-content h3{color:inherit;font:500 25px/1.2 Georgia,serif;margin:0 0 12px}.sop-surface.sop-offset-diecut .sop-surface-content p{color:inherit;opacity:.8;font:13px/1.7 system-ui;margin:0} .sop-surface.sop-offset-diecut{background:#ecd6c2;border:1px solid #c0987a;border-radius:20px 2px 20px 2px;--sop-padding:29px;color:#4b3b30;box-shadow:9px 9px 0 -2px #47556b,10px 10px 0 -2px #9aa7b6}.sop-surface.sop-offset-diecut::before{inset:7px;border:1px solid #be967566;border-radius:14px 0 14px 0}.sop-surface.sop-offset-diecut:hover{box-shadow:6px 6px 0 -2px #47556b,7px 7px 0 -2px #9aa7b6}
 .sop-surface.sop-offset-diecut{max-width:100%}.sop-surface.sop-offset-diecut,.sop-surface.sop-offset-diecut *{box-sizing:border-box}.sop-surface.sop-offset-diecut :is(button,input,textarea,a){min-width:0}
 .sop-surface.sop-offset-diecut:focus-visible,.sop-surface.sop-offset-diecut :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-surface.sop-offset-diecut,.sop-surface.sop-offset-diecut *,.sop-surface.sop-offset-diecut::before,.sop-surface.sop-offset-diecut::after,.sop-surface.sop-offset-diecut *::before,.sop-surface.sop-offset-diecut *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-surface.sop-offset-diecut[data-sop-paused] *,.sop-surface.sop-offset-diecut[data-paused=true] *,.sop-surface.sop-offset-diecut[data-motion-running=false] *,.sop-surface.sop-offset-diecut[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-surface.sop-offset-diecut{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-surface.sop-offset-diecut :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+/* Review: 大見出しの明暗を素材面に合わせる */
+.sop-surface.sop-offset-diecut .sop-surface-content h3,.sop-surface.sop-offset-diecut .sop-surface-content h3 :is(span,em){color:inherit!important} .sop-surface.sop-offset-diecut .sop-surface-content{color:inherit}
+
+/* Composition revision. 抜き型の紙と位置のずれた下紙を動かし、角から違う面を露出する */
+/* The new material owns the complete pseudo-element geometry. */
+.sop-surface.sop-offset-diecut::before,.sop-surface.sop-offset-diecut::after{width:auto;height:auto;inset:auto;border:0;border-radius:0;background:none;box-shadow:none;opacity:1;z-index:0;transform:none;clip-path:none}
+
+.sop-surface.sop-offset-diecut .sop-surface-content h3{font-size:clamp(22px,6vw,32px);line-height:1.25;max-width:12ch}.sop-surface.sop-offset-diecut .sop-surface-content h3 :is(span,em){color:inherit!important}.sop-surface.sop-offset-diecut .sop-surface-content p{font-size:12px;line-height:1.8}.sop-surface.sop-offset-diecut:focus-within::before{opacity:1}.sop-surface.sop-offset-diecut{background:transparent;border:0;box-shadow:none;--sop-padding:42px 34px;color:#3a3544}.sop-surface.sop-offset-diecut::before{inset:0;background:#9984a4;clip-path:polygon(0 0,86% 0,100% 23%,100% 100%,14% 100%,0 77%);transform:rotate(-4deg)}.sop-surface.sop-offset-diecut::after{inset:5px;background:#f8f2ee;clip-path:polygon(0 0,85% 0,100% 22%,100% 100%,15% 100%,0 78%)}.sop-surface.sop-offset-diecut:hover::before{transform:rotate(3deg)}
+@media(prefers-reduced-motion:reduce){.sop-surface.sop-offset-diecut,.sop-surface.sop-offset-diecut *,.sop-surface.sop-offset-diecut::before,.sop-surface.sop-offset-diecut::after,.sop-surface.sop-offset-diecut *::before,.sop-surface.sop-offset-diecut *::after{animation:none!important;transition:none!important}}
+
+.sop-surface.sop-offset-diecut{padding:0}.sop-surface.sop-offset-diecut>.sop-surface-content{background:transparent;padding:var(--sop-padding);border:0;border-radius:0;margin:0;color:inherit}
+
+/* Final visual review: layout and material separation. */
+.sop-surface.sop-offset-diecut>.sop-surface-content{padding:var(--sop-padding,28px)!important}

@@ -1,9 +1,9 @@
 # Ribbon Register Table
 
-上部の帯に表の操作を集める。
+帯の表題と選択した記録行を接続。
 
 
-上部の帯に表の操作を集める。
+帯の表題と選択した記録行を接続。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`RibbonRegisterTable`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

@@ -1,8 +1,8 @@
 # Quarter Cut Check
 
-四隅を異なる大きさで切り欠いた枠。
+切削した四分の一の面が角へ収納される。
 
-四隅を異なる大きさで切り欠いた枠。
+切削した四分の一の面が角へ収納される。
 
 本物のinput[type=checkbox]です。label全体をクリックでき、Space・Tab・FormData・required・fieldsetのdisabledはネイティブのままです。複数の独立したチェックで複数選択を作れます。独自のキーイベントでSpaceを二重処理しません。
 

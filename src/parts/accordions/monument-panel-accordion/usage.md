@@ -1,9 +1,9 @@
 # Monument Panel Accordion
 
-重い見出しの横に細い開口を設け、本文を静かな平面へ展開する。
+碑の番号台と本文を分ける。
 
 
-重い見出しの横に細い開口を設け、本文を静かな平面へ展開する。
+碑の番号台と本文を分ける。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

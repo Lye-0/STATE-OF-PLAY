@@ -1,8 +1,11 @@
 @import "../../../shared/workbench/base.css";
-/* Plain Records Table — 業務データを読みやすく並べる。 */
+/* Plain Records Table — Reviewラベルを明暗で判別できる配色に変更。 */
 .sop-wb.sop-plain-records-table {--wb-bg:#f7f2e8;--wb-surface:#e9e4d9;--wb-ink:#353d45;--wb-muted:#46515d;--wb-accent:#3d5b7c;--wb-line:#bbb5a9;--wb-radius:6px;color-scheme:light}.sop-wb.sop-plain-records-table .wb-art{pointer-events:none}.sop-wb.sop-plain-records-table :is(.wb-search-results,.wb-command-dialog,.wb-context-panel,.wb-nav-flyout,.wb-nav-dialog){color:var(--wb-ink);background:var(--wb-bg)}.sop-wb.sop-plain-records-table .wb-data-frame{border-radius:6px}.sop-wb.sop-plain-records-table th{background:#e7e5de}.sop-wb.sop-plain-records-table .wb-cell-badge{border-radius:4px}.sop-wb.sop-plain-records-table .wb-data-toolbar{border-bottom:1px solid #c8c7bc}
 .sop-wb.sop-plain-records-table{max-width:100%}.sop-wb.sop-plain-records-table,.sop-wb.sop-plain-records-table *{box-sizing:border-box}.sop-wb.sop-plain-records-table :is(button,input,textarea,a){min-width:0}
 .sop-wb.sop-plain-records-table:focus-visible,.sop-wb.sop-plain-records-table :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-wb.sop-plain-records-table,.sop-wb.sop-plain-records-table *,.sop-wb.sop-plain-records-table::before,.sop-wb.sop-plain-records-table::after,.sop-wb.sop-plain-records-table *::before,.sop-wb.sop-plain-records-table *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-wb.sop-plain-records-table[data-sop-paused] *,.sop-wb.sop-plain-records-table[data-paused=true] *,.sop-wb.sop-plain-records-table[data-motion-running=false] *,.sop-wb.sop-plain-records-table[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-wb.sop-plain-records-table{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-plain-records-table :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+/* Review: Reviewラベルを明暗で判別できる配色に変更 */
+.sop-wb.sop-plain-records-table .wb-cell-badge[data-value=review]{color:#76511c;background:#f8edce}

@@ -1,9 +1,9 @@
 # Ceramic Register Table
 
-丸い器と直線のセルを分ける。
+磁器の表題面から平らな数表へ移る。
 
 
-丸い器と直線のセルを分ける。
+磁器の表題面から平らな数表へ移る。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`CeramicRegisterTable`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

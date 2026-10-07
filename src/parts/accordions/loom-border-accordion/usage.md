@@ -1,9 +1,9 @@
 # Loom Border Accordion
 
-縦の細い糸を切らず、見出しと本文の面だけを増やす。
+織り目の背骨と本文を二つの領域に分ける。
 
 
-縦の細い糸を切らず、見出しと本文の面だけを増やす。
+織り目の背骨と本文を二つの領域に分ける。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

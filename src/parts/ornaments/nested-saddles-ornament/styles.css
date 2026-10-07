@@ -1,8 +1,17 @@
 
-/* Nested Saddles Ornament — 鞍形の曲線が呼吸するように開く。 */
+/* Nested Saddles Ornament — 入れ子の鞍が異なる深さへ広がる。画面外・非表示・一時停止・reduced motionでは動きを止める。 */
 .sop-ornament.sop-nested-saddles-ornament {position:relative;width:100%;min-width:0;color:#d8e1ed}.sop-ornament.sop-nested-saddles-ornament .or-stage,.sop-ornament.sop-nested-saddles-ornament .ct-loader-stage{display:grid;place-items:center;min-height:180px;overflow:hidden}.sop-ornament.sop-nested-saddles-ornament .x-composition{position:relative;width:150px;height:140px}.sop-ornament.sop-nested-saddles-ornament .x-composition i{position:absolute;display:block;box-sizing:border-box;inset:calc(4px + var(--i)*7px);border:1px solid #d6d0c1;border-radius:50% 5% 50% 5%;animation:sop-x-nested-saddles-ornament 5s ease-in-out infinite alternate;animation-delay:calc(var(--i)*-.23s)}@keyframes sop-x-nested-saddles-ornament{0%{transform:rotate(-10deg) scale(.94)}100%{transform:rotate(10deg) scale(1)}}
 .sop-ornament.sop-nested-saddles-ornament{max-width:100%}.sop-ornament.sop-nested-saddles-ornament,.sop-ornament.sop-nested-saddles-ornament *{box-sizing:border-box}.sop-ornament.sop-nested-saddles-ornament :is(button,input,textarea,a){min-width:0}
 .sop-ornament.sop-nested-saddles-ornament:focus-visible,.sop-ornament.sop-nested-saddles-ornament :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-ornament.sop-nested-saddles-ornament,.sop-ornament.sop-nested-saddles-ornament *,.sop-ornament.sop-nested-saddles-ornament::before,.sop-ornament.sop-nested-saddles-ornament::after,.sop-ornament.sop-nested-saddles-ornament *::before,.sop-ornament.sop-nested-saddles-ornament *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-ornament.sop-nested-saddles-ornament[data-sop-paused] *,.sop-ornament.sop-nested-saddles-ornament[data-paused=true] *,.sop-ornament.sop-nested-saddles-ornament[data-motion-running=false] *,.sop-ornament.sop-nested-saddles-ornament[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-ornament.sop-nested-saddles-ornament{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-ornament.sop-nested-saddles-ornament :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+/* Motion runs only while visible, unpaused and permitted. */
+.sop-ornament.sop-nested-saddles-ornament:not([data-ambient-running=true]) .x-composition i{animation-play-state:paused!important}
+.sop-ornament.sop-nested-saddles-ornament .or-stage{min-height:240px;perspective:600px}
+.sop-ornament.sop-nested-saddles-ornament .x-composition i{transition:translate .8s cubic-bezier(.18,.75,.24,1),rotate .9s cubic-bezier(.18,.75,.24,1),scale .8s;will-change:auto}
+.sop-ornament.sop-nested-saddles-ornament[data-ambient-running=true]:hover .x-composition i{translate:0 calc((var(--i) - 2.5)*8px);rotate:calc((var(--i) - 2.5)*-5deg)}
+@media(prefers-reduced-motion:reduce){.sop-ornament.sop-nested-saddles-ornament .x-composition i{translate:none;rotate:none;scale:none}}
+
+.sop-ornament.sop-nested-saddles-ornament:not([data-ambient-running=true]) .x-composition i{transition:none!important}

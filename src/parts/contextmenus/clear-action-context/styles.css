@@ -1,8 +1,11 @@
 @import "../../../shared/workbench/base.css";
-/* Clear Action Context — 輪郭が明快な対象とメニュー。 */
+/* Clear Action Context — 削除操作と起動面の文字を明るい背景に適合。 */
 .sop-wb.sop-clear-action-context {--wb-bg:#f4f5ef;--wb-surface:#e1e4df;--wb-ink:#343e3d;--wb-muted:#455b4f;--wb-accent:#496559;--wb-line:#adbab2;--wb-radius:6px;color-scheme:light}.sop-wb.sop-clear-action-context .wb-art{pointer-events:none}.sop-wb.sop-clear-action-context :is(.wb-search-results,.wb-command-dialog,.wb-context-panel,.wb-nav-flyout,.wb-nav-dialog){color:var(--wb-ink);background:var(--wb-bg)}.sop-wb.sop-clear-action-context .wb-context-target{border-radius:3px;border-color:#a6c0af}.sop-wb.sop-clear-action-context .wb-context-panel{border-radius:3px;border-color:#abc6b4}
 .sop-wb.sop-clear-action-context{max-width:100%}.sop-wb.sop-clear-action-context,.sop-wb.sop-clear-action-context *{box-sizing:border-box}.sop-wb.sop-clear-action-context :is(button,input,textarea,a){min-width:0}
 .sop-wb.sop-clear-action-context:focus-visible,.sop-wb.sop-clear-action-context :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-wb.sop-clear-action-context,.sop-wb.sop-clear-action-context *,.sop-wb.sop-clear-action-context::before,.sop-wb.sop-clear-action-context::after,.sop-wb.sop-clear-action-context *::before,.sop-wb.sop-clear-action-context *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-wb.sop-clear-action-context[data-sop-paused] *,.sop-wb.sop-clear-action-context[data-paused=true] *,.sop-wb.sop-clear-action-context[data-motion-running=false] *,.sop-wb.sop-clear-action-context[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-wb.sop-clear-action-context{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-clear-action-context :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+/* Review: 削除操作と起動面の文字を明るい背景に適合 */
+.sop-wb.sop-clear-action-context .wb-context-item[data-danger=true],.sop-wb.sop-clear-action-context [role=menuitem][data-danger=true]{color:#96352f}.sop-wb.sop-clear-action-context .wb-context-target{background:var(--wb-bg);color:var(--wb-ink)}

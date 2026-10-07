@@ -77,9 +77,10 @@
     "test:detail-controls": "node --experimental-strip-types tests/detail-controls.browser.ts",
     "test:expansion-30": "node --experimental-strip-types tests/expansion-30.browser.ts && npm run test:expansion-30:react",
     "test:expansion-30:react": "node --experimental-strip-types tests/expansion-30.react.ts",
-    "test:expansion-50": "node --experimental-strip-types tests/expansion-50.browser.ts && npm run test:expansion-50:react && npm run test:expansion-50:native",
+    "test:expansion-50": "node --experimental-strip-types tests/expansion-50.browser.ts && npm run test:expansion-50:react && npm run test:expansion-50:native && npm run test:expansion-review",
     "test:expansion-50:react": "node --experimental-strip-types tests/expansion-50.react.ts",
-    "test:expansion-50:native": "node --experimental-strip-types tests/expansion-50.native.ts"
+    "test:expansion-50:native": "node --experimental-strip-types tests/expansion-50.native.ts",
+    "test:expansion-review": "node --experimental-strip-types tests/expansion-review.browser.ts"
   },
   "devDependencies": {
     "vite": "8.3.0",

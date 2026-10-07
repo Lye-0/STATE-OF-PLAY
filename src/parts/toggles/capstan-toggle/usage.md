@@ -1,9 +1,9 @@
 # Capstan Toggle
 
-放射状の溝を刻んだ巻胴が回り、ケーブルの印を送る。
+造形を保ち、部品本体に固定位置のON/OFF目盛りを追加。
 
 
-Type B / CSS + Events。放射状の溝を刻んだ巻胴が回り、ケーブルの印を送る。
+Type B / CSS + Events。造形を保ち、部品本体に固定位置のON/OFF目盛りを追加。
 
 基準サイズ: 104×64px。展示ページの倍率ではなく、実際の部品サイズです。フォームに接続する場合はchecked/onCheckedChangeをアプリの状態へ渡します。button型switchはフォーム値を自動送信しないため、必要ならhidden inputへ反映してください。
 

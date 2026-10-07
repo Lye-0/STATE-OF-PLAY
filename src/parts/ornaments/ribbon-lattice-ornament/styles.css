@@ -1,8 +1,17 @@
 
-/* Ribbon Lattice Ornament — 細い帯が格子のように交差する。 */
+/* Ribbon Lattice Ornament — 織り目が交互に緩んで交点を見せる。画面外・非表示・一時停止・reduced motionでは動きを止める。 */
 .sop-ornament.sop-ribbon-lattice-ornament {position:relative;width:100%;min-width:0;color:#d8e1ed}.sop-ornament.sop-ribbon-lattice-ornament .or-stage,.sop-ornament.sop-ribbon-lattice-ornament .ct-loader-stage{display:grid;place-items:center;min-height:180px;overflow:hidden}.sop-ornament.sop-ribbon-lattice-ornament .x-composition{position:relative;width:150px;height:130px}.sop-ornament.sop-ribbon-lattice-ornament .x-composition i{position:absolute;display:block;box-sizing:border-box;width:110px;height:7px;left:20px;top:calc(18px + var(--i)*16px);background:#c5a7be;border-radius:8px;transform-origin:calc(20% + var(--i)*10%) 50%;animation:sop-x-ribbon-lattice-ornament 5s ease-in-out infinite alternate;animation-delay:calc(var(--i)*-.23s)}@keyframes sop-x-ribbon-lattice-ornament{0%{transform:rotate(-18deg)}100%{transform:rotate(18deg)}}
 .sop-ornament.sop-ribbon-lattice-ornament{max-width:100%}.sop-ornament.sop-ribbon-lattice-ornament,.sop-ornament.sop-ribbon-lattice-ornament *{box-sizing:border-box}.sop-ornament.sop-ribbon-lattice-ornament :is(button,input,textarea,a){min-width:0}
 .sop-ornament.sop-ribbon-lattice-ornament:focus-visible,.sop-ornament.sop-ribbon-lattice-ornament :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-ornament.sop-ribbon-lattice-ornament,.sop-ornament.sop-ribbon-lattice-ornament *,.sop-ornament.sop-ribbon-lattice-ornament::before,.sop-ornament.sop-ribbon-lattice-ornament::after,.sop-ornament.sop-ribbon-lattice-ornament *::before,.sop-ornament.sop-ribbon-lattice-ornament *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-ornament.sop-ribbon-lattice-ornament[data-sop-paused] *,.sop-ornament.sop-ribbon-lattice-ornament[data-paused=true] *,.sop-ornament.sop-ribbon-lattice-ornament[data-motion-running=false] *,.sop-ornament.sop-ribbon-lattice-ornament[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-ornament.sop-ribbon-lattice-ornament{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-ornament.sop-ribbon-lattice-ornament :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+/* Motion runs only while visible, unpaused and permitted. */
+.sop-ornament.sop-ribbon-lattice-ornament:not([data-ambient-running=true]) .x-composition i{animation-play-state:paused!important}
+.sop-ornament.sop-ribbon-lattice-ornament .or-stage{min-height:240px;perspective:600px}
+.sop-ornament.sop-ribbon-lattice-ornament .x-composition i{transition:translate .8s cubic-bezier(.18,.75,.24,1),rotate .9s cubic-bezier(.18,.75,.24,1),scale .8s;will-change:auto}
+.sop-ornament.sop-ribbon-lattice-ornament[data-ambient-running=true]:hover .x-composition i{translate:calc((mod(var(--i),2)*2 - 1)*14px) 0;rotate:calc((mod(var(--i),2)*2 - 1)*10deg)}
+@media(prefers-reduced-motion:reduce){.sop-ornament.sop-ribbon-lattice-ornament .x-composition i{translate:none;rotate:none;scale:none}}
+
+.sop-ornament.sop-ribbon-lattice-ornament:not([data-ambient-running=true]) .x-composition i{transition:none!important}

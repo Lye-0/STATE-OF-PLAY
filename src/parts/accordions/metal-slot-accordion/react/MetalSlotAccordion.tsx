@@ -3,7 +3,7 @@ import React from 'react';
 import {AccordionView,type AccordionProps} from '../../../../shared/accordion-view';
 import '../styles.css';
 export type {AccordionProps,AccordionItem} from '../../../../shared/accordion-view';
-/** 見出しの薄い差し込み口から、淡い本文シートを引き出す構成。 */
+/** 金属のスロットから内容用の床が引き出される。 */
 export default function MetalSlotAccordion({className='',...props}:AccordionProps){
  return <AccordionView {...props} className={`sop-metal-slot-accordion ${className}`}/>;
 }

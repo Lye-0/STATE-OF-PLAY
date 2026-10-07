@@ -1,9 +1,9 @@
 # Letterpress Layout Skeleton
 
-印刷の版面のような行を示す。
+活版の表題と水平な文章行を先に組む。
 
 
-印刷の版面のような行を示す。
+活版の表題と水平な文章行を先に組む。
 
 ## 内容と状態の接続
 loadingの切り替えは利用先の実際の通信・処理結果に接続します。placeholderはaria-hidden、rootはaria-busy。画面外・非表示・縮小モーションではアニメーションを止めます。childrenを取り外さず保持します。

@@ -3,5 +3,5 @@ import React from 'react';
 import {SegmentView,type SegmentProps} from '../../../../shared/segment-view';
 import '../styles.css';
 export type {SegmentProps,SegmentItem} from '../../../../shared/segment-view';
-/** 読み物に合わせた穏やかな切り替え。 */
+/** 狭幅でも対等な三択を同じ面積で配置。 */
 export default function ReadingModeSegments({className='',...props}:SegmentProps){return <SegmentView {...props} className={`sop-reading-mode-segments ${className}`}/>;}

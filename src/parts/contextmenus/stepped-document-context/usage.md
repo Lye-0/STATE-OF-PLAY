@@ -1,9 +1,9 @@
 # Stepped Document Context
 
-段を持つ書類置き場から操作。
+段差のある文書に操作用の平面を追加。
 
 
-段を持つ書類置き場から操作。
+段差のある文書に操作用の平面を追加。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`SteppedDocumentContext`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

@@ -1,8 +1,23 @@
 .sop-surface.sop-basalt-cutout{position:relative;isolation:isolate;box-sizing:border-box;min-width:0;width:100%}.sop-surface.sop-basalt-cutout .sop-surface-content{position:relative;z-index:1;padding:var(--sop-padding,28px);min-width:0}
-/* Basalt Cutout — 暗い石の外縁に切り込みを作り、明るい内容面をはめ込む。 */
+/* Basalt Cutout — 石の切断面と抜けた窓の二層を持つ、非対称の展示台。 */
 .sop-surface.sop-basalt-cutout{color:#263744;--sop-padding:28px;transition:box-shadow .4s,border-color .4s}.sop-surface.sop-basalt-cutout::before,.sop-surface.sop-basalt-cutout::after{content:"";position:absolute;pointer-events:none;transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .4s,background .4s}.sop-surface.sop-basalt-cutout .sop-surface-content h3{color:inherit;font:500 25px/1.2 Georgia,serif;margin:0 0 12px}.sop-surface.sop-basalt-cutout .sop-surface-content p{color:inherit;opacity:.8;font:13px/1.7 system-ui;margin:0} .sop-surface.sop-basalt-cutout{background:#252932;border:1px solid #5c626e;clip-path:polygon(0 0,calc(100% - 23px) 0,100% 23px,100% 100%,0 100%);padding:9px;color:#273340}.sop-surface.sop-basalt-cutout .sop-surface-content{background:#e0e0dd;border:1px solid #b7bdc2;padding:28px 25px}.sop-surface.sop-basalt-cutout::after{width:38px;height:2px;right:5px;top:13px;background:#bdc4ce;transform:rotate(45deg)}
 .sop-surface.sop-basalt-cutout{max-width:100%}.sop-surface.sop-basalt-cutout,.sop-surface.sop-basalt-cutout *{box-sizing:border-box}.sop-surface.sop-basalt-cutout :is(button,input,textarea,a){min-width:0}
 .sop-surface.sop-basalt-cutout:focus-visible,.sop-surface.sop-basalt-cutout :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-surface.sop-basalt-cutout,.sop-surface.sop-basalt-cutout *,.sop-surface.sop-basalt-cutout::before,.sop-surface.sop-basalt-cutout::after,.sop-surface.sop-basalt-cutout *::before,.sop-surface.sop-basalt-cutout *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-surface.sop-basalt-cutout[data-sop-paused] *,.sop-surface.sop-basalt-cutout[data-paused=true] *,.sop-surface.sop-basalt-cutout[data-motion-running=false] *,.sop-surface.sop-basalt-cutout[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-surface.sop-basalt-cutout{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-surface.sop-basalt-cutout :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+/* Review: 大見出しの明暗を素材面に合わせる */
+.sop-surface.sop-basalt-cutout .sop-surface-content h3,.sop-surface.sop-basalt-cutout .sop-surface-content h3 :is(span,em){color:inherit!important} .sop-surface.sop-basalt-cutout .sop-surface-content{color:inherit}
+
+/* Composition revision. 石の切断面と抜けた窓の二層を持つ、非対称の展示台 */
+/* The new material owns the complete pseudo-element geometry. */
+.sop-surface.sop-basalt-cutout::before,.sop-surface.sop-basalt-cutout::after{width:auto;height:auto;inset:auto;border:0;border-radius:0;background:none;box-shadow:none;opacity:1;z-index:0;transform:none;clip-path:none}
+
+.sop-surface.sop-basalt-cutout .sop-surface-content h3{font-size:clamp(22px,6vw,32px);line-height:1.25;max-width:12ch}.sop-surface.sop-basalt-cutout .sop-surface-content h3 :is(span,em){color:inherit!important}.sop-surface.sop-basalt-cutout .sop-surface-content p{font-size:12px;line-height:1.8}.sop-surface.sop-basalt-cutout:focus-within::before{opacity:1}.sop-surface.sop-basalt-cutout{background:#343b43;color:#f3f2ea;border:0;border-radius:0;--sop-padding:44px 28px 30px;clip-path:polygon(0 0,68% 0,68% 17%,100% 17%,100% 100%,0 100%)}.sop-surface.sop-basalt-cutout::before{inset:0;background:linear-gradient(125deg,transparent 50%,#ffffff12 50%);transform:translateX(-12%)}.sop-surface.sop-basalt-cutout:hover::before{transform:translateX(12%)}.sop-surface.sop-basalt-cutout::after{inset:auto 20px 12px;height:2px;background:#d6ad7e}
+@media(prefers-reduced-motion:reduce){.sop-surface.sop-basalt-cutout,.sop-surface.sop-basalt-cutout *,.sop-surface.sop-basalt-cutout::before,.sop-surface.sop-basalt-cutout::after,.sop-surface.sop-basalt-cutout *::before,.sop-surface.sop-basalt-cutout *::after{animation:none!important;transition:none!important}}
+
+.sop-surface.sop-basalt-cutout{padding:0}.sop-surface.sop-basalt-cutout>.sop-surface-content{background:transparent;padding:var(--sop-padding);border:0;border-radius:0;margin:0;color:inherit}
+
+/* Final visual review: layout and material separation. */
+.sop-surface.sop-basalt-cutout>.sop-surface-content{padding:var(--sop-padding,28px)!important}

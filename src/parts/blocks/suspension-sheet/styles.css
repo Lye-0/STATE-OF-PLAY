@@ -1,8 +1,23 @@
 .sop-surface.sop-suspension-sheet{position:relative;isolation:isolate;box-sizing:border-box;min-width:0;width:100%}.sop-surface.sop-suspension-sheet .sop-surface-content{position:relative;z-index:1;padding:var(--sop-padding,28px);min-width:0}
-/* Suspension Sheet — 細い吊り線と離れた上端で、紙面が空中に保持される構造をつくる。 */
+/* Suspension Sheet — 四隅の吊り点と下がった面を分け、浮遊する紙の距離を動かす。 */
 .sop-surface.sop-suspension-sheet{color:#263744;--sop-padding:28px;transition:box-shadow .4s,border-color .4s}.sop-surface.sop-suspension-sheet::before,.sop-surface.sop-suspension-sheet::after{content:"";position:absolute;pointer-events:none;transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .4s,background .4s}.sop-surface.sop-suspension-sheet .sop-surface-content h3{color:inherit;font:500 25px/1.2 Georgia,serif;margin:0 0 12px}.sop-surface.sop-suspension-sheet .sop-surface-content p{color:inherit;opacity:.8;font:13px/1.7 system-ui;margin:0} .sop-surface.sop-suspension-sheet{background:#dce4ec;border:1px solid #9aaaba;border-radius:2px;margin-top:16px;--sop-padding:35px 28px;box-shadow:0 17px 24px #0003}.sop-surface.sop-suspension-sheet::before{width:1px;height:26px;left:20px;top:-17px;background:#d2e1ed;box-shadow:calc(100vw * 0) 0 transparent}.sop-surface.sop-suspension-sheet::after{width:1px;height:26px;right:20px;top:-17px;background:#d2e1ed}.sop-surface.sop-suspension-sheet:hover{border-color:#eff6ff;box-shadow:0 20px 28px #0004}
 .sop-surface.sop-suspension-sheet{max-width:100%}.sop-surface.sop-suspension-sheet,.sop-surface.sop-suspension-sheet *{box-sizing:border-box}.sop-surface.sop-suspension-sheet :is(button,input,textarea,a){min-width:0}
 .sop-surface.sop-suspension-sheet:focus-visible,.sop-surface.sop-suspension-sheet :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-surface.sop-suspension-sheet,.sop-surface.sop-suspension-sheet *,.sop-surface.sop-suspension-sheet::before,.sop-surface.sop-suspension-sheet::after,.sop-surface.sop-suspension-sheet *::before,.sop-surface.sop-suspension-sheet *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-surface.sop-suspension-sheet[data-sop-paused] *,.sop-surface.sop-suspension-sheet[data-paused=true] *,.sop-surface.sop-suspension-sheet[data-motion-running=false] *,.sop-surface.sop-suspension-sheet[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-surface.sop-suspension-sheet{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-surface.sop-suspension-sheet :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+/* Review: 大見出しの明暗を素材面に合わせる */
+.sop-surface.sop-suspension-sheet .sop-surface-content h3,.sop-surface.sop-suspension-sheet .sop-surface-content h3 :is(span,em){color:inherit!important} .sop-surface.sop-suspension-sheet .sop-surface-content{color:inherit}
+
+/* Composition revision. 四隅の吊り点と下がった面を分け、浮遊する紙の距離を動かす */
+/* The new material owns the complete pseudo-element geometry. */
+.sop-surface.sop-suspension-sheet::before,.sop-surface.sop-suspension-sheet::after{width:auto;height:auto;inset:auto;border:0;border-radius:0;background:none;box-shadow:none;opacity:1;z-index:0;transform:none;clip-path:none}
+
+.sop-surface.sop-suspension-sheet .sop-surface-content h3{font-size:clamp(22px,6vw,32px);line-height:1.25;max-width:12ch}.sop-surface.sop-suspension-sheet .sop-surface-content h3 :is(span,em){color:inherit!important}.sop-surface.sop-suspension-sheet .sop-surface-content p{font-size:12px;line-height:1.8}.sop-surface.sop-suspension-sheet:focus-within::before{opacity:1}.sop-surface.sop-suspension-sheet{background:transparent;border:0;box-shadow:none;--sop-padding:48px 28px;color:#203b51}.sop-surface.sop-suspension-sheet::before{inset:22px 8px 10px;background:#f2f6f8;box-shadow:0 24px 25px #0003;transform:rotate(-3deg);border:1px solid #b3c6d0}.sop-surface.sop-suspension-sheet::after{inset:0 22px;background:linear-gradient(90deg,#91a6b7 1px,transparent 1px calc(100% - 1px),#91a6b7 calc(100% - 1px));z-index:-1}.sop-surface.sop-suspension-sheet:hover::before{transform:rotate(2deg) translateY(-5px)}
+@media(prefers-reduced-motion:reduce){.sop-surface.sop-suspension-sheet,.sop-surface.sop-suspension-sheet *,.sop-surface.sop-suspension-sheet::before,.sop-surface.sop-suspension-sheet::after,.sop-surface.sop-suspension-sheet *::before,.sop-surface.sop-suspension-sheet *::after{animation:none!important;transition:none!important}}
+
+.sop-surface.sop-suspension-sheet{padding:0}.sop-surface.sop-suspension-sheet>.sop-surface-content{background:transparent;padding:var(--sop-padding);border:0;border-radius:0;margin:0;color:inherit}
+
+/* Final visual review: layout and material separation. */
+.sop-surface.sop-suspension-sheet>.sop-surface-content{padding:var(--sop-padding,28px)!important}

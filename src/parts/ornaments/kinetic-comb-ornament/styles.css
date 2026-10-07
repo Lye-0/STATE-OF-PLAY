@@ -1,8 +1,17 @@
 
-/* Kinetic Comb Ornament — 櫛の歯が波のように角度を変える。 */
+/* Kinetic Comb Ornament — 櫛の歯が接近時に弧状に開く。画面外・非表示・一時停止・reduced motionでは動きを止める。 */
 .sop-ornament.sop-kinetic-comb-ornament {position:relative;width:100%;min-width:0;color:#d8e1ed}.sop-ornament.sop-kinetic-comb-ornament .or-stage,.sop-ornament.sop-kinetic-comb-ornament .ct-loader-stage{display:grid;place-items:center;min-height:180px;overflow:hidden}.sop-ornament.sop-kinetic-comb-ornament .x-composition{position:relative;width:150px;height:110px}.sop-ornament.sop-kinetic-comb-ornament .x-composition i{position:absolute;display:block;box-sizing:border-box;width:8px;height:90px;left:calc(10px + var(--i)*20px);top:10px;background:linear-gradient(#e8e3d5,#859aaf);transform-origin:50% 90%;animation:sop-x-kinetic-comb-ornament 5s ease-in-out infinite alternate;animation-delay:calc(var(--i)*-.23s)}@keyframes sop-x-kinetic-comb-ornament{0%{transform:rotate(-18deg)}100%{transform:rotate(18deg)}}
 .sop-ornament.sop-kinetic-comb-ornament{max-width:100%}.sop-ornament.sop-kinetic-comb-ornament,.sop-ornament.sop-kinetic-comb-ornament *{box-sizing:border-box}.sop-ornament.sop-kinetic-comb-ornament :is(button,input,textarea,a){min-width:0}
 .sop-ornament.sop-kinetic-comb-ornament:focus-visible,.sop-ornament.sop-kinetic-comb-ornament :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-ornament.sop-kinetic-comb-ornament,.sop-ornament.sop-kinetic-comb-ornament *,.sop-ornament.sop-kinetic-comb-ornament::before,.sop-ornament.sop-kinetic-comb-ornament::after,.sop-ornament.sop-kinetic-comb-ornament *::before,.sop-ornament.sop-kinetic-comb-ornament *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-ornament.sop-kinetic-comb-ornament[data-sop-paused] *,.sop-ornament.sop-kinetic-comb-ornament[data-paused=true] *,.sop-ornament.sop-kinetic-comb-ornament[data-motion-running=false] *,.sop-ornament.sop-kinetic-comb-ornament[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-ornament.sop-kinetic-comb-ornament{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-ornament.sop-kinetic-comb-ornament :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+/* Motion runs only while visible, unpaused and permitted. */
+.sop-ornament.sop-kinetic-comb-ornament:not([data-ambient-running=true]) .x-composition i{animation-play-state:paused!important}
+.sop-ornament.sop-kinetic-comb-ornament .or-stage{min-height:240px;perspective:600px}
+.sop-ornament.sop-kinetic-comb-ornament .x-composition i{transition:translate .8s cubic-bezier(.18,.75,.24,1),rotate .9s cubic-bezier(.18,.75,.24,1),scale .8s;will-change:auto}
+.sop-ornament.sop-kinetic-comb-ornament[data-ambient-running=true]:hover .x-composition i{translate:calc((var(--i) - 2.5)*3px) calc((2.5 - var(--i))*3px);rotate:calc((var(--i) - 2.5)*8deg)}
+@media(prefers-reduced-motion:reduce){.sop-ornament.sop-kinetic-comb-ornament .x-composition i{translate:none;rotate:none;scale:none}}
+
+.sop-ornament.sop-kinetic-comb-ornament:not([data-ambient-running=true]) .x-composition i{transition:none!important}

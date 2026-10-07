@@ -1,9 +1,9 @@
 # Railcar Select
 
-小さな車窓のような値表示と、連結した角形の候補一覧。
+客車の窓を縦に接続し、選んだ駅に梁が合う。
 
 
-小さな車窓のような値表示と、連結した角形の候補一覧。
+客車の窓を縦に接続し、選んだ駅に梁が合う。
 
 ## 選択肢の差し替え
 Reactではitems配列へvalue/label/description/icon/badgeを渡します。Vanillaではmarkup.html内のdata-valueと表示内容を編集し、init(root)します。動的にDOMの選択肢を変更した後はcontroller.refresh()を呼びます。

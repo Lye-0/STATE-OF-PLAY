@@ -1,9 +1,9 @@
 # Station Board Navigation
 
-駅の案内板のような区画と現在地。
+駅名を横の停車場として並べる。
 
 
-駅の案内板のような区画と現在地。
+駅名を横の停車場として並べる。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`StationBoardNavigation`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

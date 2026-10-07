@@ -1,9 +1,9 @@
 # Stitched Label Tags
 
-小さな布のラベル。
+縫い目と平面の文字札を分ける。
 
 
-小さな布のラベル。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
+縫い目と平面の文字札を分ける。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
 
 ## 組み込み
 

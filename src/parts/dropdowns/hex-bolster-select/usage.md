@@ -1,9 +1,9 @@
 # Hex Bolster Select
 
-切り落とした端と厚みのある留め具で、精密な道具の選択欄にする。
+六角の支えを候補の左端に連続させた構造。
 
 
-切り落とした端と厚みのある留め具で、精密な道具の選択欄にする。
+六角の支えを候補の左端に連続させた構造。
 
 ## 選択肢の差し替え
 Reactではitems配列へvalue/label/description/icon/badgeを渡します。Vanillaではmarkup.html内のdata-valueと表示内容を編集し、init(root)します。動的にDOMの選択肢を変更した後はcontroller.refresh()を呼びます。

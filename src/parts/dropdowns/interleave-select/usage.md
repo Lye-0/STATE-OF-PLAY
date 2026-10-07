@@ -1,9 +1,9 @@
 # Interleave Select
 
-挟み込んだ薄い見出し帯と、交互にずれた選択行を使う索引。
+見出しから連続する交互の差込面で候補を収納。
 
 
-挟み込んだ薄い見出し帯と、交互にずれた選択行を使う索引。
+見出しから連続する交互の差込面で候補を収納。
 
 ## 選択肢の差し替え
 Reactではitems配列へvalue/label/description/icon/badgeを渡します。Vanillaではmarkup.html内のdata-valueと表示内容を編集し、init(root)します。動的にDOMの選択肢を変更した後はcontroller.refresh()を呼びます。

@@ -1,9 +1,9 @@
 # Linen Tab Accordion
 
-見出しの横から布の小片が出る、柔らかい保存ファイル。
+布のタブを見出しに縫い、本文は広い無地面に置く。
 
 
-見出しの横から布の小片が出る、柔らかい保存ファイル。
+布のタブを見出しに縫い、本文は広い無地面に置く。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

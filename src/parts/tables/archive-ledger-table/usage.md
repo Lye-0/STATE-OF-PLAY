@@ -1,9 +1,9 @@
 # Archive Ledger Table
 
-資料台帳の綴じ目と列罫線。
+資料の背とデータの読取面を分離。
 
 
-資料台帳の綴じ目と列罫線。
+資料の背とデータの読取面を分離。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`ArchiveLedgerTable`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

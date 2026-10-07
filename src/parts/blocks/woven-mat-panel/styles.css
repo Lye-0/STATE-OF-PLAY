@@ -1,8 +1,23 @@
 .sop-surface.sop-woven-mat-panel{position:relative;isolation:isolate;box-sizing:border-box;min-width:0;width:100%}.sop-surface.sop-woven-mat-panel .sop-surface-content{position:relative;z-index:1;padding:var(--sop-padding,28px);min-width:0}
-/* Woven Mat Panel — 細い織りの縁と無地の中心で、素材感を本文から離して見せる。 */
+/* Woven Mat Panel — 編み込んだ二方向の端を引き、文字面を固定したまま交差を緩める。 */
 .sop-surface.sop-woven-mat-panel{color:#263744;--sop-padding:28px;transition:box-shadow .4s,border-color .4s}.sop-surface.sop-woven-mat-panel::before,.sop-surface.sop-woven-mat-panel::after{content:"";position:absolute;pointer-events:none;transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .4s,background .4s}.sop-surface.sop-woven-mat-panel .sop-surface-content h3{color:inherit;font:500 25px/1.2 Georgia,serif;margin:0 0 12px}.sop-surface.sop-woven-mat-panel .sop-surface-content p{color:inherit;opacity:.8;font:13px/1.7 system-ui;margin:0} .sop-surface.sop-woven-mat-panel{padding:13px;background:repeating-linear-gradient(0deg,#a58b72 0 2px,#d2bda6 2px 5px);border:1px solid #a68e77;border-radius:2px;color:#493e34}.sop-surface.sop-woven-mat-panel .sop-surface-content{background:#ebe4d9;border:1px solid #c8b5a1;padding:24px;box-shadow:0 2px 5px #50453544}.sop-surface.sop-woven-mat-panel::after{inset:5px;border-inline:2px solid #63544555}
 .sop-surface.sop-woven-mat-panel{max-width:100%}.sop-surface.sop-woven-mat-panel,.sop-surface.sop-woven-mat-panel *{box-sizing:border-box}.sop-surface.sop-woven-mat-panel :is(button,input,textarea,a){min-width:0}
 .sop-surface.sop-woven-mat-panel:focus-visible,.sop-surface.sop-woven-mat-panel :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-surface.sop-woven-mat-panel,.sop-surface.sop-woven-mat-panel *,.sop-surface.sop-woven-mat-panel::before,.sop-surface.sop-woven-mat-panel::after,.sop-surface.sop-woven-mat-panel *::before,.sop-surface.sop-woven-mat-panel *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-surface.sop-woven-mat-panel[data-sop-paused] *,.sop-surface.sop-woven-mat-panel[data-paused=true] *,.sop-surface.sop-woven-mat-panel[data-motion-running=false] *,.sop-surface.sop-woven-mat-panel[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-surface.sop-woven-mat-panel{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-surface.sop-woven-mat-panel :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+/* Review: 大見出しの明暗を素材面に合わせる */
+.sop-surface.sop-woven-mat-panel .sop-surface-content h3,.sop-surface.sop-woven-mat-panel .sop-surface-content h3 :is(span,em){color:inherit!important} .sop-surface.sop-woven-mat-panel .sop-surface-content{color:inherit}
+
+/* Composition revision. 編み込んだ二方向の端を引き、文字面を固定したまま交差を緩める */
+/* The new material owns the complete pseudo-element geometry. */
+.sop-surface.sop-woven-mat-panel::before,.sop-surface.sop-woven-mat-panel::after{width:auto;height:auto;inset:auto;border:0;border-radius:0;background:none;box-shadow:none;opacity:1;z-index:0;transform:none;clip-path:none}
+
+.sop-surface.sop-woven-mat-panel .sop-surface-content h3{font-size:clamp(22px,6vw,32px);line-height:1.25;max-width:12ch}.sop-surface.sop-woven-mat-panel .sop-surface-content h3 :is(span,em){color:inherit!important}.sop-surface.sop-woven-mat-panel .sop-surface-content p{font-size:12px;line-height:1.8}.sop-surface.sop-woven-mat-panel:focus-within::before{opacity:1}.sop-surface.sop-woven-mat-panel{background:#f6ecdc;border:0;border-radius:0;--sop-padding:40px;color:#493e31;box-shadow:none}.sop-surface.sop-woven-mat-panel::before{inset:0 auto 0 10px;width:19px;background:repeating-linear-gradient(#977f61 0 5px,#d4b993 5px 10px);transform:translateY(-4px)}.sop-surface.sop-woven-mat-panel::after{inset:10px 0 auto;height:19px;background:repeating-linear-gradient(90deg,#d4b993 0 5px,#977f61 5px 10px);transform:translateX(4px)}.sop-surface.sop-woven-mat-panel:hover::before{transform:translateY(4px)}.sop-surface.sop-woven-mat-panel:hover::after{transform:translateX(-4px)}
+@media(prefers-reduced-motion:reduce){.sop-surface.sop-woven-mat-panel,.sop-surface.sop-woven-mat-panel *,.sop-surface.sop-woven-mat-panel::before,.sop-surface.sop-woven-mat-panel::after,.sop-surface.sop-woven-mat-panel *::before,.sop-surface.sop-woven-mat-panel *::after{animation:none!important;transition:none!important}}
+
+.sop-surface.sop-woven-mat-panel{padding:0}.sop-surface.sop-woven-mat-panel>.sop-surface-content{background:transparent;padding:var(--sop-padding);border:0;border-radius:0;margin:0;color:inherit}
+
+/* Final visual review: layout and material separation. */
+.sop-surface.sop-woven-mat-panel>.sop-surface-content{padding:var(--sop-padding,28px)!important}

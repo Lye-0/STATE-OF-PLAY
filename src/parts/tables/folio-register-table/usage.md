@@ -1,9 +1,9 @@
 # Folio Register Table
 
-冊子の背に沿って記録を置く。
+冊子の綴じ目から列見出しを連続させる。
 
 
-冊子の背に沿って記録を置く。
+冊子の綴じ目から列見出しを連続させる。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`FolioRegisterTable`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

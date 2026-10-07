@@ -1,8 +1,13 @@
 
-/* Fine Dot Path Ornament — 小さな点が静かに道を示す。 */
+/* Fine Dot Path Ornament — 画面外では自動運動を停止し、表示中だけ動かす。 */
 .sop-ornament.sop-fine-dot-path-ornament {position:relative;width:100%;min-width:0;color:#d8e1ed}.sop-ornament.sop-fine-dot-path-ornament .or-stage,.sop-ornament.sop-fine-dot-path-ornament .ct-loader-stage{display:grid;place-items:center;min-height:80px;overflow:hidden}.sop-ornament.sop-fine-dot-path-ornament .x-composition{position:relative;width:100px;height:40px}.sop-ornament.sop-fine-dot-path-ornament .x-composition i{position:absolute;display:block;box-sizing:border-box;width:4px;height:4px;left:calc(8px + var(--i)*16px);top:18px;background:#d0bb91;border-radius:50%;animation:sop-x-fine-dot-path-ornament 5s ease-in-out infinite alternate;animation-delay:calc(var(--i)*-.23s)}@keyframes sop-x-fine-dot-path-ornament{0%{opacity:.3;translate:0 0}100%{opacity:1;translate:0 -3px}}
 .sop-ornament.sop-fine-dot-path-ornament{max-width:100%}.sop-ornament.sop-fine-dot-path-ornament,.sop-ornament.sop-fine-dot-path-ornament *{box-sizing:border-box}.sop-ornament.sop-fine-dot-path-ornament :is(button,input,textarea,a){min-width:0}
 .sop-ornament.sop-fine-dot-path-ornament:focus-visible,.sop-ornament.sop-fine-dot-path-ornament :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-ornament.sop-fine-dot-path-ornament,.sop-ornament.sop-fine-dot-path-ornament *,.sop-ornament.sop-fine-dot-path-ornament::before,.sop-ornament.sop-fine-dot-path-ornament::after,.sop-ornament.sop-fine-dot-path-ornament *::before,.sop-ornament.sop-fine-dot-path-ornament *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-ornament.sop-fine-dot-path-ornament[data-sop-paused] *,.sop-ornament.sop-fine-dot-path-ornament[data-paused=true] *,.sop-ornament.sop-fine-dot-path-ornament[data-motion-running=false] *,.sop-ornament.sop-fine-dot-path-ornament[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-ornament.sop-fine-dot-path-ornament{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-ornament.sop-fine-dot-path-ornament :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+/* Motion runs only while visible, unpaused and permitted. */
+.sop-ornament.sop-fine-dot-path-ornament:not([data-ambient-running=true]) .x-composition i{animation-play-state:paused!important}
+
+.sop-ornament.sop-fine-dot-path-ornament:not([data-ambient-running=true]) .x-composition i{transition:none!important}

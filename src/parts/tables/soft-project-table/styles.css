@@ -1,8 +1,11 @@
 @import "../../../shared/workbench/base.css";
-/* Soft Project Table — プロジェクト一覧の柔らかな外枠。 */
+/* Soft Project Table — Reviewラベルを明暗で判別できる配色に変更。 */
 .sop-wb.sop-soft-project-table {--wb-bg:#f6edf4;--wb-surface:#e9dfe5;--wb-ink:#493747;--wb-muted:#5a4355;--wb-accent:#70475f;--wb-line:#beabba;--wb-radius:6px;color-scheme:light}.sop-wb.sop-soft-project-table .wb-art{pointer-events:none}.sop-wb.sop-soft-project-table :is(.wb-search-results,.wb-command-dialog,.wb-context-panel,.wb-nav-flyout,.wb-nav-dialog){color:var(--wb-ink);background:var(--wb-bg)}.sop-wb.sop-soft-project-table .wb-data-frame{border-radius:14px}.sop-wb.sop-soft-project-table th{background:#ecdee8}.sop-wb.sop-soft-project-table .wb-cell-badge{border-radius:9px}.sop-wb.sop-soft-project-table .wb-data-heading{border-bottom:1px solid #d8c3d1}
 .sop-wb.sop-soft-project-table{max-width:100%}.sop-wb.sop-soft-project-table,.sop-wb.sop-soft-project-table *{box-sizing:border-box}.sop-wb.sop-soft-project-table :is(button,input,textarea,a){min-width:0}
 .sop-wb.sop-soft-project-table:focus-visible,.sop-wb.sop-soft-project-table :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-wb.sop-soft-project-table,.sop-wb.sop-soft-project-table *,.sop-wb.sop-soft-project-table::before,.sop-wb.sop-soft-project-table::after,.sop-wb.sop-soft-project-table *::before,.sop-wb.sop-soft-project-table *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-wb.sop-soft-project-table[data-sop-paused] *,.sop-wb.sop-soft-project-table[data-paused=true] *,.sop-wb.sop-soft-project-table[data-motion-running=false] *,.sop-wb.sop-soft-project-table[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-wb.sop-soft-project-table{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-soft-project-table :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+/* Review: Reviewラベルを明暗で判別できる配色に変更 */
+.sop-wb.sop-soft-project-table .wb-cell-badge[data-value=review]{color:#76511c;background:#f8edce}

@@ -1,9 +1,9 @@
 # Marginalia Select
 
-説明を主役にして、見出しと小さな注記を左右の余白へ整理する。
+余白の注記と本項目を組版で分ける索引。
 
 
-説明を主役にして、見出しと小さな注記を左右の余白へ整理する。
+余白の注記と本項目を組版で分ける索引。
 
 ## 選択肢の差し替え
 Reactではitems配列へvalue/label/description/icon/badgeを渡します。Vanillaではmarkup.html内のdata-valueと表示内容を編集し、init(root)します。動的にDOMの選択肢を変更した後はcontroller.refresh()を呼びます。

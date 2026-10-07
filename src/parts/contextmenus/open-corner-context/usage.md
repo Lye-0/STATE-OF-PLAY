@@ -1,9 +1,9 @@
 # Open Corner Context
 
-対角の括弧で書類を囲む。
+開いた角と独立した明るい操作面。
 
 
-対角の括弧で書類を囲む。
+開いた角と独立した明るい操作面。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`OpenCornerContext`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

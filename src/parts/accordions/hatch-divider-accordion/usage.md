@@ -1,9 +1,9 @@
 # Hatch Divider Accordion
 
-四隅の小さな金具が回り、開く項目の輪郭だけを強調する。
+ハッチの対角線を欄外に限定し、本文を開く。
 
 
-四隅の小さな金具が回り、開く項目の輪郭だけを強調する。
+ハッチの対角線を欄外に限定し、本文を開く。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

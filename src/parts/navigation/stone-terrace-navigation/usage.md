@@ -1,9 +1,9 @@
 # Stone Terrace Navigation
 
-低い石段の上に行き先を置く。
+石の段の二列に行先を等しく置く。
 
 
-低い石段の上に行き先を置く。
+石の段の二列に行先を等しく置く。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`StoneTerraceNavigation`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

@@ -1,8 +1,17 @@
 
-/* Hinged Cells Ornament — 連なる四角の小窓が開閉する。 */
+/* Hinged Cells Ornament — 蝶番でつながったセルが交互に起き上がる。画面外・非表示・一時停止・reduced motionでは動きを止める。 */
 .sop-ornament.sop-hinged-cells-ornament {position:relative;width:100%;min-width:0;color:#d8e1ed}.sop-ornament.sop-hinged-cells-ornament .or-stage,.sop-ornament.sop-hinged-cells-ornament .ct-loader-stage{display:grid;place-items:center;min-height:180px;overflow:hidden}.sop-ornament.sop-hinged-cells-ornament .x-composition{position:relative;width:150px;height:130px;perspective:350px}.sop-ornament.sop-hinged-cells-ornament .x-composition i{position:absolute;display:block;box-sizing:border-box;width:35px;height:35px;left:calc(10px + mod(var(--i),3)*45px);top:calc(20px + round(down,var(--i)/3)*50px);border:2px solid #a8c2b1;background:#77978644;transform-origin:left;animation:sop-x-hinged-cells-ornament 5s ease-in-out infinite alternate;animation-delay:calc(var(--i)*-.23s)}@keyframes sop-x-hinged-cells-ornament{0%{transform:rotateY(-40deg)}100%{transform:rotateY(40deg)}}
 .sop-ornament.sop-hinged-cells-ornament{max-width:100%}.sop-ornament.sop-hinged-cells-ornament,.sop-ornament.sop-hinged-cells-ornament *{box-sizing:border-box}.sop-ornament.sop-hinged-cells-ornament :is(button,input,textarea,a){min-width:0}
 .sop-ornament.sop-hinged-cells-ornament:focus-visible,.sop-ornament.sop-hinged-cells-ornament :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-ornament.sop-hinged-cells-ornament,.sop-ornament.sop-hinged-cells-ornament *,.sop-ornament.sop-hinged-cells-ornament::before,.sop-ornament.sop-hinged-cells-ornament::after,.sop-ornament.sop-hinged-cells-ornament *::before,.sop-ornament.sop-hinged-cells-ornament *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-ornament.sop-hinged-cells-ornament[data-sop-paused] *,.sop-ornament.sop-hinged-cells-ornament[data-paused=true] *,.sop-ornament.sop-hinged-cells-ornament[data-motion-running=false] *,.sop-ornament.sop-hinged-cells-ornament[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-ornament.sop-hinged-cells-ornament{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-ornament.sop-hinged-cells-ornament :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+/* Motion runs only while visible, unpaused and permitted. */
+.sop-ornament.sop-hinged-cells-ornament:not([data-ambient-running=true]) .x-composition i{animation-play-state:paused!important}
+.sop-ornament.sop-hinged-cells-ornament .or-stage{min-height:240px;perspective:600px}
+.sop-ornament.sop-hinged-cells-ornament .x-composition i{transition:translate .8s cubic-bezier(.18,.75,.24,1),rotate .9s cubic-bezier(.18,.75,.24,1),scale .8s;will-change:auto}
+.sop-ornament.sop-hinged-cells-ornament[data-ambient-running=true]:hover .x-composition i{rotate:calc((mod(var(--i),2)*2 - 1)*28deg);translate:0 calc((mod(var(--i),2)*2 - 1)*9px)}
+@media(prefers-reduced-motion:reduce){.sop-ornament.sop-hinged-cells-ornament .x-composition i{translate:none;rotate:none;scale:none}}
+
+.sop-ornament.sop-hinged-cells-ornament:not([data-ambient-running=true]) .x-composition i{transition:none!important}

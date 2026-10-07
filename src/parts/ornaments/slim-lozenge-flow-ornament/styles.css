@@ -1,8 +1,13 @@
 
-/* Slim Lozenge Flow Ornament — 小さな菱形を順に点灯する。 */
+/* Slim Lozenge Flow Ornament — 画面外では自動運動を停止し、表示中だけ動かす。 */
 .sop-ornament.sop-slim-lozenge-flow-ornament {position:relative;width:100%;min-width:0;color:#d8e1ed}.sop-ornament.sop-slim-lozenge-flow-ornament .or-stage,.sop-ornament.sop-slim-lozenge-flow-ornament .ct-loader-stage{display:grid;place-items:center;min-height:80px;overflow:hidden}.sop-ornament.sop-slim-lozenge-flow-ornament .x-composition{position:relative;width:110px;height:45px}.sop-ornament.sop-slim-lozenge-flow-ornament .x-composition i{position:absolute;display:block;box-sizing:border-box;width:9px;height:9px;left:calc(6px + var(--i)*18px);top:17px;background:#adc8b9;transform:rotate(45deg);border-radius:2px;animation:sop-x-slim-lozenge-flow-ornament 5s ease-in-out infinite alternate;animation-delay:calc(var(--i)*-.23s)}@keyframes sop-x-slim-lozenge-flow-ornament{0%{opacity:.3;scale:.7}100%{opacity:1;scale:1}}
 .sop-ornament.sop-slim-lozenge-flow-ornament{max-width:100%}.sop-ornament.sop-slim-lozenge-flow-ornament,.sop-ornament.sop-slim-lozenge-flow-ornament *{box-sizing:border-box}.sop-ornament.sop-slim-lozenge-flow-ornament :is(button,input,textarea,a){min-width:0}
 .sop-ornament.sop-slim-lozenge-flow-ornament:focus-visible,.sop-ornament.sop-slim-lozenge-flow-ornament :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-ornament.sop-slim-lozenge-flow-ornament,.sop-ornament.sop-slim-lozenge-flow-ornament *,.sop-ornament.sop-slim-lozenge-flow-ornament::before,.sop-ornament.sop-slim-lozenge-flow-ornament::after,.sop-ornament.sop-slim-lozenge-flow-ornament *::before,.sop-ornament.sop-slim-lozenge-flow-ornament *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-ornament.sop-slim-lozenge-flow-ornament[data-sop-paused] *,.sop-ornament.sop-slim-lozenge-flow-ornament[data-paused=true] *,.sop-ornament.sop-slim-lozenge-flow-ornament[data-motion-running=false] *,.sop-ornament.sop-slim-lozenge-flow-ornament[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-ornament.sop-slim-lozenge-flow-ornament{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-ornament.sop-slim-lozenge-flow-ornament :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+/* Motion runs only while visible, unpaused and permitted. */
+.sop-ornament.sop-slim-lozenge-flow-ornament:not([data-ambient-running=true]) .x-composition i{animation-play-state:paused!important}
+
+.sop-ornament.sop-slim-lozenge-flow-ornament:not([data-ambient-running=true]) .x-composition i{transition:none!important}

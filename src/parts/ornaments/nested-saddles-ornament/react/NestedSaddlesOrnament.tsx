@@ -1,6 +1,7 @@
 'use client';
-import React, { type HTMLAttributes } from 'react';
+import React, { useEffect, useRef, type HTMLAttributes } from 'react';
 import '../styles.css';
+import {mountAmbientOrnament, type AmbientOrnamentController} from '../../../../shared/ambient-ornament.ts';
 
 export interface NestedSaddlesOrnamentProps extends HTMLAttributes<HTMLDivElement> {
   paused?: boolean;
@@ -10,6 +11,15 @@ const markup = "<div class=\"or-stage\" aria-hidden=\"true\"><div class=\"x-comp
 
 /** 羽根が光を散らす。 */
 export default function NestedSaddlesOrnament({ paused = false, className = '', ...props }: NestedSaddlesOrnamentProps) {
+  const element = useRef<HTMLDivElement>(null);
+  const controller = useRef<AmbientOrnamentController | null>(null);
+  useEffect(() => {
+    if (!element.current) return;
+    const api = mountAmbientOrnament(element.current);
+    controller.current = api;
+    return () => { api.destroy(); controller.current = null; };
+  }, []);
+  useEffect(() => { controller.current?.setPaused(paused); }, [paused]);
   const merged = `sop-ornament sop-nested-saddles-ornament ${className}`.trim();
-  return <div {...props} className={merged} data-paused={paused ? 'true' : 'false'} dangerouslySetInnerHTML={{ __html: markup }} />;
+  return <div {...props} ref={element} className={merged} data-paused={paused ? 'true' : 'false'} dangerouslySetInnerHTML={{ __html: markup }} />;
 }

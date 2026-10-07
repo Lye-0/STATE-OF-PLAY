@@ -1,9 +1,9 @@
 # Folded Month Calendar
 
-月の見出しを折り返す。
+折った月の見出しを上から開く。
 
 
-月の見出しを折り返す。日付をUTCへ変換しません。isDateDisabledで休日等を指定できます。
+折った月の見出しを上から開く。日付をUTCへ変換しません。isDateDisabledで休日等を指定できます。
 
 ## 組み込み
 

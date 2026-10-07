@@ -1,9 +1,9 @@
 # Drafting Note Tags
 
-図面の小さな注記札。
+図面の注記を上下の罫で結ぶ。
 
 
-図面の小さな注記札。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
+図面の注記を上下の罫で結ぶ。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
 
 ## 組み込み
 

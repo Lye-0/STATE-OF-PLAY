@@ -1,9 +1,9 @@
 # Foldback Tags
 
-端を折った小さなタグ。
+折返しの先端を選択で内側へ収める。
 
 
-端を折った小さなタグ。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
+折返しの先端を選択で内側へ収める。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
 
 ## 組み込み
 

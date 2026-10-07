@@ -1,9 +1,9 @@
 # Ribbon Top Navigation
 
-上部の帯を行き先ごとに分ける。
+帯を通した行先札を縦に並べる。
 
 
-上部の帯を行き先ごとに分ける。
+帯を通した行先札を縦に並べる。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`RibbonTopNavigation`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

@@ -1,9 +1,9 @@
 # Perpetual Desk Calendar
 
-卓上カレンダーの台座と見出し。
+卓上暦の上下を留める。
 
 
-卓上カレンダーの台座と見出し。日付をUTCへ変換しません。isDateDisabledで休日等を指定できます。
+卓上暦の上下を留める。日付をUTCへ変換しません。isDateDisabledで休日等を指定できます。
 
 ## 組み込み
 

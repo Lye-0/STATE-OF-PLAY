@@ -1,9 +1,9 @@
 # Recessed Chip Tags
 
-浅い溝を持つ分類チップ。
+くぼんだチップの中で状態を読む。
 
 
-浅い溝を持つ分類チップ。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
+くぼんだチップの中で状態を読む。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
 
 ## 組み込み
 

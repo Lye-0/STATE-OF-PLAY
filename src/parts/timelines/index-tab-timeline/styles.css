@@ -1,5 +1,5 @@
 @import "../../../shared/signature/timeline.css";
-/* Index Tab Timeline — 小さな日時タブから本文を開く。 */
+/* Index Tab Timeline — 索引タブに日付を置き、その下を開く。 */
 .sop-sig.sop-index-tab-timeline {--sg-bg:#f7f2e8;--sg-ink:#353d45;--sg-muted:#46515d;--sg-a:#3d5b7c;--sg-line:#bbb5a9;--sg-soft:#e9e4d9;--sg-radius:6px;background:#f7f2e8;color-scheme:light;border-radius:5px}.sop-sig.sop-index-tab-timeline .sg-art{pointer-events:none}.sop-sig.sop-index-tab-timeline .sg-event{grid-template-columns:1fr;gap:5px}.sop-sig.sop-index-tab-timeline .sg-event-time{width:max-content;max-width:100%;padding:4px 10px;background:#e6dcc6;border-radius:5px 5px 0 0}.sop-sig.sop-index-tab-timeline .sg-event-main{border-top:1px solid #bcac8d}
 .sop-sig.sop-index-tab-timeline{max-width:100%}.sop-sig.sop-index-tab-timeline,.sop-sig.sop-index-tab-timeline *{box-sizing:border-box}.sop-sig.sop-index-tab-timeline :is(button,input,textarea,a){min-width:0}
 .sop-sig.sop-index-tab-timeline:focus-visible,.sop-sig.sop-index-tab-timeline :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
@@ -9,3 +9,7 @@
 
 /* Spatial composition: preserve document and keyboard order. */
 .sop-sig.sop-index-tab-timeline .sg-event{grid-template-columns:1fr;padding-left:23px;gap:0}.sop-sig.sop-index-tab-timeline .sg-event-time{display:inline-block;width:fit-content;padding:3px 8px;background:var(--sg-soft);border:1px solid var(--sg-line)}.sop-sig.sop-index-tab-timeline .sg-event-main{padding-top:8px}.sop-sig.sop-index-tab-timeline .sg-event-route:after{border-left:3px double var(--sg-line)}
+
+/* Composition revision. 索引タブに日付を置き、その下を開く */
+.sop-sig.sop-index-tab-timeline .sg-event-route{left:0;display:block}.sop-sig.sop-index-tab-timeline .sg-event summary{min-height:44px;gap:8px}.sop-sig.sop-index-tab-timeline .sg-event-body{padding-top:16px;border-top:1px solid var(--sg-line);margin-top:8px}.sop-sig.sop-index-tab-timeline .sg-event-body p{font-size:12px;line-height:1.9}.sop-sig.sop-index-tab-timeline .sg-event:has(details[open]) .sg-event-route i{transform:scale(1.4);background:var(--sg-a)}.sop-sig.sop-index-tab-timeline .sg-timeline-count{font-size:14px}.sop-sig.sop-index-tab-timeline .sg-event{grid-template-columns:1fr;gap:4px;padding-left:20px;margin-left:0}.sop-sig.sop-index-tab-timeline .sg-event-main{padding:18px;border-top:1px solid #bca484;background:#fff7e8}.sop-sig.sop-index-tab-timeline .sg-event-time{padding:6px 10px;background:#e3cfad;width:fit-content;writing-mode:horizontal-tb;min-height:0;letter-spacing:.03em;text-align:left;font-size:11px}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-index-tab-timeline,.sop-sig.sop-index-tab-timeline *,.sop-sig.sop-index-tab-timeline::before,.sop-sig.sop-index-tab-timeline::after,.sop-sig.sop-index-tab-timeline *::before,.sop-sig.sop-index-tab-timeline *::after{animation:none!important;transition:none!important}}

@@ -1,8 +1,18 @@
 @import "../../../shared/navigation-link-base.css";
-/* Wayfinding Link — 道標の長い基線と切り離した矢印。 */
+/* Wayfinding Link — 標識の行先と方向を分け、矢印までの経路がつながる。 */
 .sop-link.sop-wayfinding-link {position:relative;isolation:isolate;min-height:40px;text-decoration:none;transform:none;color:var(--link-ink,#e9edf2)}.sop-link.sop-wayfinding-link .sop-link-copy,.sop-link.sop-wayfinding-link .sop-link-icon{position:relative;z-index:1}.sop-link.sop-wayfinding-link .sop-link-art{display:none}.sop-link.sop-wayfinding-link:hover,.sop-link.sop-wayfinding-link:active{transform:none}.sop-link.sop-wayfinding-link {border-bottom:1px solid #aaa;padding:18px 0;gap:48px}.sop-link.sop-wayfinding-link .sop-link-icon{border-left:1px solid;padding-left:12px;width:40px}.sop-link.sop-wayfinding-link .sop-link-label{line-height:1.5}.sop-link.sop-wayfinding-link .sop-link-icon{flex:none;transition:transform .35s}.sop-link.sop-wayfinding-link:hover .sop-link-icon{translate:2px -2px}
 .sop-link.sop-wayfinding-link{max-width:100%}.sop-link.sop-wayfinding-link,.sop-link.sop-wayfinding-link *{box-sizing:border-box}.sop-link.sop-wayfinding-link :is(button,input,textarea,a){min-width:0}
 .sop-link.sop-wayfinding-link:focus-visible,.sop-link.sop-wayfinding-link :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-link.sop-wayfinding-link,.sop-link.sop-wayfinding-link *,.sop-link.sop-wayfinding-link::before,.sop-link.sop-wayfinding-link::after,.sop-link.sop-wayfinding-link *::before,.sop-link.sop-wayfinding-link *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-link.sop-wayfinding-link[data-sop-paused] *,.sop-link.sop-wayfinding-link[data-paused=true] *,.sop-link.sop-wayfinding-link[data-motion-running=false] *,.sop-link.sop-wayfinding-link[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-link.sop-wayfinding-link{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-link.sop-wayfinding-link :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+/* Composition revision. 標識の行先と方向を分け、矢印までの経路がつながる */
+/* The new material owns the complete pseudo-element geometry. */
+.sop-link.sop-wayfinding-link::before,.sop-link.sop-wayfinding-link::after{width:auto;height:auto;inset:auto;border:0;border-radius:0;background:none;box-shadow:none;opacity:1;z-index:0;transform:none;clip-path:none}
+
+.sop-link.sop-wayfinding-link{min-width:210px;display:flex;justify-content:space-between;gap:20px;min-height:76px}.sop-link.sop-wayfinding-link .sop-link-copy{max-width:calc(100% - 52px)}.sop-link.sop-wayfinding-link .sop-link-icon{transform:none!important;width:30px;height:30px}.sop-link.sop-wayfinding-link .sop-link-icon svg{transition:translate .45s}.sop-link.sop-wayfinding-link:is(:hover,:focus-visible) .sop-link-icon svg{translate:4px 0}.sop-link.sop-wayfinding-link{padding:22px 24px 30px;border-radius:0;background:#e9e1d4;color:#433b32}.sop-link.sop-wayfinding-link::before{inset:auto 24px 12px;height:2px;background:#8c7457;transform:scaleX(.3);transform-origin:left;transition:transform .6s cubic-bezier(.2,.8,.2,1)}.sop-link.sop-wayfinding-link:is(:hover,:focus-visible)::before{transform:scaleX(1)}.sop-link.sop-wayfinding-link::after{display:none}
+@media(prefers-reduced-motion:reduce){.sop-link.sop-wayfinding-link,.sop-link.sop-wayfinding-link *,.sop-link.sop-wayfinding-link::before,.sop-link.sop-wayfinding-link::after,.sop-link.sop-wayfinding-link *::before,.sop-link.sop-wayfinding-link *::after{animation:none!important;transition:none!important}}
+
+/* Final visual review: layout and material separation. */
+.sop-link.sop-wayfinding-link::before,.sop-link.sop-wayfinding-link::after{content:"";position:absolute;pointer-events:none}

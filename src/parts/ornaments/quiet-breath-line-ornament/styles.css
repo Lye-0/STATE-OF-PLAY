@@ -1,8 +1,13 @@
 
-/* Quiet Breath Line Ornament — 短い線が控えめに呼吸する。 */
+/* Quiet Breath Line Ornament — 画面外では自動運動を停止し、表示中だけ動かす。 */
 .sop-ornament.sop-quiet-breath-line-ornament {position:relative;width:100%;min-width:0;color:#d8e1ed}.sop-ornament.sop-quiet-breath-line-ornament .or-stage,.sop-ornament.sop-quiet-breath-line-ornament .ct-loader-stage{display:grid;place-items:center;min-height:80px;overflow:hidden}.sop-ornament.sop-quiet-breath-line-ornament .x-composition{position:relative;width:110px;height:45px}.sop-ornament.sop-quiet-breath-line-ornament .x-composition i{position:absolute;display:block;box-sizing:border-box;width:12px;height:2px;left:calc(4px + var(--i)*18px);top:21px;background:#b9c7d7;animation:sop-x-quiet-breath-line-ornament 5s ease-in-out infinite alternate;animation-delay:calc(var(--i)*-.23s)}@keyframes sop-x-quiet-breath-line-ornament{0%{opacity:.35;transform:scaleX(.65)}100%{opacity:1;transform:scaleX(1)}}
 .sop-ornament.sop-quiet-breath-line-ornament{max-width:100%}.sop-ornament.sop-quiet-breath-line-ornament,.sop-ornament.sop-quiet-breath-line-ornament *{box-sizing:border-box}.sop-ornament.sop-quiet-breath-line-ornament :is(button,input,textarea,a){min-width:0}
 .sop-ornament.sop-quiet-breath-line-ornament:focus-visible,.sop-ornament.sop-quiet-breath-line-ornament :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-ornament.sop-quiet-breath-line-ornament,.sop-ornament.sop-quiet-breath-line-ornament *,.sop-ornament.sop-quiet-breath-line-ornament::before,.sop-ornament.sop-quiet-breath-line-ornament::after,.sop-ornament.sop-quiet-breath-line-ornament *::before,.sop-ornament.sop-quiet-breath-line-ornament *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-ornament.sop-quiet-breath-line-ornament[data-sop-paused] *,.sop-ornament.sop-quiet-breath-line-ornament[data-paused=true] *,.sop-ornament.sop-quiet-breath-line-ornament[data-motion-running=false] *,.sop-ornament.sop-quiet-breath-line-ornament[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-ornament.sop-quiet-breath-line-ornament{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-ornament.sop-quiet-breath-line-ornament :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+/* Motion runs only while visible, unpaused and permitted. */
+.sop-ornament.sop-quiet-breath-line-ornament:not([data-ambient-running=true]) .x-composition i{animation-play-state:paused!important}
+
+.sop-ornament.sop-quiet-breath-line-ornament:not([data-ambient-running=true]) .x-composition i{transition:none!important}

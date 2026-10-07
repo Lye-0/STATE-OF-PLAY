@@ -1,9 +1,9 @@
 # Periscope Toggle
 
-磨いた筒の中で反射板が起き、奥の青い面が正面を向く。
+造形を保ち、部品本体に固定位置のON/OFF目盛りを追加。
 
 
-Type B / CSS + Events。磨いた筒の中で反射板が起き、奥の青い面が正面を向く。
+Type B / CSS + Events。造形を保ち、部品本体に固定位置のON/OFF目盛りを追加。
 
 基準サイズ: 104×64px。展示ページの倍率ではなく、実際の部品サイズです。フォームに接続する場合はchecked/onCheckedChangeをアプリの状態へ渡します。button型switchはフォーム値を自動送信しないため、必要ならhidden inputへ反映してください。
 

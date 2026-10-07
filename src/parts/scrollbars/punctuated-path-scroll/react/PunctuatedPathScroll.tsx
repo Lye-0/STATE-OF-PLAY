@@ -3,7 +3,7 @@ import React from 'react';
 import { useScrollArea, type ScrollAreaProps } from '../../../../shared/use-scroll-area';
 import '../styles.css';
 export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
-/** 離れた短線の道を、一本の長いつまみが静かにつなぐ。 Native scroll content with a skinned, proportional rail. */
+/** 読んだ位置まで点列が満たされる、細い句読点の経路。 Native scroll content with a skinned, proportional rail. */
 export default function PunctuatedPathScroll(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);

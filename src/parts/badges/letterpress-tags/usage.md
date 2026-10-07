@@ -1,9 +1,9 @@
 # Letterpress Tags
 
-印刷物の欄外札を並べる。
+活版の印枠と文字を一つの票にする。
 
 
-印刷物の欄外札を並べる。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
+活版の印枠と文字を一つの票にする。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
 
 ## 組み込み
 

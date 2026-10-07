@@ -1,8 +1,23 @@
 .sop-surface.sop-archival-channel{position:relative;isolation:isolate;box-sizing:border-box;min-width:0;width:100%}.sop-surface.sop-archival-channel .sop-surface-content{position:relative;z-index:1;padding:var(--sop-padding,28px);min-width:0}
-/* Archival Channel — 余白に一本の深い溝を通し、見出しと本文を軽い紙面へ載せる。 */
+/* Archival Channel — 溝を走る仕切りが余白を開き、見出しを格納庫の中に見せる。 */
 .sop-surface.sop-archival-channel{color:#263744;--sop-padding:28px;transition:box-shadow .4s,border-color .4s}.sop-surface.sop-archival-channel::before,.sop-surface.sop-archival-channel::after{content:"";position:absolute;pointer-events:none;transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .4s,background .4s}.sop-surface.sop-archival-channel .sop-surface-content h3{color:inherit;font:500 25px/1.2 Georgia,serif;margin:0 0 12px}.sop-surface.sop-archival-channel .sop-surface-content p{color:inherit;opacity:.8;font:13px/1.7 system-ui;margin:0} .sop-surface.sop-archival-channel{background:#f0eadf;border:1px solid #b7aa96;border-radius:6px;--sop-padding:29px 24px 29px 45px}.sop-surface.sop-archival-channel::before{left:17px;top:0;bottom:0;width:8px;background:linear-gradient(90deg,#9c8e79,#cdc4b4 45%,#f8f2e8);border-inline:1px solid #aa9b8266}.sop-surface.sop-archival-channel::after{width:4px;height:28px;left:19px;top:25px;background:#ae5b40;border-radius:2px}.sop-surface.sop-archival-channel:hover::after{transform:translateY(16px)}
 .sop-surface.sop-archival-channel{max-width:100%}.sop-surface.sop-archival-channel,.sop-surface.sop-archival-channel *{box-sizing:border-box}.sop-surface.sop-archival-channel :is(button,input,textarea,a){min-width:0}
 .sop-surface.sop-archival-channel:focus-visible,.sop-surface.sop-archival-channel :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-surface.sop-archival-channel,.sop-surface.sop-archival-channel *,.sop-surface.sop-archival-channel::before,.sop-surface.sop-archival-channel::after,.sop-surface.sop-archival-channel *::before,.sop-surface.sop-archival-channel *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-surface.sop-archival-channel[data-sop-paused] *,.sop-surface.sop-archival-channel[data-paused=true] *,.sop-surface.sop-archival-channel[data-motion-running=false] *,.sop-surface.sop-archival-channel[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-surface.sop-archival-channel{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-surface.sop-archival-channel :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+/* Review: 大見出しの明暗を素材面に合わせる */
+.sop-surface.sop-archival-channel .sop-surface-content h3,.sop-surface.sop-archival-channel .sop-surface-content h3 :is(span,em){color:inherit!important} .sop-surface.sop-archival-channel .sop-surface-content{color:inherit}
+
+/* Composition revision. 溝を走る仕切りが余白を開き、見出しを格納庫の中に見せる */
+/* The new material owns the complete pseudo-element geometry. */
+.sop-surface.sop-archival-channel::before,.sop-surface.sop-archival-channel::after{width:auto;height:auto;inset:auto;border:0;border-radius:0;background:none;box-shadow:none;opacity:1;z-index:0;transform:none;clip-path:none}
+
+.sop-surface.sop-archival-channel .sop-surface-content h3{font-size:clamp(22px,6vw,32px);line-height:1.25;max-width:12ch}.sop-surface.sop-archival-channel .sop-surface-content h3 :is(span,em){color:inherit!important}.sop-surface.sop-archival-channel .sop-surface-content p{font-size:12px;line-height:1.8}.sop-surface.sop-archival-channel:focus-within::before{opacity:1}.sop-surface.sop-archival-channel{background:#f4eee2;color:#373b40;border:0;border-radius:0;--sop-padding:38px 30px 38px 52px;box-shadow:inset 0 0 0 1px #aaa39a}.sop-surface.sop-archival-channel::before{inset:0 auto 0 10px;width:28px;background:#40546a;box-shadow:inset -4px 0 #91a4b6;transform:scaleX(.5);transform-origin:left}.sop-surface.sop-archival-channel:hover::before{transform:scaleX(1)}.sop-surface.sop-archival-channel::after{inset:auto 0 14px;height:1px;background:#aaa39a}
+@media(prefers-reduced-motion:reduce){.sop-surface.sop-archival-channel,.sop-surface.sop-archival-channel *,.sop-surface.sop-archival-channel::before,.sop-surface.sop-archival-channel::after,.sop-surface.sop-archival-channel *::before,.sop-surface.sop-archival-channel *::after{animation:none!important;transition:none!important}}
+
+.sop-surface.sop-archival-channel{padding:0}.sop-surface.sop-archival-channel>.sop-surface-content{background:transparent;padding:var(--sop-padding);border:0;border-radius:0;margin:0;color:inherit}
+
+/* Final visual review: layout and material separation. */
+.sop-surface.sop-archival-channel>.sop-surface-content{padding:var(--sop-padding,28px)!important}

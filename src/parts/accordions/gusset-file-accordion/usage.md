@@ -1,9 +1,9 @@
 # Gusset File Accordion
 
-開いた項目の脇にマチの帯が現れ、収納された内容の厚みを見せる。
+マチが内容の高さに沿って開く。
 
 
-開いた項目の脇にマチの帯が現れ、収納された内容の厚みを見せる。
+マチが内容の高さに沿って開く。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

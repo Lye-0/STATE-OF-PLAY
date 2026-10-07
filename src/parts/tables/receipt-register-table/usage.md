@@ -1,9 +1,9 @@
 # Receipt Register Table
 
-集計票の切り取り線と合計欄。
+受領票の件数とデータ列を罫線で分離。
 
 
-集計票の切り取り線と合計欄。
+受領票の件数とデータ列を罫線で分離。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`ReceiptRegisterTable`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

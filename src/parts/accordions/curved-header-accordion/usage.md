@@ -1,9 +1,9 @@
 # Curved Header Accordion
 
-見出しだけを緩やかな弧で囲み、開く本文は平らに残す。
+曲がった見出しの下に水平な本文台を置く。
 
 
-見出しだけを緩やかな弧で囲み、開く本文は平らに残す。
+曲がった見出しの下に水平な本文台を置く。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

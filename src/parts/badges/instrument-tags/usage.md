@@ -1,9 +1,9 @@
 # Instrument Tags
 
-金属の計器札を小さく並べる。
+計器の札を二つの括弧に収める。
 
 
-金属の計器札を小さく並べる。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
+計器の札を二つの括弧に収める。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
 
 ## 組み込み
 

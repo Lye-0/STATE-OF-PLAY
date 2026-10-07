@@ -1,8 +1,8 @@
 # Crossbar Check
 
-交差する留め具の中心にチェック。
+横桟が四角い面の下で閉じる。
 
-交差する留め具の中心にチェック。
+横桟が四角い面の下で閉じる。
 
 本物のinput[type=checkbox]です。label全体をクリックでき、Space・Tab・FormData・required・fieldsetのdisabledはネイティブのままです。複数の独立したチェックで複数選択を作れます。独自のキーイベントでSpaceを二重処理しません。
 

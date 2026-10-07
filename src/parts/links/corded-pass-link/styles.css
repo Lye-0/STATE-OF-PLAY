@@ -1,8 +1,20 @@
 @import "../../../shared/navigation-link-base.css";
-/* Corded Pass Link — 索を通したタグのようなリンク。 */
+/* Corded Pass Link — 通行札を結ぶコードが張り、行先へ視線を導く。 */
 .sop-link.sop-corded-pass-link {position:relative;isolation:isolate;min-height:40px;text-decoration:none;transform:none;color:var(--link-ink,#e9edf2)}.sop-link.sop-corded-pass-link .sop-link-copy,.sop-link.sop-corded-pass-link .sop-link-icon{position:relative;z-index:1}.sop-link.sop-corded-pass-link .sop-link-art{display:none}.sop-link.sop-corded-pass-link:hover,.sop-link.sop-corded-pass-link:active{transform:none}.sop-link.sop-corded-pass-link {padding:20px 24px;border:1px solid #b6aba0;border-radius:0 25px 25px 0;background:#d9c9b5;color:#3c332d}.sop-link.sop-corded-pass-link .sop-link-icon{outline:2px dotted #776857;border-radius:50%;outline-offset:5px}.sop-link.sop-corded-pass-link .sop-link-label{line-height:1.5}.sop-link.sop-corded-pass-link .sop-link-icon{flex:none;transition:transform .35s}.sop-link.sop-corded-pass-link:hover .sop-link-icon{translate:2px -2px}
 .sop-link.sop-corded-pass-link{max-width:100%}.sop-link.sop-corded-pass-link,.sop-link.sop-corded-pass-link *{box-sizing:border-box}.sop-link.sop-corded-pass-link :is(button,input,textarea,a){min-width:0}
 .sop-link.sop-corded-pass-link:focus-visible,.sop-link.sop-corded-pass-link :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-link.sop-corded-pass-link,.sop-link.sop-corded-pass-link *,.sop-link.sop-corded-pass-link::before,.sop-link.sop-corded-pass-link::after,.sop-link.sop-corded-pass-link *::before,.sop-link.sop-corded-pass-link *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-link.sop-corded-pass-link[data-sop-paused] *,.sop-link.sop-corded-pass-link[data-paused=true] *,.sop-link.sop-corded-pass-link[data-motion-running=false] *,.sop-link.sop-corded-pass-link[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-link.sop-corded-pass-link{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-link.sop-corded-pass-link :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+/* Composition revision. 通行札を結ぶコードが張り、行先へ視線を導く */
+/* The new material owns the complete pseudo-element geometry. */
+.sop-link.sop-corded-pass-link::before,.sop-link.sop-corded-pass-link::after{width:auto;height:auto;inset:auto;border:0;border-radius:0;background:none;box-shadow:none;opacity:1;z-index:0;transform:none;clip-path:none}
+
+.sop-link.sop-corded-pass-link{min-width:210px;display:flex;justify-content:space-between;gap:20px;min-height:76px}.sop-link.sop-corded-pass-link .sop-link-copy{max-width:calc(100% - 52px)}.sop-link.sop-corded-pass-link .sop-link-icon{transform:none!important;width:30px;height:30px}.sop-link.sop-corded-pass-link .sop-link-icon svg{transition:translate .45s}.sop-link.sop-corded-pass-link:is(:hover,:focus-visible) .sop-link-icon svg{translate:4px 0}.sop-link.sop-corded-pass-link{padding:24px 26px;background:#e9e1d7;color:#433931;border:0;border-radius:35px 4px 4px 35px}.sop-link.sop-corded-pass-link::before{inset:12px auto 12px 8px;width:15px;border:2px solid #8b796b;border-radius:50%;background:none;transform:scaleY(.6);transform-origin:left;transition:transform .6s cubic-bezier(.2,.8,.2,1)}.sop-link.sop-corded-pass-link:is(:hover,:focus-visible)::before{transform:scaleY(1)}.sop-link.sop-corded-pass-link::after{display:none}
+@media(prefers-reduced-motion:reduce){.sop-link.sop-corded-pass-link,.sop-link.sop-corded-pass-link *,.sop-link.sop-corded-pass-link::before,.sop-link.sop-corded-pass-link::after,.sop-link.sop-corded-pass-link *::before,.sop-link.sop-corded-pass-link *::after{animation:none!important;transition:none!important}}
+
+/* Final visual review: layout and material separation. */
+.sop-link.sop-corded-pass-link::before,.sop-link.sop-corded-pass-link::after{content:"";position:absolute;pointer-events:none}
+
+.sop-link.sop-corded-pass-link{padding-inline-start:38px}

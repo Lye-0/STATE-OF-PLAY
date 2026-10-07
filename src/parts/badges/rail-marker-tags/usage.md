@@ -1,9 +1,9 @@
 # Rail Marker Tags
 
-レールに付ける短い標識。
+レールの停止点に札を固定する。
 
 
-レールに付ける短い標識。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
+レールの停止点に札を固定する。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
 
 ## 組み込み
 

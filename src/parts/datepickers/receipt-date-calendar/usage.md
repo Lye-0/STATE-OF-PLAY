@@ -1,9 +1,9 @@
 # Receipt Date Calendar
 
-日付入りの受領票を開く。
+切取り式の月票と日付欄。
 
 
-日付入りの受領票を開く。日付をUTCへ変換しません。isDateDisabledで休日等を指定できます。
+切取り式の月票と日付欄。日付をUTCへ変換しません。isDateDisabledで休日等を指定できます。
 
 ## 組み込み
 

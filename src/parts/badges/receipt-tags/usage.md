@@ -1,9 +1,9 @@
 # Receipt Tags
 
-受領票の切り取り線を持つ。
+受領票のミシン目を選択欄に残す。
 
 
-受領票の切り取り線を持つ。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
+受領票のミシン目を選択欄に残す。onAction(value)で削除を通知します。controlledではitemsを親から更新してください。
 
 ## 組み込み
 

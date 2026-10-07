@@ -1,8 +1,17 @@
 
-/* Suspended Pennants Ornament — 吊るした小さな旗が順に揺れる。 */
+/* Suspended Pennants Ornament — 吊り札が風を受けるように列から開く。画面外・非表示・一時停止・reduced motionでは動きを止める。 */
 .sop-ornament.sop-suspended-pennants-ornament {position:relative;width:100%;min-width:0;color:#d8e1ed}.sop-ornament.sop-suspended-pennants-ornament .or-stage,.sop-ornament.sop-suspended-pennants-ornament .ct-loader-stage{display:grid;place-items:center;min-height:180px;overflow:hidden}.sop-ornament.sop-suspended-pennants-ornament .x-composition{position:relative;width:150px;height:130px;border-top:1px solid #bca578}.sop-ornament.sop-suspended-pennants-ornament .x-composition i{position:absolute;display:block;box-sizing:border-box;width:18px;height:calc(50px + var(--i)*8px);left:calc(8px + var(--i)*23px);top:0;background:linear-gradient(#e2ceaa,#a08a60);clip-path:polygon(0 0,100% 0,100% 100%,50% 85%,0 100%);transform-origin:top;animation:sop-x-suspended-pennants-ornament 5s ease-in-out infinite alternate;animation-delay:calc(var(--i)*-.23s)}@keyframes sop-x-suspended-pennants-ornament{0%{transform:rotate(-9deg)}100%{transform:rotate(9deg)}}
 .sop-ornament.sop-suspended-pennants-ornament{max-width:100%}.sop-ornament.sop-suspended-pennants-ornament,.sop-ornament.sop-suspended-pennants-ornament *{box-sizing:border-box}.sop-ornament.sop-suspended-pennants-ornament :is(button,input,textarea,a){min-width:0}
 .sop-ornament.sop-suspended-pennants-ornament:focus-visible,.sop-ornament.sop-suspended-pennants-ornament :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-ornament.sop-suspended-pennants-ornament,.sop-ornament.sop-suspended-pennants-ornament *,.sop-ornament.sop-suspended-pennants-ornament::before,.sop-ornament.sop-suspended-pennants-ornament::after,.sop-ornament.sop-suspended-pennants-ornament *::before,.sop-ornament.sop-suspended-pennants-ornament *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-ornament.sop-suspended-pennants-ornament[data-sop-paused] *,.sop-ornament.sop-suspended-pennants-ornament[data-paused=true] *,.sop-ornament.sop-suspended-pennants-ornament[data-motion-running=false] *,.sop-ornament.sop-suspended-pennants-ornament[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-ornament.sop-suspended-pennants-ornament{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-ornament.sop-suspended-pennants-ornament :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+/* Motion runs only while visible, unpaused and permitted. */
+.sop-ornament.sop-suspended-pennants-ornament:not([data-ambient-running=true]) .x-composition i{animation-play-state:paused!important}
+.sop-ornament.sop-suspended-pennants-ornament .or-stage{min-height:240px;perspective:600px}
+.sop-ornament.sop-suspended-pennants-ornament .x-composition i{transition:translate .8s cubic-bezier(.18,.75,.24,1),rotate .9s cubic-bezier(.18,.75,.24,1),scale .8s;will-change:auto}
+.sop-ornament.sop-suspended-pennants-ornament[data-ambient-running=true]:hover .x-composition i{rotate:calc((var(--i) - 2.5)*9deg);translate:0 calc(mod(var(--i),2)*-12px)}
+@media(prefers-reduced-motion:reduce){.sop-ornament.sop-suspended-pennants-ornament .x-composition i{translate:none;rotate:none;scale:none}}
+
+.sop-ornament.sop-suspended-pennants-ornament:not([data-ambient-running=true]) .x-composition i{transition:none!important}

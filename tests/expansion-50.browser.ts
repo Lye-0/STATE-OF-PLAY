@@ -52,7 +52,11 @@ try{
   else if(d.category==='blocks'||d.category==='ornaments'){await card.hover();}
   await card.screenshot({path:path.join(out,'photos',d.id+'-state.png'),animations:'disabled'});
   if(['popups','datepickers'].includes(d.category)){await page.setViewportSize({width:320,height:844});await card.scrollIntoViewIfNeeded();const trigger=card.locator(d.category==='popups'?'[data-popup-open]':'[data-calendar-toggle]');await trigger.click();const surface=card.locator(d.category==='popups'?'dialog':'[data-calendar]');await surface.waitFor({state:'visible'});const bounds=await surface.boundingBox();assert.ok(bounds&&bounds.x>=-1&&bounds.x+bounds.width<=321,d.id+' open panel fits 320px');await surface.screenshot({path:path.join(out,'photos',d.id+'-mobile.png'),animations:'disabled'});if(d.category==='popups'){await surface.locator('[data-popup-close=close]').click();await surface.waitFor({state:'hidden'});}else await page.keyboard.press('Escape');await page.setViewportSize({width:1500,height:1000});}
-  await page.setViewportSize({width:320,height:844});await card.scrollIntoViewIfNeeded();const bound=await card.boundingBox();assert.ok(bound&&bound.x>=-1&&bound.x+bound.width<=321,d.id+' card fits 320');await stage.screenshot({path:path.join(out,'photos',d.id+'-narrow.png'),animations:'disabled'});
+  await page.setViewportSize({width:320,height:844});await card.scrollIntoViewIfNeeded();const bound=await card.boundingBox();assert.ok(bound&&bound.x>=-1&&bound.x+bound.width<=321,d.id+' card fits 320');if(d.category==='blocks'&&d.designType==='A'){
+   const surface=await card.locator('.sop-surface').boundingBox(),frame=await stage.boundingBox();
+   assert.ok(surface&&frame&&surface.y>=frame.y-1&&surface.y+surface.height<=frame.y+frame.height+1,d.id+' full material fits the narrow exhibition stage');
+  }
+  await stage.screenshot({path:path.join(out,'photos',d.id+'-narrow.png'),animations:'disabled'});
   results.push({id:d.id,category:d.category,gallery:true,states:true});console.log('PASS '+d.id);
  }
  assert.deepEqual(errors,[]);if(!captureOnly)fs.writeFileSync(path.join(out,'browser-results.json'),JSON.stringify(results,null,2)+'\n');

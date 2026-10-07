@@ -1,9 +1,9 @@
 # Brass Ledger Select
 
-細い真鍮の留め線と濃淡を抑えた紙面で、候補の行を見せる。
+台帳の欄外番号を固定し、選択した行に横罫が通る。
 
 
-細い真鍮の留め線と濃淡を抑えた紙面で、候補の行を見せる。
+台帳の欄外番号を固定し、選択した行に横罫が通る。
 
 ## 選択肢の差し替え
 Reactではitems配列へvalue/label/description/icon/badgeを渡します。Vanillaではmarkup.html内のdata-valueと表示内容を編集し、init(root)します。動的にDOMの選択肢を変更した後はcontroller.refresh()を呼びます。

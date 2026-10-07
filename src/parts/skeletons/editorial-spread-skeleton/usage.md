@@ -1,9 +1,9 @@
 # Editorial Spread Skeleton
 
-大きな余白と段組みの読込表示。
+見開きの見出しと本文を先に組版。
 
 
-大きな余白と段組みの読込表示。
+見開きの見出しと本文を先に組版。
 
 ## 内容と状態の接続
 loadingの切り替えは利用先の実際の通信・処理結果に接続します。placeholderはaria-hidden、rootはaria-busy。画面外・非表示・縮小モーションではアニメーションを止めます。childrenを取り外さず保持します。

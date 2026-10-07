@@ -1,9 +1,9 @@
 # Letterpress Query Search
 
-活版の見出しと短い検索罫。
+活版の問いと回答を罫線で組版。
 
 
-活版の見出しと短い検索罫。
+活版の問いと回答を罫線で組版。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`LetterpressQuerySearch`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。
