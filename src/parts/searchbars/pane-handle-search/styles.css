@@ -1,18 +1,20 @@
 @import "../../../shared/workbench/base.css";
-/* 検索面の右端に細い金属の取手を組み込み、入力から結果まで同じ引き出しとしてつなげる。 */
-
-.sop-wb.sop-pane-handle-search{--wb-bg:#273a32;--wb-accent:#cfddcb;--wb-line:#718d7a;--wb-muted:#b6cabb}
-.sop-wb.sop-pane-handle-search .wb-search-shell{background:#2b3e35;border:1px solid #6c877588;border-radius:5px;padding:18px;box-shadow:0 7px 18px #0003}
-.sop-wb.sop-pane-handle-search .wb-search-field{background:#1c3027;border:0;border-bottom:1px solid #a2b7a0;border-radius:3px;min-height:60px;padding-right:6px;box-shadow:inset 0 2px 4px #0002}
-.sop-wb.sop-pane-handle-search .wb-search-field:focus-within{outline:2px solid #b6cfb5;outline-offset:3px}
+/* 黒い検索面と銀の取手。反射は取手に集め、候補は細い罫線で整理する。 */
+.sop-wb.sop-pane-handle-search{--wb-bg:#202126;--wb-surface:#2b2d34;--wb-ink:#f1f0ee;--wb-muted:#b1b3bd;--wb-accent:#b8c7ee;--wb-line:#484b56;--wb-radius:4px}
+.sop-wb.sop-pane-handle-search .wb-search-shell{background:linear-gradient(130deg,#33353c,#24252b 55%);border:1px solid #555862;border-radius:6px;padding:20px;box-shadow:inset 0 1px #ffffff16,0 10px 24px #0003}
+.sop-wb.sop-pane-handle-search .wb-search-field{background:#17181d;border:1px solid #41434d;border-bottom-color:#868995;border-radius:3px;min-height:62px;padding-right:7px;box-shadow:inset 0 3px 7px #0003}
+.sop-wb.sop-pane-handle-search .wb-search-field:focus-within{outline:2px solid var(--wb-accent);outline-offset:3px}
 .sop-wb.sop-pane-handle-search .wb-search-field input:focus-visible{outline:0}
-.sop-wb.sop-pane-handle-search .wb-search-submit{width:32px;height:43px;border:1px solid #b4c4ad;border-radius:4px;background:linear-gradient(90deg,#63806a,#b1c3a9 45%,#6a836b);box-shadow:3px 0 4px #0004;color:#203a29}
+.sop-wb.sop-pane-handle-search .wb-search-submit{width:32px;min-width:32px;height:44px;padding:7px;border:1px solid #c4c7d0;border-radius:3px;background:linear-gradient(90deg,#757985,#f1f1ef 44%,#adb0ba 52%,#696d78);box-shadow:3px 1px 5px #0006,inset 1px 0 #fff9;color:#262932}
+.sop-wb.sop-pane-handle-search .wb-search-submit:hover{background:linear-gradient(90deg,#a0a6b5,#fff 44%,#cad0de 52%,#888e9f);color:#15171c}
 .sop-wb.sop-pane-handle-search .wb-search-submit span{display:none}
-.sop-wb.sop-pane-handle-search .wb-search-filters button{border:0;border-radius:2px;padding:7px 9px;background:transparent}
-.sop-wb.sop-pane-handle-search .wb-search-filters button[aria-pressed=true]{background:#536d57;color:#f0f4e8}
-.sop-wb.sop-pane-handle-search .wb-results-list [role=option]{border-radius:2px;border:0;border-bottom:1px solid #6f877344;background:#31483b}
+.sop-wb.sop-pane-handle-search .wb-search-filters{gap:12px}
+.sop-wb.sop-pane-handle-search .wb-search-filters button{border:0;border-bottom:2px solid transparent;border-radius:0;padding:7px 2px;background:transparent}
+.sop-wb.sop-pane-handle-search .wb-search-filters button[aria-pressed=true]{background:none;border-bottom-color:var(--wb-accent);color:var(--wb-ink)}
+.sop-wb.sop-pane-handle-search .wb-results-list [role=option]{border-radius:2px;border:0;border-bottom:1px solid #41434d;background:transparent}
+.sop-wb.sop-pane-handle-search .wb-results-list [aria-selected=true]{background:#343946;box-shadow:inset 2px 0 var(--wb-accent)}
 
-.sop-wb.sop-pane-handle-search:focus-visible,.sop-wb.sop-pane-handle-search :is(button,a,input,textarea,select):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:3px}
-@media(prefers-reduced-motion:reduce){.sop-wb.sop-pane-handle-search,.sop-wb.sop-pane-handle-search *,.sop-wb.sop-pane-handle-search::before,.sop-wb.sop-pane-handle-search::after,.sop-wb.sop-pane-handle-search *::before,.sop-wb.sop-pane-handle-search *::after{transition:none!important;animation:none!important}}
+.sop-wb.sop-pane-handle-search :is(button,a,input,textarea,select,summary):focus-visible{outline:2px solid var(--sop-focus,var(--wb-accent));outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-pane-handle-search *,.sop-wb.sop-pane-handle-search *::before,.sop-wb.sop-pane-handle-search *::after{transition:none!important;animation:none!important}}
 .sop-wb.sop-pane-handle-search[data-sop-paused] *,.sop-wb.sop-pane-handle-search[data-paused=true] *,.sop-wb.sop-pane-handle-search[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
-@media(forced-colors:active){.sop-wb.sop-pane-handle-search{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-pane-handle-search :is(button,input,a):focus-visible{outline:2px solid Highlight}.sop-wb.sop-pane-handle-search::before,.sop-wb.sop-pane-handle-search::after{forced-color-adjust:auto}}
+@media(forced-colors:active){.sop-wb.sop-pane-handle-search{--wb-bg:Canvas;--wb-surface:Canvas;--wb-ink:CanvasText;--wb-muted:CanvasText;--wb-accent:Highlight;--wb-line:CanvasText;color:CanvasText;color-scheme:light dark}.sop-wb.sop-pane-handle-search :is(button,input,a):focus-visible{outline:2px solid Highlight}}

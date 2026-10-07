@@ -1,8 +1,19 @@
 @import "../../../shared/workbench/base.css";
-/* Corner Flag Navigation — 小さな角旗をもつ行き先面が、現在の選択を右端で示す。 */
-.sop-wb.sop-corner-flag-navigation{--wb-bg:#2d4434;--wb-accent:#bfd7bd;--wb-line:#87a584;--wb-muted:#aec4a4}.sop-wb.sop-corner-flag-navigation .wb-navigation-frame{background:#2d4b33;border:1px solid #87a980;border-radius:2px;padding:6px}.sop-wb.sop-corner-flag-navigation .wb-nav-desktop .wb-nav-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}.sop-wb.sop-corner-flag-navigation .wb-nav-link,.sop-wb.sop-corner-flag-navigation .wb-nav-disclosure{position:relative;background:#406344;border:1px solid #97b68b;border-radius:0;padding:15px 11px;min-height:50px}.sop-wb.sop-corner-flag-navigation .wb-nav-marker{display:none}.sop-wb.sop-corner-flag-navigation .wb-nav-link[aria-current=page]{background:#6e9663;color:#eef4df}.sop-wb.sop-corner-flag-navigation .wb-nav-link[aria-current=page]:after{content:"";position:absolute;right:0;top:0;width:13px;height:13px;background:#c9dda8;clip-path:polygon(0 0,100% 0,100% 100%)}.sop-wb.sop-corner-flag-navigation .wb-nav-brand{padding-bottom:18px}
-@media(prefers-reduced-motion:reduce){.sop-wb.sop-corner-flag-navigation,.sop-wb.sop-corner-flag-navigation *,.sop-wb.sop-corner-flag-navigation::before,.sop-wb.sop-corner-flag-navigation::after{animation:none!important;transition:none!important}}
-@media(forced-colors:active){.sop-wb.sop-corner-flag-navigation{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-corner-flag-navigation :is(button,input,a):focus-visible{outline:2px solid Highlight}}
-.sop-wb.sop-corner-flag-navigation:focus-visible,.sop-wb.sop-corner-flag-navigation :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+/* 墨色の案内板に朱色の折り旗。通常リンクは線と余白で区切る。 */
+.sop-wb.sop-corner-flag-navigation{--wb-bg:#252429;--wb-surface:#353239;--wb-ink:#f4efea;--wb-muted:#bcb4b7;--wb-accent:#eaaa91;--wb-line:#585057;--wb-radius:3px}
+.sop-wb.sop-corner-flag-navigation .wb-navigation-frame{background:#252429;border:1px solid #5f555a;border-radius:3px;padding:8px;box-shadow:0 12px 24px #0003}
+.sop-wb.sop-corner-flag-navigation .wb-nav-brand{padding:18px 16px 24px}
+.sop-wb.sop-corner-flag-navigation .wb-nav-desktop .wb-nav-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sop-wb.sop-corner-flag-navigation .wb-nav-link,.sop-wb.sop-corner-flag-navigation .wb-nav-disclosure{position:relative;background:transparent;border:0;border-bottom:1px solid #5f555a;border-radius:0;padding:18px 12px;min-height:56px;gap:12px}
+.sop-wb.sop-corner-flag-navigation .wb-nav-link:hover,.sop-wb.sop-corner-flag-navigation .wb-nav-disclosure:hover{background:#373038}
+.sop-wb.sop-corner-flag-navigation .wb-nav-marker{display:none}
+.sop-wb.sop-corner-flag-navigation .wb-nav-link[aria-current=page]{background:#f1e9de;color:#352d2a;box-shadow:0 3px 6px #0003}
+.sop-wb.sop-corner-flag-navigation .wb-nav-link[aria-current=page] .wb-nav-link-icon{color:#864c3c}
+.sop-wb.sop-corner-flag-navigation .wb-nav-link[aria-current=page]::after{content:"";position:absolute;right:0;top:0;width:19px;height:19px;background:linear-gradient(45deg,#9b442f,#d57959);clip-path:polygon(0 0,100% 0,100% 100%);pointer-events:none}
+.sop-wb.sop-corner-flag-navigation .wb-nav-link[aria-current=page] :is(small,.wb-nav-badge){color:#775b50}
+.sop-wb.sop-corner-flag-navigation .wb-nav-foot{margin-top:14px;border-top:0}
 
+.sop-wb.sop-corner-flag-navigation :is(button,a,input,textarea,select,summary):focus-visible{outline:2px solid var(--sop-focus,var(--wb-accent));outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-corner-flag-navigation *,.sop-wb.sop-corner-flag-navigation *::before,.sop-wb.sop-corner-flag-navigation *::after{transition:none!important;animation:none!important}}
 .sop-wb.sop-corner-flag-navigation[data-sop-paused] *,.sop-wb.sop-corner-flag-navigation[data-paused=true] *,.sop-wb.sop-corner-flag-navigation[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+@media(forced-colors:active){.sop-wb.sop-corner-flag-navigation{--wb-bg:Canvas;--wb-surface:Canvas;--wb-ink:CanvasText;--wb-muted:CanvasText;--wb-accent:Highlight;--wb-line:CanvasText;color:CanvasText;color-scheme:light dark}.sop-wb.sop-corner-flag-navigation :is(button,input,a):focus-visible{outline:2px solid Highlight}}

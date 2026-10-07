@@ -1,9 +1,20 @@
 @import "../../../shared/signature/skeleton.css";
-/* Gallery Grid Skeleton — 三つの展示枠と下の短い説明欄を、動かさずに先に描く。 */
-.sop-sig.sop-gallery-grid-skeleton{--sg-bg:#344232;--sg-a:#bdcda6;--sg-line:#7d9670}.sop-sig.sop-gallery-grid-skeleton .sg-skeleton-frame{background:#2b412d;border:0;border-left:7px solid #728760;border-radius:0;padding:20px;min-height:226px;display:flex;flex-direction:column}.sop-sig.sop-gallery-grid-skeleton .sg-sk-hero{display:none}.sop-sig.sop-gallery-grid-skeleton .sg-sk-profile{order:0;margin-bottom:20px}.sop-sig.sop-gallery-grid-skeleton .sg-sk-tiles{order:1;gap:12px;margin-top:0}.sop-sig.sop-gallery-grid-skeleton .sg-sk-tiles>i{height:94px;border:1px solid #9eb386;border-radius:1px;box-shadow:2px 4px #16322455}.sop-sig.sop-gallery-grid-skeleton .sg-sk-lines{order:2;margin-top:17px;gap:7px}.sop-sig.sop-gallery-grid-skeleton .sg-sk-lines>i{height:4px}
-@media(prefers-reduced-motion:reduce){.sop-sig.sop-gallery-grid-skeleton,.sop-sig.sop-gallery-grid-skeleton *,.sop-sig.sop-gallery-grid-skeleton::before,.sop-sig.sop-gallery-grid-skeleton::after{animation:none!important;transition:none!important}}
-@media(forced-colors:active){.sop-sig.sop-gallery-grid-skeleton{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-gallery-grid-skeleton :is(button,input,a):focus-visible{outline:2px solid Highlight}}
-.sop-sig.sop-gallery-grid-skeleton:focus-visible,.sop-sig.sop-gallery-grid-skeleton :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+/* 白い展示壁、三つの額、静かな反射。読み込み中にも作品の余白を保つ。 */
+.sop-sig.sop-gallery-grid-skeleton{--sg-bg:#f0eeea;--sg-ink:#343336;--sg-muted:#656269;--sg-a:#797789;--sg-line:#c7c3c8;--sg-soft:#e1dde5;--sg-radius:3px;color-scheme:light}
+.sop-sig.sop-gallery-grid-skeleton .sg-skeleton-frame{--sk-tone:#d9d5d8;background:#f0eeea;border:1px solid #d3ced0;border-radius:3px;padding:26px 22px;min-height:260px;display:flex;flex-direction:column;box-shadow:0 10px 24px #0002}
+.sop-sig.sop-gallery-grid-skeleton .sg-sk-hero{display:none}
+.sop-sig.sop-gallery-grid-skeleton .sg-sk-profile{order:0;margin-bottom:26px;opacity:.85}
+.sop-sig.sop-gallery-grid-skeleton .sg-sk-profile>span{border-radius:2px;width:22px;height:22px}
+.sop-sig.sop-gallery-grid-skeleton .sg-sk-tiles{order:1;gap:14px;margin-top:0;align-items:flex-start}
+.sop-sig.sop-gallery-grid-skeleton .sg-sk-tiles>i{height:98px;border:6px solid #fff;border-radius:1px;outline:1px solid #d1cccd;background:linear-gradient(150deg,#ded8d5,#c4c1ca);box-shadow:2px 5px 6px #3227371a}
+.sop-sig.sop-gallery-grid-skeleton .sg-sk-tiles>i:nth-child(2){height:112px;background:linear-gradient(150deg,#d1d3dc,#b5bdca)}
+.sop-sig.sop-gallery-grid-skeleton .sg-sk-tiles>i:nth-child(3){height:88px;background:linear-gradient(150deg,#e4d9cc,#cdbdaf)}
+.sop-sig.sop-gallery-grid-skeleton .sg-sk-lines{order:2;margin-top:24px;gap:8px}
+.sop-sig.sop-gallery-grid-skeleton .sg-sk-lines>i{height:3px;background:#c9c4c8}
+.sop-sig.sop-gallery-grid-skeleton .sg-sk-beam{background:linear-gradient(110deg,transparent 25%,#ffffff65 48%,transparent 68%)}
+.sop-sig.sop-gallery-grid-skeleton .sg-loaded-content{background:#f0eeea;border:1px solid #c7c3c8;border-radius:3px;min-height:260px}
 
+.sop-sig.sop-gallery-grid-skeleton :is(button,a,input,textarea,select,summary):focus-visible{outline:2px solid var(--sop-focus,var(--sg-a));outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-gallery-grid-skeleton *,.sop-sig.sop-gallery-grid-skeleton *::before,.sop-sig.sop-gallery-grid-skeleton *::after{transition:none!important;animation:none!important}}
 .sop-sig.sop-gallery-grid-skeleton[data-sop-paused] *,.sop-sig.sop-gallery-grid-skeleton[data-paused=true] *,.sop-sig.sop-gallery-grid-skeleton[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
-.sop-sig.sop-gallery-grid-skeleton *{animation-play-state:var(--sg-play,running)!important}
+@media(forced-colors:active){.sop-sig.sop-gallery-grid-skeleton{--sg-bg:Canvas;--sg-ink:CanvasText;--sg-muted:CanvasText;--sg-a:Highlight;--sg-line:CanvasText;--sg-soft:Canvas;color:CanvasText;color-scheme:light dark}.sop-sig.sop-gallery-grid-skeleton :is(button,input,a):focus-visible{outline:2px solid Highlight}}

@@ -1,12 +1,22 @@
 @import "../../../shared/popup-base.css";
 @import "../../../shared/popup-content.css";
-/* Hinged Case Dialog — 蓋の蝶番と内部の仕切りが、確認内容を小さなケースに収める。 */
-.sop-popup.sop-hinged-case-dialog{--pp-bg:#2c3030;--pp-ink:#e1dfd4;--pp-accent:#b7b298;--pp-line:#88877088;--pp-radius:12px}.sop-popup.sop-hinged-case-dialog .sop-popup-window{border:3px solid #737468;box-shadow:inset 0 0 0 4px #232b2a,0 25px 70px #0009;border-radius:12px}.sop-popup.sop-hinged-case-dialog .sop-popup-top{margin:0 10px;border-bottom:8px double #8e9076;padding-bottom:12px}.sop-popup.sop-hinged-case-dialog .sop-popup-body{border:1px solid #7a7d6480;background:#18242133;padding:17px}.sop-popup.sop-hinged-case-dialog .sop-popup-trigger{border:2px solid #8a8d77;border-right-width:9px;background:#3e4d40;border-radius:8px}
-@media(prefers-reduced-motion:reduce){.sop-popup.sop-hinged-case-dialog,.sop-popup.sop-hinged-case-dialog *,.sop-popup.sop-hinged-case-dialog::before,.sop-popup.sop-hinged-case-dialog::after{animation:none!important;transition:none!important}}
-@media(forced-colors:active){.sop-popup.sop-hinged-case-dialog{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-popup.sop-hinged-case-dialog :is(button,input,a):focus-visible{outline:2px solid Highlight}}
-.sop-popup.sop-hinged-case-dialog:focus-visible,.sop-popup.sop-hinged-case-dialog :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
-
-.sop-popup.sop-hinged-case-dialog[data-sop-paused] *,.sop-popup.sop-hinged-case-dialog[data-paused=true] *,.sop-popup.sop-hinged-case-dialog[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
-
-/* Open-state review: category-specific anatomy. */
-.sop-popup.sop-hinged-case-dialog .sop-popup-window{border:0;border-left:12px solid #83937d;border-right:9px solid #83937d;border-radius:3px;box-shadow:inset 0 0 0 1px #c8cfb4,0 30px 80px #000b}.sop-popup.sop-hinged-case-dialog .sop-popup-shell{padding:27px 26px;background:#2a302b;box-shadow:inset 0 7px #81927a88,inset 0 -7px #81927a88}.sop-popup.sop-hinged-case-dialog .sop-popup-top{border-bottom:0;padding-bottom:0;margin-bottom:25px}.sop-popup.sop-hinged-case-dialog .sop-popup-kicker{border:1px solid #96a28c;padding:9px 13px;background:#55624b;font-size:10px}.sop-popup.sop-hinged-case-dialog .sop-popup-close{border-radius:2px;border:2px solid #8c9b86;background:#1a251b}.sop-popup.sop-hinged-case-dialog .sop-popup-intro{border:0;padding:0}.sop-popup.sop-hinged-case-dialog .sop-popup-intro h2{font:32px/1.25 Georgia;letter-spacing:0}.sop-popup.sop-hinged-case-dialog .sop-popup-body{padding:7px;background:#1a251b;border:1px solid #7e9178;box-shadow:inset 0 4px #0d180e}.sop-popup.sop-hinged-case-dialog .pp-callout{background:#45523f;border:0;border-left:3px solid #aebda5;padding:21px;line-height:2}.sop-popup.sop-hinged-case-dialog .sop-popup-footer{display:grid;grid-template-columns:90px minmax(0,1fr);gap:14px;border-top:0;margin-top:22px;padding:0}.sop-popup.sop-hinged-case-dialog .sop-popup-primary{min-height:55px;font-size:14px;border-radius:2px;box-shadow:0 4px #18231a}.sop-popup.sop-hinged-case-dialog .sop-popup-secondary{border:0;border-bottom:1px solid #93a38a;border-radius:0}
+/* 銀の蝶番を備えた墨色のケース。確認する内容だけを明るい内張りに置く。 */
+.sop-popup.sop-hinged-case-dialog{--pp-bg:#282a31;--pp-ink:#f2eee8;--pp-muted:#c1bac0;--pp-accent:#e1c4a1;--pp-on-accent:#332b25;--pp-line:#7a737a;--pp-radius:4px;--pp-wash:#d9c3ac18}
+.sop-popup.sop-hinged-case-dialog .sop-popup-window{border:1px solid #a5a1a6;border-inline:5px solid #99959c;border-radius:4px;box-shadow:inset 0 0 0 1px #e8e4e9,0 30px 80px #0009}
+.sop-popup.sop-hinged-case-dialog .sop-popup-shell{padding:30px 26px;background:linear-gradient(120deg,#393a42,#282a31 65%);box-shadow:inset 0 3px #c4bfc544,inset 0 -3px #c4bfc533}
+.sop-popup.sop-hinged-case-dialog .sop-popup-top{padding-bottom:16px;margin-bottom:24px;border-bottom:1px solid #79717a}
+.sop-popup.sop-hinged-case-dialog .sop-popup-kicker{font:10px/1.6 Consolas,monospace;letter-spacing:.15em;color:#d9c3ac}
+.sop-popup.sop-hinged-case-dialog .sop-popup-close{border-radius:2px;border:1px solid #b0a6af;background:#3b3741}
+.sop-popup.sop-hinged-case-dialog .sop-popup-intro{border:0;padding:0}
+.sop-popup.sop-hinged-case-dialog .sop-popup-intro h2{font:30px/1.35 Georgia,serif;letter-spacing:0}
+.sop-popup.sop-hinged-case-dialog .sop-popup-body{padding:5px;background:#18191e;border:1px solid #847882;box-shadow:inset 0 3px #0004}
+.sop-popup.sop-hinged-case-dialog .pp-callout{background:#e9e0d5;--pp-ink:#4b3d34;--pp-muted:#6d5c50;color:var(--pp-ink);border:0;border-left:2px solid #b39778;padding:22px;line-height:2}
+.sop-popup.sop-hinged-case-dialog .sop-popup-footer{display:grid;grid-template-columns:80px minmax(0,1fr);gap:16px;border-top:0;margin-top:24px;padding:0}
+.sop-popup.sop-hinged-case-dialog .sop-popup-primary{min-height:46px;font-size:13px;border-radius:3px;box-shadow:0 2px #7c6550}
+.sop-popup.sop-hinged-case-dialog .sop-popup-secondary{border:0;border-bottom:1px solid #9c8c96;border-radius:0}
+.sop-popup.sop-hinged-case-dialog .sop-popup-trigger{border:1px solid #938a94;border-right:4px solid #c0b7c0;background:linear-gradient(110deg,#3a3740,#27282e);border-radius:3px}
+.sop-popup.sop-hinged-case-dialog :is(button,input,a):focus-visible{outline:2px solid var(--pp-accent);outline-offset:3px}
+@media(max-width:380px){.sop-popup.sop-hinged-case-dialog .sop-popup-shell{padding:24px 18px}.sop-popup.sop-hinged-case-dialog .sop-popup-intro h2{font-size:25px}.sop-popup.sop-hinged-case-dialog .pp-callout{padding:16px}}
+@media(prefers-reduced-motion:reduce){.sop-popup.sop-hinged-case-dialog *,.sop-popup.sop-hinged-case-dialog *::before,.sop-popup.sop-hinged-case-dialog *::after{animation:none!important;transition:none!important}}
+.sop-popup.sop-hinged-case-dialog[data-sop-paused] *,.sop-popup.sop-hinged-case-dialog[data-paused=true] *{animation-play-state:paused!important;transition:none!important}
+@media(forced-colors:active){.sop-popup.sop-hinged-case-dialog{--pp-bg:Canvas;--pp-ink:CanvasText;--pp-muted:CanvasText;--pp-accent:Highlight;--pp-on-accent:HighlightText;--pp-line:CanvasText}.sop-popup.sop-hinged-case-dialog .pp-callout{--pp-ink:CanvasText;--pp-muted:CanvasText;color:CanvasText;background:Canvas}.sop-popup.sop-hinged-case-dialog :is(button,input,a):focus-visible{outline:2px solid Highlight}}

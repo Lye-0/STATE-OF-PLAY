@@ -1,8 +1,19 @@
 @import "../../../shared/workbench/base.css";
-/* Arched Route Navigation — 上端の丸い行き先窓を、低い水平線でつなげる。 */
-.sop-wb.sop-arched-route-navigation{--wb-bg:#30432c;--wb-accent:#bfd0a5;--wb-line:#8aa073;--wb-muted:#afbe99}.sop-wb.sop-arched-route-navigation .wb-navigation-frame{background:#2c462c;border:1px solid #88a575;border-radius:3px;padding:6px}.sop-wb.sop-arched-route-navigation .wb-nav-desktop .wb-nav-list{gap:8px;justify-content:center;padding-top:8px;border-bottom:3px solid #799460;padding-bottom:5px}.sop-wb.sop-arched-route-navigation .wb-nav-link,.sop-wb.sop-arched-route-navigation .wb-nav-disclosure{border:1px solid #8fa973;border-radius:22px 22px 2px 2px;background:#48683b;padding:18px 10px 9px;flex-direction:column;gap:9px;min-width:64px}.sop-wb.sop-arched-route-navigation .wb-nav-marker{display:none}.sop-wb.sop-arched-route-navigation .wb-nav-link[aria-current=page]{background:#98b278;color:#243e27;border-color:#c8d8a8}.sop-wb.sop-arched-route-navigation .wb-nav-brand{border-bottom:1px solid #90a97955}
-@media(prefers-reduced-motion:reduce){.sop-wb.sop-arched-route-navigation,.sop-wb.sop-arched-route-navigation *,.sop-wb.sop-arched-route-navigation::before,.sop-wb.sop-arched-route-navigation::after{animation:none!important;transition:none!important}}
-@media(forced-colors:active){.sop-wb.sop-arched-route-navigation{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-arched-route-navigation :is(button,input,a):focus-visible{outline:2px solid Highlight}}
-.sop-wb.sop-arched-route-navigation:focus-visible,.sop-wb.sop-arched-route-navigation :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+/* 明るい石の基壇と青い開口部。アーチの縁と奥行きで行き先を示す。 */
+.sop-wb.sop-arched-route-navigation{--wb-bg:#eee9e0;--wb-surface:#ddd7ce;--wb-ink:#34363d;--wb-muted:#656574;--wb-accent:#4c5d9d;--wb-line:#bcb6ae;--wb-radius:3px;color-scheme:light}
+.sop-wb.sop-arched-route-navigation .wb-navigation-frame{background:#eee9e0;border:1px solid #c7c0b5;border-radius:3px;padding:8px;box-shadow:0 10px 25px #0003}
+.sop-wb.sop-arched-route-navigation .wb-nav-brand{border-bottom:1px solid #cbc4b9;padding:18px 16px}
+.sop-wb.sop-arched-route-navigation .wb-nav-desktop .wb-nav-list{gap:10px;justify-content:center;padding:22px 0 0;border-bottom:4px double #b4aa9b}
+.sop-wb.sop-arched-route-navigation .wb-nav-link,.sop-wb.sop-arched-route-navigation .wb-nav-disclosure{border:1px solid #b8b0a4;border-bottom:0;border-radius:30px 30px 0 0;background:linear-gradient(90deg,#d8d1c6,#f8f4ed 48%,#e2dbd1);padding:25px 12px 16px;flex-direction:column;gap:12px;min-width:66px;box-shadow:inset 0 3px 1px #fff8;color:#5b5960}
+.sop-wb.sop-arched-route-navigation .wb-nav-link:hover,.sop-wb.sop-arched-route-navigation .wb-nav-disclosure:hover{background:#faf6ef;color:#35457e}
+.sop-wb.sop-arched-route-navigation .wb-nav-marker{display:none}
+.sop-wb.sop-arched-route-navigation .wb-nav-link[aria-current=page]{background:linear-gradient(#343f70,#5a6aaa);color:#fff;border-color:#303c69;box-shadow:inset 0 4px 7px #0004}
+.sop-wb.sop-arched-route-navigation .wb-nav-link[aria-current=page] .wb-nav-link-icon{color:#d3dcff}
+.sop-wb.sop-arched-route-navigation .wb-nav-link[aria-current=page] :is(small,.wb-nav-badge){color:#e0e5fa}
+.sop-wb.sop-arched-route-navigation .wb-nav-dialog .wb-nav-link{border-radius:22px 22px 3px 3px;flex-direction:row}
+.sop-wb.sop-arched-route-navigation .wb-nav-flyout .wb-nav-link{border-radius:3px;flex-direction:row;padding:14px}
 
+.sop-wb.sop-arched-route-navigation :is(button,a,input,textarea,select,summary):focus-visible{outline:2px solid var(--sop-focus,var(--wb-accent));outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-arched-route-navigation *,.sop-wb.sop-arched-route-navigation *::before,.sop-wb.sop-arched-route-navigation *::after{transition:none!important;animation:none!important}}
 .sop-wb.sop-arched-route-navigation[data-sop-paused] *,.sop-wb.sop-arched-route-navigation[data-paused=true] *,.sop-wb.sop-arched-route-navigation[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+@media(forced-colors:active){.sop-wb.sop-arched-route-navigation{--wb-bg:Canvas;--wb-surface:Canvas;--wb-ink:CanvasText;--wb-muted:CanvasText;--wb-accent:Highlight;--wb-line:CanvasText;color:CanvasText;color-scheme:light dark}.sop-wb.sop-arched-route-navigation :is(button,input,a):focus-visible{outline:2px solid Highlight}}

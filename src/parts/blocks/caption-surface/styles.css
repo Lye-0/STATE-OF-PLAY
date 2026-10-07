@@ -1,8 +1,13 @@
 .sop-surface.sop-caption-surface{position:relative;isolation:isolate;box-sizing:border-box;min-width:0;width:100%;color:var(--sop-ink,#edf0e8)}.sop-surface.sop-caption-surface *{box-sizing:border-box}.sop-surface.sop-caption-surface .sop-surface-content{position:relative;z-index:1;padding:var(--sop-padding,28px);min-width:0}
 /* Caption Surface — 狭いキャプション帯と広い本文を分けた、資料用のカード。 */
-.sop-surface.sop-caption-surface{--sop-ink:#dce3de;--sop-accent-ink:#b1ccc0;background:#222b2a;border:1px solid #556763;border-radius:0;padding-top:6px;border-top:18px solid #435b51}.sop-surface.sop-caption-surface .sop-surface-content{padding:24px 20px}.sop-surface.sop-caption-surface:focus-within{border-color:#a7c5b6}
+.sop-surface.sop-caption-surface{--sop-ink:#dce3de;--sop-accent-ink:#884d37;background:#f3ede2;border:1px solid #e9e0d1;border-radius:0;padding-top:6px;border-top:18px solid #e9e0d1}.sop-surface.sop-caption-surface .sop-surface-content{padding:24px 20px}.sop-surface.sop-caption-surface:focus-within{border-color:#884d37}
 @media(prefers-reduced-motion:reduce){.sop-surface.sop-caption-surface,.sop-surface.sop-caption-surface *,.sop-surface.sop-caption-surface::before,.sop-surface.sop-caption-surface::after{animation:none!important;transition:none!important}}
 @media(forced-colors:active){.sop-surface.sop-caption-surface{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-surface.sop-caption-surface :is(button,input,a):focus-visible{outline:2px solid Highlight}}
-.sop-surface.sop-caption-surface:focus-visible,.sop-surface.sop-caption-surface :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+.sop-surface.sop-caption-surface:focus-visible,.sop-surface.sop-caption-surface :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#3a322c);outline-offset:4px}
 
 .sop-surface.sop-caption-surface[data-sop-paused] *,.sop-surface.sop-caption-surface[data-paused=true] *,.sop-surface.sop-caption-surface[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+/* 細い朱色のキャプション線と暖色の紙面に整理。太い緑の上帯を細くする。 */
+.sop-surface.sop-caption-surface{--sop-ink:#3a322c;--sop-accent-ink:#884d37;color:#3a322c;color-scheme:light;}
+.sop-surface.sop-caption-surface{border-top-width:3px;border-top-color:#a86148;background:#f3ede2;box-shadow:0 8px 22px #0002} .sop-surface.sop-caption-surface .sop-surface-content{padding:30px 24px}
+@media(forced-colors:active){.sop-surface.sop-caption-surface{color:CanvasText;--sop-ink:CanvasText;--sop-muted:CanvasText;--sop-line:CanvasText;--sop-bg:Canvas;--sop-base:Canvas;--sop-panel:Canvas;--sop-surface:Canvas;--sop-accent:Highlight;background:Canvas}.sop-surface.sop-caption-surface :is(button,input,a):focus-visible{outline:2px solid Highlight}}

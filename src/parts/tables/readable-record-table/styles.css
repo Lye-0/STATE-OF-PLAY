@@ -1,8 +1,25 @@
 @import "../../../shared/workbench/base.css";
-/* Readable Record Table — 長い名称と数値の列を落ち着いて読み、必要な行だけを選べる実用的な表。 */
-.sop-wb.sop-readable-record-table{--wb-bg:#294332;--wb-accent:#bfd4bd;--wb-line:#86a17b;--wb-muted:#b2c4a8}.sop-wb.sop-readable-record-table .wb-data-frame{background:#2e4a32;border:1px solid #88a880;border-radius:6px}.sop-wb.sop-readable-record-table .wb-data-heading{padding:22px 20px;border-bottom:1px solid #7a9873}.sop-wb.sop-readable-record-table .wb-data-heading h3{font:20px Arial;letter-spacing:0}.sop-wb.sop-readable-record-table .wb-data-toolbar{padding:17px 20px}.sop-wb.sop-readable-record-table th{background:#3f633e;border-bottom:2px solid #91af80;font:11px Arial;padding-top:15px;padding-bottom:15px}.sop-wb.sop-readable-record-table tbody td{background:#2b482d;border-bottom:1px solid #7c9d7177;padding-top:18px;padding-bottom:18px}.sop-wb.sop-readable-record-table [data-first-column] .wb-cell-text{font-size:13px;font-weight:500;line-height:1.6}.sop-wb.sop-readable-record-table .wb-cell-badge{border-radius:4px;padding:5px 8px}.sop-wb.sop-readable-record-table .wb-data-footer{padding:17px 20px}
-@media(prefers-reduced-motion:reduce){.sop-wb.sop-readable-record-table,.sop-wb.sop-readable-record-table *,.sop-wb.sop-readable-record-table::before,.sop-wb.sop-readable-record-table::after{animation:none!important;transition:none!important}}
-@media(forced-colors:active){.sop-wb.sop-readable-record-table{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-readable-record-table :is(button,input,a):focus-visible{outline:2px solid Highlight}}
-.sop-wb.sop-readable-record-table:focus-visible,.sop-wb.sop-readable-record-table :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+/* 白い読み取り面、薄い罫線、藍色の選択状態。情報を静かに整えるBの表。 */
+.sop-wb.sop-readable-record-table{--wb-bg:#fafbfc;--wb-surface:#eef1f5;--wb-ink:#28313f;--wb-muted:#596577;--wb-accent:#3d5d9a;--wb-line:#ccd3de;--wb-radius:6px;color-scheme:light}
+.sop-wb.sop-readable-record-table .wb-data-frame{background:var(--wb-bg);border:1px solid var(--wb-line);border-radius:6px;box-shadow:0 8px 24px #0002}
+.sop-wb.sop-readable-record-table .wb-data-heading{padding:24px;border-bottom:1px solid #e0e4eb}
+.sop-wb.sop-readable-record-table .wb-data-heading h3{font:600 20px/1.4 system-ui;letter-spacing:-.4px}
+.sop-wb.sop-readable-record-table .wb-data-toolbar{padding:18px 24px}
+.sop-wb.sop-readable-record-table .wb-table-search{background:#fff;border-radius:4px}
+.sop-wb.sop-readable-record-table th{background:var(--wb-surface);font:11px system-ui;border-bottom:1px solid #bac5d4;padding-block:5px}
+.sop-wb.sop-readable-record-table tbody td{background:var(--wb-bg);border-bottom:1px solid #e1e5eb;padding-block:18px}
+.sop-wb.sop-readable-record-table [data-first-column] .wb-cell-text{font-size:13px;font-weight:500;line-height:1.6}
+.sop-wb.sop-readable-record-table .wb-cell-badge{border:0;border-radius:3px;background:#e5ebf5;padding:5px 8px}
+.sop-wb.sop-readable-record-table .wb-cell-badge[data-value=draft]{background:#eceef1}
+.sop-wb.sop-readable-record-table .wb-data-footer{padding:17px 24px}
 
+.sop-wb.sop-readable-record-table tbody tr:hover td{background:color-mix(in srgb,var(--wb-accent) 6%,var(--wb-bg))}
+.sop-wb.sop-readable-record-table tbody tr[data-selected=true] td{background:color-mix(in srgb,var(--wb-accent) 13%,var(--wb-bg))}
+.sop-wb.sop-readable-record-table tbody tr[data-selected=true] td:first-child{box-shadow:inset 3px 0 var(--wb-accent)}
+.sop-wb.sop-readable-record-table .wb-cell-badge[data-value=review]{color:#805514;background:#f6ecd6}
+.sop-wb.sop-readable-record-table input::placeholder{opacity:1}
+
+.sop-wb.sop-readable-record-table :is(button,a,input,textarea,select,summary):focus-visible{outline:2px solid var(--sop-focus,var(--wb-accent));outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-readable-record-table *,.sop-wb.sop-readable-record-table *::before,.sop-wb.sop-readable-record-table *::after{transition:none!important;animation:none!important}}
 .sop-wb.sop-readable-record-table[data-sop-paused] *,.sop-wb.sop-readable-record-table[data-paused=true] *,.sop-wb.sop-readable-record-table[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+@media(forced-colors:active){.sop-wb.sop-readable-record-table{--wb-bg:Canvas;--wb-surface:Canvas;--wb-ink:CanvasText;--wb-muted:CanvasText;--wb-accent:Highlight;--wb-line:CanvasText;color:CanvasText;color-scheme:light dark}.sop-wb.sop-readable-record-table :is(button,input,a):focus-visible{outline:2px solid Highlight}}

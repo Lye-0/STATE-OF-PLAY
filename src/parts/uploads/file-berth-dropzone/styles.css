@@ -1,12 +1,14 @@
 @import "../../../shared/foundation/base.css";
-/* File Berth Dropzone — ファイルの停泊位置を、低い柵と奥へ向かう床の線で示す。 */
-.sop-foundation.sop-file-berth-dropzone{--ff-accent:#c1d2c0;--ff-panel:#35573f;--ff-base:#233d29;--ff-line:#789a7a}.sop-foundation.sop-file-berth-dropzone .ff-dropzone{border:0;border-top:1px solid #7aa075;border-bottom:9px solid #7b9b71;border-radius:0;background:repeating-linear-gradient(100deg,transparent 0 19px,#b0c69711 19px 20px),#2d4e35;min-height:165px;padding:26px 21px;box-shadow:inset 9px 0 #536f4a33,inset -9px 0 #536f4a33}.sop-foundation.sop-file-berth-dropzone .ff-upload-symbol{border:1px solid #9db391;border-radius:50% 50% 3px 3px;background:#587b51}.sop-foundation.sop-file-berth-dropzone .ff-dropzone[data-dragging=true]{border-bottom-color:#c0d2a5}
-@media(prefers-reduced-motion:reduce){.sop-foundation.sop-file-berth-dropzone,.sop-foundation.sop-file-berth-dropzone *,.sop-foundation.sop-file-berth-dropzone::before,.sop-foundation.sop-file-berth-dropzone::after{animation:none!important;transition:none!important}}
-@media(forced-colors:active){.sop-foundation.sop-file-berth-dropzone{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-file-berth-dropzone :is(button,input,a):focus-visible{outline:2px solid Highlight}}
-.sop-foundation.sop-file-berth-dropzone:focus-visible,.sop-foundation.sop-file-berth-dropzone :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+/* 陶器の縁と暗い受け口。ファイルを置く内側と外側を素材で分ける。 */
+.sop-foundation.sop-file-berth-dropzone{--ff-accent:#c3cee9;--ff-ink:#f1f0ee;--ff-muted:#b5bdcd;--ff-panel:#2d3441;--ff-base:#222834;--ff-line:#788295;--ff-radius:4px}
+.sop-foundation.sop-file-berth-dropzone .ff-dropzone{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:205px;padding:30px 20px 24px;border:7px solid #d6d0c6;border-bottom:10px solid #aaa497;border-radius:82px 82px 5px 5px;background:radial-gradient(ellipse at 50% 100%,#3d4a61,#222936 80%);box-shadow:inset 0 6px 12px #0006,0 8px 20px #0003}
+.sop-foundation.sop-file-berth-dropzone .ff-upload-symbol{position:relative;inset:auto;order:-1;display:grid;place-items:center;margin:0 auto 12px;width:40px;height:48px;padding:0;border:1px solid #a5b4d1;border-radius:19px 19px 3px 3px;box-shadow:inset 0 1px #ffffff30;background:linear-gradient(#59667d,#344157);color:#e4eaff}
+.sop-foundation.sop-file-berth-dropzone .ff-dropzone strong{font:20px/1.4 Georgia,serif}
+.sop-foundation.sop-file-berth-dropzone [data-upload-limits]{margin-top:14px}
+.sop-foundation.sop-file-berth-dropzone .ff-dropzone[data-dragging=true],.sop-foundation.sop-file-berth-dropzone .ff-dropzone:focus-within{background:#364665;border-color:#e8deca;box-shadow:inset 0 0 0 2px #a7bce7,0 8px 20px #0003}
+.sop-foundation.sop-file-berth-dropzone .ff-upload-files li{border-radius:4px;background:#2d3441;border-color:#647187}
 
+.sop-foundation.sop-file-berth-dropzone :is(button,a,input,textarea,select,summary):focus-visible{outline:2px solid var(--sop-focus,var(--ff-accent));outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-file-berth-dropzone *,.sop-foundation.sop-file-berth-dropzone *::before,.sop-foundation.sop-file-berth-dropzone *::after{transition:none!important;animation:none!important}}
 .sop-foundation.sop-file-berth-dropzone[data-sop-paused] *,.sop-foundation.sop-file-berth-dropzone[data-paused=true] *,.sop-foundation.sop-file-berth-dropzone[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
-
-
-/* Visual review: composition and state separation. */
-.sop-foundation.sop-file-berth-dropzone .ff-dropzone{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:185px;border:0;border-bottom:9px solid var(--ff-line);border-radius:80px 80px 3px 3px;background:linear-gradient(#38513a,#203c2a)}.sop-foundation.sop-file-berth-dropzone .ff-upload-symbol{position:relative;top:auto;right:auto;order:-1;margin:0 auto 16px;width:45px;height:55px;border-radius:22px 22px 3px 3px;box-shadow:none}.sop-foundation.sop-file-berth-dropzone .ff-dropzone strong{font:20px Georgia}.sop-foundation.sop-file-berth-dropzone [data-upload-limits]{margin-top:16px}
+@media(forced-colors:active){.sop-foundation.sop-file-berth-dropzone{--ff-base:Canvas;--ff-panel:Canvas;--ff-ink:CanvasText;--ff-muted:CanvasText;--ff-accent:Highlight;--ff-line:CanvasText;color:CanvasText;color-scheme:light dark}.sop-foundation.sop-file-berth-dropzone :is(button,input,a):focus-visible{outline:2px solid Highlight}}

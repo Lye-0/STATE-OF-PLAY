@@ -1,12 +1,28 @@
 @import "../../../shared/workbench/base.css";
-/* Column Bay Table — 細い縦の仕切りで項目を区画し、行の順序を保ったまま比較する。 */
-.sop-wb.sop-column-bay-table{--wb-bg:#2d4438;--wb-accent:#bfd3b5;--wb-line:#809d7b;--wb-muted:#acc2a2}.sop-wb.sop-column-bay-table .wb-data-frame{background:#2f4b32;border:3px solid #859f78;border-radius:3px}.sop-wb.sop-column-bay-table th{background:#4c6a3e;border-right:2px solid #2a472d;border-bottom:1px solid #a4bb87;font:11px Georgia;padding-top:17px;padding-bottom:17px}.sop-wb.sop-column-bay-table tbody td{background:#2d4b30;border-right:2px solid #1c3925;border-bottom:1px solid #7f9d6c55;padding-top:16px;padding-bottom:16px}.sop-wb.sop-column-bay-table tbody td:nth-child(even){background:#385939}.sop-wb.sop-column-bay-table .wb-data-heading{border-bottom:4px double #829f73;padding-bottom:22px}.sop-wb.sop-column-bay-table .wb-cell-badge{border:1px solid #93b080;border-radius:1px;padding:6px 9px}
-@media(prefers-reduced-motion:reduce){.sop-wb.sop-column-bay-table,.sop-wb.sop-column-bay-table *,.sop-wb.sop-column-bay-table::before,.sop-wb.sop-column-bay-table::after{animation:none!important;transition:none!important}}
-@media(forced-colors:active){.sop-wb.sop-column-bay-table{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-column-bay-table :is(button,input,a):focus-visible{outline:2px solid Highlight}}
-.sop-wb.sop-column-bay-table:focus-visible,.sop-wb.sop-column-bay-table :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+/* グラファイトの柱頭と銀灰の列。細い縦リブで列の構造を見せる。 */
+.sop-wb.sop-column-bay-table{--wb-bg:#e8e9e9;--wb-surface:#dce0e3;--wb-ink:#272d34;--wb-muted:#56616c;--wb-accent:#3e6582;--wb-line:#afb8c1;--wb-radius:2px;color-scheme:light}
+.sop-wb.sop-column-bay-table .wb-data-frame{background:var(--wb-bg);border:1px solid #8b949e;border-radius:3px;box-shadow:0 10px 25px #0003}
+.sop-wb.sop-column-bay-table .wb-data-heading{display:grid;grid-template-columns:minmax(0,1fr) auto;background:#282e36;color:#f2f3f4;padding:26px 22px;border-bottom:3px solid #aab7c5}
+.sop-wb.sop-column-bay-table .wb-data-heading :is(p,.wb-eyebrow,.wb-data-total){color:#bbc6d2}
+.sop-wb.sop-column-bay-table .wb-data-heading h3{font:26px/1.2 Georgia,serif}
+.sop-wb.sop-column-bay-table .wb-data-total{font:10px/1.8 Consolas,monospace;border-left:1px solid #65707d;padding-left:14px}
+.sop-wb.sop-column-bay-table .wb-data-toolbar{padding:20px}
+.sop-wb.sop-column-bay-table .wb-table-search{background:#f8f9fa;border-radius:2px}
+.sop-wb.sop-column-bay-table th{background:#ccd3da;color:#35414d;border-right:1px solid #99a6b3;border-top:5px solid #7d8d9c;border-bottom:1px solid #8a98a6;padding-block:12px;font:11px/1.4 system-ui;vertical-align:bottom}
+.sop-wb.sop-column-bay-table th:nth-child(odd){border-top-color:#3f5266}
+.sop-wb.sop-column-bay-table tbody td{background:#eceeef;border-right:1px solid #b6bec6;border-bottom:1px solid #c5cbd1;padding-block:22px}
+.sop-wb.sop-column-bay-table tbody td:nth-child(even){background:#dfe3e7;box-shadow:inset 2px 0 #ffffffa0}
+.sop-wb.sop-column-bay-table .wb-cell-badge{border:0;border-radius:2px;background:#d4dee7;padding:5px 8px}
+.sop-wb.sop-column-bay-table .wb-cell-progress>span{height:3px;background:#b4bec8}
+.sop-wb.sop-column-bay-table .wb-data-footer{padding:16px 20px}
 
+.sop-wb.sop-column-bay-table tbody tr:hover td{background:color-mix(in srgb,var(--wb-accent) 6%,var(--wb-bg))}
+.sop-wb.sop-column-bay-table tbody tr[data-selected=true] td{background:color-mix(in srgb,var(--wb-accent) 13%,var(--wb-bg))}
+.sop-wb.sop-column-bay-table tbody tr[data-selected=true] td:first-child{box-shadow:inset 3px 0 var(--wb-accent)}
+.sop-wb.sop-column-bay-table .wb-cell-badge[data-value=review]{color:#805514;background:#f6ecd6}
+.sop-wb.sop-column-bay-table input::placeholder{opacity:1}
+
+.sop-wb.sop-column-bay-table :is(button,a,input,textarea,select,summary):focus-visible{outline:2px solid var(--sop-focus,var(--wb-accent));outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-column-bay-table *,.sop-wb.sop-column-bay-table *::before,.sop-wb.sop-column-bay-table *::after{transition:none!important;animation:none!important}}
 .sop-wb.sop-column-bay-table[data-sop-paused] *,.sop-wb.sop-column-bay-table[data-paused=true] *,.sop-wb.sop-column-bay-table[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
-
-
-/* Visual review: composition and state separation. */
-.sop-wb.sop-column-bay-table .wb-data-heading{display:grid;grid-template-columns:minmax(0,1fr) 58px;padding:24px 17px}.sop-wb.sop-column-bay-table .wb-data-total{font:10px Consolas;line-height:1.8;border-left:1px solid var(--wb-line);padding:10px;text-align:center}.sop-wb.sop-column-bay-table th{padding-block:24px;font:12px Georgia;vertical-align:bottom;border-top:6px solid var(--wb-line)}.sop-wb.sop-column-bay-table th:nth-child(odd){border-top-width:12px}.sop-wb.sop-column-bay-table tbody td{padding-block:23px}.sop-wb.sop-column-bay-table tbody td:nth-child(2){box-shadow:inset 4px 0 #102e1988}.sop-wb.sop-column-bay-table .wb-cell-badge{display:block;text-align:center;font:11px Georgia;border:0;border-top:1px solid var(--wb-line);border-bottom:1px solid var(--wb-line)}.sop-wb.sop-column-bay-table .wb-cell-progress{gap:8px}.sop-wb.sop-column-bay-table .wb-cell-progress>span{height:4px}
+@media(forced-colors:active){.sop-wb.sop-column-bay-table{--wb-bg:Canvas;--wb-surface:Canvas;--wb-ink:CanvasText;--wb-muted:CanvasText;--wb-accent:Highlight;--wb-line:CanvasText;color:CanvasText;color-scheme:light dark}.sop-wb.sop-column-bay-table :is(button,input,a):focus-visible{outline:2px solid Highlight}}
