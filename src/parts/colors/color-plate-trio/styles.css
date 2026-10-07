@@ -1,15 +1,20 @@
 @import "../../../shared/signature/color.css";
-/* Color Plate Trio — 色面・スライダー・見本の三つの区画を、低い縁で仕切る。 */
-.sop-sig.sop-color-plate-trio{--sg-bg:#274639;--sg-line:#819f82;--sg-ink:#e4ebd6;--sg-muted:#acc1a4}.sop-sig.sop-color-plate-trio .sg-color-panel{background:#304e37;border:4px solid #789570;border-radius:9px;padding:15px}.sop-sig.sop-color-plate-trio .sg-color-workspace{min-height:104px;border:1px solid #acbf93;padding:7px;background:#183420}.sop-sig.sop-color-plate-trio .sg-color-sv{height:90px;border-radius:3px}.sop-sig.sop-color-plate-trio .sg-color-controls{margin-top:13px;border-top:1px solid #8fad7f;border-bottom:1px solid #8fad7f;padding:7px 0}.sop-sig.sop-color-plate-trio .sg-color-axis{grid-template-columns:39px 1fr 27px;font-size:9px}.sop-sig.sop-color-plate-trio .sg-color-palette{border-bottom:1px solid #a2b58777;padding-bottom:12px;justify-content:center}.sop-sig.sop-color-plate-trio .sg-color-palette button{width:27px;height:20px;border-radius:4px}
-@media(prefers-reduced-motion:reduce){.sop-sig.sop-color-plate-trio,.sop-sig.sop-color-plate-trio *,.sop-sig.sop-color-plate-trio::before,.sop-sig.sop-color-plate-trio::after{animation:none!important;transition:none!important}}
-@media(forced-colors:active){.sop-sig.sop-color-plate-trio{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-color-plate-trio :is(button,input,a):focus-visible{outline:2px solid Highlight}}
-.sop-sig.sop-color-plate-trio:focus-visible,.sop-sig.sop-color-plate-trio :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+/* 選んだ色と色相を映す三枚の色板を重ね、調整軸は読みやすい横一列に戻す。 */
 
+.sop-sig.sop-color-plate-trio{--sg-bg:#27362f;--sg-line:#819583;--sg-ink:#e5ebdf;--sg-muted:#becdbb}
+.sop-sig.sop-color-plate-trio .sg-color-panel{background:#2c3c32;border:1px solid #82977a55;border-radius:4px;padding:22px;box-shadow:0 8px 20px #0003}
+.sop-sig.sop-color-plate-trio .sg-color-workspace{min-height:130px;margin:0 10px 22px 0;isolation:isolate}
+.sop-sig.sop-color-plate-trio .sg-color-workspace::before,.sop-sig.sop-color-plate-trio .sg-color-workspace::after{content:"";position:absolute;inset:0;border-radius:4px;z-index:-1;pointer-events:none;border:1px solid #dbe6ce44;transition:background .2s}
+.sop-sig.sop-color-plate-trio .sg-color-workspace::before{background:hsl(var(--sg-hue) 45% 32%);transform:translate(10px,10px)}
+.sop-sig.sop-color-plate-trio .sg-color-workspace::after{background:var(--sg-color);transform:translate(5px,5px)}
+.sop-sig.sop-color-plate-trio .sg-color-sv{height:130px;border-radius:3px;box-shadow:0 3px 7px #0004}
+.sop-sig.sop-color-plate-trio .sg-color-controls{display:grid;grid-template-columns:1fr;gap:0;border:0;padding:0;margin-top:20px}
+.sop-sig.sop-color-plate-trio .sg-color-axis{grid-template-columns:40px 1fr 30px;font-size:10px;padding:10px 0;margin:0;border-bottom:1px solid #80987533;background:none}
+.sop-sig.sop-color-plate-trio .sg-color-palette{padding:8px 0 0;justify-content:flex-start;border:0}
+.sop-sig.sop-color-plate-trio .sg-color-palette button{width:28px;height:24px;border-radius:3px}
+.sop-sig.sop-color-plate-trio .sg-color-entry{border-top:1px solid #80987555;margin-top:17px;padding-top:13px}
+
+.sop-sig.sop-color-plate-trio:focus-visible,.sop-sig.sop-color-plate-trio :is(button,a,input,textarea,select):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-color-plate-trio,.sop-sig.sop-color-plate-trio *,.sop-sig.sop-color-plate-trio::before,.sop-sig.sop-color-plate-trio::after,.sop-sig.sop-color-plate-trio *::before,.sop-sig.sop-color-plate-trio *::after{transition:none!important;animation:none!important}}
 .sop-sig.sop-color-plate-trio[data-sop-paused] *,.sop-sig.sop-color-plate-trio[data-paused=true] *,.sop-sig.sop-color-plate-trio[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
-.sop-sig.sop-color-plate-trio *{animation-play-state:var(--sg-play,running)!important}
-
-
-/* Visual review: composition and state separation. */
-.sop-sig.sop-color-plate-trio .sg-color-panel{padding:22px;background:transparent;border:0;border-top:2px solid var(--sg-line)}.sop-sig.sop-color-plate-trio .sg-color-workspace{height:135px;box-shadow:none;border:1px solid var(--sg-line);border-radius:0}.sop-sig.sop-color-plate-trio .sg-color-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:16px;padding:0;border:0}.sop-sig.sop-color-plate-trio .sg-color-axis{display:flex;flex-direction:column;gap:13px;border:1px solid var(--sg-line);padding:13px 7px;background:#7b9f7133}.sop-sig.sop-color-plate-trio .sg-color-axis>span,.sop-sig.sop-color-plate-trio .sg-color-axis output{font:9px Consolas}.sop-sig.sop-color-plate-trio .sg-color-axis input{width:100%;margin:0}.sop-sig.sop-color-plate-trio .sg-color-palette{padding-top:18px;border-top:0}.sop-sig.sop-color-plate-trio .sg-color-entry{margin-top:16px;border-top:3px double var(--sg-line)}
-
-.sop-sig.sop-color-plate-trio .sg-color-workspace .sg-color-sv{height:100%;min-height:0}
+@media(forced-colors:active){.sop-sig.sop-color-plate-trio{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-color-plate-trio :is(button,input,a):focus-visible{outline:2px solid Highlight}.sop-sig.sop-color-plate-trio::before,.sop-sig.sop-color-plate-trio::after{forced-color-adjust:auto}}

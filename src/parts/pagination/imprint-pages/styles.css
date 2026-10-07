@@ -1,14 +1,14 @@
 @import "../../../shared/foundation/base.css";
-/* Imprint Pages — 紙の頁番号を浅い押印として置き、現在値の面だけを濃く印す。 */
-.sop-foundation.sop-imprint-pages{--ff-accent:#667653;--ff-ink:#39432e;--ff-muted:#5a604f;--ff-panel:#e3e4c8;--ff-base:#d0d7b1;--ff-line:#91a477;color-scheme:light}.sop-foundation.sop-imprint-pages .ff-pages{background:none;border:0;border-bottom:1px solid #8b9a70;border-radius:0;padding:9px 0;gap:9px;flex-wrap:wrap}.sop-foundation.sop-imprint-pages .ff-pages button,.sop-foundation.sop-imprint-pages .ff-pages a{border:1px solid #96a57f;background:#e8e8cc;border-radius:0;min-height:38px;font:12px Georgia;box-shadow:1px 1px #fff8;padding:8px}.sop-foundation.sop-imprint-pages .ff-pages [aria-current]{background:#90a16e;color:#243d24;outline:1px dashed #5c7846;outline-offset:-4px}
-.sop-foundation.sop-imprint-pages{background:var(--ff-panel);padding:15px;border-radius:4px}
-@media(prefers-reduced-motion:reduce){.sop-foundation.sop-imprint-pages,.sop-foundation.sop-imprint-pages *,.sop-foundation.sop-imprint-pages::before,.sop-foundation.sop-imprint-pages::after{animation:none!important;transition:none!important}}
-@media(forced-colors:active){.sop-foundation.sop-imprint-pages{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-imprint-pages :is(button,input,a):focus-visible{outline:2px solid Highlight}}
-.sop-foundation.sop-imprint-pages:focus-visible,.sop-foundation.sop-imprint-pages :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+/* すべての頁を囲む四角枠をやめ、現在の番号だけが紙へ浅く押された丸い印になる。 */
 
-.sop-foundation.sop-imprint-pages :is([data-sg-error],[data-upload-error],.sg-wizard-error,[data-danger=true]){color:#8a3f46}
+.sop-foundation.sop-imprint-pages{--ff-accent:#667453;--ff-ink:#36442f;--ff-muted:#59664e;--ff-panel:#e1e2ce;--ff-base:#d5dbc1;--ff-line:#8d9b77;color-scheme:light;background:#e1e2ce;padding:19px;border-radius:3px;box-shadow:inset 0 1px #f3f1e3}
+.sop-foundation.sop-imprint-pages .ff-pages{background:none;border:0;border-block:1px solid #a8b29288;border-radius:0;padding:13px 0;gap:6px;flex-wrap:wrap}
+.sop-foundation.sop-imprint-pages .ff-pages button,.sop-foundation.sop-imprint-pages .ff-pages a{border:1px solid transparent;background:none;border-radius:50%;min-height:36px;min-width:32px;font:14px/1.2 Georgia,serif;box-shadow:none;padding:8px;color:#4b5c3c;transform:none}
+.sop-foundation.sop-imprint-pages .ff-pages [aria-current]{background:#c5cdaa;color:#2b4227;border-color:#879a70;outline:0;box-shadow:inset 1px 2px 3px #65794b44,0 1px #ffffed}
+.sop-foundation.sop-imprint-pages .ff-pages button:hover,.sop-foundation.sop-imprint-pages .ff-pages a:hover{background:#cfd6b7;transform:none}
+.sop-foundation.sop-imprint-pages :is([data-sg-error],[data-upload-error],[data-danger=true]){color:#8a3f46}
 
+.sop-foundation.sop-imprint-pages:focus-visible,.sop-foundation.sop-imprint-pages :is(button,a,input,textarea,select):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-imprint-pages,.sop-foundation.sop-imprint-pages *,.sop-foundation.sop-imprint-pages::before,.sop-foundation.sop-imprint-pages::after,.sop-foundation.sop-imprint-pages *::before,.sop-foundation.sop-imprint-pages *::after{transition:none!important;animation:none!important}}
 .sop-foundation.sop-imprint-pages[data-sop-paused] *,.sop-foundation.sop-imprint-pages[data-paused=true] *,.sop-foundation.sop-imprint-pages[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
-
-/* Readable selected labels on the light surface. */
-.sop-foundation.sop-imprint-pages .ff-pages [aria-current]{color:#1b331d}
+@media(forced-colors:active){.sop-foundation.sop-imprint-pages{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-imprint-pages :is(button,input,a):focus-visible{outline:2px solid Highlight}.sop-foundation.sop-imprint-pages::before,.sop-foundation.sop-imprint-pages::after{forced-color-adjust:auto}}

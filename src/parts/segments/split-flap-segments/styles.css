@@ -1,13 +1,21 @@
 @import '../../../shared/selection-base.css';
-/* Split Flap Segments — 区画の上下を二枚の面に分け、選択時に上の面を反転させる。 */
-.sop-choice.sop-split-flap-segments{--choice-base:#1f2730;--choice-accent:#c9d2d9;--choice-radius:2px}.sop-choice.sop-split-flap-segments>.sop-choice-list{background:#11171e;gap:5px;padding:5px;border:1px solid #4e606e}.sop-choice.sop-split-flap-segments .sop-choice-marker{display:none}.sop-choice.sop-split-flap-segments .sop-choice-item{background:linear-gradient(#414f5a 0 49%,#15212b 49% 52%,#303f4b 52%);border:1px solid #62737e;border-radius:2px;min-height:61px;text-shadow:0 1px #000;box-shadow:inset 0 2px #fff1}.sop-choice.sop-split-flap-segments .sop-choice-item[data-selected=true]{background:linear-gradient(#b8c6cb 0 49%,#203038 49% 52%,#99adb7 52%);color:#172933;text-shadow:0 1px #fff4}
-@media(prefers-reduced-motion:reduce){.sop-choice.sop-split-flap-segments,.sop-choice.sop-split-flap-segments *,.sop-choice.sop-split-flap-segments::before,.sop-choice.sop-split-flap-segments::after{animation:none!important;transition:none!important}}
-@media(forced-colors:active){.sop-choice.sop-split-flap-segments{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-choice.sop-split-flap-segments :is(button,input,a):focus-visible{outline:2px solid Highlight}}
-.sop-choice.sop-split-flap-segments:focus-visible,.sop-choice.sop-split-flap-segments :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+/* 文字を上板の安定面へ置き、下側の継ぎ目と両端の軸でフラップを表す。 */
 
+.sop-choice.sop-split-flap-segments{--choice-base:#1d272e;--choice-accent:#c9d9de;--choice-muted:#c4d1d4;--choice-radius:3px}
+.sop-choice.sop-split-flap-segments>.sop-choice-list{padding:6px;gap:6px;background:#121b21;border:1px solid #3b505b;perspective:700px}
+.sop-choice.sop-split-flap-segments .sop-choice-marker,.sop-choice.sop-split-flap-segments .sop-choice-dot{display:none}
+.sop-choice.sop-split-flap-segments .sop-choice-item{min-height:68px;padding-bottom:22px;background:linear-gradient(#33444e 0 70%,#111b22 70% 72%,#273741 72%);border:1px solid #50636d;border-radius:3px;isolation:isolate;box-shadow:0 2px 2px #0004}
+.sop-choice.sop-split-flap-segments .sop-choice-item::before,.sop-choice.sop-split-flap-segments .sop-choice-item::after{content:"";position:absolute;top:calc(70% - 3px);width:4px;height:7px;border-radius:2px;background:#9aaaae;box-shadow:0 1px 2px #0008;pointer-events:none}
+.sop-choice.sop-split-flap-segments .sop-choice-item::before{left:2px}.sop-choice.sop-split-flap-segments .sop-choice-item::after{right:2px}
+.sop-choice.sop-split-flap-segments .sop-choice-label{position:relative;background:none;box-shadow:none;padding:0;color:inherit;text-shadow:none}
+.sop-choice.sop-split-flap-segments .sop-choice-item[data-selected=true]{background:linear-gradient(#c7d6d9 0 70%,#465d67 70% 72%,#a8bec6 72%);color:#18313a;box-shadow:inset 0 1px #f0f7f6,0 2px 2px #0004}
+.sop-choice.sop-split-flap-segments .sop-choice-item[data-selected=true]::before,.sop-choice.sop-split-flap-segments .sop-choice-item[data-selected=true]::after{background:#3d5661}
+
+.sop-choice.sop-split-flap-segments:focus-visible,.sop-choice.sop-split-flap-segments :is(button,a,input,textarea,select):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.sop-choice.sop-split-flap-segments,.sop-choice.sop-split-flap-segments *,.sop-choice.sop-split-flap-segments::before,.sop-choice.sop-split-flap-segments::after,.sop-choice.sop-split-flap-segments *::before,.sop-choice.sop-split-flap-segments *::after{transition:none!important;animation:none!important}}
 .sop-choice.sop-split-flap-segments[data-sop-paused] *,.sop-choice.sop-split-flap-segments[data-paused=true] *,.sop-choice.sop-split-flap-segments[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+@media(forced-colors:active){.sop-choice.sop-split-flap-segments{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-choice.sop-split-flap-segments :is(button,input,a):focus-visible{outline:2px solid Highlight}.sop-choice.sop-split-flap-segments::before,.sop-choice.sop-split-flap-segments::after{forced-color-adjust:auto}}
 
-/* UI review: preserve readable content and stable interaction geometry. */
-.sop-choice.sop-split-flap-segments .sop-choice-label{background:#354551;color:#e8f0f2;padding:5px 10px;border-radius:3px;box-shadow:0 0 0 2px #354551;text-shadow:none}
-.sop-choice.sop-split-flap-segments .sop-choice-item[data-selected=true] .sop-choice-label{background:#b5c7ce;color:#162c36;box-shadow:0 0 0 2px #b5c7ce}
-.sop-choice.sop-split-flap-segments .sop-choice-dot{display:none}
+/* Allow short choices to share one rail even in a narrow host. */
+.sop-choice.sop-split-flap-segments>.sop-choice-list>.sop-choice-item{flex:1 1 0;min-width:0;padding-inline:clamp(6px,2vw,14px)}
+.sop-choice.sop-split-flap-segments .sop-choice-label{overflow-wrap:anywhere}

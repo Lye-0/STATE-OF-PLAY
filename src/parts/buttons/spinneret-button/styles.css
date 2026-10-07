@@ -1,8 +1,14 @@
 @import "../../../shared/action-button-base.css";
-/* Spinneret Button — 小さな糸巻きの軸がラベルの脇で回り、押下の手応えを伝える。 */
-.sop-action.sop-spinneret-button{--sop-action-ink:#e6e2ed;--sop-action-accent:#b1a5da;background:#292733;border:1px solid #706784;border-radius:4px;padding:14px 20px;gap:22px}.sop-action.sop-spinneret-button .sop-action-art{inset:7px auto 7px 8px;width:14px;border:2px solid #a8a0b6;border-radius:50%;opacity:.6;background:repeating-linear-gradient(0deg,transparent 0 3px,#a69bbf 3px 4px);transform:rotate(-10deg);transition:transform .6s}.sop-action.sop-spinneret-button .sop-action-label{padding-left:15px}.sop-action.sop-spinneret-button:hover .sop-action-art{transform:rotate(10deg)}
-@media(prefers-reduced-motion:reduce){.sop-action.sop-spinneret-button,.sop-action.sop-spinneret-button *,.sop-action.sop-spinneret-button::before,.sop-action.sop-spinneret-button::after{animation:none!important;transition:none!important}}
-@media(forced-colors:active){.sop-action.sop-spinneret-button{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-action.sop-spinneret-button :is(button,input,a):focus-visible{outline:2px solid Highlight}}
-.sop-action.sop-spinneret-button:focus-visible,.sop-action.sop-spinneret-button :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+/* 糸巻きを円形の軸と糸の出口で構成し、ラベルを動かさず巻き取りだけが応答する。 */
 
+.sop-action.sop-spinneret-button{--sop-action-ink:#e5dfed;--sop-action-accent:#c5b9d6;background:#302b3c;border:1px solid #8a7a9f88;border-radius:28px 5px 5px 28px;padding:17px 22px 17px 62px;gap:18px;box-shadow:inset 0 1px #c9bade22}
+.sop-action.sop-spinneret-button .sop-action-art{inset:calc(50% - 19px) auto auto 10px;width:38px;height:38px;border:1px solid #c9bdd688;border-radius:50%;background:repeating-conic-gradient(from 10deg,#a797bb 0 2deg,transparent 2deg 45deg),radial-gradient(#c6b7d5 0 3px,#534661 4px 11px,#9884ad 12px 13px,#3c334a 14px);opacity:1;transition:transform .85s cubic-bezier(.2,.7,.25,1);pointer-events:none}
+.sop-action.sop-spinneret-button .sop-action-label{padding:0}
+.sop-action.sop-spinneret-button::after{content:"";position:absolute;left:44px;right:20px;bottom:10px;height:1px;background:linear-gradient(90deg,#b9a4cb88,transparent);pointer-events:none}
+.sop-action.sop-spinneret-button:hover .sop-action-art{transform:rotate(100deg)}
+.sop-action.sop-spinneret-button:active .sop-action-art{transform:rotate(145deg)}
+
+.sop-action.sop-spinneret-button:focus-visible,.sop-action.sop-spinneret-button :is(button,a,input,textarea,select):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.sop-action.sop-spinneret-button,.sop-action.sop-spinneret-button *,.sop-action.sop-spinneret-button::before,.sop-action.sop-spinneret-button::after,.sop-action.sop-spinneret-button *::before,.sop-action.sop-spinneret-button *::after{transition:none!important;animation:none!important}}
 .sop-action.sop-spinneret-button[data-sop-paused] *,.sop-action.sop-spinneret-button[data-paused=true] *,.sop-action.sop-spinneret-button[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+@media(forced-colors:active){.sop-action.sop-spinneret-button{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-action.sop-spinneret-button :is(button,input,a):focus-visible{outline:2px solid Highlight}.sop-action.sop-spinneret-button::before,.sop-action.sop-spinneret-button::after{forced-color-adjust:auto}}

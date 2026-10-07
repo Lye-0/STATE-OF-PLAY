@@ -1,8 +1,19 @@
 @import '../../../shared/selection-base.css';
-/* Weft Segments — 織り込んだ短い帯が、選択時だけ一段浮き上がる。 */
-.sop-choice.sop-weft-segments{--choice-base:#352b31;--choice-accent:#d8b8bc;--choice-radius:0}.sop-choice.sop-weft-segments>.sop-choice-list{border:0;background:repeating-linear-gradient(90deg,#7f6264 0 2px,#30252a 2px 5px);padding:8px 4px;gap:6px}.sop-choice.sop-weft-segments .sop-choice-marker{display:none}.sop-choice.sop-weft-segments .sop-choice-item{background:#685157;border:1px dashed #bb9294;box-shadow:inset 0 0 0 3px #4e3d45;min-height:46px;border-radius:2px;transform:rotate(-1deg)}.sop-choice.sop-weft-segments .sop-choice-item:nth-child(even){transform:rotate(1deg)}.sop-choice.sop-weft-segments .sop-choice-item[data-selected=true]{background:#cba3a4;color:#3c2d34;transform:translateY(-3px) rotate(0)}
-@media(prefers-reduced-motion:reduce){.sop-choice.sop-weft-segments,.sop-choice.sop-weft-segments *,.sop-choice.sop-weft-segments::before,.sop-choice.sop-weft-segments::after{animation:none!important;transition:none!important}}
-@media(forced-colors:active){.sop-choice.sop-weft-segments{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-choice.sop-weft-segments :is(button,input,a):focus-visible{outline:2px solid Highlight}}
-.sop-choice.sop-weft-segments:focus-visible,.sop-choice.sop-weft-segments :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+/* 低い織目の面と織り込まれた帯の張力で選択を表し、歯状の縁を除く。 */
 
+.sop-choice.sop-weft-segments{--choice-base:#322c31;--choice-accent:#d7bfba;--choice-muted:#c8b5b6;--choice-radius:0}
+.sop-choice.sop-weft-segments>.sop-choice-list{background:linear-gradient(#18191a 0 1px,transparent 1px calc(100% - 1px),#18191a calc(100% - 1px)),#342c31;border:0;padding:8px 5px;gap:8px}
+.sop-choice.sop-weft-segments .sop-choice-marker,.sop-choice.sop-weft-segments .sop-choice-dot{display:none}
+.sop-choice.sop-weft-segments .sop-choice-item{isolation:isolate;min-height:54px;background:#4c3e45;border:0;border-radius:2px;box-shadow:inset 0 1px #d6b9b533,inset 0 -2px #211c22;color:#d8c8c7}
+.sop-choice.sop-weft-segments .sop-choice-item::before{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1;background:repeating-linear-gradient(0deg,#e4d4cb08 0 1px,transparent 1px 4px),repeating-linear-gradient(90deg,#17131918 0 1px,transparent 1px 5px);box-shadow:inset 0 5px 7px #0003,inset 0 -5px 7px #0003;transition:box-shadow .4s;pointer-events:none}
+.sop-choice.sop-weft-segments .sop-choice-item[data-selected=true]{background:#cbb5af;color:#32272c;box-shadow:0 2px 7px #0004}
+.sop-choice.sop-weft-segments .sop-choice-item[data-selected=true]::before{box-shadow:inset 0 2px 3px #fff3,inset 0 -2px 3px #44343c44}
+
+.sop-choice.sop-weft-segments:focus-visible,.sop-choice.sop-weft-segments :is(button,a,input,textarea,select):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.sop-choice.sop-weft-segments,.sop-choice.sop-weft-segments *,.sop-choice.sop-weft-segments::before,.sop-choice.sop-weft-segments::after,.sop-choice.sop-weft-segments *::before,.sop-choice.sop-weft-segments *::after{transition:none!important;animation:none!important}}
 .sop-choice.sop-weft-segments[data-sop-paused] *,.sop-choice.sop-weft-segments[data-paused=true] *,.sop-choice.sop-weft-segments[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+@media(forced-colors:active){.sop-choice.sop-weft-segments{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-choice.sop-weft-segments :is(button,input,a):focus-visible{outline:2px solid Highlight}.sop-choice.sop-weft-segments::before,.sop-choice.sop-weft-segments::after{forced-color-adjust:auto}}
+
+/* Allow short choices to share one rail even in a narrow host. */
+.sop-choice.sop-weft-segments>.sop-choice-list>.sop-choice-item{flex:1 1 0;min-width:0;padding-inline:clamp(6px,2vw,14px)}
+.sop-choice.sop-weft-segments .sop-choice-label{overflow-wrap:anywhere}

@@ -1,7 +1,16 @@
-/* Aperture Tags · SEQUENCE. 上下のシャッターが開き、文字を覆わず周囲の面が変形します。 */
 @import "../../../shared/foundation/base.css";
 @import "../../../shared/foundation/sequence/style.css";
-.sop-foundation.sop-sequence.sop-aperture-tags {
-  --sq-bg: #25302b; --sq-ink: #e5e9df; --sq-muted: #aebdac;
-  --sq-a: #d0d7b5; --sq-b: #98afac; --sq-line: color-mix(in srgb,#d0d7b5,transparent 66%);
-}
+/* 絞りの模様を左端の小窓へ集約し、タグの文字面から反復模様を取り除く。 */
+
+.sop-foundation.sop-sequence.sop-aperture-tags{--sq-bg:#26342f;--sq-ink:#e5ece5;--sq-muted:#b1c1b7;--sq-a:#ced7b9;--sq-b:#9cafac;--sq-line:#66797066}
+.sop-foundation.sop-sequence.sop-aperture-tags .ff-tag.sq-chip{background:#263731;border:1px solid #71837866;border-radius:7px;padding-left:27px;box-shadow:inset 0 1px #c6dcc012}
+.sop-foundation.sop-sequence.sop-aperture-tags .sq-chip>.sq-skin{width:23px;left:3px;top:calc(50% - 12px);height:24px;border-radius:50%;overflow:hidden;opacity:.6}
+.sop-foundation.sop-sequence.sop-aperture-tags .sq-chip .sq-chip-face{padding-inline:9px}
+.sop-foundation.sop-sequence.sop-aperture-tags .sq-chip[data-selected=true]{background:#35493c;border-color:#aac49d}
+.sop-foundation.sop-sequence.sop-aperture-tags .sq-chip:hover>.sq-skin{opacity:1}
+.sop-foundation.sop-sequence.sop-aperture-tags .sq-chip small.sq-chip-count{background:none;border-left:1px solid #8b9c8055;border-radius:0;padding-left:7px}
+
+.sop-foundation.sop-sequence.sop-aperture-tags:focus-visible,.sop-foundation.sop-sequence.sop-aperture-tags :is(button,a,input,textarea,select):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-sequence.sop-aperture-tags,.sop-foundation.sop-sequence.sop-aperture-tags *,.sop-foundation.sop-sequence.sop-aperture-tags::before,.sop-foundation.sop-sequence.sop-aperture-tags::after,.sop-foundation.sop-sequence.sop-aperture-tags *::before,.sop-foundation.sop-sequence.sop-aperture-tags *::after{transition:none!important;animation:none!important}}
+.sop-foundation.sop-sequence.sop-aperture-tags[data-sop-paused] *,.sop-foundation.sop-sequence.sop-aperture-tags[data-paused=true] *,.sop-foundation.sop-sequence.sop-aperture-tags[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+@media(forced-colors:active){.sop-foundation.sop-sequence.sop-aperture-tags{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-sequence.sop-aperture-tags :is(button,input,a):focus-visible{outline:2px solid Highlight}.sop-foundation.sop-sequence.sop-aperture-tags::before,.sop-foundation.sop-sequence.sop-aperture-tags::after{forced-color-adjust:auto}}

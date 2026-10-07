@@ -1,8 +1,15 @@
 @import "../../../shared/text-field-base.css";
-/* Carbon Ribbon Field — 暗いリボンの中央に文字を置き、左右の端で入力の活性を示す。 */
-.sop-textfield.sop-carbon-ribbon-field{--field-bg:#182024;--field-ink:#e4e7db;--field-accent:#bfd485;--field-radius:0}.sop-textfield.sop-carbon-ribbon-field .sop-field-shell{border:0;border-top:1px solid #91a263;border-bottom:1px solid #91a263;border-left:10px solid #6c7948;border-right:10px solid #6c7948;transform:skewX(-3deg);background:linear-gradient(90deg,#b4c97022,transparent 12%,transparent 88%,#b4c97022)}.sop-textfield.sop-carbon-ribbon-field input{transform:skewX(3deg)}.sop-textfield.sop-carbon-ribbon-field .sop-field-shell:focus-within{border-left-color:#d0e39d;border-right-color:#d0e39d;box-shadow:0 3px 0 #73874755}
-@media(prefers-reduced-motion:reduce){.sop-textfield.sop-carbon-ribbon-field,.sop-textfield.sop-carbon-ribbon-field *,.sop-textfield.sop-carbon-ribbon-field::before,.sop-textfield.sop-carbon-ribbon-field::after{animation:none!important;transition:none!important}}
-@media(forced-colors:active){.sop-textfield.sop-carbon-ribbon-field{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-textfield.sop-carbon-ribbon-field :is(button,input,a):focus-visible{outline:2px solid Highlight}}
-.sop-textfield.sop-carbon-ribbon-field:focus-visible,.sop-textfield.sop-carbon-ribbon-field :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+/* 細い両端の巻取り軸と水平なリボン面に再構成。入力文字の傾きと二重フォーカス枠を解消。 */
 
+.sop-textfield.sop-carbon-ribbon-field{--field-bg:#222a27;--field-ink:#e4e7dc;--field-accent:#c3d2a3;--field-radius:0}
+.sop-textfield.sop-carbon-ribbon-field .sop-field-shell{position:relative;border:1px solid #7a896555;border-block-color:#879570;border-radius:2px;background:linear-gradient(90deg,#9db47a18,transparent 14%,transparent 86%,#9db47a18),#222a27;padding-inline:12px;transform:none;box-shadow:inset 0 3px 6px #0003}
+.sop-textfield.sop-carbon-ribbon-field .sop-field-shell::before,.sop-textfield.sop-carbon-ribbon-field .sop-field-shell::after{content:"";position:absolute;top:5px;bottom:5px;width:4px;background:linear-gradient(90deg,#5f7052,#abb991,#5f7052);border-radius:2px;pointer-events:none}
+.sop-textfield.sop-carbon-ribbon-field .sop-field-shell::before{left:4px}.sop-textfield.sop-carbon-ribbon-field .sop-field-shell::after{right:4px}
+.sop-textfield.sop-carbon-ribbon-field .sop-field-control{transform:none;background:transparent;filter:none}
+.sop-textfield.sop-carbon-ribbon-field .sop-field-shell:focus-within{outline:2px solid #c3d2a3;outline-offset:0;border-color:transparent;box-shadow:inset 0 3px 6px #0003}
+.sop-textfield.sop-carbon-ribbon-field .sop-field-shell .sop-field-control:focus-visible{outline:0}
+
+.sop-textfield.sop-carbon-ribbon-field:focus-visible,.sop-textfield.sop-carbon-ribbon-field :is(button,a,input,textarea,select):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.sop-textfield.sop-carbon-ribbon-field,.sop-textfield.sop-carbon-ribbon-field *,.sop-textfield.sop-carbon-ribbon-field::before,.sop-textfield.sop-carbon-ribbon-field::after,.sop-textfield.sop-carbon-ribbon-field *::before,.sop-textfield.sop-carbon-ribbon-field *::after{transition:none!important;animation:none!important}}
 .sop-textfield.sop-carbon-ribbon-field[data-sop-paused] *,.sop-textfield.sop-carbon-ribbon-field[data-paused=true] *,.sop-textfield.sop-carbon-ribbon-field[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+@media(forced-colors:active){.sop-textfield.sop-carbon-ribbon-field{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-textfield.sop-carbon-ribbon-field :is(button,input,a):focus-visible{outline:2px solid Highlight}.sop-textfield.sop-carbon-ribbon-field::before,.sop-textfield.sop-carbon-ribbon-field::after{forced-color-adjust:auto}}

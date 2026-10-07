@@ -1,16 +1,14 @@
-.sop-surface.sop-inlaid-surface{position:relative;isolation:isolate;box-sizing:border-box;min-width:0;width:100%;color:var(--sop-ink,#edf0e8)}.sop-surface.sop-inlaid-surface *{box-sizing:border-box}.sop-surface.sop-inlaid-surface .sop-surface-content{position:relative;z-index:1;padding:var(--sop-padding,28px);min-width:0}
-/* Inlaid Surface — 寄木の細い帯が角を折れ、中心の内容と分離して縁を走る。 */
-.sop-surface.sop-inlaid-surface{--sop-ink:#e7dfd0;--sop-accent-ink:#ccaf88;background:#282326;border:1px solid #76614d;border-radius:3px;padding:7px}.sop-surface.sop-inlaid-surface .sop-surface-content{border:1px solid #675a46;background:linear-gradient(135deg,#4e383077,#282326 55%);padding:27px}.sop-surface.sop-inlaid-surface:before{content:"";position:absolute;inset:3px;background:repeating-linear-gradient(115deg,#a17a49 0 5px,#362826 5px 9px,#ceae73 9px 10px);z-index:-1}.sop-surface.sop-inlaid-surface:hover .sop-surface-content{background-position:10px 0}
-@media(prefers-reduced-motion:reduce){.sop-surface.sop-inlaid-surface,.sop-surface.sop-inlaid-surface *,.sop-surface.sop-inlaid-surface::before,.sop-surface.sop-inlaid-surface::after{animation:none!important;transition:none!important}}
-@media(forced-colors:active){.sop-surface.sop-inlaid-surface{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-surface.sop-inlaid-surface :is(button,input,a):focus-visible{outline:2px solid Highlight}}
-.sop-surface.sop-inlaid-surface:focus-visible,.sop-surface.sop-inlaid-surface :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
 
+/* 細い縦象嵌と留め継ぎで縁を構成。本文面を動かさず木口の反射だけを変える。 */
+.sop-surface.sop-inlaid-surface{position:relative;isolation:isolate;box-sizing:border-box;min-width:0;width:100%}.sop-inlaid-surface *{box-sizing:border-box}.sop-inlaid-surface .sop-surface-content{position:relative;z-index:1;min-width:0}
+
+.sop-surface.sop-inlaid-surface{--sop-ink:#ede5d7;--sop-accent-ink:#c4aa87;background:#302922;border:1px solid #6d5941;border-radius:2px;padding:5px 14px;box-shadow:0 12px 28px #0003}
+.sop-surface.sop-inlaid-surface::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#746048 0 2px,#302922 2px 5px,#a98e62 5px 6px,#47392b 6px 12px,transparent 12px calc(100% - 12px),#47392b calc(100% - 12px) calc(100% - 6px),#a98e62 calc(100% - 6px) calc(100% - 5px),#302922 calc(100% - 5px) calc(100% - 2px),#746048 calc(100% - 2px));pointer-events:none}
+.sop-surface.sop-inlaid-surface::after{content:"";position:absolute;inset:5px;pointer-events:none;border-top:1px solid #b39668;border-bottom:1px solid #806b4b;opacity:.6;transition:opacity .6s}
+.sop-surface.sop-inlaid-surface .sop-surface-content{padding:26px 22px;background:linear-gradient(115deg,#332e29,#282624 65%);border:0;box-shadow:inset 0 1px #d6bc8222,inset 0 -1px #171511}
+.sop-surface.sop-inlaid-surface:hover::after{opacity:1}
+
+.sop-surface.sop-inlaid-surface:focus-visible,.sop-surface.sop-inlaid-surface :is(button,a,input,textarea,select):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.sop-surface.sop-inlaid-surface,.sop-surface.sop-inlaid-surface *,.sop-surface.sop-inlaid-surface::before,.sop-surface.sop-inlaid-surface::after,.sop-surface.sop-inlaid-surface *::before,.sop-surface.sop-inlaid-surface *::after{transition:none!important;animation:none!important}}
 .sop-surface.sop-inlaid-surface[data-sop-paused] *,.sop-surface.sop-inlaid-surface[data-paused=true] *,.sop-surface.sop-inlaid-surface[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
-
-/* Keep the same interpolation when hover is entered, left, or interrupted. */
-.sop-surface.sop-inlaid-surface .sop-surface-content{background-position:0px 0px;transition:background-position .7s}
-
-/* UI review: preserve readable content and stable interaction geometry. */
-.sop-surface.sop-inlaid-surface{padding:10px;background:#282326}
-.sop-surface.sop-inlaid-surface .sop-surface-content{background:linear-gradient(135deg,#342b2c,#282326 65%);border-color:#9b805b;box-shadow:inset 0 0 0 3px #211d20;padding:24px}
-.sop-surface.sop-inlaid-surface:before{background:repeating-linear-gradient(45deg,#826442 0 7px,#382d28 7px 14px,#b59b6c 14px 15px)}
+@media(forced-colors:active){.sop-surface.sop-inlaid-surface{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-surface.sop-inlaid-surface :is(button,input,a):focus-visible{outline:2px solid Highlight}.sop-surface.sop-inlaid-surface::before,.sop-surface.sop-inlaid-surface::after{forced-color-adjust:auto}}

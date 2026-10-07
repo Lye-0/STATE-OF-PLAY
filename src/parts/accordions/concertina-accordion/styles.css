@@ -1,24 +1,17 @@
 @import "../../../shared/accordion-base.css";
 @import "../../../shared/panel-content.css";
-/* Concertina Accordion — 斜めの折り目をもつ厚い紙が、章ごとに奥行きを変える。 */
-.sop-accordion.sop-concertina-accordion{--acc-bg:#d6d0bb;--acc-ink:#363f3c;--acc-accent:#54675c;--acc-radius:2px}.sop-accordion.sop-concertina-accordion .sop-accordion-item{margin-bottom:0;border:0;border-bottom:1px solid #7a8773;box-shadow:inset -10px 0 #b3b7a0;clip-path:polygon(0 0,100% 4%,100% 100%,0 96%)}.sop-accordion.sop-concertina-accordion .sop-accordion-item:nth-child(even){box-shadow:inset 10px 0 #bec3ab}.sop-accordion.sop-concertina-accordion .sop-accordion-trigger{padding-right:29px}.sop-accordion.sop-concertina-accordion .sop-accordion-item[data-open=true]{background:#e4e1d2;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
-@media(prefers-reduced-motion:reduce){.sop-accordion.sop-concertina-accordion,.sop-accordion.sop-concertina-accordion *,.sop-accordion.sop-concertina-accordion::before,.sop-accordion.sop-concertina-accordion::after{animation:none!important;transition:none!important}}
-@media(forced-colors:active){.sop-accordion.sop-concertina-accordion{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-accordion.sop-concertina-accordion :is(button,input,a):focus-visible{outline:2px solid Highlight}}
-.sop-accordion.sop-concertina-accordion:focus-visible,.sop-accordion.sop-concertina-accordion :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+/* 左右の厚い側板を薄い折り返しへ置き換え、紙面が連続する蛇腹にする。 */
 
-.sop-accordion.sop-concertina-accordion{--acc-muted:#707563}
+.sop-accordion.sop-concertina-accordion{--acc-bg:#dedccd;--acc-ink:#354039;--acc-accent:#506856;--acc-muted:#5e685b;--acc-radius:0;padding:0 5px;filter:drop-shadow(0 8px 9px #0002)}
+.sop-accordion.sop-concertina-accordion .sop-accordion-item{overflow:visible;margin:0;border:0;border-radius:0;background:linear-gradient(90deg,#c1c5b1 0,#e6e4d6 9%,#e6e4d6 92%,#d5d7c7);box-shadow:inset 0 1px #faf8e9,inset 0 -1px #abb39e;clip-path:none;position:relative}
+.sop-accordion.sop-concertina-accordion .sop-accordion-item:nth-child(even){background:linear-gradient(90deg,#dbddcd,#cdd2bc 92%,#b5bea5);box-shadow:inset 0 1px #f4f5e199,inset 0 -1px #8f9d82}
+.sop-accordion.sop-concertina-accordion .sop-accordion-item::before{content:"";position:absolute;left:-4px;top:0;bottom:0;width:4px;background:#b2bba3;transform:skewY(-30deg);transform-origin:right;pointer-events:none}
+.sop-accordion.sop-concertina-accordion .sop-accordion-item:nth-child(even)::before{transform:skewY(30deg);background:#d4dac7}
+.sop-accordion.sop-concertina-accordion .sop-accordion-trigger{padding:20px 24px}
+.sop-accordion.sop-concertina-accordion .sop-accordion-item[data-open=true]{background:linear-gradient(90deg,#d6d9c7,#edeadd 12%,#edeadd 94%,#e0e1d1)}
+.sop-accordion.sop-concertina-accordion .sop-accordion-content{padding-inline:24px}
 
+.sop-accordion.sop-concertina-accordion:focus-visible,.sop-accordion.sop-concertina-accordion :is(button,a,input,textarea,select):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.sop-accordion.sop-concertina-accordion,.sop-accordion.sop-concertina-accordion *,.sop-accordion.sop-concertina-accordion::before,.sop-accordion.sop-concertina-accordion::after,.sop-accordion.sop-concertina-accordion *::before,.sop-accordion.sop-concertina-accordion *::after{transition:none!important;animation:none!important}}
 .sop-accordion.sop-concertina-accordion[data-sop-paused] *,.sop-accordion.sop-concertina-accordion[data-paused=true] *,.sop-accordion.sop-concertina-accordion[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
-
-/* UI review: preserve readable content and stable interaction geometry. */
-.sop-accordion.sop-concertina-accordion{padding:0 16px;--acc-muted:#535e4c}
-.sop-accordion.sop-concertina-accordion .sop-accordion-item,.sop-accordion.sop-concertina-accordion .sop-accordion-item[data-open=true]{clip-path:none;overflow:visible;margin:0;border-radius:0;background:#e5e1d0;box-shadow:inset 0 1px #fff8,inset 0 -1px #8d927e;border:0}
-.sop-accordion.sop-concertina-accordion .sop-accordion-item:before,.sop-accordion.sop-concertina-accordion .sop-accordion-item:after{content:"";position:absolute;top:0;bottom:0;width:16px;pointer-events:none;transition:filter .4s}
-.sop-accordion.sop-concertina-accordion .sop-accordion-item:before{left:-16px;background:#a6ac94;clip-path:polygon(100% 0,100% 100%,0 calc(100% - 10px),0 10px)}
-.sop-accordion.sop-concertina-accordion .sop-accordion-item:after{right:-16px;background:#c6c8b2;clip-path:polygon(0 0,100% 10px,100% calc(100% - 10px),0 100%)}
-.sop-accordion.sop-concertina-accordion .sop-accordion-item:nth-child(even){background:#ccd0ba;box-shadow:inset 0 1px #fff8,inset 0 -1px #8d927e}
-.sop-accordion.sop-concertina-accordion .sop-accordion-item:nth-child(even):before{background:#c6c8b2;clip-path:polygon(0 0,100% 10px,100% calc(100% - 10px),0 100%)}
-.sop-accordion.sop-concertina-accordion .sop-accordion-item:nth-child(even):after{background:#929b81;clip-path:polygon(100% 0,100% 100%,0 calc(100% - 10px),0 10px)}
-.sop-accordion.sop-concertina-accordion .sop-accordion-item[data-open=true]:before{filter:brightness(1.15)}
-
-@media(prefers-reduced-motion:reduce){.sop-concertina-accordion *,.sop-concertina-accordion::before,.sop-concertina-accordion::after,.sop-concertina-accordion *::before,.sop-concertina-accordion *::after{transition:none!important;animation:none!important}}
+@media(forced-colors:active){.sop-accordion.sop-concertina-accordion{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-accordion.sop-concertina-accordion :is(button,input,a):focus-visible{outline:2px solid Highlight}.sop-accordion.sop-concertina-accordion::before,.sop-accordion.sop-concertina-accordion::after{forced-color-adjust:auto}}

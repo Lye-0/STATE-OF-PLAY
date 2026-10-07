@@ -1,13 +1,19 @@
 @import "../../../shared/signature/wizard.css";
-/* Fabrication Workflow — 現在の作業面と工程の小区画を、鋳型のような厚い縁で囲む。 */
-.sop-sig.sop-fabrication-workflow{--sg-bg:#293a4c;--sg-a:#bbcada;--sg-line:#8499b2;--sg-muted:#a9bbd0}.sop-sig.sop-fabrication-workflow .sg-wizard{background:#2c4359;border:4px solid #8496a9;border-radius:6px;padding:17px;box-shadow:inset 0 0 0 1px #c0d0d5}.sop-sig.sop-fabrication-workflow .sg-wizard-nav{background:#1b3248;border:1px solid #7f99af;padding:5px;gap:5px}.sop-sig.sop-fabrication-workflow .sg-wizard-nav button{background:#415e79;border:1px solid #87a2bb;border-radius:2px;padding:12px 3px}.sop-sig.sop-fabrication-workflow .sg-step-index{width:28px;height:24px;border-radius:1px;box-shadow:inset 0 3px #152c4288}.sop-sig.sop-fabrication-workflow [data-step-state=current] .sg-step-index{background:#9db5c5;color:#1e3b50;box-shadow:inset 0 1px #dce8df55}.sop-sig.sop-fabrication-workflow .sg-wizard-panel{border:1px solid #7792aa;padding:16px;background:#1e385033;border-radius:1px}
-@media(prefers-reduced-motion:reduce){.sop-sig.sop-fabrication-workflow,.sop-sig.sop-fabrication-workflow *,.sop-sig.sop-fabrication-workflow::before,.sop-sig.sop-fabrication-workflow::after{animation:none!important;transition:none!important}}
-@media(forced-colors:active){.sop-sig.sop-fabrication-workflow{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-fabrication-workflow :is(button,input,a):focus-visible{outline:2px solid Highlight}}
-.sop-sig.sop-fabrication-workflow:focus-visible,.sop-sig.sop-fabrication-workflow :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+/* 厚い鋳型の多重枠を、工程のレールと一枚の作業面へ整理。現在工程の小さな金属片だけが浮き上がる。 */
 
+.sop-sig.sop-fabrication-workflow{--sg-bg:#24333d;--sg-a:#bdd0d3;--sg-line:#647d87;--sg-muted:#b2c3c9}
+.sop-sig.sop-fabrication-workflow .sg-wizard{border:1px solid #617884;border-radius:3px;padding:22px;background:linear-gradient(90deg,#384b56 0 5px,#24333d 5px);box-shadow:0 8px 20px #0003}
+.sop-sig.sop-fabrication-workflow .sg-wizard-nav{gap:10px;background:linear-gradient(#657c85,#657c85) center 22px/85% 1px no-repeat;padding:0;border:0}
+.sop-sig.sop-fabrication-workflow .sg-wizard-nav button{padding:8px 0;background:none;border:0;min-height:67px}
+.sop-sig.sop-fabrication-workflow .sg-step-index{width:35px;height:27px;border-radius:3px;background:#344a56;box-shadow:inset 0 2px #12242c;transition:background .4s,box-shadow .4s}
+.sop-sig.sop-fabrication-workflow [data-step-state=current] .sg-step-index{background:#bbd0d2;color:#213d47;box-shadow:inset 0 1px #eef5f2,0 3px 6px #0004}
+.sop-sig.sop-fabrication-workflow .sg-step-title{font:11px/1.5 system-ui;letter-spacing:0}
+.sop-sig.sop-fabrication-workflow .sg-wizard-panels{margin-top:13px}.sop-sig.sop-fabrication-workflow .sg-wizard-panel{padding:20px 0;border:0;background:none;border-top:1px solid #59727c66}
+.sop-sig.sop-fabrication-workflow .sg-wizard-panel h3{font:26px/1.4 Georgia,serif}
+.sop-sig.sop-fabrication-workflow .sg-wizard-fields input{border:0;border-bottom:1px solid #88a2ab;background:#172b33;border-radius:2px;box-shadow:none;padding:12px}
+.sop-sig.sop-fabrication-workflow .sg-wizard-footer{border-top:1px solid #59727c66;padding-top:16px}
+
+.sop-sig.sop-fabrication-workflow:focus-visible,.sop-sig.sop-fabrication-workflow :is(button,a,input,textarea,select):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-fabrication-workflow,.sop-sig.sop-fabrication-workflow *,.sop-sig.sop-fabrication-workflow::before,.sop-sig.sop-fabrication-workflow::after,.sop-sig.sop-fabrication-workflow *::before,.sop-sig.sop-fabrication-workflow *::after{transition:none!important;animation:none!important}}
 .sop-sig.sop-fabrication-workflow[data-sop-paused] *,.sop-sig.sop-fabrication-workflow[data-paused=true] *,.sop-sig.sop-fabrication-workflow[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
-.sop-sig.sop-fabrication-workflow *{animation-play-state:var(--sg-play,running)!important}
-
-
-/* Visual review: composition and state separation. */
-.sop-sig.sop-fabrication-workflow .sg-wizard{padding:18px;background:linear-gradient(#b0c5d011 0 60px,transparent 60px),var(--sg-bg);border:4px solid var(--sg-line)}.sop-sig.sop-fabrication-workflow .sg-wizard-nav{gap:0;margin-bottom:24px;counter-reset:stage}.sop-sig.sop-fabrication-workflow .sg-wizard-nav button{min-height:77px;border-right:3px solid var(--sg-bg);border-radius:0;padding:10px}.sop-sig.sop-fabrication-workflow .sg-step-index{width:38px;height:24px;border:1px solid var(--sg-line);border-radius:1px;font:15px Consolas}.sop-sig.sop-fabrication-workflow .sg-step-title{font:9px Consolas;letter-spacing:1px}.sop-sig.sop-fabrication-workflow .sg-wizard-panel h3{font:30px Consolas}.sop-sig.sop-fabrication-workflow .sg-wizard-fields input{border:2px solid var(--sg-line);border-radius:0;box-shadow:inset 0 4px #081e2c88;padding:16px}.sop-sig.sop-fabrication-workflow .sg-wizard-footer{border-top:6px double var(--sg-line);padding-top:15px}
+@media(forced-colors:active){.sop-sig.sop-fabrication-workflow{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-fabrication-workflow :is(button,input,a):focus-visible{outline:2px solid Highlight}.sop-sig.sop-fabrication-workflow::before,.sop-sig.sop-fabrication-workflow::after{forced-color-adjust:auto}}

@@ -1,9 +1,16 @@
 @import "../../../shared/signature/rating.css";
-/* Plume Score Rating — 細い羽根の軸と枝が、選択した段まで順に立ち上がる。 */
-.sop-sig.sop-plume-score-rating .sg-rating-star{display:none}.sop-sig.sop-plume-score-rating .sg-rating-form{inset:2px 0 17px}.sop-sig.sop-plume-score-rating .sg-rating-number{opacity:1;position:absolute;bottom:-15px;font:8px Consolas}.sop-sig.sop-plume-score-rating .sg-rating-core{opacity:1;transition:transform .5s,background .4s,box-shadow .4s}.sop-sig.sop-plume-score-rating{--sg-a:#dbbaa8;--sg-line:#ac8d77}.sop-sig.sop-plume-score-rating .sg-rating-core{inset:0 15px 0;background:#b19775;border-radius:2px;transform:rotate(-8deg)}.sop-sig.sop-plume-score-rating .sg-rating-petals i{display:block;position:absolute;left:50%;top:calc(var(--petal)*5px);width:15px;height:4px;background:#775d49;transform:rotate(-30deg);border-radius:80% 10% 50% 0;transform-origin:left center;transition:transform .5s,background .5s}.sop-sig.sop-plume-score-rating .sg-rating-unit[data-filled=true] .sg-rating-petals i{background:#d7b484;transform:rotate(-15deg) scaleX(1.12)}.sop-sig.sop-plume-score-rating .sg-rating-unit[data-filled=true] .sg-rating-core{background:#e3c49b;transform:rotate(3deg)}.sop-sig.sop-plume-score-rating .sg-rating-scale{gap:18px}
-@media(prefers-reduced-motion:reduce){.sop-sig.sop-plume-score-rating,.sop-sig.sop-plume-score-rating *,.sop-sig.sop-plume-score-rating::before,.sop-sig.sop-plume-score-rating::after{animation:none!important;transition:none!important}}
-@media(forced-colors:active){.sop-sig.sop-plume-score-rating{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-plume-score-rating :is(button,input,a):focus-visible{outline:2px solid Highlight}}
-.sop-sig.sop-plume-score-rating:focus-visible,.sop-sig.sop-plume-score-rating :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+/* 片側の櫛歯をやめ、先端へ細くなる羽弁と一本の軸で軽さを表す。 */
 
+.sop-sig.sop-plume-score-rating{--sg-a:#dcc6ad;--sg-line:#998b7a}
+.sop-sig.sop-plume-score-rating .sg-rating-star{display:none}.sop-sig.sop-plume-score-rating .sg-rating-form{inset:0 0 17px}
+.sop-sig.sop-plume-score-rating .sg-rating-number{opacity:0;position:absolute;bottom:-15px;font:9px Consolas}
+.sop-sig.sop-plume-score-rating .sg-rating-core{inset:2px 4px auto;height:35px;border:0;border-radius:90% 4% 90% 4%;background:linear-gradient(125deg,#736655,#4c443b);transform:rotate(24deg);opacity:1;transition:background .5s,filter .5s;box-shadow:none}
+.sop-sig.sop-plume-score-rating .sg-rating-core::after{content:"";position:absolute;left:49%;top:9%;height:91%;width:1px;background:#c6b391;transform:rotate(24deg);transform-origin:center;opacity:.6}
+.sop-sig.sop-plume-score-rating .sg-rating-petals{display:none}
+.sop-sig.sop-plume-score-rating .sg-rating-unit[data-filled=true] .sg-rating-core{background:linear-gradient(125deg,#ebd8b9,#b3946b);filter:drop-shadow(0 3px 2px #0003)}
+.sop-sig.sop-plume-score-rating .sg-rating-scale{gap:15px}
+
+.sop-sig.sop-plume-score-rating:focus-visible,.sop-sig.sop-plume-score-rating :is(button,a,input,textarea,select):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.sop-sig.sop-plume-score-rating,.sop-sig.sop-plume-score-rating *,.sop-sig.sop-plume-score-rating::before,.sop-sig.sop-plume-score-rating::after,.sop-sig.sop-plume-score-rating *::before,.sop-sig.sop-plume-score-rating *::after{transition:none!important;animation:none!important}}
 .sop-sig.sop-plume-score-rating[data-sop-paused] *,.sop-sig.sop-plume-score-rating[data-paused=true] *,.sop-sig.sop-plume-score-rating[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
-.sop-sig.sop-plume-score-rating *{animation-play-state:var(--sg-play,running)!important}
+@media(forced-colors:active){.sop-sig.sop-plume-score-rating{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-plume-score-rating :is(button,input,a):focus-visible{outline:2px solid Highlight}.sop-sig.sop-plume-score-rating::before,.sop-sig.sop-plume-score-rating::after{forced-color-adjust:auto}}

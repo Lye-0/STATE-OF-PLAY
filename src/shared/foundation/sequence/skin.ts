@@ -92,10 +92,15 @@ export function sequenceSkin(material:SequenceMaterial, selected=0, hover=0, pul
    `<path d="M7 40Q80 ${f(29-open*8)} 153 40" fill="none" stroke="#899fc666"/>`;break;
  }
  case 'aperture': {
-  shape=rect('#13242d','#8299a16c',24);
-  for(let i=0;i<6;i++){const x=5+i*25;shape+=`<path d="M${x} 6H${x+25}L${f(x+14-open*9)} ${f(25-open*10)}L${f(x+5-open*4)} ${f(29-open*10)}Z" fill="${i%2?'#82939e42':'#4b676b77'}" stroke="#a6bab735"/>`+
-   `<path d="M${x} 50H${x+25}L${f(x+25+open*3)} ${f(31+open*10)}L${f(x+10+open*9)} ${f(31+open*10)}Z" fill="${i%2?'#4259678a':'#83959b3d'}"/>`;}
-  shape+=line('M20 8H140M20 48H140','#bccfc962',.8);break;
+  // The chip owns the label surface; its small iris stays in a separate round window.
+  const point=(angle:number,radius:number)=>`${f(Math.cos(angle*Math.PI/180)*radius)} ${f(Math.sin(angle*Math.PI/180)*radius)}`;
+  const radius=5+open*5;
+  shape='<g transform="translate(80 28) scale(2.857142857 1)"><circle r="24" fill="#172d27" stroke="#a9bbaa88"/>';
+  for(let i=0;i<6;i++){
+   const a=i*60+open*12;
+   shape+=`<path d="M${point(a,22)} A22 22 0 0 1 ${point(a+60,22)} L${point(a+80,radius)} L${point(a+20,radius)}Z" fill="${i%2?'#82958c':'#566f65'}" stroke="#d2dfcb55" stroke-width=".6"/>`;
+  }
+  shape+='</g>';break;
  }
  case 'transit': {
   const seam=f(124-open*7);

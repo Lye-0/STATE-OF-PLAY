@@ -1,12 +1,18 @@
 @import "../../../shared/foundation/base.css";
-/* Clip Frame Dropzone — 四隅のクリップが受取面を支え、選んだファイルを下へ綴じる。 */
-.sop-foundation.sop-clip-frame-dropzone{--ff-accent:#d0becf;--ff-panel:#433347;--ff-base:#2c2234;--ff-line:#97829b}.sop-foundation.sop-clip-frame-dropzone .ff-dropzone{border:0;outline:1px solid #a995b0;outline-offset:-7px;border-radius:1px;background:#4b3551;padding:30px 23px;box-shadow:inset 6px 0 #6a5572,inset -6px 0 #6a5572;min-height:158px}.sop-foundation.sop-clip-frame-dropzone .ff-upload-symbol{border:2px solid #b59ec0;border-radius:1px;background:#684773;transform:rotate(5deg)}.sop-foundation.sop-clip-frame-dropzone .ff-upload-files li{border-radius:1px;box-shadow:3px 3px #1c192788}.sop-foundation.sop-clip-frame-dropzone .ff-dropzone[data-dragging=true]{outline-color:#dcc1e8;outline-offset:-4px}
-@media(prefers-reduced-motion:reduce){.sop-foundation.sop-clip-frame-dropzone,.sop-foundation.sop-clip-frame-dropzone *,.sop-foundation.sop-clip-frame-dropzone::before,.sop-foundation.sop-clip-frame-dropzone::after{animation:none!important;transition:none!important}}
-@media(forced-colors:active){.sop-foundation.sop-clip-frame-dropzone{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-clip-frame-dropzone :is(button,input,a):focus-visible{outline:2px solid Highlight}}
-.sop-foundation.sop-clip-frame-dropzone:focus-visible,.sop-foundation.sop-clip-frame-dropzone :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+/* 二つの小さな金属クリップが受取面を支える構成にし、ファイル行も同じ紙面へ揃える。 */
 
+.sop-foundation.sop-clip-frame-dropzone{--ff-accent:#cbbccc;--ff-panel:#322b37;--ff-base:#241f2b;--ff-line:#8e7e97;--ff-muted:#c0b2c7}
+.sop-foundation.sop-clip-frame-dropzone .ff-dropzone{position:relative;border:1px solid #89799366;outline:0;border-radius:4px;background:#302b35;padding:40px 22px 26px;min-height:175px;box-shadow:0 5px 10px #0002;text-align:left}
+.sop-foundation.sop-clip-frame-dropzone .ff-dropzone::before,.sop-foundation.sop-clip-frame-dropzone .ff-dropzone::after{content:"";position:absolute;top:-7px;width:29px;height:18px;border-radius:3px;background:linear-gradient(#d1c5cf,#8e8093 55%,#baacba);border:1px solid #b9aaba;box-shadow:0 3px 4px #0004;pointer-events:none;transition:transform .25s}
+.sop-foundation.sop-clip-frame-dropzone .ff-dropzone::before{left:22px}.sop-foundation.sop-clip-frame-dropzone .ff-dropzone::after{right:22px}
+.sop-foundation.sop-clip-frame-dropzone .ff-upload-symbol{position:relative;inset:auto;margin:0 0 12px;width:30px;height:30px;background:none;border:0;transform:none;color:#d8c6dd}
+.sop-foundation.sop-clip-frame-dropzone .ff-dropzone strong{font:600 16px/1.6 system-ui}
+.sop-foundation.sop-clip-frame-dropzone [data-upload-limits]{margin-top:14px;border:0;padding:0}
+.sop-foundation.sop-clip-frame-dropzone .ff-dropzone[data-dragging=true]{background:#403749;border-color:#d4c0de}
+.sop-foundation.sop-clip-frame-dropzone .ff-dropzone[data-dragging=true]::before,.sop-foundation.sop-clip-frame-dropzone .ff-dropzone[data-dragging=true]::after{transform:translateY(-3px)}
+.sop-foundation.sop-clip-frame-dropzone .ff-upload-files li{background:#302b35;border:0;border-left:2px solid #b3a2be;border-radius:2px;box-shadow:none}
+
+.sop-foundation.sop-clip-frame-dropzone:focus-visible,.sop-foundation.sop-clip-frame-dropzone :is(button,a,input,textarea,select):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-clip-frame-dropzone,.sop-foundation.sop-clip-frame-dropzone *,.sop-foundation.sop-clip-frame-dropzone::before,.sop-foundation.sop-clip-frame-dropzone::after,.sop-foundation.sop-clip-frame-dropzone *::before,.sop-foundation.sop-clip-frame-dropzone *::after{transition:none!important;animation:none!important}}
 .sop-foundation.sop-clip-frame-dropzone[data-sop-paused] *,.sop-foundation.sop-clip-frame-dropzone[data-paused=true] *,.sop-foundation.sop-clip-frame-dropzone[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
-
-
-/* Visual review: composition and state separation. */
-.sop-foundation.sop-clip-frame-dropzone .ff-dropzone{padding:28px 25px 22px 66px;min-height:155px;background:transparent;border:0;border-left:8px double var(--ff-line);border-right:8px double var(--ff-line);border-top:1px solid var(--ff-line);border-bottom:1px solid var(--ff-line)}.sop-foundation.sop-clip-frame-dropzone .ff-upload-symbol{left:15px;right:auto;top:35px;width:32px;height:45px;transform:rotate(-8deg)}.sop-foundation.sop-clip-frame-dropzone .ff-dropzone strong{font:22px Georgia}.sop-foundation.sop-clip-frame-dropzone [data-upload-limits]{margin-top:22px;padding-top:8px;border-top:1px solid var(--ff-line)}
+@media(forced-colors:active){.sop-foundation.sop-clip-frame-dropzone{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-clip-frame-dropzone :is(button,input,a):focus-visible{outline:2px solid Highlight}.sop-foundation.sop-clip-frame-dropzone::before,.sop-foundation.sop-clip-frame-dropzone::after{forced-color-adjust:auto}}

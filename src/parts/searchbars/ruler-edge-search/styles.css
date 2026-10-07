@@ -1,8 +1,19 @@
 @import "../../../shared/workbench/base.css";
-/* Ruler Edge Search — 入力の上辺に細い目盛りを置き、検索結果をその下の資料面へ続ける。 */
-.sop-wb.sop-ruler-edge-search{--wb-bg:#2a3b51;--wb-accent:#bbcedb;--wb-line:#7f97ad;--wb-muted:#acbdd1}.sop-wb.sop-ruler-edge-search .wb-search-shell{background:#2c4259;border:0;border-bottom:7px solid #6b87a2;border-radius:0;padding:22px}.sop-wb.sop-ruler-edge-search .wb-search-field{background:#20374d;border:1px solid #88a2b5;border-top:7px solid #819bae;border-radius:0;min-height:58px;position:relative}.sop-wb.sop-ruler-edge-search .wb-search-field:before{content:"";position:absolute;top:-7px;left:0;right:0;height:5px;background:repeating-linear-gradient(90deg,#2b445a 0 1px,transparent 1px 8px);pointer-events:none}.sop-wb.sop-ruler-edge-search .wb-search-submit{border-radius:1px;background:#56758f}.sop-wb.sop-ruler-edge-search .wb-search-filters button{border-radius:0;border-bottom:1px solid #8099b5;padding:7px 10px}
-@media(prefers-reduced-motion:reduce){.sop-wb.sop-ruler-edge-search,.sop-wb.sop-ruler-edge-search *,.sop-wb.sop-ruler-edge-search::before,.sop-wb.sop-ruler-edge-search::after{animation:none!important;transition:none!important}}
-@media(forced-colors:active){.sop-wb.sop-ruler-edge-search{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-ruler-edge-search :is(button,input,a):focus-visible{outline:2px solid Highlight}}
-.sop-wb.sop-ruler-edge-search:focus-visible,.sop-wb.sop-ruler-edge-search :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
+/* 目盛りを実際の検索フィルターに対応させ、選択した位置だけ指標が伸びる定規へ変更。 */
 
+.sop-wb.sop-ruler-edge-search{--wb-bg:#283947;--wb-accent:#c4d6de;--wb-line:#7c94a2;--wb-muted:#bbcbd4}
+.sop-wb.sop-ruler-edge-search .wb-search-shell{background:#293e4b;border:0;border-radius:2px;padding:22px;box-shadow:inset 3px 0 #819eac}
+.sop-wb.sop-ruler-edge-search .wb-search-field{background:#1a303d;border:0;border-bottom:1px solid #8aa4b0;border-radius:0;min-height:58px}
+.sop-wb.sop-ruler-edge-search .wb-search-field:focus-within{outline:2px solid #bdd5de;outline-offset:3px}
+.sop-wb.sop-ruler-edge-search .wb-search-field input:focus-visible{outline:0}
+.sop-wb.sop-ruler-edge-search .wb-search-submit{border-radius:2px;background:#5f7d8b}
+.sop-wb.sop-ruler-edge-search .wb-search-filters{gap:0;border-top:1px solid #8ba4b088;margin-top:22px;padding-top:0;align-items:stretch}
+.sop-wb.sop-ruler-edge-search .wb-search-filters button{position:relative;flex:1;border:0;border-radius:0;background:none;padding:14px 7px 8px}
+.sop-wb.sop-ruler-edge-search .wb-search-filters button::before{content:"";position:absolute;top:0;left:50%;height:5px;width:1px;background:#92abb7;transition:height .3s}
+.sop-wb.sop-ruler-edge-search .wb-search-filters button[aria-pressed=true]{color:#e4eff0;background:linear-gradient(#9ebcca22,transparent)}
+.sop-wb.sop-ruler-edge-search .wb-search-filters button[aria-pressed=true]::before{height:9px;width:3px;background:#c6dae0}
+
+.sop-wb.sop-ruler-edge-search:focus-visible,.sop-wb.sop-ruler-edge-search :is(button,a,input,textarea,select):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.sop-wb.sop-ruler-edge-search,.sop-wb.sop-ruler-edge-search *,.sop-wb.sop-ruler-edge-search::before,.sop-wb.sop-ruler-edge-search::after,.sop-wb.sop-ruler-edge-search *::before,.sop-wb.sop-ruler-edge-search *::after{transition:none!important;animation:none!important}}
 .sop-wb.sop-ruler-edge-search[data-sop-paused] *,.sop-wb.sop-ruler-edge-search[data-paused=true] *,.sop-wb.sop-ruler-edge-search[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+@media(forced-colors:active){.sop-wb.sop-ruler-edge-search{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-ruler-edge-search :is(button,input,a):focus-visible{outline:2px solid Highlight}.sop-wb.sop-ruler-edge-search::before,.sop-wb.sop-ruler-edge-search::after{forced-color-adjust:auto}}
