@@ -10,7 +10,7 @@ Reactは`CrossingPinsLoader`をimportして配置します。通常HTMLはmarkup
 `content`でメッセージ、`paused`で動きを止めます。pauseは成功や完了を意味しません。loading対象領域のaria-busyは利用先で管理してください。
 
 ## 外観
-`--ld-size`は通常30px。Line Sweepは128px幅、`--ld-accent`と`--ld-secondary`は色です。ギャラリーの上下の余白は部品のプレビュー用です。Aタイプはアプリ内の通常の小さい読込表示として使用できます。
+固有の図形は `.x-composition` とその子要素で構成します。寸法・色は、この部品の `styles.css` で調整できます。状態を伝える文字は装飾から分離しています。
 
 ## 動きと破棄
 CSSアニメーションです。毎フレームのJavaScriptループやタイマーは使いません。非表示タブ・画面外・pausedでは止まり、prefers-reduced-motionでは静止形を表示します。destroy()で監視を解除します。独立した複数配置ができます。
