@@ -175,6 +175,9 @@ jobs:
       - name: Liquid Glass hover and focus states
         if: ${{ !cancelled() && steps.browser-ready.outcome == 'success' && matrix.suite == 'glass' }}
         run: npm run test:liquid-glass:hover
+      - name: Liquid Glass exhibit backplanes and independent material controls
+        if: ${{ !cancelled() && steps.browser-ready.outcome == 'success' && matrix.suite == 'glass' }}
+        run: npm run test:glass-blur
       - name: Liquid Glass gallery and code delivery
         if: ${{ !cancelled() && steps.browser-ready.outcome == 'success' && matrix.suite == 'glass' }}
         run: npm run test:glass-collection:gallery

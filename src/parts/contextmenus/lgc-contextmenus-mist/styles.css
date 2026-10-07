@@ -11,7 +11,7 @@
  --wb-bg:var(--lgc-fill);--wb-surface:var(--lgc-panel);--wb-ink:var(--lgc-ink);--wb-muted:var(--lgc-muted);--wb-accent:var(--lgc-accent);--wb-line:var(--lgc-line);--wb-radius:var(--lgc-radius);--lgc-radius:13px;color:var(--lgc-ink);background:transparent;max-width:100%;}
 
 .lgc-root.sop-lgc-contextmenus-mist:not([data-lg-appearance="light"]){
- --lgc-fill:rgba(29,48,65,clamp(0, calc((.65 * var(--lg-density, 1)) * var(--lg-alpha-scale,1) + var(--lg-alpha-lift,0)), 1));--lgc-panel:rgba(22,42,58,clamp(0, calc((.94 * var(--lg-density, 1)) * var(--lg-alpha-scale,1) + var(--lg-alpha-lift,0)), 1));}
+ --lgc-fill:rgba(29,48,65,clamp(0, calc((.38 * var(--lg-density, 1)) * var(--lg-alpha-scale,1) + var(--lg-alpha-lift,0)), 1));--lgc-panel:rgba(22,42,58,clamp(0, calc((.64 * var(--lg-density, 1)) * var(--lg-alpha-scale,1) + var(--lg-alpha-lift,0)), 1));}
 
 /* Mist Context: a denser smoky pane with a soft luminous selection band. */
 .sop-wb.sop-lgc-contextmenus-mist{--wb-ink:var(--lgc-ink);--wb-muted:var(--lgc-muted);--wb-accent:var(--lgc-accent);--wb-line:var(--lgc-line);color-scheme:dark;}

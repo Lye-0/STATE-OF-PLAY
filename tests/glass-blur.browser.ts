@@ -7,6 +7,14 @@ try{
  for(const part of parts){
   await selectCategory(page,part.category);await galleryReady(page,true);const card=page.locator(`[data-part="${part.id}"]`);await card.locator('.open-part').click();await galleryReady(page,true);
   const detail=page.locator('#part-details'),root=detail.locator('.preview-stage > .lg-root,.preview-stage > .lgc-root');
+  // A changing glass overlay is ineffective when ordinary widget CSS paints an
+  // opaque surface behind it. Check the actual exhibit and detail backplanes.
+  for(const scope of [card,detail]){
+   const button=scope.locator('.lg-root.lg-button');
+   if(await button.count())assert.equal(await button.evaluate(el=>getComputedStyle(el).backgroundColor),'rgba(0, 0, 0, 0)',part.id+' opaque button backplane');
+   const tabs=scope.locator('.lg-root.lg-tabs > .sop-choice-list');
+   if(await tabs.count())assert.match(await tabs.evaluate(el=>getComputedStyle(el).backgroundColor),/^rgba\(/,part.id+' opaque tab backplane');
+  }
   const read=()=>root.evaluate(el=>[el,...el.querySelectorAll('*')].flatMap(node=>[null,'::before','::after',...(node.tagName==='DIALOG'?['::backdrop']:[])].map(p=>{const s=getComputedStyle(node,p);return{blur:Number(s.backdropFilter.match(/blur\(([\d.]+)px\)/)?.[1]??0),background:s.background,color:s.color,opacity:s.opacity}})));
   const original=await read();if(!original.some(s=>s.blur>0))console.log(await root.evaluate(el=>({filter:getComputedStyle(el).backdropFilter,blur:getComputedStyle(el).getPropertyValue('--lgc-blur'),scale:getComputedStyle(el).getPropertyValue('--lg-blur-scale')})));assert.ok(original.some(s=>s.blur>0),part.id+' has no sampled glass surface');
   await detail.locator('#glass-blur').fill('0');const clear=await read();assert.ok(clear.every(s=>s.blur===0),part.id+' retains background blur at zero');assert.deepEqual(clear.map(({blur,...s})=>s),original.map(({blur,...s})=>s),part.id+' blur changes transparency or text');
