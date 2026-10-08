@@ -1,0 +1,146 @@
+{
+  "batch": "B003",
+  "round": 2,
+  "snapshot": "batches/B003/snapshot/round-2/ (review-input-2.json SHA-256 100/100一致)",
+  "overall": "pass",
+  "parts": [
+    {
+      "number": 41,
+      "id": "guilloche-button",
+      "verdict": "pass",
+      "assessment": "上下の彫刻が端で滑らかにつながる二本のSVG曲線になり、分断された線片の印象を解消した。hoverの逆向き移動も連続し、本文に侵入しない。素材帯として整理され合格。 強制色スピナーの切れ目消失も解消。",
+      "findings": [],
+      "nearestComparisons": [
+        "R041旧版",
+        "R055 Satin Runner Button",
+        "R034 Terminal Foil（B002 round-2）"
+      ]
+    },
+    {
+      "number": 42,
+      "id": "hinged-escutcheon-button",
+      "verdict": "pass",
+      "assessment": "前回合格した節のある蝶番と翼を維持。busy・キーボード・狭幅の回帰なし。 強制色スピナーの切れ目消失も解消。",
+      "findings": [],
+      "nearestComparisons": [
+        "R048 Reframed Key Button",
+        "R051 Bookend Button",
+        "R032 Pivot Corner Case（B002 round-2）"
+      ]
+    },
+    {
+      "number": 44,
+      "id": "closure-tab-button",
+      "verdict": "pass",
+      "assessment": "前回合格した張り出す封緘タブと留めの接続を維持。busy・キーボード・狭幅の回帰なし。 強制色スピナーの切れ目消失も解消。",
+      "findings": [],
+      "nearestComparisons": [
+        "R047 Stitched Loop Button",
+        "R050 Braille Edge Button",
+        "R298 Sealed Envelope Notice"
+      ]
+    },
+    {
+      "number": 45,
+      "id": "ratchet-face-button",
+      "verdict": "pass",
+      "assessment": "前回合格した歯と連続した受けレールの機構を維持。busyでも面が沈まず、操作の回帰なし。 強制色スピナーの切れ目消失も解消。",
+      "findings": [],
+      "nearestComparisons": [
+        "R051 Bookend Button",
+        "R048 Reframed Key Button",
+        "R013 Comb Contact Toggle（B001）"
+      ]
+    },
+    {
+      "number": 47,
+      "id": "stitched-loop-button",
+      "verdict": "pass",
+      "assessment": "前回合格した革の穴・縫い目・留めの構造を維持。長文でも文字とループが分離し、操作の回帰なし。 強制色スピナーの切れ目消失も解消。",
+      "findings": [],
+      "nearestComparisons": [
+        "R253 Loop Label Choice",
+        "R436 Loop Label Tags",
+        "R199 Saddle Loop Check"
+      ]
+    },
+    {
+      "number": 48,
+      "id": "reframed-key-button",
+      "verdict": "pass",
+      "assessment": "前回合格したC型クランプで一枚の押し面を保持する構造を維持。busyと操作の回帰なし。 強制色スピナーの切れ目消失も解消。",
+      "findings": [],
+      "nearestComparisons": [
+        "R042 Hinged Escutcheon Button",
+        "R051 Bookend Button",
+        "R258 Clasp Band Choice",
+        "R637 Rail Clamp Context"
+      ]
+    },
+    {
+      "number": 49,
+      "id": "ivory-gasket-button",
+      "verdict": "pass",
+      "assessment": "太いD字枠を除き、二つの露出した弾性輪・押し子・独立した足の支持構造へ変わった。hoverで輪が圧縮されても押し子が輪の中へつながり、上の文字面は固定。汎用カプセルの枠変更から離れ、Aとして合格。 強制色スピナーの切れ目消失も解消。",
+      "findings": [],
+      "nearestComparisons": [
+        "R043 Offset Porcelain Button",
+        "R059 Quiet Confirm Button",
+        "R049旧版"
+      ]
+    },
+    {
+      "number": 50,
+      "id": "braille-edge-button",
+      "verdict": "pass",
+      "assessment": "五つの留め金が押し面の切欠きをまたぎ、鋲が両面の重なる位置へ移った。側帯への点追加から、保持部の輪郭と接合を主役にした構造へ改善。文字領域は金具の右に確保され、長文でも遮蔽しない。 強制色スピナーの切れ目消失も解消。",
+      "findings": [],
+      "nearestComparisons": [
+        "R044 Closure Tab Button",
+        "R197 Bookplate Check",
+        "R475 Bookplate Profile",
+        "R021旧版とB001改善版"
+      ]
+    },
+    {
+      "number": 51,
+      "id": "bookend-button",
+      "verdict": "pass",
+      "assessment": "前回合格したL字の支持と紙束を維持。busy・キーボード・狭幅の回帰なし。 強制色スピナーの切れ目消失も解消。",
+      "findings": [],
+      "nearestComparisons": [
+        "R045 Ratchet Face Button",
+        "R048 Reframed Key Button",
+        "R460 Bookend Counter",
+        "R029 Canal Bridge Panel（B002）"
+      ]
+    },
+    {
+      "number": 52,
+      "id": "inverted-ridge-button",
+      "verdict": "pass",
+      "assessment": "中央が下へ張り出すV字の外周になり、中央の稜と二つの傾斜面が通常/hoverとも読める。二色の浅い底帯から構造が変わり、押し面と文字を動かさず独立性を作れている。 強制色スピナーの切れ目消失も解消。",
+      "findings": [],
+      "nearestComparisons": [
+        "R054 Folded Fin Button",
+        "R046 Prismatic Cut Button",
+        "R035 Terraced Paper Panel（B002）"
+      ]
+    }
+  ],
+  "checks": [
+    "response-1.md、更新design.md、変更4件の固定CSS差分とSVG経路を確認。前回合格6件の通常造形を引き継ぐ。",
+    "固定正本100ファイルのSHA-256全一致。portable native CSS10件はimportの再配置パスを除き正本と一致。",
+    "Vite+Chromiumの固定native画面で全10件に対し、Enter実行→busy中のEnter/Space/programmatic click抑止→解除後Space実行を確認。実行回数は各件1→1→2。",
+    "全10件でbusy前後のボタン幅/高さ、ラベルの部品内矩形と色、押し面色、art/root opacityが一致。",
+    "全10件で通常モーションのhover→120ms→leave→100ms→reenterを操作し、中間transformと背景位置、initial/hover/busy画像を保存。",
+    "320pxの長い日本語ラベルで全10件scrollWidth=320。変更4件の彫刻・押し子・留め金・稜が文字領域へ侵入しないことを画像で確認。",
+    "R049の押し子/輪/足の接続を通常とhoverで確認。R050の留め金が切欠きをまたいで鋲の位置に重なり、R052は中央のV字と両側の面が維持されることを確認。",
+    "forced-colorsのbusyを全件実描画し、スピナーの形に切れ目が残ることを確認。reduced-motion時は全件の装飾/スピナーtransition0s・animation none。ページエラー0。",
+    "最新gallery個別photosの変更4件も確認。前回の近似比較対象を引き継ぎ、新しい好みを追加して合格済み造形を再評価しない。"
+  ],
+  "limits": [
+    "全730件の比較、全配布形式/React/複数配置の検証範囲はreview-1を引き継ぐ。本ラウンドは指摘解消と回帰の固定portable native JS検査。",
+    "実機タッチ、OS実高コントラスト、スクリーンリーダー読み上げは未実施。"
+  ]
+}
