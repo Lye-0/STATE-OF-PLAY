@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "accept": ".png,.jpg,.webp,.txt,.pdf"
 };
 export type SteppedDockUploadProps = FoundationProps;
-/** 二段の搬入ドック。ファイルを置く面の下に受け段を設け、追加済みの行をその段へ接続。 */
+/** 二段の低い搬入床を、短い位置決めガイドへ合わせるファイル選択。元の低い段差を保持し、競合する全周の外枠を撤去する。66pxの短いガイドと6pxの受面、4pxの床小口と8pxの下段を揃え、文字の操作面を広く確保する。 */
 export default forwardRef<HTMLDivElement, SteppedDockUploadProps>(function SteppedDockUpload(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });

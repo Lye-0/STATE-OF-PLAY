@@ -69,6 +69,13 @@ for row,part,review in approved:
   actual=next((p for p in reversed(native) if all((p/f"{row['id']}-{name}.png").exists() for name in ['initial','selected','narrow-320'])),None)
   assert actual is not None,f"Missing actual upload selection: {row['id']}"
   images+=figure(beforeUpload,'修正前・配布版の受け面')+figure(actual/f"{row['id']}-initial.png",'修正後・配布版の受け面')+figure(actual/f"{row['id']}-selected.png",'修正後・実ファイルを選択')+figure(actual/f"{row['id']}-narrow-320.png",'修正後・320pxの全文ファイル名')
+ if row['category']=='datepickers':
+  beforeCalendar=w/'evidence/baseline'/f"{row['id']}-calendar.png"
+  assert beforeCalendar.exists(),f"Missing original open calendar: {row['id']}"
+  native=sorted((d/'captures').glob('dates-self-*'),key=lambda p:int(p.name.split('-')[-1]))
+  actual=next((p for p in reversed(native) if all((p/f"{row['id']}-{name}.png").exists() for name in ['initial','narrow-320','rtl','forced'])),None)
+  assert actual is not None,f"Missing actual open calendar: {row['id']}"
+  images+=figure(beforeCalendar,'修正前・配布版で開いた日付選択')+figure(actual/f"{row['id']}-initial.png",'修正後・配布版の日付選択')+figure(actual/f"{row['id']}-narrow-320.png",'修正後・320pxと長い見出し')+figure(actual/f"{row['id']}-rtl.png",'修正後・右から左への表示')
  if row['category']=='dropdowns':
   images+=figure(photos/f"{row['id']}-expanded.png",'展開した候補・選択済み行')
  # Native switch images distinguish actual OFF and ON even when the gallery starts ON.

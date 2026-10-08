@@ -1,0 +1,171 @@
+{
+  "batch": "B026",
+  "round": 4,
+  "snapshot": "docs/design-renewal/batches/B026/snapshot/round-4",
+  "overall": "pass",
+  "parts": [
+    {
+      "number": 358,
+      "id": "stitched-pouch-upload",
+      "verdict": "pass",
+      "assessment": "68pxの横長の開口、9pxの返し布、両端へ出る引き紐と袋本体が区別できる。元の角丸カードから外形と口が十分変わり、袋の中へ収める選択一覧とも整合する。 round2から50ファイル不変の5件として通常造形判定を維持し、今回もnative回帰を再実行した。 round4では描画CSSの宣言と実装が不変（該当3件は説明コメントのみ同期）のため、合格済み通常造形を引き継ぐ。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R358",
+        "R303二枚布",
+        "R355 gusset pocket",
+        "R365布容器"
+      ]
+    },
+    {
+      "number": 359,
+      "id": "stone-recess-upload",
+      "verdict": "pass",
+      "assessment": "round2では外石面z−2/内面z−1、読む子z1となり、本文・記号・形式が実際に見える。34px斜め外形と内側の切込み・上下の大きい肉厚は元の丸角枠から独立した構造を作る。 round2から50ファイル不変の5件として通常造形判定を維持し、今回もnative回帰を再実行した。 round4では描画CSSの宣言と実装が不変（該当3件は説明コメントのみ同期）のため、合格済み通常造形を引き継ぐ。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R359",
+        "R214非対称の石小口",
+        "R174割石",
+        "R324鋳物溝"
+      ],
+      "resolvedFindings": [
+        "R359-covered-copy"
+      ]
+    },
+    {
+      "number": 360,
+      "id": "folio-band-upload",
+      "verdict": "pass",
+      "assessment": "再設計の通常造形を合格。28pxの露出背と20pxの空隙、72pxの四つの中空環、実紙面の62px位置の孔が接続する。実ファイル行も独立した紙孔と環を持ち、単なる帯付き矩形から綴じる構造へ変わった。RTLは支持・紙孔・環が同じ側に揃い、前回の二重鏡映も解消。320px長文・複数ファイルでも読む文字と削除を環から分離できている。 round4では描画CSSの宣言と実装が不変（該当3件は説明コメントのみ同期）のため、合格済み通常造形を引き継ぐ。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R360",
+        "R138旧平たいbook案と現円筒背",
+        "R181 jacket folds",
+        "R265帯の実貫通"
+      ],
+      "resolvedFindings": [
+        "R360-binding-structure",
+        "R360-RTL-spine"
+      ]
+    },
+    {
+      "number": 361,
+      "id": "perforated-upload",
+      "verdict": "pass",
+      "assessment": "前回の全層空隙の指摘を解消。liを透明にし、独立した名前紙と削除片の間へ実空隙を作った。狭幅では名前の紙と削除片を上下へ分け、紙の切端と実native削除の関係を維持する。主面と選択後の機構が一致し、名前は全文折返しで読める。 round4では描画CSSの宣言と実装が不変（該当3件は説明コメントのみ同期）のため、合格済み通常造形を引き継ぐ。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R361",
+        "R084 perforated stub",
+        "R252旧半券案",
+        "R285 stamp"
+      ],
+      "resolvedFindings": [
+        "R361-file-stub-void"
+      ]
+    },
+    {
+      "number": 362,
+      "id": "inspection-pad-upload",
+      "verdict": "pass",
+      "assessment": "24pxの三面支柱と48pxの大きい梁が6px重なり、下の薄い床と非対称な開いた構造を作る。R143の二本のI桁の橋、R282の測定顎とは単一の上梁/支柱/受台の比率が異なる。 round2から50ファイル不変の5件として通常造形判定を維持し、今回もnative回帰を再実行した。 round4では描画CSSの宣言と実装が不変（該当3件は説明コメントのみ同期）のため、合格済み通常造形を引き継ぐ。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R362",
+        "R143 I断面橋",
+        "R282基準軸と顎",
+        "R320 L bookend"
+      ]
+    },
+    {
+      "number": 363,
+      "id": "letter-rack-upload",
+      "verdict": "pass",
+      "assessment": "前柵をroot gridの専用110px領域へ移し、84pxの中空柵・三桟・10pxの底が実ファイル追加後も露出する。名前と削除を覆わず、複数件・長文で伸びる収納の下端を前柵が受ける。前回の一覧による桟の遮蔽を解消。 round4では描画CSSの宣言と実装が不変（該当3件は説明コメントのみ同期）のため、合格済み通常造形を引き継ぐ。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R363",
+        "R251 cabinet fronts",
+        "R355 pocket",
+        "R352 cargo bay"
+      ],
+      "resolvedFindings": [
+        "R363-rack-loaded"
+      ]
+    },
+    {
+      "number": 364,
+      "id": "stepped-dock-upload",
+      "verdict": "pass",
+      "assessment": "T保持。元の低い二段床を残して全周枠の競合を除き、短いガイドと床の厚みを揃えた。選択物と操作面を広く保ち、狭幅・RTLも読む文字を圧迫しない。 round2から50ファイル不変の5件として通常造形判定を維持し、今回もnative回帰を再実行した。 round4では描画CSSの宣言と実装が不変（該当3件は説明コメントのみ同期）のため、合格済み通常造形を引き継ぐ。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R364",
+        "R304三段通知",
+        "R352 cargo floor"
+      ]
+    },
+    {
+      "number": 365,
+      "id": "canvas-bin-upload",
+      "verdict": "pass",
+      "assessment": "二つの38×112pxの独立中空持ち手が容器に30px入る。持ち手の実開口と本体の折り返しが見え、R358の口/引き紐、R279の横握り輪と異なる支持構造を持つ。 round2から50ファイル不変の5件として通常造形判定を維持し、今回もnative回帰を再実行した。 round4では描画CSSの宣言と実装が不変（該当3件は説明コメントのみ同期）のため、合格済み通常造形を引き継ぐ。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R365",
+        "R358引き紐袋",
+        "R279横握り輪",
+        "R224 U handle"
+      ]
+    },
+    {
+      "number": 371,
+      "id": "desk-blotter-calendar",
+      "verdict": "pass",
+      "assessment": "再設計を合格。四つの角三角を廃止し、革マットの上の一枚の暦紙が上下二本の40px円筒へ連続する。両端面と巻取りの曲面が見え、元の角留めやR218とは異なる外形を作る。R096の織機の糸/杼構造にも寄らない。date/range/time/datetime、LTR/RTL、320pxでも実操作を無地の固定紙へ保つ。 round4では描画CSSの宣言と実装が不変（該当3件は説明コメントのみ同期）のため、合格済み通常造形を引き継ぐ。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R371",
+        "R218対角の布角と外マット",
+        "R086角帽子",
+        "R164 open corners"
+      ],
+      "resolvedFindings": [
+        "R371-corner-repeat"
+      ]
+    },
+    {
+      "number": 372,
+      "id": "instrument-date",
+      "verdict": "pass",
+      "assessment": "最終合格。年月ドラムの中心を通る6px横軸が両native月送りレバーへ届き、2本の8px幅/32px高の支脚がドラム下端と曜日バーへそれぞれ2px重なる。320/390/768のLTR/RTL実像で接続が途切れず、年月・day glyph・hitに侵入しない。七本の曜日軸と実選択日の三面キャリッジとの全体構造が成立した。time専用では年月headerと支持が隠れ、不要な部品が残らない。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R372",
+        "R158 instrument tabs",
+        "R331 meter window",
+        "R324旧面取り枠"
+      ],
+      "resolvedFindings": [
+        "R372-generic-instrument",
+        "R372-drum-support-contact"
+      ],
+      "normalDesignVerdict": "pass"
+    }
+  ],
+  "checks": [
+    "固定round4正本100hashがreview-input-4.jsonと全一致、portable CSS10一致。reviewer-extra-4/checks.json。",
+    "round3→4の差分はR372接続CSSと関連説明、R360/R363/R371のCSS説明コメント同期。その他9件のCSS宣言はコメント除外で一致。合格済み造形の基準を維持。",
+    "日付2件のactual native exportを再操作。Alt+Down/日送り/Enter/Escape/ARIA/focus復帰/FormData/disabled日/invalid draft/normalize/date/range/time/datetime/required/readonly/disabled/reset/open destroy、320390768 hit/RTL/forced/reducedすべてPASS。reviewer-dates-4/checks.json。",
+    "R372の年月ドラム/横軸/支脚/曜日盤を320/390/768×LTR/RTLで撮影・照合。横軸がレバーの握り面を通り、支脚が両端2px重なる。reviewer-r372-contacts-4。",
+    "日付2件×4モード×LTR/RTLの表示を再確認。timeではheaderの横軸と支脚も非表示。強制色で選択状態・全日付が読める。reviewer-materials-4 / reviewer-dates-4。",
+    "8uploadsは描画宣言・runtime不変のためround3の独立native全8件とnormal hover/drag16条件の成功を継承。今回再実行したものとしては扱わない。"
+  ],
+  "limits": [
+    "Chromium Linux、forced-colors/reduced-motionエミュレーション。実支援技術の読み上げや全OSのnative UIまでは未確認。",
+    "React4形式を独立再起動していない。主担当ログの補助参照と独立native検証を区別した。",
+    "8uploadsはround3の実操作証拠を引継ぎ。既承認近似と元監査比較も継続し、全730件を今回再操作したものではない。"
+  ]
+}

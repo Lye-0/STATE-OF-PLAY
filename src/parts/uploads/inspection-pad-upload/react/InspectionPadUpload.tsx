@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "accept": ".png,.jpg,.webp,.txt,.pdf"
 };
 export type InspectionPadUploadProps = FoundationProps;
-/** 検品台の受け取り枠。四隅の短い印をドラッグ状態に連動させ、ファイル一覧は確認行として表示。 */
+/** 左の支柱へ一つの検査梁を接続し、その下の受台で書類を確認するファイル選択。大きい空白面と短線を撤去し、24pxの三面の支柱・48pxの横梁・10pxの受台へ構成する。梁は支柱へ6px重なり、native選択は梁の下に固定する。ファイルの実名前・サイズは同じ受台の延長へ並ぶ。 */
 export default forwardRef<HTMLDivElement, InspectionPadUploadProps>(function InspectionPadUpload(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });

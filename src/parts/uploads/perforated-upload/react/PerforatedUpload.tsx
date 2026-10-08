@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "accept": ".png,.jpg,.webp,.txt,.pdf"
 };
 export type PerforatedUploadProps = FoundationProps;
-/** 切り離せる受領票の投入口。上部の番号欄を記号へ置き換え、選択したファイルを控えとして下へ出す。 */
+/** 右の切取り片を、実際の14pxの隙間で切り離すファイル選択。下の点線を廃止し、紙の両側に相対する半円の穿孔を作り、読む紙面と細い切取り片を分ける。選択済みファイルも名前の紙とnative削除の切取り片へ分かれ、装飾の穿孔を削除操作の場所へ結び付ける。 */
 export default forwardRef<HTMLDivElement, PerforatedUploadProps>(function PerforatedUpload(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });

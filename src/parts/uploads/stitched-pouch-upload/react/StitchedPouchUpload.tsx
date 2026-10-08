@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "accept": ".png,.jpg,.webp,.txt,.pdf"
 };
 export type StitchedPouchUploadProps = FoundationProps;
-/** 布の袋へ素材を収める。上の紐と下の縫い目を分け、ドラッグ時は袋口の幅だけを変える。 */
+/** 開いた布袋の楕円の口を、横の引き紐で締めるファイル選択。紫の角丸面と細かい縫い目を廃止し、68pxの実開口、9pxの返し布と、左右へ抜ける紐を通す横面へ組み直す。袋本体は口の下14pxに重なり、文字とnative選択は袋の読む面へ固定する。 */
 export default forwardRef<HTMLDivElement, StitchedPouchUploadProps>(function StitchedPouchUpload(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });

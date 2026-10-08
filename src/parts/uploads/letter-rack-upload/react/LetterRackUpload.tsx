@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "accept": ".png,.jpg,.webp,.txt,.pdf"
 };
 export type LetterRackUploadProps = FoundationProps;
-/** 手紙を立てるラック。下の受けと二つの仕切りで収容場所を作り、中央の上向き記号で追加を伝える。 */
+/** 開いた前柵の三桟を、実書類の下の予約領域へ残すラック型のファイル選択。空の投入面とファイル一覧を同じ収納床へ置き、下110pxを84pxの中空前柵と10pxの接地面に確保する。書類が増えても三桟が底へ接続したまま残り、実名前とnative削除は柵の上へ固定する。 */
 export default forwardRef<HTMLDivElement, LetterRackUploadProps>(function LetterRackUpload(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });
