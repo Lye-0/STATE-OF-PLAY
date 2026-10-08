@@ -9,7 +9,7 @@ export interface SpoolingOvalsOrnamentProps extends HTMLAttributes<HTMLDivElemen
 
 const markup = "<div class=\"or-stage\" aria-hidden=\"true\"><div class=\"x-composition\"><i style=\"--i:0\"></i><i style=\"--i:1\"></i><i style=\"--i:2\"></i><i style=\"--i:3\"></i><i style=\"--i:4\"></i><i style=\"--i:5\"></i></div></div>";
 
-/** 羽根が光を散らす。 */
+/** 糸巻きの芯へ一本ずつ輪が巻かれる。縦の楕円を重ねるだけでなく、芯と巻き方向を見せる。 */
 export default function SpoolingOvalsOrnament({ paused = false, className = '', ...props }: SpoolingOvalsOrnamentProps) {
   const element = useRef<HTMLDivElement>(null);
   const controller = useRef<AmbientOrnamentController | null>(null);

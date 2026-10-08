@@ -1,8 +1,6 @@
 # Bookplate Check
 
-蔵書票の背が選択面を綴じる。
-
-蔵書票の背が選択面を綴じる。
+本の小さい蔵書票をチェック面にする。選択時は背から出た栞が票を留める。
 
 本物のinput[type=checkbox]です。label全体をクリックでき、Space・Tab・FormData・required・fieldsetのdisabledはネイティブのままです。複数の独立したチェックで複数選択を作れます。独自のキーイベントでSpaceを二重処理しません。
 

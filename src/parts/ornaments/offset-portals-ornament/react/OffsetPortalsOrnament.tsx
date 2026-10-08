@@ -9,7 +9,7 @@ export interface OffsetPortalsOrnamentProps extends HTMLAttributes<HTMLDivElemen
 
 const markup = "<div class=\"or-stage\" aria-hidden=\"true\"><div class=\"x-composition\"><i style=\"--i:0\"></i><i style=\"--i:1\"></i><i style=\"--i:2\"></i><i style=\"--i:3\"></i><i style=\"--i:4\"></i><i style=\"--i:5\"></i></div></div>";
 
-/** 羽根が光を散らす。 */
+/** 奥へ続く六つの門。遠近の大きさと開口をずらし、hoverで奥行きを開く。 */
 export default function OffsetPortalsOrnament({ paused = false, className = '', ...props }: OffsetPortalsOrnamentProps) {
   const element = useRef<HTMLDivElement>(null);
   const controller = useRef<AmbientOrnamentController | null>(null);

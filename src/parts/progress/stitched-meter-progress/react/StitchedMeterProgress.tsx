@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "max": 100
 };
 export type StitchedMeterProgressProps = FoundationProps;
-/** Stitched Meter Progress: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 縫い上がる布の帯。未完了の下地から色面へ変わり、ステッチは進んだ領域だけに現れる。 */
 export default forwardRef<HTMLDivElement, StitchedMeterProgressProps>(function StitchedMeterProgress(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderProgress} mountContent={mountProgress}/>;
 });

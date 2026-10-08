@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "mode": "date"
 };
 export type PerpetualDeskCalendarProps = FoundationProps;
-/** Perpetual Desk Calendar: Bタイプ。元の外観と、独自の日時選択を備えた独立したDOM領域。 */
+/** 卓上の万年カレンダー。月の表示札と七列の日付板を分け、下の台座に今日・クリアを置く。 */
 export default forwardRef<HTMLDivElement, PerpetualDeskCalendarProps>(function PerpetualDeskCalendar(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderDate} mountContent={mountDate}/>;
 });

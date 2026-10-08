@@ -1,8 +1,6 @@
 # Quarter Cut Check
 
-切削した四分の一の面が角へ収納される。
-
-切削した四分の一の面が角へ収納される。
+四隅の切り欠きを持つ確認票。選択時は対角の角だけが接続し、中心のチェックを囲む。
 
 本物のinput[type=checkbox]です。label全体をクリックでき、Space・Tab・FormData・required・fieldsetのdisabledはネイティブのままです。複数の独立したチェックで複数選択を作れます。独自のキーイベントでSpaceを二重処理しません。
 

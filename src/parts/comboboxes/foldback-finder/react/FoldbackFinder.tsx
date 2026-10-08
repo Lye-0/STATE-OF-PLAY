@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type FoldbackFinderProps = FoundationProps;
-/** Foldback Finder: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 折り返した検索票。候補は綴じた短冊として開き、選択行の下端に小口を見せる。 */
 export default forwardRef<HTMLDivElement, FoldbackFinderProps>(function FoldbackFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

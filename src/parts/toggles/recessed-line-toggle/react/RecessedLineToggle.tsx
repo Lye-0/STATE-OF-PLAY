@@ -11,7 +11,7 @@ const config = {
   "tone": 631,
   "travel": 44
 };
-/** 浅い凹面の中を短い線が移動する、邪魔にならない切替。 */
+/** 固定したOFF／ON表示と移動する選択面で、増減ではなく有効状態を明示する。 */
 export default function RecessedLineToggle(props: SimpleToggleProps) {
   const {element, checked} = useSimpleToggle(config, props);
   const {checked: _checked, defaultChecked: _initial, onCheckedChange: _change, className = '', ...buttonProps} = props;

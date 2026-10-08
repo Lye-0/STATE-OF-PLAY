@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type StitchedQueryFinderProps = FoundationProps;
-/** Stitched Query Finder: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 縫い目で囲むクエリと布の見本候補。名称を固定し、端の縫い目の色で照合中の行を示す。 */
 export default forwardRef<HTMLDivElement, StitchedQueryFinderProps>(function StitchedQueryFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

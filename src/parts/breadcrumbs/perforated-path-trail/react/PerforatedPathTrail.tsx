@@ -39,7 +39,7 @@ const config: FoundationConfig = {
   ]
 };
 export type PerforatedPathTrailProps = FoundationProps;
-/** Perforated Path Trail: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 切り取り線を持つ一枚の経路票。二列の格子を廃止し、順序が読める一方向の並びにする。 */
 export default forwardRef<HTMLDivElement, PerforatedPathTrailProps>(function PerforatedPathTrail(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBreadcrumbs} mountContent={mountBreadcrumbs}/>;
 });

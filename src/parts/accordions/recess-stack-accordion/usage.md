@@ -1,9 +1,6 @@
 # Recess Stack Accordion
 
-奥まった項目の底面が開くと明るくなる。
-
-
-奥まった項目の底面が開くと明るくなる。
+陶器の浅い受け皿から本文が現れる。開いた面を同じ内壁の中に保つ。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

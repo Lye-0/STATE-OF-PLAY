@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "totalPages": 12
 };
 export type ConsolePagesProps = FoundationProps;
-/** Console Pages: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 計器の数字キーからページを選ぶ。現在キーは下へ沈んだ形になり、数値表示を別に保つ。 */
 export default forwardRef<HTMLDivElement, ConsolePagesProps>(function ConsolePages(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderPagination} mountContent={mountPagination}/>;
 });

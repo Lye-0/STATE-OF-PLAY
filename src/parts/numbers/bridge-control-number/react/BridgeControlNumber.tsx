@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "unit": "UNITS"
 };
 export type BridgeControlNumberProps = FoundationProps;
-/** Bridge Control Number: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 固定した数字窓の下で、左右の支点を結ぶ天秤が数量に応じて傾く。 */
 export default forwardRef<HTMLDivElement, BridgeControlNumberProps>(function BridgeControlNumber(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderNumber} mountContent={mountNumber}/>;
 });

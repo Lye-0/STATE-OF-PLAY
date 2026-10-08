@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "accept": ".png,.jpg,.webp,.txt,.pdf"
 };
 export type SteppedDockUploadProps = FoundationProps;
-/** Stepped Dock Upload: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 二段の搬入ドック。ファイルを置く面の下に受け段を設け、追加済みの行をその段へ接続。 */
 export default forwardRef<HTMLDivElement, SteppedDockUploadProps>(function SteppedDockUpload(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });

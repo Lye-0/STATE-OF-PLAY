@@ -1,9 +1,6 @@
 # Metal Slot Accordion
 
-金属のスロットから内容用の床が引き出される。
-
-
-金属のスロットから内容用の床が引き出される。
+帳簿の見出しと本文を二つの列へ。大きい索引と横書き本文を分けて読ませる。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

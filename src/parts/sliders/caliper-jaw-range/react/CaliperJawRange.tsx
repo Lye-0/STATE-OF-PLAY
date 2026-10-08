@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "range": false
 };
 export type CaliperJawRangeProps = FoundationProps;
-/** Caliper Jaw Range: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 固定顎と可動顎をレールの上下へ分けたノギス。動く顎が数値の位置を直接示す。 */
 export default forwardRef<HTMLDivElement, CaliperJawRangeProps>(function CaliperJawRange(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderSlider} mountContent={mountSlider}/>;
 });

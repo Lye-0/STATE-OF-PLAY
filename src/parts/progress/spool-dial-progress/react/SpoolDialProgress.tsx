@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "max": 100
 };
 export type SpoolDialProgressProps = FoundationProps;
-/** Spool Dial Progress: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 巻き取りリールの周回が完了へ近づく。周囲に進捗を集め、中央は固定の数値窓。 */
 export default forwardRef<HTMLDivElement, SpoolDialProgressProps>(function SpoolDialProgress(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderProgress} mountContent={mountProgress}/>;
 });

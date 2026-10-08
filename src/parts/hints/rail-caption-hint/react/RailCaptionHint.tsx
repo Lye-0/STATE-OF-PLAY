@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
 };
 export type RailCaptionHintProps = FoundationProps;
-/** Rail Caption Hint: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 取付レールの仕様注記。本文の横に一本の支柱を通し、値と適用を短い横桟へ揃える。 */
 export default forwardRef<HTMLDivElement, RailCaptionHintProps>(function RailCaptionHint(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderHint} mountContent={mountHint}/>;
 });

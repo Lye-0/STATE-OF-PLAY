@@ -1,8 +1,6 @@
 # Embossed Disc Check
 
-円形の印影を四角い台座に収める。
-
-円形の印影を四角い台座に収める。
+丸い選択記号を廃止し、角形のエンボスへ統一。周囲の押印面だけが沈む。
 
 本物のinput[type=checkbox]です。label全体をクリックでき、Space・Tab・FormData・required・fieldsetのdisabledはネイティブのままです。複数の独立したチェックで複数選択を作れます。独自のキーイベントでSpaceを二重処理しません。
 

@@ -1,9 +1,6 @@
 # Hex Bolster Select
 
-六角の支えを候補の左端に連続させた構造。
-
-
-六角の支えを候補の左端に連続させた構造。
+選択面を左右の二本の顎で固定する。開いた候補では行全体が顎の間に収まる。
 
 ## 選択肢の差し替え
 Reactではitems配列へvalue/label/description/icon/badgeを渡します。Vanillaではmarkup.html内のdata-valueと表示内容を編集し、init(root)します。動的にDOMの選択肢を変更した後はcontroller.refresh()を呼びます。

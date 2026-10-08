@@ -39,7 +39,7 @@ const config: FoundationConfig = {
   ]
 };
 export type RailJunctionTrailProps = FoundationProps;
-/** Rail Junction Trail: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 駅をつなぐ経路として祖先と現在地を並べる。省略駅を開いても線の方向を保つ。 */
 export default forwardRef<HTMLDivElement, RailJunctionTrailProps>(function RailJunctionTrail(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBreadcrumbs} mountContent={mountBreadcrumbs}/>;
 });

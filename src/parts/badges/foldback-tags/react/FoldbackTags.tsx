@@ -41,7 +41,7 @@ const config: FoundationConfig = {
   ]
 };
 export type FoldbackTagsProps = FoundationProps;
-/** Foldback Tags: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 折り返したラベル。右下の小口は装飾に留め、選択と削除の操作を平らな面へ固定する。 */
 export default forwardRef<HTMLDivElement, FoldbackTagsProps>(function FoldbackTags(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBadges} mountContent={mountBadges}/>;
 });

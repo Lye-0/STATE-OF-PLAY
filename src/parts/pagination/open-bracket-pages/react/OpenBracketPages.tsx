@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "totalPages": 12
 };
 export type OpenBracketPagesProps = FoundationProps;
-/** Open Bracket Pages: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 開いた括弧で現在ページを挟む。色の塗りだけに頼らず上下の固定爪を目印にする。 */
 export default forwardRef<HTMLDivElement, OpenBracketPagesProps>(function OpenBracketPages(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderPagination} mountContent={mountPagination}/>;
 });

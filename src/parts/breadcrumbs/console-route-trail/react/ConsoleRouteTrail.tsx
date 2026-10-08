@@ -39,7 +39,7 @@ const config: FoundationConfig = {
   ]
 };
 export type ConsoleRouteTrailProps = FoundationProps;
-/** Console Route Trail: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 装置の経路表示。親から現在地へ点灯する順序を、明確な矢印と別面の終端で示す。 */
 export default forwardRef<HTMLDivElement, ConsoleRouteTrailProps>(function ConsoleRouteTrail(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBreadcrumbs} mountContent={mountBreadcrumbs}/>;
 });

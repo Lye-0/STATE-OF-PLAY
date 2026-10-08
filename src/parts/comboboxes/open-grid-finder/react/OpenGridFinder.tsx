@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type OpenGridFinderProps = FoundationProps;
-/** Open Grid Finder: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 開いた検索グリッド。候補を装飾箱で囲まず、記号・名称・種別の三列と横罫だけで構成する。 */
 export default forwardRef<HTMLDivElement, OpenGridFinderProps>(function OpenGridFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

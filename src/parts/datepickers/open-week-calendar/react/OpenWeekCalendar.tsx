@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "mode": "date"
 };
 export type OpenWeekCalendarProps = FoundationProps;
-/** Open Week Calendar: Bタイプ。元の外観と、独自の日時選択を備えた独立したDOM領域。 */
+/** 余白を活かした週の一覧。余計な箱を外し、曜日と日付を大きく揃えて月を読み取る。 */
 export default forwardRef<HTMLDivElement, OpenWeekCalendarProps>(function OpenWeekCalendar(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderDate} mountContent={mountDate}/>;
 });

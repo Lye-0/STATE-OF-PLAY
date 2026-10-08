@@ -1,9 +1,8 @@
 # Terraced Paper Panel
 
-三段の紙の地形が端から展開し、上段の文字面を保つ。
+段丘の三層を外周ではなく床面として構成。本文の下に奥行きが見え、層だけが開く。
 
-
-Type B / CSS only。三段の紙の地形が端から展開し、上段の文字面を保つ。
+Type A / CSS only。
 
 Reactではchildren、HTMLでは.sop-surface-contentに中身を入れます。サンプルの見出し・番号・グラフはサイトの展示専用です。部品はコンテナであり、ページ全体のCSSリセットを含みません。
 

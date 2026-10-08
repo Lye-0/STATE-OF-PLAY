@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "range": false
 };
 export type CompassNotchRangeProps = FoundationProps;
-/** Compass Notch Range: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 方位盤の切り欠きと直線の値軸を組み合わせる。つまみの切り欠きが現在位置を指す。 */
 export default forwardRef<HTMLDivElement, CompassNotchRangeProps>(function CompassNotchRange(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderSlider} mountContent={mountSlider}/>;
 });

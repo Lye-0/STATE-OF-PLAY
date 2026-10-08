@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "accept": ".png,.jpg,.webp,.txt,.pdf"
 };
 export type InspectionPadUploadProps = FoundationProps;
-/** Inspection Pad Upload: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 検品台の受け取り枠。四隅の短い印をドラッグ状態に連動させ、ファイル一覧は確認行として表示。 */
 export default forwardRef<HTMLDivElement, InspectionPadUploadProps>(function InspectionPadUpload(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });

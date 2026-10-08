@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "max": 100
 };
 export type OdometerProgressProps = FoundationProps;
-/** Odometer Progress: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 数値の固定窓と太い送りベルト。進捗量を帯の走行距離で見せる。 */
 export default forwardRef<HTMLDivElement, OdometerProgressProps>(function OdometerProgress(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderProgress} mountContent={mountProgress}/>;
 });

@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type SlateChannelFinderProps = FoundationProps;
-/** Slate Channel Finder: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 石板の細い検索溝と段状の候補。行の境界を凹凸で分け、選択中だけ薄い明面を点ける。 */
 export default forwardRef<HTMLDivElement, SlateChannelFinderProps>(function SlateChannelFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

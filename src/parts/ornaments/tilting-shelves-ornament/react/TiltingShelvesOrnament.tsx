@@ -9,7 +9,7 @@ export interface TiltingShelvesOrnamentProps extends HTMLAttributes<HTMLDivEleme
 
 const markup = "<div class=\"or-stage\" aria-hidden=\"true\"><div class=\"x-composition\"><i style=\"--i:0\"></i><i style=\"--i:1\"></i><i style=\"--i:2\"></i><i style=\"--i:3\"></i><i style=\"--i:4\"></i><i style=\"--i:5\"></i></div></div>";
 
-/** 羽根が光を散らす。 */
+/** 中央の柱から六段の棚が張り出し、傾きの波が上下へ渡る小さな建築。 */
 export default function TiltingShelvesOrnament({ paused = false, className = '', ...props }: TiltingShelvesOrnamentProps) {
   const element = useRef<HTMLDivElement>(null);
   const controller = useRef<AmbientOrnamentController | null>(null);

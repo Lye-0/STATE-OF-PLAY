@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "accept": ".png,.jpg,.webp,.txt,.pdf"
 };
 export type DocumentSlotUploadProps = FoundationProps;
-/** Document Slot Upload: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 資料の挿入口へファイルを差す。上辺のスリットと中央の上向き記号を揃え、ドラッグで受け口が開く。 */
 export default forwardRef<HTMLDivElement, DocumentSlotUploadProps>(function DocumentSlotUpload(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });

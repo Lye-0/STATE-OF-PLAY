@@ -39,7 +39,7 @@ const config: FoundationConfig = {
   ]
 };
 export type StitchedRouteTrailProps = FoundationProps;
-/** Stitched Route Trail: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 縫い目に沿った経路の札。省略された親と現在地を分け、独立したメニューに見せない。 */
 export default forwardRef<HTMLDivElement, StitchedRouteTrailProps>(function StitchedRouteTrail(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBreadcrumbs} mountContent={mountBreadcrumbs}/>;
 });

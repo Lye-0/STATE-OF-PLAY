@@ -1,9 +1,6 @@
 # Letterpress Query Search
 
-活版の問いと回答を罫線で組版。
-
-
-活版の問いと回答を罫線で組版。
+資料を探す帳簿。検索語・対象分類・結果を同じ左端に揃え、結果を罫線の行として読む。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`LetterpressQuerySearch`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "unit": "UNITS"
 };
 export type SpoolCountNumberProps = FoundationProps;
-/** Spool Count Number: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 糸巻き型の左右フランジを固定し、数量に連動した巻き糸が窓の上下で送られる。 */
 export default forwardRef<HTMLDivElement, SpoolCountNumberProps>(function SpoolCountNumber(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderNumber} mountContent={mountNumber}/>;
 });

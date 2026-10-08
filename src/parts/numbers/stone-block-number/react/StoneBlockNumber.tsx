@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "unit": "UNITS"
 };
 export type StoneBlockNumberProps = FoundationProps;
-/** Stone Block Number: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 石の計数台。数字窓は動かさず、下の積層が確定量に応じて埋まり量の厚みを示す。 */
 export default forwardRef<HTMLDivElement, StoneBlockNumberProps>(function StoneBlockNumber(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderNumber} mountContent={mountNumber}/>;
 });

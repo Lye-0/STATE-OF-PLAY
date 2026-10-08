@@ -1,8 +1,6 @@
 # Saddle Loop Check
 
-鞍の左右がチェックの下へ巻き込む。
-
-鞍の左右がチェックの下へ巻き込む。
+革のループが四角いチェック面の下を通る。選択するとループが張り、記号を保持。
 
 本物のinput[type=checkbox]です。label全体をクリックでき、Space・Tab・FormData・required・fieldsetのdisabledはネイティブのままです。複数の独立したチェックで複数選択を作れます。独自のキーイベントでSpaceを二重処理しません。
 

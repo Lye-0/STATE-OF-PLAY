@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "unit": "UNITS"
 };
 export type CounterDrumNumberProps = FoundationProps;
-/** Counter Drum Number: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 回転ドラムの円筒と上下の数字窓を分ける。確定値に応じて背面の罫線が送り出され、入力窓は固定。 */
 export default forwardRef<HTMLDivElement, CounterDrumNumberProps>(function CounterDrumNumber(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderNumber} mountContent={mountNumber}/>;
 });

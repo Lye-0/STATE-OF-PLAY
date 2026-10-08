@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type RibbonQueryFinderProps = FoundationProps;
-/** Ribbon Query Finder: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 検索の細い帯を候補列へ展開。見出しの赤紫の帯と、候補の右端の索引を対応させる。 */
 export default forwardRef<HTMLDivElement, RibbonQueryFinderProps>(function RibbonQueryFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

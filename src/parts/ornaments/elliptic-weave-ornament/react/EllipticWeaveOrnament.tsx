@@ -9,7 +9,7 @@ export interface EllipticWeaveOrnamentProps extends HTMLAttributes<HTMLDivElemen
 
 const markup = "<div class=\"or-stage\" aria-hidden=\"true\"><div class=\"x-composition\"><i style=\"--i:0\"></i><i style=\"--i:1\"></i><i style=\"--i:2\"></i><i style=\"--i:3\"></i><i style=\"--i:4\"></i><i style=\"--i:5\"></i></div></div>";
 
-/** 羽根が光を散らす。 */
+/** 異なる軸を持つ楕円が交差して球状の織りをつくる。平行な同心円の繰り返しを避ける。 */
 export default function EllipticWeaveOrnament({ paused = false, className = '', ...props }: EllipticWeaveOrnamentProps) {
   const element = useRef<HTMLDivElement>(null);
   const controller = useRef<AmbientOrnamentController | null>(null);

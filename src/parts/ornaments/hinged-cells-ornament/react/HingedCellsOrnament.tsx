@@ -9,7 +9,7 @@ export interface HingedCellsOrnamentProps extends HTMLAttributes<HTMLDivElement>
 
 const markup = "<div class=\"or-stage\" aria-hidden=\"true\"><div class=\"x-composition\"><i style=\"--i:0\"></i><i style=\"--i:1\"></i><i style=\"--i:2\"></i><i style=\"--i:3\"></i><i style=\"--i:4\"></i><i style=\"--i:5\"></i></div></div>";
 
-/** 羽根が光を散らす。 */
+/** 六枚を一組にした開閉パネル。隣り合う面が交互に回り、壁面と開口を切り替える。 */
 export default function HingedCellsOrnament({ paused = false, className = '', ...props }: HingedCellsOrnamentProps) {
   const element = useRef<HTMLDivElement>(null);
   const controller = useRef<AmbientOrnamentController | null>(null);

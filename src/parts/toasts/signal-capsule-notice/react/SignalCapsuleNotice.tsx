@@ -13,7 +13,7 @@ const config: FoundationConfig = {
   "defaultValue": null
 };
 export type SignalCapsuleNoticeProps = FoundationProps;
-/** Signal Capsule Notice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 信号のカプセル。左の丸いランプを通知の種類に結び付け、本文は横の静かな面へ置く。 */
 export default forwardRef<HTMLDivElement, SignalCapsuleNoticeProps>(function SignalCapsuleNotice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderToast} mountContent={mountToast}/>;
 });

@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "mode": "date"
 };
 export type ReceiptDateCalendarProps = FoundationProps;
-/** Receipt Date Calendar: Bタイプ。元の外観と、独自の日時選択を備えた独立したDOM領域。 */
+/** 予約の控え票。日付の上に月の見出し、下に今日とクリアの控え欄を設ける。 */
 export default forwardRef<HTMLDivElement, ReceiptDateCalendarProps>(function ReceiptDateCalendar(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderDate} mountContent={mountDate}/>;
 });

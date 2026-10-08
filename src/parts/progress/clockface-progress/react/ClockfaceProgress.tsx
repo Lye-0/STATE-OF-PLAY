@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "max": 100
 };
 export type ClockfaceProgressProps = FoundationProps;
-/** Clockface Progress: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 扇形の計量盤。太い有効弧と目盛りを分け、百分率の読み取りを助ける。 */
 export default forwardRef<HTMLDivElement, ClockfaceProgressProps>(function ClockfaceProgress(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderProgress} mountContent={mountProgress}/>;
 });

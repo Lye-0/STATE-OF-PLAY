@@ -13,7 +13,7 @@ const config: FoundationConfig = {
   "defaultValue": null
 };
 export type MarginPinNoticeProps = FoundationProps;
-/** Margin Pin Notice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 余白に留める付箋。左の小さい留め金を装飾の起点にして、本文と閉じる操作は水平に固定。 */
 export default forwardRef<HTMLDivElement, MarginPinNoticeProps>(function MarginPinNotice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderToast} mountContent={mountToast}/>;
 });

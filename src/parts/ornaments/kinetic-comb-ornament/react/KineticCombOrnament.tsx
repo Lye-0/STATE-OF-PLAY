@@ -9,7 +9,7 @@ export interface KineticCombOrnamentProps extends HTMLAttributes<HTMLDivElement>
 
 const markup = "<div class=\"or-stage\" aria-hidden=\"true\"><div class=\"x-composition\"><i style=\"--i:0\"></i><i style=\"--i:1\"></i><i style=\"--i:2\"></i><i style=\"--i:3\"></i><i style=\"--i:4\"></i><i style=\"--i:5\"></i></div></div>";
 
-/** 羽根が光を散らす。 */
+/** 一本の軸に差した櫛の羽が波を伝える。独立した六本の棒ではなく、支点を共有する立体。 */
 export default function KineticCombOrnament({ paused = false, className = '', ...props }: KineticCombOrnamentProps) {
   const element = useRef<HTMLDivElement>(null);
   const controller = useRef<AmbientOrnamentController | null>(null);

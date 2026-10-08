@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "range": false
 };
 export type PendulumSeatRangeProps = FoundationProps;
-/** Pendulum Seat Range: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 固定数値の下に振り子の支点を置く。つまみの中心がレール上の位置と一致する。 */
 export default forwardRef<HTMLDivElement, PendulumSeatRangeProps>(function PendulumSeatRange(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderSlider} mountContent={mountSlider}/>;
 });

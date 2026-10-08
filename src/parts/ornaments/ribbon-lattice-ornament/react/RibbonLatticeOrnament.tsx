@@ -9,7 +9,7 @@ export interface RibbonLatticeOrnamentProps extends HTMLAttributes<HTMLDivElemen
 
 const markup = "<div class=\"or-stage\" aria-hidden=\"true\"><div class=\"x-composition\"><i style=\"--i:0\"></i><i style=\"--i:1\"></i><i style=\"--i:2\"></i><i style=\"--i:3\"></i><i style=\"--i:4\"></i><i style=\"--i:5\"></i></div></div>";
 
-/** 羽根が光を散らす。 */
+/** 縦三本と横三本の帯を交差させた織り。反対方向の波が交点を渡る。 */
 export default function RibbonLatticeOrnament({ paused = false, className = '', ...props }: RibbonLatticeOrnamentProps) {
   const element = useRef<HTMLDivElement>(null);
   const controller = useRef<AmbientOrnamentController | null>(null);

@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "max": 100
 };
 export type TerracedProgressProps = FoundationProps;
-/** Terraced Progress: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 階段状の到達面を一つの領域として満たす。増加量が右上へ上る地形になる。 */
 export default forwardRef<HTMLDivElement, TerracedProgressProps>(function TerracedProgress(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderProgress} mountContent={mountProgress}/>;
 });

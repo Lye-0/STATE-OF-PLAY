@@ -1,8 +1,6 @@
 # Tabbed Bracket Check
 
-括弧のタブが上下から噛み合う。
-
-括弧のタブが上下から噛み合う。
+二枚の括弧がチェック面を閉じる。チェックが主役になるよう、追加の丸い選択印を使わない。
 
 本物のinput[type=checkbox]です。label全体をクリックでき、Space・Tab・FormData・required・fieldsetのdisabledはネイティブのままです。複数の独立したチェックで複数選択を作れます。独自のキーイベントでSpaceを二重処理しません。
 

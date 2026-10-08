@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type CatalogueSlotFinderProps = FoundationProps;
-/** Catalogue Slot Finder: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 目録の検索口と見出し票を一体化。候補の左端を索引欄にし、選んだ票へ短い引出線を付ける。 */
 export default forwardRef<HTMLDivElement, CatalogueSlotFinderProps>(function CatalogueSlotFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

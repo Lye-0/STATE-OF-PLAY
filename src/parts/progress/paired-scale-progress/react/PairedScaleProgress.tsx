@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "max": 100
 };
 export type PairedScaleProgressProps = FoundationProps;
-/** Paired Scale Progress: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 二量に見える二本線を廃止し、上下の固定レール間を一本の指標が移動する測定器にする。 */
 export default forwardRef<HTMLDivElement, PairedScaleProgressProps>(function PairedScaleProgress(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderProgress} mountContent={mountProgress}/>;
 });

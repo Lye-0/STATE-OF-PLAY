@@ -41,7 +41,7 @@ const config: FoundationConfig = {
   ]
 };
 export type EmbossedLabelTagsProps = FoundationProps;
-/** Embossed Label Tags: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 圧印したラベル。文字面を平らにし、外周の薄い二重縁と件数の刻みで情報を分ける。 */
 export default forwardRef<HTMLDivElement, EmbossedLabelTagsProps>(function EmbossedLabelTags(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBadges} mountContent={mountBadges}/>;
 });

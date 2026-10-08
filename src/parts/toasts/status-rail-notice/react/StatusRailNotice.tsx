@@ -13,7 +13,7 @@ const config: FoundationConfig = {
   "defaultValue": null
 };
 export type StatusRailNoticeProps = FoundationProps;
-/** Status Rail Notice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** ステータスを運ぶ横のレール。通知の終わりまで続く下線を残り時間に使い、飾りと状態を一致。 */
 export default forwardRef<HTMLDivElement, StatusRailNoticeProps>(function StatusRailNotice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderToast} mountContent={mountToast}/>;
 });

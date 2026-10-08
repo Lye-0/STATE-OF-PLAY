@@ -3,7 +3,7 @@ import React from 'react';
 import { useScrollArea, type ScrollAreaProps } from '../../../../shared/use-scroll-area';
 import '../styles.css';
 export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
-/** 二本の鉛筆線の間に進捗の薄い帯を残す。 Native scroll content with a skinned, proportional rail. */
+/** 鉛筆の芯と木軸を分けた細いつまみ。引いた線がスクロール済みの長さとして残る。 */
 export default function ParallelPencilScroll(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);

@@ -41,7 +41,7 @@ const config: FoundationConfig = {
   ]
 };
 export type IndexFlagTagsProps = FoundationProps;
-/** Index Flag Tags: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 索引の旗札。色の端を短い旗にして分類を見つけやすくし、文字と削除は長方形の中へ保つ。 */
 export default forwardRef<HTMLDivElement, IndexFlagTagsProps>(function IndexFlagTags(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBadges} mountContent={mountBadges}/>;
 });

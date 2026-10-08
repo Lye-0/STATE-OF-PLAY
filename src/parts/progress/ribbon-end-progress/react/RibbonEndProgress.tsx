@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "max": 100
 };
 export type RibbonEndProgressProps = FoundationProps;
-/** Ribbon End Progress: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 旗の形に開いた帯へ進捗を染める。固定した終端へ色面が到達する構図。 */
 export default forwardRef<HTMLDivElement, RibbonEndProgressProps>(function RibbonEndProgress(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderProgress} mountContent={mountProgress}/>;
 });

@@ -1,8 +1,6 @@
 # Locking Plate Check
 
-留め板の二枚の扉が閉じる。
-
-留め板の二枚の扉が閉じる。
+四角い留め板が閉じてチェックを固定する。文字とチェック記号を同じ位置に保つ。
 
 本物のinput[type=checkbox]です。label全体をクリックでき、Space・Tab・FormData・required・fieldsetのdisabledはネイティブのままです。複数の独立したチェックで複数選択を作れます。独自のキーイベントでSpaceを二重処理しません。
 

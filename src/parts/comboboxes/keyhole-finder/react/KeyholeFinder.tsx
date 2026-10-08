@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type KeyholeFinderProps = FoundationProps;
-/** Keyhole Finder: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 鍵穴の照合窓。検索記号の円と入力の長い溝をつなぎ、結果は輪郭の丸い独立票として開く。 */
 export default forwardRef<HTMLDivElement, KeyholeFinderProps>(function KeyholeFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

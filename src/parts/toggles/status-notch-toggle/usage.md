@@ -1,9 +1,8 @@
 # Status Notch Toggle
 
-角形の選択面と小さな切り欠きで、業務画面の切替を明確にする。
+固定したOFF／ON表示と移動する選択面で、増減ではなく有効状態を明示する。
 
-
-Type B / CSS + Events。角形の選択面と小さな切り欠きで、業務画面の切替を明確にする。
+Type B / CSS + Events。
 
 基準サイズ: 104×64px。展示ページの倍率ではなく、実際の部品サイズです。フォームに接続する場合はchecked/onCheckedChangeをアプリの状態へ渡します。button型switchはフォーム値を自動送信しないため、必要ならhidden inputへ反映してください。
 

@@ -13,7 +13,7 @@ const config: FoundationConfig = {
   "defaultValue": null
 };
 export type DispatchStripNoticeProps = FoundationProps;
-/** Dispatch Strip Notice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 配信の帯。通知記号を細い配送欄へ寄せ、本文・操作・残り時間を三つの役割に分ける。 */
 export default forwardRef<HTMLDivElement, DispatchStripNoticeProps>(function DispatchStripNotice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderToast} mountContent={mountToast}/>;
 });

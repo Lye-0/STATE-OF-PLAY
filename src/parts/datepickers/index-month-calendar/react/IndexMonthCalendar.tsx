@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "mode": "date"
 };
 export type IndexMonthCalendarProps = FoundationProps;
-/** Index Month Calendar: Bタイプ。元の外観と、独自の日時選択を備えた独立したDOM領域。 */
+/** 月の索引票。見出しを上のタブへ、日付は下の一枚の記録面へ配置する。 */
 export default forwardRef<HTMLDivElement, IndexMonthCalendarProps>(function IndexMonthCalendar(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderDate} mountContent={mountDate}/>;
 });

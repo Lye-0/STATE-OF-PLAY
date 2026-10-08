@@ -1,9 +1,8 @@
 # Recessed Line Toggle
 
-浅い凹面の中を短い線が移動する、邪魔にならない切替。
+固定したOFF／ON表示と移動する選択面で、増減ではなく有効状態を明示する。
 
-
-Type B / CSS + Events。浅い凹面の中を短い線が移動する、邪魔にならない切替。
+Type B / CSS + Events。
 
 基準サイズ: 104×64px。展示ページの倍率ではなく、実際の部品サイズです。フォームに接続する場合はchecked/onCheckedChangeをアプリの状態へ渡します。button型switchはフォーム値を自動送信しないため、必要ならhidden inputへ反映してください。
 

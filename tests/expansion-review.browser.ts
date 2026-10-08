@@ -8,7 +8,7 @@ import {getDelivery} from '../src/catalog/delivery.ts';
 import {currentParts} from './gallery-counts.ts';
 
 // Regressions observed in the visual review: test the real exported components, without gallery styles.
-const categories = ['ornaments','loaders','numbers','segments','uploads','dropdowns','textboxes','contextmenus','tables'];
+const categories = ['ornaments','loaders','numbers','segments','tabs','uploads','dropdowns','textboxes','contextmenus','tables'];
 const specs = currentParts().filter(p => p.tags.includes('EXPANSION-50') && categories.includes(p.category));
 const directory = path.join(ROOT, '.test-output/expansion-review');
 fs.mkdirSync(directory, {recursive:true});
@@ -44,6 +44,14 @@ try {
    assert.equal(rects.length,3);
    assert.ok(rects.every(r=>Math.abs(r.y-rects[0].y)<1&&Math.abs(r.w-rects[0].w)<1),part.id+' equal choices at 320px');
   }
+  if (part.category === 'tabs' && part.designType === 'A') {
+   const labels=root.locator('.sop-choice-label');
+   const original=await labels.allTextContents();
+   await labels.evaluateAll(es=>es.forEach(e=>e.textContent='制作プロジェクトの詳細を確認する'));
+   const fits=await labels.evaluateAll(es=>es.every(e=>e.scrollWidth<=e.clientWidth+1));
+   assert.ok(fits,part.id+' full Japanese tab labels remain within their targets');
+   await labels.evaluateAll((es,texts)=>es.forEach((e,i)=>e.textContent=texts[i]),original);
+  }
   if (part.category === 'uploads') {
    const aligned=await root.evaluate(e=>{
     const icon=e.querySelector('.ff-upload-symbol')!.getBoundingClientRect();
@@ -67,16 +75,25 @@ try {
    assert.deepEqual(await input.boundingBox(),before,part.id+' glyph/hit box stable during material response');
    await page.evaluate(id=>(window as any).apis[id].setData(9),part.id);
    await page.waitForFunction(id=>document.querySelector<HTMLElement>(`.sop-${id}`)?.style.getPropertyValue('--number-value')==='9',part.id);
+   // Material must use the configured range, including a non-zero/negative minimum.
+   await page.evaluate(id=>{
+    (window as any).apis[id].updateFoundation({min:-20,max:60});
+    (window as any).apis[id].setData(20);
+   },part.id);
+   await page.waitForFunction(id=>document.querySelector<HTMLElement>(`.sop-${id}`)?.style.getPropertyValue('--number-fraction')==='0.5',part.id);
+   assert.equal(await input.inputValue(),'20',part.id+' value remains native');
+   await page.evaluate(id=>(window as any).apis[id].updateFoundation({max:140}),part.id);
+   await page.waitForFunction(id=>document.querySelector<HTMLElement>(`.sop-${id}`)?.style.getPropertyValue('--number-fraction')==='0.25',part.id);
   }
  }
  console.log('PASS equal segments, aligned upload controls, complete loader geometry and committed number material');
  // Text implicated by the audit: composite translucent ancestors before measuring contrast.
- for (const part of specs.filter(p => ['dropdowns','textboxes','contextmenus','tables'].includes(p.category) &&
-   (p.designType==='A' || ['contextmenus','tables'].includes(p.category) || ['everyday-select','dense-list-select','warm-form-select'].includes(p.id)))) {
+ for (const part of specs.filter(p => ['dropdowns','textboxes','contextmenus','tables','segments'].includes(p.category) &&
+   (p.category!=='segments' || ['relay-bank-segments','circuit-rail-segments'].includes(p.id)) && (p.designType==='A' || ['contextmenus','tables'].includes(p.category) || ['everyday-select','dense-list-select','warm-form-select'].includes(p.id)))) {
   const root=page.locator(`.sop-${part.id}`); await root.scrollIntoViewIfNeeded();
   if(part.category==='dropdowns') await root.locator('.sop-select-trigger').click();
   if(part.category==='contextmenus') await root.locator('.wb-context-open').click();
-  const selector:Record<string,string>={dropdowns:'.sop-select-option-copy small,.sop-select-caption',textboxes:'.sop-field-help',contextmenus:'[data-danger=true]',tables:'.wb-cell-badge[data-value=review]'};
+  const selector:Record<string,string>={segments:'.sop-choice-item:not([data-selected=true]) .sop-choice-label',dropdowns:'.sop-select-option-copy small,.sop-select-caption',textboxes:'.sop-field-help',contextmenus:'[data-danger=true]',tables:'.wb-cell-badge[data-value=review]'};
   const contrasts=await root.locator(selector[part.category]).evaluateAll(es=>{
    const canvas=document.createElement('canvas'); canvas.width=canvas.height=1; const context=canvas.getContext('2d')!;
    const color=(value:string)=>{context.clearRect(0,0,1,1);context.fillStyle=value;context.fillRect(0,0,1,1);return [...context.getImageData(0,0,1,1).data].map((v,i)=>i===3?v/255:v)};
@@ -117,6 +134,7 @@ try {
  await page.evaluate(()=>{for(const api of Object.values((window as any).apis) as any[])api.destroy?.()});
  assert.equal(await page.locator('[data-ambient-running]').count(),0,'destroy restores owned lifecycle attributes');
  assert.equal(await page.locator('[style*="--number-value"]').count(),0,'destroy restores owned number properties');
+ assert.equal(await page.locator('[style*="--number-fraction"]').count(),0,'destroy restores normalized material progress');
  assert.deepEqual(errors,[]);
  console.log('PASS 20 independent ornament exports: visibility, pause, reduced motion and cleanup');
 } finally {await browser.close();await server.close()}

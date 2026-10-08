@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "unit": "UNITS"
 };
 export type ConsoleCounterNumberProps = FoundationProps;
-/** Console Counter Number: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 数字の固定窓と左右の操作キーを一体の卓上計数機にまとめ、下段のインジケータが範囲を示す。 */
 export default forwardRef<HTMLDivElement, ConsoleCounterNumberProps>(function ConsoleCounterNumber(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderNumber} mountContent={mountNumber}/>;
 });

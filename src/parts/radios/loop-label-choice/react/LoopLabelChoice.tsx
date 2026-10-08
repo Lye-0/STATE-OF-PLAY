@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type LoopLabelChoiceProps = FoundationProps;
-/** Loop Label Choice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** ループを通すラベル。左の留め穴と選択印を分け、選択したラベルだけ細い帯が通る。 */
 export default forwardRef<HTMLDivElement, LoopLabelChoiceProps>(function LoopLabelChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });

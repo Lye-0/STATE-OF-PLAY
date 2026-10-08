@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
 };
 export type RecessedSpecHintProps = FoundationProps;
-/** Recessed Spec Hint: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** くぼんだ仕様プレート。見出しは上の細い面、説明と設定は奥の明るい区画に収める。 */
 export default forwardRef<HTMLDivElement, RecessedSpecHintProps>(function RecessedSpecHint(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderHint} mountContent={mountHint}/>;
 });

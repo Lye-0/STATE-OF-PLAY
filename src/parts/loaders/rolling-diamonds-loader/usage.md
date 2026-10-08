@@ -1,9 +1,6 @@
 # Rolling Diamonds Loader
 
-菱形が隣へ接点を渡すように順番に転がる連動へ変更。
-
-
-菱形が隣へ接点を渡すように順番に転がる連動へ変更。
+斜めの斜面を渡る六つの菱形。反転の瞬間に次の接地点へ受け渡す連続ループ。
 
 ## 使用
 Reactは`RollingDiamondsLoader`をimportして配置します。通常HTMLはmarkup.htmlとstyles.cssを置き、init(element, options)を呼びます。処理完了時は利用先がローダーを取り外すか非表示にしてください。実際の完了をライブラリが判断することはありません。

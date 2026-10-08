@@ -1,9 +1,6 @@
 # Stone Terrace Navigation
 
-石の段の二列に行先を等しく置く。
-
-
-石の段の二列に行先を等しく置く。
+低いテラスの案内。ブランドと行先の面を浅い段に分け、現在の行先だけ明るい区画へ載せる。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`StoneTerraceNavigation`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

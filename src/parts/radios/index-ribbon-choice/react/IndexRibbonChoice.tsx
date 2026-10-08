@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type IndexRibbonChoiceProps = FoundationProps;
-/** Index Ribbon Choice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 資料の索引帯を差し替えるように選ぶ。細長い番号欄と本文の間に選択印を置く。 */
 export default forwardRef<HTMLDivElement, IndexRibbonChoiceProps>(function IndexRibbonChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });

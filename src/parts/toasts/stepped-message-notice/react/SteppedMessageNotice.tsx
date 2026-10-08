@@ -13,7 +13,7 @@ const config: FoundationConfig = {
   "defaultValue": null
 };
 export type SteppedMessageNoticeProps = FoundationProps;
-/** Stepped Message Notice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 通知の内容と応答を二つの段に置く。閉じる操作を右上に保ち、下段へ進む視線を作る。 */
 export default forwardRef<HTMLDivElement, SteppedMessageNoticeProps>(function SteppedMessageNotice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderToast} mountContent={mountToast}/>;
 });

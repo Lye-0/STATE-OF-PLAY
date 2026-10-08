@@ -1,9 +1,6 @@
 # Linen Tab Accordion
 
-布のタブを見出しに縫い、本文は広い無地面に置く。
-
-
-布のタブを見出しに縫い、本文は広い無地面に置く。
+大型の索引番号を左へ独立させた誌面。番号と本文の基準線を揃え、開いた行を面で区切る。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

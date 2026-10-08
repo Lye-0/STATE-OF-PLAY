@@ -41,7 +41,7 @@ const config: FoundationConfig = {
   ]
 };
 export type BookbindingTagsProps = FoundationProps;
-/** Bookbinding Tags: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 背に綴じるタグ。左端の小さな綴じと右の件数欄を分け、選択時だけ下の索引線を伸ばす。 */
 export default forwardRef<HTMLDivElement, BookbindingTagsProps>(function BookbindingTags(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBadges} mountContent={mountBadges}/>;
 });

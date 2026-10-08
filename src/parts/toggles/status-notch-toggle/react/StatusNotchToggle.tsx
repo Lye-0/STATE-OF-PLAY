@@ -11,7 +11,7 @@ const config = {
   "tone": 631,
   "travel": 44
 };
-/** 角形の選択面と小さな切り欠きで、業務画面の切替を明確にする。 */
+/** 固定したOFF／ON表示と移動する選択面で、増減ではなく有効状態を明示する。 */
 export default function StatusNotchToggle(props: SimpleToggleProps) {
   const {element, checked} = useSimpleToggle(config, props);
   const {checked: _checked, defaultChecked: _initial, onCheckedChange: _change, className = '', ...buttonProps} = props;

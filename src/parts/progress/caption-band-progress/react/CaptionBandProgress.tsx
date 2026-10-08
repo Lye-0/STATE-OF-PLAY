@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "max": 100
 };
 export type CaptionBandProgressProps = FoundationProps;
-/** Caption Band Progress: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 大きな数字を説明帯から切り離した到達カード。斜めの終端が進行方向を示す。 */
 export default forwardRef<HTMLDivElement, CaptionBandProgressProps>(function CaptionBandProgress(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderProgress} mountContent={mountProgress}/>;
 });

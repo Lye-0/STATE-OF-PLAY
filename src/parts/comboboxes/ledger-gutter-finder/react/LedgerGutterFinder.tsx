@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type LedgerGutterFinderProps = FoundationProps;
-/** Ledger Gutter Finder: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 検索語と候補を帳簿の同じ欄へ揃える。左に記号、中央に名称、右に種別の固定列を持つ。 */
 export default forwardRef<HTMLDivElement, LedgerGutterFinderProps>(function LedgerGutterFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

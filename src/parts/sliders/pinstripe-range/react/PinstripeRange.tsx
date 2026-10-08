@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "range": false
 };
 export type PinstripeRangeProps = FoundationProps;
-/** Pinstripe Range: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 記入欄と細い仕切りを持つ横尺。つまみの一本の針が量を正確に指す。 */
 export default forwardRef<HTMLDivElement, PinstripeRangeProps>(function PinstripeRange(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderSlider} mountContent={mountSlider}/>;
 });

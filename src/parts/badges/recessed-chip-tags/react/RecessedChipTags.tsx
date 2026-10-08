@@ -41,7 +41,7 @@ const config: FoundationConfig = {
   ]
 };
 export type RecessedChipTagsProps = FoundationProps;
-/** Recessed Chip Tags: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** くぼみの中の分類札。タグ本体の小さな奥行きと丸い件数窓で読み取り位置を分ける。 */
 export default forwardRef<HTMLDivElement, RecessedChipTagsProps>(function RecessedChipTags(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBadges} mountContent={mountBadges}/>;
 });

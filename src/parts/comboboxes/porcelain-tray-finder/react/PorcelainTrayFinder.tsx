@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type PorcelainTrayFinderProps = FoundationProps;
-/** Porcelain Tray Finder: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 浅い磁器の検索皿。丸い入力縁の下に余白を持った候補を置き、面の濃淡で行を選ぶ。 */
 export default forwardRef<HTMLDivElement, PorcelainTrayFinderProps>(function PorcelainTrayFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

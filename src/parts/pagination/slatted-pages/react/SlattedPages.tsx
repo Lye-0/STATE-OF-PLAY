@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "totalPages": 12
 };
 export type SlattedPagesProps = FoundationProps;
-/** Slatted Pages: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** ルーバーの各区画を番号キーにする。現在地の板だけを明るく開く。 */
 export default forwardRef<HTMLDivElement, SlattedPagesProps>(function SlattedPages(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderPagination} mountContent={mountPagination}/>;
 });

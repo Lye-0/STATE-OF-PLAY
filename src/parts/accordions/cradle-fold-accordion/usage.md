@@ -1,9 +1,6 @@
 # Cradle Fold Accordion
 
-揺りかごの底に独立した本文面を収める。
-
-
-揺りかごの底に独立した本文面を収める。
+開いた角を接続して本文の読む領域をつくる。閉じた時は見出しの支点だけを残す。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

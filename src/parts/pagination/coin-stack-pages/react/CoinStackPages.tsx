@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "totalPages": 12
 };
 export type CoinStackPagesProps = FoundationProps;
-/** Coin Stack Pages: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 円形を崩さないコインのページ送り。数字の座を正円のまま保持し、選択した一枚だけ刻印。 */
 export default forwardRef<HTMLDivElement, CoinStackPagesProps>(function CoinStackPages(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderPagination} mountContent={mountPagination}/>;
 });

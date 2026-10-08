@@ -1,9 +1,6 @@
 # Inspection Card Context
 
-検査カードに操作の読取欄を置く。
-
-
-検査カードに操作の読取欄を置く。
+検査対象と操作の小窓。書類は固定した検品面へ置き、操作メニューは短い確認行として表示。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`InspectionCardContext`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

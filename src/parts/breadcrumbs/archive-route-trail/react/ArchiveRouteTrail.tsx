@@ -39,7 +39,7 @@ const config: FoundationConfig = {
   ]
 };
 export type ArchiveRouteTrailProps = FoundationProps;
-/** Archive Route Trail: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 背から続く階層を一本の横道として示す。現在地の札を最終段として明確にする。 */
 export default forwardRef<HTMLDivElement, ArchiveRouteTrailProps>(function ArchiveRouteTrail(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBreadcrumbs} mountContent={mountBreadcrumbs}/>;
 });

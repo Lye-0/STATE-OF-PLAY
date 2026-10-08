@@ -1,9 +1,6 @@
 # Vellum Ruler Accordion
 
-透明な定規を欄外に残し、読む面を無地にする。
-
-
-透明な定規を欄外に残し、読む面を無地にする。
+レタープレスの大きい見出し段。本文は細い罫線から下へ続き、不要な内側の箱を作らない。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

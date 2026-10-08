@@ -39,7 +39,7 @@ const config: FoundationConfig = {
   ]
 };
 export type StationLabelTrailProps = FoundationProps;
-/** Station Label Trail: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 設計図の案内線を階層に使う。左の連続線と段ごとの字下げで親子を示す。 */
 export default forwardRef<HTMLDivElement, StationLabelTrailProps>(function StationLabelTrail(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBreadcrumbs} mountContent={mountBreadcrumbs}/>;
 });

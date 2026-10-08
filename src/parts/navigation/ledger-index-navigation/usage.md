@@ -1,9 +1,6 @@
 # Ledger Index Navigation
 
-台帳の見出し行を現在地につなぐ。
-
-
-台帳の見出し行を現在地につなぐ。
+帳簿の索引列。リンクを罫線の同寸セルへ置き、ブランド・行先・現在地を三段に整える。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`LedgerIndexNavigation`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

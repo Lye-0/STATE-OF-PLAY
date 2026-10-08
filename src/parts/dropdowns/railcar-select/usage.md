@@ -1,9 +1,6 @@
 # Railcar Select
 
-客車の窓を縦に接続し、選んだ駅に梁が合う。
-
-
-客車の窓を縦に接続し、選んだ駅に梁が合う。
+吊るす札から候補の吊り列へ。各項目の穴と紐が連続し、選択した札の支点を強調。
 
 ## 選択肢の差し替え
 Reactではitems配列へvalue/label/description/icon/badgeを渡します。Vanillaではmarkup.html内のdata-valueと表示内容を編集し、init(root)します。動的にDOMの選択肢を変更した後はcontroller.refresh()を呼びます。

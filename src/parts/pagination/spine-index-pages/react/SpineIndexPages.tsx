@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "totalPages": 12
 };
 export type SpineIndexPagesProps = FoundationProps;
-/** Spine Index Pages: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 本の小口へ指をかけるページ札。狭幅でも一枚の幅を保ち、選択した札だけを背へ留める。 */
 export default forwardRef<HTMLDivElement, SpineIndexPagesProps>(function SpineIndexPages(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderPagination} mountContent={mountPagination}/>;
 });

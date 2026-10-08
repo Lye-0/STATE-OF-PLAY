@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "totalPages": 12
 };
 export type TrackStopPagesProps = FoundationProps;
-/** Track Stop Pages: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 路線上の駅としてページを並べる。現在駅の丸い台と、隣へ進む操作を区別。 */
 export default forwardRef<HTMLDivElement, TrackStopPagesProps>(function TrackStopPages(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderPagination} mountContent={mountPagination}/>;
 });

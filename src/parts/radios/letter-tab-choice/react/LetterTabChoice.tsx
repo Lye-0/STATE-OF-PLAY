@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type LetterTabChoiceProps = FoundationProps;
-/** Letter Tab Choice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 封筒の宛名札を三段に配置。丸い選択印を切手側に寄せ、選ばれた札の下辺を展開する。 */
 export default forwardRef<HTMLDivElement, LetterTabChoiceProps>(function LetterTabChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });

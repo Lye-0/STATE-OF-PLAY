@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "totalPages": 12
 };
 export type PerforatedPagesProps = FoundationProps;
-/** Perforated Pages: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 切り取り線の一枚ずつの票。小さい画面でも票の幅を縮めず二段へ送る。 */
 export default forwardRef<HTMLDivElement, PerforatedPagesProps>(function PerforatedPages(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderPagination} mountContent={mountPagination}/>;
 });

@@ -1,9 +1,6 @@
 # Thumb Index Select
 
-指掛かりのある目録を展開し、各候補に大きな余白を持たせる。
-
-
-指掛かりのある目録を展開し、各候補に大きな余白を持たせる。
+折った小包の口から選択面が現れる。候補を段として分け、選択行の折り返しを閉じる。
 
 ## 選択肢の差し替え
 Reactではitems配列へvalue/label/description/icon/badgeを渡します。Vanillaではmarkup.html内のdata-valueと表示内容を編集し、init(root)します。動的にDOMの選択肢を変更した後はcontroller.refresh()を呼びます。

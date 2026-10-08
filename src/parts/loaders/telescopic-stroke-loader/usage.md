@@ -1,9 +1,6 @@
 # Telescopic Stroke Loader
 
-描画領域を実際の機構寸法に合わせ、往復・回転の余白を確保。
-
-
-描画領域を実際の機構寸法に合わせ、往復・回転の余白を確保。
+六段の筒が同じ軸上で伸縮する。角枠の回転ではなく、奥へ続く伸縮の順序を示す。
 
 ## 使用
 Reactは`TelescopicStrokeLoader`をimportして配置します。通常HTMLはmarkup.htmlとstyles.cssを置き、init(element, options)を呼びます。処理完了時は利用先がローダーを取り外すか非表示にしてください。実際の完了をライブラリが判断することはありません。

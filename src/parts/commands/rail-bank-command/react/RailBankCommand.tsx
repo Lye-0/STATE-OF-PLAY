@@ -3,7 +3,7 @@ import React from 'react';
 import {CommandView,type CommandProps} from '../../../../shared/workbench/command-view';
 import '../styles.css';
 export type { CommandProps as RailBankCommandProps };
-/** 制御バンクの軌道と選択面を連続させる。 */
+/** 実行候補を接続する操作レール。起動面の左右の支えを開いた一覧にも残し、選択行の短い桟を強調。 */
 export default function RailBankCommand(props:CommandProps) {
  return <CommandView {...props} skin="rail-bank-command" />;
 }

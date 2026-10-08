@@ -13,7 +13,7 @@ const config: FoundationConfig = {
   "defaultValue": null
 };
 export type WarmConfirmNoticeProps = FoundationProps;
-/** Warm Confirm Notice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 温かい色味を保ち、広い茶色の影を取り除いて通知文を主役にする。 */
 export default forwardRef<HTMLDivElement, WarmConfirmNoticeProps>(function WarmConfirmNotice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderToast} mountContent={mountToast}/>;
 });

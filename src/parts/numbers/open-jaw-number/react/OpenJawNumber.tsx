@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "unit": "UNITS"
 };
 export type OpenJawNumberProps = FoundationProps;
-/** Open Jaw Number: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 開いた顎の間へ数字を固定し、上下の測定面が数量に合わせて開閉する。 */
 export default forwardRef<HTMLDivElement, OpenJawNumberProps>(function OpenJawNumber(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderNumber} mountContent={mountNumber}/>;
 });

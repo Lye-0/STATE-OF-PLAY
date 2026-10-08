@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "unit": "UNITS"
 };
 export type FoldedTallyNumberProps = FoundationProps;
-/** Folded Tally Number: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 上下に折れた札の谷へ数値を収め、増減で背面の折り目だけを送り出す。 */
 export default forwardRef<HTMLDivElement, FoldedTallyNumberProps>(function FoldedTallyNumber(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderNumber} mountContent={mountNumber}/>;
 });

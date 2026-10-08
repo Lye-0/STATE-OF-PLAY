@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "totalPages": 12
 };
 export type LedgerPageTabsProps = FoundationProps;
-/** Ledger Page Tabs: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 帳簿の小見出しを選ぶページ送り。数字と罫線を揃え、現在欄だけインク面へ変える。 */
 export default forwardRef<HTMLDivElement, LedgerPageTabsProps>(function LedgerPageTabs(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderPagination} mountContent={mountPagination}/>;
 });

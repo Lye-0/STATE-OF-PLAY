@@ -1,9 +1,6 @@
 # Folding Dossier Context
 
-折った書類の頭に操作名をまとめる。
-
-
-折った書類の頭に操作名をまとめる。
+折り畳む資料の操作。対象の折り目をメニュー上辺へ残し、各操作は読める平らな行にする。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`FoldingDossierContext`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

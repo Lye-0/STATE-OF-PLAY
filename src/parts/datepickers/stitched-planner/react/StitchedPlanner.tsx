@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "mode": "date"
 };
 export type StitchedPlannerProps = FoundationProps;
-/** Stitched Planner: Bタイプ。元の外観と、独自の日時選択を備えた独立したDOM領域。 */
+/** 縫い綴じのプランナー。月の帯と日付面を縫い目で区切り、今日の輪郭を細く明示。 */
 export default forwardRef<HTMLDivElement, StitchedPlannerProps>(function StitchedPlanner(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderDate} mountContent={mountDate}/>;
 });

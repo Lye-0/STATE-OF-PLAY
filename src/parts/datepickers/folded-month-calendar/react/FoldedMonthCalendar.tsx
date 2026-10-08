@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "mode": "date"
 };
 export type FoldedMonthCalendarProps = FoundationProps;
-/** Folded Month Calendar: Bタイプ。元の外観と、独自の日時選択を備えた独立したDOM領域。 */
+/** 月ごとにめくる折り紙の予定表。上の折り返しを月見出し、下の平面を日付へ分ける。 */
 export default forwardRef<HTMLDivElement, FoldedMonthCalendarProps>(function FoldedMonthCalendar(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderDate} mountContent={mountDate}/>;
 });

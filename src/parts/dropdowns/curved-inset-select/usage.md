@@ -1,9 +1,6 @@
 # Curved Inset Select
 
-弧の背骨に候補を沿わせる、内側に文字を置いた窓。
-
-
-弧の背骨に候補を沿わせる、内側に文字を置いた窓。
+湾曲した航路の駅票を選ぶ。開いた面の左に連続するルートと選択駅を示す。
 
 ## 選択肢の差し替え
 Reactではitems配列へvalue/label/description/icon/badgeを渡します。Vanillaではmarkup.html内のdata-valueと表示内容を編集し、init(root)します。動的にDOMの選択肢を変更した後はcontroller.refresh()を呼びます。

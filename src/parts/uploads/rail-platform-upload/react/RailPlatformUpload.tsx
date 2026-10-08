@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "accept": ".png,.jpg,.webp,.txt,.pdf"
 };
 export type RailPlatformUploadProps = FoundationProps;
-/** Rail Platform Upload: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 積み下ろしのプラットフォーム。細い二本の支えの上にファイルを受け、選択済み一覧へ連続させる。 */
 export default forwardRef<HTMLDivElement, RailPlatformUploadProps>(function RailPlatformUpload(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });

@@ -41,7 +41,7 @@ const config: FoundationConfig = {
   ]
 };
 export type DraftingNoteTagsProps = FoundationProps;
-/** Drafting Note Tags: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 図面の短い注記。文字と件数を線で揃え、選択した注記だけに下の計測線を伸ばす。 */
 export default forwardRef<HTMLDivElement, DraftingNoteTagsProps>(function DraftingNoteTags(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBadges} mountContent={mountBadges}/>;
 });

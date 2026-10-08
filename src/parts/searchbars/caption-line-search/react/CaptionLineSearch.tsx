@@ -3,7 +3,7 @@ import React from 'react';
 import {SearchView,type SearchProps} from '../../../../shared/workbench/search-view';
 import '../styles.css';
 export type { SearchProps as CaptionLineSearchProps };
-/** 小見出しの下に検索面を一本の行として置く。 */
+/** 検索見出しと結果のキャプションを分ける。細い帯を使い、情報が増えても面の階層を読み取れる。 */
 export default function CaptionLineSearch(props:SearchProps) {
  return <SearchView {...props} skin="caption-line-search" />;
 }

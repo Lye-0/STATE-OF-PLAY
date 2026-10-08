@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "unit": "UNITS"
 };
 export type PerforatedCounterProps = FoundationProps;
-/** Perforated Counter: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 打刻窓と左右の大型キー。周囲の送り穴が進んでも数値の基準位置は動かさない。 */
 export default forwardRef<HTMLDivElement, PerforatedCounterProps>(function PerforatedCounter(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderNumber} mountContent={mountNumber}/>;
 });

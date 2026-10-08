@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "range": false
 };
 export type BridgeSaddleRangeProps = FoundationProps;
-/** Bridge Saddle Range: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** レールを跨ぐ橋脚型のつまみ。動かす位置と橋の支点を一致させる。 */
 export default forwardRef<HTMLDivElement, BridgeSaddleRangeProps>(function BridgeSaddleRange(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderSlider} mountContent={mountSlider}/>;
 });

@@ -1,9 +1,6 @@
 # Ledger Gate Accordion
 
-台帳の門が開いた行の左右を支持する。
-
-
-台帳の門が開いた行の左右を支持する。
+設計図の座標列と本文を接続する。展開した領域にだけ薄い補助線が現れる。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type InspectorQueryFinderProps = FoundationProps;
-/** Inspector Query Finder: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 照合台の検索窓。候補ごとに記号の小窓を設け、選択行を枠と右の確認印で明示する。 */
 export default forwardRef<HTMLDivElement, InspectorQueryFinderProps>(function InspectorQueryFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

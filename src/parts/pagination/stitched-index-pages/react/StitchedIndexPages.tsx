@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "totalPages": 12
 };
 export type StitchedIndexPagesProps = FoundationProps;
-/** Stitched Index Pages: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 縫い綴じた索引札。現在の札にだけ縫い目の内側を濃く満たす。 */
 export default forwardRef<HTMLDivElement, StitchedIndexPagesProps>(function StitchedIndexPages(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderPagination} mountContent={mountPagination}/>;
 });

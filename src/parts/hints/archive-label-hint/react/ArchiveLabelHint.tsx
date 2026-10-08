@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
 };
 export type ArchiveLabelHintProps = FoundationProps;
-/** Archive Label Hint: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 保管資料のラベル。上段の識別見出しと下段の設定欄をミシン目で分ける。 */
 export default forwardRef<HTMLDivElement, ArchiveLabelHintProps>(function ArchiveLabelHint(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderHint} mountContent={mountHint}/>;
 });

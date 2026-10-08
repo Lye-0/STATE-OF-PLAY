@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "mode": "date"
 };
 export type RecessedDateCalendarProps = FoundationProps;
-/** Recessed Date Calendar: Bタイプ。元の外観と、独自の日時選択を備えた独立したDOM領域。 */
+/** 凹面の日時コントロール。月表示と日付を明るい内面に収め、押した日の薄い影で状態を伝える。 */
 export default forwardRef<HTMLDivElement, RecessedDateCalendarProps>(function RecessedDateCalendar(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderDate} mountContent={mountDate}/>;
 });

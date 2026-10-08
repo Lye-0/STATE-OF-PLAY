@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type ShallowBowlChoiceProps = FoundationProps;
-/** Shallow Bowl Choice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 浅い器に一つずつ載せた選択項目。外形を丸めても文字と丸印の整列を崩さない。 */
 export default forwardRef<HTMLDivElement, ShallowBowlChoiceProps>(function ShallowBowlChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });

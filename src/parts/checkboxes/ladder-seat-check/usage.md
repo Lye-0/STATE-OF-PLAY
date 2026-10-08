@@ -1,8 +1,6 @@
 # Ladder Seat Check
 
-梯子の桟が選択済みの面を支える。
-
-梯子の桟が選択済みの面を支える。
+階段状の受け座がチェック面へ上がる。単一の記号で状態を読み取れる構造。
 
 本物のinput[type=checkbox]です。label全体をクリックでき、Space・Tab・FormData・required・fieldsetのdisabledはネイティブのままです。複数の独立したチェックで複数選択を作れます。独自のキーイベントでSpaceを二重処理しません。
 

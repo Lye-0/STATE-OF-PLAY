@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "unit": "UNITS"
 };
 export type CeramicCountNumberProps = FoundationProps;
-/** Ceramic Count Number: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 陶製の器へ数値窓を収め、器の外側を満たす弧で最小〜最大の量を示す。 */
 export default forwardRef<HTMLDivElement, CeramicCountNumberProps>(function CeramicCountNumber(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderNumber} mountContent={mountNumber}/>;
 });

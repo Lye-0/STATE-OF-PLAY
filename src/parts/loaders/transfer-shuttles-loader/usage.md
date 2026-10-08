@@ -1,9 +1,6 @@
 # Transfer Shuttles Loader
 
-描画領域を実際の機構寸法に合わせ、往復・回転の余白を確保。
-
-
-描画領域を実際の機構寸法に合わせ、往復・回転の余白を確保。
+対向する二段のシャトルが荷を受け渡す。点滅だけでなく移送の往復をループにする。
 
 ## 使用
 Reactは`TransferShuttlesLoader`をimportして配置します。通常HTMLはmarkup.htmlとstyles.cssを置き、init(element, options)を呼びます。処理完了時は利用先がローダーを取り外すか非表示にしてください。実際の完了をライブラリが判断することはありません。

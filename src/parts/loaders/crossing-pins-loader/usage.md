@@ -1,9 +1,6 @@
 # Crossing Pins Loader
 
-描画領域を実際の機構寸法に合わせ、往復・回転の余白を確保。
-
-
-描画領域を実際の機構寸法に合わせ、往復・回転の余白を確保。
+三対のピンが交差して次の位置へ渡る。交点を中心に対向運動を組む。
 
 ## 使用
 Reactは`CrossingPinsLoader`をimportして配置します。通常HTMLはmarkup.htmlとstyles.cssを置き、init(element, options)を呼びます。処理完了時は利用先がローダーを取り外すか非表示にしてください。実際の完了をライブラリが判断することはありません。

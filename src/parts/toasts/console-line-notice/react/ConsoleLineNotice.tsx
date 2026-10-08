@@ -13,7 +13,7 @@ const config: FoundationConfig = {
   "defaultValue": null
 };
 export type ConsoleLineNoticeProps = FoundationProps;
-/** Console Line Notice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** コンソールの応答行。状態記号を左の区画、通知本文を中央、閉じる操作を右端に分離する。 */
 export default forwardRef<HTMLDivElement, ConsoleLineNoticeProps>(function ConsoleLineNotice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderToast} mountContent={mountToast}/>;
 });

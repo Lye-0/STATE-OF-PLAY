@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
 };
 export type BookendNoteHintProps = FoundationProps;
-/** Bookend Note Hint: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 本を支える短い解説欄。縦の支えに見出しを寄せ、本文の後ろに設定を一段下げて置く。 */
 export default forwardRef<HTMLDivElement, BookendNoteHintProps>(function BookendNoteHint(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderHint} mountContent={mountHint}/>;
 });

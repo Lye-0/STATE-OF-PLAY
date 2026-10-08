@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "mode": "date"
 };
 export type LetterpressMonthProps = FoundationProps;
-/** Letterpress Month: Bタイプ。元の外観と、独自の日時選択を備えた独立したDOM領域。 */
+/** 活版の月間表。太めの月見出しと細い日付罫を分け、現在日と選択日を異なる印で示す。 */
 export default forwardRef<HTMLDivElement, LetterpressMonthProps>(function LetterpressMonth(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderDate} mountContent={mountDate}/>;
 });

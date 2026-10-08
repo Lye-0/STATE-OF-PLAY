@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "unit": "UNITS"
 };
 export type RailStopNumberProps = FoundationProps;
-/** Rail Stop Number: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 数値窓の下を台車が走る計数レール。増減の方向と走行位置を一致させる。 */
 export default forwardRef<HTMLDivElement, RailStopNumberProps>(function RailStopNumber(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderNumber} mountContent={mountNumber}/>;
 });

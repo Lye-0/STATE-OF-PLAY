@@ -41,7 +41,7 @@ const config: FoundationConfig = {
   ]
 };
 export type StitchedLabelTagsProps = FoundationProps;
-/** Stitched Label Tags: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 縫い付けた小ラベル。布の端と文字を離し、選択線を下の縫い目へ重ねる。 */
 export default forwardRef<HTMLDivElement, StitchedLabelTagsProps>(function StitchedLabelTags(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBadges} mountContent={mountBadges}/>;
 });

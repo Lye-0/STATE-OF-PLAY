@@ -39,7 +39,7 @@ const config: FoundationConfig = {
   ]
 };
 export type FoldedIndexTrailProps = FoundationProps;
-/** Folded Index Trail: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 折った札を階層ごとにつなぐ。親から子へ進む矢印の向きを揃える。 */
 export default forwardRef<HTMLDivElement, FoldedIndexTrailProps>(function FoldedIndexTrail(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBreadcrumbs} mountContent={mountBreadcrumbs}/>;
 });

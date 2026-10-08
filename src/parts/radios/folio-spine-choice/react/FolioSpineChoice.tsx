@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type FolioSpineChoiceProps = FoundationProps;
-/** Folio Spine Choice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 綴じた目次から一項を選ぶ。背の線を共通にし、選んだ行の小口が開く。 */
 export default forwardRef<HTMLDivElement, FolioSpineChoiceProps>(function FolioSpineChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });

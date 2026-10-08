@@ -1,9 +1,6 @@
 # Stitched Register Table
 
-縫い目の表題と無地の表を分ける。
-
-
-縫い目の表題と無地の表を分ける。
+縫い綴じの記録帳。外周と見出しの縫い目に装飾を限定し、データのセルは通常の表として読む。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`StitchedRegisterTable`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

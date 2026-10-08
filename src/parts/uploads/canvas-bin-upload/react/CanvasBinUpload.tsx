@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "accept": ".png,.jpg,.webp,.txt,.pdf"
 };
 export type CanvasBinUploadProps = FoundationProps;
-/** Canvas Bin Upload: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** キャンバス地の収納箱。角の補強と縫い目を外周に留め、指示文は大きい中央の空白へ置く。 */
 export default forwardRef<HTMLDivElement, CanvasBinUploadProps>(function CanvasBinUpload(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });

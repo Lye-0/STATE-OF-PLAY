@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "mode": "date"
 };
 export type DeskBlotterCalendarProps = FoundationProps;
-/** Desk Blotter Calendar: Bタイプ。元の外観と、独自の日時選択を備えた独立したDOM領域。 */
+/** デスクの月間予定票。上の押さえと週の罫線でカレンダーを組み、選択日は小さな記入面へ。 */
 export default forwardRef<HTMLDivElement, DeskBlotterCalendarProps>(function DeskBlotterCalendar(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderDate} mountContent={mountDate}/>;
 });

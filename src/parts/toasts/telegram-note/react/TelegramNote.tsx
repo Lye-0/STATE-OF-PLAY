@@ -13,7 +13,7 @@ const config: FoundationConfig = {
   "defaultValue": null
 };
 export type TelegramNoteProps = FoundationProps;
-/** Telegram Note: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 電報の短い本文と応答欄。上下の二重罫で情報を囲み、右の操作を読後の行へ移す。 */
 export default forwardRef<HTMLDivElement, TelegramNoteProps>(function TelegramNote(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderToast} mountContent={mountToast}/>;
 });

@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "mode": "date"
 };
 export type PetalMonthCalendarProps = FoundationProps;
-/** Petal Month Calendar: Bタイプ。元の外観と、独自の日時選択を備えた独立したDOM領域。 */
+/** 花弁のような縁を持つ月間票。日付面を歪めず、角と選択日の小さな面だけを柔らかくする。 */
 export default forwardRef<HTMLDivElement, PetalMonthCalendarProps>(function PetalMonthCalendar(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderDate} mountContent={mountDate}/>;
 });

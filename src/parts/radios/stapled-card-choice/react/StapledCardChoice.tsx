@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type StapledCardChoiceProps = FoundationProps;
-/** Stapled Card Choice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 綴じ金のある確認カード。紙の上の円を選ぶと、端の小さな赤い索引が見える。 */
 export default forwardRef<HTMLDivElement, StapledCardChoiceProps>(function StapledCardChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });

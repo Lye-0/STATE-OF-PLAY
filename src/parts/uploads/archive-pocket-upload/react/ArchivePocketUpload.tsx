@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "accept": ".png,.jpg,.webp,.txt,.pdf"
 };
 export type ArchivePocketUploadProps = FoundationProps;
-/** Archive Pocket Upload: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 資料を入れる保管ポケット。上の空いた口と下の保存欄を分け、選択済みファイルは同じ棚へ並べる。 */
 export default forwardRef<HTMLDivElement, ArchivePocketUploadProps>(function ArchivePocketUpload(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });

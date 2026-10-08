@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type LibraryDrawerChoiceProps = FoundationProps;
-/** Library Drawer Choice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 引き出しの前板を三段に並べ、選択すると下端の奥行きが開く。丸い単一選択印と文字は固定。 */
 export default forwardRef<HTMLDivElement, LibraryDrawerChoiceProps>(function LibraryDrawerChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });

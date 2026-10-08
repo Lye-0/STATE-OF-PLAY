@@ -1,8 +1,6 @@
 # Stitched Seal Check
 
-縫い目の輪郭が選択で締まる。
-
-縫い目の輪郭が選択で締まる。
+布の封印がチェック面を縫い留める。チェックを塗りつぶす代わりに周囲の糸が締まる。
 
 本物のinput[type=checkbox]です。label全体をクリックでき、Space・Tab・FormData・required・fieldsetのdisabledはネイティブのままです。複数の独立したチェックで複数選択を作れます。独自のキーイベントでSpaceを二重処理しません。
 

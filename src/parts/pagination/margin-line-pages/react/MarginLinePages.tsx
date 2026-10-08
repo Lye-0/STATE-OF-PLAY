@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "totalPages": 12
 };
 export type MarginLinePagesProps = FoundationProps;
-/** Margin Line Pages: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 余白の章番号を選ぶ編集用のページ送り。選択番号の下の赤線が基準線に接続。 */
 export default forwardRef<HTMLDivElement, MarginLinePagesProps>(function MarginLinePages(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderPagination} mountContent={mountPagination}/>;
 });

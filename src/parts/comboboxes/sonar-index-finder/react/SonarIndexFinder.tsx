@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type SonarIndexFinderProps = FoundationProps;
-/** Sonar Index Finder: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 探査スコープから結果へ視線を流す。検索記号は同心円、候補には縦の検出線を通す。 */
 export default forwardRef<HTMLDivElement, SonarIndexFinderProps>(function SonarIndexFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

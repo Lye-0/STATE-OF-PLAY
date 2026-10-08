@@ -41,7 +41,7 @@ const config: FoundationConfig = {
   ]
 };
 export type BracketTagsProps = FoundationProps;
-/** Bracket Tags: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 細い角括弧の分類。タグ全体を塗りつぶさず、左右の支えと選択下線で境界を示す。 */
 export default forwardRef<HTMLDivElement, BracketTagsProps>(function BracketTags(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBadges} mountContent={mountBadges}/>;
 });

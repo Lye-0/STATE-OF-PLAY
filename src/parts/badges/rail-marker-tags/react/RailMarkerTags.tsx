@@ -41,7 +41,7 @@ const config: FoundationConfig = {
   ]
 };
 export type RailMarkerTagsProps = FoundationProps;
-/** Rail Marker Tags: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** レールに留める小さな分類札。両端の留め具と中央の文字面を分離し、選択で固定線が太くなる。 */
 export default forwardRef<HTMLDivElement, RailMarkerTagsProps>(function RailMarkerTags(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBadges} mountContent={mountBadges}/>;
 });

@@ -1,9 +1,6 @@
 # Gallery Slip Accordion
 
-展示札と解説面の間に大きな呼吸を置く。
-
-
-展示札と解説面の間に大きな呼吸を置く。
+石の段を降りる読み順。閉じた段は薄く、開いた本文は段の内側へ収まる。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

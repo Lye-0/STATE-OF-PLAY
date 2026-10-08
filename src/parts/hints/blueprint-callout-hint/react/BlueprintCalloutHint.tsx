@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
 };
 export type BlueprintCalloutHintProps = FoundationProps;
-/** Blueprint Callout Hint: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 図面の呼び出し注記。仕様値を罫線の交点へ揃え、操作を右下の承認欄として示す。 */
 export default forwardRef<HTMLDivElement, BlueprintCalloutHintProps>(function BlueprintCalloutHint(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderHint} mountContent={mountHint}/>;
 });

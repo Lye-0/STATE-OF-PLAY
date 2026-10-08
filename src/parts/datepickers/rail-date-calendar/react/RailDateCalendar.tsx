@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "mode": "date"
 };
 export type RailDateCalendarProps = FoundationProps;
-/** Rail Date Calendar: Bタイプ。元の外観と、独自の日時選択を備えた独立したDOM領域。 */
+/** レールに載る日付札。月の移動操作を両端へ固定し、曜日から日付まで縦の列を揃える。 */
 export default forwardRef<HTMLDivElement, RailDateCalendarProps>(function RailDateCalendar(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderDate} mountContent={mountDate}/>;
 });

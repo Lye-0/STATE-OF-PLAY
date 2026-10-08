@@ -1,8 +1,6 @@
 # Margin Flag Check
 
-余白の旗が選択面の下へ折れる。
-
-余白の旗が選択面の下へ折れる。
+余白に置く小旗。チェック領域の外へ旗が出て確定を示し、四角い選択記号を保つ。
 
 本物のinput[type=checkbox]です。label全体をクリックでき、Space・Tab・FormData・required・fieldsetのdisabledはネイティブのままです。複数の独立したチェックで複数選択を作れます。独自のキーイベントでSpaceを二重処理しません。
 

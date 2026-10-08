@@ -1,9 +1,6 @@
 # Open Bracket Navigation
 
-開いた括弧で行先の範囲を示す。
-
-
-開いた括弧で行先の範囲を示す。
+角括弧の中の行先案内。面の重なりを減らし、ブランドと現在のリンクを文字と短い線で強調。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`OpenBracketNavigation`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

@@ -39,7 +39,7 @@ const config: FoundationConfig = {
   ]
 };
 export type LoopedRouteTrailProps = FoundationProps;
-/** Looped Route Trail: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 連結するループを祖先の区切りにする。現在地の札は最後に固定し、タイル状配置を避ける。 */
 export default forwardRef<HTMLDivElement, LoopedRouteTrailProps>(function LoopedRouteTrail(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBreadcrumbs} mountContent={mountBreadcrumbs}/>;
 });

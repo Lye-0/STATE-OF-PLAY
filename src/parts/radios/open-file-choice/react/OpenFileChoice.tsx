@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type OpenFileChoiceProps = FoundationProps;
-/** Open File Choice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 開いたフォルダーの見出しを選択面へ。三つの項目は上下に整列し、突き出した小見出しで識別。 */
 export default forwardRef<HTMLDivElement, OpenFileChoiceProps>(function OpenFileChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });

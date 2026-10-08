@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type IndexStampFinderProps = FoundationProps;
-/** Index Stamp Finder: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 資料票に検索語を記入する。候補は記入欄と番号枠を持ち、選択中の確認印を押したように示す。 */
 export default forwardRef<HTMLDivElement, IndexStampFinderProps>(function IndexStampFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

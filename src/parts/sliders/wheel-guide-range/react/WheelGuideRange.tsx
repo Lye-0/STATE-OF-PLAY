@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "range": false
 };
 export type WheelGuideRangeProps = FoundationProps;
-/** Wheel Guide Range: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 金属のホイールが二本のレールを走る。円形のつまみと直線の軌道を明確に分ける。 */
 export default forwardRef<HTMLDivElement, WheelGuideRangeProps>(function WheelGuideRange(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderSlider} mountContent={mountSlider}/>;
 });

@@ -13,7 +13,7 @@ const config: FoundationConfig = {
   "defaultValue": null
 };
 export type FoldedMessageNoticeProps = FoundationProps;
-/** Folded Message Notice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 折り返した伝言。本文の右下だけに折り目を持たせ、操作は本文の下へ揃える。 */
 export default forwardRef<HTMLDivElement, FoldedMessageNoticeProps>(function FoldedMessageNotice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderToast} mountContent={mountToast}/>;
 });

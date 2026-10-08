@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "totalPages": 12
 };
 export type CompactDataPagesProps = FoundationProps;
-/** Compact Data Pages: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 狭幅でも各ページの操作幅を34px以上に保ち、必要に応じて行を折り返す。 */
 export default forwardRef<HTMLDivElement, CompactDataPagesProps>(function CompactDataPages(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderPagination} mountContent={mountPagination}/>;
 });

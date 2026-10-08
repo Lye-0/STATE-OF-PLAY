@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
 };
 export type CeramicCaptionHintProps = FoundationProps;
-/** Ceramic Caption Hint: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 浅い磁器の説明皿。見出しの丸いくぼみと余白で情報を整理し、設定は二列のまま保つ。 */
 export default forwardRef<HTMLDivElement, CeramicCaptionHintProps>(function CeramicCaptionHint(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderHint} mountContent={mountHint}/>;
 });

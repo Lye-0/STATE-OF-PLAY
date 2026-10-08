@@ -13,7 +13,7 @@ const config: FoundationConfig = {
   "defaultValue": null
 };
 export type ReceiptTailNoticeProps = FoundationProps;
-/** Receipt Tail Notice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 受領票のような通知。処理結果を本文、再操作を下の控えへ分け、ミシン目をその境界に置く。 */
 export default forwardRef<HTMLDivElement, ReceiptTailNoticeProps>(function ReceiptTailNotice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderToast} mountContent={mountToast}/>;
 });

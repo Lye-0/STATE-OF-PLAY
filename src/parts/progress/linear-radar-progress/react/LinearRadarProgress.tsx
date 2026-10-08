@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "max": 100
 };
 export type LinearRadarProgressProps = FoundationProps;
-/** Linear Radar Progress: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 横に掃く検査スリット。進んだ範囲が露出し、未処理側の細線と明確に分かれる。 */
 export default forwardRef<HTMLDivElement, LinearRadarProgressProps>(function LinearRadarProgress(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderProgress} mountContent={mountProgress}/>;
 });

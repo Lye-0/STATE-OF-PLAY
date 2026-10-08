@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "unit": "UNITS"
 };
 export type RecessedDialNumberProps = FoundationProps;
-/** Recessed Dial Number: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 半円の目盛りを持つ数値ダイヤル。入力面を固定し、外周の指針だけが最小から最大へ回る。 */
 export default forwardRef<HTMLDivElement, RecessedDialNumberProps>(function RecessedDialNumber(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderNumber} mountContent={mountNumber}/>;
 });

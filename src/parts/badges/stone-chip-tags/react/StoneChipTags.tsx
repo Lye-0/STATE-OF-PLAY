@@ -41,7 +41,7 @@ const config: FoundationConfig = {
   ]
 };
 export type StoneChipTagsProps = FoundationProps;
-/** Stone Chip Tags: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 浅く削った石の分類片。件数を小さなくぼみへ置き、選択は全体の色と明瞭な下線で示す。 */
 export default forwardRef<HTMLDivElement, StoneChipTagsProps>(function StoneChipTags(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBadges} mountContent={mountBadges}/>;
 });

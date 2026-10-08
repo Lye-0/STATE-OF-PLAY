@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
 };
 export type LoopedNoteHintProps = FoundationProps;
-/** Looped Note Hint: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** ループで下げた説明票。穴を持つ見出し帯と本文を分け、設定情報は平らな中面へ置く。 */
 export default forwardRef<HTMLDivElement, LoopedNoteHintProps>(function LoopedNoteHint(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderHint} mountContent={mountHint}/>;
 });

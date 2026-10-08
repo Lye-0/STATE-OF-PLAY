@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "max": 100
 };
 export type OrbitalMarkProgressProps = FoundationProps;
-/** Orbital Mark Progress: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 軌道の弧と中央の固定した読み取り面。完了するほど弧がつながる。 */
 export default forwardRef<HTMLDivElement, OrbitalMarkProgressProps>(function OrbitalMarkProgress(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderProgress} mountContent={mountProgress}/>;
 });

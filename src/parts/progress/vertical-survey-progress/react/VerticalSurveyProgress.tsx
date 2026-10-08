@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "max": 100
 };
 export type VerticalSurveyProgressProps = FoundationProps;
-/** Vertical Survey Progress: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 百分率と並ぶ縦の測量柱。単一の柱が下から満ち、横目盛りが量を読ませる。 */
 export default forwardRef<HTMLDivElement, VerticalSurveyProgressProps>(function VerticalSurveyProgress(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderProgress} mountContent={mountProgress}/>;
 });

@@ -41,7 +41,7 @@ const config: FoundationConfig = {
   ]
 };
 export type ReceiptTagsProps = FoundationProps;
-/** Receipt Tags: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 切り離す控え札。件数と削除をミシン目の先へ分け、選択状態を左端の線で記録する。 */
 export default forwardRef<HTMLDivElement, ReceiptTagsProps>(function ReceiptTags(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBadges} mountContent={mountBadges}/>;
 });

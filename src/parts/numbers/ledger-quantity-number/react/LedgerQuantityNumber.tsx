@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "unit": "UNITS"
 };
 export type LedgerQuantityNumberProps = FoundationProps;
-/** Ledger Quantity Number: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 縦の計量柱と数字の読み取り窓を並べ、赤い指標が上下の範囲内を移動する。 */
 export default forwardRef<HTMLDivElement, LedgerQuantityNumberProps>(function LedgerQuantityNumber(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderNumber} mountContent={mountNumber}/>;
 });

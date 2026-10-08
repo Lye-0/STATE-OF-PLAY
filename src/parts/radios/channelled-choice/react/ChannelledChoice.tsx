@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type ChannelledChoiceProps = FoundationProps;
-/** Channelled Choice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 溝の中で一列だけ点灯する選択盤。文字と丸印を読みやすい明るい面へ固定する。 */
 export default forwardRef<HTMLDivElement, ChannelledChoiceProps>(function ChannelledChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });

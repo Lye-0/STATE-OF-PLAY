@@ -13,7 +13,7 @@ const config: FoundationConfig = {
   "defaultValue": null
 };
 export type StoneMarkerNoticeProps = FoundationProps;
-/** Stone Marker Notice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 浅い石の標識。丸い通知記号をくぼみに置き、重要度は薄い側面の色で示す。 */
 export default forwardRef<HTMLDivElement, StoneMarkerNoticeProps>(function StoneMarkerNotice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderToast} mountContent={mountToast}/>;
 });

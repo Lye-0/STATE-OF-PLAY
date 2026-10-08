@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "range": false
 };
 export type EnamelPegRangeProps = FoundationProps;
-/** Enamel Peg Range: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** エナメルの小さいペグを目盛りへ差す。つまみは一つの光沢面で、上下の輪郭が指の位置を示す。 */
 export default forwardRef<HTMLDivElement, EnamelPegRangeProps>(function EnamelPegRange(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderSlider} mountContent={mountSlider}/>;
 });

@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "mode": "date"
 };
 export type FolioDateCalendarProps = FoundationProps;
-/** Folio Date Calendar: Bタイプ。元の外観と、独自の日時選択を備えた独立したDOM領域。 */
+/** 綴じた手帳の予定ページ。背の余白と横罫を残し、日付を押しても升目の配置を保つ。 */
 export default forwardRef<HTMLDivElement, FolioDateCalendarProps>(function FolioDateCalendar(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderDate} mountContent={mountDate}/>;
 });

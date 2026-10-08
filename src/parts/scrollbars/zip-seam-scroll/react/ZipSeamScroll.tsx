@@ -3,7 +3,7 @@ import React from 'react';
 import { useScrollArea, type ScrollAreaProps } from '../../../../shared/use-scroll-area';
 import '../styles.css';
 export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
-/** 移動済みの目地を閉じるファスナーの二重軌道。 Native scroll content with a skinned, proportional rail. */
+/** 細いジッパーの歯をつまみが閉じていく。通過済みの領域を一続きの縫い目へ変える。 */
 export default function ZipSeamScroll(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);

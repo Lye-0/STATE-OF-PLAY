@@ -1,9 +1,6 @@
 # Blueprint Register Table
 
-設計表の縦横の読取線を揃える。
-
-
-設計表の縦横の読取線を揃える。
+図面のデータ格子。列と行の細い罫を共有し、状態や進行度を文字と数値でも確認できる構成。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`BlueprintRegisterTable`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

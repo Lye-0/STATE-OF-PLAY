@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "range": false
 };
 export type FoldedPaperRangeProps = FoundationProps;
-/** Folded Paper Range: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 折った紙の舟をつまみにする。選択位置まで紙の折り線が伸び、入力文字は固定。 */
 export default forwardRef<HTMLDivElement, FoldedPaperRangeProps>(function FoldedPaperRange(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderSlider} mountContent={mountSlider}/>;
 });

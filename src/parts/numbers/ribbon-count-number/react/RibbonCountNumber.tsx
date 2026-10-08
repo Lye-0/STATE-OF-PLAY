@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "unit": "UNITS"
 };
 export type RibbonCountNumberProps = FoundationProps;
-/** Ribbon Count Number: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 帯を通した固定窓。上下の巻き取りローラーと送られる切り欠きで増減を表す。 */
 export default forwardRef<HTMLDivElement, RibbonCountNumberProps>(function RibbonCountNumber(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderNumber} mountContent={mountNumber}/>;
 });

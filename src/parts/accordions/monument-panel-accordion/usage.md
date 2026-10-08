@@ -1,9 +1,6 @@
 # Monument Panel Accordion
 
-碑の番号台と本文を分ける。
-
-
-碑の番号台と本文を分ける。
+レールに吊った見出しから本文が現れる。開いた項目の支点と内容を一本でつなぐ。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

@@ -1,9 +1,8 @@
 # Print Registration Board
 
-印刷版の二つの登録面が逆方向にずれ、中央の文字は固定する。
+印刷用紙と版の断面を分け、見当の十字を余白に固定する。赤青の文字ずれを使わない。
 
-
-Type B / CSS only。印刷版の二つの登録面が逆方向にずれ、中央の文字は固定する。
+Type A / CSS only。
 
 Reactではchildren、HTMLでは.sop-surface-contentに中身を入れます。サンプルの見出し・番号・グラフはサイトの展示専用です。部品はコンテナであり、ページ全体のCSSリセットを含みません。
 

@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "range": false
 };
 export type ShuttleRangeProps = FoundationProps;
-/** Shuttle Range: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** シャトルの通過位置で値を示す。固定した目盛りの間を二つの爪が滑る。 */
 export default forwardRef<HTMLDivElement, ShuttleRangeProps>(function ShuttleRange(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderSlider} mountContent={mountSlider}/>;
 });

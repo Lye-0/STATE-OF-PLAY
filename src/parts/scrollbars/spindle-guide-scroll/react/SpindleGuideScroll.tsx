@@ -3,7 +3,7 @@ import React from 'react';
 import { useScrollArea, type ScrollAreaProps } from '../../../../shared/use-scroll-area';
 import '../styles.css';
 export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
-/** 進行量で糸巻きの斜線が回り込む細い軸。 Native scroll content with a skinned, proportional rail. */
+/** 芯の両側に巻き枠を設けた糸巻きガイド。つまみの中だけに巻き方向の線が見える。 */
 export default function SpindleGuideScroll(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);

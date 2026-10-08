@@ -13,7 +13,7 @@ const config: FoundationConfig = {
   "defaultValue": null
 };
 export type CheckpointNoticeProps = FoundationProps;
-/** Checkpoint Notice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 確認地点の札。縦のステータス線の終点に確認記号を置き、本文の状態を読み取れる配置へ。 */
 export default forwardRef<HTMLDivElement, CheckpointNoticeProps>(function CheckpointNotice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderToast} mountContent={mountToast}/>;
 });

@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type NumberedPocketChoiceProps = FoundationProps;
-/** Numbered Pocket Choice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 整理ポケットへカードを一枚ずつ差し込む。番号の小区画を固定し、選択でポケット口の線が開く。 */
 export default forwardRef<HTMLDivElement, NumberedPocketChoiceProps>(function NumberedPocketChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });

@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
 };
 export type FoldedTagHintProps = FoundationProps;
-/** Folded Tag Hint: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 折り返す説明札。開いた紙の上部へ見出し、下の折り返し面へ適用操作を置く。 */
 export default forwardRef<HTMLDivElement, FoldedTagHintProps>(function FoldedTagHint(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderHint} mountContent={mountHint}/>;
 });

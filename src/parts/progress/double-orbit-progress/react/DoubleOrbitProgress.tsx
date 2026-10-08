@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "max": 100
 };
 export type DoubleOrbitProgressProps = FoundationProps;
-/** Double Orbit Progress: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 同じ進捗を二重表示せず、二つの半円で一つの周回を構成する計器。 */
 export default forwardRef<HTMLDivElement, DoubleOrbitProgressProps>(function DoubleOrbitProgress(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderProgress} mountContent={mountProgress}/>;
 });

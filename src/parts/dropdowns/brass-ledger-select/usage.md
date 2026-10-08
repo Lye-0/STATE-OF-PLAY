@@ -1,9 +1,6 @@
 # Brass Ledger Select
 
-台帳の欄外番号を固定し、選択した行に横罫が通る。
-
-
-台帳の欄外番号を固定し、選択した行に横罫が通る。
+引き出しの面板が選択行へ接続する。候補は深い棚の中に分かれ、選択棚だけを明るくする。
 
 ## 選択肢の差し替え
 Reactではitems配列へvalue/label/description/icon/badgeを渡します。Vanillaではmarkup.html内のdata-valueと表示内容を編集し、init(root)します。動的にDOMの選択肢を変更した後はcontroller.refresh()を呼びます。

@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "range": false
 };
 export type StackedDiscRangeProps = FoundationProps;
-/** Stacked Disc Range: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 積層ディスクの断面をつまみにする。厚みのある操作部と細い値軸を分ける。 */
 export default forwardRef<HTMLDivElement, StackedDiscRangeProps>(function StackedDiscRange(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderSlider} mountContent={mountSlider}/>;
 });

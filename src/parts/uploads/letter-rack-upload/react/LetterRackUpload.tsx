@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "accept": ".png,.jpg,.webp,.txt,.pdf"
 };
 export type LetterRackUploadProps = FoundationProps;
-/** Letter Rack Upload: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 手紙を立てるラック。下の受けと二つの仕切りで収容場所を作り、中央の上向き記号で追加を伝える。 */
 export default forwardRef<HTMLDivElement, LetterRackUploadProps>(function LetterRackUpload(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });

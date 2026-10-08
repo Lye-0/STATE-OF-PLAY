@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "accept": ".png,.jpg,.webp,.txt,.pdf"
 };
 export type PerforatedUploadProps = FoundationProps;
-/** Perforated Upload: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 切り離せる受領票の投入口。上部の番号欄を記号へ置き換え、選択したファイルを控えとして下へ出す。 */
 export default forwardRef<HTMLDivElement, PerforatedUploadProps>(function PerforatedUpload(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });

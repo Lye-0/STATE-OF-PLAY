@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "range": false
 };
 export type ThreadReelRangeProps = FoundationProps;
-/** Thread Reel Range: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 糸を巻き取るリールと張った線。選択量が糸の長さに対応し、巻き端がつまみになる。 */
 export default forwardRef<HTMLDivElement, ThreadReelRangeProps>(function ThreadReelRange(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderSlider} mountContent={mountSlider}/>;
 });

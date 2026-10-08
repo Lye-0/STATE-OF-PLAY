@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
 };
 export type MarginBracketHintProps = FoundationProps;
-/** Margin Bracket Hint: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 脚注を挟む角括弧。広い色面を抑え、見出しと適用の区切りだけで読み進められる説明欄。 */
 export default forwardRef<HTMLDivElement, MarginBracketHintProps>(function MarginBracketHint(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderHint} mountContent={mountHint}/>;
 });

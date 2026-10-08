@@ -39,7 +39,7 @@ const config: FoundationConfig = {
   ]
 };
 export type LetterpressTrailProps = FoundationProps;
-/** Letterpress Trail: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 印字した経路票。祖先の文字を矢印で結び、現在地は枠の中の太字にする。 */
 export default forwardRef<HTMLDivElement, LetterpressTrailProps>(function LetterpressTrail(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBreadcrumbs} mountContent={mountBreadcrumbs}/>;
 });

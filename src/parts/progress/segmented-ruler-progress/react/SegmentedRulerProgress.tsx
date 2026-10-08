@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "max": 100
 };
 export type SegmentedRulerProgressProps = FoundationProps;
-/** Segmented Ruler Progress: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 折尺の十等分を進捗に合わせて埋める。大きな読み取り値と分節した一つの尺度を対応させる。 */
 export default forwardRef<HTMLDivElement, SegmentedRulerProgressProps>(function SegmentedRulerProgress(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderProgress} mountContent={mountProgress}/>;
 });

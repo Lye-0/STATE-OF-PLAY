@@ -41,7 +41,7 @@ const config: FoundationConfig = {
   ]
 };
 export type LetterpressTagsProps = FoundationProps;
-/** Letterpress Tags: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 活版の分類票。強い文字と細い罫を組み、件数は右の小さい活字欄へ分ける。 */
 export default forwardRef<HTMLDivElement, LetterpressTagsProps>(function LetterpressTags(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBadges} mountContent={mountBadges}/>;
 });

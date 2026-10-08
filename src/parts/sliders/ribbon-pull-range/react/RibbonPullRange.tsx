@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "range": false
 };
 export type RibbonPullRangeProps = FoundationProps;
-/** Ribbon Pull Range: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** リボンの端をつまんで量を調節。左右の切り欠きと流れる帯を同じ素材へ揃える。 */
 export default forwardRef<HTMLDivElement, RibbonPullRangeProps>(function RibbonPullRange(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderSlider} mountContent={mountSlider}/>;
 });

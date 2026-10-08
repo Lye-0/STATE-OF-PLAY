@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
 };
 export type IndexCardHintProps = FoundationProps;
-/** Index Card Hint: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 索引カードの裏面に説明を展開。見出しと設定にそれぞれ独立した欄を設ける。 */
 export default forwardRef<HTMLDivElement, IndexCardHintProps>(function IndexCardHint(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderHint} mountContent={mountHint}/>;
 });

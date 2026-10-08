@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "mode": "date"
 };
 export type OrbitDateCalendarProps = FoundationProps;
-/** Orbit Date Calendar: Bタイプ。元の外観と、独自の日時選択を備えた独立したDOM領域。 */
+/** 月の周期を円い見出しで示す予定表。日付は読み慣れた七列を保ち、選択点だけを円で囲む。 */
 export default forwardRef<HTMLDivElement, OrbitDateCalendarProps>(function OrbitDateCalendar(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderDate} mountContent={mountDate}/>;
 });

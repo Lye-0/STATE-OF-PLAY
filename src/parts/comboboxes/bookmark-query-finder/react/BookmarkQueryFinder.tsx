@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type BookmarkQueryFinderProps = FoundationProps;
-/** Bookmark Query Finder: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 資料を拾うブックマーク。検索窓から細い索引帯を下ろし、開いた候補の種別欄へ接続する。 */
 export default forwardRef<HTMLDivElement, BookmarkQueryFinderProps>(function BookmarkQueryFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

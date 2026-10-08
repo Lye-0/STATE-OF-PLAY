@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "mode": "date"
 };
 export type InstrumentDateProps = FoundationProps;
-/** Instrument Date: Bタイプ。元の外観と、独自の日時選択を備えた独立したDOM領域。 */
+/** 計器の日時窓。入力値を独立した表示部にし、月見出しと移動ボタンを横の操作列へまとめる。 */
 export default forwardRef<HTMLDivElement, InstrumentDateProps>(function InstrumentDate(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderDate} mountContent={mountDate}/>;
 });

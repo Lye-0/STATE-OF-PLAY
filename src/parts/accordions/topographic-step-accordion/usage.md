@@ -1,9 +1,6 @@
 # Topographic Step Accordion
 
-等高線の段が開いたページの下に現れる。
-
-
-等高線の段が開いたページの下に現れる。
+工業用の解錠パネル。見出しの状態灯と展開面を同じ機構にまとめる。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

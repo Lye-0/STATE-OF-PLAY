@@ -9,7 +9,7 @@ export interface LinkageCrossesOrnamentProps extends HTMLAttributes<HTMLDivEleme
 
 const markup = "<div class=\"or-stage\" aria-hidden=\"true\"><div class=\"x-composition\"><i style=\"--i:0\"></i><i style=\"--i:1\"></i><i style=\"--i:2\"></i><i style=\"--i:3\"></i><i style=\"--i:4\"></i><i style=\"--i:5\"></i></div></div>";
 
-/** 羽根が光を散らす。 */
+/** 六つの連結節が一本の列として揺れる。接点の円と腕をつなぎ、単独の輪の反復から機構のまとまりへ。 */
 export default function LinkageCrossesOrnament({ paused = false, className = '', ...props }: LinkageCrossesOrnamentProps) {
   const element = useRef<HTMLDivElement>(null);
   const controller = useRef<AmbientOrnamentController | null>(null);

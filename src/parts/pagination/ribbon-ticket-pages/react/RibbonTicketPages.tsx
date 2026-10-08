@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "totalPages": 12
 };
 export type RibbonTicketPagesProps = FoundationProps;
-/** Ribbon Ticket Pages: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 紙の半券をめくるページ送り。選択券の折れた端が現在地の目印になる。 */
 export default forwardRef<HTMLDivElement, RibbonTicketPagesProps>(function RibbonTicketPages(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderPagination} mountContent={mountPagination}/>;
 });

@@ -13,7 +13,7 @@ const config: FoundationConfig = {
   "defaultValue": null
 };
 export type SealedEnvelopeNoticeProps = FoundationProps;
-/** Sealed Envelope Notice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 開封済みの封筒から届く通知。下の封筒口と右上の印を使い、内容そのものは平らに保つ。 */
 export default forwardRef<HTMLDivElement, SealedEnvelopeNoticeProps>(function SealedEnvelopeNotice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderToast} mountContent={mountToast}/>;
 });

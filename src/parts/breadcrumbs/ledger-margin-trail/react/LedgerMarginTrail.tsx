@@ -39,7 +39,7 @@ const config: FoundationConfig = {
   ]
 };
 export type LedgerMarginTrailProps = FoundationProps;
-/** Ledger Margin Trail: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 帳簿の索引から現在の欄へ。親の列と現在の欄を細い区切りでつなぐ。 */
 export default forwardRef<HTMLDivElement, LedgerMarginTrailProps>(function LedgerMarginTrail(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBreadcrumbs} mountContent={mountBreadcrumbs}/>;
 });

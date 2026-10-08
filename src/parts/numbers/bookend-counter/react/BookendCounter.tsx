@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "unit": "UNITS"
 };
 export type BookendCounterProps = FoundationProps;
-/** Bookend Counter: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 二冊の表紙を左右の操作部にし、中央の頁断面が数量に応じてずれるブックエンド。 */
 export default forwardRef<HTMLDivElement, BookendCounterProps>(function BookendCounter(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderNumber} mountContent={mountNumber}/>;
 });

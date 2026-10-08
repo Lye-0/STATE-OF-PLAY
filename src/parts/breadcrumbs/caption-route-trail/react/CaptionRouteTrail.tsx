@@ -39,7 +39,7 @@ const config: FoundationConfig = {
   ]
 };
 export type CaptionRouteTrailProps = FoundationProps;
-/** Caption Route Trail: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 記事の見出しへ続く静かな階層行。スラッシュの連続と太字の終端で読む順番を固定。 */
 export default forwardRef<HTMLDivElement, CaptionRouteTrailProps>(function CaptionRouteTrail(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBreadcrumbs} mountContent={mountBreadcrumbs}/>;
 });

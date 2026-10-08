@@ -13,7 +13,7 @@ const config: FoundationConfig = {
   "defaultValue": null
 };
 export type StitchedNoteNoticeProps = FoundationProps;
-/** Stitched Note Notice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 縫い込んだメッセージ札。本文の周囲にだけ縫い目を置き、操作は別の小さなラベルへ。 */
 export default forwardRef<HTMLDivElement, StitchedNoteNoticeProps>(function StitchedNoteNotice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderToast} mountContent={mountToast}/>;
 });

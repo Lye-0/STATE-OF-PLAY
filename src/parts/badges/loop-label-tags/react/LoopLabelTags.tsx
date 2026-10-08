@@ -41,7 +41,7 @@ const config: FoundationConfig = {
   ]
 };
 export type LoopLabelTagsProps = FoundationProps;
-/** Loop Label Tags: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 輪を通す荷札。左の小穴と文字面を分け、選択した札の紐だけを短く張る。 */
 export default forwardRef<HTMLDivElement, LoopLabelTagsProps>(function LoopLabelTags(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBadges} mountContent={mountBadges}/>;
 });

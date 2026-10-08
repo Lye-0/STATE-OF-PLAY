@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "totalPages": 12
 };
 export type BookplatePagesProps = FoundationProps;
-/** Bookplate Pages: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 蔵書票の小さい番号面。選択した票を二重の刻印で留め、狭幅では余白を保って折り返す。 */
 export default forwardRef<HTMLDivElement, BookplatePagesProps>(function BookplatePages(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderPagination} mountContent={mountPagination}/>;
 });

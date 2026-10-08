@@ -41,7 +41,7 @@ const config: FoundationConfig = {
   ]
 };
 export type InstrumentTagsProps = FoundationProps;
-/** Instrument Tags: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 計器の小さな表示片。文字と件数を独立した二つの面へ分け、選択時の点灯を小区画に留める。 */
 export default forwardRef<HTMLDivElement, InstrumentTagsProps>(function InstrumentTags(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBadges} mountContent={mountBadges}/>;
 });

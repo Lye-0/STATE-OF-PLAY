@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "totalPages": 12
 };
 export type FoldedTabPagesProps = FoundationProps;
-/** Folded Tab Pages: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 折れたタブの三角端で現在位置を示す。文字を傾けず、下紙の折りだけを変える。 */
 export default forwardRef<HTMLDivElement, FoldedTabPagesProps>(function FoldedTabPages(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderPagination} mountContent={mountPagination}/>;
 });

@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "accept": ".png,.jpg,.webp,.txt,.pdf"
 };
 export type CeramicTrayUploadProps = FoundationProps;
-/** Ceramic Tray Upload: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 浅い受け皿にファイルを置く。中央の記号と文字を揃え、ドラッグ時に皿の内側だけを明るくする。 */
 export default forwardRef<HTMLDivElement, CeramicTrayUploadProps>(function CeramicTrayUpload(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });

@@ -1,9 +1,6 @@
 # Gusset File Accordion
 
-マチが内容の高さに沿って開く。
-
-
-マチが内容の高さに沿って開く。
+ガセットを開く書類綴じ。左の蛇腹が開いた本文面の高さまで広がる。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

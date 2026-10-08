@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type RailMountedFinderProps = FoundationProps;
-/** Rail Mounted Finder: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 検索結果を一本のレールへ取り付ける。入力欄の下の支えが、開いた候補の左の支柱へ続く。 */
 export default forwardRef<HTMLDivElement, RailMountedFinderProps>(function RailMountedFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

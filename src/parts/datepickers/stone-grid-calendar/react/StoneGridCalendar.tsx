@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "mode": "date"
 };
 export type StoneGridCalendarProps = FoundationProps;
-/** Stone Grid Calendar: Bタイプ。元の外観と、独自の日時選択を備えた独立したDOM領域。 */
+/** 石に刻む月の格子。日付の並びを浅い小区画にし、選択日はくぼみの底の濃い面で表示。 */
 export default forwardRef<HTMLDivElement, StoneGridCalendarProps>(function StoneGridCalendar(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderDate} mountContent={mountDate}/>;
 });

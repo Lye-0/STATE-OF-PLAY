@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "range": false
 };
 export type RecessedHandleRangeProps = FoundationProps;
-/** Recessed Handle Range: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 深い引き手をつまみにし、溝の中で値を動かす。操作面の凹みが指の置き場を示す。 */
 export default forwardRef<HTMLDivElement, RecessedHandleRangeProps>(function RecessedHandleRange(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderSlider} mountContent={mountSlider}/>;
 });

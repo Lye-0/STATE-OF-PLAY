@@ -11,7 +11,7 @@ const config = {
   "tone": 631,
   "travel": 44
 };
-/** 上下の停止位置と小さな指掛かりを備えた縦型スイッチ。 */
+/** 固定したOFF／ON表示と移動する選択面で、増減ではなく有効状態を明示する。 */
 export default function VerticalSleeveToggle(props: SimpleToggleProps) {
   const {element, checked} = useSimpleToggle(config, props);
   const {checked: _checked, defaultChecked: _initial, onCheckedChange: _change, className = '', ...buttonProps} = props;

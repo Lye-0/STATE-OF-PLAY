@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "unit": "UNITS"
 };
 export type StitchedCountNumberProps = FoundationProps;
-/** Stitched Count Number: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 円筒状の布ベルトが数量に合わせて送られ、固定した数字札を上下のステッチが挟む。 */
 export default forwardRef<HTMLDivElement, StitchedCountNumberProps>(function StitchedCountNumber(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderNumber} mountContent={mountNumber}/>;
 });

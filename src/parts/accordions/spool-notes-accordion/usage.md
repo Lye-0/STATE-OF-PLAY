@@ -1,9 +1,6 @@
 # Spool Notes Accordion
 
-番号の軸を内容まで連続させ、開いた箇所に巻きの印を置く。
-
-
-番号の軸を内容まで連続させ、開いた箇所に巻きの印を置く。
+縫った見出し帯から布の本文面が広がる。選択した縫い目だけを濃く保つ。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

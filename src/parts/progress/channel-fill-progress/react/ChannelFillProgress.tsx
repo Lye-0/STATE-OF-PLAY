@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "max": 100
 };
 export type ChannelFillProgressProps = FoundationProps;
-/** Channel Fill Progress: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 充填カートリッジ。丸い終端へ向かう一本の液柱と下の数値で量を読む。 */
 export default forwardRef<HTMLDivElement, ChannelFillProgressProps>(function ChannelFillProgress(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderProgress} mountContent={mountProgress}/>;
 });

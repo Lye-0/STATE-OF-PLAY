@@ -13,7 +13,7 @@ const config: FoundationConfig = {
   "defaultValue": null
 };
 export type BookmarkAlertProps = FoundationProps;
-/** Bookmark Alert: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 本の余白へ挟む通知札。細い栞を本文の左に置き、操作リンクを最終行に揃える。 */
 export default forwardRef<HTMLDivElement, BookmarkAlertProps>(function BookmarkAlert(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderToast} mountContent={mountToast}/>;
 });

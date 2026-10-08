@@ -1,9 +1,8 @@
 # Vertical Sleeve Toggle
 
-上下の停止位置と小さな指掛かりを備えた縦型スイッチ。
+固定したOFF／ON表示と移動する選択面で、増減ではなく有効状態を明示する。
 
-
-Type B / CSS + Events。上下の停止位置と小さな指掛かりを備えた縦型スイッチ。
+Type B / CSS + Events。
 
 基準サイズ: 104×64px。展示ページの倍率ではなく、実際の部品サイズです。フォームに接続する場合はchecked/onCheckedChangeをアプリの状態へ渡します。button型switchはフォーム値を自動送信しないため、必要ならhidden inputへ反映してください。
 

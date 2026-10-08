@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "range": false
 };
 export type StoneInlayRangeProps = FoundationProps;
-/** Stone Inlay Range: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 石の溝へ滑る小さい楔。台の切れ目とつまみを揃え、量を埋まった溝で読ませる。 */
 export default forwardRef<HTMLDivElement, StoneInlayRangeProps>(function StoneInlayRange(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderSlider} mountContent={mountSlider}/>;
 });

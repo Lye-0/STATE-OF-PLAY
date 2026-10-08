@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "accept": ".png,.jpg,.webp,.txt,.pdf"
 };
 export type StitchedPouchUploadProps = FoundationProps;
-/** Stitched Pouch Upload: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 布の袋へ素材を収める。上の紐と下の縫い目を分け、ドラッグ時は袋口の幅だけを変える。 */
 export default forwardRef<HTMLDivElement, StitchedPouchUploadProps>(function StitchedPouchUpload(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });

@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type LetterboxFinderProps = FoundationProps;
-/** Letterbox Finder: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 投函口のように奥行きのある入力欄。候補は横長の宛名票として、それぞれの右端を揃える。 */
 export default forwardRef<HTMLDivElement, LetterboxFinderProps>(function LetterboxFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

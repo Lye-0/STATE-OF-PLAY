@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "accept": ".png,.jpg,.webp,.txt,.pdf"
 };
 export type FoldedEnvelopeUploadProps = FoundationProps;
-/** Folded Envelope Upload: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 開いた封筒へ素材を入れる。上の折り返しと下の封筒口を離し、中央の操作領域を明瞭に保つ。 */
 export default forwardRef<HTMLDivElement, FoldedEnvelopeUploadProps>(function FoldedEnvelopeUpload(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });

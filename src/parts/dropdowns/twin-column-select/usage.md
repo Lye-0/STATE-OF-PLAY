@@ -1,9 +1,6 @@
 # Spine Index Select
 
-左右二列を廃止し、見出しから候補へ視線が一方向に流れる列。
-
-
-左右二列を廃止し、見出しから候補へ視線が一方向に流れる列。
+レシートの本文と選択欄を一つの列として組む。選択した候補の横に打刻印を置く。
 
 ## 選択肢の差し替え
 Reactではitems配列へvalue/label/description/icon/badgeを渡します。Vanillaではmarkup.html内のdata-valueと表示内容を編集し、init(root)します。動的にDOMの選択肢を変更した後はcontroller.refresh()を呼びます。

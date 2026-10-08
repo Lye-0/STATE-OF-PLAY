@@ -1,8 +1,6 @@
 # Ceramic Stamp Check
 
-磁器の押印面が枠の中へ沈む。
-
-磁器の押印面が枠の中へ沈む。
+陶製スタンプの浅い凹み。チェック時に外周が沈み、白い底面に記号が現れる。
 
 本物のinput[type=checkbox]です。label全体をクリックでき、Space・Tab・FormData・required・fieldsetのdisabledはネイティブのままです。複数の独立したチェックで複数選択を作れます。独自のキーイベントでSpaceを二重処理しません。
 

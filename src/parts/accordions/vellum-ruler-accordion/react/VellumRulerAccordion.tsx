@@ -3,7 +3,7 @@ import React from 'react';
 import {AccordionView,type AccordionProps} from '../../../../shared/accordion-view';
 import '../styles.css';
 export type {AccordionProps,AccordionItem} from '../../../../shared/accordion-view';
-/** 透明な定規を欄外に残し、読む面を無地にする。 */
+/** レタープレスの大きい見出し段。本文は細い罫線から下へ続き、不要な内側の箱を作らない。 */
 export default function VellumRulerAccordion({className='',...props}:AccordionProps){
  return <AccordionView {...props} className={`sop-vellum-ruler-accordion ${className}`}/>;
 }

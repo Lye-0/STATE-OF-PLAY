@@ -1,7 +1,7 @@
 import React, { type HTMLAttributes, type CSSProperties } from 'react';
 import '../styles.css';
 export interface TerracedPaperPanelProps extends HTMLAttributes<HTMLDivElement> {}
-/** 三段の紙の地形が端から展開し、上段の文字面を保つ。 Content and layout remain yours. */
+/** 段丘の三層を外周ではなく床面として構成。本文の下に奥行きが見え、層だけが開く。 */
 export default function TerracedPaperPanel({children, className = '', ...props}: TerracedPaperPanelProps) {
   return <div {...props} className={`sop-surface sop-terraced-paper-panel ${className}`}>
 

@@ -13,7 +13,7 @@ const config: FoundationConfig = {
   "defaultValue": null
 };
 export type OpenBracketNoticeProps = FoundationProps;
-/** Open Bracket Notice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 角括弧で受ける短いお知らせ。広い塗り面を減らし、本文の始点と終点にだけ支えを置く。 */
 export default forwardRef<HTMLDivElement, OpenBracketNoticeProps>(function OpenBracketNotice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderToast} mountContent={mountToast}/>;
 });

@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "accept": ".png,.jpg,.webp,.txt,.pdf"
 };
 export type CargoBayUploadProps = FoundationProps;
-/** Cargo Bay Upload: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 搬入口の床を示すドロップ領域。左右のガイドと奥の留め具がドラッグ時だけ内へ寄る。 */
 export default forwardRef<HTMLDivElement, CargoBayUploadProps>(function CargoBayUpload(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });

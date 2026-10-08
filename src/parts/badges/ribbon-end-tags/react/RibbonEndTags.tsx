@@ -41,7 +41,7 @@ const config: FoundationConfig = {
   ]
 };
 export type RibbonEndTagsProps = FoundationProps;
-/** Ribbon End Tags: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 短いリボンの分類片。折り返しを左端に限定し、選択で帯の上辺が濃くなる。 */
 export default forwardRef<HTMLDivElement, RibbonEndTagsProps>(function RibbonEndTags(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBadges} mountContent={mountBadges}/>;
 });

@@ -1,9 +1,6 @@
 # Blueprint Dock Navigation
 
-図面の行先を二つの検査窓として配置。
-
-
-図面の行先を二つの検査窓として配置。
+図面の機能案内。ブランドと行先を格子に揃え、現在の領域を薄い青の面と濃い輪郭で示す。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`BlueprintDockNavigation`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

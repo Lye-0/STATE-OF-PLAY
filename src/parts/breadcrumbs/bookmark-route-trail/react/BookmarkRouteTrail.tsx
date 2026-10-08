@@ -39,7 +39,7 @@ const config: FoundationConfig = {
   ]
 };
 export type BookmarkRouteTrailProps = FoundationProps;
-/** Bookmark Route Trail: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 章の栞が現在地を指す。親の章は横にたどれる文字、現在章は差し込んだ札に分ける。 */
 export default forwardRef<HTMLDivElement, BookmarkRouteTrailProps>(function BookmarkRouteTrail(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBreadcrumbs} mountContent={mountBreadcrumbs}/>;
 });

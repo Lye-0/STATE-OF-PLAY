@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "totalPages": 12
 };
 export type StoneStepPagesProps = FoundationProps;
-/** Stone Step Pages: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 石段の一段を現在地として選ぶ。各段の幅と高さを揃え、押し分けを確保。 */
 export default forwardRef<HTMLDivElement, StoneStepPagesProps>(function StoneStepPages(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderPagination} mountContent={mountPagination}/>;
 });

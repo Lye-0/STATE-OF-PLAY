@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "max": 100
 };
 export type BookSpineProgressProps = FoundationProps;
-/** Book Spine Progress: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 本の頁断面が左から揃う進捗。表紙と背の中で確定量だけが濃く積み上がる。 */
 export default forwardRef<HTMLDivElement, BookSpineProgressProps>(function BookSpineProgress(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderProgress} mountContent={mountProgress}/>;
 });

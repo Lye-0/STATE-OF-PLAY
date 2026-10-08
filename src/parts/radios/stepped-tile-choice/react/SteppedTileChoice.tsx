@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type SteppedTileChoiceProps = FoundationProps;
-/** Stepped Tile Choice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 低い段に載る選択タイル。各行を同じ高さに保ち、選択した段の支えだけを広げる。 */
 export default forwardRef<HTMLDivElement, SteppedTileChoiceProps>(function SteppedTileChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });

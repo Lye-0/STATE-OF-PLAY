@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type ClaspBandChoiceProps = FoundationProps;
-/** Clasp Band Choice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 留め金付きの選択帯。選択した行の端の金具を閉じ、単一選択の丸印も併記する。 */
 export default forwardRef<HTMLDivElement, ClaspBandChoiceProps>(function ClaspBandChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });

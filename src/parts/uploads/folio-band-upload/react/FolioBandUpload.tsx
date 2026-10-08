@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "accept": ".png,.jpg,.webp,.txt,.pdf"
 };
 export type FolioBandUploadProps = FoundationProps;
-/** Folio Band Upload: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 本を束ねる帯へ資料を追加。外周の紙束と下の留め帯で置き場所を示し、選択後の票を下に連ねる。 */
 export default forwardRef<HTMLDivElement, FolioBandUploadProps>(function FolioBandUpload(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });

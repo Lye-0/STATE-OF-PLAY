@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type RailSeatChoiceProps = FoundationProps;
-/** Rail Seat Choice: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 選択位置を縦のレールへ接続する。丸い選択点から本文へ伸びる短い連結線を持つ。 */
 export default forwardRef<HTMLDivElement, RailSeatChoiceProps>(function RailSeatChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });

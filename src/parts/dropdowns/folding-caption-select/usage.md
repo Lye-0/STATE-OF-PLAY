@@ -1,9 +1,6 @@
 # Folding Caption Select
 
-見出しの折り目が本文リストへつながる扇状の余白。
-
-
-見出しの折り目が本文リストへつながる扇状の余白。
+選択肢を一枚のカード索引へ分け、見出しと確定印を対角へ配置したブックプレート。
 
 ## 選択肢の差し替え
 Reactではitems配列へvalue/label/description/icon/badgeを渡します。Vanillaではmarkup.html内のdata-valueと表示内容を編集し、init(root)します。動的にDOMの選択肢を変更した後はcontroller.refresh()を呼びます。

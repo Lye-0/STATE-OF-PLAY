@@ -39,7 +39,7 @@ const config: FoundationConfig = {
   ]
 };
 export type OpenMarkerTrailProps = FoundationProps;
-/** Open Marker Trail: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 開いた角の中へ祖先の道筋を置く。最後の現在地だけを上下の括弧で挟む。 */
 export default forwardRef<HTMLDivElement, OpenMarkerTrailProps>(function OpenMarkerTrail(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBreadcrumbs} mountContent={mountBreadcrumbs}/>;
 });

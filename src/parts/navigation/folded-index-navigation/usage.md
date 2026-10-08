@@ -1,9 +1,6 @@
 # Folded Index Navigation
 
-折った索引を縦に開いて行先を読む。
-
-
-折った索引を縦に開いて行先を読む。
+折り畳んだ索引。リンクの折り返しを下辺に揃え、開いたメニューにも同じ平らな見出しを用いる。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`FoldedIndexNavigation`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

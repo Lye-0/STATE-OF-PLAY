@@ -39,7 +39,7 @@ const config: FoundationConfig = {
   ]
 };
 export type StonePathTrailProps = FoundationProps;
-/** Stone Path Trail: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 三段の石段として階層を下る。縦配置でも字下げと曲がり線で親子関係を示す。 */
 export default forwardRef<HTMLDivElement, StonePathTrailProps>(function StonePathTrail(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBreadcrumbs} mountContent={mountBreadcrumbs}/>;
 });
