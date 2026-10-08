@@ -3,7 +3,7 @@ import React from 'react';
 import {TextFieldView,type TextFieldProps} from '../../../../shared/text-field-view';
 import '../styles.css';
 export type {TextFieldProps} from '../../../../shared/text-field-view';
-/** 帳簿のラベル列と書き込み行を分ける。行末の打刻位置が入力中の状態を示す。 */
+/** 下の一本のレールへ、二つの締付け台で書くプレートを固定する。締付け台の上の顎だけを入力時に押し、縦のネジとレールの受けを接続する。読む面とクリアの座標は変えない。 */
 export default function RailClampInput({className='',...props}:TextFieldProps){
  return <TextFieldView {...props} multiline={props.multiline ?? false} type={props.type ?? 'text'} clearable={props.clearable ?? true} showCount={props.showCount ?? false} autoGrow={props.autoGrow ?? false} className={`sop-rail-clamp-input ${className}`}/>;
 }
