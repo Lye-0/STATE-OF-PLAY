@@ -11,7 +11,8 @@ const config: FoundationConfig = {
   "label": "コレクションをめくる",
   "description": "",
   "defaultValue": 4,
-  "totalPages": 12
+  "totalPages": 12,
+  "paginationLayout": "anchored"
 };
 export type StoneStepPagesProps = FoundationProps;
 /** 石段の一段を現在地として選ぶ。各段の幅と高さを揃え、押し分けを確保。 */

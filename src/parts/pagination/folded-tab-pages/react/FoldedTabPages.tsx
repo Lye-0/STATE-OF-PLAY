@@ -11,7 +11,8 @@ const config: FoundationConfig = {
   "label": "コレクションをめくる",
   "description": "",
   "defaultValue": 4,
-  "totalPages": 12
+  "totalPages": 12,
+  "paginationLayout": "anchored"
 };
 export type FoldedTabPagesProps = FoundationProps;
 /** 折れたタブの三角端で現在位置を示す。文字を傾けず、下紙の折りだけを変える。 */

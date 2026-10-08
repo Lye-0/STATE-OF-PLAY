@@ -11,7 +11,8 @@ const config: FoundationConfig = {
   "label": "コレクションをめくる",
   "description": "",
   "defaultValue": 4,
-  "totalPages": 12
+  "totalPages": 12,
+  "paginationLayout": "anchored"
 };
 export type ConsolePagesProps = FoundationProps;
 /** 計器の数字キーからページを選ぶ。現在キーは下へ沈んだ形になり、数値表示を別に保つ。 */

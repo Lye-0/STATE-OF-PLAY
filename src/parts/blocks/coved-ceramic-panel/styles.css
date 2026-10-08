@@ -21,3 +21,8 @@
 
 /* Final visual review: layout and material separation. */
 .sop-surface.sop-coved-ceramic-panel>.sop-surface-content{padding:var(--sop-padding,28px)!important}
+/* Style review refinement */
+/* 陶器の内側の輪郭を一段減らす。柔らかな凹面と本文の一枚面に分けて、額縁の厚さを抑える。 */
+.sop-surface.sop-coved-ceramic-panel.sop-coved-ceramic-panel{box-shadow:inset 3px 3px 10px #9a88852b,inset -3px -3px 8px #fff6}.sop-surface.sop-coved-ceramic-panel.sop-coved-ceramic-panel::before{display:none}.sop-surface.sop-coved-ceramic-panel.sop-coved-ceramic-panel::after{inset:17px 23px;background:#f6f2ec;box-shadow:none;border-radius:30px 3px}
+
+@media(forced-colors:active){.sop-surface.sop-coved-ceramic-panel.sop-coved-ceramic-panel{--paper:Canvas;--ink:CanvasText;--muted:CanvasText;--accent:Highlight;--edge:ButtonText;--ff-ink:CanvasText;--ff-muted:CanvasText;--sg-bg:Canvas;--sg-ink:CanvasText;--sg-muted:CanvasText;--sg-a:Highlight;--wb-bg:Canvas;--wb-ink:CanvasText;--wb-muted:CanvasText;--wb-accent:Highlight;color:CanvasText;background:Canvas;border-color:ButtonText;box-shadow:none}.sop-surface.sop-coved-ceramic-panel.sop-coved-ceramic-panel :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}.sop-surface.sop-coved-ceramic-panel.sop-coved-ceramic-panel :is(button,input,textarea,select,a):focus-visible{outline-color:Highlight}.sop-surface.sop-coved-ceramic-panel.sop-coved-ceramic-panel :is([aria-current=page],[aria-selected=true],[data-selected=true]){color:HighlightText;background:Highlight;border-color:Highlight}}

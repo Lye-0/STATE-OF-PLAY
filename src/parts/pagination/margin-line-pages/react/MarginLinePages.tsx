@@ -11,7 +11,8 @@ const config: FoundationConfig = {
   "label": "コレクションをめくる",
   "description": "",
   "defaultValue": 4,
-  "totalPages": 12
+  "totalPages": 12,
+  "paginationLayout": "anchored"
 };
 export type MarginLinePagesProps = FoundationProps;
 /** 余白の章番号を選ぶ編集用のページ送り。選択番号の下の赤線が基準線に接続。 */

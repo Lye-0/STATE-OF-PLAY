@@ -11,7 +11,8 @@ const config: FoundationConfig = {
   "label": "コレクションをめくる",
   "description": "",
   "defaultValue": 4,
-  "totalPages": 12
+  "totalPages": 12,
+  "paginationLayout": "anchored"
 };
 export type PerforatedPagesProps = FoundationProps;
 /** 切り取り線の一枚ずつの票。小さい画面でも票の幅を縮めず二段へ送る。 */

@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';import fs from 'node:fs';import path fro
 import {buildCatalog,ROOT} from '../scripts/catalog.ts';import {getDelivery} from '../src/catalog/delivery.ts';import {currentParts} from './gallery-counts.ts';import {lightSelectedContrast} from './light-selected-contrast.ts';
 const specs=currentParts().filter(p=>p.tags.includes('EXPANSION-50'));const categories=[...new Set(specs.map(p=>p.category))];const chosen=process.env.SOP_EXPANSION_CATEGORIES?.split(',');
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});const errors:string[]=[];
-const server=await createServer({root:ROOT,server:{host:'127.0.0.1',port:0,watch:{ignored:['**/.test-output/**','**/docs/**']}}});await server.listen();
+const server=await createServer({root:ROOT,server:{host:'127.0.0.1',port:0,hmr:false,watch:{ignored:['**/.test-output/**','**/docs/**']}}});await server.listen();
 try{
  for(const category of categories.filter(c=>!chosen||chosen.includes(c))){
   const parts=buildCatalog(ROOT,specs.filter(p=>p.category===category).map(p=>p.id),{appearance:false}).parts;

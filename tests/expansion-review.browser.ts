@@ -6,9 +6,10 @@ import {createServer} from 'vite';
 import {buildCatalog, ROOT} from '../scripts/catalog.ts';
 import {getDelivery} from '../src/catalog/delivery.ts';
 import {currentParts} from './gallery-counts.ts';
+import {lightSelectedContrast} from './light-selected-contrast.ts';
 
 // Regressions observed in the visual review: test the real exported components, without gallery styles.
-const categories = ['ornaments','loaders','numbers','segments','tabs','uploads','dropdowns','textboxes','contextmenus','tables'];
+const categories = ['ornaments','loaders','numbers','segments','tabs','uploads','dropdowns','textboxes','contextmenus','tables','pagination','avatars','hints'];
 const specs = currentParts().filter(p => p.tags.includes('EXPANSION-50') && categories.includes(p.category));
 const directory = path.join(ROOT, '.test-output/expansion-review');
 fs.mkdirSync(directory, {recursive:true});
@@ -29,7 +30,7 @@ for (const part of [${parts.map((p,i)=>`{id:${JSON.stringify(p.id)},markup:${JSO
 }
 window.ready = true;`);
 fs.writeFileSync(path.join(directory,'index.html'), '<html><head><meta charset="utf-8"><style>body{margin:0;padding:12px;background:#242b36;color:#eee}section{width:100%;max-width:420px;box-sizing:border-box;margin:40px 0;padding:8px}*{box-sizing:border-box}</style></head><body><script type="module" src="./entry.js"></script></body></html>');
-const server = await createServer({root:ROOT,server:{host:'127.0.0.1',port:0,watch:{ignored:['**/.test-output/**']}}});
+const server = await createServer({root:ROOT,server:{host:'127.0.0.1',port:0,hmr:false,watch:{ignored:['**/.test-output/**']}}});
 await server.listen();
 const browser = await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
 const page = await browser.newPage({viewport:{width:320,height:844},reducedMotion:'reduce'});
@@ -87,6 +88,72 @@ try {
   }
  }
  console.log('PASS equal segments, aligned upload controls, complete loader geometry and committed number material');
+ // Pagination controls must stay under the pointer as ellipses enter/leave the strip.
+ for (const width of [320,390,768,1500]) {
+  await page.setViewportSize({width,height:844});
+  for (const part of specs.filter(p=>p.category==='pagination')) {
+   const root=page.locator(`.sop-${part.id}`); await root.scrollIntoViewIfNeeded();
+   const positions=await root.evaluate((el,id)=>{
+    const states=[];
+    for(let n=1;n<=12;n++){
+     (window as any).apis[id].setData(n);
+     const nav=el.querySelector('[data-pages]')!,base=nav.getBoundingClientRect();
+     const controls=['前のページ','次のページ'].map(label=>{
+      const box=nav.querySelector(`[aria-label="${label}"]`)!.getBoundingClientRect();
+      return {x:box.x-base.x,y:box.y-base.y,width:box.width,height:box.height};
+     });
+     states.push(controls);
+    }
+    return states;
+   },part.id);
+   assert.ok(positions.every(state=>state.every((box,i)=>Object.entries(box).every(([key,value])=>Math.abs(value-(positions[0][i] as any)[key])<1))),`${part.id}: arrows stable at ${width}px`);
+   assert.ok(positions[0].every(box=>box.width>=24&&box.height>=24),part.id+' usable arrow targets');
+   if(width===320){
+    await page.evaluate(id=>(window as any).apis[id].setData(1),part.id);
+    await root.locator('[aria-label="次のページ"]').focus();
+    await page.keyboard.press('Enter'); await page.keyboard.press('Enter');
+    assert.equal(await root.locator('[aria-current=page]').getAttribute('data-page'),'3',part.id+' repeated keyboard activation');
+    assert.equal(await page.evaluate(()=>document.activeElement?.getAttribute('aria-label')),'次のページ',part.id+' focus survives rerender');
+    await page.evaluate(id=>(window as any).apis[id].setData(11),part.id);
+    await root.locator('[aria-label="次のページ"]').focus(); await page.keyboard.press('Enter');
+    assert.equal(await page.evaluate(()=>document.activeElement?.getAttribute('aria-current')),'page',part.id+' terminal-page focus stays in navigation');
+   }
+  }
+ }
+ await page.setViewportSize({width:320,height:844});
+ const pagingContrast=await lightSelectedContrast(page,specs.filter(p=>p.category==='pagination').map(p=>p.id));
+ assert.equal(pagingContrast.checked,20,'each current page label is checked');
+ assert.deepEqual(pagingContrast.failures,[],'current page labels meet text contrast');
+ console.log('PASS 20 pagers: fixed arrows across 12 states / 4 widths, repeated keyboard activation and terminal focus');
+ await page.emulateMedia({reducedMotion:'no-preference'});
+ for(const part of specs.filter(p=>p.category==='avatars'&&p.designType==='B')){
+  const root=page.locator(`.sop-${part.id}`);await root.scrollIntoViewIfNeeded();await page.mouse.move(0,0);
+  await page.waitForTimeout(250);
+  const positions=()=>root.locator('.sg-person').first().evaluate(e=>['.sg-initials','.sg-person-name'].map(sel=>{const r=e.querySelector(sel)!.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height}}));
+  const before=await positions();await root.locator('.sg-person').first().hover();await page.waitForTimeout(400);
+  assert.deepEqual(await positions(),before,part.id+' initials and label remain fixed on hover');
+ }
+ await page.emulateMedia({reducedMotion:'reduce'});
+ const clearRoot=page.locator('.sop-engraved-label-field');await clearRoot.scrollIntoViewIfNeeded();
+ await clearRoot.locator('input').first().fill('消去操作の確認');
+ const clearContrast=await clearRoot.locator('.sop-field-clear').evaluate(el=>{
+  const rgb=(value:string)=>value.match(/[\d.]+/g)!.slice(0,3).map(Number);
+  const lum=(c:number[])=>c.map(v=>v/255<=.04045?v/3294.6:((v/255+.055)/1.055)**2.4).reduce((a,v,i)=>a+v*[.2126,.7152,.0722][i],0);
+  const a=lum(rgb(getComputedStyle(el).color)),b=lum(rgb(getComputedStyle(el.closest('.sop-field-shell')!).backgroundColor));
+  return (Math.max(a,b)+.05)/(Math.min(a,b)+.05);
+ });
+ assert.ok(clearContrast>=3,'engraved-label-field clear icon contrast >= 3:1');
+ await clearRoot.locator('.sop-field-clear').click();assert.equal(await clearRoot.locator('input').first().inputValue(),'');
+ console.log('PASS fixed B avatar text and visible, functional field clear control');
+ const hint=page.locator('.sop-index-card-hint');await hint.scrollIntoViewIfNeeded();
+ await hint.locator('[data-hint-trigger]').click();await hint.locator('[data-hint-panel]').waitFor({state:'visible'});
+ const headingFits=await hint.locator('.ff-hint-content').evaluate(content=>{
+  const clip=content.getBoundingClientRect(),heading=content.querySelector('.ff-hint-heading')!.getBoundingClientRect();
+  return heading.top>=clip.top&&heading.left>=clip.left&&heading.bottom<=clip.bottom&&heading.right<=clip.right;
+ });
+ assert.ok(headingFits,'index-card hint heading stays inside the scrollable content');
+ await page.keyboard.press('Escape');
+ console.log('PASS index-card hint heading remains fully visible');
  // Text implicated by the audit: composite translucent ancestors before measuring contrast.
  for (const part of specs.filter(p => ['dropdowns','textboxes','contextmenus','tables','segments'].includes(p.category) &&
    (p.category!=='segments' || ['relay-bank-segments','circuit-rail-segments'].includes(p.id)) && (p.designType==='A' || ['contextmenus','tables'].includes(p.category) || ['everyday-select','dense-list-select','warm-form-select'].includes(p.id)))) {

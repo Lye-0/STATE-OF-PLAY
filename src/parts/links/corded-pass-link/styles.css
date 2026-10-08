@@ -18,3 +18,8 @@
 .sop-link.sop-corded-pass-link::before,.sop-link.sop-corded-pass-link::after{content:"";position:absolute;pointer-events:none}
 
 .sop-link.sop-corded-pass-link{padding-inline-start:38px}
+/* Style review refinement */
+/* 通行札の右の点線輪を外し、コードと行先の関係を一本化。 */
+.sop-link.sop-corded-pass-link.sop-corded-pass-link::after{border:0;box-shadow:none;background:none}.sop-link.sop-corded-pass-link.sop-corded-pass-link::before{border-width:1px;opacity:.7}
+
+@media(forced-colors:active){.sop-link.sop-corded-pass-link.sop-corded-pass-link{--paper:Canvas;--ink:CanvasText;--muted:CanvasText;--accent:Highlight;--edge:ButtonText;--ff-ink:CanvasText;--ff-muted:CanvasText;--sg-bg:Canvas;--sg-ink:CanvasText;--sg-muted:CanvasText;--sg-a:Highlight;--wb-bg:Canvas;--wb-ink:CanvasText;--wb-muted:CanvasText;--wb-accent:Highlight;color:CanvasText;background:Canvas;border-color:ButtonText;box-shadow:none}.sop-link.sop-corded-pass-link.sop-corded-pass-link :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}.sop-link.sop-corded-pass-link.sop-corded-pass-link :is(button,input,textarea,select,a):focus-visible{outline-color:Highlight}.sop-link.sop-corded-pass-link.sop-corded-pass-link :is([aria-current=page],[aria-selected=true],[data-selected=true]){color:HighlightText;background:Highlight;border-color:Highlight}}

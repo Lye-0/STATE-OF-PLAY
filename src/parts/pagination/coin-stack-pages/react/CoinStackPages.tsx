@@ -11,7 +11,8 @@ const config: FoundationConfig = {
   "label": "コレクションをめくる",
   "description": "",
   "defaultValue": 4,
-  "totalPages": 12
+  "totalPages": 12,
+  "paginationLayout": "anchored"
 };
 export type CoinStackPagesProps = FoundationProps;
 /** 円形を崩さないコインのページ送り。数字の座を正円のまま保持し、選択した一枚だけ刻印。 */

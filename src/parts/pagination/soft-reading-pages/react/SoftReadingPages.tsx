@@ -11,7 +11,8 @@ const config: FoundationConfig = {
   "label": "コレクションをめくる",
   "description": "",
   "defaultValue": 4,
-  "totalPages": 12
+  "totalPages": 12,
+  "paginationLayout": "anchored"
 };
 export type SoftReadingPagesProps = FoundationProps;
 /** 狭幅でも各ページの操作幅を34px以上に保ち、必要に応じて行を折り返す。 */

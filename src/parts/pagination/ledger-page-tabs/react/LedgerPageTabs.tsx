@@ -11,7 +11,8 @@ const config: FoundationConfig = {
   "label": "コレクションをめくる",
   "description": "",
   "defaultValue": 4,
-  "totalPages": 12
+  "totalPages": 12,
+  "paginationLayout": "anchored"
 };
 export type LedgerPageTabsProps = FoundationProps;
 /** 帳簿の小見出しを選ぶページ送り。数字と罫線を揃え、現在欄だけインク面へ変える。 */

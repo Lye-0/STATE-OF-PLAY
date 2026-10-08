@@ -8,3 +8,10 @@
 
 /* Narrow labels and static material. */
 .sop-choice.sop-floating-bookmark-tabs.sop-floating-bookmark-tabs>.sop-choice-list>.sop-choice-item .sop-choice-label{white-space:normal;overflow-wrap:anywhere;min-width:0;line-height:1.5}
+/* Style review refinement */
+/* 細い浮いた栞を三つの見出しから垂らす。外側の柱を廃し、本文と間を開ける。 */
+.sop-choice.sop-floating-bookmark-tabs.sop-floating-bookmark-tabs{border:0;padding:0;background:transparent}.sop-choice.sop-floating-bookmark-tabs.sop-floating-bookmark-tabs .sop-choice-list{border:0;gap:4px;padding-bottom:12px}.sop-choice.sop-floating-bookmark-tabs.sop-floating-bookmark-tabs .sop-choice-item{background:transparent;border-top:1px solid #8ea799}.sop-choice.sop-floating-bookmark-tabs.sop-floating-bookmark-tabs .sop-choice-marker{border-radius:0;clip-path:polygon(0 0,100% 0,100% 100%,50% 86%,0 100%);background:#4c705d}.sop-choice.sop-floating-bookmark-tabs.sop-floating-bookmark-tabs .sop-choice-demo{background:#edf2e6;margin-inline:8px;padding:24px;border-left:1px solid #adbead;box-shadow:6px 5px 0 -3px #cad7c5}
+
+.sop-choice.sop-floating-bookmark-tabs.sop-floating-bookmark-tabs .sop-choice-list{background:#e3ecdf;padding:0 4px 12px}
+
+@media(forced-colors:active){.sop-choice.sop-floating-bookmark-tabs.sop-floating-bookmark-tabs{--paper:Canvas;--ink:CanvasText;--muted:CanvasText;--accent:Highlight;--edge:ButtonText;--ff-ink:CanvasText;--ff-muted:CanvasText;--sg-bg:Canvas;--sg-ink:CanvasText;--sg-muted:CanvasText;--sg-a:Highlight;--wb-bg:Canvas;--wb-ink:CanvasText;--wb-muted:CanvasText;--wb-accent:Highlight;color:CanvasText;background:Canvas;border-color:ButtonText;box-shadow:none}.sop-choice.sop-floating-bookmark-tabs.sop-floating-bookmark-tabs :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}.sop-choice.sop-floating-bookmark-tabs.sop-floating-bookmark-tabs :is(button,input,textarea,select,a):focus-visible{outline-color:Highlight}.sop-choice.sop-floating-bookmark-tabs.sop-floating-bookmark-tabs :is([aria-current=page],[aria-selected=true],[data-selected=true]){color:HighlightText;background:Highlight;border-color:Highlight}}

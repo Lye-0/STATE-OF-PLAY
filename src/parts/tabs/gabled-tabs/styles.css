@@ -8,3 +8,8 @@
 
 /* Narrow labels and static material. */
 .sop-choice.sop-gabled-tabs.sop-gabled-tabs>.sop-choice-list>.sop-choice-item .sop-choice-label{white-space:normal;overflow-wrap:anywhere;min-width:0;line-height:1.5}
+/* Style review refinement */
+/* 切妻型の三つの入口を持つ資料面。屋根の稜線と選択タブが一続きになる。 */
+.sop-choice.sop-gabled-tabs.sop-gabled-tabs{background:#f5efdf;border:0;padding-top:10px}.sop-choice.sop-gabled-tabs.sop-gabled-tabs .sop-choice-list{border:0;padding:0 6px;background:none}.sop-choice.sop-gabled-tabs.sop-gabled-tabs .sop-choice-item{min-height:80px;border:0;padding-top:22px}.sop-choice.sop-gabled-tabs.sop-gabled-tabs .sop-choice-marker{clip-path:polygon(0 18px,50% 0,100% 18px,100% 100%,0 100%);background:#695842}.sop-choice.sop-gabled-tabs.sop-gabled-tabs .sop-choice-demo{background:#fffbef;border-top:2px solid #a69a80;margin-inline:6px;padding:24px;box-shadow:0 3px #d7cbb3}
+
+@media(forced-colors:active){.sop-choice.sop-gabled-tabs.sop-gabled-tabs{--paper:Canvas;--ink:CanvasText;--muted:CanvasText;--accent:Highlight;--edge:ButtonText;--ff-ink:CanvasText;--ff-muted:CanvasText;--sg-bg:Canvas;--sg-ink:CanvasText;--sg-muted:CanvasText;--sg-a:Highlight;--wb-bg:Canvas;--wb-ink:CanvasText;--wb-muted:CanvasText;--wb-accent:Highlight;color:CanvasText;background:Canvas;border-color:ButtonText;box-shadow:none}.sop-choice.sop-gabled-tabs.sop-gabled-tabs :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}.sop-choice.sop-gabled-tabs.sop-gabled-tabs :is(button,input,textarea,select,a):focus-visible{outline-color:Highlight}.sop-choice.sop-gabled-tabs.sop-gabled-tabs :is([aria-current=page],[aria-selected=true],[data-selected=true]){color:HighlightText;background:Highlight;border-color:Highlight}}

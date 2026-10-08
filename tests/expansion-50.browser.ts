@@ -4,7 +4,7 @@ import {ROOT} from '../scripts/catalog.ts';import {currentParts} from './gallery
 const out=process.env.SOP_EXPANSION_OUTPUT??path.join(ROOT,'.test-output/expansion-50');
 const designs=currentParts().filter(part=>part.tags.includes('EXPANSION-50'));
 const captureOnly=!!process.env.SOP_EXPANSION_CAPTURE_ONLY;const chosen=process.env.SOP_EXPANSION_IDS?.split(',');const cats=process.env.SOP_EXPANSION_CATEGORIES?.split(',');const specs=designs.filter(d=>(!chosen||chosen.includes(d.id))&&(!cats||cats.includes(d.category)));
-const server=await createServer({root:ROOT,server:{host:'127.0.0.1',port:0,watch:{ignored:['**/docs/**','**/.test-output/**']}}});await server.listen();
+const server=await createServer({root:ROOT,server:{host:'127.0.0.1',port:0,hmr:false,watch:{ignored:['**/docs/**','**/.test-output/**']}}});await server.listen();
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
 const page=await browser.newPage({viewport:{width:1500,height:1000},reducedMotion:'reduce'});page.setDefaultTimeout(30000);const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));fs.mkdirSync(path.join(out,'photos'),{recursive:true});const results:object[]=[];
 try{

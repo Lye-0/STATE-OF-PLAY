@@ -8,3 +8,8 @@
 
 /* Narrow labels and static material. */
 .sop-choice.sop-rung-tabs.sop-rung-tabs>.sop-choice-list>.sop-choice-item .sop-choice-label{white-space:normal;overflow-wrap:anywhere;min-width:0;line-height:1.5}
+/* Style review refinement */
+/* 梯子の二本の側桁と横木へタブを接続。本文の囲いを外して開放した段構成に。 */
+.sop-choice.sop-rung-tabs.sop-rung-tabs{border:0;border-inline:2px solid #547e8d;background:#f2f5ef;padding:10px 8px}.sop-choice.sop-rung-tabs.sop-rung-tabs .sop-choice-list{border-top:1px solid #547e8d;border-bottom:1px solid #547e8d;background:none;padding:5px 0}.sop-choice.sop-rung-tabs.sop-rung-tabs .sop-choice-marker{clip-path:none;background:#d0e0e1;border-radius:0;box-shadow:inset 0 -3px #326678}.sop-choice.sop-rung-tabs.sop-rung-tabs .sop-choice-item[data-selected=true]{color:#244e5e}.sop-choice.sop-rung-tabs.sop-rung-tabs .sop-choice-demo{border:0;border-bottom:1px solid #a2babc;margin:14px 0 0;padding:20px 10px}
+
+@media(forced-colors:active){.sop-choice.sop-rung-tabs.sop-rung-tabs{--paper:Canvas;--ink:CanvasText;--muted:CanvasText;--accent:Highlight;--edge:ButtonText;--ff-ink:CanvasText;--ff-muted:CanvasText;--sg-bg:Canvas;--sg-ink:CanvasText;--sg-muted:CanvasText;--sg-a:Highlight;--wb-bg:Canvas;--wb-ink:CanvasText;--wb-muted:CanvasText;--wb-accent:Highlight;color:CanvasText;background:Canvas;border-color:ButtonText;box-shadow:none}.sop-choice.sop-rung-tabs.sop-rung-tabs :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}.sop-choice.sop-rung-tabs.sop-rung-tabs :is(button,input,textarea,select,a):focus-visible{outline-color:Highlight}.sop-choice.sop-rung-tabs.sop-rung-tabs :is([aria-current=page],[aria-selected=true],[data-selected=true]){color:HighlightText;background:Highlight;border-color:Highlight}}

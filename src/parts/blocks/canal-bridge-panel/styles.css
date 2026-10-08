@@ -21,3 +21,8 @@
 
 /* Final visual review: layout and material separation. */
 .sop-surface.sop-canal-bridge-panel>.sop-surface-content{padding:var(--sop-padding,28px)!important}
+/* Style review refinement */
+/* 橋脚と下辺の目盛りを薄くし、浮いた床の下に連続した空間を残す。 */
+.sop-surface.sop-canal-bridge-panel.sop-canal-bridge-panel{background:linear-gradient(90deg,#758b9b 0 4px,transparent 4px calc(100% - 4px),#758b9b calc(100% - 4px));padding:9px 0}.sop-surface.sop-canal-bridge-panel.sop-canal-bridge-panel::after{display:none}.sop-surface.sop-canal-bridge-panel.sop-canal-bridge-panel .sop-surface-content{box-shadow:0 3px 8px #1113;border-width:1px}
+
+@media(forced-colors:active){.sop-surface.sop-canal-bridge-panel.sop-canal-bridge-panel{--paper:Canvas;--ink:CanvasText;--muted:CanvasText;--accent:Highlight;--edge:ButtonText;--ff-ink:CanvasText;--ff-muted:CanvasText;--sg-bg:Canvas;--sg-ink:CanvasText;--sg-muted:CanvasText;--sg-a:Highlight;--wb-bg:Canvas;--wb-ink:CanvasText;--wb-muted:CanvasText;--wb-accent:Highlight;color:CanvasText;background:Canvas;border-color:ButtonText;box-shadow:none}.sop-surface.sop-canal-bridge-panel.sop-canal-bridge-panel :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}.sop-surface.sop-canal-bridge-panel.sop-canal-bridge-panel :is(button,input,textarea,select,a):focus-visible{outline-color:Highlight}.sop-surface.sop-canal-bridge-panel.sop-canal-bridge-panel :is([aria-current=page],[aria-selected=true],[data-selected=true]){color:HighlightText;background:Highlight;border-color:Highlight}}

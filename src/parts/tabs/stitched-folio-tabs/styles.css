@@ -8,3 +8,8 @@
 
 /* Narrow labels and static material. */
 .sop-choice.sop-stitched-folio-tabs.sop-stitched-folio-tabs>.sop-choice-list>.sop-choice-item .sop-choice-label{white-space:normal;overflow-wrap:anywhere;min-width:0;line-height:1.5}
+/* Style review refinement */
+/* 操作卓の二重枠を1pxの継ぎ目へ。本文窓を広げる。 */
+.sop-choice.sop-stitched-folio-tabs.sop-stitched-folio-tabs{border-bottom-width:3px}.sop-choice.sop-stitched-folio-tabs.sop-stitched-folio-tabs .sop-choice-demo{border-width:1px;margin:8px;padding:24px}.sop-choice.sop-stitched-folio-tabs.sop-stitched-folio-tabs .sop-choice-marker{box-shadow:none}.sop-choice.sop-stitched-folio-tabs.sop-stitched-folio-tabs .sop-choice-list{padding:6px}
+
+@media(forced-colors:active){.sop-choice.sop-stitched-folio-tabs.sop-stitched-folio-tabs{--paper:Canvas;--ink:CanvasText;--muted:CanvasText;--accent:Highlight;--edge:ButtonText;--ff-ink:CanvasText;--ff-muted:CanvasText;--sg-bg:Canvas;--sg-ink:CanvasText;--sg-muted:CanvasText;--sg-a:Highlight;--wb-bg:Canvas;--wb-ink:CanvasText;--wb-muted:CanvasText;--wb-accent:Highlight;color:CanvasText;background:Canvas;border-color:ButtonText;box-shadow:none}.sop-choice.sop-stitched-folio-tabs.sop-stitched-folio-tabs :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}.sop-choice.sop-stitched-folio-tabs.sop-stitched-folio-tabs :is(button,input,textarea,select,a):focus-visible{outline-color:Highlight}.sop-choice.sop-stitched-folio-tabs.sop-stitched-folio-tabs :is([aria-current=page],[aria-selected=true],[data-selected=true]){color:HighlightText;background:Highlight;border-color:Highlight}}

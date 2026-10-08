@@ -10,7 +10,7 @@ export interface FoundationOptions {
   min?: number; max?: number; step?: number; unit?: string; range?: boolean;
   items?: readonly Choice[]; multiple?: boolean; placeholder?: string; loading?: boolean; error?: string;
   interactive?: boolean; content?: string; placement?: 'top' | 'bottom';
-  indeterminate?: boolean; paused?: boolean; totalPages?: number; hrefForPage?: (page: number) => string;
+  indeterminate?: boolean; paused?: boolean; totalPages?: number; paginationLayout?: 'inline' | 'anchored'; hrefForPage?: (page: number) => string;
   accept?: string; maxFiles?: number; maxBytes?: number;
   mode?: 'date' | 'range' | 'datetime' | 'time'; minDate?: string; maxDate?: string; isDateDisabled?: (date: string) => boolean;
   duration?: number; maxNotices?: number; removable?: boolean; selectable?: boolean;

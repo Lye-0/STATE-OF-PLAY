@@ -21,3 +21,8 @@
 
 /* Final visual review: layout and material separation. */
 .sop-surface.sop-woven-mat-panel>.sop-surface-content{padding:var(--sop-padding,28px)!important}
+/* Style review refinement */
+/* 織りの端を6pxへ絞り、細かな縞を二方向の交点だけに限定。内容面の余白を優先する。 */
+.sop-surface.sop-woven-mat-panel.sop-woven-mat-panel{padding:6px;background:repeating-linear-gradient(90deg,#b6a38e 0 3px,#d3c5b3 3px 6px);border:0}.sop-surface.sop-woven-mat-panel.sop-woven-mat-panel::after{display:none}.sop-surface.sop-woven-mat-panel.sop-woven-mat-panel .sop-surface-content{border:0;box-shadow:none;background:#f0eae0}
+
+@media(forced-colors:active){.sop-surface.sop-woven-mat-panel.sop-woven-mat-panel{--paper:Canvas;--ink:CanvasText;--muted:CanvasText;--accent:Highlight;--edge:ButtonText;--ff-ink:CanvasText;--ff-muted:CanvasText;--sg-bg:Canvas;--sg-ink:CanvasText;--sg-muted:CanvasText;--sg-a:Highlight;--wb-bg:Canvas;--wb-ink:CanvasText;--wb-muted:CanvasText;--wb-accent:Highlight;color:CanvasText;background:Canvas;border-color:ButtonText;box-shadow:none}.sop-surface.sop-woven-mat-panel.sop-woven-mat-panel :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}.sop-surface.sop-woven-mat-panel.sop-woven-mat-panel :is(button,input,textarea,select,a):focus-visible{outline-color:Highlight}.sop-surface.sop-woven-mat-panel.sop-woven-mat-panel :is([aria-current=page],[aria-selected=true],[data-selected=true]){color:HighlightText;background:Highlight;border-color:Highlight}}

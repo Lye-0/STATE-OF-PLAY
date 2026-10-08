@@ -15,3 +15,8 @@
 @media(prefers-reduced-motion:reduce){.sop-ornament.sop-paper-fan-fold-ornament .x-composition i{translate:none;rotate:none;scale:none}}
 
 .sop-ornament.sop-paper-fan-fold-ornament:not([data-ambient-running=true]) .x-composition i{transition:none!important}
+/* Style review refinement */
+/* 扇の紙面を淡い生成りと灰褐色に分け、均一な金色の縞をなくす。折り目を一本の線で表す。 */
+.sop-ornament.sop-paper-fan-fold-ornament.sop-paper-fan-fold-ornament .x-composition i{background:#d8cebb;border:0;border-left:1px solid #efe5d1;border-right:1px solid #9b8c73}.sop-ornament.sop-paper-fan-fold-ornament.sop-paper-fan-fold-ornament .x-composition i:nth-child(even){background:#bcb3a2}
+
+@media(forced-colors:active){.sop-ornament.sop-paper-fan-fold-ornament.sop-paper-fan-fold-ornament{--paper:Canvas;--ink:CanvasText;--muted:CanvasText;--accent:Highlight;--edge:ButtonText;--ff-ink:CanvasText;--ff-muted:CanvasText;--sg-bg:Canvas;--sg-ink:CanvasText;--sg-muted:CanvasText;--sg-a:Highlight;--wb-bg:Canvas;--wb-ink:CanvasText;--wb-muted:CanvasText;--wb-accent:Highlight;color:CanvasText;background:Canvas;border-color:ButtonText;box-shadow:none}.sop-ornament.sop-paper-fan-fold-ornament.sop-paper-fan-fold-ornament :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}.sop-ornament.sop-paper-fan-fold-ornament.sop-paper-fan-fold-ornament :is(button,input,textarea,select,a):focus-visible{outline-color:Highlight}.sop-ornament.sop-paper-fan-fold-ornament.sop-paper-fan-fold-ornament :is([aria-current=page],[aria-selected=true],[data-selected=true]){color:HighlightText;background:Highlight;border-color:Highlight}}

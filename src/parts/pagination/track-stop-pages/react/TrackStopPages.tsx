@@ -11,7 +11,8 @@ const config: FoundationConfig = {
   "label": "コレクションをめくる",
   "description": "",
   "defaultValue": 4,
-  "totalPages": 12
+  "totalPages": 12,
+  "paginationLayout": "anchored"
 };
 export type TrackStopPagesProps = FoundationProps;
 /** 路線上の駅としてページを並べる。現在駅の丸い台と、隣へ進む操作を区別。 */

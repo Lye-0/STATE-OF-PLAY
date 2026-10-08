@@ -8,3 +8,8 @@
 
 /* Narrow labels and static material. */
 .sop-choice.sop-open-corner-tabs.sop-open-corner-tabs>.sop-choice-list>.sop-choice-item .sop-choice-label{white-space:normal;overflow-wrap:anywhere;min-width:0;line-height:1.5}
+/* Style review refinement */
+/* 角の開いた石の輪郭へ。丸い緑の隆起を廃し、浅い選択溝に変更。 */
+.sop-choice.sop-open-corner-tabs.sop-open-corner-tabs{border-radius:0 22px 0 22px;box-shadow:0 2px #aebba6}.sop-choice.sop-open-corner-tabs.sop-open-corner-tabs .sop-choice-list{border-radius:0 22px 0 0;background:#e1e8d9;padding:8px}.sop-choice.sop-open-corner-tabs.sop-open-corner-tabs .sop-choice-marker{border-radius:0 12px 0 12px;box-shadow:none}
+
+@media(forced-colors:active){.sop-choice.sop-open-corner-tabs.sop-open-corner-tabs{--paper:Canvas;--ink:CanvasText;--muted:CanvasText;--accent:Highlight;--edge:ButtonText;--ff-ink:CanvasText;--ff-muted:CanvasText;--sg-bg:Canvas;--sg-ink:CanvasText;--sg-muted:CanvasText;--sg-a:Highlight;--wb-bg:Canvas;--wb-ink:CanvasText;--wb-muted:CanvasText;--wb-accent:Highlight;color:CanvasText;background:Canvas;border-color:ButtonText;box-shadow:none}.sop-choice.sop-open-corner-tabs.sop-open-corner-tabs :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}.sop-choice.sop-open-corner-tabs.sop-open-corner-tabs :is(button,input,textarea,select,a):focus-visible{outline-color:Highlight}.sop-choice.sop-open-corner-tabs.sop-open-corner-tabs :is([aria-current=page],[aria-selected=true],[data-selected=true]){color:HighlightText;background:Highlight;border-color:Highlight}}

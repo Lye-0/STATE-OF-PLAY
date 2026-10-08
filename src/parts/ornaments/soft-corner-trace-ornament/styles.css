@@ -11,3 +11,8 @@
 .sop-ornament.sop-soft-corner-trace-ornament:not([data-ambient-running=true]) .x-composition i{animation-play-state:paused!important}
 
 .sop-ornament.sop-soft-corner-trace-ornament:not([data-ambient-running=true]) .x-composition i{transition:none!important}
+/* Style review refinement */
+/* 角線の呼吸の最小明度を上げ、静かな装飾でも形を見失わないようにする。 */
+@keyframes sop-x-soft-corner-trace-ornament{0%{opacity:.6}100%{opacity:1}}
+
+@media(forced-colors:active){.sop-ornament.sop-soft-corner-trace-ornament.sop-soft-corner-trace-ornament{--paper:Canvas;--ink:CanvasText;--muted:CanvasText;--accent:Highlight;--edge:ButtonText;--ff-ink:CanvasText;--ff-muted:CanvasText;--sg-bg:Canvas;--sg-ink:CanvasText;--sg-muted:CanvasText;--sg-a:Highlight;--wb-bg:Canvas;--wb-ink:CanvasText;--wb-muted:CanvasText;--wb-accent:Highlight;color:CanvasText;background:Canvas;border-color:ButtonText;box-shadow:none}.sop-ornament.sop-soft-corner-trace-ornament.sop-soft-corner-trace-ornament :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}.sop-ornament.sop-soft-corner-trace-ornament.sop-soft-corner-trace-ornament :is(button,input,textarea,select,a):focus-visible{outline-color:Highlight}.sop-ornament.sop-soft-corner-trace-ornament.sop-soft-corner-trace-ornament :is([aria-current=page],[aria-selected=true],[data-selected=true]){color:HighlightText;background:Highlight;border-color:Highlight}}

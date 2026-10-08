@@ -11,7 +11,8 @@ const config: FoundationConfig = {
   "label": "コレクションをめくる",
   "description": "",
   "defaultValue": 4,
-  "totalPages": 12
+  "totalPages": 12,
+  "paginationLayout": "anchored"
 };
 export type SpineIndexPagesProps = FoundationProps;
 /** 本の小口へ指をかけるページ札。狭幅でも一枚の幅を保ち、選択した札だけを背へ留める。 */

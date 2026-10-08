@@ -11,7 +11,8 @@ const config: FoundationConfig = {
   "label": "コレクションをめくる",
   "description": "",
   "defaultValue": 4,
-  "totalPages": 12
+  "totalPages": 12,
+  "paginationLayout": "anchored"
 };
 export type StitchedIndexPagesProps = FoundationProps;
 /** 縫い綴じた索引札。現在の札にだけ縫い目の内側を濃く満たす。 */

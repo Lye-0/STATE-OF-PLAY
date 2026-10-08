@@ -8,3 +8,8 @@
 
 /* Narrow labels and static material. */
 .sop-choice.sop-embossed-archive-tabs.sop-embossed-archive-tabs>.sop-choice-list>.sop-choice-item .sop-choice-label{white-space:normal;overflow-wrap:anywhere;min-width:0;line-height:1.5}
+/* Style review refinement */
+/* 露出する紙とタブの厚みを3pxへ揃え、影を一段に。 */
+.sop-choice.sop-embossed-archive-tabs.sop-embossed-archive-tabs{border-top-width:3px;border-radius:0 12px 0 12px}.sop-choice.sop-embossed-archive-tabs.sop-embossed-archive-tabs .sop-choice-demo{border-left-width:3px;border-radius:0 0 0 12px}.sop-choice.sop-embossed-archive-tabs.sop-embossed-archive-tabs .sop-choice-marker{box-shadow:0 2px #af7a91;border-radius:0 0 6px 0}
+
+@media(forced-colors:active){.sop-choice.sop-embossed-archive-tabs.sop-embossed-archive-tabs{--paper:Canvas;--ink:CanvasText;--muted:CanvasText;--accent:Highlight;--edge:ButtonText;--ff-ink:CanvasText;--ff-muted:CanvasText;--sg-bg:Canvas;--sg-ink:CanvasText;--sg-muted:CanvasText;--sg-a:Highlight;--wb-bg:Canvas;--wb-ink:CanvasText;--wb-muted:CanvasText;--wb-accent:Highlight;color:CanvasText;background:Canvas;border-color:ButtonText;box-shadow:none}.sop-choice.sop-embossed-archive-tabs.sop-embossed-archive-tabs :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}.sop-choice.sop-embossed-archive-tabs.sop-embossed-archive-tabs :is(button,input,textarea,select,a):focus-visible{outline-color:Highlight}.sop-choice.sop-embossed-archive-tabs.sop-embossed-archive-tabs :is([aria-current=page],[aria-selected=true],[data-selected=true]){color:HighlightText;background:Highlight;border-color:Highlight}}

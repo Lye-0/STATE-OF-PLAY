@@ -11,7 +11,8 @@ const config: FoundationConfig = {
   "label": "コレクションをめくる",
   "description": "",
   "defaultValue": 4,
-  "totalPages": 12
+  "totalPages": 12,
+  "paginationLayout": "anchored"
 };
 export type OpenBracketPagesProps = FoundationProps;
 /** 開いた括弧で現在ページを挟む。色の塗りだけに頼らず上下の固定爪を目印にする。 */

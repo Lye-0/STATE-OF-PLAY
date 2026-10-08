@@ -11,7 +11,8 @@ const config: FoundationConfig = {
   "label": "コレクションをめくる",
   "description": "",
   "defaultValue": 4,
-  "totalPages": 12
+  "totalPages": 12,
+  "paginationLayout": "anchored"
 };
 export type ShuttleKeyPagesProps = FoundationProps;
 /** 軌道を走るシャトルキー。両端は進む操作、内側は固定幅の数値座に分ける。 */

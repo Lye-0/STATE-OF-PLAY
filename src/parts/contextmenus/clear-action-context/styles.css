@@ -9,3 +9,8 @@
 
 /* Review: 削除操作と起動面の文字を明るい背景に適合 */
 .sop-wb.sop-clear-action-context .wb-context-item[data-danger=true],.sop-wb.sop-clear-action-context [role=menuitem][data-danger=true]{color:#96352f}.sop-wb.sop-clear-action-context .wb-context-target{background:var(--wb-bg);color:var(--wb-ink)}
+/* Style review refinement */
+/* 文書の小さなアイコンを一枚の輪郭へ整理。多重の縁と影を撤去し、展開後の一覧と線の密度を揃える。 */
+.sop-wb.sop-clear-action-context.sop-clear-action-context .wb-context-object{box-shadow:none;border-width:1px;background:transparent}.sop-wb.sop-clear-action-context.sop-clear-action-context .wb-context-object::before,.sop-wb.sop-clear-action-context.sop-clear-action-context .wb-context-object::after{display:none}.sop-wb.sop-clear-action-context.sop-clear-action-context .wb-context-object i{box-shadow:none}
+
+@media(forced-colors:active){.sop-wb.sop-clear-action-context.sop-clear-action-context{--paper:Canvas;--ink:CanvasText;--muted:CanvasText;--accent:Highlight;--edge:ButtonText;--ff-ink:CanvasText;--ff-muted:CanvasText;--sg-bg:Canvas;--sg-ink:CanvasText;--sg-muted:CanvasText;--sg-a:Highlight;--wb-bg:Canvas;--wb-ink:CanvasText;--wb-muted:CanvasText;--wb-accent:Highlight;color:CanvasText;background:Canvas;border-color:ButtonText;box-shadow:none}.sop-wb.sop-clear-action-context.sop-clear-action-context :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}.sop-wb.sop-clear-action-context.sop-clear-action-context :is(button,input,textarea,select,a):focus-visible{outline-color:Highlight}.sop-wb.sop-clear-action-context.sop-clear-action-context :is([aria-current=page],[aria-selected=true],[data-selected=true]){color:HighlightText;background:Highlight;border-color:Highlight}}

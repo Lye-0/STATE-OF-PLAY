@@ -11,7 +11,8 @@ const config: FoundationConfig = {
   "label": "コレクションをめくる",
   "description": "",
   "defaultValue": 4,
-  "totalPages": 12
+  "totalPages": 12,
+  "paginationLayout": "anchored"
 };
 export type RibbonTicketPagesProps = FoundationProps;
 /** 紙の半券をめくるページ送り。選択券の折れた端が現在地の目印になる。 */

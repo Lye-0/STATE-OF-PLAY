@@ -6,7 +6,14 @@ export function mountPagination(root:HTMLElement,config:FoundationConfig,options
  const c=createCore(root,config,options,normalize);if(!root.querySelector('[data-pages]'))root.innerHTML=renderPagination(c.options);const nav=q(root,'[data-pages]');
  c.sync=()=>{syncHeading(c);const o=c.options,total=Math.max(1,Math.floor(o.totalPages??12)),page=Number(c.data);
   const control=(n:number,label:string,body:string,disabled=false)=>o.hrefForPage?`<a ${disabled||o.disabled?'aria-disabled="true"':`href="${escape(o.hrefForPage(n))}"`} data-page="${n}" aria-label="${escape(label)}" ${n===page&&label===`ページ ${n}`?'aria-current="page"':''}>${body}</a>`:`<button type="button" data-page="${n}" aria-label="${escape(label)}" ${disabled||o.disabled?'disabled':''} ${n===page&&label===`ページ ${n}`?'aria-current="page"':''}>${body}</button>`;
-  nav.innerHTML=control(Math.max(1,page-1),'前のページ','‹',page===1)+pageItems(page,total).map(item=>item==='…'?'<span class="ff-ellipsis" aria-hidden="true">…</span>':control(item,`ページ ${item}`,String(item).padStart(2,'0'))).join('')+control(Math.min(total,page+1),'次のページ','›',page===total);
+  const focused=nav.contains(document.activeElement)?document.activeElement?.getAttribute('aria-label'):null;
+  const items=pageItems(page,total).map(item=>item==='…'?'<span class="ff-ellipsis" aria-hidden="true">…</span>':control(item,`ページ ${item}`,String(item).padStart(2,'0'))).join('');
+  nav.dataset.layout=o.paginationLayout??'inline';
+  nav.innerHTML=control(Math.max(1,page-1),'前のページ','‹',page===1)+(o.paginationLayout==='anchored'?`<div class="ff-page-window">${items}</div>`:items)+control(Math.min(total,page+1),'次のページ','›',page===total);
+  if(focused&&o.paginationLayout==='anchored'){
+   const target=[...nav.querySelectorAll<HTMLElement>('[aria-label]')].find(e=>e.getAttribute('aria-label')===focused&&!e.matches(':disabled,[aria-disabled=true]'))??nav.querySelector<HTMLElement>('[aria-current=page]');
+   target?.focus({preventScroll:true});
+  }
   q(root,'[data-page-info]').innerHTML=`<strong>${String(page).padStart(2,'0')}</strong><span>/ ${total} PAGES</span>`;
  };
  c.on(nav,'click',event=>{const e=event as MouseEvent,el=(e.target as Element).closest<HTMLElement>('[data-page]');if(!el||el.getAttribute('aria-disabled')==='true')return;if(el.tagName==='A'&&(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0))return;if(el.tagName!=='A')c.send(Number(el.dataset.page));else c.options.onDataChange?.(Number(el.dataset.page));});c.sync('initial');return c;

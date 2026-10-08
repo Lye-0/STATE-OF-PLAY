@@ -11,7 +11,8 @@ const config: FoundationConfig = {
   "label": "コレクションをめくる",
   "description": "",
   "defaultValue": 4,
-  "totalPages": 12
+  "totalPages": 12,
+  "paginationLayout": "anchored"
 };
 export type BookplatePagesProps = FoundationProps;
 /** 蔵書票の小さい番号面。選択した票を二重の刻印で留め、狭幅では余白を保って折り返す。 */

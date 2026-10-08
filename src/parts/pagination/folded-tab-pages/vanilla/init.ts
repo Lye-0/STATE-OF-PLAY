@@ -7,6 +7,7 @@ const config: FoundationConfig = {
   "label": "コレクションをめくる",
   "description": "",
   "defaultValue": 4,
-  "totalPages": 12
+  "totalPages": 12,
+  "paginationLayout": "anchored"
 };
 export function init(element: HTMLElement, options: FoundationOptions = {}) { return mountPagination(element, config, options); }

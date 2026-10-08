@@ -11,7 +11,8 @@ const config: FoundationConfig = {
   "label": "コレクションをめくる",
   "description": "",
   "defaultValue": 4,
-  "totalPages": 12
+  "totalPages": 12,
+  "paginationLayout": "anchored"
 };
 export type SlattedPagesProps = FoundationProps;
 /** ルーバーの各区画を番号キーにする。現在地の板だけを明るく開く。 */
