@@ -29,6 +29,10 @@ for row,part,review in approved:
  before=w/'evidence/baseline'/f"{row['id']}-stage.png"
  assert before.exists(),f"Missing original gallery evidence: {row['id']}"
  images=figure(before,'修正前・元の展示')+figure(photos/f"{row['id']}-stage.png",'修正後・展示の初期状態')+figure(photos/f"{row['id']}-narrow.png",'修正後・320pxの操作状態')
+ if row['category']=='popups':
+  assert (photos/f"{row['id']}-expanded.png").exists(),f"Missing open dialog evidence: {row['id']}"
+  assert (photos/f"{row['id']}-mobile.png").exists(),f"Missing mobile dialog evidence: {row['id']}"
+  images+=figure(w/'evidence/baseline'/f"{row['id']}-expanded.png",'修正前・独立した実ダイアログ')+figure(photos/f"{row['id']}-expanded.png",'修正後・実際に開いたダイアログ')+figure(photos/f"{row['id']}-mobile.png",'修正後・320pxで開いたダイアログ')
  if row['category']=='dropdowns':
   images+=figure(photos/f"{row['id']}-expanded.png",'展開した候補・選択済み行')
  # Native switch images distinguish actual OFF and ON even when the gallery starts ON.

@@ -1,0 +1,193 @@
+{
+  "batch": "B015",
+  "round": 4,
+  "snapshot": "docs/design-renewal/batches/B015/snapshot/round-4",
+  "overall": "changes_requested",
+  "parts": [
+    {
+      "number": 205,
+      "id": "quarter-cut-check",
+      "verdict": "redesign",
+      "assessment": "二つの角線を実切口へ変えたが、現像は2角を落とした一般的なカードと同じ切角の確認欄に留まる。輪郭の欠けが保持や確認面の構造へつながらず、元監査の「簡素なBに近い」問題を解消するA固有性は不足。再設計が必要。",
+      "findings": [
+        {
+          "key": "R205-generic-cut-card",
+          "severity": "major",
+          "kind": "design",
+          "evidence": "captures/reviewer-normal-4/quarter-cut-check-off.png/-on.png/-mixed.png。票20px/確認欄12pxの対角の切角、残る下左の短いL線。",
+          "problem": "切欠きが実形状になっても、汎用の切角カードと確認欄を重ねただけで、Aとして独立した保持・素材・機構がない。名前のcutを文字通りに実装したことだけでは不足。",
+          "proposal": "一例として対角の切欠きを、二つの面が噛み合う差込みの接点へ発展させる。確認面の切口へ相手の紙の舌が通る実際の口/空隙を設け、上下の面の関係が輪郭を決めるようにする。中央のnative記号と48px入力は固定し、L金具や別色の小片追加だけにしない。"
+        }
+      ],
+      "nearestComparisons": [
+        "R164",
+        "R194",
+        "R205"
+      ]
+    },
+    {
+      "number": 211,
+      "id": "dispatch-sheet-dialog",
+      "verdict": "pass",
+      "assessment": "Tの送り状の三段を保ち、二重の外枠と小さい補助文字を整理した。見出し/本文/署名操作の階層を罫線と余白へ限定し、任意本文を安定して読める。元監査の紙面の精度として合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R211",
+        "R109"
+      ]
+    },
+    {
+      "number": 212,
+      "id": "porthole-dialog",
+      "verdict": "pass",
+      "assessment": "Tの丸い上端を保持し、厚い二重窓枠を薄い外装へ整理した。閉じる操作のための上の余白を確保し、本文と操作の重量差を軽減。元の特徴を崩さず、長文/狭幅でも入力と操作が読めるため合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R134",
+        "R212"
+      ]
+    },
+    {
+      "number": 213,
+      "id": "theatre-wing-dialog",
+      "verdict": "adjust",
+      "assessment": "左右全高の28pxの折面と外7pxの小口は、初期状態では二枚の袖として全体の輪郭を決める。通常造形はA合格。ただし本文スクロールで左右の袖が上へ消え、長文では普通の矩形へ戻る。支持を固定する修正が必要。",
+      "findings": [
+        {
+          "key": "R213-scroll-support",
+          "severity": "major",
+          "kind": "consistency",
+          "evidence": "captures/reviewer-open-4/theatre-wing-dialog-1000-ltr-1.png、-320-rtl-1.png、checks.json。scrollTop1710で袖のy12→-1698。",
+          "problem": "本文をスクロールすると読む面を支える全高の装飾が同じ量だけ上へ動いて消える。初期状態の形と長文で読む時の形が一致しない。",
+          "proposal": "装飾の包含基準をscrollport内部から固定dialogの外装へ移し、本文だけをスクロールさせる。R219と同様にposition/包含関係を整理し、元の折面の幅/角度/本文余白は保持。上/中/下、狭幅/RTLで支持が固定され操作を遮らないか確認する。"
+        }
+      ],
+      "nearestComparisons": [
+        "R181",
+        "R193",
+        "R216"
+      ],
+      "normalDesignVerdict": "pass"
+    },
+    {
+      "number": 214,
+      "id": "ledger-flap-dialog",
+      "verdict": "pass",
+      "assessment": "左22pxと下30pxの実断面、右下25pxの欠けを連続させ、四辺が同じ厚みの一般枠から分かれた。読む面は右端へ開き、石の切断面が外形を作る。R025の破断板/R097の露頭とは左/底に偏った確認台として違いがありA合格。長文でも断面はdialogへ固定される。",
+      "findings": [],
+      "nearestComparisons": [
+        "R025",
+        "R097",
+        "R214"
+      ]
+    },
+    {
+      "number": 215,
+      "id": "ceramic-basin-dialog",
+      "verdict": "redesign",
+      "assessment": "陶の説明と色は揃ったが、実際は非対称の角丸の外装と内側の角丸本文面を重ねた普通のdialogに近い。7〜9pxの外周と17pxの底はborder/余白として読め、浅鉢の面/立上がり/前縁の関係が形を決めていない。Aの独自性を満たす再設計が必要。",
+      "findings": [
+        {
+          "key": "R215-rounded-frame",
+          "severity": "major",
+          "kind": "design",
+          "evidence": "captures/reviewer-dialogs-4/ceramic-basin-dialog-initial.png、reviewer-open-4/ceramic-basin-dialog-short.png、元baseline ceramic-basin-dialog-expanded.png。",
+          "problem": "黄色い帳簿の不一致は解消したが、現像の主形態は非対称radiusの角丸枠で、標準dialogとの差が外周色と少しの曲率に留まる。陶の鉢の断面/前縁が内容を載せる固有形として見えない。",
+          "proposal": "一例として後ろの立上がりと手前の低い弧状の縁を異なる面へ分け、読む底面から陶の前壁へ連続する実断面を全幅に作る。角丸の太さを増やすだけでなく、外形と縁の戻りが一つの浅い受けとして読める構成へ再設計する。本文/入力の無地は固定し、R121の注ぎ溜まりや既存の金具支持を反復しない。"
+        }
+      ],
+      "nearestComparisons": [
+        "R104",
+        "R121",
+        "R195"
+      ]
+    },
+    {
+      "number": 216,
+      "id": "folded-folio-dialog",
+      "verdict": "adjust",
+      "assessment": "Tの大きい見出しと縦の操作配置を保持し、初期状態では右31pxの全高の折返しと上下の口が紙に接続する。通常造形は合格。ただし長文スクロールで折返しが消え、磨いた紙の構造を保持できない。固定基準の修正が必要。",
+      "findings": [
+        {
+          "key": "R216-scroll-fold",
+          "severity": "major",
+          "kind": "consistency",
+          "evidence": "captures/reviewer-open-4/folded-folio-dialog-1000-ltr-1.png、-320-rtl-1.png、checks.json。scrollTop1790で折返しのy16→-1774。",
+          "problem": "本文をスクロールすると読む面を支える全高の装飾が同じ量だけ上へ動いて消える。初期状態の形と長文で読む時の形が一致しない。",
+          "proposal": "装飾の包含基準をscrollport内部から固定dialogの外装へ移し、本文だけをスクロールさせる。R219と同様にposition/包含関係を整理し、元の折面の幅/角度/本文余白は保持。上/中/下、狭幅/RTLで支持が固定され操作を遮らないか確認する。"
+        }
+      ],
+      "nearestComparisons": [
+        "R193",
+        "R213",
+        "R216"
+      ],
+      "normalDesignVerdict": "pass"
+    },
+    {
+      "number": 217,
+      "id": "console-bay-dialog",
+      "verdict": "pass",
+      "assessment": "Tの暗い外装と明るい確認欄を維持し、青灰へ素材を統一した。淡緑/橙の競合をなくし、入力/任意本文/操作が同じ作業台へ収まる。色替え自体を新規Aの根拠にせず、元監査の素材整合として合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R170",
+        "R217"
+      ]
+    },
+    {
+      "number": 218,
+      "id": "gallery-mat-dialog",
+      "verdict": "adjust",
+      "assessment": "外18pxの布マットと対角の布角を設けた方向は妥当だが、三角は読む紙の内側へ置かれ、外マットをまたぐ保持面になっていない。さらに長文スクロールで二つとも消える。普通の紫の枠から紙を保持する構造へ完成させる接点/固定化の調整が必要。",
+      "findings": [
+        {
+          "key": "R218-corner-contact",
+          "severity": "major",
+          "kind": "consistency",
+          "evidence": "captures/reviewer-dialogs-4/gallery-mat-dialog-initial.png。short/geometry: shell x238 y30、上三角x727 y31、下三角x239 y779。三角は紙領域内に34px角で配置される。",
+          "problem": "対角の三角が紙の内側へ貼られ、外の18pxマットと紙をまたいで保持していない。布の角ポケットというより紙自身の小さい折角に見える。",
+          "proposal": "布角をマットから紙へ連続する斜めの保持面として配置し、外周をまたぐ口/返しを実際に見せる。小三角の拡大だけで済ませず、紙の端が布角の下へ入る関係を作る。閉じるボタンとの余白も確保する。"
+        },
+        {
+          "key": "R218-scroll-corners",
+          "severity": "major",
+          "kind": "consistency",
+          "evidence": "captures/reviewer-open-4/gallery-mat-dialog-1000-ltr-1.png、-320-rtl-1.png、checks.json。scrollTop1748で上三角y31→-1717、下三角y779→-969。",
+          "problem": "本文のスクロールと一緒に角が二つとも消え、長文では無地の四辺の枠だけになる。",
+          "proposal": "角と外マットの包含基準を固定dialogへ揃え、本文スクロールから独立させる。対角の保持面が上/中/下で同じ紙の端へ付くようにする。"
+        }
+      ],
+      "nearestComparisons": [
+        "R086",
+        "R142",
+        "R157"
+      ]
+    },
+    {
+      "number": 219,
+      "id": "ribbon-heading-dialog",
+      "verdict": "pass",
+      "assessment": "二本の20px柱と四つの26px楕円端を同じ軸へ接続し、見出し帯が柱をまたいで中央の紙へ続く。R162の梯子やR143のI桁とは円筒の端板/帯の保持で異なる。長文の上/中/下でも柱と読む面が固定され、Aの支持が成立。合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R162",
+        "R143",
+        "R139"
+      ]
+    }
+  ],
+  "checks": [
+    "固定source100 SHA-256とreview-input-4.json全一致。配布CSS10と正本CSSをimport除外で照合し一致。reviewer-extra-4/checks.json。",
+    "native dialog9件を実modal/ARIA/Tabtrap/restoration/Escape policy/form method=dialog/保持inputとselection/rapid/disabled/長文320390768/650px表の局所横scroll/closeとfooter中心hit/RTL/forced/reduced/destroyで操作しresults9/errors0。reviewer-dialogs-4。",
+    "normal motion全9を100ms入場/500ms後、hover leave reenterの文字/入力領域安定、Escape復帰と急反転を確認。開く前のtrigger展示と実openを撮影。reviewer-open-4。",
+    "任意の長い本文とinputを注入し、全9で1000/320px×LTR/RTL×scroll上/中/下の108状態を撮影/geometry記録。R213/R216/R218の支持消失を再現し、R219の固定柱と紙面を確認。",
+    "R205 native checkboxのform/required/Space/label/reset/mixed/disabled/長文/RTL/forced/reducedとnormal off/on/mixed100ms/500ms/急反転を確認。機能は合格。reviewer-checks-4、reviewer-normal-4。",
+    "元730監査の205/211〜219の判定/理由、元open画像と既承認の近似紙/支持/陶の構造を比較。T4件は元の構成を保った精度として判断。"
+  ],
+  "limits": [
+    "独立実行は固定native配布。React実propsや現行ギャラリーdetailを今回独立起動していない。正本CSS/配布CSS一致と固定closed/open表示を照合。",
+    "Chromiumでのforced/reducedエミュレーション。他エンジン/実OS未確認。",
+    "全730件を再監査したものではなく、元判定と関連画像/既承認の近似構造を比較。"
+  ]
+}

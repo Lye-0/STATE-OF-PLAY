@@ -1,0 +1,158 @@
+{
+  "batch": "B015",
+  "round": 6,
+  "snapshot": "docs/design-renewal/batches/B015/snapshot/round-6",
+  "overall": "pass",
+  "parts": [
+    {
+      "number": 205,
+      "id": "quarter-cut-check",
+      "verdict": "pass",
+      "assessment": "3/4円の支持環と独立した四分円の切片へ再設計。実空隙へ切片だけが5px戻り、確認面の48px native欄・記号は固定される。環が読む票へ接触し、単なる切角カードから形と確認動作の関係を持つ構造へ変わった。R196の外枠回転、R199の革ループとは分割した円環を閉じる支持で分かれる。短長/RTL/混在でも接点と入力を確認しA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R164",
+        "R194",
+        "R205"
+      ],
+      "resolvedFindings": [
+        "R205-generic-cut-card"
+      ]
+    },
+    {
+      "number": 211,
+      "id": "dispatch-sheet-dialog",
+      "verdict": "pass",
+      "assessment": "Tの送り状の三段を保ち、二重の外枠と小さい補助文字を整理した。見出し/本文/署名操作の階層を罫線と余白へ限定し、任意本文を安定して読める。元監査の紙面の精度として合格。 round-4から正本不変を照合し合格判定を引継ぐ。",
+      "findings": [],
+      "nearestComparisons": [
+        "R211",
+        "R109"
+      ]
+    },
+    {
+      "number": 212,
+      "id": "porthole-dialog",
+      "verdict": "pass",
+      "assessment": "Tの丸い上端を保持し、厚い二重窓枠を薄い外装へ整理した。閉じる操作のための上の余白を確保し、本文と操作の重量差を軽減。元の特徴を崩さず、長文/狭幅でも入力と操作が読めるため合格。 round-4から正本不変を照合し合格判定を引継ぐ。",
+      "findings": [],
+      "nearestComparisons": [
+        "R134",
+        "R212"
+      ]
+    },
+    {
+      "number": 213,
+      "id": "theatre-wing-dialog",
+      "verdict": "pass",
+      "assessment": "左右の袖の幅/折面は前回の合格形を維持。包含基準を固定dialogへ移し、長文の上/中/下で同じ位置と高さの支持が残る。320px/RTLでも本文と操作を遮らず残件を解消。",
+      "findings": [],
+      "nearestComparisons": [
+        "R181",
+        "R193",
+        "R216"
+      ],
+      "normalDesignVerdict": "pass",
+      "resolvedFindings": [
+        "R213-scroll-support"
+      ]
+    },
+    {
+      "number": 214,
+      "id": "ledger-flap-dialog",
+      "verdict": "pass",
+      "assessment": "左22pxと下30pxの実断面、右下25pxの欠けを連続させ、四辺が同じ厚みの一般枠から分かれた。読む面は右端へ開き、石の切断面が外形を作る。R025の破断板/R097の露頭とは左/底に偏った確認台として違いがありA合格。長文でも断面はdialogへ固定される。 round-4から正本不変を照合し合格判定を引継ぐ。",
+      "findings": [],
+      "nearestComparisons": [
+        "R025",
+        "R097",
+        "R214"
+      ]
+    },
+    {
+      "number": 215,
+      "id": "ceramic-basin-dialog",
+      "verdict": "pass",
+      "assessment": "読む平底と56pxの楕円の前曲面、26pxの釉薬の口を別面へ組み、平底から低い前縁へ連続する浅い受けが成立。単に角丸を太くした枠を脱し、全幅の前壁が輪郭を決める。R121の注ぎ溜まりやR195の小さい陶印を反復せず、内容を載せる鉢の構造としてA合格。長文の上/中/下でも固定の前縁と無地を保持。",
+      "findings": [],
+      "nearestComparisons": [
+        "R104",
+        "R121",
+        "R195"
+      ],
+      "resolvedFindings": [
+        "R215-rounded-frame"
+      ]
+    },
+    {
+      "number": 216,
+      "id": "folded-folio-dialog",
+      "verdict": "pass",
+      "assessment": "Tの大きい見出し/縦操作と全高の折返しは前回合格を維持。固定dialogを基準にした31pxの返しが本文スクロールでも消えず、RTLでは対応する側へ移る。長文の操作も到達可能で残件解消。",
+      "findings": [],
+      "nearestComparisons": [
+        "R193",
+        "R213",
+        "R216"
+      ],
+      "normalDesignVerdict": "pass",
+      "resolvedFindings": [
+        "R216-scroll-fold"
+      ]
+    },
+    {
+      "number": 217,
+      "id": "console-bay-dialog",
+      "verdict": "pass",
+      "assessment": "Tの暗い外装と明るい確認欄を維持し、青灰へ素材を統一した。淡緑/橙の競合をなくし、入力/任意本文/操作が同じ作業台へ収まる。色替え自体を新規Aの根拠にせず、元監査の素材整合として合格。 round-4から正本不変を照合し合格判定を引継ぐ。",
+      "findings": [],
+      "nearestComparisons": [
+        "R170",
+        "R217"
+      ]
+    },
+    {
+      "number": 218,
+      "id": "gallery-mat-dialog",
+      "verdict": "pass",
+      "assessment": "対角の布角を固定dialogの角へ移し、34pxの角が18pxマットと読む紙を実際にまたぐ。外の布から内の紙へ保持する接点が見え、長文スクロールでも二つの角が同じ端に残る。本文とcloseの余白を保持し、普通の紫の枠から角の保持を持つマットへ完成。A合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R086",
+        "R142",
+        "R157"
+      ],
+      "resolvedFindings": [
+        "R218-corner-contact",
+        "R218-scroll-corners"
+      ]
+    },
+    {
+      "number": 219,
+      "id": "ribbon-heading-dialog",
+      "verdict": "pass",
+      "assessment": "二本の20px柱と四つの26px楕円端を同じ軸へ接続し、見出し帯が柱をまたいで中央の紙へ続く。R162の梯子やR143のI桁とは円筒の端板/帯の保持で異なる。長文の上/中/下でも柱と読む面が固定され、Aの支持が成立。合格。 round-4から正本不変を照合し合格判定を引継ぐ。",
+      "findings": [],
+      "nearestComparisons": [
+        "R162",
+        "R143",
+        "R139"
+      ]
+    }
+  ],
+  "checks": [
+    "固定source100 SHA-256とreview-input-6.json全一致。配布CSS10と正本をimport除外で照合し一致。reviewer-extra-6/checks.json。",
+    "round-4/6比較で変更は対象5件のCSSと再設計2件の説明/Reactコメント。他5件全正本ファイル不変。",
+    "native9dialogsを実modal/ARIA/Tabtrap/restoration/Escape policy/form method=dialog/保持input+selection/rapid/disabled/長文320390768/650px表の局所横scroll/close-footer中心hit/RTL/forced/reduced/destroyで再実行。results9/errors0。reviewer-dialogs-6。",
+    "normal motion全9の100ms入場/500ms後、hover leave reenter、Escape復帰、急反転を再確認。任意本文とinputを注入し1000/320px×LTR/RTL×上/中/下108状態を撮影/geometry記録。reviewer-open-6。",
+    "R213/R216/R218のart矩形がscroll上/中/下で完全に同一であることを実測し、長文末端の実画像でも支持が残ることを確認。R215の固定前縁/平底とR219の柱も維持。",
+    "R205 native checkboxのform/required/Space/label/reset/mixed/disabled/長文/RTL/forced/reduced全成功。normal off/on/mixed100ms/500msと急反転でglyph/枠が固定。reviewer-checks-6、reviewer-normal-6。",
+    "R205の短文1000/長文320×LTR/RTLの混在状態でinput==boxの48px矩形と実中央クリックを確認。環と読む票の接点、切片の移動方向、記号との余白を画像で確認。reviewer-contact-6。",
+    "再設計2件を既承認の支持環/ジンバル/陶の構造と比較し、前回の近似比較を更新。合格済み通常造形は同じ基準で固定。"
+  ],
+  "limits": [
+    "独立実行は固定native。React実propsや現行ギャラリーdetailは今回独立起動していない。正本CSS/配布CSS一致と固定closed/openを照合。",
+    "Chromiumでのforced/reducedエミュレーション。他エンジン/実OS未確認。",
+    "既合格5件と既存730の近似比較は前回を引継ぎ、変更5件を残件と回帰の観点で再評価。"
+  ]
+}
