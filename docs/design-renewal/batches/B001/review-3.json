@@ -1,0 +1,133 @@
+{
+  "batch": "B001",
+  "round": 3,
+  "snapshot": "batches/B001/snapshot/round-3/ (review-input-3.json SHA-256 100/100一致)",
+  "overall": "pass",
+  "parts": [
+    {
+      "number": 4,
+      "id": "concertina-latch-toggle",
+      "verdict": "pass",
+      "assessment": "銅の受けのright:-2px→14pxだけの変更を確認。通常クリックONと右ドラッグ終端で留め具右端と受け左端が一致し、隙間0px。OFFとSpaceによるOFF復帰では48pxの空隙を確認。残っていたreceiver-gapを解消し合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R005 Curtain Track Toggle",
+        "R699 Paper Fan Fold Ornament"
+      ]
+    },
+    {
+      "number": 5,
+      "id": "curtain-track-toggle",
+      "verdict": "pass",
+      "assessment": "round-2から正本ハッシュ不変のため合格判定を引き継ぐ。前回合格した布・窓の造形を維持。操作・狭幅・強制色の回帰なし。",
+      "findings": [],
+      "nearestComparisons": [
+        "R004 Concertina Latch Toggle",
+        "R699 Paper Fan Fold Ornament"
+      ]
+    },
+    {
+      "number": 6,
+      "id": "screw-jack-toggle",
+      "verdict": "pass",
+      "assessment": "round-2から正本ハッシュ不変のため合格判定を引き継ぐ。ONでナット右端147pxと銅端子左端147pxが一致し、画像でも接合を確認。前回の13pxの空きは解消。",
+      "findings": [],
+      "nearestComparisons": [
+        "R237 Wheel Guide Range",
+        "R244 Caliper Jaw Range"
+      ]
+    },
+    {
+      "number": 8,
+      "id": "drawbridge-toggle",
+      "verdict": "pass",
+      "assessment": "round-2から正本ハッシュ不変のため合格判定を引き継ぐ。前回合格した橋桁と中央継手の構造を維持。操作・狭幅・強制色の回帰なし。",
+      "findings": [],
+      "nearestComparisons": [
+        "R029 Canal Bridge Panel",
+        "R232 Bridge Saddle Range"
+      ]
+    },
+    {
+      "number": 9,
+      "id": "capstan-toggle",
+      "verdict": "pass",
+      "assessment": "round-2から正本ハッシュ不変のため合格判定を引き継ぐ。前回合格した巻胴・ロープ・位置表示を維持。操作・狭幅・強制色の回帰なし。",
+      "findings": [],
+      "nearestComparisons": [
+        "R010 Anemometer Toggle",
+        "R343 Spool Dial Progress",
+        "R694 Rotary Gate Loader"
+      ]
+    },
+    {
+      "number": 10,
+      "id": "anemometer-toggle",
+      "verdict": "pass",
+      "assessment": "round-2から正本ハッシュ不変のため合格判定を引き継ぐ。OFFで中心へ係合する銅のブレーキがONで左へ離れ、回転角だけに依存しない終端の差が成立した。カップ・軸の造形は保たれ、前回の指摘を解消。",
+      "findings": [],
+      "nearestComparisons": [
+        "R009 Capstan Toggle",
+        "R712 Pinwheel Notches Loader",
+        "R718 Column Charge Loader"
+      ]
+    },
+    {
+      "number": 11,
+      "id": "raster-reveal-toggle",
+      "verdict": "pass",
+      "assessment": "round-2から正本ハッシュ不変のため合格判定を引き継ぐ。OFFの遮蔽からONの明るい縞の開口へ移り、格子の端と持ち手も残る。位相の逆転と説明不一致が解消。",
+      "findings": [],
+      "nearestComparisons": [
+        "R004 Concertina Latch Toggle",
+        "R699 Paper Fan Fold Ornament"
+      ]
+    },
+    {
+      "number": 13,
+      "id": "comb-contact-toggle",
+      "verdict": "pass",
+      "assessment": "round-2から正本ハッシュ不変のため合格判定を引き継ぐ。前回合格した交互の銅・銀の歯の接合を維持。操作・狭幅・強制色の回帰なし。",
+      "findings": [],
+      "nearestComparisons": [
+        "R691 Kinetic Comb Ornament",
+        "R008 Drawbridge Toggle"
+      ]
+    },
+    {
+      "number": 14,
+      "id": "compartment-toggle",
+      "verdict": "pass",
+      "assessment": "round-2から正本ハッシュ不変のため合格判定を引き継ぐ。右ドラッグ40pxに戸が右40px追従する。明るい左室が現れる終端と更新した説明が一致。開口と固定ラベルで状態が読める。",
+      "findings": [],
+      "nearestComparisons": [
+        "R002 Periscope Toggle",
+        "R018 Vertical Sleeve Toggle"
+      ]
+    },
+    {
+      "number": 21,
+      "id": "bookcloth-case",
+      "verdict": "pass",
+      "assessment": "round-2から正本ハッシュ不変のため合格判定を引き継ぐ。左の布表紙・細い関節・右の固定紙面が別の輪郭として成立し、ホバーでは本文を動かさず表紙が変形する。前回の色帯付き矩形から構造が分離した。展示のidea.も暗いインク色に改善し、長文320px・強制色・動き軽減も確認。Aとして合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R026 Archival Channel",
+        "R035 Terraced Paper Panel",
+        "R255 Folio Spine Choice",
+        "R475 Bookplate Profile"
+      ]
+    }
+  ],
+  "checks": [
+    "response-2.mdとround-2/round-3の差分を確認。変更はR004 styles.cssの受けright:-2px→14pxのみ。ほか99ファイルはハッシュ不変。",
+    "固定round-3の全100正本ファイルをreview-input-3.jsonと照合し、SHA-256全一致。",
+    "固定portable native JSをVite+Chromiumで独立起動。R004を通常モーションでOFF→クリックON→OFF→右48pxドラッグ→SpaceでOFFの順に操作。",
+    "DOMと疑似要素の計算値で接点を実測。OFF空隙48px、クリックON 0px、ドラッグ終端0px、SpaceでOFF復帰48px。ON画像で接合も視覚確認。",
+    "残り9件の通常造形・操作・狭幅・強制色・reduced-motion等は、ハッシュ不変を根拠にround-2の実検査結果を引き継ぐ。"
+  ],
+  "limits": [
+    "本ラウンドはR004の受け位置と終端動作に限定。全10件の操作一式や全730件との再比較を繰り返していない。",
+    "実機タッチ・OS高コントラスト・スクリーンリーダー、および全配布形式についてはreview-1/review-2の検査範囲・限界を引き継ぐ。"
+  ]
+}

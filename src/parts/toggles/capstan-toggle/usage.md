@@ -1,9 +1,8 @@
 # Capstan Toggle
 
-造形を保ち、部品本体に固定位置のON/OFF目盛りを追加。
+張られたロープの内側で三本スポークの巻胴が回る。ロープの出口と銅の回転印を分け、下の固定目盛りでOFF／ONを確認できる。
 
-
-Type B / CSS + Events。造形を保ち、部品本体に固定位置のON/OFF目盛りを追加。
+Type A / CSS + Events。造形を保ち、部品本体に固定位置のON/OFF目盛りを追加。
 
 基準サイズ: 104×64px。展示ページの倍率ではなく、実際の部品サイズです。フォームに接続する場合はchecked/onCheckedChangeをアプリの状態へ渡します。button型switchはフォーム値を自動送信しないため、必要ならhidden inputへ反映してください。
 

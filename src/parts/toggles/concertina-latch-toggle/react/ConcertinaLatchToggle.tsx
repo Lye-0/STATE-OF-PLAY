@@ -9,13 +9,13 @@ const config = {
   "stiffness": 270,
   "damping": 23,
   "tone": 631,
-  "travel": 44
+  "travel": 48
 };
-/** 小さな蛇腹が畳まれて留め金を引き寄せ、接点がつながる。 */
+/** 六つの折り面を右へ引き伸ばし、ONで銀の留め具を銅の受けへつなぐ蛇腹ラッチ。右ドラッグと留め具の移動を一致させ、OFF／ONの文字は固定する。 */
 export default function ConcertinaLatchToggle(props: SimpleToggleProps) {
   const {element, checked} = useSimpleToggle(config, props);
   const {checked: _checked, defaultChecked: _initial, onCheckedChange: _change, className = '', ...buttonProps} = props;
   return <button {...buttonProps} ref={element} type="button" role="switch" aria-label={props['aria-label'] ?? 'Concertina Latch Toggle トグル'} aria-checked={checked} className={`sop-toggle sop-concertina-latch-toggle ${className}`}>
-    <span className="switch-art" aria-hidden="true"><span className="x-bed"></span><span className="x-piece"></span><span className="x-sign"></span><span className="x-detail"></span></span>
+    <span className="switch-art" aria-hidden="true"><span className="x-bed"></span><span className="x-piece"><i></i><i></i><i></i><i></i><i></i><i></i></span><span className="x-sign"></span><span className="x-detail"></span><span className="x-labels"><span>OFF</span><span>ON</span></span></span>
 </button>;
 }
