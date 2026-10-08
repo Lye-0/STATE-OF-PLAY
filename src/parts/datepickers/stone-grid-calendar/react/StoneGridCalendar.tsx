@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "mode": "date"
 };
 export type StoneGridCalendarProps = FoundationProps;
-/** 石に刻む月の格子。日付の並びを浅い小区画にし、選択日はくぼみの底の濃い面で表示。 */
+/** 平日の五列を一枚の石台へ、土日の二列を深い切込みへ載せる暦。四十二の同じ面取りキーを廃止し、全六週へ続く一体の高い石台と18px低い週末の受面、14pxの切断面へ再構成する。曜日と日付は同じ七列に固定し、平日と週末の間に14pxの切断面の余白を予約して読む数字を石の縁から離す。選択した日だけがその実面上で明瞭に変わる。 */
 export default forwardRef<HTMLDivElement, StoneGridCalendarProps>(function StoneGridCalendar(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderDate} mountContent={mountDate}/>;
 });

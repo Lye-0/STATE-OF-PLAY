@@ -1,0 +1,160 @@
+{
+  "batch": "B027",
+  "round": 5,
+  "snapshot": "docs/design-renewal/batches/B027/snapshot/round-5",
+  "overall": "pass",
+  "parts": [
+    {
+      "number": 373,
+      "id": "folded-month-calendar",
+      "verdict": "pass",
+      "assessment": "六週それぞれの上下の大きい折返し面と斜めの肩が、実際の七日を載せる週の単位を形作る。見出し帯の色変更から離れ、日付列と折面を分けて読める。R222の三つの連続した本文面とは独立した週紙の反復で構造が異なる。 正本60hash不変の既合格6件として造形基準を維持し、今回native回帰も再実行した。 round5で正本不変の9件として、訂正後round4の合格判断と操作証拠を維持する。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R373",
+        "R222 folded plan",
+        "R304 semantic steps"
+      ]
+    },
+    {
+      "number": 374,
+      "id": "stone-grid-calendar",
+      "verdict": "pass",
+      "assessment": "最終合格。一体5/2石面の形を保持し、平日5列と週末2列の間へ10px専用trackと両2pxgap、計14pxの切断面領域を予約した。semantic DOMは7日付/7曜日のまま、曜日と全六週で同じ配置を使う。320/390/768×LTR/RTL×金曜/土曜選択の12条件・延べ504日付の実Rangeがすべて読む平面内に収まり、最小余白8.765625px。旧round4の最小−3.7965pxの交差を実測で解消した。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R374",
+        "R174割れた石と同形切口",
+        "R359斜め石板の深い内面",
+        "一般的な面取りキー"
+      ],
+      "resolvedFindings": [
+        "R374-generic-key-grid",
+        "R374-Friday-cut-face"
+      ],
+      "normalDesignVerdict": "pass"
+    },
+    {
+      "number": 375,
+      "id": "folio-date-calendar",
+      "verdict": "pass",
+      "assessment": "再設計を合格。二葉/二腕を廃し、一枚の紙の六本のT形紙舌が露出した櫛状の背に噛み合う。42px週高、全252pxの背を実測。slot y9–33に対して紙舌の肩y7–35が上下2px裏へ入り、8pxの細い根元が紙面へ4px重なる。320/390/768のLTR/RTLで実寸を保持し、R275二票/二腕やR360環綴じ、R378糸綴じと接合原理が異なる。 round5で正本不変の9件として、訂正後round4の合格判断と操作証拠を維持する。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R375",
+        "R275 ledger-gutter-finder",
+        "R220見開き",
+        "R181 jacket folds"
+      ],
+      "resolvedFindings": [
+        "R375-two-leaf-repeat"
+      ]
+    },
+    {
+      "number": 376,
+      "id": "perpetual-desk-calendar",
+      "verdict": "pass",
+      "assessment": "暦の読む紙と底の受面を左右の開いたA形の脚が支える。102pxの二脚と82px下方領域が全体外形を決め、元の色帯パネルから独立した卓上支持へ変わった。下方の不透明な無地面によって背後の別文字が構成に混入せず、狭幅・RTL・timeでも操作と支持を分けている。 正本60hash不変の既合格6件として造形基準を維持し、今回native回帰も再実行した。 round5で正本不変の9件として、訂正後round4の合格判断と操作証拠を維持する。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R376",
+        "R317三角定規支持",
+        "R320 L bookend",
+        "R363前柵"
+      ]
+    },
+    {
+      "number": 377,
+      "id": "orbit-date-calendar",
+      "verdict": "pass",
+      "assessment": "T保持。元の上弧と丸い選択を残し、3px弧・円形の実月送り・固定した月面へ曲率を整理。新しい複雑機構を課す対象ではなく、元の軽い輪郭を精密化する基準で合格。 正本60hash不変の既合格6件として造形基準を維持し、今回native回帰も再実行した。 round5で正本不変の9件として、訂正後round4の合格判断と操作証拠を維持する。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R377",
+        "R343固定読窓と量環"
+      ]
+    },
+    {
+      "number": 378,
+      "id": "stitched-planner",
+      "verdict": "pass",
+      "assessment": "調整を合格。42pxの各週紙と10pxの実gapに、上孔(8,8)/下孔(16,34)を通って次週の上孔へ続く一つの経路が揃う。最後の週は下孔で終端する。紙のmaskと糸を同時に鏡映し、RTLでも同じ側の二孔を通る。六週/三幅/両方向の幾何と実画像で前回の独立X・左右分離を解消した。 round5で正本不変の9件として、訂正後round4の合格判断と操作証拠を維持する。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R378",
+        "R157連続縫い糸と実孔",
+        "R333二片の布を渡る縫合",
+        "R360環綴じ"
+      ],
+      "resolvedFindings": [
+        "R378-lace-path",
+        "R378-RTL-hole-thread"
+      ]
+    },
+    {
+      "number": 379,
+      "id": "open-week-calendar",
+      "verdict": "pass",
+      "assessment": "再設計を合格。六つの独立Uを廃し、全六週の水平受面が左右交互の曲がりで一筆に繋がる24px厚/9pxの小口を持つ支持板になった。読む日付は各床へ固定し、上部の開放と外周の連続した曲がりが大きい固有形を作る。R373の独立紙折面とは、連続する一枚の支持板という構造が異なる。 round5で正本不変の9件として、訂正後round4の合格判断と操作証拠を維持する。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R379",
+        "R352 cargo bay（T）",
+        "旧R282反復C顎",
+        "R373独立した折紙週面"
+      ],
+      "resolvedFindings": [
+        "R379-repeated-U"
+      ]
+    },
+    {
+      "number": 380,
+      "id": "letterpress-month",
+      "verdict": "pass",
+      "assessment": "T保持。セリフの数字と週の基線を残し、年月・日付・選択版面の比率を整理した。文字の位置を変えず実選択とhoverを読み取れ、元のタイポグラフィ主体の良さを壊していない。 正本60hash不変の既合格6件として造形基準を維持し、今回native回帰も再実行した。 round5で正本不変の9件として、訂正後round4の合格判断と操作証拠を維持する。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R380",
+        "元活字系date"
+      ]
+    },
+    {
+      "number": 381,
+      "id": "index-month-calendar",
+      "verdict": "pass",
+      "assessment": "48pxの肩付き曜日札と直下の月面を結び、選択日と同じ曜日だけを照合色にする。単なる月名の小札から実情報を探す七索引へ変わり、R314の項目名タブとは月の七列全体を決める構造で区別できる。全七曜日をLTR/RTLで選択し、一つだけ正しい索引が着色することを独立確認。 正本60hash不変の既合格6件として造形基準を維持し、今回native回帰も再実行した。 round5で正本不変の9件として、訂正後round4の合格判断と操作証拠を維持する。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R381",
+        "R314実項目名のguide tabs",
+        "R259 folder tab"
+      ]
+    },
+    {
+      "number": 382,
+      "id": "rail-date-calendar",
+      "verdict": "pass",
+      "assessment": "実月送りを担う二つの台車が6pxレールに載り、16pxの二吊具が曜日面へ重なる。上の横支持と吊った読む紙が接続し、R372のドラム/曜日軸/選択キャリッジとは支持の向きと機構が違う。操作部・本文を固定したまま材料関係が読める。 正本60hash不変の既合格6件として造形基準を維持し、今回native回帰も再実行した。 round5で正本不変の9件として、訂正後round4の合格判断と操作証拠を維持する。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R382",
+        "R372 instrument date",
+        "R277 rail arms",
+        "R302縦軸carriage"
+      ]
+    }
+  ],
+  "checks": [
+    "固定round5正本100hashがreview-input-5.jsonと全一致、portable CSS10一致。round4から95hash不変でR374 CSS/説明5ファイルのみ変更。reviewer-extra-5/checks.json。",
+    "R374をactual native exportで独立再実行。keyboard/ARIA/focus復帰/FormData/disabled日/invalid draft/normalize/required/readonly/disabled/date/range/time/datetime/reset/open destroy、長文320390768/day hit/RTL/forced/reducedすべてPASS。reviewer-dates-5/checks.json。",
+    "R374の実Rangeを全42日×3幅×LTR/RTL×金曜/土曜選択で測定、延べ504glyphすべて平面内。最小余白8.765625px。reviewer-glyphs-5/checks.jsonと全12画像。",
+    "対照としてround4を同じRange検査で再現し、最小−3.7965pxの交差を確認した。画像再確認による判定訂正を定量的に裏付けた。reviewer-glyphs-4/checks.json。",
+    "R374の実曜日/日付DOMは7列、CSSだけが切断面専用trackを挟む。金曜25・土曜26の実選択が同じ読む面内にあり、RTLでも切断面が字を横切らない。",
+    "残り9件は正本不変のためround4のnative全モード/80実画像/normal hover glyph固定・R381索引14条件・素材接点の成功を継承。今回再操作したとは扱わない。"
+  ],
+  "limits": [
+    "Chromium Linuxとforced-colors/reduced-motionエミュレーション。実支援技術の読み上げや全ブラウザまでは未確認。",
+    "React4形式を独立再起動していない。主担当ログは補助資料。",
+    "今回の実ブラウザ再検査は変更したR374が中心。残り9件は正本同一性を確認してround4の証拠を継承。全730件を再操作したものではない。"
+  ]
+}

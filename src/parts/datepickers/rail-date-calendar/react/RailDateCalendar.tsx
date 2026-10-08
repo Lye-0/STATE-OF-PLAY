@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "mode": "date"
 };
 export type RailDateCalendarProps = FoundationProps;
-/** レールに載る日付札。月の移動操作を両端へ固定し、曜日から日付まで縦の列を揃える。 */
+/** 上のレールに載せた二つの月送りから、日付の紙面を吊るす暦。ヘッダーの上下の細線を廃止し、6pxの実レール・二つの成形された月送り台車・16pxの二吊具へ作り直す。吊具は曜日面へ10px重なり、日付面はその下へ連続する。月と日付の読みは装飾から離して固定する。 */
 export default forwardRef<HTMLDivElement, RailDateCalendarProps>(function RailDateCalendar(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderDate} mountContent={mountDate}/>;
 });

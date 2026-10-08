@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "mode": "date"
 };
 export type PerpetualDeskCalendarProps = FoundationProps;
-/** 卓上の万年カレンダー。月の表示札と七列の日付板を分け、下の台座に今日・クリアを置く。 */
+/** 二つの開いた三角支持脚で、実際の月の紙面を卓上へ立てる日付選択。月の枠と下の色帯を廃止し、102pxの左右の二脚と82pxの空いた下方を作る。支持脚は暦の読む面へ20px重なり、三角の内部は淡い無地の背景面へ抜け、背後の別の文字を透かさない。日付と操作は支えから離れた上の面に固定する。 */
 export default forwardRef<HTMLDivElement, PerpetualDeskCalendarProps>(function PerpetualDeskCalendar(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderDate} mountContent={mountDate}/>;
 });

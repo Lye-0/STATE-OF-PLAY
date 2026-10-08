@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "mode": "date"
 };
 export type FolioDateCalendarProps = FoundationProps;
-/** 綴じた手帳の予定ページ。背の余白と横罫を残し、日付を押しても升目の配置を保つ。 */
+/** 一枚の暦紙から出る六つのT形の紙舌を、櫛状の露出した背へ組み継ぐ暦。二葉と二つの橋を全廃し、各実週の28pxの広い先端が背のスリットの裏へ入り、8pxの根元が読む紙面へ4px連続する構造を作る。背と読む七列の間へ48pxの綴じ余白を取り、日付を紙舌の上に置かない。RTLでも背・切込み・紙舌が一括して同じ側へ移る。 */
 export default forwardRef<HTMLDivElement, FolioDateCalendarProps>(function FolioDateCalendar(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderDate} mountContent={mountDate}/>;
 });

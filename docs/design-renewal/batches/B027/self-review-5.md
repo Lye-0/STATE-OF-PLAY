@@ -1,0 +1,3 @@
+# R374 glyphと切断面
+
+自画像点検で金曜の二桁が切断面へ一部重なることを発見。5列と2列の間に10pxのCSS専用trackと両2pxgapの14pxの余白を確保。semantic DOMは7gridcells/7weekdaysのみで余分なcellを生成しない。切断面を余白内に限定し、全6週のglyphから完全に離す。95hash不変、R374のCSS/説明5hashのみ変更。

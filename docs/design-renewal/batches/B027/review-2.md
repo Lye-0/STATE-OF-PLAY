@@ -1,0 +1,99 @@
+# B027 round-2 独立レビュー
+
+**changes_requested：6 pass / 1 adjust（R378）/ 3 redesign（R374・R375・R379）。** 全10nativeの操作契約は成功。造形・接合の合否とは分けて記録。正本・snapshot未編集。
+
+## R373 folded-month-calendar — pass
+
+六週それぞれの上下の大きい折返し面と斜めの肩が、実際の七日を載せる週の単位を形作る。見出し帯の色変更から離れ、日付列と折面を分けて読める。R222の三つの連続した本文面とは独立した週紙の反復で構造が異なる。
+
+近似比較：元R373 / R222 folded plan / R304 semantic steps。
+
+## R374 stone-grid-calendar — redesign
+
+42個同形の面取りキーが主で、標準的なボタングリッドの素材替えを十分に超えていない。石の名称を外すと固有の外形・受け・切断構造が残らない。
+
+近似比較：元R374 / R174割れた石と同形切口 / R359斜め石板の深い内面 / 一般的な面取りキー。
+
+- **R374-generic-key-grid / major**：各日付へ同じ6px切角と上4px/下6pxの帯を付けただけで、一般的な面取りキーの反復に留まる。選択色を除けば日付・曜日・月の構造と石の形の関係が弱い。
+- 証拠：captures/reviewer-dates-2/stone-grid-calendar-initial.png / -narrow-320.png、reviewer-materials-2/stone-grid-calendar-ltr-date.png
+- 改善：42個の小さい面取り部品を廃し、平日5列を載せる一体の石台と週末2列の深い切込みなど、実曜日の意味に結び付く大きい一枚の採掘面へ再構成する。七列のglyph/hitは保ち、上面・切口・受けの接点を描く。単なる背景色の5/2塗分けでは解決しない。
+
+## R375 folio-date-calendar — redesign
+
+実三週ずつの二葉と二本の橋の接点は成立するが、既承認R275の二紙・空隙・二本の綴じ腕と機構が近すぎる。内容を三週ずつに変えて上下へ並べるだけではAの独立性が不足。
+
+近似比較：元R375 / R275 ledger-gutter-finder / R220見開き / R181 jacket folds。
+
+- **R375-two-leaf-repeat / major**：二葉を24px空隙で分け、32px高の二つの帯が両側へ重なる。これはR275の二紙/22px空隙/38px綴じ腕と同じ接合原理で、三週ずつという情報分割と配置変更だけでは独立したAにならない。
+- 証拠：captures/reviewer-dates-2/folio-date-calendar-initial.png / -narrow-320.png、reviewer-materials-2/folio-date-calendar-ltr-date.png、B019/review-5.json R275と最終ledger-gutter-finder実像/構造
+- 改善：二葉と橋を全廃する。一案は、一枚の暦紙の週境界に対応する6本の大きいT形の紙舌を、露出した全高の櫛状の背の6スリットへ差し込む組み継ぎ背。広い先端が背の裏へ入り、細い根元が読む一枚へ連続する実切込みを見せる。環綴じR360、糸綴じR378、二腕R275とは接合原理を分け、細い飾り歯にしない。
+
+## R376 perpetual-desk-calendar — pass
+
+暦の読む紙と底の受面を左右の開いたA形の脚が支える。102pxの二脚と82px下方領域が全体外形を決め、元の色帯パネルから独立した卓上支持へ変わった。下方の不透明な無地面によって背後の別文字が構成に混入せず、狭幅・RTL・timeでも操作と支持を分けている。
+
+近似比較：元R376 / R317三角定規支持 / R320 L bookend / R363前柵。
+
+## R377 orbit-date-calendar — pass
+
+T保持。元の上弧と丸い選択を残し、3px弧・円形の実月送り・固定した月面へ曲率を整理。新しい複雑機構を課す対象ではなく、元の軽い輪郭を精密化する基準で合格。
+
+近似比較：元R377 / R343固定読窓と量環。
+
+## R378 stitched-planner — adjust
+
+六週の紙片と大きい糸の領域は維持可能だが、現状は各行の一穴の上に独立したXを重ねるだけで紙片同士を綴じない。RTLでは孔と糸の位置も別側へ分離する。
+
+近似比較：元R378 / R157連続縫い糸と実孔 / R333二片の布を渡る縫合 / R360環綴じ。
+
+- **R378-lace-path / major**：各週に一つの孔(12,21)と独立24×32pxのXを置いている。Xの四端は他の孔や次の紙へ届かず、一つの孔の上で交差する記号になっている。六紙を綴じるという説明と実経路が一致しない。
+- 証拠：captures/reviewer-dates-2/stitched-planner-initial.png / -narrow-320.png、reviewer-materials-2/stitched-planner-ltr-date.png / source/stitched-planner/styles.css maskとX gradient
+- 改善：六週片を保持し、各紙の上孔と下孔を通って次週の上孔へ続く一本の真の縫合経路を作る。固定したrow高/gapと同じ座標を孔・糸双方に使い、最終紙で糸を終端する。文字とhitは経路から離す。
+
+- **R378-RTL-hole-thread / major**：糸はinset-inline-startでRTL時に右へ移るが、紙mask孔はphysical x12pxのまま左に残る。実画像でも右のXと左端の日付脇の孔が分離している。
+- 証拠：captures/reviewer-materials-2/stitched-planner-rtl-date.png / source mask at 12px 21px
+- 改善：紙の孔と糸の全経路を同じ論理側へ一括で鏡映する。単に糸だけ移動しない。LTR/RTL・狭幅・六週すべての端点を確認する。
+
+## R379 open-week-calendar — redesign
+
+6pxの左右線と28px下帯からなるU形を六回繰り返し、上半分を空白にした構成が支配的。標準の週罫線を太くした支持枠の範囲で、Aを担う一体の素材・断面・接合が不足する。
+
+近似比較：元R379 / R352 cargo bay（T） / 旧R282反復C顎 / R373独立した折紙週面。
+
+- **R379-repeated-U / major**：六つのU形の各上半分は空白、下半分だけが日付面で、支柱と帯の描線以上の構造がない。元の横罫線を厚い枠へ変えた程度で、独立した素材の美しさや接合が読めない。
+- 証拠：captures/reviewer-dates-2/open-week-calendar-initial.png / -narrow-320.png、reviewer-materials-2/open-week-calendar-ltr-date.png
+- 改善：六Uを廃し、六週の水平受面が外周の左/右交互の曲がりで一筆に繋がる、一体の蛇行した厚い支持板などへ再構成する。中央は読む受面、片端は開放とし、折曲げの内外面と連続端を実描画する。R373の独立紙折面とは素材・連続接合・外形を区別する。
+
+## R380 letterpress-month — pass
+
+T保持。セリフの数字と週の基線を残し、年月・日付・選択版面の比率を整理した。文字の位置を変えず実選択とhoverを読み取れ、元のタイポグラフィ主体の良さを壊していない。
+
+近似比較：元R380 / 元活字系date。
+
+## R381 index-month-calendar — pass
+
+48pxの肩付き曜日札と直下の月面を結び、選択日と同じ曜日だけを照合色にする。単なる月名の小札から実情報を探す七索引へ変わり、R314の項目名タブとは月の七列全体を決める構造で区別できる。全七曜日をLTR/RTLで選択し、一つだけ正しい索引が着色することを独立確認。
+
+近似比較：元R381 / R314実項目名のguide tabs / R259 folder tab。
+
+## R382 rail-date-calendar — pass
+
+実月送りを担う二つの台車が6pxレールに載り、16pxの二吊具が曜日面へ重なる。上の横支持と吊った読む紙が接続し、R372のドラム/曜日軸/選択キャリッジとは支持の向きと機構が違う。操作部・本文を固定したまま材料関係が読める。
+
+近似比較：元R382 / R372 instrument date / R277 rail arms / R302縦軸carriage。
+
+## 確認範囲
+
+- 固定source100hashがreview-input-2.jsonと一致、portable CSS10一致。reviewer-extra-2/checks.json。
+- 全10actual native date exportsを独立操作。Alt+Down/日送り/Enter/Escape/ARIA/focus復帰/FormData/minmax/disabled日skip/invalid draft/normalize/required/readonly/disabled/date/range/time/datetime/reset/open destroy、320390768 panel fit/day hit、RTL/forced/reducedすべてPASS。reviewer-dates-2/checks.json。
+- 全10件×4モード×LTR/RTL、計80実表示の画像と幾何を採取。triggerをviewportへ移してから開き、紙/支持/背景と実文字の関係を目視。reviewer-materials-2。
+- 全10件でnormal motionのhover/leave/reenterを各2回、350ms後も確認。全visible button/strong/weekday glyphのpanel相対矩形とfontが固定。reviewer-motion-2/checks.json。
+- R381で7曜日それぞれを選択しLTR/RTLの計14条件で正しい索引一つだけが着色することを検証。reviewer-motion-2/checks.json。
+- 元snapshot0実開像・元監査R/Tと既承認の近似を照合。特にR275の二葉/二腕、R157の連続縫い、R372の計器軸と比較。API成功と造形判定を分けた。
+- 主担当React10×4およびR376修正後ログは補助参照。独立native再実行とは区別。
+
+## 限界
+
+- Chromium Linuxおよびforced-colors/reduced-motionエミュレーション。実支援技術の読み上げや全ブラウザまでは未確認。
+- React4形式を独立再起動していない。主担当ログは補助資料。
+- 全730件の元監査・近似を参照したが、今回全730件を再操作したものではない。

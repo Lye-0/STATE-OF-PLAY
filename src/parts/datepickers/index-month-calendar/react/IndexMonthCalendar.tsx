@@ -14,7 +14,7 @@ const config: FoundationConfig = {
   "mode": "date"
 };
 export type IndexMonthCalendarProps = FoundationProps;
-/** 月の索引票。見出しを上のタブへ、日付は下の一枚の記録面へ配置する。 */
+/** 七つの曜日索引を、月面から張り出す大きい肩付きの札へ分ける日付選択。月表示の小札を撤去し、48pxの実曜日札と、その下の実日付の列を直結する。選択日の曜日に対応する索引へ同じ色を付け、飾りだけの札でなく、日付を見つける手掛かりとして使う。 */
 export default forwardRef<HTMLDivElement, IndexMonthCalendarProps>(function IndexMonthCalendar(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderDate} mountContent={mountDate}/>;
 });
