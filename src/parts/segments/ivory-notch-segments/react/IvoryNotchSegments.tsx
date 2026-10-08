@@ -3,5 +3,5 @@ import React from 'react';
 import {SegmentView,type SegmentProps} from '../../../../shared/segment-view';
 import '../styles.css';
 export type {SegmentProps,SegmentItem} from '../../../../shared/segment-view';
-/** 三つのシャッター窓。選択位置に透明な明るい開口が移り、暗い外装と区別される。 */
-export default function IvoryNotchSegments({className='',...props}:SegmentProps){return <SegmentView {...props} className={`sop-ivory-notch-segments ${className}`}/>;}
+/** 上下に二つの実際の切欠きを持つ象牙色のキーを、青灰の座へ合わせるセグメント。切欠きは元の輪郭を残し、選択面を暖かい明色、未選択を濃い青灰へ分ける。文字の位置と大きさを保ち、任意の選択肢でも状態を読みやすくする。 */
+export default function IvoryNotchSegments({className='',...props}:SegmentProps){return <SegmentView {...props} markerArt={<span className="sop-segment-material" aria-hidden="true"><i/><i/><i/><i/><i/><i/></span>} className={`sop-ivory-notch-segments ${className}`}/>;}

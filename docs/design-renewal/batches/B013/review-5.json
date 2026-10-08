@@ -1,0 +1,156 @@
+{
+  "batch": "B013",
+  "round": 5,
+  "snapshot": "docs/design-renewal/batches/B013/snapshot/round-5",
+  "overall": "changes_requested",
+  "parts": [
+    {
+      "number": 180,
+      "id": "coin-seat-segments",
+      "verdict": "pass",
+      "assessment": "上下の全幅の弧と厚い読む筒、外の楕円の座、側の支柱が同じ金属として接続する。普通の茶色い列から筒の断面を持つ三つの区画へ変わった。R138の横向きの本の背とは上下の独立した支持と選ぶ筒の配置で分かれ、A合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R138",
+        "R180"
+      ]
+    },
+    {
+      "number": 181,
+      "id": "book-jacket-segments",
+      "verdict": "adjust",
+      "assessment": "赤い選択カプセルから紙とジャケットへ変えた方向はよいが、設計した上下の大きい折返しが紙の後ろへ隠れる。現像は平らな赤い裏紙と切角の紙の積層に留まり、包む接点が形を決めていない。骨格を維持して折返しを実際に見せる調整が必要。",
+      "findings": [
+        {
+          "key": "R181-hidden-wrap",
+          "severity": "major",
+          "kind": "design",
+          "evidence": "captures/reviewer-joints-5/book-jacket-segments-horizontal-2.png、-vertical-2.png、reviewer-segments-5/book-jacket-segments-long.png。afterは22pxの折返しpolygon/z-index:-2、before紙はinset:9px 0 9px 16pxで前面を覆う。",
+          "problem": "上下の斜めの折返しは紙の不透明な面の後ろへ隠れ、見えるのは上下9pxの平たい赤い帯と左の直線だけ。紙を包む口・折面・重なる返しが見えず、平たいbook rectangleの積層に留まる。",
+          "proposal": "読む紙の外側へ折返しの斜面と口を露出させ、先の返しだけが紙の端へ実際に重なる構成へ整理する。背から上下の返しへ連続する一枚のジャケットは維持し、単なる層や色追加ではなく接続を描く。文字/押し面は動かさず、長文/縦でも折面が紙に消えないか確認する。"
+        }
+      ],
+      "nearestComparisons": [
+        "R021",
+        "R138",
+        "R175"
+      ]
+    },
+    {
+      "number": 182,
+      "id": "ivory-notch-segments",
+      "verdict": "pass",
+      "assessment": "Tの上下の切欠きを保持し、青灰の未選択と明るい象牙色の選択へ分離した。本文色も各面に対応し、縦/wrapで区画ごとの切欠きが残る。元監査の選択の明瞭さを解消し合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R182",
+        "R171"
+      ]
+    },
+    {
+      "number": 183,
+      "id": "double-track-segments",
+      "verdict": "pass",
+      "assessment": "閉じた二重の軌道の戻りと内側の板の間に実空隙があり、選択区画だけ上下の橋が接続する。R154の一本の案内溝、R162の梯子、R172の直線レールとも異なる閉じた経路の輪郭がある。縦/wrapでも橋が板から軌道へ届きA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R154",
+        "R162",
+        "R172"
+      ]
+    },
+    {
+      "number": 184,
+      "id": "bracket-seat-segments",
+      "verdict": "pass",
+      "assessment": "下を包む厚いU字の座と丸底の読む板が連続して接触する。round-5では板の下が受けの内側へ届き、浮いた底の空隙がない。R171の二足、R177の上アーチ、R173の左右折脚とは下を受ける曲率で分かれる。A合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R171",
+        "R173",
+        "R177"
+      ]
+    },
+    {
+      "number": 185,
+      "id": "satin-key-segments",
+      "verdict": "pass",
+      "assessment": "Tの左右の浅い巻込みを保持し、茶色い光沢と打刻票の説明を除いて淡紅の薄い帯へ整えた。元の端の曲率を残し、文字が折面へ傾いたり動いたりしない。元監査の素材/説明の精度として合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R185",
+        "R118"
+      ]
+    },
+    {
+      "number": 191,
+      "id": "locking-plate-check",
+      "verdict": "pass",
+      "assessment": "24pxの上下の曲がった留め板を確認面の外へ出し、実開口と枠への重なりを作った。中央のチェック/混在線を邪魔する縦線がなく、R194の対角のLとも支持する場所・開いた形が分かれる。R179の上下顎より折返した板の断面が明瞭。A合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R179",
+        "R194",
+        "R191"
+      ]
+    },
+    {
+      "number": 192,
+      "id": "stitched-seal-check",
+      "verdict": "pass",
+      "assessment": "Tの二つの角糸を保ち、薄い封印の紙縁と細い縫い目へ整理した。太い金属枠の印象を除き、記号は無地の中央に一つだけ表示する。R157の全高の革の背、R178の継ぎ帯とは小さい封印を留める構造として分かれ、合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R157",
+        "R178",
+        "R192"
+      ]
+    },
+    {
+      "number": 193,
+      "id": "folded-ticket-check",
+      "verdict": "redesign",
+      "assessment": "状態記号と飾りの干渉は解消し、確認票全体の境界も設けた。しかし実際に形を変えるのは右上20pxの折角だけで、残りは一般的な矩形カードと確認欄。短い破線も票の全体構造へつながらず、Aの固有性はまだ不足。再設計を求める。",
+      "findings": [
+        {
+          "key": "R193-generic-folded-card",
+          "severity": "major",
+          "kind": "design",
+          "evidence": "captures/reviewer-checks-5/folded-ticket-check-checked.png、-mixed.png、-long.png、reviewer-normal-5/folded-ticket-check-on.png。rootは20px角だけを切るpolygon、右上20×20の三角、確認欄外の短い破線。",
+          "problem": "右上の小さな折角を付けた汎用カードに留まり、確認という操作と結びつく独自の紙の構造が全体の形を決めていない。R142の二つの全幅折翼/実空隙やR084の独立半券と比べても、境界の再構成が小飾りの域を出ない。",
+          "proposal": "一例として、票の左端全高を幅のある一枚の折返しへし、確認欄を支える無地の固定面へつなぐ。紙が戻る折口・断面・重なりを実際に見せ、右の説明面と確認面が一体の票を折って作られた形にする。チェック/混在記号と文字は固定し、破線や角の拡大だけを合格の根拠にしない。R084の切離した半券やR151の独立した金具の反復も避ける。"
+        }
+      ],
+      "nearestComparisons": [
+        "R142",
+        "R084",
+        "R193"
+      ]
+    },
+    {
+      "number": 194,
+      "id": "crossbar-check",
+      "verdict": "pass",
+      "assessment": "Tの交差する支持を外の二つの対角へ整理し、中央のチェック/混在線と分けた。3pxの支持と1pxの紙縁に役割の差があり、過密な複合記号を解消。R191の上下の留め板とは対角のLで分かれる。元監査Tの精度として合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R191",
+        "R205",
+        "R194"
+      ]
+    }
+  ],
+  "checks": [
+    "固定source100 SHA-256とreview-input-5.json一致。native配布CSS10件と正本CSSをimport除外で照合し一致。reviewer-extra-5/checks.json。",
+    "固定native segments6件を通常motionで実操作。radio/form/reset/one checked/Home/End/方向キー/disabled/hover leave reenter/文字矩形/縦/320390768長文/RTL/forced/reduced全成功、results6/errors0。reviewer-segments-5。",
+    "checkbox4件をnative Space/label/required/form/reset/indeterminate/disabled、320390768長文/RTL/forced/reducedで操作し全成功、results4/errors0。reviewer-checks-5。",
+    "checkbox4件は別途normal motionでoff/on/mixedの100ms途中と500ms後を撮影。hover leave reenter・急なSpace反転の文字/枠矩形を確認。全状態で安定、off tick0/dash0、on1/0、mixed0/1。reviewer-normal-5/checks.json。",
+    "segments6件を横/縦×3選択で36画像、320px wrapと白背景を撮影。支持の接点、R184のUの底、R183の閉路/橋、長文の本文明瞭さを実画像で評価。reviewer-joints-5。",
+    "元730監査の180〜185/191〜194の判定/理由、segments/checkboxesカテゴリ一覧と、既承認の最寄支持/紙構造を比較。Tは元形態の精度として評価。"
+  ],
+  "limits": [
+    "Chromiumの固定native配布を独立実行。React配布の実props検証は今回は独立再実行していない。",
+    "forced/reducedはブラウザエミュレーション。他エンジン/実OS未確認。",
+    "元730件全体を再監査したものではなく、元監査/カテゴリ一覧と既承認の近似候補を比較。"
+  ]
+}
