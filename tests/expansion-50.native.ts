@@ -20,6 +20,6 @@ try{for(const category of categories.filter(c=>!chosen||chosen.includes(c))){con
   await page.emulateMedia({reducedMotion:'reduce'});
   for(const p of parts)assert.equal(await page.locator(`[data-part="${p.id}"] .x-composition`).evaluate(e=>e.getAnimations({subtree:true}).length),0,p.id+' reduced motion');
  }
- for(const width of [320,390,768]){await page.setViewportSize({width,height:844});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),category+' native '+layout+' fits '+width);}
+ for(const width of [320,390,768]){await page.setViewportSize({width,height:844});await page.evaluate(()=>new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve()))));assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),category+' native '+layout+' fits '+width);}
  await page.evaluate(()=>(window as any).teardown());assert.equal(await page.locator('[data-part]').count(),0);await page.close();console.log('PASS '+category+' '+parts.length+' native JavaScript '+layout+' real imports, narrow widths, cleanup');}
 }assert.deepEqual(errors,[]);}finally{await browser.close();await server.close();}

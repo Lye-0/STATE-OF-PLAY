@@ -3,5 +3,5 @@ import React from 'react';
 import {SegmentView,type SegmentProps} from '../../../../shared/segment-view';
 import '../styles.css';
 export type {SegmentProps,SegmentItem} from '../../../../shared/segment-view';
-/** 三つの陶製キーへ沈む選択面。選択位置のキーだけが皿の底へ収まる。 */
-export default function CeramicKeySegments({className='',...props}:SegmentProps){return <SegmentView {...props} className={`sop-ceramic-key-segments ${className}`}/>;}
+/** 三つの独立した陶製キーに、開いた下の小口を作るセグメント。非対称の上の曲率と下の釉薬の断面を、24pxの実際の空隙を持つ29pxの二つの足へ接続する。選択したキーの釉薬と切断面だけを同じ青灰へ変え、文字と押し面を保つ。 */
+export default function CeramicKeySegments({className='',...props}:SegmentProps){return <SegmentView {...props} markerArt={<span className="sop-segment-material" aria-hidden="true"><i/><i/><i/><i/><i/><i/></span>} className={`sop-ceramic-key-segments ${className}`}/>;}
