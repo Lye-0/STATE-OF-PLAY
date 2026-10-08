@@ -1,0 +1,154 @@
+{
+  "batch": "B010",
+  "round": 5,
+  "snapshot": "docs/design-renewal/batches/B010/snapshot/round-5",
+  "overall": "pass",
+  "parts": [
+    {
+      "number": 141,
+      "id": "angle-bracket-link",
+      "verdict": "pass",
+      "assessment": "左下のL材に表面/内側断面/45度の接合を持たせ、右上に反対向きの短いアングルを置く。線だけの括弧から、厚みを持つ開いた支持へ変わった。背景の箱で閉じず、下の折面だけが動く。R048の左右C顎やR119の細い四隅とは断面と開く場所が異なりA合格。 round-3から正本不変のため通常造形の合格を継承。",
+      "findings": [],
+      "nearestComparisons": [
+        "R048",
+        "R119",
+        "R141元監査"
+      ]
+    },
+    {
+      "number": 142,
+      "id": "corner-flight-link",
+      "verdict": "pass",
+      "assessment": "二つの三角面の下で、外紙/内紙の上端を共に斜めに切り、背景へ抜ける空隙を作った。右48px側に接点を保ち、hover中も折翼の底辺は不動。白/暗色背景でも空隙が成立し、単なる屋根付き矩形から、支える接点と折面が見えるリンクへ変わった。本文/矢印/hitは固定し、Aとして合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R131",
+        "R032",
+        "R052",
+        "R155"
+      ],
+      "resolvedFindings": [
+        "R142-fold-gap"
+      ]
+    },
+    {
+      "number": 143,
+      "id": "rail-platform-link",
+      "verdict": "pass",
+      "assessment": "二本の独立したI断面が床の切断面へ入り、下の横材がそれを繋ぐ。R140の一体のアーチ開口/端板/鋲、R029の独立脚と水面とは断面と横材の役割が異なる。操作は全体で一つのリンクであり、つまみを作らない。A合格。 round-3から正本不変のため通常造形の合格を継承。",
+      "findings": [],
+      "nearestComparisons": [
+        "R029",
+        "R140",
+        "R143元監査"
+      ]
+    },
+    {
+      "number": 144,
+      "id": "notch-route-link",
+      "verdict": "pass",
+      "assessment": "読む紙の右の円形切欠きが背景へ抜け、上下二本の細材が矢印の台を支える。固定された矢印台は読む面から一度分離して再接続する外形を作り、標準的な分割ボタンとは異なる。R136の孔/紐、R131の三角の先端とも異なりA合格。 round-3から正本不変のため通常造形の合格を継承。",
+      "findings": [],
+      "nearestComparisons": [
+        "R136",
+        "R131",
+        "R144元監査"
+      ]
+    },
+    {
+      "number": 145,
+      "id": "tailored-edge-link",
+      "verdict": "pass",
+      "assessment": "Tとして斜めの裁ち端/内側の縫い目を保ち、短い返しと下の繊維の断面へ絞った。hoverで本文や矢印を動かさず、線の多重化を抑える。R118の縦帯とは方向/接続が異なる。元監査のTとして合格。 round-3から正本不変のため通常造形の合格を継承。",
+      "findings": [],
+      "nearestComparisons": [
+        "R118",
+        "R145元監査"
+      ]
+    },
+    {
+      "number": 151,
+      "id": "binder-wing-tabs",
+      "verdict": "pass",
+      "assessment": "左右の別々の折翼を同じ紙の縁の軸で接続し、背の連続支持面・紙の通し口・右翼の返しへつなげた。平たい八角バッジから、前後の折面が紙を保持する主形態へ変わっている。横/縦とも翼は同寸で、closed/途中/openの上下両組の軸の隙間は実測0px。白/暗色で通し口の実透過を確認。文字と操作域に侵入せず、A合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R076",
+        "R102",
+        "R151元監査"
+      ],
+      "resolvedFindings": [
+        "R151-binding-structure",
+        "R151-vertical-wing-clip"
+      ]
+    },
+    {
+      "number": 152,
+      "id": "sawtooth-index-tabs",
+      "verdict": "pass",
+      "assessment": "Tの鋸歯を40pxの小口へ集中し、歯の深さ/紙の境界/選択した上縁を揃えた。未選択の紙と本文へ繋がる選択紙を区別でき、文字の基線や太さは固定。元監査のTとして、全周の装飾へ広げず形の精度を上げて合格。 round-3から正本不変のため通常造形の合格を継承。",
+      "findings": [],
+      "nearestComparisons": [
+        "R152元監査",
+        "R165"
+      ]
+    },
+    {
+      "number": 153,
+      "id": "hangtag-tabs",
+      "verdict": "pass",
+      "assessment": "横の杆から上孔へ通る紐を保持し、縦では左の全高の杆から各札の左孔へ横の紐を通す構造へ変更。縦の全3札が杆へ接続し、孔が実際に抜ける。札の位置と選択文字を動かさず、A合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R136",
+        "R076",
+        "R709"
+      ],
+      "resolvedFindings": [
+        "R153-vertical-cord-connection"
+      ]
+    },
+    {
+      "number": 154,
+      "id": "offset-rail-tabs",
+      "verdict": "pass",
+      "assessment": "横の保持片を上へ伸ばし固定レールを実際にまたぐ形へ修正。縦では左全高のレールへ横向きの保持片を設け、選択位置1/2/3の全てで紙とレールへ同じ接続が成立する。外側の溝/下の斜め接合と固定本文を保ち、A合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R115",
+        "R154元監査",
+        "R256"
+      ],
+      "resolvedFindings": [
+        "R154-retainer-rail-gap"
+      ]
+    },
+    {
+      "number": 155,
+      "id": "gabled-tabs",
+      "verdict": "pass",
+      "assessment": "Tの切妻を保ち、4pxの屋根の稜線を斜面へ揃え、選択した入口を本文の紙へ直接つなぐ。下に不要な水平線を重ねず、見出しの基線と本文は固定。短文/長文/縦/RTLでも状態が読め、元監査のTとして合格。 round-3から正本不変のため通常造形の合格を継承。",
+      "findings": [],
+      "nearestComparisons": [
+        "R155元監査",
+        "R134"
+      ]
+    }
+  ],
+  "checks": [
+    "固定round-5のsource100ファイルをreview-input-5.jsonのSHA-256と照合し全一致。全10native配布CSSと正本CSSをimport除外で照合し全一致。captures/reviewer-extra-5/checks.json。",
+    "round-3→4の変更はR142/R151/R153/R154のみ、round-4→5はR142/R151のみ。他6件は元の合格版の正本ハッシュが不変。round-4は中間検証として保存し最終レビューは本round-5へ統合。",
+    "全リンク5件を固定round-5のnative版で実Enter/href遷移、非キャンセルclick、hover/leave/reenterで文字/矢印/hit固定、320長文/RTL/forced/reducedまで再操作し全成功。captures/reviewer-links-5/checks.json。",
+    "全タブ5件を固定round-5で実本文/ARIA/hidden/ID/キー/manual/disabled/input値と選択保持/hidden focus/vertical/320390768長文/RTL/forced/reducedまで再操作し全成功。captures/reviewer-tabs-5/checks.json。",
+    "R151/R153/R154を横/縦×選択1/2/3の18状態で独立撮影。R153の縦3札とR154の縦2/3番を含む全接点を実画像で確認。captures/reviewer-joints-5。",
+    "R151の横/縦それぞれclosed/約100ms途中/openを実操作し、上下両組の左右翼の実測接点gapが全て0px。途中でも軸を維持し、紙の文字や入力を遮らない。captures/reviewer-joints-5/checks.json。",
+    "R142/R151を暗色/白背景でinitial/hover/leave/reenterの16状態撮影。R142は斜めの実空隙と右接点、R151は紙と返しの通し口の透過を確認。captures/reviewer-material-5。",
+    "round-4で全5タブのhover/leave/reenter/選択時に文字矩形/フォント/hit寸法の不変を追加確認し、forcedは400ms後の実文字色/背景を照合。round-5でも変更部品の長文forced実画像を確認。造形比較はround-3の最寄候補を継承し解消を判断。"
+  ],
+  "limits": [
+    "独立ブラウザはChromium。forced/reducedはPlaywrightのメディアエミュレーション。",
+    "Reactの実items/props4配布形式は主担当の実行報告/ログを参照し独立再実行していない。独立実操作は固定native版。",
+    "730件の全件再操作は行わず、前回の監査画像/近似比較を継承した。"
+  ]
+}
