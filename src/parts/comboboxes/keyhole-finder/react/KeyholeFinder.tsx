@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type KeyholeFinderProps = FoundationProps;
-/** 鍵穴の照合窓。検索記号の円と入力の長い溝をつなぎ、結果は輪郭の丸い独立票として開く。 */
+/** 検索口の鍵穴から、実際の鍵の形の候補を選ぶ入力。紫の標準リストを廃止し、64pxの穴のある頭と読む軸を18px重ね、軸の下に二つの12pxの歯の切口を作る。頭の中の記号は鍵の識別、本文と選択checkは軸の上へ固定する。 */
 export default forwardRef<HTMLDivElement, KeyholeFinderProps>(function KeyholeFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

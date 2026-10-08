@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type SonarIndexFinderProps = FoundationProps;
-/** 探査スコープから結果へ視線を流す。検索記号は同心円、候補には縦の検出線を通す。 */
+/** 探査の円と検出点の関係を磨く候補入力。元の縦の検出軸を保持し、検索口の同心円と、候補ごとの検出点・短い戻り信号を同じ単位へ整える。吊り棒の実フレームにはせず、activeの候補だけ点の範囲を広げる。本文・caret・選択のcheckは固定する。 */
 export default forwardRef<HTMLDivElement, SonarIndexFinderProps>(function SonarIndexFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

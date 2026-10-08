@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type ChannelledChoiceProps = FoundationProps;
-/** 溝の中で一列だけ点灯する選択盤。文字と丸印を読みやすい明るい面へ固定する。 */
+/** 逆方向に開いた二つの独立した溝へ、読む板を挿す単一選択。四辺の二重枠を廃止し、上は左に28px開いた三面のレール、下は右に28px開いた三面のレールを独立して作る。板はそれぞれの溝へ3px入り、左右の開口から紙端が露出する。本文・丸点・nativeヒットは固定する。 */
 export default forwardRef<HTMLDivElement, ChannelledChoiceProps>(function ChannelledChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });

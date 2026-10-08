@@ -33,6 +33,13 @@ for row,part,review in approved:
   assert (photos/f"{row['id']}-expanded.png").exists(),f"Missing open dialog evidence: {row['id']}"
   assert (photos/f"{row['id']}-mobile.png").exists(),f"Missing mobile dialog evidence: {row['id']}"
   images+=figure(w/'evidence/baseline'/f"{row['id']}-expanded.png",'修正前・独立した実ダイアログ')+figure(photos/f"{row['id']}-expanded.png",'修正後・実際に開いたダイアログ')+figure(photos/f"{row['id']}-mobile.png",'修正後・320pxで開いたダイアログ')
+ if row['category']=='comboboxes':
+  assert (w/'evidence/baseline'/f"{row['id']}-expanded.png").exists(),f"Missing original open candidates: {row['id']}"
+  assert (photos/f"{row['id']}-expanded.png").exists(),f"Missing gallery open candidates: {row['id']}"
+  native=sorted((d/'captures').glob('combobox-self-*'),key=lambda p:int(p.name.split('-')[-1]))
+  narrow=next((p/f"{row['id']}-narrow-320.png" for p in reversed(native) if (p/f"{row['id']}-narrow-320.png").exists()),None)
+  assert narrow is not None,f"Missing long native candidates: {row['id']}"
+  images+=figure(w/'evidence/baseline'/f"{row['id']}-expanded.png",'修正前・配布版で開いた候補')+figure(photos/f"{row['id']}-expanded.png",'修正後・実ギャラリーの候補')+figure(narrow,'修正後・配布版の320px長文候補')
  if row['category']=='dropdowns':
   images+=figure(photos/f"{row['id']}-expanded.png",'展開した候補・選択済み行')
  # Native switch images distinguish actual OFF and ON even when the gallery starts ON.

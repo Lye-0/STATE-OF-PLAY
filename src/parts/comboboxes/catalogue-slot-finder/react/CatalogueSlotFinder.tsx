@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type CatalogueSlotFinderProps = FoundationProps;
-/** 目録の検索口と見出し票を一体化。候補の左端を索引欄にし、選んだ票へ短い引出線を付ける。 */
+/** 小口のある資料票を、横向きの引出し口へ差す候補入力。細い下影を廃止し、左右の共通の箱枠と各候補の全幅16pxの受け口を作る。紙の底10pxを溝の前面へ重ね、検索口も同じ小口の材へ接続する。読みとcaretは固定し、候補だけが局所スクロールする。 */
 export default forwardRef<HTMLDivElement, CatalogueSlotFinderProps>(function CatalogueSlotFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

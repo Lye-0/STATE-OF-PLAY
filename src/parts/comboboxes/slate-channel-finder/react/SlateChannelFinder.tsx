@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type SlateChannelFinderProps = FoundationProps;
-/** 石板の細い検索溝と段状の候補。行の境界を凹凸で分け、選択中だけ薄い明面を点ける。 */
+/** 両側の実ガイドへ、二つの切口のある厚い石板を渡す候補入力。水色の枠付き行を廃し、左右13pxの縦の溝と、石板の両端の10pxの実凹部、下9pxの切断面を接続する。読む面とcheckの位置は固定し、ガイド内の候補だけスクロールする。 */
 export default forwardRef<HTMLDivElement, SlateChannelFinderProps>(function SlateChannelFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

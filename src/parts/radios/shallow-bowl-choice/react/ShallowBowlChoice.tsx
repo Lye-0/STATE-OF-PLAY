@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type ShallowBowlChoiceProps = FoundationProps;
-/** 浅い器に一つずつ載せた選択項目。外形を丸めても文字と丸印の整列を崩さない。 */
+/** 浅い楕円の内皿を、全幅の厚い鉢の縁へ収める単一選択。単なる丸角カードを廃止し、30pxの端の楕円、内側の凹んだ5pxの縁、下12pxの曲がった支持面を作る。読む内容は凹面に固定、選択時は同じ凹面だけ明るくする。 */
 export default forwardRef<HTMLDivElement, ShallowBowlChoiceProps>(function ShallowBowlChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });

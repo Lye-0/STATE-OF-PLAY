@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type LetterTabChoiceProps = FoundationProps;
-/** 封筒の宛名札を三段に配置。丸い選択印を切手側に寄せ、選ばれた札の下辺を展開する。 */
+/** 開いたV形の封筒へ、読む便箋を収める単一選択。番号タブと角切りのファイル案を廃止し、左右から48pxの高さで立ち上がり中央が23px低く開く実前蓋と、上へ出た便箋を作る。本文は開口の上へ固定、番号は封筒の前蓋、選択点は便箋に置く。 */
 export default forwardRef<HTMLDivElement, LetterTabChoiceProps>(function LetterTabChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });

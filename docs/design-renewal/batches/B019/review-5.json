@@ -1,0 +1,147 @@
+{
+  "batch": "B019",
+  "round": 5,
+  "snapshot": "docs/design-renewal/batches/B019/snapshot/round-5",
+  "overall": "pass",
+  "parts": [
+    {
+      "number": 262,
+      "id": "channelled-choice",
+      "verdict": "pass",
+      "assessment": "四辺枠を撤去し、上は左へ/下は右へ開く独立した三面のレールに板の端が3px入る構造へ変わった。左右のフレームがなく、開口から露出する板と保持縁の関係が外形を決める。狭幅・RTL・選択でも支持と本文固定が成立しA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R239",
+        "R274"
+      ],
+      "resolvedFindings": [
+        "R262-four-sided-frame"
+      ]
+    },
+    {
+      "number": 263,
+      "id": "letter-tab-choice",
+      "verdict": "pass",
+      "assessment": "番号タブと角切りファイルを廃止。上へ出る便箋を、左右から下がる48pxのV字口と折り合わせの断面が受ける封筒へ変更した。R259のファイルやR197の非対称下ポケットと比べ、左右の折り面と中央の開口が主構造を決める。番号は前蓋、本文は開口の上に収まりA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R259",
+        "R263"
+      ],
+      "resolvedFindings": [
+        "R263-folder-repetition"
+      ]
+    },
+    {
+      "number": 264,
+      "id": "shallow-bowl-choice",
+      "verdict": "pass",
+      "assessment": "端の30px楕円と内側の凹縁、下12pxの曲面を同じ全幅の皿へ連続させた。R215の直線的な読む床と前壁、R180の積層円盤とは、上下の楕円で読む凹面を囲む単一の内皿で異なる。狭幅長文でも材の厚みを保ちA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R215",
+        "R180"
+      ]
+    },
+    {
+      "number": 265,
+      "id": "index-ribbon-choice",
+      "verdict": "pass",
+      "assessment": "紙と布の前後関係、可視の番号、選択時の留めを保持。基本余白を論理方向へ揃え、広幅RTLでも布側へ本文の予約幅が取られた。1000/768/390/320pxのLTR/RTL長文で布と本文が非交差、選択/hover leave reenterでも本文・fontが固定。造形とUIとも合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R118",
+        "R157",
+        "R265"
+      ],
+      "resolvedFindings": [
+        "R265-ribbon-covers-index",
+        "R265-rtl-reservation"
+      ],
+      "normalDesignVerdict": "pass"
+    },
+    {
+      "number": 271,
+      "id": "catalogue-slot-finder",
+      "verdict": "pass",
+      "assessment": "左右の箱枠と各16px受け口が資料票の下端を実際に受ける。R257の側箱、R251の前板/取手の引出しとは、横向きの狭い挿入口が候補の区画を作る構造で異なる。検索口と候補の材も揃いA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R257",
+        "R251"
+      ]
+    },
+    {
+      "number": 272,
+      "id": "sonar-index-finder",
+      "verdict": "pass",
+      "assessment": "Tの探査軸を維持し、途切れた信号線・検出点・activeの短い戻り信号へ整理。R077の吊り支持と異なり、物理的な棒/フレームを増やさず検索中の検出を示す。元監査の調整として合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R77",
+        "R272"
+      ]
+    },
+    {
+      "number": 273,
+      "id": "foldback-finder",
+      "verdict": "pass",
+      "assessment": "小さいピンク端を全高の斜め口と後ろの折返し、外側の背へ変えた。本文面の端から背面へ戻る面が実外形を決め、R193の前から紙を押さえる返しとは重なり方向が異なる。入力と展開面の材も連続しA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R193",
+        "R216"
+      ]
+    },
+    {
+      "number": 274,
+      "id": "slate-channel-finder",
+      "verdict": "pass",
+      "assessment": "共通の二つの縦ガイドに、両端の切口と下9pxの断面を持つ石板を渡す。R262の独立した四辺枠とは、候補全体を通る垂直支持と個別板の凹部で異なる。読む面は前に保たれ、スクロールしても板とガイドの関係が明瞭でA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R262",
+        "R25"
+      ]
+    },
+    {
+      "number": 275,
+      "id": "ledger-gutter-finder",
+      "verdict": "pass",
+      "assessment": "単一矩形の中央帯を廃し、異なる役割の名前票/説明票が実空隙22pxを挟んで独立し、二本の38px綴じ腕が両端へ8pxずつ重なる。R220の一冊の見開きと異なり、二票の対応関係が造形を決める。狭幅でも二票を上下へ保ち左綴じが接続、本文固定と可読性が成立しA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R220",
+        "R275"
+      ],
+      "resolvedFindings": [
+        "R275-flat-book-repeat"
+      ]
+    },
+    {
+      "number": 276,
+      "id": "keyhole-finder",
+      "verdict": "pass",
+      "assessment": "64pxの実穴のある頭から、18px重なる読む軸と二つの歯へ連続する鍵の外形が候補全体を決める。小さい鍵アイコンを加えた標準行から分かれ、狭幅は48px頭へ縮めて本文を確保。選択印と入力の固定も成立しA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R205",
+        "R276"
+      ]
+    }
+  ],
+  "checks": [
+    "固定source100 SHA-256とreview-input-5.json全一致。配布CSS10をimport除外で正本と照合し一致。reviewer-extra-5/checks.json。",
+    "round4→5の変更はR265 styles.cssのみ。他9件のsource hash不変を確認し合格判定を継承。",
+    "4radiosのreal form/reset/label/native ArrowDown/disabled/任意items/long320390768/RTL/input hit/forced/reducedを再実行し全4成功。reviewer-radios-5。",
+    "R265の選択1/2/3×1000/320×LTR/RTLをnormal80ms途中/settled/hover leave reenterで再検査。本文のコンポーネント相対座標・幅・font全固定、reduced実選択後transition0s。reviewer-motion-5。",
+    "R265全3行に長い日本語/連続英字のlabelとdescriptionを注入。1000/768/390/320×LTR/RTLの8状態で本文bboxと布の疑似面の左右端を照合し非交差をassert。各状態を実画像でも確認。reviewer-collision-5。",
+    "combobox6件のAPI/通常展開/確定/狭幅/RTL/forced/reducedはsource不変のround4独立結果を継承。今回同一実装の重複操作は行っていない。",
+    "全10の通常造形と近似比較はround4合格基準を保持。今回の変更はRTL本文余白に限定して評価。"
+  ],
+  "limits": [
+    "独立実行はChromium固定native。React4形式と現行gallery detailは今回は独立実行せず、親担当の成功報告と区別。",
+    "forced/reducedはブラウザエミュレーション。他エンジン/実OSは未検査。",
+    "全730の再監査ではなく元監査と対象before・既承認近似の比較。"
+  ]
+}
