@@ -1,0 +1,3 @@
+# round-5 対応
+
+9件PASSを保持。R220 ADJUST: 長いkickerの文字がz3綴じ面に隠れる実像を再現し、開始側43%の頁内を最大幅にして折返す。RTLは右頁、420px以下の一頁表示は幅制限解除。補助文字の字体・nativeclose44pxは維持。独立round6で全10件を再検査。native自己helperにもlongkickerと768px綴じ面との非重なりを追加。

@@ -2388,13 +2388,13 @@
     "batch": "B015",
     "auditVerdict": "R",
     "auditReason": "二つの角線とチェックだけでは切欠き票の形が弱い。簡素なBに近く、Aの独自性が不足。",
-    "state": "ready_to_push",
+    "state": "pushed",
     "iterations": 1,
     "review": {
       "round": 6,
       "verdict": "pass"
     },
-    "commit": null
+    "commit": "1d355762398954085870c2909a95baf8c4579d4e"
   },
   {
     "number": 211,
@@ -2405,13 +2405,13 @@
     "batch": "B015",
     "auditVerdict": "T",
     "auditReason": "確認書の三段構成は明快だが、二重枠と小さな補助文字が帳票風の既視感を強める。紙面の階層を磨きたい。",
-    "state": "ready_to_push",
+    "state": "pushed",
     "iterations": 1,
     "review": {
       "round": 6,
       "verdict": "pass"
     },
-    "commit": null
+    "commit": "1d355762398954085870c2909a95baf8c4579d4e"
   },
   {
     "number": 212,
@@ -2422,13 +2422,13 @@
     "batch": "B015",
     "auditVerdict": "T",
     "auditReason": "丸い上端は特徴的。ただし厚い窓枠と下の操作帯が重く、内容の軽さに対して外装が過大。",
-    "state": "ready_to_push",
+    "state": "pushed",
     "iterations": 1,
     "review": {
       "round": 6,
       "verdict": "pass"
     },
-    "commit": null
+    "commit": "1d355762398954085870c2909a95baf8c4579d4e"
   },
   {
     "number": 213,
@@ -2439,13 +2439,13 @@
     "batch": "B015",
     "auditVerdict": "R",
     "auditReason": "左の線と右下の三角片以外は標準ダイアログ。二つ折りの構造が弱く、Aの独創性が不足。",
-    "state": "ready_to_push",
+    "state": "pushed",
     "iterations": 1,
     "review": {
       "round": 6,
       "verdict": "pass"
     },
-    "commit": null
+    "commit": "1d355762398954085870c2909a95baf8c4579d4e"
   },
   {
     "number": 214,
@@ -2456,13 +2456,13 @@
     "batch": "B015",
     "auditVerdict": "R",
     "auditReason": "淡緑の背景と白い確認欄が中心。石の確認台に見える面の段差が弱い。",
-    "state": "ready_to_push",
+    "state": "pushed",
     "iterations": 1,
     "review": {
       "round": 6,
       "verdict": "pass"
     },
-    "commit": null
+    "commit": "1d355762398954085870c2909a95baf8c4579d4e"
   },
   {
     "number": 215,
@@ -2473,13 +2473,13 @@
     "batch": "B015",
     "auditVerdict": "R",
     "auditReason": "黄色い確認画面に罫線を加えた構成。Aとしての造形差が不足し、名称の陶器と説明の帳簿も主題が揃っていない。",
-    "state": "ready_to_push",
+    "state": "pushed",
     "iterations": 1,
     "review": {
       "round": 6,
       "verdict": "pass"
     },
-    "commit": null
+    "commit": "1d355762398954085870c2909a95baf8c4579d4e"
   },
   {
     "number": 216,
@@ -2490,13 +2490,13 @@
     "batch": "B015",
     "auditVerdict": "T",
     "auditReason": "大きな文字と縦の操作配置は端正。ただし通常の編集的な確認画面の範囲で、Aとして独自の紙の構造を磨きたい。",
-    "state": "ready_to_push",
+    "state": "pushed",
     "iterations": 1,
     "review": {
       "round": 6,
       "verdict": "pass"
     },
-    "commit": null
+    "commit": "1d355762398954085870c2909a95baf8c4579d4e"
   },
   {
     "number": 217,
@@ -2507,13 +2507,13 @@
     "batch": "B015",
     "auditVerdict": "T",
     "auditReason": "暗い外装と明るい確認欄は明快だが、淡緑の本文面・橙のキー・青い外装の材質が分散している。",
-    "state": "ready_to_push",
+    "state": "pushed",
     "iterations": 1,
     "review": {
       "round": 6,
       "verdict": "pass"
     },
-    "commit": null
+    "commit": "1d355762398954085870c2909a95baf8c4579d4e"
   },
   {
     "number": 218,
@@ -2524,13 +2524,13 @@
     "batch": "B015",
     "auditVerdict": "R",
     "auditReason": "紫の面と点線の区切りが主役。手帳や布の構造が弱く、既視感のある確認フォームに留まる。",
-    "state": "ready_to_push",
+    "state": "pushed",
     "iterations": 1,
     "review": {
       "round": 6,
       "verdict": "pass"
     },
-    "commit": null
+    "commit": "1d355762398954085870c2909a95baf8c4579d4e"
   },
   {
     "number": 219,
@@ -2541,27 +2541,31 @@
     "batch": "B015",
     "auditVerdict": "R",
     "auditReason": "左線と淡色の本文欄だけでは四隅の支柱が読めない。説明に対して造形が不足。",
+    "state": "pushed",
+    "iterations": 1,
+    "review": {
+      "round": 6,
+      "verdict": "pass"
+    },
+    "commit": "1d355762398954085870c2909a95baf8c4579d4e"
+  },
+  {
+    "number": 220,
+    "id": "brushed-case-dialog",
+    "name": "Open Spread Dialog",
+    "category": "popups",
+    "designType": "A",
+    "batch": "B016",
+    "auditVerdict": "R",
+    "auditReason": "背を示す一本線と丸角だけで、開いた本の構造が伝わらない。Aとして再設計したい。",
     "state": "ready_to_push",
     "iterations": 1,
     "review": {
       "round": 6,
       "verdict": "pass"
     },
-    "commit": null
-  },
-  {
-    "number": 220,
-    "id": "brushed-case-dialog",
-    "name": "Brushed Case Dialog",
-    "category": "popups",
-    "designType": "A",
-    "batch": "B016",
-    "auditVerdict": "R",
-    "auditReason": "背を示す一本線と丸角だけで、開いた本の構造が伝わらない。Aとして再設計したい。",
-    "state": "implemented",
-    "iterations": 1,
-    "review": null,
-    "commit": null
+    "commit": null,
+    "originalName": "Brushed Case Dialog"
   },
   {
     "number": 221,
@@ -2572,24 +2576,31 @@
     "batch": "B016",
     "auditVerdict": "T",
     "auditReason": "太い上帯・大きい見出し・丸い主操作で強弱はあるが、各要素の形がばらばら。編集的な統一感を磨きたい。",
-    "state": "implemented",
+    "state": "ready_to_push",
     "iterations": 1,
-    "review": null,
+    "review": {
+      "round": 6,
+      "verdict": "pass"
+    },
     "commit": null
   },
   {
     "number": 222,
     "id": "canvas-pocket-dialog",
-    "name": "Canvas Pocket Dialog",
+    "name": "Folded Plan Dialog",
     "category": "popups",
     "designType": "A",
     "batch": "B016",
     "auditVerdict": "R",
     "auditReason": "外枠と薄い本文欄が中心で、図面の寸法線を使う構造が見えにくい。標準ダイアログとの差が弱い。",
-    "state": "implemented",
+    "state": "ready_to_push",
     "iterations": 1,
-    "review": null,
-    "commit": null
+    "review": {
+      "round": 6,
+      "verdict": "pass"
+    },
+    "commit": null,
+    "originalName": "Canvas Pocket Dialog"
   },
   {
     "number": 223,
@@ -2600,24 +2611,31 @@
     "batch": "B016",
     "auditVerdict": "R",
     "auditReason": "ピンクの面と四角い本文欄が中心。ほどいた帯という形が伝わらず、色違いの印象が強い。",
-    "state": "implemented",
+    "state": "ready_to_push",
     "iterations": 1,
-    "review": null,
+    "review": {
+      "round": 6,
+      "verdict": "pass"
+    },
     "commit": null
   },
   {
     "number": 224,
     "id": "letterpress-dialog",
-    "name": "Letterpress Dialog",
+    "name": "Porcelain Handle Dialog",
     "category": "popups",
     "designType": "A",
     "batch": "B016",
     "auditVerdict": "R",
     "auditReason": "通常の確認フォームと淡緑の本文欄に見える。磁器の内壁や皿の形が弱い。",
-    "state": "implemented",
+    "state": "ready_to_push",
     "iterations": 1,
-    "review": null,
-    "commit": null
+    "review": {
+      "round": 6,
+      "verdict": "pass"
+    },
+    "commit": null,
+    "originalName": "Letterpress Dialog"
   },
   {
     "number": 225,
@@ -2628,9 +2646,12 @@
     "batch": "B016",
     "auditVerdict": "T",
     "auditReason": "切り取り線で本文と控えを分ける意図は明快。ただし周囲の二重枠が重く、票の薄さと競合する。",
-    "state": "implemented",
+    "state": "ready_to_push",
     "iterations": 1,
-    "review": null,
+    "review": {
+      "round": 6,
+      "verdict": "pass"
+    },
     "commit": null
   },
   {
@@ -2642,9 +2663,12 @@
     "batch": "B016",
     "auditVerdict": "T",
     "auditReason": "標準的なBとして操作は明快だが、灰青の本文欄が重く、明るい外面との材質差が唐突。背景面を整えたい。",
-    "state": "implemented",
+    "state": "ready_to_push",
     "iterations": 1,
-    "review": null,
+    "review": {
+      "round": 6,
+      "verdict": "pass"
+    },
     "commit": null
   },
   {
@@ -2656,9 +2680,12 @@
     "batch": "B016",
     "auditVerdict": "T",
     "auditReason": "暖色の外面に冷たい灰青の本文欄が混在する。Bの穏やかな通知面として配色の温度を揃えたい。",
-    "state": "implemented",
+    "state": "ready_to_push",
     "iterations": 1,
-    "review": null,
+    "review": {
+      "round": 6,
+      "verdict": "pass"
+    },
     "commit": null
   },
   {
@@ -2670,9 +2697,12 @@
     "batch": "B016",
     "auditVerdict": "T",
     "auditReason": "中立な明色面に対して本文欄の灰青が重い。入力用Bとして本文領域の密度を下げたい。",
-    "state": "implemented",
+    "state": "ready_to_push",
     "iterations": 1,
-    "review": null,
+    "review": {
+      "round": 6,
+      "verdict": "pass"
+    },
     "commit": null
   },
   {
@@ -2684,9 +2714,12 @@
     "batch": "B016",
     "auditVerdict": "T",
     "auditReason": "橋脚型のつまみは特徴的だが、平行な線が多く軌道の主役が曖昧。レールの強弱を整理したい。",
-    "state": "implemented",
+    "state": "ready_to_push",
     "iterations": 1,
-    "review": null,
+    "review": {
+      "round": 6,
+      "verdict": "pass"
+    },
     "commit": null
   },
   {
@@ -2698,8 +2731,8 @@
     "batch": "B017",
     "auditVerdict": "R",
     "auditReason": "二重円のつまみと単線の軌道に留まり、糸を巻き取るリールの独自性が弱い。",
-    "state": "queued",
-    "iterations": 0,
+    "state": "implemented",
+    "iterations": 1,
     "review": null,
     "commit": null
   },
@@ -2712,8 +2745,8 @@
     "batch": "B017",
     "auditVerdict": "T",
     "auditReason": "背景とつまみの明暗差が小さく、操作部が溝に埋もれて見える。石の質感を保って輪郭を明快にしたい。",
-    "state": "queued",
-    "iterations": 0,
+    "state": "implemented",
+    "iterations": 1,
     "review": null,
     "commit": null
   },
@@ -2726,8 +2759,8 @@
     "batch": "B017",
     "auditVerdict": "T",
     "auditReason": "折り紙のつまみは特徴になるが、大きな単色の多角形に見える。折れ目と軌道との接点を磨きたい。",
-    "state": "queued",
-    "iterations": 0,
+    "state": "implemented",
+    "iterations": 1,
     "review": null,
     "commit": null
   },
@@ -2740,8 +2773,8 @@
     "batch": "B017",
     "auditVerdict": "T",
     "auditReason": "ホイールと軌道は分かるが、同心円と四角い目盛りがやや玩具的。円の厚みと線の精度を整えたい。",
-    "state": "queued",
-    "iterations": 0,
+    "state": "implemented",
+    "iterations": 1,
     "review": null,
     "commit": null
   },
@@ -2754,8 +2787,8 @@
     "batch": "B017",
     "auditVerdict": "R",
     "auditReason": "丸いつまみと通常の横レールに見え、凹んだ引き手という構造が弱い。Aとして差別化不足。",
-    "state": "queued",
-    "iterations": 0,
+    "state": "implemented",
+    "iterations": 1,
     "review": null,
     "commit": null
   },
@@ -2768,8 +2801,8 @@
     "batch": "B017",
     "auditVerdict": "T",
     "auditReason": "淡い多角形のつまみが黄色い台に沈む。方位盤の主題を保ち、輪郭の明暗と切欠きの精度を上げたい。",
-    "state": "queued",
-    "iterations": 0,
+    "state": "implemented",
+    "iterations": 1,
     "review": null,
     "commit": null
   },
@@ -2782,8 +2815,8 @@
     "batch": "B017",
     "auditVerdict": "T",
     "auditReason": "濃紺の台に明るい矩形が浮き、二つの爪という構造が伝わりにくい。レールとの接合を明快にしたい。",
-    "state": "queued",
-    "iterations": 0,
+    "state": "implemented",
+    "iterations": 1,
     "review": null,
     "commit": null
   },
@@ -2796,8 +2829,8 @@
     "batch": "B017",
     "auditVerdict": "T",
     "auditReason": "丸めた積層形は特徴があるが、上下の線が平面の縞に見える。断面の厚みと光を整理したい。",
-    "state": "queued",
-    "iterations": 0,
+    "state": "implemented",
+    "iterations": 1,
     "review": null,
     "commit": null
   },
@@ -2810,8 +2843,8 @@
     "batch": "B017",
     "auditVerdict": "R",
     "auditReason": "薄い黄色の角丸つまみと目盛りが中心。エナメルの面としての特徴が弱く、Aの独自性が不足。",
-    "state": "queued",
-    "iterations": 0,
+    "state": "implemented",
+    "iterations": 1,
     "review": null,
     "commit": null
   },
@@ -2824,8 +2857,8 @@
     "batch": "B017",
     "auditVerdict": "R",
     "auditReason": "紙色の枠付き行が並ぶ標準的なカード選択。引き出しの取手や箱の構造が弱く、Aとして不足。",
-    "state": "queued",
-    "iterations": 0,
+    "state": "implemented",
+    "iterations": 1,
     "review": null,
     "commit": null
   },

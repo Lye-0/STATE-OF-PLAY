@@ -1,0 +1,41 @@
+# B016 round-5 独立検査
+
+判定: **changes_requested — 9 pass / 1 adjust**。残件はR220の長いkickerの文字欠けのみ。R220通常造形とR222新造形は合格。正本・固定版は未変更。
+
+| 番号 | 判定 | 講評 |
+|---|---|---|
+| R220 | adjust | 9pxの綴じ面が実際に表示され、上下の折れと43%軸へ接続する。RTLも57%軸へ鏡映し、長文末尾でも保持。通常造形は合格。ただし全幅の長いkickerが前面の綴じ目を横切り文字が隠れるためUI調整が残る。 |
+| R221 | pass | Tの太い上帯/大きい見出し/丸い主操作を保持。closeと戻る操作も同系の曲率へ揃え、個別の輪郭が衝突しなくなった。本文と入力を無地へ保ち、元の編集面の精度として合格。 |
+| R222 | pass | 二本柱を全廃し、理由・本文・操作の三つの紙面を20pxずつ交互にずらし、全幅20pxの斜め折面で端点を連続させた。一枚の紙の折りが本文の役割と外形を決め、R219の独立支持柱やR216の片側の返しと異なる。長文では折りが各sectionと自然に移動し、末尾も操作面へ連続する。320px/RTLでも接点・読字・実操作が成立しA合格。 |
+| R223 | pass | 本文の台と操作の台を12pxの実空隙で分け、下台を28pxずらした外周が役割と一致する。透ける間隔は下層で塞がらず、両台の切断面も別々に連続する。R214の一体の石台、R097の露頭とは二つの独立した面と操作の分離で異なる。長文/RTLでも成立しA合格。 |
+| R224 | pass | 44×126pxの開いたU型へ改め、7pxの上下の腕が紙の端へ6px重なる二箇所の接合が成立。穴は実際に透け、長文末尾/320px RTLでも持ち手が一体で残る。R215の鉢前面とも異なる形として合格。 |
+| R225 | pass | Tの本文/控えを分ける切取り線を保持し、二重外枠を上下4pxの紙の厚みへ整理した。線の意味を一つの境界へ集約し、任意本文と操作の可読性も維持。元監査の紙面精度として合格。 |
+| R226 | pass | B/Tの実用の確認構成を保持。本文の重い灰青を外面に近い中立色へ整え、nativeフォームが自然に収まる。新規Aの造形差を要求せず、実用性と素材整合として合格。 |
+| R228 | pass | B/Tの暖かい通知面を保持。冷たい灰青の本文欄を同系統の薄い砂色へ揃え、外面と本文の温度差を解消。任意入力と操作が読みやすく、過剰な外装を追加せず合格。 |
+| R230 | pass | B/Tのフォーム用の中立面を保持。重い本文欄を薄い面へ整理し、任意のnative入力/表を受ける無地が明瞭。元の標準構成を崩さず合格。 |
+| R232 | pass | 通常の橋型のつまみとレールは前回合格を保持。forced vendor pseudoのall:revert/margin:0によりnative丸つまみがレール中心へ一致した。実dragのLTR/RTL両端、form/reset/rangeも回帰なく合格。 |
+
+## R220 — R220-kicker-under-spine
+
+**major / ui**
+
+綴じ目をz-index:3へ出したことで、z-index:2の全幅header内の長い文字が覆われる。標準の短いCONFIRMATIONでは露見しないが、任意の長い小見出しが途中で欠ける。
+
+根拠: captures/reviewer-spine-5/kicker-1000-ltr.png（RTLも撮影）。kickerをCONFIRMATION / DOCUMENT REVIEW / LONG HEADER LABEL / FINAL APPROVALへ変更した実native。LONG HEADER LABELの中央を9pxの綴じ面が覆う。
+
+改善方向: kickerを綴じ目までの開始側の頁幅へ制限して折返す。LTRは左43%内、RTLは右43%内へ収め、closeの領域は保持。420px以下の一頁積みでは必要な制限を解除する。綴じ目を文字より後ろへ戻して再び紙に隠す対応は避ける。
+
+## 確認範囲
+
+- 固定source100 SHA-256とreview-input-5.json全一致、配布CSS10もimport除外で正本と一致。round4→5変更はR220/R222のみ。他8件のsource hash不変を確認し通常造形の合格を継承。reviewer-extra-5/checks.json。
+- native9dialogs全件をmodal/ARIA/Tabtrap/restoration/Escape policy/form method=dialog/retained input+selection/rapid/disabled/長文320390768/650px表の局所scroll/close-footer中心hit/RTL/forced/reduced/destroyで再実行、9件成功/errors0。reviewer-dialogs-5。
+- normal motion全9の入場/hover leave reenter/急反転/復帰、任意長文input注入後1000/320×LTR/RTL×scroll上中下108状態を再撮影しgeometryを記録。reviewer-open-5。
+- R220綴じ面が通常/RTL/長文末尾で可視か確認。追加で任意の長いkickerを1000/320×LTR/RTLに挿入し、前面spineと文字の重なりを再現。reviewer-spine-5。
+- R222の三面と2折面の端点、透明外形、長文末尾の操作面への連続、RTL鏡映を実画像とCSSで照合。旧ポケット/前round柱構成と既承認R219/R216を比較。
+- R232 source hash不変のためround4のnative form/reset/keys/実pointer/range/disabled/readonly/狭幅/RTL/forced/reducedと実drag検証を継承。今回はsliderの操作を重複実行していない。
+
+## 限界
+
+- 独立実行はChromium固定native。React実propsや現行ギャラリーdetailは今回は独立起動していない。固定closed/openと配布CSS一致を照合。
+- forced/reducedはブラウザエミュレーション。他エンジン/実OSは未確認。
+- 全730を再監査したものではなく元判定/関連画像/既承認の近似を比較。

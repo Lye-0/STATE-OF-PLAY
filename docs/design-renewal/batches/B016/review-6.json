@@ -1,0 +1,154 @@
+{
+  "batch": "B016",
+  "round": 6,
+  "snapshot": "docs/design-renewal/batches/B016/snapshot/round-6",
+  "overall": "pass",
+  "parts": [
+    {
+      "number": 220,
+      "id": "brushed-case-dialog",
+      "verdict": "pass",
+      "assessment": "左右の頁を結ぶ9pxの綴じ面と上下の折れを保持。長いkickerは開始側の頁内へ折返し、1000/768/421pxのLTR/RTLで綴じ目と交差しない。390/320pxでは幅制限を解除して一頁積みに自然に収まる。文字・close hit・hover時の矩形/字体も安定し、残件を解消した。通常造形とUIとも合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R021",
+        "R181",
+        "R220"
+      ],
+      "normalDesignVerdict": "pass",
+      "resolvedFindings": [
+        "R220-flat-spread-joint",
+        "R220-spine-hidden",
+        "R220-kicker-under-spine"
+      ]
+    },
+    {
+      "number": 221,
+      "id": "stepped-corner-dialog",
+      "verdict": "pass",
+      "assessment": "Tの太い上帯/大きい見出し/丸い主操作を保持。closeと戻る操作も同系の曲率へ揃え、個別の輪郭が衝突しなくなった。本文と入力を無地へ保ち、元の編集面の精度として合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R221",
+        "R211"
+      ]
+    },
+    {
+      "number": 222,
+      "id": "canvas-pocket-dialog",
+      "verdict": "pass",
+      "assessment": "二本柱を全廃し、理由・本文・操作の三つの紙面を20pxずつ交互にずらし、全幅20pxの斜め折面で端点を連続させた。一枚の紙の折りが本文の役割と外形を決め、R219の独立支持柱やR216の片側の返しと異なる。長文では折りが各sectionと自然に移動し、末尾も操作面へ連続する。320px/RTLでも接点・読字・実操作が成立しA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R219",
+        "R216",
+        "R181",
+        "R222"
+      ],
+      "resolvedFindings": [
+        "R222-pocket-repetition",
+        "R222-column-repetition"
+      ]
+    },
+    {
+      "number": 223,
+      "id": "separated-plinth-dialog",
+      "verdict": "pass",
+      "assessment": "本文の台と操作の台を12pxの実空隙で分け、下台を28pxずらした外周が役割と一致する。透ける間隔は下層で塞がらず、両台の切断面も別々に連続する。R214の一体の石台、R097の露頭とは二つの独立した面と操作の分離で異なる。長文/RTLでも成立しA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R214",
+        "R097",
+        "R223"
+      ]
+    },
+    {
+      "number": 224,
+      "id": "letterpress-dialog",
+      "verdict": "pass",
+      "assessment": "44×126pxの開いたU型へ改め、7pxの上下の腕が紙の端へ6px重なる二箇所の接合が成立。穴は実際に透け、長文末尾/320px RTLでも持ち手が一体で残る。R215の鉢前面とも異なる形として合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R215",
+        "R205",
+        "R199"
+      ],
+      "resolvedFindings": [
+        "R224-handle-root"
+      ]
+    },
+    {
+      "number": 225,
+      "id": "split-frame-dialog",
+      "verdict": "pass",
+      "assessment": "Tの本文/控えを分ける切取り線を保持し、二重外枠を上下4pxの紙の厚みへ整理した。線の意味を一つの境界へ集約し、任意本文と操作の可読性も維持。元監査の紙面精度として合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R225",
+        "R211"
+      ]
+    },
+    {
+      "number": 226,
+      "id": "plain-confirm-dialog",
+      "verdict": "pass",
+      "assessment": "B/Tの実用の確認構成を保持。本文の重い灰青を外面に近い中立色へ整え、nativeフォームが自然に収まる。新規Aの造形差を要求せず、実用性と素材整合として合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R226",
+        "R230"
+      ]
+    },
+    {
+      "number": 228,
+      "id": "warm-message-dialog",
+      "verdict": "pass",
+      "assessment": "B/Tの暖かい通知面を保持。冷たい灰青の本文欄を同系統の薄い砂色へ揃え、外面と本文の温度差を解消。任意入力と操作が読みやすく、過剰な外装を追加せず合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R228",
+        "R217"
+      ]
+    },
+    {
+      "number": 230,
+      "id": "neutral-form-dialog",
+      "verdict": "pass",
+      "assessment": "B/Tのフォーム用の中立面を保持。重い本文欄を薄い面へ整理し、任意のnative入力/表を受ける無地が明瞭。元の標準構成を崩さず合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R230",
+        "R226"
+      ]
+    },
+    {
+      "number": 232,
+      "id": "bridge-saddle-range",
+      "verdict": "pass",
+      "assessment": "通常の橋型のつまみとレールは前回合格を保持。forced vendor pseudoのall:revert/margin:0によりnative丸つまみがレール中心へ一致した。実dragのLTR/RTL両端、form/reset/rangeも回帰なく合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R232",
+        "R143",
+        "R172"
+      ],
+      "normalDesignVerdict": "pass",
+      "resolvedFindings": [
+        "R232-forced-thumb-offset"
+      ]
+    }
+  ],
+  "checks": [
+    "固定source100 SHA-256とreview-input-6.json全一致。配布CSS10もimport除外で正本と一致。reviewer-extra-6/checks.json。",
+    "round5→6のsource hash差分はR220 styles.cssのみ。他9件は完全不変で前回合格判定を継承。",
+    "R220固定nativeで長いkickerを注入し1000/768/421/390/320px×LTR/RTL全10状態を撮影。二頁時のkicker bboxとspine bboxが交差しないことをassert。reviewer-spine-6/checks.jsonとkicker画像。",
+    "全10状態でnormal motionのopen/close、close実click、hover leave reenterを操作。hover前後のkicker/close/spine矩形とfontを照合し不変。",
+    "全9dialogのnative modal/form/入力保持/長文/RTL/forced/reducedおよび108scroll状態はround5、R232のnative form/実drag/forcedはround4の独立結果を継承。今回は変更に関係するR220小見出しと操作を限定再検査。",
+    "R222新しい三面の折り返し、他8件の通常造形・最寄比較は前回合格を保持。"
+  ],
+  "limits": [
+    "独立実行はChromium固定native。React実propsや現行ギャラリーdetailは今回は独立起動していない。固定closed/openと配布CSS一致を照合。",
+    "forced/reducedはブラウザエミュレーション。他エンジン/実OSは未確認。",
+    "全730を再監査したものではなく元判定/関連画像/既承認の近似を比較。"
+  ]
+}
