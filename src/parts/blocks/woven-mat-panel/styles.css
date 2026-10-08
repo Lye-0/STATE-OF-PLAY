@@ -1,28 +1,26 @@
-.sop-surface.sop-woven-mat-panel{position:relative;isolation:isolate;box-sizing:border-box;min-width:0;width:100%}.sop-surface.sop-woven-mat-panel .sop-surface-content{position:relative;z-index:1;padding:var(--sop-padding,28px);min-width:0}
-/* Woven Mat Panel — 編み込んだ二方向の端を引き、文字面を固定したまま交差を緩める。 */
-.sop-surface.sop-woven-mat-panel{color:#263744;--sop-padding:28px;transition:box-shadow .4s,border-color .4s}.sop-surface.sop-woven-mat-panel::before,.sop-surface.sop-woven-mat-panel::after{content:"";position:absolute;pointer-events:none;transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .4s,background .4s}.sop-surface.sop-woven-mat-panel .sop-surface-content h3{color:inherit;font:500 25px/1.2 Georgia,serif;margin:0 0 12px}.sop-surface.sop-woven-mat-panel .sop-surface-content p{color:inherit;opacity:.8;font:13px/1.7 system-ui;margin:0} .sop-surface.sop-woven-mat-panel{padding:13px;background:repeating-linear-gradient(0deg,#a58b72 0 2px,#d2bda6 2px 5px);border:1px solid #a68e77;border-radius:2px;color:#493e34}.sop-surface.sop-woven-mat-panel .sop-surface-content{background:#ebe4d9;border:1px solid #c8b5a1;padding:24px;box-shadow:0 2px 5px #50453544}.sop-surface.sop-woven-mat-panel::after{inset:5px;border-inline:2px solid #63544555}
-.sop-surface.sop-woven-mat-panel{max-width:100%}.sop-surface.sop-woven-mat-panel,.sop-surface.sop-woven-mat-panel *{box-sizing:border-box}.sop-surface.sop-woven-mat-panel :is(button,input,textarea,a){min-width:0}
-.sop-surface.sop-woven-mat-panel:focus-visible,.sop-surface.sop-woven-mat-panel :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
-@media(prefers-reduced-motion:reduce){.sop-surface.sop-woven-mat-panel,.sop-surface.sop-woven-mat-panel *,.sop-surface.sop-woven-mat-panel::before,.sop-surface.sop-woven-mat-panel::after,.sop-surface.sop-woven-mat-panel *::before,.sop-surface.sop-woven-mat-panel *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-.sop-surface.sop-woven-mat-panel[data-sop-paused] *,.sop-surface.sop-woven-mat-panel[data-paused=true] *,.sop-surface.sop-woven-mat-panel[data-motion-running=false] *,.sop-surface.sop-woven-mat-panel[data-wb-paused=true] *{animation-play-state:paused!important}
-@media(forced-colors:active){.sop-surface.sop-woven-mat-panel{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-surface.sop-woven-mat-panel :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+/* 編んだ敷物の左帯と下の房の上に、明るい紙面を少しずらして置く。縦材と横材の交差は紙の外側に見せ、読む面を模様で埋めない。 */
+.sop-surface.sop-woven-mat-panel{position:relative;isolation:isolate;box-sizing:border-box;min-width:0;width:100%;max-width:100%;color:var(--surface-ink,#263642)}
+.sop-surface.sop-woven-mat-panel *,.sop-surface.sop-woven-mat-panel *::before,.sop-surface.sop-woven-mat-panel *::after{box-sizing:border-box}
+.sop-surface.sop-woven-mat-panel .sop-surface-content{position:relative;z-index:2;padding:var(--sop-padding,28px);min-width:0}
+.sop-surface.sop-woven-mat-panel .sop-surface-content h3{color:inherit;font:500 25px/1.3 Georgia,serif;margin:0 0 12px;overflow-wrap:anywhere}
+.sop-surface.sop-woven-mat-panel .sop-surface-content p{color:var(--surface-muted,#536370);font:13px/1.8 system-ui;margin:0;overflow-wrap:anywhere}
+.sop-surface.sop-woven-mat-panel .sop-surface-art{position:absolute;inset:0;pointer-events:none}
+.sop-surface.sop-woven-mat-panel .sop-surface-art i{position:absolute;display:block;pointer-events:none;transition:transform .55s cubic-bezier(.22,.8,.2,1),background-position .7s,opacity .4s}
+.sop-surface.sop-woven-mat-panel .sop-surface-art i::before,.sop-surface.sop-woven-mat-panel .sop-surface-art i::after,.sop-surface.sop-woven-mat-panel::before,.sop-surface.sop-woven-mat-panel::after{content:"";position:absolute;pointer-events:none}
+.sop-surface.sop-woven-mat-panel :is(button,input,textarea,a){min-width:0}
+.sop-surface.sop-woven-mat-panel:focus-visible,.sop-surface.sop-woven-mat-panel :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#487daa);outline-offset:3px}
 
-/* Review: 大見出しの明暗を素材面に合わせる */
-.sop-surface.sop-woven-mat-panel .sop-surface-content h3,.sop-surface.sop-woven-mat-panel .sop-surface-content h3 :is(span,em){color:inherit!important} .sop-surface.sop-woven-mat-panel .sop-surface-content{color:inherit}
+.sop-surface.sop-woven-mat-panel{background:transparent;border:0;padding:9px 5px 25px 15%;--sop-padding:27px 23px;--surface-ink:#3b3933;--surface-muted:#625f55}
+.sop-surface.sop-woven-mat-panel .sop-surface-content{background:#eee7d9;border:1px solid #bdad91;border-radius:2px 2px 9px 2px;box-shadow:0 2px #a29072}
+.sop-surface.sop-woven-mat-panel .sop-surface-art i:nth-child(1){left:0;top:0;bottom:3px;width:15%;background:repeating-linear-gradient(0deg,#806c50 0 2px,transparent 2px 9px),repeating-linear-gradient(90deg,#e2d1af 0 4px,#ac9671 4px 9px);border:1px solid #9e8762;border-radius:3px 0 0 3px}
+.sop-surface.sop-woven-mat-panel .sop-surface-art i:nth-child(2){left:0;right:16px;bottom:4px;height:19px;background:repeating-linear-gradient(90deg,#826e51 0 2px,transparent 2px 9px),repeating-linear-gradient(0deg,#d2be9b 0 4px,#ac9671 4px 9px);border-bottom:1px solid #927a59}
+.sop-surface.sop-woven-mat-panel .sop-surface-art i:nth-child(3){left:16%;right:16px;bottom:0;height:4px;background:repeating-linear-gradient(90deg,#ac9671 0 3px,transparent 3px 9px);transform-origin:left}
+.sop-surface.sop-woven-mat-panel .sop-surface-art i:nth-child(4){left:0;top:0;width:15%;height:9px;border-bottom:1px solid #8a7556;background:repeating-linear-gradient(90deg,#c9b491 0 3px,#8a7556 3px 5px,#e4d0ab 5px 9px)}
+.sop-surface.sop-woven-mat-panel:hover .sop-surface-art i:nth-child(3){transform:skewX(-12deg)}
 
-/* Composition revision. 編み込んだ二方向の端を引き、文字面を固定したまま交差を緩める */
-/* The new material owns the complete pseudo-element geometry. */
-.sop-surface.sop-woven-mat-panel::before,.sop-surface.sop-woven-mat-panel::after{width:auto;height:auto;inset:auto;border:0;border-radius:0;background:none;box-shadow:none;opacity:1;z-index:0;transform:none;clip-path:none}
-
-.sop-surface.sop-woven-mat-panel .sop-surface-content h3{font-size:clamp(22px,6vw,32px);line-height:1.25;max-width:12ch}.sop-surface.sop-woven-mat-panel .sop-surface-content h3 :is(span,em){color:inherit!important}.sop-surface.sop-woven-mat-panel .sop-surface-content p{font-size:12px;line-height:1.8}.sop-surface.sop-woven-mat-panel:focus-within::before{opacity:1}.sop-surface.sop-woven-mat-panel{background:#f6ecdc;border:0;border-radius:0;--sop-padding:40px;color:#493e31;box-shadow:none}.sop-surface.sop-woven-mat-panel::before{inset:0 auto 0 10px;width:19px;background:repeating-linear-gradient(#977f61 0 5px,#d4b993 5px 10px);transform:translateY(-4px)}.sop-surface.sop-woven-mat-panel::after{inset:10px 0 auto;height:19px;background:repeating-linear-gradient(90deg,#d4b993 0 5px,#977f61 5px 10px);transform:translateX(4px)}.sop-surface.sop-woven-mat-panel:hover::before{transform:translateY(4px)}.sop-surface.sop-woven-mat-panel:hover::after{transform:translateX(-4px)}
 @media(prefers-reduced-motion:reduce){.sop-surface.sop-woven-mat-panel,.sop-surface.sop-woven-mat-panel *,.sop-surface.sop-woven-mat-panel::before,.sop-surface.sop-woven-mat-panel::after,.sop-surface.sop-woven-mat-panel *::before,.sop-surface.sop-woven-mat-panel *::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-surface.sop-woven-mat-panel{color:CanvasText;background:Canvas;border:1px solid ButtonText;box-shadow:none}.sop-surface.sop-woven-mat-panel .sop-surface-art,.sop-surface.sop-woven-mat-panel::before,.sop-surface.sop-woven-mat-panel::after{display:none}.sop-surface.sop-woven-mat-panel .sop-surface-content{color:CanvasText;background:Canvas}.sop-surface.sop-woven-mat-panel .sop-surface-content p{color:CanvasText}.sop-surface.sop-woven-mat-panel :focus-visible{outline-color:Highlight}}
 
-.sop-surface.sop-woven-mat-panel{padding:0}.sop-surface.sop-woven-mat-panel>.sop-surface-content{background:transparent;padding:var(--sop-padding);border:0;border-radius:0;margin:0;color:inherit}
+.sop-surface.sop-woven-mat-panel .sop-surface-content h3 em{color:inherit;font-style:inherit}
 
-/* Final visual review: layout and material separation. */
-.sop-surface.sop-woven-mat-panel>.sop-surface-content{padding:var(--sop-padding,28px)!important}
-/* Style review refinement */
-/* 織りの端を6pxへ絞り、細かな縞を二方向の交点だけに限定。内容面の余白を優先する。 */
-.sop-surface.sop-woven-mat-panel.sop-woven-mat-panel{padding:6px;background:repeating-linear-gradient(90deg,#b6a38e 0 3px,#d3c5b3 3px 6px);border:0}.sop-surface.sop-woven-mat-panel.sop-woven-mat-panel::after{display:none}.sop-surface.sop-woven-mat-panel.sop-woven-mat-panel .sop-surface-content{border:0;box-shadow:none;background:#f0eae0}
-
-@media(forced-colors:active){.sop-surface.sop-woven-mat-panel.sop-woven-mat-panel{--paper:Canvas;--ink:CanvasText;--muted:CanvasText;--accent:Highlight;--edge:ButtonText;--ff-ink:CanvasText;--ff-muted:CanvasText;--sg-bg:Canvas;--sg-ink:CanvasText;--sg-muted:CanvasText;--sg-a:Highlight;--wb-bg:Canvas;--wb-ink:CanvasText;--wb-muted:CanvasText;--wb-accent:Highlight;color:CanvasText;background:Canvas;border-color:ButtonText;box-shadow:none}.sop-surface.sop-woven-mat-panel.sop-woven-mat-panel :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}.sop-surface.sop-woven-mat-panel.sop-woven-mat-panel :is(button,input,textarea,select,a):focus-visible{outline-color:Highlight}.sop-surface.sop-woven-mat-panel.sop-woven-mat-panel :is([aria-current=page],[aria-selected=true],[data-selected=true]){color:HighlightText;background:Highlight;border-color:Highlight}}
+.sop-surface.sop-woven-mat-panel .sop-surface-content h3 em{color:inherit;font:inherit}

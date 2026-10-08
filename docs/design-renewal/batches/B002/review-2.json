@@ -1,0 +1,144 @@
+{
+  "batch": "B002",
+  "round": 2,
+  "snapshot": "batches/B002/snapshot/round-2/ (review-input-2.json SHA-256 100/100一致)",
+  "overall": "pass",
+  "parts": [
+    {
+      "number": 22,
+      "id": "suspension-sheet",
+      "verdict": "pass",
+      "assessment": "前回合格した吊り点と下端の空間を維持。展示の強調語も見出し書体に揃い、軽微な整合性指摘を解消。",
+      "findings": [],
+      "nearestComparisons": [
+        "R029 Canal Bridge Panel",
+        "R709 Suspended Pennants Ornament"
+      ]
+    },
+    {
+      "number": 25,
+      "id": "basalt-cutout",
+      "verdict": "pass",
+      "assessment": "対角の三角面を除き、左外周自体に非対称な欠けを作った。明るい切断端と暗い本文が連続し、R034の巻かれた素材とは輪郭・厚みの見せ方が異なる。前回の反復指摘を解消。",
+      "findings": [],
+      "nearestComparisons": [
+        "R034 Terminal Foil",
+        "R030 Offset Diecut",
+        "R012 Balance Stone Toggle"
+      ]
+    },
+    {
+      "number": 26,
+      "id": "archival-channel",
+      "verdict": "pass",
+      "assessment": "底部の丸い溝に開口があり、前の唇と両端の留めが紙の端をまたいでいる。全周の額縁から保持構造へ変わり、上の札とも一体で読める。狭幅・長文でも本文を遮らず、Aとして合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R021 Bookcloth Case（B001 round-3）",
+        "R355 Archive Pocket Upload",
+        "R037 Compact Note Panel"
+      ]
+    },
+    {
+      "number": 28,
+      "id": "print-registration-board",
+      "verdict": "pass",
+      "assessment": "紙と別体の支持台、紙の上端に重なる二つの登録ピンが視認できる。前回の細線飾りから位置を保持する構造へ変わった。R022は上からの吊り線、こちらは台に位置を合わせるピンなので支持の関係も異なる。",
+      "findings": [],
+      "nearestComparisons": [
+        "R032 Pivot Corner Case",
+        "R039 Thin Frame Sheet",
+        "R030 Offset Diecut"
+      ]
+    },
+    {
+      "number": 29,
+      "id": "canal-bridge-panel",
+      "verdict": "pass",
+      "assessment": "前回合格した本文の天板・脚・下の開口を維持。操作と長文の回帰なし。",
+      "findings": [],
+      "nearestComparisons": [
+        "R008 Drawbridge Toggle（B001）",
+        "R022 Suspension Sheet",
+        "R232 Bridge Saddle Range"
+      ]
+    },
+    {
+      "number": 31,
+      "id": "woven-mat-panel",
+      "verdict": "pass",
+      "assessment": "前回合格した露出する織り帯・下の房・上に置いた紙面の関係を維持。操作と長文の回帰なし。",
+      "findings": [],
+      "nearestComparisons": [
+        "R021 Bookcloth Case（B001 round-3）",
+        "R096 Loom Border Accordion",
+        "R218 Gallery Mat Dialog"
+      ]
+    },
+    {
+      "number": 32,
+      "id": "pivot-corner-case",
+      "verdict": "pass",
+      "assessment": "全高に依存する回転下板を除き、固定寸法56pxの隅の保持板と下のL字の受けへ変更。回転が軸に接続した小さな支持部へ限定され、R030との反復を解消。前回と同じ320px長文でscrollWidth=320となり、横スクロールも解消。保持板は見出しを遮らない。",
+      "findings": [],
+      "nearestComparisons": [
+        "R030 Offset Diecut",
+        "R022 Suspension Sheet",
+        "R028 Print Registration Board"
+      ]
+    },
+    {
+      "number": 33,
+      "id": "contoured-cork-panel",
+      "verdict": "pass",
+      "assessment": "角丸を固定pxへ制限。同じ高さ2199.375pxの長文でも左上半径は60px/30pxに収まり、見出しの背景が欠けない。通常の非対称曲線も維持し、前回のUI指摘を解消。",
+      "findings": [],
+      "nearestComparisons": [
+        "R023 Coved Ceramic Panel",
+        "R027 Seamless Saddle",
+        "R012 Balance Stone Toggle"
+      ]
+    },
+    {
+      "number": 34,
+      "id": "terminal-foil",
+      "verdict": "pass",
+      "assessment": "左の巻き断面、そこから広がる薄い読み面、右上の巻返しが異なる曲率で連続し、前回の二重枠と折れ紙三角から離れた。R025の欠けた外周とも明確に異なる。狭幅で巻き面が見え、文字を遮らずAとして合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R025 Basalt Cutout",
+        "R122 Folded Margin Entry",
+        "R030 Offset Diecut"
+      ]
+    },
+    {
+      "number": 35,
+      "id": "terraced-paper-panel",
+      "verdict": "pass",
+      "assessment": "前回合格した左下へ段階的に開く三枚の紙の構造を維持。本文と操作の回帰なし。",
+      "findings": [],
+      "nearestComparisons": [
+        "R021 Bookcloth Case（B001 round-3）",
+        "R030 Offset Diecut",
+        "R032 Pivot Corner Case"
+      ]
+    }
+  ],
+  "checks": [
+    "response-1.md、更新design.md、round-1/round-2 CSS差分を確認。合格4件はfont継承の修正以外の造形を維持。",
+    "固定正本100ファイルのSHA-256全一致。全10件のportable native styles.cssは固定正本とbyte一致。",
+    "Vite+Chromiumで固定native画面を起動。全10件を通常モーションでhover→120ms→leave→100ms→reenterし、中間transformと背景位置を採取。全件の見出しの部品内相対座標・幅・高さは前後で一致。",
+    "320px短文、長い日本語見出し・本文・英数字の全10件でscrollWidth=320。R032は前回と同じ長文で横overflowが0になった。",
+    "R033は前回と同じ約1150字・高さ2199.375pxの内容で再現試験。左上半径60px/30pxと本文面内の見出しを確認。",
+    "全10件へ内容としてbuttonを挿入し、focus-visibleのsolid outline、中心hit test、Enter操作を確認。装飾は操作を妨げない。",
+    "全10件のreduced-motionの装飾transition-durationは0s。forced-colorsを実描画して本文と枠、装飾退避を確認。ページエラー0。",
+    "R026/R028/R032/R034の保持部・ピン・巻き端の重なりをnative初期/hover/320px画像と最新gallery個別photosで確認。見出し・本文を遮らない。",
+    "R025とR034の対角三角面の反復、R032とR030の回転下板の反復がなくなったことを形と動きで確認。全730件の再検索はせず前回の比較対象・判定基準を継続。",
+    "前回指摘した5件のgallery見出しのidea.が周囲の書体・weightへ揃ったことを最新個別photosで確認。"
+  ],
+  "limits": [
+    "全730件との比較範囲と全配布形式/React検証の範囲はreview-1を引き継ぐ。本ラウンドは前回指摘の解消と回帰を独立portable native JSで確認。",
+    "実機タッチ、OS実高コントラスト、スクリーンリーダー読み上げは未検証。",
+    "ギャラリーは最新の個別photosを使用。作業中のメイン実装を直接評価せず、固定snapshotを正本とした。"
+  ]
+}

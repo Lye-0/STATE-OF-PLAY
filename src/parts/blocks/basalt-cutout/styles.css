@@ -1,23 +1,26 @@
-.sop-surface.sop-basalt-cutout{position:relative;isolation:isolate;box-sizing:border-box;min-width:0;width:100%}.sop-surface.sop-basalt-cutout .sop-surface-content{position:relative;z-index:1;padding:var(--sop-padding,28px);min-width:0}
-/* Basalt Cutout — 石の切断面と抜けた窓の二層を持つ、非対称の展示台。 */
-.sop-surface.sop-basalt-cutout{color:#263744;--sop-padding:28px;transition:box-shadow .4s,border-color .4s}.sop-surface.sop-basalt-cutout::before,.sop-surface.sop-basalt-cutout::after{content:"";position:absolute;pointer-events:none;transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .4s,background .4s}.sop-surface.sop-basalt-cutout .sop-surface-content h3{color:inherit;font:500 25px/1.2 Georgia,serif;margin:0 0 12px}.sop-surface.sop-basalt-cutout .sop-surface-content p{color:inherit;opacity:.8;font:13px/1.7 system-ui;margin:0} .sop-surface.sop-basalt-cutout{background:#252932;border:1px solid #5c626e;clip-path:polygon(0 0,calc(100% - 23px) 0,100% 23px,100% 100%,0 100%);padding:9px;color:#273340}.sop-surface.sop-basalt-cutout .sop-surface-content{background:#e0e0dd;border:1px solid #b7bdc2;padding:28px 25px}.sop-surface.sop-basalt-cutout::after{width:38px;height:2px;right:5px;top:13px;background:#bdc4ce;transform:rotate(45deg)}
-.sop-surface.sop-basalt-cutout{max-width:100%}.sop-surface.sop-basalt-cutout,.sop-surface.sop-basalt-cutout *{box-sizing:border-box}.sop-surface.sop-basalt-cutout :is(button,input,textarea,a){min-width:0}
-.sop-surface.sop-basalt-cutout:focus-visible,.sop-surface.sop-basalt-cutout :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
-@media(prefers-reduced-motion:reduce){.sop-surface.sop-basalt-cutout,.sop-surface.sop-basalt-cutout *,.sop-surface.sop-basalt-cutout::before,.sop-surface.sop-basalt-cutout::after,.sop-surface.sop-basalt-cutout *::before,.sop-surface.sop-basalt-cutout *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-.sop-surface.sop-basalt-cutout[data-sop-paused] *,.sop-surface.sop-basalt-cutout[data-paused=true] *,.sop-surface.sop-basalt-cutout[data-motion-running=false] *,.sop-surface.sop-basalt-cutout[data-wb-paused=true] *{animation-play-state:paused!important}
-@media(forced-colors:active){.sop-surface.sop-basalt-cutout{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-surface.sop-basalt-cutout :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+/* 左の外周そのものに、長さと傾きが違う非対称な割れ端を持つ玄武岩のパネル。上の薄い切断端と暗い本文面を分け、文字は欠けへ侵入しない固定領域へ置く。 */
+.sop-surface.sop-basalt-cutout{position:relative;isolation:isolate;box-sizing:border-box;min-width:0;width:100%;max-width:100%;color:var(--surface-ink,#263642)}
+.sop-surface.sop-basalt-cutout *,.sop-surface.sop-basalt-cutout *::before,.sop-surface.sop-basalt-cutout *::after{box-sizing:border-box}
+.sop-surface.sop-basalt-cutout .sop-surface-content{position:relative;z-index:2;padding:var(--sop-padding,28px);min-width:0}
+.sop-surface.sop-basalt-cutout .sop-surface-content h3{color:inherit;font:500 25px/1.3 Georgia,serif;margin:0 0 12px;overflow-wrap:anywhere}
+.sop-surface.sop-basalt-cutout .sop-surface-content p{color:var(--surface-muted,#536370);font:13px/1.8 system-ui;margin:0;overflow-wrap:anywhere}
+.sop-surface.sop-basalt-cutout .sop-surface-art{position:absolute;inset:0;pointer-events:none}
+.sop-surface.sop-basalt-cutout .sop-surface-art i{position:absolute;display:block;pointer-events:none;transition:transform .55s cubic-bezier(.22,.8,.2,1),background-position .7s,opacity .4s}
+.sop-surface.sop-basalt-cutout .sop-surface-art i::before,.sop-surface.sop-basalt-cutout .sop-surface-art i::after,.sop-surface.sop-basalt-cutout::before,.sop-surface.sop-basalt-cutout::after{content:"";position:absolute;pointer-events:none}
+.sop-surface.sop-basalt-cutout :is(button,input,textarea,a){min-width:0}
+.sop-surface.sop-basalt-cutout:focus-visible,.sop-surface.sop-basalt-cutout :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#487daa);outline-offset:3px}
 
-/* Review: 大見出しの明暗を素材面に合わせる */
-.sop-surface.sop-basalt-cutout .sop-surface-content h3,.sop-surface.sop-basalt-cutout .sop-surface-content h3 :is(span,em){color:inherit!important} .sop-surface.sop-basalt-cutout .sop-surface-content{color:inherit}
+.sop-surface.sop-basalt-cutout{--surface-ink:#edf1f0;--surface-muted:#bdc9cc;--sop-padding:36px 33px 38px;background:#273640;clip-path:polygon(14px 0,100% 0,100% 100%,8px 100%,0 calc(100% - 22px),10px 70%,2px 46%,13px 25%,0 8%);border:0}
+.sop-surface.sop-basalt-cutout .sop-surface-content h3{font:600 26px/1.25 system-ui;letter-spacing:-.035em}
+.sop-surface.sop-basalt-cutout .sop-surface-art i:nth-child(1){left:0;bottom:0;width:36px;height:22px;clip-path:polygon(0 0,100% 50%,100% 100%,0 100%);background:linear-gradient(125deg,#83979d,#506b75)}
+.sop-surface.sop-basalt-cutout .sop-surface-art i:nth-child(2){left:14px;right:0;top:0;height:5px;background:linear-gradient(0deg,#627e88,#a0afb5);border-bottom:1px solid #3e5a67}
+.sop-surface.sop-basalt-cutout .sop-surface-art i:nth-child(3){left:0;top:0;bottom:0;width:21px;background:#516a75;clip-path:polygon(14px 0,21px 0,19px 25%,12px 46%,20px 70%,16px 100%,0 100%,0 calc(100% - 22px),10px 70%,2px 46%,13px 25%,0 8%)}
+.sop-surface.sop-basalt-cutout .sop-surface-art i:nth-child(4){left:41px;right:18px;bottom:13px;height:1px;background:#5d747e;transform-origin:right}
+.sop-surface.sop-basalt-cutout:hover .sop-surface-art i:nth-child(4){transform:scaleX(.86)}
 
-/* Composition revision. 石の切断面と抜けた窓の二層を持つ、非対称の展示台 */
-/* The new material owns the complete pseudo-element geometry. */
-.sop-surface.sop-basalt-cutout::before,.sop-surface.sop-basalt-cutout::after{width:auto;height:auto;inset:auto;border:0;border-radius:0;background:none;box-shadow:none;opacity:1;z-index:0;transform:none;clip-path:none}
-
-.sop-surface.sop-basalt-cutout .sop-surface-content h3{font-size:clamp(22px,6vw,32px);line-height:1.25;max-width:12ch}.sop-surface.sop-basalt-cutout .sop-surface-content h3 :is(span,em){color:inherit!important}.sop-surface.sop-basalt-cutout .sop-surface-content p{font-size:12px;line-height:1.8}.sop-surface.sop-basalt-cutout:focus-within::before{opacity:1}.sop-surface.sop-basalt-cutout{background:#343b43;color:#f3f2ea;border:0;border-radius:0;--sop-padding:44px 28px 30px;clip-path:polygon(0 0,68% 0,68% 17%,100% 17%,100% 100%,0 100%)}.sop-surface.sop-basalt-cutout::before{inset:0;background:linear-gradient(125deg,transparent 50%,#ffffff12 50%);transform:translateX(-12%)}.sop-surface.sop-basalt-cutout:hover::before{transform:translateX(12%)}.sop-surface.sop-basalt-cutout::after{inset:auto 20px 12px;height:2px;background:#d6ad7e}
 @media(prefers-reduced-motion:reduce){.sop-surface.sop-basalt-cutout,.sop-surface.sop-basalt-cutout *,.sop-surface.sop-basalt-cutout::before,.sop-surface.sop-basalt-cutout::after,.sop-surface.sop-basalt-cutout *::before,.sop-surface.sop-basalt-cutout *::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-surface.sop-basalt-cutout{color:CanvasText;background:Canvas;border:1px solid ButtonText;box-shadow:none}.sop-surface.sop-basalt-cutout .sop-surface-art,.sop-surface.sop-basalt-cutout::before,.sop-surface.sop-basalt-cutout::after{display:none}.sop-surface.sop-basalt-cutout .sop-surface-content{color:CanvasText;background:Canvas}.sop-surface.sop-basalt-cutout .sop-surface-content p{color:CanvasText}.sop-surface.sop-basalt-cutout :focus-visible{outline-color:Highlight}}
 
-.sop-surface.sop-basalt-cutout{padding:0}.sop-surface.sop-basalt-cutout>.sop-surface-content{background:transparent;padding:var(--sop-padding);border:0;border-radius:0;margin:0;color:inherit}
+.sop-surface.sop-basalt-cutout .sop-surface-content h3 em{color:inherit;font-style:inherit}
 
-/* Final visual review: layout and material separation. */
-.sop-surface.sop-basalt-cutout>.sop-surface-content{padding:var(--sop-padding,28px)!important}
+.sop-surface.sop-basalt-cutout .sop-surface-content h3 em{color:inherit;font:inherit}

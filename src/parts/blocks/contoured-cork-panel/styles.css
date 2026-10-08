@@ -1,23 +1,26 @@
-.sop-surface.sop-contoured-cork-panel{position:relative;isolation:isolate;box-sizing:border-box;min-width:0;width:100%}.sop-surface.sop-contoured-cork-panel .sop-surface-content{position:relative;z-index:1;padding:var(--sop-padding,28px);min-width:0}
-/* Contoured Cork Panel — コルクの島を等高線のようにずらし、明るい内容台を浮かせる。 */
-.sop-surface.sop-contoured-cork-panel{color:#263744;--sop-padding:28px;transition:box-shadow .4s,border-color .4s}.sop-surface.sop-contoured-cork-panel::before,.sop-surface.sop-contoured-cork-panel::after{content:"";position:absolute;pointer-events:none;transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .4s,background .4s}.sop-surface.sop-contoured-cork-panel .sop-surface-content h3{color:inherit;font:500 25px/1.2 Georgia,serif;margin:0 0 12px}.sop-surface.sop-contoured-cork-panel .sop-surface-content p{color:inherit;opacity:.8;font:13px/1.7 system-ui;margin:0} .sop-surface.sop-contoured-cork-panel{background:radial-gradient(circle at 100% 0,#20252d 0 29px,#b99c76 30px 34px,transparent 35px),#e7d5bb;border:1px solid #ba9b74;border-radius:7px;--sop-padding:30px 38px 28px 25px;color:#4b3c2b;box-shadow:inset 0 -6px #bc9f7b,0 8px 20px #0003}.sop-surface.sop-contoured-cork-panel::after{left:13px;right:13px;bottom:12px;border-bottom:1px dashed #9f805b;opacity:.6}
-.sop-surface.sop-contoured-cork-panel{max-width:100%}.sop-surface.sop-contoured-cork-panel,.sop-surface.sop-contoured-cork-panel *{box-sizing:border-box}.sop-surface.sop-contoured-cork-panel :is(button,input,textarea,a){min-width:0}
-.sop-surface.sop-contoured-cork-panel:focus-visible,.sop-surface.sop-contoured-cork-panel :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
-@media(prefers-reduced-motion:reduce){.sop-surface.sop-contoured-cork-panel,.sop-surface.sop-contoured-cork-panel *,.sop-surface.sop-contoured-cork-panel::before,.sop-surface.sop-contoured-cork-panel::after,.sop-surface.sop-contoured-cork-panel *::before,.sop-surface.sop-contoured-cork-panel *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-.sop-surface.sop-contoured-cork-panel[data-sop-paused] *,.sop-surface.sop-contoured-cork-panel[data-paused=true] *,.sop-surface.sop-contoured-cork-panel[data-motion-running=false] *,.sop-surface.sop-contoured-cork-panel[data-wb-paused=true] *{animation-play-state:paused!important}
-@media(forced-colors:active){.sop-surface.sop-contoured-cork-panel{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-surface.sop-contoured-cork-panel :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+/* 左右で異なる丸みと薄い切断端を持つコルクの面。小さな孔は端部だけに残し、本文は落ち着いた無地の領域へ置く。 */
+.sop-surface.sop-contoured-cork-panel{position:relative;isolation:isolate;box-sizing:border-box;min-width:0;width:100%;max-width:100%;color:var(--surface-ink,#263642)}
+.sop-surface.sop-contoured-cork-panel *,.sop-surface.sop-contoured-cork-panel *::before,.sop-surface.sop-contoured-cork-panel *::after{box-sizing:border-box}
+.sop-surface.sop-contoured-cork-panel .sop-surface-content{position:relative;z-index:2;padding:var(--sop-padding,28px);min-width:0}
+.sop-surface.sop-contoured-cork-panel .sop-surface-content h3{color:inherit;font:500 25px/1.3 Georgia,serif;margin:0 0 12px;overflow-wrap:anywhere}
+.sop-surface.sop-contoured-cork-panel .sop-surface-content p{color:var(--surface-muted,#536370);font:13px/1.8 system-ui;margin:0;overflow-wrap:anywhere}
+.sop-surface.sop-contoured-cork-panel .sop-surface-art{position:absolute;inset:0;pointer-events:none}
+.sop-surface.sop-contoured-cork-panel .sop-surface-art i{position:absolute;display:block;pointer-events:none;transition:transform .55s cubic-bezier(.22,.8,.2,1),background-position .7s,opacity .4s}
+.sop-surface.sop-contoured-cork-panel .sop-surface-art i::before,.sop-surface.sop-contoured-cork-panel .sop-surface-art i::after,.sop-surface.sop-contoured-cork-panel::before,.sop-surface.sop-contoured-cork-panel::after{content:"";position:absolute;pointer-events:none}
+.sop-surface.sop-contoured-cork-panel :is(button,input,textarea,a){min-width:0}
+.sop-surface.sop-contoured-cork-panel:focus-visible,.sop-surface.sop-contoured-cork-panel :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#487daa);outline-offset:3px}
 
-/* Review: 大見出しの明暗を素材面に合わせる */
-.sop-surface.sop-contoured-cork-panel .sop-surface-content h3,.sop-surface.sop-contoured-cork-panel .sop-surface-content h3 :is(span,em){color:inherit!important} .sop-surface.sop-contoured-cork-panel .sop-surface-content{color:inherit}
+.sop-surface.sop-contoured-cork-panel{background:#c5a17b;border:1px solid #a58864;border-radius:60px 22px 48px 25px / 30px 45px 27px 50px;--sop-padding:31px 29px;color:#302e29;--surface-muted:#514c42;box-shadow:0 3px 0 #927959}
+.sop-surface.sop-contoured-cork-panel .sop-surface-art{border-radius:inherit;overflow:hidden}
+.sop-surface.sop-contoured-cork-panel .sop-surface-art i:nth-child(1){inset:0;border-radius:inherit;border:1px solid #e0c6a055;box-shadow:inset 0 3px 0 #dcc19855}
+.sop-surface.sop-contoured-cork-panel .sop-surface-art i:nth-child(2){left:10px;top:8px;bottom:10px;width:7px;background:radial-gradient(ellipse,#8b705122 1px,transparent 1.5px) 0 0/5px 7px;transform:rotate(-4deg)}
+.sop-surface.sop-contoured-cork-panel .sop-surface-art i:nth-child(3){right:11px;top:8px;bottom:10px;width:7px;background:radial-gradient(ellipse,#866b4c22 1px,transparent 1.5px) 1px 2px/4px 9px}
+.sop-surface.sop-contoured-cork-panel .sop-surface-art i:nth-child(4){left:28px;right:22px;bottom:8px;height:1px;background:#e6cfac66;border-radius:50%;transform-origin:left}
+.sop-surface.sop-contoured-cork-panel:hover .sop-surface-art i:nth-child(4){transform:scaleX(.9)}
 
-/* Composition revision. コルクの島を等高線のようにずらし、明るい内容台を浮かせる */
-/* The new material owns the complete pseudo-element geometry. */
-.sop-surface.sop-contoured-cork-panel::before,.sop-surface.sop-contoured-cork-panel::after{width:auto;height:auto;inset:auto;border:0;border-radius:0;background:none;box-shadow:none;opacity:1;z-index:0;transform:none;clip-path:none}
-
-.sop-surface.sop-contoured-cork-panel .sop-surface-content h3{font-size:clamp(22px,6vw,32px);line-height:1.25;max-width:12ch}.sop-surface.sop-contoured-cork-panel .sop-surface-content h3 :is(span,em){color:inherit!important}.sop-surface.sop-contoured-cork-panel .sop-surface-content p{font-size:12px;line-height:1.8}.sop-surface.sop-contoured-cork-panel:focus-within::before{opacity:1}.sop-surface.sop-contoured-cork-panel{background:transparent;border:0;box-shadow:none;--sop-padding:45px 35px;color:#4c3a2e}.sop-surface.sop-contoured-cork-panel::before{inset:4px 0;background:#b99974;border-radius:48% 6% 42% 8% / 18% 8% 17% 9%;transform:rotate(-3deg)}.sop-surface.sop-contoured-cork-panel::after{inset:21px 16px;background:#fff5df;border-radius:30% 4% 26% 5% / 12% 6% 15% 8%;box-shadow:0 6px 0 #ceb38d}.sop-surface.sop-contoured-cork-panel:hover::before{transform:rotate(3deg)}
 @media(prefers-reduced-motion:reduce){.sop-surface.sop-contoured-cork-panel,.sop-surface.sop-contoured-cork-panel *,.sop-surface.sop-contoured-cork-panel::before,.sop-surface.sop-contoured-cork-panel::after,.sop-surface.sop-contoured-cork-panel *::before,.sop-surface.sop-contoured-cork-panel *::after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.sop-surface.sop-contoured-cork-panel{color:CanvasText;background:Canvas;border:1px solid ButtonText;box-shadow:none}.sop-surface.sop-contoured-cork-panel .sop-surface-art,.sop-surface.sop-contoured-cork-panel::before,.sop-surface.sop-contoured-cork-panel::after{display:none}.sop-surface.sop-contoured-cork-panel .sop-surface-content{color:CanvasText;background:Canvas}.sop-surface.sop-contoured-cork-panel .sop-surface-content p{color:CanvasText}.sop-surface.sop-contoured-cork-panel :focus-visible{outline-color:Highlight}}
 
-.sop-surface.sop-contoured-cork-panel{padding:0}.sop-surface.sop-contoured-cork-panel>.sop-surface-content{background:transparent;padding:var(--sop-padding);border:0;border-radius:0;margin:0;color:inherit}
+.sop-surface.sop-contoured-cork-panel .sop-surface-content h3 em{color:inherit;font-style:inherit}
 
-/* Final visual review: layout and material separation. */
-.sop-surface.sop-contoured-cork-panel>.sop-surface-content{padding:var(--sop-padding,28px)!important}
+.sop-surface.sop-contoured-cork-panel .sop-surface-content h3 em{color:inherit;font:inherit}
