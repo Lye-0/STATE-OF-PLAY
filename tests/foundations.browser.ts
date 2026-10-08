@@ -258,6 +258,14 @@ await run('Progress and loader: determinate/indeterminate, dynamic limits, pause
  await run('Pagination and breadcrumbs: native links, page limits, dynamic hierarchy and popup cleanup',async()=>{
   await mount('aurora-pages',{totalPages:30,defaultValue:1});await native.locator('#test-host [aria-label="次のページ"]').click();assert.equal(await value(),2);await update({totalPages:1});assert.equal(await value(),1);assert.ok(await native.locator('#test-host [aria-label="次のページ"]').isDisabled());
   await native.evaluate(()=>(window as any).api.updateFoundation({totalPages:12,hrefForPage:(n:number)=>'/project/page/'+n}));assert.equal(await native.locator('#test-host [data-page="2"]').first().getAttribute('href'),'/project/page/2');
+  await native.evaluate(()=>{(window as any).pageRequests=[];(window as any).api.updateFoundation({readOnly:true,hrefForPage:(n:number)=>'#readonly-page-'+n,onDataChange:(n:number)=>(window as any).pageRequests.push(n)});});
+  const readonlyPage=native.locator('#test-host [data-page="2"]').first(),readonlyUrl=native.url();
+  assert.equal(await native.locator('#test-host a[href]').count(),0);assert.equal(await readonlyPage.getAttribute('aria-disabled'),'true');
+  await readonlyPage.click({force:true});await readonlyPage.dispatchEvent('click',{ctrlKey:true});
+  assert.equal(native.url(),readonlyUrl);assert.equal(await value(),1);assert.deepEqual(await native.evaluate(()=>(window as any).pageRequests),[]);
+  await update({readOnly:false});assert.equal(await readonlyPage.getAttribute('href'),'#readonly-page-2');
+  await readonlyPage.click();assert.ok(native.url().endsWith('#readonly-page-2'));assert.deepEqual(await native.evaluate(()=>(window as any).pageRequests),[2]);
+  await update({disabled:true});assert.equal(await native.locator('#test-host a[href]').count(),0);
   const items=Array.from({length:7},(_,i)=>({value:'v'+i,label:'Level '+i,href:'#level-'+i}));await mount('aurora-trail',{items});await native.locator('#test-host [data-crumb-more]').click();assert.ok(await native.locator('#test-host [data-crumb-menu]').isVisible());await native.keyboard.press('Escape');await update({items:items.slice(0,5)});await native.locator('#test-host [data-crumb-more]').click();assert.equal(await native.locator('#test-host [data-crumb-menu] a').count(),2);await native.keyboard.press('Escape');assert.equal(await native.locator('#test-host [aria-current=page]').innerText(),'Level 4');
  });
  await run('Badges/chips: independent selection, removal callbacks, disabled and updates',async()=>{

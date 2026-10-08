@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "paginationLayout": "anchored"
 };
 export type PerforatedPagesProps = FoundationProps;
-/** 切り取り線の一枚ずつの票。小さい画面でも票の幅を縮めず二段へ送る。 */
+/** 番号の穿孔紙片と実前後操作を、同じ小口と孔のピッチへ揃えるページ送り。元の切離し票を保持し、矢印の矩形枠と競合する点線を撤去する。すべての実票は3pxの紙小口と18pxピッチの2px孔を持ち、現在票だけがその同じ面で濃く変わる。 */
 export default forwardRef<HTMLDivElement, PerforatedPagesProps>(function PerforatedPages(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderPagination} mountContent={mountPagination}/>;
 });

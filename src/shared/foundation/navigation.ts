@@ -5,7 +5,7 @@ export function mountPagination(root:HTMLElement,config:FoundationConfig,options
  const normalize=(v:FoundationValue,o:FoundationOptions):FoundationValue=>Math.min(Math.max(1,Math.floor(o.totalPages??12)),Math.max(1,Math.floor(Number(v)||1)));
  const c=createCore(root,config,options,normalize);if(!root.querySelector('[data-pages]'))root.innerHTML=renderPagination(c.options);const nav=q(root,'[data-pages]');
  c.sync=()=>{syncHeading(c);const o=c.options,total=Math.max(1,Math.floor(o.totalPages??12)),page=Number(c.data);
-  const control=(n:number,label:string,body:string,disabled=false)=>o.hrefForPage?`<a ${disabled||o.disabled?'aria-disabled="true"':`href="${escape(o.hrefForPage(n))}"`} data-page="${n}" aria-label="${escape(label)}" ${n===page&&label===`ページ ${n}`?'aria-current="page"':''}>${body}</a>`:`<button type="button" data-page="${n}" aria-label="${escape(label)}" ${disabled||o.disabled?'disabled':''} ${n===page&&label===`ページ ${n}`?'aria-current="page"':''}>${body}</button>`;
+  const control=(n:number,label:string,body:string,disabled=false)=>o.hrefForPage?`<a ${disabled||o.disabled||o.readOnly?'aria-disabled="true"':`href="${escape(o.hrefForPage(n))}"`} data-page="${n}" aria-label="${escape(label)}" ${n===page&&label===`ページ ${n}`?'aria-current="page"':''}>${body}</a>`:`<button type="button" data-page="${n}" aria-label="${escape(label)}" ${disabled||o.disabled?'disabled':''} ${n===page&&label===`ページ ${n}`?'aria-current="page"':''}>${body}</button>`;
   const focused=nav.contains(document.activeElement)?document.activeElement?.getAttribute('aria-label'):null;
   const items=pageItems(page,total).map(item=>item==='…'?'<span class="ff-ellipsis" aria-hidden="true">…</span>':control(item,`ページ ${item}`,String(item).padStart(2,'0'))).join('');
   nav.dataset.layout=o.paginationLayout??'inline';
@@ -16,7 +16,7 @@ export function mountPagination(root:HTMLElement,config:FoundationConfig,options
   }
   q(root,'[data-page-info]').innerHTML=`<strong>${String(page).padStart(2,'0')}</strong><span>/ ${total} PAGES</span>`;
  };
- c.on(nav,'click',event=>{const e=event as MouseEvent,el=(e.target as Element).closest<HTMLElement>('[data-page]');if(!el||el.getAttribute('aria-disabled')==='true')return;if(el.tagName==='A'&&(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0))return;if(el.tagName!=='A')c.send(Number(el.dataset.page));else c.options.onDataChange?.(Number(el.dataset.page));});c.sync('initial');return c;
+ c.on(nav,'click',event=>{const e=event as MouseEvent,el=(e.target as Element).closest<HTMLElement>('[data-page]');if(!el)return;if(el.getAttribute('aria-disabled')==='true'||c.options.disabled||c.options.readOnly){e.preventDefault();return;}if(el.tagName==='A'&&(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0))return;if(el.tagName!=='A')c.send(Number(el.dataset.page));else c.options.onDataChange?.(Number(el.dataset.page));});c.sync('initial');return c;
 }
 export function renderBreadcrumbs(o:FoundationOptions):string{return heading(o)+`<nav class="ff-breadcrumb" aria-label="${escape(o.label??'現在の場所')}"><ol data-breadcrumbs></ol></nav><div class="ff-floating ff-crumb-menu" data-crumb-menu></div>`;}
 export function mountBreadcrumbs(root:HTMLElement,config:FoundationConfig,options:FoundationOptions={}):FoundationController {

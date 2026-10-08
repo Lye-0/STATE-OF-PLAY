@@ -76,6 +76,20 @@ for row,part,review in approved:
   actual=next((p for p in reversed(native) if all((p/f"{row['id']}-{name}.png").exists() for name in ['initial','narrow-320','rtl','forced'])),None)
   assert actual is not None,f"Missing actual open calendar: {row['id']}"
   images+=figure(beforeCalendar,'修正前・配布版で開いた日付選択')+figure(actual/f"{row['id']}-initial.png",'修正後・配布版の日付選択')+figure(actual/f"{row['id']}-narrow-320.png",'修正後・320pxと長い見出し')+figure(actual/f"{row['id']}-rtl.png",'修正後・右から左への表示')
+ if row['category']=='pagination':
+  beforePages=w/'evidence/baseline'/f"{row['id']}-pages.png"
+  assert beforePages.exists(),f"Missing original real pages: {row['id']}"
+  native=sorted((d/'captures').glob('pages-self-*'),key=lambda p:int(p.name.split('-')[-1]))
+  actual=next((p for p in reversed(native) if all((p/f"{row['id']}-{name}.png").exists() for name in ['initial','1','12','narrow-320'])),None)
+  assert actual is not None,f"Missing actual page boundaries: {row['id']}"
+  images+=figure(beforePages,'修正前・配布版のページ送り')+figure(actual/f"{row['id']}-initial.png",'修正後・配布版の実番号')+figure(actual/f"{row['id']}-1.png",'修正後・先頭ページ')+figure(actual/f"{row['id']}-12.png",'修正後・末尾ページ')+figure(actual/f"{row['id']}-narrow-320.png",'修正後・320pxと大きなページ番号')
+ if row['category']=='breadcrumbs':
+  beforeTrail=w/'evidence/baseline'/f"{row['id']}-trail.png"
+  assert beforeTrail.exists(),f"Missing original real trail: {row['id']}"
+  native=sorted((d/'captures').glob('trails-self-*'),key=lambda p:int(p.name.split('-')[-1]))
+  actual=next((p for p in reversed(native) if all((p/f"{row['id']}-{name}.png").exists() for name in ['initial','expanded','narrow-320','menu-rtl-320'])),None)
+  assert actual is not None,f"Missing native hierarchy/menu: {row['id']}"
+  images+=figure(beforeTrail,'修正前・配布版の階層経路')+figure(actual/f"{row['id']}-initial.png",'修正後・実際の階層経路')+figure(actual/f"{row['id']}-expanded.png",'修正後・省略階層を開いたメニュー')+figure(actual/f"{row['id']}-narrow-320.png",'修正後・320pxの長い階層')+figure(actual/f"{row['id']}-menu-rtl-320.png",'修正後・320pxと右から左のメニュー')
  if row['category']=='dropdowns':
   images+=figure(photos/f"{row['id']}-expanded.png",'展開した候補・選択済み行')
  # Native switch images distinguish actual OFF and ON even when the gallery starts ON.

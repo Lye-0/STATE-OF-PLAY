@@ -1,0 +1,105 @@
+# B028 round-4 独立検査
+
+**9 pass / 1 adjust（R397）。全10件の通常造形は合格。**
+
+R385は一枚紙・斜め押え・実切刃・自由端へ、R394は踏面/蹴上げ/全高側壁が連続する石梁へ変わり、前回の量産的反復を解消した。全7件のreadOnly＋リンク不具合も固定exportの実クリックで解消した。
+
+## R383 petal-month-calendar — pass
+
+通常造形はround-3の合格基準を維持。T保持。月の大きい非対称曲面、実月送りと選択日の小さい花弁を同じ対角曲率へ整理。七列と文字を直線に保ち、元の良い外形を過剰な機構へ置換していない。
+
+近似比較: ['元R383', 'R377 orbit T']
+
+## R384 recessed-date-calendar — pass
+
+通常造形はround-3の合格基準を維持。全高の大きい弧と深い上切断面・内壁が、読む平底を収める一つの掘込みとして読める。標準的な小さい角丸枠を太くするだけでなく、ほぼ全幅に及ぶ上下の湾曲面が外形を決める。R215の口を開いた浅鉢やR371二本の巻取りと支持構造が異なり、全モードでも文字と操作が内面に収まる。
+
+近似比較: ['元R384', 'R215浅鉢', 'R359斜め石受面', 'R371巻取り暦']
+
+## R385 receipt-date-calendar — pass
+
+合格。42枚の同形小票を廃し、一枚の月紙が全幅の斜め押えと鋸刃の下を通り、下端を自由な切断端として露出する構造へ変わった。斜めの厚い押え面・刃・平らな読む紙の役割が分離し、年月と曜日の間の予約領域で接触する。320pxとRTLでも曜日へ侵入せず、日付・範囲・日時は同じ紙面として整合する。時刻のみでは月送りと刃を外し、紙の切断輪郭を保持する。R295の横向き出力装置、R351の中空挿入口、R371の二円筒とは支持と自由端の関係が異なる。
+
+近似比較: ['元R385', '旧R374同形石キー', 'R396 perforated pages T', 'R285 stamp']
+
+## R391 spine-index-pages — pass
+
+通常造形はround-3の合格基準を維持。通常造形は合格。露出した曲面の背へ各実番号の長い紙葉が斜めの根元で接続し、省略記号は葉から分離する。縦の実索引が形を決め、一般的な横番号列から独立する。 round-4では固定native exportのreadOnly/disabled＋href実クリックでURL・値・通知が不変、解除後はリンク機能が戻ることを確認。
+
+近似比較: ['元R391', 'R255背と保持腕', 'R360環綴じ']
+
+## R392 track-stop-pages — pass
+
+通常造形はround-3の合格基準を維持。通常造形は合格。実停車床と二本の連続レール、現在位置の大きいアーチが機能と結び付く。 round-4では固定native exportのreadOnly/disabled＋href実クリックでURL・値・通知が不変、解除後はリンク機能が戻ることを確認。 内壁2pxと数値12px/nowrapへの修正で、検査した全番号は一行かつアーチ内面に収まった。
+
+近似比較: ['元R392', 'R382吊り暦', 'R239 trough slider']
+
+## R393 ribbon-ticket-pages — pass
+
+通常造形はround-3の合格基準を維持。T保持の通常造形は合格。元の現在リボンと実前後操作の尾・織面を統一し、数字と矢印を固定した。 round-4では固定native exportのreadOnly/disabled＋href実クリックでURL・値・通知が不変、解除後はリンク機能が戻ることを確認。
+
+近似比較: ['元R393', 'R283大きい布リボン']
+
+## R394 stone-step-pages — pass
+
+合格。離れた同形石キーの段差反復から、一体の石梁を切り込んだ連続階段へ再設計された。52pxの踏面と12pxの蹴上げが隙間なく接し、14pxの全高側壁と下底が各段を受ける。省略記号も同材の区間を維持し、総数1・7・12、現在先頭/末尾、320px RTLで支持が途切れない。数字は実踏面へ固定。R174の独立割石、R374の平日/週末二面とは選択順を刻む一続きの外形が異なる。
+
+近似比較: ['元R394', '旧R374同形石キー', 'R339段差進捗T', 'R379一体蛇行支持']
+
+## R395 ledger-page-tabs — pass
+
+通常造形はround-3の合格基準を維持。通常造形は合格。長い実ページ札の紙先が共通の厚い閉じ口へ入り、狭幅上段の延長も受けに届く。総数1/7/12、先頭/末尾、省略を含む実像で孤立した上段札へ戻らない。 round-4では固定native exportのreadOnly/disabled＋href実クリックでURL・値・通知が不変、解除後はリンク機能が戻ることを確認。
+
+近似比較: ['元R395', 'R351挿入口', 'R111紙の口', 'R375組み継ぎ背']
+
+## R396 perforated-pages — pass
+
+通常造形はround-3の合格基準を維持。T保持の通常造形は合格。元の切離し票の番号と実前後操作の孔・小口を揃えた。新規Rの42小票とは評価基準を分け、元のidentityを保持する。 round-4では固定native exportのreadOnly/disabled＋href実クリックでURL・値・通知が不変、解除後はリンク機能が戻ることを確認。
+
+近似比較: ['元R396', 'R385新規42票', 'R361実切離し削除']
+
+## R397 console-pages — adjust
+
+通常造形は合格を維持。斜めのケース、実番号キー、実ページ送りレバーの構成と接合は成立し、readOnlyリンクも解消した。320/390/768の標準fixtureでは全数値が読めるが、追加の埋め込み幅では7列への切替が早く、5桁番号が内壁へ侵入する。
+
+**major / R397-inner-face-intermediate-width**
+
+3列の狭幅と十分広い7列の間に、7列のキーの内側面より5桁の文字が広くなる領域が残る。折り返しは止まったが文字が側壁に接触する。
+
+根拠: captures/reviewer-page-embedded-4/checks.json と console-pages-354-ltr-6234.png。外幅354px/本文318px、総数12456、現在6234/12456、LTR/RTLで5桁の内面余白−1.296875px。外幅370pxも−0.15625px。
+
+改善: 本文340px以下を4列とし、既存の240px以下3列を優先するなど、5桁の文字幅と両内壁を確保できる位置まで7列への切替を遅らせる。本文318/334/340/341px近傍をLTR/RTLで再確認する。
+
+近似比較: ['元R397', 'R297二面console', 'R372計器暦']
+
+## 実施範囲
+
+immutable round-4の正本100ファイルをreview-input-4のSHA-256と照合し100一致、native配布CSS10件をimport除去後に照合し10一致。captures/reviewer-extra-4/checks.json。
+
+3dateの固定native exportで選択/キーボード/フォーム/範囲/時刻/日時/disabled/readOnly/長文320390768/RTL/forced/reduced/reset/destroyを独立実行、全3PASS。logs/reviewer-dates-r4.log。
+
+3date×date/range/time/datetime×LTR/RTLの24状態を操作・撮影。全24の横overflow0。reviewer-materials-4。normal motion hover/leave/reenterの文字矩形・フォントを全3件で確認、固定。reviewer-motion-4。
+
+7paginationの固定native exportでAPI/フォーム/キーボード/anchor/長文320390768/RTL/forced/reduced/cleanupを独立実行し全7基本PASS。reviewer-pages-4。
+
+7pagination×1000LTR/320RTL×総数1・7・12/現在4・12の56実像で支持・省略区間・現在位置を検査。全7normal hover/leave/reenterでglyphとhitの全体相対矩形が固定。reviewer-page-materials-4。
+
+readOnly/disabled × button/anchor ×普通/Ctrl実マウスクリックを7件へ56組、解除後のanchor実遷移7組、合計63組PASS。URL/通知/値の不変、isTrusted、href除去とaria-disabled、解除後復帰を確認。reviewer-readonly-4/checks.json。synthetic click結果とは区別した。
+
+正本shared/foundation/navigation.tsと7固定exportのinternal navigation.jsを読んでhref生成とclickガードを照合。7exportは同一hash。共有runtimeは部品正本100hashの外なので別記録。reviewer-readonly-4/shared-runtime.json。
+
+7件×320390768×LTRRTL×現在6234/12456（総数12456）84状態の全462番号をRange/一行/内面で確認。全て適合。R392最小1.734375px、R397最小0.5625px。reviewer-page-glyphs-4。
+
+主担当からReactの中間幅不足の連絡を受け、固定nativeで独立再現。外幅318/336/354/370×LTRRTL×現在6234/12456を全7件112状態、全616番号検査。R397のみ外幅354/370で内面越境、他6件は適合。reviewer-page-embedded-4。
+
+R385/R394の再設計を元監査・round3・既承認近似と比較し、全レイヤー・実接合・自由端・全幅/狭幅の造形を独立に判断。機能テストだけでA合格とはしていない。
+
+## 限界
+
+Chromiumでの実操作とforced-colors/reduced-motionエミュレーション。他ブラウザ/実OS高コントラスト全環境の保証ではない。
+
+Reactは主担当の実配布試験結果を補助参照。今回独立実行したのは固定portable nativeであり、Reactを独立再実行したとは扱わない。
+
+730件を全面再監査したものではなく、元監査と前回近似比較を引き継ぎ、今回の再設計の近似を重点確認した。
+
+ページャーの通常造形は既定anchoredレイアウトを対象。全任意props組合せや無限の数値桁数への保証ではない。

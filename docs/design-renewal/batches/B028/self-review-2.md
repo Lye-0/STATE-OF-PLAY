@@ -1,0 +1,3 @@
+# B028自画像点検
+
+全7pagerの直接native前後controlへrelative/isolationを付け、擬似層を各実ボタンの範囲へ固定した。初期1は親navを含み塊に描かれていた。nav/windowの擬似層を明示初期化し、consoleの筐体はcontent/absoluteを定義して正しい形へ。R395狭幅上段の紙先を124pxへ伸ばし、同じ一つの帳簿口へ続ける。下段紙とnativeglyphはその前に描き、操作を覆わない。

@@ -10,7 +10,7 @@ sheet=Image.new('RGB',(cell_w*columns,cell_h*((len(rows)+columns-1)//columns)), 
 draw=ImageDraw.Draw(sheet)
 font=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',12)
 for index,row in enumerate(rows):
- folder={'datepickers':'dates','uploads':'uploads','progress':'progress','hints':'hints'}.get(row['category'],row['category'])
+ folder={'breadcrumbs':'trails','pagination':'pages','datepickers':'dates','uploads':'uploads','progress':'progress','hints':'hints'}.get(row['category'],row['category'])
  image=work/'batches'/batch/'captures'/f'{folder}-self-{round}'/(row['id']+'-initial.png')
  if not image.exists():
   alternatives=sorted((work/'batches'/batch/'captures').glob(f'{folder}-self-*'),key=lambda p:int(p.name.split('-')[-1]))

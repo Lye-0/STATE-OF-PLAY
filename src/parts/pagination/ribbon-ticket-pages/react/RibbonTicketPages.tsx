@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "paginationLayout": "anchored"
 };
 export type RibbonTicketPagesProps = FoundationProps;
-/** 紙の半券をめくるページ送り。選択券の折れた端が現在地の目印になる。 */
+/** 現在ページのリボン札と実前後操作を、同じ切れた尾と平たい織面へ揃えるページ送り。元のリボンの印を保持し、丸角の矢印を廃止する。現在札は9px、前後札は7pxの尾を持ち、読む数字と矢印は同じ固定面から動かさない。 */
 export default forwardRef<HTMLDivElement, RibbonTicketPagesProps>(function RibbonTicketPages(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderPagination} mountContent={mountPagination}/>;
 });
