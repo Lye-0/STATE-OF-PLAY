@@ -1,0 +1,15 @@
+# B030 検証記録
+
+10パンくず、全A。独立3は4合格/2調整/4再設計。R413の交互の全面折紙は既承認との差が弱く折辺もずれていたため、一枚の索引紙/一つの縦折面/現在下の返端へ再設計。R417は汎用の片丸箱と浮く小楕円を廃し、通し導体/実端子脚/階層ごとの成形された読む端子へ再構成。R419は読む面から離れた二つの台形を、実祖先始端と現在地自体を占める反対向きの大きな読む折面へ再設計。R420は栞と紙の4px空隙を解消し、現在紙の背面を帯が通り、一つの縦スリットから露出し紙の下へ尾が続く構造へ変更。二孔の前面栞を繰り返していない。
+
+R418は孔の端21pxに本文padding16pxが重なる問題を独立の暗背景像で発見。本文32px/RTLも同じ予約へ修正し11px離隔を確保。R422の床は柱10px+padding32pxを計算に含めて起点−36px/幅38pxへ動かし、柱へ4px接合。R414/415/416/421は独立3の合格形を保持。全10の正本100hashと固定4、実配布CSS10が一致。
+
+共有navigationではdisabledのパンくず省略ボタンにnative disabled属性が欠けていたため、FoundationOptions.disabledへ追随させた。全10native/Reactで操作不可と解除後の復帰を確認。恒久のEssential-trail実操作回帰にもdisabled/復帰を追加。共有源と試験hashはshared-provenance.jsonへ記録。隔離した実ソースコピーの実Vite/Chromiumによる全26基盤項目成功。コピーのVite cacheDirだけを一意に変更している。
+
+最終4の全10nativeは実階層/省略/Enter/第二リンクのtrusted clickとURL/現在ARIA/Escape焦点復帰/外側focusとpointer/disabled項目と全体/empty-one/長い日本語320390768×LTRRTL/menu画面内/fixed glyph/forced/reduced/open cleanupで成功。全10×React TSX/JSX×portable/original実4形式も同じリンク/焦点/独立items/prop変更/refs/StrictMode清掃が成功。実ギャラリー全10最終4成功。20パンくず×2layoutsのnative実imports3と730契約4、全型4成功。markup/nativeinitializerは変更せず、ReactのJSDocだけを実形へ更新。
+
+独立最終4は全10合格。独立native10、60少数/通常像、20通常motion hover条件、413/420の白暗×広狭×RTL16像を確認。支持の実接触と孔の非干渉をoverflow適合とは別に検査。近似の既承認形と元監査R/T理由も比較した。
+
+Chromiumの実ブラウザで操作と実像を検証。forced/reducedはエミュレーション。他OS/ブラウザ、実機touch、SRは未確認。全730の全面再操作ではない。Liquid Glass部品ソースと外観は変更していない。最終production buildは全517完了時に実施。
+
+画像内蔵HTMLは単組10/80画像/543684bytes、全300/1456画像/11047801bytes。Chromium setContentで初期840ms/全画像decode1410ms/外部通信0/例外0/390px溢れなし。直接file://は環境のnavigation制限で未確認。

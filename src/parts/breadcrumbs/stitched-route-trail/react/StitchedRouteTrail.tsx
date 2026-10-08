@@ -39,7 +39,7 @@ const config: FoundationConfig = {
   ]
 };
 export type StitchedRouteTrailProps = FoundationProps;
-/** 縫い目に沿った経路の札。省略された親と現在地を分け、独立したメニューに見せない。 */
+/** 一本の幅広い縫い帯へ、実階層を記す織布の読む片を通すパンくず。点線の下線を廃し、幅12pxの通し帯と、各布片の13pxの縫う切込み、その裏を回る28pxの折返しへ組み直す。帯は縦へ続き、布片の間の実空隙でも途切れない。縫合は文字から離れた32pxの余白で行い、現在も同じ布の読む面で示す。 */
 export default forwardRef<HTMLDivElement, StitchedRouteTrailProps>(function StitchedRouteTrail(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBreadcrumbs} mountContent={mountBreadcrumbs}/>;
 });

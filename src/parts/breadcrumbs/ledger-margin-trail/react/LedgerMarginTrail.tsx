@@ -39,7 +39,7 @@ const config: FoundationConfig = {
   ]
 };
 export type LedgerMarginTrailProps = FoundationProps;
-/** 帳簿の索引から現在の欄へ。親の列と現在の欄を細い区切りでつなぐ。 */
+/** 帳簿の通し罫から、実階層の字下げへ短い受け罫を渡すパンくず。元の段階的な字下げを保持し、線が文字から離れる不整合を修正する。各12pxの字下げへ、同じ起点10pxから伸びる罫が文字の8px手前まで続く。細い二本の通し罫と一枚の読む紙で精度を作り、現在地は同じ紙の見出しとして読む。 */
 export default forwardRef<HTMLDivElement, LedgerMarginTrailProps>(function LedgerMarginTrail(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBreadcrumbs} mountContent={mountBreadcrumbs}/>;
 });

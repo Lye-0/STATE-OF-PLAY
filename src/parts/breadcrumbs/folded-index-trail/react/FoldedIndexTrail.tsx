@@ -39,7 +39,7 @@ const config: FoundationConfig = {
   ]
 };
 export type FoldedIndexTrailProps = FoundationProps;
-/** 折った札を階層ごとにつなぐ。親から子へ進む矢印の向きを揃える。 */
+/** 実階層を一枚の折る索引紙へ記すパンくず。交互の全面折紙を廃止し、幅36pxの一つの縦折面、斜めに立ち上がる始端、現在地の下の36pxの返す紙端へ再設計する。祖先も省略も現在も同じ平らな読む面へ置き、48pxの内側に全文を確保する。素材の輪郭だけを折り、文字・当たり・順序は動かさない。RTLでは紙全体を一度鏡映する。 */
 export default forwardRef<HTMLDivElement, FoldedIndexTrailProps>(function FoldedIndexTrail(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBreadcrumbs} mountContent={mountBreadcrumbs}/>;
 });

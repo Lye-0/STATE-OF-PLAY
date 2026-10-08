@@ -1,0 +1,3 @@
+# B030 主担当2
+
+R416券の残し紙は12空隙+上下4接触=20高さ/幅16として実幾何へ修正。強制色でol/liの装飾背景をCanvasへ。R422実像で祖先の文字が深い紺の面へ沈むことを発見。共通:is(a,current)selectorの詳細度が上書きを勝つため、同じ詳細度のlater指定で白いnativeリンク色へ修正。通常長文の実anchor/currentと最寄の実opaque読む背景へ4.5以上のcontrastを検証するnative検査を追加。

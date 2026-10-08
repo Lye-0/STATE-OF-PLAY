@@ -1,0 +1,8 @@
+{
+  "sourceHashes": {
+    "src/shared/foundation/navigation.ts": "6581a72c087cbf51b4d1105f7f830d06750c90a685984d38ed79309fc9dbfae0",
+    "tests/foundations.browser.ts": "51bf855026a10bd31e312529e157f92742dd863f01cd0029a7550cb10d22cd67"
+  },
+  "fix": "native disabled attribute follows FoundationOptions.disabled on breadcrumb overflow button; prevents unavailable keyboard focus and exposes actual disabled state",
+  "test": "actual Vite/Chromium full foundations suite in isolated source copy; unique cacheDir is the only config override"
+}

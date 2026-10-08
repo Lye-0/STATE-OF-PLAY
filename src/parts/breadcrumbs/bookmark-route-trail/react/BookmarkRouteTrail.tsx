@@ -39,7 +39,7 @@ const config: FoundationConfig = {
   ]
 };
 export type BookmarkRouteTrailProps = FoundationProps;
-/** 章の栞が現在地を指す。親の章は横にたどれる文字、現在章は差し込んだ札に分ける。 */
+/** 実祖先の傍らから下がる一本の栞を、現在地の紙の縦の実スリットへ通すパンくず。離れていた紙を栞の裏側まで48px戻し、紙だけに幅8px・高さ36pxの切込みを設け、一本の帯がそこから見える。現在の全文は60px内側に確保する。帯の尾は紙の下へ38px続き20pxのVで終わる。二孔の飾り札や反復する糸綴じへ置換せず、祖先の傍らの帯が現在の紙を保持する一つの構造にする。 */
 export default forwardRef<HTMLDivElement, BookmarkRouteTrailProps>(function BookmarkRouteTrail(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBreadcrumbs} mountContent={mountBreadcrumbs}/>;
 });
