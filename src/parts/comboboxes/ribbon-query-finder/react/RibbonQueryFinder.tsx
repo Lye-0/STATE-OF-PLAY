@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type RibbonQueryFinderProps = FoundationProps;
-/** 検索の細い帯を候補列へ展開。見出しの赤紫の帯と、候補の右端の索引を対応させる。 */
+/** 候補そのものを、両端が割れて裏へ返る幅広いリボンとして展開する入力。右の紫の札を廃止し、全幅の上下4pxの織縁と、両端の14pxの割尾、後ろへ10px返る同じ帯を作る。種別文字は読む帯の面へ置き、activeでも形と文字を動かさない。 */
 export default forwardRef<HTMLDivElement, RibbonQueryFinderProps>(function RibbonQueryFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

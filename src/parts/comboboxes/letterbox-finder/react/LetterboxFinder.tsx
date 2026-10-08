@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type LetterboxFinderProps = FoundationProps;
-/** 投函口のように奥行きのある入力欄。候補は横長の宛名票として、それぞれの右端を揃える。 */
+/** アーチの投函口を開き、一つの宛名一覧を手前の受け蓋へ展開する入力。封筒形の行を並べる案を廃止し、厚い曲屋根・内側の深い一つの開口・手前へ28px起きる台形の実受け蓋を作る。候補は同じ箱の内面へ整理し、文字とcaretを固定する。 */
 export default forwardRef<HTMLDivElement, LetterboxFinderProps>(function LetterboxFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type IndexStampFinderProps = FoundationProps;
-/** 資料票に検索語を記入する。候補は記入欄と番号枠を持ち、選択中の確認印を押したように示す。 */
+/** 四辺を実際に抜いた索引切手へ、照合の印を添える候補入力。細い下線だけの票を廃し、4pxの抜きが16pxごとに並ぶ実輪郭と5pxの縁を全辺へ作る。検索口を同じ二重の押縁へ揃え、選択のcheckは右の押印位置に固定する。 */
 export default forwardRef<HTMLDivElement, IndexStampFinderProps>(function IndexStampFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

@@ -1,0 +1,142 @@
+{
+  "batch": "B020",
+  "round": 3,
+  "snapshot": "docs/design-renewal/batches/B020/snapshot/round-3",
+  "overall": "pass",
+  "parts": [
+    {
+      "number": 277,
+      "id": "rail-mounted-finder",
+      "verdict": "pass",
+      "assessment": "Tのレールと行面の関係を保持。14pxの三面レールへ二本の7px腕が接続し、候補端へ12px重なるため、小さく薄い支点から実保持へ改善した。R272の検出信号とも役割を分け、元の精度として合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R255",
+        "R272"
+      ]
+    },
+    {
+      "number": 278,
+      "id": "stitched-query-finder",
+      "verdict": "pass",
+      "assessment": "8pxくびれる織り地、四辺の縫い代、読む布と下地を跨ぐ左右の糸が一つの布見本を作る。短線付きの行から外形と前後面を持つ素材へ変わり、R283の一枚の帯とも区別できる。文字は無地寄りの面へ保たれA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R29",
+        "R157",
+        "R283"
+      ]
+    },
+    {
+      "number": 279,
+      "id": "porcelain-tray-finder",
+      "verdict": "pass",
+      "assessment": "均一な角丸面と小孔を廃し、四斜角を持つ八角の器と左右へ張り出す大きい楕円握り輪へ再構成。輪と器は中央側で実際に重なり、読む床を内側へ分離したため穴も下層に塞がれない。R264の個別楕円皿やR224の片側U持ち手とは、両手掛けで候補全体を保持する一枚の八角器として区別できる。狭幅/長文/RTLも読字と接合を保持しA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R264",
+        "R215",
+        "R224"
+      ],
+      "resolvedFindings": [
+        "R279-generic-rounded-tray"
+      ]
+    },
+    {
+      "number": 280,
+      "id": "bookmark-query-finder",
+      "verdict": "pass",
+      "assessment": "Tの種別栞を紙の後ろへ通し、上下の実スリットから同じ帯が現れ、下の割尾へつながる。診断色で二切口と後ろの栞の連続も確認。R265の縦に連なる索引布とは個別の資料への差込みで異なり、元監査の接点精度として合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R265",
+        "R280"
+      ]
+    },
+    {
+      "number": 281,
+      "id": "letterbox-finder",
+      "verdict": "pass",
+      "assessment": "封筒行の反復を撤去し、全候補を一つの深い開口・厚い曲屋根の外箱・全幅の受け蓋へ収めた。R263の個別封筒、R271の複数の水平スロットと異なり、共通の投函口と内面が全体の輪郭を決める。A合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R263",
+        "R271"
+      ]
+    },
+    {
+      "number": 282,
+      "id": "inspector-query-finder",
+      "verdict": "pass",
+      "assessment": "反復する左右C括弧を撤去し、共通の14px基準軸から各候補の下の目盛り梁が伸び、その反対端の一つの顎で照合位置を示す構造へ変更。activeの梁/顎と確定checkの位置が操作に対応し、基準と対象の役割が明快。R277の二腕の吊り面とは、読む面を囲わない基準尺と片側の顎で異なる。RTLも接点を保持しA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R277",
+        "R274",
+        "R256"
+      ],
+      "resolvedFindings": [
+        "R282-bracket-list"
+      ]
+    },
+    {
+      "number": 283,
+      "id": "ribbon-query-finder",
+      "verdict": "pass",
+      "assessment": "小さい紫札を全幅の布帯へ変え、上下の織縁・両端の割尾・後ろへ返る面が同じ輪郭に連続する。R265の紙を縦に通る索引とは候補そのものが水平の帯になる構造で異なる。activeでも本文固定、A合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R265",
+        "R118"
+      ]
+    },
+    {
+      "number": 284,
+      "id": "open-grid-finder",
+      "verdict": "pass",
+      "assessment": "実2列と記号/名称/種別の三段で探索密度を変え、対角に離れた二つのLを開いた支持へ使う。元の長い通常行から情報配置と外形の両方が変わり、閉じた色違いカードではない。狭幅は1列でも順序/支持を保持しA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R164",
+        "R19"
+      ]
+    },
+    {
+      "number": 285,
+      "id": "index-stamp-finder",
+      "verdict": "pass",
+      "assessment": "四辺の4px切欠きを16px周期で実際に抜き、縁と照合印の位置を揃えた。R252の送り紙の内部孔とは四周で独立した切手の輪郭で異なる。選択印は押印位置へ固定され、全層の抜けも確認しA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R252",
+        "R285"
+      ]
+    },
+    {
+      "number": 291,
+      "id": "dispatch-strip-notice",
+      "verdict": "pass",
+      "assessment": "60pxの全高の巻胴から25px重なる読む帯が伸び、反対端の実裁断形へ連続する。小さい通知アイコンの装飾から、全文を支える巻胴/帯へ主形が変わった。R138の横向きの本の背やR233の動く糸巻きとは通知帯の引出しで異なり、長文/RTLも接合を保ちA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R138",
+        "R233",
+        "R291"
+      ]
+    }
+  ],
+  "checks": [
+    "固定source100 SHA-256とreview-input-3.json全一致。配布CSS10をimport除外で正本と照合し一致。reviewer-extra-3/checks.json。",
+    "round2→3変更はR279/R282のみ。他8件のsource hash不変を確認し通常造形の合格を引き継ぎ。",
+    "全9comboboxesのfilter/IME/ARIA/keys/disabledskip/multiple/readOnly/required/forms/reset/loading-empty-error/long320390768/local scroll/active露出/RTL/通常hover leave reenter/forced committed mark/reduced/cleanupを再実行し成功。reviewer-combos-3。",
+    "全9comboboxesを実clickでFolioへ確定し再展開を撮影。R282の基準軸/梁/片側顎の連続、activeと確定checkを初期・探索・選択後で確認。reviewer-committed-3。",
+    "R279は一時DOMのmagenta背景で左右の大きい穴が抜けることを確認。八角器と輪の重なり、中央scrollerの分離、320px長文/RTLの読字を実画像とCSSで照合。reviewer-holes-3/porcelain-tray-finder-diagnostic.png。",
+    "R291 actual notify/4tone/roles/action/close/queue/timer hover-focus pause/long320390768/RTL/固定/forced/reduced/destroy-openも再実行し成功。reviewer-toasts-3。",
+    "前回のR279/R282の重要指摘を固定基準で再評価。既承認R264/R224/R277等と支持の方向・主外形の差を確認。残8件の造形比較は前回合格を保持。"
+  ],
+  "limits": [
+    "独立実行はChromium固定native。React4形式と現行gallery detailは今回は独立実行せず親担当の結果と区別。",
+    "forced/reducedはブラウザエミュレーション。他エンジン/実OSは未検査。",
+    "全730再監査ではなく元監査・対象before・関連する既承認の近似比較。"
+  ]
+}

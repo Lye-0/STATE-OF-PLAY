@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type StitchedQueryFinderProps = FoundationProps;
-/** 縫い目で囲むクエリと布の見本候補。名称を固定し、端の縫い目の色で照合中の行を示す。 */
+/** 実際の織り地と縫い代を持つ、布見本の候補入力。左の短い紫線を廃し、中央が8pxくびれる織り地と、四辺の6–8pxの縫い代を読む布の周りへ作る。左右の糸が読む布と下の織り地を跨ぎ、activeで糸の色だけ変わる。本文は動かさない。 */
 export default forwardRef<HTMLDivElement, StitchedQueryFinderProps>(function StitchedQueryFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

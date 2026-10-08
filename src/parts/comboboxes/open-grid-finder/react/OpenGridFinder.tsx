@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type OpenGridFinderProps = FoundationProps;
-/** 開いた検索グリッド。候補を装飾箱で囲まず、記号・名称・種別の三列と横罫だけで構成する。 */
+/** 空いている二つの角で候補を保持する、開いた索引グリッド入力。縦に長い通常の行を廃止し、対角の離れた二つのL形と、記号/名称/種類の三段を実2列グリッドへ配置する。候補面を箱で囲わず、狭幅は同じ順の1列へ戻す。文字はactiveで動かさない。 */
 export default forwardRef<HTMLDivElement, OpenGridFinderProps>(function OpenGridFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

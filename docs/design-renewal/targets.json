@@ -3072,13 +3072,13 @@
     "batch": "B019",
     "auditVerdict": "R",
     "auditReason": "左右の短線と下線が中心で、溝や通路の構造が見えない。水色の標準リストに近い。",
-    "state": "ready_to_push",
+    "state": "pushed",
     "iterations": 2,
     "review": {
       "round": 5,
       "verdict": "pass"
     },
-    "commit": null
+    "commit": "2941353bb717ea01b043ebde0bf6603c3f13bdf9"
   },
   {
     "number": 263,
@@ -3089,13 +3089,13 @@
     "batch": "B019",
     "auditVerdict": "R",
     "auditReason": "右端の色帯と斜め端がR273などにも反復する。独立したAとしての構造差が弱い。",
-    "state": "ready_to_push",
+    "state": "pushed",
     "iterations": 2,
     "review": {
       "round": 5,
       "verdict": "pass"
     },
-    "commit": null,
+    "commit": "2941353bb717ea01b043ebde0bf6603c3f13bdf9",
     "originalName": "Letter Tab Choice"
   },
   {
@@ -3107,13 +3107,13 @@
     "batch": "B019",
     "auditVerdict": "R",
     "auditReason": "丸いカードと淡緑の背景が中心。浅い皿の厚みや選択時の支持構造が伝わらない。",
-    "state": "ready_to_push",
+    "state": "pushed",
     "iterations": 1,
     "review": {
       "round": 5,
       "verdict": "pass"
     },
-    "commit": null
+    "commit": "2941353bb717ea01b043ebde0bf6603c3f13bdf9"
   },
   {
     "number": 265,
@@ -3124,13 +3124,13 @@
     "batch": "B019",
     "auditVerdict": "R",
     "auditReason": "番号列と紫の左線が主な違い。リボンとしての形が不足し、通常の選択リストに見える。",
-    "state": "ready_to_push",
+    "state": "pushed",
     "iterations": 2,
     "review": {
       "round": 5,
       "verdict": "pass"
     },
-    "commit": null
+    "commit": "2941353bb717ea01b043ebde0bf6603c3f13bdf9"
   },
   {
     "number": 271,
@@ -3141,13 +3141,13 @@
     "batch": "B019",
     "auditVerdict": "R",
     "auditReason": "紙色の矩形行と細い下影が中心。カタログの差込み口という構造が弱い。",
-    "state": "ready_to_push",
+    "state": "pushed",
     "iterations": 1,
     "review": {
       "round": 5,
       "verdict": "pass"
     },
-    "commit": null
+    "commit": "2941353bb717ea01b043ebde0bf6603c3f13bdf9"
   },
   {
     "number": 272,
@@ -3158,13 +3158,13 @@
     "batch": "B019",
     "auditVerdict": "T",
     "auditReason": "連続する縦線と候補の支点は明快。ただしR077などの吊り列と同じ印象があり、探索操作らしい独自の関係を磨きたい。",
-    "state": "ready_to_push",
+    "state": "pushed",
     "iterations": 1,
     "review": {
       "round": 5,
       "verdict": "pass"
     },
-    "commit": null
+    "commit": "2941353bb717ea01b043ebde0bf6603c3f13bdf9"
   },
   {
     "number": 273,
@@ -3175,13 +3175,13 @@
     "batch": "B019",
     "auditVerdict": "R",
     "auditReason": "ピンクの折り端が各行に反復するだけで、候補面の構造差が少ない。Aの独創性が不足。",
-    "state": "ready_to_push",
+    "state": "pushed",
     "iterations": 1,
     "review": {
       "round": 5,
       "verdict": "pass"
     },
-    "commit": null
+    "commit": "2941353bb717ea01b043ebde0bf6603c3f13bdf9"
   },
   {
     "number": 274,
@@ -3192,13 +3192,13 @@
     "batch": "B019",
     "auditVerdict": "R",
     "auditReason": "薄い枠付きの水色行を重ねた標準リスト。石や溝としての厚みが読み取れない。",
-    "state": "ready_to_push",
+    "state": "pushed",
     "iterations": 1,
     "review": {
       "round": 5,
       "verdict": "pass"
     },
-    "commit": null
+    "commit": "2941353bb717ea01b043ebde0bf6603c3f13bdf9"
   },
   {
     "number": 275,
@@ -3209,13 +3209,13 @@
     "batch": "B019",
     "auditVerdict": "R",
     "auditReason": "右の細線と紙色の罫線が中心。台帳の意匠が表層的で、Aとして弱い。",
-    "state": "ready_to_push",
+    "state": "pushed",
     "iterations": 2,
     "review": {
       "round": 5,
       "verdict": "pass"
     },
-    "commit": null
+    "commit": "2941353bb717ea01b043ebde0bf6603c3f13bdf9"
   },
   {
     "number": 276,
@@ -3226,13 +3226,13 @@
     "batch": "B019",
     "auditVerdict": "R",
     "auditReason": "紫の面に薄い区切り線を置いた構成。鍵穴の主題が展開面に反映されず、普通のリストに見える。",
-    "state": "ready_to_push",
+    "state": "pushed",
     "iterations": 1,
     "review": {
       "round": 5,
       "verdict": "pass"
     },
-    "commit": null
+    "commit": "2941353bb717ea01b043ebde0bf6603c3f13bdf9"
   },
   {
     "number": 277,
@@ -3243,9 +3243,12 @@
     "batch": "B020",
     "auditVerdict": "T",
     "auditReason": "左のレールと行面の関係は残せるが、支点が小さく薄い。行の保持構造としての精度を上げたい。",
-    "state": "implemented",
+    "state": "ready_to_push",
     "iterations": 1,
-    "review": null,
+    "review": {
+      "round": 3,
+      "verdict": "pass"
+    },
     "commit": null
   },
   {
@@ -3257,9 +3260,12 @@
     "batch": "B020",
     "auditVerdict": "R",
     "auditReason": "左の紫の短線を反復するだけで、縫い目や布の構造が弱い。Aの別案として凡庸。",
-    "state": "implemented",
+    "state": "ready_to_push",
     "iterations": 1,
-    "review": null,
+    "review": {
+      "round": 3,
+      "verdict": "pass"
+    },
     "commit": null
   },
   {
@@ -3271,9 +3277,12 @@
     "batch": "B020",
     "auditVerdict": "R",
     "auditReason": "淡緑の角丸面と下線の組合せ。磁器の皿としての輪郭・厚みが弱く、Bに近い。",
-    "state": "implemented",
-    "iterations": 1,
-    "review": null,
+    "state": "ready_to_push",
+    "iterations": 2,
+    "review": {
+      "round": 3,
+      "verdict": "pass"
+    },
     "commit": null
   },
   {
@@ -3285,9 +3294,12 @@
     "batch": "B020",
     "auditVerdict": "T",
     "auditReason": "右の小札と候補の関係は整うが、札が単なるタグ背景に見える。栞の挟まる位置を明確にしたい。",
-    "state": "implemented",
+    "state": "ready_to_push",
     "iterations": 1,
-    "review": null,
+    "review": {
+      "round": 3,
+      "verdict": "pass"
+    },
     "commit": null
   },
   {
@@ -3299,9 +3311,12 @@
     "batch": "B020",
     "auditVerdict": "R",
     "auditReason": "各候補を二重線で囲う構成が中心。投函口としての構造より、枠の反復が目立つ。",
-    "state": "implemented",
+    "state": "ready_to_push",
     "iterations": 1,
-    "review": null,
+    "review": {
+      "round": 3,
+      "verdict": "pass"
+    },
     "commit": null
   },
   {
@@ -3313,9 +3328,12 @@
     "batch": "B020",
     "auditVerdict": "R",
     "auditReason": "白い行と短い左線だけでは検査器の独自性が弱い。一般的なリストから離れていない。",
-    "state": "implemented",
-    "iterations": 1,
-    "review": null,
+    "state": "ready_to_push",
+    "iterations": 2,
+    "review": {
+      "round": 3,
+      "verdict": "pass"
+    },
     "commit": null
   },
   {
@@ -3327,9 +3345,12 @@
     "batch": "B020",
     "auditVerdict": "R",
     "auditReason": "右の紫の札を各行に反復する構成。リボンの構造が乏しく、色違いのラベルに留まる。",
-    "state": "implemented",
+    "state": "ready_to_push",
     "iterations": 1,
-    "review": null,
+    "review": {
+      "round": 3,
+      "verdict": "pass"
+    },
     "commit": null
   },
   {
@@ -3341,9 +3362,12 @@
     "batch": "B020",
     "auditVerdict": "R",
     "auditReason": "縦に長い候補と細い区切り線で、グリッドの独自構造が見えない。情報密度も他案より低くなる。",
-    "state": "implemented",
+    "state": "ready_to_push",
     "iterations": 1,
-    "review": null,
+    "review": {
+      "round": 3,
+      "verdict": "pass"
+    },
     "commit": null
   },
   {
@@ -3355,9 +3379,12 @@
     "batch": "B020",
     "auditVerdict": "R",
     "auditReason": "文字と細い下線だけの通常リストに近い。押印の主題が形や選択構造に現れていない。",
-    "state": "implemented",
+    "state": "ready_to_push",
     "iterations": 1,
-    "review": null,
+    "review": {
+      "round": 3,
+      "verdict": "pass"
+    },
     "commit": null
   },
   {
@@ -3369,9 +3396,12 @@
     "batch": "B020",
     "auditVerdict": "R",
     "auditReason": "角形の情報アイコンと下の線以外は標準通知。発送票の構造が弱く、Aとしての差が乏しい。",
-    "state": "implemented",
+    "state": "ready_to_push",
     "iterations": 1,
-    "review": null,
+    "review": {
+      "round": 3,
+      "verdict": "pass"
+    },
     "commit": null
   },
   {
@@ -3383,8 +3413,8 @@
     "batch": "B021",
     "auditVerdict": "T",
     "auditReason": "大きな丸い左角と丸いアイコンは整うが、右端との曲率差が唐突。カプセルの一体感を磨きたい。",
-    "state": "queued",
-    "iterations": 0,
+    "state": "implemented",
+    "iterations": 1,
     "review": null,
     "commit": null
   },
@@ -3397,8 +3427,8 @@
     "batch": "B021",
     "auditVerdict": "R",
     "auditReason": "右下の小さな三角片を除くと普通のピンクの通知。折り紙の構造が表層的。",
-    "state": "queued",
-    "iterations": 0,
+    "state": "implemented",
+    "iterations": 1,
     "review": null,
     "commit": null
   },
@@ -3411,8 +3441,8 @@
     "batch": "B021",
     "auditVerdict": "T",
     "auditReason": "小さな検査札が上の細線から下がる案はあるが、札と通知面の接合が弱い。線の強弱を整理したい。",
-    "state": "queued",
-    "iterations": 0,
+    "state": "implemented",
+    "iterations": 1,
     "review": null,
     "commit": null
   },
@@ -3425,8 +3455,8 @@
     "batch": "B021",
     "auditVerdict": "R",
     "auditReason": "文字中心の標準通知に細い下線を加えた構成。電報という主題が造形に現れていない。",
-    "state": "queued",
-    "iterations": 0,
+    "state": "implemented",
+    "iterations": 1,
     "review": null,
     "commit": null
   },
@@ -3439,8 +3469,8 @@
     "batch": "B021",
     "auditVerdict": "T",
     "auditReason": "左のクリップは独自性の種だが、細く小さく、本文と別の飾りに見える。紙面との関係を磨きたい。",
-    "state": "queued",
-    "iterations": 0,
+    "state": "implemented",
+    "iterations": 1,
     "review": null,
     "commit": null
   },
@@ -3453,8 +3483,8 @@
     "batch": "B021",
     "auditVerdict": "R",
     "auditReason": "水色の四角いアイコン面と下線が中心。制御卓らしい構造が弱く、Aとして不足。",
-    "state": "queued",
-    "iterations": 0,
+    "state": "implemented",
+    "iterations": 1,
     "review": null,
     "commit": null
   },
@@ -3467,8 +3497,8 @@
     "batch": "B021",
     "auditVerdict": "R",
     "auditReason": "淡いピンクの丸い通知面に留まる。封筒の開口や封緘が見えず、名称と造形の距離が大きい。",
-    "state": "queued",
-    "iterations": 0,
+    "state": "implemented",
+    "iterations": 1,
     "review": null,
     "commit": null
   },
@@ -3481,8 +3511,8 @@
     "batch": "B021",
     "auditVerdict": "R",
     "auditReason": "丸いアイコンと角丸面は一般的な通知の範囲。石のマーカーとしての独自性が弱い。",
-    "state": "queued",
-    "iterations": 0,
+    "state": "implemented",
+    "iterations": 1,
     "review": null,
     "commit": null
   },
@@ -3495,8 +3525,8 @@
     "batch": "B021",
     "auditVerdict": "T",
     "auditReason": "左の栞形と背線は整うが、通知面に差す構造が弱い。札の厚みと留め方を明快にしたい。",
-    "state": "queued",
-    "iterations": 0,
+    "state": "implemented",
+    "iterations": 1,
     "review": null,
     "commit": null
   },
@@ -3509,8 +3539,8 @@
     "batch": "B021",
     "auditVerdict": "T",
     "auditReason": "開いた角の枠とアイコン下線が競合し、細線が多い。通知の本文を主役に線を整理したい。",
-    "state": "queued",
-    "iterations": 0,
+    "state": "implemented",
+    "iterations": 1,
     "review": null,
     "commit": null
   },

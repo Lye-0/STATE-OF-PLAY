@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type BookmarkQueryFinderProps = FoundationProps;
-/** 資料を拾うブックマーク。検索窓から細い索引帯を下ろし、開いた候補の種別欄へ接続する。 */
+/** 読む資料の二つの切込みへ栞を通す、候補入力。元の右の札を保持し、上下へ出る26pxの栞、紙に実際に抜いた二つの3pxの横スリット、下の割尾を接続する。栞は紙の後ろへ通し、種類の文字と本文は動かさない。 */
 export default forwardRef<HTMLDivElement, BookmarkQueryFinderProps>(function BookmarkQueryFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

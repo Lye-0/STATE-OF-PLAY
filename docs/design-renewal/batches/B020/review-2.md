@@ -1,0 +1,47 @@
+# B020 round-2 独立検査
+
+判定: **changes_requested — 8 pass / R279・R282 redesign**。操作検証は全10件成功。R279の主輪郭とR282の照合構造をAとして再設計する必要がある。正本・固定版の編集なし。
+
+| 番号 | 判定 | 講評 |
+|---|---|---|
+| R277 | pass | Tのレールと行面の関係を保持。14pxの三面レールへ二本の7px腕が接続し、候補端へ12px重なるため、小さく薄い支点から実保持へ改善した。R272の検出信号とも役割を分け、元の精度として合格。 |
+| R278 | pass | 8pxくびれる織り地、四辺の縫い代、読む布と下地を跨ぐ左右の糸が一つの布見本を作る。短線付きの行から外形と前後面を持つ素材へ変わり、R283の一枚の帯とも区別できる。文字は無地寄りの面へ保たれA合格。 |
+| R279 | redesign | 行ごとの皿をやめ一枚のトレーへまとめ、左右の7×28pxの孔も実際に抜けている。ただし主要な形は淡緑の角丸矩形と均一な太縁に留まる。手掛けが小さな側面スリットとして添わるだけで、Aの独立した磁器の外形としては不足し再設計が必要。 |
+| R280 | pass | Tの種別栞を紙の後ろへ通し、上下の実スリットから同じ帯が現れ、下の割尾へつながる。診断色で二切口と後ろの栞の連続も確認。R265の縦に連なる索引布とは個別の資料への差込みで異なり、元監査の接点精度として合格。 |
+| R281 | pass | 封筒行の反復を撤去し、全候補を一つの深い開口・厚い曲屋根の外箱・全幅の受け蓋へ収めた。R263の個別封筒、R271の複数の水平スロットと異なり、共通の投函口と内面が全体の輪郭を決める。A合格。 |
+| R282 | redesign | 白いカードは撤去したが、方眼に左右のC括弧を反復する構成が中心。顎同士を関連付ける基準/固定と可動の違いがなく、一般的な行の枠を括弧へ分けた範囲に留まる。Aの検査操作に固有の構造へ再設計が必要。 |
+| R283 | pass | 小さい紫札を全幅の布帯へ変え、上下の織縁・両端の割尾・後ろへ返る面が同じ輪郭に連続する。R265の紙を縦に通る索引とは候補そのものが水平の帯になる構造で異なる。activeでも本文固定、A合格。 |
+| R284 | pass | 実2列と記号/名称/種別の三段で探索密度を変え、対角に離れた二つのLを開いた支持へ使う。元の長い通常行から情報配置と外形の両方が変わり、閉じた色違いカードではない。狭幅は1列でも順序/支持を保持しA合格。 |
+| R285 | pass | 四辺の4px切欠きを16px周期で実際に抜き、縁と照合印の位置を揃えた。R252の送り紙の内部孔とは四周で独立した切手の輪郭で異なる。選択印は押印位置へ固定され、全層の抜けも確認しA合格。 |
+| R291 | pass | 60pxの全高の巻胴から25px重なる読む帯が伸び、反対端の実裁断形へ連続する。小さい通知アイコンの装飾から、全文を支える巻胴/帯へ主形が変わった。R138の横向きの本の背やR233の動く糸巻きとは通知帯の引出しで異なり、長文/RTLも接合を保ちA合格。 |
+
+## R279 — R279-generic-rounded-tray
+
+実孔は成立するが、面全体は標準的な角丸パネルで、均一な太縁と淡緑の色が違いの中心になっている。孔は小さな側スリットに留まり、トレーの持ち手・読む床・縁の関係が外形を変えるほどには現れない。元の「Bに近い角丸面」という課題が残る。
+
+根拠: captures/reviewer-combos-2/porcelain-tray-finder-expanded.pngとreviewer-holes-2/porcelain-tray-finder-diagnostic.png。主要面は32px角丸/7px縁の矩形、左右の実抜きは7×28px。
+
+改善方向: 左右の手掛けが本体の輪郭と厚みを決める構造へ改める。例えば広い抜きとその周りを支える厚い肩を持ち、肩から浅い読む床へ曲面が連続する一体形にする。単に現在のborderを太くする/色を増やす/小孔を足す対応を避ける。R224の単一U持ち手を左右へコピーするだけにもせず、全候補を受ける一枚のトレーとして形を作る。
+
+## R282 — R282-bracket-list
+
+方眼と左右のC括弧を反復するだけでは、普通のリストを囲む枠の変形に見える。固定の基準と対象を照合する支持関係がなく、activeで括弧が太くなること以外の操作との結び付きが弱い。Aの独立性が不足する。
+
+根拠: captures/reviewer-combos-2/inspector-query-finder-expanded.png、reviewer-committed-2/inspector-query-finder-selected.png。各行のafterは左右5pxborderと上下の14px腕、activeは同じ括弧の18px腕へ変わる。
+
+改善方向: 例えば一本の段付き基準尺と、異なる接続を持つ固定顎/可動顎へ再構成し、active候補を照合する支持がどれかを形で示す。読む文字とhitは固定し、動かすなら顎や指標だけに限定する。四辺枠や同じC括弧の色/太さ変更で終えない。
+
+## 確認範囲
+
+- 固定source100 SHA-256とreview-input-2.json全一致。配布CSS10をimport除外で正本と照合し一致。reviewer-extra-2/checks.json。
+- 9comboboxesをfilter/IME/ARIA/keys/disabledskip/multiple/readOnly/required/forms/reset/loading-empty-error/long320390768/local scroll/active項目露出/RTL/normal hover leave reenter/forced committed mark/reduced/cleanupで再実行、全9成功/errors0。reviewer-combos-2。
+- 9comboboxesのFolio実click確定→再展開を通常motionで追加撮影。選択面・印と候補の支持を初期/active/確定後で比較。reviewer-committed-2。
+- R291を実notifyから4tone/roles/action/close/maxqueue/timer hover pause/focus pause/長文320390768/RTL/本文固定/forced/reduced/destroy-openで再実行し成功。reviewer-toasts-2/checks.json。
+- R279は一時DOMで背景をmagentaへ変え左右の孔、R280は後ろの栞をcyanへ変え紙の二切口、R285は下地magentaで全4辺の切欠きが実際に抜けることを確認。固定版/正本は未変更。reviewer-holes-2。
+- 元730監査の対象理由とround0 native-expanded/actual-notice beforeを比較。R279/R282はAPI成功と造形判定を分け、他8件も既承認の支持/素材の近似を比較。
+
+## 限界
+
+- 独立実行はChromium固定native。React4形式と現行gallery detailは今回は独立実行せず親担当の結果と区別。
+- forced/reducedはブラウザエミュレーション。他エンジン/実OSは未検査。
+- 全730再監査ではなく元監査・対象before・関連する既承認の近似比較。

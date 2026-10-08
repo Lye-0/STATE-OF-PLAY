@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type PorcelainTrayFinderProps = FoundationProps;
-/** 浅い磁器の検索皿。丸い入力縁の下に余白を持った候補を置き、面の濃淡で行を選ぶ。 */
+/** 二つの大きい楕円の持ち手へ、八角の浅い磁器トレーを接続する候補入力。角丸パネルと小側孔を廃止し、26pxの四つの斜め角、外へ40px張り出す84px高の握り輪、手前10pxの小口を主外形にする。持ち手の穴を読面で塞がず、候補は中央の一つの凹面へ固定する。 */
 export default forwardRef<HTMLDivElement, PorcelainTrayFinderProps>(function PorcelainTrayFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

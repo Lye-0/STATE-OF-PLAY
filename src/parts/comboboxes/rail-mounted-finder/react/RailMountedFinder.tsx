@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type RailMountedFinderProps = FoundationProps;
-/** 検索結果を一本のレールへ取り付ける。入力欄の下の支えが、開いた候補の左の支柱へ続く。 */
+/** 一本のレールへ、二本の厚い支持腕で候補を留める入力。元の支柱と行面を保持し、14pxの三面レールと上下7pxの腕を、候補の左端へ12px重ねる。細い線から実保持へ整え、文字とcaretとcheckは固定する。 */
 export default forwardRef<HTMLDivElement, RailMountedFinderProps>(function RailMountedFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });

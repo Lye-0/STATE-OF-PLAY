@@ -53,7 +53,7 @@ const config: FoundationConfig = {
   ]
 };
 export type InspectorQueryFinderProps = FoundationProps;
-/** 照合台の検索窓。候補ごとに記号の小窓を設け、選択行を枠と右の確認印で明示する。 */
+/** 固定した三面の基準軸へ、候補ごとの目盛りの梁と一つの顎を差す照合入力。方眼と左右C括弧を廃止し、左の14pxの固定軸、軸へ10px接続する水平の目盛り梁、右の34px高の読み取り顎を作る。activeは照合する顎を明示し、確定checkは同じ顎の内側に固定、本文とcaretは動かさない。 */
 export default forwardRef<HTMLDivElement, InspectorQueryFinderProps>(function InspectorQueryFinder(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderCombobox} mountContent={mountCombobox}/>;
 });
