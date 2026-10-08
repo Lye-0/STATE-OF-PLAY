@@ -3,7 +3,7 @@ import React from 'react';
 import { useScrollArea, type ScrollAreaProps } from '../../../../shared/use-scroll-area';
 import '../styles.css';
 export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
-/** 本文の邪魔になる大きい十字を廃止。細い目盛りと一つの読取窓でスクロール位置を示す。 */
+/** 銀のつまみの小さな読取り窓と、長短を分けた目盛りで位置を示す。主な読取線を一本に絞り、線の密度を抑えて計測器の精度を出す。 */
 export default function SightlineScroll(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);

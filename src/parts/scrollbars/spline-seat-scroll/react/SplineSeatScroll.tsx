@@ -3,7 +3,7 @@ import React from 'react';
 import { useScrollArea, type ScrollAreaProps } from '../../../../shared/use-scroll-area';
 import '../styles.css';
 export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
-/** スプラインの溝に噛み合う短い滑走片。既読部分の溝が一本につながる。 */
+/** 細い双線のガイドを、片側が開いた曲面の受けで抱える。巻き線を使わず、受けの開口・端の爪・中に見えるガイドで位置を示す。 */
 export default function SplineSeatScroll(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);

@@ -3,7 +3,7 @@ import React from 'react';
 import { useScrollArea, type ScrollAreaProps } from '../../../../shared/use-scroll-area';
 import '../styles.css';
 export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
-/** 葦の節を細いつまみにまとめる。通過位置に合わせて下の茎が一本の濃い線へ続く。 */
+/** 細い緑の茎に、二つの節を持つ葦色のつまみを留める。緑は茎と節だけに置き、乾いた繊維の明るさと輪郭で背景から分ける。 */
 export default function ReedClaspScroll(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);

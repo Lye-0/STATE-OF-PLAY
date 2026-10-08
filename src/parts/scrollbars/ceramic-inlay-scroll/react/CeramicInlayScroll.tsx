@@ -3,7 +3,7 @@ import React from 'react';
 import { useScrollArea, type ScrollAreaProps } from '../../../../shared/use-scroll-area';
 import '../styles.css';
 export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
-/** 陶器の細い溝に光沢のつまみをはめる。スクロール済みの下地と残りの溝を区別。 */
+/** 青灰の細い凹みへ、片側が丸い白い陶器のつまみを収める。溝の暗さと釉薬の明るい縁を分け、通過した部分は薄い銀色で示す。 */
 export default function CeramicInlayScroll(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);

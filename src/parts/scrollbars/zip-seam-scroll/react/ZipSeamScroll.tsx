@@ -3,7 +3,7 @@ import React from 'react';
 import { useScrollArea, type ScrollAreaProps } from '../../../../shared/use-scroll-area';
 import '../styles.css';
 export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
-/** 細いジッパーの歯をつまみが閉じていく。通過済みの領域を一続きの縫い目へ変える。 */
+/** 交互の歯が残る細いジッパーの上を、穴のある引き手が進む。通過済みの歯は一本の閉じた継ぎ目へまとめ、位置と素材の変化をつなげる。 */
 export default function ZipSeamScroll(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);

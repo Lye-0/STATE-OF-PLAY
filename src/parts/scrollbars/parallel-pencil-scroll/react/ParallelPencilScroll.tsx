@@ -3,7 +3,7 @@ import React from 'react';
 import { useScrollArea, type ScrollAreaProps } from '../../../../shared/use-scroll-area';
 import '../styles.css';
 export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
-/** 鉛筆の芯と木軸を分けた細いつまみ。引いた線がスクロール済みの長さとして残る。 */
+/** 細い木軸のつまみに、削った木口・暗い芯・銀の留めを分けた鉛筆。縦の面の色と先端の形で素材を読ませ、単なる細いつまみの色違いにしない。 */
 export default function ParallelPencilScroll(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);
