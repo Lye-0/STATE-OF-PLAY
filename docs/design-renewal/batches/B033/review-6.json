@@ -1,0 +1,184 @@
+{
+  "batch": "B033",
+  "round": 6,
+  "snapshot": "docs/design-renewal/batches/B033/snapshot/round-6",
+  "overall": "pass",
+  "parts": [
+    {
+      "number": 453,
+      "id": "folded-tally-number",
+      "verdict": "pass",
+      "assessment": "合格。左右対称の閉枠を廃し、片側52pxの操作列で、減らす上の裏折面と増やす下のL字の自由端を別々に読む一枚紙へ連続させた。上折面は読む紙の裏へ16px入り、二つの操作の間には下層で塞がれない実空隙がある。R413の一つの長い縦折面とは異なり、二つの実操作が表裏の折面を担って外形を作る。狭幅/長文/RTLでも同じ構造を維持し、入力/caret/nativehitは固定。",
+      "findings": [],
+      "nearestComparisons": [
+        "旧R403",
+        "旧R424",
+        413
+      ],
+      "resolvedFindings": [
+        "R453-closed-beveled-frame"
+      ],
+      "normalDesignVerdict": "pass",
+      "inheritedFrom": "round-5の合格を継承。round-5→6で当該10正本ファイル不変。"
+    },
+    {
+      "number": 454,
+      "id": "stone-block-number",
+      "verdict": "pass",
+      "assessment": "合格、T保持。元の大きい石のアーチと明るい数値窓を維持し、左右の操作を同じ丸い端石へ揃えた。10pxの土台断面と窓の奥行きが連続し、元の別素材の白い四角キーから統一された。狭幅では同じアーチの内部下段に操作石が収まり、長い単位/負数とも読む窓へ収まる。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R454",
+        319,
+        374
+      ],
+      "resolvedFindings": [],
+      "normalDesignVerdict": "pass",
+      "inheritedFrom": "round-5の合格を継承。round-5→6で当該10正本ファイル不変。"
+    },
+    {
+      "number": 456,
+      "id": "spool-count-number",
+      "verdict": "pass",
+      "assessment": "合格、T保持。糸巻きの木のフランジ・側部だけの巻き線・無地の数値窓と丸い実操作を維持し、font上限26px/字間0、下段キーへの切替をcontainer340px以下へ調整。-12345.678は320/390/768×LTR/RTL、および本文318/334/339/340/341/344/364pxの切替境界で全桁表示。最も厳しい本文341pxの横並びでも字幅156.533203125pxが入力内幅161pxへ収まり、4.466796875pxの余裕を保つ。長い単位も巻き線へ重ならず、同じ素材の形で下段へ切り替わる。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R456",
+        233,
+        98
+      ],
+      "resolvedFindings": [
+        "main-reported-spool-midwidth-negative-glyph-clipping"
+      ],
+      "normalDesignVerdict": "pass",
+      "inheritedFrom": "round-3通常造形合格。10正本ファイル不変を照合し、round-5固定native操作/実像で回帰確認。"
+    },
+    {
+      "number": 458,
+      "id": "stitched-count-number",
+      "verdict": "pass",
+      "assessment": "合格。狭幅の八角外周への置換と別の角丸窓を廃し、48pxの凹む腰と二つの操作環をつなぐ一枚の織布へ揃えた。数字と単位は同じ布上の無地に近い平らな領域へ固定される。狭幅でも上下の肩と凹部が実外形に残り、縫い目は文字を横切る主線にならず外端へ分かれる。広幅/狭幅が同じ支持関係として読める。",
+      "findings": [],
+      "nearestComparisons": [
+        333,
+        438,
+        398
+      ],
+      "normalDesignVerdict": "pass",
+      "resolvedFindings": [
+        "R458-narrow-sling-lost"
+      ],
+      "inheritedFrom": "round-5の合格を継承。round-5→6で当該10正本ファイル不変。"
+    },
+    {
+      "number": 459,
+      "id": "open-jaw-number",
+      "verdict": "pass",
+      "assessment": "合格、T保持。狭幅の縦材上端へbutton border-topの6pxを含め、顎の下端との6px空隙を解消。1000/320pxのLTR/RTL実像で接続を確認し、320pxの両方向でstem.top-face.bottom=0px。元の上下の開いた顎と広幅の操作側材は保持され、文字や操作範囲を動かさない。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R459",
+        262,
+        439
+      ],
+      "normalDesignVerdict": "pass",
+      "resolvedFindings": [
+        "R459-narrow-support-gap"
+      ],
+      "inheritedFrom": "round-5の合格を継承。round-5→6で当該10正本ファイル不変。"
+    },
+    {
+      "number": 460,
+      "id": "bookend-counter",
+      "verdict": "pass",
+      "assessment": "合格、T保持。狭幅の読む紙のmargin-bottomを除き、紙下端と両本立て上端がLTR/RTLとも0pxで接する。広幅の紙束/44px本立ての関係、明るい木と濃い±、無地の数字面を保持。長い単位/負数でも支持と本文を分離できる。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R460",
+        320,
+        360
+      ],
+      "normalDesignVerdict": "pass",
+      "resolvedFindings": [
+        "R460-narrow-bookend-gap"
+      ],
+      "inheritedFrom": "round-5の合格を継承。round-5→6で当該10正本ファイル不変。"
+    },
+    {
+      "number": 462,
+      "id": "rail-stop-number",
+      "verdict": "pass",
+      "assessment": "合格、T保持。狭幅の縦材にbutton border-topの5pxを含め、レール下端との5px空隙を解消。320pxの両方向でstem.top-face.bottom=0px。赤い実量ストップは同じレール内を動き、native値/文字/hitは途中遷移でも固定される。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R462",
+        344,
+        392
+      ],
+      "normalDesignVerdict": "pass",
+      "resolvedFindings": [
+        "R462-narrow-rail-support-gap"
+      ],
+      "inheritedFrom": "round-5の合格を継承。round-5→6で当該10正本ファイル不変。"
+    },
+    {
+      "number": 463,
+      "id": "ribbon-count-number",
+      "verdict": "pass",
+      "assessment": "合格、T保持。元の上下に巻く深い帯を残し、濃い紫と重い影を明るい織布へ整理した。10/12pxの上下端と、その内側14pxだけの織線が読む無地面から分離される。元の主題を別の形へ交換せず、数字/単位の読解と素材の密度を改善。狭幅も同じ巻端を保つ。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R463",
+        443,
+        283
+      ],
+      "resolvedFindings": [],
+      "normalDesignVerdict": "pass",
+      "inheritedFrom": "round-5の合格を継承。round-5→6で当該10正本ファイル不変。"
+    },
+    {
+      "number": 464,
+      "id": "ceramic-count-number",
+      "verdict": "pass",
+      "assessment": "合格、T保持。元の楕円の器と確定量の弧を維持し、局所的な濃い影を廃して操作ボタンと同じ釉薬の白・5/8pxの成形面へ揃えた。量の弧は外側の帯へ限定され、32px内側の数字と単位へ侵入しない。min/maxの実像で弧とnative値の即時更新、長い負数の全桁を確認。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R464",
+        215,
+        337
+      ],
+      "resolvedFindings": [],
+      "normalDesignVerdict": "pass",
+      "inheritedFrom": "round-5の合格を継承。round-5→6で当該10正本ファイル不変。"
+    },
+    {
+      "number": 465,
+      "id": "perforated-counter",
+      "verdict": "pass",
+      "assessment": "合格。紙の中央に離れていた歯車を紙の上へ移し、左右の実送り輪の中心に合わせて上の孔列を配置した。紙は一つの読む面として連続し、二つのhalfは孔の位相を合わせるmaskとして働く。暗背景でも孔は実空隙で、描画された78px外歯面が少なくとも一つの孔へ接する。二輪の逆回転と固定44pxのnative面を分け、数値/単位/当たりは動かさない。R116/R252の単なる送り紙とは、実増減の輪と孔列の接点が形を決める点で異なる。",
+      "findings": [],
+      "nearestComparisons": [
+        116,
+        252,
+        385
+      ],
+      "resolvedFindings": [
+        "R465-feed-wheels-disconnected-from-holes"
+      ],
+      "normalDesignVerdict": "pass",
+      "inheritedFrom": "round-5の合格を継承。round-5→6で当該10正本ファイル不変。"
+    }
+  ],
+  "checks": [
+    "固定round-6正本100 SHA-256がreview-input-6と一致、実portable CSS10もimport除去後全一致。5→6は99正本不変、spool-count-number/styles.cssのみ変更。captures/reviewer-spool-6/checks.json。",
+    "R456を固定native実配布で独立再操作。全protocol（キー/上下限/小数step/draft/invalid/Escape/IME/selection/readOnly/disabled/controlled拒否/実FormData/reset）・長負数/長単位320/390/768×LTR/RTL・font/矩形固定・forced/reduced/destroyを再実行し成功。logs/reviewer-numbers-r6.log、captures/reviewer-numbers-6。",
+    "追加の20状態を撮影/測定。viewport320/390/768と、実root外幅354/370/375/376/377/380/400を各LTR/RTL。実fontのCanvas字幅<=native input content幅、方向LTR、root overflowなしを確認。reviewer-spool-6。",
+    "container本文339/340pxでは同じ巻き芯の下に操作を置き、341pxでは左右の丸い操作へ切替。両側で巻き線/フランジ/無地の数字・単位を維持することを画像で確認。最小の字幅余裕4.466796875px。",
+    "他9件の通常造形/独立native/接合/途中状態はround-5から正本不変のため正式5の結果を継承。今回それら9件の操作を再実行したとは扱わない。"
+  ],
+  "limits": [
+    "独立操作はChromiumの固定native実配布。React4形式と共有基盤回帰は今回独立再実行しておらず主担当の成功報告と区別する。",
+    "730件全体を今回再操作したわけではない。元監査と対象/近似の画像・固定CSS・前回判定を用いた比較。",
+    "普通の文字列・選択/入力APIのテスト成功は、美的独立性や素材の接続の合格理由とは分離している。"
+  ]
+}

@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "unit": "UNITS"
 };
 export type RailStopNumberProps = FoundationProps;
-/** 数値窓の下を台車が走る計数レール。増減の方向と走行位置を一致させる。 */
+/** 確定値を赤いストップで読むレール数量操作。元の赤い位置材と左右の半円押面を保持し、目盛り床は5pxの一つの実レールへ接し、両端を操作面へ12px伸ばす。ストップの幅22px/厚18pxと上下の材料面を揃え、確定値に応じて同じレールの内側を移動する。数字窓は26pxの下余白で動く材料から離し、レールの動きでもnative文字/当たりは固定する。 */
 export default forwardRef<HTMLDivElement, RailStopNumberProps>(function RailStopNumber(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderNumber} mountContent={mountNumber}/>;
 });

@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "unit": "UNITS"
 };
 export type BookendCounterProps = FoundationProps;
-/** 二冊の表紙を左右の操作部にし、中央の頁断面が数量に応じてずれるブックエンド。 */
+/** 二つの実操作の本立てが数値の紙束を保持するカウンター。元の左右の押面と中央の紙束を保持し、濃い茶の巨大な操作面を明るい木へ、紙の縦罫を無地の読む面へ揃える。幅44pxの本立てと高さ126pxの紙束の接触を0gapで保ち、6pxの木の端と8pxの紙の小口を見せる。狭幅では長い数値の紙を全幅へ広げ、本立ての二つの操作を下へ揃える。 */
 export default forwardRef<HTMLDivElement, BookendCounterProps>(function BookendCounter(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderNumber} mountContent={mountNumber}/>;
 });

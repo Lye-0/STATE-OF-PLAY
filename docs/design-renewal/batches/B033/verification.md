@@ -1,0 +1,11 @@
+# B033 検証記録
+
+数値入力A10点。独立3で4合格/4調整/2再設計。R453は四辺の閉枠を廃し、片側のnative減らす上裏折面/増やす下自由端と一枚の紙を組む。R465はnative送り輪を紙の上へ移し、実歯が実孔へ届く配置へ再設計。R458の狭幅を同じ凹腰の布へ、459/460/462の支持接点はborder原点を含めて0pxへ調整した。
+
+主担当React検査でR456の390pxの長い負数全glyphが収まらないことを発見。最終6はfont上限26px/字間0、container340pxで同じ巻芯＋下段操作へ切り替える。独立6は20条件で最厳の341pxでもglyph156.533px/input161pxを確認。他9は最終5から99正本不変。独立最終6全10合格。
+
+最終6 native10はkeyboard/bounds/step/draft/invalid/selection/IME/readOnly/disabled/controlled拒否/実form payload-reset/長負数全glyph幅/320390768×LTRRTL/固定nativeinputとcaret/forced/reduced/cleanup成功。React10×TSX/JSX×portable/originalの実4形式はcontrolled受理拒否/default/独立個体/props更新と編集中selection/FormData/nativebounds/invalid/refs/StrictMode cleanupと全glyph幅成功。型検査全工程、730契約4、実ギャラリー10成功。数値20×2layout native実importsはB032で成功、本組ではmarkupとinitializerを変更していない。共有foundationも変更なし。
+
+Chromium検証。forced/reducedはエミュレーション。別OS/ブラウザ/実機touch/SRは未確認。歯車の接触は実CSS幾何と画像による確認で、完全な機械シミュレーションではない。全730の全面再操作ではない。最終production buildは全517完了時。
+
+単組の画像内蔵HTMLは10件/80画像/491005bytes、Chromium setContentの初期45ms/全画像decode220ms、外部通信0/例外0/390px溢れなし。環境のnavigation制限により直接file://は未確認。
