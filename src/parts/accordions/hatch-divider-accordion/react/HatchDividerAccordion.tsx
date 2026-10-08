@@ -3,7 +3,7 @@ import React from 'react';
 import {AccordionView,type AccordionProps} from '../../../../shared/accordion-view';
 import '../styles.css';
 export type {AccordionProps,AccordionItem} from '../../../../shared/accordion-view';
-/** 本の見出しを章扉として扱い、開いた章の本文へ同じ幅の余白を続ける。 */
+/** 角を落とした金属のハッチを、右の二つの蝶番と左の回転留めで開閉する本文面。留めが軸から回って解除され、八角の枠とガスケットを読む面の外へ置く。 */
 export default function HatchDividerAccordion({className='',...props}:AccordionProps){
- return <AccordionView {...props} className={`sop-hatch-divider-accordion ${className}`}/>;
+ return <AccordionView {...props} motionLayer={<span className="sop-acc-material" aria-hidden="true"><i/><i/><i/><i/><i/><i/></span>} className={`sop-hatch-divider-accordion ${className}`}/>;
 }

@@ -1,6 +1,6 @@
 # Metal Slot Accordion
 
-帳簿の見出しと本文を二つの列へ。大きい索引と横書き本文を分けて読ませる。
+一体の金属ヘッドの暗い差込み口から、紙の本文を展開するスロット。左右の細いガイドが紙の端へつながり、上の切断面と口の厚みを別々に示す。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

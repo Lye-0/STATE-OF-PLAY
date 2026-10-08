@@ -1,6 +1,6 @@
 # Cradle Fold Accordion
 
-開いた角を接続して本文の読む領域をつくる。閉じた時は見出しの支点だけを残す。
+一枚の読む台を二つの斜めに折った足で受ける開閉面。本文を開くと足の折り面が広がり、上の台と地面の小さな接点をつなぐ。読む面は水平に保つ。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

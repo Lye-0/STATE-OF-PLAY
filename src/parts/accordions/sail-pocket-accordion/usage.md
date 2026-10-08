@@ -1,6 +1,6 @@
 # Sail Pocket Accordion
 
-折り返した見出しの下へ同じ紙の本文を接続。開閉で紙の端の折り返しが変わる。
+孔と細いロープで張った帆布のポケット。左の斜めのマチが本文とともに広がり、下の浅い弧と縫い線で布の袋を形作る。淡い帆布の読む面は動かさない。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

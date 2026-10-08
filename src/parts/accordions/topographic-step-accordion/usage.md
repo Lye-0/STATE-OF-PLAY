@@ -1,6 +1,6 @@
 # Topographic Step Accordion
 
-工業用の解錠パネル。見出しの状態灯と展開面を同じ機構にまとめる。
+一体の岩の稜から本文の露頭を開く断面。粗い左の切断面と下の岩の橋が本文を支え、開く量に沿って露頭と測深線が伸びる。小さい測深片だけが下がり、見出しは動かさない。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。

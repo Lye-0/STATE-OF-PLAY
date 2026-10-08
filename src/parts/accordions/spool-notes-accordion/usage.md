@@ -1,6 +1,6 @@
 # Spool Notes Accordion
 
-縫った見出し帯から布の本文面が広がる。選択した縫い目だけを濃く保つ。
+上下の二つの巻き枠から一本の糸を引くノート。本文の高さに沿って糸をつなぎ、横の留めで紙を支える。開閉時は巻き枠が回り、見出しと本文は静止する。
 
 ## 内容の差し替え
 Reactではitemsのcontentへ文章・図・フォーム等のReactNodeを渡します。Vanillaでは各.sop-accordion-content内を置き換えます。data-valueは同一個体内で一意にしてください。
