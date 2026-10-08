@@ -1,0 +1,181 @@
+{
+  "batch": "B031",
+  "round": 3,
+  "snapshot": "docs/design-renewal/batches/B031/snapshot/round-3",
+  "overall": "pass",
+  "parts": [
+    {
+      "number": 423,
+      "id": "looped-route-trail",
+      "verdict": "pass",
+      "assessment": "合格。64px幅の一続きの二重ループに実空隙があり、現在の読む端子へ60pxの渡りが12px入る。祖先の文字は76px内側に分離され、輪へ経路の割合など架空の意味を付けていない。R337の値を描く二軌道とは、全階層を受ける物理的な縦材として異なる。少数/長文/RTLでも現在の支持を維持する。",
+      "findings": [],
+      "nearestComparisons": [
+        337,
+        318,
+        296
+      ],
+      "resolvedFindings": [],
+      "normalDesignVerdict": "pass",
+      "inheritedFrom": "round-2; 全10正本不変を確認し、native操作と実像をround-3で再確認"
+    },
+    {
+      "number": 424,
+      "id": "recessed-route-trail",
+      "verdict": "pass",
+      "assessment": "合格。四辺の額を廃し、28pxと52pxの異なる壁が読む床を挟む、上下の開いた彫り溝へ主形が変わった。露出する斜めの端面と床への10/16pxの重なりが実像で読める。旧R324/旧R403の閉じた面取り枠とは異なり、R384の曲面の凹床とも外形・断面が異なる。長文・RTL・1/3/8階層でも壁と本文を分離できる。",
+      "findings": [],
+      "nearestComparisons": [
+        384,
+        "旧R324",
+        "旧R403"
+      ],
+      "resolvedFindings": [
+        "R424-generic-bevel-frame"
+      ],
+      "normalDesignVerdict": "pass"
+    },
+    {
+      "number": 425,
+      "id": "letterpress-trail",
+      "verdict": "pass",
+      "assessment": "合格。離れた矩形チップ群を、一続きの上肩7px・下材12px・返る両端を持つ組版胴へ変更し、現在の紙が6pxその裏へ入る。祖先と現在を同じ接点でつなぎ、紙の自由端と金属の断面が主形になった。狭幅は同じ胴を縦へ延ばすため、装飾を残して名前だけ潰すことがない。R401のL台やR295の小出力口の反復には留まらない。",
+      "findings": [],
+      "nearestComparisons": [
+        401,
+        295,
+        220
+      ],
+      "resolvedFindings": [
+        "R425-disconnected-type-and-paper"
+      ],
+      "normalDesignVerdict": "pass"
+    },
+    {
+      "number": 431,
+      "id": "bookbinding-tags",
+      "verdict": "pass",
+      "assessment": "合格。読む表紙と8pxの下紙を10pxの実空隙で分け、露出したC字の綴じを上の孔と下紙の切込みへ接続した。暗い背景でも空隙が下層で塞がれておらず、単なる薄い背と短線から構造が変わっている。下紙の口は閉じた丸孔ではなく縁に開いた切込みとして見えるが、糸の終端と整合する。本文40pxと孔端29pxを分離し、RTLでも接点と読む側の予約が保たれる。R360の四環やR157の縫帯の縮小反復ではない。狭幅の名称も全幅上段へ確保された。",
+      "findings": [],
+      "nearestComparisons": [
+        "旧R138",
+        "旧R360",
+        157
+      ],
+      "resolvedFindings": [
+        "R431-binding-as-small-decoration",
+        "R431-narrow-reading-collapse"
+      ],
+      "normalDesignVerdict": "pass"
+    },
+    {
+      "number": 432,
+      "id": "rail-marker-tags",
+      "verdict": "pass",
+      "assessment": "合格、T保持。短いレール端と静かな数値面の通常造形を保ち、狭幅では名称全幅の上段と件数/削除の下段へ分けた。アイコンを除く実テキストの行幅を確保し、同列の一文字折返しを解消。",
+      "findings": [],
+      "nearestComparisons": [
+        277,
+        392,
+        "元R432"
+      ],
+      "normalDesignVerdict": "pass",
+      "resolvedFindings": [
+        "R432-narrow-reading-collapse"
+      ]
+    },
+    {
+      "number": 433,
+      "id": "foldback-tags",
+      "verdict": "pass",
+      "assessment": "合格、T保持。18pxの終端の折返しと読む札の厚みを維持し、名称を狭幅の全幅上段へ移した。形・字・削除hitは選択/hover解除/再進入で動かず、長文を読む余地ができた。",
+      "findings": [],
+      "nearestComparisons": [
+        353,
+        403,
+        "元R433"
+      ],
+      "normalDesignVerdict": "pass",
+      "resolvedFindings": [
+        "R433-narrow-reading-collapse"
+      ]
+    },
+    {
+      "number": 434,
+      "id": "stone-chip-tags",
+      "verdict": "pass",
+      "assessment": "合格。14pxの欠けた始端、非対称の破断、16px側断面と10px下材という既合格の主形を維持。狭幅では名称と件数/削除を別段へ分け、読みの中央が一文字幅へ崩れる問題を解消した。",
+      "findings": [],
+      "nearestComparisons": [
+        174,
+        359
+      ],
+      "normalDesignVerdict": "pass",
+      "resolvedFindings": [
+        "R434-narrow-reading-collapse"
+      ]
+    },
+    {
+      "number": 435,
+      "id": "receipt-tags",
+      "verdict": "pass",
+      "assessment": "合格。実名称を上段、実件数を下段へ置いた縦の受領紙と8pxの真の切取り端が主形になった。架空の総額等を追加せず、件数無しでも紙の名前だけで成立。9桁件数/削除を含む狭幅でも名称の幅を確保し、他6件の一文字縦並びへ陥らない。",
+      "findings": [],
+      "nearestComparisons": [
+        305,
+        252,
+        361
+      ],
+      "resolvedFindings": [],
+      "normalDesignVerdict": "pass",
+      "inheritedFrom": "round-2; 全10正本不変を確認し、native操作と実像をround-3で再確認"
+    },
+    {
+      "number": 436,
+      "id": "loop-label-tags",
+      "verdict": "pass",
+      "assessment": "合格、T保持。丸い始端と実孔、孔端21pxから本文36pxの離隔を維持。狭幅は名称を全幅へ確保し、孔と長文・件数・削除の競合を解消した。",
+      "findings": [],
+      "nearestComparisons": [
+        313,
+        318,
+        "元R436"
+      ],
+      "normalDesignVerdict": "pass",
+      "resolvedFindings": [
+        "R436-narrow-reading-collapse"
+      ]
+    },
+    {
+      "number": 437,
+      "id": "instrument-tags",
+      "verdict": "pass",
+      "assessment": "合格、T保持。4px上面/7px下材と実件数の隔壁という材料の一体性を維持。狭幅では名称を上段へ分け、件数/削除を保ったまま全文を読める。",
+      "findings": [],
+      "nearestComparisons": [
+        397,
+        "元R437"
+      ],
+      "normalDesignVerdict": "pass",
+      "resolvedFindings": [
+        "R437-narrow-reading-collapse"
+      ]
+    }
+  ],
+  "checks": [
+    "固定round-3の正本100 SHA-256がreview-input-3と一致。native配布CSS10はimport除去後に正本CSSと一致。captures/reviewer-extra-3/checks.json。",
+    "round-2から60正本ファイルが不変、変更40ファイルの対象を確認。10件すべての配布navigation.jsはround-2と同一。captures/reviewer-extra-3/inheritance.json。",
+    "固定native trail3件を独立実操作。階層/empty/one/collapse、Enter/Escapeと焦点復帰、実メニュー第二リンクのtrusted clickによる遷移、外部focus/pointer、disabled項目・全体・more native disabledと復帰、長文320/390/768×LTR/RTL、forced/reduced、destroy。logs/reviewer-trails-r3.log、captures/reviewer-trails-3。",
+    "固定native badge7件を独立実操作。Space/native checked/API値/同一native keyの焦点、disabled/readOnlyと実削除の抑止、復帰、実remove、controlled拒否、empty/one、実フォームresetで削除項目と選択の復帰、長文320/390/768×LTR/RTL、forced/reduced、destroy。logs/reviewer-badges-r3.log、captures/reviewer-badges-3。",
+    "7タグの実TEXT_NODE Rangeを84状態で測定。320/390/768×LTR/RTLの42状態と、root外幅335/336/337（内幅299/300/301の列切替境界）×LTR/RTLの42状態。全体の最広実テキスト行の最小値80.921875px、最大6行。captures/reviewer-reading-3、reviewer-reading-boundary-3。",
+    "320px長文ではR431/432/433/434/436/437は4行、R435は6行。従前6件の27〜43行/589〜926px高への崩れを解消。名称・9桁件数・削除・アイコンを同時に保持して測定した。",
+    "7タグ追加検査：実remove後c→d、d→aの近い有効項目への焦点移動、readOnly時の実pointerで通知なし/値と項目保持、LTR/RTLのnormal motion hover/leave/reenterを各2回。本文・件数・glyph・hitを部品全体基準で比較し固定。captures/reviewer-badge-extra-3/checks.json。",
+    "3パンくずの1/3/8階層を1000px LTRと320px RTLで18画像として検査。normal motion hover/leave/reenterを各2回、本文の相対矩形/字体固定。R424壁と床、R425金属胴と紙の接点を実像とCSSで照合。captures/reviewer-materials-3。",
+    "R431は暗背景のRTL画像と通常画像で孔・下紙切込み・10px空隙・C綴じ接点・本文離隔を確認。近似部品の元監査と前回レビュー比較を引継ぎ、今回変更3件を再比較した。"
+  ],
+  "limits": [
+    "Chromiumの固定native実配布を独立検査した。React4形式・全26基盤回帰は今回独立再実行しておらず、主担当の成功報告は補助情報として区別する。",
+    "全730件を今回一括再操作したわけではない。元監査・baselineおよび各partのnearestComparisonsに示す近似との構造比較を行った。",
+    "全種類の任意テキスト・ブラウザ・支援技術の組合せを網羅する保証ではない。"
+  ]
+}

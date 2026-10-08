@@ -39,7 +39,7 @@ const config: FoundationConfig = {
   ]
 };
 export type LetterpressTrailProps = FoundationProps;
-/** 印字した経路票。祖先の文字を矢印で結び、現在地は枠の中の太字にする。 */
+/** 実祖先が占める一体の組版胴から、現在名の校正紙を一枚引き出すパンくず。離れていた矩形片と紙カードを廃し、全祖先の読む面を隙間なく一つの鋳物の胴へ結び、7pxの上面/12pxの下面/丸く返る両端を作る。現在の紙は胴の裏へ6px入って接合し、実階層の組版面から直接出る一つの自由な読む面になる。紙の26pxの返端と8pxの小口を描き、文字は材料に合わせて変形させない。 */
 export default forwardRef<HTMLDivElement, LetterpressTrailProps>(function LetterpressTrail(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBreadcrumbs} mountContent={mountBreadcrumbs}/>;
 });

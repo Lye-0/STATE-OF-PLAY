@@ -1,0 +1,8 @@
+{
+  "sourceHashes": {
+    "src/shared/foundation/navigation.ts": "c4851b9b7b4723f145edaae781b50219436a285ab8a41f9f09581ec2f7947490",
+    "tests/foundations.browser.ts": "a2a870739c460fa900795458720515bc24b8a3445a98ab54973b60523bd78b33"
+  },
+  "fix": "badges native readOnly prevents changed checked state and removal action; sync restores selection focus; remove moves focus to nearest available following or prior tag",
+  "test": "full real Vite foundations suite in isolated source copy; cacheDir is the only config override"
+}

@@ -90,6 +90,20 @@ for row,part,review in approved:
   actual=next((p for p in reversed(native) if all((p/f"{row['id']}-{name}.png").exists() for name in ['initial','expanded','narrow-320','menu-rtl-320'])),None)
   assert actual is not None,f"Missing native hierarchy/menu: {row['id']}"
   images+=figure(beforeTrail,'修正前・配布版の階層経路')+figure(actual/f"{row['id']}-initial.png",'修正後・実際の階層経路')+figure(actual/f"{row['id']}-expanded.png",'修正後・省略階層を開いたメニュー')+figure(actual/f"{row['id']}-narrow-320.png",'修正後・320pxの長い階層')+figure(actual/f"{row['id']}-menu-rtl-320.png",'修正後・320pxと右から左のメニュー')
+ if row['category']=='badges':
+  beforeBadge=w/'evidence/baseline'/f"{row['id']}-badge.png"
+  assert beforeBadge.exists(),f"Missing original real tag: {row['id']}"
+  native=sorted((d/'captures').glob('badges-self-*'),key=lambda p:int(p.name.split('-')[-1]))
+  actual=next((p for p in reversed(native) if all((p/f"{row['id']}-{name}.png").exists() for name in ['initial','selected','narrow-320','long-rtl-320'])),None)
+  assert actual is not None,f"Missing native long tag: {row['id']}"
+  images+=figure(beforeBadge,'修正前・配布版のタグ')+figure(actual/f"{row['id']}-initial.png",'修正後・配布版の名称と実件数')+figure(actual/f"{row['id']}-selected.png",'修正後・実選択の状態')+figure(actual/f"{row['id']}-narrow-320.png",'修正後・320pxの長い名称と9桁件数')+figure(actual/f"{row['id']}-long-rtl-320.png",'修正後・320pxと右から左の長い名称')
+ if row['category']=='numbers':
+  beforeNumber=w/'evidence/baseline'/f"{row['id']}-number.png"
+  assert beforeNumber.exists(),f"Missing original real number field: {row['id']}"
+  native=sorted((d/'captures').glob('numbers-self-*'),key=lambda p:int(p.name.split('-')[-1]))
+  actual=next((p for p in reversed(native) if all((p/f"{row['id']}-{name}.png").exists() for name in ['initial','min','max','narrow-320'])),None)
+  assert actual is not None,f"Missing native number limits: {row['id']}"
+  images+=figure(beforeNumber,'修正前・配布版の数値操作')+figure(actual/f"{row['id']}-initial.png",'修正後・配布版の値と操作面')+figure(actual/f"{row['id']}-min.png",'修正後・最小値')+figure(actual/f"{row['id']}-max.png",'修正後・最大値')+figure(actual/f"{row['id']}-narrow-320.png",'修正後・320pxの長い数値と単位')
  if row['category']=='dropdowns':
   images+=figure(photos/f"{row['id']}-expanded.png",'展開した候補・選択済み行')
  # Native switch images distinguish actual OFF and ON even when the gallery starts ON.

@@ -41,7 +41,7 @@ const config: FoundationConfig = {
   ]
 };
 export type ReceiptTagsProps = FoundationProps;
-/** 切り離す控え札。件数と削除をミシン目の先へ分け、選択状態を左端の線で記録する。 */
+/** 分類の実ラベルと実件数を、小さな独立した受領紙へ配置するタグ。黄色い箱の下線を廃し、縦に読む紙の上段へ名称、下段へ実件数、8pxの真の切取り端を作る。デモの架空の総額や番号は追加せず、件数がない札は同じ紙の名前だけで成立する。選択は紙の色の密度で示し、文字やnative当たりを動かさない。 */
 export default forwardRef<HTMLDivElement, ReceiptTagsProps>(function ReceiptTags(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBadges} mountContent={mountBadges}/>;
 });

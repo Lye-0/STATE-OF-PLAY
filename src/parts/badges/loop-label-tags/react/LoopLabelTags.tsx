@@ -41,7 +41,7 @@ const config: FoundationConfig = {
   ]
 };
 export type LoopLabelTagsProps = FoundationProps;
-/** 輪を通す荷札。左の小穴と文字面を分け、選択した札の紐だけを短く張る。 */
+/** 一つの実孔から吊る丸い始端のタグ。元の長い丸端の札を保持し、二重の輪郭を一つの読む素材へ揃える。孔の端21pxに対し本文とアイコンを36px内側へ予約し、左端の文字と孔の衝突を解消する。件数は同じ札の平らな部分に置き、選択しても孔の位置とnative操作の寸法は変えない。狭い表示では名称を全幅の上段へ、実件数と削除を下段へ分け、長い名称の読む幅を保つ。 */
 export default forwardRef<HTMLDivElement, LoopLabelTagsProps>(function LoopLabelTags(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBadges} mountContent={mountBadges}/>;
 });

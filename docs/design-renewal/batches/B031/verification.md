@@ -1,0 +1,17 @@
+# B031 検証記録
+
+3パンくず/7タグ、全A。独立2は2合格/5調整/3再設計。R424の四辺の面取り枠を、異なる28px/52pxの側壁と上・下端が開く一つの彫る溝へ再設計。R425の離れた組版片と紙カードを、一体の組版胴とその裏へ6px入る現在の校正紙へ接合。狭幅は組版の読む胴を縦へ回し全文を確保。R431の片丸札と小製本記号を、表紙と裏紙の10px実空隙、露出C綴糸と実孔/縁に開いた戻り口へ再設計。実像で裏紙の戻り口は閉じた丸孔ではなく縁への切込みになるため、その実材料関係で評価した。
+
+9桁の実件数と削除を含む320px表示で、6タグの名称が一文字幅へ縮み、43行/約900pxに伸びる問題を独立検査で発見。root300px以下で名称を全幅上段、件数と削除を下段へ分けた。overflowだけを可読性の代わりに扱わない。native/Reactの全7×幅方向条件でlabel幅88px以上と、iconを除いたTEXT_NODEの実Rangeの最広行64px以上を確認。独立84読字状態の最広実文字行は最小80.92px、最大6行、299/300/301の切替境界も確認。通常材質を合格した5タグは造形を維持し狭幅だけ調整、R435の縦receiptは不変。
+
+共有navigationのBadgesは、readOnlyでもnative checkedが変わりAPI値と矛盾、readonlyremoveの実trusted clickでonActionが発火し次syncで4→3へ減る、Spaceで選択後に焦点がbodyへ落ちる問題を全7で再現。beforeチェック/JSONはcaptures内に保存。readOnlyをnative disabledへ反映し選択/削除guardを追加。syncで同じnative keyの焦点を復元し、削除では近い有効後続/前項目へ移す。共有源と恒久Essential-tags回帰はshared-provenance.jsonへhash記録。隔離実ソースコピー/実Vite/Chromium全26基盤項目成功。Vite cacheDirだけを分離している。
+
+最終3 nativeタグ7はSpaceの焦点保持/checked/API一致/disabled項目/readonly/全disabled/解除/削除通知/近い焦点/controlled拒否/empty-one/実Form reset/9桁長文320390768×LTRRTL/実読字幅/固定glyph/forced/reduced/cleanup成功。React7×TSX/JSX×portable/originalの実4形式もcontrolled受理拒否/default/独立/props/imperative/refs/StrictModeを含め成功。ネイティブのcheckboxにはnameを新設していないため、フォームpayloadを新しい契約として主張していない。
+
+最終3 nativeパンくず3は任意階層/省略/Enter/第二リンクtrusted clickとURL/現在ARIA/Escape焦点復元/外側focusとpointer/disabled/empty-one/長文320390768×LTRRTL/menu/fixed glyph/forced/reduced/open cleanup成功。React3×実4形式も成功。実ギャラリー10最終3、全型3/730契約3/native badges20とbreadcrumbs20×2layoutsの実imports3成功。markup/initializerは不変、ReactはJSDocだけを実形へ更新。
+
+独立最終3全10合格。100hash/CSS10一致、60正本不変、共有源は2から不変。A主形/近似比較/少数/実接点/白暗孔/正常motion hover反復/readonly実pointer/焦点も確認。独立は固定portable nativeによる検査で、主担当Reactと全基盤ログは独立再実行と区別。
+
+Chromiumで実操作/実像を検証。forced/reducedはエミュレーション。他OS/ブラウザ、実機touch、SRは未確認。全730の全面再操作ではない。Liquid Glass部品ソースと外観は変更していない。最終production buildは全517完了時に実施。
+
+画像内蔵HTMLは単組10/80画像/759073bytes、全310/1536画像/11805142bytes。Chromium setContentで初期899ms/全画像decode1429ms/外部通信0/例外0/390px溢れなし。直接file://は環境のnavigation制限で未確認。
