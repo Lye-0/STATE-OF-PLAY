@@ -1,6 +1,6 @@
 # Railcar Select
 
-吊るす札から候補の吊り列へ。各項目の穴と紐が連続し、選択した札の支点を強調。
+二本の線で吊られた切欠き札が、一本ずつ横桟へつながる選択列。穴・吊り線・レールを連続させ、選択札の線を暖かい金属色で示す。札と文字は固定する。
 
 ## 選択肢の差し替え
 Reactではitems配列へvalue/label/description/icon/badgeを渡します。Vanillaではmarkup.html内のdata-valueと表示内容を編集し、init(root)します。動的にDOMの選択肢を変更した後はcontroller.refresh()を呼びます。

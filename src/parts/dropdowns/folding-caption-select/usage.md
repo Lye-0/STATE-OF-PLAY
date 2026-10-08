@@ -1,6 +1,6 @@
 # Folding Caption Select
 
-選択肢を一枚のカード索引へ分け、見出しと確定印を対角へ配置したブックプレート。
+折った見出しを差し込む選択欄。対角の二つの金属の角帽子が紙端の外側から上面へ回り込み、厚い唇で一枚を保持する。選択印と角帽子の濃さを連動し、本文は動かさない。
 
 ## 選択肢の差し替え
 Reactではitems配列へvalue/label/description/icon/badgeを渡します。Vanillaではmarkup.html内のdata-valueと表示内容を編集し、init(root)します。動的にDOMの選択肢を変更した後はcontroller.refresh()を呼びます。

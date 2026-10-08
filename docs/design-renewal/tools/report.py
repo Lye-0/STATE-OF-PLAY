@@ -21,10 +21,14 @@ parts=[]
 for row,part,review in approved:
  meta=json.loads((root/'src/parts'/row['category']/row['id']/'meta.json').read_text());d=w/'batches'/row['batch'];photos=d/'captures/photos'
  # Prefer the last gallery state capture if this part alone was rechecked.
- rounds=sorted((d/'captures').glob('round-*'))
+ rounds=sorted((d/'captures').glob('round-*'),key=lambda p:int(p.name.split('-')[-1]))
  for r in rounds:
   if (r/'photos'/f"{row['id']}-stage.png").exists():photos=r/'photos'
+ assert (photos/f"{row['id']}-stage.png").exists(),f"Missing gallery evidence: {row['id']}"
+ assert (photos/f"{row['id']}-narrow.png").exists(),f"Missing narrow evidence: {row['id']}"
  images=figure(photos/f"{row['id']}-stage.png",'展示・初期状態')+figure(photos/f"{row['id']}-narrow.png",'320px・操作後')
+ if row['category']=='dropdowns':
+  images+=figure(photos/f"{row['id']}-expanded.png",'展開した候補・選択済み行')
  # Native switch images distinguish actual OFF and ON even when the gallery starts ON.
  if row['category']=='toggles':
   folders=sorted((d/'captures').glob('reviewer*'))

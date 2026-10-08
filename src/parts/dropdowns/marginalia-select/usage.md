@@ -1,6 +1,6 @@
 # Marginalia Select
 
-縫い目のある一枚のカバーを開き、選択した行を布のタブとして留める。
+布の背を通る縫い線へ、小さな折った留め帯で各候補を接続する選択カバー。淡い布の本文と、背へつながるタブを分け、確定印を縫い付けた小片として示す。
 
 ## 選択肢の差し替え
 Reactではitems配列へvalue/label/description/icon/badgeを渡します。Vanillaではmarkup.html内のdata-valueと表示内容を編集し、init(root)します。動的にDOMの選択肢を変更した後はcontroller.refresh()を呼びます。

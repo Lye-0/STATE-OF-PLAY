@@ -9,7 +9,8 @@ if sys.argv[1]=='prepare':
  reviews=sorted((p for p in d.glob('review-*.json') if re.fullmatch(r'review-\d+\.json',p.name)),key=lambda p:int(p.stem.split('-')[1]));review=read(reviews[-1]);assert review['overall']=='pass';assert len(review['parts'])==len(selected);assert all(p['verdict']=='pass' for p in review['parts']);assert {p['id'] for p in review['parts']}=={r['id'] for r in selected}
  round=review['round'];frozen=read(d/f'review-input-{round}.json');assert all(hashlib.sha256((root/p).read_bytes()).hexdigest()==h for p,h in frozen['sourceHashes'].items())
  validation=read(d/'validation.json');assert all(v=='pass' for v in validation.values()),validation
- state.update(state='ready_to_push',validation=validation);state['reviewRounds']=[dict(x,state='completed' if x['round']==round else 'responded',result='pass' if x['round']==round else 'changes_requested') for x in state['reviewRounds']];write(d/'status.json',state)
+ reviewed={read(p)['round']:read(p)['overall'] for p in reviews}
+ state.update(state='ready_to_push',validation=validation);state['reviewRounds']=[dict(x,state=('completed' if x['round']==round else 'responded') if x['round'] in reviewed else 'superseded',result=reviewed.get(x['round'],'self_check_before_review')) for x in state['reviewRounds']];write(d/'status.json',state)
  for r in selected:r.update(state='ready_to_push',review={'round':round,'verdict':'pass'})
  write(w/'targets.json',rows);progress.update(activeImplementation='B%03d'%(int(batch[1:])+2),activeReview='B%03d'%(int(batch[1:])+1));write(w/'progress.json',progress)
  paths=['src/parts/'+r['category']+'/'+r['id'] for r in selected]+['docs/design-renewal/batches/'+batch,'docs/design-renewal/targets.json','docs/design-renewal/progress.json']

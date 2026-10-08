@@ -1,6 +1,6 @@
 # Split Ticket Select
 
-石の凹みに選択状態をはめる。展開面は凹みを三段の棚として構成し、選択面が前へ出る。
+非対称の石の凹みへ候補を収める選択棚。行の下に磨いた切断面を露出し、外周を三段に削る。選択の刻みは左の凹みへ置き、文字面を前後に動かさない。
 
 ## 選択肢の差し替え
 Reactではitems配列へvalue/label/description/icon/badgeを渡します。Vanillaではmarkup.html内のdata-valueと表示内容を編集し、init(root)します。動的にDOMの選択肢を変更した後はcontroller.refresh()を呼びます。

@@ -1,6 +1,6 @@
 # Interleave Select
 
-重なる紙を展開すると候補が一枚ずつ独立するインターリーブ。選択紙だけが綴じ位置へ接続。
+紙の断面をずらして綴じた選択帳。輪が背と各候補の穿孔をまたぎ、選択した紙の綴じ線だけを銅色にする。文字を動かさず、紙の層と接合を見せる。
 
 ## 選択肢の差し替え
 Reactではitems配列へvalue/label/description/icon/badgeを渡します。Vanillaではmarkup.html内のdata-valueと表示内容を編集し、init(root)します。動的にDOMの選択肢を変更した後はcontroller.refresh()を呼びます。

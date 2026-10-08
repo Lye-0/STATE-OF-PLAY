@@ -1,6 +1,6 @@
 # Thumb Index Select
 
-折った小包の口から選択面が現れる。候補を段として分け、選択行の折り返しを閉じる。
+小包の左右の折り込みと下のV字の口で、候補の紙を保持する選択欄。選択した口だけを深いクラフト色へ変え、読む面と折り返しの場所を分離する。
 
 ## 選択肢の差し替え
 Reactではitems配列へvalue/label/description/icon/badgeを渡します。Vanillaではmarkup.html内のdata-valueと表示内容を編集し、init(root)します。動的にDOMの選択肢を変更した後はcontroller.refresh()を呼びます。

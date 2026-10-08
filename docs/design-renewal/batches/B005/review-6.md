@@ -1,0 +1,38 @@
+# B005 round 6 — pass
+
+10件すべてpass。R084のforced非選択✓を解消。通常造形はround-5の合格を引き継ぎ、追加の意匠変更は求めない。
+
+## 最終判定
+
+- R076 interleave-select — pass。紙の層・背・紙へまたがる綴じ輪が構造として読める。選択の銅色の綴じ線と確定印は情報を邪魔せず、輪が機能と結び付く。 通常造形は合格基準として固定し、forced-colors不具合も解消。
+
+- R077 railcar-select — pass。暗い空隙を挟んで桟から下がる切欠き札が明快。候補を替えても穴・吊り線・札が残り、通常の行背景の色替えとは異なる。 通常造形は合格基準として固定し、forced-colors不具合も解消。
+
+- R078 thumb-index-select — pass。左右の折り込み、候補下端のV字の口、クラフトの表裏が同じ小包の構造にまとまる。固定本文面と折り口の状態変化を分離している。 通常造形は合格基準として固定し、forced-colors不具合も解消。
+
+- R079 split-ticket-select — pass。固定半径の非対称な凹みと露出した明るい断面、右外周の削りが石の厚みを示す。長文でも角が読む面へ入り込まず、R033の旧長文問題を再発していない。 通常造形は合格基準として固定し、forced-colors不具合も解消。
+
+- R080 shelf-bay-select — pass。大きな索引列と右へ折れた耳の連続が候補を探す構造を作る。本文列と索引列の階層が明快で、左右交互の不安定な外形を解消。 通常造形は合格基準として固定し、forced-colors不具合も解消。
+
+- R082 marginalia-select — pass。折った留め帯が背の縫い線をまたぎ、布の候補へつながる。紫色だけに頼らず、R055の輪やR047の取っ手と異なる留め方が読める。 通常造形は合格基準として固定し、forced-colors不具合も解消。
+
+- R083 hex-bolster-select — pass。左上の固定六角支点と、右下の固定ガイドから斜めへ入る楔に再構成。面の切欠きと支点の重なり、選択時に楔だけが進む役割が見え、R048の左右C字金具との反復を解消。本文とhit領域は固定。
+
+- R084 twin-column-select — pass。本文と独立した打刻半券の造形合格を引継ぎ。非選択印opacity:0/選択印opacity:1でforcedでも確定印は一つだけになり、標準短文・長文・別行確定後すべて文字と選択状態を読める。
+
+- R085 brass-ledger-select — pass。木の面板と下の木口、棚の暗い空隙、二つの支点を持つ取っ手が一貫する。金と水色の混在を解消し、確定印と取っ手の状態が対応する。 通常造形は合格基準として固定し、forced-colors不具合も解消。
+
+- R086 folding-caption-select — pass。37×29pxの角帽子が紙端の外4pxから9pxの唇で面へ回り込み、上面と側面が同じ保持体として読める。対角配置を維持し、R032の回転板を反復せず接合問題を解消。
+
+## 今回の検証範囲
+
+- review-input-6のsourceHashes100件を固定sourceへ照合し全一致。round-5からのsource差分はR084のcheck opacity:0/selected opacity:1の2箇所のみ。他9件は同一。
+- R084のnative/source CSSはimportを除き一致。Chromiumで固定native版を実操作。
+- R084を320pxで通常/forced × 短文/長文 × 初期候補/別候補確定の8条件検査。Home/EndとEnterで確定し、常にopacity:1がaria-selected=trueの一件だけであることをassert。
+- captures/reviewer-6/forced-short-first/last、forced-long-first/lastを目視。本文・説明・確定印が読め、非選択印が消え、選択枠と印の対応が一致。通常の半券面も保持。
+- 通常造形10件の合格、他9件の操作/forced/狭幅/RTL/reduced検証はround-5から引継ぎ。今回再操作したのはR084の残件と関連する表示回帰のみ。
+
+## 制限
+
+- 今回の実ブラウザ検査はR084の差分へ限定。他9件はハッシュ一致を根拠にround-5判定を引き継いだ。
+- Chromiumとmedia emulation。実機touchと他ブラウザ未実施。

@@ -1,0 +1,271 @@
+{
+  "batch": "B005",
+  "round": 4,
+  "snapshot": "docs/design-renewal/batches/B005/snapshot/round-4",
+  "overall": "changes_requested",
+  "parts": [
+    {
+      "number": 76,
+      "id": "interleave-select",
+      "verdict": "adjust",
+      "normalDesignVerdict": "pass",
+      "assessment": "紙の層・背・紙へまたがる綴じ輪が構造として読める。選択の銅色の綴じ線と確定印は情報を邪魔せず、輪が機能と結び付く。 通常造形は合格基準として固定し、残件は共通forced-colors不具合。",
+      "findings": [
+        {
+          "key": "R076-forced-selected-text",
+          "severity": "blocking",
+          "kind": "ui",
+          "evidence": "固定round-4をforced-colors:activeで初期選択のまま展開。captures/reviewer-4/interleave-select-forced-short.png と -forced.png。contact-forced.pngで全10件を比較。forced-paint.jsonは選択行Highlight系背景、子文字rgb(255,255,255)、forcedColorAdjust:autoを記録。",
+          "problem": "選択済み行の名称・説明・符号・確定印が白いbackplateに埋もれ、文字を読めない。標準の短いラベルでも再現する。既存probeの行背景と文字色が異なるという判定だけでは、文字直下の実描画を検出できない。",
+          "proposal": "forced colorsのシステム色と実描画の組合せを修正する。例えばCanvas/CanvasTextの本文を保ち、選択はHighlightの外枠と確定印で示す構成へ統一する。Highlight面を保持するなら文字直下のbackplateまで含めて読めることを実画像で確認する。行背景だけの比較に加え、短文/長文・選択行変更後の文字の視認を検証する。"
+        }
+      ],
+      "nearestComparisons": [
+        "R021",
+        "R035",
+        "R050",
+        "R082"
+      ]
+    },
+    {
+      "number": 77,
+      "id": "railcar-select",
+      "verdict": "adjust",
+      "normalDesignVerdict": "pass",
+      "assessment": "暗い空隙を挟んで桟から下がる切欠き札が明快。候補を替えても穴・吊り線・札が残り、通常の行背景の色替えとは異なる。 通常造形は合格基準として固定し、残件は共通forced-colors不具合。",
+      "findings": [
+        {
+          "key": "R077-forced-selected-text",
+          "severity": "blocking",
+          "kind": "ui",
+          "evidence": "固定round-4をforced-colors:activeで初期選択のまま展開。captures/reviewer-4/railcar-select-forced-short.png と -forced.png。contact-forced.pngで全10件を比較。forced-paint.jsonは選択行Highlight系背景、子文字rgb(255,255,255)、forcedColorAdjust:autoを記録。",
+          "problem": "選択済み行の名称・説明・符号・確定印が白いbackplateに埋もれ、文字を読めない。標準の短いラベルでも再現する。既存probeの行背景と文字色が異なるという判定だけでは、文字直下の実描画を検出できない。",
+          "proposal": "forced colorsのシステム色と実描画の組合せを修正する。例えばCanvas/CanvasTextの本文を保ち、選択はHighlightの外枠と確定印で示す構成へ統一する。Highlight面を保持するなら文字直下のbackplateまで含めて読めることを実画像で確認する。行背景だけの比較に加え、短文/長文・選択行変更後の文字の視認を検証する。"
+        }
+      ],
+      "nearestComparisons": [
+        "R022",
+        "R028",
+        "R076"
+      ]
+    },
+    {
+      "number": 78,
+      "id": "thumb-index-select",
+      "verdict": "adjust",
+      "normalDesignVerdict": "pass",
+      "assessment": "左右の折り込み、候補下端のV字の口、クラフトの表裏が同じ小包の構造にまとまる。固定本文面と折り口の状態変化を分離している。 通常造形は合格基準として固定し、残件は共通forced-colors不具合。",
+      "findings": [
+        {
+          "key": "R078-forced-selected-text",
+          "severity": "blocking",
+          "kind": "ui",
+          "evidence": "固定round-4をforced-colors:activeで初期選択のまま展開。captures/reviewer-4/thumb-index-select-forced-short.png と -forced.png。contact-forced.pngで全10件を比較。forced-paint.jsonは選択行Highlight系背景、子文字rgb(255,255,255)、forcedColorAdjust:autoを記録。",
+          "problem": "選択済み行の名称・説明・符号・確定印が白いbackplateに埋もれ、文字を読めない。標準の短いラベルでも再現する。既存probeの行背景と文字色が異なるという判定だけでは、文字直下の実描画を検出できない。",
+          "proposal": "forced colorsのシステム色と実描画の組合せを修正する。例えばCanvas/CanvasTextの本文を保ち、選択はHighlightの外枠と確定印で示す構成へ統一する。Highlight面を保持するなら文字直下のbackplateまで含めて読めることを実画像で確認する。行背景だけの比較に加え、短文/長文・選択行変更後の文字の視認を検証する。"
+        }
+      ],
+      "nearestComparisons": [
+        "R044",
+        "R052",
+        "R093"
+      ]
+    },
+    {
+      "number": 79,
+      "id": "split-ticket-select",
+      "verdict": "adjust",
+      "normalDesignVerdict": "pass",
+      "assessment": "固定半径の非対称な凹みと露出した明るい断面、右外周の削りが石の厚みを示す。長文でも角が読む面へ入り込まず、R033の旧長文問題を再発していない。 通常造形は合格基準として固定し、残件は共通forced-colors不具合。",
+      "findings": [
+        {
+          "key": "R079-forced-selected-text",
+          "severity": "blocking",
+          "kind": "ui",
+          "evidence": "固定round-4をforced-colors:activeで初期選択のまま展開。captures/reviewer-4/split-ticket-select-forced-short.png と -forced.png。contact-forced.pngで全10件を比較。forced-paint.jsonは選択行Highlight系背景、子文字rgb(255,255,255)、forcedColorAdjust:autoを記録。",
+          "problem": "選択済み行の名称・説明・符号・確定印が白いbackplateに埋もれ、文字を読めない。標準の短いラベルでも再現する。既存probeの行背景と文字色が異なるという判定だけでは、文字直下の実描画を検出できない。",
+          "proposal": "forced colorsのシステム色と実描画の組合せを修正する。例えばCanvas/CanvasTextの本文を保ち、選択はHighlightの外枠と確定印で示す構成へ統一する。Highlight面を保持するなら文字直下のbackplateまで含めて読めることを実画像で確認する。行背景だけの比較に加え、短文/長文・選択行変更後の文字の視認を検証する。"
+        }
+      ],
+      "nearestComparisons": [
+        "R025",
+        "R033",
+        "R061"
+      ]
+    },
+    {
+      "number": 80,
+      "id": "shelf-bay-select",
+      "verdict": "adjust",
+      "normalDesignVerdict": "pass",
+      "assessment": "大きな索引列と右へ折れた耳の連続が候補を探す構造を作る。本文列と索引列の階層が明快で、左右交互の不安定な外形を解消。 通常造形は合格基準として固定し、残件は共通forced-colors不具合。",
+      "findings": [
+        {
+          "key": "R080-forced-selected-text",
+          "severity": "blocking",
+          "kind": "ui",
+          "evidence": "固定round-4をforced-colors:activeで初期選択のまま展開。captures/reviewer-4/shelf-bay-select-forced-short.png と -forced.png。contact-forced.pngで全10件を比較。forced-paint.jsonは選択行Highlight系背景、子文字rgb(255,255,255)、forcedColorAdjust:autoを記録。",
+          "problem": "選択済み行の名称・説明・符号・確定印が白いbackplateに埋もれ、文字を読めない。標準の短いラベルでも再現する。既存probeの行背景と文字色が異なるという判定だけでは、文字直下の実描画を検出できない。",
+          "proposal": "forced colorsのシステム色と実描画の組合せを修正する。例えばCanvas/CanvasTextの本文を保ち、選択はHighlightの外枠と確定印で示す構成へ統一する。Highlight面を保持するなら文字直下のbackplateまで含めて読めることを実画像で確認する。行背景だけの比較に加え、短文/長文・選択行変更後の文字の視認を検証する。"
+        }
+      ],
+      "nearestComparisons": [
+        "R028",
+        "R076",
+        "R084"
+      ]
+    },
+    {
+      "number": 82,
+      "id": "marginalia-select",
+      "verdict": "adjust",
+      "normalDesignVerdict": "pass",
+      "assessment": "折った留め帯が背の縫い線をまたぎ、布の候補へつながる。紫色だけに頼らず、R055の輪やR047の取っ手と異なる留め方が読める。 通常造形は合格基準として固定し、残件は共通forced-colors不具合。",
+      "findings": [
+        {
+          "key": "R082-forced-selected-text",
+          "severity": "blocking",
+          "kind": "ui",
+          "evidence": "固定round-4をforced-colors:activeで初期選択のまま展開。captures/reviewer-4/marginalia-select-forced-short.png と -forced.png。contact-forced.pngで全10件を比較。forced-paint.jsonは選択行Highlight系背景、子文字rgb(255,255,255)、forcedColorAdjust:autoを記録。",
+          "problem": "選択済み行の名称・説明・符号・確定印が白いbackplateに埋もれ、文字を読めない。標準の短いラベルでも再現する。既存probeの行背景と文字色が異なるという判定だけでは、文字直下の実描画を検出できない。",
+          "proposal": "forced colorsのシステム色と実描画の組合せを修正する。例えばCanvas/CanvasTextの本文を保ち、選択はHighlightの外枠と確定印で示す構成へ統一する。Highlight面を保持するなら文字直下のbackplateまで含めて読めることを実画像で確認する。行背景だけの比較に加え、短文/長文・選択行変更後の文字の視認を検証する。"
+        }
+      ],
+      "nearestComparisons": [
+        "R031",
+        "R047",
+        "R055",
+        "R076"
+      ]
+    },
+    {
+      "number": 83,
+      "id": "hex-bolster-select",
+      "verdict": "redesign",
+      "normalDesignVerdict": "redesign",
+      "assessment": "面へかかる左右の顎は改善したが、C字の金具で矩形を両側から挟み、内側へ締める構造と動きが合格済みR048を反復する。",
+      "findings": [
+        {
+          "key": "R083-forced-selected-text",
+          "severity": "blocking",
+          "kind": "ui",
+          "evidence": "固定round-4をforced-colors:activeで初期選択のまま展開。captures/reviewer-4/hex-bolster-select-forced-short.png と -forced.png。contact-forced.pngで全10件を比較。forced-paint.jsonは選択行Highlight系背景、子文字rgb(255,255,255)、forcedColorAdjust:autoを記録。",
+          "problem": "選択済み行の名称・説明・符号・確定印が白いbackplateに埋もれ、文字を読めない。標準の短いラベルでも再現する。既存probeの行背景と文字色が異なるという判定だけでは、文字直下の実描画を検出できない。",
+          "proposal": "forced colorsのシステム色と実描画の組合せを修正する。例えばCanvas/CanvasTextの本文を保ち、選択はHighlightの外枠と確定印で示す構成へ統一する。Highlight面を保持するなら文字直下のbackplateまで含めて読めることを実画像で確認する。行背景だけの比較に加え、短文/長文・選択行変更後の文字の視認を検証する。"
+        },
+        {
+          "key": "R083-clamp-duplication",
+          "severity": "major",
+          "kind": "duplication",
+          "evidence": "reviewer-4/hex-bolster-select-initial.png、-expanded.png、-selected-last.png。B003/captures/reviewer-round2/reframed-key-button-initial.png、-hover.png。skinでは左右border4pxのC字を選択時translateX(+2px/-2px)。",
+          "problem": "R048と同じ左右C字金具、平らな矩形面、内側へ締める動きが主役。popupに三行並べる差だけではカテゴリを跨ぐAの別案として不十分。六角という名称の再現自体が要件ではない。",
+          "proposal": "対角の支点と楔など、荷重と接続が異なる保持構造へ再設計する。例えば上下/斜めの別方向から固定点と可動点を組み、選択時に可動点だけが係合する。本文/行hit領域は固定し、単にC字を六角に塗り替える変更で終えない。"
+        }
+      ],
+      "nearestComparisons": [
+        "R048",
+        "R042",
+        "R051"
+      ]
+    },
+    {
+      "number": 84,
+      "id": "twin-column-select",
+      "verdict": "adjust",
+      "normalDesignVerdict": "adjust",
+      "assessment": "本文と符号の列、選択時の区切り維持は改善。現状は紙色の罫線リストと細い穿孔模様が中心で、Aの固有構造はまだ弱い。",
+      "findings": [
+        {
+          "key": "R084-forced-selected-text",
+          "severity": "blocking",
+          "kind": "ui",
+          "evidence": "固定round-4をforced-colors:activeで初期選択のまま展開。captures/reviewer-4/twin-column-select-forced-short.png と -forced.png。contact-forced.pngで全10件を比較。forced-paint.jsonは選択行Highlight系背景、子文字rgb(255,255,255)、forcedColorAdjust:autoを記録。",
+          "problem": "選択済み行の名称・説明・符号・確定印が白いbackplateに埋もれ、文字を読めない。標準の短いラベルでも再現する。既存probeの行背景と文字色が異なるという判定だけでは、文字直下の実描画を検出できない。",
+          "proposal": "forced colorsのシステム色と実描画の組合せを修正する。例えばCanvas/CanvasTextの本文を保ち、選択はHighlightの外枠と確定印で示す構成へ統一する。Highlight面を保持するなら文字直下のbackplateまで含めて読めることを実画像で確認する。行背景だけの比較に加え、短文/長文・選択行変更後の文字の視認を検証する。"
+        },
+        {
+          "key": "R084-receipt-structure",
+          "severity": "major",
+          "kind": "design",
+          "evidence": "reviewer-4/twin-column-select-expanded.png、-selected-last.png、-closed-long.png。原730のR305 receipt-tail-notice、R615 ledger-command、R685 receipt-register-table画像と比較。",
+          "problem": "通常の紙色の一覧に罫線・右端4pxの穿孔模様・傾けた四角いチェックを加えた構成が中心。本文列の整列は良いが、R305/R615/R685にも現れる紙と帳票の表層的な装飾との差が弱く、Bにも自然に収まる。",
+          "proposal": "読み面の簡潔さを維持し、独立した打刻半券や切取り部の段差/折れを一つ設け、選択確定の印がその構造に収まるようにする。穿孔を増やすだけでなく本文と確定欄の接合を外形で示す。本文全体を動かしたり多重装飾を足したりする必要はない。"
+        }
+      ],
+      "nearestComparisons": [
+        "R080",
+        "R305",
+        "R615",
+        "R685"
+      ]
+    },
+    {
+      "number": 85,
+      "id": "brass-ledger-select",
+      "verdict": "adjust",
+      "normalDesignVerdict": "pass",
+      "assessment": "木の面板と下の木口、棚の暗い空隙、二つの支点を持つ取っ手が一貫する。金と水色の混在を解消し、確定印と取っ手の状態が対応する。 通常造形は合格基準として固定し、残件は共通forced-colors不具合。",
+      "findings": [
+        {
+          "key": "R085-forced-selected-text",
+          "severity": "blocking",
+          "kind": "ui",
+          "evidence": "固定round-4をforced-colors:activeで初期選択のまま展開。captures/reviewer-4/brass-ledger-select-forced-short.png と -forced.png。contact-forced.pngで全10件を比較。forced-paint.jsonは選択行Highlight系背景、子文字rgb(255,255,255)、forcedColorAdjust:autoを記録。",
+          "problem": "選択済み行の名称・説明・符号・確定印が白いbackplateに埋もれ、文字を読めない。標準の短いラベルでも再現する。既存probeの行背景と文字色が異なるという判定だけでは、文字直下の実描画を検出できない。",
+          "proposal": "forced colorsのシステム色と実描画の組合せを修正する。例えばCanvas/CanvasTextの本文を保ち、選択はHighlightの外枠と確定印で示す構成へ統一する。Highlight面を保持するなら文字直下のbackplateまで含めて読めることを実画像で確認する。行背景だけの比較に加え、短文/長文・選択行変更後の文字の視認を検証する。"
+        }
+      ],
+      "nearestComparisons": [
+        "R029",
+        "R079",
+        "R026"
+      ]
+    },
+    {
+      "number": 86,
+      "id": "folding-caption-select",
+      "verdict": "adjust",
+      "normalDesignVerdict": "adjust",
+      "assessment": "本文の整列と対角配置は良いが、留めは紙の内側に描いたL字印に留まり、保持の接合が成立していない。",
+      "findings": [
+        {
+          "key": "R086-forced-selected-text",
+          "severity": "blocking",
+          "kind": "ui",
+          "evidence": "固定round-4をforced-colors:activeで初期選択のまま展開。captures/reviewer-4/folding-caption-select-forced-short.png と -forced.png。contact-forced.pngで全10件を比較。forced-paint.jsonは選択行Highlight系背景、子文字rgb(255,255,255)、forcedColorAdjust:autoを記録。",
+          "problem": "選択済み行の名称・説明・符号・確定印が白いbackplateに埋もれ、文字を読めない。標準の短いラベルでも再現する。既存probeの行背景と文字色が異なるという判定だけでは、文字直下の実描画を検出できない。",
+          "proposal": "forced colorsのシステム色と実描画の組合せを修正する。例えばCanvas/CanvasTextの本文を保ち、選択はHighlightの外枠と確定印で示す構成へ統一する。Highlight面を保持するなら文字直下のbackplateまで含めて読めることを実画像で確認する。行背景だけの比較に加え、短文/長文・選択行変更後の文字の視認を検証する。"
+        },
+        {
+          "key": "R086-corner-joint",
+          "severity": "major",
+          "kind": "design",
+          "evidence": "reviewer-4/folding-caption-select-expanded.png と -closed-long.png。option::beforeはleft5px/top6pxの26×20px、3px上左border。afterも内側right5px/bottom6px。B002 R032の外周をまたぐ保持板と比較。",
+          "problem": "対角の金具が紙端をまたがず、面内に浮いたL字のコーナー印として見える。小さな鋲も紙の内側で、金具がどこへ留まり紙を押さえるか不明。単なる角丸リストからの改善はあるが、保持構造がAの見せ場になるには弱い。",
+          "proposal": "金属の角帽子など、台・紙端・上にかかる唇を一続きの断面で描き、鋲を台と金具の接合へ置く。triggerとpopupで同じ保持原理を使い、本文への侵入を避ける。R032の片隅の回転板をそのまま反復せず、対角配置の必然性を保つ。"
+        }
+      ],
+      "nearestComparisons": [
+        "R032",
+        "R028",
+        "R051"
+      ]
+    }
+  ],
+  "checks": [
+    "最新固定round-4のみ検査。review-input-4のsourceHashes100件一致。nativeとsourceの10件CSSはimportパス以外一致。",
+    "Chromium /usr/bin/chromium、Viteでportable native版を実行。10件ともSpace展開、End/Enterで別候補確定、focus復帰、Home/Escapeで確定維持、クリック確定を操作。",
+    "trigger disabledで展開抑止、別検査で候補2をaria-disabledにしてHome/ArrowDown/Enterがpublishedへスキップすることを全10件確認。",
+    "normal motionのhover→leave→reenterで行と本文の相対矩形が不変。初期/展開/hover/別候補確定後の画像を取得し、選択済み行の面と造形の保持を目視。",
+    "320px長文の日本語＋空白なし英字を全候補へ注入。popup/文字が収まりdocument幅320。長文を実際に確定した閉じたtriggerも全10件撮影し幅320維持。",
+    "RTL展開、reduced-motionでtransient animationなしを確認。通常色のpopup可視文字contrast検査はrailcarを除き失敗0、railcarはpseudo面を実画像で確認。",
+    "forced-colorsは初回probeの数値判定こそ通過したが、画像で全10件の選択済み本文消失を発見。新規ページ・標準短文でも再現しforced-shortとforced-paint.jsonへ記録。forcedの視覚検査は不合格。",
+    "730件baselineメタデータから素材/機構の近似候補を検索し、dropdownsカテゴリ原画像、R305/R615/R685、B003 R048、B002 R032の画像を比較。既検査40件の確定構造も比較基準に使用。"
+  ],
+  "limits": [
+    "全730件の再操作は実施していない。既存監査と近似画像の比較。",
+    "Chromiumとforced/reduced emulationでの検査。実機touchと他ブラウザ未実施。",
+    "旧round1〜3とgallery round2画像は最終色判定に使っていない。",
+    "一時的なブラウザ上のforced表示改善案の試験は固定snapshotの合格証拠に含めない。正本実装は未変更。"
+  ]
+}

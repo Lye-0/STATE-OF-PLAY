@@ -1,6 +1,6 @@
 # Shelf Bay Select
 
-紙の索引を選択欄の横へ広げる。候補の大きい符号を独立した索引列に置く。
+大きな索引符号を本文から分け、右へ折った青灰の紙耳を一列に揃えたカード索引。選択した紙耳を明るくし、読む列と探す列の役割を分離する。
 
 ## 選択肢の差し替え
 Reactではitems配列へvalue/label/description/icon/badgeを渡します。Vanillaではmarkup.html内のdata-valueと表示内容を編集し、init(root)します。動的にDOMの選択肢を変更した後はcontroller.refresh()を呼びます。
