@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "max": 100
 };
 export type RibbonEndProgressProps = FoundationProps;
-/** 旗の形に開いた帯へ進捗を染める。固定した終端へ色面が到達する構図。 */
+/** 細い縦の巻芯から、進んだ量だけ一枚の幅広いリボンを引き出す進捗表示。黄色い通常棒と小さい点を廃止し、14pxの三面巻芯と68px幅の布、実終端の大きい燕尾切りへ再構築する。紙面上の余分な飾りでなく、出た布の量そのものが実割合へ一致する。数値は布から離れた固定面に置く。 */
 export default forwardRef<HTMLDivElement, RibbonEndProgressProps>(function RibbonEndProgress(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderProgress} mountContent={mountProgress}/>;
 });

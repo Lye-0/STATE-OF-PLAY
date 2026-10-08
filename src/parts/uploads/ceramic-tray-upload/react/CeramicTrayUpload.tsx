@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "accept": ".png,.jpg,.webp,.txt,.pdf"
 };
 export type CeramicTrayUploadProps = FoundationProps;
-/** 浅い受け皿にファイルを置く。中央の記号と文字を揃え、ドラッグ時に皿の内側だけを明るくする。 */
+/** 広い平底と手前の浅い曲面が、選んだ書類を一つの器で受ける陶製ファイル選択。切れた角丸の四辺枠と小脚を撤去し、投入面からファイル一覧まで連続した底面を作る。手前64pxは上の受唇・曲面・10pxの接地面で構成し、件数が増えると器全体が伸びる。文字とnative削除は曲面から離れた底面へ固定する。 */
 export default forwardRef<HTMLDivElement, CeramicTrayUploadProps>(function CeramicTrayUpload(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });

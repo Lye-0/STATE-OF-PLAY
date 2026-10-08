@@ -62,6 +62,13 @@ for row,part,review in approved:
   actual=next((p for p in reversed(native) if all((p/f"{row['id']}-{name}.png").exists() for name in ['0','50','100','narrow-320','indeterminate'])),None)
   assert actual is not None,f"Missing real progress states: {row['id']}"
   images+=figure(beforeMeter,'修正前・配布版の進捗')+figure(actual/f"{row['id']}-0.png",'修正後・0%')+figure(actual/f"{row['id']}-50.png",'修正後・50%')+figure(actual/f"{row['id']}-100.png",'修正後・100%')+figure(actual/f"{row['id']}-indeterminate.png",'修正後・動きを軽減した未確定状態')+figure(actual/f"{row['id']}-narrow-320.png",'修正後・320pxの長文と範囲変更')
+ if row['category']=='uploads':
+  beforeUpload=w/'evidence/baseline'/f"{row['id']}-upload.png"
+  assert beforeUpload.exists(),f"Missing original upload: {row['id']}"
+  native=sorted((d/'captures').glob('uploads-self-*'),key=lambda p:int(p.name.split('-')[-1]))
+  actual=next((p for p in reversed(native) if all((p/f"{row['id']}-{name}.png").exists() for name in ['initial','selected','narrow-320'])),None)
+  assert actual is not None,f"Missing actual upload selection: {row['id']}"
+  images+=figure(beforeUpload,'修正前・配布版の受け面')+figure(actual/f"{row['id']}-initial.png",'修正後・配布版の受け面')+figure(actual/f"{row['id']}-selected.png",'修正後・実ファイルを選択')+figure(actual/f"{row['id']}-narrow-320.png",'修正後・320pxの全文ファイル名')
  if row['category']=='dropdowns':
   images+=figure(photos/f"{row['id']}-expanded.png",'展開した候補・選択済み行')
  # Native switch images distinguish actual OFF and ON even when the gallery starts ON.

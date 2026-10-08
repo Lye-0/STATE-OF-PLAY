@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "accept": ".png,.jpg,.webp,.txt,.pdf"
 };
 export type CargoBayUploadProps = FoundationProps;
-/** 搬入口の床を示すドロップ領域。左右のガイドと奥の留め具がドラッグ時だけ内へ寄る。 */
+/** 対向する二つの搬入口の支柱を、下の実床へ接続するファイル選択。元の開いた括弧を保持し、18px幅/6pxの支柱と12pxの床へ寸法を揃える。支柱は床へ4px重なり、選択後のファイル一覧は床の延長へ連続する。文字とnative操作範囲は開閉やドラッグで動かさない。 */
 export default forwardRef<HTMLDivElement, CargoBayUploadProps>(function CargoBayUpload(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });

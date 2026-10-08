@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "accept": ".png,.jpg,.webp,.txt,.pdf"
 };
 export type RailPlatformUploadProps = FoundationProps;
-/** 積み下ろしのプラットフォーム。細い二本の支えの上にファイルを受け、選択済み一覧へ連続させる。 */
+/** 二本の縦レールから、下の搬送床とファイル一覧へ接続するファイル選択。元のレールを保持し、5pxのレール端を30pxの床へ接地させ、下の選択済み一覧の側へ幅を揃える。無関係な長い線を減らし、床・レール・実ファイルの関係を一つの搬送面として読めるようにする。 */
 export default forwardRef<HTMLDivElement, RailPlatformUploadProps>(function RailPlatformUpload(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });

@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "accept": ".png,.jpg,.webp,.txt,.pdf"
 };
 export type OpenCornerUploadProps = FoundationProps;
-/** 四隅だけで受け取る領域。大きい塗り面を使わず、中央の記号から外周の角まで余白を保つ。 */
+/** 対角の二つの開いた角だけで受け面を示すファイル選択。元の開角を保持し、薄い線を4px幅/48pxの長さへ揃え、実際に開いた領域を広く保つ。ドラッグでは角の色だけを変え、文字・記号・native選択の操作範囲を縮めない。 */
 export default forwardRef<HTMLDivElement, OpenCornerUploadProps>(function OpenCornerUpload(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });

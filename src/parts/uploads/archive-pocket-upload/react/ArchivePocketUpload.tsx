@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "accept": ".png,.jpg,.webp,.txt,.pdf"
 };
 export type ArchivePocketUploadProps = FoundationProps;
-/** 資料を入れる保管ポケット。上の空いた口と下の保存欄を分け、選択済みファイルは同じ棚へ並べる。 */
+/** 一つの厚みのある収納ポケットへ、選んだファイルを収めるファイル選択。分離した二つの黄色い箱を撤去し、26pxの側面の蛇腹と96pxの前壁、中央が22px下がった実取り出し口へまとめる。読む操作は口の上に固定し、選択したファイルの一覧は前壁へ入り、件数に応じてポケットの下部が伸びる。 */
 export default forwardRef<HTMLDivElement, ArchivePocketUploadProps>(function ArchivePocketUpload(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });

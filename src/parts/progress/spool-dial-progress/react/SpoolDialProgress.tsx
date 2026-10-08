@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "max": 100
 };
 export type SpoolDialProgressProps = FoundationProps;
-/** 巻き取りリールの周回が完了へ近づく。周囲に進捗を集め、中央は固定の数値窓。 */
+/** 一つの太い巻取り環と、固定した中央の数字窓を持つリール式進捗表示。元の同心リールを保持し、重複した細環と破線を撤去する。174pxの実割合環と112pxの淡い数字窓へ線幅と間隔を統一し、0%に着色量を残さず、100%で環全周を満たす。 */
 export default forwardRef<HTMLDivElement, SpoolDialProgressProps>(function SpoolDialProgress(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderProgress} mountContent={mountProgress}/>;
 });
