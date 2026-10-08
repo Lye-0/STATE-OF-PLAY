@@ -14,7 +14,7 @@ try {
  await page.waitForFunction(()=>window.ready);
  for(const section of await page.locator('section').all()){
   const id=await section.getAttribute('data-part'),r=section.locator('[data-foundation=pagination]');
-  if(!await r.count())continue;
+  if(!await r.count()||(process.env.SOP_REVIEW_IDS&&!process.env.SOP_REVIEW_IDS.split(',').includes(id)))continue;
   const call=(name,arg)=>page.evaluate(({id,name,arg})=>window.apis[id][name](arg),{id,name,arg});
   const nav=r.locator('[data-pages]'),current=r.locator('[aria-current=page]');
   await r.screenshot({path:out+'/'+id+'-initial.png'});
@@ -37,7 +37,7 @@ try {
   await call('setData',100);assert.equal(await call('getData'),12);
   await call('setData',-3);assert.equal(await call('getData'),1);
   await call('updateFoundation',{totalPages:1});assert.equal(await nav.locator('[data-page]').count(),3);
-  assert.equal(await nav.locator('button:disabled').count(),2);
+  assert.equal(await nav.locator('button:disabled').count(),2);await r.screenshot({path:out+'/'+id+'-total-one.png'});
   await call('updateFoundation',{totalPages:12456});await call('setData',6234);
   assert.equal(await current.textContent(),'6234');
   assert.equal(await r.locator('[data-page-info] strong').textContent(),'6234');

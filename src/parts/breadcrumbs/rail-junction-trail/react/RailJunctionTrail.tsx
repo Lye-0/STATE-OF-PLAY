@@ -39,7 +39,7 @@ const config: FoundationConfig = {
   ]
 };
 export type RailJunctionTrailProps = FoundationProps;
-/** 駅をつなぐ経路として祖先と現在地を並べる。省略駅を開いても線の方向を保つ。 */
+/** 祖先の駅を二本の連続した縦の線路へ載せ、省略階層の実操作だけが分岐線へ出るパンくず。バラバラの下線と丸い現在地を廃止し、全高へ続く二線、24pxの実停車床、途中階層へ分かれる実分岐、最後の広い終端ホームへ作り直す。階層順はnative DOMと上から下で一致させ、長い駅名もホームの内側で全文を読める。 */
 export default forwardRef<HTMLDivElement, RailJunctionTrailProps>(function RailJunctionTrail(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBreadcrumbs} mountContent={mountBreadcrumbs}/>;
 });

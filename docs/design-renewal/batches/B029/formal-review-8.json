@@ -1,0 +1,173 @@
+{
+  "batch": "B029",
+  "round": 8,
+  "snapshot": "docs/design-renewal/batches/B029/snapshot/round-8",
+  "overall": "pass",
+  "parts": [
+    {
+      "number": 398,
+      "id": "stitched-index-pages",
+      "verdict": "pass",
+      "assessment": "合格。一枚の織布へ上下の厚い返しを作り、16pxピッチの実孔と32px周期の前糸の端点を合わせた。単なる点線の枠から、索引を布面に載せる連続した素材へ変わった。R278の候補ごとの縫い代、R333の二片の縫合、R265の縦帯とは支持と読む面の関係が異なる。",
+      "findings": [],
+      "nearestComparisons": [
+        278,
+        333,
+        265
+      ],
+      "resolvedFindings": [],
+      "inheritedFrom": "formal-review-7.json"
+    },
+    {
+      "number": 399,
+      "id": "open-bracket-pages",
+      "verdict": "pass",
+      "assessment": "合格。曲材の差をmin(48px,25%)へ制限し、総数1の44pxの紙でも33px高の二つの支持が残る。物理的な12pxの肉厚と曲率を一体で鏡映し、通常7slotの48px差/紙への8px接合も維持。1000LTR/320RTLの総数1・7・12/先頭末尾で支持と紙が接続する。",
+      "findings": [],
+      "nearestComparisons": [
+        284,
+        164,
+        262
+      ],
+      "resolvedFindings": [
+        "R399-support-gap",
+        "R399-rtl-curve-edge",
+        "R399-one-page-support-disappears"
+      ],
+      "inheritedFrom": "formal-review-7.json"
+    },
+    {
+      "number": 400,
+      "id": "coin-stack-pages",
+      "verdict": "pass",
+      "assessment": "合格、T保持。元の硬貨の曲率を保ち、実番号も64pxの正円と6pxの小口へ統一した。丸い前後操作だけが別素材になる不整合を除いた。長い番号も面内に収まり、現在貨の濃さは一貫する。",
+      "findings": [],
+      "nearestComparisons": [
+        180,
+        234
+      ],
+      "resolvedFindings": [],
+      "inheritedFrom": "formal-review-7.json"
+    },
+    {
+      "number": 401,
+      "id": "margin-line-pages",
+      "verdict": "pass",
+      "assessment": "合格。赤罫と大数字だけの構成から、28pxの厚いL側受けと14px下底、連続した込め物床が実索引を受ける組版台へ変わった。現在ノンブルは100px高の実活字面となり、14px上肩・8px側面・12px下受面を同じ床へ接続する。全体を閉じる四辺枠や小カードの反復にせず、大小の実数字を支える断面が主形になった。LTR/RTL、少数・末尾・5桁も読む面を保持。",
+      "findings": [],
+      "nearestComparisons": [
+        380,
+        "元R401"
+      ],
+      "resolvedFindings": [
+        "R401-large-number-alone"
+      ],
+      "inheritedFrom": "formal-review-7.json"
+    },
+    {
+      "number": 402,
+      "id": "shuttle-key-pages",
+      "verdict": "pass",
+      "assessment": "合格、T保持。元の丸い前後端と通しの外周軌道、実索引を横断する内側の軌道を揃え、舟形の番号面が軌道を受ける。狭幅の折り返しでも各行へ軌道が続く。標準番号箱の色違いから、元の主題に沿う一つの構成へ整理された。",
+      "findings": [],
+      "nearestComparisons": [
+        63,
+        237,
+        "元R402"
+      ],
+      "resolvedFindings": [],
+      "inheritedFrom": "formal-review-7.json"
+    },
+    {
+      "number": 403,
+      "id": "folded-tab-pages",
+      "verdict": "pass",
+      "assessment": "合格。閉じた四辺の額縁を廃し、24pxずれた中央の実索引紙へ、逆方向の上下44px返しを接続した開いたZ断面になった。中央紙の描画をy44〜H−44へ限定し、RTLにも同じ背景size/center/no-repeatを適用して下層の白い三角を除去。白/暗背景、1000/320px、LTR/RTLで返し外側が実背景に抜け、読む中央紙との端点は接続する。総数1と通常多段でも余分な固定空白を作らず、normal hover/leave/reenterで文字・hit・fontを保つ。",
+      "findings": [],
+      "nearestComparisons": [
+        222,
+        293,
+        353,
+        393
+      ],
+      "resolvedFindings": [
+        "R403-closed-bevel-frame",
+        "R403-paper-underlayer-closes-void",
+        "R403-rtl-background-shorthand"
+      ],
+      "inheritedFrom": "formal-review-7.json"
+    },
+    {
+      "number": 404,
+      "id": "slatted-pages",
+      "verdict": "pass",
+      "assessment": "合格。胴縁10pxに対し板端を6pxとし、両端4pxの実重なりを確認。上木口・下木口・読む板面が一つの支持へ接続し、板間と省略区間だけに胴縁が現れる。R394の一体石梁とは、独立した板/実空隙/共通胴縁の構造が異なる。",
+      "findings": [],
+      "nearestComparisons": [
+        394,
+        219,
+        322
+      ],
+      "resolvedFindings": [
+        "R404-slats-detached"
+      ],
+      "inheritedFrom": "formal-review-7.json"
+    },
+    {
+      "number": 405,
+      "id": "bookplate-pages",
+      "verdict": "pass",
+      "assessment": "合格、T保持。各番号の重い二重枠を廃し、一枚書票の薄い輪郭・左右の貼り代・小さい隅留めへ線量を整理。現在番号も同じ紙の印として落ち着く。新規Rの大胆な機構を要求する部品とは区別し、元の紙票の精度を改善したと判断する。",
+      "findings": [],
+      "nearestComparisons": [
+        197,
+        218,
+        "元R405"
+      ],
+      "resolvedFindings": [],
+      "inheritedFrom": "formal-review-7.json"
+    },
+    {
+      "number": 411,
+      "id": "archive-route-trail",
+      "verdict": "pass",
+      "assessment": "合格、T保持。別段の現在地という元の明快な階層を維持し、祖先の経路・一枚の収蔵票・6px小口と9px貼り背をまとめた。長い現在地と祖先は全文を折り返し、実省略メニューも同じ左背の素材を保つ。",
+      "findings": [],
+      "nearestComparisons": [
+        220,
+        82,
+        "元R411"
+      ],
+      "resolvedFindings": [],
+      "inheritedFrom": "formal-review-7.json"
+    },
+    {
+      "number": 412,
+      "id": "rail-junction-trail",
+      "verdict": "pass",
+      "assessment": "合格。全祖先の論理padding38px/12pxとmore58pxを揃え、RTLでも文字・Homeアイコンが右の線路と床から離れる。実moreの分岐と終端ホームは維持。通常hoverと実第二メニューリンク遷移も成功。",
+      "findings": [],
+      "nearestComparisons": [
+        256,
+        302,
+        277
+      ],
+      "normalDesignVerdict": "pass",
+      "resolvedFindings": [
+        "R412-rtl-reading-reserve"
+      ],
+      "inheritedFrom": "formal-review-7.json"
+    }
+  ],
+  "checks": [
+    "固定round-8正本100 SHA-256と10native配布CSSは全一致。reviewer-extra-8/checks.json。",
+    "round-7比でfolded-tab-pages/styles.cssだけ変更、99正本不変、共有navigation10exportもバイト同一。reviewer-extra-8/inheritance.json。",
+    "R403広狭1000/320×LTRRTL×白暗背景の8画像とcomputedを独立再検査。全て100% calc(100% - 88px)/50% 50%/no-repeatで一致し、外側の白い三角は除去。reviewer-z-layer-8。",
+    "R403の1000LTR/320RTL×総数1・7・12/先頭末尾の8実像を確認。少数と複数行で上下返しと中央紙が接続、通常shapeを維持。normal hover/leave/reenterで文字・hit・font固定。reviewer-page-materials-8。",
+    "他9件の正式7合格は不変hashに基づき継承。数値Rangeの96状態528番号（round7）、追加320状態1760番号（round6）、72実readOnlyクリック、2trail実メニュー/焦点/長文RTL/forced/reducedの独立結果は対応する不変部分に継承。"
+  ],
+  "limits": [
+    "今回の新規独立操作はR403描画範囲/接合/通常motion/少数に限定。API・5桁・forced/reduced・他9件の操作は前回までの成功と不変hashを継承。",
+    "Chromium固定portable nativeで検査。React4形式と基盤恒久回帰の結果は主担当情報を補助参照し、今回独立再実行とは扱わない。元監査と近似の判断は正式4/6/7を維持。"
+  ]
+}

@@ -20,14 +20,20 @@ export function mountPagination(root:HTMLElement,config:FoundationConfig,options
 }
 export function renderBreadcrumbs(o:FoundationOptions):string{return heading(o)+`<nav class="ff-breadcrumb" aria-label="${escape(o.label??'現在の場所')}"><ol data-breadcrumbs></ol></nav><div class="ff-floating ff-crumb-menu" data-crumb-menu></div>`;}
 export function mountBreadcrumbs(root:HTMLElement,config:FoundationConfig,options:FoundationOptions={}):FoundationController {
- const c=createCore(root,config,options);if(!root.querySelector('[data-breadcrumbs]'))root.innerHTML=renderBreadcrumbs(c.options);const list=q(root,'[data-breadcrumbs]'),panel=q<HTMLElement>(root,'[data-crumb-menu]');panel.id=uniqueId('sop-trail');let overlay:ReturnType<typeof makeOverlay>|undefined;
+ const c=createCore(root,config,options);if(!root.querySelector('[data-breadcrumbs]'))root.innerHTML=renderBreadcrumbs(c.options);const list=q(root,'[data-breadcrumbs]'),panel=q<HTMLElement>(root,'[data-crumb-menu]');panel.id=uniqueId('sop-trail');let overlay:ReturnType<typeof makeOverlay>|undefined,focusTimer=0;
  function link(index:number){const item=(c.options.items??[])[index],last=index===(c.options.items?.length??0)-1;return last?`<span aria-current="page">${escape(item.label)}</span>`:`<a ${item.disabled||c.options.disabled?'aria-disabled="true" tabindex="-1"':`href="${escape(item.href??'#')}"`}>${escape(item.label)}</a>`;}
- c.sync=()=>{syncHeading(c);overlay?.destroy();overlay=undefined;panel.hidden=true;const items=c.options.items??[],collapse=items.length>4;
+ c.sync=()=>{clearTimeout(focusTimer);syncHeading(c);overlay?.destroy();overlay=undefined;panel.hidden=true;const items=c.options.items??[],collapse=items.length>4;
   list.innerHTML=items.map((_,i)=>collapse&&i>0&&i<items.length-2?i===1?`<li><button class="ff-crumb-more" type="button" data-crumb-more aria-controls="${panel.id}" aria-label="途中の階層を表示" aria-expanded="false">…</button></li>`:'':`<li>${i===0?svg('home'):''}${link(i)}</li>`).join('');
   panel.innerHTML=collapse?items.slice(1,-2).map((_,i)=>link(i+1)).join(''):'';
  };
  c.on(list,'click',event=>{const button=(event.target as Element).closest<HTMLElement>('[data-crumb-more]');if(button){if(!overlay)overlay=makeOverlay(c,panel,button);if(overlay.open)overlay.hide();else{overlay.show();panel.querySelector<HTMLElement>('a')?.focus();}}const link=(event.target as Element).closest('a[aria-disabled="true"]');if(link)event.preventDefault();});
- c.on(document,'pointerdown',event=>{if(overlay?.open&&!root.contains(event.target as Node))overlay.hide();},{capture:true});c.on(root,'focusout',()=>queueMicrotask(()=>{if(!c.dead&&!root.contains(document.activeElement))overlay?.hide();}));c.on(document,'keydown',event=>{const e=event as KeyboardEvent;if(e.key==='Escape'&&overlay?.open){e.stopPropagation();e.preventDefault();overlay.hide();root.querySelector<HTMLElement>('[data-crumb-more]')?.focus();}},{capture:true});c.sync('initial');return c;
+ c.on(document,'pointerdown',event=>{if(overlay?.open&&!root.contains(event.target as Node))overlay.hide();},{capture:true});
+ c.on(root,'focusout',event=>{
+  clearTimeout(focusTimer);const next=(event as FocusEvent).relatedTarget;
+  if(next instanceof Node){if(!root.contains(next))overlay?.hide();return;}
+  focusTimer=window.setTimeout(()=>{if(!c.dead&&!root.contains(document.activeElement))overlay?.hide();},0);
+ });
+ c.cleanup(()=>clearTimeout(focusTimer));c.on(document,'keydown',event=>{const e=event as KeyboardEvent;if(e.key==='Escape'&&overlay?.open){e.stopPropagation();e.preventDefault();overlay.hide();root.querySelector<HTMLElement>('[data-crumb-more]')?.focus();}},{capture:true});c.sync('initial');return c;
 }
 export function renderBadges(o:FoundationOptions):string{return heading(o)+`<div class="ff-tags" data-tags role="group" aria-label="${escape(o.label??'タグ')}"></div><p class="ff-footnote" data-tags-hint>${o.removable?'×からタグを取り除けます。':o.selectable?'複数のタグを選択できます。':'状態を、ひと目で。'}</p>`;}
 export function mountBadges(root:HTMLElement,config:FoundationConfig,options:FoundationOptions={}):FoundationController {

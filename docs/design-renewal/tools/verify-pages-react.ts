@@ -6,7 +6,7 @@ import {createServer} from 'vite';
 import {buildCatalog,ROOT} from '../../../scripts/catalog.ts';
 import {getDelivery} from '../../../src/catalog/delivery.ts';
 const batch=process.argv[2],work=path.join(ROOT,'docs/design-renewal');
-const rows=JSON.parse(fs.readFileSync(work+'/targets.json','utf8')).filter((r:any)=>r.batch===batch&&r.category==='pagination');
+const rows=JSON.parse(fs.readFileSync(work+'/targets.json','utf8')).filter((r:any)=>r.batch===batch&&r.category==='pagination'&&(!process.env.SOP_REVIEW_IDS||process.env.SOP_REVIEW_IDS.split(',').includes(r.id)));
 const parts=buildCatalog(ROOT,rows.map((r:any)=>r.id),{appearance:false}).parts;
 assert.ok(parts.length);
 const server=await createServer({root:ROOT,cacheDir:path.join(work,'batches',batch,'exports','vite-cache-pages'),configFile:false,optimizeDeps:{entries:[],noDiscovery:true,include:['react','react-dom/client','react/jsx-dev-runtime']},server:{host:'127.0.0.1',port:0,hmr:false,watch:null}});

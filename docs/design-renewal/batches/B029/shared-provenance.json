@@ -1,0 +1,9 @@
+{
+  "sourceHashes": {
+    "src/shared/foundation/navigation.ts": "be02972e3d2fc6694721302703d594d741eb197d05bbfd6a915ce8cf880cfbcc",
+    "tests/foundations.browser.ts": "6cf4e31a2334ef91c0257b6b3510916c6c28e1642cb465877423f18b1af246b5"
+  },
+  "reproduction": "captures/focus-before.json records relatedTarget=Level 2, body active at focusout checkpoint, then panel hidden and no anchor click or navigation",
+  "test": "actual Vite/Chromium full foundations suite in isolated source copy; unique cacheDir is the only config override",
+  "regressionScope": "Essential navigation module exercised explicitly; existing Aurora wayfinding checks retained"
+}

@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "paginationLayout": "anchored"
 };
 export type ShuttleKeyPagesProps = FoundationProps;
-/** 軌道を走るシャトルキー。両端は進む操作、内側は固定幅の数値座に分ける。 */
+/** 丸い端のシャトルの左右を、実索引を渡る連続した軌道へ接続するページ送り。元の丸い前後端を保持し、別々の番号箱を廃止する。8pxの上下レールと丸い端、各実行の中央を渡る通しの路線へ番号の舟形を載せ、現在だけが同じ舟の材で変わる。 */
 export default forwardRef<HTMLDivElement, ShuttleKeyPagesProps>(function ShuttleKeyPages(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderPagination} mountContent={mountPagination}/>;
 });

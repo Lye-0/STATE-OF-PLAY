@@ -39,7 +39,7 @@ const config: FoundationConfig = {
   ]
 };
 export type ArchiveRouteTrailProps = FoundationProps;
-/** 背から続く階層を一本の横道として示す。現在地の札を最終段として明確にする。 */
+/** 一枚の収蔵票の上部へ祖先の経路を記し、罫を一つ越えて実現在地の大きな見出しへ降りるパンくず。元の別段の現在地を保持し、短い飾り線を廃して、6pxの紙束小口と9pxの貼り背、連続した祖先の斜線と一枚の紙面へ整える。省略階層の実メニューも同じ票の左背を持ち、長い見出しは全文を折り返す。 */
 export default forwardRef<HTMLDivElement, ArchiveRouteTrailProps>(function ArchiveRouteTrail(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBreadcrumbs} mountContent={mountBreadcrumbs}/>;
 });

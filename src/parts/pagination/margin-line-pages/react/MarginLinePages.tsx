@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "paginationLayout": "anchored"
 };
 export type MarginLinePagesProps = FoundationProps;
-/** 余白の章番号を選ぶ編集用のページ送り。選択番号の下の赤線が基準線に接続。 */
+/** 開いたL断面の組版受けへ、実索引の読む床と大きい現在ノンブルの活字面を載せるページ送り。赤い細罫と大きい数字だけの方式を廃止し、28pxの厚い側受けと14pxの下底、一枚の込め物の床、現在面の14pxの上肩/8pxの側面/12pxの受面で実段差を作る。他の小さい索引は同じ床に固定し、四辺の額縁や独立した箱の列を作らない。番号とnative hitはhoverで動かさない。 */
 export default forwardRef<HTMLDivElement, MarginLinePagesProps>(function MarginLinePages(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderPagination} mountContent={mountPagination}/>;
 });
