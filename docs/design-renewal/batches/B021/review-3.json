@@ -1,0 +1,169 @@
+{
+  "batch": "B021",
+  "round": 3,
+  "snapshot": "docs/design-renewal/batches/B021/snapshot/round-3",
+  "overall": "changes_requested",
+  "parts": [
+    {
+      "number": 292,
+      "id": "signal-capsule-notice",
+      "verdict": "pass",
+      "assessment": "元監査T。左右40pxの曲率、丸い状態アイコンと閉じる面の密度が整った。細い上下の小口はカプセルの一体性を補う。新規Aの独創性を汎用カプセルだけで認めた判定ではなく、元の良い形の精度調整として合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R049",
+        "R292"
+      ]
+    },
+    {
+      "number": 293,
+      "id": "folded-message-notice",
+      "verdict": "redesign",
+      "assessment": "小三角だけだった旧版から外形は変わったが、同形の二枚を全面で重ねた厚い面取り枠へ留まる。紙がどこで反転し、どこへ接続するかを外形と前後関係で読めず、Aの構造として未達。",
+      "findings": [
+        {
+          "key": "B021-R293-fold-structure",
+          "severity": "major",
+          "kind": "design",
+          "evidence": "captures/reviewer-toasts-3/folded-message-notice-initial.png / -narrow-320.png / -rtl.png。source/styles.css末尾のbefore/afterは同形の六角面を全面で重ねる。",
+          "problem": "対角の28px色帯と22px面取りが厚い額縁を作り、折った紙の返し・連続面・接続を説明できない。大きくした角飾りと汎用枠の範囲で、A固有の形を満たさない。",
+          "proposal": "全面の後ろ枠を撤去し、一枚の読む紙の対角二端そのものを裏へ反転する独立折面へ構成する。各返しは読む紙の斜め切口と同じ端点から連続させ、返し先の自由端または実空隙を外形へ出す。本文面を固定し、小さな角帽子や既存の全幅蛇腹を反復しない。"
+        }
+      ],
+      "nearestComparisons": [
+        "R142",
+        "R181",
+        "R222",
+        "R293"
+      ]
+    },
+    {
+      "number": 294,
+      "id": "checkpoint-notice",
+      "verdict": "pass",
+      "assessment": "元監査T。34×40pxの吊札と上レールが二本の4px腕で実接続し、下の紙端は細く従属する。本文と吊札の役割が分かれ、狭幅でも本文へ侵入しない。",
+      "findings": [],
+      "nearestComparisons": [
+        "R077",
+        "R255",
+        "R277",
+        "R294"
+      ]
+    },
+    {
+      "number": 295,
+      "id": "telegram-note",
+      "verdict": "redesign",
+      "assessment": "上下の半円抜きは全層で成立し、文字も読める。一方、主形は既承認R285の切手紙に近く、短線と等幅見出しを付けた紙の通知に留まる。再設計Aとして独立した機構が不足する。",
+      "findings": [
+        {
+          "key": "B021-R295-stamp-repetition",
+          "severity": "major",
+          "kind": "duplication",
+          "evidence": "captures/reviewer-toasts-3/telegram-note-initial.png、captures/reviewer-materials-3/telegram-note-layers.png と B020/captures/reviewer-combos-3/index-stamp-finder-expanded.png を比較。",
+          "problem": "主要な形は薄い長方形紙と反復する半円の紙端。R285の四辺切手紙を上下二辺へ減らした違いが中心で、左の短線と字体だけでは再設計Aの独立した通知構造に届かない。孔の真偽や可読性の問題ではない。",
+          "proposal": "切手の反復紙端を撤去し、一枚の伝送帯が左の一つの出力口を通り、右へ切断済みの自由端を出す構成など、通知を受け取る関係が輪郭を決める形へ再設計する。送り穴・紙層・小記号を追加する方向は避ける。"
+        }
+      ],
+      "nearestComparisons": [
+        "R252",
+        "R285",
+        "R295"
+      ]
+    },
+    {
+      "number": 296,
+      "id": "margin-pin-notice",
+      "verdict": "pass",
+      "assessment": "元監査T。大きいCワイヤーが上下の紙の実切口へ達し、全高に沿う支持へ成長した。実孔と線の前後が読め、RTLでも鏡映した接合が保たれる。",
+      "findings": [],
+      "nearestComparisons": [
+        "R253",
+        "R296"
+      ]
+    },
+    {
+      "number": 297,
+      "id": "console-line-notice",
+      "verdict": "adjust",
+      "assessment": "通常短文では上の出力面と前の操作面の二面構造が成立し、実actionを載せる理由がある。ただし長いactionが固定66px台面を越えて出力面へ大きく侵入する。造形は保持し、可変内容に追随する支持へ修正が必要。",
+      "findings": [
+        {
+          "key": "B021-R297-action-support-height",
+          "severity": "major",
+          "kind": "consistency",
+          "evidence": "captures/reviewer-materials-3/console-long-action.png / checks.json。320px、actionLabel=保存したすべての詳細を確認するLongActionWithoutWhitespace。action高さ91.75px、top117.375px、前台top169.125px、高さ66px、侵入51.75px。",
+          "problem": "実actionが固定高さの台より上へ51.75px突出し、上の出力面を横断する。本文との直接重なりはないが、操作を載せる面が内容に追随せず、二面consoleという設計の機能と支持が崩れる。",
+          "proposal": "action行を独立した通常フローの前台へ置き、台面高さと出力面終端をactionの実高さ＋上下余白へ連動させる。長いlabelを省略せず、無action時の26px小口も維持する。320/390/768、LTR/RTLでaction全体が台面へ収まることを確認する。"
+        }
+      ],
+      "nearestComparisons": [
+        "R223",
+        "R297"
+      ],
+      "normalDesignVerdict": "pass"
+    },
+    {
+      "number": 298,
+      "id": "sealed-envelope-notice",
+      "verdict": "pass",
+      "assessment": "全幅の深いV閉蓋と中央の状態アイコン封緘が輪郭・内容配置を決める。R263の下の開口へ便箋を入れる構造とは、閉じた上蓋と封緘の関係が明確に異なる。本文は蓋下に予約され、長文でも干渉しない。",
+      "findings": [],
+      "nearestComparisons": [
+        "R263",
+        "R298"
+      ]
+    },
+    {
+      "number": 299,
+      "id": "stone-marker-notice",
+      "verdict": "pass",
+      "assessment": "五角柱の山形頭・三つの平面と横の標石の小口が接続し、丸いアイコン面から独立した支持形へ変わった。R291の丸い巻胴から帯が出る構造と比べ、柱の角と横石の切断面が硬い接合を作る。文字の面と支持の役割も明瞭。",
+      "findings": [],
+      "nearestComparisons": [
+        "R097",
+        "R274",
+        "R291",
+        "R299"
+      ]
+    },
+    {
+      "number": 300,
+      "id": "bookmark-alert",
+      "verdict": "pass",
+      "assessment": "元監査T。22pxの栞が紙の上下二つの実切口から見え、上の露出と下の割尾まで同じ軸で繋がる。R280と同系の元の栞を保持する調整として、接合精度を認める。",
+      "findings": [],
+      "nearestComparisons": [
+        "R118",
+        "R280",
+        "R300"
+      ]
+    },
+    {
+      "number": 301,
+      "id": "open-bracket-notice",
+      "verdict": "pass",
+      "assessment": "元監査T。四つの開角を28px/5pxへ揃え、本文面の8px内側配置と整合。競合するアイコン下線を除き、本文と角の支持の強弱が整理された。",
+      "findings": [],
+      "nearestComparisons": [
+        "R164",
+        "R284",
+        "R301"
+      ]
+    }
+  ],
+  "checks": [
+    "固定round-3のsourceHashes全100件一致。正本コピーと実配布CSS全10件一致（import除外）。captures/reviewer-extra-3/checks.json。",
+    "独立実行のportable native全10件：actual notify、4toneとstatus/alert、action実行/close、max queue、hover/focus中timer停止、離脱後timeout、320/390/768長文、RTL、forced、reduced、open destroy/cleanup。captures/reviewer-toasts-3/checks.json、pageerror 0。",
+    "normal motionで全10件のhover→leave→reenterを二周実操作。strong/copy/close/action矩形とfontを通知本体相対で比較し全件固定。captures/reviewer-materials-3/checks.json。",
+    "全10件initial/長文/RTL/forcedの実画像を確認。R297は無actionと長actionを追加撮影し支持面とactionを実測。",
+    "R295/296/300は検査中DOMだけ背景色を変更して紙端・切口・裏の栞を診断。実装とsnapshotは変更していない。",
+    "baseline元監査R/Tを照合、round0元通知画像を比較。既承認の近接構造R142/181/222/252/263/280/284/285/291等と役割・接点・外形を比較。"
+  ],
+  "limits": [
+    "Chromiumでの検査。forced colors/reduced motionはエミュレーションであり、全OS/実支援技術の網羅ではない。",
+    "React4形式とギャラリーdetailは主担当の成功報告を参照し、今回独立再実行していない。nativeの実配布を操作した。",
+    "全730件を今回再監査したのではなく、元監査と近似候補・既承認記録を比較した。",
+    "round0の主担当撮影には背後の展示文字の透過が含まれるため、旧版の色・コントラストの判定根拠にはせず、元構造と元監査の範囲確認に用いた。"
+  ]
+}

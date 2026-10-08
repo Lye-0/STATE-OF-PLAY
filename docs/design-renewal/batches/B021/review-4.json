@@ -1,0 +1,150 @@
+{
+  "batch": "B021",
+  "round": 4,
+  "snapshot": "docs/design-renewal/batches/B021/snapshot/round-4",
+  "overall": "pass",
+  "parts": [
+    {
+      "number": 292,
+      "id": "signal-capsule-notice",
+      "verdict": "pass",
+      "assessment": "round-3から正本10ファイルのハッシュ不変。通常造形の合格を引き継ぐ。元監査T。左右40pxの曲率、丸い状態アイコンと閉じる面の密度が整った。細い上下の小口はカプセルの一体性を補う。新規Aの独創性を汎用カプセルだけで認めた判定ではなく、元の良い形の精度調整として合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R049",
+        "R292"
+      ]
+    },
+    {
+      "number": 293,
+      "id": "folded-message-notice",
+      "verdict": "pass",
+      "assessment": "全面で重なる二重枠を撤去し、中央の読む面と左右34pxの翼を全高16pxの斜め返しで繋いだ一枚の紙になった。上端・下端が同じ折軸へ連続し、記号・本文・閉じる操作がそれぞれの面を使う。狭幅でも固定の本文とhitが面へ収まり、R222の縦に連続する三段の内容紙、R181の紙を覆う表紙とは、横の一枚の折紙という支持関係が異なる。前回の厚い額縁という問題は解消。",
+      "findings": [],
+      "nearestComparisons": [
+        "R142",
+        "R181",
+        "R222",
+        "R293"
+      ],
+      "resolvedFindings": [
+        "B021-R293-fold-structure"
+      ]
+    },
+    {
+      "number": 294,
+      "id": "checkpoint-notice",
+      "verdict": "pass",
+      "assessment": "round-3から正本10ファイルのハッシュ不変。通常造形の合格を引き継ぐ。元監査T。34×40pxの吊札と上レールが二本の4px腕で実接続し、下の紙端は細く従属する。本文と吊札の役割が分かれ、狭幅でも本文へ侵入しない。",
+      "findings": [],
+      "nearestComparisons": [
+        "R077",
+        "R255",
+        "R277",
+        "R294"
+      ]
+    },
+    {
+      "number": 295,
+      "id": "telegram-note",
+      "verdict": "pass",
+      "assessment": "半円切手紙を廃し、60px出力機の深い出口から一枚の読む帯が出て、反対の全高14px斜め切断へ終わる形になった。紙が出口へ4px重なる接合、活字の見出し、自由端の小口が一つの方向を持つ。R285の反復切手紙、R252の連続送り票とは別の単発の出力構造で、R291の巻胴とも平らな深い出口と切断帯の関係が異なる。RTLでも出口と帯の接点が鏡映している。",
+      "findings": [],
+      "nearestComparisons": [
+        "R252",
+        "R285",
+        "R295"
+      ],
+      "resolvedFindings": [
+        "B021-R295-stamp-repetition"
+      ]
+    },
+    {
+      "number": 296,
+      "id": "margin-pin-notice",
+      "verdict": "pass",
+      "assessment": "round-3から正本10ファイルのハッシュ不変。通常造形の合格を引き継ぐ。元監査T。大きいCワイヤーが上下の紙の実切口へ達し、全高に沿う支持へ成長した。実孔と線の前後が読め、RTLでも鏡映した接合が保たれる。",
+      "findings": [],
+      "nearestComparisons": [
+        "R253",
+        "R296"
+      ]
+    },
+    {
+      "number": 297,
+      "id": "console-line-notice",
+      "verdict": "pass",
+      "assessment": "上の読面を見出し・本文のgrid行へ、下の台面を実actionへ従属させたことで、長い操作名に応じて台面が伸びる。320/390/768px×LTR/RTL×action有無の12条件で、本文とactionの非重複・viewport内・actionの本体内保持を確認した。台はactionの上下20/14pxと左右10pxへ広がり、前回51.75pxの侵入はなくなった。無actionでは台を消して読む面だけとなり、偽の操作面を残さない。通常の二面consoleの合格造形を維持している。",
+      "findings": [],
+      "nearestComparisons": [
+        "R223",
+        "R297"
+      ],
+      "normalDesignVerdict": "pass",
+      "resolvedFindings": [
+        "B021-R297-action-support-height"
+      ]
+    },
+    {
+      "number": 298,
+      "id": "sealed-envelope-notice",
+      "verdict": "pass",
+      "assessment": "round-3から正本10ファイルのハッシュ不変。通常造形の合格を引き継ぐ。全幅の深いV閉蓋と中央の状態アイコン封緘が輪郭・内容配置を決める。R263の下の開口へ便箋を入れる構造とは、閉じた上蓋と封緘の関係が明確に異なる。本文は蓋下に予約され、長文でも干渉しない。",
+      "findings": [],
+      "nearestComparisons": [
+        "R263",
+        "R298"
+      ]
+    },
+    {
+      "number": 299,
+      "id": "stone-marker-notice",
+      "verdict": "pass",
+      "assessment": "round-3から正本10ファイルのハッシュ不変。通常造形の合格を引き継ぐ。五角柱の山形頭・三つの平面と横の標石の小口が接続し、丸いアイコン面から独立した支持形へ変わった。R291の丸い巻胴から帯が出る構造と比べ、柱の角と横石の切断面が硬い接合を作る。文字の面と支持の役割も明瞭。",
+      "findings": [],
+      "nearestComparisons": [
+        "R097",
+        "R274",
+        "R291",
+        "R299"
+      ]
+    },
+    {
+      "number": 300,
+      "id": "bookmark-alert",
+      "verdict": "pass",
+      "assessment": "round-3から正本10ファイルのハッシュ不変。通常造形の合格を引き継ぐ。元監査T。22pxの栞が紙の上下二つの実切口から見え、上の露出と下の割尾まで同じ軸で繋がる。R280と同系の元の栞を保持する調整として、接合精度を認める。",
+      "findings": [],
+      "nearestComparisons": [
+        "R118",
+        "R280",
+        "R300"
+      ]
+    },
+    {
+      "number": 301,
+      "id": "open-bracket-notice",
+      "verdict": "pass",
+      "assessment": "round-3から正本10ファイルのハッシュ不変。通常造形の合格を引き継ぐ。元監査T。四つの開角を28px/5pxへ揃え、本文面の8px内側配置と整合。競合するアイコン下線を除き、本文と角の支持の強弱が整理された。",
+      "findings": [],
+      "nearestComparisons": [
+        "R164",
+        "R284",
+        "R301"
+      ]
+    }
+  ],
+  "checks": [
+    "review-input-4のcanonical100ハッシュ一致、正本コピーとportable配布CSS全10一致（import除外）。変更はR293/R295/R297のみで、既合格7件の計70ファイルはround-3と同一。captures/reviewer-extra-4/checks.json。",
+    "独立portable native全10実操作：notify、4toneとstatus/alert、action callback/close、max queue、hover/focus pauseと離脱後timeout、長文320/390/768、RTL、forced/reduced、open destroy。全10成功、pageerror 0。captures/reviewer-toasts-4/checks.json。",
+    "全10通常motion hover→leave→reenter二周。本文/strong/close/actionの本体相対矩形とfontは固定。captures/reviewer-materials-4/checks.jsonのreenterStable全10 true。",
+    "変更3件の短文・長文320・RTL・forced実画像を確認。R293の全高返しの端点、R295の出口と帯の重なり/自由端を画像とCSSで照合。既承認R181/222/252/285/291等と構造を比較。",
+    "R297を追加で320/390/768×LTR/RTL×action有無の12条件実notify。copyBeforeAction/actionInsideNotice/noticeInsideViewportは全12 true、action台面の実outsets -20/-10/-14/-10px。captures/reviewer-console-4/checks.json と各PNG。",
+    "実装・固定snapshotは変更せず、検査用道具と証拠・レビューのみ保存。"
+  ],
+  "limits": [
+    "Chromiumのみ。forced colors/reduced motionはエミュレーション。全OS/実支援技術の網羅ではない。",
+    "React4形式とギャラリーdetailの独立再実行はしていない。今回の実操作は固定portable nativeに対して実施。",
+    "既合格7件の造形と全730近似監査はround-3までの結論を引き継ぎ、今回の再評価は変更3件と全10のUI回帰に限定した。"
+  ]
+}

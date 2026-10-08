@@ -13,7 +13,7 @@ const config: FoundationConfig = {
   "defaultValue": null
 };
 export type FoldedMessageNoticeProps = FoundationProps;
-/** 折り返した伝言。本文の右下だけに折り目を持たせ、操作は本文の下へ揃える。 */
+/** 一枚の紙を三面に折り、左の翼で通知記号、中央で本文、右の翼で閉じる操作を受けるデザイン。面取りの二重額縁を廃止し、左右34pxの翼と中央の紙を、16pxの全高の斜めの返しで連続させる。読む面を囲う枠は置かず、文字とnativeヒットを水平に固定する。 */
 export default forwardRef<HTMLDivElement, FoldedMessageNoticeProps>(function FoldedMessageNotice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderToast} mountContent={mountToast}/>;
 });

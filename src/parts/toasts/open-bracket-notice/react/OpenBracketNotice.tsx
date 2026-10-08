@@ -13,7 +13,7 @@ const config: FoundationConfig = {
   "defaultValue": null
 };
 export type OpenBracketNoticeProps = FoundationProps;
-/** 角括弧で受ける短いお知らせ。広い塗り面を減らし、本文の始点と終点にだけ支えを置く。 */
+/** 四つの開いた角だけで、読む通知面を保持するデザイン。元の開いた枠を保持し、競合する記号下線を廃止する。角は28pxの長さ/5pxの太さへ揃え、紙を内側8pxに収める。本文の周りに長い枠線を足さず、文字とnative操作を固定する。 */
 export default forwardRef<HTMLDivElement, OpenBracketNoticeProps>(function OpenBracketNotice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderToast} mountContent={mountToast}/>;
 });

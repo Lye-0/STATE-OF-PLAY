@@ -13,7 +13,7 @@ const config: FoundationConfig = {
   "defaultValue": null
 };
 export type TelegramNoteProps = FoundationProps;
-/** 電報の短い本文と応答欄。上下の二重罫で情報を囲み、右の操作を読後の行へ移す。 */
+/** 一つの電報の出力口から、切断した伝送帯を出す通知。切手に似た半円の紙端と点線を廃止し、60pxの角形の出力機と、深い6pxの出口へ4px重なる読む帯を作る。右の自由端は全高14pxの一つの斜め切断で示し、見出しの固定活字と本文と操作を帯へ載せる。 */
 export default forwardRef<HTMLDivElement, TelegramNoteProps>(function TelegramNote(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderToast} mountContent={mountToast}/>;
 });
