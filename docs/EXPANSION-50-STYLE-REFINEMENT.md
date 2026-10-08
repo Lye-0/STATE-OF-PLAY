@@ -30,7 +30,8 @@ keep their existing inline layout by default.
 
 `npm run test:expansion-review` includes regressions for all 20 pager arrow
 positions at 320/390/768/1500px across 12 page states, repeated keyboard
-activation, endpoint focus, selected-page contrast, five B avatar labels that
+activation, endpoint focus, page-label/arrow contrast under an inherited gallery
+text color, five B avatar labels that
 previously shifted on hover, the engraved field's clear control, and a hint
 heading clipped by its scrollable content.
 

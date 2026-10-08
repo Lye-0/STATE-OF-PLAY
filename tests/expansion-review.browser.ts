@@ -124,6 +124,12 @@ try {
  const pagingContrast=await lightSelectedContrast(page,specs.filter(p=>p.category==='pagination').map(p=>p.id));
  assert.equal(pagingContrast.checked,20,'each current page label is checked');
  assert.deepEqual(pagingContrast.failures,[],'current page labels meet text contrast');
+
+ await page.evaluate(()=>document.documentElement.style.setProperty('--ink','#ffffff'));
+ const allPagingText=await lightSelectedContrast(page,specs.filter(p=>p.category==='pagination').map(p=>p.id),'.ff-page-window [data-page],.ff-page-info,.ff-pages>button:not(:disabled)');
+ assert.ok(allPagingText.checked>=100,'visible selected and unselected page labels and arrows checked');
+ assert.deepEqual(allPagingText.failures,[],'pager text remains readable under the gallery light-ink theme');
+ await page.evaluate(()=>document.documentElement.style.removeProperty('--ink'));
  console.log('PASS 20 pagers: fixed arrows across 12 states / 4 widths, repeated keyboard activation and terminal focus');
  await page.emulateMedia({reducedMotion:'no-preference'});
  for(const part of specs.filter(p=>p.category==='avatars'&&p.designType==='B')){
