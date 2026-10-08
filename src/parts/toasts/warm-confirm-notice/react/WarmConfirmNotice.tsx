@@ -13,7 +13,7 @@ const config: FoundationConfig = {
   "defaultValue": null
 };
 export type WarmConfirmNoticeProps = FoundationProps;
-/** 温かい色味を保ち、広い茶色の影を取り除いて通知文を主役にする。 */
+/** 温かい確認色と抑えた影で、実操作の結果を示す汎用通知。既存の暖色と角丸を維持し、浮きすぎる下影を2px/8pxへ抑える。見出し14px・補足12px・操作の最小34pxで、長い通知も読みやすく表示する。 */
 export default forwardRef<HTMLDivElement, WarmConfirmNoticeProps>(function WarmConfirmNotice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderToast} mountContent={mountToast}/>;
 });

@@ -150,6 +150,15 @@ await run('Combobox IME composition does not intercept Enter or commit partial c
   await mount('aurora-popover',{interactive:true,content:'First'});await native.locator('#test-host [data-hint-trigger]').click();assert.ok(await native.locator('#test-host [data-hint-panel]').isVisible());await update({content:'<script>not executable</script>'});assert.equal(await native.locator('#test-host [data-hint-content]').innerText(),'<script>not executable</script>');await native.keyboard.press('Escape');assert.ok(await native.locator('#test-host [data-hint-panel]').isHidden());
   await mount('mercury-popover',{interactive:false});await native.locator('#test-host [data-hint-trigger]').focus();assert.equal(await native.locator('#test-host [data-hint-panel]').getAttribute('role'),'tooltip');await native.keyboard.press('Escape');assert.ok(await native.locator('#test-host [data-hint-panel]').isHidden());
  });
+ await run('Interactive hint keeps trusted pointer focus inside native controls and dismisses outside focus',async()=>{
+  await mount('essential-popover',{interactive:true});
+  const trigger=native.locator('#test-host [data-hint-trigger]'),panel=native.locator('#test-host [data-hint-panel]'),checkbox=panel.locator('input[type="checkbox"]');
+  await trigger.click();await checkbox.check();assert.ok(await checkbox.isChecked());assert.ok(await panel.isVisible());assert.ok(await checkbox.evaluate(e=>e===document.activeElement));
+  await checkbox.press('Escape');assert.ok(await panel.isHidden());assert.ok(await trigger.evaluate(e=>e===document.activeElement));
+  await trigger.click();assert.ok(await checkbox.isChecked());await native.locator('#outside').focus();await panel.waitFor({state:'hidden'});
+  await trigger.click();await native.evaluate(()=>(window as any).api.updateFoundation({onAction:()=>{(window as any).hintPerformed=true;}}));
+  await panel.locator('[data-hint-action]').click();assert.ok(await native.evaluate(()=>(window as any).hintPerformed));assert.ok(await panel.isHidden());assert.ok(await trigger.evaluate(e=>e===document.activeElement));
+ });
  await run('All 24 hint panels clip reveal overflow while genuinely long content scrolls inside',async()=>{
   await native.emulateMedia({reducedMotion:'no-preference'});
   await native.evaluate(()=>{document.body.style.minHeight='2600px';window.scrollTo(0,0);});

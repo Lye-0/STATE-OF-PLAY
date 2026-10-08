@@ -13,7 +13,7 @@ const config: FoundationConfig = {
   "defaultValue": null
 };
 export type ReceiptTailNoticeProps = FoundationProps;
-/** 受領票のような通知。処理結果を本文、再操作を下の控えへ分け、ミシン目をその境界に置く。 */
+/** ゆとりのある紙端と、発行見出しの階層を持つレシート通知。元の下の紙端を保持し、抜きは24px間隔の3pxへ抑える。上の発行口の二重線、固定した見出しと補足、操作前の14pxの空間を揃え、細かいギザギザと窮屈さを整理する。 */
 export default forwardRef<HTMLDivElement, ReceiptTailNoticeProps>(function ReceiptTailNotice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderToast} mountContent={mountToast}/>;
 });

@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
 };
 export type AnnotationLeafHintProps = FoundationProps;
-/** 余白から開く注釈紙。見出しの細い左線を、本文と適用欄を結ぶ縦の注釈線へ展開。 */
+/** 上端を中空に巻いた一枚の注釈用紙を、補足と設定へ展開する表示。細い見出し帯を廃し、全幅60pxの巻き口と実際に抜いた楕円の空隙を作る。読む紙は巻口の下36pxから続き、文字は巻口より下の62pxから固定する。設定と適用は同じ紙の読み順に残す。 */
 export default forwardRef<HTMLDivElement, AnnotationLeafHintProps>(function AnnotationLeafHint(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderHint} mountContent={mountHint}/>;
 });

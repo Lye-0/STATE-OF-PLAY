@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
 };
 export type FieldGuideHintProps = FoundationProps;
-/** 携帯図鑑の注記ページ。仕様を見開きの欄へ整理し、綴じ側に見出し記号を残す。 */
+/** 一枚の固定した案内板から、異なる長さの三つの索引片を出す補足表示。交互の蛇腹を廃止し、見出しの36pxの索引に記号、28px/24pxの索引に品質/設定の実ラベルを配置する。値と本文とnativeチェック・適用は同じ読面で表示する。実情報と索引が対応し、任意の内容や長文でも紙面を折り返さない。 */
 export default forwardRef<HTMLDivElement, FieldGuideHintProps>(function FieldGuideHint(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderHint} mountContent={mountHint}/>;
 });

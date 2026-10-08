@@ -13,7 +13,7 @@ const config: FoundationConfig = {
   "defaultValue": null
 };
 export type SteppedMessageNoticeProps = FoundationProps;
-/** 通知の内容と応答を二つの段に置く。閉じる操作を右上に保ち、下段へ進む視線を作る。 */
+/** 見出し・補足・実操作の三段を、互いに12pxずつ進む低い石段へ印刷する通知。四角い記号と小さい線の案を廃止し、情報の三段それぞれに独立した面と小口を作る。段は実内容の高さに追随し、ボタンのない通知では三段目も出ない。文字や操作領域はhoverで動かさない。 */
 export default forwardRef<HTMLDivElement, SteppedMessageNoticeProps>(function SteppedMessageNotice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderToast} mountContent={mountToast}/>;
 });

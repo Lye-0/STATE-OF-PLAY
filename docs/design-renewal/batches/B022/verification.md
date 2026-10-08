@@ -1,0 +1,11 @@
+# B022 検証
+
+独立round2は8合格、R312調整/R314再設計。R312の三ヒンジはcontentの見出しから表示枠の蓋へ固定。長文でscrollしても読面と蓋に12px重なる36×10pxの実ヒンジを保持、content横幅35px超過を解消。R314は既承認R222と重複する交互三面/全幅折返しを廃止。一枚の読む板に見出し36px/品質28px/設定24pxの索引片を接続、実項目名と値が同じ行で対応。RTL文字の反転を避け、forcedでもnativeラベルを保持。最終4全10合格、正本100hash/CSS10配布一致、残り8件80ファイル不変。
+
+全6通知native最終1/React6×4最終1（最終4と正本不変）の実notify/roles/action/close/queue/hover-focus timer停止/320390768long/RTL/fixed text/forced/reduced/destroy成功。全4 hints native最終4の実dialog/ARIA/checkbox/Escape focusと値保持/action callback/外側dismiss/show-hide/disabled/動的content/任意の実form入力/長文局所scroll/320390768/RTL/字体位置/forced/reduced/tooltip Escape進入抑止後leave再入/open destroy成功。React4×4最終4の同項目/独立二instance/props更新後native状態保持/unique IDs/refs/open StrictMode cleanup成功。実mouse移動でtooltip hoverを確認、locator.hoverが開いたtooltipによる遮蔽を再試行するテスト誤りを修正。React forcedは媒体変更でroot高さ/ページscrollが変わるため、媒体を切替後に実triggerから開き、局所checkboxへ実scrollして検証。
+
+標準shared/foundation/feedback.tsの旧focusout microtaskはtrusted clickのfocus移動途中にactiveElement=bodyを見てhintを閉じ、元snapshot0/new1ともcheckbox実clickが失敗。relatedTargetが同部品なら維持、nullなら0ms後に外側focusを判定、destroyでtimer破棄へ修正。既存foundations.browserへ実checkbox/Escape/外側focus/actionの回帰を追加。最初のテスト対象auroraは別resonance runtimeで失敗したため、修正した標準runtimeを使うessentialへ修正。並行ファイル作成に反応する実Viteのwatcherを避け、正本src/tests/scripts/publicをignored evidence/runtime-verificationへcopyして同じ実Vite HTTP全26回帰を成功させた。source-provenanceにはfeedback.ts/testのhashを記録。resonance系やLiquid Glassの部品コード/外観は変更していない。標準runtimeを使う他hintにもfocus修正は共有される。
+
+最終4型/730配布契約とfoundation単体/実ギャラリー10/native20toast+20hint×2レイアウト成功。Chromium/媒体エミュレーション。他ブラウザ/実機touchは未確認。原730監査/近似比較、全730再操作はしていない。B001 production build参照。原版6実通知と4実hintをimmutable snapshot0で発行/開表示してbefore保存。単体HTMLへ元/展示/開いた補足/配布版/320長文を内蔵。
+
+HTML全220件/845画像/6516538bytes、Chromium setContent初期508ms/全decode891ms/通信0/エラー0/390px溢れなし。直接file://は環境navigation制限で未確認。

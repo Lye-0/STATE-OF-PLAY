@@ -47,6 +47,14 @@ for row,part,review in approved:
   actual=next((p for p in reversed(native) if (p/f"{row['id']}-initial.png").exists() and (p/f"{row['id']}-narrow-320.png").exists()),None)
   assert actual is not None,f"Missing actual exported notice: {row['id']}"
   images+=figure(beforeNotice,'修正前・配布版の実通知')+figure(actual/f"{row['id']}-initial.png",'修正後・配布版で通知を発行')+figure(actual/f"{row['id']}-narrow-320.png",'修正後・320pxの長文通知')
+ if row['category']=='hints':
+  beforePanel=w/'evidence/baseline'/f"{row['id']}-expanded.png"
+  assert beforePanel.exists(),f"Missing original actual hint: {row['id']}"
+  assert (photos/f"{row['id']}-expanded.png").exists(),f"Missing gallery open hint: {row['id']}"
+  native=sorted((d/'captures').glob('hints-self-*'),key=lambda p:int(p.name.split('-')[-1]))
+  actual=next((p for p in reversed(native) if (p/f"{row['id']}-initial.png").exists() and (p/f"{row['id']}-narrow-320.png").exists()),None)
+  assert actual is not None,f"Missing exported long hint: {row['id']}"
+  images+=figure(beforePanel,'修正前・配布版で開いた補足')+figure(photos/f"{row['id']}-expanded.png",'修正後・実ギャラリーで開いた補足')+figure(actual/f"{row['id']}-initial.png",'修正後・配布版の補足')+figure(actual/f"{row['id']}-narrow-320.png",'修正後・320pxの長文補足')
  if row['category']=='dropdowns':
   images+=figure(photos/f"{row['id']}-expanded.png",'展開した候補・選択済み行')
  # Native switch images distinguish actual OFF and ON even when the gallery starts ON.

@@ -1,4 +1,5 @@
 @import "../../../shared/foundation/base.css";
+/* 小さな影と読みやすい本文で、操作結果を端正に示す汎用通知。既存の中立色と5pxの角丸を維持し、影を2px/8pxへ抑える。見出し14px・補足12px・実操作の最小34pxを揃え、320pxの長文を自然に折り返す。 */
 /* Plain Status Notice — 汎用的な操作結果の通知。 */
 .sop-foundation.sop-plain-status-notice {--ff-base:#e9e4d9;--ff-panel:#f7f2e8;--ff-ink:#353d45;--ff-muted:#46515d;--ff-accent:#3d5b7c;--ff-accent2:#3d5b7c;--ff-line:#bbb5a9;--ff-radius:5px;color-scheme:light;background:#e9e4d9;padding:18px;border-radius:4px}.sop-foundation.sop-plain-status-notice .ff-eyebrow{display:none}.sop-foundation.sop-plain-status-notice .ff-heading{line-height:1.6;font-size:12px}.sop-foundation.sop-plain-status-notice .ff-floating{color:var(--ff-ink);background:var(--ff-panel)}.sop-foundation.sop-plain-status-notice .ff-notice{border-radius:5px;box-shadow:0 4px 12px #0002;padding:14px}.sop-foundation.sop-plain-status-notice .ff-notice-icon{border:0;background:#dce2e9}.sop-foundation.sop-plain-status-notice .ff-action:active{transform:none}
 .sop-foundation.sop-plain-status-notice{max-width:100%}.sop-foundation.sop-plain-status-notice,.sop-foundation.sop-plain-status-notice *{box-sizing:border-box}.sop-foundation.sop-plain-status-notice :is(button,input,textarea,a){min-width:0}
@@ -6,3 +7,12 @@
 @media(prefers-reduced-motion:reduce){.sop-foundation.sop-plain-status-notice,.sop-foundation.sop-plain-status-notice *,.sop-foundation.sop-plain-status-notice::before,.sop-foundation.sop-plain-status-notice::after,.sop-foundation.sop-plain-status-notice *::before,.sop-foundation.sop-plain-status-notice *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-foundation.sop-plain-status-notice[data-sop-paused] *,.sop-foundation.sop-plain-status-notice[data-paused=true] *,.sop-foundation.sop-plain-status-notice[data-motion-running=false] *,.sop-foundation.sop-plain-status-notice[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-foundation.sop-plain-status-notice{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-plain-status-notice :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+.sop-foundation.sop-plain-status-notice.sop-plain-status-notice .ff-toast-stack{background:transparent;border:0;box-shadow:none;overflow-x:hidden;overflow-y:auto;width:min(390px,calc(100vw - 32px));inset:auto 16px 16px auto;padding:8px}
+.sop-foundation.sop-plain-status-notice.sop-plain-status-notice .ff-notice{padding:18px;box-shadow:0 2px 8px #25344414;transform:none;animation:none;gap:10px}
+.sop-foundation.sop-plain-status-notice.sop-plain-status-notice .ff-notice-copy{min-width:0}
+.sop-foundation.sop-plain-status-notice.sop-plain-status-notice .ff-notice strong{font:600 14px/1.5 Arial,"Yu Gothic",sans-serif;overflow-wrap:anywhere}
+.sop-foundation.sop-plain-status-notice.sop-plain-status-notice .ff-notice p{font:12px/1.8 Arial,"Yu Gothic",sans-serif;overflow-wrap:anywhere}
+.sop-foundation.sop-plain-status-notice.sop-plain-status-notice .ff-inline-action{font:12px/1.6 Arial,"Yu Gothic",sans-serif;min-height:34px;max-width:100%;overflow-wrap:anywhere}
+.sop-foundation.sop-plain-status-notice.sop-plain-status-notice [data-notice-close]{width:34px;height:34px;flex:none}
+.sop-foundation.sop-plain-status-notice.sop-plain-status-notice .ff-notice-icon{flex:none}
