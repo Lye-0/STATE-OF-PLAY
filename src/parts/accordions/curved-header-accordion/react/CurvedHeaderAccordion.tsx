@@ -3,7 +3,7 @@ import React from 'react';
 import {AccordionView,type AccordionProps} from '../../../../shared/accordion-view';
 import '../styles.css';
 export type {AccordionProps,AccordionItem} from '../../../../shared/accordion-view';
-/** ループの支点に見出しを通す。開いた本文を二つの支点で固定する綴じ本の構成。 */
+/** 両端の丸い巻き口へつながる湾曲した見出しの庇。淡い藤色の庇の下から本文を下ろし、側面の細い巻き面だけを伸ばす。庇と巻き口の断面で曲率を示し、文字面には光の筋を走らせない。 */
 export default function CurvedHeaderAccordion({className='',...props}:AccordionProps){
- return <AccordionView {...props} className={`sop-curved-header-accordion ${className}`}/>;
+ return <AccordionView {...props} motionLayer={<span className="sop-acc-material" aria-hidden="true"><i/><i/><i/><i/><i/><i/></span>} className={`sop-curved-header-accordion ${className}`}/>;
 }

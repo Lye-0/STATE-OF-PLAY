@@ -1,9 +1,46 @@
 @import "../../../shared/accordion-base.css";
 @import "../../../shared/panel-content.css";
-/* Warm Help Accordion — 穏やかな紙色と十分な行間で、長いヘルプを読みやすくする。 */
-.sop-accordion.sop-warm-help-accordion{--acc-bg:#edf0f2;--acc-ink:#2f4053;--acc-muted:#647589;--acc-accent:#53769b;--acc-line:#adbdcc;--acc-radius:5px;--acc-padding:20px;--acc-surface:#b8cbdf22}.sop-accordion.sop-warm-help-accordion .sop-accordion-item::before,.sop-accordion.sop-warm-help-accordion .sop-accordion-item::after{content:"";position:absolute;pointer-events:none;transition:transform .5s,opacity .4s}.sop-accordion.sop-warm-help-accordion .sop-accordion-content{color:var(--acc-ink)}.sop-accordion.sop-warm-help-accordion .sop-accordion-title b{font-weight:600} .sop-accordion.sop-warm-help-accordion{--acc-bg:#f1ece3;--acc-ink:#4a4034;--acc-muted:#7f715f;--acc-accent:#897150;--acc-line:#c5b79f;--acc-radius:8px;--acc-padding:22px}.sop-accordion.sop-warm-help-accordion .sop-accordion-index{display:none}.sop-accordion.sop-warm-help-accordion .sop-accordion-content{font-size:13px;line-height:1.85}
-.sop-accordion.sop-warm-help-accordion{max-width:100%}.sop-accordion.sop-warm-help-accordion,.sop-accordion.sop-warm-help-accordion *{box-sizing:border-box}.sop-accordion.sop-warm-help-accordion :is(button,input,textarea,a){min-width:0}
-.sop-accordion.sop-warm-help-accordion{background:var(--acc-bg);padding:8px;--acc-muted:color-mix(in srgb,var(--acc-ink) 80%,var(--acc-bg))}.sop-accordion.sop-warm-help-accordion:focus-visible,.sop-accordion.sop-warm-help-accordion :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
-@media(prefers-reduced-motion:reduce){.sop-accordion.sop-warm-help-accordion,.sop-accordion.sop-warm-help-accordion *,.sop-accordion.sop-warm-help-accordion::before,.sop-accordion.sop-warm-help-accordion::after,.sop-accordion.sop-warm-help-accordion *::before,.sop-accordion.sop-warm-help-accordion *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-.sop-accordion.sop-warm-help-accordion[data-sop-paused] *,.sop-accordion.sop-warm-help-accordion[data-paused=true] *,.sop-accordion.sop-warm-help-accordion[data-motion-running=false] *,.sop-accordion.sop-warm-help-accordion[data-wb-paused=true] *{animation-play-state:paused!important}
-@media(forced-colors:active){.sop-accordion.sop-warm-help-accordion{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-accordion.sop-warm-help-accordion :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+/* 穏やかな紙色のヘルプ。番号とバッジを省き、質問・補足・開閉記号だけへ整理する。開いた本文は明るい一面と十分な行間で区切り、長い質問でも記号の領域を確保する。 */
+
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion{--acc-bg:transparent;--acc-ink:#3b3833;--acc-muted:#625d53;--acc-line:#b6ab95;--acc-accent:#8b4b2f;--acc-radius:0px;--acc-surface:transparent;--acc-padding:20px;max-width:410px;color-scheme:light;background:transparent}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-item{--ao:0;background:transparent;border:0;border-radius:0;box-shadow:none;overflow:visible;margin:0 0 12px;isolation:isolate}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-item[data-open=true]{--ao:1;background:transparent;border:0;box-shadow:none}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-heading{position:relative;z-index:1;font:inherit}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-trigger{min-height:82px;gap:12px;padding:20px var(--acc-padding);font:inherit;color:var(--acc-ink);background:transparent;transform:none}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-trigger:hover{background:transparent}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-title{min-width:0}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-title b{font:500 14px/1.5 Arial,"Yu Gothic",sans-serif;color:var(--acc-ink)}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-title small{font:10px/1.6 Arial,"Yu Gothic",sans-serif;color:var(--acc-muted);opacity:1}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-index{opacity:1;font:11px/1.3 Consolas,monospace;color:var(--acc-accent)}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-badge{display:none}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-sign{color:var(--acc-accent)}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-panel{position:relative;z-index:1}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-content{padding:4px var(--acc-padding) 23px;color:var(--acc-ink);font-size:12px;background:transparent;border:0;overflow-wrap:anywhere}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-acc-material{position:absolute;inset:0;pointer-events:none}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-acc-material i{position:absolute;display:block;box-sizing:border-box;pointer-events:none;transition:transform .4s cubic-bezier(.2,.8,.2,1),background .25s,opacity .25s}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-panel-foot,.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-panel-list li,.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-panel-label{flex-wrap:wrap;overflow-wrap:anywhere}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-content :is(button,input,select,textarea,img,video){max-width:100%;box-sizing:border-box}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-content :is(a,button,input,select,textarea):focus-visible{outline:2px solid var(--acc-accent);outline-offset:2px}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-trigger:focus-visible{outline:2px solid var(--acc-accent);outline-offset:-4px}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion [hidden]{display:none!important}
+
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion{--acc-ink:#443d33;--acc-muted:#685d4d;--acc-accent:#806342;--acc-line:#c8bca9;--acc-padding:19px;max-width:410px;background:#f2eee5;padding:8px;border:1px solid #d2c6b5;border-radius:8px}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-item{margin:0;background:transparent;border:0;border-bottom:1px solid #c8bca9}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-item:last-child{border-bottom:0}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-item[data-open=true]{background:#faf7ee;border:0;border-bottom:1px solid #c8bca9}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-item:last-child[data-open=true]{border-bottom:0}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-index,.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-badge,.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-acc-material{display:none}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-trigger{min-height:76px;gap:18px}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-title b{font-weight:600;font-size:14px}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-title small{font-size:11px;line-height:1.65}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-sign{flex:none;width:24px;height:24px}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-content{font-size:13px;line-height:1.85;padding-top:4px;padding-bottom:24px}
+
+
+@media(prefers-reduced-motion:reduce){.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion,.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion *,.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion *::before,.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(forced-colors:active){.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion{--acc-ink:CanvasText;--acc-muted:CanvasText;--acc-accent:Highlight;--acc-line:ButtonText;color:CanvasText}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-acc-material,.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-item::before,.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-item::after,.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-clip::before,.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-heading::before,.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-heading::after{display:none!important}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-item,.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-item[data-open=true]{background:Canvas;border:1px solid ButtonText;box-shadow:none}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-trigger,.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-content{background:Canvas;color:CanvasText;box-shadow:none}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-trigger::before,.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-trigger::after,.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-content::before,.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-content::after{display:none}
+.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-sign{color:ButtonText}.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-sign::before,.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion .sop-accordion-sign::after{background:none;border-top:1px solid ButtonText;box-sizing:border-box}.sop-accordion.sop-warm-help-accordion.sop-warm-help-accordion :focus-visible{outline-color:Highlight}}

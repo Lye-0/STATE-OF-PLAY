@@ -26,7 +26,9 @@ for row,part,review in approved:
   if (r/'photos'/f"{row['id']}-stage.png").exists():photos=r/'photos'
  assert (photos/f"{row['id']}-stage.png").exists(),f"Missing gallery evidence: {row['id']}"
  assert (photos/f"{row['id']}-narrow.png").exists(),f"Missing narrow evidence: {row['id']}"
- images=figure(photos/f"{row['id']}-stage.png",'展示・初期状態')+figure(photos/f"{row['id']}-narrow.png",'320px・操作後')
+ before=w/'evidence/baseline'/f"{row['id']}-stage.png"
+ assert before.exists(),f"Missing original gallery evidence: {row['id']}"
+ images=figure(before,'修正前・元の展示')+figure(photos/f"{row['id']}-stage.png",'修正後・展示の初期状態')+figure(photos/f"{row['id']}-narrow.png",'修正後・320pxの操作状態')
  if row['category']=='dropdowns':
   images+=figure(photos/f"{row['id']}-expanded.png",'展開した候補・選択済み行')
  # Native switch images distinguish actual OFF and ON even when the gallery starts ON.
