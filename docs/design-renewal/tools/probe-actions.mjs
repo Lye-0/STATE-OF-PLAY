@@ -1,6 +1,6 @@
 import{createServer}from'vite';import{chromium}from'playwright';import fs from'node:fs/promises';import assert from'node:assert/strict';
 const root='/workspace/STATE-OF-PLAY',batch=process.argv[2],round=process.argv[3]??'1',out=`${root}/docs/design-renewal/batches/${batch}/captures/self-check-${round}`;await fs.mkdir(out,{recursive:true});
-const s=await createServer({root,server:{host:'127.0.0.1',port:0,hmr:false,watch:{ignored:['**/docs/**']}}});await s.listen();const browser=await chromium.launch({executablePath:'/usr/bin/chromium'});const page=await browser.newPage({viewport:{width:1200,height:1000}});const errors=[];page.on('pageerror',e=>errors.push(e.message));const results=[];
+const s=await createServer({root,server:{host:'127.0.0.1',port:0,hmr:false,watch:null}});await s.listen();const browser=await chromium.launch({executablePath:'/usr/bin/chromium'});const page=await browser.newPage({viewport:{width:1200,height:1000}});const errors=[];page.on('pageerror',e=>errors.push(e.message));const results=[];
 try{await page.goto(s.resolvedUrls.local[0]+`docs/design-renewal/batches/${batch}/snapshot/round-${round}/index.html`);await page.waitForFunction(()=>window.ready);
 for(const section of await page.locator('section').all()){
  const id=await section.getAttribute('data-part'),button=section.locator('button');if(!await button.count())continue;await button.evaluate(e=>{window.calls??={};window.calls[e.closest('section').dataset.part]=0;e.addEventListener('click',()=>window.calls[e.closest('section').dataset.part]++)});

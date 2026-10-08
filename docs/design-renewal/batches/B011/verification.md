@@ -1,0 +1,9 @@
+# B011 検証
+
+最終round-5のnative10タブのARIA/関連する本文とID/自動と手動キー選択/項目無効・全体無効/入力と選択の保持/hidden時focus移動/縦横/320・390・768pxの長文/RTL/forced/reduced、React実items10×4配布形式の制御/非制御・任意本文・native input・manual・disabled skip・unique IDs・narrow・forced・StrictMode cleanup、ギャラリー10件が成功。R162初期縦はnative ArrowDown、Reactの非制御manualも実際の縦ArrowDownを検証。20タブnative2配布レイアウト、型チェック3構成、730件配布契約4テストも成功。
+
+独立Astra round-4で4件を調整推奨。R158指標を3px延長して本文へ接続、R160差込み口を背景+paddingの6pxへ変えてclip内で選択足が口をまたぐよう修正。R162縦の桁と本文を同じ全高へstretchし、横の4pxの接点の隙間を除去。R164縦で横の54px余白を除き、320pxのラベルを列へ復帰。round-5全10件合格、100 source hash/CSS10一致。長い任意本文でもR162下支持が桁へ届き、全10native操作回帰にerrors0。
+
+補助検証はR162の初期縦のmanualで横キーを期待していたfixtureを縦キーへ訂正して再実行。描画ソースやassertionの合格基準を変更したものではない。独立検査の途中でVite file watcher上限ENOSPCが起き、固定fixture用helperのwatchをnullにして再実行。sourceを変更する監視試験ではないため静的な配布コードのservingと機能/形状を同じ基準で検証し、実際の監視テストは既存testに保持。
+
+共有runtime/import変更なし、B001 production build成功を参照。新装飾6iはnative markup/native例/React panelArtで一致。Chromiumとメディアエミュレーションの検証で、他ブラウザ/実機touchは未確認。全730再操作は行わず近似候補と元監査から造形比較。

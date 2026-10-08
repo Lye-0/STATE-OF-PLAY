@@ -1,6 +1,6 @@
 import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {chromium} from 'playwright';import {createServer} from 'vite';import {buildCatalog,ROOT} from '../../../scripts/catalog.ts';import {getDelivery} from '../../../src/catalog/delivery.ts';
 const batch=process.argv[2],work=path.join(ROOT,'docs/design-renewal'),rows=JSON.parse(fs.readFileSync(work+'/targets.json','utf8')).filter((r:any)=>r.batch===batch&&r.category==='textboxes'),parts=buildCatalog(ROOT,rows.map((r:any)=>r.id),{appearance:false}).parts;
-const s=await createServer({root:ROOT,server:{host:'127.0.0.1',port:0,hmr:false,watch:{ignored:['**/docs/**']}}});await s.listen();const browser=await chromium.launch({executablePath:'/usr/bin/chromium'}),errors:string[]=[];
+const s=await createServer({root:ROOT,server:{host:'127.0.0.1',port:0,hmr:false,watch:null}});await s.listen();const browser=await chromium.launch({executablePath:'/usr/bin/chromium'}),errors:string[]=[];
 try{for(const [format,layout] of [['tsx','portable'],['jsx','portable'],['tsx','original'],['jsx','original']] as const){
  const out=path.join(work,'batches',batch,'exports','react-fields',format+'-'+layout);fs.mkdirSync(out,{recursive:true});let imports='';
  for(const[p,i]of parts.map((p,i)=>[p,i]as const)){const d=getDelivery(p,format,layout);for(const f of d.files){const q=path.join(out,p.id,f.name);fs.mkdirSync(path.dirname(q),{recursive:true});fs.writeFileSync(q,f.code)}imports+=`import C${i} from './${p.id}/${d.entry}';\n`}

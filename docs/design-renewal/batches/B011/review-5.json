@@ -1,0 +1,152 @@
+{
+  "batch": "B011",
+  "round": 5,
+  "snapshot": "docs/design-renewal/batches/B011/snapshot/round-5",
+  "overall": "pass",
+  "parts": [
+    {
+      "number": 156,
+      "id": "copper-pin-tabs",
+      "verdict": "pass",
+      "assessment": "6pxの銅棒が中空の留め片を通り、本文の背の全高支持へ接続する。縦では棒と留め片を向きごと変え、全ての紙を保持する。R151の二面の圧着翼、R153の紐とは剛体を通す機構で分かれる。文字と押し面を動かさず、Aとして合格。 round-4から正本不変を照合し、通常造形の合格判定を引継ぐ。",
+      "findings": [],
+      "nearestComparisons": [
+        "R151",
+        "R153",
+        "R156元監査"
+      ]
+    },
+    {
+      "number": 157,
+      "id": "stitched-folio-tabs",
+      "verdict": "pass",
+      "assessment": "紙の外側24pxの革へ実孔を抜き、連続した斜めの糸を孔中心に通す。白/暗色背景で孔が透過し、紙面上の縫い目模様ではなく背の縫合として読める。R031の織物、R096の機織り、R082の縫製帯とは素材と綴じ位置が異なる。A合格。 round-4から正本不変を照合し、通常造形の合格判定を引継ぐ。",
+      "findings": [],
+      "nearestComparisons": [
+        "R031",
+        "R082",
+        "R096"
+      ]
+    },
+    {
+      "number": 158,
+      "id": "instrument-tabs",
+      "verdict": "pass",
+      "assessment": "Tの目盛り/小番号/選択カーソルを保持。三角の根元を変えず高さ13px・bottom:-11pxとしたことで、先端y657.890625が本文topと一致し、実画像でも3pxの隙間が解消した。文字・押し面を保持し合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R105",
+        "R135",
+        "R158元監査"
+      ],
+      "resolvedFindings": [
+        "R158-pointer-contact"
+      ]
+    },
+    {
+      "number": 159,
+      "id": "floating-bookmark-tabs",
+      "verdict": "pass",
+      "assessment": "TのV字の栞と静かな配色を保ち、6pxの差込み口へ帯の足を重ねて隙間を除いた。選択帯と本文を読める面として分けつつ接点を示す。R153の吊り札とは支持が異なり、元監査の精度基準で合格。 round-4から正本不変を照合し、通常造形の合格判定を引継ぐ。",
+      "findings": [],
+      "nearestComparisons": [
+        "R153",
+        "R159元監査"
+      ]
+    },
+    {
+      "number": 160,
+      "id": "negative-slot-tabs",
+      "verdict": "pass",
+      "assessment": "Tの下索引と論理順を保持。6pxの口をscrollport内の背景とpaddingへ移し、選択足がクリップされず本文へ連続する。実画像で帯をまたぐ選択紙を確認し、狭幅の横スクロールも維持。合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R159",
+        "R160元監査"
+      ],
+      "resolvedFindings": [
+        "R160-slot-clipping"
+      ]
+    },
+    {
+      "number": 161,
+      "id": "slanted-spine-tabs",
+      "verdict": "pass",
+      "assessment": "Tの大きい索引番号を保ち、15pxの斜めの裁断面と本文の同幅の背を組んだ。字を斜めへ傾けず、番号をさらに拡大して装飾の代わりにしない。元監査の形の精度として合格。 round-4から正本不変を照合し、通常造形の合格判定を引継ぐ。",
+      "findings": [],
+      "nearestComparisons": [
+        "R138",
+        "R161元監査"
+      ]
+    },
+    {
+      "number": 162,
+      "id": "rung-tabs",
+      "verdict": "pass",
+      "assessment": "二本の桁と三段、本文の上下支持が一体として成立。縦ではlistとpanelのy/高さが一致し、任意の長文でも桁が下支持まで伸びる。横では5pxの桁へ段が接触し、従来の上下4pxの空隙が消えた。一本の案内溝とは異なる梯子の構造を保持しA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R154",
+        "R143",
+        "R162元監査"
+      ],
+      "resolvedFindings": [
+        "R162-ladder-contact"
+      ]
+    },
+    {
+      "number": 163,
+      "id": "embossed-archive-tabs",
+      "verdict": "pass",
+      "assessment": "丸く返した章扉、型押しした番号窓、保存函の背、右の半円の指掛けを同じ材質へまとめた。右の抜きは内面に塞がれず白/暗色背景に透過。R121の木の留め継ぎと蝋、R104の陶の凹みとは収まり/切欠き/章の入口の関係で分かれ、A合格。 round-4から正本不変を照合し、通常造形の合格判定を引継ぐ。",
+      "findings": [],
+      "nearestComparisons": [
+        "R121",
+        "R104",
+        "R163元監査"
+      ]
+    },
+    {
+      "number": 164,
+      "id": "open-corner-tabs",
+      "verdict": "pass",
+      "assessment": "54×36px/48×34pxの実開角と12px離したL断面のA造形は前回合格を維持。縦列の不要な横配置用余白を除き、320pxの長文見出しも96pxの押し面内で読める幅へ復帰した。本文footerの折返しも確認し、UI残件を解消。",
+      "findings": [],
+      "nearestComparisons": [
+        "R141",
+        "R154",
+        "R164元監査"
+      ],
+      "normalDesignVerdict": "pass",
+      "resolvedFindings": [
+        "R164-vertical-label-clip"
+      ]
+    },
+    {
+      "number": 165,
+      "id": "film-caption-tabs",
+      "verdict": "pass",
+      "assessment": "Tのフィルム帯/明るい本文面を保持し、14px帯の5px孔を実際に抜いて選択窓を本文へ接続した。暗い材質を本文まで広げず、孔は白/暗色で透過する。R113の二列入力窓とは一本の帯と三見出しの構造で分かれ、元監査Tとして合格。 round-4から正本不変を照合し、通常造形の合格判定を引継ぐ。",
+      "findings": [],
+      "nearestComparisons": [
+        "R113",
+        "R152",
+        "R165元監査"
+      ]
+    }
+  ],
+  "checks": [
+    "固定source100ファイルのSHA-256がreview-input-5.jsonと全一致。native配布CSS10件と正本CSSをimport除外で照合し全一致。captures/reviewer-extra-5/checks.json。",
+    "round-4/5正本比較で変更はR158/R160/R162/R164のstyles.cssのみ。他6件は全正本ファイル不変で、合格済み通常造形を引継ぎ。",
+    "全10の固定nativeを実本文で再操作。ARIA/ID/hidden、方向キー/End、R162初期verticalのArrowDown、manual、disabled skip、input値とselection保持、hidden panelからのfocus移動、縦横、320/390/768長文、RTL、forced/reducedが全成功。captures/reviewer-tabs-5/checks.json: results10、errors0。",
+    "全10を横/縦の第2選択で再撮影しpseudoと本文/列の位置を記録。R158の三角先端と本文topの一致、R160の帯を越える選択足、R162の横木と5px桁の接触を実画像で確認。captures/reviewer-joints-5。",
+    "R162縦でlist/panelはy598.671875・高さ290.890625で一致。長い任意本文を追加した状態でも下支持が桁へ接続。rung-tabs-vertical-tall.png。",
+    "全10を320px×vertical×長い見出し×inputを持つ第3本文で再撮影。R164タブ幅96pxへ復帰、ラベルがhit内へ収まり、document幅320px。captures/reviewer-vertical-320-r5。",
+    "R157/R163/R164/R165の白背景での孔/切欠きも再撮影。通常造形、素材/接合、既存730件とB001〜B010の最寄比較はreview-4の評価を継承。hover/leave/reenterの文字・hit安定はround-4実測を継承し、今回の変更対象では選択/縦横/長文の回帰を再確認。"
+  ],
+  "limits": [
+    "Chromiumでの実操作とforced-colors/reduced-motionのエミュレーション。実OSの高コントラストや他エンジンの確認ではない。",
+    "React実items×4形式は主担当のtabs-react-r5成功報告を参照。独立検査は固定native actual exportを実行した。",
+    "今回の造形判断は前回合格を固定し、4件の残件解消と回帰に限定。既存730件の全画像を再監査したものではない。"
+  ]
+}
