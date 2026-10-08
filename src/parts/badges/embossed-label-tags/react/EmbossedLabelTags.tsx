@@ -41,7 +41,7 @@ const config: FoundationConfig = {
   ]
 };
 export type EmbossedLabelTagsProps = FoundationProps;
-/** 圧印したラベル。文字面を平らにし、外周の薄い二重縁と件数の刻みで情報を分ける。 */
+/** 実名称を上の読む橋、実件数と削除を下の鋳弓へ置く、一体の鋳造の弓形タグ。厚い角丸チップを廃し、左右16pxの支柱と丸く返る64pxの下の鋳面へ、名称の平らな橋が接する。二つの読む位置の間には30px以上の本当の空隙を開ける。任意の長い名称が上の橋を伸ばし、実件数と削除は下の素材面に固定する。選択で輪郭/文字位置は動かない。 */
 export default forwardRef<HTMLDivElement, EmbossedLabelTagsProps>(function EmbossedLabelTags(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBadges} mountContent={mountBadges}/>;
 });

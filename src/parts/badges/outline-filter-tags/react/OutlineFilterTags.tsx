@@ -41,7 +41,7 @@ const config: FoundationConfig = {
   ]
 };
 export type OutlineFilterTagsProps = FoundationProps;
-/** Outline Filter Tags: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */
+/** 選択をnativeチェックと明るい青の面で一目で確認できる実用タグ。薄い緑枠と淡い状態差を、同じ寸法の灰青の輪郭、選択時の青い読む面、実checkboxの確定状態へ揃える。装飾を増やさず、名称・実件数・削除の操作が導入先でも使えるBに整える。狭い表示では名称を全幅上段、件数と削除を下段へ分ける。 */
 export default forwardRef<HTMLDivElement, OutlineFilterTagsProps>(function OutlineFilterTags(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBadges} mountContent={mountBadges}/>;
 });

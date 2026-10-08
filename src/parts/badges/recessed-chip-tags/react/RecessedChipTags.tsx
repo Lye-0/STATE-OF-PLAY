@@ -41,7 +41,7 @@ const config: FoundationConfig = {
   ]
 };
 export type RecessedChipTagsProps = FoundationProps;
-/** くぼみの中の分類札。タグ本体の小さな奥行きと丸い件数窓で読み取り位置を分ける。 */
+/** 始端の大きい指の切欠きから、凹む読む床へつながる成形チップ。普通の淡青の角丸札と数値の箱を廃し、半径18pxの真の切欠き、奥へ下がる6px/7pxの壁と、異なる24px/34pxの終端曲面を作る。読む文字は36px内側の平床へ置き、選択時も床の輪郭を変えない。狭い表示では名称を全幅上段、件数と削除を下段へ分ける。 */
 export default forwardRef<HTMLDivElement, RecessedChipTagsProps>(function RecessedChipTags(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBadges} mountContent={mountBadges}/>;
 });

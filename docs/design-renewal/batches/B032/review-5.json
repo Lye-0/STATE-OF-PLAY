@@ -1,0 +1,175 @@
+{
+  "batch": "B032",
+  "round": 5,
+  "snapshot": "docs/design-renewal/batches/B032/snapshot/round-5",
+  "overall": "changes_requested",
+  "parts": [
+    {
+      "number": 438,
+      "id": "stitched-label-tags",
+      "verdict": "pass",
+      "assessment": "合格。端の楕円孔とC裏帯を廃し、一枚の布の全長にわたる38pxの開いた袖縫い代へ再構成。高さ10pxの実空隙の下で読む布へ6px接続し、布の自由端は片側の斜めの裁断で終わる。側孔へ別帯を通すR418とは、主形・空隙の位置・素材の連続が異なる。長文/RTLでも袖と本文が分離し、空隙を下層で塞がない。",
+      "findings": [],
+      "nearestComparisons": [
+        418,
+        278,
+        283
+      ],
+      "resolvedFindings": [
+        "R438-repeated-cloth-slit-return"
+      ]
+    },
+    {
+      "number": 439,
+      "id": "bracket-tags",
+      "verdict": "pass",
+      "assessment": "合格。単なる両端の括弧記号から、一つの幅50pxの厚いC支持と、その腕に20px入る読む板へ主形が変わった。中央の空隙・上下の24%の腕・8pxの端面が実寸で見え、文字は56px内側へ固定される。R399の全索引を挟む二本の曲材とは、各札を片側から受ける一体の大きいCで異なる。狭幅長文の最広行91.05px/6行、LTR/RTLで接点・hitを維持。",
+      "findings": [],
+      "nearestComparisons": [
+        399,
+        262,
+        282
+      ],
+      "resolvedFindings": [],
+      "inheritedFrom": "round-3正本10ファイル不変、native操作と実像をround-4再確認"
+    },
+    {
+      "number": 440,
+      "id": "index-flag-tags",
+      "verdict": "pass",
+      "assessment": "合格、T保持。元の太い始端を30pxの返る旗へ整え、14pxから始まる紙が16px入り、7px上面/6px小口が同じ支持になる。単に旗の色を変えず、元の控えめな選択札の輪郭を保って差込みを精密化した。狭幅の名称/件数/削除も分離される。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R440",
+        259,
+        321
+      ],
+      "resolvedFindings": [],
+      "inheritedFrom": "round-3正本10ファイル不変、native操作と実像をround-4再確認"
+    },
+    {
+      "number": 441,
+      "id": "embossed-label-tags",
+      "verdict": "adjust",
+      "assessment": "通常造形は合格。件数/削除の無い札を短い返端へ収め、不要な空の下段を解消。forcedの名称面はHighlight/HighlightText等へ揃い、白文字と薄茶背景の不整合を解消。ただし通常時の実件数/削除の色は未変更で、下弓上の2.55:1/1.58:1が残る。",
+      "findings": [
+        {
+          "key": "R441-count-floor-contrast",
+          "severity": "major",
+          "kind": "ui",
+          "problem": "通常時の件数・削除を濃い下弓へ載せたが文字は旧色のまま。未選択#735a43/#bd9e7cが2.55:1、選択#876441/#a98560が1.58:1。上橋の名前は読めても、下の実情報と操作が床へ沈む。",
+          "proposal": "下段の件数と削除に下弓で読める専用の暗い文字色を与える。forcedでは親のシステム色を継承する上書きを保ち、選択/未選択と大きい件数を実画像で照合する。",
+          "evidence": "captures/reviewer-badge-extra-4/embossed-label-tags-rtl-dark.png、reviewer-badges-4/embossed-label-tags-selected.png。固定CSSのbefore下border色とsmall/buttonの継承色。"
+        }
+      ],
+      "nearestComparisons": [
+        "元R441",
+        "旧R239",
+        "旧R424"
+      ],
+      "resolvedFindings": [
+        "R441-generic-beveled-chip",
+        "R441-forced-name-contrast"
+      ],
+      "normalDesignVerdict": "pass"
+    },
+    {
+      "number": 442,
+      "id": "drafting-note-tags",
+      "verdict": "pass",
+      "assessment": "合格。C材/円切欠きを廃し、一つの16pxのT横尺へ、斜めの自由端を持つ紙を12px重ねる。上の接点から紙が開いた側へ伸び、各札を上下から挟むR439、三角定規で受けるR317と異なる。RTLは輪郭の鏡映が一度となり、縦の背も露出したまま連続する。",
+      "findings": [],
+      "nearestComparisons": [
+        439,
+        317,
+        313
+      ],
+      "resolvedFindings": [
+        "R442-repeated-c-supported-board",
+        "R442-rtl-support-spine-hidden"
+      ]
+    },
+    {
+      "number": 443,
+      "id": "ribbon-end-tags",
+      "verdict": "pass",
+      "assessment": "合格、T保持。元の両端の巻込みを12pxの曲面へ広げ、読む帯と上下4pxの小口を整えた。左右の巻いた端が同じ一枚の帯を閉じ、元の細い針のような端より素材が読み取りやすい。名称/件数/削除はhoverや選択で移動せず、狭幅でも同じ帯の連続性を保つ。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R443",
+        283,
+        333
+      ],
+      "resolvedFindings": [],
+      "inheritedFrom": "round-3正本10ファイル不変、native操作と実像をround-4再確認"
+    },
+    {
+      "number": 444,
+      "id": "recessed-chip-tags",
+      "verdict": "pass",
+      "assessment": "合格。通常の角丸と別の数値箱から、始端を36px高で大きく欠く実切欠き・平らな低い床・始端側の6/7pxの内壁と丸い終端の一つの凹材へ変わった。外の負形と内床の高低差が一体で読め、色差だけの変更を超える。旧R239の同心の二重ピルと異なり、開いた始端と深い片側の床を持つ。孔を飾りとして増やさず、中央の名称と操作を平面へ保つ。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R444",
+        "旧R239",
+        384
+      ],
+      "resolvedFindings": [],
+      "inheritedFrom": "round-3正本10ファイル不変、native操作と実像をround-4再確認"
+    },
+    {
+      "number": 445,
+      "id": "letterpress-tags",
+      "verdict": "pass",
+      "assessment": "合格、T保持。元の活字・実数値・罫の関係を保ち、下端を2pxの小口と上の1pxの罫へ軽くした。余計な囲いや偽の印字を足さず、実名称と実件数を明瞭に読む分類票として成立。狭幅の別段配置とforcedでも選択が明瞭。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R445",
+        435,
+        401
+      ],
+      "resolvedFindings": [],
+      "inheritedFrom": "round-3正本10ファイル不変、native操作と実像をround-4再確認"
+    },
+    {
+      "number": 449,
+      "id": "outline-filter-tags",
+      "verdict": "pass",
+      "assessment": "合格、B基準。元監査でもBの実用タグとして状態強化を求めた対象。固定輪郭とnativeチェック、明るい青の選択面が一致し、元の淡い緑面より状態が明快。Aの独創性の合格例には数えず、Bの可読性/操作性として判定した。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R449"
+      ],
+      "resolvedFindings": [],
+      "inheritedFrom": "round-3正本10ファイル不変、native操作と実像をround-4再確認"
+    },
+    {
+      "number": 452,
+      "id": "bridge-control-number",
+      "verdict": "pass",
+      "assessment": "合格、T保持。native入力と範囲ヒントにLTR isolateを指定し、RTLでも-12345.678の負号/小数の順序が保たれる。ラベルと操作柱のRTL配置は維持。梁/支点の通常形を変えず、長い単位の非干渉、途中遷移中の入力の矩形/字体/即時値を再確認した。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R452",
+        344,
+        239
+      ],
+      "normalDesignVerdict": "pass",
+      "resolvedFindings": [
+        "R452-rtl-numeric-sign-order"
+      ]
+    }
+  ],
+  "checks": [
+    "固定正本100hash一致。round-4から99正本不変、embossed-label-tags/styles.cssのみ変更。captures/reviewer-extra-6/inheritance.jsonの4-to-5。",
+    "全9タグforcedの選択labelの実背景/文字色を再検査し、R441通常背景の残存が解消。captures/reviewer-forced-5/checks.json とembossed-selected-short.png。",
+    "通常の固定native9件を撮影し、R441件数無しの短い返端を確認。SOP_CAPTURE_ONLYであり、この撮影をAPIの再実行成功として数えない。reviewer-badges-5。",
+    "通常時のR441のsmall/button色と下弓色はround-4から不変。前版の実描画とCSSのコントラスト問題を引継ぎ。",
+    "他9件の造形/操作はround-4から正本不変のため前版の独立結果を引継ぎ。"
+  ],
+  "limits": [
+    "独立実操作はChromiumの固定native配布。React4形式/全基盤回帰は今回独立再実行しておらず、主担当の成功報告と区別する。",
+    "元730全件を今回再操作したわけではない。既存監査と対象・近似画像/固定CSSを使った構造比較。",
+    "R449は元監査/設計通りB基準。残る9件をA（うちTは元形保持の精度）として評価した。"
+  ]
+}

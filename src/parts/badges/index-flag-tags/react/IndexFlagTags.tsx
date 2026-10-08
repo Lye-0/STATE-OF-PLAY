@@ -41,7 +41,7 @@ const config: FoundationConfig = {
   ]
 };
 export type IndexFlagTagsProps = FoundationProps;
-/** 索引の旗札。色の端を短い旗にして分類を見つけやすくし、文字と削除は長方形の中へ保つ。 */
+/** 選択札の始端を、一つの幅広い差込む旗へ整えるタグ。元の太い始端の分かりやすさを保持し、幅30pxの戻る旗と7pxの上面へ、14pxから始まる読む紙が16px入る。短い旗だけが貼られた矩形にせず、紙の6pxの小口と同じ差込みとして組む。狭い表示では名称を全幅上段、件数と削除を下段へ分ける。 */
 export default forwardRef<HTMLDivElement, IndexFlagTagsProps>(function IndexFlagTags(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBadges} mountContent={mountBadges}/>;
 });

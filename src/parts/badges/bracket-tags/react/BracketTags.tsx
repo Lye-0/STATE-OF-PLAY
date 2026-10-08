@@ -41,7 +41,7 @@ const config: FoundationConfig = {
   ]
 };
 export type BracketTagsProps = FoundationProps;
-/** 細い角括弧の分類。タグ全体を塗りつぶさず、左右の支えと選択下線で境界を示す。 */
+/** 一つの大きな開いた支持括弧へ、平らな読む板を差すタグ。両端に細い括弧の記号を足す構成を廃止し、幅50pxの成形されたC支持、24%の上下の折る腕、そこへ20px重なる読む板を組む。括弧の内側には本当の空隙を残し、native名称は56pxの内側に固定する。狭い表示では名称を全幅上段、件数と削除を下段へ分ける。 */
 export default forwardRef<HTMLDivElement, BracketTagsProps>(function BracketTags(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBadges} mountContent={mountBadges}/>;
 });

@@ -1,0 +1,186 @@
+{
+  "batch": "B032",
+  "round": 3,
+  "snapshot": "docs/design-renewal/batches/B032/snapshot/round-3",
+  "overall": "changes_requested",
+  "parts": [
+    {
+      "number": 438,
+      "id": "stitched-label-tags",
+      "verdict": "redesign",
+      "assessment": "再設計。織り面と切込み・裏材の接点は実像にあるが、既承認R418と同じ「織りの読む矩形＋端の楕円切込み＋後ろのC字の折返し」である。紫の変更、左右の反転、裏材の拡大を超える主構造の差が不足する。",
+      "findings": [
+        {
+          "key": "R438-repeated-cloth-slit-return",
+          "severity": "major",
+          "kind": "duplication",
+          "problem": "R418は2/3px周期の織り面・上下5px端・端の楕円切込み・後ろのC折返し。R438も同じ層構成で、切込み10×3、返し36pxへの寸法変更と反転が中心になる。カテゴリを跨いだ同一の接続の反復。",
+          "proposal": "孔と裏のCを廃し、一枚の布自体の連続した断面で組み直す。例えば長辺を立ち上げた開いた縫い代と、外へ現れる織端/切端で読む布を支える構成。R418の側孔・R333の二片縫合・R283の両端尾を流用せず、折面がどの実ラベル面から連続しているかを示す。",
+          "evidence": "captures/reviewer-badges-3/stitched-label-tags-initial.png、reviewer-badge-extra-3/stitched-label-tags-rtl-dark.png。比較B030/captures/reviewer-trails-4/stitched-route-trail-initial.pngと両固定CSS。"
+        }
+      ],
+      "nearestComparisons": [
+        418,
+        278,
+        283
+      ]
+    },
+    {
+      "number": 439,
+      "id": "bracket-tags",
+      "verdict": "pass",
+      "assessment": "合格。単なる両端の括弧記号から、一つの幅50pxの厚いC支持と、その腕に20px入る読む板へ主形が変わった。中央の空隙・上下の24%の腕・8pxの端面が実寸で見え、文字は56px内側へ固定される。R399の全索引を挟む二本の曲材とは、各札を片側から受ける一体の大きいCで異なる。狭幅長文の最広行91.05px/6行、LTR/RTLで接点・hitを維持。",
+      "findings": [],
+      "nearestComparisons": [
+        399,
+        262,
+        282
+      ]
+    },
+    {
+      "number": 440,
+      "id": "index-flag-tags",
+      "verdict": "pass",
+      "assessment": "合格、T保持。元の太い始端を30pxの返る旗へ整え、14pxから始まる紙が16px入り、7px上面/6px小口が同じ支持になる。単に旗の色を変えず、元の控えめな選択札の輪郭を保って差込みを精密化した。狭幅の名称/件数/削除も分離される。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R440",
+        259,
+        321
+      ]
+    },
+    {
+      "number": 441,
+      "id": "embossed-label-tags",
+      "verdict": "redesign",
+      "assessment": "再設計。元の普通の茶色い角丸チップに対し厚みと曲率は増したが、現在も閉じた四辺を持つ面取り角丸札が主形である。45%/38%の曲率と10/12/14pxの明暗の縁だけでは、Aの独立した構造へ届かない。",
+      "findings": [
+        {
+          "key": "R441-generic-beveled-chip",
+          "severity": "major",
+          "kind": "design",
+          "problem": "実像は淡い読む矩形を厚い明暗の縁で囲んだチップ。非対称な角の丸さ以外に支持・接合・実情報の配置から形を決める大きい特徴がなく、元監査の「Bなら成立するがAの独創性不足」が残る。",
+          "proposal": "四辺の囲いを廃し、実名称と実件数の二つの読む位置の間に大きい空隙を持つ一体の鋳造体など、材料の主輪郭から再設計する。二面を別カードにせず、一つの湾曲した支持がどう両面へ連続するかを示す。件数無しでも不要な空欄や偽情報を残さない。",
+          "evidence": "captures/reviewer-badges-3/embossed-label-tags-initial.png と evidence/baseline/embossed-label-tags-badge.png。固定CSS beforeの全周borderとborder-radius:45% 18px 38% 14px。"
+        }
+      ],
+      "nearestComparisons": [
+        "元R441",
+        "旧R239",
+        "旧R424"
+      ]
+    },
+    {
+      "number": 442,
+      "id": "drafting-note-tags",
+      "verdict": "redesign",
+      "assessment": "再設計。紙の円形切欠きは本当に抜けているが、読む板と右のC支持という主構成が同組R439の反転に近い。さらにRTLではCの縦の背が紙に隠れ、上下の短腕へ分断される。説明の「円孔」は外周を開いているため、現状の実物は閉じた孔ではなく切欠きである。",
+      "findings": [
+        {
+          "key": "R442-repeated-c-supported-board",
+          "severity": "major",
+          "kind": "duplication",
+          "problem": "R439の片側Cで読む板を上下から保持する構成を、反対側の薄いC・一角の切断・丸い切欠きへ変更した範囲に留まる。孔が実在しても、保持構造の独立性の根拠にはならない。",
+          "proposal": "C支持を廃し、実ラベルの読む紙を横断する開いたT定規/横尺の溝へ差し、その裁断端を外へ出すなど、囲う支持とは別の接続から設計する。大きい三角定規＋三角孔＋紙差込みは既承認R317と近いため代替案としてそのまま使わない。",
+          "evidence": "captures/reviewer-badges-3/bracket-tags-initial.png と drafting-note-tags-initial.png。両固定CSSの板/上下腕/片側支持の層比較。"
+        },
+        {
+          "key": "R442-rtl-support-spine-hidden",
+          "severity": "major",
+          "kind": "consistency",
+          "problem": "RTLでborder-inline-endとscaleX(-1)が重なり、支持の縦材が紙の裏へ来て隠れる。LTRの連続C材がRTLでは独立した上下の短い棒に変わる。",
+          "proposal": "新支持を組む際は物理的な輪郭全体の鏡映を一度だけ行い、左右の指定とlogical borderの二重反転を避ける。暗背景で縦材から上下腕まで連続して露出し、紙への重なりを保つことを検証する。",
+          "evidence": "captures/reviewer-badge-extra-3/drafting-note-tags-rtl-dark.png。afterのborder-inline-end:6pxとRTL scaleX(-1)、前面紙による縦材遮蔽。"
+        }
+      ],
+      "nearestComparisons": [
+        439,
+        317,
+        313
+      ]
+    },
+    {
+      "number": 443,
+      "id": "ribbon-end-tags",
+      "verdict": "pass",
+      "assessment": "合格、T保持。元の両端の巻込みを12pxの曲面へ広げ、読む帯と上下4pxの小口を整えた。左右の巻いた端が同じ一枚の帯を閉じ、元の細い針のような端より素材が読み取りやすい。名称/件数/削除はhoverや選択で移動せず、狭幅でも同じ帯の連続性を保つ。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R443",
+        283,
+        333
+      ]
+    },
+    {
+      "number": 444,
+      "id": "recessed-chip-tags",
+      "verdict": "pass",
+      "assessment": "合格。通常の角丸と別の数値箱から、始端を36px高で大きく欠く実切欠き・平らな低い床・始端側の6/7pxの内壁と丸い終端の一つの凹材へ変わった。外の負形と内床の高低差が一体で読め、色差だけの変更を超える。旧R239の同心の二重ピルと異なり、開いた始端と深い片側の床を持つ。孔を飾りとして増やさず、中央の名称と操作を平面へ保つ。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R444",
+        "旧R239",
+        384
+      ]
+    },
+    {
+      "number": 445,
+      "id": "letterpress-tags",
+      "verdict": "pass",
+      "assessment": "合格、T保持。元の活字・実数値・罫の関係を保ち、下端を2pxの小口と上の1pxの罫へ軽くした。余計な囲いや偽の印字を足さず、実名称と実件数を明瞭に読む分類票として成立。狭幅の別段配置とforcedでも選択が明瞭。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R445",
+        435,
+        401
+      ]
+    },
+    {
+      "number": 449,
+      "id": "outline-filter-tags",
+      "verdict": "pass",
+      "assessment": "合格、B基準。元監査でもBの実用タグとして状態強化を求めた対象。固定輪郭とnativeチェック、明るい青の選択面が一致し、元の淡い緑面より状態が明快。Aの独創性の合格例には数えず、Bの可読性/操作性として判定した。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R449"
+      ]
+    },
+    {
+      "number": 452,
+      "id": "bridge-control-number",
+      "verdict": "adjust",
+      "assessment": "通常造形は合格、T保持。梁の中央と三角支点の頂点が同じ下52pxで接続し、左右の梁端は72pxの固定操作柱へ届く。確定値に応じた±6度の梁だけが動き、入力/単位/操作hitを固定できる。長い単位と梁の干渉も解消。ただしRTLのASCII負数と範囲ヒントの読み順が崩れる。",
+      "findings": [
+        {
+          "key": "R452-rtl-numeric-sign-order",
+          "severity": "major",
+          "kind": "ui",
+          "problem": "RTLを部品へ設定するとnative ASCII入力値 -12345.678 が視覚的に12345.678-となる。下のmin/maxと単位を混ぜたヒントでも符号と区切りが組み替わり、負号と範囲の関係が読み取りにくい。API値・caret保持の成功だけでは字面の整合を検証できない。",
+          "proposal": "操作列や日本語/RTLラベルの配置とは独立して、ASCII数値入力にdirection:ltrを適用する。範囲ヒントも数値をLTR isolateし、区切りと単位を意味ごとの順序で保持する。-2、長い負数/小数、両端とも負数、長い単位でLTR/RTL画像とカーソルを再確認する。",
+          "evidence": "captures/reviewer-numbers-3/bridge-control-number-long-rtl-320.png、reviewer-number-motion-3/rtl-negative.png。native inputValue/APIは先頭負号の文字列/負値を保持している。"
+        }
+      ],
+      "nearestComparisons": [
+        "元R452",
+        344,
+        239
+      ],
+      "normalDesignVerdict": "pass"
+    }
+  ],
+  "checks": [
+    "固定正本100 SHA-256がreview-input-3と一致。native配布CSS10はimport除去後すべて正本と一致。captures/reviewer-extra-3/checks.json。",
+    "round-2→3は99正本不変、bridge-control-number/styles.cssのみ変更。9タグ90ファイルはすべて同一。配布navigation.js9件はB031最終3と同一。reviewer-extra-3/inheritance.json と shared-runtime.json。",
+    "9タグの固定native実配布を独立ブラウザ操作し全件成功。Space/native checked/API/focus維持、disabled/readOnly/実remove/controlled拒否、empty/one、FormDataに用いるnative checkboxとform resetの項目/選択復帰、320/390/768長文×LTR/RTL、forced/reduced/destroy。logs/reviewer-badges-r3.log、captures/reviewer-badges-3。",
+    "9タグの長名称+9桁件数+icon+削除を54状態（3幅×2方向×9件）で実TEXT_NODE Range測定。最広行の最小値86.703125px、最大6行。320pxの名称幅は最小110px。captures/reviewer-reading-3/checks.json。",
+    "全9タグで追加の実readOnly pointerが通知/削除/値変更を起こさないこと、削除後c→d、d→aでdisabled項目を飛ばし近い有効項目へ焦点移動することを確認。LTR/RTLでnormal hover/leave/reenter各2回、部品全体を基準に本文/件数/glyph/hitの矩形とfontが固定。reviewer-badge-extra-3。",
+    "R452固定native実操作：Arrow/Home/End/実ボタン、上下限/小数step、draft確定/invalid/Escape、編集中のselection保持、IME中のEnter抑止、readOnly/disabled/controlled拒否、native form値/reset、長い負数と単位320/390/768×LTR/RTL、forced/reduced/destroy。logs/reviewer-numbers-r3.log。",
+    "R452単位glyphと最大傾斜梁の上端を6幅方向状態で測定し非干渉。別検査でLTR/RTLのmin→maxを0/100/350msで撮影し、梁の途中遷移と確定値の即時反映、入力の矩形/font固定を確認。reviewer-number-motion-3。",
+    "元730監査の対象10理由・before画像を読み、既承認の近似（各part nearestComparisons）と固定実像/層構成を比較。実抜きは暗背景RTLでも確認し、閉じた孔と縁の切欠きを区別した。"
+  ],
+  "limits": [
+    "独立実操作はChromiumの固定native配布。React4形式/全基盤回帰は今回独立再実行しておらず、主担当の成功報告と区別する。",
+    "元730全件を今回再操作したわけではない。既存監査と対象・近似画像/固定CSSを使った構造比較。",
+    "R449は元監査/設計通りB基準。残る9件をA（うちTは元形保持の精度）として評価した。"
+  ]
+}

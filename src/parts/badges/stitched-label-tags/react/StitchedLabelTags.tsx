@@ -41,7 +41,7 @@ const config: FoundationConfig = {
   ]
 };
 export type StitchedLabelTagsProps = FoundationProps;
-/** 縫い付けた小ラベル。布の端と文字を離し、選択線を下の縫い目へ重ねる。 */
+/** 一枚の織布を、長い上辺の立ち上がった開いた縫い代と、平らに垂れる読む布へ組むタグ。端の孔・裏のC帯を廃止する。38pxの長い袖の断面には高さ10pxの実空隙があり、下の読む布へ6px続く。読む布の下は片方だけ10px切れた生の布端と8pxの縫った小口。全文は縫い代から48px下へ置き、選択では同じ布の密度だけを変える。狭幅は全文/件数・削除の二段にする。 */
 export default forwardRef<HTMLDivElement, StitchedLabelTagsProps>(function StitchedLabelTags(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBadges} mountContent={mountBadges}/>;
 });

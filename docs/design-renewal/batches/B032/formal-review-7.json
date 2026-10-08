@@ -1,0 +1,182 @@
+{
+  "batch": "B032",
+  "round": 7,
+  "snapshot": "docs/design-renewal/batches/B032/snapshot/round-7",
+  "overall": "changes_requested",
+  "parts": [
+    {
+      "number": 438,
+      "id": "stitched-label-tags",
+      "verdict": "pass",
+      "assessment": "合格。端の楕円孔とC裏帯を廃し、一枚の布の全長にわたる38pxの開いた袖縫い代へ再構成。高さ10pxの実空隙の下で読む布へ6px接続し、布の自由端は片側の斜めの裁断で終わる。側孔へ別帯を通すR418とは、主形・空隙の位置・素材の連続が異なる。長文/RTLでも袖と本文が分離し、空隙を下層で塞がない。",
+      "findings": [],
+      "nearestComparisons": [
+        418,
+        278,
+        283
+      ],
+      "resolvedFindings": [
+        "R438-repeated-cloth-slit-return"
+      ],
+      "inheritedFrom": "round-4通常造形合格。タグはround-6でnative再実操作、R452はround-7で再実操作。"
+    },
+    {
+      "number": 439,
+      "id": "bracket-tags",
+      "verdict": "pass",
+      "assessment": "合格。単なる両端の括弧記号から、一つの幅50pxの厚いC支持と、その腕に20px入る読む板へ主形が変わった。中央の空隙・上下の24%の腕・8pxの端面が実寸で見え、文字は56px内側へ固定される。R399の全索引を挟む二本の曲材とは、各札を片側から受ける一体の大きいCで異なる。狭幅長文の最広行91.05px/6行、LTR/RTLで接点・hitを維持。",
+      "findings": [],
+      "nearestComparisons": [
+        399,
+        262,
+        282
+      ],
+      "resolvedFindings": [],
+      "inheritedFrom": "round-4通常造形合格。タグはround-6でnative再実操作、R452はround-7で再実操作。"
+    },
+    {
+      "number": 440,
+      "id": "index-flag-tags",
+      "verdict": "pass",
+      "assessment": "合格、T保持。元の太い始端を30pxの返る旗へ整え、14pxから始まる紙が16px入り、7px上面/6px小口が同じ支持になる。単に旗の色を変えず、元の控えめな選択札の輪郭を保って差込みを精密化した。狭幅の名称/件数/削除も分離される。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R440",
+        259,
+        321
+      ],
+      "resolvedFindings": [],
+      "inheritedFrom": "round-4通常造形合格。タグはround-6でnative再実操作、R452はround-7で再実操作。"
+    },
+    {
+      "number": 441,
+      "id": "embossed-label-tags",
+      "verdict": "adjust",
+      "assessment": "通常造形と色は合格。下段を#21190fに変更し、未選択床6.89:1/選択床5.13:1へ改善。forcedの名称/下段はシステム色の対を維持し、件数無しの空床も短い返端へ解消。ただし短い名称＋大きい件数＋削除では下段の論理端に余白がなく、実数字が外周へ接する。配置の限定調整が残る。",
+      "findings": [
+        {
+          "key": "R441-short-name-count-edge",
+          "severity": "minor",
+          "kind": "ui",
+          "problem": "名称「項目A」＋アイコン＋9桁件数123456789＋削除の条件で札幅132.078125px、件数幅70.078125pxとなり、LTRの件数左端が札左端、RTLの件数右端が札右端と完全一致する。実数字が下弓の外周/曲がる側面へ詰まり、読む平面の内側の余白がなくなる。長い名称だけの検査では札が広いため現れない。",
+          "proposal": "下段の件数/削除の両端に論理的な読字余白を予約する。短い名称でも下段の必要幅を札へ反映し、狭いコンテナでは件数の折返し/下段分割で収める。形を再設計せず、LTR/RTL・短長名称・9桁件数・削除有無で実Rangeと読む面を照合する。",
+          "evidence": "captures/reviewer-final-7/tag-320-ltr.png、tag-320-rtl.png、checks.json。320/390/768の両方向で同じ端一致を実測。"
+        }
+      ],
+      "nearestComparisons": [
+        "元R441",
+        "旧R239",
+        "旧R424"
+      ],
+      "resolvedFindings": [
+        "R441-generic-beveled-chip",
+        "R441-forced-name-contrast",
+        "R441-count-floor-contrast"
+      ],
+      "normalDesignVerdict": "pass"
+    },
+    {
+      "number": 442,
+      "id": "drafting-note-tags",
+      "verdict": "pass",
+      "assessment": "合格。C材/円切欠きを廃し、一つの16pxのT横尺へ、斜めの自由端を持つ紙を12px重ねる。上の接点から紙が開いた側へ伸び、各札を上下から挟むR439、三角定規で受けるR317と異なる。RTLは輪郭の鏡映が一度となり、縦の背も露出したまま連続する。",
+      "findings": [],
+      "nearestComparisons": [
+        439,
+        317,
+        313
+      ],
+      "resolvedFindings": [
+        "R442-repeated-c-supported-board",
+        "R442-rtl-support-spine-hidden"
+      ],
+      "inheritedFrom": "round-4通常造形合格。タグはround-6でnative再実操作、R452はround-7で再実操作。"
+    },
+    {
+      "number": 443,
+      "id": "ribbon-end-tags",
+      "verdict": "pass",
+      "assessment": "合格、T保持。元の両端の巻込みを12pxの曲面へ広げ、読む帯と上下4pxの小口を整えた。左右の巻いた端が同じ一枚の帯を閉じ、元の細い針のような端より素材が読み取りやすい。名称/件数/削除はhoverや選択で移動せず、狭幅でも同じ帯の連続性を保つ。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R443",
+        283,
+        333
+      ],
+      "resolvedFindings": [],
+      "inheritedFrom": "round-4通常造形合格。タグはround-6でnative再実操作、R452はround-7で再実操作。"
+    },
+    {
+      "number": 444,
+      "id": "recessed-chip-tags",
+      "verdict": "pass",
+      "assessment": "合格。通常の角丸と別の数値箱から、始端を36px高で大きく欠く実切欠き・平らな低い床・始端側の6/7pxの内壁と丸い終端の一つの凹材へ変わった。外の負形と内床の高低差が一体で読め、色差だけの変更を超える。旧R239の同心の二重ピルと異なり、開いた始端と深い片側の床を持つ。孔を飾りとして増やさず、中央の名称と操作を平面へ保つ。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R444",
+        "旧R239",
+        384
+      ],
+      "resolvedFindings": [],
+      "inheritedFrom": "round-4通常造形合格。タグはround-6でnative再実操作、R452はround-7で再実操作。"
+    },
+    {
+      "number": 445,
+      "id": "letterpress-tags",
+      "verdict": "pass",
+      "assessment": "合格、T保持。元の活字・実数値・罫の関係を保ち、下端を2pxの小口と上の1pxの罫へ軽くした。余計な囲いや偽の印字を足さず、実名称と実件数を明瞭に読む分類票として成立。狭幅の別段配置とforcedでも選択が明瞭。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R445",
+        435,
+        401
+      ],
+      "resolvedFindings": [],
+      "inheritedFrom": "round-4通常造形合格。タグはround-6でnative再実操作、R452はround-7で再実操作。"
+    },
+    {
+      "number": 449,
+      "id": "outline-filter-tags",
+      "verdict": "pass",
+      "assessment": "合格、B基準。元監査でもBの実用タグとして状態強化を求めた対象。固定輪郭とnativeチェック、明るい青の選択面が一致し、元の淡い緑面より状態が明快。Aの独創性の合格例には数えず、Bの可読性/操作性として判定した。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R449"
+      ],
+      "resolvedFindings": [],
+      "inheritedFrom": "round-4通常造形合格。タグはround-6でnative再実操作、R452はround-7で再実操作。"
+    },
+    {
+      "number": 452,
+      "id": "bridge-control-number",
+      "verdict": "pass",
+      "assessment": "合格、T保持。native入力/範囲のLTR isolateに加え、font上限26pxへ調整。-12345.678の実Canvas字幅は最も大きい768px時も156.533203125px、実入力の内幅164pxへ収まる。320/390/768×LTR/RTLすべて先頭負号と全桁を表示し、梁/単位の離隔・native入力/IME/caret/form/上下限/操作hitも維持した。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R452",
+        344,
+        239
+      ],
+      "normalDesignVerdict": "pass",
+      "resolvedFindings": [
+        "R452-rtl-numeric-sign-order"
+      ],
+      "inheritedFrom": "round-4通常造形合格。タグはround-6でnative再実操作、R452はround-7で再実操作。"
+    }
+  ],
+  "checks": [
+    "固定round-7正本100hash/CSS10一致。6→7は99正本不変、R452 CSSのみ変更。4→5/5→6も各99不変でR441 CSSだけ。reviewer-extra-7/checks.json/inheritance.json、reviewer-extra-6/inheritance.json。",
+    "全9タグはround-6で独立native再実操作して成功。Space/checked/API/focus、disabled/readOnly/controlled拒否/実remove、form reset、empty/one、long320/390/768×LTR/RTL、forced/reduced/destroy。7ではその90正本が不変。logs/reviewer-badges-r6.log。",
+    "全9タグの54実TEXT_NODE Range（最広行の最小88.1875px、最大6行）、近い有効項目へのremove焦点、readOnly実pointer、通常hover/leave/reenterを全9×LTR/RTLで再確認。reviewer-reading-6、reviewer-badge-extra-6。",
+    "R441 forced選択名を実画像/computedで確認。白文字とHighlight背景が対になる。通常の下弓small/buttonの#21190fは未選択#bd9e7c上6.8936:1、選択#a98560上5.1304:1。reviewer-forced-6、reviewer-badges-6/embossed-label-tags-forced.png。",
+    "R441の短い名称/9桁件数/削除をround-7で320/390/768×LTR/RTL実撮影・Range測定し、外周と件数字面の端一致を発見。reviewer-final-7/checks.jsonとtag各画像。",
+    "R452はround-7固定native実配布で全API/キー/上下限/step/draft確定/invalid/Escape/IME/selection保持/readOnly/disabled/controlled拒否/form reset/長い負数と単位6条件/forced/reduced/destroyを再実行して成功。logs/reviewer-numbers-r7.log。",
+    "R452は別検査で-12345.678の実fontによるCanvas字幅と入力content幅を320/390/768×LTR/RTL測定。最大156.533203125px <= 164px、direction:ltr、全画像で符号/全桁を確認。reviewer-final-7/checks.json、number各画像。",
+    "通常造形はround-4の独立実像・接合・近似比較の合格を保持。R441のcount無しは5で短い返端へ調整され、6実像でも確認。元730を再度全件操作したわけではない。"
+  ],
+  "limits": [
+    "独立実操作はChromiumの固定native配布。React4形式/全基盤回帰は今回独立再実行しておらず、主担当の成功報告と区別する。",
+    "元730全件を今回再操作したわけではない。既存監査と対象・近似画像/固定CSSを使った構造比較。",
+    "R449は元監査/設計通りB基準。残る9件をA（うちTは元形保持の精度）として評価した。"
+  ]
+}

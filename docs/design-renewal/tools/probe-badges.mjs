@@ -22,6 +22,14 @@ try{
   await remove('two').click();assert.equal(await input('two').count(),0);assert.deepEqual(await call('getData'),[]);assert.deepEqual(await page.evaluate(()=>window.actions),['two']);assert.equal(await r.locator('button,input').evaluateAll(es=>es.some(e=>e===document.activeElement)),true);
   await call('updateFoundation',{items:[...items],controlled:true,value:[]});await input('one').locator('..').click();assert.deepEqual(await call('getData'),[]);assert.equal(await input('one').isChecked(),false);assert.equal(await input('one').evaluate(e=>e===document.activeElement),true);await call('updateFoundation',{controlled:false});
   await call('updateFoundation',{items:[]});assert.equal(await r.locator('.ff-tag').count(),0);await call('updateFoundation',{items:[items[0]]});assert.equal(await r.locator('.ff-tag').count(),1);await r.screenshot({path:out+'/'+id+'-one.png'});
+  if(id==='embossed-label-tags'){
+   await call('updateFoundation',{items:[{value:'one',label:'A',badge:'123456789',icon:'spark'}],removable:true});
+   for(const dir of ['ltr','rtl'])for(const width of [320,390,768]){
+    await page.setViewportSize({width,height:900});await r.evaluate((e,dir)=>e.dir=dir,dir);
+    for(const selected of [false,true]){await call('setData',selected?['one']:[]);await page.evaluate(()=>new Promise(res=>requestAnimationFrame(res)));assert.ok(await r.locator('.ff-tag').evaluate(e=>{const tag=e.getBoundingClientRect(),small=e.querySelector('small'),range=document.createRange();range.selectNodeContents(small);const glyph=range.getBoundingClientRect();return glyph.left>=tag.left+20-1&&glyph.right<=tag.right-20+1}),'short name/9-digit count retains two reading insets '+dir+' '+width);assert.ok(await remove('one').evaluate(e=>{const tag=e.closest('.ff-tag').getBoundingClientRect(),b=e.getBoundingClientRect();return b.left>=tag.left+20-1&&b.right<=tag.right-20+1}),'short name/remove retains two reading insets');}
+    await r.screenshot({path:out+'/'+id+'-short-count-'+dir+'-'+width+'.png'});
+   }
+  }
   const long=items.map((it,i)=>({...it,label:'長い分類 '+i+' 日本語JapaneseLongUnbrokenLabelWithoutWhitespace',badge:'123456789',disabled:false}));await call('updateFoundation',{items:long,label:'分類を確認する長い日本語LongUnbrokenHeadingWithoutWhitespace',description:'任意の補足SupplementalInformationWithoutWhitespace'});
   for(const dir of ['ltr','rtl'])for(const width of [320,390,768]){
    await page.setViewportSize({width,height:900});await r.evaluate((e,dir)=>e.dir=dir,dir);await page.evaluate(()=>new Promise(res=>requestAnimationFrame(res)));assert.ok(await r.evaluate(e=>e.scrollWidth<=e.clientWidth+1),id+' fits '+width+' '+dir);
