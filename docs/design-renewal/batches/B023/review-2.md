@@ -1,0 +1,94 @@
+# B023 round-2 独立レビュー
+
+7 pass / 1 adjust (R317) / 2 redesign (R319, R324)。合格7件の通常造形は固定基準として引き継ぐ。
+
+## R315 archive-label-hint — pass
+
+上の厚い書庫口から読む引出しが出て、下の前小口と実CTA上の握りへ繋がる。上口・引出し面・手前の操作面の位置関係があり、薄い枠の旧版から支持構造へ変わった。R251の複数前板のキャビネット、R271の候補スロットとは一つの開口と引出しの役割が異なる。
+
+比較: R251, R271, R315
+
+## R316 margin-bracket-hint — pass
+
+元監査T。対角二点の90px短括弧と38px横腕へ整理し、読む面を解放する元の意図を保った。下の腕とCTAの密度も整い、R301の四角支持を新たに反復したものではない。
+
+比較: R301, R164, R316
+
+## R317 blueprint-callout-hint — adjust
+
+全高の三角支持と大きい実開口、注釈板との重なりは独立したA造形になった。ただし内三角の固定頂点が外三角の斜辺を越え、上部で輪郭が交差する。長文で高さが増すほど交差が増えるため、形を維持した幾何修正が必要。
+
+比較: R317, R142
+
+- **B023-R317-crossing-triangle-cutout (major/consistency)**
+  - 根拠: captures/reviewer-materials-2/blueprint-callout-hint-initial.png(高さ419px) / -ltr-bottom.png(812px) / -layers.png。CSS after幅64、外三角(0,0)-(64,H)-(0,H)、内三角上頂点(12,42)。
+  - 問題: y42で外斜辺はx6.42（H419）/x3.31（H812）なのに内頂点はx12で外側へ出る。evenoddの二輪郭が交差し、上部で余分な細い楔と二股の斜辺を生成する。実孔を外輪郭内へ抜く意図と一致しない。
+  - 改善: 内三角の上頂点を高さ比例の位置へ置くなど、短文/長文の全高で外三角に完全に内包させる。例えばx12の頂点yをH/4付近とすれば外斜辺x16との肉厚を保てる。内外の全辺に最小肉厚を確保し、320/RTL/長文でも輪郭が交差しないことを確認する。
+
+## R318 looped-note-hint — pass
+
+一つの横向き閉ループと一つの縦の実切口が紙を留める。R296の全高の開いたCワイヤー/二横穴と軸・穴・閉じ方が異なる。読む領域は96pxから始まり、84pxの前枝との間に12px残る。長文とRTLでも留め具から文字・native操作が離れ、実孔は背景診断でも開いている。
+
+比較: R296, R253, R318
+
+## R319 ceramic-caption-hint — redesign
+
+左42px帯の直線的な明暗三本と対角の角丸は追加されたが、三つの陶の曲面は独立した端面や成形輪郭を持たない。実像は角丸パネルに縦縞の帯を付けた構成へ留まり、元監査Rの汎用パネルとの差がまだ不足する。
+
+比較: R061, R171, R215, R319
+
+- **B023-R319-flat-flute-band (major/design)**
+  - 根拠: captures/reviewer-materials-2/ceramic-caption-hint-initial.png、reviewer-contact-0.jpg元版比較。afterは一枚の42px帯のlinear-gradientと全体の角丸で、三襞個別の曲面輪郭を持たない。
+  - 問題: 三つの陶の襞は直線の色分けとしてしか見えず、曲面の断面/凹凸が読む面の形・支持へ繋がらない。元の角丸カードへ左帯を足した構成を脱しておらず、再設計Aの素材と独立形が不足する。
+  - 改善: 縦縞を描いた帯を撤去し、一辺そのものを深い三つの波へ成形した一体の陶板など、山/谷が上端・下端の実断面と全外形へ現れる形にする。各曲面から固定の平らな読域へ連続する接合を見せ、色分けや小さい端飾りだけで済ませない。
+
+## R320 bookend-note-hint — pass
+
+片側28pxの三面立板が全高を支え、手前36pxへ出る底足と読む紙束の接点が連続する。R051の両端の小さい可動ブックエンドと比べ、片側の接地する大きいL形がパネル全体を支える。足と紙束の上下関係が読め、操作に見せていない。
+
+比較: R051, R219, R320
+
+## R321 index-card-hint — pass
+
+元監査T。上の見出し札・後ろの段付きカード・前紙の重なりが接続し、札の役割と読む順番が明瞭になった。R314の外周に品質/設定を置く索引とは、元の上札を保持する一枚の見出し構造として区別する。
+
+比較: R259, R314, R321
+
+## R322 rail-caption-hint — pass
+
+上下の独立レールと四つの留め足が読む札へ実接続する。R302の一本縦軸/I台車、R262の紙端を直接挟む溝とは、二軸から四点で札を保持する関係が異なる。長文で外の支持を残して本文だけ局所scrollし、上下の接点も保持。
+
+比較: R262, R277, R302, R322
+
+## R323 tailored-label-hint — pass
+
+全幅76pxのV襟口が実際に開き、二つの斜め襟面と下の布に、88pxから始まる読むラベルが縫い付く。孔を下層で塞がず、R303の二枚のずれた布とも異なる大きい開口・襟・ラベルの関係が全輪郭を決める。本文と設定・CTAは固定面へ収まる。
+
+比較: R278, R303, R323
+
+## R324 recessed-spec-hint — redesign
+
+24pxの面取り・非対称の肉厚・内側の影で深さは読めるが、主要な形は厚い四辺の額縁と二つの矩形値欄のまま。内外ほぼ同形の枠へ深さを加えた範囲であり、Aの独立した用途に結び付く構造として未達。
+
+比較: R214, R239, R293, R324
+
+- **B023-R324-generic-recessed-frame (major/design)**
+  - 根拠: captures/reviewer-materials-2/recessed-spec-hint-initial.png / -rtl-bottom.png、元版reviewer-contact-0.jpg。before外枠とafter読面は同系の面取り矩形。
+  - 問題: 外枠の厚み・二角の切断・影による凹みは増えたが、構成は汎用の四辺枠＋矩形の値ボックスのまま。本文と照合の用途に結び付く固有の構造がなく、枠の精密化だけではAの合格に届かない。
+  - 改善: 四辺の額縁を撤去し、一体の仕様板に段違いの二つの開口を切り、説明を載せる外面と、品質/設定の値を受ける奥面を実接続するなど、照合の項目ごとに奥行きを使う構成へ再設計する。単に内枠や影を増やさず、外形・開口・奥面の接点が読める形にする。
+
+## 実施した検査
+
+- 固定round-2 canonical100ハッシュ一致、portable CSS10と正本コピー一致（import除外）。captures/reviewer-extra-2/checks.json。
+- 独立native10件：実pointer checkbox、Escape/trigger focus復帰/値保持、action、outside click、show/hide、disabled、動的説明、任意form input/FormData保持、長文local scroll、320/390/768、RTL、forced checkbox、reduced、tooltip role/aria-describedby・Escape後初回抑止とleave/reenter・destroy。captures/reviewer-hints-2/checks.json、pageerror0。
+- 全10content幅は320/390/768でscrollWidth==clientWidth。実適用ボタンを局所scrollして可視範囲へ出し操作可能であることを確認。logs/reviewer-hints-r2.log。
+- normal motionでheading/facts/CTA/inputのpanel相対矩形とfontをhover→leave→reenter二周で確認。全10追加trusted input.click→outside button.focusで閉じる→open destroy確認。captures/reviewer-materials-2/checks.json。
+- 全10初期・長文上下・LTR/RTL・forced下端の実画像を確認。R317三角、R318切口、R323襟口は検査DOMのマゼンタ背景で全層の実空隙を確認。R317輪郭の交差を画像寸法とCSS頂点から算出。
+- 元監査R/Tを照合し元開状態画像と比較。旧版open画像は共有focus修正後の挙動で撮影された資料で、旧CSS形の比較にのみ用いた。既承認近似R051/061/142/171/214/215/239/251/253/259/262/271/277/278/293/296/301/302/303/314等を形と接点で比較。
+- 実装・固定snapshotを編集せず、検査道具/画像/記録のみ保存。
+
+## 限界
+
+- Chromiumのみ。forced/reducedはエミュレーション。React10×4と全foundationsは今回独立再実行していない。
+- 全730件を今回再撮影したものではなく、元監査と近似候補・承認済みレビューを比較した。
+- 共有focus runtimeの全カテゴリーを網羅せず、対象10の固定native実装で回帰確認した。

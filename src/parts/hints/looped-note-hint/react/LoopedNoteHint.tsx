@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
 };
 export type LoopedNoteHintProps = FoundationProps;
-/** ループで下げた説明票。穴を持つ見出し帯と本文を分け、設定情報は平らな中面へ置く。 */
+/** 大きい閉じた横ループで、補足の紙を一つの縦の切口へ留める表示。紫の標準面を廃し、84×72pxの厚い楕円ループと、52pxの実縦スリット、一枚の読む紙を作る。ループは紙へ26px重なり、読面はループより右へ固定する。縦に伸びる本文でも留め位置だけが中央へ追随する。 */
 export default forwardRef<HTMLDivElement, LoopedNoteHintProps>(function LoopedNoteHint(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderHint} mountContent={mountHint}/>;
 });

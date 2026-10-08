@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
 };
 export type BookendNoteHintProps = FoundationProps;
-/** 本を支える短い解説欄。縦の支えに見出しを寄せ、本文の後ろに設定を一段下げて置く。 */
+/** 一つの深いL形ブックエンドへ、読む紙束を収める補足表示。左の茶色線を廃し、28pxの三面の立板と、手前へ36px出る斜め小口の底足を作る。紙束は立板へ4px重なり、底足に接して立つ。文字とnativeチェック/適用を紙束へ固定し、底足を操作のように描かない。 */
 export default forwardRef<HTMLDivElement, BookendNoteHintProps>(function BookendNoteHint(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderHint} mountContent={mountHint}/>;
 });
