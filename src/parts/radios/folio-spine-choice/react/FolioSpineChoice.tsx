@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type FolioSpineChoiceProps = FoundationProps;
-/** 綴じた目次から一項を選ぶ。背の線を共通にし、選んだ行の小口が開く。 */
+/** 一つの厚い背へ、紙束の三項を二つの綴じ輪で収める単一選択。左一本の線をやめ、22pxの共通の背と各項の上下の4pxの綴じ腕を実接続する。読む紙には上/下/小口の三つの厚みを作り、文字とnative丸印を綴じ腕の内側へ固定する。 */
 export default forwardRef<HTMLDivElement, FolioSpineChoiceProps>(function FolioSpineChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });

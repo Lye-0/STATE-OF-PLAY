@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type StapledCardChoiceProps = FoundationProps;
-/** 綴じ金のある確認カード。紙の上の円を選ぶと、端の小さな赤い索引が見える。 */
+/** 三つのずれた紙の層を、一つの大きい綴じ金へ収める単一選択。小さいクリップだけの通常カードをやめ、上/左へ5pxずつ出る紙の実層と、全層を跨ぐ26×24pxの綴じ金へ変更する。綴じ金の両足を前の紙まで通し、文字とnative丸印を下の無地へ固定する。 */
 export default forwardRef<HTMLDivElement, StapledCardChoiceProps>(function StapledCardChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });

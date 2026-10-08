@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type PerforatedBallotProps = FoundationProps;
-/** 投票用紙を一列に連ねる。行のミシン目と右の票番号、丸い記入欄で一票だけ選ぶ関係を見せる。 */
+/** 両側の送り穴を持つ一枚の連続投票紙から選ぶ単一選択。右半券は廃止し、各票の四つの実矩形穴と、票の間を連続させる12pxの往復する折り目へ再設計する。穴は読む面自体を抜き、裏に紙を置かない。番号とnative選択点と文字は固定する。 */
 export default forwardRef<HTMLDivElement, PerforatedBallotProps>(function PerforatedBallot(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });

@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type ClaspBandChoiceProps = FoundationProps;
-/** 留め金付きの選択帯。選択した行の端の金具を閉じ、単一選択の丸印も併記する。 */
+/** 二つの実顎が選択帯の端を抱える、留め金の単一選択。元の二顎の主題を保持し、細い括弧を上下8px・奥7pxの64px高の金具へ整える。帯の端に10px以上重ね、選択時は顎だけ3px閉じる。本文とnative選択点は固定する。 */
 export default forwardRef<HTMLDivElement, ClaspBandChoiceProps>(function ClaspBandChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });

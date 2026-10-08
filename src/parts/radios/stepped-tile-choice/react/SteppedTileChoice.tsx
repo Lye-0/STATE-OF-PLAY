@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type SteppedTileChoiceProps = FoundationProps;
-/** 低い段に載る選択タイル。各行を同じ高さに保ち、選択した段の支えだけを広げる。 */
+/** 上と下に実段を持つ厚いタイルの単一選択。薄い四角の行と下線をやめ、24pxの上段と14pxの下段を、右12px・下14pxの同じ切断面へ連続させる。選択した石の面だけ明るくし、nativeの文字・丸印・ヒット領域を固定する。 */
 export default forwardRef<HTMLDivElement, SteppedTileChoiceProps>(function SteppedTileChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });

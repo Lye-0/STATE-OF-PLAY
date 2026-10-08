@@ -1,0 +1,155 @@
+{
+  "batch": "B018",
+  "round": 3,
+  "snapshot": "docs/design-renewal/batches/B018/snapshot/round-3",
+  "overall": "changes_requested",
+  "parts": [
+    {
+      "number": 252,
+      "id": "perforated-ballot",
+      "verdict": "redesign",
+      "assessment": "点線だけの元形から左端の実切欠きと50px控えへ進んだが、本票＋右半券の主構造が既承認R084と近い。右半券の孔は本票の重なりに埋まり、説明の実空隙も成立しない。Aの構造差を作る再設計が必要。",
+      "findings": [
+        {
+          "key": "R252-stub-repetition",
+          "severity": "major",
+          "kind": "duplication",
+          "evidence": "captures/reviewer-stub-comparison.jpg：既承認B005 R084 expandedとR252 native initial。双方とも本票の右に細い別色半券を置き、縦の切取り境界で分ける。",
+          "problem": "Aの主要な造形が既承認R084の本票＋右半券を反復する。左端の小さな切欠き、番号/打刻印の違い、行間をなくしたことだけでは、カテゴリを跨ぐ意図的な横展開から独立していない。",
+          "proposal": "右半券を三つ並べる主構成から離れ、連続票を切り離すこと自体が全体の外形と選択時の面を決める方向へ再設計する。一例として候補間の横方向へ実切離し橋と明確な断面を設け、本票の連続/切離しを主役にする。色・控えの幅・孔の数の変更だけでは解消としない。"
+        },
+        {
+          "key": "R252-perforation-backed-by-paper",
+          "severity": "major",
+          "kind": "consistency",
+          "evidence": "captures/reviewer-holes-3/ballot-before.png、ballot-diagnostic-underpaper.png。診断DOMだけで本票をmagentaへ変更すると、半券のミシン目もmagentaになり裏の本票が見える。beforeのend44pxとafter幅50pxが6px重なる。選択translate3pxでも重なり3pxが孔半径2pxより大きい。",
+          "problem": "半券のmaskはあるが本票の面が孔の後ろを塞ぎ、説明の「実空隙」ではなく本票色の点になる。左外端の切欠きは実抜きだが、半券との分離を示す中央の孔には透過がない。",
+          "proposal": "新構造の切離し部では全ての下層も同じ位置で抜くか、紙同士の輪郭を孔の外側で終え、非選択/選択/途中でも実背景へ抜けるようにする。実際の背景色を変えて孔の透過を確認する。"
+        }
+      ],
+      "nearestComparisons": [
+        "R84",
+        "R79",
+        "R252"
+      ]
+    },
+    {
+      "number": 253,
+      "id": "loop-label-choice",
+      "verdict": "pass",
+      "assessment": "Tの左の輪を28×46px・3px厚へ明快にし、紙の二つの孔と輪の交点を合わせた。native選択点を留め輪から分離して用途が読める。通常/狭幅/RTLでも接点を保ち元監査の精度として合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R253",
+        "R157"
+      ]
+    },
+    {
+      "number": 254,
+      "id": "stepped-tile-choice",
+      "verdict": "pass",
+      "assessment": "上24px・下14pxの段が紙面の模様ではなくタイルの実外形になり、側面と下の切断面へ連続する。R025の石板/R174の割れ石とは成形した段の規則性で分かれ、厚みが主形を決める。A合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R25",
+        "R174",
+        "R254"
+      ]
+    },
+    {
+      "number": 255,
+      "id": "folio-spine-choice",
+      "verdict": "pass",
+      "assessment": "22pxの共通の背と各項を支える上下の腕が接続し、紙束の小口も独立して読める。R181の上下表紙やR021の開く表紙ではなく、複数の項を一本の背へ綴じる構造。狭幅長文で腕が本文に侵入せず、A合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R21",
+        "R181",
+        "R151"
+      ]
+    },
+    {
+      "number": 256,
+      "id": "rail-seat-choice",
+      "verdict": "pass",
+      "assessment": "Tの縦レールと選択点の構図を保持。7pxの三面レールと8pxの座が選択点へ接し、細い補助線から支点の機能が読める厚みへ整った。R260は遠端の札を支えるため異なり、元の精度として合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R256",
+        "R260"
+      ]
+    },
+    {
+      "number": 257,
+      "id": "numbered-pocket-choice",
+      "verdict": "pass",
+      "assessment": "74pxの側ポケットが紙を24px受け、上下の入口と奥の7px止めが同じ箱へつながる。R197の下からの前壁と違い横方向の差込みが主形。番号を保持面へ置き、狭幅/RTLでも止めと紙の重なりを保つ。A合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R197",
+        "R257"
+      ]
+    },
+    {
+      "number": 258,
+      "id": "clasp-band-choice",
+      "verdict": "pass",
+      "assessment": "Tの二顎を上下8px・奥7pxへ明快にし、帯の端へ実際に重ねた。選択で顎だけが閉じ、本文/nativeは動かない。R048等の金具系と近い主題はあるが、元監査の保持調整の範囲で接点を改善して合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R48",
+        "R179",
+        "R258"
+      ]
+    },
+    {
+      "number": 259,
+      "id": "open-file-choice",
+      "verdict": "pass",
+      "assessment": "Tの番号札を後ろのファイルの外形へ連続させ、前の読む紙の右上曲面と下小口が同じ重なり方向を示す。小さい番号バッジを添えただけの状態から改善し、文字の無地も保持。合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R259",
+        "R211"
+      ]
+    },
+    {
+      "number": 260,
+      "id": "signpost-choice",
+      "verdict": "pass",
+      "assessment": "遠端の12px支柱と14pxの横留めが札の中央へ接続し、反対側の22px矢先が札そのものの外形になる。R256のnative選択点をレールへ接続する構造とは支持位置と意味が異なる。木の札の厚みと形が一貫しA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R256",
+        "R131",
+        "R260"
+      ]
+    },
+    {
+      "number": 261,
+      "id": "stapled-card-choice",
+      "verdict": "pass",
+      "assessment": "上/左へ5pxずつずれる三つの紙端を26×24pxの綴じ金が跨ぎ、両足が前の紙まで達する。元の小クリップだけのカードと違い、留める相手と接点が外形に現れる。R050の五つの留め金やR086の角帽子とは紙束の一箇所の綴じとして異なりA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R50",
+        "R86",
+        "R261"
+      ]
+    }
+  ],
+  "checks": [
+    "固定source100 SHA-256とreview-input-3.json全一致。配布CSS10もimport除外で正本と一致。reviewer-extra-3/checks.json。",
+    "固定portable native10件をreal form/reset/label/native ArrowDown/arbitrary items including disabled/long320390768/RTL/input hit border一致/forced/reducedで独立再実行。10件成功/errors0。reviewer-radios-3。",
+    "通常motionで全10×3選択×1000/320×LTR/RTLの120状態、80ms途中とsettledを撮影。hover leave reenter、本文座標/font、選択移行を検査。reviewer-motion-3/radio-checks.json。",
+    "R253だけ画面絶対yが127px変わった初回記録はscreenshot/hoverによるpage scroll。コンポーネント基準の相対座標で12状態を再検査し本文/幅/fontは全て固定、UI不具合とは判定しない。loop-relative-checks.json。",
+    "全10のreduced状態で実選択後pseudo transition0s/animations0を確認。forced native radioも選択/非選択/disabledを実画像で確認。",
+    "R252の半券孔を一時DOMの本票色変更で切り分け、下層が孔を塞ぐことを確認。正本/固定版は未変更。reviewer-holes-3。",
+    "元730監査の対象10件の理由、B018-before-sheetと既承認R084実expanded等を比較。再設計6件とT保持4件を分け、R255/R257/R260/R261は対応する最寄と主構造の差を確認。"
+  ],
+  "limits": [
+    "独立実行はChromium固定native。React4形式と現行gallery detailは今回独立起動していない。",
+    "forced/reducedはブラウザエミュレーション。他エンジン/実OSは未検査。",
+    "全730再監査ではなく元監査・対象before画像・関連する既承認近似構造の比較。"
+  ]
+}

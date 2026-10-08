@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type NumberedPocketChoiceProps = FoundationProps;
-/** 整理ポケットへカードを一枚ずつ差し込む。番号の小区画を固定し、選択でポケット口の線が開く。 */
+/** 紙の右端を、番号の付いた横差込みの整理箱へ収める単一選択。上の短線だけのカードをやめ、紙の24pxを74pxの実側ポケットへ重ね、入口の上下の返しと奥7pxの縫い止めで保持する。番号を箱の面へ固定し、読む内容とnative丸印は露出した紙の上へ置く。 */
 export default forwardRef<HTMLDivElement, NumberedPocketChoiceProps>(function NumberedPocketChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });

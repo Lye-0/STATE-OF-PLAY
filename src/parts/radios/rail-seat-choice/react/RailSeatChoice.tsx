@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type RailSeatChoiceProps = FoundationProps;
-/** 選択位置を縦のレールへ接続する。丸い選択点から本文へ伸びる短い連結線を持つ。 */
+/** 丸い選択点を、縦のレールの実支点へ接続する単一選択。元の支点から行への構図を保ち、7pxの縦レールと8pxの横の座を同じ軸へ接続する。本文の大きい面に対して支持の厚みを明快にし、読む面と選択点を動かさない。 */
 export default forwardRef<HTMLDivElement, RailSeatChoiceProps>(function RailSeatChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });
