@@ -1,0 +1,106 @@
+# B024 round-3 独立レビュー
+
+6 pass / 1 adjust (R335) / 3 redesign (R325, R337, R342)。R335の通常造形と合格6件の造形は固定基準にする。R337は造形に加えて到達点と弧の通常遷移の不一致も修正が必要。
+
+## R325 letterfold-hint — redesign
+
+下の大きいV前蓋へ読む手紙を重ねる造形は、R263の開いた封筒選択と同じ支持構造である。上肩・縦長の比率・前蓋64pxという差だけでは独立したA案にならず、下封筒/ポケット構造を撤去する再設計が必要。
+
+比較: R263, R298, R197
+
+- **B024-R325-envelope-repetition (major/duplication)**
+  - 根拠: captures/reviewer-hints-3/letterfold-hint-initial.png と B019/captures/radios-self-4/letter-tab-choice-initial.png (R263)。
+  - 問題: 読む票を下のV前蓋へ差す支持関係がR263と同じ。縦長化や前蓋の比率、名前を手紙へ変えた差では構造反復を解消しない。
+  - 改善: 下V前蓋と封筒/ポケットを撤去し、一枚の紙そのものが折り返される大きい非対称の実面へ再構成する。折面の裏側・外形・読面の接続を見せ、既承認R293の左右三面やR222の三段蛇腹の反復にも戻さない。
+
+## R331 odometer-progress — pass
+
+元監査T。元の計器ケースと数字窓の構成を保持し、重い暗外装を淡い成形縁へ整理した。固定の等幅数字と目盛り/送り帯の比率が整い、機能の読取りも明瞭。
+
+比較: R331
+
+## R333 stitched-meter-progress — pass
+
+離れた二つの布片の実12px空隙へ、到達した幅だけ大きい交差糸を渡す。布色の通常バーと違い、進捗が二片の縫合そのものへ結び付く。0%は未縫合、1%の微小量から100%まで実到達幅で切られる。
+
+比較: R278, R303
+
+## R335 book-spine-progress — adjust
+
+固定書背と、実割合で伸びる紙束/上下表紙の構造は独立して成立する。0%に紙束を残さず、1%も背の外へ現れ、100%で全幅に達する。一方、通常モーションの不定状態では紙束が左右へ領域外に逃げ、造形とUIの整合性が壊れる。通常形を保って不定表現を修正する必要がある。
+
+比較: R138, R251
+
+- **B024-R335-indeterminate-overflow (major/ui)**
+  - 根拠: captures/reviewer-motion-3/book-spine-progress-indeterminate-overflow.png / checks.json。normal motionでindeterminate=true、100ms間隔で1.6秒観測。root scrollWidth超過203px（初回208px）。
+  - 問題: 書背のためのoverflow:visibleにより、不定fillのtranslateX(-100%→390%)が紙束を背の左外/容器の右外へ運ぶ。内容が外へ漏れ、他のUIと重なり得る。reduced検査だけでは出ない。
+  - 改善: 不定時は幅内の中立な未確定表現へ切り替えるか、動く紙束だけを内側の有効幅でclipする。書背の支持は固定して見せ、0/1/100と通常/RTL/320pxの不定状態で外への描画・scrollWidth超過をなくす。
+
+## R336 segmented-ruler-progress — pass
+
+元監査T。十区間を真っ直ぐな42px高へ揃え、10%ごとの固定境界と部分到達を同じ基準で読む構造が整った。元の良い定規の識別性を維持する調整として合格。
+
+比較: R336
+
+## R337 double-orbit-progress — redesign
+
+主割合を一本の円弧へ整理した点と静止時の到達点の半径は正しい。ただし普通の円形進捗へ装飾楕円を付けた構成に留まり、A固有の支持/機構が不足する。さらにnormal motionで弧だけ遷移し到達点が即時に跳ぶため、点が弧の終端と一致しない。
+
+比較: R337
+
+- **B024-R337-generic-ring-orbit (major/design)**
+  - 根拠: captures/reviewer-progress-3/double-orbit-progress-50.png。固定楕円はring::beforeのborder/rotateだけで、割合や支持へ関与しない。
+  - 問題: 通常の円進捗に固定の飾り楕円を加えた範囲で、Aの固有形を決める機構・支持・素材の関係が不足。重複量の解消だけではA造形の合格理由にならない。
+  - 改善: 意味のない第二の輪を撤去し、割合を読む環・実到達位置を示す読取り片・その支持を実接合した独立構造へ再設計する。輪を増やす/色を変えるだけでなく、全外形が実量を読む仕組みで決まるようにする。
+
+- **B024-R337-endpoint-desynchronization (major/consistency)**
+  - 根拠: captures/reviewer-motion-3/checks.json / double-orbit-progress-mid.png。0→50、約80ms時点でarcFraction0.20417に対しendpointAngle180°（50%）。
+  - 問題: SVGのstroke-dashoffsetだけ.4s遷移し、擬似要素のrotateは即時更新される。到達点が実際の弧の先端から離れるため、実到達端という説明が通常遷移中に破綻する。
+  - 改善: 同じタイミング/イージングで弧と読取り片を動かすか、双方の遷移をなくす。急反転と0/50/100で途中フレームでも位置を一致させ、数字/fontは固定する。
+
+## R338 caption-band-progress — pass
+
+元監査T。五段の元形と数値の階層を保持。20%ごとの固定面に実割合を流し、存在しない斜め終端の説明を訂正して実形と一致させた。元造形を維持する合格基準に沿う。
+
+比較: R338
+
+## R339 terraced-progress — pass
+
+元監査T。五段の進行形を保持し、終端の暗いぼかしを除いて実量の境を明確にした。薄い境界と影のない面で読みやすく、元の段構造を精密化した。
+
+比較: R339
+
+## R341 channel-fill-progress — pass
+
+上下二壁・左の止壁が実76px溝を作り、三面を持つ充填体が内部の有効幅で増える。色付き横棒だけでなく支持の深さと充填断面が見え、0/1/100の量も止壁に隠れず一致する。
+
+比較: R239, R324
+
+## R342 linear-radar-progress — redesign
+
+格子と固定点を背にした長方形へ実割合を満たす動作は正しいが、主要な形は一般的な面積バーのまま。格子/点は実データを示さない固定装飾で、走査の機構や支持構造を持たず、Aの独立した形として不足する。
+
+比較: R317, R342
+
+- **B024-R342-grid-bar-template (major/design)**
+  - 根拠: captures/reviewer-progress-3/linear-radar-progress-0.png / -50.png / -100.png。固定格子・点の上へ一枚の矩形fillを重ねる。
+  - 問題: 見た目と構造は格子付きの一般的な横充填バーで、点も割合も独立の走査機構を作らない。矩形を高くして装飾を足した範囲に留まり、再設計Aとして不足する。
+  - 改善: 固定格子と点の装飾を撤去し、実割合の端を示す走査ヘッドと、それを支える独立したガイドを設ける等、到達位置に結び付く構造へ再設計する。走査済み面と未走査面をヘッドの前後で明確に分け、架空の検出データや操作ボタンを増やさない。
+
+## 検証範囲
+
+- 固定round-3 canonical100ハッシュ一致、portable CSS10一致（import除外）。captures/reviewer-extra-3/checks.json。
+- 独立native進捗9件：実setData0/1/25/50/72/99/100、native progress値・表示値、fill有効幅の実測、min20/max120とclamp、ラベル、長文320390768、RTL、forced/reduced、不定native value除去/表示…/中立40% slice、destroy後更新停止を確認。captures/reviewer-progress-3/checks.json。静止時の実量/APIは全9成功。
+- 0/1/100の実画像で未到達の余分な充填なし/小量が支持に隠れない/全幅到達を確認。円環は一つの主割合と到達点を確認し、通常遷移の不一致は別途指摘。
+- 追加normal motion検査で各不定状態を100ms間隔1.6秒観測。R335だけroot横超過203pxを再現。R337の0→50中間フレームのarcと点の不一致をcomputed値と実画像で再現。captures/reviewer-motion-3。
+- 独立native hint R325：実checkbox/値保持/Escape/focus/action/outside/disabled/任意form/長文local scroll/320390768/RTL/forced/reduced/tooltip再進入/cleanup成功。captures/reviewer-hints-3/checks.json。
+- R325追加normal hoverでheading/facts/CTA/input固定、outside focus/open destroyを確認。元監査のT/R区分と近似既承認を比較。特にR263との下V前蓋構造を実画像で照合した。
+- 正本と固定snapshotは変更せず、検査道具と証拠・レビューのみ保存。
+
+- normal hoverの可視reading/heading/stepsは全9固定。R336/R338の初期診断falseはdisplay:noneの0矩形を本体相対で比較した測定誤差で、可視矩形は一致。reviewer-hover-3/checks.jsonに補正理由を記録。
+
+## 限界
+
+- Chromiumのみ。forced/reducedはエミュレーション。React各配布形式と全foundationsは今回独立再実行していない。
+- 全730件を再監査したものではなく、元監査と近似候補・既承認の正式レビューを比較した。
+- 主担当のreduced/API成功と、今回独立normal motionで見つけた不具合を分けて記録した。

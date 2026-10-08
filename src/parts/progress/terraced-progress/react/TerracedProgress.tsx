@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "max": 100
 };
 export type TerracedProgressProps = FoundationProps;
-/** 階段状の到達面を一つの領域として満たす。増加量が右上へ上る地形になる。 */
+/** 柔らかい五段のテラスへ、実割合を満たす進捗表示。元の段状の進行を保持し、暗いぼかしと強い緑の勾配を廃止する。固定した段の高さと1pxの境界、影のない到達面で終端を明確にし、数値と進む量を揃える。 */
 export default forwardRef<HTMLDivElement, TerracedProgressProps>(function TerracedProgress(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderProgress} mountContent={mountProgress}/>;
 });

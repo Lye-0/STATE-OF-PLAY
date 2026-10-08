@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "max": 100
 };
 export type LinearRadarProgressProps = FoundationProps;
-/** 横に掃く検査スリット。進んだ範囲が露出し、未処理側の細線と明確に分かれる。 */
+/** 上下の二つのガイドに接続した走査ヘッドが、実割合の位置へ進む進捗表示。固定格子や検出点を撤去し、108pxの紙送り場、10pxの上下ガイドと、それを受ける22px幅の実走査ヘッドへ再構築する。ヘッドの前に残る原稿の横線は、通過した側の静かな面に置き換わる。数値とヘッドの到達位置は一つのnative progressへ一致し、未確定状態ではヘッドを出さない。 */
 export default forwardRef<HTMLDivElement, LinearRadarProgressProps>(function LinearRadarProgress(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderProgress} mountContent={mountProgress}/>;
 });

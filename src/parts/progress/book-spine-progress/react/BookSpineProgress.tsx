@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "max": 100
 };
 export type BookSpineProgressProps = FoundationProps;
-/** 本の頁断面が左から揃う進捗。表紙と背の中で確定量だけが濃く積み上がる。 */
+/** 書背から、実進捗に応じた厚みの紙束を組む表示。縁の付いた標準バーを廃止し、20pxの三面書背と、88px高の上下の表紙/縦の紙小口を作る。表紙と紙束の到達幅は実割合で増え、0%では紙束がなく、100%で全幅を満たす。数字は本の下へ固定して表示する。 */
 export default forwardRef<HTMLDivElement, BookSpineProgressProps>(function BookSpineProgress(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderProgress} mountContent={mountProgress}/>;
 });

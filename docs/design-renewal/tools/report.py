@@ -55,6 +55,13 @@ for row,part,review in approved:
   actual=next((p for p in reversed(native) if (p/f"{row['id']}-initial.png").exists() and (p/f"{row['id']}-narrow-320.png").exists()),None)
   assert actual is not None,f"Missing exported long hint: {row['id']}"
   images+=figure(beforePanel,'修正前・配布版で開いた補足')+figure(photos/f"{row['id']}-expanded.png",'修正後・実ギャラリーで開いた補足')+figure(actual/f"{row['id']}-initial.png",'修正後・配布版の補足')+figure(actual/f"{row['id']}-narrow-320.png",'修正後・320pxの長文補足')
+ if row['category']=='progress':
+  beforeMeter=w/'evidence/baseline'/f"{row['id']}-progress.png"
+  assert beforeMeter.exists(),f"Missing original progress: {row['id']}"
+  native=sorted((d/'captures').glob('progress-self-*'),key=lambda p:int(p.name.split('-')[-1]))
+  actual=next((p for p in reversed(native) if all((p/f"{row['id']}-{name}.png").exists() for name in ['0','50','100','narrow-320','indeterminate'])),None)
+  assert actual is not None,f"Missing real progress states: {row['id']}"
+  images+=figure(beforeMeter,'修正前・配布版の進捗')+figure(actual/f"{row['id']}-0.png",'修正後・0%')+figure(actual/f"{row['id']}-50.png",'修正後・50%')+figure(actual/f"{row['id']}-100.png",'修正後・100%')+figure(actual/f"{row['id']}-indeterminate.png",'修正後・動きを軽減した未確定状態')+figure(actual/f"{row['id']}-narrow-320.png",'修正後・320pxの長文と範囲変更')
  if row['category']=='dropdowns':
   images+=figure(photos/f"{row['id']}-expanded.png",'展開した候補・選択済み行')
  # Native switch images distinguish actual OFF and ON even when the gallery starts ON.
