@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "range": false
 };
 export type ThreadReelRangeProps = FoundationProps;
-/** 糸を巻き取るリールと張った線。選択量が糸の長さに対応し、巻き端がつまみになる。 */
+/** 二つの厚いフランジと、間に巻かれた糸の胴を持つリールのスライダー。二重円の普通のつまみをやめ、52px高の巻き胴の輪郭を実際に絞り、一本の張った糸が巻き端と右の小さい糸口へ接する。nativeの値と固定の読む面を保つ。 */
 export default forwardRef<HTMLDivElement, ThreadReelRangeProps>(function ThreadReelRange(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderSlider} mountContent={mountSlider}/>;
 });

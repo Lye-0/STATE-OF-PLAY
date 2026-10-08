@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type LibraryDrawerChoiceProps = FoundationProps;
-/** 引き出しの前板を三段に並べ、選択すると下端の奥行きが開く。丸い単一選択印と文字は固定。 */
+/** 前板の下の実持ち手と、両側の箱の小口を持つ引出しの単一選択。標準の枠付き行をやめ、前板を一つのキャビネットの三段へ収める。選択すると前板の下だけへ引出しの底を出し、文字とnative radioのヒット領域は固定する。 */
 export default forwardRef<HTMLDivElement, LibraryDrawerChoiceProps>(function LibraryDrawerChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });

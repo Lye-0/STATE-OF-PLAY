@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "range": false
 };
 export type RecessedHandleRangeProps = FoundationProps;
-/** 深い引き手をつまみにし、溝の中で値を動かす。操作面の凹みが指の置き場を示す。 */
+/** 上下の二つのずれた肩で溝縁を抱え、片側の深い指掛かりで動かすスライダー。二重の角丸のつまみをやめ、64pxの斜めの断面と28pxの低い指の面を持つ引き手へ変える。実溝は移動範囲の全幅にし、主軌道だけをnative中心の32px内側へ合わせ、最小/最大でも肩が溝縁へ接する。 */
 export default forwardRef<HTMLDivElement, RecessedHandleRangeProps>(function RecessedHandleRange(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderSlider} mountContent={mountSlider}/>;
 });

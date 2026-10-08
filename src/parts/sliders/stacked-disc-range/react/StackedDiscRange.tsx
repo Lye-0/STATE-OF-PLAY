@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "range": false
 };
 export type StackedDiscRangeProps = FoundationProps;
-/** 積層ディスクの断面をつまみにする。厚みのある操作部と細い値軸を分ける。 */
+/** 三つの薄い円板の小口を、一本の軌道へ積むスライダー。元の積層のつまみを残し、横の単なる縞をやめる。各円板の楕円上面と左右の小さい段差を実際の外形へ合わせ、三つの断面の厚みを静かに読む。 */
 export default forwardRef<HTMLDivElement, StackedDiscRangeProps>(function StackedDiscRange(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderSlider} mountContent={mountSlider}/>;
 });

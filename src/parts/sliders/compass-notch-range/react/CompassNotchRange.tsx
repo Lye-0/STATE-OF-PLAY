@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "range": false
 };
 export type CompassNotchRangeProps = FoundationProps;
-/** 方位盤の切り欠きと直線の値軸を組み合わせる。つまみの切り欠きが現在位置を指す。 */
+/** 切欠きのある方位盤を、細い一本の線へ通すスライダー。元の多角形を残し、八つの厚い縁と明るい中央、細い二方向の基準線を明快にする。黄色の台に沈んだ輪郭を濃い小口で分け、盤の中心と主軌道を合わせる。 */
 export default forwardRef<HTMLDivElement, CompassNotchRangeProps>(function CompassNotchRange(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderSlider} mountContent={mountSlider}/>;
 });

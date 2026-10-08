@@ -1,0 +1,150 @@
+{
+  "batch": "B017",
+  "round": 5,
+  "snapshot": "docs/design-renewal/batches/B017/snapshot/round-5",
+  "overall": "pass",
+  "parts": [
+    {
+      "number": 233,
+      "id": "thread-reel-range",
+      "verdict": "pass",
+      "assessment": "二重円を上下の厚い端板と細い巻き胴へ置換し、52pxのI形断面と糸の層が実輪郭を決める。一本の糸と端の糸口へ接続し、操作量を読む機能と形が結び付く。R098の冊子支持やR695の装飾軸とは巻胴そのものを動かす構造で異なりA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R98",
+        "R695",
+        "R233"
+      ]
+    },
+    {
+      "number": 234,
+      "id": "stone-inlay-range",
+      "verdict": "pass",
+      "assessment": "Tの丸い石台と矩形インレイを保持。濃い操作面と明るい3pxの小口で背景に埋もれず、主軌道との中心も一致する。新たな装飾へ変えず元監査の明暗精度を改善し合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R234",
+        "R25"
+      ]
+    },
+    {
+      "number": 236,
+      "id": "folded-paper-range",
+      "verdict": "pass",
+      "assessment": "Tの折紙外形を保持し、左右の明暗が異なる折面と中心の返しへ分かれた。主軌道は折れの中心を通り、単色の多角形から厚みと面の方向が読める。元の形の精度として合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R236",
+        "R52",
+        "R142"
+      ]
+    },
+    {
+      "number": 237,
+      "id": "wheel-guide-range",
+      "verdict": "pass",
+      "assessment": "Tのホイールを一つの3pxリムと軸へ整理。重い矩形目盛りを独立した細い目盛りに変え、値の線が円の中心を通る。R172の車輪付き区画と異なり円自体が操作対象。元の輪郭を維持して合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R237",
+        "R172"
+      ]
+    },
+    {
+      "number": 239,
+      "id": "recessed-handle-range",
+      "verdict": "pass",
+      "assessment": "二重角丸を撤去し、上下にずれた肩・斜めの側面・片側へ寄った深い指掛かりが固有の輪郭を作る。肩が物理的な溝の上下の縁へ重なり、値の軌道を独立させたため0/100でも64pxの持ち手全体が溝の範囲へ収まる。R233の円形フランジと巻胴とは面の保持/指掛かりで区別できる。LTR/RTL・狭幅・forcedの回帰もなくA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R239",
+        "R233",
+        "R112",
+        "R200"
+      ],
+      "resolvedFindings": [
+        "R239-generic-recessed-thumb",
+        "R239-trough-endpoint"
+      ]
+    },
+    {
+      "number": 240,
+      "id": "compass-notch-range",
+      "verdict": "pass",
+      "assessment": "Tの方位盤を保持し、八辺の濃い小口と明るい中心、細い交差軸で輪郭を明快にした。単色の多角形より端面が読みやすく、軌道との中心も一致。元監査の精度として合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R240",
+        "R10"
+      ]
+    },
+    {
+      "number": 242,
+      "id": "shuttle-range",
+      "verdict": "pass",
+      "assessment": "Tの二爪の意図を実際に開いたC形へ反映。上下の爪が補助線へ接し、中央の値軌道が開口を通るため浮いた矩形から改善した。文字・値を無地へ保ち、接合の精度として合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R242",
+        "R48",
+        "R179"
+      ]
+    },
+    {
+      "number": 243,
+      "id": "stacked-disc-range",
+      "verdict": "pass",
+      "assessment": "Tの三段の積層を保持し、三つの楕円上面と側面の段差で単なる水平縞から分けた。軌道を横切る厚みが外形と一致し、過剰な模様を増やさず合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R243",
+        "R180",
+        "R695"
+      ]
+    },
+    {
+      "number": 245,
+      "id": "enamel-peg-range",
+      "verdict": "pass",
+      "assessment": "普通の角丸を、広い釉薬の頭・絞った8pxの脚・一つの反射へ再構成。頭と脚の非均一な外形が値を示すピンとして読め、矩形thumbやR200のレンズと区別できる。数字を動かさずA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R245",
+        "R200",
+        "R195"
+      ]
+    },
+    {
+      "number": 251,
+      "id": "library-drawer-choice",
+      "verdict": "pass",
+      "assessment": "キャビネットの前板/小口/底/持ち手の通常造形を保持。固有hoverで前板と文字の2px移動を抑止し、クリック・解除・再進入の矩形が不変。rootのinline-size containerにより222pxの実幅でもicon/badgeが退き、Local/Cloudや長文をまとまった横幅で読める。RTLの短長文とnative hit/フォームも成立し合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R251",
+        "R616",
+        "R676",
+        "R80"
+      ],
+      "normalDesignVerdict": "pass",
+      "resolvedFindings": [
+        "R251-hover-translates-content",
+        "R251-narrow-copy-width"
+      ]
+    }
+  ],
+  "checks": [
+    "固定source100 SHA-256とreview-input-5.json全一致。配布CSS10をimport除外で正本と照合し一致。reviewer-extra-5/checks.json。",
+    "round3→5で変更した部品はR239/R251のみ。残8件のsource hash不変を確認し通常造形の合格を引継ぎ。",
+    "9slidersのnative form/reset/keys/Home/End/実pointer0/50/100/range2thumb/disabled/readonly/minmaxstep/long320390768/RTL/forced/reducedを再実行し9件成功/errors0。reviewer-sliders-5/checks.json。",
+    "R239追加normal continuous dragを1000/320×LTR/RTL×左/中央/右の12状態で実施、0/50/100（RTL逆）をassert。溝の全幅と肩の接点を画像/CSSで照合。hover leave reenterの見出し矩形も不変。reviewer-motion-5。",
+    "R251 actual form/reset/label/native ArrowDown/arbitrary items/disabled/長文320390768/RTL/inputと前板のborder込み一致/forced/reducedを再実行し成功。reviewer-radios-5。",
+    "R251選択1/2/3×1000/320×LTR/RTLの12状態について、選択80ms途中/settled/hover leave reenterで本文の画面座標・fontをassertし全件固定。短文と長文の実画像を照合し、前回の1文字幅を解消。reviewer-motion-5/checks.json。",
+    "元監査/最寄比較はround3を継承。新R239は同batch R233、既承認R112/R200とも比較し、巻胴や角丸レンズでなく支持肩と深い指掛かりで独立した構造と判断。"
+  ],
+  "limits": [
+    "独立実行はChromium固定native。React4形式と現行ギャラリーdetailは今回独立起動せず、親担当の成功報告とは区別した。",
+    "forced/reducedはブラウザエミュレーション。他ブラウザ/実OSは未検査。",
+    "730件全体の再監査ではなく元監査と近似画像・既承認構造の比較。"
+  ]
+}

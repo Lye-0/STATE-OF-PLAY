@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "range": false
 };
 export type FoldedPaperRangeProps = FoundationProps;
-/** 折った紙の舟をつまみにする。選択位置まで紙の折り線が伸び、入力文字は固定。 */
+/** 二つの折面と中心の折返しが、一本の軌道を跨ぐ紙のスライダー。元の折紙のつまみを残し、左の明るい面と右の厚い影の面を別の折れ方向へ合わせる。中心の細い返しと下端の折れを接点へ置き、文字とnativeの操作を固定する。 */
 export default forwardRef<HTMLDivElement, FoldedPaperRangeProps>(function FoldedPaperRange(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderSlider} mountContent={mountSlider}/>;
 });

@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "range": false
 };
 export type EnamelPegRangeProps = FoundationProps;
-/** エナメルの小さいペグを目盛りへ差す。つまみは一つの光沢面で、上下の輪郭が指の位置を示す。 */
+/** 大きい釉薬の頭と細い8pxの脚を持つピンで、一本の軌道の値を示すスライダー。黄色の普通の角丸つまみをやめ、実際に絞った脚と一つの白い反射を持つ頭へ変える。釉薬の無地を広く、影の縁を下に限定し、nativeの操作を保持する。 */
 export default forwardRef<HTMLDivElement, EnamelPegRangeProps>(function EnamelPegRange(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderSlider} mountContent={mountSlider}/>;
 });

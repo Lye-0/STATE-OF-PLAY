@@ -1,0 +1,7 @@
+# B017 原監査との対応
+
+R233二重円だけ、R239普通の丸つまみ、R245黄色い普通の角丸、R251枠付き選択行の4件はRとして断面/凹面/脚/箱の支持から再設計。R234は石のつまみが溝に埋まる明暗、R236は大きい単色の折紙、R237は円と四角目盛りの玩具感、R240は方位盤の沈んだ輪郭、R242は浮いた矩形と二爪の接合、R243は積層の平面の縞をTとして精度を上げる。
+
+各nativeスライダーの実thumb幅をCSS変数に記録し、主軌道端と実移動端が一致するようにする。numericフォーム・step/min/max・range・disabled/readonly・reset・RTL・nativepointer・fixedtext・長文320/390/768・forced/reducedを確認。元baselineで10画像を比較。drawersは全文を固定し、前板の下の底だけを展開、native radioを境界を含め前板全体へ合わせる。
+
+自己検査1後R245の斜め影が頭を欠いたように見える問題を一つの明るい釉薬/細い縁へ変更、R240は矩形borderをclipした四隅の途切れへ実斜め小口を追加。forced custom thumbはB016で発見したnative浮きの再発防止としてall:revert/margin0を各個体へ適用。自己native radios2でborder10px分の入力域不足を検出しnativeinputを上4px/下6pxへ広げて前板との寸法一致を確認する。

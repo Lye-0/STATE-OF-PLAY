@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "range": false
 };
 export type StoneInlayRangeProps = FoundationProps;
-/** 石の溝へ滑る小さい楔。台の切れ目とつまみを揃え、量を埋まった溝で読ませる。 */
+/** 丸い石の台に、明るい小口を持つ濃い石のインレイを通すスライダー。元の溝と直線の操作面を残し、44px高の操作面を濃く、縁を明るくして埋もれを防ぐ。小口の3pxの厚みを主レールと同じ軸へ揃える。 */
 export default forwardRef<HTMLDivElement, StoneInlayRangeProps>(function StoneInlayRange(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderSlider} mountContent={mountSlider}/>;
 });
