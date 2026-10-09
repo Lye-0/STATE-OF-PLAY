@@ -30,7 +30,7 @@
 .sop-foundation.sop-track-stop-pages.sop-track-stop-pages .ff-pages[data-layout=anchored]>:is(button,a){position:relative;isolation:isolate}
 .sop-foundation.sop-track-stop-pages.sop-track-stop-pages .ff-pages::before,.sop-foundation.sop-track-stop-pages.sop-track-stop-pages .ff-pages::after,.sop-foundation.sop-track-stop-pages.sop-track-stop-pages .ff-page-window::before,.sop-foundation.sop-track-stop-pages.sop-track-stop-pages .ff-page-window::after{content:"";position:absolute;inset:auto;display:none;z-index:-1;pointer-events:none;background:none;border:0;border-radius:0;box-shadow:none;clip-path:none;mask:none;transform:none}
 
-.sop-foundation.sop-track-stop-pages.sop-track-stop-pages{--paper:#edf5f6;--ink:#486d7c;--muted:#718b96;--accent:#416a7a;--edge:#b6cfd8}
+.sop-foundation.sop-track-stop-pages.sop-track-stop-pages{--paper:#edf5f6;--ink:#40616e;--muted:#556870;--accent:#416a7a;--edge:#b6cfd8}
 .sop-foundation.sop-track-stop-pages.sop-track-stop-pages .ff-pages[data-layout=anchored]>.ff-page-window{grid-auto-rows:72px;min-height:72px;gap:8px 4px;background:repeating-linear-gradient(180deg,transparent 0 54px,#b2cdd7 54px 58px,transparent 58px 62px,#85adbe 62px 66px,transparent 66px 80px)}
 .sop-foundation.sop-track-stop-pages.sop-track-stop-pages .ff-page-window :is(button,a){height:48px;margin-top:16px;border:0;background:none}
 .sop-foundation.sop-track-stop-pages.sop-track-stop-pages .ff-page-window :is(button,a)::before{display:block;inset-inline:3px;bottom:0;height:10px;background:#a2c3ce;border-bottom:4px solid #749eaf}

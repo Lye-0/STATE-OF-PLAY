@@ -6,6 +6,11 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+# Batch pushes should verify the latest revision instead of queueing obsolete
+# 14-job matrices behind one another. PRs and branches remain independent.
+concurrency:
+  group: verify-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 jobs:
   verify:
     strategy:

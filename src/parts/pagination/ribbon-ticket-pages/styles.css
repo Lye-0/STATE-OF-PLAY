@@ -30,7 +30,7 @@
 .sop-foundation.sop-ribbon-ticket-pages.sop-ribbon-ticket-pages .ff-pages[data-layout=anchored]>:is(button,a){position:relative;isolation:isolate}
 .sop-foundation.sop-ribbon-ticket-pages.sop-ribbon-ticket-pages .ff-pages::before,.sop-foundation.sop-ribbon-ticket-pages.sop-ribbon-ticket-pages .ff-pages::after,.sop-foundation.sop-ribbon-ticket-pages.sop-ribbon-ticket-pages .ff-page-window::before,.sop-foundation.sop-ribbon-ticket-pages.sop-ribbon-ticket-pages .ff-page-window::after{content:"";position:absolute;inset:auto;display:none;z-index:-1;pointer-events:none;background:none;border:0;border-radius:0;box-shadow:none;clip-path:none;mask:none;transform:none}
 
-.sop-foundation.sop-ribbon-ticket-pages.sop-ribbon-ticket-pages{--paper:#f8edf2;--ink:#70465e;--muted:#8b6b7e;--accent:#86516d;--edge:#d5b2c7}
+.sop-foundation.sop-ribbon-ticket-pages.sop-ribbon-ticket-pages{--paper:#f8edf2;--ink:#70465e;--muted:#765b6b;--accent:#86516d;--edge:#d5b2c7}
 .sop-foundation.sop-ribbon-ticket-pages.sop-ribbon-ticket-pages .ff-page-window :is(button,a){border:0;background:#fceff6;border-block:2px solid #d8b7ca}
 .sop-foundation.sop-ribbon-ticket-pages.sop-ribbon-ticket-pages .ff-page-window [aria-current=page]{background:none;color:#fff;border-color:transparent}
 .sop-foundation.sop-ribbon-ticket-pages.sop-ribbon-ticket-pages .ff-page-window [aria-current=page]::before{display:block;inset:0;background:#86516d;clip-path:polygon(0 0,100% 0,100% 100%,50% calc(100% - 9px),0 100%)}

@@ -1,9 +1,9 @@
-import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';import {chromium} from 'playwright';import {createServer} from 'vite';
+import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';import {chromium} from 'playwright';import {createComponentServer} from './component-server.ts';
 import {buildCatalog,ROOT} from '../scripts/catalog.ts';import {getDelivery} from '../src/catalog/delivery.ts';import {currentParts} from './gallery-counts.ts';import {lightSelectedContrast} from './light-selected-contrast.ts';
 const specs=currentParts().filter(part=>part.tags.includes('EXPANSION-30'));
 const parts=buildCatalog(ROOT,specs.map(d=>d.id),{appearance:false}).parts;
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});const errors:string[]=[];
-const server=await createServer({root:ROOT,server:{host:'127.0.0.1',port:0,watch:{ignored:['**/.test-output/**','**/docs/**']}}});await server.listen();
+const server=await createComponentServer('expansion-30-react');await server.listen();
 try{
  for(const [format,layout]of [['tsx','portable'],['jsx','original']] as const){
   const directory=path.join(ROOT,`.test-output/expansion-30-react/${format}-${layout}`);fs.mkdirSync(directory,{recursive:true});

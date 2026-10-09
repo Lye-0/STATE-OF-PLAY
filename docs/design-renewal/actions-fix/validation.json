@@ -1,0 +1,254 @@
+{
+  "baseCommit": "e39f2c5c8e1c3ec3ca739d19dd31f4f92cf96743",
+  "status": "completed",
+  "environment": {
+    "os": "Linux",
+    "browser": "system Chromium 151.0.7922.173",
+    "ciBrowserDownloaded": false,
+    "windowsRunLocally": false
+  },
+  "completed": [
+    {
+      "command": "npm run typecheck",
+      "node": "22.23.3",
+      "exitCode": 0,
+      "log": "captures/logs/typecheck-final.log",
+      "sha256": "ffcab528a86ebea9a1d09ef81600cc069afacf8d881bd69e454b54d0653deaec"
+    },
+    {
+      "command": "node --experimental-strip-types --test tests/selection.test.ts tests/vite-url.test.ts",
+      "node": "22.23.3",
+      "exitCode": 0,
+      "log": "captures/logs/unit-final.log",
+      "sha256": "93ad3bcc1935abad0e555592c164bef5030914616345932f1585849543178a42"
+    },
+    {
+      "command": "npm run test:signature",
+      "node": "22.23.3",
+      "exitCode": 0,
+      "log": "captures/logs/signature-final.log",
+      "sha256": "228d91f7c1e21bfe4e028ec8744ad4f14f607e87671a1f5f1c526ef2910dfddc"
+    },
+    {
+      "command": "npm run test:tab-strip",
+      "node": "22.23.3",
+      "exitCode": 0,
+      "log": "captures/logs/tab-strip-node22.log",
+      "sha256": "2eb490b60fb1556dfa8fe638a61f086791e873f8b79c1c8ad99a9769cf2519ca"
+    },
+    {
+      "command": "npm run test:expansion-30",
+      "node": "22.23.3",
+      "exitCode": 0,
+      "log": "captures/logs/expansion30-final.log",
+      "sha256": "feb9f215d8e1c306bdf7bae3ccd39ac05838df0722e1b32c52be42d49e50948d"
+    },
+    {
+      "command": "npm run test:continuum (before the final label-inheritance split)",
+      "node": "22.23.3",
+      "exitCode": 0,
+      "log": "captures/logs/continuum-final.log",
+      "sha256": "a0d3c295235e16f133937c4d2c87c279d37c920a8764f237c5baaedbb8c57bad"
+    },
+    {
+      "command": "SOP_CONTINUUM_FILTER='B loader labels' npm run test:continuum",
+      "node": "22.23.3",
+      "exitCode": 0,
+      "log": "captures/logs/continuum-labels-final.log",
+      "sha256": "bdcfadcfa11f5762fca3277f049542a2de00bed5c3d8804bc773fc8e645f5430"
+    },
+    {
+      "command": "SOP_BROWSER_ONLY='Real Vite watcher' npm run test:browser",
+      "node": "22.23.3",
+      "exitCode": 0,
+      "log": "captures/logs/watcher-final.log",
+      "sha256": "fc0725972a595aee84b40780e28c3634215aedfbed3bab246b8fd3f4cbe4facc"
+    },
+    {
+      "command": "npm run test:expansion-50:native",
+      "node": "22.23.3",
+      "exitCode": 0,
+      "log": "captures/logs/expansion50-native-final.log",
+      "sha256": "5c2599972e418b55653571f4ccfef17605de5f20b9ae3d03f8d3b7933e165b9a"
+    },
+    {
+      "command": "SOP_EXPANSION_CATEGORIES=pagination,badges npm run test:expansion-50:react",
+      "node": "22.23.3",
+      "exitCode": 0,
+      "log": "captures/logs/selected-react-final.log",
+      "sha256": "855ba477b470826d6cacca7e8128c8869edf3bcf5b78e9392703595ff380eaca"
+    },
+    {
+      "command": "npm run test:glass-collection:gallery",
+      "node": "22.23.3",
+      "exitCode": 0,
+      "log": "captures/logs/glass-gallery-final4.log",
+      "sha256": "992dbe078c51497598626c7f9a717465193c4c55d2da818b852b1fdebbad8bd0"
+    },
+    {
+      "command": "SOP_EXPANSION_IDS=(42 changed parts) node --experimental-strip-types tests/expansion-50.browser.ts",
+      "node": "22.23.3",
+      "exitCode": 0,
+      "log": "captures/logs/changed-gallery-final.log",
+      "sha256": "60784d1138ad24a47ec2fa2c0b2365f4f7e78c13feac71f1c395453153e7108f"
+    },
+    {
+      "command": "npm run typecheck",
+      "node": "22.23.3",
+      "exitCode": 0,
+      "log": "captures/logs/typecheck-final2.log",
+      "sha256": "ffcab528a86ebea9a1d09ef81600cc069afacf8d881bd69e454b54d0653deaec"
+    },
+    {
+      "command": "npm run test:expansion-review",
+      "node": "22.23.3",
+      "exitCode": 0,
+      "log": "captures/logs/expansion-review-complete.log",
+      "sha256": "c1915f645a659bc373a079f7fee8022f0905a7672b7e7c933e2965b9ac48ffa4"
+    },
+    {
+      "command": "npm run build",
+      "node": "22.23.3",
+      "exitCode": 0,
+      "log": "captures/logs/build-complete.log",
+      "sha256": "a8d1b0f4b115249f180d27d50ae1d5ef733c25f23c1075b2858ae2b5b7a405c9"
+    },
+    {
+      "command": "npm run typecheck",
+      "node": "22.23.3",
+      "exitCode": 0,
+      "log": "captures/logs/typecheck-complete.log",
+      "sha256": "ffcab528a86ebea9a1d09ef81600cc069afacf8d881bd69e454b54d0653deaec"
+    },
+    {
+      "command": "npm run test:continuum",
+      "node": "22.23.3",
+      "exitCode": 0,
+      "checks": 20,
+      "log": "captures/logs/continuum-complete.log",
+      "sha256": "490e22bed629fb3aaf687e3d8e2493ef3fa2f8cbe20145566849e8cd4fbae8cd"
+    },
+    {
+      "command": "npm run test:expansion-50:react",
+      "node": "22.23.3",
+      "exitCode": 0,
+      "log": "captures/logs/expansion50-react-complete.log",
+      "sha256": "418f6b48e20f96ad613a2e703699f2d16f8b549307e19f322733b5777ca21333",
+      "scope": "All 730 parts, four React formats, final authored CSS."
+    },
+    {
+      "command": "npm run test:lazy-loading",
+      "node": "22.23.3",
+      "exitCode": 0,
+      "log": "captures/logs/lazy-loading-complete.log",
+      "sha256": "075ec1aa5c0cf117d76169067892cfcfec20c582d072b7e4223e487d08cee2ad",
+      "scope": "Development and production; all 37 categories forward/reverse CSS order, errors, navigation races, retries and exports."
+    },
+    {
+      "command": "npm run test:expansion-50:native",
+      "node": "22.23.3",
+      "exitCode": 0,
+      "log": "captures/logs/expansion50-native-complete.log",
+      "sha256": "5c2599972e418b55653571f4ccfef17605de5f20b9ae3d03f8d3b7933e165b9a",
+      "scope": "All 730 parts in portable/original native JavaScript layouts; final authored CSS."
+    },
+    {
+      "command": "SOP_EXPANSION_CATEGORIES=toggles,blocks,buttons,scrollbars,dropdowns,accordions,textboxes,links,tabs,segments,checkboxes,popups,sliders,radios,comboboxes,toasts,hints,progress,uploads node --experimental-strip-types tests/expansion-50.browser.ts",
+      "node": "22.23.3",
+      "exitCode": 0,
+      "log": "captures/logs/gallery-shard-1.log",
+      "sha256": "4ed8263069630bd2b7279d5a9ae356ba9a59e786353793198143784ecc165db6",
+      "parts": 370
+    },
+    {
+      "command": "SOP_EXPANSION_CATEGORIES=datepickers,pagination,breadcrumbs,badges,numbers,avatars,ratings,colors,skeletons,timelines,wizards,searchbars,commands,contextmenus,navigation,tables,ornaments,loaders node --experimental-strip-types tests/expansion-50.browser.ts",
+      "node": "22.23.3",
+      "exitCode": 0,
+      "log": "captures/logs/gallery-shard-2.log",
+      "sha256": "578c06de5bdcd0a04a43005865d6f863b372957ef3343d2724549203b0cd7611",
+      "parts": 360
+    }
+  ],
+  "independentReview": "review/review-2.json",
+  "pending": [],
+  "independentCodeReview": "review/ci-review.md",
+  "diagnosticFullReact": {
+    "command": "npm run test:expansion-50:react",
+    "node": "22.23.3",
+    "exitCode": 1,
+    "finding": "All 37 categories / four formats completed. Only 12 IDs in pagination/badges failed contrast (3 background-measurement errors, 9 real text-color failures). All 40 affected-category parts subsequently pass all four formats after repair.",
+    "report": "captures/expansion50-react-before-selected-fix.json"
+  },
+  "sourceFiles": {
+    "src/parts/badges/bracket-tags/styles.css": "fcd59c9b04c52661a3394f620b8dd119cc6356200ca6d452daaea20c13cf6edb",
+    "src/parts/badges/drafting-note-tags/styles.css": "2ad6d15af4704e0d16c4079995738330e95ef4ccfe2174a3d1514b9fbe0d7644",
+    "src/parts/badges/embossed-label-tags/styles.css": "289c2f88d302aa0a3844d934a8a5ab12eee89954322ebe38662678be1b4117f7",
+    "src/parts/badges/index-flag-tags/styles.css": "a2852bc4110be6866fc05a38f7b7d0e89c38bb16e827a90e08e93dec2d19f952",
+    "src/parts/badges/receipt-tags/styles.css": "de02dc314040044900a1e11b5f17853a480f85fd5aeabd147f13d1fd4b238fe1",
+    "src/parts/badges/recessed-chip-tags/styles.css": "1a4604e28967daad4f7711e47dc9c393523d505284b1271527f6f1c264082b09",
+    "src/parts/badges/ribbon-end-tags/styles.css": "211ebf769be3a57873b733dad5d775d527a7e699b1742fe96457ffdd40755dfb",
+    "src/parts/badges/stitched-label-tags/styles.css": "94c2befdb56bb044445932ffeb6b11ac566d42519ec74b38ac9c9dde89513573",
+    "src/parts/loaders/compact-step-pulse-loader/styles.css": "0b2d5e6727634b5712060d6c90033a2f61c05986eb3448ab8d861197bc495073",
+    "src/parts/loaders/fine-ring-sequence-loader/styles.css": "aef8a76e8a54864f6c32703f21a7bdd1e8ac11ecf0f59eef59c1c3465b28c25b",
+    "src/parts/loaders/quiet-pair-pulse-loader/styles.css": "bfae1db20b824002b5aa755f11d84b2ba44417e6662602ae5fdb18a6d5e0c505",
+    "src/parts/loaders/slim-dash-loader-loader/styles.css": "873e8371784cc77cecd1383a1cb0eb92dbf7439726b48cd774e8dac6277c9000",
+    "src/parts/loaders/small-square-pulse-loader/styles.css": "633692aabaa616b8652194f57a3f555583c9e0eb50d9dd7121586621d58af803",
+    "src/parts/pagination/bookplate-pages/styles.css": "eeb58019709ffbff565cfad9110d63940b68ccb5418e9468203f153e07f8f1e9",
+    "src/parts/pagination/coin-stack-pages/styles.css": "5aac344b9c7fff086834c54d578ccfd479a6ce99a4c0519d3c2b29f60ce19283",
+    "src/parts/pagination/console-pages/styles.css": "cd4d105f6b091d96a73cb5f1b75913e248c145b83c5d0baee1baa4adc78ee45d",
+    "src/parts/pagination/folded-tab-pages/styles.css": "48e48f1dce8bb4e39cdac97f77e063f5634ea3205393d4fd1809ed7a715b7adc",
+    "src/parts/pagination/ledger-page-tabs/styles.css": "64c88826bc45000279b3c3c752ff12e096a40679cf58aeb7fafb2d2ce893ccdf",
+    "src/parts/pagination/margin-line-pages/styles.css": "1cd0dbfdc25e8ed0c687c0a8978805fe6ded691863e56d24e4a55a4e42a8d97c",
+    "src/parts/pagination/open-bracket-pages/styles.css": "8abf603fa6dffa6b01fcf5ba2ef24f2c5ea0bcab935bbca011b787199a824bd7",
+    "src/parts/pagination/perforated-pages/styles.css": "d8ada603a8f66610c37f5a3cc2910944b057471d77cc9739f3639ce5b484b0a9",
+    "src/parts/pagination/ribbon-ticket-pages/styles.css": "f50865aa2d91fa45cccdd7679341ff599cae61053087639fd2a15b1721e8252d",
+    "src/parts/pagination/shuttle-key-pages/styles.css": "690da70bc22733652a8bbaa91261ae6737511464ffd68fb2ecb112d91269c49d",
+    "src/parts/pagination/slatted-pages/styles.css": "492d1e7bb10f5b95e235db3f597c1fb5522cc17ca0d61910d81aec84427c00ba",
+    "src/parts/pagination/stitched-index-pages/styles.css": "6c53dd2d95819668ebbba0ab4c48a8d717413bc3f270c9bdc9df7f843acfeb4b",
+    "src/parts/pagination/stone-step-pages/styles.css": "9a81c164efc0633fc52e91674de19b44423fbda26d46e9fe21b9e4f75664dfba",
+    "src/parts/pagination/track-stop-pages/styles.css": "43ab556fd32690efe20d5bcb9332567617b2a7abcad5794ad9776561f6848017",
+    "src/parts/radios/channelled-choice/styles.css": "c81c492af6bdfa227d34c513160445bd13cfb029cff6ce9cc44afd786b5e4bba",
+    "src/parts/radios/clasp-band-choice/styles.css": "d34decfb4ec50caf50d196f557c636ed692358395b3fc03e95c924a41da15ea9",
+    "src/parts/radios/folio-spine-choice/styles.css": "fd2baadec82f86aafc42d038ddb4ecc5e1428c43580af7cbcb0fad6c8b721522",
+    "src/parts/radios/index-ribbon-choice/styles.css": "09ccd96b93a81911710c8a4202b4421ff4aaf18056208aac2b7f2ec876f38531",
+    "src/parts/radios/letter-tab-choice/styles.css": "270f2838ab6e9b5379744b399bdde3d65c077e6ebe7313520fc84e9cdf32dbca",
+    "src/parts/radios/library-drawer-choice/styles.css": "a26d7576b73a015c168e6ba865d26bd0daf8eebae3f2e7b4249db37b2aabcf57",
+    "src/parts/radios/loop-label-choice/styles.css": "602e4642a54a08b4c29a0cbef1f01bf4b68952d786c5a618b21de7726cdf3346",
+    "src/parts/radios/numbered-pocket-choice/styles.css": "2c59451ae9e788ed3cdcfcebe68e5730e32679d98a90327c680f9756c414f253",
+    "src/parts/radios/open-file-choice/styles.css": "5e5e460439ed3df593b70e080d0df8156579d22e5be3d1a101fc545371675fe0",
+    "src/parts/radios/perforated-ballot/styles.css": "d6d6ade094948f3a8466adfc0c626c3db07409b053f94dcaafd3a94596380f66",
+    "src/parts/radios/rail-seat-choice/styles.css": "f92ba095d2cd48d6f9086abed9b18b5d6f2cd7f103a81aa30a47718e116adb80",
+    "src/parts/radios/shallow-bowl-choice/styles.css": "fdefc7241616d95d537cb58e9fdfec56ef4c886befbaee931418123e8d98ac41",
+    "src/parts/radios/signpost-choice/styles.css": "fe55755d25a9e018f4c91ad21e30d2148283e4edb6dd2317ef3b95fea8795a5d",
+    "src/parts/radios/stapled-card-choice/styles.css": "a58844cda1f8faad609042ee96b9f83428c6a33a2151346e3fab2bebaf42007d",
+    "src/parts/radios/stepped-tile-choice/styles.css": "b850dbdd80281bd4a426eeb24851b8e2c2b78abbded2a16b287b3c2cbcc07a11",
+    "src/shared/selection-base.css": "cb17be00e8a5f809511525ffb0df7a5b98415a8436cf2598a7e476277db52dd5"
+  },
+  "independentFinalCodeReview": "review/final-ci-review.md",
+  "diagnosticGallery": {
+    "longLivedRun": {
+      "node": "24.19.0",
+      "exitCode": 143,
+      "reason": "Stopped after reproducing severe late-run slowdown; not a passing test."
+    },
+    "coldScan": {
+      "exitCode": 1,
+      "reason": "Cold-cache automatic Vite dependency scan exceeded startup wait; disabled discovery with explicit dependencies retained."
+    },
+    "sameThreeTableCaptureSpanSeconds": {
+      "longLived": 194.94,
+      "freshPage": 26.02
+    },
+    "limitation": "Single local comparison with differing concurrent load; not a production performance benchmark."
+  },
+  "galleryCoverage": {
+    "expected": 730,
+    "checked": 730,
+    "unique": 730,
+    "missing": [],
+    "duplicates": [],
+    "requiredImagesChecked": 2920,
+    "localShardingOnly": true,
+    "ciRunsCompleteSuite": true
+  }
+}

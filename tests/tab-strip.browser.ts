@@ -3,7 +3,7 @@ import {selectSetting} from './detail-settings.ts';
 /** Real browser regression for transient tab scrollbars and exported source parity. */
 import assert from 'node:assert/strict';
 import {chromium} from 'playwright';
-import {createServer} from 'vite';
+import {createGalleryTestServer} from './gallery-server.ts';
 import {ROOT,buildCatalog,FORMATS} from '../scripts/catalog.ts';
 import {getDelivery,buildPrompt,buildUsage,packageContents} from '../src/catalog/delivery.ts';
 import {readBrowserIndex} from '../scripts/vite-catalog.ts';
@@ -22,7 +22,9 @@ for(const part of parts)for(const format of FORMATS)for(const layout of ['portab
   assert.ok(base.code.includes(rule),`${part.id}/${format}/${layout}: source CSS`);
   assert.ok(base.code.includes(scrollRule)&&base.code.includes('data-tab-overflow=false'));
   const own=files.find(f=>f.sourceName?.endsWith('/'+part.id+'/styles.css'));
-  assert.ok(own?.code.includes('--tab-scroll-thumb:'),part.id);
+  assert.ok(own,`${part.id}: authored skin is exported`);
+  // A skin may inherit the theme accent instead of repeating a scrollbar token.
+  assert.ok(base.code.includes('var(--tab-scroll-thumb,var(--choice-accent))'),`${part.id}: scrollbar keeps the skin's accent fallback`);
   const indicator=files.find(f=>f.sourceName==='src/shared/selection-indicator.ts');
   assert.ok(indicator?.code.includes('tabOverflow'),part.id);
   for(const includeCode of [true,false]){
@@ -36,7 +38,7 @@ for(const part of parts)for(const format of FORMATS)for(const layout of ['portab
   checked++;
 }
 console.log(`PASS ${checked} source packages and both prompt modes use updated tab CSS`);
-const server=await createServer({root:ROOT,server:{host:'127.0.0.1',port:0}});await server.listen();
+const server=await createGalleryTestServer('tab-strip');await server.listen();
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
 try {
   for(const width of [1440,390]){
@@ -59,7 +61,19 @@ try {
           assert.equal(overflow,expected,`${part.id} at ${width}px during selection`);
         }
         assert.equal(await card.locator('.sop-choice-panel:visible').count(),1);
-        if(!vertical){assert.equal(await card.locator('.sop-tabs').getAttribute('data-tab-overflow'),'false',part.id);assert.equal(await list.evaluate(el=>getComputedStyle(el).overflowX),'hidden',part.id);}
+        if(!vertical){
+          const overflow=await card.locator('.sop-tabs').getAttribute('data-tab-overflow');
+          const layout=await list.evaluate(el=>{
+            const frame=el.getBoundingClientRect(),selected=el.querySelector('[data-selected=true]')!.getBoundingClientRect();
+            return {mode:getComputedStyle(el).overflowX,scrollable:el.scrollWidth>el.clientWidth,selectedVisible:selected.left>=frame.left-2&&selected.right<=frame.right+2};
+          });
+          if(overflow==='false')assert.equal(layout.mode,'hidden',part.id);
+          else{
+            // Three readable sculpted tabs can legitimately need scrolling on mobile.
+            assert.equal(overflow,'true',part.id);assert.ok(layout.scrollable,part.id);assert.match(layout.mode,/^(auto|scroll)$/,part.id);
+          }
+          assert.ok(layout.selectedVisible,`${part.id} at ${width}px: selected tab stays reachable`);
+        }
       }
     }
     await page.locator('[data-open="folio-tabs"]').click();
@@ -98,8 +112,12 @@ try {
       if(await root.getAttribute('data-orientation')==='vertical')await selectSetting(details.locator('[data-selection-axis]'),'horizontal');
       await details.locator('[data-selection-count="7"]').click();
       await page.waitForFunction(()=>document.querySelector('#part-details .preview-stage .sop-tabs')?.getAttribute('data-tab-overflow')==='true');
-      const styled=await root.locator('.sop-choice-list').evaluate(list=>({overflow:list.scrollWidth>list.clientWidth,color:getComputedStyle(list).scrollbarColor,button:getComputedStyle(list,'::-webkit-scrollbar-button').display,thumb:getComputedStyle(list,'::-webkit-scrollbar-thumb').backgroundColor,token:getComputedStyle(list).getPropertyValue('--tab-scroll-thumb').trim()}));
-      assert.ok(styled.overflow,part.id);assert.notEqual(styled.color,'auto',part.id);assert.equal(styled.button,'none',part.id);assert.ok(styled.token&&styled.thumb,part.id);
+      const styled=await root.locator('.sop-choice-list').evaluate(list=>{
+        const probe=document.createElement('span');probe.style.color='var(--tab-scroll-thumb,var(--choice-accent))';list.append(probe);
+        const expectedThumb=getComputedStyle(probe).color;probe.remove();
+        return {overflow:list.scrollWidth>list.clientWidth,color:getComputedStyle(list).scrollbarColor,button:getComputedStyle(list,'::-webkit-scrollbar-button').display,thumb:getComputedStyle(list,'::-webkit-scrollbar-thumb').backgroundColor,expectedThumb};
+      });
+      assert.ok(styled.overflow,part.id);assert.notEqual(styled.color,'auto',part.id);assert.equal(styled.button,'none',part.id);assert.equal(styled.thumb,styled.expectedThumb,`${part.id}: thumb uses the skin's effective theme color`);assert.ok(styled.color.startsWith(styled.expectedThumb+' '),`${part.id}: native scrollbar uses the same theme color`);
       await details.locator('.close-detail').click();await details.waitFor({state:'hidden'});
     }
     assert.deepEqual(errors,[]);

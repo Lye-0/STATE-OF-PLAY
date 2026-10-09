@@ -1,7 +1,11 @@
 import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {createRequire} from 'node:module';
 import type {Browser} from 'playwright';import {continuumFixture} from './continuum-fixture.ts';import {ROOT} from '../scripts/catalog.ts';import {requireLocalServerUrl} from './vite-url.ts';
+import {historicalBases} from './historical-catalog.ts';
 const require=createRequire(import.meta.url),{chromium}=require(process.env.PLAYWRIGHT_PATH??'playwright') as typeof import('playwright');
 const f=continuumFixture(),changed=f.records.filter(p=>p.tags.includes('CONTINUUM')),offline=process.env.SOP_TEST_MODE==='offline';
+// The 60px inline-size contract belongs to the original eight compact loaders.
+// Expanded designs still take every shared behavior, narrow-width and cleanup check below.
+const historical=new Set(historicalBases());
 const results:string[]=[],errors:string[]=[];let browser:Browser|undefined,close:(()=>Promise<void>)|undefined;
 async function run(name:string,test:()=>Promise<void>){if(process.env.SOP_CONTINUUM_FILTER&&!new RegExp(process.env.SOP_CONTINUUM_FILTER).test(name))return;await test();results.push(name);console.log('PASS '+name);}
 try{
@@ -72,8 +76,18 @@ try{
   for(const part of changed.filter(r=>r.category==='loaders')){await mount(part.id);await p.waitForTimeout(75);assert.equal(await p.locator('.sop-motion-loader').getAttribute('data-motion-running'),'true');assert.ok(await p.locator('[role=status]').isVisible());assert.ok(await p.evaluate(()=>document.getAnimations().some(a=>a.playState==='running')),part.id);assert.equal(await p.evaluate(()=>(window as any).activeFrames.size),0);
    await update({paused:true,content:'接続を待っています'});await p.waitForTimeout(25);assert.equal(await p.evaluate(()=>document.getAnimations().filter(a=>a.playState==='running').length),0,part.id);assert.equal(await p.locator('[data-loader-label]').innerText(),'接続を待っています');await update({paused:false});assert.equal(await p.locator('.sop-motion-loader').getAttribute('data-motion-running'),'true');}
  });
- await run('B loaders fit small inline-sized stages and inherit colors on light as well as dark surfaces',async()=>{
-  for(const part of changed.filter(r=>r.category==='loaders'&&r.designType==='B')){await mount(part.id);assert.ok((await p.locator('.ct-loader-stage').boundingBox())!.height<=60,part.id);await p.locator('.sop-motion-loader').evaluate((e:HTMLElement)=>{e.style.color='rgb(20, 30, 40)';e.style.background='white';});assert.equal(await p.locator('[data-loader-label]').evaluate(e=>getComputedStyle(e).color),'rgb(20, 30, 40)');const box=await p.locator('.ct-loader-body').boundingBox();assert.ok(box&&box.width<=140&&box.height<=40,part.id);}
+ await run('B loader labels inherit light/dark surface colors; original inline loaders keep compact geometry',async()=>{
+  const loaders=changed.filter(r=>r.category==='loaders'&&r.designType==='B');
+  assert.equal(loaders.filter(r=>historical.has(r.base)).length,8);
+  for(const part of loaders){
+   await mount(part.id);
+   await p.locator('.sop-motion-loader').evaluate((e:HTMLElement)=>{e.style.color='rgb(20, 30, 40)';e.style.background='white';});
+   assert.equal(await p.locator('[data-loader-label]').evaluate(e=>getComputedStyle(e).color),'rgb(20, 30, 40)',part.id+' label inherits the host color');
+   if(historical.has(part.base)){
+    assert.ok((await p.locator('.ct-loader-stage').boundingBox())!.height<=60,part.id);
+    const box=await p.locator('.ct-loader-body').boundingBox();assert.ok(box&&box.width<=140&&box.height<=40,part.id);
+   }
+  }
  });
  await run('visibility pauses CSS loaders outside viewport, resuming when they re-enter without timers',async()=>{
   await mount('liquid-merge-loader');await p.waitForTimeout(90);assert.equal(await p.locator('.sop-motion-loader').getAttribute('data-motion-running'),'true');await p.locator('[data-sample]').evaluate((e:HTMLElement)=>e.style.marginTop='3000px');await p.waitForFunction(()=>document.querySelector('.sop-motion-loader')?.getAttribute('data-motion-running')==='false');assert.equal(await p.evaluate(()=>document.getAnimations().filter(a=>a.playState==='running').length),0);await p.locator('[data-sample]').evaluate((e:HTMLElement)=>e.style.marginTop='0px');await p.waitForFunction(()=>document.querySelector('.sop-motion-loader')?.getAttribute('data-motion-running')==='true');

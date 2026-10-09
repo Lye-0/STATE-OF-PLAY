@@ -30,7 +30,7 @@
 .sop-foundation.sop-console-pages.sop-console-pages .ff-pages[data-layout=anchored]>:is(button,a){position:relative;isolation:isolate}
 .sop-foundation.sop-console-pages.sop-console-pages .ff-pages::before,.sop-foundation.sop-console-pages.sop-console-pages .ff-pages::after,.sop-foundation.sop-console-pages.sop-console-pages .ff-page-window::before,.sop-foundation.sop-console-pages.sop-console-pages .ff-page-window::after{content:"";position:absolute;inset:auto;display:none;z-index:-1;pointer-events:none;background:none;border:0;border-radius:0;box-shadow:none;clip-path:none;mask:none;transform:none}
 
-.sop-foundation.sop-console-pages.sop-console-pages{--paper:#edf4f6;--ink:#426575;--muted:#6e8793;--accent:#3d687a;--edge:#b4ccd7}
+.sop-foundation.sop-console-pages.sop-console-pages{--paper:#edf4f6;--ink:#426575;--muted:#556871;--accent:#3d687a;--edge:#b4ccd7}
 .sop-foundation.sop-console-pages.sop-console-pages .ff-pages[data-layout=anchored]{padding:20px 16px 14px;gap:18px 8px}
 .sop-foundation.sop-console-pages.sop-console-pages .ff-pages::before{display:block;inset:0;background:#d3e5eb;border-top:12px solid #b6d0db;border-inline:10px solid #9fbfcd;border-bottom:16px solid #7f9ead;clip-path:polygon(18px 0,calc(100% - 18px) 0,100% 22px,100% 100%,0 100%,0 22px);z-index:-2}
 .sop-foundation.sop-console-pages.sop-console-pages .ff-page-window :is(button,a){height:48px;background:#edf7f8;border:0;border-top:5px solid #fafdff;border-inline:3px solid #bdd7e0;border-bottom:7px solid #92b4c3;font-weight:600}

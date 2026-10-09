@@ -1,0 +1,76 @@
+{
+  "overall": "pass",
+  "parts": [
+    {
+      "id": "spine-index-pages",
+      "verdict": "pass",
+      "minimum": 5.862525982563674
+    },
+    {
+      "id": "ribbon-ticket-pages",
+      "verdict": "pass",
+      "minimum": 6.155715524933299
+    },
+    {
+      "id": "perforated-pages",
+      "verdict": "pass",
+      "minimum": 6.658439301209688
+    },
+    {
+      "id": "open-bracket-pages",
+      "verdict": "pass",
+      "minimum": 5.27387974209272
+    },
+    {
+      "id": "receipt-tags",
+      "verdict": "pass",
+      "minimum": 5.251503465561964
+    },
+    {
+      "id": "stitched-label-tags",
+      "verdict": "pass",
+      "minimum": 4.85784712394892
+    },
+    {
+      "id": "bracket-tags",
+      "verdict": "pass",
+      "minimum": 5.276286085615857
+    },
+    {
+      "id": "index-flag-tags",
+      "verdict": "pass",
+      "minimum": 5.2783353484724245
+    },
+    {
+      "id": "embossed-label-tags",
+      "verdict": "pass",
+      "minimum": 5.130376785484146
+    },
+    {
+      "id": "drafting-note-tags",
+      "verdict": "pass",
+      "minimum": 5.24904527002057
+    },
+    {
+      "id": "ribbon-end-tags",
+      "verdict": "pass",
+      "minimum": 5.304078636105294
+    },
+    {
+      "id": "recessed-chip-tags",
+      "verdict": "pass",
+      "minimum": 5.2259890974510395
+    }
+  ],
+  "checks": [
+    "9 changed source CSS: only color declarations; copied separate TSX portable fixture CSS exact",
+    "12 components actual initial/changed selected states; pages04->05, badges Ready+Design selected",
+    "Actual text-hidden background pixels measured; native helper reports no failures across both full20 initial fixtures",
+    "All12 final actual images inspected, material/colors preserved",
+    "Known three ::before helper branch maintains4.5 threshold and throws for missing/invisible/translucent/gradient pseudo"
+  ],
+  "limits": [
+    "Independent browser execution covers TSX portable and two selected states; other forms/full regression handled by main",
+    "Pseudo geometry/coverage still requires image review if shape changes; guard does not prove pixel coverage"
+  ]
+}

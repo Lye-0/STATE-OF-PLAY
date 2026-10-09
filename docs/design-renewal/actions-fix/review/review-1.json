@@ -1,0 +1,145 @@
+{
+  "round": 1,
+  "overall": "changes_requested",
+  "scope": "15 radios text colors only",
+  "parts": [
+    {
+      "number": 251,
+      "id": "library-drawer-choice",
+      "verdict": "pass",
+      "minimumPaintContrast": 5.656978710376015,
+      "findings": []
+    },
+    {
+      "number": 252,
+      "id": "perforated-ballot",
+      "verdict": "pass",
+      "minimumPaintContrast": 5.599349493956524,
+      "findings": []
+    },
+    {
+      "number": 253,
+      "id": "loop-label-choice",
+      "verdict": "pass",
+      "minimumPaintContrast": 5.668957085169127,
+      "findings": []
+    },
+    {
+      "number": 254,
+      "id": "stepped-tile-choice",
+      "verdict": "pass",
+      "minimumPaintContrast": 5.678691773633051,
+      "findings": []
+    },
+    {
+      "number": 255,
+      "id": "folio-spine-choice",
+      "verdict": "pass",
+      "minimumPaintContrast": 5.742609083673271,
+      "findings": []
+    },
+    {
+      "number": 256,
+      "id": "rail-seat-choice",
+      "verdict": "pass",
+      "minimumPaintContrast": 5.6232805858778026,
+      "findings": []
+    },
+    {
+      "number": 257,
+      "id": "numbered-pocket-choice",
+      "verdict": "adjust",
+      "minimumPaintContrast": 3.1875600631669934,
+      "findings": [
+        {
+          "severity": "major",
+          "problem": "番号の実背景面に対するコントラストが4.5:1未満。祖先の紙背景を使う測定では検出されない。",
+          "proposal": "番号だけ同系統の濃色へ変更する。造形・寸法は維持。"
+        }
+      ]
+    },
+    {
+      "number": 258,
+      "id": "clasp-band-choice",
+      "verdict": "pass",
+      "minimumPaintContrast": 5.690883820589657,
+      "findings": []
+    },
+    {
+      "number": 259,
+      "id": "open-file-choice",
+      "verdict": "adjust",
+      "minimumPaintContrast": 2.9592943482683007,
+      "findings": [
+        {
+          "severity": "major",
+          "problem": "番号の実背景面に対するコントラストが4.5:1未満。祖先の紙背景を使う測定では検出されない。",
+          "proposal": "番号だけ同系統の濃色へ変更する。造形・寸法は維持。"
+        }
+      ]
+    },
+    {
+      "number": 260,
+      "id": "signpost-choice",
+      "verdict": "pass",
+      "minimumPaintContrast": 5.539969216244131,
+      "findings": []
+    },
+    {
+      "number": 261,
+      "id": "stapled-card-choice",
+      "verdict": "pass",
+      "minimumPaintContrast": 5.665292269922386,
+      "findings": []
+    },
+    {
+      "number": 262,
+      "id": "channelled-choice",
+      "verdict": "pass",
+      "minimumPaintContrast": 5.846389483514735,
+      "findings": []
+    },
+    {
+      "number": 263,
+      "id": "letter-tab-choice",
+      "verdict": "adjust",
+      "minimumPaintContrast": 3.80007385036913,
+      "findings": [
+        {
+          "severity": "major",
+          "problem": "番号の実背景面に対するコントラストが4.5:1未満。祖先の紙背景を使う測定では検出されない。",
+          "proposal": "番号だけ同系統の濃色へ変更する。造形・寸法は維持。"
+        }
+      ]
+    },
+    {
+      "number": 264,
+      "id": "shallow-bowl-choice",
+      "verdict": "pass",
+      "minimumPaintContrast": 5.5915620439242115,
+      "findings": []
+    },
+    {
+      "number": 265,
+      "id": "index-ribbon-choice",
+      "verdict": "adjust",
+      "minimumPaintContrast": 2.611114158513279,
+      "findings": [
+        {
+          "severity": "major",
+          "problem": "番号の実背景面に対するコントラストが4.5:1未満。祖先の紙背景を使う測定では検出されない。",
+          "proposal": "番号だけ同系統の濃色へ変更する。造形・寸法は維持。"
+        }
+      ]
+    }
+  ],
+  "checks": [
+    "Actual React TSX portable: 15×3 selected states; native check; before/after geometry and fonts identical",
+    "Exact declared CSS changes and copied fixture CSS checked for all15",
+    "Actual painted backgrounds sampled with text hidden; 320px RTL and forced dark/light screenshots saved"
+  ],
+  "limits": [
+    "Pixel samples cover default three choices; not every possible custom theme.",
+    "Other React formats were main-agent tests, not independently rerun."
+  ]
+}

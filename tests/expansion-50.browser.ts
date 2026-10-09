@@ -1,15 +1,26 @@
 import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';
-import {chromium} from 'playwright';import {createServer} from 'vite';
+import {chromium} from 'playwright';import {createGalleryTestServer} from './gallery-server.ts';
 import {ROOT} from '../scripts/catalog.ts';import {currentParts} from './gallery-counts.ts';import {galleryReady,selectCategory} from './gallery-ready.ts';
 const out=process.env.SOP_EXPANSION_OUTPUT??path.join(ROOT,'.test-output/expansion-50');
 const designs=currentParts().filter(part=>part.tags.includes('EXPANSION-50'));
 const captureOnly=!!process.env.SOP_EXPANSION_CAPTURE_ONLY;const chosen=process.env.SOP_EXPANSION_IDS?.split(',');const cats=process.env.SOP_EXPANSION_CATEGORIES?.split(',');const specs=designs.filter(d=>(!chosen||chosen.includes(d.id))&&(!cats||cats.includes(d.category)));
-const server=await createServer({root:ROOT,server:{host:'127.0.0.1',port:0,hmr:false,watch:{ignored:['**/docs/**','**/.test-output/**']}}});await server.listen();
+const server=await createGalleryTestServer('expansion-50');await server.listen();
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
-const page=await browser.newPage({viewport:{width:1500,height:1000},reducedMotion:'reduce'});page.setDefaultTimeout(30000);const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));fs.mkdirSync(path.join(out,'photos'),{recursive:true});const results:object[]=[];
+const errors:string[]=[];
+const createPage=async()=>{const p=await browser.newPage({viewport:{width:1500,height:1000},reducedMotion:'reduce'});p.setDefaultTimeout(30000);p.on('pageerror',e=>errors.push(e.message));return p;};
+let page=await createPage(),activeCategory:string|undefined;
+fs.mkdirSync(path.join(out,'photos'),{recursive:true});const results:{id:string;category:string;gallery:boolean;states:boolean}[]=[];
 try{
- await page.goto(server.resolvedUrls!.local[0]);await page.waitForFunction(()=>document.documentElement.classList.contains('site-ready'));
  for(const d of specs){
+  // Imported category CSS remains in a document even after its cards unmount.
+  // Bound this exhaustive screenshot run to one category per context; the
+  // separate lazy-loading suite retains forward/reverse category-order checks.
+  if(activeCategory!==d.category){
+   if(activeCategory!==undefined){await page.close();page=await createPage();}
+   const url=new URL(server.resolvedUrls!.local[0]);url.searchParams.set('category',d.category);
+   await page.goto(url.href);await page.waitForFunction(()=>document.documentElement.classList.contains('site-ready'));
+   activeCategory=d.category;
+  }
   await page.setViewportSize({width:1500,height:1000});
   await selectCategory(page,d.category);await galleryReady(page);
   const card=page.locator(`[data-part="${d.id}"]`);while(!await card.count()&&await page.locator('#load-more').isVisible()){await page.locator('#load-more').click();await galleryReady(page);}
@@ -59,5 +70,5 @@ try{
   await stage.screenshot({path:path.join(out,'photos',d.id+'-narrow.png'),animations:'disabled'});
   results.push({id:d.id,category:d.category,gallery:true,states:true});console.log('PASS '+d.id);
  }
- assert.deepEqual(errors,[]);if(!captureOnly)fs.writeFileSync(path.join(out,'browser-results.json'),JSON.stringify(results,null,2)+'\n');
+ assert.deepEqual(errors,[]);if(!captureOnly){assert.equal(results.length,specs.length);assert.equal(new Set(results.map(r=>r.id)).size,specs.length);}if(!captureOnly)fs.writeFileSync(path.join(out,'browser-results.json'),JSON.stringify(results,null,2)+'\n');
 }finally{await browser.close();await server.close();}

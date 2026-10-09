@@ -1,11 +1,12 @@
 import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {createRequire} from 'node:module';
 import type {Browser,Page} from 'playwright';import {signatureFixture} from './signature-fixture.ts';import {ROOT} from '../scripts/catalog.ts';import {requireLocalServerUrl} from './vite-url.ts';
+import {createComponentServer} from './component-server.ts';
 const require=createRequire(import.meta.url),{chromium}=require(process.env.PLAYWRIGHT_PATH??'playwright') as typeof import('playwright');
 const offline=process.env.SOP_TEST_MODE==='offline',fixture=signatureFixture(),passed:string[]=[],errors:string[]=[];
 let browser:Browser|undefined,closeServer:(()=>Promise<void>)|undefined;
 async function run(name:string,fn:()=>Promise<void>){await fn();passed.push(name);console.log('PASS '+name);}
 try{
- let url='';if(!offline){const {createServer}=await import('vite');const s=await createServer({root:ROOT,server:{host:'127.0.0.1',port:0}});await s.listen();url=requireLocalServerUrl(s,'Signature');closeServer=()=>s.close();}
+ let url='';if(!offline){const s=await createComponentServer('signature');await s.listen();url=requireLocalServerUrl(s,'Signature');closeServer=()=>s.close();}
  browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
  const p=await browser.newPage({viewport:{width:620,height:1000}});p.setDefaultTimeout(6000);p.on('pageerror',e=>errors.push(e.message));
  if(offline){await p.setContent(fixture.shell.replace('<link rel="stylesheet" href="./styles.css">',''));await p.addStyleTag({content:fixture.styles});await p.addScriptTag({content:fixture.bundle()});}else await p.goto(new URL('.test-output/signature/test.html',url).href,{waitUntil:'domcontentloaded',timeout:120000});

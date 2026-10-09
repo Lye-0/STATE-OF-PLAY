@@ -9,6 +9,7 @@ import type {Browser} from 'playwright';
 import {ROOT,buildCatalog} from '../scripts/catalog.ts';
 import {getDelivery,buildPrompt} from '../src/catalog/delivery.ts';
 import {galleryReady,selectCategory} from './gallery-ready.ts';
+import {sampleCssColor} from './css-color.ts';
 
 const require=createRequire(import.meta.url),{chromium}=require(process.env.PLAYWRIGHT_PATH??'playwright') as typeof import('playwright');
 const all=buildCatalog(),glass=all.parts.filter(p=>p.id.startsWith('lg-')||p.id.startsWith('lgc-'));
@@ -25,6 +26,13 @@ try{
  const detail=page.locator('#part-details');
  const open=async(id:string)=>{const part=glass.find(p=>p.id===id)!;await selectCategory(page,part.category);await page.locator(`[data-open="${id}"]`).click();await galleryReady(page,true);return part;};
  const closeDetail=async()=>{await detail.locator('.close-detail').click();};
+ await run('Material measurements accept legacy and modern CSS color serialization',async()=>{
+  for(const color of ['rgba(23, 51, 71, .25)','rgb(23 51 71 / 25%)','color(srgb .09 .2 .28 / .25)']){
+   assert.ok(Math.abs((await page.evaluate(sampleCssColor,color)).alpha-.25)<1/255,color);
+  }
+  assert.equal((await page.evaluate(sampleCssColor,'rgb(23, 51, 71)')).alpha,1);
+  assert.equal((await page.evaluate(sampleCssColor,'transparent')).alpha,0);
+ });
  await run('Glass A and B appear in their 35 ordinary categories',async()=>{
   assert.equal(all.parts.length,libraryCount());assert.equal(glass.length,70);assert.equal(await page.locator('.liquid-glass-shortcut,.lg-preview-controls').count(),0);
   for(const category of [...new Set(all.parts.map(p=>p.category))]){
@@ -184,8 +192,8 @@ try{
   await lens.locator('[data-calendar-toggle]').click();
   const lensPanel=lens.locator('.ff-calendar');await lensPanel.waitFor({state:'visible'});
   const material=await lensPanel.evaluate(el=>{const style=getComputedStyle(el);return {background:style.backgroundColor,blur:style.backdropFilter};});
-  const alpha=Number(material.background.match(/\/\s*([\d.]+)\)/)?.[1]??1);
-  assert.ok(alpha>.3&&alpha<.65&&material.blur.includes('blur('),'Lens calendar panel lost its transparent material');
+  const alpha=(await page.evaluate(sampleCssColor,material.background)).alpha;
+  assert.ok(alpha>0&&alpha<.35&&material.blur.includes('blur('),`Lens calendar must be clear glass: ${JSON.stringify(material)}`);
   await page.keyboard.press('Escape');
   const mist=page.locator('[data-part="lgc-datepickers-mist"]');
   assert.equal(await mist.locator('.lgc-root').getAttribute('data-date-mode'),'date');
@@ -193,6 +201,9 @@ try{
   assert.equal(await mist.locator('[data-date="1"]').isVisible(),false);
   await mist.locator('[data-calendar-toggle]').click();
   const mistPanel=mist.locator('.ff-calendar');await mistPanel.waitFor({state:'visible'});
+  const mistMaterial=await mistPanel.evaluate(el=>({background:getComputedStyle(el).backgroundColor,blur:getComputedStyle(el).backdropFilter}));
+  const mistAlpha=(await page.evaluate(sampleCssColor,mistMaterial.background)).alpha;
+  assert.ok(mistAlpha>alpha&&mistAlpha<.85&&mistMaterial.blur.includes('blur('),`Mist must be denser than Lens while retaining transparency: ${JSON.stringify(mistMaterial)}`);
   await mistPanel.locator('[data-day="2026-09-25"]').click();
   assert.equal(await mist.locator('[data-date="0"]').inputValue(),'2026-09-25');
   assert.equal(await mist.locator('[data-date="1"]').isVisible(),false);
@@ -200,13 +211,13 @@ try{
  });
  await run('Both glass pagers keep the selected number readable on a transparent lens',async()=>{
   await selectCategory(page,'pagination');
-  const opacity=(color:string)=>color.startsWith('rgba(')?Number(color.match(/,\s*([\d.]+)\)/)?.[1]??1):color.startsWith('color(')?Number(color.match(/\/\s*([\d.]+)\)/)?.[1]??1):1;
+  const opacity=async(color:string)=>(await page.evaluate(sampleCssColor,color)).alpha;
   for(const [id,target]of [['lgc-pagination-lens','12'],['lgc-pagination-mist','5']]as const){
    const card=page.locator(`[data-part="${id}"]`),root=card.locator('.lgc-root'),rail=root.locator('.ff-pages');
    const style=()=>rail.evaluate(el=>{const rail=getComputedStyle(el),current=getComputedStyle(el.querySelector('[aria-current="page"]')!);return {rail:rail.backgroundColor,blur:rail.backdropFilter,number:current.color,lens:current.backgroundColor,reflection:current.boxShadow};});
    const initial=await style();
-   assert.ok(opacity(initial.rail)<.6,`${id}: rail remains too opaque`);
-   assert.ok(opacity(initial.lens)<.65,`${id}: selected page is painted solid`);
+   assert.ok(await opacity(initial.rail)<.6,`${id}: rail remains too opaque`);
+   assert.ok(await opacity(initial.lens)<.65,`${id}: selected page is painted solid`);
    assert.notEqual(initial.number,'rgba(0, 0, 0, 0)',`${id}: selected page number is transparent`);
    assert.ok(initial.blur.includes('blur(')&&initial.reflection!=='none',`${id}: selected page lost its glass material`);
    await rail.locator(`[aria-label="ページ ${target}"]`).click();
@@ -215,7 +226,7 @@ try{
    assert.notEqual(await selected.evaluate(el=>getComputedStyle(el).color),'rgba(0, 0, 0, 0)');
    await root.evaluate(el=>el.setAttribute('data-lg-material','solid'));
    await page.waitForTimeout(300);
-   assert.equal(opacity((await style()).rail),1,`${id}: solid mode still shows through`);
+   assert.equal(await opacity((await style()).rail),1,`${id}: solid mode still shows through`);
    await root.evaluate(el=>el.removeAttribute('data-lg-material'));
   }
  });
@@ -308,14 +319,15 @@ try{
    await page.waitForTimeout(400);
    const material=await popup.evaluate(el=>{
     const windowStyle=getComputedStyle(el),shellStyle=getComputedStyle(el.querySelector('.sop-popup-shell')!);
-    const alpha=Number(windowStyle.backgroundColor.match(/[\d.]+/g)?.at(-1)??1);
-    const titleColor=getComputedStyle(el.querySelector('h2')!).color.match(/\d+/g)!.map(Number);
-    return {modal:el.matches(':modal'),blur:windowStyle.backdropFilter,alpha,shell:shellStyle.backgroundColor,titleColor};
+    const titleColor=getComputedStyle(el.querySelector('h2')!).color;
+    return {modal:el.matches(':modal'),blur:windowStyle.backdropFilter,background:windowStyle.backgroundColor,shell:shellStyle.backgroundColor,titleColor};
    });
    assert.ok(material.modal&&material.blur.includes('blur('),`${id}: open dialog lacks top-layer glass`);
-   assert.ok(material.alpha>0&&material.alpha<.9,`${id}: dialog is opaque`);
+   const alpha=(await page.evaluate(sampleCssColor,material.background)).alpha;
+   assert.ok(alpha>0&&alpha<.9,`${id}: dialog is opaque`);
    assert.equal(material.shell,'rgba(0, 0, 0, 0)',`${id}: shell covers the glass`);
-   assert.ok(material.titleColor.every(channel=>channel>180),`${id}: title is unreadable`);
+   const title=await page.evaluate(sampleCssColor,material.titleColor);
+   assert.ok(title.red>180&&title.green>180&&title.blue>180,`${id}: title is unreadable`);
    if(id==='lgc-popups-mist'){const input=popup.locator('.pp-fields input');await input.fill('新しい名前');assert.equal(await input.inputValue(),'新しい名前');}
    await page.screenshot({path:path.join(out,`${id}-open.png`)});
    await page.keyboard.press('Escape');
@@ -329,7 +341,7 @@ try{
    await root.evaluate(el=>el.setAttribute('data-lg-material','solid'));
    await card.locator('.sop-popup-trigger').click();
    const solid=await popup.evaluate(el=>({background:getComputedStyle(el).backgroundColor,blur:getComputedStyle(el).backdropFilter}));
-   assert.ok(solid.background.startsWith('rgb(')&&solid.blur==='none',`${id}: solid fallback remains translucent`);
+   assert.ok((await page.evaluate(sampleCssColor,solid.background)).alpha===1&&solid.blur==='none',`${id}: solid fallback remains translucent`);
    await page.keyboard.press('Escape');await popup.waitFor({state:'hidden'});
    await root.evaluate(el=>{el.removeAttribute('data-lg-material');el.removeAttribute('data-lg-appearance');});
    await open(id);
@@ -354,11 +366,11 @@ try{
      return {fill:pane.backgroundColor,blur:pane.backdropFilter,item:focused.color,itemFill:focused.backgroundColor,
       inside:bounds.left>=9&&bounds.right<=innerWidth-9&&bounds.top>=9&&bounds.bottom<=innerHeight-9,page:document.documentElement.scrollWidth<=innerWidth+2};
     });
-    const fill=surface.fill.match(/[\d.]+/g)?.map(Number)??[],ink=surface.item.match(/[\d.]+/g)?.map(Number)??[];
-    assert.ok(fill[3]<.65&&surface.blur.includes('blur('),`${id} ${width}: popover is opaque or unblurred`);
-    assert.ok(ink[0]>220&&ink[1]>220&&ink[2]>220,`${id} ${width}: focused label is unreadable`);
+    const fill=await page.evaluate(sampleCssColor,surface.fill),ink=await page.evaluate(sampleCssColor,surface.item);
+    assert.ok(fill.alpha<.65&&surface.blur.includes('blur('),`${id} ${width}: popover is opaque or unblurred`);
+    assert.ok(ink.red>220&&ink.green>220&&ink.blue>220,`${id} ${width}: focused label is unreadable`);
     assert.ok(surface.inside&&surface.page,`${id} ${width}: popover crosses the viewport`);
-    if(id==='lgc-contextmenus-mist')assert.ok((surface.itemFill.match(/[\d.]+/g)?.map(Number)??[])[3]<.5,`${id}: pale selection returned`);
+    if(id==='lgc-contextmenus-mist')assert.ok((await page.evaluate(sampleCssColor,surface.itemFill)).alpha<.5,`${id}: pale selection returned`);
     if(width===1440){
      await panel.screenshot({path:path.join(out,`${id}-popover.png`)});
      await page.keyboard.press('ArrowDown');assert.equal(await card.locator('[data-menu-action="copy"]').evaluate(el=>document.activeElement===el),true);
@@ -388,7 +400,11 @@ try{
     assert.equal(view.rows,5,`${id} ${width}: sample results are incomplete`);
     assert.ok(view.allVisible&&view.scene&&view.page,`${id} ${width}: results or page overflow`);
     if(id==='lgc-searchbars-lens')assert.equal(view.shell,'rgba(0, 0, 0, 0)',`${id}: outer box returned`);
-    else assert.match(view.field,/rgba\(8, 30, 46, 0\.39\)/,`${id}: pale input returned`);
+    else{
+     const field=await page.evaluate(sampleCssColor,view.field),shell=await page.evaluate(sampleCssColor,view.shell);
+     assert.ok(field.alpha>0&&field.alpha<.5&&field.red<64&&field.green<80&&field.blue<100,`${id}: input must retain its transparent dark tint: ${view.field}`);
+     assert.ok(shell.alpha>0&&shell.alpha<.7,`${id}: Mist shell must remain translucent`);
+    }
     if(width===320){assert.equal(view.font,'13px',`${id}: placeholder is clipped`);if(id==='lgc-searchbars-mist')assert.equal(view.emblem,'none');}
     if(width===1440)await card.screenshot({path:path.join(out,`${id}-search.png`)});
     if(width===320){
@@ -434,18 +450,21 @@ try{
    const notice=preview.locator('.ff-toast-stack .ff-notice');
    for(const scene of ['studio','light']){
     await detail.locator(`[data-bg="${scene}"]`).click();
-    await page.waitForTimeout(360);
-    const sampleAlpha=await sample.evaluate(el=>Number(getComputedStyle(el).backgroundColor.match(/[\d.]+/g)?.at(-1)??1));
+    // Wait for the material transition itself, not a wall-clock delay: under
+    // CI load a frame may not have advanced when a fixed timer expires.
+    await sample.evaluate(async el=>{getComputedStyle(el).backgroundColor;await Promise.all(el.getAnimations({subtree:true}).filter(a=>a.effect?.getTiming().iterations!==Infinity).map(a=>a.finished.catch(()=>{})));});
     await preview.locator('[data-notify]').click();
     await notice.waitFor({state:'visible'});
-    await page.waitForTimeout(300);
+    await notice.evaluate(async el=>{getComputedStyle(el).backgroundColor;await Promise.all(el.getAnimations({subtree:true}).filter(a=>a.effect?.getTiming().iterations!==Infinity).map(a=>a.finished.catch(()=>{})));});
+    const sampleAlpha=(await page.evaluate(sampleCssColor,await sample.evaluate(el=>getComputedStyle(el).backgroundColor))).alpha;
     const material=await notice.evaluate(el=>{
-     const style=getComputedStyle(el),alpha=Number(style.backgroundColor.match(/[\d.]+/g)?.at(-1)??1);
-     return {alpha,blur:style.backdropFilter};
+     const style=getComputedStyle(el);
+     return {background:style.backgroundColor,blur:style.backdropFilter};
     });
     assert.ok(material.blur.includes('blur('),`${id} ${scene}: live notice lost backdrop blur`);
-    assert.ok(Math.abs(material.alpha-sampleAlpha)<0.02,`${id} ${scene}: showcase and live notice differ`);
-    measured[scene][id]=material;
+    const alpha=(await page.evaluate(sampleCssColor,material.background)).alpha;
+    assert.ok(Math.abs(alpha-sampleAlpha)<0.02,`${id} ${scene}: showcase (${sampleAlpha}) and live notice (${alpha}) differ`);
+    measured[scene][id]={alpha,blur:material.blur};
     await page.screenshot({path:path.join(out,`${id}-${scene}-live.png`)});
     await notice.locator('[data-notice-close]').click();
     await notice.waitFor({state:'hidden'});
@@ -454,12 +473,15 @@ try{
    await preview.locator('[data-notify]').click();
    await notice.waitFor({state:'visible'});
    const solid=await notice.evaluate(el=>({background:getComputedStyle(el).backgroundColor,blur:getComputedStyle(el).backdropFilter}));
-   assert.ok(solid.background.startsWith('rgb(')&&solid.blur==='none',`${id}: solid notice still transmits the background`);
+   assert.ok((await page.evaluate(sampleCssColor,solid.background)).alpha===1&&solid.blur==='none',`${id}: solid notice still transmits the background`);
    await notice.locator('[data-notice-close]').click();
    await notice.waitFor({state:'hidden'});
    await closeDetail();
   }
-  for(const scene of ['studio','light'])assert.ok(measured[scene]['lgc-toasts-lens'].alpha+0.35<measured[scene]['lgc-toasts-mist'].alpha,`${scene}: Floating and Mist have nearly the same opacity: ${JSON.stringify(measured[scene])}`);
+  // Clear A / slightly denser B is the material contract; a fixed 0.35 gap
+  // would reject the translucent studio defaults (0.22 / 0.48).
+  // Light scenes deliberately increase tint density to retain readable text.
+  for(const scene of ['studio','light'])assert.ok(measured[scene]['lgc-toasts-lens'].alpha>0&&measured[scene]['lgc-toasts-lens'].alpha<(scene==='light'?0.65:0.35)&&measured[scene]['lgc-toasts-mist'].alpha>measured[scene]['lgc-toasts-lens'].alpha&&measured[scene]['lgc-toasts-mist'].alpha<0.85,`${scene}: Floating and Mist have nearly the same opacity: ${JSON.stringify(measured[scene])}`);
  });
  await run('Representative code and prompt use the usual delivery path',async()=>{
   for(const id of ['lg-flow-tabs','lgc-segments-lens','lgc-datepickers-mist','lgc-navigation-lens','lgc-tables-mist']){

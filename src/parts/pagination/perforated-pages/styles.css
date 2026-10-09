@@ -30,7 +30,7 @@
 .sop-foundation.sop-perforated-pages.sop-perforated-pages .ff-pages[data-layout=anchored]>:is(button,a){position:relative;isolation:isolate}
 .sop-foundation.sop-perforated-pages.sop-perforated-pages .ff-pages::before,.sop-foundation.sop-perforated-pages.sop-perforated-pages .ff-pages::after,.sop-foundation.sop-perforated-pages.sop-perforated-pages .ff-page-window::before,.sop-foundation.sop-perforated-pages.sop-perforated-pages .ff-page-window::after{content:"";position:absolute;inset:auto;display:none;z-index:-1;pointer-events:none;background:none;border:0;border-radius:0;box-shadow:none;clip-path:none;mask:none;transform:none}
 
-.sop-foundation.sop-perforated-pages.sop-perforated-pages{--paper:#faf1e7;--ink:#76513c;--muted:#92745e;--accent:#805139;--edge:#d9b899}
+.sop-foundation.sop-perforated-pages.sop-perforated-pages{--paper:#faf1e7;--ink:#76513c;--muted:#79604e;--accent:#805139;--edge:#d9b899}
 .sop-foundation.sop-perforated-pages.sop-perforated-pages .ff-page-window :is(button,a){border:0;background:none;color:#76513c}
 .sop-foundation.sop-perforated-pages.sop-perforated-pages .ff-page-window :is(button,a)::before{display:block;inset:0;background:#fff8eb;border-block:3px solid #e5c9a9;mask:radial-gradient(circle at 0 9px,transparent 0 2px,#000 2.5px) 0 0/100% 18px repeat-y,radial-gradient(circle at 100% 9px,transparent 0 2px,#000 2.5px) 0 0/100% 18px repeat-y;mask-composite:intersect}
 .sop-foundation.sop-perforated-pages.sop-perforated-pages .ff-page-window [aria-current=page]{color:#fff;background:none}

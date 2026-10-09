@@ -1,0 +1,137 @@
+{
+  "overall": "pass",
+  "parts": [
+    {
+      "id": "spine-index-pages",
+      "verdict": "pass",
+      "minimum": 4.516917157166295,
+      "note": "4.5:1 normal-text threshold"
+    },
+    {
+      "id": "track-stop-pages",
+      "verdict": "pass",
+      "minimum": 5.223801005833184,
+      "note": "4.5:1 normal-text threshold"
+    },
+    {
+      "id": "ribbon-ticket-pages",
+      "verdict": "pass",
+      "minimum": 4.595306991879705,
+      "note": "4.5:1 normal-text threshold"
+    },
+    {
+      "id": "stone-step-pages",
+      "verdict": "pass",
+      "minimum": 4.691374737964419,
+      "note": "4.5:1 normal-text threshold"
+    },
+    {
+      "id": "ledger-page-tabs",
+      "verdict": "pass",
+      "minimum": 5.277144032067901,
+      "note": "4.5:1 normal-text threshold"
+    },
+    {
+      "id": "perforated-pages",
+      "verdict": "pass",
+      "minimum": 5.015015864878113,
+      "note": "4.5:1 normal-text threshold"
+    },
+    {
+      "id": "console-pages",
+      "verdict": "pass",
+      "minimum": 5.235174184524807,
+      "note": "4.5:1 normal-text threshold"
+    },
+    {
+      "id": "stitched-index-pages",
+      "verdict": "pass",
+      "minimum": 4.887570845031152,
+      "note": "4.5:1 normal-text threshold"
+    },
+    {
+      "id": "open-bracket-pages",
+      "verdict": "pass",
+      "minimum": 5.031879129530451,
+      "note": "4.5:1 normal-text threshold"
+    },
+    {
+      "id": "coin-stack-pages",
+      "verdict": "pass",
+      "minimum": 4.980510983704205,
+      "note": "4.5:1 normal-text threshold"
+    },
+    {
+      "id": "margin-line-pages",
+      "verdict": "pass",
+      "minimum": 4.217663116384193,
+      "note": "44px selected digits use 3:1 large-text threshold"
+    },
+    {
+      "id": "shuttle-key-pages",
+      "verdict": "pass",
+      "minimum": 4.5851312409792016,
+      "note": "4.5:1 normal-text threshold"
+    },
+    {
+      "id": "folded-tab-pages",
+      "verdict": "pass",
+      "minimum": 4.575095486718419,
+      "note": "4.5:1 normal-text threshold"
+    },
+    {
+      "id": "bookplate-pages",
+      "verdict": "pass",
+      "minimum": 5.212241927889922,
+      "note": "4.5:1 normal-text threshold"
+    },
+    {
+      "id": "plain-result-pages",
+      "verdict": "pass",
+      "minimum": 6.381945999556182,
+      "note": "4.5:1 normal-text threshold"
+    },
+    {
+      "id": "compact-data-pages",
+      "verdict": "pass",
+      "minimum": 5.892818807978153,
+      "note": "4.5:1 normal-text threshold"
+    },
+    {
+      "id": "soft-reading-pages",
+      "verdict": "pass",
+      "minimum": 6.192075762250298,
+      "note": "4.5:1 normal-text threshold"
+    },
+    {
+      "id": "line-navigation-pages",
+      "verdict": "pass",
+      "minimum": 5.717068276197825,
+      "note": "4.5:1 normal-text threshold"
+    },
+    {
+      "id": "warm-book-pages",
+      "verdict": "pass",
+      "minimum": 6.0498232911373115,
+      "note": "4.5:1 normal-text threshold"
+    },
+    {
+      "id": "slatted-pages",
+      "verdict": "pass",
+      "minimum": 4.696613158247986,
+      "note": "4.5:1 normal-text threshold"
+    }
+  ],
+  "checks": [
+    "20 pagers actual React TSX portable at pages1,6,12; native click transitions",
+    "Real text-hidden painted background pixel ratios for selected/unselected digits, enabled arrows, current/total info",
+    "14 changed author CSS only color/--ink/--muted declarations; copied fixture exact",
+    "Slatted literal override found in first pass and corrected by main; all3states independently rerun",
+    "Current-page helper checked20 no failures with track-stop pseudo branch; background guard maintained"
+  ],
+  "limits": [
+    "Actual browser viewport1000 with fixture width340; prior320 diagnosis retained. No claim of full viewport regression.",
+    "Independent run uses TSX portable; other formats handled by main.",
+    "Disabled controls excluded from text-contrast requirement."
+  ]
+}

@@ -30,11 +30,11 @@
 .sop-foundation.sop-slatted-pages.sop-slatted-pages .ff-pages::before,.sop-foundation.sop-slatted-pages.sop-slatted-pages .ff-pages::after,.sop-foundation.sop-slatted-pages.sop-slatted-pages .ff-page-window::before,.sop-foundation.sop-slatted-pages.sop-slatted-pages .ff-page-window::after{content:"";position:absolute;display:none;inset:auto;background:none;border:0;border-radius:0;clip-path:none;mask:none;transform:none;pointer-events:none}
 .sop-foundation.sop-slatted-pages.sop-slatted-pages .ff-page-window :is(button,a){white-space:nowrap;font-size:12px}
 
-.sop-foundation.sop-slatted-pages.sop-slatted-pages{--paper:#f1f3e4;--ink:#5d6b43;--muted:#7d8962;--accent:#687a4a;--edge:#c2cda4}
+.sop-foundation.sop-slatted-pages.sop-slatted-pages{--paper:#f1f3e4;--ink:#4f5b39;--muted:#5f684a;--accent:#687a4a;--edge:#c2cda4}
 .sop-foundation.sop-slatted-pages.sop-slatted-pages .ff-pages[data-layout=anchored]>.ff-page-window{grid-template-columns:minmax(0,1fr);grid-auto-rows:54px;gap:4px;min-height:0;padding-inline:16px;background:linear-gradient(90deg,#99ad7b 0 10px,transparent 10px calc(100% - 10px),#8c9f6b calc(100% - 10px))}
-.sop-foundation.sop-slatted-pages.sop-slatted-pages .ff-page-window :is(button,a){height:54px;border:0;border-top:12px solid #e8eddb;border-bottom:10px solid #a6b88a;background:#d3dfbd;color:#5d6b43;justify-items:start;padding-inline:14px}
+.sop-foundation.sop-slatted-pages.sop-slatted-pages .ff-page-window :is(button,a){height:54px;border:0;border-top:12px solid #e8eddb;border-bottom:10px solid #a6b88a;background:#d3dfbd;color:var(--ink);justify-items:start;padding-inline:14px}
 .sop-foundation.sop-slatted-pages.sop-slatted-pages .ff-page-window [aria-current=page]{border-top-color:#abc18b;border-bottom-color:#4c6132;background:#687a4a;color:#fff}
 .sop-foundation.sop-slatted-pages.sop-slatted-pages .ff-ellipsis{height:54px;background:none}
-.sop-foundation.sop-slatted-pages.sop-slatted-pages .ff-pages[data-layout=anchored]>:is(button,a){border:0;border-top:6px solid #e0e8cf;border-bottom:7px solid #a6b88a;background:#d3dfbd;color:#5d6b43}
+.sop-foundation.sop-slatted-pages.sop-slatted-pages .ff-pages[data-layout=anchored]>:is(button,a){border:0;border-top:6px solid #e0e8cf;border-bottom:7px solid #a6b88a;background:#d3dfbd;color:var(--ink)}
 @container(max-width:300px){.sop-foundation.sop-slatted-pages.sop-slatted-pages .ff-pages[data-layout=anchored]>.ff-page-window{grid-template-columns:minmax(0,1fr);min-height:0}}
 .sop-foundation.sop-slatted-pages.sop-slatted-pages .ff-pages[data-layout=anchored]>.ff-page-window{padding-inline:6px}

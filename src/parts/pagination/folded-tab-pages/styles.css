@@ -30,7 +30,7 @@
 .sop-foundation.sop-folded-tab-pages.sop-folded-tab-pages .ff-pages::before,.sop-foundation.sop-folded-tab-pages.sop-folded-tab-pages .ff-pages::after,.sop-foundation.sop-folded-tab-pages.sop-folded-tab-pages .ff-page-window::before,.sop-foundation.sop-folded-tab-pages.sop-folded-tab-pages .ff-page-window::after{content:"";position:absolute;display:none;inset:auto;background:none;border:0;border-radius:0;clip-path:none;mask:none;transform:none;pointer-events:none}
 .sop-foundation.sop-folded-tab-pages.sop-folded-tab-pages .ff-page-window :is(button,a){white-space:nowrap;font-size:12px}
 
-.sop-foundation.sop-folded-tab-pages.sop-folded-tab-pages{--paper:#f7edf4;--ink:#76536c;--muted:#94768b;--accent:#855e79;--edge:#d3b6cd}
+.sop-foundation.sop-folded-tab-pages.sop-folded-tab-pages{--paper:#f7edf4;--ink:#76536c;--muted:#735c6c;--accent:#855e79;--edge:#d3b6cd}
 .sop-foundation.sop-folded-tab-pages.sop-folded-tab-pages .ff-pages[data-layout=anchored]>.ff-page-window{padding-block:44px;gap:4px;min-height:136px;background:#fff5fa;border-inline-start:12px solid #d2afc7;border-inline-end:12px solid #be91ae}
 .sop-foundation.sop-folded-tab-pages.sop-folded-tab-pages .ff-page-window::before{display:block;top:0;inset-inline:-12px;height:44px;background:#e5c9dc;clip-path:polygon(0 0,100% 0,calc(100% - 12px) 100%,12px 100%);border-bottom:8px solid #c6a0ba;z-index:-1}
 .sop-foundation.sop-folded-tab-pages.sop-folded-tab-pages .ff-page-window::after{display:block;bottom:0;inset-inline:-12px;height:44px;background:#d5b3ca;clip-path:polygon(12px 0,calc(100% - 12px) 0,100% 100%,0 100%);border-top:8px solid #ae809e;z-index:-1}

@@ -1,12 +1,14 @@
-import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';import {chromium} from 'playwright';import {createServer} from 'vite';
+import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';import {chromium} from 'playwright';import {createComponentServer} from './component-server.ts';
 import {buildCatalog,ROOT} from '../scripts/catalog.ts';import {getDelivery} from '../src/catalog/delivery.ts';import {currentParts} from './gallery-counts.ts';import {lightSelectedContrast} from './light-selected-contrast.ts';
 const specs=currentParts().filter(p=>p.tags.includes('EXPANSION-50'));const categories=[...new Set(specs.map(p=>p.category))];const chosen=process.env.SOP_EXPANSION_CATEGORIES?.split(',');
+const contrastFailures:{id:string;text:string;ratio:number;category:string;format:string;layout:string}[]=[];
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});const errors:string[]=[];
-const server=await createServer({root:ROOT,configFile:false,cacheDir:path.join(ROOT,'.test-output/expansion-50-react/vite-cache'),optimizeDeps:{entries:[],noDiscovery:true,include:['react','react-dom','react-dom/client','react/jsx-dev-runtime']},server:{host:'127.0.0.1',port:0,hmr:false,watch:null}});await server.listen();
+const server=await createComponentServer('expansion-50-react');await server.listen();
 try{
  for(const category of categories.filter(c=>!chosen||chosen.includes(c))){
   const parts=buildCatalog(ROOT,specs.filter(p=>p.category===category).map(p=>p.id),{appearance:false}).parts;
   for(const [format,layout] of [['tsx','portable'],['jsx','original'],['tsx','original'],['jsx','portable']] as const){
+   const layoutFailures:{id:string;text:string;ratio:number}[]=[];
    const directory=path.join(ROOT,`.test-output/expansion-50-react/${category}/${format}-${layout}`);fs.mkdirSync(directory,{recursive:true});
    const imports=parts.map((part,i)=>{const d=getDelivery(part,format,layout);for(const f of d.files){const target=path.join(directory,part.id,f.name);fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,f.code);}return `import C${i} from './${part.id}/${d.entry}';`;}).join('\n');
    fs.writeFileSync(path.join(directory,'entry.jsx'),`import React,{useState} from 'react';import{createRoot}from'react-dom/client';${imports}\nconst entries=[${parts.map((p,i)=>`{id:${JSON.stringify(p.id)},C:C${i}}`).join(',')}];window.calls=[];window.searchFixtures={};window.commandFixtures={};function SearchFixture({id,C}){const[query,setQuery]=useState(''),[label,setLabel]=useState('Search'),[accept,setAccept]=useState(true);window.searchFixtures[id]={setLabel,setAccept};return <C query={query} label={label} onQueryChange={q=>{window.calls.push(q);if(accept)setQuery(q)}}/>}function CommandFixture({id,C}){const[options,setOptions]=useState({items:[{id:'a',label:'First',group:'Actual group'},{id:'off',label:'Disabled',group:'Actual group',disabled:true},{id:'b',label:'Last'}]});window.commandFixtures[id]={update:patch=>setOptions(o=>({...o,...patch}))};return <C {...options}/>}window.contextFixtures={};window.contextApis={};function ContextFixture({id,C}){const[options,setOptions]=useState({items:[{id:'toggle',label:'Check',kind:'checkbox'},{id:'off',label:'Disabled',disabled:true},{id:'parent',label:'Parent',children:[{id:'child',label:'Child'}]}],checked:{toggle:false}});window.contextFixtures[id]={update:patch=>setOptions(o=>({...o,...patch}))};return <C {...options} apiRef={api=>window.contextApis[id]=api} onCheckedChange={(key,value)=>window.calls.push({key,value})}/>}window.navigationFixtures={};window.navigationApis={};function NavigationFixture({id,C}){const[options,setOptions]=useState({layout:'sidebar',active:'a',items:[{id:'a',label:'First',href:'#a'},{id:'parent',label:'Parent',children:[{id:'child',label:'Child',href:'#child'}]},{id:'off',label:'Disabled',disabled:true,children:[{id:'blocked',label:'Blocked',href:'#blocked'}]}]});window.navigationFixtures[id]={update:patch=>setOptions(o=>({...o,...patch}))};return <C {...options} apiRef={api=>window.navigationApis[id]=api} onNavigate={()=>false} onActiveChange={key=>window.calls.push(key)}/>}window.tableFixtures={};window.tableApis={};function TableFixture({id,C}){const[options,setOptions]=useState({label:'Actual data',columns:[{id:'name',label:'Name',width:190},{id:'size',label:'Size',kind:'number',width:110}],rows:[{id:'a',name:'Alpha',size:20},{id:'b',name:'Beta',size:10},{id:'c',name:'Gamma',size:30}],pageSize:2,selected:[],sort:null});window.tableFixtures[id]={update:patch=>setOptions(o=>({...o,...patch}))};return <C {...options} apiRef={api=>window.tableApis[id]=api} onSelectionChange={v=>window.calls.push({selection:v})} onSortChange={v=>window.calls.push({sort:v})}/>}const root=createRoot(document.querySelector('#root'));window.teardown=()=>root.unmount();root.render(<React.StrictMode>{entries.map(({id,C})=><section key={id} data-part={id}>${category==='searchbars'?'<SearchFixture id={id} C={C}/>':category==='commands'?'<CommandFixture id={id} C={C}/>':category==='contextmenus'?'<ContextFixture id={id} C={C}/>':category==='navigation'?'<NavigationFixture id={id} C={C}/>':category==='tables'?'<TableFixture id={id} C={C}/>':'<C/>'}</section>)}</React.StrictMode>);`);
@@ -17,6 +19,14 @@ try{
     if(['loaders','ornaments'].includes(category))assert.equal(await root.locator('.x-composition i').count(),6,p.id+' authored artwork');
     if(category==='toggles'){const sw=root;const before=await sw.getAttribute('aria-checked');await sw.click();assert.notEqual(await sw.getAttribute('aria-checked'),before);}
     if(category==='checkboxes'){await root.locator('input').check();assert.ok(await root.locator('input').isChecked());}
+    if(category==='radios'){
+     for(const radio of await root.locator('input[type=radio]').all()){
+      await radio.check();assert.equal(await radio.isChecked(),true,p.id+' native selection');
+      const contrast=await lightSelectedContrast(page,[p.id],'.ff-choice');
+      assert.ok(contrast.checked>0,p.id+' visible option text is measured');
+      layoutFailures.push(...contrast.failures);
+     }
+    }
     if(category==='searchbars'){
      const input=root.locator('.wb-search-input');await input.fill('native');await input.press('End');await page.keyboard.insertText(' edited');const original=await input.elementHandle();await page.evaluate(id=>(window as any).searchFixtures[id].setLabel('Updated search'),p.id);await page.waitForTimeout(30);assert.equal(await input.evaluate((e,old)=>e===old,original),true,p.id+' connected controlled editor');assert.equal(await input.inputValue(),'native edited');await input.press('Control+z');await page.waitForTimeout(30);assert.equal(await input.inputValue(),'native',p.id+' accepted controlled native undo');await page.evaluate(id=>(window as any).searchFixtures[id].setAccept(false),p.id);await page.waitForTimeout(20);await input.fill('declined');await page.waitForTimeout(30);assert.equal(await input.inputValue(),'native',p.id+' controlled decline');
     }
@@ -36,10 +46,11 @@ try{
     if(category==='ratings'){await root.locator('input[type=radio]').nth(3).check();assert.match(await root.locator('output').innerText(),/4 \/ 5/);}
     if(category==='sliders'){await root.locator('input[type=range]').first().fill('73');assert.match(await root.locator('[data-reading]').innerText(),/73/);}
    }
-   const contrast=await lightSelectedContrast(page,parts.filter(p=>!['tabs','segments'].includes(p.category)).map(p=>p.id));assert.deepEqual(contrast.failures,[]);
+   const contrast=await lightSelectedContrast(page,parts.filter(p=>!['tabs','segments'].includes(p.category)).map(p=>p.id));layoutFailures.push(...contrast.failures);
+   contrastFailures.push(...layoutFailures.map(failure=>({...failure,category,format,layout})));
    for(const width of [320,390,768]){await page.setViewportSize({width,height:844});const measure=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));assert.ok(measure.scroll<=width+1,category+' '+format+' '+layout+' fits '+width+': '+JSON.stringify(measure));}
-   await page.evaluate(()=>(window as any).teardown());assert.equal(await page.locator('[data-part]').count(),0);await page.close();console.log('PASS '+category+' '+parts.length+' React '+format+' '+layout+' strict cleanup, narrow widths, contrast');
+   await page.evaluate(()=>(window as any).teardown());assert.equal(await page.locator('[data-part]').count(),0);await page.close();console.log((layoutFailures.length?'FAIL ':'PASS ')+category+' '+parts.length+' React '+format+' '+layout+' strict cleanup, narrow widths, contrast');
   }
  }
- assert.deepEqual(errors,[]);
-}finally{await browser.close();await server.close();}
+ assert.deepEqual(errors,[]);assert.deepEqual(contrastFailures,[],'All category/format text contrast failures; see contrast-results.json');
+}finally{const report=path.join(ROOT,'.test-output/expansion-50-react/contrast-results.json');fs.mkdirSync(path.dirname(report),{recursive:true});fs.writeFileSync(report,JSON.stringify({failures:contrastFailures,errors},null,2)+'\n');await browser.close();await server.close();}

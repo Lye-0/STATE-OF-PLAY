@@ -30,7 +30,7 @@
 @media(prefers-reduced-motion:reduce){.sop-foundation.sop-signpost-choice.sop-signpost-choice,.sop-foundation.sop-signpost-choice.sop-signpost-choice *,.sop-foundation.sop-signpost-choice.sop-signpost-choice *::before,.sop-foundation.sop-signpost-choice.sop-signpost-choice *::after{animation:none!important;transition:none!important}}
 @media(forced-colors:active){.sop-foundation.sop-signpost-choice.sop-signpost-choice{--paper:Canvas;--selected:Canvas;--ink:CanvasText;--muted:CanvasText;--accent:Highlight;--ff-ink:CanvasText;--ff-muted:CanvasText;--ff-base:Canvas;--ff-panel:Canvas;color:CanvasText;background:Canvas}.sop-foundation.sop-signpost-choice.sop-signpost-choice .ff-choice::before,.sop-foundation.sop-signpost-choice.sop-signpost-choice .ff-choice::after,.sop-foundation.sop-signpost-choice.sop-signpost-choice .ff-choices::before,.sop-foundation.sop-signpost-choice.sop-signpost-choice .ff-choices::after,.sop-foundation.sop-signpost-choice.sop-signpost-choice .ff-choice-check{display:none!important}.sop-foundation.sop-signpost-choice.sop-signpost-choice .ff-choice,.sop-foundation.sop-signpost-choice.sop-signpost-choice .ff-choice[data-selected=true]{background:Canvas!important;color:CanvasText;border:1px solid ButtonText!important;padding:22px!important;margin-inline:0!important}.sop-foundation.sop-signpost-choice.sop-signpost-choice .ff-choice input{position:relative;inset:auto;width:24px;height:24px;opacity:1;appearance:auto;order:-1;flex:none}.sop-foundation.sop-signpost-choice.sop-signpost-choice .ff-choice-badge{position:static!important;color:CanvasText}.sop-foundation.sop-signpost-choice.sop-signpost-choice .ff-choice-icon{color:CanvasText}}
 
-.sop-foundation.sop-signpost-choice.sop-signpost-choice{--surface:#e0ecec;--paper:#eff7f1;--selected:#f7fff5;--ink:#426773;--muted:#7b9b9f;--accent:#558a97;--edge:#abc6cb}
+.sop-foundation.sop-signpost-choice.sop-signpost-choice{--surface:#e0ecec;--paper:#eff7f1;--selected:#f7fff5;--ink:#426672;--muted:#506568;--accent:#558a97;--edge:#abc6cb}
 .sop-foundation.sop-signpost-choice.sop-signpost-choice .ff-choices{padding-inline-start:20px;gap:22px}
 .sop-foundation.sop-signpost-choice.sop-signpost-choice .ff-choices::before{content:"";position:absolute;inset-block:0;inset-inline-start:8px;width:12px;background:linear-gradient(90deg,#6c96a3 0 3px,#a9c5cb 3px 9px,#58818e 9px)}
 .sop-foundation.sop-signpost-choice.sop-signpost-choice .ff-choice{padding-inline:24px 38px}
@@ -41,7 +41,7 @@
 @container(max-width:300px){.sop-foundation.sop-signpost-choice.sop-signpost-choice .ff-choices{padding-inline-start:18px;padding-inline-end:0}.sop-foundation.sop-signpost-choice.sop-signpost-choice .ff-choice{padding-inline:20px 30px}}
 
 /* The post holds the far end of the board, separate from Rail Seat's selection pivot. */
-.sop-foundation.sop-signpost-choice.sop-signpost-choice{--surface:#f1e6db;--paper:#fbf2e4;--selected:#fff9e9;--ink:#73594c;--muted:#a18a75;--accent:#b18061;--edge:#ceb49a}
+.sop-foundation.sop-signpost-choice.sop-signpost-choice{--surface:#f1e6db;--paper:#fbf2e4;--selected:#fff9e9;--ink:#73594c;--muted:#6e5f50;--accent:#b18061;--edge:#ceb49a}
 .sop-foundation.sop-signpost-choice.sop-signpost-choice .ff-choices{padding-inline-start:0;padding-inline-end:28px}
 .sop-foundation.sop-signpost-choice.sop-signpost-choice .ff-choices::before{inset-inline-start:auto;inset-inline-end:10px;background:linear-gradient(90deg,#ae8b68 0 3px,#d1b792 3px 9px,#977454 9px)}
 .sop-foundation.sop-signpost-choice.sop-signpost-choice .ff-choice{padding-inline:38px 24px}
