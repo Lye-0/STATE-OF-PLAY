@@ -9,3 +9,9 @@
 
 ## 操作契約
 意味を持たない装飾としてaria-hiddenを保ち、入力を受け取らない。pauseとreduced motionで静止する。
+
+<!-- design-renewal -->
+大小の六つの不均一な積石を保持し、22pxの厚さを20pxの段へ重ねて下の石が上を受ける形へ磨く。4pxの暗い小口と灰・砂・薄紫のつや消し面で重みを示す。等間隔に浮く上下移動を廃し、微小な揺りだけを残す。
+
+native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
+<!-- /design-renewal -->

@@ -9,3 +9,12 @@
 
 ## 操作契約
 statusと読込メッセージを保持し、装飾はaria-hidden。停止は完了ではない。画面外、非表示タブ、reduced motion、pauseの停止を維持。固有のx-compositionはHTML・React・vanillaで共通。
+
+<!-- design-renewal -->
+対向する二つの折返し路と三組の流れを保持し、軌道2px・光点22×4pxへ読む強さを磨く。二つの閉路とそれぞれ三つの等間隔の流れが同じ中央で交差し、反対の進行を灰砂と灰青で区別する。静止/強制色でも軌道と光点の接続を保つ。
+
+native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
+<!-- /design-renewal -->
+
+<!-- round3-path -->
+二つの対向閉路と三組の流れを保持し、表示する2pxのSVG軌道と光点のoffset-pathを同じBezier座標から生成する。光点は全周期で実軌道上を進み、反対の流れを灰砂と灰青で区別する。別のcapsule形へ光点を重ねる不整合を除き、停止・forcedでも軌道との接合を保つ。

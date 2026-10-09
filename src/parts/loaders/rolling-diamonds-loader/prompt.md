@@ -9,3 +9,9 @@
 
 ## 操作契約
 statusと読込メッセージを保持し、装飾はaria-hidden。停止は完了ではない。画面外、非表示タブ、reduced motion、pauseの停止を維持。固有のx-compositionはHTML・React・vanillaで共通。
+
+<!-- design-renewal -->
+正方形の直方体を廃し、長対角110px・短対角44pxの実菱形断面と100pxの奥行きが作る一つの鋭い角形ロールへ。前後二端面の鋭角・鈍角と同じ頂点を、実59.237pxの四側面で閉じて接合する。六面は共通の長軸で転がり、平行額縁や普通のcubeに見える輪郭を使わない。静止/forcedでも菱形端面と薄い厚みの関係を保つ。
+
+native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
+<!-- /design-renewal -->

@@ -36,3 +36,9 @@ if (element) {
 ## 後片付け
 
 通常DOM版では取り外すときにcontroller.destroy()を呼びます。React版はpausedを渡して停止できます。表示する図形はaria-hiddenの装飾で、重要な状態をこのパーツだけで伝えません。
+
+<!-- design-renewal -->
+共通角度から全六本の腕と関節を計算する連結機構を保持し、腕5px・関節13pxへ磨く。小さい折線グラフに見える細さを改め、明るい関節環と鈍い実腕の厚みで屈伸を読む。全腕を同じ位相で動かし、接点を離さない。
+
+native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
+<!-- /design-renewal -->

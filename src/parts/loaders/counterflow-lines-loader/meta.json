@@ -5,7 +5,7 @@
   "order": 5709,
   "version": "1.2.0",
   "tagline": "左右から進む三対の細線が中央を交互に通過。",
-  "description": "左右から進む三対の細線が中央を交互に通過。移動方向の違いが一つのループを作る。",
+  "description": "二つの対向閉路と三組の流れを保持し、表示する2pxのSVG軌道と光点のoffset-pathを同じBezier座標から生成する。光点は全周期で実軌道上を進み、反対の流れを灰砂と灰青で区別する。別のcapsule形へ光点を重ねる不整合を除き、停止・forcedでも軌道との接合を保つ。",
   "material": "COUNTERFLOW LINES LOADER",
   "motion": "STATE / MATERIAL",
   "accent": "205,218,214",

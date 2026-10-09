@@ -9,7 +9,7 @@ export interface LinkageCrossesOrnamentProps extends HTMLAttributes<HTMLDivEleme
 
 const markup = "<div class=\"or-stage\" aria-hidden=\"true\"><div class=\"x-composition\"><i style=\"--i:0\"></i><i style=\"--i:1\"></i><i style=\"--i:2\"></i><i style=\"--i:3\"></i><i style=\"--i:4\"></i><i style=\"--i:5\"></i></div></div>";
 
-/** 六つの連結節が一本の列として揺れる。接点の円と腕をつなぎ、単独の輪の反復から機構のまとまりへ。 */
+/** 共通角度から全六本の腕と関節を計算する連結機構を保持し、腕5px・関節13pxへ磨く。小さい折線グラフに見える細さを改め、明るい関節環と鈍い実腕の厚みで屈伸を読む。全腕を同じ位相で動かし、接点を離さない。 */
 export default function LinkageCrossesOrnament({ paused = false, className = '', ...props }: LinkageCrossesOrnamentProps) {
   const element = useRef<HTMLDivElement>(null);
   const controller = useRef<AmbientOrnamentController | null>(null);

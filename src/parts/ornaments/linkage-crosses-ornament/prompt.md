@@ -9,3 +9,9 @@
 
 ## 操作契約
 意味を持たない装飾としてaria-hiddenを保ち、入力を受け取らない。pauseとreduced motionで静止する。
+
+<!-- design-renewal -->
+共通角度から全六本の腕と関節を計算する連結機構を保持し、腕5px・関節13pxへ磨く。小さい折線グラフに見える細さを改め、明るい関節環と鈍い実腕の厚みで屈伸を読む。全腕を同じ位相で動かし、接点を離さない。
+
+native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
+<!-- /design-renewal -->

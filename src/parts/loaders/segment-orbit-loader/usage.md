@@ -11,3 +11,9 @@ Reactは`SegmentOrbitLoader`をimportして配置します。通常HTMLはmarkup
 
 ## 動きと破棄
 CSSアニメーションです。毎フレームのJavaScriptループやタイマーは使いません。非表示タブ・画面外・pausedでは止まり、prefers-reduced-motionでは静止形を表示します。destroy()で監視を解除します。独立した複数配置ができます。
+
+<!-- design-renewal -->
+六つの円弧が同じ中心を囲む花軌道を保持し、48pxの弧と3pxの輪郭へ整える。鈍い灰青の交互の弧で連続する向きを読み、±8度の小さい位相差だけを残す。強制色でも閉じた輪にせず、弧の形を保つ。
+
+native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
+<!-- /design-renewal -->

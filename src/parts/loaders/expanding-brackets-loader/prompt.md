@@ -9,3 +9,9 @@
 
 ## 操作契約
 statusと読込メッセージを保持し、装飾はaria-hidden。停止は完了ではない。画面外、非表示タブ、reduced motion、pauseの停止を維持。固有のx-compositionはHTML・React・vanillaで共通。
+
+<!-- design-renewal -->
+六対の開いた括弧を保ち、9pxの間隔と3pxの輪郭へ磨く。上下を閉じず、左右の弧だけが水平に呼吸する。最奥の弧にも読む長さを残し、直角の門や細い同心円との違いを保つ。
+
+native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
+<!-- /design-renewal -->

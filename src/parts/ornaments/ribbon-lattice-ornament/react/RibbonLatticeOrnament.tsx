@@ -9,7 +9,7 @@ export interface RibbonLatticeOrnamentProps extends HTMLAttributes<HTMLDivElemen
 
 const markup = "<div class=\"or-stage\" aria-hidden=\"true\"><div class=\"x-composition\"><i style=\"--i:0\"></i><i style=\"--i:1\"></i><i style=\"--i:2\"></i><i style=\"--i:3\"></i><i style=\"--i:4\"></i><i style=\"--i:5\"></i></div></div>";
 
-/** 縦三本と横三本の帯を交差させた織り。反対方向の波が交点を渡る。 */
+/** 三本の縦帯と三本の横帯の格子を保ち、交点ごとに上を通る帯を交互に変える。横帯の透明な下通りが実縦帯を見せ、加算合成や単純な半透明ではなく実重なりで織りを読む。18pxの端を揃え、交差がずれる別位相の平行移動を廃した。 */
 export default function RibbonLatticeOrnament({ paused = false, className = '', ...props }: RibbonLatticeOrnamentProps) {
   const element = useRef<HTMLDivElement>(null);
   const controller = useRef<AmbientOrnamentController | null>(null);

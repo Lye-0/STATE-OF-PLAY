@@ -9,3 +9,9 @@
 
 ## 操作契約
 意味を持たない装飾としてaria-hiddenを保ち、入力を受け取らない。pauseとreduced motionで静止する。
+
+<!-- design-renewal -->
+独立した縦の短冊を廃し、六つの紙骨が一つの実支点で開閉する扇へ再構成する。幅20pxの折紙の面が8〜22度の共通開角で連動し、交互の裏面と一本の支点が静止時にも扇を読ませる。支点は動かず、上下の漂い・hover別回転を廃した。
+
+native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
+<!-- /design-renewal -->

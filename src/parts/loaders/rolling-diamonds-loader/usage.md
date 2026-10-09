@@ -11,3 +11,9 @@ Reactは`RollingDiamondsLoader`をimportして配置します。通常HTMLはmar
 
 ## 動きと破棄
 CSSアニメーションです。毎フレームのJavaScriptループやタイマーは使いません。非表示タブ・画面外・pausedでは止まり、prefers-reduced-motionでは静止形を表示します。destroy()で監視を解除します。独立した複数配置ができます。
+
+<!-- design-renewal -->
+正方形の直方体を廃し、長対角110px・短対角44pxの実菱形断面と100pxの奥行きが作る一つの鋭い角形ロールへ。前後二端面の鋭角・鈍角と同じ頂点を、実59.237pxの四側面で閉じて接合する。六面は共通の長軸で転がり、平行額縁や普通のcubeに見える輪郭を使わない。静止/forcedでも菱形端面と薄い厚みの関係を保つ。
+
+native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
+<!-- /design-renewal -->

@@ -9,7 +9,7 @@ export interface OffsetPortalsOrnamentProps extends HTMLAttributes<HTMLDivElemen
 
 const markup = "<div class=\"or-stage\" aria-hidden=\"true\"><div class=\"x-composition\"><i style=\"--i:0\"></i><i style=\"--i:1\"></i><i style=\"--i:2\"></i><i style=\"--i:3\"></i><i style=\"--i:4\"></i><i style=\"--i:5\"></i></div></div>";
 
-/** 奥へ続く六つの門。遠近の大きさと開口をずらし、hoverで奥行きを開く。 */
+/** 六つの直角の門の入れ子を保ち、3pxの読む辺と6pxの側断面で前後を明確にする。奥の門の左右のずれだけが同じ軸で往復し、全体が拡大回転するhoverを廃した。鞍の曲面と区別し、直角・閉じた門・左右の視差を主形にする。 */
 export default function OffsetPortalsOrnament({ paused = false, className = '', ...props }: OffsetPortalsOrnamentProps) {
   const element = useRef<HTMLDivElement>(null);
   const controller = useRef<AmbientOrnamentController | null>(null);

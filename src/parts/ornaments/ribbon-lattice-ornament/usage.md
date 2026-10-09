@@ -36,3 +36,9 @@ if (element) {
 ## 後片付け
 
 通常DOM版では取り外すときにcontroller.destroy()を呼びます。React版はpausedを渡して停止できます。表示する図形はaria-hiddenの装飾で、重要な状態をこのパーツだけで伝えません。
+
+<!-- design-renewal -->
+三本の縦帯と三本の横帯の格子を保ち、交点ごとに上を通る帯を交互に変える。横帯の透明な下通りが実縦帯を見せ、加算合成や単純な半透明ではなく実重なりで織りを読む。18pxの端を揃え、交差がずれる別位相の平行移動を廃した。
+
+native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
+<!-- /design-renewal -->

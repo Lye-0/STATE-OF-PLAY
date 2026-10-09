@@ -9,7 +9,7 @@ export interface StoneStackMobileOrnamentProps extends HTMLAttributes<HTMLDivEle
 
 const markup = "<div class=\"or-stage\" aria-hidden=\"true\"><div class=\"x-composition\"><i style=\"--i:0\"></i><i style=\"--i:1\"></i><i style=\"--i:2\"></i><i style=\"--i:3\"></i><i style=\"--i:4\"></i><i style=\"--i:5\"></i></div></div>";
 
-/** 羽根が光を散らす。 */
+/** 大小の六つの不均一な積石を保持し、22pxの厚さを20pxの段へ重ねて下の石が上を受ける形へ磨く。4pxの暗い小口と灰・砂・薄紫のつや消し面で重みを示す。等間隔に浮く上下移動を廃し、微小な揺りだけを残す。 */
 export default function StoneStackMobileOrnament({ paused = false, className = '', ...props }: StoneStackMobileOrnamentProps) {
   const element = useRef<HTMLDivElement>(null);
   const controller = useRef<AmbientOrnamentController | null>(null);

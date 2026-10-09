@@ -14,3 +14,9 @@ Reactは`ExpandingBracketsLoader`をimportして配置します。通常HTMLはm
 
 ## 動きと破棄
 CSSアニメーションです。毎フレームのJavaScriptループやタイマーは使いません。非表示タブ・画面外・pausedでは止まり、prefers-reduced-motionでは静止形を表示します。destroy()で監視を解除します。独立した複数配置ができます。
+
+<!-- design-renewal -->
+六対の開いた括弧を保ち、9pxの間隔と3pxの輪郭へ磨く。上下を閉じず、左右の弧だけが水平に呼吸する。最奥の弧にも読む長さを残し、直角の門や細い同心円との違いを保つ。
+
+native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
+<!-- /design-renewal -->
