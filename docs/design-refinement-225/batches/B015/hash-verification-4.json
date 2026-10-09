@@ -1,0 +1,103 @@
+{
+  "batch": "B015",
+  "fromRound": 3,
+  "round": 4,
+  "changed": [
+    "src/parts/ratings/seal-score-rating/styles.css",
+    "src/parts/ratings/inspection-score-rating/styles.css",
+    "src/parts/ratings/folded-score-rating/styles.css",
+    "src/parts/ratings/stone-pip-rating/styles.css",
+    "src/parts/ratings/notched-disc-rating/styles.css",
+    "src/parts/ratings/rail-signal-rating/styles.css",
+    "src/parts/ratings/stitch-star-rating/styles.css",
+    "src/parts/ratings/open-bracket-rating/styles.css",
+    "src/parts/ratings/coin-value-rating/styles.css"
+  ],
+  "unchangedCount": 91,
+  "currentMismatches": [],
+  "sharedExportDiff": [],
+  "sharedComparedFiles": 40,
+  "styleDiffs": {
+    "seal-score-rating": [
+      "--- \n",
+      "+++ \n",
+      "@@ -39,2 +39,4 @@\n",
+      " .sop-sig.sop-seal-score-rating.sop-seal-score-rating .sg-rating-unit{height:auto;aspect-ratio:1;min-height:36px}.sop-sig.sop-seal-score-rating.sop-seal-score-rating .sg-rating-form{inset:2px 0;border-top-width:3px;border-bottom-width:4px;box-shadow:inset 0 0 0 2px #dfbd8b}.sop-sig.sop-seal-score-rating.sop-seal-score-rating .sg-rating-unit[data-exact=true] .sg-rating-form{box-shadow:inset 0 0 0 2px #926031}",
+      " }",
+      "+",
+      "+.sop-sig.sop-seal-score-rating.sop-seal-score-rating .sg-rating-scale{justify-content:start}"
+    ],
+    "inspection-score-rating": [
+      "--- \n",
+      "+++ \n",
+      "@@ -61,2 +61,4 @@\n",
+      " ",
+      " @media(forced-colors:active){.sop-sig.sop-inspection-score-rating.sop-inspection-score-rating .sg-rating-star{left:15%;top:13px;width:70%;height:24px;max-width:28px}}",
+      "+",
+      "+.sop-sig.sop-inspection-score-rating.sop-inspection-score-rating .sg-rating-scale{justify-content:start}"
+    ],
+    "folded-score-rating": [
+      "--- \n",
+      "+++ \n",
+      "@@ -49,2 +49,4 @@\n",
+      " .sop-sig.sop-folded-score-rating.sop-folded-score-rating .sg-rating-scale{gap:4px}.sop-sig.sop-folded-score-rating.sop-folded-score-rating .sg-rating-unit{height:80px}.sop-sig.sop-folded-score-rating.sop-folded-score-rating .sg-rating-form{border-inline-start-width:2px}.sop-sig.sop-folded-score-rating.sop-folded-score-rating .sg-rating-unit[data-exact=true] .sg-rating-form{border-inline-start-width:2px}",
+      " }",
+      "+",
+      "+.sop-sig.sop-folded-score-rating.sop-folded-score-rating .sg-rating-scale{justify-content:start}"
+    ],
+    "stone-pip-rating": [
+      "--- \n",
+      "+++ \n",
+      "@@ -57,2 +57,4 @@\n",
+      " ",
+      " @media(forced-colors:none){.sop-sig.sop-stone-pip-rating.sop-stone-pip-rating .sg-rating-form{clip-path:none;border-radius:4px 4px 1px 1px;mask:radial-gradient(ellipse 34% 35px at 50% 100%,transparent 98%,#000 100%)}}",
+      "+",
+      "+.sop-sig.sop-stone-pip-rating.sop-stone-pip-rating .sg-rating-scale{justify-content:start}"
+    ],
+    "notched-disc-rating": [
+      "--- \n",
+      "+++ \n",
+      "@@ -46,2 +46,4 @@\n",
+      " ",
+      " }",
+      "+",
+      "+.sop-sig.sop-notched-disc-rating.sop-notched-disc-rating .sg-rating-scale{justify-content:start}"
+    ],
+    "rail-signal-rating": [
+      "--- \n",
+      "+++ \n",
+      "@@ -49,2 +49,4 @@\n",
+      " ",
+      " }",
+      "+",
+      "+.sop-sig.sop-rail-signal-rating.sop-rail-signal-rating .sg-rating-scale{justify-content:start}"
+    ],
+    "stitch-star-rating": [
+      "--- \n",
+      "+++ \n",
+      "@@ -54,2 +54,4 @@\n",
+      " ",
+      " @media(forced-colors:none){.sop-sig.sop-stitch-star-rating.sop-stitch-star-rating .sg-rating-unit[data-filled=true] .sg-rating-star{fill:#583b68;stroke:#583b68}}",
+      "+",
+      "+.sop-sig.sop-stitch-star-rating.sop-stitch-star-rating .sg-rating-scale{justify-content:start}"
+    ],
+    "open-bracket-rating": [
+      "--- \n",
+      "+++ \n",
+      "@@ -56,2 +56,4 @@\n",
+      " ",
+      " @media(forced-colors:none){.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating .sg-rating-unit[data-filled=true] .sg-rating-star{fill:#714526;stroke:#714526}}",
+      "+",
+      "+.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating .sg-rating-scale{justify-content:start}"
+    ],
+    "coin-value-rating": [
+      "--- \n",
+      "+++ \n",
+      "@@ -42,2 +42,4 @@\n",
+      " ",
+      " @media(forced-colors:none){.sop-sig.sop-coin-value-rating.sop-coin-value-rating .sg-rating-unit[data-filled=true] .sg-rating-star{fill:#654b22;stroke:#654b22}}",
+      "+",
+      "+.sop-sig.sop-coin-value-rating.sop-coin-value-rating .sg-rating-scale{justify-content:start}"
+    ]
+  }
+}

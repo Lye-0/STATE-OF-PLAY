@@ -50,3 +50,16 @@ B014r4は5pass/5差戻し(R461hover3.389,R462muted3.190,R468長unitでinput0px,R
 - B015の指摘を直し、再review・全pass→10件commit/push/recordをB023まで続ける。Actions追跡不要。未来batchの作者を先にstageしない。
 
 B015r2は5pass/5差戻し。revise-b015-review.py実行済み（再実行不可）→r3をAstra再検査中。R490forced氏名/二重余白、R492forced星左ずれ、R499forced星極小、R498/499/500星の塗り3:1不足を修正。5件実画像再確認。B016も501/503の星2.498/2.407を修正→r4、撮影済み（revise-b016-symbols.py実行済み）。Signature実Vite25検査をsignature-b015-3.logへ実行中。
+
+B015は3d6bacacfd19efed47429705eb7eb545016c7351でpush/record済み150件。B016r4を独立検査中、作者固定。R504 max10/狭幅の陶面が末尾まで伸びないこと、colors forced軌道消失を追跡中。
+B018は主担当が578縫い綴じ/紙面分離、584陶の工程駒/入力器へ構造改善。refine-wizard-materials.py実行済み。7工程長文で旧:has4工程CSS競合が画像で判明し、R584を通常3駒横並び、4以上/280px以下は横長駒の縦配置へ修正→最新round6。probe-wizard-materials.mjsは文字のbutton内収まりも確認し8状態成功、実画像も確認。以前round5の数値PASSは画像不整合があったため最終合格扱いしない。capture-wizard-materials.logは最新gallery撮影中。
+
+B016r4は6pass/4差戻し。revise-b016-review.py実行済み（再実行不可）→r5で504陶面width/count対応、517/520/522 forced track勾配/枠とthumb境界を修正。r5をAstra再検査中。4件gallery再撮影済み。全未来作者/sharedをB016以外と共用部分含め無断で変更しない（現在shared変更なし）。
+
+## 最優先更新：評価尺度の再オープン
+B016r5で新たに全16ratingsのmax10先頭pointer不能を発見。B015review-3-addendumで旧合格を補足訂正（9ratings差戻し、warmのみpass）。B016r5はcolors3pass/ratings7差戻し。shared rating.cssのjustify-content:centerがgridを負方向へ寄せていた。作者16個へjustify-content:startを指定（revise-rating-start.py実行済み）し、B015r4・B016r6でAstraが再検査中。両者作者/shared固定。B01510件をreopenedとしてprogress.completed=140に戻した（過去push150件の履歴は保持）。
+既存tests/signature.browser.tsへ20 expansion ratings×LTR/RTL×normal/forcedでfirst/last pointerを確認する回帰を追加。修正前seal x2/viewport44で失敗(rating-pointer-before.log)、修正後24検査全成功(rating-pointer-after.log、明示offline)。型チェック全成功(typecheck-rating-start.log)。全16gallery画像最新化済み(capture-rating-start.log)。
+B015再合格時はbatch.py stage-followup B015を使用（作者は9件だけ変化）。全10review/hash/validation条件は従来通り、staged authorsはnonempty subsetに制限。review-3-addendumをround JSONと誤認しないよう正規表現で選別した。B015修復commitには新signatureテストを入れない（まだ未pushのB016修正を要求するため）。B016 commitでテストを追加する。B015修復push後record B015→150へ、reopenedフィールドを削除、次B016push→160へ。
+B017は3colors強制配色のSV/色見本/軌道を修正。B2件range44px・文字12px/HEX11px、WarmのRGBをforcedでも維持。最新r4、gallery更新中。preflight-next-colors.mjs 4でforced表示を確認中。次独立reviewはB017r4。B018はr6（素材wizard2件の追加改善）。
+
+B015r4・B016r6は各10/10独立合格。native256条件1792assertion、React16件×4形式384assertion成功。R504陶面末尾8画像の星背景3.393:1、768画像を再視認。B017r4の独立検査へ進行。

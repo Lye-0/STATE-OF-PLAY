@@ -1,6 +1,7 @@
 {
   "batch": "B015",
-  "state": "ready_to_push",
+  "round": "4",
+  "created": "2026-10-09T17:53:25.003Z",
   "ids": [
     "warm-author-profile",
     "seal-score-rating",
@@ -12,28 +13,6 @@
     "stitch-star-rating",
     "open-bracket-rating",
     "coin-value-rating"
-  ],
-  "reviewRounds": [
-    {
-      "round": 1,
-      "snapshot": "docs/design-refinement-225/batches/B015/snapshot/round-1",
-      "state": "pending"
-    },
-    {
-      "round": 2,
-      "snapshot": "docs/design-refinement-225/batches/B015/snapshot/round-2",
-      "state": "changes_required"
-    },
-    {
-      "round": 3,
-      "snapshot": "docs/design-refinement-225/batches/B015/snapshot/round-3",
-      "state": "reviewing"
-    },
-    {
-      "round": 4,
-      "snapshot": "docs/design-refinement-225/batches/B015/snapshot/round-4",
-      "state": "pending"
-    }
   ],
   "sourceHashes": {
     "src/parts/avatars/warm-author-profile/markup.html": "266e6ba317f43c5ba4436a58338b75419be6edc90a12d084d841fe778deb10a3",
@@ -136,7 +115,5 @@
     "src/parts/ratings/coin-value-rating/vanilla/index.html": "6de5c036ed808f045037848c29b7719cf687539d2552383dcae16b29f364aa67",
     "src/parts/ratings/coin-value-rating/vanilla/init.ts": "84b0329e4871a93944bb609b17431fa37285d1842e9f83424be00fafb9dafb09",
     "src/parts/ratings/coin-value-rating/vanilla/main.ts": "c798a239f0715e630916fceec90efa623a30e2366bd3cad80a8edf7d323ef3b9"
-  },
-  "finalReview": 4,
-  "commit": "3d6bacacfd19efed47429705eb7eb545016c7351"
+  }
 }

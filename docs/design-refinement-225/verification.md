@@ -28,3 +28,6 @@
 - B016の評価7件はroot222pxの強制配色でも星の選択差が可視。星寸法16.7〜21.5 ×24px（main-forced-preflight.json）。独立レビューは別途行う。
 
 - B015r3の独立再検査全10pass。氏名列72→120px、forced星交差解消、R499星幅6.16→18.75px。3星の実面比4.519/4.208/4.063:1。実Signature Vite HTTP全25検査（React含む）成功、signature-b015-3.log。
+- 構造を追加調整した7件の既存gallery検査は全成功（latest-materials-browser.log）：縫い綴じ/陶のwizard、optical command、index pocket、stitched map、ceramic table、segment orbit。
+- B018r6は7工程・長い工程名・入力値保持・LTR/RTL・通常/forcedの8状態、56工程ボタンの文字内収まりを確認（main-material-check.json）。r5では数値チェックだけでは拾えない表示不整合があり、実画像で発見して修正した。
+- 全16ratingsにmax10先頭pointer不能を追加発見し、B015合格を補足訂正して再オープン。作者ごとのjustify-content:startで修正。既存Signatureへ20種×左右×通常/forcedの両端pointer回帰を追加し、修正前失敗・修正後24検査成功を確認（明示offline adapter）。全型チェック成功。独立再検査はB015r4/B016r6。

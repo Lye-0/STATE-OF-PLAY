@@ -1,0 +1,513 @@
+{
+  "batch": "B015",
+  "round": 3,
+  "supplement": "start-accessibility",
+  "overall": "changes_required",
+  "parts": [
+    {
+      "id": "warm-author-profile",
+      "number": 490,
+      "verdict": "pass",
+      "note": "著者用の縦長肖像・明朝氏名・上下罫を保持。二重余白整理でroot222pxの氏名列72→120px、長名も読みやすくなった。forced選択Sora/Rin/長名はHighlight上の可視文字として復帰。hoverで氏名・イニシャルは移動しない。",
+      "findings": [],
+      "evidence": [
+        "evidence-3/warm-author-profile-portable-rest.png",
+        "evidence-3/warm-author-profile-gallery-narrow.png",
+        "evidence-3/warm-author-profile-react-forced.png",
+        "measurements-3.json",
+        "measurements-react-3.json",
+        "measurements-avatars-3.json",
+        "hash-verification-3.json",
+        "runtime-summary-3.json",
+        "measurements-focused-forced-3.json",
+        "evidence-3/warm-author-profile-portable-forced-default.png",
+        "evidence-3/warm-author-profile-gallery-forced-selected-rin.png"
+      ],
+      "reviewed": {
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ],
+        "round": 3,
+        "inherited": false,
+        "supplementalStartLTRRTL": false
+      }
+    },
+    {
+      "id": "seal-score-rating",
+      "number": 491,
+      "verdict": "changes_required",
+      "note": "round3の造形・forced修正評価は維持。ただし追加のmax10先頭到達性検査で中央寄せ起因の非可視/欠けを確定した。",
+      "findings": [
+        {
+          "kind": "overflow_start_inaccessible",
+          "description": "max10・320pxで共有rating.cssのjustify-content:centerがgridにも残り、列が両側へあふれる。scrollLeftが先頭端でも1番が可視範囲外/欠け、Homeで値1へ変更しても星/確定位置が見えずポインター到達できない。LTR/RTL・実gallery/portableで再現。",
+          "recommendation": "作者のgrid列をjustify-content:startで開始辺へ揃え、先頭/末尾の実ポインター到達性と選択可視性を両方向で検証する。",
+          "evidence": [
+            "measurements-start-3.json",
+            "start-summary-3.json",
+            "evidence-3/seal-score-rating-portable-start-ltr-first.png",
+            "evidence-3/seal-score-rating-portable-start-rtl-first.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-2/seal-score-rating-portable-rest.png",
+        "evidence-2/seal-score-rating-gallery-narrow.png",
+        "evidence-2/seal-score-rating-react-forced.png",
+        "measurements-2.json",
+        "measurements-react-2.json",
+        "measurements-ratings-2.json",
+        "review-2.json",
+        "hash-verification-3.json",
+        "measurements-start-3.json",
+        "start-summary-3.json"
+      ],
+      "reviewed": {
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ],
+        "round": 2,
+        "inherited": true,
+        "authorFilesUnchanged": 10,
+        "supplementalStartLTRRTL": true
+      }
+    },
+    {
+      "id": "inspection-score-rating",
+      "number": 492,
+      "verdict": "changes_required",
+      "note": "round3の造形・forced修正評価は維持。ただし追加のmax10先頭到達性検査で中央寄せ起因の非可視/欠けを確定した。",
+      "findings": [
+        {
+          "kind": "overflow_start_inaccessible",
+          "description": "max10・320pxで共有rating.cssのjustify-content:centerがgridにも残り、列が両側へあふれる。scrollLeftが先頭端でも1番が可視範囲外/欠け、Homeで値1へ変更しても星/確定位置が見えずポインター到達できない。LTR/RTL・実gallery/portableで再現。",
+          "recommendation": "作者のgrid列をjustify-content:startで開始辺へ揃え、先頭/末尾の実ポインター到達性と選択可視性を両方向で検証する。",
+          "evidence": [
+            "measurements-start-3.json",
+            "start-summary-3.json",
+            "evidence-3/inspection-score-rating-portable-start-ltr-first.png",
+            "evidence-3/inspection-score-rating-portable-start-rtl-first.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-3/inspection-score-rating-portable-rest.png",
+        "evidence-3/inspection-score-rating-gallery-narrow.png",
+        "evidence-3/inspection-score-rating-react-forced.png",
+        "measurements-3.json",
+        "measurements-react-3.json",
+        "measurements-ratings-3.json",
+        "hash-verification-3.json",
+        "runtime-summary-3.json",
+        "contrast-stars-3.json",
+        "measurements-focused-ratings-3.json",
+        "measurements-start-3.json",
+        "start-summary-3.json"
+      ],
+      "reviewed": {
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ],
+        "round": 3,
+        "inherited": false,
+        "supplementalStartLTRRTL": true
+      }
+    },
+    {
+      "id": "folded-score-rating",
+      "number": 493,
+      "verdict": "changes_required",
+      "note": "round3の造形・forced修正評価は維持。ただし追加のmax10先頭到達性検査で中央寄せ起因の非可視/欠けを確定した。",
+      "findings": [
+        {
+          "kind": "overflow_start_inaccessible",
+          "description": "max10・320pxで共有rating.cssのjustify-content:centerがgridにも残り、列が両側へあふれる。scrollLeftが先頭端でも1番が可視範囲外/欠け、Homeで値1へ変更しても星/確定位置が見えずポインター到達できない。LTR/RTL・実gallery/portableで再現。",
+          "recommendation": "作者のgrid列をjustify-content:startで開始辺へ揃え、先頭/末尾の実ポインター到達性と選択可視性を両方向で検証する。",
+          "evidence": [
+            "measurements-start-3.json",
+            "start-summary-3.json",
+            "evidence-3/folded-score-rating-portable-start-ltr-first.png",
+            "evidence-3/folded-score-rating-portable-start-rtl-first.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-2/folded-score-rating-portable-rest.png",
+        "evidence-2/folded-score-rating-gallery-narrow.png",
+        "evidence-2/folded-score-rating-react-forced.png",
+        "measurements-2.json",
+        "measurements-react-2.json",
+        "measurements-ratings-2.json",
+        "review-2.json",
+        "hash-verification-3.json",
+        "measurements-start-3.json",
+        "start-summary-3.json"
+      ],
+      "reviewed": {
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ],
+        "round": 2,
+        "inherited": true,
+        "authorFilesUnchanged": 10,
+        "supplementalStartLTRRTL": true
+      }
+    },
+    {
+      "id": "stone-pip-rating",
+      "number": 494,
+      "verdict": "changes_required",
+      "note": "round3の造形・forced修正評価は維持。ただし追加のmax10先頭到達性検査で中央寄せ起因の非可視/欠けを確定した。",
+      "findings": [
+        {
+          "kind": "overflow_start_inaccessible",
+          "description": "max10・320pxで共有rating.cssのjustify-content:centerがgridにも残り、列が両側へあふれる。scrollLeftが先頭端でも1番が可視範囲外/欠け、Homeで値1へ変更しても星/確定位置が見えずポインター到達できない。LTR/RTL・実gallery/portableで再現。",
+          "recommendation": "作者のgrid列をjustify-content:startで開始辺へ揃え、先頭/末尾の実ポインター到達性と選択可視性を両方向で検証する。",
+          "evidence": [
+            "measurements-start-3.json",
+            "start-summary-3.json",
+            "evidence-3/stone-pip-rating-portable-start-ltr-first.png",
+            "evidence-3/stone-pip-rating-portable-start-rtl-first.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-2/stone-pip-rating-portable-rest.png",
+        "evidence-2/stone-pip-rating-gallery-narrow.png",
+        "evidence-2/stone-pip-rating-react-forced.png",
+        "measurements-2.json",
+        "measurements-react-2.json",
+        "measurements-ratings-2.json",
+        "review-2.json",
+        "hash-verification-3.json",
+        "measurements-start-3.json",
+        "start-summary-3.json"
+      ],
+      "reviewed": {
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ],
+        "round": 2,
+        "inherited": true,
+        "authorFilesUnchanged": 10,
+        "supplementalStartLTRRTL": true
+      }
+    },
+    {
+      "id": "notched-disc-rating",
+      "number": 496,
+      "verdict": "changes_required",
+      "note": "round3の造形・forced修正評価は維持。ただし追加のmax10先頭到達性検査で中央寄せ起因の非可視/欠けを確定した。",
+      "findings": [
+        {
+          "kind": "overflow_start_inaccessible",
+          "description": "max10・320pxで共有rating.cssのjustify-content:centerがgridにも残り、列が両側へあふれる。scrollLeftが先頭端でも1番が可視範囲外/欠け、Homeで値1へ変更しても星/確定位置が見えずポインター到達できない。LTR/RTL・実gallery/portableで再現。",
+          "recommendation": "作者のgrid列をjustify-content:startで開始辺へ揃え、先頭/末尾の実ポインター到達性と選択可視性を両方向で検証する。",
+          "evidence": [
+            "measurements-start-3.json",
+            "start-summary-3.json",
+            "evidence-3/notched-disc-rating-portable-start-ltr-first.png",
+            "evidence-3/notched-disc-rating-portable-start-rtl-first.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-2/notched-disc-rating-portable-rest.png",
+        "evidence-2/notched-disc-rating-gallery-narrow.png",
+        "evidence-2/notched-disc-rating-react-forced.png",
+        "measurements-2.json",
+        "measurements-react-2.json",
+        "measurements-ratings-2.json",
+        "review-2.json",
+        "hash-verification-3.json",
+        "measurements-start-3.json",
+        "start-summary-3.json"
+      ],
+      "reviewed": {
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ],
+        "round": 2,
+        "inherited": true,
+        "authorFilesUnchanged": 10,
+        "supplementalStartLTRRTL": true
+      }
+    },
+    {
+      "id": "rail-signal-rating",
+      "number": 497,
+      "verdict": "changes_required",
+      "note": "round3の造形・forced修正評価は維持。ただし追加のmax10先頭到達性検査で中央寄せ起因の非可視/欠けを確定した。",
+      "findings": [
+        {
+          "kind": "overflow_start_inaccessible",
+          "description": "max10・320pxで共有rating.cssのjustify-content:centerがgridにも残り、列が両側へあふれる。scrollLeftが先頭端でも1番が可視範囲外/欠け、Homeで値1へ変更しても星/確定位置が見えずポインター到達できない。LTR/RTL・実gallery/portableで再現。",
+          "recommendation": "作者のgrid列をjustify-content:startで開始辺へ揃え、先頭/末尾の実ポインター到達性と選択可視性を両方向で検証する。",
+          "evidence": [
+            "measurements-start-3.json",
+            "start-summary-3.json",
+            "evidence-3/rail-signal-rating-portable-start-ltr-first.png",
+            "evidence-3/rail-signal-rating-portable-start-rtl-first.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-2/rail-signal-rating-portable-rest.png",
+        "evidence-2/rail-signal-rating-gallery-narrow.png",
+        "evidence-2/rail-signal-rating-react-forced.png",
+        "measurements-2.json",
+        "measurements-react-2.json",
+        "measurements-ratings-2.json",
+        "review-2.json",
+        "hash-verification-3.json",
+        "measurements-start-3.json",
+        "start-summary-3.json"
+      ],
+      "reviewed": {
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ],
+        "round": 2,
+        "inherited": true,
+        "authorFilesUnchanged": 10,
+        "supplementalStartLTRRTL": true
+      }
+    },
+    {
+      "id": "stitch-star-rating",
+      "number": 498,
+      "verdict": "changes_required",
+      "note": "round3の造形・forced修正評価は維持。ただし追加のmax10先頭到達性検査で中央寄せ起因の非可視/欠けを確定した。",
+      "findings": [
+        {
+          "kind": "overflow_start_inaccessible",
+          "description": "max10・320pxで共有rating.cssのjustify-content:centerがgridにも残り、列が両側へあふれる。scrollLeftが先頭端でも1番が可視範囲外/欠け、Homeで値1へ変更しても星/確定位置が見えずポインター到達できない。LTR/RTL・実gallery/portableで再現。",
+          "recommendation": "作者のgrid列をjustify-content:startで開始辺へ揃え、先頭/末尾の実ポインター到達性と選択可視性を両方向で検証する。",
+          "evidence": [
+            "measurements-start-3.json",
+            "start-summary-3.json",
+            "evidence-3/stitch-star-rating-portable-start-ltr-first.png",
+            "evidence-3/stitch-star-rating-portable-start-rtl-first.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-3/stitch-star-rating-portable-rest.png",
+        "evidence-3/stitch-star-rating-gallery-narrow.png",
+        "evidence-3/stitch-star-rating-react-forced.png",
+        "measurements-3.json",
+        "measurements-react-3.json",
+        "measurements-ratings-3.json",
+        "hash-verification-3.json",
+        "runtime-summary-3.json",
+        "contrast-stars-3.json",
+        "measurements-focused-ratings-3.json",
+        "measurements-start-3.json",
+        "start-summary-3.json"
+      ],
+      "reviewed": {
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ],
+        "round": 3,
+        "inherited": false,
+        "supplementalStartLTRRTL": true
+      }
+    },
+    {
+      "id": "open-bracket-rating",
+      "number": 499,
+      "verdict": "changes_required",
+      "note": "round3の造形・forced修正評価は維持。ただし追加のmax10先頭到達性検査で中央寄せ起因の非可視/欠けを確定した。",
+      "findings": [
+        {
+          "kind": "overflow_start_inaccessible",
+          "description": "max10・320pxで共有rating.cssのjustify-content:centerがgridにも残り、列が両側へあふれる。scrollLeftが先頭端でも1番が可視範囲外/欠け、Homeで値1へ変更しても星/確定位置が見えずポインター到達できない。LTR/RTL・実gallery/portableで再現。",
+          "recommendation": "作者のgrid列をjustify-content:startで開始辺へ揃え、先頭/末尾の実ポインター到達性と選択可視性を両方向で検証する。",
+          "evidence": [
+            "measurements-start-3.json",
+            "start-summary-3.json",
+            "evidence-3/open-bracket-rating-portable-start-ltr-first.png",
+            "evidence-3/open-bracket-rating-portable-start-rtl-first.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-3/open-bracket-rating-portable-rest.png",
+        "evidence-3/open-bracket-rating-gallery-narrow.png",
+        "evidence-3/open-bracket-rating-react-forced.png",
+        "measurements-3.json",
+        "measurements-react-3.json",
+        "measurements-ratings-3.json",
+        "hash-verification-3.json",
+        "runtime-summary-3.json",
+        "contrast-stars-3.json",
+        "measurements-focused-ratings-3.json",
+        "measurements-start-3.json",
+        "start-summary-3.json"
+      ],
+      "reviewed": {
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ],
+        "round": 3,
+        "inherited": false,
+        "supplementalStartLTRRTL": true
+      }
+    },
+    {
+      "id": "coin-value-rating",
+      "number": 500,
+      "verdict": "changes_required",
+      "note": "round3の造形・forced修正評価は維持。ただし追加のmax10先頭到達性検査で中央寄せ起因の非可視/欠けを確定した。",
+      "findings": [
+        {
+          "kind": "overflow_start_inaccessible",
+          "description": "max10・320pxで共有rating.cssのjustify-content:centerがgridにも残り、列が両側へあふれる。scrollLeftが先頭端でも1番が可視範囲外/欠け、Homeで値1へ変更しても星/確定位置が見えずポインター到達できない。LTR/RTL・実gallery/portableで再現。",
+          "recommendation": "作者のgrid列をjustify-content:startで開始辺へ揃え、先頭/末尾の実ポインター到達性と選択可視性を両方向で検証する。",
+          "evidence": [
+            "measurements-start-3.json",
+            "start-summary-3.json",
+            "evidence-3/coin-value-rating-portable-start-ltr-first.png",
+            "evidence-3/coin-value-rating-portable-start-rtl-first.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-3/coin-value-rating-portable-rest.png",
+        "evidence-3/coin-value-rating-gallery-narrow.png",
+        "evidence-3/coin-value-rating-react-forced.png",
+        "measurements-3.json",
+        "measurements-react-3.json",
+        "measurements-ratings-3.json",
+        "hash-verification-3.json",
+        "runtime-summary-3.json",
+        "contrast-stars-3.json",
+        "measurements-focused-ratings-3.json",
+        "measurements-start-3.json",
+        "start-summary-3.json"
+      ],
+      "reviewed": {
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ],
+        "round": 3,
+        "inherited": false,
+        "supplementalStartLTRRTL": true
+      }
+    }
+  ],
+  "coverage": {
+    "scope": "review-3の合格判定に対する追加検査。旧ファイルを消さず、今回の9差戻しで総括を訂正する。",
+    "sourceHashesVerified": 100,
+    "conditions": 36,
+    "inaccessibleFirstConditions": 36,
+    "diagnosticStartVisibleConditions": 36,
+    "imagesViewed": [
+      "evidence-3/start-1-sheet.jpg",
+      "evidence-3/start-2-sheet.jpg",
+      "evidence-3/start-3-sheet.jpg"
+    ],
+    "reason": "初回検査でキーボードの値と末尾を確認したが、先頭ポインター到達性の確認が不足。追加でLTR/RTL・portable/galleryの全9件に同原因を実証。作者無変更、一時DOM start変更は原因診断だけ。"
+  }
+}
