@@ -36,3 +36,9 @@ if (element) {
 ## 後片付け
 
 通常DOM版では取り外すときにcontroller.destroy()を呼びます。React版はpausedを渡して停止できます。表示する図形はaria-hiddenの装飾で、重要な状態をこのパーツだけで伝えません。
+
+<!-- design-renewal -->
+一本の実芯と六つの巻く楕円を保持し、芯18px・輪2px・25px間隔へ読みやすく磨く。密な極細線と下影を廃し、輪の傾きだけに位相差を持たせ、芯と巻きの接点を静止時にも明確にする。
+
+native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
+<!-- /design-renewal -->

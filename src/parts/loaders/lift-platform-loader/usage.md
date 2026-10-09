@@ -11,3 +11,9 @@ Reactは`LiftPlatformLoader`をimportして配置します。通常HTMLはmarkup
 
 ## 動きと破棄
 CSSアニメーションです。毎フレームのJavaScriptループやタイマーは使いません。非表示タブ・画面外・pausedでは止まり、prefers-reduced-motionでは静止形を表示します。destroy()で監視を解除します。独立した複数配置ができます。
+
+<!-- design-renewal -->
+六つの昇降床の元の波を保持し、各床を実際の伸縮支柱で一つの基床へ接続する。床を上下させる高さと支柱の長さを同じCSS変数で駆動し、上下動のどの瞬間にも基床へ届く。小箱の波だけに見えない接続と、灰青の平たい床の厚みを磨く。
+
+native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
+<!-- /design-renewal -->

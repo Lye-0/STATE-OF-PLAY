@@ -9,3 +9,9 @@
 
 ## 操作契約
 statusと読込メッセージを保持し、装飾はaria-hidden。停止は完了ではない。画面外、非表示タブ、reduced motion、pauseの停止を維持。固有のx-compositionはHTML・React・vanillaで共通。
+
+<!-- design-renewal -->
+六つの開いた同心ゲートという元の主形を保ち、2.5pxの輪郭と10pxの間隔へ整える。交互の明暗を抑えた灰青で前後を読み取り、ゲートの位相差は連続した3.2秒の往復に揃える。
+
+native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
+<!-- /design-renewal -->

@@ -22,3 +22,9 @@
 - `resizable / stickyFirst` (boolean): 列幅調整と先頭列固定。列幅は矢印キーでも操作。
 - `onRowAction` ((action, row) => void): 各行の操作を利用先へ接続。
 - `loading / error` (boolean / string): 読込中・失敗表示。仮想スクロールやセル編集は含みません。
+
+<!-- design-renewal -->
+件数小控えと離れたfooter票を廃し、actual checkbox列そのものを80pxの全高の確認控え帯へ再設計する。選択数・解除が上端、実行ごとの確認欄と交互の大きい紙肩が本紙との分節を決める。未選択でも帯を予約し、本文・glyph・native押面を動かさない。選択不可やcheckbox無しでは架空の確認欄を作らず、ページ送りは同じ本紙の下端に置く。
+
+実表・列幅・検索・選択・ページ送りを保持します。非選択でも選択情報の領域を同寸予約し、文字とnative押面を動かしません。狭幅の表は専用の横スクロールで読みます。
+<!-- /design-renewal -->

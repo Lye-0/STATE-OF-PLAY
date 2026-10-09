@@ -1,0 +1,170 @@
+{
+  "batch": "B050",
+  "round": 10,
+  "snapshot": "docs/design-renewal/batches/B050/snapshot/round-10",
+  "overall": "pass",
+  "parts": [
+    {
+      "number": "R680",
+      "id": "folio-register-table",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "実列名・sort・resizeの連続折冠を保持。resizer原点をtop0へ修正し、LTR/RTLとも操作面bottom456.33がthead bottom480.33内に収まり、前版の本文40px侵入を解消。 固定9から作者10ファイル不変を照合し、前回合格を継承。",
+      "findings": [],
+      "nearestComparisons": [
+        "R259",
+        "R163",
+        "R671原案"
+      ],
+      "resolvedFindings": [
+        "R680-resizer-body-invasion"
+      ]
+    },
+    {
+      "number": "R681",
+      "id": "caption-register-table",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "題字・説明・件数が三つの実読面を担い、横の三角小口と低い足へ連続する。狭幅では全幅の縦読みに移り、前版の62px題字幅を解消。単なる表全高の側札から離れており承認。 固定9から作者10ファイル不変を照合し、前回合格を継承。",
+      "findings": [],
+      "nearestComparisons": [
+        "R621",
+        "R679",
+        "汎用sidebar/table配置"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R682",
+      "id": "blueprint-register-table",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "実列名の上軸・表示位置の側軸と、空隙を渡る実行接点の主形を承認。側材を読面端へ移して表示位置のglyph侵入を解消し、actions headingにも不透明な上軸面が付いた。hover/selectedでも20pxの空隙が残り、読むtdだけ状態色になる。normal/RTL/dark-light forced、8桁の実表示位置まで確認して合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R622",
+        "R582旧板案",
+        "R672",
+        "R677"
+      ],
+      "resolvedFindings": [
+        "R682-axis-still-ordinary-grid",
+        "R682-axis-over-reading",
+        "R682-actions-no-backplate",
+        "R682-state-fills-air"
+      ]
+    },
+    {
+      "number": "R683",
+      "id": "ribbon-register-table",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "狭幅を実検索auto行→48pxの折面行→実選択auto行へ改め、前版の16px断絶を解消。非選択でも前面素材が残り、選択で文字/解除だけが現れる。wideの大きい半ひねりとnarrowの連続面を承認。 固定9から作者10ファイル不変を照合し、前回合格を継承。",
+      "findings": [],
+      "nearestComparisons": [
+        "R283",
+        "R623",
+        "R613旧折面案"
+      ],
+      "resolvedFindings": [
+        "R683-narrow-fold-gap",
+        "R683-hidden-material"
+      ]
+    },
+    {
+      "number": "R684",
+      "id": "ceramic-register-table",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "実action列を192pxへ確保し、44px操作2件を横並びで陶の溝内へ載せた。上端・全行・下曲面の連続を保持。actionなしでは溝なし、RTLでも接合・読字を保ち、前版承認の主形を維持。 固定9から作者10ファイル不変を照合し、前回合格を継承。",
+      "findings": [],
+      "nearestComparisons": [
+        "R224",
+        "R476",
+        "R673旧C取手案",
+        "R604"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R685",
+      "id": "receipt-register-table",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "80px確認列と交互の実行紙肩の主形を維持し、root幅を実configured table幅へ一致させた。wideで残った182/260pxの空き床が消え、toolbar・表・footerの端が揃う。selectable:falseでは控えなし、queryと状態badgeに遮蔽なし。narrow局所scroll/RTL/forcedも確認して合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R645",
+        "R665旧切離し票",
+        "R305"
+      ],
+      "resolvedFindings": [
+        "R685-selection-covers-query",
+        "R685-sticky-column-overlap",
+        "R685-table-frame-width-disconnect"
+      ]
+    },
+    {
+      "number": "R694",
+      "id": "rotary-gate-loader",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "通常の開いた同心ゲートを保持。forcedでは欠け側のborder-styleを無効にして開口を維持し、前版の閉じた円化を解消。 固定9から作者10ファイル不変を照合し、前回合格を継承。",
+      "findings": [],
+      "nearestComparisons": [
+        "原版R694"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R695",
+      "id": "spooling-ovals-ornament",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "通常の芯と六つの巻く楕円を保持。forcedの内面透明化によって芯が実際に連続して見え、遮蔽を解消。 固定9から作者10ファイル不変を照合し、前回合格を継承。",
+      "findings": [],
+      "nearestComparisons": [
+        "原版R695"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R696",
+      "id": "telescopic-stroke-loader",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "前版承認のT主形と水平伸縮を保持。独立native通常3位相・pause・reduced・forced・cleanupを再実行し回帰なし。 固定9から作者10ファイル不変を照合し、前回合格を継承。",
+      "findings": [],
+      "nearestComparisons": [
+        "原版R696"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R698",
+      "id": "lift-platform-loader",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "各床と伸縮支柱に加え、forcedでも実borderの基床が見え、全支柱の下端と連続する。通常T形と動きを保持。 固定9から作者10ファイル不変を照合し、前回合格を継承。",
+      "findings": [],
+      "nearestComparisons": [
+        "原版R698"
+      ],
+      "resolvedFindings": []
+    }
+  ],
+  "checks": [
+    "固定10 author100hashとmanifest一致、CSS10配布一致。9→10はBlueprint/Receiptのstyles.cssだけ変更、他98ファイル不変。他8件80ファイル完全同一。reviewer-hashes-10.json。",
+    "固定exports内JS45ファイルは9→10すべてbyte一致。共有動作の前回native全6・rowNumbers意味・所有focus・controlled・IME等を継承。reviewer-js-equality-10.json。",
+    "R682独立実像: initial/hover/leave/selected/RTLで番号軸の文字非侵入、実actions不透明面、20px空隙保持を確認。reviewer-material-10。",
+    "R685独立実像: LTR/RTL・selectable true/false・wideのtable/root/toolbar/footerの全幅一致とquery・状態badgeの非遮蔽を確認。narrow選択・forced画像も確認。reviewer-details-10、reviewer-extra-10。",
+    "表全6のhover/leave/reenter・選択幾何を320390768の18条件で追試。全6 narrow/wide dark/light forced選択済み実像を撮影。reviewer-extra-10、reviewer-wideforced-10。",
+    "rowNumbersを実sort/filter/pageで1–4/5–8、manual page3/pageSize4で9/10、emptyとrowNumbers:falseの列撤去まで追試。さらに10000000を320768LTRRTLで実Range測定:48.02px glyphが90.67px以上の読面内に収まり、端の材と交差しない。reviewer-details-10。",
+    "R680原点/R683自然行接合/R684 rowActionsなしも同じ独立helperで回帰確認。これら通常造形とR681は9承認を継承。motion4は8以降作者40hash不変、8の実3位相/pause/forced/reduced/destroyを継承。",
+    "作者/shared/tests/snapshotは編集せず、追加検査helper・証拠・報告のみ保存。"
+  ],
+  "limits": [
+    "全形式React・既存20互換性・HTTP/type/contractsは主担当検証。今回独立は変更2件の実像/機能と表6の限定回帰。全native機能試験は9の結果をJS45byte一致で継承。",
+    "motion4の通常/forced/動きは8の独立実操作と画像を継承。10での再実行は行っていない。"
+  ]
+}

@@ -14,3 +14,9 @@ Reactは`RotaryGateLoader`をimportして配置します。通常HTMLはmarkup.h
 
 ## 動きと破棄
 CSSアニメーションです。毎フレームのJavaScriptループやタイマーは使いません。非表示タブ・画面外・pausedでは止まり、prefers-reduced-motionでは静止形を表示します。destroy()で監視を解除します。独立した複数配置ができます。
+
+<!-- design-renewal -->
+六つの開いた同心ゲートという元の主形を保ち、2.5pxの輪郭と10pxの間隔へ整える。交互の明暗を抑えた灰青で前後を読み取り、ゲートの位相差は連続した3.2秒の往復に揃える。
+
+native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
+<!-- /design-renewal -->

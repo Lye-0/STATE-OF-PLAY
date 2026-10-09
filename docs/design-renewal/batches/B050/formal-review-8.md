@@ -1,0 +1,106 @@
+# B050 round 8 独立検査
+
+**changes_requested — 1 redesign / 3 adjust / 6 pass。**
+
+R682は主形を再設計。R680/683/685は新主形の方向を承認し、操作・接点・遮蔽を調整。R681/684とmotion4は合格。
+
+## R680 folio-register-table — adjust
+
+実列名・sort・resizeを連続した大きい紙の冠へ編集し、元の丸タブ付き枠から離れた。通常主形は承認するが、resizeの実操作面が本文へ40px侵入する。
+
+最寄比較: R259, R163, R671原案
+
+- **R680-resizer-body-invasion**: LTR/RTLともthead bottom552.33に対しresizer bottom592.33。th上余白64pxに加え相対原点.wb-th-contentからtop64pxを再加算し、104pxの操作面が第一本文行へ40px侵入する。
+  改善方向: 実resizer原点を一つに揃え、thead内部だけで44px以上の操作高さを確保。第一行のglyph/hitへ侵入しないことを列幅変更・RTLでも測定。
+  証拠: captures/reviewer-details-8/checks.json, captures/reviewer-details-8/folio-register-table-ltr.png
+
+## R681 caption-register-table — pass
+
+題字・説明・件数が三つの実読面を担い、横の三角小口と低い足へ連続する。狭幅では全幅の縦読みに移り、前版の62px題字幅を解消。単なる表全高の側札から離れており承認。
+
+最寄比較: R621, R679, 汎用sidebar/table配置
+
+## R682 blueprint-register-table — redesign
+
+表示位置は実sort/filter/page/serverに追従する正しい情報になった。しかし通常像は太い青い上罫と左番号列を持つ標準的な表で、機能を追加してもAの固有な主形には達していない。
+
+最寄比較: R622, R582旧板案, R672, R677
+
+- **R682-axis-still-ordinary-grid**: 実表示位置の意味は正しいが、左列の青塗りと上の厚い罫・一つの斜角だけでは、通常の番号付き表の範囲。旧R677の矩形range面と同様、native機能追加は造形の独立性を保証しない。
+  改善方向: 現在の平坦な太罫を廃し、actual column名の上軸とactual表示位置の縦軸を、一つの開いた登録軸として実断面で組む案。上軸は読む列へ揃え、縦軸は各実行に対応する横端を持ち、平らな本文とは12〜20pxの真空隙を設け、交点だけで接合する。実ordinalの読みは固定し、外側L額縁や偽目盛りを追加しない。独立した断面・露出端・実読面が主形として成立するか再検査する。
+  証拠: captures/reviewer-tables-8/blueprint-register-table-initial.png, captures/reviewer-details-8/positions-320-ltr.png
+
+## R683 ribbon-register-table — adjust
+
+検索の裏面から選択の前面へ大きくねじる方向は承認。狭幅の実面との接点と非選択時の素材保持に限定調整が必要。
+
+最寄比較: R283, R623, R613旧折面案
+
+- **R683-narrow-fold-gap**: 320pxのselected像で折面下端と実選択面の間に16pxの背景帯が残る。疑似面top88/height48は実検索面104pxと一致せず、読む二面が物理的に離れる。
+  改善方向: 実検索面→48px折れ行→実選択面の自然grid行にし、固定88pxの仮定を外す。長文・RTLでも折面上下が実面と接合することを確認。
+  証拠: captures/reviewer-extra-8/ribbon-register-table-selected320.png
+
+- **R683-hidden-material**: [hidden]のvisibility:hiddenが選択glyphだけでなく前面の布全体を消す。予約寸法は保つが、通常非選択の像ではねじれ先の読む素材が欠落する。
+  改善方向: 非選択でも前面素材を保持し、実選択数・解除操作のみ非表示/非操作にする。非選択と選択でnative位置を変えない。
+  証拠: captures/reviewer-tables-8/ribbon-register-table-initial.png, captures/reviewer-extra-8/ribbon-register-table-selected320.png
+
+## R684 ceramic-register-table — pass
+
+実row action列を一つの深い陶の溝へ編集し、上端から各実操作、下の曲面まで連続する。取手付き外枠から離れ、actionなしでは溝を生成しない意味との一致も確認。通常形を承認。
+
+最寄比較: R224, R476, R673旧C取手案, R604
+
+## R685 receipt-register-table — adjust
+
+実checkbox列と行ごとの交互紙肩へ構造を移し、旧切離しfooterの反復を解消する方向は承認。ただし共通CSSの180px選択面と実列幅の不一致がquery・状態文字を遮蔽するため未合格。
+
+最寄比較: R645, R665旧切離し票, R305
+
+- **R685-selection-covers-query**: 80px控えの意図に対し後段共通min-width:180pxが勝ち、非選択でも180×105.59pxの不透明面がqueryの入力・検索記号に重なる。selectable:falseでも残存する。
+  改善方向: 選択領域の実寸と予約を同一の80px列へ揃え、min-width/flexの旧180px指定を解除。selectable:falseでは控えも生成/表示しない。実query全文と入力hitの非遮蔽を確認。
+  証拠: captures/reviewer-details-8/checks.json, captures/reviewer-details-8/receipt-register-table-no-select.png
+
+- **R685-sticky-column-overlap**: 実checkbox列幅55.58pxに対しfirst dataのsticky inset80pxで24.42pxずれ、隣の状態列名とbadgeの先頭が隠れる。RTLでも同じ。selectable:false時にも第一列の不要なずれが残る。
+  改善方向: 実colgroup幅/checkbox列/first-data sticky原点を一致させ、選択列なしなら原点0へ戻す。全列名・実badgeのRangeを隣の不透明面と照合し、横scroll/RTLでも遮蔽ゼロを確認。
+  証拠: captures/reviewer-details-8/checks.json, captures/reviewer-details-8/receipt-register-table-rtl.png, captures/reviewer-details-8/receipt-register-table-no-select.png
+
+## R694 rotary-gate-loader — pass
+
+通常の開いた同心ゲートを保持。forcedでは欠け側のborder-styleを無効にして開口を維持し、前版の閉じた円化を解消。
+
+最寄比較: 原版R694
+
+## R695 spooling-ovals-ornament — pass
+
+通常の芯と六つの巻く楕円を保持。forcedの内面透明化によって芯が実際に連続して見え、遮蔽を解消。
+
+最寄比較: 原版R695
+
+## R696 telescopic-stroke-loader — pass
+
+前版承認のT主形と水平伸縮を保持。独立native通常3位相・pause・reduced・forced・cleanupを再実行し回帰なし。
+
+最寄比較: 原版R696
+
+## R698 lift-platform-loader — pass
+
+各床と伸縮支柱に加え、forcedでも実borderの基床が見え、全支柱の下端と連続する。通常T形と動きを保持。
+
+最寄比較: 原版R698
+
+## 実施検査
+
+- 固定8 author100hashとmanifest一致、source/portable CSS10一致。reviewer-hashes-8.json。author/shared/snapshotは無編集。
+- 元audit/原版とformal6の近似比較を継続。6表の新機能・提案採用だけでAを合格にしない。
+- actual portable表6件のsort/query/IME/select/all/clear/actions/page/resize/controlled/empty/loading/error/disabled/所有focus/long320390768LTRRTL/forced/reduced/cleanupを独立実行、全6PASS。Blueprint列追加に伴う旧helperの5列固定仮定だけ修正して再実行。reviewer-tables-8。
+- 6×18=108選択/全選択/解除の相対glyph/hit固定。hover/leave/reenter18条件、長見出し36条件を独立測定。reviewer-table-geometry-8、reviewer-extra-8、reviewer-headings-8。
+- 表全6 dark/light forcedをnarrow/wide選択済みで確認。文字backplateの前版問題は再発なし。通常の素材遮蔽は別途指摘。
+- 独立追加: R680/683/684/685 LTR/RTL原点と実寸、局所vertical scroll末尾、684 rowActionsなし、685 selectableなし。reviewer-details-8。末行の初期cropは存在するがscrollで到達でき、操作不能とは判定しない。既定自然高/任意max-heightの整理は妥当。
+- rowNumbersをsort/filter/pageで実1–4/5–8へ、manual server page3/pageSize4で9/10へ確認。emptyでは番号行なし、rowNumbers:falseで列なし。320768LTRRTL実像保存。
+- motion4 actual running/pause再開/3位相0,650,1300/320390768LTRRTL/reduced/dark-light forced/destroyを独立実行し全4PASS。694開口・695芯・698基床を実画像で再確認。reviewer-mechanisms-8。
+
+## 限界
+
+- React全形式/既存20互換性/恒久HTTP/type/contractsは主担当検証。独立検証は固定portable native全10・CSS一致・実像が中心。
+- motionは公開pause APIを操作。fixtureにはgallery専用pauseボタンがないため、そのgalleryボタン自体のclick連携は独立再検査していない。
+- 変更予定の既定max-height等は固定8へ含めず、現在の実像のみ判定。主形の提案は次の実像を保証しない。

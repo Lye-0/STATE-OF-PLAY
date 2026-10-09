@@ -2,7 +2,7 @@
   "id": "caption-register-table",
   "name": "Caption Register Table",
   "category": "tables",
-  "description": "キャプション付きの記録面。件数と表題を同じ見出し帯へ置き、検索・表・ページ操作を三段に分ける。",
+  "description": "実題字の上面、実説明の前面、実件数の足面が一つの三角断面で連続する自立captionへ再設計する。側captionを表の全高へ伸ばさず実内容量で高さを決め、64pxの側断面と40pxの足が自立する関係を示す。狭幅は全幅で題字・説明・件数を縦に読み、62pxの細い題字へ戻さない。",
   "designType": "A",
   "tagline": "キャプション付きの記録面。",
   "motion": "STATE / MATERIAL",
@@ -57,5 +57,10 @@
       "boolean / string",
       "読込中・失敗表示。仮想スクロールやセル編集は含みません。"
     ]
+  ],
+  "features": [
+    "native table / search / selection / sort / resize",
+    "320px native horizontal scroll / RTL / forced colors",
+    "decorations only; stable glyph and native hit"
   ]
 }

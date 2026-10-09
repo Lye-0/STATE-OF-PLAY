@@ -2,7 +2,7 @@
   "id": "blueprint-register-table",
   "name": "Blueprint Register Table",
   "category": "tables",
-  "description": "図面のデータ格子。列と行の細い罫を共有し、状態や進行度を文字と数値でも確認できる構成。",
+  "description": "上下のずれた板を廃し、実column名の上軸と、sort/filter/page後のactual表示位置を読む80pxの片側軸を持つ開いた照合原図へ再設計する。行番号は実page・pageSize・可視順から導き、架空の目盛りやIDを置かない。24pxの上軸と16pxの側断面の交点だけに厚みを集め、下と反対側は開放する。",
   "designType": "A",
   "tagline": "図面のデータ格子。",
   "motion": "STATE / MATERIAL",
@@ -57,5 +57,10 @@
       "boolean / string",
       "読込中・失敗表示。仮想スクロールやセル編集は含みません。"
     ]
+  ],
+  "features": [
+    "native table / search / selection / sort / resize",
+    "320px native horizontal scroll / RTL / forced colors",
+    "decorations only; stable glyph and native hit"
   ]
 }

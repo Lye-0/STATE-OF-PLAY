@@ -9,3 +9,9 @@
 
 ## 操作契約
 statusと読込メッセージを保持し、装飾はaria-hidden。停止は完了ではない。画面外、非表示タブ、reduced motion、pauseの停止を維持。固有のx-compositionはHTML・React・vanillaで共通。
+
+<!-- design-renewal -->
+六つの昇降床の元の波を保持し、各床を実際の伸縮支柱で一つの基床へ接続する。床を上下させる高さと支柱の長さを同じCSS変数で駆動し、上下動のどの瞬間にも基床へ届く。小箱の波だけに見えない接続と、灰青の平たい床の厚みを磨く。
+
+native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
+<!-- /design-renewal -->

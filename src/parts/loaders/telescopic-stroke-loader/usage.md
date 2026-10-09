@@ -11,3 +11,9 @@ Reactは`TelescopicStrokeLoader`をimportして配置します。通常HTMLはma
 
 ## 動きと破棄
 CSSアニメーションです。毎フレームのJavaScriptループやタイマーは使いません。非表示タブ・画面外・pausedでは止まり、prefers-reduced-motionでは静止形を表示します。destroy()で監視を解除します。独立した複数配置ができます。
+
+<!-- design-renewal -->
+六段の伸縮筒という元の主形を保持し、水平だけに伸縮する異なる長さの層へ整える。最小層を細い点にせず、段ごとの左の厚みと伸び差で一つの軸を示す。元の全体が上下に漂う動きは廃し、入れ子の面と実際の伸縮の方向を一致させる。
+
+native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
+<!-- /design-renewal -->

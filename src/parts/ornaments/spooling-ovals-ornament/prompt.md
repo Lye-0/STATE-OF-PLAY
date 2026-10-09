@@ -9,3 +9,9 @@
 
 ## 操作契約
 意味を持たない装飾としてaria-hiddenを保ち、入力を受け取らない。pauseとreduced motionで静止する。
+
+<!-- design-renewal -->
+一本の実芯と六つの巻く楕円を保持し、芯18px・輪2px・25px間隔へ読みやすく磨く。密な極細線と下影を廃し、輪の傾きだけに位相差を持たせ、芯と巻きの接点を静止時にも明確にする。
+
+native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
+<!-- /design-renewal -->

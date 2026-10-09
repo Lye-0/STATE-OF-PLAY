@@ -22,3 +22,9 @@
 - `resizable / stickyFirst` (boolean): 列幅調整と先頭列固定。列幅は矢印キーでも操作。
 - `onRowAction` ((action, row) => void): 各行の操作を利用先へ接続。
 - `loading / error` (boolean / string): 読込中・失敗表示。仮想スクロールやセル編集は含みません。
+
+<!-- design-renewal -->
+丸角板と外U取手を廃し、actual row action列を受ける全高の深い陶の側溝と広い平底へ再設計する。40pxの外口縁・16pxの内縁・上80pxと下72pxの一続きの曲面が、実action押面を包んで読む底へ戻る。行ごとの小皿に分割せず、actions無しなら溝も存在しない。溝を含めたactual tableだけが局所scrollする。
+
+実表・列幅・検索・選択・ページ送りを保持します。非選択でも選択情報の領域を同寸予約し、文字とnative押面を動かしません。狭幅の表は専用の横スクロールで読みます。
+<!-- /design-renewal -->

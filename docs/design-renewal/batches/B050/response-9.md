@@ -1,0 +1,3 @@
+# 正式9への対応
+
+R682の番号軸側面をactual padding面の端へ、実行接点をその外側20px空隙へ移し、表示位置glyphから離す。actions headingは実上軸と同じ読む面へ。hover/selectedはtr背景を描かず各tdの実状態色とcheckboxで表示し、軸との空隙を保持。R685はnative表のconfigured幅に合わせて表を含む全部品の最大幅を一致させ、確認列80px固定とwide/selectable:falseの端面を両立する。列幅変更時も部品全体が実幅へ追従する。

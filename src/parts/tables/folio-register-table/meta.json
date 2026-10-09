@@ -2,7 +2,7 @@
   "id": "folio-register-table",
   "name": "Folio Register Table",
   "category": "tables",
-  "description": "見開きの登録簿。背の線を左に残し、検索とデータを同じ紙面へ置いて記録を読み進める。",
+  "description": "丸タブと外紙を廃し、actual列名・sort・resizeを一枚の連続した64pxの折り冠へ編集する。実columnの境界で山谷が交互に接し、平らな読む前面が同じ本文列へ降りる。偽の紙葉や金属combを置かず、actual columnsだけが紙の折面を決める。文字・値・native押面は水平のまま保持する。",
   "designType": "A",
   "tagline": "見開きの登録簿。",
   "motion": "STATE / MATERIAL",
@@ -57,5 +57,10 @@
       "boolean / string",
       "読込中・失敗表示。仮想スクロールやセル編集は含みません。"
     ]
+  ],
+  "features": [
+    "native table / search / selection / sort / resize",
+    "320px native horizontal scroll / RTL / forced colors",
+    "decorations only; stable glyph and native hit"
   ]
 }

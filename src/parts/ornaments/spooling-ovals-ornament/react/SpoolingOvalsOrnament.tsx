@@ -9,7 +9,7 @@ export interface SpoolingOvalsOrnamentProps extends HTMLAttributes<HTMLDivElemen
 
 const markup = "<div class=\"or-stage\" aria-hidden=\"true\"><div class=\"x-composition\"><i style=\"--i:0\"></i><i style=\"--i:1\"></i><i style=\"--i:2\"></i><i style=\"--i:3\"></i><i style=\"--i:4\"></i><i style=\"--i:5\"></i></div></div>";
 
-/** 糸巻きの芯へ一本ずつ輪が巻かれる。縦の楕円を重ねるだけでなく、芯と巻き方向を見せる。 */
+/** 一本の実芯と六つの巻く楕円を保持し、芯18px・輪2px・25px間隔へ読みやすく磨く。密な極細線と下影を廃し、輪の傾きだけに位相差を持たせ、芯と巻きの接点を静止時にも明確にする。 */
 export default function SpoolingOvalsOrnament({ paused = false, className = '', ...props }: SpoolingOvalsOrnamentProps) {
   const element = useRef<HTMLDivElement>(null);
   const controller = useRef<AmbientOrnamentController | null>(null);

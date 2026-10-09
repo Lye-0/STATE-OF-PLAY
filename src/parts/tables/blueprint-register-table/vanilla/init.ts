@@ -2,4 +2,4 @@ import {createDataTable,type TableOptions} from '../../../../shared/workbench/ta
 import {bridge} from '../../../../shared/workbench/core';
 export type {TableOptions};
 /** Mount this component only; call destroy() before removing it. */
-export function init(root:HTMLElement,options:TableOptions={}){return bridge(createDataTable(root,options));}
+export function init(root:HTMLElement,options:TableOptions={}){return bridge(createDataTable(root,{rowNumbers:true,...options}));}

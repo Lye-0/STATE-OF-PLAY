@@ -1,0 +1,276 @@
+{
+  "batch": "B050",
+  "round": 6,
+  "snapshot": "docs/design-renewal/batches/B050/snapshot/round-6",
+  "overall": "changes_requested",
+  "parts": [
+    {
+      "number": "R680",
+      "id": "folio-register-table",
+      "verdict": "redesign",
+      "normalDesignVerdict": "changes_requested",
+      "assessment": "大きい丸い上タブと、内側に置く通常の四角い表。32pxの差込みや小さい下折角を足しても、既存のフォルダ/紙枠の構図を脱していない。",
+      "findings": [
+        {
+          "key": "R680-primary-shape",
+          "severity": "major",
+          "kind": "duplication",
+          "evidence": [
+            "captures/reviewer-tables-6/folio-register-table-initial.png",
+            "captures/reviewer-baseline-table.png"
+          ],
+          "problem": "大きい丸い上タブと、内側に置く通常の四角い表。32pxの差込みや小さい下折角を足しても、既存のフォルダ/紙枠の構図を脱していない。",
+          "proposal": "丸タブ付き外紙を廃し、実theadの各列名・sortボタンを一枚の連続した折り冠へ編集する案。実column幅ごとに40〜64pxの大きい折れを通し、隣接する折面の端を一致させ、前の平らな読む面が同じ本文列へ降りる。偽の紙葉数は作らずactual columnsだけで構成。列名/resize/本文のxは固定し、状態では素材の陰だけを変える。既存の金属combや布帯ではなく、一枚の紙の山谷そのものをnative列の構造にする。"
+        }
+      ],
+      "nearestComparisons": [
+        "R259",
+        "R163",
+        "R671原案"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R681",
+      "id": "caption-register-table",
+      "verdict": "redesign",
+      "normalDesignVerdict": "changes_requested",
+      "assessment": "実見出しを横へ出した情報編集は改善だが、実像は細い長方形captionと通常表を並べた汎用レイアウト。Aを担う固有の面や接合はなく、色と配置変更に留まる。",
+      "findings": [
+        {
+          "key": "R681-primary-shape",
+          "severity": "major",
+          "kind": "design",
+          "evidence": [
+            "captures/reviewer-tables-6/caption-register-table-initial.png",
+            "captures/reviewer-baseline-table.png"
+          ],
+          "problem": "実見出しを横へ出した情報編集は改善だが、実像は細い長方形captionと通常表を並べた汎用レイアウト。Aを担う固有の面や接合はなく、色と配置変更に留まる。",
+          "proposal": "二つの細長い矩形を廃し、実題字・説明・件数を三つの大きい読む面に分けた、自立する三角断面のcaptionを表の脇へ置く案。題字の広い上面、説明の前面、件数の低い足面が同じ折り材で連続し、caption自体の足が床へ戻る。単なる線の支柱や別の小カードにしない。wideでもcaptionを表全高へ無意味に引き伸ばさず実説明量で自然高、narrowは全幅へ置き、countを別行へ回して文字を確保する。"
+        },
+        {
+          "key": "R681-narrow-caption-reading",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": [
+            "captures/reviewer-headings-6/checks.json",
+            "captures/reviewer-headings-6/caption-register-table-ltr.png"
+          ],
+          "problem": "320pxでcomponent222pxに対し実題字幅62px、件数欄80pxを並置している。日本語は約2文字、英語も数文字ごとに分断され、captionだけが長大な縦柱になる。",
+          "proposal": "narrowで実件数を題字/説明と別行へ移し、題字と説明に全幅を与える。細いcaptionの形を守るために読む文字を犠牲にしない。"
+        }
+      ],
+      "nearestComparisons": [
+        "R621",
+        "R679",
+        "汎用sidebar/table配置"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R682",
+      "id": "blueprint-register-table",
+      "verdict": "redesign",
+      "normalDesignVerdict": "changes_requested",
+      "assessment": "青い上下の板を48pxずらし、下へ斜め小口を足す構図。実列/検索/件数がこの断面を必要とする関係が弱く、既存製図板/offset paper系の反復に留まる。",
+      "findings": [
+        {
+          "key": "R682-primary-shape",
+          "severity": "major",
+          "kind": "duplication",
+          "evidence": [
+            "captures/reviewer-tables-6/blueprint-register-table-initial.png",
+            "captures/reviewer-baseline-table.png"
+          ],
+          "problem": "青い上下の板を48pxずらし、下へ斜め小口を足す構図。実列/検索/件数がこの断面を必要とする関係が弱く、既存製図板/offset paper系の反復に留まる。",
+          "proposal": "通常のoffset上下板を廃し、実column名の上軸と実表示行の通し位置を示す片側軸を持つ、開いた照合原図へ再構成する案。行位置は実page/pageSize/sort後の可視位置から導き、架空の目盛りを描かない。80px程度の実行位置の読む軸と列名面の交点だけに大きい断面を作り、下/反対側は開放する。軸が単なる外L枠にならないよう実文字がその面を占め、R672設定幅横桁・R677scroll機構との用途/配置の違いを明確にする。新情報はこの実行位置だけに限定できる。"
+        }
+      ],
+      "nearestComparisons": [
+        "R622",
+        "R582旧板案",
+        "R672",
+        "R677"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R683",
+      "id": "ribbon-register-table",
+      "verdict": "redesign",
+      "normalDesignVerdict": "changes_requested",
+      "assessment": "検索と解除を含む紫の長方形帯に短い返端を追加した像であり、通常のtoolbarへ色と下影を足した範囲。本文との大きい前後関係を決める布の主形には届いていない。",
+      "findings": [
+        {
+          "key": "R683-primary-shape",
+          "severity": "major",
+          "kind": "design",
+          "evidence": [
+            "captures/reviewer-tables-6/ribbon-register-table-initial.png",
+            "captures/reviewer-baseline-table.png"
+          ],
+          "problem": "検索と解除を含む紫の長方形帯に短い返端を追加した像であり、通常のtoolbarへ色と下影を足した範囲。本文との大きい前後関係を決める布の主形には届いていない。",
+          "proposal": "短い裏返しを廃し、検索の裏面と選択数/解除の表面が一回の大きい半ひねりで連続する一枚の幅広い布へ。32〜48pxの真空隙を渡る二つの斜めの布縁を全幅の実面へつなぎ、布の表裏を通常像で読む。native queryとclearは平らな別の読む面に置き、非選択でも同寸を予約。小さい割尾、二孔を通す既存bookmark、布を四辺枠にする案へ戻さず、実操作二領域の前後関係を主形にする。"
+        }
+      ],
+      "nearestComparisons": [
+        "R283",
+        "R623",
+        "R613旧折面案"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R684",
+      "id": "ceramic-register-table",
+      "verdict": "redesign",
+      "normalDesignVerdict": "changes_requested",
+      "assessment": "上の丸角面、片側のU字取手、通常表という組合せ。取手に真空隙はあるが、既存のUハンドル/曲面面板の組合せに近く、表の実用途が陶の形を決めていない。",
+      "findings": [
+        {
+          "key": "R684-primary-shape",
+          "severity": "major",
+          "kind": "duplication",
+          "evidence": [
+            "captures/reviewer-tables-6/ceramic-register-table-initial.png",
+            "captures/reviewer-baseline-table.png"
+          ],
+          "problem": "上の丸角面、片側のU字取手、通常表という組合せ。取手に真空隙はあるが、既存のUハンドル/曲面面板の組合せに近く、表の実用途が陶の形を決めていない。",
+          "proposal": "U取手/上丸角板を廃し、実row action列を収める一つの全高の深い陶の側溝と、記録を読む広い平底へ再構成する案。60〜80pxの厚い非対称な口縁が実action列を受け、底面と連続する大きい曲面を断面にする。行ごとの小皿に分割しない。actionsが無ければ偽の溝を残さず、native列/ボタンは元のtable内・44pxのまま。狭幅では溝を含めたtableが局所scrollし、外へ別取手を追加しない。"
+        }
+      ],
+      "nearestComparisons": [
+        "R224",
+        "R476",
+        "R673旧C取手案",
+        "R604"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R685",
+      "id": "receipt-register-table",
+      "verdict": "redesign",
+      "normalDesignVerdict": "changes_requested",
+      "assessment": "実件数の小控えと、48px空隙・細い残し紙で接続するfooter票。R645と旧R665で既に扱った切離し票の構図を反復し、罫や色の違いでは独立性にならない。",
+      "findings": [
+        {
+          "key": "R685-primary-shape",
+          "severity": "major",
+          "kind": "duplication",
+          "evidence": [
+            "captures/reviewer-tables-6/receipt-register-table-initial.png",
+            "captures/reviewer-baseline-table.png"
+          ],
+          "problem": "実件数の小控えと、48px空隙・細い残し紙で接続するfooter票。R645と旧R665で既に扱った切離し票の構図を反復し、罫や色の違いでは独立性にならない。",
+          "proposal": "件数の小控えとfooter切離し票を両方廃し、実checkbox列そのものを64〜80pxの全高の確認用控え帯として一枚の記録と組む案。actual各行の確認欄と同じ位置で大きい交互の紙の肩/切込みを作り、読む本紙と控え帯が全高で連続する。選択数/解除はその控えの上端、ページ送りは同じ本紙の自由端に置く。細い一本橋や別のfloating票にせず、実row数/選択欄が材の分節を決める。全状態で列幅を予約し、未選択からglyph/hitを移動させない。"
+        }
+      ],
+      "nearestComparisons": [
+        "R645",
+        "R665旧切離し票",
+        "R305"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R694",
+      "id": "rotary-gate-loader",
+      "verdict": "adjust",
+      "normalDesignVerdict": "pass",
+      "assessment": "六つの開いた同心ゲートと位相差を保持し、輪郭を明確にしたT通常形は承認。forcedで開口が閉じるため限定調整が必要。",
+      "findings": [
+        {
+          "key": "R694-forced-open-gates",
+          "severity": "major",
+          "kind": "consistency",
+          "evidence": [
+            "captures/reviewer-mechanisms-6/rotary-gate-loader-forced-dark.png",
+            "captures/reviewer-mechanisms-6/rotary-gate-loader-forced-light.png"
+          ],
+          "problem": "forcedのborder-color強制と全周outlineにより、元の開いたゲートが完全な同心円へ閉じる。通常の主要輪郭が失われる。",
+          "proposal": "欠けをtransparent色だけで表現せず、該当辺のborder-style:noneや実mask/clipなどで保持。全周outlineを外し、dark/light forcedのどの位相も開口を保つ。"
+        }
+      ],
+      "nearestComparisons": [
+        "原版R694"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R695",
+      "id": "spooling-ovals-ornament",
+      "verdict": "adjust",
+      "normalDesignVerdict": "pass",
+      "assessment": "実芯と六つの巻く楕円を保持し、太さ/間隔と動きの見通しは改善。forcedで芯が隠れるため限定調整が必要。",
+      "findings": [
+        {
+          "key": "R695-forced-spindle-occlusion",
+          "severity": "major",
+          "kind": "consistency",
+          "evidence": [
+            "captures/reviewer-mechanisms-6/spooling-ovals-ornament-forced-dark.png",
+            "captures/reviewer-mechanisms-6/spooling-ovals-ornament-forced-light.png"
+          ],
+          "problem": "forcedで各楕円の内部がCanvas塗りになり後ろの芯を覆うため、芯が上端だけになって輪と軸の関係が消える。",
+          "proposal": "楕円の内部は透明のまま、線だけCanvasTextへ。芯は独立した実面/輪郭を保ち、dark/lightで全高の芯と前後の巻きが読めることを確認。"
+        }
+      ],
+      "nearestComparisons": [
+        "原版R695"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R696",
+      "id": "telescopic-stroke-loader",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "元の同心の四角を保持しながら、最小層を点にせず厚い左辺と水平伸縮差へ整理した。上下漂いを除き方向と構造が一致。Tの保持調整として通常/動作/forcedを承認。",
+      "findings": [],
+      "nearestComparisons": [
+        "原版R696"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R698",
+      "id": "lift-platform-loader",
+      "verdict": "adjust",
+      "normalDesignVerdict": "pass",
+      "assessment": "元の六床の波を保ち、各床と基床を伸縮支柱で接続できている。3位相でも支持の接点は維持。forcedで基床が消えるため限定調整が必要。",
+      "findings": [
+        {
+          "key": "R698-forced-base-missing",
+          "severity": "major",
+          "kind": "consistency",
+          "evidence": [
+            "captures/reviewer-mechanisms-6/lift-platform-loader-forced-dark.png",
+            "captures/reviewer-mechanisms-6/lift-platform-loader-forced-light.png"
+          ],
+          "problem": "基床::afterがforcedでCanvas背景だけとなって消え、支柱の下端が空中で終わる。通常に追加した本質的支持がforcedで失われる。",
+          "proposal": "基床をCanvasTextの実borderまたは明示foregroundで描く。6支柱の下端と同じ座標で接続を保ち、reduced/normal/dark/light全てで確認。"
+        }
+      ],
+      "nearestComparisons": [
+        "原版R698"
+      ],
+      "resolvedFindings": []
+    }
+  ],
+  "checks": [
+    "固定6作者100hash/manifest一致・source/配布CSS10一致。captures/reviewer-hashes-6.json。作者/shared/snapshot編集なし。",
+    "元audit R6/T4と原版画像、既承認近似を比較。6A表は機能成功・色・寸法採用だけで合格にしない。原版contactはreviewer-baseline-table.png。",
+    "actual portable table6全native: sort/query/IME/select/all/clear/actions/page/resize/ownedfocus/live label/controlled/loading/error/empty/disabled/長文320390768LTRRTL/native scroll/44button/forced/reduced/cleanup。全6PASS/pageerrors=[]。reviewer-tables-6。",
+    "全6×18=108選択/全選択/解除で相対glyph/hit固定。hover/leave/reenter全18幅条件も固定。reviewer-table-geometry-6、reviewer-extra-6。",
+    "全6 narrow/wide dark/light forced選択済みを撮影。B049由来の選択60px移動/不可視glyphは再発なし。RTL footer値はLTR isolateを保持。reviewer-extra-6、reviewer-wideforced-6。",
+    "6表の実長見出し/説明/件数を320390768LTRRTLで測定、320画像を保存。R681は実題字62px/件数80pxの読字不足。reviewer-headings-6。",
+    "4motion actual runningを確認し、公開API setPausedで停止/再開を操作。3時点0/650/1300msの実描画を固定撮影し、6要素がstage内に収まることを確認。320390768LTRRTL/reduced/dark-light forced/destroyまで全4実行PASS/pageerrors=[]。reviewer-mechanisms-6。",
+    "motion通常3位相では698床/支柱/基床の連結、695芯と巻き、694開口、696水平伸縮を画像とCSSで照合。forced3件の主要形消失は機能検査成功とは別に指摘。"
+  ],
+  "limits": [
+    "React全配布形式・既存Table/Motion20互換性・恒久HTTP/type/contractsは主担当検証。独立は固定actual portable native全10とsource/export CSSに限定。",
+    "motionの公開setPaused APIとアニメーション実時間を操作。固定native fixture自体にはgallery専用の一時停止ボタンがないため、そのgalleryボタンのclick連携は今回独立再検査していない。",
+    "根本案は造形と実情報の接合を具体化する候補。採用だけで合格を保証せず、次の実像・長文・狭幅・RTL・glyph/hit固定で評価する。新機能を増やすこと自体は目的にしない。"
+  ]
+}
