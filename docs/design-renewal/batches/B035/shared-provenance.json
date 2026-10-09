@@ -1,0 +1,14 @@
+{
+  "before": {
+    "src/shared/signature/rating.ts": "5952bb33efd6b6ee03660679ae372070961f892505797c44c1f5b09eecda333c"
+  },
+  "after": {
+    "src/shared/signature/rating.ts": "db1fe859eca4b10c1fdc1cb1c07566575fd56e30bf229ab0cd81722e61c750f9",
+    "tests/signature.browser.ts": "b0032cc9dfcbe92cc2732d35a61fcd6f172bb15df3a3a5cc4ec3a3953fba430b"
+  },
+  "reproducedAllFiveBaseline": "label update discards native focused rank; destroyed controller reset changes committed 5 back to 3",
+  "fix": "retain current or nearest rank on structural update; destroyed reset inert",
+  "hoverReproduction": "moving pointer from rank5 to legend leaves preview5 until leaving root; now clears when the pointer enters a non-rank region",
+  "permanentRegression": "Signature real Vite: native rank focus, immediate preview0 on max/readOnly/disabled changes, legend hover and destroy-reset; original and portable native rating exports",
+  "maximumAndPolicyReproduction": "Astra round4: hover5 remains after max2/readOnly/disabled update; now synchronously preview0 before returning controller state"
+}

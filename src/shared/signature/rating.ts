@@ -16,14 +16,14 @@ export function createRating(root: HTMLElement, provided: RatingOptions = {}): S
   host.querySelector('output')!.textContent=value?`${value} / ${max}`:'未評価';
   const clear=host.querySelector<HTMLButtonElement>('.sg-rating-clear')!;clear.disabled=!!(options.readOnly||options.disabled);clear.hidden=options.clearable===false||!!options.required;
  }
- function render(){host.innerHTML=ratingMarkup({...options,value,max},prefix);paint();}
+ function render(){const active=document.activeElement,previous=active instanceof HTMLInputElement&&host.contains(active)?Number(active.value):null;host.innerHTML=ratingMarkup({...options,value,max},prefix);paint();if(previous!==null&&!options.disabled)host.querySelector<HTMLInputElement>(`input[value="${Math.min(previous,max)}"]`)?.focus({preventScroll:true});}
  function commit(next:number){if(options.disabled||options.readOnly){paint();return;}const requested=ratingValue(next,max);if(options.value===undefined)value=requested;preview=0;options.onValueChange?.(requested);paint();pulse(root,'rate');announce(root,{value,requested});}
  host.addEventListener('change',event=>{const input=event.target as HTMLInputElement;if(input.matches('input[type=radio]'))commit(Number(input.value));},{signal:life.signal});
  host.addEventListener('click',event=>{if(options.readOnly){event.preventDefault();paint();}else if((event.target as Element).closest('.sg-rating-clear'))commit(0);},{signal:life.signal});
- host.addEventListener('pointerover',event=>{if(options.disabled||options.readOnly||event.pointerType==='touch')return;const label=(event.target as Element).closest<HTMLElement>('[data-rank]');if(label){preview=Number(label.dataset.rank);paint();}},{signal:life.signal});
+ host.addEventListener('pointerover',event=>{if(options.disabled||options.readOnly||event.pointerType==='touch')return;const label=(event.target as Element).closest<HTMLElement>('[data-rank]');if(label){preview=Number(label.dataset.rank);paint();}else if(preview){preview=0;paint();}},{signal:life.signal});
  host.addEventListener('pointerleave',()=>{preview=0;paint();},{signal:life.signal});
  host.addEventListener('keydown',event=>{if(options.readOnly){if([' ','ArrowRight','ArrowLeft','ArrowUp','ArrowDown'].includes(event.key))event.preventDefault();return;}if((event.target as Element).matches('input')&&['Home','End'].includes(event.key)){event.preventDefault();commit(event.key==='Home'?1:max);host.querySelector<HTMLInputElement>(`input[value="${event.key==='Home'?1:max}"]`)?.focus();}},{signal:life.signal});
- function reset(){if(options.value===undefined)value=ratingValue(options.defaultValue??0,max);preview=0;paint();}
+ function reset(){if(life.dead)return;if(options.value===undefined)value=ratingValue(options.defaultValue??0,max);preview=0;paint();}
  listenReset(root,life.signal,reset);render();
- return {getState:()=>({value,max,preview}),reset,update(next){if(life.dead)return;const rebuild=['max','name','label','required'].some(k=>k in next && next[k as keyof RatingOptions]!==options[k as keyof RatingOptions]);options={...options,...next};max=integer(options.max,5,2,10);if(next.value!==undefined)value=next.value;value=ratingValue(value,max);if(rebuild)render();else paint();},destroy:life.destroy,setPaused:life.setPaused};
+ return {getState:()=>({value,max,preview}),reset,update(next){if(life.dead)return;const rebuild=['max','name','label','required'].some(k=>k in next && next[k as keyof RatingOptions]!==options[k as keyof RatingOptions]);options={...options,...next};if(rebuild||options.readOnly||options.disabled)preview=0;max=integer(options.max,5,2,10);if(next.value!==undefined)value=next.value;value=ratingValue(value,max);if(rebuild)render();else paint();},destroy:life.destroy,setPaused:life.setPaused};
 }

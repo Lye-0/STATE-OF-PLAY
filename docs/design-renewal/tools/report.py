@@ -104,6 +104,13 @@ for row,part,review in approved:
   actual=next((p for p in reversed(native) if all((p/f"{row['id']}-{name}.png").exists() for name in ['initial','image-fallback','narrow-320','long-rtl-320'])),None)
   assert actual is not None,f"Missing native avatar fallback/long name: {row['id']}"
   images+=figure(beforeAvatar,'修正前・配布版の人物紹介')+figure(actual/f"{row['id']}-initial.png",'修正後・実人物と状態')+figure(actual/f"{row['id']}-image-fallback.png",'修正後・画像と読込失敗時の代替')+figure(actual/f"{row['id']}-portrait.png",'修正後・実写真の肖像')+figure(actual/f"{row['id']}-narrow-320.png",'修正後・320pxの長い人物名')+figure(actual/f"{row['id']}-long-rtl-320.png",'修正後・320pxと右から左の長い人物名')
+ if row['category']=='ratings':
+  beforeRating=w/'evidence/baseline'/f"{row['id']}-rating.png"
+  assert beforeRating.exists(),f"Missing original real rating: {row['id']}"
+  native=sorted((d/'captures').glob('ratings-self-*'),key=lambda p:int(p.name.split('-')[-1]))
+  actual=next((p for p in reversed(native) if all((p/f"{row['id']}-{name}.png").exists() for name in ['initial','empty','max','narrow-320','long-rtl-320','forced-dark'])),None)
+  assert actual is not None,f"Missing native rating range/RTL/dark forced evidence: {row['id']}"
+  images+=figure(beforeRating,'修正前・配布版の評価')+figure(actual/f"{row['id']}-initial.png",'修正後・配布版の実評価')+figure(actual/f"{row['id']}-empty.png",'修正後・未評価')+figure(actual/f"{row['id']}-max.png",'修正後・最大評価')+figure(actual/f"{row['id']}-narrow-320.png",'修正後・320pxと10段階評価')+figure(actual/f"{row['id']}-long-rtl-320.png",'修正後・右から左への表示')+figure(actual/f"{row['id']}-forced-dark.png",'修正後・暗い強制配色')
  if row['category']=='numbers':
   beforeNumber=w/'evidence/baseline'/f"{row['id']}-number.png"
   assert beforeNumber.exists(),f"Missing original real number field: {row['id']}"

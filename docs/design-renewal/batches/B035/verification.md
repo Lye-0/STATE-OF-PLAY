@@ -1,0 +1,11 @@
+# B035 検証記録
+
+人物紹介A5/評価A5。独立4の5合格/2調整/3再設計に対応。R492は外囲いを廃し前後の開ゲートへ実票を通す構造、R494は楕円の石と座を廃し尖頭アーチの真空隙を持つ一体石列、R495は各葉が同じ下端根元へ収束して綴じ材に入り各行に自由端が露出する扇へ再設計。R493のselected borderを常時予約して星の位置を固定し、各行に実保持バーを設けた。
+
+共有ratingは原版5件でlabel更新時focus喪失/destroy後resetで5→3/legendへhoverが移ってもpreview5維持を再現し、現存rank focus/破棄後reset不活性/非rankへのhover解除へ修正。独立4のmax2/readOnly/disabled更新後preview5残存も即時preview0へ修正。全5の数値比率をLTR隔離、暗色forcedの未選択SVGをCanvasTextへ揃えた。恒久Signatureテストへnative構造focus/max/RO/disabledの即時preview/非rank hover/destroy resetを追加し、最新正本隔離コピーの実Vite HTTP19試験成功。before/after hashはshared-provenance.json。
+
+native ratings5はnative keyboard/controlled拒否受入/form payload-reset/disabled-readOnly-required/hoverと確定分離/max10/長文320390768×LTRRTL/固定native hit-star/dark forced/reduced/cleanup成功。React ratings5全TSX/JSX×portable/originalの実4形式も成功。人物紹介50ファイルは3以後不変でnative実Grace Hopper JPEG/画像失敗代替/長文/React4形式成功を継承。全型5/730契約5/ratings20native実imports×2layouts5/実gallery全10最終5成功。
+
+独立最終5全10合格、100hash/CSS10一致、80最大値幅方向条件/再設計3の暗背景24条件/全5暗色forced/RTL実文字順/更新preview0も成功。KとLiquid Glass部品ソース/外観は変更なし。共有runtime意味修正は他のratingsにも作用する。Chromium中心、forced/reducedはエミュレーション、他OS/ブラウザ/実機touch/SRは未確認。最終production buildは517完了時。
+
+単組画像内蔵HTML10件/95画像/804451bytes、Chromium setContent初期74ms/全decode265ms、外部通信0/例外0/390px溢れなし。file navigationは環境制限で直接確認できていない。

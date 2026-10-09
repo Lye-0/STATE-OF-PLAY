@@ -1,0 +1,302 @@
+{
+  "batch": "B035",
+  "round": 4,
+  "snapshot": "docs/design-renewal/batches/B035/snapshot/round-4",
+  "overall": "changes_requested",
+  "parts": [
+    {
+      "number": "R481",
+      "id": "medallion-seat-profile",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "元監査T。90pxの正円と4pxの鋳造縁を保ち、下16pxを120×22pxの曲がる受けへ入れる。カメオの卵形と異なるメダルの主形が残り、実写真・選択・長名で写真と本人名は安定。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R481",
+        "R471",
+        "R479"
+      ]
+    },
+    {
+      "number": "R482",
+      "id": "blueprint-id-profile",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "実写真版の下へ120pxの台面が4px入り、その下の二股の58px支持へつながる。三角の本当の空隙が輪郭を決め、単なる青い写真枠ではない。名前を下へ離した後は支持底と文字が衝突しない。R376のA脚とは、写真の幅を超す独立した台面と小さな支持全体を示す構成が異なる。",
+      "findings": [],
+      "nearestComparisons": [
+        "R376",
+        "R317",
+        "元R482"
+      ]
+    },
+    {
+      "number": "R483",
+      "id": "ribbon-badge-profile",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "元監査T。メダルの背を通る横返りと、その下の名前を載せる前帯を同素材へ揃えている。下のV字自由端は保ち、実写真を入れても帯と本人名の関係が崩れない。",
+      "findings": [],
+      "nearestComparisons": [
+        "R283",
+        "元R483"
+      ]
+    },
+    {
+      "number": "R484",
+      "id": "slotted-card-profile",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "100×104pxの写真が一枚の厚い紹介板から大きく張り出し、前の24pxの保持口が終端12pxを実際に覆う。名前はその先の平面にあり、上隅の在席点も残る。R478の下ポケットとは、側方の厚い口と横方向の読む配置が異なる。",
+      "findings": [],
+      "nearestComparisons": [
+        "R478",
+        "R257",
+        "R111"
+      ]
+    },
+    {
+      "number": "R485",
+      "id": "letterhead-profile",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "大きい実本人名を上の一枚の紙へ組み、広い開端から写真版が張り出す。小さい二列の名簿ではなく、紙の自由端・裏返り・版の厚みが写真と名前の位置を決める。RTL/狭幅でも版と紙の接合を維持。",
+      "findings": [],
+      "nearestComparisons": [
+        "R425",
+        "R473",
+        "元R485"
+      ]
+    },
+    {
+      "number": "R491",
+      "id": "seal-score-rating",
+      "verdict": "adjust",
+      "normalDesignVerdict": "pass",
+      "assessment": "元監査T。円い蝋と星の関係を保持し、上5px/下8pxの端面を統一。普通の丸ボタンを新規A再設計として認める判断ではなく、原版の長所を磨く通常造形は合格。ただし共通の更新状態・RTL比率・暗い強制色の問題が残る。",
+      "findings": [
+        {
+          "key": "ratings-update-stale-preview",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": "captures/reviewer-rating-update-4/checks.json: 全5、value2→hover5→readOnly:true又はdisabled:true→150ms後preview5/filled5。reviewer-rating-states-4/checks.json: max5→2直後preview5。",
+          "problem": "操作禁止へ切り替えた後も5個が塗られ、確定値2と矛盾する。最大段階数変更直後にも範囲外のpreviewが残る。",
+          "proposal": "共有updateでmaxなど構造が変わる時、readOnly/disabledへ入る時は描画前にpreviewを0へ。updateとgetStateを同じevaluateで検査し、hoverの再イベントを待って修正された状態を合格にしない。"
+        },
+        {
+          "key": "ratings-rtl-ratio-reversed",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": "captures/reviewer-rating-dark-4/checks.jsonと*-dark.png、reviewer-ratings-4/*-forced.png。textContent=\"2 / 10\"だが文字Rangeのx順は\"10 / 2\"。",
+          "problem": "RTLで実値2/最大10が視覚上10/2へ反転し、値の読みを誤らせる。",
+          "proposal": "数値比のoutputだけdirection:ltrとunicode-bidi:isolateで順序固定。星の配置・キーボード・周囲のRTL配置は維持する。"
+        },
+        {
+          "key": "ratings-forced-dark-unfilled-star",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": "captures/reviewer-rating-dark-4/*-dark.png / checks.json。forced-colors:active + color-scheme:darkでCanvas黒、491未選択stroke rgb(90,59,40)。他4も元の濃色。",
+          "problem": "未選択星が暗いCanvas上でほぼ見えない。後置の通常色変数がforcedの変数を上書きし、選択星だけHighlightで読める。",
+          "proposal": "forcedで未選択のSVG strokeを明示CanvasTextへ、選択済みfill/strokeはHighlightを保持。明色・暗色両方で全5件の選択前後を実像確認する。"
+        }
+      ],
+      "nearestComparisons": [
+        "元R491",
+        "R494"
+      ]
+    },
+    {
+      "number": "R492",
+      "id": "inspection-score-rating",
+      "verdict": "redesign",
+      "normalDesignVerdict": "redesign",
+      "assessment": "厚い四辺の盤内に通常の矩形星キーが並ぶ。上下面と14pxの小さい確定三角を追加しても、主形は枠付き五連キーの範囲。検査票を差すという構造が実際の大きい空隙や紙の自由端を決めていない。Aとして再設計が必要。",
+      "findings": [
+        {
+          "key": "R492-generic-framed-keys",
+          "severity": "major",
+          "kind": "design",
+          "evidence": "reviewer-ratings-4/inspection-score-rating-initial.png、reviewer-rating-states-4/inspection-score-rating-320-rtl-10.png。",
+          "problem": "一体の外盤と矩形星キーを並べた構図が一般的なパネルのままで、差込みや検査の固有形が小さい線と三角に留まる。",
+          "proposal": "例えば閉じた盤の背面を廃し、幅全体の開いた検査ゲートを実評価票が貫通する構造へ。票の差込み口、受け、自由端を大きく露出させ、普通の四辺枠から離す。R295の出力装置をそのまま横へ複製する案も避ける。"
+        },
+        {
+          "key": "ratings-update-stale-preview",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": "captures/reviewer-rating-update-4/checks.json: 全5、value2→hover5→readOnly:true又はdisabled:true→150ms後preview5/filled5。reviewer-rating-states-4/checks.json: max5→2直後preview5。",
+          "problem": "操作禁止へ切り替えた後も5個が塗られ、確定値2と矛盾する。最大段階数変更直後にも範囲外のpreviewが残る。",
+          "proposal": "共有updateでmaxなど構造が変わる時、readOnly/disabledへ入る時は描画前にpreviewを0へ。updateとgetStateを同じevaluateで検査し、hoverの再イベントを待って修正された状態を合格にしない。"
+        },
+        {
+          "key": "ratings-rtl-ratio-reversed",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": "captures/reviewer-rating-dark-4/checks.jsonと*-dark.png、reviewer-ratings-4/*-forced.png。textContent=\"2 / 10\"だが文字Rangeのx順は\"10 / 2\"。",
+          "problem": "RTLで実値2/最大10が視覚上10/2へ反転し、値の読みを誤らせる。",
+          "proposal": "数値比のoutputだけdirection:ltrとunicode-bidi:isolateで順序固定。星の配置・キーボード・周囲のRTL配置は維持する。"
+        },
+        {
+          "key": "ratings-forced-dark-unfilled-star",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": "captures/reviewer-rating-dark-4/*-dark.png / checks.json。forced-colors:active + color-scheme:darkでCanvas黒、491未選択stroke rgb(90,59,40)。他4も元の濃色。",
+          "problem": "未選択星が暗いCanvas上でほぼ見えない。後置の通常色変数がforcedの変数を上書きし、選択星だけHighlightで読める。",
+          "proposal": "forcedで未選択のSVG strokeを明示CanvasTextへ、選択済みfill/strokeはHighlightを保持。明色・暗色両方で全5件の選択前後を実像確認する。"
+        }
+      ],
+      "nearestComparisons": [
+        "R397",
+        "R275修正前",
+        "元R492"
+      ]
+    },
+    {
+      "number": "R493",
+      "id": "folded-score-rating",
+      "verdict": "adjust",
+      "normalDesignVerdict": "pass",
+      "assessment": "元監査T。各行の8px綴じ材から30pxの返しが各票へ接続し、10段階の複数行でも前行の紙へ誤接続しない。全状態4pxの透明縁を予約したことで星の位置も不変。通常造形は合格だが、全評価共通UI問題を修正する必要がある。",
+      "findings": [
+        {
+          "key": "ratings-update-stale-preview",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": "captures/reviewer-rating-update-4/checks.json: 全5、value2→hover5→readOnly:true又はdisabled:true→150ms後preview5/filled5。reviewer-rating-states-4/checks.json: max5→2直後preview5。",
+          "problem": "操作禁止へ切り替えた後も5個が塗られ、確定値2と矛盾する。最大段階数変更直後にも範囲外のpreviewが残る。",
+          "proposal": "共有updateでmaxなど構造が変わる時、readOnly/disabledへ入る時は描画前にpreviewを0へ。updateとgetStateを同じevaluateで検査し、hoverの再イベントを待って修正された状態を合格にしない。"
+        },
+        {
+          "key": "ratings-rtl-ratio-reversed",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": "captures/reviewer-rating-dark-4/checks.jsonと*-dark.png、reviewer-ratings-4/*-forced.png。textContent=\"2 / 10\"だが文字Rangeのx順は\"10 / 2\"。",
+          "problem": "RTLで実値2/最大10が視覚上10/2へ反転し、値の読みを誤らせる。",
+          "proposal": "数値比のoutputだけdirection:ltrとunicode-bidi:isolateで順序固定。星の配置・キーボード・周囲のRTL配置は維持する。"
+        },
+        {
+          "key": "ratings-forced-dark-unfilled-star",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": "captures/reviewer-rating-dark-4/*-dark.png / checks.json。forced-colors:active + color-scheme:darkでCanvas黒、491未選択stroke rgb(90,59,40)。他4も元の濃色。",
+          "problem": "未選択星が暗いCanvas上でほぼ見えない。後置の通常色変数がforcedの変数を上書きし、選択星だけHighlightで読める。",
+          "proposal": "forcedで未選択のSVG strokeを明示CanvasTextへ、選択済みfill/strokeはHighlightを保持。明色・暗色両方で全5件の選択前後を実像確認する。"
+        }
+      ],
+      "nearestComparisons": [
+        "R153",
+        "元R493"
+      ]
+    },
+    {
+      "number": "R494",
+      "id": "stone-pip-rating",
+      "verdict": "redesign",
+      "normalDesignVerdict": "redesign",
+      "assessment": "不均一な楕円石と小さい楕円の受けの組合せは、直前のR479を星の数だけ反復する構造。R491の円い評価面にも近く、緑と曲率を変えた反復キーの範囲を抜けない。各石の接触が成立していてもAの独立性の根拠にはならない。",
+      "findings": [
+        {
+          "key": "R494-repeated-pebble-pedestal",
+          "severity": "major",
+          "kind": "duplication",
+          "evidence": "reviewer-ratings-4/stone-pip-rating-initial.pngとB034 reviewer-materials-4/pebble-frame-profile-1000-ltr.png。",
+          "problem": "R479の非対称楕円石＋浅い楕円受けと同じ支持の組を5〜10個に反復している。色や微小な曲率変更は新しい主形にならない。",
+          "proposal": "個々の石＋受けを全廃し、例えば一枚の割石の大きい露頭へ全評価を刻み、連続する深いえぐりと非対称の二支点で支える等、支持の単位そのものを変える。R394の一体の階段へ単に置換すると既承認反復になるため、段差だけでなく断面・空隙・支持方式まで違いを作る。"
+        },
+        {
+          "key": "ratings-update-stale-preview",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": "captures/reviewer-rating-update-4/checks.json: 全5、value2→hover5→readOnly:true又はdisabled:true→150ms後preview5/filled5。reviewer-rating-states-4/checks.json: max5→2直後preview5。",
+          "problem": "操作禁止へ切り替えた後も5個が塗られ、確定値2と矛盾する。最大段階数変更直後にも範囲外のpreviewが残る。",
+          "proposal": "共有updateでmaxなど構造が変わる時、readOnly/disabledへ入る時は描画前にpreviewを0へ。updateとgetStateを同じevaluateで検査し、hoverの再イベントを待って修正された状態を合格にしない。"
+        },
+        {
+          "key": "ratings-rtl-ratio-reversed",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": "captures/reviewer-rating-dark-4/checks.jsonと*-dark.png、reviewer-ratings-4/*-forced.png。textContent=\"2 / 10\"だが文字Rangeのx順は\"10 / 2\"。",
+          "problem": "RTLで実値2/最大10が視覚上10/2へ反転し、値の読みを誤らせる。",
+          "proposal": "数値比のoutputだけdirection:ltrとunicode-bidi:isolateで順序固定。星の配置・キーボード・周囲のRTL配置は維持する。"
+        },
+        {
+          "key": "ratings-forced-dark-unfilled-star",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": "captures/reviewer-rating-dark-4/*-dark.png / checks.json。forced-colors:active + color-scheme:darkでCanvas黒、491未選択stroke rgb(90,59,40)。他4も元の濃色。",
+          "problem": "未選択星が暗いCanvas上でほぼ見えない。後置の通常色変数がforcedの変数を上書きし、選択星だけHighlightで読める。",
+          "proposal": "forcedで未選択のSVG strokeを明示CanvasTextへ、選択済みfill/strokeはHighlightを保持。明色・暗色両方で全5件の選択前後を実像確認する。"
+        }
+      ],
+      "nearestComparisons": [
+        "R479",
+        "R491",
+        "R394"
+      ]
+    },
+    {
+      "number": "R495",
+      "id": "ledger-mark-rating",
+      "verdict": "redesign",
+      "normalDesignVerdict": "redesign",
+      "assessment": "左14pxの綴じへ触れるのは各行の先頭の紙だけ。他の紙は横に接する矩形セルと小さい切角となり、元の黄色い格子の構図が強く残る。各葉を同じ綴じへ連続させる説明と支持関係が一致せず、主形の再構成が必要。",
+      "findings": [
+        {
+          "key": "R495-leaves-not-bound",
+          "severity": "major",
+          "kind": "design",
+          "evidence": "reviewer-ratings-4/ledger-mark-rating-initial.png、reviewer-rating-states-4/ledger-mark-rating-320-rtl-10.png。横gap0、綴じはscaleの片側14pxのみ。",
+          "problem": "2枚目以降は綴じに直接届かず、普通の黄色い星セルへ上小口と小切角を足した主形になっている。",
+          "proposal": "一冊の葉が同じ根元へ重なって開き、自由端だけをずらして各星を露出する等、各評価面が綴じへ実際に入る一つの構造へ。縦綴じ＋独立横札への単純置換はR391と重なるため、重なりと開く方向の違いを作る。"
+        },
+        {
+          "key": "ratings-update-stale-preview",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": "captures/reviewer-rating-update-4/checks.json: 全5、value2→hover5→readOnly:true又はdisabled:true→150ms後preview5/filled5。reviewer-rating-states-4/checks.json: max5→2直後preview5。",
+          "problem": "操作禁止へ切り替えた後も5個が塗られ、確定値2と矛盾する。最大段階数変更直後にも範囲外のpreviewが残る。",
+          "proposal": "共有updateでmaxなど構造が変わる時、readOnly/disabledへ入る時は描画前にpreviewを0へ。updateとgetStateを同じevaluateで検査し、hoverの再イベントを待って修正された状態を合格にしない。"
+        },
+        {
+          "key": "ratings-rtl-ratio-reversed",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": "captures/reviewer-rating-dark-4/checks.jsonと*-dark.png、reviewer-ratings-4/*-forced.png。textContent=\"2 / 10\"だが文字Rangeのx順は\"10 / 2\"。",
+          "problem": "RTLで実値2/最大10が視覚上10/2へ反転し、値の読みを誤らせる。",
+          "proposal": "数値比のoutputだけdirection:ltrとunicode-bidi:isolateで順序固定。星の配置・キーボード・周囲のRTL配置は維持する。"
+        },
+        {
+          "key": "ratings-forced-dark-unfilled-star",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": "captures/reviewer-rating-dark-4/*-dark.png / checks.json。forced-colors:active + color-scheme:darkでCanvas黒、491未選択stroke rgb(90,59,40)。他4も元の濃色。",
+          "problem": "未選択星が暗いCanvas上でほぼ見えない。後置の通常色変数がforcedの変数を上書きし、選択星だけHighlightで読める。",
+          "proposal": "forcedで未選択のSVG strokeを明示CanvasTextへ、選択済みfill/strokeはHighlightを保持。明色・暗色両方で全5件の選択前後を実像確認する。"
+        }
+      ],
+      "nearestComparisons": [
+        "R391",
+        "R495原版",
+        "R401"
+      ]
+    }
+  ],
+  "checks": [
+    "固定source100 SHA256全一致、portable CSS10全一致（importのみ除外）。captures/reviewer-photo-4/checks.json。",
+    "独立actual portable avatars5/ratings5の標準native protocol全PASS、pageerrorsなし。reviewer-avatars-4/checks.json、reviewer-ratings-4/checks.json及びlogs。これは下記追加状態の不具合がないことを意味しない。",
+    "Avatar5: Enter/Space/ARIA、controlled拒否/受入、disabled/passive、empty-one、literal、画像成功/失敗fallback、label更新focus保持、users変更後reset現存値、destroy後不動作。長名320/390/768×LTRRTL全30条件、native文字Range>=64/hit>=44/外幅保持、forced/reduced。",
+    "Avatar5実Grace Hopper写真×1000/320×LTRRTLの20条件。decode成功後、暗背景・normal hover130ms/leave/reenter2回で文字・写真・hit/fontのroot相対座標不変を確認。写真はB034のローカルMatplotlib同梱サンプルコピーを利用。",
+    "Ratings5: Home/End/ArrowRight/Space、実radio確定、hover5→legendでpreview0/値不変、clear、controlled拒否/受入、readOnly native checked維持、disabled、required/clearable、実FormData/reset、destroy後reset不動作。",
+    "Ratings5×max2/3/5/10×1000/320×LTRRTLの80条件を追加操作・撮影。hover→legend→再hover→最終rank確定時の星/hit/fontを部品root相対座標で比較し不変。10段階長文320/390/768×LTRRTLの30条件とforced/reducedも実行。",
+    "追加共有更新: 全5でmax5→2直後のpreview5、value2→hover5→readOnly/disabled後150msでpreview5/filled5を再現。固定4のactual exportのみで評価。",
+    "追加forced暗色: 全5をCanvas黒で実撮影し、未選択星の濃色残りとRTL2/10の視覚反転を文字Rangeで実測。reviewer-rating-dark-4/checks.json。",
+    "原版native-avatar/native-rating画像、元監査、既承認の近似を比較。Tの通常造形と共通UI不具合を分けて判定。",
+    "共有rating.tsのfocus復元・dead reset guard・pointerover非rankでpreview解除を読了。今回の共有更新は正本100hash外。検査途中に主担当が次版の共有修正へ着手したため、現行canonicalのhashを固定4との一致証明には使わず、snapshot exportの実動作を証拠とする。",
+    "主担当avatars3の5×4 React実形式成功、ratings3の5×4成功との報告を補助参照。独立React再実行をしたとは扱わない。"
+  ],
+  "limits": [
+    "独立React四形式再実行はしていない。共有状態の追加不具合は固定portable nativeで再現した。",
+    "写真検査は一つの実肖像のobject-fitと接合。あらゆる顔位置を保証しない。",
+    "次版の正本修正は進行中だが、今回の記録には含めない。"
+  ]
+}
