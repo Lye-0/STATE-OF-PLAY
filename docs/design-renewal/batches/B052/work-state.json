@@ -1,5 +1,5 @@
 {
-  "state": "seven_approved_all_required_checks_pass",
+  "state": "completed",
   "snapshot": 2,
   "nativeSeven1": {
     "exit": 0
@@ -20,10 +20,12 @@
     "exit": 0
   },
   "unitFinal": {
-    "state": "running"
+    "state": "superseded",
+    "reason": "See unit-first-run.json; the coherent frozen-source whole suite passed."
   },
   "buildFinal": {
-    "state": "running"
+    "state": "superseded",
+    "reason": "The final frozen-source production build passed; see buildFrozenFinal."
   },
   "nativeSeven2": {
     "exit": 0
@@ -50,10 +52,20 @@
     "verdict": "all7pass"
   },
   "unitFrozenFinal": {
-    "state": "running",
+    "state": "passed",
+    "exit": 0,
+    "tests": 276,
+    "pass": 276,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0,
+    "durationMs": 1345820.919519,
     "sourcePinned": true,
     "heapMB": 8192,
-    "log": "docs/design-renewal/batches/B052/captures/logs/unit-frozen-final.log"
+    "command": "NODE_OPTIONS=--max-old-space-size=8192 npm test",
+    "log": "docs/design-renewal/batches/B052/captures/logs/unit-frozen-final.log",
+    "logSHA256": "e6f48e24985355c54b8face15e29a369bb660a44eacd5f8edd518f42715cf690"
   },
   "report517": {
     "exit": 0,

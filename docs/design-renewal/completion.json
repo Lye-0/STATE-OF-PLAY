@@ -1,0 +1,61 @@
+{
+  "state": "completed",
+  "completedAtUTC": "2026-10-09T10:29:27.282397+00:00",
+  "parts": 517,
+  "batches": 52,
+  "intentions": {
+    "A": 506,
+    "B": 11
+  },
+  "lastSourceCommit": "1fba09a8100777edbd1af54645bc39b0c16fdd11",
+  "allBatchIndependentReviews": "pass",
+  "allBatchPushes": "completed",
+  "sourceVerification": {
+    "authorFiles": 5170,
+    "immutableAuthorSetSHA256": "a032ab48bdfd7e322576a1a427ae7e903e0cbefbb5ed8026d834f7b43db72bdc",
+    "mismatches": 0
+  },
+  "untargetedAuthorPartsUnchanged": 1333,
+  "checks": {
+    "typecheck": "pass",
+    "unit": {
+      "state": "passed",
+      "exit": 0,
+      "tests": 276,
+      "pass": 276,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "durationMs": 1345820.919519,
+      "sourcePinned": true,
+      "heapMB": 8192,
+      "command": "NODE_OPTIONS=--max-old-space-size=8192 npm test",
+      "log": "docs/design-renewal/batches/B052/captures/logs/unit-frozen-final.log",
+      "logSHA256": "e6f48e24985355c54b8face15e29a369bb660a44eacd5f8edd518f42715cf690"
+    },
+    "productionBuild": "pass",
+    "batchNativeGalleryAndReact": "pass",
+    "730ComponentContracts": "pass",
+    "currentNativeAndReactExportFixtures": "pass"
+  },
+  "submission": {
+    "file": "docs/design-renewal/result-all.html",
+    "bytes": 12165525,
+    "parts": 517,
+    "images": 2272,
+    "initialMs": 1103,
+    "allDecodedMs": 1820,
+    "externalRequests": 0,
+    "errors": 0,
+    "width390": true,
+    "method": "Chromium setContent; file navigation blocked by environment policy",
+    "SHA256": "7cb0266dbc8f9407d4a3b2fe6be02541aed5e144e47bc3b23f93d9fe614d298d"
+  },
+  "records": "docs/design-renewal",
+  "actionsResultsTracked": false,
+  "limits": [
+    "No physical touch-device or screen-reader speech verification.",
+    "Visual approvals reflect the fixed design criteria and independent reviewer judgments."
+  ]
+}
