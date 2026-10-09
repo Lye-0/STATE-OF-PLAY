@@ -1,0 +1,172 @@
+{
+  "batch": "B034",
+  "round": 4,
+  "snapshot": "docs/design-renewal/batches/B034/snapshot/round-4",
+  "overall": "changes_requested",
+  "parts": [
+    {
+      "number": "R471",
+      "id": "cameo-profile",
+      "verdict": "pass",
+      "assessment": "元監査T。縦長の二重楕円の曲率と下の一本罫を保持し、写真・名前・所属の距離を揃えた。隅留めや小札を増やさず、肖像そのものが輪郭を決める。選択と実写真でも字面は安定。",
+      "findings": [],
+      "nearestComparisons": [
+        "R480",
+        "元R471"
+      ]
+    },
+    {
+      "number": "R472",
+      "id": "rail-pass-profile",
+      "verdict": "pass",
+      "assessment": "二本の連続したレールが各肖像の端の受けを通り、横の接続材から人物名の読む面へつながる。R256の片側軸やR302の縦レール通知とは、複数人物を一続きに支持する関係と二本の軸の間に置く肖像が異なる。長名でも接合を維持。",
+      "findings": [],
+      "nearestComparisons": [
+        "R256",
+        "R302",
+        "R417"
+      ]
+    },
+    {
+      "number": "R473",
+      "id": "folded-id-profile",
+      "verdict": "redesign",
+      "assessment": "前紙の背後に入る72pxの裏面は46px隠れ、露出は上の26pxの台形だけ。写真と名前は通常の前面カード内に収まり、右下切角を加えても、読む内容を担う折り構造になっていない。Aの主形として再設計が必要。",
+      "findings": [
+        {
+          "key": "R473-fold-reduced-to-tab",
+          "severity": "major",
+          "kind": "design",
+          "evidence": "captures/reviewer-materials-4/folded-id-profile-1000-ltr.png / captures/reviewer-photo-4/folded-id-profile-1000-ltr-dark.png。before上端14px、after上端−12px/高さ72px。",
+          "problem": "前紙の上に出る26pxの台形タブと32pxの切角以外は通常のIDカード。写真は接合より内側に離れ、折面が情報の配置を決めない。R259のファイル形、R142修正前の小折面付きカードとの近似を抜けていない。",
+          "proposal": "上の短いタブと単なる切角を廃止し、写真を載せる面と名前を載せる面が一枚の大きい折れを境に方向を変える構造へ。二つの読む領域を実際の折面に置き、端の小口を連続させる。単に裏タブを拡大する変更では不十分。"
+        }
+      ],
+      "nearestComparisons": [
+        "R259",
+        "R142修正前",
+        "元R473"
+      ]
+    },
+    {
+      "number": "R474",
+      "id": "stone-relief-profile",
+      "verdict": "pass",
+      "assessment": "半円状の深い受けと左へ露出する100×88pxの肖像、斜めの石の自由端、下の切断面が一体の支持関係を作る。単なる四辺の額縁ではなく肖像が左輪郭を大きく変える。狭幅で本文を下へ回しても写真と石の重なりが残る。",
+      "findings": [],
+      "nearestComparisons": [
+        "R474原版",
+        "R374",
+        "R479"
+      ]
+    },
+    {
+      "number": "R475",
+      "id": "bookplate-profile",
+      "verdict": "pass",
+      "assessment": "元監査T。書背と下の紙小口を軽く揃え、肖像と名前の横並びを維持する。大きい再設計の独創性を合格根拠にはせず、原版の密度と読みの改善として合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R021",
+        "R138",
+        "元R475"
+      ]
+    },
+    {
+      "number": "R476",
+      "id": "loop-handle-profile",
+      "verdict": "adjust",
+      "assessment": "88pxの空隙を持つ大きい取っ手の構想に対し、固定版のcomputed maskはnone。暗背景・実写真とも全面が不透明な閉じたアーチ札になり、R480とも外形が近い。抜きを成立させた実像でAの主形を再判定する。",
+      "findings": [
+        {
+          "key": "R476-hole-mask-none",
+          "severity": "major",
+          "kind": "consistency",
+          "evidence": "captures/reviewer-materials-4/checks.json: loop-handle-profile 全4条件 before.mask=\"none\"。同*-dark.png及びreviewer-photo-4実写真。",
+          "problem": "説明の高さ88pxの真の空隙が存在せず、肖像周囲まで閉じたアーチ面。通常の大きい丸上カードとの差が失われる。",
+          "proposal": "ブラウザが解釈できる明示した楕円半径でマスクを定義し、写真を入れても左右に背景へ抜ける空隙を確保する。暗背景・狭幅・RTL・長名で全層の抜けを確認してから、R441の弓及びR480との主形の違いを再審査する。"
+        }
+      ],
+      "nearestComparisons": [
+        "R441",
+        "R480",
+        "元R476"
+      ]
+    },
+    {
+      "number": "R477",
+      "id": "viewfinder-profile",
+      "verdict": "pass",
+      "assessment": "元監査T。写真の外側7pxの四つの短い角を保ち、名前の下線や外枠との競合を除いた。実写真を最も直接見せる形として、余白と選択の角色が安定する。",
+      "findings": [],
+      "nearestComparisons": [
+        "R316",
+        "R164",
+        "元R477"
+      ]
+    },
+    {
+      "number": "R478",
+      "id": "stitch-label-profile",
+      "verdict": "adjust",
+      "assessment": "一枚の織り地、開いた上端、下の斜めの自由端は原版の単純な横札と異なる。しかし前縁の帯が写真より後ろにあり、写真を約20px収納する構造が実描画で成立しない。素材の前後関係と状態点を修正する。",
+      "findings": [
+        {
+          "key": "R478-front-lip-behind-photo",
+          "severity": "major",
+          "kind": "consistency",
+          "evidence": "captures/reviewer-photo-4/stitch-label-profile-1000-ltr-dark.png。after top84px/height22px/z-index−1、portrait top20px/height82px。",
+          "problem": "幾何上は前縁が写真の下端へ18px重なるが、後ろの層なので実写真は下端まで全て見え、帯が背後を横切るだけになる。写真を前ポケットで保持する説明と実像が不一致。",
+          "proposal": "前縁だけを写真の前へ描き、写真の下部を実際に覆う。写真の人物の顔と本文は保ち、同じ場所のオンライン状態点は前縁の上へ退避して視認を維持する。単に同色帯を背面へ置く代替は不可。"
+        }
+      ],
+      "nearestComparisons": [
+        "R197",
+        "R257",
+        "R278",
+        "元R478"
+      ]
+    },
+    {
+      "number": "R479",
+      "id": "pebble-frame-profile",
+      "verdict": "pass",
+      "assessment": "非対称の肖像石と薄い楕円の受け、幅のある低い台座が、丸い肖像を通常のカードの中へ置く構成から離れている。実写真でも肖像が外周へ出ており、受けの重なりと台座の小口が読める。R264の器やR205の分割円環とは、肖像と銘の上下の支持関係が異なる。",
+      "findings": [],
+      "nearestComparisons": [
+        "R264",
+        "R205",
+        "R474",
+        "元R479"
+      ]
+    },
+    {
+      "number": "R480",
+      "id": "arch-portrait-profile",
+      "verdict": "pass",
+      "assessment": "元監査T。肖像と全体の二つのアーチの曲率を揃え、上6px・下8pxの厚みを統一。写真から名前への連続面を保ち、長名でも本文・ネイティブ押し面を動かさない。",
+      "findings": [],
+      "nearestComparisons": [
+        "R471",
+        "R476",
+        "元R480"
+      ]
+    }
+  ],
+  "checks": [
+    "固定source100 SHA-256全一致、portable CSS10全一致（import文のみ除外）。captures/reviewer-materials-4/checks.json。",
+    "独立Chromium actual portable native全10：Enter/Space、ARIA、controlled拒否/受入、disabled/passive、empty/one、literal文字、画像成功/失敗fallback、users変更後reset現存値、label更新focus保持、destroy後不動作。reviewer-avatars-4/checks.json、logs/reviewer-avatars-r4.log全10PASS、pageerrorsなし。",
+    "独立native長名・所属320/390/768×LTR/RTL全60条件、名の実TextNode Range最広行>=64、押し面>=44、外幅保持。normal hover/選択後の写真・名前・hit/font固定、forced/reduced実選択を実行。",
+    "追加normal-motion hover130ms/leave130ms/reenterを各10×1000/320×LTR/RTLの40条件で操作し、文字/肖像/hitのroot相対座標とfont不変をassert。暗背景で接合・透過を撮影。",
+    "実肖像は外部取得403後にローカル /usr/share/matplotlib/mpl-data/sample_data/grace_hopper.jpg を利用。画像decode成功後、全10×1000/320×LTR/RTLの40条件を独立撮影・操作。copiesはcaptures/reviewer-photo-4。1px画像だけによる実写真確認の代用はしていない。",
+    "元native-avatar画像とstage/narrow監査資料、既承認の近似部品を比較。T4件は元の構造を保持する精度基準、R6件は大きい固有形/実支持/空隙を基準として分離。",
+    "通常文字contrast-pairs23組は最低4.6048:1。主担当算出資料の比率と実画像を照合、forcedは独立native protocol及び撮影で確認。",
+    "shared-provenance afterのavatar.ts/react-host.tsx/signature.browser.tsの3hash一致を確認。controllerのfocus復元/現存resetとReact初期__html object同一化を読了。共有変更は正本100hash外である。",
+    "主担当logs/react-avatars-4.logは10×4 actual形式全PASS、signature-real-4は実Vite恒久18試験成功との記録。独立native確認と区別して補助証拠とする。"
+  ],
+  "limits": [
+    "独立したReact四形式の再実行は行っていない。Reactの実行結果は主担当ログを参照し、native挙動/ソースを独立確認した。",
+    "単一の実肖像写真によるobject-fitと素材重なりの検査。あらゆる顔位置の自動最適化を保証するものではない。",
+    "round5以降の修正はこの判定に含めない。R476は抜きが修復された実像を未判定のため、構想のみをA合格にはしていない。"
+  ]
+}

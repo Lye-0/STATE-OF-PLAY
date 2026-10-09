@@ -97,6 +97,13 @@ for row,part,review in approved:
   actual=next((p for p in reversed(native) if all((p/f"{row['id']}-{name}.png").exists() for name in ['initial','selected','narrow-320','long-rtl-320'])),None)
   assert actual is not None,f"Missing native long tag: {row['id']}"
   images+=figure(beforeBadge,'修正前・配布版のタグ')+figure(actual/f"{row['id']}-initial.png",'修正後・配布版の名称と実件数')+figure(actual/f"{row['id']}-selected.png",'修正後・実選択の状態')+figure(actual/f"{row['id']}-narrow-320.png",'修正後・320pxの長い名称と9桁件数')+figure(actual/f"{row['id']}-long-rtl-320.png",'修正後・320pxと右から左の長い名称')
+ if row['category']=='avatars':
+  beforeAvatar=w/'evidence/baseline'/f"{row['id']}-avatar.png"
+  assert beforeAvatar.exists(),f"Missing original real avatar: {row['id']}"
+  native=sorted((d/'captures').glob('avatars-self-*'),key=lambda p:int(p.name.split('-')[-1]))
+  actual=next((p for p in reversed(native) if all((p/f"{row['id']}-{name}.png").exists() for name in ['initial','image-fallback','narrow-320','long-rtl-320'])),None)
+  assert actual is not None,f"Missing native avatar fallback/long name: {row['id']}"
+  images+=figure(beforeAvatar,'修正前・配布版の人物紹介')+figure(actual/f"{row['id']}-initial.png",'修正後・実人物と状態')+figure(actual/f"{row['id']}-image-fallback.png",'修正後・画像と読込失敗時の代替')+figure(actual/f"{row['id']}-portrait.png",'修正後・実写真の肖像')+figure(actual/f"{row['id']}-narrow-320.png",'修正後・320pxの長い人物名')+figure(actual/f"{row['id']}-long-rtl-320.png",'修正後・320pxと右から左の長い人物名')
  if row['category']=='numbers':
   beforeNumber=w/'evidence/baseline'/f"{row['id']}-number.png"
   assert beforeNumber.exists(),f"Missing original real number field: {row['id']}"

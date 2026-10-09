@@ -1,0 +1,15 @@
+{
+  "before": {
+    "src/shared/signature/avatar.ts": "2d86c15fe65ea61ee6e0d103c32669caf77187fc147cd75b8c423b8f22e4ee54",
+    "src/shared/signature/react-host.tsx": "034087ffbc3b8a0e8531689fe4a8d17778854dc35ef064d6330f86f2b48cca57"
+  },
+  "after": {
+    "src/shared/signature/avatar.ts": "624159c0cd1450538b3265dc17b3cb83ab244ed67d72d6c60930cdd714401f30",
+    "tests/signature.browser.ts": "6abedac2099265425f75bc30b8b46958ee6f92b5d5d268c9a72fe1c75d40108e",
+    "src/shared/signature/react-host.tsx": "b38738841ab9b5859741fad64286230c2ea99c52c3cab7719a5c4b3643975e53"
+  },
+  "reproducedAllTenBaseline": "label update discards focus; users=[three] followed by reset restores removed default one",
+  "scope": "Avatar controller only; source/exterior of K and Liquid Glass components unchanged",
+  "reactReproduction": "controlled keyboard selection and prop updates replace focused native user through a new dangerouslySetInnerHTML object; retain the initial object identity",
+  "permanentRegression": "18 checks in actual Vite HTTP: original 96 Signature controls plus native current focus/reset and actual React OrbitalPortrait controlled focus/props/children DOM/unmount"
+}

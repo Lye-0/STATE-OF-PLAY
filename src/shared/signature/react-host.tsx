@@ -17,9 +17,9 @@ export function SignatureHost<O,S extends object>({kind,skin,options,render,crea
  latest.current=options;
  const loading=kind==='skeletons'&&(options as {loading?:boolean}).loading!==false;
  const uid=useId().replace(/[^a-zA-Z0-9_-]/g,'');
- const initial=useRef<{html:string}|null>(null);
- if(initial.current===null)initial.current={html:render(options,`sg-react-${uid}`)};
+ const initial=useRef<{__html:string}|null>(null);
+ if(initial.current===null)initial.current={__html:render(options,`sg-react-${uid}`)};
  useEffect(()=>{if(!root.current)return;const controller=create(root.current,latest.current);api.current=controller;return()=>{controller.destroy();api.current=null;};},[create]);
  useEffect(()=>{api.current?.update(options);},[options]);
- return <div ref={root} id={id} className={`sop-sig sop-${skin} ${className}`} data-sg-kind={kind} aria-busy={kind==='skeletons'?loading:undefined} style={style}><div hidden={kind==='skeletons'&&!loading} data-sg-owned dangerouslySetInnerHTML={{__html:initial.current.html}}/><div data-sg-slot hidden={loading} inert={loading||undefined}>{children}</div></div>;
+ return <div ref={root} id={id} className={`sop-sig sop-${skin} ${className}`} data-sg-kind={kind} aria-busy={kind==='skeletons'?loading:undefined} style={style}><div hidden={kind==='skeletons'&&!loading} data-sg-owned dangerouslySetInnerHTML={initial.current}/><div data-sg-slot hidden={loading} inert={loading||undefined}>{children}</div></div>;
 }

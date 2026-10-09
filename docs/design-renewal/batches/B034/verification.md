@@ -1,0 +1,13 @@
+# B034 検証記録
+
+人物紹介A10。独立4は7合格/2調整/1再設計。R476無効なCSS ellipse半径で空隙が描かれず、5の有効な固定半径も大きい輪の主形が弱いと再指摘。最終7は左右16px/上9pxの連続輪、上の真空隙/実写真と両側の実受け/下の名前の握りへ再設計。R473は短いタブのカードから、写真の斜め面と32pxずれる名前の斜め面をfullwidth40pxの実折面でつなぐ一枚紙へ。R478の前帯をz3へ置き、写真を約18px覆い、在席点は帯上へ移動。
+
+全10原版でlabel構造更新がnativefocusを失い、users変更後resetが消えたdefaultユーザーIDを復元することを再現。sharedavatarは同一/近傍の現存ユーザーへのfocusと有効なresetへ修正、destroy後resetも停止。React制御選択でもfocusを失うことを実4形式で発見。sharedreact-hostのdangerouslySetInnerHTMLオブジェクトを初期refと同一化し、通常rerenderでcontroller所有DOMを上書きしない。恒久tests/signature.browser.tsへnativefocus/validresetと実React OrbitalPortrait制御選択/label-users/childDOM/cleanup回帰を追加し、隔離正本コピーの実Vite HTTP18試験が成功。変更前後hashはshared-provenance.json。
+
+最終7native10はnativeEnter/Space/ARIA/controlled拒否受入/disabled/passive/empty-one/literalname/image decode-fallback/現存reset/focus/長い人物名60条件/実TEXT_NODE幅/nativephoto-name-hit固定/真loop/前帯とpresence/forced/reduced/cleanup成功。Matplotlib同梱のGrace Hopperの実JPEGを全10へ読み、decoded像でも確認。React10×TSX/JSX×portable/originalの実4形式7は同じnative操作/controlled/default/独立値/propsfocus/childrenDOM-selection保持/empty-one/長文60条件/forced/reduced/StrictMode成功。全型4/730契約7/avatars20native×2layouts4/実gallery10最終7成功。4以後は部品のCSS/説明だけ変更しmarkupとinitializerは不変。
+
+独立最終7全10合格、100hash/CSS10一致。473二読面/折れ接合、476大きい左右空隙/実受け/握り16px接合、478写真被覆/在席点を実画像と実CSSで確認。Liquid GlassとKの部品ソース/外観は変更なし。共有controllerの意味修正とホストDOM修正は同じruntimeを使う他の部品にも作用する。
+
+Chromium検証。forced/reducedはエミュレーション。別OS/ブラウザ/実機touch/SRは未確認。全730の全面再操作ではない。最終production buildは全517完了時。
+
+単組の画像内蔵HTMLは10件/90画像/871757bytes、Chromium setContentの初期90ms/全画像decode271ms、外部通信0/例外0/390px溢れなし。直接file://は環境のnavigation制限で未確認。
