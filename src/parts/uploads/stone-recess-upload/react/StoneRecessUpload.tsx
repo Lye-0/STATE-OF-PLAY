@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "accept": ".png,.jpg,.webp,.txt,.pdf"
 };
 export type StoneRecessUploadProps = FoundationProps;
-/** 斜めの石板を切り込んだ、深い平底のファイル受面。淡緑の標準角丸枠を廃止し、34pxずれた四辺の実石板と、30/38pxの上下肉厚を残す内側の切込みへ変更する。内面は上の暗い切断面と下の淡い受面を持ち、中央の固定文字を斜めに変形させずに表示する。 */
+/** 薄い石の切面に、水平で広い読み取り床を設けたドロップ領域。外枠の占有を減らし、案内と選択操作を中心へ置く。 */
 export default forwardRef<HTMLDivElement, StoneRecessUploadProps>(function StoneRecessUpload(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });

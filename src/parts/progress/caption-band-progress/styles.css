@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 大きい数値と、五つの階段状の通過面を持つ進捗表示。元の五階段を維持し、面の高さと進行方向の対応をそのまま残す。20%ごとの固定区切りに対し、充填は実割合で進む。説明は実際の階段形へ一致させ、存在しない斜め終端の説明を外す。 */
+/* 実数値を印刷した紙帯が前後へ折り返す進捗表示。裏へ回る帯と正面のキャプションをつなぎ、前面の下縁に実値の細い進捗線を置く。 */
 
 .sop-foundation.sop-caption-band-progress.sop-caption-band-progress{--paper:#f9f0da;--ink:#73593a;--muted:#867052;--accent:#ad8752;--edge:#ceba97;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-accent2:var(--accent);--ff-line:var(--edge);--ff-radius:0;color:var(--ink);color-scheme:light;max-width:min(100%,380px);min-width:0;width:100%;padding:22px;background:var(--paper);overflow-wrap:anywhere;container-type:inline-size}
 .sop-foundation.sop-caption-band-progress.sop-caption-band-progress,.sop-foundation.sop-caption-band-progress.sop-caption-band-progress *,.sop-foundation.sop-caption-band-progress.sop-caption-band-progress *::before,.sop-foundation.sop-caption-band-progress.sop-caption-band-progress *::after{box-sizing:border-box}
@@ -29,3 +29,28 @@
 .sop-foundation.sop-caption-band-progress.sop-caption-band-progress[data-indeterminate=true] .ff-progress-fill{width:35%}
 @media(prefers-reduced-motion:reduce){.sop-foundation.sop-caption-band-progress.sop-caption-band-progress[data-indeterminate=true] .ff-progress-fill{width:40%}}
 @media(forced-colors:active){.sop-foundation.sop-caption-band-progress.sop-caption-band-progress .ff-progress-track{padding-inline:0!important}}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-caption-band-progress.sop-caption-band-progress{--paper:#f8f0e9;--ink:#584237;--muted:#725e52;--accent:#9c5c40;--edge:#cab29f}
+.sop-foundation.sop-caption-band-progress.sop-caption-band-progress .ff-progress-visual{position:relative;min-height:150px;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:0;padding-bottom:0;border-bottom:1px solid #b29a87}
+.sop-foundation.sop-caption-band-progress.sop-caption-band-progress .ff-progress-visual .ff-reading{grid-column:2;grid-row:1;margin:0;padding:14px 0 16px 16px;font:44px/1.2 Georgia,'Yu Mincho',serif;border:0;background:var(--paper);color:#584237}
+.sop-foundation.sop-caption-band-progress.sop-caption-band-progress .ff-progress-track{grid-column:1 / -1;grid-row:2;width:100%;height:15px;min-height:15px;clip-path:none;mask:none;border:0;background:#e0cbbd;overflow:hidden}
+.sop-foundation.sop-caption-band-progress.sop-caption-band-progress .ff-progress-fill{background:#9c5c40;height:100%;box-shadow:none;filter:none}
+.sop-foundation.sop-caption-band-progress.sop-caption-band-progress .ff-progress-track::after{display:none}
+.sop-foundation.sop-caption-band-progress.sop-caption-band-progress .ff-progress-visual::before{content:'';display:block;position:absolute;left:0;bottom:36px;width:40%;height:10px;border-block:1px solid #bda18d;background:none}
+.sop-foundation.sop-caption-band-progress.sop-caption-band-progress .ff-process-steps{font:11px/1.6 Georgia,'Yu Mincho',serif;margin-top:14px}
+
+}
+
+@media(forced-colors:none){
+.sop-foundation.sop-caption-band-progress.sop-caption-band-progress .ff-progress-visual{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto;gap:0;padding:18px 12px;min-height:150px;border:0;isolation:isolate}
+.sop-foundation.sop-caption-band-progress.sop-caption-band-progress .ff-progress-visual::before{content:'';position:absolute;inset:0 0 auto 24px;width:auto;height:36px;border:0;background:#d0af95;clip-path:polygon(0 0,100% 0,calc(100% - 12px) 100%,0 100%);z-index:-1}
+.sop-foundation.sop-caption-band-progress.sop-caption-band-progress .ff-progress-visual::after{content:'';position:absolute;inset:auto 24px 0 0;height:36px;background:#d0af95;clip-path:polygon(12px 0,100% 0,100% 100%,0 100%);z-index:-1}
+.sop-foundation.sop-caption-band-progress.sop-caption-band-progress .ff-progress-visual .ff-reading{position:relative;grid-column:1;grid-row:1;justify-content:center;align-items:baseline;width:100%;margin:0;padding:22px 8px 18px;background:#fff8ed;border:0;border-top:1px solid #e5d1bc;font:48px/1.2 Georgia,serif;color:#65432e;box-shadow:0 3px #9970511f}
+.sop-foundation.sop-caption-band-progress.sop-caption-band-progress .ff-progress-track{grid-column:1;grid-row:2;width:100%;height:7px;min-height:7px;background:#e3cbb7;overflow:hidden;clip-path:none;mask:none;border:0;z-index:1}
+.sop-foundation.sop-caption-band-progress.sop-caption-band-progress .ff-progress-fill{height:100%;background:#99603e;box-shadow:none;filter:none}
+.sop-foundation.sop-caption-band-progress.sop-caption-band-progress .ff-progress-track::before,.sop-foundation.sop-caption-band-progress.sop-caption-band-progress .ff-progress-track::after{display:none}
+.sop-foundation.sop-caption-band-progress.sop-caption-band-progress .ff-process-steps{margin-top:16px}
+.sop-foundation.sop-caption-band-progress.sop-caption-band-progress[data-indeterminate=true] .ff-progress-fill{width:0!important;animation:none}
+}

@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 柔らかい五段のテラスへ、実割合を満たす進捗表示。元の段状の進行を保持し、暗いぼかしと強い緑の勾配を廃止する。固定した段の高さと1pxの境界、影のない到達面で終端を明確にし、数値と進む量を揃える。 */
+/* 五段の段丘を実値の位置まで満たす進捗表示。隣の段との細い隙間と下端の断面で、高さと充填を読み分ける。 */
 
 .sop-foundation.sop-terraced-progress.sop-terraced-progress{--paper:#f9f0da;--ink:#73593a;--muted:#867052;--accent:#ad8752;--edge:#ceba97;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-accent2:var(--accent);--ff-line:var(--edge);--ff-radius:0;color:var(--ink);color-scheme:light;max-width:min(100%,380px);min-width:0;width:100%;padding:22px;background:var(--paper);overflow-wrap:anywhere;container-type:inline-size}
 .sop-foundation.sop-terraced-progress.sop-terraced-progress,.sop-foundation.sop-terraced-progress.sop-terraced-progress *,.sop-foundation.sop-terraced-progress.sop-terraced-progress *::before,.sop-foundation.sop-terraced-progress.sop-terraced-progress *::after{box-sizing:border-box}
@@ -29,3 +29,14 @@
 .sop-foundation.sop-terraced-progress.sop-terraced-progress[data-indeterminate=true] .ff-progress-fill{width:35%}
 @media(prefers-reduced-motion:reduce){.sop-foundation.sop-terraced-progress.sop-terraced-progress[data-indeterminate=true] .ff-progress-fill{width:40%}}
 @media(forced-colors:active){.sop-foundation.sop-terraced-progress.sop-terraced-progress .ff-progress-track{padding-inline:0!important}}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-terraced-progress.sop-terraced-progress{--paper:#eef1eb;--ink:#3e534d;--muted:#5a6e65;--accent:#568170;--edge:#adbfaf}
+.sop-foundation.sop-terraced-progress.sop-terraced-progress .ff-progress-track{height:65px;background:#cad8ce;clip-path:polygon(0 65%,20% 65%,20% 49%,40% 49%,40% 33%,60% 33%,60% 17%,80% 17%,80% 0,100% 0,100% 100%,0 100%)}
+.sop-foundation.sop-terraced-progress.sop-terraced-progress .ff-progress-fill{background:linear-gradient(0deg,#416857 0 5px,#6b917c 5px);box-shadow:none;filter:none}
+.sop-foundation.sop-terraced-progress.sop-terraced-progress .ff-progress-track::after{inset:0;background:repeating-linear-gradient(90deg,transparent 0 calc(20% - 2px),#eef1eb calc(20% - 2px) 20%)}
+.sop-foundation.sop-terraced-progress.sop-terraced-progress .ff-progress-visual .ff-reading{color:#3e5e4f;font-size:44px}
+.sop-foundation.sop-terraced-progress.sop-terraced-progress .ff-process-steps{font-size:11px}
+
+}

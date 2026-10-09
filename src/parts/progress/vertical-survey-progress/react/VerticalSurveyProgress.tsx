@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "max": 100
 };
 export type VerticalSurveyProgressProps = FoundationProps;
-/** 百分率と並ぶ縦の測量柱。単一の柱が下から満ち、横目盛りが量を読ませる。 */
+/** 細い測量尺と、正面に固定した数値を持つ進捗表示。実値の高さに赤い指示線を置き、空の額縁を取り除く。 */
 export default forwardRef<HTMLDivElement, VerticalSurveyProgressProps>(function VerticalSurveyProgress(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderProgress} mountContent={mountProgress}/>;
 });

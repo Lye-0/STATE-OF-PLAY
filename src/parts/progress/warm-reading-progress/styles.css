@@ -1,8 +1,21 @@
 @import "../../../shared/foundation/base.css";
-/* Warm Reading Progress — 読み進めた量を細い帯で示す。 */
+/* Warm Reading Progress — 本文に添える細い進捗線と端の数値。見出しと段階名を読み物の組版へ揃え、広い計器面を持ち込まない。 */
 .sop-foundation.sop-warm-reading-progress {--ff-base:#e6dfd2;--ff-panel:#f6efdf;--ff-ink:#453d32;--ff-muted:#5b4c36;--ff-accent:#745933;--ff-accent2:#745933;--ff-line:#c2b399;--ff-radius:5px;color-scheme:light;background:#e6dfd2;padding:18px;border-radius:4px}.sop-foundation.sop-warm-reading-progress .ff-eyebrow{display:none}.sop-foundation.sop-warm-reading-progress .ff-heading{line-height:1.6;font-size:12px}.sop-foundation.sop-warm-reading-progress .ff-floating{color:var(--ff-ink);background:var(--ff-panel)}.sop-foundation.sop-warm-reading-progress .ff-progress-visual{border:0;border-bottom:1px solid #cbb995;border-radius:0;background:transparent;padding:0 0 12px}.sop-foundation.sop-warm-reading-progress .ff-progress-track{height:5px;border:0;border-radius:0}.sop-foundation.sop-warm-reading-progress .ff-reading{font-size:24px;font-family:serif}.sop-foundation.sop-warm-reading-progress .ff-progress-fill{box-shadow:none}
 .sop-foundation.sop-warm-reading-progress{max-width:100%}.sop-foundation.sop-warm-reading-progress,.sop-foundation.sop-warm-reading-progress *{box-sizing:border-box}.sop-foundation.sop-warm-reading-progress :is(button,input,textarea,a){min-width:0}
 .sop-foundation.sop-warm-reading-progress:focus-visible,.sop-foundation.sop-warm-reading-progress :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-foundation.sop-warm-reading-progress,.sop-foundation.sop-warm-reading-progress *,.sop-foundation.sop-warm-reading-progress::before,.sop-foundation.sop-warm-reading-progress::after,.sop-foundation.sop-warm-reading-progress *::before,.sop-foundation.sop-warm-reading-progress *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-foundation.sop-warm-reading-progress[data-sop-paused] *,.sop-foundation.sop-warm-reading-progress[data-paused=true] *,.sop-foundation.sop-warm-reading-progress[data-motion-running=false] *,.sop-foundation.sop-warm-reading-progress[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-foundation.sop-warm-reading-progress{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-warm-reading-progress :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-warm-reading-progress.sop-warm-reading-progress{--ff-panel:#fffdf6;--ff-base:#f4f0e6;--ff-ink:#4a4336;--ff-muted:#696050;--ff-accent:#8b714c;--ff-line:#c8bca5;background:#fffdf6;padding:22px;border-inline-start:4px solid #b29a72;border-radius:0}
+.sop-foundation.sop-warm-reading-progress.sop-warm-reading-progress .ff-heading{font:600 15px/1.7 Georgia,'Yu Mincho',serif}
+.sop-foundation.sop-warm-reading-progress.sop-warm-reading-progress .ff-eyebrow{display:none}
+.sop-foundation.sop-warm-reading-progress.sop-warm-reading-progress .ff-progress-visual{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:14px;min-height:80px}
+.sop-foundation.sop-warm-reading-progress.sop-warm-reading-progress .ff-progress-track{grid-column:1;grid-row:1;height:4px;background:#e5ddcd;min-width:0}
+.sop-foundation.sop-warm-reading-progress.sop-warm-reading-progress .ff-progress-fill{background:#8b714c}
+.sop-foundation.sop-warm-reading-progress.sop-warm-reading-progress .ff-reading{grid-column:2;grid-row:1;margin:0;font:28px/1.3 Georgia,'Yu Mincho',serif;color:#4a4336}
+.sop-foundation.sop-warm-reading-progress.sop-warm-reading-progress .ff-process-steps{display:flex;gap:12px;justify-content:space-between;margin-top:0;padding-top:12px;border-top:1px solid #d8ceba;font-size:11px;line-height:1.7}
+
+}

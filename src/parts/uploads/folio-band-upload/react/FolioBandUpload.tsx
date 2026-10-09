@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "accept": ".png,.jpg,.webp,.txt,.pdf"
 };
 export type FolioBandUploadProps = FoundationProps;
-/** 露出した厚い背から、四つの中空の綴じ環を実際の紙孔へ通すファイル選択。平たい表紙と細い留め帯を廃止し、28pxの背、20pxの空隙、実紙面へ渡る72pxの環を作る。環の先端は紙面の孔へ入り、選択した実ファイルの行も同じ背へ個別の環で綴じる。文字と削除を綴じる余白から離し、RTLでも背と孔が同じ側へ移る。 */
+/** 綴じ具で選んだファイルを束ねるドロップ領域。狭幅では綴じ代を縮め、主ラベルと選択操作が自然に読める幅を確保する。 */
 export default forwardRef<HTMLDivElement, FolioBandUploadProps>(function FolioBandUpload(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });

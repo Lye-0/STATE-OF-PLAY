@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 十の実区間と真っ直ぐな上下の基準を持つ、折尺の進捗表示。元の十区画を保持し、全体のskewを外して高さ42pxへ統一する。区画は固定した10%ごと、進行面は実割合の幅だけを満たし、部分到達の位置も見える。数字は定規の上へ固定する。 */
+/* 折尺の五つの面を交互に起こした進捗表示。つながった節と目盛を残し、実値の充填が折れた面を横切る。数値は正面へ固定して読み取れる。 */
 
 .sop-foundation.sop-segmented-ruler-progress.sop-segmented-ruler-progress{--paper:#f9f0da;--ink:#73593a;--muted:#867052;--accent:#ad8752;--edge:#ceba97;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-accent2:var(--accent);--ff-line:var(--edge);--ff-radius:0;color:var(--ink);color-scheme:light;max-width:min(100%,380px);min-width:0;width:100%;padding:22px;background:var(--paper);overflow-wrap:anywhere;container-type:inline-size}
 .sop-foundation.sop-segmented-ruler-progress.sop-segmented-ruler-progress,.sop-foundation.sop-segmented-ruler-progress.sop-segmented-ruler-progress *,.sop-foundation.sop-segmented-ruler-progress.sop-segmented-ruler-progress *::before,.sop-foundation.sop-segmented-ruler-progress.sop-segmented-ruler-progress *::after{box-sizing:border-box}
@@ -29,3 +29,26 @@
 .sop-foundation.sop-segmented-ruler-progress.sop-segmented-ruler-progress[data-indeterminate=true] .ff-progress-fill{width:35%}
 @media(prefers-reduced-motion:reduce){.sop-foundation.sop-segmented-ruler-progress.sop-segmented-ruler-progress[data-indeterminate=true] .ff-progress-fill{width:40%}}
 @media(forced-colors:active){.sop-foundation.sop-segmented-ruler-progress.sop-segmented-ruler-progress .ff-progress-track{padding-inline:0!important}}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-segmented-ruler-progress.sop-segmented-ruler-progress{--paper:#f1f1e8;--ink:#3d4e54;--muted:#5a6a70;--accent:#527889;--edge:#b3c1c4}
+.sop-foundation.sop-segmented-ruler-progress.sop-segmented-ruler-progress .ff-progress-visual{padding-bottom:17px}
+.sop-foundation.sop-segmented-ruler-progress.sop-segmented-ruler-progress .ff-progress-track{height:42px;overflow:visible;background:#d6dfe0;border:0;border-radius:0;clip-path:none;mask:none}
+.sop-foundation.sop-segmented-ruler-progress.sop-segmented-ruler-progress .ff-progress-fill{background:#628797;height:100%;box-shadow:inset 0 2px #91a9b0;filter:none}
+.sop-foundation.sop-segmented-ruler-progress.sop-segmented-ruler-progress .ff-progress-track::after{inset:0;border:0;background:repeating-linear-gradient(90deg,transparent 0 calc(10% - 2px),var(--paper) calc(10% - 2px) 10%);clip-path:polygon(0 0,49% 0,49% 8px,51% 8px,51% 0,100% 0,100% 100%,51% 100%,51% calc(100% - 8px),49% calc(100% - 8px),49% 100%,0 100%)}
+.sop-foundation.sop-segmented-ruler-progress.sop-segmented-ruler-progress .ff-progress-track::before{content:'';display:block;position:absolute;inset:47px 0 auto;height:12px;border-bottom:1px solid #9aaeb5;background:repeating-linear-gradient(90deg,#657c86 0 1px,transparent 1px 10%);pointer-events:none}
+.sop-foundation.sop-segmented-ruler-progress.sop-segmented-ruler-progress .ff-progress-visual .ff-reading{font-size:46px;color:#3d5662}
+.sop-foundation.sop-segmented-ruler-progress.sop-segmented-ruler-progress .ff-process-steps{font-size:11px}
+
+}
+
+@media(forced-colors:none){
+.sop-foundation.sop-segmented-ruler-progress.sop-segmented-ruler-progress .ff-progress-visual{padding:0 0 6px;gap:22px}
+.sop-foundation.sop-segmented-ruler-progress.sop-segmented-ruler-progress .ff-progress-track{height:70px;overflow:hidden;background:#d7dfdd;clip-path:polygon(0 10px,20% 0,40% 10px,60% 0,80% 10px,100% 0,100% calc(100% - 10px),80% 100%,60% calc(100% - 10px),40% 100%,20% calc(100% - 10px),0 100%);mask:none}
+.sop-foundation.sop-segmented-ruler-progress.sop-segmented-ruler-progress .ff-progress-fill{height:100%;background:#6a8991;box-shadow:none;filter:none;transition:width .25s ease}
+.sop-foundation.sop-segmented-ruler-progress.sop-segmented-ruler-progress .ff-progress-track::before{display:block;inset:0;height:auto;border:0;background:repeating-linear-gradient(90deg,#fff4 0 20%,#0001 20% 40%);z-index:2}
+.sop-foundation.sop-segmented-ruler-progress.sop-segmented-ruler-progress .ff-progress-track::after{display:block;inset:12px 0 12px;height:auto;border:0;clip-path:none;background:repeating-linear-gradient(90deg,transparent 0 calc(20% - 1px),#455e664d calc(20% - 1px) 20%),repeating-linear-gradient(90deg,#344f58 0 1px,transparent 1px 2%) left bottom/100% 9px no-repeat;z-index:3}
+.sop-foundation.sop-segmented-ruler-progress.sop-segmented-ruler-progress .ff-progress-visual .ff-reading{font:46px/1.15 Georgia,serif;border-bottom:1px solid #b3c1c4;padding-bottom:10px}
+.sop-foundation.sop-segmented-ruler-progress.sop-segmented-ruler-progress[data-indeterminate=true] .ff-progress-fill{width:0!important;animation:none}
+}

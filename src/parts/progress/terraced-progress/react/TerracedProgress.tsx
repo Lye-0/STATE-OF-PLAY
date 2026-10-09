@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "max": 100
 };
 export type TerracedProgressProps = FoundationProps;
-/** 柔らかい五段のテラスへ、実割合を満たす進捗表示。元の段状の進行を保持し、暗いぼかしと強い緑の勾配を廃止する。固定した段の高さと1pxの境界、影のない到達面で終端を明確にし、数値と進む量を揃える。 */
+/** 五段の段丘を実値の位置まで満たす進捗表示。隣の段との細い隙間と下端の断面で、高さと充填を読み分ける。 */
 export default forwardRef<HTMLDivElement, TerracedProgressProps>(function TerracedProgress(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderProgress} mountContent={mountProgress}/>;
 });

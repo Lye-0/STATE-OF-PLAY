@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "max": 100
 };
 export type SegmentedRulerProgressProps = FoundationProps;
-/** 十の実区間と真っ直ぐな上下の基準を持つ、折尺の進捗表示。元の十区画を保持し、全体のskewを外して高さ42pxへ統一する。区画は固定した10%ごと、進行面は実割合の幅だけを満たし、部分到達の位置も見える。数字は定規の上へ固定する。 */
+/** 折尺の五つの面を交互に起こした進捗表示。つながった節と目盛を残し、実値の充填が折れた面を横切る。数値は正面へ固定して読み取れる。 */
 export default forwardRef<HTMLDivElement, SegmentedRulerProgressProps>(function SegmentedRulerProgress(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderProgress} mountContent={mountProgress}/>;
 });

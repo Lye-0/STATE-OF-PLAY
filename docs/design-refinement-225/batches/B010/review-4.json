@@ -1,0 +1,252 @@
+{
+  "batch": "B010",
+  "round": 4,
+  "overall": "pass",
+  "parts": [
+    {
+      "id": "vertical-survey-progress",
+      "number": 334,
+      "verdict": "pass",
+      "note": "尺が論理方向へ揃い、222pxホスト・100%のLTR/RTLで単位と尺の交差0px。縦目盛と固定数値の別列を維持し、0/25/100/割合不明も整合。",
+      "findings": [],
+      "evidence": [
+        "measurements-4.json",
+        "contrast-summary-4.json",
+        "evidence-4/progress-portable-0-sheet.jpg",
+        "evidence-4/progress-gallery-0-sheet.jpg",
+        "measurements-focused-4.json"
+      ],
+      "reviewed": [
+        "round4 portable/実gallery CSS環境：通常hover入口/解除/再進入",
+        "320px長文RTL・reduced/forced・造形/可読性再評価",
+        "0/25/100/割合不明：R336/R338 unknownのfill幅0px・animations空"
+      ]
+    },
+    {
+      "id": "segmented-ruler-progress",
+      "number": 336,
+      "verdict": "pass",
+      "note": "五つの折尺面の山谷・面の明暗・連続目盛が一体になり、一般的な十区画バーから構造差を作った。数値は固定し、実値の充填が折尺面上を進む。0/25/100および割合不明で表示と値の整合を確認。",
+      "findings": [],
+      "evidence": [
+        "measurements-4.json",
+        "contrast-summary-4.json",
+        "evidence-4/progress-portable-0-sheet.jpg",
+        "evidence-4/progress-gallery-0-sheet.jpg"
+      ],
+      "reviewed": [
+        "round4 portable/実gallery CSS環境：通常hover入口/解除/再進入",
+        "320px長文RTL・reduced/forced・造形/可読性再評価",
+        "0/25/100/割合不明：R336/R338 unknownのfill幅0px・animations空"
+      ]
+    },
+    {
+      "id": "caption-band-progress",
+      "number": 338,
+      "verdict": "pass",
+      "note": "数値を載せる正面の紙帯、背面へ回る上下の折返し、前面下縁の実値線が接続し、空の短線を加えた状態から情報を支える構造へ改善。通常/狭幅/RTLも明快。",
+      "findings": [],
+      "evidence": [
+        "measurements-4.json",
+        "contrast-summary-4.json",
+        "evidence-4/progress-portable-0-sheet.jpg",
+        "evidence-4/progress-gallery-0-sheet.jpg"
+      ],
+      "reviewed": [
+        "round4 portable/実gallery CSS環境：通常hover入口/解除/再進入",
+        "320px長文RTL・reduced/forced・造形/可読性再評価",
+        "0/25/100/割合不明：R336/R338 unknownのfill幅0px・animations空"
+      ]
+    },
+    {
+      "id": "terraced-progress",
+      "number": 339,
+      "verdict": "pass",
+      "note": "作者と共有ソースのround3同一hashを確認し、同roundの独立画像・操作検査を継承。五段の高さ・細い間隔・下端の断面で段丘として読める。値の実充填と割合不明の解除も整合し、R338との重複は整理された。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "contrast-summary-3.json",
+        "motion-summary-3.json",
+        "evidence-3/progress-portable-0-sheet.jpg",
+        "evidence-3/progress-portable-3-sheet.jpg",
+        "evidence-3/progress-gallery-0-sheet.jpg",
+        "evidence-3/progress-gallery-3-sheet.jpg",
+        "review-3.json",
+        "hash-summary-4.json"
+      ],
+      "reviewed": [
+        "round4作者/共有hash不変確認",
+        "round3検査を継承"
+      ]
+    },
+    {
+      "id": "linear-radar-progress",
+      "number": 342,
+      "verdict": "pass",
+      "note": "作者と共有ソースのround3同一hashを確認し、同roundの独立画像・操作検査を継承。金色の重い額縁を抑え、細い格子面と実値に追従する指示線を主役へ変更。0/25/100の位置と割合不明時の線非表示が対応する。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "contrast-summary-3.json",
+        "motion-summary-3.json",
+        "evidence-3/progress-portable-0-sheet.jpg",
+        "evidence-3/progress-portable-3-sheet.jpg",
+        "evidence-3/progress-gallery-0-sheet.jpg",
+        "evidence-3/progress-gallery-3-sheet.jpg",
+        "review-3.json",
+        "hash-summary-4.json"
+      ],
+      "reviewed": [
+        "round4作者/共有hash不変確認",
+        "round3検査を継承"
+      ]
+    },
+    {
+      "id": "warm-reading-progress",
+      "number": 350,
+      "verdict": "pass",
+      "note": "作者と共有ソースのround3同一hashを確認し、同roundの独立画像・操作検査を継承。細い本文沿いの線と端の小さな数値、見出しと段階名の組版が読み物の進捗に適する。広い計器面を使うAとの用途差があり、最小文字contrastも4.521:1。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "contrast-summary-3.json",
+        "motion-summary-3.json",
+        "evidence-3/progress-portable-0-sheet.jpg",
+        "evidence-3/progress-portable-3-sheet.jpg",
+        "evidence-3/progress-gallery-0-sheet.jpg",
+        "evidence-3/progress-gallery-3-sheet.jpg",
+        "review-3.json",
+        "hash-summary-4.json"
+      ],
+      "reviewed": [
+        "round4作者/共有hash不変確認",
+        "round3検査を継承"
+      ]
+    },
+    {
+      "id": "open-corner-upload",
+      "number": 356,
+      "verdict": "pass",
+      "note": "作者と共有ソースのround3同一hashを確認し、同roundの独立画像・操作検査を継承。左右のガイドと手前の立ち上がった受け皿が、ファイルを受け取る開いたトレーとして読める。選択後の書類行と削除も明快で、単なる四隅線より構造が進んだ。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "contrast-summary-3.json",
+        "motion-summary-3.json",
+        "measurements-uploads-3.json",
+        "evidence-3/uploads-portable-0-sheet.jpg",
+        "evidence-3/files-portable-sheet.jpg",
+        "evidence-3/uploads-gallery-0-sheet.jpg",
+        "evidence-3/files-gallery-sheet.jpg",
+        "review-3.json",
+        "hash-summary-4.json"
+      ],
+      "reviewed": [
+        "round4作者/共有hash不変確認",
+        "round3検査を継承"
+      ]
+    },
+    {
+      "id": "stone-recess-upload",
+      "number": 359,
+      "verdict": "pass",
+      "note": "作者と共有ソースのround3同一hashを確認し、同roundの独立画像・操作検査を継承。斜めの外縁を細くし、広い水平の読取り床を確保。枠より案内と選択が先に見え、素材の切面は残る。通常・長文・選択済みの表示は安定。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "contrast-summary-3.json",
+        "motion-summary-3.json",
+        "measurements-uploads-3.json",
+        "evidence-3/uploads-portable-0-sheet.jpg",
+        "evidence-3/files-portable-sheet.jpg",
+        "evidence-3/uploads-gallery-0-sheet.jpg",
+        "evidence-3/files-gallery-sheet.jpg",
+        "review-3.json",
+        "hash-summary-4.json"
+      ],
+      "reviewed": [
+        "round4作者/共有hash不変確認",
+        "round3検査を継承"
+      ]
+    },
+    {
+      "id": "folio-band-upload",
+      "number": 360,
+      "verdict": "pass",
+      "note": "222pxホストの既定ラベルはLTR/RTLとも一行となり末尾一文字の孤立を解消。冊子の綴じ代と選択済み書類のつながりを保ち、長いファイル名・native/form/resetも再確認。",
+      "findings": [],
+      "evidence": [
+        "measurements-4.json",
+        "contrast-summary-4.json",
+        "measurements-uploads-4.json",
+        "evidence-4/uploads-portable-0-sheet.jpg",
+        "evidence-4/uploads-gallery-0-sheet.jpg",
+        "evidence-4/files-portable-sheet.jpg",
+        "evidence-4/files-gallery-sheet.jpg",
+        "measurements-focused-4.json"
+      ],
+      "reviewed": [
+        "round4 portable/実gallery CSS環境：通常hover入口/解除/再進入",
+        "320px長文RTL・reduced/forced・造形/可読性再評価",
+        "222px既定label1行・native/API/FormData・選択/削除/drop/reject/disabled/reset"
+      ]
+    },
+    {
+      "id": "perforated-upload",
+      "number": 361,
+      "verdict": "pass",
+      "note": "222pxホストの既定ラベルはLTR/RTLとも一行となり末尾一文字の孤立を解消。切取帯と本文の関係を保ち、長いファイル名・native/form/resetも再確認。",
+      "findings": [],
+      "evidence": [
+        "measurements-4.json",
+        "contrast-summary-4.json",
+        "measurements-uploads-4.json",
+        "evidence-4/uploads-portable-0-sheet.jpg",
+        "evidence-4/uploads-gallery-0-sheet.jpg",
+        "evidence-4/files-portable-sheet.jpg",
+        "evidence-4/files-gallery-sheet.jpg",
+        "measurements-focused-4.json"
+      ],
+      "reviewed": [
+        "round4 portable/実gallery CSS環境：通常hover入口/解除/再進入",
+        "320px長文RTL・reduced/forced・造形/可読性再評価",
+        "222px既定label1行・native/API/FormData・選択/削除/drop/reject/disabled/reset"
+      ]
+    }
+  ],
+  "coverage": {
+    "parts": 10,
+    "retested": [
+      334,
+      336,
+      338,
+      360,
+      361
+    ],
+    "unchanged": [
+      339,
+      342,
+      350,
+      356,
+      359
+    ],
+    "portableRetested": 5,
+    "galleryRetested": 5,
+    "visuallyReviewedSheets": [
+      "evidence-4/files-gallery-sheet.jpg",
+      "evidence-4/files-portable-sheet.jpg",
+      "evidence-4/progress-gallery-0-sheet.jpg",
+      "evidence-4/progress-portable-0-sheet.jpg",
+      "evidence-4/uploads-gallery-0-sheet.jpg",
+      "evidence-4/uploads-portable-0-sheet.jpg"
+    ],
+    "limits": "変更5件を再検査、他5件は作者/共有hash不変とround3検査の継承。特定状態の確認で無欠陥保証ではない。長文/API/form fixtureは凍結initを実gallery CSS環境へ組み込んだものを含む。"
+  },
+  "evidence": [
+    "review-input-4.json",
+    "hash-summary-4.json",
+    "review-3.json",
+    "response-3.md"
+  ]
+}

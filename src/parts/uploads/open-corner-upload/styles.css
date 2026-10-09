@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 対角の二つの開いた角だけで受け面を示すファイル選択。元の開角を保持し、薄い線を4px幅/48pxの長さへ揃え、実際に開いた領域を広く保つ。ドラッグでは角の色だけを変え、文字・記号・native選択の操作範囲を縮めない。 */
+/* 左右のガイドと手前の受け皿でファイルの入口を示すドロップ領域。角の装飾から、受け取る場所が分かる開いたトレーへ組み替える。 */
 
 .sop-foundation.sop-open-corner-upload.sop-open-corner-upload{--paper:#faf0dd;--ink:#735b40;--muted:#897258;--accent:#a88553;--edge:#d1bb95;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-accent2:var(--accent);--ff-line:var(--edge);--ff-radius:0;color:var(--ink);color-scheme:light;max-width:min(100%,380px);width:100%;min-width:0;padding:18px;background:var(--paper);overflow-wrap:anywhere;container-type:inline-size}
 .sop-foundation.sop-open-corner-upload.sop-open-corner-upload,.sop-foundation.sop-open-corner-upload.sop-open-corner-upload *,.sop-foundation.sop-open-corner-upload.sop-open-corner-upload *::before,.sop-foundation.sop-open-corner-upload.sop-open-corner-upload *::after{box-sizing:border-box}
@@ -46,3 +46,15 @@
 .sop-foundation.sop-open-corner-upload.sop-open-corner-upload .ff-upload-files strong{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere}
 .sop-foundation.sop-open-corner-upload.sop-open-corner-upload .ff-upload-files small{white-space:normal;overflow-wrap:anywhere}
 @container(max-width:240px){.sop-foundation.sop-open-corner-upload.sop-open-corner-upload .ff-upload-files li{display:grid;grid-template-columns:minmax(0,1fr) 34px;gap:6px 8px;padding:10px 8px}.sop-foundation.sop-open-corner-upload.sop-open-corner-upload .ff-upload-files .ff-file-preview{display:none}.sop-foundation.sop-open-corner-upload.sop-open-corner-upload .ff-upload-files li>span:nth-child(2){grid-column:1 / -1;grid-row:1}.sop-foundation.sop-open-corner-upload.sop-open-corner-upload .ff-upload-files button{grid-column:2;grid-row:2;justify-self:end}.sop-foundation.sop-open-corner-upload.sop-open-corner-upload .ff-upload-files strong{font-size:12px}.sop-foundation.sop-open-corner-upload.sop-open-corner-upload .ff-upload-files small{font-size:10px}}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-open-corner-upload.sop-open-corner-upload{--paper:#edf1f0;--ink:#3f5059;--muted:#5d6c72;--accent:#577b8d;--edge:#aabfc5}
+.sop-foundation.sop-open-corner-upload.sop-open-corner-upload .ff-dropzone{min-height:245px;padding:34px 22px;background:transparent;isolation:isolate}
+.sop-foundation.sop-open-corner-upload.sop-open-corner-upload .ff-dropzone::before{inset:0 0 12px;border:0;border-inline:5px solid #7798a6;border-top:5px solid #aac0c7;background:#f7f7ef;clip-path:polygon(0 0,100% 0,100% 100%,calc(100% - 30px) 100%,calc(100% - 30px) calc(100% - 10px),30px calc(100% - 10px),30px 100%,0 100%);z-index:-2;transform:none}
+.sop-foundation.sop-open-corner-upload.sop-open-corner-upload .ff-dropzone::after{inset:auto 16px 0;height:22px;transform:none;border:0;border-bottom:5px solid #496f81;background:#b2c8cc;clip-path:polygon(0 0,12px 0,18px 10px,calc(100% - 18px) 10px,calc(100% - 12px) 0,100% 0,100% 100%,0 100%);z-index:-1}
+.sop-foundation.sop-open-corner-upload.sop-open-corner-upload .ff-upload-symbol{background:none;border:0;border-bottom:2px solid #7f9ca9;border-radius:0;color:#446b7e}
+.sop-foundation.sop-open-corner-upload.sop-open-corner-upload .ff-dropzone[data-dragging=true]::before{border-color:#416e85;background:#eef6f5}
+.sop-foundation.sop-open-corner-upload.sop-open-corner-upload .ff-upload-files li{border:0;border-inline-start:3px solid #7397a6;border-bottom:1px solid #c3d0d0;background:#f7f7ef}
+
+}

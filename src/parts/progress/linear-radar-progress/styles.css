@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 上下の二つのガイドに接続した走査ヘッドが、実割合の位置へ進む進捗表示。固定格子や検出点を撤去し、108pxの紙送り場、10pxの上下ガイドと、それを受ける22px幅の実走査ヘッドへ再構築する。ヘッドの前に残る原稿の横線は、通過した側の静かな面に置き換わる。数値とヘッドの到達位置は一つのnative progressへ一致し、未確定状態ではヘッドを出さない。 */
+/* 細い枠と格子の中を指示線が進む線形レーダー。枠の光沢と厚みを抑え、進捗を示す線を主役にする。 */
 
 .sop-foundation.sop-linear-radar-progress.sop-linear-radar-progress{--paper:#f9f0da;--ink:#73593a;--muted:#867052;--accent:#ad8752;--edge:#ceba97;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-accent2:var(--accent);--ff-line:var(--edge);--ff-radius:0;color:var(--ink);color-scheme:light;max-width:min(100%,380px);min-width:0;width:100%;padding:22px;background:var(--paper);overflow-wrap:anywhere;container-type:inline-size}
 .sop-foundation.sop-linear-radar-progress.sop-linear-radar-progress,.sop-foundation.sop-linear-radar-progress.sop-linear-radar-progress *,.sop-foundation.sop-linear-radar-progress.sop-linear-radar-progress *::before,.sop-foundation.sop-linear-radar-progress.sop-linear-radar-progress *::after{box-sizing:border-box}
@@ -36,3 +36,15 @@
 .sop-foundation.sop-linear-radar-progress.sop-linear-radar-progress .ff-progress-track{padding-inline:11px;background:linear-gradient(90deg,#c9af80 0 11px,transparent 11px calc(100% - 11px),#c9af80 calc(100% - 11px)),repeating-linear-gradient(0deg,#f3e6c7 0 17px,#dac398 17px 18px)}
 .sop-foundation.sop-linear-radar-progress.sop-linear-radar-progress .ff-progress-track::after{display:none}
 @media(forced-colors:active){.sop-foundation.sop-linear-radar-progress.sop-linear-radar-progress .ff-progress-track{padding-inline:0!important}}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-linear-radar-progress.sop-linear-radar-progress{--paper:#f0f1e9;--ink:#3d4d50;--muted:#5b6b6a;--accent:#567c78;--edge:#b6c4bc}
+.sop-foundation.sop-linear-radar-progress.sop-linear-radar-progress .ff-progress-track{height:98px;border-block:2px solid #8da69f;background:repeating-linear-gradient(0deg,transparent 0 17px,#bacbc3 17px 18px),repeating-linear-gradient(90deg,#e5ece4 0 23px,#bacbc3 23px 24px);box-shadow:inset 0 1px #fffdf1}
+.sop-foundation.sop-linear-radar-progress.sop-linear-radar-progress .ff-progress-fill{background:#8baaa44a;transition:width .25s ease;box-shadow:none;filter:none}
+.sop-foundation.sop-linear-radar-progress.sop-linear-radar-progress .ff-progress-fill::after{inset-inline-end:-2px;inset-block:0;width:4px;background:#426d69;border:0;box-shadow:0 0 0 1px #edf4e9}
+.sop-foundation.sop-linear-radar-progress.sop-linear-radar-progress .ff-progress-track::after{width:1px;background:#718f85}
+.sop-foundation.sop-linear-radar-progress.sop-linear-radar-progress .ff-progress-visual .ff-reading{color:#3d5556;font:44px/1.2 ui-monospace,monospace}
+.sop-foundation.sop-linear-radar-progress.sop-linear-radar-progress .ff-process-steps{font-size:11px}
+
+}

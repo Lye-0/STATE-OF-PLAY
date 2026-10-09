@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 斜めの石板を切り込んだ、深い平底のファイル受面。淡緑の標準角丸枠を廃止し、34pxずれた四辺の実石板と、30/38pxの上下肉厚を残す内側の切込みへ変更する。内面は上の暗い切断面と下の淡い受面を持ち、中央の固定文字を斜めに変形させずに表示する。 */
+/* 薄い石の切面に、水平で広い読み取り床を設けたドロップ領域。外枠の占有を減らし、案内と選択操作を中心へ置く。 */
 
 .sop-foundation.sop-stone-recess-upload.sop-stone-recess-upload{--paper:#faf0dd;--ink:#735b40;--muted:#897258;--accent:#a88553;--edge:#d1bb95;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-accent2:var(--accent);--ff-line:var(--edge);--ff-radius:0;color:var(--ink);color-scheme:light;max-width:min(100%,380px);width:100%;min-width:0;padding:18px;background:var(--paper);overflow-wrap:anywhere;container-type:inline-size}
 .sop-foundation.sop-stone-recess-upload.sop-stone-recess-upload,.sop-foundation.sop-stone-recess-upload.sop-stone-recess-upload *,.sop-foundation.sop-stone-recess-upload.sop-stone-recess-upload *::before,.sop-foundation.sop-stone-recess-upload.sop-stone-recess-upload *::after{box-sizing:border-box}
@@ -52,3 +52,14 @@
 /* Keep the carved floor behind actual reading and native controls. */
 .sop-foundation.sop-stone-recess-upload.sop-stone-recess-upload .ff-dropzone::after{z-index:-1}
 .sop-foundation.sop-stone-recess-upload.sop-stone-recess-upload .ff-dropzone::before{z-index:-2}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-stone-recess-upload.sop-stone-recess-upload{--paper:#eeeee7;--ink:#484f4c;--muted:#646d66;--accent:#718270;--edge:#b6beb0}
+.sop-foundation.sop-stone-recess-upload.sop-stone-recess-upload .ff-dropzone{min-height:250px;padding:34px 27px}
+.sop-foundation.sop-stone-recess-upload.sop-stone-recess-upload .ff-dropzone::before{inset:0;background:linear-gradient(135deg,#c2c8b9,#a5b09e 55%,#d4d9cd);clip-path:polygon(12px 0,100% 0,calc(100% - 12px) 100%,0 100%)}
+.sop-foundation.sop-stone-recess-upload.sop-stone-recess-upload .ff-dropzone::after{inset:12px 13px 15px;background:#f7f8ef;border-top:4px solid #899783;border-bottom:3px solid #e3e8d9;clip-path:polygon(5px 0,100% 0,calc(100% - 5px) 100%,0 100%)}
+.sop-foundation.sop-stone-recess-upload.sop-stone-recess-upload .ff-upload-symbol{background:#edf0e4;border-bottom:2px solid #aab8a0;color:#586f58}
+.sop-foundation.sop-stone-recess-upload.sop-stone-recess-upload .ff-upload-files li{border-inline-start:4px solid #b2bda5;border-bottom:2px solid #d6decb;background:#f7f8ef}
+
+}

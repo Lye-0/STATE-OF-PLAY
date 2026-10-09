@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "max": 100
 };
 export type CaptionBandProgressProps = FoundationProps;
-/** 大きい数値と、五つの階段状の通過面を持つ進捗表示。元の五階段を維持し、面の高さと進行方向の対応をそのまま残す。20%ごとの固定区切りに対し、充填は実割合で進む。説明は実際の階段形へ一致させ、存在しない斜め終端の説明を外す。 */
+/** 実数値を印刷した紙帯が前後へ折り返す進捗表示。裏へ回る帯と正面のキャプションをつなぎ、前面の下縁に実値の細い進捗線を置く。 */
 export default forwardRef<HTMLDivElement, CaptionBandProgressProps>(function CaptionBandProgress(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderProgress} mountContent={mountProgress}/>;
 });

@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 露出した厚い背から、四つの中空の綴じ環を実際の紙孔へ通すファイル選択。平たい表紙と細い留め帯を廃止し、28pxの背、20pxの空隙、実紙面へ渡る72pxの環を作る。環の先端は紙面の孔へ入り、選択した実ファイルの行も同じ背へ個別の環で綴じる。文字と削除を綴じる余白から離し、RTLでも背と孔が同じ側へ移る。 */
+/* 綴じ具で選んだファイルを束ねるドロップ領域。狭幅では綴じ代を縮め、主ラベルと選択操作が自然に読める幅を確保する。 */
 
 .sop-foundation.sop-folio-band-upload.sop-folio-band-upload{--paper:#faf0dd;--ink:#735b40;--muted:#897258;--accent:#a88553;--edge:#d1bb95;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-accent2:var(--accent);--ff-line:var(--edge);--ff-radius:0;color:var(--ink);color-scheme:light;max-width:min(100%,380px);width:100%;min-width:0;padding:18px;background:var(--paper);overflow-wrap:anywhere;container-type:inline-size}
 .sop-foundation.sop-folio-band-upload.sop-folio-band-upload,.sop-foundation.sop-folio-band-upload.sop-folio-band-upload *,.sop-foundation.sop-folio-band-upload.sop-folio-band-upload *::before,.sop-foundation.sop-folio-band-upload.sop-folio-band-upload *::after{box-sizing:border-box}
@@ -57,3 +57,22 @@
 .sop-foundation.sop-folio-band-upload.sop-folio-band-upload:dir(rtl) .ff-upload-files li::after{mask:radial-gradient(ellipse 7px 5px at calc(100% - 14px) 50%,transparent 99%,#000 100%)}
 @container(max-width:240px){.sop-foundation.sop-folio-band-upload.sop-folio-band-upload .ff-upload-files li{padding-inline-start:24px}}
 @media(forced-colors:active){.sop-foundation.sop-folio-band-upload.sop-folio-band-upload::before,.sop-foundation.sop-folio-band-upload.sop-folio-band-upload .ff-upload-files li::before{display:none!important}.sop-foundation.sop-folio-band-upload.sop-folio-band-upload .ff-upload-files li::after{mask:none!important}.sop-foundation.sop-folio-band-upload.sop-folio-band-upload .ff-dropzone::before{mask:none!important;transform:none!important}}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-folio-band-upload.sop-folio-band-upload{--ink:#5d4b35;--muted:#74634e}
+.sop-foundation.sop-folio-band-upload.sop-folio-band-upload .ff-dropzone{padding:32px 18px 32px 65px}
+.sop-foundation.sop-folio-band-upload.sop-folio-band-upload .ff-dropzone>strong{font-size:22px;line-height:1.6}
+@container(max-width:290px){
+.sop-foundation.sop-folio-band-upload.sop-folio-band-upload .ff-dropzone{padding:30px 12px 30px 43px;min-height:250px}
+.sop-foundation.sop-folio-band-upload.sop-folio-band-upload .ff-dropzone::before{background:linear-gradient(90deg,transparent 0 28px,#fff7e5 28px);mask:radial-gradient(ellipse 5px 4px at 37px 13%,transparent 99%,#000 100%);border-bottom-width:3px}
+.sop-foundation.sop-folio-band-upload.sop-folio-band-upload .ff-dropzone::after{width:43px}
+.sop-foundation.sop-folio-band-upload.sop-folio-band-upload .ff-dropzone>strong{font-size:20px}
+.sop-foundation.sop-folio-band-upload.sop-folio-band-upload .ff-upload-files{padding-inline-start:28px}
+.sop-foundation.sop-folio-band-upload.sop-folio-band-upload .ff-upload-files li::before{inset-inline-start:-28px;width:43px}
+.sop-foundation.sop-folio-band-upload.sop-folio-band-upload:dir(rtl) .ff-dropzone{padding-inline:43px 12px}
+}
+
+}
+
+.sop-foundation.sop-folio-band-upload.sop-folio-band-upload .ff-dropzone>strong{font-size:clamp(17px,8cqi,22px);text-wrap:balance;overflow-wrap:anywhere}

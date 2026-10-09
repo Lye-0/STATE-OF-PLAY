@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 右の切取り片を、実際の14pxの隙間で切り離すファイル選択。下の点線を廃止し、紙の両側に相対する半円の穿孔を作り、読む紙面と細い切取り片を分ける。選択済みファイルも名前の紙とnative削除の切取り片へ分かれ、装飾の穿孔を削除操作の場所へ結び付ける。 */
+/* 切取帯を脇に置く紙のドロップ領域。帯を細くし、狭幅でも見出しの末尾だけが孤立しない本文幅を確保する。 */
 
 .sop-foundation.sop-perforated-upload.sop-perforated-upload{--paper:#faf0dd;--ink:#735b40;--muted:#897258;--accent:#a88553;--edge:#d1bb95;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-accent2:var(--accent);--ff-line:var(--edge);--ff-radius:0;color:var(--ink);color-scheme:light;max-width:min(100%,380px);width:100%;min-width:0;padding:18px;background:var(--paper);overflow-wrap:anywhere;container-type:inline-size}
 .sop-foundation.sop-perforated-upload.sop-perforated-upload,.sop-foundation.sop-perforated-upload.sop-perforated-upload *,.sop-foundation.sop-perforated-upload.sop-perforated-upload *::before,.sop-foundation.sop-perforated-upload.sop-perforated-upload *::after{box-sizing:border-box}
@@ -57,3 +57,17 @@
 .sop-foundation.sop-perforated-upload.sop-perforated-upload:dir(rtl) .ff-upload-files li::before{transform:scaleX(-1)}
 @container(max-width:240px){.sop-foundation.sop-perforated-upload.sop-perforated-upload .ff-upload-files li::before{inset-inline-end:0;bottom:60px}}
 @media(forced-colors:active){.sop-foundation.sop-perforated-upload.sop-perforated-upload .ff-upload-files li::before{mask:none!important;transform:none!important;background:Canvas!important}}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-perforated-upload.sop-perforated-upload{--ink:#634a39;--muted:#79614f}
+.sop-foundation.sop-perforated-upload.sop-perforated-upload .ff-dropzone{padding:30px 48px 30px 20px}
+.sop-foundation.sop-perforated-upload.sop-perforated-upload .ff-dropzone>strong{font-size:22px;line-height:1.6}
+.sop-foundation.sop-perforated-upload.sop-perforated-upload .ff-dropzone::before{inset-inline-end:28px}
+.sop-foundation.sop-perforated-upload.sop-perforated-upload .ff-dropzone::after{width:18px}
+.sop-foundation.sop-perforated-upload.sop-perforated-upload:dir(rtl) .ff-dropzone{padding-inline:20px 48px}
+@container(max-width:290px){.sop-foundation.sop-perforated-upload.sop-perforated-upload .ff-dropzone{padding-inline:14px 40px}.sop-foundation.sop-perforated-upload.sop-perforated-upload:dir(rtl) .ff-dropzone{padding-inline:14px 40px}.sop-foundation.sop-perforated-upload.sop-perforated-upload .ff-dropzone>strong{font-size:20px}}
+
+}
+
+.sop-foundation.sop-perforated-upload.sop-perforated-upload .ff-dropzone>strong{font-size:clamp(17px,8cqi,22px);text-wrap:balance;overflow-wrap:anywhere}

@@ -17,7 +17,7 @@ const config: FoundationConfig = {
   "accept": ".png,.jpg,.webp,.txt,.pdf"
 };
 export type PerforatedUploadProps = FoundationProps;
-/** 右の切取り片を、実際の14pxの隙間で切り離すファイル選択。下の点線を廃止し、紙の両側に相対する半円の穿孔を作り、読む紙面と細い切取り片を分ける。選択済みファイルも名前の紙とnative削除の切取り片へ分かれ、装飾の穿孔を削除操作の場所へ結び付ける。 */
+/** 切取帯を脇に置く紙のドロップ領域。帯を細くし、狭幅でも見出しの末尾だけが孤立しない本文幅を確保する。 */
 export default forwardRef<HTMLDivElement, PerforatedUploadProps>(function PerforatedUpload(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderUpload} mountContent={mountUpload}/>;
 });

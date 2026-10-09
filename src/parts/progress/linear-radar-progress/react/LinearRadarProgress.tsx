@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "max": 100
 };
 export type LinearRadarProgressProps = FoundationProps;
-/** 上下の二つのガイドに接続した走査ヘッドが、実割合の位置へ進む進捗表示。固定格子や検出点を撤去し、108pxの紙送り場、10pxの上下ガイドと、それを受ける22px幅の実走査ヘッドへ再構築する。ヘッドの前に残る原稿の横線は、通過した側の静かな面に置き換わる。数値とヘッドの到達位置は一つのnative progressへ一致し、未確定状態ではヘッドを出さない。 */
+/** 細い枠と格子の中を指示線が進む線形レーダー。枠の光沢と厚みを抑え、進捗を示す線を主役にする。 */
 export default forwardRef<HTMLDivElement, LinearRadarProgressProps>(function LinearRadarProgress(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderProgress} mountContent={mountProgress}/>;
 });
