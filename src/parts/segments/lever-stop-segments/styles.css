@@ -32,3 +32,9 @@
 .sop-choice.sop-lever-stop-segments.sop-lever-stop-segments .sop-segment-material i:nth-child(3){display:block;left:56px;bottom:31px;width:7px;height:14px;background:#a98153;border-right:2px solid #d5b288;z-index:2}
 .sop-choice.sop-lever-stop-segments.sop-lever-stop-segments::before,.sop-choice.sop-lever-stop-segments.sop-lever-stop-segments::after{content:"";position:absolute;top:9px;bottom:9px;width:18px;border:2px solid #b89260;background:linear-gradient(90deg,#a98353,#d1b17d,#957046);border-radius:50%;pointer-events:none;z-index:1}
 .sop-choice.sop-lever-stop-segments.sop-lever-stop-segments::before{left:2px}.sop-choice.sop-lever-stop-segments.sop-lever-stop-segments::after{right:2px}
+
+/* Equal columns preserve the visual weight of each choice, including wrapped rows. */
+.sop-choice.sop-lever-stop-segments.sop-lever-stop-segments>.sop-choice-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,60px),1fr))}
+.sop-choice.sop-lever-stop-segments.sop-lever-stop-segments>.sop-choice-list>.sop-choice-item{min-width:0;padding-inline:7px}
+.sop-choice.sop-lever-stop-segments.sop-lever-stop-segments[data-orientation=vertical]>.sop-choice-list{display:flex}
+

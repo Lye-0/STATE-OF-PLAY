@@ -28,3 +28,9 @@
 .sop-choice.sop-tape-splice-segments.sop-tape-splice-segments>.sop-choice-list>.sop-choice-item::before{inset:0;background:#dfd1d9;border-top:4px solid #bda4b4;border-bottom:4px solid #bda4b4;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
 .sop-choice.sop-tape-splice-segments.sop-tape-splice-segments>.sop-choice-list>.sop-choice-item[data-selected=true]::before{background:#f0e7ec;border-block-color:#9e788f}
 .sop-choice.sop-tape-splice-segments.sop-tape-splice-segments>.sop-choice-list>.sop-choice-item::after{inset:6px 12px;background:linear-gradient(to bottom right,transparent calc(50% - .5px),#ab8c9f calc(50% - .5px) calc(50% + .5px),transparent calc(50% + .5px)) left/9px 100% no-repeat,linear-gradient(to bottom right,transparent calc(50% - .5px),#ab8c9f calc(50% - .5px) calc(50% + .5px),transparent calc(50% + .5px)) right/9px 100% no-repeat;mask:repeating-linear-gradient(to bottom,#000 0 4px,transparent 4px 8px);transform:none}
+
+/* Equal columns preserve the visual weight of each choice, including wrapped rows. */
+.sop-choice.sop-tape-splice-segments.sop-tape-splice-segments>.sop-choice-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,68px),1fr))}
+.sop-choice.sop-tape-splice-segments.sop-tape-splice-segments>.sop-choice-list>.sop-choice-item{min-width:0;padding-inline:7px}
+.sop-choice.sop-tape-splice-segments.sop-tape-splice-segments[data-orientation=vertical]>.sop-choice-list{display:flex}
+

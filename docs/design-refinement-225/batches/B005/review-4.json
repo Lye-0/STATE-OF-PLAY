@@ -1,0 +1,218 @@
+{
+  "batch": "B005",
+  "round": 4,
+  "overall": "changes_required",
+  "parts": [
+    {
+      "id": "rung-tabs",
+      "number": 162,
+      "verdict": "pass",
+      "note": "縦の索引が狭いホストでは本文上に並び、縦ARIA・上下キーを保つ。本文幅と末尾選択の保持を確認。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "contrast-4.json",
+        "tabs-measurements-3.json"
+      ],
+      "reviewed": [
+        "通常・hover入口・解除・再進入",
+        "320px・長文",
+        "keyboard・reduced motion・forced colors",
+        "portable・gallery"
+      ]
+    },
+    {
+      "id": "embossed-archive-tabs",
+      "number": 163,
+      "verdict": "pass",
+      "note": "浮彫りの保存帳の面と選択差を保ち、縮小後も選択とフォーカスが見える。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "contrast-4.json",
+        "tabs-measurements-3.json"
+      ],
+      "reviewed": [
+        "通常・hover入口・解除・再進入",
+        "320px・長文",
+        "keyboard・reduced motion・forced colors",
+        "portable・gallery"
+      ]
+    },
+    {
+      "id": "open-corner-tabs",
+      "number": 164,
+      "verdict": "changes_required",
+      "note": "222pxホストで本文の実幅が102pxに縮まり、既定見出しthought/keepingが語末1文字で折れる。",
+      "findings": [
+        {
+          "kind": "narrow-content-width",
+          "description": "portable 320px viewportの222pxホストで本文左右48pxの余白によりh3幅102pxとなり、既定英文thought/keepingが1文字の孤立行になる。gallery詳細264pxでは144pxで再現しない。小さいホストへの対応を要する。",
+          "evidence": [
+            "narrow-probe-4.json",
+            "evidence-4/open-corner-tabs-portable-narrow-probe.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "measurements-3.json",
+        "contrast-4.json",
+        "tabs-measurements-3.json"
+      ],
+      "reviewed": [
+        "通常・hover入口・解除・再進入",
+        "320px・長文",
+        "keyboard・reduced motion・forced colors",
+        "portable・gallery"
+      ]
+    },
+    {
+      "id": "film-caption-tabs",
+      "number": 165,
+      "verdict": "pass",
+      "note": "フィルムの穴とキャプションの構成を保つ。round4のインク修正後、状態別最小コントラスト5.004:1。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "contrast-4.json",
+        "tabs-measurements-3.json"
+      ],
+      "reviewed": [
+        "通常・hover入口・解除・再進入",
+        "320px・長文",
+        "keyboard・reduced motion・forced colors",
+        "portable・gallery"
+      ]
+    },
+    {
+      "id": "warm-reading-tabs",
+      "number": 169,
+      "verdict": "changes_required",
+      "note": "長い選択ラベルの項目がホスト幅を超え、クリック後とEnd移動後で文字列の反対側が欠ける。",
+      "findings": [
+        {
+          "kind": "long-label-clipping",
+          "description": "長い日本語ラベル277.28px、項目307.48pxがportable 222px/gallery詳細264pxのstripを超える。クリック後の右側欠けは77.30/35.30px。End後は右端が見えるが左端が62.98/20.98px欠け、スクロールだけでは全体を同時表示できない。",
+          "evidence": [
+            "narrow-probe-4.json",
+            "evidence-4/warm-reading-tabs-gallery-narrow-probe.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "measurements-3.json",
+        "contrast-4.json",
+        "tabs-measurements-3.json"
+      ],
+      "reviewed": [
+        "通常・hover入口・解除・再進入",
+        "320px・長文",
+        "keyboard・reduced motion・forced colors",
+        "portable・gallery"
+      ]
+    },
+    {
+      "id": "night-work-tabs",
+      "number": 170,
+      "verdict": "pass",
+      "note": "暗い作業面の階調と選択表示を保ち、狭幅・手動選択・RTLで選択が見える。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "contrast-4.json",
+        "tabs-measurements-3.json"
+      ],
+      "reviewed": [
+        "通常・hover入口・解除・再進入",
+        "320px・長文",
+        "keyboard・reduced motion・forced colors",
+        "portable・gallery"
+      ]
+    },
+    {
+      "id": "lever-stop-segments",
+      "number": 176,
+      "verdict": "pass",
+      "note": "レバーの終端と軌道に個性があり、等幅、ネイティブ選択とフォーム値を確認。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "contrast-4.json",
+        "segments-measurements-3.json"
+      ],
+      "reviewed": [
+        "通常・hover入口・解除・再進入",
+        "320px・長文",
+        "keyboard・reduced motion・forced colors",
+        "portable・gallery"
+      ]
+    },
+    {
+      "id": "raised-bridge-segments",
+      "number": 177,
+      "verdict": "pass",
+      "note": "橋脚と実際のアーチ空隙を視認。hover往復中も文字位置を保ち、解除で元の形へ復帰する。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "contrast-4.json",
+        "segments-measurements-3.json"
+      ],
+      "reviewed": [
+        "通常・hover入口・解除・再進入",
+        "320px・長文",
+        "keyboard・reduced motion・forced colors",
+        "portable・gallery"
+      ]
+    },
+    {
+      "id": "tape-splice-segments",
+      "number": 178,
+      "verdict": "pass",
+      "note": "テープの継目を保ち、長いラベルを狭幅内で折り返す。3/7項目とも等幅。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "contrast-4.json",
+        "segments-measurements-3.json"
+      ],
+      "reviewed": [
+        "通常・hover入口・解除・再進入",
+        "320px・長文",
+        "keyboard・reduced motion・forced colors",
+        "portable・gallery"
+      ]
+    },
+    {
+      "id": "coin-seat-segments",
+      "number": 180,
+      "verdict": "pass",
+      "note": "丸い座とコインの選択差が明瞭。狭幅等幅、ネイティブキー、フォーム値とresetを確認。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "contrast-4.json",
+        "segments-measurements-3.json"
+      ],
+      "reviewed": [
+        "通常・hover入口・解除・再進入",
+        "320px・長文",
+        "keyboard・reduced motion・forced colors",
+        "portable・gallery"
+      ]
+    }
+  ],
+  "coverage": {
+    "parts": 10,
+    "pass": 8,
+    "changes_required": 2,
+    "visual": "通常/hover/狭幅/長文/forcedの全10件と、tabs6件のLTR/RTL/manual/7項目/縮小ホスト、segments4件の等幅/長文/7項目/RTL/縦をcontact sheetsで全視認。R165 round4の通常画像も視認。",
+    "inheritance": "round3→4はR165 ink一色のみ。造形と挙動はround3凍結版の実測を継承し、全10件の定常コントラストはround4 portable/galleryで再測定。",
+    "limits": "実行した状態・対象の検査であり無欠陥保証ではない。galleryは実カード/詳細と、追加条件用に同CSS環境へ凍結initで初期化した複製を併用。"
+  },
+  "evidence": [
+    "integrity-4.json",
+    "contrast-summary-4.json",
+    "narrow-probe-4.json"
+  ]
+}

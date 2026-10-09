@@ -1,0 +1,220 @@
+{
+  "batch": "B005",
+  "round": 5,
+  "overall": "pass",
+  "parts": [
+    {
+      "id": "rung-tabs",
+      "number": 162,
+      "verdict": "pass",
+      "note": "縦の索引が狭いホストでは本文上に並び、縦ARIA・上下キーを保つ。本文幅と末尾選択の保持を確認。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "contrast-4.json",
+        "tabs-measurements-3.json"
+      ],
+      "reviewed": [
+        "通常・hover入口・解除・再進入",
+        "320px・長文",
+        "keyboard・reduced motion・forced colors",
+        "portable・gallery",
+        "round4→5作者/sharedハッシュ不変のため既存実測を継承"
+      ]
+    },
+    {
+      "id": "embossed-archive-tabs",
+      "number": 163,
+      "verdict": "pass",
+      "note": "浮彫りの保存帳の面と選択差を保ち、縮小後も選択とフォーカスが見える。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "contrast-4.json",
+        "tabs-measurements-3.json"
+      ],
+      "reviewed": [
+        "通常・hover入口・解除・再進入",
+        "320px・長文",
+        "keyboard・reduced motion・forced colors",
+        "portable・gallery",
+        "round4→5作者/sharedハッシュ不変のため既存実測を継承"
+      ]
+    },
+    {
+      "id": "open-corner-tabs",
+      "number": 164,
+      "verdict": "pass",
+      "note": "300px以下のホストで横余白18pxとなり、222pxホスト本文162px・gallery詳細264pxホスト本文204px。既定英文の孤立1文字行が解消し、上下切欠きの造形を維持。",
+      "findings": [],
+      "evidence": [
+        "measurements-5.json",
+        "tabs-measurements-5.json",
+        "narrow-probe-5.json",
+        "evidence-5/open-corner-tabs-portable-narrow-probe.png",
+        "evidence-5/open-corner-tabs-gallery-narrow-probe.png"
+      ],
+      "reviewed": [
+        "通常・hover入口・解除・再進入",
+        "320px・長文",
+        "keyboard・reduced motion・forced colors",
+        "portable・gallery",
+        "round5再検査: LTR/RTL・manual focus/commit・7項目・縮小ホスト",
+        "round5通常・hover往復・長文・forced/reduced画像視認"
+      ]
+    },
+    {
+      "id": "film-caption-tabs",
+      "number": 165,
+      "verdict": "pass",
+      "note": "フィルムの穴とキャプションの構成を保つ。round4のインク修正後、状態別最小コントラスト5.004:1。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "contrast-4.json",
+        "tabs-measurements-3.json"
+      ],
+      "reviewed": [
+        "通常・hover入口・解除・再進入",
+        "320px・長文",
+        "keyboard・reduced motion・forced colors",
+        "portable・gallery",
+        "round4→5作者/sharedハッシュ不変のため既存実測を継承"
+      ]
+    },
+    {
+      "id": "warm-reading-tabs",
+      "number": 169,
+      "verdict": "pass",
+      "note": "狭幅の項目110px、長文ラベル79.80px内の折返しを確認。portable222px/gallery詳細264pxでクリック・End後とも文字全体が項目内に見える。章番号と読書面を保持。",
+      "findings": [],
+      "evidence": [
+        "measurements-5.json",
+        "tabs-measurements-5.json",
+        "narrow-probe-5.json",
+        "evidence-5/warm-reading-tabs-portable-narrow-probe.png",
+        "evidence-5/warm-reading-tabs-gallery-narrow-probe.png"
+      ],
+      "reviewed": [
+        "通常・hover入口・解除・再進入",
+        "320px・長文",
+        "keyboard・reduced motion・forced colors",
+        "portable・gallery",
+        "round5再検査: LTR/RTL・manual focus/commit・7項目・縮小ホスト",
+        "round5通常・hover往復・長文・forced/reduced画像視認"
+      ]
+    },
+    {
+      "id": "night-work-tabs",
+      "number": 170,
+      "verdict": "pass",
+      "note": "暗い作業面の階調と選択表示を保ち、狭幅・手動選択・RTLで選択が見える。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "contrast-4.json",
+        "tabs-measurements-3.json"
+      ],
+      "reviewed": [
+        "通常・hover入口・解除・再進入",
+        "320px・長文",
+        "keyboard・reduced motion・forced colors",
+        "portable・gallery",
+        "round4→5作者/sharedハッシュ不変のため既存実測を継承"
+      ]
+    },
+    {
+      "id": "lever-stop-segments",
+      "number": 176,
+      "verdict": "pass",
+      "note": "レバーの終端と軌道に個性があり、等幅、ネイティブ選択とフォーム値を確認。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "contrast-4.json",
+        "segments-measurements-3.json"
+      ],
+      "reviewed": [
+        "通常・hover入口・解除・再進入",
+        "320px・長文",
+        "keyboard・reduced motion・forced colors",
+        "portable・gallery",
+        "round4→5作者/sharedハッシュ不変のため既存実測を継承"
+      ]
+    },
+    {
+      "id": "raised-bridge-segments",
+      "number": 177,
+      "verdict": "pass",
+      "note": "橋脚と実際のアーチ空隙を視認。hover往復中も文字位置を保ち、解除で元の形へ復帰する。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "contrast-4.json",
+        "segments-measurements-3.json"
+      ],
+      "reviewed": [
+        "通常・hover入口・解除・再進入",
+        "320px・長文",
+        "keyboard・reduced motion・forced colors",
+        "portable・gallery",
+        "round4→5作者/sharedハッシュ不変のため既存実測を継承"
+      ]
+    },
+    {
+      "id": "tape-splice-segments",
+      "number": 178,
+      "verdict": "pass",
+      "note": "テープの継目を保ち、長いラベルを狭幅内で折り返す。3/7項目とも等幅。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "contrast-4.json",
+        "segments-measurements-3.json"
+      ],
+      "reviewed": [
+        "通常・hover入口・解除・再進入",
+        "320px・長文",
+        "keyboard・reduced motion・forced colors",
+        "portable・gallery",
+        "round4→5作者/sharedハッシュ不変のため既存実測を継承"
+      ]
+    },
+    {
+      "id": "coin-seat-segments",
+      "number": 180,
+      "verdict": "pass",
+      "note": "丸い座とコインの選択差が明瞭。狭幅等幅、ネイティブキー、フォーム値とresetを確認。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "contrast-4.json",
+        "segments-measurements-3.json"
+      ],
+      "reviewed": [
+        "通常・hover入口・解除・再進入",
+        "320px・長文",
+        "keyboard・reduced motion・forced colors",
+        "portable・gallery",
+        "round4→5作者/sharedハッシュ不変のため既存実測を継承"
+      ]
+    }
+  ],
+  "coverage": {
+    "parts": 10,
+    "pass": 10,
+    "changes_required": 0,
+    "visual": "通常/hover/狭幅/長文/forcedの全10件と、tabs6件のLTR/RTL/manual/7項目/縮小ホスト、segments4件の等幅/長文/7項目/RTL/縦をcontact sheetsで全視認。R165 round4の通常画像も視認。",
+    "inheritance": "round4→5はR164/R169 stylesの2ファイルのみ。残る8件とsharedのハッシュ不変を確認し判定継承。変更2件はround5 portableと実galleryで再検査。",
+    "limits": "実行した状態・対象の検査であり無欠陥保証ではない。galleryは実カード/詳細と、追加条件用に同CSS環境へ凍結initで初期化した複製を併用。",
+    "round5Visual": "変更2件×portable/galleryの狭幅近接画像4枚、通常/hover/狭幅/長文/forced contact sheets2枚、selected320/RTL/manual/7項目/縮小ホストcontact sheets2枚をすべて視認。",
+    "manualSemantics": "手動モードでは未commitのフォーカス項目を可視化し、選択/表示本文は従来値を維持。commitで一致することを確認。フォーカス移動中に以前のselectedがスクロール外となるのはこの条件では不具合扱いしない。"
+  },
+  "evidence": [
+    "integrity-5.json",
+    "review-4.json",
+    "measurements-5.json",
+    "tabs-measurements-5.json",
+    "narrow-probe-5.json"
+  ]
+}

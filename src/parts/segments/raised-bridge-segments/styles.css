@@ -1,5 +1,5 @@
 @import "../../../shared/selection-base.css";
-/* 三つのアーチ形の観測窓を並べるセグメント。各窓へ同じ23pxの上の曲率と4pxの下の受けを設け、選択した窓だけを明るくする。ひとつの色面が移動する形を廃し、アーチの上の細い稜線を各窓の支持へ合わせる。 */
+/* 二本の橋脚が平らな橋面を支えるセグメント。文字の下にアーチ状の空隙を開け、選択時は上の梁と細い反射線で位置を示す。文字と操作領域は動かさない。 */
 
 .sop-choice.sop-raised-bridge-segments.sop-raised-bridge-segments{--choice-base:#edf0e9;--choice-ink:#3b4b55;--choice-muted:#6c7e83;--choice-accent:#577d90;--choice-line:#a4b6ba;--choice-on:#3b4b55;--choice-radius:0px;max-width:380px;width:100%;min-width:0;background:transparent;color:var(--choice-ink);font:14px/1.5 Arial,"Yu Gothic",sans-serif;border:0;box-shadow:none;isolation:isolate}
 .sop-choice.sop-raised-bridge-segments.sop-raised-bridge-segments>.sop-choice-list{background:transparent;border:0;border-radius:0;padding:9px 4px;gap:10px;overflow:visible;display:flex;flex-wrap:wrap;isolation:isolate}
@@ -29,3 +29,14 @@
 .sop-choice.sop-raised-bridge-segments.sop-raised-bridge-segments>.sop-choice-list>.sop-choice-item[data-selected=true]::before{background:#eff2e9;border-color:#648e9d}
 .sop-choice.sop-raised-bridge-segments.sop-raised-bridge-segments>.sop-choice-list>.sop-choice-item::after{left:8px;right:8px;top:9px;height:8px;border-top:2px solid #b2c8c6;border-radius:14px 14px 0 0}
 .sop-choice.sop-raised-bridge-segments.sop-raised-bridge-segments>.sop-choice-list>.sop-choice-item[data-selected=true]::after{border-top-color:#709cac}
+
+/* A continuous deck carried by two piers, with an open arch below the label. */
+.sop-choice.sop-raised-bridge-segments.sop-raised-bridge-segments>.sop-choice-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,70px),1fr));gap:12px;padding:8px 4px 2px}
+.sop-choice.sop-raised-bridge-segments.sop-raised-bridge-segments>.sop-choice-list>.sop-choice-item{min-width:0;min-height:96px;padding:14px 7px 38px;align-items:center}
+.sop-choice.sop-raised-bridge-segments.sop-raised-bridge-segments>.sop-choice-list>.sop-choice-item::before{inset:0;background:linear-gradient(#a3b9bf 0 6px,#dce5e5 6px calc(100% - 6px),#869fa8 calc(100% - 6px));border:0;border-radius:2px;mask:radial-gradient(ellipse 32% 28px at 50% 100%,transparent 97%,#000 100%)}
+.sop-choice.sop-raised-bridge-segments.sop-raised-bridge-segments>.sop-choice-list>.sop-choice-item::after{inset:7px 5px auto;height:3px;border:0;border-radius:0;background:#f4f5ef;transform:scaleX(.3);transform-origin:left center;transition:transform .3s}
+.sop-choice.sop-raised-bridge-segments.sop-raised-bridge-segments>.sop-choice-list>.sop-choice-item:hover::after{transform:scaleX(.7)}
+.sop-choice.sop-raised-bridge-segments.sop-raised-bridge-segments>.sop-choice-list>.sop-choice-item[data-selected=true]::before{background:linear-gradient(#446e80 0 6px,#f5f4e9 6px calc(100% - 6px),#76929e calc(100% - 6px))}
+.sop-choice.sop-raised-bridge-segments.sop-raised-bridge-segments>.sop-choice-list>.sop-choice-item[data-selected=true]::after{background:#698d9c;transform:scaleX(1)}
+.sop-choice.sop-raised-bridge-segments.sop-raised-bridge-segments[data-orientation=vertical]>.sop-choice-list{display:flex}
+

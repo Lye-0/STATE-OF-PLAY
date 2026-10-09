@@ -47,3 +47,8 @@
 
 .sop-choice.sop-open-corner-tabs.sop-open-corner-tabs[data-orientation=vertical]>.sop-choice-list{padding:0}
 .sop-choice.sop-open-corner-tabs.sop-open-corner-tabs[data-orientation=vertical] .sop-choice-demo-footer{flex-wrap:wrap;gap:6px}
+
+.sop-choice.sop-open-corner-tabs.sop-open-corner-tabs>.sop-choice-list>.sop-choice-item:not([data-selected=true]){color:var(--choice-ink)}
+
+/* Keep the corner cutouts above and below the text, not in its reading width. */
+@container sop-choice (max-width:300px){.sop-choice.sop-open-corner-tabs.sop-open-corner-tabs .sop-choice-panel{padding:39px 18px 42px}}

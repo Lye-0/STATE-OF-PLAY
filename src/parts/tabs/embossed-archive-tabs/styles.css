@@ -43,3 +43,5 @@
 .sop-choice.sop-embossed-archive-tabs.sop-embossed-archive-tabs .sop-tab-material i:nth-child(3){display:block;left:-17px;top:0;bottom:16px;width:17px;background:#b19272;border-left:2px solid #d0b796;border-radius:0 0 0 12px}
 .sop-choice.sop-embossed-archive-tabs.sop-embossed-archive-tabs .sop-choice-panel>:not(.sop-tab-material){z-index:2}
 .sop-choice.sop-embossed-archive-tabs.sop-embossed-archive-tabs[data-orientation=vertical] .sop-tab-material i:nth-child(3){display:none}
+
+.sop-choice.sop-embossed-archive-tabs.sop-embossed-archive-tabs>.sop-choice-list>.sop-choice-item:not([data-selected=true]){color:var(--choice-ink)}

@@ -48,3 +48,16 @@
 .sop-choice.sop-rung-tabs.sop-rung-tabs[data-orientation=vertical]>.sop-choice-list{align-self:stretch;justify-content:space-between}
 .sop-choice.sop-rung-tabs.sop-rung-tabs[data-orientation=vertical]>.sop-choice-panels{display:flex;align-items:stretch}
 .sop-choice.sop-rung-tabs.sop-rung-tabs[data-orientation=vertical] .sop-choice-panel{flex:1;min-width:0}
+
+/* Keep a readable page beside the ladder, or below it in narrow hosts. */
+.sop-choice.sop-rung-tabs.sop-rung-tabs[data-orientation=vertical]{display:flex;flex-wrap:wrap;gap:15px}
+.sop-choice.sop-rung-tabs.sop-rung-tabs[data-orientation=vertical]>.sop-choice-list{flex:0 0 104px;max-width:100%}
+.sop-choice.sop-rung-tabs.sop-rung-tabs[data-orientation=vertical]>.sop-choice-panels{flex:1 1 220px;min-width:min(100%,220px)}
+@container sop-choice (max-width:338px){
+ .sop-choice.sop-rung-tabs.sop-rung-tabs[data-orientation=vertical]>.sop-choice-list{flex-basis:100%;gap:7px}
+ .sop-choice.sop-rung-tabs.sop-rung-tabs[data-orientation=vertical]>.sop-choice-list>.sop-choice-item{min-height:48px;padding:10px;flex-direction:row}
+ .sop-choice.sop-rung-tabs.sop-rung-tabs[data-orientation=vertical] .sop-tab-material i{display:none}
+}
+
+
+.sop-choice.sop-rung-tabs.sop-rung-tabs>.sop-choice-list>.sop-choice-item:not([data-selected=true]){color:var(--choice-ink)}
