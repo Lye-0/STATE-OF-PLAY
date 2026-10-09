@@ -52,3 +52,5 @@
 .sop-sig.sop-folio-chapter-wizard.sop-folio-chapter-wizard .sg-wizard-nav:has(li:nth-child(5)){flex-direction:column;gap:12px}
 .sop-sig.sop-folio-chapter-wizard.sop-folio-chapter-wizard .sg-wizard-nav:has(li:nth-child(5)) button{flex-direction:row;align-items:flex-start;min-height:72px;padding:12px;gap:14px}
 .sop-sig.sop-folio-chapter-wizard.sop-folio-chapter-wizard .sg-wizard-nav:has(li:nth-child(5)) .sg-step-title{text-align:start;align-self:center}
+
+@media(forced-colors:active){.sop-sig.sop-folio-chapter-wizard.sop-folio-chapter-wizard [aria-current=step] .sg-step-index b,.sop-sig.sop-folio-chapter-wizard.sop-folio-chapter-wizard .sg-wizard-next [data-next-label]{background:Highlight!important;color:HighlightText!important;forced-color-adjust:none}}

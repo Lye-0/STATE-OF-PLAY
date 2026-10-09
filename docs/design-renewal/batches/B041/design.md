@@ -51,3 +51,6 @@ T2は5章以上を縦並びへ切替。R2はnative listに明示した同じlist
 ## 長い章名の自然高
 
 R574の固定104px累積は廃止。広幅はnative chapterが実際のgrid行を持ち、現在の一行は実見出し・説明・fields・エラー・footerの自然高を共有する5行として開く。現在の島の材は読む内容の背面に一面だけを持ち、次の章はその実収納量の下へ続く。章名が168px以上へ伸びても次の章・島・橋の位置は同じ実grid行へ一致する。
+
+
+追加追補round8: B042の実描画検査で判明したforced text backplateを4wizardにも確認。子の番号と操作文字だけを明示system色＋forced-color-adjust:noneへ。通常7造形・6timelineは完全不変、Astra独立24条件読字pass。進捗の加算は0。

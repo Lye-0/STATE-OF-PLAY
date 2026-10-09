@@ -1,5 +1,7 @@
 {
   "batch": "B041",
+  "round": "8",
+  "created": "2026-10-09T03:53:34.344Z",
   "ids": [
     "book-ribbon-timeline",
     "index-tab-timeline",
@@ -11,63 +13,6 @@
     "station-route-wizard",
     "folded-step-wizard",
     "stone-path-wizard"
-  ],
-  "state": "pushed",
-  "reviewRounds": [
-    {
-      "round": 0,
-      "snapshot": "docs/design-renewal/batches/B041/snapshot/round-0",
-      "state": "superseded",
-      "result": "self_check_before_review"
-    },
-    {
-      "round": 1,
-      "snapshot": "docs/design-renewal/batches/B041/snapshot/round-1",
-      "state": "superseded",
-      "result": "self_check_before_review"
-    },
-    {
-      "round": 2,
-      "snapshot": "docs/design-renewal/batches/B041/snapshot/round-2",
-      "state": "responded",
-      "result": "changes_requested"
-    },
-    {
-      "round": 3,
-      "snapshot": "docs/design-renewal/batches/B041/snapshot/round-3",
-      "state": "superseded",
-      "result": "self_check_before_review"
-    },
-    {
-      "round": 4,
-      "snapshot": "docs/design-renewal/batches/B041/snapshot/round-4",
-      "state": "superseded",
-      "result": "self_check_before_review"
-    },
-    {
-      "round": 5,
-      "snapshot": "docs/design-renewal/batches/B041/snapshot/round-5",
-      "state": "responded",
-      "result": "changes_requested"
-    },
-    {
-      "round": 6,
-      "snapshot": "docs/design-renewal/batches/B041/snapshot/round-6",
-      "state": "responded",
-      "result": "changes_requested"
-    },
-    {
-      "round": 7,
-      "snapshot": "docs/design-renewal/batches/B041/snapshot/round-7",
-      "state": "completed",
-      "result": "pass"
-    },
-    {
-      "round": 8,
-      "snapshot": "docs/design-renewal/batches/B041/snapshot/round-8",
-      "state": "completed",
-      "result": "pass"
-    }
   ],
   "sourceHashes": {
     "src/parts/timelines/book-ribbon-timeline/markup.html": "ebd57d9ae7816173fae20ede5ccb2b922ef9397197dc375f3205b3d072c2df79",
@@ -170,22 +115,5 @@
     "src/parts/wizards/stone-path-wizard/vanilla/index.html": "4eeb00e74a508d7fb31e54163a98b338a542191d3854d1a52db26d55fe3386e4",
     "src/parts/wizards/stone-path-wizard/vanilla/init.ts": "de7651e3998cc0eb7698f232eccd0fecb378bbf2967a0ac883ecf42c88a65a05",
     "src/parts/wizards/stone-path-wizard/vanilla/main.ts": "c798a239f0715e630916fceec90efa623a30e2366bd3cad80a8edf7d323ef3b9"
-  },
-  "commit": "741fff3ee652b0ccdeb96858a18b3f8bb328548e",
-  "validation": {
-    "typecheck5": "pass",
-    "contracts7305": "pass",
-    "nativeTimelinesSix5ChangedOne7": "pass",
-    "reactTimelinesSixFourFormats5ChangedOne7": "pass",
-    "nativeWizardsFour5ChangedTwo6AndOne7": "pass",
-    "reactWizardsFourFourFormats5ChangedTwo6AndOne7": "pass",
-    "galleryTen5ChangedThree6AndTwo7": "pass",
-    "nativeWizardsTwentyTwoLayouts5": "pass",
-    "permanentSignature25HTTP5": "pass",
-    "wizardCountsAndLongSeven7": "pass",
-    "nativeLongErrorsSixteen7": "pass",
-    "astraReview7": "pass",
-    "CSSParsePreflight7": "pass",
-    "forcedColorsFollowUp8": "pass"
   }
 }

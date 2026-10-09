@@ -52,3 +52,5 @@
 .sop-sig.sop-station-route-wizard.sop-station-route-wizard .sg-wizard-nav:has(li:nth-child(5)) button{flex-direction:row;align-items:flex-start;min-height:72px;padding:12px;gap:14px}
 .sop-sig.sop-station-route-wizard.sop-station-route-wizard .sg-wizard-nav:has(li:nth-child(5)) .sg-step-title{text-align:start;align-self:center}
 .sop-sig.sop-station-route-wizard.sop-station-route-wizard .sg-wizard-nav:has(li:nth-child(5)) li:not(:last-child)::after{top:34px;bottom:-46px;inset-inline-start:34px;width:2px;height:auto}
+
+@media(forced-colors:active){.sop-sig.sop-station-route-wizard.sop-station-route-wizard [aria-current=step] .sg-step-index b,.sop-sig.sop-station-route-wizard.sop-station-route-wizard .sg-wizard-next [data-next-label]{background:Highlight!important;color:HighlightText!important;forced-color-adjust:none}}

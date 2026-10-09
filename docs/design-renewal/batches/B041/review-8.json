@@ -1,0 +1,190 @@
+{
+  "batch": "B041",
+  "round": 8,
+  "snapshot": "docs/design-renewal/batches/B041/snapshot/round-8",
+  "overall": "pass",
+  "parts": [
+    {
+      "number": "R560",
+      "id": "book-ribbon-timeline",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "通常形と10authorファイルはround-2から不変。Tの実日時しおり／開いた記録面の合格を継承し、今回native回帰も成功。 round-5から対象10ファイル不変を確認して合格を継承。 round-6から10authorファイル同一として判定を継承。 round8でも対象10authorファイル完全不変。round7の合格を継承。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R560",
+        "R300",
+        "R420"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R561",
+      "id": "index-tab-timeline",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "20px露出する共通の後帯を保持し、窓の下へ別の暗い紙面を実clipで4pxずらして配置。3倍実撮影で右・下の切口に小口が見え、単なる六角の色札ではなく前紙から後帯の日時を読む前後関係が成立した。native日時を覆わず、長文・RTL・強制色でも読む領域を保持。残件解消、A合格。 round8でも対象10authorファイル完全不変。round7の合格を継承。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R561",
+        "R259",
+        "旧R263",
+        "R163"
+      ],
+      "resolvedFindings": [
+        "R561-main-structure",
+        "R561-window-lip-not-rendered"
+      ]
+    },
+    {
+      "number": "R562",
+      "id": "blueprint-route-timeline",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "独立円＋矢印を廃し、幅40pxの一つの曲がる経路が全日時の角を交互に回る。実日時120×72pxの節、12px内側へ重なる本文、次の節へ渡る面が連続。時間差を偽の長さへ変換せず、読む順序を図形にした。R552の二レール、R282の定規軸、R379の週床とはネイティブ情報の配置と交互の角の構造が異なりA合格。 round-5から対象10ファイル不変を確認して合格を継承。 round-6から10authorファイル同一として判定を継承。 round8でも対象10authorファイル完全不変。round7の合格を継承。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R562",
+        "R563",
+        "R552",
+        "R282"
+      ],
+      "resolvedFindings": [
+        "R562-main-structure"
+      ]
+    },
+    {
+      "number": "R563",
+      "id": "loop-history-timeline",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "通常形と10authorファイルはround-2から不変。Tの日時輪／セリフ見出し／線の調整の合格を継承。今回native長文・RTL・強制色も成功。 round-5から対象10ファイル不変を確認して合格を継承。 round-6から10authorファイル同一として判定を継承。 round8でも対象10authorファイル完全不変。round7の合格を継承。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R563",
+        "R562"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R564",
+      "id": "recessed-record-timeline",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "四辺の角丸囲いを撤去し、内容全高へ伸縮する外形をSVG maskで実際に切り、曲面から平底と露出した右・下の小口へ続く一体の面に変更。20件でも角だけの飾りではなく全長で輪郭が変わる。本文は曲面の最大幅より内側へ予約される。全幅楕円のR384、両直壁のR424、直線チャンネルR557との構造差が見え、A合格。 round-5から対象10ファイル不変を確認して合格を継承。 round-6から10authorファイル同一として判定を継承。 round8でも対象10authorファイル完全不変。round7の合格を継承。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R564",
+        "R384",
+        "R424",
+        "R557"
+      ],
+      "resolvedFindings": [
+        "R564-main-structure"
+      ]
+    },
+    {
+      "number": "R565",
+      "id": "letterpress-history-timeline",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "単なる同じ左揃えの縦積みから、右の72px実日時、左の26px実summary、96px掛け込んだ本文の三つの基線へ再編。日時が大きい空白と横の重みを作り、見出しと本文がそれに応答する非対称な編集面になった。実時刻・出来事・説明だけで構成し、偽の文字や額縁を増やしていない。狭幅48px／24px掛け込みでも全文と階層を保つ。物理機構の模倣ではなく、この実情報の組版としてA合格。 round-5から対象10ファイル不変を確認して合格を継承。 round-6から10authorファイル同一として判定を継承。 round8でも対象10authorファイル完全不変。round7の合格を継承。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R565",
+        "旧R401",
+        "R545",
+        "R555"
+      ],
+      "resolvedFindings": [
+        "R565-main-structure"
+      ]
+    },
+    {
+      "number": "R571",
+      "id": "folio-chapter-wizard",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "Tの章番号・題字・入力紙の合格形を保持。5件以上は縦並びへ変わり、7件の短名も一行の実幅を確保。通常nextの焦点も改善し、調整指摘は解消。 round-5から対象10ファイル不変を確認して合格を継承。 round-6から10authorファイル同一として判定を継承。 round8は通常CSSを完全保持し末尾forced指定だけ追加。dark/light各3状態で選択番号・次へ・完了・disabledの実字形を確認し、子のsystem色＋forced-color-adjust:noneでbackplate消失を防ぐ補正が成立。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R571",
+        "R531"
+      ],
+      "resolvedFindings": [
+        "wizard-next-focus"
+      ]
+    },
+    {
+      "number": "R572",
+      "id": "station-route-wizard",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "Tの44px駅／共通経路を保持。5件以上の縦並びにより7件の「Step 1」分断を解消。通常next／controlled拒否の焦点を独立再確認。造形とUI合格。 round-5から対象10ファイル不変を確認して合格を継承。 round-6から10authorファイル同一として判定を継承。 round8は通常CSSを完全保持し末尾forced指定だけ追加。dark/light各3状態で選択番号・次へ・完了・disabledの実字形を確認し、子のsystem色＋forced-color-adjust:noneでbackplate消失を防ぐ補正が成立。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R572",
+        "R552",
+        "R422"
+      ],
+      "resolvedFindings": [
+        "wizard-next-focus",
+        "R572-many-step-reading"
+      ]
+    },
+    {
+      "number": "R573",
+      "id": "folded-step-wizard",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "round-5で合格した現在章→実空隙→入力紙→逆の返面を保持。errorをフォーム後／footer前の独立grid行へ移し、長いserver errorが実3fieldsを覆う問題を解消。320/768×LTR/RTLの4条件で全入力との交差0、文字とcaretへ戻って訂正できる。全現在位置・7手順・空状態・native protocolも成功。 round-6から10authorファイル同一として判定を継承。 round8は通常CSSを完全保持し末尾forced指定だけ追加。dark/light各3状態で選択番号・次へ・完了・disabledの実字形を確認し、子のsystem色＋forced-color-adjust:noneでbackplate消失を防ぐ補正が成立。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R573",
+        "R403",
+        "R513",
+        "R553"
+      ],
+      "resolvedFindings": [
+        "R573-main-structure",
+        "wizard-next-focus",
+        "R573-many-step-reading",
+        "R573-error-overlays-fields"
+      ]
+    },
+    {
+      "number": "R574",
+      "id": "stone-path-wizard",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "104pxの固定累積と絶対配置を廃し、実grid行を共有する現在章と入力島へ変更。現在章がh3・説明・fields・error・footerの自然高5行を持ち、過去／未来章も実際の高さでflowする。7章全てが長名でも第1／4／7の見出し上端と現在章が一致し、navはroot内へ収まる。Nextは最後の入力の近くに残り、長いerrorも入力を覆わない。狭幅の現在行直後へ開く配置、実橋の接点、native DOMとUndoも保持。残件解消、A／UI合格。 round8は通常CSSを完全保持し末尾forced指定だけ追加。dark/light各3状態で選択番号・次へ・完了・disabledの実字形を確認し、子のsystem色＋forced-color-adjust:noneでbackplate消失を防ぐ補正が成立。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R574",
+        "旧R394",
+        "R554",
+        "R374"
+      ],
+      "resolvedFindings": [
+        "R574-main-structure",
+        "wizard-next-focus",
+        "R574-many-step-reading",
+        "R574-error-overlays-fields",
+        "R574-wide-empty-floor",
+        "R574-long-row-fixed-offset"
+      ]
+    }
+  ],
+  "checks": [
+    "round8 source100 SHA-256一致／native CSS10一致。round7から96ファイル不変。変更は4wizard styles末尾のforced子文字指定のみ、通常CSSは完全prefix一致。reviewer-hashes-8.json。",
+    "4wizard×dark/light forced×次へ/完了/disabled=24条件を固定portable nativeで再描画。2RAF後の実画像・computed styleをreviewer-forced-8に保存。",
+    "選択番号01/02、次へ、完了を両system配色で確認。既完了チェック、未選択番号、disabledの淡色字形を保持。親のforced調整はautoのままで、補正を実文字子へ限定。",
+    "6timeline通常形・操作は10authorファイルずつ不変としてround7を継承。4wizard通常形・接合・長文・章数・エラー・native操作は通常CSS/DOM/API不変とround7検証を根拠に継承。"
+  ],
+  "limits": [
+    "今回の検査は既完了B041へのforced読字補正。進捗件数の追加は0。",
+    "通常の全操作やReact4形式をこのroundで重複実行していない。前回成功と限定差分を根拠に継承。"
+  ],
+  "reviewType": "limited_forced_colors_follow_up",
+  "progressIncrement": 0
+}

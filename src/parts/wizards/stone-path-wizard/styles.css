@@ -111,3 +111,5 @@
 .sop-sig.sop-stone-path-wizard.sop-stone-path-wizard:dir(rtl) .sg-wizard-panels{margin:32px 24px 0 0}
 }
 @media(forced-colors:active){.sop-sig.sop-stone-path-wizard.sop-stone-path-wizard .sg-wizard-panels::before{background:Canvas;border-color:ButtonText}}
+
+@media(forced-colors:active){.sop-sig.sop-stone-path-wizard.sop-stone-path-wizard [aria-current=step] .sg-step-index b,.sop-sig.sop-stone-path-wizard.sop-stone-path-wizard .sg-wizard-next [data-next-label]{background:Highlight!important;color:HighlightText!important;forced-color-adjust:none}}

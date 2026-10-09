@@ -61,3 +61,5 @@
 .sop-sig.sop-folded-step-wizard.sop-folded-step-wizard .sg-wizard-error{grid-column:1;grid-row:calc(var(--sg-step-index,0) + 3);align-self:stretch;z-index:1;margin-inline-start:40px;padding:16px 24px;background:#f5ddec}
 .sop-sig.sop-folded-step-wizard.sop-folded-step-wizard .sg-wizard-error:empty{display:none}
 @container(max-width:350px){.sop-sig.sop-folded-step-wizard.sop-folded-step-wizard .sg-wizard-error{margin-inline-start:24px;padding:16px}}
+
+@media(forced-colors:active){.sop-sig.sop-folded-step-wizard.sop-folded-step-wizard [aria-current=step] .sg-step-index b,.sop-sig.sop-folded-step-wizard.sop-folded-step-wizard .sg-wizard-next [data-next-label]{background:Highlight!important;color:HighlightText!important;forced-color-adjust:none}}
