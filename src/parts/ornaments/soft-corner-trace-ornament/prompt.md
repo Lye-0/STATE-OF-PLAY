@@ -9,3 +9,9 @@
 
 ## 操作契約
 意味を持たない装飾としてaria-hiddenを保ち、入力を受け取らない。pauseとreduced motionで静止する。
+
+<!-- design-renewal -->
+Bの控えめな六つの角線という主形を保ち、20pxの角・2pxの線・54/50pxの余白で整える。呼吸の最低明度を.78へ上げ、暗背景でも消えず、情報や操作に見える余分なラベルや影を加えない。汎用の静かな装飾として使える小さい二段の配置を保つ。
+
+native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
+<!-- /design-renewal -->

@@ -37,3 +37,9 @@ if (element) {
 ## 後片付け
 
 通常DOM版では取り外すときにcontroller.destroy()を呼びます。React版はpausedを渡して停止できます。表示する図形はaria-hiddenの装飾で、重要な状態をこのパーツだけで伝えません。
+
+<!-- design-renewal -->
+水平線から放射する六つの稜線の主形を保ち、5pxの実線と4pxの水平線へ磨く。全稜線は水平線上の一つの支点を共有し、共通の開角だけでゆっくり開く。幅広い紙扇R699とは異なり、面を埋めず空を残す光線と水平線の関係を使う。
+
+native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
+<!-- /design-renewal -->

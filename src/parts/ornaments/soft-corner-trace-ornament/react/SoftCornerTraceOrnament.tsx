@@ -9,7 +9,7 @@ export interface SoftCornerTraceOrnamentProps extends HTMLAttributes<HTMLDivElem
 
 const markup = "<div class=\"or-stage\" aria-hidden=\"true\"><div class=\"x-composition\"><i style=\"--i:0\"></i><i style=\"--i:1\"></i><i style=\"--i:2\"></i><i style=\"--i:3\"></i><i style=\"--i:4\"></i><i style=\"--i:5\"></i></div></div>";
 
-/** 羽根が光を散らす。 */
+/** Bの控えめな六つの角線という主形を保ち、20pxの角・2pxの線・54/50pxの余白で整える。呼吸の最低明度を.78へ上げ、暗背景でも消えず、情報や操作に見える余分なラベルや影を加えない。汎用の静かな装飾として使える小さい二段の配置を保つ。 */
 export default function SoftCornerTraceOrnament({ paused = false, className = '', ...props }: SoftCornerTraceOrnamentProps) {
   const element = useRef<HTMLDivElement>(null);
   const controller = useRef<AmbientOrnamentController | null>(null);

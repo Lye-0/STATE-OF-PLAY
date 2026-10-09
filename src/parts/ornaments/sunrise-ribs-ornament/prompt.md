@@ -9,3 +9,9 @@
 
 ## 操作契約
 意味を持たない装飾としてaria-hiddenを保ち、入力を受け取らない。pauseとreduced motionで静止する。
+
+<!-- design-renewal -->
+水平線から放射する六つの稜線の主形を保ち、5pxの実線と4pxの水平線へ磨く。全稜線は水平線上の一つの支点を共有し、共通の開角だけでゆっくり開く。幅広い紙扇R699とは異なり、面を埋めず空を残す光線と水平線の関係を使う。
+
+native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
+<!-- /design-renewal -->

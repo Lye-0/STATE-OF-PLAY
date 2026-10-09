@@ -14,3 +14,9 @@ Reactは`PinwheelNotchesLoader`をimportして配置します。通常HTMLはmar
 
 ## 動きと破棄
 CSSアニメーションです。毎フレームのJavaScriptループやタイマーは使いません。非表示タブ・画面外・pausedでは止まり、prefers-reduced-motionでは静止形を表示します。destroy()で監視を解除します。独立した複数配置ができます。
+
+<!-- design-renewal -->
+六つの切欠き羽根と中央の抜けを保持し、20pxの実面・4pxの小口へ磨く。切欠きはclip-pathで本当に開き、六枚が一つの軸で回る。小さい線の束と羽根ごとの漂いを廃し、暖かい紙の面と鈍い裏面で回転を読む。
+
+native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
+<!-- /design-renewal -->

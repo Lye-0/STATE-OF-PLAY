@@ -14,3 +14,9 @@ Reactは`FoldingCheckpointsLoader`をimportして配置します。通常HTMLは
 
 ## 動きと破棄
 CSSアニメーションです。毎フレームのJavaScriptループやタイマーは使いません。非表示タブ・画面外・pausedでは止まり、prefers-reduced-motionでは静止形を表示します。destroy()で監視を解除します。独立した複数配置ができます。
+
+<!-- design-renewal -->
+一本の経路上で順に開く六つの門を保持し、60pxの高さ・3pxの輪郭・8pxの実蝶番へ磨く。各門の回転原点は経路上に固定し、開閉のどの瞬間も端が経路へ接合する。空の点滅ではなく、経路と門の波で待機を読む。
+
+native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
+<!-- /design-renewal -->

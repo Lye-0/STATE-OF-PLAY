@@ -1,0 +1,128 @@
+{
+  "batch": "B052",
+  "round": 1,
+  "snapshot": "docs/design-renewal/batches/B052/snapshot/round-1",
+  "overall": "changes_requested",
+  "parts": [
+    {
+      "number": "R712",
+      "id": "pinwheel-notches-loader",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "切欠き羽根を20pxの実面・4px小口へ強め、中央の抜けと共通軸の回転を保持。元の細い羽根を失わず、通常/forcedで実切欠きが読めるT改善。",
+      "findings": [],
+      "nearestComparisons": [
+        "R694 rotary-gate-loader",
+        "R708 segment-orbit-loader"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R714",
+      "id": "sliding-windows-loader",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "同寸の縦窓が斜めへ重なる主形を保持し、8px左端/6px下端/3px辺の密度を整えた。R701は同心で縮む直角門、こちらは同寸の斜め積層と水平slideであり、原版の差を明確化している。",
+      "findings": [],
+      "nearestComparisons": [
+        "R701 offset-portals-ornament",
+        "R696 telescopic-stroke-loader"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R716",
+      "id": "paired-crescents-loader",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "元の斜めへ重なる六つの弧を64px/3px輪郭/16×12px段差へ整理し、暗い薄線が追いにくい問題を改善。欠け側をborder-style:noneで保持し、forcedも元の弧列として読める。",
+      "findings": [],
+      "nearestComparisons": [
+        "R708 segment-orbit-loader",
+        "R715 elliptic-weave-ornament"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R717",
+      "id": "hinged-cells-ornament",
+      "verdict": "redesign",
+      "normalDesignVerdict": "changes_requested",
+      "assessment": "六枚の端が同じ三次元位置で接合することは実computed幾何で確認できた。しかし通常全周期の実像は正面の縦縞矩形が幅を変えるだけに近く、原版で問題だった板の並ぶ矩形から十分離れていない。機構がコード上成立することとAの主形が目に見えることを分け、再設計を継続する。",
+      "findings": [
+        {
+          "key": "R717-hinge-depth-not-readable",
+          "severity": "major",
+          "kind": "design",
+          "problem": "0/25/50/75/100%で長方形の中に六つの縦帯が並び、幅が狭まる実像。最大58度でも正面投影のためz方向の蛇腹が外形へほぼ現れず、forcedは隣接する六矩形になる。原監査の「通常でも板が並ぶ矩形」という主問題が残る。",
+          "proposal": "端の共有計算は維持し、実蛇腹の上端/下端と前後の稜が見える構図へ変更する。例えば構図全体に20〜30度程度の俯角と斜め軸を与え、交互の折山・折谷が大きいzigzag外形として見えるようにする。単なる全体回転や色差ではなく、蝶番の実接点と各板の前後が一目で分かる姿を通常/reducedでも残す。必要なら板幅・奥行きを調整するが、既存R713の独立したプリズム片の列を模倣せず、一枚の連続した屏風という接合を主形にする。glyph/statusは動かさず、forcedでも外形差を維持して再評価する。",
+          "evidence": [
+            "captures/reviewer-phases-1/hinged-cells-ornament-0.png",
+            "captures/reviewer-phases-1/hinged-cells-ornament-0.5.png",
+            "captures/reviewer-mechanisms-1/hinged-cells-ornament-forced-dark.png",
+            "captures/reviewer-phases-1/hinge-vertices.json",
+            "captures/reviewer-baseline-1.png"
+          ]
+        }
+      ],
+      "nearestComparisons": [
+        "R713 prismatic-slats-ornament",
+        "R699 paper-fan-fold-ornament 原版/改修版",
+        "R697 balanced-shards-ornament"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R719",
+      "id": "sunrise-ribs-ornament",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "六つの細い実稜線と水平線が同じ支点へ集まり、共通開角で動く。R699の幅広い紙面で埋める扇と異なり、線間の大きい空と水平線の関係を保持。最低位相でも支点と端が明瞭なT改善。",
+      "findings": [],
+      "nearestComparisons": [
+        "R699 paper-fan-fold-ornament",
+        "R712 pinwheel-notches-loader"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R720",
+      "id": "folding-checkpoints-loader",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "元の経路上の六門を60px高さ/3px輪郭/8px蝶番へ磨き、固定原点から順に倒れる立体を明確にした。全周期で基準経路・蝶番が接続し、forcedでも基床と開いた門が残る。",
+      "findings": [],
+      "nearestComparisons": [
+        "R698 lift-platform-loader",
+        "R701 offset-portals-ornament"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R725",
+      "id": "soft-corner-trace-ornament",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "B/Tの控えめな角線という目的を保ち、20px角・2px線・54/50px間隔で二段配置を読みやすくした。最低opacity.78でも存在を保つ。汎用的で静かなB装飾として承認し、Aの独立性を満たす理由には転用しない。",
+      "findings": [],
+      "nearestComparisons": [
+        "R721 quiet-breath-line-ornament",
+        "R724 fine-ring-sequence-loader"
+      ],
+      "resolvedFindings": []
+    }
+  ],
+  "checks": [
+    "固定1 author70hash/manifest一致、source/portable CSS7一致。reviewer-hashes-1.json。作者/shared/snapshot無編集。",
+    "元audit R1/T6とB/T725を確認し、原版stage全7とR699/701/713等既承認近似を比較。reviewer-baseline-1.png。",
+    "actual native7全件running/pause停止再開、6要素、0/650/1300ms実境界、320390768LTRRTL、reduced animation0、dark/light forced、destroy/pageerrors=[]を独立実行し機能PASS。reviewer-mechanisms-1。",
+    "全7の実duration0/25/50/75/100%を追加撮影。hover/leave/reenterで実文字/字体/位置は全7不変。reviewer-phases-1/checks.json。",
+    "R717の実CSS寸法・transformから隣接する板の上下端を三次元計算。全5位相で最大0.000649px差と接合自体は成立。実像で深さが伝わるかは別に評価し、通常主形不足を指摘。reviewer-phases-1/hinge-vertices.json。",
+    "R712実切欠き、R714同寸層と内側空隙、R716欠け側、R719共有支点/水平線、R720基床/蝶番、R725最低明度を通常/reduced/forced画像で確認。"
+  ],
+  "limits": [
+    "React全4形式/既存native2layouts互換/型/契約/gallery/full suiteは主担当検証。独立は固定portable native7・source/export照合・実像と接合測定。",
+    "pauseは公開APIを操作。gallery専用pauseボタン自体のclick連携は今回独立再検査していない。",
+    "R717の接合アルゴリズムは承認するが、その正しさだけでAの美観・独立主形を合格にしない。次の構図案を採用しただけでも合格を保証しない。"
+  ]
+}

@@ -9,3 +9,9 @@
 
 ## 操作契約
 statusと読込メッセージを保持し、装飾はaria-hidden。停止は完了ではない。画面外、非表示タブ、reduced motion、pauseの停止を維持。固有のx-compositionはHTML・React・vanillaで共通。
+
+<!-- design-renewal -->
+六つの三日月が斜めへ重なる主形を保持し、直径64px・輪郭3px・16/12pxの段差へ磨く。外側と内側の弧を一つの薄線束にせず、各開口を残し、最小明度でも三日月を見失わない。forcedでも欠けを閉じない。
+
+native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
+<!-- /design-renewal -->

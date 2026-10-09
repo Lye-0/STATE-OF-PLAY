@@ -37,3 +37,9 @@ if (element) {
 ## 後片付け
 
 通常DOM版では取り外すときにcontroller.destroy()を呼びます。React版はpausedを渡して停止できます。表示する図形はaria-hiddenの装飾で、重要な状態をこのパーツだけで伝えません。
+
+<!-- design-renewal -->
+Bの控えめな六つの角線という主形を保ち、20pxの角・2pxの線・54/50pxの余白で整える。呼吸の最低明度を.78へ上げ、暗背景でも消えず、情報や操作に見える余分なラベルや影を加えない。汎用の静かな装飾として使える小さい二段の配置を保つ。
+
+native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
+<!-- /design-renewal -->

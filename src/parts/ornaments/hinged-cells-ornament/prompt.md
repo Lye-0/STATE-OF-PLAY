@@ -9,3 +9,9 @@
 
 ## 操作契約
 意味を持たない装飾としてaria-hiddenを保ち、入力を受け取らない。pauseとreduced motionで静止する。
+
+<!-- design-renewal -->
+独立に回る六つの小箱を廃し、六枚の板が実際の端を共有して折れる一つの屏風へ再構成する。共通の蝶番角から各板のx/zと回転を計算し、隣の端を同じ三次元位置へ接続する。平らな明暗の表裏・厚い小口と蛇腹の奥行きが主形となり、hoverの別回転は使わない。
+
+native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
+<!-- /design-renewal -->

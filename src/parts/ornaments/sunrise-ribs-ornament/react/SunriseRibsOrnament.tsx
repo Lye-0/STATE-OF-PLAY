@@ -9,7 +9,7 @@ export interface SunriseRibsOrnamentProps extends HTMLAttributes<HTMLDivElement>
 
 const markup = "<div class=\"or-stage\" aria-hidden=\"true\"><div class=\"x-composition\"><i style=\"--i:0\"></i><i style=\"--i:1\"></i><i style=\"--i:2\"></i><i style=\"--i:3\"></i><i style=\"--i:4\"></i><i style=\"--i:5\"></i></div></div>";
 
-/** 羽根が光を散らす。 */
+/** 水平線から放射する六つの稜線の主形を保ち、5pxの実線と4pxの水平線へ磨く。全稜線は水平線上の一つの支点を共有し、共通の開角だけでゆっくり開く。幅広い紙扇R699とは異なり、面を埋めず空を残す光線と水平線の関係を使う。 */
 export default function SunriseRibsOrnament({ paused = false, className = '', ...props }: SunriseRibsOrnamentProps) {
   const element = useRef<HTMLDivElement>(null);
   const controller = useRef<AmbientOrnamentController | null>(null);
