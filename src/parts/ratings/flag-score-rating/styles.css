@@ -1,5 +1,5 @@
 @import "../../../shared/signature/rating.css";
-/* 実際の評価旗が支柱から自由端へ開く評価。普通の四角い星セルを廃し、8pxの実支柱と28pxの足へ接続した一枚の旗を作る。旗の始点は支柱へ4px入り、終端は13pxの二股へ切り開く。星は旗の読む平面へ固定し、布の返りと選択範囲の密度で値を示す。RTLでも支柱と自由端だけを鏡映し、操作順と表示値は保つ。 */
+/* 旗の五段階を一つの列に保つ評価入力。旗と支柱の寸法を揃えて縮め、最後の段階を下段へ分離しない。 */
 
 .sop-sig.sop-flag-score-rating.sop-flag-score-rating{--paper:#f4f1ed;--ink:#3e444d;--muted:#3e444d;--accent:#765e42;--edge:#c3b49d;--sg-bg:var(--paper);--sg-panel:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);color:var(--ink);color-scheme:light;background:var(--paper);width:100%;max-width:min(100%,400px);min-width:0;padding:18px;container-type:inline-size;overflow-wrap:anywhere}
 .sop-sig.sop-flag-score-rating.sop-flag-score-rating,.sop-sig.sop-flag-score-rating.sop-flag-score-rating *,.sop-sig.sop-flag-score-rating.sop-flag-score-rating *::before,.sop-sig.sop-flag-score-rating.sop-flag-score-rating *::after{box-sizing:border-box}
@@ -34,3 +34,13 @@
 
 .sop-sig.sop-flag-score-rating.sop-flag-score-rating .sg-rating-output{direction:ltr;unicode-bidi:isolate}
 @media(forced-colors:active){.sop-sig.sop-flag-score-rating.sop-flag-score-rating{--paper:Canvas!important;--ink:CanvasText!important;--muted:CanvasText!important;--accent:Highlight!important;color:CanvasText!important}.sop-sig.sop-flag-score-rating.sop-flag-score-rating .sg-rating-star{stroke:CanvasText!important;fill:none!important}.sop-sig.sop-flag-score-rating.sop-flag-score-rating .sg-rating-unit[data-filled=true] .sg-rating-star{fill:Highlight!important;stroke:Highlight!important}.sop-sig.sop-flag-score-rating.sop-flag-score-rating .sg-rating-info,.sop-sig.sop-flag-score-rating.sop-flag-score-rating .sg-rating-number{color:CanvasText!important}.sop-sig.sop-flag-score-rating.sop-flag-score-rating .sg-rating-unit::before,.sop-sig.sop-flag-score-rating.sop-flag-score-rating .sg-rating-unit::after{display:none!important}.sop-sig.sop-flag-score-rating.sop-flag-score-rating .sg-rating-form{height:auto!important;clip-path:none!important;mask:none!important;transform:none!important}.sop-sig.sop-flag-score-rating.sop-flag-score-rating .sg-rating-clear{color:ButtonText!important;background:Canvas!important}}
+
+.sop-sig.sop-flag-score-rating.sop-flag-score-rating .sg-rating-scale{grid-template-columns:repeat(var(--sg-count,5),minmax(28px,1fr));gap:4px;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;padding-inline:3px;overscroll-behavior-x:contain}.sop-sig.sop-flag-score-rating.sop-flag-score-rating .sg-rating-unit{min-width:0;width:100%}.sop-sig.sop-flag-score-rating.sop-flag-score-rating .sg-rating-star{width:min(24px,70%);height:24px;max-width:100%}
+
+@media(forced-colors:none){
+.sop-sig.sop-flag-score-rating.sop-flag-score-rating .sg-rating-unit{height:86px}.sop-sig.sop-flag-score-rating.sop-flag-score-rating .sg-rating-form{inset:6px 0 auto 4px;height:64px;border-top-width:3px;border-bottom-width:4px;clip-path:polygon(0 0,100% 0,100% 100%,50% calc(100% - 8px),0 100%)}.sop-sig.sop-flag-score-rating.sop-flag-score-rating .sg-rating-unit::before{width:3px;left:0}.sop-sig.sop-flag-score-rating.sop-flag-score-rating .sg-rating-star{left:15%;top:12px;width:70%}.sop-sig.sop-flag-score-rating.sop-flag-score-rating:dir(rtl) .sg-rating-form{inset:6px 4px auto 0}
+}
+
+@media(forced-colors:none){.sop-sig.sop-flag-score-rating.sop-flag-score-rating .sg-rating-unit[data-filled=true] .sg-rating-star{fill:#673d32;stroke:#673d32}}
+
+.sop-sig.sop-flag-score-rating.sop-flag-score-rating .sg-rating-scale{justify-content:start}

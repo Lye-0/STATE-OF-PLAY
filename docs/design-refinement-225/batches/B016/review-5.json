@@ -1,0 +1,486 @@
+{
+  "batch": "B016",
+  "round": 5,
+  "overall": "changes_required",
+  "parts": [
+    {
+      "id": "flag-score-rating",
+      "number": 501,
+      "verdict": "changes_required",
+      "note": "旗端と支柱の接点が五段階を支え、狭幅も一列。星を濃くした結果、実面との比率4.366:1。 造形・通常操作の評価はr4同一作者で継承するが、max10先頭到達不能を新規検出。",
+      "findings": [
+        {
+          "kind": "overflow_start_inaccessible",
+          "description": "max10・320pxで共有rating.cssのjustify-content:centerがgridにも残り、列が両側へあふれる。scrollLeftが先頭端でも1番が可視範囲外/欠け、Homeで値1へ変更しても星/確定位置が見えずポインター到達できない。LTR/RTL・実gallery/portableで再現。",
+          "recommendation": "作者のgrid列をjustify-content:startで開始辺へ揃え、先頭/末尾の実ポインター到達性と選択可視性を両方向で検証する。",
+          "evidence": [
+            "measurements-start-5.json",
+            "start-summary-5.json",
+            "evidence-5/flag-score-rating-portable-start-ltr-first.png",
+            "evidence-5/flag-score-rating-portable-start-rtl-first.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-4/flag-score-rating-portable-rest.png",
+        "evidence-4/flag-score-rating-gallery-narrow.png",
+        "evidence-4/flag-score-rating-react-forced.png",
+        "measurements-4.json",
+        "measurements-react-4.json",
+        "measurements-ratings-4.json",
+        "hash-verification-5.json",
+        "start-summary-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ],
+        "focusedStartLTRRTL": true,
+        "fullRecheck": false
+      }
+    },
+    {
+      "id": "blueprint-score-rating",
+      "number": 502,
+      "verdict": "changes_required",
+      "note": "三方の折れた翼が星の接合面を支える。星を覆う過大な装飾にならず、旗/活字札と構造を区別できる。 造形・通常操作の評価はr4同一作者で継承するが、max10先頭到達不能を新規検出。",
+      "findings": [
+        {
+          "kind": "overflow_start_inaccessible",
+          "description": "max10・320pxで共有rating.cssのjustify-content:centerがgridにも残り、列が両側へあふれる。scrollLeftが先頭端でも1番が可視範囲外/欠け、Homeで値1へ変更しても星/確定位置が見えずポインター到達できない。LTR/RTL・実gallery/portableで再現。",
+          "recommendation": "作者のgrid列をjustify-content:startで開始辺へ揃え、先頭/末尾の実ポインター到達性と選択可視性を両方向で検証する。",
+          "evidence": [
+            "measurements-start-5.json",
+            "start-summary-5.json",
+            "evidence-5/blueprint-score-rating-portable-start-ltr-first.png",
+            "evidence-5/blueprint-score-rating-portable-start-rtl-first.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-4/blueprint-score-rating-portable-rest.png",
+        "evidence-4/blueprint-score-rating-gallery-narrow.png",
+        "evidence-4/blueprint-score-rating-react-forced.png",
+        "measurements-4.json",
+        "measurements-react-4.json",
+        "measurements-ratings-4.json",
+        "hash-verification-5.json",
+        "start-summary-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ],
+        "focusedStartLTRRTL": true,
+        "fullRecheck": false
+      }
+    },
+    {
+      "id": "ribbon-score-rating",
+      "number": 503,
+      "verdict": "changes_required",
+      "note": "連続する帯の端と厚みで一つの尺度を読む。任意maxでも帯は星と続き、選択星は4.361:1。 造形・通常操作の評価はr4同一作者で継承するが、max10先頭到達不能を新規検出。",
+      "findings": [
+        {
+          "kind": "overflow_start_inaccessible",
+          "description": "max10・320pxで共有rating.cssのjustify-content:centerがgridにも残り、列が両側へあふれる。scrollLeftが先頭端でも1番が可視範囲外/欠け、Homeで値1へ変更しても星/確定位置が見えずポインター到達できない。LTR/RTL・実gallery/portableで再現。",
+          "recommendation": "作者のgrid列をjustify-content:startで開始辺へ揃え、先頭/末尾の実ポインター到達性と選択可視性を両方向で検証する。",
+          "evidence": [
+            "measurements-start-5.json",
+            "start-summary-5.json",
+            "evidence-5/ribbon-score-rating-portable-start-ltr-first.png",
+            "evidence-5/ribbon-score-rating-portable-start-rtl-first.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-4/ribbon-score-rating-portable-rest.png",
+        "evidence-4/ribbon-score-rating-gallery-narrow.png",
+        "evidence-4/ribbon-score-rating-react-forced.png",
+        "measurements-4.json",
+        "measurements-react-4.json",
+        "measurements-ratings-4.json",
+        "hash-verification-5.json",
+        "start-summary-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ],
+        "focusedStartLTRRTL": true,
+        "fullRecheck": false
+      }
+    },
+    {
+      "id": "ceramic-score-rating",
+      "number": 504,
+      "verdict": "changes_required",
+      "note": "r4の端の星と縁の重なり、およびmax10の陶面途切れは解消。末尾選択星の背景は平面#dbe7ceへ統一し3.393:1。ただし共通の中央寄せによる先頭到達不能を新規検出。",
+      "findings": [
+        {
+          "kind": "overflow_start_inaccessible",
+          "description": "max10・320pxで共有rating.cssのjustify-content:centerがgridにも残り、列が両側へあふれる。scrollLeftが先頭端でも1番が可視範囲外/欠け、Homeで値1へ変更しても星/確定位置が見えずポインター到達できない。LTR/RTL・実gallery/portableで再現。",
+          "recommendation": "作者のgrid列をjustify-content:startで開始辺へ揃え、先頭/末尾の実ポインター到達性と選択可視性を両方向で検証する。",
+          "evidence": [
+            "measurements-start-5.json",
+            "start-summary-5.json",
+            "evidence-5/ceramic-score-rating-portable-start-ltr-first.png",
+            "evidence-5/ceramic-score-rating-portable-start-rtl-first.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-5/ceramic-score-rating-portable-rest.png",
+        "evidence-5/ceramic-score-rating-gallery-narrow.png",
+        "evidence-5/ceramic-score-rating-react-forced.png",
+        "measurements-5.json",
+        "measurements-react-5.json",
+        "measurements-ratings-5.json",
+        "hash-verification-5.json",
+        "start-summary-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ],
+        "focusedStartLTRRTL": true,
+        "fullRecheck": true
+      }
+    },
+    {
+      "id": "letterpress-score-rating",
+      "number": 505,
+      "verdict": "changes_required",
+      "note": "活字札の縁・下面と確定枠の関係は一貫。狭幅でも五段階を分断せず、星の比率3.163:1。 造形・通常操作の評価はr4同一作者で継承するが、max10先頭到達不能を新規検出。",
+      "findings": [
+        {
+          "kind": "overflow_start_inaccessible",
+          "description": "max10・320pxで共有rating.cssのjustify-content:centerがgridにも残り、列が両側へあふれる。scrollLeftが先頭端でも1番が可視範囲外/欠け、Homeで値1へ変更しても星/確定位置が見えずポインター到達できない。LTR/RTL・実gallery/portableで再現。",
+          "recommendation": "作者のgrid列をjustify-content:startで開始辺へ揃え、先頭/末尾の実ポインター到達性と選択可視性を両方向で検証する。",
+          "evidence": [
+            "measurements-start-5.json",
+            "start-summary-5.json",
+            "evidence-5/letterpress-score-rating-portable-start-ltr-first.png",
+            "evidence-5/letterpress-score-rating-portable-start-rtl-first.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-4/letterpress-score-rating-portable-rest.png",
+        "evidence-4/letterpress-score-rating-gallery-narrow.png",
+        "evidence-4/letterpress-score-rating-react-forced.png",
+        "measurements-4.json",
+        "measurements-react-4.json",
+        "measurements-ratings-4.json",
+        "hash-verification-5.json",
+        "start-summary-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ],
+        "focusedStartLTRRTL": true,
+        "fullRecheck": false
+      }
+    },
+    {
+      "id": "soft-feedback-rating",
+      "number": 508,
+      "verdict": "changes_required",
+      "note": "柔らかい輪郭のキーでフィードバックを扱うB。星・選択枠・値を読みやすく整理し、過剰な造形を加えない。 造形・通常操作の評価はr4同一作者で継承するが、max10先頭到達不能を新規検出。",
+      "findings": [
+        {
+          "kind": "overflow_start_inaccessible",
+          "description": "max10・320pxで共有rating.cssのjustify-content:centerがgridにも残り、列が両側へあふれる。scrollLeftが先頭端でも1番が可視範囲外/欠け、Homeで値1へ変更しても星/確定位置が見えずポインター到達できない。LTR/RTL・実gallery/portableで再現。",
+          "recommendation": "作者のgrid列をjustify-content:startで開始辺へ揃え、先頭/末尾の実ポインター到達性と選択可視性を両方向で検証する。",
+          "evidence": [
+            "measurements-start-5.json",
+            "start-summary-5.json",
+            "evidence-5/soft-feedback-rating-portable-start-ltr-first.png",
+            "evidence-5/soft-feedback-rating-portable-start-rtl-first.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-4/soft-feedback-rating-portable-rest.png",
+        "evidence-4/soft-feedback-rating-gallery-narrow.png",
+        "evidence-4/soft-feedback-rating-react-forced.png",
+        "measurements-4.json",
+        "measurements-react-4.json",
+        "measurements-ratings-4.json",
+        "hash-verification-5.json",
+        "start-summary-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ],
+        "focusedStartLTRRTL": true,
+        "fullRecheck": false
+      }
+    },
+    {
+      "id": "warm-reader-rating",
+      "number": 510,
+      "verdict": "changes_required",
+      "note": "本文に馴染む暖色のB。角の小さい一列のキーと確定下面で値を示し、R508より静かな用途差が成立。 造形・通常操作の評価はr4同一作者で継承するが、max10先頭到達不能を新規検出。",
+      "findings": [
+        {
+          "kind": "overflow_start_inaccessible",
+          "description": "max10・320pxで共有rating.cssのjustify-content:centerがgridにも残り、列が両側へあふれる。scrollLeftが先頭端でも1番が可視範囲外/欠け、Homeで値1へ変更しても星/確定位置が見えずポインター到達できない。LTR/RTL・実gallery/portableで再現。",
+          "recommendation": "作者のgrid列をjustify-content:startで開始辺へ揃え、先頭/末尾の実ポインター到達性と選択可視性を両方向で検証する。",
+          "evidence": [
+            "measurements-start-5.json",
+            "start-summary-5.json",
+            "evidence-5/warm-reader-rating-portable-start-ltr-first.png",
+            "evidence-5/warm-reader-rating-portable-start-rtl-first.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-4/warm-reader-rating-portable-rest.png",
+        "evidence-4/warm-reader-rating-gallery-narrow.png",
+        "evidence-4/warm-reader-rating-react-forced.png",
+        "measurements-4.json",
+        "measurements-react-4.json",
+        "measurements-ratings-4.json",
+        "hash-verification-5.json",
+        "start-summary-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ],
+        "focusedStartLTRRTL": true,
+        "fullRecheck": false
+      }
+    },
+    {
+      "id": "optical-color-desk",
+      "number": 517,
+      "verdict": "pass",
+      "note": "光学盤とSVの構造・390/320pxの収まりを保持。forcedで3軌道と白境界付き黒thumbが復帰し、色相/彩度/明度・HEX・実ポインターの同期も成立。",
+      "findings": [],
+      "evidence": [
+        "evidence-5/optical-color-desk-portable-rest.png",
+        "evidence-5/optical-color-desk-gallery-narrow.png",
+        "evidence-5/optical-color-desk-react-forced.png",
+        "measurements-5.json",
+        "measurements-react-5.json",
+        "measurements-colors-5.json",
+        "hash-verification-5.json",
+        "measurements-focused-colors-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ],
+        "focusedStartLTRRTL": false,
+        "fullRecheck": true
+      }
+    },
+    {
+      "id": "letterpress-ink-color",
+      "number": 520,
+      "verdict": "pass",
+      "note": "試し刷りの紙面・RGB組版行を保持。forcedで3軌道の全幅が描画され、つまみと数値を読める。HEX/エラー/解除/reset/readonly/disabled/controlledも成立。",
+      "findings": [],
+      "evidence": [
+        "evidence-5/letterpress-ink-color-portable-rest.png",
+        "evidence-5/letterpress-ink-color-gallery-narrow.png",
+        "evidence-5/letterpress-ink-color-react-forced.png",
+        "measurements-5.json",
+        "measurements-react-5.json",
+        "measurements-colors-5.json",
+        "hash-verification-5.json",
+        "measurements-focused-colors-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ],
+        "focusedStartLTRRTL": false,
+        "fullRecheck": true
+      }
+    },
+    {
+      "id": "linear-lab-color",
+      "number": 522,
+      "verdict": "pass",
+      "note": "横長色面と測定レーンの構造を保持。forcedで3軌道の全幅とthumbが可視。通常/狭幅/RTL/keyboard/HEXの値同期も成立。",
+      "findings": [],
+      "evidence": [
+        "evidence-5/linear-lab-color-portable-rest.png",
+        "evidence-5/linear-lab-color-gallery-narrow.png",
+        "evidence-5/linear-lab-color-react-forced.png",
+        "measurements-5.json",
+        "measurements-react-5.json",
+        "measurements-colors-5.json",
+        "hash-verification-5.json",
+        "measurements-focused-colors-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ],
+        "focusedStartLTRRTL": false,
+        "fullRecheck": true
+      }
+    }
+  ],
+  "coverage": {
+    "source": "snapshot/round-5 / review-input-5.json;全計測終了・作者release前の100sourcehash一致",
+    "authorChanges": "r4から504/517/520/522の4CSSのみ、他96作者ファイルと全配布internal共有は同一",
+    "inheritedAuthorFiles": 60,
+    "fullRecheckParts": [
+      504,
+      517,
+      520,
+      522
+    ],
+    "newFocusedStartParts": [
+      501,
+      502,
+      503,
+      504,
+      505,
+      508,
+      510
+    ],
+    "newStartConditions": 28,
+    "newStartFailedConditions": 28,
+    "diagnosticStartVisibleConditions": 28,
+    "diagnosticScope": "一時DOM styleのみ、作者ファイル変更なし。診断状態を納品版合格と取り違えない。",
+    "previousIssues": "r4の4件指摘はすべて解消。forced3colors×3range×2環境はthumb10pxのみから全76〜123px幅の描画に復帰。R504値5末尾の星cropに濃い縁pixelがなくなった。",
+    "runtime": "4件のnative+React4形式を再実行。値/preview/reset/controlled/readonly/disabled/required/HEX/エラー解除/色相輪/SVdragは従来通り。ただし値1へ変更できることと、先頭項目へポインターが届くことを明確に分けて新規指摘した。",
+    "imagesViewed": [
+      "evidence-5/colors-gallery-base-1-sheet.jpg",
+      "evidence-5/colors-gallery-native-1-sheet.jpg",
+      "evidence-5/colors-portable-base-1-sheet.jpg",
+      "evidence-5/colors-portable-native-1-sheet.jpg",
+      "evidence-5/ratings-gallery-base-1-sheet.jpg",
+      "evidence-5/ratings-gallery-native-1-sheet.jpg",
+      "evidence-5/ratings-portable-base-1-sheet.jpg",
+      "evidence-5/ratings-portable-native-1-sheet.jpg",
+      "evidence-5/react-1-sheet.jpg",
+      "evidence-5/react-2-sheet.jpg",
+      "evidence-5/start-1-sheet.jpg",
+      "evidence-5/start-2-sheet.jpg",
+      "evidence-5/start-3-sheet.jpg",
+      "evidence-5/ceramic-score-rating-portable-max10-selected.png",
+      "evidence-5/ceramic-score-rating-portable-rtl-max10.png",
+      "evidence-5/ceramic-score-rating-portable-max2-long.png"
+    ],
+    "scope": "既存4件の通常/hover/狭幅/RTL/forced、native操作とReactを画像視認。追加7件の先頭・RTL・DOM診断画像も全件視認。特定状態の検査であり無欠陥保証ではない。"
+  }
+}

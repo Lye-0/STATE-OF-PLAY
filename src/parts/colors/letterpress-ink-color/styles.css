@@ -1,5 +1,5 @@
 @import "../../../shared/signature/color.css";
-/* インクの三成分を、活版の濃度見本として縦に読む色校正。大きなセリフ見出し、190pxの色面、区切りを共有する58pxの実RGB行の三段を確保する。紙色の上へ細かい飾り文字を増やさず、実色の円形見本とHEXを読める大きさで示す。文字や入力座標は押下・hover・値変更で移動しない。 */
+/* 試し刷りの色面とRGBの組版行を組み合わせたカラーピッカー。余白に重ねた罫とインク見本を持ち、色面と数値は平らな面で読み取れる。 */
 
 .sop-sig.sop-letterpress-ink-color.sop-letterpress-ink-color{--paper:#f4f1ec;--ink:#3d4653;--muted:#3d4653;--accent:#657482;--edge:#bcc7cd;--sg-bg:var(--paper);--sg-panel:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);color:var(--ink);color-scheme:light;background:var(--paper);width:100%;max-width:min(100%,480px);min-width:0;container-type:inline-size;overflow-wrap:anywhere}
 .sop-sig.sop-letterpress-ink-color.sop-letterpress-ink-color,.sop-sig.sop-letterpress-ink-color.sop-letterpress-ink-color *,.sop-sig.sop-letterpress-ink-color.sop-letterpress-ink-color *::before,.sop-sig.sop-letterpress-ink-color.sop-letterpress-ink-color *::after{box-sizing:border-box}
@@ -61,3 +61,27 @@
 .sop-sig.sop-letterpress-ink-color.sop-letterpress-ink-color .sg-rgb-channel input[data-channel=r]::-moz-range-track{background:linear-gradient(90deg,rgb(from var(--sg-color) 0 g b),rgb(from var(--sg-color) 255 g b))}
 .sop-sig.sop-letterpress-ink-color.sop-letterpress-ink-color .sg-rgb-channel input[data-channel=g]::-moz-range-track{background:linear-gradient(90deg,rgb(from var(--sg-color) r 0 b),rgb(from var(--sg-color) r 255 b))}
 .sop-sig.sop-letterpress-ink-color.sop-letterpress-ink-color .sg-rgb-channel input[data-channel=b]::-moz-range-track{background:linear-gradient(90deg,rgb(from var(--sg-color) r g 0),rgb(from var(--sg-color) r g 255))}
+
+@media(forced-colors:none){
+
+.sop-sig.sop-letterpress-ink-color.sop-letterpress-ink-color .sg-color-panel{position:relative;isolation:isolate;padding:24px 20px 24px 27px;border:0;border-inline-start:3px double #b8a296;background:linear-gradient(90deg,#ebe0d0 0 10px,transparent 10px)}
+.sop-sig.sop-letterpress-ink-color.sop-letterpress-ink-color .sg-color-heading{align-items:start;border-bottom:3px double #a98e7c;padding-bottom:14px;margin-bottom:24px}
+.sop-sig.sop-letterpress-ink-color.sop-letterpress-ink-color .sg-color-heading .sg-label{font:600 25px/1.35 Georgia,'Yu Mincho',serif;letter-spacing:-.02em}
+.sop-sig.sop-letterpress-ink-color.sop-letterpress-ink-color .sg-color-swatch{width:48px;min-width:48px;height:64px;border:0;border-radius:0;box-shadow:inset 0 0 0 1px #55443355;clip-path:polygon(0 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%)}
+.sop-sig.sop-letterpress-ink-color.sop-letterpress-ink-color .sg-color-workspace{position:relative;padding:13px;margin-bottom:22px;border:1px solid #ccb9a6;background:repeating-linear-gradient(0deg,transparent 0 9px,#b69c7f44 9px 10px)}
+.sop-sig.sop-letterpress-ink-color.sop-letterpress-ink-color .sg-color-workspace::before{content:'';position:absolute;inset:6px;border:1px solid #8e756044;pointer-events:none}
+.sop-sig.sop-letterpress-ink-color.sop-letterpress-ink-color .sg-color-sv{height:140px;border:0;outline:1px solid #8c7667;box-shadow:0 0 0 5px var(--paper)}
+.sop-sig.sop-letterpress-ink-color.sop-letterpress-ink-color .sg-color-rgb{border-block:3px double #b69d87}
+.sop-sig.sop-letterpress-ink-color.sop-letterpress-ink-color .sg-rgb-channel{min-height:58px;border-bottom:1px solid #cfb8b5;gap:8px;grid-template-columns:22px minmax(0,1fr) 32px}
+.sop-sig.sop-letterpress-ink-color.sop-letterpress-ink-color .sg-rgb-channel>span{font:700 22px/1 Georgia,serif}
+.sop-sig.sop-letterpress-ink-color.sop-letterpress-ink-color .sg-color-palette{gap:8px;padding-bottom:12px;border-bottom:1px solid #bca48d}
+.sop-sig.sop-letterpress-ink-color.sop-letterpress-ink-color .sg-color-palette button{border-radius:0;width:38px;min-width:38px;height:46px;border:0;border-bottom:6px solid var(--paper);box-shadow:0 1px #a28b70}
+
+}
+
+@media(forced-colors:active){
+.sop-sig.sop-letterpress-ink-color.sop-letterpress-ink-color .sg-color-axis input::-webkit-slider-runnable-track,.sop-sig.sop-letterpress-ink-color.sop-letterpress-ink-color .sg-rgb-channel input::-webkit-slider-runnable-track{forced-color-adjust:none;border:1px solid CanvasText}
+.sop-sig.sop-letterpress-ink-color.sop-letterpress-ink-color .sg-color-axis input::-moz-range-track,.sop-sig.sop-letterpress-ink-color.sop-letterpress-ink-color .sg-rgb-channel input::-moz-range-track{forced-color-adjust:none;border:1px solid CanvasText}
+.sop-sig.sop-letterpress-ink-color.sop-letterpress-ink-color :is(.sg-color-axis,.sg-rgb-channel) input::-webkit-slider-thumb{forced-color-adjust:none;background:CanvasText;border:3px solid Canvas;outline:1px solid CanvasText;box-shadow:none}
+.sop-sig.sop-letterpress-ink-color.sop-letterpress-ink-color :is(.sg-color-axis,.sg-rgb-channel) input::-moz-range-thumb{forced-color-adjust:none;background:CanvasText;border:3px solid Canvas;outline:1px solid CanvasText;box-shadow:none}
+}

@@ -1,5 +1,5 @@
 @import "../../../shared/signature/rating.css";
-/* 一本の織った帯の読む面に星を置く評価。元の帯と星を保持し、小さな丸い星箱と細い接続線を同じ幅の連続する面へ揃える。7pxの上端と10pxの下の返りを保ち、先頭と末尾のみ巻いた終端を作る。実際の確定位置は帯の上端の密度で示し、星とnative当たりを動かさない。 */
+/* 五つの星を一本の帯で結ぶ評価入力。端と継ぎ目を薄くし、狭い画面でも帯を途中で折り返さない。 */
 
 .sop-sig.sop-ribbon-score-rating.sop-ribbon-score-rating{--paper:#f4f1ed;--ink:#3e444d;--muted:#3e444d;--accent:#765e42;--edge:#c3b49d;--sg-bg:var(--paper);--sg-panel:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);color:var(--ink);color-scheme:light;background:var(--paper);width:100%;max-width:min(100%,400px);min-width:0;padding:18px;container-type:inline-size;overflow-wrap:anywhere}
 .sop-sig.sop-ribbon-score-rating.sop-ribbon-score-rating,.sop-sig.sop-ribbon-score-rating.sop-ribbon-score-rating *,.sop-sig.sop-ribbon-score-rating.sop-ribbon-score-rating *::before,.sop-sig.sop-ribbon-score-rating.sop-ribbon-score-rating *::after{box-sizing:border-box}
@@ -33,3 +33,13 @@
 
 .sop-sig.sop-ribbon-score-rating.sop-ribbon-score-rating .sg-rating-output{direction:ltr;unicode-bidi:isolate}
 @media(forced-colors:active){.sop-sig.sop-ribbon-score-rating.sop-ribbon-score-rating{--paper:Canvas!important;--ink:CanvasText!important;--muted:CanvasText!important;--accent:Highlight!important;color:CanvasText!important}.sop-sig.sop-ribbon-score-rating.sop-ribbon-score-rating .sg-rating-star{stroke:CanvasText!important;fill:none!important}.sop-sig.sop-ribbon-score-rating.sop-ribbon-score-rating .sg-rating-unit[data-filled=true] .sg-rating-star{fill:Highlight!important;stroke:Highlight!important}.sop-sig.sop-ribbon-score-rating.sop-ribbon-score-rating .sg-rating-info,.sop-sig.sop-ribbon-score-rating.sop-ribbon-score-rating .sg-rating-number{color:CanvasText!important}.sop-sig.sop-ribbon-score-rating.sop-ribbon-score-rating .sg-rating-unit::before,.sop-sig.sop-ribbon-score-rating.sop-ribbon-score-rating .sg-rating-unit::after{display:none!important}.sop-sig.sop-ribbon-score-rating.sop-ribbon-score-rating .sg-rating-form{height:auto!important;clip-path:none!important;mask:none!important;transform:none!important}.sop-sig.sop-ribbon-score-rating.sop-ribbon-score-rating .sg-rating-clear{color:ButtonText!important;background:Canvas!important}}
+
+.sop-sig.sop-ribbon-score-rating.sop-ribbon-score-rating .sg-rating-scale{grid-template-columns:repeat(var(--sg-count,5),minmax(28px,1fr));gap:4px;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;padding-inline:3px;overscroll-behavior-x:contain}.sop-sig.sop-ribbon-score-rating.sop-ribbon-score-rating .sg-rating-unit{min-width:0;width:100%}.sop-sig.sop-ribbon-score-rating.sop-ribbon-score-rating .sg-rating-star{width:min(24px,70%);height:24px;max-width:100%}
+
+@media(forced-colors:none){
+.sop-sig.sop-ribbon-score-rating.sop-ribbon-score-rating .sg-rating-scale{gap:0;padding-inline:3px}.sop-sig.sop-ribbon-score-rating.sop-ribbon-score-rating .sg-rating-unit{height:70px}.sop-sig.sop-ribbon-score-rating.sop-ribbon-score-rating .sg-rating-star{left:15%;top:12px;width:70%}.sop-sig.sop-ribbon-score-rating.sop-ribbon-score-rating .sg-rating-unit:first-child .sg-rating-form{border-inline-start-width:3px}.sop-sig.sop-ribbon-score-rating.sop-ribbon-score-rating .sg-rating-unit:last-child .sg-rating-form{border-inline-end-width:3px}
+}
+
+@media(forced-colors:none){.sop-sig.sop-ribbon-score-rating.sop-ribbon-score-rating .sg-rating-unit[data-filled=true] .sg-rating-star{fill:#6a3a5e;stroke:#6a3a5e}}
+
+.sop-sig.sop-ribbon-score-rating.sop-ribbon-score-rating .sg-rating-scale{justify-content:start}

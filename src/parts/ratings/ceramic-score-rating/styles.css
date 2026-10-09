@@ -1,5 +1,5 @@
 @import "../../../shared/signature/rating.css";
-/* 一列全体を、一枚の大きく反る陶の自立面で読む評価。小さな丸上キーの反復を廃し、片側で58px/70pxへ大きく巻き込む一つの壁と、その下へ26px重なる52pxの広がる裾を形成する。星は壁の平らな読む面へ固定し、個別の台座や星箱を作らない。選択範囲は実星の塗り、確定位置は3pxの低い刻みで読み、複数行でも同じ一枚の陶面が全評価を支える。 */
+/* 一枚の反った陶の面に五つの星を並べる評価入力。裾と縁を小さくし、選択範囲を一列で読めるようにする。 */
 
 .sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating{--paper:#f4f1ed;--ink:#3e444d;--muted:#3e444d;--accent:#765e42;--edge:#c3b49d;--sg-bg:var(--paper);--sg-panel:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);color:var(--ink);color-scheme:light;background:var(--paper);width:100%;max-width:min(100%,400px);min-width:0;padding:18px;container-type:inline-size;overflow-wrap:anywhere}
 .sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating,.sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating *,.sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating *::before,.sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating *::after{box-sizing:border-box}
@@ -32,3 +32,16 @@
 
 .sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating .sg-rating-output{direction:ltr;unicode-bidi:isolate}
 @media(forced-colors:active){.sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating{--paper:Canvas!important;--ink:CanvasText!important;--muted:CanvasText!important;--accent:Highlight!important;color:CanvasText!important}.sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating .sg-rating-star{stroke:CanvasText!important;fill:none!important}.sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating .sg-rating-unit[data-filled=true] .sg-rating-star{fill:Highlight!important;stroke:Highlight!important}.sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating .sg-rating-info,.sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating .sg-rating-number{color:CanvasText!important}.sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating .sg-rating-unit::before,.sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating .sg-rating-unit::after{display:none!important}.sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating .sg-rating-form{height:auto!important;clip-path:none!important;mask:none!important;transform:none!important}.sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating .sg-rating-clear{color:ButtonText!important;background:Canvas!important}}
+
+.sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating .sg-rating-scale{grid-template-columns:repeat(var(--sg-count,5),minmax(28px,1fr));gap:4px;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;padding-inline:3px;overscroll-behavior-x:contain}.sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating .sg-rating-unit{min-width:0;width:100%}.sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating .sg-rating-star{width:min(24px,70%);height:24px;max-width:100%}
+
+@media(forced-colors:none){
+.sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating .sg-rating-scale{gap:0;padding:18px 8px 34px}.sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating .sg-rating-scale::before{border-top-width:4px;border-bottom-width:7px;border-radius:24px 10px 24px 10px}.sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating .sg-rating-scale::after{height:32px;border-top-width:4px;border-bottom-width:8px;border-radius:15px 10px 24px 20px}.sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating .sg-rating-unit{height:54px}
+}
+@media(forced-colors:none){
+.sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating .sg-rating-scale{padding-inline:18px}
+}
+
+@media(forced-colors:none){.sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating .sg-rating-scale::before{inset:0 auto 26px 0;width:max(100%,calc(var(--sg-count,5)*28px + 36px))}.sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating .sg-rating-scale::after{left:0;right:auto;width:max(100%,calc(var(--sg-count,5)*28px + 36px))}.sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating:dir(rtl) .sg-rating-scale::before{left:auto;right:0}.sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating:dir(rtl) .sg-rating-scale::after{left:auto;right:0}}
+
+.sop-sig.sop-ceramic-score-rating.sop-ceramic-score-rating .sg-rating-scale{justify-content:start}

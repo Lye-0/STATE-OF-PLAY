@@ -1,5 +1,5 @@
 @import "../../../shared/signature/rating.css";
-/* 星の活字を一つの厚い印刷版へ押す評価。元の四角い版と星を保持し、7pxの上端/10pxの下端/左右4pxと6pxの実端面を同じ素材へ揃える。活字の星と押面は全段階で固定し、評価範囲は版の密度、確定位置は内側の押縁で示す。余分な見せかけの数値や罫線は置かない。 */
+/* 五つの活字札を一列に並べる評価入力。縁の厚さと札の幅を整え、狭幅でも五段階を同時に見渡せる。 */
 
 .sop-sig.sop-letterpress-score-rating.sop-letterpress-score-rating{--paper:#f4f1ed;--ink:#3e444d;--muted:#3e444d;--accent:#765e42;--edge:#c3b49d;--sg-bg:var(--paper);--sg-panel:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);color:var(--ink);color-scheme:light;background:var(--paper);width:100%;max-width:min(100%,400px);min-width:0;padding:18px;container-type:inline-size;overflow-wrap:anywhere}
 .sop-sig.sop-letterpress-score-rating.sop-letterpress-score-rating,.sop-sig.sop-letterpress-score-rating.sop-letterpress-score-rating *,.sop-sig.sop-letterpress-score-rating.sop-letterpress-score-rating *::before,.sop-sig.sop-letterpress-score-rating.sop-letterpress-score-rating *::after{box-sizing:border-box}
@@ -30,3 +30,11 @@
 
 .sop-sig.sop-letterpress-score-rating.sop-letterpress-score-rating .sg-rating-output{direction:ltr;unicode-bidi:isolate}
 @media(forced-colors:active){.sop-sig.sop-letterpress-score-rating.sop-letterpress-score-rating{--paper:Canvas!important;--ink:CanvasText!important;--muted:CanvasText!important;--accent:Highlight!important;color:CanvasText!important}.sop-sig.sop-letterpress-score-rating.sop-letterpress-score-rating .sg-rating-star{stroke:CanvasText!important;fill:none!important}.sop-sig.sop-letterpress-score-rating.sop-letterpress-score-rating .sg-rating-unit[data-filled=true] .sg-rating-star{fill:Highlight!important;stroke:Highlight!important}.sop-sig.sop-letterpress-score-rating.sop-letterpress-score-rating .sg-rating-info,.sop-sig.sop-letterpress-score-rating.sop-letterpress-score-rating .sg-rating-number{color:CanvasText!important}.sop-sig.sop-letterpress-score-rating.sop-letterpress-score-rating .sg-rating-unit::before,.sop-sig.sop-letterpress-score-rating.sop-letterpress-score-rating .sg-rating-unit::after{display:none!important}.sop-sig.sop-letterpress-score-rating.sop-letterpress-score-rating .sg-rating-form{height:auto!important;clip-path:none!important;mask:none!important;transform:none!important}.sop-sig.sop-letterpress-score-rating.sop-letterpress-score-rating .sg-rating-clear{color:ButtonText!important;background:Canvas!important}}
+
+.sop-sig.sop-letterpress-score-rating.sop-letterpress-score-rating .sg-rating-scale{grid-template-columns:repeat(var(--sg-count,5),minmax(28px,1fr));gap:4px;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;padding-inline:3px;overscroll-behavior-x:contain}.sop-sig.sop-letterpress-score-rating.sop-letterpress-score-rating .sg-rating-unit{min-width:0;width:100%}.sop-sig.sop-letterpress-score-rating.sop-letterpress-score-rating .sg-rating-star{width:min(24px,70%);height:24px;max-width:100%}
+
+@media(forced-colors:none){
+.sop-sig.sop-letterpress-score-rating.sop-letterpress-score-rating .sg-rating-unit{height:66px}.sop-sig.sop-letterpress-score-rating.sop-letterpress-score-rating .sg-rating-form{border-width:3px 2px 5px 3px}
+}
+
+.sop-sig.sop-letterpress-score-rating.sop-letterpress-score-rating .sg-rating-scale{justify-content:start}

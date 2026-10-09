@@ -1,5 +1,5 @@
 @import "../../../shared/signature/color.css";
-/* 色面と数値を分離した、線形のカラー実験台。128pxの横長SV、全幅64pxの三軸、56pxの保存色を同じ左の基準線へ揃える。ラベル・実値・操作の序列を線と余白で示し、細かい偽目盛を追加しない。狭幅でもHEXの全桁と44pxのnative操作を維持し、科学値はRTLでもLTRで読む。 */
+/* 三本の測定レーンで色を調整するカラーピッカー。横長の色面、細い指標、枠付きの実数値を同じ軸方向にまとめる。 */
 
 .sop-sig.sop-linear-lab-color.sop-linear-lab-color{--paper:#f4f1ec;--ink:#3d4653;--muted:#3d4653;--accent:#657482;--edge:#bcc7cd;--sg-bg:var(--paper);--sg-panel:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);color:var(--ink);color-scheme:light;background:var(--paper);width:100%;max-width:min(100%,480px);min-width:0;container-type:inline-size;overflow-wrap:anywhere}
 .sop-sig.sop-linear-lab-color.sop-linear-lab-color,.sop-sig.sop-linear-lab-color.sop-linear-lab-color *,.sop-sig.sop-linear-lab-color.sop-linear-lab-color *::before,.sop-sig.sop-linear-lab-color.sop-linear-lab-color *::after{box-sizing:border-box}
@@ -53,3 +53,31 @@
 .sop-sig.sop-linear-lab-color.sop-linear-lab-color .sg-color-axis input[data-channel=h]::-moz-range-track{background:linear-gradient(90deg,red,#ff0,#0f0,#0ff,#00f,#f0f,red)}
 .sop-sig.sop-linear-lab-color.sop-linear-lab-color .sg-color-axis input[data-channel=s]::-moz-range-track{background:linear-gradient(90deg,#aaa,hsl(var(--sg-hue) 100% 50%))}
 .sop-sig.sop-linear-lab-color.sop-linear-lab-color .sg-color-axis input[data-channel=v]::-moz-range-track{background:linear-gradient(90deg,#080a0c,var(--sg-color))}
+
+@media(forced-colors:none){
+
+.sop-sig.sop-linear-lab-color.sop-linear-lab-color .sg-color-panel{padding:22px 16px;border:0;background:linear-gradient(90deg,transparent 36px,#93b6c7 36px 37px,transparent 37px)}
+.sop-sig.sop-linear-lab-color.sop-linear-lab-color .sg-color-heading{padding-bottom:12px;border-bottom:1px solid #86aabb;margin-bottom:20px;align-items:center}
+.sop-sig.sop-linear-lab-color.sop-linear-lab-color .sg-color-swatch{width:58px;min-width:58px;height:26px;border:1px solid #4a6d7b}
+.sop-sig.sop-linear-lab-color.sop-linear-lab-color .sg-color-workspace{padding:0;margin:0 0 16px;border:0;position:relative}
+.sop-sig.sop-linear-lab-color.sop-linear-lab-color .sg-color-sv{height:84px;outline:1px solid #769cae;border-inline:5px solid #e9f2f5}
+.sop-sig.sop-linear-lab-color.sop-linear-lab-color .sg-color-controls{border-block:3px double #8faebe;padding:0 0 0 6px;background:#edf3f5}
+.sop-sig.sop-linear-lab-color.sop-linear-lab-color .sg-color-axis{grid-template-columns:40px minmax(0,1fr) 30px;gap:7px;min-height:66px;margin:0;border-bottom:1px solid #b2cad4}
+.sop-sig.sop-linear-lab-color.sop-linear-lab-color .sg-color-axis>span{font:700 11px/1.5 Consolas,monospace}
+.sop-sig.sop-linear-lab-color.sop-linear-lab-color .sg-color-axis output{border:1px solid #9db9c6;background:#f5f9fa;padding:5px 0;text-align:center;font:12px/1.2 Consolas,monospace}
+.sop-sig.sop-linear-lab-color.sop-linear-lab-color .sg-color-axis input::-webkit-slider-runnable-track{height:6px}
+.sop-sig.sop-linear-lab-color.sop-linear-lab-color .sg-color-axis input::-webkit-slider-thumb{width:8px;height:28px;border:1px solid #e7f0f4;margin-top:-11px;box-shadow:0 0 0 1px #426676}
+.sop-sig.sop-linear-lab-color.sop-linear-lab-color .sg-color-axis input::-moz-range-track{height:6px}
+.sop-sig.sop-linear-lab-color.sop-linear-lab-color .sg-color-axis input::-moz-range-thumb{width:6px;height:26px;border:1px solid #e7f0f4}
+.sop-sig.sop-linear-lab-color.sop-linear-lab-color .sg-color-palette{gap:7px;border-block:1px solid #a1bdc9;padding:10px 0;margin:20px 0}
+.sop-sig.sop-linear-lab-color.sop-linear-lab-color .sg-color-palette button{width:30px;min-width:30px;height:44px;border:1px solid #7c9baa;border-bottom-width:5px}
+.sop-sig.sop-linear-lab-color.sop-linear-lab-color .sg-color-entry{background:var(--paper)}
+
+}
+
+@media(forced-colors:active){
+.sop-sig.sop-linear-lab-color.sop-linear-lab-color .sg-color-axis input::-webkit-slider-runnable-track,.sop-sig.sop-linear-lab-color.sop-linear-lab-color .sg-rgb-channel input::-webkit-slider-runnable-track{forced-color-adjust:none;border:1px solid CanvasText}
+.sop-sig.sop-linear-lab-color.sop-linear-lab-color .sg-color-axis input::-moz-range-track,.sop-sig.sop-linear-lab-color.sop-linear-lab-color .sg-rgb-channel input::-moz-range-track{forced-color-adjust:none;border:1px solid CanvasText}
+.sop-sig.sop-linear-lab-color.sop-linear-lab-color :is(.sg-color-axis,.sg-rgb-channel) input::-webkit-slider-thumb{forced-color-adjust:none;background:CanvasText;border:3px solid Canvas;outline:1px solid CanvasText;box-shadow:none}
+.sop-sig.sop-linear-lab-color.sop-linear-lab-color :is(.sg-color-axis,.sg-rgb-channel) input::-moz-range-thumb{forced-color-adjust:none;background:CanvasText;border:3px solid Canvas;outline:1px solid CanvasText;box-shadow:none}
+}

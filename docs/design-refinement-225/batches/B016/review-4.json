@@ -1,0 +1,429 @@
+{
+  "batch": "B016",
+  "round": 4,
+  "overall": "changes_required",
+  "parts": [
+    {
+      "id": "flag-score-rating",
+      "number": 501,
+      "verdict": "pass",
+      "note": "旗端と支柱の接点が五段階を支え、狭幅も一列。星を濃くした結果、実面との比率4.366:1。",
+      "findings": [],
+      "evidence": [
+        "evidence-4/flag-score-rating-portable-rest.png",
+        "evidence-4/flag-score-rating-gallery-narrow.png",
+        "evidence-4/flag-score-rating-react-forced.png",
+        "measurements-4.json",
+        "measurements-react-4.json",
+        "measurements-ratings-4.json"
+      ],
+      "reviewed": {
+        "round": 4,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ]
+      }
+    },
+    {
+      "id": "blueprint-score-rating",
+      "number": 502,
+      "verdict": "pass",
+      "note": "三方の折れた翼が星の接合面を支える。星を覆う過大な装飾にならず、旗/活字札と構造を区別できる。",
+      "findings": [],
+      "evidence": [
+        "evidence-4/blueprint-score-rating-portable-rest.png",
+        "evidence-4/blueprint-score-rating-gallery-narrow.png",
+        "evidence-4/blueprint-score-rating-react-forced.png",
+        "measurements-4.json",
+        "measurements-react-4.json",
+        "measurements-ratings-4.json"
+      ],
+      "reviewed": {
+        "round": 4,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ]
+      }
+    },
+    {
+      "id": "ribbon-score-rating",
+      "number": 503,
+      "verdict": "pass",
+      "note": "連続する帯の端と厚みで一つの尺度を読む。任意maxでも帯は星と続き、選択星は4.361:1。",
+      "findings": [],
+      "evidence": [
+        "evidence-4/ribbon-score-rating-portable-rest.png",
+        "evidence-4/ribbon-score-rating-gallery-narrow.png",
+        "evidence-4/ribbon-score-rating-react-forced.png",
+        "measurements-4.json",
+        "measurements-react-4.json",
+        "measurements-ratings-4.json"
+      ],
+      "reviewed": {
+        "round": 4,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ]
+      }
+    },
+    {
+      "id": "ceramic-score-rating",
+      "number": 504,
+      "verdict": "changes_required",
+      "note": "反った陶面と裾の構造は独自だが、五段階の端の星が縁に重なり、十段階では面が途中で終わる。",
+      "findings": [
+        {
+          "kind": "geometry_and_nontext_contrast",
+          "description": "320px viewportのroot222px/実gallery251pxで五段階末尾の星が陶面の濃い縁へ重なる。LTR/RTL・選択5でピクセル確認。星#62815cは通常面#dbe7ceに3.393:1だが、縁#A0BA8Bでは2.055:1へ落ちる。",
+          "recommendation": "陶面の縁・曲線と五段階の実操作列を同じ有効幅へ揃え、星全体を平らな高コントラスト面に載せる。",
+          "evidence": [
+            "evidence-4/ceramic-score-rating-portable-focused-filled5.png",
+            "evidence-4/ceramic-score-rating-portable-focused-rtl-filled5.png",
+            "measurements-ceramic-4.json",
+            "measurements-pixels-4.json"
+          ]
+        },
+        {
+          "kind": "arbitrary_count_surface",
+          "description": "max10で末尾選択・横スクロールすると陶面が8個目付近で終わり、末尾9/10の星が盤面外に浮く。実値10は正常。LTR/RTL・gallery/portable・Reactで再現。背景pseudoが可視scale幅に留まり、全項目のscroll幅を覆っていない。",
+          "recommendation": "任意maxの全操作列と同期する幅の面・裾を作り、横スクロールしても全星を支える構造にする。",
+          "evidence": [
+            "evidence-4/ceramic-score-rating-portable-max10-selected.png",
+            "evidence-4/ceramic-score-rating-gallery-rtl-max10.png",
+            "measurements-ratings-4.json"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-4/ceramic-score-rating-portable-rest.png",
+        "evidence-4/ceramic-score-rating-gallery-narrow.png",
+        "evidence-4/ceramic-score-rating-react-forced.png",
+        "measurements-4.json",
+        "measurements-react-4.json",
+        "measurements-ratings-4.json"
+      ],
+      "reviewed": {
+        "round": 4,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ]
+      }
+    },
+    {
+      "id": "letterpress-score-rating",
+      "number": 505,
+      "verdict": "pass",
+      "note": "活字札の縁・下面と確定枠の関係は一貫。狭幅でも五段階を分断せず、星の比率3.163:1。",
+      "findings": [],
+      "evidence": [
+        "evidence-4/letterpress-score-rating-portable-rest.png",
+        "evidence-4/letterpress-score-rating-gallery-narrow.png",
+        "evidence-4/letterpress-score-rating-react-forced.png",
+        "measurements-4.json",
+        "measurements-react-4.json",
+        "measurements-ratings-4.json"
+      ],
+      "reviewed": {
+        "round": 4,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ]
+      }
+    },
+    {
+      "id": "soft-feedback-rating",
+      "number": 508,
+      "verdict": "pass",
+      "note": "柔らかい輪郭のキーでフィードバックを扱うB。星・選択枠・値を読みやすく整理し、過剰な造形を加えない。",
+      "findings": [],
+      "evidence": [
+        "evidence-4/soft-feedback-rating-portable-rest.png",
+        "evidence-4/soft-feedback-rating-gallery-narrow.png",
+        "evidence-4/soft-feedback-rating-react-forced.png",
+        "measurements-4.json",
+        "measurements-react-4.json",
+        "measurements-ratings-4.json"
+      ],
+      "reviewed": {
+        "round": 4,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ]
+      }
+    },
+    {
+      "id": "warm-reader-rating",
+      "number": 510,
+      "verdict": "pass",
+      "note": "本文に馴染む暖色のB。角の小さい一列のキーと確定下面で値を示し、R508より静かな用途差が成立。",
+      "findings": [],
+      "evidence": [
+        "evidence-4/warm-reader-rating-portable-rest.png",
+        "evidence-4/warm-reader-rating-gallery-narrow.png",
+        "evidence-4/warm-reader-rating-react-forced.png",
+        "measurements-4.json",
+        "measurements-react-4.json",
+        "measurements-ratings-4.json"
+      ],
+      "reviewed": {
+        "round": 4,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ]
+      }
+    },
+    {
+      "id": "optical-color-desk",
+      "number": 517,
+      "verdict": "changes_required",
+      "note": "色相輪内のSV面が一つの光学盤として成立。390/320pxでも盤面はroot内へ収まり、輪とSV・軸・HEXが同期。ただしforced軌道が消える。",
+      "findings": [
+        {
+          "kind": "forced_colors_track_visibility",
+          "description": "forced-colorsで3本のrange軌道が白地へ消え、黒いつまみだけが表示される。range幅76〜123px中、各10pxのthumb以外は全列が白。appearance:none、背景image:none、border0で、操作範囲・端点を視覚的に読めない。Home/End・値変更自体は正常。portable/galleryとReactで再現。",
+          "recommendation": "forcedでも軌道の輪郭/端点をCanvasText等で示すかnative表示へ戻す。色の勾配を残す場合もCanvasとの境界を確保する。",
+          "evidence": [
+            "evidence-4/optical-color-desk-portable-focused-forced.png",
+            "evidence-4/optical-color-desk-gallery-focused-forced.png",
+            "measurements-focused-colors-4.json",
+            "measurements-pixels-4.json"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-4/optical-color-desk-portable-rest.png",
+        "evidence-4/optical-color-desk-gallery-narrow.png",
+        "evidence-4/optical-color-desk-react-forced.png",
+        "measurements-4.json",
+        "measurements-react-4.json",
+        "measurements-colors-4.json"
+      ],
+      "reviewed": {
+        "round": 4,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ]
+      }
+    },
+    {
+      "id": "letterpress-ink-color",
+      "number": 520,
+      "verdict": "changes_required",
+      "note": "試し刷りの重ね罫と色面、明朝RGB行で印刷用の情報構成を区別。SV・RGB・HEXは同期。ただしforced軌道が消える。",
+      "findings": [
+        {
+          "kind": "forced_colors_track_visibility",
+          "description": "forced-colorsで3本のrange軌道が白地へ消え、黒いつまみだけが表示される。range幅76〜123px中、各10pxのthumb以外は全列が白。appearance:none、背景image:none、border0で、操作範囲・端点を視覚的に読めない。Home/End・値変更自体は正常。portable/galleryとReactで再現。",
+          "recommendation": "forcedでも軌道の輪郭/端点をCanvasText等で示すかnative表示へ戻す。色の勾配を残す場合もCanvasとの境界を確保する。",
+          "evidence": [
+            "evidence-4/letterpress-ink-color-portable-focused-forced.png",
+            "evidence-4/letterpress-ink-color-gallery-focused-forced.png",
+            "measurements-focused-colors-4.json",
+            "measurements-pixels-4.json"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-4/letterpress-ink-color-portable-rest.png",
+        "evidence-4/letterpress-ink-color-gallery-narrow.png",
+        "evidence-4/letterpress-ink-color-react-forced.png",
+        "measurements-4.json",
+        "measurements-react-4.json",
+        "measurements-colors-4.json"
+      ],
+      "reviewed": {
+        "round": 4,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ]
+      }
+    },
+    {
+      "id": "linear-lab-color",
+      "number": 522,
+      "verdict": "changes_required",
+      "note": "横長の色面と三つの測定レーン、枠付き実数値を軸方向へ整理。R517の円盤やR520の印刷面と区別。ただしforced軌道が消える。",
+      "findings": [
+        {
+          "kind": "forced_colors_track_visibility",
+          "description": "forced-colorsで3本のrange軌道が白地へ消え、黒いつまみだけが表示される。range幅76〜123px中、各10pxのthumb以外は全列が白。appearance:none、背景image:none、border0で、操作範囲・端点を視覚的に読めない。Home/End・値変更自体は正常。portable/galleryとReactで再現。",
+          "recommendation": "forcedでも軌道の輪郭/端点をCanvasText等で示すかnative表示へ戻す。色の勾配を残す場合もCanvasとの境界を確保する。",
+          "evidence": [
+            "evidence-4/linear-lab-color-portable-focused-forced.png",
+            "evidence-4/linear-lab-color-gallery-focused-forced.png",
+            "measurements-focused-colors-4.json",
+            "measurements-pixels-4.json"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-4/linear-lab-color-portable-rest.png",
+        "evidence-4/linear-lab-color-gallery-narrow.png",
+        "evidence-4/linear-lab-color-react-forced.png",
+        "measurements-4.json",
+        "measurements-react-4.json",
+        "measurements-colors-4.json"
+      ],
+      "reviewed": {
+        "round": 4,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ]
+      }
+    }
+  ],
+  "coverage": {
+    "source": "round-4 immutable snapshot、作者source100hashを全検査前/終了時確認。作者修正release前の記録。",
+    "hash": "hash-verification-4.json",
+    "counts": {
+      "parts": 10,
+      "pass": 6,
+      "changes_required": 4,
+      "primaryModeCases": 20,
+      "ratingNativeModeCases": 14,
+      "colorNativeModeCases": 6,
+      "reactPlacements": 40
+    },
+    "imagesViewed": [
+      "evidence-4/colors-gallery-base-1-sheet.jpg",
+      "evidence-4/colors-gallery-native-1-sheet.jpg",
+      "evidence-4/colors-portable-base-1-sheet.jpg",
+      "evidence-4/colors-portable-native-1-sheet.jpg",
+      "evidence-4/ratings-gallery-base-1-sheet.jpg",
+      "evidence-4/ratings-gallery-base-2-sheet.jpg",
+      "evidence-4/ratings-gallery-base-3-sheet.jpg",
+      "evidence-4/ratings-gallery-native-1-sheet.jpg",
+      "evidence-4/ratings-gallery-native-2-sheet.jpg",
+      "evidence-4/ratings-gallery-native-3-sheet.jpg",
+      "evidence-4/ratings-portable-base-1-sheet.jpg",
+      "evidence-4/ratings-portable-base-2-sheet.jpg",
+      "evidence-4/ratings-portable-base-3-sheet.jpg",
+      "evidence-4/ratings-portable-native-1-sheet.jpg",
+      "evidence-4/ratings-portable-native-2-sheet.jpg",
+      "evidence-4/ratings-portable-native-3-sheet.jpg",
+      "evidence-4/react-1-sheet.jpg",
+      "evidence-4/react-2-sheet.jpg",
+      "evidence-4/react-3-sheet.jpg",
+      "evidence-4/react-4-sheet.jpg",
+      "evidence-4/optical-color-desk-portable-focused-forced.png",
+      "evidence-4/letterpress-ink-color-portable-focused-forced.png",
+      "evidence-4/linear-lab-color-portable-focused-forced.png",
+      "evidence-4/ceramic-score-rating-portable-focused-filled5.png",
+      "evidence-4/ceramic-score-rating-portable-focused-rtl-filled5.png"
+    ],
+    "visualScope": "全10件の通常/hover/狭幅/長文RTL/forced、native選択/値0/任意max/入力エラー/React配布を実画像で視認。入口40ms/退出60ms/再進入60msとreducedは実測も参照。無欠陥保証ではなく明記した状態の検査。",
+    "nativeRatings": "preview5→退出3・確定値保持、選択4/矢印5/Home1/End5/clear0/reset3、readonly/disabled/FormData、required、controlled2、max10末尾/RTL・max2clamp、forced4/0。",
+    "nativeColors": "HEX#abc→#AABBCC、不正値で値保持/validfalse、Escape復帰、nativepicker#FF0000、visible全channel矢印、SV実drag→#403333、R517色相輪右点→H90/#80FF00、reset/readonly送信維持/disabled送信除外/controlled、palette増減、320/390、RTL、forcedでHEX確定。ColorOptionsにrequired契約はない。",
+    "react": "実export4形式をViteで実行。R504初回controlled計測はprop更新待機不足だったため、fresh4形式でoutput2反映を待ちclick5→output2/checked2/request5を再確認。機能不具合とは判定しない。",
+    "contrast": "通常テキスト最小6.716:1。通常中央面の星は全7件3以上。R504末尾だけ縁と重なる実背景2.055:1を別途検出。",
+    "r517Bounds": "390 portable root292/輪248、gallery root299/輪255、320 portable root222/輪178、gallery root251/輪207。全てroot内へ収まる。",
+    "fixture": "gallery nativeは実rootをcloneしてform内へ入れfrozen initで実行。galleryの一部長いrootスクリーンショットにサイトのstickyコレクションラベルが重なるがportableではなく作者UI不具合とはしない。"
+  },
+  "evidence": [
+    "hash-verification-4.json",
+    "runtime-summary-4.json",
+    "contrast-stars-4.json",
+    "contrast-summary-4.json",
+    "measurements-react-controlled-4.json"
+  ]
+}

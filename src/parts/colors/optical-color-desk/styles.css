@@ -1,5 +1,5 @@
 @import "../../../shared/signature/color.css";
-/* 光学の色相輪と実色面を、別々の編集面として示す。元の上下の色相輪/色面の配置を保持し、160pxの輪と20pxの色相帯へ整理する。輪の中心は実確認色、下のSV面は実彩度/明度を編集し、同じ一つのHSV値へつなぐ。輪や文字を連続回転させず、native軸も44px高で残す。 */
+/* 色相輪の内側に彩度・明度の色面を収めた光学盤。外周で色相、中央で濃さを選び、同じ一色を下の軸と数値へ同期する。 */
 
 .sop-sig.sop-optical-color-desk.sop-optical-color-desk{--paper:#f4f1ec;--ink:#3d4653;--muted:#3d4653;--accent:#657482;--edge:#bcc7cd;--sg-bg:var(--paper);--sg-panel:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);color:var(--ink);color-scheme:light;background:var(--paper);width:100%;max-width:min(100%,480px);min-width:0;container-type:inline-size;overflow-wrap:anywhere}
 .sop-sig.sop-optical-color-desk.sop-optical-color-desk,.sop-sig.sop-optical-color-desk.sop-optical-color-desk *,.sop-sig.sop-optical-color-desk.sop-optical-color-desk *::before,.sop-sig.sop-optical-color-desk.sop-optical-color-desk *::after{box-sizing:border-box}
@@ -55,3 +55,28 @@
 .sop-sig.sop-optical-color-desk.sop-optical-color-desk output{direction:ltr;unicode-bidi:isolate}
 
 @container(max-width:350px){.sop-sig.sop-optical-color-desk.sop-optical-color-desk .sg-color-entry{display:grid;grid-template-columns:minmax(0,1fr) 44px;gap:8px 12px}.sop-sig.sop-optical-color-desk.sop-optical-color-desk .sg-color-entry>label{grid-column:1;grid-row:1}.sop-sig.sop-optical-color-desk.sop-optical-color-desk .sg-color-entry input[data-native]{grid-column:2;grid-row:1;margin:0}.sop-sig.sop-optical-color-desk.sop-optical-color-desk .sg-color-entry input[data-hex]{grid-column:1/-1;grid-row:2;width:100%}}
+
+@media(forced-colors:none){
+
+.sop-sig.sop-optical-color-desk.sop-optical-color-desk .sg-color-panel{padding:22px;border:0;border-bottom:5px solid #aab9c9}
+.sop-sig.sop-optical-color-desk.sop-optical-color-desk .sg-color-workspace{position:relative;display:grid;place-items:center;aspect-ratio:1;gap:0;margin:0 0 24px;isolation:isolate}
+.sop-sig.sop-optical-color-desk.sop-optical-color-desk .sg-hue-disc{position:absolute;inset:0;width:100%;height:100%;margin:0;border:2px solid #aab8c7}
+.sop-sig.sop-optical-color-desk.sop-optical-color-desk .sg-hue-disc i{inset:20px;background:var(--paper);border:0;pointer-events:none}
+.sop-sig.sop-optical-color-desk.sop-optical-color-desk .sg-hue-disc b{inset:4px}
+.sop-sig.sop-optical-color-desk.sop-optical-color-desk .sg-color-sv{position:relative;z-index:1;grid-row:auto;width:55%;height:auto;aspect-ratio:1;margin:0;outline:1px solid #526377;box-shadow:0 0 0 6px var(--paper)}
+.sop-sig.sop-optical-color-desk.sop-optical-color-desk .sg-color-heading{padding-bottom:12px;border-bottom:1px solid #b7c5d3;margin-bottom:20px}
+.sop-sig.sop-optical-color-desk.sop-optical-color-desk .sg-color-swatch{width:36px;height:36px;min-width:36px;border-radius:50%}
+.sop-sig.sop-optical-color-desk.sop-optical-color-desk .sg-color-axis{border-bottom:1px solid #c4cdd8;margin:0;min-height:54px}
+
+}
+
+@media(forced-colors:none){
+.sop-sig.sop-optical-color-desk.sop-optical-color-desk .sg-hue-disc{overflow:hidden;border-radius:50%}
+}
+
+@media(forced-colors:active){
+.sop-sig.sop-optical-color-desk.sop-optical-color-desk .sg-color-axis input::-webkit-slider-runnable-track,.sop-sig.sop-optical-color-desk.sop-optical-color-desk .sg-rgb-channel input::-webkit-slider-runnable-track{forced-color-adjust:none;border:1px solid CanvasText}
+.sop-sig.sop-optical-color-desk.sop-optical-color-desk .sg-color-axis input::-moz-range-track,.sop-sig.sop-optical-color-desk.sop-optical-color-desk .sg-rgb-channel input::-moz-range-track{forced-color-adjust:none;border:1px solid CanvasText}
+.sop-sig.sop-optical-color-desk.sop-optical-color-desk :is(.sg-color-axis,.sg-rgb-channel) input::-webkit-slider-thumb{forced-color-adjust:none;background:CanvasText;border:3px solid Canvas;outline:1px solid CanvasText;box-shadow:none}
+.sop-sig.sop-optical-color-desk.sop-optical-color-desk :is(.sg-color-axis,.sg-rgb-channel) input::-moz-range-thumb{forced-color-adjust:none;background:CanvasText;border:3px solid Canvas;outline:1px solid CanvasText;box-shadow:none}
+}

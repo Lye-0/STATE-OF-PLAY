@@ -1,5 +1,5 @@
 @import "../../../shared/signature/rating.css";
-/* 暖色の読みやすい評価を、広いnative押面と明確な確定位置へ揃える。Bとして淡い紙色と小さな角丸を保持し、14pxの見出し、固定した28pxの星と64pxの実ラジオを作る。確定した位置には面の下端を使い、範囲の塗りと区別する。長文、10段階、未評価、読取専用にも同じ安定した寸法を保つ。 */
+/* 本文に馴染む暖色の評価入力。星を同じ行に並べ、五段階のつながりを保つ。 */
 
 .sop-sig.sop-warm-reader-rating.sop-warm-reader-rating{--paper:#f4f1ed;--ink:#3e444d;--muted:#3e444d;--accent:#765e42;--edge:#c3b49d;--sg-bg:var(--paper);--sg-panel:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);color:var(--ink);color-scheme:light;background:var(--paper);width:100%;max-width:min(100%,400px);min-width:0;padding:18px;container-type:inline-size;overflow-wrap:anywhere}
 .sop-sig.sop-warm-reader-rating.sop-warm-reader-rating,.sop-sig.sop-warm-reader-rating.sop-warm-reader-rating *,.sop-sig.sop-warm-reader-rating.sop-warm-reader-rating *::before,.sop-sig.sop-warm-reader-rating.sop-warm-reader-rating *::after{box-sizing:border-box}
@@ -29,3 +29,7 @@
 
 .sop-sig.sop-warm-reader-rating.sop-warm-reader-rating .sg-rating-output{direction:ltr;unicode-bidi:isolate}
 @media(forced-colors:active){.sop-sig.sop-warm-reader-rating.sop-warm-reader-rating{--paper:Canvas!important;--ink:CanvasText!important;--muted:CanvasText!important;--accent:Highlight!important;color:CanvasText!important}.sop-sig.sop-warm-reader-rating.sop-warm-reader-rating .sg-rating-star{stroke:CanvasText!important;fill:none!important}.sop-sig.sop-warm-reader-rating.sop-warm-reader-rating .sg-rating-unit[data-filled=true] .sg-rating-star{fill:Highlight!important;stroke:Highlight!important}.sop-sig.sop-warm-reader-rating.sop-warm-reader-rating .sg-rating-info,.sop-sig.sop-warm-reader-rating.sop-warm-reader-rating .sg-rating-number{color:CanvasText!important}.sop-sig.sop-warm-reader-rating.sop-warm-reader-rating .sg-rating-unit::before,.sop-sig.sop-warm-reader-rating.sop-warm-reader-rating .sg-rating-unit::after{display:none!important}.sop-sig.sop-warm-reader-rating.sop-warm-reader-rating .sg-rating-form{height:auto!important;clip-path:none!important;mask:none!important;transform:none!important}.sop-sig.sop-warm-reader-rating.sop-warm-reader-rating .sg-rating-clear{color:ButtonText!important;background:Canvas!important}}
+
+.sop-sig.sop-warm-reader-rating.sop-warm-reader-rating .sg-rating-scale{grid-template-columns:repeat(var(--sg-count,5),minmax(28px,1fr));gap:4px;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;padding-inline:3px;overscroll-behavior-x:contain}.sop-sig.sop-warm-reader-rating.sop-warm-reader-rating .sg-rating-unit{min-width:0;width:100%}.sop-sig.sop-warm-reader-rating.sop-warm-reader-rating .sg-rating-star{width:min(24px,70%);height:24px;max-width:100%}
+
+.sop-sig.sop-warm-reader-rating.sop-warm-reader-rating .sg-rating-scale{justify-content:start}
