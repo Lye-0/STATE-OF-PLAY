@@ -1,6 +1,6 @@
 # Folded Index Navigation
 
-折り畳んだ索引。リンクの折り返しを下辺に揃え、開いたメニューにも同じ平らな見出しを用いる。
+実groupの操作だけが48pxの広い折目を開き、実子行先の紙が親disclosureの流れの中へ下りる。通常リンクへ偽の折片を付けず、一体の実親面と実子面が接合する。モバイルのnative detailsにも同じ広い折目を続け、親と子の情報が主外形を変える。
 
 ## 組み込み
 本体フォルダーを既存のコンポーネント置き場へ配置してください。Reactは`FoldedIndexNavigation`、通常サイトは`init(root, options)`を使用します。CSSとinternalの必要ファイルを一緒に配置してください。デモ文言やデータは変更できます。examplesとpreviewは実行時に不要です。

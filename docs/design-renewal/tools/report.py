@@ -140,6 +140,16 @@ for row,part,review in approved:
   assert actual is not None,f"Missing native Context checks/submenu/error/empty/long/RTL/forced evidence: {row['id']}"
   images+=figure(beforeContext,'修正前・配布版の実操作対象')+figure(beforeOpen,'修正前・実際に開いた配布版のメニュー')
   for name,label in [('initial','修正後・配布版の実操作対象'),('open','修正後・実際に開いた操作メニュー'),('checked','修正後・実チェック操作'),('submenu','修正後・実サブメニュー'),('error','修正後・操作失敗の通知'),('empty','修正後・操作が空の状態'),('narrow-320','修正後・320pxの長い実メニュー'),('long-rtl-320','修正後・右から左への実メニュー'),('forced-dark','修正後・暗い強制配色')]:images+=figure(actual/f"{row['id']}-{name}.png",label)
+ if row['category']=='navigation':
+  beforeNav=w/'evidence/baseline'/f"{row['id']}-navigation.png"
+  beforeMobile=w/'evidence/baseline'/f"{row['id']}-mobile.png"
+  assert beforeNav.exists() and beforeMobile.exists(),f"Missing original actual navigation/mobile: {row['id']}"
+  native=sorted((d/'captures').glob('navigation-self-*'),key=lambda p:int(p.name.split('-')[-1]))
+  names=['initial','group','mobile','mobile-group','empty','header-ltr-320','sidebar-rtl-320','dock-ltr-320','forced-dark']
+  actual=next((p for p in reversed(native) if all((p/f"{row['id']}-{name}.png").exists() for name in names)),None)
+  assert actual is not None,f"Missing actual native navigation group/mobile/long/RTL/forced: {row['id']}"
+  images+=figure(beforeNav,'修正前・配布版の実ナビゲーション')+figure(beforeMobile,'修正前・配布版の実モバイル欄')
+  for name,label in [('initial','修正後・配布版の初期状態'),('group','修正後・実分類を開いた行先'),('mobile','修正後・実モバイル欄'),('mobile-group','修正後・実モバイル分類を開いた状態'),('empty','修正後・行先が空の状態'),('header-ltr-320','修正後・320pxの長い実ヘッダー'),('sidebar-rtl-320','修正後・320pxの長い実サイドバー・右から左'),('dock-ltr-320','修正後・320pxの長い実ドック'),('forced-dark','修正後・暗い強制配色')]:images+=figure(actual/f"{row['id']}-{name}.png",label)
  if row['category']=='searchbars':
   beforeSearch=w/'evidence/baseline'/f"{row['id']}-search.png"
   assert beforeSearch.exists(),f"Missing original actual search: {row['id']}"

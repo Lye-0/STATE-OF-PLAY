@@ -1,0 +1,29 @@
+{
+  "baseCommit": "7940f22eb1e48e061f75fc6df13567d86cf75677",
+  "files": {
+    "src/shared/workbench/navigation.ts": {
+      "before": "39a3199f08f36a01cbdef948cd669fb116d3a74b2546b054679422aae5240fcf",
+      "after": "1b0d4cb2cbe2711bd60384e8634e595dd1c0a01287ae9dd5b174ebc9fdbfe255"
+    },
+    "tests/workbench.browser.ts": {
+      "before": "b3fc0b6342c83189171d033bb644dc4ff64a91142cf94ad87ad395a4709586f3",
+      "after": "fa88618d63863dc3c812b59b00a69afd9c411ace4143381b6203805b1fe0ee8e"
+    },
+    "tests/expansion-50.native.ts": {
+      "before": "92099704955a85198c419c138e7eb1a76ec9928693173c4c4faf335754893973",
+      "after": "7e472d9c27c0ae06eb20fb984ce7130f315877edf1f2973f85fb291545f0d19a"
+    },
+    "tests/expansion-50.react.ts": {
+      "before": "2ad52a2ae9409cdc8c64b0da1c27023c8ef19738eec36aa1c1eb1ea8ba9306b6",
+      "after": "99aaa8eb38d20353055a4e76ec9eef711d4fa38b165390c5caa46051645f514b"
+    }
+  },
+  "evidence": [
+    "captures/navigation-self-0/checks.json",
+    "captures/navigation-self-8/checks.json",
+    "formal-review-8.json",
+    "queued-scroll-4.json",
+    "queued-scroll-7.json"
+  ],
+  "scope": "Actual baseline0 live brand/href/landmark labels, owned destination focus, compatible flyout path, mobile details openness/focus, inherited disabled summary/child href, and dead public modal APIs. No change to native real href/modified click/control contracts. Actual queued unchanged-anchor scroll retained; real moving-anchor popovers still close. Optional inline groupPresentation defaults only in folded-index-navigation; default popover preserved elsewhere. Real inline children remain in parent LI with group ARIA and owned focus preserved."
+}

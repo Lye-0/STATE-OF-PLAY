@@ -3,7 +3,7 @@ import React from 'react';
 import {ContextView,type ContextProps} from '../../../../shared/workbench/context-view';
 import '../styles.css';
 export type { ContextProps as CeramicFileContextProps };
-/** 磁器の書類トレイ。丸い縁と内側の平らな面を分け、操作は押しやすい小区画へ整える。 */
+/** 陶の操作台を、分類ごとに段差24pxのある実際の棚へ分ける。左の丸い側壁は一続き、右の小口は各実分類に沿う短い厚みで、全体を四角い箱へ囲わない。各棚のnative項目は同じ平らな面に並び、チェック・説明・長い名称を安定して読む。 */
 export default function CeramicFileContext(props:ContextProps) {
  return <ContextView {...props} skin="ceramic-file-context" />;
 }
