@@ -1,5 +1,5 @@
 @import "../../../shared/workbench/base.css";
-/* Clear Line Search — 輪郭と余白で検索位置を示す。 */
+/* Clear Line Search — 検索・絞込み・候補を短い罫線で揃える検索。低い行と広い本文列で、一覧を続けて読み取れる構成にする。 */
 .sop-wb.sop-clear-line-search {--wb-bg:#f4f5ef;--wb-surface:#e1e4df;--wb-ink:#343e3d;--wb-muted:#455b4f;--wb-accent:#496559;--wb-line:#adbab2;--wb-radius:6px;color-scheme:light}.sop-wb.sop-clear-line-search .wb-art{pointer-events:none}.sop-wb.sop-clear-line-search :is(.wb-search-results,.wb-command-dialog,.wb-context-panel,.wb-nav-flyout,.wb-nav-dialog){color:var(--wb-ink);background:var(--wb-bg)}.sop-wb.sop-clear-line-search .wb-search-shell{border:0;border-bottom:1px solid #9fb8a8;border-radius:0;background:transparent}.sop-wb.sop-clear-line-search .wb-search-results{border-radius:4px;border-color:#aac2b2}
 .sop-wb.sop-clear-line-search{max-width:100%}.sop-wb.sop-clear-line-search,.sop-wb.sop-clear-line-search *{box-sizing:border-box}.sop-wb.sop-clear-line-search :is(button,input,textarea,a){min-width:0}
 .sop-wb.sop-clear-line-search .wb-search-field,.sop-wb.sop-clear-line-search .wb-command-entry{background:var(--wb-surface);color:var(--wb-ink)}.sop-wb.sop-clear-line-search:focus-visible,.sop-wb.sop-clear-line-search :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
@@ -15,3 +15,23 @@
 .sop-wb.sop-clear-line-search.sop-clear-line-search .wb-search-field:focus-within{outline:2px solid var(--wb-accent);outline-offset:1px;border-color:transparent;box-shadow:none}.sop-wb.sop-clear-line-search.sop-clear-line-search .wb-search-input:focus-visible{outline:none;box-shadow:none}.sop-wb.sop-clear-line-search.sop-clear-line-search .wb-search-results,.sop-wb.sop-clear-line-search.sop-clear-line-search .wb-results-list [role=option]{box-shadow:none!important}
 
 @media(forced-colors:active){.sop-wb.sop-clear-line-search.sop-clear-line-search{--paper:Canvas;--ink:CanvasText;--muted:CanvasText;--accent:Highlight;--edge:ButtonText;--ff-ink:CanvasText;--ff-muted:CanvasText;--sg-bg:Canvas;--sg-ink:CanvasText;--sg-muted:CanvasText;--sg-a:Highlight;--wb-bg:Canvas;--wb-ink:CanvasText;--wb-muted:CanvasText;--wb-accent:Highlight;color:CanvasText;background:Canvas;border-color:ButtonText;box-shadow:none}.sop-wb.sop-clear-line-search.sop-clear-line-search :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}.sop-wb.sop-clear-line-search.sop-clear-line-search :is(button,input,textarea,select,a):focus-visible{outline-color:Highlight}.sop-wb.sop-clear-line-search.sop-clear-line-search :is([aria-current=page],[aria-selected=true],[data-selected=true]){color:HighlightText;background:Highlight;border-color:Highlight}}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-clear-line-search.sop-clear-line-search .wb-search-shell{padding:20px 16px;border:0;border-top:2px solid #96b3a1;background:#f3f7f2}
+.sop-wb.sop-clear-line-search.sop-clear-line-search .wb-search-field{border:0;border-bottom:1px solid #91ae9b;background:none;border-radius:0}
+.sop-wb.sop-clear-line-search.sop-clear-line-search .wb-search-submit{border-radius:0;background:none;border-inline-start:1px solid #b5cabb}
+.sop-wb.sop-clear-line-search.sop-clear-line-search .wb-search-filters{display:flex;flex-wrap:wrap;gap:4px 14px;border-bottom:1px solid #bed0c1;padding-bottom:8px}
+.sop-wb.sop-clear-line-search.sop-clear-line-search .wb-search-filters button{border:0;border-bottom:2px solid transparent;border-radius:0;background:none;min-height:36px;padding:6px 0;font-size:12px}
+.sop-wb.sop-clear-line-search.sop-clear-line-search .wb-search-filters [aria-pressed=true]{border-bottom-color:#53775f;background:none}
+.sop-wb.sop-clear-line-search.sop-clear-line-search .wb-search-results{padding:12px 0 0;margin-top:0;border:0;background:none;border-radius:0}
+.sop-wb.sop-clear-line-search.sop-clear-line-search .wb-results-list [role=option]{min-height:64px;padding:12px 0;border:0;border-bottom:1px solid #c1d2c4;border-radius:0;background:none;gap:6px 10px}
+.sop-wb.sop-clear-line-search.sop-clear-line-search .wb-result-copy strong{font-size:15px}
+.sop-wb.sop-clear-line-search.sop-clear-line-search .wb-result-copy small{font-size:12px;line-height:1.7}
+.sop-wb.sop-clear-line-search.sop-clear-line-search .wb-result-meta{font-size:11px;white-space:normal;overflow-wrap:anywhere}
+.sop-wb.sop-clear-line-search.sop-clear-line-search .wb-results-list [aria-selected=true]{background:#dfeade;box-shadow:inset 2px 0 #6d9478}
+
+}
+
+/* B019 independent review follow-up */
+.sop-wb.sop-clear-line-search.sop-clear-line-search .wb-label,.sop-wb.sop-clear-line-search.sop-clear-line-search .wb-search-message{max-width:100%;min-width:0;white-space:normal;overflow-wrap:anywhere;word-break:normal}

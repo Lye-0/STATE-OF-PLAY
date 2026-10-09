@@ -1,5 +1,5 @@
 @import "../../../shared/workbench/base.css";
-/* 開いた検索面の余白を保ち、20pxの実候補名・14pxの説明・13pxの実補足を三つの読む行へ整える。欄全体の枠を増やさず、入口の2px、実補足の左の22px、結果の1pxの罫が役割を分ける。48pxの実操作と14pxの対象名で、狭幅とRTLでも読む順序を保つ。 */
+/* 開いた棚に候補を載せる検索。左右の支柱、短い棚受け、薄い棚板が各結果の位置を支え、文字は平らな面に置く。 */
 
 .sop-wb.sop-open-shelf-search.sop-open-shelf-search{--paper:#f7f2e9;--ink:#493d32;--muted:#706251;--accent:#956f4c;--edge:#bfac92;--wb-bg:var(--paper);--wb-surface:var(--paper);--wb-ink:var(--ink);--wb-muted:var(--muted);--wb-accent:var(--accent);--wb-line:var(--edge);--wb-radius:0;width:100%;max-width:min(100%,480px);min-width:0;container-type:inline-size;color:var(--ink);color-scheme:light;overflow-wrap:anywhere}
 .sop-wb.sop-open-shelf-search.sop-open-shelf-search,.sop-wb.sop-open-shelf-search.sop-open-shelf-search *,.sop-wb.sop-open-shelf-search.sop-open-shelf-search *::before,.sop-wb.sop-open-shelf-search.sop-open-shelf-search *::after{box-sizing:border-box}
@@ -57,3 +57,20 @@
 @media(forced-colors:active){.sop-wb.sop-open-shelf-search.sop-open-shelf-search{--paper:Canvas!important;--ink:CanvasText!important;--muted:CanvasText!important;--accent:Highlight!important;--edge:ButtonText!important;--wb-bg:Canvas!important;--wb-ink:CanvasText!important;--wb-muted:CanvasText!important;--wb-accent:Highlight!important;color:CanvasText!important;background:Canvas!important}.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-search-shell,.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-search-field,.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-search-results,.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-search-filters button,.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-results-list [role=option],.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-search-submit,.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-search-clear,.sop-wb.sop-open-shelf-search.sop-open-shelf-search input,.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-result-copy strong,.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-result-copy small,.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-result-meta{background:Canvas!important;color:CanvasText!important;border-color:ButtonText!important;box-shadow:none!important;clip-path:none!important;mask:none!important}.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-label,.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-search-message,.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-search-count,.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-search-submit span{color:CanvasText!important;background:Canvas!important}.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-search-shell::before,.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-search-shell::after,.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-search-field::before,.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-search-field::after,.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-results-list::before,.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-results-list::after,.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-results-list [role=option]::before,.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-results-list [role=option]::after,.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-result-copy::before,.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-result-copy::after,.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-result-meta::before,.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-result-meta::after{display:none!important}.sop-wb.sop-open-shelf-search.sop-open-shelf-search [aria-selected=true],.sop-wb.sop-open-shelf-search.sop-open-shelf-search [aria-pressed=true]{outline:2px solid Highlight!important}.sop-wb.sop-open-shelf-search.sop-open-shelf-search :is(button,input,a,[tabindex]):focus-visible{outline-color:Highlight!important}}
 
 .sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-search-input:focus-visible{outline:0}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-search-shell{padding:24px 18px;background:#f6f0e5;border:0}
+.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-search-field{border:0;border-bottom:5px solid #b49870;background:#fffcf4;padding:4px 8px 0}
+.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-search-submit{border-radius:0;background:#ece0c9}
+.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-results-caption{border:0;padding:0 0 10px;border-bottom:1px solid #cab89b}
+.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-results-list{padding-inline:8px;border-inline:2px solid #cab390}
+.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-results-list [role=option]{padding:20px 10px 18px;min-height:104px;border:0;border-bottom:5px solid #b79a73;background:#fffaf0;box-shadow:0 3px #e0cfb0;margin-bottom:17px}
+.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-results-list [role=option]::before{content:'';position:absolute;inset:auto 4px -10px;height:5px;border-inline:4px solid #977d57;pointer-events:none}
+.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-results-list [aria-selected=true]{background:#eadfc9}
+.sop-wb.sop-open-shelf-search.sop-open-shelf-search .wb-result-copy strong{font:600 18px/1.55 Georgia,'Yu Mincho',serif}
+
+}
+
+/* B019 independent review follow-up */
+@media(forced-colors:none){.sop-wb.sop-open-shelf-search.sop-open-shelf-search{--muted:#66523d}}

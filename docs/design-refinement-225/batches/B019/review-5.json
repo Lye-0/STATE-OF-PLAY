@@ -1,0 +1,412 @@
+{
+  "batch": "B019",
+  "round": 5,
+  "overall": "changes_required",
+  "parts": [
+    {
+      "id": "radar-window-search",
+      "number": 592,
+      "verdict": "changes_required",
+      "note": "照準記号と件数円の追加ではAの骨格差が不足。",
+      "findings": [
+        {
+          "kind": "design_review_judgment",
+          "description": "照準は入力左の同心円/各行の小記号、計数盤は右端の件数円が中心。結果の本文行・罫・選択帯はB609と同じ骨格で、Aの測定面としての再設計が不足。ブラウザ故障ではなく造形判断。",
+          "recommendation": "実件数や選択対象を読む計数部と候補の面を分け、照準が実候補の状態と対応する構造へ。",
+          "evidence": [
+            "evidence-5/sheet-radar-window-search.jpg",
+            "evidence-5/comparison-search.jpg"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-5/sheet-radar-window-search.jpg",
+        "measurements-5.json",
+        "measurements-native-5.json",
+        "measurements-react-5.json",
+        "contrast-summary-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "slotted-mail-search",
+      "number": 596,
+      "verdict": "changes_required",
+      "note": "投函口と返信紙の接点が弱く、枠付き入力と候補札の組合せに留まる。",
+      "findings": [
+        {
+          "kind": "design_review_judgment",
+          "description": "上端の二重罫で投函口を示すが、入力箱と独立した候補カードの間に紙が出入りする接点が見えない。札の薄い影/暖色による違いが主で、Aとしての投函口と紙の関係が弱い。",
+          "recommendation": "投函口の前後と、口に重なる返信紙面/折返しを実際の重なりで構成し、内容は平面上で読む。",
+          "evidence": [
+            "evidence-5/sheet-slotted-mail-search.jpg",
+            "evidence-5/comparison-search.jpg"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-5/sheet-slotted-mail-search.jpg",
+        "measurements-5.json",
+        "measurements-native-5.json",
+        "measurements-react-5.json",
+        "contrast-summary-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "open-shelf-search",
+      "number": 599,
+      "verdict": "changes_required",
+      "note": "候補を支える棚板/棚受け/両支柱は構造として成立。選択補助文字のコントラストを直す。",
+      "findings": [
+        {
+          "kind": "contrast",
+          "description": "選択hoverの説明/NOTEが実背景上4.148:1（14px/13px）。実gallery/portable双方、hover解除後もactive候補として同じ比率。",
+          "recommendation": "選択面に対して補助文字4.5:1以上へ。棚受けと支柱の構造は維持。",
+          "evidence": [
+            "contrast-summary-5.json",
+            "evidence-5/open-shelf-search-gallery-hover.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-5/sheet-open-shelf-search.jpg",
+        "measurements-5.json",
+        "measurements-native-5.json",
+        "measurements-react-5.json",
+        "contrast-summary-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "caption-line-search",
+      "number": 601,
+      "verdict": "changes_required",
+      "note": "番号と活字だけに寄った編集的差を組版から改善。選択補助文字も薄い。",
+      "findings": [
+        {
+          "kind": "design_review_judgment",
+          "description": "番号と明朝・横罫・補足の縦罫を加えたが、見出し＋説明＋metaの候補行を縦へ繰り返す骨格はB610に近い。編集索引としての独立した組版がまだ弱い。",
+          "recommendation": "分類/索引番号の余白欄と本文を構造的に分け、通常幅の紙面の組み方と狭幅の読み順を設計する。",
+          "evidence": [
+            "evidence-5/sheet-caption-line-search.jpg",
+            "evidence-5/comparison-search.jpg"
+          ]
+        },
+        {
+          "kind": "contrast",
+          "description": "hover選択行の説明/NOTEが実背景上4.213:1（13px/11px）。実gallery/portable双方。",
+          "recommendation": "選択面に対して補助文字4.5:1以上を確保。",
+          "evidence": [
+            "contrast-summary-5.json",
+            "evidence-5/caption-line-search-gallery-hover.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-5/sheet-caption-line-search.jpg",
+        "measurements-5.json",
+        "measurements-native-5.json",
+        "measurements-react-5.json",
+        "contrast-summary-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "soft-resource-search",
+      "number": 608,
+      "verdict": "changes_required",
+      "note": "資料名/説明/独立コード欄を候補カードで読むBの用途は成立。長いエラー識別子の切れを修正。",
+      "findings": [
+        {
+          "kind": "long_error_clipping",
+          "description": "非同期エラー内の連続識別子LongUnbrokenSearchError1234567890が折返されず、portable実root222pxで右へ17.16px超過して切れる。同じ文字数は実gallery249pxでは収まる。",
+          "recommendation": "wb-search-messageを縮小/折返し可能にし、通常・RTL・forcedの長い識別子もroot内に収める。",
+          "evidence": [
+            "measurements-native-5.json",
+            "evidence-5/soft-resource-search-portable-native-error-narrow.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-5/sheet-soft-resource-search.jpg",
+        "measurements-5.json",
+        "measurements-native-5.json",
+        "measurements-react-5.json",
+        "contrast-summary-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "clear-line-search",
+      "number": 609,
+      "verdict": "changes_required",
+      "note": "低い候補行と右側識別子で密度を保つBの用途は成立。長いエラー識別子の切れを修正。",
+      "findings": [
+        {
+          "kind": "long_error_clipping",
+          "description": "非同期エラー内の連続識別子LongUnbrokenSearchError1234567890が折返されず、portable実root222pxで右へ14.16px超過して切れる。同じ文字数は実gallery249pxでは収まる。",
+          "recommendation": "wb-search-messageを縮小/折返し可能にし、通常・RTL・forcedの長い識別子もroot内に収める。",
+          "evidence": [
+            "measurements-native-5.json",
+            "evidence-5/clear-line-search-portable-native-error-narrow.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-5/sheet-clear-line-search.jpg",
+        "measurements-5.json",
+        "measurements-native-5.json",
+        "measurements-react-5.json",
+        "contrast-summary-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "warm-library-search",
+      "number": 610,
+      "verdict": "changes_required",
+      "note": "書名先行の見出しと本文、背の細線はBとして成立。長い見出しとエラーの切れを修正。",
+      "findings": [
+        {
+          "kind": "long_error_clipping",
+          "description": "非同期エラー内の連続識別子LongUnbrokenSearchError1234567890が折返されず、portable実root222pxで右へ16.16px超過して切れる。同じ文字数は実gallery249pxでは収まる。",
+          "recommendation": "wb-search-messageを縮小/折返し可能にし、通常・RTL・forcedの長い識別子もroot内に収める。",
+          "evidence": [
+            "measurements-native-5.json",
+            "evidence-5/warm-library-search-portable-native-error-narrow.png"
+          ]
+        },
+        {
+          "kind": "long_heading_clipping",
+          "description": "長い見出しのLongUnbrokenHeading1234567890が折返されず、root222pxで186.48px、実gallery249pxで159.48px右へ超過しclip。RTLは左へ同量。forcedでは折返される。",
+          "recommendation": "通常配色のwb-labelにもmin-width:0と長語の折返しを適用。",
+          "evidence": [
+            "measurements-5.json",
+            "evidence-5/sheet-warm-library-search.jpg"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-5/sheet-warm-library-search.jpg",
+        "measurements-5.json",
+        "measurements-native-5.json",
+        "measurements-react-5.json",
+        "contrast-summary-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "optical-command",
+      "number": 612,
+      "verdict": "changes_required",
+      "note": "光学記号と候補の角枠を、実候補を読む面の構造へ進める。",
+      "findings": [
+        {
+          "kind": "design_review_judgment",
+          "description": "光学窓はlauncherの同心円記号、実候補は四隅の照準枠と丸いiconが中心。見出し/検索/グループ/候補行の一般的なパレットへ記号を加えた差に留まり、Aの独自構造としては弱い。",
+          "recommendation": "光学窓と候補の読取り領域の関係を面・開口・位置で成立させる。装飾円や角の追加だけで終えず、実候補と状態に結び付ける。",
+          "evidence": [
+            "evidence-5/sheet-optical-command.jpg",
+            "evidence-5/comparison-clear-outline-command.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-5/sheet-optical-command.jpg",
+        "measurements-5.json",
+        "measurements-native-5.json",
+        "measurements-react-5.json",
+        "contrast-summary-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "ledger-command",
+      "number": 615,
+      "verdict": "changes_required",
+      "note": "台帳としての独立性に加え、hover16px移動と4.007:1の補助文字を修正。",
+      "findings": [
+        {
+          "kind": "design_review_judgment",
+          "description": "左の綴じ帯、斜体group、明朝の候補、選択帯の配置が現行R621と非常に近い。連番も通常の未選択行では明瞭に現れず、台帳の構造差が十分でない。",
+          "recommendation": "番号/分類/操作名/shortcutを台帳の独立した欄として整え、綴じ代と実記録の読み方を対応させる。",
+          "evidence": [
+            "evidence-5/sheet-ledger-command.jpg",
+            "evidence-5/comparison-caption-command.png"
+          ]
+        },
+        {
+          "kind": "hover_text_shift",
+          "description": "候補間のpointer hoverで新旧候補のタイトルと説明が左右16px移動。実gallery/portable双方。旧selectedのborder-inline-startとpadding-inline-startが新通常paddingと競合している。",
+          "recommendation": "選択/非選択で同じ文字位置と列幅を保持し、選択線はレイアウトを変えず描画する。",
+          "evidence": [
+            "measurements-5.json",
+            "measurements-focused-5.json",
+            "src/parts/commands/ledger-command/styles.css:61",
+            "evidence-5/ledger-command-gallery-hover.png"
+          ]
+        },
+        {
+          "kind": "contrast",
+          "description": "選択候補の説明とshortcutが4.007:1（14px/12px）。disabled候補の淡さとは別の、選択可能な通常候補。",
+          "recommendation": "選択面に対して補助文字/shortcut4.5:1以上へ。",
+          "evidence": [
+            "contrast-summary-5.json"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-5/sheet-ledger-command.jpg",
+        "measurements-5.json",
+        "measurements-native-5.json",
+        "measurements-react-5.json",
+        "contrast-summary-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "index-drawer-command",
+      "number": 616,
+      "verdict": "changes_required",
+      "note": "引出しの前板/内側/索引紙の関係を作り、太い外周枠中心の造形を改める。",
+      "findings": [
+        {
+          "kind": "design_review_judgment",
+          "description": "外周の厚い枠と、launcher上の小さな取手記号、groupの分類タブが主な個性。開いた面は枠内の検索/カード一覧で、前板・内側・索引紙の前後関係がまだ弱い。",
+          "recommendation": "引出しの前板と取手を操作面として示し、その内側から索引紙が現れる重なり・厚みを実構造へ。大きな外周枠だけで差を作らない。",
+          "evidence": [
+            "evidence-5/sheet-index-drawer-command.jpg",
+            "evidence-5/comparison-clear-outline-command.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-5/sheet-index-drawer-command.jpg",
+        "measurements-5.json",
+        "measurements-native-5.json",
+        "measurements-react-5.json",
+        "contrast-summary-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    }
+  ],
+  "coverage": {
+    "primaryRows": 20,
+    "nativeChecks": 328,
+    "reactPartsFormats": 40,
+    "reactChecks": 132,
+    "runtimeErrors": 0,
+    "sourceHashesMatched": 100,
+    "lowHeightFocusedConditions": 24,
+    "imagesViewed": "10 primary sheets (120 states), two React sheets (20 images), comparison search and R621/R629 opened panels, native narrow errors R601/R608/R609/R610/R615, optical low-height final scroll image",
+    "pendingRequiredMeasurements": [],
+    "limitations": [
+      "Chromiumの指定状態に対する検査であり無欠陥保証ではない。",
+      "A造形の6件は機能故障とは別のレビュー判断。",
+      "低heightの初回whole-option visibilityは長い候補の高さがviewportを越えるため失敗。24条件の追加計測で手動list/dialog末尾到達を確認し、到達不能の不具合とはしない。",
+      "初期native fixtureのform幅0とdocs候補数の誤期待、React起動待機のhidden clear button参照を修正して全件再実行。作者不具合には含めない。",
+      "React長文全組合せは未実行。同作者CSSのgallery/portableで実査。"
+    ]
+  }
+}

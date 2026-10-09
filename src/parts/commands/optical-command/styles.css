@@ -1,5 +1,5 @@
 @import "../../../shared/workbench/base.css";
-/* 丸い52pxの起動記号と、実コマンドの円形アイコンを保つ。起動60px、閉じる44px、実候補名19pxと説明14pxで、図記号・操作・読む面を分ける。青い面を暗く濁らせず、選択の面を一段だけ強くする。狭幅は長いショートカットを候補本文の次の行へ戻す。 */
+/* 同心の光学窓と候補の照準を持つコマンドパレット。起動面から実候補まで輪郭を対応させ、検索語と操作名は正面に固定する。 */
 
 .sop-wb.sop-optical-command.sop-optical-command{--paper:#f6eee2;--ink:#493d32;--muted:#746251;--accent:#926c42;--edge:#bea482;--wb-bg:var(--paper);--wb-surface:var(--paper);--wb-ink:var(--ink);--wb-muted:var(--muted);--wb-accent:var(--accent);--wb-line:var(--edge);--wb-radius:0;container-type:inline-size;color:var(--ink);color-scheme:light;max-width:min(100%,480px);min-width:0;overflow-wrap:anywhere}
 .sop-wb.sop-optical-command.sop-optical-command,.sop-wb.sop-optical-command.sop-optical-command *,.sop-wb.sop-optical-command.sop-optical-command *::before,.sop-wb.sop-optical-command.sop-optical-command *::after{box-sizing:border-box}
@@ -68,3 +68,70 @@
 .sop-wb.sop-optical-command.sop-optical-command .wb-command-launcher::before,.sop-wb.sop-optical-command.sop-optical-command .wb-command-launcher::after,.sop-wb.sop-optical-command.sop-optical-command .wb-command-frame::before,.sop-wb.sop-optical-command.sop-optical-command .wb-command-frame::after,.sop-wb.sop-optical-command.sop-optical-command .wb-command-top::before,.sop-wb.sop-optical-command.sop-optical-command .wb-command-top::after,.sop-wb.sop-optical-command.sop-optical-command .wb-command-entry::before,.sop-wb.sop-optical-command.sop-optical-command .wb-command-entry::after,.sop-wb.sop-optical-command.sop-optical-command .wb-command-list::before,.sop-wb.sop-optical-command.sop-optical-command .wb-command-list::after,.sop-wb.sop-optical-command.sop-optical-command .wb-command-option::before,.sop-wb.sop-optical-command.sop-optical-command .wb-command-option::after,.sop-wb.sop-optical-command.sop-optical-command .wb-command-symbol::before,.sop-wb.sop-optical-command.sop-optical-command .wb-command-symbol::after{display:none!important}
 .sop-wb.sop-optical-command.sop-optical-command .wb-command-symbol,.sop-wb.sop-optical-command.sop-optical-command .wb-command-icon,.sop-wb.sop-optical-command.sop-optical-command .wb-command-launch svg,.sop-wb.sop-optical-command.sop-optical-command .wb-command-entry svg,.sop-wb.sop-optical-command.sop-optical-command .wb-command-close{background:Canvas!important;color:CanvasText!important;border-color:ButtonText!important}
 .sop-wb.sop-optical-command.sop-optical-command .wb-command-option[aria-selected=true]{outline:2px solid Highlight!important;outline-offset:-2px}.sop-wb.sop-optical-command.sop-optical-command :is(button,a,[tabindex]):focus-visible,.sop-wb.sop-optical-command.sop-optical-command .wb-command-entry:focus-within{outline-color:Highlight!important}}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-launcher{position:relative;padding:26px 22px;border:1px solid #b9c6d1;background:#edf2f6;border-radius:24px 4px 24px 4px}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-symbol{position:relative;width:74px;height:74px;border:1px solid #809eaf;border-radius:50%;background:radial-gradient(circle,transparent 0 24px,#adc3cf 24px 25px,transparent 25px);box-shadow:inset 0 0 0 6px #e0eaf0}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-symbol::before{content:'';position:absolute;inset:12px;border:1px solid #829fae;border-radius:50%;transform:rotateX(35deg);pointer-events:none}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-launch{border:1px solid #9bb3c0;border-radius:0;background:#f7fbfc;box-shadow:inset 0 3px #d3e1e8}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-dialog{border-radius:20px 4px 20px 4px;border:1px solid #a8bdca}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-entry{margin:0 18px;padding:12px 10px;background:#f9fcfd;border:1px solid #a7bdca;border-bottom:4px solid #a7bdca;border-radius:0}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-list{padding:18px}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-option{padding:16px 12px 16px 40px;grid-template-columns:minmax(0,1fr) auto;gap:8px;border-bottom:1px solid #bfd0d9}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-icon{position:absolute;left:6px;top:20px;width:24px;height:24px;border:1px solid #9eb6c3;border-radius:50%;background:#e3edf2}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-icon svg{width:14px;height:14px}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-copy{grid-column:1;grid-row:1/3}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-option[aria-selected=true]{background:#dce9f0}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-option[aria-selected=true] .wb-command-icon{outline:1px solid #5e8499;outline-offset:3px}
+.sop-wb.sop-optical-command.sop-optical-command:dir(rtl) .wb-command-option{padding-inline:40px 12px}
+.sop-wb.sop-optical-command.sop-optical-command:dir(rtl) .wb-command-icon{left:auto;right:6px}
+
+}
+@media(forced-colors:none){
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-option{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-icon{grid-area:auto;align-self:auto}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-copy{grid-column:1;grid-row:1}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-option>kbd,.sop-wb.sop-optical-command.sop-optical-command .wb-command-next{grid-column:1;grid-row:2;justify-self:end;max-width:100%}
+}
+
+@media(forced-colors:none){.sop-wb.sop-optical-command.sop-optical-command{--muted:#46677a;}}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-entry{position:relative;border:1px solid #7e9baa;border-bottom-width:4px;box-shadow:inset 0 0 0 4px #e3edf2;padding:16px 14px}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-option{border-bottom:0;margin-block:6px;padding-inline:48px 16px}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-option::before{content:'';display:block;position:absolute;inset:3px;pointer-events:none;opacity:0;background:linear-gradient(#54798c,#54798c) left top/16px 2px no-repeat,linear-gradient(#54798c,#54798c) left top/2px 16px no-repeat,linear-gradient(#54798c,#54798c) right top/16px 2px no-repeat,linear-gradient(#54798c,#54798c) right top/2px 16px no-repeat,linear-gradient(#54798c,#54798c) left bottom/16px 2px no-repeat,linear-gradient(#54798c,#54798c) left bottom/2px 16px no-repeat,linear-gradient(#54798c,#54798c) right bottom/16px 2px no-repeat,linear-gradient(#54798c,#54798c) right bottom/2px 16px no-repeat;transition:opacity 120ms}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-option[aria-selected=true]{background:linear-gradient(90deg,#e3edf4,#f3f8fa 48%,#e3edf4);box-shadow:inset 0 0 0 1px #c2d4df}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-option[aria-selected=true]::before{opacity:1}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-icon{left:auto;right:auto;inset-inline-start:12px;box-shadow:inset 0 0 0 3px #edf5f9,0 0 0 2px #c0d3de}
+.sop-wb.sop-optical-command.sop-optical-command:dir(rtl) .wb-command-option{padding-inline:48px 16px}
+.sop-wb.sop-optical-command.sop-optical-command:dir(rtl) .wb-command-icon{left:auto;right:12px}
+
+}
+
+/* B019 independent review follow-up */
+@media(forced-colors:none){
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-launcher{display:grid;grid-template-columns:56px minmax(0,1fr);gap:18px;padding:24px 18px;background:#eaf2f5;border:0;border-inline-start:6px solid #849eab}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-symbol{grid-column:1;grid-row:1;width:56px;height:56px;margin:0;align-self:start;border:2px solid #7895a6;border-radius:50%;background:#d5e4ec;box-shadow:inset 0 0 0 5px #edf5f8,inset 0 0 0 6px #9cb7c7}
+.sop-wb.sop-optical-command.sop-optical-command .wb-launch-copy{grid-column:2;grid-row:1;min-width:0}
+.sop-wb.sop-optical-command.sop-optical-command .wb-launch-copy strong{font-size:24px}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-launch{grid-column:1/3;margin:0}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-dialog{width:min(700px,calc(100vw - 32px));background:#c7d9e4;border:1px solid #88a5b8;padding:0}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-frame{display:grid;grid-template-columns:190px minmax(0,1fr);grid-template-rows:auto auto auto auto 1fr;grid-template-areas:'head head' 'path list' 'query list' 'status list' 'foot list';height:auto;max-height:none;background:#dce9f0;gap:0;position:relative}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-top{grid-area:head;padding:20px;border-bottom:1px solid #8faab9;background:#eef5f8;margin:0}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-path{grid-area:path;padding:14px 12px 0;font-size:12px}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-entry{grid-area:query;display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;margin:18px 12px;padding:14px 10px;border:1px solid #88a5b8;background:#f5fafc;align-self:start;min-height:100px;box-shadow:inset 0 3px #bed0dc}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-entry>kbd{grid-column:2;justify-self:start}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-input{width:100%;min-width:0;font-size:16px}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-list{grid-area:list;min-height:80px;max-height:min(60dvh,520px);overflow:auto;margin:18px 18px 18px 0;padding:14px;background:#f4f8fa;border:1px solid #a0b8c6;box-shadow:inset 0 0 0 5px #e0ebf1}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-option{margin:0 0 12px;padding:16px 12px;grid-template-columns:24px minmax(0,1fr);border:1px solid transparent;background:#edf3f6;gap:10px 12px}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-copy{grid-column:2;grid-row:1;min-width:0}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-option>kbd,.sop-wb.sop-optical-command.sop-optical-command .wb-command-next{grid-column:2;grid-row:2;justify-self:start}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-option[aria-selected=true]{padding:16px 12px;background:#dceaf1;border:1px solid #809eaf}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-status{grid-area:status;padding:0 14px;overflow-wrap:anywhere}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-foot{grid-area:foot;display:flex;flex-direction:column;align-items:start;justify-content:start;padding:12px 14px;gap:12px;border:0;font-size:12px}
+.sop-wb.sop-optical-command.sop-optical-command .wb-command-foot output{margin:0;border-top:1px solid #8faab9;padding-top:10px}
+.sop-wb.sop-optical-command.sop-optical-command:dir(rtl) .wb-command-list{margin-inline:0 18px}
+@media(max-width:520px){.sop-wb.sop-optical-command.sop-optical-command .wb-command-frame{display:block}.sop-wb.sop-optical-command.sop-optical-command .wb-command-entry{grid-template-columns:22px minmax(0,1fr) auto;min-height:76px;margin:16px 12px}.sop-wb.sop-optical-command.sop-optical-command .wb-command-entry>kbd{grid-column:3;grid-row:1}.sop-wb.sop-optical-command.sop-optical-command .wb-command-list,.sop-wb.sop-optical-command.sop-optical-command:dir(rtl) .wb-command-list{margin:16px 12px;max-height:min(46dvh,420px);padding:12px}.sop-wb.sop-optical-command.sop-optical-command .wb-command-foot{flex-direction:row;flex-wrap:wrap;align-items:center;padding:14px 12px}.sop-wb.sop-optical-command.sop-optical-command .wb-command-foot output{padding:0;border:0}}
+}

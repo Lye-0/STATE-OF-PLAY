@@ -1,5 +1,5 @@
 @import "../../../shared/workbench/base.css";
-/* Warm Library Search — 資料一覧に合う穏やかな検索欄。 */
+/* Warm Library Search — 書名のように見出しを読む資料検索。明朝の名称、説明、補足コードを背の細線に沿わせ、読み物を選ぶ順序に整える。 */
 .sop-wb.sop-warm-library-search {--wb-bg:#f6efdf;--wb-surface:#e6dfd2;--wb-ink:#453d32;--wb-muted:#5b4c36;--wb-accent:#745933;--wb-line:#c2b399;--wb-radius:6px;color-scheme:light}.sop-wb.sop-warm-library-search .wb-art{pointer-events:none}.sop-wb.sop-warm-library-search :is(.wb-search-results,.wb-command-dialog,.wb-context-panel,.wb-nav-flyout,.wb-nav-dialog){color:var(--wb-ink);background:var(--wb-bg)}.sop-wb.sop-warm-library-search .wb-search-shell{border-radius:5px;border-color:#c4ac80}.sop-wb.sop-warm-library-search .wb-search-results{border-radius:5px}.sop-wb.sop-warm-library-search .wb-results-caption{border-bottom:1px solid #d0b98f}
 .sop-wb.sop-warm-library-search{max-width:100%}.sop-wb.sop-warm-library-search,.sop-wb.sop-warm-library-search *{box-sizing:border-box}.sop-wb.sop-warm-library-search :is(button,input,textarea,a){min-width:0}
 .sop-wb.sop-warm-library-search .wb-search-field,.sop-wb.sop-warm-library-search .wb-command-entry{background:var(--wb-surface);color:var(--wb-ink)}.sop-wb.sop-warm-library-search:focus-visible,.sop-wb.sop-warm-library-search :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
@@ -13,3 +13,22 @@
 .sop-wb.sop-warm-library-search.sop-warm-library-search .wb-search-field:focus-within{outline:2px solid var(--wb-accent);outline-offset:1px;border-color:transparent;box-shadow:none}.sop-wb.sop-warm-library-search.sop-warm-library-search .wb-search-input:focus-visible{outline:none;box-shadow:none}.sop-wb.sop-warm-library-search.sop-warm-library-search .wb-search-results,.sop-wb.sop-warm-library-search.sop-warm-library-search .wb-results-list [role=option]{box-shadow:none!important}
 
 @media(forced-colors:active){.sop-wb.sop-warm-library-search.sop-warm-library-search{--paper:Canvas;--ink:CanvasText;--muted:CanvasText;--accent:Highlight;--edge:ButtonText;--ff-ink:CanvasText;--ff-muted:CanvasText;--sg-bg:Canvas;--sg-ink:CanvasText;--sg-muted:CanvasText;--sg-a:Highlight;--wb-bg:Canvas;--wb-ink:CanvasText;--wb-muted:CanvasText;--wb-accent:Highlight;color:CanvasText;background:Canvas;border-color:ButtonText;box-shadow:none}.sop-wb.sop-warm-library-search.sop-warm-library-search :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}.sop-wb.sop-warm-library-search.sop-warm-library-search :is(button,input,textarea,select,a):focus-visible{outline-color:Highlight}.sop-wb.sop-warm-library-search.sop-warm-library-search :is([aria-current=page],[aria-selected=true],[data-selected=true]){color:HighlightText;background:Highlight;border-color:Highlight}}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-warm-library-search.sop-warm-library-search .wb-search-shell{padding:24px 18px;background:#fbf5e7;border:0;border-block:3px double #c8b38b;border-radius:0}
+.sop-wb.sop-warm-library-search.sop-warm-library-search .wb-label{font:600 21px/1.5 Georgia,'Yu Mincho',serif}
+.sop-wb.sop-warm-library-search.sop-warm-library-search .wb-search-field{background:#fffdf6;border:1px solid #cbb78e;border-radius:0}
+.sop-wb.sop-warm-library-search.sop-warm-library-search .wb-search-input{font:16px/1.7 Georgia,'Yu Mincho',serif}
+.sop-wb.sop-warm-library-search.sop-warm-library-search .wb-search-submit{border-radius:0;background:#e8dbbc}
+.sop-wb.sop-warm-library-search.sop-warm-library-search .wb-search-results{border:0;border-top:1px solid #d2c29e;border-radius:0;background:none;padding:16px 0 0;margin-top:18px}
+.sop-wb.sop-warm-library-search.sop-warm-library-search .wb-results-list [role=option]{min-height:94px;padding:16px 10px 16px 18px;border:0;border-bottom:1px solid #d2c09a;border-inline-start:3px solid #c2a77b;border-radius:0;background:none;margin-bottom:8px}
+.sop-wb.sop-warm-library-search.sop-warm-library-search .wb-result-copy strong{font:600 18px/1.5 Georgia,'Yu Mincho',serif}
+.sop-wb.sop-warm-library-search.sop-warm-library-search .wb-result-copy small{font:13px/1.8 Georgia,'Yu Mincho',serif}
+.sop-wb.sop-warm-library-search.sop-warm-library-search .wb-result-meta{font:11px/1.6 Consolas,monospace;white-space:normal;overflow-wrap:anywhere}
+.sop-wb.sop-warm-library-search.sop-warm-library-search .wb-results-list [aria-selected=true]{background:#efe3c9;border-inline-start-color:#8e7042}
+
+}
+
+/* B019 independent review follow-up */
+.sop-wb.sop-warm-library-search.sop-warm-library-search .wb-label,.sop-wb.sop-warm-library-search.sop-warm-library-search .wb-search-message{max-width:100%;min-width:0;white-space:normal;overflow-wrap:anywhere;word-break:normal}

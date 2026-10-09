@@ -1,5 +1,5 @@
 @import "../../../shared/workbench/base.css";
-/* Soft Resource Search — 資料を探す柔らかい検索面。 */
+/* Soft Resource Search — 資料の名前・説明・識別子を分けて読む検索。小さな候補カードとコード欄で、似た名前の資料を選びやすくする。 */
 .sop-wb.sop-soft-resource-search {--wb-bg:#f6edf4;--wb-surface:#e9dfe5;--wb-ink:#493747;--wb-muted:#5a4355;--wb-accent:#70475f;--wb-line:#beabba;--wb-radius:6px;color-scheme:light}.sop-wb.sop-soft-resource-search .wb-art{pointer-events:none}.sop-wb.sop-soft-resource-search :is(.wb-search-results,.wb-command-dialog,.wb-context-panel,.wb-nav-flyout,.wb-nav-dialog){color:var(--wb-ink);background:var(--wb-bg)}.sop-wb.sop-soft-resource-search .wb-search-shell{border-radius:14px}.sop-wb.sop-soft-resource-search .wb-search-results{border-radius:12px}.sop-wb.sop-soft-resource-search .wb-search-submit{border-radius:8px}
 .sop-wb.sop-soft-resource-search{max-width:100%}.sop-wb.sop-soft-resource-search,.sop-wb.sop-soft-resource-search *{box-sizing:border-box}.sop-wb.sop-soft-resource-search :is(button,input,textarea,a){min-width:0}
 .sop-wb.sop-soft-resource-search .wb-search-field,.sop-wb.sop-soft-resource-search .wb-command-entry{background:var(--wb-surface);color:var(--wb-ink)}.sop-wb.sop-soft-resource-search:focus-visible,.sop-wb.sop-soft-resource-search :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
@@ -13,3 +13,23 @@
 .sop-wb.sop-soft-resource-search.sop-soft-resource-search .wb-search-field:focus-within{outline:2px solid var(--wb-accent);outline-offset:1px;border-color:transparent;box-shadow:none}.sop-wb.sop-soft-resource-search.sop-soft-resource-search .wb-search-input:focus-visible{outline:none;box-shadow:none}.sop-wb.sop-soft-resource-search.sop-soft-resource-search .wb-search-results,.sop-wb.sop-soft-resource-search.sop-soft-resource-search .wb-results-list [role=option]{box-shadow:none!important}
 
 @media(forced-colors:active){.sop-wb.sop-soft-resource-search.sop-soft-resource-search{--paper:Canvas;--ink:CanvasText;--muted:CanvasText;--accent:Highlight;--edge:ButtonText;--ff-ink:CanvasText;--ff-muted:CanvasText;--sg-bg:Canvas;--sg-ink:CanvasText;--sg-muted:CanvasText;--sg-a:Highlight;--wb-bg:Canvas;--wb-ink:CanvasText;--wb-muted:CanvasText;--wb-accent:Highlight;color:CanvasText;background:Canvas;border-color:ButtonText;box-shadow:none}.sop-wb.sop-soft-resource-search.sop-soft-resource-search :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}.sop-wb.sop-soft-resource-search.sop-soft-resource-search :is(button,input,textarea,select,a):focus-visible{outline-color:Highlight}.sop-wb.sop-soft-resource-search.sop-soft-resource-search :is([aria-current=page],[aria-selected=true],[data-selected=true]){color:HighlightText;background:Highlight;border-color:Highlight}}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-soft-resource-search.sop-soft-resource-search .wb-search-shell{padding:22px 18px;background:#fbf5fa;border:1px solid #d9c9d4;border-radius:12px}
+.sop-wb.sop-soft-resource-search.sop-soft-resource-search .wb-search-field{background:#fff;border:1px solid #cdb8c8;border-radius:8px}
+.sop-wb.sop-soft-resource-search.sop-soft-resource-search .wb-search-submit{border-radius:6px;min-height:44px}
+.sop-wb.sop-soft-resource-search.sop-soft-resource-search .wb-search-filters{gap:6px;flex-wrap:wrap}
+.sop-wb.sop-soft-resource-search.sop-soft-resource-search .wb-search-filters button{min-height:36px;padding:6px 10px;border-radius:16px;font-size:12px}
+.sop-wb.sop-soft-resource-search.sop-soft-resource-search .wb-search-results{padding:14px 0 0;margin-top:14px;background:none;border:0;border-top:1px solid #d8c7d3;border-radius:0}
+.sop-wb.sop-soft-resource-search.sop-soft-resource-search .wb-results-list [role=option]{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;padding:14px 10px;min-height:72px;background:#fffafd;border:1px solid #e3d6df;border-radius:7px;margin-bottom:8px}
+.sop-wb.sop-soft-resource-search.sop-soft-resource-search .wb-result-copy strong{font-size:15px;line-height:1.6}
+.sop-wb.sop-soft-resource-search.sop-soft-resource-search .wb-result-copy small{font-size:12px;line-height:1.7;display:block}
+.sop-wb.sop-soft-resource-search.sop-soft-resource-search .wb-result-meta{grid-column:1;grid-row:2;justify-self:start;font:11px/1.6 Consolas,monospace;border:1px solid #d2bfcb;border-radius:4px;padding:2px 6px;white-space:normal;overflow-wrap:anywhere}
+.sop-wb.sop-soft-resource-search.sop-soft-resource-search .wb-result-enter{grid-column:2;grid-row:1/3}
+.sop-wb.sop-soft-resource-search.sop-soft-resource-search .wb-results-list [aria-selected=true]{background:#eee0eb;border-color:#b896ae}
+
+}
+
+/* B019 independent review follow-up */
+.sop-wb.sop-soft-resource-search.sop-soft-resource-search .wb-label,.sop-wb.sop-soft-resource-search.sop-soft-resource-search .wb-search-message{max-width:100%;min-width:0;white-space:normal;overflow-wrap:anywhere;word-break:normal}

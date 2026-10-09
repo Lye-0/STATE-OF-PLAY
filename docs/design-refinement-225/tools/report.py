@@ -21,6 +21,8 @@ for p in targets:
   if candidates:pics.append({'label':label,'src':embedded(audit/candidates[0]['source'])})
  for state,label in [('normal','修正後・通常'),('hover','修正後・ホバー'),('narrow','修正後・320px')]:
   pics.append({'label':label,'src':embedded(d/f"captures/main/{p['id']}-{state}.png")})
+ error=d/f"captures/main/{p['id']}-error.png"
+ if error.exists():pics.append({'label':'修正後・エラーと再試行','src':embedded(error)})
  operated=d/f"captures/main/{p['id']}-operated.png"
  if operated.exists():pics.append({'label':'修正後・操作結果','src':embedded(operated)})
  launcher=d/f"captures/main/{p['id']}-launcher.png"

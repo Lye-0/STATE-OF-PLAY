@@ -1,0 +1,312 @@
+{
+  "batch": "B019",
+  "round": 9,
+  "overall": "changes_required",
+  "parts": [
+    {
+      "id": "radar-window-search",
+      "number": 592,
+      "verdict": "changes_required",
+      "note": "再試行は通常80px/forced76px、文字高さ16pxの1行へ解消。通常の失敗中は計数盤が消え、成功時に復帰する。forcedだけ旧件数表示が残る意味の不一致が残存。",
+      "findings": [
+        {
+          "kind": "forced_error_stale_count",
+          "description": "実async検索失敗中、通常配色では計数盤を隠すがforcedではRESULTSと旧1件が残る。gallery/portable×1100/320×LTR/RTLのforced8条件でcaption display:flex。直前の成功件数であり失敗した現検索の結果ではない。",
+          "recommendation": "retry表示時のcaption非表示を配色条件から独立させ、成功時の復帰を維持する。",
+          "evidence": [
+            "measurements-followup-9.json",
+            "evidence-9/radar-window-search-portable-320-ltr-forced-followup.png",
+            "src/parts/searchbars/radar-window-search/styles.css:96"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-9/sheet-radar-window-search.jpg",
+        "evidence-9/followup-sheet.jpg",
+        "measurements-followup-9.json",
+        "measurements-native-9.json",
+        "measurements-react-9.json"
+      ],
+      "reviewed": {
+        "round": 9,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "slotted-mail-search",
+      "number": 596,
+      "verdict": "pass",
+      "note": "投函口の厚みと返答紙の上端折返し/下の紙端が成立し、通常の候補カードから素材差が生まれた。",
+      "findings": [],
+      "evidence": [
+        "evidence-7/sheet-slotted-mail-search.jpg",
+        "measurements-7.json",
+        "measurements-native-7.json",
+        "measurements-react-7.json",
+        "contrast-summary-7.json"
+      ],
+      "reviewed": {
+        "round": 7,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "inheritedFromRound": 7,
+        "authorAndSharedHashUnchanged": true
+      }
+    },
+    {
+      "id": "open-shelf-search",
+      "number": 599,
+      "verdict": "pass",
+      "note": "棚板/棚受け/支柱を保持し、選択説明/NOTEは5.599:1へ改善。",
+      "findings": [],
+      "evidence": [
+        "evidence-7/sheet-open-shelf-search.jpg",
+        "measurements-7.json",
+        "measurements-native-7.json",
+        "measurements-react-7.json",
+        "contrast-summary-7.json"
+      ],
+      "reviewed": {
+        "round": 7,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "inheritedFromRound": 7,
+        "authorAndSharedHashUnchanged": true
+      }
+    },
+    {
+      "id": "caption-line-search",
+      "number": 601,
+      "verdict": "pass",
+      "note": "二列の編集索引と番号/分類の余白欄が成立。狭幅で情報単位を一列へ。選択補助文字5.669:1、二重focusも解消。",
+      "findings": [],
+      "evidence": [
+        "evidence-7/sheet-caption-line-search.jpg",
+        "measurements-7.json",
+        "measurements-native-7.json",
+        "measurements-react-7.json",
+        "contrast-summary-7.json"
+      ],
+      "reviewed": {
+        "round": 7,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "inheritedFromRound": 7,
+        "authorAndSharedHashUnchanged": true
+      }
+    },
+    {
+      "id": "soft-resource-search",
+      "number": 608,
+      "verdict": "pass",
+      "note": "資料名/説明/コードのカード構成を保持。長い非同期エラーはroot222pxでも折返す。",
+      "findings": [],
+      "evidence": [
+        "evidence-7/sheet-soft-resource-search.jpg",
+        "measurements-7.json",
+        "measurements-native-7.json",
+        "measurements-react-7.json",
+        "contrast-summary-7.json"
+      ],
+      "reviewed": {
+        "round": 7,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "inheritedFromRound": 7,
+        "authorAndSharedHashUnchanged": true
+      }
+    },
+    {
+      "id": "clear-line-search",
+      "number": 609,
+      "verdict": "pass",
+      "note": "低い行と識別子の密度を保持。長い非同期エラー切れを解消。",
+      "findings": [],
+      "evidence": [
+        "evidence-7/sheet-clear-line-search.jpg",
+        "measurements-7.json",
+        "measurements-native-7.json",
+        "measurements-react-7.json",
+        "contrast-summary-7.json"
+      ],
+      "reviewed": {
+        "round": 7,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "inheritedFromRound": 7,
+        "authorAndSharedHashUnchanged": true
+      }
+    },
+    {
+      "id": "warm-library-search",
+      "number": 610,
+      "verdict": "pass",
+      "note": "書名先行の読み順を保持。長い見出し/エラーは狭幅LTR/RTLで収まる。",
+      "findings": [],
+      "evidence": [
+        "evidence-7/sheet-warm-library-search.jpg",
+        "measurements-7.json",
+        "measurements-native-7.json",
+        "measurements-react-7.json",
+        "contrast-summary-7.json"
+      ],
+      "reviewed": {
+        "round": 7,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "inheritedFromRound": 7,
+        "authorAndSharedHashUnchanged": true
+      }
+    },
+    {
+      "id": "optical-command",
+      "number": 612,
+      "verdict": "pass",
+      "note": "検索計器と候補のフォーカス面を横に分離し、狭幅は縦接続。色や角記号だけではない構造差が成立。",
+      "findings": [],
+      "evidence": [
+        "evidence-7/sheet-optical-command.jpg",
+        "measurements-7.json",
+        "measurements-native-7.json",
+        "measurements-react-7.json",
+        "contrast-summary-7.json"
+      ],
+      "reviewed": {
+        "round": 7,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "inheritedFromRound": 7,
+        "authorAndSharedHashUnchanged": true
+      }
+    },
+    {
+      "id": "ledger-command",
+      "number": 615,
+      "verdict": "pass",
+      "note": "全行連番は通常配色でopacity1/transform noneを維持。分類文字#60513b/面#e1ceaaは4.972:1へ改善。欄構造・hover往復・狭幅・RTL・forced・操作・Reactを維持。",
+      "findings": [],
+      "evidence": [
+        "evidence-9/sheet-ledger-command.jpg",
+        "evidence-9/followup-sheet.jpg",
+        "measurements-followup-9.json",
+        "measurements-native-9.json",
+        "measurements-react-9.json"
+      ],
+      "reviewed": {
+        "round": 9,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "index-drawer-command",
+      "number": 616,
+      "verdict": "pass",
+      "note": "側壁の奥の索引紙と手前の取手付き前板が実際に重なり、引出しの内外が明確。前板文字の濃さも改善。",
+      "findings": [],
+      "evidence": [
+        "evidence-7/sheet-index-drawer-command.jpg",
+        "measurements-7.json",
+        "measurements-native-7.json",
+        "measurements-react-7.json",
+        "contrast-summary-7.json"
+      ],
+      "reviewed": {
+        "round": 7,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "inheritedFromRound": 7,
+        "authorAndSharedHashUnchanged": true
+      }
+    }
+  ],
+  "coverage": {
+    "changedPartsReinspected": [
+      592,
+      615
+    ],
+    "unchangedPartsInherited": 8,
+    "unchangedAuthorFiles": 98,
+    "sourceHashMismatches": [],
+    "primaryRows": 4,
+    "nativeChecks": 64,
+    "reactPlacements": 8,
+    "reactChecks": 28,
+    "followupConditions": 32,
+    "imagesViewed": [
+      "2 primary sheets /24 states",
+      "followup sheet /16 narrow images",
+      "React sheet /4 images",
+      "native error sheet /4 images",
+      "R592 normal/forced error close images"
+    ],
+    "pendingRequiredMeasurements": [],
+    "limitations": [
+      "未変更8件はround7の独立合格と作者/shared hash一致を基に継承。",
+      "React長文全組合せは未実行。gallery/portableで同作者CSSを長文実査。",
+      "初回followupでerrorオプションが実errorを生成しないfixtureを補正し、実async reject/resolveで32条件を再実行した。",
+      "指定状態のChromium検査であり無欠陥保証ではない。"
+    ]
+  }
+}

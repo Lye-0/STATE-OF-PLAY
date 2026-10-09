@@ -91,3 +91,9 @@ B019r7は8pass2差戻し。R592 async再試行52×93.39px/縦3行→grid全幅/j
 B019r8主担当4条件はpass。error画面の旧件数盤が残る意味の曖昧さを解消するため、再試行表示時のみ計数盤を隠すauthor規則を追加→r9を最新候補へ。AstraへB020r7の後B019r9を依頼済み。型チェック全3系統成功(typecheck-late-review.log)。
 
 B020r7全10独立pass。native350/React140、context焦点40/対象長文40/command低height40、作者100+shared1 hash一致。10件合格時pushルールに従いB019より先にB020をcommit/pushし、AstraはB019r9の最終再検査へ。
+
+B020はa1ff34818aa83b32cc4b311c029305de0e7ebe76でpush/record済み190件。B019r9をAstra再検査中。未pushはB019/B021/B022/B023、合計35件。
+
+B019r9は9pass/R592のみforced失敗時の旧件数で差戻し。件数非表示1規則をmedia外へ移しr10freeze、Astra優先再検査中。B021は未開始時に643/664の弱さを主担当で再発見、strengthen-last-context-navigation.py実行済み（再実行禁止）でリボン折返し/陶の支柱と受けへ再設計。r9main画像確認後643の背景文字干渉をblurで抑えr10freeze。B021独立はr10を指定、nav192条件はr9（r10でnav作者不変）。
+
+B019r10全10pass。実async失敗→成功16条件で通常/forcedの計数盤非表示→復帰、再試行1行、他99作者/shared不変。AstraはB021r10へ進行。

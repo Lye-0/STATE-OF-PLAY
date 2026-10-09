@@ -1,5 +1,5 @@
 @import "../../../shared/workbench/base.css";
-/* 帳簿の候補を読む左の罫だけ残し、グループと行の多重罫を廃する。実選択だけ6pxの朱茶の線と明るい面へ切り替え、通常の候補は2pxの細い記録線。実名称20px・説明14px・操作44px以上を保ち、長いショートカットは狭幅で次の行へ置く。 */
+/* 綴じた操作台帳として読むコマンドパレット。実候補の連番を余白へ置き、グループ見出しと操作名を横罫に沿わせる。 */
 
 .sop-wb.sop-ledger-command.sop-ledger-command{--paper:#f6eee2;--ink:#493d32;--muted:#746251;--accent:#926c42;--edge:#bea482;--wb-bg:var(--paper);--wb-surface:var(--paper);--wb-ink:var(--ink);--wb-muted:var(--muted);--wb-accent:var(--accent);--wb-line:var(--edge);--wb-radius:0;container-type:inline-size;color:var(--ink);color-scheme:light;max-width:min(100%,480px);min-width:0;overflow-wrap:anywhere}
 .sop-wb.sop-ledger-command.sop-ledger-command,.sop-wb.sop-ledger-command.sop-ledger-command *,.sop-wb.sop-ledger-command.sop-ledger-command *::before,.sop-wb.sop-ledger-command.sop-ledger-command *::after{box-sizing:border-box}
@@ -68,3 +68,44 @@
 .sop-wb.sop-ledger-command.sop-ledger-command .wb-command-launcher::before,.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-launcher::after,.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-frame::before,.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-frame::after,.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-top::before,.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-top::after,.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-entry::before,.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-entry::after,.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-list::before,.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-list::after,.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-option::before,.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-option::after,.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-symbol::before,.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-symbol::after{display:none!important}
 .sop-wb.sop-ledger-command.sop-ledger-command .wb-command-symbol,.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-icon,.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-launch svg,.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-entry svg,.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-close{background:Canvas!important;color:CanvasText!important;border-color:ButtonText!important}
 .sop-wb.sop-ledger-command.sop-ledger-command .wb-command-option[aria-selected=true]{outline:2px solid Highlight!important;outline-offset:-2px}.sop-wb.sop-ledger-command.sop-ledger-command :is(button,a,[tabindex]):focus-visible,.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-entry:focus-within{outline-color:Highlight!important}}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-launcher{padding:28px 22px;background:#f9f1e2;border:0;border-inline-start:4px solid #b59a6c;box-shadow:inset 12px 0 #ede0c6}
+.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-symbol{width:40px;height:40px;border:0;border-bottom:3px double #b59969;background:none;border-radius:0}
+.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-launch{border:0;border-block:3px double #b59969;background:#fffbf1;border-radius:0}
+.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-dialog{border:0;border-inline-start:8px solid #b99e70;border-radius:0;background:#fcf6e9}
+.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-top{border-bottom:3px double #c4b08c;margin-inline:18px;padding-inline:0}
+.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-entry{background:#fffcf4;border:0;border-bottom:1px solid #c6b28e;padding:12px 18px}
+.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-list{padding:12px 18px;counter-reset:ledger}
+.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-group{font:italic 16px/1.5 Georgia,serif;padding:16px 0 8px}
+.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-option{counter-increment:ledger;padding:16px 8px 16px 32px;grid-template-columns:24px minmax(0,1fr) auto;gap:8px;border-bottom:1px solid #cbbb9b;background:none}
+.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-option::before{content:counter(ledger,decimal-leading-zero);display:block;position:absolute;left:0;top:19px;color:#7e6949;font:11px/1.6 Consolas,monospace;background:none;inset-inline-end:auto;width:auto;height:auto}
+.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-copy strong{font:600 19px/1.5 Georgia,'Yu Mincho',serif}
+.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-icon{width:24px;height:24px}
+.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-option[aria-selected=true]{background:#eee1c9}
+.sop-wb.sop-ledger-command.sop-ledger-command:dir(rtl) .wb-command-option{padding-inline:32px 8px}
+.sop-wb.sop-ledger-command.sop-ledger-command:dir(rtl) .wb-command-option::before{left:auto;right:0}
+
+}
+
+/* B019 independent review follow-up */
+.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-option,.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-option[aria-selected=true]{padding:16px 8px 16px 32px;padding-inline:32px 8px;border:0;border-bottom:1px solid #cbbb9b;border-inline-start:2px solid #c4b08b}
+@media(forced-colors:none){.sop-wb.sop-ledger-command.sop-ledger-command{--muted:#62513e}.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-option::before{color:#62513e}.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-option[aria-selected=true]{border-inline-start-color:#926c42}}
+
+/* B019 independent review follow-up */
+@media(forced-colors:none){
+.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-dialog{border-inline-start:14px solid #94734a;background:#fbf4e6;box-shadow:inset 5px 0 #c8b18a,0 24px 80px #0005}
+.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-list{padding:12px 18px 24px 28px;background:linear-gradient(90deg,#d6c3a0 0 1px,transparent 1px) 18px 0/1px 100% no-repeat}
+.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-group{font:600 12px/1.6 Arial,'Yu Gothic',sans-serif;letter-spacing:.06em;padding:7px 12px;margin:12px 0 10px;width:max-content;max-width:100%;background:#e1ceaa;border:0;border-bottom:2px solid #a78b5e;overflow-wrap:anywhere}
+.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-option,.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-option[aria-selected=true]{grid-template-columns:24px minmax(0,.9fr) minmax(0,1.1fr) auto;gap:10px;padding:18px 8px 18px 32px;padding-inline:32px 8px;min-height:98px;align-items:start}
+.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-copy{display:contents}
+.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-copy strong{grid-column:2;grid-row:1;min-width:0;font:600 18px/1.5 Georgia,'Yu Mincho',serif}
+.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-copy small{grid-column:3;grid-row:1;margin:0;min-width:0;padding-inline-start:12px;border-inline-start:1px solid #c8b591;font:13px/1.8 Arial,'Yu Gothic',sans-serif}
+.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-icon{grid-column:1;grid-row:1}
+.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-option>kbd,.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-next{grid-column:4;grid-row:1;justify-self:end;align-self:start;max-width:70px}
+.sop-wb.sop-ledger-command.sop-ledger-command:dir(rtl) .wb-command-list{padding-inline:28px 18px;background-position:right 18px top}
+@media(max-width:520px){.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-list{padding-inline:22px 12px}.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-option,.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-option[aria-selected=true]{grid-template-columns:24px minmax(0,1fr);gap:12px;padding-inline:28px 6px}.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-copy strong{grid-column:2;grid-row:1}.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-copy small{grid-column:2;grid-row:2;padding:10px 0 0;border:0;border-top:1px solid #c8b591}.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-option>kbd,.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-next{grid-column:2;grid-row:3;justify-self:start;max-width:none}.sop-wb.sop-ledger-command.sop-ledger-command:dir(rtl) .wb-command-option{padding-inline:28px 6px}}
+}
+
+@media(forced-colors:none){.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-option::before{opacity:1;transform:none;transition:none;z-index:0}.sop-wb.sop-ledger-command.sop-ledger-command .wb-command-group{color:#60513b}}

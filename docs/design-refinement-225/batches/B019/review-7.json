@@ -1,0 +1,312 @@
+{
+  "batch": "B019",
+  "round": 7,
+  "overall": "changes_required",
+  "parts": [
+    {
+      "id": "radar-window-search",
+      "number": 592,
+      "verdict": "changes_required",
+      "note": "計数盤と候補の独立した列はAとして成立。エラー再試行の縦3行だけ修正。",
+      "findings": [
+        {
+          "kind": "error_retry_layout",
+          "description": "新2列gridで再試行ボタンが52pxの計数列へ入り、「再／試／行」と縦3行になる。320px viewport、portable root222px / gallery249px双方でbutton52×93.39px、文字幅14px・高さ63.59px。操作は実行できるが通常の短い操作名の読み方を崩す。",
+          "recommendation": "再試行を全幅または本文列へ置き、短いlabelが一行で読める幅を確保。長い任意labelも折返し可能にする。",
+          "evidence": [
+            "measurements-native-7.json",
+            "evidence-7/radar-window-search-portable-native-error-narrow.png",
+            "evidence-7/errors-sheet-1.jpg"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-7/sheet-radar-window-search.jpg",
+        "measurements-7.json",
+        "measurements-native-7.json",
+        "measurements-react-7.json",
+        "contrast-summary-7.json"
+      ],
+      "reviewed": {
+        "round": 7,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "slotted-mail-search",
+      "number": 596,
+      "verdict": "pass",
+      "note": "投函口の厚みと返答紙の上端折返し/下の紙端が成立し、通常の候補カードから素材差が生まれた。",
+      "findings": [],
+      "evidence": [
+        "evidence-7/sheet-slotted-mail-search.jpg",
+        "measurements-7.json",
+        "measurements-native-7.json",
+        "measurements-react-7.json",
+        "contrast-summary-7.json"
+      ],
+      "reviewed": {
+        "round": 7,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "open-shelf-search",
+      "number": 599,
+      "verdict": "pass",
+      "note": "棚板/棚受け/支柱を保持し、選択説明/NOTEは5.599:1へ改善。",
+      "findings": [],
+      "evidence": [
+        "evidence-7/sheet-open-shelf-search.jpg",
+        "measurements-7.json",
+        "measurements-native-7.json",
+        "measurements-react-7.json",
+        "contrast-summary-7.json"
+      ],
+      "reviewed": {
+        "round": 7,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "caption-line-search",
+      "number": 601,
+      "verdict": "pass",
+      "note": "二列の編集索引と番号/分類の余白欄が成立。狭幅で情報単位を一列へ。選択補助文字5.669:1、二重focusも解消。",
+      "findings": [],
+      "evidence": [
+        "evidence-7/sheet-caption-line-search.jpg",
+        "measurements-7.json",
+        "measurements-native-7.json",
+        "measurements-react-7.json",
+        "contrast-summary-7.json"
+      ],
+      "reviewed": {
+        "round": 7,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "soft-resource-search",
+      "number": 608,
+      "verdict": "pass",
+      "note": "資料名/説明/コードのカード構成を保持。長い非同期エラーはroot222pxでも折返す。",
+      "findings": [],
+      "evidence": [
+        "evidence-7/sheet-soft-resource-search.jpg",
+        "measurements-7.json",
+        "measurements-native-7.json",
+        "measurements-react-7.json",
+        "contrast-summary-7.json"
+      ],
+      "reviewed": {
+        "round": 7,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "clear-line-search",
+      "number": 609,
+      "verdict": "pass",
+      "note": "低い行と識別子の密度を保持。長い非同期エラー切れを解消。",
+      "findings": [],
+      "evidence": [
+        "evidence-7/sheet-clear-line-search.jpg",
+        "measurements-7.json",
+        "measurements-native-7.json",
+        "measurements-react-7.json",
+        "contrast-summary-7.json"
+      ],
+      "reviewed": {
+        "round": 7,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "warm-library-search",
+      "number": 610,
+      "verdict": "pass",
+      "note": "書名先行の読み順を保持。長い見出し/エラーは狭幅LTR/RTLで収まる。",
+      "findings": [],
+      "evidence": [
+        "evidence-7/sheet-warm-library-search.jpg",
+        "measurements-7.json",
+        "measurements-native-7.json",
+        "measurements-react-7.json",
+        "contrast-summary-7.json"
+      ],
+      "reviewed": {
+        "round": 7,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "optical-command",
+      "number": 612,
+      "verdict": "pass",
+      "note": "検索計器と候補のフォーカス面を横に分離し、狭幅は縦接続。色や角記号だけではない構造差が成立。",
+      "findings": [],
+      "evidence": [
+        "evidence-7/sheet-optical-command.jpg",
+        "measurements-7.json",
+        "measurements-native-7.json",
+        "measurements-react-7.json",
+        "contrast-summary-7.json"
+      ],
+      "reviewed": {
+        "round": 7,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "ledger-command",
+      "number": 615,
+      "verdict": "changes_required",
+      "note": "名称/説明/shortcutの実欄で台帳構造が成立し、hover文字移動0px・選択補助文字5.875:1。未選択連番と分類札が残存。",
+      "findings": [
+        {
+          "kind": "record_number_visibility",
+          "description": "実連番として使う::beforeにshared baseのopacity0/scale(.98)が残り、選択行だけopacity1となる。01だけ表示し、後続の02/03等は未選択時に消える。gallery/portable実画像とcomputed値で確認。",
+          "recommendation": "連番のopacity/transform/重なり順を明示固定し、hover解除・再進入でも全記録番号を表示。",
+          "evidence": [
+            "measurements-focused-7.json",
+            "evidence-7/sheet-ledger-command.jpg",
+            "src/shared/workbench/base.css:78"
+          ]
+        },
+        {
+          "kind": "contrast",
+          "description": "分類札CREATE/NAVIGATE/PREFERENCESは12px・600、文字#7a6b53 / 面#e1ceaaで3.356:1。gallery/portableの通常/hover/解除で同値。disabled候補ではない。",
+          "recommendation": "分類文字を面に対して4.5:1以上へ。",
+          "evidence": [
+            "contrast-summary-7.json",
+            "measurements-7.json",
+            "evidence-7/ledger-command-portable-rest.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-7/sheet-ledger-command.jpg",
+        "measurements-7.json",
+        "measurements-native-7.json",
+        "measurements-react-7.json",
+        "contrast-summary-7.json"
+      ],
+      "reviewed": {
+        "round": 7,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "index-drawer-command",
+      "number": 616,
+      "verdict": "pass",
+      "note": "側壁の奥の索引紙と手前の取手付き前板が実際に重なり、引出しの内外が明確。前板文字の濃さも改善。",
+      "findings": [],
+      "evidence": [
+        "evidence-7/sheet-index-drawer-command.jpg",
+        "measurements-7.json",
+        "measurements-native-7.json",
+        "measurements-react-7.json",
+        "contrast-summary-7.json"
+      ],
+      "reviewed": {
+        "round": 7,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    }
+  ],
+  "coverage": {
+    "primaryRows": 20,
+    "nativeChecks": 328,
+    "reactPartsFormats": 40,
+    "reactChecks": 132,
+    "runtimeErrors": 0,
+    "sourceHashesMatched": 100,
+    "lowHeightFocusedConditions": 24,
+    "imagesViewed": [
+      "10 primary sheets (120 states)",
+      "2 React sheets (20 images)",
+      "native error sheet (10 images)",
+      "3 commands low-height manual-bottom close images",
+      "A search3 and command2 normal close images"
+    ],
+    "pendingRequiredMeasurements": [],
+    "limitations": [
+      "Chromiumの指定状態での検査であり無欠陥保証ではない。",
+      "初回whole-option低height判定は長い候補全体がviewportを越えて失敗する。追加24条件で手動の末尾到達を確認し、到達不能とは判定しない。",
+      "React長文の全組合せは未実行。同作者CSSのgallery/portableで実査。",
+      "Aの構造改善と、2件の再現する表示不整合を区別。"
+    ]
+  }
+}
