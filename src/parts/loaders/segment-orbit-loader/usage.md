@@ -1,6 +1,6 @@
 # Segment Orbit Loader
 
-同心円スピナーを六つの浮いた弧へ分解。中心の空間を保って、波が軌道を一周する。
+固定した中心を囲む六枚の羽根が収縮して一段送られるローダー。中心の空間を保って、波が軌道を一周する。
 
 ## 使用
 Reactは`SegmentOrbitLoader`をimportして配置します。通常HTMLはmarkup.htmlとstyles.cssを置き、init(element, options)を呼びます。処理完了時は利用先がローダーを取り外すか非表示にしてください。実際の完了をライブラリが判断することはありません。
@@ -13,7 +13,7 @@ Reactは`SegmentOrbitLoader`をimportして配置します。通常HTMLはmarkup
 CSSアニメーションです。毎フレームのJavaScriptループやタイマーは使いません。非表示タブ・画面外・pausedでは止まり、prefers-reduced-motionでは静止形を表示します。destroy()で監視を解除します。独立した複数配置ができます。
 
 <!-- design-renewal -->
-六つの円弧が同じ中心を囲む花軌道を保持し、48pxの弧と3pxの輪郭へ整える。鈍い灰青の交互の弧で連続する向きを読み、±8度の小さい位相差だけを残す。強制色でも閉じた輪にせず、弧の形を保つ。
+固定した中心を囲む六枚の羽根が収縮して一段送られるローダー。短い線の回転ではなく、厚い羽根と中心の空隙が協調して変化する。
 
 native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
 <!-- /design-renewal -->

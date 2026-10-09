@@ -1,6 +1,6 @@
 # Counterflow Lines Loader
 
-左右から進む三対の細線が中央を交互に通過。移動方向の違いが一つのループを作る。
+仕切りのある二本の流路を小片が逆向きに進むローダー。移動方向の違いが一つのループを作る。
 
 ## 使用
 Reactは`CounterflowLinesLoader`をimportして配置します。通常HTMLはmarkup.htmlとstyles.cssを置き、init(element, options)を呼びます。処理完了時は利用先がローダーを取り外すか非表示にしてください。実際の完了をライブラリが判断することはありません。
@@ -19,4 +19,4 @@ native状態通知、pause、reduced motion、forced colors、React/JS配布を�
 <!-- /design-renewal -->
 
 <!-- round3-path -->
-二つの対向閉路と三組の流れを保持し、表示する2pxのSVG軌道と光点のoffset-pathを同じBezier座標から生成する。光点は全周期で実軌道上を進み、反対の流れを灰砂と灰青で区別する。別のcapsule形へ光点を重ねる不整合を除き、停止・forcedでも軌道との接合を保つ。
+仕切りのある二本の流路を小片が逆向きに進むローダー。上下の通路と両端の境界を分け、互いの小片が重ならず流れる。

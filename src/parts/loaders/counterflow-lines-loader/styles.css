@@ -24,3 +24,27 @@
 @media(forced-colors:active){.sop-foundation.sop-counterflow-lines-loader.sop-counterflow-lines-loader .x-composition::before,.sop-foundation.sop-counterflow-lines-loader.sop-counterflow-lines-loader .x-composition::after{background:transparent!important;border-color:CanvasText!important}.sop-foundation.sop-counterflow-lines-loader.sop-counterflow-lines-loader .x-composition i{background:CanvasText!important;outline:none!important}}
 
 .sop-foundation.sop-counterflow-lines-loader.sop-counterflow-lines-loader .x-composition::before,.sop-foundation.sop-counterflow-lines-loader.sop-counterflow-lines-loader .x-composition::after{inset:0;width:180px;height:180px;border:0;border-radius:0;transform:none;mask-repeat:no-repeat;mask-size:180px 180px}.sop-foundation.sop-counterflow-lines-loader.sop-counterflow-lines-loader .x-composition::before{mask-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20180%20180%22%3E%3Cpath%20d%3D%22M%2045%2064%20C%2090%2014%20176%2074%20145%20114%20C%20100%20164%2014%20104%2045%2064%20Z%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E");background:#a69b81}.sop-foundation.sop-counterflow-lines-loader.sop-counterflow-lines-loader .x-composition::after{mask-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20180%20180%22%3E%3Cpath%20d%3D%22M%2045%20114%20C%2090%20164%20176%20104%20145%2064%20C%20100%2014%2014%2074%2045%20114%20Z%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E");background:#87a8b9}@media(forced-colors:active){.sop-foundation.sop-counterflow-lines-loader.sop-counterflow-lines-loader .x-composition::before,.sop-foundation.sop-counterflow-lines-loader.sop-counterflow-lines-loader .x-composition::after{background:CanvasText!important;forced-color-adjust:none}}
+
+.sop-foundation.sop-counterflow-lines-loader.sop-counterflow-lines-loader .x-composition{width:180px;height:180px;transform:none}
+
+.sop-foundation.sop-counterflow-lines-loader.sop-counterflow-lines-loader .x-composition::before{content:'';position:absolute;inset:51px 12px;border-block:1px solid #697a91;background:linear-gradient(transparent 37px,#697a91 37px 38px,transparent 38px)}
+
+.sop-foundation.sop-counterflow-lines-loader.sop-counterflow-lines-loader .x-composition::after{content:'';position:absolute;inset:46px 6px;border-inline:2px solid #abbfd5}
+
+.sop-foundation.sop-counterflow-lines-loader.sop-counterflow-lines-loader .x-composition i{inset:auto;left:18px;top:63px;width:26px;height:14px;border:1px solid #b9cbe0;border-radius:2px;background:#7598b9;transform:none;translate:none;rotate:none;animation:sop-refine-counterflow 2.7s linear infinite;animation-delay:calc(var(--i)*-.9s)}
+
+.sop-foundation.sop-counterflow-lines-loader.sop-counterflow-lines-loader .x-composition i:nth-child(n+4){top:103px;background:#ccb58d;border-color:#eadbc3;animation-direction:reverse;animation-delay:calc((var(--i) - 3)*-.9s)}
+
+.sop-foundation.sop-counterflow-lines-loader.sop-counterflow-lines-loader .x-composition i::before,.sop-foundation.sop-counterflow-lines-loader.sop-counterflow-lines-loader .x-composition i::after{display:none}
+
+@keyframes sop-refine-counterflow{0%{translate:0 0;opacity:0}12%{opacity:1}88%{opacity:1}100%{translate:118px 0;opacity:0}}
+
+@media(prefers-reduced-motion:reduce){.sop-foundation.sop-counterflow-lines-loader.sop-counterflow-lines-loader .x-composition i{left:calc(20px + mod(var(--i),3)*50px);opacity:1}}
+
+.sop-foundation.sop-counterflow-lines-loader.sop-counterflow-lines-loader .x-composition::before,.sop-foundation.sop-counterflow-lines-loader.sop-counterflow-lines-loader .x-composition::after{width:auto;height:auto;mask:none;transform:none;border-radius:0}
+
+.sop-foundation.sop-counterflow-lines-loader.sop-counterflow-lines-loader .x-composition::after{background:none}
+
+.sop-foundation.sop-counterflow-lines-loader.sop-counterflow-lines-loader .x-composition i,.sop-foundation.sop-counterflow-lines-loader.sop-counterflow-lines-loader .x-composition i:nth-child(n+4){offset-path:none;offset-distance:0;offset-rotate:0deg}
+
+@media(forced-colors:active){.sop-foundation.sop-counterflow-lines-loader.sop-counterflow-lines-loader .x-composition::before,.sop-foundation.sop-counterflow-lines-loader.sop-counterflow-lines-loader .x-composition::after{background:transparent!important;border-color:CanvasText!important}.sop-foundation.sop-counterflow-lines-loader.sop-counterflow-lines-loader .x-composition::before{background:linear-gradient(transparent 37px,CanvasText 37px 38px,transparent 38px)!important;forced-color-adjust:none}}

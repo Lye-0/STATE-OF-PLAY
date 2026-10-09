@@ -1,0 +1,8 @@
+import fs from 'node:fs';import{parse}from'postcss';
+const rows=JSON.parse(fs.readFileSync('docs/design-refinement-225/targets.json')).filter(p=>p.batch==='B023');
+for(const r of rows){const p=`src/parts/${r.category}/${r.id}/styles.css`,ast=parse(fs.readFileSync(p,'utf8'));ast.walkAtRules('media',rule=>{if(rule.params.replace(/\s/g,'')==='(forced-colors:none)')rule.replaceWith(...rule.nodes)});let css=ast.toString();const s=`.sop-${r.category==='ornaments'?'ornament':'foundation'}.sop-${r.id}.sop-${r.id}`;
+if(r.id==='counterflow-lines-loader')css+=`\n@media(forced-colors:active){${s} .x-composition::before,${s} .x-composition::after{background:transparent!important;border-color:CanvasText!important}${s} .x-composition::before{background:linear-gradient(transparent 37px,CanvasText 37px 38px,transparent 38px)!important;forced-color-adjust:none}}\n`;
+if(r.id==='offset-portals-ornament')css+=`\n@media(forced-colors:active){${s} .x-composition i::after{background:CanvasText!important;forced-color-adjust:none}}\n`;
+if(r.id==='hinged-cells-ornament')css+=`\n@media(forced-colors:active){${s} .x-composition::before{background:repeating-linear-gradient(to bottom,transparent 0 42px,CanvasText 42px 44px,transparent 44px 52px)!important;forced-color-adjust:none}}\n`;
+if(r.id==='slim-dash-loader-loader')css+=`\n${s} .ct-loader-status{font-size:12px;line-height:1.6}\n@media(forced-colors:active){${s} .x-composition::before{border-color:CanvasText}${s} .x-composition i{background:CanvasText;forced-color-adjust:none;animation-name:sop-refine-slim-queue-contrast}}\n@keyframes sop-refine-slim-queue-contrast{0%,60%,100%{opacity:.6}25%{opacity:1}}\n`;
+fs.writeFileSync(p,css.trimEnd()+'\n')}

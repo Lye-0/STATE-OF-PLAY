@@ -1,0 +1,155 @@
+{
+  "batch": "B023",
+  "round": 6,
+  "overall": "pass",
+  "parts": [
+    {
+      "id": "offset-portals-ornament",
+      "number": 701,
+      "verdict": "pass",
+      "note": "六つのアーチ/厚い側面/床の足が奥行きの回廊を作る。筒の伸縮R696とは主構造が分離。",
+      "findings": [],
+      "evidence": [
+        "evidence-5/sheet-offset-portals-ornament-normal.jpg",
+        "evidence-5/sheet-offset-portals-ornament-forced.jpg",
+        "measurements-5.json",
+        "measurements-react-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "phase6AndLoopBoundary": true,
+        "narrow320RTL": true,
+        "longStatus": false,
+        "forcedReducedPaused": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "inheritedFromRound": 5,
+        "authorAndSharedHashUnchanged": true
+      }
+    },
+    {
+      "id": "segment-orbit-loader",
+      "number": 708,
+      "verdict": "pass",
+      "note": "旧偶数羽根色を除去。6羽根の縁/側面色が一致し、60度送りの定常周期端も通常/forcedで画素差10超0。厚い羽根と中心空隙の構造を保持。",
+      "findings": [],
+      "evidence": [
+        "measurements-steady-seams-6.json",
+        "seam-summary-6.json",
+        "evidence-6/segment-orbit-loader-steady-seam-normal-start.png",
+        "evidence-6/segment-orbit-loader-steady-seam-normal-end.png"
+      ],
+      "reviewed": {
+        "round": 6,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "phase6AndLoopBoundary": true,
+        "narrow320RTL": true,
+        "longStatus": true,
+        "forcedReducedPaused": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "counterflow-lines-loader",
+      "number": 710,
+      "verdict": "pass",
+      "note": "上下の実流路と中央仕切り、逆向きの小片が明快。輪が重なる旧形を解消し、B待機列と機構が異なる。",
+      "findings": [],
+      "evidence": [
+        "evidence-5/sheet-counterflow-lines-loader-normal.jpg",
+        "evidence-5/sheet-counterflow-lines-loader-forced.jpg",
+        "measurements-5.json",
+        "measurements-react-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "phase6AndLoopBoundary": true,
+        "narrow320RTL": true,
+        "longStatus": true,
+        "forcedReducedPaused": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "inheritedFromRound": 5,
+        "authorAndSharedHashUnchanged": true
+      }
+    },
+    {
+      "id": "hinged-cells-ornament",
+      "number": 717,
+      "verdict": "pass",
+      "note": "三段の外側蝶番/両開き戸/中央の把手が同じ開き角で連動。単なる折板反復とは分離。",
+      "findings": [],
+      "evidence": [
+        "evidence-5/sheet-hinged-cells-ornament-normal.jpg",
+        "evidence-5/sheet-hinged-cells-ornament-forced.jpg",
+        "measurements-5.json",
+        "measurements-react-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "phase6AndLoopBoundary": true,
+        "narrow320RTL": true,
+        "longStatus": false,
+        "forcedReducedPaused": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "inheritedFromRound": 5,
+        "authorAndSharedHashUnchanged": true
+      }
+    },
+    {
+      "id": "slim-dash-loader-loader",
+      "number": 728,
+      "verdict": "pass",
+      "note": "細い囲いの内部を明るさが順送する小型待機列。中央配置とstatus12pxを維持し、Aの立体機構と用途が異なる。",
+      "findings": [],
+      "evidence": [
+        "evidence-5/sheet-slim-dash-loader-loader-normal.jpg",
+        "evidence-5/sheet-slim-dash-loader-loader-forced.jpg",
+        "measurements-5.json",
+        "measurements-react-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "phase6AndLoopBoundary": true,
+        "narrow320RTL": true,
+        "longStatus": true,
+        "forcedReducedPaused": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "inheritedFromRound": 5,
+        "authorAndSharedHashUnchanged": true
+      }
+    }
+  ],
+  "coverage": {
+    "sourceHashesMatched": 50,
+    "changedAuthorCSS": 1,
+    "unchangedAuthorFiles": 49,
+    "inheritedParts": 4,
+    "loopBoundaryConditions": 2,
+    "imagesViewed": [
+      "4 normal/forced seam endpoint images"
+    ],
+    "pendingRequiredMeasurements": [],
+    "limitations": [
+      "1CSSの偶数色1規則削除のみ。前roundのnative50/React32checksと4件判定をhash照合で継承。",
+      "特定状態の検査であり無欠陥保証ではない。"
+    ]
+  }
+}

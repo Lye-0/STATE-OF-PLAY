@@ -19,3 +19,15 @@
 .sop-ornament.sop-offset-portals-ornament.sop-offset-portals-ornament .x-composition i:nth-child(even){border-block-color:#a69f8c}
 @keyframes sop-renewed-portals{0%{transform:rotateY(-18deg);translate:calc(var(--i)*-1px) 0}100%{transform:rotateY(18deg);translate:calc(var(--i)*1px) 0}}
 @media(forced-colors:active){.sop-ornament.sop-offset-portals-ornament.sop-offset-portals-ornament .x-composition i{outline:none!important;background:transparent!important}}
+
+.sop-ornament.sop-offset-portals-ornament.sop-offset-portals-ornament .x-composition{perspective:600px;transform-style:preserve-3d;transform:rotateX(-12deg) rotateY(-22deg);width:180px;height:180px}
+
+.sop-ornament.sop-offset-portals-ornament.sop-offset-portals-ornament .x-composition i{inset:auto;left:calc(18px + var(--i)*20px);top:calc(24px + var(--i)*4px);width:64px;height:116px;border:2px solid #d6cbb0;border-inline-end:7px solid #85785d;border-radius:32px 32px 0 0;border-bottom:0;background:none;transform-origin:50% 100%;translate:none;animation:sop-refine-portals 7s ease-in-out infinite;animation-delay:calc(var(--i)*-.25s)}
+
+.sop-ornament.sop-offset-portals-ornament.sop-offset-portals-ornament .x-composition i:nth-child(even){border-block-color:#d6cbb0}
+
+.sop-ornament.sop-offset-portals-ornament.sop-offset-portals-ornament .x-composition i::after{content:'';position:absolute;left:-8px;right:-10px;bottom:-5px;height:5px;background:#9d8f70;transform:skewX(-25deg);transform-origin:left top}
+
+@keyframes sop-refine-portals{0%,100%{transform:rotateY(-12deg)}50%{transform:rotateY(12deg)}}
+
+@media(forced-colors:active){.sop-ornament.sop-offset-portals-ornament.sop-offset-portals-ornament .x-composition i::after{background:CanvasText!important;forced-color-adjust:none}}

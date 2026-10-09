@@ -123,3 +123,5 @@ B021r12 main-targets-12.json24条件すべてpass、3件最新gallery画像取�
 B023r5は4pass/R708だけ差戻し。60度回転で位置は周期一致するが旧even border-colorが残り1890px色の飛び。release後に旧even規則1個削除、r6freeze/作者固定。他4件不変。main steady周期画像比較とgallery再撮影中。AstraはB021r12→B023r6限定→B022r11予定。本番buildはr5時点3m5s成功、R708変更後に最終再ビルド必要。
 
 R708r6 main定常周期画像比較は通常/forcedともRGB差10超0画素、main-pixel-seams-6.json。最新gallery撮影済み。全225対象のnormal/hover/narrow必須675画像をPillow.verifyで破損無し確認。
+
+B021r12独立全10pass、24closed-target Range条件/24画像超過0px、最終101hash一致。80b4b809a0f34d84b3c8d6be73f66fddf8f1015dでpush/record、210件完了。残りB022r11/B023r6。

@@ -17,6 +17,18 @@
 @media(forced-colors:active){.sop-foundation.sop-segment-orbit-loader.sop-segment-orbit-loader{color:CanvasText;background:Canvas;--ff-ink:CanvasText;--ff-muted:CanvasText}.sop-foundation.sop-segment-orbit-loader.sop-segment-orbit-loader .ff-heading,.sop-foundation.sop-segment-orbit-loader.sop-segment-orbit-loader .ff-description,.sop-foundation.sop-segment-orbit-loader.sop-segment-orbit-loader .ct-loader-status{color:CanvasText}.sop-foundation.sop-segment-orbit-loader.sop-segment-orbit-loader .x-composition i,.sop-foundation.sop-segment-orbit-loader.sop-segment-orbit-loader .x-composition i::before,.sop-foundation.sop-segment-orbit-loader.sop-segment-orbit-loader .x-composition::before,.sop-foundation.sop-segment-orbit-loader.sop-segment-orbit-loader .x-composition::after{border-color:CanvasText!important;background:Canvas!important;box-shadow:none!important}.sop-foundation.sop-segment-orbit-loader.sop-segment-orbit-loader .x-composition i{outline:1px solid CanvasText}}
 
 .sop-foundation.sop-segment-orbit-loader.sop-segment-orbit-loader .x-composition i{left:66px;top:20px;width:48px;height:48px;border:0;border-top:3px solid #bfd3cf;border-radius:50%;transform-origin:24px 70px;rotate:calc(var(--i)*60deg);background:none;animation:sop-renewed-orbit-petal 4.8s ease-in-out infinite alternate;animation-delay:calc(var(--i)*-.18s)}
-.sop-foundation.sop-segment-orbit-loader.sop-segment-orbit-loader .x-composition i:nth-child(even){border-color:#93b3b4}
+
 @keyframes sop-renewed-orbit-petal{0%{transform:rotate(-8deg)}100%{transform:rotate(8deg)}}
 @media(forced-colors:active){.sop-foundation.sop-segment-orbit-loader.sop-segment-orbit-loader .x-composition i{outline:none!important;background:transparent!important;border-top-color:CanvasText!important}}
+
+.sop-foundation.sop-segment-orbit-loader.sop-segment-orbit-loader .x-composition{width:180px;height:180px;transform:none}
+
+.sop-foundation.sop-segment-orbit-loader.sop-segment-orbit-loader .x-composition::before{content:'';position:absolute;inset:51px;border:1px solid #8fa8a8;border-radius:50%;background:radial-gradient(circle,transparent 0 31px,#203034 32px 100%)}
+
+.sop-foundation.sop-segment-orbit-loader.sop-segment-orbit-loader .x-composition::after{content:'';position:absolute;inset:82px;border:2px solid #d1dfd7;border-radius:50%}
+
+.sop-foundation.sop-segment-orbit-loader.sop-segment-orbit-loader .x-composition i{inset:auto;left:76px;top:20px;width:28px;height:40px;border:1px solid #d0ddd5;border-inline-end:5px solid #6b908d;border-radius:18px 18px 2px 2px;background:#a3bfb5;clip-path:none;transform-origin:14px 70px;transform:rotate(calc(var(--i)*60deg));translate:none;rotate:none;animation:sop-refine-orbit-leaves 4s cubic-bezier(.5,0,.5,1) infinite;animation-delay:0}
+
+.sop-foundation.sop-segment-orbit-loader.sop-segment-orbit-loader .x-composition i::before{content:'';position:absolute;inset:6px 7px 7px;border-inline-start:1px solid #e8efe5}
+
+@keyframes sop-refine-orbit-leaves{0%{transform:rotate(calc(var(--i)*60deg)) translateY(0)}35%{transform:rotate(calc(var(--i)*60deg + 30deg)) translateY(12px)}70%,100%{transform:rotate(calc(var(--i)*60deg + 60deg)) translateY(0)}}

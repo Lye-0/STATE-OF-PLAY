@@ -9,7 +9,7 @@ export interface HingedCellsOrnamentProps extends HTMLAttributes<HTMLDivElement>
 
 const markup = "<div class=\"or-stage\" aria-hidden=\"true\"><div class=\"x-composition\"><i style=\"--i:0\"></i><i style=\"--i:1\"></i><i style=\"--i:2\"></i><i style=\"--i:3\"></i><i style=\"--i:4\"></i><i style=\"--i:5\"></i></div></div>";
 
-/** 独立に回る六つの小箱を廃し、六枚の板が実際の端を共有して折れる一つの屏風へ再構成する。共通の蝶番角から各板のx/zと回転を計算し、隣の端を同じ三次元位置へ接続する。平らな明暗の表裏・厚い小口と蛇腹の奥行きが主形となり、hoverの別回転は使わない。 */
+/** 三段の小さな両開き扉が順に開閉する装飾。外側の蝶番を固定し、左右一対の戸と中央の把手が同じ開き角で対応する。 */
 export default function HingedCellsOrnament({ paused = false, className = '', ...props }: HingedCellsOrnamentProps) {
   const element = useRef<HTMLDivElement>(null);
   const controller = useRef<AmbientOrnamentController | null>(null);
