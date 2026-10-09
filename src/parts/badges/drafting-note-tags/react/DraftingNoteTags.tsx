@@ -41,7 +41,7 @@ const config: FoundationConfig = {
   ]
 };
 export type DraftingNoteTagsProps = FoundationProps;
-/** 一つのT横尺へ、両端を斜めに裁断した実名称の読む紙を渡す製図タグ。紙を囲むC支持・円の切欠きを廃し、幅16pxの縦尺と高さ16pxの横尺が交差する一つの開いた主形へ変える。紙の上辺は横尺の裏へ12px接触し、紙の斜めの自由端と尺の下端を別々に露出する。全文は左56px/上44pxの内側で読む。RTLでは物理的な輪郭を一度だけ鏡映する。狭幅は全文/件数・削除の二段にする。 */
+/** 細い製図の補助線に揃えた小さな札。大きな十字を除き、紙面の切り欠きと文字の基準位置を示す。 */
 export default forwardRef<HTMLDivElement, DraftingNoteTagsProps>(function DraftingNoteTags(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBadges} mountContent={mountBadges}/>;
 });

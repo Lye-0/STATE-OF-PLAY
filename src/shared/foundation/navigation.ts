@@ -48,13 +48,39 @@ export function mountBreadcrumbs(root:HTMLElement,config:FoundationConfig,option
 }
 export function renderBadges(o:FoundationOptions):string{return heading(o)+`<div class="ff-tags" data-tags role="group" aria-label="${escape(o.label??'タグ')}"></div><p class="ff-footnote" data-tags-hint>${o.removable?'×からタグを取り除けます。':o.selectable?'複数のタグを選択できます。':'状態を、ひと目で。'}</p>`;}
 export function mountBadges(root:HTMLElement,config:FoundationConfig,options:FoundationOptions={}):FoundationController {
- const c=createCore(root,config,options,v=>asStrings(v));if(!root.querySelector('[data-tags]'))root.innerHTML=renderBadges(c.options);const body=q(root,'[data-tags]');let items=[...(c.options.items??[])],itemsRef=c.options.items;
- c.sync=reason=>{syncHeading(c);const o=c.options;if(o.items!==itemsRef||reason==='reset'){items=[...(o.items??[])];itemsRef=o.items;}
-  const active=document.activeElement,focused=active instanceof HTMLElement&&body.contains(active)?{select:active.dataset.tagSelect,remove:active.dataset.tagRemove}:null;
-  body.innerHTML=items.map(item=>`<span class="ff-tag" data-selected="${asStrings(c.data).includes(item.value)}">${o.selectable?`<label><input type="checkbox" data-tag-select="${escape(item.value)}" ${asStrings(c.data).includes(item.value)?'checked':''} ${o.disabled||o.readOnly||item.disabled?'disabled':''}><span>${svg(item.icon??'spark')}${escape(item.label)}</span></label>`:`<span>${svg(item.icon??'spark')}${escape(item.label)}</span>`}${item.badge?`<small>${escape(item.badge)}</small>`:''}${o.removable?`<button type="button" data-tag-remove="${escape(item.value)}" aria-label="${escape(item.label)} を削除" ${o.disabled||o.readOnly||item.disabled?'disabled':''}>${svg('close')}</button>`:''}</span>`).join('');
-  if(focused)Array.from(body.querySelectorAll<HTMLElement>('[data-tag-select],[data-tag-remove]')).find(e=>focused.select!==undefined?e.dataset.tagSelect===focused.select:e.dataset.tagRemove===focused.remove)?.focus({preventScroll:true});
+ const normalize=(value:FoundationValue,o:FoundationOptions)=>[...new Set(asStrings(value))].filter(v=>(o.items??[]).some(i=>i.value===v));
+ const c=createCore(root,config,options,normalize);if(!root.querySelector('[data-tags]'))root.innerHTML=renderBadges(c.options);
+ const body=q(root,'[data-tags]');let items=[...(c.options.items??[])],itemsRef=c.options.items;
+ const rows=new Map<string,{tag:HTMLSpanElement;copy:HTMLSpanElement;label:HTMLLabelElement|null;input:HTMLInputElement|null;badge:HTMLElement|null;remove:HTMLButtonElement|null}>();
+ c.sync=reason=>{
+  syncHeading(c);const o=c.options;if(o.items!==itemsRef||reason==='reset'){items=[...(o.items??[])];itemsRef=o.items;}
+  c.data=normalize(c.data,o).filter(v=>items.some(i=>i.value===v));
+  const retained=new Set(items.map(i=>i.value));for(const[value,row]of rows)if(!retained.has(value)){row.tag.remove();rows.delete(value);}
+  let previous:HTMLElement|null=null;
+  for(const item of items){
+   let row=rows.get(item.value);
+   if(!row){const tag=document.createElement('span'),copy=document.createElement('span');tag.className='ff-tag';row={tag,copy,label:null,input:null,badge:null,remove:null};tag.append(copy);rows.set(item.value,row);}
+   const {tag,copy}=row;tag.dataset.selected=String(asStrings(c.data).includes(item.value));
+   if(o.selectable&&!row.input){row.label=document.createElement('label');row.input=document.createElement('input');row.input.type='checkbox';row.input.dataset.tagSelect=item.value;row.label.append(row.input,copy);tag.prepend(row.label);}
+   else if(!o.selectable&&row.input){tag.prepend(copy);row.label!.remove();row.label=null;row.input=null;}
+   if(row.input){const input=row.input;input.value=item.value;input.checked=asStrings(c.data).includes(item.value);input.disabled=!!(o.disabled||item.disabled);input.setAttribute('aria-readonly',String(!!o.readOnly));if(o.name)input.name=o.name;else input.removeAttribute('name');}
+   const markup=svg(item.icon??'spark')+escape(item.label);if(copy.innerHTML!==markup)copy.innerHTML=markup;
+   if(item.badge){if(!row.badge){row.badge=document.createElement('small');tag.append(row.badge);}row.badge.textContent=item.badge;}else{row.badge?.remove();row.badge=null;}
+   if(o.removable){if(!row.remove){row.remove=document.createElement('button');row.remove.type='button';row.remove.dataset.tagRemove=item.value;row.remove.innerHTML=svg('close');tag.append(row.remove);}row.remove.setAttribute('aria-label',item.label+' を削除');row.remove.disabled=!!(o.disabled||o.readOnly||item.disabled);}else{row.remove?.remove();row.remove=null;}
+   // Keep existing inputs connected on value updates: native focus and label identity survive.
+   const next:Element|null=previous?previous.nextElementSibling:body.firstElementChild;if(next!==tag)body.insertBefore(tag,next);previous=tag;
+  }
   q(root,'[data-tags-hint]').textContent=o.removable?'×からタグを取り除けます。':o.selectable?'複数のタグを選択できます。':'状態を、ひと目で。';
  };
  c.on(body,'change',event=>{const input=event.target;if(input instanceof HTMLInputElement&&input.dataset.tagSelect!==undefined){if(c.options.disabled||c.options.readOnly||input.disabled){c.sync('value');return;}const values=asStrings(c.data);c.send(input.checked?[...values,input.dataset.tagSelect]:values.filter(v=>v!==input.dataset.tagSelect));}});
- c.on(body,'click',event=>{const button=(event.target as Element).closest<HTMLButtonElement>('[data-tag-remove]');if(!button||button.disabled||c.options.disabled||c.options.readOnly)return;const value=button.dataset.tagRemove!,index=items.findIndex(i=>i.value===value);c.options.onAction?.(value);if(c.dead)return;if(!c.options.controlled){items=items.filter(i=>i.value!==value);c.send(asStrings(c.data).filter(v=>v!==value));}const next=items.slice(Math.max(0,index)).find(i=>!i.disabled)??items.slice(0,Math.max(0,index)).reverse().find(i=>!i.disabled);Array.from(body.querySelectorAll<HTMLElement>('button,input')).find(e=>!(e as HTMLButtonElement).disabled&&(e.dataset.tagRemove===next?.value||e.dataset.tagSelect===next?.value))?.focus({preventScroll:true});});c.sync('initial');return c;
+ c.on(body,'click',event=>{
+  const target=event.target as Element;
+  // Checkbox has no native readonly property. Cancel activation while retaining successful controls.
+  if(c.options.readOnly&&target.closest('label')){event.preventDefault();return;}
+  const button=target.closest<HTMLButtonElement>('[data-tag-remove]');if(!button||button.disabled||c.options.disabled||c.options.readOnly)return;
+  const value=button.dataset.tagRemove!,index=items.findIndex(i=>i.value===value);c.options.onAction?.(value);if(c.dead)return;
+  if(!c.options.controlled){items=items.filter(i=>i.value!==value);c.send(asStrings(c.data).filter(v=>v!==value));}
+  const next=items.slice(Math.max(0,index)).find(i=>!i.disabled)??items.slice(0,Math.max(0,index)).reverse().find(i=>!i.disabled);
+  Array.from(body.querySelectorAll<HTMLElement>('button,input')).find(e=>!(e as HTMLButtonElement).disabled&&(e.dataset.tagRemove===next?.value||e.dataset.tagSelect===next?.value))?.focus({preventScroll:true});
+ });c.sync('initial');return c;
 }

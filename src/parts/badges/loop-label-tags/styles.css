@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 一つの実孔から吊る丸い始端のタグ。元の長い丸端の札を保持し、二重の輪郭を一つの読む素材へ揃える。孔の端21pxに対し本文とアイコンを36px内側へ予約し、左端の文字と孔の衝突を解消する。件数は同じ札の平らな部分に置き、選択しても孔の位置とnative操作の寸法は変えない。 */
+/* 札の穴へ細い輪を通したタグ。元の長い丸端の札を保持し、二重の輪郭を一つの読む素材へ揃える。孔の端21pxに対し本文とアイコンを36px内側へ予約し、左端の文字と孔の衝突を解消する。件数は同じ札の平らな部分に置き、選択しても孔の位置とnative操作の寸法は変えない。 */
 
 .sop-foundation.sop-loop-label-tags.sop-loop-label-tags{--paper:#f4ede5;--ink:#645548;--muted:#8b7e70;--accent:#89674a;--edge:#d2bda7;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-line:var(--edge);color:var(--ink);color-scheme:light;width:100%;min-width:0;max-width:min(100%,400px);padding:18px;background:var(--paper);overflow-wrap:anywhere;container-type:inline-size}
 .sop-foundation.sop-loop-label-tags.sop-loop-label-tags,.sop-foundation.sop-loop-label-tags.sop-loop-label-tags *,.sop-foundation.sop-loop-label-tags.sop-loop-label-tags *::before,.sop-foundation.sop-loop-label-tags.sop-loop-label-tags *::after{box-sizing:border-box}
@@ -31,3 +31,17 @@
 .sop-foundation.sop-loop-label-tags.sop-loop-label-tags:dir(rtl) .ff-tag::before{transform:scaleX(-1)}
 
 @container(max-width:300px){.sop-foundation.sop-loop-label-tags.sop-loop-label-tags .ff-tag{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 12px}.sop-foundation.sop-loop-label-tags.sop-loop-label-tags .ff-tag label,.sop-foundation.sop-loop-label-tags.sop-loop-label-tags .ff-tag>span{grid-column:1/-1;min-height:36px}.sop-foundation.sop-loop-label-tags.sop-loop-label-tags .ff-tag small{grid-column:1;grid-row:2;max-width:100%;padding:0;border-inline-start:0}.sop-foundation.sop-loop-label-tags.sop-loop-label-tags .ff-tag button{grid-column:2;grid-row:2}}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-loop-label-tags.sop-loop-label-tags{--paper:#f7eff3;--ink:#5b4053;--muted:#715b68;--accent:#79506a;--edge:#cfb5c5}
+.sop-foundation.sop-loop-label-tags.sop-loop-label-tags .ff-tags{padding-inline-start:8px}
+.sop-foundation.sop-loop-label-tags.sop-loop-label-tags .ff-tag{padding-inline:32px 14px;min-height:58px}
+.sop-foundation.sop-loop-label-tags.sop-loop-label-tags .ff-tag::before{inset:0;background:#fff7fa;border:0;border-bottom:3px solid #d2b3c5;border-radius:5px;mask:radial-gradient(circle 4px at 14px 50%,transparent 98%,#000 100%)}
+.sop-foundation.sop-loop-label-tags.sop-loop-label-tags .ff-tag::after{content:'';display:block;position:absolute;inset:auto;inset-inline-start:-8px;top:calc(50% - 9px);width:26px;height:18px;border:2px solid #ad819a;border-radius:50%;background:none;z-index:0;pointer-events:none}
+.sop-foundation.sop-loop-label-tags.sop-loop-label-tags .ff-tag[data-selected=true]::before{background:#f0dbe7;border-bottom-color:#9a6e86}
+.sop-foundation.sop-loop-label-tags.sop-loop-label-tags:dir(rtl) .ff-tag{padding:12px 32px 12px 14px}
+
+}
+
+@media(forced-colors:none){.sop-foundation.sop-loop-label-tags.sop-loop-label-tags .ff-tag::after{z-index:-2;width:26px;height:14px;top:calc(50% - 7px);border-color:#815b73}.sop-foundation.sop-loop-label-tags.sop-loop-label-tags .ff-tag::before{mask:radial-gradient(circle 5px at 14px 50%,transparent 98%,#000 100%)}}

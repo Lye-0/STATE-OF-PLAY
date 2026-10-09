@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 数値窓を上下の開いた顎で保持する操作。元の二つの開いた顎を保持し、顎の始端を12pxずつnative押面へ延ばして同じ8pxの側材/10pxの上下材へ揃える。上下の部材は32pxの読む余白の外へ置き、数値を囲む括弧の飾りから、固定した窓と実操作端の接続へ整える。狭幅も読む窓の両端をnative押面の内側へ残す。 */
+/* 上下の顎と左右の増減キーで数値面を囲む数量入力。狭幅でもキーを下段へ分離せず、枠と操作を連続させる。 */
 
 .sop-foundation.sop-open-jaw-number.sop-open-jaw-number{--paper:#1c2937;--ink:#f4eddf;--muted:#b9c9d9;--accent:#d6b582;--edge:#718a9e;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-line:var(--edge);color:var(--ink);width:100%;max-width:min(100%,400px);min-width:0;padding:18px;background:var(--paper);container-type:inline-size;overflow-wrap:anywhere}
 .sop-foundation.sop-open-jaw-number.sop-open-jaw-number,.sop-foundation.sop-open-jaw-number.sop-open-jaw-number *,.sop-foundation.sop-open-jaw-number.sop-open-jaw-number *::before,.sop-foundation.sop-open-jaw-number.sop-open-jaw-number *::after{box-sizing:border-box}
@@ -49,3 +49,21 @@
 /* RTLの実操作位置と物理材を一度だけ鏡映する。 */
 
 @container(max-width:280px){.sop-foundation.sop-open-jaw-number.sop-open-jaw-number:dir(rtl) .ff-stepper>button::before{left:auto;right:0}.sop-foundation.sop-open-jaw-number.sop-open-jaw-number:dir(rtl) .ff-stepper>button:last-child::before{left:0;right:auto}}
+
+.sop-foundation.sop-open-jaw-number.sop-open-jaw-number .ff-stepper{grid-template-columns:44px minmax(0,1fr) 44px;gap:6px;align-items:center;min-height:0}
+.sop-foundation.sop-open-jaw-number.sop-open-jaw-number .ff-number-face{grid-column:2;grid-row:1;min-height:110px;width:100%;max-width:none;margin:0;padding:18px 3px}
+.sop-foundation.sop-open-jaw-number.sop-open-jaw-number .ff-stepper>button[data-adjust="-1"]{grid-column:1;grid-row:1}.sop-foundation.sop-open-jaw-number.sop-open-jaw-number .ff-stepper>button[data-adjust="1"]{grid-column:3;grid-row:1}
+.sop-foundation.sop-open-jaw-number.sop-open-jaw-number [data-number]{font-size:clamp(22px,8cqi,32px);min-width:0}.sop-foundation.sop-open-jaw-number.sop-open-jaw-number .ff-unit{font-size:10px;overflow-wrap:anywhere;letter-spacing:0}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-open-jaw-number.sop-open-jaw-number{--ink:#364f5b;--muted:#5d747e;--accent:#486c7d}
+.sop-foundation.sop-open-jaw-number.sop-open-jaw-number .ff-stepper{gap:0;padding-block:16px;align-items:stretch}
+.sop-foundation.sop-open-jaw-number.sop-open-jaw-number .ff-number-face{min-height:116px;padding:28px 4px}
+.sop-foundation.sop-open-jaw-number.sop-open-jaw-number .ff-number-face::before,.sop-foundation.sop-open-jaw-number.sop-open-jaw-number .ff-number-face::after{left:0;right:0;height:20px;border-inline:0;border-top-width:5px;border-bottom-width:5px}
+.sop-foundation.sop-open-jaw-number.sop-open-jaw-number .ff-stepper>button{height:auto;min-height:116px;width:44px;border-radius:0;border-top:5px solid #9eb9c5;border-bottom:5px solid #3c5d6d;background:#638593;color:#fff}
+.sop-foundation.sop-open-jaw-number.sop-open-jaw-number .ff-stepper>button::before{display:none}
+
+}
+
+@media(forced-colors:none){.sop-foundation.sop-open-jaw-number.sop-open-jaw-number .ff-stepper>button:hover:not(:disabled){background:#496b7a;color:#fff;border-top-color:#9eb9c5;border-bottom-color:#3c5d6d}}

@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 一つの大きな開いた支持括弧へ、平らな読む板を差すタグ。両端に細い括弧の記号を足す構成を廃止し、幅50pxの成形されたC支持、24%の上下の折る腕、そこへ20px重なる読む板を組む。括弧の内側には本当の空隙を残し、native名称は56pxの内側に固定する。狭い表示では名称を全幅上段、件数と削除を下段へ分ける。 */
+/* 薄いコの字金具で読み面を挟むタグ。留め具の幅と厚みを抑え、文字と操作の領域を広く保つ。 */
 
 .sop-foundation.sop-bracket-tags.sop-bracket-tags{--paper:#f4ede5;--ink:#645548;--muted:#8b7e70;--accent:#89674a;--edge:#d2bda7;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-line:var(--edge);color:var(--ink);color-scheme:light;width:100%;min-width:0;max-width:min(100%,400px);padding:18px;background:var(--paper);overflow-wrap:anywhere;container-type:inline-size}
 .sop-foundation.sop-bracket-tags.sop-bracket-tags,.sop-foundation.sop-bracket-tags.sop-bracket-tags *,.sop-foundation.sop-bracket-tags.sop-bracket-tags *::before,.sop-foundation.sop-bracket-tags.sop-bracket-tags *::after{box-sizing:border-box}
@@ -33,3 +33,13 @@
 .sop-foundation.sop-bracket-tags.sop-bracket-tags:dir(rtl) .ff-tag::after{inset:8px 30px 8px 0}
 
 @container(max-width:300px){.sop-foundation.sop-bracket-tags.sop-bracket-tags .ff-tag{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 12px}.sop-foundation.sop-bracket-tags.sop-bracket-tags .ff-tag label,.sop-foundation.sop-bracket-tags.sop-bracket-tags .ff-tag>span{grid-column:1/-1;min-height:36px}.sop-foundation.sop-bracket-tags.sop-bracket-tags .ff-tag small{grid-column:1;grid-row:2;max-width:100%;padding:0;border-inline-start:0}.sop-foundation.sop-bracket-tags.sop-bracket-tags .ff-tag button{grid-column:2;grid-row:2}}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-bracket-tags.sop-bracket-tags{--ink:#405563;--muted:#5c707c;--accent:#4b7085}
+.sop-foundation.sop-bracket-tags.sop-bracket-tags .ff-tag{padding:14px 14px 14px 32px;min-height:66px}
+.sop-foundation.sop-bracket-tags.sop-bracket-tags .ff-tag::before{width:27px;background:#91aebe;border-top:4px solid #d3e2e8;border-bottom:4px solid #67879c;clip-path:polygon(0 0,100% 0,100% 20%,24% 20%,24% 80%,100% 80%,100% 100%,0 100%)}
+.sop-foundation.sop-bracket-tags.sop-bracket-tags .ff-tag::after{inset:7px 0 7px 17px;background:#f7faf8;border-bottom:3px solid #c2d3d9}
+.sop-foundation.sop-bracket-tags.sop-bracket-tags:dir(rtl) .ff-tag{padding:14px 32px 14px 14px}.sop-foundation.sop-bracket-tags.sop-bracket-tags:dir(rtl) .ff-tag::after{inset:7px 17px 7px 0}
+
+}

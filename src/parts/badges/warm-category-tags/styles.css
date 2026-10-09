@@ -1,8 +1,22 @@
 @import "../../../shared/foundation/base.css";
-/* Warm Category Tags — 読み物の分類に合う穏やかな札。 */
+/* Warm Category Tags — 本文に添える索引語のようなカテゴリタグ。大きな箱を持たず、語句・件数・解除操作を細い下線でまとめる。 */
 .sop-foundation.sop-warm-category-tags {--ff-base:#e6dfd2;--ff-panel:#f6efdf;--ff-ink:#453d32;--ff-muted:#5b4c36;--ff-accent:#745933;--ff-accent2:#745933;--ff-line:#c2b399;--ff-radius:5px;color-scheme:light;background:#e6dfd2;padding:18px;border-radius:4px}.sop-foundation.sop-warm-category-tags .ff-eyebrow{display:none}.sop-foundation.sop-warm-category-tags .ff-heading{line-height:1.6;font-size:12px}.sop-foundation.sop-warm-category-tags .ff-floating{color:var(--ff-ink);background:var(--ff-panel)}.sop-foundation.sop-warm-category-tags .ff-tag{border-radius:4px;padding:7px 11px;border-color:#c8b58f}
 .sop-foundation.sop-warm-category-tags{max-width:100%}.sop-foundation.sop-warm-category-tags,.sop-foundation.sop-warm-category-tags *{box-sizing:border-box}.sop-foundation.sop-warm-category-tags :is(button,input,textarea,a){min-width:0}
 .sop-foundation.sop-warm-category-tags:focus-visible,.sop-foundation.sop-warm-category-tags :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-foundation.sop-warm-category-tags,.sop-foundation.sop-warm-category-tags *,.sop-foundation.sop-warm-category-tags::before,.sop-foundation.sop-warm-category-tags::after,.sop-foundation.sop-warm-category-tags *::before,.sop-foundation.sop-warm-category-tags *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-foundation.sop-warm-category-tags[data-sop-paused] *,.sop-foundation.sop-warm-category-tags[data-paused=true] *,.sop-foundation.sop-warm-category-tags[data-motion-running=false] *,.sop-foundation.sop-warm-category-tags[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-foundation.sop-warm-category-tags{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-warm-category-tags :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-warm-category-tags.sop-warm-category-tags{--ff-base:#f6f1e7;--ff-panel:#fffdf4;--ff-ink:#5b4c35;--ff-muted:#79684e;--ff-accent:#806239;--ff-line:#cbb996;background:#fffdf4;padding:20px;border-radius:0}
+.sop-foundation.sop-warm-category-tags.sop-warm-category-tags .ff-tags{display:flex;flex-wrap:wrap;gap:0 16px}
+.sop-foundation.sop-warm-category-tags.sop-warm-category-tags .ff-tag{border:0;border-radius:0;border-bottom:1px solid #cbb996;padding:10px 0;gap:9px;background:none;min-height:44px}
+.sop-foundation.sop-warm-category-tags.sop-warm-category-tags .ff-tag label>span,.sop-foundation.sop-warm-category-tags.sop-warm-category-tags .ff-tag>span{font:15px/1.7 Georgia,'Yu Mincho',serif}
+.sop-foundation.sop-warm-category-tags.sop-warm-category-tags .ff-tag small{font:11px/1.6 ui-monospace,monospace;color:#756246}
+.sop-foundation.sop-warm-category-tags.sop-warm-category-tags .ff-tag[data-selected=true]{background:#f2e8d4;color:#5b4c35;border-bottom:2px solid #806239}
+.sop-foundation.sop-warm-category-tags.sop-warm-category-tags .ff-tag button{width:28px;height:28px;color:#79684e}
+
+}
+
+.sop-foundation.sop-warm-category-tags.sop-warm-category-tags .ff-tag{min-width:0;max-width:100%;flex-wrap:wrap}.sop-foundation.sop-warm-category-tags.sop-warm-category-tags .ff-tag label,.sop-foundation.sop-warm-category-tags.sop-warm-category-tags .ff-tag label>span,.sop-foundation.sop-warm-category-tags.sop-warm-category-tags .ff-tag>span{min-width:0;max-width:100%;overflow-wrap:anywhere}.sop-foundation.sop-warm-category-tags.sop-warm-category-tags .ff-tag label{flex:1 1 100%}.sop-foundation.sop-warm-category-tags.sop-warm-category-tags .ff-tag button{flex:none}@media(forced-colors:none){.sop-foundation.sop-warm-category-tags.sop-warm-category-tags .ff-tag small{opacity:1;color:#685438}}

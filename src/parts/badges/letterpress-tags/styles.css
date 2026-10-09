@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 強い活字と小さな実件数を、薄い一枚の分類票へ整えるタグ。元の文字と罫の明快な関係を保持し、下端の黒い密度を2pxの素材の小口へ減らし、上の1pxの罫と右の件数の一線で読む面を分ける。選択で線を増やさず同じ面の密度を変える。狭い表示では名称を全幅上段、件数と削除を下段へ分ける。 */
+/* 活字を押した紙と、下端の厚みを持つタグ。書体・微細な紙肌・押し込みの影を揃え、文字の読みやすさを保つ。 */
 
 .sop-foundation.sop-letterpress-tags.sop-letterpress-tags{--paper:#f4ede5;--ink:#645548;--muted:#8b7e70;--accent:#89674a;--edge:#d2bda7;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-line:var(--edge);color:var(--ink);color-scheme:light;width:100%;min-width:0;max-width:min(100%,400px);padding:18px;background:var(--paper);overflow-wrap:anywhere;container-type:inline-size}
 .sop-foundation.sop-letterpress-tags.sop-letterpress-tags,.sop-foundation.sop-letterpress-tags.sop-letterpress-tags *,.sop-foundation.sop-letterpress-tags.sop-letterpress-tags *::before,.sop-foundation.sop-letterpress-tags.sop-letterpress-tags *::after{box-sizing:border-box}
@@ -29,3 +29,13 @@
 .sop-foundation.sop-letterpress-tags.sop-letterpress-tags .ff-tag[data-selected=true]{background:#eedcbc;color:#725638;border-bottom-color:#956d3f}
 
 @container(max-width:300px){.sop-foundation.sop-letterpress-tags.sop-letterpress-tags .ff-tag{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 12px}.sop-foundation.sop-letterpress-tags.sop-letterpress-tags .ff-tag label,.sop-foundation.sop-letterpress-tags.sop-letterpress-tags .ff-tag>span{grid-column:1/-1;min-height:36px}.sop-foundation.sop-letterpress-tags.sop-letterpress-tags .ff-tag small{grid-column:1;grid-row:2;max-width:100%;padding:0;border-inline-start:0}.sop-foundation.sop-letterpress-tags.sop-letterpress-tags .ff-tag button{grid-column:2;grid-row:2}}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-letterpress-tags.sop-letterpress-tags{--paper:#f5efdf;--ink:#58442e;--muted:#746149;--accent:#7b5935;--edge:#c8b28b}
+.sop-foundation.sop-letterpress-tags.sop-letterpress-tags .ff-tag{padding:14px 16px;min-height:68px;border:0;border-inline:2px solid #bca680;border-bottom:5px solid #b59b71;background:radial-gradient(#72593a18 .5px,transparent .8px) 0 0/7px 9px,#fff9e9;box-shadow:inset 0 1px #e5d4b7,inset 0 -1px #fffdf4}
+.sop-foundation.sop-letterpress-tags.sop-letterpress-tags .ff-tag label>span,.sop-foundation.sop-letterpress-tags.sop-letterpress-tags .ff-tag>span{font:600 16px/1.5 Georgia,'Yu Mincho',serif;letter-spacing:.01em;text-shadow:0 1px #fffdf3}
+.sop-foundation.sop-letterpress-tags.sop-letterpress-tags .ff-tag small{font:12px/1.6 ui-monospace,monospace;border-inline-start:1px solid #bba17b;padding-inline-start:9px}
+.sop-foundation.sop-letterpress-tags.sop-letterpress-tags .ff-tag[data-selected=true]{background:#eee1c7;color:#58442e;border-bottom-color:#85633c;box-shadow:inset 0 2px #b9a17b,inset 0 -1px #fff5dc}
+
+}

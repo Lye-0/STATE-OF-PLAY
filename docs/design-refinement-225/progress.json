@@ -1,11 +1,11 @@
 {
   "scope": 225,
-  "completed": 110,
+  "completed": 120,
   "activeImplementation": "review-followups",
   "activeReview": "B013",
   "lastPushed": {
-    "batch": "B011",
-    "commit": "e57d7b7ee6405279f4f869a747c17b59a23eaa4f"
+    "batch": "B012",
+    "commit": "8e01891d3f7243df5d0beb27d34b6fc2f8996e93"
   },
   "baseCommit": "b2ff64fa74e3bcc98626c281d0833fbd6851bb12",
   "reviewModel": "gpt-6-astra",
@@ -22,5 +22,9 @@
     "B021",
     "B022",
     "B023"
-  ]
+  ],
+  "lastMaintenancePush": {
+    "commit": "3c2847e962ba7b413acfa6c5f3523dc06fc567fa",
+    "reason": "Register pagination strip regression in CI features shard"
+  }
 }

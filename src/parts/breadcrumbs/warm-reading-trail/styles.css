@@ -1,8 +1,23 @@
 @import "../../../shared/foundation/base.css";
-/* Warm Reading Trail — 文章中心のページに合う道筋。 */
+/* Warm Reading Trail — 親のパスから現在の章見出しへつなぐ読書向けの経路表示。明朝体と細い罫線で、本文の冒頭へ馴染ませる。 */
 .sop-foundation.sop-warm-reading-trail {--ff-base:#e6dfd2;--ff-panel:#f6efdf;--ff-ink:#453d32;--ff-muted:#5b4c36;--ff-accent:#745933;--ff-accent2:#745933;--ff-line:#c2b399;--ff-radius:5px;color-scheme:light;background:#e6dfd2;padding:18px;border-radius:4px}.sop-foundation.sop-warm-reading-trail .ff-eyebrow{display:none}.sop-foundation.sop-warm-reading-trail .ff-heading{line-height:1.6;font-size:12px}.sop-foundation.sop-warm-reading-trail .ff-floating{color:var(--ff-ink);background:var(--ff-panel)}.sop-foundation.sop-warm-reading-trail .ff-breadcrumb{border-radius:5px;border-color:#c6b28c;padding:16px}.sop-foundation.sop-warm-reading-trail .ff-breadcrumb li{font-size:11px}
 .sop-foundation.sop-warm-reading-trail{max-width:100%}.sop-foundation.sop-warm-reading-trail,.sop-foundation.sop-warm-reading-trail *{box-sizing:border-box}.sop-foundation.sop-warm-reading-trail :is(button,input,textarea,a){min-width:0}
 .sop-foundation.sop-warm-reading-trail:focus-visible,.sop-foundation.sop-warm-reading-trail :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-foundation.sop-warm-reading-trail,.sop-foundation.sop-warm-reading-trail *,.sop-foundation.sop-warm-reading-trail::before,.sop-foundation.sop-warm-reading-trail::after,.sop-foundation.sop-warm-reading-trail *::before,.sop-foundation.sop-warm-reading-trail *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-foundation.sop-warm-reading-trail[data-sop-paused] *,.sop-foundation.sop-warm-reading-trail[data-paused=true] *,.sop-foundation.sop-warm-reading-trail[data-motion-running=false] *,.sop-foundation.sop-warm-reading-trail[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-foundation.sop-warm-reading-trail{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-warm-reading-trail :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-warm-reading-trail.sop-warm-reading-trail{--ff-base:#f5f0e6;--ff-panel:#fffdf5;--ff-ink:#584b37;--ff-muted:#77674f;--ff-accent:#80643e;--ff-line:#cebea0;background:#fffdf5;padding:22px;border-radius:0}
+.sop-foundation.sop-warm-reading-trail.sop-warm-reading-trail .ff-heading{font:13px/1.7 Georgia,'Yu Mincho',serif}
+.sop-foundation.sop-warm-reading-trail.sop-warm-reading-trail .ff-breadcrumb{padding:12px 0 0;border:0;border-top:1px solid #c1ac89;border-radius:0;background:none}
+.sop-foundation.sop-warm-reading-trail.sop-warm-reading-trail .ff-breadcrumb ol{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:0}
+.sop-foundation.sop-warm-reading-trail.sop-warm-reading-trail .ff-breadcrumb li{font:12px/1.8 Georgia,'Yu Mincho',serif}
+.sop-foundation.sop-warm-reading-trail.sop-warm-reading-trail .ff-breadcrumb li:last-child{flex-basis:100%;margin-top:5px;padding-block:12px;border-bottom:1px solid #d8c9ae}
+.sop-foundation.sop-warm-reading-trail.sop-warm-reading-trail .ff-breadcrumb [aria-current=page]{font:600 23px/1.5 Georgia,'Yu Mincho',serif;color:#584b37}
+.sop-foundation.sop-warm-reading-trail.sop-warm-reading-trail .ff-crumb-more{min-height:30px;border:0;border-bottom:1px solid #baa17b;background:none;border-radius:0;color:#745a36}
+
+}
+
+.sop-foundation.sop-warm-reading-trail.sop-warm-reading-trail .ff-crumb-menu{min-width:0;max-width:calc(100vw - 24px)}.sop-foundation.sop-warm-reading-trail.sop-warm-reading-trail .ff-crumb-menu a{display:block;min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere;line-height:1.7}

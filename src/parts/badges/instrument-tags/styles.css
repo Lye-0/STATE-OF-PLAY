@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 実件数を独立した計器面として読むタグ。元の数値面の区別を保持し、極細の下線と立体数値の不整合を一つの成形された読む床へ揃える。全札に4pxの上面と7pxの下の素材面を揃え、件数欄は厚さ2pxの実隔壁で分ける。名称も件数も同じ材料の平面に固定し、任意の長さを折返せる。 */
+/* 項目名の脇に、小さな凹んだ数値窓を持つ計器札。元の数値面の区別を保持し、極細の下線と立体数値の不整合を一つの成形された読む床へ揃える。全札に4pxの上面と7pxの下の素材面を揃え、件数欄は厚さ2pxの実隔壁で分ける。名称も件数も同じ材料の平面に固定し、任意の長さを折返せる。 */
 
 .sop-foundation.sop-instrument-tags.sop-instrument-tags{--paper:#f4ede5;--ink:#645548;--muted:#8b7e70;--accent:#89674a;--edge:#d2bda7;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-line:var(--edge);color:var(--ink);color-scheme:light;width:100%;min-width:0;max-width:min(100%,400px);padding:18px;background:var(--paper);overflow-wrap:anywhere;container-type:inline-size}
 .sop-foundation.sop-instrument-tags.sop-instrument-tags,.sop-foundation.sop-instrument-tags.sop-instrument-tags *,.sop-foundation.sop-instrument-tags.sop-instrument-tags *::before,.sop-foundation.sop-instrument-tags.sop-instrument-tags *::after{box-sizing:border-box}
@@ -29,3 +29,14 @@
 .sop-foundation.sop-instrument-tags.sop-instrument-tags:dir(rtl) .ff-tag small{padding:0 10px 0 0}
 
 @container(max-width:300px){.sop-foundation.sop-instrument-tags.sop-instrument-tags .ff-tag{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 12px}.sop-foundation.sop-instrument-tags.sop-instrument-tags .ff-tag label,.sop-foundation.sop-instrument-tags.sop-instrument-tags .ff-tag>span{grid-column:1/-1;min-height:36px}.sop-foundation.sop-instrument-tags.sop-instrument-tags .ff-tag small{grid-column:1;grid-row:2;max-width:100%;padding:0;border-inline-start:0}.sop-foundation.sop-instrument-tags.sop-instrument-tags .ff-tag button{grid-column:2;grid-row:2}}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-instrument-tags.sop-instrument-tags{--paper:#eef3f3;--ink:#354e5b;--muted:#556d78;--accent:#416c80;--edge:#b2c7ce}
+.sop-foundation.sop-instrument-tags.sop-instrument-tags .ff-tag{padding:13px 12px 13px 16px;min-height:62px;background:#e1ebed;border:1px solid #a5bcc6;border-top:3px solid #c7d8dd;border-bottom:3px solid #819eac;gap:12px}
+.sop-foundation.sop-instrument-tags.sop-instrument-tags .ff-tag small{background:#f4f8f5;color:#395d70;border:1px solid #b2c7ce;border-top:2px solid #7c9baa;padding:6px 9px;font:600 15px/1.4 ui-monospace,monospace;min-width:40px;align-self:center}
+.sop-foundation.sop-instrument-tags.sop-instrument-tags .ff-tag[data-selected=true]{background:#cbdde4;color:#354e5b;border-bottom-color:#547c90}
+.sop-foundation.sop-instrument-tags.sop-instrument-tags .ff-tag[data-selected=true] small{background:#e9f2f1;color:#2d5365}
+.sop-foundation.sop-instrument-tags.sop-instrument-tags:dir(rtl) .ff-tag small{padding:6px 9px}
+
+}

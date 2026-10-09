@@ -81,9 +81,15 @@ try {
    const aligned=await root.evaluate(e=>{
     const icon=e.querySelector('.ff-upload-symbol')!.getBoundingClientRect();
     const label=e.querySelector('.ff-dropzone strong')!.getBoundingClientRect();
-    return Math.abs(icon.x+icon.width/2-label.x-label.width/2)<2;
+    const copy=e.querySelector('.ff-dropzone>span:not(.ff-upload-symbol)')!.getBoundingClientRect();
+    const symbol=e.querySelector('.ff-upload-symbol svg')!.getBoundingClientRect();
+    const glyphCentered=Math.abs(symbol.x+symbol.width/2-icon.x-icon.width/2)<=2&&Math.abs(symbol.y+symbol.height/2-icon.y-icon.height/2)<=2;
+    const stacked=Math.abs(icon.x+icon.width/2-label.x-label.width/2)<2&&icon.bottom<=label.top+1;
+    const copyTop=Math.min(label.top,copy.top),copyBottom=Math.max(label.bottom,copy.bottom);
+    const beside=(icon.right<=Math.min(label.left,copy.left)+1||icon.left>=Math.max(label.right,copy.right)-1)&&Math.abs(icon.y+icon.height/2-(copyTop+copyBottom)/2)<2;
+    return stacked||(beside&&glyphCentered);
    });
-   assert.ok(aligned,part.id+' upload icon and label share an axis');
+   assert.ok(aligned,part.id+' upload icon aligns with the stacked label or centers beside its adjacent copy block');
   }
   if (part.category === 'loaders' && part.designType==='A') {
    const contained=await root.evaluate(e=>{
@@ -145,9 +151,20 @@ try {
   }
  }
  await page.setViewportSize({width:320,height:844});
- const pagingContrast=await lightSelectedContrast(page,specs.filter(p=>p.category==='pagination').map(p=>p.id));
- assert.equal(pagingContrast.checked,20,'each current page label is checked');
- assert.deepEqual(pagingContrast.failures,[],'current page labels meet text contrast');
+ let currentPagesChecked=0;
+ for(const part of specs.filter(p=>p.category==='pagination')){
+  const flat=await lightSelectedContrast(page,[part.id]);
+  assert.deepEqual(flat.failures,[],part.id+' current page text contrast');
+  if(flat.checked){assert.equal(flat.checked,1,part.id+' exactly one current page label');currentPagesChecked++;}
+  else{
+   // Gradient materials require the actual painted pixels rather than a flat CSS background.
+   const root=page.locator(`.sop-${part.id}`);await root.scrollIntoViewIfNeeded();
+   const painted=await paintedTextContrast(page,root.locator('[aria-current=page]'));
+   assert.equal(painted.length,1,part.id+' visible current page paint');
+   assert.ok(painted[0].ratio>=4.5,part.id+' painted current page contrast '+painted[0].ratio);currentPagesChecked++;
+  }
+ }
+ assert.equal(currentPagesChecked,20,'each current page label is checked');
 
  await page.evaluate(()=>document.documentElement.style.setProperty('--ink','#ffffff'));
  const allPagingText=await lightSelectedContrast(page,specs.filter(p=>p.category==='pagination').map(p=>p.id),'.ff-page-window [data-page],.ff-page-info,.ff-pages>button:not(:disabled)');
@@ -218,6 +235,8 @@ try {
   const time=await root.evaluate(e=>e.getAnimations({subtree:true})[0]?.currentTime);assert.notEqual(time,undefined);
   await page.evaluate(()=>scrollTo(0,0));
   await page.waitForFunction(id=>document.querySelector(`.sop-${id}`)?.getAttribute('data-ambient-running')==='false',part.id);
+  // The observer attribute commits before the browser resolves pending animation pause tasks.
+  await page.waitForFunction(id=>document.querySelector(`.sop-${id}`)!.getAnimations({subtree:true}).every(a=>a.playState==='paused'),part.id,{timeout:2000});
   assert.ok(await root.evaluate(e=>e.getAnimations({subtree:true}).every(a=>a.playState==='paused')),part.id+' offscreen animation pauses');
   await root.scrollIntoViewIfNeeded();await page.evaluate(id=>(window as any).apis[id].setPaused(true),part.id);
   await page.waitForFunction(id=>document.querySelector(`.sop-${id}`)?.getAttribute('data-ambient-running')==='false',part.id);

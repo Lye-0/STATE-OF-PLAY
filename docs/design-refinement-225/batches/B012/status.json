@@ -1,6 +1,6 @@
 {
   "batch": "B012",
-  "state": "ready_to_push",
+  "state": "pushed",
   "ids": [
     "slatted-pages",
     "bookplate-pages",
@@ -27,6 +27,16 @@
     {
       "round": 3,
       "snapshot": "docs/design-refinement-225/batches/B012/snapshot/round-3",
+      "state": "pending"
+    },
+    {
+      "round": 4,
+      "snapshot": "docs/design-refinement-225/batches/B012/snapshot/round-4",
+      "state": "pending"
+    },
+    {
+      "round": 5,
+      "snapshot": "docs/design-refinement-225/batches/B012/snapshot/round-5",
       "state": "pending"
     }
   ],
@@ -131,7 +141,8 @@
     "src/parts/breadcrumbs/soft-location-trail/vanilla/index.html": "c105a5332d2d446c6d80442452a16f4f963f1e77245de04c9579d207726500ff",
     "src/parts/breadcrumbs/soft-location-trail/vanilla/init.ts": "66558e1b13685f178475148126ca1af7728b016894016bf095d7f9270d937ffd",
     "src/parts/breadcrumbs/soft-location-trail/vanilla/main.ts": "f926730d3d5da6d296fda51817d56ef1aedd4fe086694d5af58689c2cb576027",
-    "src/shared/foundation/navigation.ts": "fa6fb83baada66886bc144f5581d239a0b527a043d72e159d955b0023e77a7b9"
+    "src/shared/foundation/navigation.ts": "4a60332dc7d0b7e1fa82f8a72700609c5e8e7db6ad7d0c10de152eea10a1cda6"
   },
-  "finalReview": 3
+  "finalReview": 5,
+  "commit": "8e01891d3f7243df5d0beb27d34b6fc2f8996e93"
 }

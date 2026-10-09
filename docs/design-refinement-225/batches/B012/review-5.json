@@ -1,0 +1,214 @@
+{
+  "batch": "B012",
+  "round": 5,
+  "overall": "pass",
+  "parts": [
+    {
+      "id": "slatted-pages",
+      "number": 404,
+      "verdict": "pass",
+      "note": "薄い羽根の縦端と上下一線へ再構成し、旧緑の厚い階段から別の選択機構になった。番号と選択面が安定し、狭幅でも列を維持。 round3は作者ハッシュ不変でround2合格を継承。 共有依存更新後、portable/galleryで999選択→root222px縮小、API2、scale.75、Tab、LTR/RTLを再確認。選択/フォーカスは列内、外側scrollY不変。Enter3→前へ2、readonly/disabledも成立。",
+      "findings": [],
+      "evidence": [
+        "evidence-4/pagination-portable-222-sheet.jpg",
+        "evidence-4/pagination-gallery-222-sheet.jpg",
+        "measurements-pagination-222-4.json",
+        "measurements-pagination-native-4.json"
+      ],
+      "reviewed": [
+        "round2 pass inherited by unchanged author hash",
+        "author hash unchanged from round3; navigation diff limited to mountBadges",
+        "dependency browser retest: pagination LTR/RTL/resize222/scale/focus/keyboard/pointer/readonly/disabled"
+      ]
+    },
+    {
+      "id": "bookplate-pages",
+      "number": 405,
+      "verdict": "pass",
+      "note": "太い額縁を除き、選択番号から下へ続くしおりの切込みに意味を集めた。数値に対する独自性が読み取れる。 round3は作者ハッシュ不変でround2合格を継承。 共有依存更新後、portable/galleryで999選択→root222px縮小、API2、scale.75、Tab、LTR/RTLを再確認。選択/フォーカスは列内、外側scrollY不変。Enter3→前へ2、readonly/disabledも成立。",
+      "findings": [],
+      "evidence": [
+        "evidence-4/pagination-portable-222-sheet.jpg",
+        "evidence-4/pagination-gallery-222-sheet.jpg",
+        "measurements-pagination-222-4.json",
+        "measurements-pagination-native-4.json"
+      ],
+      "reviewed": [
+        "round2 pass inherited by unchanged author hash",
+        "author hash unchanged from round3; navigation diff limited to mountBadges",
+        "dependency browser retest: pagination LTR/RTL/resize222/scale/focus/keyboard/pointer/readonly/disabled"
+      ]
+    },
+    {
+      "id": "soft-reading-pages",
+      "number": 408,
+      "verdict": "pass",
+      "note": "大きい前後操作を上段に置き、番号列を補助へ下げた。続けて読む用途が他 B と配置から区別できる。 round3は作者ハッシュ不変でround2合格を継承。 共有依存更新後、portable/galleryで999選択→root222px縮小、API2、scale.75、Tab、LTR/RTLを再確認。選択/フォーカスは列内、外側scrollY不変。Enter3→前へ2、readonly/disabledも成立。",
+      "findings": [],
+      "evidence": [
+        "evidence-4/pagination-portable-222-sheet.jpg",
+        "evidence-4/pagination-gallery-222-sheet.jpg",
+        "measurements-pagination-222-4.json",
+        "measurements-pagination-native-4.json"
+      ],
+      "reviewed": [
+        "round2 pass inherited by unchanged author hash",
+        "author hash unchanged from round3; navigation diff limited to mountBadges",
+        "dependency browser retest: pagination LTR/RTL/resize222/scale/focus/keyboard/pointer/readonly/disabled"
+      ]
+    },
+    {
+      "id": "line-navigation-pages",
+      "number": 409,
+      "verdict": "pass",
+      "note": "前後キーと番号列が一段の細いツールバーになり、狭い領域向けの用途差が成立。実root222pxではLTR/RTLの選択とフォーカスが収まる。 round3は作者ハッシュ不変でround2合格を継承。 共有依存更新後、portable/galleryで999選択→root222px縮小、API2、scale.75、Tab、LTR/RTLを再確認。選択/フォーカスは列内、外側scrollY不変。Enter3→前へ2、readonly/disabledも成立。",
+      "findings": [],
+      "evidence": [
+        "evidence-4/pagination-portable-222-sheet.jpg",
+        "evidence-4/pagination-gallery-222-sheet.jpg",
+        "measurements-pagination-222-4.json",
+        "measurements-pagination-native-4.json"
+      ],
+      "reviewed": [
+        "round2 pass inherited by unchanged author hash",
+        "author hash unchanged from round3; navigation diff limited to mountBadges",
+        "dependency browser retest: pagination LTR/RTL/resize222/scale/focus/keyboard/pointer/readonly/disabled"
+      ]
+    },
+    {
+      "id": "warm-book-pages",
+      "number": 410,
+      "verdict": "pass",
+      "note": "明朝のノンブルと大きい現在数値、下段の前後操作で読み物のページ末尾として独立した設計になった。 round3は作者ハッシュ不変でround2合格を継承。 共有依存更新後、portable/galleryで999選択→root222px縮小、API2、scale.75、Tab、LTR/RTLを再確認。選択/フォーカスは列内、外側scrollY不変。Enter3→前へ2、readonly/disabledも成立。",
+      "findings": [],
+      "evidence": [
+        "evidence-4/pagination-portable-222-sheet.jpg",
+        "evidence-4/pagination-gallery-222-sheet.jpg",
+        "measurements-pagination-222-4.json",
+        "measurements-pagination-native-4.json"
+      ],
+      "reviewed": [
+        "round2 pass inherited by unchanged author hash",
+        "author hash unchanged from round3; navigation diff limited to mountBadges",
+        "dependency browser retest: pagination LTR/RTL/resize222/scale/focus/keyboard/pointer/readonly/disabled"
+      ]
+    },
+    {
+      "id": "stone-path-trail",
+      "number": 414,
+      "verdict": "pass",
+      "note": "親リンクhoverは石の実背景上で5.742:1へ改善。通常/hover往復、320/長文/RTL、展開リンクとEscape復帰、forced/reducedを再確認し、元の石段と接続を維持。 共有依存更新後の展開/hover/長文LTR/RTL/forced/Enterリンク/Escape復帰/disabledを両環境で再確認。",
+      "findings": [],
+      "evidence": [
+        "evidence-4/breadcrumbs-portable-dependency-sheet.jpg",
+        "evidence-4/breadcrumbs-gallery-dependency-sheet.jpg",
+        "measurements-breadcrumbs-long-4.json"
+      ],
+      "reviewed": [
+        "round3 frozen portable",
+        "actual gallery CSS + frozen init fixture",
+        "rest/hover entry/exit/reentry/returned",
+        "320 viewport / long label / RTL / forced / reduced",
+        "collapsed menu / hover link / long name / Enter navigation / Escape focus return / disabled",
+        "author hash unchanged from round3; navigation diff limited to mountBadges",
+        "dependency browser retest: all5 breadcrumb menus"
+      ]
+    },
+    {
+      "id": "perforated-path-trail",
+      "number": 416,
+      "verdict": "pass",
+      "note": "続き紙のミシン目を保ち、現在位置を一段進めた接続で親と到達先を分けた。素材と経路表示の関係が成立。 round3は作者ハッシュ不変でround2合格を継承。 共有依存更新後の展開/hover/長文LTR/RTL/forced/Enterリンク/Escape復帰/disabledを両環境で再確認。",
+      "findings": [],
+      "evidence": [
+        "evidence-4/breadcrumbs-portable-dependency-sheet.jpg",
+        "evidence-4/breadcrumbs-gallery-dependency-sheet.jpg",
+        "measurements-breadcrumbs-long-4.json"
+      ],
+      "reviewed": [
+        "round2 pass inherited by unchanged author hash",
+        "author hash unchanged from round3; navigation diff limited to mountBadges",
+        "dependency browser retest: all5 breadcrumb menus"
+      ]
+    },
+    {
+      "id": "stitched-route-trail",
+      "number": 418,
+      "verdict": "pass",
+      "note": "縫い線が親リンクの脇を通り、下の到達面の綴じ目へ入る。単なる横罫一覧から経路の終点を示す構造へ改善。 round3は作者ハッシュ不変でround2合格を継承。 共有依存更新後の展開/hover/長文LTR/RTL/forced/Enterリンク/Escape復帰/disabledを両環境で再確認。",
+      "findings": [],
+      "evidence": [
+        "evidence-4/breadcrumbs-portable-dependency-sheet.jpg",
+        "evidence-4/breadcrumbs-gallery-dependency-sheet.jpg",
+        "measurements-breadcrumbs-long-4.json"
+      ],
+      "reviewed": [
+        "round2 pass inherited by unchanged author hash",
+        "author hash unchanged from round3; navigation diff limited to mountBadges",
+        "dependency browser retest: all5 breadcrumb menus"
+      ]
+    },
+    {
+      "id": "looped-route-trail",
+      "number": 423,
+      "verdict": "pass",
+      "note": "展開メニューhoverは実背景上で5.830:1へ改善。小さな輪と経路線の造形を保ち、リンク操作とEscape復帰、320/RTL/forced/reducedも通過。 共有依存更新後の展開/hover/長文LTR/RTL/forced/Enterリンク/Escape復帰/disabledを両環境で再確認。",
+      "findings": [],
+      "evidence": [
+        "evidence-4/breadcrumbs-portable-dependency-sheet.jpg",
+        "evidence-4/breadcrumbs-gallery-dependency-sheet.jpg",
+        "measurements-breadcrumbs-long-4.json"
+      ],
+      "reviewed": [
+        "round3 frozen portable",
+        "actual gallery CSS + frozen init fixture",
+        "rest/hover entry/exit/reentry/returned",
+        "320 viewport / long label / RTL / forced / reduced",
+        "collapsed menu / hover link / long name / Enter navigation / Escape focus return / disabled",
+        "author hash unchanged from round3; navigation diff limited to mountBadges",
+        "dependency browser retest: all5 breadcrumb menus"
+      ]
+    },
+    {
+      "id": "soft-location-trail",
+      "number": 428,
+      "verdict": "pass",
+      "note": "長い空白なし階層名がLTR/RTL/forcedで折り返され、メニューclientWidth238とscrollWidth238が一致。portable/galleryで再現した旧約206pxのはみ出しは解消。Enterリンク移動、Escape復帰を維持。 共有依存更新後の展開/hover/長文LTR/RTL/forced/Enterリンク/Escape復帰/disabledを両環境で再確認。",
+      "findings": [],
+      "evidence": [
+        "evidence-4/breadcrumbs-portable-dependency-sheet.jpg",
+        "evidence-4/breadcrumbs-gallery-dependency-sheet.jpg",
+        "measurements-breadcrumbs-long-4.json"
+      ],
+      "reviewed": [
+        "round3 frozen portable",
+        "actual gallery CSS + frozen init fixture",
+        "rest/hover entry/exit/reentry/returned",
+        "320 viewport / long label / RTL / forced / reduced",
+        "collapsed menu / hover link / long name / Enter navigation / Escape focus return / disabled",
+        "author hash unchanged from round3; navigation diff limited to mountBadges",
+        "dependency browser retest: all5 breadcrumb menus"
+      ]
+    }
+  ],
+  "coverage": {
+    "parts": 10,
+    "pass": 10,
+    "changes_required": 0,
+    "summary": "作者全10件はround3とhash一致。共有変更はmountBadges内のみ。ページ送り5件・パンくず5件を両環境で再操作し、6比較画像を視認。 round5は型注釈のみ追加。配布JavaScriptバイト一致と現行全source hash一致を確認し継承。",
+    "sourceVerification": "dependency-verification-5.json",
+    "viewedSheets": [
+      "evidence-4/breadcrumbs-gallery-dependency-sheet.jpg",
+      "evidence-4/breadcrumbs-portable-dependency-sheet.jpg",
+      "evidence-4/pagination-gallery-222-sheet.jpg",
+      "evidence-4/pagination-portable-222-sheet.jpg"
+    ],
+    "scope": "今回の依存更新に対する限定再検査。造形/可読性等の既存結果は作者不変を条件にreview-3から継承。R409はroot222pxの成立を確認。root174pxでは44pxキーの全幅が入らないという前回の限界注記を維持。"
+  },
+  "evidence": [
+    "measurements-pagination-222-4.json",
+    "measurements-pagination-native-4.json",
+    "dependency-verification-5.json",
+    "measurements-breadcrumbs-long-4.json"
+  ]
+}

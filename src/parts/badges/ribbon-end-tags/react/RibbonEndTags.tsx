@@ -41,7 +41,7 @@ const config: FoundationConfig = {
   ]
 };
 export type RibbonEndTagsProps = FoundationProps;
-/** 両端を巻いて保持する短い織リボンのタグ。元の両端の巻込みと平らな読む帯を保持し、細すぎた端を幅12pxの曲がる面へ、上下面を4pxの織る小口へ揃える。選択は巻いた材料だけが少し張り、文字とnative操作の当たりは固定する。狭い表示では名称を全幅上段、件数と削除を下段へ分ける。 */
+/** 読み面の背後で折り返し、末端がのぞくリボンタグ。本文は平らな表面に保ち、折り目を操作領域から離す。 */
 export default forwardRef<HTMLDivElement, RibbonEndTagsProps>(function RibbonEndTags(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBadges} mountContent={mountBadges}/>;
 });

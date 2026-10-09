@@ -1,0 +1,241 @@
+{
+  "batch": "B013",
+  "round": 4,
+  "overall": "pass",
+  "parts": [
+    {
+      "id": "warm-reading-trail",
+      "number": 430,
+      "verdict": "pass",
+      "note": "章見出しを現在地として強調する読書用途の構造を維持。省略メニューの長い英数字はLTR/RTL/forcedとも238px内へ折り返され、リンクEnterとEscape復帰も成立。",
+      "findings": [],
+      "evidence": [
+        "evidence-4/breadcrumbs-portable-base-1-sheet.jpg",
+        "evidence-4/breadcrumbs-portable-menus-1-sheet.jpg",
+        "evidence-4/breadcrumbs-gallery-base-1-sheet.jpg",
+        "evidence-4/breadcrumbs-gallery-menus-1-sheet.jpg"
+      ],
+      "reviewed": [
+        "round4 immutable portable + actual gallery CSS frozen fixture",
+        "rest/hover entry exit reentry returned",
+        "320 / long label / RTL / forced / reduced",
+        "expanded menu / hover link / long name / Enter navigation / Escape focus return / disabled"
+      ]
+    },
+    {
+      "id": "loop-label-tags",
+      "number": 436,
+      "verdict": "pass",
+      "note": "輪の中間が紙面の背後へ隠れ、穴を受ける右側の接点と左外周が読める。小さな札の厚み・文字余白を保った。native送信と要素保持も修正済み。",
+      "findings": [],
+      "evidence": [
+        "evidence-4/badges-portable-base-1-sheet.jpg",
+        "evidence-4/badges-portable-native-1-sheet.jpg",
+        "evidence-4/badges-gallery-base-1-sheet.jpg",
+        "evidence-4/badges-gallery-native-1-sheet.jpg"
+      ],
+      "reviewed": [
+        "round4 immutable portable + actual gallery CSS frozen fixture",
+        "rest/hover entry exit reentry returned",
+        "320 / long label / RTL / forced / reduced",
+        "native Space selection / remove / FormData / readonly / disabled / display mode / reset / node identity",
+        "name/value FormData / readonly successful controls / disabled exclusion / keyed input identity; shared controlled/schema/reorder exercised on R436 in both environments"
+      ]
+    },
+    {
+      "id": "instrument-tags",
+      "number": 437,
+      "verdict": "pass",
+      "note": "凹んだ件数窓を持つ計器札の構造は維持。native選択・送信・削除・resetと長文RTLに支障なし。",
+      "findings": [],
+      "evidence": [
+        "evidence-4/badges-portable-base-1-sheet.jpg",
+        "evidence-4/badges-portable-native-1-sheet.jpg",
+        "evidence-4/badges-gallery-base-1-sheet.jpg",
+        "evidence-4/badges-gallery-native-1-sheet.jpg"
+      ],
+      "reviewed": [
+        "round4 immutable portable + actual gallery CSS frozen fixture",
+        "rest/hover entry exit reentry returned",
+        "320 / long label / RTL / forced / reduced",
+        "native Space selection / remove / FormData / readonly / disabled / display mode / reset / node identity",
+        "name/value FormData / readonly successful controls / disabled exclusion / keyed input identity; shared controlled/schema/reorder exercised on R436 in both environments"
+      ]
+    },
+    {
+      "id": "bracket-tags",
+      "number": 439,
+      "verdict": "pass",
+      "note": "小型のコの字金具が紙の端を受け、読み面を圧迫しない。共有native修正後も選択面とキー操作が対応する。",
+      "findings": [],
+      "evidence": [
+        "evidence-4/badges-portable-base-1-sheet.jpg",
+        "evidence-4/badges-portable-native-1-sheet.jpg",
+        "evidence-4/badges-gallery-base-1-sheet.jpg",
+        "evidence-4/badges-gallery-native-1-sheet.jpg"
+      ],
+      "reviewed": [
+        "round4 immutable portable + actual gallery CSS frozen fixture",
+        "rest/hover entry exit reentry returned",
+        "320 / long label / RTL / forced / reduced",
+        "native Space selection / remove / FormData / readonly / disabled / display mode / reset / node identity",
+        "name/value FormData / readonly successful controls / disabled exclusion / keyed input identity; shared controlled/schema/reorder exercised on R436 in both environments"
+      ]
+    },
+    {
+      "id": "drafting-note-tags",
+      "number": 442,
+      "verdict": "pass",
+      "note": "細い基準線と切欠きが文字配置を支え、単なる太い十字装飾を脱している。native修正と狭幅長文でも読み面を保持。",
+      "findings": [],
+      "evidence": [
+        "evidence-4/badges-portable-base-1-sheet.jpg",
+        "evidence-4/badges-portable-native-1-sheet.jpg",
+        "evidence-4/badges-gallery-base-1-sheet.jpg",
+        "evidence-4/badges-gallery-native-1-sheet.jpg"
+      ],
+      "reviewed": [
+        "round4 immutable portable + actual gallery CSS frozen fixture",
+        "rest/hover entry exit reentry returned",
+        "320 / long label / RTL / forced / reduced",
+        "native Space selection / remove / FormData / readonly / disabled / display mode / reset / node identity",
+        "name/value FormData / readonly successful controls / disabled exclusion / keyed input identity; shared controlled/schema/reorder exercised on R436 in both environments"
+      ]
+    },
+    {
+      "id": "ribbon-end-tags",
+      "number": 443,
+      "verdict": "pass",
+      "note": "背面の折返しと短い末端が平らな読み面につながる。RTLでも接続が反転し、選択・削除・resetが成立。",
+      "findings": [],
+      "evidence": [
+        "evidence-4/badges-portable-base-2-sheet.jpg",
+        "evidence-4/badges-portable-native-2-sheet.jpg",
+        "evidence-4/badges-gallery-base-2-sheet.jpg",
+        "evidence-4/badges-gallery-native-2-sheet.jpg"
+      ],
+      "reviewed": [
+        "round4 immutable portable + actual gallery CSS frozen fixture",
+        "rest/hover entry exit reentry returned",
+        "320 / long label / RTL / forced / reduced",
+        "native Space selection / remove / FormData / readonly / disabled / display mode / reset / node identity",
+        "name/value FormData / readonly successful controls / disabled exclusion / keyed input identity; shared controlled/schema/reorder exercised on R436 in both environments"
+      ]
+    },
+    {
+      "id": "letterpress-tags",
+      "number": 445,
+      "verdict": "pass",
+      "note": "紙肌・活字・下縁の厚みと押込みが識別できる。native inputを維持したまま選択を更新し、長文も紙内に収まる。",
+      "findings": [],
+      "evidence": [
+        "evidence-4/badges-portable-base-2-sheet.jpg",
+        "evidence-4/badges-portable-native-2-sheet.jpg",
+        "evidence-4/badges-gallery-base-2-sheet.jpg",
+        "evidence-4/badges-gallery-native-2-sheet.jpg"
+      ],
+      "reviewed": [
+        "round4 immutable portable + actual gallery CSS frozen fixture",
+        "rest/hover entry exit reentry returned",
+        "320 / long label / RTL / forced / reduced",
+        "native Space selection / remove / FormData / readonly / disabled / display mode / reset / node identity",
+        "name/value FormData / readonly successful controls / disabled exclusion / keyed input identity; shared controlled/schema/reorder exercised on R436 in both environments"
+      ]
+    },
+    {
+      "id": "warm-category-tags",
+      "number": 450,
+      "verdict": "pass",
+      "note": "索引語と件数を別の行に整理し、長い英数字と削除を面内へ収めた。件数opacity解除で通常/選択の全測定最小5.280:1。Bの本文補助用途に合う。",
+      "findings": [],
+      "evidence": [
+        "evidence-4/badges-portable-base-2-sheet.jpg",
+        "evidence-4/badges-portable-native-2-sheet.jpg",
+        "evidence-4/badges-gallery-base-2-sheet.jpg",
+        "evidence-4/badges-gallery-native-2-sheet.jpg"
+      ],
+      "reviewed": [
+        "round4 immutable portable + actual gallery CSS frozen fixture",
+        "rest/hover entry exit reentry returned",
+        "320 / long label / RTL / forced / reduced",
+        "native Space selection / remove / FormData / readonly / disabled / display mode / reset / node identity",
+        "name/value FormData / readonly successful controls / disabled exclusion / keyed input identity; shared controlled/schema/reorder exercised on R436 in both environments"
+      ]
+    },
+    {
+      "id": "stitched-count-number",
+      "number": 458,
+      "verdict": "pass",
+      "note": "布帯中央の数値と左右キーの比率を維持。実入力・Arrow/Home/End・無効入力のnative検証・フォーム・新boundsでのresetを再確認。",
+      "findings": [],
+      "evidence": [
+        "evidence-4/numbers-portable-base-1-sheet.jpg",
+        "evidence-4/numbers-portable-native-1-sheet.jpg",
+        "evidence-4/numbers-gallery-base-1-sheet.jpg",
+        "evidence-4/numbers-gallery-native-1-sheet.jpg"
+      ],
+      "reviewed": [
+        "round4 immutable portable + actual gallery CSS frozen fixture",
+        "rest/hover entry exit reentry returned",
+        "320 / long label / RTL / forced / reduced",
+        "native name/FormData / increment / ArrowUp / typed commit / invalid / Escape / Home End / reset new bounds / readonly disabled / long unit"
+      ]
+    },
+    {
+      "id": "open-jaw-number",
+      "number": 459,
+      "verdict": "pass",
+      "note": "上下の顎と左右キーの造形を維持。gallery hover背景は専用rgb(73,107,122)、白の24px記号は5.726:1で解除も復帰。両環境の数量操作・長い単位が成立。",
+      "findings": [],
+      "evidence": [
+        "evidence-4/numbers-portable-base-1-sheet.jpg",
+        "evidence-4/numbers-portable-native-1-sheet.jpg",
+        "evidence-4/numbers-gallery-base-1-sheet.jpg",
+        "evidence-4/numbers-gallery-native-1-sheet.jpg"
+      ],
+      "reviewed": [
+        "round4 immutable portable + actual gallery CSS frozen fixture",
+        "rest/hover entry exit reentry returned",
+        "320 / long label / RTL / forced / reduced",
+        "native name/FormData / increment / ArrowUp / typed commit / invalid / Escape / Home End / reset new bounds / readonly disabled / long unit"
+      ]
+    }
+  ],
+  "coverage": {
+    "parts": 10,
+    "pass": 10,
+    "changes_required": 0,
+    "summary": "全10件を凍結portableと実galleryで再操作し、16比較画像と輪の近接画像を視認。前回9件のUI指摘は解消。",
+    "viewedSheets": [
+      "evidence-4/badges-gallery-base-1-sheet.jpg",
+      "evidence-4/badges-gallery-base-2-sheet.jpg",
+      "evidence-4/badges-gallery-native-1-sheet.jpg",
+      "evidence-4/badges-gallery-native-2-sheet.jpg",
+      "evidence-4/badges-portable-base-1-sheet.jpg",
+      "evidence-4/badges-portable-base-2-sheet.jpg",
+      "evidence-4/badges-portable-native-1-sheet.jpg",
+      "evidence-4/badges-portable-native-2-sheet.jpg",
+      "evidence-4/breadcrumbs-gallery-base-1-sheet.jpg",
+      "evidence-4/breadcrumbs-gallery-menus-1-sheet.jpg",
+      "evidence-4/breadcrumbs-portable-base-1-sheet.jpg",
+      "evidence-4/breadcrumbs-portable-menus-1-sheet.jpg",
+      "evidence-4/numbers-gallery-base-1-sheet.jpg",
+      "evidence-4/numbers-gallery-native-1-sheet.jpg",
+      "evidence-4/numbers-portable-base-1-sheet.jpg",
+      "evidence-4/numbers-portable-native-1-sheet.jpg"
+    ],
+    "sourceVerification": "dependency-verification-5.json",
+    "scope": "round4の実描画・UI実操作の判定。共有TS推論に必要な型注釈は主担当がround5で追加しtypecheck成功を報告。round4を型チェック合格とする判定ではない。最終承認版はround5。通常/hover入口40ms・退出60ms・再進入60ms・定常/320/長文/RTL/forced/reduced、native操作を検査。"
+  },
+  "evidence": [
+    "measurements-4.json",
+    "measurements-badges-4.json",
+    "measurements-badges-native-4.json",
+    "measurements-numbers-4.json",
+    "measurements-breadcrumbs-long-4.json",
+    "measurements-hover-r459-4.json",
+    "contrast-summary-4.json",
+    "measurements-badges-schema-4.json",
+    "dependency-verification-5.json"
+  ]
+}
