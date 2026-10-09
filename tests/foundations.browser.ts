@@ -13,6 +13,7 @@ import {offlineFiles,testBundle} from './offline-fixture.ts';
 import {galleryReady,selectCategory} from './gallery-ready.ts';
 import {getDelivery,buildPrompt} from '../src/catalog/delivery.ts';
 import {requireLocalServerUrl} from './vite-url.ts';
+import {createGalleryTestServer} from './gallery-server.ts';
 const require=createRequire(import.meta.url),{chromium}=require(process.env.PLAYWRIGHT_PATH??'playwright') as typeof import('playwright');
 const data=buildCatalog(),parts=data.parts.filter(p=>p.foundation),offline=process.env.SOP_TEST_MODE==='offline';
 const currentParts=offline?parts:registryParts();
@@ -25,7 +26,7 @@ async function install(page:Page,html:string,script:string,css:string,vendor=fal
  await page.addScriptTag({content:script});
 }
 try{
- if(!offline){const{createServer}=await import('vite');const server=await createServer({root:ROOT,server:{port:0,host:'127.0.0.1'}});await server.listen();url=requireLocalServerUrl(server,'Foundation tests');shutdown=()=>server.close();}
+ if(!offline){const server=await createGalleryTestServer('foundations');await server.listen();url=requireLocalServerUrl(server,'Foundation tests');shutdown=()=>server.close();}
  browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
  const context=await browser.newContext({viewport:{width:1440,height:1100},acceptDownloads:true});const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));page.setDefaultTimeout(20000);page.setDefaultNavigationTimeout(120000);await page.emulateMedia({reducedMotion:'reduce'});
  if(offline){const scoped={...data,parts,bases:data.bases.filter(b=>parts.some(p=>b.endsWith('/'+p.id)))},fixture=offlineFiles(scoped);await install(page,fixture.get('/index.html')!,fixture.get('/test-app.js')!,fixture.get('/test-styles.css')!,true);}else{await page.goto(url,{waitUntil:'commit',timeout:120000});await page.waitForFunction(()=>document.documentElement.classList.contains('site-ready'),undefined,{timeout:120000});}

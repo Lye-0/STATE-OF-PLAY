@@ -30,7 +30,7 @@
     "test:actions": "node --experimental-strip-types tests/actions.browser.ts",
     "test:selection": "node --experimental-strip-types tests/selection.browser.ts",
     "test:check-popup": "node --experimental-strip-types tests/check-popup.browser.ts",
-    "test:foundations": "node --experimental-strip-types tests/foundations.browser.ts",
+    "test:foundations": "node --experimental-strip-types tests/foundations.browser.ts && node --experimental-strip-types tests/foundation-reset.browser.ts",
     "test:foundations:react": "node --experimental-strip-types tests/foundations.react.ts",
     "test:atelier": "node --experimental-strip-types tests/atelier.browser.ts",
     "test:sculpture": "node --experimental-strip-types tests/sculpture.browser.ts",

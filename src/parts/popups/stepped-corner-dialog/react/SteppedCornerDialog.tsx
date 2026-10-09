@@ -3,5 +3,5 @@ import React from 'react';
 import {PopupView,type PopupProps} from '../../../../shared/popup-view';
 import '../styles.css';
 export type {PopupProps} from '../../../../shared/popup-view';
-/** 太い上の帯と大きい見出し、丸い主操作を一つの編集面へ揃えるダイアログ。元の強弱を残し、閉じる操作・戻る操作・主操作を同じ丸い輪郭へ統一する。罫線と補助文字は薄い同素材へ整え、本文とnative入力を固定する。 */
+/** 右上と左下の三段の切欠きが実際の外形を作るダイアログ。切欠きから離して本文と操作を置き、輪郭と余白を対応させる。 */
 export default function SteppedCornerDialog({className='',...props}:PopupProps){return <PopupView {...props} motionArt={<span className="sop-popup-material" aria-hidden="true"><i/><i/><i/><i/><i/><i/></span>} className={`sop-stepped-corner-dialog ${className}`}/>;}

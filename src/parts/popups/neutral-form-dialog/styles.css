@@ -1,5 +1,5 @@
 @import "../../../shared/popup-base.css";
-/* 中立な明色の本文へ、通常のフォームを置く実用的なダイアログ。元のBの入力向けの構成を残し、重い灰青の本文欄を外面に近い薄い面へ変える。nativeの文字・値・選択を維持し、任意のフォームの読みやすさを優先する。 */
+/* 見出し、入力領域、操作バーを分けたフォーム用ダイアログ。実際の名前・メモ入力例を備え、native入力と任意のフォーム内容を保持する。 */
 
 .sop-popup.sop-neutral-form-dialog.sop-neutral-form-dialog{--pp-bg:#f0eee5;--pp-ink:#424950;--pp-muted:#687077;--pp-line:#b8bdba;--pp-accent:#637d8c;--pp-on-accent:#fff;--pp-radius:0px;--pp-width:560px;--pp-font:Arial,"Yu Gothic",sans-serif;--pp-display:Georgia,"Yu Mincho",serif;max-width:100%;min-width:0;color:var(--pp-ink)}
 .sop-popup.sop-neutral-form-dialog.sop-neutral-form-dialog>.sop-popup-trigger{background:var(--pp-bg);color:var(--pp-ink);border:1px solid var(--pp-line);border-radius:2px;box-shadow:none;min-height:48px;font:14px/1.5 var(--pp-font);max-width:100%;padding:12px 20px;transform:none}
@@ -37,3 +37,22 @@
 .sop-popup.sop-neutral-form-dialog.sop-neutral-form-dialog .sop-popup-intro h2{font-size:26px;font-weight:500}
 .sop-popup.sop-neutral-form-dialog.sop-neutral-form-dialog .sop-popup-body{padding:18px;background:#edf1f0;border:1px solid #d3dcdd;border-radius:3px}
 .sop-popup.sop-neutral-form-dialog.sop-neutral-form-dialog .pp-callout{border:0;padding:0}
+
+/* A form workspace with a distinct heading, input area and action bar. */
+.sop-popup.sop-neutral-form-dialog.sop-neutral-form-dialog{--pp-bg:#fff;--pp-ink:#35424b;--pp-muted:#596b77;--pp-accent:#48677d;--pp-on-accent:#fff;--pp-width:540px}
+.sop-popup.sop-neutral-form-dialog.sop-neutral-form-dialog>.sop-popup-window{border:1px solid #aab7bf;border-radius:4px}
+.sop-popup.sop-neutral-form-dialog.sop-neutral-form-dialog .sop-popup-shell{padding:0;background:#fff}
+.sop-popup.sop-neutral-form-dialog.sop-neutral-form-dialog .sop-popup-top{padding:16px 22px;margin:0;border-bottom:1px solid #d5dde1;background:#eef2f4}
+.sop-popup.sop-neutral-form-dialog.sop-neutral-form-dialog .sop-popup-intro{padding:22px 24px 8px}
+.sop-popup.sop-neutral-form-dialog.sop-neutral-form-dialog .sop-popup-intro h2{font:600 25px/1.5 Arial,'Yu Gothic',sans-serif}
+.sop-popup.sop-neutral-form-dialog.sop-neutral-form-dialog .sop-popup-body{padding:10px 24px 24px;border:0;background:#fff}
+.sop-popup.sop-neutral-form-dialog.sop-neutral-form-dialog .pp-form-grid{display:grid;gap:18px}
+.sop-popup.sop-neutral-form-dialog.sop-neutral-form-dialog .pp-form-grid label{display:grid;gap:7px;min-width:0;font-size:13px;color:#35424b}
+.sop-popup.sop-neutral-form-dialog.sop-neutral-form-dialog .pp-form-grid :is(input,textarea){width:100%;max-width:100%;min-width:0;padding:11px 12px;border:1px solid #9aaebc;border-radius:3px;background:#fbfcfc;color:#263e4b;font:14px/1.6 Arial,'Yu Gothic',sans-serif}
+.sop-popup.sop-neutral-form-dialog.sop-neutral-form-dialog .pp-form-grid textarea{resize:vertical;min-height:95px}
+.sop-popup.sop-neutral-form-dialog.sop-neutral-form-dialog .pp-form-grid small{color:#5b6d78;font-size:12px}
+.sop-popup.sop-neutral-form-dialog.sop-neutral-form-dialog .sop-popup-footer{padding:17px 24px;margin:0;border-top:1px solid #d5dde1;background:#eef2f4}
+@media(forced-colors:active){.sop-popup.sop-neutral-form-dialog.sop-neutral-form-dialog .pp-form-grid label,.sop-popup.sop-neutral-form-dialog.sop-neutral-form-dialog .pp-form-grid small{color:CanvasText}.sop-popup.sop-neutral-form-dialog.sop-neutral-form-dialog .pp-form-grid :is(input,textarea){background:Field;color:FieldText;border-color:ButtonText}}
+
+
+@media(max-width:420px){.sop-popup.sop-neutral-form-dialog.sop-neutral-form-dialog .sop-popup-footer>button{font-size:13px;padding:11px 10px;gap:8px}.sop-popup.sop-neutral-form-dialog.sop-neutral-form-dialog .sop-popup-primary>span:last-child{flex:none;width:14px}}

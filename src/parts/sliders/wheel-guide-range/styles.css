@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 薄い円のリムと一つの軸を持つホイールのスライダー。元のホイールを残し、大きい四角の目盛りと重い同心円をやめる。主軌道の下に細い5pxの目盛りを離して置き、動く円の中心を一本の軌道へ合わせる。 */
+/* スポークと軸を持つ車輪が、下側のレールへ接するスライダー。車輪・走行面・下の枕木を接続し、値はネイティブ入力で即座に確定する。 */
 
 .sop-foundation.sop-wheel-guide-range.sop-wheel-guide-range{--ff-base:var(--surface);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-accent2:var(--accent);--ff-line:var(--edge);--ff-radius:0px;color:var(--ink);color-scheme:light;max-width:min(100%,380px);min-width:0;padding:22px;background:var(--surface);border:0;box-shadow:none;box-sizing:border-box;overflow-wrap:anywhere}
 .sop-foundation.sop-wheel-guide-range.sop-wheel-guide-range,.sop-foundation.sop-wheel-guide-range.sop-wheel-guide-range *,.sop-foundation.sop-wheel-guide-range.sop-wheel-guide-range *::before,.sop-foundation.sop-wheel-guide-range.sop-wheel-guide-range *::after{box-sizing:border-box}
@@ -34,3 +34,11 @@
 @media(forced-colors:active){.sop-foundation.sop-wheel-guide-range.sop-wheel-guide-range [data-range]::-webkit-slider-thumb{clip-path:none;background:ButtonFace;border-color:ButtonText}.sop-foundation.sop-wheel-guide-range.sop-wheel-guide-range [data-range]::-moz-range-thumb{clip-path:none;background:ButtonFace;border-color:ButtonText}}
 
 @media(forced-colors:active){.sop-foundation.sop-wheel-guide-range.sop-wheel-guide-range [data-range]::-webkit-slider-thumb{all:revert;margin-top:0}.sop-foundation.sop-wheel-guide-range.sop-wheel-guide-range [data-range]::-moz-range-thumb{all:revert;margin:0}}
+
+@media(forced-colors:none){.sop-foundation.sop-wheel-guide-range.sop-wheel-guide-range{--surface:#e6ebec;--paper:#f6f5ee;--ink:#334a57;--muted:#536b78;--accent:#4b7387;--edge:#a9bac1;--renewal-thumb-width:44px;border-radius:3px}
+.sop-foundation.sop-wheel-guide-range.sop-wheel-guide-range .ff-slider{height:72px}
+.sop-foundation.sop-wheel-guide-range.sop-wheel-guide-range .ff-rail{top:54px;height:6px;background:#708894;border-top:2px solid #a3bac2;border-bottom:1px solid #435d6c}
+.sop-foundation.sop-wheel-guide-range.sop-wheel-guide-range .ff-rail::after{inset:8px 0 auto;height:3px;background:repeating-linear-gradient(90deg,#6a8491 0 7px,transparent 7px 15px)}
+.sop-foundation.sop-wheel-guide-range.sop-wheel-guide-range .ff-fill{background:#476e81}
+.sop-foundation.sop-wheel-guide-range.sop-wheel-guide-range [data-range]::-webkit-slider-thumb{border:4px solid #5c7787;border-radius:50%;background:radial-gradient(circle,#36566a 0 4px,#a2bac5 4.5px 7px,transparent 7.5px),repeating-conic-gradient(#f5f5ed 0deg 45deg,#9cafb8 45deg 52deg,#f5f5ed 52deg 90deg);box-shadow:inset 0 0 0 2px #e9eee9}
+.sop-foundation.sop-wheel-guide-range.sop-wheel-guide-range [data-range]::-moz-range-thumb{border:4px solid #5c7787;border-radius:50%;background:radial-gradient(circle,#36566a 0 4px,#a2bac5 4.5px 7px,transparent 7.5px),repeating-conic-gradient(#f5f5ed 0deg 45deg,#9cafb8 45deg 52deg,#f5f5ed 52deg 90deg);box-shadow:inset 0 0 0 2px #e9eee9}}

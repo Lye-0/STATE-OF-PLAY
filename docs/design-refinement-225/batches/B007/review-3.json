@@ -1,0 +1,200 @@
+{
+  "batch": "B007",
+  "round": 3,
+  "overall": "pass",
+  "parts": [
+    {
+      "id": "embossed-disc-check",
+      "number": 204,
+      "verdict": "pass",
+      "note": "放射状の刻みと静かな確認面を分けた円盤が明快。チェック/混在の読取りとnative操作を確認。",
+      "findings": [],
+      "evidence": [
+        "contrast-summary-2.json",
+        "checks-measurements-2.json"
+      ],
+      "reviewed": [
+        "portable・actual galleryの通常とhover入口/解除/再進入",
+        "320px・長文・RTL・forced/reduced",
+        "mixed・Space・disabled・FormData・reset",
+        "round2→3作者hash不変、共有core非依存のため実測を継承"
+      ]
+    },
+    {
+      "id": "warm-option-check",
+      "number": 208,
+      "verdict": "pass",
+      "note": "説明を先に読み行末で選択する配置が用途に合う。長文・RTLでも文字とチェックが重ならない。",
+      "findings": [],
+      "evidence": [
+        "contrast-summary-2.json",
+        "checks-measurements-2.json"
+      ],
+      "reviewed": [
+        "portable・actual galleryの通常とhover入口/解除/再進入",
+        "320px・長文・RTL・forced/reduced",
+        "mixed・Space・disabled・FormData・reset",
+        "round2→3作者hash不変、共有core非依存のため実測を継承"
+      ]
+    },
+    {
+      "id": "dispatch-sheet-dialog",
+      "number": 211,
+      "verdict": "pass",
+      "note": "穿孔と綴じ代、見出しの区切りと署名操作帯が一枚の確認書を構成し、内容の優先順位が明快。",
+      "findings": [],
+      "evidence": [
+        "contrast-summary-2.json",
+        "popups-measurements-2.json"
+      ],
+      "reviewed": [
+        "portable・actual galleryの通常とhover入口/解除/再進入",
+        "320px・長文・RTL・forced/reduced",
+        "短いviewport320×360・Tab/ShiftTab循環・Escape/focus復帰・native dialog・入力保持",
+        "round2→3作者hash不変、共有core非依存のため実測を継承"
+      ]
+    },
+    {
+      "id": "console-bay-dialog",
+      "number": 217,
+      "verdict": "pass",
+      "note": "凹んだ画面と右操作ベイの役割が明確。狭幅では操作が下へ移り、短い画面でも到達できる。",
+      "findings": [],
+      "evidence": [
+        "contrast-summary-2.json",
+        "popups-measurements-2.json"
+      ],
+      "reviewed": [
+        "portable・actual galleryの通常とhover入口/解除/再進入",
+        "320px・長文・RTL・forced/reduced",
+        "短いviewport320×360・Tab/ShiftTab循環・Escape/focus復帰・native dialog・入力保持",
+        "round2→3作者hash不変、共有core非依存のため実測を継承"
+      ]
+    },
+    {
+      "id": "stepped-corner-dialog",
+      "number": 221,
+      "verdict": "pass",
+      "note": "三段の切欠きが実際の輪郭になり、本文とボタンを内側へ確保。長文スクロールとキー操作を確認。",
+      "findings": [],
+      "evidence": [
+        "contrast-summary-2.json",
+        "popups-measurements-2.json"
+      ],
+      "reviewed": [
+        "portable・actual galleryの通常とhover入口/解除/再進入",
+        "320px・長文・RTL・forced/reduced",
+        "短いviewport320×360・Tab/ShiftTab循環・Escape/focus復帰・native dialog・入力保持",
+        "round2→3作者hash不変、共有core非依存のため実測を継承"
+      ]
+    },
+    {
+      "id": "split-frame-dialog",
+      "number": 225,
+      "verdict": "pass",
+      "note": "対向する枠と分割された見出し/本文が独自性を持つ。狭幅で読む順の縦配置へ移る。",
+      "findings": [],
+      "evidence": [
+        "contrast-summary-2.json",
+        "popups-measurements-2.json"
+      ],
+      "reviewed": [
+        "portable・actual galleryの通常とhover入口/解除/再進入",
+        "320px・長文・RTL・forced/reduced",
+        "短いviewport320×360・Tab/ShiftTab循環・Escape/focus復帰・native dialog・入力保持",
+        "round2→3作者hash不変、共有core非依存のため実測を継承"
+      ]
+    },
+    {
+      "id": "warm-message-dialog",
+      "number": 228,
+      "verdict": "pass",
+      "note": "中央の短い判断文と等幅のボタンに用途が明瞭。狭幅と長文でも行間・余白を保つ。",
+      "findings": [],
+      "evidence": [
+        "contrast-summary-2.json",
+        "popups-measurements-2.json"
+      ],
+      "reviewed": [
+        "portable・actual galleryの通常とhover入口/解除/再進入",
+        "320px・長文・RTL・forced/reduced",
+        "短いviewport320×360・Tab/ShiftTab循環・Escape/focus復帰・native dialog・入力保持",
+        "round2→3作者hash不変、共有core非依存のため実測を継承"
+      ]
+    },
+    {
+      "id": "neutral-form-dialog",
+      "number": 230,
+      "verdict": "pass",
+      "note": "見出し・入力面・操作帯を分けたフォーム構成が実用的。閉じて再表示しても名前と複数行メモを保持。",
+      "findings": [],
+      "evidence": [
+        "contrast-summary-2.json",
+        "popups-measurements-2.json"
+      ],
+      "reviewed": [
+        "portable・actual galleryの通常とhover入口/解除/再進入",
+        "320px・長文・RTL・forced/reduced",
+        "短いviewport320×360・Tab/ShiftTab循環・Escape/focus復帰・native dialog・入力保持",
+        "round2→3作者hash不変、共有core非依存のため実測を継承"
+      ]
+    },
+    {
+      "id": "stone-inlay-range",
+      "number": 234,
+      "verdict": "pass",
+      "note": "石の台・溝・欠いたつまみを保持し、目盛り色を暗くして5.045:1を確保。現在のstepへ変更後の単一resetは60、双範囲切替後は[-20,80]へ正規化され、output/native/ARIA/FormDataが一致する。",
+      "findings": [],
+      "evidence": [
+        "reset-probe-3.json",
+        "sliders-measurements-3.json",
+        "measurements-3.json",
+        "contrast-summary-3.json",
+        "evidence-3/sliders-portable-sheet.jpg"
+      ],
+      "reviewed": [
+        "portable・actual galleryの通常とhover入口/解除/再進入",
+        "320px・長文・RTL・forced/reduced",
+        "Home/End/Arrow/PageDown・実ドラッグ・RTL・dual設定・disabled・FormData・reset",
+        "round3共有core修正後に全range検査を再実行"
+      ]
+    },
+    {
+      "id": "wheel-guide-range",
+      "number": 237,
+      "verdict": "pass",
+      "note": "車輪のスポーク/軸と走行面の接続を保持。現在のstepへ変更後の単一resetは60、双範囲切替後は[-20,80]へ正規化され、output/native/ARIA/FormDataが一致する。",
+      "findings": [],
+      "evidence": [
+        "reset-probe-3.json",
+        "sliders-measurements-3.json",
+        "measurements-3.json",
+        "contrast-summary-3.json",
+        "evidence-3/sliders-portable-sheet.jpg"
+      ],
+      "reviewed": [
+        "portable・actual galleryの通常とhover入口/解除/再進入",
+        "320px・長文・RTL・forced/reduced",
+        "Home/End/Arrow/PageDown・実ドラッグ・RTL・dual設定・disabled・FormData・reset",
+        "round3共有core修正後に全range検査を再実行"
+      ]
+    }
+  ],
+  "coverage": {
+    "parts": 10,
+    "pass": 10,
+    "changes_required": 0,
+    "visual": "popup主要/低viewport/RTL/forcedの8sheets、checkbox/range主要2sheets、checkbox状態/長文RTL/native forced4sheets、range追加2sheetsを全視認。",
+    "scope": "native formや設定の追加条件は実galleryのCSS環境で作者rootを複製し、凍結initで初期化したharnessを併用。popupは実際のgallery部品を操作。",
+    "limits": "指定状態の検査であり無欠陥保証ではない。",
+    "popup": "6件×2経路すべてTab/ShiftTab循環、Escape閉鎖とopener focus復帰、scroll lock復帰、reduced閉鎖を確認。短い画面でfooterはviewport内へスクロールできる。",
+    "round3": "R234/R237を凍結portableとgallery CSS環境で再検査。共有core reset変更はこの2件の実行経路へ影響する。popup/checkbox8件はcoreを使わず作者hash不変なのでround2実測判定を継承。変更2件の通常・hover往復・320長文・RTL・keyboard・pointer・dual・forced/reduced・単一/双範囲resetを再検査し、4contact sheetsを全視認。"
+  },
+  "evidence": [
+    "integrity-3.json",
+    "reset-probe-3.json",
+    "sliders-measurements-3.json",
+    "contrast-summary-3.json",
+    "review-2.json"
+  ]
+}

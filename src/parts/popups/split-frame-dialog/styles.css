@@ -1,5 +1,5 @@
 @import "../../../shared/popup-base.css";
-/* 本文と控えの操作を、一つの切取り線で分ける確認票のダイアログ。元の区分は保ち、周囲の二重枠を上下4pxの紙の厚みへ整理する。薄い票の材質と罫線を揃え、任意の本文とnativeの操作を無地へ置く。 */
+/* 対向する二つの枠が、見出しと本文の別々の面を支えるダイアログ。狭幅では読む順に縦へ組み、枠の分割を上下の切れ目へ残す。 */
 
 .sop-popup.sop-split-frame-dialog.sop-split-frame-dialog{--pp-bg:#f0eee5;--pp-ink:#424950;--pp-muted:#687077;--pp-line:#b8bdba;--pp-accent:#637d8c;--pp-on-accent:#fff;--pp-radius:0px;--pp-width:560px;--pp-font:Arial,"Yu Gothic",sans-serif;--pp-display:Georgia,"Yu Mincho",serif;max-width:100%;min-width:0;color:var(--pp-ink)}
 .sop-popup.sop-split-frame-dialog.sop-split-frame-dialog>.sop-popup-trigger{background:var(--pp-bg);color:var(--pp-ink);border:1px solid var(--pp-line);border-radius:2px;box-shadow:none;min-height:48px;font:14px/1.5 var(--pp-font);max-width:100%;padding:12px 20px;transform:none}
@@ -36,3 +36,22 @@
 .sop-popup.sop-split-frame-dialog.sop-split-frame-dialog .sop-popup-shell{max-height:calc(100dvh - 32px)}
 .sop-popup.sop-split-frame-dialog.sop-split-frame-dialog .sop-popup-body{padding-bottom:23px;border-bottom:1px dashed #b5a68b}
 .sop-popup.sop-split-frame-dialog.sop-split-frame-dialog .sop-popup-footer{border-top:0;margin-top:0;padding-top:23px}
+
+/* Two opposed frame halves hold separate title and content planes. */
+.sop-popup.sop-split-frame-dialog.sop-split-frame-dialog{--pp-bg:#f1eee7;--pp-ink:#3d454a;--pp-muted:#626d71;--pp-accent:#5b7380;--pp-width:660px}
+.sop-popup.sop-split-frame-dialog.sop-split-frame-dialog>.sop-popup-window{border:0;background:#a2b2b8;padding:9px;border-radius:0}
+.sop-popup.sop-split-frame-dialog.sop-split-frame-dialog .sop-popup-shell{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:20px 25px;padding:25px;background:#f1eee7;max-height:calc(100dvh - 42px)}
+.sop-popup.sop-split-frame-dialog.sop-split-frame-dialog .sop-popup-top{grid-column:1/-1;margin:0}
+.sop-popup.sop-split-frame-dialog.sop-split-frame-dialog .sop-popup-intro{grid-column:1;border-inline-end:1px solid #b7c1c2;padding-inline-end:22px}
+.sop-popup.sop-split-frame-dialog.sop-split-frame-dialog .sop-popup-intro h2{font-size:30px}
+.sop-popup.sop-split-frame-dialog.sop-split-frame-dialog .sop-popup-body{grid-column:2;align-self:center;background:none}
+.sop-popup.sop-split-frame-dialog.sop-split-frame-dialog .pp-callout{background:none;border:0;padding:0}
+.sop-popup.sop-split-frame-dialog.sop-split-frame-dialog .sop-popup-footer{grid-column:1/-1;margin:0;border:0;padding-top:14px;justify-content:space-between}
+.sop-popup.sop-split-frame-dialog.sop-split-frame-dialog>.sop-popup-window::before,.sop-popup.sop-split-frame-dialog.sop-split-frame-dialog>.sop-popup-window::after{content:'';position:absolute;background:#f1eee7;pointer-events:none;z-index:4}
+.sop-popup.sop-split-frame-dialog.sop-split-frame-dialog>.sop-popup-window::before{left:45%;top:0;width:40px;height:9px}
+.sop-popup.sop-split-frame-dialog.sop-split-frame-dialog>.sop-popup-window::after{right:45%;bottom:0;width:40px;height:9px}
+.sop-popup.sop-split-frame-dialog.sop-split-frame-dialog>.sop-popup-trigger{border:0;border-inline:5px solid #a2b2b8;border-radius:0}
+@media(max-width:520px){.sop-popup.sop-split-frame-dialog.sop-split-frame-dialog .sop-popup-shell{display:block;padding:20px}.sop-popup.sop-split-frame-dialog.sop-split-frame-dialog .sop-popup-top{margin-bottom:18px}.sop-popup.sop-split-frame-dialog.sop-split-frame-dialog .sop-popup-intro{border:0;border-bottom:1px solid #b7c1c2;padding:0 0 18px;margin-bottom:20px}.sop-popup.sop-split-frame-dialog.sop-split-frame-dialog .sop-popup-footer{margin-top:22px}}
+
+
+@media(max-width:420px){.sop-popup.sop-split-frame-dialog.sop-split-frame-dialog .sop-popup-footer>button{font-size:13px;padding:11px 10px;gap:8px}.sop-popup.sop-split-frame-dialog.sop-split-frame-dialog .sop-popup-primary>span:last-child{flex:none;width:14px}}

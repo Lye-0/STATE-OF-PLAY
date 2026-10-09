@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 丸い石の台に、明るい小口を持つ濃い石のインレイを通すスライダー。元の溝と直線の操作面を残し、44px高の操作面を濃く、縁を明るくして埋もれを防ぐ。小口の3pxの厚みを主レールと同じ軸へ揃える。 */
+/* 切断面のある石の台へ横溝を刻み、斜めに欠いた石のつまみを通すスライダー。粒状の台、磨いた溝、濃いインレイを分けて見せる。 */
 
 .sop-foundation.sop-stone-inlay-range.sop-stone-inlay-range{--ff-base:var(--surface);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-accent2:var(--accent);--ff-line:var(--edge);--ff-radius:0px;color:var(--ink);color-scheme:light;max-width:min(100%,380px);min-width:0;padding:22px;background:var(--surface);border:0;box-shadow:none;box-sizing:border-box;overflow-wrap:anywhere}
 .sop-foundation.sop-stone-inlay-range.sop-stone-inlay-range,.sop-foundation.sop-stone-inlay-range.sop-stone-inlay-range *,.sop-foundation.sop-stone-inlay-range.sop-stone-inlay-range *::before,.sop-foundation.sop-stone-inlay-range.sop-stone-inlay-range *::after{box-sizing:border-box}
@@ -33,3 +33,10 @@
 @media(forced-colors:active){.sop-foundation.sop-stone-inlay-range.sop-stone-inlay-range [data-range]::-webkit-slider-thumb{clip-path:none;background:ButtonFace;border-color:ButtonText}.sop-foundation.sop-stone-inlay-range.sop-stone-inlay-range [data-range]::-moz-range-thumb{clip-path:none;background:ButtonFace;border-color:ButtonText}}
 
 @media(forced-colors:active){.sop-foundation.sop-stone-inlay-range.sop-stone-inlay-range [data-range]::-webkit-slider-thumb{all:revert;margin-top:0}.sop-foundation.sop-stone-inlay-range.sop-stone-inlay-range [data-range]::-moz-range-thumb{all:revert;margin:0}}
+
+@media(forced-colors:none){.sop-foundation.sop-stone-inlay-range.sop-stone-inlay-range{--surface:#dedbd3;--paper:#f4f1e8;--ink:#3d4243;--muted:#535b59;--accent:#697a7d;--edge:#a6aca8;--renewal-thumb-width:40px;border-radius:0;border-bottom:7px solid #a7a59a;background:radial-gradient(#69737322 .6px,transparent .8px) 0 0/9px 13px,#dedbd3}
+.sop-foundation.sop-stone-inlay-range.sop-stone-inlay-range .ff-slider{background:linear-gradient(0deg,transparent calc(50% - 13px),#b5b8b0 calc(50% - 13px),#a3a9a3 calc(50% + 13px),transparent calc(50% + 13px));border-inline:3px solid #c8c9bf}
+.sop-foundation.sop-stone-inlay-range.sop-stone-inlay-range .ff-rail{height:6px;top:33px;background:#8e9a96;border:0}
+.sop-foundation.sop-stone-inlay-range.sop-stone-inlay-range .ff-fill{background:#4e656a}
+.sop-foundation.sop-stone-inlay-range.sop-stone-inlay-range [data-range]::-webkit-slider-thumb{background:linear-gradient(124deg,transparent 38%,#eef0e166 40%,transparent 43%),linear-gradient(145deg,#768687,#475b60);border:4px solid #8b9895;border-top-color:#d8ded3;border-bottom-color:#34464b;border-radius:1px;clip-path:polygon(0 7px,7px 0,100% 0,100% calc(100% - 6px),calc(100% - 6px) 100%,0 100%)}
+.sop-foundation.sop-stone-inlay-range.sop-stone-inlay-range [data-range]::-moz-range-thumb{background:linear-gradient(124deg,transparent 38%,#eef0e166 40%,transparent 43%),linear-gradient(145deg,#768687,#475b60);border:4px solid #8b9895;border-top-color:#d8ded3;border-bottom-color:#34464b;border-radius:1px;clip-path:polygon(0 7px,7px 0,100% 0,100% calc(100% - 6px),calc(100% - 6px) 100%,0 100%)}}

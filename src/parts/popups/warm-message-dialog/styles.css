@@ -1,5 +1,5 @@
 @import "../../../shared/popup-base.css";
-/* 暖色の外面と本文欄を、同じ穏やかな紙の温度へ揃える実用的な通知ダイアログ。元のBの構成を残し、冷たい灰青の本文欄を同系統の薄い砂色へ変える。本文・入力・操作の読みやすさを優先し、過剰な外装を加えない。 */
+/* 中央に整えた読み物と、同じ幅の二つの判断ボタンを持つコンパクトなメッセージ欄。内側の箱を減らし、本文の余白を優先する。 */
 
 .sop-popup.sop-warm-message-dialog.sop-warm-message-dialog{--pp-bg:#f0eee5;--pp-ink:#424950;--pp-muted:#687077;--pp-line:#b8bdba;--pp-accent:#637d8c;--pp-on-accent:#fff;--pp-radius:0px;--pp-width:560px;--pp-font:Arial,"Yu Gothic",sans-serif;--pp-display:Georgia,"Yu Mincho",serif;max-width:100%;min-width:0;color:var(--pp-ink)}
 .sop-popup.sop-warm-message-dialog.sop-warm-message-dialog>.sop-popup-trigger{background:var(--pp-bg);color:var(--pp-ink);border:1px solid var(--pp-line);border-radius:2px;box-shadow:none;min-height:48px;font:14px/1.5 var(--pp-font);max-width:100%;padding:12px 20px;transform:none}
@@ -37,3 +37,18 @@
 .sop-popup.sop-warm-message-dialog.sop-warm-message-dialog .sop-popup-intro h2{font-size:26px;font-weight:500}
 .sop-popup.sop-warm-message-dialog.sop-warm-message-dialog .sop-popup-body{padding:18px;background:#efe5d4;border:1px solid #dbcbb3;border-radius:4px}
 .sop-popup.sop-warm-message-dialog.sop-warm-message-dialog .pp-callout{border:0;padding:0}
+
+/* A compact reading note: centered message, unboxed body, equal actions. */
+.sop-popup.sop-warm-message-dialog.sop-warm-message-dialog{--pp-bg:#faf6ee;--pp-ink:#484239;--pp-muted:#6d6254;--pp-accent:#786344;--pp-on-accent:#fffaf0;--pp-width:440px}
+.sop-popup.sop-warm-message-dialog.sop-warm-message-dialog>.sop-popup-window{border:1px solid #c9bda9;border-radius:3px}
+.sop-popup.sop-warm-message-dialog.sop-warm-message-dialog .sop-popup-shell{padding:22px 30px 28px}
+.sop-popup.sop-warm-message-dialog.sop-warm-message-dialog .sop-popup-top{margin-bottom:18px}
+.sop-popup.sop-warm-message-dialog.sop-warm-message-dialog .sop-popup-kicker{font-size:10px;letter-spacing:.14em}
+.sop-popup.sop-warm-message-dialog.sop-warm-message-dialog .sop-popup-intro{text-align:center}
+.sop-popup.sop-warm-message-dialog.sop-warm-message-dialog .sop-popup-intro h2{font:400 27px/1.6 Georgia,'Yu Mincho',serif}
+.sop-popup.sop-warm-message-dialog.sop-warm-message-dialog .sop-popup-body{padding:10px 0 4px;border:0;background:transparent;text-align:center;max-width:38ch;margin:auto;line-height:1.9}
+.sop-popup.sop-warm-message-dialog.sop-warm-message-dialog .sop-popup-footer{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:24px;padding-top:20px;border-top:1px solid #d0c5b3}
+.sop-popup.sop-warm-message-dialog.sop-warm-message-dialog .sop-popup-footer>button{width:100%;padding:12px 9px;gap:5px;border-radius:2px}
+
+
+@media(max-width:420px){.sop-popup.sop-warm-message-dialog.sop-warm-message-dialog .sop-popup-footer>button{font-size:13px;padding:11px 10px;gap:8px}.sop-popup.sop-warm-message-dialog.sop-warm-message-dialog .sop-popup-primary>span:last-child{flex:none;width:14px}}

@@ -64,7 +64,7 @@ export function createCore(root: HTMLElement, config: FoundationConfig, options:
     destroy(){if(c.dead)return;c.dead=true;events.abort();for(const fn of cleanups.splice(0))fn();root.removeAttribute('data-foundation-mounted');}
   };
   root.dataset.foundationMounted='true';
-  const form=root.closest('form');let resetTimer=0;if(form)c.on(form,'reset',event=>{clearTimeout(resetTimer);resetTimer=window.setTimeout(()=>{if(c.dead||event.defaultPrevented)return;if(!c.options.controlled)c.data=initial;c.sync('reset');},0);});c.cleanup(()=>clearTimeout(resetTimer));
+  const form=root.closest('form');let resetTimer=0;if(form)c.on(form,'reset',event=>{clearTimeout(resetTimer);resetTimer=window.setTimeout(()=>{if(c.dead||event.defaultPrevented)return;if(!c.options.controlled)c.data=normalize(initial,c.options);c.sync('reset');},0);});c.cleanup(()=>clearTimeout(resetTimer));
   return c;
 }
 export function heading(o: FoundationOptions): string { return `<div class="ff-heading"><span data-ff-label>${escape(o.label ?? 'Your next detail')}</span><span class="ff-eyebrow" aria-hidden="true">STATE / PLAY</span></div><p class="ff-description" data-ff-description>${escape(o.description)}</p>`; }

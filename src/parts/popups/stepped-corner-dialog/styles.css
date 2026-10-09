@@ -1,5 +1,5 @@
 @import "../../../shared/popup-base.css";
-/* 太い上の帯と大きい見出し、丸い主操作を一つの編集面へ揃えるダイアログ。元の強弱を残し、閉じる操作・戻る操作・主操作を同じ丸い輪郭へ統一する。罫線と補助文字は薄い同素材へ整え、本文とnative入力を固定する。 */
+/* 右上と左下の三段の切欠きが実際の外形を作るダイアログ。切欠きから離して本文と操作を置き、輪郭と余白を対応させる。 */
 
 .sop-popup.sop-stepped-corner-dialog.sop-stepped-corner-dialog{--pp-bg:#f0eee5;--pp-ink:#424950;--pp-muted:#687077;--pp-line:#b8bdba;--pp-accent:#637d8c;--pp-on-accent:#fff;--pp-radius:0px;--pp-width:560px;--pp-font:Arial,"Yu Gothic",sans-serif;--pp-display:Georgia,"Yu Mincho",serif;max-width:100%;min-width:0;color:var(--pp-ink)}
 .sop-popup.sop-stepped-corner-dialog.sop-stepped-corner-dialog>.sop-popup-trigger{background:var(--pp-bg);color:var(--pp-ink);border:1px solid var(--pp-line);border-radius:2px;box-shadow:none;min-height:48px;font:14px/1.5 var(--pp-font);max-width:100%;padding:12px 20px;transform:none}
@@ -38,3 +38,20 @@
 .sop-popup.sop-stepped-corner-dialog.sop-stepped-corner-dialog .sop-popup-close{border-radius:50%}
 .sop-popup.sop-stepped-corner-dialog.sop-stepped-corner-dialog .sop-popup-footer>button{border-radius:24px}
 .sop-popup.sop-stepped-corner-dialog.sop-stepped-corner-dialog .sop-popup-trigger{border-radius:24px;border-top:4px solid #75735d}
+
+/* The three steps are the actual outline of the enclosure. */
+.sop-popup.sop-stepped-corner-dialog.sop-stepped-corner-dialog{--pp-bg:#edf0ed;--pp-ink:#35454e;--pp-muted:#596a72;--pp-accent:#526e7c;--pp-on-accent:#fff}
+.sop-popup.sop-stepped-corner-dialog.sop-stepped-corner-dialog>.sop-popup-window{clip-path:polygon(0 0,calc(100% - 36px) 0,calc(100% - 36px) 12px,calc(100% - 18px) 12px,calc(100% - 18px) 28px,100% 28px,100% 100%,36px 100%,36px calc(100% - 12px),18px calc(100% - 12px),18px calc(100% - 28px),0 calc(100% - 28px));border:0;border-radius:0;background:#8299a1;padding:5px}
+.sop-popup.sop-stepped-corner-dialog.sop-stepped-corner-dialog .sop-popup-shell{clip-path:polygon(0 0,calc(100% - 36px) 0,calc(100% - 36px) 12px,calc(100% - 18px) 12px,calc(100% - 18px) 28px,100% 28px,100% 100%,36px 100%,36px calc(100% - 12px),18px calc(100% - 12px),18px calc(100% - 28px),0 calc(100% - 28px));padding:32px 34px;max-height:calc(100dvh - 34px);background:#edf0ed}
+.sop-popup.sop-stepped-corner-dialog.sop-stepped-corner-dialog .sop-popup-top{padding-right:10px}
+.sop-popup.sop-stepped-corner-dialog.sop-stepped-corner-dialog .sop-popup-close{border-radius:0;border:0;background:#d6e1e2}
+.sop-popup.sop-stepped-corner-dialog.sop-stepped-corner-dialog .sop-popup-intro h2{font-size:clamp(26px,5vw,36px);font-weight:500}
+.sop-popup.sop-stepped-corner-dialog.sop-stepped-corner-dialog .sop-popup-body{padding:0 0 0 14px;border-inline-start:3px solid #a9bbc1;background:none}
+.sop-popup.sop-stepped-corner-dialog.sop-stepped-corner-dialog .pp-callout{border:0;background:none;padding:0}
+.sop-popup.sop-stepped-corner-dialog.sop-stepped-corner-dialog .sop-popup-footer>button{border-radius:0}
+.sop-popup.sop-stepped-corner-dialog.sop-stepped-corner-dialog>.sop-popup-trigger{border-radius:0;border:0;border-inline-start:6px solid #8299a1;background:#edf0ed;color:#35454e}
+@media(max-width:420px){.sop-popup.sop-stepped-corner-dialog.sop-stepped-corner-dialog .sop-popup-shell{padding:30px 24px}}
+@media(forced-colors:active){.sop-popup.sop-stepped-corner-dialog.sop-stepped-corner-dialog>.sop-popup-window,.sop-popup.sop-stepped-corner-dialog.sop-stepped-corner-dialog .sop-popup-shell{clip-path:none}}
+
+
+@media(max-width:420px){.sop-popup.sop-stepped-corner-dialog.sop-stepped-corner-dialog .sop-popup-footer>button{font-size:13px;padding:11px 10px;gap:8px}.sop-popup.sop-stepped-corner-dialog.sop-stepped-corner-dialog .sop-popup-primary>span:last-child{flex:none;width:14px}}

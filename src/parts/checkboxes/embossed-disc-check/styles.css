@@ -1,5 +1,5 @@
 @import "../../../shared/checkbox-base.css";
-/* 薄い紙へ押した確認欄の型を、二つの細い小口で示すチェック。元の角形の押印面を残し、ぼけた緑の発光を除く。外の1pxの押型と内側の2pxの窪みを揃え、記号と任意の文章は無地へ固定する。 */
+/* 刻みのある円盤の縁と、内側へ押された確認面を持つチェック。紙を押した凹みと放射状の刻印を区別し、チェックを中央の静かな面へ置く。 */
 
 .sop-check.sop-embossed-disc-check.sop-embossed-disc-check{--cb-size:48px;--cb-pad:20px;--cb-bg:#f0ede5;--cb-box:#faf8ef;--cb-ink:#454851;--cb-muted:#666975;--cb-accent:#5d7387;--cb-line:#98a8b3;--cb-radius:0px;max-width:100%;min-width:0;padding:20px;background:var(--cb-bg);border:0;gap:21px;min-height:96px;box-shadow:none;color:var(--cb-ink);font:14px/1.5 Arial,"Yu Gothic",sans-serif;isolation:isolate}
 .sop-check.sop-embossed-disc-check.sop-embossed-disc-check>.sop-check-box{width:48px;height:48px;border:1px solid var(--cb-line);border-radius:2px;background:var(--cb-box);color:var(--cb-accent);transform:none!important;box-shadow:none!important;isolation:isolate;overflow:visible}
@@ -20,3 +20,11 @@
 .sop-check.sop-embossed-disc-check.sop-embossed-disc-check .sop-check-aura{inset:-3px;border:1px solid #c0c8b5;border-radius:6px;background:none;transform:none}
 .sop-check.sop-embossed-disc-check.sop-embossed-disc-check .sop-check-detail{display:none}
 .sop-check.sop-embossed-disc-check.sop-embossed-disc-check>input:is(:checked,:indeterminate)+.sop-check-box{background:#e9edda;border-color:#8d9c7c;box-shadow:inset 0 2px #bac7aa,inset 0 -1px #fcfcef!important}
+
+/* A pressed circular seal with a scalloped die edge and an inset center. */
+.sop-check.sop-embossed-disc-check.sop-embossed-disc-check{--cb-bg:#ede9e1;--cb-box:#ede4d2;--cb-accent:#66543e;--cb-ink:#443e37;--cb-muted:#655e53;--cb-pad:28px;padding:28px;gap:28px}
+.sop-check.sop-embossed-disc-check.sop-embossed-disc-check>.sop-check-box{border:1px solid #b6a68b;border-radius:50%;background:#eee5d5;box-shadow:inset 0 3px 0 #cfc0a8,inset 0 -2px 0 #fff7e7!important}
+.sop-check.sop-embossed-disc-check.sop-embossed-disc-check .sop-check-aura{inset:-6px;border:0;border-radius:50%;background:repeating-conic-gradient(#baa88c 0deg 5deg,#e1d4bd 5deg 10deg);mask:radial-gradient(circle,transparent 56%,#000 58%);z-index:-1}
+.sop-check.sop-embossed-disc-check.sop-embossed-disc-check .sop-check-detail{display:block;inset:5px;border:1px solid #c6b697;border-radius:50%;background:none;opacity:1}
+.sop-check.sop-embossed-disc-check.sop-embossed-disc-check>input:is(:checked,:indeterminate)+.sop-check-box{background:#e1d3b9;border-color:#9f8a68;box-shadow:inset 0 3px 0 #b9a78a,inset 0 -2px 0 #f7edd9!important}
+

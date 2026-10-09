@@ -1,5 +1,5 @@
 @import "../../../shared/popup-base.css";
-/* 暗い外装と明るい確認欄を、同じ青灰の作業台へ揃えるダイアログ。元の外装と確認欄の区別を保ち、淡緑と橙を除いて素材を一つにする。本文の明るい面と操作の密度を揃え、任意の入力を安定して読めるようにする。 */
+/* 凹んだ情報画面と右の操作ベイを備えるコンソール型ダイアログ。狭幅では操作を下へ移し、表示と操作の役割を保つ。 */
 
 .sop-popup.sop-console-bay-dialog.sop-console-bay-dialog{--pp-bg:#f0eee5;--pp-ink:#424950;--pp-muted:#687077;--pp-line:#b8bdba;--pp-accent:#637d8c;--pp-on-accent:#fff;--pp-radius:0px;--pp-width:560px;--pp-font:Arial,"Yu Gothic",sans-serif;--pp-display:Georgia,"Yu Mincho",serif;max-width:100%;min-width:0;color:var(--pp-ink)}
 .sop-popup.sop-console-bay-dialog.sop-console-bay-dialog>.sop-popup-trigger{background:var(--pp-bg);color:var(--pp-ink);border:1px solid var(--pp-line);border-radius:2px;box-shadow:none;min-height:48px;font:14px/1.5 var(--pp-font);max-width:100%;padding:12px 20px;transform:none}
@@ -37,3 +37,22 @@
 .sop-popup.sop-console-bay-dialog.sop-console-bay-dialog .sop-popup-body{padding:19px;background:#dee8ea;color:#2e4652;border-top:4px solid #acc1cc;border-radius:2px}
 .sop-popup.sop-console-bay-dialog.sop-console-bay-dialog .pp-callout{border:0;padding:0;color:inherit}
 .sop-popup.sop-console-bay-dialog.sop-console-bay-dialog .sop-popup-primary{background:#b3cbd4;color:#2b4150}
+
+/* A recessed console screen with a separate right-hand control bay. */
+.sop-popup.sop-console-bay-dialog.sop-console-bay-dialog{--pp-bg:#283642;--pp-ink:#eef1ee;--pp-muted:#becbd0;--pp-line:#617681;--pp-accent:#aecad2;--pp-on-accent:#243f4d;--pp-width:660px}
+.sop-popup.sop-console-bay-dialog.sop-console-bay-dialog>.sop-popup-window{border:6px solid #667c87;border-radius:3px;background:#283642}
+.sop-popup.sop-console-bay-dialog.sop-console-bay-dialog .sop-popup-shell{display:grid;grid-template-columns:minmax(0,1fr) 142px;gap:0 22px;padding:22px;background:#283642;max-height:calc(100dvh - 36px)}
+.sop-popup.sop-console-bay-dialog.sop-console-bay-dialog .sop-popup-top{grid-column:1/-1;border-bottom:1px solid #72838a;padding-bottom:12px;margin-bottom:20px}
+.sop-popup.sop-console-bay-dialog.sop-console-bay-dialog .sop-popup-intro{grid-column:1;grid-row:2}
+.sop-popup.sop-console-bay-dialog.sop-console-bay-dialog .sop-popup-intro h2{font:500 28px/1.5 Arial,'Yu Gothic',sans-serif}
+.sop-popup.sop-console-bay-dialog.sop-console-bay-dialog .sop-popup-body{grid-column:1;grid-row:3;background:#182832;color:#dce8eb;border:1px solid #3f5866;border-top:3px solid #14202a;padding:17px;border-radius:0}
+.sop-popup.sop-console-bay-dialog.sop-console-bay-dialog .pp-callout{background:none;color:inherit}
+.sop-popup.sop-console-bay-dialog.sop-console-bay-dialog .sop-popup-footer{grid-column:2;grid-row:2/4;display:flex;flex-direction:column;justify-content:flex-end;align-items:stretch;margin:0;padding:0 0 0 18px;border:0;border-inline-start:1px solid #70848d;gap:14px}
+.sop-popup.sop-console-bay-dialog.sop-console-bay-dialog .sop-popup-footer>button{padding:14px 10px;min-height:54px;border-radius:2px;flex:none}
+.sop-popup.sop-console-bay-dialog.sop-console-bay-dialog .sop-popup-secondary{background:#384d5b;color:#e7edef}
+.sop-popup.sop-console-bay-dialog.sop-console-bay-dialog .sop-popup-primary{background:#bdd4db;color:#223d4a;border-bottom:3px solid #84a4b0}
+.sop-popup.sop-console-bay-dialog.sop-console-bay-dialog>.sop-popup-trigger{background:#283642;color:#eef1ee;border:3px solid #667c87;border-radius:2px}
+@media(max-width:520px){.sop-popup.sop-console-bay-dialog.sop-console-bay-dialog .sop-popup-shell{display:block;padding:18px}.sop-popup.sop-console-bay-dialog.sop-console-bay-dialog .sop-popup-footer{flex-direction:row;border:0;border-top:1px solid #70848d;padding:18px 0 0;margin-top:20px;flex-wrap:wrap}.sop-popup.sop-console-bay-dialog.sop-console-bay-dialog .sop-popup-footer>button{flex:1 1 100px}}
+
+
+@media(max-width:420px){.sop-popup.sop-console-bay-dialog.sop-console-bay-dialog .sop-popup-footer>button{font-size:13px;padding:11px 10px;gap:8px}.sop-popup.sop-console-bay-dialog.sop-console-bay-dialog .sop-popup-primary>span:last-child{flex:none;width:14px}}
