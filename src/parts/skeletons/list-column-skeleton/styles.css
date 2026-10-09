@@ -1,5 +1,5 @@
 @import "../../../shared/signature/skeleton.css";
-/* 低かった図版を184pxへ広げ、人物と本文の二列を細い縦罫で分ける。下の資料を大きい均等箱にせず、本文と揃う下線と16pxの間隔で読む。読み込み前後の組版を揃え、狭幅では二列を解除して実人物名と文章の行を十分に確保する。 */
+/* 小さな図版と見出しの下に番号付きの記録行が続く待機表示。読み込み前後の実行数を同じ罫と余白で示し、大きな図版カードから一覧の構造へ組み替える。 */
 
 .sop-sig.sop-list-column-skeleton.sop-list-column-skeleton{--paper:#f7f4ee;--ink:#39424f;--muted:#596373;--accent:#8094ac;--edge:#c5ccd4;--sg-bg:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);width:100%;max-width:min(100%,480px);min-width:0;color:var(--ink);color-scheme:light;container-type:inline-size;overflow-wrap:anywhere}
 .sop-sig.sop-list-column-skeleton.sop-list-column-skeleton,.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton *,.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton *::before,.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton *::after{box-sizing:border-box}
@@ -32,3 +32,40 @@
 .sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-profile{flex-direction:column;align-items:start}.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-lines{border-inline-start:1px solid #c2b7a5;padding-inline-start:24px}
 .sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-tiles{gap:16px;padding-top:20px;border-top:1px solid #c2b7a5}.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-tiles>i,.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-tiles>span{background:none;border-bottom:1px solid #b2a38c}
 @container(max-width:350px){.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-skeleton-frame{grid-template-columns:minmax(0,1fr);grid-template-areas:'hero' 'profile' 'lines' 'tiles';gap:24px}.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-profile{flex-direction:row;align-items:center}.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-lines{border:0;padding:0}}
+
+@media(forced-colors:none){
+
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-skeleton-frame{grid-template-columns:64px minmax(0,1fr);grid-template-areas:'hero profile' 'lines lines' 'tiles tiles';gap:20px 14px;padding:24px 18px;background:#f5f2e9;border:0;border-top:3px double #a49377;min-height:320px}
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-hero{height:86px;background:#ded3bd;border:0}
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-profile{flex-direction:column;align-items:start;justify-content:center;padding:0;border:0;gap:8px}
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-profile>span{display:none}
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-profile strong{font:600 18px/1.5 Georgia,'Yu Mincho',serif}
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-lines{counter-reset:entry;padding:0;border:0;gap:0}
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-lines>i,.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-lines>p{counter-increment:entry;position:relative;min-height:38px;height:auto;width:100%;padding:9px 0 9px 32px;border-top:1px solid #c9bda7;background:none;line-height:1.6}
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-lines>i{background:linear-gradient(var(--sk-tone),var(--sk-tone)) 32px center/calc(100% - 38px) 10px no-repeat}
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-lines>i::before,.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-lines>p::before{content:counter(entry,decimal-leading-zero);position:absolute;inset:9px auto auto 0;font:11px/1.9 Consolas,monospace;color:#77674f}
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-tiles{border-top:3px double #bbaa8e;padding-top:12px;gap:16px}
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-tiles>i,.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-tiles>span{height:28px}
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton:dir(rtl) .sg-sk-lines>i,.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton:dir(rtl) .sg-sk-lines>p{padding:9px 32px 9px 0}
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton:dir(rtl) .sg-sk-lines>i::before,.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton:dir(rtl) .sg-sk-lines>p::before{left:auto;right:0}
+
+}
+
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-profile>div{width:100%;min-width:0}
+
+/* B017 independent review follow-up */
+@media(forced-colors:none){
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton{background:transparent}
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-skeleton-frame{background:transparent;border:0;box-shadow:none;padding:12px 0;grid-template-columns:68px minmax(0,1fr);grid-template-rows:auto auto 1fr;grid-template-areas:'profile profile' 'hero lines' 'tiles lines';gap:18px 14px;min-height:330px}
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-profile{background:#f5f0e4;padding:18px 16px;border-block:1px solid #b5a68d;flex-direction:row;align-items:center;justify-content:start;gap:12px}
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-profile>span{display:grid;width:32px;min-width:32px;height:32px;background:#ded3bd;color:#514b42}
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-hero{height:82px;min-height:0;border:6px solid #ede2cc;background:#ded3bd;box-shadow:0 2px 0 #aa9571}
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-tiles{display:grid;grid-template-columns:minmax(0,1fr);align-content:start;gap:10px;border:0;padding:0}
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-tiles>i,.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-tiles>span{min-height:36px;height:auto;background:#e8ddc8;color:#514b42;border:0;border-inline-start:3px solid #aa9571}
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-lines{gap:13px;border:0;padding:0;align-content:start;min-width:0}
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-lines>i,.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-lines>p{position:relative;margin:0;padding:30px 12px 14px;width:100%;min-height:68px;height:auto;line-height:1.7;background:#f5f0e4;border:0;border-inline-start:3px solid #bda985;box-shadow:0 2px 0 #c4b394}
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-lines>i{background:linear-gradient(#cfc5b2,#cfc5b2) 12px 37px/calc(100% - 24px) 10px no-repeat,#f5f0e4}
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-lines>i::before,.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton .sg-sk-lines>p::before{inset:7px auto auto 12px;line-height:1.4;color:#77674f}
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton:dir(rtl) .sg-sk-lines>i,.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton:dir(rtl) .sg-sk-lines>p{padding:30px 12px 14px}
+.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton:dir(rtl) .sg-sk-lines>i::before,.sop-sig.sop-list-column-skeleton.sop-list-column-skeleton:dir(rtl) .sg-sk-lines>p::before{left:auto;right:12px}
+}

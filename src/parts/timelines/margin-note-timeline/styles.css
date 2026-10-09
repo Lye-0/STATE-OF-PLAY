@@ -1,5 +1,5 @@
 @import "../../../shared/signature/timeline.css";
-/* 余白の注記と本文の基準線を、記録帳の同じ欄へ整える。細い外側の余白帯、斜体14pxの日付、18pxの見出しを使い、内側の重複する縦罫と細かい下線を取り除く。本文は14pxの落ち着いた行間、状態は独立した13pxの実文字で読む。狭幅も日付と本文を上下に開き、注記だけの細列へ閉じ込めない。 */
+/* 余白に書いた日付から本文へ罫が折れる記録帳。実日付を見出しの上へ引き出し、各記録を注記のまとまりとして読む。 */
 
 .sop-sig.sop-margin-note-timeline.sop-margin-note-timeline{--paper:#f7f3ea;--ink:#443d36;--muted:#6c6055;--accent:#965f43;--edge:#c5b6a6;--sg-bg:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);width:100%;max-width:min(100%,480px);min-width:0;color:var(--ink);color-scheme:light;container-type:inline-size;overflow-wrap:anywhere}
 .sop-sig.sop-margin-note-timeline.sop-margin-note-timeline,.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline *,.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline *::before,.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline *::after{box-sizing:border-box}
@@ -43,3 +43,21 @@
 @media(forced-colors:active){.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline{--paper:Canvas!important;--ink:CanvasText!important;--muted:CanvasText!important;--accent:Highlight!important;--edge:ButtonText!important;color:CanvasText!important;background:Canvas!important}.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-timeline,.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-event-main,.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-event-time,.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline summary,.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-event-body,.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-event-status{background:Canvas!important;color:CanvasText!important;border-color:ButtonText!important;box-shadow:none!important;clip-path:none!important;mask:none!important}.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-timeline::before,.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-timeline::after,.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-event-main::before,.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-event-main::after,.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-event-time::before,.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-event-time::after{display:none!important}.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-event-route::after{border-color:ButtonText!important}.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-event-route i{background:Canvas!important;border-color:ButtonText!important}.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-event[data-status=done] .sg-event-route i{background:Highlight!important}.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-event-heading,.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-event-status,.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-event-meta,.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-event-body p,.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline a{color:CanvasText!important}.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline :is(summary,a,[tabindex]):focus-visible{outline-color:Highlight!important}}
 
 .sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-event[data-status=active] .sg-event-status{color:var(--ink)}
+
+@media(forced-colors:none){
+
+.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-timeline{padding:24px 18px 24px 26px;border:0;border-inline-start:3px double #bd917c;background:#faf1ed}
+.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-event{grid-template-columns:minmax(0,1fr);gap:0;padding:0 0 24px 16px}
+.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-event-time{position:relative;font:italic 18px/1.5 Georgia,serif;padding:0 0 6px 16px;width:fit-content;max-width:100%;border-bottom:1px solid #b88772}
+.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-event-time::before{content:'';position:absolute;left:0;top:12px;width:10px;border-top:1px solid #b88772}
+.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-event-main{margin-inline-start:16px;padding:8px 0 14px;border-bottom:0}
+.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-event-route{top:18px;bottom:0;width:8px;inset-inline-start:0;border-inline-start:1px solid #c6a18f}
+.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-event-route::after{display:none}
+.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-event-route i{width:6px;height:6px;top:0;inset-inline-start:-3px;border-radius:0}
+.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-event-heading{font:600 20px/1.6 Georgia,'Yu Mincho',serif}
+.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline .sg-event-body{border-top:1px solid #dfc9bd;padding-top:14px}
+.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline:dir(rtl) .sg-event{padding-inline:16px 0}
+.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline:dir(rtl) .sg-event-time{padding-inline:16px 0}
+.sop-sig.sop-margin-note-timeline.sop-margin-note-timeline:dir(rtl) .sg-event-time::before{left:auto;right:0}
+
+}

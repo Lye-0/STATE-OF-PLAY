@@ -31,3 +31,9 @@
 - 構造を追加調整した7件の既存gallery検査は全成功（latest-materials-browser.log）：縫い綴じ/陶のwizard、optical command、index pocket、stitched map、ceramic table、segment orbit。
 - B018r6は7工程・長い工程名・入力値保持・LTR/RTL・通常/forcedの8状態、56工程ボタンの文字内収まりを確認（main-material-check.json）。r5では数値チェックだけでは拾えない表示不整合があり、実画像で発見して修正した。
 - 全16ratingsにmax10先頭pointer不能を追加発見し、B015合格を補足訂正して再オープン。作者ごとのjustify-content:startで修正。既存Signatureへ20種×左右×通常/forcedの両端pointer回帰を追加し、修正前失敗・修正後24検査成功を確認（明示offline adapter）。全型チェック成功。独立再検査はB015r4/B016r6。
+
+- 現行全変更の本番Vite build成功、3m15s（final-build.log）。160件HTMLは914画像・6,317,647bytes、4.583秒で外部通信0・画像decode/ページ送り/検索/拡大/320px全成功（report-160-check.log）。
+
+- B017r5構造/エラー/長文修正後、Signature Vite HTTP全26検査（React＋20ratings両端回帰含む）成功（signature-b017-5.log）。主担当のB017差戻し回帰は48条件成功（main-followup-5.json）。
+
+- B018r7差戻しの40条件（長文/7工程/async error/RTL/forced）が主担当の実ブラウザ確認で成功、main-followup-7.json。独立再検査待ち。

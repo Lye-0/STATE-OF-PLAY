@@ -1,5 +1,5 @@
 @import "../../../shared/signature/skeleton.css";
-/* 写真を212pxの主面として先に見せ、人物・本文・資料をキャプションとして続ける。太い外枠を増やさず、写真の比率と22pxの余白、資料の上下線で全体を整える。待機中と実内容の領域を一致させ、本文14px・人物16pxの読みやすさを維持する。 */
+/* 写真の白縁と余白の注記がつながる待機表示。図版、細い注釈罫、明朝の見出しを読み込み後も同じ組版で示す。 */
 
 .sop-sig.sop-photo-caption-skeleton.sop-photo-caption-skeleton{--paper:#f7f4ee;--ink:#39424f;--muted:#596373;--accent:#8094ac;--edge:#c5ccd4;--sg-bg:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);width:100%;max-width:min(100%,480px);min-width:0;color:var(--ink);color-scheme:light;container-type:inline-size;overflow-wrap:anywhere}
 .sop-sig.sop-photo-caption-skeleton.sop-photo-caption-skeleton,.sop-sig.sop-photo-caption-skeleton.sop-photo-caption-skeleton *,.sop-sig.sop-photo-caption-skeleton.sop-photo-caption-skeleton *::before,.sop-sig.sop-photo-caption-skeleton.sop-photo-caption-skeleton *::after{box-sizing:border-box}
@@ -31,3 +31,19 @@
 .sop-sig.sop-photo-caption-skeleton.sop-photo-caption-skeleton .sg-sk-hero{height:212px;background:#ddd0bb}
 .sop-sig.sop-photo-caption-skeleton.sop-photo-caption-skeleton .sg-sk-profile{padding-bottom:18px;border-bottom:1px solid #cbbca5}.sop-sig.sop-photo-caption-skeleton.sop-photo-caption-skeleton .sg-sk-profile>span{border-radius:50%}
 .sop-sig.sop-photo-caption-skeleton.sop-photo-caption-skeleton .sg-sk-lines{gap:14px}.sop-sig.sop-photo-caption-skeleton.sop-photo-caption-skeleton .sg-sk-tiles>i,.sop-sig.sop-photo-caption-skeleton.sop-photo-caption-skeleton .sg-sk-tiles>span{background:none;border-top:1px solid #cbbca5;border-bottom:1px solid #cbbca5}
+
+@media(forced-colors:none){
+
+.sop-sig.sop-photo-caption-skeleton.sop-photo-caption-skeleton .sg-skeleton-frame{position:relative;isolation:isolate;grid-template-columns:minmax(0,1fr);grid-template-areas:'hero' 'profile' 'lines' 'tiles';padding:20px 20px 26px 30px;gap:18px;background:#f8f3e8;border:0;border-inline-start:1px solid #c9b994;box-shadow:inset 10px 0 #e6dac4}
+.sop-sig.sop-photo-caption-skeleton.sop-photo-caption-skeleton .sg-sk-hero{height:204px;background:#dacbb0;border:8px solid #fffdf6;box-shadow:0 1px 0 1px #c3b391;position:relative}
+.sop-sig.sop-photo-caption-skeleton.sop-photo-caption-skeleton .sg-sk-profile{border-inline-start:3px solid #ac926b;padding-inline-start:12px;gap:10px;align-items:start}
+.sop-sig.sop-photo-caption-skeleton.sop-photo-caption-skeleton .sg-sk-profile>span{width:32px;height:32px;min-width:32px;border-radius:0}
+.sop-sig.sop-photo-caption-skeleton.sop-photo-caption-skeleton .sg-sk-profile strong{font:600 19px/1.5 Georgia,'Yu Mincho',serif}
+.sop-sig.sop-photo-caption-skeleton.sop-photo-caption-skeleton .sg-sk-lines{padding-inline-start:15px;border-inline-start:1px solid #c6b38f;gap:10px}
+.sop-sig.sop-photo-caption-skeleton.sop-photo-caption-skeleton .sg-sk-lines p{font:14px/1.8 Georgia,'Yu Mincho',serif}
+.sop-sig.sop-photo-caption-skeleton.sop-photo-caption-skeleton .sg-sk-tiles{padding-top:12px;margin:0 0 0 15px;gap:12px;border-top:1px solid #d2c4a6}
+.sop-sig.sop-photo-caption-skeleton.sop-photo-caption-skeleton .sg-sk-tiles>i,.sop-sig.sop-photo-caption-skeleton.sop-photo-caption-skeleton .sg-sk-tiles>span{height:30px;background:none;border:0;border-bottom:1px solid #bca983}
+
+}
+
+.sop-sig.sop-photo-caption-skeleton.sop-photo-caption-skeleton .sg-sk-profile>div{width:100%;min-width:0}

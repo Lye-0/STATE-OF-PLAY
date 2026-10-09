@@ -3,7 +3,7 @@ import React from 'react';
 import {SkeletonView,type SkeletonProps} from '../../../../shared/signature/skeleton-view';
 import '../styles.css';
 export type { SkeletonProps as ListColumnSkeletonProps };
-/** 低かった図版を184pxへ広げ、人物と本文の二列を細い縦罫で分ける。下の資料を大きい均等箱にせず、本文と揃う下線と16pxの間隔で読む。読み込み前後の組版を揃え、狭幅では二列を解除して実人物名と文章の行を十分に確保する。 */
+/** 左の図版・分類列と右の独立した記録札を並べる待機表示。横断する見出しの下で、実際の行数に合わせた札が縦へ続き、読み込み後も同じ構造で読む。 */
 export default function ListColumnSkeleton(props: SkeletonProps) {
   return <SkeletonView {...props} skin="list-column-skeleton" />;
 }

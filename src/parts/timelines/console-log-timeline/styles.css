@@ -1,5 +1,5 @@
 @import "../../../shared/signature/timeline.css";
-/* 実ログ全体を、一つの開放金属チャンネルの底面へ読む。実履歴の見出しが後ろの壁、各実日付とログが連続した底面へ載り、40pxの折曲げ側面と下48pxの前端が全高の一体材を支える。右端は斜めの断面を露出して開き、日時を横の色列へ閉じ込めない。全記録は同じ底面を続け、イベントごとの金属箱や架空のノブを作らない。狭幅は側面20px・前端44pxへ縮め、実文字14px以上とnative押面を保つ。 */
+/* 連番と実時刻を左端で追うログのタイムライン。太い筐体を廃し、展開した詳細だけを一段奥の罫に沿わせる。 */
 
 .sop-sig.sop-console-log-timeline.sop-console-log-timeline{--paper:#f7f3ea;--ink:#443d36;--muted:#6c6055;--accent:#965f43;--edge:#c5b6a6;--sg-bg:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);width:100%;max-width:min(100%,480px);min-width:0;color:var(--ink);color-scheme:light;container-type:inline-size;overflow-wrap:anywhere}
 .sop-sig.sop-console-log-timeline.sop-console-log-timeline,.sop-sig.sop-console-log-timeline.sop-console-log-timeline *,.sop-sig.sop-console-log-timeline.sop-console-log-timeline *::before,.sop-sig.sop-console-log-timeline.sop-console-log-timeline *::after{box-sizing:border-box}
@@ -52,3 +52,44 @@
 @media(forced-colors:active){.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-timeline-list{background:Canvas!important;border-color:ButtonText!important}.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-timeline-list::before,.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-timeline-list::after{display:none!important}}
 
 @media(forced-colors:active){.sop-sig.sop-console-log-timeline.sop-console-log-timeline{--paper:Canvas!important;--ink:CanvasText!important;--muted:CanvasText!important;--accent:Highlight!important;--edge:ButtonText!important;color:CanvasText!important;background:Canvas!important}.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-timeline,.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event-main,.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event-time,.sop-sig.sop-console-log-timeline.sop-console-log-timeline summary,.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event-body,.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event-status{background:Canvas!important;color:CanvasText!important;border-color:ButtonText!important;box-shadow:none!important;clip-path:none!important;mask:none!important}.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-timeline::before,.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-timeline::after,.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event-main::before,.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event-main::after,.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event-time::before,.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event-time::after{display:none!important}.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event-route::after{border-color:ButtonText!important}.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event-route i{background:Canvas!important;border-color:ButtonText!important}.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event[data-status=done] .sg-event-route i{background:Highlight!important}.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event-heading,.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event-status,.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event-meta,.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event-body p,.sop-sig.sop-console-log-timeline.sop-console-log-timeline a{color:CanvasText!important}.sop-sig.sop-console-log-timeline.sop-console-log-timeline :is(summary,a,[tabindex]):focus-visible{outline-color:Highlight!important}}
+
+@media(forced-colors:none){
+
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-timeline{padding:20px 16px;background:#eaf0f5;border:0}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-timeline-head{padding:0 0 14px;border:0;border-bottom:3px double #94adbf;background:none;margin-bottom:0}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-timeline-list{padding:0;border:0;background:none;counter-reset:log}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-timeline-list::before,.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-timeline-list::after{display:none}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event{counter-increment:log;grid-template-columns:minmax(0,1fr);gap:4px;padding:18px 0 18px 26px;border-bottom:1px solid #b3c5d2}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event::before{content:counter(log,decimal-leading-zero);position:absolute;left:0;top:19px;font:11px/1.8 Consolas,monospace;color:#506c80}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event-time{font:12px/1.7 Consolas,monospace;padding:0;color:#456075}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event-main{border:0;padding:0;background:none}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event-heading{font:600 16px/1.65 Consolas,'Yu Gothic',monospace}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event summary{padding:0;min-height:62px}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event-status{border:0;padding-inline-start:0;font:12px/1.6 Consolas,monospace}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event[data-status=active]{background:linear-gradient(90deg,#d5e3ec 0 2px,transparent 2px)}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event-body{border-inline-start:1px solid #93adbf;padding:8px 0 0 12px}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline:dir(rtl) .sg-timeline-list{padding:0}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline:dir(rtl) .sg-event{padding-inline:26px 0}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline:dir(rtl) .sg-event::before{left:auto;right:0}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline:dir(rtl) .sg-event-body{padding-inline:12px 0}
+
+}
+
+/* B017 independent review follow-up */
+@media(forced-colors:none){
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-timeline{position:relative;padding:20px 16px 22px;background:#e4edf2;border:0;border-inline:1px solid #90a9b9}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-timeline-head{border:0;border-bottom:1px solid #90a9b9;padding:0 0 16px;margin-bottom:18px}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-timeline-list{display:grid;gap:14px}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event,.sop-sig.sop-console-log-timeline.sop-console-log-timeline:dir(rtl) .sg-event{display:grid;grid-template-columns:minmax(48px,.55fr) minmax(0,1.5fr);gap:0;padding:0;border:0;background:#f8fbfc;box-shadow:0 2px 0 #a6bcc9}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event::before{top:9px;left:auto;right:auto;inset-inline-start:10px;z-index:1;color:#3f5c70;font-size:11px}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event-time{grid-column:1;grid-row:1;padding:34px 8px 14px;background:#cfdee8;color:#304e63;border-inline-end:1px dashed #7897aa;overflow-wrap:anywhere;font:12px/1.7 Consolas,monospace;align-self:stretch}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event-main{grid-column:2;grid-row:1;padding:12px 10px;background:#f8fbfc;min-width:0}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event summary{min-height:66px;padding:0;gap:8px}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event-heading{font:600 15px/1.65 Consolas,'Yu Gothic',monospace;overflow-wrap:anywhere}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event-status{font-size:12px}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event[data-status=active]{background:#f8fbfc}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event[data-status=active] .sg-event-time{background:#b9d2e1;border-inline-start:3px solid #496f88;padding-inline-start:5px}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event-body,.sop-sig.sop-console-log-timeline.sop-console-log-timeline:dir(rtl) .sg-event-body{padding:12px 0 0;border:0;border-top:1px solid #c7d8e2}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline .sg-event-body p{font:14px/1.8 Arial,'Yu Gothic',sans-serif}
+.sop-sig.sop-console-log-timeline.sop-console-log-timeline:dir(rtl) .sg-event::before{left:auto;right:auto;inset-inline-start:10px}
+}

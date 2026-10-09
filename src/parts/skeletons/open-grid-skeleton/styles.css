@@ -1,5 +1,5 @@
 @import "../../../shared/signature/skeleton.css";
-/* 開いた情報グリッドの線と余白を揃える。図版を176pxの全幅、人物と本文を二列、三資料を下の基準線へまとめる。左だけの太線を3pxへ整え、内部は1pxの線と24pxの余白で秩序を作る。狭幅は全幅の読み順へ戻し、本文が細列に閉じ込められないようにする。 */
+/* 縦長の図版と右側の注記を開いた格子に置く待機表示。罫は情報の間をつなぎ、狭幅では同じ順序で縦へ開く。 */
 
 .sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton{--paper:#f7f4ee;--ink:#39424f;--muted:#596373;--accent:#8094ac;--edge:#c5ccd4;--sg-bg:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);width:100%;max-width:min(100%,480px);min-width:0;color:var(--ink);color-scheme:light;container-type:inline-size;overflow-wrap:anywhere}
 .sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton,.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton *,.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton *::before,.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton *::after{box-sizing:border-box}
@@ -32,3 +32,34 @@
 .sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-profile{flex-direction:column;align-items:start}.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-lines{border-inline-start:1px solid #b1c2cb;padding-inline-start:24px}
 .sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-tiles{padding-top:18px;border-top:1px solid #b1c2cb}.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-tiles>i,.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-tiles>span{background:none;border-bottom:2px solid #9fb4c0}
 @container(max-width:350px){.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-skeleton-frame{grid-template-columns:minmax(0,1fr);grid-template-areas:'hero' 'profile' 'lines' 'tiles';gap:24px}.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-profile{flex-direction:row;align-items:center}.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-lines{border:0;padding:0}}
+
+@media(forced-colors:none){
+
+.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-skeleton-frame{padding:20px;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);grid-template-areas:'hero profile' 'hero lines' 'tiles tiles';gap:22px 16px;background:#eef3f5;border:0;min-height:340px;position:relative}
+.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-skeleton-frame::before{content:'';position:absolute;inset:10px;border:1px solid #a8c1cc;pointer-events:none}
+.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-hero{height:100%;min-height:200px;background:#d3e1e6;border:0}
+.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-profile{flex-direction:column;align-items:start;padding:0;border:0;gap:12px}
+.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-profile>span{width:32px;height:32px;min-width:32px}
+.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-lines{padding:0;border:0;border-top:1px solid #a6c0cc;padding-top:14px;gap:9px}
+.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-tiles{border-top:1px solid #a6c0cc;margin:0;padding-top:12px;gap:14px}
+.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-tiles>i,.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-tiles>span{height:32px;background:none;border:0;border-inline-start:2px solid #adc4cf}
+@container(max-width:300px){.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-skeleton-frame{grid-template-columns:minmax(0,1fr);grid-template-areas:'hero' 'profile' 'lines' 'tiles'}.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-hero{height:150px;min-height:0}.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-profile{flex-direction:row;align-items:center}}
+
+}
+
+.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-profile>div{width:100%;min-width:0}
+
+/* B017 independent review follow-up */
+@media(forced-colors:none){
+.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton{background:transparent}
+.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-skeleton-frame{background:transparent;padding:12px;gap:26px 22px;border:0;box-shadow:none;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);grid-template-areas:'hero profile' 'hero lines' '. tiles'}
+.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-skeleton-frame::before{display:none}
+.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-hero{background:#d3e1e6;min-height:230px;height:100%;border:0;border-inline-start:4px solid #9ab1be;box-shadow:6px 6px 0 #91a9b4;align-self:stretch}
+.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-profile{position:relative;background:#eff4f6;padding:18px 14px;gap:14px;border:0}
+.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-profile::before{content:'';position:absolute;inset:-12px auto auto -12px;width:24px;height:24px;background:linear-gradient(#a4bbc6,#a4bbc6) center/1px 24px no-repeat,linear-gradient(#a4bbc6,#a4bbc6) center/24px 1px no-repeat;pointer-events:none}
+.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-lines{background:#eff4f6;padding:18px 14px;border:0;border-block-start:2px solid #a6beca;align-self:start}
+.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-tiles{padding:10px 0 0;border:0;border-top:1px solid #a6beca;color:#ecf2f5;gap:8px}
+.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-tiles>i,.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-tiles>span{color:#374b58;background:#eff4f6;border-color:#a6beca;height:auto;min-height:32px}
+.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton:dir(rtl) .sg-sk-profile::before{left:auto;right:-12px}
+@container(max-width:300px){.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-skeleton-frame{grid-template-columns:minmax(0,1fr);grid-template-areas:'hero' 'profile' 'lines' 'tiles';gap:24px;padding:12px}.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-hero{height:140px;min-height:0;width:84%}.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-profile{margin-inline-start:20px;flex-direction:row;align-items:center}.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-lines{margin-inline-start:20px}.sop-sig.sop-open-grid-skeleton.sop-open-grid-skeleton .sg-sk-tiles{margin-inline-start:20px}}
+}

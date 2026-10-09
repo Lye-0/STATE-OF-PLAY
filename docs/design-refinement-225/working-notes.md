@@ -63,3 +63,11 @@ B015再合格時はbatch.py stage-followup B015を使用（作者は9件だけ�
 B017は3colors強制配色のSV/色見本/軌道を修正。B2件range44px・文字12px/HEX11px、WarmのRGBをforcedでも維持。最新r4、gallery更新中。preflight-next-colors.mjs 4でforced表示を確認中。次独立reviewはB017r4。B018はr6（素材wizard2件の追加改善）。
 
 B015r4・B016r6は各10/10独立合格。native256条件1792assertion、React16件×4形式384assertion成功。R504陶面末尾8画像の星背景3.393:1、768画像を再視認。B017r4の独立検査へ進行。
+
+B015修復81c66452ee43ac0f378f28b6980696f1c8219b99、B016 19c77f9393c0871f459c1f8a299a1e61af95fdceを順次push/record済み160件。Signature追加回帰はB016へ同梱。B017r4を独立検査中。final-build.logへ現状本番build実行。途中HTML160件6,317,647bytesに更新（最終提出では225件を再生成）。
+
+B017r4は3pass/7差戻し。revise-b017-review.py実行済み（再実行禁止）→r5freeze。539 open gridを背景まで抜ける構造、541左分類/右記録札、557時刻専用列へ再設計。528/530エラー14px濃赤と色見本flex-shrink0、548/550長文を明示折返し。probe-b017-followup.mjsで48状態検査＋新A通常/320読み込み前後を視認。7件gallery撮影完了。AstraはB018r6を検査中、その後B017r5を依頼。
+
+B018r6は5pass/5差戻し。revise-b018-review.py実行済み（再実行禁止）→r7freeze。569meta折返し、581紙を挟む金具/持ち手、588/589/590のasync error14px/濃赤・未到達opacity1・7工程/320px以下の工程リスト・長field label修正。probe-b018-followup.mjsは40条件成功、mainでclip狭幅と長工程B画像を視認。gallery5件再撮影中。AstraはB017r5再検査中、その後B018r7→B019r5の順に依頼済み。
+
+B018最終候補をround8へ。B3wizard CSS末尾の空行だけ削除（git diff --check）、規則変更なし。r7の40条件/画像証拠は同一規則として維持し、独立reviewへr8を指定した。

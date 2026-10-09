@@ -1,8 +1,53 @@
 @import "../../../shared/signature/color.css";
-/* Soft Theme Color — テーマ設定に馴染む柔らかな面。 */
+/* Soft Theme Color — テーマ色を名前と一緒に選べるカラーピッカー。小さな調整面とコード付きの候補行で、似た色でも選び直しやすくする。 */
 .sop-sig.sop-soft-theme-color {--sg-bg:#f6edf4;--sg-ink:#493747;--sg-muted:#5a4355;--sg-a:#70475f;--sg-line:#beabba;--sg-soft:#e9dfe5;--sg-radius:6px;background:#f6edf4;color-scheme:light;border-radius:5px}.sop-sig.sop-soft-theme-color .sg-art{pointer-events:none}.sop-sig.sop-soft-theme-color .sg-color-panel{border-radius:14px;padding:18px}.sop-sig.sop-soft-theme-color .sg-color-sv{border-radius:10px;height:130px}.sop-sig.sop-soft-theme-color .sg-color-swatch{box-shadow:none}
 .sop-sig.sop-soft-theme-color{max-width:100%}.sop-sig.sop-soft-theme-color,.sop-sig.sop-soft-theme-color *{box-sizing:border-box}.sop-sig.sop-soft-theme-color :is(button,input,textarea,a){min-width:0}
 .sop-sig.sop-soft-theme-color:focus-visible,.sop-sig.sop-soft-theme-color :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-sig.sop-soft-theme-color,.sop-sig.sop-soft-theme-color *,.sop-sig.sop-soft-theme-color::before,.sop-sig.sop-soft-theme-color::after,.sop-sig.sop-soft-theme-color *::before,.sop-sig.sop-soft-theme-color *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-sig.sop-soft-theme-color[data-sop-paused] *,.sop-sig.sop-soft-theme-color[data-paused=true] *,.sop-sig.sop-soft-theme-color[data-motion-running=false] *,.sop-sig.sop-soft-theme-color[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-sig.sop-soft-theme-color{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-soft-theme-color :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+@media(forced-colors:none){
+
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-panel{padding:22px 18px;border:1px solid #dcced8;border-radius:14px}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-heading{margin-bottom:14px}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-swatch{width:60px;height:36px;min-width:60px;border-radius:8px}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-sv{height:78px;border-radius:6px}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-workspace{margin-bottom:10px}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-axis{min-height:46px;margin:0;gap:8px;grid-template-columns:38px minmax(0,1fr) 30px}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(88px,1fr));gap:8px;margin:18px 0}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-palette button{position:relative;width:100%;min-width:0;height:44px;border:1px solid #cdbfc9;border-radius:7px;background:#fff9fc;padding:0}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-palette button::before{content:'';position:absolute;inset:7px auto 7px 7px;width:22px;background:var(--swatch);border-radius:4px;border:1px solid #0002}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-palette button::after{content:attr(data-swatch);position:absolute;inset:0 3px 0 32px;display:grid;place-items:center;font:10px/1.4 Consolas,monospace;direction:ltr;color:#574450}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-palette button[aria-pressed=true]{outline:2px solid #80576f;outline-offset:1px}
+
+}
+
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color :is(.sg-color-axis,.sg-rgb-channel) input{height:44px;background:transparent;border:0}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color :is(.sg-color-axis,.sg-rgb-channel) input::-webkit-slider-runnable-track{height:6px;border-radius:4px;background:var(--sg-soft)}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-axis input[data-channel=h]::-webkit-slider-runnable-track{background:linear-gradient(90deg,red,#ff0,#0f0,#0ff,#00f,#f0f,red)}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-axis input[data-channel=s]::-webkit-slider-runnable-track{background:linear-gradient(90deg,#aaa,hsl(var(--sg-hue) 100% 50%))}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-axis input[data-channel=v]::-webkit-slider-runnable-track{background:linear-gradient(90deg,#080a0c,var(--sg-color))}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color :is(.sg-color-axis,.sg-rgb-channel) input::-moz-range-track{height:6px;border-radius:4px;background:var(--sg-soft)}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-axis input[data-channel=h]::-moz-range-track{background:linear-gradient(90deg,red,#ff0,#0f0,#0ff,#00f,#f0f,red)}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-axis input[data-channel=s]::-moz-range-track{background:linear-gradient(90deg,#aaa,hsl(var(--sg-hue) 100% 50%))}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-axis input[data-channel=v]::-moz-range-track{background:linear-gradient(90deg,#080a0c,var(--sg-color))}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color :is(.sg-color-axis,.sg-rgb-channel) input::-webkit-slider-thumb{margin-top:-4.5px}
+@media(forced-colors:active){
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color{--sg-bg:Canvas;--sg-ink:CanvasText;--sg-muted:CanvasText;--sg-line:ButtonText;--sg-soft:Canvas}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-sv,.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-swatch,.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-palette button,.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-sv-handle{forced-color-adjust:none}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-sv-handle{border-color:#fff;box-shadow:0 0 0 1px #000}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-axis input::-webkit-slider-runnable-track,.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-rgb-channel input::-webkit-slider-runnable-track{forced-color-adjust:none;border:1px solid CanvasText}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-axis input::-moz-range-track,.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-rgb-channel input::-moz-range-track{forced-color-adjust:none;border:1px solid CanvasText}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color :is(.sg-color-axis,.sg-rgb-channel) input::-webkit-slider-thumb{forced-color-adjust:none;background:CanvasText;border:2px solid Canvas;outline:1px solid CanvasText;box-shadow:none}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color :is(.sg-color-axis,.sg-rgb-channel) input::-moz-range-thumb{forced-color-adjust:none;background:CanvasText;border:2px solid Canvas;outline:1px solid CanvasText;box-shadow:none}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-palette button[aria-pressed=true]{outline:2px solid Highlight;outline-offset:2px}
+}
+
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color :is(.sg-color-axis,.sg-rgb-channel){font:12px/1.6 Arial,"Yu Gothic",sans-serif}.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-entry>label{font-size:11px}
+
+/* B017 independent review follow-up */
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color [data-sg-error]{font-size:14px;line-height:1.65;overflow-wrap:anywhere;color:#883b50}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-heading .sg-label{min-width:0;flex:1;overflow-wrap:anywhere}
+.sop-sig.sop-soft-theme-color.sop-soft-theme-color .sg-color-swatch{flex-shrink:0;min-width:29px}
+@media(forced-colors:active){.sop-sig.sop-soft-theme-color.sop-soft-theme-color [data-sg-error]{color:CanvasText}}

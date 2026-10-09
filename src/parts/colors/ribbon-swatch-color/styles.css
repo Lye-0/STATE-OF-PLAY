@@ -1,5 +1,5 @@
 @import "../../../shared/signature/color.css";
-/* 実保存色を、上下一続きの蛇腹の色見本帯へ変える。四辺の額縁と矩形の外箱を廃し、112pxの色面を18px重ね、右下がりと右上がりの共有折線で次の面へ切れ目なく接続する。帯の最初と最後の斜端は本当の展示背景へ抜ける自由端。実HEXは無変形の面の中央へ固定し、選択はラベルの明暗だけで示す。色の面もnative当たりもhoverや値変更で移動しない。 */
+/* 独立した短いリボン見本を並べるカラーピッカー。見本は留めた上端から折り目と二股の端へ続き、色名は素材の外で読む。長い積層板の構造を廃して選色のまとまりを短くする。 */
 
 .sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color{--paper:#f4f1ec;--ink:#3d4653;--muted:#3d4653;--accent:#657482;--edge:#bcc7cd;--sg-bg:var(--paper);--sg-panel:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);color:var(--ink);color-scheme:light;background:var(--paper);width:100%;max-width:min(100%,480px);min-width:0;container-type:inline-size;overflow-wrap:anywhere}
 .sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color,.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color *,.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color *::before,.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color *::after{box-sizing:border-box}
@@ -68,3 +68,39 @@
 .sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-palette button[aria-pressed=true]::after{background:#25435d;color:#fff}
 .sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-palette button:focus-visible{outline:3px solid #2878c7;outline-offset:-18px}
 @media(forced-colors:active){.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-palette{background:none!important}.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-palette button::before{display:none}.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-palette button::after{color:CanvasText;background:Canvas}.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-palette button[aria-pressed=true]::after{color:HighlightText;background:Highlight}}
+
+@media(forced-colors:none){
+
+.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color{background:var(--paper)}
+.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-panel{padding:22px 16px;background:var(--paper)}
+.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-heading{padding:0 0 14px;border-bottom:1px solid #c794a6}
+.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-workspace{padding:7px 7px 13px;background:#e5bfcc;border-radius:4px 4px 30% 4px}
+.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-sv{height:138px}
+.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-controls{padding:10px 0;background:none}
+.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(74px,1fr));gap:18px 8px;padding:14px 0;margin:12px 0 22px;background:none;border:0}
+.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-palette::before,.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-palette::after{display:none}
+.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-palette button{position:relative;isolation:isolate;min-width:0;width:100%;height:100px;margin:0;padding:0;border:0;border-radius:0;background:transparent;transform:none;overflow:visible;clip-path:none;box-shadow:none}
+.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-palette button::before{content:'';position:absolute;inset:0 6px 22px;background:linear-gradient(180deg,#0003 0 5px,transparent 5px 42%,#fff4 43% 49%,#0002 50% 54%,transparent 55%),var(--swatch);clip-path:polygon(0 0,100% 0,100% 100%,50% 85%,0 100%);border-top:3px solid #9c6b7e;z-index:-1}
+.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-palette button::after{content:attr(data-swatch);position:absolute;inset:auto 0 0;padding:2px 0;background:var(--paper);color:#653b4b;font:11px/1.5 Consolas,monospace;text-align:center;direction:ltr;unicode-bidi:isolate}
+.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-palette button[aria-pressed=true]{outline:2px solid #744158;outline-offset:3px}
+.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-entry{padding:12px 0 0;border-top:1px solid #c794a6}
+
+}
+
+@media(forced-colors:none){
+.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-palette button+button{margin-top:0}
+.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-palette button:nth-child(2n){clip-path:none}
+.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-palette button::before,.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-palette button:nth-child(2n)::before{height:auto;inset:0 6px 22px;clip-path:polygon(0 0,100% 0,100% 100%,50% 85%,0 100%);background:linear-gradient(180deg,#0003 0 5px,transparent 5px 42%,#fff4 43% 49%,#0002 50% 54%,transparent 55%),var(--swatch)}
+.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-palette button[aria-pressed=true]::after{background:var(--paper);color:#653b4b}
+}
+
+@media(forced-colors:active){
+.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color{--sg-bg:Canvas;--sg-ink:CanvasText;--sg-muted:CanvasText;--sg-line:ButtonText;--sg-soft:Canvas}
+.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-sv,.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-swatch,.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-palette button,.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-sv-handle{forced-color-adjust:none}
+.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-sv-handle{border-color:#fff;box-shadow:0 0 0 1px #000}
+.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-axis input::-webkit-slider-runnable-track,.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-rgb-channel input::-webkit-slider-runnable-track{forced-color-adjust:none;border:1px solid CanvasText}
+.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-axis input::-moz-range-track,.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-rgb-channel input::-moz-range-track{forced-color-adjust:none;border:1px solid CanvasText}
+.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color :is(.sg-color-axis,.sg-rgb-channel) input::-webkit-slider-thumb{forced-color-adjust:none;background:CanvasText;border:2px solid Canvas;outline:1px solid CanvasText;box-shadow:none}
+.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color :is(.sg-color-axis,.sg-rgb-channel) input::-moz-range-thumb{forced-color-adjust:none;background:CanvasText;border:2px solid Canvas;outline:1px solid CanvasText;box-shadow:none}
+.sop-sig.sop-ribbon-swatch-color.sop-ribbon-swatch-color .sg-color-palette button[aria-pressed=true]{outline:2px solid Highlight;outline-offset:2px}
+}
