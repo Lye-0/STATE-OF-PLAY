@@ -1,8 +1,52 @@
 @import "../../../shared/workbench/base.css";
-/* Warm Editorial Navigation — 文章中心のサイト向けの案内。 */
+/* Warm Editorial Navigation — 章番号と見出しで読む編集目次。アイコンの代わりに実項目の連番を置き、短い説明と章の順序で移動先を選ぶ。 */
 .sop-wb.sop-warm-editorial-navigation {--wb-bg:#f6efdf;--wb-surface:#e6dfd2;--wb-ink:#453d32;--wb-muted:#5b4c36;--wb-accent:#745933;--wb-line:#c2b399;--wb-radius:6px;color-scheme:light}.sop-wb.sop-warm-editorial-navigation .wb-art{pointer-events:none}.sop-wb.sop-warm-editorial-navigation :is(.wb-search-results,.wb-command-dialog,.wb-context-panel,.wb-nav-flyout,.wb-nav-dialog){color:var(--wb-ink);background:var(--wb-bg)}.sop-wb.sop-warm-editorial-navigation .wb-navigation-frame{border-radius:5px;border-color:#c3aa7d}.sop-wb.sop-warm-editorial-navigation .wb-nav-brand strong{font-family:serif}.sop-wb.sop-warm-editorial-navigation .wb-nav-link{border-radius:4px}.sop-wb.sop-warm-editorial-navigation .wb-nav-flyout{border-radius:5px}
 .sop-wb.sop-warm-editorial-navigation{max-width:100%}.sop-wb.sop-warm-editorial-navigation,.sop-wb.sop-warm-editorial-navigation *{box-sizing:border-box}.sop-wb.sop-warm-editorial-navigation :is(button,input,textarea,a){min-width:0}
 .sop-wb.sop-warm-editorial-navigation:focus-visible,.sop-wb.sop-warm-editorial-navigation :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-wb.sop-warm-editorial-navigation,.sop-wb.sop-warm-editorial-navigation *,.sop-wb.sop-warm-editorial-navigation::before,.sop-wb.sop-warm-editorial-navigation::after,.sop-wb.sop-warm-editorial-navigation *::before,.sop-wb.sop-warm-editorial-navigation *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-wb.sop-warm-editorial-navigation[data-sop-paused] *,.sop-wb.sop-warm-editorial-navigation[data-paused=true] *,.sop-wb.sop-warm-editorial-navigation[data-motion-running=false] *,.sop-wb.sop-warm-editorial-navigation[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-wb.sop-warm-editorial-navigation{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-warm-editorial-navigation :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-navigation-frame{background:#fff7e9;padding:8px 18px;border:0;border-block:3px double #b69b6e}
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-brand{padding:22px 0 20px;border-bottom:1px solid #d8c7a7}
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-brand strong{font:500 26px/1.4 Georgia,'Yu Mincho',serif}
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-desktop,.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation[data-wb-layout=sidebar] .wb-nav-desktop{padding:8px 0}
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-list{counter-reset:chapter;gap:0}
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-list>li{counter-increment:chapter}
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-link{display:grid;grid-template-columns:28px minmax(0,1fr);padding:16px 0;border:0;border-bottom:1px solid #e0d1b5;gap:6px 12px}
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-link::before{content:counter(chapter,decimal-leading-zero);grid-column:1;grid-row:1;font:italic 20px/1.5 Georgia,serif;color:#806b49}
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-link-icon{display:none}
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-link-copy{grid-column:2;grid-row:1}
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-link strong{font:600 17px/1.5 Georgia,'Yu Mincho',serif}
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-link small,.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation[data-wb-layout=sidebar] .wb-nav-link small{font:12px/1.8 Arial,'Yu Gothic',sans-serif;margin-top:4px}
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-badge{grid-column:2}
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-marker{background:#f0e5cf;border-radius:0}
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-foot{padding:16px 0;border-top:1px solid #cdb890}
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-dialog .wb-nav-link{grid-template-columns:28px minmax(0,1fr);padding:16px 0}
+
+}
+
+@media(forced-colors:none){
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-brand{gap:10px}.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-brand strong{font-size:22px}.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-badge{justify-self:start;width:auto}@container(max-width:300px){.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-brand{display:grid;grid-template-columns:minmax(0,1fr) 44px}.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-brand>:is(a,span){grid-column:1/-1}.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-mobile-open{grid-column:2}}
+}
+
+/* Long content in each supported layout */
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-dialog>header{gap:14px}
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-dialog>header strong{min-width:0;overflow-wrap:anywhere;white-space:normal}
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-mobile-close,.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-mobile-open{flex:none}
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-list>li{min-width:0}
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-disclosure>span,.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-mobile-group summary{min-width:0;overflow-wrap:anywhere;white-space:normal}
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation[data-wb-layout=dock] .wb-nav-desktop>.wb-nav-list>li{flex:1 1 0;min-width:0}
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation[data-wb-layout=dock] .wb-nav-link,.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation[data-wb-layout=dock] .wb-nav-disclosure{width:100%;min-width:0}
+
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-link-copy,.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-brand strong,.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-location{min-width:0;overflow-wrap:anywhere}
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-link small,.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-flyout-title{overflow-wrap:anywhere;white-space:normal}
+
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation[data-wb-layout=dock] .wb-nav-desktop>.wb-nav-list{flex-wrap:wrap;gap:16px}
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation[data-wb-layout=dock] .wb-nav-desktop>.wb-nav-list>li{flex:1 1 160px;min-width:min(160px,100%);max-width:100%}
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation[data-wb-layout=header] .wb-nav-desktop>.wb-nav-list{gap:12px 24px}
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation[data-wb-layout=header] .wb-nav-desktop>.wb-nav-list>li{flex:1 1 150px;max-width:100%}
+
+.sop-wb.sop-warm-editorial-navigation.sop-warm-editorial-navigation .wb-nav-badge{font-size:12px;line-height:1.5}

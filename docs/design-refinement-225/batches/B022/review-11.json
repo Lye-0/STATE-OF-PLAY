@@ -1,0 +1,278 @@
+{
+  "batch": "B022",
+  "round": 11,
+  "overall": "changes_required",
+  "parts": [
+    {
+      "id": "clear-line-navigation",
+      "number": 669,
+      "verdict": "changes_required",
+      "note": "強制配色の6項目幅は改善。通常dockはcolumnへ160px basisが高さとして作用し、巨大な縦空白が残る。",
+      "findings": [
+        {
+          "kind": "dock_column_basis_height_regression",
+          "description": "通常配色dockの旧flex-direction:columnに、新しいli flex-basis:160pxが高さとして作用。6項目が各160px高となり、約40pxの内容間に過大な縦空白。1100/320双方。forcedはrowで各40px。横幅最小値のみの検査では発見できない。",
+          "recommendation": "dockリストをrowへ明示して幅基準の折返しにするか、columnを保つならbasis:autoにして行の高さを内容へ戻す。",
+          "evidence": [
+            "measurements-dock-height-forced-11.json",
+            "evidence-11/layouts-sheet-clear-line-navigation.jpg",
+            "evidence-11/dock-height-1100-normal.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "measurements-navigation-11.json",
+        "evidence-11/sheet-clear-line-navigation.jpg"
+      ],
+      "reviewed": {
+        "round": 11,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "warm-editorial-navigation",
+      "number": 670,
+      "verdict": "pass",
+      "note": "連番と項目の24px間隔、dock折返し、badge12pxを確認。6項目/長文/RTL/forcedを維持。",
+      "findings": [],
+      "evidence": [
+        "measurements-navigation-11.json",
+        "evidence-11/sheet-warm-editorial-navigation.jpg"
+      ],
+      "reviewed": {
+        "round": 11,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "folded-register-table",
+      "number": 673,
+      "verdict": "pass",
+      "note": "折面の構造を維持。長いstatusはセル内、ソート記号/進捗文字のコントラストを改善。",
+      "findings": [],
+      "evidence": [
+        "measurements-tables-11.json",
+        "evidence-11/sheet-folded-register-table.jpg"
+      ],
+      "reviewed": {
+        "round": 11,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "open-sheet-table",
+      "number": 679,
+      "verdict": "pass",
+      "note": "独立した見出し・検索・記録紙を保持。長いstatusはセル内、ソート記号が明瞭。",
+      "findings": [],
+      "evidence": [
+        "measurements-tables-11.json",
+        "evidence-11/sheet-open-sheet-table.jpg"
+      ],
+      "reviewed": {
+        "round": 11,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "ribbon-register-table",
+      "number": 683,
+      "verdict": "pass",
+      "note": "通しリボンと支持帯の構造を維持。長いstatusとソート/進捗の可読性を改善。",
+      "findings": [],
+      "evidence": [
+        "measurements-tables-11.json",
+        "evidence-11/sheet-ribbon-register-table.jpg"
+      ],
+      "reviewed": {
+        "round": 11,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "ceramic-register-table",
+      "number": 684,
+      "verdict": "changes_required",
+      "note": "通常の一体陶トレーは成立。forcedで旧操作列の巨大な太枠が復活するため境界寸法を修正。",
+      "findings": [
+        {
+          "kind": "forced_obsolete_action_column_geometry",
+          "description": "新操作列の規則がforced-colors:noneに限られ、forcedで旧16px/40pxの左右枠・最終行24px底枠/72px丸角が復活。巨大な黒い取手が操作列を囲み、通常の一体トレーから意図しない過大境界へ変わる。fresh portable、gallery、RTLで確認。機能失敗ではなく表示構造の不整合。",
+          "recommendation": "操作列の新width/min-width112px、padding12px、border-inline0/radius0と見出し/終行境界の規則をforcedにも適用。色はsystem色のまま。",
+          "evidence": [
+            "measurements-ceramic-forced-11.json",
+            "evidence-11/ceramic-register-table-portable-forced.png",
+            "evidence-11/ceramic-register-table-gallery-forced.png",
+            "evidence-11/fresh-sheet-ceramic-register-table.jpg"
+          ]
+        }
+      ],
+      "evidence": [
+        "measurements-tables-11.json",
+        "evidence-11/sheet-ceramic-register-table.jpg"
+      ],
+      "reviewed": {
+        "round": 11,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "soft-project-table",
+      "number": 688,
+      "verdict": "pass",
+      "note": "進行状況を読むBとして、12pxの補助文字/状態/総数を整理。長い見出しとstatusの切れを解消。",
+      "findings": [],
+      "evidence": [
+        "measurements-tables-11.json",
+        "evidence-11/sheet-soft-project-table.jpg"
+      ],
+      "reviewed": {
+        "round": 11,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "clear-grid-table",
+      "number": 689,
+      "verdict": "pass",
+      "note": "比較しやすい格子のBとして、12px補助文字と長文折返しを維持。",
+      "findings": [],
+      "evidence": [
+        "measurements-tables-11.json",
+        "evidence-11/sheet-clear-grid-table.jpg"
+      ],
+      "reviewed": {
+        "round": 11,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "warm-library-table",
+      "number": 690,
+      "verdict": "pass",
+      "note": "資料一覧向けの書体と見出し構成を維持。12px補助文字、長い見出し/status折返しを確認。",
+      "findings": [],
+      "evidence": [
+        "measurements-tables-11.json",
+        "evidence-11/sheet-warm-library-table.jpg"
+      ],
+      "reviewed": {
+        "round": 11,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "telescopic-stroke-loader",
+      "number": 696,
+      "verdict": "pass",
+      "note": "固定基部と六つの筒の伸縮をforcedでも維持。周期・停止・reduced・長文・Reactを確認。",
+      "findings": [],
+      "evidence": [
+        "measurements-loader-11.json",
+        "evidence-11/sheet-telescopic-stroke-loader.jpg"
+      ],
+      "reviewed": {
+        "round": 11,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    }
+  ],
+  "coverage": {
+    "authorHashesMatched": 100,
+    "sharedHashesMatched": 1,
+    "nativeChecks": 290,
+    "reactChecks": 196,
+    "reactPlacements": 40,
+    "tableFreshConditions": 56,
+    "navigationLayouts": 64,
+    "numberSpacingConditions": 4,
+    "dockHeightConditions": 4,
+    "imagesViewed": [
+      "10 primary sheets",
+      "7 fresh table sheets /28 states",
+      "2 navigation layouts sheets /16 states",
+      "30 gallery images /3 sheets",
+      "28 React images /3 sheets",
+      "R684 forced close",
+      "R696 forced close"
+    ],
+    "pendingRequiredMeasurements": [],
+    "limitations": [
+      "旧10件の指摘は解消。今回はR669の軸方向とbasisの組合せ、R684の旧forced境界を追加検出。",
+      "コントラストは実背景の合成を計測。全9文字を持つパーツの対象rest/hover/selected/error等で最小4.611以上。disabledは別扱い。",
+      "横スクロールによる列の部分表示は不具合とせず、セル内のbadge領域と外側見出しを検査した。",
+      "React長文の全組合せは未実行。同作者CSSをgallery/portableで実査。",
+      "特定状態の検査であり無欠陥保証ではない。"
+    ]
+  }
+}

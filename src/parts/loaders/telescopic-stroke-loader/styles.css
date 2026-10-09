@@ -18,3 +18,8 @@
 
 .sop-foundation.sop-telescopic-stroke-loader.sop-telescopic-stroke-loader .x-composition i{left:calc(14px + var(--i)*10px);top:calc(28px + var(--i)*7px);width:calc(148px - var(--i)*18px);height:calc(116px - var(--i)*13px);border:3px solid #c6b9cb;border-inline-start-width:calc(3px + var(--i)*.5px);border-radius:4px;transform-origin:left center;animation:sop-renewed-telescopic 3.4s cubic-bezier(.45,0,.55,1) infinite alternate;animation-delay:calc(var(--i)*-.2s)}
 @keyframes sop-renewed-telescopic{0%{translate:0 0;scale:1 1}100%{translate:calc(var(--i)*3px) 0;scale:.84 1}}
+
+.sop-foundation.sop-telescopic-stroke-loader.sop-telescopic-stroke-loader .x-composition{width:180px;height:180px}
+.sop-foundation.sop-telescopic-stroke-loader.sop-telescopic-stroke-loader .x-composition::before{content:'';position:absolute;left:8px;top:38px;width:16px;height:104px;border:1px solid #a79dac;border-radius:3px;background:#37303c}
+.sop-foundation.sop-telescopic-stroke-loader.sop-telescopic-stroke-loader .x-composition i{left:calc(20px + var(--i)*20px);top:calc(55px + var(--i)*5px);width:44px;height:calc(70px - var(--i)*10px);border:2px solid #ccbed1;border-inline-start:0;border-radius:0 3px 3px 0;background:#222029;transform:none;transform-origin:left center;translate:none;scale:none;animation:sop-refine-telescopic 3.6s cubic-bezier(.45,0,.55,1) infinite;animation-delay:0;z-index:calc(6 - var(--i))}
+@keyframes sop-refine-telescopic{0%,100%{translate:calc(var(--i)*-14px) 0}50%{translate:0 0}}

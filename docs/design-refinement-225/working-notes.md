@@ -125,3 +125,7 @@ B023r5は4pass/R708だけ差戻し。60度回転で位置は周期一致する�
 R708r6 main定常周期画像比較は通常/forcedともRGB差10超0画素、main-pixel-seams-6.json。最新gallery撮影済み。全225対象のnormal/hover/narrow必須675画像をPillow.verifyで破損無し確認。
 
 B021r12独立全10pass、24closed-target Range条件/24画像超過0px、最終101hash一致。80b4b809a0f34d84b3c8d6be73f66fddf8f1015dでpush/record、210件完了。残りB022r11/B023r6。
+
+B023r6全5独立pass、f2cd4479a38994bcef51f42162d4e340fba6695bでpush/record。215件完了、残りB022r11全10独立再検査中。
+
+B022r11は8pass/2差戻し。旧指摘すべて解消、native290/React196成功。追加R684forced旧操作列16/40px枠・72px角、R669通常dockの旧columnにbasis160が効き縦空白。release後fix-ceramic-action-column.pyを一度実行（再実行禁止）、r12freeze。R696EOF1空行も除去（挙動不変）、他7件/shared不変。Astra最終再検査中、main16配置/2件撮影中。B023r6含む本番build3m5s成功したが今回CSS差分後に再実行予定。

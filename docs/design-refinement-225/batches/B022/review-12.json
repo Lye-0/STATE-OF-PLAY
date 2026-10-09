@@ -1,0 +1,271 @@
+{
+  "batch": "B022",
+  "round": 12,
+  "overall": "pass",
+  "parts": [
+    {
+      "id": "clear-line-navigation",
+      "number": 669,
+      "verdict": "pass",
+      "note": "dockのrow方向を明示し、6項目が通常幅2列・狭幅1列へ。160pxの縦空白を解消。全配置とnative/Reactを維持。",
+      "findings": [],
+      "evidence": [
+        "evidence-12/final-sheet-clear-line-navigation.jpg",
+        "measurements-navigation-12.json",
+        "measurements-dock-height-forced-12.json"
+      ],
+      "reviewed": {
+        "round": 12,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "warm-editorial-navigation",
+      "number": 670,
+      "verdict": "pass",
+      "note": "連番と項目の24px間隔、dock折返し、badge12pxを確認。6項目/長文/RTL/forcedを維持。",
+      "findings": [],
+      "evidence": [
+        "measurements-navigation-11.json",
+        "evidence-11/sheet-warm-editorial-navigation.jpg"
+      ],
+      "reviewed": {
+        "round": 11,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "inheritedFromRound": 11,
+        "authorAndSharedHashUnchanged": true
+      }
+    },
+    {
+      "id": "folded-register-table",
+      "number": 673,
+      "verdict": "pass",
+      "note": "折面の構造を維持。長いstatusはセル内、ソート記号/進捗文字のコントラストを改善。",
+      "findings": [],
+      "evidence": [
+        "measurements-tables-11.json",
+        "evidence-11/sheet-folded-register-table.jpg"
+      ],
+      "reviewed": {
+        "round": 11,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "inheritedFromRound": 11,
+        "authorAndSharedHashUnchanged": true
+      }
+    },
+    {
+      "id": "open-sheet-table",
+      "number": 679,
+      "verdict": "pass",
+      "note": "独立した見出し・検索・記録紙を保持。長いstatusはセル内、ソート記号が明瞭。",
+      "findings": [],
+      "evidence": [
+        "measurements-tables-11.json",
+        "evidence-11/sheet-open-sheet-table.jpg"
+      ],
+      "reviewed": {
+        "round": 11,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "inheritedFromRound": 11,
+        "authorAndSharedHashUnchanged": true
+      }
+    },
+    {
+      "id": "ribbon-register-table",
+      "number": 683,
+      "verdict": "pass",
+      "note": "通しリボンと支持帯の構造を維持。長いstatusとソート/進捗の可読性を改善。",
+      "findings": [],
+      "evidence": [
+        "measurements-tables-11.json",
+        "evidence-11/sheet-ribbon-register-table.jpg"
+      ],
+      "reviewed": {
+        "round": 11,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "inheritedFromRound": 11,
+        "authorAndSharedHashUnchanged": true
+      }
+    },
+    {
+      "id": "ceramic-register-table",
+      "number": 684,
+      "verdict": "pass",
+      "note": "forcedにも新しい操作列寸法と薄い境界を適用。巨大な旧取手を解消し、通常トレーと操作列の構成を維持。native/Reactを再確認。",
+      "findings": [],
+      "evidence": [
+        "evidence-12/final-sheet-ceramic-register-table.jpg",
+        "measurements-tables-12.json",
+        "measurements-ceramic-forced-12.json"
+      ],
+      "reviewed": {
+        "round": 12,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "soft-project-table",
+      "number": 688,
+      "verdict": "pass",
+      "note": "進行状況を読むBとして、12pxの補助文字/状態/総数を整理。長い見出しとstatusの切れを解消。",
+      "findings": [],
+      "evidence": [
+        "measurements-tables-11.json",
+        "evidence-11/sheet-soft-project-table.jpg"
+      ],
+      "reviewed": {
+        "round": 11,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "inheritedFromRound": 11,
+        "authorAndSharedHashUnchanged": true
+      }
+    },
+    {
+      "id": "clear-grid-table",
+      "number": 689,
+      "verdict": "pass",
+      "note": "比較しやすい格子のBとして、12px補助文字と長文折返しを維持。",
+      "findings": [],
+      "evidence": [
+        "measurements-tables-11.json",
+        "evidence-11/sheet-clear-grid-table.jpg"
+      ],
+      "reviewed": {
+        "round": 11,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "inheritedFromRound": 11,
+        "authorAndSharedHashUnchanged": true
+      }
+    },
+    {
+      "id": "warm-library-table",
+      "number": 690,
+      "verdict": "pass",
+      "note": "資料一覧向けの書体と見出し構成を維持。12px補助文字、長い見出し/status折返しを確認。",
+      "findings": [],
+      "evidence": [
+        "measurements-tables-11.json",
+        "evidence-11/sheet-warm-library-table.jpg"
+      ],
+      "reviewed": {
+        "round": 11,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "inheritedFromRound": 11,
+        "authorAndSharedHashUnchanged": true
+      }
+    },
+    {
+      "id": "telescopic-stroke-loader",
+      "number": 696,
+      "verdict": "pass",
+      "note": "固定基部と六つの筒の伸縮をforcedでも維持。周期・停止・reduced・長文・Reactを確認。",
+      "findings": [],
+      "evidence": [
+        "measurements-loader-11.json",
+        "evidence-11/sheet-telescopic-stroke-loader.jpg"
+      ],
+      "reviewed": {
+        "round": 11,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "inheritedFromRound": 11,
+        "authorAndSharedHashUnchanged": false,
+        "onlyTrailingWhitespaceChanged": true
+      }
+    }
+  ],
+  "coverage": {
+    "authorHashesMatched": 100,
+    "sharedHashesMatched": 1,
+    "changedBehaviorCSS": 2,
+    "whitespaceOnlyCSS": 1,
+    "unchangedAuthorFiles": 97,
+    "nativeChecks": 56,
+    "reactChecks": 44,
+    "reactPlacements": 8,
+    "navigationLayouts": 32,
+    "dockHeightConditions": 4,
+    "ceramicForcedConditions": 2,
+    "inheritedParts": 8,
+    "imagesViewed": [
+      "2 final sheets /21 gallery portable React images",
+      "R669 dock1100/320 close",
+      "R684 fresh forced close"
+    ],
+    "pendingRequiredMeasurements": [],
+    "limitations": [
+      "8件は作者/共有差分を確認し前round判定を継承。696はEOF空白のみでCSS規則不変。",
+      "CSSの変更対象2件を再実行。Reactの長文全配置組合せは未実行、gallery/portableで同作者CSSを実査。",
+      "特定状態の検査であり無欠陥保証ではない。"
+    ]
+  }
+}

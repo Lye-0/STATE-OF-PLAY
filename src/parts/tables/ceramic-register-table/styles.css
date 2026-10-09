@@ -82,3 +82,42 @@
 
 .sop-wb.sop-ceramic-register-table.sop-ceramic-register-table .wb-row-actions-heading,.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table .wb-row-actions{width:192px;min-width:192px}
 .sop-wb.sop-ceramic-register-table.sop-ceramic-register-table .wb-table-scroll{max-height:var(--wb-table-max-height,none)}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table .wb-data-frame{background:#e8efec;border:1px solid #acc1b9;border-top:3px solid #f9fffc;border-bottom:5px solid #95afa4;border-radius:24px;padding:8px 12px 12px;overflow:hidden}
+.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table .wb-data-heading{background:none;border:0;padding:22px 14px 18px}
+.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table .wb-data-toolbar{padding:14px;background:#dce7e0;border:1px solid #aec4b7;border-radius:12px;gap:12px}
+.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table .wb-table-scroll{margin-top:18px;border:1px solid #afc3b8;border-radius:12px}
+.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table th{padding:16px;background:#d5e2d9;border:0;border-bottom:2px solid #a3bcad}
+.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table td{padding:16px;background:#f4f8f2;border-bottom:1px solid #bacfc0}
+.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table .wb-row-actions-heading,.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table .wb-row-actions{width:112px;min-width:112px;border-inline:0;padding:12px;border-radius:0;background:#e4ece1}
+.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table .wb-row-actions-heading{border-top:0;border-bottom:2px solid #a3bcad}
+.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table tbody tr[data-row]:last-child .wb-row-actions{border-bottom:0;border-radius:0}
+.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table .wb-row-actions>div{gap:4px;flex-wrap:nowrap}
+.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table .wb-row-actions button{border:1px solid #b0c5b5;border-radius:8px;background:#fbfff8}
+.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table .wb-data-status{padding:14px 14px 0}
+.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table .wb-data-footer{padding:14px;border:0;background:none}
+
+}
+
+@media(forced-colors:none){.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table{--muted:#456060;}}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table .wb-data-frame{position:relative;padding-inline:24px;border-radius:36px;background:linear-gradient(110deg,#f6fbf5,#e2ebe3 18%,#edf4ed 80%,#d5e2d7);box-shadow:inset 0 0 0 5px #eef5eb,inset 0 0 0 6px #b7c9ba;mask:radial-gradient(ellipse 5px 25px at 11px 50%,transparent 98%,#000 100%),radial-gradient(ellipse 5px 25px at calc(100% - 11px) 50%,transparent 98%,#000 100%);mask-composite:intersect}
+.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table .wb-data-frame::before,.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table .wb-data-frame::after{content:'';display:block;position:absolute;top:calc(50% - 26px);width:12px;height:52px;border:1px solid #aec1b0;border-radius:50%;box-shadow:1px 1px 0 #fbfff9;pointer-events:none}
+.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table .wb-data-frame::before{left:4px}.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table .wb-data-frame::after{right:4px}
+
+}
+
+/* Keep arbitrary status names within the authored column. */
+.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table .wb-cell-badge{display:inline-block;max-width:100%;white-space:normal;overflow-wrap:anywhere;font-size:12px;line-height:1.6;vertical-align:middle}
+.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table .wb-cell-badge i{display:inline-block;vertical-align:middle;margin-inline-end:5px}
+.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table .wb-sort-glyph{opacity:1;color:var(--wb-ink)}
+
+/* The action column uses the same geometry in system color palettes. */
+.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table .wb-row-actions-heading,.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table .wb-row-actions{width:112px;min-width:112px;border-inline:0;padding:12px;border-radius:0}
+.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table .wb-row-actions-heading{border-top:0;border-bottom-width:2px;border-bottom-style:solid}
+.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table tbody tr[data-row]:last-child .wb-row-actions{border-bottom:0;border-radius:0}
+.sop-wb.sop-ceramic-register-table.sop-ceramic-register-table .wb-row-actions>div{gap:4px;flex-wrap:nowrap}

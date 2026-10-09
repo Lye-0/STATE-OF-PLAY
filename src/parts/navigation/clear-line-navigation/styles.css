@@ -1,8 +1,45 @@
 @import "../../../shared/workbench/base.css";
-/* Clear Line Navigation — 罫線を主体にした明快な案内。 */
+/* Clear Line Navigation — コンパクトな側線と短い説明で移動先を読むナビゲーション。44px以上の操作を保ち、区切りと現在地を細い罫に揃える。 */
 .sop-wb.sop-clear-line-navigation {--wb-bg:#f4f5ef;--wb-surface:#e1e4df;--wb-ink:#343e3d;--wb-muted:#455b4f;--wb-accent:#496559;--wb-line:#adbab2;--wb-radius:6px;color-scheme:light}.sop-wb.sop-clear-line-navigation .wb-art{pointer-events:none}.sop-wb.sop-clear-line-navigation :is(.wb-search-results,.wb-command-dialog,.wb-context-panel,.wb-nav-flyout,.wb-nav-dialog){color:var(--wb-ink);background:var(--wb-bg)}.sop-wb.sop-clear-line-navigation .wb-navigation-frame{border:0;border-block:1px solid #a6beae;border-radius:0}.sop-wb.sop-clear-line-navigation .wb-nav-link{border-radius:3px}.sop-wb.sop-clear-line-navigation .wb-nav-flyout{border-radius:4px}
 .sop-wb.sop-clear-line-navigation{max-width:100%}.sop-wb.sop-clear-line-navigation,.sop-wb.sop-clear-line-navigation *{box-sizing:border-box}.sop-wb.sop-clear-line-navigation :is(button,input,textarea,a){min-width:0}
 .sop-wb.sop-clear-line-navigation:focus-visible,.sop-wb.sop-clear-line-navigation :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-wb.sop-clear-line-navigation,.sop-wb.sop-clear-line-navigation *,.sop-wb.sop-clear-line-navigation::before,.sop-wb.sop-clear-line-navigation::after,.sop-wb.sop-clear-line-navigation *::before,.sop-wb.sop-clear-line-navigation *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-wb.sop-clear-line-navigation[data-sop-paused] *,.sop-wb.sop-clear-line-navigation[data-paused=true] *,.sop-wb.sop-clear-line-navigation[data-motion-running=false] *,.sop-wb.sop-clear-line-navigation[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-wb.sop-clear-line-navigation{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-clear-line-navigation :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation .wb-navigation-frame{padding:0 18px;background:#f5f8f3;border:0;border-inline-start:2px solid #71927a}
+.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation .wb-nav-brand{padding:20px 0;border-bottom:1px solid #c3d1c2}
+.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation .wb-nav-brand strong{font:600 18px/1.5 Arial,'Yu Gothic',sans-serif}
+.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation .wb-nav-desktop,.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation[data-wb-layout=sidebar] .wb-nav-desktop{padding:12px 0}
+.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation .wb-nav-list{display:flex;flex-direction:column;gap:0}
+.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation .wb-nav-link{padding:12px 8px;min-height:54px;border:0;border-bottom:1px solid #d4ded2}
+.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation .wb-nav-link strong{font:600 14px/1.6 Arial,'Yu Gothic',sans-serif}
+.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation .wb-nav-link small,.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation[data-wb-layout=sidebar] .wb-nav-link small{font:12px/1.6 Arial,'Yu Gothic',sans-serif;margin-top:3px}
+.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation .wb-nav-link-icon{width:20px;min-width:20px}
+.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation .wb-nav-marker{background:#e5ece1;border-radius:0;border-inline-start:2px solid #648569}
+.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation .wb-nav-foot{padding:14px 0;border-top:1px solid #c3d1c2}
+.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation .wb-nav-disclosure{min-height:50px;padding:12px 8px}
+.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation .wb-nav-dialog .wb-nav-link{padding:12px 8px;min-height:54px}
+
+}
+
+/* Long content in each supported layout */
+.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation .wb-nav-dialog>header{gap:14px}
+.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation .wb-nav-dialog>header strong{min-width:0;overflow-wrap:anywhere;white-space:normal}
+.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation .wb-nav-mobile-close,.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation .wb-nav-mobile-open{flex:none}
+.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation .wb-nav-list>li{min-width:0}
+.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation .wb-nav-disclosure>span,.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation .wb-nav-mobile-group summary{min-width:0;overflow-wrap:anywhere;white-space:normal}
+.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation[data-wb-layout=dock] .wb-nav-desktop>.wb-nav-list>li{flex:1 1 0;min-width:0}
+.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation[data-wb-layout=dock] .wb-nav-link,.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation[data-wb-layout=dock] .wb-nav-disclosure{width:100%;min-width:0}
+
+.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation .wb-nav-link-copy,.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation .wb-nav-brand strong,.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation .wb-nav-location{min-width:0;overflow-wrap:anywhere}
+.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation .wb-nav-link small,.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation .wb-nav-flyout-title{overflow-wrap:anywhere;white-space:normal}
+
+.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation[data-wb-layout=dock] .wb-nav-desktop>.wb-nav-list{flex-wrap:wrap;gap:16px}
+.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation[data-wb-layout=dock] .wb-nav-desktop>.wb-nav-list>li{flex:1 1 160px;min-width:min(160px,100%);max-width:100%}
+
+.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation .wb-nav-badge{font-size:12px;line-height:1.5}
+
+.sop-wb.sop-clear-line-navigation.sop-clear-line-navigation[data-wb-layout=dock] .wb-nav-desktop>.wb-nav-list{flex-direction:row}

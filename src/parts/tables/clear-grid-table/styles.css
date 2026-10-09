@@ -1,5 +1,5 @@
 @import "../../../shared/workbench/base.css";
-/* Clear Grid Table — Reviewラベルを明暗で判別できる配色に変更。 */
+/* Clear Grid Table — 列境界を明確にした密度の高いデータ表。細い縦罫とコンパクトな行で値を照合し、選択と操作は44pxの領域を維持する。 */
 .sop-wb.sop-clear-grid-table {--wb-bg:#f4f5ef;--wb-surface:#e1e4df;--wb-ink:#343e3d;--wb-muted:#455b4f;--wb-accent:#496559;--wb-line:#adbab2;--wb-radius:6px;color-scheme:light}.sop-wb.sop-clear-grid-table .wb-art{pointer-events:none}.sop-wb.sop-clear-grid-table :is(.wb-search-results,.wb-command-dialog,.wb-context-panel,.wb-nav-flyout,.wb-nav-dialog){color:var(--wb-ink);background:var(--wb-bg)}.sop-wb.sop-clear-grid-table .wb-data-frame{border-radius:3px;border-color:#a9c2b2}.sop-wb.sop-clear-grid-table th{border-bottom:2px solid #b6cebe}.sop-wb.sop-clear-grid-table td{border-right:1px solid #d3e3d8}.sop-wb.sop-clear-grid-table .wb-cell-badge{border-radius:3px}
 .sop-wb.sop-clear-grid-table{max-width:100%}.sop-wb.sop-clear-grid-table,.sop-wb.sop-clear-grid-table *{box-sizing:border-box}.sop-wb.sop-clear-grid-table :is(button,input,textarea,a){min-width:0}
 .sop-wb.sop-clear-grid-table:focus-visible,.sop-wb.sop-clear-grid-table :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
@@ -9,3 +9,34 @@
 
 /* Review: Reviewラベルを明暗で判別できる配色に変更 */
 .sop-wb.sop-clear-grid-table .wb-cell-badge[data-value=review]{color:#76511c;background:#f8edce}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-clear-grid-table.sop-clear-grid-table .wb-data-frame{background:#f8faf4;border:1px solid #bdcbb8;border-radius:0}
+.sop-wb.sop-clear-grid-table.sop-clear-grid-table .wb-data-heading{padding:18px 16px;border-bottom:1px solid #bdcbb8}
+.sop-wb.sop-clear-grid-table.sop-clear-grid-table .wb-data-heading h3{font:600 20px/1.5 Arial,'Yu Gothic',sans-serif}
+.sop-wb.sop-clear-grid-table.sop-clear-grid-table .wb-data-toolbar{padding:12px 16px;gap:12px}
+.sop-wb.sop-clear-grid-table.sop-clear-grid-table th{padding:12px;font:600 12px/1.6 Arial,'Yu Gothic',sans-serif;background:#e6eddf;border-inline-end:1px solid #c0ceb9;border-block:1px solid #b6c5af}
+.sop-wb.sop-clear-grid-table.sop-clear-grid-table td{padding:12px;background:#fcfdf8;border-inline-end:1px solid #d3ddcc;border-bottom:1px solid #ccd8c4}
+.sop-wb.sop-clear-grid-table.sop-clear-grid-table .wb-cell-badge{padding:3px 6px;border-radius:0;border:1px solid #aec29f;background:#edf2e6}
+.sop-wb.sop-clear-grid-table.sop-clear-grid-table .wb-row-actions button{border-radius:0}
+.sop-wb.sop-clear-grid-table.sop-clear-grid-table .wb-data-footer{padding:12px 16px;border-top:1px solid #c0ceb9;font:13px/1.6 Arial,'Yu Gothic',sans-serif}
+
+}
+
+@media(forced-colors:none){
+.sop-wb.sop-clear-grid-table.sop-clear-grid-table .wb-row-actions-heading,.sop-wb.sop-clear-grid-table.sop-clear-grid-table .wb-row-actions{width:112px;min-width:112px;padding-inline:8px}.sop-wb.sop-clear-grid-table.sop-clear-grid-table .wb-row-actions>div{display:flex;gap:4px;flex-wrap:nowrap}
+}
+
+/* Keep arbitrary status names within the authored column. */
+.sop-wb.sop-clear-grid-table.sop-clear-grid-table .wb-cell-badge{display:inline-block;max-width:100%;white-space:normal;overflow-wrap:anywhere;font-size:12px;line-height:1.6;vertical-align:middle}
+.sop-wb.sop-clear-grid-table.sop-clear-grid-table .wb-cell-badge i{display:inline-block;vertical-align:middle;margin-inline-end:5px}
+.sop-wb.sop-clear-grid-table.sop-clear-grid-table .wb-sort-glyph{opacity:1;color:var(--wb-ink)}
+.sop-wb.sop-clear-grid-table.sop-clear-grid-table .wb-data-heading{flex-wrap:wrap}
+.sop-wb.sop-clear-grid-table.sop-clear-grid-table .wb-data-heading>div{flex:1 1 160px;min-width:0}
+.sop-wb.sop-clear-grid-table.sop-clear-grid-table .wb-data-heading h3,.sop-wb.sop-clear-grid-table.sop-clear-grid-table .wb-data-heading p{overflow-wrap:anywhere;max-width:100%}
+.sop-wb.sop-clear-grid-table.sop-clear-grid-table .wb-data-total{max-width:100%;overflow-wrap:anywhere}
+
+/* Operational supporting text remains readable at real display size. */
+.sop-wb.sop-clear-grid-table.sop-clear-grid-table .wb-data-heading p,.sop-wb.sop-clear-grid-table.sop-clear-grid-table .wb-data-total,.sop-wb.sop-clear-grid-table.sop-clear-grid-table .wb-data-selection,.sop-wb.sop-clear-grid-table.sop-clear-grid-table .wb-data-selection button,.sop-wb.sop-clear-grid-table.sop-clear-grid-table .wb-cell-progress b,.sop-wb.sop-clear-grid-table.sop-clear-grid-table .wb-data-status{font-size:12px;line-height:1.6}
+.sop-wb.sop-clear-grid-table.sop-clear-grid-table .wb-data-total{white-space:normal}

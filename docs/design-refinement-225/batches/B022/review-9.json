@@ -1,0 +1,483 @@
+{
+  "batch": "B022",
+  "round": 9,
+  "overall": "changes_required",
+  "parts": [
+    {
+      "id": "clear-line-navigation",
+      "number": 669,
+      "verdict": "changes_required",
+      "note": "簡潔な側線と密度の高い一覧は実用的。forced dock多項目の可読幅を修正。",
+      "findings": [
+        {
+          "kind": "dock_many_item_readability",
+          "description": "6項目＋長名のdock、320px forcedで日本語1文字/英字1〜2文字の縦列となり、行先が読みにくい。R670は通常配色のdockでも同様。枠内収まりとは別の項目最小幅不足。",
+          "recommendation": "dockの項目幅を保持して折返し/狭幅1列へ。6項目・長文・LTR/RTL・forcedで確認。",
+          "evidence": [
+            "measurements-layouts-9.json",
+            "evidence-9/layouts-clear-line-navigation.jpg"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-9/sheet-clear-line-navigation.jpg",
+        "measurements-navigation-9.json"
+      ],
+      "reviewed": {
+        "round": 9,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "warm-editorial-navigation",
+      "number": 670,
+      "verdict": "changes_required",
+      "note": "章番号と本文で読む用途差は成立。横並びの隣番号との余白、dock多項目を修正。",
+      "findings": [
+        {
+          "kind": "dock_many_item_readability",
+          "description": "6項目＋長名のdock、320px forcedで日本語1文字/英字1〜2文字の縦列となり、行先が読みにくい。R670は通常配色のdockでも同様。枠内収まりとは別の項目最小幅不足。",
+          "recommendation": "dockの項目幅を保持して折返し/狭幅1列へ。6項目・長文・LTR/RTL・forcedで確認。",
+          "evidence": [
+            "measurements-layouts-9.json",
+            "evidence-9/layouts-warm-editorial-navigation.jpg"
+          ]
+        },
+        {
+          "kind": "adjacent_number_label_spacing",
+          "description": "標準横並びで前項目の名称Range右端と次項目左端が同座標（portable概要右691/次項目左691、gallery678.5/678.5）。次の連番02が名称に接して「概要02」の連続文字列に見える。幾何的な文字重なりとは区別。",
+          "recommendation": "項目間または番号列外側に余白を確保し、現在地の薄い面にも名称と番号が安定して収まるようにする。",
+          "evidence": [
+            "measurements-numbers-9.json",
+            "evidence-9/warm-editorial-navigation-gallery-ltr-numbers.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-9/sheet-warm-editorial-navigation.jpg",
+        "measurements-navigation-9.json"
+      ],
+      "reviewed": {
+        "round": 9,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "folded-register-table",
+      "number": 673,
+      "verdict": "changes_required",
+      "note": "折面が見出し/検索帯/記録面を連結し、Bの平面表から構造的に分離。長状態札とソート印/選択進捗色を修正。",
+      "findings": [
+        {
+          "kind": "long_badge_overlaps_adjacent_cells",
+          "description": "未操作fresh fixtureの長い状態名がnowrapで自セルから243.48px横へ突出する（320px通常LTR）。td overflow:visibleのため容量/進捗など隣列へ重なり、横スクロール後も状態文字と数値が混ざる。主gallery/portableとfresh通常/forced・LTR/RTLでも追跡。",
+          "recommendation": "状態札のmax-width/min-widthとwhite-space/overflow-wrapを設定し、セル内で読める折返しにする。列の情報を重ねない。",
+          "evidence": [
+            "measurements-table-layout-9.json",
+            "measurements-tables-9.json",
+            "evidence-9/fresh-folded-register-table.jpg"
+          ]
+        },
+        {
+          "kind": "sort_indicator_contrast",
+          "description": "操作可能な未ソート列を示す↕印が実背景合成2.974:1。非テキストの状態/操作記号として3:1未満。B3はopacity0.5が残る。disabledではない。",
+          "recommendation": "並べ替え印を実面に対して3:1以上へ。列名文字の4.5:1判定とは区別する。",
+          "evidence": [
+            "contrast-summary-9.json"
+          ]
+        },
+        {
+          "kind": "selected_progress_text_contrast",
+          "description": "選択行の進捗100%は12pxで4.275:1。gallery/portableの定常選択面で4.5:1未満。",
+          "recommendation": "選択面に対して進捗数値の色を濃くする。",
+          "evidence": [
+            "contrast-summary-9.json",
+            "measurements-tables-9.json"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-9/sheet-folded-register-table.jpg",
+        "measurements-tables-9.json"
+      ],
+      "reviewed": {
+        "round": 9,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "open-sheet-table",
+      "number": 679,
+      "verdict": "changes_required",
+      "note": "見出し・操作面・記録紙の独立と開いた外縁が成立。長状態札とソート印を修正。",
+      "findings": [
+        {
+          "kind": "long_badge_overlaps_adjacent_cells",
+          "description": "未操作fresh fixtureの長い状態名がnowrapで自セルから201.61px横へ突出する（320px通常LTR）。td overflow:visibleのため容量/進捗など隣列へ重なり、横スクロール後も状態文字と数値が混ざる。主gallery/portableとfresh通常/forced・LTR/RTLでも追跡。",
+          "recommendation": "状態札のmax-width/min-widthとwhite-space/overflow-wrapを設定し、セル内で読める折返しにする。列の情報を重ねない。",
+          "evidence": [
+            "measurements-table-layout-9.json",
+            "measurements-tables-9.json",
+            "evidence-9/fresh-open-sheet-table.jpg"
+          ]
+        },
+        {
+          "kind": "sort_indicator_contrast",
+          "description": "操作可能な未ソート列を示す↕印が実背景合成2.817:1。非テキストの状態/操作記号として3:1未満。B3はopacity0.5が残る。disabledではない。",
+          "recommendation": "並べ替え印を実面に対して3:1以上へ。列名文字の4.5:1判定とは区別する。",
+          "evidence": [
+            "contrast-summary-9.json"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-9/sheet-open-sheet-table.jpg",
+        "measurements-tables-9.json"
+      ],
+      "reviewed": {
+        "round": 9,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "ribbon-register-table",
+      "number": 683,
+      "verdict": "changes_required",
+      "note": "通したリボンと保持帯、選択時の折返し札が実際の面を支持。長状態札とソート印/選択進捗色を修正。",
+      "findings": [
+        {
+          "kind": "long_badge_overlaps_adjacent_cells",
+          "description": "未操作fresh fixtureの長い状態名がnowrapで自セルから243.48px横へ突出する（320px通常LTR）。td overflow:visibleのため容量/進捗など隣列へ重なり、横スクロール後も状態文字と数値が混ざる。主gallery/portableとfresh通常/forced・LTR/RTLでも追跡。",
+          "recommendation": "状態札のmax-width/min-widthとwhite-space/overflow-wrapを設定し、セル内で読める折返しにする。列の情報を重ねない。",
+          "evidence": [
+            "measurements-table-layout-9.json",
+            "measurements-tables-9.json",
+            "evidence-9/fresh-ribbon-register-table.jpg"
+          ]
+        },
+        {
+          "kind": "sort_indicator_contrast",
+          "description": "操作可能な未ソート列を示す↕印が実背景合成2.438:1。非テキストの状態/操作記号として3:1未満。B3はopacity0.5が残る。disabledではない。",
+          "recommendation": "並べ替え印を実面に対して3:1以上へ。列名文字の4.5:1判定とは区別する。",
+          "evidence": [
+            "contrast-summary-9.json"
+          ]
+        },
+        {
+          "kind": "selected_progress_text_contrast",
+          "description": "選択行の進捗100%は12pxで4.318:1。gallery/portableの定常選択面で4.5:1未満。",
+          "recommendation": "選択面に対して進捗数値の色を濃くする。",
+          "evidence": [
+            "contrast-summary-9.json",
+            "measurements-tables-9.json"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-9/sheet-ribbon-register-table.jpg",
+        "measurements-tables-9.json"
+      ],
+      "reviewed": {
+        "round": 9,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "ceramic-register-table",
+      "number": 684,
+      "verdict": "changes_required",
+      "note": "陶の釉薬縁、側面の持ち手穴、凹面の操作帯が一体の器を作る。長状態札とソート印を修正。",
+      "findings": [
+        {
+          "kind": "long_badge_overlaps_adjacent_cells",
+          "description": "未操作fresh fixtureの長い状態名がnowrapで自セルから243.48px横へ突出する（320px通常LTR）。td overflow:visibleのため容量/進捗など隣列へ重なり、横スクロール後も状態文字と数値が混ざる。主gallery/portableとfresh通常/forced・LTR/RTLでも追跡。",
+          "recommendation": "状態札のmax-width/min-widthとwhite-space/overflow-wrapを設定し、セル内で読める折返しにする。列の情報を重ねない。",
+          "evidence": [
+            "measurements-table-layout-9.json",
+            "measurements-tables-9.json",
+            "evidence-9/fresh-ceramic-register-table.jpg"
+          ]
+        },
+        {
+          "kind": "sort_indicator_contrast",
+          "description": "操作可能な未ソート列を示す↕印が実背景合成2.516:1。非テキストの状態/操作記号として3:1未満。B3はopacity0.5が残る。disabledではない。",
+          "recommendation": "並べ替え印を実面に対して3:1以上へ。列名文字の4.5:1判定とは区別する。",
+          "evidence": [
+            "contrast-summary-9.json"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-9/sheet-ceramic-register-table.jpg",
+        "measurements-tables-9.json"
+      ],
+      "reviewed": {
+        "round": 9,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "soft-project-table",
+      "number": 688,
+      "verdict": "changes_required",
+      "note": "状態と進捗を追う広い行が実用的。長状態札・長題名・ソート印を修正。",
+      "findings": [
+        {
+          "kind": "long_badge_overlaps_adjacent_cells",
+          "description": "未操作fresh fixtureの長い状態名がnowrapで自セルから147.95px横へ突出する（320px通常LTR）。td overflow:visibleのため容量/進捗など隣列へ重なり、横スクロール後も状態文字と数値が混ざる。主gallery/portableとfresh通常/forced・LTR/RTLでも追跡。",
+          "recommendation": "状態札のmax-width/min-widthとwhite-space/overflow-wrapを設定し、セル内で読める折返しにする。列の情報を重ねない。",
+          "evidence": [
+            "measurements-table-layout-9.json",
+            "measurements-tables-9.json",
+            "evidence-9/fresh-soft-project-table.jpg"
+          ]
+        },
+        {
+          "kind": "sort_indicator_contrast",
+          "description": "操作可能な未ソート列を示す↕印が実背景合成2.151:1。非テキストの状態/操作記号として3:1未満。B3はopacity0.5が残る。disabledではない。",
+          "recommendation": "並べ替え印を実面に対して3:1以上へ。列名文字の4.5:1判定とは区別する。",
+          "evidence": [
+            "contrast-summary-9.json"
+          ]
+        },
+        {
+          "kind": "long_heading_clipping",
+          "description": "320px fresh fixtureで長い見出しがroot端を166.69px越えて切れる。通常・forcedとLTR/RTLを追跡。表の横スクロールとは別の見出し領域。",
+          "recommendation": "見出しのflex min-widthを解放し長語を折返す。長い題名でも表外枠に収める。",
+          "evidence": [
+            "measurements-table-layout-9.json",
+            "evidence-9/sheet-soft-project-table.jpg"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-9/sheet-soft-project-table.jpg",
+        "measurements-tables-9.json"
+      ],
+      "reviewed": {
+        "round": 9,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "clear-grid-table",
+      "number": 689,
+      "verdict": "changes_required",
+      "note": "列境界と密度の高い照合用途が明快。長状態札・長題名・ソート印を修正。",
+      "findings": [
+        {
+          "kind": "long_badge_overlaps_adjacent_cells",
+          "description": "未操作fresh fixtureの長い状態名がnowrapで自セルから139.95px横へ突出する（320px通常LTR）。td overflow:visibleのため容量/進捗など隣列へ重なり、横スクロール後も状態文字と数値が混ざる。主gallery/portableとfresh通常/forced・LTR/RTLでも追跡。",
+          "recommendation": "状態札のmax-width/min-widthとwhite-space/overflow-wrapを設定し、セル内で読める折返しにする。列の情報を重ねない。",
+          "evidence": [
+            "measurements-table-layout-9.json",
+            "measurements-tables-9.json",
+            "evidence-9/fresh-clear-grid-table.jpg"
+          ]
+        },
+        {
+          "kind": "sort_indicator_contrast",
+          "description": "操作可能な未ソート列を示す↕印が実背景合成2.069:1。非テキストの状態/操作記号として3:1未満。B3はopacity0.5が残る。disabledではない。",
+          "recommendation": "並べ替え印を実面に対して3:1以上へ。列名文字の4.5:1判定とは区別する。",
+          "evidence": [
+            "contrast-summary-9.json"
+          ]
+        },
+        {
+          "kind": "long_heading_clipping",
+          "description": "320px fresh fixtureで長い見出しがroot端を112.84px越えて切れる。通常・forcedとLTR/RTLを追跡。表の横スクロールとは別の見出し領域。",
+          "recommendation": "見出しのflex min-widthを解放し長語を折返す。長い題名でも表外枠に収める。",
+          "evidence": [
+            "measurements-table-layout-9.json",
+            "evidence-9/sheet-clear-grid-table.jpg"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-9/sheet-clear-grid-table.jpg",
+        "measurements-tables-9.json"
+      ],
+      "reviewed": {
+        "round": 9,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "warm-library-table",
+      "number": 690,
+      "verdict": "changes_required",
+      "note": "書名活字と管理札を読む用途差が成立。長状態札・長題名・ソート印を修正。",
+      "findings": [
+        {
+          "kind": "long_badge_overlaps_adjacent_cells",
+          "description": "未操作fresh fixtureの長い状態名がnowrapで自セルから217.61px横へ突出する（320px通常LTR）。td overflow:visibleのため容量/進捗など隣列へ重なり、横スクロール後も状態文字と数値が混ざる。主gallery/portableとfresh通常/forced・LTR/RTLでも追跡。",
+          "recommendation": "状態札のmax-width/min-widthとwhite-space/overflow-wrapを設定し、セル内で読める折返しにする。列の情報を重ねない。",
+          "evidence": [
+            "measurements-table-layout-9.json",
+            "measurements-tables-9.json",
+            "evidence-9/fresh-warm-library-table.jpg"
+          ]
+        },
+        {
+          "kind": "sort_indicator_contrast",
+          "description": "操作可能な未ソート列を示す↕印が実背景合成2.032:1。非テキストの状態/操作記号として3:1未満。B3はopacity0.5が残る。disabledではない。",
+          "recommendation": "並べ替え印を実面に対して3:1以上へ。列名文字の4.5:1判定とは区別する。",
+          "evidence": [
+            "contrast-summary-9.json"
+          ]
+        },
+        {
+          "kind": "long_heading_clipping",
+          "description": "320px fresh fixtureで長い見出しがroot端を242px越えて切れる。通常・forcedとLTR/RTLを追跡。表の横スクロールとは別の見出し領域。",
+          "recommendation": "見出しのflex min-widthを解放し長語を折返す。長い題名でも表外枠に収める。",
+          "evidence": [
+            "measurements-table-layout-9.json",
+            "evidence-9/sheet-warm-library-table.jpg"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-9/sheet-warm-library-table.jpg",
+        "measurements-tables-9.json"
+      ],
+      "reviewed": {
+        "round": 9,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "telescopic-stroke-loader",
+      "number": 696,
+      "verdict": "changes_required",
+      "note": "通常の筒は各位相で基部との接続を保ち、0/3600msが一致。forcedだけ旧矩形へ戻る点を修正。",
+      "findings": [
+        {
+          "kind": "forced_shape_reverts_to_old_design",
+          "description": "通常の基部付き六段筒がforcedでは旧六重矩形へ戻り、同じ伸縮機構として認識できない。新幾何がforced-colors:none内にあるため旧位置/寸法/アニメ規則が復活。gallery/portable/Reactで実画像確認。状態通知やpaused/reducedの機能故障とは区別した造形整合性の指摘。",
+          "recommendation": "筒の位置・寸法・共通位相・基部を配色条件から独立させ、forcedでは色と境界だけをシステム色へ。",
+          "evidence": [
+            "evidence-9/sheet-telescopic-stroke-loader.jpg",
+            "evidence-9/telescopic-stroke-loader-react-forced.png",
+            "src/parts/loaders/telescopic-stroke-loader/styles.css"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-9/sheet-telescopic-stroke-loader.jpg",
+        "measurements-loader-9.json"
+      ],
+      "reviewed": {
+        "round": 9,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    }
+  ],
+  "coverage": {
+    "authorHashesMatched": 100,
+    "sharedHashesMatched": 1,
+    "hashVerificationBeforeAuthorRelease": true,
+    "primaryRows": 20,
+    "nativeChecks": 290,
+    "reactPartsFormats": 40,
+    "reactChecks": 196,
+    "navLayoutConditions": 64,
+    "freshTableConditions": 56,
+    "loaderTimelinePhases": [
+      0,
+      900,
+      1800,
+      2700,
+      3600
+    ],
+    "imagesViewed": [
+      "2 navigation primary sheets /24 states",
+      "2 navigation layout sheets /16 states",
+      "7 table portable sheets /42 states",
+      "7 table gallery sheets /28 states",
+      "loader sheet /12 states",
+      "3 React sheets /20 states",
+      "fresh folded/warm table sheets /8 states",
+      "folded forced full image"
+    ],
+    "pendingRequiredMeasurements": [],
+    "limitations": [
+      "作者ソース参照計測と最終hash保存後にparentへrelease。以後の画像判定は凍結済み証拠のみ。",
+      "R670は番号と名称の余白0による可読性指摘で、文字の幾何的重なりとは断定しない。",
+      "R696はforced造形の整合性判断で、状態通知の機能故障とは区別。",
+      "表の長いセル値は独立した列へ侵入する点を不具合とした。必要な横スクロール自体は不具合ではない。",
+      "初回controlled checkbox fixtureはcheck()がchecked維持を待ち続けるためclick()へ修正して全14行再実行。",
+      "React長文/全layout組合せは未実行。同作者CSSをgallery/portableで実査。",
+      "特定状態のChromium検査であり無欠陥保証ではない。"
+    ]
+  }
+}

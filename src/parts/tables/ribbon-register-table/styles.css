@@ -83,3 +83,55 @@
 .sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-table-scroll{max-height:var(--wb-table-max-height,none)}
 
 @container(max-width:640px){.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-toolbar{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 48px auto}.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-table-search{grid-column:1;grid-row:1}.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-selection{grid-column:1;grid-row:3;margin-top:0}.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-toolbar::before,.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-toolbar::after{position:relative;grid-column:1;grid-row:2;inset:auto;height:auto;align-self:stretch}}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-frame{display:block;background:#fcf5f8;padding:0 16px;border:0;border-inline-start:10px solid #bb97ac}
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-heading{padding:24px 12px 18px;border:0}
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-toolbar{display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;gap:12px;padding:14px 12px;margin:0;background:#ead8e2;border:0;border-block:1px solid #cdb3c2;position:relative}
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-toolbar::before,.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-toolbar::after{display:none}
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-selection{position:relative;margin:0;flex:0 1 auto;min-width:0;min-height:44px;padding:8px 14px;background:#e0c5d5;border:1px solid #ba94aa;border-radius:0}
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-selection::after{content:'';position:absolute;inset:auto 8px -9px;width:18px;height:9px;background:#ae839b;clip-path:polygon(0 0,100% 0,100% 100%);pointer-events:none}
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-selection[hidden]{visibility:hidden!important}
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-table-search{flex:1 1 200px;max-width:400px}
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-table-scroll{margin-top:16px;border:0}
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table th{background:#e6cfdd;border:0;border-bottom:2px solid #b58ca5}
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table td{padding-block:16px;border-bottom:1px solid #d4b9c9}
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-footer{padding:18px 12px;border-block:1px solid #d4b9c9;background:none}
+
+}
+
+@media(forced-colors:none){
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-toolbar{min-height:0}.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-table-search{width:auto;min-height:48px;padding:8px 12px;border:1px solid #c7a6bb;border-bottom:3px solid #aa7c97;background:#fff6fb}.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-selection{width:auto;min-height:44px;align-self:center;padding:0 10px}
+}
+
+@media(forced-colors:none){
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-row-actions-heading,.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-row-actions{width:112px;min-width:112px;padding-inline:8px}.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-row-actions>div{display:flex;gap:4px;flex-wrap:nowrap}
+}
+
+/* Main material preflight */
+@media(forced-colors:none){
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-frame{position:relative;isolation:isolate;padding:0 0 34px 44px;padding-inline:44px 0;border:0;background:none;overflow:visible}
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-frame::before{content:'';display:block;position:absolute;inset:12px auto 0 12px;inset-inline-start:12px;width:24px;height:auto;background:linear-gradient(90deg,#98708b 0 2px,#cca8bf 2px 5px,#b88fa7 5px 19px,#d8b9cd 19px 22px,#8f667f 22px);clip-path:polygon(0 0,100% 0,100% 100%,50% calc(100% - 16px),0 100%);pointer-events:none;z-index:-1}
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-heading{position:relative;padding:24px 18px;background:#fff7fc;border:0;border-top:2px solid #b99aad;box-shadow:0 3px 0 #d1b5c6}
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-heading::before,.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-heading::after{content:'';display:block;position:absolute;inset-inline-start:-34px;width:52px;height:16px;background:linear-gradient(#d7b5cc 0 2px,#b38da4 2px 12px,#8e667e 12px);border:0;border-inline:2px solid #9a728a;box-shadow:0 2px 3px #62415733;pointer-events:none}
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-heading::before{top:18px}
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-heading::after{bottom:18px}
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-toolbar{position:relative;margin:16px 0;padding:16px 14px;background:#ead8e3;border:0;border-inline-start:4px solid #b98ea8;box-shadow:0 3px 0 #d1b5c6}
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-selection{padding:8px 12px;background:#d6b6ca;color:#593e50;border:1px solid #b0879f;flex:1 1 140px;max-width:100%;gap:12px}
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-selection span{overflow-wrap:anywhere;color:#593e50}
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-selection::after{background:#9d718b}
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-table-scroll{margin:0;background:#fff7fc;border:0;border-inline:1px solid #ccb0c1;box-shadow:0 4px 0 #d1b5c6}
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-status{margin:0;padding:18px;background:#fff7fc;border-inline:1px solid #ccb0c1}
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-footer{padding:4px 18px 20px;margin:0;background:#fff7fc;border:0;border-inline:1px solid #ccb0c1;border-bottom:4px solid #c3a0b6}
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table:dir(rtl) .wb-data-frame::before{background:linear-gradient(270deg,#98708b 0 2px,#cca8bf 2px 5px,#b88fa7 5px 19px,#d8b9cd 19px 22px,#8f667f 22px)}
+@container(max-width:350px){.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-frame{padding-inline-start:32px}.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-frame::before{inset-inline-start:6px;width:20px}.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-heading{padding:22px 12px}.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-heading::before,.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-heading::after{inset-inline-start:-28px;width:38px}.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-toolbar{padding-inline:10px}.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-footer{padding-inline:10px}}
+}
+
+@media(forced-colors:none){.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-data-heading{padding-inline-start:30px}}
+
+/* Keep arbitrary status names within the authored column. */
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-cell-badge{display:inline-block;max-width:100%;white-space:normal;overflow-wrap:anywhere;font-size:12px;line-height:1.6;vertical-align:middle}
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-cell-badge i{display:inline-block;vertical-align:middle;margin-inline-end:5px}
+.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-sort-glyph{opacity:1;color:var(--wb-ink)}
+@media(forced-colors:none){.sop-wb.sop-ribbon-register-table.sop-ribbon-register-table .wb-cell-progress b{color:var(--ink)}}

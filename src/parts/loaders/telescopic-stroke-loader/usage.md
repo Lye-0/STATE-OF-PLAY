@@ -1,6 +1,6 @@
 # Telescopic Stroke Loader
 
-六段の筒が同じ軸上で伸縮する。角枠の回転ではなく、奥へ続く伸縮の順序を示す。
+固定した基部から六段の筒が伸び縮みするローダー。角枠の回転ではなく、奥へ続く伸縮の順序を示す。
 
 ## 使用
 Reactは`TelescopicStrokeLoader`をimportして配置します。通常HTMLはmarkup.htmlとstyles.cssを置き、init(element, options)を呼びます。処理完了時は利用先がローダーを取り外すか非表示にしてください。実際の完了をライブラリが判断することはありません。
@@ -13,7 +13,7 @@ Reactは`TelescopicStrokeLoader`をimportして配置します。通常HTMLはma
 CSSアニメーションです。毎フレームのJavaScriptループやタイマーは使いません。非表示タブ・画面外・pausedでは止まり、prefers-reduced-motionでは静止形を表示します。destroy()で監視を解除します。独立した複数配置ができます。
 
 <!-- design-renewal -->
-六段の伸縮筒という元の主形を保持し、水平だけに伸縮する異なる長さの層へ整える。最小層を細い点にせず、段ごとの左の厚みと伸び差で一つの軸を示す。元の全体が上下に漂う動きは廃し、入れ子の面と実際の伸縮の方向を一致させる。
+固定した基部から六段の筒が伸び縮みするローダー。前段が次段を包み、共通の伸縮位相でつながりを保つ。
 
 native状態通知、pause、reduced motion、forced colors、React/JS配布を保持します。動くのは装飾領域だけです。
 <!-- /design-renewal -->

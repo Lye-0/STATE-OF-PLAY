@@ -1,5 +1,5 @@
 @import "../../../shared/workbench/base.css";
-/* Soft Project Table — Reviewラベルを明暗で判別できる配色に変更。 */
+/* Soft Project Table — 状態と進捗をまとめて追うプロジェクト表。広い行間、短い状態札、細い進捗線により案件を見比べる。 */
 .sop-wb.sop-soft-project-table {--wb-bg:#f6edf4;--wb-surface:#e9dfe5;--wb-ink:#493747;--wb-muted:#5a4355;--wb-accent:#70475f;--wb-line:#beabba;--wb-radius:6px;color-scheme:light}.sop-wb.sop-soft-project-table .wb-art{pointer-events:none}.sop-wb.sop-soft-project-table :is(.wb-search-results,.wb-command-dialog,.wb-context-panel,.wb-nav-flyout,.wb-nav-dialog){color:var(--wb-ink);background:var(--wb-bg)}.sop-wb.sop-soft-project-table .wb-data-frame{border-radius:14px}.sop-wb.sop-soft-project-table th{background:#ecdee8}.sop-wb.sop-soft-project-table .wb-cell-badge{border-radius:9px}.sop-wb.sop-soft-project-table .wb-data-heading{border-bottom:1px solid #d8c3d1}
 .sop-wb.sop-soft-project-table{max-width:100%}.sop-wb.sop-soft-project-table,.sop-wb.sop-soft-project-table *{box-sizing:border-box}.sop-wb.sop-soft-project-table :is(button,input,textarea,a){min-width:0}
 .sop-wb.sop-soft-project-table:focus-visible,.sop-wb.sop-soft-project-table :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
@@ -9,3 +9,35 @@
 
 /* Review: Reviewラベルを明暗で判別できる配色に変更 */
 .sop-wb.sop-soft-project-table .wb-cell-badge[data-value=review]{color:#76511c;background:#f8edce}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-soft-project-table.sop-soft-project-table .wb-data-frame{background:#fcf5fa;border:1px solid #d6bfd1;border-radius:12px;overflow:hidden}
+.sop-wb.sop-soft-project-table.sop-soft-project-table .wb-data-heading{padding:24px 20px 16px;border:0}
+.sop-wb.sop-soft-project-table.sop-soft-project-table .wb-data-heading h3{font:600 23px/1.5 Arial,'Yu Gothic',sans-serif}
+.sop-wb.sop-soft-project-table.sop-soft-project-table .wb-data-toolbar{padding:12px 20px 20px;gap:12px;border:0}
+.sop-wb.sop-soft-project-table.sop-soft-project-table th{font:600 12px/1.7 Arial,'Yu Gothic',sans-serif;background:#eadce7;padding-block:12px;border-bottom:1px solid #cbb1c5}
+.sop-wb.sop-soft-project-table.sop-soft-project-table td{padding-block:20px;background:#fffafd;border-bottom:1px solid #e1cfdb}
+.sop-wb.sop-soft-project-table.sop-soft-project-table .wb-cell-badge{border-radius:5px;padding:5px 8px}
+.sop-wb.sop-soft-project-table.sop-soft-project-table .wb-cell-progress>span{height:6px;border-radius:3px;background:#e6d5e0}
+.sop-wb.sop-soft-project-table.sop-soft-project-table .wb-cell-progress i{border-radius:3px;background:#99748e}
+.sop-wb.sop-soft-project-table.sop-soft-project-table .wb-data-footer{padding:16px 20px;border-top:1px solid #d6bfd1;font:13px/1.6 Arial,'Yu Gothic',sans-serif}
+
+}
+
+@media(forced-colors:none){
+.sop-wb.sop-soft-project-table.sop-soft-project-table .wb-row-actions-heading,.sop-wb.sop-soft-project-table.sop-soft-project-table .wb-row-actions{width:112px;min-width:112px;padding-inline:8px}.sop-wb.sop-soft-project-table.sop-soft-project-table .wb-row-actions>div{display:flex;gap:4px;flex-wrap:nowrap}
+}
+
+/* Keep arbitrary status names within the authored column. */
+.sop-wb.sop-soft-project-table.sop-soft-project-table .wb-cell-badge{display:inline-block;max-width:100%;white-space:normal;overflow-wrap:anywhere;font-size:12px;line-height:1.6;vertical-align:middle}
+.sop-wb.sop-soft-project-table.sop-soft-project-table .wb-cell-badge i{display:inline-block;vertical-align:middle;margin-inline-end:5px}
+.sop-wb.sop-soft-project-table.sop-soft-project-table .wb-sort-glyph{opacity:1;color:var(--wb-ink)}
+.sop-wb.sop-soft-project-table.sop-soft-project-table .wb-data-heading{flex-wrap:wrap}
+.sop-wb.sop-soft-project-table.sop-soft-project-table .wb-data-heading>div{flex:1 1 160px;min-width:0}
+.sop-wb.sop-soft-project-table.sop-soft-project-table .wb-data-heading h3,.sop-wb.sop-soft-project-table.sop-soft-project-table .wb-data-heading p{overflow-wrap:anywhere;max-width:100%}
+.sop-wb.sop-soft-project-table.sop-soft-project-table .wb-data-total{max-width:100%;overflow-wrap:anywhere}
+
+/* Operational supporting text remains readable at real display size. */
+.sop-wb.sop-soft-project-table.sop-soft-project-table .wb-data-heading p,.sop-wb.sop-soft-project-table.sop-soft-project-table .wb-data-total,.sop-wb.sop-soft-project-table.sop-soft-project-table .wb-data-selection,.sop-wb.sop-soft-project-table.sop-soft-project-table .wb-data-selection button,.sop-wb.sop-soft-project-table.sop-soft-project-table .wb-cell-progress b,.sop-wb.sop-soft-project-table.sop-soft-project-table .wb-data-status{font-size:12px;line-height:1.6}
+.sop-wb.sop-soft-project-table.sop-soft-project-table .wb-data-total{white-space:normal}

@@ -1,5 +1,5 @@
 @import "../../../shared/workbench/base.css";
-/* Warm Library Table — Reviewラベルを明暗で判別できる配色に変更。 */
+/* Warm Library Table — 書名を見出しの活字として読む蔵書台帳。書名と補足の階層、細い紙罫、独立した管理札で情報を分類する。 */
 .sop-wb.sop-warm-library-table {--wb-bg:#f6efdf;--wb-surface:#e6dfd2;--wb-ink:#453d32;--wb-muted:#5b4c36;--wb-accent:#745933;--wb-line:#c2b399;--wb-radius:6px;color-scheme:light}.sop-wb.sop-warm-library-table .wb-art{pointer-events:none}.sop-wb.sop-warm-library-table :is(.wb-search-results,.wb-command-dialog,.wb-context-panel,.wb-nav-flyout,.wb-nav-dialog){color:var(--wb-ink);background:var(--wb-bg)}.sop-wb.sop-warm-library-table .wb-data-frame{border-radius:5px;border-color:#c6ad81}.sop-wb.sop-warm-library-table .wb-data-heading h3{font-family:serif}.sop-wb.sop-warm-library-table th{background:#eee2c9}.sop-wb.sop-warm-library-table .wb-cell-badge{border-radius:4px}
 .sop-wb.sop-warm-library-table{max-width:100%}.sop-wb.sop-warm-library-table,.sop-wb.sop-warm-library-table *{box-sizing:border-box}.sop-wb.sop-warm-library-table :is(button,input,textarea,a){min-width:0}
 .sop-wb.sop-warm-library-table:focus-visible,.sop-wb.sop-warm-library-table :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
@@ -9,3 +9,34 @@
 
 /* Review: Reviewラベルを明暗で判別できる配色に変更 */
 .sop-wb.sop-warm-library-table .wb-cell-badge[data-value=review]{color:#76511c;background:#f8edce}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-warm-library-table.sop-warm-library-table .wb-data-frame{background:#fff8e9;border:0;border-block:3px double #bca272}
+.sop-wb.sop-warm-library-table.sop-warm-library-table .wb-data-heading{padding:26px 22px 20px;border-bottom:1px solid #d8c39c}
+.sop-wb.sop-warm-library-table.sop-warm-library-table .wb-data-heading h3{font:500 27px/1.4 Georgia,'Yu Mincho',serif}
+.sop-wb.sop-warm-library-table.sop-warm-library-table .wb-data-toolbar{padding:14px 22px;border-bottom:1px solid #d8c39c}
+.sop-wb.sop-warm-library-table.sop-warm-library-table th{background:#eee1c8;font:600 12px/1.7 Georgia,'Yu Mincho',serif;border-bottom:1px solid #bba173;padding:14px 18px}
+.sop-wb.sop-warm-library-table.sop-warm-library-table td{padding:18px;background:#fffbf0;border-bottom:1px solid #decdae;font:14px/1.8 Georgia,'Yu Mincho',serif}
+.sop-wb.sop-warm-library-table.sop-warm-library-table td[data-first-column] .wb-cell-text{font:600 16px/1.6 Georgia,'Yu Mincho',serif}
+.sop-wb.sop-warm-library-table.sop-warm-library-table .wb-cell-badge{font:12px/1.7 Arial,'Yu Gothic',sans-serif;padding:3px 6px;border:1px solid #c9b288;border-radius:0;background:#f1e5cd}
+.sop-wb.sop-warm-library-table.sop-warm-library-table .wb-data-footer{padding:18px 22px;font:13px/1.7 Georgia,'Yu Mincho',serif;border-top:1px solid #ccb58c}
+
+}
+
+@media(forced-colors:none){
+.sop-wb.sop-warm-library-table.sop-warm-library-table .wb-row-actions-heading,.sop-wb.sop-warm-library-table.sop-warm-library-table .wb-row-actions{width:112px;min-width:112px;padding-inline:8px}.sop-wb.sop-warm-library-table.sop-warm-library-table .wb-row-actions>div{display:flex;gap:4px;flex-wrap:nowrap}
+}
+
+/* Keep arbitrary status names within the authored column. */
+.sop-wb.sop-warm-library-table.sop-warm-library-table .wb-cell-badge{display:inline-block;max-width:100%;white-space:normal;overflow-wrap:anywhere;font-size:12px;line-height:1.6;vertical-align:middle}
+.sop-wb.sop-warm-library-table.sop-warm-library-table .wb-cell-badge i{display:inline-block;vertical-align:middle;margin-inline-end:5px}
+.sop-wb.sop-warm-library-table.sop-warm-library-table .wb-sort-glyph{opacity:1;color:var(--wb-ink)}
+.sop-wb.sop-warm-library-table.sop-warm-library-table .wb-data-heading{flex-wrap:wrap}
+.sop-wb.sop-warm-library-table.sop-warm-library-table .wb-data-heading>div{flex:1 1 160px;min-width:0}
+.sop-wb.sop-warm-library-table.sop-warm-library-table .wb-data-heading h3,.sop-wb.sop-warm-library-table.sop-warm-library-table .wb-data-heading p{overflow-wrap:anywhere;max-width:100%}
+.sop-wb.sop-warm-library-table.sop-warm-library-table .wb-data-total{max-width:100%;overflow-wrap:anywhere}
+
+/* Operational supporting text remains readable at real display size. */
+.sop-wb.sop-warm-library-table.sop-warm-library-table .wb-data-heading p,.sop-wb.sop-warm-library-table.sop-warm-library-table .wb-data-total,.sop-wb.sop-warm-library-table.sop-warm-library-table .wb-data-selection,.sop-wb.sop-warm-library-table.sop-warm-library-table .wb-data-selection button,.sop-wb.sop-warm-library-table.sop-warm-library-table .wb-cell-progress b,.sop-wb.sop-warm-library-table.sop-warm-library-table .wb-data-status{font-size:12px;line-height:1.6}
+.sop-wb.sop-warm-library-table.sop-warm-library-table .wb-data-total{white-space:normal}
