@@ -1,0 +1,276 @@
+{
+  "batch": "B001",
+  "round": 1,
+  "overall": "changes_required",
+  "parts": [
+    {
+      "id": "vellum-accordion-case",
+      "number": 24,
+      "verdict": "pass",
+      "note": "上下の罫線はhoverでもskewせず、蛇腹のみ0.65→1へ補間する。入口・解除・再進入に途中値があり、本文移動0px。Aの紙面と収納の構造を維持。320px・長見出し・動き軽減・強制色も確認。非操作装飾なのでキーボード起動は対象外。",
+      "findings": [],
+      "evidence": [
+        "measurements-complete-1.json",
+        "evidence-1/vellum-accordion-case-portable-base.png",
+        "evidence-1/vellum-accordion-case-portable-rest.png",
+        "evidence-1/vellum-accordion-case-portable-hover.png",
+        "evidence-1/vellum-accordion-case-portable-narrow.png",
+        "evidence-1/vellum-accordion-case-portable-long.png",
+        "evidence-1/vellum-accordion-case-portable-forced.png",
+        "evidence-1/vellum-accordion-case-gallery-base.png",
+        "evidence-1/vellum-accordion-case-gallery-rest.png",
+        "evidence-1/vellum-accordion-case-gallery-hover.png",
+        "evidence-1/vellum-accordion-case-gallery-narrow.png",
+        "evidence-1/vellum-accordion-case-gallery-long.png",
+        "evidence-1/vellum-accordion-case-gallery-forced.png"
+      ]
+    },
+    {
+      "id": "offset-diecut",
+      "number": 30,
+      "verdict": "pass",
+      "note": "旧矩形box-shadowは通常/hoverともnone。抜き型の面と下紙の回転は残り、入口・解除・再進入に途中値がある。本文移動0px。320pxの下紙の装飾上の張出しは本文を切らず、ページ横溢れなし。非操作装飾なのでキーボード起動は対象外。",
+      "findings": [],
+      "evidence": [
+        "measurements-complete-1.json",
+        "evidence-1/offset-diecut-portable-base.png",
+        "evidence-1/offset-diecut-portable-rest.png",
+        "evidence-1/offset-diecut-portable-hover.png",
+        "evidence-1/offset-diecut-portable-narrow.png",
+        "evidence-1/offset-diecut-portable-long.png",
+        "evidence-1/offset-diecut-portable-forced.png",
+        "evidence-1/offset-diecut-gallery-base.png",
+        "evidence-1/offset-diecut-gallery-rest.png",
+        "evidence-1/offset-diecut-gallery-hover.png",
+        "evidence-1/offset-diecut-gallery-narrow.png",
+        "evidence-1/offset-diecut-gallery-long.png",
+        "evidence-1/offset-diecut-gallery-forced.png"
+      ]
+    },
+    {
+      "id": "outline-row-select",
+      "number": 89,
+      "verdict": "changes_required",
+      "note": "公開済みの主ラベルは旧1.07:1から7.27:1へ改善。320px・長ラベル・Enter選択とEscape・強制色は機能する。ただし10pxの補助文はhover/active背景で4.19:1となるため、通常文字4.5:1を満たす色調整が必要。",
+      "findings": [
+        {
+          "kind": "contrast",
+          "severity": "moderate",
+          "status": "reproduced",
+          "description": "hover/active時の補助文「閲覧できる状態です」は10px、前景rgb(168,183,197) #a8b7c5、背景rgb(59,78,96) #3b4e60でコントラスト4.1907:1。主ラベルは7.2665:1へ改善したが、小さい通常文字の4.5:1に未達。",
+          "scope": "実galleryで補助文のcomputed色を実測。portableも同じCSS変数と色、背景を確認。未選択の候補をhoverすると再現し、data-active保持中も続く。",
+          "suggestion": "暗い候補面の構造を保ち、補助文字を少し明るくするかactive面を少し暗くして4.5:1以上にする。",
+          "evidence": [
+            "measurements-89-1.json",
+            "evidence-1/outline-row-select-gallery-hover.png",
+            "snapshot/round-1/source/outline-row-select/styles.css"
+          ]
+        }
+      ],
+      "evidence": [
+        "measurements-complete-1.json",
+        "evidence-1/outline-row-select-portable-base.png",
+        "evidence-1/outline-row-select-portable-rest.png",
+        "evidence-1/outline-row-select-portable-hover.png",
+        "evidence-1/outline-row-select-portable-narrow.png",
+        "evidence-1/outline-row-select-portable-long.png",
+        "evidence-1/outline-row-select-portable-forced.png",
+        "evidence-1/outline-row-select-gallery-base.png",
+        "evidence-1/outline-row-select-gallery-rest.png",
+        "evidence-1/outline-row-select-gallery-hover.png",
+        "evidence-1/outline-row-select-gallery-narrow.png",
+        "evidence-1/outline-row-select-gallery-long.png",
+        "evidence-1/outline-row-select-gallery-forced.png"
+      ]
+    },
+    {
+      "id": "editorial-inline-link",
+      "number": 146,
+      "verdict": "pass",
+      "note": "矢印translateは入口40msで0と2pxの途中、hoverで2px/-2px、解除/再進入も途中値を通り復帰する。350msのtranslate transitionを実測。文字・クリック領域は固定。320px/長ラベル、キーボードfocus outline、reducedでanimationなし、forcedの可読性を確認。Bの既存の密度・形状を維持。",
+      "findings": [],
+      "evidence": [
+        "measurements-complete-1.json",
+        "evidence-1/editorial-inline-link-portable-base.png",
+        "evidence-1/editorial-inline-link-portable-rest.png",
+        "evidence-1/editorial-inline-link-portable-hover.png",
+        "evidence-1/editorial-inline-link-portable-narrow.png",
+        "evidence-1/editorial-inline-link-portable-long.png",
+        "evidence-1/editorial-inline-link-portable-forced.png",
+        "evidence-1/editorial-inline-link-gallery-base.png",
+        "evidence-1/editorial-inline-link-gallery-rest.png",
+        "evidence-1/editorial-inline-link-gallery-hover.png",
+        "evidence-1/editorial-inline-link-gallery-narrow.png",
+        "evidence-1/editorial-inline-link-gallery-long.png",
+        "evidence-1/editorial-inline-link-gallery-forced.png"
+      ]
+    },
+    {
+      "id": "quiet-resource-link",
+      "number": 147,
+      "verdict": "pass",
+      "note": "矢印translateは入口40msで0と2pxの途中、hoverで2px/-2px、解除/再進入も途中値を通り復帰する。350msのtranslate transitionを実測。文字・クリック領域は固定。320px/長ラベル、キーボードfocus outline、reducedでanimationなし、forcedの可読性を確認。Bの既存の密度・形状を維持。",
+      "findings": [],
+      "evidence": [
+        "measurements-complete-1.json",
+        "evidence-1/quiet-resource-link-portable-base.png",
+        "evidence-1/quiet-resource-link-portable-rest.png",
+        "evidence-1/quiet-resource-link-portable-hover.png",
+        "evidence-1/quiet-resource-link-portable-narrow.png",
+        "evidence-1/quiet-resource-link-portable-long.png",
+        "evidence-1/quiet-resource-link-portable-forced.png",
+        "evidence-1/quiet-resource-link-gallery-base.png",
+        "evidence-1/quiet-resource-link-gallery-rest.png",
+        "evidence-1/quiet-resource-link-gallery-hover.png",
+        "evidence-1/quiet-resource-link-gallery-narrow.png",
+        "evidence-1/quiet-resource-link-gallery-long.png",
+        "evidence-1/quiet-resource-link-gallery-forced.png"
+      ]
+    },
+    {
+      "id": "clear-destination-link",
+      "number": 148,
+      "verdict": "pass",
+      "note": "矢印translateは入口40msで0と2pxの途中、hoverで2px/-2px、解除/再進入も途中値を通り復帰する。350msのtranslate transitionを実測。文字・クリック領域は固定。320px/長ラベル、キーボードfocus outline、reducedでanimationなし、forcedの可読性を確認。Bの既存の密度・形状を維持。",
+      "findings": [],
+      "evidence": [
+        "measurements-complete-1.json",
+        "evidence-1/clear-destination-link-portable-base.png",
+        "evidence-1/clear-destination-link-portable-rest.png",
+        "evidence-1/clear-destination-link-portable-hover.png",
+        "evidence-1/clear-destination-link-portable-narrow.png",
+        "evidence-1/clear-destination-link-portable-long.png",
+        "evidence-1/clear-destination-link-portable-forced.png",
+        "evidence-1/clear-destination-link-gallery-base.png",
+        "evidence-1/clear-destination-link-gallery-rest.png",
+        "evidence-1/clear-destination-link-gallery-hover.png",
+        "evidence-1/clear-destination-link-gallery-narrow.png",
+        "evidence-1/clear-destination-link-gallery-long.png",
+        "evidence-1/clear-destination-link-gallery-forced.png"
+      ]
+    },
+    {
+      "id": "compact-route-link",
+      "number": 149,
+      "verdict": "pass",
+      "note": "矢印translateは入口40msで0と2pxの途中、hoverで2px/-2px、解除/再進入も途中値を通り復帰する。350msのtranslate transitionを実測。文字・クリック領域は固定。320px/長ラベル、キーボードfocus outline、reducedでanimationなし、forcedの可読性を確認。Bの既存の密度・形状を維持。",
+      "findings": [],
+      "evidence": [
+        "measurements-complete-1.json",
+        "evidence-1/compact-route-link-portable-base.png",
+        "evidence-1/compact-route-link-portable-rest.png",
+        "evidence-1/compact-route-link-portable-hover.png",
+        "evidence-1/compact-route-link-portable-narrow.png",
+        "evidence-1/compact-route-link-portable-long.png",
+        "evidence-1/compact-route-link-portable-forced.png",
+        "evidence-1/compact-route-link-gallery-base.png",
+        "evidence-1/compact-route-link-gallery-rest.png",
+        "evidence-1/compact-route-link-gallery-hover.png",
+        "evidence-1/compact-route-link-gallery-narrow.png",
+        "evidence-1/compact-route-link-gallery-long.png",
+        "evidence-1/compact-route-link-gallery-forced.png"
+      ]
+    },
+    {
+      "id": "reading-next-link",
+      "number": 150,
+      "verdict": "pass",
+      "note": "矢印translateは入口40msで0と2pxの途中、hoverで2px/-2px、解除/再進入も途中値を通り復帰する。350msのtranslate transitionを実測。文字・クリック領域は固定。320px/長ラベル、キーボードfocus outline、reducedでanimationなし、forcedの可読性を確認。Bの既存の密度・形状を維持。",
+      "findings": [],
+      "evidence": [
+        "measurements-complete-1.json",
+        "evidence-1/reading-next-link-portable-base.png",
+        "evidence-1/reading-next-link-portable-rest.png",
+        "evidence-1/reading-next-link-portable-hover.png",
+        "evidence-1/reading-next-link-portable-narrow.png",
+        "evidence-1/reading-next-link-portable-long.png",
+        "evidence-1/reading-next-link-portable-forced.png",
+        "evidence-1/reading-next-link-gallery-base.png",
+        "evidence-1/reading-next-link-gallery-rest.png",
+        "evidence-1/reading-next-link-gallery-hover.png",
+        "evidence-1/reading-next-link-gallery-narrow.png",
+        "evidence-1/reading-next-link-gallery-long.png",
+        "evidence-1/reading-next-link-gallery-forced.png"
+      ]
+    },
+    {
+      "id": "ivory-notch-segments",
+      "number": 182,
+      "verdict": "pass",
+      "note": "未選択文字#eff2eeをhover/解除/再進入でも保持し、面#526870との比率5.21:1。320pxで各セルが等幅（portable102.5px、gallery75px）。長ラベルはセル内に折り返す。縦指定も全セル等幅・82px高で成立。矢印キー選択、reduced/forcedを確認。",
+      "findings": [],
+      "evidence": [
+        "measurements-complete-1.json",
+        "evidence-1/ivory-notch-segments-portable-base.png",
+        "evidence-1/ivory-notch-segments-portable-rest.png",
+        "evidence-1/ivory-notch-segments-portable-hover.png",
+        "evidence-1/ivory-notch-segments-portable-narrow.png",
+        "evidence-1/ivory-notch-segments-portable-long.png",
+        "evidence-1/ivory-notch-segments-portable-vertical.png",
+        "evidence-1/ivory-notch-segments-portable-forced.png",
+        "evidence-1/ivory-notch-segments-gallery-base.png",
+        "evidence-1/ivory-notch-segments-gallery-rest.png",
+        "evidence-1/ivory-notch-segments-gallery-hover.png",
+        "evidence-1/ivory-notch-segments-gallery-narrow.png",
+        "evidence-1/ivory-notch-segments-gallery-long.png",
+        "evidence-1/ivory-notch-segments-gallery-vertical.png",
+        "evidence-1/ivory-notch-segments-gallery-forced.png"
+      ]
+    },
+    {
+      "id": "station-label-trail",
+      "number": 422,
+      "verdict": "pass",
+      "note": "展開メニューObjectsはhoverでも#e6eff4を保持し、面#28485eとの比率8.27:1。下線で状態を示し文字移動0px。320px/長文/強制色を確認。Enterで開いてリンクへfocus、Escapeで閉じる。",
+      "findings": [],
+      "evidence": [
+        "measurements-complete-1.json",
+        "evidence-1/station-label-trail-portable-base.png",
+        "evidence-1/station-label-trail-portable-rest.png",
+        "evidence-1/station-label-trail-portable-hover.png",
+        "evidence-1/station-label-trail-portable-narrow.png",
+        "evidence-1/station-label-trail-portable-long.png",
+        "evidence-1/station-label-trail-portable-forced.png",
+        "evidence-1/station-label-trail-gallery-base.png",
+        "evidence-1/station-label-trail-gallery-rest.png",
+        "evidence-1/station-label-trail-gallery-hover.png",
+        "evidence-1/station-label-trail-gallery-narrow.png",
+        "evidence-1/station-label-trail-gallery-long.png",
+        "evidence-1/station-label-trail-gallery-forced.png"
+      ]
+    }
+  ],
+  "counts": {
+    "pass": 9,
+    "changes_required": 1
+  },
+  "reviewer": "Independent reviewer",
+  "sourceHashesVerified": true,
+  "snapshot": "snapshot/round-1/index.html",
+  "coverage": {
+    "parts": 10,
+    "modes": [
+      "frozen portable",
+      "actual gallery with matching author hashes"
+    ],
+    "states": [
+      "normal",
+      "hover entry 40ms",
+      "hover",
+      "exit 60ms",
+      "reentry 60ms",
+      "returned",
+      "320px",
+      "long labels",
+      "keyboard as applicable",
+      "prefers-reduced-motion",
+      "forced-colors"
+    ],
+    "imagesVisuallyReviewed": true
+  },
+  "limitations": [
+    "実測した状態と対象についての判定であり、全入力・全ブラウザの無欠陥保証ではない。",
+    "React固有の実行経路は今回の実ブラウザ検査対象外。",
+    "galleryのR089は幅変更時に閉じた後、開き直して狭幅・長文・強制色を再検査した。"
+  ]
+}

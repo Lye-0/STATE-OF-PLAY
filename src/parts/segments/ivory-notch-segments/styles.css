@@ -4,7 +4,7 @@
 .sop-choice.sop-ivory-notch-segments.sop-ivory-notch-segments{--choice-base:#edf0e9;--choice-ink:#3b4b55;--choice-muted:#6c7e83;--choice-accent:#577d90;--choice-line:#a4b6ba;--choice-on:#3b4b55;--choice-radius:0px;max-width:380px;width:100%;min-width:0;background:transparent;color:var(--choice-ink);font:14px/1.5 Arial,"Yu Gothic",sans-serif;border:0;box-shadow:none;isolation:isolate}
 .sop-choice.sop-ivory-notch-segments.sop-ivory-notch-segments>.sop-choice-list{background:transparent;border:0;border-radius:0;padding:9px 4px;gap:10px;overflow:visible;display:flex;flex-wrap:wrap;isolation:isolate}
 .sop-choice.sop-ivory-notch-segments.sop-ivory-notch-segments>.sop-choice-list>.sop-choice-item{flex:1 1 100px;min-width:min(100%,100px);max-width:100%;min-height:77px;display:flex;align-items:center;justify-content:center;gap:7px;padding:20px 10px;border:0;border-radius:0;background:transparent;color:var(--choice-ink);font:500 14px/1.5 Arial,"Yu Gothic",sans-serif;transform:none;box-shadow:none;isolation:isolate;transition:none}
-.sop-choice.sop-ivory-notch-segments.sop-ivory-notch-segments>.sop-choice-list>.sop-choice-item:hover,.sop-choice.sop-ivory-notch-segments.sop-ivory-notch-segments>.sop-choice-list>.sop-choice-item[data-selected=true]{background:transparent;color:var(--choice-ink);font-weight:500;transform:none;box-shadow:none}
+.sop-choice.sop-ivory-notch-segments.sop-ivory-notch-segments>.sop-choice-list>.sop-choice-item:hover,.sop-choice.sop-ivory-notch-segments.sop-ivory-notch-segments>.sop-choice-list>.sop-choice-item[data-selected=true]{background:transparent;font-weight:500;transform:none;box-shadow:none}
 .sop-choice.sop-ivory-notch-segments.sop-ivory-notch-segments .sop-choice-label,.sop-choice.sop-ivory-notch-segments.sop-ivory-notch-segments .sop-choice-copy{min-width:0;overflow-wrap:anywhere;position:relative;z-index:2;line-height:1.5}
 .sop-choice.sop-ivory-notch-segments.sop-ivory-notch-segments .sop-choice-label{white-space:normal}
 .sop-choice.sop-ivory-notch-segments.sop-ivory-notch-segments .sop-choice-description{font-size:11px;line-height:1.6;opacity:1;color:inherit;overflow-wrap:anywhere}
@@ -28,3 +28,8 @@
 .sop-choice.sop-ivory-notch-segments.sop-ivory-notch-segments>.sop-choice-list>.sop-choice-item::before{inset:0;background:#526870;clip-path:polygon(0 0,37% 0,37% 6px,63% 6px,63% 0,100% 0,100% 100%,63% 100%,63% calc(100% - 6px),37% calc(100% - 6px),37% 100%,0 100%);border-block:3px solid #92a7aa}
 .sop-choice.sop-ivory-notch-segments.sop-ivory-notch-segments>.sop-choice-list>.sop-choice-item[data-selected=true]{color:#354a53}
 .sop-choice.sop-ivory-notch-segments.sop-ivory-notch-segments>.sop-choice-list>.sop-choice-item[data-selected=true]::before{background:#fff4d5;border-block-color:#c7b997}
+
+/* Equal tracks keep every option the same weight at narrow widths. */
+.sop-choice.sop-ivory-notch-segments.sop-ivory-notch-segments>.sop-choice-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,75px),1fr))}
+.sop-choice.sop-ivory-notch-segments.sop-ivory-notch-segments>.sop-choice-list>.sop-choice-item{min-width:0;padding-inline:8px}
+.sop-choice.sop-ivory-notch-segments.sop-ivory-notch-segments[data-orientation=vertical]>.sop-choice-list{display:flex}

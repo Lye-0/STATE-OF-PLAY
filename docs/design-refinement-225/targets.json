@@ -1,0 +1,5347 @@
+[
+  {
+    "number": 24,
+    "id": "vellum-accordion-case",
+    "name": "Vellum Accordion Case",
+    "category": "blocks",
+    "categoryName": "ブロック",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "通常の蛇腹構造は成立するが、操作後に上下の罫線だけが紙面から傾いて外れ、厚みの表現と矛盾して見える。",
+    "issues": [
+      {
+        "kind": "hover",
+        "description": "通常の蛇腹構造は成立するが、操作後に上下の罫線だけが紙面から傾いて外れ、厚みの表現と矛盾して見える。"
+      }
+    ],
+    "batch": "B001",
+    "state": "ready_to_push",
+    "base": "src/parts/blocks/vellum-accordion-case",
+    "reviewRound": 2
+  },
+  {
+    "number": 30,
+    "id": "offset-diecut",
+    "name": "Offset Diecut",
+    "category": "blocks",
+    "categoryName": "ブロック",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "抜き型の下紙は独自性があるが、操作後に右下へ別の矩形輪郭が現れ、角の切断形状と整合しない。",
+    "issues": [
+      {
+        "kind": "hover",
+        "description": "抜き型の下紙は独自性があるが、操作後に右下へ別の矩形輪郭が現れ、角の切断形状と整合しない。"
+      }
+    ],
+    "batch": "B001",
+    "state": "ready_to_push",
+    "base": "src/parts/blocks/offset-diecut",
+    "reviewRound": 2
+  },
+  {
+    "number": 89,
+    "id": "outline-row-select",
+    "name": "Outline Row Select",
+    "category": "dropdowns",
+    "categoryName": "プルダウン",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "通常時は暗色の細い外枠と整理された一覧に抑制がある。ただし、展開項目のホバー配色に重大な不整合がある。",
+    "issues": [
+      {
+        "kind": "hover",
+        "description": "展開した「公開済み」にホバーすると、白い文字のまま背景だけが淡色化し、コントラストが11.02:1から1.07:1へ低下する。退出後もactive状態が残り、読みにくい表示が続く。旧ライト配色の --sel-hover が暗い配色と混在している。",
+        "evidence": [
+          "reviewer/outline-row-select-rest-focused.png",
+          "reviewer/outline-row-select-hover-focused.png"
+        ]
+      }
+    ],
+    "batch": "B001",
+    "state": "ready_to_push",
+    "base": "src/parts/dropdowns/outline-row-select",
+    "reviewRound": 2
+  },
+  {
+    "number": 146,
+    "id": "editorial-inline-link",
+    "name": "Editorial Inline Link",
+    "category": "links",
+    "categoryName": "リンク",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "リンク自体は読みやすいが、矢印のホバー移動が補間されず瞬間的に切り替わる。実CSSでtranslateを変更する一方、transitionはtransformだけを対象としている。開始・解除を連続した移動に揃えたい。",
+    "issues": [
+      {
+        "kind": "hover",
+        "description": "リンク自体は読みやすいが、矢印のホバー移動が補間されず瞬間的に切り替わる。実CSSでtranslateを変更する一方、transitionはtransformだけを対象としている。開始・解除を連続した移動に揃えたい。"
+      }
+    ],
+    "batch": "B001",
+    "state": "ready_to_push",
+    "base": "src/parts/links/editorial-inline-link",
+    "reviewRound": 2
+  },
+  {
+    "number": 147,
+    "id": "quiet-resource-link",
+    "name": "Quiet Resource Link",
+    "category": "links",
+    "categoryName": "リンク",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "リンク自体は読みやすいが、矢印のホバー移動が補間されず瞬間的に切り替わる。実CSSでtranslateを変更する一方、transitionはtransformだけを対象としている。開始・解除を連続した移動に揃えたい。",
+    "issues": [
+      {
+        "kind": "hover",
+        "description": "リンク自体は読みやすいが、矢印のホバー移動が補間されず瞬間的に切り替わる。実CSSでtranslateを変更する一方、transitionはtransformだけを対象としている。開始・解除を連続した移動に揃えたい。"
+      }
+    ],
+    "batch": "B001",
+    "state": "ready_to_push",
+    "base": "src/parts/links/quiet-resource-link",
+    "reviewRound": 2
+  },
+  {
+    "number": 148,
+    "id": "clear-destination-link",
+    "name": "Clear Destination Link",
+    "category": "links",
+    "categoryName": "リンク",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "リンク自体は読みやすいが、矢印のホバー移動が補間されず瞬間的に切り替わる。実CSSでtranslateを変更する一方、transitionはtransformだけを対象としている。開始・解除を連続した移動に揃えたい。",
+    "issues": [
+      {
+        "kind": "hover",
+        "description": "リンク自体は読みやすいが、矢印のホバー移動が補間されず瞬間的に切り替わる。実CSSでtranslateを変更する一方、transitionはtransformだけを対象としている。開始・解除を連続した移動に揃えたい。"
+      }
+    ],
+    "batch": "B001",
+    "state": "ready_to_push",
+    "base": "src/parts/links/clear-destination-link",
+    "reviewRound": 2
+  },
+  {
+    "number": 149,
+    "id": "compact-route-link",
+    "name": "Compact Route Link",
+    "category": "links",
+    "categoryName": "リンク",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "リンク自体は読みやすいが、矢印のホバー移動が補間されず瞬間的に切り替わる。実CSSでtranslateを変更する一方、transitionはtransformだけを対象としている。開始・解除を連続した移動に揃えたい。",
+    "issues": [
+      {
+        "kind": "hover",
+        "description": "リンク自体は読みやすいが、矢印のホバー移動が補間されず瞬間的に切り替わる。実CSSでtranslateを変更する一方、transitionはtransformだけを対象としている。開始・解除を連続した移動に揃えたい。"
+      }
+    ],
+    "batch": "B001",
+    "state": "ready_to_push",
+    "base": "src/parts/links/compact-route-link",
+    "reviewRound": 2
+  },
+  {
+    "number": 150,
+    "id": "reading-next-link",
+    "name": "Reading Next Link",
+    "category": "links",
+    "categoryName": "リンク",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "リンク自体は読みやすいが、矢印のホバー移動が補間されず瞬間的に切り替わる。実CSSでtranslateを変更する一方、transitionはtransformだけを対象としている。開始・解除を連続した移動に揃えたい。",
+    "issues": [
+      {
+        "kind": "hover",
+        "description": "リンク自体は読みやすいが、矢印のホバー移動が補間されず瞬間的に切り替わる。実CSSでtranslateを変更する一方、transitionはtransformだけを対象としている。開始・解除を連続した移動に揃えたい。"
+      }
+    ],
+    "batch": "B001",
+    "state": "ready_to_push",
+    "base": "src/parts/links/reading-next-link",
+    "reviewRound": 2
+  },
+  {
+    "number": 182,
+    "id": "ivory-notch-segments",
+    "name": "Ivory Notch Segments",
+    "category": "segments",
+    "categoryName": "セグメント",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "切欠きは整っているが、320pxで最後だけ倍幅になって選択欄の構成が2+1の強弱に変わる。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "切欠きは整っているが、320pxで最後だけ倍幅になって選択欄の構成が2+1の強弱に変わる。"
+      },
+      {
+        "kind": "hover",
+        "description": "未選択の「日」にホバーすると、暗い面に文字まで暗くなり、コントラストが5.21:1から1.58:1へ低下する。退出すると戻る。先行する:hover色指定と後段の配色に不整合がある。",
+        "evidence": [
+          "reviewer/ivory-notch-segments-rest-focused.png",
+          "reviewer/ivory-notch-segments-hover-focused.png"
+        ]
+      }
+    ],
+    "batch": "B001",
+    "state": "ready_to_push",
+    "base": "src/parts/segments/ivory-notch-segments",
+    "reviewRound": 2
+  },
+  {
+    "number": 422,
+    "id": "station-label-trail",
+    "name": "Station Label Trail",
+    "category": "breadcrumbs",
+    "categoryName": "パンくず",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "暗い案内板の接続罫と白い現在札で階層と現在位置が読みやすい。 展開後のObjectsはhoverで文字が背景へ沈む。",
+    "issues": [
+      {
+        "kind": "hover",
+        "severity": "major",
+        "status": "confirmed-in-gallery",
+        "description": "展開メニューObjectsの文字#e6eff4がhoverで#65839aへ変わり、背景#28485eとのコントラストが8.27:1から2.42:1に低下。文字位置は安定し、解除で初期色へ復帰する。",
+        "cause": "station-label-trail/styles.css:22 の広いa:hover:not([aria-disabled=true])が、後段の濃色メニュー用白文字を詳細度で上書き。",
+        "scope": "ギャラリー実測。配布全形態を個別実行してはいない。",
+        "evidence": [
+          "reviewer/breadcrumb422-probes.json",
+          "reviewer/station-label-trail-rest-focused.png",
+          "reviewer/station-label-trail-hover-focused.png"
+        ]
+      }
+    ],
+    "batch": "B001",
+    "state": "ready_to_push",
+    "base": "src/parts/breadcrumbs/station-label-trail",
+    "reviewRound": 2
+  },
+  {
+    "number": 33,
+    "id": "contoured-cork-panel",
+    "name": "Contoured Cork Panel",
+    "category": "blocks",
+    "categoryName": "ブロック",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "面の丸みと薄い切断縁は整っているが、コルクの固有性が弱く、通常の茶色い角丸カードとの差が小さい。Aとして素材の説得力をもう一段詰めたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "面の丸みと薄い切断縁は整っているが、コルクの固有性が弱く、通常の茶色い角丸カードとの差が小さい。Aとして素材の説得力をもう一段詰めたい。"
+      }
+    ],
+    "batch": "B002",
+    "state": "pending",
+    "base": "src/parts/blocks/contoured-cork-panel"
+  },
+  {
+    "number": 37,
+    "id": "compact-note-panel",
+    "name": "Compact Note Panel",
+    "category": "blocks",
+    "categoryName": "ブロック",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R036と本文・余白・操作位置がほぼ同じで、主な差が暖色と角の形に集中する。単体の実用性はあるが別作品としての必然性が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "R036と本文・余白・操作位置がほぼ同じで、主な差が暖色と角の形に集中する。単体の実用性はあるが別作品としての必然性が弱い。"
+      }
+    ],
+    "batch": "B002",
+    "state": "pending",
+    "base": "src/parts/blocks/compact-note-panel"
+  },
+  {
+    "number": 38,
+    "id": "cool-inset-card",
+    "name": "Cool Inset Card",
+    "category": "blocks",
+    "categoryName": "ブロック",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R036の淡青色版に近く、Insetという名前に対応する沈み込みも弱い。構造や密度で用途上の違いを作りたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "R036の淡青色版に近く、Insetという名前に対応する沈み込みも弱い。構造や密度で用途上の違いを作りたい。"
+      }
+    ],
+    "batch": "B002",
+    "state": "pending",
+    "base": "src/parts/blocks/cool-inset-card"
+  },
+  {
+    "number": 49,
+    "id": "ivory-gasket-button",
+    "name": "Ivory Gasket Button",
+    "category": "buttons",
+    "categoryName": "ボタン",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "下の二つの輪と横棒が台車の車輪に見え、押下面より支持部の主張が強い。ガスケットの質感や圧縮の意味が見えにくく、玩具的な印象が残る。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "下の二つの輪と横棒が台車の車輪に見え、押下面より支持部の主張が強い。ガスケットの質感や圧縮の意味が見えにくく、玩具的な印象が残る。"
+      }
+    ],
+    "batch": "B002",
+    "state": "pending",
+    "base": "src/parts/buttons/ivory-gasket-button"
+  },
+  {
+    "number": 65,
+    "id": "punctuated-path-scroll",
+    "name": "Punctuated Path Scroll",
+    "category": "scrollbars",
+    "categoryName": "スクロールバー",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "点線のレールと普通の丸棒のつまみに留まり、Aとしての固有の構造や素材感が弱い。太くするのではなく、つまみと目盛りの関係を詰めたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "点線のレールと普通の丸棒のつまみに留まり、Aとしての固有の構造や素材感が弱い。太くするのではなく、つまみと目盛りの関係を詰めたい。"
+      }
+    ],
+    "batch": "B002",
+    "state": "pending",
+    "base": "src/parts/scrollbars/punctuated-path-scroll"
+  },
+  {
+    "number": 66,
+    "id": "enamel-needle-scroll",
+    "name": "Enamel Needle Scroll",
+    "category": "scrollbars",
+    "categoryName": "スクロールバー",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "淡い針形のつまみは整っているが、同系の細いレール作品との差が輪郭端と色に偏り、Aの独創性としては控えめすぎる。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "淡い針形のつまみは整っているが、同系の細いレール作品との差が輪郭端と色に偏り、Aの独創性としては控えめすぎる。"
+      }
+    ],
+    "batch": "B002",
+    "state": "pending",
+    "base": "src/parts/scrollbars/enamel-needle-scroll"
+  },
+  {
+    "number": 71,
+    "id": "parallel-pencil-scroll",
+    "name": "Parallel Pencil Scroll",
+    "category": "scrollbars",
+    "categoryName": "スクロールバー",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "通常・操作後とも金色の細い棒と一本線に見え、Bとしては上品だがAの強い個性はまだ弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "通常・操作後とも金色の細い棒と一本線に見え、Bとしては上品だがAの強い個性はまだ弱い。"
+      }
+    ],
+    "batch": "B002",
+    "state": "pending",
+    "base": "src/parts/scrollbars/parallel-pencil-scroll"
+  },
+  {
+    "number": 87,
+    "id": "everyday-select",
+    "name": "Everyday Select",
+    "category": "dropdowns",
+    "categoryName": "プルダウン",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "ラベルが入力本体と同色の独立した板になり、短い説明へ余分な視覚的重さがある。Bとしては見出しを軽くして操作面を主役にしたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "ラベルが入力本体と同色の独立した板になり、短い説明へ余分な視覚的重さがある。Bとしては見出しを軽くして操作面を主役にしたい。"
+      }
+    ],
+    "batch": "B002",
+    "state": "pending",
+    "base": "src/parts/dropdowns/everyday-select"
+  },
+  {
+    "number": 88,
+    "id": "dense-list-select",
+    "name": "Dense List Select",
+    "category": "dropdowns",
+    "categoryName": "プルダウン",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "高密度の入力本体に対し独立したラベル板の間隔と主張が強く、Denseの密度設計が途中で途切れている。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "高密度の入力本体に対し独立したラベル板の間隔と主張が強く、Denseの密度設計が途中で途切れている。"
+      }
+    ],
+    "batch": "B002",
+    "state": "pending",
+    "base": "src/parts/dropdowns/dense-list-select"
+  },
+  {
+    "number": 90,
+    "id": "warm-form-select",
+    "name": "Warm Form Select",
+    "category": "dropdowns",
+    "categoryName": "プルダウン",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "暖色の本体は読みやすいが、上の同色ラベル板が別の小さな入力欄に見えやすい。ラベルと操作面の重みを分けたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "暖色の本体は読みやすいが、上の同色ラベル板が別の小さな入力欄に見えやすい。ラベルと操作面の重みを分けたい。"
+      }
+    ],
+    "batch": "B002",
+    "state": "pending",
+    "base": "src/parts/dropdowns/warm-form-select"
+  },
+  {
+    "number": 96,
+    "id": "loom-border-accordion",
+    "name": "Loom Border Accordion",
+    "category": "accordions",
+    "categoryName": "アコーディオン",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "上下の金線・側線・下の金具が重なって枠の存在感が強く、本文より額縁を先に見てしまう。線の役割を減らして織機の主題を明確にしたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "上下の金線・側線・下の金具が重なって枠の存在感が強く、本文より額縁を先に見てしまう。線の役割を減らして織機の主題を明確にしたい。"
+      }
+    ],
+    "batch": "B003",
+    "state": "pending",
+    "base": "src/parts/accordions/loom-border-accordion"
+  },
+  {
+    "number": 104,
+    "id": "recess-stack-accordion",
+    "name": "Recess Stack Accordion",
+    "category": "accordions",
+    "categoryName": "アコーディオン",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "右端の多重の黄土色リムが厚く重なり、陶器というより古い立体枠の印象が強い。厚みと光の向きを整理して質感を軽くしたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "右端の多重の黄土色リムが厚く重なり、陶器というより古い立体枠の印象が強い。厚みと光の向きを整理して質感を軽くしたい。"
+      }
+    ],
+    "batch": "B003",
+    "state": "pending",
+    "base": "src/parts/accordions/recess-stack-accordion"
+  },
+  {
+    "number": 112,
+    "id": "enamel-trough-field",
+    "name": "Enamel Trough Field",
+    "category": "textboxes",
+    "categoryName": "テキストボックス",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "非対称の角丸は整っているが、ほぼ平坦な入力面でエナメルの奥行きが弱い。Aとしては一般的な角丸入力欄との差が小さい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "非対称の角丸は整っているが、ほぼ平坦な入力面でエナメルの奥行きが弱い。Aとしては一般的な角丸入力欄との差が小さい。"
+      }
+    ],
+    "batch": "B003",
+    "state": "pending",
+    "base": "src/parts/textboxes/enamel-trough-field"
+  },
+  {
+    "number": 114,
+    "id": "writing-saddle",
+    "name": "Writing Saddle",
+    "category": "textboxes",
+    "categoryName": "テキストボックス",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "通常は淡い丸角入力欄に近く、側面の受けも小さい色帯に見える。鞍の構造を見せるかB相当の簡潔さとして整理したい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "通常は淡い丸角入力欄に近く、側面の受けも小さい色帯に見える。鞍の構造を見せるかB相当の簡潔さとして整理したい。"
+      }
+    ],
+    "batch": "B003",
+    "state": "pending",
+    "base": "src/parts/textboxes/writing-saddle"
+  },
+  {
+    "number": 119,
+    "id": "corner-scribe-field",
+    "name": "Corner Scribe Field",
+    "category": "textboxes",
+    "categoryName": "テキストボックス",
+    "designType": "A",
+    "verdict": "redesign",
+    "note": "ほぼ普通の矩形入力欄へ四隅の短い線を足した構成に留まる。Aの独創性を角飾りだけに頼っており、固有の構造が必要。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "ほぼ普通の矩形入力欄へ四隅の短い線を足した構成に留まる。Aの独創性を角飾りだけに頼っており、固有の構造が必要。"
+      }
+    ],
+    "batch": "B003",
+    "state": "pending",
+    "base": "src/parts/textboxes/corner-scribe-field"
+  },
+  {
+    "number": 121,
+    "id": "wax-tablet-input",
+    "name": "Wax Tablet Input",
+    "category": "textboxes",
+    "categoryName": "テキストボックス",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "厚い黄土色の枠と右下の膨らみが重く、蝋の柔らかさより成型プラスチックの印象が強い。厚み・光沢・膨らみの接続を整理したい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "厚い黄土色の枠と右下の膨らみが重く、蝋の柔らかさより成型プラスチックの印象が強い。厚み・光沢・膨らみの接続を整理したい。"
+      }
+    ],
+    "batch": "B003",
+    "state": "pending",
+    "base": "src/parts/textboxes/wax-tablet-input"
+  },
+  {
+    "number": 124,
+    "id": "drafting-tray-field",
+    "name": "Drafting Tray Field",
+    "category": "textboxes",
+    "categoryName": "テキストボックス",
+    "designType": "A",
+    "verdict": "redesign",
+    "note": "通常と入力後の主な見た目が、薄い枠付きの角丸入力欄に留まる。トレーの素材・支えが読み取りにくく、Aとしての造形が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "通常と入力後の主な見た目が、薄い枠付きの角丸入力欄に留まる。トレーの素材・支えが読み取りにくく、Aとしての造形が弱い。"
+      }
+    ],
+    "batch": "B003",
+    "state": "pending",
+    "base": "src/parts/textboxes/drafting-tray-field"
+  },
+  {
+    "number": 125,
+    "id": "porcelain-lip-input",
+    "name": "Porcelain Lip Input",
+    "category": "textboxes",
+    "categoryName": "テキストボックス",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "薄い上縁と非対称角丸だけで、R112の暖色版にも見える。磁器の縁の断面などで固有性を強めたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "薄い上縁と非対称角丸だけで、R112の暖色版にも見える。磁器の縁の断面などで固有性を強めたい。"
+      }
+    ],
+    "batch": "B003",
+    "state": "pending",
+    "base": "src/parts/textboxes/porcelain-lip-input"
+  },
+  {
+    "number": 138,
+    "id": "index-spine-link",
+    "name": "Index Spine Link",
+    "category": "links",
+    "categoryName": "リンク",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "上下・左右へ丸い金色のハイライトが重なり、厚いグラデーションが古い立体ボタンの印象になる。筒の接合と光の方向を整理して、行先より素材が勝たないようにしたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "上下・左右へ丸い金色のハイライトが重なり、厚いグラデーションが古い立体ボタンの印象になる。筒の接合と光の方向を整理して、行先より素材が勝たないようにしたい。"
+      }
+    ],
+    "batch": "B003",
+    "state": "pending",
+    "base": "src/parts/links/index-spine-link"
+  },
+  {
+    "number": 151,
+    "id": "binder-wing-tabs",
+    "name": "Binder Wing Tabs",
+    "category": "tabs",
+    "categoryName": "タブ",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "綴じ金具と紙のタブが一体の造形で、選択面と本文の接続が明快。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "広幅で最後のタブを選択した後に320pxへ縮小すると、選択中タブの右側が52px切れる。750ms待ってもscrollLeft=0のままで、選択位置が自動的に見える範囲へ戻らない。",
+        "evidence": "binder-wing-tabs-resize-confirmed.png"
+      }
+    ],
+    "batch": "B003",
+    "state": "pending",
+    "base": "src/parts/tabs/binder-wing-tabs"
+  },
+  {
+    "number": 152,
+    "id": "sawtooth-index-tabs",
+    "name": "Sawtooth Index Tabs",
+    "category": "tabs",
+    "categoryName": "タブ",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "切歯状の端が索引を区切り、薄い紙面の質感と矛盾しない。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "広幅で最後のタブを選択した後に320pxへ縮小すると、選択中タブの右側が26px切れる。750ms待ってもscrollLeft=0のままで、選択位置が自動的に見える範囲へ戻らない。",
+        "evidence": "sawtooth-index-tabs-resize-confirmed.png"
+      }
+    ],
+    "batch": "B004",
+    "state": "pending",
+    "base": "src/parts/tabs/sawtooth-index-tabs"
+  },
+  {
+    "number": 153,
+    "id": "hangtag-tabs",
+    "name": "Hangtag Tabs",
+    "category": "tabs",
+    "categoryName": "タブ",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "吊り札が選択位置を表し、色数と線の量が適切。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "広幅で最後のタブを選択した後に320pxへ縮小すると、選択中タブの右側が41px切れる。750ms待ってもscrollLeft=0のままで、選択位置が自動的に見える範囲へ戻らない。",
+        "evidence": "hangtag-tabs-resize-confirmed.png"
+      }
+    ],
+    "batch": "B004",
+    "state": "pending",
+    "base": "src/parts/tabs/hangtag-tabs"
+  },
+  {
+    "number": 154,
+    "id": "offset-rail-tabs",
+    "name": "Offset Rail Tabs",
+    "category": "tabs",
+    "categoryName": "タブ",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "レールと紙の境界に一貫性があり、同じ矩形だけの構成から離れている。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "広幅で最後のタブを選択した後に320pxへ縮小すると、選択中タブの右側が50px切れる。750ms待ってもscrollLeft=0のままで、選択位置が自動的に見える範囲へ戻らない。",
+        "evidence": "offset-rail-tabs-resize-confirmed.png"
+      }
+    ],
+    "batch": "B004",
+    "state": "pending",
+    "base": "src/parts/tabs/offset-rail-tabs"
+  },
+  {
+    "number": 155,
+    "id": "gabled-tabs",
+    "name": "Gabled Tabs",
+    "category": "tabs",
+    "categoryName": "タブ",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "屋根形の索引が輪郭の個性を作り、番号と見出しの階層も読みやすい。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "広幅で最後のタブを選択した後に320pxへ縮小すると、選択中タブの右側が35px切れる。750ms待ってもscrollLeft=0のままで、選択位置が自動的に見える範囲へ戻らない。",
+        "evidence": "gabled-tabs-resize-confirmed.png"
+      }
+    ],
+    "batch": "B004",
+    "state": "pending",
+    "base": "src/parts/tabs/gabled-tabs"
+  },
+  {
+    "number": 156,
+    "id": "copper-pin-tabs",
+    "name": "Copper Pin Tabs",
+    "category": "tabs",
+    "categoryName": "タブ",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "銅のピンがタブと紙をまとめる役目を持ち、装飾の接続が自然。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "広幅で最後のタブを選択した後に320pxへ縮小すると、選択中タブの右側が41px切れる。750ms待ってもscrollLeft=0のままで、選択位置が自動的に見える範囲へ戻らない。",
+        "evidence": "copper-pin-tabs-resize-confirmed.png"
+      }
+    ],
+    "batch": "B004",
+    "state": "pending",
+    "base": "src/parts/tabs/copper-pin-tabs"
+  },
+  {
+    "number": 157,
+    "id": "stitched-folio-tabs",
+    "name": "Stitched Folio Tabs",
+    "category": "tabs",
+    "categoryName": "タブ",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "背の縫い目が紙面の物理構造と合い、余白の広さを保つ。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "広幅で最後のタブを選択した後に320pxへ縮小すると、選択中タブの右側が51px切れる。750ms待ってもscrollLeft=0のままで、選択位置が自動的に見える範囲へ戻らない。",
+        "evidence": "stitched-folio-tabs-resize-confirmed.png"
+      }
+    ],
+    "batch": "B004",
+    "state": "pending",
+    "base": "src/parts/tabs/stitched-folio-tabs"
+  },
+  {
+    "number": 158,
+    "id": "instrument-tabs",
+    "name": "Instrument Tabs",
+    "category": "tabs",
+    "categoryName": "タブ",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "計器の目盛りと独立したキーが選択操作に対応し、軽い色調でまとまる。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "広幅で最後のタブを選択した後に320pxへ縮小すると、選択中タブの右側が35px切れる。750ms待ってもscrollLeft=0のままで、選択位置が自動的に見える範囲へ戻らない。",
+        "evidence": "instrument-tabs-resize-confirmed.png"
+      }
+    ],
+    "batch": "B004",
+    "state": "pending",
+    "base": "src/parts/tabs/instrument-tabs"
+  },
+  {
+    "number": 159,
+    "id": "floating-bookmark-tabs",
+    "name": "Floating Bookmark Tabs",
+    "category": "tabs",
+    "categoryName": "タブ",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "しおりの切込みを反復し、主題に合う緑で選択位置も示せる。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "広幅で最後のタブを選択した後に320pxへ縮小すると、選択中タブの右側が45px切れる。750ms待ってもscrollLeft=0のままで、選択位置が自動的に見える範囲へ戻らない。",
+        "evidence": "floating-bookmark-tabs-resize-confirmed.png"
+      }
+    ],
+    "batch": "B004",
+    "state": "pending",
+    "base": "src/parts/tabs/floating-bookmark-tabs"
+  },
+  {
+    "number": 160,
+    "id": "negative-slot-tabs",
+    "name": "Negative Slot Tabs",
+    "category": "tabs",
+    "categoryName": "タブ",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "下側の索引という構造差があり、本文面を広く取れている。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "広幅で最後のタブを選択した後に320pxへ縮小すると、選択中タブの右側が40px切れる。750ms待ってもscrollLeft=0のままで、選択位置が自動的に見える範囲へ戻らない。",
+        "evidence": "negative-slot-tabs-resize-confirmed.png"
+      }
+    ],
+    "batch": "B004",
+    "state": "pending",
+    "base": "src/parts/tabs/negative-slot-tabs"
+  },
+  {
+    "number": 161,
+    "id": "slanted-spine-tabs",
+    "name": "Slanted Spine Tabs",
+    "category": "tabs",
+    "categoryName": "タブ",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "斜めの背と大きな番号が組み合わさり、固定文字の読みやすさを保つ。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "広幅で最後のタブを選択した後に320pxへ縮小すると、選択中タブの右側が38px切れる。750ms待ってもscrollLeft=0のままで、選択位置が自動的に見える範囲へ戻らない。",
+        "evidence": "slanted-spine-tabs-resize-confirmed.png"
+      }
+    ],
+    "batch": "B004",
+    "state": "pending",
+    "base": "src/parts/tabs/slanted-spine-tabs"
+  },
+  {
+    "number": 162,
+    "id": "rung-tabs",
+    "name": "Rung Tabs",
+    "category": "tabs",
+    "categoryName": "タブ",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "320pxで縦タブが幅を占有し、本文が英単語の途中で1〜3文字ずつ折り返す。縦配置のままでは内容を読む面として狭すぎる。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "320pxで縦タブが幅を占有し、本文が英単語の途中で1〜3文字ずつ折り返す。縦配置のままでは内容を読む面として狭すぎる。"
+      }
+    ],
+    "batch": "B005",
+    "state": "pending",
+    "base": "src/parts/tabs/rung-tabs"
+  },
+  {
+    "number": 163,
+    "id": "embossed-archive-tabs",
+    "name": "Embossed Archive Tabs",
+    "category": "tabs",
+    "categoryName": "タブ",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "厚みのある保存ケースと切欠きが索引の意味を持ち、材質がまとまる。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "広幅で最後のタブを選択した後に320pxへ縮小すると、選択中タブの右側が61px切れる。750ms待ってもscrollLeft=0のままで、選択位置が自動的に見える範囲へ戻らない。",
+        "evidence": "embossed-archive-tabs-resize-confirmed.png"
+      }
+    ],
+    "batch": "B005",
+    "state": "pending",
+    "base": "src/parts/tabs/embossed-archive-tabs"
+  },
+  {
+    "number": 164,
+    "id": "open-corner-tabs",
+    "name": "Open Corner Tabs",
+    "category": "tabs",
+    "categoryName": "タブ",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "切り離した隅の線に個性があり、本文の平面とタブの区分が明確。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "広幅で最後のタブを選択した後に320pxへ縮小すると、選択中タブの右側が65px切れる。750ms待ってもscrollLeft=0のままで、選択位置が自動的に見える範囲へ戻らない。",
+        "evidence": "open-corner-tabs-resize-confirmed.png"
+      }
+    ],
+    "batch": "B005",
+    "state": "pending",
+    "base": "src/parts/tabs/open-corner-tabs"
+  },
+  {
+    "number": 165,
+    "id": "film-caption-tabs",
+    "name": "Film Caption Tabs",
+    "category": "tabs",
+    "categoryName": "タブ",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "フィルムの穿孔が索引列をつなぎ、本文面との関係が読み取れる。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "広幅で最後のタブを選択した後に320pxへ縮小すると、選択中タブの右側が39px切れる。750ms待ってもscrollLeft=0のままで、選択位置が自動的に見える範囲へ戻らない。",
+        "evidence": "film-caption-tabs-resize-confirmed.png"
+      }
+    ],
+    "batch": "B005",
+    "state": "pending",
+    "base": "src/parts/tabs/film-caption-tabs"
+  },
+  {
+    "number": 169,
+    "id": "warm-reading-tabs",
+    "name": "Warm Reading Tabs",
+    "category": "tabs",
+    "categoryName": "タブ",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R167と本体・選択面・本文の構成がほぼ同じで、主な差が暖色になっている点。独立作品としては読書用の構造的な違いが弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "R167と本体・選択面・本文の構成がほぼ同じで、主な差が暖色になっている点。独立作品としては読書用の構造的な違いが弱い。"
+      }
+    ],
+    "batch": "B005",
+    "state": "pending",
+    "base": "src/parts/tabs/warm-reading-tabs"
+  },
+  {
+    "number": 170,
+    "id": "night-work-tabs",
+    "name": "Night Work Tabs",
+    "category": "tabs",
+    "categoryName": "タブ",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "暗色の一体面と明るい選択面が整い、本文との連続性がある。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "広幅で最後のタブを選択した後に320pxへ縮小すると、選択中タブの右側が37px切れる。750ms待ってもscrollLeft=0のままで、選択位置が自動的に見える範囲へ戻らない。",
+        "evidence": "night-work-tabs-resize-confirmed.png"
+      }
+    ],
+    "batch": "B005",
+    "state": "pending",
+    "base": "src/parts/tabs/night-work-tabs"
+  },
+  {
+    "number": 176,
+    "id": "lever-stop-segments",
+    "name": "Lever Stop Segments",
+    "category": "segments",
+    "categoryName": "セグメント",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "上下の枠とレバーの主題はあるが、320pxでは最後だけ倍幅に折り返して尺度の対等さが崩れる。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "上下の枠とレバーの主題はあるが、320pxでは最後だけ倍幅に折り返して尺度の対等さが崩れる。"
+      }
+    ],
+    "batch": "B005",
+    "state": "pending",
+    "base": "src/parts/segments/lever-stop-segments"
+  },
+  {
+    "number": 177,
+    "id": "raised-bridge-segments",
+    "name": "Raised Bridge Segments",
+    "category": "segments",
+    "categoryName": "セグメント",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "三つの平坦な丸角の面が中心で、橋という主題が細い縁に留まる。Aとして一般的なキーとの違いを強めたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "三つの平坦な丸角の面が中心で、橋という主題が細い縁に留まる。Aとして一般的なキーとの違いを強めたい。"
+      }
+    ],
+    "batch": "B005",
+    "state": "pending",
+    "base": "src/parts/segments/raised-bridge-segments"
+  },
+  {
+    "number": 178,
+    "id": "tape-splice-segments",
+    "name": "Tape Splice Segments",
+    "category": "segments",
+    "categoryName": "セグメント",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "切ったテープの縫い目はまとまるが、320pxでは月だけ倍幅になり、同列の三択の重みが揃わない。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "切ったテープの縫い目はまとまるが、320pxでは月だけ倍幅になり、同列の三択の重みが揃わない。"
+      }
+    ],
+    "batch": "B005",
+    "state": "pending",
+    "base": "src/parts/segments/tape-splice-segments"
+  },
+  {
+    "number": 180,
+    "id": "coin-seat-segments",
+    "name": "Coin Seat Segments",
+    "category": "segments",
+    "categoryName": "セグメント",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "コイン状の輪郭はあるが、320pxでは最後だけ横長に伸び、円形素材の主題と三択の対等さが崩れる。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "コイン状の輪郭はあるが、320pxでは最後だけ横長に伸び、円形素材の主題と三択の対等さが崩れる。"
+      }
+    ],
+    "batch": "B005",
+    "state": "pending",
+    "base": "src/parts/segments/coin-seat-segments"
+  },
+  {
+    "number": 181,
+    "id": "book-jacket-segments",
+    "name": "Book Jacket Segments",
+    "category": "segments",
+    "categoryName": "セグメント",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "本の背と表紙のずれは個性的だが、320pxで月だけ横長の大面積になり、対等な選択肢の見え方が変わる。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "本の背と表紙のずれは個性的だが、320pxで月だけ横長の大面積になり、対等な選択肢の見え方が変わる。"
+      }
+    ],
+    "batch": "B006",
+    "state": "pending",
+    "base": "src/parts/segments/book-jacket-segments"
+  },
+  {
+    "number": 183,
+    "id": "double-track-segments",
+    "name": "Double Track Segments",
+    "category": "segments",
+    "categoryName": "セグメント",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "二重レールの輪郭があるが、320pxで最後の枠だけ横長になり、三つの同等なキーという形が崩れる。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "二重レールの輪郭があるが、320pxで最後の枠だけ横長になり、三つの同等なキーという形が崩れる。"
+      }
+    ],
+    "batch": "B006",
+    "state": "pending",
+    "base": "src/parts/segments/double-track-segments"
+  },
+  {
+    "number": 184,
+    "id": "bracket-seat-segments",
+    "name": "Bracket Seat Segments",
+    "category": "segments",
+    "categoryName": "セグメント",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "丸い受け台の構造は分かるが、320pxで最後だけ横長に伸び、他のキーとの造形の統一が弱くなる。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "丸い受け台の構造は分かるが、320pxで最後だけ横長に伸び、他のキーとの造形の統一が弱くなる。"
+      }
+    ],
+    "batch": "B006",
+    "state": "pending",
+    "base": "src/parts/segments/bracket-seat-segments"
+  },
+  {
+    "number": 185,
+    "id": "satin-key-segments",
+    "name": "Satin Key Segments",
+    "category": "segments",
+    "categoryName": "セグメント",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "薄桃の多重ハイライトがやや厚ぼったく、320pxでは最後だけ大きく伸びる。材質と対等な選択肢のサイズを整理したい。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "薄桃の多重ハイライトがやや厚ぼったく、320pxでは最後だけ大きく伸びる。材質と対等な選択肢のサイズを整理したい。"
+      }
+    ],
+    "batch": "B006",
+    "state": "pending",
+    "base": "src/parts/segments/satin-key-segments"
+  },
+  {
+    "number": 189,
+    "id": "reading-mode-segments",
+    "name": "Reading Mode Segments",
+    "category": "segments",
+    "categoryName": "セグメント",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R186と構成・密度・選択面が近く、差が暖色と角の小さな違いに偏る。独立作品としての用途差が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "R186と構成・密度・選択面が近く、差が暖色と角の小さな違いに偏る。独立作品としての用途差が弱い。"
+      }
+    ],
+    "batch": "B006",
+    "state": "pending",
+    "base": "src/parts/segments/reading-mode-segments"
+  },
+  {
+    "number": 194,
+    "id": "crossbar-check",
+    "name": "Crossbar Check",
+    "category": "checkboxes",
+    "categoryName": "チェックボックス",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "通常の四角いチェックに離れた隅線を加えるだけで、Aの独自性が弱い。枠飾り以上の構造を持たせたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "通常の四角いチェックに離れた隅線を加えるだけで、Aの独自性が弱い。枠飾り以上の構造を持たせたい。"
+      }
+    ],
+    "batch": "B006",
+    "state": "pending",
+    "base": "src/parts/checkboxes/crossbar-check"
+  },
+  {
+    "number": 195,
+    "id": "ceramic-stamp-check",
+    "name": "Ceramic Stamp Check",
+    "category": "checkboxes",
+    "categoryName": "チェックボックス",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "小さな丸角チェックとしては整っているが、陶器の質感が薄い縁に留まり、Bとの差が小さい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "小さな丸角チェックとしては整っているが、陶器の質感が薄い縁に留まり、Bとの差が小さい。"
+      }
+    ],
+    "batch": "B006",
+    "state": "pending",
+    "base": "src/parts/checkboxes/ceramic-stamp-check"
+  },
+  {
+    "number": 198,
+    "id": "ladder-seat-check",
+    "name": "Ladder Seat Check",
+    "category": "checkboxes",
+    "categoryName": "チェックボックス",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "下の短い三段線が飾りとして孤立し、梯子の座という主題が弱い。Aとして機構の接続を明確にしたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "下の短い三段線が飾りとして孤立し、梯子の座という主題が弱い。Aとして機構の接続を明確にしたい。"
+      }
+    ],
+    "batch": "B006",
+    "state": "pending",
+    "base": "src/parts/checkboxes/ladder-seat-check"
+  },
+  {
+    "number": 200,
+    "id": "inset-lens-check",
+    "name": "Inset Lens Check",
+    "category": "checkboxes",
+    "categoryName": "チェックボックス",
+    "designType": "A",
+    "verdict": "redesign",
+    "note": "ほぼ一般的な青い角丸チェックと薄い多重枠に留まり、レンズらしさも独創性も弱い。Aの構造から再検討したい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "ほぼ一般的な青い角丸チェックと薄い多重枠に留まり、レンズらしさも独創性も弱い。Aの構造から再検討したい。"
+      }
+    ],
+    "batch": "B006",
+    "state": "pending",
+    "base": "src/parts/checkboxes/inset-lens-check"
+  },
+  {
+    "number": 203,
+    "id": "switchyard-check",
+    "name": "Switchyard Check",
+    "category": "checkboxes",
+    "categoryName": "チェックボックス",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "左右の線と小さな斜線が付くのみで、切替機構や素材の固有性が弱い。Aとして造形が小さな装飾差に留まる。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "左右の線と小さな斜線が付くのみで、切替機構や素材の固有性が弱い。Aとして造形が小さな装飾差に留まる。"
+      }
+    ],
+    "batch": "B006",
+    "state": "pending",
+    "base": "src/parts/checkboxes/switchyard-check"
+  },
+  {
+    "number": 204,
+    "id": "embossed-disc-check",
+    "name": "Embossed Disc Check",
+    "category": "checkboxes",
+    "categoryName": "チェックボックス",
+    "designType": "A",
+    "verdict": "redesign",
+    "note": "普通の四角チェックに薄い二重枠を加えた印象で、刻印盤としての形や材質が伝わらない。Aの個性を再設計したい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "普通の四角チェックに薄い二重枠を加えた印象で、刻印盤としての形や材質が伝わらない。Aの個性を再設計したい。"
+      }
+    ],
+    "batch": "B007",
+    "state": "pending",
+    "base": "src/parts/checkboxes/embossed-disc-check"
+  },
+  {
+    "number": 208,
+    "id": "warm-option-check",
+    "name": "Warm Option Check",
+    "category": "checkboxes",
+    "categoryName": "チェックボックス",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R206の暖色版に近く、配置や選択時の構造の差がほぼない。独立作品にするなら用途上の違いが必要。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "R206の暖色版に近く、配置や選択時の構造の差がほぼない。独立作品にするなら用途上の違いが必要。"
+      }
+    ],
+    "batch": "B007",
+    "state": "pending",
+    "base": "src/parts/checkboxes/warm-option-check"
+  },
+  {
+    "number": 211,
+    "id": "dispatch-sheet-dialog",
+    "name": "Dispatch Sheet Dialog",
+    "category": "popups",
+    "categoryName": "ポップアップ",
+    "designType": "A",
+    "verdict": "redesign",
+    "note": "本文・補足・下の二つのボタンという一般的なダイアログで、Dispatch Sheet固有の構造がほとんど見えない。Aとしての独創性が不足する。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "本文・補足・下の二つのボタンという一般的なダイアログで、Dispatch Sheet固有の構造がほとんど見えない。Aとしての独創性が不足する。"
+      }
+    ],
+    "batch": "B007",
+    "state": "pending",
+    "base": "src/parts/popups/dispatch-sheet-dialog"
+  },
+  {
+    "number": 217,
+    "id": "console-bay-dialog",
+    "name": "Console Bay Dialog",
+    "category": "popups",
+    "categoryName": "ポップアップ",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "濃色パネルに明るい補足ボックスを置いた構成が中心で、Console Bay固有の構造が弱い。Aとして色以外の違いを詰めたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "濃色パネルに明るい補足ボックスを置いた構成が中心で、Console Bay固有の構造が弱い。Aとして色以外の違いを詰めたい。"
+      }
+    ],
+    "batch": "B007",
+    "state": "pending",
+    "base": "src/parts/popups/console-bay-dialog"
+  },
+  {
+    "number": 221,
+    "id": "stepped-corner-dialog",
+    "name": "Stepped Corner Dialog",
+    "category": "popups",
+    "categoryName": "ポップアップ",
+    "designType": "A",
+    "verdict": "redesign",
+    "note": "丸い角・太い見出し・丸いボタンという一般的な構成に留まり、Stepped Cornerに対応する階段状の造形が見えない。Aとして再設計が必要。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "丸い角・太い見出し・丸いボタンという一般的な構成に留まり、Stepped Cornerに対応する階段状の造形が見えない。Aとして再設計が必要。"
+      }
+    ],
+    "batch": "B007",
+    "state": "pending",
+    "base": "src/parts/popups/stepped-corner-dialog"
+  },
+  {
+    "number": 225,
+    "id": "split-frame-dialog",
+    "name": "Split Frame Dialog",
+    "category": "popups",
+    "categoryName": "ポップアップ",
+    "designType": "A",
+    "verdict": "redesign",
+    "note": "ほぼ普通の薄い枠のダイアログで、Split Frame固有の構造差が見えにくい。Aの独創性が罫線と色に留まる。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "ほぼ普通の薄い枠のダイアログで、Split Frame固有の構造差が見えにくい。Aの独創性が罫線と色に留まる。"
+      }
+    ],
+    "batch": "B007",
+    "state": "pending",
+    "base": "src/parts/popups/split-frame-dialog"
+  },
+  {
+    "number": 228,
+    "id": "warm-message-dialog",
+    "name": "Warm Message Dialog",
+    "category": "popups",
+    "categoryName": "ポップアップ",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R226と情報配置・余白・二つのボタンの構成がほぼ同じで、暖色への変更が主要差になっている。独立作品としての違いが弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "R226と情報配置・余白・二つのボタンの構成がほぼ同じで、暖色への変更が主要差になっている。独立作品としての違いが弱い。"
+      }
+    ],
+    "batch": "B007",
+    "state": "pending",
+    "base": "src/parts/popups/warm-message-dialog"
+  },
+  {
+    "number": 230,
+    "id": "neutral-form-dialog",
+    "name": "Neutral Form Dialog",
+    "category": "popups",
+    "categoryName": "ポップアップ",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R226と構成・密度・操作位置が非常に近い。淡い地色だけで別作品として並ぶため、フォーム用途なら入力配置などの用途差を設計したい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "R226と構成・密度・操作位置が非常に近い。淡い地色だけで別作品として並ぶため、フォーム用途なら入力配置などの用途差を設計したい。"
+      }
+    ],
+    "batch": "B007",
+    "state": "pending",
+    "base": "src/parts/popups/neutral-form-dialog"
+  },
+  {
+    "number": 234,
+    "id": "stone-inlay-range",
+    "name": "Stone Inlay Range",
+    "category": "sliders",
+    "categoryName": "スライダー",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "矩形つまみと単線の一般的なスライダーに近く、石材の断面や重みが見えない。Aとして色と小さな縁以上の造形が欲しい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "矩形つまみと単線の一般的なスライダーに近く、石材の断面や重みが見えない。Aとして色と小さな縁以上の造形が欲しい。"
+      }
+    ],
+    "batch": "B007",
+    "state": "pending",
+    "base": "src/parts/sliders/stone-inlay-range"
+  },
+  {
+    "number": 237,
+    "id": "wheel-guide-range",
+    "name": "Wheel Guide Range",
+    "category": "sliders",
+    "categoryName": "スライダー",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "丸いつまみと細い目盛りが一般的なスライダーに近い。車輪らしい接続や素材の差が小さく、Aの独創性として弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "丸いつまみと細い目盛りが一般的なスライダーに近い。車輪らしい接続や素材の差が小さく、Aの独創性として弱い。"
+      }
+    ],
+    "batch": "B007",
+    "state": "pending",
+    "base": "src/parts/sliders/wheel-guide-range"
+  },
+  {
+    "number": 238,
+    "id": "pinstripe-range",
+    "name": "Pinstripe Range",
+    "category": "sliders",
+    "categoryName": "スライダー",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "赤い棒と細い目盛りは上品だが、基本形が標準的なレンジ入力と近い。Aとして固有の操作造形を強めたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "赤い棒と細い目盛りは上品だが、基本形が標準的なレンジ入力と近い。Aとして固有の操作造形を強めたい。"
+      }
+    ],
+    "batch": "B008",
+    "state": "pending",
+    "base": "src/parts/sliders/pinstripe-range"
+  },
+  {
+    "number": 245,
+    "id": "enamel-peg-range",
+    "name": "Enamel Peg Range",
+    "category": "sliders",
+    "categoryName": "スライダー",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "明るい地に淡い金色の持ち手が溶けやすく、操作できる位置の見つけやすさが弱い。輪郭の明暗を整理したい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "明るい地に淡い金色の持ち手が溶けやすく、操作できる位置の見つけやすさが弱い。輪郭の明暗を整理したい。"
+      }
+    ],
+    "batch": "B008",
+    "state": "pending",
+    "base": "src/parts/sliders/enamel-peg-range"
+  },
+  {
+    "number": 253,
+    "id": "loop-label-choice",
+    "name": "Loop Label Choice",
+    "category": "radios",
+    "categoryName": "ラジオボタン",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "左の大きな楕円ループが未選択ラジオの輪と隣り合い、操作記号が二つあるように見える。装飾と選択マークの形・重みを分けたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "左の大きな楕円ループが未選択ラジオの輪と隣り合い、操作記号が二つあるように見える。装飾と選択マークの形・重みを分けたい。"
+      }
+    ],
+    "batch": "B008",
+    "state": "pending",
+    "base": "src/parts/radios/loop-label-choice"
+  },
+  {
+    "number": 258,
+    "id": "clasp-band-choice",
+    "name": "Clasp Band Choice",
+    "category": "radios",
+    "categoryName": "ラジオボタン",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "普通のカードの右端に角括弧を足した印象が強く、Clasp Bandとしての材質・留め方が弱い。Aの固有性を構造で示したい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "普通のカードの右端に角括弧を足した印象が強く、Clasp Bandとしての材質・留め方が弱い。Aの固有性を構造で示したい。"
+      }
+    ],
+    "batch": "B008",
+    "state": "pending",
+    "base": "src/parts/radios/clasp-band-choice"
+  },
+  {
+    "number": 261,
+    "id": "stapled-card-choice",
+    "name": "Stapled Card Choice",
+    "category": "radios",
+    "categoryName": "ラジオボタン",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "小さなステープルだけが一般的なカードとの差になり、Aとしての造形が控えめすぎる。綴じ方と選択の関係を詰めたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "小さなステープルだけが一般的なカードとの差になり、Aとしての造形が控えめすぎる。綴じ方と選択の関係を詰めたい。"
+      }
+    ],
+    "batch": "B008",
+    "state": "pending",
+    "base": "src/parts/radios/stapled-card-choice"
+  },
+  {
+    "number": 264,
+    "id": "shallow-bowl-choice",
+    "name": "Shallow Bowl Choice",
+    "category": "radios",
+    "categoryName": "ラジオボタン",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "楕円の縁へ明暗が何重にも付き、古い立体ピルの印象が強い。器の断面と反射を整理し、ラベルの面を軽くしたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "楕円の縁へ明暗が何重にも付き、古い立体ピルの印象が強い。器の断面と反射を整理し、ラベルの面を軽くしたい。"
+      }
+    ],
+    "batch": "B008",
+    "state": "pending",
+    "base": "src/parts/radios/shallow-bowl-choice"
+  },
+  {
+    "number": 270,
+    "id": "warm-plan-choice",
+    "name": "Warm Plan Choice",
+    "category": "radios",
+    "categoryName": "ラジオボタン",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R266と配置・形・余白が近く、主要差が暖色の指定に留まる。独立作品としての用途差を設計したい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "R266と配置・形・余白が近く、主要差が暖色の指定に留まる。独立作品としての用途差を設計したい。"
+      }
+    ],
+    "batch": "B008",
+    "state": "pending",
+    "base": "src/parts/radios/warm-plan-choice"
+  },
+  {
+    "number": 281,
+    "id": "letterbox-finder",
+    "name": "Letterbox Finder",
+    "category": "comboboxes",
+    "categoryName": "コンボボックス",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "厚い茶色の多重アーチが一覧の大きな面積を占め、古い立体枠の印象が強い。郵便口の断面を絞り、候補内容へ視線を戻したい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "厚い茶色の多重アーチが一覧の大きな面積を占め、古い立体枠の印象が強い。郵便口の断面を絞り、候補内容へ視線を戻したい。"
+      }
+    ],
+    "batch": "B008",
+    "state": "pending",
+    "base": "src/parts/comboboxes/letterbox-finder"
+  },
+  {
+    "number": 288,
+    "id": "soft-contact-finder",
+    "name": "Soft Contact Finder",
+    "category": "comboboxes",
+    "categoryName": "コンボボックス",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "候補一覧はR286と同じ骨格に近く、差が淡紫と入力の丸みに偏る。連絡先用途の情報配置などで独立した意味を持たせたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "候補一覧はR286と同じ骨格に近く、差が淡紫と入力の丸みに偏る。連絡先用途の情報配置などで独立した意味を持たせたい。"
+      }
+    ],
+    "batch": "B008",
+    "state": "pending",
+    "base": "src/parts/comboboxes/soft-contact-finder"
+  },
+  {
+    "number": 290,
+    "id": "warm-library-finder",
+    "name": "Warm Library Finder",
+    "category": "comboboxes",
+    "categoryName": "コンボボックス",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R286と候補の配置・密度がほぼ共通で、暖色への変更が主要な差。図書用の独自の情報整理が見えにくい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "R286と候補の配置・密度がほぼ共通で、暖色への変更が主要な差。図書用の独自の情報整理が見えにくい。"
+      }
+    ],
+    "batch": "B008",
+    "state": "pending",
+    "base": "src/parts/comboboxes/warm-library-finder"
+  },
+  {
+    "number": 292,
+    "id": "signal-capsule-notice",
+    "name": "Signal Capsule Notice",
+    "category": "toasts",
+    "categoryName": "通知",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "薄い二重枠のカプセル型通知に留まり、Signalという主題が丸いアイコン以上に見えにくい。Aとして固有の構造を強めたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "薄い二重枠のカプセル型通知に留まり、Signalという主題が丸いアイコン以上に見えにくい。Aとして固有の構造を強めたい。"
+      }
+    ],
+    "batch": "B009",
+    "state": "pending",
+    "base": "src/parts/toasts/signal-capsule-notice"
+  },
+  {
+    "number": 293,
+    "id": "folded-message-notice",
+    "name": "Folded Message Notice",
+    "category": "toasts",
+    "categoryName": "通知",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "320pxでは文面が中央の明るい面から右の折り目・濃い面へはみ出す。背景の折り幅と本文幅が噛み合っておらず、読みにくい領域を横切る。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "320pxでは文面が中央の明るい面から右の折り目・濃い面へはみ出す。背景の折り幅と本文幅が噛み合っておらず、読みにくい領域を横切る。"
+      }
+    ],
+    "batch": "B009",
+    "state": "pending",
+    "base": "src/parts/toasts/folded-message-notice"
+  },
+  {
+    "number": 297,
+    "id": "console-line-notice",
+    "name": "Console Line Notice",
+    "category": "toasts",
+    "categoryName": "通知",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "通知の見本だけ背景が欠け、タイトルが読みにくい。実通知との表示差と、小さい説明文のコントラストを調整したい。",
+    "issues": [
+      {
+        "kind": "consistency",
+        "description": "ギャラリーの見本は本文親にff-notice-copyがなく、背景面が表示されない。暗い地に暗青のタイトルでコントラスト約2.51:1。実際に発火した通知には背景があり、展示と実通知が一致していない。",
+        "evidence": [
+          "reviewer/console-line-notice-sample-focused.png",
+          "reviewer/console-line-notice-fired-focused.png"
+        ]
+      },
+      {
+        "kind": "readability",
+        "description": "実通知の説明文字も約3.90:1で、小さな本文を読むにはコントラストが不足する。"
+      }
+    ],
+    "batch": "B009",
+    "state": "pending",
+    "base": "src/parts/toasts/console-line-notice"
+  },
+  {
+    "number": 301,
+    "id": "open-bracket-notice",
+    "name": "Open Bracket Notice",
+    "category": "toasts",
+    "categoryName": "通知",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "一般的な矩形通知へ離れた四隅を足した印象が強く、Aの独創性が角飾りに偏る。支持構造や素材の理由を詰めたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "一般的な矩形通知へ離れた四隅を足した印象が強く、Aの独創性が角飾りに偏る。支持構造や素材の理由を詰めたい。"
+      }
+    ],
+    "batch": "B009",
+    "state": "pending",
+    "base": "src/parts/toasts/open-bracket-notice"
+  },
+  {
+    "number": 310,
+    "id": "warm-confirm-notice",
+    "name": "Warm Confirm Notice",
+    "category": "toasts",
+    "categoryName": "通知",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R306と通知面の構成が近く、主要差が暖色になっている。確認通知として別作品にするなら状態や操作の構造差が欲しい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "R306と通知面の構成が近く、主要差が暖色になっている。確認通知として別作品にするなら状態や操作の構造差が欲しい。"
+      }
+    ],
+    "batch": "B009",
+    "state": "pending",
+    "base": "src/parts/toasts/warm-confirm-notice"
+  },
+  {
+    "number": 316,
+    "id": "margin-bracket-hint",
+    "name": "Margin Bracket Hint",
+    "category": "hints",
+    "categoryName": "ヒント・ポップオーバー",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "角の括弧を足した通常の説明面に近く、Aとして固有の構成が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "角の括弧を足した通常の説明面に近く、Aとして固有の構成が弱い。"
+      }
+    ],
+    "batch": "B009",
+    "state": "pending",
+    "base": "src/parts/hints/margin-bracket-hint"
+  },
+  {
+    "number": 324,
+    "id": "recessed-spec-hint",
+    "name": "Recessed Spec Hint",
+    "category": "hints",
+    "categoryName": "ヒント・ポップオーバー",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "展開面が離れた複数の帯に割れ、隙間から背後の説明文が見える。一つのポップオーバーとしてまとまりが弱く、読む対象が混ざる。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "展開面が離れた複数の帯に割れ、隙間から背後の説明文が見える。一つのポップオーバーとしてまとまりが弱く、読む対象が混ざる。"
+      }
+    ],
+    "batch": "B009",
+    "state": "pending",
+    "base": "src/parts/hints/recessed-spec-hint"
+  },
+  {
+    "number": 329,
+    "id": "neutral-detail-hint",
+    "name": "Neutral Detail Hint",
+    "category": "hints",
+    "categoryName": "ヒント・ポップオーバー",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R326に近い説明面の構成で、配色以外の使い分けが弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "R326に近い説明面の構成で、配色以外の使い分けが弱い。"
+      }
+    ],
+    "batch": "B009",
+    "state": "pending",
+    "base": "src/parts/hints/neutral-detail-hint"
+  },
+  {
+    "number": 330,
+    "id": "warm-reading-hint",
+    "name": "Warm Reading Hint",
+    "category": "hints",
+    "categoryName": "ヒント・ポップオーバー",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R326と同様の構成に暖色を当てた印象が強く、独立した種類としての差が薄い。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "R326と同様の構成に暖色を当てた印象が強く、独立した種類としての差が薄い。"
+      }
+    ],
+    "batch": "B009",
+    "state": "pending",
+    "base": "src/parts/hints/warm-reading-hint"
+  },
+  {
+    "number": 332,
+    "id": "orbital-mark-progress",
+    "name": "Orbital Mark Progress",
+    "category": "progress",
+    "categoryName": "進捗表示",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "通常の円形進捗へ短い縦線を加えた程度に見え、Aの独創性が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "通常の円形進捗へ短い縦線を加えた程度に見え、Aの独創性が弱い。"
+      }
+    ],
+    "batch": "B009",
+    "state": "pending",
+    "base": "src/parts/progress/orbital-mark-progress"
+  },
+  {
+    "number": 334,
+    "id": "vertical-survey-progress",
+    "name": "Vertical Survey Progress",
+    "category": "progress",
+    "categoryName": "進捗表示",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "縦の測量目盛りは明快だが、広い空き枠と中央数値の関係が弱く、仮配置の印象が残る。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "縦の測量目盛りは明快だが、広い空き枠と中央数値の関係が弱く、仮配置の印象が残る。"
+      }
+    ],
+    "batch": "B010",
+    "state": "pending",
+    "base": "src/parts/progress/vertical-survey-progress"
+  },
+  {
+    "number": 336,
+    "id": "segmented-ruler-progress",
+    "name": "Segmented Ruler Progress",
+    "category": "progress",
+    "categoryName": "進捗表示",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "一般的な分割バーに近く、淡い配色以外の独自性が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "一般的な分割バーに近く、淡い配色以外の独自性が弱い。"
+      }
+    ],
+    "batch": "B010",
+    "state": "pending",
+    "base": "src/parts/progress/segmented-ruler-progress"
+  },
+  {
+    "number": 338,
+    "id": "caption-band-progress",
+    "name": "Caption Band Progress",
+    "category": "progress",
+    "categoryName": "進捗表示",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "段差付き棒の構成がR339とほぼ同じで、別作品としての独自性が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "段差付き棒の構成がR339とほぼ同じで、別作品としての独自性が弱い。"
+      }
+    ],
+    "batch": "B010",
+    "state": "pending",
+    "base": "src/parts/progress/caption-band-progress"
+  },
+  {
+    "number": 339,
+    "id": "terraced-progress",
+    "name": "Terraced Progress",
+    "category": "progress",
+    "categoryName": "進捗表示",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "階段の高さと充填で進みを示す構成は成立するが、R338との重複は整理したい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "階段の高さと充填で進みを示す構成は成立するが、R338との重複は整理したい。"
+      }
+    ],
+    "batch": "B010",
+    "state": "pending",
+    "base": "src/parts/progress/terraced-progress"
+  },
+  {
+    "number": 342,
+    "id": "linear-radar-progress",
+    "name": "Linear Radar Progress",
+    "category": "progress",
+    "categoryName": "進捗表示",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "厚い金色の枠が進捗面より目立ち、装飾的な古い計器の印象が強い。枠の強弱を整理したい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "厚い金色の枠が進捗面より目立ち、装飾的な古い計器の印象が強い。枠の強弱を整理したい。"
+      }
+    ],
+    "batch": "B010",
+    "state": "pending",
+    "base": "src/parts/progress/linear-radar-progress"
+  },
+  {
+    "number": 350,
+    "id": "warm-reading-progress",
+    "name": "Warm Reading Progress",
+    "category": "progress",
+    "categoryName": "進捗表示",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R346に近い線と数値の配置で、暖色以外の差が薄い。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "R346に近い線と数値の配置で、暖色以外の差が薄い。"
+      }
+    ],
+    "batch": "B010",
+    "state": "pending",
+    "base": "src/parts/progress/warm-reading-progress"
+  },
+  {
+    "number": 356,
+    "id": "open-corner-upload",
+    "name": "Open Corner Upload",
+    "category": "uploads",
+    "categoryName": "ファイル選択",
+    "designType": "A",
+    "verdict": "redesign",
+    "note": "通常の四角いドロップ領域へ角線を付けただけに近く、Aの独創性が不足する。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "通常の四角いドロップ領域へ角線を付けただけに近く、Aの独創性が不足する。"
+      }
+    ],
+    "batch": "B010",
+    "state": "pending",
+    "base": "src/parts/uploads/open-corner-upload"
+  },
+  {
+    "number": 359,
+    "id": "stone-recess-upload",
+    "name": "Stone Recess Upload",
+    "category": "uploads",
+    "categoryName": "ファイル選択",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "斜めの厚い枠に対して文字面は水平で、読めるが重い額縁が主役になりすぎる。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "斜めの厚い枠に対して文字面は水平で、読めるが重い額縁が主役になりすぎる。"
+      }
+    ],
+    "batch": "B010",
+    "state": "pending",
+    "base": "src/parts/uploads/stone-recess-upload"
+  },
+  {
+    "number": 360,
+    "id": "folio-band-upload",
+    "name": "Folio Band Upload",
+    "category": "uploads",
+    "categoryName": "ファイル選択",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "320pxでは綴じ具の占有幅が大きく、主要な『ここにドロップ』が不自然に折れる。装飾の幅配分を調整したい。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "320pxでは綴じ具の占有幅が大きく、主要な『ここにドロップ』が不自然に折れる。装飾の幅配分を調整したい。"
+      }
+    ],
+    "batch": "B010",
+    "state": "pending",
+    "base": "src/parts/uploads/folio-band-upload"
+  },
+  {
+    "number": 361,
+    "id": "perforated-upload",
+    "name": "Perforated Upload",
+    "category": "uploads",
+    "categoryName": "ファイル選択",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "320pxで主要ラベルが末尾一文字だけ折れ、横の切取帯に対して本文幅が不足する。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "description": "320pxで主要ラベルが末尾一文字だけ折れ、横の切取帯に対して本文幅が不足する。"
+      }
+    ],
+    "batch": "B010",
+    "state": "pending",
+    "base": "src/parts/uploads/perforated-upload"
+  },
+  {
+    "number": 364,
+    "id": "stepped-dock-upload",
+    "name": "Stepped Dock Upload",
+    "category": "uploads",
+    "categoryName": "ファイル選択",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "二重の底線だけで台を示す構成は、R357との差が小さくAとして弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "二重の底線だけで台を示す構成は、R357との差が小さくAとして弱い。"
+      }
+    ],
+    "batch": "B011",
+    "state": "pending",
+    "base": "src/parts/uploads/stepped-dock-upload"
+  },
+  {
+    "number": 369,
+    "id": "outline-document-upload",
+    "name": "Outline Document Upload",
+    "category": "uploads",
+    "categoryName": "ファイル選択",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "実線の輪郭で提出領域を示すが、R366との用途上の差は小さい。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "実線の輪郭で提出領域を示すが、R366との用途上の差は小さい。"
+      }
+    ],
+    "batch": "B011",
+    "state": "pending",
+    "base": "src/parts/uploads/outline-document-upload"
+  },
+  {
+    "number": 370,
+    "id": "warm-material-upload",
+    "name": "Warm Material Upload",
+    "category": "uploads",
+    "categoryName": "ファイル選択",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R366とほぼ同じ配置・入力領域で、暖色の差だけでは別作品として弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "description": "R366とほぼ同じ配置・入力領域で、暖色の差だけでは別作品として弱い。"
+      }
+    ],
+    "batch": "B011",
+    "state": "pending",
+    "base": "src/parts/uploads/warm-material-upload"
+  },
+  {
+    "number": 377,
+    "id": "orbit-date-calendar",
+    "name": "Orbit Date Calendar",
+    "category": "datepickers",
+    "categoryName": "日付選択",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "丸い月見出しと選択丸だけではOrbitの構造的個性が弱く、Bに近い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "丸い月見出しと選択丸だけではOrbitの構造的個性が弱く、Bに近い。",
+        "description": "丸い月見出しと選択丸だけではOrbitの構造的個性が弱く、Bに近い。",
+        "evidence": [
+          "photos/orbit-date-calendar-stage.png",
+          "photos/orbit-date-calendar-state.png",
+          "photos/orbit-date-calendar-narrow.png",
+          "photos/orbit-date-calendar-expanded.png"
+        ]
+      }
+    ],
+    "batch": "B011",
+    "state": "pending",
+    "base": "src/parts/datepickers/orbit-date-calendar"
+  },
+  {
+    "number": 379,
+    "id": "open-week-calendar",
+    "name": "Open Week Calendar",
+    "category": "datepickers",
+    "categoryName": "日付選択",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "蛇行する帯が週を横断し、日付を蛇行順に読むよう誘導する。曜日列の読み順との不整合を抑えたい。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "蛇行する帯が週を横断し、日付を蛇行順に読むよう誘導する。曜日列の読み順との不整合を抑えたい。",
+        "description": "蛇行する帯が週を横断し、日付を蛇行順に読むよう誘導する。曜日列の読み順との不整合を抑えたい。",
+        "evidence": [
+          "photos/open-week-calendar-stage.png",
+          "photos/open-week-calendar-state.png",
+          "photos/open-week-calendar-narrow.png",
+          "photos/open-week-calendar-expanded.png"
+        ]
+      }
+    ],
+    "batch": "B011",
+    "state": "pending",
+    "base": "src/parts/datepickers/open-week-calendar"
+  },
+  {
+    "number": 383,
+    "id": "petal-month-calendar",
+    "name": "Petal Month Calendar",
+    "category": "datepickers",
+    "categoryName": "日付選択",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "葉形は月見出し一箇所に留まり、通常の暦に角丸を加えた域を出にくい。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "葉形は月見出し一箇所に留まり、通常の暦に角丸を加えた域を出にくい。",
+        "description": "葉形は月見出し一箇所に留まり、通常の暦に角丸を加えた域を出にくい。",
+        "evidence": [
+          "photos/petal-month-calendar-stage.png",
+          "photos/petal-month-calendar-state.png",
+          "photos/petal-month-calendar-narrow.png",
+          "photos/petal-month-calendar-expanded.png"
+        ]
+      }
+    ],
+    "batch": "B011",
+    "state": "pending",
+    "base": "src/parts/datepickers/petal-month-calendar"
+  },
+  {
+    "number": 392,
+    "id": "track-stop-pages",
+    "name": "Track Stop Pages",
+    "category": "pagination",
+    "categoryName": "ページ送り",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "狭幅でレールが二段に割れ、選択位置と前後関係が別の線へ飛ぶ。連続した経路を保ちたい。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "狭幅でレールが二段に割れ、選択位置と前後関係が別の線へ飛ぶ。連続した経路を保ちたい。",
+        "description": "狭幅でレールが二段に割れ、選択位置と前後関係が別の線へ飛ぶ。連続した経路を保ちたい。",
+        "evidence": [
+          "photos/track-stop-pages-stage.png",
+          "photos/track-stop-pages-state.png",
+          "photos/track-stop-pages-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B011",
+    "state": "pending",
+    "base": "src/parts/pagination/track-stop-pages"
+  },
+  {
+    "number": 395,
+    "id": "ledger-page-tabs",
+    "name": "Ledger Page Tabs",
+    "category": "pagination",
+    "categoryName": "ページ送り",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "狭幅で背表紙が二段になり、選択した長い背と下段札が同じ棚を共有して構造が崩れる。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "狭幅で背表紙が二段になり、選択した長い背と下段札が同じ棚を共有して構造が崩れる。",
+        "description": "狭幅で背表紙が二段になり、選択した長い背と下段札が同じ棚を共有して構造が崩れる。",
+        "evidence": [
+          "photos/ledger-page-tabs-stage.png",
+          "photos/ledger-page-tabs-state.png",
+          "photos/ledger-page-tabs-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B011",
+    "state": "pending",
+    "base": "src/parts/pagination/ledger-page-tabs"
+  },
+  {
+    "number": 400,
+    "id": "coin-stack-pages",
+    "name": "Coin Stack Pages",
+    "category": "pagination",
+    "categoryName": "ページ送り",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "硬貨を折り返した配列が散漫で、省略記号と番号の連続関係が弱い。ページ列としての読み順を強めたい。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "硬貨を折り返した配列が散漫で、省略記号と番号の連続関係が弱い。ページ列としての読み順を強めたい。",
+        "description": "硬貨を折り返した配列が散漫で、省略記号と番号の連続関係が弱い。ページ列としての読み順を強めたい。",
+        "evidence": [
+          "photos/coin-stack-pages-stage.png",
+          "photos/coin-stack-pages-state.png",
+          "photos/coin-stack-pages-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B011",
+    "state": "pending",
+    "base": "src/parts/pagination/coin-stack-pages"
+  },
+  {
+    "number": 402,
+    "id": "shuttle-key-pages",
+    "name": "Shuttle Key Pages",
+    "category": "pagination",
+    "categoryName": "ページ送り",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "丸い筐体内に普通のキーを置く意匠が中心で、Shuttle固有の移動構造は弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "丸い筐体内に普通のキーを置く意匠が中心で、Shuttle固有の移動構造は弱い。",
+        "description": "丸い筐体内に普通のキーを置く意匠が中心で、Shuttle固有の移動構造は弱い。",
+        "evidence": [
+          "photos/shuttle-key-pages-stage.png",
+          "photos/shuttle-key-pages-state.png",
+          "photos/shuttle-key-pages-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B011",
+    "state": "pending",
+    "base": "src/parts/pagination/shuttle-key-pages"
+  },
+  {
+    "number": 404,
+    "id": "slatted-pages",
+    "name": "Slatted Pages",
+    "category": "pagination",
+    "categoryName": "ページ送り",
+    "designType": "A",
+    "verdict": "redesign",
+    "note": "R394の縦ステップ・緑の厚板・濃い現在段と構造が近すぎる。別の選択機構として再構成したい。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "major",
+        "status": "visual-review-judgment",
+        "detail": "R394の縦ステップ・緑の厚板・濃い現在段と構造が近すぎる。別の選択機構として再構成したい。",
+        "description": "R394の縦ステップ・緑の厚板・濃い現在段と構造が近すぎる。別の選択機構として再構成したい。",
+        "evidence": [
+          "photos/slatted-pages-stage.png",
+          "photos/slatted-pages-state.png",
+          "photos/slatted-pages-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B012",
+    "state": "pending",
+    "base": "src/parts/pagination/slatted-pages"
+  },
+  {
+    "number": 405,
+    "id": "bookplate-pages",
+    "name": "Bookplate Pages",
+    "category": "pagination",
+    "categoryName": "ページ送り",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "額縁状の太い枠が主な個性で、ページ操作と結び付く独自構造が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "額縁状の太い枠が主な個性で、ページ操作と結び付く独自構造が弱い。",
+        "description": "額縁状の太い枠が主な個性で、ページ操作と結び付く独自構造が弱い。",
+        "evidence": [
+          "photos/bookplate-pages-stage.png",
+          "photos/bookplate-pages-state.png",
+          "photos/bookplate-pages-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B012",
+    "state": "pending",
+    "base": "src/parts/pagination/bookplate-pages"
+  },
+  {
+    "number": 408,
+    "id": "soft-reading-pages",
+    "name": "Soft Reading Pages",
+    "category": "pagination",
+    "categoryName": "ページ送り",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R407と配置・強弱がほぼ同じで、桃色と丸い前後枠以外の差が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R407と配置・強弱がほぼ同じで、桃色と丸い前後枠以外の差が弱い。",
+        "description": "R407と配置・強弱がほぼ同じで、桃色と丸い前後枠以外の差が弱い。",
+        "evidence": [
+          "photos/soft-reading-pages-stage.png",
+          "photos/soft-reading-pages-state.png",
+          "photos/soft-reading-pages-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B012",
+    "state": "pending",
+    "base": "src/parts/pagination/soft-reading-pages"
+  },
+  {
+    "number": 409,
+    "id": "line-navigation-pages",
+    "name": "Line Navigation Pages",
+    "category": "pagination",
+    "categoryName": "ページ送り",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R407と同じ番号列と現在表示で、薄緑の配色以外に独立した用途差が見えにくい。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R407と同じ番号列と現在表示で、薄緑の配色以外に独立した用途差が見えにくい。",
+        "description": "R407と同じ番号列と現在表示で、薄緑の配色以外に独立した用途差が見えにくい。",
+        "evidence": [
+          "photos/line-navigation-pages-stage.png",
+          "photos/line-navigation-pages-state.png",
+          "photos/line-navigation-pages-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B012",
+    "state": "pending",
+    "base": "src/parts/pagination/line-navigation-pages"
+  },
+  {
+    "number": 410,
+    "id": "warm-book-pages",
+    "name": "Warm Book Pages",
+    "category": "pagination",
+    "categoryName": "ページ送り",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R407と同形の番号列を暖色化した印象が強く、読み物向けの独立した設計を足したい。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R407と同形の番号列を暖色化した印象が強く、読み物向けの独立した設計を足したい。",
+        "description": "R407と同形の番号列を暖色化した印象が強く、読み物向けの独立した設計を足したい。",
+        "evidence": [
+          "photos/warm-book-pages-stage.png",
+          "photos/warm-book-pages-state.png",
+          "photos/warm-book-pages-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B012",
+    "state": "pending",
+    "base": "src/parts/pagination/warm-book-pages"
+  },
+  {
+    "number": 414,
+    "id": "stone-path-trail",
+    "name": "Stone Path Trail",
+    "category": "breadcrumbs",
+    "categoryName": "パンくず",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "同寸の丸い厚板が並び、階層差よりメニュー一覧に見える。親子関係を示す接続が欲しい。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "同寸の丸い厚板が並び、階層差よりメニュー一覧に見える。親子関係を示す接続が欲しい。",
+        "description": "同寸の丸い厚板が並び、階層差よりメニュー一覧に見える。親子関係を示す接続が欲しい。",
+        "evidence": [
+          "photos/stone-path-trail-stage.png",
+          "photos/stone-path-trail-state.png",
+          "photos/stone-path-trail-narrow.png",
+          "photos/stone-path-trail-expanded.png"
+        ]
+      }
+    ],
+    "batch": "B012",
+    "state": "pending",
+    "base": "src/parts/breadcrumbs/stone-path-trail"
+  },
+  {
+    "number": 416,
+    "id": "perforated-path-trail",
+    "name": "Perforated Path Trail",
+    "category": "breadcrumbs",
+    "categoryName": "パンくず",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "同幅の紙片が等間隔で並ぶため親子の深さが弱い。ミシン目以外の経路構造を強めたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "同幅の紙片が等間隔で並ぶため親子の深さが弱い。ミシン目以外の経路構造を強めたい。",
+        "description": "同幅の紙片が等間隔で並ぶため親子の深さが弱い。ミシン目以外の経路構造を強めたい。",
+        "evidence": [
+          "photos/perforated-path-trail-stage.png",
+          "photos/perforated-path-trail-state.png",
+          "photos/perforated-path-trail-narrow.png",
+          "photos/perforated-path-trail-expanded.png"
+        ]
+      }
+    ],
+    "batch": "B012",
+    "state": "pending",
+    "base": "src/parts/breadcrumbs/perforated-path-trail"
+  },
+  {
+    "number": 418,
+    "id": "stitched-route-trail",
+    "name": "Stitched Route Trail",
+    "category": "breadcrumbs",
+    "categoryName": "パンくず",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "縫い目と横罫が一覧を装うが、経路の深さを示す差が弱くR413の紙面構成にも近い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "縫い目と横罫が一覧を装うが、経路の深さを示す差が弱くR413の紙面構成にも近い。",
+        "description": "縫い目と横罫が一覧を装うが、経路の深さを示す差が弱くR413の紙面構成にも近い。",
+        "evidence": [
+          "photos/stitched-route-trail-stage.png",
+          "photos/stitched-route-trail-state.png",
+          "photos/stitched-route-trail-narrow.png",
+          "photos/stitched-route-trail-expanded.png"
+        ]
+      }
+    ],
+    "batch": "B012",
+    "state": "pending",
+    "base": "src/parts/breadcrumbs/stitched-route-trail"
+  },
+  {
+    "number": 423,
+    "id": "looped-route-trail",
+    "name": "Looped Route Trail",
+    "category": "breadcrumbs",
+    "categoryName": "パンくず",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "大きな輪が経路の接続として読めず、最後の横棒がPaper文字へ接近している。装飾と文字の余白を再整理したい。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "大きな輪が経路の接続として読めず、最後の横棒がPaper文字へ接近している。装飾と文字の余白を再整理したい。",
+        "description": "大きな輪が経路の接続として読めず、最後の横棒がPaper文字へ接近している。装飾と文字の余白を再整理したい。",
+        "evidence": [
+          "photos/looped-route-trail-stage.png",
+          "photos/looped-route-trail-state.png",
+          "photos/looped-route-trail-narrow.png",
+          "photos/looped-route-trail-expanded.png"
+        ]
+      }
+    ],
+    "batch": "B012",
+    "state": "pending",
+    "base": "src/parts/breadcrumbs/looped-route-trail"
+  },
+  {
+    "number": 428,
+    "id": "soft-location-trail",
+    "name": "Soft Location Trail",
+    "category": "breadcrumbs",
+    "categoryName": "パンくず",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R427の内面・パス構造を桃色と角丸に変えた差が中心で独立性が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R427の内面・パス構造を桃色と角丸に変えた差が中心で独立性が弱い。",
+        "description": "R427の内面・パス構造を桃色と角丸に変えた差が中心で独立性が弱い。",
+        "evidence": [
+          "photos/soft-location-trail-stage.png",
+          "photos/soft-location-trail-state.png",
+          "photos/soft-location-trail-narrow.png",
+          "photos/soft-location-trail-expanded.png"
+        ]
+      }
+    ],
+    "batch": "B012",
+    "state": "pending",
+    "base": "src/parts/breadcrumbs/soft-location-trail"
+  },
+  {
+    "number": 430,
+    "id": "warm-reading-trail",
+    "name": "Warm Reading Trail",
+    "category": "breadcrumbs",
+    "categoryName": "パンくず",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R427と同じ内面パスの暖色版に見え、読書向けの違いが形や情報構成に表れていない。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R427と同じ内面パスの暖色版に見え、読書向けの違いが形や情報構成に表れていない。",
+        "description": "R427と同じ内面パスの暖色版に見え、読書向けの違いが形や情報構成に表れていない。",
+        "evidence": [
+          "photos/warm-reading-trail-stage.png",
+          "photos/warm-reading-trail-state.png",
+          "photos/warm-reading-trail-narrow.png",
+          "photos/warm-reading-trail-expanded.png"
+        ]
+      }
+    ],
+    "batch": "B013",
+    "state": "pending",
+    "base": "src/parts/breadcrumbs/warm-reading-trail"
+  },
+  {
+    "number": 436,
+    "id": "loop-label-tags",
+    "name": "Loop Label Tags",
+    "category": "badges",
+    "categoryName": "タグ・チップ",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "丸端と下影が中心でLoopの機構が見えず、通常のピルタグとの差が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "丸端と下影が中心でLoopの機構が見えず、通常のピルタグとの差が弱い。",
+        "description": "丸端と下影が中心でLoopの機構が見えず、通常のピルタグとの差が弱い。",
+        "evidence": [
+          "photos/loop-label-tags-stage.png",
+          "photos/loop-label-tags-state.png",
+          "photos/loop-label-tags-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B013",
+    "state": "pending",
+    "base": "src/parts/badges/loop-label-tags"
+  },
+  {
+    "number": 437,
+    "id": "instrument-tags",
+    "name": "Instrument Tags",
+    "category": "badges",
+    "categoryName": "タグ・チップ",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "矩形の下罫が主な個性で計器としての構造が薄い。R432との差も限定的。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "矩形の下罫が主な個性で計器としての構造が薄い。R432との差も限定的。",
+        "description": "矩形の下罫が主な個性で計器としての構造が薄い。R432との差も限定的。",
+        "evidence": [
+          "photos/instrument-tags-stage.png",
+          "photos/instrument-tags-state.png",
+          "photos/instrument-tags-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B013",
+    "state": "pending",
+    "base": "src/parts/badges/instrument-tags"
+  },
+  {
+    "number": 439,
+    "id": "bracket-tags",
+    "name": "Bracket Tags",
+    "category": "badges",
+    "categoryName": "タグ・チップ",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "左の大きいC字が文字量に対して強く、太枠の主張に偏る。札を留める構造を整えたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "左の大きいC字が文字量に対して強く、太枠の主張に偏る。札を留める構造を整えたい。",
+        "description": "左の大きいC字が文字量に対して強く、太枠の主張に偏る。札を留める構造を整えたい。",
+        "evidence": [
+          "photos/bracket-tags-stage.png",
+          "photos/bracket-tags-state.png",
+          "photos/bracket-tags-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B013",
+    "state": "pending",
+    "base": "src/parts/badges/bracket-tags"
+  },
+  {
+    "number": 442,
+    "id": "drafting-note-tags",
+    "name": "Drafting Note Tags",
+    "category": "badges",
+    "categoryName": "タグ・チップ",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "製図線が大きな十字として反復し、タグの小さな情報より目立つ。支持線と文字の比率を抑えたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "製図線が大きな十字として反復し、タグの小さな情報より目立つ。支持線と文字の比率を抑えたい。",
+        "description": "製図線が大きな十字として反復し、タグの小さな情報より目立つ。支持線と文字の比率を抑えたい。",
+        "evidence": [
+          "photos/drafting-note-tags-stage.png",
+          "photos/drafting-note-tags-state.png",
+          "photos/drafting-note-tags-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B013",
+    "state": "pending",
+    "base": "src/parts/badges/drafting-note-tags"
+  },
+  {
+    "number": 443,
+    "id": "ribbon-end-tags",
+    "name": "Ribbon End Tags",
+    "category": "badges",
+    "categoryName": "タグ・チップ",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "R433同様の矩形札に左右の折り目を加えた印象で、独立したリボン構造が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R433同様の矩形札に左右の折り目を加えた印象で、独立したリボン構造が弱い。",
+        "description": "R433同様の矩形札に左右の折り目を加えた印象で、独立したリボン構造が弱い。",
+        "evidence": [
+          "photos/ribbon-end-tags-stage.png",
+          "photos/ribbon-end-tags-state.png",
+          "photos/ribbon-end-tags-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B013",
+    "state": "pending",
+    "base": "src/parts/badges/ribbon-end-tags"
+  },
+  {
+    "number": 445,
+    "id": "letterpress-tags",
+    "name": "Letterpress Tags",
+    "category": "badges",
+    "categoryName": "タグ・チップ",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "平らな矩形と活字配置が中心で、Aとして形・材質の独立性が薄い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "平らな矩形と活字配置が中心で、Aとして形・材質の独立性が薄い。",
+        "description": "平らな矩形と活字配置が中心で、Aとして形・材質の独立性が薄い。",
+        "evidence": [
+          "photos/letterpress-tags-stage.png",
+          "photos/letterpress-tags-state.png",
+          "photos/letterpress-tags-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B013",
+    "state": "pending",
+    "base": "src/parts/badges/letterpress-tags"
+  },
+  {
+    "number": 450,
+    "id": "warm-category-tags",
+    "name": "Warm Category Tags",
+    "category": "badges",
+    "categoryName": "タグ・チップ",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R446の配置・選択方法を暖色化した差が中心で、独立した設計差は弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R446の配置・選択方法を暖色化した差が中心で、独立した設計差は弱い。",
+        "description": "R446の配置・選択方法を暖色化した差が中心で、独立した設計差は弱い。",
+        "evidence": [
+          "photos/warm-category-tags-stage.png",
+          "photos/warm-category-tags-state.png",
+          "photos/warm-category-tags-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B013",
+    "state": "pending",
+    "base": "src/parts/badges/warm-category-tags"
+  },
+  {
+    "number": 458,
+    "id": "stitched-count-number",
+    "name": "Stitched Count Number",
+    "category": "numbers",
+    "categoryName": "数値入力",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "狭幅で縫い布の腰が極端に細長くなり、数値とキーが離れすぎる。比率を保ちたい。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "狭幅で縫い布の腰が極端に細長くなり、数値とキーが離れすぎる。比率を保ちたい。",
+        "description": "狭幅で縫い布の腰が極端に細長くなり、数値とキーが離れすぎる。比率を保ちたい。",
+        "evidence": [
+          "photos/stitched-count-number-stage.png",
+          "photos/stitched-count-number-state.png",
+          "photos/stitched-count-number-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B013",
+    "state": "pending",
+    "base": "src/parts/numbers/stitched-count-number"
+  },
+  {
+    "number": 459,
+    "id": "open-jaw-number",
+    "name": "Open Jaw Number",
+    "category": "numbers",
+    "categoryName": "数値入力",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "狭幅で左右の顎とキーが下段へ分かれ、保持機構としてのつながりが薄れる。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "狭幅で左右の顎とキーが下段へ分かれ、保持機構としてのつながりが薄れる。",
+        "description": "狭幅で左右の顎とキーが下段へ分かれ、保持機構としてのつながりが薄れる。",
+        "evidence": [
+          "photos/open-jaw-number-stage.png",
+          "photos/open-jaw-number-state.png",
+          "photos/open-jaw-number-narrow.png"
+        ]
+      },
+      {
+        "kind": "hover",
+        "severity": "major",
+        "status": "confirmed-in-gallery",
+        "detail": "＋のhoverで前景#f7fafbを維持したまま背景が淡色化し、コントラストが3.62:1から1.30:1へ低下する。",
+        "scope": "ギャラリーnumbersカテゴリで再現。著者markup+CSS単独では非再現。解除/再進入の背景補間は連続し、寸法変化なし。",
+        "evidence": [
+          "reviewer/number-hover-probes.json",
+          "reviewer/open-jaw-number-rest-focused.png",
+          "reviewer/open-jaw-number-hover-focused.png"
+        ],
+        "description": "＋のhoverで前景#f7fafbを維持したまま背景が淡色化し、コントラストが3.62:1から1.30:1へ低下する。"
+      }
+    ],
+    "batch": "B013",
+    "state": "pending",
+    "base": "src/parts/numbers/open-jaw-number"
+  },
+  {
+    "number": 460,
+    "id": "bookend-counter",
+    "name": "Bookend Counter",
+    "category": "numbers",
+    "categoryName": "数値入力",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "狭幅ではブックエンドが数値面の下へ移り、本を支える左右構造が失われる。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "狭幅ではブックエンドが数値面の下へ移り、本を支える左右構造が失われる。",
+        "description": "狭幅ではブックエンドが数値面の下へ移り、本を支える左右構造が失われる。",
+        "evidence": [
+          "photos/bookend-counter-stage.png",
+          "photos/bookend-counter-state.png",
+          "photos/bookend-counter-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B014",
+    "state": "pending",
+    "base": "src/parts/numbers/bookend-counter"
+  },
+  {
+    "number": 461,
+    "id": "recessed-dial-number",
+    "name": "Recessed Dial Number",
+    "category": "numbers",
+    "categoryName": "数値入力",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "狭幅で円形目盛が縦の筒状に潰れ、回転ダイヤルの見え方と不整合になる。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "狭幅で円形目盛が縦の筒状に潰れ、回転ダイヤルの見え方と不整合になる。",
+        "description": "狭幅で円形目盛が縦の筒状に潰れ、回転ダイヤルの見え方と不整合になる。",
+        "evidence": [
+          "photos/recessed-dial-number-stage.png",
+          "photos/recessed-dial-number-state.png",
+          "photos/recessed-dial-number-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B014",
+    "state": "pending",
+    "base": "src/parts/numbers/recessed-dial-number"
+  },
+  {
+    "number": 462,
+    "id": "rail-stop-number",
+    "name": "Rail Stop Number",
+    "category": "numbers",
+    "categoryName": "数値入力",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "水平の目盛と小さい現在指標が数値を補い、狭幅もキーを下へ整理する。",
+    "issues": [
+      {
+        "kind": "hover",
+        "severity": "major",
+        "status": "confirmed-in-gallery",
+        "detail": "＋のhoverで白い前景を維持したまま背景が淡色化し、コントラストが3.52:1から1.32:1へ低下する。",
+        "scope": "ギャラリーnumbersカテゴリで再現。著者markup+CSS単独では非再現。解除/再進入の背景補間は連続し、寸法変化なし。",
+        "evidence": [
+          "reviewer/number-hover-probes.json",
+          "reviewer/rail-stop-number-rest-focused.png",
+          "reviewer/rail-stop-number-hover-focused.png"
+        ],
+        "description": "＋のhoverで白い前景を維持したまま背景が淡色化し、コントラストが3.52:1から1.32:1へ低下する。"
+      }
+    ],
+    "batch": "B014",
+    "state": "pending",
+    "base": "src/parts/numbers/rail-stop-number"
+  },
+  {
+    "number": 463,
+    "id": "ribbon-count-number",
+    "name": "Ribbon Count Number",
+    "category": "numbers",
+    "categoryName": "数値入力",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "中央の四角い帯と上下影が主な差で、Ribbonの立体構造が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "中央の四角い帯と上下影が主な差で、Ribbonの立体構造が弱い。",
+        "description": "中央の四角い帯と上下影が主な差で、Ribbonの立体構造が弱い。",
+        "evidence": [
+          "photos/ribbon-count-number-stage.png",
+          "photos/ribbon-count-number-state.png",
+          "photos/ribbon-count-number-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B014",
+    "state": "pending",
+    "base": "src/parts/numbers/ribbon-count-number"
+  },
+  {
+    "number": 468,
+    "id": "soft-amount-number",
+    "name": "Soft Amount Number",
+    "category": "numbers",
+    "categoryName": "数値入力",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R466の構成に桃色と角丸を加えた差が中心で、独立性が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R466の構成に桃色と角丸を加えた差が中心で、独立性が弱い。",
+        "description": "R466の構成に桃色と角丸を加えた差が中心で、独立性が弱い。",
+        "evidence": [
+          "photos/soft-amount-number-stage.png",
+          "photos/soft-amount-number-state.png",
+          "photos/soft-amount-number-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B014",
+    "state": "pending",
+    "base": "src/parts/numbers/soft-amount-number"
+  },
+  {
+    "number": 470,
+    "id": "warm-unit-number",
+    "name": "Warm Unit Number",
+    "category": "numbers",
+    "categoryName": "数値入力",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R466と同じ区画を暖色へ変えた見え方で、用途に応じた情報構成の差が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R466と同じ区画を暖色へ変えた見え方で、用途に応じた情報構成の差が弱い。",
+        "description": "R466と同じ区画を暖色へ変えた見え方で、用途に応じた情報構成の差が弱い。",
+        "evidence": [
+          "photos/warm-unit-number-stage.png",
+          "photos/warm-unit-number-state.png",
+          "photos/warm-unit-number-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B014",
+    "state": "pending",
+    "base": "src/parts/numbers/warm-unit-number"
+  },
+  {
+    "number": 475,
+    "id": "bookplate-profile",
+    "name": "Bookplate Profile",
+    "category": "avatars",
+    "categoryName": "アバター",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "大きな矩形の面と左罫が中心で、蔵書票としての固有形が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "大きな矩形の面と左罫が中心で、蔵書票としての固有形が弱い。",
+        "description": "大きな矩形の面と左罫が中心で、蔵書票としての固有形が弱い。",
+        "evidence": [
+          "photos/bookplate-profile-stage.png",
+          "photos/bookplate-profile-state.png",
+          "photos/bookplate-profile-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B014",
+    "state": "pending",
+    "base": "src/parts/avatars/bookplate-profile"
+  },
+  {
+    "number": 478,
+    "id": "stitch-label-profile",
+    "name": "Stitch Label Profile",
+    "category": "avatars",
+    "categoryName": "アバター",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "R473と紫系の折りカード構造が近く、縫製の差が小さい。氏名情報の置き方も似る。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R473と紫系の折りカード構造が近く、縫製の差が小さい。氏名情報の置き方も似る。",
+        "description": "R473と紫系の折りカード構造が近く、縫製の差が小さい。氏名情報の置き方も似る。",
+        "evidence": [
+          "photos/stitch-label-profile-stage.png",
+          "photos/stitch-label-profile-state.png",
+          "photos/stitch-label-profile-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B014",
+    "state": "pending",
+    "base": "src/parts/avatars/stitch-label-profile"
+  },
+  {
+    "number": 482,
+    "id": "blueprint-id-profile",
+    "name": "Blueprint Id Profile",
+    "category": "avatars",
+    "categoryName": "アバター",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "肖像下の大きな脚が人物情報より強く、Blueprintというより机の記号に見える。支持部の比率を抑えたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "肖像下の大きな脚が人物情報より強く、Blueprintというより机の記号に見える。支持部の比率を抑えたい。",
+        "description": "肖像下の大きな脚が人物情報より強く、Blueprintというより机の記号に見える。支持部の比率を抑えたい。",
+        "evidence": [
+          "photos/blueprint-id-profile-stage.png",
+          "photos/blueprint-id-profile-state.png",
+          "photos/blueprint-id-profile-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B014",
+    "state": "pending",
+    "base": "src/parts/avatars/blueprint-id-profile"
+  },
+  {
+    "number": 489,
+    "id": "outline-person-profile",
+    "name": "Outline Person Profile",
+    "category": "avatars",
+    "categoryName": "アバター",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R486と同じ円形肖像・二行名札の緑版に見え、輪郭以外の差が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R486と同じ円形肖像・二行名札の緑版に見え、輪郭以外の差が弱い。",
+        "description": "R486と同じ円形肖像・二行名札の緑版に見え、輪郭以外の差が弱い。",
+        "evidence": [
+          "photos/outline-person-profile-stage.png",
+          "photos/outline-person-profile-state.png",
+          "photos/outline-person-profile-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B014",
+    "state": "pending",
+    "base": "src/parts/avatars/outline-person-profile"
+  },
+  {
+    "number": 490,
+    "id": "warm-author-profile",
+    "name": "Warm Author Profile",
+    "category": "avatars",
+    "categoryName": "アバター",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R486の円形肖像を暖色化した比重が大きく、著者向けの独立した情報構成が乏しい。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R486の円形肖像を暖色化した比重が大きく、著者向けの独立した情報構成が乏しい。",
+        "description": "R486の円形肖像を暖色化した比重が大きく、著者向けの独立した情報構成が乏しい。",
+        "evidence": [
+          "photos/warm-author-profile-stage.png",
+          "photos/warm-author-profile-state.png",
+          "photos/warm-author-profile-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B015",
+    "state": "pending",
+    "base": "src/parts/avatars/warm-author-profile"
+  },
+  {
+    "number": 491,
+    "id": "seal-score-rating",
+    "name": "Seal Score Rating",
+    "category": "ratings",
+    "categoryName": "評価",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "狭幅で五つ目だけ次段へ落ち、五段階評価の一列の読み取りが崩れる。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "狭幅で五つ目だけ次段へ落ち、五段階評価の一列の読み取りが崩れる。",
+        "description": "狭幅で五つ目だけ次段へ落ち、五段階評価の一列の読み取りが崩れる。",
+        "evidence": [
+          "photos/seal-score-rating-stage.png",
+          "photos/seal-score-rating-state.png",
+          "photos/seal-score-rating-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B015",
+    "state": "pending",
+    "base": "src/parts/ratings/seal-score-rating"
+  },
+  {
+    "number": 492,
+    "id": "inspection-score-rating",
+    "name": "Inspection Score Rating",
+    "category": "ratings",
+    "categoryName": "評価",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "狭幅で検査台と五つ目の星が別段へ分断され、連続した五段階に見えにくい。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "狭幅で検査台と五つ目の星が別段へ分断され、連続した五段階に見えにくい。",
+        "description": "狭幅で検査台と五つ目の星が別段へ分断され、連続した五段階に見えにくい。",
+        "evidence": [
+          "photos/inspection-score-rating-stage.png",
+          "photos/inspection-score-rating-state.png",
+          "photos/inspection-score-rating-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B015",
+    "state": "pending",
+    "base": "src/parts/ratings/inspection-score-rating"
+  },
+  {
+    "number": 493,
+    "id": "folded-score-rating",
+    "name": "Folded Score Rating",
+    "category": "ratings",
+    "categoryName": "評価",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "狭幅で吊り桁が四個と一個へ割れ、星の尺度が不自然に分離する。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "狭幅で吊り桁が四個と一個へ割れ、星の尺度が不自然に分離する。",
+        "description": "狭幅で吊り桁が四個と一個へ割れ、星の尺度が不自然に分離する。",
+        "evidence": [
+          "photos/folded-score-rating-stage.png",
+          "photos/folded-score-rating-state.png",
+          "photos/folded-score-rating-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B015",
+    "state": "pending",
+    "base": "src/parts/ratings/folded-score-rating"
+  },
+  {
+    "number": 494,
+    "id": "stone-pip-rating",
+    "name": "Stone Pip Rating",
+    "category": "ratings",
+    "categoryName": "評価",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "狭幅で星のアーチが三個と二個へ折れ、横の五段階として一度に読めない。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "狭幅で星のアーチが三個と二個へ折れ、横の五段階として一度に読めない。",
+        "description": "狭幅で星のアーチが三個と二個へ折れ、横の五段階として一度に読めない。",
+        "evidence": [
+          "photos/stone-pip-rating-stage.png",
+          "photos/stone-pip-rating-state.png",
+          "photos/stone-pip-rating-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B015",
+    "state": "pending",
+    "base": "src/parts/ratings/stone-pip-rating"
+  },
+  {
+    "number": 496,
+    "id": "notched-disc-rating",
+    "name": "Notched Disc Rating",
+    "category": "ratings",
+    "categoryName": "評価",
+    "designType": "A",
+    "verdict": "redesign",
+    "note": "R491と金の丸い星メダル・選択輪郭・下罫がほぼ同じ。狭幅の五つ目分離も共通する。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "severity": "major",
+        "status": "visual-review-judgment",
+        "detail": "R491と金の丸い星メダル・選択輪郭・下罫がほぼ同じ。狭幅の五つ目分離も共通する。",
+        "description": "R491と金の丸い星メダル・選択輪郭・下罫がほぼ同じ。狭幅の五つ目分離も共通する。",
+        "evidence": [
+          "photos/notched-disc-rating-stage.png",
+          "photos/notched-disc-rating-state.png",
+          "photos/notched-disc-rating-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B015",
+    "state": "pending",
+    "base": "src/parts/ratings/notched-disc-rating"
+  },
+  {
+    "number": 497,
+    "id": "rail-signal-rating",
+    "name": "Rail Signal Rating",
+    "category": "ratings",
+    "categoryName": "評価",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "狭幅で最後の信号だけ別の線へ落ち、評価の連続性とレール構造を失う。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "狭幅で最後の信号だけ別の線へ落ち、評価の連続性とレール構造を失う。",
+        "description": "狭幅で最後の信号だけ別の線へ落ち、評価の連続性とレール構造を失う。",
+        "evidence": [
+          "photos/rail-signal-rating-stage.png",
+          "photos/rail-signal-rating-state.png",
+          "photos/rail-signal-rating-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B015",
+    "state": "pending",
+    "base": "src/parts/ratings/rail-signal-rating"
+  },
+  {
+    "number": 498,
+    "id": "stitch-star-rating",
+    "name": "Stitch Star Rating",
+    "category": "ratings",
+    "categoryName": "評価",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "狭幅で三個と二個の縫い帯へ分断され、単一の評価尺度としてまとまりに欠ける。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "狭幅で三個と二個の縫い帯へ分断され、単一の評価尺度としてまとまりに欠ける。",
+        "description": "狭幅で三個と二個の縫い帯へ分断され、単一の評価尺度としてまとまりに欠ける。",
+        "evidence": [
+          "photos/stitch-star-rating-stage.png",
+          "photos/stitch-star-rating-state.png",
+          "photos/stitch-star-rating-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B015",
+    "state": "pending",
+    "base": "src/parts/ratings/stitch-star-rating"
+  },
+  {
+    "number": 499,
+    "id": "open-bracket-rating",
+    "name": "Open Bracket Rating",
+    "category": "ratings",
+    "categoryName": "評価",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "通常から三個と二個の大きな括弧に割れ、星より留具が優勢。尺度を一目で読める構成へ整理したい。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "通常から三個と二個の大きな括弧に割れ、星より留具が優勢。尺度を一目で読める構成へ整理したい。",
+        "description": "通常から三個と二個の大きな括弧に割れ、星より留具が優勢。尺度を一目で読める構成へ整理したい。",
+        "evidence": [
+          "photos/open-bracket-rating-stage.png",
+          "photos/open-bracket-rating-state.png",
+          "photos/open-bracket-rating-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B015",
+    "state": "pending",
+    "base": "src/parts/ratings/open-bracket-rating"
+  },
+  {
+    "number": 500,
+    "id": "coin-value-rating",
+    "name": "Coin Value Rating",
+    "category": "ratings",
+    "categoryName": "評価",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "狭幅で五つ目の札だけ下段に落ちる。駒形は明快だが五段階の配置を保ちたい。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "狭幅で五つ目の札だけ下段に落ちる。駒形は明快だが五段階の配置を保ちたい。",
+        "description": "狭幅で五つ目の札だけ下段に落ちる。駒形は明快だが五段階の配置を保ちたい。",
+        "evidence": [
+          "photos/coin-value-rating-stage.png",
+          "photos/coin-value-rating-state.png",
+          "photos/coin-value-rating-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B015",
+    "state": "pending",
+    "base": "src/parts/ratings/coin-value-rating"
+  },
+  {
+    "number": 501,
+    "id": "flag-score-rating",
+    "name": "Flag Score Rating",
+    "category": "ratings",
+    "categoryName": "評価",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "旗が狭幅で三個と二個に折れ、尺度を横一列として読めない。旗の大きさと間隔を抑えたい。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "旗が狭幅で三個と二個に折れ、尺度を横一列として読めない。旗の大きさと間隔を抑えたい。",
+        "description": "旗が狭幅で三個と二個に折れ、尺度を横一列として読めない。旗の大きさと間隔を抑えたい。",
+        "evidence": [
+          "photos/flag-score-rating-stage.png",
+          "photos/flag-score-rating-state.png",
+          "photos/flag-score-rating-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B016",
+    "state": "pending",
+    "base": "src/parts/ratings/flag-score-rating"
+  },
+  {
+    "number": 502,
+    "id": "blueprint-score-rating",
+    "name": "Blueprint Score Rating",
+    "category": "ratings",
+    "categoryName": "評価",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "星下の三方脚が大きく、通常から3+2の配置になる。評価より装飾が優位。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "星下の三方脚が大きく、通常から3+2の配置になる。評価より装飾が優位。",
+        "description": "星下の三方脚が大きく、通常から3+2の配置になる。評価より装飾が優位。",
+        "evidence": [
+          "photos/blueprint-score-rating-stage.png",
+          "photos/blueprint-score-rating-state.png",
+          "photos/blueprint-score-rating-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B016",
+    "state": "pending",
+    "base": "src/parts/ratings/blueprint-score-rating"
+  },
+  {
+    "number": 503,
+    "id": "ribbon-score-rating",
+    "name": "Ribbon Score Rating",
+    "category": "ratings",
+    "categoryName": "評価",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "狭幅で帯の最後だけ切れて次段に出るため、連続した評価帯の意匠と不整合。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "狭幅で帯の最後だけ切れて次段に出るため、連続した評価帯の意匠と不整合。",
+        "description": "狭幅で帯の最後だけ切れて次段に出るため、連続した評価帯の意匠と不整合。",
+        "evidence": [
+          "photos/ribbon-score-rating-stage.png",
+          "photos/ribbon-score-rating-state.png",
+          "photos/ribbon-score-rating-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B016",
+    "state": "pending",
+    "base": "src/parts/ratings/ribbon-score-rating"
+  },
+  {
+    "number": 504,
+    "id": "ceramic-score-rating",
+    "name": "Ceramic Score Rating",
+    "category": "ratings",
+    "categoryName": "評価",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "狭幅で陶器面の星が二段に折れ、値の累積を一列で追いにくい。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "狭幅で陶器面の星が二段に折れ、値の累積を一列で追いにくい。",
+        "description": "狭幅で陶器面の星が二段に折れ、値の累積を一列で追いにくい。",
+        "evidence": [
+          "photos/ceramic-score-rating-stage.png",
+          "photos/ceramic-score-rating-state.png",
+          "photos/ceramic-score-rating-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B016",
+    "state": "pending",
+    "base": "src/parts/ratings/ceramic-score-rating"
+  },
+  {
+    "number": 505,
+    "id": "letterpress-score-rating",
+    "name": "Letterpress Score Rating",
+    "category": "ratings",
+    "categoryName": "評価",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "狭幅で五つ目の活字札が単独行へ落ちる。五段階を収める横寸法を再調整したい。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "狭幅で五つ目の活字札が単独行へ落ちる。五段階を収める横寸法を再調整したい。",
+        "description": "狭幅で五つ目の活字札が単独行へ落ちる。五段階を収める横寸法を再調整したい。",
+        "evidence": [
+          "photos/letterpress-score-rating-stage.png",
+          "photos/letterpress-score-rating-state.png",
+          "photos/letterpress-score-rating-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B016",
+    "state": "pending",
+    "base": "src/parts/ratings/letterpress-score-rating"
+  },
+  {
+    "number": 508,
+    "id": "soft-feedback-rating",
+    "name": "Soft Feedback Rating",
+    "category": "ratings",
+    "categoryName": "評価",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "狭幅で五つ目だけ下へ落ち、角丸キーの密度が評価の把握を妨げる。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "狭幅で五つ目だけ下へ落ち、角丸キーの密度が評価の把握を妨げる。",
+        "description": "狭幅で五つ目だけ下へ落ち、角丸キーの密度が評価の把握を妨げる。",
+        "evidence": [
+          "photos/soft-feedback-rating-stage.png",
+          "photos/soft-feedback-rating-state.png",
+          "photos/soft-feedback-rating-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B016",
+    "state": "pending",
+    "base": "src/parts/ratings/soft-feedback-rating"
+  },
+  {
+    "number": 510,
+    "id": "warm-reader-rating",
+    "name": "Warm Reader Rating",
+    "category": "ratings",
+    "categoryName": "評価",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "狭幅で最後の星だけ下段になる。暖色キーの大きさより五段階の安定を優先したい。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "狭幅で最後の星だけ下段になる。暖色キーの大きさより五段階の安定を優先したい。",
+        "description": "狭幅で最後の星だけ下段になる。暖色キーの大きさより五段階の安定を優先したい。",
+        "evidence": [
+          "photos/warm-reader-rating-stage.png",
+          "photos/warm-reader-rating-state.png",
+          "photos/warm-reader-rating-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B016",
+    "state": "pending",
+    "base": "src/parts/ratings/warm-reader-rating"
+  },
+  {
+    "number": 517,
+    "id": "optical-color-desk",
+    "name": "Optical Color Desk",
+    "category": "colors",
+    "categoryName": "色選択",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "小さい色相輪が色面とは別に上置きされ、R514より操作のまとまりが弱い。二つの選色面の関係を明確にしたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "小さい色相輪が色面とは別に上置きされ、R514より操作のまとまりが弱い。二つの選色面の関係を明確にしたい。",
+        "description": "小さい色相輪が色面とは別に上置きされ、R514より操作のまとまりが弱い。二つの選色面の関係を明確にしたい。",
+        "evidence": [
+          "photos/optical-color-desk-stage.png",
+          "photos/optical-color-desk-state.png",
+          "photos/optical-color-desk-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B016",
+    "state": "pending",
+    "base": "src/parts/colors/optical-color-desk"
+  },
+  {
+    "number": 520,
+    "id": "letterpress-ink-color",
+    "name": "Letterpress Ink Color",
+    "category": "colors",
+    "categoryName": "色選択",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "通常の縦積みカラーピッカーに細い暖色枠を加えた差が中心で、Aの独自構造が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "通常の縦積みカラーピッカーに細い暖色枠を加えた差が中心で、Aの独自構造が弱い。",
+        "description": "通常の縦積みカラーピッカーに細い暖色枠を加えた差が中心で、Aの独自構造が弱い。",
+        "evidence": [
+          "photos/letterpress-ink-color-stage.png",
+          "photos/letterpress-ink-color-state.png",
+          "photos/letterpress-ink-color-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B016",
+    "state": "pending",
+    "base": "src/parts/colors/letterpress-ink-color"
+  },
+  {
+    "number": 522,
+    "id": "linear-lab-color",
+    "name": "Linear Lab Color",
+    "category": "colors",
+    "categoryName": "色選択",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "標準的な縦積み操作群と四角い見本が中心で、BのR527と設計差が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "標準的な縦積み操作群と四角い見本が中心で、BのR527と設計差が弱い。",
+        "description": "標準的な縦積み操作群と四角い見本が中心で、BのR527と設計差が弱い。",
+        "evidence": [
+          "photos/linear-lab-color-stage.png",
+          "photos/linear-lab-color-state.png",
+          "photos/linear-lab-color-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B016",
+    "state": "pending",
+    "base": "src/parts/colors/linear-lab-color"
+  },
+  {
+    "number": 523,
+    "id": "ribbon-swatch-color",
+    "name": "Ribbon Swatch Color",
+    "category": "colors",
+    "categoryName": "色選択",
+    "designType": "A",
+    "verdict": "redesign",
+    "note": "R521の積層スウォッチを斜めの帯に変えた構造に近い。選色の別の組立てとして再設計したい。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "major",
+        "status": "visual-review-judgment",
+        "detail": "R521の積層スウォッチを斜めの帯に変えた構造に近い。選色の別の組立てとして再設計したい。",
+        "description": "R521の積層スウォッチを斜めの帯に変えた構造に近い。選色の別の組立てとして再設計したい。",
+        "evidence": [
+          "photos/ribbon-swatch-color-stage.png",
+          "photos/ribbon-swatch-color-state.png",
+          "photos/ribbon-swatch-color-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B017",
+    "state": "pending",
+    "base": "src/parts/colors/ribbon-swatch-color"
+  },
+  {
+    "number": 528,
+    "id": "soft-theme-color",
+    "name": "Soft Theme Color",
+    "category": "colors",
+    "categoryName": "色選択",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R526の配列に桃色と角丸を加えた差が中心で、独立した用途・構造差が薄い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R526の配列に桃色と角丸を加えた差が中心で、独立した用途・構造差が薄い。",
+        "description": "R526の配列に桃色と角丸を加えた差が中心で、独立した用途・構造差が薄い。",
+        "evidence": [
+          "photos/soft-theme-color-stage.png",
+          "photos/soft-theme-color-state.png",
+          "photos/soft-theme-color-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B017",
+    "state": "pending",
+    "base": "src/parts/colors/soft-theme-color"
+  },
+  {
+    "number": 530,
+    "id": "warm-studio-color",
+    "name": "Warm Studio Color",
+    "category": "colors",
+    "categoryName": "色選択",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R526の選色面と操作群を暖色化した比重が大きく、Studio用途の違いが形に乏しい。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R526の選色面と操作群を暖色化した比重が大きく、Studio用途の違いが形に乏しい。",
+        "description": "R526の選色面と操作群を暖色化した比重が大きく、Studio用途の違いが形に乏しい。",
+        "evidence": [
+          "photos/warm-studio-color-stage.png",
+          "photos/warm-studio-color-state.png",
+          "photos/warm-studio-color-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B017",
+    "state": "pending",
+    "base": "src/parts/colors/warm-studio-color"
+  },
+  {
+    "number": 536,
+    "id": "photo-caption-skeleton",
+    "name": "Photo Caption Skeleton",
+    "category": "skeletons",
+    "categoryName": "スケルトン",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "写真と本文の通常のカード構成に留まり、Aの独自性は弱い。Bとしては読みやすい。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "写真と本文の通常のカード構成に留まり、Aの独自性は弱い。Bとしては読みやすい。",
+        "description": "写真と本文の通常のカード構成に留まり、Aの独自性は弱い。Bとしては読みやすい。",
+        "evidence": [
+          "photos/photo-caption-skeleton-stage.png",
+          "photos/photo-caption-skeleton-state.png",
+          "photos/photo-caption-skeleton-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B017",
+    "state": "pending",
+    "base": "src/parts/skeletons/photo-caption-skeleton"
+  },
+  {
+    "number": 539,
+    "id": "open-grid-skeleton",
+    "name": "Open Grid Skeleton",
+    "category": "skeletons",
+    "categoryName": "スケルトン",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "薄い青枠と通常の二段カードが中心で、R541との構造差が乏しい。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "薄い青枠と通常の二段カードが中心で、R541との構造差が乏しい。",
+        "description": "薄い青枠と通常の二段カードが中心で、R541との構造差が乏しい。",
+        "evidence": [
+          "photos/open-grid-skeleton-stage.png",
+          "photos/open-grid-skeleton-state.png",
+          "photos/open-grid-skeleton-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B017",
+    "state": "pending",
+    "base": "src/parts/skeletons/open-grid-skeleton"
+  },
+  {
+    "number": 541,
+    "id": "list-column-skeleton",
+    "name": "List Column Skeleton",
+    "category": "skeletons",
+    "categoryName": "スケルトン",
+    "designType": "A",
+    "verdict": "redesign",
+    "note": "R539と図版上段・人物左下・本文右下の構成がほぼ同じ。色と罫以外の設計差が必要。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "major",
+        "status": "visual-review-judgment",
+        "detail": "R539と図版上段・人物左下・本文右下の構成がほぼ同じ。色と罫以外の設計差が必要。",
+        "description": "R539と図版上段・人物左下・本文右下の構成がほぼ同じ。色と罫以外の設計差が必要。",
+        "evidence": [
+          "photos/list-column-skeleton-stage.png",
+          "photos/list-column-skeleton-state.png",
+          "photos/list-column-skeleton-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B017",
+    "state": "pending",
+    "base": "src/parts/skeletons/list-column-skeleton"
+  },
+  {
+    "number": 548,
+    "id": "soft-preview-skeleton",
+    "name": "Soft Preview Skeleton",
+    "category": "skeletons",
+    "categoryName": "スケルトン",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R546に桃色と角丸を加えた差が中心で、Preview用の独立した骨格が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R546に桃色と角丸を加えた差が中心で、Preview用の独立した骨格が弱い。",
+        "description": "R546に桃色と角丸を加えた差が中心で、Preview用の独立した骨格が弱い。",
+        "evidence": [
+          "photos/soft-preview-skeleton-stage.png",
+          "photos/soft-preview-skeleton-state.png",
+          "photos/soft-preview-skeleton-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B017",
+    "state": "pending",
+    "base": "src/parts/skeletons/soft-preview-skeleton"
+  },
+  {
+    "number": 550,
+    "id": "warm-card-skeleton",
+    "name": "Warm Card Skeleton",
+    "category": "skeletons",
+    "categoryName": "スケルトン",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R546と同じ図版・人物・本文・操作列を暖色にした構成で、独立性が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R546と同じ図版・人物・本文・操作列を暖色にした構成で、独立性が弱い。",
+        "description": "R546と同じ図版・人物・本文・操作列を暖色にした構成で、独立性が弱い。",
+        "evidence": [
+          "photos/warm-card-skeleton-stage.png",
+          "photos/warm-card-skeleton-state.png",
+          "photos/warm-card-skeleton-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B017",
+    "state": "pending",
+    "base": "src/parts/skeletons/warm-card-skeleton"
+  },
+  {
+    "number": 556,
+    "id": "margin-note-timeline",
+    "name": "Margin Note Timeline",
+    "category": "timelines",
+    "categoryName": "タイムライン",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "細い左罫と小さい日付が主な構成で、Bの履歴リストとの差が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "細い左罫と小さい日付が主な構成で、Bの履歴リストとの差が弱い。",
+        "description": "細い左罫と小さい日付が主な構成で、Bの履歴リストとの差が弱い。",
+        "evidence": [
+          "photos/margin-note-timeline-stage.png",
+          "photos/margin-note-timeline-state.png",
+          "photos/margin-note-timeline-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B017",
+    "state": "pending",
+    "base": "src/parts/timelines/margin-note-timeline"
+  },
+  {
+    "number": 557,
+    "id": "console-log-timeline",
+    "name": "Console Log Timeline",
+    "category": "timelines",
+    "categoryName": "タイムライン",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "立体的な太枠が主要な特徴で、履歴操作と結び付く独自の構造が薄い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "立体的な太枠が主要な特徴で、履歴操作と結び付く独自の構造が薄い。",
+        "description": "立体的な太枠が主要な特徴で、履歴操作と結び付く独自の構造が薄い。",
+        "evidence": [
+          "photos/console-log-timeline-stage.png",
+          "photos/console-log-timeline-state.png",
+          "photos/console-log-timeline-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B017",
+    "state": "pending",
+    "base": "src/parts/timelines/console-log-timeline"
+  },
+  {
+    "number": 562,
+    "id": "blueprint-route-timeline",
+    "name": "Blueprint Route Timeline",
+    "category": "timelines",
+    "categoryName": "タイムライン",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "大きい折線が本文ブロックを横断して目立ち、細い履歴内容との比率が強すぎる。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "大きい折線が本文ブロックを横断して目立ち、細い履歴内容との比率が強すぎる。",
+        "description": "大きい折線が本文ブロックを横断して目立ち、細い履歴内容との比率が強すぎる。",
+        "evidence": [
+          "photos/blueprint-route-timeline-stage.png",
+          "photos/blueprint-route-timeline-state.png",
+          "photos/blueprint-route-timeline-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B018",
+    "state": "pending",
+    "base": "src/parts/timelines/blueprint-route-timeline"
+  },
+  {
+    "number": 563,
+    "id": "loop-history-timeline",
+    "name": "Loop History Timeline",
+    "category": "timelines",
+    "categoryName": "タイムライン",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "楕円の日付と普通の履歴列が中心で、Aの構造的独創性は限定的。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "楕円の日付と普通の履歴列が中心で、Aの構造的独創性は限定的。",
+        "description": "楕円の日付と普通の履歴列が中心で、Aの構造的独創性は限定的。",
+        "evidence": [
+          "photos/loop-history-timeline-stage.png",
+          "photos/loop-history-timeline-state.png",
+          "photos/loop-history-timeline-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B018",
+    "state": "pending",
+    "base": "src/parts/timelines/loop-history-timeline"
+  },
+  {
+    "number": 569,
+    "id": "clear-process-timeline",
+    "name": "Clear Process Timeline",
+    "category": "timelines",
+    "categoryName": "タイムライン",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R566の基本の縦軸と配置を緑に変えた差が中心で独立性が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R566の基本の縦軸と配置を緑に変えた差が中心で独立性が弱い。",
+        "description": "R566の基本の縦軸と配置を緑に変えた差が中心で独立性が弱い。",
+        "evidence": [
+          "photos/clear-process-timeline-stage.png",
+          "photos/clear-process-timeline-state.png",
+          "photos/clear-process-timeline-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B018",
+    "state": "pending",
+    "base": "src/parts/timelines/clear-process-timeline"
+  },
+  {
+    "number": 576,
+    "id": "index-flap-wizard",
+    "name": "Index Flap Wizard",
+    "category": "wizards",
+    "categoryName": "ウィザード",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "索引タブと通常のフォームの組合せに留まり、R581との構造差が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "索引タブと通常のフォームの組合せに留まり、R581との構造差が弱い。",
+        "description": "索引タブと通常のフォームの組合せに留まり、R581との構造差が弱い。",
+        "evidence": [
+          "photos/index-flap-wizard-stage.png",
+          "photos/index-flap-wizard-state.png",
+          "photos/index-flap-wizard-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B018",
+    "state": "pending",
+    "base": "src/parts/wizards/index-flap-wizard"
+  },
+  {
+    "number": 578,
+    "id": "stitched-journey-wizard",
+    "name": "Stitched Journey Wizard",
+    "category": "wizards",
+    "categoryName": "ウィザード",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "黒い大きな綴じ穴が工程番号を圧迫し、軽い入力面との重さが不釣合い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "黒い大きな綴じ穴が工程番号を圧迫し、軽い入力面との重さが不釣合い。",
+        "description": "黒い大きな綴じ穴が工程番号を圧迫し、軽い入力面との重さが不釣合い。",
+        "evidence": [
+          "photos/stitched-journey-wizard-stage.png",
+          "photos/stitched-journey-wizard-state.png",
+          "photos/stitched-journey-wizard-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B018",
+    "state": "pending",
+    "base": "src/parts/wizards/stitched-journey-wizard"
+  },
+  {
+    "number": 581,
+    "id": "clipped-page-wizard",
+    "name": "Clipped Page Wizard",
+    "category": "wizards",
+    "categoryName": "ウィザード",
+    "designType": "A",
+    "verdict": "redesign",
+    "note": "R576の上部索引札・中央フォーム・下端操作とほぼ同じで、切込みの形だけでは別作品として弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "major",
+        "status": "visual-review-judgment",
+        "detail": "R576の上部索引札・中央フォーム・下端操作とほぼ同じで、切込みの形だけでは別作品として弱い。",
+        "description": "R576の上部索引札・中央フォーム・下端操作とほぼ同じで、切込みの形だけでは別作品として弱い。",
+        "evidence": [
+          "photos/clipped-page-wizard-stage.png",
+          "photos/clipped-page-wizard-state.png",
+          "photos/clipped-page-wizard-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B018",
+    "state": "pending",
+    "base": "src/parts/wizards/clipped-page-wizard"
+  },
+  {
+    "number": 584,
+    "id": "ceramic-stage-wizard",
+    "name": "Ceramic Stage Wizard",
+    "category": "wizards",
+    "categoryName": "ウィザード",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "狭幅で陶器の上下が細い砂時計形に伸び、フォーム中央がくびれて窮屈。面の比率を整えたい。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "狭幅で陶器の上下が細い砂時計形に伸び、フォーム中央がくびれて窮屈。面の比率を整えたい。",
+        "description": "狭幅で陶器の上下が細い砂時計形に伸び、フォーム中央がくびれて窮屈。面の比率を整えたい。",
+        "evidence": [
+          "photos/ceramic-stage-wizard-stage.png",
+          "photos/ceramic-stage-wizard-state.png",
+          "photos/ceramic-stage-wizard-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B018",
+    "state": "pending",
+    "base": "src/parts/wizards/ceramic-stage-wizard"
+  },
+  {
+    "number": 588,
+    "id": "soft-enrollment-wizard",
+    "name": "Soft Enrollment Wizard",
+    "category": "wizards",
+    "categoryName": "ウィザード",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R586の構成を桃色と角丸へ変えた差が中心で、Enrollment固有の差が薄い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R586の構成を桃色と角丸へ変えた差が中心で、Enrollment固有の差が薄い。",
+        "description": "R586の構成を桃色と角丸へ変えた差が中心で、Enrollment固有の差が薄い。",
+        "evidence": [
+          "photos/soft-enrollment-wizard-stage.png",
+          "photos/soft-enrollment-wizard-state.png",
+          "photos/soft-enrollment-wizard-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B018",
+    "state": "pending",
+    "base": "src/parts/wizards/soft-enrollment-wizard"
+  },
+  {
+    "number": 589,
+    "id": "clear-process-wizard",
+    "name": "Clear Process Wizard",
+    "category": "wizards",
+    "categoryName": "ウィザード",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R586の工程・入力・次操作配置とほぼ同じで、緑と罫以外の独立性が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R586の工程・入力・次操作配置とほぼ同じで、緑と罫以外の独立性が弱い。",
+        "description": "R586の工程・入力・次操作配置とほぼ同じで、緑と罫以外の独立性が弱い。",
+        "evidence": [
+          "photos/clear-process-wizard-stage.png",
+          "photos/clear-process-wizard-state.png",
+          "photos/clear-process-wizard-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B018",
+    "state": "pending",
+    "base": "src/parts/wizards/clear-process-wizard"
+  },
+  {
+    "number": 590,
+    "id": "warm-form-wizard",
+    "name": "Warm Form Wizard",
+    "category": "wizards",
+    "categoryName": "ウィザード",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R586の同じフォーム構成を暖色化した比重が大きく、別作品の設計差が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R586の同じフォーム構成を暖色化した比重が大きく、別作品の設計差が弱い。",
+        "description": "R586の同じフォーム構成を暖色化した比重が大きく、別作品の設計差が弱い。",
+        "evidence": [
+          "photos/warm-form-wizard-stage.png",
+          "photos/warm-form-wizard-state.png",
+          "photos/warm-form-wizard-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B018",
+    "state": "pending",
+    "base": "src/parts/wizards/warm-form-wizard"
+  },
+  {
+    "number": 592,
+    "id": "radar-window-search",
+    "name": "Radar Window Search",
+    "category": "searchbars",
+    "categoryName": "検索バー",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "下線入力と丸い送信キーが中心で、Radar固有の構造が弱くBに近い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "下線入力と丸い送信キーが中心で、Radar固有の構造が弱くBに近い。",
+        "description": "下線入力と丸い送信キーが中心で、Radar固有の構造が弱くBに近い。",
+        "evidence": [
+          "photos/radar-window-search-stage.png",
+          "photos/radar-window-search-state.png",
+          "photos/radar-window-search-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B019",
+    "state": "pending",
+    "base": "src/parts/searchbars/radar-window-search"
+  },
+  {
+    "number": 596,
+    "id": "slotted-mail-search",
+    "name": "Slotted Mail Search",
+    "category": "searchbars",
+    "categoryName": "検索バー",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "普通の枠付き検索欄とタブに留まり、郵便スロットとしての形がほぼ見えない。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "普通の枠付き検索欄とタブに留まり、郵便スロットとしての形がほぼ見えない。",
+        "description": "普通の枠付き検索欄とタブに留まり、郵便スロットとしての形がほぼ見えない。",
+        "evidence": [
+          "photos/slotted-mail-search-stage.png",
+          "photos/slotted-mail-search-state.png",
+          "photos/slotted-mail-search-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B019",
+    "state": "pending",
+    "base": "src/parts/searchbars/slotted-mail-search"
+  },
+  {
+    "number": 599,
+    "id": "open-shelf-search",
+    "name": "Open Shelf Search",
+    "category": "searchbars",
+    "categoryName": "検索バー",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "細い下線と丸い送信キーがR592に近く、Open Shelf固有の棚構造は弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "細い下線と丸い送信キーがR592に近く、Open Shelf固有の棚構造は弱い。",
+        "description": "細い下線と丸い送信キーがR592に近く、Open Shelf固有の棚構造は弱い。",
+        "evidence": [
+          "photos/open-shelf-search-stage.png",
+          "photos/open-shelf-search-state.png",
+          "photos/open-shelf-search-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B019",
+    "state": "pending",
+    "base": "src/parts/searchbars/open-shelf-search"
+  },
+  {
+    "number": 601,
+    "id": "caption-line-search",
+    "name": "Caption Line Search",
+    "category": "searchbars",
+    "categoryName": "検索バー",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "キャプションと細い下線の編集的整理は良いが、R599との差が小さくAの独立性が薄い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "キャプションと細い下線の編集的整理は良いが、R599との差が小さくAの独立性が薄い。",
+        "description": "キャプションと細い下線の編集的整理は良いが、R599との差が小さくAの独立性が薄い。",
+        "evidence": [
+          "photos/caption-line-search-stage.png",
+          "photos/caption-line-search-state.png",
+          "photos/caption-line-search-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B019",
+    "state": "pending",
+    "base": "src/parts/searchbars/caption-line-search"
+  },
+  {
+    "number": 608,
+    "id": "soft-resource-search",
+    "name": "Soft Resource Search",
+    "category": "searchbars",
+    "categoryName": "検索バー",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R606の検索欄と結果構造を桃色・角丸化した差が中心で独立性が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R606の検索欄と結果構造を桃色・角丸化した差が中心で独立性が弱い。",
+        "description": "R606の検索欄と結果構造を桃色・角丸化した差が中心で独立性が弱い。",
+        "evidence": [
+          "photos/soft-resource-search-stage.png",
+          "photos/soft-resource-search-state.png",
+          "photos/soft-resource-search-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B019",
+    "state": "pending",
+    "base": "src/parts/searchbars/soft-resource-search"
+  },
+  {
+    "number": 609,
+    "id": "clear-line-search",
+    "name": "Clear Line Search",
+    "category": "searchbars",
+    "categoryName": "検索バー",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R606と同じ検索欄・タブ・結果配置で、緑と下線以外の設計差が薄い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R606と同じ検索欄・タブ・結果配置で、緑と下線以外の設計差が薄い。",
+        "description": "R606と同じ検索欄・タブ・結果配置で、緑と下線以外の設計差が薄い。",
+        "evidence": [
+          "photos/clear-line-search-stage.png",
+          "photos/clear-line-search-state.png",
+          "photos/clear-line-search-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B019",
+    "state": "pending",
+    "base": "src/parts/searchbars/clear-line-search"
+  },
+  {
+    "number": 610,
+    "id": "warm-library-search",
+    "name": "Warm Library Search",
+    "category": "searchbars",
+    "categoryName": "検索バー",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R606の暖色版に近く、Library向けの情報構造や形の違いが乏しい。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R606の暖色版に近く、Library向けの情報構造や形の違いが乏しい。",
+        "description": "R606の暖色版に近く、Library向けの情報構造や形の違いが乏しい。",
+        "evidence": [
+          "photos/warm-library-search-stage.png",
+          "photos/warm-library-search-state.png",
+          "photos/warm-library-search-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B019",
+    "state": "pending",
+    "base": "src/parts/searchbars/warm-library-search"
+  },
+  {
+    "number": 612,
+    "id": "optical-command",
+    "name": "Optical Command",
+    "category": "commands",
+    "categoryName": "コマンド",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "丸い記号とピル入力が中心でOptical固有の仕組みが弱く、Bに近い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "丸い記号とピル入力が中心でOptical固有の仕組みが弱く、Bに近い。",
+        "description": "丸い記号とピル入力が中心でOptical固有の仕組みが弱く、Bに近い。",
+        "evidence": [
+          "photos/optical-command-stage.png",
+          "photos/optical-command-state.png",
+          "photos/optical-command-narrow.png",
+          "photos/optical-command-expanded.png"
+        ]
+      }
+    ],
+    "batch": "B019",
+    "state": "pending",
+    "base": "src/parts/commands/optical-command"
+  },
+  {
+    "number": 615,
+    "id": "ledger-command",
+    "name": "Ledger Command",
+    "category": "commands",
+    "categoryName": "コマンド",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "活字と細い罫は整うが、Aの構造的差が小さくR621の静かな紙面にも近い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "活字と細い罫は整うが、Aの構造的差が小さくR621の静かな紙面にも近い。",
+        "description": "活字と細い罫は整うが、Aの構造的差が小さくR621の静かな紙面にも近い。",
+        "evidence": [
+          "photos/ledger-command-stage.png",
+          "photos/ledger-command-state.png",
+          "photos/ledger-command-narrow.png",
+          "photos/ledger-command-expanded.png"
+        ]
+      }
+    ],
+    "batch": "B019",
+    "state": "pending",
+    "base": "src/parts/commands/ledger-command"
+  },
+  {
+    "number": 616,
+    "id": "index-drawer-command",
+    "name": "Index Drawer Command",
+    "category": "commands",
+    "categoryName": "コマンド",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "厚い外枠と普通の検索欄が主な個性で、引出しの立体関係が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "厚い外枠と普通の検索欄が主な個性で、引出しの立体関係が弱い。",
+        "description": "厚い外枠と普通の検索欄が主な個性で、引出しの立体関係が弱い。",
+        "evidence": [
+          "photos/index-drawer-command-stage.png",
+          "photos/index-drawer-command-state.png",
+          "photos/index-drawer-command-narrow.png",
+          "photos/index-drawer-command-expanded.png"
+        ]
+      }
+    ],
+    "batch": "B019",
+    "state": "pending",
+    "base": "src/parts/commands/index-drawer-command"
+  },
+  {
+    "number": 620,
+    "id": "bookplate-command",
+    "name": "Bookplate Command",
+    "category": "commands",
+    "categoryName": "コマンド",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "検索帯の大きな斜め切込みが文字近くで強く、蔵書票としての留め方をより自然にしたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "検索帯の大きな斜め切込みが文字近くで強く、蔵書票としての留め方をより自然にしたい。",
+        "description": "検索帯の大きな斜め切込みが文字近くで強く、蔵書票としての留め方をより自然にしたい。",
+        "evidence": [
+          "photos/bookplate-command-stage.png",
+          "photos/bookplate-command-state.png",
+          "photos/bookplate-command-narrow.png",
+          "photos/bookplate-command-expanded.png"
+        ]
+      }
+    ],
+    "batch": "B020",
+    "state": "pending",
+    "base": "src/parts/commands/bookplate-command"
+  },
+  {
+    "number": 621,
+    "id": "caption-command",
+    "name": "Caption Command",
+    "category": "commands",
+    "categoryName": "コマンド",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "見出し・下線・普通の入力欄が中心で、Bとの差が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "見出し・下線・普通の入力欄が中心で、Bとの差が弱い。",
+        "description": "見出し・下線・普通の入力欄が中心で、Bとの差が弱い。",
+        "evidence": [
+          "photos/caption-command-stage.png",
+          "photos/caption-command-state.png",
+          "photos/caption-command-narrow.png",
+          "photos/caption-command-expanded.png"
+        ]
+      }
+    ],
+    "batch": "B020",
+    "state": "pending",
+    "base": "src/parts/commands/caption-command"
+  },
+  {
+    "number": 628,
+    "id": "soft-action-command",
+    "name": "Soft Action Command",
+    "category": "commands",
+    "categoryName": "コマンド",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R626の構成を桃色・角丸へ変えた差が中心で、独立した設計差が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R626の構成を桃色・角丸へ変えた差が中心で、独立した設計差が弱い。",
+        "description": "R626の構成を桃色・角丸へ変えた差が中心で、独立した設計差が弱い。",
+        "evidence": [
+          "photos/soft-action-command-stage.png",
+          "photos/soft-action-command-state.png",
+          "photos/soft-action-command-narrow.png",
+          "photos/soft-action-command-expanded.png"
+        ]
+      }
+    ],
+    "batch": "B020",
+    "state": "pending",
+    "base": "src/parts/commands/soft-action-command"
+  },
+  {
+    "number": 629,
+    "id": "clear-outline-command",
+    "name": "Clear Outline Command",
+    "category": "commands",
+    "categoryName": "コマンド",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R626の起動画面と結果列を緑に変えた印象が強く、輪郭以外の差が薄い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R626の起動画面と結果列を緑に変えた印象が強く、輪郭以外の差が薄い。",
+        "description": "R626の起動画面と結果列を緑に変えた印象が強く、輪郭以外の差が薄い。",
+        "evidence": [
+          "photos/clear-outline-command-stage.png",
+          "photos/clear-outline-command-state.png",
+          "photos/clear-outline-command-narrow.png",
+          "photos/clear-outline-command-expanded.png"
+        ]
+      }
+    ],
+    "batch": "B020",
+    "state": "pending",
+    "base": "src/parts/commands/clear-outline-command"
+  },
+  {
+    "number": 630,
+    "id": "warm-project-command",
+    "name": "Warm Project Command",
+    "category": "commands",
+    "categoryName": "コマンド",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R626と同じ構成を暖色化した差が中心でProject向けの固有性が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R626と同じ構成を暖色化した差が中心でProject向けの固有性が弱い。",
+        "description": "R626と同じ構成を暖色化した差が中心でProject向けの固有性が弱い。",
+        "evidence": [
+          "photos/warm-project-command-stage.png",
+          "photos/warm-project-command-state.png",
+          "photos/warm-project-command-narrow.png",
+          "photos/warm-project-command-expanded.png"
+        ]
+      }
+    ],
+    "batch": "B020",
+    "state": "pending",
+    "base": "src/parts/commands/warm-project-command"
+  },
+  {
+    "number": 634,
+    "id": "stepped-document-context",
+    "name": "Stepped Document Context",
+    "category": "contextmenus",
+    "categoryName": "メニュー",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "丸い緑の文書面と小さい下影が主な差で、段状の独自構造が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "丸い緑の文書面と小さい下影が主な差で、段状の独自構造が弱い。",
+        "description": "丸い緑の文書面と小さい下影が主な差で、段状の独自構造が弱い。",
+        "evidence": [
+          "photos/stepped-document-context-stage.png",
+          "photos/stepped-document-context-state.png",
+          "photos/stepped-document-context-narrow.png",
+          "photos/stepped-document-context-expanded.png"
+        ]
+      }
+    ],
+    "batch": "B020",
+    "state": "pending",
+    "base": "src/parts/contextmenus/stepped-document-context"
+  },
+  {
+    "number": 635,
+    "id": "ledger-tools-context",
+    "name": "Ledger Tools Context",
+    "category": "contextmenus",
+    "categoryName": "メニュー",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "細い左罫と普通の文書面・メニューが中心で、Aの独立性が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "細い左罫と普通の文書面・メニューが中心で、Aの独立性が弱い。",
+        "description": "細い左罫と普通の文書面・メニューが中心で、Aの独立性が弱い。",
+        "evidence": [
+          "photos/ledger-tools-context-stage.png",
+          "photos/ledger-tools-context-state.png",
+          "photos/ledger-tools-context-narrow.png",
+          "photos/ledger-tools-context-expanded.png"
+        ]
+      }
+    ],
+    "batch": "B020",
+    "state": "pending",
+    "base": "src/parts/contextmenus/ledger-tools-context"
+  },
+  {
+    "number": 638,
+    "id": "stitched-file-context",
+    "name": "Stitched File Context",
+    "category": "contextmenus",
+    "categoryName": "メニュー",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "長い斜め帯と大きい丸ボタンが文書から離れ、どこが主操作か視線が分散する。接続を短く整理したい。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "長い斜め帯と大きい丸ボタンが文書から離れ、どこが主操作か視線が分散する。接続を短く整理したい。",
+        "description": "長い斜め帯と大きい丸ボタンが文書から離れ、どこが主操作か視線が分散する。接続を短く整理したい。",
+        "evidence": [
+          "photos/stitched-file-context-stage.png",
+          "photos/stitched-file-context-state.png",
+          "photos/stitched-file-context-narrow.png",
+          "photos/stitched-file-context-expanded.png"
+        ]
+      }
+    ],
+    "batch": "B020",
+    "state": "pending",
+    "base": "src/parts/contextmenus/stitched-file-context"
+  },
+  {
+    "number": 639,
+    "id": "open-corner-context",
+    "name": "Open Corner Context",
+    "category": "contextmenus",
+    "categoryName": "メニュー",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "角の細い枠以外は通常の文書カードで、R635との設計差が小さい。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "角の細い枠以外は通常の文書カードで、R635との設計差が小さい。",
+        "description": "角の細い枠以外は通常の文書カードで、R635との設計差が小さい。",
+        "evidence": [
+          "photos/open-corner-context-stage.png",
+          "photos/open-corner-context-state.png",
+          "photos/open-corner-context-narrow.png",
+          "photos/open-corner-context-expanded.png"
+        ]
+      }
+    ],
+    "batch": "B020",
+    "state": "pending",
+    "base": "src/parts/contextmenus/open-corner-context"
+  },
+  {
+    "number": 641,
+    "id": "index-pocket-context",
+    "name": "Index Pocket Context",
+    "category": "contextmenus",
+    "categoryName": "メニュー",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "大きい色面と下影が中心で、ポケットとしての差込み関係が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "大きい色面と下影が中心で、ポケットとしての差込み関係が弱い。",
+        "description": "大きい色面と下影が中心で、ポケットとしての差込み関係が弱い。",
+        "evidence": [
+          "photos/index-pocket-context-stage.png",
+          "photos/index-pocket-context-state.png",
+          "photos/index-pocket-context-narrow.png",
+          "photos/index-pocket-context-expanded.png"
+        ]
+      }
+    ],
+    "batch": "B020",
+    "state": "pending",
+    "base": "src/parts/contextmenus/index-pocket-context"
+  },
+  {
+    "number": 643,
+    "id": "ribbon-file-context",
+    "name": "Ribbon File Context",
+    "category": "contextmenus",
+    "categoryName": "メニュー",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "丸い文書印と桃色のカードが主な違いで、Ribbonの構造が見えにくい。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "丸い文書印と桃色のカードが主な違いで、Ribbonの構造が見えにくい。",
+        "description": "丸い文書印と桃色のカードが主な違いで、Ribbonの構造が見えにくい。",
+        "evidence": [
+          "photos/ribbon-file-context-stage.png",
+          "photos/ribbon-file-context-state.png",
+          "photos/ribbon-file-context-narrow.png",
+          "photos/ribbon-file-context-expanded.png"
+        ]
+      }
+    ],
+    "batch": "B021",
+    "state": "pending",
+    "base": "src/parts/contextmenus/ribbon-file-context"
+  },
+  {
+    "number": 648,
+    "id": "soft-resource-context",
+    "name": "Soft Resource Context",
+    "category": "contextmenus",
+    "categoryName": "メニュー",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R646と同じ文書・説明・操作構成を桃色と丸角へ変えた比重が大きい。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R646と同じ文書・説明・操作構成を桃色と丸角へ変えた比重が大きい。",
+        "description": "R646と同じ文書・説明・操作構成を桃色と丸角へ変えた比重が大きい。",
+        "evidence": [
+          "photos/soft-resource-context-stage.png",
+          "photos/soft-resource-context-state.png",
+          "photos/soft-resource-context-narrow.png",
+          "photos/soft-resource-context-expanded.png"
+        ]
+      }
+    ],
+    "batch": "B021",
+    "state": "pending",
+    "base": "src/parts/contextmenus/soft-resource-context"
+  },
+  {
+    "number": 649,
+    "id": "clear-action-context",
+    "name": "Clear Action Context",
+    "category": "contextmenus",
+    "categoryName": "メニュー",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R646の構成を緑の線へ変えた差が中心で、独立性が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R646の構成を緑の線へ変えた差が中心で、独立性が弱い。",
+        "description": "R646の構成を緑の線へ変えた差が中心で、独立性が弱い。",
+        "evidence": [
+          "photos/clear-action-context-stage.png",
+          "photos/clear-action-context-state.png",
+          "photos/clear-action-context-narrow.png",
+          "photos/clear-action-context-expanded.png"
+        ]
+      }
+    ],
+    "batch": "B021",
+    "state": "pending",
+    "base": "src/parts/contextmenus/clear-action-context"
+  },
+  {
+    "number": 650,
+    "id": "warm-project-context",
+    "name": "Warm Project Context",
+    "category": "contextmenus",
+    "categoryName": "メニュー",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R646と同じ行構成とメニューの暖色版に見え、Project用途の差が薄い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R646と同じ行構成とメニューの暖色版に見え、Project用途の差が薄い。",
+        "description": "R646と同じ行構成とメニューの暖色版に見え、Project用途の差が薄い。",
+        "evidence": [
+          "photos/warm-project-context-stage.png",
+          "photos/warm-project-context-state.png",
+          "photos/warm-project-context-narrow.png",
+          "photos/warm-project-context-expanded.png"
+        ]
+      }
+    ],
+    "batch": "B021",
+    "state": "pending",
+    "base": "src/parts/contextmenus/warm-project-context"
+  },
+  {
+    "number": 656,
+    "id": "letterhead-navigation",
+    "name": "Letterhead Navigation",
+    "category": "navigation",
+    "categoryName": "ナビゲーション",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "基本的な罫と二列メニューで、Aの独創性は弱くBに近い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "基本的な罫と二列メニューで、Aの独創性は弱くBに近い。",
+        "description": "基本的な罫と二列メニューで、Aの独創性は弱くBに近い。",
+        "evidence": [
+          "photos/letterhead-navigation-stage.png",
+          "photos/letterhead-navigation-state.png",
+          "photos/letterhead-navigation-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B021",
+    "state": "pending",
+    "base": "src/parts/navigation/letterhead-navigation"
+  },
+  {
+    "number": 658,
+    "id": "stitched-map-navigation",
+    "name": "Stitched Map Navigation",
+    "category": "navigation",
+    "categoryName": "ナビゲーション",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "淡い縦メニューと選択面が中心で、縫製・地図としての独立した構造が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "淡い縦メニューと選択面が中心で、縫製・地図としての独立した構造が弱い。",
+        "description": "淡い縦メニューと選択面が中心で、縫製・地図としての独立した構造が弱い。",
+        "evidence": [
+          "photos/stitched-map-navigation-stage.png",
+          "photos/stitched-map-navigation-state.png",
+          "photos/stitched-map-navigation-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B021",
+    "state": "pending",
+    "base": "src/parts/navigation/stitched-map-navigation"
+  },
+  {
+    "number": 659,
+    "id": "open-bracket-navigation",
+    "name": "Open Bracket Navigation",
+    "category": "navigation",
+    "categoryName": "ナビゲーション",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "左の細い括弧以外はR656と同じ二列構成に近く、独立性が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "左の細い括弧以外はR656と同じ二列構成に近く、独立性が弱い。",
+        "description": "左の細い括弧以外はR656と同じ二列構成に近く、独立性が弱い。",
+        "evidence": [
+          "photos/open-bracket-navigation-stage.png",
+          "photos/open-bracket-navigation-state.png",
+          "photos/open-bracket-navigation-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B021",
+    "state": "pending",
+    "base": "src/parts/navigation/open-bracket-navigation"
+  },
+  {
+    "number": 660,
+    "id": "book-jacket-navigation",
+    "name": "Book Jacket Navigation",
+    "category": "navigation",
+    "categoryName": "ナビゲーション",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "普通の縦メニューに暖色の最下段を加えた差が中心で、Book Jacketの形が薄い。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "普通の縦メニューに暖色の最下段を加えた差が中心で、Book Jacketの形が薄い。",
+        "description": "普通の縦メニューに暖色の最下段を加えた差が中心で、Book Jacketの形が薄い。",
+        "evidence": [
+          "photos/book-jacket-navigation-stage.png",
+          "photos/book-jacket-navigation-state.png",
+          "photos/book-jacket-navigation-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B021",
+    "state": "pending",
+    "base": "src/parts/navigation/book-jacket-navigation"
+  },
+  {
+    "number": 664,
+    "id": "ceramic-dock-navigation",
+    "name": "Ceramic Dock Navigation",
+    "category": "navigation",
+    "categoryName": "ナビゲーション",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "R657の分離した縦面構成を紫と丸端へ変えた印象が強く、独立性が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R657の分離した縦面構成を紫と丸端へ変えた印象が強く、独立性が弱い。",
+        "description": "R657の分離した縦面構成を紫と丸端へ変えた印象が強く、独立性が弱い。",
+        "evidence": [
+          "photos/ceramic-dock-navigation-stage.png",
+          "photos/ceramic-dock-navigation-state.png",
+          "photos/ceramic-dock-navigation-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B021",
+    "state": "pending",
+    "base": "src/parts/navigation/ceramic-dock-navigation"
+  },
+  {
+    "number": 668,
+    "id": "soft-section-navigation",
+    "name": "Soft Section Navigation",
+    "category": "navigation",
+    "categoryName": "ナビゲーション",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R666と同じナビゲーションの桃色・角丸版に近く、独立性が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R666と同じナビゲーションの桃色・角丸版に近く、独立性が弱い。",
+        "description": "R666と同じナビゲーションの桃色・角丸版に近く、独立性が弱い。",
+        "evidence": [
+          "photos/soft-section-navigation-stage.png",
+          "photos/soft-section-navigation-state.png",
+          "photos/soft-section-navigation-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B021",
+    "state": "pending",
+    "base": "src/parts/navigation/soft-section-navigation"
+  },
+  {
+    "number": 669,
+    "id": "clear-line-navigation",
+    "name": "Clear Line Navigation",
+    "category": "navigation",
+    "categoryName": "ナビゲーション",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R666の行先・現在地構成を緑に変えた差が中心で、用途差が薄い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R666の行先・現在地構成を緑に変えた差が中心で、用途差が薄い。",
+        "description": "R666の行先・現在地構成を緑に変えた差が中心で、用途差が薄い。",
+        "evidence": [
+          "photos/clear-line-navigation-stage.png",
+          "photos/clear-line-navigation-state.png",
+          "photos/clear-line-navigation-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B022",
+    "state": "pending",
+    "base": "src/parts/navigation/clear-line-navigation"
+  },
+  {
+    "number": 670,
+    "id": "warm-editorial-navigation",
+    "name": "Warm Editorial Navigation",
+    "category": "navigation",
+    "categoryName": "ナビゲーション",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R666と同じ配置の暖色版に見え、Editorial向けの情報構成差が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R666と同じ配置の暖色版に見え、Editorial向けの情報構成差が弱い。",
+        "description": "R666と同じ配置の暖色版に見え、Editorial向けの情報構成差が弱い。",
+        "evidence": [
+          "photos/warm-editorial-navigation-stage.png",
+          "photos/warm-editorial-navigation-state.png",
+          "photos/warm-editorial-navigation-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B022",
+    "state": "pending",
+    "base": "src/parts/navigation/warm-editorial-navigation"
+  },
+  {
+    "number": 673,
+    "id": "folded-register-table",
+    "name": "Folded Register Table",
+    "category": "tables",
+    "categoryName": "テーブル",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "検索欄下の大きい空の折返し帯が表を押し下げ、データより装飾余白が強い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "検索欄下の大きい空の折返し帯が表を押し下げ、データより装飾余白が強い。",
+        "description": "検索欄下の大きい空の折返し帯が表を押し下げ、データより装飾余白が強い。",
+        "evidence": [
+          "photos/folded-register-table-stage.png",
+          "photos/folded-register-table-state.png",
+          "photos/folded-register-table-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B022",
+    "state": "pending",
+    "base": "src/parts/tables/folded-register-table"
+  },
+  {
+    "number": 679,
+    "id": "open-sheet-table",
+    "name": "Open Sheet Table",
+    "category": "tables",
+    "categoryName": "テーブル",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "通常の明るい表と細罫に留まり、Aとして形や構造の差が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "通常の明るい表と細罫に留まり、Aとして形や構造の差が弱い。",
+        "description": "通常の明るい表と細罫に留まり、Aとして形や構造の差が弱い。",
+        "evidence": [
+          "photos/open-sheet-table-stage.png",
+          "photos/open-sheet-table-state.png",
+          "photos/open-sheet-table-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B022",
+    "state": "pending",
+    "base": "src/parts/tables/open-sheet-table"
+  },
+  {
+    "number": 683,
+    "id": "ribbon-register-table",
+    "name": "Ribbon Register Table",
+    "category": "tables",
+    "categoryName": "テーブル",
+    "designType": "A",
+    "verdict": "redesign",
+    "note": "R673と紫系の大きい折返し帯・下の表という構成が酷似する。帯の端の差だけでは独立性が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "major",
+        "status": "visual-review-judgment",
+        "detail": "R673と紫系の大きい折返し帯・下の表という構成が酷似する。帯の端の差だけでは独立性が弱い。",
+        "description": "R673と紫系の大きい折返し帯・下の表という構成が酷似する。帯の端の差だけでは独立性が弱い。",
+        "evidence": [
+          "photos/ribbon-register-table-stage.png",
+          "photos/ribbon-register-table-state.png",
+          "photos/ribbon-register-table-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B022",
+    "state": "pending",
+    "base": "src/parts/tables/ribbon-register-table"
+  },
+  {
+    "number": 684,
+    "id": "ceramic-register-table",
+    "name": "Ceramic Register Table",
+    "category": "tables",
+    "categoryName": "テーブル",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "薄青の矩形表と切り離した下段が中心で、陶器としての素材形が弱い。",
+    "issues": [
+      {
+        "kind": "responsive",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "薄青の矩形表と切り離した下段が中心で、陶器としての素材形が弱い。",
+        "description": "薄青の矩形表と切り離した下段が中心で、陶器としての素材形が弱い。",
+        "evidence": [
+          "photos/ceramic-register-table-stage.png",
+          "photos/ceramic-register-table-state.png",
+          "photos/ceramic-register-table-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B022",
+    "state": "pending",
+    "base": "src/parts/tables/ceramic-register-table"
+  },
+  {
+    "number": 688,
+    "id": "soft-project-table",
+    "name": "Soft Project Table",
+    "category": "tables",
+    "categoryName": "テーブル",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R686の同じ表構造を桃色と角丸に変えた比重が大きく、Project用途の独立性が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R686の同じ表構造を桃色と角丸に変えた比重が大きく、Project用途の独立性が弱い。",
+        "description": "R686の同じ表構造を桃色と角丸に変えた比重が大きく、Project用途の独立性が弱い。",
+        "evidence": [
+          "photos/soft-project-table-stage.png",
+          "photos/soft-project-table-state.png",
+          "photos/soft-project-table-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B022",
+    "state": "pending",
+    "base": "src/parts/tables/soft-project-table"
+  },
+  {
+    "number": 689,
+    "id": "clear-grid-table",
+    "name": "Clear Grid Table",
+    "category": "tables",
+    "categoryName": "テーブル",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R686と同じ行列・操作構造を緑にした差が中心で、独立した設計差が薄い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R686と同じ行列・操作構造を緑にした差が中心で、独立した設計差が薄い。",
+        "description": "R686と同じ行列・操作構造を緑にした差が中心で、独立した設計差が薄い。",
+        "evidence": [
+          "photos/clear-grid-table-stage.png",
+          "photos/clear-grid-table-state.png",
+          "photos/clear-grid-table-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B022",
+    "state": "pending",
+    "base": "src/parts/tables/clear-grid-table"
+  },
+  {
+    "number": 690,
+    "id": "warm-library-table",
+    "name": "Warm Library Table",
+    "category": "tables",
+    "categoryName": "テーブル",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R686の表を暖色化した印象が強く、Library固有の情報設計が乏しい。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R686の表を暖色化した印象が強く、Library固有の情報設計が乏しい。",
+        "description": "R686の表を暖色化した印象が強く、Library固有の情報設計が乏しい。",
+        "evidence": [
+          "photos/warm-library-table-stage.png",
+          "photos/warm-library-table-state.png",
+          "photos/warm-library-table-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B022",
+    "state": "pending",
+    "base": "src/parts/tables/warm-library-table"
+  },
+  {
+    "number": 696,
+    "id": "telescopic-stroke-loader",
+    "name": "Telescopic Stroke Loader",
+    "category": "loaders",
+    "categoryName": "ローダー",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "入れ子の四角い線がR701と非常に近い。CSSの横縮小とR701のY軸回転は異なるが、主要な形状構成の差は弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "入れ子の四角い線がR701と非常に近い。CSSの横縮小とR701のY軸回転は異なるが、主要な形状構成の差は弱い。",
+        "description": "入れ子の四角い線がR701と非常に近い。CSSの横縮小とR701のY軸回転は異なるが、主要な形状構成の差は弱い。",
+        "evidence": [
+          "photos/telescopic-stroke-loader-stage.png",
+          "photos/telescopic-stroke-loader-state.png",
+          "photos/telescopic-stroke-loader-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B022",
+    "state": "pending",
+    "base": "src/parts/loaders/telescopic-stroke-loader"
+  },
+  {
+    "number": 701,
+    "id": "offset-portals-ornament",
+    "name": "Offset Portals Ornament",
+    "category": "ornaments",
+    "categoryName": "装飾",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "四角い線を入れ子にする姿がR696と近い。Y軸回転と横縮小の運動差はあるが、主要な形状構成としての差を強めたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "四角い線を入れ子にする姿がR696と近い。Y軸回転と横縮小の運動差はあるが、主要な形状構成としての差を強めたい。",
+        "description": "四角い線を入れ子にする姿がR696と近い。Y軸回転と横縮小の運動差はあるが、主要な形状構成としての差を強めたい。",
+        "evidence": [
+          "photos/offset-portals-ornament-stage.png",
+          "photos/offset-portals-ornament-state.png",
+          "photos/offset-portals-ornament-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B023",
+    "state": "pending",
+    "base": "src/parts/ornaments/offset-portals-ornament"
+  },
+  {
+    "number": 708,
+    "id": "segment-orbit-loader",
+    "name": "Segment Orbit Loader",
+    "category": "loaders",
+    "categoryName": "ローダー",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "小さい円弧を環状に並べる一般的なスピナーに近く、Aの構造的独創性が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "小さい円弧を環状に並べる一般的なスピナーに近く、Aの構造的独創性が弱い。",
+        "description": "小さい円弧を環状に並べる一般的なスピナーに近く、Aの構造的独創性が弱い。",
+        "evidence": [
+          "photos/segment-orbit-loader-stage.png",
+          "photos/segment-orbit-loader-state.png",
+          "photos/segment-orbit-loader-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B023",
+    "state": "pending",
+    "base": "src/parts/loaders/segment-orbit-loader"
+  },
+  {
+    "number": 710,
+    "id": "counterflow-lines-loader",
+    "name": "Counterflow Lines Loader",
+    "category": "loaders",
+    "categoryName": "ローダー",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "二つの軌道で小片が逆方向に動くCSSを確認したが、小型表示では輪が重なり、対向運動の機構を読み取りにくい。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "二つの軌道で小片が逆方向に動くCSSを確認したが、小型表示では輪が重なり、対向運動の機構を読み取りにくい。",
+        "description": "二つの軌道で小片が逆方向に動くCSSを確認したが、小型表示では輪が重なり、対向運動の機構を読み取りにくい。",
+        "evidence": [
+          "photos/counterflow-lines-loader-stage.png",
+          "photos/counterflow-lines-loader-state.png",
+          "photos/counterflow-lines-loader-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B023",
+    "state": "pending",
+    "base": "src/parts/loaders/counterflow-lines-loader"
+  },
+  {
+    "number": 717,
+    "id": "hinged-cells-ornament",
+    "name": "Hinged Cells Ornament",
+    "category": "ornaments",
+    "categoryName": "装飾",
+    "designType": "A",
+    "verdict": "adjust",
+    "note": "R713と折り板の反復という主形が近く、板の数・色以外の構造差を強めたい。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R713と折り板の反復という主形が近く、板の数・色以外の構造差を強めたい。",
+        "description": "R713と折り板の反復という主形が近く、板の数・色以外の構造差を強めたい。",
+        "evidence": [
+          "photos/hinged-cells-ornament-stage.png",
+          "photos/hinged-cells-ornament-state.png",
+          "photos/hinged-cells-ornament-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B023",
+    "state": "pending",
+    "base": "src/parts/ornaments/hinged-cells-ornament"
+  },
+  {
+    "number": 728,
+    "id": "slim-dash-loader-loader",
+    "name": "Slim Dash Loader Loader",
+    "category": "loaders",
+    "categoryName": "ローダー",
+    "designType": "B",
+    "verdict": "adjust",
+    "note": "R721と水平破線の一列がほぼ同形で、ローダー文言以外の別作品性が弱い。",
+    "issues": [
+      {
+        "kind": "design",
+        "severity": "moderate",
+        "status": "visual-review-judgment",
+        "detail": "R721と水平破線の一列がほぼ同形で、ローダー文言以外の別作品性が弱い。",
+        "description": "R721と水平破線の一列がほぼ同形で、ローダー文言以外の別作品性が弱い。",
+        "evidence": [
+          "photos/slim-dash-loader-loader-stage.png",
+          "photos/slim-dash-loader-loader-state.png",
+          "photos/slim-dash-loader-loader-narrow.png"
+        ]
+      }
+    ],
+    "batch": "B023",
+    "state": "pending",
+    "base": "src/parts/loaders/slim-dash-loader-loader"
+  }
+]

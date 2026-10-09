@@ -1,0 +1,249 @@
+{
+  "batch": "B001",
+  "round": 2,
+  "overall": "pass",
+  "parts": [
+    {
+      "id": "vellum-accordion-case",
+      "number": 24,
+      "verdict": "pass",
+      "note": "round1でpass。round2は全ソースファイルhash一致のため判定を引き継ぐ。 上下の罫線はhoverでもskewせず、蛇腹のみ0.65→1へ補間する。入口・解除・再進入に途中値があり、本文移動0px。Aの紙面と収納の構造を維持。320px・長見出し・動き軽減・強制色も確認。非操作装飾なのでキーボード起動は対象外。",
+      "findings": [],
+      "evidence": [
+        "measurements-complete-1.json",
+        "evidence-1/vellum-accordion-case-portable-base.png",
+        "evidence-1/vellum-accordion-case-portable-rest.png",
+        "evidence-1/vellum-accordion-case-portable-hover.png",
+        "evidence-1/vellum-accordion-case-portable-narrow.png",
+        "evidence-1/vellum-accordion-case-portable-long.png",
+        "evidence-1/vellum-accordion-case-portable-forced.png",
+        "evidence-1/vellum-accordion-case-gallery-base.png",
+        "evidence-1/vellum-accordion-case-gallery-rest.png",
+        "evidence-1/vellum-accordion-case-gallery-hover.png",
+        "evidence-1/vellum-accordion-case-gallery-narrow.png",
+        "evidence-1/vellum-accordion-case-gallery-long.png",
+        "evidence-1/vellum-accordion-case-gallery-forced.png"
+      ]
+    },
+    {
+      "id": "offset-diecut",
+      "number": 30,
+      "verdict": "pass",
+      "note": "round1でpass。round2は全ソースファイルhash一致のため判定を引き継ぐ。 旧矩形box-shadowは通常/hoverともnone。抜き型の面と下紙の回転は残り、入口・解除・再進入に途中値がある。本文移動0px。320pxの下紙の装飾上の張出しは本文を切らず、ページ横溢れなし。非操作装飾なのでキーボード起動は対象外。",
+      "findings": [],
+      "evidence": [
+        "measurements-complete-1.json",
+        "evidence-1/offset-diecut-portable-base.png",
+        "evidence-1/offset-diecut-portable-rest.png",
+        "evidence-1/offset-diecut-portable-hover.png",
+        "evidence-1/offset-diecut-portable-narrow.png",
+        "evidence-1/offset-diecut-portable-long.png",
+        "evidence-1/offset-diecut-portable-forced.png",
+        "evidence-1/offset-diecut-gallery-base.png",
+        "evidence-1/offset-diecut-gallery-rest.png",
+        "evidence-1/offset-diecut-gallery-hover.png",
+        "evidence-1/offset-diecut-gallery-narrow.png",
+        "evidence-1/offset-diecut-gallery-long.png",
+        "evidence-1/offset-diecut-gallery-forced.png"
+      ]
+    },
+    {
+      "id": "outline-row-select",
+      "number": 89,
+      "verdict": "pass",
+      "note": "round2でactive面が#314556へ変更。主ラベル8.39:1、10px補助文4.84:1をportable/gallery双方で実測。320px・長文・hover入口/解除/再進入・keyboard選択/閉じる・reduced/forced再確認。暗い候補面の構造を維持。",
+      "findings": [],
+      "evidence": [
+        "measurements-2.json",
+        "evidence-2/outline-row-select-portable-base.png",
+        "evidence-2/outline-row-select-portable-rest.png",
+        "evidence-2/outline-row-select-portable-hover.png",
+        "evidence-2/outline-row-select-portable-narrow.png",
+        "evidence-2/outline-row-select-portable-long.png",
+        "evidence-2/outline-row-select-portable-forced.png",
+        "evidence-2/outline-row-select-gallery-base.png",
+        "evidence-2/outline-row-select-gallery-rest.png",
+        "evidence-2/outline-row-select-gallery-hover.png",
+        "evidence-2/outline-row-select-gallery-narrow.png",
+        "evidence-2/outline-row-select-gallery-long.png",
+        "evidence-2/outline-row-select-gallery-forced.png"
+      ]
+    },
+    {
+      "id": "editorial-inline-link",
+      "number": 146,
+      "verdict": "pass",
+      "note": "round1でpass。round2は全ソースファイルhash一致のため判定を引き継ぐ。 矢印translateは入口40msで0と2pxの途中、hoverで2px/-2px、解除/再進入も途中値を通り復帰する。350msのtranslate transitionを実測。文字・クリック領域は固定。320px/長ラベル、キーボードfocus outline、reducedでanimationなし、forcedの可読性を確認。Bの既存の密度・形状を維持。",
+      "findings": [],
+      "evidence": [
+        "measurements-complete-1.json",
+        "evidence-1/editorial-inline-link-portable-base.png",
+        "evidence-1/editorial-inline-link-portable-rest.png",
+        "evidence-1/editorial-inline-link-portable-hover.png",
+        "evidence-1/editorial-inline-link-portable-narrow.png",
+        "evidence-1/editorial-inline-link-portable-long.png",
+        "evidence-1/editorial-inline-link-portable-forced.png",
+        "evidence-1/editorial-inline-link-gallery-base.png",
+        "evidence-1/editorial-inline-link-gallery-rest.png",
+        "evidence-1/editorial-inline-link-gallery-hover.png",
+        "evidence-1/editorial-inline-link-gallery-narrow.png",
+        "evidence-1/editorial-inline-link-gallery-long.png",
+        "evidence-1/editorial-inline-link-gallery-forced.png"
+      ]
+    },
+    {
+      "id": "quiet-resource-link",
+      "number": 147,
+      "verdict": "pass",
+      "note": "round1でpass。round2は全ソースファイルhash一致のため判定を引き継ぐ。 矢印translateは入口40msで0と2pxの途中、hoverで2px/-2px、解除/再進入も途中値を通り復帰する。350msのtranslate transitionを実測。文字・クリック領域は固定。320px/長ラベル、キーボードfocus outline、reducedでanimationなし、forcedの可読性を確認。Bの既存の密度・形状を維持。",
+      "findings": [],
+      "evidence": [
+        "measurements-complete-1.json",
+        "evidence-1/quiet-resource-link-portable-base.png",
+        "evidence-1/quiet-resource-link-portable-rest.png",
+        "evidence-1/quiet-resource-link-portable-hover.png",
+        "evidence-1/quiet-resource-link-portable-narrow.png",
+        "evidence-1/quiet-resource-link-portable-long.png",
+        "evidence-1/quiet-resource-link-portable-forced.png",
+        "evidence-1/quiet-resource-link-gallery-base.png",
+        "evidence-1/quiet-resource-link-gallery-rest.png",
+        "evidence-1/quiet-resource-link-gallery-hover.png",
+        "evidence-1/quiet-resource-link-gallery-narrow.png",
+        "evidence-1/quiet-resource-link-gallery-long.png",
+        "evidence-1/quiet-resource-link-gallery-forced.png"
+      ]
+    },
+    {
+      "id": "clear-destination-link",
+      "number": 148,
+      "verdict": "pass",
+      "note": "round1でpass。round2は全ソースファイルhash一致のため判定を引き継ぐ。 矢印translateは入口40msで0と2pxの途中、hoverで2px/-2px、解除/再進入も途中値を通り復帰する。350msのtranslate transitionを実測。文字・クリック領域は固定。320px/長ラベル、キーボードfocus outline、reducedでanimationなし、forcedの可読性を確認。Bの既存の密度・形状を維持。",
+      "findings": [],
+      "evidence": [
+        "measurements-complete-1.json",
+        "evidence-1/clear-destination-link-portable-base.png",
+        "evidence-1/clear-destination-link-portable-rest.png",
+        "evidence-1/clear-destination-link-portable-hover.png",
+        "evidence-1/clear-destination-link-portable-narrow.png",
+        "evidence-1/clear-destination-link-portable-long.png",
+        "evidence-1/clear-destination-link-portable-forced.png",
+        "evidence-1/clear-destination-link-gallery-base.png",
+        "evidence-1/clear-destination-link-gallery-rest.png",
+        "evidence-1/clear-destination-link-gallery-hover.png",
+        "evidence-1/clear-destination-link-gallery-narrow.png",
+        "evidence-1/clear-destination-link-gallery-long.png",
+        "evidence-1/clear-destination-link-gallery-forced.png"
+      ]
+    },
+    {
+      "id": "compact-route-link",
+      "number": 149,
+      "verdict": "pass",
+      "note": "round1でpass。round2は全ソースファイルhash一致のため判定を引き継ぐ。 矢印translateは入口40msで0と2pxの途中、hoverで2px/-2px、解除/再進入も途中値を通り復帰する。350msのtranslate transitionを実測。文字・クリック領域は固定。320px/長ラベル、キーボードfocus outline、reducedでanimationなし、forcedの可読性を確認。Bの既存の密度・形状を維持。",
+      "findings": [],
+      "evidence": [
+        "measurements-complete-1.json",
+        "evidence-1/compact-route-link-portable-base.png",
+        "evidence-1/compact-route-link-portable-rest.png",
+        "evidence-1/compact-route-link-portable-hover.png",
+        "evidence-1/compact-route-link-portable-narrow.png",
+        "evidence-1/compact-route-link-portable-long.png",
+        "evidence-1/compact-route-link-portable-forced.png",
+        "evidence-1/compact-route-link-gallery-base.png",
+        "evidence-1/compact-route-link-gallery-rest.png",
+        "evidence-1/compact-route-link-gallery-hover.png",
+        "evidence-1/compact-route-link-gallery-narrow.png",
+        "evidence-1/compact-route-link-gallery-long.png",
+        "evidence-1/compact-route-link-gallery-forced.png"
+      ]
+    },
+    {
+      "id": "reading-next-link",
+      "number": 150,
+      "verdict": "pass",
+      "note": "round1でpass。round2は全ソースファイルhash一致のため判定を引き継ぐ。 矢印translateは入口40msで0と2pxの途中、hoverで2px/-2px、解除/再進入も途中値を通り復帰する。350msのtranslate transitionを実測。文字・クリック領域は固定。320px/長ラベル、キーボードfocus outline、reducedでanimationなし、forcedの可読性を確認。Bの既存の密度・形状を維持。",
+      "findings": [],
+      "evidence": [
+        "measurements-complete-1.json",
+        "evidence-1/reading-next-link-portable-base.png",
+        "evidence-1/reading-next-link-portable-rest.png",
+        "evidence-1/reading-next-link-portable-hover.png",
+        "evidence-1/reading-next-link-portable-narrow.png",
+        "evidence-1/reading-next-link-portable-long.png",
+        "evidence-1/reading-next-link-portable-forced.png",
+        "evidence-1/reading-next-link-gallery-base.png",
+        "evidence-1/reading-next-link-gallery-rest.png",
+        "evidence-1/reading-next-link-gallery-hover.png",
+        "evidence-1/reading-next-link-gallery-narrow.png",
+        "evidence-1/reading-next-link-gallery-long.png",
+        "evidence-1/reading-next-link-gallery-forced.png"
+      ]
+    },
+    {
+      "id": "ivory-notch-segments",
+      "number": 182,
+      "verdict": "pass",
+      "note": "round1でpass。round2は全ソースファイルhash一致のため判定を引き継ぐ。 未選択文字#eff2eeをhover/解除/再進入でも保持し、面#526870との比率5.21:1。320pxで各セルが等幅（portable102.5px、gallery75px）。長ラベルはセル内に折り返す。縦指定も全セル等幅・82px高で成立。矢印キー選択、reduced/forcedを確認。",
+      "findings": [],
+      "evidence": [
+        "measurements-complete-1.json",
+        "evidence-1/ivory-notch-segments-portable-base.png",
+        "evidence-1/ivory-notch-segments-portable-rest.png",
+        "evidence-1/ivory-notch-segments-portable-hover.png",
+        "evidence-1/ivory-notch-segments-portable-narrow.png",
+        "evidence-1/ivory-notch-segments-portable-long.png",
+        "evidence-1/ivory-notch-segments-portable-vertical.png",
+        "evidence-1/ivory-notch-segments-portable-forced.png",
+        "evidence-1/ivory-notch-segments-gallery-base.png",
+        "evidence-1/ivory-notch-segments-gallery-rest.png",
+        "evidence-1/ivory-notch-segments-gallery-hover.png",
+        "evidence-1/ivory-notch-segments-gallery-narrow.png",
+        "evidence-1/ivory-notch-segments-gallery-long.png",
+        "evidence-1/ivory-notch-segments-gallery-vertical.png",
+        "evidence-1/ivory-notch-segments-gallery-forced.png"
+      ]
+    },
+    {
+      "id": "station-label-trail",
+      "number": 422,
+      "verdict": "pass",
+      "note": "round1でpass。round2は全ソースファイルhash一致のため判定を引き継ぐ。 展開メニューObjectsはhoverでも#e6eff4を保持し、面#28485eとの比率8.27:1。下線で状態を示し文字移動0px。320px/長文/強制色を確認。Enterで開いてリンクへfocus、Escapeで閉じる。",
+      "findings": [],
+      "evidence": [
+        "measurements-complete-1.json",
+        "evidence-1/station-label-trail-portable-base.png",
+        "evidence-1/station-label-trail-portable-rest.png",
+        "evidence-1/station-label-trail-portable-hover.png",
+        "evidence-1/station-label-trail-portable-narrow.png",
+        "evidence-1/station-label-trail-portable-long.png",
+        "evidence-1/station-label-trail-portable-forced.png",
+        "evidence-1/station-label-trail-gallery-base.png",
+        "evidence-1/station-label-trail-gallery-rest.png",
+        "evidence-1/station-label-trail-gallery-hover.png",
+        "evidence-1/station-label-trail-gallery-narrow.png",
+        "evidence-1/station-label-trail-gallery-long.png",
+        "evidence-1/station-label-trail-gallery-forced.png"
+      ]
+    }
+  ],
+  "counts": {
+    "pass": 10,
+    "changes_required": 0
+  },
+  "reviewer": "Independent reviewer",
+  "sourceHashesVerified": true,
+  "snapshot": "snapshot/round-2/index.html",
+  "coverage": {
+    "R089": "round2 frozen portable and actual gallery: full states repeated",
+    "other9": "round1 pass carried forward after every source file hash matches round2",
+    "unchangedParts": 9,
+    "changedFiles": [
+      "src/parts/dropdowns/outline-row-select/styles.css"
+    ]
+  },
+  "limitations": [
+    "実測した状態と対象についての判定であり、全入力・全ブラウザの無欠陥保証ではない。",
+    "React固有の実行経路は今回の実ブラウザ検査対象外。",
+    "galleryのR089は幅変更時に閉じた後、開き直して狭幅・長文・強制色を再検査した。"
+  ]
+}
