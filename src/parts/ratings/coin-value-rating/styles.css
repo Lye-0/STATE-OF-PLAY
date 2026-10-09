@@ -1,5 +1,5 @@
 @import "../../../shared/signature/rating.css";
-/* 五角形の鋳造コインの面で評価を読む。元の五角形を保持し、7pxの上の切断面と9pxの下の厚みを同じ金属へ揃える。選択範囲はコイン面の密度、確定位置は内側の縁へ示し、下に余分な点を加えない。星とnativeの当たりは全段階で同じ寸法を保つ。 */
+/* 駒形の評価札を五つ一列に並べる入力。幅に合わせて札と縁を縮め、最後の札だけが落ちる配置をなくす。 */
 
 .sop-sig.sop-coin-value-rating.sop-coin-value-rating{--paper:#f4f1ed;--ink:#3e444d;--muted:#3e444d;--accent:#765e42;--edge:#c3b49d;--sg-bg:var(--paper);--sg-panel:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);color:var(--ink);color-scheme:light;background:var(--paper);width:100%;max-width:min(100%,400px);min-width:0;padding:18px;container-type:inline-size;overflow-wrap:anywhere}
 .sop-sig.sop-coin-value-rating.sop-coin-value-rating,.sop-sig.sop-coin-value-rating.sop-coin-value-rating *,.sop-sig.sop-coin-value-rating.sop-coin-value-rating *::before,.sop-sig.sop-coin-value-rating.sop-coin-value-rating *::after{box-sizing:border-box}
@@ -29,3 +29,15 @@
 
 .sop-sig.sop-coin-value-rating.sop-coin-value-rating .sg-rating-output{direction:ltr;unicode-bidi:isolate}
 @media(forced-colors:active){.sop-sig.sop-coin-value-rating.sop-coin-value-rating{--paper:Canvas!important;--ink:CanvasText!important;--muted:CanvasText!important;--accent:Highlight!important;color:CanvasText!important}.sop-sig.sop-coin-value-rating.sop-coin-value-rating .sg-rating-star{stroke:CanvasText!important;fill:none!important}.sop-sig.sop-coin-value-rating.sop-coin-value-rating .sg-rating-unit[data-filled=true] .sg-rating-star{fill:Highlight!important;stroke:Highlight!important}.sop-sig.sop-coin-value-rating.sop-coin-value-rating .sg-rating-info,.sop-sig.sop-coin-value-rating.sop-coin-value-rating .sg-rating-number{color:CanvasText!important}.sop-sig.sop-coin-value-rating.sop-coin-value-rating .sg-rating-unit::before,.sop-sig.sop-coin-value-rating.sop-coin-value-rating .sg-rating-unit::after{display:none!important}.sop-sig.sop-coin-value-rating.sop-coin-value-rating .sg-rating-form{height:auto!important;clip-path:none!important;mask:none!important;transform:none!important}.sop-sig.sop-coin-value-rating.sop-coin-value-rating .sg-rating-clear{color:ButtonText!important;background:Canvas!important}}
+
+
+.sop-sig.sop-coin-value-rating.sop-coin-value-rating .sg-rating-scale{grid-template-columns:repeat(var(--sg-count,5),minmax(28px,1fr));gap:4px;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;padding-inline:3px;overscroll-behavior-x:contain}
+.sop-sig.sop-coin-value-rating.sop-coin-value-rating .sg-rating-unit{min-width:0;width:100%}
+.sop-sig.sop-coin-value-rating.sop-coin-value-rating .sg-rating-star{width:min(24px,70%);height:24px;max-width:100%}
+
+
+@media(forced-colors:none){
+.sop-sig.sop-coin-value-rating.sop-coin-value-rating .sg-rating-unit{height:62px}.sop-sig.sop-coin-value-rating.sop-coin-value-rating .sg-rating-form{border-top-width:4px;border-bottom-width:5px;box-shadow:inset 0 0 0 2px #d2b672}.sop-sig.sop-coin-value-rating.sop-coin-value-rating .sg-rating-unit[data-exact=true] .sg-rating-form{box-shadow:inset 0 0 0 2px #7d5a28}
+}
+
+@media(forced-colors:none){.sop-sig.sop-coin-value-rating.sop-coin-value-rating .sg-rating-unit[data-filled=true] .sg-rating-star{fill:#654b22;stroke:#654b22}}

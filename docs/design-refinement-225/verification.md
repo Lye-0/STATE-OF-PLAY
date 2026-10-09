@@ -21,3 +21,10 @@
 
 - foundation26検査＋reset3＋badge form3、pagination8、全型チェック成功（foundations-b013-2.log、pagination-b013.log、typecheck-b013-5.log）。
 - expansion-review全成功（expansion-review-b023-6.log）。旧upload縦軸条件/gradient計算除外/observer属性とanimation pause確定のタイミングを実挙動へ合わせた。通常・端ページ・再キー入力・危険操作文字・補助文字・オフスクリーン停止/軽減/破棄を検証。
+
+- B014 round5独立検査10件pass、実ギャラリー/portable/React4形式を確認。B015以降の通常文字スキャン716箇所で低コントラスト候補0（全状態の保証ではない）。
+- 途中HTML更新：140件714画像、4,859,948bytes、2.747秒。HTTP遮断で全画像・検索・拡大・320px成功。最終225件を再生成する。
+- 後続Aの光学/経路/トレー構造変更後、Workbench Vite HTTP全40検査成功（workbench-strong-a.log）。320/390/768、全commands/contextmenus展開の画面内配置、Escape、native table操作、軽減/破棄を含む。
+- B016の評価7件はroot222pxの強制配色でも星の選択差が可視。星寸法16.7〜21.5 ×24px（main-forced-preflight.json）。独立レビューは別途行う。
+
+- B015r3の独立再検査全10pass。氏名列72→120px、forced星交差解消、R499星幅6.16→18.75px。3星の実面比4.519/4.208/4.063:1。実Signature Vite HTTP全25検査（React含む）成功、signature-b015-3.log。

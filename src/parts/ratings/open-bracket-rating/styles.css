@@ -1,5 +1,5 @@
 @import "../../../shared/signature/rating.css";
-/* 片側が開いた実金具に、星の読み札を差し込む評価。細い四隅の括弧を廃し、48pxのC形の支持、そこから札を12px覆う二つの前の保持爪、右へ張り出す64px高の本当の星札へ組む。金具の上と下には札との間の実空隙が残り、星は札の固定平面へ読む。選択範囲は札の密度、確定位置は札の上端で示す。RTLでも金具と爪を同時に鏡映し、実ラジオの全112pxの当たりと星の大きさは保つ。 */
+/* 細い括弧で五つの星札を留める評価入力。留具を小さくし、星の尺度と選択位置を先に読める構成にする。 */
 
 .sop-sig.sop-open-bracket-rating.sop-open-bracket-rating{--paper:#f4f1ed;--ink:#3e444d;--muted:#3e444d;--accent:#765e42;--edge:#c3b49d;--sg-bg:var(--paper);--sg-panel:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);color:var(--ink);color-scheme:light;background:var(--paper);width:100%;max-width:min(100%,400px);min-width:0;padding:18px;container-type:inline-size;overflow-wrap:anywhere}
 .sop-sig.sop-open-bracket-rating.sop-open-bracket-rating,.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating *,.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating *::before,.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating *::after{box-sizing:border-box}
@@ -32,3 +32,26 @@
 .sop-sig.sop-open-bracket-rating.sop-open-bracket-rating:dir(rtl) .sg-rating-unit::before{left:auto;right:0;border-left:0;border-right:10px solid #b9906a;border-radius:0 22px 22px 0}.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating:dir(rtl) .sg-rating-unit::after{left:auto;right:8px}.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating:dir(rtl) .sg-rating-form{inset:24px 22px 24px 0;transform:scaleX(-1)!important}.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating:dir(rtl) .sg-rating-star{transform:scaleX(-1)!important}
 .sop-sig.sop-open-bracket-rating.sop-open-bracket-rating .sg-rating-output{direction:ltr;unicode-bidi:isolate}
 @media(forced-colors:active){.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating{--paper:Canvas!important;--ink:CanvasText!important;--muted:CanvasText!important;--accent:Highlight!important;color:CanvasText!important}.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating .sg-rating-star{stroke:CanvasText!important;fill:none!important}.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating .sg-rating-unit[data-filled=true] .sg-rating-star{fill:Highlight!important;stroke:Highlight!important}.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating .sg-rating-info,.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating .sg-rating-number{color:CanvasText!important}.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating .sg-rating-unit::before,.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating .sg-rating-unit::after{display:none!important}.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating .sg-rating-form{height:auto!important;clip-path:none!important;mask:none!important;transform:none!important}.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating .sg-rating-clear{color:ButtonText!important;background:Canvas!important}}
+
+
+.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating .sg-rating-scale{grid-template-columns:repeat(var(--sg-count,5),minmax(28px,1fr));gap:4px;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;padding-inline:3px;overscroll-behavior-x:contain}
+.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating .sg-rating-unit{min-width:0;width:100%}
+.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating .sg-rating-star{width:min(24px,70%);height:24px;max-width:100%}
+
+
+@media(forced-colors:none){
+
+.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating .sg-rating-unit{height:70px}
+.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating .sg-rating-unit::before{width:17px;border-left:3px solid #b9906a;border-top:3px solid #e4c8a7;border-bottom:3px solid #a67c55;border-radius:6px 0 0 6px}
+.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating .sg-rating-unit::after{left:3px;top:11px;width:11px;height:5px;border-top:2px solid #efd8bb;box-shadow:0 40px 0 #ae845e}
+.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating .sg-rating-form{inset:12px 0 12px 8px;border-top-width:2px;border-bottom-width:3px;clip-path:polygon(0 0,calc(100% - 4px) 0,100% 4px,100% calc(100% - 4px),calc(100% - 4px) 100%,0 100%)}
+.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating .sg-rating-star{width:80%;height:22px}
+.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating:dir(rtl) .sg-rating-unit::before{border-left:0;border-right-width:3px;border-radius:0 6px 6px 0}
+.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating:dir(rtl) .sg-rating-unit::after{left:auto;right:3px}
+.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating:dir(rtl) .sg-rating-form{inset:12px 8px 12px 0}
+
+}
+
+@media(forced-colors:active){.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating .sg-rating-form{inset:12px 2px!important;display:grid;place-items:center}.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating .sg-rating-star{width:70%;max-width:28px;height:24px;transform:none!important}}
+
+@media(forced-colors:none){.sop-sig.sop-open-bracket-rating.sop-open-bracket-rating .sg-rating-unit[data-filled=true] .sg-rating-star{fill:#714526;stroke:#714526}}

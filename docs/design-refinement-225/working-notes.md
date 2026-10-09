@@ -39,3 +39,14 @@ B013はd01a65ceaa946ed8985518e6d675788f17dc4a23でpush済み/record130済み。B
 B014r4は5pass/5差戻し(R461hover3.389,R462muted3.190,R468長unitでinput0px,R470長unit狭列7行,R489forced名消失)。revise-b014.py実行済み、r5freeze→hover_inspector再検査中。5件capture更新、main-extra-5で数値幅・非重なりLTR/RTLとforced人物画像視認成功。著者固定。
 後続変更：B015r2（石アーチ半楕円/布縫い目）画像更新視認済。B023r3（orbit逆戻り除去）motion-phasesで5件6位相視認済。preflight-textで未review B015–B023の補助文字を測定し14件低contrastを改善（revise-text-preflight.py一回実行済）。最新roundはB018r4/B019r3/B020r4/B021r3/B022r3。全事前検査失敗0見込、text-preflight-final.log参照。B018は未到達stepのnative disabledは保持しopacity1で説明名を読めるよう改善。14件gallery撮り直しcapture-text-fixes.log session45676で順次進行。
 未commit tools: revise-b014.py,revise-b015.py,revise-text-preflight.py,preflight-text.ts,motion-phases.mjs,probe-b014.mjs。今後各batch stage extrasに適宜含める。新しい一回用scriptは再実行しない。残り95件の全独立reviewまで継続。
+
+## 最新状態（B014 push後・この節を優先）
+- B001〜B014の140件をpush済み。B014 eaa09a11c7124c195b152408207c9b7e7cf4fdae。B015 round2をAstra mediumが検査中。B015作者は固定中。
+- B014 round5全10件pass。R461 hover6.103:1、R462補助文字5.236:1、R468/R470長単位と幅222/235、R489 forced選択氏名、React4形式20配置を確認。
+- B015以降全85件の通常文字事前検査は716箇所、候補0。これはCSS単色の候補スキャンであり、全状態/ピクセル実測の代わりではない。
+- 後続prepared：B016r3、B017r2、B018r4、B019r5、B020r5、B021r4、B022r4、B023r3。B019 optical照準、B020紙の差込重なり、B021縫い目経路、B022陶器持ち手をstrengthen-late-a.pyで追記し実ギャラリー撮影済み。one-shotを再実行しない。
+- B023軌道loaderの折返しをなくし60度で保持、counterflow旧offset/mask解除、6位相画像で動作比較済み。全5件の最新gallery画像も更新済み。
+- workbench-strong-a.logは構造追加後の40検査。report-progress-check.logは140件714画像4,859,948bytes、2.747秒、全ページ画像decode/検索/拡大/320px、HTTP0/error0。
+- B015の指摘を直し、再review・全pass→10件commit/push/recordをB023まで続ける。Actions追跡不要。未来batchの作者を先にstageしない。
+
+B015r2は5pass/5差戻し。revise-b015-review.py実行済み（再実行不可）→r3をAstra再検査中。R490forced氏名/二重余白、R492forced星左ずれ、R499forced星極小、R498/499/500星の塗り3:1不足を修正。5件実画像再確認。B016も501/503の星2.498/2.407を修正→r4、撮影済み（revise-b016-symbols.py実行済み）。Signature実Vite25検査をsignature-b015-3.logへ実行中。

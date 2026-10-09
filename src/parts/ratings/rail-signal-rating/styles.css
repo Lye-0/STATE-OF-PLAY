@@ -1,5 +1,5 @@
 @import "../../../shared/signature/rating.css";
-/* 実際の星を掲げる信号面を、連続するレールへ載せる評価。星の板とレールの主形を保ち、10pxの支柱を星面の下12pxへ入れ、14pxのレールへ5px入れる。星の後の支柱と足元の一つのレールで上下の接続を明確にし、複数行でも各行が独立して完成する。選択範囲は信号面の密度で示す。 */
+/* 一本のレールに五つの信号を立てる評価入力。狭幅でも柱と線を分割せず、一つの尺度として見せる。 */
 
 .sop-sig.sop-rail-signal-rating.sop-rail-signal-rating{--paper:#f4f1ed;--ink:#3e444d;--muted:#3e444d;--accent:#765e42;--edge:#c3b49d;--sg-bg:var(--paper);--sg-panel:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);color:var(--ink);color-scheme:light;background:var(--paper);width:100%;max-width:min(100%,400px);min-width:0;padding:18px;container-type:inline-size;overflow-wrap:anywhere}
 .sop-sig.sop-rail-signal-rating.sop-rail-signal-rating,.sop-sig.sop-rail-signal-rating.sop-rail-signal-rating *,.sop-sig.sop-rail-signal-rating.sop-rail-signal-rating *::before,.sop-sig.sop-rail-signal-rating.sop-rail-signal-rating *::after{box-sizing:border-box}
@@ -32,3 +32,19 @@
 
 .sop-sig.sop-rail-signal-rating.sop-rail-signal-rating .sg-rating-output{direction:ltr;unicode-bidi:isolate}
 @media(forced-colors:active){.sop-sig.sop-rail-signal-rating.sop-rail-signal-rating{--paper:Canvas!important;--ink:CanvasText!important;--muted:CanvasText!important;--accent:Highlight!important;color:CanvasText!important}.sop-sig.sop-rail-signal-rating.sop-rail-signal-rating .sg-rating-star{stroke:CanvasText!important;fill:none!important}.sop-sig.sop-rail-signal-rating.sop-rail-signal-rating .sg-rating-unit[data-filled=true] .sg-rating-star{fill:Highlight!important;stroke:Highlight!important}.sop-sig.sop-rail-signal-rating.sop-rail-signal-rating .sg-rating-info,.sop-sig.sop-rail-signal-rating.sop-rail-signal-rating .sg-rating-number{color:CanvasText!important}.sop-sig.sop-rail-signal-rating.sop-rail-signal-rating .sg-rating-unit::before,.sop-sig.sop-rail-signal-rating.sop-rail-signal-rating .sg-rating-unit::after{display:none!important}.sop-sig.sop-rail-signal-rating.sop-rail-signal-rating .sg-rating-form{height:auto!important;clip-path:none!important;mask:none!important;transform:none!important}.sop-sig.sop-rail-signal-rating.sop-rail-signal-rating .sg-rating-clear{color:ButtonText!important;background:Canvas!important}}
+
+
+.sop-sig.sop-rail-signal-rating.sop-rail-signal-rating .sg-rating-scale{grid-template-columns:repeat(var(--sg-count,5),minmax(28px,1fr));gap:4px;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;padding-inline:3px;overscroll-behavior-x:contain}
+.sop-sig.sop-rail-signal-rating.sop-rail-signal-rating .sg-rating-unit{min-width:0;width:100%}
+.sop-sig.sop-rail-signal-rating.sop-rail-signal-rating .sg-rating-star{width:min(24px,70%);height:24px;max-width:100%}
+
+
+@media(forced-colors:none){
+
+.sop-sig.sop-rail-signal-rating.sop-rail-signal-rating .sg-rating-scale{gap:0;padding-inline:0}
+.sop-sig.sop-rail-signal-rating.sop-rail-signal-rating .sg-rating-unit{height:88px}
+.sop-sig.sop-rail-signal-rating.sop-rail-signal-rating .sg-rating-form{inset:0 2px auto;height:48px;border-top-width:3px;border-bottom-width:4px;clip-path:polygon(5px 0,calc(100% - 5px) 0,100% 5px,100% calc(100% - 5px),calc(100% - 5px) 100%,5px 100%,0 calc(100% - 5px),0 5px)}
+.sop-sig.sop-rail-signal-rating.sop-rail-signal-rating .sg-rating-unit::after{top:42px;height:36px;width:6px;left:calc(50% - 3px);border-inline-start-width:2px}
+.sop-sig.sop-rail-signal-rating.sop-rail-signal-rating .sg-rating-unit::before{height:10px;border-top-width:3px;border-bottom-width:3px}
+
+}

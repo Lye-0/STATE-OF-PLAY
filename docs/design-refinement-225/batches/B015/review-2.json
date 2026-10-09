@@ -1,0 +1,420 @@
+{
+  "batch": "B015",
+  "round": 2,
+  "overall": "changes_required",
+  "parts": [
+    {
+      "id": "warm-author-profile",
+      "number": 490,
+      "verdict": "changes_required",
+      "note": "縦長肖像と明朝氏名・上下罫で著者一覧の用途は明快。氏名/イニシャルはhover往復で固定。ただしforced選択氏名が消失する。",
+      "findings": [
+        {
+          "kind": "forced_colors_visibility",
+          "description": "forced-colorsで選択行はHighlight、氏名は白いtext backplate上で白文字となり消失。初期Sora/選択Rin、portable/gallery、React4形式で再現。",
+          "recommendation": "選択行と子の文字/背景/forced-color-adjustを一貫させ、氏名を明示的なHighlightText/Highlight面に保つ。",
+          "evidence": [
+            "evidence-2/warm-author-profile-portable-forced-default.png",
+            "evidence-2/warm-author-profile-gallery-forced-selected-rin.png",
+            "measurements-focused-forced-2.json"
+          ]
+        },
+        {
+          "kind": "design_readability",
+          "description": "root222pxでは外22px+stage20pxの二重余白で氏名列72px。長い日本語氏名は134px高、英語連続名は161px高へ細分化。操作不能/overflowではなくBの可読性改善案。",
+          "recommendation": "肖像を保持してstage内余白を整理し、氏名へ横幅を戻す。",
+          "evidence": [
+            "evidence-2/avatars-portable-base-1-sheet.jpg",
+            "measurements-2.json"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-2/warm-author-profile-portable-rest.png",
+        "evidence-2/warm-author-profile-gallery-narrow.png",
+        "evidence-2/warm-author-profile-react-forced.png",
+        "measurements-2.json",
+        "measurements-react-2.json",
+        "measurements-avatars-2.json"
+      ],
+      "reviewed": {
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ]
+      }
+    },
+    {
+      "id": "seal-score-rating",
+      "number": 491,
+      "verdict": "pass",
+      "note": "丸い封印の厚みと濃い確定輪郭で一列の尺度を読める。角張ったR496との差も成立。",
+      "findings": [],
+      "evidence": [
+        "evidence-2/seal-score-rating-portable-rest.png",
+        "evidence-2/seal-score-rating-gallery-narrow.png",
+        "evidence-2/seal-score-rating-react-forced.png",
+        "measurements-2.json",
+        "measurements-react-2.json",
+        "measurements-ratings-2.json"
+      ],
+      "reviewed": {
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ]
+      }
+    },
+    {
+      "id": "inspection-score-rating",
+      "number": 492,
+      "verdict": "changes_required",
+      "note": "連続する厚い台に検査札が差さる構造は成立。forced時だけ旧座標が残り星が枠と交差する。",
+      "findings": [
+        {
+          "kind": "forced_colors_geometry",
+          "description": "root222pxでforced札幅22.80pxに対し星SVG14.55pxが札左端より2.59px外へ出て、星と縁が交差。通常は幅20.16pxで中央。旧left:calc(50% - 14px)が縮んだ星に残る。",
+          "recommendation": "forcedも星の幅に対応した中央配置へ変更。",
+          "evidence": [
+            "evidence-2/inspection-score-rating-portable-focused-forced.png",
+            "measurements-focused-ratings-2.json"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-2/inspection-score-rating-portable-rest.png",
+        "evidence-2/inspection-score-rating-gallery-narrow.png",
+        "evidence-2/inspection-score-rating-react-forced.png",
+        "measurements-2.json",
+        "measurements-react-2.json",
+        "measurements-ratings-2.json"
+      ],
+      "reviewed": {
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ]
+      }
+    },
+    {
+      "id": "folded-score-rating",
+      "number": 493,
+      "verdict": "pass",
+      "note": "一本の桁から接続する折り札が五段階を連続させ、狭幅でも吊り構造を保持。",
+      "findings": [],
+      "evidence": [
+        "evidence-2/folded-score-rating-portable-rest.png",
+        "evidence-2/folded-score-rating-gallery-narrow.png",
+        "evidence-2/folded-score-rating-react-forced.png",
+        "measurements-2.json",
+        "measurements-react-2.json",
+        "measurements-ratings-2.json"
+      ],
+      "reviewed": {
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ]
+      }
+    },
+    {
+      "id": "stone-pip-rating",
+      "number": 494,
+      "verdict": "pass",
+      "note": "半楕円の開口と二脚が石のアーチとして読め、三角旗状の誤読を解消。",
+      "findings": [],
+      "evidence": [
+        "evidence-2/stone-pip-rating-portable-rest.png",
+        "evidence-2/stone-pip-rating-gallery-narrow.png",
+        "evidence-2/stone-pip-rating-react-forced.png",
+        "measurements-2.json",
+        "measurements-react-2.json",
+        "measurements-ratings-2.json"
+      ],
+      "reviewed": {
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ]
+      }
+    },
+    {
+      "id": "notched-disc-rating",
+      "number": 496,
+      "verdict": "pass",
+      "note": "上下の位置決め切欠きと角面・青灰色で、金色の封印R491との同形を回避。",
+      "findings": [],
+      "evidence": [
+        "evidence-2/notched-disc-rating-portable-rest.png",
+        "evidence-2/notched-disc-rating-gallery-narrow.png",
+        "evidence-2/notched-disc-rating-react-forced.png",
+        "measurements-2.json",
+        "measurements-react-2.json",
+        "measurements-ratings-2.json"
+      ],
+      "reviewed": {
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ]
+      }
+    },
+    {
+      "id": "rail-signal-rating",
+      "number": 497,
+      "verdict": "pass",
+      "note": "細い柱と一本のレールが信号の五段階を結び、塗り/確定縁が実値と対応。",
+      "findings": [],
+      "evidence": [
+        "evidence-2/rail-signal-rating-portable-rest.png",
+        "evidence-2/rail-signal-rating-gallery-narrow.png",
+        "evidence-2/rail-signal-rating-react-forced.png",
+        "measurements-2.json",
+        "measurements-react-2.json",
+        "measurements-ratings-2.json"
+      ],
+      "reviewed": {
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ]
+      }
+    },
+    {
+      "id": "stitch-star-rating",
+      "number": 498,
+      "verdict": "changes_required",
+      "note": "横布と留め帯、上下の縫い目の構造は成立。ただし選択星と布のコントラスト不足。",
+      "findings": [
+        {
+          "kind": "nontext_contrast",
+          "description": "評価値を示す選択星#86608cと実面#c9aaceが2.490:1で3:1未満。portable/gallery両方でcomputedとスクリーンショットの実ピクセルを照合。",
+          "recommendation": "素材の面を保持し、選択星を濃くして少なくとも3:1を確保。",
+          "evidence": [
+            "contrast-stars-2.json",
+            "measurements-star-pixels-2.json",
+            "evidence-2/stitch-star-rating-portable-focused-normal.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-2/stitch-star-rating-portable-rest.png",
+        "evidence-2/stitch-star-rating-gallery-narrow.png",
+        "evidence-2/stitch-star-rating-react-forced.png",
+        "measurements-2.json",
+        "measurements-react-2.json",
+        "measurements-ratings-2.json"
+      ],
+      "reviewed": {
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ]
+      }
+    },
+    {
+      "id": "open-bracket-rating",
+      "number": 499,
+      "verdict": "changes_required",
+      "note": "小さいC形留具と前の星札の接点は明快。ただしforcedの星縮小と通常星の低コントラストが残る。",
+      "findings": [
+        {
+          "kind": "forced_colors_geometry",
+          "description": "forcedだけ旧左22px insetが残る。root222pxで札幅10.80px、星SVG6.16px（通常19.83px）。gallery251pxでも星10.20pxとなり、値記号の形が読みにくい。",
+          "recommendation": "装飾を除いたforced面のinsetを再設定し、星の可読寸法を確保。",
+          "evidence": [
+            "evidence-2/open-bracket-rating-portable-focused-forced.png",
+            "measurements-focused-ratings-2.json"
+          ]
+        },
+        {
+          "kind": "nontext_contrast",
+          "description": "評価値を示す選択星#9b5b2eと実面#d9b48dが2.765:1で3:1未満。portable/gallery両方でcomputedとスクリーンショットの実ピクセルを照合。",
+          "recommendation": "素材の面を保持し、選択星を濃くして少なくとも3:1を確保。",
+          "evidence": [
+            "contrast-stars-2.json",
+            "measurements-star-pixels-2.json",
+            "evidence-2/open-bracket-rating-portable-focused-normal.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-2/open-bracket-rating-portable-rest.png",
+        "evidence-2/open-bracket-rating-gallery-narrow.png",
+        "evidence-2/open-bracket-rating-react-forced.png",
+        "measurements-2.json",
+        "measurements-react-2.json",
+        "measurements-ratings-2.json"
+      ],
+      "reviewed": {
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ]
+      }
+    },
+    {
+      "id": "coin-value-rating",
+      "number": 500,
+      "verdict": "changes_required",
+      "note": "駒形の肩・下面の厚みが一列の評価札として成立。ただし選択星と駒面のコントラスト不足。",
+      "findings": [
+        {
+          "kind": "nontext_contrast",
+          "description": "評価値を示す選択星#996b25と実面#d5b36cが2.340:1で3:1未満。portable/gallery両方でcomputedとスクリーンショットの実ピクセルを照合。",
+          "recommendation": "素材の面を保持し、選択星を濃くして少なくとも3:1を確保。",
+          "evidence": [
+            "contrast-stars-2.json",
+            "measurements-star-pixels-2.json",
+            "evidence-2/coin-value-rating-portable-focused-normal.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-2/coin-value-rating-portable-rest.png",
+        "evidence-2/coin-value-rating-gallery-narrow.png",
+        "evidence-2/coin-value-rating-react-forced.png",
+        "measurements-2.json",
+        "measurements-react-2.json",
+        "measurements-ratings-2.json"
+      ],
+      "reviewed": {
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320": true,
+        "longLabelRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "reactFormats": [
+          "tsx-portable",
+          "jsx-original",
+          "tsx-original",
+          "jsx-portable"
+        ]
+      }
+    }
+  ],
+  "coverage": {
+    "source": "round-2 immutable snapshot; browser開始/終了時source100hash一致、修正release前に終了記録",
+    "hash": "hash-verification-2.json",
+    "counts": {
+      "parts": 10,
+      "pass": 5,
+      "changes_required": 5,
+      "primaryModeCases": 20,
+      "nativeRatingsModeCases": 18,
+      "nativeAvatarModeCases": 2,
+      "reactPlacements": 40
+    },
+    "visualSheets": [
+      "evidence-2/avatars-gallery-base-1-sheet.jpg",
+      "evidence-2/avatars-gallery-native-1-sheet.jpg",
+      "evidence-2/avatars-portable-base-1-sheet.jpg",
+      "evidence-2/avatars-portable-native-1-sheet.jpg",
+      "evidence-2/ratings-gallery-base-1-sheet.jpg",
+      "evidence-2/ratings-gallery-base-2-sheet.jpg",
+      "evidence-2/ratings-gallery-base-3-sheet.jpg",
+      "evidence-2/ratings-gallery-native-1-sheet.jpg",
+      "evidence-2/ratings-gallery-native-2-sheet.jpg",
+      "evidence-2/ratings-gallery-native-3-sheet.jpg",
+      "evidence-2/ratings-portable-base-1-sheet.jpg",
+      "evidence-2/ratings-portable-base-2-sheet.jpg",
+      "evidence-2/ratings-portable-base-3-sheet.jpg",
+      "evidence-2/ratings-portable-native-1-sheet.jpg",
+      "evidence-2/ratings-portable-native-2-sheet.jpg",
+      "evidence-2/ratings-portable-native-3-sheet.jpg",
+      "evidence-2/react-1-sheet.jpg",
+      "evidence-2/react-2-sheet.jpg",
+      "evidence-2/react-3-sheet.jpg",
+      "evidence-2/react-4-sheet.jpg"
+    ],
+    "visualScope": "全10件を通常/hover/320/RTL/forced、native選択/clear/10段階/RTL末尾、React実配布の画像で視認。入口40ms/退出60ms/再進入60msは計測も参照。全状態/環境の無欠陥保証ではない。",
+    "nativeRatings": "値3のpreview5→退出復帰、選択4/矢印5/Home1/End5/clear0/reset3、readonly値/送信維持、disabled送信除外、requiredclear非表示、controlled2維持、max10末尾Space/矢印/LTR/RTL、max2clamp、forced4/0が18ケースで一致。React4形式も5/clear0/controlled2/10を確認。",
+    "avatar": "Space→Rin/Enter→Nao/resetSora、controlledSora、disabled、表示専用、長名/RTL、React選択を確認。8文字initialsはストレス入力として記録、通常2文字の評価と区別。",
+    "motion": "全20primaryケースreduced時animations空。通常hover往復で文字/操作位置の新たな移動なし。",
+    "contrast": "通常テキスト最小4.806:1。星は実面合成/ピクセル照合、R498/499/500のみ3:1未満。",
+    "fixture": "portable frozen initとgallery実CSSを併用。nativegalleryは実root cloneをformへ入れfrozen initで初期化。Reactは実export4形式をViteで実行。"
+  }
+}

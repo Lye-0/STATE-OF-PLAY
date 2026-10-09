@@ -1,5 +1,5 @@
 @import "../../../shared/signature/rating.css";
-/* 縦の織帯と横の織帯が本当に交差する評価。細い縦罫と色付きの小箱を廃し、34pxの縦の帯と40pxの連続する横の帯を重ねる。帯の上下には空気が通る本当の隙間があり、星は布同士の交点の平面へ固定する。評価範囲は横帯の密度、確定位置は縦帯の返り端で読む。 */
+/* 五つの留め帯へ横の布を通した評価入力。狭幅で帯を折り返さず、選択した星までの連続性を保つ。 */
 
 .sop-sig.sop-stitch-star-rating.sop-stitch-star-rating{--paper:#f4f1ed;--ink:#3e444d;--muted:#3e444d;--accent:#765e42;--edge:#c3b49d;--sg-bg:var(--paper);--sg-panel:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);color:var(--ink);color-scheme:light;background:var(--paper);width:100%;max-width:min(100%,400px);min-width:0;padding:18px;container-type:inline-size;overflow-wrap:anywhere}
 .sop-sig.sop-stitch-star-rating.sop-stitch-star-rating,.sop-sig.sop-stitch-star-rating.sop-stitch-star-rating *,.sop-sig.sop-stitch-star-rating.sop-stitch-star-rating *::before,.sop-sig.sop-stitch-star-rating.sop-stitch-star-rating *::after{box-sizing:border-box}
@@ -34,3 +34,22 @@
 
 .sop-sig.sop-stitch-star-rating.sop-stitch-star-rating .sg-rating-output{direction:ltr;unicode-bidi:isolate}
 @media(forced-colors:active){.sop-sig.sop-stitch-star-rating.sop-stitch-star-rating{--paper:Canvas!important;--ink:CanvasText!important;--muted:CanvasText!important;--accent:Highlight!important;color:CanvasText!important}.sop-sig.sop-stitch-star-rating.sop-stitch-star-rating .sg-rating-star{stroke:CanvasText!important;fill:none!important}.sop-sig.sop-stitch-star-rating.sop-stitch-star-rating .sg-rating-unit[data-filled=true] .sg-rating-star{fill:Highlight!important;stroke:Highlight!important}.sop-sig.sop-stitch-star-rating.sop-stitch-star-rating .sg-rating-info,.sop-sig.sop-stitch-star-rating.sop-stitch-star-rating .sg-rating-number{color:CanvasText!important}.sop-sig.sop-stitch-star-rating.sop-stitch-star-rating .sg-rating-unit::before,.sop-sig.sop-stitch-star-rating.sop-stitch-star-rating .sg-rating-unit::after{display:none!important}.sop-sig.sop-stitch-star-rating.sop-stitch-star-rating .sg-rating-form{height:auto!important;clip-path:none!important;mask:none!important;transform:none!important}.sop-sig.sop-stitch-star-rating.sop-stitch-star-rating .sg-rating-clear{color:ButtonText!important;background:Canvas!important}}
+
+
+.sop-sig.sop-stitch-star-rating.sop-stitch-star-rating .sg-rating-scale{grid-template-columns:repeat(var(--sg-count,5),minmax(28px,1fr));gap:4px;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;padding-inline:3px;overscroll-behavior-x:contain}
+.sop-sig.sop-stitch-star-rating.sop-stitch-star-rating .sg-rating-unit{min-width:0;width:100%}
+.sop-sig.sop-stitch-star-rating.sop-stitch-star-rating .sg-rating-star{width:min(24px,70%);height:24px;max-width:100%}
+
+
+@media(forced-colors:none){
+
+.sop-sig.sop-stitch-star-rating.sop-stitch-star-rating .sg-rating-scale{gap:0;padding-inline:0}
+.sop-sig.sop-stitch-star-rating.sop-stitch-star-rating .sg-rating-unit{height:90px}
+.sop-sig.sop-stitch-star-rating.sop-stitch-star-rating .sg-rating-form::before{width:24px;left:calc(50% - 12px);border-inline-start-width:3px;border-inline-end-width:3px;border-top-width:4px;border-bottom-width:4px;border-radius:5px}
+.sop-sig.sop-stitch-star-rating.sop-stitch-star-rating .sg-rating-form::after{top:27px;height:36px;border-top-width:3px;border-bottom-width:4px}
+
+}
+
+@media(forced-colors:none){.sop-sig.sop-stitch-star-rating.sop-stitch-star-rating .sg-rating-form::after{border-top:1px dashed #a880aa;border-bottom:1px dashed #8a6690;box-shadow:0 2px 0 #d8c1df,inset 0 3px 0 #e8d8ed,inset 0 -3px 0 #e8d8ed}}
+
+@media(forced-colors:none){.sop-sig.sop-stitch-star-rating.sop-stitch-star-rating .sg-rating-unit[data-filled=true] .sg-rating-star{fill:#583b68;stroke:#583b68}}

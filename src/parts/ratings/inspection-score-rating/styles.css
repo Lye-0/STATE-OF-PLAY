@@ -42,3 +42,21 @@
 
 .sop-sig.sop-inspection-score-rating.sop-inspection-score-rating .sg-rating-output{direction:ltr;unicode-bidi:isolate}
 @media(forced-colors:active){.sop-sig.sop-inspection-score-rating.sop-inspection-score-rating{--paper:Canvas!important;--ink:CanvasText!important;--muted:CanvasText!important;--accent:Highlight!important;--sg-bg:Canvas!important;--sg-ink:CanvasText!important;--sg-muted:CanvasText!important;--sg-a:Highlight!important}.sop-sig.sop-inspection-score-rating.sop-inspection-score-rating .sg-rating-star{stroke:CanvasText!important;fill:none!important}.sop-sig.sop-inspection-score-rating.sop-inspection-score-rating .sg-rating-unit[data-filled=true] .sg-rating-star{stroke:Highlight!important;fill:Highlight!important}.sop-sig.sop-inspection-score-rating.sop-inspection-score-rating .sg-rating-info,.sop-sig.sop-inspection-score-rating.sop-inspection-score-rating .sg-rating-output,.sop-sig.sop-inspection-score-rating.sop-inspection-score-rating .sg-rating-number{color:CanvasText!important}.sop-sig.sop-inspection-score-rating.sop-inspection-score-rating .sg-rating-clear{color:ButtonText!important;background:Canvas!important}.sop-sig.sop-inspection-score-rating.sop-inspection-score-rating .sg-rating-unit::before,.sop-sig.sop-inspection-score-rating.sop-inspection-score-rating .sg-rating-unit::after{display:none!important}}
+
+
+.sop-sig.sop-inspection-score-rating.sop-inspection-score-rating .sg-rating-scale{grid-template-columns:repeat(var(--sg-count,5),minmax(28px,1fr));gap:4px;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;padding-inline:3px;overscroll-behavior-x:contain}
+.sop-sig.sop-inspection-score-rating.sop-inspection-score-rating .sg-rating-unit{min-width:0;width:100%}
+.sop-sig.sop-inspection-score-rating.sop-inspection-score-rating .sg-rating-star{width:min(24px,70%);height:24px;max-width:100%}
+
+
+@media(forced-colors:none){
+
+.sop-sig.sop-inspection-score-rating.sop-inspection-score-rating .sg-rating-unit{height:94px}
+.sop-sig.sop-inspection-score-rating.sop-inspection-score-rating .sg-rating-unit::before{top:51px;height:34px;border-top-width:3px;border-bottom-width:4px}
+.sop-sig.sop-inspection-score-rating.sop-inspection-score-rating .sg-rating-unit::after{top:59px;height:20px;border-top-width:3px;border-bottom-width:4px}
+.sop-sig.sop-inspection-score-rating.sop-inspection-score-rating .sg-rating-form{inset:0 2px 7px;border-top-width:3px;border-bottom-width:4px;clip-path:polygon(0 0,100% 0,100% calc(100% - 10px),calc(100% - 7px) 100%,0 100%)}
+.sop-sig.sop-inspection-score-rating.sop-inspection-score-rating .sg-rating-star{left:15%;top:13px;width:70%;height:24px}
+
+}
+
+@media(forced-colors:active){.sop-sig.sop-inspection-score-rating.sop-inspection-score-rating .sg-rating-star{left:15%;top:13px;width:70%;height:24px;max-width:28px}}

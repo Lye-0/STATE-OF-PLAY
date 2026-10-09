@@ -1,5 +1,5 @@
 @import "../../../shared/signature/rating.css";
-/* 同じ一つの蝋の端面を持つ封印の評価。丸い封印と星の主形を保持し、細い二重線を5pxの上面/8pxの押した下面へ揃える。星の大きさとnativeラジオの64pxの当たりは全段階で固定し、選んだ範囲だけ蝋の面を濃くする。確定位置は縁の密度へ示し、hoverのプレビューは評価値へ書き込まない。最大10段階でもnative押面の幅44pxを確保し複数行へ並べる。 */
+/* 五つの封印を一列に並べる評価入力。狭幅では印の寸法を揃えて縮め、最後の段階を別行へ分離しない。 */
 
 .sop-sig.sop-seal-score-rating.sop-seal-score-rating{--paper:#f4f1ed;--ink:#3e444d;--muted:#3e444d;--accent:#765e42;--edge:#c3b49d;--sg-bg:var(--paper);--sg-panel:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);color:var(--ink);color-scheme:light;background:var(--paper);width:100%;max-width:min(100%,400px);min-width:0;padding:18px;container-type:inline-size;overflow-wrap:anywhere}
 .sop-sig.sop-seal-score-rating.sop-seal-score-rating,.sop-sig.sop-seal-score-rating.sop-seal-score-rating *,.sop-sig.sop-seal-score-rating.sop-seal-score-rating *::before,.sop-sig.sop-seal-score-rating.sop-seal-score-rating *::after{box-sizing:border-box}
@@ -28,3 +28,13 @@
 
 .sop-sig.sop-seal-score-rating.sop-seal-score-rating .sg-rating-output{direction:ltr;unicode-bidi:isolate}
 @media(forced-colors:active){.sop-sig.sop-seal-score-rating.sop-seal-score-rating{--paper:Canvas!important;--ink:CanvasText!important;--muted:CanvasText!important;--accent:Highlight!important;--sg-bg:Canvas!important;--sg-ink:CanvasText!important;--sg-muted:CanvasText!important;--sg-a:Highlight!important}.sop-sig.sop-seal-score-rating.sop-seal-score-rating .sg-rating-star{stroke:CanvasText!important;fill:none!important}.sop-sig.sop-seal-score-rating.sop-seal-score-rating .sg-rating-unit[data-filled=true] .sg-rating-star{stroke:Highlight!important;fill:Highlight!important}.sop-sig.sop-seal-score-rating.sop-seal-score-rating .sg-rating-info,.sop-sig.sop-seal-score-rating.sop-seal-score-rating .sg-rating-output,.sop-sig.sop-seal-score-rating.sop-seal-score-rating .sg-rating-number{color:CanvasText!important}.sop-sig.sop-seal-score-rating.sop-seal-score-rating .sg-rating-clear{color:ButtonText!important;background:Canvas!important}.sop-sig.sop-seal-score-rating.sop-seal-score-rating .sg-rating-unit::before,.sop-sig.sop-seal-score-rating.sop-seal-score-rating .sg-rating-unit::after{display:none!important}}
+
+
+.sop-sig.sop-seal-score-rating.sop-seal-score-rating .sg-rating-scale{grid-template-columns:repeat(var(--sg-count,5),minmax(28px,1fr));gap:4px;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;padding-inline:3px;overscroll-behavior-x:contain}
+.sop-sig.sop-seal-score-rating.sop-seal-score-rating .sg-rating-unit{min-width:0;width:100%}
+.sop-sig.sop-seal-score-rating.sop-seal-score-rating .sg-rating-star{width:min(24px,70%);height:24px;max-width:100%}
+
+
+@media(forced-colors:none){
+.sop-sig.sop-seal-score-rating.sop-seal-score-rating .sg-rating-unit{height:auto;aspect-ratio:1;min-height:36px}.sop-sig.sop-seal-score-rating.sop-seal-score-rating .sg-rating-form{inset:2px 0;border-top-width:3px;border-bottom-width:4px;box-shadow:inset 0 0 0 2px #dfbd8b}.sop-sig.sop-seal-score-rating.sop-seal-score-rating .sg-rating-unit[data-exact=true] .sg-rating-form{box-shadow:inset 0 0 0 2px #926031}
+}

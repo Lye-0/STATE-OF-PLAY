@@ -1,5 +1,5 @@
 @import "../../../shared/signature/rating.css";
-/* 同じ上の綴じ材から、幅14pxの本当の返しで下がる紙票の評価。元の吊り札/下端の折れを保持し、上の線を8pxの材料へ、星の票への接続を30pxの返しへ揃える。返しは読む紙の上端へ入り、選択した紙も同じ5px/8pxの紙端を持つ。星とnativeラジオを揺らさず、狭幅の二段も同じ綴じから独立した票の順を保つ。 */
+/* 一本の桁に折った札を吊るす評価入力。元の吊り札/下端の折れを保持し、上の線を8pxの材料へ、星の票への接続を30pxの返しへ揃える。返しは読む紙の上端へ入り、選択した紙も同じ5px/8pxの紙端を持つ。星とnativeラジオを揺らさず、狭幅の二段も同じ綴じから独立した票の順を保つ。 */
 
 .sop-sig.sop-folded-score-rating.sop-folded-score-rating{--paper:#f4f1ed;--ink:#3e444d;--muted:#3e444d;--accent:#765e42;--edge:#c3b49d;--sg-bg:var(--paper);--sg-panel:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);color:var(--ink);color-scheme:light;background:var(--paper);width:100%;max-width:min(100%,400px);min-width:0;padding:18px;container-type:inline-size;overflow-wrap:anywhere}
 .sop-sig.sop-folded-score-rating.sop-folded-score-rating,.sop-sig.sop-folded-score-rating.sop-folded-score-rating *,.sop-sig.sop-folded-score-rating.sop-folded-score-rating *::before,.sop-sig.sop-folded-score-rating.sop-folded-score-rating *::after{box-sizing:border-box}
@@ -38,3 +38,13 @@
 
 .sop-sig.sop-folded-score-rating.sop-folded-score-rating .sg-rating-output{direction:ltr;unicode-bidi:isolate}
 @media(forced-colors:active){.sop-sig.sop-folded-score-rating.sop-folded-score-rating{--paper:Canvas!important;--ink:CanvasText!important;--muted:CanvasText!important;--accent:Highlight!important;--sg-bg:Canvas!important;--sg-ink:CanvasText!important;--sg-muted:CanvasText!important;--sg-a:Highlight!important}.sop-sig.sop-folded-score-rating.sop-folded-score-rating .sg-rating-star{stroke:CanvasText!important;fill:none!important}.sop-sig.sop-folded-score-rating.sop-folded-score-rating .sg-rating-unit[data-filled=true] .sg-rating-star{stroke:Highlight!important;fill:Highlight!important}.sop-sig.sop-folded-score-rating.sop-folded-score-rating .sg-rating-info,.sop-sig.sop-folded-score-rating.sop-folded-score-rating .sg-rating-output,.sop-sig.sop-folded-score-rating.sop-folded-score-rating .sg-rating-number{color:CanvasText!important}.sop-sig.sop-folded-score-rating.sop-folded-score-rating .sg-rating-clear{color:ButtonText!important;background:Canvas!important}.sop-sig.sop-folded-score-rating.sop-folded-score-rating .sg-rating-unit::before,.sop-sig.sop-folded-score-rating.sop-folded-score-rating .sg-rating-unit::after{display:none!important}}
+
+
+.sop-sig.sop-folded-score-rating.sop-folded-score-rating .sg-rating-scale{grid-template-columns:repeat(var(--sg-count,5),minmax(28px,1fr));gap:4px;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;padding-inline:3px;overscroll-behavior-x:contain}
+.sop-sig.sop-folded-score-rating.sop-folded-score-rating .sg-rating-unit{min-width:0;width:100%}
+.sop-sig.sop-folded-score-rating.sop-folded-score-rating .sg-rating-star{width:min(24px,70%);height:24px;max-width:100%}
+
+
+@media(forced-colors:none){
+.sop-sig.sop-folded-score-rating.sop-folded-score-rating .sg-rating-scale{gap:4px}.sop-sig.sop-folded-score-rating.sop-folded-score-rating .sg-rating-unit{height:80px}.sop-sig.sop-folded-score-rating.sop-folded-score-rating .sg-rating-form{border-inline-start-width:2px}.sop-sig.sop-folded-score-rating.sop-folded-score-rating .sg-rating-unit[data-exact=true] .sg-rating-form{border-inline-start-width:2px}
+}

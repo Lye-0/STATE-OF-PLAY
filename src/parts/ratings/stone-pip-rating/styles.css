@@ -40,3 +40,19 @@
 
 .sop-sig.sop-stone-pip-rating.sop-stone-pip-rating .sg-rating-output{direction:ltr;unicode-bidi:isolate}
 @media(forced-colors:active){.sop-sig.sop-stone-pip-rating.sop-stone-pip-rating{--paper:Canvas!important;--ink:CanvasText!important;--muted:CanvasText!important;--accent:Highlight!important;--sg-bg:Canvas!important;--sg-ink:CanvasText!important;--sg-muted:CanvasText!important;--sg-a:Highlight!important}.sop-sig.sop-stone-pip-rating.sop-stone-pip-rating .sg-rating-star{stroke:CanvasText!important;fill:none!important}.sop-sig.sop-stone-pip-rating.sop-stone-pip-rating .sg-rating-unit[data-filled=true] .sg-rating-star{stroke:Highlight!important;fill:Highlight!important}.sop-sig.sop-stone-pip-rating.sop-stone-pip-rating .sg-rating-info,.sop-sig.sop-stone-pip-rating.sop-stone-pip-rating .sg-rating-output,.sop-sig.sop-stone-pip-rating.sop-stone-pip-rating .sg-rating-number{color:CanvasText!important}.sop-sig.sop-stone-pip-rating.sop-stone-pip-rating .sg-rating-clear{color:ButtonText!important;background:Canvas!important}.sop-sig.sop-stone-pip-rating.sop-stone-pip-rating .sg-rating-unit::before,.sop-sig.sop-stone-pip-rating.sop-stone-pip-rating .sg-rating-unit::after{display:none!important}}
+
+
+.sop-sig.sop-stone-pip-rating.sop-stone-pip-rating .sg-rating-scale{grid-template-columns:repeat(var(--sg-count,5),minmax(28px,1fr));gap:4px;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;padding-inline:3px;overscroll-behavior-x:contain}
+.sop-sig.sop-stone-pip-rating.sop-stone-pip-rating .sg-rating-unit{min-width:0;width:100%}
+.sop-sig.sop-stone-pip-rating.sop-stone-pip-rating .sg-rating-star{width:min(24px,70%);height:24px;max-width:100%}
+
+
+@media(forced-colors:none){
+
+.sop-sig.sop-stone-pip-rating.sop-stone-pip-rating .sg-rating-unit{height:96px}
+.sop-sig.sop-stone-pip-rating.sop-stone-pip-rating .sg-rating-form{border-top-width:4px;border-bottom-width:5px;clip-path:polygon(0 0,100% 0,100% 100%,calc(100% - 6px) 100%,calc(100% - 6px) 65px,50% 51px,6px 65px,6px 100%,0 100%)}
+.sop-sig.sop-stone-pip-rating.sop-stone-pip-rating .sg-rating-star{top:13px;left:15%;width:70%;height:24px}
+
+}
+
+@media(forced-colors:none){.sop-sig.sop-stone-pip-rating.sop-stone-pip-rating .sg-rating-form{clip-path:none;border-radius:4px 4px 1px 1px;mask:radial-gradient(ellipse 34% 35px at 50% 100%,transparent 98%,#000 100%)}}

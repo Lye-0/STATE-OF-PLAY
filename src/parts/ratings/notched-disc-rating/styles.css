@@ -1,5 +1,5 @@
 @import "../../../shared/signature/rating.css";
-/* 面取りした同じ円盤の縁で評価を読む。元の円盤と星を保ち、独立した点や下線を除去する。四隅の12pxの切欠き、5pxの上端と7pxの下端を持つ押面は、未選択でも同じ大きさを保つ。選択範囲は金属面の密度、確定位置は縁の太さで示し、星とnative押面は動かない。 */
+/* 上下に位置決めの切り欠きを持つ評価ディスク。丸い金の印から角のある部品へ組み替え、選択した位置を濃い輪郭で示す。 */
 
 .sop-sig.sop-notched-disc-rating.sop-notched-disc-rating{--paper:#f4f1ed;--ink:#3e444d;--muted:#3e444d;--accent:#765e42;--edge:#c3b49d;--sg-bg:var(--paper);--sg-panel:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);color:var(--ink);color-scheme:light;background:var(--paper);width:100%;max-width:min(100%,400px);min-width:0;padding:18px;container-type:inline-size;overflow-wrap:anywhere}
 .sop-sig.sop-notched-disc-rating.sop-notched-disc-rating,.sop-sig.sop-notched-disc-rating.sop-notched-disc-rating *,.sop-sig.sop-notched-disc-rating.sop-notched-disc-rating *::before,.sop-sig.sop-notched-disc-rating.sop-notched-disc-rating *::after{box-sizing:border-box}
@@ -29,3 +29,19 @@
 
 .sop-sig.sop-notched-disc-rating.sop-notched-disc-rating .sg-rating-output{direction:ltr;unicode-bidi:isolate}
 @media(forced-colors:active){.sop-sig.sop-notched-disc-rating.sop-notched-disc-rating{--paper:Canvas!important;--ink:CanvasText!important;--muted:CanvasText!important;--accent:Highlight!important;color:CanvasText!important}.sop-sig.sop-notched-disc-rating.sop-notched-disc-rating .sg-rating-star{stroke:CanvasText!important;fill:none!important}.sop-sig.sop-notched-disc-rating.sop-notched-disc-rating .sg-rating-unit[data-filled=true] .sg-rating-star{fill:Highlight!important;stroke:Highlight!important}.sop-sig.sop-notched-disc-rating.sop-notched-disc-rating .sg-rating-info,.sop-sig.sop-notched-disc-rating.sop-notched-disc-rating .sg-rating-number{color:CanvasText!important}.sop-sig.sop-notched-disc-rating.sop-notched-disc-rating .sg-rating-unit::before,.sop-sig.sop-notched-disc-rating.sop-notched-disc-rating .sg-rating-unit::after{display:none!important}.sop-sig.sop-notched-disc-rating.sop-notched-disc-rating .sg-rating-form{height:auto!important;clip-path:none!important;mask:none!important;transform:none!important}.sop-sig.sop-notched-disc-rating.sop-notched-disc-rating .sg-rating-clear{color:ButtonText!important;background:Canvas!important}}
+
+
+.sop-sig.sop-notched-disc-rating.sop-notched-disc-rating .sg-rating-scale{grid-template-columns:repeat(var(--sg-count,5),minmax(28px,1fr));gap:4px;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;padding-inline:3px;overscroll-behavior-x:contain}
+.sop-sig.sop-notched-disc-rating.sop-notched-disc-rating .sg-rating-unit{min-width:0;width:100%}
+.sop-sig.sop-notched-disc-rating.sop-notched-disc-rating .sg-rating-star{width:min(24px,70%);height:24px;max-width:100%}
+
+
+@media(forced-colors:none){
+
+.sop-sig.sop-notched-disc-rating.sop-notched-disc-rating{--paper:#edf1f2;--ink:#3c5360;--muted:#5b707b;--accent:#416d82;--edge:#b0c6ce}
+.sop-sig.sop-notched-disc-rating.sop-notched-disc-rating .sg-rating-unit{height:auto;aspect-ratio:1;min-height:42px}
+.sop-sig.sop-notched-disc-rating.sop-notched-disc-rating .sg-rating-form{inset:0;border:0;border-radius:0;background:#d5e3e7;clip-path:polygon(8px 0,calc(50% - 3px) 0,calc(50% - 3px) 5px,calc(50% + 3px) 5px,calc(50% + 3px) 0,calc(100% - 8px) 0,100% 8px,100% calc(100% - 8px),calc(100% - 8px) 100%,calc(50% + 3px) 100%,calc(50% + 3px) calc(100% - 5px),calc(50% - 3px) calc(100% - 5px),calc(50% - 3px) 100%,8px 100%,0 calc(100% - 8px),0 8px);box-shadow:inset 0 3px #f1f7f4,inset 0 -4px #8ba8b7}
+.sop-sig.sop-notched-disc-rating.sop-notched-disc-rating .sg-rating-unit[data-filled=true] .sg-rating-form{background:#adc9d3;box-shadow:inset 0 3px #dbeaf0,inset 0 -4px #678fa3}
+.sop-sig.sop-notched-disc-rating.sop-notched-disc-rating .sg-rating-unit[data-exact=true] .sg-rating-form{box-shadow:inset 0 0 0 2px #416d82}
+
+}
