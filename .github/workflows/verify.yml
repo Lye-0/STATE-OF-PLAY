@@ -147,6 +147,9 @@ jobs:
       - name: Loader orbit continuity and source packages
         if: ${{ !cancelled() && steps.browser-ready.outcome == 'success' && matrix.suite == 'features' }}
         run: npm run test:loader-orbit
+      - name: Pagination strip selection and focus visibility
+        if: ${{ !cancelled() && steps.browser-ready.outcome == 'success' && matrix.suite == 'features' }}
+        run: npm run test:pagination-strip
       - name: Sequence pagination and tag behavior
         if: ${{ !cancelled() && steps.browser-ready.outcome == 'success' && matrix.suite == 'features' }}
         run: npm run test:sequence
