@@ -73,3 +73,9 @@ B018r6は5pass/5差戻し。revise-b018-review.py実行済み（再実行禁止�
 B018最終候補をround8へ。B3wizard CSS末尾の空行だけ削除（git diff --check）、規則変更なし。r7の40条件/画像証拠は同一規則として維持し、独立reviewへr8を指定した。
 
 B017r5全10pass→5e0d530f760c53041548a53dc62fd2abf4be00d9でpush/record済み170件。B018r8再検査中。B019以降の凍結はr5/r5/r4/r4/r3。B018差戻し5件gallery再撮影も完了。
+
+B018r8全10pass→e5afd2a095f1bd4ad62aec02f8209c2233d11117でpush/record済み180件。B019r5独立検査へ進行。B018エラー7.016〜7.330:1、未到達文字6.870〜8.266:1、native118/React72検査成功。
+
+B019r5は全10差戻し。revise-b019-review.py実行済み（再実行禁止）→r6freeze。A検索3/command3構造再設計、599/601/615選択文字、615hover16pxずれ、B3長エラー/610見出しを修正。main28条件hover相対座標/幅/RTL成功(probe-b019-6b.log)、Workbench40成功。r6撮影後、radar計数盤align-self:start、caption入力二重focus除去、drawer footer文字#32291dをさらに追記。次freeze未実行、B019現在r6 hashとは3CSSが違う。B020独立検査で共有contextのpreventScroll焦点隠れが全40条件確定。tests/workbench.browser.tsへ全context×左右×forcedの回帰を追加、修正前hinge-context item11 bottom730.94 >689で失敗(context-focus-before.log)。shared作者releaseを待ち、修正後B019〜B022の配布snapshot依存を更新する予定。
+
+共有context焦点をpanel内だけ露出する処理へ修正。全50skin×RTL/forced 1000 destination assertions、Workbench41群（offline）とtypecheck成功。独立context-focus-reviewはnative80条件800確認、React20条件120確認、scale.75/短viewport/外側scroll保持までpass。共有単独maintenanceをpush後、B019r7/B020r6/B021r5/B022r5へ依存snapshot更新。B020 r5は2pass8差戻し、revise-b020-review.py実行済み（再実行禁止）。作者100hash固定reviewは次r6で行う。

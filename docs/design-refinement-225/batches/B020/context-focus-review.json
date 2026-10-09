@@ -1,0 +1,50 @@
+{
+  "scope": "shared context keyboard focus exposure only",
+  "overall": "pass",
+  "sourceHashes": {
+    "src/shared/workbench/context.ts": "8d6d877989bad42c77092258e4676c71dd1a7bcfb02053b11d5f0cfa3b19cda7",
+    "src/shared/workbench/core.ts": "1d5a233ce1af60d3c9d58af195f18803e4527a205bbd1e1cd451d328608fce50",
+    "src/shared/workbench/context-view.tsx": "d4f774631109655a775c9183612d67840ff2821f09d223c4de365bb14dcb8928",
+    "src/shared/workbench/react-host.tsx": "d98c48069cdd073ee245b2f4ed18ffa31d224eb59789f383e8e1c78fcf469f3a",
+    "tests/workbench.browser.ts": "e35b2dbb83f0939606d05211df22f01a55e48a7b94e62fe8adf4b8d4db206db4"
+  },
+  "baselineCommit": "e5afd2a095f1bd4ad62aec02f8209c2233d11117",
+  "independent": {
+    "immutableAuthorCSS": "B020 snapshot/round-5",
+    "nativeConditions": 80,
+    "nativeChecks": 800,
+    "reactStrictModeConditions": 20,
+    "reactChecks": 120,
+    "runtimeErrors": [],
+    "reactUnmountRemaining": 0,
+    "checks": [
+      "5 skins × LTR/RTL × normal/forced × viewport height700/300 × scale1/.75",
+      "Open/End/Home/ArrowUp/ArrowDown/typeahead Z/render focus restore/Escape return/reopen/End again",
+      "Every focus bounds within panel client region; outer page scrollY unchanged",
+      "React StrictMode: controlled props update retains exposed focus, Home/End/typeahead/reopen; unmount cleanup"
+    ],
+    "evidence": [
+      "measurements-context-focus-review.json",
+      "measurements-context-focus-react.json",
+      "evidence-context-focus/focused-end-sheet.jpg"
+    ]
+  },
+  "codeReview": {
+    "result": "pass",
+    "summary": "focusControl is limited to focus + panel.scrollTop adjustment. Client border and transform scale are accounted for. It replaces keyboard/typeahead/open/render restoration paths without changing pointer selection, action state, callbacks or lifecycle cleanup. No new global listeners or asynchronous work are introduced. Oversized controls align their top, avoiding an impossible whole-item visibility guarantee."
+  },
+  "suppliedRegressionEvidence": {
+    "reviewedLogs": [
+      "../../context-focus-before.log",
+      "../../context-focus-after.log",
+      "../../typecheck-context-focus.log"
+    ],
+    "result": "Parent-run Workbench41 and typecheck succeeded; permanent test includes all50skins ×4modes ×5exposure checks. Old implementation failed the added test. These are supplied regression results, not re-executed by the independent reviewer."
+  },
+  "limitations": [
+    "This passes only the shared focus change; it does not pass B020 authors or clear their design/contrast/layout findings.",
+    "Frozen B020 round5 export retains old shared code and remains changes_required. New delivery snapshots must include the reviewed source hash before batch reapproval.",
+    "Native 80 conditions and React20 conditions were independently run; full50skin suite was inspected as parent-supplied evidence.",
+    "Chromium selected states; not a guarantee for all browser/platform combinations."
+  ]
+}

@@ -65,6 +65,24 @@ try{
   await p.waitForFunction(()=>(window as any).api.getState().open===false);
   await p.evaluate(old=>{document.body.style.minHeight=old;window.scrollTo(0,0);},oldHeight);
  });
+ await run('Every context skin reveals keyboard destinations within its own scrolling panel',async()=>{
+  await p.setViewportSize({width:320,height:700});
+  for(const forced of [false,true])for(const rtl of [false,true])for(const record of f.records.filter(r=>r.category==='contextmenus')){
+   await p.emulateMedia({forcedColors:forced?'active':'none',reducedMotion:'reduce'});
+   await mount(record.id,{items:Array.from({length:12},(_,i)=>({id:'item'+i,label:'操作 '+i,description:'説明の表示を確認'}))});
+   await p.locator('.sop-wb').evaluate((el,rtl)=>(el as HTMLElement).dir=rtl?'rtl':'ltr',rtl);
+   await p.evaluate(()=>(window as any).api.open());
+   const visible=async(id:string)=>{const r=await p.locator('.wb-context-panel').evaluate(el=>{const a=document.activeElement as HTMLElement,b=a.getBoundingClientRect(),r=el.getBoundingClientRect();return {id:a.dataset.menuAction,top:b.top,bottom:b.bottom,start:r.top+el.clientTop,end:r.top+el.clientTop+el.clientHeight,open:el.matches(':popover-open')||!el.hasAttribute('hidden')}});assert.equal(r.id,id,record.id);assert.ok(r.open&&r.top>=r.start-1&&r.bottom<=r.end+1,record.id+' '+JSON.stringify({rtl,forced,...r}));};
+   await p.keyboard.press('End');await visible('item11');
+   await p.keyboard.press('Home');await visible('item0');
+   await p.keyboard.press('ArrowUp');await visible('item11');
+   await p.keyboard.press('ArrowDown');await visible('item0');
+   await p.keyboard.press('End');await p.keyboard.press('Escape');
+   await p.evaluate(()=>(window as any).api.open());await visible('item0');
+   await p.keyboard.press('Escape');
+  }
+  await p.emulateMedia({forcedColors:'none',reducedMotion:'no-preference'});await p.setViewportSize({width:720,height:950});
+ });
  await run('Context disabled actions and controlled check state do not trigger side effects',async()=>{await mount('ticket-context',{checked:{pin:true}});await p.evaluate(()=>{(window as any).actions=[];(window as any).api.update({onAction:(item:any)=>(window as any).actions.push(item.id)});(window as any).api.open();});await p.locator('[data-menu-action=share]').click({force:true});assert.deepEqual(await p.evaluate(()=>(window as any).actions),[]);await p.locator('[data-menu-action=pin]').click();assert.equal((await state()).checked.pin,true);await p.keyboard.press('Home');assert.equal(await p.locator('[data-menu-action=open]').evaluate(e=>e===document.activeElement),true);await p.keyboard.press('End');assert.equal(await p.locator('[data-menu-action=share]').evaluate(e=>e===document.activeElement),true);});
  await run('Context semantic groups preserve original flat step positions and real subjects',async()=>{await mount('thin-step-context',{targetLabel:'Actual file',items:[{id:'a',label:'First',group:'One'},{id:'b',label:'Second',group:'One'},{id:'c',label:'Third',group:'Two'},{id:'parent',label:'Actual parent',children:[{id:'child',label:'Child'}]}]});await p.evaluate(()=>(window as any).api.open());assert.equal(await p.locator('[role=group]').count(),2);assert.deepEqual(await p.locator('[role=group]').evaluateAll(es=>es.map(e=>e.getAttribute('aria-label'))),['One','Two']);for(const [id,index,margin]of [['a',2,7],['b',3,14],['c',5,0],['parent',6,0]] as const){assert.equal(await p.locator(`[data-menu-action=${id}]`).getAttribute('data-menu-flat-index'),String(index));assert.equal(await p.locator(`[data-menu-action=${id}]`).evaluate(e=>getComputedStyle(e).marginLeft),margin+'px');}assert.equal(await p.locator('.wb-context-subject').textContent(),'Actual file');await p.locator('[data-menu-action=parent]').click();assert.equal(await p.locator('.wb-context-subject').textContent(),'Actual parent');assert.equal(await p.locator('[role=group]').count(),0);});
  await run('Navigation has real hrefs, preserves modified clicks and supports SPA callbacks',async()=>{await mount('paper-index-nav');await p.evaluate(()=>{(window as any).navigations=[];(window as any).api.update({onNavigate:(item:any)=>{(window as any).navigations.push(item.id);return false;}});});const project=p.locator('.wb-nav-desktop [data-nav=projects]');assert.equal(await project.getAttribute('href'),'#destination');await project.click();assert.equal((await state()).active,'projects');assert.deepEqual(await p.evaluate(()=>(window as any).navigations),['projects']);assert.equal(await project.evaluate(e=>e.dispatchEvent(new MouseEvent('click',{ctrlKey:true,bubbles:true,cancelable:true}))),true);await p.evaluate(()=>(window as any).api.update({active:'overview'}));await project.click();assert.equal((await state()).active,'overview');for(const other of p.context().pages())if(other!==p)await other.close();await p.bringToFront();});
