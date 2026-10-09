@@ -1,0 +1,13 @@
+{
+  "before": {
+    "src/shared/signature/color.ts": "32a85ff580944fb9aab0a3b78b41bb0cd44a10b60b2a8771e6df63c355370b31"
+  },
+  "after": {
+    "src/shared/signature/color.ts": "7d8f1383a06602615c54ad4a20ebf1d92dc48505a761734795766a37791757e4",
+    "tests/signature.browser.ts": "41cd71e93fa6efb3d2251ef28b65971827320e874dc834df062bdac1a6fb230f"
+  },
+  "reproductionAllEightBaseline": "focused swatch loses focus on palette update; destroyed reset changes committed #123456 to #A5BCE0",
+  "fix": "retain same current color or nearest existing swatch focus; reset after lifecycle destroy is inert",
+  "permanentRegression": "Signature real Vite native palette current/nearest focus/dead reset and real React controlled HEX/canonicalization/draft-caret/external error-clear/retained child DOM",
+  "reactControlledHEXReproduction": "Real React TSX export: accepting HEX #f80 sends #FF8800 but focused input remains previous #FFFFFF; async controlled value change now canonicalizes HEX and clears prior errors, while unrelated prop changes retain draft/caret"
+}

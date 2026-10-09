@@ -111,6 +111,14 @@ for row,part,review in approved:
   actual=next((p for p in reversed(native) if all((p/f"{row['id']}-{name}.png").exists() for name in ['initial','selected','invalid','narrow-320','long-rtl-320','forced-dark'])),None)
   assert actual is not None,f"Missing native color value/error/RTL evidence: {row['id']}"
   images+=figure(beforeColor,'修正前・配布版のカラー選択')+figure(actual/f"{row['id']}-initial.png",'修正後・色面と実軸')+figure(actual/f"{row['id']}-selected.png",'修正後・実HEX値を入力')+figure(actual/f"{row['id']}-invalid.png",'修正後・無効値の入力エラー')+figure(actual/f"{row['id']}-narrow-320.png",'修正後・320pxと長い見出し')+figure(actual/f"{row['id']}-long-rtl-320.png",'修正後・右から左への表示')+figure(actual/f"{row['id']}-forced-dark.png",'修正後・暗い強制配色')
+ if row['category']=='skeletons':
+  beforeSkeleton=w/'evidence/baseline'/f"{row['id']}-skeleton.png"
+  beforeLoaded=w/'evidence/baseline'/f"{row['id']}-loaded.png"
+  assert beforeSkeleton.exists() and beforeLoaded.exists(),f"Missing original waiting/loaded skeleton: {row['id']}"
+  native=sorted((d/'captures').glob('skeletons-self-*'),key=lambda p:int(p.name.split('-')[-1]))
+  actual=next((p for p in reversed(native) if all((p/f"{row['id']}-{name}.png").exists() for name in ['initial','loaded','waiting-ltr-320','loaded-ltr-320','loaded-rtl-320','forced-waiting','forced-loaded'])),None)
+  assert actual is not None,f"Missing actual loading/content/RTL/forced skeleton: {row['id']}"
+  images+=figure(beforeSkeleton,'修正前・配布版の読み込み')+figure(beforeLoaded,'修正前・配布版の実内容')+figure(actual/f"{row['id']}-initial.png",'修正後・配布版の読み込み')+figure(actual/f"{row['id']}-loaded.png",'修正後・同じ組版の実内容')+figure(actual/f"{row['id']}-waiting-ltr-320.png",'修正後・320pxで読み込み')+figure(actual/f"{row['id']}-loaded-ltr-320.png",'修正後・320pxで長い実内容')+figure(actual/f"{row['id']}-loaded-rtl-320.png",'修正後・右から左への実内容')+figure(actual/f"{row['id']}-forced-waiting.png",'修正後・強制配色で読み込み')+figure(actual/f"{row['id']}-forced-loaded.png",'修正後・強制配色の実内容')
  if row['category']=='ratings':
   beforeRating=w/'evidence/baseline'/f"{row['id']}-rating.png"
   assert beforeRating.exists(),f"Missing original real rating: {row['id']}"

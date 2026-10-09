@@ -1,0 +1,162 @@
+{
+  "batch": "B037",
+  "round": 8,
+  "snapshot": "docs/design-renewal/batches/B037/snapshot/round-8",
+  "overall": "changes_requested",
+  "parts": [
+    {
+      "number": "R508",
+      "id": "soft-feedback-rating",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "元監査B/T。淡い藤色と小角丸の実用的な評価面を保持し、確定位置と評価範囲を区別。64pxのnative当たりと固定星を保ち、Bの明瞭さと操作安定として合格。汎用的な形をAの独創性として称賛する判定ではない。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R508",
+        "R292"
+      ]
+    },
+    {
+      "number": "R510",
+      "id": "warm-reader-rating",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "元監査B/T。暖色の紙面、小角丸、14px見出しを保持。下端で確定位置を示し、色の塗りと区別する。native操作、未評価、10段階、readonly/disabledの実用性を満たす。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R510",
+        "R306"
+      ]
+    },
+    {
+      "number": "R511",
+      "id": "pigment-cabinet",
+      "verdict": "adjust",
+      "normalDesignVerdict": "pass",
+      "assessment": "外四辺の箱を廃し、独立した数値道具面、左右14pxのスライドに載るSVトレー、実72×14px把手穴、実HEX付き保存色引出しへ再構成した。トレー前縁と左右材が接続し、穴は背景へ抜ける。R251の選択用キャビネットやR295の出力口と異なり、実色面と保存色の操作領域が構造を決める。通常造形はA合格。ただし保存色HEXのRTL表示に残件。",
+      "findings": [
+        {
+          "key": "R511-palette-hex-rtl-order",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": [
+            "captures/reviewer-colors-8/pigment-cabinet-long-rtl-320.png",
+            "captures/reviewer-materials-8/pigment-cabinet-320-rtl.png",
+            "snapshot/round-8/source/pigment-cabinet/styles.css:49"
+          ],
+          "problem": "RTLで保存色の実HEXラベルがFFFFFF#、FF0000#、A5BCE0#の順に表示される。::afterのattr(data-swatch)がRTLを継承するため、同じ値のnative HEX入力とは表記が一致しない。通常LTRは正しい。",
+          "proposal": "保存色ラベル::afterにdirection:ltrとunicode-bidi:isolateを指定し、#FFFFFF/#FF0000/#A5BCE0をLTR/RTL、通常/強制色で確認する。造形や引出し寸法を変える必要はない。"
+        }
+      ],
+      "nearestComparisons": [
+        "R251",
+        "R297",
+        "R518"
+      ]
+    },
+    {
+      "number": "R512",
+      "id": "survey-color-console",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "元監査T。色面とHSV軸の横二操作区画を保持し、狭幅では軸を省かず一列へ戻す。native軸と実SV面は同じHSVへ対応し、暗い多重枠を軽くした。元の情報構成を磨く調整として合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R512",
+        "R516"
+      ]
+    },
+    {
+      "number": "R513",
+      "id": "folded-swatch-color",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "単なる下付け折面から、SV紙の左右36pxの舌が32pxの実切口へ入り、前の保持端が覆う自立見本面へ変更。左右の上・下に真の空隙が残り、狭幅でも同じ紙の支持関係が読める。R151の金具による保持、R403/R473の二面折紙とは接続と編集面の使い方が異なる。無変形のSVと固定入力を保ちA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R403",
+        "R473",
+        "R222"
+      ]
+    },
+    {
+      "number": "R515",
+      "id": "printer-proof-color",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "元のRGB校正面と実見本の関係を保持。狭幅HEXを全幅行に分け、全7文字が実入力内幅へ収まる。前回のT造形合格を継承しUI残件を解消。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R515"
+      ]
+    },
+    {
+      "number": "R516",
+      "id": "color-book-spread",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "中央28px綴じと二つの用途の紙面という前回合格の造形を保持。支持面を編集行に限定し、768px長見出し・エラー行を綴じが横断しない。狭幅HEXも全幅で読める。R220の静的見開きとは色面と数値軸の同一値編集という用途が異なる。",
+      "findings": [],
+      "nearestComparisons": [
+        "R220",
+        "R275",
+        "元R516"
+      ]
+    },
+    {
+      "number": "R517",
+      "id": "optical-color-desk",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "160px色相輪と別SV面というTの構成を保持。実ポインターの四方でH=0/90/180/270を確認。狭幅HEX全幅化で読字残件を解消。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R517",
+        "R337原版"
+      ]
+    },
+    {
+      "number": "R518",
+      "id": "textile-dye-color",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "額縁を廃し228pxのSVそのものを染布とし、実黒の下端から30pxの房へ続く。房の8px隙間は全層背景へ抜け、軸・HEX・保存色は布外に分離。R333の縫合量、R345の伸びる燕尾布、R438の袖縫い代とは主形・機能とも異なる。色座標面を歪めず布の自由端を示しA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R511",
+        "R478",
+        "R252",
+        "R285"
+      ]
+    },
+    {
+      "number": "R519",
+      "id": "open-palette-color",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "細いL線の普通パネルを廃し、SVと48px保存色受けを持つ一枚の非対称板へ変更。半径18pxの手掛け穴は実背景へ抜ける。round8では暗黙の第二列がなく、狭幅RTLでもSVと保存色が板内に収まり、HEXは独立した全幅行。R320のL支持やR279の両側握り付き器と異なる大きい非対称主形としてA合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R320",
+        "R417",
+        "R519原版"
+      ]
+    }
+  ],
+  "checks": [
+    "固定round8正本100 SHA-256一致、10配布CSS一致。round4から76ファイル同一、評価2件20ファイル同一。captures/reviewer-hashes-8.json。",
+    "独立Chromium actual portable native colors8件を操作。HEX確定/不正値/Escape/draft caret、palette focus/Space、native axis keyboard、実SV drag、controlled拒否と受入、readonly/disabled、FormData/reset、destroy後不作動を確認。reviewer-colors-8/checks.json:8成功/errors0。",
+    "8件×320/390/768×LTR/RTLの長文48条件、native44px、値・方向、forced dark/reducedを検査・撮影。",
+    "独立実font測定HEX #12ABEF:48条件で全7glyphがpaddingを除く内幅へ収まる。reviewer-hex-8/checks.json。色相輪四方の実クリックも成功。",
+    "通常motionのhover/leave/reenter、白黒値変更、native color inputを8件×1000/320×LTR/RTL=32条件で確認。root基準の入力/見出し/出力/選択面の矩形とfont不変。reviewer-materials-8/checks.json、暗色背景の全層空隙画像。",
+    "非同期controlled HEX受入・外部値でエラー解除・palette縮小時の焦点保持を8件で独立確認。reviewer-color-state-8/checks.json。",
+    "主担当react-colors-8.logのactual TSX/JSX original/portable各8件成功を補助資料として確認。独立React再実行ではない。",
+    "前回合格のB/T評価2件は正本20hash同一によりround4の実native/React補助結果と造形判定を継承。",
+    "前回レビューの元730近似比較と既承認材料を参照し、R511/513/518/519の主形を再評価。見た目だけでなく実操作面・接合・真空隙で判断。"
+  ],
+  "limits": [
+    "独立ブラウザはChromium。Firefox/Safariの実描画は未確認。",
+    "React4配布形式と恒久21試験は主担当の記録を補助参照し、今回独立実行していない。",
+    "ratings2件はhash不変のため今回再操作せず前回結果を継承。"
+  ]
+}

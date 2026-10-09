@@ -1,0 +1,124 @@
+# B037 round 4 — changes requested
+
+3 pass / 3 adjust / 4 redesign。基本操作成功と、全文可読性/新A主形の合否は分けて評価。
+
+## R508 soft-feedback-rating — pass
+
+元監査B/T。淡い藤色と小角丸の実用的な評価面を保持し、確定位置と評価範囲を区別。64pxのnative当たりと固定星を保ち、Bの明瞭さと操作安定として合格。汎用的な形をAの独創性として称賛する判定ではない。
+
+
+近似比較: 元R508, R292。
+
+## R510 warm-reader-rating — pass
+
+元監査B/T。暖色の紙面、小角丸、14px見出しを保持。下端で確定位置を示し、色の塗りと区別する。native操作、未評価、10段階、readonly/disabledの実用性を満たす。
+
+
+近似比較: 元R510, R306。
+
+## R511 pigment-cabinet — redesign
+
+四辺を囲う大きいパネル、その内側の矩形SV面とパレット面、短い52px把手が主形。棚・引出しという名前に対し、実編集区域は一般的な色箱の積層のまま。R518との色/端面の差に寄り、Aの主構造の再設計が必要。
+
+- **R511-framed-panel-not-drawer (major)**: 四辺枠と内側の矩形枠、短い把手に依存し、色面が引き出される大きい前後/側面/空隙が主形を変えていない。
+  - 根拠: reviewer-colors-4/pigment-cabinet-initial.png / reviewer-materials-4/pigment-cabinet-320-ltr.png。
+  - 改善: 外四辺パネルを廃し、SVだけが前へ引き出された大きいトレーと左右の実スライド支持、前面の大きい開把手で構成する。数値軸は後方の別道具面、保存色は独立した収納面へ分け、三つの矩形枠を重ねるだけの代替を避ける。把手を偽の操作ボタンとして扱わない。
+
+近似比較: R251, R297, R518。
+
+## R512 survey-color-console — pass
+
+元監査T。色面とHSV軸の横二操作区画を保持し、狭幅では軸を省かず一列へ戻す。native軸と実SV面は同じHSVへ対応し、暗い多重枠を軽くした。元の情報構成を磨く調整として合格。
+
+
+近似比較: 元R512, R516。
+
+## R513 folded-swatch-color — redesign
+
+通常の色編集パネルの下に高さ56pxの全幅折面を付けた構成。紙の端同士の接点は成立しているが、SV・数値・保存色は元と同じ一枚の箱内に並び、折りが操作面の支持や配置を決めない。R403等の折返しを部分的に付けた範囲から離す必要がある。狭幅HEXの全桁も不足。
+
+- **R513-footer-fold-does-not-shape-editor (major)**: 折りは下端の付加物で、色見本紙を使う編集構造を決めていない。単なる折角付きカード/既承認Z折の部分反復に留まる。
+  - 根拠: reviewer-colors-4/folded-swatch-color-initial.png。panel::after高さ56px、SVや軸は通常の縦積み。
+  - 改善: 具体案は組み立てる紙の色見本スタンド。SVを載せる矩形面から左右の幅広い差込み舌を折り出し、後ろの台紙の実切口へ通して面を前へ自立させる。台紙の別平面へHSV/HEXを置く。舌・面の間の大きい空隙・切口の前後を主形にし、SVは完全な矩形かつ無変形のまま保つ。R151の外付け金属翼や上下二ページ/Z折の再利用を避け、同じ紙の自己支持を成立させる。
+- **R513-hex-glyph-clipped (major)**: 確定HEXの7文字を表示できず、blur後も末尾が隠れる。native高さ44px・LTR方向だけの試験では見逃す。
+  - 根拠: reviewer-hex-4/checks.json: folded-swatch-color viewport320 LTR/RTL、inputのpaddingを除く内幅52px、14px Consolas/monospaceの#12ABEFは59.00098px。scrollLeft0。
+  - 改善: 狭幅ではHEXを全幅の行へ、ラベルと標準色入力を別行へ組み直す等、実fontで測った7文字とpadding/borderの合計幅を確保する。入力値やnativeフォーム値を短縮しない。320/390/768とLTR/RTLで全桁を確認する。
+
+近似比較: R403, R473, R222。
+
+## R515 printer-proof-color — adjust
+
+元監査T。RGBを見せる校正紙の構成を保持し、実赤/緑/青のnative軸を隠さず読む。通常造形は合格。ただし320pxではHEXの読む内幅42pxに対し約59px必要なため末尾が隠れる。
+
+- **R515-hex-glyph-clipped (major)**: 確定HEXの7文字を表示できず、blur後も末尾が隠れる。native高さ44px・LTR方向だけの試験では見逃す。
+  - 根拠: reviewer-hex-4/checks.json: printer-proof-color viewport320 LTR/RTL、inputのpaddingを除く内幅42px、14px Consolas/monospaceの#12ABEFは59.00098px。scrollLeft0。
+  - 改善: 狭幅ではHEXを全幅の行へ、ラベルと標準色入力を別行へ組み直す等、実fontで測った7文字とpadding/borderの合計幅を確保する。入力値やnativeフォーム値を短縮しない。320/390/768とLTR/RTLで全桁を確認する。
+
+近似比較: 元R515。
+
+## R516 color-book-spread — adjust
+
+色面/保存色と数値/HEXを両ページへ分け、厚い綴じと紙束で二つの編集面を連続させる通常造形は合格。R220の静的な見開きと語彙は共有するが、同じ色を直接編集する二つの操作面を対応させた構成として扱う。ただし長見出しが中央綴じを横断し、狭幅HEXも全桁を読めない。
+
+- **R516-heading-crosses-spine (major)**: 長い見出しが褐色の中央綴じを横断し、文字が支持材の上へ重なる。
+  - 根拠: reviewer-colors-4/color-book-spread-long-ltr-768.png。headingはgrid-column:1/-1、28px綴じbeforeがtop0から全高。
+  - 改善: 見出しを切らず、綴じ/左右紙の支持を実際の二ページの編集行へ限定するか、見出しを片方の安全な紙面へ確保する。長文LTR/RTLとエラー行でも材が本文を横切らないことを検査。
+- **R516-hex-glyph-clipped (major)**: 確定HEXの7文字を表示できず、blur後も末尾が隠れる。native高さ44px・LTR方向だけの試験では見逃す。
+  - 根拠: reviewer-hex-4/checks.json: color-book-spread viewport320 LTR/RTL、inputのpaddingを除く内幅38px、14px Consolas/monospaceの#12ABEFは59.00098px。scrollLeft0。
+  - 改善: 狭幅ではHEXを全幅の行へ、ラベルと標準色入力を別行へ組み直す等、実fontで測った7文字とpadding/borderの合計幅を確保する。入力値やnativeフォーム値を短縮しない。320/390/768とLTR/RTLで全桁を確認する。
+
+近似比較: R220, R275, 元R516。
+
+## R517 optical-color-desk — adjust
+
+元監査T。色相輪と別SV面を保持。輪の四方0/90/180/270度への実ポインター操作とnative軸が同じHSVを更新することを確認。通常造形は合格だが320pxのHEX内幅52pxでは全桁が隠れる。
+
+- **R517-hex-glyph-clipped (major)**: 確定HEXの7文字を表示できず、blur後も末尾が隠れる。native高さ44px・LTR方向だけの試験では見逃す。
+  - 根拠: reviewer-hex-4/checks.json: optical-color-desk viewport320 LTR/RTL、inputのpaddingを除く内幅52px、14px Consolas/monospaceの#12ABEFは59.00098px。scrollLeft0。
+  - 改善: 狭幅ではHEXを全幅の行へ、ラベルと標準色入力を別行へ組み直す等、実fontで測った7文字とpadding/borderの合計幅を確保する。入力値やnativeフォーム値を短縮しない。320/390/768とLTR/RTLで全桁を確認する。
+
+近似比較: 元R517, R337原版。
+
+## R518 textile-dye-color — redesign
+
+額縁状の太い外周、内側の色面枠、下の細い房という構成で、R511の色箱と主構造が近い。さらに房の透明部はpanel背景で埋まり、本当の空隙ではない。穴だけの修正に留めず、染める布が実色面そのものを担う構成へ改める必要がある。
+
+- **R518-fringe-blocked-by-panel (major)**: 房の隙間が下層で埋まり、実際の背景が抜けない。
+  - 根拠: reviewer-materials-4/textile-dye-color-320-ltr-dark.png。panel背景#e8d8e5が全面、after下26pxのrepeating-gradient透明部にも同色面が残る。
+  - 改善: 布の本体面を房の上端までに限定し、全層で隙間を抜く。暗/白/任意背景で確認し、房と本文の支えは接続させる。
+- **R518-framed-color-box (major)**: 太い外周と色面の内枠の積層が一般的な色箱のまま。末端の小さい房だけでは染布のA主形として弱い。
+  - 根拠: reviewer-colors-4/textile-dye-color-initial.pngとpigment-cabinet-initial.png。
+  - 改善: 親の額縁を廃し、SV自体を大きい染布の主面へし、布の黒い末端から房まで連続させる。HSV/HEX/保存色は布の外の道具面へ分離し、染める面と操作道具の関係から配置を変える。SVの有効座標を装飾で欠かさない。
+
+近似比較: R511, R478, R252, R285。
+
+## R519 open-palette-color — redesign
+
+左16px/下18pxのL支持と色面の20px張出しはあるが、残りは普通の縦長色パネル。片側線と小さい張出しだけではR320等の片側支持を再利用した範囲で、Aの独立した絵具台の主形が弱い。
+
+- **R519-thin-L-on-generic-editor (major)**: 左線・下線・小さい色面張出しに留まり、開いた絵具台という独立の大きい主形がない。
+  - 根拠: reviewer-colors-4/open-palette-color-initial.png / reviewer-materials-4/open-palette-color-320-rtl.png。
+  - 改善: L支持を廃し、SVの矩形面と本当の手掛け穴を持つ一枚の非対称な絵具板を主形へ。保存色を板上の実色受けとして置き、軸/HEXは板外の別道具面へ分ける。穴は全層を抜き、色面やnative hitを欠かさず、大きい板の輪郭と保持関係を実装する。
+
+近似比較: R320, R417, R519原版。
+
+## 検証範囲
+
+- 固定source100 SHA256全一致、配布CSS10全一致（import除外）。captures/reviewer-hashes-4.json。
+- 独立actual portable colors8/ratings2の標準native protocol全PASS、pageerrorsなし。reviewer-colors-4/checks.json / reviewer-ratings-4/checks.json。これは下記追加glyph検査/造形の合格を意味しない。
+- Colors8: HEX短縮形の正規化/invalid/ESC、draft/caret、palette更新focus、native軸keyboard、軸output値一致、実SVドラッグ、controlled拒否/受入、readonly/disabled、FormData/reset、destroy後不動作。長文320/390/768×LTRRTL48条件、palette44px/HEX44px、科学値のLTR方向、forced dark/reducedを実行。
+- Colors8×1000/320×LTRRTL32条件でnormal hover100ms/leave/reentry2回、白/黒への値変更に対するinput/output/palette/見出しのroot相対座標とfont固定をassert。実input[type=color]に#12abefを入力しAPI#12ABEFを確認。reviewer-materials-4。
+- Opticalの色相輪で上/右/下/左を実クリックし、0/90/180/270度のHSVに一致することを確認。SVドラッグとは別に検査。
+- 全8で非同期受入のcontrolled HEX #f80→#FF8800、外部値変更でinvalid解消、削除されたpalette focusの近い現存色への移動を追加確認。reviewer-color-state-4/checks.json。Reactそのものの独立実行の代用とは扱わない。
+- 全8×320/390/768×LTRRTL48条件のHEX実font Canvas測定とpadding除く内幅を照合。4件の320px両方向のみ不足を検出。reviewer-hex-4/checks.json。
+- 暗背景で布の房の下層と紙/支持接点を確認。長見出しと中央綴じの実重なりを画像・CSS両方で照合。元native写真と過去承認の近似を比較し、B/Tと新Aの基準を分けた。
+- 共有color.tsのpalette focus/dead reset/controlled外部値によるHEX同期とerror解消を読了。provenanceのcolor.ts after hash一致。検査途中で恒久testが更新されたためtestファイルの現在hash一致を固定4の証拠には使わない。
+- 主担当react-colors-4.logの8×4 actual形式全PASSを補助確認。独立React再実行はしていない。
+- 補助状態helper初版は非同期controlled受入の直後にuncontrolled色相試験まで再利用し、イベント待ち条件が混在した。重複する色相試験を除き8件の対象状態を再実行成功。独立した色相4方位試験は別helperで既に成功。
+
+## 限界
+
+- 独立React四形式再実行はしていない。主担当実形式ログを補助資料として分けて記録。
+- OSのカラーピッカーダイアログは開いて操作していない。native color inputの値入力・連動・disabled/formを検証した。
+- Chromeでの独立検査。Firefox固有のrange-trackはソース確認に留まり別ブラウザ実行はしていない。
+- 正本/snapshot編集なし。修正版候補の内容は含めない。

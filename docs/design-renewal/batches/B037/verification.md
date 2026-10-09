@@ -1,0 +1,15 @@
+# B037 検証記録
+
+評価B2とカラーA8。Bはnative評価面と固定星の実用性を維持。A/Rの4点は、普通の色編集箱に小さな装飾を加える造形を廃し、実引出しの色面、差込み舌で自立する見本紙、実色面から続く染布の房、実保存色を載せる手掛け穴のある非対称の絵具板へ再設計。Tは元の情報構造を維持して密度・読みやすさを調整した。
+
+独立4でHEX末尾の欠け、見出しと綴じの重なり、房の空隙を塞ぐ背景、主形の独自性不足を指摘されて修正。自己6で過去のdisplay:contentsレイアウトとの競合を検出し、最終8ではobsoleteの重複ブロックを廃し通常の一列グリッドを確立。独立8では新しい引出しの印字HEXがRTLで逆順になる点を追加発見し、最終9で印字もdirection:ltr/unicode-bidi:isolateへ修正した。
+
+native colors8最終8：HEX正規化・エラー・ESC・draft/caret、palette構造focus、native軸keyboard、SV実ドラッグ、controlled拒否/受入、readonly/disabled、nativeFormData/reset、長文320390768×LTRRTL、実fontの7桁幅、native44px、科学値LTR、dark forced/reduced、destroy後不動作を成功。9はR511印字方向を追加assertし再実行成功。他7はsource不変。React colors8×実TSX/JSX×portable/originalの4形式成功。評価2はround2 native/実React四形式成功をsource不変のまま継承。実gallery10最終8＋R511最終9成功。全型最終9、730契約8成功。colors20native×2layoutはruntimeとmarkup/init不変でround4成功を継承。
+
+共有color.tsの修正は、palette更新のcurrent/nearestfocus・destroy後reset・ReactcontrolledHEXの外部受入による正規化/エラー解消。変更前8全件でfocus/deadresetを再現、実ReactでHEXの取り残しを再現し、恒久21回帰を実ViteHTTPで成功。Playwright evaluateのHTMLInputElement型指定を最終9で追加、挙動は不変。共有変更のSHAはshared-provenance.jsonに保存。将来B038のSkeleton22件目は今回のcommitへ含めない。
+
+KとLiquid Glassの部品ソース/外観は変更なし。主にChromium、forced/reducedはエミュレーション。OSのnative色ダイアログ・Firefox・実機touch/SRは未確認。最終production buildは517完了時。
+
+独立最終9全10合格。100authorhash/CSS10一致。他99authorfilesは8と不変、R511のみprintedHEX方向の限定追試を通常/強制色・全幅方向で成功。
+
+画像内蔵HTML10件/100画像/974355bytes。Chromium setContent初期91ms/全decode265ms、外部通信0/例外0/390px溢れなし。直接file navigationは環境制限で未確認。
