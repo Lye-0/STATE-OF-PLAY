@@ -40,3 +40,6 @@
 .sop-choice.sop-slanted-spine-tabs.sop-slanted-spine-tabs .sop-choice-panel{background:#f3eee2;border-left:4px solid #b8a27f;border-bottom:2px solid #d5c9b2;margin-left:0}
 .sop-choice.sop-slanted-spine-tabs.sop-slanted-spine-tabs .sop-tab-material i:first-child{display:block;left:-19px;top:0;bottom:-2px;width:15px;background:#d2c1a1;clip-path:polygon(0 0,100% 0,100% 100%,0 calc(100% - 18px));border-right:1px solid #a88d62}
 .sop-choice.sop-slanted-spine-tabs.sop-slanted-spine-tabs[data-orientation=vertical] .sop-tab-material i:first-child{display:none}
+
+/* An available tab stays readable before hover as well as after pointer exit. */
+.sop-choice.sop-slanted-spine-tabs.sop-slanted-spine-tabs>.sop-choice-list>.sop-choice-item:not([data-selected=true]){color:var(--choice-ink)}

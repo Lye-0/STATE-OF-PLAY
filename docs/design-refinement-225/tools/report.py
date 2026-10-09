@@ -17,6 +17,8 @@ for p in targets:
   if candidates:pics.append({'label':label,'src':embedded(audit/candidates[0]['source'])})
  for state,label in [('normal','修正後・通常'),('hover','修正後・ホバー'),('narrow','修正後・320px')]:
   pics.append({'label':label,'src':embedded(d/f"captures/main/{p['id']}-{state}.png")})
+ extra=d/f"captures/main/{p['id']}-expanded.png"
+ if extra.exists():pics.append({'label':'修正後・展開とホバー','src':embedded(extra)})
  out.append({**{k:p[k] for k in ['number','id','name','designType','categoryName','batch','commit']},'before':p['note'],'after':part['note'],'images':pics})
 if '--partial' not in sys.argv:assert len(out)==225,len(out)
 payload=json.dumps(out,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')

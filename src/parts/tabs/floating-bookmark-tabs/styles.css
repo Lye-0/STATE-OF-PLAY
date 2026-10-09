@@ -40,3 +40,7 @@
 .sop-choice.sop-floating-bookmark-tabs.sop-floating-bookmark-tabs .sop-choice-panel{background:#e9efe1;border-top:6px solid #b5c5a6;border-bottom:3px solid #d0dbc3;margin-top:-6px}
 .sop-choice.sop-floating-bookmark-tabs.sop-floating-bookmark-tabs .sop-tab-material i:first-child{display:block;left:0;right:0;top:-6px;height:1px;background:#849f78}
 .sop-choice.sop-floating-bookmark-tabs.sop-floating-bookmark-tabs[data-orientation=vertical] .sop-choice-panel{margin-top:0}
+
+/* An available tab stays readable before hover as well as after pointer exit. */
+.sop-choice.sop-floating-bookmark-tabs.sop-floating-bookmark-tabs>.sop-choice-list>.sop-choice-item:not([data-selected=true]){color:var(--choice-ink)}
+.sop-choice.sop-floating-bookmark-tabs.sop-floating-bookmark-tabs>.sop-choice-list>.sop-choice-item[data-selected=true]::before{background:#586f4e}

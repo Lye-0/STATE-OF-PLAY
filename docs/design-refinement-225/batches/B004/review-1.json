@@ -1,0 +1,276 @@
+{
+  "batch": "B004",
+  "round": 1,
+  "overall": "changes_required",
+  "parts": [
+    {
+      "id": "sawtooth-index-tabs",
+      "number": 152,
+      "verdict": "pass",
+      "note": "切歯状の索引と薄い紙面が明瞭。3項目/7項目・長文でも歯形と本文面がつながり、対象タブ保持も成立。",
+      "findings": [],
+      "evidence": [
+        "measurements-1.json",
+        "tabs-measurements-1.json",
+        "contrast-summary-1.json",
+        "evidence-1/tabs-portable-1-sheet.jpg",
+        "evidence-1/tabs-gallery-1-sheet.jpg"
+      ]
+    },
+    {
+      "id": "hangtag-tabs",
+      "number": 153,
+      "verdict": "changes_required",
+      "note": "吊り札と紐の接続、選択の赤茶が一貫。狭幅でも札と文字は移動せず安定するが、未選択の文字が薄い。",
+      "findings": [
+        {
+          "kind": "reproduced_contrast_defect",
+          "description": "定常・非選択の13pxラベルが rgb(121, 105, 90) / 疑似要素背景 rgb(217, 199, 170) で 3.190:1。操作対象の通常文字として4.5:1に届かない。hoverでは濃くなるが、解除後は低い値に戻る。",
+          "scope": "凍結portableと実galleryの双方。全状態は500ms待機して測定、遷移途中の低コントラストと区別。",
+          "recommendation": "素材の面・輪郭を保ち、非選択ラベル色を濃くする。R159は選択面を暗くするか選択文字を濃くして4.5:1以上を確保。hover/解除後と番号の継承色も確認する。",
+          "evidence": [
+            "contrast-1.json",
+            "contrast-summary-1.json",
+            "evidence-1/hangtag-tabs-portable-contrast-rest.png",
+            "evidence-1/hangtag-tabs-gallery-contrast-rest.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "measurements-1.json",
+        "tabs-measurements-1.json",
+        "contrast-summary-1.json",
+        "evidence-1/tabs-portable-1-sheet.jpg",
+        "evidence-1/tabs-gallery-1-sheet.jpg"
+      ]
+    },
+    {
+      "id": "offset-rail-tabs",
+      "number": 154,
+      "verdict": "changes_required",
+      "note": "上下・背のレールで青灰の紙面を支える構造が保たれる。縮小や長文で接続は壊れないが、非選択ラベルが薄い。",
+      "findings": [
+        {
+          "kind": "reproduced_contrast_defect",
+          "description": "定常・非選択の13pxラベルが rgb(98, 118, 135) / 疑似要素背景 rgb(201, 214, 221) で 3.171:1。操作対象の通常文字として4.5:1に届かない。hoverでは濃くなるが、解除後は低い値に戻る。",
+          "scope": "凍結portableと実galleryの双方。全状態は500ms待機して測定、遷移途中の低コントラストと区別。",
+          "recommendation": "素材の面・輪郭を保ち、非選択ラベル色を濃くする。R159は選択面を暗くするか選択文字を濃くして4.5:1以上を確保。hover/解除後と番号の継承色も確認する。",
+          "evidence": [
+            "contrast-1.json",
+            "contrast-summary-1.json",
+            "evidence-1/offset-rail-tabs-portable-contrast-rest.png",
+            "evidence-1/offset-rail-tabs-gallery-contrast-rest.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "measurements-1.json",
+        "tabs-measurements-1.json",
+        "contrast-summary-1.json",
+        "evidence-1/tabs-portable-1-sheet.jpg",
+        "evidence-1/tabs-gallery-1-sheet.jpg"
+      ]
+    },
+    {
+      "id": "gabled-tabs",
+      "number": 155,
+      "verdict": "changes_required",
+      "note": "屋根形の索引が独自の輪郭を作り、長文で高さが増えても本文と衝突しない。非選択の小文字が薄い。",
+      "findings": [
+        {
+          "kind": "reproduced_contrast_defect",
+          "description": "定常・非選択の13pxラベルが rgb(127, 115, 92) / 疑似要素背景 rgb(210, 196, 169) で 2.708:1。操作対象の通常文字として4.5:1に届かない。hoverでは濃くなるが、解除後は低い値に戻る。",
+          "scope": "凍結portableと実galleryの双方。全状態は500ms待機して測定、遷移途中の低コントラストと区別。",
+          "recommendation": "素材の面・輪郭を保ち、非選択ラベル色を濃くする。R159は選択面を暗くするか選択文字を濃くして4.5:1以上を確保。hover/解除後と番号の継承色も確認する。",
+          "evidence": [
+            "contrast-1.json",
+            "contrast-summary-1.json",
+            "evidence-1/gabled-tabs-portable-contrast-rest.png",
+            "evidence-1/gabled-tabs-gallery-contrast-rest.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "measurements-1.json",
+        "tabs-measurements-1.json",
+        "contrast-summary-1.json",
+        "evidence-1/tabs-portable-1-sheet.jpg",
+        "evidence-1/tabs-gallery-1-sheet.jpg"
+      ]
+    },
+    {
+      "id": "copper-pin-tabs",
+      "number": 156,
+      "verdict": "changes_required",
+      "note": "銅ピンがタブと紙をまとめる主題を保ち、長文・縮小で装飾が操作を覆わない。非選択ラベルが薄い。",
+      "findings": [
+        {
+          "kind": "reproduced_contrast_defect",
+          "description": "定常・非選択の13pxラベルが rgb(120, 103, 82) / 疑似要素背景 rgb(214, 198, 170) で 3.242:1。操作対象の通常文字として4.5:1に届かない。hoverでは濃くなるが、解除後は低い値に戻る。",
+          "scope": "凍結portableと実galleryの双方。全状態は500ms待機して測定、遷移途中の低コントラストと区別。",
+          "recommendation": "素材の面・輪郭を保ち、非選択ラベル色を濃くする。R159は選択面を暗くするか選択文字を濃くして4.5:1以上を確保。hover/解除後と番号の継承色も確認する。",
+          "evidence": [
+            "contrast-1.json",
+            "contrast-summary-1.json",
+            "evidence-1/copper-pin-tabs-portable-contrast-rest.png",
+            "evidence-1/copper-pin-tabs-gallery-contrast-rest.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "measurements-1.json",
+        "tabs-measurements-1.json",
+        "contrast-summary-1.json",
+        "evidence-1/tabs-portable-1-sheet.jpg",
+        "evidence-1/tabs-gallery-1-sheet.jpg"
+      ]
+    },
+    {
+      "id": "stitched-folio-tabs",
+      "number": 157,
+      "verdict": "changes_required",
+      "note": "背の縫い目と紙の境界が自然で、狭幅でも本文の余白を保持。非選択の文字の可読性が不足。",
+      "findings": [
+        {
+          "kind": "reproduced_contrast_defect",
+          "description": "定常・非選択の13pxラベルが rgb(120, 107, 92) / 疑似要素背景 rgb(200, 184, 157) で 2.662:1。操作対象の通常文字として4.5:1に届かない。hoverでは濃くなるが、解除後は低い値に戻る。",
+          "scope": "凍結portableと実galleryの双方。全状態は500ms待機して測定、遷移途中の低コントラストと区別。",
+          "recommendation": "素材の面・輪郭を保ち、非選択ラベル色を濃くする。R159は選択面を暗くするか選択文字を濃くして4.5:1以上を確保。hover/解除後と番号の継承色も確認する。",
+          "evidence": [
+            "contrast-1.json",
+            "contrast-summary-1.json",
+            "evidence-1/stitched-folio-tabs-portable-contrast-rest.png",
+            "evidence-1/stitched-folio-tabs-gallery-contrast-rest.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "measurements-1.json",
+        "tabs-measurements-1.json",
+        "contrast-summary-1.json",
+        "evidence-1/tabs-portable-2-sheet.jpg",
+        "evidence-1/tabs-gallery-2-sheet.jpg"
+      ]
+    },
+    {
+      "id": "instrument-tabs",
+      "number": 158,
+      "verdict": "changes_required",
+      "note": "目盛りと独立キーの対応、明るい計器の造形が保たれる。長文で目盛りが分断されず操作も安定するが、非選択文字が薄い。",
+      "findings": [
+        {
+          "kind": "reproduced_contrast_defect",
+          "description": "定常・非選択の13pxラベルが rgb(97, 120, 123) / 疑似要素背景 rgb(224, 231, 228) で 3.731:1。操作対象の通常文字として4.5:1に届かない。hoverでは濃くなるが、解除後は低い値に戻る。",
+          "scope": "凍結portableと実galleryの双方。全状態は500ms待機して測定、遷移途中の低コントラストと区別。",
+          "recommendation": "素材の面・輪郭を保ち、非選択ラベル色を濃くする。R159は選択面を暗くするか選択文字を濃くして4.5:1以上を確保。hover/解除後と番号の継承色も確認する。",
+          "evidence": [
+            "contrast-1.json",
+            "contrast-summary-1.json",
+            "evidence-1/instrument-tabs-portable-contrast-rest.png",
+            "evidence-1/instrument-tabs-gallery-contrast-rest.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "measurements-1.json",
+        "tabs-measurements-1.json",
+        "contrast-summary-1.json",
+        "evidence-1/tabs-portable-2-sheet.jpg",
+        "evidence-1/tabs-gallery-2-sheet.jpg"
+      ]
+    },
+    {
+      "id": "floating-bookmark-tabs",
+      "number": 159,
+      "verdict": "changes_required",
+      "note": "しおりの切込みと緑の主題は明快で、縮小選択保持も正常。ただし選択/非選択ともラベルのコントラスト不足。",
+      "findings": [
+        {
+          "kind": "reproduced_contrast_defect",
+          "description": "定常・非選択の13pxラベルが rgb(108, 124, 101) / 疑似要素背景 rgb(198, 211, 184) で 2.848:1。操作対象の通常文字として4.5:1に届かない。hoverでは濃くなるが、解除後は低い値に戻る。 選択済みも rgb(245, 247, 234) / rgb(112, 139, 100) で 3.481:1。",
+          "scope": "凍結portableと実galleryの双方。全状態は500ms待機して測定、遷移途中の低コントラストと区別。",
+          "recommendation": "素材の面・輪郭を保ち、非選択ラベル色を濃くする。R159は選択面を暗くするか選択文字を濃くして4.5:1以上を確保。hover/解除後と番号の継承色も確認する。",
+          "evidence": [
+            "contrast-1.json",
+            "contrast-summary-1.json",
+            "evidence-1/floating-bookmark-tabs-portable-contrast-rest.png",
+            "evidence-1/floating-bookmark-tabs-gallery-contrast-rest.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "measurements-1.json",
+        "tabs-measurements-1.json",
+        "contrast-summary-1.json",
+        "evidence-1/tabs-portable-2-sheet.jpg",
+        "evidence-1/tabs-gallery-2-sheet.jpg"
+      ]
+    },
+    {
+      "id": "negative-slot-tabs",
+      "number": 160,
+      "verdict": "changes_required",
+      "note": "本文下側の索引が構造差を作り、末尾縮小でも下側列だけが移動して対象を保持。非選択ラベルが薄い。",
+      "findings": [
+        {
+          "kind": "reproduced_contrast_defect",
+          "description": "定常・非選択の13pxラベルが rgb(124, 108, 80) / 疑似要素背景 rgb(201, 184, 145) で 2.610:1。操作対象の通常文字として4.5:1に届かない。hoverでは濃くなるが、解除後は低い値に戻る。",
+          "scope": "凍結portableと実galleryの双方。全状態は500ms待機して測定、遷移途中の低コントラストと区別。",
+          "recommendation": "素材の面・輪郭を保ち、非選択ラベル色を濃くする。R159は選択面を暗くするか選択文字を濃くして4.5:1以上を確保。hover/解除後と番号の継承色も確認する。",
+          "evidence": [
+            "contrast-1.json",
+            "contrast-summary-1.json",
+            "evidence-1/negative-slot-tabs-portable-contrast-rest.png",
+            "evidence-1/negative-slot-tabs-gallery-contrast-rest.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "measurements-1.json",
+        "tabs-measurements-1.json",
+        "contrast-summary-1.json",
+        "evidence-1/tabs-portable-2-sheet.jpg",
+        "evidence-1/tabs-gallery-2-sheet.jpg"
+      ]
+    },
+    {
+      "id": "slanted-spine-tabs",
+      "number": 161,
+      "verdict": "changes_required",
+      "note": "斜めの背と大きな番号が維持され、長文ラベルは折り返して操作面内に収まる。非選択ラベルのコントラスト不足。",
+      "findings": [
+        {
+          "kind": "reproduced_contrast_defect",
+          "description": "定常・非選択の13pxラベルが rgb(113, 117, 123) / 疑似要素背景 rgb(222, 212, 192) で 3.151:1。操作対象の通常文字として4.5:1に届かない。hoverでは濃くなるが、解除後は低い値に戻る。",
+          "scope": "凍結portableと実galleryの双方。全状態は500ms待機して測定、遷移途中の低コントラストと区別。",
+          "recommendation": "素材の面・輪郭を保ち、非選択ラベル色を濃くする。R159は選択面を暗くするか選択文字を濃くして4.5:1以上を確保。hover/解除後と番号の継承色も確認する。",
+          "evidence": [
+            "contrast-1.json",
+            "contrast-summary-1.json",
+            "evidence-1/slanted-spine-tabs-portable-contrast-rest.png",
+            "evidence-1/slanted-spine-tabs-gallery-contrast-rest.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "measurements-1.json",
+        "tabs-measurements-1.json",
+        "contrast-summary-1.json",
+        "evidence-1/tabs-portable-2-sheet.jpg",
+        "evidence-1/tabs-gallery-2-sheet.jpg"
+      ]
+    }
+  ],
+  "coverage": {
+    "interaction": "全10件×portable/actual gallery。通常、hover40ms/定常/退出60ms/再進入60ms/復帰、320px・長文・reduced/forcedを実測・撮影。page errorsなし。",
+    "resize": "20経路それぞれで1500→320/390/768px末尾選択（focusを外しselected fallbackを検査）、RTL末尾320、manualでEnd後フォーカス保持/Enter確定、7項目長文、transform:scale(.65)のホスト幅600→260px。対象の左右切れ最大0.000008px（丸め誤差）。",
+    "harness": "通常galleryの初回選択は既存実装。manual/RTL/7項目等の追加ケースは同じDOMを凍結initで再初期化する独立ハーネス。Reactラッパー自体は未実行。",
+    "visual": "通常4枚、特殊タブ4枚、定常contrast4枚のcontact sheetで全10件両経路を視認。最初のlong画像は選択直後の色遷移を含むためコントラスト確定根拠から除外。",
+    "contrast": "13pxの可視ラベルと、その直下の不透明疑似要素背景を定常500ms後に測定。選択/非選択/hover/解除/末尾選択の全10件両経路を記録。元から存在する可読性問題として報告し、共有リサイズ変更による回帰とは断定しない。",
+    "integrity": "開始・終了時のmanifest一致、共有selection-indicatorを含む。作者ファイル変更なし。",
+    "limits": "指定状態のChromium独立検査であり、全ブラウザ・全状態の無欠陥保証ではない。"
+  },
+  "evidence": [
+    "integrity-1.json"
+  ]
+}

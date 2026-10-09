@@ -15,6 +15,14 @@ try{
  await category('segments');const segments=page.locator('[data-part="ivory-notch-segments"]');const item=segments.locator('.sop-choice-item').first();await item.hover();await contrast(item.locator('.sop-choice-label'));await item.click();await contrast(item.locator('.sop-choice-label'));await page.setViewportSize({width:320,height:900});await segments.scrollIntoViewIfNeeded();const widths=await segments.locator('.sop-choice-item').evaluateAll(es=>es.map(e=>e.getBoundingClientRect().width));assert.equal(widths.length,3);assert.ok(Math.max(...widths)-Math.min(...widths)<1,'Three equally weighted narrow choices');console.log('PASS notch segments retain readable states and equal narrow option widths');
  await page.setViewportSize({width:1000,height:900});await category('breadcrumbs');const crumbs=page.locator('[data-part="station-label-trail"]');await crumbs.locator('.ff-crumb-more').click();const link=crumbs.locator('.ff-crumb-menu a').last();await link.hover();await contrast(link);console.log('PASS opened breadcrumb hover remains readable');
  await category('blocks');const vellum=page.locator('.sop-vellum-accordion-case').first();await vellum.hover();assert.equal(await vellum.evaluate(e=>getComputedStyle(e,'::after').transform),'none','Paper borders remain aligned');const diecut=page.locator('.sop-offset-diecut').first();await diecut.hover();assert.equal(await diecut.evaluate(e=>getComputedStyle(e).boxShadow),'none','No rectangular shadow behind a cut silhouette');console.log('PASS paper materials preserve their authored contours on hover');
+ await category('tabs');
+ for(const id of ['sawtooth-index-tabs','hangtag-tabs','offset-rail-tabs','gabled-tabs','copper-pin-tabs','stitched-folio-tabs','instrument-tabs','floating-bookmark-tabs','negative-slot-tabs','slanted-spine-tabs']){
+  const root=page.locator(`[data-part="${id}"] .sop-tabs`),items=root.locator(':scope > .sop-choice-list > .sop-choice-item');
+  await root.scrollIntoViewIfNeeded();await page.mouse.move(0,0);await contrast(items.first().locator('.sop-choice-label'));await contrast(items.nth(1).locator('.sop-choice-label'));
+  await items.nth(1).hover();await contrast(items.nth(1).locator('.sop-choice-label'));await page.mouse.move(0,0);await contrast(items.nth(1).locator('.sop-choice-label'));
+  await items.last().click();await contrast(items.last().locator('.sop-choice-label'));
+ }
+ console.log('PASS ten sculpted tab labels remain readable when idle, hovered, returned and selected');
  await category('textboxes');
  for(const id of ['enamel-trough-field','writing-saddle','corner-scribe-field','wax-tablet-input','drafting-tray-field','porcelain-lip-input']){
   await page.locator(`[data-open="${id}"]`).click();await galleryReady(page,true);await selectSetting(page.locator('[data-field-status]'),'error');

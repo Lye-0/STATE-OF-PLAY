@@ -41,3 +41,6 @@
 .sop-choice.sop-negative-slot-tabs.sop-negative-slot-tabs .sop-choice-panel{background:#f0e6cf;border-inline:1px solid #c4b08a;border-top:3px solid #d9c8a5}
 .sop-choice.sop-negative-slot-tabs.sop-negative-slot-tabs[data-orientation=vertical]{display:grid;padding:0;grid-template-columns:minmax(96px,32%) minmax(0,1fr)}
 .sop-choice.sop-negative-slot-tabs.sop-negative-slot-tabs[data-orientation=vertical]>.sop-choice-list{order:0;padding:0;background:none;border-top:0}.sop-choice.sop-negative-slot-tabs.sop-negative-slot-tabs[data-orientation=vertical]>.sop-choice-panels{order:1}.sop-choice.sop-negative-slot-tabs.sop-negative-slot-tabs[data-orientation=vertical]>.sop-choice-list>.sop-choice-item[data-selected=true]::after{display:none}
+
+/* An available tab stays readable before hover as well as after pointer exit. */
+.sop-choice.sop-negative-slot-tabs.sop-negative-slot-tabs>.sop-choice-list>.sop-choice-item:not([data-selected=true]){color:var(--choice-ink)}

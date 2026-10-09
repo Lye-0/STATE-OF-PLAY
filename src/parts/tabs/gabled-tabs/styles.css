@@ -40,3 +40,6 @@
 .sop-choice.sop-gabled-tabs.sop-gabled-tabs>.sop-choice-list>.sop-choice-item[data-selected=true]::after{background:#876845}
 .sop-choice.sop-gabled-tabs.sop-gabled-tabs .sop-choice-panel{margin:0 6px;background:#f4eddc;border-inline:1px solid #ccbea3;border-bottom:4px solid #d0c0a3;padding-top:24px}
 .sop-choice.sop-gabled-tabs.sop-gabled-tabs[data-orientation=vertical] .sop-choice-panel{margin:0}.sop-choice.sop-gabled-tabs.sop-gabled-tabs[data-orientation=vertical]>.sop-choice-list{padding:0}
+
+/* An available tab stays readable before hover as well as after pointer exit. */
+.sop-choice.sop-gabled-tabs.sop-gabled-tabs>.sop-choice-list>.sop-choice-item:not([data-selected=true]){color:var(--choice-ink)}

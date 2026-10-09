@@ -45,3 +45,6 @@
 .sop-choice.sop-offset-rail-tabs.sop-offset-rail-tabs[data-orientation=vertical]>.sop-choice-list>.sop-choice-item::before{inset:0 0 0 5px;border-top:0;border-left:2px solid #b0c1cb}
 .sop-choice.sop-offset-rail-tabs.sop-offset-rail-tabs[data-orientation=vertical]>.sop-choice-list>.sop-choice-item[data-selected=true]::before{border-left:3px solid #547d96}
 .sop-choice.sop-offset-rail-tabs.sop-offset-rail-tabs[data-orientation=vertical]>.sop-choice-list>.sop-choice-item[data-selected=true]::after{left:-8px;right:auto;top:14px;bottom:14px;height:auto;width:18px;border-top:0;border-left:2px solid #a1bac8;clip-path:polygon(0 0,100% 0,100% 7px,5px 7px,5px calc(100% - 7px),100% calc(100% - 7px),100% 100%,0 100%)}.sop-choice.sop-offset-rail-tabs.sop-offset-rail-tabs[data-orientation=vertical] .sop-tab-material i:first-child,.sop-choice.sop-offset-rail-tabs.sop-offset-rail-tabs[data-orientation=vertical] .sop-tab-material i:nth-child(2),.sop-choice.sop-offset-rail-tabs.sop-offset-rail-tabs[data-orientation=vertical] .sop-tab-material i:nth-child(3){display:none}
+
+/* An available tab stays readable before hover as well as after pointer exit. */
+.sop-choice.sop-offset-rail-tabs.sop-offset-rail-tabs>.sop-choice-list>.sop-choice-item:not([data-selected=true]){color:var(--choice-ink)}

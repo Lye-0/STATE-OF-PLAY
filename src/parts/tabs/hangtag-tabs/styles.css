@@ -43,3 +43,6 @@
 .sop-choice.sop-hangtag-tabs.sop-hangtag-tabs[data-orientation=vertical]>.sop-choice-list>.sop-choice-item{padding:17px 10px 17px 23px}
 .sop-choice.sop-hangtag-tabs.sop-hangtag-tabs[data-orientation=vertical]>.sop-choice-list>.sop-choice-item::before{mask:radial-gradient(circle 3px at 9px 50%,transparent 98%,#000 102%)}
 .sop-choice.sop-hangtag-tabs.sop-hangtag-tabs[data-orientation=vertical]>.sop-choice-list>.sop-choice-item::after{left:-10px;top:calc(50% - 1px);width:20px;height:2px;border:0}
+
+/* An available tab stays readable before hover as well as after pointer exit. */
+.sop-choice.sop-hangtag-tabs.sop-hangtag-tabs>.sop-choice-list>.sop-choice-item:not([data-selected=true]){color:var(--choice-ink)}

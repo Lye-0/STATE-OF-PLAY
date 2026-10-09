@@ -40,3 +40,6 @@
 .sop-choice.sop-instrument-tabs.sop-instrument-tabs .sop-choice-index{border:1px solid #a8babc;padding:2px 3px}
 .sop-choice.sop-instrument-tabs.sop-instrument-tabs .sop-choice-panel{padding-top:23px;border-inline:1px solid #b8c5c2;border-bottom:2px solid #becbc5;background:#f2f5ee}
 .sop-choice.sop-instrument-tabs.sop-instrument-tabs[data-orientation=vertical]>.sop-choice-list{padding-bottom:0;background:none;border:0}.sop-choice.sop-instrument-tabs.sop-instrument-tabs[data-orientation=vertical]>.sop-choice-list>.sop-choice-item[data-selected=true]::after{bottom:0}
+
+/* An available tab stays readable before hover as well as after pointer exit. */
+.sop-choice.sop-instrument-tabs.sop-instrument-tabs>.sop-choice-list>.sop-choice-item:not([data-selected=true]){color:var(--choice-ink)}
