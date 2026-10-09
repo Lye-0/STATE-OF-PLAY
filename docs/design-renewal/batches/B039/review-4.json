@@ -1,0 +1,164 @@
+{
+  "batch": "B039",
+  "round": 4,
+  "snapshot": "docs/design-renewal/batches/B039/snapshot/round-4",
+  "overall": "changes_requested",
+  "parts": [
+    {
+      "number": "R535",
+      "id": "archive-file-skeleton",
+      "verdict": "redesign",
+      "normalDesignVerdict": "redesign",
+      "assessment": "下ポケットを廃して図版と人物・本文の二つの浅い面へ変えた。しかし全周が一続きの矩形枠で、全高36pxの中央帯が背として見えるため、既承認の見開き型から十分に独立していない。二半箱の方向は採用可能だが、現描画の主輪郭には追加再構成が必要。",
+      "nearestComparisons": [
+        "R516",
+        "R220",
+        "元R535"
+      ],
+      "findings": [
+        {
+          "key": "R535-continuous-frame-and-full-height-spine",
+          "severity": "major",
+          "kind": "duplication",
+          "evidence": [
+            "captures/reviewer-skeletons-4/archive-file-skeleton-loaded.png",
+            "captures/reviewer-skeletons-4/archive-file-skeleton-loaded-rtl-320.png",
+            "captures/reviewer-materials-4/archive-file-skeleton-768-ltr.png"
+          ],
+          "problem": "二つの面の上端・下端が同じ高さで連なり、中央の全高36px帯を含めて一つの矩形に見える。実際の像は「中央背＋左右の読む面」というR516等の見開きに近く、色と厚いborderで保存箱と呼び替えるだけではAの独立性が不足する。",
+          "proposal": "二半箱を独立した輪郭として露出させる。例えば全高布帯を上下2か所の幅36px・高さ48〜64pxの大きい布ヒンジへ分け、その間と上下端を真空隙にする。箱の側端とヒンジの実差込みを見せ、連続した外枠・中央背の像を切る。狭幅も二半箱と同じ二ヒンジの関係を保持し、文字幅を減らさない。"
+        }
+      ]
+    },
+    {
+      "number": "R536",
+      "id": "photo-caption-skeleton",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "Tの写真→人物→本文→資料という順序を保持。212pxの主画像、22px余白、資料の上下線が情報階層を作り、待機と実内容が同じ領域へ対応する。14px本文と16px人物を維持し、狭幅の本文約170pxを確保。通常の記事カードを新規Aとして評価せず、元の写真・キャプション比率の精度として合格。",
+      "nearestComparisons": [
+        "元R536",
+        "R531"
+      ],
+      "findings": []
+    },
+    {
+      "number": "R537",
+      "id": "control-console-skeleton",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "全周の箱を廃し、200px図版とログ台を72pxの真空隙に露出する幅72pxの首で接続。図版下の実borderを含む上12px・下12px差込みを320/768×LTR/RTLで測定。首の両側は実背景へ開き、本文・三資料は別の台と前板で読む。R297の直結二面やR397の枠内キーとは異なる独立した表示面の支持としてA合格。",
+      "nearestComparisons": [
+        "元R537",
+        "R297",
+        "R397",
+        "R214"
+      ],
+      "findings": []
+    },
+    {
+      "number": "R538",
+      "id": "stitched-page-skeleton",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "二つの布面の実孔と44px周期の糸が、広幅RTLでも中央に向き合うよう修正。長文の高さでもtop26pxの位相が一致し、狭幅は水平の綴じへ転換する。通常造形の前回合格を保持し、RTL接合残件を解消。",
+      "nearestComparisons": [
+        "元R538",
+        "R378",
+        "R333",
+        "R431"
+      ],
+      "findings": []
+    },
+    {
+      "number": "R539",
+      "id": "open-grid-skeleton",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "Tの左右情報列を保持し、左3pxと内部1pxの線の強弱を整理。狭幅では全幅の読み順へ戻り、native本文が細列に閉じ込められない。R541と近い編集格子の語彙だが、元監査Tとして情報列の秩序を磨く範囲の合格。",
+      "nearestComparisons": [
+        "元R539",
+        "R541"
+      ],
+      "findings": []
+    },
+    {
+      "number": "R540",
+      "id": "book-jacket-skeleton",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "切角の全周枠と離れた本文紙を廃し、実表紙の68px索引面から連続する巻返しが本文紙の背面へ入り、反対側の下の開口と32px自由端へ現れる構造へ再設計。本文を一時透明にした診断像でも、上下の実開口が同じ裏帯につながることを確認。RTLは帯と切口のみ反転し、glyphは無変形。R533の側フラップ、R403の単純Z折、R516の見開きとは前後の通り道と読む面の用途が異なりA合格。",
+      "nearestComparisons": [
+        "元R540",
+        "R533",
+        "R403",
+        "R516",
+        "R181"
+      ],
+      "findings": []
+    },
+    {
+      "number": "R541",
+      "id": "list-column-skeleton",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "Tの人物と本文を縦罫で分ける構成を保持。上画像を184pxへ、下資料を軽い下線と16px間隔へ改め、画像と本文の量の釣合いを改善。狭幅で二列を解除し14px本文・長い名前を全幅に近い領域で読む。R539とは近いが元の構成を保持するT精度基準で合格。",
+      "nearestComparisons": [
+        "元R541",
+        "R539"
+      ],
+      "findings": []
+    },
+    {
+      "number": "R542",
+      "id": "window-grid-skeleton",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "Tの左資料列と右画像を64px／192pxの格子に整理。上の人物と下本文を全幅にし、資料の面も44px以上を確保。元の小さい孤立点・ボタンの散らばりを抑え、待機と実内容の対応が明瞭。",
+      "nearestComparisons": [
+        "元R542",
+        "R532"
+      ],
+      "findings": []
+    },
+    {
+      "number": "R543",
+      "id": "ribbon-heading-skeleton",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "図版が帯の後ろへ実24px入るよう修正。320/768×LTR/RTL×短文/長文の8条件で重なり24pxを測定。自由端を帯の下端へ固定し、長い人物名でも86/122pxの端が画像へ続く。前回の接合残件を解消し、通常造形合格を保持。",
+      "nearestComparisons": [
+        "元R543",
+        "R283",
+        "R483"
+      ],
+      "findings": []
+    },
+    {
+      "number": "R544",
+      "id": "ceramic-card-skeleton",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "Tの大きい円形図版と人物の二列を保持し、上6px／下10pxの面と一隅42pxを整理。狭幅は160px円と全幅人物へ切り替え、待機中の小点の散らばりをなくした。円窓をもつ標本面という元の長所と14px本文の読みを保つ。",
+      "nearestComparisons": [
+        "元R544",
+        "R480"
+      ],
+      "findings": []
+    }
+  ],
+  "checks": [
+    "round4正本100hash／配布CSS10一致。round2から17ファイル変更、合格済みT5件50ファイル同一。captures/reviewer-hashes-4.json。",
+    "独立実portable nativeスケルトン全10で、待機／実読込・同一input/値/caret・focus退避復帰/no-steal・inert/ARIA・rows/escaped status/paused・破棄後reset/update/pause無効を再操作。reviewer-skeletons-4/checks.jsonは10成功/errors0。",
+    "全10×320/390/768×LTR/RTL×待機/読込=120長文実像、forced dark/reducedを再確認。",
+    "全10×6条件=60の読み幅とnormal hover/leave文字矩形・font固定、destroy二度のtabindex清掃を追加確認。reviewer-geometry-4。",
+    "R538/R540/R543の24条件接点記録。R538広幅RTLで両孔と糸が中央に一致、R543の帯/画像重なり8条件すべて24px。reviewer-contacts-4。",
+    "R535/R537/R540を320/768×LTR/RTLの暗背景で撮影。R537首の上/下差込みは全4条件各12px。R540本文背景だけを一時透明にした診断像で裏帯の連続を確認（診断像の文字背景は通常UI評価対象ではない）。reviewer-materials-4。",
+    "主担当React10×四形式round4成功ログを補助確認。共有runtime変更なしのためB038の恒久22回帰結果を継承。"
+  ],
+  "limits": [
+    "独立実ブラウザはChromium。Firefox/Safari未確認。",
+    "React四形式と共有恒久回帰は主担当ログ参照、独立再実行ではない。",
+    "R535の改善方向は実装前の合格保証ではなく、最終の実輪郭と接合を再評価する必要がある。"
+  ]
+}
