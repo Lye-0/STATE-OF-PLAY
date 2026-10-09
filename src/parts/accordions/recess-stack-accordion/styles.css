@@ -1,6 +1,6 @@
 @import "../../../shared/accordion-base.css";
 @import "../../../shared/panel-content.css";
-/* 削った左の切欠きと厚い右の内壁を持つ、非対称の陶器の凹み。本文は同じ受け皿の浅い底へ展開し、右の釉薬の面が本文の高さに沿って露出する。丸い枠を重ねず、外壁と内底の二つの材質で深さを分ける。 */
+/* 淡い磁器の一枚の縁と、少し凹んだ読む面を重ねる。右と下の切断端に厚みを集め、反射と多重枠を抑える。 */
 
 .sop-accordion.sop-recess-stack-accordion.sop-recess-stack-accordion{--acc-bg:transparent;--acc-ink:#3b3833;--acc-muted:#625d53;--acc-line:#b6ab95;--acc-accent:#8b4b2f;--acc-radius:0px;--acc-surface:transparent;--acc-padding:20px;max-width:410px;color-scheme:light;background:transparent}
 .sop-accordion.sop-recess-stack-accordion.sop-recess-stack-accordion .sop-accordion-item{--ao:0;background:transparent;border:0;border-radius:0;box-shadow:none;overflow:visible;margin:0 0 12px;isolation:isolate}
@@ -34,6 +34,15 @@
 .sop-accordion.sop-recess-stack-accordion.sop-recess-stack-accordion .sop-acc-material i:nth-child(6){display:none}
 .sop-accordion.sop-recess-stack-accordion.sop-recess-stack-accordion .sop-accordion-trigger,.sop-accordion.sop-recess-stack-accordion.sop-recess-stack-accordion .sop-accordion-content{padding-inline:16px}
 
+
+/* A quiet ceramic edge with one consistent light direction. */
+.sop-accordion.sop-recess-stack-accordion.sop-recess-stack-accordion{--acc-ink:#35454b;--acc-muted:#52656c;--acc-accent:#476b7b;--acc-line:#b1c1c4}
+.sop-accordion.sop-recess-stack-accordion.sop-recess-stack-accordion .sop-accordion-item{padding:7px 17px 12px 13px}
+.sop-accordion.sop-recess-stack-accordion.sop-recess-stack-accordion .sop-acc-material i:first-child{background:#b9c7c9;border-radius:6px 18px 21px 10px;border-right:3px solid #81999f;border-bottom:3px solid #96aaad}
+.sop-accordion.sop-recess-stack-accordion.sop-recess-stack-accordion .sop-acc-material i:nth-child(2){inset:7px 11px 9px 10px;background:#f2f3eb;border-radius:2px 12px 15px 4px;box-shadow:inset 0 1px #fffef6}
+.sop-accordion.sop-recess-stack-accordion.sop-recess-stack-accordion .sop-acc-material i:nth-child(3){left:4px;width:5px;height:18px;top:calc(50% - 9px);background:#738f99;box-shadow:inset 1px 0 #d4dfe0}
+.sop-accordion.sop-recess-stack-accordion.sop-recess-stack-accordion .sop-acc-material i:nth-child(4){right:3px;width:2px;top:22px;bottom:24px;background:#e0e8e5}
+.sop-accordion.sop-recess-stack-accordion.sop-recess-stack-accordion .sop-acc-material i:nth-child(5){bottom:3px;height:1px;left:18px;right:25px;background:#6d858c}
 
 @media(prefers-reduced-motion:reduce){.sop-accordion.sop-recess-stack-accordion.sop-recess-stack-accordion,.sop-accordion.sop-recess-stack-accordion.sop-recess-stack-accordion *,.sop-accordion.sop-recess-stack-accordion.sop-recess-stack-accordion *::before,.sop-accordion.sop-recess-stack-accordion.sop-recess-stack-accordion *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media(forced-colors:active){.sop-accordion.sop-recess-stack-accordion.sop-recess-stack-accordion{--acc-ink:CanvasText;--acc-muted:CanvasText;--acc-accent:Highlight;--acc-line:ButtonText;color:CanvasText}

@@ -1,5 +1,6 @@
 import {currentParts,galleryCount} from './gallery-counts.ts';
 import {selectSetting} from './detail-settings.ts';
+import {galleryReady} from './gallery-ready.ts';
 /** Real browser regression for transient tab scrollbars and exported source parity. */
 import assert from 'node:assert/strict';
 import {chromium} from 'playwright';
@@ -41,6 +42,34 @@ console.log(`PASS ${checked} source packages and both prompt modes use updated t
 const server=await createGalleryTestServer('tab-strip');await server.listen();
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
 try {
+  // A selected tab must remain visible when the host shrinks without a new click.
+  const resized=await browser.newPage({viewport:{width:1500,height:960}});
+  await resized.goto(server.resolvedUrls!.local[0]+'?category=tabs');
+  await resized.waitForFunction(()=>document.documentElement.classList.contains('site-ready'));
+  await galleryReady(resized);
+  let resizedCount=0;
+  for(const part of parts){
+    const root=resized.locator(`[data-part="${part.id}"] .sop-tabs`);
+    if(await root.getAttribute('data-orientation')==='vertical')continue;
+    for(const direction of ['ltr','rtl']){
+      await resized.setViewportSize({width:1500,height:960});
+      await root.evaluate((e,dir)=>e.setAttribute('dir',dir),direction);
+      await root.locator(':scope > .sop-choice-list > .sop-choice-item').last().click();
+      await resized.setViewportSize({width:320,height:960});
+      await root.scrollIntoViewIfNeeded();
+      await resized.waitForFunction(id=>{
+        const root=document.querySelector(`[data-part="${id}"] .sop-tabs`)!;
+        const list=root.querySelector(':scope > .sop-choice-list')!;
+        const selected=list.querySelector(':scope > [data-selected="true"]')!;
+        const a=list.getBoundingClientRect(),b=selected.getBoundingClientRect();
+        return b.width>0&&b.left>=a.left-1&&b.right<=a.right+1;
+      },part.id);
+      assert.equal(await root.locator('.sop-choice-panel:visible').count(),1,part.id+' resize does not alter selection');
+    }
+    resizedCount++;
+  }
+  await resized.close();
+  console.log(`PASS ${resizedCount} horizontal tab strips keep the last selection visible after 1500→320 resize in LTR and RTL`);
   for(const width of [1440,390]){
     const page=await browser.newPage({viewport:{width,height:960}});
     const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));

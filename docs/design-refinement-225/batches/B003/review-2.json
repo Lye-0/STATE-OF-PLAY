@@ -1,0 +1,230 @@
+{
+  "batch": "B003",
+  "round": 2,
+  "overall": "changes_required",
+  "parts": [
+    {
+      "id": "loom-border-accordion",
+      "number": 96,
+      "verdict": "pass",
+      "note": "上下の軽い木桟と経糸、杼が明快。本文面を広く保ち、hoverで文字移動なし。長い見出し、320px、End/Enter開閉が成立。",
+      "findings": [],
+      "evidence": [
+        "measurements-2.json",
+        "evidence-2/portable-1-sheet.jpg",
+        "evidence-2/gallery-1-sheet.jpg"
+      ]
+    },
+    {
+      "id": "recess-stack-accordion",
+      "number": 104,
+      "verdict": "pass",
+      "note": "淡い磁器の縁と読む面、切断端が整理され、旧来の多重ベベル感が解消。長文・狭幅・キーボード開閉でも崩れない。",
+      "findings": [],
+      "evidence": [
+        "measurements-2.json",
+        "evidence-2/portable-1-sheet.jpg",
+        "evidence-2/gallery-1-sheet.jpg"
+      ]
+    },
+    {
+      "id": "enamel-trough-field",
+      "number": 112,
+      "verdict": "changes_required",
+      "note": "青灰の外周と凹んだ明るい溝が区別でき、文字と操作は固定。ただしエラー説明の可読性が不足。",
+      "findings": [
+        {
+          "kind": "reproduced_contrast_defect",
+          "description": "実galleryの既存「エラー例」操作で11pxの説明が#b83c34、実背景#17181c上3.154:1。凍結portableの暗背景#181d23上も3.014:1で、通常文字の4.5:1に満たず読みにくい。",
+          "cause": "部品の--field-error:#b83c34を外側の.sop-field-validationにも共用。枠が接する明るい入力面と、説明が接するホスト面を区別していない。",
+          "recommendation": "入力面の枠色と外側の説明色を分離し、暗い/明るいホスト双方で説明のコントラストを確保する。白背景上の配布まで同じ低コントラストと断定しない。",
+          "evidence": [
+            "error-contrast-2.json",
+            "evidence-2/error-sheet.jpg"
+          ]
+        }
+      ],
+      "evidence": [
+        "measurements-2.json",
+        "evidence-2/portable-1-sheet.jpg",
+        "evidence-2/gallery-1-sheet.jpg",
+        "fields-measurements-2.json",
+        "error-contrast-2.json",
+        "evidence-2/error-sheet.jpg",
+        "evidence-2/enamel-trough-field-gallery-actual-error.png"
+      ]
+    },
+    {
+      "id": "writing-saddle",
+      "number": 114,
+      "verdict": "changes_required",
+      "note": "折り上げた両端で書く面を支える造形が独自で明快。狭幅のpasswordと長いtextareaも操作と装飾が重ならない。ただしエラー説明が暗い。",
+      "findings": [
+        {
+          "kind": "reproduced_contrast_defect",
+          "description": "実galleryの既存「エラー例」操作で11pxの説明が#b83c34、実背景#17181c上3.154:1。凍結portableの暗背景#181d23上も3.014:1で、通常文字の4.5:1に満たず読みにくい。",
+          "cause": "部品の--field-error:#b83c34を外側の.sop-field-validationにも共用。枠が接する明るい入力面と、説明が接するホスト面を区別していない。",
+          "recommendation": "入力面の枠色と外側の説明色を分離し、暗い/明るいホスト双方で説明のコントラストを確保する。白背景上の配布まで同じ低コントラストと断定しない。",
+          "evidence": [
+            "error-contrast-2.json",
+            "evidence-2/error-sheet.jpg"
+          ]
+        }
+      ],
+      "evidence": [
+        "measurements-2.json",
+        "evidence-2/portable-1-sheet.jpg",
+        "evidence-2/gallery-1-sheet.jpg",
+        "fields-measurements-2.json",
+        "error-contrast-2.json",
+        "evidence-2/error-sheet.jpg",
+        "evidence-2/writing-saddle-gallery-actual-error.png"
+      ]
+    },
+    {
+      "id": "corner-scribe-field",
+      "number": 119,
+      "verdict": "changes_required",
+      "note": "L字定規と切欠き紙面に再構成され、用途と独創性が両立。長いtextareaでも尺度が連続する。ただしエラー説明の可読性が不足。",
+      "findings": [
+        {
+          "kind": "reproduced_contrast_defect",
+          "description": "実galleryの既存「エラー例」操作で11pxの説明が#b83c34、実背景#17181c上3.154:1。凍結portableの暗背景#181d23上も3.014:1で、通常文字の4.5:1に満たず読みにくい。",
+          "cause": "部品の--field-error:#b83c34を外側の.sop-field-validationにも共用。枠が接する明るい入力面と、説明が接するホスト面を区別していない。",
+          "recommendation": "入力面の枠色と外側の説明色を分離し、暗い/明るいホスト双方で説明のコントラストを確保する。白背景上の配布まで同じ低コントラストと断定しない。",
+          "evidence": [
+            "error-contrast-2.json",
+            "evidence-2/error-sheet.jpg"
+          ]
+        }
+      ],
+      "evidence": [
+        "measurements-2.json",
+        "evidence-2/portable-1-sheet.jpg",
+        "evidence-2/gallery-1-sheet.jpg",
+        "fields-measurements-2.json",
+        "error-contrast-2.json",
+        "evidence-2/error-sheet.jpg",
+        "evidence-2/corner-scribe-field-gallery-actual-error.png"
+      ]
+    },
+    {
+      "id": "wax-tablet-input",
+      "number": 121,
+      "verdict": "changes_required",
+      "note": "薄い木端と赤褐色の蝋面、小さな下端の丸みが一体として読める。白い入力文字は明快。ただし面の外のエラー説明が暗い。",
+      "findings": [
+        {
+          "kind": "reproduced_contrast_defect",
+          "description": "実galleryの既存「エラー例」操作で11pxの説明が#b83c34、実背景#17181c上3.154:1。凍結portableの暗背景#181d23上も3.014:1で、通常文字の4.5:1に満たず読みにくい。",
+          "cause": "部品の--field-error:#b83c34を外側の.sop-field-validationにも共用。枠が接する明るい入力面と、説明が接するホスト面を区別していない。",
+          "recommendation": "入力面の枠色と外側の説明色を分離し、暗い/明るいホスト双方で説明のコントラストを確保する。白背景上の配布まで同じ低コントラストと断定しない。",
+          "evidence": [
+            "error-contrast-2.json",
+            "evidence-2/error-sheet.jpg"
+          ]
+        }
+      ],
+      "evidence": [
+        "measurements-2.json",
+        "evidence-2/portable-2-sheet.jpg",
+        "evidence-2/gallery-2-sheet.jpg",
+        "fields-measurements-2.json",
+        "error-contrast-2.json",
+        "evidence-2/error-sheet.jpg",
+        "evidence-2/wax-tablet-input-gallery-actual-error.png"
+      ]
+    },
+    {
+      "id": "drafting-tray-field",
+      "number": 124,
+      "verdict": "changes_required",
+      "note": "傾斜トレー・紙面・下押さえ板の役割が明瞭。入力とclear/reveal位置を保ち、textareaでも板が文字を覆わない。ただしエラー説明が暗い。",
+      "findings": [
+        {
+          "kind": "reproduced_contrast_defect",
+          "description": "実galleryの既存「エラー例」操作で11pxの説明が#b83c34、実背景#17181c上3.154:1。凍結portableの暗背景#181d23上も3.014:1で、通常文字の4.5:1に満たず読みにくい。",
+          "cause": "部品の--field-error:#b83c34を外側の.sop-field-validationにも共用。枠が接する明るい入力面と、説明が接するホスト面を区別していない。",
+          "recommendation": "入力面の枠色と外側の説明色を分離し、暗い/明るいホスト双方で説明のコントラストを確保する。白背景上の配布まで同じ低コントラストと断定しない。",
+          "evidence": [
+            "error-contrast-2.json",
+            "evidence-2/error-sheet.jpg"
+          ]
+        }
+      ],
+      "evidence": [
+        "measurements-2.json",
+        "evidence-2/portable-2-sheet.jpg",
+        "evidence-2/gallery-2-sheet.jpg",
+        "fields-measurements-2.json",
+        "error-contrast-2.json",
+        "evidence-2/error-sheet.jpg",
+        "evidence-2/drafting-tray-field-gallery-actual-error.png"
+      ]
+    },
+    {
+      "id": "porcelain-lip-input",
+      "number": 125,
+      "verdict": "changes_required",
+      "note": "右端だけを巻く磁器板と広い平面がR112の溝とは異なる構造として成立。狭幅でも巻き縁が操作を覆わない。ただしエラー説明が暗い。",
+      "findings": [
+        {
+          "kind": "reproduced_contrast_defect",
+          "description": "実galleryの既存「エラー例」操作で11pxの説明が#b83c34、実背景#17181c上3.154:1。凍結portableの暗背景#181d23上も3.014:1で、通常文字の4.5:1に満たず読みにくい。",
+          "cause": "部品の--field-error:#b83c34を外側の.sop-field-validationにも共用。枠が接する明るい入力面と、説明が接するホスト面を区別していない。",
+          "recommendation": "入力面の枠色と外側の説明色を分離し、暗い/明るいホスト双方で説明のコントラストを確保する。白背景上の配布まで同じ低コントラストと断定しない。",
+          "evidence": [
+            "error-contrast-2.json",
+            "evidence-2/error-sheet.jpg"
+          ]
+        }
+      ],
+      "evidence": [
+        "measurements-2.json",
+        "evidence-2/portable-2-sheet.jpg",
+        "evidence-2/gallery-2-sheet.jpg",
+        "fields-measurements-2.json",
+        "error-contrast-2.json",
+        "evidence-2/error-sheet.jpg",
+        "evidence-2/porcelain-lip-input-gallery-actual-error.png"
+      ]
+    },
+    {
+      "id": "index-spine-link",
+      "number": 138,
+      "verdict": "pass",
+      "note": "青灰の丸背・薄いバンド・紙断面が接続した構造。hover往復では紙層だけが動き、文字・矢印は静止。長い文言も読める。",
+      "findings": [],
+      "evidence": [
+        "measurements-2.json",
+        "evidence-2/portable-2-sheet.jpg",
+        "evidence-2/gallery-2-sheet.jpg"
+      ]
+    },
+    {
+      "id": "binder-wing-tabs",
+      "number": 151,
+      "verdict": "pass",
+      "note": "1500→320pxで末尾タブの左右切れ0pxをportable/gallery・LTR/RTLで確認。manualは選択値/本文を保ちフォーカスタブ優先。Enterで確定可能。造形への悪影響なし。",
+      "findings": [],
+      "evidence": [
+        "measurements-2.json",
+        "evidence-2/portable-2-sheet.jpg",
+        "evidence-2/gallery-2-sheet.jpg",
+        "tabs-measurements-2.json",
+        "evidence-2/tabs-sheet.jpg"
+      ]
+    }
+  ],
+  "coverage": {
+    "base": "全10件×portable/actual galleryの20経路。通常、hover入口40ms/定常/退出60ms/再進入60ms/復帰、320px、長いラベル、reduced motion、forced colorsを撮影・実測。全件本文のhover位置差0px。アコーディオンEnd/Enter開閉。",
+    "fields": "6件×両CSS環境。password/textareaは凍結initを使いcloneしたDOMへ対応ネイティブmarkupを挿入する独立ハーネス。表示後selection2..7保持、Enter clear、readonlyで両ボタンdisabled、textarea112→280→112px、invalid、forced、fx pointer-events:none。controlとclearは6px、clearとrevealは2px離れ重なりなし。Reactラッパー自身は未実行。",
+    "error": "通常markupの凍結portableは公開API setError。actual galleryは既存の可視設定「エラー例」を選択。各6件の実背景・文字色・画像で確定。",
+    "tabs": "portable/actual gallery×LTR/RTL×automatic/manualの8経路。manual検査では凍結initで同じDOMをmanual設定に再初期化。1500→320→1500px、縮小750ms後測定、manual Enter確定。",
+    "visual": "通常4枚、fields4枚、tabs1枚、error1枚のcontact sheetをすべて視認。特定ブラウザ・指定状態の検査であり無欠陥保証ではない。",
+    "integrity": "検査開始時/終了時ともmanifest作者ハッシュ一致、shared selection-indicatorを含む。作者ファイル変更なし。"
+  },
+  "evidence": [
+    "integrity-2.json"
+  ]
+}

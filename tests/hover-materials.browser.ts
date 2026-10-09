@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {chromium, type Locator} from 'playwright';
 import {createGalleryTestServer} from './gallery-server.ts';
 import {galleryReady} from './gallery-ready.ts';
+import {selectSetting} from './detail-settings.ts';
 import {paintedTextContrast} from './painted-text-contrast.ts';
 const server=await createGalleryTestServer('hover-materials');await server.listen();
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
@@ -14,6 +15,15 @@ try{
  await category('segments');const segments=page.locator('[data-part="ivory-notch-segments"]');const item=segments.locator('.sop-choice-item').first();await item.hover();await contrast(item.locator('.sop-choice-label'));await item.click();await contrast(item.locator('.sop-choice-label'));await page.setViewportSize({width:320,height:900});await segments.scrollIntoViewIfNeeded();const widths=await segments.locator('.sop-choice-item').evaluateAll(es=>es.map(e=>e.getBoundingClientRect().width));assert.equal(widths.length,3);assert.ok(Math.max(...widths)-Math.min(...widths)<1,'Three equally weighted narrow choices');console.log('PASS notch segments retain readable states and equal narrow option widths');
  await page.setViewportSize({width:1000,height:900});await category('breadcrumbs');const crumbs=page.locator('[data-part="station-label-trail"]');await crumbs.locator('.ff-crumb-more').click();const link=crumbs.locator('.ff-crumb-menu a').last();await link.hover();await contrast(link);console.log('PASS opened breadcrumb hover remains readable');
  await category('blocks');const vellum=page.locator('.sop-vellum-accordion-case').first();await vellum.hover();assert.equal(await vellum.evaluate(e=>getComputedStyle(e,'::after').transform),'none','Paper borders remain aligned');const diecut=page.locator('.sop-offset-diecut').first();await diecut.hover();assert.equal(await diecut.evaluate(e=>getComputedStyle(e).boxShadow),'none','No rectangular shadow behind a cut silhouette');console.log('PASS paper materials preserve their authored contours on hover');
+ await category('textboxes');
+ for(const id of ['enamel-trough-field','writing-saddle','corner-scribe-field','wax-tablet-input','drafting-tray-field','porcelain-lip-input']){
+  await page.locator(`[data-open="${id}"]`).click();await galleryReady(page,true);await selectSetting(page.locator('[data-field-status]'),'error');
+  const root=page.locator(`#part-details .preview-stage .sop-${id}`),message=root.locator('.sop-field-validation');assert.ok(await message.isVisible(),id+' error is exposed');
+  for(const color of ['#181d23','#ffffff']){await root.evaluate((e,bg)=>(e.parentElement!.style.background=bg),color);await contrast(message)}
+  await selectSetting(page.locator('[data-field-status]'),'default');assert.equal(await message.isVisible(),false,id+' resolved error is hidden');
+  await page.locator('#part-details .close-detail').click();
+ }
+ console.log('PASS six field validation messages remain readable on light and dark hosts and clear normally');
  await category('links');await page.emulateMedia({reducedMotion:'no-preference'});
  for(const id of ['editorial-inline-link','quiet-resource-link','clear-destination-link','compact-route-link','reading-next-link']){
   const root=page.locator('.sop-'+id).first(),icon=root.locator('.sop-link-icon');await root.scrollIntoViewIfNeeded();await page.mouse.move(0,0);const before=await root.boundingBox();await root.hover();const style=await icon.evaluate(e=>{const s=getComputedStyle(e);return{properties:s.transitionProperty.split(',').map(x=>x.trim()),duration:s.transitionDuration}});assert.ok(style.properties.includes('translate')||style.properties.includes('all'),id+' interpolates its actual movement property');assert.notEqual(style.duration,'0s');await page.mouse.move(0,0);await root.hover();const after=await root.boundingBox();assert.ok(before&&after);assert.ok(Math.abs(before.width-after.width)<.5&&Math.abs(before.height-after.height)<.5,id+' stable interactive bounds');

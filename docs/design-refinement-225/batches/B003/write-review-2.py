@@ -1,0 +1,16 @@
+import json
+from pathlib import Path
+p=Path('docs/design-refinement-225/batches/B003');parts=[x for x in json.load(open('docs/design-refinement-225/targets.json'))if x['batch']=='B003']
+notes={96:'上下の軽い木桟と経糸、杼が明快。本文面を広く保ち、hoverで文字移動なし。長い見出し、320px、End/Enter開閉が成立。',104:'淡い磁器の縁と読む面、切断端が整理され、旧来の多重ベベル感が解消。長文・狭幅・キーボード開閉でも崩れない。',112:'青灰の外周と凹んだ明るい溝が区別でき、文字と操作は固定。ただしエラー説明の可読性が不足。',114:'折り上げた両端で書く面を支える造形が独自で明快。狭幅のpasswordと長いtextareaも操作と装飾が重ならない。ただしエラー説明が暗い。',119:'L字定規と切欠き紙面に再構成され、用途と独創性が両立。長いtextareaでも尺度が連続する。ただしエラー説明の可読性が不足。',121:'薄い木端と赤褐色の蝋面、小さな下端の丸みが一体として読める。白い入力文字は明快。ただし面の外のエラー説明が暗い。',124:'傾斜トレー・紙面・下押さえ板の役割が明瞭。入力とclear/reveal位置を保ち、textareaでも板が文字を覆わない。ただしエラー説明が暗い。',125:'右端だけを巻く磁器板と広い平面がR112の溝とは異なる構造として成立。狭幅でも巻き縁が操作を覆わない。ただしエラー説明が暗い。',138:'青灰の丸背・薄いバンド・紙断面が接続した構造。hover往復では紙層だけが動き、文字・矢印は静止。長い文言も読める。',151:'1500→320pxで末尾タブの左右切れ0pxをportable/gallery・LTR/RTLで確認。manualは選択値/本文を保ちフォーカスタブ優先。Enterで確定可能。造形への悪影響なし。'}
+out=[]
+for x in parts:
+ n=x['number'];fail=x['category']=='textboxes';ev=['measurements-2.json','evidence-2/'+('portable-1-sheet.jpg'if n<=119 else'portable-2-sheet.jpg'),'evidence-2/'+('gallery-1-sheet.jpg'if n<=119 else'gallery-2-sheet.jpg')]
+ findings=[]
+ if fail:
+  ev+=['fields-measurements-2.json','error-contrast-2.json','evidence-2/error-sheet.jpg',f"evidence-2/{x['id']}-gallery-actual-error.png"]
+  findings=[{'kind':'reproduced_contrast_defect','description':'実galleryの既存「エラー例」操作で11pxの説明が#b83c34、実背景#17181c上3.154:1。凍結portableの暗背景#181d23上も3.014:1で、通常文字の4.5:1に満たず読みにくい。','cause':'部品の--field-error:#b83c34を外側の.sop-field-validationにも共用。枠が接する明るい入力面と、説明が接するホスト面を区別していない。','recommendation':'入力面の枠色と外側の説明色を分離し、暗い/明るいホスト双方で説明のコントラストを確保する。白背景上の配布まで同じ低コントラストと断定しない。','evidence':['error-contrast-2.json','evidence-2/error-sheet.jpg']}]
+ if n==151:ev+=['tabs-measurements-2.json','evidence-2/tabs-sheet.jpg']
+ out.append({'id':x['id'],'number':n,'verdict':'changes_required'if fail else'pass','note':notes[n],'findings':findings,'evidence':ev})
+r={'batch':'B003','round':2,'overall':'changes_required','parts':out,'coverage':{'base':'全10件×portable/actual galleryの20経路。通常、hover入口40ms/定常/退出60ms/再進入60ms/復帰、320px、長いラベル、reduced motion、forced colorsを撮影・実測。全件本文のhover位置差0px。アコーディオンEnd/Enter開閉。','fields':'6件×両CSS環境。password/textareaは凍結initを使いcloneしたDOMへ対応ネイティブmarkupを挿入する独立ハーネス。表示後selection2..7保持、Enter clear、readonlyで両ボタンdisabled、textarea112→280→112px、invalid、forced、fx pointer-events:none。controlとclearは6px、clearとrevealは2px離れ重なりなし。Reactラッパー自身は未実行。','error':'通常markupの凍結portableは公開API setError。actual galleryは既存の可視設定「エラー例」を選択。各6件の実背景・文字色・画像で確定。','tabs':'portable/actual gallery×LTR/RTL×automatic/manualの8経路。manual検査では凍結initで同じDOMをmanual設定に再初期化。1500→320→1500px、縮小750ms後測定、manual Enter確定。','visual':'通常4枚、fields4枚、tabs1枚、error1枚のcontact sheetをすべて視認。特定ブラウザ・指定状態の検査であり無欠陥保証ではない。','integrity':'検査開始時/終了時ともmanifest作者ハッシュ一致、shared selection-indicatorを含む。作者ファイル変更なし。'},'evidence':['integrity-2.json']}
+(p/'review-2.json').write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n')
+(p/'review-2.md').write_text('# B003 round 2 独立検査\n\n4件 pass、入力6件 changes_required。\n\nR112/114/119/121/124/125 のエラー説明が実 gallery で3.154:1、凍結 portable の暗背景で3.014:1。11pxの説明としてコントラストが不足する。枠色と説明文字色を分け、ホスト面に合う表示が必要。白背景の配布まで同じ不具合と断定しない。\n\n'+ '\n'.join(f"- R{x['number']:03d} {x['verdict']}: {x['note']}"for x in out)+'\n\n'+ '\n\n'.join(r['coverage'].values())+'\n')

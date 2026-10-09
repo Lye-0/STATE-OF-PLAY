@@ -1,5 +1,5 @@
 @import "../../../shared/text-field-base.css";
-/* 非対称に丸めた琺瑯の書き込み溝。上端の浅い内影と一つの外周で材質を示し、下端の二重線を省く。入力中は同じ輪郭の外に一本のフォーカスだけを置き、文字の位置を保つ。 */
+/* 青灰の琺瑯の外周と凹んだ明るい書き込み溝。上縁の光と下縁の断面を分け、文字は静かな中央の面へ固定する。 */
 
 .sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field{--field-bg:#f5efdf;--field-ink:#443b30;--field-muted:#6c6253;--field-accent:#97633e;--field-edge:#b9a888;--field-radius:0;--field-error:#b83c34;max-width:380px;width:100%;padding:0 9px;color:inherit;background:transparent;color-scheme:light}
 .sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-label,.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-meta,.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-caption{color:inherit}
@@ -24,10 +24,22 @@
 .sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field[data-readonly=true] .sop-field-shell{border-style:dashed}
 @media(prefers-reduced-motion:reduce){.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field,.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field *,.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field *::before,.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media(forced-colors:active){.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field{color:CanvasText;--field-accent:Highlight;--field-bg:Canvas;--field-ink:CanvasText;--field-edge:ButtonText}.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-shell::before,.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-shell::after{display:none}.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-shell:focus-within{outline-color:Highlight}.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-control{outline:none!important}}
+/* Individually authored material; input, caret and clear target remain fixed. */
+.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-fx{overflow:visible;border-radius:0}
+.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-fx i{display:block;position:absolute;inset:auto;width:auto;height:auto;border:0;border-radius:0;background:none;box-shadow:none;clip-path:none;transform:none;z-index:0}
+.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-fx::before,.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-fx::after{display:none}
+.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-shell{border:1px solid transparent;background:transparent;border-radius:0;box-shadow:none;margin:10px 0;min-height:82px;padding:16px 50px 19px 24px}
+.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-shell:focus-within{border-color:transparent;box-shadow:none;outline-offset:4px}
+.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-control{background:transparent}
+.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field{--field-bg:#eef3ed;--field-ink:#304950;--field-muted:#50666c;--field-accent:#497a8b;--field-edge:#91abb3}
+.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-fx i:first-child{inset:0;background:#94adb7;border-radius:32px 6px 32px 6px;box-shadow:inset 0 1px #d7e2e2}
+.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-fx i:nth-child(2){inset:8px 7px 11px 9px;background:#eef3ed;border-radius:24px 3px 23px 3px;box-shadow:inset 0 2px 3px #52758533}
+.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-fx i:nth-child(3){left:24px;right:26px;bottom:6px;height:3px;border-radius:0 0 60% 40%;background:#597e8d}
+.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-fx i:nth-child(4){left:29px;right:19px;top:3px;height:2px;border-radius:50%;background:#e4efea;transform-origin:left}
+.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-shell:focus-within .sop-field-fx i:nth-child(4){transform:scaleX(.72)}
+.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field[data-invalid=true] .sop-field-shell{border:1px dashed var(--field-error);outline-color:var(--field-error)}
+@media(forced-colors:active){.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field{--field-bg:Canvas;--field-ink:CanvasText;--field-muted:CanvasText;--field-accent:Highlight;--field-edge:ButtonText}.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-fx{display:none!important}.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-shell{background:Canvas;border:1px solid ButtonText;box-shadow:none}.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-control{color:CanvasText}}
 
-.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field{--field-bg:#ecf2ef;--field-ink:#304b51;--field-muted:#546e75;--field-accent:#366f85;--field-edge:#7ba0ad}
-.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-shell{border-radius:24px 4px 24px 4px;border:1px solid #7ba0ad;box-shadow:inset 0 2px #d1dfdc;min-height:68px;padding-left:22px}
-.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-shell:focus-within{border-color:#7ba0ad;box-shadow:inset 0 2px #d1dfdc;outline-offset:3px}
-.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-fx{overflow:hidden;border-radius:inherit}
-.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-fx i{display:none}
-.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field .sop-field-shell .sop-field-control{background:transparent}
+/* Validation owns its reading surface; the shell's error border remains independent. */
+.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field>.sop-field-validation{color:#852e28;background:#fff1ea;border-inline-start:3px solid #b83c34;padding:7px 10px;margin-top:10px;border-radius:1px;font-size:12px;line-height:1.7}
+@media(forced-colors:active){.sop-textfield.sop-enamel-trough-field.sop-enamel-trough-field>.sop-field-validation{color:CanvasText!important;background:Canvas!important;border-color:LinkText!important}}

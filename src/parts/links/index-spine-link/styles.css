@@ -1,5 +1,5 @@
 @import "../../../shared/navigation-link-base.css";
-/* 横へ寝かせた丸背の索引。上下の長辺へつながる凸の革面、左右の楕円の断面、二本の隆起バンドと、その下へ覗く紙の切断面を接続する。文字は丸背の正面へ固定し、操作中は下の紙の薄い断面だけが開く。 */
+/* 落ち着いた青灰の布張りの丸背に、薄い縫いバンドと紙の切断面を接続する。文字を固定し、下の紙の層だけが静かに開く。 */
 
 .sop-link.sop-index-spine-link.sop-index-spine-link{--sop-link-ink:#344753;--sop-link-accent:#4a778d;position:relative;isolation:isolate;display:inline-grid;grid-template-columns:minmax(0,1fr) 32px;align-items:center;gap:18px;width:min(100%,320px);min-width:0;min-height:86px;padding:23px 25px;background:transparent;border:0;box-shadow:none;color:var(--sop-link-ink);font:500 15px/1.5 Arial,"Yu Gothic",sans-serif;text-decoration:none;transform:none}
 .sop-link.sop-index-spine-link.sop-index-spine-link:hover,.sop-link.sop-index-spine-link.sop-index-spine-link:active{color:var(--sop-link-ink);opacity:1;transform:none}
@@ -23,3 +23,12 @@
 .sop-link.sop-index-spine-link.sop-index-spine-link .sop-link-art i:nth-child(3),.sop-link.sop-index-spine-link.sop-index-spine-link .sop-link-art i:nth-child(4){top:0;bottom:11px;width:7px;background:linear-gradient(0deg,#916146,#c59568 24%,#e3b786 48%,#c18e61 80%,#89583d);border-inline:1px solid #ae7a54;border-radius:3px;z-index:2}
 .sop-link.sop-index-spine-link.sop-index-spine-link .sop-link-art i:nth-child(3){left:22px}.sop-link.sop-index-spine-link.sop-index-spine-link .sop-link-art i:nth-child(4){right:22px}
 .sop-link.sop-index-spine-link.sop-index-spine-link:is(:hover,:focus-visible) .sop-link-art i:first-child{transform:scaleY(1)}
+
+/* Matte bookcloth and a single light edge replace the heavy gold bevels. */
+.sop-link.sop-index-spine-link.sop-index-spine-link{--sop-link-ink:#f3eee3;--sop-link-accent:#9fbdce;min-height:91px;padding:23px 29px 30px}
+.sop-link.sop-index-spine-link.sop-index-spine-link .sop-link-art i:nth-child(2){background:linear-gradient(0deg,#394f5d,#516b79 58%,#597381);border-radius:17px;border-block:1px solid #6d8793;box-shadow:inset 0 1px #a3b7bd55}
+.sop-link.sop-index-spine-link.sop-index-spine-link .sop-link-art i:nth-child(2)::before,.sop-link.sop-index-spine-link.sop-index-spine-link .sop-link-art i:nth-child(2)::after{width:8px;background:#334b5a;border:1px solid #718b96;box-shadow:none}
+.sop-link.sop-index-spine-link.sop-index-spine-link .sop-link-art i:nth-child(3),.sop-link.sop-index-spine-link.sop-index-spine-link .sop-link-art i:nth-child(4){width:4px;background:#354e5e;border:0;border-left:1px solid #91a8b1;border-radius:1px}
+.sop-link.sop-index-spine-link.sop-index-spine-link .sop-link-art i:nth-child(3){left:17px}.sop-link.sop-index-spine-link.sop-index-spine-link .sop-link-art i:nth-child(4){right:17px}
+.sop-link.sop-index-spine-link.sop-index-spine-link .sop-link-art i:first-child{left:17px;right:17px;height:13px;border-bottom:2px solid #314858}
+

@@ -1,5 +1,5 @@
 @import "../../../shared/text-field-base.css";
-/* 四片を留め継ぎした木の掘込みへ、蝋を一枚として流し込む。右下だけの丸い注ぎ溜まりを同じ掘込みへ接続し、蝋の端と木の切断面を輪郭で分ける。左の筒を省き、入力時は上の掘り口の陰だけを深める。 */
+/* 薄い木の縁へ落ち着いた赤褐色の蝋を収めた書字板。下端の小さな蝋の丸みと一方向の光で柔らかさを示す。 */
 
 .sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input{--field-bg:#f5efdf;--field-ink:#443b30;--field-muted:#6c6253;--field-accent:#97633e;--field-edge:#b9a888;--field-radius:0;--field-error:#b83c34;max-width:380px;width:100%;padding:0 9px;color:inherit;background:transparent;color-scheme:light}
 .sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-label,.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-meta,.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-caption{color:inherit}
@@ -24,17 +24,23 @@
 .sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input[data-readonly=true] .sop-field-shell{border-style:dashed}
 @media(prefers-reduced-motion:reduce){.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input,.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input *,.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input *::before,.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media(forced-colors:active){.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input{color:CanvasText;--field-accent:Highlight;--field-bg:Canvas;--field-ink:CanvasText;--field-edge:ButtonText}.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-shell::before,.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-shell::after{display:none}.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-shell:focus-within{outline-color:Highlight}.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-control{outline:none!important}}
+/* Individually authored material; input, caret and clear target remain fixed. */
+.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-fx{overflow:visible;border-radius:0}
+.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-fx i{display:block;position:absolute;inset:auto;width:auto;height:auto;border:0;border-radius:0;background:none;box-shadow:none;clip-path:none;transform:none;z-index:0}
+.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-fx::before,.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-fx::after{display:none}
+.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-shell{border:1px solid transparent;background:transparent;border-radius:0;box-shadow:none;margin:10px 0;min-height:82px;padding:16px 50px 19px 24px}
+.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-shell:focus-within{border-color:transparent;box-shadow:none;outline-offset:4px}
+.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-control{background:transparent}
+.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input{--field-bg:#68483f;--field-ink:#faf0df;--field-muted:#e1c8b7;--field-accent:#d6af87;--field-edge:#b99b7a;padding-inline:12px}
+.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-shell{min-height:84px;padding-left:25px;margin-block:12px}
+.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-fx i:first-child{inset:0;background:#b89b79;border-radius:3px 5px 10px 4px;border-bottom:3px solid #806954}
+.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-fx i:nth-child(2){inset:6px 6px 8px;background:#68483f;border-radius:3px 9px 17px 5px;box-shadow:inset 0 2px 3px #30272244}
+.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-fx i:nth-child(3){left:13px;right:28px;top:7px;height:2px;background:#a97960;border-radius:50%;opacity:.7}
+.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-fx i:nth-child(4){right:10px;bottom:7px;width:25px;height:9px;background:#8f6151;border-radius:60% 40% 60% 10%;box-shadow:inset 0 1px #b4886b}
+.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-shell:focus-within .sop-field-fx i:nth-child(4){transform:scaleX(.86);transform-origin:right}
+.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input[data-invalid=true] .sop-field-shell{border:1px dashed var(--field-error);outline-color:var(--field-error)}
+@media(forced-colors:active){.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input{--field-bg:Canvas;--field-ink:CanvasText;--field-muted:CanvasText;--field-accent:Highlight;--field-edge:ButtonText}.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-fx{display:none!important}.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-shell{background:Canvas;border:1px solid ButtonText;box-shadow:none}.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-control{color:CanvasText}}
 
-.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input{--field-bg:#e8d09a;--field-ink:#52412c;--field-muted:#755e3b;--field-accent:#975d30;--field-edge:#b29a71;padding-left:22px;padding-right:30px}
-.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-shell{border:1px solid transparent;background:transparent;min-height:76px;padding-left:21px;margin-top:11px;margin-bottom:22px;border-radius:0}
-.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-shell:focus-within{border-color:transparent;outline-offset:12px}
-.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-meta{margin-top:29px}
-.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-fx::before{content:"";position:absolute;inset:0;background:#e8d09a;box-shadow:inset 0 2px #c9af79;pointer-events:none;z-index:1}
-.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-fx i:first-child{left:-10px;right:-10px;top:-10px;height:11px;background:#af8d59;border-top:1px solid #cfb37f;clip-path:polygon(0 0,100% 0,calc(100% - 11px) 100%,11px 100%);z-index:2}
-.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-fx i:nth-child(2){left:-10px;top:-10px;bottom:-10px;width:11px;background:#82673e;border-left:1px solid #ba9b67;clip-path:polygon(0 0,100% 11px,100% calc(100% - 11px),0 100%);z-index:2}
-.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-fx i:nth-child(3){right:-10px;top:-10px;bottom:16px;width:11px;background:#97794b;border-right:1px solid #c2a875;clip-path:polygon(0 11px,100% 0,100% 100%,0 calc(100% - 4px));z-index:2}
-.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-fx i:nth-child(4){left:-10px;right:23px;bottom:-10px;height:11px;background:#a68855;border-bottom:1px solid #7e653e;clip-path:polygon(0 100%,11px 0,100% 0,100% 100%);z-index:2}
-.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-fx::after{content:"";position:absolute;right:-20px;bottom:-16px;width:45px;height:40px;box-sizing:border-box;background:#e8d09a;border:8px solid #97794b;border-left-width:5px;border-top-width:5px;border-radius:7px 20px 19px 5px;pointer-events:none;z-index:0}
-.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-fx i:first-child::after{content:"";position:absolute;left:13px;right:13px;bottom:0;height:3px;background:#7e6238;opacity:.35;transition:opacity .3s;pointer-events:none}
-.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input .sop-field-shell:focus-within .sop-field-fx i:first-child::after{opacity:1}
-.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input[data-invalid=true] .sop-field-shell{border:1px solid transparent;outline:2px dashed var(--field-error);outline-offset:12px}
+/* Validation owns its reading surface; the shell's error border remains independent. */
+.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input>.sop-field-validation{color:#852e28;background:#fff1ea;border-inline-start:3px solid #b83c34;padding:7px 10px;margin-top:10px;border-radius:1px;font-size:12px;line-height:1.7}
+@media(forced-colors:active){.sop-textfield.sop-wax-tablet-input.sop-wax-tablet-input>.sop-field-validation{color:CanvasText!important;background:Canvas!important;border-color:LinkText!important}}

@@ -1,5 +1,5 @@
 @import "../../../shared/text-field-base.css";
-/* 非対称の磁器の口縁を、一つの輪郭と上の3pxの浅い返しで示す。下の細線を重ねず、釉薬の面を文字の下へ静かに保つ。入力時のフォーカスは同じ外周へ置き換え、文字とクリアの幅は変えない。 */
+/* 明るい磁器の板の右端を巻いて、釉薬の縁と断面を見せる入力欄。広い平面と一つの巻き縁で琺瑯の溝とは異なる構造を作る。 */
 
 .sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input{--field-bg:#f5efdf;--field-ink:#443b30;--field-muted:#6c6253;--field-accent:#97633e;--field-edge:#b9a888;--field-radius:0;--field-error:#b83c34;max-width:380px;width:100%;padding:0 9px;color:inherit;background:transparent;color-scheme:light}
 .sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-label,.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-meta,.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-caption{color:inherit}
@@ -24,10 +24,27 @@
 .sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input[data-readonly=true] .sop-field-shell{border-style:dashed}
 @media(prefers-reduced-motion:reduce){.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input,.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input *,.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input *::before,.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media(forced-colors:active){.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input{color:CanvasText;--field-accent:Highlight;--field-bg:Canvas;--field-ink:CanvasText;--field-edge:ButtonText}.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-shell::before,.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-shell::after{display:none}.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-shell:focus-within{outline-color:Highlight}.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-control{outline:none!important}}
+/* Individually authored material; input, caret and clear target remain fixed. */
+.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-fx{overflow:visible;border-radius:0}
+.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-fx i{display:block;position:absolute;inset:auto;width:auto;height:auto;border:0;border-radius:0;background:none;box-shadow:none;clip-path:none;transform:none;z-index:0}
+.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-fx::before,.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-fx::after{display:none}
+.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-shell{border:1px solid transparent;background:transparent;border-radius:0;box-shadow:none;margin:10px 0;min-height:82px;padding:16px 50px 19px 24px}
+.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-shell:focus-within{border-color:transparent;box-shadow:none;outline-offset:4px}
+.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-control{background:transparent}
+.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input{--field-bg:#f5f4ed;--field-ink:#384851;--field-muted:#526772;--field-accent:#6d94a7;--field-edge:#afc0c5}
+.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-shell{min-height:83px;padding-left:22px;padding-right:58px}
+.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-clear,.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-reveal{right:19px}
+.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-fx i:first-child{inset:0;background:#f5f4ed;border-radius:4px 28px 28px 4px;border-left:1px solid #bdced1;border-bottom:3px solid #c8d6d8}
+.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-fx i:nth-child(2){top:0;bottom:0;right:0;width:17px;border-radius:0 28px 28px 0;background:#b3c5cb;border-left:1px solid #91aab5;box-shadow:inset -3px 0 #e1e8e5}
+.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-fx i:nth-child(3){top:7px;bottom:10px;right:14px;width:3px;background:#e7eeeb;border-radius:50%;transform-origin:center}
+.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-fx i:nth-child(4){left:12px;right:27px;top:3px;height:1px;background:white}
+.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-shell:focus-within .sop-field-fx i:nth-child(3){transform:scaleY(.8)}
+.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input[data-invalid=true] .sop-field-shell{border:1px dashed var(--field-error);outline-color:var(--field-error)}
+@media(forced-colors:active){.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input{--field-bg:Canvas;--field-ink:CanvasText;--field-muted:CanvasText;--field-accent:Highlight;--field-edge:ButtonText}.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-fx{display:none!important}.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-shell{background:Canvas;border:1px solid ButtonText;box-shadow:none}.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-control{color:CanvasText}}
 
-.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input{--field-bg:#f3ecdc;--field-ink:#4c4236;--field-muted:#746652;--field-accent:#98633e;--field-edge:#bea884}
-.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-shell{border:1px solid #bea884;border-radius:4px 21px 4px 21px;min-height:68px;padding-left:21px;background:#f3ecdc}
-.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-shell:focus-within{border-color:transparent;outline-offset:-1px;outline-width:2px;box-shadow:none}
-.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-fx{overflow:hidden;border-radius:inherit}
-.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-fx i:first-child{left:9px;right:16px;top:0;height:3px;background:#d9c7a6;border-radius:0 0 2px 2px}
-.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-fx i:nth-child(2),.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-fx i:nth-child(3),.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-fx i:nth-child(4){display:none}
+.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-shell:has(.sop-field-reveal){padding-right:99px}
+.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input .sop-field-shell:has(.sop-field-reveal) .sop-field-clear{right:57px}
+
+/* Validation owns its reading surface; the shell's error border remains independent. */
+.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input>.sop-field-validation{color:#852e28;background:#fff1ea;border-inline-start:3px solid #b83c34;padding:7px 10px;margin-top:10px;border-radius:1px;font-size:12px;line-height:1.7}
+@media(forced-colors:active){.sop-textfield.sop-porcelain-lip-input.sop-porcelain-lip-input>.sop-field-validation{color:CanvasText!important;background:Canvas!important;border-color:LinkText!important}}

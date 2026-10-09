@@ -1,5 +1,5 @@
 @import "../../../shared/text-field-base.css";
-/* 四隅の短い罫書き端で編集範囲を示す。長い側面と上下の線を省き、入力時は隅の端だけが1px締まる。淡い一面へ読む文字を固定し、フォーカスを角の外へ一本だけ置く。 */
+/* L字の罫書き定規へ、切欠きのある筆記面を合わせる。縦横の目盛りを一つの角で接続し、実際の入力を明るい面へ固定する。 */
 
 .sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field{--field-bg:#f5efdf;--field-ink:#443b30;--field-muted:#6c6253;--field-accent:#97633e;--field-edge:#b9a888;--field-radius:0;--field-error:#b83c34;max-width:380px;width:100%;padding:0 9px;color:inherit;background:transparent;color-scheme:light}
 .sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-label,.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-meta,.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-caption{color:inherit}
@@ -24,15 +24,23 @@
 .sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field[data-readonly=true] .sop-field-shell{border-style:dashed}
 @media(prefers-reduced-motion:reduce){.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field,.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field *,.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field *::before,.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media(forced-colors:active){.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field{color:CanvasText;--field-accent:Highlight;--field-bg:Canvas;--field-ink:CanvasText;--field-edge:ButtonText}.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-shell::before,.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-shell::after{display:none}.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-shell:focus-within{outline-color:Highlight}.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-control{outline:none!important}}
+/* Individually authored material; input, caret and clear target remain fixed. */
+.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-fx{overflow:visible;border-radius:0}
+.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-fx i{display:block;position:absolute;inset:auto;width:auto;height:auto;border:0;border-radius:0;background:none;box-shadow:none;clip-path:none;transform:none;z-index:0}
+.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-fx::before,.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-fx::after{display:none}
+.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-shell{border:1px solid transparent;background:transparent;border-radius:0;box-shadow:none;margin:10px 0;min-height:82px;padding:16px 50px 19px 24px}
+.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-shell:focus-within{border-color:transparent;box-shadow:none;outline-offset:4px}
+.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-control{background:transparent}
+.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field{--field-bg:#f1f0e6;--field-ink:#30434c;--field-muted:#536a75;--field-accent:#6e9aaf;--field-edge:#93aab4;padding-inline:8px}
+.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-shell{min-height:96px;padding:19px 50px 26px 33px}
+.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-fx i:first-child{inset:0 0 0 0;background:#728b99;clip-path:polygon(0 0,19px 0,19px calc(100% - 16px),100% calc(100% - 16px),100% 100%,0 100%)}
+.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-fx i:nth-child(2){inset:5px 0 21px 25px;background:#f1f0e6;clip-path:polygon(0 0,calc(100% - 11px) 0,100% 11px,100% 100%,0 100%)}
+.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-fx i:nth-child(3){left:3px;top:7px;bottom:18px;width:11px;background:repeating-linear-gradient(0deg,#d9e5e8 0 1px,transparent 1px 8px)}
+.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-fx i:nth-child(4){left:25px;right:8px;bottom:4px;height:8px;background:repeating-linear-gradient(90deg,#d9e5e8 0 1px,transparent 1px 10px);border-bottom:1px solid #3c5664}
+.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-shell:focus-within .sop-field-fx i:first-child{background:#547a90}
+.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field[data-invalid=true] .sop-field-shell{border:1px dashed var(--field-error);outline-color:var(--field-error)}
+@media(forced-colors:active){.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field{--field-bg:Canvas;--field-ink:CanvasText;--field-muted:CanvasText;--field-accent:Highlight;--field-edge:ButtonText}.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-fx{display:none!important}.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-shell{background:Canvas;border:1px solid ButtonText;box-shadow:none}.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-control{color:CanvasText}}
 
-.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field{--field-bg:#f0f2e7;--field-ink:#3b4a43;--field-muted:#607064;--field-accent:#53766b;--field-edge:#a8b9ad;padding-inline:16px}
-.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-shell{background:#f0f2e7;border:0;padding-left:20px;margin-block:7px}
-.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-shell:focus-within{border:0;outline-offset:6px}
-.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-fx i{width:19px;height:15px;background:transparent;border-color:#53766b;border-style:solid;border-width:0;z-index:2}
-.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-fx i:first-child{left:-5px;top:-5px;border-left-width:2px;border-top-width:2px}
-.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-fx i:nth-child(2){right:-5px;top:-5px;border-right-width:2px;border-top-width:2px}
-.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-fx i:nth-child(3){left:-5px;bottom:-5px;border-left-width:2px;border-bottom-width:2px}
-.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-fx i:nth-child(4){right:-5px;bottom:-5px;border-right-width:2px;border-bottom-width:2px}
-.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-shell:focus-within .sop-field-fx i:first-child,.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-shell:focus-within .sop-field-fx i:nth-child(3){transform:translateX(1px)}
-.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-shell:focus-within .sop-field-fx i:nth-child(2),.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field .sop-field-shell:focus-within .sop-field-fx i:nth-child(4){transform:translateX(-1px)}
-.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field[data-invalid=true] .sop-field-shell{border:0;outline:2px dashed var(--field-error);outline-offset:6px}
+/* Validation owns its reading surface; the shell's error border remains independent. */
+.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field>.sop-field-validation{color:#852e28;background:#fff1ea;border-inline-start:3px solid #b83c34;padding:7px 10px;margin-top:10px;border-radius:1px;font-size:12px;line-height:1.7}
+@media(forced-colors:active){.sop-textfield.sop-corner-scribe-field.sop-corner-scribe-field>.sop-field-validation{color:CanvasText!important;background:Canvas!important;border-color:LinkText!important}}

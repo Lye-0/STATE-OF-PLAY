@@ -1,5 +1,5 @@
 @import "../../../shared/text-field-base.css";
-/* 底を斜めの曲率で受ける薄い製図トレー。読む面と両端4pxの切断面を分け、下の厚い縁と内影を省く。フォーカスは同じ外周の一本へ置き換え、入力の幅と位置を保つ。 */
+/* 傾斜した製図トレーへ明るい紙面を置き、下の押さえ板で受ける。文字と入力位置を固定し、底の受けだけがフォーカスへ反応する。 */
 
 .sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field{--field-bg:#f5efdf;--field-ink:#443b30;--field-muted:#6c6253;--field-accent:#97633e;--field-edge:#b9a888;--field-radius:0;--field-error:#b83c34;max-width:380px;width:100%;padding:0 9px;color:inherit;background:transparent;color-scheme:light}
 .sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field .sop-field-label,.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field .sop-field-meta,.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field .sop-field-caption{color:inherit}
@@ -24,9 +24,23 @@
 .sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field[data-readonly=true] .sop-field-shell{border-style:dashed}
 @media(prefers-reduced-motion:reduce){.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field,.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field *,.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field *::before,.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media(forced-colors:active){.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field{color:CanvasText;--field-accent:Highlight;--field-bg:Canvas;--field-ink:CanvasText;--field-edge:ButtonText}.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field .sop-field-shell::before,.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field .sop-field-shell::after{display:none}.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field .sop-field-shell:focus-within{outline-color:Highlight}.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field .sop-field-control{outline:none!important}}
+/* Individually authored material; input, caret and clear target remain fixed. */
+.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field .sop-field-fx{overflow:visible;border-radius:0}
+.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field .sop-field-fx i{display:block;position:absolute;inset:auto;width:auto;height:auto;border:0;border-radius:0;background:none;box-shadow:none;clip-path:none;transform:none;z-index:0}
+.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field .sop-field-fx::before,.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field .sop-field-fx::after{display:none}
+.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field .sop-field-shell{border:1px solid transparent;background:transparent;border-radius:0;box-shadow:none;margin:10px 0;min-height:82px;padding:16px 50px 19px 24px}
+.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field .sop-field-shell:focus-within{border-color:transparent;box-shadow:none;outline-offset:4px}
+.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field .sop-field-control{background:transparent}
+.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field{--field-bg:#f5f0e3;--field-ink:#344650;--field-muted:#556870;--field-accent:#608ea3;--field-edge:#8fa6ad;padding-inline:10px}
+.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field .sop-field-shell{min-height:104px;padding:20px 50px 32px 25px}
+.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field .sop-field-fx i:first-child{inset:0;background:#9bafb4;clip-path:polygon(0 0,100% 0,calc(100% - 10px) 100%,10px 100%);border-bottom:5px solid #4f6d7c}
+.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field .sop-field-fx i:nth-child(2){inset:7px 10px 26px;background:#f5f0e3;box-shadow:0 3px #6a8490;transform-origin:bottom}
+.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field .sop-field-fx i:nth-child(3){left:11px;right:11px;bottom:10px;height:10px;background:#c6d1d0;border-bottom:2px solid #789199;clip-path:polygon(0 0,100% 0,calc(100% - 5px) 100%,5px 100%)}
+.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field .sop-field-fx i:nth-child(4){left:calc(50% - 18px);bottom:10px;width:36px;height:10px;background:#547384;border-top:2px solid #b9ced2;border-radius:2px}
+.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field .sop-field-shell:focus-within .sop-field-fx i:nth-child(3){transform:translateY(2px)}
+.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field[data-invalid=true] .sop-field-shell{border:1px dashed var(--field-error);outline-color:var(--field-error)}
+@media(forced-colors:active){.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field{--field-bg:Canvas;--field-ink:CanvasText;--field-muted:CanvasText;--field-accent:Highlight;--field-edge:ButtonText}.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field .sop-field-fx{display:none!important}.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field .sop-field-shell{background:Canvas;border:1px solid ButtonText;box-shadow:none}.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field .sop-field-control{color:CanvasText}}
 
-.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field{--field-bg:#eceddf;--field-ink:#3c4b4d;--field-muted:#627175;--field-accent:#527b84;--field-edge:#98afb2}
-.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field .sop-field-shell{border:1px solid #a5b7b3;border-left:4px solid #92a7a7;border-right:4px solid #92a7a7;border-radius:3px 12px 3px 12px;background:#eceddf;min-height:68px;padding-left:20px;box-shadow:none}
-.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field .sop-field-shell:focus-within{border-color:transparent;outline-offset:-1px;outline-width:2px;box-shadow:none}
-.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field .sop-field-fx i{display:none}
-.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field[data-invalid=true] .sop-field-shell{border-width:1px 4px;border-color:var(--field-error);box-shadow:none}
+/* Validation owns its reading surface; the shell's error border remains independent. */
+.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field>.sop-field-validation{color:#852e28;background:#fff1ea;border-inline-start:3px solid #b83c34;padding:7px 10px;margin-top:10px;border-radius:1px;font-size:12px;line-height:1.7}
+@media(forced-colors:active){.sop-textfield.sop-drafting-tray-field.sop-drafting-tray-field>.sop-field-validation{color:CanvasText!important;background:Canvas!important;border-color:LinkText!important}}
