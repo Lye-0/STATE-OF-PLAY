@@ -40,6 +40,16 @@ for row,part,review in approved:
   narrow=next((p/f"{row['id']}-narrow-320.png" for p in reversed(native) if (p/f"{row['id']}-narrow-320.png").exists()),None)
   assert narrow is not None,f"Missing long native candidates: {row['id']}"
   images+=figure(w/'evidence/baseline'/f"{row['id']}-expanded.png",'修正前・配布版で開いた候補')+figure(photos/f"{row['id']}-expanded.png",'修正後・実ギャラリーの候補')+figure(narrow,'修正後・配布版の320px長文候補')
+ if row['category']=='tables':
+  beforeTable=w/'evidence/baseline'/f"{row['id']}-table.png"
+  beforeNarrow=w/'evidence/baseline'/f"{row['id']}-table-narrow.png"
+  assert beforeTable.exists() and beforeNarrow.exists(),f"Missing original table: {row['id']}"
+  native=sorted((d/'captures').glob('tables-self-*'),key=lambda p:int(p.name.split('-')[-1]))
+  states=['initial','sorted','selected','long-ltr-320','long-rtl-320','scrolled-ltr-320','empty','error','forced-dark']
+  actual=next((p for p in reversed(native) if all((p/f"{row['id']}-{name}.png").exists() for name in states)),None)
+  assert actual is not None,f"Missing real table states: {row['id']}"
+  images+=figure(beforeTable,'修正前・配布版の実表')+figure(beforeNarrow,'修正前・320pxの表')
+  for name,label in zip(states,['実表の初期表示','実列の並べ替え','実行の選択','320pxの長い実列名・記録','320pxと右から左の表','表だけを横へスクロール','記録なし','実エラー','暗い強制配色']):images+=figure(actual/f"{row['id']}-{name}.png",'修正後・'+label)
  if row['category']=='toasts':
   beforeNotice=w/'evidence/baseline'/f"{row['id']}-notice.png"
   assert beforeNotice.exists(),f"Missing original actual notice: {row['id']}"

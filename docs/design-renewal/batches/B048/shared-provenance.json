@@ -1,0 +1,29 @@
+{
+  "baseCommit": "c5c552e058329d9065ada278c0b99a43c507120b",
+  "files": {
+    "src/shared/workbench/navigation.ts": {
+      "before": "1b0d4cb2cbe2711bd60384e8634e595dd1c0a01287ae9dd5b174ebc9fdbfe255",
+      "after": "9b647c04dfe834dc2d738142a3fcc05c805286d0ac9b3dbf2d284f8682d89240"
+    },
+    "tests/workbench.browser.ts": {
+      "before": "fa88618d63863dc3c812b59b00a69afd9c411ace4143381b6203805b1fe0ee8e",
+      "after": "d8666fcb2e7cf40094a02a6b1453d2aa3ca172c1189685e2efaa89675ae2112b"
+    },
+    "tests/expansion-50.native.ts": {
+      "before": "7e472d9c27c0ae06eb20fb984ce7130f315877edf1f2973f85fb291545f0d19a",
+      "after": "94e01dd91392c3379963bb517cb58a168ade80729e60502583f2e9d36942e431"
+    },
+    "tests/expansion-50.react.ts": {
+      "before": "99aaa8eb38d20353055a4e76ec9eef711d4fa38b165390c5caa46051645f514b",
+      "after": "6a56a27566d2d3e6ffaedad58b0a8179e3f332efde097136be595b6d9fa1aa77"
+    }
+  },
+  "evidence": [
+    "captures/navigation-self-11/checks.json",
+    "formal-review-11.json",
+    "reading-focus-10.json",
+    "reading-focus-11.json",
+    "captures/navigation-geometry-11/checks.json"
+  ],
+  "scope": "Optional real inline/window/crossing current reading; real mobile reading mirrors actual selected destination; default footer remains compatible. RAF placement avoids ResizeObserver feedback. Cached readonly current reading owns focus across schema rebuild; hidden owned pane returns focus to modal close. Native JS/React exports share same semantic API. Added Table generic export regression tests were exercised on all20 Table skins, both JS layouts and four React formats in B049; no B049 author sources are included."
+}
