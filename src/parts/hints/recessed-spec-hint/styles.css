@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 二つの開いた鋳造溝へ、仕様値を刻む照合用の補足表示。厚い全周の額縁を廃止し、見出しの小口を持つ梁・枠で囲わない本文・二つの独立した溝・下のnative操作面へ分ける。仕様値は上14px/下20pxの実肉厚と12pxの奥壁を持つ溝へ固定し、溝の片端は開いたまま残す。文字は深さを表す装飾から離して読みやすく印字する。 */
+/* 一体のケースへ仕様の読み取り面を沈めたヒント。厚い全周の額縁を廃止し、見出しの小口を持つ梁・枠で囲わない本文・二つの独立した溝・下のnative操作面へ分ける。仕様値は上14px/下20pxの実肉厚と12pxの奥壁を持つ溝へ固定し、溝の片端は開いたまま残す。文字は深さを表す装飾から離して読みやすく印字する。 */
 
 .sop-foundation.sop-recessed-spec-hint.sop-recessed-spec-hint{--paper:#faf1db;--ink:#715739;--muted:#866e50;--accent:#9d7a49;--edge:#d2bd98;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-line:var(--edge);--ff-radius:0;color:var(--ink);color-scheme:light;max-width:100%;min-width:0;background:transparent;overflow-wrap:anywhere}
 .sop-foundation.sop-recessed-spec-hint.sop-recessed-spec-hint,.sop-foundation.sop-recessed-spec-hint.sop-recessed-spec-hint *,.sop-foundation.sop-recessed-spec-hint.sop-recessed-spec-hint *::before,.sop-foundation.sop-recessed-spec-hint.sop-recessed-spec-hint *::after{box-sizing:border-box}
@@ -56,3 +56,20 @@
 .sop-foundation.sop-recessed-spec-hint.sop-recessed-spec-hint .ff-hint-facts>span{position:relative;display:block;min-height:42px;margin-inline-start:12px;padding:10px 14px;background:#c4d9de;color:#456b7c;border-top:3px solid #dbe7e8;border-bottom:3px solid #9bbcc8;clip-path:polygon(8px 0,100% 0,100% 100%,0 100%,0 8px)}
 .sop-foundation.sop-recessed-spec-hint.sop-recessed-spec-hint:dir(rtl) .ff-hint-facts>span{clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%)}
 @media(forced-colors:active){.sop-foundation.sop-recessed-spec-hint.sop-recessed-spec-hint .ff-hint-facts>span{background:Canvas!important;color:CanvasText!important;border-color:ButtonText!important;clip-path:none!important}}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-recessed-spec-hint.sop-recessed-spec-hint{--paper:#f1f5f3;--ink:#354d59;--muted:#526875;--accent:#537c8d}
+.sop-foundation.sop-recessed-spec-hint.sop-recessed-spec-hint .ff-floating.ff-hint-panel{background:#dce7e8;border:1px solid #92abb3;border-top:5px solid #b5c9cd;padding:18px;box-shadow:inset 3px 0 #8fa9b6,0 10px 22px #253e4820}
+.sop-foundation.sop-recessed-spec-hint.sop-recessed-spec-hint .ff-hint-panel::before,.sop-foundation.sop-recessed-spec-hint.sop-recessed-spec-hint .ff-hint-panel::after{display:none}
+.sop-foundation.sop-recessed-spec-hint.sop-recessed-spec-hint .ff-hint-panel>.ff-hint-content{max-height:max(0px,calc(var(--ff-overlay-max-height,420px) - 42px))}
+.sop-foundation.sop-recessed-spec-hint.sop-recessed-spec-hint .ff-hint-heading{background:transparent;border:0;padding:4px 0 12px;clip-path:none;color:var(--ink)}
+.sop-foundation.sop-recessed-spec-hint.sop-recessed-spec-hint [data-hint-content]{background:transparent;padding:0;font-size:12px;color:var(--muted)}
+.sop-foundation.sop-recessed-spec-hint.sop-recessed-spec-hint .ff-hint-facts{display:grid;grid-template-columns:minmax(0,1fr);row-gap:0;padding:0;border:0;background:var(--paper);box-shadow:inset 2px 2px #8aa8b3}
+.sop-foundation.sop-recessed-spec-hint.sop-recessed-spec-hint .ff-hint-facts>span{clip-path:none!important;margin:0;min-height:0;padding:12px 14px 3px;border:0;background:none;color:#526875;font-size:11px}
+.sop-foundation.sop-recessed-spec-hint.sop-recessed-spec-hint .ff-hint-facts>strong{padding:0 14px 13px;min-height:0;margin:0;background:none;color:#354d59;font:600 15px/1.6 ui-monospace,monospace;border:0;border-bottom:1px solid #c0d0d3;clip-path:none}
+.sop-foundation.sop-recessed-spec-hint.sop-recessed-spec-hint .ff-hint-facts>strong::before,.sop-foundation.sop-recessed-spec-hint.sop-recessed-spec-hint .ff-hint-facts>strong::after{display:none}
+.sop-foundation.sop-recessed-spec-hint.sop-recessed-spec-hint .ff-hint-checkbox{background:transparent;padding:12px 0;color:#354d59}
+.sop-foundation.sop-recessed-spec-hint.sop-recessed-spec-hint .ff-hint-panel .ff-action{background:#f1f5f3;color:#355968;border:1px solid #94afb7;border-bottom:3px solid #71929f}
+
+}

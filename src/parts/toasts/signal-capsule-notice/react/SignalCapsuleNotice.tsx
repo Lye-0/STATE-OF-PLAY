@@ -13,7 +13,7 @@ const config: FoundationConfig = {
   "defaultValue": null
 };
 export type SignalCapsuleNoticeProps = FoundationProps;
-/** 左右の曲率と通知記号の環を揃えた、信号カプセルの通知。元の丸い左端を保持し、右端も同じ40pxの曲面へ接続する。内側の上下の薄い切面と、二つの丸い操作面を同じ密度へ整え、本文とnative操作を固定する。 */
+/** 丸い信号端子と薄い読み取り面を接続した通知。状態の記号を端子へ収め、本文と操作は無地の面へ置く。 */
 export default forwardRef<HTMLDivElement, SignalCapsuleNoticeProps>(function SignalCapsuleNotice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderToast} mountContent={mountToast}/>;
 });

@@ -1,8 +1,25 @@
 @import "../../../shared/foundation/base.css";
-/* Neutral Detail Hint — 仕様の読みやすさを優先する補足。 */
+/* Neutral Detail Hint — 項目名と値を二列で比較できる仕様ヒント。見出し・説明・仕様・設定操作を読み順にまとめる。 */
 .sop-foundation.sop-neutral-detail-hint {--ff-base:#e1e4df;--ff-panel:#f4f5ef;--ff-ink:#343e3d;--ff-muted:#455b4f;--ff-accent:#496559;--ff-accent2:#496559;--ff-line:#adbab2;--ff-radius:5px;color-scheme:light;background:#e1e4df;padding:18px;border-radius:4px}.sop-foundation.sop-neutral-detail-hint .ff-eyebrow{display:none}.sop-foundation.sop-neutral-detail-hint .ff-heading{line-height:1.6;font-size:12px}.sop-foundation.sop-neutral-detail-hint .ff-floating{color:var(--ff-ink);background:var(--ff-panel)}.sop-foundation.sop-neutral-detail-hint .ff-hint-trigger{border-radius:4px;box-shadow:none}.sop-foundation.sop-neutral-detail-hint .ff-hint-panel{border-radius:4px;box-shadow:0 6px 18px #0002}.sop-foundation.sop-neutral-detail-hint .ff-action:active{transform:none}
 .sop-foundation.sop-neutral-detail-hint{max-width:100%}.sop-foundation.sop-neutral-detail-hint,.sop-foundation.sop-neutral-detail-hint *{box-sizing:border-box}.sop-foundation.sop-neutral-detail-hint :is(button,input,textarea,a){min-width:0}
 .sop-foundation.sop-neutral-detail-hint:focus-visible,.sop-foundation.sop-neutral-detail-hint :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-foundation.sop-neutral-detail-hint,.sop-foundation.sop-neutral-detail-hint *,.sop-foundation.sop-neutral-detail-hint::before,.sop-foundation.sop-neutral-detail-hint::after,.sop-foundation.sop-neutral-detail-hint *::before,.sop-foundation.sop-neutral-detail-hint *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-foundation.sop-neutral-detail-hint[data-sop-paused] *,.sop-foundation.sop-neutral-detail-hint[data-paused=true] *,.sop-foundation.sop-neutral-detail-hint[data-motion-running=false] *,.sop-foundation.sop-neutral-detail-hint[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-foundation.sop-neutral-detail-hint{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-neutral-detail-hint :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-neutral-detail-hint.sop-neutral-detail-hint{--ff-panel:#fcfcfa;--ff-ink:#343e47;--ff-muted:#5b646d;--ff-line:#c7cdd0;--ff-accent:#465f73}
+.sop-foundation.sop-neutral-detail-hint.sop-neutral-detail-hint .ff-floating.ff-hint-panel{padding:20px;border:1px solid #b9c3c9;border-radius:3px;box-shadow:0 6px 20px #27344420}
+.sop-foundation.sop-neutral-detail-hint.sop-neutral-detail-hint .ff-hint-heading{font-size:14px;padding-bottom:12px;border-bottom:2px solid #637c8d}
+.sop-foundation.sop-neutral-detail-hint.sop-neutral-detail-hint [data-hint-content]{font-size:12px;line-height:1.8}
+.sop-foundation.sop-neutral-detail-hint.sop-neutral-detail-hint .ff-hint-facts{display:grid;grid-template-columns:minmax(60px,.8fr) minmax(0,1.2fr);gap:0;margin-block:16px;border-top:1px solid #ccd2d3}
+.sop-foundation.sop-neutral-detail-hint.sop-neutral-detail-hint .ff-hint-facts>*{padding:10px 8px;border-bottom:1px solid #ccd2d3;font-size:12px;overflow-wrap:anywhere}
+.sop-foundation.sop-neutral-detail-hint.sop-neutral-detail-hint .ff-hint-facts>span{background:#edf0f0;color:#58636a}
+.sop-foundation.sop-neutral-detail-hint.sop-neutral-detail-hint .ff-hint-checkbox{font-size:12px;line-height:1.7}
+.sop-foundation.sop-neutral-detail-hint.sop-neutral-detail-hint .ff-hint-panel .ff-action{margin-top:14px;width:100%;min-height:40px;background:#465f73;color:#fff;border:0;border-radius:3px}
+
+}
+
+.sop-foundation.sop-neutral-detail-hint.sop-neutral-detail-hint .ff-hint-content{overflow-wrap:anywhere;min-width:0}
+.sop-foundation.sop-neutral-detail-hint.sop-neutral-detail-hint [data-hint-content]{overflow-wrap:anywhere;white-space:normal;min-width:0}

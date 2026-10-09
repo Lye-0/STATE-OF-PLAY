@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 対角の二つの短い括弧で、読む紙の始まりと適用の終わりを保持する表示。元の開いた括弧を維持し、左右の長線を90pxの上左/下右へ縮める。38pxの横腕と6pxの太さを揃え、紙との10pxの離れと、下の実適用面への支持を整える。 */
+/* 裏板から差し出した注釈紙をクリップで留めるヒント。折れた紙端と独立した仕様の付箋で前後を作り、本文は平らな明るい列で読む。 */
 
 .sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint{--paper:#faf1db;--ink:#715739;--muted:#866e50;--accent:#9d7a49;--edge:#d2bd98;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-line:var(--edge);--ff-radius:0;color:var(--ink);color-scheme:light;max-width:100%;min-width:0;background:transparent;overflow-wrap:anywhere}
 .sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint,.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint *,.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint *::before,.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint *::after{box-sizing:border-box}
@@ -39,3 +39,41 @@
 .sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint .ff-hint-heading{padding-bottom:12px;border-bottom:1px solid #c5d3c5}
 .sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint .ff-hint-panel .ff-action{border:0;border-bottom:3px solid #9ab4a7;background:#e6eee2}
 .sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint .ff-hint-trigger{background:#edf3e8;border-inline:5px solid #9ab4a7}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint{--paper:#faf7ed;--ink:#3f4c50;--muted:#5e6a6b;--accent:#647c84;--edge:#b8c7c7}
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint .ff-floating.ff-hint-panel{padding:24px 22px 24px 34px;background:var(--paper);border:0;border-inline-start:6px solid #68828c;box-shadow:0 10px 24px #233b4420}
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint .ff-hint-panel::before{inset:12px auto 12px 10px;width:1px;background:#b8c7c3;border:0}
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint .ff-hint-panel::after{display:none}
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint .ff-hint-panel>.ff-hint-content{max-height:max(0px,calc(var(--ff-overlay-max-height,420px) - 48px))}
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint .ff-hint-heading{border:0;padding-bottom:4px;gap:9px}
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint [data-hint-content]{font:13px/1.9 Georgia,'Yu Mincho',serif}
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint .ff-hint-facts{border-block:1px solid #c2cdca;padding-block:10px;gap:8px;font-size:11px}
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint .ff-hint-panel .ff-action{border:0;border-bottom:1px solid #799297;background:none;color:#3e616f;min-height:38px}
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint .ff-hint-trigger{border:0;border-inline-start:4px solid #68828c;background:#faf7ed;color:#3e515a}
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint:dir(rtl) .ff-floating.ff-hint-panel{padding:24px 34px 24px 22px}.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint:dir(rtl) .ff-hint-panel::before{left:auto;right:10px}
+
+}
+
+@media(forced-colors:none){
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint .ff-floating.ff-hint-panel{padding:28px 26px 26px 34px;background:#d7e0df;border:0;border-radius:0;box-shadow:0 9px 24px #233b4426}
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint .ff-hint-panel::before{inset:8px 10px 8px 14px;width:auto;background:#fffdf5;border:1px solid #bac8c4;clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,0 100%);z-index:-1}
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint .ff-hint-panel::after{content:'';display:block;inset:0;background:linear-gradient(135deg,#bbc9c5 0 50%,transparent 51%) right 10px top 8px/14px 14px no-repeat;pointer-events:none;z-index:0}
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint .ff-hint-heading{position:relative;padding:0 0 14px;margin-bottom:10px;border-bottom:1px solid #d5ddd4;font:600 16px/1.5 Georgia,'Yu Mincho',serif}
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint .ff-hint-heading::before{content:'';position:absolute;left:-27px;top:-10px;width:24px;height:40px;border:2px solid #859891;border-radius:10px 10px 8px 8px;background:linear-gradient(90deg,transparent 0 7px,#647d72 7px 9px,transparent 9px) 0 22px/100% 4px no-repeat;box-shadow:inset 1px 0 #e5ebe3;pointer-events:none}
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint .ff-hint-panel>.ff-hint-content{overflow-x:hidden;overflow-y:auto;max-height:max(0px,calc(var(--ff-overlay-max-height,420px) - 54px));padding-inline-start:0}
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint [data-hint-content]{font:13px/1.9 Georgia,'Yu Mincho',serif;color:#4b5959}
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint .ff-hint-facts{position:relative;margin:18px 0 18px 12px;padding:10px 8px;border:0;border-top:1px solid #cbbda1;background:#f1ecdc;gap:8px;font-size:11px;color:#586258}
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint .ff-hint-facts::before{content:'';position:absolute;left:-12px;top:0;width:12px;height:18px;border-top:1px solid #cbbda1;background:#ded5be;clip-path:polygon(0 0,100% 0,100% 100%);pointer-events:none}
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint .ff-hint-panel .ff-action{display:flex;margin-inline-start:auto;min-height:44px;padding-inline:2px;border:0;border-bottom:1px solid #799297;color:#3e616f;background:none}
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint .ff-hint-checkbox{margin-top:14px}
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint .ff-hint-trigger{background:#fffdf5;border:1px solid #bac8c4;border-inline-start:4px solid #859891}
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint:dir(rtl) .ff-floating.ff-hint-panel{padding:28px 34px 26px 26px}
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint:dir(rtl) .ff-hint-panel::before{inset:8px 14px 8px 10px}
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint:dir(rtl) .ff-hint-heading::before{left:auto;right:-27px}
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint:dir(rtl) .ff-hint-facts{margin-inline:12px 0}
+.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint:dir(rtl) .ff-hint-facts::before{left:auto;right:-12px;transform:scaleX(-1)}
+}
+
+@media(forced-colors:none){.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint .ff-hint-heading::before{display:none}.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint .ff-hint-panel::after{background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2042%22%3E%3Cpath%20d%3D%22M9%2032V9a5%205%200%200%201%2010%200v23a8%208%200%200%201-16%200V13%22%20fill%3D%22none%22%20stroke%3D%22%237b9188%22%20stroke-width%3D%222%22%2F%3E%3Cpath%20d%3D%22M10%2032V10%22%20fill%3D%22none%22%20stroke%3D%22%23c0cfc5%22%20stroke-width%3D%221%22%2F%3E%3C%2Fsvg%3E") left 7px top 16px/24px 42px no-repeat,linear-gradient(135deg,#bbc9c5 0 50%,transparent 51%) right 10px top 8px/14px 14px no-repeat}.sop-foundation.sop-margin-bracket-hint.sop-margin-bracket-hint:dir(rtl) .ff-hint-panel::after{background-position:right 7px top 16px,right 10px top 8px}}

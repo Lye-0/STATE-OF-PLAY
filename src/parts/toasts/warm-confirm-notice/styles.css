@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 温かい確認色と抑えた影で、実操作の結果を示す汎用通知。既存の暖色と角丸を維持し、浮きすぎる下影を2px/8pxへ抑える。見出し14px・補足12px・操作の最小34pxで、長い通知も読みやすく表示する。 */
+/* 結果の見出しと説明を揃え、必要な次の操作を点線の下へ置く簡潔な通知。状態の意味は呼び出し側の内容に従う。 */
 /* Warm Confirm Notice — 確認結果を読みやすい紙色で表示。 */
 .sop-foundation.sop-warm-confirm-notice {--ff-base:#e6dfd2;--ff-panel:#f6efdf;--ff-ink:#453d32;--ff-muted:#5b4c36;--ff-accent:#745933;--ff-accent2:#745933;--ff-line:#c2b399;--ff-radius:5px;color-scheme:light;background:#e6dfd2;padding:18px;border-radius:4px}.sop-foundation.sop-warm-confirm-notice .ff-eyebrow{display:none}.sop-foundation.sop-warm-confirm-notice .ff-heading{line-height:1.6;font-size:12px}.sop-foundation.sop-warm-confirm-notice .ff-floating{color:var(--ff-ink);background:var(--ff-panel)}.sop-foundation.sop-warm-confirm-notice .ff-notice{border-radius:6px;border-color:#bfae8e;padding:16px}.sop-foundation.sop-warm-confirm-notice .ff-notice-icon{background:#e9dcbe;border:0}.sop-foundation.sop-warm-confirm-notice .ff-action:active{transform:none}
 .sop-foundation.sop-warm-confirm-notice{max-width:100%}.sop-foundation.sop-warm-confirm-notice,.sop-foundation.sop-warm-confirm-notice *{box-sizing:border-box}.sop-foundation.sop-warm-confirm-notice :is(button,input,textarea,a){min-width:0}
@@ -19,3 +19,15 @@
 .sop-foundation.sop-warm-confirm-notice.sop-warm-confirm-notice .ff-inline-action{font:12px/1.6 Arial,"Yu Gothic",sans-serif;min-height:34px;max-width:100%;overflow-wrap:anywhere}
 .sop-foundation.sop-warm-confirm-notice.sop-warm-confirm-notice [data-notice-close]{width:34px;height:34px;flex:none}
 .sop-foundation.sop-warm-confirm-notice.sop-warm-confirm-notice .ff-notice-icon{flex:none}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-warm-confirm-notice.sop-warm-confirm-notice{--ff-panel:#fffdf6;--ff-ink:#454138;--ff-muted:#625e54;--ff-accent:#766342}
+.sop-foundation.sop-warm-confirm-notice.sop-warm-confirm-notice .ff-notice{display:grid;grid-template-columns:26px minmax(0,1fr) 30px;gap:12px;padding:18px 15px;border:0;border-block:1px solid #bdb4a0;border-radius:0;background:#fffdf6;box-shadow:0 3px 8px #28251e15}
+.sop-foundation.sop-warm-confirm-notice.sop-warm-confirm-notice .ff-notice-icon{width:26px;height:26px;border:0;background:none;color:#766342}
+.sop-foundation.sop-warm-confirm-notice.sop-warm-confirm-notice .ff-notice-copy{grid-column:2;min-width:0}
+.sop-foundation.sop-warm-confirm-notice.sop-warm-confirm-notice .ff-notice p{margin-top:5px;font-size:12px}
+.sop-foundation.sop-warm-confirm-notice.sop-warm-confirm-notice .ff-inline-action{display:block;width:100%;text-align:start;margin-top:12px;padding:10px 0 0;border:0;border-top:1px dashed #c4baa4;background:none;color:#635139;font-weight:600}
+.sop-foundation.sop-warm-confirm-notice.sop-warm-confirm-notice [data-notice-close]{grid-column:3;width:30px;height:32px}
+
+}

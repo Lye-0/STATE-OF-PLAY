@@ -1,0 +1,258 @@
+{
+  "batch": "B009",
+  "round": 4,
+  "overall": "pass",
+  "parts": [
+    {
+      "id": "signal-capsule-notice",
+      "number": 292,
+      "verdict": "pass",
+      "note": "作者/共有hashがround3から不変であることを確認し、同roundの画像・操作検査を継承。丸い信号端子の厚みと横へ接続する薄い読取り面が分かれ、以前の二重枠カプセルより固有の構造を持つ。狭幅長文でも端子と本文が重ならない。",
+      "findings": [],
+      "evidence": [
+        "measurements-final-3.json",
+        "motion-summary-3.json",
+        "contrast-summary-3.json",
+        "evidence-3/toasts-portable-sheet.jpg",
+        "evidence-3/toasts-gallery-sheet.jpg",
+        "evidence-3/gallery-sample-fired-sheet.jpg",
+        "review-3.json",
+        "hash-summary-4.json"
+      ],
+      "reviewed": [
+        "round4作者/共有hash同一確認",
+        "round3独立検査を継承"
+      ]
+    },
+    {
+      "id": "folded-message-notice",
+      "number": 293,
+      "verdict": "pass",
+      "note": "作者/共有hashがround3から不変であることを確認し、同roundの画像・操作検査を継承。細い左右の折り目を残し本文の無地面を確保。320pxと長文RTLでも文字が折り目の濃い面へ出ない。",
+      "findings": [],
+      "evidence": [
+        "measurements-final-3.json",
+        "motion-summary-3.json",
+        "contrast-summary-3.json",
+        "evidence-3/toasts-portable-sheet.jpg",
+        "evidence-3/toasts-gallery-sheet.jpg",
+        "evidence-3/gallery-sample-fired-sheet.jpg",
+        "review-3.json",
+        "hash-summary-4.json"
+      ],
+      "reviewed": [
+        "round4作者/共有hash同一確認",
+        "round3独立検査を継承"
+      ]
+    },
+    {
+      "id": "console-line-notice",
+      "number": 297,
+      "verdict": "pass",
+      "note": "作者/共有hashがround3から不変であることを確認し、同roundの画像・操作検査を継承。展示にもff-notice-copyの凹んだ明るい面が現れ、実発火との欠落差を解消。説明文字も実背景上5.491:1以上。下の操作行が情報表示と分かれる。",
+      "findings": [],
+      "evidence": [
+        "measurements-final-3.json",
+        "motion-summary-3.json",
+        "contrast-summary-3.json",
+        "evidence-3/toasts-portable-sheet.jpg",
+        "evidence-3/toasts-gallery-sheet.jpg",
+        "evidence-3/gallery-sample-fired-sheet.jpg",
+        "review-3.json",
+        "hash-summary-4.json"
+      ],
+      "reviewed": [
+        "round4作者/共有hash同一確認",
+        "round3独立検査を継承"
+      ]
+    },
+    {
+      "id": "open-bracket-notice",
+      "number": 301,
+      "verdict": "pass",
+      "note": "作者/共有hashがround3から不変であることを確認し、同roundの画像・操作検査を継承。離れた四隅から長短の連続した左右支柱へ変更され、開いた括弧で読み面を支える構造が成立。本文面は連続し、周縁の空隙と文字は分かれる。",
+      "findings": [],
+      "evidence": [
+        "measurements-final-3.json",
+        "motion-summary-3.json",
+        "contrast-summary-3.json",
+        "evidence-3/toasts-portable-sheet.jpg",
+        "evidence-3/toasts-gallery-sheet.jpg",
+        "evidence-3/gallery-sample-fired-sheet.jpg",
+        "review-3.json",
+        "hash-summary-4.json"
+      ],
+      "reviewed": [
+        "round4作者/共有hash同一確認",
+        "round3独立検査を継承"
+      ]
+    },
+    {
+      "id": "warm-confirm-notice",
+      "number": 310,
+      "verdict": "pass",
+      "note": "作者/共有hashがround3から不変であることを確認し、同roundの画像・操作検査を継承。結果見出しと説明を揃え、追加操作を点線下の行へ分離。色替えに留まらず、結果を読んでから次の操作へ進むBの用途を示す。",
+      "findings": [],
+      "evidence": [
+        "measurements-final-3.json",
+        "motion-summary-3.json",
+        "contrast-summary-3.json",
+        "evidence-3/toasts-portable-sheet.jpg",
+        "evidence-3/toasts-gallery-sheet.jpg",
+        "evidence-3/gallery-sample-fired-sheet.jpg",
+        "review-3.json",
+        "hash-summary-4.json"
+      ],
+      "reviewed": [
+        "round4作者/共有hash同一確認",
+        "round3独立検査を継承"
+      ]
+    },
+    {
+      "id": "margin-bracket-hint",
+      "number": 316,
+      "verdict": "pass",
+      "note": "裏板と折れた紙端で注釈紙の前後が分かれ、クリップが紙端をまたぎ、仕様は折れた接点のある独立した付箋として読める。R330とは構造上の差が成立。320px長文/RTLでも本文は読み面内に収まり、短いviewportでは紙面内をscrollして末尾操作へ到達。クリップはpanel側に残り、forced colorsでは装飾が消える。",
+      "findings": [],
+      "evidence": [
+        "measurements-retry-4.json",
+        "measurements-keyboard-4.json",
+        "contrast-summary-4.json",
+        "evidence-4/hints-portable-sheet.jpg",
+        "evidence-4/hints-gallery-sheet.jpg",
+        "evidence-4/short-portable-sheet.jpg",
+        "evidence-4/short-gallery-sheet.jpg"
+      ],
+      "reviewed": [
+        "round4 portable/実gallery CSS環境：通常hover入口/解除/再進入、320px長文RTL",
+        "reduced/forced、320×360の内容scrollと末尾操作",
+        "native checkbox click/Space、Escape/適用後triggerフォーカス復帰",
+        "実背景上のcontrast（最小5.377:1以上）"
+      ]
+    },
+    {
+      "id": "recessed-spec-hint",
+      "number": 324,
+      "verdict": "pass",
+      "note": "作者/共有hashがround3から不変であることを確認し、同roundの画像・操作検査を継承。仕様面の間にも不透明なケースの下地があり、背後の文字が混ざる問題を解消。本文の読み面と段差を持つ仕様欄が一体のケースに収まる。",
+      "findings": [],
+      "evidence": [
+        "measurements-final-3.json",
+        "motion-summary-3.json",
+        "contrast-summary-3.json",
+        "evidence-3/hints-portable-sheet.jpg",
+        "evidence-3/hints-gallery-sheet.jpg",
+        "measurements-keyboard-3.json",
+        "evidence-3/short-portable-sheet.jpg",
+        "evidence-3/short-gallery-sheet.jpg",
+        "review-3.json",
+        "hash-summary-4.json"
+      ],
+      "reviewed": [
+        "round4作者/共有hash同一確認",
+        "round3独立検査を継承"
+      ]
+    },
+    {
+      "id": "neutral-detail-hint",
+      "number": 329,
+      "verdict": "pass",
+      "note": "320pxの連続識別子は折り返し、本文innerのscrollWidth/clientWidthが198/198px、左右の切れ0px（LTR/RTL、portable/gallery）。比較表と操作構造を保持。",
+      "findings": [],
+      "evidence": [
+        "measurements-retry-4.json",
+        "measurements-keyboard-4.json",
+        "contrast-summary-4.json",
+        "evidence-4/hints-portable-sheet.jpg",
+        "evidence-4/hints-gallery-sheet.jpg",
+        "evidence-4/short-portable-sheet.jpg",
+        "evidence-4/short-gallery-sheet.jpg",
+        "measurements-focused-4.json"
+      ],
+      "reviewed": [
+        "round4 portable/実gallery CSS環境：通常hover入口/解除/再進入、320px長文RTL",
+        "reduced/forced、320×360の内容scrollと末尾操作",
+        "native checkbox click/Space、Escape/適用後triggerフォーカス復帰",
+        "実背景上のcontrast（最小5.377:1以上）"
+      ]
+    },
+    {
+      "id": "warm-reading-hint",
+      "number": 330,
+      "verdict": "pass",
+      "note": "320pxの連続識別子は折り返し、本文innerのscrollWidth/clientWidthが190/190px、左右の切れ0px（LTR/RTL、portable/gallery）。本文中心の読み順と書体を保持。",
+      "findings": [],
+      "evidence": [
+        "measurements-retry-4.json",
+        "measurements-keyboard-4.json",
+        "contrast-summary-4.json",
+        "evidence-4/hints-portable-sheet.jpg",
+        "evidence-4/hints-gallery-sheet.jpg",
+        "evidence-4/short-portable-sheet.jpg",
+        "evidence-4/short-gallery-sheet.jpg",
+        "measurements-focused-4.json"
+      ],
+      "reviewed": [
+        "round4 portable/実gallery CSS環境：通常hover入口/解除/再進入、320px長文RTL",
+        "reduced/forced、320×360の内容scrollと末尾操作",
+        "native checkbox click/Space、Escape/適用後triggerフォーカス復帰",
+        "実背景上のcontrast（最小5.377:1以上）"
+      ]
+    },
+    {
+      "id": "orbital-mark-progress",
+      "number": 332,
+      "verdict": "pass",
+      "note": "作者/共有hashがround3から不変であることを確認し、同roundの画像・操作検査を継承。傾いた軌道面と正面の数値が分かれ、弧の終点で進捗を表現。0/25/100で表示と実値を確認し、割合不明では数値が…、native value属性なし、終点非表示となる。",
+      "findings": [],
+      "evidence": [
+        "measurements-final-3.json",
+        "motion-summary-3.json",
+        "contrast-summary-3.json",
+        "evidence-3/progress-portable-sheet.jpg",
+        "evidence-3/progress-gallery-sheet.jpg",
+        "measurements-focused-3.json",
+        "evidence-3/orbital-mark-progress-portable-unknown.png",
+        "evidence-3/orbital-mark-progress-gallery-unknown.png",
+        "review-3.json",
+        "hash-summary-4.json"
+      ],
+      "reviewed": [
+        "round4作者/共有hash同一確認",
+        "round3独立検査を継承"
+      ]
+    }
+  ],
+  "coverage": {
+    "parts": 10,
+    "retested": [
+      316,
+      329,
+      330
+    ],
+    "unchanged": [
+      292,
+      293,
+      297,
+      301,
+      310,
+      324,
+      332
+    ],
+    "portableRetested": 3,
+    "galleryRetested": 3,
+    "visuallyReviewedSheets": [
+      "evidence-4/hints-gallery-sheet.jpg",
+      "evidence-4/hints-portable-sheet.jpg",
+      "evidence-4/short-gallery-sheet.jpg",
+      "evidence-4/short-portable-sheet.jpg"
+    ],
+    "limits": "変更3件を再検査、7件は作者・共有hash不変とround3の検査結果を継承。特定状態の確認で無欠陥保証ではない。長文/API probeは凍結initを実gallery CSS環境へ組み込んだfixtureを含む。"
+  },
+  "evidence": [
+    "review-input-4.json",
+    "hash-summary-4.json",
+    "review-3.json",
+    "response-3.md"
+  ]
+}

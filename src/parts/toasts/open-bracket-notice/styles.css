@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 四つの開いた角だけで、読む通知面を保持するデザイン。元の開いた枠を保持し、競合する記号下線を廃止する。角は28pxの長さ/5pxの太さへ揃え、紙を内側8pxに収める。本文の周りに長い枠線を足さず、文字とnative操作を固定する。 */
+/* 長短二つの括弧で読み取り面を挟む通知。四隅の飾りではなく、左右の連続した支柱で本文の位置を示す。 */
 
 .sop-foundation.sop-open-bracket-notice.sop-open-bracket-notice{--paper:#faf0da;--ink:#70543c;--muted:#866c54;--accent:#a98352;--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-panel:var(--paper);--ff-line:#c2a580;--ff-accent:var(--accent);--ff-radius:0;color:var(--ink);color-scheme:light;max-width:100%;min-width:0;background:transparent;overflow-wrap:anywhere}
 .sop-foundation.sop-open-bracket-notice.sop-open-bracket-notice,.sop-foundation.sop-open-bracket-notice.sop-open-bracket-notice *,.sop-foundation.sop-open-bracket-notice.sop-open-bracket-notice *::before,.sop-foundation.sop-open-bracket-notice.sop-open-bracket-notice *::after{box-sizing:border-box}
@@ -34,3 +34,15 @@
 .sop-foundation.sop-open-bracket-notice.sop-open-bracket-notice .ff-notice::before{inset:8px;background:var(--paper);border:0}
 .sop-foundation.sop-open-bracket-notice.sop-open-bracket-notice .ff-notice::after{display:block;inset:0;background:linear-gradient(#9dbbc1 0 5px,transparent 5px) left top/28px 28px no-repeat,linear-gradient(90deg,#9dbbc1 0 5px,transparent 5px) left top/28px 28px no-repeat,linear-gradient(#9dbbc1 0 5px,transparent 5px) right top/28px 28px no-repeat,linear-gradient(270deg,#9dbbc1 0 5px,transparent 5px) right top/28px 28px no-repeat,linear-gradient(0deg,#9dbbc1 0 5px,transparent 5px) left bottom/28px 28px no-repeat,linear-gradient(90deg,#9dbbc1 0 5px,transparent 5px) left bottom/28px 28px no-repeat,linear-gradient(0deg,#9dbbc1 0 5px,transparent 5px) right bottom/28px 28px no-repeat,linear-gradient(270deg,#9dbbc1 0 5px,transparent 5px) right bottom/28px 28px no-repeat;z-index:0}
 .sop-foundation.sop-open-bracket-notice.sop-open-bracket-notice .ff-notice-icon{border:0;background:none;box-shadow:none}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-open-bracket-notice.sop-open-bracket-notice{--paper:#f5f5ec;--ink:#3e5159;--muted:#5b6b71;--accent:#4b7283}
+.sop-foundation.sop-open-bracket-notice.sop-open-bracket-notice .ff-notice{padding:26px 23px;gap:10px;min-height:126px}
+.sop-foundation.sop-open-bracket-notice.sop-open-bracket-notice .ff-notice::before{inset:8px 12px;background:var(--paper);border-block:1px solid #d0d6cd}
+.sop-foundation.sop-open-bracket-notice.sop-open-bracket-notice .ff-notice::after{inset:0;background:linear-gradient(#587987,#587987) left top/46px 5px no-repeat,linear-gradient(#587987,#587987) left bottom/46px 5px no-repeat,linear-gradient(#587987,#587987) left/5px 100% no-repeat,linear-gradient(#9aadb0,#9aadb0) right top/30px 5px no-repeat,linear-gradient(#9aadb0,#9aadb0) right bottom/30px 5px no-repeat,linear-gradient(#9aadb0,#9aadb0) right/5px 100% no-repeat;z-index:-1}
+.sop-foundation.sop-open-bracket-notice.sop-open-bracket-notice .ff-notice-icon{width:26px;height:30px}.sop-foundation.sop-open-bracket-notice.sop-open-bracket-notice .ff-notice p{font-size:12px}.sop-foundation.sop-open-bracket-notice.sop-open-bracket-notice .ff-inline-action{color:#3c6273;border-color:#9aaeb3}
+
+}
+
+@media(forced-colors:none){.sop-foundation.sop-open-bracket-notice.sop-open-bracket-notice .ff-notice[data-tone]{--paper:#f5f5ec;--ink:#3e5159;--muted:#5b6b71}.sop-foundation.sop-open-bracket-notice.sop-open-bracket-notice .ff-notice[data-tone=success] .ff-notice-icon{color:#38654d}.sop-foundation.sop-open-bracket-notice.sop-open-bracket-notice .ff-notice[data-tone=warning] .ff-notice-icon{color:#80601f}.sop-foundation.sop-open-bracket-notice.sop-open-bracket-notice .ff-notice[data-tone=error] .ff-notice-icon{color:#8c3f37}}

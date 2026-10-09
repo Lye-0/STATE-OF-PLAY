@@ -1,8 +1,24 @@
 @import "../../../shared/foundation/base.css";
-/* Warm Reading Hint — 文章のそばに置ける穏やかな注釈。 */
+/* Warm Reading Hint — 本文を読みやすい行間と書体で示す注釈。補足の仕様は細い罫線の下へ置き、適用操作を本文から分ける。 */
 .sop-foundation.sop-warm-reading-hint {--ff-base:#e6dfd2;--ff-panel:#f6efdf;--ff-ink:#453d32;--ff-muted:#5b4c36;--ff-accent:#745933;--ff-accent2:#745933;--ff-line:#c2b399;--ff-radius:5px;color-scheme:light;background:#e6dfd2;padding:18px;border-radius:4px}.sop-foundation.sop-warm-reading-hint .ff-eyebrow{display:none}.sop-foundation.sop-warm-reading-hint .ff-heading{line-height:1.6;font-size:12px}.sop-foundation.sop-warm-reading-hint .ff-floating{color:var(--ff-ink);background:var(--ff-panel)}.sop-foundation.sop-warm-reading-hint .ff-hint-trigger{border-radius:5px;border-bottom:2px solid #b59e73}.sop-foundation.sop-warm-reading-hint .ff-hint-panel{border-radius:5px}.sop-foundation.sop-warm-reading-hint .ff-hint-panel p{font-size:11px;line-height:2}.sop-foundation.sop-warm-reading-hint .ff-action:active{transform:none}
 .sop-foundation.sop-warm-reading-hint{max-width:100%}.sop-foundation.sop-warm-reading-hint,.sop-foundation.sop-warm-reading-hint *{box-sizing:border-box}.sop-foundation.sop-warm-reading-hint :is(button,input,textarea,a){min-width:0}
 .sop-foundation.sop-warm-reading-hint:focus-visible,.sop-foundation.sop-warm-reading-hint :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-foundation.sop-warm-reading-hint,.sop-foundation.sop-warm-reading-hint *,.sop-foundation.sop-warm-reading-hint::before,.sop-foundation.sop-warm-reading-hint::after,.sop-foundation.sop-warm-reading-hint *::before,.sop-foundation.sop-warm-reading-hint *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-foundation.sop-warm-reading-hint[data-sop-paused] *,.sop-foundation.sop-warm-reading-hint[data-paused=true] *,.sop-foundation.sop-warm-reading-hint[data-motion-running=false] *,.sop-foundation.sop-warm-reading-hint[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-foundation.sop-warm-reading-hint{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-warm-reading-hint :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-warm-reading-hint.sop-warm-reading-hint{--ff-panel:#fffdf6;--ff-ink:#494335;--ff-muted:#68604e;--ff-line:#d0c5ad;--ff-accent:#7b6546}
+.sop-foundation.sop-warm-reading-hint.sop-warm-reading-hint .ff-floating.ff-hint-panel{padding:24px;border-radius:0;border:1px solid #d1c7b3;border-top:3px solid #9d8764;box-shadow:0 8px 22px #322b1d20}
+.sop-foundation.sop-warm-reading-hint.sop-warm-reading-hint .ff-hint-heading{font:600 16px/1.6 Georgia,'Yu Mincho',serif;border:0;padding-bottom:8px}
+.sop-foundation.sop-warm-reading-hint.sop-warm-reading-hint .ff-hint-panel p{font:14px/1.95 Georgia,'Yu Mincho',serif}
+.sop-foundation.sop-warm-reading-hint.sop-warm-reading-hint .ff-hint-facts{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.7fr);gap:6px 12px;border-top:1px solid #c9bea6;padding-top:14px;margin-top:20px;font-size:11px;line-height:1.8}
+.sop-foundation.sop-warm-reading-hint.sop-warm-reading-hint .ff-hint-facts strong{font-weight:500}
+.sop-foundation.sop-warm-reading-hint.sop-warm-reading-hint .ff-hint-checkbox{font-size:12px;margin-top:18px}
+.sop-foundation.sop-warm-reading-hint.sop-warm-reading-hint .ff-hint-panel .ff-action{border:0;border-bottom:1px solid #9d8764;border-radius:0;background:none;color:#6a5235;padding:10px 0;margin-top:10px;text-align:start}
+
+}
+
+.sop-foundation.sop-warm-reading-hint.sop-warm-reading-hint .ff-hint-content{overflow-wrap:anywhere;min-width:0}
+.sop-foundation.sop-warm-reading-hint.sop-warm-reading-hint [data-hint-content]{overflow-wrap:anywhere;white-space:normal;min-width:0}

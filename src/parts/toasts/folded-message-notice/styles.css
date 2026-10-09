@@ -42,3 +42,15 @@
 .sop-foundation.sop-folded-message-notice.sop-folded-message-notice .ff-notice-icon{border:0;background:none;width:32px;height:32px}
 .sop-foundation.sop-folded-message-notice.sop-folded-message-notice [data-notice-close]{background:none}
 @media(max-width:380px){.sop-foundation.sop-folded-message-notice.sop-folded-message-notice .ff-notice{padding-inline:12px}}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-folded-message-notice.sop-folded-message-notice{--paper:#faf1f5;--ink:#553e50;--muted:#6d5766;--accent:#80506b}
+.sop-foundation.sop-folded-message-notice.sop-folded-message-notice .ff-notice{padding:26px 24px;gap:9px;min-height:140px}
+.sop-foundation.sop-folded-message-notice.sop-folded-message-notice .ff-notice::before{inset:0 12px;background:var(--paper);border:0;clip-path:none}
+.sop-foundation.sop-folded-message-notice.sop-folded-message-notice .ff-notice::after{background:linear-gradient(90deg,#a18096 0 6px,#d4b7c8 6px 12px,transparent 12px calc(100% - 12px),#b891a9 calc(100% - 12px) calc(100% - 6px),#88687e calc(100% - 6px));clip-path:polygon(0 14px,6px 14px,12px 0,calc(100% - 12px) 0,calc(100% - 6px) 14px,100% 14px,100% calc(100% - 14px),calc(100% - 6px) calc(100% - 14px),calc(100% - 12px) 100%,12px 100%,6px calc(100% - 14px),0 calc(100% - 14px))}
+.sop-foundation.sop-folded-message-notice.sop-folded-message-notice .ff-notice-icon{width:25px;height:30px;flex:none;color:var(--accent)}.sop-foundation.sop-folded-message-notice.sop-folded-message-notice .ff-notice p{font-size:12px}.sop-foundation.sop-folded-message-notice.sop-folded-message-notice .ff-inline-action{color:#70455f}
+
+}
+
+@media(forced-colors:none){.sop-foundation.sop-folded-message-notice.sop-folded-message-notice .ff-notice[data-tone]{--paper:#faf1f5;--ink:#553e50;--muted:#6d5766}.sop-foundation.sop-folded-message-notice.sop-folded-message-notice .ff-notice[data-tone=success] .ff-notice-icon{color:#38654d}.sop-foundation.sop-folded-message-notice.sop-folded-message-notice .ff-notice[data-tone=warning] .ff-notice-icon{color:#80601f}.sop-foundation.sop-folded-message-notice.sop-folded-message-notice .ff-notice[data-tone=error] .ff-notice-icon{color:#8c3f37}}

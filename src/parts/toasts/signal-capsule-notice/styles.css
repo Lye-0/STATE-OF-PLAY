@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 左右の曲率と通知記号の環を揃えた、信号カプセルの通知。元の丸い左端を保持し、右端も同じ40pxの曲面へ接続する。内側の上下の薄い切面と、二つの丸い操作面を同じ密度へ整え、本文とnative操作を固定する。 */
+/* 丸い信号端子と薄い読み取り面を接続した通知。状態の記号を端子へ収め、本文と操作は無地の面へ置く。 */
 
 .sop-foundation.sop-signal-capsule-notice.sop-signal-capsule-notice{--paper:#faf0da;--ink:#70543c;--muted:#866c54;--accent:#a98352;--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-panel:var(--paper);--ff-line:#c2a580;--ff-accent:var(--accent);--ff-radius:0;color:var(--ink);color-scheme:light;max-width:100%;min-width:0;background:transparent;overflow-wrap:anywhere}
 .sop-foundation.sop-signal-capsule-notice.sop-signal-capsule-notice,.sop-foundation.sop-signal-capsule-notice.sop-signal-capsule-notice *,.sop-foundation.sop-signal-capsule-notice.sop-signal-capsule-notice *::before,.sop-foundation.sop-signal-capsule-notice.sop-signal-capsule-notice *::after{box-sizing:border-box}
@@ -35,3 +35,18 @@
 .sop-foundation.sop-signal-capsule-notice.sop-signal-capsule-notice .ff-notice-icon{width:36px;height:36px;border:2px solid #a7b987;border-radius:50%;background:#e7efdb}
 .sop-foundation.sop-signal-capsule-notice.sop-signal-capsule-notice .ff-inline-action{color:#73884b;border-color:#a1b179}
 .sop-foundation.sop-signal-capsule-notice.sop-signal-capsule-notice [data-notice-close]{border-radius:50%;background:#dce6cc}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-signal-capsule-notice.sop-signal-capsule-notice{--paper:#f6f3e9;--ink:#35464c;--muted:#57656a;--accent:#416b7c}
+.sop-foundation.sop-signal-capsule-notice.sop-signal-capsule-notice .ff-notice{padding:22px 14px 22px 18px;gap:12px;min-height:108px}
+.sop-foundation.sop-signal-capsule-notice.sop-signal-capsule-notice .ff-notice::before{inset:0 0 0 52px;border:1px solid #a6b5b8;border-inline-start:0;border-radius:0 9px 9px 0;background:var(--paper);clip-path:none;box-shadow:inset 0 -4px #dde3df}
+.sop-foundation.sop-signal-capsule-notice.sop-signal-capsule-notice .ff-notice::after{display:block;inset:0 auto 0 0;width:53px;border:0;border-radius:28px 0 0 28px;background:linear-gradient(90deg,#748e96,#b3c3c3 12px,#d4dfd9 100%);box-shadow:inset 1px 0 #e6ede5;clip-path:none}
+.sop-foundation.sop-signal-capsule-notice.sop-signal-capsule-notice .ff-notice-icon{width:32px;height:32px;border:1px solid #77929a;border-radius:50%;background:#eff3e9;color:#335d6d;box-shadow:0 2px 0 #6c8993}
+.sop-foundation.sop-signal-capsule-notice.sop-signal-capsule-notice .ff-notice p{font-size:12px}.sop-foundation.sop-signal-capsule-notice.sop-signal-capsule-notice .ff-inline-action{color:#365d6b;border-color:#829ba2}
+.sop-foundation.sop-signal-capsule-notice.sop-signal-capsule-notice:dir(rtl) .ff-notice::before{inset:0 52px 0 0;border-radius:9px 0 0 9px}
+.sop-foundation.sop-signal-capsule-notice.sop-signal-capsule-notice:dir(rtl) .ff-notice::after{left:auto;right:0;border-radius:0 28px 28px 0}
+
+}
+
+@media(forced-colors:none){.sop-foundation.sop-signal-capsule-notice.sop-signal-capsule-notice .ff-notice[data-tone]{--paper:#f6f3e9;--ink:#35464c;--muted:#57656a}.sop-foundation.sop-signal-capsule-notice.sop-signal-capsule-notice .ff-notice[data-tone=success] .ff-notice-icon{color:#38654d}.sop-foundation.sop-signal-capsule-notice.sop-signal-capsule-notice .ff-notice[data-tone=warning] .ff-notice-icon{color:#80601f}.sop-foundation.sop-signal-capsule-notice.sop-signal-capsule-notice .ff-notice[data-tone=error] .ff-notice-icon{color:#8c3f37}}

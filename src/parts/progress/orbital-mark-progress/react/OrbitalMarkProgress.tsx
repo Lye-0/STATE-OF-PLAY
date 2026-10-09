@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "max": 100
 };
 export type OrbitalMarkProgressProps = FoundationProps;
-/** 軌道の弧と中央の固定した読み取り面。完了するほど弧がつながる。 */
+/** 傾いた軌道面に進捗の弧と終点を示すプログレス。数値は正面に固定し、値が不明なときは終点を表示しない。 */
 export default forwardRef<HTMLDivElement, OrbitalMarkProgressProps>(function OrbitalMarkProgress(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderProgress} mountContent={mountProgress}/>;
 });

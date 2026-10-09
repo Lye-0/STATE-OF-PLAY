@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "content": "必要な情報を、必要な場所に。選択の前に、意図と使い方を確認できます。"
 };
 export type MarginBracketHintProps = FoundationProps;
-/** 対角の二つの短い括弧で、読む紙の始まりと適用の終わりを保持する表示。元の開いた括弧を維持し、左右の長線を90pxの上左/下右へ縮める。38pxの横腕と6pxの太さを揃え、紙との10pxの離れと、下の実適用面への支持を整える。 */
+/** 裏板から差し出した注釈紙をクリップで留めるヒント。折れた紙端と独立した仕様の付箋で前後を作り、本文は平らな明るい列で読む。 */
 export default forwardRef<HTMLDivElement, MarginBracketHintProps>(function MarginBracketHint(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderHint} mountContent={mountHint}/>;
 });
