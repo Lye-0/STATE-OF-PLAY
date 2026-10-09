@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 一枚の厚い支持板が左右へ蛇行し、六つの実週の受棚を連続して作る暦。独立したU枠六個を全廃し、24pxの水平受面と9pxの小口、左/右へ交互に曲がる一筆の支持へ変える。週間の空隙は片側が開き、七列の数字は各受棚の同じ位置へ固定する。選択日は実週の読む床で示し、架空の棚や余分な値を足さない。 */
+/* 一週間ごとに独立した浅い棚を重ねるカレンダー。蛇行する経路を除き、曜日列に沿って同じ向きで日付を読める。 */
 
 .sop-foundation.sop-open-week-calendar.sop-open-week-calendar{--paper:#fbf1dc;--ink:#775d3f;--muted:#8d7759;--accent:#b08c59;--edge:#d4bd96;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-accent2:var(--accent);--ff-line:var(--edge);--ff-radius:0;color:var(--ink);color-scheme:light;max-width:min(100%,380px);width:100%;min-width:0;padding:18px;background:var(--paper);overflow-wrap:anywhere;container-type:inline-size}
 .sop-foundation.sop-open-week-calendar.sop-open-week-calendar,.sop-foundation.sop-open-week-calendar.sop-open-week-calendar *,.sop-foundation.sop-open-week-calendar.sop-open-week-calendar *::before,.sop-foundation.sop-open-week-calendar.sop-open-week-calendar *::after{box-sizing:border-box}
@@ -53,3 +53,25 @@
 .sop-foundation.sop-open-week-calendar.sop-open-week-calendar .ff-date-fields{border-bottom:8px solid #aebf90;background:#f8fbee}
 
 @media(forced-colors:active){.sop-foundation.sop-open-week-calendar.sop-open-week-calendar .ff-calendar-grid::before,.sop-foundation.sop-open-week-calendar.sop-open-week-calendar .ff-calendar-grid::after,.sop-foundation.sop-open-week-calendar.sop-open-week-calendar .ff-calendar-grid [role=row]::before,.sop-foundation.sop-open-week-calendar.sop-open-week-calendar .ff-calendar-grid [role=row]::after{display:none!important}.sop-foundation.sop-open-week-calendar.sop-open-week-calendar .ff-calendar-grid [role=row]{background:Canvas!important}.sop-foundation.sop-open-week-calendar.sop-open-week-calendar .ff-calendar-grid button{border-color:ButtonText!important;clip-path:none!important}}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-open-week-calendar.sop-open-week-calendar{--paper:#f3f5eb;--ink:#43543e;--muted:#63715a;--accent:#526f45;--edge:#bac9ab}
+.sop-foundation.sop-open-week-calendar.sop-open-week-calendar .ff-floating.ff-calendar{padding:20px;background:#f8faef}
+.sop-foundation.sop-open-week-calendar.sop-open-week-calendar .ff-calendar-grid{gap:7px}
+.sop-foundation.sop-open-week-calendar.sop-open-week-calendar .ff-calendar-grid::before{display:none}
+.sop-foundation.sop-open-week-calendar.sop-open-week-calendar .ff-calendar-grid [role=row]{position:relative;isolation:isolate;gap:1px;border:0;border-bottom:3px solid #abbc95;background:#e6ecd9}
+.sop-foundation.sop-open-week-calendar.sop-open-week-calendar .ff-calendar-grid [role=row]::before{content:'';position:absolute;inset:0;pointer-events:none;border-inline:3px solid #c4d0ae;background:none;z-index:-1}
+.sop-foundation.sop-open-week-calendar.sop-open-week-calendar .ff-calendar-grid button{height:40px;min-height:40px;padding:0;align-content:center;background:none;color:#43543e}
+.sop-foundation.sop-open-week-calendar.sop-open-week-calendar .ff-calendar-grid button[data-selected=true]{background:#526f45;color:#fff}
+.sop-foundation.sop-open-week-calendar.sop-open-week-calendar .ff-calendar-grid button[data-between=true]{background:#cbd9b5}
+.sop-foundation.sop-open-week-calendar.sop-open-week-calendar .ff-calendar-grid button:hover:not(:disabled):not([data-selected=true]){background:#d8e2c8}
+.sop-foundation.sop-open-week-calendar.sop-open-week-calendar .ff-date-fields{border-bottom-width:3px}
+
+}
+
+@media(forced-colors:none){
+.sop-foundation.sop-open-week-calendar.sop-open-week-calendar .ff-calendar-grid button[data-outside=true]:not(:disabled){opacity:1;color:var(--muted);font-weight:400}
+}
+
+@media(forced-colors:none){.sop-foundation.sop-open-week-calendar.sop-open-week-calendar .ff-calendar-grid button[data-outside=true]:not(:disabled){color:#526348}}

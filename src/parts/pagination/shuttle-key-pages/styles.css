@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 丸い端のシャトルの左右を、実索引を渡る連続した軌道へ接続するページ送り。元の丸い前後端を保持し、別々の番号箱を廃止する。8pxの上下レールと丸い端、各実行の中央を渡る通しの路線へ番号の舟形を載せ、現在だけが同じ舟の材で変わる。 */
+/* 一本の案内線に沿って舟形の選択面を移すページ送り。丸い筐体を除き、番号と選択した舟の位置を結びつける。 */
 
 .sop-foundation.sop-shuttle-key-pages.sop-shuttle-key-pages{--paper:#f7f1e6;--ink:#554b3e;--muted:#796c59;--accent:#805e3b;--edge:#d5c4a6;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-accent2:var(--accent);--ff-line:var(--edge);color:var(--ink);color-scheme:light;max-width:min(100%,380px);width:100%;min-width:0;background:var(--paper);padding:18px;container-type:inline-size;overflow-wrap:anywhere}
 .sop-foundation.sop-shuttle-key-pages.sop-shuttle-key-pages,.sop-foundation.sop-shuttle-key-pages.sop-shuttle-key-pages *,.sop-foundation.sop-shuttle-key-pages.sop-shuttle-key-pages *::before,.sop-foundation.sop-shuttle-key-pages.sop-shuttle-key-pages *::after{box-sizing:border-box}
@@ -39,3 +39,19 @@
 @container(max-width:340px){.sop-foundation.sop-shuttle-key-pages.sop-shuttle-key-pages .ff-pages[data-layout=anchored]>.ff-page-window{grid-template-columns:repeat(3,minmax(0,1fr));min-height:152px}}
 .sop-foundation.sop-shuttle-key-pages.sop-shuttle-key-pages .ff-page-window :is(button,a){border-inline-width:2px}
 .sop-foundation.sop-shuttle-key-pages.sop-shuttle-key-pages .ff-pages[data-layout=anchored]>.ff-page-window{min-height:0}
+
+.sop-foundation.sop-shuttle-key-pages.sop-shuttle-key-pages .ff-pages[data-layout=anchored]>.ff-page-window{display:flex;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;gap:6px;min-height:0;padding:8px 3px 18px;scrollbar-width:thin;scrollbar-color:var(--accent) transparent;overscroll-behavior-x:contain}
+.sop-foundation.sop-shuttle-key-pages.sop-shuttle-key-pages .ff-page-window :is(button,a){flex:0 0 38px;min-width:38px;width:auto;max-width:none;white-space:nowrap}
+.sop-foundation.sop-shuttle-key-pages.sop-shuttle-key-pages .ff-page-window .ff-ellipsis{flex:0 0 24px;min-width:24px}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-shuttle-key-pages.sop-shuttle-key-pages .ff-pages[data-layout=anchored]{border:0;border-block:2px solid #8caeba;border-radius:0;padding:14px 8px;background:#edf4f3}
+.sop-foundation.sop-shuttle-key-pages.sop-shuttle-key-pages .ff-pages[data-layout=anchored]>.ff-page-window{background:linear-gradient(transparent 0 32px,#aec5cd 32px 34px,transparent 34px);padding-block:8px 14px}
+.sop-foundation.sop-shuttle-key-pages.sop-shuttle-key-pages .ff-page-window :is(button,a){height:44px;border:0;border-radius:0;background:transparent;position:relative;isolation:isolate;color:#41606f}
+.sop-foundation.sop-shuttle-key-pages.sop-shuttle-key-pages .ff-page-window :is(button,a)::before{display:block;content:'';position:absolute;inset:5px 0;border:1px solid #b9cdd1;border-radius:50% 2px;background:#f7faf6;z-index:-1}
+.sop-foundation.sop-shuttle-key-pages.sop-shuttle-key-pages .ff-page-window [aria-current=page]{background:none;color:#fff}
+.sop-foundation.sop-shuttle-key-pages.sop-shuttle-key-pages .ff-page-window [aria-current=page]::before{inset:0;background:#426b7c;border:0;border-radius:50% 2px;box-shadow:inset 0 -3px #2e5364}
+.sop-foundation.sop-shuttle-key-pages.sop-shuttle-key-pages .ff-pages[data-layout=anchored]>:is(button,a){border:0;border-inline:2px solid #99b6c2;background:#d9e7e8;border-radius:2px;height:44px}
+
+}

@@ -4,6 +4,16 @@ export function renderPagination(o:FoundationOptions):string{return heading(o)+`
 export function mountPagination(root:HTMLElement,config:FoundationConfig,options:FoundationOptions={}):FoundationController {
  const normalize=(v:FoundationValue,o:FoundationOptions):FoundationValue=>Math.min(Math.max(1,Math.floor(o.totalPages??12)),Math.max(1,Math.floor(Number(v)||1)));
  const c=createCore(root,config,options,normalize);if(!root.querySelector('[data-pages]'))root.innerHTML=renderPagination(c.options);const nav=q(root,'[data-pages]');
+ // Keep a single-line page strip readable without scrolling the surrounding page.
+ const revealPage=()=>{const strip=nav.querySelector<HTMLElement>('.ff-page-window');if(!strip||strip.clientWidth===0||strip.scrollWidth<=strip.clientWidth+1)return;
+  const focused=document.activeElement instanceof HTMLElement&&document.activeElement.parentElement===strip?document.activeElement:null;
+  const item=focused??strip.querySelector<HTMLElement>('[aria-current=page]');if(!item)return;
+  const box=strip.getBoundingClientRect(),r=item.getBoundingClientRect(),scale=box.width/(strip.offsetWidth||box.width),left=box.left+strip.clientLeft*scale,right=left+strip.clientWidth*scale;
+  const delta=r.width>right-left?(getComputedStyle(strip).direction==='rtl'?r.right-right:r.left-left):r.left<left?r.left-left:r.right>right?r.right-right:0;
+  if(Math.abs(delta)>.5)strip.scrollBy({left:delta/scale,behavior:'instant'});
+ };
+ c.on(nav,'focusin',revealPage);
+ const pageObserver=typeof ResizeObserver==='undefined'?null:new ResizeObserver(revealPage);pageObserver?.observe(nav);c.cleanup(()=>pageObserver?.disconnect());
  c.sync=()=>{syncHeading(c);const o=c.options,total=Math.max(1,Math.floor(o.totalPages??12)),page=Number(c.data);
   const control=(n:number,label:string,body:string,disabled=false)=>o.hrefForPage?`<a ${disabled||o.disabled||o.readOnly?'aria-disabled="true"':`href="${escape(o.hrefForPage(n))}"`} data-page="${n}" aria-label="${escape(label)}" ${n===page&&label===`ページ ${n}`?'aria-current="page"':''}>${body}</a>`:`<button type="button" data-page="${n}" aria-label="${escape(label)}" ${disabled||o.disabled?'disabled':''} ${n===page&&label===`ページ ${n}`?'aria-current="page"':''}>${body}</button>`;
   const focused=nav.contains(document.activeElement)?document.activeElement?.getAttribute('aria-label'):null;
@@ -14,6 +24,7 @@ export function mountPagination(root:HTMLElement,config:FoundationConfig,options
    const target=[...nav.querySelectorAll<HTMLElement>('[aria-label]')].find(e=>e.getAttribute('aria-label')===focused&&!e.matches(':disabled,[aria-disabled=true]'))??nav.querySelector<HTMLElement>('[aria-current=page]');
    target?.focus({preventScroll:true});
   }
+  revealPage();
   q(root,'[data-page-info]').innerHTML=`<strong>${String(page).padStart(2,'0')}</strong><span>/ ${total} PAGES</span>`;
  };
  c.on(nav,'click',event=>{const e=event as MouseEvent,el=(e.target as Element).closest<HTMLElement>('[data-page]');if(!el)return;if(el.getAttribute('aria-disabled')==='true'||c.options.disabled||c.options.readOnly){e.preventDefault();return;}if(el.tagName==='A'&&(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0))return;if(el.tagName!=='A')c.send(Number(el.dataset.page));else c.options.onDataChange?.(Number(el.dataset.page));});c.sync('initial');return c;

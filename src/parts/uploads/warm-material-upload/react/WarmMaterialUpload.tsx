@@ -8,7 +8,7 @@ const config: FoundationConfig = {
   "id": "warm-material-upload",
   "kind": "uploads",
   "variant": "essential",
-  "label": "アイデアの素材を、ここに。",
+  "label": "資料を追加する",
   "description": "",
   "defaultValue": [],
   "multiple": true,

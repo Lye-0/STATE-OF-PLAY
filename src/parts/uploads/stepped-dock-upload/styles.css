@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 二段の低い搬入床を、短い位置決めガイドへ合わせるファイル選択。元の低い段差を保持し、競合する全周の外枠を撤去する。66pxの短いガイドと6pxの受面、4pxの床小口と8pxの下段を揃え、文字の操作面を広く確保する。 */
+/* 段差のある受け台へファイルを置くドロップ領域。本文を載せる面と、下へ張り出した二段の台を組み合わせる。 */
 
 .sop-foundation.sop-stepped-dock-upload.sop-stepped-dock-upload{--paper:#faf0dd;--ink:#735b40;--muted:#897258;--accent:#a88553;--edge:#d1bb95;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-accent2:var(--accent);--ff-line:var(--edge);--ff-radius:0;color:var(--ink);color-scheme:light;max-width:min(100%,380px);width:100%;min-width:0;padding:18px;background:var(--paper);overflow-wrap:anywhere;container-type:inline-size}
 .sop-foundation.sop-stepped-dock-upload.sop-stepped-dock-upload,.sop-foundation.sop-stepped-dock-upload.sop-stepped-dock-upload *,.sop-foundation.sop-stepped-dock-upload.sop-stepped-dock-upload *::before,.sop-foundation.sop-stepped-dock-upload.sop-stepped-dock-upload *::after{box-sizing:border-box}
@@ -47,3 +47,14 @@
 .sop-foundation.sop-stepped-dock-upload.sop-stepped-dock-upload .ff-upload-files li{border:0;border-inline-start:4px solid #accbd5;border-bottom:2px solid #ccdee3;background:#f5faf9}
 
 .sop-foundation.sop-stepped-dock-upload.sop-stepped-dock-upload .ff-dropzone>:is(strong,span,small){position:relative;z-index:1}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-stepped-dock-upload.sop-stepped-dock-upload{--paper:#edf3f3;--ink:#3c535e;--muted:#5a707a;--accent:#557f92;--edge:#abc4cc}
+.sop-foundation.sop-stepped-dock-upload.sop-stepped-dock-upload .ff-dropzone{min-height:260px;padding:30px 22px 58px;background:none;border:0;box-shadow:none;margin:0;isolation:isolate}
+.sop-foundation.sop-stepped-dock-upload.sop-stepped-dock-upload .ff-dropzone::before{inset:0 0 28px;height:auto;border:0;background:#f7faf5;clip-path:polygon(0 0,100% 0,100% calc(100% - 18px),calc(100% - 18px) calc(100% - 18px),calc(100% - 18px) 100%,18px 100%,18px calc(100% - 18px),0 calc(100% - 18px));z-index:-2}
+.sop-foundation.sop-stepped-dock-upload.sop-stepped-dock-upload .ff-dropzone::after{inset:auto 0 0;height:54px;background:linear-gradient(#a4c0ca 0 14px,#d0e0e2 14px 29px,#779ba9 29px 35px,#b7cfd6 35px);clip-path:polygon(0 0,18px 0,18px 14px,calc(100% - 18px) 14px,calc(100% - 18px) 0,100% 0,100% 35px,calc(100% - 12px) 35px,calc(100% - 12px) 100%,12px 100%,12px 35px,0 35px);border:0;z-index:-1}
+.sop-foundation.sop-stepped-dock-upload.sop-stepped-dock-upload .ff-upload-symbol{border:0;border-bottom:3px solid #89abb7;background:#e2eceb;border-radius:3px}
+.sop-foundation.sop-stepped-dock-upload.sop-stepped-dock-upload .ff-dropzone[data-dragging=true]::after{filter:brightness(.93)}
+
+}

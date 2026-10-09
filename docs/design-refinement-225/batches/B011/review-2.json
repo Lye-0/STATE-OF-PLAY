@@ -1,0 +1,338 @@
+{
+  "batch": "B011",
+  "round": 2,
+  "overall": "changes_required",
+  "parts": [
+    {
+      "id": "stepped-dock-upload",
+      "number": 364,
+      "verdict": "pass",
+      "note": "左右の低い支柱と下段へ出る床で荷受け台を構成。旧二重線から支える構造へ進み、操作領域は安定している。",
+      "findings": [],
+      "evidence": [
+        "evidence-2/uploads-portable-base-sheet.jpg",
+        "evidence-2/uploads-gallery-base-sheet.jpg",
+        "evidence-2/uploads-portable-files-sheet.jpg",
+        "evidence-2/uploads-gallery-files-sheet.jpg"
+      ],
+      "reviewed": [
+        "portable frozen round2",
+        "actual gallery initial render + frozen API fixture",
+        "rest/hover entry/exit/reentry/returned",
+        "320px / long labels / RTL layout",
+        "reduced motion / forced colors",
+        "native files / FormData / remove / drop / invalid / disabled / reset / long filename"
+      ]
+    },
+    {
+      "id": "outline-document-upload",
+      "number": 369,
+      "verdict": "changes_required",
+      "note": "提出用の小型横組みと条件行は B の用途に合うが、エラーの可読性と長いファイル名の収まりが未完成。",
+      "findings": [
+        {
+          "kind": "contrast",
+          "description": "許可外 .exe を選んだ実エラーが 10px / rgb(226,146,135)。背景 rgb(242,244,243) との比率 2.186:1。portable と gallery の両方で再現し、原因を読む文字として不足。",
+          "recommendation": "明るいホスト上でも 4.5:1 を満たす専用エラー文字色、または背景付きエラー面へ分離する。",
+          "evidence": [
+            "evidence-2/uploads-portable-files-sheet.jpg",
+            "evidence-2/uploads-gallery-files-sheet.jpg",
+            "measurements-uploads-2.json",
+            "contrast-summary-2.json"
+          ]
+        },
+        {
+          "kind": "overflow",
+          "description": "222px ホストで長いファイル名を追加し RTL にすると、幅約325pxのファイル名が root x49..271 に対し x-122 まで広がり、削除ボタンは x-162 / 幅30px と完全に外へ出る。gallery の264pxホストでも再現。",
+          "recommendation": "ファイル行の縮小可能な子へ min-width:0 と適切な折返し/省略を設け、削除ボタンを常にホスト内へ残す。",
+          "evidence": [
+            "evidence-2/uploads-portable-files-sheet.jpg",
+            "evidence-2/uploads-gallery-files-sheet.jpg",
+            "measurements-uploads-2.json"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-2/uploads-portable-base-sheet.jpg",
+        "evidence-2/uploads-gallery-base-sheet.jpg",
+        "evidence-2/uploads-portable-files-sheet.jpg",
+        "evidence-2/uploads-gallery-files-sheet.jpg"
+      ],
+      "reviewed": [
+        "portable frozen round2",
+        "actual gallery initial render + frozen API fixture",
+        "rest/hover entry/exit/reentry/returned",
+        "320px / long labels / RTL layout",
+        "reduced motion / forced colors",
+        "native files / FormData / remove / drop / invalid / disabled / reset / long filename"
+      ]
+    },
+    {
+      "id": "warm-material-upload",
+      "number": 370,
+      "verdict": "changes_required",
+      "note": "資料向けの明朝見出しと分離したファイル行で R369 と用途を区別できる。エラー色は修正が必要。",
+      "findings": [
+        {
+          "kind": "contrast",
+          "description": "許可外 .exe を選んだ実エラーが 10px / rgb(226,146,135)。背景 rgb(245,240,230) との比率 2.126:1。portable と gallery の両方で再現し、原因を読む文字として不足。",
+          "recommendation": "明るいホスト上でも 4.5:1 を満たす専用エラー文字色、または背景付きエラー面へ分離する。",
+          "evidence": [
+            "evidence-2/uploads-portable-files-sheet.jpg",
+            "evidence-2/uploads-gallery-files-sheet.jpg",
+            "measurements-uploads-2.json",
+            "contrast-summary-2.json"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-2/uploads-portable-base-sheet.jpg",
+        "evidence-2/uploads-gallery-base-sheet.jpg",
+        "evidence-2/uploads-portable-files-sheet.jpg",
+        "evidence-2/uploads-gallery-files-sheet.jpg"
+      ],
+      "reviewed": [
+        "portable frozen round2",
+        "actual gallery initial render + frozen API fixture",
+        "rest/hover entry/exit/reentry/returned",
+        "320px / long labels / RTL layout",
+        "reduced motion / forced colors",
+        "native files / FormData / remove / drop / invalid / disabled / reset / long filename"
+      ]
+    },
+    {
+      "id": "orbit-date-calendar",
+      "number": 377,
+      "verdict": "changes_required",
+      "note": "月と左右移動を薄い二重軌道で結び、曜日の通常配置を保った独自性は成立。操作可能な前後月日付が薄すぎる。",
+      "findings": [
+        {
+          "kind": "contrast",
+          "description": "前後月の日付は opacity .55 で実背景との合成比率 2.139:1。disabled=false で、2026-08-31 を実際に押すと値が更新しパネルが閉じるため、無効操作の例外にできない。両環境で再現。",
+          "recommendation": "日付を操作可能な文字として 4.5:1 以上へ。隣月の区別は控えめな面・線・文字ウェイト等で補う。",
+          "evidence": [
+            "evidence-2/datepickers-portable-base-sheet.jpg",
+            "evidence-2/datepickers-gallery-base-sheet.jpg",
+            "measurements-outside-2.json",
+            "contrast-summary-2.json"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-2/datepickers-portable-base-sheet.jpg",
+        "evidence-2/datepickers-gallery-base-sheet.jpg",
+        "evidence-2/datepickers-portable-months-sheet.jpg",
+        "evidence-2/datepickers-gallery-months-sheet.jpg"
+      ],
+      "reviewed": [
+        "portable frozen round2",
+        "actual gallery initial render + frozen API fixture",
+        "rest/hover entry/exit/reentry/returned",
+        "320px / long labels / RTL layout",
+        "reduced motion / forced colors",
+        "opened panel / February+leap year+November / month transitions / ArrowRight+Enter / Clear+Today / Escape focus / 320x360 scroll"
+      ]
+    },
+    {
+      "id": "open-week-calendar",
+      "number": 379,
+      "verdict": "changes_required",
+      "note": "六つの週の浅い棚が日付配置の規則と一致し、旧蛇行より理解しやすい。前後月日付の可読性は不足。",
+      "findings": [
+        {
+          "kind": "contrast",
+          "description": "前後月の日付は opacity .55 で実背景との合成比率 2.042:1。disabled=false で、2026-08-31 を実際に押すと値が更新しパネルが閉じるため、無効操作の例外にできない。両環境で再現。",
+          "recommendation": "日付を操作可能な文字として 4.5:1 以上へ。隣月の区別は控えめな面・線・文字ウェイト等で補う。",
+          "evidence": [
+            "evidence-2/datepickers-portable-base-sheet.jpg",
+            "evidence-2/datepickers-gallery-base-sheet.jpg",
+            "measurements-outside-2.json",
+            "contrast-summary-2.json"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-2/datepickers-portable-base-sheet.jpg",
+        "evidence-2/datepickers-gallery-base-sheet.jpg",
+        "evidence-2/datepickers-portable-months-sheet.jpg",
+        "evidence-2/datepickers-gallery-months-sheet.jpg"
+      ],
+      "reviewed": [
+        "portable frozen round2",
+        "actual gallery initial render + frozen API fixture",
+        "rest/hover entry/exit/reentry/returned",
+        "320px / long labels / RTL layout",
+        "reduced motion / forced colors",
+        "opened panel / February+leap year+November / month transitions / ArrowRight+Enter / Clear+Today / Escape focus / 320x360 scroll"
+      ]
+    },
+    {
+      "id": "petal-month-calendar",
+      "number": 383,
+      "verdict": "changes_required",
+      "note": "角形状の統一は整ったが、一般的な平面カレンダーに片側角丸と色付き見出しを足した段階。A の花弁の重なりという構造的個性は不足。",
+      "findings": [
+        {
+          "kind": "contrast",
+          "description": "前後月の日付は opacity .55 で実背景との合成比率 2.254:1。disabled=false で、2026-08-31 を実際に押すと値が更新しパネルが閉じるため、無効操作の例外にできない。両環境で再現。",
+          "recommendation": "日付を操作可能な文字として 4.5:1 以上へ。隣月の区別は控えめな面・線・文字ウェイト等で補う。",
+          "evidence": [
+            "evidence-2/datepickers-portable-base-sheet.jpg",
+            "evidence-2/datepickers-gallery-base-sheet.jpg",
+            "measurements-outside-2.json",
+            "contrast-summary-2.json"
+          ]
+        },
+        {
+          "kind": "design_judgment",
+          "description": "通常・各月・狭幅を視認した結果、主要面は一枚の矩形グリッドのまま。ヘッダ/矢印/選択日の片側角丸反復は整うが、花弁がどこで重なるか、支持するかが読めない。これは操作不具合ではなく A の独創性・構造に対する再設計要求。",
+          "recommendation": "日付グリッドの読みやすさを保ち、月見出しまたは外周で花弁同士の重なり・切欠き・接点を成立させる。単なる角丸の増加は避ける。",
+          "evidence": [
+            "evidence-2/datepickers-portable-base-sheet.jpg",
+            "evidence-2/datepickers-portable-months-sheet.jpg"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-2/datepickers-portable-base-sheet.jpg",
+        "evidence-2/datepickers-gallery-base-sheet.jpg",
+        "evidence-2/datepickers-portable-months-sheet.jpg",
+        "evidence-2/datepickers-gallery-months-sheet.jpg"
+      ],
+      "reviewed": [
+        "portable frozen round2",
+        "actual gallery initial render + frozen API fixture",
+        "rest/hover entry/exit/reentry/returned",
+        "320px / long labels / RTL layout",
+        "reduced motion / forced colors",
+        "opened panel / February+leap year+November / month transitions / ArrowRight+Enter / Clear+Today / Escape focus / 320x360 scroll"
+      ]
+    },
+    {
+      "id": "track-stop-pages",
+      "number": 392,
+      "verdict": "pass",
+      "note": "連続した軌道と立ち上がる選択位置がページ移動の意味を支える。狭幅でも折り返さず選択を表示する。",
+      "findings": [],
+      "evidence": [
+        "evidence-2/pagination-portable-base-sheet.jpg",
+        "evidence-2/pagination-gallery-base-sheet.jpg",
+        "evidence-2/pagination-portable-strip-sheet.jpg",
+        "evidence-2/pagination-gallery-strip-sheet.jpg"
+      ],
+      "reviewed": [
+        "portable frozen round2",
+        "actual gallery initial render + frozen API fixture",
+        "rest/hover entry/exit/reentry/returned",
+        "320px / long labels / RTL layout",
+        "reduced motion / forced colors",
+        "1000 pages current999 / 560→222 host / update2 / LTR+RTL / scale .75 / Tab / outer scrollY"
+      ]
+    },
+    {
+      "id": "ledger-page-tabs",
+      "number": 395,
+      "verdict": "pass",
+      "note": "棚に立つ帳簿の背と選択色・高さの関係が明快。狭幅の連続性と選択表示も維持。",
+      "findings": [],
+      "evidence": [
+        "evidence-2/pagination-portable-base-sheet.jpg",
+        "evidence-2/pagination-gallery-base-sheet.jpg",
+        "evidence-2/pagination-portable-strip-sheet.jpg",
+        "evidence-2/pagination-gallery-strip-sheet.jpg"
+      ],
+      "reviewed": [
+        "portable frozen round2",
+        "actual gallery initial render + frozen API fixture",
+        "rest/hover entry/exit/reentry/returned",
+        "320px / long labels / RTL layout",
+        "reduced motion / forced colors",
+        "1000 pages current999 / 560→222 host / update2 / LTR+RTL / scale .75 / Tab / outer scrollY"
+      ]
+    },
+    {
+      "id": "coin-stack-pages",
+      "number": 400,
+      "verdict": "pass",
+      "note": "硬貨の縁と積層で現在位置を示し、行を分けずに視線を保つ。選択/フォーカス表示は縮小と RTL に追従。",
+      "findings": [],
+      "evidence": [
+        "evidence-2/pagination-portable-base-sheet.jpg",
+        "evidence-2/pagination-gallery-base-sheet.jpg",
+        "evidence-2/pagination-portable-strip-sheet.jpg",
+        "evidence-2/pagination-gallery-strip-sheet.jpg"
+      ],
+      "reviewed": [
+        "portable frozen round2",
+        "actual gallery initial render + frozen API fixture",
+        "rest/hover entry/exit/reentry/returned",
+        "320px / long labels / RTL layout",
+        "reduced motion / forced colors",
+        "1000 pages current999 / 560→222 host / update2 / LTR+RTL / scale .75 / Tab / outer scrollY"
+      ]
+    },
+    {
+      "id": "shuttle-key-pages",
+      "number": 402,
+      "verdict": "pass",
+      "note": "片側が細まるキーと細い進路で旧カプセルと区別できる。数値と操作位置を動かさず選択を示す。",
+      "findings": [],
+      "evidence": [
+        "evidence-2/pagination-portable-base-sheet.jpg",
+        "evidence-2/pagination-gallery-base-sheet.jpg",
+        "evidence-2/pagination-portable-strip-sheet.jpg",
+        "evidence-2/pagination-gallery-strip-sheet.jpg"
+      ],
+      "reviewed": [
+        "portable frozen round2",
+        "actual gallery initial render + frozen API fixture",
+        "rest/hover entry/exit/reentry/returned",
+        "320px / long labels / RTL layout",
+        "reduced motion / forced colors",
+        "1000 pages current999 / 560→222 host / update2 / LTR+RTL / scale .75 / Tab / outer scrollY"
+      ]
+    }
+  ],
+  "coverage": {
+    "parts": 10,
+    "pass": 5,
+    "changes_required": 5,
+    "sourceHashesMatch": false,
+    "sourceHashCount": 101,
+    "changedAfterCapture": [
+      "src/parts/uploads/outline-document-upload/styles.css",
+      "src/parts/uploads/warm-material-upload/styles.css",
+      "src/parts/datepickers/orbit-date-calendar/styles.css",
+      "src/parts/datepickers/open-week-calendar/styles.css",
+      "src/parts/datepickers/petal-month-calendar/meta.json",
+      "src/parts/datepickers/petal-month-calendar/prompt.md",
+      "src/parts/datepickers/petal-month-calendar/react/PetalMonthCalendar.tsx",
+      "src/parts/datepickers/petal-month-calendar/styles.css",
+      "src/parts/datepickers/petal-month-calendar/usage.md"
+    ],
+    "viewedSheets": [
+      "evidence-2/datepickers-gallery-base-sheet.jpg",
+      "evidence-2/datepickers-gallery-months-sheet.jpg",
+      "evidence-2/datepickers-portable-base-sheet.jpg",
+      "evidence-2/datepickers-portable-months-sheet.jpg",
+      "evidence-2/pagination-gallery-base-sheet.jpg",
+      "evidence-2/pagination-gallery-strip-sheet.jpg",
+      "evidence-2/pagination-portable-base-sheet.jpg",
+      "evidence-2/pagination-portable-strip-sheet.jpg",
+      "evidence-2/uploads-gallery-base-sheet.jpg",
+      "evidence-2/uploads-gallery-files-sheet.jpg",
+      "evidence-2/uploads-portable-base-sheet.jpg",
+      "evidence-2/uploads-portable-files-sheet.jpg"
+    ],
+    "scope": "上記の特定状態と操作を実ブラウザ・実画像で検査。全状態の無欠陥保証ではない。gallery のオプション変更試験は actual gallery CSS 内に同一作者の root を複製し frozen init で操作。RTL はレイアウト、pagination は RTL keyboard も検査。",
+    "calendarShortViewport": "低い viewport は内部スクロールを許し、Clear/Today へ focus/Enter で到達できた。"
+  },
+  "evidence": [
+    "measurements-2.json",
+    "measurements-uploads-2.json",
+    "measurements-calendars-2.json",
+    "measurements-outside-2.json",
+    "measurements-pagination-2.json",
+    "contrast-summary-2.json"
+  ]
+}

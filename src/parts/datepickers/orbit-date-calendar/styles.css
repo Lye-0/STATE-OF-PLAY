@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 月の上弧と、選択日の円を同じ静かな曲率へ揃える日付選択。元の曲線と丸い選択点を保持し、上弧を3pxへ、左右の月送りを36pxの円へ精密化する。読む月面の下端と曜日グリッドは真っ直ぐに固定し、曲線を文字や入力へ波及させない。 */
+/* 月見出しを二重の細い軌道で支えるカレンダー。日付は通常の曜日列を保ち、月送りの操作を軌道の両端に置く。 */
 
 .sop-foundation.sop-orbit-date-calendar.sop-orbit-date-calendar{--paper:#fbf1dc;--ink:#775d3f;--muted:#8d7759;--accent:#b08c59;--edge:#d4bd96;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-accent2:var(--accent);--ff-line:var(--edge);--ff-radius:0;color:var(--ink);color-scheme:light;max-width:min(100%,380px);width:100%;min-width:0;padding:18px;background:var(--paper);overflow-wrap:anywhere;container-type:inline-size}
 .sop-foundation.sop-orbit-date-calendar.sop-orbit-date-calendar,.sop-foundation.sop-orbit-date-calendar.sop-orbit-date-calendar *,.sop-foundation.sop-orbit-date-calendar.sop-orbit-date-calendar *::before,.sop-foundation.sop-orbit-date-calendar.sop-orbit-date-calendar *::after{box-sizing:border-box}
@@ -49,3 +49,21 @@
 .sop-foundation.sop-orbit-date-calendar.sop-orbit-date-calendar .ff-date-fields{border:2px solid #c2d8dd;border-radius:28px;background:#f4faf7}
 
 @media(forced-colors:active){.sop-foundation.sop-orbit-date-calendar.sop-orbit-date-calendar .ff-calendar-grid [role=row]::before,.sop-foundation.sop-orbit-date-calendar.sop-orbit-date-calendar .ff-calendar-grid [role=row]::after,.sop-foundation.sop-orbit-date-calendar.sop-orbit-date-calendar .ff-calendar-grid::before,.sop-foundation.sop-orbit-date-calendar.sop-orbit-date-calendar .ff-calendar-grid::after,.sop-foundation.sop-orbit-date-calendar.sop-orbit-date-calendar .ff-calendar-header button::before,.sop-foundation.sop-orbit-date-calendar.sop-orbit-date-calendar .ff-calendar-header button::after{display:none!important}.sop-foundation.sop-orbit-date-calendar.sop-orbit-date-calendar .ff-calendar-grid [role=row]{background:Canvas!important;border-color:ButtonText!important}.sop-foundation.sop-orbit-date-calendar.sop-orbit-date-calendar .ff-calendar-grid button{border-color:ButtonText!important;clip-path:none!important;text-shadow:none!important}.sop-foundation.sop-orbit-date-calendar.sop-orbit-date-calendar .ff-weekdays span{background:Canvas!important;color:CanvasText!important;border-color:ButtonText!important;clip-path:none!important}}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-orbit-date-calendar.sop-orbit-date-calendar{--paper:#f0f5f3;--ink:#35515e;--muted:#5a717b;--accent:#416f84;--edge:#b5cbd1}
+.sop-foundation.sop-orbit-date-calendar.sop-orbit-date-calendar .ff-floating.ff-calendar{border:1px solid #aec5cd;border-radius:28px 28px 5px 5px;padding:18px;background:#f4f8f5}
+.sop-foundation.sop-orbit-date-calendar.sop-orbit-date-calendar .ff-calendar-header{position:relative;isolation:isolate;min-height:100px;align-items:center;padding:18px 0 24px;border-bottom:1px solid #c1d2d4}
+.sop-foundation.sop-orbit-date-calendar.sop-orbit-date-calendar .ff-calendar-header::before{content:'';display:block;position:absolute;inset:7px 13px 16px;border:1px solid #8cabb9;border-radius:50%;transform:rotate(-9deg);z-index:-1;background:none;pointer-events:none}
+.sop-foundation.sop-orbit-date-calendar.sop-orbit-date-calendar .ff-calendar-header::after{content:'';display:block;position:absolute;inset:15px 21px 22px;border:1px solid #c3d3d6;border-radius:50%;transform:rotate(-9deg);z-index:-1;background:none;pointer-events:none}
+.sop-foundation.sop-orbit-date-calendar.sop-orbit-date-calendar .ff-calendar-header strong{padding:7px 5px;border:0;border-radius:0;background:#f4f8f5;font:600 18px/1.6 ui-monospace,monospace;min-width:0}
+.sop-foundation.sop-orbit-date-calendar.sop-orbit-date-calendar .ff-calendar-header button{width:34px;height:34px;border:1px solid #8cabb9;background:#f4f8f5;border-radius:50%}
+.sop-foundation.sop-orbit-date-calendar.sop-orbit-date-calendar .ff-calendar-grid button[data-selected=true]{background:#416f84;color:#fff;border-radius:50%;box-shadow:0 0 0 2px #f4f8f5,0 0 0 3px #a0bbc7}
+.sop-foundation.sop-orbit-date-calendar.sop-orbit-date-calendar .ff-date-fields{border:1px solid #9eb9c4;border-inline-width:5px;border-radius:30px;background:#f4f8f5}
+
+}
+
+@media(forced-colors:none){
+.sop-foundation.sop-orbit-date-calendar.sop-orbit-date-calendar .ff-calendar-grid button[data-outside=true]:not(:disabled){opacity:1;color:var(--muted);font-weight:400}
+}

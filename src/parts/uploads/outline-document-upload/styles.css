@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* Outline Document Upload — ファイル記号・文言・選択リンクを同一軸でまとめ、狭幅の折返しを整理。 */
+/* Outline Document Upload — 文書記号と選択案内を横に揃えたコンパクトな提出欄。形式と容量の条件を罫線の下にまとめ、フォームへ組み込みやすくする。 */
 .sop-foundation.sop-outline-document-upload {--ff-base:#e1e4df;--ff-panel:#f4f5ef;--ff-ink:#343e3d;--ff-muted:#455b4f;--ff-accent:#496559;--ff-accent2:#496559;--ff-line:#adbab2;--ff-radius:5px;color-scheme:light;background:#e1e4df;padding:18px;border-radius:4px}.sop-foundation.sop-outline-document-upload .ff-eyebrow{display:none}.sop-foundation.sop-outline-document-upload .ff-heading{line-height:1.6;font-size:12px}.sop-foundation.sop-outline-document-upload .ff-floating{color:var(--ff-ink);background:var(--ff-panel)}.sop-foundation.sop-outline-document-upload .ff-dropzone{background:transparent;border:1px solid #a1b7a8;border-radius:3px}.sop-foundation.sop-outline-document-upload .ff-upload-symbol{position:static;margin:0 auto 14px;background:transparent;border:0}.sop-foundation.sop-outline-document-upload .ff-dropzone{isolation:isolate}.sop-foundation.sop-outline-document-upload .ff-upload-symbol{display:grid;place-items:center;padding:0;flex:none;box-shadow:none}.sop-foundation.sop-outline-document-upload .ff-upload-symbol svg{width:24px;height:24px;margin:0}.sop-foundation.sop-outline-document-upload .ff-dropzone strong{font-size:17px;line-height:1.5}.sop-foundation.sop-outline-document-upload .ff-dropzone>span:not(.ff-upload-symbol){font-size:11px;line-height:1.7}.sop-foundation.sop-outline-document-upload .ff-dropzone{text-align:center}.sop-foundation.sop-outline-document-upload .ff-upload-symbol{margin-inline:auto}
 .sop-foundation.sop-outline-document-upload{max-width:100%}.sop-foundation.sop-outline-document-upload,.sop-foundation.sop-outline-document-upload *{box-sizing:border-box}.sop-foundation.sop-outline-document-upload :is(button,input,textarea,a){min-width:0}
 .sop-foundation.sop-outline-document-upload:focus-visible,.sop-foundation.sop-outline-document-upload :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
@@ -9,3 +9,30 @@
 
 /* Review: ファイル記号・文言・選択リンクを同一軸でまとめ、狭幅の折返しを整理 */
 .sop-foundation.sop-outline-document-upload .ff-dropzone{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px;padding:24px 16px;min-height:196px}.sop-foundation.sop-outline-document-upload .ff-upload-symbol{position:relative;inset:auto;transform:none;margin:0 0 4px;grid-row:auto;grid-column:auto;flex:none}.sop-foundation.sop-outline-document-upload .ff-dropzone>strong,.sop-foundation.sop-outline-document-upload .ff-dropzone>span:not(.ff-upload-symbol),.sop-foundation.sop-outline-document-upload .ff-dropzone>small{grid-column:auto;grid-row:auto;text-align:center;max-width:100%;margin:0;overflow-wrap:anywhere}.sop-foundation.sop-outline-document-upload .ff-dropzone>strong{font-size:16px;line-height:1.5}.sop-foundation.sop-outline-document-upload .ff-dropzone>span:not(.ff-upload-symbol){font-size:12px}.sop-foundation.sop-outline-document-upload .ff-dropzone>small{font-size:9px;margin-top:4px}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-outline-document-upload.sop-outline-document-upload{--ff-base:#f2f4f3;--ff-panel:#fffefa;--ff-ink:#364650;--ff-muted:#586b73;--ff-accent:#486b7d;--ff-line:#bdcbd0;padding:18px;background:#f2f4f3;border-radius:3px;container-type:inline-size}
+.sop-foundation.sop-outline-document-upload.sop-outline-document-upload .ff-dropzone{display:grid;grid-template-columns:36px minmax(0,1fr);gap:6px 12px;align-content:center;text-align:start;min-height:145px;padding:20px 16px;border:1px solid #97acb5;border-radius:2px;background:#fffefa}
+.sop-foundation.sop-outline-document-upload.sop-outline-document-upload .ff-dropzone .ff-upload-symbol{grid-column:1;grid-row:1 / 3;width:32px;height:42px;margin:0;align-self:center;background:none;border:0;color:#486b7d}
+.sop-foundation.sop-outline-document-upload.sop-outline-document-upload .ff-dropzone>strong{grid-column:2;grid-row:1;text-align:start;font-size:15px}
+.sop-foundation.sop-outline-document-upload.sop-outline-document-upload .ff-dropzone>span:not(.ff-upload-symbol){grid-column:2;grid-row:2;text-align:start;font-size:12px}
+.sop-foundation.sop-outline-document-upload.sop-outline-document-upload .ff-dropzone>small{grid-column:1 / -1;grid-row:3;text-align:start;padding-top:12px;margin-top:8px;border-top:1px solid #d2dbdc;font-size:10px;line-height:1.7}
+.sop-foundation.sop-outline-document-upload.sop-outline-document-upload .ff-upload-files li{background:#fffefa;border:0;border-bottom:1px solid #bdcbd0;border-radius:0;padding-inline:10px}
+
+}
+
+.sop-foundation.sop-outline-document-upload.sop-outline-document-upload .ff-dropzone u{display:inline-block;white-space:nowrap}
+
+@media(forced-colors:none){
+.sop-foundation.sop-outline-document-upload.sop-outline-document-upload .ff-upload-errors{color:#923e35;font:12px/1.7 Arial,'Yu Gothic',sans-serif;overflow-wrap:anywhere}
+}
+
+@media(forced-colors:none){
+.sop-foundation.sop-outline-document-upload.sop-outline-document-upload .ff-upload-files li{display:grid;grid-template-columns:24px minmax(0,1fr) 44px;gap:8px;padding:12px 8px}.sop-foundation.sop-outline-document-upload.sop-outline-document-upload .ff-upload-files li>span{min-width:0;max-width:100%;overflow-wrap:anywhere;white-space:normal}.sop-foundation.sop-outline-document-upload.sop-outline-document-upload .ff-upload-files li strong{display:block;min-width:0;overflow-wrap:anywhere;white-space:normal}.sop-foundation.sop-outline-document-upload.sop-outline-document-upload .ff-upload-files li button{width:44px;min-width:44px;height:44px;flex:none;padding:10px;align-self:center}
+}
+
+.sop-foundation.sop-outline-document-upload.sop-outline-document-upload .ff-file-preview{width:24px;height:30px}
+
+/* Layout constraints also apply in forced colors. */
+.sop-foundation.sop-outline-document-upload.sop-outline-document-upload .ff-upload-files li{display:grid;grid-template-columns:24px minmax(0,1fr) 44px;gap:8px;padding:12px 8px}.sop-foundation.sop-outline-document-upload.sop-outline-document-upload .ff-upload-files li>span{min-width:0;max-width:100%;overflow-wrap:anywhere;white-space:normal}.sop-foundation.sop-outline-document-upload.sop-outline-document-upload .ff-upload-files li strong{display:block;min-width:0;overflow-wrap:anywhere;white-space:normal}.sop-foundation.sop-outline-document-upload.sop-outline-document-upload .ff-upload-files li button{width:44px;min-width:44px;height:44px;flex:none;padding:10px;align-self:center}

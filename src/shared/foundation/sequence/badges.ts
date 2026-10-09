@@ -18,7 +18,8 @@ export function mountBadges(root:HTMLElement,config:FoundationConfig,options:Fou
  root.classList.add('sop-sequence');root.dataset.variant=config.variant;root.dataset.foundation='badges';
  const removed=new Set<string>();let itemsRef:readonly Choice[]|undefined;
  const available=(o:FoundationOptions)=>tagChoices(o.items).filter(item=>!removed.has(item.value));
- const c=createCore(root,config,options,(value,o)=>tagValue(value,available(o)));itemsRef=c.options.items;
+ // Normalize against the supplied schema; sync applies temporary removals after reset restores them.
+ const c=createCore(root,config,options,(value,o)=>tagValue(value,tagChoices(o.items)));itemsRef=c.options.items;
  if(!root.querySelector('.sq-tags'))root.innerHTML=renderBadges(c.options);
  const body=q(root,'[data-tags]'),status=q(root,'[data-sq-status]'),records=new Map<string,RecordItem>(),echoes=new Set<Animation>();let items:Choice[]=[];
  function create(item:Choice,selectable:boolean):RecordItem {

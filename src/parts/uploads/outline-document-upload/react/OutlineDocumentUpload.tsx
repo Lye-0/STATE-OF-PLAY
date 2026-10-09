@@ -8,7 +8,7 @@ const config: FoundationConfig = {
   "id": "outline-document-upload",
   "kind": "uploads",
   "variant": "essential",
-  "label": "アイデアの素材を、ここに。",
+  "label": "提出用ファイル",
   "description": "",
   "defaultValue": [],
   "multiple": true,

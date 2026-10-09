@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 二本の線路へ実ページの停車床を並べ、現在の駅だけを中空のアーチへ納めるページ送り。無地の青い番号列を廃止し、72pxの駅の段、10pxの停車床、二本の連続した路線と64pxの現在駅のアーチへ組み直す。番号とnative hitは固定し、前後の実操作も同じ路線の受面へ揃える。 */
+/* 一本のレールに番号を並べるページ送り。狭幅でも列を折り返さず、選択番号が見える位置へ窓内だけを移動する。 */
 
 .sop-foundation.sop-track-stop-pages.sop-track-stop-pages{--paper:#f7f1e6;--ink:#554b3e;--muted:#796c59;--accent:#805e3b;--edge:#d5c4a6;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-accent2:var(--accent);--ff-line:var(--edge);color:var(--ink);color-scheme:light;max-width:min(100%,380px);width:100%;min-width:0;background:var(--paper);padding:18px;container-type:inline-size;overflow-wrap:anywhere}
 .sop-foundation.sop-track-stop-pages.sop-track-stop-pages,.sop-foundation.sop-track-stop-pages.sop-track-stop-pages *,.sop-foundation.sop-track-stop-pages.sop-track-stop-pages *::before,.sop-foundation.sop-track-stop-pages.sop-track-stop-pages *::after{box-sizing:border-box}
@@ -41,3 +41,14 @@
 @container(max-width:300px){.sop-foundation.sop-track-stop-pages.sop-track-stop-pages .ff-pages[data-layout=anchored]>.ff-page-window{min-height:152px}}
 .sop-foundation.sop-track-stop-pages.sop-track-stop-pages .ff-page-window :is(button,a){white-space:nowrap;font-size:12px}
 .sop-foundation.sop-track-stop-pages.sop-track-stop-pages .ff-page-window [aria-current=page]::before{inset-inline:0;border-inline-width:2px}
+
+.sop-foundation.sop-track-stop-pages.sop-track-stop-pages .ff-pages[data-layout=anchored]>.ff-page-window{display:flex;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;gap:6px;min-height:0;padding:8px 3px 18px;scrollbar-width:thin;scrollbar-color:var(--accent) transparent;overscroll-behavior-x:contain}
+.sop-foundation.sop-track-stop-pages.sop-track-stop-pages .ff-page-window :is(button,a){flex:0 0 38px;min-width:38px;width:auto;max-width:none;white-space:nowrap}
+.sop-foundation.sop-track-stop-pages.sop-track-stop-pages .ff-page-window .ff-ellipsis{flex:0 0 24px;min-width:24px}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-track-stop-pages.sop-track-stop-pages{--ink:#385565;--muted:#566c76;--accent:#426f85}
+.sop-foundation.sop-track-stop-pages.sop-track-stop-pages .ff-pages[data-layout=anchored]>.ff-page-window{background:linear-gradient(transparent 0 calc(100% - 23px),#9bbbc8 calc(100% - 23px) calc(100% - 20px),transparent calc(100% - 20px) calc(100% - 15px),#6d96a8 calc(100% - 15px) calc(100% - 12px),transparent calc(100% - 12px))}
+
+}

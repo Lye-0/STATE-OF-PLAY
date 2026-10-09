@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 実番号と前後の実操作を、同じ厚い硬貨の面と小口へ揃えるページ送り。元の硬貨の印を保持し、番号を矩形の札から丸い64pxの実貨へ戻す。2pxの打ち出し縁と6pxの重さのある小口、現在貨の濃い刻印を統一し、長い番号のため狭幅では三枚ずつ並べる。 */
+/* 硬貨を一列に整列させたページ送り。省略記号も同じ軸に置き、薄い段差で現在の硬貨を読み分ける。 */
 
 .sop-foundation.sop-coin-stack-pages.sop-coin-stack-pages{--paper:#f7f1e6;--ink:#554b3e;--muted:#796c59;--accent:#805e3b;--edge:#d5c4a6;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-accent2:var(--accent);--ff-line:var(--edge);color:var(--ink);color-scheme:light;max-width:min(100%,380px);width:100%;min-width:0;background:var(--paper);padding:18px;container-type:inline-size;overflow-wrap:anywhere}
 .sop-foundation.sop-coin-stack-pages.sop-coin-stack-pages,.sop-foundation.sop-coin-stack-pages.sop-coin-stack-pages *,.sop-foundation.sop-coin-stack-pages.sop-coin-stack-pages *::before,.sop-foundation.sop-coin-stack-pages.sop-coin-stack-pages *::after{box-sizing:border-box}
@@ -40,3 +40,16 @@
 .sop-foundation.sop-coin-stack-pages.sop-coin-stack-pages .ff-pages[data-layout=anchored]>.ff-page-window{grid-auto-rows:auto}
 .sop-foundation.sop-coin-stack-pages.sop-coin-stack-pages .ff-page-window :is(button,a){height:auto;aspect-ratio:1;max-width:72px;justify-self:center}
 .sop-foundation.sop-coin-stack-pages.sop-coin-stack-pages .ff-pages[data-layout=anchored]>.ff-page-window{min-height:0}
+
+.sop-foundation.sop-coin-stack-pages.sop-coin-stack-pages .ff-pages[data-layout=anchored]>.ff-page-window{display:flex;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;gap:6px;min-height:0;padding:8px 3px 18px;scrollbar-width:thin;scrollbar-color:var(--accent) transparent;overscroll-behavior-x:contain}
+.sop-foundation.sop-coin-stack-pages.sop-coin-stack-pages .ff-page-window :is(button,a){flex:0 0 38px;min-width:38px;width:auto;max-width:none;white-space:nowrap}
+.sop-foundation.sop-coin-stack-pages.sop-coin-stack-pages .ff-page-window .ff-ellipsis{flex:0 0 24px;min-width:24px}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-coin-stack-pages.sop-coin-stack-pages .ff-pages[data-layout=anchored]>.ff-page-window{gap:8px;align-items:center;min-height:0;padding-block:8px 17px;border-bottom:1px solid #b9a77f}
+.sop-foundation.sop-coin-stack-pages.sop-coin-stack-pages .ff-page-window :is(button,a){height:42px;aspect-ratio:auto;border:1px solid #b99b65;box-shadow:0 3px #ad8950,inset 0 0 0 3px #f9eccc;font-size:12px;color:#66502e}
+.sop-foundation.sop-coin-stack-pages.sop-coin-stack-pages .ff-page-window [aria-current=page]{background:#76552d;color:#fff8e4;box-shadow:0 3px #5b3d1b,inset 0 0 0 3px #9b7949}
+.sop-foundation.sop-coin-stack-pages.sop-coin-stack-pages .ff-ellipsis{height:42px}
+
+}

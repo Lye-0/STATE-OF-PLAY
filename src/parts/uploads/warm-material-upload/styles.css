@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* Warm Material Upload — ファイル記号・文言・選択リンクを同一軸でまとめ、狭幅の折返しを整理。 */
+/* Warm Material Upload — 資料を集めるための読みやすいファイル欄。選択領域と、書名のようにファイル名を並べる一覧を細い罫線でつなぐ。 */
 .sop-foundation.sop-warm-material-upload {--ff-base:#e6dfd2;--ff-panel:#f6efdf;--ff-ink:#453d32;--ff-muted:#5b4c36;--ff-accent:#745933;--ff-accent2:#745933;--ff-line:#c2b399;--ff-radius:5px;color-scheme:light;background:#e6dfd2;padding:18px;border-radius:4px}.sop-foundation.sop-warm-material-upload .ff-eyebrow{display:none}.sop-foundation.sop-warm-material-upload .ff-heading{line-height:1.6;font-size:12px}.sop-foundation.sop-warm-material-upload .ff-floating{color:var(--ff-ink);background:var(--ff-panel)}.sop-foundation.sop-warm-material-upload .ff-dropzone{border-radius:7px;border:1px dashed #baa47b;padding:24px 14px}.sop-foundation.sop-warm-material-upload .ff-upload-symbol{position:static;margin:0 auto 14px;border:0;background:#e9dcbe;border-radius:6px}.sop-foundation.sop-warm-material-upload .ff-dropzone{isolation:isolate}.sop-foundation.sop-warm-material-upload .ff-upload-symbol{display:grid;place-items:center;padding:0;flex:none;box-shadow:none}.sop-foundation.sop-warm-material-upload .ff-upload-symbol svg{width:24px;height:24px;margin:0}.sop-foundation.sop-warm-material-upload .ff-dropzone strong{font-size:17px;line-height:1.5}.sop-foundation.sop-warm-material-upload .ff-dropzone>span:not(.ff-upload-symbol){font-size:11px;line-height:1.7}.sop-foundation.sop-warm-material-upload .ff-dropzone{text-align:center}.sop-foundation.sop-warm-material-upload .ff-upload-symbol{margin-inline:auto}
 .sop-foundation.sop-warm-material-upload{max-width:100%}.sop-foundation.sop-warm-material-upload,.sop-foundation.sop-warm-material-upload *{box-sizing:border-box}.sop-foundation.sop-warm-material-upload :is(button,input,textarea,a){min-width:0}
 .sop-foundation.sop-warm-material-upload:focus-visible,.sop-foundation.sop-warm-material-upload :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
@@ -9,3 +9,26 @@
 
 /* Review: ファイル記号・文言・選択リンクを同一軸でまとめ、狭幅の折返しを整理 */
 .sop-foundation.sop-warm-material-upload .ff-dropzone{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px;padding:24px 16px;min-height:196px}.sop-foundation.sop-warm-material-upload .ff-upload-symbol{position:relative;inset:auto;transform:none;margin:0 0 4px;grid-row:auto;grid-column:auto;flex:none}.sop-foundation.sop-warm-material-upload .ff-dropzone>strong,.sop-foundation.sop-warm-material-upload .ff-dropzone>span:not(.ff-upload-symbol),.sop-foundation.sop-warm-material-upload .ff-dropzone>small{grid-column:auto;grid-row:auto;text-align:center;max-width:100%;margin:0;overflow-wrap:anywhere}.sop-foundation.sop-warm-material-upload .ff-dropzone>strong{font-size:16px;line-height:1.5}.sop-foundation.sop-warm-material-upload .ff-dropzone>span:not(.ff-upload-symbol){font-size:12px}.sop-foundation.sop-warm-material-upload .ff-dropzone>small{font-size:9px;margin-top:4px}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-warm-material-upload.sop-warm-material-upload{--ff-base:#f5f0e6;--ff-panel:#fffdf5;--ff-ink:#514735;--ff-muted:#6c614d;--ff-accent:#846a41;--ff-line:#cbbd9e;padding:20px;background:#f5f0e6;border-radius:0}
+.sop-foundation.sop-warm-material-upload.sop-warm-material-upload .ff-heading{font:600 15px/1.7 Georgia,'Yu Mincho',serif}
+.sop-foundation.sop-warm-material-upload.sop-warm-material-upload .ff-dropzone{min-height:178px;padding:22px 16px;border:0;border-block:1px solid #b4a17a;border-radius:0;background:#fffdf5;gap:10px}
+.sop-foundation.sop-warm-material-upload.sop-warm-material-upload .ff-upload-symbol{width:34px;height:34px;border:0;background:none;color:#846a41}
+.sop-foundation.sop-warm-material-upload.sop-warm-material-upload .ff-dropzone>strong{font:600 18px/1.7 Georgia,'Yu Mincho',serif}
+.sop-foundation.sop-warm-material-upload.sop-warm-material-upload .ff-dropzone>small{font-size:10px;line-height:1.8}
+.sop-foundation.sop-warm-material-upload.sop-warm-material-upload .ff-upload-files{gap:0;border-top:1px solid #cbbd9e}
+.sop-foundation.sop-warm-material-upload.sop-warm-material-upload .ff-upload-files li{padding:14px 10px;border:0;border-bottom:1px solid #cbbd9e;border-radius:0;background:#fffdf5}
+.sop-foundation.sop-warm-material-upload.sop-warm-material-upload .ff-upload-files strong{font:600 13px/1.65 Georgia,'Yu Mincho',serif;white-space:normal;overflow-wrap:anywhere}
+
+}
+
+.sop-foundation.sop-warm-material-upload.sop-warm-material-upload .ff-dropzone u{display:inline-block;white-space:nowrap}
+
+.sop-foundation.sop-warm-material-upload.sop-warm-material-upload .ff-upload-files li{display:grid;grid-template-columns:26px minmax(0,1fr) 30px;gap:8px}.sop-foundation.sop-warm-material-upload.sop-warm-material-upload .ff-upload-files li>span:nth-child(2){min-width:0}.sop-foundation.sop-warm-material-upload.sop-warm-material-upload .ff-upload-files button{width:30px;min-width:0;padding:5px}
+@container(max-width:260px){.sop-foundation.sop-warm-material-upload.sop-warm-material-upload .ff-upload-files li{grid-template-columns:minmax(0,1fr) 30px}.sop-foundation.sop-warm-material-upload.sop-warm-material-upload .ff-upload-files .ff-file-preview{display:none}}
+
+@media(forced-colors:none){
+.sop-foundation.sop-warm-material-upload.sop-warm-material-upload .ff-upload-errors{color:#923e35;font:12px/1.7 Arial,'Yu Gothic',sans-serif;overflow-wrap:anywhere}
+}

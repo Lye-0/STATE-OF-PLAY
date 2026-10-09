@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "paginationLayout": "anchored"
 };
 export type CoinStackPagesProps = FoundationProps;
-/** 実番号と前後の実操作を、同じ厚い硬貨の面と小口へ揃えるページ送り。元の硬貨の印を保持し、番号を矩形の札から丸い64pxの実貨へ戻す。2pxの打ち出し縁と6pxの重さのある小口、現在貨の濃い刻印を統一し、長い番号のため狭幅では三枚ずつ並べる。 */
+/** 硬貨を一列に整列させたページ送り。省略記号も同じ軸に置き、薄い段差で現在の硬貨を読み分ける。 */
 export default forwardRef<HTMLDivElement, CoinStackPagesProps>(function CoinStackPages(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderPagination} mountContent={mountPagination}/>;
 });
