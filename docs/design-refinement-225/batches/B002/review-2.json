@@ -1,0 +1,133 @@
+{
+  "batch": "B002",
+  "round": 2,
+  "overall": "changes_required",
+  "parts": [
+    {
+      "id": "contoured-cork-panel",
+      "number": 33,
+      "verdict": "pass",
+      "note": "粒状のコルク、切断層、凹んだ筆記面が一体として読める。長文と320pxでも本文を保持し、hoverで文字位置は動かない。",
+      "findings": [],
+      "evidence": [
+        "measurements-2.json",
+        "evidence-2/portable-1-sheet.jpg"
+      ]
+    },
+    {
+      "id": "compact-note-panel",
+      "number": 37,
+      "verdict": "pass",
+      "note": "小見出しと本文の二列構成が狭幅で縦に切り替わる。長い見出しでも列や文字が衝突しない。",
+      "findings": [],
+      "evidence": [
+        "measurements-2.json",
+        "evidence-2/portable-1-sheet.jpg"
+      ]
+    },
+    {
+      "id": "cool-inset-card",
+      "number": 38,
+      "verdict": "pass",
+      "note": "ヘッダーと凹んだ本文面の階層が明快。狭幅・長文でも個性と本文の可読性を維持する。",
+      "findings": [],
+      "evidence": [
+        "measurements-2.json",
+        "evidence-2/portable-1-sheet.jpg"
+      ]
+    },
+    {
+      "id": "ivory-gasket-button",
+      "number": 49,
+      "verdict": "pass",
+      "note": "天面・ゴム層・基台が連続した一つのボタンとして見える。hoverの圧縮と解除・再進入で文字は静止し、層の戻りも連続する。",
+      "findings": [],
+      "evidence": [
+        "measurements-2.json",
+        "evidence-2/portable-1-sheet.jpg"
+      ]
+    },
+    {
+      "id": "punctuated-path-scroll",
+      "number": 65,
+      "verdict": "changes_required",
+      "note": "細い点列とコンマ型つまみの個性は成立。実ドラッグ・キー・ホイールは両軸で動くが、横向きの進捗線が退化する。",
+      "findings": [
+        {
+          "kind": "reproduced_visual_defect",
+          "description": "凍結 portable 横向きの終端で進捗線が幅1pxのまま。軌道464pxに対して読み進みを表す線が伸びず、縦向きの表現と不整合。",
+          "cause": "固有 .sop-scroll-fill の物理 width:1px が横向きにも残る。"
+        }
+      ],
+      "evidence": [
+        "measurements-2.json",
+        "evidence-2/scroll-portable-sheet.jpg",
+        "scroll-measurements-2.json"
+      ]
+    },
+    {
+      "id": "enamel-needle-scroll",
+      "number": 66,
+      "verdict": "changes_required",
+      "note": "針と糸を連想する縦向きは成立。実ドラッグ・キー・ホイールは両軸で動くが、横向きの軌道が消失に近い短さになる。",
+      "findings": [
+        {
+          "kind": "reproduced_visual_defect",
+          "description": "凍結 portable 横向きの軌道幅が10px。可動範囲に糸の軌道が描かれず針だけが離れて移動する。",
+          "cause": "固有 .sop-scroll-track の width:10px に横向きの上書きがない。"
+        }
+      ],
+      "evidence": [
+        "measurements-2.json",
+        "evidence-2/scroll-portable-sheet.jpg",
+        "scroll-measurements-2.json"
+      ]
+    },
+    {
+      "id": "parallel-pencil-scroll",
+      "number": 71,
+      "verdict": "pass",
+      "note": "細い鉛筆軸と目盛りが独自の軌道を形成する。縦横の実ドラッグ・Home/End・矢印・ホイール・短い内容への変化を確認。",
+      "findings": [],
+      "evidence": [
+        "measurements-2.json",
+        "evidence-2/scroll-portable-sheet.jpg",
+        "scroll-measurements-2.json"
+      ]
+    },
+    {
+      "id": "everyday-select",
+      "number": 87,
+      "verdict": "pass",
+      "note": "ラベルとフィールドが一枚の面に統合され、操作対象が明快。開いた項目の文字、狭幅、長い選択値、キーボード選択を保持。",
+      "findings": [],
+      "evidence": [
+        "measurements-2.json",
+        "evidence-2/portable-2-sheet.jpg"
+      ]
+    },
+    {
+      "id": "dense-list-select",
+      "number": 88,
+      "verdict": "pass",
+      "note": "密度を保ちつつラベル板の分離感が解消。長い選択値と狭幅でも項目が読め、hover補助文字のコントラストは約5.62:1。",
+      "findings": [],
+      "evidence": [
+        "measurements-2.json",
+        "evidence-2/portable-2-sheet.jpg"
+      ]
+    },
+    {
+      "id": "warm-form-select",
+      "number": 90,
+      "verdict": "pass",
+      "note": "暖色の見出しと区切りが一枚のフォーム面としてまとまる。長文、狭幅、選択操作を保持し、hover補助文字は約5.01:1。",
+      "findings": [],
+      "evidence": [
+        "measurements-2.json",
+        "evidence-2/portable-2-sheet.jpg"
+      ]
+    }
+  ],
+  "coverage": "Chromium の portable と実 gallery。通常、hover入口・解除・再進入、320px、長文、キーボード、reduced motion、forced colors。scrollは内容挿入、両軸実ドラッグ/キー/ホイール/動的短縮。初回20経路の作者ハッシュ一致・page errorなし。再実測scroll-measurements-2のgalleryは修正中の値を含むため旧版判定根拠から除外。凍結portableを確定根拠とする。全ブラウザ・全入力形態の無欠陥保証ではない。"
+}

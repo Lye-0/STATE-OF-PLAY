@@ -1,8 +1,17 @@
 .sop-surface.sop-cool-inset-card{position:relative;isolation:isolate;box-sizing:border-box;min-width:0;width:100%}.sop-surface.sop-cool-inset-card .sop-surface-content{position:relative;z-index:1;padding:var(--sop-padding,28px);min-width:0}
-/* Cool Inset Card — 沈んだ線と穏やかな陰影で境界を示す、寒色の入力領域用カード。 */
+/* Cool Inset Card — 小さな見出しと凹んだ本文領域で、設定や情報のまとまりを作る寒色のカード。 */
 .sop-surface.sop-cool-inset-card{color:#263744;--sop-padding:28px;transition:box-shadow .4s,border-color .4s}.sop-surface.sop-cool-inset-card::before,.sop-surface.sop-cool-inset-card::after{content:"";position:absolute;pointer-events:none;transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .4s,background .4s}.sop-surface.sop-cool-inset-card .sop-surface-content h3{color:inherit;font:500 25px/1.2 Georgia,serif;margin:0 0 12px}.sop-surface.sop-cool-inset-card .sop-surface-content p{color:inherit;opacity:.8;font:13px/1.7 system-ui;margin:0} .sop-surface.sop-cool-inset-card{background:#e0e7ee;border:1px solid #a8b8c8;border-radius:7px;box-shadow:inset 0 1px 3px #344a6020;--sop-padding:24px}.sop-surface.sop-cool-inset-card .sop-surface-content h3{font:500 20px/1.4 system-ui}
 .sop-surface.sop-cool-inset-card{max-width:100%}.sop-surface.sop-cool-inset-card,.sop-surface.sop-cool-inset-card *{box-sizing:border-box}.sop-surface.sop-cool-inset-card :is(button,input,textarea,a){min-width:0}
 .sop-surface.sop-cool-inset-card:focus-visible,.sop-surface.sop-cool-inset-card :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
+/* A header and a recessed content well, suited to grouped settings. */
+.sop-surface.sop-cool-inset-card{background:#d6e0e7;border:1px solid #a3b4c1;border-radius:7px;box-shadow:inset 0 1px #f5f8fa;--sop-padding:18px}
+.sop-surface.sop-cool-inset-card .sop-surface-content{padding:var(--sop-padding);display:grid;gap:13px}
+.sop-surface.sop-cool-inset-card .sop-surface-content h3{font:600 14px/1.5 system-ui;margin:0;padding:0 3px;overflow-wrap:anywhere}
+.sop-surface.sop-cool-inset-card .sop-surface-content p{font:13px/1.75 system-ui;opacity:1;margin:0;padding:17px;background:#edf2f5;border:1px solid #b5c4ce;border-radius:3px;box-shadow:inset 0 2px 3px #354d6224;overflow-wrap:anywhere}
+
+
+.sop-surface.sop-cool-inset-card{container-type:inline-size}
+@container (max-width:300px){.sop-surface.sop-cool-inset-card .sop-surface-content{padding:14px;gap:9px}.sop-surface.sop-cool-inset-card .sop-surface-content p{padding:11px;font-size:12px;line-height:1.65}}
 @media(prefers-reduced-motion:reduce){.sop-surface.sop-cool-inset-card,.sop-surface.sop-cool-inset-card *,.sop-surface.sop-cool-inset-card::before,.sop-surface.sop-cool-inset-card::after,.sop-surface.sop-cool-inset-card *::before,.sop-surface.sop-cool-inset-card *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-surface.sop-cool-inset-card[data-sop-paused] *,.sop-surface.sop-cool-inset-card[data-paused=true] *,.sop-surface.sop-cool-inset-card[data-motion-running=false] *,.sop-surface.sop-cool-inset-card[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-surface.sop-cool-inset-card{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-surface.sop-cool-inset-card :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}

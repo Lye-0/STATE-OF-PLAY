@@ -3,7 +3,7 @@ import React from 'react';
 import { useScrollArea, type ScrollAreaProps } from '../../../../shared/use-scroll-area';
 import '../styles.css';
 export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
-/** エナメル針の細い光を追うスクロール。つまみの先端を分けて進行方向を読む。 */
+/** 暗い糸穴と鋭い先端を持つ細いエナメル針。斜めの糸を思わせるレールに沿って、実際の読書位置を示す。 */
 export default function EnamelNeedleScroll(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);

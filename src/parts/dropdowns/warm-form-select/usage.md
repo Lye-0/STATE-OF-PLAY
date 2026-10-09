@@ -1,9 +1,9 @@
 # Warm Form Select
 
-説明と補助ラベルのコントラストを確保。
+暖かい面の小さな活字ラベルと、細い区切りの下に置いた選択値。説明と操作の重みを分ける。
 
 
-説明と補助ラベルのコントラストを確保。
+暖かい面の小さな活字ラベルと、細い区切りの下に置いた選択値。説明と操作の重みを分ける。
 
 ## 選択肢の差し替え
 Reactではitems配列へvalue/label/description/icon/badgeを渡します。Vanillaではmarkup.html内のdata-valueと表示内容を編集し、init(root)します。動的にDOMの選択肢を変更した後はcontroller.refresh()を呼びます。

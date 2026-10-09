@@ -1,5 +1,5 @@
 @import "../../../shared/action-button-base.css";
-/* 象牙色の押し面から下へ出る二つの押し子を、露出したゴムの輪と銀の足が受ける。ホバーでは局所的な弾性部がたわみ、上の文字面と操作位置は固定する。 */
+/* 象牙色の押し面を、一続きの細かなゴム層と薄い金属底板が受ける。ホバーでは局所的な弾性部がたわみ、上の文字面と操作位置は固定する。 */
 .sop-action.sop-ivory-gasket-button{position:relative;isolation:isolate;display:inline-grid;grid-template-columns:minmax(0,1fr) 20px;align-items:center;justify-content:center;gap:18px;min-height:72px;min-width:200px;max-width:100%;padding:23px 30px;border:0;border-radius:3px;background:transparent;color:var(--button-ink,#293b49);font:600 14px/1.4 system-ui;letter-spacing:.025em;box-shadow:none;overflow:visible;transform:none;--sop-action-accent:#90b9df}
 .sop-action.sop-ivory-gasket-button,.sop-action.sop-ivory-gasket-button *,.sop-action.sop-ivory-gasket-button *::before,.sop-action.sop-ivory-gasket-button *::after{box-sizing:border-box}
 .sop-action.sop-ivory-gasket-button .sop-action-art{position:absolute;inset:0;z-index:0;overflow:visible;pointer-events:none;opacity:1}
@@ -13,15 +13,13 @@
 .sop-action.sop-ivory-gasket-button:focus-visible{outline:2px solid var(--sop-focus,#90b9df);outline-offset:4px}
 .sop-action.sop-ivory-gasket-button:disabled,.sop-action.sop-ivory-gasket-button[aria-disabled=true]:not([aria-busy=true]){opacity:.48;cursor:not-allowed}
 
-.sop-action.sop-ivory-gasket-button{min-height:90px;padding:24px 30px 44px;--button-ink:#3b4148}
-.sop-action.sop-ivory-gasket-button .sop-action-art i:first-child{inset:0 0 34px;background:#ede8da;border:1px solid #bdb7a6;clip-path:polygon(0 0,100% 0,100% 82%,calc(100% - 10px) 100%,10px 100%,0 82%);box-shadow:inset 0 1px #faf6ec}
-.sop-action.sop-ivory-gasket-button .sop-action-art i:nth-child(2),.sop-action.sop-ivory-gasket-button .sop-action-art i:nth-child(3){bottom:6px;width:32px;height:28px;border:6px solid #536e7b;border-radius:45%;background:transparent;box-shadow:inset 0 1px #a6bac4;transform-origin:center bottom}
-.sop-action.sop-ivory-gasket-button .sop-action-art i:nth-child(2){left:20px}.sop-action.sop-ivory-gasket-button .sop-action-art i:nth-child(3){right:20px}
-.sop-action.sop-ivory-gasket-button .sop-action-art i:nth-child(4),.sop-action.sop-ivory-gasket-button .sop-action-art i:nth-child(5){bottom:0;width:40px;height:6px;border-block:1px solid #9fb3be;background:#7792a3;border-radius:2px;z-index:1}
-.sop-action.sop-ivory-gasket-button .sop-action-art i:nth-child(4){left:16px}.sop-action.sop-ivory-gasket-button .sop-action-art i:nth-child(5){right:16px}
-.sop-action.sop-ivory-gasket-button .sop-action-art i:nth-child(6){left:30px;right:30px;bottom:19px;height:20px;background:linear-gradient(90deg,#ede8da 0 12px,transparent 12px calc(100% - 12px),#ede8da calc(100% - 12px));z-index:1}
-.sop-action.sop-ivory-gasket-button:not(:disabled):not([aria-disabled=true]):is(:hover,:focus-visible,:active) .sop-action-art i:nth-child(2),.sop-action.sop-ivory-gasket-button:not(:disabled):not([aria-disabled=true]):is(:hover,:focus-visible,:active) .sop-action-art i:nth-child(3){transform:scaleY(.78)}
-.sop-action.sop-ivory-gasket-button:not(:disabled):not([aria-disabled=true]):is(:hover,:focus-visible,:active) .sop-action-art i:nth-child(6){transform:translateY(5px)}
+.sop-action.sop-ivory-gasket-button{min-height:76px;padding:21px 28px 30px;--button-ink:#35434a}
+.sop-action.sop-ivory-gasket-button .sop-action-art i:first-child{inset:0 0 14px;background:#f0eadc;border:1px solid #c9c0ad;border-radius:7px 7px 3px 3px;box-shadow:inset 0 1px #fffaf0}
+.sop-action.sop-ivory-gasket-button .sop-action-art i:nth-child(2){left:8px;right:8px;bottom:6px;height:11px;background:repeating-linear-gradient(0deg,#344b57 0 2px,#6b818b 2px 3px);border-radius:0 0 3px 3px;transform-origin:center bottom}
+.sop-action.sop-ivory-gasket-button .sop-action-art i:nth-child(3){left:5px;right:5px;bottom:2px;height:4px;border-top:1px solid #c3d0d3;background:#80949e;border-radius:0 0 3px 3px}
+.sop-action.sop-ivory-gasket-button .sop-action-art i:nth-child(4){left:13px;right:13px;bottom:14px;height:1px;background:#1f354055}
+.sop-action.sop-ivory-gasket-button .sop-action-art i:nth-child(5),.sop-action.sop-ivory-gasket-button .sop-action-art i:nth-child(6){display:none}
+.sop-action.sop-ivory-gasket-button:not(:disabled):not([aria-disabled=true]):is(:hover,:focus-visible,:active) .sop-action-art i:nth-child(2){transform:scaleY(.64)}
 
 @media(prefers-reduced-motion:reduce){.sop-action.sop-ivory-gasket-button,.sop-action.sop-ivory-gasket-button *,.sop-action.sop-ivory-gasket-button::before,.sop-action.sop-ivory-gasket-button::after,.sop-action.sop-ivory-gasket-button *::before,.sop-action.sop-ivory-gasket-button *::after{transition:none!important;animation:none!important}}
 @media(forced-colors:active){.sop-action.sop-ivory-gasket-button{color:ButtonText;background:ButtonFace;border:1px solid ButtonText;box-shadow:none}.sop-action.sop-ivory-gasket-button .sop-action-art,.sop-action.sop-ivory-gasket-button::before,.sop-action.sop-ivory-gasket-button::after{display:none}.sop-action.sop-ivory-gasket-button:focus-visible{outline-color:Highlight}}

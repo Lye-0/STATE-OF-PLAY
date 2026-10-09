@@ -1,8 +1,18 @@
 .sop-surface.sop-compact-note-panel{position:relative;isolation:isolate;box-sizing:border-box;min-width:0;width:100%}.sop-surface.sop-compact-note-panel .sop-surface-content{position:relative;z-index:1;padding:var(--sop-padding,28px);min-width:0}
-/* Compact Note Panel — 短い情報をまとめる、横の細い印だけを持つコンパクトな面。 */
+/* Compact Note Panel — 短い側見出しと本文を二列にまとめるコンパクトな補足面。狭幅では縦に並べ、読み幅を保つ。 */
 .sop-surface.sop-compact-note-panel{color:#263744;--sop-padding:28px;transition:box-shadow .4s,border-color .4s}.sop-surface.sop-compact-note-panel::before,.sop-surface.sop-compact-note-panel::after{content:"";position:absolute;pointer-events:none;transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .4s,background .4s}.sop-surface.sop-compact-note-panel .sop-surface-content h3{color:inherit;font:500 25px/1.2 Georgia,serif;margin:0 0 12px}.sop-surface.sop-compact-note-panel .sop-surface-content p{color:inherit;opacity:.8;font:13px/1.7 system-ui;margin:0} .sop-surface.sop-compact-note-panel{background:#eae6df;border:1px solid #b9b2a6;border-left:3px solid #776957;border-radius:3px;--sop-padding:18px 21px}.sop-surface.sop-compact-note-panel .sop-surface-content h3{font:600 18px/1.4 system-ui}
 .sop-surface.sop-compact-note-panel{max-width:100%}.sop-surface.sop-compact-note-panel,.sop-surface.sop-compact-note-panel *{box-sizing:border-box}.sop-surface.sop-compact-note-panel :is(button,input,textarea,a){min-width:0}
 .sop-surface.sop-compact-note-panel:focus-visible,.sop-surface.sop-compact-note-panel :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
+/* Compact two-column note: heading is a side label rather than a hero. */
+.sop-surface.sop-compact-note-panel{background:#f4f1e9;border:1px solid #c9c1b1;border-left:3px solid #817157;border-radius:3px;--sop-padding:16px}
+.sop-surface.sop-compact-note-panel .sop-surface-content{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr);gap:12px 18px;align-items:start;padding:var(--sop-padding)}
+.sop-surface.sop-compact-note-panel .sop-surface-content h3{font:600 15px/1.5 system-ui;margin:0;overflow-wrap:anywhere}
+.sop-surface.sop-compact-note-panel .sop-surface-content p{font:13px/1.75 system-ui;margin:0;opacity:1;border-inline-start:1px solid #c9c1b1;padding-inline-start:14px;overflow-wrap:anywhere}
+.sop-surface.sop-compact-note-panel .sop-surface-content>:not(h3):not(p){grid-column:1/-1}
+
+
+.sop-surface.sop-compact-note-panel{container-type:inline-size}
+@container (max-width:300px){.sop-surface.sop-compact-note-panel .sop-surface-content{grid-template-columns:1fr;gap:10px}.sop-surface.sop-compact-note-panel .sop-surface-content p{border-inline:0;padding-inline:0}}
 @media(prefers-reduced-motion:reduce){.sop-surface.sop-compact-note-panel,.sop-surface.sop-compact-note-panel *,.sop-surface.sop-compact-note-panel::before,.sop-surface.sop-compact-note-panel::after,.sop-surface.sop-compact-note-panel *::before,.sop-surface.sop-compact-note-panel *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-surface.sop-compact-note-panel[data-sop-paused] *,.sop-surface.sop-compact-note-panel[data-paused=true] *,.sop-surface.sop-compact-note-panel[data-motion-running=false] *,.sop-surface.sop-compact-note-panel[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-surface.sop-compact-note-panel{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-surface.sop-compact-note-panel :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}

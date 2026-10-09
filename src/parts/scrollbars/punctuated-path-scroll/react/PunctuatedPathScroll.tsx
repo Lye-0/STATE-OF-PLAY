@@ -3,7 +3,7 @@ import React from 'react';
 import { useScrollArea, type ScrollAreaProps } from '../../../../shared/use-scroll-area';
 import '../styles.css';
 export type { ScrollAreaProps } from '../../../../shared/use-scroll-area';
-/** 句点の列に沿って現在地を示す短い筆記片。既読の点だけが細い連続線へつながる。 */
+/** 点列の軌道を、句読点形の終端を持つ細いつまみでたどる。通過した点は一本の読了線へつながる。 */
 export default function PunctuatedPathScroll(props: ScrollAreaProps) {
   const { children, orientation = 'vertical', viewportLabel = 'スクロールする内容', scrollbarLabel = 'コンテンツのスクロール位置', onProgressChange: _onProgressChange, className = '', ...attributes } = props;
   const {root, viewportId} = useScrollArea(props);

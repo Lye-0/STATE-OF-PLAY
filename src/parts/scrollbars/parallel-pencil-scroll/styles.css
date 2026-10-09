@@ -1,5 +1,5 @@
 @import "../../../shared/scrollbar-base.css";
-/* 細い木軸のつまみに、削った木口・暗い芯・銀の留めを分けた鉛筆。縦の面の色と先端の形で素材を読ませ、単なる細いつまみの色違いにしない。 */
+/* 木口と芯を長く見せた青灰の鉛筆軸を、並行する定規の目盛りへ合わせる。細さと実際のスクロール操作を保つ。 */
 .sop-scroll-area.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll{--sop-scroll-gutter:32px;--sop-scroll-width:4px;--sop-handle-width:9px;--sop-scroll-radius:3px;--sop-scroll-ink:#e3e9ed;--sop-scroll-muted:#b0bec7;--sop-scroll-track:#4c6677;--sop-scroll-thumb:#c5d2d9;--sop-scroll-accent:#a8c3d1;background:transparent;max-width:100%;min-width:0}
 .sop-scroll-area.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll,.sop-scroll-area.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll *,.sop-scroll-area.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll *::before,.sop-scroll-area.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll *::after{box-sizing:border-box}
 .sop-scroll-area.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll .sop-scroll-viewport{border:0;background:transparent;border-radius:0}
@@ -21,3 +21,19 @@
 @media(pointer:coarse){.sop-scroll-area.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll{--sop-scroll-gutter:44px}}
 @media(prefers-reduced-motion:reduce){.sop-scroll-area.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll,.sop-scroll-area.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll *,.sop-scroll-area.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll *::before,.sop-scroll-area.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media(forced-colors:active){.sop-scroll-area.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll{padding:0;color:CanvasText}.sop-scroll-area.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll .sop-scroll-content{color:CanvasText}.sop-scroll-area.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll .sop-scroll-viewport{border:1px solid ButtonText}.sop-scroll-area.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll .sop-scroll-rail{display:none}}
+
+/* Refined individual rail material. */
+.sop-scroll-area.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll .sop-scroll-handle{background:linear-gradient(90deg,#3b5364 0 2px,#7894a4 2px 5px,#c0d0d7 5px 6px,#344a58 6px);clip-path:polygon(0 0,100% 0,100% calc(100% - 20px),50% 100%,0 calc(100% - 20px))}
+.sop-scroll-area.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll .sop-scroll-grip::before{height:20px;background:linear-gradient(0deg,#29353b 0 6px,#d2b187 6px 10px,#f0d7b4 10px);clip-path:polygon(0 0,100% 0,50% 100%)}
+.sop-scroll-area.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll .sop-scroll-track{left:calc(50% - 7px);background:#b8b2a5}
+.sop-scroll-area.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll .sop-scroll-ticks{display:block;position:absolute;inset:0 auto 0 calc(50% - 11px);width:6px;background:repeating-linear-gradient(0deg,#b8b2a5 0 1px,transparent 1px 16px)}
+.sop-scroll-area.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll .sop-scroll-fill{background:#d6c4a4;opacity:1}
+.sop-scroll-area.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll[data-orientation=horizontal] .sop-scroll-track{left:0;top:calc(50% - 7px)}
+.sop-scroll-area.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll[data-orientation=horizontal] .sop-scroll-ticks{inset:calc(50% - 11px) 0 auto;height:6px;width:auto;background:repeating-linear-gradient(90deg,#b8b2a5 0 1px,transparent 1px 16px)}
+.sop-scroll-area.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll[data-orientation=horizontal] .sop-scroll-handle{clip-path:polygon(0 0,calc(100% - 20px) 0,100% 50%,calc(100% - 20px) 100%,0 100%)}
+.sop-scroll-area.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll[data-orientation=horizontal] .sop-scroll-grip::before{width:20px;height:auto;background:linear-gradient(270deg,#29353b 0 6px,#d2b187 6px 10px,#f0d7b4 10px)}
+@media(forced-colors:active){.sop-scroll-area.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll .sop-scroll-rail{display:none}}
+
+
+/* The rail material rotates with the native horizontal axis. */
+.sop-scroll-area.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll.sop-parallel-pencil-scroll[data-orientation=horizontal] .sop-scroll-handle{background:linear-gradient(0deg,#3b5364 0 2px,#7894a4 2px 5px,#c0d0d7 5px 6px,#344a58 6px)}
