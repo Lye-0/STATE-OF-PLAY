@@ -1,25 +1,21 @@
 {
   "scope": 225,
-  "completed": 215,
-  "activeImplementation": "B022 round 12 frozen",
-  "activeReview": "B022",
+  "completed": 225,
+  "activeImplementation": null,
+  "activeReview": null,
   "lastPushed": {
-    "batch": "B023",
-    "commit": "f2cd4479a38994bcef51f42162d4e340fba6695b"
+    "batch": "B022",
+    "commit": "c3ea300322909ff51a5bfdb5624c3cb1eb4e0cec"
   },
   "baseCommit": "b2ff64fa74e3bcc98626c281d0833fbd6851bb12",
   "reviewModel": "gpt-6-astra",
   "reviewEffort": "medium",
-  "preparedBatches": [
-    "B022"
-  ],
+  "preparedBatches": [],
   "lastMaintenancePush": {
     "commit": "25e9b806",
     "reason": "Reveal context-menu keyboard focus inside its scrolling panel"
   },
-  "preparedRounds": {
-    "B022": 12
-  },
+  "preparedRounds": {},
   "latestMainVerification": {
     "workbenchVite": "41 passed",
     "typecheck": "app/react/tools passed",
@@ -28,6 +24,23 @@
     "B021": "192 six-item navigation layout conditions at round 11; 24 closed-target description conditions at round 12",
     "B022": "56 fresh long-content table conditions passed at round 11; 120 layout conditions at round 10",
     "ornaments": "6 gallery checks passed",
-    "B023": "20 normal/forced/reduced/narrow geometry and element-containment conditions passed at round 5"
-  }
+    "B023": "20 normal/forced/reduced/narrow geometry and element-containment conditions passed at round 5",
+    "finalScope": "225 targets / 23 independent approvals / exact reviewed source hashes passed",
+    "productionBuild": "passed on final source, 3m",
+    "standaloneReport": {
+      "parts": 225,
+      "images": 1308,
+      "bytes": 10660612,
+      "durationMs": 5291,
+      "offline": true,
+      "loadedAs": "embedded HTML content (file URL restricted by browser policy)",
+      "pagination": true,
+      "search": true,
+      "zoom": true,
+      "narrow": true,
+      "errors": [],
+      "requests": []
+    }
+  },
+  "state": "completed"
 }
