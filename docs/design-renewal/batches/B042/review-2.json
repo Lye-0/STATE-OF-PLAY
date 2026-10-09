@@ -1,0 +1,238 @@
+{
+  "batch": "B042",
+  "round": 2,
+  "snapshot": "docs/design-renewal/batches/B042/snapshot/round-2",
+  "overall": "changes_requested",
+  "parts": [
+    {
+      "number": "R575",
+      "id": "ledger-procedure-wizard",
+      "verdict": "redesign",
+      "normalDesignVerdict": "redesign",
+      "assessment": "上下の大きい丸端で旧小表より外形は変わったが、実装はnavの片丸border-radiusとfooterの逆片丸border-radius、間の普通の入力紙である。巻き／返り面の立体的連続が見えず、Aの独自の主構造として不足。",
+      "findings": [
+        {
+          "key": "B042-R575-01",
+          "severity": "major",
+          "kind": "design",
+          "evidence": [
+            "docs/design-renewal/batches/B042/captures/reviewer-wizards-2/ledger-procedure-wizard-initial.png"
+          ],
+          "problem": "巻帳を名付ける二つの丸角区画。上下の丸角区画と14pxの水平線が返り面を代替している。実章・入力・操作は通常の上中下配置のままで、巻かれた同じ紙の表裏という説明を実像が支えない。",
+          "proposal": "二つの丸いキャップを撤去。一つの幅広い巻き返しを上側だけに設け、実章を載せる前面が40〜56pxの連続曲面を通って入力紙の背面へ入る構造を試す。曲面の両端には実小口／裏面を露出し、入力紙はその下から16px重なって自由端へ伸ばす。footerは別キャップにせずその自由端に置く。R371の上下二円筒、R138の横円筒に戻さず、一枚の紙が実章→入力→操作へ連続する関係を主形にする。"
+        }
+      ],
+      "nearestComparisons": [
+        "元R575",
+        "R371",
+        "R138",
+        "R553"
+      ]
+    },
+    {
+      "number": "R576",
+      "id": "index-flap-wizard",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "Tの索引札と本文紙を保ち、14pxの実章名／28px見出し／本文の階層が整った。少数・多手順でも読む面が成立する。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R576",
+        "R571",
+        "R163"
+      ]
+    },
+    {
+      "number": "R577",
+      "id": "control-sequence-wizard",
+      "verdict": "redesign",
+      "normalDesignVerdict": "redesign",
+      "assessment": "青い制御棚、面取り入力板、footer梁はいずれも一般的な段付き矩形。Aの主形は面取り外周の足し合わせに留まり、実入力との固有の関係が弱い。",
+      "findings": [
+        {
+          "key": "B042-R577-01",
+          "severity": "major",
+          "kind": "design",
+          "evidence": [
+            "docs/design-renewal/batches/B042/captures/reviewer-wizards-2/control-sequence-wizard-initial.png"
+          ],
+          "problem": "面取りケースの範囲に留まる制御盤。初期・狭幅・長いエラーで、章の普通のボタン群と普通のフォームを上下三つの青い面取り区画に入れた構図が変わらない。96px切口を大きくしても機構は生まれていない。",
+          "proposal": "外周棚と入力板を撤去し、実labelと実入力を一組の開いた制御湾として扱う案。labelを24〜32pxの後方立面、native inputを48px以上の平らな床に配置し、同じ片側の幅28pxの折れた支持から二本の短い片持ち腕が床の上下へ6pxずつ入る。反対側は完全に開く。textareaは同じ支持の間隔を自然高で延ばす。章は後方の一本の実操作列へまとめ、現在湾との関係を選択色だけでなく保持位置で示す。偽ノブや計器を追加せず、R537の画面＋首＋ログ台、R297の二面consoleとは異なる実label/inputの断面を作る。"
+        }
+      ],
+      "nearestComparisons": [
+        "元R577",
+        "R397",
+        "R537",
+        "R297"
+      ]
+    },
+    {
+      "number": "R578",
+      "id": "stitched-journey-wizard",
+      "verdict": "adjust",
+      "normalDesignVerdict": "pass",
+      "assessment": "88pxの実穴と番号を横から保持する布橋はAの主形として成立。ただし長名で番号が穴の中心から外れ、通常形の接合が維持されない。",
+      "findings": [
+        {
+          "key": "B042-R578-01",
+          "severity": "major",
+          "kind": "design",
+          "evidence": [
+            "docs/design-renewal/batches/B042/captures/reviewer-wizards-2/stitched-journey-wizard-initial.png",
+            "docs/design-renewal/batches/B042/captures/reviewer-wizards-2/stitched-journey-wizard-long-rtl-320.png"
+          ],
+          "problem": "長い実章名で穴と番号橋の中心がずれる。320px RTLの長名では最初の番号が穴下部へ移動し、橋が穴下端を横切る。liの穴cy56px固定に対し番号が可変行高の中央へ配置される。",
+          "proposal": "穴／橋の中心を実番号へ追従させる、または番号をblock-start34pxで固定して長い章名のみ自然高へ伸ばす。通常の88/44/14px関係は保持する。"
+        }
+      ],
+      "nearestComparisons": [
+        "元R578",
+        "R476",
+        "R538",
+        "R378"
+      ]
+    },
+    {
+      "number": "R579",
+      "id": "open-plan-wizard",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "Tの大きい実章数字と余白を維持。現在の下線、見出し、実入力の階層は静かで一貫し、名称だけの仮想機構を追加していない。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R579",
+        "R565"
+      ]
+    },
+    {
+      "number": "R580",
+      "id": "bookend-stage-wizard",
+      "verdict": "adjust",
+      "normalDesignVerdict": "adjust",
+      "assessment": "全高の曲がる二側壁と共通台は主形として読めるが、紙を保持する接点とエラー時の床までの連続が成立しない。",
+      "findings": [
+        {
+          "key": "B042-R580-01",
+          "severity": "major",
+          "kind": "design",
+          "evidence": [
+            "docs/design-renewal/batches/B042/captures/reviewer-wizards-2/bookend-stage-wizard-initial.png",
+            "docs/design-renewal/batches/B042/captures/reviewer-errors-2/bookend-stage-wizard-768-ltr.png"
+          ],
+          "problem": "側壁が読む紙と共通台へ届かない。wideは壁40px／紙開始52pxで12px空き、narrowは22px／28pxで6px空く。長いerrorはpanels外に入り、壁の下端とfooter台の間を大きく分断する。",
+          "proposal": "壁をpanelsだけでなく本文＋errorの自然高全体へ掛け、下端を共通台へ2〜4px重ねる。内側の受けを紙へ4〜6px実際に重ね、本文の字はその内側へ保護する。通常形は保ち、空白を背景色で埋めて接触を偽装しない。"
+        }
+      ],
+      "nearestComparisons": [
+        "元R580",
+        "R320",
+        "R564",
+        "R537"
+      ]
+    },
+    {
+      "number": "R581",
+      "id": "clipped-page-wizard",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "Tの下端の実切込み札を保持。native章・本文・操作は変形せず、少数／多手順でも索引と本文の配分が安定。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R581",
+        "R576",
+        "R193"
+      ]
+    },
+    {
+      "number": "R582",
+      "id": "blueprint-stage-wizard",
+      "verdict": "redesign",
+      "normalDesignVerdict": "redesign",
+      "assessment": "対角の大きい切口と12px小口は見えるが、通常の青い面取り板の中へ普通のnavと白いフォームを置く構成。Aの独立した造形として不十分。",
+      "findings": [
+        {
+          "key": "B042-R582-01",
+          "severity": "major",
+          "kind": "design",
+          "evidence": [
+            "docs/design-renewal/batches/B042/captures/reviewer-wizards-2/blueprint-stage-wizard-initial.png"
+          ],
+          "problem": "切角を主形にした通常の製図板。64/104pxの対角切口以外は均一な一枚板と内側の白い矩形。実章、入力、次へ操作と板の組立関係がなく、R577や従来の青いフォームに近い。",
+          "proposal": "一枚の外板を廃し、実章を載せる細長い後方の立面と、実フォームを載せる前方の広い作業面を非対称な二本の斜め支持で組む案。例えば章面60px、作業面との実空隙32px、二支持幅20pxを異なる角度で両面へ8pxずつ差し込む。作業面は片側に開く一枚の薄い紙、footerは同じ紙の自由端。狭幅は章面を縦積みにして支持を紙の上側へ収め、実章名の幅を削らない。R573の現在章一枚から出る折橋、R535の二箱ヒンジ、R537の中央首一本と区別し、後方章面／前方書く面の組立全体で判断する。"
+        }
+      ],
+      "nearestComparisons": [
+        "元R582",
+        "R577",
+        "R573",
+        "R535",
+        "R537"
+      ]
+    },
+    {
+      "number": "R583",
+      "id": "ribbon-stage-wizard",
+      "verdict": "adjust",
+      "normalDesignVerdict": "adjust",
+      "assessment": "全高の帯と大きい自由端は旧短帯より明確。ただし最も重要な入力紙が帯・nav・footerのいずれにも接触せず浮いている。",
+      "findings": [
+        {
+          "key": "B042-R583-01",
+          "severity": "major",
+          "kind": "design",
+          "evidence": [
+            "docs/design-renewal/batches/B042/captures/reviewer-wizards-2/ribbon-stage-wizard-initial.png",
+            "docs/design-renewal/batches/B042/captures/reviewer-errors-2/ribbon-stage-wizard-768-ltr.png"
+          ],
+          "problem": "入力紙を保持しない帰還帯。wideでは上下24px・帯との間24px、narrowも上下20px・横16pxの実空隙があり、中央のフォーム紙を保持する部材がない。errorも別の浮いた紙として追加される。",
+          "proposal": "紙とerrorを一つの読む面として扱い、帰還帯の一部分が紙の実切口を通る、または紙の上下端へ二つの短い受けで実際に接触する構成へ。主形の全高帯と自由端は保持し、R540の対角隠れ帯／二切口をそのままコピーせず、外周帰還のどこが紙を保持するかを一箇所で明瞭にする。"
+        }
+      ],
+      "nearestComparisons": [
+        "元R583",
+        "R540",
+        "R283",
+        "R463"
+      ]
+    },
+    {
+      "number": "R584",
+      "id": "ceramic-stage-wizard",
+      "verdict": "adjust",
+      "normalDesignVerdict": "pass",
+      "assessment": "上下の広がる肩と狭い胴を一つの全高の外形へまとめ、旧丸番号付き角丸フォームから主形は変わった。通常造形は合格。ただし多手順狭幅の実章名の幅が不足。",
+      "findings": [
+        {
+          "key": "B042-R584-01",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": [
+            "docs/design-renewal/batches/B042/captures/reviewer-wizards-2/ceramic-stage-wizard-initial.png",
+            "docs/design-renewal/batches/B042/captures/reviewer-wizard-counts-2"
+          ],
+          "problem": "4章以上の狭幅名欄68px。独立counts検査で actual label reading width 68 を再現。native実章名の読む幅が基準72px未満で、長名の縦伸びを増やす。",
+          "proposal": "親has(4th)のpaddingを含めて狭幅の横予約を整理し、native番号44pxを保ったまま実名欄72px以上を確保。主担当round3の修正は本round2の合格根拠に含めない。"
+        }
+      ],
+      "nearestComparisons": [
+        "元R584",
+        "R504",
+        "R464"
+      ]
+    }
+  ],
+  "checks": [
+    "固定source100 SHA-256一致、native配布CSS10一致：captures/reviewer-hashes-2.json。",
+    "実portable native全10：入力・validation・Enter/Next/Back/完了・controlled・async error・更新時DOM/Undo/caret・disabled・reset・empty・長文320/390/768 LTR/RTL・forced/reduced・destroyを独立helperで確認。reviewer-wizards-2。",
+    "1/2/4/7章の全現在位置×320/768 LTR/RTL：前9件成功、R584の名欄68pxで停止。未実行のR584後続条件は成功扱いしない。reviewer-wizard-counts-2。",
+    "全10×3実fields×長いasync error×320/768 LTR/RTL=40条件、errorとinput/textarea交差0。reviewer-errors-2/checks.json。",
+    "全10×7長章名×320/768 LTR/RTL=40条件。通常motionでhover→leave→reenter後のnative名/入力の位置・寸法・font不変、横overflow0。reviewer-extra-2/checks.json。",
+    "元監査理由、元native before像と現在実像、既承認の近似構造を照合。検査成功とA造形の判定は分離。"
+  ],
+  "limits": [
+    "本レビューは固定round2対象。主担当のround3 R584修正は未評価。",
+    "React4形式の成功は主担当ログによる。本独立再実行はportable nativeを使用し、React全形式を重複実行していない。",
+    "再設計案は方向と検証可能な接合寸法の候補であり、案の採用だけで合格とはしない。実像・任意長文・狭幅で再評価する。"
+  ]
+}
