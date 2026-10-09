@@ -14,6 +14,17 @@ import { JSZip } from '../scripts/zip.ts';
 const {parts,bases}=buildCatalog();
 const layouts=['portable','original'] as const;
 
+test('controlled search exports declare their ReactDOM bridge in both React formats and layouts',()=>{
+ const part=parts.find(p=>p.id==='parallax-search')!,plain=parts.find(p=>p.id==='essential-dialog')!;
+ assert.equal(isLocalReference({request:'react-dom',module:true,start:0,end:0}),false);
+ for(const layout of layouts)for(const format of ['tsx','jsx'] as const){
+  assert.deepEqual(getDelivery(part,format,layout).externalDependencies,['react (18+)','react-dom (18+)']);
+  assert.deepEqual(JSON.parse(buildManifest(part,format,layout)).externalDependencies,['react (18+)','react-dom (18+)']);
+  assert.deepEqual(getDelivery(plain,format,layout).externalDependencies,['react (18+)']);
+ }
+ assert.deepEqual(getDelivery(part,'js','portable').externalDependencies,[]);
+});
+
 test('parts license reaches every part, delivery layout and prompt without entering the listing',()=>{
  const license=fs.readFileSync(path.join(ROOT,'PARTS-LICENSE'),'utf8').replaceAll('\r\n','\n');
  assert.ok(license.length>100);

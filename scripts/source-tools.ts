@@ -142,7 +142,7 @@ export function sourceReferences(code:string,filename:string):Reference[]{
 export function isLocalReference(ref: Reference): boolean {
   if (ref.module) {
     if (ref.request.startsWith('.')) return true;
-    if (!['react','react/jsx-runtime','react/jsx-dev-runtime'].includes(ref.request))
+    if (!['react','react/jsx-runtime','react/jsx-dev-runtime','react-dom'].includes(ref.request))
       throw new Error(`Undeclared external dependency or alias: ${ref.request}`);
     return false;
   }

@@ -26,6 +26,9 @@ export function createSearch(root:HTMLElement,provided:SearchOptions={}):Workben
  const state=():SearchState=>({query,filter,open,loading:loading||!!options.loading,results:visible.length,error:options.error??error});
  const updateActive=()=>{list.querySelectorAll<HTMLElement>('[role=option]').forEach((e,i)=>{e.setAttribute('aria-selected',String(i===active));e.dataset.active=String(i===active);});const el=list.children[active] as HTMLElement|undefined;if(el){input.setAttribute('aria-activedescendant',el.id);el.scrollIntoView({block:'nearest'});}else input.removeAttribute('aria-activedescendant');};
  function paint(){
+  const focused=document.activeElement instanceof HTMLElement?document.activeElement:undefined;
+  const focusedResult=focused&&list.contains(focused)?focused.closest<HTMLElement>('[data-result]')?.dataset.result:undefined;
+  const activeId=visible[active]?.id;
   host.querySelector<HTMLElement>('.wb-label')!.textContent=options.label??'検索';input.setAttribute('aria-label',options.label??'検索');if(options.name)input.name=options.name;else input.removeAttribute('name');
   input.disabled=!!options.disabled;input.placeholder=options.placeholder??'キーワードを入力';if(input.value!==query&&!composing)input.value=query;
   input.setAttribute('aria-expanded',String(open&&options.showResults!==false));input.setAttribute('aria-busy',String(loading||!!options.loading));
@@ -41,7 +44,13 @@ export function createSearch(root:HTMLElement,provided:SearchOptions={}):Workben
   message.textContent=failed|| (busy?'検索中…':!visible.length?'一致する候補がありません。':'');message.hidden=!message.textContent;
   list.hidden=!!busy||!!failed;count.textContent=busy?'…':`${visible.length} 件`;
   host.querySelector<HTMLButtonElement>('.wb-retry')!.hidden=!failed||!options.search;
-  active=Math.min(active,visible.length-1);updateActive();
+  active=activeId===undefined?-1:visible.findIndex(item=>item.id===activeId&&!item.disabled);
+  if(results.hidden||list.hidden||options.disabled)active=-1;
+  updateActive();
+  if(focusedResult&&!pointerOutside&&!life.dead&&(document.activeElement===focused||document.activeElement===document.body)){
+   const replacement=!results.hidden&&!list.hidden&&!options.disabled?Array.from(list.querySelectorAll<HTMLElement>('[data-result]')).find(e=>e.dataset.result===focusedResult&&e.getAttribute('aria-disabled')!=='true'):undefined;
+   if(replacement)replacement.focus({preventScroll:true});else if(!input.disabled)input.focus({preventScroll:true});
+  }
  }
  function schedule(){
   clearTimeout(timer);pending?.abort();const current=++request;error='';
@@ -50,8 +59,8 @@ export function createSearch(root:HTMLElement,provided:SearchOptions={}):Workben
   timer=window.setTimeout(async()=>{pending=new AbortController();try{const data=await options.search!(query,filter,pending.signal);if(life.dead||current!==request)return;items=unique(data);loading=false;paint();emit(root,state());}catch(e){if(life.dead||current!==request)return;if((e as Error).name==='AbortError')return;error=e instanceof Error?e.message:'検索に失敗しました。';loading=false;paint();}},Math.max(0,options.debounceMs??180));
  }
  function changeQuery(next:string){if(options.disabled)return;query=options.query===undefined?next:options.query;options.onQueryChange?.(next);active=-1;open=true;schedule();life.pulse('search');emit(root,{...state(),requestedQuery:next});}
- function close(){open=false;active=-1;paint();}
- function show(){if(options.disabled)return;open=true;paint();}
+ function close(){if(life.dead)return;open=false;active=-1;paint();}
+ function show(){if(life.dead||options.disabled)return;open=true;paint();}
  function select(index:number){const item=visible[index];if(!item||item.disabled||loading||options.loading)return;options.onResult?.(item);status.textContent=`${item.label} を選択しました。`;emit(root,{...state(),selected:item.id});close();}
  function submit(){if(options.disabled||composing)return;if(active>=0){const e=list.children[active] as HTMLElement;e?.click();return;}options.onSubmit?.(query,filter);status.textContent=`「${query||'すべて'}」を検索しました。`;emit(root,{...state(),submitted:true});life.pulse('submit');}
  input.addEventListener('focus',show,{signal:life.signal});
@@ -59,7 +68,7 @@ export function createSearch(root:HTMLElement,provided:SearchOptions={}):Workben
  input.addEventListener('compositionstart',()=>{composing=true;paint();},{signal:life.signal});
  input.addEventListener('compositionend',()=>{composing=false;changeQuery(input.value);},{signal:life.signal});
  input.addEventListener('keydown',e=>{
-  if(e.isComposing||composing)return;
+  if(e.isComposing||composing){if(e.key==='Enter')e.preventDefault();return;}
   if(e.key==='Escape'&&open){e.preventDefault();e.stopPropagation();close();}
   else if(['ArrowDown','ArrowUp'].includes(e.key)){e.preventDefault();show();const step=e.key==='ArrowDown'?1:-1;let i=active;for(let n=0;n<visible.length;n++){i=(i+step+visible.length)%visible.length;if(!visible[i].disabled){active=i;break;}}updateActive();}
   else if(e.key==='Enter'){e.preventDefault();submit();}
@@ -81,11 +90,19 @@ export function createSearch(root:HTMLElement,provided:SearchOptions={}):Workben
   if(event.relatedTarget instanceof Node&&root.contains(event.relatedTarget))return;
   queueMicrotask(()=>{if(!life.dead&&!pointerOutside&&!root.contains(document.activeElement))close();});
  },{signal:life.signal});
- function reset(){if(options.query===undefined)query=options.defaultQuery??'';if(options.filter===undefined)filter=options.defaultFilter??filters[0]?.id??'';active=-1;close();schedule();}
+ const defaultFilter=()=>filters.some(f=>f.id===options.defaultFilter)?options.defaultFilter!:filters[0]?.id??'';
+ function reset(){if(life.dead)return;if(options.query===undefined)query=options.defaultQuery??'';if(options.filter===undefined)filter=defaultFilter();active=-1;close();schedule();}
  listenReset(root,life.signal,reset);life.cleanup(()=>{request++;pending?.abort();clearTimeout(timer);});paint();
  return {getState:state,reset,open:show,close,setPaused:life.setPaused,destroy:life.destroy,
   update(next){if(life.dead)return;const rerun=('query'in next&&next.query!==options.query)||('filter'in next&&next.filter!==options.filter)||('search'in next&&next.search!==options.search);const newFilters='filters'in next&&next.filters!==options.filters;
+   const focused=document.activeElement instanceof HTMLElement?document.activeElement:undefined,focusedFilter=focused&&host.contains(focused)?focused.closest<HTMLElement>('[data-filter]')?.dataset.filter:undefined;
    options={...options,...next};if(next.query!==undefined)query=next.query;if(next.filter!==undefined)filter=next.filter;if(next.items)items=unique(next.items);if(newFilters){filters=unique(options.filters??[]);const area=host.querySelector<HTMLElement>('.wb-search-filters')!;area.hidden=!filters.length;area.innerHTML=filters.map(f=>`<button type="button" data-filter="${h(f.id)}" aria-pressed="false">${h(f.label)}</button>`).join('');}
-   if(options.disabled)open=false;if(rerun)schedule();else paint();
+   const filterRemoved=newFilters&&options.filter===undefined&&!filters.some(f=>f.id===filter);
+   if(filterRemoved){filter=defaultFilter();active=-1;}
+   if(options.disabled)open=false;if(rerun||filterRemoved)schedule();else paint();
+   if(newFilters&&focusedFilter&&!pointerOutside&&!options.disabled&&(document.activeElement===focused||document.activeElement===document.body)){
+    const choices=Array.from(host.querySelectorAll<HTMLButtonElement>('[data-filter]'));
+    (choices.find(e=>e.dataset.filter===focusedFilter)||choices.find(e=>e.dataset.filter===filter)||input).focus({preventScroll:true});
+   }
   }};
 }

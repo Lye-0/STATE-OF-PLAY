@@ -20,7 +20,7 @@ export function getDelivery(part: Part, format: Format, layout: Layout = 'portab
     stylesheet: requiredFile(files,f=>f.sourceName.endsWith('/styles.css'),'stylesheet').name,
     markup: requiredFile(files,f=>f.sourceName.endsWith('/markup.html'),'markup').name,
     example: requiredFile(files,f=>react ? f.sourceName.endsWith('/react/Example.tsx') : f.sourceName.endsWith('/vanilla/main.ts'),'example').name,
-    runtimeFiles: files.filter(f=>f.group!=='example'), externalDependencies: react ? ['react (18+)'] : []};
+    runtimeFiles: files.filter(f=>f.group!=='example'), externalDependencies: react ? ['react (18+)',...(files.some(f=>/\bfrom\s*['"]react-dom['"]/.test(f.code))?['react-dom (18+)']:[])] : []};
 }
 export function packageRoot(part: Part, format: Format, layout: Layout): string { return `${part.id}-${format}-${layout}`; }
 const fence = (code: string, language = '') => {

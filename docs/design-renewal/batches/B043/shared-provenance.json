@@ -1,0 +1,29 @@
+{
+  "before": {
+    "src/shared/workbench/search.ts": "ec655a85c9e74d75d838827d7ffbaacf1ffaa1d29ee264b2bde18a1080d13ffd",
+    "src/shared/workbench/search-view.tsx": "8d0f81d2f94a05313482a21070ddab5ad38de9077215f411e255763ebe4798be",
+    "scripts/source-tools.ts": "650ea31773ab0f4d424936426e94fbb7b1883b193323bce6aa48416bee6cda09",
+    "src/catalog/delivery.ts": "dd003be020ee32a83b5b00a19dc39036eb14d6aa9f1c7b86083bed66a27341b7",
+    "tests/workbench.browser.ts": "8471c5edb8403be49e6e9f876044d2a95b787abfd9acad715401ba25befdda67",
+    "tests/expansion-50.react.ts": "c91e0b32812cda943d68baa1309613e093a9f1ae44b4ce5dfc68eaeffb210e0a",
+    "tests/delivery.test.ts": "a9a4b040d0bd7cba8bd78fe473aa9f6c3e0b34d8324caa810b1450d68e389cec",
+    "src/shared/workbench/base.css": "8cb26f77ef9f723ab6ccb27e4ccd22fda49bbf05c8f4f1330d95a9738215f17c"
+  },
+  "reproductionAllNine": "Immutable baseline0: structural filter update loses focus; result label update loses focus; item reorder changes active identity from a to b; reset after destroy changes committed state.",
+  "fix": "Retain result identity for keyboard selection; restore owned native focus to same semantic filter/result after structural paint; normalize removed uncontrolled filters to valid defaults; dead reset/open/close guards. Native input stays connected; no value assignment when unchanged.",
+  "controlledReactUndoReproduction": "Actual TSX portable card-catalog-search: accepted controlled keyboard.insertText appended edited, but native Control+Z left value unchanged because controller rolled native input back before parent prop acceptance.",
+  "after": {
+    "src/shared/workbench/search.ts": "4c4f76f7c0777ddb6acd9146ac42c41505cf4f27aa7d012932cdd24b2066d10e",
+    "src/shared/workbench/search-view.tsx": "0acfc3b23943a4518578d3ca4dcfcc0eb63a57ea88ed299cf64c8ad1240db90a",
+    "scripts/source-tools.ts": "4c9fa6f609d3c0020c5e1050872ac7819628edf7b644ea7e5a627b65e4f71c66",
+    "src/catalog/delivery.ts": "a23e26e6e080290ca2134ef9e2d42a390a7a7abbafde7e1e9a75ae33b9561347",
+    "tests/workbench.browser.ts": "46e9eae7aad62ddfee02379f5fdf9434f1e38ce7ac98c45aea0cff2f09056ecc",
+    "tests/expansion-50.react.ts": "5d28304a2120b4dfc8d7cb1d76bc038aad364bbe88e67d4a78bbfa3606237b8b",
+    "tests/delivery.test.ts": "1ce9f10ba7f67a065312d76638e27d74e2e7cb4ce1a99c886d25426bb02a47d9",
+    "src/shared/workbench/base.css": "4fb217beeceab229175b25cc3bd36dc7b3dcc0532deaf6caf8f6151d7fc8aa75"
+  },
+  "controlledBridge": "Only controlled native onQueryChange acceptance is flushed before controller repaint. Actual9×4formats and permanent20×4formats accepted native undo now pass; native input remains connected.",
+  "exportDependency": "react-dom is already installed/pinned and is now explicitly accepted in export closure and declared only for React deliveries that import it.",
+  "permanentRegression": "Workbench HTTP schema/native editor+IME dead API tests; expansion50 React all20×four formats includes accepted controlled native undo/decline.; native live SR announcement remains absolute/1px without root overflow after selection at320.",
+  "srOverflowReproduction": "Real native long320 after result selection: .wb-search-status box x59,width172,root222 scroll231. Shell child relative layer overrode sr absolute positioning, making a selected-result announcement an inline box. Dedicated direct child SR position restores hidden live announcement; no announcements removed."
+}

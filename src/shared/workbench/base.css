@@ -292,3 +292,6 @@
 @keyframes wb-gate-left{0%{transform:translateX(0);opacity:1}90%{opacity:1}100%{transform:translateX(-102%);opacity:0}}
 @keyframes wb-gate-right{0%{transform:translateX(0);opacity:1}90%{opacity:1}100%{transform:translateX(102%);opacity:0}}
 @container(max-width:380px){.sop-wb[data-wb-sticky=true] td[data-first-column]{position:static;inset-inline-start:auto}.sop-wb[data-wb-sticky=true] th[data-first-column]{position:sticky;inset-inline-start:auto;z-index:3}}
+
+/* The shell content layer must not turn the live SR announcement into inline text. */
+.sop-wb .wb-search-shell > .wb-search-status{position:absolute;inset-inline-start:0;top:0;overflow:hidden;white-space:nowrap}
