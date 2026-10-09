@@ -31,3 +31,13 @@
 .sop-choice.sop-double-track-segments.sop-double-track-segments .sop-segment-material i:first-child,.sop-choice.sop-double-track-segments.sop-double-track-segments .sop-segment-material i:nth-child(2){display:block;left:calc(50% - 6px);width:12px;height:27px;background:#8d71a6;border-inline:3px solid #baa4ce}
 .sop-choice.sop-double-track-segments.sop-double-track-segments .sop-segment-material i:first-child{top:0;border-radius:4px 4px 0 0}
 .sop-choice.sop-double-track-segments.sop-double-track-segments .sop-segment-material i:nth-child(2){bottom:0;border-radius:0 0 4px 4px}
+
+/* Equal option widths also apply to incomplete wrapped rows. */
+.sop-choice.sop-double-track-segments.sop-double-track-segments>.sop-choice-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,65px),1fr))}
+.sop-choice.sop-double-track-segments.sop-double-track-segments>.sop-choice-list>.sop-choice-item{min-width:0;padding-inline:6px}
+.sop-choice.sop-double-track-segments.sop-double-track-segments[data-orientation=vertical]>.sop-choice-list{display:flex}
+
+
+/* Reserve the actual material inset even for long RTL labels. */
+.sop-choice.sop-double-track-segments.sop-double-track-segments>.sop-choice-list{grid-template-columns:repeat(auto-fit,minmax(min(100%,90px),1fr))}
+.sop-choice.sop-double-track-segments.sop-double-track-segments>.sop-choice-list>.sop-choice-item{padding:32px 21px}

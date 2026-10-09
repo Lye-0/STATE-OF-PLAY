@@ -1,5 +1,5 @@
 @import "../../../shared/checkbox-base.css";
-/* 浅い一枚のレンズを、細い溝へ落ち着かせるチェック。元の丸いレンズ面を残し、水色の発光と厚い影を除く。反射は上の2pxと左の1pxの細い線へ絞り、チェックと混在状態をぼかさず読む。 */
+/* 四角い計器の座に円形の光学レンズを収めたチェック。曲面の縁と弧状の反射で凹凸を示し、選択と混在状態の印は中央で明瞭に読む。 */
 
 .sop-check.sop-inset-lens-check.sop-inset-lens-check{--cb-size:48px;--cb-pad:20px;--cb-bg:#f0ede5;--cb-box:#faf8ef;--cb-ink:#454851;--cb-muted:#666975;--cb-accent:#5d7387;--cb-line:#98a8b3;--cb-radius:0px;max-width:100%;min-width:0;padding:20px;background:var(--cb-bg);border:0;gap:21px;min-height:96px;box-shadow:none;color:var(--cb-ink);font:14px/1.5 Arial,"Yu Gothic",sans-serif;isolation:isolate}
 .sop-check.sop-inset-lens-check.sop-inset-lens-check>.sop-check-box{width:48px;height:48px;border:1px solid var(--cb-line);border-radius:2px;background:var(--cb-box);color:var(--cb-accent);transform:none!important;box-shadow:none!important;isolation:isolate;overflow:visible}
@@ -20,3 +20,15 @@
 .sop-check.sop-inset-lens-check.sop-inset-lens-check .sop-check-aura{inset:-3px;border:1px solid #a9bec3;border-radius:12px;background:none;transform:none}
 .sop-check.sop-inset-lens-check.sop-inset-lens-check .sop-check-detail{left:5px;top:8px;width:1px;height:13px;background:#fff;border-radius:1px}
 .sop-check.sop-inset-lens-check.sop-inset-lens-check>input:is(:checked,:indeterminate)+.sop-check-box{background:#dcefee;border-color:#719ba6;box-shadow:inset 0 2px #fcfffa,inset 0 -2px #aac9cd!important}
+
+/* A circular optical recess, seated inside a square instrument bezel. */
+.sop-check.sop-inset-lens-check.sop-inset-lens-check{--cb-bg:#dfe8ed;--cb-ink:#304654;--cb-muted:#506875;--cb-accent:#254e67;--cb-pad:27px;padding:27px;gap:28px}
+.sop-check.sop-inset-lens-check.sop-inset-lens-check>.sop-check-box{border:2px solid #6d8c9e;border-radius:50%;background:radial-gradient(ellipse at 28% 20%,#f6ffff,#c9e0e7 65%,#9ebcc9);box-shadow:inset 2px 3px 0 #ffffffb0,inset -2px -3px 0 #64879966!important}
+.sop-check.sop-inset-lens-check.sop-inset-lens-check .sop-check-aura{inset:-7px;border:1px solid #9caeba;border-radius:4px;background:linear-gradient(135deg,#f1f3ed,#b3c6d1);z-index:-2;box-shadow:none!important}
+.sop-check.sop-inset-lens-check.sop-inset-lens-check .sop-check-detail{left:8px;top:5px;width:22px;height:9px;border:0;border-top:2px solid #fff;border-radius:50%;background:none;rotate:-24deg;opacity:.85;transition:rotate .3s}
+.sop-check.sop-inset-lens-check.sop-inset-lens-check:hover .sop-check-detail{rotate:-5deg}
+.sop-check.sop-inset-lens-check.sop-inset-lens-check>input:is(:checked,:indeterminate)+.sop-check-box{background:radial-gradient(ellipse at 28% 20%,#f6ffff,#add2df 65%,#7099b1);border-color:#4c748d;box-shadow:inset 2px 3px 0 #ffffffb0,inset -2px -3px 0 #64879966!important}
+
+
+/* Keep supports behind, never painted across the reading face. */
+.sop-check.sop-inset-lens-check.sop-inset-lens-check .sop-check-aura{mask:radial-gradient(circle 24px at center,transparent 97%,#000 100%)}

@@ -1,5 +1,5 @@
 @import "../../../shared/checkbox-base.css";
-/* 分岐する二本の軌道を、四角い確認面の左右の外へ接続するチェック。横棒と二重枠とぼけた影を除き、3pxの縦軌道から中央へ分岐する線へ絞る。線は記号の外で止まり、確認面の無地にチェックと混在の線を置く。 */
+/* 枕木と連続するレールの上に確認プレートを置き、下の分岐レバーで状態を表す。チェックの位置を固定し、レバーだけを滑らかに接続する。 */
 
 .sop-check.sop-switchyard-check.sop-switchyard-check{--cb-size:48px;--cb-pad:20px;--cb-bg:#f0ede5;--cb-box:#faf8ef;--cb-ink:#454851;--cb-muted:#666975;--cb-accent:#5d7387;--cb-line:#98a8b3;--cb-radius:0px;max-width:100%;min-width:0;padding:20px;background:var(--cb-bg);border:0;gap:21px;min-height:96px;box-shadow:none;color:var(--cb-ink);font:14px/1.5 Arial,"Yu Gothic",sans-serif;isolation:isolate}
 .sop-check.sop-switchyard-check.sop-switchyard-check>.sop-check-box{width:48px;height:48px;border:1px solid var(--cb-line);border-radius:2px;background:var(--cb-box);color:var(--cb-accent);transform:none!important;box-shadow:none!important;isolation:isolate;overflow:visible}
@@ -22,3 +22,16 @@
 .sop-check.sop-switchyard-check.sop-switchyard-check .sop-check-detail{right:-12px;transform:scaleX(-1)}
 .sop-check.sop-switchyard-check.sop-switchyard-check>input:is(:checked,:indeterminate)+.sop-check-box .sop-check-detail{transform:scaleX(-1)}
 .sop-check.sop-switchyard-check.sop-switchyard-check>input:is(:checked,:indeterminate)+.sop-check-box{background:#f1e1ba;border-color:#a38c55}
+
+/* A switch plate beside the fork of a real connected rail shape. */
+.sop-check.sop-switchyard-check.sop-switchyard-check{--cb-bg:#e9e6de;--cb-ink:#3f4748;--cb-muted:#5b6566;--cb-accent:#456976;--cb-pad:30px;padding:30px;gap:28px;min-height:124px}
+.sop-check.sop-switchyard-check.sop-switchyard-check>.sop-check-box{border:0;border-radius:2px;background:#fbfaf1;box-shadow:0 3px 0 #a1aaa8!important}
+.sop-check.sop-switchyard-check.sop-switchyard-check .sop-check-aura{inset:-13px -10px -17px;width:auto;height:auto;background:repeating-linear-gradient(0deg,transparent 0 12px,#b4b6aa 12px 16px);border-inline:3px solid #6c7d7b;clip-path:none;z-index:-2}
+.sop-check.sop-switchyard-check.sop-switchyard-check .sop-check-detail{left:4px;top:auto;right:auto;bottom:-14px;width:40px;height:3px;background:#53747b;clip-path:none;border:0;transform:rotate(-32deg);transform-origin:3px 50%;transition:transform .35s;border-radius:0}
+.sop-check.sop-switchyard-check.sop-switchyard-check .sop-check-detail::before{content:'';position:absolute;left:-3px;top:-3px;width:9px;height:9px;border:2px solid #d4d7cc;border-radius:50%;background:#53747b}
+.sop-check.sop-switchyard-check.sop-switchyard-check>input:is(:checked,:indeterminate)+.sop-check-box .sop-check-detail{transform:rotate(0deg)}
+.sop-check.sop-switchyard-check.sop-switchyard-check>input:is(:checked,:indeterminate)+.sop-check-box{background:#e6eee9;border-color:transparent}
+
+
+/* Keep supports behind, never painted across the reading face. */
+.sop-check.sop-switchyard-check.sop-switchyard-check .sop-check-aura{padding:13px 10px 17px;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude}

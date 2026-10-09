@@ -1,5 +1,5 @@
 @import "../../../shared/checkbox-base.css";
-/* 確認面の下を、三段の薄い受けへ接続するチェック。元の下の支えを残し、ぼけた接地影を5pxずつ内側へ収まる三つの実断面へ揃える。受けの上面を確認欄の下4pxへ重ね、面が宙に浮かないようにする。 */
+/* 二本の連続した桁と二段の横木が確認面を支える梯子。選択で座の下の受けだけが締まり、文字とチェックの位置は固定する。 */
 
 .sop-check.sop-ladder-seat-check.sop-ladder-seat-check{--cb-size:48px;--cb-pad:20px;--cb-bg:#f0ede5;--cb-box:#faf8ef;--cb-ink:#454851;--cb-muted:#666975;--cb-accent:#5d7387;--cb-line:#98a8b3;--cb-radius:0px;max-width:100%;min-width:0;padding:20px;background:var(--cb-bg);border:0;gap:21px;min-height:96px;box-shadow:none;color:var(--cb-ink);font:14px/1.5 Arial,"Yu Gothic",sans-serif;isolation:isolate}
 .sop-check.sop-ladder-seat-check.sop-ladder-seat-check>.sop-check-box{width:48px;height:48px;border:1px solid var(--cb-line);border-radius:2px;background:var(--cb-box);color:var(--cb-accent);transform:none!important;box-shadow:none!important;isolation:isolate;overflow:visible}
@@ -20,3 +20,12 @@
 .sop-check.sop-ladder-seat-check.sop-ladder-seat-check .sop-check-aura{display:none}
 .sop-check.sop-ladder-seat-check.sop-ladder-seat-check .sop-check-detail{left:-7px;right:-7px;top:44px;height:15px;width:auto;background:#829da8;clip-path:polygon(0 0,100% 0,100% 7px,calc(100% - 5px) 7px,calc(100% - 5px) 11px,calc(100% - 10px) 11px,calc(100% - 10px) 100%,10px 100%,10px 11px,5px 11px,5px 7px,0 7px);border-top:3px solid #b7cacf}
 .sop-check.sop-ladder-seat-check.sop-ladder-seat-check>input:is(:checked,:indeterminate)+.sop-check-box{background:#e7f0ed;border-color:#688b99}
+
+/* Two continuous rails support the seat and the two rungs below it. */
+.sop-check.sop-ladder-seat-check.sop-ladder-seat-check{--cb-bg:#e7eded;--cb-ink:#344850;--cb-muted:#536a73;--cb-accent:#3e687a;--cb-pad:29px;padding:29px;gap:25px;min-height:126px}
+.sop-check.sop-ladder-seat-check.sop-ladder-seat-check>.sop-check-box{border:0;border-block:3px solid #7897a5;border-radius:0;background:#f7f7ee}
+.sop-check.sop-ladder-seat-check.sop-ladder-seat-check .sop-check-aura{display:block;inset:-11px -7px -24px;border:0;border-inline:4px solid #7593a1;width:auto;height:auto;border-radius:0;background:linear-gradient(#a6bbc3,#a6bbc3) center calc(100% - 13px)/100% 3px no-repeat,linear-gradient(#a6bbc3,#a6bbc3) center calc(100% - 3px)/100% 3px no-repeat;z-index:-2}
+.sop-check.sop-ladder-seat-check.sop-ladder-seat-check .sop-check-detail{inset:auto -7px -4px;height:7px;width:auto;clip-path:none;border:0;background:#4f7589;transition:translate .3s}
+.sop-check.sop-ladder-seat-check.sop-ladder-seat-check>input:is(:checked,:indeterminate)+.sop-check-box .sop-check-detail{translate:0 -3px}
+.sop-check.sop-ladder-seat-check.sop-ladder-seat-check>input:is(:checked,:indeterminate)+.sop-check-box{background:#e1eceb;border-color:#3e687a}
+

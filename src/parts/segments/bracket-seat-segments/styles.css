@@ -28,3 +28,9 @@
 .sop-choice.sop-bracket-seat-segments.sop-bracket-seat-segments>.sop-choice-list>.sop-choice-item::before{inset:0 7px 8px;background:#dae3e7;border:1px solid #9bafb9;border-radius:2px 2px 22px 22px}
 .sop-choice.sop-bracket-seat-segments.sop-bracket-seat-segments>.sop-choice-list>.sop-choice-item::after{inset:20px 0 0;border:8px solid #7b8e9d;border-top:0;border-radius:0 0 31px 31px;z-index:-2;background:none}
 .sop-choice.sop-bracket-seat-segments.sop-bracket-seat-segments>.sop-choice-list>.sop-choice-item[data-selected=true]::before{background:#f0f4f1;border-color:#5e8192;border-bottom:5px solid #a6bfca}
+
+/* Equal option widths also apply to incomplete wrapped rows. */
+.sop-choice.sop-bracket-seat-segments.sop-bracket-seat-segments>.sop-choice-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,65px),1fr))}
+.sop-choice.sop-bracket-seat-segments.sop-bracket-seat-segments>.sop-choice-list>.sop-choice-item{min-width:0;padding-inline:6px}
+.sop-choice.sop-bracket-seat-segments.sop-bracket-seat-segments[data-orientation=vertical]>.sop-choice-list{display:flex}
+

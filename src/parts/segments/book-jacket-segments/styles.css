@@ -29,3 +29,13 @@
 .sop-choice.sop-book-jacket-segments.sop-book-jacket-segments>.sop-choice-list>.sop-choice-item::after{inset:0 8px 0 0;background:#b88988;border-left:9px solid #885759;clip-path:polygon(0 0,100% 0,100% 22px,22px 12px,22px calc(100% - 12px),100% calc(100% - 22px),100% 100%,0 100%);z-index:1}
 .sop-choice.sop-book-jacket-segments.sop-book-jacket-segments>.sop-choice-list>.sop-choice-item[data-selected=true]::after{background:#c98382;border-left-color:#743f44}
 .sop-choice.sop-book-jacket-segments.sop-book-jacket-segments>.sop-choice-list>.sop-choice-item[data-selected=true]::before{background:#fff6e8;border-block-color:#cfaaa0}
+
+/* Equal option widths also apply to incomplete wrapped rows. */
+.sop-choice.sop-book-jacket-segments.sop-book-jacket-segments>.sop-choice-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,65px),1fr))}
+.sop-choice.sop-book-jacket-segments.sop-book-jacket-segments>.sop-choice-list>.sop-choice-item{min-width:0;padding-inline:6px}
+.sop-choice.sop-book-jacket-segments.sop-book-jacket-segments[data-orientation=vertical]>.sop-choice-list{display:flex}
+
+
+/* Reserve the actual material inset even for long RTL labels. */
+.sop-choice.sop-book-jacket-segments.sop-book-jacket-segments>.sop-choice-list{grid-template-columns:repeat(auto-fit,minmax(min(100%,100px),1fr))}
+.sop-choice.sop-book-jacket-segments.sop-book-jacket-segments>.sop-choice-list>.sop-choice-item{padding:27px 13px 24px 29px}

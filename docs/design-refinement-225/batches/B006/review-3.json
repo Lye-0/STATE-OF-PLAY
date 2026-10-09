@@ -1,0 +1,204 @@
+{
+  "batch": "B006",
+  "round": 3,
+  "overall": "changes_required",
+  "parts": [
+    {
+      "id": "book-jacket-segments",
+      "number": 181,
+      "verdict": "changes_required",
+      "note": "開いたブックジャケットの独自性と等幅は保持。RTL長文の左端が紙面から背へ乗り、読み面の確保が必要。",
+      "findings": [
+        {
+          "kind": "rtl-label-outside-reading-face",
+          "description": "320pxでRTLと長いラベルを設定すると、紙面の左端item+16pxに対して字形はitem+12.12px(portable)/12.06px(gallery詳細)から始まり、約3.9pxが背の色へ乗る。文字方向だけ反転し紙面の物理leftと内容余白が同期しない。",
+          "recommendation": "RTL時の紙面・背の方向を合わせるか、ラベルと番号の全領域を紙面内に確保する。",
+          "evidence": [
+            "rtl-face-probe-3.json",
+            "evidence-3/book-jacket-segments-gallery-rtl-face-probe.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "measurements-3.json",
+        "segments-measurements-3.json",
+        "contrast-3.json"
+      ],
+      "reviewed": [
+        "portableと実gallery通常/hover入口/解除/再進入/320/長文/reduced/forced",
+        "等幅3/7項目・RTL・縦・radio keyboard/form/disabled/reset"
+      ]
+    },
+    {
+      "id": "double-track-segments",
+      "number": 183,
+      "verdict": "changes_required",
+      "note": "二重軌道と上下の留め具は明快。ただし長文の字形が明るい面を越え暗い軌道側に出る。",
+      "findings": [
+        {
+          "kind": "long-label-outside-reading-face",
+          "description": "320px長文で明るい面はright inset12px、label領域はright inset6px。実字形の右端が面からportable4.34px、実gallery詳細1.92px外へ出て暗い軌道へかかる。",
+          "recommendation": "文字と番号を明るい面の内側へ配置し、造形の軌道幅を保ったまま必要に応じ折返し・最小列幅を調整する。",
+          "evidence": [
+            "face-probe-3.json",
+            "evidence-3/double-track-segments-portable-face-probe.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "measurements-3.json",
+        "segments-measurements-3.json",
+        "contrast-3.json"
+      ],
+      "reviewed": [
+        "portableと実gallery通常/hover入口/解除/再進入/320/長文/reduced/forced",
+        "等幅3/7項目・RTL・縦・radio keyboard/form/disabled/reset"
+      ]
+    },
+    {
+      "id": "bracket-seat-segments",
+      "number": 184,
+      "verdict": "pass",
+      "note": "U字の座が面を支える構造を保持。長文のlabel箱は面境界に近いが、実字形は内側にあり読める。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "segments-measurements-3.json",
+        "contrast-3.json"
+      ],
+      "reviewed": [
+        "portableと実gallery通常/hover入口/解除/再進入/320/長文/reduced/forced",
+        "等幅3/7項目・RTL・縦・radio keyboard/form/disabled/reset"
+      ]
+    },
+    {
+      "id": "satin-key-segments",
+      "number": 185,
+      "verdict": "pass",
+      "note": "サテンの一面と上端反射線へ整理され、文字を動かさず選択面を示す。等幅と長文を確認。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "segments-measurements-3.json",
+        "contrast-3.json"
+      ],
+      "reviewed": [
+        "portableと実gallery通常/hover入口/解除/再進入/320/長文/reduced/forced",
+        "等幅3/7項目・RTL・縦・radio keyboard/form/disabled/reset"
+      ]
+    },
+    {
+      "id": "reading-mode-segments",
+      "number": 189,
+      "verdict": "pass",
+      "note": "罫線と小さなしおりが読書モードの用途に合う。非選択文字は通常5.133:1、hover4.522:1を確保。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "segments-measurements-3.json",
+        "contrast-3.json"
+      ],
+      "reviewed": [
+        "portableと実gallery通常/hover入口/解除/再進入/320/長文/reduced/forced",
+        "等幅3/7項目・RTL・縦・radio keyboard/form/disabled/reset"
+      ]
+    },
+    {
+      "id": "crossbar-check",
+      "number": 194,
+      "verdict": "pass",
+      "note": "上下の横桟と左右の留め具に支えられた確認板が明快。混在ダッシュとチェックを見分けられる。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "checks-measurements-3.json",
+        "evidence-3/checks-gallery-access-sheet.jpg"
+      ],
+      "reviewed": [
+        "portableと実gallery通常/hover入口/解除/再進入/320/長文/reduced/forced",
+        "native checkbox label/Space・mixed解除・disabled除外・FormData・reset・長文RTL・forced native mixed/focus"
+      ]
+    },
+    {
+      "id": "ceramic-stamp-check",
+      "number": 195,
+      "verdict": "pass",
+      "note": "八角の焼き締め縁と凹んだ釉薬面を視認。状態変更でも枠と文字の位置を保つ。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "checks-measurements-3.json",
+        "evidence-3/checks-gallery-access-sheet.jpg"
+      ],
+      "reviewed": [
+        "portableと実gallery通常/hover入口/解除/再進入/320/長文/reduced/forced",
+        "native checkbox label/Space・mixed解除・disabled除外・FormData・reset・長文RTL・forced native mixed/focus"
+      ]
+    },
+    {
+      "id": "ladder-seat-check",
+      "number": 198,
+      "verdict": "pass",
+      "note": "連続した桁と横木が座を支え、チェック面を横切らない。ネイティブの混在解除とresetが一致。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "checks-measurements-3.json",
+        "evidence-3/checks-gallery-access-sheet.jpg"
+      ],
+      "reviewed": [
+        "portableと実gallery通常/hover入口/解除/再進入/320/長文/reduced/forced",
+        "native checkbox label/Space・mixed解除・disabled除外・FormData・reset・長文RTL・forced native mixed/focus"
+      ]
+    },
+    {
+      "id": "inset-lens-check",
+      "number": 200,
+      "verdict": "pass",
+      "note": "四角い計器の中の円形レンズに独自性があり、チェックと混在線が背景から読める。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "checks-measurements-3.json",
+        "evidence-3/checks-gallery-access-sheet.jpg"
+      ],
+      "reviewed": [
+        "portableと実gallery通常/hover入口/解除/再進入/320/長文/reduced/forced",
+        "native checkbox label/Space・mixed解除・disabled除外・FormData・reset・長文RTL・forced native mixed/focus"
+      ]
+    },
+    {
+      "id": "switchyard-check",
+      "number": 203,
+      "verdict": "pass",
+      "note": "枕木とレールの下端で分岐レバーが連動し、文字とクリック位置を保つ。",
+      "findings": [],
+      "evidence": [
+        "measurements-3.json",
+        "checks-measurements-3.json",
+        "evidence-3/checks-gallery-access-sheet.jpg"
+      ],
+      "reviewed": [
+        "portableと実gallery通常/hover入口/解除/再進入/320/長文/reduced/forced",
+        "native checkbox label/Space・mixed解除・disabled除外・FormData・reset・長文RTL・forced native mixed/focus"
+      ]
+    }
+  ],
+  "coverage": {
+    "parts": 10,
+    "pass": 8,
+    "changes_required": 2,
+    "visual": "全10件×portable/galleryの主要4contact sheets、segments特殊条件4sheets、checkbox状態とaccessibility4sheetsの全画像を視認。R181/R183/R184は近接画像と字形位置を追加確認。",
+    "browser": "Chromium。凍結portableとactual galleryカード/詳細を使用。form等の追加条件では同CSS環境で複製を作り凍結initを使用。",
+    "limits": "記録した状態と対象の検査であり、全環境の無欠陥保証ではない。",
+    "rejectedCandidates": [
+      "R184の長文: label箱は面境界に近いが今回の実字形は面内。",
+      "R189非選択: computed文字と実背景の比率は通常5.133:1/hover4.522:1。"
+    ]
+  },
+  "evidence": [
+    "integrity-3.json",
+    "face-probe-3.json",
+    "rtl-face-probe-3.json"
+  ]
+}

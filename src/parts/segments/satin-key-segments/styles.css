@@ -28,3 +28,15 @@
 .sop-choice.sop-satin-key-segments.sop-satin-key-segments>.sop-choice-list>.sop-choice-item::before{inset:0;background:#d0bac3;border-radius:12px / 4px;border-inline:4px solid #b299a4}
 .sop-choice.sop-satin-key-segments.sop-satin-key-segments>.sop-choice-list>.sop-choice-item[data-selected=true]::before{background:#f8ecf0;border-inline-color:#a8788d}
 .sop-choice.sop-satin-key-segments.sop-satin-key-segments>.sop-choice-list>.sop-choice-item::after{inset:4px 5px;border-inline:2px solid #e4d1d9;border-radius:50% / 8px;background:none}
+
+/* Equal option widths also apply to incomplete wrapped rows. */
+.sop-choice.sop-satin-key-segments.sop-satin-key-segments>.sop-choice-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,65px),1fr))}
+.sop-choice.sop-satin-key-segments.sop-satin-key-segments>.sop-choice-list>.sop-choice-item{min-width:0;padding-inline:6px}
+.sop-choice.sop-satin-key-segments.sop-satin-key-segments[data-orientation=vertical]>.sop-choice-list{display:flex}
+
+
+/* One satin edge, with the highlight following that same surface. */
+.sop-choice.sop-satin-key-segments.sop-satin-key-segments>.sop-choice-list{background:#eee7ea}
+.sop-choice.sop-satin-key-segments.sop-satin-key-segments>.sop-choice-list>.sop-choice-item::before{border-inline-width:1px;background:linear-gradient(100deg,#d5c7cd,#e8dfe3 48%,#d5c7cd)}
+.sop-choice.sop-satin-key-segments.sop-satin-key-segments>.sop-choice-list>.sop-choice-item::after{inset:4px 6px auto;height:1px;background:#fbf6f8;border:0;border-radius:0}
+

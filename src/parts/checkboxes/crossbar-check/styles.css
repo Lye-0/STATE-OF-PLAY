@@ -1,5 +1,5 @@
 @import "../../../shared/checkbox-base.css";
-/* 交差していた支持材を、確認面の外の二つの対角へ整理するチェック。3pxの短い横棒と縦棒を角で接続し、中央へ斜めの線を通さない。読む面の枠は1pxに抑え、チェックと混在状態をはっきり一つずつ表示する。 */
+/* 上下の横桟と左右の留め具に支えられた確認プレート。左右の留め具が閉じて状態を支え、中央のチェックと文字は動かさない。 */
 
 .sop-check.sop-crossbar-check.sop-crossbar-check{--cb-size:48px;--cb-pad:20px;--cb-bg:#f0ede5;--cb-box:#faf8ef;--cb-ink:#454851;--cb-muted:#666975;--cb-accent:#5d7387;--cb-line:#98a8b3;--cb-radius:0px;max-width:100%;min-width:0;padding:20px;background:var(--cb-bg);border:0;gap:21px;min-height:96px;box-shadow:none;color:var(--cb-ink);font:14px/1.5 Arial,"Yu Gothic",sans-serif;isolation:isolate}
 .sop-check.sop-crossbar-check.sop-crossbar-check>.sop-check-box{width:48px;height:48px;border:1px solid var(--cb-line);border-radius:2px;background:var(--cb-box);color:var(--cb-accent);transform:none!important;box-shadow:none!important;isolation:isolate;overflow:visible}
@@ -20,3 +20,17 @@
 .sop-check.sop-crossbar-check.sop-crossbar-check .sop-check-aura{left:-10px;top:-10px;width:24px;height:24px;border-left:3px solid #9680a8;border-top:3px solid #9680a8;background:none}
 .sop-check.sop-crossbar-check.sop-crossbar-check .sop-check-detail{right:-10px;bottom:-10px;width:24px;height:24px;border-right:3px solid #9680a8;border-bottom:3px solid #9680a8;background:none}
 .sop-check.sop-crossbar-check.sop-crossbar-check>input:is(:checked,:indeterminate)+.sop-check-box{background:#e9dcf0;border-color:#987baa}
+
+/* A suspended plate held by opposed crossbars. */
+.sop-check.sop-crossbar-check.sop-crossbar-check{--cb-bg:#e9edf0;--cb-ink:#34424d;--cb-muted:#566570;--cb-accent:#345e77;--cb-pad:28px;padding:28px;gap:28px}
+.sop-check.sop-crossbar-check.sop-crossbar-check>.sop-check-box{border:0;border-radius:0;background:#fffdf7;box-shadow:0 3px 0 #9aaeb9!important}
+.sop-check.sop-crossbar-check.sop-crossbar-check .sop-check-aura{inset:-12px -10px; width:auto;height:auto;border:0;border-inline:3px solid #6d8799;background:linear-gradient(#a4b6c2,#a4b6c2) center 8px/100% 4px no-repeat,linear-gradient(#a4b6c2,#a4b6c2) center calc(100% - 8px)/100% 4px no-repeat;z-index:-2}
+.sop-check.sop-crossbar-check.sop-crossbar-check .sop-check-detail{inset:9px auto 9px -7px;width:8px;height:auto;border:0;background:#526f85;border-radius:2px;transition:translate .3s,background .2s}
+.sop-check.sop-crossbar-check.sop-crossbar-check .sop-check-detail::after{content:'';position:absolute;inset:0;translate:54px 0;background:inherit;border-radius:inherit}
+.sop-check.sop-crossbar-check.sop-crossbar-check>input:is(:checked,:indeterminate)+.sop-check-box{background:#f5f8f7;border:0}
+.sop-check.sop-crossbar-check.sop-crossbar-check>input:is(:checked,:indeterminate)+.sop-check-box .sop-check-detail{translate:3px 0}
+.sop-check.sop-crossbar-check.sop-crossbar-check:hover .sop-check-aura{border-inline-color:#345e77}
+
+
+/* Keep supports behind, never painted across the reading face. */
+.sop-check.sop-crossbar-check.sop-crossbar-check .sop-check-aura{inset:-7px -12px;border:0;border-block:4px solid #809baa;background:none}
