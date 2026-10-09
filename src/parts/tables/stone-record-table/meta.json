@@ -2,7 +2,7 @@
   "id": "stone-record-table",
   "name": "Stone Record Table",
   "category": "tables",
-  "description": "石の記録台。見出しを浅い上段、データを明るい平面、ページ操作を下の台座へ整理する。",
+  "description": "灰白の露頭の全高を大きい傾斜と長い割れで一体に切り出し、その内側に水平な実記録の床を収める。件数・検索・現在ページは同じ露頭の上面へ置き、実表だけが深い16pxの切口を持つ読む床になる。短い隅欠けや丸角板を廃し、長い非対称な断面の外形と実記録の平面を対比する。",
   "designType": "A",
   "tagline": "石の記録台。",
   "motion": "STATE / MATERIAL",
@@ -57,5 +57,10 @@
       "boolean / string",
       "読込中・失敗表示。仮想スクロールやセル編集は含みません。"
     ]
+  ],
+  "features": [
+    "native table / search / selection / sort / resize",
+    "320px native horizontal scroll / RTL / forced colors",
+    "decorations only; stable glyph and native hit"
   ]
 }

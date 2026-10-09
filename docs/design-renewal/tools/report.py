@@ -50,6 +50,8 @@ for row,part,review in approved:
   assert actual is not None,f"Missing real table states: {row['id']}"
   images+=figure(beforeTable,'修正前・配布版の実表')+figure(beforeNarrow,'修正前・320pxの表')
   for name,label in zip(states,['実表の初期表示','実列の並べ替え','実行の選択','320pxの長い実列名・記録','320pxと右から左の表','表だけを横へスクロール','記録なし','実エラー','暗い強制配色']):images+=figure(actual/f"{row['id']}-{name}.png",'修正後・'+label)
+  for name,label in [('selected-forced-dark','選択・暗い強制配色'),('selected-forced-light','選択・明るい強制配色')]:
+   if (actual/f"{row['id']}-{name}.png").exists():images+=figure(actual/f"{row['id']}-{name}.png",'修正後・'+label)
  if row['category']=='toasts':
   beforeNotice=w/'evidence/baseline'/f"{row['id']}-notice.png"
   assert beforeNotice.exists(),f"Missing original actual notice: {row['id']}"
@@ -206,6 +208,13 @@ for row,part,review in approved:
   for folder in reversed(folders):
    if (folder/f"{row['id']}-on.png").exists():
     images+=figure(folder/f"{row['id']}-on.png",'独立版・ON');break
+ if row['category'] in ('loaders','ornaments'):
+  motion=sorted((d/'captures').glob('mechanisms-self-*'),key=lambda p:int(p.name.split('-')[-1]))
+  actual=next((p for p in reversed(motion) if all((p/f"{row['id']}-phase-{ms}.png").exists() for ms in (0,650,1300))),None)
+  if actual:
+   for name,label in [('phase-0','動きの開始形'),('phase-650','650msの実動作'),('phase-1300','1300msの実動作'),('ltr-320','320pxの全形'),('reduced','動き軽減の静止形'),('forced-dark','強制配色の静止形')]:
+    assert (actual/f"{row['id']}-{name}.png").exists()
+    images+=figure(actual/f"{row['id']}-{name}.png",'修正後・'+label)
  parts.append(f'<article id="r{row["number"]}"><header><span>R{row["number"]:03d} · {esc(row["batch"])} · {esc(row["designType"])}</span><h2>{esc(row["name"])}</h2><code>{esc(row["id"])}</code></header><p><strong>以前の指摘</strong><br>{esc(row["auditReason"])}</p><p><strong>修正した構造</strong><br>{esc(meta["description"])}</p><p><strong>独立検査</strong><br>{esc(part["assessment"])}</p><details><summary>画像を見る（単体HTML内蔵）</summary><div class="photos">{images}</div></details></article>')
 title='STATE OF PLAY — 修正結果';body=f'''<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title}</title><style>body{{margin:0;background:#f2f3f5;color:#243241;font:16px/1.75 system-ui}}main{{max-width:1160px;margin:auto;padding:28px 18px}}h1{{font-size:28px;line-height:1.3}}.note{{background:white;padding:20px;border:1px solid #c4ced7;border-radius:8px}}article{{margin:24px 0;padding:24px;background:white;border:1px solid #c4ced7;border-radius:8px;content-visibility:auto;contain-intrinsic-size:auto 470px}}h2{{margin:4px 0;font-size:23px}}header>span{{color:#53677b;font-size:14px}}code{{overflow-wrap:anywhere}}summary{{cursor:pointer;padding:12px;border:1px solid #c4ced7;border-radius:4px}}.photos{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:16px}}figure{{margin:16px 0;min-width:0}}img{{display:block;max-width:100%;height:auto;background:#181d23;border-radius:4px}}figcaption{{font-size:14px;color:#53677b}}@media print{{article{{content-visibility:visible;break-inside:avoid}}details{{display:block}}}}</style><main><h1>{title}</h1><div class="note"><p>独立検査に合格した {len(approved)} 件。全修正対象は517件です。番号は以前のR番号を維持しています。</p><p>画像はこのHTMLへ内蔵しています。各項目の「画像を見る」を開いて比較できます。外部ファイルや通信は不要です。</p><p>通常動作・狭幅・動き軽減・強制色と、各部品の操作を確認しています。実機タッチとスクリーンリーダーの読み上げは未確認です。合格判定は固定した検査基準に基づく担当者の評価です。</p></div>{''.join(parts)}</main></html>'''
 target=w/('result-'+('-'.join(sorted(requested)) if requested else 'all')+'.html');target.write_text(body);print(json.dumps({'file':str(target),'parts':len(approved),'bytes':target.stat().st_size}))

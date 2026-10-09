@@ -2,7 +2,7 @@
   "id": "archive-ledger-table",
   "name": "Archive Ledger Table",
   "category": "tables",
-  "description": "保管帳簿のデータ。左の背と上の索引を持ち、表の行は細い横罫で読みやすく固定する。",
+  "description": "実ページそのものを選ぶ大きい索引を一枚の実記録の端に置く。索引は実page数と現在pageから作り、ネイティブボタンの番号で読む原紙を切り替える。件数小札や装飾の背を廃し、112pxの実ページの自由端と連続した表が一つの資料になる。多ページは前後2と両端に限定し、架空の紙束は増やさない。",
   "designType": "A",
   "tagline": "保管帳簿のデータ。",
   "motion": "STATE / MATERIAL",
@@ -57,5 +57,10 @@
       "boolean / string",
       "読込中・失敗表示。仮想スクロールやセル編集は含みません。"
     ]
+  ],
+  "features": [
+    "native table / search / selection / sort / resize",
+    "320px native horizontal scroll / RTL / forced colors",
+    "decorations only; stable glyph and native hit"
   ]
 }

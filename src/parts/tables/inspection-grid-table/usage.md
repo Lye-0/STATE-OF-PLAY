@@ -22,3 +22,11 @@
 - `resizable / stickyFirst` (boolean): 列幅調整と先頭列固定。列幅は矢印キーでも操作。
 - `onRowAction` ((action, row) => void): 各行の操作を利用先へ接続。
 - `loading / error` (boolean / string): 読込中・失敗表示。仮想スクロールやセル編集は含みません。
+
+<!-- design-renewal -->
+検索帯の対向顎を廃し、実列見出しとnative列幅操作を一つの深い計測横桁へ集める。実列名が上の読む面、28pxのresizerが列境界の側面、40pxの下小口に設定幅pxが表示される。数値はaria-valuenowから読み設定幅に追従し、幅操作なしの列には偽工具を置かない。
+
+実表・列幅・検索・選択・ページ送りを保持します。非選択でも選択情報の領域を同寸予約し、文字とnative押面を動かしません。狭幅の表は専用の横スクロールで読みます。
+<!-- /design-renewal -->
+
+幅表示は「設定幅」です。表が余白へ伸びる場合の描画幅とは異なり、resizerのaria-valuenowと一致します。

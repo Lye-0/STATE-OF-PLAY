@@ -2,7 +2,7 @@
   "id": "inspection-grid-table",
   "name": "Inspection Grid Table",
   "category": "tables",
-  "description": "検査データの格子。見出し、状態、進行度を独立した列へ揃え、選択した行を明面で追える。",
+  "description": "実列名とnative設定幅の操作を深い一つの計測横桁へ集める。40pxの下小口に「設定幅」と値を明示し、28pxの側面は列境界のresizerとなる。表示値は設定幅であり、余白へ伸びた描画幅と区別する。",
   "designType": "A",
   "tagline": "検査データの格子。",
   "motion": "STATE / MATERIAL",
@@ -57,5 +57,10 @@
       "boolean / string",
       "読込中・失敗表示。仮想スクロールやセル編集は含みません。"
     ]
+  ],
+  "features": [
+    "native table / search / selection / sort / resize",
+    "320px native horizontal scroll / RTL / forced colors",
+    "decorations only; stable glyph and native hit"
   ]
 }

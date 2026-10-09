@@ -1,0 +1,35 @@
+{
+  "scope": "Optional real Table page index and scroll control; compatible default false. Navigation return current presentation. Native page-index focus fallback and live RTL scroll sync. Fixtures disable unrelated discovery/watch while actual gallery keeps real config.",
+  "files": {
+    "src/shared/workbench/base.css": {
+      "before": "19f2f685ffc659249124fa527f42c873772bcd3c9877fe93558325de3a844b8e",
+      "after": "d1c3d8be1886bb6a93ab6eecdc1ddccd2ec271e96a12be5fd6f607f8e93da8cc"
+    },
+    "src/shared/workbench/navigation.ts": {
+      "before": "9b647c04dfe834dc2d738142a3fcc05c805286d0ac9b3dbf2d284f8682d89240",
+      "after": "bf24466cfb512a1d8e48fb44919f12a2828af6e92714b5c5e65346d9ecc323ad"
+    },
+    "src/shared/workbench/table.ts": {
+      "before": "e6e99280dac15bdf390c26607e1d401d63725e47ed595b02104d25918d2e5dba",
+      "after": "e22f1c5727dfaa9fae7ce7668eb4b3dce9757bfec34ed6e2d93655182a94150c"
+    },
+    "tests/expansion-50.native.ts": {
+      "before": "94e01dd91392c3379963bb517cb58a168ade80729e60502583f2e9d36942e431",
+      "after": "54cb5c2e635aecc012ae58ae995759c81d3810a38311a3485c1d8ea822c26d88"
+    },
+    "tests/workbench.browser.ts": {
+      "before": "d8666fcb2e7cf40094a02a6b1453d2aa3ca172c1189685e2efaa89675ae2112b",
+      "after": "f12201f614da94e01635351920076791e9a040a258193392f26dbfd6dba67def"
+    }
+  },
+  "authorCount": 100,
+  "reviewSnapshot": 7,
+  "evidence": [
+    "captures/tables-self-7/checks.json",
+    "captures/table-geometry-7/checks.json",
+    "captures/navigation-self-7/checks.json",
+    "export-fixture-audit7.json",
+    "formal-review-7.json"
+  ],
+  "independentReview": "all10 pass round7"
+}

@@ -2,7 +2,7 @@
   "id": "index-drawer-table",
   "name": "Index Drawer Table",
   "category": "tables",
-  "description": "整理引き出しの一覧。見出しを前板、検索を短い差込口、結果を同じ棚の資料行として表示。",
+  "description": "既存の引出しの上蓋・本文・前板の段差を保持し、重い茶色を上蓋と前板の16pxの小口へ限定する。実表は左右16pxの内側へ入り、通常・選択・操作を不透明な一枚の明るい紙面へ揃える。検索の重ね枠と行ごとの厚い段差は削り、実記録が主役の引出しに整える。",
   "designType": "A",
   "tagline": "整理引き出しの一覧。",
   "motion": "STATE / MATERIAL",
@@ -57,5 +57,10 @@
       "boolean / string",
       "読込中・失敗表示。仮想スクロールやセル編集は含みません。"
     ]
+  ],
+  "features": [
+    "native table / search / selection / sort / resize",
+    "320px native horizontal scroll / RTL / forced colors",
+    "decorations only; stable glyph and native hit"
   ]
 }

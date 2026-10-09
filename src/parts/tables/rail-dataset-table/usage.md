@@ -22,3 +22,7 @@
 - `resizable / stickyFirst` (boolean): 列幅調整と先頭列固定。列幅は矢印キーでも操作。
 - `onRowAction` ((action, row) => void): 各行の操作を利用先へ接続。
 - `loading / error` (boolean / string): 読込中・失敗表示。仮想スクロールやセル編集は含みません。
+
+<!-- design-renewal -->
+実識別列と選択列の固定床が、その実幅のまま下へ続いて横送りの溝を支持する。実表の24pxの小口から、開いた横送り溝と80pxのnative鞍形つまみが交差して出る。独立した塗り矩形のrangeパネルを廃し、固定床・支持小口・可動読面の前後を一つの断面にする。実横scrollと双方向に同期し、狭幅で固定識別列を解放すると支持も48pxへ戻る。文字は不透明な水平面で読む。
+<!-- /design-renewal -->

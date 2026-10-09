@@ -2,7 +2,7 @@
   "id": "folded-register-table",
   "name": "Folded Register Table",
   "category": "tables",
-  "description": "折り返した記録表。上の見出し帯と表本体を分け、行の内容には装飾を重ねない。",
+  "description": "実検索と選択を載せる220pxの背面を実表の隣へ置き、全高の48pxの一枚の返面が記録前面へ回り込む。二面を細い取手でつながず、操作面の向きと本文の向きを一つの長い折面で決める。狭幅では同じ広い返面が上へ回り、native検索・文字・押面を変形しない。",
   "designType": "A",
   "tagline": "折り返した記録表。",
   "motion": "STATE / MATERIAL",
@@ -57,5 +57,10 @@
       "boolean / string",
       "読込中・失敗表示。仮想スクロールやセル編集は含みません。"
     ]
+  ],
+  "features": [
+    "native table / search / selection / sort / resize",
+    "320px native horizontal scroll / RTL / forced colors",
+    "decorations only; stable glyph and native hit"
   ]
 }
