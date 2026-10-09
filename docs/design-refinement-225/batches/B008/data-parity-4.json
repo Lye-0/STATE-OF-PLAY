@@ -1,0 +1,145 @@
+[
+  {
+    "id": "warm-plan-choice",
+    "equal": true,
+    "vanilla": {
+      "id": "warm-plan-choice",
+      "kind": "radios",
+      "variant": "soft",
+      "label": "制作プランを選ぶ",
+      "description": "料金は展示用の例です。",
+      "defaultValue": "cloud",
+      "required": true,
+      "items": [
+        {
+          "value": "local",
+          "label": "Local",
+          "description": "手元の環境で、静かに。",
+          "badge": "¥0 / 月",
+          "icon": "file"
+        },
+        {
+          "value": "cloud",
+          "label": "Cloud",
+          "description": "どこからでも、つながる。",
+          "badge": "¥980 / 月",
+          "icon": "spark"
+        },
+        {
+          "value": "hybrid",
+          "label": "Hybrid",
+          "description": "両方のよさを、ひとつに。",
+          "badge": "¥1,980 / 月",
+          "icon": "home"
+        }
+      ]
+    },
+    "reactFile": "src/parts/radios/warm-plan-choice/react/WarmPlanChoice.tsx"
+  },
+  {
+    "id": "soft-contact-finder",
+    "equal": true,
+    "vanilla": {
+      "id": "soft-contact-finder",
+      "kind": "comboboxes",
+      "variant": "essential",
+      "label": "連絡先を探す",
+      "description": "",
+      "defaultValue": "",
+      "multiple": false,
+      "placeholder": "チーム名や連絡先を入力…",
+      "items": [
+        {
+          "value": "aurora",
+          "label": "Aurora Studio",
+          "description": "制作 · hello@aurora.example",
+          "badge": "GLASS",
+          "icon": "spark"
+        },
+        {
+          "value": "folio",
+          "label": "Folio Works",
+          "description": "編集 · contact@folio.example",
+          "badge": "PAPER",
+          "icon": "file"
+        },
+        {
+          "value": "mercury",
+          "label": "Mercury Lab",
+          "description": "開発 · team@mercury.example",
+          "badge": "METAL",
+          "icon": "clock"
+        },
+        {
+          "value": "quiet",
+          "label": "Quiet Office",
+          "description": "運営 · office@quiet.example",
+          "badge": "ESSENTIAL",
+          "icon": "info"
+        },
+        {
+          "value": "archive",
+          "label": "Archive Team",
+          "description": "現在は選択できません",
+          "badge": "SOON",
+          "disabled": true,
+          "icon": "file"
+        }
+      ]
+    },
+    "reactFile": "src/parts/comboboxes/soft-contact-finder/react/SoftContactFinder.tsx"
+  },
+  {
+    "id": "warm-library-finder",
+    "equal": true,
+    "vanilla": {
+      "id": "warm-library-finder",
+      "kind": "comboboxes",
+      "variant": "essential",
+      "label": "ライブラリから選ぶ",
+      "description": "",
+      "defaultValue": "",
+      "multiple": false,
+      "placeholder": "書名や著者を入力…",
+      "items": [
+        {
+          "value": "aurora",
+          "label": "光と透明のかたち",
+          "description": "Aurora 編集室 · 2025",
+          "badge": "A-014",
+          "icon": "file"
+        },
+        {
+          "value": "folio",
+          "label": "紙と余白のノート",
+          "description": "Folio 編集室 · 2024",
+          "badge": "B-028",
+          "icon": "file"
+        },
+        {
+          "value": "mercury",
+          "label": "素材と構造の手帖",
+          "description": "Mercury Lab · 2025",
+          "badge": "C-006",
+          "icon": "file"
+        },
+        {
+          "value": "quiet",
+          "label": "静かなデザイン",
+          "description": "Quiet Office · 2023",
+          "badge": "B-042",
+          "icon": "file"
+        },
+        {
+          "value": "archive",
+          "label": "アーカイブ集",
+          "description": "刊行準備中",
+          "badge": "未刊",
+          "disabled": true,
+          "icon": "file"
+        }
+      ]
+    },
+    "reactFile": "src/parts/comboboxes/warm-library-finder/react/WarmLibraryFinder.tsx"
+  }
+]

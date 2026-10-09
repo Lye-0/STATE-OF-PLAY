@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 三つのずれた紙の層を、一つの大きい綴じ金へ収める単一選択。小さいクリップだけの通常カードをやめ、上/左へ5pxずつ出る紙の実層と、全層を跨ぐ26×24pxの綴じ金へ変更する。綴じ金の両足を前の紙まで通し、文字とnative丸印を下の無地へ固定する。 */
+/* 薄い紙の束を、折った綴じ代と連続した金具で挟む単一選択。選択すると綴じ代が濃くなり、本文は静かな紙面に固定する。 */
 
 .sop-foundation.sop-stapled-card-choice.sop-stapled-card-choice{--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-accent2:var(--accent);--ff-line:var(--edge);color:var(--ink);color-scheme:light;background:var(--surface);padding:18px;max-width:min(100%,400px);min-width:0;box-sizing:border-box;overflow-wrap:anywhere;text-align:start;container-type:inline-size;contain-intrinsic-inline-size:364px}
 .sop-foundation.sop-stapled-card-choice.sop-stapled-card-choice,.sop-foundation.sop-stapled-card-choice.sop-stapled-card-choice *,.sop-foundation.sop-stapled-card-choice.sop-stapled-card-choice *::before,.sop-foundation.sop-stapled-card-choice.sop-stapled-card-choice *::after{box-sizing:border-box}
@@ -38,3 +38,16 @@
 .sop-foundation.sop-stapled-card-choice.sop-stapled-card-choice .ff-choice[data-selected=true]::after{border-color:#9c7c64}
 .sop-foundation.sop-stapled-card-choice.sop-stapled-card-choice:dir(rtl) .ff-choice::before{left:0;right:10px;box-shadow:5px -5px #d8c6af,10px -10px #efe2ca}
 @container(max-width:300px){.sop-foundation.sop-stapled-card-choice.sop-stapled-card-choice .ff-choice{padding-inline:20px}}
+
+/* A folded binding margin clamps a thin stack, rather than a staple on a flat card. */
+.sop-foundation.sop-stapled-card-choice.sop-stapled-card-choice{--surface:#e4e8eb;--paper:#f5f4ec;--selected:#fffef5;--ink:#3e4c57;--muted:#596873;--accent:#566f82;--edge:#a6b5be}
+.sop-foundation.sop-stapled-card-choice.sop-stapled-card-choice .ff-choices{gap:20px;padding:9px 3px 5px 9px}
+.sop-foundation.sop-stapled-card-choice.sop-stapled-card-choice .ff-choice{padding:22px 18px 22px 40px}
+.sop-foundation.sop-stapled-card-choice.sop-stapled-card-choice .ff-choice::before{inset:0;background:linear-gradient(90deg,#9aadb9 0 20px,#cbd5d8 20px 24px,var(--paper) 24px);border:0;box-shadow:-3px -3px #d5dfe1,-6px -6px #b6c5cc}
+.sop-foundation.sop-stapled-card-choice.sop-stapled-card-choice .ff-choice[data-selected=true]::before{background:linear-gradient(90deg,#627f92 0 20px,#aebfc6 20px 24px,var(--selected) 24px)}
+.sop-foundation.sop-stapled-card-choice.sop-stapled-card-choice .ff-choice::after{inset:20px auto 20px 11px;width:19px;height:auto;border:0;border-block:4px solid #e1e5df;border-inline-start:3px solid #718995;border-radius:2px 0 0 2px;background:none}
+.sop-foundation.sop-stapled-card-choice.sop-stapled-card-choice .ff-choice[data-selected=true]::after{border-color:#eef1e9;border-inline-start-color:#526f81}
+.sop-foundation.sop-stapled-card-choice.sop-stapled-card-choice:dir(rtl) .ff-choice::before{inset:0;transform:scaleX(-1);box-shadow:-3px -3px #d5dfe1,-6px -6px #b6c5cc}
+.sop-foundation.sop-stapled-card-choice.sop-stapled-card-choice:dir(rtl) .ff-choice::after{left:auto;right:11px;transform:scaleX(-1)}
+@container(max-width:300px){.sop-foundation.sop-stapled-card-choice.sop-stapled-card-choice .ff-choice{padding-inline:36px 14px}}
+

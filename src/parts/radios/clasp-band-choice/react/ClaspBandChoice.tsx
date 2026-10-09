@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type ClaspBandChoiceProps = FoundationProps;
-/** 二つの実顎が選択帯の端を抱える、留め金の単一選択。元の二顎の主題を保持し、細い括弧を上下8px・奥7pxの64px高の金具へ整える。帯の端に10px以上重ね、選択時は顎だけ3px閉じる。本文とnative選択点は固定する。 */
+/** カードを包む布帯と、そこへ通した金属の留め具を持つ単一選択。選択時は帯が深くなり、留め具と本文の位置を動かさない。 */
 export default forwardRef<HTMLDivElement, ClaspBandChoiceProps>(function ClaspBandChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });

@@ -39,7 +39,7 @@
 
 .sop-foundation.sop-letterbox-finder.sop-letterbox-finder{--surface:#e9dfd3;--paper:#fcf1df;--active:#fff1d6;--selected:#f8e5c6;--ink:#755540;--muted:#8a6f5b;--accent:#ac7c51;--edge:#ceb496}
 .sop-foundation.sop-letterbox-finder.sop-letterbox-finder .ff-combo-shell{border-radius:30px 30px 2px 2px;border-top:10px solid #bd9a72;border-inline:8px solid #a88664;border-bottom:7px solid #8e6c4d;padding-inline:14px}
-.sop-foundation.sop-letterbox-finder.sop-letterbox-finder .ff-floating.ff-combo-list{border-radius:40px 40px 0 0;border-inline:10px solid #a48463!important;border-top:12px solid #b9986d!important;border-bottom:0!important;padding:26px 14px 38px!important;background:#ead6b7;box-shadow:inset 6px 0 #c5a87d,inset -6px 0 #c5a87d}
+
 .sop-foundation.sop-letterbox-finder.sop-letterbox-finder .ff-combo-list::after{content:"";position:absolute;inset-inline:0;bottom:0;height:28px;background:linear-gradient(#a08058 0 6px,#d7b98f 6px 22px,#a88a65 22px);clip-path:polygon(0 0,100% 0,calc(100% - 16px) 100%,16px 100%);pointer-events:none;z-index:1}
 .sop-foundation.sop-letterbox-finder.sop-letterbox-finder [data-results]{padding:2px 4px;background:#fcf1df;border-top:5px solid #987552;border-inline:4px solid #b0946c;box-shadow:inset 0 5px #e6cfaa}
 .sop-foundation.sop-letterbox-finder.sop-letterbox-finder .ff-option{padding:22px 12px;margin:0;min-height:84px}
@@ -48,3 +48,17 @@
 .sop-foundation.sop-letterbox-finder.sop-letterbox-finder .ff-option[data-active=true]::before,.sop-foundation.sop-letterbox-finder.sop-letterbox-finder .ff-option:hover::before{background:var(--active)}
 .sop-foundation.sop-letterbox-finder.sop-letterbox-finder .ff-option[aria-selected=true]::before{background:var(--selected)}
 .sop-foundation.sop-letterbox-finder.sop-letterbox-finder .ff-menu-foot{margin:8px 4px 0;border-top:0}
+
+@media(forced-colors:none){
+/* A thin folded mouth, a plain mail pocket, and one bottom fold. */
+.sop-foundation.sop-letterbox-finder.sop-letterbox-finder{--surface:#e8e3d8;--paper:#f9f5e9;--selected:#e9e3d4;--active:#f0e9da;--ink:#454941;--muted:#535b50;--accent:#6a796d;--edge:#b6bdac}
+.sop-foundation.sop-letterbox-finder.sop-letterbox-finder .ff-combo-shell{border:1px solid #a9b09f;border-top:4px solid #8b9a88;border-radius:3px;box-shadow:none}
+.sop-foundation.sop-letterbox-finder.sop-letterbox-finder .ff-combo-list{border-radius:3px!important;border:1px solid #aeb6a3!important;border-top:5px solid #8b9a88!important;padding:12px 12px 19px!important;background:#f9f5e9;box-shadow:0 12px 20px #18211c25}
+.sop-foundation.sop-letterbox-finder.sop-letterbox-finder .ff-combo-list::after{height:8px;background:#c3cbb9;clip-path:polygon(0 0,100% 0,calc(100% - 7px) 100%,7px 100%)}
+.sop-foundation.sop-letterbox-finder.sop-letterbox-finder .ff-option{padding:15px 9px;min-height:70px}
+.sop-foundation.sop-letterbox-finder.sop-letterbox-finder .ff-option::before{border-bottom-color:#d3d7c9}
+
+
+.sop-foundation.sop-letterbox-finder.sop-letterbox-finder [data-results]{padding:0;background:transparent;border:0;box-shadow:none}
+}
+@media(forced-colors:active){.sop-foundation.sop-letterbox-finder.sop-letterbox-finder [data-results]{background:Canvas;border-color:ButtonText;box-shadow:none}}

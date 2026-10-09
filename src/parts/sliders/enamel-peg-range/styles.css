@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 大きい釉薬の頭と細い8pxの脚を持つピンで、一本の軌道の値を示すスライダー。黄色の普通の角丸つまみをやめ、実際に絞った脚と一つの白い反射を持つ頭へ変える。釉薬の無地を広く、影の縁を下に限定し、nativeの操作を保持する。 */
+/* 明るいプレートからはっきり浮かぶ青灰の琺瑯ペグ。握る頭と細い軸を同じ素材で結び、ネイティブ入力の位置を見つけやすくする。 */
 
 .sop-foundation.sop-enamel-peg-range.sop-enamel-peg-range{--ff-base:var(--surface);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-accent2:var(--accent);--ff-line:var(--edge);--ff-radius:0px;color:var(--ink);color-scheme:light;max-width:min(100%,380px);min-width:0;padding:22px;background:var(--surface);border:0;box-shadow:none;box-sizing:border-box;overflow-wrap:anywhere}
 .sop-foundation.sop-enamel-peg-range.sop-enamel-peg-range,.sop-foundation.sop-enamel-peg-range.sop-enamel-peg-range *,.sop-foundation.sop-enamel-peg-range.sop-enamel-peg-range *::before,.sop-foundation.sop-enamel-peg-range.sop-enamel-peg-range *::after{box-sizing:border-box}
@@ -35,3 +35,13 @@
 @media(forced-colors:active){.sop-foundation.sop-enamel-peg-range.sop-enamel-peg-range [data-range]::-webkit-slider-thumb{clip-path:none;background:ButtonFace;border-color:ButtonText}.sop-foundation.sop-enamel-peg-range.sop-enamel-peg-range [data-range]::-moz-range-thumb{clip-path:none;background:ButtonFace;border-color:ButtonText}}
 
 @media(forced-colors:active){.sop-foundation.sop-enamel-peg-range.sop-enamel-peg-range [data-range]::-webkit-slider-thumb{all:revert;margin-top:0}.sop-foundation.sop-enamel-peg-range.sop-enamel-peg-range [data-range]::-moz-range-thumb{all:revert;margin:0}}
+
+/* Enamel is distinct from the pale plate, including its stem. */
+@media(forced-colors:none){
+.sop-foundation.sop-enamel-peg-range.sop-enamel-peg-range{--surface:#ede9dc;--paper:#f5f0e2;--ink:#3f4e54;--muted:#5e6b70;--accent:#3f6b7e;--edge:#9caaa9}
+.sop-foundation.sop-enamel-peg-range.sop-enamel-peg-range .ff-rail{background:#9faeae}.sop-foundation.sop-enamel-peg-range.sop-enamel-peg-range .ff-fill{background:#3f6b7e}
+.sop-foundation.sop-enamel-peg-range.sop-enamel-peg-range [data-range]::-webkit-slider-thumb{background:radial-gradient(ellipse 7px 4px at 35% 22%,#e1edf2 80%,transparent 95%),linear-gradient(90deg,#355969 0 3px,#658a9a 3px 25px,#365e70 25px)}.sop-foundation.sop-enamel-peg-range.sop-enamel-peg-range [data-range]::-moz-range-thumb{background:radial-gradient(ellipse 7px 4px at 35% 22%,#e1edf2 80%,transparent 95%),linear-gradient(90deg,#355969 0 3px,#658a9a 3px 25px,#365e70 25px)}
+}
+
+
+@media(forced-colors:active){.sop-foundation.sop-enamel-peg-range.sop-enamel-peg-range .ff-rail{display:none}.sop-foundation.sop-enamel-peg-range.sop-enamel-peg-range .ff-slider{background:Canvas;border:0;box-shadow:none}.sop-foundation.sop-enamel-peg-range.sop-enamel-peg-range [data-range]::-webkit-slider-thumb{all:revert;margin-top:0}.sop-foundation.sop-enamel-peg-range.sop-enamel-peg-range [data-range]::-moz-range-thumb{all:revert;margin:0}}

@@ -1,0 +1,4342 @@
+[
+  {
+    "id": "pinstripe-range",
+    "number": 238,
+    "mode": "portable",
+    "states": {
+      "slider-rest": {
+        "inputs": [
+          {
+            "value": "62",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "62%",
+            "x": 218.59375,
+            "y": 245.6875,
+            "w": 124.8125,
+            "h": 72
+          },
+          {
+            "value": "62",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "62%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "62%",
+        "root": {
+          "x": 196.59375,
+          "y": 93,
+          "w": 168.8125,
+          "h": 273.6875,
+          "color": "rgb(35, 39, 51)",
+          "bg": "rgb(243, 240, 231)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 237.59375,
+          "y": 271.6875,
+          "w": 86.8125,
+          "h": 23
+        },
+        "fill": {
+          "x": 237.59375,
+          "y": 272.6875,
+          "w": 53.828125,
+          "h": 21
+        },
+        "form": [
+          [
+            "amount",
+            "62"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "値を、ちょうどよく。",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "62%",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "62%"
+      },
+      "Home": {
+        "inputs": [
+          {
+            "value": "0",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "0%",
+            "x": 218.59375,
+            "y": 245.6875,
+            "w": 124.8125,
+            "h": 72
+          },
+          {
+            "value": "0",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "0%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "0%",
+        "root": {
+          "x": 196.59375,
+          "y": 93,
+          "w": 168.8125,
+          "h": 273.6875,
+          "color": "rgb(35, 39, 51)",
+          "bg": "rgb(243, 240, 231)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 237.59375,
+          "y": 271.6875,
+          "w": 86.8125,
+          "h": 23
+        },
+        "fill": {
+          "x": 237.59375,
+          "y": 272.6875,
+          "w": 0,
+          "h": 21
+        },
+        "form": [
+          [
+            "amount",
+            "0"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "値を、ちょうどよく。",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "0%"
+      },
+      "End": {
+        "inputs": [
+          {
+            "value": "100",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "100%",
+            "x": 218.59375,
+            "y": 245.6875,
+            "w": 124.8125,
+            "h": 72
+          },
+          {
+            "value": "100",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "100%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "100%",
+        "root": {
+          "x": 196.59375,
+          "y": 93,
+          "w": 168.8125,
+          "h": 273.6875,
+          "color": "rgb(35, 39, 51)",
+          "bg": "rgb(243, 240, 231)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 237.59375,
+          "y": 271.6875,
+          "w": 86.8125,
+          "h": 23
+        },
+        "fill": {
+          "x": 237.59375,
+          "y": 272.6875,
+          "w": 86.8125,
+          "h": 21
+        },
+        "form": [
+          [
+            "amount",
+            "100"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "値を、ちょうどよく。",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "100%"
+      },
+      "ArrowLeft": {
+        "inputs": [
+          {
+            "value": "99",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "99%",
+            "x": 218.59375,
+            "y": 245.6875,
+            "w": 124.8125,
+            "h": 72
+          },
+          {
+            "value": "99",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "99%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "99%",
+        "root": {
+          "x": 196.59375,
+          "y": 93,
+          "w": 168.8125,
+          "h": 273.6875,
+          "color": "rgb(35, 39, 51)",
+          "bg": "rgb(243, 240, 231)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 237.59375,
+          "y": 271.6875,
+          "w": 86.8125,
+          "h": 23
+        },
+        "fill": {
+          "x": 237.59375,
+          "y": 272.6875,
+          "w": 85.953125,
+          "h": 21
+        },
+        "form": [
+          [
+            "amount",
+            "99"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "値を、ちょうどよく。",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "99%",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "99%"
+      },
+      "PageDown": {
+        "inputs": [
+          {
+            "value": "89",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "89%",
+            "x": 218.59375,
+            "y": 245.6875,
+            "w": 124.8125,
+            "h": 72
+          },
+          {
+            "value": "89",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "89%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "89%",
+        "root": {
+          "x": 196.59375,
+          "y": 93,
+          "w": 168.8125,
+          "h": 273.6875,
+          "color": "rgb(35, 39, 51)",
+          "bg": "rgb(243, 240, 231)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 237.59375,
+          "y": 271.6875,
+          "w": 86.8125,
+          "h": 23
+        },
+        "fill": {
+          "x": 237.59375,
+          "y": 272.6875,
+          "w": 77.265625,
+          "h": 21
+        },
+        "form": [
+          [
+            "amount",
+            "89"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "値を、ちょうどよく。",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "89%",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "89%"
+      },
+      "drag": {
+        "inputs": [
+          {
+            "value": "97",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "97%",
+            "x": 218.59375,
+            "y": 245.6875,
+            "w": 124.8125,
+            "h": 72
+          },
+          {
+            "value": "97",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "97%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "97%",
+        "root": {
+          "x": 196.59375,
+          "y": 93,
+          "w": 168.8125,
+          "h": 273.6875,
+          "color": "rgb(35, 39, 51)",
+          "bg": "rgb(243, 240, 231)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 237.59375,
+          "y": 271.6875,
+          "w": 86.8125,
+          "h": 23
+        },
+        "fill": {
+          "x": 237.59375,
+          "y": 272.6875,
+          "w": 84.21875,
+          "h": 21
+        },
+        "form": [
+          [
+            "amount",
+            "97"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "値を、ちょうどよく。",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "97%",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "97%"
+      },
+      "slider-long": {
+        "inputs": [
+          {
+            "value": "97",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "97%",
+            "x": 71,
+            "y": 314.6875,
+            "w": 178,
+            "h": 72
+          },
+          {
+            "value": "97",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "97%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "97%",
+        "root": {
+          "x": 49,
+          "y": 93,
+          "w": 222,
+          "h": 342.6875,
+          "color": "rgb(35, 39, 51)",
+          "bg": "rgb(243, 240, 231)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 90,
+          "y": 340.6875,
+          "w": 140,
+          "h": 23
+        },
+        "fill": {
+          "x": 90,
+          "y": 341.6875,
+          "w": 135.8125,
+          "h": 21
+        },
+        "form": [
+          [
+            "amount",
+            "97"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "共同作業者とプロジェクトの詳細な設定値を調整する",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "97%",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "97%"
+      },
+      "slider-rtl": {
+        "inputs": [
+          {
+            "value": "1",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "1%",
+            "x": 71,
+            "y": 314.6875,
+            "w": 178,
+            "h": 72
+          },
+          {
+            "value": "1",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "1%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "1%",
+        "root": {
+          "x": 49,
+          "y": 93,
+          "w": 222,
+          "h": 342.6875,
+          "color": "rgb(35, 39, 51)",
+          "bg": "rgb(243, 240, 231)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 90,
+          "y": 340.6875,
+          "w": 140,
+          "h": 23
+        },
+        "fill": {
+          "x": 90,
+          "y": 341.6875,
+          "w": 1.40625,
+          "h": 21
+        },
+        "form": [
+          [
+            "amount",
+            "1"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "共同作業者とプロジェクトの詳細な設定値を調整する",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "1%",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "1%"
+      },
+      "configured-single": {
+        "inputs": [
+          {
+            "value": "40",
+            "min": "-20",
+            "max": "80",
+            "step": "5",
+            "disabled": false,
+            "hidden": false,
+            "text": "40%",
+            "x": 71,
+            "y": 314.6875,
+            "w": 178,
+            "h": 72
+          },
+          {
+            "value": "40",
+            "min": "-20",
+            "max": "80",
+            "step": "5",
+            "disabled": true,
+            "hidden": true,
+            "text": "40%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "40%",
+        "root": {
+          "x": 49,
+          "y": 93,
+          "w": 222,
+          "h": 342.6875,
+          "color": "rgb(35, 39, 51)",
+          "bg": "rgb(243, 240, 231)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 90,
+          "y": 340.6875,
+          "w": 140,
+          "h": 23
+        },
+        "fill": {
+          "x": 90,
+          "y": 341.6875,
+          "w": 84,
+          "h": 21
+        },
+        "form": [
+          [
+            "amount",
+            "40"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "共同作業者とプロジェクトの詳細な設定値を調整する",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "40%",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "-20%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 5",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "80%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "60%"
+      },
+      "reset-single": {
+        "inputs": [
+          {
+            "value": "60",
+            "min": "-20",
+            "max": "80",
+            "step": "5",
+            "disabled": false,
+            "hidden": false,
+            "text": "60%",
+            "x": 71,
+            "y": 314.6875,
+            "w": 178,
+            "h": 72
+          },
+          {
+            "value": "60",
+            "min": "-20",
+            "max": "80",
+            "step": "5",
+            "disabled": true,
+            "hidden": true,
+            "text": "60%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "60%",
+        "root": {
+          "x": 49,
+          "y": 93,
+          "w": 222,
+          "h": 342.6875,
+          "color": "rgb(35, 39, 51)",
+          "bg": "rgb(243, 240, 231)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 90,
+          "y": 340.6875,
+          "w": 140,
+          "h": 23
+        },
+        "fill": {
+          "x": 90,
+          "y": 341.6875,
+          "w": 112,
+          "h": 21
+        },
+        "form": [
+          [
+            "amount",
+            "60"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "共同作業者とプロジェクトの詳細な設定値を調整する",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "60%",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "-20%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 5",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "80%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "80%"
+      },
+      "slider-forced": {
+        "inputs": [
+          {
+            "value": "60",
+            "min": "-20",
+            "max": "80",
+            "step": "5",
+            "disabled": false,
+            "hidden": false,
+            "text": "60%",
+            "x": 77,
+            "y": 314.6875,
+            "w": 166,
+            "h": 72
+          },
+          {
+            "value": "60",
+            "min": "-20",
+            "max": "80",
+            "step": "5",
+            "disabled": true,
+            "hidden": true,
+            "text": "60%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "60%",
+        "root": {
+          "x": 49,
+          "y": 93,
+          "w": 222,
+          "h": 342.6875,
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgb(255, 255, 255)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 77,
+          "y": 343.6875,
+          "w": 166,
+          "h": 18
+        },
+        "fill": {
+          "x": 77,
+          "y": 343.6875,
+          "w": 132.8125,
+          "h": 17
+        },
+        "form": [
+          [
+            "amount",
+            "60"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "共同作業者とプロジェクトの詳細な設定値を調整する",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgba(255, 255, 255, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgba(255, 255, 255, 0)",
+            "image": "none"
+          },
+          {
+            "text": "60%",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgba(255, 255, 255, 0)",
+            "image": "none"
+          },
+          {
+            "text": "-20%",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgba(255, 255, 255, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 5",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgba(255, 255, 255, 0)",
+            "image": "none"
+          },
+          {
+            "text": "80%",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgba(255, 255, 255, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "80%"
+      }
+    }
+  },
+  {
+    "id": "enamel-peg-range",
+    "number": 245,
+    "mode": "portable",
+    "states": {
+      "slider-rest": {
+        "inputs": [
+          {
+            "value": "62",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "62%",
+            "x": 746.1875,
+            "y": 231.796875,
+            "w": 145.609375,
+            "h": 72
+          },
+          {
+            "value": "62",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "62%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "62%",
+        "root": {
+          "x": 724.1875,
+          "y": 93,
+          "w": 189.609375,
+          "h": 261.296875,
+          "color": "rgb(63, 78, 84)",
+          "bg": "rgb(237, 233, 220)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 762.1875,
+          "y": 277.796875,
+          "w": 113.609375,
+          "h": 3
+        },
+        "fill": {
+          "x": 762.1875,
+          "y": 277.796875,
+          "w": 70.453125,
+          "h": 3
+        },
+        "form": [
+          [
+            "amount",
+            "62"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "値を、ちょうどよく。",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "62%",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "62%"
+      },
+      "Home": {
+        "inputs": [
+          {
+            "value": "0",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "0%",
+            "x": 746.1875,
+            "y": 231.796875,
+            "w": 145.609375,
+            "h": 72
+          },
+          {
+            "value": "0",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "0%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "0%",
+        "root": {
+          "x": 724.1875,
+          "y": 93,
+          "w": 189.609375,
+          "h": 261.296875,
+          "color": "rgb(63, 78, 84)",
+          "bg": "rgb(237, 233, 220)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 762.1875,
+          "y": 277.796875,
+          "w": 113.609375,
+          "h": 3
+        },
+        "fill": {
+          "x": 762.1875,
+          "y": 277.796875,
+          "w": 0,
+          "h": 3
+        },
+        "form": [
+          [
+            "amount",
+            "0"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "値を、ちょうどよく。",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "0%"
+      },
+      "End": {
+        "inputs": [
+          {
+            "value": "100",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "100%",
+            "x": 746.1875,
+            "y": 231.796875,
+            "w": 145.609375,
+            "h": 72
+          },
+          {
+            "value": "100",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "100%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "100%",
+        "root": {
+          "x": 724.1875,
+          "y": 93,
+          "w": 189.609375,
+          "h": 261.296875,
+          "color": "rgb(63, 78, 84)",
+          "bg": "rgb(237, 233, 220)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 762.1875,
+          "y": 277.796875,
+          "w": 113.609375,
+          "h": 3
+        },
+        "fill": {
+          "x": 762.1875,
+          "y": 277.796875,
+          "w": 113.609375,
+          "h": 3
+        },
+        "form": [
+          [
+            "amount",
+            "100"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "値を、ちょうどよく。",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "100%"
+      },
+      "ArrowLeft": {
+        "inputs": [
+          {
+            "value": "99",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "99%",
+            "x": 746.1875,
+            "y": 231.796875,
+            "w": 145.609375,
+            "h": 72
+          },
+          {
+            "value": "99",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "99%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "99%",
+        "root": {
+          "x": 724.1875,
+          "y": 93,
+          "w": 189.609375,
+          "h": 261.296875,
+          "color": "rgb(63, 78, 84)",
+          "bg": "rgb(237, 233, 220)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 762.1875,
+          "y": 277.796875,
+          "w": 113.609375,
+          "h": 3
+        },
+        "fill": {
+          "x": 762.1875,
+          "y": 277.796875,
+          "w": 112.484375,
+          "h": 3
+        },
+        "form": [
+          [
+            "amount",
+            "99"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "値を、ちょうどよく。",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "99%",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "99%"
+      },
+      "PageDown": {
+        "inputs": [
+          {
+            "value": "89",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "89%",
+            "x": 746.1875,
+            "y": 231.796875,
+            "w": 145.609375,
+            "h": 72
+          },
+          {
+            "value": "89",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "89%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "89%",
+        "root": {
+          "x": 724.1875,
+          "y": 93,
+          "w": 189.609375,
+          "h": 261.296875,
+          "color": "rgb(63, 78, 84)",
+          "bg": "rgb(237, 233, 220)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 762.1875,
+          "y": 277.796875,
+          "w": 113.609375,
+          "h": 3
+        },
+        "fill": {
+          "x": 762.1875,
+          "y": 277.796875,
+          "w": 101.125,
+          "h": 3
+        },
+        "form": [
+          [
+            "amount",
+            "89"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "値を、ちょうどよく。",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "89%",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "89%"
+      },
+      "drag": {
+        "inputs": [
+          {
+            "value": "95",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "95%",
+            "x": 746.1875,
+            "y": 231.796875,
+            "w": 145.609375,
+            "h": 72
+          },
+          {
+            "value": "95",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "95%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "95%",
+        "root": {
+          "x": 724.1875,
+          "y": 93,
+          "w": 189.609375,
+          "h": 261.296875,
+          "color": "rgb(63, 78, 84)",
+          "bg": "rgb(237, 233, 220)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 762.1875,
+          "y": 277.796875,
+          "w": 113.609375,
+          "h": 3
+        },
+        "fill": {
+          "x": 762.1875,
+          "y": 277.796875,
+          "w": 107.9375,
+          "h": 3
+        },
+        "form": [
+          [
+            "amount",
+            "95"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "値を、ちょうどよく。",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "95%",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "95%"
+      },
+      "slider-long": {
+        "inputs": [
+          {
+            "value": "95",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "95%",
+            "x": 71,
+            "y": 695.484375,
+            "w": 178,
+            "h": 72
+          },
+          {
+            "value": "95",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "95%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "95%",
+        "root": {
+          "x": 49,
+          "y": 484.6875,
+          "w": 222,
+          "h": 333.296875,
+          "color": "rgb(63, 78, 84)",
+          "bg": "rgb(237, 233, 220)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 87,
+          "y": 741.484375,
+          "w": 146,
+          "h": 3
+        },
+        "fill": {
+          "x": 87,
+          "y": 741.484375,
+          "w": 138.703125,
+          "h": 3
+        },
+        "form": [
+          [
+            "amount",
+            "95"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "共同作業者とプロジェクトの詳細な設定値を調整する",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "95%",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "95%"
+      },
+      "slider-rtl": {
+        "inputs": [
+          {
+            "value": "1",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "1%",
+            "x": 71,
+            "y": 695.484375,
+            "w": 178,
+            "h": 72
+          },
+          {
+            "value": "1",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "1%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "1%",
+        "root": {
+          "x": 49,
+          "y": 484.6875,
+          "w": 222,
+          "h": 333.296875,
+          "color": "rgb(63, 78, 84)",
+          "bg": "rgb(237, 233, 220)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 87,
+          "y": 741.484375,
+          "w": 146,
+          "h": 3
+        },
+        "fill": {
+          "x": 231.53125,
+          "y": 741.484375,
+          "w": 1.46875,
+          "h": 3
+        },
+        "form": [
+          [
+            "amount",
+            "1"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "共同作業者とプロジェクトの詳細な設定値を調整する",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "1%",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "1%"
+      },
+      "configured-single": {
+        "inputs": [
+          {
+            "value": "40",
+            "min": "-20",
+            "max": "80",
+            "step": "5",
+            "disabled": false,
+            "hidden": false,
+            "text": "40%",
+            "x": 71,
+            "y": 695.484375,
+            "w": 178,
+            "h": 72
+          },
+          {
+            "value": "40",
+            "min": "-20",
+            "max": "80",
+            "step": "5",
+            "disabled": true,
+            "hidden": true,
+            "text": "40%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "40%",
+        "root": {
+          "x": 49,
+          "y": 484.6875,
+          "w": 222,
+          "h": 333.296875,
+          "color": "rgb(63, 78, 84)",
+          "bg": "rgb(237, 233, 220)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 87,
+          "y": 741.484375,
+          "w": 146,
+          "h": 3
+        },
+        "fill": {
+          "x": 145.390625,
+          "y": 741.484375,
+          "w": 87.609375,
+          "h": 3
+        },
+        "form": [
+          [
+            "amount",
+            "40"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "共同作業者とプロジェクトの詳細な設定値を調整する",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "40%",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "-20%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 5",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "80%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "60%"
+      },
+      "reset-single": {
+        "inputs": [
+          {
+            "value": "60",
+            "min": "-20",
+            "max": "80",
+            "step": "5",
+            "disabled": false,
+            "hidden": false,
+            "text": "60%",
+            "x": 71,
+            "y": 695.484375,
+            "w": 178,
+            "h": 72
+          },
+          {
+            "value": "60",
+            "min": "-20",
+            "max": "80",
+            "step": "5",
+            "disabled": true,
+            "hidden": true,
+            "text": "60%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "60%",
+        "root": {
+          "x": 49,
+          "y": 484.6875,
+          "w": 222,
+          "h": 333.296875,
+          "color": "rgb(63, 78, 84)",
+          "bg": "rgb(237, 233, 220)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 87,
+          "y": 741.484375,
+          "w": 146,
+          "h": 3
+        },
+        "fill": {
+          "x": 116.1875,
+          "y": 741.484375,
+          "w": 116.8125,
+          "h": 3
+        },
+        "form": [
+          [
+            "amount",
+            "60"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "共同作業者とプロジェクトの詳細な設定値を調整する",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "60%",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "-20%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 5",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "80%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "80%"
+      },
+      "slider-forced": {
+        "inputs": [
+          {
+            "value": "60",
+            "min": "-20",
+            "max": "80",
+            "step": "5",
+            "disabled": false,
+            "hidden": false,
+            "text": "60%",
+            "x": 71,
+            "y": 695.484375,
+            "w": 178,
+            "h": 72
+          },
+          {
+            "value": "60",
+            "min": "-20",
+            "max": "80",
+            "step": "5",
+            "disabled": true,
+            "hidden": true,
+            "text": "60%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "60%",
+        "root": {
+          "x": 49,
+          "y": 484.6875,
+          "w": 222,
+          "h": 333.296875,
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgb(255, 255, 255)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 87,
+          "y": 741.484375,
+          "w": 146,
+          "h": 3
+        },
+        "fill": {
+          "x": 116.1875,
+          "y": 741.484375,
+          "w": 116.8125,
+          "h": 3
+        },
+        "form": [
+          [
+            "amount",
+            "60"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "共同作業者とプロジェクトの詳細な設定値を調整する",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgba(255, 255, 255, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgba(255, 255, 255, 0)",
+            "image": "none"
+          },
+          {
+            "text": "60%",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgba(255, 255, 255, 0)",
+            "image": "none"
+          },
+          {
+            "text": "-20%",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgba(255, 255, 255, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 5",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgba(255, 255, 255, 0)",
+            "image": "none"
+          },
+          {
+            "text": "80%",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgba(255, 255, 255, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "80%"
+      }
+    }
+  },
+  {
+    "id": "pinstripe-range",
+    "number": 238,
+    "mode": "gallery",
+    "states": {
+      "slider-rest": {
+        "inputs": [
+          {
+            "value": "62",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "62%",
+            "x": 218.84375,
+            "y": 477.921875,
+            "w": 124.8125,
+            "h": 72
+          },
+          {
+            "value": "62",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "62%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "62%",
+        "root": {
+          "x": 196.84375,
+          "y": 325.234375,
+          "w": 168.8125,
+          "h": 273.6875,
+          "color": "rgb(35, 39, 51)",
+          "bg": "rgb(243, 240, 231)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 237.84375,
+          "y": 503.921875,
+          "w": 86.8125,
+          "h": 23
+        },
+        "fill": {
+          "x": 237.84375,
+          "y": 504.921875,
+          "w": 53.828125,
+          "h": 21
+        },
+        "form": [
+          [
+            "amount",
+            "62"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "値を、ちょうどよく。",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "62%",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "62%"
+      },
+      "Home": {
+        "inputs": [
+          {
+            "value": "0",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "0%",
+            "x": 218.84375,
+            "y": 477.921875,
+            "w": 124.8125,
+            "h": 72
+          },
+          {
+            "value": "0",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "0%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "0%",
+        "root": {
+          "x": 196.84375,
+          "y": 325.234375,
+          "w": 168.8125,
+          "h": 273.6875,
+          "color": "rgb(35, 39, 51)",
+          "bg": "rgb(243, 240, 231)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 237.84375,
+          "y": 503.921875,
+          "w": 86.8125,
+          "h": 23
+        },
+        "fill": {
+          "x": 237.84375,
+          "y": 504.921875,
+          "w": 0,
+          "h": 21
+        },
+        "form": [
+          [
+            "amount",
+            "0"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "値を、ちょうどよく。",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "0%"
+      },
+      "End": {
+        "inputs": [
+          {
+            "value": "100",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "100%",
+            "x": 218.84375,
+            "y": 477.921875,
+            "w": 124.8125,
+            "h": 72
+          },
+          {
+            "value": "100",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "100%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "100%",
+        "root": {
+          "x": 196.84375,
+          "y": 325.234375,
+          "w": 168.8125,
+          "h": 273.6875,
+          "color": "rgb(35, 39, 51)",
+          "bg": "rgb(243, 240, 231)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 237.84375,
+          "y": 503.921875,
+          "w": 86.8125,
+          "h": 23
+        },
+        "fill": {
+          "x": 237.84375,
+          "y": 504.921875,
+          "w": 86.8125,
+          "h": 21
+        },
+        "form": [
+          [
+            "amount",
+            "100"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "値を、ちょうどよく。",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "100%"
+      },
+      "ArrowLeft": {
+        "inputs": [
+          {
+            "value": "99",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "99%",
+            "x": 218.84375,
+            "y": 477.921875,
+            "w": 124.8125,
+            "h": 72
+          },
+          {
+            "value": "99",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "99%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "99%",
+        "root": {
+          "x": 196.84375,
+          "y": 325.234375,
+          "w": 168.8125,
+          "h": 273.6875,
+          "color": "rgb(35, 39, 51)",
+          "bg": "rgb(243, 240, 231)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 237.84375,
+          "y": 503.921875,
+          "w": 86.8125,
+          "h": 23
+        },
+        "fill": {
+          "x": 237.84375,
+          "y": 504.921875,
+          "w": 85.953125,
+          "h": 21
+        },
+        "form": [
+          [
+            "amount",
+            "99"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "値を、ちょうどよく。",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "99%",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "99%"
+      },
+      "PageDown": {
+        "inputs": [
+          {
+            "value": "89",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "89%",
+            "x": 218.84375,
+            "y": 477.921875,
+            "w": 124.8125,
+            "h": 72
+          },
+          {
+            "value": "89",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "89%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "89%",
+        "root": {
+          "x": 196.84375,
+          "y": 325.234375,
+          "w": 168.8125,
+          "h": 273.6875,
+          "color": "rgb(35, 39, 51)",
+          "bg": "rgb(243, 240, 231)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 237.84375,
+          "y": 503.921875,
+          "w": 86.8125,
+          "h": 23
+        },
+        "fill": {
+          "x": 237.84375,
+          "y": 504.921875,
+          "w": 77.265625,
+          "h": 21
+        },
+        "form": [
+          [
+            "amount",
+            "89"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "値を、ちょうどよく。",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "89%",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "89%"
+      },
+      "drag": {
+        "inputs": [
+          {
+            "value": "97",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "97%",
+            "x": 218.84375,
+            "y": 477.921875,
+            "w": 124.8125,
+            "h": 72
+          },
+          {
+            "value": "97",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "97%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "97%",
+        "root": {
+          "x": 196.84375,
+          "y": 325.234375,
+          "w": 168.8125,
+          "h": 273.6875,
+          "color": "rgb(35, 39, 51)",
+          "bg": "rgb(243, 240, 231)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 237.84375,
+          "y": 503.921875,
+          "w": 86.8125,
+          "h": 23
+        },
+        "fill": {
+          "x": 237.84375,
+          "y": 504.921875,
+          "w": 84.21875,
+          "h": 21
+        },
+        "form": [
+          [
+            "amount",
+            "97"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "値を、ちょうどよく。",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "97%",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "97%"
+      },
+      "slider-long": {
+        "inputs": [
+          {
+            "value": "97",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "97%",
+            "x": 57,
+            "y": 7408.46875,
+            "w": 191,
+            "h": 72
+          },
+          {
+            "value": "97",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "97%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "97%",
+        "root": {
+          "x": 35,
+          "y": 7186.78125,
+          "w": 235,
+          "h": 342.6875,
+          "color": "rgb(35, 39, 51)",
+          "bg": "rgb(243, 240, 231)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 76,
+          "y": 7434.46875,
+          "w": 153,
+          "h": 23
+        },
+        "fill": {
+          "x": 76,
+          "y": 7435.46875,
+          "w": 148.421875,
+          "h": 21
+        },
+        "form": [
+          [
+            "amount",
+            "97"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "共同作業者とプロジェクトの詳細な設定値を調整する",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "97%",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "97%"
+      },
+      "slider-rtl": {
+        "inputs": [
+          {
+            "value": "1",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "1%",
+            "x": 57,
+            "y": 512.46875,
+            "w": 191,
+            "h": 72
+          },
+          {
+            "value": "1",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "1%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "1%",
+        "root": {
+          "x": 35,
+          "y": 290.78125,
+          "w": 235,
+          "h": 342.6875,
+          "color": "rgb(35, 39, 51)",
+          "bg": "rgb(243, 240, 231)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 76,
+          "y": 538.46875,
+          "w": 153,
+          "h": 23
+        },
+        "fill": {
+          "x": 76,
+          "y": 539.46875,
+          "w": 1.53125,
+          "h": 21
+        },
+        "form": [
+          [
+            "amount",
+            "1"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "共同作業者とプロジェクトの詳細な設定値を調整する",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "1%",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "1%"
+      },
+      "configured-single": {
+        "inputs": [
+          {
+            "value": "40",
+            "min": "-20",
+            "max": "80",
+            "step": "5",
+            "disabled": false,
+            "hidden": false,
+            "text": "40%",
+            "x": 57,
+            "y": 512.46875,
+            "w": 191,
+            "h": 72
+          },
+          {
+            "value": "40",
+            "min": "-20",
+            "max": "80",
+            "step": "5",
+            "disabled": true,
+            "hidden": true,
+            "text": "40%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "40%",
+        "root": {
+          "x": 35,
+          "y": 290.78125,
+          "w": 235,
+          "h": 342.6875,
+          "color": "rgb(35, 39, 51)",
+          "bg": "rgb(243, 240, 231)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 76,
+          "y": 538.46875,
+          "w": 153,
+          "h": 23
+        },
+        "fill": {
+          "x": 76,
+          "y": 539.46875,
+          "w": 91.8125,
+          "h": 21
+        },
+        "form": [
+          [
+            "amount",
+            "40"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "共同作業者とプロジェクトの詳細な設定値を調整する",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "40%",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "-20%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 5",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "80%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "60%"
+      },
+      "reset-single": {
+        "inputs": [
+          {
+            "value": "60",
+            "min": "-20",
+            "max": "80",
+            "step": "5",
+            "disabled": false,
+            "hidden": false,
+            "text": "60%",
+            "x": 57,
+            "y": 512.46875,
+            "w": 191,
+            "h": 72
+          },
+          {
+            "value": "60",
+            "min": "-20",
+            "max": "80",
+            "step": "5",
+            "disabled": true,
+            "hidden": true,
+            "text": "60%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "60%",
+        "root": {
+          "x": 35,
+          "y": 290.78125,
+          "w": 235,
+          "h": 342.6875,
+          "color": "rgb(35, 39, 51)",
+          "bg": "rgb(243, 240, 231)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 76,
+          "y": 538.46875,
+          "w": 153,
+          "h": 23
+        },
+        "fill": {
+          "x": 76,
+          "y": 539.46875,
+          "w": 122.40625,
+          "h": 21
+        },
+        "form": [
+          [
+            "amount",
+            "60"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "共同作業者とプロジェクトの詳細な設定値を調整する",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "60%",
+            "color": "rgb(35, 39, 51)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "-20%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 5",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "80%",
+            "color": "rgb(83, 90, 101)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "80%"
+      },
+      "slider-forced": {
+        "inputs": [
+          {
+            "value": "60",
+            "min": "-20",
+            "max": "80",
+            "step": "5",
+            "disabled": false,
+            "hidden": false,
+            "text": "60%",
+            "x": 63,
+            "y": 512.46875,
+            "w": 179,
+            "h": 72
+          },
+          {
+            "value": "60",
+            "min": "-20",
+            "max": "80",
+            "step": "5",
+            "disabled": true,
+            "hidden": true,
+            "text": "60%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "60%",
+        "root": {
+          "x": 35,
+          "y": 290.78125,
+          "w": 235,
+          "h": 342.6875,
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgb(255, 255, 255)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 63,
+          "y": 541.46875,
+          "w": 179,
+          "h": 18
+        },
+        "fill": {
+          "x": 63,
+          "y": 541.46875,
+          "w": 143.203125,
+          "h": 17
+        },
+        "form": [
+          [
+            "amount",
+            "60"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "共同作業者とプロジェクトの詳細な設定値を調整する",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgba(255, 255, 255, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgba(255, 255, 255, 0)",
+            "image": "none"
+          },
+          {
+            "text": "60%",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgba(255, 255, 255, 0)",
+            "image": "none"
+          },
+          {
+            "text": "-20%",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgba(255, 255, 255, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 5",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgba(255, 255, 255, 0)",
+            "image": "none"
+          },
+          {
+            "text": "80%",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgba(255, 255, 255, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "80%"
+      }
+    }
+  },
+  {
+    "id": "enamel-peg-range",
+    "number": 245,
+    "mode": "gallery",
+    "states": {
+      "slider-rest": {
+        "inputs": [
+          {
+            "value": "62",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "62%",
+            "x": 730.9375,
+            "y": 470.46875,
+            "w": 145.609375,
+            "h": 72
+          },
+          {
+            "value": "62",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "62%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "62%",
+        "root": {
+          "x": 708.9375,
+          "y": 331.671875,
+          "w": 189.609375,
+          "h": 261.296875,
+          "color": "rgb(63, 78, 84)",
+          "bg": "rgb(237, 233, 220)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 746.9375,
+          "y": 516.46875,
+          "w": 113.609375,
+          "h": 3
+        },
+        "fill": {
+          "x": 746.9375,
+          "y": 516.46875,
+          "w": 70.453125,
+          "h": 3
+        },
+        "form": [
+          [
+            "amount",
+            "62"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "値を、ちょうどよく。",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "62%",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "62%"
+      },
+      "Home": {
+        "inputs": [
+          {
+            "value": "0",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "0%",
+            "x": 730.9375,
+            "y": 470.46875,
+            "w": 145.609375,
+            "h": 72
+          },
+          {
+            "value": "0",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "0%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "0%",
+        "root": {
+          "x": 708.9375,
+          "y": 331.671875,
+          "w": 189.609375,
+          "h": 261.296875,
+          "color": "rgb(63, 78, 84)",
+          "bg": "rgb(237, 233, 220)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 746.9375,
+          "y": 516.46875,
+          "w": 113.609375,
+          "h": 3
+        },
+        "fill": {
+          "x": 746.9375,
+          "y": 516.46875,
+          "w": 0,
+          "h": 3
+        },
+        "form": [
+          [
+            "amount",
+            "0"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "値を、ちょうどよく。",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "0%"
+      },
+      "End": {
+        "inputs": [
+          {
+            "value": "100",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "100%",
+            "x": 730.9375,
+            "y": 470.46875,
+            "w": 145.609375,
+            "h": 72
+          },
+          {
+            "value": "100",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "100%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "100%",
+        "root": {
+          "x": 708.9375,
+          "y": 331.671875,
+          "w": 189.609375,
+          "h": 261.296875,
+          "color": "rgb(63, 78, 84)",
+          "bg": "rgb(237, 233, 220)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 746.9375,
+          "y": 516.46875,
+          "w": 113.609375,
+          "h": 3
+        },
+        "fill": {
+          "x": 746.9375,
+          "y": 516.46875,
+          "w": 113.609375,
+          "h": 3
+        },
+        "form": [
+          [
+            "amount",
+            "100"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "値を、ちょうどよく。",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "100%"
+      },
+      "ArrowLeft": {
+        "inputs": [
+          {
+            "value": "99",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "99%",
+            "x": 730.9375,
+            "y": 470.46875,
+            "w": 145.609375,
+            "h": 72
+          },
+          {
+            "value": "99",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "99%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "99%",
+        "root": {
+          "x": 708.9375,
+          "y": 331.671875,
+          "w": 189.609375,
+          "h": 261.296875,
+          "color": "rgb(63, 78, 84)",
+          "bg": "rgb(237, 233, 220)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 746.9375,
+          "y": 516.46875,
+          "w": 113.609375,
+          "h": 3
+        },
+        "fill": {
+          "x": 746.9375,
+          "y": 516.46875,
+          "w": 112.484375,
+          "h": 3
+        },
+        "form": [
+          [
+            "amount",
+            "99"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "値を、ちょうどよく。",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "99%",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "99%"
+      },
+      "PageDown": {
+        "inputs": [
+          {
+            "value": "89",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "89%",
+            "x": 730.9375,
+            "y": 470.46875,
+            "w": 145.609375,
+            "h": 72
+          },
+          {
+            "value": "89",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "89%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "89%",
+        "root": {
+          "x": 708.9375,
+          "y": 331.671875,
+          "w": 189.609375,
+          "h": 261.296875,
+          "color": "rgb(63, 78, 84)",
+          "bg": "rgb(237, 233, 220)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 746.9375,
+          "y": 516.46875,
+          "w": 113.609375,
+          "h": 3
+        },
+        "fill": {
+          "x": 746.9375,
+          "y": 516.46875,
+          "w": 101.125,
+          "h": 3
+        },
+        "form": [
+          [
+            "amount",
+            "89"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "値を、ちょうどよく。",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "89%",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "89%"
+      },
+      "drag": {
+        "inputs": [
+          {
+            "value": "95",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "95%",
+            "x": 730.9375,
+            "y": 470.46875,
+            "w": 145.609375,
+            "h": 72
+          },
+          {
+            "value": "95",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "95%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "95%",
+        "root": {
+          "x": 708.9375,
+          "y": 331.671875,
+          "w": 189.609375,
+          "h": 261.296875,
+          "color": "rgb(63, 78, 84)",
+          "bg": "rgb(237, 233, 220)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 746.9375,
+          "y": 516.46875,
+          "w": 113.609375,
+          "h": 3
+        },
+        "fill": {
+          "x": 746.9375,
+          "y": 516.46875,
+          "w": 107.9375,
+          "h": 3
+        },
+        "form": [
+          [
+            "amount",
+            "95"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "値を、ちょうどよく。",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "95%",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "95%"
+      },
+      "slider-long": {
+        "inputs": [
+          {
+            "value": "95",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "95%",
+            "x": 57,
+            "y": 9592.109375,
+            "w": 191,
+            "h": 72
+          },
+          {
+            "value": "95",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "95%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "95%",
+        "root": {
+          "x": 35,
+          "y": 9381.3125,
+          "w": 235,
+          "h": 333.296875,
+          "color": "rgb(63, 78, 84)",
+          "bg": "rgb(237, 233, 220)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 73,
+          "y": 9638.109375,
+          "w": 159,
+          "h": 3
+        },
+        "fill": {
+          "x": 73,
+          "y": 9638.109375,
+          "w": 151.0625,
+          "h": 3
+        },
+        "form": [
+          [
+            "amount",
+            "95"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "共同作業者とプロジェクトの詳細な設定値を調整する",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "95%",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "95%"
+      },
+      "slider-rtl": {
+        "inputs": [
+          {
+            "value": "1",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": false,
+            "hidden": false,
+            "text": "1%",
+            "x": 57,
+            "y": 506.109375,
+            "w": 191,
+            "h": 72
+          },
+          {
+            "value": "1",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "disabled": true,
+            "hidden": true,
+            "text": "1%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "1%",
+        "root": {
+          "x": 35,
+          "y": 295.3125,
+          "w": 235,
+          "h": 333.296875,
+          "color": "rgb(63, 78, 84)",
+          "bg": "rgb(237, 233, 220)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 73,
+          "y": 552.109375,
+          "w": 159,
+          "h": 3
+        },
+        "fill": {
+          "x": 230.40625,
+          "y": 552.109375,
+          "w": 1.59375,
+          "h": 3
+        },
+        "form": [
+          [
+            "amount",
+            "1"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "共同作業者とプロジェクトの詳細な設定値を調整する",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "1%",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "0%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 1",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "100%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "1%"
+      },
+      "configured-single": {
+        "inputs": [
+          {
+            "value": "40",
+            "min": "-20",
+            "max": "80",
+            "step": "5",
+            "disabled": false,
+            "hidden": false,
+            "text": "40%",
+            "x": 57,
+            "y": 506.109375,
+            "w": 191,
+            "h": 72
+          },
+          {
+            "value": "40",
+            "min": "-20",
+            "max": "80",
+            "step": "5",
+            "disabled": true,
+            "hidden": true,
+            "text": "40%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "40%",
+        "root": {
+          "x": 35,
+          "y": 295.3125,
+          "w": 235,
+          "h": 333.296875,
+          "color": "rgb(63, 78, 84)",
+          "bg": "rgb(237, 233, 220)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 73,
+          "y": 552.109375,
+          "w": 159,
+          "h": 3
+        },
+        "fill": {
+          "x": 136.59375,
+          "y": 552.109375,
+          "w": 95.40625,
+          "h": 3
+        },
+        "form": [
+          [
+            "amount",
+            "40"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "共同作業者とプロジェクトの詳細な設定値を調整する",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "40%",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "-20%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 5",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "80%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "60%"
+      },
+      "reset-single": {
+        "inputs": [
+          {
+            "value": "60",
+            "min": "-20",
+            "max": "80",
+            "step": "5",
+            "disabled": false,
+            "hidden": false,
+            "text": "60%",
+            "x": 57,
+            "y": 506.109375,
+            "w": 191,
+            "h": 72
+          },
+          {
+            "value": "60",
+            "min": "-20",
+            "max": "80",
+            "step": "5",
+            "disabled": true,
+            "hidden": true,
+            "text": "60%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "60%",
+        "root": {
+          "x": 35,
+          "y": 295.3125,
+          "w": 235,
+          "h": 333.296875,
+          "color": "rgb(63, 78, 84)",
+          "bg": "rgb(237, 233, 220)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 73,
+          "y": 552.109375,
+          "w": 159,
+          "h": 3
+        },
+        "fill": {
+          "x": 104.796875,
+          "y": 552.109375,
+          "w": 127.203125,
+          "h": 3
+        },
+        "form": [
+          [
+            "amount",
+            "60"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "共同作業者とプロジェクトの詳細な設定値を調整する",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "60%",
+            "color": "rgb(63, 78, 84)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "-20%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 5",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "text": "80%",
+            "color": "rgb(94, 107, 112)",
+            "bg": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "80%"
+      },
+      "slider-forced": {
+        "inputs": [
+          {
+            "value": "60",
+            "min": "-20",
+            "max": "80",
+            "step": "5",
+            "disabled": false,
+            "hidden": false,
+            "text": "60%",
+            "x": 57,
+            "y": 506.109375,
+            "w": 191,
+            "h": 72
+          },
+          {
+            "value": "60",
+            "min": "-20",
+            "max": "80",
+            "step": "5",
+            "disabled": true,
+            "hidden": true,
+            "text": "60%",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        ],
+        "read": "60%",
+        "root": {
+          "x": 35,
+          "y": 295.3125,
+          "w": 235,
+          "h": 333.296875,
+          "color": "rgb(0, 0, 0)",
+          "bg": "rgb(255, 255, 255)",
+          "image": "none"
+        },
+        "rail": {
+          "x": 73,
+          "y": 552.109375,
+          "w": 159,
+          "h": 3
+        },
+        "fill": {
+          "x": 104.796875,
+          "y": 552.109375,
+          "w": 127.203125,
+          "h": 3
+        },
+        "form": [
+          [
+            "amount",
+            "60"
+          ]
+        ],
+        "texts": [
+          {
+            "text": "共同作業者とプロジェクトの詳細な設定値を調整する",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgba(255, 255, 255, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STATE / PLAY",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgba(255, 255, 255, 0)",
+            "image": "none"
+          },
+          {
+            "text": "60%",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgba(255, 255, 255, 0)",
+            "image": "none"
+          },
+          {
+            "text": "-20%",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgba(255, 255, 255, 0)",
+            "image": "none"
+          },
+          {
+            "text": "STEP / 5",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgba(255, 255, 255, 0)",
+            "image": "none"
+          },
+          {
+            "text": "80%",
+            "color": "rgb(0, 0, 0)",
+            "bg": "rgba(255, 255, 255, 0)",
+            "image": "none"
+          }
+        ],
+        "start": "0%",
+        "end": "80%"
+      }
+    }
+  }
+]

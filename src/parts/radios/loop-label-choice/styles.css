@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 二つの留め穴へ輪を通す、ラベルの単一選択。元の左の輪を28×46pxの明快なループへ整え、紙の上と下の二つの実穴へ通す。細線が汚れに見える状態をやめ、札の面と輪の太さを揃える。丸い選択印を留め輪から離し、読む文字を固定する。 */
+/* 紙の綴じ代に開けた二つの穴へ、背面から糸を通す単一選択。糸の輪を操作記号から離し、紙を留める接点と選択の丸を読み分ける。 */
 
 .sop-foundation.sop-loop-label-choice.sop-loop-label-choice{--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-accent2:var(--accent);--ff-line:var(--edge);color:var(--ink);color-scheme:light;background:var(--surface);padding:18px;max-width:min(100%,400px);min-width:0;box-sizing:border-box;overflow-wrap:anywhere;text-align:start;container-type:inline-size;contain-intrinsic-inline-size:364px}
 .sop-foundation.sop-loop-label-choice.sop-loop-label-choice,.sop-foundation.sop-loop-label-choice.sop-loop-label-choice *,.sop-foundation.sop-loop-label-choice.sop-loop-label-choice *::before,.sop-foundation.sop-loop-label-choice.sop-loop-label-choice *::after{box-sizing:border-box}
@@ -38,3 +38,22 @@
 .sop-foundation.sop-loop-label-choice.sop-loop-label-choice .ff-choice[data-selected=true]::after{border-color:#855375}
 .sop-foundation.sop-loop-label-choice.sop-loop-label-choice:dir(rtl) .ff-choice::before{left:0;right:6px;transform:scaleX(-1)}
 @container(max-width:300px){.sop-foundation.sop-loop-label-choice.sop-loop-label-choice .ff-choice{padding-inline:28px 16px}}
+
+/* A thin binding thread belongs at the top edge, away from the radio mark. */
+.sop-foundation.sop-loop-label-choice.sop-loop-label-choice .ff-choices{padding-inline:4px;gap:18px}
+.sop-foundation.sop-loop-label-choice.sop-loop-label-choice .ff-choice{padding-inline-start:22px;padding-top:25px}
+.sop-foundation.sop-loop-label-choice.sop-loop-label-choice .ff-choice::before{inset:5px 0 0;border-block-width:1px;mask:none}
+.sop-foundation.sop-loop-label-choice.sop-loop-label-choice .ff-choice::after{inset:auto;left:22px;top:-3px;width:38px;height:14px;border:1px solid #92677d;border-radius:50%;rotate:-8deg}
+.sop-foundation.sop-loop-label-choice.sop-loop-label-choice:dir(rtl) .ff-choice::before{inset:5px 0 0;transform:none}
+.sop-foundation.sop-loop-label-choice.sop-loop-label-choice:dir(rtl) .ff-choice::after{left:auto;right:22px}
+
+
+/* The thread passes behind the folded binding margin and through two punched holes. */
+@media(forced-colors:none){
+.sop-foundation.sop-loop-label-choice.sop-loop-label-choice .ff-choice{padding-top:32px}
+.sop-foundation.sop-loop-label-choice.sop-loop-label-choice .ff-choice::before{inset:5px 0 0;background:linear-gradient(#e1d2da 0 13px,var(--paper) 13px);border-top:1px solid #bea3b3;mask:radial-gradient(circle 3px at 20px 4px,transparent 98%,#000 100%),radial-gradient(circle 3px at 58px 4px,transparent 98%,#000 100%);mask-composite:intersect;z-index:-1}
+.sop-foundation.sop-loop-label-choice.sop-loop-label-choice .ff-choice[data-selected=true]::before{background:linear-gradient(#c3a4b6 0 13px,var(--selected) 13px)}
+.sop-foundation.sop-loop-label-choice.sop-loop-label-choice .ff-choice::after{inset:auto;left:18px;top:-4px;width:42px;height:26px;border:2px solid #8b647c;border-radius:50%;rotate:0;background:none;z-index:-2}
+.sop-foundation.sop-loop-label-choice.sop-loop-label-choice:dir(rtl) .ff-choice::before{transform:none;mask:radial-gradient(circle 3px at calc(100% - 20px) 4px,transparent 98%,#000 100%),radial-gradient(circle 3px at calc(100% - 58px) 4px,transparent 98%,#000 100%);mask-composite:intersect}
+.sop-foundation.sop-loop-label-choice.sop-loop-label-choice:dir(rtl) .ff-choice::after{left:auto;right:18px}
+}

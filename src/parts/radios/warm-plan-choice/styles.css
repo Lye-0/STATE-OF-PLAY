@@ -1,8 +1,25 @@
 @import "../../../shared/foundation/base.css";
-/* Warm Plan Choice — 料金やプラン比較に合う選択欄。 */
+/* Warm Plan Choice — プラン名・説明・料金欄を揃えて比較できる単一選択。狭幅では料金を説明の下へ置き、等しい行の構造を保つ。 */
 .sop-foundation.sop-warm-plan-choice {--ff-base:#e6dfd2;--ff-panel:#f6efdf;--ff-ink:#453d32;--ff-muted:#5b4c36;--ff-accent:#745933;--ff-accent2:#745933;--ff-line:#c2b399;--ff-radius:5px;color-scheme:light;background:#e6dfd2;padding:18px;border-radius:4px}.sop-foundation.sop-warm-plan-choice .ff-eyebrow{display:none}.sop-foundation.sop-warm-plan-choice .ff-heading{line-height:1.6;font-size:12px}.sop-foundation.sop-warm-plan-choice .ff-floating{color:var(--ff-ink);background:var(--ff-panel)}.sop-foundation.sop-warm-plan-choice .ff-choice{padding:16px;border-radius:6px}.sop-foundation.sop-warm-plan-choice .ff-choice-icon{display:none}.sop-foundation.sop-warm-plan-choice .ff-choice[data-selected=true]{border:2px solid #957b50;padding:15px}.sop-foundation.sop-warm-plan-choice .ff-choice:hover:not(:has(input:disabled)){transform:none}
 .sop-foundation.sop-warm-plan-choice{max-width:100%}.sop-foundation.sop-warm-plan-choice,.sop-foundation.sop-warm-plan-choice *{box-sizing:border-box}.sop-foundation.sop-warm-plan-choice :is(button,input,textarea,a){min-width:0}
 .sop-foundation.sop-warm-plan-choice:focus-visible,.sop-foundation.sop-warm-plan-choice :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-foundation.sop-warm-plan-choice,.sop-foundation.sop-warm-plan-choice *,.sop-foundation.sop-warm-plan-choice::before,.sop-foundation.sop-warm-plan-choice::after,.sop-foundation.sop-warm-plan-choice *::before,.sop-foundation.sop-warm-plan-choice *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-foundation.sop-warm-plan-choice[data-sop-paused] *,.sop-foundation.sop-warm-plan-choice[data-paused=true] *,.sop-foundation.sop-warm-plan-choice[data-motion-running=false] *,.sop-foundation.sop-warm-plan-choice[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-foundation.sop-warm-plan-choice{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-warm-plan-choice :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+/* Align the plan's title, details and price column for comparison. */
+.sop-foundation.sop-warm-plan-choice{--ff-base:#f5f1e8;--ff-panel:#fffdf7;--ff-ink:#403d36;--ff-muted:#645e53;--ff-accent:#746044;--ff-line:#c2b9a8;padding:18px;background:#f5f1e8;border-radius:0}
+.sop-foundation.sop-warm-plan-choice .ff-choices{gap:0;border-block:1px solid #b8ae9a}
+.sop-foundation.sop-warm-plan-choice .ff-choice,.sop-foundation.sop-warm-plan-choice .ff-choice[data-selected=true]{display:grid;grid-template-columns:24px minmax(0,1fr) minmax(55px,auto);gap:10px;min-height:88px;padding:18px 12px;border:0;border-bottom:1px solid #d4cbb9;border-radius:0;background:transparent}
+.sop-foundation.sop-warm-plan-choice .ff-choice[data-selected=true]{background:#fffdf7;box-shadow:inset 3px 0 #746044}
+.sop-foundation.sop-warm-plan-choice .ff-choice:last-child{border-bottom:0}
+.sop-foundation.sop-warm-plan-choice .ff-choice-check{grid-column:1;grid-row:1;order:0;position:relative}
+.sop-foundation.sop-warm-plan-choice .ff-choice-copy{grid-column:2;grid-row:1;min-width:0}
+.sop-foundation.sop-warm-plan-choice .ff-choice-copy strong{font:600 15px/1.6 Georgia,'Yu Mincho',serif}
+.sop-foundation.sop-warm-plan-choice .ff-choice-copy small{font-size:11px;line-height:1.7}
+.sop-foundation.sop-warm-plan-choice .ff-choice-badge{grid-column:3;grid-row:1;font:12px/1.7 Consolas,monospace;text-align:end;white-space:normal;overflow-wrap:anywhere;max-width:90px;letter-spacing:0;color:#514735;border:0;background:none}
+@container(max-width:250px){.sop-foundation.sop-warm-plan-choice .ff-choice,.sop-foundation.sop-warm-plan-choice .ff-choice[data-selected=true]{grid-template-columns:24px minmax(0,1fr)}.sop-foundation.sop-warm-plan-choice .ff-choice-badge{grid-column:2;grid-row:2;text-align:start;max-width:none}}
+@media(forced-colors:active){.sop-foundation.sop-warm-plan-choice .ff-choice-badge{color:CanvasText}}
+
+
+.sop-foundation.sop-warm-plan-choice{container-type:inline-size}

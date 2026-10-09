@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type ShallowBowlChoiceProps = FoundationProps;
-/** 浅い楕円の内皿を、全幅の厚い鉢の縁へ収める単一選択。単なる丸角カードを廃止し、30pxの端の楕円、内側の凹んだ5pxの縁、下12pxの曲がった支持面を作る。読む内容は凹面に固定、選択時は同じ凹面だけ明るくする。 */
+/** 一つの細い縁と下側の断面だけで深さを示す浅い器の選択欄。多重の光沢を減らし、ラベルを広い無地面へ置く。 */
 export default forwardRef<HTMLDivElement, ShallowBowlChoiceProps>(function ShallowBowlChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });

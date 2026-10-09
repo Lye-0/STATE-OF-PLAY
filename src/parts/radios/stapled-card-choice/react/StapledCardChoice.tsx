@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type StapledCardChoiceProps = FoundationProps;
-/** 三つのずれた紙の層を、一つの大きい綴じ金へ収める単一選択。小さいクリップだけの通常カードをやめ、上/左へ5pxずつ出る紙の実層と、全層を跨ぐ26×24pxの綴じ金へ変更する。綴じ金の両足を前の紙まで通し、文字とnative丸印を下の無地へ固定する。 */
+/** 薄い紙の束を、折った綴じ代と連続した金具で挟む単一選択。選択すると綴じ代が濃くなり、本文は静かな紙面に固定する。 */
 export default forwardRef<HTMLDivElement, StapledCardChoiceProps>(function StapledCardChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });

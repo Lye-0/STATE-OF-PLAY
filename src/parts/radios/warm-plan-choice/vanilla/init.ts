@@ -4,8 +4,8 @@ const config: FoundationConfig = {
   "id": "warm-plan-choice",
   "kind": "radios",
   "variant": "soft",
-  "label": "あなたの制作モード",
-  "description": "",
+  "label": "制作プランを選ぶ",
+  "description": "料金は展示用の例です。",
   "defaultValue": "cloud",
   "required": true,
   "items": [
@@ -13,21 +13,21 @@ const config: FoundationConfig = {
       "value": "local",
       "label": "Local",
       "description": "手元の環境で、静かに。",
-      "badge": "01",
+      "badge": "¥0 / 月",
       "icon": "file"
     },
     {
       "value": "cloud",
       "label": "Cloud",
       "description": "どこからでも、つながる。",
-      "badge": "02",
+      "badge": "¥980 / 月",
       "icon": "spark"
     },
     {
       "value": "hybrid",
       "label": "Hybrid",
       "description": "両方のよさを、ひとつに。",
-      "badge": "03",
+      "badge": "¥1,980 / 月",
       "icon": "home"
     }
   ]

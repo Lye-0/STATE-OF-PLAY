@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "range": false
 };
 export type PinstripeRangeProps = FoundationProps;
-/** 記入欄と細い仕切りを持つ横尺。つまみの一本の針が量を正確に指す。 */
+/** 上下の横尺を挟む可動のバーニアと、中央の細い指示線を持つスライダー。目盛りの上に実際のキャリッジを通し、値を指す線とつかむ枠を分ける。 */
 export default forwardRef<HTMLDivElement, PinstripeRangeProps>(function PinstripeRange(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderSlider} mountContent={mountSlider}/>;
 });

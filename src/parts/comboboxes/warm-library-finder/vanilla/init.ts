@@ -4,45 +4,45 @@ const config: FoundationConfig = {
   "id": "warm-library-finder",
   "kind": "comboboxes",
   "variant": "essential",
-  "label": "次の素材を見つける",
+  "label": "ライブラリから選ぶ",
   "description": "",
   "defaultValue": "",
   "multiple": false,
-  "placeholder": "名前や素材を入力…",
+  "placeholder": "書名や著者を入力…",
   "items": [
     {
       "value": "aurora",
-      "label": "Aurora",
-      "description": "光と透明感のコレクション",
-      "badge": "GLASS",
-      "icon": "spark"
+      "label": "光と透明のかたち",
+      "description": "Aurora 編集室 · 2025",
+      "badge": "A-014",
+      "icon": "file"
     },
     {
       "value": "folio",
-      "label": "Folio",
-      "description": "紙と余白のコレクション",
-      "badge": "PAPER",
+      "label": "紙と余白のノート",
+      "description": "Folio 編集室 · 2024",
+      "badge": "B-028",
       "icon": "file"
     },
     {
       "value": "mercury",
-      "label": "Mercury",
-      "description": "金属と精密さのコレクション",
-      "badge": "METAL",
-      "icon": "clock"
+      "label": "素材と構造の手帖",
+      "description": "Mercury Lab · 2025",
+      "badge": "C-006",
+      "icon": "file"
     },
     {
       "value": "quiet",
-      "label": "Quiet",
-      "description": "落ち着いた日常のデザイン",
-      "badge": "ESSENTIAL",
-      "icon": "info"
+      "label": "静かなデザイン",
+      "description": "Quiet Office · 2023",
+      "badge": "B-042",
+      "icon": "file"
     },
     {
       "value": "archive",
-      "label": "Archive",
-      "description": "近日公開",
-      "badge": "SOON",
+      "label": "アーカイブ集",
+      "description": "刊行準備中",
+      "badge": "未刊",
       "disabled": true,
       "icon": "file"
     }

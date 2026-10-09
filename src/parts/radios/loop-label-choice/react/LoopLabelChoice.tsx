@@ -37,7 +37,7 @@ const config: FoundationConfig = {
   ]
 };
 export type LoopLabelChoiceProps = FoundationProps;
-/** 二つの留め穴へ輪を通す、ラベルの単一選択。元の左の輪を28×46pxの明快なループへ整え、紙の上と下の二つの実穴へ通す。細線が汚れに見える状態をやめ、札の面と輪の太さを揃える。丸い選択印を留め輪から離し、読む文字を固定する。 */
+/** 紙の綴じ代に開けた二つの穴へ、背面から糸を通す単一選択。糸の輪を操作記号から離し、紙を留める接点と選択の丸を読み分ける。 */
 export default forwardRef<HTMLDivElement, LoopLabelChoiceProps>(function LoopLabelChoice(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderRadio} mountContent={mountRadio}/>;
 });
