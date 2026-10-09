@@ -1,0 +1,302 @@
+{
+  "batch": "B041",
+  "round": 2,
+  "snapshot": "docs/design-renewal/batches/B041/snapshot/round-2",
+  "overall": "changes_requested",
+  "parts": [
+    {
+      "number": "R560",
+      "id": "book-ribbon-timeline",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "Tの84pxの実日付しおりを保持し、黄土色を日時へ限定。本文は別の箱を増やさず、隣接する読む面と余白で揃えた。狭幅で上へ移ったしおりの切欠きも文字外に残る。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R560",
+        "R300",
+        "R420"
+      ]
+    },
+    {
+      "number": "R561",
+      "id": "index-tab-timeline",
+      "verdict": "redesign",
+      "normalDesignVerdict": "redesign",
+      "assessment": "小さい横の日付札は撤去したが、三位置の丸上タブを付けた通常フォルダの反復が主像。実日時は読め、紙との接点もある。しかし新規Aの構造差として不足。",
+      "findings": [
+        {
+          "key": "R561-main-structure",
+          "severity": "major",
+          "kind": "design",
+          "evidence": [
+            "docs/design-renewal/batches/B041/captures/reviewer-materials-2/index-tab-timeline-1000-ltr-true.png"
+          ],
+          "problem": "136pxの上タブを左・中央・右へ順に置き、本文の一角を22px落としただけでは、既存フォルダの配列違いに留まる。展開後も各件は同じフォルダカードで、索引が履歴全体を組織する独立構造になっていない。",
+          "proposal": "正の小タブを付ける方式を廃し、例えば全履歴で連続する後ろの日時帯と、その前の記録紙の大きい負の索引切込みへ再構成する。日時の露出は幅120–140px×高64px以上、前紙は切込み上下で20px以上後帯を覆い、三位置は後帯への見通しを変える実切口にする。本文を全幅で確保し、独立したフォルダ外周を各件に繰り返さない。R379の六つのU窓のような独立枠列にもせず、一つの連続索引として実像で判定する。"
+        }
+      ],
+      "nearestComparisons": [
+        "元R561",
+        "R259",
+        "旧R263",
+        "R163"
+      ]
+    },
+    {
+      "number": "R562",
+      "id": "blueprint-route-timeline",
+      "verdict": "redesign",
+      "normalDesignVerdict": "redesign",
+      "assessment": "104pxの丸い日時節と32px矢印は接続するが、円から文章へ矢印を引く基本図の範囲。青い配色を外すと独立した主形が弱い。",
+      "findings": [
+        {
+          "key": "R562-main-structure",
+          "severity": "major",
+          "kind": "design",
+          "evidence": [
+            "docs/design-renewal/batches/B041/captures/reviewer-materials-2/blueprint-route-timeline-1000-ltr-true.png"
+          ],
+          "problem": "日時の円を大きくしただけで、本文は通常の右側注記。全件で同じ円→矢印を反復し、元監査の青い点と線という問題を根本的には解消していない。",
+          "proposal": "各件の独立した円と矢印を廃し、履歴全体を一本の幅36–48pxの開いた折れ曲がる図面経路で結ぶ案。実日時を120×72px程度の大きい角の節へ載せ、実summaryは経路の内側の切込みへ12px重なる平面として接続、説明は開いた余白へ読む。経路は実順序だけを表し、時間差を捏造した長さ・目盛りは使わない。二本レールR552や一本の定規軸R282とは異なる、角を回る一体の面を大きく設計する。"
+        }
+      ],
+      "nearestComparisons": [
+        "元R562",
+        "R563",
+        "R552",
+        "R282"
+      ]
+    },
+    {
+      "number": "R563",
+      "id": "loop-history-timeline",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "Tの輪で囲う実日時とセリフ見出しのリズムを保持。強い選択札を減らし、輪・状態線・下線の重みが揃う。長い日時と狭幅の全文も収まる。これは既存Tの精度評価であり、新規の円形ノードをAとして認める理由には転用しない。",
+      "findings": [],
+      "nearestComparisons": [
+        "元R563",
+        "R562"
+      ]
+    },
+    {
+      "number": "R564",
+      "id": "recessed-record-timeline",
+      "verdict": "redesign",
+      "normalDesignVerdict": "redesign",
+      "assessment": "全記録を一つの床へ載せた点と読みやすさは改善。20件全展開でも横overflowなし。しかし四辺borderと固定の角丸で囲った長いケースという主像で、Aの開口・断面として弱い。",
+      "findings": [
+        {
+          "key": "R564-main-structure",
+          "severity": "major",
+          "kind": "design",
+          "evidence": [
+            "docs/design-renewal/batches/B041/captures/reviewer-materials-2/recessed-record-timeline-1000-ltr-true.png"
+          ],
+          "problem": "大きい半径92/80pxも全高の曲面を作らず、四辺の枠の角に留まる。20件では高さ5530px（狭幅8485px）の直線枠がほぼ全てを占める。R384の全幅へ及ぶ湾曲やR424の開いた溝とは異なり、汎用の角丸パネルから十分離れていない。",
+          "proposal": "全周の囲いを廃し、一方が大きく開いた一体の掘込みへ。例として片側の壁を幅80→28→104pxと全高で変化する大きい凹曲面にし、反対側は全長を開放、床の端を24pxの実切断面として露出させる。本文は同じ広い平底、日時も実床の上へ固定する。左右二壁のR424や単純LチャンネルR557を石色へ置換せず、全長の曲がる外形と開放端が見えることが条件。"
+        }
+      ],
+      "nearestComparisons": [
+        "元R564",
+        "R384",
+        "R424",
+        "R557"
+      ]
+    },
+    {
+      "number": "R565",
+      "id": "letterpress-history-timeline",
+      "verdict": "redesign",
+      "normalDesignVerdict": "redesign",
+      "assessment": "実日付42px・見出し24px・本文15pxは明瞭で、架空番号を増やさない点も良い。ただし大きい赤い日付、セリフ、横罫という普通の編集誌面で、元Rの独創性不足は残る。",
+      "findings": [
+        {
+          "key": "R565-main-structure",
+          "severity": "major",
+          "kind": "design",
+          "evidence": [
+            "docs/design-renewal/batches/B041/captures/reviewer-materials-2/letterpress-history-timeline-1000-ltr-true.png"
+          ],
+          "problem": "日付の拡大と色の変更だけでAの差を作っている。日時→見出し→本文という標準の縦積みを維持し、固有の外形や読む構造がない。",
+          "proposal": "活版の名を文字通り再現する必要はない。純タイポグラフィを続けるなら、日時を64–80pxの実字面として一つの大きい非対称の組版領域へ、実summaryを隣接する別の基線へ、本文を96px程度の深い掛け込みへ配置し、日時と開閉する記録が大きい余白を共同で決める構図から作り直す。長い日時は全幅の別段へ戻せること。単にfont-sizeを上げるだけでは不可で、R545の四本文の活字塊やR401のL型台を複製しない。素材案を採る場合も、この実情報配置を先に成立させてから支持を設計する。"
+        }
+      ],
+      "nearestComparisons": [
+        "元R565",
+        "旧R401",
+        "R545",
+        "R555"
+      ]
+    },
+    {
+      "number": "R571",
+      "id": "folio-chapter-wizard",
+      "verdict": "adjust",
+      "normalDesignVerdict": "pass",
+      "assessment": "Tの章番号・実章名・大見出しと入力紙の読み順は合格。罫線の役割は整理され、通常形を再設計する必要はない。共有の通常遷移の焦点喪失は修正が必要。",
+      "findings": [
+        {
+          "key": "wizard-next-focus",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": [
+            "docs/design-renewal/batches/B041/captures/reviewer-wizard-extra-2/checks.json",
+            "docs/design-renewal/tools/review-b041-wizard-extra-r2.mjs"
+          ],
+          "problem": "全4件：実入力へ有効値→Enterで次stepへ進むとactiveElement=BODY。controlled current固定で「次へ」を実clickし親が受け入れない場合もBODYへ落ちる。busy paintが操作中のinput/buttonをdisabledにして焦点を失い、解除後も復帰しない。構造更新のDOM/Undo保持とは別の通常操作の不具合。",
+          "proposal": "遷移開始時の操作元を記録し、受入れ後は新stepの最初の有効入力または見出しへ、拒否／エラーでは元の操作へ戻す。非同期待機中にユーザーが別へ焦点を動かした場合は奪わない。同期Enter、実click、controlled拒否、非同期成功／エラー、完了、destroyを恒久回帰に含める。"
+        }
+      ],
+      "nearestComparisons": [
+        "元R571",
+        "R531"
+      ]
+    },
+    {
+      "number": "R572",
+      "id": "station-route-wizard",
+      "verdict": "adjust",
+      "normalDesignVerdict": "pass",
+      "assessment": "Tの44px駅と一本の実経路を保持し、本文左の孤立線を除去。通常3手順の形は合格。共有focus残件と、多手順時の駅名の読字幅を修正する。",
+      "findings": [
+        {
+          "key": "wizard-next-focus",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": [
+            "docs/design-renewal/batches/B041/captures/reviewer-wizard-extra-2/checks.json",
+            "docs/design-renewal/tools/review-b041-wizard-extra-r2.mjs"
+          ],
+          "problem": "全4件：実入力へ有効値→Enterで次stepへ進むとactiveElement=BODY。controlled current固定で「次へ」を実clickし親が受け入れない場合もBODYへ落ちる。busy paintが操作中のinput/buttonをdisabledにして焦点を失い、解除後も復帰しない。構造更新のDOM/Undo保持とは別の通常操作の不具合。",
+          "proposal": "遷移開始時の操作元を記録し、受入れ後は新stepの最初の有効入力または見出しへ、拒否／エラーでは元の操作へ戻す。非同期待機中にユーザーが別へ焦点を動かした場合は奪わない。同期Enter、実click、controlled拒否、非同期成功／エラー、完了、destroyを恒久回帰に含める。"
+        },
+        {
+          "key": "R572-many-step-reading",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": [
+            "docs/design-renewal/batches/B041/captures/reviewer-wizard-count-2/station-route-wizard-7-ltr.png",
+            "docs/design-renewal/batches/B041/captures/reviewer-wizard-count-2/checks.json"
+          ],
+          "problem": "本文幅414pxで7手順にすると短い実名「Step 1」まで「Ste／p 1」に分断。R574はbutton幅45.4pxから左右paddingを引くと読む幅が約21pxしかない。rootのscrollWidth一致は読字の保証にならない。",
+          "proposal": "native名の最小読字幅を80–96px程度確保し、手順数と利用幅に応じて縦並び／巻返しへ切り替える。短い単語と長い実名のTEXT_NODE Rangeを測り、1/2/4/7手順×LTR/RTLを検証する。手順点44pxだけが入ることを合格条件にしない。"
+        }
+      ],
+      "nearestComparisons": [
+        "元R572",
+        "R552",
+        "R422"
+      ]
+    },
+    {
+      "number": "R573",
+      "id": "folded-step-wizard",
+      "verdict": "redesign",
+      "normalDesignVerdict": "redesign",
+      "assessment": "fixture由来の白い内枠を除去した中立実像でも、独立した標準chevron群と入力平面、下の色帯という主像。一続きの大きい折り紙としての表裏／実接合が弱い。",
+      "findings": [
+        {
+          "key": "R573-main-structure",
+          "severity": "major",
+          "kind": "design",
+          "evidence": [
+            "docs/design-renewal/batches/B041/captures/reviewer-neutral-2/folded-step-wizard-1000-ltr.png"
+          ],
+          "problem": "三つの矢印型buttonは4pxの空隙で分かれ、その下に平面が接するだけ。大きい下帯は一角を切った面で、主形は標準ステップフォームの装飾に留まる。狭幅でも横向き矢印を縦に積むのみ。白いpanel枠はfixtureの問題であり、この指摘には含めない。",
+          "proposal": "全手順を別々のchevron札にする方式を廃し、現在の実手順の面自体が入力紙へ続く大きい折面にする案。現在の章は高さ80px以上の面から幅40px以上の露出した斜めの返しでフォーム紙へ接続し、他のnative章は同じ紙の後ろに露出する端として配置。下の実戻る／次へは別の装飾帯ではなく、その紙の反対向きの45px程度の返面へ。現在変更時に接続先も変わり、文字とhitをhoverで動かさない。単純Z折R403、日時折面R553、自己支持スタンドR513の形をそのまま再使用しない。"
+        },
+        {
+          "key": "wizard-next-focus",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": [
+            "docs/design-renewal/batches/B041/captures/reviewer-wizard-extra-2/checks.json",
+            "docs/design-renewal/tools/review-b041-wizard-extra-r2.mjs"
+          ],
+          "problem": "全4件：実入力へ有効値→Enterで次stepへ進むとactiveElement=BODY。controlled current固定で「次へ」を実clickし親が受け入れない場合もBODYへ落ちる。busy paintが操作中のinput/buttonをdisabledにして焦点を失い、解除後も復帰しない。構造更新のDOM/Undo保持とは別の通常操作の不具合。",
+          "proposal": "遷移開始時の操作元を記録し、受入れ後は新stepの最初の有効入力または見出しへ、拒否／エラーでは元の操作へ戻す。非同期待機中にユーザーが別へ焦点を動かした場合は奪わない。同期Enter、実click、controlled拒否、非同期成功／エラー、完了、destroyを恒久回帰に含める。"
+        },
+        {
+          "key": "R573-many-step-reading",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": [
+            "docs/design-renewal/batches/B041/captures/reviewer-wizard-count-2/folded-step-wizard-7-ltr.png",
+            "docs/design-renewal/batches/B041/captures/reviewer-wizard-count-2/checks.json"
+          ],
+          "problem": "本文幅414pxで7手順にすると短い実名「Step 1」まで「Ste／p 1」に分断。R574はbutton幅45.4pxから左右paddingを引くと読む幅が約21pxしかない。rootのscrollWidth一致は読字の保証にならない。",
+          "proposal": "native名の最小読字幅を80–96px程度確保し、手順数と利用幅に応じて縦並び／巻返しへ切り替える。短い単語と長い実名のTEXT_NODE Rangeを測り、1/2/4/7手順×LTR/RTLを検証する。手順点44pxだけが入ることを合格条件にしない。"
+        }
+      ],
+      "nearestComparisons": [
+        "元R573",
+        "R403",
+        "R513",
+        "R553"
+      ]
+    },
+    {
+      "number": "R574",
+      "id": "stone-path-wizard",
+      "verdict": "redesign",
+      "normalDesignVerdict": "redesign",
+      "assessment": "単なる緑のフォームから外形は変わったが、同形の面取りキー群と固定中央橋＋面取りフォームという組合せ。橋が実現在と対応せず、狭幅では常に最後の未来手順から伸びる。",
+      "findings": [
+        {
+          "key": "R574-main-structure",
+          "severity": "major",
+          "kind": "design",
+          "evidence": [
+            "docs/design-renewal/batches/B041/captures/reviewer-neutral-2/stone-path-wizard-320-rtl.png"
+          ],
+          "problem": "現在が第1手順でも橋は中央の第2側、4件なら第2/3間、狭幅なら最後の手順に接する。actual currentの入力島との関係が説明と一致しない。各石も同じ小さい面取り矩形の反復で、他カテゴリの石キー群との差が弱い。",
+          "proposal": "独立した小石と固定橋を廃し、実手順が一つの地形の縁を構成し、そのうち現在の場所だけから入力床へ通じる構造へ。例えば全手順に共通する幅24–32pxの後方の連続道と、現在のnative手順の足元から幅64pxの渡り石を出す。島との空隙32pxに対し両端12px以上の接触を確保し、狭幅は現在行から横に接続して最後の行へ誤接続しない。各手順の四辺bevel箱は撤去し、共通地形の切込みとしてnative名を載せる。R394の一列階段、R554の日時／本文の石橋をそのまま再利用しない。"
+        },
+        {
+          "key": "wizard-next-focus",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": [
+            "docs/design-renewal/batches/B041/captures/reviewer-wizard-extra-2/checks.json",
+            "docs/design-renewal/tools/review-b041-wizard-extra-r2.mjs"
+          ],
+          "problem": "全4件：実入力へ有効値→Enterで次stepへ進むとactiveElement=BODY。controlled current固定で「次へ」を実clickし親が受け入れない場合もBODYへ落ちる。busy paintが操作中のinput/buttonをdisabledにして焦点を失い、解除後も復帰しない。構造更新のDOM/Undo保持とは別の通常操作の不具合。",
+          "proposal": "遷移開始時の操作元を記録し、受入れ後は新stepの最初の有効入力または見出しへ、拒否／エラーでは元の操作へ戻す。非同期待機中にユーザーが別へ焦点を動かした場合は奪わない。同期Enter、実click、controlled拒否、非同期成功／エラー、完了、destroyを恒久回帰に含める。"
+        },
+        {
+          "key": "R574-many-step-reading",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": [
+            "docs/design-renewal/batches/B041/captures/reviewer-wizard-count-2/stone-path-wizard-7-ltr.png",
+            "docs/design-renewal/batches/B041/captures/reviewer-wizard-count-2/checks.json"
+          ],
+          "problem": "本文幅414pxで7手順にすると短い実名「Step 1」まで「Ste／p 1」に分断。R574はbutton幅45.4pxから左右paddingを引くと読む幅が約21pxしかない。rootのscrollWidth一致は読字の保証にならない。",
+          "proposal": "native名の最小読字幅を80–96px程度確保し、手順数と利用幅に応じて縦並び／巻返しへ切り替える。短い単語と長い実名のTEXT_NODE Rangeを測り、1/2/4/7手順×LTR/RTLを検証する。手順点44pxだけが入ることを合格条件にしない。"
+        }
+      ],
+      "nearestComparisons": [
+        "元R574",
+        "旧R394",
+        "R554",
+        "R374"
+      ]
+    }
+  ],
+  "checks": [
+    "固定100 author hash／10 actual portable CSS一致（reviewer-hashes-2.json）。",
+    "独立native timeline6の基本全protocol成功。nativeclick/Enter、制御受入／拒否、disabled、実dateTime/link、構造更新focus、reset、cleanup、長文320/390/768×LTR/RTL、forced dark/reduced、通常hover字面固定。",
+    "独立native Wizard4の既存protocol成功：実必須／email検証、Enter、戻る値保持、完了、controlled拒否／受入れ、allowJump、非同期エラー、empty、disabled、長文6幅方向、native44、forced/reduced。再構築で同一connected DOM・caret・Undoも保持。ただし追加の通常next焦点試験は全4で失敗。",
+    "追加Wizard実Enter次へ／controlled実click拒否時のactiveElementを記録。R573/R574の1/2/4/7手順LTR/RTLと全4の7手順を撮影。reviewer-wizard-extra-2、reviewer-wizard-count-2。",
+    "Timeline6×1000/320×LTR/RTL×全閉／全展開48条件を独立撮影し、normal hover/leave/reenter2回で日時・見出し・状態・summary矩形／font固定。reviewer-materials-2。",
+    "R564を20件全展開で320/768×LTR/RTL確認。20件全本文、summary、幅収まりは成功。高さ8485/5530px、固定半径64/92pxを記録。reviewer-dense-2。",
+    "fixtureのsection全称CSSによる白い内panel枠を発見情報と照合。固定HTMLは変更せず、CSSOMでsection[data-part]だけへ限定した中立像をreviewer-neutral-2へ保存。authorの造形判定はこの中立像／配布CSSを併用。",
+    "元baseline0実像・元R/T理由・承認済み近似との比較。主担当React4形式／Signature24／galleryは補助証拠。共有Wizardは100author外のprovenanceで別管理。"
+  ],
+  "limits": [
+    "固定round-2のfixtureには汎用sectionの白背景／border混入がある。中立撮影はこの展示CSSだけを実行時補正した診断画像で、固定版を改変していない。",
+    "独立実操作はChromium native。React4形式の全操作は主担当ログの補助確認であり、独立再実行していない。",
+    "別エンジンと実スクリーンリーダー未検証。改善寸法は構造を検討する出発点であり、その通り実装すれば自動合格ではない。"
+  ]
+}

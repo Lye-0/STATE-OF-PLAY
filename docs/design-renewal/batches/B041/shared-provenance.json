@@ -1,0 +1,15 @@
+{
+  "before": {
+    "src/shared/signature/wizard.ts": "23f0def3e17df188f91ff8e0eecc3713e65f8e4cabc840e0f9974dd9cf1d4c23"
+  },
+  "after": {
+    "src/shared/signature/wizard.ts": "4f1e26bb3444604c4505277ec63a028bef3b86cbc2e545d01da63b52f0f53921",
+    "tests/signature.browser.ts": "98c19b9c2cb21eb48f3629d4b1474a0730dd0be948571fe675005384bcf72f58"
+  },
+  "reproductionAllFour": "Baseline0 steps updates lose native field focus/caret; destroyed reset clears committed values and changes step.",
+  "fix": "Reconcile compatible connected native field DOM by semantic panel/field keys, update only changed attributes, use state-preserving moveBefore when supported; preserve actual typing undo/caret/value/focus on schema-compatible update; visible current field fallback; valid current-step reset; dead reset guard.",
+  "permanentRegression": "25 real Vite HTTP at final shared source: signature-25-5-retry.log PASS (initial concurrent optimizer avatar fixture load timed out, exact same suite succeeds on retry).",
+  "additionalReproduction": "Initial retain/reinsert version preserves DOM identity but loses actual native undo. Actual typing + Control+Z failed; final connected reconciliation passes all4 native exported wizards and permanent24 HTTP.",
+  "transitionFocus": "Reviewer reproduced normal Enter and controlled next-decline dropping focus to BODY in all4. Busy temporarily focuses native section; accepted actualcurrent advances to first enabled field/heading; decline/error returns initiating control; async outsidefocus is retained. Parent-controlled current acceptance also restores useful focus.",
+  "presentationProjection": "Native list retains explicit role; only actual current index and actual row count are exposed as CSS variables. No native step order/value changes. Verified counts 1/2/4/7 each current, 320/768 RTL/LTR and long 7 labels; reduced/forced and exact real exports."
+}

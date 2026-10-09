@@ -1,0 +1,5 @@
+# native検査ページのCSS補正
+
+旧ページは全sectionへ白背景と枠を指定し、native Wizard内のsectionにも検査用枠が付いていた。実配布CSS・実React配布・実ギャラリーではない枠なので、今後のfreezeはsection[data-part]だけへ限定する。既存の固定snapshotは改変せず、原版0はevidence/B041-neutral-beforeへ複製して展示CSSだけ補正し、比較写真を撮り直す。round3以降を中立のnative像として検査する。
+
+この補正はauthor CSS変更ではない。日時タブや日時節、活版の独創性に関する講評は引き続き対応する。

@@ -119,6 +119,13 @@ for row,part,review in approved:
   actual=next((p for p in reversed(native) if all((p/f"{row['id']}-{name}.png").exists() for name in ['initial','loaded','waiting-ltr-320','loaded-ltr-320','loaded-rtl-320','forced-waiting','forced-loaded'])),None)
   assert actual is not None,f"Missing actual loading/content/RTL/forced skeleton: {row['id']}"
   images+=figure(beforeSkeleton,'修正前・配布版の読み込み')+figure(beforeLoaded,'修正前・配布版の実内容')+figure(actual/f"{row['id']}-initial.png",'修正後・配布版の読み込み')+figure(actual/f"{row['id']}-loaded.png",'修正後・同じ組版の実内容')+figure(actual/f"{row['id']}-waiting-ltr-320.png",'修正後・320pxで読み込み')+figure(actual/f"{row['id']}-loaded-ltr-320.png",'修正後・320pxで長い実内容')+figure(actual/f"{row['id']}-loaded-rtl-320.png",'修正後・右から左への実内容')+figure(actual/f"{row['id']}-forced-waiting.png",'修正後・強制配色で読み込み')+figure(actual/f"{row['id']}-forced-loaded.png",'修正後・強制配色の実内容')
+ if row['category']=='wizards':
+  beforeWizard=w/'evidence/baseline'/f"{row['id']}-wizard.png"
+  assert beforeWizard.exists(),f"Missing original actual wizard: {row['id']}"
+  native=sorted((d/'captures').glob('wizards-self-*'),key=lambda p:int(p.name.split('-')[-1]))
+  actual=next((p for p in reversed(native) if all((p/f"{row['id']}-{name}.png").exists() for name in ['initial','next','complete','error','long-ltr-320','long-rtl-320','empty','forced-dark'])),None)
+  assert actual is not None,f"Missing actual wizard next/complete/validation/RTL/empty/forced: {row['id']}"
+  images+=figure(beforeWizard,'修正前・配布版の実手順')+figure(actual/f"{row['id']}-initial.png",'修正後・実手順と入力面')+figure(actual/f"{row['id']}-next.png",'修正後・次の実入力へ進む')+figure(actual/f"{row['id']}-complete.png",'修正後・native入力を保持して完了')+figure(actual/f"{row['id']}-error.png",'修正後・確認処理が返した実エラー')+figure(actual/f"{row['id']}-long-ltr-320.png",'修正後・320pxと長い実手順・入力名')+figure(actual/f"{row['id']}-long-rtl-320.png",'修正後・320pxと右から左の手順')+figure(actual/f"{row['id']}-empty.png",'修正後・手順がない状態')+figure(actual/f"{row['id']}-forced-dark.png",'修正後・暗い強制配色')
  if row['category']=='timelines':
   beforeTimeline=w/'evidence/baseline'/f"{row['id']}-timeline.png"
   beforeExpanded=w/'evidence/baseline'/f"{row['id']}-expanded.png"
