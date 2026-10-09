@@ -1,0 +1,13 @@
+# B038 検証記録
+
+カラーA6とスケルトンA4。Tは活版RGB/線形HSV/石の色相輪、編集誌面/図面の本来の順と機能を磨いた。Rは実保存色の重ねたカード、共有折線の一続きの見本帯、実インク瓶、人物フラップの実折背、画像と説明を接合する二石片の蟻継ぎへ再設計。
+
+独立5は7合格/1調整/2再設計。R523の四辺枠と外帯を廃し、112pxのnative色面を18px重ね、隣接面の上下が同じ斜線で接する蛇腹へ。R533はborder6pxを含む26pxの実折背に訂正し、狭幅の61/108pxの細列を廃して16px人物/14px役割の全幅の上フラップへ開く。自己6でabsolute grid終端autoがpaddingを含んで18px溢れることを発見し、7でcolumn1/2へ明示。R534は孤立した丸角カードを廃し、104×32pxの実台形切欠きと、説明面から出る同寸舌を実際に合わせた。
+
+native colors6自己3全成功、実印字HEXのLTR/isolateを3変更部品5で成功、見本帯は6で再成功。他の部品はsource不変。React colors6×実TSX/JSX×portable/originalは最終6全成功。native skeletons4最終7とReact4×実四形式7全成功。native内容のDOM/value/caret保持、hidden/inert、aria-busy、focus退避/復帰、移動済focusを奪わないこと、8/2rows・escapedstatus・pause、長文320390768×LTRRTLで待機/実内容、forced/reduced、destroy後reset/update/pause不動作を確認。実gallery10最終5＋変更3点7成功。skeleton20native×2layouts自己3成功はmarkup/init/controller不変で継承。全730契約7成功。
+
+共有skeleton.tsはloadingでhiddenに入るnative focusをrootへ退避し、同じ入力とcaretを復帰、外に移ったfocusを奪わず、destroy後reset/pauseを無効化する。4件のbaseline0でfocus落ちとdestroyedresetを再現。恒久22回帰を最終の共有源で実ViteHTTP再実行し22件全成功。追加した一時tabindexをdestroyで除き、idempotent destroyを保証。共有source/test SHAはprovenanceに保存。K/Liquid Glassの個体源/外観は変更なし。
+
+独立最終7は全10合格。100authorhashと配布CSS10一致。通常と読み込み後の本来の内容、実支持/空隙、RTL印字方向と狭幅の実文字を確認。主にChromium、forced/reducedはエミュレーション。実機touch/SR/他OSブラウザ/native色ダイアログは未確認。最終production buildは517完了時。
+
+全型最終7成功。画像内蔵HTML10件/108画像/1046482bytes。Chromium setContent初期93ms/全decode287ms、外部通信0/例外0/390px溢れなし。直接file navigationは環境制限で未確認。

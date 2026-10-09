@@ -1,0 +1,12 @@
+{
+  "before": {
+    "src/shared/signature/skeleton.ts": "f3edac7001a52d24f300a58c8de0ee19cb048947c0f9d3b662e81df320680678"
+  },
+  "after": {
+    "src/shared/signature/skeleton.ts": "82f765b1e8f00a6e552b95440f1395b7e9a0dec1be242eea9aaf89fb7a0296f2",
+    "tests/signature.browser.ts": "7cf271bd5ce0679f7599e0e7b5a80ac036befa4fcf81017c044e10f5b0a49804"
+  },
+  "baselineAllFour": "loading hides focused native content and focus falls to body; destroyed reset changes loading false to true and hides restored content",
+  "fix": "transfer focus to root while hidden/inert; restore same retained input only if root still active; do not steal moved focus; reset/pause after destroy inert; remove temporary tabindex on destroy",
+  "permanentRegression": "Signature real Vite native content focus/caret retain/no steal/destroy reset-pause"
+}
