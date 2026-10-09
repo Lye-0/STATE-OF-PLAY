@@ -1,19 +1,16 @@
 {
   "scope": 225,
-  "completed": 170,
-  "activeImplementation": "review-followups",
+  "completed": 180,
+  "activeImplementation": "B019 final follow-up complete; B021-B023 prepared",
   "activeReview": "B019",
   "lastPushed": {
-    "batch": "B017",
-    "commit": "5e0d530f760c53041548a53dc62fd2abf4be00d9"
+    "batch": "B018",
+    "commit": "e5afd2a095f1bd4ad62aec02f8209c2233d11117"
   },
   "baseCommit": "b2ff64fa74e3bcc98626c281d0833fbd6851bb12",
   "reviewModel": "gpt-6-astra",
   "reviewEffort": "medium",
   "preparedBatches": [
-    "B016",
-    "B017",
-    "B018",
     "B019",
     "B020",
     "B021",
@@ -21,7 +18,22 @@
     "B023"
   ],
   "lastMaintenancePush": {
-    "commit": "3c2847e962ba7b413acfa6c5f3523dc06fc567fa",
-    "reason": "Register pagination strip regression in CI features shard"
+    "commit": "25e9b806",
+    "reason": "Reveal context-menu keyboard focus inside its scrolling panel"
+  },
+  "preparedRounds": {
+    "B019": 9,
+    "B020": 7,
+    "B021": 8,
+    "B022": 9,
+    "B023": 3
+  },
+  "latestMainVerification": {
+    "workbenchVite": "41 passed",
+    "typecheck": "app/react/tools passed",
+    "B019": "4 retry/row-number conditions passed",
+    "B020": "80 hover/long-label/RTL/forced conditions passed",
+    "B021": "192 navigation layout/long-label/RTL/forced conditions passed",
+    "B022": "120 navigation/table layout/long-label/RTL/forced conditions passed"
   }
 }

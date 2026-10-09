@@ -1,5 +1,5 @@
 @import "../../../shared/workbench/base.css";
-/* 実題字から実候補へ続く一枚の細長い蔵書票を、検索の横面の44pxの二つの大きい斜め切口へ通す。四辺台紙を撤去し、題字と候補の内紙を同じ幅へ揃える。検索は票を横切る厚い112pxの面、実候補はその下へ続く平らな紙。外側の空間と二つの切口で、通常のカードから紙の通し構造へ変える。 */
+/* 蔵書票の内枠へ検索と操作を収めるコマンドパレット。文字に迫る大きな斜めの切込みを外し、薄い紙縁と留めた検索帯に整理する。 */
 
 .sop-wb.sop-bookplate-command.sop-bookplate-command{--paper:#f6eee2;--ink:#493d32;--muted:#746251;--accent:#926c42;--edge:#bea482;--wb-bg:var(--paper);--wb-surface:var(--paper);--wb-ink:var(--ink);--wb-muted:var(--muted);--wb-accent:var(--accent);--wb-line:var(--edge);--wb-radius:0;container-type:inline-size;color:var(--ink);color-scheme:light;max-width:min(100%,480px);min-width:0;overflow-wrap:anywhere}
 .sop-wb.sop-bookplate-command.sop-bookplate-command,.sop-wb.sop-bookplate-command.sop-bookplate-command *,.sop-wb.sop-bookplate-command.sop-bookplate-command *::before,.sop-wb.sop-bookplate-command.sop-bookplate-command *::after{box-sizing:border-box}
@@ -87,3 +87,43 @@
 .sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-entry>svg{background:#fff8e8}
 .sop-wb.sop-bookplate-command.sop-bookplate-command:dir(rtl) .wb-command-entry::before,.sop-wb.sop-bookplate-command.sop-bookplate-command:dir(rtl) .wb-command-launch::before{transform:scaleX(-1);clip-path:none}
 @media(max-width:400px){.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-entry::before,.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-launch::before{mask:linear-gradient(#000 0 0) left center/12px 100% no-repeat,linear-gradient(135deg,#000 calc(50% - 6px),transparent calc(50% - 6px) calc(50% + 6px),#000 calc(50% + 6px)) left 12px center/44px 100% no-repeat,linear-gradient(#000 0 0) center/calc(100% - 112px) 100% no-repeat,linear-gradient(135deg,#000 calc(50% - 6px),transparent calc(50% - 6px) calc(50% + 6px),#000 calc(50% + 6px)) right 12px center/44px 100% no-repeat,linear-gradient(#000 0 0) right center/12px 100% no-repeat}}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-launcher{padding:24px 20px;background:#fff8e8;border:1px solid #c8b18c;box-shadow:inset 0 0 0 7px #fff8e8,inset 0 0 0 8px #dccbab}
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-symbol{margin:0 0 16px;width:44px;height:44px;padding:0;background:none}
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-launch-copy{margin:0;padding:0;background:none}
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-launch{margin-top:22px;padding:14px 12px;min-height:58px;background:#f1e3c6;border:1px solid #c9b18a;border-bottom:3px solid #bea175}
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-launcher::after,.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-launch::before,.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-entry::before{display:none}
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-dialog{background:#fff8e8;box-shadow:0 24px 70px #0005;border:1px solid #c8b18c}
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-frame{background:#fff8e8;padding:8px}
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-frame::before{inset:6px;background:none;border:1px solid #d9c7a7;z-index:-1}
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-top,.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-list,.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-foot{margin:0;padding:18px}
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-entry{margin:0 12px;padding:12px;background:#f1e3c6;border:1px solid #c9b18a;border-bottom:3px solid #bea175}
+
+}
+
+@media(forced-colors:none){.sop-wb.sop-bookplate-command.sop-bookplate-command{--muted:#685236;}}
+
+/* B020 independent review follow-up */
+@media(forced-colors:none){
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-dialog{width:min(720px,calc(100vw - 28px));border:0;background:#dbc9a7;padding:0}
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-frame{padding:18px;background:#e6d7bb;box-shadow:inset 6px 0 #c6af87,inset -6px 0 #c6af87}
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-frame::before{display:none}
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-top{margin:0;padding:8px 8px 20px;border:0}
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-entry{margin:0 8px 20px;padding:12px;background:#fffaf0;border:1px solid #b19b78;border-bottom:3px solid #b19b78}
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-list{padding:0 8px 14px;max-height:min(55dvh,460px);background:none}
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-batch{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:stretch;margin:0 0 24px}
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-group{grid-column:1/-1;margin:0;padding:8px 0;font:600 12px/1.6 Arial,sans-serif;letter-spacing:.08em;border:0;border-top:1px solid #ac946f;overflow-wrap:anywhere;color:#604d32}
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-option,.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-option[aria-selected=true]{position:relative;display:grid;grid-template-columns:32px minmax(0,1fr);grid-template-rows:auto 1fr auto;align-items:start;gap:14px 10px;min-height:200px;margin:0;padding:20px 16px;border:1px solid #bba17a;border-radius:0;background:#fffaf0;box-shadow:0 3px 0 #c3aa81,inset 0 0 0 5px #fffaf0,inset 0 0 0 6px #dfcfb3;transform:none}
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-option::before{display:none}
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-option[aria-selected=true]{background:#f4e7cd;outline:2px solid #8d704a;outline-offset:-3px;box-shadow:0 3px 0 #a78a60,inset 0 0 0 5px #f4e7cd,inset 0 0 0 6px #c5ad84}
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-copy{display:contents}
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-icon{grid-column:1;grid-row:1;width:30px;height:30px;border:1px solid #baa27c;border-radius:50%;padding:5px;background:none}
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-copy strong{grid-column:2;grid-row:1;font:600 22px/1.4 Georgia,'Yu Mincho',serif;min-width:0;overflow-wrap:anywhere}
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-copy small{grid-column:1/-1;grid-row:2;min-width:0;margin:0;padding-top:14px;border-top:1px solid #d1bd9c;font:14px/1.7 Arial,'Yu Gothic',sans-serif;color:#685236;overflow-wrap:anywhere}
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-option>kbd,.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-next{grid-column:1/-1;grid-row:3;justify-self:end;align-self:end;max-width:100%;border-top:3px double #b79a6f;padding-top:8px;color:#685236}
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-foot{padding:8px;color:#604d32;border:0}
+.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-foot :is(kbd,output){color:#604d32}
+@media(max-width:520px){.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-frame{padding:12px}.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-batch{grid-template-columns:minmax(0,1fr)}.sop-wb.sop-bookplate-command.sop-bookplate-command .wb-command-option{min-height:170px}}
+}

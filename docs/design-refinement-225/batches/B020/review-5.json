@@ -1,0 +1,434 @@
+{
+  "batch": "B020",
+  "round": 5,
+  "overall": "changes_required",
+  "parts": [
+    {
+      "id": "bookplate-command",
+      "number": 620,
+      "verdict": "changes_required",
+      "note": "斜め切込みは解消。内枠・検索帯・色に寄る蔵書票を構成から進める。",
+      "findings": [
+        {
+          "kind": "design_review_judgment",
+          "description": "薄い内枠・黄土色の検索帯・太い下辺を加えたが、見出し→検索→分類付き単列候補という面の構成はB630に近い。斜めの大きな切込みを除いた読みやすさは改善した一方、蔵書票としての独立した組版/紙と留めた帯の関係が弱い。 機能故障とは別のA造形判断。",
+          "recommendation": "蔵書票の見出し/所有・分類情報と検索帯・操作一覧の関係を実際の面/欄の構成へ進める。外枠や色の追加だけで終えない。",
+          "evidence": [
+            "evidence-5/sheet-bookplate-command.jpg",
+            "evidence-5/sheet-warm-project-command.jpg"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-5/sheet-bookplate-command.jpg",
+        "measurements-5.json",
+        "measurements-commands-5.json",
+        "measurements-react-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "caption-command",
+      "number": 621,
+      "verdict": "changes_required",
+      "note": "注記としての欄構造が不足。hover文字2px移動も修正。",
+      "findings": [
+        {
+          "kind": "design_review_judgment",
+          "description": "大きい明朝の操作名、斜体の分類、細い縦罫が主な差で、実候補の組み方はB630と同じ検索下の単列反復。余白の注記としての独立した読み順や欄構造が足りない。 機能故障とは別のA造形判断。",
+          "recommendation": "分類/注記の欄と実候補を構造的に分け、広幅と狭幅の組版を設計する。",
+          "evidence": [
+            "evidence-5/sheet-caption-command.jpg",
+            "evidence-5/sheet-warm-project-command.jpg"
+          ]
+        },
+        {
+          "kind": "hover_text_shift",
+          "description": "候補間のpointer hoverで新旧候補のタイトル/説明が左右2px移動。gallery/portable双方。旧selectedのborder-inline-start:2pxが後段の通常border:0と競合し、文字位置を変えている。",
+          "recommendation": "選択/非選択の列幅・paddingを固定し、選択線をレイアウトの外で描く。",
+          "evidence": [
+            "measurements-5.json",
+            "src/parts/commands/caption-command/styles.css:61",
+            "evidence-5/caption-command-gallery-hover.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-5/sheet-caption-command.jpg",
+        "measurements-5.json",
+        "measurements-commands-5.json",
+        "measurements-react-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "soft-action-command",
+      "number": 628,
+      "verdict": "pass",
+      "note": "用途別の操作カードと短い補足を広い検索行から選ぶBとして成立。指定操作・狭幅は合格。",
+      "findings": [],
+      "evidence": [
+        "evidence-5/sheet-soft-action-command.jpg",
+        "measurements-5.json",
+        "measurements-commands-5.json",
+        "measurements-react-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "clear-outline-command",
+      "number": 629,
+      "verdict": "pass",
+      "note": "検索と高密度の操作一覧を罫で直結し、側線で位置を示すBとして成立。",
+      "findings": [],
+      "evidence": [
+        "evidence-5/sheet-clear-outline-command.jpg",
+        "measurements-5.json",
+        "measurements-commands-5.json",
+        "measurements-react-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "warm-project-command",
+      "number": 630,
+      "verdict": "changes_required",
+      "note": "章ごとの操作という用途差は成立。長い分類の左右切れを修正。",
+      "findings": [
+        {
+          "kind": "long_group_clipping",
+          "description": "320px viewport、dialog幅292pxで長い分類のLongUnbrokenGroup1234567890が折返されず、dialog端から63.09375pxはみ出して切れる。gallery/portable、LTR右/RTL左で同量。forcedでは折返す。",
+          "recommendation": "通常配色のwb-command-groupにも縮小と長語折返しを適用する。",
+          "evidence": [
+            "measurements-5.json",
+            "evidence-5/sheet-warm-project-command.jpg"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-5/sheet-warm-project-command.jpg",
+        "measurements-5.json",
+        "measurements-commands-5.json",
+        "measurements-react-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "stepped-document-context",
+      "number": 634,
+      "verdict": "changes_required",
+      "note": "紙/二段の下敷き/操作段の関係は成立。共有焦点露出と有効補助文字を修正。",
+      "findings": [
+        {
+          "kind": "keyboard_focus_not_revealed",
+          "description": "8個の短い操作でEndを押すとitem7へDOM焦点だけ移り、panel.scrollTopは0のまま。5件×gallery/portable×700/300px height×normal/forcedの40条件すべて。700pxではpanel下端690pxに対し焦点上端850〜954px。手動末尾後のHomeでも先頭が見える位置へ戻らない。",
+          "recommendation": "共有contextのHome/End/Arrow/typeahead/open時にpanel内の焦点を露出する。外側ページを動かさず、拡大縮小と再openも確認。",
+          "evidence": [
+            "measurements-focus-menu-5.json",
+            "evidence-5/focus-sheet.jpg",
+            "src/shared/workbench/context.ts"
+          ]
+        },
+        {
+          "kind": "contrast",
+          "description": "選択shortcut/説明4.192:1（12/14px）、分類group4.285:1（13px）。 gallery/portableの実背景合成値。hover解除後のactive状態も同値。disabled候補の淡さとは区別。",
+          "recommendation": "有効な補助文字を実面に対して4.5:1以上へ。",
+          "evidence": [
+            "contrast-summary-5.json"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-5/sheet-stepped-document-context.jpg",
+        "measurements-5.json",
+        "measurements-context-5.json",
+        "measurements-react-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "ledger-tools-context",
+      "number": 635,
+      "verdict": "changes_required",
+      "note": "綴じ帯と選択連番から台帳の実欄へ。共有焦点と補助文字も修正。",
+      "findings": [
+        {
+          "kind": "design_review_judgment",
+          "description": "左端の綴じ帯、小さい罫紙icon、選択行だけの連番が中心。操作名/補足/shortcutはBの通常メニューと同じ行配置で、台帳としての実欄構成が弱い。 機能故障とは別のA造形判断。",
+          "recommendation": "綴じ代と全操作に対応した番号/記録欄を一貫した面へまとめ、選択色以外でも記録の構造が読めるようにする。",
+          "evidence": [
+            "evidence-5/sheet-ledger-tools-context.jpg",
+            "evidence-5/comparison-warm-project-context.png"
+          ]
+        },
+        {
+          "kind": "keyboard_focus_not_revealed",
+          "description": "8個の短い操作でEndを押すとitem7へDOM焦点だけ移り、panel.scrollTopは0のまま。5件×gallery/portable×700/300px height×normal/forcedの40条件すべて。700pxではpanel下端690pxに対し焦点上端850〜954px。手動末尾後のHomeでも先頭が見える位置へ戻らない。",
+          "recommendation": "共有contextのHome/End/Arrow/typeahead/open時にpanel内の焦点を露出する。外側ページを動かさず、拡大縮小と再openも確認。",
+          "evidence": [
+            "measurements-focus-menu-5.json",
+            "evidence-5/focus-sheet.jpg",
+            "src/shared/workbench/context.ts"
+          ]
+        },
+        {
+          "kind": "contrast",
+          "description": "選択shortcut/説明3.900:1（12/14px）。 gallery/portableの実背景合成値。hover解除後のactive状態も同値。disabled候補の淡さとは区別。",
+          "recommendation": "有効な補助文字を実面に対して4.5:1以上へ。",
+          "evidence": [
+            "contrast-summary-5.json"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-5/sheet-ledger-tools-context.jpg",
+        "measurements-5.json",
+        "measurements-context-5.json",
+        "measurements-react-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "stitched-file-context",
+      "number": 638,
+      "verdict": "changes_required",
+      "note": "綴じる物理接点が弱い。狭幅40px文字列と共有焦点を修正。",
+      "findings": [
+        {
+          "kind": "design_review_judgment",
+          "description": "点線外周と大きな下端帯、見出し下の空白が主な差。文書と操作を短い綴じ目で結ぶ接点がなく、Bの行メニューへ点線と余白を加えた段階に留まる。 機能故障とは別のA造形判断。",
+          "recommendation": "紙を綴じる相手面と短い糸の通る接点を作り、不要な下端帯/空白を整理して操作のまとまりへ結び付ける。",
+          "evidence": [
+            "evidence-5/sheet-stitched-file-context.jpg",
+            "evidence-5/comparison-soft-resource-context.png"
+          ]
+        },
+        {
+          "kind": "narrow_target_column",
+          "description": "320px viewportで閉じた対象名が40px列へ入り、日本語1文字ずつに折れる。portable root222px / gallery249pxともtitle22px・高さ792px（24行）、copy高さ1160.44px。LTR/RTL双方、forcedでは幅190/217pxに解消。旧containerのcopy grid-column:1/row:2と新40px先頭列が競合。",
+          "recommendation": "狭幅の文書名を可変列または全幅へ置く。過去のcontainer配置を明示的に解除し、通常/forced/LTR/RTLを同じ読み順へ。",
+          "evidence": [
+            "measurements-targets-5.json",
+            "evidence-5/targets-sheet.jpg",
+            "src/parts/contextmenus/stitched-file-context/styles.css:66"
+          ]
+        },
+        {
+          "kind": "keyboard_focus_not_revealed",
+          "description": "8個の短い操作でEndを押すとitem7へDOM焦点だけ移り、panel.scrollTopは0のまま。5件×gallery/portable×700/300px height×normal/forcedの40条件すべて。700pxではpanel下端690pxに対し焦点上端850〜954px。手動末尾後のHomeでも先頭が見える位置へ戻らない。",
+          "recommendation": "共有contextのHome/End/Arrow/typeahead/open時にpanel内の焦点を露出する。外側ページを動かさず、拡大縮小と再openも確認。",
+          "evidence": [
+            "measurements-focus-menu-5.json",
+            "evidence-5/focus-sheet.jpg",
+            "src/shared/workbench/context.ts"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-5/sheet-stitched-file-context.jpg",
+        "measurements-5.json",
+        "measurements-context-5.json",
+        "measurements-react-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "open-corner-context",
+      "number": 639,
+      "verdict": "changes_required",
+      "note": "角罫から紙を受ける支持構造へ。共有焦点と補助文字も修正。",
+      "findings": [
+        {
+          "kind": "design_review_judgment",
+          "description": "対角のL字罫と青い外周面が主な個性で、紙と支持物が接する/重なる関係が見えない。開いた面もBの標準行一覧に色面見出しを載せた構成。 機能故障とは別のA造形判断。",
+          "recommendation": "支持枠の前後と独立した紙端を実際の重なり/空隙で示し、支持が紙面と操作位置を支える意味へ結び付ける。",
+          "evidence": [
+            "evidence-5/sheet-open-corner-context.jpg",
+            "evidence-5/comparison-clear-action-context.png"
+          ]
+        },
+        {
+          "kind": "keyboard_focus_not_revealed",
+          "description": "8個の短い操作でEndを押すとitem7へDOM焦点だけ移り、panel.scrollTopは0のまま。5件×gallery/portable×700/300px height×normal/forcedの40条件すべて。700pxではpanel下端690pxに対し焦点上端850〜954px。手動末尾後のHomeでも先頭が見える位置へ戻らない。",
+          "recommendation": "共有contextのHome/End/Arrow/typeahead/open時にpanel内の焦点を露出する。外側ページを動かさず、拡大縮小と再openも確認。",
+          "evidence": [
+            "measurements-focus-menu-5.json",
+            "evidence-5/focus-sheet.jpg",
+            "src/shared/workbench/context.ts"
+          ]
+        },
+        {
+          "kind": "contrast",
+          "description": "ESC3.651:1（12px）、選択shortcut/説明4.408:1（12/14px）。 gallery/portableの実背景合成値。hover解除後のactive状態も同値。disabled候補の淡さとは区別。",
+          "recommendation": "有効な補助文字を実面に対して4.5:1以上へ。",
+          "evidence": [
+            "contrast-summary-5.json"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-5/sheet-open-corner-context.jpg",
+        "measurements-5.json",
+        "measurements-context-5.json",
+        "measurements-react-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "index-pocket-context",
+      "number": 641,
+      "verdict": "changes_required",
+      "note": "紙端が前側ポケットへ差し込む重なりと切欠きは成立。共有焦点だけを修正。",
+      "findings": [
+        {
+          "kind": "keyboard_focus_not_revealed",
+          "description": "8個の短い操作でEndを押すとitem7へDOM焦点だけ移り、panel.scrollTopは0のまま。5件×gallery/portable×700/300px height×normal/forcedの40条件すべて。700pxではpanel下端690pxに対し焦点上端850〜954px。手動末尾後のHomeでも先頭が見える位置へ戻らない。",
+          "recommendation": "共有contextのHome/End/Arrow/typeahead/open時にpanel内の焦点を露出する。外側ページを動かさず、拡大縮小と再openも確認。",
+          "evidence": [
+            "measurements-focus-menu-5.json",
+            "evidence-5/focus-sheet.jpg",
+            "src/shared/workbench/context.ts"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-5/sheet-index-pocket-context.jpg",
+        "measurements-5.json",
+        "measurements-context-5.json",
+        "measurements-react-5.json"
+      ],
+      "reviewed": {
+        "round": 5,
+        "actualGallery": true,
+        "portable": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    }
+  ],
+  "coverage": {
+    "primaryRows": 20,
+    "nativeChecks": 350,
+    "reactPartsFormats": 40,
+    "reactChecks": 140,
+    "runtimeErrors": 0,
+    "sourceHashesMatched": 100,
+    "lowHeightCommandConditions": 40,
+    "shortLabelContextFocusConditions": 40,
+    "targetLayoutConditions": 40,
+    "imagesViewed": [
+      "10 primary sheets /120 states",
+      "2 React sheets /20 opened/forced images",
+      "targets-sheet /10 long closed targets",
+      "errors-sheet /10 native narrow errors",
+      "focus-sheet /10 End/manual context images",
+      "comparison B context3 opened images",
+      "R620/R621 opened close images and low-height manual-bottom images",
+      "R638 forced RTL target close image"
+    ],
+    "pendingRequiredMeasurements": [],
+    "limitations": [
+      "Chromiumの指定状態/targetに対する検査であり無欠陥保証ではない。",
+      "A造形5件は機能故障と区別したレビュー判断。",
+      "commandの初回whole-option visibility失敗は長い候補の全高がviewportを越えるため。追加40条件で手動末尾到達を確認し到達不能とはしない。",
+      "Contextは短い項目の追加40条件でも焦点非露出を確認。",
+      "React長文の全組合せは未実行。同作者CSSのgallery/portableで長文を実査。",
+      "初期fixtureでmedia/resize後にpopupが閉じる場合を再openで補正。既存errorがempty表示より優先する条件をresetして確認。作者不具合とはしない。",
+      "共有context修正は確定40条件取得後にparentへrelease。round5凍結exportの旧処理がこの判定対象。"
+    ]
+  }
+}

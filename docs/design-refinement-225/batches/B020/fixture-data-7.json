@@ -1,0 +1,737 @@
+{
+  "bookplate-command": {
+    "config": {
+      "label": "Your next move.",
+      "triggerLabel": "コマンドを探す",
+      "items": [
+        {
+          "id": "create",
+          "label": "新しいドキュメント",
+          "description": "空白のページから始める",
+          "group": "CREATE",
+          "icon": "plus",
+          "shortcut": "N",
+          "keywords": [
+            "new",
+            "create",
+            "作成"
+          ]
+        },
+        {
+          "id": "project",
+          "label": "プロジェクトを開く",
+          "description": "最近使ったワークスペース",
+          "group": "NAVIGATE",
+          "icon": "folder",
+          "shortcut": "G P"
+        },
+        {
+          "id": "search",
+          "label": "すべての資料を検索",
+          "description": "名前・本文・タグから探す",
+          "group": "NAVIGATE",
+          "icon": "search",
+          "shortcut": "/"
+        },
+        {
+          "id": "view",
+          "label": "表示を切り替える",
+          "description": "一覧とグリッド",
+          "group": "PREFERENCES",
+          "icon": "grid",
+          "children": [
+            {
+              "id": "list",
+              "label": "リスト表示",
+              "icon": "file"
+            },
+            {
+              "id": "grid",
+              "label": "グリッド表示",
+              "icon": "grid"
+            }
+          ]
+        },
+        {
+          "id": "preferences",
+          "label": "環境設定",
+          "description": "自分に合う使い方に",
+          "group": "PREFERENCES",
+          "icon": "settings",
+          "shortcut": ","
+        },
+        {
+          "id": "export",
+          "label": "エクスポート",
+          "description": "権限が必要です",
+          "group": "PREFERENCES",
+          "icon": "arrow",
+          "disabled": true
+        }
+      ],
+      "hotkey": false
+    },
+    "slot": ""
+  },
+  "caption-command": {
+    "config": {
+      "label": "Your next move.",
+      "triggerLabel": "コマンドを探す",
+      "items": [
+        {
+          "id": "create",
+          "label": "新しいドキュメント",
+          "description": "空白のページから始める",
+          "group": "CREATE",
+          "icon": "plus",
+          "shortcut": "N",
+          "keywords": [
+            "new",
+            "create",
+            "作成"
+          ]
+        },
+        {
+          "id": "project",
+          "label": "プロジェクトを開く",
+          "description": "最近使ったワークスペース",
+          "group": "NAVIGATE",
+          "icon": "folder",
+          "shortcut": "G P"
+        },
+        {
+          "id": "search",
+          "label": "すべての資料を検索",
+          "description": "名前・本文・タグから探す",
+          "group": "NAVIGATE",
+          "icon": "search",
+          "shortcut": "/"
+        },
+        {
+          "id": "view",
+          "label": "表示を切り替える",
+          "description": "一覧とグリッド",
+          "group": "PREFERENCES",
+          "icon": "grid",
+          "children": [
+            {
+              "id": "list",
+              "label": "リスト表示",
+              "icon": "file"
+            },
+            {
+              "id": "grid",
+              "label": "グリッド表示",
+              "icon": "grid"
+            }
+          ]
+        },
+        {
+          "id": "preferences",
+          "label": "環境設定",
+          "description": "自分に合う使い方に",
+          "group": "PREFERENCES",
+          "icon": "settings",
+          "shortcut": ","
+        },
+        {
+          "id": "export",
+          "label": "エクスポート",
+          "description": "権限が必要です",
+          "group": "PREFERENCES",
+          "icon": "arrow",
+          "disabled": true
+        }
+      ],
+      "hotkey": false
+    },
+    "slot": ""
+  },
+  "soft-action-command": {
+    "config": {
+      "label": "Your next move.",
+      "triggerLabel": "コマンドを探す",
+      "items": [
+        {
+          "id": "create",
+          "label": "新しいドキュメント",
+          "description": "空白のページから始める",
+          "group": "CREATE",
+          "icon": "plus",
+          "shortcut": "N",
+          "keywords": [
+            "new",
+            "create",
+            "作成"
+          ]
+        },
+        {
+          "id": "project",
+          "label": "プロジェクトを開く",
+          "description": "最近使ったワークスペース",
+          "group": "NAVIGATE",
+          "icon": "folder",
+          "shortcut": "G P"
+        },
+        {
+          "id": "search",
+          "label": "すべての資料を検索",
+          "description": "名前・本文・タグから探す",
+          "group": "NAVIGATE",
+          "icon": "search",
+          "shortcut": "/"
+        },
+        {
+          "id": "view",
+          "label": "表示を切り替える",
+          "description": "一覧とグリッド",
+          "group": "PREFERENCES",
+          "icon": "grid",
+          "children": [
+            {
+              "id": "list",
+              "label": "リスト表示",
+              "icon": "file"
+            },
+            {
+              "id": "grid",
+              "label": "グリッド表示",
+              "icon": "grid"
+            }
+          ]
+        },
+        {
+          "id": "preferences",
+          "label": "環境設定",
+          "description": "自分に合う使い方に",
+          "group": "PREFERENCES",
+          "icon": "settings",
+          "shortcut": ","
+        },
+        {
+          "id": "export",
+          "label": "エクスポート",
+          "description": "権限が必要です",
+          "group": "PREFERENCES",
+          "icon": "arrow",
+          "disabled": true
+        }
+      ],
+      "hotkey": false
+    },
+    "slot": ""
+  },
+  "clear-outline-command": {
+    "config": {
+      "label": "Your next move.",
+      "triggerLabel": "コマンドを探す",
+      "items": [
+        {
+          "id": "create",
+          "label": "新しいドキュメント",
+          "description": "空白のページから始める",
+          "group": "CREATE",
+          "icon": "plus",
+          "shortcut": "N",
+          "keywords": [
+            "new",
+            "create",
+            "作成"
+          ]
+        },
+        {
+          "id": "project",
+          "label": "プロジェクトを開く",
+          "description": "最近使ったワークスペース",
+          "group": "NAVIGATE",
+          "icon": "folder",
+          "shortcut": "G P"
+        },
+        {
+          "id": "search",
+          "label": "すべての資料を検索",
+          "description": "名前・本文・タグから探す",
+          "group": "NAVIGATE",
+          "icon": "search",
+          "shortcut": "/"
+        },
+        {
+          "id": "view",
+          "label": "表示を切り替える",
+          "description": "一覧とグリッド",
+          "group": "PREFERENCES",
+          "icon": "grid",
+          "children": [
+            {
+              "id": "list",
+              "label": "リスト表示",
+              "icon": "file"
+            },
+            {
+              "id": "grid",
+              "label": "グリッド表示",
+              "icon": "grid"
+            }
+          ]
+        },
+        {
+          "id": "preferences",
+          "label": "環境設定",
+          "description": "自分に合う使い方に",
+          "group": "PREFERENCES",
+          "icon": "settings",
+          "shortcut": ","
+        },
+        {
+          "id": "export",
+          "label": "エクスポート",
+          "description": "権限が必要です",
+          "group": "PREFERENCES",
+          "icon": "arrow",
+          "disabled": true
+        }
+      ],
+      "hotkey": false
+    },
+    "slot": ""
+  },
+  "warm-project-command": {
+    "config": {
+      "label": "Your next move.",
+      "triggerLabel": "コマンドを探す",
+      "items": [
+        {
+          "id": "create",
+          "label": "新しいドキュメント",
+          "description": "空白のページから始める",
+          "group": "CREATE",
+          "icon": "plus",
+          "shortcut": "N",
+          "keywords": [
+            "new",
+            "create",
+            "作成"
+          ]
+        },
+        {
+          "id": "project",
+          "label": "プロジェクトを開く",
+          "description": "最近使ったワークスペース",
+          "group": "NAVIGATE",
+          "icon": "folder",
+          "shortcut": "G P"
+        },
+        {
+          "id": "search",
+          "label": "すべての資料を検索",
+          "description": "名前・本文・タグから探す",
+          "group": "NAVIGATE",
+          "icon": "search",
+          "shortcut": "/"
+        },
+        {
+          "id": "view",
+          "label": "表示を切り替える",
+          "description": "一覧とグリッド",
+          "group": "PREFERENCES",
+          "icon": "grid",
+          "children": [
+            {
+              "id": "list",
+              "label": "リスト表示",
+              "icon": "file"
+            },
+            {
+              "id": "grid",
+              "label": "グリッド表示",
+              "icon": "grid"
+            }
+          ]
+        },
+        {
+          "id": "preferences",
+          "label": "環境設定",
+          "description": "自分に合う使い方に",
+          "group": "PREFERENCES",
+          "icon": "settings",
+          "shortcut": ","
+        },
+        {
+          "id": "export",
+          "label": "エクスポート",
+          "description": "権限が必要です",
+          "group": "PREFERENCES",
+          "icon": "arrow",
+          "disabled": true
+        }
+      ],
+      "hotkey": false
+    },
+    "slot": ""
+  },
+  "stepped-document-context": {
+    "config": {
+      "label": "ドキュメントの操作",
+      "targetLabel": "Project notes",
+      "targetDescription": "右クリック、Shift F10、または …",
+      "items": [
+        {
+          "id": "open",
+          "label": "開く",
+          "icon": "file",
+          "shortcut": "Enter"
+        },
+        {
+          "id": "copy",
+          "label": "複製",
+          "icon": "copy",
+          "shortcut": "Ctrl D"
+        },
+        {
+          "id": "move",
+          "label": "移動先を選ぶ",
+          "icon": "folder",
+          "children": [
+            {
+              "id": "folder-work",
+              "label": "作業フォルダー",
+              "icon": "folder"
+            },
+            {
+              "id": "folder-archive",
+              "label": "アーカイブ",
+              "icon": "folder"
+            }
+          ]
+        },
+        {
+          "id": "sep-a",
+          "label": "",
+          "kind": "separator"
+        },
+        {
+          "id": "pin",
+          "label": "ピン留め",
+          "kind": "checkbox",
+          "checked": true
+        },
+        {
+          "id": "notify",
+          "label": "更新を通知",
+          "kind": "checkbox"
+        },
+        {
+          "id": "sep-b",
+          "label": "",
+          "kind": "separator"
+        },
+        {
+          "id": "delete",
+          "label": "削除",
+          "icon": "trash",
+          "danger": true
+        },
+        {
+          "id": "share",
+          "label": "共有リンクを作成",
+          "description": "管理者のみ",
+          "disabled": true,
+          "icon": "arrow"
+        }
+      ]
+    },
+    "slot": ""
+  },
+  "ledger-tools-context": {
+    "config": {
+      "label": "ドキュメントの操作",
+      "targetLabel": "Project notes",
+      "targetDescription": "右クリック、Shift F10、または …",
+      "items": [
+        {
+          "id": "open",
+          "label": "開く",
+          "icon": "file",
+          "shortcut": "Enter"
+        },
+        {
+          "id": "copy",
+          "label": "複製",
+          "icon": "copy",
+          "shortcut": "Ctrl D"
+        },
+        {
+          "id": "move",
+          "label": "移動先を選ぶ",
+          "icon": "folder",
+          "children": [
+            {
+              "id": "folder-work",
+              "label": "作業フォルダー",
+              "icon": "folder"
+            },
+            {
+              "id": "folder-archive",
+              "label": "アーカイブ",
+              "icon": "folder"
+            }
+          ]
+        },
+        {
+          "id": "sep-a",
+          "label": "",
+          "kind": "separator"
+        },
+        {
+          "id": "pin",
+          "label": "ピン留め",
+          "kind": "checkbox",
+          "checked": true
+        },
+        {
+          "id": "notify",
+          "label": "更新を通知",
+          "kind": "checkbox"
+        },
+        {
+          "id": "sep-b",
+          "label": "",
+          "kind": "separator"
+        },
+        {
+          "id": "delete",
+          "label": "削除",
+          "icon": "trash",
+          "danger": true
+        },
+        {
+          "id": "share",
+          "label": "共有リンクを作成",
+          "description": "管理者のみ",
+          "disabled": true,
+          "icon": "arrow"
+        }
+      ]
+    },
+    "slot": ""
+  },
+  "stitched-file-context": {
+    "config": {
+      "label": "ドキュメントの操作",
+      "targetLabel": "Project notes",
+      "targetDescription": "右クリック、Shift F10、または …",
+      "items": [
+        {
+          "id": "open",
+          "label": "開く",
+          "icon": "file",
+          "shortcut": "Enter"
+        },
+        {
+          "id": "copy",
+          "label": "複製",
+          "icon": "copy",
+          "shortcut": "Ctrl D"
+        },
+        {
+          "id": "move",
+          "label": "移動先を選ぶ",
+          "icon": "folder",
+          "children": [
+            {
+              "id": "folder-work",
+              "label": "作業フォルダー",
+              "icon": "folder"
+            },
+            {
+              "id": "folder-archive",
+              "label": "アーカイブ",
+              "icon": "folder"
+            }
+          ]
+        },
+        {
+          "id": "sep-a",
+          "label": "",
+          "kind": "separator"
+        },
+        {
+          "id": "pin",
+          "label": "ピン留め",
+          "kind": "checkbox",
+          "checked": true
+        },
+        {
+          "id": "notify",
+          "label": "更新を通知",
+          "kind": "checkbox"
+        },
+        {
+          "id": "sep-b",
+          "label": "",
+          "kind": "separator"
+        },
+        {
+          "id": "delete",
+          "label": "削除",
+          "icon": "trash",
+          "danger": true
+        },
+        {
+          "id": "share",
+          "label": "共有リンクを作成",
+          "description": "管理者のみ",
+          "disabled": true,
+          "icon": "arrow"
+        }
+      ]
+    },
+    "slot": ""
+  },
+  "open-corner-context": {
+    "config": {
+      "label": "ドキュメントの操作",
+      "targetLabel": "Project notes",
+      "targetDescription": "右クリック、Shift F10、または …",
+      "items": [
+        {
+          "id": "open",
+          "label": "開く",
+          "icon": "file",
+          "shortcut": "Enter"
+        },
+        {
+          "id": "copy",
+          "label": "複製",
+          "icon": "copy",
+          "shortcut": "Ctrl D"
+        },
+        {
+          "id": "move",
+          "label": "移動先を選ぶ",
+          "icon": "folder",
+          "children": [
+            {
+              "id": "folder-work",
+              "label": "作業フォルダー",
+              "icon": "folder"
+            },
+            {
+              "id": "folder-archive",
+              "label": "アーカイブ",
+              "icon": "folder"
+            }
+          ]
+        },
+        {
+          "id": "sep-a",
+          "label": "",
+          "kind": "separator"
+        },
+        {
+          "id": "pin",
+          "label": "ピン留め",
+          "kind": "checkbox",
+          "checked": true
+        },
+        {
+          "id": "notify",
+          "label": "更新を通知",
+          "kind": "checkbox"
+        },
+        {
+          "id": "sep-b",
+          "label": "",
+          "kind": "separator"
+        },
+        {
+          "id": "delete",
+          "label": "削除",
+          "icon": "trash",
+          "danger": true
+        },
+        {
+          "id": "share",
+          "label": "共有リンクを作成",
+          "description": "管理者のみ",
+          "disabled": true,
+          "icon": "arrow"
+        }
+      ]
+    },
+    "slot": ""
+  },
+  "index-pocket-context": {
+    "config": {
+      "label": "ドキュメントの操作",
+      "targetLabel": "Project notes",
+      "targetDescription": "右クリック、Shift F10、または …",
+      "items": [
+        {
+          "id": "open",
+          "label": "開く",
+          "icon": "file",
+          "shortcut": "Enter"
+        },
+        {
+          "id": "copy",
+          "label": "複製",
+          "icon": "copy",
+          "shortcut": "Ctrl D"
+        },
+        {
+          "id": "move",
+          "label": "移動先を選ぶ",
+          "icon": "folder",
+          "children": [
+            {
+              "id": "folder-work",
+              "label": "作業フォルダー",
+              "icon": "folder"
+            },
+            {
+              "id": "folder-archive",
+              "label": "アーカイブ",
+              "icon": "folder"
+            }
+          ]
+        },
+        {
+          "id": "sep-a",
+          "label": "",
+          "kind": "separator"
+        },
+        {
+          "id": "pin",
+          "label": "ピン留め",
+          "kind": "checkbox",
+          "checked": true
+        },
+        {
+          "id": "notify",
+          "label": "更新を通知",
+          "kind": "checkbox"
+        },
+        {
+          "id": "sep-b",
+          "label": "",
+          "kind": "separator"
+        },
+        {
+          "id": "delete",
+          "label": "削除",
+          "icon": "trash",
+          "danger": true
+        },
+        {
+          "id": "share",
+          "label": "共有リンクを作成",
+          "description": "管理者のみ",
+          "disabled": true,
+          "icon": "arrow"
+        }
+      ]
+    },
+    "slot": ""
+  }
+}

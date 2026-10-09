@@ -1,5 +1,5 @@
 @import "../../../shared/workbench/base.css";
-/* 開いた余白と見出し横の暖かい面を保つ。孤立して長かった左線を96pxで止め、上の40pxの辺と一つの開いた角にする。通常行を囲わず、見出し・選択・読む余白の順に視線を整える。 */
+/* 開いた支持枠に文書と独立した操作位置を置くメニュー。紙の上辺と下辺を対角の支えで受け、操作ボタンは下の余白に分ける。 */
 
 .sop-wb.sop-open-corner-context.sop-open-corner-context{--paper:#fff6e9;--ink:#563f30;--muted:#785f4a;--accent:#a2754b;--edge:#cab394;--wb-bg:var(--paper);--wb-surface:var(--paper);--wb-ink:var(--ink);--wb-muted:var(--muted);--wb-accent:var(--accent);--wb-line:var(--edge);--wb-radius:0;container-type:inline-size;color:var(--ink);color-scheme:light;max-width:min(100%,480px);min-width:0;overflow-wrap:anywhere}
 .sop-wb.sop-open-corner-context.sop-open-corner-context,.sop-wb.sop-open-corner-context.sop-open-corner-context *,.sop-wb.sop-open-corner-context.sop-open-corner-context *::before,.sop-wb.sop-open-corner-context.sop-open-corner-context *::after{box-sizing:border-box}
@@ -57,3 +57,48 @@
 .sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-target,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-object,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-open,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-panel,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-heading,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-heading span,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-items,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-items button,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-menu-copy strong,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-menu-copy small,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-menu-glyph,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-menu-group,.sop-wb.sop-open-corner-context.sop-open-corner-context kbd,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-status,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-result,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-target-copy,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-target-copy strong,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-target-copy small,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-eyebrow{background:Canvas!important;color:CanvasText!important;border-color:ButtonText!important;box-shadow:none!important;mask:none!important;clip-path:none!important}
 .sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-target::before,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-target::after,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-panel::before,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-panel::after,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-heading::before,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-heading::after,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-items::before,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-items::after,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-items button::before,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-items button::after,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-target-copy::before,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-target-copy::after{display:none!important}
 .sop-wb.sop-open-corner-context.sop-open-corner-context .wb-menu-glyph svg,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-heading svg{color:CanvasText!important}.sop-wb.sop-open-corner-context.sop-open-corner-context [aria-checked=true]{outline:2px solid Highlight!important;outline-offset:-3px}.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-items button:focus-visible,.sop-wb.sop-open-corner-context.sop-open-corner-context :is(button,[tabindex]):focus-visible{outline-color:Highlight!important}}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-target{position:relative;padding:24px 18px;grid-template-columns:42px minmax(0,1fr);gap:16px;background:#f0f4f5;border:0;border-radius:0}
+.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-target::before{content:'';position:absolute;inset:6px 6px auto auto;width:45%;height:26px;border-top:2px solid #91acba;border-right:2px solid #91acba;pointer-events:none}
+.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-target::after{content:'';position:absolute;inset:auto auto 6px 6px;width:45%;height:26px;border-bottom:2px solid #91acba;border-left:2px solid #91acba;pointer-events:none}
+.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-object{width:42px;height:62px;background:#d8e5eb;border:0;border-top:2px solid #8eacbd;border-bottom:3px solid #aac3cf;border-radius:0}
+.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-open{grid-column:2;justify-self:end;border:0;border-bottom:2px solid #8eacbd;border-radius:0;background:none}
+.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-panel{padding:16px;border:0;border-inline:2px solid #9ab5c3;border-radius:0;background:#f1f6f8;box-shadow:0 14px 40px #21333c38}
+.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-subject{border-bottom:1px solid #b4cad5;padding-bottom:12px}
+.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-items [data-menu-action]{border:0;border-bottom:1px solid #c5d8df;background:none;border-radius:0}
+
+}
+
+/* B020 independent review follow-up */
+@media(forced-colors:none){
+.sop-wb.sop-open-corner-context.sop-open-corner-context{--muted:#655040}.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-heading>small{color:var(--muted)}
+}
+
+/* B020 independent review follow-up */
+@media(forced-colors:none){
+.sop-wb.sop-open-corner-context.sop-open-corner-context{--muted:#655040}
+.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-panel{padding:12px;border:0;background:transparent;box-shadow:none;isolation:isolate}
+.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-panel::before,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-panel::after{display:none}
+.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-subject{position:relative;margin:0 0 14px;padding:18px 16px;background:#fff9f0;border:0;box-shadow:0 4px 0 #d7bda0;overflow-wrap:anywhere}
+.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-heading{margin:0;padding:14px 16px;background:#ead5bc;border:0;min-height:0}
+.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-items{padding:16px 0 0;margin:0;background:none;border:0}
+.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-batch{position:relative;margin:0 0 20px;padding:18px 16px;background:#fff9f0;border:0;box-shadow:0 4px 0 #d7bda0;isolation:isolate}
+.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-batch::before,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-batch::after,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-subject::before{content:'';position:absolute;display:block;width:32px;height:32px;pointer-events:none;background:linear-gradient(135deg,#dabd98 0 48%,#a47c52 49% 55%,transparent 56%);z-index:2}
+.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-batch::before,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-subject::before{top:-5px;inset-inline-start:-5px}
+.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-batch::after{bottom:-5px;inset-inline-end:-5px;transform:rotate(180deg)}
+.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-menu-group{margin:0 0 12px;padding:0 0 10px;border:0;border-bottom:1px solid #ccb391;color:#655040}
+.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-items button,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-items button:is(:hover,:focus){position:relative;padding:16px 2px;border:0;border-bottom:1px solid #deccb5;background:none;gap:10px;transform:none}
+.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-items button:is(:hover,:focus){background:#f0dfc9}
+.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-heading>small,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-items kbd,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-menu-copy small{color:#655040}
+.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-status{background:#fff9f0;padding:0 16px}
+.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-target{position:relative;padding:26px 20px;border:0;background:#fff9f0;box-shadow:0 4px 0 #d7bda0;isolation:isolate}
+.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-target::before,.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-target::after{display:block;content:'';position:absolute;width:40px;height:40px;border:0;background:linear-gradient(135deg,#dabd98 0 48%,#a47c52 49% 55%,transparent 56%);pointer-events:none;z-index:1}
+.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-target::before{inset:0 auto auto 0;inset-inline-start:0}
+.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-target::after{inset:auto 0 0 auto;inset-inline-end:0;transform:rotate(180deg)}
+.sop-wb.sop-open-corner-context.sop-open-corner-context:dir(rtl) .wb-context-batch::before,.sop-wb.sop-open-corner-context.sop-open-corner-context:dir(rtl) .wb-context-subject::before,.sop-wb.sop-open-corner-context.sop-open-corner-context:dir(rtl) .wb-context-target::before{transform:scaleX(-1)}
+.sop-wb.sop-open-corner-context.sop-open-corner-context:dir(rtl) .wb-context-batch::after,.sop-wb.sop-open-corner-context.sop-open-corner-context:dir(rtl) .wb-context-target::after{transform:rotate(180deg) scaleX(-1)}
+}
+
+@media(forced-colors:none){.sop-wb.sop-open-corner-context.sop-open-corner-context .wb-context-panel{background:rgb(245 234 218 / .24);backdrop-filter:blur(14px);border-radius:0}}

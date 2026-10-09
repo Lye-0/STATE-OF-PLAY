@@ -1,8 +1,34 @@
 @import "../../../shared/workbench/base.css";
-/* Warm Project Command — 制作資料に合う穏やかな操作窓。 */
+/* Warm Project Command — プロジェクトの操作を見出しごとに読むコマンドパレット。章の側線と書類の二重罫で分類し、操作名と説明を順に読む。 */
 .sop-wb.sop-warm-project-command {--wb-bg:#f6efdf;--wb-surface:#e6dfd2;--wb-ink:#453d32;--wb-muted:#5b4c36;--wb-accent:#745933;--wb-line:#c2b399;--wb-radius:6px;color-scheme:light}.sop-wb.sop-warm-project-command .wb-art{pointer-events:none}.sop-wb.sop-warm-project-command :is(.wb-search-results,.wb-command-dialog,.wb-context-panel,.wb-nav-flyout,.wb-nav-dialog){color:var(--wb-ink);background:var(--wb-bg)}.sop-wb.sop-warm-project-command .wb-command-launcher{border-radius:6px;border-color:#c4ad81}.sop-wb.sop-warm-project-command .wb-command-frame{border-radius:6px}.sop-wb.sop-warm-project-command .wb-command-top{border-bottom:1px solid #d2bd95}
 .sop-wb.sop-warm-project-command{max-width:100%}.sop-wb.sop-warm-project-command,.sop-wb.sop-warm-project-command *{box-sizing:border-box}.sop-wb.sop-warm-project-command :is(button,input,textarea,a){min-width:0}
 .sop-wb.sop-warm-project-command .wb-search-field,.sop-wb.sop-warm-project-command .wb-command-entry{background:var(--wb-surface);color:var(--wb-ink)}.sop-wb.sop-warm-project-command:focus-visible,.sop-wb.sop-warm-project-command :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-wb.sop-warm-project-command,.sop-wb.sop-warm-project-command *,.sop-wb.sop-warm-project-command::before,.sop-wb.sop-warm-project-command::after,.sop-wb.sop-warm-project-command *::before,.sop-wb.sop-warm-project-command *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-wb.sop-warm-project-command[data-sop-paused] *,.sop-wb.sop-warm-project-command[data-paused=true] *,.sop-wb.sop-warm-project-command[data-motion-running=false] *,.sop-wb.sop-warm-project-command[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-wb.sop-warm-project-command{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-warm-project-command :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-warm-project-command.sop-warm-project-command .wb-command-launcher{padding:24px 20px;border:0;border-block:3px double #c1aa7d;border-radius:0;background:#fbf4e4}
+.sop-wb.sop-warm-project-command.sop-warm-project-command .wb-command-symbol{width:38px;height:38px;border:1px solid #b69c6c;border-radius:0;background:none}
+.sop-wb.sop-warm-project-command.sop-warm-project-command .wb-launch-copy strong{font:600 25px/1.4 Georgia,'Yu Mincho',serif}
+.sop-wb.sop-warm-project-command.sop-warm-project-command .wb-command-launch{border:1px solid #c4af84;background:#fffaf0;border-radius:0;min-height:50px}
+.sop-wb.sop-warm-project-command.sop-warm-project-command .wb-command-dialog{border:1px solid #c3ad80;border-radius:0;background:#fbf4e4}
+.sop-wb.sop-warm-project-command.sop-warm-project-command .wb-command-top{border-bottom:3px double #c9b68e}
+.sop-wb.sop-warm-project-command.sop-warm-project-command .wb-command-entry{padding:12px 18px;background:#fffaf1;border:0;border-bottom:1px solid #c6b28a;border-radius:0}
+.sop-wb.sop-warm-project-command.sop-warm-project-command .wb-command-batch{padding-bottom:14px;border-bottom:1px solid #cbb88e}
+.sop-wb.sop-warm-project-command.sop-warm-project-command .wb-command-group{font:600 16px/1.6 Georgia,'Yu Mincho',serif;color:#6b542f;border-inline-start:3px solid #b89a62;padding:6px 10px;margin-bottom:10px}
+.sop-wb.sop-warm-project-command.sop-warm-project-command .wb-command-option{padding:12px 8px;border:0;border-bottom:1px solid #decfae;border-radius:0;background:none;min-height:72px}
+.sop-wb.sop-warm-project-command.sop-warm-project-command .wb-command-copy strong{font:600 17px/1.5 Georgia,'Yu Mincho',serif}
+.sop-wb.sop-warm-project-command.sop-warm-project-command .wb-command-copy small{font:12px/1.8 Arial,'Yu Gothic',sans-serif}
+.sop-wb.sop-warm-project-command.sop-warm-project-command .wb-command-option[aria-selected=true]{background:#eee0c0}
+
+}
+
+.sop-wb.sop-warm-project-command.sop-warm-project-command .wb-command-top .wb-eyebrow{font:600 14px/1.6 Arial,"Yu Gothic",sans-serif;letter-spacing:0}
+.sop-wb.sop-warm-project-command.sop-warm-project-command .wb-command-foot{font-size:11px}
+
+/* B020 independent review follow-up */
+.sop-wb.sop-warm-project-command.sop-warm-project-command .wb-command-group{min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+
+.sop-wb.sop-warm-project-command.sop-warm-project-command .wb-command-top .wb-eyebrow{min-width:0;flex:1;white-space:normal;overflow-wrap:anywhere}

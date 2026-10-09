@@ -1,5 +1,5 @@
 @import "../../../shared/workbench/base.css";
-/* 元の索引の見出し帯と積層を保ち、分類の4pxの小口へ厚みを集約する。通常の実操作は厚い札へ分けず共通の紙へ戻し、選択面と名称17px・説明14px・shortcut12pxの密度を整える。 */
+/* 索引紙を浅いポケットに差し込む操作面。紙の上端と前側の口を分け、中央の切欠きから紙が見える関係を作る。 */
 
 .sop-wb.sop-index-pocket-context.sop-index-pocket-context{--paper:#fff6e9;--ink:#563f30;--muted:#785f4a;--accent:#a2754b;--edge:#cab394;--wb-bg:var(--paper);--wb-surface:var(--paper);--wb-ink:var(--ink);--wb-muted:var(--muted);--wb-accent:var(--accent);--wb-line:var(--edge);--wb-radius:0;container-type:inline-size;color:var(--ink);color-scheme:light;max-width:min(100%,480px);min-width:0;overflow-wrap:anywhere}
 .sop-wb.sop-index-pocket-context.sop-index-pocket-context,.sop-wb.sop-index-pocket-context.sop-index-pocket-context *,.sop-wb.sop-index-pocket-context.sop-index-pocket-context *::before,.sop-wb.sop-index-pocket-context.sop-index-pocket-context *::after{box-sizing:border-box}
@@ -59,3 +59,25 @@
 .sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-target,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-object,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-open,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-panel,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-heading,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-heading span,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-items,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-items button,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-menu-copy strong,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-menu-copy small,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-menu-glyph,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-menu-group,.sop-wb.sop-index-pocket-context.sop-index-pocket-context kbd,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-status,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-result,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-target-copy,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-target-copy strong,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-target-copy small,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-eyebrow{background:Canvas!important;color:CanvasText!important;border-color:ButtonText!important;box-shadow:none!important;mask:none!important;clip-path:none!important}
 .sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-target::before,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-target::after,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-panel::before,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-panel::after,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-heading::before,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-heading::after,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-items::before,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-items::after,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-items button::before,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-items button::after,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-target-copy::before,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-target-copy::after{display:none!important}
 .sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-menu-glyph svg,.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-heading svg{color:CanvasText!important}.sop-wb.sop-index-pocket-context.sop-index-pocket-context [aria-checked=true]{outline:2px solid Highlight!important;outline-offset:-3px}.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-items button:focus-visible,.sop-wb.sop-index-pocket-context.sop-index-pocket-context :is(button,[tabindex]):focus-visible{outline-color:Highlight!important}}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-target{position:relative;isolation:isolate;padding:28px 18px 24px;grid-template-columns:40px minmax(0,1fr) 44px;gap:12px;background:#e6dbc4;border:0;border-bottom:4px solid #b69d72;border-radius:0}
+.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-target::before{content:'';position:absolute;inset:8px 12px 32px;background:#fff9eb;border:1px solid #c9b58c;z-index:-2;pointer-events:none}
+.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-target::after{content:'';position:absolute;inset:auto 0 0;height:32px;background:#ddccaa;border-top:2px solid #f3e4c7;clip-path:polygon(0 0,38% 0,44% 8px,56% 8px,62% 0,100% 0,100% 100%,0 100%);z-index:-1;pointer-events:none}
+.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-object{width:40px;height:54px;background:#f7edd8;border:1px solid #c7b188;border-radius:0;box-shadow:none}
+.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-target-copy{padding-bottom:22px;background:none}
+.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-open{border:1px solid #bfa77d;border-radius:0;background:#ebddbf;align-self:start}
+.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-panel{padding:14px;border:1px solid #c8b187;border-bottom:6px solid #bda273;border-radius:0;background:#fff8e9}
+.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-subject{margin:0 0 12px;padding:8px 12px;border:1px solid #c8b187;background:#ebdec4}
+
+}
+
+@media(forced-colors:none){.sop-wb.sop-index-pocket-context.sop-index-pocket-context{--muted:#665036;}}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-target::before{bottom:8px;box-shadow:0 -3px 0 -1px #ebdfc9}
+.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-target::after{height:32px;background:linear-gradient(#e6d8bb,#d6c19a);border-top:2px solid #fff0d4;box-shadow:0 -2px 5px #78603f20}
+
+}

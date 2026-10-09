@@ -1,5 +1,5 @@
 @import "../../../shared/workbench/base.css";
-/* 元の書類台の段を保ち、厚い白札の反復を廃止する。分類の6px段と実フォーカスの選択段だけを残し、通常の行は一枚の淡い紙へ戻す。native操作44px、実名称17pxと説明14pxで操作の余白を確保する。 */
+/* 薄い書類が二段の台へ載る操作面。角丸の大きな塊を廃し、紙・下敷き・選択した操作段の厚みを揃える。 */
 
 .sop-wb.sop-stepped-document-context.sop-stepped-document-context{--paper:#fff6e9;--ink:#563f30;--muted:#785f4a;--accent:#a2754b;--edge:#cab394;--wb-bg:var(--paper);--wb-surface:var(--paper);--wb-ink:var(--ink);--wb-muted:var(--muted);--wb-accent:var(--accent);--wb-line:var(--edge);--wb-radius:0;container-type:inline-size;color:var(--ink);color-scheme:light;max-width:min(100%,480px);min-width:0;overflow-wrap:anywhere}
 .sop-wb.sop-stepped-document-context.sop-stepped-document-context,.sop-wb.sop-stepped-document-context.sop-stepped-document-context *,.sop-wb.sop-stepped-document-context.sop-stepped-document-context *::before,.sop-wb.sop-stepped-document-context.sop-stepped-document-context *::after{box-sizing:border-box}
@@ -61,3 +61,20 @@
 
 .sop-wb.sop-stepped-document-context.sop-stepped-document-context .wb-context-items button:focus,.sop-wb.sop-stepped-document-context.sop-stepped-document-context .wb-context-items button:hover{border-inline-start:0;padding-inline-start:0;box-shadow:inset 6px 0 #9ab183}
 .sop-wb.sop-stepped-document-context.sop-stepped-document-context:dir(rtl) .wb-context-items button:focus,.sop-wb.sop-stepped-document-context.sop-stepped-document-context:dir(rtl) .wb-context-items button:hover{box-shadow:inset -6px 0 #9ab183}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-stepped-document-context.sop-stepped-document-context .wb-context-target{position:relative;isolation:isolate;padding:24px 20px 32px;background:#f3f5eb;border:1px solid #b4c0aa;border-radius:0;box-shadow:none}
+.sop-wb.sop-stepped-document-context.sop-stepped-document-context .wb-context-target::before{content:'';position:absolute;inset:8px 8px -6px;background:#d5dfca;border:1px solid #afbea4;z-index:-2;pointer-events:none}
+.sop-wb.sop-stepped-document-context.sop-stepped-document-context .wb-context-target::after{content:'';position:absolute;inset:0 0 3px;background:#f3f5eb;border-bottom:3px solid #c2cdb5;z-index:-1;pointer-events:none}
+.sop-wb.sop-stepped-document-context.sop-stepped-document-context .wb-context-object{background:#e0e8d5;border:1px solid #b8c8a9;border-radius:0;box-shadow:3px 3px #bdcda9;width:42px;height:56px}
+.sop-wb.sop-stepped-document-context.sop-stepped-document-context .wb-context-open{border:1px solid #b4c49f;border-radius:0;background:#e3ebd7}
+.sop-wb.sop-stepped-document-context.sop-stepped-document-context .wb-context-panel{border-radius:0;border:1px solid #b6c3a8;border-bottom:5px solid #acbd99;background:#f8faef;padding:14px}
+.sop-wb.sop-stepped-document-context.sop-stepped-document-context .wb-menu-group{border-top:2px solid #bfcdaf;background:#e8efdc;padding:8px;margin:12px 0 4px}
+
+}
+
+/* B020 independent review follow-up */
+@media(forced-colors:none){
+.sop-wb.sop-stepped-document-context.sop-stepped-document-context{--muted:#605245}.sop-wb.sop-stepped-document-context.sop-stepped-document-context .wb-context-heading>small{color:var(--muted)}
+}

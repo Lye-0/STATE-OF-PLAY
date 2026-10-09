@@ -1,5 +1,5 @@
 @import "../../../shared/workbench/base.css";
-/* 実グループの名前を候補の左の読む起点へ戻し、右寄せ見出しから視線を往復する構成を整える。候補は2pxの説明罫、実名称20px・説明14pxで揃え、各行の長いショートカットにも読む行を確保する。選択時は候補の面だけ強くし、分類名と競う札を加えない。 */
+/* 大きな見出しから余白の注記へ読むコマンドパレット。グループを一本の注釈罫に沿わせ、操作名と補足を異なる活字の階層で組む。 */
 
 .sop-wb.sop-caption-command.sop-caption-command{--paper:#f6eee2;--ink:#493d32;--muted:#746251;--accent:#926c42;--edge:#bea482;--wb-bg:var(--paper);--wb-surface:var(--paper);--wb-ink:var(--ink);--wb-muted:var(--muted);--wb-accent:var(--accent);--wb-line:var(--edge);--wb-radius:0;container-type:inline-size;color:var(--ink);color-scheme:light;max-width:min(100%,480px);min-width:0;overflow-wrap:anywhere}
 .sop-wb.sop-caption-command.sop-caption-command,.sop-wb.sop-caption-command.sop-caption-command *,.sop-wb.sop-caption-command.sop-caption-command *::before,.sop-wb.sop-caption-command.sop-caption-command *::after{box-sizing:border-box}
@@ -68,3 +68,51 @@
 .sop-wb.sop-caption-command.sop-caption-command .wb-command-launcher::before,.sop-wb.sop-caption-command.sop-caption-command .wb-command-launcher::after,.sop-wb.sop-caption-command.sop-caption-command .wb-command-frame::before,.sop-wb.sop-caption-command.sop-caption-command .wb-command-frame::after,.sop-wb.sop-caption-command.sop-caption-command .wb-command-top::before,.sop-wb.sop-caption-command.sop-caption-command .wb-command-top::after,.sop-wb.sop-caption-command.sop-caption-command .wb-command-entry::before,.sop-wb.sop-caption-command.sop-caption-command .wb-command-entry::after,.sop-wb.sop-caption-command.sop-caption-command .wb-command-list::before,.sop-wb.sop-caption-command.sop-caption-command .wb-command-list::after,.sop-wb.sop-caption-command.sop-caption-command .wb-command-option::before,.sop-wb.sop-caption-command.sop-caption-command .wb-command-option::after,.sop-wb.sop-caption-command.sop-caption-command .wb-command-symbol::before,.sop-wb.sop-caption-command.sop-caption-command .wb-command-symbol::after{display:none!important}
 .sop-wb.sop-caption-command.sop-caption-command .wb-command-symbol,.sop-wb.sop-caption-command.sop-caption-command .wb-command-icon,.sop-wb.sop-caption-command.sop-caption-command .wb-command-launch svg,.sop-wb.sop-caption-command.sop-caption-command .wb-command-entry svg,.sop-wb.sop-caption-command.sop-caption-command .wb-command-close{background:Canvas!important;color:CanvasText!important;border-color:ButtonText!important}
 .sop-wb.sop-caption-command.sop-caption-command .wb-command-option[aria-selected=true]{outline:2px solid Highlight!important;outline-offset:-2px}.sop-wb.sop-caption-command.sop-caption-command :is(button,a,[tabindex]):focus-visible,.sop-wb.sop-caption-command.sop-caption-command .wb-command-entry:focus-within{outline-color:Highlight!important}}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-launcher{position:relative;padding:28px 22px;background:#f6f3eb;border:0;border-inline-start:1px solid #bdad8d}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-symbol{position:relative;width:44px;height:44px;border:0;border-top:2px solid #9e8762;border-radius:0;margin-bottom:22px}
+.sop-wb.sop-caption-command.sop-caption-command .wb-launch-copy strong{font:600 31px/1.3 Georgia,'Yu Mincho',serif}
+.sop-wb.sop-caption-command.sop-caption-command .wb-launch-copy p{margin-inline-start:22px;border-inline-start:1px solid #b6a481;padding-inline-start:14px;font:14px/1.7 Georgia,'Yu Mincho',serif}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-launch{margin-top:24px;padding:14px 0;border:0;border-block:3px double #bbab8b;background:none;border-radius:0}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-dialog{border:0;border-top:3px double #b5a17c;background:#f8f4e9}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-top{border:0;margin:12px 20px 0;padding:12px 0}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-top .wb-eyebrow{font:600 30px/1.35 Georgia,'Yu Mincho',serif}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-entry{margin:0 20px;padding:8px 0;border:0;border-block:1px solid #c0b090;background:none}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-list{padding:20px}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-batch{border-inline-start:1px solid #bdaa86;padding-inline-start:16px;margin-bottom:18px}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-group{font:italic 16px/1.5 Georgia,serif;padding:0 0 12px}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-option{grid-template-columns:22px minmax(0,1fr) auto;padding:16px 0;gap:10px;border:0;border-top:1px solid #d5c9b1;background:none}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-icon{width:22px;height:22px}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-copy strong{font:600 21px/1.45 Georgia,'Yu Mincho',serif}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-copy small{font:13px/1.8 Georgia,'Yu Mincho',serif}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-option[aria-selected=true]{background:#eae3d4}
+
+}
+
+@media(forced-colors:none){.sop-wb.sop-caption-command.sop-caption-command{--muted:#61594f;}}
+
+/* B020 independent review follow-up */
+@media(forced-colors:none){
+.sop-wb.sop-caption-command.sop-caption-command{--muted:#61594f}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-dialog{width:min(720px,calc(100vw - 28px));border:0;background:#f7f4ed}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-frame{background:#f7f4ed}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-list{padding:24px;max-height:min(56dvh,480px)}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-batch{border:0;padding:0;margin:0 0 30px;counter-reset:caption}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-group{display:table;width:auto;max-width:100%;font:italic 17px/1.5 Georgia,serif;padding:0 0 12px;margin:0 0 10px;border:0;border-bottom:3px double #aa9b82;overflow-wrap:anywhere}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-option,.sop-wb.sop-caption-command.sop-caption-command .wb-command-option[aria-selected=true]{counter-increment:caption;display:grid;grid-template-columns:28px minmax(0,1.1fr) minmax(0,.9fr);grid-template-rows:auto auto;column-gap:18px;row-gap:12px;padding:22px 8px;margin:0;min-height:130px;border:0;border-top:1px solid #c7bda9;background:transparent;align-items:start;position:relative}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-option[aria-selected=true]{background:#eae3d4}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-option::before{content:counter(caption,decimal-leading-zero);display:block;position:static;grid-column:1;grid-row:1;font:italic 14px/1.5 Georgia,serif;background:none;color:#61594f;width:auto;height:auto}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-copy{display:contents}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-copy strong{grid-column:2;grid-row:1/3;align-self:start;min-width:0;font:600 25px/1.4 Georgia,'Yu Mincho',serif;overflow-wrap:anywhere}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-copy small{grid-column:3;grid-row:1;min-width:0;margin:0;padding:8px 0 0;border:0;border-top:2px solid #a99573;font:13px/1.8 Georgia,'Yu Mincho',serif;color:#61594f;overflow-wrap:anywhere}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-icon{grid-column:1;grid-row:2;width:20px;height:20px;align-self:start}
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-option>kbd,.sop-wb.sop-caption-command.sop-caption-command .wb-command-next{grid-column:3;grid-row:2;justify-self:start;align-self:end;max-width:100%;font-size:12px;color:#61594f}
+@media(max-width:520px){.sop-wb.sop-caption-command.sop-caption-command .wb-command-list{padding:18px 16px}.sop-wb.sop-caption-command.sop-caption-command .wb-command-option,.sop-wb.sop-caption-command.sop-caption-command .wb-command-option[aria-selected=true]{grid-template-columns:24px minmax(0,1fr);gap:12px 16px;padding:20px 4px}.sop-wb.sop-caption-command.sop-caption-command .wb-command-copy strong{grid-column:2;grid-row:1;font-size:24px}.sop-wb.sop-caption-command.sop-caption-command .wb-command-copy small{grid-column:2;grid-row:2}.sop-wb.sop-caption-command.sop-caption-command .wb-command-icon{grid-column:1;grid-row:2}.sop-wb.sop-caption-command.sop-caption-command .wb-command-option>kbd,.sop-wb.sop-caption-command.sop-caption-command .wb-command-next{grid-column:2;grid-row:3}}
+}
+
+/* B020 independent review follow-up */
+.sop-wb.sop-caption-command.sop-caption-command .wb-command-option,.sop-wb.sop-caption-command.sop-caption-command .wb-command-option[aria-selected=true]{border-inline-start-width:0}
+
+@media(forced-colors:none){.sop-wb.sop-caption-command.sop-caption-command .wb-command-option::before{opacity:1;transform:none;transition:none;z-index:0}}

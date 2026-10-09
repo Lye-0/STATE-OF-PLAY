@@ -1,5 +1,5 @@
 @import "../../../shared/workbench/base.css";
-/* 左の帳簿線を一つの読み始めとして保持し、各分類の追加線を撤去する。分類は余白、実選択は一段だけ強い紙色と下罫で分ける。薄い通常罫と17pxの名称・14pxの説明で、元の整った帳簿を磨く。 */
+/* 綴じた台帳と連番付き操作行を持つメニュー。書類の罫、分類見出し、実操作の番号を同じ記録欄として組む。 */
 
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context{--paper:#fff6e9;--ink:#563f30;--muted:#785f4a;--accent:#a2754b;--edge:#cab394;--wb-bg:var(--paper);--wb-surface:var(--paper);--wb-ink:var(--ink);--wb-muted:var(--muted);--wb-accent:var(--accent);--wb-line:var(--edge);--wb-radius:0;container-type:inline-size;color:var(--ink);color-scheme:light;max-width:min(100%,480px);min-width:0;overflow-wrap:anywhere}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context *,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context *::before,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context *::after{box-sizing:border-box}
@@ -58,3 +58,47 @@
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-target,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-object,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-open,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-panel,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-heading,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-heading span,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items button,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-copy strong,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-copy small,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-glyph,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-group,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context kbd,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-status,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-result,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-target-copy,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-target-copy strong,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-target-copy small,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-eyebrow{background:Canvas!important;color:CanvasText!important;border-color:ButtonText!important;box-shadow:none!important;mask:none!important;clip-path:none!important}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-target::before,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-target::after,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-panel::before,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-panel::after,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-heading::before,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-heading::after,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items::before,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items::after,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items button::before,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items button::after,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-target-copy::before,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-target-copy::after{display:none!important}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-glyph svg,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-heading svg{color:CanvasText!important}.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context [aria-checked=true]{outline:2px solid Highlight!important;outline-offset:-3px}.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items button:focus-visible,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context :is(button,[tabindex]):focus-visible{outline-color:Highlight!important}}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-target{padding:24px 18px;border:0;border-inline-start:4px solid #b9a174;border-radius:0;background:#fbf4e4;box-shadow:inset 10px 0 #e7d8b8}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-object{width:42px;height:56px;border:1px solid #bda67a;border-radius:0;background:repeating-linear-gradient(0deg,#f7edda 0 10px,#cdbb95 10px 11px);box-shadow:none}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-object svg{background:#f7edda}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-open{background:none;border:0;border-block:3px double #b59b6c;border-radius:0}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-panel{border:0;border-inline-start:5px solid #b49a68;border-radius:0;background:#fcf6e9;padding:16px}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-subject{font:600 18px/1.5 Georgia,'Yu Mincho',serif;border-bottom:3px double #c5b089;padding-bottom:12px}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items{counter-reset:entry}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items [data-menu-action]{counter-increment:entry;position:relative;padding-inline-start:28px;border:0;border-bottom:1px solid #d4c4a3;background:none}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items [data-menu-action]::before{content:counter(entry,decimal-leading-zero);display:block;position:absolute;left:0;top:22px;width:auto;height:auto;background:none;color:#796343;font:11px/1.5 Consolas,monospace}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context:dir(rtl) .wb-context-items [data-menu-action]::before{left:auto;right:0}
+
+}
+
+/* B020 independent review follow-up */
+@media(forced-colors:none){
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context{--muted:#60513b}.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-heading>small{color:var(--muted)}
+}
+
+/* B020 independent review follow-up */
+@media(forced-colors:none){
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-panel{padding:0 14px 16px 28px;padding-inline:28px 14px;border:0;border-inline-start:14px solid #97764d;background:#fbf5e8;box-shadow:inset 5px 0 #dbc5a0,0 18px 45px #21180c3b}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-subject{margin:0;padding:20px 8px 16px;background:none;border:0;border-bottom:3px double #b69d74;overflow-wrap:anywhere}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-heading{padding:16px 8px;border:0;background:#eee0c5;min-height:0}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items{padding:12px 0 0;counter-reset:entry;background:linear-gradient(90deg,transparent 26px,#c1a67c 26px 27px,transparent 27px)}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-group{margin:18px 0 0;padding:8px 12px 8px 36px;padding-inline:36px 12px;background:#e5d2af;border:0;border-block:1px solid #b69d74;color:#60513b;font:600 12px/1.6 Arial,sans-serif}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items [data-menu-action],.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items [data-menu-action]:is(:hover,:focus){display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px 12px;padding:18px 6px 18px 36px;padding-inline:36px 6px;position:relative;border:0;border-bottom:1px solid #cbbb9b;min-height:104px;background:none;align-items:start}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items [data-menu-action]:is(:hover,:focus){background:#efdfc3}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items [data-menu-action]::before{display:block;top:20px;inset-inline-start:2px;width:20px;text-align:center;color:#60513b;content:counter(entry,decimal-leading-zero);font:12px/1.6 Consolas,monospace}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-glyph{grid-column:1;grid-row:1;width:22px;height:24px;align-self:start}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-copy{display:contents}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-copy strong{grid-column:2;grid-row:1;min-width:0;font:600 18px/1.5 Georgia,'Yu Mincho',serif}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-copy small{grid-column:2;grid-row:2;min-width:0;margin:0;padding:10px 0 0;border-top:1px dotted #b69d74;color:#60513b;font:13px/1.8 Arial,'Yu Gothic',sans-serif}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items kbd,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-chevron{grid-column:2;grid-row:3;align-self:start;justify-self:start;max-width:100%;color:#60513b}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-target{border:0;border-inline-start:14px solid #97764d;padding:26px 18px 26px 28px;padding-inline:28px 18px;background:#fbf5e8;box-shadow:inset 5px 0 #dbc5a0}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-object{border:0;border-inline-start:4px solid #9c7a4d;background:#f4e7cd;box-shadow:3px 3px 0 #d8c49f;transform:none}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-target-copy{padding-inline-start:12px;border-inline-start:1px solid #c1a67c}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context:dir(rtl) .wb-context-panel,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context:dir(rtl) .wb-context-target{box-shadow:inset -5px 0 #dbc5a0}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context:dir(rtl) .wb-context-items{background:linear-gradient(270deg,transparent 26px,#c1a67c 26px 27px,transparent 27px)}
+}
+
+@media(forced-colors:none){.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items [data-menu-action]::before{opacity:1;transform:none;transition:none;z-index:0}}

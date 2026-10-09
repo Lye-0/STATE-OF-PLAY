@@ -1,8 +1,29 @@
 @import "../../../shared/workbench/base.css";
-/* Soft Action Command — 柔らかな面で操作を選ぶ。 */
+/* Soft Action Command — 用途のまとまりをカードで選ぶコマンドパレット。小さな起動アイコン、広い検索行、短い説明付き操作カードで構成する。 */
 .sop-wb.sop-soft-action-command {--wb-bg:#f6edf4;--wb-surface:#e9dfe5;--wb-ink:#493747;--wb-muted:#5a4355;--wb-accent:#70475f;--wb-line:#beabba;--wb-radius:6px;color-scheme:light}.sop-wb.sop-soft-action-command .wb-art{pointer-events:none}.sop-wb.sop-soft-action-command :is(.wb-search-results,.wb-command-dialog,.wb-context-panel,.wb-nav-flyout,.wb-nav-dialog){color:var(--wb-ink);background:var(--wb-bg)}.sop-wb.sop-soft-action-command .wb-command-launcher{border-radius:15px}.sop-wb.sop-soft-action-command .wb-command-frame{border-radius:14px}.sop-wb.sop-soft-action-command .wb-command-option{border-radius:8px}
 .sop-wb.sop-soft-action-command{max-width:100%}.sop-wb.sop-soft-action-command,.sop-wb.sop-soft-action-command *{box-sizing:border-box}.sop-wb.sop-soft-action-command :is(button,input,textarea,a){min-width:0}
 .sop-wb.sop-soft-action-command .wb-search-field,.sop-wb.sop-soft-action-command .wb-command-entry{background:var(--wb-surface);color:var(--wb-ink)}.sop-wb.sop-soft-action-command:focus-visible,.sop-wb.sop-soft-action-command :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-wb.sop-soft-action-command,.sop-wb.sop-soft-action-command *,.sop-wb.sop-soft-action-command::before,.sop-wb.sop-soft-action-command::after,.sop-wb.sop-soft-action-command *::before,.sop-wb.sop-soft-action-command *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-wb.sop-soft-action-command[data-sop-paused] *,.sop-wb.sop-soft-action-command[data-paused=true] *,.sop-wb.sop-soft-action-command[data-motion-running=false] *,.sop-wb.sop-soft-action-command[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-wb.sop-soft-action-command{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-soft-action-command :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-soft-action-command.sop-soft-action-command .wb-command-launcher{display:grid;grid-template-columns:40px minmax(0,1fr);gap:14px;padding:22px 18px;border:1px solid #d6c2d0;border-radius:12px;background:#fcf5fa}
+.sop-wb.sop-soft-action-command.sop-soft-action-command .wb-command-symbol{width:40px;height:40px;border-radius:9px;margin:0;background:#e9d8e4}
+.sop-wb.sop-soft-action-command.sop-soft-action-command .wb-launch-copy{min-width:0}
+.sop-wb.sop-soft-action-command.sop-soft-action-command .wb-launch-copy strong{font:600 19px/1.5 Arial,'Yu Gothic',sans-serif}
+.sop-wb.sop-soft-action-command.sop-soft-action-command .wb-command-launch{grid-column:1/-1;margin-top:10px;min-height:48px;border:1px solid #cbb1c2;background:#fffafd;border-radius:8px}
+.sop-wb.sop-soft-action-command.sop-soft-action-command .wb-command-dialog{border-radius:12px;border:1px solid #cbb1c2;background:#fcf5fa}
+.sop-wb.sop-soft-action-command.sop-soft-action-command .wb-command-entry{background:#fff;border:1px solid #ccb5c6;border-radius:8px;margin:0 16px;padding:10px}
+.sop-wb.sop-soft-action-command.sop-soft-action-command .wb-command-option{padding:12px;border:1px solid #dfccd8;border-radius:8px;background:#fffafd;margin-bottom:8px;min-height:70px}
+.sop-wb.sop-soft-action-command.sop-soft-action-command .wb-command-option[aria-selected=true]{background:#efdfeb;border-color:#bc9ab0}
+.sop-wb.sop-soft-action-command.sop-soft-action-command .wb-command-copy strong{font:600 15px/1.6 Arial,'Yu Gothic',sans-serif}
+.sop-wb.sop-soft-action-command.sop-soft-action-command .wb-command-copy small{font:12px/1.7 Arial,'Yu Gothic',sans-serif}
+
+}
+
+.sop-wb.sop-soft-action-command.sop-soft-action-command .wb-command-top .wb-eyebrow{font:600 14px/1.6 Arial,"Yu Gothic",sans-serif;letter-spacing:0}
+.sop-wb.sop-soft-action-command.sop-soft-action-command .wb-command-foot{font-size:11px}
+
+.sop-wb.sop-soft-action-command.sop-soft-action-command .wb-command-top .wb-eyebrow{min-width:0;flex:1;white-space:normal;overflow-wrap:anywhere}

@@ -79,3 +79,15 @@ B018r8全10pass→e5afd2a095f1bd4ad62aec02f8209c2233d11117でpush/record済み18
 B019r5は全10差戻し。revise-b019-review.py実行済み（再実行禁止）→r6freeze。A検索3/command3構造再設計、599/601/615選択文字、615hover16pxずれ、B3長エラー/610見出しを修正。main28条件hover相対座標/幅/RTL成功(probe-b019-6b.log)、Workbench40成功。r6撮影後、radar計数盤align-self:start、caption入力二重focus除去、drawer footer文字#32291dをさらに追記。次freeze未実行、B019現在r6 hashとは3CSSが違う。B020独立検査で共有contextのpreventScroll焦点隠れが全40条件確定。tests/workbench.browser.tsへ全context×左右×forcedの回帰を追加、修正前hinge-context item11 bottom730.94 >689で失敗(context-focus-before.log)。shared作者releaseを待ち、修正後B019〜B022の配布snapshot依存を更新する予定。
 
 共有context焦点をpanel内だけ露出する処理へ修正。全50skin×RTL/forced 1000 destination assertions、Workbench41群（offline）とtypecheck成功。独立context-focus-reviewはnative80条件800確認、React20条件120確認、scale.75/短viewport/外側scroll保持までpass。共有単独maintenanceをpush後、B019r7/B020r6/B021r5/B022r5へ依存snapshot更新。B020 r5は2pass8差戻し、revise-b020-review.py実行済み（再実行禁止）。作者100hash固定reviewは次r6で行う。
+
+B020r6主担当80条件でB628/629/630の長いdialog見出し横溢れを追加発見。flex:1/min-width:0/wrapを指定→r7（current hash一致確認）。probe-b020-followup.mjsの一時診断版はassertを復元しr7を再実行中、r6bのPASS表記はoverflow診断が残るので最終合格証拠ではない。B021はstrengthen-navigation-pages.py実行済み（再実行禁止）。656現在地余白欄/本文、659独立支持面、660見開き表紙/本文へ構造化し3件画像更新。660題字の単語折返しを避けfont24に調整、次freeze6。
+
+共有fix25e9b806 push成功。B020r7 main80条件全pass（probe-b020-7.log）、新A5画像確認。B0213A主担当改善＋B668のdock長文/全Bのmobile長brand対応→latest r7。B0223A表主担当強化（strengthen-table-materials.py実行済み再実行禁止）、folded scroll幅補正/リボン通し口余白、B669/670mobile長文対応→latest r8。probe-late-layouts.mjsでB021r7/B022r8実行中。Workbench41実Vite回帰workbench-late-6.log進行中。B019r7独立レビューは連番未選択opacityが早期指摘、作者は固定継続し最終release後修正。
+
+後続主担当検査完了：B021r8 192条件・B022r9 120条件pass（long brand/desc/group、4layout、RTL/forced、320/1100、table選択/解除/scroll枠）。実Vite Workbench41群成功。B020r7は80条件pass。全作者とshared固定、次はB019r7最終講評→B020r7独立検査、その間B019修正。B0218/B0229/B0233へ順次独立検査。
+
+B019r7は8pass2差戻し。R592 async再試行52×93.39px/縦3行→grid全幅/justify-start、R615未選択連番opacity0→1固定・分類札3.356:1→#60513bへ修正。release後適用しr8freeze、再撮影/主担当確認後Astraへ。B020r7は独立レビュー進行中。
+
+B019r8主担当4条件はpass。error画面の旧件数盤が残る意味の曖昧さを解消するため、再試行表示時のみ計数盤を隠すauthor規則を追加→r9を最新候補へ。AstraへB020r7の後B019r9を依頼済み。型チェック全3系統成功(typecheck-late-review.log)。
+
+B020r7全10独立pass。native350/React140、context焦点40/対象長文40/command低height40、作者100+shared1 hash一致。10件合格時pushルールに従いB019より先にB020をcommit/pushし、AstraはB019r9の最終再検査へ。
