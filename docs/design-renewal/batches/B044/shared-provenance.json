@@ -1,0 +1,20 @@
+{
+  "before": {
+    "src/shared/workbench/command.ts": "187f603d703efc79c5368c22b96216a26bca25f5ced8b330ff20bcf29336d32c",
+    "tests/workbench.browser.ts": "46e9eae7aad62ddfee02379f5fdf9434f1e38ce7ac98c45aea0cff2f09056ecc",
+    "tests/expansion-50.native.ts": "fc034cb00fe8f6ce1b27e191b26df745e0935c9b0bfaf539a35a36f542e0980d",
+    "tests/expansion-50.react.ts": "5d28304a2120b4dfc8d7cb1d76bc038aad364bbe88e67d4a78bbfa3606237b8b"
+  },
+  "reproduction": "Frozen original round0 four parts: ArrowDown enters disabled off, semantic selection b switches to a after reorder, updated label remains old, destroyed reset clears native query. Parent drill path is lost on compatible schema update.",
+  "baseline": "captures/commands-self-0/checks.json",
+  "hierarchyAndGrouping": "Command list renders real contiguous groups as named option groups. Real ancestor labels are native buttons returning to that ancestor level; no fake path faces at depth0. Verify with permanent native group/ancestor regression and actual four React formats.",
+  "after": {
+    "src/shared/workbench/command.ts": "fbcadc19b9913eadedad1e19b9bf4755f6fca2767cd68f3b203d36e8320f8bb1",
+    "tests/workbench.browser.ts": "d29a45770ceb136d5bc596d311c928464ce1b59fff83d944e11497d9f97fb460",
+    "tests/expansion-50.native.ts": "a54b6a4186bc873132b8b7de7e5de29571fdc9e21315d68a08114d4b48fa02eb",
+    "tests/expansion-50.react.ts": "5edaf9470d19d65612c4b7d893886fb00276e887d41e76660362591dcda158b2"
+  },
+  "fix": "Skip disabled options in keyboard/hover/Home/End and retain active item identity; render updated native labels; retain compatible ancestor path; make destroyed API calls inert. Real named option groups and real native ancestor buttons return to semantic parent levels.",
+  "permanentRegression": "Workbench HTTP schema/native undo/dynamic path/disabled/dead/group-label/ancestor-focus tests. All20 actual native2layouts and React4formats now operate disabled-skip, semantic reorder, native undo and ancestor jump via real exports.",
+  "probeCorrection": "Early source round2 loop lost its increment in a one-use writer; corrected before accepted runtime round3. Early numeric attribute selectors in new hierarchy checks lacked CSS quotes; corrected selectors use actual native parent buttons without weakening assertions. Final checks operate unchanged semantic expectations."
+}

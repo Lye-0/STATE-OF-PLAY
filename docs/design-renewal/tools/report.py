@@ -119,6 +119,17 @@ for row,part,review in approved:
   actual=next((p for p in reversed(native) if all((p/f"{row['id']}-{name}.png").exists() for name in ['initial','loaded','waiting-ltr-320','loaded-ltr-320','loaded-rtl-320','forced-waiting','forced-loaded'])),None)
   assert actual is not None,f"Missing actual loading/content/RTL/forced skeleton: {row['id']}"
   images+=figure(beforeSkeleton,'修正前・配布版の読み込み')+figure(beforeLoaded,'修正前・配布版の実内容')+figure(actual/f"{row['id']}-initial.png",'修正後・配布版の読み込み')+figure(actual/f"{row['id']}-loaded.png",'修正後・同じ組版の実内容')+figure(actual/f"{row['id']}-waiting-ltr-320.png",'修正後・320pxで読み込み')+figure(actual/f"{row['id']}-loaded-ltr-320.png",'修正後・320pxで長い実内容')+figure(actual/f"{row['id']}-loaded-rtl-320.png",'修正後・右から左への実内容')+figure(actual/f"{row['id']}-forced-waiting.png",'修正後・強制配色で読み込み')+figure(actual/f"{row['id']}-forced-loaded.png",'修正後・強制配色の実内容')
+ if row['category']=='commands':
+  beforeCommand=w/'evidence/baseline'/f"{row['id']}-command.png"
+  beforeOpen=w/'evidence/baseline'/f"{row['id']}-open.png"
+  assert beforeCommand.exists() and beforeOpen.exists(),f"Missing original real launcher/dialog: {row['id']}"
+  native=sorted((d/'captures').glob('commands-self-*'),key=lambda p:int(p.name.split('-')[-1]))
+  actual=next((p for p in reversed(native) if all((p/f"{row['id']}-{name}.png").exists() for name in ['initial','open','error','empty','narrow-320','long-rtl-320','forced-dark'])),None)
+  assert actual is not None,f"Missing native command controls/async/error/empty/long/RTL/forced evidence: {row['id']}"
+  images+=figure(beforeCommand,'修正前・配布版の起動面')+figure(beforeOpen,'修正前・実際に開いた配布版のパレット')+figure(actual/f"{row['id']}-initial.png",'修正後・配布版の起動面')+figure(actual/f"{row['id']}-open.png",'修正後・実際に開いたコマンド')+figure(actual/f"{row['id']}-error.png",'修正後・実行失敗の通知')+figure(actual/f"{row['id']}-empty.png",'修正後・候補が空の状態')+figure(actual/f"{row['id']}-narrow-320.png",'修正後・320pxの長い実コマンド')+figure(actual/f"{row['id']}-long-rtl-320.png",'修正後・右から左への実コマンド')+figure(actual/f"{row['id']}-forced-dark.png",'修正後・暗い強制配色')
+  for name,label in [('path-1','修正後・実祖先が一階層ある状態'),('path-2','修正後・実祖先が二階層ある状態')]:
+   assert (actual/f"{row['id']}-{name}.png").exists(),f"Missing actual ancestor face: {row['id']}"
+   images+=figure(actual/f"{row['id']}-{name}.png",label)
  if row['category']=='searchbars':
   beforeSearch=w/'evidence/baseline'/f"{row['id']}-search.png"
   assert beforeSearch.exists(),f"Missing original actual search: {row['id']}"

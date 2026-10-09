@@ -1,0 +1,78 @@
+# B044 round 6 独立レビュー
+
+**pass — 全10件合格。** R600接点と4件の主構造指摘を解消。既合格5件は50正本ファイル不変とnative回帰を照合して継承。
+
+## R600 folio-tab-search — pass
+
+通常足は紙基準−28px/幅40pxで背と紙に各12px、狭幅は−20px/幅28pxで各8px接続する。背の白い短線だった前版の不整合を解消。実索引と一枚の読む紙の構図を保持した。
+
+近似比較: R600 original, R163, R431。
+
+## R601 caption-line-search — pass
+
+Tの細い通し軸を保ち、実検索名・候補名・補足の階層と右側フィルターを整理した。元の精度改善として合格。 round3から正本10ファイル不変を照合し、通常造形判定を継承。固定6のnative操作・forced/reducedも再確認した。
+
+近似比較: R601 original, R596, R599。
+
+## R602 console-query-search — pass
+
+実検索・フィルター面が片側の曲がった支持脚へ連続し、空隙を渡る腕が一枚の明るい読む面を保持する。曲がる下端と実操作面の配置が全体を決める。 round3から正本10ファイル不変を照合し、通常造形判定を継承。固定6のnative操作・forced/reducedも再確認した。
+
+近似比較: R602 original, R597, R297, R537。
+
+## R603 ribbon-index-search — pass
+
+実見出しを読む広い布面と割尾、検索紙の後ろへ戻る折面、下の候補紙へ続く帯が一続きに読める。長文RTLでも接続と本文を分離できている。 round3から正本10ファイル不変を照合し、通常造形判定を継承。固定6のnative操作・forced/reducedも再確認した。
+
+近似比較: R603 original, R283, R583, R593。
+
+## R604 ceramic-query-search — pass
+
+全周の器枠を廃止し、実検索とフィルターの高い口、44pxの開口、片側の72px曲面、左40pxずれた浅い候補皿へ再構成された。曲面が口と皿に重なり、本文は皿の平面へ固定される。R602の別脚と保持腕に対し、一体の陶の曲がりで接続する主形として区別できる。
+
+近似比較: R604 original, R215, R504 before redesign, R494 before redesign。
+
+## R605 receipt-query-search — pass
+
+全幅の実検索装置と暗い排出口から、一枚の候補紙が重なって出る。左右の紙余白と鋸歯の自由端が通常のフィルターカードから主形を変えている。 round3から正本10ファイル不変を照合し、通常造形判定を継承。固定6のnative操作・forced/reducedも再確認した。
+
+近似比較: R605 original, R295, R435, R252。
+
+## R611 dispatch-command — pass
+
+柱と腕を廃止し、実group見出しを仕分け口、実候補群をそこに8px入る一枚の処理票へした。実分類が面の個数を決め、分類なしでは架空の口を作らない。上の検索差込面と複数の処理票の構図は、R605の単一出力装置やR597の支持軸と異なる。
+
+近似比較: R611 original, R602, R597, R302, R282。
+
+## R612 optical-command — pass
+
+Tの丸い起動アイコンとコマンドアイコンのまとまりを保持し、タイトル・説明・ショートカットを安定した実一覧へ整えた。狭幅でも本文と操作を優先できている。 round3から正本10ファイル不変を照合し、通常造形判定を継承。固定6のnative操作・forced/reducedも再確認した。
+
+近似比較: R612 original, R508, R510。
+
+## R613 folded-command — pass
+
+三辺の太い枠を廃止。階層0は一枚の読む前紙と64pxの大きい自由返端、実階層ありでは実祖先操作を64pxの返し面へ配置する。実親jumpが成立し、架空の階層は増やさない。折面の数が実履歴に結び付き、R403の固定Z面やR573の現在章接続と区別できる。
+
+近似比較: R613 original, R403, R573, R553。
+
+## R614 stone-console-command — pass
+
+厚い丸枠を廃止し、実検索梁、44pxの空隙、右の一体の岩の首、左32pxずれた切断床へ分かれた。梁と床を支える首の斜め断面、床の22px下小口が連続する。R604の滑らかな器の曲がりに対し、角のある梁と切断床の積層として読み分けられる。
+
+近似比較: R614 original, R564, R594, R504 before redesign。
+
+## 実施した検査
+
+- 固定review-input-6の正本100 SHA256一致、配布CSS10一致。round3から25ファイル変更、合格済みR601/602/603/605/612の50正本ファイル完全不変。captures/reviewer-hashes-6.json。
+- 固定portable native Search6件を独立再実行：filter/keys/ARIA/実form/reset/IME/disabled/readOnly/async/empty/error/長文320/390/768 LTR/RTL/forced dark/reduced/cleanup成功。captures/reviewer-search-6/checks.json。
+- 固定portable native Command4件を独立再実行：disabled skip、semantic id保持、label/trigger更新、native DOM/caret/Undo/focus、Enter実行、階層/path更新/Backspace、Escape focus復帰、controlled、async二重抑止/error、IME、empty、長文320/390/768 LTR/RTL、44px hit、forced/reduced、destroy後不変が成功。captures/reviewer-commands-6/checks.json。
+- 新共有Commandを全4で追加検証：実role=groupのラベル、3段実階層、aria-current=location、上位祖先jumpとinput focus、groupなし偽分類無しを確認。depth3通常/dark・light forcedと、groupなし320/768 LTR/RTL実画像保存。captures/reviewer-extra-6/checks.json。
+- Command全4の実候補文字について通常motionでhover→leave→reenterの相対矩形/font不変を追加確認。同extra helper。
+- 10件の通常/forced実像、5変更の支持接触と展開後、元round3の指摘および近似承認構造を比較。寸法は依頼文の構想値でなく固定6実CSSと実描画を優先した。
+
+## 限界
+
+- 独立実操作は固定6のnative配布対象。React4形式・永久HTTP試験は主担当の検証範囲であり、本レビューの独立実行とは扱わない。
+- 全730件の再撮影や無制限の階層深さ検証は行っていない。保存された元監査と最寄り比較を使い、追加の祖先jumpは深さ3で検証した。
+- 共有Command変更は正本100hashの対象外。固定6の実exportで動作を検証し、元round3の5件の通常造形継承と共有機能の再確認を分けた。

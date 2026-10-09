@@ -26,11 +26,22 @@ export function createCommand(root:HTMLElement,provided:CommandOptions={}):Workb
  const dialog=host.querySelector<HTMLDialogElement>('dialog')!,input=host.querySelector<HTMLInputElement>('.wb-command-input')!,list=host.querySelector<HTMLElement>('.wb-command-list')!,trigger=host.querySelector<HTMLButtonElement>('.wb-command-launch')!;
  let composing=false;trapModal(dialog,life.signal);
  const state=():CommandState=>({open:isOpen,query,path:trail.map(x=>x.id),busy,error,lastCommand});
- function move(index:number){active=Math.max(0,Math.min(visible.length-1,index));let children=[...list.querySelectorAll<HTMLElement>('[role=option]')];children.forEach((el,i)=>el.setAttribute('aria-selected',String(i===active)));const current=children[active];if(current){input.setAttribute('aria-activedescendant',current.id);current.scrollIntoView({block:'nearest'});}else input.removeAttribute('aria-activedescendant');}
- function paint(){
-  visible=matchItems(trail.at(-1)?.children??items,query);let group='';
-  list.innerHTML=visible.map((item,i)=>{const heading=item.group&&item.group!==group?`<div class="wb-command-group" role="presentation">${h(item.group)}</div>`:'';group=item.group??'';return `${heading}<div class="wb-command-option" role="option" id="${uid}-option-${i}" data-command="${h(item.id)}" aria-selected="false" ${item.disabled?'aria-disabled="true"':''}><span class="wb-command-icon">${icon(item.icon??'file')}</span><span class="wb-command-copy"><strong>${h(item.label)}</strong>${item.description?`<small>${h(item.description)}</small>`:''}</span>${item.children?.length?`<span class="wb-command-next">${icon('chevron')}</span>`:item.shortcut?`<kbd>${h(item.shortcut)}</kbd>`:''}</div>`;}).join('');
-  const path=host.querySelector<HTMLElement>('.wb-command-path')!;path.hidden=!trail.length;path.innerHTML=trail.length?`<button type="button" data-command-back>${icon('chevron')}戻る</button><span>${h(trail.map(x=>x.label).join(' / '))}</span>`:'';
+ function move(index:number,direction=1){
+  active=-1;
+  for(let offset=0;offset<visible.length;offset++){const candidate=((index+direction*offset)%visible.length+visible.length)%visible.length;if(!visible[candidate].disabled){active=candidate;break;}}
+  const children=[...list.querySelectorAll<HTMLElement>('[role=option]')];children.forEach((el,i)=>el.setAttribute('aria-selected',String(i===active)));const current=children[active];if(current){input.setAttribute('aria-activedescendant',current.id);current.scrollIntoView({block:'nearest'});}else input.removeAttribute('aria-activedescendant');
+ }
+ function paint(resetSelection=false){
+  const previousId=resetSelection?undefined:visible[active]?.id;
+  visible=matchItems(trail.at(-1)?.children??items,query);
+  let html='',group:string|undefined,groupIndex=0;
+  visible.forEach((item,i)=>{
+   if(i===0||item.group!==group){if(i>0)html+='</div>';group=item.group;const heading=`${uid}-group-${groupIndex++}`;html+=`<div class="wb-command-batch" ${group?`role="group" aria-labelledby="${heading}"`:''}>${group?`<div class="wb-command-group" id="${heading}" role="presentation">${h(group)}</div>`:''}`;}
+   html+=`<div class="wb-command-option" role="option" id="${uid}-option-${i}" data-command="${h(item.id)}" aria-selected="false" ${item.disabled?'aria-disabled="true"':''}><span class="wb-command-icon">${icon(item.icon??'file')}</span><span class="wb-command-copy"><strong>${h(item.label)}</strong>${item.description?`<small>${h(item.description)}</small>`:''}</span>${item.children?.length?`<span class="wb-command-next">${icon('chevron')}</span>`:item.shortcut?`<kbd>${h(item.shortcut)}</kbd>`:''}</div>`;
+  });list.innerHTML=html+(visible.length?'</div>':'');
+  active=previousId===undefined?0:visible.findIndex(item=>item.id===previousId);if(active<0)active=0;
+  host.querySelector<HTMLElement>('.wb-launch-copy strong')!.textContent=options.label??'コマンドパレット';dialog.querySelector<HTMLElement>('.wb-command-top .wb-eyebrow')!.textContent=options.label??'コマンドパレット';trigger.querySelector('span')!.textContent=options.triggerLabel??'コマンドを探す';
+  const path=host.querySelector<HTMLElement>('.wb-command-path')!;path.hidden=!trail.length;path.innerHTML=trail.length?`<button type="button" data-command-back>${icon('chevron')}戻る</button>${trail.map((parent,i)=>`<button type="button" data-command-level="${i}" ${i===trail.length-1?'aria-current="location"':''}>${h(parent.label)}</button>`).join('')}`:'';
   dialog.querySelector<HTMLElement>('.wb-command-status')!.textContent=busy?'処理中…':error||(!visible.length?'一致するコマンドがありません。':'');
   dialog.querySelector('output')!.textContent=`${visible.length} COMMANDS`;
   dialog.setAttribute('aria-busy',String(busy));root.dataset.wbBusy=String(busy);trigger.disabled=!!options.disabled;
@@ -39,14 +50,15 @@ export function createCommand(root:HTMLElement,provided:CommandOptions={}):Workb
  }
  function applyOpen(next:boolean){
   if(next===isOpen)return;
-  if(next){if(options.disabled||life.dead)return;returnTo=document.activeElement instanceof HTMLElement?document.activeElement:trigger;isOpen=true;query='';active=0;trail=[];error='';paint();dialog.showModal();release=lockScroll(document);input.focus();root.dataset.wbOpen='true';life.pulse('open');}
+  if(next){if(options.disabled||life.dead)return;returnTo=document.activeElement instanceof HTMLElement?document.activeElement:trigger;isOpen=true;query='';active=0;trail=[];error='';paint(true);dialog.showModal();release=lockScroll(document);input.focus();root.dataset.wbOpen='true';life.pulse('open');}
   else{isOpen=false;token++;execution?.abort();busy=false;if(dialog.open)dialog.close();release?.();release=undefined;root.dataset.wbOpen='false';if(returnTo?.isConnected)returnTo.focus({preventScroll:true});}
   emit(root,state());
  }
- function requestOpen(next:boolean){options.onOpenChange?.(next);if(options.open===undefined)applyOpen(next);}
- function back(){if(busy||!trail.length)return;trail.pop();query='';active=0;paint();input.focus();life.pulse('back');}
+ function requestOpen(next:boolean){if(life.dead)return;options.onOpenChange?.(next);if(options.open===undefined)applyOpen(next);}
+ function navigateLevel(index:number){if(busy||index<0||index>=trail.length-1)return;trail=trail.slice(0,index+1);query='';active=0;paint(true);input.focus();life.pulse('back');}
+ function back(){if(busy||!trail.length)return;trail.pop();query='';active=0;paint(true);input.focus();life.pulse('back');}
  async function execute(index:number){const item=visible[index];if(!item||item.disabled||busy||options.disabled)return;
-  if(item.children?.length){unique(item.children);trail.push(item);query='';active=0;paint();life.pulse('drill');return;}
+  if(item.children?.length){unique(item.children);trail.push(item);query='';active=0;paint(true);life.pulse('drill');return;}
   error='';busy=true;const n=++token;execution=new AbortController();paint();
   try{const result=await options.onExecute?.(item,execution.signal);if(life.dead||n!==token)return;busy=false;lastCommand=item.id;host.querySelector<HTMLElement>('.wb-command-announcement')!.textContent=`${item.label} を選択しました。`;emit(root,{...state(),executed:item.id});if(result!==false)requestOpen(false);paint();}
   catch(e){if(life.dead||n!==token)return;busy=false;if((e as Error).name!=='AbortError')error=e instanceof Error?e.message:'コマンドの実行に失敗しました。';paint();}
@@ -54,17 +66,17 @@ export function createCommand(root:HTMLElement,provided:CommandOptions={}):Workb
  trigger.addEventListener('click',()=>requestOpen(true),{signal:life.signal});
  host.querySelector('.wb-command-close')!.addEventListener('click',()=>requestOpen(false),{signal:life.signal});
  dialog.addEventListener('cancel',e=>{e.preventDefault();e.stopPropagation();requestOpen(false);},{signal:life.signal});
- dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)requestOpen(false);}if((e.target as Element).closest('[data-command-back]'))back();const item=(e.target as Element).closest<HTMLElement>('[data-command]');if(item)void execute(visible.findIndex(x=>x.id===item.dataset.command));},{signal:life.signal});
- list.addEventListener('pointermove',e=>{const item=(e.target as Element).closest<HTMLElement>('[data-command]');if(item&&!busy)move(visible.findIndex(x=>x.id===item.dataset.command));},{signal:life.signal,passive:true});
+ dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)requestOpen(false);}if((e.target as Element).closest('[data-command-back]'))back();const level=(e.target as Element).closest<HTMLElement>('[data-command-level]');if(level)navigateLevel(Number(level.dataset.commandLevel));const item=(e.target as Element).closest<HTMLElement>('[data-command]');if(item)void execute(visible.findIndex(x=>x.id===item.dataset.command));},{signal:life.signal});
+ list.addEventListener('pointermove',e=>{const item=(e.target as Element).closest<HTMLElement>('[data-command]');if(item&&!busy&&item.getAttribute('aria-disabled')!=='true')move(visible.findIndex(x=>x.id===item.dataset.command));},{signal:life.signal,passive:true});
  input.addEventListener('compositionstart',()=>{composing=true;},{signal:life.signal});
- input.addEventListener('compositionend',()=>{composing=false;query=input.value;active=0;paint();},{signal:life.signal});
- input.addEventListener('input',()=>{if(!composing&&!busy){query=input.value;active=0;paint();}},{signal:life.signal});
- input.addEventListener('keydown',e=>{if(composing||e.isComposing)return;if(e.key==='Enter'){e.preventDefault();void execute(active);}if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();move((active+(e.key==='ArrowDown'?1:-1)+visible.length)%Math.max(1,visible.length));}if(e.key==='Home'&&e.ctrlKey){e.preventDefault();move(0);}if(e.key==='End'&&e.ctrlKey){e.preventDefault();move(visible.length-1);}if(e.key==='Backspace'&&!input.value)back();},{signal:life.signal});
+ input.addEventListener('compositionend',()=>{composing=false;query=input.value;active=0;paint(true);},{signal:life.signal});
+ input.addEventListener('input',()=>{if(!composing&&!busy){query=input.value;active=0;paint(true);}},{signal:life.signal});
+ input.addEventListener('keydown',e=>{if(composing||e.isComposing)return;if(e.key==='Enter'){e.preventDefault();void execute(active);}if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();const direction=e.key==='ArrowDown'?1:-1;move(active+direction,direction);}if(e.key==='Home'&&e.ctrlKey){e.preventDefault();move(0);}if(e.key==='End'&&e.ctrlKey){e.preventDefault();move(visible.length-1,-1);}if(e.key==='Backspace'&&!input.value)back();},{signal:life.signal});
  root.addEventListener('keydown',e=>{if(!e.defaultPrevented&&!e.isComposing&&(e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();requestOpen(!isOpen);}},{signal:life.signal});
  const shortcut={root,enabled:()=>!!options.hotkey&&!options.disabled,open:()=>requestOpen(!isOpen)};shortcuts.add(shortcut);if(!listening){document.addEventListener('keydown',globalKey);listening=true;}
  life.cleanup(()=>{applyOpen(false);execution?.abort();shortcuts.delete(shortcut);if(!shortcuts.size&&listening){document.removeEventListener('keydown',globalKey);listening=false;}});
  paint();if(options.open??options.defaultOpen)applyOpen(true);
- return {getState:state,open:()=>requestOpen(true),close:()=>requestOpen(false),reset(){query='';trail=[];active=0;error='';paint();},setPaused:life.setPaused,destroy:life.destroy,
-  update(next){if(life.dead)return;const changed=next.items!==undefined&&next.items!==options.items;options={...options,...next};if(changed){items=unique(next.items!);trail=[];active=0;}if(next.open!==undefined)applyOpen(next.open);if(options.disabled)applyOpen(false);paint();}
+ return {getState:state,open:()=>requestOpen(true),close:()=>requestOpen(false),reset(){if(life.dead)return;query='';trail=[];active=0;error='';paint(true);},setPaused:life.setPaused,destroy:life.destroy,
+  update(next){if(life.dead)return;const changed=next.items!==undefined&&next.items!==options.items;options={...options,...next};if(changed){items=unique(next.items!);let level=items;const retained:CommandItem[]=[];for(const previous of trail){const replacement=level.find(item=>item.id===previous.id&&!item.disabled&&item.children?.length);if(!replacement)break;retained.push(replacement);level=unique(replacement.children!);}trail=retained;}if(next.open!==undefined)applyOpen(next.open);if(options.disabled)applyOpen(false);paint();}
  };
 }
