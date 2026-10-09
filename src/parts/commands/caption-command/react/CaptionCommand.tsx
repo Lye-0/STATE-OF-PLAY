@@ -3,7 +3,7 @@ import React from 'react';
 import {CommandView,type CommandProps} from '../../../../shared/workbench/command-view';
 import '../styles.css';
 export type { CommandProps as CaptionCommandProps };
-/** キャプションで区切る操作一覧。検索と分類名を小見出し、実行項目を読みやすい主面にする。 */
+/** 実グループの名前を候補の左の読む起点へ戻し、右寄せ見出しから視線を往復する構成を整える。候補は2pxの説明罫、実名称20px・説明14pxで揃え、各行の長いショートカットにも読む行を確保する。選択時は候補の面だけ強くし、分類名と競う札を加えない。 */
 export default function CaptionCommand(props:CommandProps) {
  return <CommandView {...props} skin="caption-command" />;
 }
