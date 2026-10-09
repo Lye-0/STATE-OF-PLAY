@@ -1,8 +1,42 @@
 @import "../../../shared/signature/wizard.css";
-/* Soft Enrollment Wizard — 申し込みに合う柔らかな入力面。 */
+/* Soft Enrollment Wizard — 一つずつ入力して進む申し込み向けウィザード。短い工程表示、白い入力面、広い次へボタンで操作の順序を明確にする。 */
 .sop-sig.sop-soft-enrollment-wizard {--sg-bg:#f6edf4;--sg-ink:#493747;--sg-muted:#5a4355;--sg-a:#70475f;--sg-line:#beabba;--sg-soft:#e9dfe5;--sg-radius:6px;background:#f6edf4;color-scheme:light;border-radius:5px}.sop-sig.sop-soft-enrollment-wizard .sg-art{pointer-events:none}.sop-sig.sop-soft-enrollment-wizard .sg-wizard{border-radius:15px;padding:20px}.sop-sig.sop-soft-enrollment-wizard .sg-step-index{border-radius:9px}.sop-sig.sop-soft-enrollment-wizard .sg-wizard-fields input{border-radius:8px}
 .sop-sig.sop-soft-enrollment-wizard{max-width:100%}.sop-sig.sop-soft-enrollment-wizard,.sop-sig.sop-soft-enrollment-wizard *{box-sizing:border-box}.sop-sig.sop-soft-enrollment-wizard :is(button,input,textarea,a){min-width:0}
 .sop-sig.sop-soft-enrollment-wizard:focus-visible,.sop-sig.sop-soft-enrollment-wizard :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-sig.sop-soft-enrollment-wizard,.sop-sig.sop-soft-enrollment-wizard *,.sop-sig.sop-soft-enrollment-wizard::before,.sop-sig.sop-soft-enrollment-wizard::after,.sop-sig.sop-soft-enrollment-wizard *::before,.sop-sig.sop-soft-enrollment-wizard *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-sig.sop-soft-enrollment-wizard[data-sop-paused] *,.sop-sig.sop-soft-enrollment-wizard[data-paused=true] *,.sop-sig.sop-soft-enrollment-wizard[data-motion-running=false] *,.sop-sig.sop-soft-enrollment-wizard[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-sig.sop-soft-enrollment-wizard{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-soft-enrollment-wizard :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+@media(forced-colors:none){
+
+.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-wizard{padding:22px 18px;border-radius:16px;border:1px solid #d9c5d3;background:#fcf5fa}
+.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-wizard-nav{gap:10px;padding-bottom:20px;border-bottom:1px solid #dfd0db}
+.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-wizard-nav button{min-height:60px;padding:4px;gap:8px}
+.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-step-index{width:28px;height:28px;min-width:28px;border-radius:50%;border:1px solid #c2aabd;background:#f2e8ef}
+.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-step-title{font-size:12px}
+.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-wizard-panels{margin-top:18px}
+.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-wizard-panel{padding:0;min-height:180px}
+.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-wizard-panel h3{font:600 23px/1.5 Arial,'Yu Gothic',sans-serif}
+.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-wizard-fields input,.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-wizard-fields textarea{background:#fff;border:1px solid #cbb6c5;border-radius:8px;min-height:48px}
+.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-wizard-footer{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;margin-top:24px}
+.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-wizard-progress{grid-column:1/-1;grid-row:1;height:3px}
+.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-wizard-back{grid-column:1;grid-row:2}
+.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-wizard-next{grid-column:2;grid-row:2;justify-content:center;min-height:48px;border-radius:8px}
+
+}
+
+@media(forced-colors:none){.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard [data-step-state=current] .sg-step-index{background:#70475f;color:#fff;border-color:#70475f;box-shadow:none!important}.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-step-index::before,.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-step-index::after{display:none}}
+
+/* B018 independent review follow-up */
+.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-wizard-error{font-size:14px;line-height:1.65;color:#883b50;overflow-wrap:anywhere}
+.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-wizard-nav button:disabled{opacity:1}
+.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-wizard-fields label{min-width:0;max-width:100%;overflow-wrap:anywhere;white-space:normal}
+.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-wizard-fields label>span,.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-wizard-fields small{min-width:0;max-width:100%;overflow-wrap:anywhere;white-space:normal}
+@media(forced-colors:active){.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-wizard-error{color:CanvasText}}
+
+/* B018 independent review follow-up */
+.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard{container-type:inline-size;width:100%}
+.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-wizard-nav.sg-wizard-nav.sg-wizard-nav:has(li:nth-child(4)){display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-wizard-nav.sg-wizard-nav.sg-wizard-nav:has(li:nth-child(4)) button{display:flex;flex-direction:row;align-items:center;justify-content:start;text-align:start;min-height:48px;padding:8px;gap:12px}
+.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-wizard-nav.sg-wizard-nav.sg-wizard-nav:has(li:nth-child(4)) .sg-step-title{min-width:0;flex:1;text-align:start;overflow-wrap:anywhere}
+@container(max-width:320px){.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-wizard-nav.sg-wizard-nav.sg-wizard-nav{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-wizard-nav.sg-wizard-nav.sg-wizard-nav button{display:flex;flex-direction:row;align-items:center;justify-content:start;text-align:start;min-height:48px;padding:8px;gap:12px}.sop-sig.sop-soft-enrollment-wizard.sop-soft-enrollment-wizard .sg-wizard-nav.sg-wizard-nav.sg-wizard-nav .sg-step-title{min-width:0;flex:1;text-align:start;overflow-wrap:anywhere}}

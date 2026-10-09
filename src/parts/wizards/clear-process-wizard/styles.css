@@ -1,8 +1,40 @@
 @import "../../../shared/signature/wizard.css";
-/* Clear Process Wizard — 線を主体に手順と入力面を分ける。 */
+/* Clear Process Wizard — 工程を短いチェックリストとして読むウィザード。各工程の位置を縦に揃え、現在の入力内容をその下の白い欄で扱う。 */
 .sop-sig.sop-clear-process-wizard {--sg-bg:#f4f5ef;--sg-ink:#343e3d;--sg-muted:#455b4f;--sg-a:#496559;--sg-line:#adbab2;--sg-soft:#e1e4df;--sg-radius:6px;background:#f4f5ef;color-scheme:light;border-radius:5px}.sop-sig.sop-clear-process-wizard .sg-art{pointer-events:none}.sop-sig.sop-clear-process-wizard .sg-wizard{border:0;border-block:1px solid #a9c0b1;border-radius:0}.sop-sig.sop-clear-process-wizard .sg-wizard-nav{border-bottom:1px solid #c0d3c6;padding-bottom:10px}.sop-sig.sop-clear-process-wizard .sg-wizard-fields input{border-radius:3px}
 .sop-sig.sop-clear-process-wizard{max-width:100%}.sop-sig.sop-clear-process-wizard,.sop-sig.sop-clear-process-wizard *{box-sizing:border-box}.sop-sig.sop-clear-process-wizard :is(button,input,textarea,a){min-width:0}
 .sop-sig.sop-clear-process-wizard:focus-visible,.sop-sig.sop-clear-process-wizard :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-sig.sop-clear-process-wizard,.sop-sig.sop-clear-process-wizard *,.sop-sig.sop-clear-process-wizard::before,.sop-sig.sop-clear-process-wizard::after,.sop-sig.sop-clear-process-wizard *::before,.sop-sig.sop-clear-process-wizard *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-sig.sop-clear-process-wizard[data-sop-paused] *,.sop-sig.sop-clear-process-wizard[data-paused=true] *,.sop-sig.sop-clear-process-wizard[data-motion-running=false] *,.sop-sig.sop-clear-process-wizard[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-sig.sop-clear-process-wizard{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-clear-process-wizard :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+@media(forced-colors:none){
+
+.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-wizard{padding:20px 18px;background:#f6f8f5;border:0;border-inline-start:3px solid #a9c0ae}
+.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-wizard-nav,.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-wizard-nav:has(li:nth-child(4)){flex-direction:column;gap:0;border:0;padding:0}
+.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-wizard-nav button,.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-wizard-nav:has(li:nth-child(4)) button{flex-direction:row;align-items:center;gap:12px;padding:8px 0;min-height:44px;border-bottom:1px solid #d0dbd1;background:none}
+.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-step-index{width:24px;height:24px;min-width:24px;border-radius:3px;border:1px solid #a8bdaa;background:none}
+.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-step-index b{font-size:11px}
+.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-step-title{text-align:start;font-size:13px}
+.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-wizard-panels{margin-top:22px}
+.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-wizard-panel{padding:0;min-height:190px}
+.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-wizard-panel h3{font:600 22px/1.5 Arial,'Yu Gothic',sans-serif}
+.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-wizard-fields input,.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-wizard-fields textarea{background:white;border-radius:0;border:1px solid #aabfaa}
+.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-wizard-footer{padding-top:18px;border-top:1px solid #c6d4c7}
+
+}
+
+@media(forced-colors:none){.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard [data-step-state=current] .sg-step-index{background:#476d57;color:#fff;border-color:#476d57;box-shadow:none!important}.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-step-index::before,.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-step-index::after{display:none}}
+
+/* B018 independent review follow-up */
+.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-wizard-error{font-size:14px;line-height:1.65;color:#8a382c;overflow-wrap:anywhere}
+.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-wizard-nav button:disabled{opacity:1}
+.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-wizard-fields label{min-width:0;max-width:100%;overflow-wrap:anywhere;white-space:normal}
+.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-wizard-fields label>span,.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-wizard-fields small{min-width:0;max-width:100%;overflow-wrap:anywhere;white-space:normal}
+@media(forced-colors:active){.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-wizard-error{color:CanvasText}}
+
+/* B018 independent review follow-up */
+.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard{container-type:inline-size;width:100%}
+.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-wizard-nav.sg-wizard-nav.sg-wizard-nav:has(li:nth-child(4)){display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-wizard-nav.sg-wizard-nav.sg-wizard-nav:has(li:nth-child(4)) button{display:flex;flex-direction:row;align-items:center;justify-content:start;text-align:start;min-height:48px;padding:8px;gap:12px}
+.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-wizard-nav.sg-wizard-nav.sg-wizard-nav:has(li:nth-child(4)) .sg-step-title{min-width:0;flex:1;text-align:start;overflow-wrap:anywhere}
+@container(max-width:320px){.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-wizard-nav.sg-wizard-nav.sg-wizard-nav{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-wizard-nav.sg-wizard-nav.sg-wizard-nav button{display:flex;flex-direction:row;align-items:center;justify-content:start;text-align:start;min-height:48px;padding:8px;gap:12px}.sop-sig.sop-clear-process-wizard.sop-clear-process-wizard .sg-wizard-nav.sg-wizard-nav.sg-wizard-nav .sg-step-title{min-width:0;flex:1;text-align:start;overflow-wrap:anywhere}}

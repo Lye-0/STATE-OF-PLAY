@@ -1,8 +1,38 @@
 @import "../../../shared/signature/wizard.css";
-/* Warm Form Wizard — 穏やかな紙色の複数手順フォーム。 */
+/* Warm Form Wizard — 番号と明朝の見出しで章を読むウィザード。入力欄は帳票の下線に沿わせ、上下の二重罫で書類のまとまりを作る。 */
 .sop-sig.sop-warm-form-wizard {--sg-bg:#f6efdf;--sg-ink:#453d32;--sg-muted:#5b4c36;--sg-a:#745933;--sg-line:#c2b399;--sg-soft:#e6dfd2;--sg-radius:6px;background:#f6efdf;color-scheme:light;border-radius:5px}.sop-sig.sop-warm-form-wizard .sg-art{pointer-events:none}.sop-sig.sop-warm-form-wizard .sg-wizard{border-radius:5px;padding:19px}.sop-sig.sop-warm-form-wizard .sg-step-index{border-radius:5px}.sop-sig.sop-warm-form-wizard .sg-wizard-footer{border-top:1px solid #d3bf98}
 .sop-sig.sop-warm-form-wizard{max-width:100%}.sop-sig.sop-warm-form-wizard,.sop-sig.sop-warm-form-wizard *{box-sizing:border-box}.sop-sig.sop-warm-form-wizard :is(button,input,textarea,a){min-width:0}
 .sop-sig.sop-warm-form-wizard:focus-visible,.sop-sig.sop-warm-form-wizard :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-sig.sop-warm-form-wizard,.sop-sig.sop-warm-form-wizard *,.sop-sig.sop-warm-form-wizard::before,.sop-sig.sop-warm-form-wizard::after,.sop-sig.sop-warm-form-wizard *::before,.sop-sig.sop-warm-form-wizard *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-sig.sop-warm-form-wizard[data-sop-paused] *,.sop-sig.sop-warm-form-wizard[data-paused=true] *,.sop-sig.sop-warm-form-wizard[data-motion-running=false] *,.sop-sig.sop-warm-form-wizard[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-sig.sop-warm-form-wizard{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-sig.sop-warm-form-wizard :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+@media(forced-colors:none){
+
+.sop-sig.sop-warm-form-wizard.sop-warm-form-wizard .sg-wizard{padding:24px 20px;background:#fcf6e8;border:0;border-block:3px double #c6ae82;border-radius:0}
+.sop-sig.sop-warm-form-wizard.sop-warm-form-wizard .sg-wizard-nav{gap:12px;padding:0 0 18px;border-bottom:1px solid #d2c09f}
+.sop-sig.sop-warm-form-wizard.sop-warm-form-wizard .sg-wizard-nav button{padding:0;min-height:65px;gap:8px}
+.sop-sig.sop-warm-form-wizard.sop-warm-form-wizard .sg-step-index{width:30px;height:30px;min-width:30px;border:0;border-radius:0;background:none;color:#866740}
+.sop-sig.sop-warm-form-wizard.sop-warm-form-wizard .sg-step-index b{font:22px/1 Georgia,serif}
+.sop-sig.sop-warm-form-wizard.sop-warm-form-wizard [data-step-state=current] .sg-step-index{background:none;color:#634722;border-bottom:2px solid #967244}
+.sop-sig.sop-warm-form-wizard.sop-warm-form-wizard .sg-step-title{font:13px/1.6 Georgia,'Yu Mincho',serif}
+.sop-sig.sop-warm-form-wizard.sop-warm-form-wizard .sg-wizard-panel h3{font:600 27px/1.5 Georgia,'Yu Mincho',serif}
+.sop-sig.sop-warm-form-wizard.sop-warm-form-wizard .sg-wizard-fields label{font:14px/1.7 Georgia,'Yu Mincho',serif}
+.sop-sig.sop-warm-form-wizard.sop-warm-form-wizard .sg-wizard-fields input,.sop-sig.sop-warm-form-wizard.sop-warm-form-wizard .sg-wizard-fields textarea{padding:10px 0;background:none;border:0;border-bottom:1px solid #b59c70;border-radius:0;box-shadow:none}
+.sop-sig.sop-warm-form-wizard.sop-warm-form-wizard .sg-wizard-footer{padding-top:16px;border-top:1px solid #d2c09f}
+
+}
+
+/* B018 independent review follow-up */
+.sop-sig.sop-warm-form-wizard.sop-warm-form-wizard .sg-wizard-error{font-size:14px;line-height:1.65;color:#873f2c;overflow-wrap:anywhere}
+.sop-sig.sop-warm-form-wizard.sop-warm-form-wizard .sg-wizard-nav button:disabled{opacity:1}
+.sop-sig.sop-warm-form-wizard.sop-warm-form-wizard .sg-wizard-fields label{min-width:0;max-width:100%;overflow-wrap:anywhere;white-space:normal}
+.sop-sig.sop-warm-form-wizard.sop-warm-form-wizard .sg-wizard-fields label>span,.sop-sig.sop-warm-form-wizard.sop-warm-form-wizard .sg-wizard-fields small{min-width:0;max-width:100%;overflow-wrap:anywhere;white-space:normal}
+@media(forced-colors:active){.sop-sig.sop-warm-form-wizard.sop-warm-form-wizard .sg-wizard-error{color:CanvasText}}
+
+/* B018 independent review follow-up */
+.sop-sig.sop-warm-form-wizard.sop-warm-form-wizard{container-type:inline-size;width:100%}
+.sop-sig.sop-warm-form-wizard.sop-warm-form-wizard .sg-wizard-nav.sg-wizard-nav.sg-wizard-nav:has(li:nth-child(4)){display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+.sop-sig.sop-warm-form-wizard.sop-warm-form-wizard .sg-wizard-nav.sg-wizard-nav.sg-wizard-nav:has(li:nth-child(4)) button{display:flex;flex-direction:row;align-items:center;justify-content:start;text-align:start;min-height:48px;padding:8px;gap:12px}
+.sop-sig.sop-warm-form-wizard.sop-warm-form-wizard .sg-wizard-nav.sg-wizard-nav.sg-wizard-nav:has(li:nth-child(4)) .sg-step-title{min-width:0;flex:1;text-align:start;overflow-wrap:anywhere}
+@container(max-width:320px){.sop-sig.sop-warm-form-wizard.sop-warm-form-wizard .sg-wizard-nav.sg-wizard-nav.sg-wizard-nav{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}.sop-sig.sop-warm-form-wizard.sop-warm-form-wizard .sg-wizard-nav.sg-wizard-nav.sg-wizard-nav button{display:flex;flex-direction:row;align-items:center;justify-content:start;text-align:start;min-height:48px;padding:8px;gap:12px}.sop-sig.sop-warm-form-wizard.sop-warm-form-wizard .sg-wizard-nav.sg-wizard-nav.sg-wizard-nav .sg-step-title{min-width:0;flex:1;text-align:start;overflow-wrap:anywhere}}

@@ -1,0 +1,379 @@
+{
+  "batch": "B018",
+  "round": 6,
+  "overall": "changes_required",
+  "parts": [
+    {
+      "id": "blueprint-route-timeline",
+      "number": 562,
+      "verdict": "pass",
+      "note": "日付を結ぶ線が本文の外へ折れ、交互の札へ接続する製図の読み順が成立。文字・操作位置を動かさず、B569の一覧と構造を分離する。",
+      "findings": [],
+      "evidence": [
+        "evidence-6/review-562-sheet.jpg",
+        "measurements-6.json",
+        "measurements-native-6.json",
+        "measurements-react-6.json",
+        "contrast-summary-6.json"
+      ],
+      "reviewed": {
+        "round": 6,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "loop-history-timeline",
+      "number": 563,
+      "verdict": "pass",
+      "note": "背の線から日付札の小穴へ輪を渡す接点が見える。本文の列を輪から離し、実日付・展開詳細も長文に対応する。",
+      "findings": [],
+      "evidence": [
+        "evidence-6/review-563-sheet.jpg",
+        "measurements-6.json",
+        "measurements-native-6.json",
+        "measurements-react-6.json",
+        "contrast-summary-6.json"
+      ],
+      "reviewed": {
+        "round": 6,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "clear-process-timeline",
+      "number": 569,
+      "verdict": "changes_required",
+      "note": "連番・実日付・statusの読み順はBとして明確。ただし長い補足metaが折り返されず、通常/RTL/forcedの狭幅で切れる。",
+      "findings": [
+        {
+          "kind": "long_content_clipping",
+          "description": "長い.sg-event-metaが単一行のまま。root222pxでは通常右へ29.2px、RTL左へ31.2px、forced左へ49.2px超過しclip。650ms後も再現する。",
+          "recommendation": "metaを縮小/折返し可能にし、本文欄の内側で長い連続語を折り返す。forcedでも規則を維持。",
+          "evidence": [
+            "measurements-settled-6.json",
+            "evidence-6/clear-process-timeline-portable-settled-forced.png"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-6/review-569-sheet.jpg",
+        "measurements-6.json",
+        "measurements-native-6.json",
+        "measurements-react-6.json",
+        "contrast-summary-6.json"
+      ],
+      "reviewed": {
+        "round": 6,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "index-flap-wizard",
+      "number": 576,
+      "verdict": "pass",
+      "note": "少しずつ差し出す索引紙と現在工程の入力面が同じ紙色でつながる。7工程でも項目単位の幅を保ち、Bの単純なチェックリストと区別できる。",
+      "findings": [],
+      "evidence": [
+        "evidence-6/review-576-sheet.jpg",
+        "measurements-6.json",
+        "measurements-wizards-6.json",
+        "measurements-react-6.json",
+        "contrast-summary-6.json"
+      ],
+      "reviewed": {
+        "round": 6,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "stitched-journey-wizard",
+      "number": 578,
+      "verdict": "pass",
+      "note": "綴じた外側の布と内側の入力紙が別の面になり、糸が紙端をまたぐ。7工程・長文でも布札を一文字列へ潰さず、入力・値・焦点は安定する。",
+      "findings": [],
+      "evidence": [
+        "evidence-6/review-578-sheet.jpg",
+        "measurements-6.json",
+        "measurements-wizards-6.json",
+        "measurements-react-6.json",
+        "contrast-summary-6.json"
+      ],
+      "reviewed": {
+        "round": 6,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "clipped-page-wizard",
+      "number": 581,
+      "verdict": "changes_required",
+      "note": "紙の入力面は独立したが、クリップは透明な単一の丸角輪郭を紙の上に載せた表現。Bのフォーム面に小飾りを足した段階に留まり、留める接点が弱い。",
+      "findings": [
+        {
+          "kind": "design_review_judgment",
+          "description": "20×38pxの単一の輪郭は紙の上端をまたぐだけで、金具と紙の前後関係・把持箇所が示されない。機能不具合とは別のA造形の不足。",
+          "recommendation": "紙面を挟む金具と持ち手を別の面で表し、前後の重なりを見せる。入力文字や操作座標は保持する。",
+          "evidence": [
+            "evidence-6/review-581-sheet.jpg",
+            "evidence-6/review-588-sheet.jpg"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-6/review-581-sheet.jpg",
+        "measurements-6.json",
+        "measurements-wizards-6.json",
+        "measurements-react-6.json",
+        "contrast-summary-6.json"
+      ],
+      "reviewed": {
+        "round": 6,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "ceramic-stage-wizard",
+      "number": 584,
+      "verdict": "pass",
+      "note": "工程を厚みのある独立した陶駒、入力を別の器として分け、Bの一面フォームと構造差が成立。7工程・狭幅は横向き駒の縦列へ替わり、文字と面の関係を保持する。",
+      "findings": [],
+      "evidence": [
+        "evidence-6/review-584-sheet.jpg",
+        "measurements-6.json",
+        "measurements-wizards-6.json",
+        "measurements-react-6.json",
+        "contrast-summary-6.json"
+      ],
+      "reviewed": {
+        "round": 6,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "soft-enrollment-wizard",
+      "number": 588,
+      "verdict": "changes_required",
+      "note": "広い次へボタンと短い工程表示は申し込み用Bとして読みやすいが、エラー文字・未到達名称と、7工程の極端に細い列が残る。",
+      "findings": [
+        {
+          "kind": "contrast",
+          "description": "async beforeNextで返したエラー文字#f1b8a5が淡色実背景上で1.613:1。通常幅/320px・gallery/portableで読み取り困難。",
+          "recommendation": "実背景に対応した濃い文字色と読みやすい寸法へ。forcedを含め実エラーで検証。",
+          "evidence": [
+            "contrast-summary-6.json",
+            "measurements-wizards-6.json"
+          ]
+        },
+        {
+          "kind": "future_step_legibility",
+          "description": "未到達工程名がdisabledのopacityと共に薄くなり、R588 3.020:1/R589 2.757:1/R590 2.914:1。操作不可でも先の工程を知らせる文字は読める必要がある。disabled戻るボタンの薄さとは分けた情報設計上の評価。",
+          "recommendation": "native disabledは維持し、工程名/番号の表示は十分な濃さを保つ。",
+          "evidence": [
+            "contrast-summary-6.json"
+          ]
+        },
+        {
+          "kind": "many_steps_layout",
+          "description": "320px・7工程で通常とforced横7列が維持され、工程名が日本語1文字/英字1〜2文字ずつに分断。R588通常の文字列幅12px・高さ739.1px、R590は15.7px・748.7px。R589forcedも約12.6px・462px。",
+          "recommendation": "4工程以上または狭いhostで番号＋工程名を横に置いた項目の縦列へ切り替える。forcedも同じ構造を適用。",
+          "evidence": [
+            "measurements-settled-b-6.json",
+            "evidence-6/review-588-sheet.jpg"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-6/review-588-sheet.jpg",
+        "measurements-6.json",
+        "measurements-wizards-6.json",
+        "measurements-react-6.json",
+        "contrast-summary-6.json"
+      ],
+      "reviewed": {
+        "round": 6,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "clear-process-wizard",
+      "number": 589,
+      "verdict": "changes_required",
+      "note": "工程チェックリストを縦に揃えるBの構成は成立。エラーと未到達名称の可読性、forcedで7列へ戻る長文工程を修正する。",
+      "findings": [
+        {
+          "kind": "contrast",
+          "description": "async beforeNextで返したエラー文字#f1b8a5が淡色実背景上で1.620:1。通常幅/320px・gallery/portableで読み取り困難。",
+          "recommendation": "実背景に対応した濃い文字色と読みやすい寸法へ。forcedを含め実エラーで検証。",
+          "evidence": [
+            "contrast-summary-6.json",
+            "measurements-wizards-6.json"
+          ]
+        },
+        {
+          "kind": "future_step_legibility",
+          "description": "未到達工程名がdisabledのopacityと共に薄くなり、R588 3.020:1/R589 2.757:1/R590 2.914:1。操作不可でも先の工程を知らせる文字は読める必要がある。disabled戻るボタンの薄さとは分けた情報設計上の評価。",
+          "recommendation": "native disabledは維持し、工程名/番号の表示は十分な濃さを保つ。",
+          "evidence": [
+            "contrast-summary-6.json"
+          ]
+        },
+        {
+          "kind": "many_steps_layout",
+          "description": "320px・7工程でforcedのみ横7列が維持され、工程名が日本語1文字/英字1〜2文字ずつに分断。R588通常の文字列幅12px・高さ739.1px、R590は15.7px・748.7px。R589forcedも約12.6px・462px。",
+          "recommendation": "4工程以上または狭いhostで番号＋工程名を横に置いた項目の縦列へ切り替える。forcedも同じ構造を適用。",
+          "evidence": [
+            "measurements-settled-b-6.json",
+            "evidence-6/review-589-sheet.jpg"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-6/review-589-sheet.jpg",
+        "measurements-6.json",
+        "measurements-wizards-6.json",
+        "measurements-react-6.json",
+        "contrast-summary-6.json"
+      ],
+      "reviewed": {
+        "round": 6,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    },
+    {
+      "id": "warm-form-wizard",
+      "number": 590,
+      "verdict": "changes_required",
+      "note": "明朝の番号と下線入力による帳票向けBの用途差はあるが、エラー・未到達名称・7工程の細い列・長い入力ラベルの切れが残る。",
+      "findings": [
+        {
+          "kind": "contrast",
+          "description": "async beforeNextで返したエラー文字#f1b8a5が淡色実背景上で1.605:1。通常幅/320px・gallery/portableで読み取り困難。",
+          "recommendation": "実背景に対応した濃い文字色と読みやすい寸法へ。forcedを含め実エラーで検証。",
+          "evidence": [
+            "contrast-summary-6.json",
+            "measurements-wizards-6.json"
+          ]
+        },
+        {
+          "kind": "future_step_legibility",
+          "description": "未到達工程名がdisabledのopacityと共に薄くなり、R588 3.020:1/R589 2.757:1/R590 2.914:1。操作不可でも先の工程を知らせる文字は読める必要がある。disabled戻るボタンの薄さとは分けた情報設計上の評価。",
+          "recommendation": "native disabledは維持し、工程名/番号の表示は十分な濃さを保つ。",
+          "evidence": [
+            "contrast-summary-6.json"
+          ]
+        },
+        {
+          "kind": "many_steps_layout",
+          "description": "320px・7工程で通常とforced横7列が維持され、工程名が日本語1文字/英字1〜2文字ずつに分断。R588通常の文字列幅12px・高さ739.1px、R590は15.7px・748.7px。R589forcedも約12.6px・462px。",
+          "recommendation": "4工程以上または狭いhostで番号＋工程名を横に置いた項目の縦列へ切り替える。forcedも同じ構造を適用。",
+          "evidence": [
+            "measurements-settled-b-6.json",
+            "evidence-6/review-590-sheet.jpg"
+          ]
+        },
+        {
+          "kind": "long_field_label_clipping",
+          "description": "長い入力ラベルがroot222pxで49.1px、gallery251pxで20.1px外へはみ出す。RTLは左へ同量。",
+          "recommendation": "label/spanの最小幅を解除し、入力面の幅で連続語を折り返す。",
+          "evidence": [
+            "measurements-settled-6.json",
+            "evidence-6/review-590-sheet.jpg"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-6/review-590-sheet.jpg",
+        "measurements-6.json",
+        "measurements-wizards-6.json",
+        "measurements-react-6.json",
+        "contrast-summary-6.json"
+      ],
+      "reviewed": {
+        "round": 6,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true
+      }
+    }
+  ],
+  "coverage": {
+    "primaryRows": 20,
+    "nativeTimelineChecks": 42,
+    "nativeWizardChecks": 182,
+    "reactPartsFormats": 40,
+    "reactChecks": 136,
+    "runtimeErrors": 0,
+    "sourceHashesMatched": 100,
+    "pendingRequiredMeasurements": [],
+    "scope": "指定した状態・操作の検査。無欠陥保証ではない。Reactの7工程長文全組合せは未実施、同CSSのgallery/portableで検証。",
+    "settledContrastNote": "R569開閉直後の本文opacity0は遷移中の測定。650ms後に5.254:1以上と確認し、コントラスト不具合に含めていない。"
+  }
+}

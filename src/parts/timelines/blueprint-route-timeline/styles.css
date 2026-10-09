@@ -1,5 +1,5 @@
 @import "../../../shared/signature/timeline.css";
-/* 全履歴を一本の開いた幅40pxの図面経路で結ぶ。実日時は120×72px以上の角の節へ載り、経路はその角を回って次の反対側の実日時へ続く。実summaryと本文の読む面は経路の内側へ12px重なり、開いた余白へ広がる。独立した円と矢印を廃し、順序を表す一体の面だけを使う。経路の長さは収納する実本文で決まり、時間差や架空目盛りを表さない。狭幅は経路24px、記録面の重なり12pxで全文を読む。 */
+/* 日付を結ぶ折線を細い製図線に整えた履歴。線は本文の外を回り、見出しと内容を先に読める余白を確保する。 */
 
 .sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline{--paper:#f7f3ea;--ink:#443d36;--muted:#6c6055;--accent:#965f43;--edge:#c5b6a6;--sg-bg:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);width:100%;max-width:min(100%,480px);min-width:0;color:var(--ink);color-scheme:light;container-type:inline-size;overflow-wrap:anywhere}
 .sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline,.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline *,.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline *::before,.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline *::after{box-sizing:border-box}
@@ -48,3 +48,18 @@
 @media(forced-colors:active){.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-event-route::after{border-color:ButtonText!important}}
 
 @media(forced-colors:active){.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline{--paper:Canvas!important;--ink:CanvasText!important;--muted:CanvasText!important;--accent:Highlight!important;--edge:ButtonText!important;color:CanvasText!important;background:Canvas!important}.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-timeline,.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-event-main,.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-event-time,.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline summary,.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-event-body,.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-event-status{background:Canvas!important;color:CanvasText!important;border-color:ButtonText!important;box-shadow:none!important;clip-path:none!important;mask:none!important}.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-timeline::before,.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-timeline::after,.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-event-main::before,.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-event-main::after,.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-event-time::before,.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-event-time::after{display:none!important}.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-event-route::after{border-color:ButtonText!important}.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-event-route i{background:Canvas!important;border-color:ButtonText!important}.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-event[data-status=done] .sg-event-route i{background:Highlight!important}.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-event-heading,.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-event-status,.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-event-meta,.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-event-body p,.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline a{color:CanvasText!important}.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline :is(summary,a,[tabindex]):focus-visible{outline-color:Highlight!important}}
+
+@media(forced-colors:none){
+
+.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-event{padding-bottom:30px}
+.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-event-time{width:auto;min-width:74px;min-height:40px;padding:9px 12px;border-top:2px solid #7c9fb5;background:#d6e5ee;font-size:13px}
+.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-event-route{top:20px;bottom:-20px}
+.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-event-route::after{border-inline-start-width:3px;border-bottom-width:3px}
+.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-event:nth-child(2n) .sg-event-route::after{border-inline-end-width:3px}
+.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-event-main{margin-inline:12px 0;padding:12px;background:#edf4f7}
+.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-event:nth-child(2n) .sg-event-main{margin-inline:0 12px}
+.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline .sg-event:last-child .sg-event-route{bottom:20px}
+
+}
+
+@media(forced-colors:none){.sop-sig.sop-blueprint-route-timeline.sop-blueprint-route-timeline{--muted:#48677c;}}

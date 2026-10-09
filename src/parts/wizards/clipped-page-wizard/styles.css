@@ -1,5 +1,5 @@
 @import "../../../shared/signature/wizard.css";
-/* 切口のある実手順票と入力紙の比率を整える。票は108pxの高さと24×10pxの本当の切口だけを持ち、44pxの実番号と14pxの実名を余白へ収める。30pxの現在章の見出しと24pxの本文余白へ広げ、札だけが重い展示を廃する。切口は材だけへ描き、nativeボタン本体のhitとfocus輪郭を切り取らない。 */
+/* 工程の一覧から独立した紙をクリップで留めるウィザード。索引札の反復を廃し、丸い工程番号と一枚の入力紙を分けて見せる。 */
 
 .sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard{--paper:#f7f2e9;--ink:#4b4338;--muted:#6b6256;--accent:#947657;--edge:#c2b299;--sg-bg:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);--sg-soft:color-mix(in srgb,var(--accent) 15%,transparent);width:100%;max-width:min(100%,480px);min-width:0;container-type:inline-size;color:var(--ink);color-scheme:light;overflow-wrap:anywhere}
 .sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard *,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard *::before,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard *::after{box-sizing:border-box}
@@ -58,3 +58,31 @@
 @media(forced-colors:active){.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard{--paper:Canvas!important;--ink:CanvasText!important;--muted:CanvasText!important;--accent:Highlight!important;--edge:ButtonText!important;color:CanvasText!important;background:Canvas!important}.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-panel,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-nav button,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-footer,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard input,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard textarea,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-step-index{background:Canvas!important;color:CanvasText!important;border-color:ButtonText!important;box-shadow:none!important;clip-path:none!important;mask:none!important}.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-step-title,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard h3,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard p,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard label,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard small,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-error{color:CanvasText!important}.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard::before,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard::after,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-nav::before,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-nav::after,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-nav li::before,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-nav li::after,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-panels::before,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-footer::before,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-footer::after{display:none!important}.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard [aria-current=step] .sg-step-index,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-next{background:Highlight!important;color:HighlightText!important;border-color:Highlight!important}.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard :is(button,input,textarea,[tabindex]):focus-visible{outline-color:Highlight!important}}
 
 @media(forced-colors:active){.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard [aria-current=step] .sg-step-index b,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-next [data-next-label]{background:Highlight!important;color:HighlightText!important;forced-color-adjust:none}}
+
+@media(forced-colors:none){
+
+.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard{padding:22px 18px;background:#f7f2e8;border:0;border-top:1px solid #cab797}
+.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-nav,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-nav:has(li:nth-child(4)){display:grid;grid-template-columns:repeat(auto-fit,minmax(56px,1fr));gap:12px;padding:0 0 18px;border-bottom:1px solid #c9b596}
+.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-nav button,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-nav:has(li:nth-child(4)) button{flex-direction:column;min-height:72px;padding:0;gap:8px;background:none;border:0;clip-path:none}
+.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-nav li::before,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-nav li::after{display:none}
+.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-step-index{width:32px;height:32px;min-width:32px;border:0;border-radius:50%;background:#eee3cf}
+.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-step-title{font-size:13px;text-align:center}
+.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-panels{margin:24px 0 0;padding:22px 14px 10px;background:#fffbf2;position:relative;border:1px solid #d7c8ad;box-shadow:4px 4px #ece1ce}
+.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-panels::before{content:'';position:absolute;top:-10px;right:18px;width:20px;height:38px;border:2px solid #ac9776;border-radius:8px;background:transparent;transform:rotate(8deg);pointer-events:none}
+.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-panel{padding:0;min-height:210px}
+.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-panel h3{font:600 26px/1.45 Georgia,'Yu Mincho',serif;padding-inline-end:28px}
+.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-footer{padding-top:18px}
+.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard:dir(rtl) .sg-wizard-panels::before{right:auto;left:18px}
+
+}
+
+@media(forced-colors:none){.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard{--muted:#6b563f;}.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-nav button:disabled{opacity:1}}
+
+/* B018 independent review follow-up */
+@media(forced-colors:none){
+.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-panels{margin-top:42px;padding:28px 14px 12px;border:1px solid #cbbd9f;box-shadow:3px 4px 0 #e5d9c1,5px 6px 0 #bda887}
+.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-panels::before,.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard:dir(rtl) .sg-wizard-panels::before{content:'';position:absolute;top:-9px;left:calc(50% - 32px);right:auto;width:64px;height:18px;border:1px solid #4b5558;border-radius:4px 4px 6px 6px;background:linear-gradient(#9ba5a5 0 2px,#576166 3px 11px,#353d43 12px 15px,#7e898a 16px);transform:none;box-shadow:0 3px 2px #665a3e30;z-index:2;pointer-events:none}
+.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-panels::after{content:'';position:absolute;top:-29px;left:calc(50% - 17px);width:34px;height:26px;border:3px solid #8d999c;border-bottom:0;border-radius:9px 9px 0 0;box-shadow:inset 1px 1px #e9edeb,1px -1px #59646a;background:transparent;transform:perspective(70px) rotateX(-12deg);transform-origin:center bottom;z-index:1;pointer-events:none}
+.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-panel h3{padding-inline-end:0}
+}
+@media(forced-colors:active){.sop-sig.sop-clipped-page-wizard.sop-clipped-page-wizard .sg-wizard-panels::after{display:none}}

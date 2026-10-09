@@ -71,3 +71,5 @@ B017r4は3pass/7差戻し。revise-b017-review.py実行済み（再実行禁止�
 B018r6は5pass/5差戻し。revise-b018-review.py実行済み（再実行禁止）→r7freeze。569meta折返し、581紙を挟む金具/持ち手、588/589/590のasync error14px/濃赤・未到達opacity1・7工程/320px以下の工程リスト・長field label修正。probe-b018-followup.mjsは40条件成功、mainでclip狭幅と長工程B画像を視認。gallery5件再撮影中。AstraはB017r5再検査中、その後B018r7→B019r5の順に依頼済み。
 
 B018最終候補をround8へ。B3wizard CSS末尾の空行だけ削除（git diff --check）、規則変更なし。r7の40条件/画像証拠は同一規則として維持し、独立reviewへr8を指定した。
+
+B017r5全10pass→5e0d530f760c53041548a53dc62fd2abf4be00d9でpush/record済み170件。B018r8再検査中。B019以降の凍結はr5/r5/r4/r4/r3。B018差戻し5件gallery再撮影も完了。

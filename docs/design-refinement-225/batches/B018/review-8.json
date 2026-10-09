@@ -1,0 +1,308 @@
+{
+  "batch": "B018",
+  "round": 8,
+  "overall": "pass",
+  "parts": [
+    {
+      "id": "blueprint-route-timeline",
+      "number": 562,
+      "verdict": "pass",
+      "note": "日付を結ぶ線が本文の外へ折れ、交互の札へ接続する製図の読み順が成立。文字・操作位置を動かさず、B569の一覧と構造を分離する。",
+      "findings": [],
+      "evidence": [
+        "evidence-6/review-562-sheet.jpg",
+        "measurements-6.json",
+        "measurements-native-6.json",
+        "measurements-react-6.json",
+        "contrast-summary-6.json",
+        "hash-verification-8.json"
+      ],
+      "reviewed": {
+        "round": 6,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "inheritedFromRound": 6,
+        "author10FilesUnchanged": true,
+        "shared40FilesUnchanged": true
+      }
+    },
+    {
+      "id": "loop-history-timeline",
+      "number": 563,
+      "verdict": "pass",
+      "note": "背の線から日付札の小穴へ輪を渡す接点が見える。本文の列を輪から離し、実日付・展開詳細も長文に対応する。",
+      "findings": [],
+      "evidence": [
+        "evidence-6/review-563-sheet.jpg",
+        "measurements-6.json",
+        "measurements-native-6.json",
+        "measurements-react-6.json",
+        "contrast-summary-6.json",
+        "hash-verification-8.json"
+      ],
+      "reviewed": {
+        "round": 6,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "inheritedFromRound": 6,
+        "author10FilesUnchanged": true,
+        "shared40FilesUnchanged": true
+      }
+    },
+    {
+      "id": "clear-process-timeline",
+      "number": 569,
+      "verdict": "pass",
+      "note": "展開本文の長い補足識別子を折り返すよう修正。320px・LTR/RTL・forcedで本文とrootからの超過0を確認。工程名/時刻/statusを低い列で読むBの構成とnative開閉を保持。",
+      "findings": [],
+      "evidence": [
+        "evidence-8/sheet-clear-process-timeline.jpg",
+        "measurements-8.json",
+        "measurements-settled-8.json",
+        "measurements-react-8.json",
+        "contrast-summary-8.json",
+        "measurements-native-8.json"
+      ],
+      "reviewed": {
+        "round": 8,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "independentReinspection": true
+      }
+    },
+    {
+      "id": "index-flap-wizard",
+      "number": 576,
+      "verdict": "pass",
+      "note": "少しずつ差し出す索引紙と現在工程の入力面が同じ紙色でつながる。7工程でも項目単位の幅を保ち、Bの単純なチェックリストと区別できる。",
+      "findings": [],
+      "evidence": [
+        "evidence-6/review-576-sheet.jpg",
+        "measurements-6.json",
+        "measurements-wizards-6.json",
+        "measurements-react-6.json",
+        "contrast-summary-6.json",
+        "hash-verification-8.json"
+      ],
+      "reviewed": {
+        "round": 6,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "inheritedFromRound": 6,
+        "author10FilesUnchanged": true,
+        "shared40FilesUnchanged": true
+      }
+    },
+    {
+      "id": "stitched-journey-wizard",
+      "number": 578,
+      "verdict": "pass",
+      "note": "綴じた外側の布と内側の入力紙が別の面になり、糸が紙端をまたぐ。7工程・長文でも布札を一文字列へ潰さず、入力・値・焦点は安定する。",
+      "findings": [],
+      "evidence": [
+        "evidence-6/review-578-sheet.jpg",
+        "measurements-6.json",
+        "measurements-wizards-6.json",
+        "measurements-react-6.json",
+        "contrast-summary-6.json",
+        "hash-verification-8.json"
+      ],
+      "reviewed": {
+        "round": 6,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "inheritedFromRound": 6,
+        "author10FilesUnchanged": true,
+        "shared40FilesUnchanged": true
+      }
+    },
+    {
+      "id": "clipped-page-wizard",
+      "number": 581,
+      "verdict": "pass",
+      "note": "紙の上端を跨ぐ幅のある金具と、その背後から立ち上がる持ち手へ変更。金具が紙端を覆う接点と紙束の下縁が対応し、単独の輪郭飾りから挟む構造へ改善。長文/RTL/forcedの表示と入力保持も成立。",
+      "findings": [],
+      "evidence": [
+        "evidence-8/sheet-clipped-page-wizard.jpg",
+        "measurements-8.json",
+        "measurements-settled-8.json",
+        "measurements-react-8.json",
+        "contrast-summary-8.json",
+        "measurements-wizards-8.json"
+      ],
+      "reviewed": {
+        "round": 8,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "independentReinspection": true
+      }
+    },
+    {
+      "id": "ceramic-stage-wizard",
+      "number": 584,
+      "verdict": "pass",
+      "note": "工程を厚みのある独立した陶駒、入力を別の器として分け、Bの一面フォームと構造差が成立。7工程・狭幅は横向き駒の縦列へ替わり、文字と面の関係を保持する。",
+      "findings": [],
+      "evidence": [
+        "evidence-6/review-584-sheet.jpg",
+        "measurements-6.json",
+        "measurements-wizards-6.json",
+        "measurements-react-6.json",
+        "contrast-summary-6.json",
+        "hash-verification-8.json"
+      ],
+      "reviewed": {
+        "round": 6,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "inheritedFromRound": 6,
+        "author10FilesUnchanged": true,
+        "shared40FilesUnchanged": true
+      }
+    },
+    {
+      "id": "soft-enrollment-wizard",
+      "number": 588,
+      "verdict": "pass",
+      "note": "未到達の工程名を読む濃度とdisabled操作を分離。4工程以上/狭幅では番号＋工程名の横向き項目を縦に積み、7工程の1文字列を解消。非同期エラー14px・7.022:1、入力値保持を確認。",
+      "findings": [],
+      "evidence": [
+        "evidence-8/sheet-soft-enrollment-wizard.jpg",
+        "measurements-8.json",
+        "measurements-settled-8.json",
+        "measurements-react-8.json",
+        "contrast-summary-8.json",
+        "measurements-wizards-8.json"
+      ],
+      "reviewed": {
+        "round": 8,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "independentReinspection": true
+      }
+    },
+    {
+      "id": "clear-process-wizard",
+      "number": 589,
+      "verdict": "pass",
+      "note": "通常の縦工程列をforcedでも保持し、7工程の極細列への逆戻りを解消。未到達名6.870:1、非同期エラー14px・7.330:1を確認。簡潔な工程/入力のBの用途を維持。",
+      "findings": [],
+      "evidence": [
+        "evidence-8/sheet-clear-process-wizard.jpg",
+        "measurements-8.json",
+        "measurements-settled-8.json",
+        "measurements-react-8.json",
+        "contrast-summary-8.json",
+        "measurements-wizards-8.json"
+      ],
+      "reviewed": {
+        "round": 8,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "independentReinspection": true
+      }
+    },
+    {
+      "id": "warm-form-wizard",
+      "number": 590,
+      "verdict": "pass",
+      "note": "7工程を横向き項目の縦積みへ切替え、長いfield labelを折り返して超過0へ。未到達名7.697:1、非同期エラー14px・7.016:1。読書的な見出し・下線入力のB構成を保持。",
+      "findings": [],
+      "evidence": [
+        "evidence-8/sheet-warm-form-wizard.jpg",
+        "measurements-8.json",
+        "measurements-settled-8.json",
+        "measurements-react-8.json",
+        "contrast-summary-8.json",
+        "measurements-wizards-8.json"
+      ],
+      "reviewed": {
+        "round": 8,
+        "portable": true,
+        "actualGallery": true,
+        "hoverEntryExitReentry": true,
+        "narrow320LongRTL": true,
+        "forcedReduced": true,
+        "native": true,
+        "react4Formats": true,
+        "ABVisualComparison": true,
+        "independentReinspection": true
+      }
+    }
+  ],
+  "coverage": {
+    "reinspectedParts": 5,
+    "inheritedUnchangedParts": 5,
+    "primaryRows": 10,
+    "nativeTimelineChecks": 14,
+    "nativeWizardChecks": 104,
+    "reactPartsFormats": 20,
+    "reactChecks": 72,
+    "settledRows": 16,
+    "sourceHashesMatched": 100,
+    "sharedInternalHashesMatched": 40,
+    "runtimeErrors": 0,
+    "imagesViewed": "5 sheets with portable/gallery rest,hover,long,RTL,forced and React review/opened/forced; gallery narrow errors of three B wizards; clipped-page portable rest and main long320; soft forced7 and warm long320 close images",
+    "pendingRequiredMeasurements": [],
+    "limitations": [
+      "Chromiumの指定状態に対する検査であり無欠陥保証ではない。",
+      "既合格5件は作者50ファイル・共有internal40ファイル一致でround6の実検査を継承。",
+      "React長文全組合せは未実行。同作者CSSのgallery/portableで長文を実査。",
+      "戻るボタンのdisabled時は低コントラストだが非操作状態のため差戻しに含めない。未到達の工程名は読む情報として別に確認。"
+    ]
+  }
+}

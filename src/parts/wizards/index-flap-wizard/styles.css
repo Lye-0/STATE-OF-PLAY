@@ -1,5 +1,5 @@
 @import "../../../shared/signature/wizard.css";
-/* 索引の札と本文を同じ紙へ整える。実章の札の色は本文の背に一段だけ差を付け、選択札は本文の明るい紙色へ連続する。44pxの実番号・14pxの章名と28pxの本文見出しを揃え、上の索引と下の操作の罫線を役割ごとに整理する。入力紙にも同じ紙色と1pxの縁を使い、小さな重い箱の寄せ集めを避ける。 */
+/* 少しずつ差し出した索引紙で工程を選ぶウィザード。索引を縦へ積み、現在の紙だけを明るい入力面へ接続する。 */
 
 .sop-sig.sop-index-flap-wizard.sop-index-flap-wizard{--paper:#f7f2e9;--ink:#4b4338;--muted:#6b6256;--accent:#947657;--edge:#c2b299;--sg-bg:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);--sg-soft:color-mix(in srgb,var(--accent) 15%,transparent);width:100%;max-width:min(100%,480px);min-width:0;container-type:inline-size;color:var(--ink);color-scheme:light;overflow-wrap:anywhere}
 .sop-sig.sop-index-flap-wizard.sop-index-flap-wizard,.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard *,.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard *::before,.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard *::after{box-sizing:border-box}
@@ -58,3 +58,22 @@
 @media(forced-colors:active){.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard{--paper:Canvas!important;--ink:CanvasText!important;--muted:CanvasText!important;--accent:Highlight!important;--edge:ButtonText!important;color:CanvasText!important;background:Canvas!important}.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard,.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard-panel,.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard-nav button,.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard-footer,.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard input,.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard textarea,.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-step-index{background:Canvas!important;color:CanvasText!important;border-color:ButtonText!important;box-shadow:none!important;clip-path:none!important;mask:none!important}.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-step-title,.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard h3,.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard p,.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard label,.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard small,.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard-error{color:CanvasText!important}.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard::before,.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard::after,.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard-nav::before,.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard-nav::after,.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard-nav li::before,.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard-nav li::after,.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard-panels::before,.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard-footer::before,.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard-footer::after{display:none!important}.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard [aria-current=step] .sg-step-index,.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard-next{background:Highlight!important;color:HighlightText!important;border-color:Highlight!important}.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard :is(button,input,textarea,[tabindex]):focus-visible{outline-color:Highlight!important}}
 
 @media(forced-colors:active){.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard [aria-current=step] .sg-step-index b,.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard-next [data-next-label]{background:Highlight!important;color:HighlightText!important;forced-color-adjust:none}}
+
+@media(forced-colors:none){
+
+.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard{padding:22px 16px 20px 25px;border:0;border-inline-start:3px double #b39870;background:#faf2e5}
+.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard-nav,.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard-nav:has(li:nth-child(4)){flex-direction:column;gap:0;padding:0;border:0}
+.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard-nav li{padding-inline-start:calc(min(var(--step),3)*8px)}
+.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard-nav button,.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard-nav:has(li:nth-child(4)) button{flex-direction:row;align-items:center;gap:12px;min-height:50px;padding:8px 12px;border:1px solid #cfbc9b;border-bottom:0;background:#e9dcc5;border-radius:0;text-align:start}
+.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard-nav [data-step-state=current] button{padding:8px 12px;background:#fffaf0;border-top:1px solid #b6996b;border-inline-end:4px solid #ad8953}
+.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-step-index{width:28px;height:28px;min-width:28px;background:none;border:0;color:#715633}
+.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-step-title{text-align:start;font-size:13px}
+.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard [data-step-state=current] .sg-step-index{color:#715633;background:none}
+.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard-panels{margin:0;padding:22px 0 0;border-top:2px solid #bfa477;background:#fffaf0}
+.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard-panel{padding:0 12px 20px}
+.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard-panel h3{font-size:25px}
+.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard-footer{border-top:1px solid #cfbc9b;padding-top:14px}
+
+}
+
+@media(forced-colors:none){.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard{--muted:#6b543e;}.sop-sig.sop-index-flap-wizard.sop-index-flap-wizard .sg-wizard-nav button:disabled{opacity:1}}

@@ -1,5 +1,5 @@
 @import "../../../shared/signature/timeline.css";
-/* 輪の日付と本文の重みを揃える。実日時の88pxの輪郭、記録の下線と状態の線を同じ材へまとめ、選択だけが強い丸札を廃する。日時14px・セリフ見出し18px・本文14pxへ広げ、実本文面を輪の横の余白へ開く。狭幅は輪を全幅へ広げ、長い日時を省略せず、その下で記録を読む。 */
+/* 背の一本の線から日付札を輪で留める履歴。輪は札の小穴へ接続し、本文の列とは分けて記録同士のつながりを示す。 */
 
 .sop-sig.sop-loop-history-timeline.sop-loop-history-timeline{--paper:#f7f3ea;--ink:#443d36;--muted:#6c6055;--accent:#965f43;--edge:#c5b6a6;--sg-bg:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);width:100%;max-width:min(100%,480px);min-width:0;color:var(--ink);color-scheme:light;container-type:inline-size;overflow-wrap:anywhere}
 .sop-sig.sop-loop-history-timeline.sop-loop-history-timeline,.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline *,.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline *::before,.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline *::after{box-sizing:border-box}
@@ -42,3 +42,21 @@
 @container(max-width:350px){.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-event{grid-template-columns:minmax(0,1fr);gap:12px;padding-inline-start:0}.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-event-time{width:100%;min-height:0;padding:16px 18px}}
 
 @media(forced-colors:active){.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline{--paper:Canvas!important;--ink:CanvasText!important;--muted:CanvasText!important;--accent:Highlight!important;--edge:ButtonText!important;color:CanvasText!important;background:Canvas!important}.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-timeline,.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-event-main,.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-event-time,.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline summary,.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-event-body,.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-event-status{background:Canvas!important;color:CanvasText!important;border-color:ButtonText!important;box-shadow:none!important;clip-path:none!important;mask:none!important}.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-timeline::before,.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-timeline::after,.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-event-main::before,.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-event-main::after,.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-event-time::before,.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-event-time::after{display:none!important}.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-event-route::after{border-color:ButtonText!important}.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-event-route i{background:Canvas!important;border-color:ButtonText!important}.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-event[data-status=done] .sg-event-route i{background:Highlight!important}.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-event-heading,.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-event-status,.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-event-meta,.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-event-body p,.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline a{color:CanvasText!important}.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline :is(summary,a,[tabindex]):focus-visible{outline-color:Highlight!important}}
+
+@media(forced-colors:none){
+
+.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-timeline{padding:24px 18px;background:#f7eff1}
+.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-event{grid-template-columns:minmax(0,1fr);gap:12px;padding:14px 0 30px 25px;isolation:isolate}
+.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-event-time{position:relative;min-height:40px;width:fit-content;max-width:100%;padding:9px 16px 9px 26px;border:0;border-bottom:2px solid #b998a2;border-radius:0;background:#fff8fa;text-align:start;font:13px/1.6 Consolas,monospace}
+.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-event-time::before{content:'';position:absolute;left:6px;top:15px;width:5px;height:5px;border-radius:50%;background:#8b6872;box-shadow:0 -1px #60424a}
+.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-event-time::after{content:'';position:absolute;left:-17px;top:8px;width:28px;height:18px;border:2px solid #ad8a94;border-radius:50%;clip-path:polygon(0 0,100% 0,100% 55%,70% 55%,70% 100%,0 100%);pointer-events:none}
+.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-event-route{display:block;inset:0 auto 0 11px;width:1px;border-inline-start:1px solid #b4949f;z-index:-1}
+.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-event-route::after,.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-event-route i{display:none}
+.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline .sg-event-main{padding:0 0 14px;border-bottom:1px solid #d1bac2}
+.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline:dir(rtl) .sg-event{padding-inline:25px 0}
+.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline:dir(rtl) .sg-event-route{left:auto;right:11px}
+.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline:dir(rtl) .sg-event-time{padding-inline:26px 16px}
+.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline:dir(rtl) .sg-event-time::before{left:auto;right:6px}
+.sop-sig.sop-loop-history-timeline.sop-loop-history-timeline:dir(rtl) .sg-event-time::after{left:auto;right:-17px;transform:scaleX(-1)}
+
+}

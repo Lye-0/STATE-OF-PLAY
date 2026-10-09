@@ -1,5 +1,5 @@
 @import "../../../shared/signature/wizard.css";
-/* 一枚の布から開く88pxの本当の穴の中に、実章の44pxの番号を縫い留める。番号の平らな島と穴の両端を14pxの布橋で接し、橋の二本の縫い目が実際の接合を示す。三つの穴を持つ同じ布は入力の内側の一枚の布面と裾へ続き、別々の線と紫の小タブを廃する。多手順と狭幅では穴を縦へ並べ、nativeの章名には十分な読む幅を確保する。 */
+/* 縫い綴じた表紙に入力用紙を留めるウィザード。工程の布札と紙面を分け、綴じ糸が余白をまたぐ。氏名・入力位置を動かさず、選択と完了は実際の工程状態で示す。 */
 
 .sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard{--paper:#f7f2e9;--ink:#4b4338;--muted:#6b6256;--accent:#947657;--edge:#c2b299;--sg-bg:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);--sg-soft:color-mix(in srgb,var(--accent) 15%,transparent);width:100%;max-width:min(100%,480px);min-width:0;container-type:inline-size;color:var(--ink);color-scheme:light;overflow-wrap:anywhere}
 .sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard,.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard *,.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard *::before,.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard *::after{box-sizing:border-box}
@@ -72,3 +72,37 @@
 @container(max-width:420px){.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard .sg-wizard-nav button{align-items:flex-start}}
 
 @media(forced-colors:active){.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard [aria-current=step] .sg-step-index b,.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard .sg-wizard-next [data-next-label]{background:Highlight!important;color:HighlightText!important;forced-color-adjust:none}}
+
+@media(forced-colors:none){
+
+.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard .sg-wizard-nav,.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard .sg-wizard-nav:has(li:nth-child(4)){flex-direction:column;padding:12px 16px;gap:0;background:#e8dcea}
+.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard .sg-wizard-nav li::before{display:none}
+.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard .sg-wizard-nav button,.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard .sg-wizard-nav:has(li:nth-child(4)) button{flex-direction:row;align-items:center;padding:8px 0;min-height:60px;gap:18px}
+.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard .sg-step-index{width:34px;height:34px;min-width:34px;background:#f5eef6;border:1px solid #b396be;border-radius:2px}
+.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard .sg-step-index::before{left:4px;top:-12px;width:24px;height:58px;border:0;border-inline:1px dashed #b296bc;background:none;z-index:-1}
+.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard .sg-step-title{text-align:start;font-size:14px}
+.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard .sg-wizard-panels{padding:20px 16px;border-top:1px dashed #aa8db4;background:#e8dcea}
+.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard .sg-wizard-panel{padding:18px 12px;background:#f8f1fa;border:1px dashed #bda4c6}
+.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard .sg-wizard-footer{background:#e8dcea;padding:0 16px 20px;margin:0}
+
+}
+
+@media(forced-colors:none){.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard{--muted:#674a6b;}.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard .sg-wizard-nav button:disabled{opacity:1}}
+
+@media(forced-colors:none){
+
+.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard .sg-wizard{position:relative;padding-inline-start:22px;background:#e8dcea;border-bottom:6px solid #b99fc4;box-shadow:inset 8px 0 #bba2c5}
+.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard .sg-wizard::before{content:'';display:block;position:absolute;inset:10px auto 10px 11px;width:2px;height:auto;border:0;transform:none;background:repeating-linear-gradient(to bottom,#fff8ff 0 5px,transparent 5px 9px);pointer-events:none;z-index:3}
+.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard .sg-wizard-nav{padding:16px 14px 4px;background:none;gap:6px}
+.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard .sg-step-index::before{display:none}
+.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard .sg-wizard-nav button{border:1px dashed #ac8db8;padding:8px 10px;background:#f4eaf6;min-height:54px}
+.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard .sg-wizard-nav [aria-current=step]{background:#e0cfe8;border-color:#866795}
+.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard .sg-wizard-panels{margin-top:0;padding:16px 14px 12px;border:0;background:none}
+.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard .sg-wizard-panel{position:relative;padding:20px 14px;background:#fffaf4;border:1px solid #d4c4cb;border-inline-start:2px dashed #a88daf;border-bottom:3px solid #c5b0cd}
+.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard .sg-wizard-panel::before{content:'';position:absolute;inset:12px auto 12px -12px;width:15px;background:radial-gradient(ellipse 6px 2px at 50% 50%,transparent 60%,#8c6e99 70% 90%,transparent 100%) 0 0/15px 30px repeat-y;pointer-events:none}
+.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard .sg-wizard-footer{padding:4px 14px 18px;background:none;border-bottom:0}
+.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard:dir(rtl) .sg-wizard{box-shadow:inset -8px 0 #bba2c5}
+.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard:dir(rtl) .sg-wizard::before{left:auto;right:11px}
+.sop-sig.sop-stitched-journey-wizard.sop-stitched-journey-wizard:dir(rtl) .sg-wizard-panel::before{left:auto;right:-12px}
+
+}
