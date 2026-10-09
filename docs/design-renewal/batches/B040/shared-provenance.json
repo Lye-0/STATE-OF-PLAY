@@ -1,0 +1,12 @@
+{
+  "before": {
+    "src/shared/signature/timeline.ts": "446f3688be5011fec49eacb9e8938aff7dbe8bb11d75bca95ba9643714540945"
+  },
+  "after": {
+    "src/shared/signature/timeline.ts": "7df7b6b4acd9eb219c3c6555bedfda777ca1b861a986b52fc0a985feb345864b",
+    "tests/signature.browser.ts": "9b2dbd5f98a4a0aa6325de5efcf758bbab897b7f4de8dc934c4cb1f14fee7847"
+  },
+  "reproductionAllNine": "baseline0: label/items rebuild drops active summary focus; destroy then reset changes a,b committed expansion to a",
+  "fix": "preserve same summary/link or nearest surviving row focus on structural update; empty history focus goes to native heading; filter reset defaults to current rows and guard dead reset",
+  "permanentRegression": "real Vite native Timeline current/nearest/link/empty-heading focus; reset valid defaults; destroyed reset/update inert"
+}
