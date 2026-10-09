@@ -8,7 +8,7 @@
 @media(forced-colors:active){.sop-foundation.sop-warm-book-pages{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-warm-book-pages :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
 
 
-/* 狭幅でも各ページの操作幅を34px以上に保ち、必要に応じて行を折り返す。 */
+/* 本文の書体に馴染むノンブル型のページ送り。番号列の下に前後操作を置き、現在位置を大きな明朝数字で示す。 */
 .sop-foundation.sop-warm-book-pages.sop-warm-book-pages .ff-pages{display:flex;flex-wrap:wrap;gap:5px;padding:8px;justify-content:center}.sop-foundation.sop-warm-book-pages.sop-warm-book-pages .ff-pages :is(button,a){flex:0 0 34px;min-width:34px;height:38px;font-size:12px}.sop-foundation.sop-warm-book-pages.sop-warm-book-pages .ff-ellipsis{width:12px;text-align:center}.sop-foundation.sop-warm-book-pages.sop-warm-book-pages .ff-page-info{margin-top:10px;font-size:20px}.sop-foundation.sop-warm-book-pages.sop-warm-book-pages,.sop-foundation.sop-warm-book-pages.sop-warm-book-pages *,.sop-foundation.sop-warm-book-pages.sop-warm-book-pages::before,.sop-foundation.sop-warm-book-pages.sop-warm-book-pages::after,.sop-foundation.sop-warm-book-pages.sop-warm-book-pages *::before,.sop-foundation.sop-warm-book-pages.sop-warm-book-pages *::after{box-sizing:border-box}.sop-foundation.sop-warm-book-pages.sop-warm-book-pages :is(button,a,input,textarea,select){min-width:0}.sop-foundation.sop-warm-book-pages.sop-warm-book-pages :is(button,a,input,textarea,select,[tabindex]):focus-visible,.sop-foundation.sop-warm-book-pages.sop-warm-book-pages:focus-visible{outline:2px solid #2878c7;outline-offset:4px}.sop-foundation.sop-warm-book-pages.sop-warm-book-pages [hidden]{display:none!important}@media(prefers-reduced-motion:reduce){.sop-foundation.sop-warm-book-pages.sop-warm-book-pages,.sop-foundation.sop-warm-book-pages.sop-warm-book-pages *,.sop-foundation.sop-warm-book-pages.sop-warm-book-pages::before,.sop-foundation.sop-warm-book-pages.sop-warm-book-pages::after,.sop-foundation.sop-warm-book-pages.sop-warm-book-pages *::before,.sop-foundation.sop-warm-book-pages.sop-warm-book-pages *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}@media(forced-colors:active){.sop-foundation.sop-warm-book-pages.sop-warm-book-pages,.sop-foundation.sop-warm-book-pages.sop-warm-book-pages :is(button,a,input,textarea,select){color:CanvasText;background:Canvas;border-color:ButtonText;box-shadow:none}}
 /* Style review refinement */
 /* 前後ボタンを固定領域へ分離。番号が増減しても連続操作の位置と全体の高さを保つ。 */
@@ -20,3 +20,18 @@
 
 .sop-foundation.sop-warm-book-pages.sop-warm-book-pages .ff-pages[data-layout=anchored] .ff-page-window [aria-current=page]{background:#795e38;border-color:#795e38;color:white}
 @media(forced-colors:active){.sop-foundation.sop-warm-book-pages.sop-warm-book-pages{--paper:Canvas;--ink:CanvasText;--muted:CanvasText;--accent:Highlight;--edge:ButtonText;--ff-ink:CanvasText;--ff-muted:CanvasText;--sg-bg:Canvas;--sg-ink:CanvasText;--sg-muted:CanvasText;--sg-a:Highlight;--wb-bg:Canvas;--wb-ink:CanvasText;--wb-muted:CanvasText;--wb-accent:Highlight;color:CanvasText;background:Canvas;border-color:ButtonText;box-shadow:none}.sop-foundation.sop-warm-book-pages.sop-warm-book-pages :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}.sop-foundation.sop-warm-book-pages.sop-warm-book-pages :is(button,input,textarea,select,a):focus-visible{outline-color:Highlight}.sop-foundation.sop-warm-book-pages.sop-warm-book-pages :is([aria-current=page],[aria-selected=true],[data-selected=true]){color:HighlightText;background:Highlight;border-color:Highlight}}
+
+.sop-foundation.sop-warm-book-pages.sop-warm-book-pages .ff-pages[data-layout=anchored]>.ff-page-window{display:flex;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;min-height:0;gap:3px;scrollbar-width:thin;padding:3px 2px 9px}.sop-foundation.sop-warm-book-pages.sop-warm-book-pages .ff-page-window :is(button,a){flex:0 0 34px;min-width:34px;width:auto}.sop-foundation.sop-warm-book-pages.sop-warm-book-pages .ff-page-window .ff-ellipsis{flex:0 0 18px;min-width:18px}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-warm-book-pages.sop-warm-book-pages{--ff-base:#f5f0e6;--ff-panel:#fffdf4;--ff-ink:#584a35;--ff-muted:#75664d;--ff-accent:#80633b;--accent:#80633b;--ff-line:#cdbc9e;background:#fffdf4;border-radius:0;padding:22px}
+.sop-foundation.sop-warm-book-pages.sop-warm-book-pages .ff-heading{font:600 15px/1.7 Georgia,'Yu Mincho',serif}
+.sop-foundation.sop-warm-book-pages.sop-warm-book-pages .ff-pages[data-layout=anchored]{border-top:1px solid #b9a380;min-height:0;padding-top:14px}
+.sop-foundation.sop-warm-book-pages.sop-warm-book-pages .ff-pages[data-layout=anchored]>.ff-page-window{gap:0;border-bottom:1px solid #d8c9ae;padding-bottom:14px;justify-content:safe center}
+.sop-foundation.sop-warm-book-pages.sop-warm-book-pages .ff-pages[data-layout=anchored] .ff-page-window :is(button,a){font:18px/1.3 Georgia,serif;background:none;border:0;border-inline-end:1px solid #e4d8c1;border-radius:0;height:40px}
+.sop-foundation.sop-warm-book-pages.sop-warm-book-pages .ff-pages[data-layout=anchored] .ff-page-window [aria-current=page]{background:#eee3cd;color:#584a35;border-bottom:2px solid #80633b}
+.sop-foundation.sop-warm-book-pages.sop-warm-book-pages .ff-pages[data-layout=anchored]>:is(button,a){background:none;border:0;border-bottom:1px solid #b9a380;border-radius:0;color:#80633b}
+.sop-foundation.sop-warm-book-pages.sop-warm-book-pages .ff-page-info{font:28px/1.4 Georgia,serif;text-align:center}
+
+}

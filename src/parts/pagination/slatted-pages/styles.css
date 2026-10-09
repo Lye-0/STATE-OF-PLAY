@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 二本の縦の胴縁に、実ページの広い羽目板を取り付けるページ送り。54pxの板面、12pxの上木口と10pxの下木口、板間4pxの空隙を組む。幅10pxの胴縁へ各板の両端を4px重ね、支持から離れた板にしない。番号は実板へ固定し、省略区間の隙間では胴縁だけが続く。前後も同じ板材を持つ。 */
+/* 薄い縦の羽根を一列に並べるページ送り。厚い階段を廃し、選択した一枚の羽根を濃い面へ切り替える。 */
 
 .sop-foundation.sop-slatted-pages.sop-slatted-pages{--paper:#f7f1e6;--ink:#554b3e;--muted:#796c59;--accent:#805e3b;--edge:#d5c4a6;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-accent2:var(--accent);--ff-line:var(--edge);color:var(--ink);color-scheme:light;max-width:min(100%,380px);width:100%;min-width:0;background:var(--paper);padding:18px;container-type:inline-size;overflow-wrap:anywhere}
 .sop-foundation.sop-slatted-pages.sop-slatted-pages,.sop-foundation.sop-slatted-pages.sop-slatted-pages *,.sop-foundation.sop-slatted-pages.sop-slatted-pages *::before,.sop-foundation.sop-slatted-pages.sop-slatted-pages *::after{box-sizing:border-box}
@@ -38,3 +38,15 @@
 .sop-foundation.sop-slatted-pages.sop-slatted-pages .ff-pages[data-layout=anchored]>:is(button,a){border:0;border-top:6px solid #e0e8cf;border-bottom:7px solid #a6b88a;background:#d3dfbd;color:var(--ink)}
 @container(max-width:300px){.sop-foundation.sop-slatted-pages.sop-slatted-pages .ff-pages[data-layout=anchored]>.ff-page-window{grid-template-columns:minmax(0,1fr);min-height:0}}
 .sop-foundation.sop-slatted-pages.sop-slatted-pages .ff-pages[data-layout=anchored]>.ff-page-window{padding-inline:6px}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-slatted-pages.sop-slatted-pages{--paper:#edf0eb;--ink:#3c4c50;--muted:#5b6b6a;--accent:#4e737c;--edge:#b0c3c4}
+.sop-foundation.sop-slatted-pages.sop-slatted-pages .ff-pages[data-layout=anchored]>.ff-page-window{display:flex;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;gap:4px;padding:8px 3px 14px;min-height:0;background:none;border-block:2px solid #a7bdbe;scrollbar-width:thin}
+.sop-foundation.sop-slatted-pages.sop-slatted-pages .ff-page-window :is(button,a){flex:0 0 36px;min-width:36px;width:auto;height:88px;border:0;border-inline:3px solid #c8d7d5;background:linear-gradient(90deg,#e3eae2,#f3f4e9);color:#3c5159;padding:0;justify-items:center;border-radius:0;position:relative;isolation:isolate}
+.sop-foundation.sop-slatted-pages.sop-slatted-pages .ff-page-window [aria-current=page]{background:#4e737c;border-inline-color:#76959d;color:#fff;box-shadow:inset 0 5px #a6bdc2,inset 0 -5px #365660}
+.sop-foundation.sop-slatted-pages.sop-slatted-pages .ff-page-window :is(button,a)::after{content:'';display:block;position:absolute;inset:6px 0 auto;height:1px;background:#a7bdbe;pointer-events:none}
+.sop-foundation.sop-slatted-pages.sop-slatted-pages .ff-ellipsis{flex:0 0 20px;height:88px;min-width:20px}
+.sop-foundation.sop-slatted-pages.sop-slatted-pages .ff-pages[data-layout=anchored]>:is(button,a){border:0;border-inline:3px solid #b6cccd;background:#e0e9e4;color:#42606a}
+
+}

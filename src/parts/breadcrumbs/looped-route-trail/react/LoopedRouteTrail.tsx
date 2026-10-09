@@ -39,7 +39,7 @@ const config: FoundationConfig = {
   ]
 };
 export type LoopedRouteTrailProps = FoundationProps;
-/** 一つの連続した二重のループ材が、実祖先の経路から現在の読む端子を保持するパンくず。普通のピンクのリンク列を廃し、64px幅の上下の本物の空隙と、現在の紙の裏へ12px入る60pxの渡りを作る。文字は76px内側へ置き、ループの輪郭と交点へ重ねない。値や階層を輪の進捗として捏造せず、全体の高さだけを実階層に合わせる。 */
+/** 小さな輪を各階層に一つずつ置き、細い線で順につなぐ経路表示。大きな輪と横棒を除き、文字の余白を守る。 */
 export default forwardRef<HTMLDivElement, LoopedRouteTrailProps>(function LoopedRouteTrail(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBreadcrumbs} mountContent={mountBreadcrumbs}/>;
 });

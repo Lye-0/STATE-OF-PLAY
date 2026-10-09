@@ -12,6 +12,7 @@ let page=await createPage(),activeCategory:string|undefined;
 fs.mkdirSync(path.join(out,'photos'),{recursive:true});const results:{id:string;category:string;gallery:boolean;states:boolean}[]=[];
 try{
  for(const d of specs){
+  console.log((captureOnly?'CAPTURE START ':'RUN ')+d.id);
   // Imported category CSS remains in a document even after its cards unmount.
   // Bound this exhaustive screenshot run to one category per context; the
   // separate lazy-loading suite retains forward/reverse category-order checks.
@@ -33,7 +34,18 @@ try{
   else if(d.category==='textboxes'){const input=card.locator('input:not([type=hidden]),textarea').first();await input.fill('使いやすいデザイン');assert.equal(await input.inputValue(),'使いやすいデザイン');}
   else if(d.category==='accordions'){await card.locator('.sop-accordion-trigger').last().click();assert.equal(await card.locator('.sop-accordion-trigger').last().getAttribute('aria-expanded'),'true');}
   else if(d.category==='buttons'){await card.locator('.sop-action').click();await page.waitForTimeout(100);}
-  else if(['tabs','segments'].includes(d.category)){await card.locator('.sop-choice-item').last().click();assert.equal(await card.locator('.sop-choice-item').last().getAttribute('data-selected'),'true');await page.waitForFunction(id=>{const root=document.querySelector('[data-part=\"'+id+'\"]');const marker=root?.querySelector('.sop-choice-marker')?.getBoundingClientRect(),selected=root?.querySelector('.sop-choice-item[data-selected=true]')?.getBoundingClientRect();return marker&&selected&&Math.abs(marker.x-selected.x)<3&&Math.abs(marker.width-selected.width)<3;},d.id);}
+  else if(['tabs','segments'].includes(d.category)){
+   const target=card.locator('.sop-choice-item').last();
+   const paint=()=>target.evaluate(e=>({background:getComputedStyle(e).backgroundColor,beforeOpacity:getComputedStyle(e,'::before').opacity,afterOpacity:getComputedStyle(e,'::after').opacity}));
+   const unselected=await paint();await target.click();assert.equal(await target.getAttribute('data-selected'),'true');
+   assert.equal(await card.locator('.sop-choice-item[data-selected=true]').count(),1,d.id+' has one committed choice');
+   if(await card.locator('.sop-choice-marker').isVisible()){
+    await page.waitForFunction(id=>{const root=document.querySelector('[data-part="'+id+'"]');const marker=root?.querySelector('.sop-choice-marker')?.getBoundingClientRect(),selected=root?.querySelector('.sop-choice-item[data-selected=true]')?.getBoundingClientRect();return marker&&selected&&Math.abs(marker.x-selected.x)<3&&Math.abs(marker.width-selected.width)<3;},d.id);
+   }else{
+    // Some skins put the committed material on the native key itself (e.g. a bookmark).
+    assert.notDeepEqual(await paint(),unselected,d.id+' paints the committed selection without a moving marker');
+   }
+  }
   else if(d.category==='checkboxes'){await card.locator('input[type=checkbox]').check();assert.ok(await card.locator('input[type=checkbox]').isChecked());}
   else if(d.category==='sliders'){await card.locator('input[data-range]').first().fill('73');assert.match(await card.locator('[data-reading]').innerText(),/73/);}
   else if(d.category==='numbers'){const number=card.locator('[data-number]'),before=Number(await number.inputValue());await card.locator('[data-adjust="1"]').click();assert.ok(Number(await number.inputValue())>before);}

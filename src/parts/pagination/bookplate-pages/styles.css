@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 一枚の書票の読む面へ実索引をまとめ、重い二重の番号枠を取り除くページ送り。元の紙票の精度を保持し、左右7pxの貼り代、18pxの隅の留め、細い一線の紙端へ線量を絞る。番号は紙の内面へ置き、現在だけが同じ票へ濃く印刷される。前後の実操作にも一線の紙端だけを残す。 */
+/* 蔵書票の番号列に、しおりの末端を添えるページ送り。太い額縁を取り去り、現在番号から続く切り込みで位置を示す。 */
 
 .sop-foundation.sop-bookplate-pages.sop-bookplate-pages{--paper:#f7f1e6;--ink:#554b3e;--muted:#796c59;--accent:#805e3b;--edge:#d5c4a6;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-accent2:var(--accent);--ff-line:var(--edge);color:var(--ink);color-scheme:light;max-width:min(100%,380px);width:100%;min-width:0;background:var(--paper);padding:18px;container-type:inline-size;overflow-wrap:anywhere}
 .sop-foundation.sop-bookplate-pages.sop-bookplate-pages,.sop-foundation.sop-bookplate-pages.sop-bookplate-pages *,.sop-foundation.sop-bookplate-pages.sop-bookplate-pages *::before,.sop-foundation.sop-bookplate-pages.sop-bookplate-pages *::after{box-sizing:border-box}
@@ -41,3 +41,15 @@
 .sop-foundation.sop-bookplate-pages.sop-bookplate-pages .ff-page-window::before{clip-path:none;background:linear-gradient(135deg,#ceb383 0 50%,transparent 50%) left top/18px 18px no-repeat,linear-gradient(225deg,#ceb383 0 50%,transparent 50%) right top/18px 18px no-repeat}
 .sop-foundation.sop-bookplate-pages.sop-bookplate-pages .ff-page-window::after{clip-path:none;background:linear-gradient(45deg,#ceb383 0 50%,transparent 50%) left bottom/18px 18px no-repeat,linear-gradient(315deg,#ceb383 0 50%,transparent 50%) right bottom/18px 18px no-repeat}
 .sop-foundation.sop-bookplate-pages.sop-bookplate-pages .ff-pages[data-layout=anchored]>.ff-page-window{min-height:0}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-bookplate-pages.sop-bookplate-pages{--paper:#f6f0e3;--ink:#584632;--muted:#72634e;--accent:#80623d;--edge:#c4b08d}
+.sop-foundation.sop-bookplate-pages.sop-bookplate-pages .ff-pages[data-layout=anchored]>.ff-page-window{display:flex;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;gap:0;min-height:0;padding:18px 8px 25px;border:0;border-inline-start:4px solid #b39c77;background:#fffaf0;box-shadow:inset 0 -4px #dac9aa;scrollbar-width:thin}
+.sop-foundation.sop-bookplate-pages.sop-bookplate-pages .ff-page-window :is(button,a){flex:0 0 38px;width:auto;min-width:38px;height:60px;border:0;border-inline-end:1px solid #ded1b8;border-radius:0;background:none;color:#584632;font:18px/1.3 Georgia,serif;position:relative;isolation:isolate}
+.sop-foundation.sop-bookplate-pages.sop-bookplate-pages .ff-page-window [aria-current=page]{color:#fff;background:#80623d;border-color:#80623d}
+.sop-foundation.sop-bookplate-pages.sop-bookplate-pages .ff-page-window [aria-current=page]::after{content:'';display:block;position:absolute;inset:100% 0 auto;height:12px;background:#80623d;clip-path:polygon(0 0,100% 0,100% 100%,50% 60%,0 100%);pointer-events:none}
+.sop-foundation.sop-bookplate-pages.sop-bookplate-pages .ff-page-window::before,.sop-foundation.sop-bookplate-pages.sop-bookplate-pages .ff-page-window::after{display:none}
+.sop-foundation.sop-bookplate-pages.sop-bookplate-pages .ff-ellipsis{flex:0 0 20px;height:60px}
+
+}

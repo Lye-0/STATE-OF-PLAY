@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "paginationLayout": "anchored"
 };
 export type WarmBookPagesProps = FoundationProps;
-/** 狭幅でも各ページの操作幅を34px以上に保ち、必要に応じて行を折り返す。 */
+/** 本文の書体に馴染むノンブル型のページ送り。番号列の下に前後操作を置き、現在位置を大きな明朝数字で示す。 */
 export default forwardRef<HTMLDivElement, WarmBookPagesProps>(function WarmBookPages(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderPagination} mountContent={mountPagination}/>;
 });

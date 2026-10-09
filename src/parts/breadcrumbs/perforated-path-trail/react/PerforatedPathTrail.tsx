@@ -39,7 +39,7 @@ const config: FoundationConfig = {
   ]
 };
 export type PerforatedPathTrailProps = FoundationProps;
-/** 実祖先から現在までの券片を、切取り口と細い残し紙で連続させるパンくず。各ラベルの右点線を廃止し、両側6pxの切欠きと4pxの紙小口、次の券へ届く16pxの残し紙を組む。券間12pxの実空隙へ、中央の残し紙が4pxずつ券の裏へ入り、関係のない黄色い矩形列にしない。全文は切欠きから18px離す。 */
+/** 続き紙のミシン目で親階層をつなぐ経路表示。現在位置だけを一段進め、一覧ではなく到達した場所として示す。 */
 export default forwardRef<HTMLDivElement, PerforatedPathTrailProps>(function PerforatedPathTrail(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBreadcrumbs} mountContent={mountBreadcrumbs}/>;
 });

@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 一本の幅広い縫い帯へ、実階層を記す織布の読む片を通すパンくず。点線の下線を廃し、幅12pxの通し帯と、各布片の13pxの縫う切込み、その裏を回る28pxの折返しへ組み直す。帯は縦へ続き、布片の間の実空隙でも途切れない。縫合は文字から離れた32pxの余白で行い、現在も同じ布の読む面で示す。 */
+/* 縫い線を辿って現在位置へ入る経路表示。親リンクの細い面から、綴じ目のある到達面へ接続する。 */
 
 .sop-foundation.sop-stitched-route-trail.sop-stitched-route-trail{--paper:#fbf1df;--ink:#735b3c;--muted:#8c7558;--accent:#916e3d;--edge:#d6bd94;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-accent2:var(--accent);--ff-line:var(--edge);color:var(--ink);color-scheme:light;width:100%;min-width:0;max-width:min(100%,380px);padding:18px;background:var(--paper);overflow-wrap:anywhere;container-type:inline-size}
 .sop-foundation.sop-stitched-route-trail.sop-stitched-route-trail,.sop-foundation.sop-stitched-route-trail.sop-stitched-route-trail *,.sop-foundation.sop-stitched-route-trail.sop-stitched-route-trail *::before,.sop-foundation.sop-stitched-route-trail.sop-stitched-route-trail *::after{box-sizing:border-box}
@@ -37,3 +37,18 @@
 .sop-foundation.sop-stitched-route-trail.sop-stitched-route-trail .ff-crumb-more:disabled{opacity:.45;cursor:default}
 @media(forced-colors:active){.sop-foundation.sop-stitched-route-trail.sop-stitched-route-trail .ff-breadcrumb ol,.sop-foundation.sop-stitched-route-trail.sop-stitched-route-trail .ff-breadcrumb li{background:Canvas!important;border-color:ButtonText!important;box-shadow:none!important;clip-path:none!important}}
 .sop-foundation.sop-stitched-route-trail.sop-stitched-route-trail:dir(rtl) .ff-breadcrumb li{padding:12px 32px 12px 16px}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-stitched-route-trail.sop-stitched-route-trail{--paper:#f5edf1;--ink:#594353;--muted:#705d6b;--accent:#875c77;--edge:#c8adbd}
+.sop-foundation.sop-stitched-route-trail.sop-stitched-route-trail .ff-breadcrumb ol{padding:0 0 0 22px;background:none}
+.sop-foundation.sop-stitched-route-trail.sop-stitched-route-trail .ff-breadcrumb li{padding:12px 14px;min-height:52px;margin:0;position:relative}
+.sop-foundation.sop-stitched-route-trail.sop-stitched-route-trail .ff-breadcrumb li::before{inset:0;background:#fcf5f8;border:0;border-bottom:1px solid #dbc7d2;mask:none}
+.sop-foundation.sop-stitched-route-trail.sop-stitched-route-trail .ff-breadcrumb li::after{inset:auto;inset-inline-start:-12px;top:0;width:13px;height:100%;border:0;border-inline-start:2px dashed #a07893;border-bottom:1px dashed #a07893;clip-path:none;background:none;z-index:0}
+.sop-foundation.sop-stitched-route-trail.sop-stitched-route-trail .ff-breadcrumb li:last-child{margin-inline-start:14px;margin-top:12px;padding-block:17px}
+.sop-foundation.sop-stitched-route-trail.sop-stitched-route-trail .ff-breadcrumb li:last-child::after{top:-12px;height:calc(50% + 12px);width:27px;inset-inline-start:-26px}
+.sop-foundation.sop-stitched-route-trail.sop-stitched-route-trail .ff-breadcrumb li:last-child::before{border-inline-start:3px solid #a07893;background:#f3e4ee}
+.sop-foundation.sop-stitched-route-trail.sop-stitched-route-trail .ff-breadcrumb [aria-current=page]{color:#594353;font-size:17px}
+.sop-foundation.sop-stitched-route-trail.sop-stitched-route-trail:dir(rtl) .ff-breadcrumb ol{padding:0 22px 0 0;background:none}.sop-foundation.sop-stitched-route-trail.sop-stitched-route-trail:dir(rtl) .ff-breadcrumb li{padding:12px 14px}.sop-foundation.sop-stitched-route-trail.sop-stitched-route-trail:dir(rtl) .ff-breadcrumb li::after{transform:none}
+
+}

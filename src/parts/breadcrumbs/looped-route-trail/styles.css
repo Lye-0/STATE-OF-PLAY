@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 一つの連続した二重のループ材が、実祖先の経路から現在の読む端子を保持するパンくず。普通のピンクのリンク列を廃し、64px幅の上下の本物の空隙と、現在の紙の裏へ12px入る60pxの渡りを作る。文字は76px内側へ置き、ループの輪郭と交点へ重ねない。値や階層を輪の進捗として捏造せず、全体の高さだけを実階層に合わせる。 */
+/* 小さな輪を各階層に一つずつ置き、細い線で順につなぐ経路表示。大きな輪と横棒を除き、文字の余白を守る。 */
 
 .sop-foundation.sop-looped-route-trail.sop-looped-route-trail{--paper:#fbf1df;--ink:#735b3c;--muted:#8c7558;--accent:#916e3d;--edge:#d6bd94;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-accent2:var(--accent);--ff-line:var(--edge);color:var(--ink);color-scheme:light;width:100%;min-width:0;max-width:min(100%,380px);padding:18px;background:var(--paper);overflow-wrap:anywhere;container-type:inline-size}
 .sop-foundation.sop-looped-route-trail.sop-looped-route-trail,.sop-foundation.sop-looped-route-trail.sop-looped-route-trail *,.sop-foundation.sop-looped-route-trail.sop-looped-route-trail *::before,.sop-foundation.sop-looped-route-trail.sop-looped-route-trail *::after{box-sizing:border-box}
@@ -38,3 +38,20 @@
 
 .sop-foundation.sop-looped-route-trail.sop-looped-route-trail .ff-crumb-more:disabled{opacity:.45;cursor:default}
 @media(forced-colors:active){.sop-foundation.sop-looped-route-trail.sop-looped-route-trail .ff-breadcrumb ol,.sop-foundation.sop-looped-route-trail.sop-looped-route-trail .ff-breadcrumb li{background:Canvas!important;border-color:ButtonText!important;box-shadow:none!important;clip-path:none!important;mask:none!important}}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-looped-route-trail.sop-looped-route-trail{--paper:#f5ecf2;--ink:#60475a;--muted:#755f6f;--accent:#885f7b;--edge:#c9adbf}
+.sop-foundation.sop-looped-route-trail.sop-looped-route-trail .ff-breadcrumb ol{padding:0 0 0 42px}
+.sop-foundation.sop-looped-route-trail.sop-looped-route-trail .ff-breadcrumb ol::before{display:none}
+.sop-foundation.sop-looped-route-trail.sop-looped-route-trail .ff-breadcrumb li{min-height:58px;padding:14px 10px;border-bottom:1px solid #d8c1cf;position:relative}
+.sop-foundation.sop-looped-route-trail.sop-looped-route-trail .ff-breadcrumb li::before{display:block;inset:auto;inset-inline-start:-34px;top:calc(50% - 12px);width:26px;height:24px;border:3px solid #af8ba3;border-radius:50%;background:none;mask:none;box-shadow:inset 0 1px #ecd9e4;z-index:0}
+.sop-foundation.sop-looped-route-trail.sop-looped-route-trail .ff-breadcrumb li:not(:last-child)::after{content:'';display:block;position:absolute;inset:auto;inset-inline-start:-22px;top:calc(50% + 12px);width:2px;height:calc(50% + 17px);background:#b999ae;z-index:0}
+.sop-foundation.sop-looped-route-trail.sop-looped-route-trail .ff-breadcrumb li:last-child{margin-top:0;padding:18px 14px;min-height:70px;background:#f9eff5;border-bottom:3px solid #c1a1b7}
+.sop-foundation.sop-looped-route-trail.sop-looped-route-trail .ff-breadcrumb li:last-child::before{inset-inline-start:-34px;top:calc(50% - 12px);width:26px;height:24px;background:#ead6e3;border:3px solid #956e88;border-radius:50%;z-index:0}
+.sop-foundation.sop-looped-route-trail.sop-looped-route-trail .ff-breadcrumb [aria-current=page]{font-size:18px;color:#60475a}
+.sop-foundation.sop-looped-route-trail.sop-looped-route-trail:dir(rtl) .ff-breadcrumb ol{padding:0 42px 0 0}
+
+}
+
+@media(forced-colors:none){.sop-foundation.sop-looped-route-trail.sop-looped-route-trail a:hover:not([aria-disabled=true]){color:#744e68}}

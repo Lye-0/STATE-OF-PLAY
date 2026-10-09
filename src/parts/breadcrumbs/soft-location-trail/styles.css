@@ -1,8 +1,22 @@
 @import "../../../shared/foundation/base.css";
-/* Soft Location Trail — 柔らかい面で現在位置をまとめる。 */
+/* Soft Location Trail — 親階層を小さなパス、現在位置を次の行の見出しとして示す経路表示。詳細ページの見出しに添えやすくする。 */
 .sop-foundation.sop-soft-location-trail {--ff-base:#e9dfe5;--ff-panel:#f6edf4;--ff-ink:#493747;--ff-muted:#5a4355;--ff-accent:#70475f;--ff-accent2:#70475f;--ff-line:#beabba;--ff-radius:5px;color-scheme:light;background:#e9dfe5;padding:18px;border-radius:4px}.sop-foundation.sop-soft-location-trail .ff-eyebrow{display:none}.sop-foundation.sop-soft-location-trail .ff-heading{line-height:1.6;font-size:12px}.sop-foundation.sop-soft-location-trail .ff-floating{color:var(--ff-ink);background:var(--ff-panel)}.sop-foundation.sop-soft-location-trail .ff-breadcrumb{border:0;border-radius:12px;padding:17px}.sop-foundation.sop-soft-location-trail .ff-breadcrumb li:not(:last-child):after{content:'›'}
 .sop-foundation.sop-soft-location-trail{max-width:100%}.sop-foundation.sop-soft-location-trail,.sop-foundation.sop-soft-location-trail *{box-sizing:border-box}.sop-foundation.sop-soft-location-trail :is(button,input,textarea,a){min-width:0}
 .sop-foundation.sop-soft-location-trail:focus-visible,.sop-foundation.sop-soft-location-trail :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-foundation.sop-soft-location-trail,.sop-foundation.sop-soft-location-trail *,.sop-foundation.sop-soft-location-trail::before,.sop-foundation.sop-soft-location-trail::after,.sop-foundation.sop-soft-location-trail *::before,.sop-foundation.sop-soft-location-trail *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-foundation.sop-soft-location-trail[data-sop-paused] *,.sop-foundation.sop-soft-location-trail[data-paused=true] *,.sop-foundation.sop-soft-location-trail[data-motion-running=false] *,.sop-foundation.sop-soft-location-trail[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-foundation.sop-soft-location-trail{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-soft-location-trail :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-soft-location-trail.sop-soft-location-trail{--ff-base:#f3eef1;--ff-panel:#fff8fc;--ff-ink:#55424f;--ff-muted:#745f6e;--ff-accent:#80576f;--ff-line:#d3bfcb;background:#f3eef1;padding:18px}
+.sop-foundation.sop-soft-location-trail.sop-soft-location-trail .ff-breadcrumb{padding:0;border:0;background:none;border-radius:0}
+.sop-foundation.sop-soft-location-trail.sop-soft-location-trail .ff-breadcrumb ol{display:flex;flex-wrap:wrap;gap:7px;align-items:center;padding:0}
+.sop-foundation.sop-soft-location-trail.sop-soft-location-trail .ff-breadcrumb li{font-size:11px;color:#745f6e;min-width:0}
+.sop-foundation.sop-soft-location-trail.sop-soft-location-trail .ff-breadcrumb li:last-child{flex:1 0 100%;padding:14px 0 0;margin-top:6px;border-top:1px solid #cbb6c3;font-size:18px;line-height:1.6}
+.sop-foundation.sop-soft-location-trail.sop-soft-location-trail .ff-breadcrumb [aria-current=page]{font:600 18px/1.6 Arial,'Yu Gothic',sans-serif;color:#55424f}
+.sop-foundation.sop-soft-location-trail.sop-soft-location-trail .ff-crumb-more{border:1px solid #c7afbe;border-radius:4px;background:#fff8fc;min-height:30px;color:#745269}
+
+}
+
+.sop-foundation.sop-soft-location-trail.sop-soft-location-trail .ff-crumb-menu{min-width:0;max-width:calc(100vw - 24px)}.sop-foundation.sop-soft-location-trail.sop-soft-location-trail .ff-crumb-menu a{display:block;min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere;word-break:normal;line-height:1.7}

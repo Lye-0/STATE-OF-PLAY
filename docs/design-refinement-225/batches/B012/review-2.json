@@ -1,0 +1,268 @@
+{
+  "batch": "B012",
+  "round": 2,
+  "overall": "changes_required",
+  "parts": [
+    {
+      "id": "slatted-pages",
+      "number": 404,
+      "verdict": "pass",
+      "note": "薄い羽根の縦端と上下一線へ再構成し、旧緑の厚い階段から別の選択機構になった。番号と選択面が安定し、狭幅でも列を維持。",
+      "findings": [],
+      "evidence": [
+        "evidence-2/pagination-portable-base-sheet.jpg",
+        "evidence-2/pagination-gallery-base-sheet.jpg",
+        "evidence-2/pagination-portable-222-sheet.jpg",
+        "evidence-2/pagination-gallery-222-sheet.jpg"
+      ],
+      "reviewed": [
+        "round2 frozen portable",
+        "actual gallery CSS + frozen init fixture",
+        "rest/hover entry/exit/reentry/returned",
+        "320 viewport / long label / RTL / forced / reduced",
+        "root222 LTR/RTL 1000 pages current999; update2 without stale focus; scale .75; Tab; Enter; pointer; disabled; readonly"
+      ]
+    },
+    {
+      "id": "bookplate-pages",
+      "number": 405,
+      "verdict": "pass",
+      "note": "太い額縁を除き、選択番号から下へ続くしおりの切込みに意味を集めた。数値に対する独自性が読み取れる。",
+      "findings": [],
+      "evidence": [
+        "evidence-2/pagination-portable-base-sheet.jpg",
+        "evidence-2/pagination-gallery-base-sheet.jpg",
+        "evidence-2/pagination-portable-222-sheet.jpg",
+        "evidence-2/pagination-gallery-222-sheet.jpg"
+      ],
+      "reviewed": [
+        "round2 frozen portable",
+        "actual gallery CSS + frozen init fixture",
+        "rest/hover entry/exit/reentry/returned",
+        "320 viewport / long label / RTL / forced / reduced",
+        "root222 LTR/RTL 1000 pages current999; update2 without stale focus; scale .75; Tab; Enter; pointer; disabled; readonly"
+      ]
+    },
+    {
+      "id": "soft-reading-pages",
+      "number": 408,
+      "verdict": "pass",
+      "note": "大きい前後操作を上段に置き、番号列を補助へ下げた。続けて読む用途が他 B と配置から区別できる。",
+      "findings": [],
+      "evidence": [
+        "evidence-2/pagination-portable-base-sheet.jpg",
+        "evidence-2/pagination-gallery-base-sheet.jpg",
+        "evidence-2/pagination-portable-222-sheet.jpg",
+        "evidence-2/pagination-gallery-222-sheet.jpg"
+      ],
+      "reviewed": [
+        "round2 frozen portable",
+        "actual gallery CSS + frozen init fixture",
+        "rest/hover entry/exit/reentry/returned",
+        "320 viewport / long label / RTL / forced / reduced",
+        "root222 LTR/RTL 1000 pages current999; update2 without stale focus; scale .75; Tab; Enter; pointer; disabled; readonly"
+      ]
+    },
+    {
+      "id": "line-navigation-pages",
+      "number": 409,
+      "verdict": "pass",
+      "note": "前後キーと番号列が一段の細いツールバーになり、狭い領域向けの用途差が成立。実root222pxではLTR/RTLの選択とフォーカスが収まる。",
+      "findings": [],
+      "evidence": [
+        "evidence-2/pagination-portable-base-sheet.jpg",
+        "evidence-2/pagination-gallery-base-sheet.jpg",
+        "evidence-2/pagination-portable-222-sheet.jpg",
+        "evidence-2/pagination-gallery-222-sheet.jpg"
+      ],
+      "reviewed": [
+        "round2 frozen portable",
+        "actual gallery CSS + frozen init fixture",
+        "rest/hover entry/exit/reentry/returned",
+        "320 viewport / long label / RTL / forced / reduced",
+        "root222 LTR/RTL 1000 pages current999; update2 without stale focus; scale .75; Tab; Enter; pointer; disabled; readonly"
+      ]
+    },
+    {
+      "id": "warm-book-pages",
+      "number": 410,
+      "verdict": "pass",
+      "note": "明朝のノンブルと大きい現在数値、下段の前後操作で読み物のページ末尾として独立した設計になった。",
+      "findings": [],
+      "evidence": [
+        "evidence-2/pagination-portable-base-sheet.jpg",
+        "evidence-2/pagination-gallery-base-sheet.jpg",
+        "evidence-2/pagination-portable-222-sheet.jpg",
+        "evidence-2/pagination-gallery-222-sheet.jpg"
+      ],
+      "reviewed": [
+        "round2 frozen portable",
+        "actual gallery CSS + frozen init fixture",
+        "rest/hover entry/exit/reentry/returned",
+        "320 viewport / long label / RTL / forced / reduced",
+        "root222 LTR/RTL 1000 pages current999; update2 without stale focus; scale .75; Tab; Enter; pointer; disabled; readonly"
+      ]
+    },
+    {
+      "id": "stone-path-trail",
+      "number": 414,
+      "verdict": "changes_required",
+      "note": "石の面を少しずつずらし、細い枝で到達面へ接続するため旧メニュー一覧より階層を読める。hover文字色だけ修正が必要。",
+      "findings": [
+        {
+          "kind": "contrast",
+          "description": "親リンク Home のhover完了後、文字rgb(89,111,75)が実際の石の面rgb(223,231,209)上で4.338953:1。13px。portable/gallery一致。通常時6.389:1から低下する。",
+          "recommendation": "石の面を背景としてhover文字も4.5:1以上に保つ。文字色を維持し下線でhoverを示す方法でもよい。",
+          "evidence": [
+            "contrast-summary-2.json",
+            "evidence-2/breadcrumbs-portable-base-sheet.jpg",
+            "measurements-2.json"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-2/breadcrumbs-portable-base-sheet.jpg",
+        "evidence-2/breadcrumbs-gallery-base-sheet.jpg",
+        "evidence-2/breadcrumbs-portable-menus-sheet.jpg",
+        "evidence-2/breadcrumbs-gallery-menus-sheet.jpg"
+      ],
+      "reviewed": [
+        "round2 frozen portable",
+        "actual gallery CSS + frozen init fixture",
+        "rest/hover entry/exit/reentry/returned",
+        "320 viewport / long label / RTL / forced / reduced",
+        "collapsed menu / hover link / long name / Enter navigation / Escape focus return / disabled"
+      ]
+    },
+    {
+      "id": "perforated-path-trail",
+      "number": 416,
+      "verdict": "pass",
+      "note": "続き紙のミシン目を保ち、現在位置を一段進めた接続で親と到達先を分けた。素材と経路表示の関係が成立。",
+      "findings": [],
+      "evidence": [
+        "evidence-2/breadcrumbs-portable-base-sheet.jpg",
+        "evidence-2/breadcrumbs-gallery-base-sheet.jpg",
+        "evidence-2/breadcrumbs-portable-menus-sheet.jpg",
+        "evidence-2/breadcrumbs-gallery-menus-sheet.jpg"
+      ],
+      "reviewed": [
+        "round2 frozen portable",
+        "actual gallery CSS + frozen init fixture",
+        "rest/hover entry/exit/reentry/returned",
+        "320 viewport / long label / RTL / forced / reduced",
+        "collapsed menu / hover link / long name / Enter navigation / Escape focus return / disabled"
+      ]
+    },
+    {
+      "id": "stitched-route-trail",
+      "number": 418,
+      "verdict": "pass",
+      "note": "縫い線が親リンクの脇を通り、下の到達面の綴じ目へ入る。単なる横罫一覧から経路の終点を示す構造へ改善。",
+      "findings": [],
+      "evidence": [
+        "evidence-2/breadcrumbs-portable-base-sheet.jpg",
+        "evidence-2/breadcrumbs-gallery-base-sheet.jpg",
+        "evidence-2/breadcrumbs-portable-menus-sheet.jpg",
+        "evidence-2/breadcrumbs-gallery-menus-sheet.jpg"
+      ],
+      "reviewed": [
+        "round2 frozen portable",
+        "actual gallery CSS + frozen init fixture",
+        "rest/hover entry/exit/reentry/returned",
+        "320 viewport / long label / RTL / forced / reduced",
+        "collapsed menu / hover link / long name / Enter navigation / Escape focus return / disabled"
+      ]
+    },
+    {
+      "id": "looped-route-trail",
+      "number": 423,
+      "verdict": "changes_required",
+      "note": "各段の小さな輪と連続線が階層をたどる道筋として読め、文字へ近づく大きな横棒は解消。展開メニューのhover文字色を修正したい。",
+      "findings": [
+        {
+          "kind": "contrast",
+          "description": "展開メニューの Objects にhoverすると13px文字rgb(136,95,123)と面rgb(250,230,243)で4.453118:1。portable/gallery一致。",
+          "recommendation": "実際のメニュー面に対して4.5:1以上へhover文字色を調整する。",
+          "evidence": [
+            "contrast-summary-2.json",
+            "evidence-2/breadcrumbs-portable-menus-sheet.jpg",
+            "measurements-breadcrumbs-2.json"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-2/breadcrumbs-portable-base-sheet.jpg",
+        "evidence-2/breadcrumbs-gallery-base-sheet.jpg",
+        "evidence-2/breadcrumbs-portable-menus-sheet.jpg",
+        "evidence-2/breadcrumbs-gallery-menus-sheet.jpg"
+      ],
+      "reviewed": [
+        "round2 frozen portable",
+        "actual gallery CSS + frozen init fixture",
+        "rest/hover entry/exit/reentry/returned",
+        "320 viewport / long label / RTL / forced / reduced",
+        "collapsed menu / hover link / long name / Enter navigation / Escape focus return / disabled"
+      ]
+    },
+    {
+      "id": "soft-location-trail",
+      "number": 428,
+      "verdict": "changes_required",
+      "note": "小さな親パスと次行の現在見出しを分け、詳細ページに添える用途が独立した。長い階層名のメニュー内収まりは未完成。",
+      "findings": [
+        {
+          "kind": "overflow",
+          "description": "省略メニューを320pxで開き、空白なしの階層名 LongUnbrokenProjectIdentifier1234567890 を2回連結すると折り返されず、panel clientWidth238 / scrollWidth447。文字末尾が面の右へportable205.48px/gallery206.32pxはみ出し、画像では末尾が欠ける。",
+          "recommendation": "メニュー内リンクにoverflow-wrap:anywhereと縮小可能な幅を設定し、名前全体を読めるようにする。LTR/RTL/forcedでも確認する。",
+          "evidence": [
+            "evidence-2/soft-location-trail-portable-longcheck-expanded-long-menu.png",
+            "measurements-breadcrumbs-long-2.json"
+          ]
+        }
+      ],
+      "evidence": [
+        "evidence-2/breadcrumbs-portable-base-sheet.jpg",
+        "evidence-2/breadcrumbs-gallery-base-sheet.jpg",
+        "evidence-2/breadcrumbs-portable-menus-sheet.jpg",
+        "evidence-2/breadcrumbs-gallery-menus-sheet.jpg"
+      ],
+      "reviewed": [
+        "round2 frozen portable",
+        "actual gallery CSS + frozen init fixture",
+        "rest/hover entry/exit/reentry/returned",
+        "320 viewport / long label / RTL / forced / reduced",
+        "collapsed menu / hover link / long name / Enter navigation / Escape focus return / disabled"
+      ]
+    }
+  ],
+  "coverage": {
+    "parts": 10,
+    "pass": 7,
+    "changes_required": 3,
+    "sourceHashesMatchAtFinalization": true,
+    "changedAfterCapture": [],
+    "viewedSheets": [
+      "evidence-2/breadcrumbs-gallery-base-sheet.jpg",
+      "evidence-2/breadcrumbs-gallery-menus-sheet.jpg",
+      "evidence-2/breadcrumbs-portable-base-sheet.jpg",
+      "evidence-2/breadcrumbs-portable-menus-sheet.jpg",
+      "evidence-2/pagination-gallery-222-sheet.jpg",
+      "evidence-2/pagination-gallery-base-sheet.jpg",
+      "evidence-2/pagination-gallery-strip-sheet.jpg",
+      "evidence-2/pagination-portable-222-sheet.jpg",
+      "evidence-2/pagination-portable-base-sheet.jpg",
+      "evidence-2/pagination-portable-strip-sheet.jpg"
+    ],
+    "paginationClarification": "初期試験のparent222はsnapshot余白により実root174pxだった。R409はその幅でwindow30pxとなり44px対象を全表示できない。実root222pxへ揃えた追加試験は全5件通過。API値更新で既存focus1000を保持した試験ではfocusが優先されるため、選択保持の測定はblur後に分離。",
+    "scope": "上記の特定状態と対象の実操作・実画像検査であり、無欠陥保証ではない。造形判断と再現不具合を分けた。"
+  },
+  "evidence": [
+    "measurements-2.json",
+    "measurements-pagination-222-2.json",
+    "measurements-pagination-native-2.json",
+    "measurements-breadcrumbs-2.json",
+    "measurements-breadcrumbs-long-2.json",
+    "contrast-summary-2.json"
+  ]
+}

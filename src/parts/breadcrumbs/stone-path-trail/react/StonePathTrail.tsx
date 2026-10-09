@@ -39,7 +39,7 @@ const config: FoundationConfig = {
   ]
 };
 export type StonePathTrailProps = FoundationProps;
-/** 縦の階層を、丸く磨耗した石の読む床へ一つずつ載せるパンくず。元の縦経路の明快さを保持し、普通の淡緑の矩形を34pxの対角の曲面と実上下面へ整える。幅6pxの通しの道と各16pxの渡りが石へ4px入って接合し、板状のファイルツリーに見立てない。文字は磨いた平底の22px内側で読む。 */
+/** 少しずつ奥へ入る石の段を細い接続でつなぐ経路表示。親リンクと現在位置の深さを、段のずれと枝で示す。 */
 export default forwardRef<HTMLDivElement, StonePathTrailProps>(function StonePathTrail(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBreadcrumbs} mountContent={mountBreadcrumbs}/>;
 });

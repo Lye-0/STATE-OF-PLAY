@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "paginationLayout": "anchored"
 };
 export type SoftReadingPagesProps = FoundationProps;
-/** 狭幅でも各ページの操作幅を34px以上に保ち、必要に応じて行を折り返す。 */
+/** 大きな前後操作と、補助的な番号列を分けたページ送り。続けて読む操作を優先し、特定ページも選べる。 */
 export default forwardRef<HTMLDivElement, SoftReadingPagesProps>(function SoftReadingPages(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderPagination} mountContent={mountPagination}/>;
 });

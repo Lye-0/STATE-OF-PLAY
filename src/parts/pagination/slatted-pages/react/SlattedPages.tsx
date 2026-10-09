@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "paginationLayout": "anchored"
 };
 export type SlattedPagesProps = FoundationProps;
-/** 二本の縦の胴縁に、実ページの広い羽目板を取り付けるページ送り。54pxの板面、12pxの上木口と10pxの下木口、板間4pxの空隙を組む。幅10pxの胴縁へ各板の両端を4px重ね、支持から離れた板にしない。番号は実板へ固定し、省略区間の隙間では胴縁だけが続く。前後も同じ板材を持つ。 */
+/** 薄い縦の羽根を一列に並べるページ送り。厚い階段を廃し、選択した一枚の羽根を濃い面へ切り替える。 */
 export default forwardRef<HTMLDivElement, SlattedPagesProps>(function SlattedPages(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderPagination} mountContent={mountPagination}/>;
 });

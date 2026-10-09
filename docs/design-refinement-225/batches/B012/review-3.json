@@ -1,0 +1,217 @@
+{
+  "batch": "B012",
+  "round": 3,
+  "overall": "pass",
+  "parts": [
+    {
+      "id": "slatted-pages",
+      "number": 404,
+      "verdict": "pass",
+      "note": "薄い羽根の縦端と上下一線へ再構成し、旧緑の厚い階段から別の選択機構になった。番号と選択面が安定し、狭幅でも列を維持。 round3は作者ハッシュ不変でround2合格を継承。",
+      "findings": [],
+      "evidence": [
+        "evidence-2/pagination-portable-base-sheet.jpg",
+        "evidence-2/pagination-gallery-base-sheet.jpg",
+        "evidence-2/pagination-portable-222-sheet.jpg",
+        "evidence-2/pagination-gallery-222-sheet.jpg"
+      ],
+      "reviewed": [
+        "round2 pass inherited by unchanged author hash"
+      ]
+    },
+    {
+      "id": "bookplate-pages",
+      "number": 405,
+      "verdict": "pass",
+      "note": "太い額縁を除き、選択番号から下へ続くしおりの切込みに意味を集めた。数値に対する独自性が読み取れる。 round3は作者ハッシュ不変でround2合格を継承。",
+      "findings": [],
+      "evidence": [
+        "evidence-2/pagination-portable-base-sheet.jpg",
+        "evidence-2/pagination-gallery-base-sheet.jpg",
+        "evidence-2/pagination-portable-222-sheet.jpg",
+        "evidence-2/pagination-gallery-222-sheet.jpg"
+      ],
+      "reviewed": [
+        "round2 pass inherited by unchanged author hash"
+      ]
+    },
+    {
+      "id": "soft-reading-pages",
+      "number": 408,
+      "verdict": "pass",
+      "note": "大きい前後操作を上段に置き、番号列を補助へ下げた。続けて読む用途が他 B と配置から区別できる。 round3は作者ハッシュ不変でround2合格を継承。",
+      "findings": [],
+      "evidence": [
+        "evidence-2/pagination-portable-base-sheet.jpg",
+        "evidence-2/pagination-gallery-base-sheet.jpg",
+        "evidence-2/pagination-portable-222-sheet.jpg",
+        "evidence-2/pagination-gallery-222-sheet.jpg"
+      ],
+      "reviewed": [
+        "round2 pass inherited by unchanged author hash"
+      ]
+    },
+    {
+      "id": "line-navigation-pages",
+      "number": 409,
+      "verdict": "pass",
+      "note": "前後キーと番号列が一段の細いツールバーになり、狭い領域向けの用途差が成立。実root222pxではLTR/RTLの選択とフォーカスが収まる。 round3は作者ハッシュ不変でround2合格を継承。",
+      "findings": [],
+      "evidence": [
+        "evidence-2/pagination-portable-base-sheet.jpg",
+        "evidence-2/pagination-gallery-base-sheet.jpg",
+        "evidence-2/pagination-portable-222-sheet.jpg",
+        "evidence-2/pagination-gallery-222-sheet.jpg"
+      ],
+      "reviewed": [
+        "round2 pass inherited by unchanged author hash"
+      ]
+    },
+    {
+      "id": "warm-book-pages",
+      "number": 410,
+      "verdict": "pass",
+      "note": "明朝のノンブルと大きい現在数値、下段の前後操作で読み物のページ末尾として独立した設計になった。 round3は作者ハッシュ不変でround2合格を継承。",
+      "findings": [],
+      "evidence": [
+        "evidence-2/pagination-portable-base-sheet.jpg",
+        "evidence-2/pagination-gallery-base-sheet.jpg",
+        "evidence-2/pagination-portable-222-sheet.jpg",
+        "evidence-2/pagination-gallery-222-sheet.jpg"
+      ],
+      "reviewed": [
+        "round2 pass inherited by unchanged author hash"
+      ]
+    },
+    {
+      "id": "stone-path-trail",
+      "number": 414,
+      "verdict": "pass",
+      "note": "親リンクhoverは石の実背景上で5.742:1へ改善。通常/hover往復、320/長文/RTL、展開リンクとEscape復帰、forced/reducedを再確認し、元の石段と接続を維持。",
+      "findings": [],
+      "evidence": [
+        "evidence-3/breadcrumbs-portable-base-sheet.jpg",
+        "evidence-3/breadcrumbs-gallery-base-sheet.jpg",
+        "evidence-3/breadcrumbs-portable-menus-sheet.jpg",
+        "evidence-3/breadcrumbs-gallery-menus-sheet.jpg"
+      ],
+      "reviewed": [
+        "round3 frozen portable",
+        "actual gallery CSS + frozen init fixture",
+        "rest/hover entry/exit/reentry/returned",
+        "320 viewport / long label / RTL / forced / reduced",
+        "collapsed menu / hover link / long name / Enter navigation / Escape focus return / disabled"
+      ]
+    },
+    {
+      "id": "perforated-path-trail",
+      "number": 416,
+      "verdict": "pass",
+      "note": "続き紙のミシン目を保ち、現在位置を一段進めた接続で親と到達先を分けた。素材と経路表示の関係が成立。 round3は作者ハッシュ不変でround2合格を継承。",
+      "findings": [],
+      "evidence": [
+        "evidence-2/breadcrumbs-portable-base-sheet.jpg",
+        "evidence-2/breadcrumbs-gallery-base-sheet.jpg",
+        "evidence-2/breadcrumbs-portable-menus-sheet.jpg",
+        "evidence-2/breadcrumbs-gallery-menus-sheet.jpg"
+      ],
+      "reviewed": [
+        "round2 pass inherited by unchanged author hash"
+      ]
+    },
+    {
+      "id": "stitched-route-trail",
+      "number": 418,
+      "verdict": "pass",
+      "note": "縫い線が親リンクの脇を通り、下の到達面の綴じ目へ入る。単なる横罫一覧から経路の終点を示す構造へ改善。 round3は作者ハッシュ不変でround2合格を継承。",
+      "findings": [],
+      "evidence": [
+        "evidence-2/breadcrumbs-portable-base-sheet.jpg",
+        "evidence-2/breadcrumbs-gallery-base-sheet.jpg",
+        "evidence-2/breadcrumbs-portable-menus-sheet.jpg",
+        "evidence-2/breadcrumbs-gallery-menus-sheet.jpg"
+      ],
+      "reviewed": [
+        "round2 pass inherited by unchanged author hash"
+      ]
+    },
+    {
+      "id": "looped-route-trail",
+      "number": 423,
+      "verdict": "pass",
+      "note": "展開メニューhoverは実背景上で5.830:1へ改善。小さな輪と経路線の造形を保ち、リンク操作とEscape復帰、320/RTL/forced/reducedも通過。",
+      "findings": [],
+      "evidence": [
+        "evidence-3/breadcrumbs-portable-base-sheet.jpg",
+        "evidence-3/breadcrumbs-gallery-base-sheet.jpg",
+        "evidence-3/breadcrumbs-portable-menus-sheet.jpg",
+        "evidence-3/breadcrumbs-gallery-menus-sheet.jpg"
+      ],
+      "reviewed": [
+        "round3 frozen portable",
+        "actual gallery CSS + frozen init fixture",
+        "rest/hover entry/exit/reentry/returned",
+        "320 viewport / long label / RTL / forced / reduced",
+        "collapsed menu / hover link / long name / Enter navigation / Escape focus return / disabled"
+      ]
+    },
+    {
+      "id": "soft-location-trail",
+      "number": 428,
+      "verdict": "pass",
+      "note": "長い空白なし階層名がLTR/RTL/forcedで折り返され、メニューclientWidth238とscrollWidth238が一致。portable/galleryで再現した旧約206pxのはみ出しは解消。Enterリンク移動、Escape復帰を維持。",
+      "findings": [],
+      "evidence": [
+        "evidence-3/breadcrumbs-portable-base-sheet.jpg",
+        "evidence-3/breadcrumbs-gallery-base-sheet.jpg",
+        "evidence-3/breadcrumbs-portable-menus-sheet.jpg",
+        "evidence-3/breadcrumbs-gallery-menus-sheet.jpg",
+        "evidence-3/soft-location-trail-portable-longcheck-expanded-forced-menu.png",
+        "evidence-3/soft-location-trail-gallery-longcheck-expanded-forced-menu.png",
+        "measurements-breadcrumbs-long-3.json"
+      ],
+      "reviewed": [
+        "round3 frozen portable",
+        "actual gallery CSS + frozen init fixture",
+        "rest/hover entry/exit/reentry/returned",
+        "320 viewport / long label / RTL / forced / reduced",
+        "collapsed menu / hover link / long name / Enter navigation / Escape focus return / disabled"
+      ]
+    }
+  ],
+  "coverage": {
+    "parts": 10,
+    "pass": 10,
+    "changes_required": 0,
+    "retested": [
+      414,
+      423,
+      428
+    ],
+    "inheritedByUnchangedHash": [
+      404,
+      405,
+      408,
+      409,
+      410,
+      416,
+      418
+    ],
+    "sharedNavigationHashUnchanged": true,
+    "allCurrentSourceHashesMatch": true,
+    "viewedSheets": [
+      "evidence-3/breadcrumbs-gallery-base-sheet.jpg",
+      "evidence-3/breadcrumbs-gallery-menus-sheet.jpg",
+      "evidence-3/breadcrumbs-portable-base-sheet.jpg",
+      "evidence-3/breadcrumbs-portable-menus-sheet.jpg"
+    ],
+    "scope": "特定条件の実操作・実画像再検査。無欠陥保証ではない。"
+  },
+  "evidence": [
+    "measurements-3.json",
+    "measurements-breadcrumbs-3.json",
+    "measurements-breadcrumbs-long-3.json",
+    "contrast-summary-3.json",
+    "review-2.json"
+  ]
+}

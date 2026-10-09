@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 縦の階層を、丸く磨耗した石の読む床へ一つずつ載せるパンくず。元の縦経路の明快さを保持し、普通の淡緑の矩形を34pxの対角の曲面と実上下面へ整える。幅6pxの通しの道と各16pxの渡りが石へ4px入って接合し、板状のファイルツリーに見立てない。文字は磨いた平底の22px内側で読む。 */
+/* 少しずつ奥へ入る石の段を細い接続でつなぐ経路表示。親リンクと現在位置の深さを、段のずれと枝で示す。 */
 
 .sop-foundation.sop-stone-path-trail.sop-stone-path-trail{--paper:#fbf1df;--ink:#735b3c;--muted:#8c7558;--accent:#916e3d;--edge:#d6bd94;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-accent2:var(--accent);--ff-line:var(--edge);color:var(--ink);color-scheme:light;width:100%;min-width:0;max-width:min(100%,380px);padding:18px;background:var(--paper);overflow-wrap:anywhere;container-type:inline-size}
 .sop-foundation.sop-stone-path-trail.sop-stone-path-trail,.sop-foundation.sop-stone-path-trail.sop-stone-path-trail *,.sop-foundation.sop-stone-path-trail.sop-stone-path-trail *::before,.sop-foundation.sop-stone-path-trail.sop-stone-path-trail *::after{box-sizing:border-box}
@@ -36,3 +36,20 @@
 .sop-foundation.sop-stone-path-trail.sop-stone-path-trail:dir(rtl) .ff-breadcrumb li::before{transform:scaleX(-1)}
 .sop-foundation.sop-stone-path-trail.sop-stone-path-trail .ff-crumb-more:disabled{opacity:.45;cursor:default}
 @media(forced-colors:active){.sop-foundation.sop-stone-path-trail.sop-stone-path-trail .ff-breadcrumb ol,.sop-foundation.sop-stone-path-trail.sop-stone-path-trail .ff-breadcrumb li{background:Canvas!important;border-color:ButtonText!important;box-shadow:none!important;clip-path:none!important}}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-stone-path-trail.sop-stone-path-trail{--paper:#eef1e7;--ink:#435440;--muted:#64715b;--accent:#596f4b;--edge:#b7c6a4}
+.sop-foundation.sop-stone-path-trail.sop-stone-path-trail .ff-breadcrumb ol{padding:0 0 0 10px;background:none}
+.sop-foundation.sop-stone-path-trail.sop-stone-path-trail .ff-breadcrumb li{min-height:54px;padding:12px 18px;margin:0 0 12px}
+.sop-foundation.sop-stone-path-trail.sop-stone-path-trail .ff-breadcrumb li:nth-child(2){margin-inline-start:12px}.sop-foundation.sop-stone-path-trail.sop-stone-path-trail .ff-breadcrumb li:nth-child(n+3){margin-inline-start:24px}
+.sop-foundation.sop-stone-path-trail.sop-stone-path-trail .ff-breadcrumb li::before{border-top:3px solid #eef3e2;border-bottom:4px solid #adbd97;border-radius:12px 3px 12px 3px;background:#dfe7d1}
+.sop-foundation.sop-stone-path-trail.sop-stone-path-trail .ff-breadcrumb li:not(:first-child)::after{inset:auto;inset-inline-start:-13px;top:-21px;width:18px;height:44px;border:0;border-inline-start:2px solid #8fa178;border-bottom:2px solid #8fa178;background:none;z-index:0}
+.sop-foundation.sop-stone-path-trail.sop-stone-path-trail .ff-breadcrumb li:first-child::after{display:none}
+.sop-foundation.sop-stone-path-trail.sop-stone-path-trail .ff-breadcrumb li:last-child::before{background:#f8faed;border-bottom-color:#738a5f}
+.sop-foundation.sop-stone-path-trail.sop-stone-path-trail .ff-breadcrumb [aria-current=page]{font-size:17px;color:#435440}
+.sop-foundation.sop-stone-path-trail.sop-stone-path-trail:dir(rtl) .ff-breadcrumb ol{padding:0 10px 0 0;background:none}
+
+}
+
+@media(forced-colors:none){.sop-foundation.sop-stone-path-trail.sop-stone-path-trail a:hover:not([aria-disabled=true]){color:#485c3c}}

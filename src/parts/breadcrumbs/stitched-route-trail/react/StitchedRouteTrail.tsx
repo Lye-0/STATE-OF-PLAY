@@ -39,7 +39,7 @@ const config: FoundationConfig = {
   ]
 };
 export type StitchedRouteTrailProps = FoundationProps;
-/** 一本の幅広い縫い帯へ、実階層を記す織布の読む片を通すパンくず。点線の下線を廃し、幅12pxの通し帯と、各布片の13pxの縫う切込み、その裏を回る28pxの折返しへ組み直す。帯は縦へ続き、布片の間の実空隙でも途切れない。縫合は文字から離れた32pxの余白で行い、現在も同じ布の読む面で示す。 */
+/** 縫い線を辿って現在位置へ入る経路表示。親リンクの細い面から、綴じ目のある到達面へ接続する。 */
 export default forwardRef<HTMLDivElement, StitchedRouteTrailProps>(function StitchedRouteTrail(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderBreadcrumbs} mountContent={mountBreadcrumbs}/>;
 });

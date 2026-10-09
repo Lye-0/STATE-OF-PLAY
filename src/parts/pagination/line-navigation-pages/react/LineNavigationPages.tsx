@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "paginationLayout": "anchored"
 };
 export type LineNavigationPagesProps = FoundationProps;
-/** 狭幅でも各ページの操作幅を34px以上に保ち、必要に応じて行を折り返す。 */
+/** 前後操作・番号・現在位置を一つの細いツールバーへまとめるページ送り。狭い操作領域へ組み込みやすくする。 */
 export default forwardRef<HTMLDivElement, LineNavigationPagesProps>(function LineNavigationPages(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderPagination} mountContent={mountPagination}/>;
 });

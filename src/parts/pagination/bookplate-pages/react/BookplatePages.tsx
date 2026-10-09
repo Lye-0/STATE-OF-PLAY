@@ -15,7 +15,7 @@ const config: FoundationConfig = {
   "paginationLayout": "anchored"
 };
 export type BookplatePagesProps = FoundationProps;
-/** 一枚の書票の読む面へ実索引をまとめ、重い二重の番号枠を取り除くページ送り。元の紙票の精度を保持し、左右7pxの貼り代、18pxの隅の留め、細い一線の紙端へ線量を絞る。番号は紙の内面へ置き、現在だけが同じ票へ濃く印刷される。前後の実操作にも一線の紙端だけを残す。 */
+/** 蔵書票の番号列に、しおりの末端を添えるページ送り。太い額縁を取り去り、現在番号から続く切り込みで位置を示す。 */
 export default forwardRef<HTMLDivElement, BookplatePagesProps>(function BookplatePages(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderPagination} mountContent={mountPagination}/>;
 });
