@@ -104,6 +104,13 @@ for row,part,review in approved:
   actual=next((p for p in reversed(native) if all((p/f"{row['id']}-{name}.png").exists() for name in ['initial','image-fallback','narrow-320','long-rtl-320'])),None)
   assert actual is not None,f"Missing native avatar fallback/long name: {row['id']}"
   images+=figure(beforeAvatar,'修正前・配布版の人物紹介')+figure(actual/f"{row['id']}-initial.png",'修正後・実人物と状態')+figure(actual/f"{row['id']}-image-fallback.png",'修正後・画像と読込失敗時の代替')+figure(actual/f"{row['id']}-portrait.png",'修正後・実写真の肖像')+figure(actual/f"{row['id']}-narrow-320.png",'修正後・320pxの長い人物名')+figure(actual/f"{row['id']}-long-rtl-320.png",'修正後・320pxと右から左の長い人物名')
+ if row['category']=='colors':
+  beforeColor=w/'evidence/baseline'/f"{row['id']}-color.png"
+  assert beforeColor.exists(),f"Missing original real color picker: {row['id']}"
+  native=sorted((d/'captures').glob('colors-self-*'),key=lambda p:int(p.name.split('-')[-1]))
+  actual=next((p for p in reversed(native) if all((p/f"{row['id']}-{name}.png").exists() for name in ['initial','selected','invalid','narrow-320','long-rtl-320','forced-dark'])),None)
+  assert actual is not None,f"Missing native color value/error/RTL evidence: {row['id']}"
+  images+=figure(beforeColor,'修正前・配布版のカラー選択')+figure(actual/f"{row['id']}-initial.png",'修正後・色面と実軸')+figure(actual/f"{row['id']}-selected.png",'修正後・実HEX値を入力')+figure(actual/f"{row['id']}-invalid.png",'修正後・無効値の入力エラー')+figure(actual/f"{row['id']}-narrow-320.png",'修正後・320pxと長い見出し')+figure(actual/f"{row['id']}-long-rtl-320.png",'修正後・右から左への表示')+figure(actual/f"{row['id']}-forced-dark.png",'修正後・暗い強制配色')
  if row['category']=='ratings':
   beforeRating=w/'evidence/baseline'/f"{row['id']}-rating.png"
   assert beforeRating.exists(),f"Missing original real rating: {row['id']}"

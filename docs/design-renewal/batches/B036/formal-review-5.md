@@ -1,0 +1,80 @@
+# B036 round 5 — pass
+
+全10件pass。R499の実接合、R502の三翼、R504の一体の陶の面と裾を再審査。固定版のみを評価し、実装・snapshot編集なし。
+
+## R496 notched-disc-rating — pass
+
+元監査T。円盤と星の主形を保ち、上5px/下7pxと切欠きの輪郭へ整理。確定の縁でも星とnative押面は変わらない。R491の蝋の円盤との近似はあるが、新規再設計の独創性を合格根拠にせず、原版Tの曲率と読みの保持として合格。
+
+近似比較: 元R496, R491。
+
+## R497 rail-signal-rating — pass
+
+元監査T。星面の下12pxへ入る10px支柱が、下の14pxレールへ5px入る。上下の接合と、折返し各行でレールが完結することを確認。実信号面・支柱・足元の関係を保持し、過去の小さな飾りレールへ戻らない。
+
+近似比較: 元R497, R302, R422。
+
+## R498 stitch-star-rating — pass
+
+34px縦帯と40pxの連続横帯が大きく交差し、上下には本当の空隙が残る。星は交点の同じ平面で読み、縦帯の端と横帯の読む面が異なる役割を持つ。R503の一枚の連続帯、R265の穴を通る縦帯とは接続と主形が異なる。布の細かい模様を追加したことを独創性の根拠にはせず、大きい交差と開きとして合格。
+
+近似比較: R503, R265, R278。
+
+## R499 open-bracket-rating — pass
+
+前爪を論理始点8px・幅26pxへ変更し、C縦材へ2px、紙へ12pxの実重なりが成立した。上下の爪は前面で紙を保持し、Cの曲がる自由端との間には空隙が残る。RTLでも同じ接合を確認。R439の太い直角Cが直接読む面を覆う構成と異なり、曲がった外材と独立の前爪が支持の役割を分ける。
+
+近似比較: R439, R083修正前, 元R499。
+
+## R500 coin-value-rating — pass
+
+元監査T。五角形のコインと星を保ち、上7px/下9pxの同素材の鋳造面へ揃えた。確定の内縁は幾何を変えず、2〜10段階でも五角形の主形を保つ。
+
+近似比較: 元R500, R180, R400。
+
+## R501 flag-score-rating — pass
+
+8pxの支柱と28pxの足へ、始点4pxが重なる一枚の旗が接続する。右の13px二股の自由端が写真カードや星キーとは異なる外形を作る。RTLでは材と星をそれぞれ正しく処理し、読む星とnative順序は安定。
+
+近似比較: R440, R393, 元R501。
+
+## R502 blueprint-score-rating — pass
+
+上壁・脚・下開口の列を全廃し、三枚の放射する折翼が中央44pxの接合面へ入る独立形へ再設計。星は固定した中央面で読み、翼間には大きい真の空隙がある。R494の石の列の色・開口差分ではなく、支持と読む面の関係そのものが変わった。2〜10段階と狭幅/RTLで三翼の接続と星の固定を確認。
+
+近似比較: R494 round5, R379, 元R502。
+
+## R503 ribbon-score-rating — pass
+
+元監査T。一つの連続した帯へ星を直接置き、細い接続線と小さい丸い箱を整理。上7px/下10pxの返りと先頭/末尾の巻端を保持する。選択で帯や星を伸縮させない。
+
+近似比較: 元R503, R283, R498。
+
+## R504 ceramic-score-rating — pass
+
+個別のアーチキーと小さい楕円を全廃。一列全体の非対称な陶の読む壁と、52px高の大きく反る裾が26px重なって一体の自立面を作る。星は個別の箱に入らず、同じ平面へ直接置く。最大10段階の狭幅で縦に伸びても壁から裾への接合が残る。R480の個別アーチや旧R494の石＋受けの反復を避け、R215の浅い鉢とも立つ読む壁の構成が異なる。
+
+近似比較: R480, R494 round4, R215, 元R504。
+
+## R505 letterpress-score-rating — pass
+
+元監査T。四角い活版面と星を保持し、上7px/下10px/左右4pxと6pxの断面を同素材へ整理。大きい新規造形を要求するRとは分け、原版の版の密度と固定した読む面を磨いたものとして合格。
+
+近似比較: 元R505, R401, R495 round4。
+
+## 検証範囲
+
+- 固定round5 source100 SHA256全一致、portable CSS10全一致（importのみ除外）。captures/reviewer-hashes-5.json。round2から89hash不変、変更はR499 CSS1、R502/R504のCSSと説明類各5ファイルのみ。通常造形合格7部品70hash不変。
+- 独立actual portable native全10標準protocol成功、pageerrors=[]。Home/End/ArrowRight/Space、実radio、hover/legend解除、clear、controlled拒否/受入、readOnly native checked、disabled、required/clearable、FormData/reset、label更新focus、destroy-reset不動作、forced/reducedを再実行。reviewer-ratings-5/checks.json。
+- 全10×2/3/5/10段階×1000/320×LTRRTL＝160条件を追加操作・撮影。通常hover100ms→legend→再hover→確定で星/native hit/fontのroot相対座標不変。10段階長文320/390/768×LTRRTLの60条件も再確認。reviewer-rating-states-5。
+- 全10のmax5→2更新直後preview0を確認。共有rating.jsは固定round2/round5でbyte一致のため、readOnly/disabledへの更新後preview0/filled2はround2の独立検査も継承。
+- 暗いforced-colors全10を再撮影。Canvas黒/未選択SVG stroke白/選択Highlightを保持し、各文字RangeからRTLの2 / 10の順序固定を再確認。reviewer-rating-dark-5/checks.json。
+- R498/499/501/502/504×1000/320×LTRRTL×2/10段階＝40条件を背景黒で撮影。R499の両接合、R502の翼間の全層空隙と中央面、R504の壁/裾の実26px重なりを確認。reviewer-materials-5。背景変更は素材検査のみであり、通常色の見出しの暗さを製品UI不具合として扱わない。
+- 不変7件は元監査Tの形の保持と既承認比較をround2から引き継ぎ。変更3件は支持接合と大きい主形を実像で再評価し、R439/R494/R480/旧R494等との近似を照合。
+- 主担当logs/react-ratings-5.logの10×4 actual形式全PASSを補助確認。独立Reactの再実行とは区別。
+- 実装・snapshot編集なし。中間round3/4は今回の正式判定対象としていない。
+
+## 限界
+
+- 独立React四形式の再実行はしていない。固定portable nativeの操作と主担当実形式ログを区別している。
+- 追加の最大数造形検査は2/3/5/10を抽出し、全整数と全画面幅の組合せの総当たりではない。
