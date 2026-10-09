@@ -130,6 +130,16 @@ for row,part,review in approved:
   for name,label in [('path-1','修正後・実祖先が一階層ある状態'),('path-2','修正後・実祖先が二階層ある状態')]:
    assert (actual/f"{row['id']}-{name}.png").exists(),f"Missing actual ancestor face: {row['id']}"
    images+=figure(actual/f"{row['id']}-{name}.png",label)
+ if row['category']=='contextmenus':
+  beforeContext=w/'evidence/baseline'/f"{row['id']}-context.png"
+  beforeOpen=w/'evidence/baseline'/f"{row['id']}-open.png"
+  assert beforeContext.exists() and beforeOpen.exists(),f"Missing original actual Context target/menu: {row['id']}"
+  native=sorted((d/'captures').glob('contexts-self-*'),key=lambda p:int(p.name.split('-')[-1]))
+  names=['initial','open','checked','submenu','error','empty','narrow-320','long-rtl-320','forced-dark']
+  actual=next((p for p in reversed(native) if all((p/f"{row['id']}-{name}.png").exists() for name in names)),None)
+  assert actual is not None,f"Missing native Context checks/submenu/error/empty/long/RTL/forced evidence: {row['id']}"
+  images+=figure(beforeContext,'修正前・配布版の実操作対象')+figure(beforeOpen,'修正前・実際に開いた配布版のメニュー')
+  for name,label in [('initial','修正後・配布版の実操作対象'),('open','修正後・実際に開いた操作メニュー'),('checked','修正後・実チェック操作'),('submenu','修正後・実サブメニュー'),('error','修正後・操作失敗の通知'),('empty','修正後・操作が空の状態'),('narrow-320','修正後・320pxの長い実メニュー'),('long-rtl-320','修正後・右から左への実メニュー'),('forced-dark','修正後・暗い強制配色')]:images+=figure(actual/f"{row['id']}-{name}.png",label)
  if row['category']=='searchbars':
   beforeSearch=w/'evidence/baseline'/f"{row['id']}-search.png"
   assert beforeSearch.exists(),f"Missing original actual search: {row['id']}"

@@ -1,0 +1,204 @@
+{
+  "batch": "B046",
+  "round": 8,
+  "snapshot": "docs/design-renewal/batches/B046/snapshot/round-8",
+  "overall": "changes_requested",
+  "parts": [
+    {
+      "number": "R625",
+      "id": "receipt-command",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "実queryを載せる平面、実件数の幅広端面、暗い開口と前唇、その下へ入る一枚の候補紙が主形になった。旧カプセル入力から離れ、実countを持つ送り部と紙の前後が読める。R605の一体プリンターやR295の左装置とは配置・断面が異なり、独立したAとして合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R625 original",
+        "R605",
+        "R295",
+        "R138"
+      ],
+      "resolvedFindings": [
+        "R625-query-capsule"
+      ]
+    },
+    {
+      "number": "R631",
+      "id": "file-jacket-context",
+      "verdict": "adjust",
+      "normalDesignVerdict": "pass",
+      "assessment": "実対象／現在親の起点面から、実際の連続group単位へ幅広の斜め接合が分岐する。旧VポケットのR263/R197反復は解消。匿名群に偽の見出しを置かず、共有subject/groupの意味も成立。ただし起点そのものの実名称が狭すぎる。",
+      "findings": [
+        {
+          "key": "R631-subject-reading-width",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": [
+            "captures/reviewer-material-8/checks.json",
+            "captures/reviewer-material-8/file-jacket-context-root-ltr320.png",
+            "captures/reviewer-material-8/file-jacket-context-root-rtl768.png"
+          ],
+          "problem": "実subjectは通常外幅84pxに対し本文52px、320pxでは外幅64pxに対し本文40px。15〜17pxの名称が日本語2〜3字・英語の細切れで縦に続き、操作対象を読む役割に対して狭い。RTLでも同じ。",
+          "proposal": "狭幅では実対象の起点面を上の全幅へ置き、そこから群へ接合する等、名称を読む幅を確保する。通常幅も起点を装飾帯として扱わず、実文字域を少なくとも80〜100px程度確保して長い対象名を再評価。対象名の省略や小字化で済ませない。"
+        }
+      ],
+      "nearestComparisons": [
+        "R631 original",
+        "R263",
+        "R197",
+        "R222 rejected pocket"
+      ],
+      "resolvedFindings": [
+        "R631-lower-pocket-repeat"
+      ]
+    },
+    {
+      "number": "R632",
+      "id": "inspection-card-context",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "白丸付き行の反復を廃し、一つの深いglyph溝と連続する不透明な読む面へ再構成。実checkedの小面だけが溝を渡るため状態と形の関係が明瞭。暗い背後文字を置いてもgroup/disabledの実名称・説明は紙面上に保たれ、旧遮蔽問題を解消。",
+      "findings": [],
+      "nearestComparisons": [
+        "R632 original",
+        "R612",
+        "R504 before redesign",
+        "R494 before redesign"
+      ],
+      "resolvedFindings": [
+        "R632-pill-row-repeat",
+        "R632-transparent-reading"
+      ]
+    },
+    {
+      "number": "R633",
+      "id": "folding-dossier-context",
+      "verdict": "adjust",
+      "normalDesignVerdict": "pass",
+      "assessment": "一枚の大きな非対称折面と現在のメニュー前紙、下位階層でのみ出る実Backの受けへ整理され、R523等の行ごとの交互折面反復を解消。通常主形は合格だが、下位見出しの文字上まで暗い受け材が伸びる。",
+      "findings": [
+        {
+          "key": "R633-back-receiver-under-heading",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": [
+            "captures/reviewer-material-8/checks.json",
+            "captures/reviewer-material-8/folding-dossier-context-child-ltr320.png",
+            "captures/reviewer-material-8/folding-dossier-context-child-rtl768.png"
+          ],
+          "problem": "下位階層のBack受けはheading始端8pxから112px幅で終端120px。見出し開始は通常112px、狭幅88pxなので、先頭8px／32pxの実文字が暗い材へ重なる。実文字rgb(96,62,84)と材rgb(153,118,142)は約2.31:1。Actual parentの先頭と折返し行で実画像上確認。",
+          "proposal": "受けを実Back幅と接合に必要な余白へ限定して見出し前で終えるか、実見出しに不透明な読む紙を連続接合する。narrowとRTLでも実Backの保持は保ち、見出し全行が同じ明瞭な紙面に載るようにする。"
+        }
+      ],
+      "nearestComparisons": [
+        "R633 original",
+        "R523",
+        "R222",
+        "R413 before redesign"
+      ],
+      "resolvedFindings": [
+        "R633-concertina-repeat",
+        "R633-transparent-reading"
+      ]
+    },
+    {
+      "number": "R634",
+      "id": "stepped-document-context",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "round 5の合格造形を、対象10ファイル不変で継承。round 8実exportで操作・長文LTR/RTL・hover固定・dark/light forcedの回帰を再確認。 Tの書類台の段を保持し、通常行の過剰な白札を減らして実選択と分類の階層へ集約した。17px名称/14px説明とnative44px操作を保つ改善として合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R634 original",
+        "R616"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R635",
+      "id": "ledger-tools-context",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "round 5の合格造形を、対象10ファイル不変で継承。round 8実exportで操作・長文LTR/RTL・hover固定・dark/light forcedの回帰を再確認。 Tの左罫を読む起点として保ち、グループと選択の競合を弱めた。操作行の密度と罫の強さを整理する元監査の課題に対応。",
+      "findings": [],
+      "nearestComparisons": [
+        "R635 original",
+        "R615",
+        "R621"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R636",
+      "id": "slipcase-context",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "round 5の合格造形を、対象10ファイル不変で継承。round 8実exportで操作・長文LTR/RTL・hover固定・dark/light forcedの回帰を再確認。 四辺の二重枠を廃し、片側64pxのケース口と12px入る読む紙へ分離した。24pxの斜め開口と前後の小口、ケース端の実起動ボタンにより、単なる右の色線から主形を変えている。長文RTLでも片側支持と読む面を保持。",
+      "findings": [],
+      "nearestComparisons": [
+        "R636 original",
+        "R257",
+        "R424",
+        "R620"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R637",
+      "id": "rail-clamp-context",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "round 5の合格造形を、対象10ファイル不変で継承。round 8実exportで操作・長文LTR/RTL・hover固定・dark/light forcedの回帰を再確認。 Tの細いrailと読む紙の距離を保ち、分類ごとの過密なclampを見出しの一つへ集約した。実状態の淡い面と通常行の余白を分離する改善として合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R637 original",
+        "R302",
+        "R597"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R638",
+      "id": "stitched-file-context",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "大アーチと短い縫線から、実More／Backを置く軸と非平行の二つの広い支持片へ変更。軸・読む面・実操作の関係が大きな形を作り、R476/R441の弓の反復を解消。長見出しでも支持が実header高さに追従し、開閉で動くのは材のみ。",
+      "findings": [],
+      "nearestComparisons": [
+        "R638 original",
+        "R476",
+        "R224",
+        "R441"
+      ],
+      "resolvedFindings": [
+        "R638-arched-handle-repeat"
+      ]
+    },
+    {
+      "number": "R639",
+      "id": "open-corner-context",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "round 5の合格造形を、対象10ファイル不変で継承。round 8実exportで操作・長文LTR/RTL・hover固定・dark/light forcedの回帰を再確認。 Tの開いた余白と暖かい見出し面を保ち、長い孤立線を96pxと40pxの一つの開角へまとめた。通常行を囲わず元の軽さを保持している。",
+      "findings": [],
+      "nearestComparisons": [
+        "R639 original",
+        "R619",
+        "R164"
+      ],
+      "resolvedFindings": []
+    }
+  ],
+  "checks": [
+    "固定round8 sourceHashes100件すべて一致、portable CSS10件一致。round5から25著者ファイル変更。既合格5件50ファイル不変。captures/reviewer-hashes-8.json。",
+    "独立Chromium actual portable Context9件の全native protocol成功。keyboard/checkbox/radio/disabled/controlled/labels/compatible path/focus/dead reset/empty/error/320390768 LTR RTL/forced/reduced/cleanup。captures/reviewer-contexts-8/checks.json。",
+    "R625 actual portable Command全protocol成功。native DOM/caret/Undo/focus、disabled skip、semantic selection、live labels、IME、async、long/narrow/RTL、forced/reduced。captures/reviewer-commands-8/checks.json。",
+    "追加Context9件で実右クリック、outside focusをupdateで奪わないこと、normal hover→leave→reentryの字面とcomponent相対矩形固定、実toggle focus、dark/light forcedを確認。captures/reviewer-extra-8/checks.json。",
+    "変更Context4件×320/768×LTR/RTLの16条件で実subjectが対象→現在親へ一致、同名でも非連続群を別role=groupにすること、匿名群に偽見出しがないこと、下位群aria-label一致を実操作確認。captures/reviewer-material-8/checks.json。",
+    "背後に高コントラストの文字／縞を置いて初期・下位メニューを撮影。真空隙とnative読字面を区別し、R632のgroup/disabled不透明面、R638の支持とBack、R631/633の残件を実画像で確認。",
+    "元round5および元監査のR/T判断、既承認R197/263/295/605/523/476/441等との近似を再比較。新5主形を寸法追従だけで合格扱いせず、実機能が担う構図で評価。"
+  ],
+  "limits": [
+    "この独立再検査でReact4形式の全suiteは再実行していない。主担当のReact検証と区別し、判定の直接証拠は固定portable nativeの実操作・画像・source/export照合。",
+    "shared runtimeは著者100hashの外にあるため、100hash一致だけで共有コードの全安全性を証明しない。今回追加subject/groupは固定exportの実意味・操作で検証した。"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "baseCommit": "6ac3f0c06cd748275026235e2959f9b16c547c75",
+  "files": {
+    "src/shared/workbench/context.ts": {
+      "before": "177f66b14258d5749fe1a79e2ee6a568cd1e9d298093e5c9682f961d40cb2eea",
+      "after": "d430f546bcf33078fe9d4bdcbe052ded7eec75d587e5e448bef4896d5ea2f680"
+    },
+    "src/shared/workbench/core.ts": {
+      "before": "b422ce3fad46ee460e45fa69a79e8d0d5cdb658ea9d9901d11439d631dfca7f5",
+      "after": "1d5a233ce1af60d3c9d58af195f18803e4527a205bbd1e1cd451d328608fce50"
+    },
+    "tests/workbench.browser.ts": {
+      "before": "d29a45770ceb136d5bc596d311c928464ce1b59fff83d944e11497d9f97fb460",
+      "after": "b3fc0b6342c83189171d033bb644dc4ff64a91142cf94ad87ad395a4709586f3"
+    },
+    "tests/expansion-50.native.ts": {
+      "before": "a54b6a4186bc873132b8b7de7e5de29571fdc9e21315d68a08114d4b48fa02eb",
+      "after": "92099704955a85198c419c138e7eb1a76ec9928693173c4c4faf335754893973"
+    },
+    "tests/expansion-50.react.ts": {
+      "before": "5edaf9470d19d65612c4b7d893886fb00276e887d41e76660362591dcda158b2",
+      "after": "2ad52a2ae9409cdc8c64b0da1c27023c8ef19738eec36aa1c1eb1ea8ba9306b6"
+    },
+    "src/shared/workbench/base.css": {
+      "before": "4fb217beeceab229175b25cc3bd36dc7b3dcc0532deaf6caf8f6151d7fc8aa75",
+      "after": "19f2f685ffc659249124fa527f42c873772bcd3c9877fe93558325de3a844b8e"
+    }
+  },
+  "evidence": [
+    "captures/contexts-self-0/checks.json",
+    "motion-0.json",
+    "motion-5.json",
+    "captures/contexts-self-5/checks.json"
+  ],
+  "scope": "Context focus/live labels/compatible path/RTL/dead APIs/empty Escape; lifecycle only cancels .wb-art decorations after live reduce switch; native APG disabled items stay focusable and activation stays inert. Actual contiguous semantic groups and live subject, hidden by default for legacy displays; flat index compatibility preserves thin-step visual positions. React export tests use an isolated Vite dependency cache/config to avoid cross-suite optimizer invalidation."
+}

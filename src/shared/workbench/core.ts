@@ -77,7 +77,7 @@ export function lifecycle(root: HTMLElement) {
   const abort = new AbortController(), cleanups: (()=>void)[] = [];
   let dead=false,paused=false,visible=true;
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
-  const sync=()=>{ root.dataset.wbReduced=String(reduced.matches); root.style.setProperty('--wb-play',paused||!visible||document.hidden||reduced.matches?'paused':'running'); };
+  const sync=()=>{ root.dataset.wbReduced=String(reduced.matches); root.style.setProperty('--wb-play',paused||!visible||document.hidden||reduced.matches?'paused':'running');if(reduced.matches)root.querySelectorAll<HTMLElement>('.wb-art').forEach(e=>e.getAnimations().forEach(a=>a.cancel())); };
   const io=typeof IntersectionObserver==='function'?new IntersectionObserver(entries=>{visible=entries[0]?.isIntersecting??true;sync();}):undefined;
   io?.observe(root);
   reduced.addEventListener('change',sync,{signal:abort.signal});

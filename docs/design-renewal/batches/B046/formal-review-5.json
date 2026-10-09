@@ -1,0 +1,247 @@
+{
+  "batch": "B046",
+  "round": 5,
+  "snapshot": "docs/design-renewal/batches/B046/snapshot/round-5",
+  "overall": "changes_requested",
+  "parts": [
+    {
+      "number": "R625",
+      "id": "receipt-command",
+      "verdict": "redesign",
+      "normalDesignVerdict": "redesign",
+      "assessment": "カプセル形の検索欄と、その上下を通る切断紙の構成。元版より輪郭は大きく変わったが、幅広入力＋出力紙という既承認構成に対する独立性が不足。",
+      "findings": [
+        {
+          "key": "R625-query-capsule",
+          "severity": "major",
+          "kind": "design",
+          "evidence": [
+            "captures/reviewer-commands-5/receipt-command-open.png",
+            "snapshot/round-5/source/receipt-command/styles.css"
+          ],
+          "problem": "ローラーとされる主形はradius56pxと上下borderのカプセルで、端面・実送り口・紙の前後関係が十分見えない。R605/R295の検索/出力器＋一枚の切断紙を、丸い入力へ置換した範囲に見える。",
+          "proposal": "一案は、実queryを載せる平らな送り面と、実件数を読む幅広の端面を一体の紙送り部材にし、候補紙が実開口へ入る断面を大きく見せる。端面に偽ノブを付けず実countを使い、送り口の前唇と紙の差込みを別層にする。円筒という名称の再現自体は不要で、実query/count/候補の位置が構造を担うこと。単に楕円や影を足すだけでは不足。"
+        }
+      ],
+      "nearestComparisons": [
+        "R625 original",
+        "R605",
+        "R295",
+        "R138"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R631",
+      "id": "file-jacket-context",
+      "verdict": "redesign",
+      "normalDesignVerdict": "redesign",
+      "assessment": "104pxの下Vポケットへ一枚の紙を挿す主形は明瞭だが、既承認の下ポケットと同じ構造を再利用している。",
+      "findings": [
+        {
+          "key": "R631-lower-pocket-repeat",
+          "severity": "major",
+          "kind": "duplication",
+          "evidence": [
+            "captures/reviewer-contexts-5/file-jacket-context-open.png",
+            "snapshot/round-5/source/file-jacket-context/styles.css"
+          ],
+          "problem": "実対象と展開menuの両方が、下のV開口/前壁と上へ出る一枚紙で構成される。R263の前蓋/便箋、R197の下差込ポケットと同じ主形で、文言や操作カテゴリの違いだけではAの独立性にならない。",
+          "proposal": "ポケットは廃止する。候補案は実対象名を共通の太い起点面、実groupをそこから分岐する異なる向きの読む面にした一体の仕分け構造。実group数だけ接合を作り、groupなしは一枚、submenuでは現在の実親を起点にする。細いツリー線や小札の反復にせず、幅のある面と大きい開口を主形にする。既存R412の経路線・R611の横仕分け口とも比較して差を作る。素材名変更は可。"
+        }
+      ],
+      "nearestComparisons": [
+        "R631 original",
+        "R263",
+        "R197",
+        "R222 rejected pocket"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R632",
+      "id": "inspection-card-context",
+      "verdict": "redesign",
+      "normalDesignVerdict": "redesign",
+      "assessment": "丸い片端と大きい丸アイコンの行を反復する一覧。検査治具としての接合や状態を支える構造には至らない。",
+      "findings": [
+        {
+          "key": "R632-pill-row-repeat",
+          "severity": "major",
+          "kind": "design",
+          "evidence": [
+            "captures/reviewer-contexts-5/inspection-card-context-open.png",
+            "snapshot/round-5/source/inspection-card-context/styles.css"
+          ],
+          "problem": "展開後の主形は同じ丸左端の行と白丸を繰り返す。checkbox/radio状態は色とcheckだけで変わり、共通の治具や読む面の構造に結び付かない。白丸を検査孔と呼んでも実態は背景面で、汎用的な丸行を離れない。",
+          "proposal": "個別丸行を撤去する。実状態glyphの列を一つの共通の深い検査溝として、実操作名・説明をその隣の連続した読む面へ置く案。溝は太い片側断面と開いた反対端を持ち、checkedの実小面だけが溝の定位置を塞ぐ。action/checkbox/radioのないデータでも偽チェックや結果を増やさない。既存R282の軸/顎、R372の日付軸、R617の両railへ寄せず、状態の置き場そのものを独立した主形へする。"
+        },
+        {
+          "key": "R632-transparent-reading",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": [
+            "captures/reviewer-contexts-5/inspection-card-context-open.png",
+            "captures/reviewer-contexts-5/inspection-card-context-checked.png"
+          ],
+          "problem": "panelが透明で各行のみ背景を持つため、disabled行全体のopacityが読む面まで薄くし、背後の別部品の文字が実操作名へ重なって見える。R632では実group見出しにも不透明な背景がなく、装飾の空隙へそのまま文字を置いている。",
+          "proposal": "disabledは面全体を透過させず、不透明な読む面を維持したまま文字/記号色とnative状態を変える。実groupにも専用の読む背景を確保。背景ページに黒/白/長い文字を置いた場合の実像で、装飾の空隙と読字領域を分離して確認する。"
+        }
+      ],
+      "nearestComparisons": [
+        "R632 original",
+        "R612",
+        "R504 before redesign",
+        "R494 before redesign"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R633",
+      "id": "folding-dossier-context",
+      "verdict": "redesign",
+      "normalDesignVerdict": "redesign",
+      "assessment": "各行の左右へ交互に折面を出す連続紙としては読めるが、既承認の交互折面と同じ構図を操作行へ移している。",
+      "findings": [
+        {
+          "key": "R633-concertina-repeat",
+          "severity": "major",
+          "kind": "duplication",
+          "evidence": [
+            "captures/reviewer-contexts-5/folding-dossier-context-open.png",
+            "snapshot/round-5/source/folding-dossier-context/styles.css"
+          ],
+          "problem": "32pxの左右交互面と12pxの下断面が各操作のたびに反復し、R523の連続折面や先行のZ/蛇腹系と同じ主形になる。実階層や現在状態と無関係に行数だけ同じ折片が増える。",
+          "proposal": "各行の交互折片を全廃。候補は一枚の大きい非対称の折面を持つ文書台と、現在の実menuだけを載せる一枚の平らな前紙。実親へ戻る操作がある時だけ一つの開いた横差し受けを使い、各祖先に折面を増やすR613の方式も再利用しない。折面を装飾縁にせず、header/parentと実候補の大きい二領域の接合が読める構図から再検討する。素材や名称の変更も可。"
+        },
+        {
+          "key": "R633-transparent-reading",
+          "severity": "major",
+          "kind": "ui",
+          "evidence": [
+            "captures/reviewer-contexts-5/folding-dossier-context-open.png",
+            "captures/reviewer-contexts-5/folding-dossier-context-checked.png"
+          ],
+          "problem": "panelが透明で各行のみ背景を持つため、disabled行全体のopacityが読む面まで薄くし、背後の別部品の文字が実操作名へ重なって見える。R632では実group見出しにも不透明な背景がなく、装飾の空隙へそのまま文字を置いている。",
+          "proposal": "disabledは面全体を透過させず、不透明な読む面を維持したまま文字/記号色とnative状態を変える。実groupにも専用の読む背景を確保。背景ページに黒/白/長い文字を置いた場合の実像で、装飾の空隙と読字領域を分離して確認する。"
+        }
+      ],
+      "nearestComparisons": [
+        "R633 original",
+        "R523",
+        "R222",
+        "R413 before redesign"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R634",
+      "id": "stepped-document-context",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "Tの書類台の段を保持し、通常行の過剰な白札を減らして実選択と分類の階層へ集約した。17px名称/14px説明とnative44px操作を保つ改善として合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R634 original",
+        "R616"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R635",
+      "id": "ledger-tools-context",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "Tの左罫を読む起点として保ち、グループと選択の競合を弱めた。操作行の密度と罫の強さを整理する元監査の課題に対応。",
+      "findings": [],
+      "nearestComparisons": [
+        "R635 original",
+        "R615",
+        "R621"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R636",
+      "id": "slipcase-context",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "四辺の二重枠を廃し、片側64pxのケース口と12px入る読む紙へ分離した。24pxの斜め開口と前後の小口、ケース端の実起動ボタンにより、単なる右の色線から主形を変えている。長文RTLでも片側支持と読む面を保持。",
+      "findings": [],
+      "nearestComparisons": [
+        "R636 original",
+        "R257",
+        "R424",
+        "R620"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R637",
+      "id": "rail-clamp-context",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "Tの細いrailと読む紙の距離を保ち、分類ごとの過密なclampを見出しの一つへ集約した。実状態の淡い面と通常行の余白を分離する改善として合格。",
+      "findings": [],
+      "nearestComparisons": [
+        "R637 original",
+        "R302",
+        "R597"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R638",
+      "id": "stitched-file-context",
+      "verdict": "redesign",
+      "normalDesignVerdict": "redesign",
+      "assessment": "上部の丸い輪と下の読む面に、二本の短い糸を付けた主形。縫合自体より既承認の輪/取っ手の構造が支配的。",
+      "findings": [
+        {
+          "key": "R638-arched-handle-repeat",
+          "severity": "major",
+          "kind": "duplication",
+          "evidence": [
+            "captures/reviewer-contexts-5/stitched-file-context-open.png",
+            "snapshot/round-5/source/stitched-file-context/styles.css"
+          ],
+          "problem": "20pxの丸い大輪が二脚で下の紙へ入り、下が読む矩形となる。R476の大きい輪＋読む握り、ハンドル系R224と同じ主な外形であり、左右の短い糸だけでは独立性が増えない。",
+          "proposal": "輪と取っ手を廃止する。素材も変更し、実起動buttonを一つの大きい接合軸に置き、開いた二枚の非平行な支持片が対象面とmenuの読む面を保持する候補などを検討。nativebuttonと字は固定し、open状態に反応するのは支持材だけ。閉じた四辺枠・上のアーチ・片側の通し縫い背は使わない。R151の折翼やR535の蝶番とも比較し、薄い飾り追加で終わらない大きい主構図へ。"
+        }
+      ],
+      "nearestComparisons": [
+        "R638 original",
+        "R476",
+        "R224",
+        "R441"
+      ],
+      "resolvedFindings": []
+    },
+    {
+      "number": "R639",
+      "id": "open-corner-context",
+      "verdict": "pass",
+      "normalDesignVerdict": "pass",
+      "assessment": "Tの開いた余白と暖かい見出し面を保ち、長い孤立線を96pxと40pxの一つの開角へまとめた。通常行を囲わず元の軽さを保持している。",
+      "findings": [],
+      "nearestComparisons": [
+        "R639 original",
+        "R619",
+        "R164"
+      ],
+      "resolvedFindings": []
+    }
+  ],
+  "checks": [
+    "固定100正本SHA256一致・配布CSS10一致。captures/reviewer-hashes-5.json。",
+    "独立Command1実native protocol成功：実行/階層/semantic id/disabled/controlled/IME/async/DOM caret Undo/focus/長文320390768 LTRRTL/44hit/forced/reduced/cleanup。captures/reviewer-commands-5/checks.json。",
+    "独立Context9実native protocol成功：owned toggle focus、live target/menu labels、checkbox/radio/controlled、disabled action、実click、compatible path/RTL keys、submenu/ShiftF10/Escape復帰、async二重抑止/abort/error、外部targetの範囲/cleanup、empty、長文17項目320390768 LTRRTL/画面内/横overflow/44hit、forced/reduced/dead reset。captures/reviewer-contexts-5/checks.json。",
+    "追加Context9でtrusted右クリック起動、外部focus中の更新でno-steal、通常hover→leave→reenterの相対glyph矩形/font固定を320/768 LTRRTLで確認。toggle実click後のfocus保持、dark/light forced実画像も確認。captures/reviewer-extra-5/checks.json。",
+    "初期/実展開/checked/submenu/empty/error/long実像、原版sheet0/元監査、最寄り既承認構造を比較。機能成功と造形合否を分離した。"
+  ],
+  "limits": [
+    "React4形式・主担当gallery・永久HTTPは本レビューの独立実行ではない。",
+    "全730部品を再撮影していない。元監査/保存画像と近似承認形の構造を比較した。",
+    "改善案は検討候補。素材・名前は維持必須ではなく、記載した寸法や形名だけで次回合格とはしない。実対象・実group・階層・状態のないデータへ偽の要素を足さないこと。"
+  ]
+}

@@ -1,0 +1,58 @@
+# B046 round9 独立最終検査
+
+**全10件 pass。R631の読字幅、R633の親見出し下地の残件を解消。**
+
+## R625 receipt-command — pass
+
+round8から対象10著者ファイルと配布JS不変のため、独立検査の合格を継承。 実queryを載せる平面、実件数の幅広端面、暗い開口と前唇、その下へ入る一枚の候補紙が主形になった。旧カプセル入力から離れ、実countを持つ送り部と紙の前後が読める。R605の一体プリンターやR295の左装置とは配置・断面が異なり、独立したAとして合格。
+
+## R631 file-jacket-context — pass
+
+全幅の実subject起点面から支持軸と実groupへの分岐が続く主形。320pxで実読字幅260px、768pxで360pxとなり、長い実対象名を通常の行で読める。匿名群は偽見出しなし、実親へ進むとsubjectも一致する。旧ポケット構成からの独立性と接続を保ち、残件を解消。
+
+## R632 inspection-card-context — pass
+
+round8から対象10著者ファイルと配布JS不変のため、独立検査の合格を継承。 白丸付き行の反復を廃し、一つの深いglyph溝と連続する不透明な読む面へ再構成。実checkedの小面だけが溝を渡るため状態と形の関係が明瞭。暗い背後文字を置いてもgroup/disabledの実名称・説明は紙面上に保たれ、旧遮蔽問題を解消。
+
+## R633 folding-dossier-context — pass
+
+実Backの受けと大きい一枚の折面／現在紙は維持し、親見出しの全行を不透明rgb(226,199,218)の紙面へ載せた。320/768 LTR/RTLで暗い受け材の侵入による低コントラストを解消。強制色でも文字の下地を保持。通常主形と実階層操作が一致する。
+
+## R634 stepped-document-context — pass
+
+round8から対象10著者ファイルと配布JS不変のため、独立検査の合格を継承。 round 5の合格造形を、対象10ファイル不変で継承。round 8実exportで操作・長文LTR/RTL・hover固定・dark/light forcedの回帰を再確認。 Tの書類台の段を保持し、通常行の過剰な白札を減らして実選択と分類の階層へ集約した。17px名称/14px説明とnative44px操作を保つ改善として合格。
+
+## R635 ledger-tools-context — pass
+
+round8から対象10著者ファイルと配布JS不変のため、独立検査の合格を継承。 round 5の合格造形を、対象10ファイル不変で継承。round 8実exportで操作・長文LTR/RTL・hover固定・dark/light forcedの回帰を再確認。 Tの左罫を読む起点として保ち、グループと選択の競合を弱めた。操作行の密度と罫の強さを整理する元監査の課題に対応。
+
+## R636 slipcase-context — pass
+
+round8から対象10著者ファイルと配布JS不変のため、独立検査の合格を継承。 round 5の合格造形を、対象10ファイル不変で継承。round 8実exportで操作・長文LTR/RTL・hover固定・dark/light forcedの回帰を再確認。 四辺の二重枠を廃し、片側64pxのケース口と12px入る読む紙へ分離した。24pxの斜め開口と前後の小口、ケース端の実起動ボタンにより、単なる右の色線から主形を変えている。長文RTLでも片側支持と読む面を保持。
+
+## R637 rail-clamp-context — pass
+
+round8から対象10著者ファイルと配布JS不変のため、独立検査の合格を継承。 round 5の合格造形を、対象10ファイル不変で継承。round 8実exportで操作・長文LTR/RTL・hover固定・dark/light forcedの回帰を再確認。 Tの細いrailと読む紙の距離を保ち、分類ごとの過密なclampを見出しの一つへ集約した。実状態の淡い面と通常行の余白を分離する改善として合格。
+
+## R638 stitched-file-context — pass
+
+round8から対象10著者ファイルと配布JS不変のため、独立検査の合格を継承。 大アーチと短い縫線から、実More／Backを置く軸と非平行の二つの広い支持片へ変更。軸・読む面・実操作の関係が大きな形を作り、R476/R441の弓の反復を解消。長見出しでも支持が実header高さに追従し、開閉で動くのは材のみ。
+
+## R639 open-corner-context — pass
+
+round8から対象10著者ファイルと配布JS不変のため、独立検査の合格を継承。 round 5の合格造形を、対象10ファイル不変で継承。round 8実exportで操作・長文LTR/RTL・hover固定・dark/light forcedの回帰を再確認。 Tの開いた余白と暖かい見出し面を保ち、長い孤立線を96pxと40pxの一つの開角へまとめた。通常行を囲わず元の軽さを保持している。
+
+## 今回の検証範囲
+
+- 固定round9 source100hash一致・配布CSS10一致。round8との差はR631の5説明/CSSファイルとR633 CSSの計6ファイル。残8件80ファイル不変。全10のexport JSはbyte一致し共有runtimeの追加変更なし。captures/reviewer-hashes-9.json。
+- 変更2件のactual portable native全protocolを独立再実行し成功。keyboard/checkbox/radio/disabled/controlled/labels/path/focus/dead reset/empty/error/320390768 LTR RTL/forced/reduced/cleanup。captures/reviewer-contexts-9/checks.json。
+- 変更2件で実右クリック、outside focus no-steal、normal hover→leave→reentryで字体とcomponent相対copy矩形固定、実toggle focus、dark/light forcedを再確認。captures/reviewer-extra-9/checks.json。
+- 変更2件×320/768×LTR/RTLの8条件で長い実subject/current parent、実連続groupと匿名群の区別、子groupラベル、背後の文字と縞に対する不透明な読字面を確認。子階層のdark/light forcedも撮影。captures/reviewer-material-9/checks.jsonおよび同ディレクトリの画像。
+- R631 subjectの実本文幅は狭幅40→260px、通常52→360px。支持材を本文行の独立面へ分け、起点→分岐の接合を実画像で確認。
+- R633の親見出しは不透明紙面となり、受けの終端が字形の下に残っても実読字背景を侵さない。LTR/RTL・長名折返し・強制色を確認。
+- 残8件の通常造形・元監査/近似比較・全native操作はround8の独立検査を継承。round9で未変更8件の全操作を重複実行したとは扱わない。
+
+## 限界
+
+- React4形式の全suiteは今回独立再実行していない。主担当の検証と区別し、直接証拠は固定portable nativeの操作・画像とsource/export照合。
+- round9は変更2件を限定追検査。残8件はround8での実操作と著者80ファイル・配布JS不変を根拠に継承。

@@ -295,3 +295,11 @@
 
 /* The shell content layer must not turn the live SR announcement into inline text. */
 .sop-wb .wb-search-shell > .wb-search-status{position:absolute;inset-inline-start:0;top:0;overflow:hidden;white-space:nowrap}
+
+/* Additional source subject is opt-in per skin; existing displays keep their layout. */
+.sop-wb .wb-context-subject{display:none;margin:0}
+
+/* Preserve the legacy flat-list steps after semantic grouping. */
+.sop-wb.sop-thin-step-context.sop-thin-step-context .wb-context-items button[data-menu-flat-index]{margin-left:0;width:100%}
+.sop-wb.sop-thin-step-context.sop-thin-step-context .wb-context-items button[data-menu-flat-index="2"]{margin-left:7px;width:calc(100% - 7px)}
+.sop-wb.sop-thin-step-context.sop-thin-step-context .wb-context-items button[data-menu-flat-index="3"]{margin-left:14px;width:calc(100% - 14px)}
