@@ -1,5 +1,5 @@
 @import "../../../shared/workbench/base.css";
-/* 元の丸い見出し帯を主役として保ち、選択行・縦線・分類線の同時強調をやめる。帯の24pxの丸みと下の4pxの返端、実選択の一段だけ強い紙色を残し、通常の項目は平らな読む面で揃える。 */
+/* 短いリボンを紙の裏から通す操作面。丸い文書印を廃し、上下の通し口と二股の端で文書を留める構造を示す。 */
 
 .sop-wb.sop-ribbon-file-context.sop-ribbon-file-context{--paper:#fff6e9;--ink:#563f30;--muted:#785f4a;--accent:#a2754b;--edge:#cab394;--wb-bg:var(--paper);--wb-surface:var(--paper);--wb-ink:var(--ink);--wb-muted:var(--muted);--wb-accent:var(--accent);--wb-line:var(--edge);--wb-radius:0;container-type:inline-size;color:var(--ink);color-scheme:light;max-width:min(100%,480px);min-width:0;overflow-wrap:anywhere}
 .sop-wb.sop-ribbon-file-context.sop-ribbon-file-context,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context *,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context *::before,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context *::after{box-sizing:border-box}
@@ -58,3 +58,46 @@
 .sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-target,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-object,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-open,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-panel,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-heading,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-heading span,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-items,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-items button,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-menu-copy strong,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-menu-copy small,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-menu-glyph,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-menu-group,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context kbd,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-status,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-result,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-target-copy,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-target-copy strong,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-target-copy small,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-eyebrow{background:Canvas!important;color:CanvasText!important;border-color:ButtonText!important;box-shadow:none!important;mask:none!important;clip-path:none!important}
 .sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-target::before,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-target::after,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-panel::before,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-panel::after,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-heading::before,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-heading::after,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-items::before,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-items::after,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-items button::before,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-items button::after,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-target-copy::before,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-target-copy::after{display:none!important}
 .sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-menu-glyph svg,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-heading svg{color:CanvasText!important}.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context [aria-checked=true]{outline:2px solid Highlight!important;outline-offset:-3px}.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-items button:focus-visible,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context :is(button,[tabindex]):focus-visible{outline-color:Highlight!important}}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-target{position:relative;isolation:isolate;padding:26px 18px;border:0;background:#fbf1f2;border-radius:0;grid-template-columns:44px minmax(0,1fr) 44px;gap:12px}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-object{position:relative;width:44px;height:64px;border:1px solid #c6a5ad;border-radius:0;background:#fff8f7;box-shadow:none;overflow:visible}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-object::before{content:'';position:absolute;inset:-9px 9px -12px;background:#c99fab;clip-path:polygon(0 0,100% 0,100% 100%,50% calc(100% - 8px),0 100%);z-index:-1;pointer-events:none}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-object::after{content:'';position:absolute;inset:12px 7px auto;height:28px;border-top:2px solid #b68594;border-bottom:2px solid #b68594;background:#ead1d7;z-index:-1;pointer-events:none}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-object svg{position:relative;width:24px;height:24px;color:#76505d}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-open{border-radius:0;border:1px solid #c3a0ac;background:#ead3da}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-panel{background:#fff6f5;border:0;border-inline-start:8px solid #c9a0ad;border-radius:0;padding:16px}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-subject{padding:8px 10px;border-block:1px solid #c9a0ad;background:#efdce1;font:600 16px/1.6 Georgia,'Yu Mincho',serif}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-items [data-menu-action]{border:0;border-bottom:1px solid #dbc3cb;background:none}
+@container(max-width:280px){.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-target{grid-template-columns:44px minmax(0,1fr)}.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-open{grid-column:2;justify-self:end}}
+
+}
+
+/* Material joints remain outside text and native hit areas */
+@media(forced-colors:none){
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context{--muted:#694655}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-panel{padding:16px 10px 30px 38px;padding-inline:38px 10px;border:0;background:transparent;box-shadow:none;isolation:isolate}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-panel::before{content:'';display:block;position:absolute;inset:8px auto 8px 8px;inset-inline-start:8px;width:22px;height:auto;background:linear-gradient(90deg,#a07988 0 2px,#d7b4c1 2px 5px,#bf96a6 5px 17px,#e1c2cd 17px 20px,#926778 20px);clip-path:polygon(0 0,100% 0,100% 100%,50% calc(100% - 14px),0 100%);pointer-events:none;z-index:-1}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-panel::after{display:none}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-subject{position:relative;margin:0;padding:16px;background:#fff8f8;border:0;border-top:2px solid #d7b4c1;overflow-wrap:anywhere}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-heading{position:relative;margin:0;padding:20px 16px;background:linear-gradient(#efd8e2 0 3px,#dec0cd 3px calc(100% - 5px),#b18a9b calc(100% - 5px));border:0;border-radius:0;min-height:0;gap:10px;color:#593c4b;box-shadow:0 5px 7px #64445526}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-heading::before{content:'';display:block;position:absolute;inset:0 100% 0 auto;inset-inline: -30px auto;width:30px;background:linear-gradient(90deg,#9f7789,#d4aebf);clip-path:polygon(0 0,100% 0,100% 100%,0 calc(100% - 12px));pointer-events:none}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-heading::after{content:'';display:block;position:absolute;inset:0 -4px 0 auto;inset-inline-end:-4px;width:4px;background:#9f7789;border:0;pointer-events:none}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-heading>small{color:#694655}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-items{margin:0;padding:14px 14px 20px;background:#fff8f8;border:0;border-bottom:4px solid #d2b5c3;box-shadow:0 4px 0 #e5d0da}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-items [data-menu-action],.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-items [data-menu-action]:is(:hover,:focus){padding:16px 0;border:0;border-bottom:1px solid #dbc3cb;background:none}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-items [data-menu-action]:is(:hover,:focus){background:#efdee8}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-status{padding:0 14px;background:#fff8f8}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-target{position:relative;isolation:isolate;padding:26px 18px 26px 42px;padding-inline:42px 18px;border:0;background:#fff8f8;box-shadow:inset 26px 0 #d8b5c5,0 4px 0 #d4b6c4}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-target::before{content:'';display:block;position:absolute;inset:12px auto 12px 7px;inset-inline-start:7px;width:13px;height:auto;background:linear-gradient(90deg,#a07988,#edcedc 40%,#ba91a4);border:0;border-radius:0;pointer-events:none;z-index:1}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-object{width:38px;height:54px;margin:0;grid-column:1;grid-row:1;background:#f4e7ed;border:1px solid #ba95a8;border-bottom:4px solid #c3a0b1}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-object::before,.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-object::after{display:none}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-target-copy{grid-column:2;grid-row:1;min-width:0}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-open{grid-column:3;grid-row:1;align-self:start;background:#e5c9d7}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context:dir(rtl) .wb-context-heading::before{transform:scaleX(-1)}
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context:dir(rtl) .wb-context-target{box-shadow:inset -26px 0 #d8b5c5,0 4px 0 #d4b6c4}
+@container(max-width:300px){.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-target{grid-template-columns:38px minmax(0,1fr);padding-inline:38px 14px;gap:16px 12px}.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-open{grid-column:2;grid-row:2;justify-self:end}}
+}
+
+@media(forced-colors:none){.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-panel{background:rgb(246 235 242 / .18);backdrop-filter:blur(12px)}}

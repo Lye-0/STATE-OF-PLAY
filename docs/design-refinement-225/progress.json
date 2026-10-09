@@ -1,17 +1,16 @@
 {
   "scope": 225,
-  "completed": 190,
-  "activeImplementation": "B022-B023 prepared",
-  "activeReview": "B021",
+  "completed": 200,
+  "activeImplementation": "All remaining batches frozen for independent review",
+  "activeReview": "B021 and B023 final follow-ups",
   "lastPushed": {
-    "batch": "B020",
-    "commit": "a1ff34818aa83b32cc4b311c029305de0e7ebe76"
+    "batch": "B019",
+    "commit": "6a6caf8b6c0b1e67326dc5f4e39f92cc960a0cf1"
   },
   "baseCommit": "b2ff64fa74e3bcc98626c281d0833fbd6851bb12",
   "reviewModel": "gpt-6-astra",
   "reviewEffort": "medium",
   "preparedBatches": [
-    "B019",
     "B021",
     "B022",
     "B023"
@@ -21,17 +20,18 @@
     "reason": "Reveal context-menu keyboard focus inside its scrolling panel"
   },
   "preparedRounds": {
-    "B019": 10,
-    "B021": 10,
-    "B022": 9,
-    "B023": 3
+    "B021": 12,
+    "B022": 11,
+    "B023": 6
   },
   "latestMainVerification": {
     "workbenchVite": "41 passed",
     "typecheck": "app/react/tools passed",
     "B019": "4 retry/row-number conditions passed",
     "B020": "80 hover/long-label/RTL/forced conditions passed",
-    "B021": "192 navigation layout/long-label/RTL/forced conditions passed",
-    "B022": "120 navigation/table layout/long-label/RTL/forced conditions passed"
+    "B021": "192 six-item navigation layout conditions at round 11; 24 closed-target description conditions at round 12",
+    "B022": "56 fresh long-content table conditions passed at round 11; 120 layout conditions at round 10",
+    "ornaments": "6 gallery checks passed",
+    "B023": "20 normal/forced/reduced/narrow geometry and element-containment conditions passed at round 5"
   }
 }

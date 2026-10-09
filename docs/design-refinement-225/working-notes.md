@@ -97,3 +97,29 @@ B020はa1ff34818aa83b32cc4b311c029305de0e7ebe76でpush/record済み190件。B019
 B019r9は9pass/R592のみforced失敗時の旧件数で差戻し。件数非表示1規則をmedia外へ移しr10freeze、Astra優先再検査中。B021は未開始時に643/664の弱さを主担当で再発見、strengthen-last-context-navigation.py実行済み（再実行禁止）でリボン折返し/陶の支柱と受けへ再設計。r9main画像確認後643の背景文字干渉をblurで抑えr10freeze。B021独立はr10を指定、nav192条件はr9（r10でnav作者不変）。
 
 B019r10全10pass。実async失敗→成功16条件で通常/forcedの計数盤非表示→復帰、再試行1行、他99作者/shared不変。AstraはB021r10へ進行。
+
+B019は6a6caf8b6c0b1e67326dc5f4e39f92cc960a0cf1でpush/record済み200件。B021r10独立検査中。B022r9/B023r3待機。B021陶器追加後のmain192条件r9成功、r10の差分はcontext背景のみ。提出HTMLを200件で中間生成・重さ検査、最終225件で必ず再生成/再確認する。
+
+中間HTML200件/1163画像/9,315,879bytes、全ページdecode・検索・拡大・320pxを4,481msで成功（report-200-check.log）。外部HTTP0/runtime0。file URL制約のためembedded HTML contentでの検証でありfile URL試験とは主張しない。最終225で再生成・再検査必須。
+
+B021r10独立レビュー途中の指摘（作者固定、未修正）：R648 long description smallがpanel端37.23px切れ。R649/650説明9px、B3ESC8pxかつopacity合成2.433/2.264/2.359:1。R659選択補足14px #806957/#e8dcc3が3.792:1。A構造はリボン折返し・見開き・独立支持・陶支柱いずれも成立の早期講評。最終releaseを待ちまとめて修正。
+
+B021r10は4pass/6差戻し。r11でBcontext3件の補助文字・ESC・長文、659補足contrast、660標準ブランド末尾改行、668dock6項目可読幅を修正。freeze済み、作者停止、AstraはB022r9→B021r11予定。main6件gallery再撮影完了、6項目長文layout検証中。
+
+main B021r11は6項目long/nav4layout/RTL/forced/1100・320の192条件成功。gallery6件再撮影済み、標準Fieldwork通常・320画像で1行確認。装飾既存回帰6検査成功 ornaments-final.log。既push200件の独立review hash再照合成功。B022途中指摘はR670連番の隣接、696forcedで旧矩形へ戻る幾何、最終release待ち。
+
+B022r9最終作者hash101一致後release。全10差戻し:nav2dock可読幅/670隣項目gap0、表7status越境とsort記号contrast、B3長heading、673/683選択進捗contrast、696forced旧形。revise-b022-final.pyを一度実行済み（再実行禁止）、r10freeze/作者固定、主担当撮影/長文表56条件/全layout120条件実行中。AstraはB021r11→B023r3→B022r10。finalbuildも開始。
+
+B022r10main56長文表+120layout成功。ただし実画像のB補助文字9–10pxは小さいと主担当で判断。独立開始前にB表3件aux12px、Bnavbadge12pxを追加しr11freeze、Astraへr10を検査しない旨連絡済み。r11再撮影/56表検査中。r10で開始したfinalbuildは途中で作者差分が入ったためSIGTERM中止、最終作者確定後に必ず再実行。
+
+B023は独立未開始を確認し、696と同じ新幾何media限定を主担当発見。preserve-loader-geometry.mjs実行済み（再実行禁止）、新幾何共通/forced rails・foot・hinge横梁system色/slimforcedopacity .6–1とstatus12pxへ。r4freeze、作者固定。main幾何比較は最初float約.00002px差でdeepEqual失敗し、サイズ0.1px/外枠由来位置1.1px未満を条件へ。r4再検証中。通常はslim文字以外不変、slim最新gallery再撮影済み。
+
+B023r4幾何20条件成功したが実画像でR728配布版通常/forced右側切れを発見。ct-loader-body幅180/gridcenter明示、r5freeze。20条件へ全iのroot左右収まりassert追加し成功、forced320画像で全6片と枠が中央に収まる確認。gallery最新撮影済み。Astraへr5指定済み。
+
+B021r11は7pass/3差戻し（前回6指摘解消、新たにB3閉じたtargetDescription長語切れ）。release後fix-context-description.pyを1回実行しr12freeze、作者固定。3CSSのsmall12px/wrapanywhereのみ。main3再撮影/24条件Range検証中。AstraはB023r5→B021r12限定確認→B022r11予定。
+
+B021r12 main-targets-12.json24条件すべてpass、3件最新gallery画像取得済み。B023r5 main20条件pass＋forced5画像全確認、slim全6片の中央配置確認。両方Astraへ通知済み。
+
+B023r5は4pass/R708だけ差戻し。60度回転で位置は周期一致するが旧even border-colorが残り1890px色の飛び。release後に旧even規則1個削除、r6freeze/作者固定。他4件不変。main steady周期画像比較とgallery再撮影中。AstraはB021r12→B023r6限定→B022r11予定。本番buildはr5時点3m5s成功、R708変更後に最終再ビルド必要。
+
+R708r6 main定常周期画像比較は通常/forcedともRGB差10超0画素、main-pixel-seams-6.json。最新gallery撮影済み。全225対象のnormal/hover/narrow必須675画像をPillow.verifyで破損無し確認。

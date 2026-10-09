@@ -1,5 +1,5 @@
 @import "../../../shared/workbench/base.css";
-/* Warm Project Context — 削除操作と起動面の文字を明るい背景に適合。 */
+/* Warm Project Context — 書類のまとまりと分類見出しで操作を読むメニュー。名称を大きな明朝体にし、メニュー内も分類の帯と短い行へ整理する。 */
 .sop-wb.sop-warm-project-context {--wb-bg:#f6efdf;--wb-surface:#e6dfd2;--wb-ink:#453d32;--wb-muted:#5b4c36;--wb-accent:#745933;--wb-line:#c2b399;--wb-radius:6px;color-scheme:light}.sop-wb.sop-warm-project-context .wb-art{pointer-events:none}.sop-wb.sop-warm-project-context :is(.wb-search-results,.wb-command-dialog,.wb-context-panel,.wb-nav-flyout,.wb-nav-dialog){color:var(--wb-ink);background:var(--wb-bg)}.sop-wb.sop-warm-project-context .wb-context-target{border-radius:5px;border-color:#c6ad80}.sop-wb.sop-warm-project-context .wb-context-panel{border-radius:5px}.sop-wb.sop-warm-project-context .wb-context-heading{border-bottom:1px solid #d1ba90}
 .sop-wb.sop-warm-project-context{max-width:100%}.sop-wb.sop-warm-project-context,.sop-wb.sop-warm-project-context *{box-sizing:border-box}.sop-wb.sop-warm-project-context :is(button,input,textarea,a){min-width:0}
 .sop-wb.sop-warm-project-context:focus-visible,.sop-wb.sop-warm-project-context :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
@@ -14,3 +14,29 @@
 .sop-wb.sop-warm-project-context.sop-warm-project-context .wb-context-object{box-shadow:none;border-width:1px;background:transparent}.sop-wb.sop-warm-project-context.sop-warm-project-context .wb-context-object::before,.sop-wb.sop-warm-project-context.sop-warm-project-context .wb-context-object::after{display:none}.sop-wb.sop-warm-project-context.sop-warm-project-context .wb-context-object i{box-shadow:none}
 
 @media(forced-colors:active){.sop-wb.sop-warm-project-context.sop-warm-project-context{--paper:Canvas;--ink:CanvasText;--muted:CanvasText;--accent:Highlight;--edge:ButtonText;--ff-ink:CanvasText;--ff-muted:CanvasText;--sg-bg:Canvas;--sg-ink:CanvasText;--sg-muted:CanvasText;--sg-a:Highlight;--wb-bg:Canvas;--wb-ink:CanvasText;--wb-muted:CanvasText;--wb-accent:Highlight;color:CanvasText;background:Canvas;border-color:ButtonText;box-shadow:none}.sop-wb.sop-warm-project-context.sop-warm-project-context :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}.sop-wb.sop-warm-project-context.sop-warm-project-context :is(button,input,textarea,select,a):focus-visible{outline-color:Highlight}.sop-wb.sop-warm-project-context.sop-warm-project-context :is([aria-current=page],[aria-selected=true],[data-selected=true]){color:HighlightText;background:Highlight;border-color:Highlight}}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-warm-project-context.sop-warm-project-context .wb-context-target{display:grid;grid-template-columns:40px minmax(0,1fr) 44px;gap:12px;padding:26px 18px 20px;background:#fcf5e5;border:1px solid #cdb68a;border-top:4px solid #c4aa79;border-radius:0;position:relative;overflow:visible}
+.sop-wb.sop-warm-project-context.sop-warm-project-context .wb-context-object{width:40px;height:48px;border:1px solid #bfa474;border-radius:0;background:#e9d9b7;box-shadow:none;transform:none!important}
+.sop-wb.sop-warm-project-context.sop-warm-project-context .wb-context-target-copy strong{font:600 20px/1.5 Georgia,'Yu Mincho',serif}
+.sop-wb.sop-warm-project-context.sop-warm-project-context .wb-context-target-copy small{font:12px/1.8 Arial,'Yu Gothic',sans-serif}
+.sop-wb.sop-warm-project-context.sop-warm-project-context .wb-context-open{width:44px;height:44px;border:1px solid #bfa474;background:#f8ecd4;border-radius:0}
+.sop-wb.sop-warm-project-context.sop-warm-project-context .wb-context-panel{padding:14px;border:0;border-block:3px double #c6ac7b;border-radius:0;background:#fcf5e5}
+.sop-wb.sop-warm-project-context.sop-warm-project-context .wb-context-subject{font:600 18px/1.5 Georgia,'Yu Mincho',serif;border-bottom:1px solid #d7c49e;padding:0 0 12px}
+.sop-wb.sop-warm-project-context.sop-warm-project-context .wb-menu-group{font:600 13px/1.6 Georgia,'Yu Mincho',serif;padding:8px;border-inline-start:3px solid #b99b65;background:#efe2c5}
+.sop-wb.sop-warm-project-context.sop-warm-project-context .wb-context-items [data-menu-action]{min-height:46px;border-bottom:1px solid #dfcfae;border-radius:0}
+@container(max-width:280px){.sop-wb.sop-warm-project-context.sop-warm-project-context .wb-context-target{grid-template-columns:40px minmax(0,1fr)}.sop-wb.sop-warm-project-context.sop-warm-project-context .wb-context-open{grid-column:2;justify-self:end}}
+
+}
+
+/* Readable auxiliary content also in forced colors and narrow panels. */
+.sop-wb.sop-warm-project-context.sop-warm-project-context .wb-menu-copy small{font:12px/1.7 Arial,'Yu Gothic',sans-serif;overflow-wrap:anywhere;min-width:0}
+.sop-wb.sop-warm-project-context.sop-warm-project-context .wb-context-heading{font:600 14px/1.6 Arial,'Yu Gothic',sans-serif;letter-spacing:0}
+.sop-wb.sop-warm-project-context.sop-warm-project-context .wb-context-heading>span{min-width:0;overflow-wrap:anywhere}
+.sop-wb.sop-warm-project-context.sop-warm-project-context .wb-context-heading>small{font:12px/1.6 Consolas,monospace;opacity:1;color:var(--wb-muted);flex:none}
+.sop-wb.sop-warm-project-context.sop-warm-project-context .wb-context-items kbd{font:12px/1.6 Consolas,monospace;max-width:64px;white-space:normal;overflow-wrap:anywhere;flex:0 1 auto}
+.sop-wb.sop-warm-project-context.sop-warm-project-context .wb-menu-group{font-size:13px;line-height:1.6}
+.sop-wb.sop-warm-project-context.sop-warm-project-context .wb-context-status{font-size:12px;line-height:1.6;overflow-wrap:anywhere}
+
+.sop-wb.sop-warm-project-context.sop-warm-project-context .wb-context-target-copy small{font-size:12px;line-height:1.7;overflow-wrap:anywhere;white-space:normal;min-width:0}

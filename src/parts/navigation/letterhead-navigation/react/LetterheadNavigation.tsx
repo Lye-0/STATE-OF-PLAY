@@ -3,7 +3,7 @@ import React from 'react';
 import {NavigationView,type NavigationProps} from '../../../../shared/workbench/navigation-view';
 import '../styles.css';
 export type { NavigationProps as LetterheadNavigationProps };
-/** 元の題字と二列の見出し、細い章罫を保持し、狭幅の実ブランドを操作と別段へ分けて全文の読み幅を確保する。30pxの題字、17pxの行先、14pxの説明を安定した余白へ揃え、現在地は一つの下罫だけで示す。 */
+/** 題字・現在地の余白欄・番号付き目次を別々に組む便箋ナビゲーション。通常幅は左の現在地欄と右の行先本文を並べ、狭幅では題字の下に同じ順序で接続する。 */
 export default function LetterheadNavigation(props:NavigationProps) {
  return <NavigationView {...props} skin="letterhead-navigation" layout={props.layout ?? 'header'} />;
 }

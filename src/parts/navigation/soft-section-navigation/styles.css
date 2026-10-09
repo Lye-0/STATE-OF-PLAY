@@ -1,8 +1,38 @@
 @import "../../../shared/workbench/base.css";
-/* Soft Section Navigation — 柔らかな区画でページを分ける。 */
+/* Soft Section Navigation — 説明付きの区画を選ぶナビゲーション。行先ごとに小さな読み取り面を設け、名前・説明・現在地を続けて確認できる。 */
 .sop-wb.sop-soft-section-navigation {--wb-bg:#f6edf4;--wb-surface:#e9dfe5;--wb-ink:#493747;--wb-muted:#5a4355;--wb-accent:#70475f;--wb-line:#beabba;--wb-radius:6px;color-scheme:light}.sop-wb.sop-soft-section-navigation .wb-art{pointer-events:none}.sop-wb.sop-soft-section-navigation :is(.wb-search-results,.wb-command-dialog,.wb-context-panel,.wb-nav-flyout,.wb-nav-dialog){color:var(--wb-ink);background:var(--wb-bg)}.sop-wb.sop-soft-section-navigation .wb-navigation-frame{border-radius:15px}.sop-wb.sop-soft-section-navigation .wb-nav-link{border-radius:9px}.sop-wb.sop-soft-section-navigation .wb-nav-flyout{border-radius:12px}
 .sop-wb.sop-soft-section-navigation{max-width:100%}.sop-wb.sop-soft-section-navigation,.sop-wb.sop-soft-section-navigation *{box-sizing:border-box}.sop-wb.sop-soft-section-navigation :is(button,input,textarea,a){min-width:0}
 .sop-wb.sop-soft-section-navigation:focus-visible,.sop-wb.sop-soft-section-navigation :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-wb.sop-soft-section-navigation,.sop-wb.sop-soft-section-navigation *,.sop-wb.sop-soft-section-navigation::before,.sop-wb.sop-soft-section-navigation::after,.sop-wb.sop-soft-section-navigation *::before,.sop-wb.sop-soft-section-navigation *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-wb.sop-soft-section-navigation[data-sop-paused] *,.sop-wb.sop-soft-section-navigation[data-paused=true] *,.sop-wb.sop-soft-section-navigation[data-motion-running=false] *,.sop-wb.sop-soft-section-navigation[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-wb.sop-soft-section-navigation{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-wb.sop-soft-section-navigation :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation .wb-navigation-frame{padding:12px;background:#fcf5fa;border:1px solid #d9c3d2;border-radius:12px}
+.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation .wb-nav-brand{padding:12px 10px 20px;border-bottom:1px solid #dfcdd9}
+.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation .wb-nav-desktop{padding:12px 0 0}
+.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation .wb-nav-list{gap:8px}
+.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation .wb-nav-link,.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation .wb-nav-disclosure{padding:12px;min-height:52px;border:1px solid #e0cedb;background:#fffafd;border-radius:8px}
+.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation .wb-nav-link strong{font:600 14px/1.6 Arial,'Yu Gothic',sans-serif}
+.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation .wb-nav-link small{display:block;font:12px/1.7 Arial,'Yu Gothic',sans-serif}
+.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation .wb-nav-marker{background:#ecdaE7;border:1px solid #c5a6bc;border-radius:8px}
+.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation .wb-nav-foot{padding:14px 10px 4px;border-top:1px solid #dfcdd9;margin-top:14px}
+.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation .wb-nav-flyout{padding:10px;border:1px solid #ceb3c5;border-radius:10px;background:#fcf5fa}
+
+}
+
+/* Long content in each supported layout */
+.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation .wb-nav-dialog>header{gap:14px}
+.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation .wb-nav-dialog>header strong{min-width:0;overflow-wrap:anywhere;white-space:normal}
+.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation .wb-nav-mobile-close,.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation .wb-nav-mobile-open{flex:none}
+.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation .wb-nav-list>li{min-width:0}
+.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation .wb-nav-disclosure>span,.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation .wb-nav-mobile-group summary{min-width:0;overflow-wrap:anywhere;white-space:normal}
+.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation[data-wb-layout=dock] .wb-nav-desktop>.wb-nav-list>li{flex:1 1 0;min-width:0}
+.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation[data-wb-layout=dock] .wb-nav-link,.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation[data-wb-layout=dock] .wb-nav-disclosure{width:100%;min-width:0}
+
+.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation .wb-nav-link-copy,.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation .wb-nav-brand strong,.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation .wb-nav-location{min-width:0;overflow-wrap:anywhere}
+.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation .wb-nav-link small,.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation .wb-nav-flyout-title{overflow-wrap:anywhere;white-space:normal}
+
+.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation[data-wb-layout=dock] .wb-nav-desktop>.wb-nav-list{flex-wrap:wrap}
+.sop-wb.sop-soft-section-navigation.sop-soft-section-navigation[data-wb-layout=dock] .wb-nav-desktop>.wb-nav-list>li{flex:1 1 140px;min-width:min(140px,100%);max-width:100%}

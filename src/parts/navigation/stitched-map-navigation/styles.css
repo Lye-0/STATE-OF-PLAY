@@ -1,5 +1,5 @@
 @import "../../../shared/workbench/base.css";
-/* 交互カードと浮いたXを廃し、一枚の布の実groupの開口へ折り伏せ縫いを集約する。実親の上辺と子の読む面の両端32pxに深い孔を設け、その孔を通る幅6pxの糸で折った耳を留める。直リンクには孔や別布を反復せず、開いた実階層だけの切れ目を見せる。 */
+/* 縫い目が行先をつなぐナビゲーション。現在地の布片と開いた小さな地図を同じ細い綴じ線へ接続し、大きな無地の面を減らす。 */
 
 .sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation{--paper:#fbf5e9;--ink:#493d30;--muted:#6b5d4b;--accent:#aa8155;--edge:#cab59c;--wb-bg:var(--paper);--wb-surface:var(--paper);--wb-ink:var(--ink);--wb-muted:var(--muted);--wb-accent:var(--accent);--wb-line:var(--edge);--wb-radius:0;color:var(--ink);color-scheme:light;max-width:min(100%,820px);min-width:0;container-type:inline-size;overflow-wrap:anywhere}
 .sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation *,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation *::before,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation *::after{box-sizing:border-box}
@@ -120,3 +120,40 @@
 .sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-navigation-frame,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-brand,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-brand strong,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-desktop,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-list,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-list>li,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-link,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-disclosure,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-foot,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-dialog,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-dialog>header,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-dialog>nav,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-dialog footer,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-mobile-group,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-mobile-group summary,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-mobile-open,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-mobile-close,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-flyout,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-flyout-title{background:Canvas!important;color:CanvasText!important;border-color:ButtonText!important;box-shadow:none!important;mask:none!important;clip-path:none!important}
 .sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-navigation-frame::before,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-navigation-frame::after,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-brand::before,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-brand::after,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-desktop::before,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-desktop::after,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-list>li::before,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-list>li::after,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-link::before,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-link::after,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-disclosure::before,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-disclosure::after,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-foot::before,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-foot::after,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-dialog::before,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-dialog::after,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-dialog>header::before,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-dialog>header::after,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-dialog>nav::before,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-dialog>nav::after,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-flyout::before,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-flyout::after{display:none!important}
 .sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-marker{display:none!important}.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation [aria-current=page],.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation [data-current]{outline:2px solid Highlight!important;outline-offset:-3px}.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation :is(button,a,summary):focus-visible{outline-color:Highlight!important}}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-navigation-frame{background:#f7f1f8;border:1px solid #ccb7d2;border-radius:0;padding-bottom:12px}
+.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-brand{padding:22px 18px;border-bottom:1px dashed #b295bb}
+.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-desktop,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation[data-wb-layout=sidebar] .wb-nav-desktop{padding:14px 18px 20px}
+.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-list{border-inline-start:1px dashed #b496be;padding-inline-start:12px}
+.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-link{position:relative;padding:14px 10px;border:0;border-bottom:1px dashed #c5aecf}
+.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-link-icon{border:1px solid #b79bc1;border-radius:50%;width:28px;min-width:28px;height:28px;background:#e8daef;display:grid;place-items:center}
+.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-link-icon svg{width:16px;height:16px}
+.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-marker{background:#e8ddef;border:1px dashed #b99bc4;border-radius:0}
+.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-disclosure{padding:14px 12px;min-height:68px;margin-top:14px;background:#e9dcef;border:1px dashed #b99bc4}
+.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-flyout[data-nav-inline]{padding:12px 0 10px 12px;background:none;border:0;border-inline-start:1px dashed #b99bc4}
+.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-flyout[data-nav-inline]::before,.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-flyout[data-nav-inline]::after{display:none}
+.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-flyout[data-nav-inline]>.wb-nav-list{padding:10px;background:#fcf8fd;border:1px dashed #c4aecd}
+.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-foot{border-top:1px dashed #b69abe;background:#efe4f3;padding:14px 18px}
+
+}
+
+@media(forced-colors:none){.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation{--muted:#61516f;}}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-navigation-frame{background:linear-gradient(105deg,#fcf9fd 0 21%,#f1e8f4 21.2%,#faf6fc 22% 73%,#eee2f2 73.2%,#f7f0fa 74%);border-bottom:4px solid #cbb6d4}
+.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-list{border-inline-start:0;padding-inline-start:0;gap:0;grid-template-columns:minmax(0,1fr)}
+.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-list>li:has(>.wb-nav-link){position:relative;isolation:isolate}
+.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-list>li:has(>.wb-nav-link)::before{content:'';position:absolute;inset-block:0;inset-inline-start:23px;width:3px;background:repeating-linear-gradient(to bottom,#9770a8 0 3px,transparent 3px 6px);pointer-events:none;z-index:-1}
+.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-list>li:first-child:has(>.wb-nav-link)::before{top:50%}
+.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-list>li:has(>.wb-nav-link):not(:has(+li>.wb-nav-link))::before{bottom:50%}
+.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-link{border:0;background:none;min-height:88px;gap:14px}
+.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-link-icon{background:#faf4fc;border:2px solid #b699c3;box-shadow:0 0 0 4px #f7f0fa}
+.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-link[aria-current=page] .wb-nav-link-icon{background:#715780;color:#fff;border-color:#715780;box-shadow:0 0 0 3px #f7f0fa,0 0 0 4px #9e7eaf}
+.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-marker{display:none}
+.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-link[aria-current=page] .wb-nav-link-copy{border-bottom:2px solid #a686b5;padding-bottom:4px}
+.sop-wb.sop-stitched-map-navigation.sop-stitched-map-navigation .wb-nav-link-copy{border-bottom:2px solid transparent;padding-bottom:4px}
+
+}

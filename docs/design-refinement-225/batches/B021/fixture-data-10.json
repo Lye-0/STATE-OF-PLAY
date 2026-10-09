@@ -1,0 +1,621 @@
+{
+  "ribbon-file-context": {
+    "config": {
+      "label": "ドキュメントの操作",
+      "targetLabel": "Project notes",
+      "targetDescription": "右クリック、Shift F10、または …",
+      "items": [
+        {
+          "id": "open",
+          "label": "開く",
+          "icon": "file",
+          "shortcut": "Enter"
+        },
+        {
+          "id": "copy",
+          "label": "複製",
+          "icon": "copy",
+          "shortcut": "Ctrl D"
+        },
+        {
+          "id": "move",
+          "label": "移動先を選ぶ",
+          "icon": "folder",
+          "children": [
+            {
+              "id": "folder-work",
+              "label": "作業フォルダー",
+              "icon": "folder"
+            },
+            {
+              "id": "folder-archive",
+              "label": "アーカイブ",
+              "icon": "folder"
+            }
+          ]
+        },
+        {
+          "id": "sep-a",
+          "label": "",
+          "kind": "separator"
+        },
+        {
+          "id": "pin",
+          "label": "ピン留め",
+          "kind": "checkbox",
+          "checked": true
+        },
+        {
+          "id": "notify",
+          "label": "更新を通知",
+          "kind": "checkbox"
+        },
+        {
+          "id": "sep-b",
+          "label": "",
+          "kind": "separator"
+        },
+        {
+          "id": "delete",
+          "label": "削除",
+          "icon": "trash",
+          "danger": true
+        },
+        {
+          "id": "share",
+          "label": "共有リンクを作成",
+          "description": "管理者のみ",
+          "disabled": true,
+          "icon": "arrow"
+        }
+      ]
+    },
+    "slot": ""
+  },
+  "soft-resource-context": {
+    "config": {
+      "label": "ドキュメントの操作",
+      "targetLabel": "Project notes",
+      "targetDescription": "右クリック、Shift F10、または …",
+      "items": [
+        {
+          "id": "open",
+          "label": "開く",
+          "icon": "file",
+          "shortcut": "Enter"
+        },
+        {
+          "id": "copy",
+          "label": "複製",
+          "icon": "copy",
+          "shortcut": "Ctrl D"
+        },
+        {
+          "id": "move",
+          "label": "移動先を選ぶ",
+          "icon": "folder",
+          "children": [
+            {
+              "id": "folder-work",
+              "label": "作業フォルダー",
+              "icon": "folder"
+            },
+            {
+              "id": "folder-archive",
+              "label": "アーカイブ",
+              "icon": "folder"
+            }
+          ]
+        },
+        {
+          "id": "sep-a",
+          "label": "",
+          "kind": "separator"
+        },
+        {
+          "id": "pin",
+          "label": "ピン留め",
+          "kind": "checkbox",
+          "checked": true
+        },
+        {
+          "id": "notify",
+          "label": "更新を通知",
+          "kind": "checkbox"
+        },
+        {
+          "id": "sep-b",
+          "label": "",
+          "kind": "separator"
+        },
+        {
+          "id": "delete",
+          "label": "削除",
+          "icon": "trash",
+          "danger": true
+        },
+        {
+          "id": "share",
+          "label": "共有リンクを作成",
+          "description": "管理者のみ",
+          "disabled": true,
+          "icon": "arrow"
+        }
+      ]
+    },
+    "slot": ""
+  },
+  "clear-action-context": {
+    "config": {
+      "label": "ドキュメントの操作",
+      "targetLabel": "Project notes",
+      "targetDescription": "右クリック、Shift F10、または …",
+      "items": [
+        {
+          "id": "open",
+          "label": "開く",
+          "icon": "file",
+          "shortcut": "Enter"
+        },
+        {
+          "id": "copy",
+          "label": "複製",
+          "icon": "copy",
+          "shortcut": "Ctrl D"
+        },
+        {
+          "id": "move",
+          "label": "移動先を選ぶ",
+          "icon": "folder",
+          "children": [
+            {
+              "id": "folder-work",
+              "label": "作業フォルダー",
+              "icon": "folder"
+            },
+            {
+              "id": "folder-archive",
+              "label": "アーカイブ",
+              "icon": "folder"
+            }
+          ]
+        },
+        {
+          "id": "sep-a",
+          "label": "",
+          "kind": "separator"
+        },
+        {
+          "id": "pin",
+          "label": "ピン留め",
+          "kind": "checkbox",
+          "checked": true
+        },
+        {
+          "id": "notify",
+          "label": "更新を通知",
+          "kind": "checkbox"
+        },
+        {
+          "id": "sep-b",
+          "label": "",
+          "kind": "separator"
+        },
+        {
+          "id": "delete",
+          "label": "削除",
+          "icon": "trash",
+          "danger": true
+        },
+        {
+          "id": "share",
+          "label": "共有リンクを作成",
+          "description": "管理者のみ",
+          "disabled": true,
+          "icon": "arrow"
+        }
+      ]
+    },
+    "slot": ""
+  },
+  "warm-project-context": {
+    "config": {
+      "label": "ドキュメントの操作",
+      "targetLabel": "Project notes",
+      "targetDescription": "右クリック、Shift F10、または …",
+      "items": [
+        {
+          "id": "open",
+          "label": "開く",
+          "icon": "file",
+          "shortcut": "Enter"
+        },
+        {
+          "id": "copy",
+          "label": "複製",
+          "icon": "copy",
+          "shortcut": "Ctrl D"
+        },
+        {
+          "id": "move",
+          "label": "移動先を選ぶ",
+          "icon": "folder",
+          "children": [
+            {
+              "id": "folder-work",
+              "label": "作業フォルダー",
+              "icon": "folder"
+            },
+            {
+              "id": "folder-archive",
+              "label": "アーカイブ",
+              "icon": "folder"
+            }
+          ]
+        },
+        {
+          "id": "sep-a",
+          "label": "",
+          "kind": "separator"
+        },
+        {
+          "id": "pin",
+          "label": "ピン留め",
+          "kind": "checkbox",
+          "checked": true
+        },
+        {
+          "id": "notify",
+          "label": "更新を通知",
+          "kind": "checkbox"
+        },
+        {
+          "id": "sep-b",
+          "label": "",
+          "kind": "separator"
+        },
+        {
+          "id": "delete",
+          "label": "削除",
+          "icon": "trash",
+          "danger": true
+        },
+        {
+          "id": "share",
+          "label": "共有リンクを作成",
+          "description": "管理者のみ",
+          "disabled": true,
+          "icon": "arrow"
+        }
+      ]
+    },
+    "slot": ""
+  },
+  "letterhead-navigation": {
+    "config": {
+      "label": "ワークスペース",
+      "brand": "Fieldwork",
+      "items": [
+        {
+          "id": "overview",
+          "label": "概要",
+          "description": "ワークスペースの全体像",
+          "href": "#destination",
+          "icon": "home"
+        },
+        {
+          "id": "projects",
+          "label": "プロジェクト",
+          "description": "取り組んでいること",
+          "href": "#destination",
+          "icon": "grid",
+          "badge": "04"
+        },
+        {
+          "id": "library",
+          "label": "ライブラリ",
+          "description": "蓄積した資料と部品",
+          "href": "#destination",
+          "icon": "folder"
+        },
+        {
+          "id": "more",
+          "label": "もっと見る",
+          "icon": "more",
+          "children": [
+            {
+              "id": "recent",
+              "label": "最近の更新",
+              "description": "最新の変更を確認",
+              "href": "#destination",
+              "icon": "clock"
+            },
+            {
+              "id": "settings",
+              "label": "設定",
+              "description": "表示とワークスペース",
+              "href": "#destination",
+              "icon": "settings"
+            }
+          ]
+        }
+      ],
+      "defaultActive": "overview",
+      "layout": "header"
+    },
+    "slot": ""
+  },
+  "stitched-map-navigation": {
+    "config": {
+      "groupPresentation": "inline",
+      "label": "ワークスペース",
+      "brand": "Fieldwork",
+      "items": [
+        {
+          "id": "overview",
+          "label": "概要",
+          "description": "ワークスペースの全体像",
+          "href": "#destination",
+          "icon": "home"
+        },
+        {
+          "id": "projects",
+          "label": "プロジェクト",
+          "description": "取り組んでいること",
+          "href": "#destination",
+          "icon": "grid",
+          "badge": "04"
+        },
+        {
+          "id": "library",
+          "label": "ライブラリ",
+          "description": "蓄積した資料と部品",
+          "href": "#destination",
+          "icon": "folder"
+        },
+        {
+          "id": "more",
+          "label": "もっと見る",
+          "icon": "more",
+          "children": [
+            {
+              "id": "recent",
+              "label": "最近の更新",
+              "description": "最新の変更を確認",
+              "href": "#destination",
+              "icon": "clock"
+            },
+            {
+              "id": "settings",
+              "label": "設定",
+              "description": "表示とワークスペース",
+              "href": "#destination",
+              "icon": "settings"
+            }
+          ]
+        }
+      ],
+      "defaultActive": "overview",
+      "layout": "header"
+    },
+    "slot": ""
+  },
+  "open-bracket-navigation": {
+    "config": {
+      "label": "ワークスペース",
+      "brand": "Fieldwork",
+      "items": [
+        {
+          "id": "overview",
+          "label": "概要",
+          "description": "ワークスペースの全体像",
+          "href": "#destination",
+          "icon": "home"
+        },
+        {
+          "id": "projects",
+          "label": "プロジェクト",
+          "description": "取り組んでいること",
+          "href": "#destination",
+          "icon": "grid",
+          "badge": "04"
+        },
+        {
+          "id": "library",
+          "label": "ライブラリ",
+          "description": "蓄積した資料と部品",
+          "href": "#destination",
+          "icon": "folder"
+        },
+        {
+          "id": "more",
+          "label": "もっと見る",
+          "icon": "more",
+          "children": [
+            {
+              "id": "recent",
+              "label": "最近の更新",
+              "description": "最新の変更を確認",
+              "href": "#destination",
+              "icon": "clock"
+            },
+            {
+              "id": "settings",
+              "label": "設定",
+              "description": "表示とワークスペース",
+              "href": "#destination",
+              "icon": "settings"
+            }
+          ]
+        }
+      ],
+      "defaultActive": "overview",
+      "layout": "header"
+    },
+    "slot": ""
+  },
+  "book-jacket-navigation": {
+    "config": {
+      "groupPresentation": "inline",
+      "label": "ワークスペース",
+      "brand": "Fieldwork",
+      "items": [
+        {
+          "id": "overview",
+          "label": "概要",
+          "description": "ワークスペースの全体像",
+          "href": "#destination",
+          "icon": "home"
+        },
+        {
+          "id": "projects",
+          "label": "プロジェクト",
+          "description": "取り組んでいること",
+          "href": "#destination",
+          "icon": "grid",
+          "badge": "04"
+        },
+        {
+          "id": "library",
+          "label": "ライブラリ",
+          "description": "蓄積した資料と部品",
+          "href": "#destination",
+          "icon": "folder"
+        },
+        {
+          "id": "more",
+          "label": "もっと見る",
+          "icon": "more",
+          "children": [
+            {
+              "id": "recent",
+              "label": "最近の更新",
+              "description": "最新の変更を確認",
+              "href": "#destination",
+              "icon": "clock"
+            },
+            {
+              "id": "settings",
+              "label": "設定",
+              "description": "表示とワークスペース",
+              "href": "#destination",
+              "icon": "settings"
+            }
+          ]
+        }
+      ],
+      "defaultActive": "overview",
+      "layout": "header"
+    },
+    "slot": ""
+  },
+  "ceramic-dock-navigation": {
+    "config": {
+      "groupPresentation": "inline",
+      "label": "ワークスペース",
+      "brand": "Fieldwork",
+      "items": [
+        {
+          "id": "overview",
+          "label": "概要",
+          "description": "ワークスペースの全体像",
+          "href": "#destination",
+          "icon": "home"
+        },
+        {
+          "id": "projects",
+          "label": "プロジェクト",
+          "description": "取り組んでいること",
+          "href": "#destination",
+          "icon": "grid",
+          "badge": "04"
+        },
+        {
+          "id": "library",
+          "label": "ライブラリ",
+          "description": "蓄積した資料と部品",
+          "href": "#destination",
+          "icon": "folder"
+        },
+        {
+          "id": "more",
+          "label": "もっと見る",
+          "icon": "more",
+          "children": [
+            {
+              "id": "recent",
+              "label": "最近の更新",
+              "description": "最新の変更を確認",
+              "href": "#destination",
+              "icon": "clock"
+            },
+            {
+              "id": "settings",
+              "label": "設定",
+              "description": "表示とワークスペース",
+              "href": "#destination",
+              "icon": "settings"
+            }
+          ]
+        }
+      ],
+      "defaultActive": "overview",
+      "layout": "header"
+    },
+    "slot": ""
+  },
+  "soft-section-navigation": {
+    "config": {
+      "label": "ワークスペース",
+      "brand": "Fieldwork",
+      "items": [
+        {
+          "id": "overview",
+          "label": "概要",
+          "description": "ワークスペースの全体像",
+          "href": "#destination",
+          "icon": "home"
+        },
+        {
+          "id": "projects",
+          "label": "プロジェクト",
+          "description": "取り組んでいること",
+          "href": "#destination",
+          "icon": "grid",
+          "badge": "04"
+        },
+        {
+          "id": "library",
+          "label": "ライブラリ",
+          "description": "蓄積した資料と部品",
+          "href": "#destination",
+          "icon": "folder"
+        },
+        {
+          "id": "more",
+          "label": "もっと見る",
+          "icon": "more",
+          "children": [
+            {
+              "id": "recent",
+              "label": "最近の更新",
+              "description": "最新の変更を確認",
+              "href": "#destination",
+              "icon": "clock"
+            },
+            {
+              "id": "settings",
+              "label": "設定",
+              "description": "表示とワークスペース",
+              "href": "#destination",
+              "icon": "settings"
+            }
+          ]
+        }
+      ],
+      "defaultActive": "overview",
+      "layout": "header"
+    },
+    "slot": ""
+  }
+}

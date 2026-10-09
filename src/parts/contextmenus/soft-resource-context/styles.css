@@ -1,5 +1,5 @@
 @import "../../../shared/workbench/base.css";
-/* Soft Resource Context — 削除操作と起動面の文字を明るい背景に適合。 */
+/* Soft Resource Context — 資料名と説明を読み、下の操作から開くコンパクトなメニュー。文書アイコンと内容を二列に揃え、操作の入口を分ける。 */
 .sop-wb.sop-soft-resource-context {--wb-bg:#f6edf4;--wb-surface:#e9dfe5;--wb-ink:#493747;--wb-muted:#5a4355;--wb-accent:#70475f;--wb-line:#beabba;--wb-radius:6px;color-scheme:light}.sop-wb.sop-soft-resource-context .wb-art{pointer-events:none}.sop-wb.sop-soft-resource-context :is(.wb-search-results,.wb-command-dialog,.wb-context-panel,.wb-nav-flyout,.wb-nav-dialog){color:var(--wb-ink);background:var(--wb-bg)}.sop-wb.sop-soft-resource-context .wb-context-target{border-radius:14px}.sop-wb.sop-soft-resource-context .wb-context-panel{border-radius:12px}.sop-wb.sop-soft-resource-context .wb-context-object{border-radius:10px}
 .sop-wb.sop-soft-resource-context{max-width:100%}.sop-wb.sop-soft-resource-context,.sop-wb.sop-soft-resource-context *{box-sizing:border-box}.sop-wb.sop-soft-resource-context :is(button,input,textarea,a){min-width:0}
 .sop-wb.sop-soft-resource-context:focus-visible,.sop-wb.sop-soft-resource-context :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
@@ -14,3 +14,29 @@
 .sop-wb.sop-soft-resource-context.sop-soft-resource-context .wb-context-object{box-shadow:none;border-width:1px;background:transparent}.sop-wb.sop-soft-resource-context.sop-soft-resource-context .wb-context-object::before,.sop-wb.sop-soft-resource-context.sop-soft-resource-context .wb-context-object::after{display:none}.sop-wb.sop-soft-resource-context.sop-soft-resource-context .wb-context-object i{box-shadow:none}
 
 @media(forced-colors:active){.sop-wb.sop-soft-resource-context.sop-soft-resource-context{--paper:Canvas;--ink:CanvasText;--muted:CanvasText;--accent:Highlight;--edge:ButtonText;--ff-ink:CanvasText;--ff-muted:CanvasText;--sg-bg:Canvas;--sg-ink:CanvasText;--sg-muted:CanvasText;--sg-a:Highlight;--wb-bg:Canvas;--wb-ink:CanvasText;--wb-muted:CanvasText;--wb-accent:Highlight;color:CanvasText;background:Canvas;border-color:ButtonText;box-shadow:none}.sop-wb.sop-soft-resource-context.sop-soft-resource-context :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}.sop-wb.sop-soft-resource-context.sop-soft-resource-context :is(button,input,textarea,select,a):focus-visible{outline-color:Highlight}.sop-wb.sop-soft-resource-context.sop-soft-resource-context :is([aria-current=page],[aria-selected=true],[data-selected=true]){color:HighlightText;background:Highlight;border-color:Highlight}}
+
+@media(forced-colors:none){
+
+.sop-wb.sop-soft-resource-context.sop-soft-resource-context .wb-context-target{display:grid;grid-template-columns:38px minmax(0,1fr);gap:12px;padding:20px 16px;min-height:130px;background:#fcf5fa;border:1px solid #d9c5d2;border-radius:10px}
+.sop-wb.sop-soft-resource-context.sop-soft-resource-context .wb-context-object{width:38px;height:48px;background:#eddde8;border:1px solid #ccb2c4;border-radius:5px;box-shadow:none;transform:none!important}
+.sop-wb.sop-soft-resource-context.sop-soft-resource-context .wb-context-target-copy strong{font:600 17px/1.5 Arial,'Yu Gothic',sans-serif}
+.sop-wb.sop-soft-resource-context.sop-soft-resource-context .wb-context-target-copy small{font:12px/1.7 Arial,'Yu Gothic',sans-serif}
+.sop-wb.sop-soft-resource-context.sop-soft-resource-context .wb-context-open{grid-column:2;justify-self:end;width:44px;height:44px;border:1px solid #ccb2c4;background:white;border-radius:6px}
+.sop-wb.sop-soft-resource-context.sop-soft-resource-context .wb-context-panel{border:1px solid #d0b9c9;border-radius:10px;background:#fcf5fa;padding:10px}
+.sop-wb.sop-soft-resource-context.sop-soft-resource-context .wb-context-subject{padding:10px;margin-bottom:8px;border-bottom:1px solid #dfced9;font:600 14px/1.6 Arial,'Yu Gothic',sans-serif}
+.sop-wb.sop-soft-resource-context.sop-soft-resource-context .wb-context-items [data-menu-action]{min-height:46px;padding:10px;border-radius:6px}
+.sop-wb.sop-soft-resource-context.sop-soft-resource-context .wb-menu-copy strong{font:600 14px/1.6 Arial,'Yu Gothic',sans-serif}
+.sop-wb.sop-soft-resource-context.sop-soft-resource-context .wb-menu-copy small{font:12px/1.7 Arial,'Yu Gothic',sans-serif}
+
+}
+
+/* Readable auxiliary content also in forced colors and narrow panels. */
+.sop-wb.sop-soft-resource-context.sop-soft-resource-context .wb-menu-copy small{font:12px/1.7 Arial,'Yu Gothic',sans-serif;overflow-wrap:anywhere;min-width:0}
+.sop-wb.sop-soft-resource-context.sop-soft-resource-context .wb-context-heading{font:600 14px/1.6 Arial,'Yu Gothic',sans-serif;letter-spacing:0}
+.sop-wb.sop-soft-resource-context.sop-soft-resource-context .wb-context-heading>span{min-width:0;overflow-wrap:anywhere}
+.sop-wb.sop-soft-resource-context.sop-soft-resource-context .wb-context-heading>small{font:12px/1.6 Consolas,monospace;opacity:1;color:var(--wb-muted);flex:none}
+.sop-wb.sop-soft-resource-context.sop-soft-resource-context .wb-context-items kbd{font:12px/1.6 Consolas,monospace;max-width:64px;white-space:normal;overflow-wrap:anywhere;flex:0 1 auto}
+.sop-wb.sop-soft-resource-context.sop-soft-resource-context .wb-menu-group{font-size:13px;line-height:1.6}
+.sop-wb.sop-soft-resource-context.sop-soft-resource-context .wb-context-status{font-size:12px;line-height:1.6;overflow-wrap:anywhere}
+
+.sop-wb.sop-soft-resource-context.sop-soft-resource-context .wb-context-target-copy small{font-size:12px;line-height:1.7;overflow-wrap:anywhere;white-space:normal;min-width:0}
