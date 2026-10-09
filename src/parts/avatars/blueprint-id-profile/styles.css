@@ -1,5 +1,5 @@
 @import "../../../shared/signature/avatar.css";
-/* 人物の写真版を、開いた三角支持の製図台へ載せる紹介。角形アバターへL字の罫線を足す方式を廃し、実肖像82px、そこへ4px入る120pxの台面、下へ58px広がる二股の実支持を一続きに組む。支点の下には真の三角の空隙があり、名前はその下へ全幅の16pxで読む。定規の文字や偽の測定値を足さず、実写真版と開いた支持形で設計の性格を出す。 */
+/* 肖像と氏名を細い製図基準線へ揃えるプロフィール。大きな支持脚を除き、人物情報を設計図の主役にする。 */
 
 .sop-sig.sop-blueprint-id-profile.sop-blueprint-id-profile{--paper:#f5eee5;--ink:#65513c;--muted:#8b7861;--accent:#8d6943;--edge:#d1bb9e;--sg-bg:var(--paper);--sg-panel:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);color:var(--ink);color-scheme:light;background:var(--paper);width:100%;max-width:min(100%,400px);min-width:0;padding:18px;container-type:inline-size;overflow-wrap:anywhere}
 .sop-sig.sop-blueprint-id-profile.sop-blueprint-id-profile,.sop-sig.sop-blueprint-id-profile.sop-blueprint-id-profile *,.sop-sig.sop-blueprint-id-profile.sop-blueprint-id-profile *::before,.sop-sig.sop-blueprint-id-profile.sop-blueprint-id-profile *::after{box-sizing:border-box}
@@ -34,3 +34,15 @@
 .sop-sig.sop-blueprint-id-profile.sop-blueprint-id-profile .sg-person::after{display:block;left:calc(50% - 48px);top:116px;width:96px;height:58px;background:#789db4;clip-path:polygon(40px 0,56px 0,100% 100%,74% 100%,50% 35%,26% 100%,0 100%);border-bottom:8px solid #3f6c87}
 .sop-sig.sop-blueprint-id-profile.sop-blueprint-id-profile .sg-person-copy{text-align:center;padding:0}
 .sop-sig.sop-blueprint-id-profile.sop-blueprint-id-profile .sg-person[data-selected=true]::before{background:#5a849f;border-bottom-color:#345d77}
+
+@media(forced-colors:none){
+
+.sop-sig.sop-blueprint-id-profile.sop-blueprint-id-profile .sg-person{padding:20px 18px;gap:20px;min-height:190px}
+.sop-sig.sop-blueprint-id-profile.sop-blueprint-id-profile .sg-person::before{left:10px;top:10px;width:1px;height:calc(100% - 20px);border:0;background:#90b0c3;clip-path:none}
+.sop-sig.sop-blueprint-id-profile.sop-blueprint-id-profile .sg-person::after{left:0;right:0;top:12px;width:auto;height:1px;border:0;background:#90b0c3;clip-path:none}
+.sop-sig.sop-blueprint-id-profile.sop-blueprint-id-profile .sg-portrait{width:76px;height:76px}
+.sop-sig.sop-blueprint-id-profile.sop-blueprint-id-profile .sg-portrait-picture{border:1px solid #9bbdce;background:#e0edf2;box-shadow:inset 0 0 0 3px #eff6f7}
+.sop-sig.sop-blueprint-id-profile.sop-blueprint-id-profile .sg-person-copy{border-top:1px solid #bdd0da;padding-top:10px}
+.sop-sig.sop-blueprint-id-profile.sop-blueprint-id-profile .sg-person[data-selected=true]::before{background:#517f99}
+
+}

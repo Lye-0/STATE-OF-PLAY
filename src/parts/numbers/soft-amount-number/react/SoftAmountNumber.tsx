@@ -8,13 +8,13 @@ const config: FoundationConfig = {
   "id": "soft-amount-number",
   "kind": "numbers",
   "variant": "essential",
-  "label": "必要な量を、ちょうどよく。",
+  "label": "数量を選ぶ",
   "description": "",
   "defaultValue": 3,
   "min": 0,
   "max": 24,
   "step": 1,
-  "unit": "UNITS"
+  "unit": "個"
 };
 export type SoftAmountNumberProps = FoundationProps;
 /** Soft Amount Number: Bタイプ。元の外観と、ネイティブ操作を保つ独立したDOM領域。 */

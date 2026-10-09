@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "unit": "UNITS"
 };
 export type RecessedDialNumberProps = FoundationProps;
-/** 半円の目盛りを持つ数値ダイヤル。入力面を固定し、外周の指針だけが最小から最大へ回る。 */
+/** 正円の読み取り面を持つダイヤル型数量入力。狭幅では円の縦横比を固定したまま、増減操作を下へ分ける。 */
 export default forwardRef<HTMLDivElement, RecessedDialNumberProps>(function RecessedDialNumber(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderNumber} mountContent={mountNumber}/>;
 });

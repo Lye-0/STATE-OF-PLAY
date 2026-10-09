@@ -1,5 +1,5 @@
 @import "../../../shared/signature/avatar.css";
-/* 製本した一枚の人物票。元の左の綴じ線と段の素材差を保持し、64pxの肖像と16pxの人物名を14pxで同じ行へ近づける。二重の写真枠/小さい名前の長い下線を廃し、6pxの背と4pxの紙の小口へ限定する。姓名と所属は行の平らな紙全体を使い、狭幅でも読字領域を確保する。 */
+/* 蔵書票の罫線と小さなしおりを持つ人物札。肖像と氏名を対にし、活字の見出しと余白で製本の印象を作る。 */
 
 .sop-sig.sop-bookplate-profile.sop-bookplate-profile{--paper:#f5eee5;--ink:#65513c;--muted:#8b7861;--accent:#8d6943;--edge:#d1bb9e;--sg-bg:var(--paper);--sg-panel:var(--paper);--sg-ink:var(--ink);--sg-muted:var(--muted);--sg-a:var(--accent);--sg-line:var(--edge);color:var(--ink);color-scheme:light;background:var(--paper);width:100%;max-width:min(100%,400px);min-width:0;padding:18px;container-type:inline-size;overflow-wrap:anywhere}
 .sop-sig.sop-bookplate-profile.sop-bookplate-profile,.sop-sig.sop-bookplate-profile.sop-bookplate-profile *,.sop-sig.sop-bookplate-profile.sop-bookplate-profile *::before,.sop-sig.sop-bookplate-profile.sop-bookplate-profile *::after{box-sizing:border-box}
@@ -36,3 +36,18 @@
 @container(max-width:280px){.sop-sig.sop-bookplate-profile.sop-bookplate-profile .sg-person{padding:12px 8px 14px 16px;gap:12px}.sop-sig.sop-bookplate-profile.sop-bookplate-profile:dir(rtl) .sg-person{padding:12px 16px 14px 8px}.sop-sig.sop-bookplate-profile.sop-bookplate-profile .sg-portrait{width:56px;height:56px}}
 
 @media(forced-colors:none){.sop-sig.sop-bookplate-profile.sop-bookplate-profile{--ink:#6d5232;--muted:#6d5232}}
+
+@media(forced-colors:none){
+
+.sop-sig.sop-bookplate-profile.sop-bookplate-profile{--paper:#f4eddf;--ink:#58432c;--muted:#6f5940;--accent:#81603a}
+.sop-sig.sop-bookplate-profile.sop-bookplate-profile .sg-person{padding:20px 18px 22px;gap:14px;border:0;background:#fff9eb;min-height:116px;box-shadow:inset 0 0 0 1px #c7b18d;isolation:isolate}
+.sop-sig.sop-bookplate-profile.sop-bookplate-profile .sg-person::before{content:'';display:block;position:absolute;inset:7px;border:1px solid #ddceb3;background:none;pointer-events:none;z-index:-1}
+.sop-sig.sop-bookplate-profile.sop-bookplate-profile .sg-person::after{content:'';display:block;position:absolute;inset:12px auto auto 8px;width:10px;height:30px;background:#a88c61;clip-path:polygon(0 0,100% 0,100% 100%,50% 78%,0 100%);pointer-events:none;z-index:0}
+.sop-sig.sop-bookplate-profile.sop-bookplate-profile .sg-portrait{width:54px;height:70px}
+.sop-sig.sop-bookplate-profile.sop-bookplate-profile .sg-portrait-picture{border-radius:50% 50% 0 0;background:#ecdfc7;border:1px solid #c7b18d}
+.sop-sig.sop-bookplate-profile.sop-bookplate-profile .sg-person-name{font:600 17px/1.5 Georgia,'Yu Mincho',serif}
+.sop-sig.sop-bookplate-profile.sop-bookplate-profile .sg-person-copy{border-top:1px solid #c7b18d;padding-top:8px}
+.sop-sig.sop-bookplate-profile.sop-bookplate-profile .sg-person[data-selected=true]{background:#f0e1c5;box-shadow:inset 0 0 0 2px #a88c61}
+.sop-sig.sop-bookplate-profile.sop-bookplate-profile:dir(rtl) .sg-person::after{left:auto;right:8px}
+
+}

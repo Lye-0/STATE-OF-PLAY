@@ -18,7 +18,7 @@ const config: FoundationConfig = {
   "unit": "UNITS"
 };
 export type RibbonCountNumberProps = FoundationProps;
-/** 上下に巻いたリボンの数値操作。元の縦に深い読む帯と巻く上下端を保持し、濃い紫の面を明るい織布へ、上下の材料を10px/12pxの同じ巻端へ揃える。送り線は上下14pxの巻く布だけに限定し、数字と単位へ通さない。押面も織布の同じ上面・下面で作り、紙の影や濃い箱を混ぜない。 */
+/** 数値面の背後で帯が折り返される数量入力。前面は平らに保ち、両端と下端にだけ帯の裏面を見せる。 */
 export default forwardRef<HTMLDivElement, RibbonCountNumberProps>(function RibbonCountNumber(props, ref) {
   return <FoundationWidget {...props} ref={ref} config={config} renderContent={renderNumber} mountContent={mountNumber}/>;
 });

@@ -33,3 +33,9 @@ review-3は1pass/9差戻し。mountBadgesのみnative契約修正（name/value,r
 ## 最新検証・差分
 B013r5/B011r7/B012r5は型注釈のみ更新（next:Element|null）。npm run typecheck全成功。担当レビューは全件pass、保存待ち。foundation26＋reset3＋badge3、pagination8成功。新badge testを既存test:foundationsへ追加、旧readonly disabled assertをaria-readonly＋値不変へ更新。tests/expansion-review.browser.tsは横並びupload、gradient current番号の実pixel計算、pending pause状態のpollへ合わせ全成功(expansion-review-b023-6.log)。これらtests/packageをB013 commitへ含める。
 B023はsegment-orbit-loaderが終端逆回転せず60度位置で待機するよう修正しround3。motion-phases.mjsで時間差を保持した6段階を5件視認。現在main author差分225/225、範囲外author0。HTML途中120件613画像4.24MB、全ページdecode等成功3.239秒。
+
+## 130件push後・現在B014r5再検査
+B013はd01a65ceaa946ed8985518e6d675788f17dc4a23でpush済み/record130済み。B011r7,B012r5依存補足もそのcommitに含む。
+B014r4は5pass/5差戻し(R461hover3.389,R462muted3.190,R468長unitでinput0px,R470長unit狭列7行,R489forced名消失)。revise-b014.py実行済み、r5freeze→hover_inspector再検査中。5件capture更新、main-extra-5で数値幅・非重なりLTR/RTLとforced人物画像視認成功。著者固定。
+後続変更：B015r2（石アーチ半楕円/布縫い目）画像更新視認済。B023r3（orbit逆戻り除去）motion-phasesで5件6位相視認済。preflight-textで未review B015–B023の補助文字を測定し14件低contrastを改善（revise-text-preflight.py一回実行済）。最新roundはB018r4/B019r3/B020r4/B021r3/B022r3。全事前検査失敗0見込、text-preflight-final.log参照。B018は未到達stepのnative disabledは保持しopacity1で説明名を読めるよう改善。14件gallery撮り直しcapture-text-fixes.log session45676で順次進行。
+未commit tools: revise-b014.py,revise-b015.py,revise-text-preflight.py,preflight-text.ts,motion-phases.mjs,probe-b014.mjs。今後各batch stage extrasに適宜含める。新しい一回用scriptは再実行しない。残り95件の全独立reviewまで継続。

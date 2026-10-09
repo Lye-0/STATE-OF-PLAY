@@ -4,12 +4,12 @@ const config: FoundationConfig = {
   "id": "warm-unit-number",
   "kind": "numbers",
   "variant": "essential",
-  "label": "必要な量を、ちょうどよく。",
+  "label": "分量を調整する",
   "description": "",
-  "defaultValue": 3,
+  "defaultValue": 250,
   "min": 0,
-  "max": 24,
-  "step": 1,
-  "unit": "UNITS"
+  "max": 2000,
+  "step": 5,
+  "unit": "g"
 };
 export function init(element: HTMLElement, options: FoundationOptions = {}) { return mountNumber(element, config, options); }

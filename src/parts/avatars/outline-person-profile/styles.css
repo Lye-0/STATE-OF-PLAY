@@ -1,5 +1,5 @@
 @import "../../../shared/signature/avatar.css";
-/* Outline Person Profile — 薄い輪郭と写真を主体にする。 */
+/* Outline Person Profile — 小さな角形肖像と氏名・役割を横に揃えた人物一覧。区切り線で行を読み分け、選択した人物は左端で示す。 */
 .sop-sig.sop-outline-person-profile {--sg-bg:#f4f5ef;--sg-ink:#343e3d;--sg-muted:#455b4f;--sg-a:#496559;--sg-line:#adbab2;--sg-soft:#e1e4df;--sg-radius:6px;background:#f4f5ef;color-scheme:light;border-radius:5px}.sop-sig.sop-outline-person-profile .sg-art{pointer-events:none}.sop-sig.sop-outline-person-profile .sg-portrait{width:60px;height:60px}.sop-sig.sop-outline-person-profile .sg-portrait-picture{background:#809888;box-shadow:none}.sop-sig.sop-outline-person-profile .sg-portrait-ring{border:1px solid #a1b7a9}.sop-sig.sop-outline-person-profile .sg-avatar-stage{min-height:165px}
 .sop-sig.sop-outline-person-profile{max-width:100%}.sop-sig.sop-outline-person-profile,.sop-sig.sop-outline-person-profile *{box-sizing:border-box}.sop-sig.sop-outline-person-profile :is(button,input,textarea,a){min-width:0}
 .sop-sig.sop-outline-person-profile:focus-visible,.sop-sig.sop-outline-person-profile :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
@@ -11,3 +11,30 @@
 .sop-sig.sop-outline-person-profile.sop-outline-person-profile .sg-person:is(:hover,:focus-visible) .sg-portrait{transform:none}.sop-sig.sop-outline-person-profile.sop-outline-person-profile .sg-portrait-ring{transition:border-color .24s,box-shadow .24s}.sop-sig.sop-outline-person-profile.sop-outline-person-profile .sg-person:is(:hover,:focus-visible) .sg-portrait-ring{border-color:var(--sg-a);box-shadow:0 0 0 3px color-mix(in srgb,var(--sg-a) 12%,transparent)}
 
 @media(forced-colors:active){.sop-sig.sop-outline-person-profile.sop-outline-person-profile{--paper:Canvas;--ink:CanvasText;--muted:CanvasText;--accent:Highlight;--edge:ButtonText;--ff-ink:CanvasText;--ff-muted:CanvasText;--sg-bg:Canvas;--sg-ink:CanvasText;--sg-muted:CanvasText;--sg-a:Highlight;--wb-bg:Canvas;--wb-ink:CanvasText;--wb-muted:CanvasText;--wb-accent:Highlight;color:CanvasText;background:Canvas;border-color:ButtonText;box-shadow:none}.sop-sig.sop-outline-person-profile.sop-outline-person-profile :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}.sop-sig.sop-outline-person-profile.sop-outline-person-profile :is(button,input,textarea,select,a):focus-visible{outline-color:Highlight}.sop-sig.sop-outline-person-profile.sop-outline-person-profile :is([aria-current=page],[aria-selected=true],[data-selected=true]){color:HighlightText;background:Highlight;border-color:Highlight}}
+
+@media(forced-colors:none){
+
+.sop-sig.sop-outline-person-profile.sop-outline-person-profile{--sg-bg:#f5f7f4;--sg-panel:#fffefa;--sg-ink:#3d4f54;--sg-muted:#5d7177;--sg-a:#4d7482;--sg-line:#bccbd0;background:#f5f7f4;padding:18px;border-radius:3px}
+.sop-sig.sop-outline-person-profile.sop-outline-person-profile .sg-avatar-list{display:grid;grid-template-columns:1fr;gap:0}
+.sop-sig.sop-outline-person-profile.sop-outline-person-profile .sg-person{display:flex;flex-direction:row;gap:12px;align-items:center;padding:16px 4px;min-height:78px;border:0;border-bottom:1px solid #c5d1d3;border-radius:0;background:none}
+.sop-sig.sop-outline-person-profile.sop-outline-person-profile .sg-portrait{width:44px;height:44px;flex:none}
+.sop-sig.sop-outline-person-profile.sop-outline-person-profile .sg-portrait-picture{border:1px solid #93adb7;background:#f8fbf5;border-radius:5px}
+.sop-sig.sop-outline-person-profile.sop-outline-person-profile .sg-portrait-ring{border-radius:7px;border-width:1px}
+.sop-sig.sop-outline-person-profile.sop-outline-person-profile .sg-person-copy{text-align:start;min-width:0;flex:1}
+.sop-sig.sop-outline-person-profile.sop-outline-person-profile .sg-person-copy strong{font-size:14px}
+.sop-sig.sop-outline-person-profile.sop-outline-person-profile .sg-person-copy small{font-size:11px;line-height:1.7}
+.sop-sig.sop-outline-person-profile.sop-outline-person-profile .sg-person[data-selected=true]{background:#e4eef0;border-inline-start:3px solid #4d7482;padding-inline-start:8px}
+
+}
+
+.sop-sig.sop-outline-person-profile.sop-outline-person-profile .sg-person{width:100%;max-width:none}.sop-sig.sop-outline-person-profile.sop-outline-person-profile .sg-person-copy{width:auto}.sop-sig.sop-outline-person-profile.sop-outline-person-profile .sg-person-name{font-size:14px;line-height:1.6}.sop-sig.sop-outline-person-profile.sop-outline-person-profile .sg-person-sub{font-size:11px;line-height:1.7}
+@media(forced-colors:none){.sop-sig.sop-outline-person-profile.sop-outline-person-profile .sg-initials{color:#47616d}}
+
+@media(forced-colors:none){.sop-sig.sop-outline-person-profile.sop-outline-person-profile{--sg-muted:#50636a}}
+
+@media(forced-colors:active){
+.sop-sig.sop-outline-person-profile.sop-outline-person-profile .sg-person[data-selected=true]{--sg-ink:HighlightText;--sg-muted:HighlightText;background:Highlight;color:HighlightText;forced-color-adjust:none}
+.sop-sig.sop-outline-person-profile.sop-outline-person-profile .sg-person[data-selected=true] .sg-person-copy,.sop-sig.sop-outline-person-profile.sop-outline-person-profile .sg-person[data-selected=true] .sg-person-name,.sop-sig.sop-outline-person-profile.sop-outline-person-profile .sg-person[data-selected=true] .sg-person-sub{background:transparent;color:HighlightText;forced-color-adjust:none}
+.sop-sig.sop-outline-person-profile.sop-outline-person-profile .sg-person[data-selected=true] .sg-portrait-picture{background:Canvas;border-color:HighlightText}
+.sop-sig.sop-outline-person-profile.sop-outline-person-profile .sg-person[data-selected=true] .sg-initials{color:CanvasText;background:Canvas;text-shadow:none;forced-color-adjust:none}
+}

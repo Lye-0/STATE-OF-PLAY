@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 二つの実操作の本立てが数値の紙束を保持するカウンター。元の左右の押面と中央の紙束を保持し、濃い茶の巨大な操作面を明るい木へ、紙の縦罫を無地の読む面へ揃える。幅44pxの本立てと高さ126pxの紙束の接触を0gapで保ち、6pxの木の端と8pxの紙の小口を見せる。狭幅では長い数値の紙を全幅へ広げ、本立ての二つの操作を下へ揃える。 */
+/* 左右のブックエンドで数値面を支える数量入力。狭幅でも両端を下段へ移さず、同じ軸へ保つ。 */
 
 .sop-foundation.sop-bookend-counter.sop-bookend-counter{--paper:#1c2937;--ink:#f4eddf;--muted:#b9c9d9;--accent:#d6b582;--edge:#718a9e;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-line:var(--edge);color:var(--ink);width:100%;max-width:min(100%,400px);min-width:0;padding:18px;background:var(--paper);container-type:inline-size;overflow-wrap:anywhere}
 .sop-foundation.sop-bookend-counter.sop-bookend-counter,.sop-foundation.sop-bookend-counter.sop-bookend-counter *,.sop-foundation.sop-bookend-counter.sop-bookend-counter *::before,.sop-foundation.sop-bookend-counter.sop-bookend-counter *::after{box-sizing:border-box}
@@ -41,3 +41,12 @@
 /* 第三者3への接合/主形調整4 */
 
 @container(max-width:280px){.sop-foundation.sop-bookend-counter.sop-bookend-counter .ff-number-face{margin-bottom:0}}
+
+.sop-foundation.sop-bookend-counter.sop-bookend-counter .ff-stepper{grid-template-columns:44px minmax(0,1fr) 44px;gap:0;align-items:center}
+.sop-foundation.sop-bookend-counter.sop-bookend-counter .ff-number-face{grid-column:2;grid-row:1;width:100%;margin:0;padding:18px 3px;min-height:120px}
+.sop-foundation.sop-bookend-counter.sop-bookend-counter .ff-stepper>button[data-adjust="-1"]{grid-column:1;grid-row:1}.sop-foundation.sop-bookend-counter.sop-bookend-counter .ff-stepper>button[data-adjust="1"]{grid-column:3;grid-row:1}
+.sop-foundation.sop-bookend-counter.sop-bookend-counter .ff-stepper>button{height:136px}.sop-foundation.sop-bookend-counter.sop-bookend-counter [data-number]{font-size:clamp(22px,8cqi,34px)}.sop-foundation.sop-bookend-counter.sop-bookend-counter .ff-unit{font-size:10px;letter-spacing:0}
+
+@media(forced-colors:none){
+.sop-foundation.sop-bookend-counter.sop-bookend-counter{--ink:#60472d;--muted:#725c42}
+}

@@ -1,5 +1,5 @@
 @import "../../../shared/foundation/base.css";
-/* 確定値を赤いストップで読むレール数量操作。元の赤い位置材と左右の半円押面を保持し、目盛り床は5pxの一つの実レールへ接し、両端を操作面へ12px伸ばす。ストップの幅22px/厚18pxと上下の材料面を揃え、確定値に応じて同じレールの内側を移動する。数字窓は26pxの下余白で動く材料から離し、レールの動きでもnative文字/当たりは固定する。 */
+/* 水平の目盛りと小さい現在指標を持つ数量入力。増減キーはホバー中も暗い面と白い記号のコントラストを保つ。 */
 
 .sop-foundation.sop-rail-stop-number.sop-rail-stop-number{--paper:#1c2937;--ink:#f4eddf;--muted:#b9c9d9;--accent:#d6b582;--edge:#718a9e;--ff-base:var(--paper);--ff-panel:var(--paper);--ff-ink:var(--ink);--ff-muted:var(--muted);--ff-accent:var(--accent);--ff-line:var(--edge);color:var(--ink);width:100%;max-width:min(100%,400px);min-width:0;padding:18px;background:var(--paper);container-type:inline-size;overflow-wrap:anywhere}
 .sop-foundation.sop-rail-stop-number.sop-rail-stop-number,.sop-foundation.sop-rail-stop-number.sop-rail-stop-number *,.sop-foundation.sop-rail-stop-number.sop-rail-stop-number *::before,.sop-foundation.sop-rail-stop-number.sop-rail-stop-number *::after{box-sizing:border-box}
@@ -49,3 +49,11 @@
 /* RTLの実操作位置と物理材を一度だけ鏡映する。 */
 
 @container(max-width:280px){.sop-foundation.sop-rail-stop-number.sop-rail-stop-number:dir(rtl) .ff-stepper>button::before{left:auto;right:0}.sop-foundation.sop-rail-stop-number.sop-rail-stop-number:dir(rtl) .ff-stepper>button:last-child::before{left:0;right:auto}}
+
+@media(forced-colors:none){
+.sop-foundation.sop-rail-stop-number.sop-rail-stop-number .ff-stepper>button{background:#47718a;color:#fff;transition:background .2s,color .2s}
+.sop-foundation.sop-rail-stop-number.sop-rail-stop-number .ff-stepper>button:hover:not(:disabled){background:#365f77;color:#fff}
+
+}
+
+@media(forced-colors:none){.sop-foundation.sop-rail-stop-number.sop-rail-stop-number{--muted:#4f6878}}

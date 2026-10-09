@@ -1,8 +1,26 @@
 @import "../../../shared/foundation/base.css";
-/* Warm Unit Number — 単位と数量をゆったり示す入力。 */
+/* Warm Unit Number — 分量の数字と単位を同じ基線で読む数量入力。下段の増減操作を分け、長い単位でも入力面を圧迫しない。 */
 .sop-foundation.sop-warm-unit-number {--ff-base:#e6dfd2;--ff-panel:#f6efdf;--ff-ink:#453d32;--ff-muted:#5b4c36;--ff-accent:#745933;--ff-accent2:#745933;--ff-line:#c2b399;--ff-radius:5px;color-scheme:light;background:#e6dfd2;padding:18px;border-radius:4px}.sop-foundation.sop-warm-unit-number .ff-eyebrow{display:none}.sop-foundation.sop-warm-unit-number .ff-heading{line-height:1.6;font-size:12px}.sop-foundation.sop-warm-unit-number .ff-floating{color:var(--ff-ink);background:var(--ff-panel)}.sop-foundation.sop-warm-unit-number .ff-stepper{min-height:64px;border-radius:5px;border-color:#c4ad80;box-shadow:none}.sop-foundation.sop-warm-unit-number [data-number]{font-size:27px}.sop-foundation.sop-warm-unit-number .ff-unit{font-size:8px}
 .sop-foundation.sop-warm-unit-number{max-width:100%}.sop-foundation.sop-warm-unit-number,.sop-foundation.sop-warm-unit-number *{box-sizing:border-box}.sop-foundation.sop-warm-unit-number :is(button,input,textarea,a){min-width:0}
 .sop-foundation.sop-warm-unit-number:focus-visible,.sop-foundation.sop-warm-unit-number :is(button,input,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--sop-focus,#719ad4);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.sop-foundation.sop-warm-unit-number,.sop-foundation.sop-warm-unit-number *,.sop-foundation.sop-warm-unit-number::before,.sop-foundation.sop-warm-unit-number::after,.sop-foundation.sop-warm-unit-number *::before,.sop-foundation.sop-warm-unit-number *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .sop-foundation.sop-warm-unit-number[data-sop-paused] *,.sop-foundation.sop-warm-unit-number[data-paused=true] *,.sop-foundation.sop-warm-unit-number[data-motion-running=false] *,.sop-foundation.sop-warm-unit-number[data-wb-paused=true] *{animation-play-state:paused!important}
 @media(forced-colors:active){.sop-foundation.sop-warm-unit-number{color:CanvasText;background:Canvas;border:1px solid CanvasText;box-shadow:none}.sop-foundation.sop-warm-unit-number :is(button,input,textarea,select,a){color:ButtonText;border-color:ButtonText;box-shadow:none}}
+
+@media(forced-colors:none){
+
+.sop-foundation.sop-warm-unit-number.sop-warm-unit-number{--ff-base:#f7f1e5;--ff-panel:#fffdf5;--ff-ink:#5a4932;--ff-muted:#75634b;--ff-accent:#806139;--ff-line:#ccba97;padding:20px;background:#fffdf5;border-radius:0}
+.sop-foundation.sop-warm-unit-number.sop-warm-unit-number .ff-heading{font:600 14px/1.7 Georgia,'Yu Mincho',serif}
+.sop-foundation.sop-warm-unit-number.sop-warm-unit-number .ff-stepper{display:grid;grid-template-columns:1fr 1fr;gap:0;border:0;border-block:1px solid #bcaa86;border-radius:0;box-shadow:none;background:none;overflow:visible}
+.sop-foundation.sop-warm-unit-number.sop-warm-unit-number .ff-number-face{grid-column:1/-1;grid-row:1;display:flex;flex-direction:row;align-items:baseline;justify-content:center;gap:10px;padding:20px 0;border:0}
+.sop-foundation.sop-warm-unit-number.sop-warm-unit-number [data-number]{font:36px/1.3 Georgia,serif;width:120px;max-width:65%;text-align:end;color:#5a4932}
+.sop-foundation.sop-warm-unit-number.sop-warm-unit-number .ff-unit{font:14px/1.6 Georgia,serif;letter-spacing:0;color:#75634b;max-width:35%;overflow-wrap:anywhere}
+.sop-foundation.sop-warm-unit-number.sop-warm-unit-number .ff-stepper>button{grid-row:2;width:100%;height:40px;border:0;border-top:1px solid #d8c9ab;background:none;color:#806139}
+.sop-foundation.sop-warm-unit-number.sop-warm-unit-number .ff-stepper>button:last-child{border-inline-start:1px solid #d8c9ab}
+.sop-foundation.sop-warm-unit-number.sop-warm-unit-number .ff-footnote{font-size:11px;line-height:1.8}
+
+}
+
+.sop-foundation.sop-warm-unit-number.sop-warm-unit-number .ff-number-face{flex-wrap:wrap;row-gap:6px}
+.sop-foundation.sop-warm-unit-number.sop-warm-unit-number [data-number]{flex:0 1 5ch;width:5ch;min-width:3ch;max-width:100%;text-align:center}
+.sop-foundation.sop-warm-unit-number.sop-warm-unit-number .ff-unit{flex:0 1 auto;width:auto;min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere;margin:0;text-align:center}
