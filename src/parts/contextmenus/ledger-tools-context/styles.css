@@ -4,52 +4,52 @@
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context{--paper:#fff6e9;--ink:#563f30;--muted:#785f4a;--accent:#a2754b;--edge:#cab394;--wb-bg:var(--paper);--wb-surface:var(--paper);--wb-ink:var(--ink);--wb-muted:var(--muted);--wb-accent:var(--accent);--wb-line:var(--edge);--wb-radius:0;container-type:inline-size;color:var(--ink);color-scheme:light;max-width:min(100%,480px);min-width:0;overflow-wrap:anywhere}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context *,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context *::before,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context *::after{box-sizing:border-box}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-art,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-object i{display:none}
-.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-target{display:grid;grid-template-columns:48px minmax(0,1fr) 44px;gap:16px;padding:28px 24px;min-height:180px;background:var(--paper);border:0;border-radius:0;overflow:visible;isolation:isolate}
-.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-object{width:48px;height:64px;align-self:start;margin:0;border:0;border-radius:0;background:none;box-shadow:none;color:var(--accent);transform:none!important;transition:none}
-.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-object svg{width:30px;height:30px}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-target{display:grid;grid-template-columns:24px minmax(0,1fr) 22px;gap:16px;padding:14px 12px;min-height:90px;background:var(--paper);border:0;border-radius:0;overflow:visible;isolation:isolate}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-object{width:24px;height:32px;align-self:start;margin:0;border:0;border-radius:0;background:none;box-shadow:none;color:var(--accent);transform:none!important;transition:none}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-object svg{width:15px;height:15px}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-target-copy strong{font:600 24px/1.5 Georgia,'Yu Gothic',serif;color:var(--ink);margin:8px 0 0;overflow-wrap:anywhere}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-target-copy small{font:14px/1.8 Arial,'Yu Gothic',sans-serif;color:var(--muted);margin-top:12px;overflow-wrap:anywhere}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-eyebrow{font:12px/1.7 Consolas,monospace;letter-spacing:0;color:var(--muted);overflow-wrap:anywhere}
-.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-open{width:44px;height:44px;min-width:44px;min-height:44px;border:1px solid var(--edge);border-radius:0;background:var(--paper);color:var(--ink);padding:12px;align-self:start;transform:none;transition:none}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-open{width:22px;height:22px;min-width:22px;min-height:22px;border:1px solid var(--edge);border-radius:0;background:var(--paper);color:var(--ink);padding:12px;align-self:start;transform:none;transition:none}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-open svg{width:20px;height:20px}
-.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-panel{width:360px;padding:0;border:0;border-radius:0;background:var(--paper);color:var(--ink);box-shadow:0 20px 48px #17202c33;animation:none!important;transform:none;overflow:auto;isolation:isolate}
-.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-heading{padding:24px 20px;gap:12px;font:600 20px/1.5 Georgia,'Yu Gothic',serif;color:var(--ink);letter-spacing:0;border:0;border-bottom:1px solid var(--edge);margin:0;align-items:flex-start;min-height:76px}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-panel{width:360px;padding:0;border:0;border-radius:0;background:var(--paper);color:var(--ink);box-shadow:0 20px 24px #17202c33;animation:none!important;transform:none;overflow:auto;isolation:isolate}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-heading{padding:12px 20px;gap:12px;font:600 20px/1.5 Georgia,'Yu Gothic',serif;color:var(--ink);letter-spacing:0;border:0;border-bottom:1px solid var(--edge);margin:0;align-items:flex-start;min-height:38px}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-heading>span{flex:1;min-width:0;overflow-wrap:anywhere}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-heading>small{font:12px/1.7 Consolas,monospace;opacity:1;color:var(--muted);margin:12px 0 0;flex:none}
-.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-heading>button{width:44px;height:44px;min-width:44px;min-height:44px;padding:12px;flex:none;color:var(--ink);border:1px solid var(--edge);border-radius:0;background:none}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-heading>button{width:22px;height:22px;min-width:22px;min-height:22px;padding:12px;flex:none;color:var(--ink);border:1px solid var(--edge);border-radius:0;background:none}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-heading>button svg{width:18px;height:18px}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context:dir(rtl) .wb-context-heading>button svg{transform:none}
-.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items{padding:12px 20px 24px;min-width:0}
-.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items button{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:12px;min-height:76px;width:100%;padding:18px 0;background:none;color:var(--ink);border:0;border-bottom:1px solid var(--edge);border-radius:0;transition:none;transform:none;overflow-wrap:anywhere}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items{padding:12px 20px 12px;min-width:0}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items button{display:grid;grid-template-columns:14px minmax(0,1fr) auto;gap:12px;min-height:38px;width:100%;padding:18px 0;background:none;color:var(--ink);border:0;border-bottom:1px solid var(--edge);border-radius:0;transition:none;transform:none;overflow-wrap:anywhere}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items button::before{display:none}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items button:hover,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items button:focus{background:color-mix(in srgb,var(--accent) 12%,var(--paper));border:0;border-bottom:1px solid var(--accent)}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items button:focus-visible{outline:2px solid #2878c7;outline-offset:-3px}
-.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-glyph{width:28px;height:32px;grid-column:1;grid-row:1/3;align-self:start;color:var(--accent);background:none}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-glyph{width:14px;height:16px;grid-column:1;grid-row:1/3;align-self:start;color:var(--accent);background:none}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-glyph svg{width:22px;height:22px}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-glyph i{width:18px;height:18px;border:1px solid var(--edge);border-radius:0}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-copy{grid-column:2;grid-row:1/3;min-width:0}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-copy strong{font:600 17px/1.6 Arial,'Yu Gothic',sans-serif;color:inherit;overflow-wrap:anywhere}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-copy small{font:14px/1.8 Arial,'Yu Gothic',sans-serif;color:var(--muted);margin-top:8px;overflow-wrap:anywhere}
-.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items kbd,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-chevron{grid-column:3;grid-row:1/3;max-width:64px;font:12px/1.7 Consolas,monospace;color:var(--muted);white-space:normal;overflow-wrap:anywhere;align-self:center}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items kbd,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-chevron{grid-column:3;grid-row:1/3;max-width:32px;font:12px/1.7 Consolas,monospace;color:var(--muted);white-space:normal;overflow-wrap:anywhere;align-self:center}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-chevron svg{width:18px;height:18px}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context:dir(rtl) .wb-menu-chevron svg{transform:rotate(180deg)}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-group{font:13px/1.7 Arial,'Yu Gothic',sans-serif;color:var(--muted);padding:20px 0 8px;overflow-wrap:anywhere}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-separator{height:1px;background:var(--edge);margin:12px 0}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items [data-danger=true]{color:#9b372b}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-status{font:14px/1.8 Arial,'Yu Gothic',sans-serif;color:var(--ink);padding:0 20px;margin:0;overflow-wrap:anywhere}
-.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-status:not(:empty){padding:20px;min-height:64px}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-status:not(:empty){padding:20px;min-height:32px}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-result{font:14px/1.8 Arial,'Yu Gothic',sans-serif;color:var(--muted);margin-top:16px;overflow-wrap:anywhere}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context [hidden]{display:none!important}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context :is(button,[tabindex]):focus-visible{outline:2px solid #2878c7;outline-offset:3px}
-@container(max-width:300px){.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-target{grid-template-columns:32px minmax(0,1fr);gap:12px;padding:24px 16px}.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-object{width:32px;height:48px}.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-target-copy strong{font-size:22px}.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-open{grid-column:2;grid-row:2;justify-self:end}}
-@media(max-width:400px){.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-heading{padding:20px 16px;font-size:18px;gap:8px}.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items{padding:12px 16px 24px}.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items button{grid-template-columns:24px minmax(0,1fr);gap:10px 12px}.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-glyph{width:24px;height:28px}.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-copy{grid-row:1}.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items kbd,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-chevron{grid-column:2;grid-row:2;max-width:none;justify-self:start}.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-status{padding-inline:16px}}
+@container(max-width:300px){.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-target{grid-template-columns:16px minmax(0,1fr);gap:12px;padding:12px 16px}.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-object{width:16px;height:24px}.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-target-copy strong{font-size:22px}.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-open{grid-column:2;grid-row:2;justify-self:end}}
+@media(max-width:400px){.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-heading{padding:20px 16px;font-size:18px;gap:8px}.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items{padding:12px 16px 12px}.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items button{grid-template-columns:12px minmax(0,1fr);gap:10px 12px}.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-glyph{width:12px;height:14px}.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-copy{grid-row:1}.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items kbd,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-chevron{grid-column:2;grid-row:2;max-width:none;justify-self:start}.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-status{padding-inline:16px}}
 @media(prefers-reduced-motion:reduce){.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context *,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context *::before,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context{--paper:#faf4e8;--ink:#554631;--muted:#7e6b50;--accent:#ab8050;--edge:#d0ba98}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-target{border-inline-start:4px solid #b89568;background:#faf4e8}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-panel{border-inline-start:4px solid #b89568}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-heading{border-bottom:1px solid #d0ba98}
-.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items{padding-inline-start:28px}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items{padding-inline-start:14px}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-group{border:0;padding-block:20px 8px}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items button{border-bottom-color:#e3d7c1}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items button:focus,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items button:hover{background:#efdfc3;border-bottom-color:#ab8050}
@@ -61,14 +61,14 @@
 
 @media(forced-colors:none){
 
-.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-target{padding:24px 18px;border:0;border-inline-start:4px solid #b9a174;border-radius:0;background:#fbf4e4;box-shadow:inset 10px 0 #e7d8b8}
-.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-object{width:42px;height:56px;border:1px solid #bda67a;border-radius:0;background:repeating-linear-gradient(0deg,#f7edda 0 10px,#cdbb95 10px 11px);box-shadow:none}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-target{padding:12px 18px;border:0;border-inline-start:4px solid #b9a174;border-radius:0;background:#fbf4e4;box-shadow:inset 10px 0 #e7d8b8}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-object{width:21px;height:28px;border:1px solid #bda67a;border-radius:0;background:repeating-linear-gradient(0deg,#f7edda 0 10px,#cdbb95 10px 11px);box-shadow:none}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-object svg{background:#f7edda}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-open{background:none;border:0;border-block:3px double #b59b6c;border-radius:0}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-panel{border:0;border-inline-start:5px solid #b49a68;border-radius:0;background:#fcf6e9;padding:16px}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-subject{font:600 18px/1.5 Georgia,'Yu Mincho',serif;border-bottom:3px double #c5b089;padding-bottom:12px}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items{counter-reset:entry}
-.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items [data-menu-action]{counter-increment:entry;position:relative;padding-inline-start:28px;border:0;border-bottom:1px solid #d4c4a3;background:none}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items [data-menu-action]{counter-increment:entry;position:relative;padding-inline-start:14px;border:0;border-bottom:1px solid #d4c4a3;background:none}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items [data-menu-action]::before{content:counter(entry,decimal-leading-zero);display:block;position:absolute;left:0;top:22px;width:auto;height:auto;background:none;color:#796343;font:11px/1.5 Consolas,monospace}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context:dir(rtl) .wb-context-items [data-menu-action]::before{left:auto;right:0}
 
@@ -81,24 +81,50 @@
 
 /* B020 independent review follow-up */
 @media(forced-colors:none){
-.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-panel{padding:0 14px 16px 28px;padding-inline:28px 14px;border:0;border-inline-start:14px solid #97764d;background:#fbf5e8;box-shadow:inset 5px 0 #dbc5a0,0 18px 45px #21180c3b}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-panel{padding:0 14px 16px 14px;padding-inline:14px 14px;border:0;border-inline-start:14px solid #97764d;background:#fbf5e8;box-shadow:inset 5px 0 #dbc5a0,0 18px 22px #21180c3b}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-subject{margin:0;padding:20px 8px 16px;background:none;border:0;border-bottom:3px double #b69d74;overflow-wrap:anywhere}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-heading{padding:16px 8px;border:0;background:#eee0c5;min-height:0}
-.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items{padding:12px 0 0;counter-reset:entry;background:linear-gradient(90deg,transparent 26px,#c1a67c 26px 27px,transparent 27px)}
-.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-group{margin:18px 0 0;padding:8px 12px 8px 36px;padding-inline:36px 12px;background:#e5d2af;border:0;border-block:1px solid #b69d74;color:#60513b;font:600 12px/1.6 Arial,sans-serif}
-.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items [data-menu-action],.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items [data-menu-action]:is(:hover,:focus){display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px 12px;padding:18px 6px 18px 36px;padding-inline:36px 6px;position:relative;border:0;border-bottom:1px solid #cbbb9b;min-height:104px;background:none;align-items:start}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items{padding:12px 0 0;counter-reset:entry;background:linear-gradient(90deg,transparent 13px,#c1a67c 13px 14px,transparent 14px)}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-group{margin:18px 0 0;padding:8px 12px 8px 18px;padding-inline:18px 12px;background:#e5d2af;border:0;border-block:1px solid #b69d74;color:#60513b;font:600 12px/1.6 Arial,sans-serif}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items [data-menu-action],.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items [data-menu-action]:is(:hover,:focus){display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px 12px;padding:18px 6px 18px 18px;padding-inline:18px 6px;position:relative;border:0;border-bottom:1px solid #cbbb9b;min-height:52px;background:none;align-items:start}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items [data-menu-action]:is(:hover,:focus){background:#efdfc3}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items [data-menu-action]::before{display:block;top:20px;inset-inline-start:2px;width:20px;text-align:center;color:#60513b;content:counter(entry,decimal-leading-zero);font:12px/1.6 Consolas,monospace}
-.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-glyph{grid-column:1;grid-row:1;width:22px;height:24px;align-self:start}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-glyph{grid-column:1;grid-row:1;width:22px;height:12px;align-self:start}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-copy{display:contents}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-copy strong{grid-column:2;grid-row:1;min-width:0;font:600 18px/1.5 Georgia,'Yu Mincho',serif}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-copy small{grid-column:2;grid-row:2;min-width:0;margin:0;padding:10px 0 0;border-top:1px dotted #b69d74;color:#60513b;font:13px/1.8 Arial,'Yu Gothic',sans-serif}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items kbd,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-chevron{grid-column:2;grid-row:3;align-self:start;justify-self:start;max-width:100%;color:#60513b}
-.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-target{border:0;border-inline-start:14px solid #97764d;padding:26px 18px 26px 28px;padding-inline:28px 18px;background:#fbf5e8;box-shadow:inset 5px 0 #dbc5a0}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-target{border:0;border-inline-start:14px solid #97764d;padding:13px 18px 13px 14px;padding-inline:14px 18px;background:#fbf5e8;box-shadow:inset 5px 0 #dbc5a0}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-object{border:0;border-inline-start:4px solid #9c7a4d;background:#f4e7cd;box-shadow:3px 3px 0 #d8c49f;transform:none}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-target-copy{padding-inline-start:12px;border-inline-start:1px solid #c1a67c}
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context:dir(rtl) .wb-context-panel,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context:dir(rtl) .wb-context-target{box-shadow:inset -5px 0 #dbc5a0}
-.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context:dir(rtl) .wb-context-items{background:linear-gradient(270deg,transparent 26px,#c1a67c 26px 27px,transparent 27px)}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context:dir(rtl) .wb-context-items{background:linear-gradient(270deg,transparent 13px,#c1a67c 13px 14px,transparent 14px)}
 }
 
 @media(forced-colors:none){.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items [data-menu-action]::before{opacity:1;transform:none;transition:none;z-index:0}}
+
+/* Keep the material proportion subordinate to a frequently used menu. */
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-panel{background:var(--paper);border:1px solid var(--edge);width:344px;max-height:calc(100dvh - 24px)}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-target{min-height:120px}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-heading{min-height:48px;padding-block:12px;font:600 15px/1.4 Georgia,serif}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-heading>small,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items kbd{font-size:10px;line-height:1.5}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-heading>button,.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-open{width:40px;height:44px;min-width:40px;min-height:44px;padding:10px}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items button{min-height:44px;padding-block:8px;gap:8px}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-glyph{width:24px;height:28px}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-glyph svg{width:18px;height:18px}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-glyph i{width:14px;height:14px}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-copy strong{font:500 14px/1.5 Arial,sans-serif}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-copy small{font:12px/1.5 Arial,sans-serif;margin-top:2px}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-group{padding-block:8px 4px;font-size:11px}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-subject{font-size:14px;line-height:1.5;min-height:40px;padding-block:10px}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-batch{padding-block:4px 8px}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-status:not(:empty){min-height:0;padding-block:8px;font-size:12px}
+
+/* Keep familiar shortcuts on the same reading row at ordinary and narrow widths. */
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items button{grid-template-columns:24px minmax(0,1fr) auto}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-copy{grid-column:2;grid-row:1/3}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items kbd{grid-column:3;grid-row:1/3;min-width:38px;width:max-content;max-width:84px;white-space:normal;overflow-wrap:anywhere;justify-self:end;font-size:10px;line-height:1.5}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-menu-chevron{grid-column:3;grid-row:1/3;justify-self:end}
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-separator{margin:4px 0}
+
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items [data-menu-action],.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items [data-menu-action]:is(:hover,:focus){min-height:44px;padding-block:8px}
