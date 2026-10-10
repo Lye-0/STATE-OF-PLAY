@@ -6,3 +6,6 @@
 .sop-foundation.sop-raised-caption-popover:focus-visible,.sop-foundation.sop-raised-caption-popover :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
 
 .sop-foundation.sop-raised-caption-popover[data-sop-paused] *,.sop-foundation.sop-raised-caption-popover[data-paused=true] *,.sop-foundation.sop-raised-caption-popover[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+/* The colored caption belongs inside the scrolling reading area. */
+.sop-foundation.sop-raised-caption-popover .ff-hint-heading{margin:0 0 5px}
