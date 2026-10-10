@@ -18,3 +18,14 @@
 - `npm run test:feedback-geometry`: 5 checks passed across all notice/hint/calendar variants, including transient frames, real long-content scrolling and modal ownership.
 
 Browsers ran through real Vite HTTP with the installed Chromium 151. Downloading Playwright's Chromium 153 failed with HTTP 403 (`Domain forbidden`), so that exact browser revision and Windows could not be checked locally. Full `npm run verify` was not run; validation targets the reported failures and related shared behavior. Hosted Actions runs are not followed after push, per the requested workflow.
+
+## Follow-up: Windows Sequence startup timeout
+
+The fixture navigation inherited the 6-second interaction timeout and waited for the global `load` event. Cold Vite transformations and stylesheet loading on Windows can exceed that deadline before any interaction test begins.
+
+- Added `openComponentFixture`: navigation uses `DOMContentLoaded` with a 120-second startup timeout, followed by an explicit wait for the fixture's `mount` module API using the same startup budget. Ordinary interaction deadlines remain unchanged. No retry hides failed assertions.
+- Sequence, Continuum, Transform, Unfold and Resonance now use this helper and the isolated component server. They no longer load the gallery configuration, scan unrelated dependencies or watch generated fixtures.
+- Added a real browser regression with delayed module initialization and a 25ms interaction timeout: startup succeeds and an absent interaction still times out at 25ms.
+- Real Vite HTTP validation: Sequence 18, Continuum 20, Transform 18, Unfold 18 and Resonance 20 checks passed (94 checks total). App/React/tools typechecks and all 8 Vite URL/workflow inventory unit checks passed.
+
+As above, these runs use installed Chromium 151 on Linux; Windows and hosted Actions results are not claimed.

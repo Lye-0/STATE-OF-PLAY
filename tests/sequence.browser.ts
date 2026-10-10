@@ -1,3 +1,4 @@
+import {createComponentServer,openComponentFixture} from './component-server.ts';
 /** Native control regressions on real Chromium. Offline mode explicitly bypasses Vite. */
 import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {createRequire} from 'node:module';
 import type {Browser} from 'playwright';import {sequenceFixture} from './sequence-fixture.ts';import {ROOT} from '../scripts/catalog.ts';import {requireLocalServerUrl} from './vite-url.ts';
@@ -6,16 +7,25 @@ const f=sequenceFixture(),targets=f.records.filter(p=>p.tags.includes('SEQUENCE'
 const results:string[]=[],errors:string[]=[];let browser:Browser|undefined,close:(()=>Promise<void>)|undefined;
 async function run(name:string,test:()=>Promise<void>){if(process.env.SOP_SEQUENCE_FILTER&&!new RegExp(process.env.SOP_SEQUENCE_FILTER).test(name))return;await test();results.push(name);console.log('PASS '+name);}
 try{
- let url='';if(!offline){const vite=await import('vite'),server=await vite.createServer({root:ROOT,server:{host:'127.0.0.1',port:0}});await server.listen();url=requireLocalServerUrl(server,'SEQUENCE');close=()=>server.close();}
+ let url='';if(!offline){const server=await createComponentServer('sequence');await server.listen();url=requireLocalServerUrl(server,'SEQUENCE');close=()=>server.close();}
  browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
  const p=await browser.newPage({viewport:{width:740,height:960}});p.setDefaultTimeout(6000);p.on('pageerror',e=>errors.push(e.message));
- if(offline){await p.setContent(f.shell.replace(/<link[^>]*>/,''));await p.addStyleTag({content:f.styles});await p.addScriptTag({content:f.bundle()});}else await p.goto(new URL('.test-output/sequence/test.html',url).href);
+ if(offline){await p.setContent(f.shell.replace(/<link[^>]*>/,''));await p.addStyleTag({content:f.styles});await p.addScriptTag({content:f.bundle()});}else await openComponentFixture(p,new URL('.test-output/sequence/test.html',url).href);
  await p.waitForFunction(()=>typeof(window as any).mount==='function');
  const mount=async(ids:string|string[],options={})=>p.evaluate(({ids,options})=>(window as any).mount(typeof ids==='string'?[ids]:ids,options),{ids,options});
  const update=async(options:Record<string,unknown>)=>p.evaluate(o=>(window as any).api.updateFoundation(o),options);
  const data=async()=>p.evaluate(()=>(window as any).api.getData());
  const settle=async()=>p.waitForFunction(()=>(window as any).activeFrames.size===0,{},{timeout:4500});
  const items=[{value:'one',label:'Design',badge:'8'},{value:'two',label:'Motion',badge:'4'},{value:'three',label:'Ready'},{value:'locked',label:'Locked',disabled:true}];
+ await run('fixture startup waits for delayed module readiness independently of interaction deadlines',async()=>{
+  const startup=await browser!.newPage();startup.setDefaultTimeout(25);
+  try{
+   await startup.route('http://fixture-startup.test/',route=>route.fulfill({contentType:'text/html',body:'<script type="module">await new Promise(resolve=>setTimeout(resolve,200));window.mount=()=>{};</script>'}));
+   await openComponentFixture(startup,'http://fixture-startup.test/');
+   assert.equal(await startup.evaluate(()=>typeof(window as any).mount),'function');
+   await assert.rejects(startup.locator('#absent-interaction').waitFor(),/Timeout 25ms exceeded/);
+  }finally{await startup.close();}
+ });
  await run('10 pagination materials move the selected surface while native keys and committed page update immediately',async()=>{
   for(const item of targets.filter(x=>x.category==='pagination')){await mount(item.id,{value:4,totalPages:12});await p.waitForTimeout(40);await settle();const before=await p.locator('.sq-page-indicator .sq-skin').innerHTML();
    await p.locator('[data-sq-key="p5"]').click();const response=await p.locator('.sq-page-indicator .sq-skin').innerHTML();assert.notEqual(response,before,item.id);assert.equal(await data(),5,item.id);assert.equal(await p.locator('[aria-current="page"]').getAttribute('data-page'),'5');assert.equal(await p.locator('[data-sq-page]').innerText(),'05');assert.equal(await p.locator('[data-sq-key="p5"]').evaluate(e=>e===document.activeElement),true);const bounds=await p.locator('[data-sq-key="p5"]').boundingBox();await p.waitForTimeout(90);const during=await p.locator('[data-sq-key="p5"]').boundingBox();assert.ok(bounds&&during&&Math.abs(bounds.x-during.x)<.5&&Math.abs(bounds.width-during.width)<.5);

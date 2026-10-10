@@ -1,3 +1,4 @@
+import {createComponentServer,openComponentFixture} from './component-server.ts';
 import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';import type {Browser} from 'playwright';
 import {transformFixture} from './transform-fixture.ts';import {ROOT} from '../scripts/catalog.ts';import {requireLocalServerUrl} from './vite-url.ts';
@@ -7,10 +8,10 @@ const selections=revised.filter(p=>['tabs','segments'].includes(p.category)),sli
 const tests:string[]=[],errors:string[]=[];let browser:Browser|undefined,close:(()=>Promise<void>)|undefined;
 async function run(name:string,fn:()=>Promise<void>){if(process.env.SOP_TRANSFORM_FILTER&&!new RegExp(process.env.SOP_TRANSFORM_FILTER).test(name))return;await fn();tests.push(name);console.log('PASS '+name);}
 try {
- let url='';if(!offline){const{createServer}=await import('vite');const s=await createServer({root:ROOT,server:{host:'127.0.0.1',port:0}});await s.listen();url=requireLocalServerUrl(s,'TRANSFORM fixture');close=()=>s.close();}
+ let url='';if(!offline){const s=await createComponentServer('transform');await s.listen();url=requireLocalServerUrl(s,'TRANSFORM fixture');close=()=>s.close();}
  browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
  const p=await browser.newPage({viewport:{width:740,height:1000}});p.on('pageerror',e=>errors.push(e.message));p.setDefaultTimeout(5000);p.setDefaultNavigationTimeout(120000);await p.emulateMedia({reducedMotion:'no-preference'});
- if(offline){await p.setContent(f.shell.replace('<link rel="stylesheet" href="./styles.css">',''));await p.addStyleTag({content:f.styles});await p.addScriptTag({content:f.bundle()});}else await p.goto(new URL('.test-output/transform/test.html',url).href);
+ if(offline){await p.setContent(f.shell.replace('<link rel="stylesheet" href="./styles.css">',''));await p.addStyleTag({content:f.styles});await p.addScriptTag({content:f.bundle()});}else await openComponentFixture(p,new URL('.test-output/transform/test.html',url).href);
  await p.waitForFunction(()=>typeof (window as any).mount==='function');
  const mount=async(id:string|string[],options={})=>p.evaluate(({ids,options})=>(window as any).mount(ids,options),{ids:typeof id==='string'?[id]:id,options});
  const marker=async()=>p.locator('.sop-choice').first().evaluate(e=>{const r=e as HTMLElement,t=r.querySelector(':scope > .sop-choice-list > [data-selected="true"]') as HTMLElement;return{x:parseFloat(r.style.getPropertyValue('--tr-x')),y:parseFloat(r.style.getPropertyValue('--tr-y')),w:parseFloat(r.style.getPropertyValue('--tr-w')),h:parseFloat(r.style.getPropertyValue('--tr-h')),tx:t.offsetLeft,ty:t.offsetTop,tw:t.offsetWidth,th:t.offsetHeight};});

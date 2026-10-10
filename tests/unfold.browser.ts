@@ -1,3 +1,4 @@
+import {createComponentServer,openComponentFixture} from './component-server.ts';
 import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';import type {Browser} from 'playwright';
 import {unfoldFixture} from './unfold-fixture.ts';import {ROOT} from '../scripts/catalog.ts';import {requireLocalServerUrl} from './vite-url.ts';
@@ -8,11 +9,11 @@ const tests:string[]=[],errors:string[]=[];
 let browser:Browser|undefined,close:(()=>Promise<void>)|undefined;
 async function run(name:string,fn:()=>Promise<void>){await fn();tests.push(name);console.log('PASS '+name);}
 try{
- let url='';if(!offline){const {createServer}=await import('vite'),s=await createServer({root:ROOT,server:{host:'127.0.0.1',port:0}});await s.listen();url=requireLocalServerUrl(s,'Unfold');close=()=>s.close();}
+ let url='';if(!offline){const s=await createComponentServer('unfold');await s.listen();url=requireLocalServerUrl(s,'Unfold');close=()=>s.close();}
  browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
  const p=await browser.newPage({viewport:{width:740,height:1000}});p.on('pageerror',e=>errors.push(e.message));p.setDefaultTimeout(5000);p.setDefaultNavigationTimeout(120000);
  if(offline){await p.setContent(f.shell.replace('<link rel="stylesheet" href="./styles.css">',''));await p.addScriptTag({content:f.bundle()});}
- else await p.goto(new URL('.test-output/unfold/test.html',url).href);
+ else await openComponentFixture(p,new URL('.test-output/unfold/test.html',url).href);
  await p.addStyleTag({content:f.styles});await p.waitForFunction(()=>typeof (window as any).mount==='function');
  const mount=async(id:string|string[],options={})=>{await p.evaluate(({ids,opts})=>(window as any).mount(ids,opts),{ids:typeof id==='string'?[id]:id,opts:options});};
  await run('all 16 materials preserve native headings, immediate ARIA and animated presentation',async()=>{

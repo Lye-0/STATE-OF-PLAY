@@ -1,12 +1,13 @@
+import {createComponentServer,openComponentFixture} from './component-server.ts';
 import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {createRequire} from 'node:module';
 import type {Browser} from 'playwright';import {resonanceFixture} from './resonance-fixture.ts';import {ROOT} from '../scripts/catalog.ts';import {requireLocalServerUrl} from './vite-url.ts';
 const require=createRequire(import.meta.url),{chromium}=require(process.env.PLAYWRIGHT_PATH??'playwright') as typeof import('playwright');
 const fixture=resonanceFixture(),revised=fixture.records.filter(p=>p.tags.includes('RESONANCE')),offline=process.env.SOP_TEST_MODE==='offline';const tests:string[]=[],errors:string[]=[];let browser:Browser|undefined,close:(()=>Promise<void>)|undefined;
 async function run(name:string,fn:()=>Promise<void>){if(process.env.SOP_RESONANCE_FILTER&&!new RegExp(process.env.SOP_RESONANCE_FILTER).test(name))return;await fn();tests.push(name);console.log('PASS '+name);}
 try {
- let url='';if(!offline){const {createServer}=await import('vite'),s=await createServer({root:ROOT,server:{host:'127.0.0.1',port:0}});await s.listen();url=requireLocalServerUrl(s,'RESONANCE');close=()=>s.close();}
+ let url='';if(!offline){const s=await createComponentServer('resonance');await s.listen();url=requireLocalServerUrl(s,'RESONANCE');close=()=>s.close();}
  browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});const p=await browser.newPage({viewport:{width:740,height:1000}});p.setDefaultTimeout(7000);p.setDefaultNavigationTimeout(120000);p.on('pageerror',e=>errors.push(e.message));
- if(offline){await p.setContent(fixture.shell.replace(/<link[^>]*>/,''));await p.addStyleTag({content:fixture.styles});await p.addScriptTag({content:fixture.bundle()});}else await p.goto(new URL('.test-output/resonance/test.html',url).href);
+ if(offline){await p.setContent(fixture.shell.replace(/<link[^>]*>/,''));await p.addStyleTag({content:fixture.styles});await p.addScriptTag({content:fixture.bundle()});}else await openComponentFixture(p,new URL('.test-output/resonance/test.html',url).href);
  await p.waitForFunction(()=>typeof(window as any).mount==='function');
  const mount=async(id:string|string[],options={})=>p.evaluate(({ids,options})=>(window as any).mount(ids,options),{ids:typeof id==='string'?[id]:id,options});const val=()=>p.evaluate(()=>(window as any).api.getData());
  await run('16 radio materials commit native checked state immediately; each scene deforms and settles',async()=>{
