@@ -87,3 +87,6 @@
 .sop-wb.sop-blueprint-register-table.sop-blueprint-register-table{--wb-action-column-width:112px}
 .sop-wb.sop-blueprint-register-table.sop-blueprint-register-table .wb-row-actions>div{flex-wrap:nowrap;gap:0}
 .sop-wb.sop-blueprint-register-table.sop-blueprint-register-table td{padding-block:8px}
+
+/* Real row positions remain one number, including large server-side pages. */
+.sop-wb.sop-blueprint-register-table.sop-blueprint-register-table .wb-row-position{display:block;white-space:nowrap;font:11px/1.6 Consolas,monospace}
