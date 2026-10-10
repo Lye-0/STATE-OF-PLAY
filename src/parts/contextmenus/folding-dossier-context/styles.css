@@ -104,3 +104,6 @@
 /* A submenu keeps its back control and Escape hint in real columns. */
 .sop-wb.sop-folding-dossier-context.sop-folding-dossier-context .wb-context-heading:has([data-menu-back]:not([hidden])){grid-template-columns:40px minmax(0,1fr) max-content}
 .sop-wb.sop-folding-dossier-context.sop-folding-dossier-context .wb-context-heading .wb-context-key{min-width:28px;white-space:nowrap}
+
+/* Hover and keyboard focus must not change the measured menu row. */
+.sop-wb.sop-folding-dossier-context.sop-folding-dossier-context .wb-context-items button[data-menu-action]:is(:hover,:focus){padding-block:8px;min-height:44px}

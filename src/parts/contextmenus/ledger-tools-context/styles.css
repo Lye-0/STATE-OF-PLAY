@@ -128,3 +128,6 @@
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-separator{margin:4px 0}
 
 .sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items [data-menu-action],.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items [data-menu-action]:is(:hover,:focus){min-height:44px;padding-block:8px}
+
+/* Hover and keyboard focus must not change the measured menu row. */
+.sop-wb.sop-ledger-tools-context.sop-ledger-tools-context .wb-context-items button[data-menu-action]:is(:hover,:focus){padding-block:8px;min-height:44px}

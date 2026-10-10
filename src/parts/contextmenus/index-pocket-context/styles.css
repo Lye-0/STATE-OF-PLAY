@@ -105,3 +105,6 @@
 .sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-items kbd{grid-column:3;grid-row:1/3;min-width:38px;width:max-content;max-width:84px;white-space:normal;overflow-wrap:anywhere;justify-self:end;font-size:10px;line-height:1.5}
 .sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-menu-chevron{grid-column:3;grid-row:1/3;justify-self:end}
 .sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-separator{margin:4px 0}
+
+/* Hover and keyboard focus must not change the measured menu row. */
+.sop-wb.sop-index-pocket-context.sop-index-pocket-context .wb-context-items button[data-menu-action]:is(:hover,:focus){padding-block:8px;min-height:44px}

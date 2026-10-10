@@ -113,3 +113,6 @@
 .sop-wb.sop-file-jacket-context.sop-file-jacket-context .wb-context-batch:not(:last-child){margin-bottom:0}
 .sop-wb.sop-file-jacket-context.sop-file-jacket-context .wb-context-separator{display:none}
 .sop-wb.sop-file-jacket-context.sop-file-jacket-context .wb-menu-group{padding-block:4px 2px}
+
+/* Hover and keyboard focus must not change the measured menu row. */
+.sop-wb.sop-file-jacket-context.sop-file-jacket-context .wb-context-items button[data-menu-action]:is(:hover,:focus){padding-block:8px;min-height:44px}

@@ -127,3 +127,6 @@
 .sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-separator{margin:4px 0}
 
 .sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-items [data-menu-action],.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-items [data-menu-action]:is(:hover,:focus){min-height:44px;padding-block:8px}
+
+/* Hover and keyboard focus must not change the measured menu row. */
+.sop-wb.sop-ribbon-file-context.sop-ribbon-file-context .wb-context-items button[data-menu-action]:is(:hover,:focus){padding-block:8px;min-height:44px}
