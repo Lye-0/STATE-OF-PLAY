@@ -4,32 +4,32 @@
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table *,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table *::before,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table *::after{box-sizing:border-box}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-art{display:none}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-frame{background:var(--paper);border:0;border-radius:0;box-shadow:none;overflow:visible;isolation:isolate;min-width:0}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-heading{padding:32px 24px 24px;gap:24px;align-items:start;min-width:0}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-heading{padding:16px 12px 12px;gap:12px;align-items:start;min-width:0}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-heading>div{min-width:0;flex:1}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-heading h3{font:600 28px/1.5 Georgia,'Yu Gothic',serif;color:var(--ink);letter-spacing:0;margin:8px 0 0}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-heading p{font:14px/1.8 Arial,'Yu Gothic',sans-serif;color:var(--muted);margin-top:8px;overflow-wrap:anywhere}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-eyebrow,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-total{font:12px/1.6 Consolas,monospace;color:var(--muted);letter-spacing:.06em}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-total{display:block;white-space:normal;max-width:100%;flex:none;overflow-wrap:anywhere}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-toolbar{padding:16px 24px 24px;gap:16px;align-items:center}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-search{max-width:420px;min-width:0;min-height:56px;border:1px solid var(--edge);border-radius:0;background:var(--paper);padding:8px 16px;gap:12px}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-toolbar{padding:16px 12px 12px;gap:16px;align-items:center}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-search{max-width:420px;min-width:0;min-height:28px;border:1px solid var(--edge);border-radius:0;background:var(--paper);padding:8px 16px;gap:12px}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-search svg{width:20px;height:20px;flex:none;color:var(--muted)}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-search input{font:16px/1.6 Arial,'Yu Gothic',sans-serif;min-height:40px;color:var(--ink);transform:none;background:none}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-search input{font:16px/1.6 Arial,'Yu Gothic',sans-serif;min-height:20px;color:var(--ink);transform:none;background:none}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-search input::placeholder{color:var(--muted);opacity:1}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-selection{font:14px/1.8 Arial,'Yu Gothic',sans-serif;color:var(--ink);gap:16px;flex-wrap:wrap}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-selection button{font:14px/1.6 Arial,'Yu Gothic',sans-serif;min-height:44px;min-width:44px;color:var(--ink);padding:8px;border:1px solid var(--edge);background:var(--paper)}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-selection button{font:14px/1.6 Arial,'Yu Gothic',sans-serif;min-height:22px;min-width:22px;color:var(--ink);padding:8px;border:1px solid var(--edge);background:var(--paper)}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll{max-height:460px;border:0;position:relative;scrollbar-width:thin;scrollbar-color:var(--accent) var(--paper);min-width:0}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table table{min-width:640px;background:var(--paper);color:var(--ink);font:15px/1.8 Arial,'Yu Gothic',sans-serif}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table th{background:var(--paper);color:var(--ink);border-bottom:2px solid var(--edge)}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-th-content{min-height:64px}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-th-content button{height:auto;min-height:64px;font:600 14px/1.6 Arial,'Yu Gothic',sans-serif;color:var(--ink);padding:16px;transform:none}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-th-content{min-height:32px}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-th-content button{height:auto;min-height:32px;font:600 14px/1.6 Arial,'Yu Gothic',sans-serif;color:var(--ink);padding:16px;transform:none}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-sort-glyph{opacity:1;color:var(--accent)}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-column-resizer{width:12px;inset-inline-end:-6px;z-index:6}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-column-resizer::before{inset:16px 5px;background:var(--accent)}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table td{background:var(--paper);border-bottom:1px solid var(--edge);font-size:15px;line-height:1.8;padding:20px 16px;color:var(--ink);transition:none}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table tbody tr:hover td{background:color-mix(in srgb,var(--accent) 7%,var(--paper))}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table tbody tr[data-selected=true] td{background:color-mix(in srgb,var(--accent) 18%,var(--paper))}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-select-cell{padding:8px;min-width:42px}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-select-cell input{width:24px;height:24px;accent-color:var(--accent);margin:0}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-select-cell{padding:8px;min-width:21px}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-select-cell input{width:12px;height:12px;accent-color:var(--accent);margin:0}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-cell-badge{font:13px/1.6 Arial,'Yu Gothic',sans-serif;padding:6px 8px;border:1px solid var(--edge);border-radius:0;color:var(--ink);background:var(--paper)}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-cell-badge[data-value=review]{background:#fff0cb;color:#654516;border-color:#bfa060}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-cell-badge[data-value=draft]{color:var(--muted);background:var(--paper)}
@@ -37,21 +37,21 @@
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-cell-progress i{border-radius:0;background:var(--accent)}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-cell-progress b{font:12px/1.6 Consolas,monospace;color:var(--muted)}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-row-actions>div{gap:0;flex-wrap:wrap}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-row-actions button{width:44px;height:44px;min-width:44px;min-height:44px;padding:12px;border-radius:0;color:var(--ink);transform:none;background:none}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-row-actions button{width:22px;height:22px;min-width:22px;min-height:22px;padding:12px;border-radius:0;color:var(--ink);transform:none;background:none}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-row-actions svg{width:20px;height:20px}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-status{padding:16px 24px;margin:0;font:13px/1.8 Arial,'Yu Gothic',sans-serif;color:var(--muted)}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-footer{padding:20px 24px 28px;flex-wrap:wrap;gap:16px;border:0;font:14px/1.8 Consolas,monospace;color:var(--ink)}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-status{padding:16px 12px;margin:0;font:13px/1.8 Arial,'Yu Gothic',sans-serif;color:var(--muted)}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-footer{padding:20px 12px 14px;flex-wrap:wrap;gap:16px;border:0;font:14px/1.8 Consolas,monospace;color:var(--ink)}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-footer nav{gap:16px;max-width:100%;flex-wrap:wrap}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-footer nav button{width:44px;height:44px;min-width:44px;min-height:44px;border:1px solid var(--edge);border-radius:0;color:var(--ink);background:var(--paper);padding:12px;transform:none}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-footer nav button{width:22px;height:22px;min-width:22px;min-height:22px;border:1px solid var(--edge);border-radius:0;color:var(--ink);background:var(--paper);padding:12px;transform:none}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-footer svg{width:20px;height:20px}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-empty{padding:48px 24px;font-size:16px}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-empty{padding:24px 12px;font-size:16px}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table [hidden]{display:none!important}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table :is(button,input,[tabindex]):focus-visible{outline:2px solid #2878c7;outline-offset:-3px}
-@container(max-width:440px){.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-heading{display:flex;flex-direction:column;gap:16px;padding:24px 16px}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-heading h3{font-size:24px}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-toolbar,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-status,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-footer{padding-inline:16px}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-toolbar{align-items:stretch}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-search{flex-basis:100%;max-width:none}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-selection{width:100%}}
+@container(max-width:440px){.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-heading{display:flex;flex-direction:column;gap:16px;padding:12px 16px}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-heading h3{font-size:24px}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-toolbar,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-status,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-footer{padding-inline:16px}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-toolbar{align-items:stretch}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-search{flex-basis:100%;max-width:none}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-selection{width:100%}}
 @media(prefers-reduced-motion:reduce){.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table *,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table *::before,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table{--paper:#f2f8fc;--ink:#294b62;--muted:#557389;--accent:#6c97b1;--edge:#b2cbdc}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-frame{background:none;padding-bottom:24px}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-frame{background:none;padding-bottom:12px}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-heading,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-toolbar,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-status,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-footer{background:var(--paper);border:0}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-heading{border-bottom:1px solid var(--edge)}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll{background:none;border-bottom:16px solid #6c97b1;padding-bottom:16px;scrollbar-width:thin;scrollbar-color:#315d79 #cfdfeb}
@@ -60,17 +60,17 @@
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table :is(th,td)[data-first-column]{border-inline-end:16px solid #6c97b1;background:#cfdfeb}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-select-cell{background:#cfdfeb}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table td{background:#f2f8fc}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 64px;column-gap:24px;row-gap:16px;padding:24px 24px 32px;background:#b2cbdc;border-bottom:24px solid #6c97b1;min-width:0}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 32px;column-gap:12px;row-gap:16px;padding:12px 12px 16px;background:#b2cbdc;border-bottom:12px solid #6c97b1;min-width:0}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control>span{grid-column:1;font:14px/1.6 Arial,'Yu Gothic',sans-serif;color:var(--ink)}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control>output{grid-column:2;grid-row:1;text-align:end;direction:ltr;unicode-bidi:isolate;font:14px/1.6 Consolas,monospace;color:var(--ink)}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input{grid-column:1/-1;appearance:none;width:100%;height:48px;min-width:0;background:none;margin:0;cursor:ew-resize;transform:none}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-webkit-slider-runnable-track{height:24px;background:#6c97b1;border-top:8px solid #315d79;border-bottom:4px solid #e4eef5}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-webkit-slider-thumb{appearance:none;width:72px;height:48px;margin-top:-20px;background:#e4eef5;border:0;border-inline:8px solid #315d79;border-bottom:12px solid #6c97b1;box-shadow:8px 0 #89acc3}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-moz-range-track{height:24px;background:#6c97b1;border-top:8px solid #315d79;border-bottom:4px solid #e4eef5}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-moz-range-thumb{width:72px;height:48px;background:#e4eef5;border:0;border-inline:8px solid #315d79;border-bottom:12px solid #6c97b1;border-radius:0}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input{grid-column:1/-1;appearance:none;width:100%;height:24px;min-width:0;background:none;margin:0;cursor:ew-resize;transform:none}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-webkit-slider-runnable-track{height:12px;background:#6c97b1;border-top:8px solid #315d79;border-bottom:4px solid #e4eef5}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-webkit-slider-thumb{appearance:none;width:36px;height:24px;margin-top:-20px;background:#e4eef5;border:0;border-inline:8px solid #315d79;border-bottom:12px solid #6c97b1;box-shadow:8px 0 #89acc3}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-moz-range-track{height:12px;background:#6c97b1;border-top:8px solid #315d79;border-bottom:4px solid #e4eef5}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-moz-range-thumb{width:36px;height:24px;background:#e4eef5;border:0;border-inline:8px solid #315d79;border-bottom:12px solid #6c97b1;border-radius:0}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input:disabled{cursor:default;opacity:.55}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-footer{padding-top:24px;padding-bottom:24px;border-bottom:8px solid #b2cbdc}
-@container(max-width:440px){.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control{padding-inline:16px;gap:16px}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-webkit-slider-thumb{width:56px}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-moz-range-thumb{width:56px}}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-footer{padding-top:12px;padding-bottom:12px;border-bottom:8px solid #b2cbdc}
+@container(max-width:440px){.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control{padding-inline:16px;gap:16px}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-webkit-slider-thumb{width:28px}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-moz-range-thumb{width:28px}}
 @media(forced-colors:active){.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control{background:Canvas!important;border-color:ButtonText!important}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control>span,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control>output{background:Canvas!important;color:CanvasText!important}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input{appearance:auto!important;background:Canvas!important;color:ButtonText!important}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-webkit-slider-thumb{appearance:auto!important;background:ButtonFace!important;border-color:ButtonText!important;box-shadow:none!important}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-webkit-slider-runnable-track{background:Canvas!important;border-color:ButtonText!important}}
 
 @media(forced-colors:active){.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table{--paper:Canvas!important;--ink:CanvasText!important;--muted:CanvasText!important;--accent:Highlight!important;--edge:ButtonText!important;--wb-bg:Canvas!important;--wb-surface:Canvas!important;--wb-ink:CanvasText!important;--wb-muted:CanvasText!important;--wb-accent:Highlight!important;--wb-line:ButtonText!important;color:CanvasText!important;background:Canvas!important}
@@ -79,23 +79,54 @@
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table tbody tr[data-selected=true] td{background:Highlight!important;color:HighlightText!important}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table th[aria-sort]{outline:2px solid Highlight;outline-offset:-2px}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table :is(button,input){background:Canvas!important;color:ButtonText!important;border-color:ButtonText!important}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table :is(button,input,[tabindex]):focus-visible{outline-color:Highlight!important}}
 
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-selection{min-height:44px;min-width:180px;flex:0 0 180px}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-selection{min-height:22px;min-width:90px;flex:0 0 90px}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-selection[hidden]{display:flex!important;visibility:hidden;pointer-events:none}
 @container(max-width:440px){.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-selection{width:100%;min-width:0;flex-basis:100%}}
 @media(forced-colors:active){.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table tbody tr[data-selected=true] .wb-cell-text,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table tbody tr[data-selected=true] .wb-cell-badge,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table tbody tr[data-selected=true] .wb-cell-progress b,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table tbody tr[data-selected=true] .wb-row-actions button{color:HighlightText!important;background:Highlight!important;forced-color-adjust:none;border-color:HighlightText!important}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table tbody tr[data-selected=true] .wb-cell-progress>span{background:HighlightText!important;forced-color-adjust:none}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table tbody tr[data-selected=true] .wb-cell-progress i{background:Highlight!important;border:1px solid HighlightText!important;forced-color-adjust:none}}
 
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-footer output,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-page-summary,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-total{direction:ltr;unicode-bidi:isolate}
 
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll{position:relative;border-bottom:24px solid #315d79;padding-bottom:16px}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control{isolation:isolate;background:none;border:0;padding:24px 24px 40px;row-gap:24px;column-gap:24px}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control::before{content:'';position:absolute;inset-inline-start:0;top:-24px;width:var(--wb-fixed-columns-width);height:156px;background:#cfdfeb;border-inline-end:16px solid #6c97b1;border-bottom:24px solid #315d79;clip-path:polygon(0 0,100% 0,100% calc(100% - 24px),calc(100% - 24px) 100%,0 100%);z-index:-1;pointer-events:none}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control::after{content:'';position:absolute;inset-inline-end:0;top:72px;width:40px;height:84px;border:16px solid #315d79;border-inline-start:0;border-radius:0 32px 0 0;z-index:-1;pointer-events:none}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table[data-wb-pin-first=false] .wb-table-scroll-control::before{width:48px;border-inline-end-width:8px;clip-path:none}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll{position:relative;border-bottom:12px solid #315d79;padding-bottom:16px}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control{isolation:isolate;background:none;border:0;padding:12px 12px 20px;row-gap:12px;column-gap:12px}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control::before{content:'';position:absolute;inset-inline-start:0;top:-12px;width:var(--wb-fixed-columns-width);height:78px;background:#cfdfeb;border-inline-end:16px solid #6c97b1;border-bottom:12px solid #315d79;clip-path:polygon(0 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%);z-index:-1;pointer-events:none}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control::after{content:'';position:absolute;inset-inline-end:0;top:36px;width:20px;height:42px;border:16px solid #315d79;border-inline-start:0;border-radius:0 16px 0 0;z-index:-1;pointer-events:none}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table[data-wb-pin-first=false] .wb-table-scroll-control::before{width:24px;border-inline-end-width:8px;clip-path:none}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control>span,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control>output{position:relative;background:#f2f8fc;color:#294b62;padding:8px;align-self:start}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input{height:64px}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-webkit-slider-runnable-track{height:24px;background:#6c97b1;border-top:8px solid #315d79;border-bottom:4px solid #e4eef5}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-webkit-slider-thumb{width:80px;height:64px;margin-top:-28px;border:12px solid #315d79;border-bottom:20px solid #6c97b1;border-radius:32px 32px 0 0;box-shadow:12px 8px #89acc3;background:#e4eef5}
-.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-moz-range-thumb{width:80px;height:64px;border:12px solid #315d79;border-bottom:20px solid #6c97b1;border-radius:32px 32px 0 0;background:#e4eef5}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input{height:32px}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-webkit-slider-runnable-track{height:12px;background:#6c97b1;border-top:8px solid #315d79;border-bottom:4px solid #e4eef5}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-webkit-slider-thumb{width:40px;height:32px;margin-top:-14px;border:12px solid #315d79;border-bottom:20px solid #6c97b1;border-radius:16px 16px 0 0;box-shadow:12px 8px #89acc3;background:#e4eef5}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-moz-range-thumb{width:40px;height:32px;border:12px solid #315d79;border-bottom:20px solid #6c97b1;border-radius:16px 16px 0 0;background:#e4eef5}
 .sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-status{border-top:8px solid #b2cbdc}
-@container(max-width:440px){.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control{padding-inline:16px}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-webkit-slider-thumb{width:64px}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-moz-range-thumb{width:64px}}
+@container(max-width:440px){.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control{padding-inline:16px}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-webkit-slider-thumb{width:32px}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-moz-range-thumb{width:32px}}
 @media(forced-colors:active){.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control::before,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control::after{display:none!important}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control>span,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control>output{background:Canvas!important;color:CanvasText!important}.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-webkit-slider-thumb{background:ButtonFace!important;border-color:ButtonText!important;box-shadow:none!important}}
+
+/* Compact reading density; text and native column geometry remain unscaled. */
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-heading{padding-block:16px 10px;gap:12px}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-heading h3{font-size:24px;line-height:1.25}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-heading p{font-size:12px;line-height:1.6}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-total,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-eyebrow{font-size:11px;line-height:1.5}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-toolbar{padding-block:8px 12px;gap:12px}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-search{min-height:44px;padding-block:0;gap:8px}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-search input{font-size:14px;min-height:40px}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll{max-height:var(--wb-table-max-height,360px)}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-th-content,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-th-content button{min-height:44px}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-th-content button{padding:10px 12px;font-size:12px;line-height:1.5}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table td{padding:10px 12px;font-size:14px;line-height:1.6}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-select-cell input{width:18px;height:18px}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-cell-badge{font-size:12px;line-height:1.5;padding:3px 6px}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-row-actions button,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-footer nav button{width:44px;height:44px;min-width:44px;min-height:44px;padding:12px}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-row-actions svg,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-footer svg{width:18px;height:18px}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-status{padding-block:8px;font-size:12px;line-height:1.6}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-data-footer{padding-block:8px 12px;gap:12px;font-size:12px;line-height:1.5}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control{padding:8px 14px;gap:4px 12px;background:#d7e6ee;border-block:1px solid #9eb8c8}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control::before,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control::after{display:none}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control>span,.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control>output{font-size:11px;padding:0;background:none}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input{height:40px}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-webkit-slider-runnable-track{height:8px;border-top-width:2px;border-bottom-width:1px}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-webkit-slider-thumb{width:40px;height:28px;margin-top:-12px;border-width:4px;border-bottom-width:5px;box-shadow:3px 2px #89acc3;border-radius:4px}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-moz-range-track{height:8px;border-top-width:2px;border-bottom-width:1px}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-table-scroll-control input::-moz-range-thumb{width:40px;height:28px;border-width:4px;border-bottom-width:5px;border-radius:4px}
+
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table{--wb-action-column-width:112px}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table .wb-row-actions>div{flex-wrap:nowrap;gap:0}
+.sop-wb.sop-rail-dataset-table.sop-rail-dataset-table td{padding-block:8px}
