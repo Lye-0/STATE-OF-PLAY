@@ -49,3 +49,10 @@
 /* Validation owns its reading surface; the shell's error border remains independent. */
 .sop-textfield.sop-writing-saddle.sop-writing-saddle>.sop-field-validation{color:#852e28;background:#fff1ea;border-inline-start:3px solid #b83c34;padding:7px 10px;margin-top:10px;border-radius:1px;font-size:12px;line-height:1.7}
 @media(forced-colors:active){.sop-textfield.sop-writing-saddle.sop-writing-saddle>.sop-field-validation{color:CanvasText!important;background:Canvas!important;border-color:LinkText!important}}
+
+/* Human-scale editing; keep the sculpted perimeter clear of native text. */
+.sop-textfield.sop-writing-saddle.sop-writing-saddle .sop-field-shell{min-height:66px;padding:6px 62px 10px 24px;margin-block:10px}
+.sop-textfield.sop-writing-saddle.sop-writing-saddle .sop-field-control{padding-block:8px}
+
+.sop-textfield.sop-writing-saddle.sop-writing-saddle :is(.sop-field-clear,.sop-field-reveal){top:calc(50% - 21px);background:transparent;border-color:transparent;box-shadow:none;border-radius:2px}
+.sop-textfield.sop-writing-saddle.sop-writing-saddle :is(.sop-field-clear,.sop-field-reveal):hover{background:color-mix(in srgb,var(--field-accent) 12%,transparent)}

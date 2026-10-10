@@ -16,3 +16,8 @@
 .sop-textfield.sop-banked-field .sop-field-help{margin-top:22px}
 
 @media(prefers-reduced-motion:reduce){.sop-banked-field *,.sop-banked-field::before,.sop-banked-field::after,.sop-banked-field *::before,.sop-banked-field *::after{transition:none!important;animation:none!important}}
+
+/* The editing surface and its focus boundary share one fixed geometry. */
+.sop-textfield.sop-banked-field.sop-banked-field .sop-field-control:focus-visible{outline:0;box-shadow:none}
+.sop-textfield.sop-banked-field.sop-banked-field .sop-field-shell:has(.sop-field-control:focus-visible){outline:2px solid var(--field-accent);outline-offset:3px}
+@media(forced-colors:active){.sop-textfield.sop-banked-field.sop-banked-field .sop-field-shell:has(.sop-field-control:focus-visible){outline-color:Highlight}}

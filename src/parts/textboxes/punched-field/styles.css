@@ -10,3 +10,9 @@
 .sop-textfield.sop-punched-field :is([data-sg-error],[data-upload-error],.sg-wizard-error,[data-danger=true]){color:#8a3f46}
 
 .sop-textfield.sop-punched-field[data-sop-paused] *,.sop-textfield.sop-punched-field[data-paused=true] *,.sop-textfield.sop-punched-field[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+/* The editing surface and its focus boundary share one fixed geometry. */
+.sop-textfield.sop-punched-field.sop-punched-field .sop-field-control:focus-visible{outline:0;box-shadow:none}
+.sop-textfield.sop-punched-field.sop-punched-field .sop-field-shell:has(.sop-field-control:focus-visible){outline:2px solid var(--field-accent);outline-offset:3px}
+.sop-textfield.sop-punched-field.sop-punched-field .sop-field-shell,.sop-textfield.sop-punched-field.sop-punched-field .sop-field-shell:focus-within{border-bottom-width:1px}
+@media(forced-colors:active){.sop-textfield.sop-punched-field.sop-punched-field .sop-field-shell:has(.sop-field-control:focus-visible){outline-color:Highlight}}

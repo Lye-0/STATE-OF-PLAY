@@ -6,3 +6,8 @@
 .sop-textfield.sop-ruled-caption-field:focus-visible,.sop-textfield.sop-ruled-caption-field :is(button,input,a):focus-visible{outline:2px solid var(--sop-focus,#b8dacb);outline-offset:4px}
 
 .sop-textfield.sop-ruled-caption-field[data-sop-paused] *,.sop-textfield.sop-ruled-caption-field[data-paused=true] *,.sop-textfield.sop-ruled-caption-field[data-wb-paused=true] *{animation-play-state:paused!important;transition:none!important}
+
+/* The editing surface and its focus boundary share one fixed geometry. */
+.sop-textfield.sop-ruled-caption-field.sop-ruled-caption-field .sop-field-control:focus-visible{outline:0;box-shadow:none}
+.sop-textfield.sop-ruled-caption-field.sop-ruled-caption-field .sop-field-shell:has(.sop-field-control:focus-visible){outline:2px solid var(--field-accent);outline-offset:3px}
+@media(forced-colors:active){.sop-textfield.sop-ruled-caption-field.sop-ruled-caption-field .sop-field-shell:has(.sop-field-control:focus-visible){outline-color:Highlight}}

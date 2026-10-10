@@ -35,3 +35,7 @@
 .sop-textfield.sop-interleaf-entry.sop-interleaf-entry .sop-field-shell:focus-within .sop-field-fx i:nth-child(2){transform:scaleY(.55)}
 .sop-textfield.sop-interleaf-entry.sop-interleaf-entry .sop-field-meta{margin-top:24px}
 .sop-textfield.sop-interleaf-entry.sop-interleaf-entry[data-invalid=true] .sop-field-shell{border:1px solid transparent;outline:2px dashed var(--field-error);outline-offset:9px}
+
+/* Human-scale editing; keep the sculpted perimeter clear of native text. */
+.sop-textfield.sop-interleaf-entry.sop-interleaf-entry .sop-field-shell{min-height:64px;padding:6px 50px 8px 22px;margin-block:10px}
+.sop-textfield.sop-interleaf-entry.sop-interleaf-entry .sop-field-control{padding-block:8px}
