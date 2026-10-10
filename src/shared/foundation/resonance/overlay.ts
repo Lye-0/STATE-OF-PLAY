@@ -1,8 +1,9 @@
 import type { Core } from '../core.ts';
+import { overlayAnchorVisible } from '../core.ts';
 /** Top-layer placement stays outside the animation layer and uses the visual viewport. */
 export function resonanceOverlay(c:Core,panel:HTMLElement,anchor:HTMLElement,preference:()=> 'top'|'bottom'=()=> 'bottom',onOutsideScroll?:()=>void) {
  let opened=false,openingAnchor:{left:number;top:number}|undefined;const life=new AbortController();panel.setAttribute('popover','manual');panel.hidden=true;
- function position(){if(!opened||c.dead)return;const r=anchor.getBoundingClientRect(),v=window.visualViewport,ox=v?.offsetLeft??0,oy=v?.offsetTop??0,vw=v?.width??innerWidth,vh=v?.height??innerHeight;
+ function position(){if(!opened||c.dead)return;if(!overlayAnchorVisible(anchor)){(onOutsideScroll??hide)();return;}const r=anchor.getBoundingClientRect(),v=window.visualViewport,ox=v?.offsetLeft??0,oy=v?.offsetTop??0,vw=v?.width??innerWidth,vh=v?.height??innerHeight;
   const preferred=Number.parseFloat(getComputedStyle(panel).getPropertyValue('--rs-overlay-width'));
   const width=Math.min(Math.max(Number.isFinite(preferred)?preferred:r.width,264),vw-24);panel.style.width=width+'px';
   const below=oy+vh-r.bottom-12,above=r.top-oy-12,natural=Math.min(panel.scrollHeight||280,360),top=preference()==='top'?above>=Math.min(natural,180)||above>below:below<Math.min(natural,180)&&above>below;
@@ -12,7 +13,7 @@ export function resonanceOverlay(c:Core,panel:HTMLElement,anchor:HTMLElement,pre
   const h=panel.offsetHeight,left=Math.max(ox+12,Math.min(r.left,ox+vw-width-12));panel.style.left=left+'px';panel.style.top=Math.max(oy+12,Math.min(top?r.top-h-8:r.bottom+8,oy+vh-h-12))+'px';panel.dataset.side=top?'top':'bottom';
   panel.style.setProperty('--rs-anchor',Math.max(18,Math.min(width-18,r.left+r.width*.5-left))+'px');
  }
- function show(){if(c.dead||c.options.disabled)return;panel.hidden=false;opened=true;const a=anchor.getBoundingClientRect();openingAnchor={left:a.left,top:a.top};try{panel.showPopover();}catch{/* Native popover unavailable: use positioned fallback. */}position();}
+ function show(){if(c.dead||c.options.disabled||!overlayAnchorVisible(anchor))return;panel.hidden=false;opened=true;const a=anchor.getBoundingClientRect();openingAnchor={left:a.left,top:a.top};try{panel.showPopover();}catch{/* Native popover unavailable: use positioned fallback. */}position();}
  function hide(){if(!opened)return;opened=false;try{panel.hidePopover();}catch{}panel.hidden=true;}
  window.addEventListener('resize',position,{passive:true,signal:life.signal});
  document.addEventListener('scroll',event=>{if(!opened)return;if(onOutsideScroll){if(!(event.target instanceof Node&&panel.contains(event.target))&&openingAnchor){const a=anchor.getBoundingClientRect();if(Math.abs(a.left-openingAnchor.left)>.5||Math.abs(a.top-openingAnchor.top)>.5)onOutsideScroll();}}else position();},{capture:true,passive:true,signal:life.signal});

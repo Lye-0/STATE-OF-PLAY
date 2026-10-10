@@ -120,6 +120,9 @@ jobs:
       - name: Resonance inspector, exports and native overlays
         if: ${{ !cancelled() && steps.browser-ready.outcome == 'success' && matrix.suite == 'controls' }}
         run: npm run test:resonance:gallery
+      - name: Notification scroll frames and visible overlay owners
+        if: ${{ !cancelled() && steps.browser-ready.outcome == 'success' && matrix.suite == 'controls' }}
+        run: npm run test:feedback-geometry
       - name: Continuum progress, files, dates and new loaders
         if: ${{ !cancelled() && steps.browser-ready.outcome == 'success' && matrix.suite == 'controls' }}
         run: npm run test:continuum

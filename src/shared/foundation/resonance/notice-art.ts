@@ -45,14 +45,12 @@ const marks:Record<string,Pose>={
 export function revealNotice(host:HTMLElement,variant:string,reduced:boolean):Animation[] {
  if(reduced)return [];
  const art=host.querySelector<HTMLElement>(':scope > .rs-notice-art'),pose=arrivals[variant]??arrivals.aurora;
- const animations=[host.animate(pose,{duration:variant==='relay'||variant==='nixie'?360:420,easing:variant==='relay'||variant==='nixie'?'steps(4,end)':'cubic-bezier(.16,1,.3,1)'})];
+ const animations=[host.animate(pose.map(({transform: _movement,...frame})=>frame),{duration:variant==='relay'||variant==='nixie'?360:420,easing:variant==='relay'||variant==='nixie'?'steps(4,end)':'cubic-bezier(.16,1,.3,1)'})];
  if(art)animations.push(art.animate(marks[variant]??marks.aurora,{duration:510,easing:variant==='relay'||variant==='nixie'?'steps(5,end)':'cubic-bezier(.16,1,.3,1)'}));
  return animations;
 }
 
 export function retireNotice(host:HTMLElement,variant:string,reduced:boolean):Animation|null {
  if(reduced)return null;
- const direction=['folio','velvet','obsidian'].includes(variant)?-12:['tide','botanical'].includes(variant)?14:0;
- const x=direction?0:['transit','relay','mercury','copper'].includes(variant)?18:-9;
- return host.animate([{opacity:1,transform:'none'},{opacity:0,transform:`translate(${x}px,${direction}px) scale(.97)`}],{duration:170,easing:'ease-in',fill:'forwards'});
+ return host.animate([{opacity:1,transform:'none'},{opacity:0,transform:'none'}],{duration:170,easing:'ease-in',fill:'forwards'});
 }

@@ -512,7 +512,7 @@
 }
 
 .sop-foundation.sop-resonance[data-foundation][data-variant] > .ff-toast-stack {
-  position:fixed;inset:auto 20px 20px auto;margin:0;padding:9px 8px 12px;border:0;background:transparent;width:min(400px,calc(100vw - 24px));max-height:calc(100dvh - 24px);overflow:auto;color:var(--rs-ink);font:13px var(--rs-font);box-shadow:none;
+  position:fixed;inset:auto 20px 20px auto;margin:0;padding:9px 8px 12px;border:0;background:transparent;width:min(400px,calc(100vw - 24px));max-height:calc(100dvh - 24px);overflow-x:hidden;overflow-y:auto;color:var(--rs-ink);font:13px var(--rs-font);box-shadow:none;
 }
 
 .sop-foundation.sop-resonance[data-foundation][data-variant] > .ff-toast-stack:popover-open {

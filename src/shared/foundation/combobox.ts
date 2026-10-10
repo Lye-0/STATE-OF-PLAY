@@ -13,7 +13,7 @@ export function mountCombobox(root:HTMLElement,config:FoundationConfig,options:F
   q(root,'[data-combo-live]').textContent=o.loading?'読み込み中':o.error??`${items.length}件の候補`;overlay.position();
   const current=[...results.querySelectorAll<HTMLElement>('[data-option]')].find(item=>item.dataset.option===active&&!item.hasAttribute('hidden'));if(current&&overlay.open){input.setAttribute('aria-activedescendant',current.id);current.scrollIntoView({block:'nearest'});}else{results.scrollTop=0;input.removeAttribute('aria-activedescendant');}
  }
- const show=()=>{if(c.options.disabled||c.options.readOnly)return;query='';editing=false;active='';paintList();overlay.show();input.setAttribute('aria-expanded','true');paintList();};
+ const show=()=>{if(c.options.disabled||c.options.readOnly)return;query='';editing=false;active='';paintList();overlay.show();input.setAttribute('aria-expanded',String(overlay.open));paintList();};
  const hide=()=>{overlay.hide();input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');editing=false;query='';c.sync('value');};
  const select=(value:string)=>{if(!(c.options.items??[]).some(i=>i.value===value&&!i.disabled))return;const previous=asStrings(c.data);editing=false;query='';c.send(c.options.multiple?previous.includes(value)?previous.filter(v=>v!==value):[...previous,value]:value);if(c.options.multiple){input.value='';paintList();input.focus();}else{hide();input.focus();}};
  c.sync=()=>{syncHeading(c);const o=c.options,values=asStrings(c.data);input.disabled=!!o.disabled;input.readOnly=!!o.readOnly;input.required=!!o.required&&!o.multiple;input.setAttribute('aria-required',String(!!o.required));input.setAttribute('aria-label',o.label??'選択');input.placeholder=o.placeholder??'名前やキーワードを入力…';q<HTMLButtonElement>(root,'[data-combo-toggle]').disabled=!!o.disabled||!!o.readOnly;
@@ -23,7 +23,7 @@ export function mountCombobox(root:HTMLElement,config:FoundationConfig,options:F
   q(root,'[data-combo-form]').innerHTML=o.name?values.map(v=>`<input type="hidden" name="${escape(o.name)}" value="${escape(v)}" ${o.disabled?'disabled':''}>`).join(''):'';
   input.setCustomValidity(o.required&&!values.length?'候補を選択してください。':'');paintList();
  };
- c.on(input,'input',()=>{editing=true;query=input.value;active='';if(!overlay.open){overlay.show();input.setAttribute('aria-expanded','true');}if(!composing)paintList();});
+ c.on(input,'input',()=>{editing=true;query=input.value;active='';if(!overlay.open){overlay.show();input.setAttribute('aria-expanded',String(overlay.open));}if(!composing)paintList();});
  c.on(input,'compositionstart',()=>{composing=true;});c.on(input,'compositionend',()=>{composing=false;query=input.value;paintList();});
  c.on(input,'keydown',event=>{const e=event as KeyboardEvent;if(composing||e.isComposing)return;
   if(e.key==='Escape'&&overlay.open){e.preventDefault();e.stopPropagation();hide();return;}

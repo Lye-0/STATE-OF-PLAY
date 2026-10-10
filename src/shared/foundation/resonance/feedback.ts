@@ -16,7 +16,7 @@ export function mountToast(root:HTMLElement,config:FoundationConfig,options:Foun
  function finalize(e:Entry){clearTimeout(e.timer);clearTimeout(e.removeTimer);e.entrance.forEach(animation=>animation.cancel());e.exit?.cancel();e.meter?.cancel();e.life.abort();e.el.remove();const i=entries.indexOf(e);if(i>=0)entries.splice(i,1);if(!entries.length){try{stack.hidePopover();}catch{}stack.hidden=true;}}
  function dismiss(id?:string,immediate=false){for(const e of [...entries]){if(id&&e.id!==id)continue;if(e.closing){if(immediate)finalize(e);continue;}e.closing=true;stop(e);e.entrance.forEach(animation=>animation.cancel());
    const hadFocus=e.el.contains(document.activeElement);e.el.removeAttribute('role');e.el.setAttribute('aria-hidden','true');e.el.inert=true;e.el.dataset.closing='true';
-   if(hadFocus){const next=entries.find(n=>n!==e&&!n.closing);if(next)next.el.querySelector<HTMLButtonElement>('[data-notice-close]')?.focus();else if(e.origin?.isConnected&&!e.origin.closest('[inert]'))e.origin.focus();else root.querySelector<HTMLElement>('[data-notify]')?.focus();}
+   if(hadFocus){const next=entries.find(n=>n!==e&&!n.closing);if(next)next.el.querySelector<HTMLButtonElement>('[data-notice-close]')?.focus({preventScroll:true});else if(e.origin?.isConnected&&!e.origin.closest('[inert]'))e.origin.focus({preventScroll:true});else root.querySelector<HTMLElement>('[data-notify]')?.focus({preventScroll:true});}
    if(immediate||media.matches||document.hidden){finalize(e);continue;}
    e.exit=retireNotice(e.el,config.variant,media.matches);e.removeTimer=window.setTimeout(()=>finalize(e),175);
   }}
@@ -48,12 +48,12 @@ export function mountHint(root:HTMLElement,config:FoundationConfig,options:Found
  const retainedScene=config.variant==='aperture'||config.variant==='prism',art=createHintArtwork(panel,config.variant);
  const overlay=resonanceOverlay(c,panel,trigger,()=>c.options.placement??'top',hide),scene=retainedScene?createMaterialScene(panel,config.variant,0):null,face=retainedScene?createMaterialScene(trigger,config.variant,.1):null;
  let closeTimer=0,entrance:Animation[]=[],ignoreFocus=false,escapeDismissed=false;
- function show(){if(c.dead||c.options.disabled)return;clearTimeout(closeTimer);const was=overlay.open;overlay.show();trigger.dataset.expanded='true';panel.dataset.interactive=String(!!c.options.interactive);face?.set(1);scene?.set(1);
+ function show(){if(c.dead||c.options.disabled)return;clearTimeout(closeTimer);const was=overlay.open;overlay.show();if(!overlay.open)return;trigger.dataset.expanded='true';panel.dataset.interactive=String(!!c.options.interactive);face?.set(1);scene?.set(1);
   if(c.options.interactive){if(!root.contains(document.activeElement))trigger.focus({preventScroll:true});trigger.setAttribute('aria-expanded','true');}else{trigger.setAttribute('aria-describedby',[descriptionBefore,uid].filter(Boolean).join(' '));trigger.removeAttribute('aria-expanded');}
   if(!was){entrance.forEach(animation=>animation.cancel());entrance=revealHintArtwork(panel,config.variant,media.matches);if(scene){const reveal=revealSurface(panel,config.variant,media.matches);if(reveal)entrance.push(reveal);}}
  }
  function hide(){clearTimeout(closeTimer);overlay.hide();entrance.forEach(animation=>animation.cancel());entrance=[];scene?.set(0,true);face?.set(.1);trigger.dataset.expanded='false';if(c.options.interactive)trigger.setAttribute('aria-expanded','false');else trigger.removeAttribute('aria-expanded');if(descriptionBefore)trigger.setAttribute('aria-describedby',descriptionBefore);else trigger.removeAttribute('aria-describedby');}
- const restoreFocus=()=>{ignoreFocus=true;trigger.focus();ignoreFocus=false;};
+ const restoreFocus=()=>{ignoreFocus=true;trigger.focus({preventScroll:true});ignoreFocus=false;};
  const later=()=>{clearTimeout(closeTimer);closeTimer=window.setTimeout(()=>{if(c.dead)return;if(!root.contains(document.activeElement))hide();},180);};
  c.on(trigger,'pointerenter',()=>{if(!c.options.interactive&&!escapeDismissed)show();});c.on(trigger,'pointerleave',()=>{escapeDismissed=false;if(!c.options.interactive)later();});c.on(trigger,'focus',()=>{if(!ignoreFocus&&!c.options.interactive&&!escapeDismissed)show();});
  c.on(trigger,'click',()=>{if(c.options.interactive){if(overlay.open)hide();else show();}else show();});c.on(panel,'pointerenter',()=>clearTimeout(closeTimer));c.on(panel,'pointerleave',()=>{if(!c.options.interactive)later();});

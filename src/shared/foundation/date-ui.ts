@@ -113,7 +113,7 @@ export function mountDate(
   let rangeTarget: 'start' | 'end' | 'sequence' = 'sequence';
   let returnFocus: HTMLElement = toggle;
   let draftIndex: number | null = null;
-  const overlay = makeOverlay(controller, panel, toggle, 'bottom', q<HTMLElement>(root, '.ff-date-fields'));
+  const overlay = makeOverlay(controller, panel, toggle, 'bottom', q<HTMLElement>(root, '.ff-date-fields'), undefined, () => hide());
   let lastMode = controller.options.mode ?? 'date';
 
   function message(text = '', index?: number): void {
@@ -196,9 +196,10 @@ export function mountDate(
     const chosen = parseDate(asStrings(controller.data)[field]?.slice(0, 10) ?? '');
     if (chosen) { cursor = chosen; view = new Date(chosen.getFullYear(), chosen.getMonth(), 1, 12); }
     paint();
-    if (!overlay.open) { overlay.show(); motion?.show(); }
+    if (!overlay.open) { overlay.show(); if (overlay.open) motion?.show(); }
     else overlay.position();
     syncExpanded();
+    if (!overlay.open) return;
     if (!timeFace.hidden) alignTimeLists();
     if (focusPanel) {
       if (controller.options.mode === 'time') hours.focus();
