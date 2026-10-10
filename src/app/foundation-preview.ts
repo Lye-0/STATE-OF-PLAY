@@ -60,14 +60,21 @@ export function mountFoundationControls(dialog:HTMLDialogElement,root:HTMLElemen
  root.addEventListener('sop:foundation-change',state,{signal:events.signal});
  root.addEventListener('click',event=>{if((event.target as Element).closest('[data-demo-progress],[data-demo-loader]'))state();},{signal:events.signal});
  controls.querySelector('[data-foundation-reset]')!.addEventListener('click',()=>{alternateItems=false;const itemsButton=controls.querySelector('[data-change-items]');if(itemsButton){itemsButton.textContent='別の候補を試す';itemsButton.setAttribute('aria-pressed','false');}controller.updateFoundation?.({...part.foundation!,...(part.tags.includes('SEQUENCE')?{items:[...(part.foundation?.items??[])]}:{}),disabled:false,readOnly:false,paused:false,indeterminate:false});if(seqMode)seqMode.value=initialTagMode;if(seqPages){sequenceTotal=part.foundation?.totalPages??12;seqPages.value=String(sequenceTotal);}unknown=false;const unknownButton=controls.querySelector('[data-progress-state]');if(unknownButton)unknownButton.textContent='割合不明にする';if(dateMode)dateMode.value=part.foundation?.mode??'date';if(multiple)multiple.checked=!!part.foundation?.multiple;if(readonly)readonly.checked=false;const pause=root.querySelector('[data-demo-loader]');if(pause){pause.setAttribute('aria-pressed','false');pause.textContent='一時停止';}controller.setData?.(part.foundation!.defaultValue??null);required<HTMLInputElement>('[data-foundation-disabled]',controls).checked=false;controller.dismiss?.();state();},{signal:events.signal});
- controls.querySelector('[data-foundation-open]')?.addEventListener('click',()=>controller.show?.(),{signal:events.signal});
+ const showPreview=()=>{
+  // Inspector settings may have scrolled the actual opener out of its preview.
+  // Bring it back before opening; the shared overlay correctly rejects hidden anchors.
+  const anchor=root.querySelector<HTMLElement>('[data-calendar-toggle],[data-hint-trigger],[data-combo]')??root;
+  anchor.scrollIntoView({block:'nearest',inline:'nearest',behavior:'instant'});
+  controller.show?.();
+ };
+ controls.querySelector('[data-foundation-open]')?.addEventListener('click',showPreview,{signal:events.signal});
  controls.querySelector('[data-progress-state]')?.addEventListener('click',event=>{unknown=!unknown;controller.updateFoundation?.({indeterminate:unknown});(event.currentTarget as HTMLElement).textContent=unknown?'割合を表示':'割合不明にする';},{signal:events.signal});
  controls.querySelector('[data-change-items]')?.addEventListener('click',event=>{
   alternateItems=!alternateItems;
   controller.updateFoundation?.({items:alternateItems?[{value:'draft',label:'Draft',description:'下書きを準備する。'},{value:'review',label:'Review',description:'設計を確認する。'},{value:'ready',label:'Ready',description:'次の工程へ。'},{value:'locked',label:'Locked',disabled:true}]:[...(part.foundation?.items??[])]});
   controller.setData?.(alternateItems?'draft':part.foundation?.defaultValue??null);
   const button=event.currentTarget as HTMLButtonElement;button.textContent=alternateItems?'展示の候補に戻す':'別の候補を試す';button.setAttribute('aria-pressed',String(alternateItems));
-  state();if(part.category==='comboboxes')controller.show?.();
+  state();if(part.category==='comboboxes')showPreview();
  },{signal:events.signal});
  controls.querySelector('[data-notice-test]')?.addEventListener('click',()=>controller.notify?.({title:'レビューの準備ができました',description:'アクションをクリックすると別のデモ通知を表示します。',actionLabel:'確認する',tone:'info',duration:0,onAction:()=>controller.notify?.({title:'操作を受け取りました',tone:'success',description:'デモです。外部処理は実行していません。'})}),{signal:events.signal});
  controls.querySelector('[data-notice-clear]')?.addEventListener('click',()=>controller.dismiss?.(),{signal:events.signal});

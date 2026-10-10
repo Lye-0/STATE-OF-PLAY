@@ -124,8 +124,8 @@
 
 /* Search remains an input, and selected actions form a readable row. */
 .sop-wb.sop-receipt-register-table.sop-receipt-register-table .wb-data-toolbar{display:flex;flex-wrap:wrap;grid-template-columns:none;grid-template-rows:none;min-height:0;gap:12px}
-.sop-wb.sop-receipt-register-table.sop-receipt-register-table .wb-table-search{order:0;flex:1 1 220px;min-width:min(220px,100%);max-width:none;width:auto}
-.sop-wb.sop-receipt-register-table.sop-receipt-register-table .wb-data-selection{order:1;width:auto;min-width:0;max-width:100%;margin:0;padding:0 10px;align-self:center;flex:0 0 auto}
+.sop-wb.sop-receipt-register-table.sop-receipt-register-table .wb-table-search{order:0;flex:0 0 100%;min-width:0;max-width:none;width:100%}
+.sop-wb.sop-receipt-register-table.sop-receipt-register-table .wb-data-selection{order:1;width:auto;min-width:0;max-width:100%;margin:0;padding:0 10px;align-self:center;flex:0 0 auto;flex-direction:row}
 .sop-wb.sop-receipt-register-table.sop-receipt-register-table .wb-data-selection button{width:auto;min-width:44px;min-height:44px;padding:4px 8px}
 .sop-wb.sop-receipt-register-table.sop-receipt-register-table .wb-data-selection:not([hidden]){width:auto;flex-basis:auto!important;grid-column:auto}
 .sop-wb.sop-receipt-register-table.sop-receipt-register-table .wb-data-selection>span{width:auto;max-width:none;min-width:0;white-space:nowrap}

@@ -12,6 +12,9 @@ export function createComponentServer(suite: string) {
   return createServer({
     root: ROOT,
     configFile: false,
+    // Missing fixture assets must return 404, rather than falling back to the
+    // gallery entry whose virtual catalogue plugin is intentionally absent.
+    appType: 'mpa',
     cacheDir: path.join(ROOT, '.test-output', suite, 'vite-cache'),
     optimizeDeps: {
       entries: [],
