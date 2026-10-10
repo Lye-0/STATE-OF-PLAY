@@ -7,19 +7,19 @@
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-heading{font:600 13px/1.6 Arial,"Yu Gothic",sans-serif;min-width:0}
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-description{font:12px/1.8 Arial,"Yu Gothic",sans-serif;color:var(--muted)}
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-date-fields{position:relative;isolation:isolate;display:flex;gap:8px;align-items:center;min-width:0;background:#fff8e9;border:0;border-bottom:4px solid var(--edge);padding:10px 12px;box-shadow:none;border-radius:0}
-.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-date-fields input{font:13px/1.7 Arial,"Yu Gothic",sans-serif;font-variant-numeric:tabular-nums;color:var(--ink);height:36px;min-width:0;flex:1;min-height:36px;background:transparent;border:0;border-radius:0;padding:5px 0;box-shadow:none}
-.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-date-fields:has([data-date="1"]:not([hidden])) input{min-width:110px}
+.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-date-fields input{font:13px/1.7 Arial,"Yu Gothic",sans-serif;font-variant-numeric:tabular-nums;color:var(--ink);height:18px;min-width:0;flex:1;min-height:18px;background:transparent;border:0;border-radius:0;padding:5px 0;box-shadow:none}
+.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-date-fields:has([data-date="1"]:not([hidden])) input{min-width:55px}
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-date-fields [data-date-separator]{font:12px/1.5 Arial,"Yu Gothic",sans-serif;flex:none}
-.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-icon-button{flex:none;width:36px;height:36px;border:1px solid var(--edge);border-radius:0;background:var(--paper);color:var(--ink);box-shadow:none}
+.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-icon-button{flex:none;width:18px;height:18px;border:1px solid var(--edge);border-radius:0;background:var(--paper);color:var(--ink);box-shadow:none}
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-icon-button svg{width:20px;height:20px}
-.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-floating.ff-calendar{position:fixed;isolation:isolate;width:min(360px,calc(100vw - 24px))!important;min-width:0;padding:24px;color:var(--ink);background:var(--paper);border:0;border-radius:0;overflow:auto;box-shadow:none;scrollbar-color:var(--accent) transparent}
+.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-floating.ff-calendar{position:fixed;isolation:isolate;width:min(360px,calc(100vw - 12px))!important;min-width:0;padding:12px;color:var(--ink);background:var(--paper);border:0;border-radius:0;overflow:auto;box-shadow:none;scrollbar-color:var(--accent) transparent}
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar::before,.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar::after{content:"";position:absolute;pointer-events:none;z-index:-1;display:none}
-.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar-header{display:grid;grid-template-columns:36px minmax(0,1fr) 36px;gap:10px;align-items:center;margin:0 0 18px}
+.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar-header{display:grid;grid-template-columns:18px minmax(0,1fr) 18px;gap:10px;align-items:center;margin:0 0 18px}
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar-header strong{font:600 18px/1.5 Arial,"Yu Gothic",sans-serif;font-variant-numeric:tabular-nums;letter-spacing:0;min-width:0;text-align:center;overflow-wrap:anywhere;color:var(--ink)}
-.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar-header button{width:36px;height:36px;display:grid;place-items:center;padding:0;border:1px solid var(--edge);border-radius:0;box-shadow:none;background:var(--paper);color:var(--ink);font:22px/1 Arial,sans-serif;transform:none}
+.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar-header button{width:18px;height:18px;display:grid;place-items:center;padding:0;border:1px solid var(--edge);border-radius:0;box-shadow:none;background:var(--paper);color:var(--ink);font:22px/1 Arial,sans-serif;transform:none}
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-weekdays{font:11px/1.6 Arial,"Yu Gothic",sans-serif;color:var(--muted);margin:0 0 6px}
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar-grid [role=row]{gap:2px}
-.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar-grid button{height:38px;min-width:0;margin:2px 0;padding:0;font:13px/1.5 Arial,"Yu Gothic",sans-serif;font-variant-numeric:tabular-nums;letter-spacing:0;color:var(--ink);border:1px solid transparent;border-radius:0;background:transparent;box-shadow:none;transform:none;transition:background-color .2s}
+.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar-grid button{height:19px;min-width:0;margin:2px 0;padding:0;font:13px/1.5 Arial,"Yu Gothic",sans-serif;font-variant-numeric:tabular-nums;letter-spacing:0;color:var(--ink);border:1px solid transparent;border-radius:0;background:transparent;box-shadow:none;transform:none;transition:background-color .2s}
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar-grid button[data-outside=true]{color:var(--muted);opacity:.55}
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar-grid button[data-selected=true]{color:#fffaf0;background:var(--accent);border-color:var(--accent);opacity:1;box-shadow:none}
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar-grid button[data-between=true]{background:color-mix(in srgb,var(--accent) 20%,var(--paper))}
@@ -27,13 +27,13 @@
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar-grid button:hover:not(:disabled):not([data-selected=true]){background:color-mix(in srgb,var(--accent) 12%,var(--paper))}
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar-grid button:disabled{opacity:.35;text-decoration:line-through;cursor:default}
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px;border-top:1px solid var(--edge);margin-top:16px;padding-top:12px}
-.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar footer button{font:12px/1.6 Arial,"Yu Gothic",sans-serif;min-height:34px;padding:5px 8px;border:1px solid var(--edge);border-radius:0;box-shadow:none;background:var(--paper);color:var(--ink)}
+.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar footer button{font:12px/1.6 Arial,"Yu Gothic",sans-serif;min-height:17px;padding:5px 8px;border:1px solid var(--edge);border-radius:0;box-shadow:none;background:var(--paper);color:var(--ink)}
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar footer span{font:8px/1.5 Arial,"Yu Gothic",sans-serif;letter-spacing:0;color:var(--muted)}
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-date-message{font:12px/1.7 Arial,"Yu Gothic",sans-serif;overflow-wrap:anywhere;color:#a84d36;margin-top:9px}
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-time-heading{font:10px/1.6 Arial,"Yu Gothic",sans-serif;letter-spacing:0}
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-time-heading strong{font:500 28px/1.2 Arial,sans-serif;font-variant-numeric:tabular-nums}
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-time-column{border-color:var(--edge);border-radius:0;min-width:0}
-.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-time-column button{height:36px;font:13px/1.5 Arial,sans-serif;color:var(--ink);background:transparent;border-radius:0;box-shadow:none}
+.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-time-column button{height:18px;font:13px/1.5 Arial,sans-serif;color:var(--ink);background:transparent;border-radius:0;box-shadow:none}
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-time-column button[aria-selected=true]{color:#fffaf0;background:var(--accent)}
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar [hidden]{display:none!important}
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar :is(button,input,[tabindex]):focus-visible{outline:2px solid #2878c7;outline-offset:2px}
@@ -42,10 +42,27 @@
 
 
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar{--paper:#fbf0dc;--ink:#7c5f42;--muted:#90785b;--accent:#b58a55;--edge:#d7bd93}
-.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-floating.ff-calendar{padding:102px 28px 72px;background:linear-gradient(90deg,#c4a478 0 18px,#fff7e7 18px calc(100% - 18px),#c4a478 calc(100% - 18px));border-bottom:10px solid #a8804f}
-.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar::before,.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar::after{display:block;inset-inline:16px;height:40px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%2040%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%23b68c58%22%2F%3E%3Cstop%20offset%3D%22.25%22%20stop-color%3D%22%23f4dab0%22%2F%3E%3Cstop%20offset%3D%22.5%22%20stop-color%3D%22%23dfbc85%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%238e673c%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M7%200H93V40H7Z%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cellipse%20cx%3D%227%22%20cy%3D%2220%22%20rx%3D%227%22%20ry%3D%2220%22%20fill%3D%22%23d0a875%22%2F%3E%3Cellipse%20cx%3D%2293%22%20cy%3D%2220%22%20rx%3D%227%22%20ry%3D%2220%22%20fill%3D%22%239a713f%22%2F%3E%3Cellipse%20cx%3D%2293%22%20cy%3D%2220%22%20rx%3D%223%22%20ry%3D%2212%22%20fill%3D%22%23bc965f%22%2F%3E%3C%2Fsvg%3E") center/100% 100% no-repeat;z-index:0}
-.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar::before{top:48px}.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar::after{bottom:28px}
+.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-floating.ff-calendar{padding:51px 14px 36px;background:linear-gradient(90deg,#c4a478 0 18px,#fff7e7 18px calc(100% - 18px),#c4a478 calc(100% - 18px));border-bottom:10px solid #a8804f}
+.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar::before,.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar::after{display:block;inset-inline:16px;height:20px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%2040%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%23b68c58%22%2F%3E%3Cstop%20offset%3D%22.25%22%20stop-color%3D%22%23f4dab0%22%2F%3E%3Cstop%20offset%3D%22.5%22%20stop-color%3D%22%23dfbc85%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%238e673c%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M7%200H93V40H7Z%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cellipse%20cx%3D%227%22%20cy%3D%2220%22%20rx%3D%227%22%20ry%3D%2220%22%20fill%3D%22%23d0a875%22%2F%3E%3Cellipse%20cx%3D%2293%22%20cy%3D%2220%22%20rx%3D%227%22%20ry%3D%2220%22%20fill%3D%22%239a713f%22%2F%3E%3Cellipse%20cx%3D%2293%22%20cy%3D%2220%22%20rx%3D%223%22%20ry%3D%2212%22%20fill%3D%22%23bc965f%22%2F%3E%3C%2Fsvg%3E") center/100% 100% no-repeat;z-index:0}
+.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar::before{top:24px}.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar::after{bottom:14px}
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar-header{border-bottom:2px solid #dec7a2;padding-bottom:14px;margin-bottom:18px}
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar-grid button{border-bottom:1px solid #ead9ba}
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar footer{padding-bottom:10px}
 .sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-date-fields{border-bottom:8px solid #b8925d;background:#fff7e7}
+
+/* Keep the material at the edge of readable, human-scale content. */
+.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-floating.ff-calendar{width:min(336px,calc(100vw - 24px))!important;padding:20px 16px}
+.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar-header{margin-block:0 10px;gap:8px}
+.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar-header strong{font-size:20px;line-height:1.3}
+.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar-header button{min-width:40px;width:40px;min-height:44px;height:44px}
+.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar-grid{gap:2px;padding-block:6px}
+.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar-grid button{min-width:0;min-height:40px;height:40px;font-size:13px}
+.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar-grid span{font-size:12px;line-height:1.5}
+.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar-foot{margin-top:10px;padding-top:10px;gap:8px;font-size:12px}
+.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-floating.ff-calendar{padding:38px 16px 36px}
+.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar::before{height:18px;top:10px}
+.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar::after{height:18px;bottom:10px}
+
+/* Header tracks include the full navigation buttons. */
+.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar-header{display:grid;grid-template-columns:40px minmax(0,1fr) 40px;height:auto}
+.sop-foundation.sop-desk-blotter-calendar.sop-desk-blotter-calendar .ff-calendar-header strong{min-width:0;text-align:center}
