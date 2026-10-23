@@ -78,7 +78,7 @@
     "test:expansion-30": "node --experimental-strip-types tests/expansion-30.browser.ts && npm run test:expansion-30:react",
     "test:expansion-30:react": "node --experimental-strip-types tests/expansion-30.react.ts",
     "test:expansion-50": "node --experimental-strip-types tests/expansion-50.browser.ts && npm run test:expansion-50:react && npm run test:expansion-50:native && npm run test:expansion-review",
-    "test:expansion-50:react": "node --experimental-strip-types tests/expansion-50.react.ts",
+    "test:expansion-50:react": "node --experimental-strip-types tests/component-fixture.browser.ts && node --experimental-strip-types tests/expansion-50.react.ts",
     "test:expansion-50:native": "node --experimental-strip-types tests/expansion-50.native.ts",
     "test:expansion-review": "node --experimental-strip-types tests/expansion-review.browser.ts",
     "test:pagination-strip": "node --experimental-strip-types tests/pagination-strip.browser.ts",
