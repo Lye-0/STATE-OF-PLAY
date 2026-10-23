@@ -131,9 +131,19 @@ try {
    assert.equal(await navigation.locator('[data-part="original-surface"]').count(),1);
    await navigation.close();results.push(mode+': stale category response cannot replace newer selection');
    const categoryFailure=await browser.newPage();await categoryFailure.goto(url);await ready(categoryFailure);
-   let rejectCategory=true;await categoryFailure.route(categoryPattern,async route=>{if(rejectCategory){rejectCategory=false;await route.abort();}else await route.continue();});
+   let rejectCategory=true;await categoryFailure.route(categoryPattern,async route=>{if(rejectCategory){await route.abort();}else await route.continue();});
    await selectCategory(categoryFailure,'numbers',false);
-   await Promise.all([categoryFailure.waitForURL(/category=numbers/),categoryFailure.getByRole('button',{name:'再読み込み',exact:true}).click()]);await ready(categoryFailure);
+   // Keep preloads and import retries failing until the recovery UI is visible.
+   await categoryFailure.getByRole('button',{name:'再読み込み',exact:true}).waitFor();
+   rejectCategory=false;
+   // A reload starts a fresh module graph; keep its startup budget separate from interactions.
+   await Promise.all([
+    categoryFailure.waitForURL(/category=numbers/,{waitUntil:'commit',timeout:120000}),
+    categoryFailure.getByRole('button',{name:'再読み込み',exact:true}).click(),
+   ]);
+   await categoryFailure.waitForFunction(()=>document.documentElement.classList.contains('site-ready'),undefined,{timeout:120000});
+   await ready(categoryFailure);
+   assert.equal(await selectedCategory(categoryFailure),'numbers');
    assert.equal(await categoryFailure.locator('[data-part]').count(),await galleryCount(categoryFailure));await categoryFailure.close();
    results.push(mode+': failed category import reloads with selection retained');
   } finally {await close();}
